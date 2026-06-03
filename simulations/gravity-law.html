@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Gravity Law | OliyFizika.uz</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(135deg,#020817,#07122f,#020817);
+
+  color:white;
+
+  overflow:hidden;
+}
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
+
+  z-index:-1;
+}
+
+.container{
+
+  width:92%;
+
+  max-width:1450px;
+
+  margin:auto;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+  margin-top:20px;
+
+  padding:18px 28px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+}
+
+.logo{
+
+  font-size:38px;
+
+  font-weight:800;
+}
+
+.logo span{
+
+  color:#38bdf8;
+}
+
+.back-btn{
+
+  text-decoration:none;
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  font-weight:600;
+}
+
+
+/* MAIN */
+
+.main{
+
+  display:grid;
+
+  grid-template-columns:360px 1fr;
+
+  gap:30px;
+
+  margin-top:35px;
+}
+
+
+/* CONTROLS */
+
+.controls{
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:30px;
+
+  padding:30px;
+}
+
+.controls h2{
+
+  margin-bottom:35px;
+
+  font-size:30px;
+}
+
+.control-group{
+
+  margin-bottom:30px;
+}
+
+.control-group label{
+
+  display:block;
+
+  margin-bottom:12px;
+
+  color:#cbd5e1;
+}
+
+.control-group input{
+
+  width:100%;
+}
+
+.value{
+
+  margin-top:10px;
+
+  color:#38bdf8;
+
+  font-weight:700;
+
+  font-size:18px;
+}
+
+.start-btn{
+
+  width:100%;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.start-btn:hover{
+
+  transform:translateY(-3px);
+}
+
+
+/* CANVAS */
+
+.canvas-box{
+
+  position:relative;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+canvas{
+
+  width:100%;
+
+  height:100%;
+
+  display:block;
+}
+
+.info{
+
+  position:absolute;
+
+  top:20px;
+
+  left:20px;
+
+  background:rgba(0,0,0,.35);
+
+  padding:18px 22px;
+
+  border-radius:20px;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.info p{
+
+  margin-bottom:10px;
+
+  font-size:16px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .main{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+Oliy<span>Fizika</span>
+</div>
+
+<a href="simulations.html"
+class="back-btn">
+
+🧪 Simulyatorlar
+
+</a>
+
+</nav>
+
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<h2>
+🌍 Gravity Law
+</h2>
+
+
+
+<div class="control-group">
+
+<label>
+1-massa
+</label>
+
+<input
+type="range"
+id="mass1"
+min="10"
+max="200"
+value="80">
+
+<div
+class="value"
+id="mass1Value">
+
+80
+
+</div>
+
+</div>
+
+
+
+<div class="control-group">
+
+<label>
+2-massa
+</label>
+
+<input
+type="range"
+id="mass2"
+min="10"
+max="200"
+value="120">
+
+<div
+class="value"
+id="mass2Value">
+
+120
+
+</div>
+
+</div>
+
+
+
+<div class="control-group">
+
+<label>
+Masofa
+</label>
+
+<input
+type="range"
+id="distance"
+min="100"
+max="500"
+value="250">
+
+<div
+class="value"
+id="distanceValue">
+
+250
+
+</div>
+
+</div>
+
+
+
+<button
+class="start-btn"
+id="startBtn">
+
+🚀 Boshlash
+
+</button>
+
+</div>
+
+
+
+<!-- CANVAS -->
+
+<div class="canvas-box">
+
+<div class="info">
+
+<p id="forceInfo">
+Force: 0 N
+</p>
+
+<p id="distanceInfo">
+Distance: 0
+</p>
+
+</div>
+
+<canvas id="canvas">
+
+</canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const canvas =
+document.getElementById("canvas");
+
+const ctx =
+canvas.getContext("2d");
+
+
+canvas.width = 1000;
+canvas.height = 650;
+
+
+const mass1Slider =
+document.getElementById("mass1");
+
+const mass2Slider =
+document.getElementById("mass2");
+
+const distanceSlider =
+document.getElementById("distance");
+
+
+const mass1Value =
+document.getElementById("mass1Value");
+
+const mass2Value =
+document.getElementById("mass2Value");
+
+const distanceValue =
+document.getElementById("distanceValue");
+
+
+const forceInfo =
+document.getElementById("forceInfo");
+
+const distanceInfo =
+document.getElementById("distanceInfo");
+
+
+mass1Slider.oninput = ()=>{
+
+  mass1Value.innerHTML =
+  mass1Slider.value;
+
+};
+
+mass2Slider.oninput = ()=>{
+
+  mass2Value.innerHTML =
+  mass2Slider.value;
+
+};
+
+distanceSlider.oninput = ()=>{
+
+  distanceValue.innerHTML =
+  distanceSlider.value;
+
+};
+
+
+
+let mass1 = 80;
+
+let mass2 = 120;
+
+let distance = 250;
+
+
+
+document
+.getElementById("startBtn")
+.addEventListener("click", ()=>{
+
+  mass1 =
+  parseFloat(mass1Slider.value);
+
+  mass2 =
+  parseFloat(mass2Slider.value);
+
+  distance =
+  parseFloat(distanceSlider.value);
+
+});
+
+
+
+function drawArrow(x1,y1,x2,y2){
+
+  ctx.beginPath();
+
+  ctx.moveTo(x1,y1);
+
+  ctx.lineTo(x2,y2);
+
+  ctx.strokeStyle =
+  "#38bdf8";
+
+  ctx.lineWidth = 4;
+
+  ctx.stroke();
+
+}
+
+
+
+function animate(){
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  const y = 325;
+
+
+  const x1 =
+  500 - distance/2;
+
+  const x2 =
+  500 + distance/2;
+
+
+  /* FORCE LINES */
+
+  drawArrow(
+    x1+40,
+    y,
+    x1+110,
+    y
+  );
+
+  drawArrow(
+    x2-40,
+    y,
+    x2-110,
+    y
+  );
+
+
+  /* MASS 1 */
+
+  ctx.beginPath();
+
+  ctx.arc(
+
+    x1,
+    y,
+
+    mass1/4,
+
+    0,
+    Math.PI*2
+
+  );
+
+  ctx.fillStyle =
+  "#38bdf8";
+
+  ctx.shadowBlur = 30;
+
+  ctx.shadowColor =
+  "#38bdf8";
+
+  ctx.fill();
+
+
+  /* MASS 2 */
+
+  ctx.beginPath();
+
+  ctx.arc(
+
+    x2,
+    y,
+
+    mass2/4,
+
+    0,
+    Math.PI*2
+
+  );
+
+  ctx.fillStyle =
+  "#60a5fa";
+
+  ctx.shadowBlur = 30;
+
+  ctx.shadowColor =
+  "#60a5fa";
+
+  ctx.fill();
+
+
+  /* FORCE */
+
+  const G = 6.67;
+
+  const force =
+
+  G *
+
+  (mass1*mass2) /
+
+  ((distance/100)*(distance/100));
+
+
+  forceInfo.innerHTML =
+
+  "Force: " +
+
+  force.toFixed(2)
+
+  + " N";
+
+
+  distanceInfo.innerHTML =
+
+  "Distance: " +
+
+  distance.toFixed(0);
+
+
+  requestAnimationFrame(
+    animate
+  );
+
+}
+
+
+animate();
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktiv O'yinlar | OliyFizika.uz</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(135deg,#0f172a,#1e293b);
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+        }
+
+        .container{
+            width:100%;
+            max-width:1000px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:10px;
+            font-size:2.5rem;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#cbd5e1;
+            margin-bottom:40px;
+        }
+
+        .games-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .game-card{
+            background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(10px);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:20px;
+            padding:25px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .game-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 10px 25px rgba(0,255,255,0.2);
+        }
+
+        .icon{
+            font-size:3rem;
+            margin-bottom:15px;
+        }
+
+        .game-card h3{
+            margin-bottom:10px;
+        }
+
+        .game-card p{
+            color:#cbd5e1;
+            font-size:14px;
+            margin-bottom:20px;
+            min-height:40px;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .play-btn{
+            background:#22c55e;
+            color:white;
+        }
+
+        .play-btn:hover{
+            background:#16a34a;
+        }
+
+        .soon-btn{
+            background:#475569;
+            color:white;
+            cursor:not-allowed;
+        }
+
+        .footer{
+            margin-top:40px;
+            text-align:center;
+        }
+
+        .back-btn{
+            display:inline-block;
+            text-decoration:none;
+            color:white;
+            background:#2563eb;
+            padding:12px 25px;
+            border-radius:12px;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            background:#1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🧩 Interaktiv O'yinlar</h1>
+    <p class="subtitle">
+        Fizikani o'yin orqali o'rganing
+    </p>
+
+    <div class="games-grid">
+
+        <div class="game-card">
+            <div class="icon">🎯</div>
+            <h3>Formula Hunt</h3>
+            <p>Formulalarni toping va bilimingizni sinab ko'ring.</p>
+
+            <a href="formula-hunt.html" class="btn play-btn">
+                O'ynash
+            </a>
+        </div>
+
+
+        <div class="game-card">
+             <div class="icon">🪢</div>
+             <h3>Arqon Tortish</h3>
+             <p>Ikki o‘quvchi fizikadan bellashadi.</p>
+
+             <a href="arqon-tortish.html" class="btn play-btn">
+                 O'ynash
+            </a>
+        </div>
+
+        <div class="game-card">
+            <div class="icon">⚔️</div>
+            <h3>Fizika Battle</h3>
+            <p>Vaqtga qarshi fizik testlar.</p>
+
+            <button class="btn soon-btn">
+                Tez kunda
+            </button>
+        </div>
+
+        <div class="game-card">
+            <div class="icon">💪</div>
+            <h3>Kuchni Top</h3>
+            <p>Massa va tezlanishdan kuchni hisoblang.</p>
+
+            <button class="btn soon-btn">
+                Tez kunda
+            </button>
+        </div>
+
+        <div class="game-card">
+            <div class="icon">🚀</div>
+            <h3>Raketani Uchirish</h3>
+            <p>Nishonga raketa uchirib fizikani o'rganing.</p>
+
+            <button class="btn soon-btn">
+                Tez kunda
+            </button>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <a href="../index.html" class="back-btn">
+            ⬅ Asosiy sahifaga qaytish
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

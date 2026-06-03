@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Coulomb Law | OliyFizika.uz</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(135deg,#020817,#07122f,#020817);
+
+  color:white;
+
+  overflow:hidden;
+}
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
+
+  z-index:-1;
+}
+
+.container{
+
+  width:92%;
+
+  max-width:1450px;
+
+  margin:auto;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+  margin-top:20px;
+
+  padding:18px 28px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+}
+
+.logo{
+
+  font-size:38px;
+
+  font-weight:800;
+}
+
+.logo span{
+
+  color:#38bdf8;
+}
+
+.back-btn{
+
+  text-decoration:none;
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  font-weight:600;
+}
+
+
+/* MAIN */
+
+.main{
+
+  display:grid;
+
+  grid-template-columns:360px 1fr;
+
+  gap:30px;
+
+  margin-top:35px;
+}
+
+
+/* CONTROLS */
+
+.controls{
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:30px;
+
+  padding:30px;
+}
+
+.controls h2{
+
+  margin-bottom:35px;
+
+  font-size:30px;
+}
+
+.control-group{
+
+  margin-bottom:30px;
+}
+
+.control-group label{
+
+  display:block;
+
+  margin-bottom:12px;
+
+  color:#cbd5e1;
+}
+
+.control-group input{
+
+  width:100%;
+}
+
+.value{
+
+  margin-top:10px;
+
+  color:#38bdf8;
+
+  font-weight:700;
+
+  font-size:18px;
+}
+
+.start-btn{
+
+  width:100%;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.start-btn:hover{
+
+  transform:translateY(-3px);
+}
+
+
+/* CANVAS */
+
+.canvas-box{
+
+  position:relative;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+canvas{
+
+  width:100%;
+
+  height:100%;
+
+  display:block;
+}
+
+.info{
+
+  position:absolute;
+
+  top:20px;
+
+  left:20px;
+
+  background:rgba(0,0,0,.35);
+
+  padding:18px 22px;
+
+  border-radius:20px;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.info p{
+
+  margin-bottom:10px;
+
+  font-size:16px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .main{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+Oliy<span>Fizika</span>
+</div>
+
+<a href="simulations.html"
+class="back-btn">
+
+🧪 Simulyatorlar
+
+</a>
+
+</nav>
+
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<h2>
+⚡ Coulomb Law
+</h2>
+
+
+
+<div class="control-group">
+
+<label>
+1-zaryad (q₁)
+</label>
+
+<input
+type="range"
+id="charge1"
+min="-100"
+max="100"
+value="50">
+
+<div
+class="value"
+id="charge1Value">
+
+50
+
+</div>
+
+</div>
+
+
+
+<div class="control-group">
+
+<label>
+2-zaryad (q₂)
+</label>
+
+<input
+type="range"
+id="charge2"
+min="-100"
+max="100"
+value="-50">
+
+<div
+class="value"
+id="charge2Value">
+
+-50
+
+</div>
+
+</div>
+
+
+
+<div class="control-group">
+
+<label>
+Masofa
+</label>
+
+<input
+type="range"
+id="distance"
+min="100"
+max="500"
+value="250">
+
+<div
+class="value"
+id="distanceValue">
+
+250
+
+</div>
+
+</div>
+
+
+
+<button
+class="start-btn"
+id="startBtn">
+
+🚀 Boshlash
+
+</button>
+
+</div>
+
+
+
+<!-- CANVAS -->
+
+<div class="canvas-box">
+
+<div class="info">
+
+<p id="forceInfo">
+Force: 0 N
+</p>
+
+<p id="typeInfo">
+Interaction: -
+</p>
+
+</div>
+
+<canvas id="canvas">
+
+</canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const canvas =
+document.getElementById("canvas");
+
+const ctx =
+canvas.getContext("2d");
+
+
+canvas.width = 1000;
+canvas.height = 650;
+
+
+const charge1Slider =
+document.getElementById("charge1");
+
+const charge2Slider =
+document.getElementById("charge2");
+
+const distanceSlider =
+document.getElementById("distance");
+
+
+const charge1Value =
+document.getElementById("charge1Value");
+
+const charge2Value =
+document.getElementById("charge2Value");
+
+const distanceValue =
+document.getElementById("distanceValue");
+
+
+const forceInfo =
+document.getElementById("forceInfo");
+
+const typeInfo =
+document.getElementById("typeInfo");
+
+
+charge1Slider.oninput = ()=>{
+
+  charge1Value.innerHTML =
+  charge1Slider.value;
+
+};
+
+charge2Slider.oninput = ()=>{
+
+  charge2Value.innerHTML =
+  charge2Slider.value;
+
+};
+
+distanceSlider.oninput = ()=>{
+
+  distanceValue.innerHTML =
+  distanceSlider.value;
+
+};
+
+
+
+let q1 = 50;
+
+let q2 = -50;
+
+let distance = 250;
+
+
+
+document
+.getElementById("startBtn")
+.addEventListener("click", ()=>{
+
+  q1 =
+  parseFloat(charge1Slider.value);
+
+  q2 =
+  parseFloat(charge2Slider.value);
+
+  distance =
+  parseFloat(distanceSlider.value);
+
+});
+
+
+
+function drawArrow(x1,y1,x2,y2,color){
+
+  ctx.beginPath();
+
+  ctx.moveTo(x1,y1);
+
+  ctx.lineTo(x2,y2);
+
+  ctx.strokeStyle = color;
+
+  ctx.lineWidth = 4;
+
+  ctx.stroke();
+
+}
+
+
+
+function animate(){
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  const centerY = 325;
+
+
+  const x1 =
+  500 - distance/2;
+
+  const x2 =
+  500 + distance/2;
+
+
+  /* FORCE */
+
+  const k = 9;
+
+  const force =
+
+  k *
+
+  Math.abs(q1*q2) /
+
+  ((distance/100)*(distance/100));
+
+
+  const attraction =
+  q1*q2 < 0;
+
+
+  /* FIELD LINE */
+
+  ctx.beginPath();
+
+  ctx.moveTo(x1,centerY);
+
+  ctx.lineTo(x2,centerY);
+
+  ctx.strokeStyle =
+  "rgba(255,255,255,.2)";
+
+  ctx.lineWidth = 2;
+
+  ctx.stroke();
+
+
+  /* ARROWS */
+
+  if(attraction){
+
+    drawArrow(
+      x1+40,
+      centerY,
+      x1+120,
+      centerY,
+      "#38bdf8"
+    );
+
+    drawArrow(
+      x2-40,
+      centerY,
+      x2-120,
+      centerY,
+      "#38bdf8"
+    );
+  }
+
+  else{
+
+    drawArrow(
+      x1+120,
+      centerY,
+      x1+40,
+      centerY,
+      "#f87171"
+    );
+
+    drawArrow(
+      x2-120,
+      centerY,
+      x2-40,
+      centerY,
+      "#f87171"
+    );
+
+  }
+
+
+  /* CHARGE 1 */
+
+  ctx.beginPath();
+
+  ctx.arc(
+
+    x1,
+    centerY,
+
+    40,
+
+    0,
+    Math.PI*2
+
+  );
+
+  ctx.fillStyle =
+
+  q1 > 0 ?
+
+  "#38bdf8" :
+
+  "#f87171";
+
+  ctx.shadowBlur = 30;
+
+  ctx.shadowColor =
+  ctx.fillStyle;
+
+  ctx.fill();
+
+
+  /* SYMBOL */
+
+  ctx.fillStyle =
+  "white";
+
+  ctx.font =
+  "32px Poppins";
+
+  ctx.textAlign =
+  "center";
+
+  ctx.fillText(
+
+    q1 > 0 ? "+" : "−",
+
+    x1,
+    centerY + 10
+
+  );
+
+
+  /* CHARGE 2 */
+
+  ctx.beginPath();
+
+  ctx.arc(
+
+    x2,
+    centerY,
+
+    40,
+
+    0,
+    Math.PI*2
+
+  );
+
+  ctx.fillStyle =
+
+  q2 > 0 ?
+
+  "#38bdf8" :
+
+  "#f87171";
+
+  ctx.shadowBlur = 30;
+
+  ctx.shadowColor =
+  ctx.fillStyle;
+
+  ctx.fill();
+
+
+  ctx.fillStyle =
+  "white";
+
+  ctx.fillText(
+
+    q2 > 0 ? "+" : "−",
+
+    x2,
+    centerY + 10
+
+  );
+
+
+  /* INFO */
+
+  forceInfo.innerHTML =
+
+  "Force: " +
+
+  force.toFixed(2)
+
+  + " N";
+
+
+  typeInfo.innerHTML =
+
+  attraction ?
+
+  "Interaction: Attraction" :
+
+  "Interaction: Repulsion";
+
+
+  requestAnimationFrame(
+    animate
+  );
+
+}
+
+
+animate();
+
+</script>
+
+</body>
+</html>
+

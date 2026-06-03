@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Pendulum Simulator | OliyFizika.uz</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(135deg,#020817,#07122f,#020817);
+
+  color:white;
+
+  overflow:hidden;
+}
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
+
+  z-index:-1;
+}
+
+.container{
+
+  width:92%;
+
+  max-width:1450px;
+
+  margin:auto;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+  margin-top:20px;
+
+  padding:18px 28px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+}
+
+.logo{
+
+  font-size:38px;
+
+  font-weight:800;
+}
+
+.logo span{
+
+  color:#38bdf8;
+}
+
+.back-btn{
+
+  text-decoration:none;
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  font-weight:600;
+}
+
+
+/* MAIN */
+
+.main{
+
+  display:grid;
+
+  grid-template-columns:360px 1fr;
+
+  gap:30px;
+
+  margin-top:35px;
+}
+
+
+/* CONTROLS */
+
+.controls{
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:30px;
+
+  padding:30px;
+}
+
+.controls h2{
+
+  margin-bottom:35px;
+
+  font-size:30px;
+}
+
+.control-group{
+
+  margin-bottom:30px;
+}
+
+.control-group label{
+
+  display:block;
+
+  margin-bottom:12px;
+
+  color:#cbd5e1;
+}
+
+.control-group input{
+
+  width:100%;
+}
+
+.value{
+
+  margin-top:10px;
+
+  color:#38bdf8;
+
+  font-weight:700;
+
+  font-size:18px;
+}
+
+.start-btn{
+
+  width:100%;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.start-btn:hover{
+
+  transform:translateY(-3px);
+}
+
+
+/* CANVAS */
+
+.canvas-box{
+
+  position:relative;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+canvas{
+
+  width:100%;
+
+  height:100%;
+
+  display:block;
+}
+
+.info{
+
+  position:absolute;
+
+  top:20px;
+
+  left:20px;
+
+  background:rgba(0,0,0,.35);
+
+  padding:18px 22px;
+
+  border-radius:20px;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.info p{
+
+  margin-bottom:10px;
+
+  font-size:16px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .main{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+Oliy<span>Fizika</span>
+</div>
+
+<a href="simulations.html"
+class="back-btn">
+
+🧪 Simulyatorlar
+
+</a>
+
+</nav>
+
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<h2>
+⚙️ Pendulum Simulator
+</h2>
+
+
+
+<div class="control-group">
+
+<label>
+Uzunlik (m)
+</label>
+
+<input
+type="range"
+id="length"
+min="1"
+max="10"
+value="5">
+
+<div
+class="value"
+id="lengthValue">
+
+5 m
+
+</div>
+
+</div>
+
+
+
+<div class="control-group">
+
+<label>
+Boshlang‘ich burchak (°)
+</label>
+
+<input
+type="range"
+id="angle"
+min="5"
+max="60"
+value="30">
+
+<div
+class="value"
+id="angleValue">
+
+30°
+
+</div>
+
+</div>
+
+
+
+<div class="control-group">
+
+<label>
+Gravitatsiya (m/s²)
+</label>
+
+<input
+type="range"
+id="gravity"
+min="1"
+max="20"
+step="0.1"
+value="9.8">
+
+<div
+class="value"
+id="gravityValue">
+
+9.8 m/s²
+
+</div>
+
+</div>
+
+
+
+<button
+class="start-btn"
+id="startBtn">
+
+🚀 Boshlash
+
+</button>
+
+</div>
+
+
+
+<!-- CANVAS -->
+
+<div class="canvas-box">
+
+<div class="info">
+
+<p id="periodInfo">
+Period: 0 s
+</p>
+
+<p id="angleInfo">
+Angle: 0°
+</p>
+
+</div>
+
+<canvas id="canvas">
+
+</canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const canvas =
+document.getElementById("canvas");
+
+const ctx =
+canvas.getContext("2d");
+
+
+canvas.width = 1000;
+canvas.height = 650;
+
+
+const lengthSlider =
+document.getElementById("length");
+
+const angleSlider =
+document.getElementById("angle");
+
+const gravitySlider =
+document.getElementById("gravity");
+
+
+const lengthValue =
+document.getElementById("lengthValue");
+
+const angleValue =
+document.getElementById("angleValue");
+
+const gravityValue =
+document.getElementById("gravityValue");
+
+
+const periodInfo =
+document.getElementById("periodInfo");
+
+const angleInfo =
+document.getElementById("angleInfo");
+
+
+lengthSlider.oninput = ()=>{
+
+  lengthValue.innerHTML =
+  lengthSlider.value + " m";
+
+};
+
+angleSlider.oninput = ()=>{
+
+  angleValue.innerHTML =
+  angleSlider.value + "°";
+
+};
+
+gravitySlider.oninput = ()=>{
+
+  gravityValue.innerHTML =
+  gravitySlider.value + " m/s²";
+
+};
+
+
+
+let pendulum = {
+
+  length:5,
+  angle:30 * Math.PI/180,
+  velocity:0,
+  gravity:9.8
+
+};
+
+
+
+document
+.getElementById("startBtn")
+.addEventListener("click", ()=>{
+
+  pendulum.length =
+  parseFloat(lengthSlider.value);
+
+  pendulum.angle =
+  parseFloat(angleSlider.value)
+  * Math.PI/180;
+
+  pendulum.gravity =
+  parseFloat(gravitySlider.value);
+
+});
+
+
+
+function animate(){
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+
+  const originX = 500;
+
+  const originY = 120;
+
+
+  const lengthPx =
+  pendulum.length * 55;
+
+
+  const acceleration =
+
+  -(pendulum.gravity /
+  pendulum.length)
+
+  * Math.sin(pendulum.angle);
+
+
+  pendulum.velocity +=
+  acceleration * 0.02;
+
+
+  pendulum.angle +=
+  pendulum.velocity * 0.02;
+
+
+  const bobX =
+
+  originX +
+
+  lengthPx *
+  Math.sin(pendulum.angle);
+
+
+  const bobY =
+
+  originY +
+
+  lengthPx *
+  Math.cos(pendulum.angle);
+
+
+  /* STRING */
+
+  ctx.beginPath();
+
+  ctx.moveTo(originX,originY);
+
+  ctx.lineTo(bobX,bobY);
+
+  ctx.lineWidth = 4;
+
+  ctx.strokeStyle = "#cbd5e1";
+
+  ctx.stroke();
+
+
+  /* PIVOT */
+
+  ctx.beginPath();
+
+  ctx.arc(
+
+    originX,
+    originY,
+
+    10,
+
+    0,
+    Math.PI*2
+
+  );
+
+  ctx.fillStyle =
+  "#ffffff";
+
+  ctx.fill();
+
+
+  /* BOB */
+
+  ctx.beginPath();
+
+  ctx.arc(
+
+    bobX,
+    bobY,
+
+    28,
+
+    0,
+    Math.PI*2
+
+  );
+
+  ctx.fillStyle =
+  "#38bdf8";
+
+  ctx.shadowBlur = 30;
+
+  ctx.shadowColor =
+  "#38bdf8";
+
+  ctx.fill();
+
+
+  /* INFO */
+
+  const period =
+
+  2*Math.PI*
+
+  Math.sqrt(
+    pendulum.length /
+    pendulum.gravity
+  );
+
+
+  periodInfo.innerHTML =
+
+  "Period: " +
+
+  period.toFixed(2)
+
+  + " s";
+
+
+  angleInfo.innerHTML =
+
+  "Angle: " +
+
+  (pendulum.angle*180/Math.PI)
+  .toFixed(1)
+
+  + "°";
+
+
+  requestAnimationFrame(
+    animate
+  );
+
+}
+
+
+animate();
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Umumiy fizika | OliyFizika.uz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#020817;
+      color:white;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+        linear-gradient(135deg,#020817,#07122f,#020817);
+      z-index:-2;
+    }
+
+    .stars{
+      position:fixed;
+      inset:0;
+      background-image:
+        radial-gradient(white 1px,transparent 1px);
+      background-size:40px 40px;
+      opacity:.12;
+      z-index:-1;
+    }
+
+    .container{
+      width:92%;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      margin-top:20px;
+      padding:18px 28px;
+      border-radius:24px;
+      background:rgba(5,12,35,.75);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:38px;
+      font-weight:800;
+    }
+
+    .logo span{
+      color:#1d9cff;
+    }
+
+    .back-btn{
+      text-decoration:none;
+      color:white;
+      padding:14px 24px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#1d4fff,#2797ff);
+      transition:.3s;
+      box-shadow:0 0 20px rgba(37,99,235,.4);
+    }
+
+    .back-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* HERO */
+
+    .hero{
+      text-align:center;
+      padding:90px 0 70px;
+    }
+
+    .hero h1{
+      font-size:72px;
+      margin-bottom:20px;
+      font-weight:800;
+    }
+
+    .hero h1 span{
+      background:linear-gradient(to right,#38bdf8,#2563eb);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      font-size:22px;
+      color:#cbd5e1;
+      max-width:850px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /* SUBJECTS */
+
+    .subjects{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+      margin-bottom:80px;
+    }
+
+    .subject-card{
+      position:relative;
+      overflow:hidden;
+
+      padding:40px 35px;
+      border-radius:28px;
+
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+
+      backdrop-filter:blur(18px);
+
+      text-decoration:none;
+      color:white;
+
+      transition:.4s;
+    }
+
+    .subject-card:hover{
+      transform:translateY(-10px) scale(1.02);
+      box-shadow:0 0 40px rgba(37,99,235,.3);
+    }
+
+    .subject-card::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      top:-100px;
+      right:-100px;
+      filter:blur(45px);
+      opacity:.5;
+    }
+
+    .mechanics::before{
+      background:#00c2ff;
+    }
+
+    .molecular::before{
+      background:#8b5cf6;
+    }
+
+    .electro::before{
+      background:#2563eb;
+    }
+
+    .optics::before{
+      background:#f43f5e;
+    }
+
+    .nuclear::before{
+      background:#f59e0b;
+    }
+
+    .subject-icon{
+      font-size:65px;
+      margin-bottom:25px;
+    }
+
+    .subject-title{
+      font-size:34px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+
+    .subject-desc{
+      color:#cbd5e1;
+      line-height:1.8;
+      font-size:16px;
+    }
+
+    .arrow{
+      position:absolute;
+      right:30px;
+      bottom:25px;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.15);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-size:22px;
+      transition:.3s;
+    }
+
+    .subject-card:hover .arrow{
+      transform:translateX(5px);
+      background:#2563eb;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1100px){
+
+      .subjects{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .hero h1{
+        font-size:54px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .subjects{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+
+  <div class="container">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+      <div class="logo">
+        Oliy<span>Fizika</span>.uz
+      </div>
+
+      <a href="index.html" class="back-btn">
+        ← Bosh sahifaga qaytish
+      </a>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <h1>
+        <span>Umumiy fizika</span> bo‘limi
+      </h1>
+
+      <p>
+        Fizikaning asosiy bo‘limlarini tanlang va
+        interaktiv darslar, formulalar hamda testlar orqali bilimlaringizni mustahkamlang.
+      </p>
+
+    </section>
+
+    <!-- SUBJECTS -->
+
+    <section class="subjects">
+
+      <!-- MEXANIKA -->
+
+      <a href="mexanika.html" class="subject-card mechanics">
+
+        <div class="subject-icon">⚙️</div>
+
+        <div class="subject-title">
+          Mexanika
+        </div>
+
+        <div class="subject-desc">
+          Harakat, kuch, energiya, impuls va Nyuton qonunlarini o‘rganing.
+        </div>
+
+        <div class="arrow">→</div>
+
+      </a>
+
+      <!-- MOLEKULYAR -->
+
+      <a href="#" class="subject-card molecular">
+
+        <div class="subject-icon">🧪</div>
+
+        <div class="subject-title">
+          Molekulyar fizika
+        </div>
+
+        <div class="subject-desc">
+          Gazlar, issiqlik hodisalari va termodinamika qonunlarini o‘rganing.
+        </div>
+
+        <div class="arrow">→</div>
+
+      </a>
+
+      <!-- ELEKTRO -->
+
+      <a href="#" class="subject-card electro">
+
+        <div class="subject-icon">⚡</div>
+
+        <div class="subject-title">
+          Elektromagnitizm
+        </div>
+
+        <div class="subject-desc">
+          Elektr maydoni, tok, magnit maydon va elektromagnit hodisalar.
+        </div>
+
+        <div class="arrow">→</div>
+
+      </a>
+
+      <!-- OPTIKA -->
+
+      <a href="#" class="subject-card optics">
+
+        <div class="subject-icon">🔭</div>
+
+        <div class="subject-title">
+          Optika
+        </div>
+
+        <div class="subject-desc">
+          Yorug‘lik, linzalar, interferensiya va optik hodisalarni o‘rganing.
+        </div>
+
+        <div class="arrow">→</div>
+
+      </a>
+
+      <!-- ATOM -->
+
+      <a href="#" class="subject-card nuclear">
+
+        <div class="subject-icon">☢️</div>
+
+        <div class="subject-title">
+          Atom yadro fizikasi
+        </div>
+
+        <div class="subject-desc">
+          Atom tuzilishi, radioaktivlik va yadro reaksiyalarini o‘rganing.
+        </div>
+
+        <div class="arrow">→</div>
+
+      </a>
+
+    </section>
+
+  </div>
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="auth-check.js"></script>
+
+</body>
+</html>

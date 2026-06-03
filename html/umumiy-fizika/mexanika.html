@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mexanika | OliyFizika.uz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#020817;
+  color:white;
+  min-height:100vh;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+  z-index:-2;
+}
+
+.container{
+  width:92%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.navbar{
+  margin-top:20px;
+  padding:18px 28px;
+  border-radius:24px;
+  background:rgba(5,12,35,.75);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:38px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#1d9cff;
+}
+
+.back-btn{
+  text-decoration:none;
+  color:white;
+  padding:14px 24px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#1d4fff,#2797ff);
+}
+
+.hero{
+  text-align:center;
+  padding:70px 0 50px;
+}
+
+.hero h1{
+  font-size:64px;
+  margin-bottom:20px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  background:linear-gradient(to right,#38bdf8,#2563eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#cbd5e1;
+  font-size:20px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.videos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+  margin-bottom:80px;
+}
+
+.video-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  overflow:hidden;
+  backdrop-filter:blur(12px);
+  transition:.3s;
+}
+
+.video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 35px rgba(37,99,235,.25);
+}
+
+iframe{
+  width:100%;
+  height:320px;
+  border:none;
+}
+
+.video-info{
+  padding:22px;
+}
+
+.video-info h3{
+  font-size:22px;
+  line-height:1.5;
+}
+
+
+/* PDF BUTTON */
+
+.pdf-btn,
+.test-btn{
+
+  display:block;
+
+  text-decoration:none;
+
+  text-align:center;
+
+  padding:14px;
+
+  border-radius:14px;
+
+  margin-top:15px;
+
+  font-weight:600;
+
+  transition:.3s;
+}
+
+.pdf-btn{
+
+  background:#1e293b;
+
+  color:white;
+}
+
+.test-btn{
+
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+  color:white;
+}
+
+.pdf-btn:hover,
+.test-btn:hover{
+
+  transform:translateY(-2px);
+}
+
+
+/* LOCKED LESSON */
+
+.locked{
+
+  opacity:.4;
+
+  pointer-events:none;
+
+  position:relative;
+
+  filter:blur(2px);
+}
+
+.locked::after{
+
+  content:"🔒 Locked";
+
+  position:absolute;
+
+  top:20px;
+
+  right:20px;
+
+  background:#ef4444;
+
+  color:white;
+
+  padding:10px 16px;
+
+  border-radius:12px;
+
+  font-size:14px;
+
+  font-weight:600;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .videos{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+}
+
+</style>
+
+  <div class="container">
+
+    <nav class="navbar">
+
+      <div class="logo">
+        Oliy<span>Fizika</span>.uz
+      </div>
+
+      <a href="umumiy-fizika.html" class="back-btn">
+        ← Orqaga qaytish
+      </a>
+
+    </nav>
+
+    <section class="hero">
+
+      <h1>
+        <span>Mexanika</span> darslari
+      </h1>
+
+      <p>
+        Mexanika bo'yicha barcha video darslar.
+      </p>
+
+    </section>
+    <!-- VIDEOLAR -->
+
+<section class="videos">
+
+  <!-- 1 -->
+
+  <div class="video-card">
+
+  <iframe
+    src="https://www.youtube.com/embed/08NF0MZhokQ"
+    allowfullscreen>
+  </iframe>
+
+  <div class="video-info">
+
+    <h3>
+      1-mavzu | Mexanik harakat
+    </h3>
+
+    <a href="Amaliy mashg'ulot/Mexanik harakat.pdf"
+       target="_blank"
+       class="pdf-btn">
+
+       📄 Amaliy mashg'ulot PDF
+
+    </a>
+
+    <a href="test-1.html"
+       class="test-btn">
+
+       📝 Testni boshlash
+
+    </a>
+
+  </div>
+
+</div>4
+
+  <!-- 2 -->
+
+  <div class="video-card locked" id="lesson2">
+    <iframe src="https://www.youtube.com/embed/9hnd43lUYpY" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>2-mavzu | To'g'ri chiziqli tekis harakat</h3>
+    </div>
+  </div>
+
+  <!-- 3 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/YNNsp1MDDZs" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>3-mavzu | To'g'ri chiziqli harakatni grafik ravishda tasvirlash</h3>
+    </div>
+  </div>
+
+  <!-- 4 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/wqHM2sDHCnE" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>4-mavzu | Tekis o'zgaruvchan harakat. Tezlanish</h3>
+    </div>
+  </div>
+
+  <!-- 5 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/y6BpNuLgMJo" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>5-mavzu | Tekis o'zgaruvchan harakatda ko'chish</h3>
+    </div>
+  </div>
+
+  <!-- 6 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/OTbP8Te3A2s" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>6-mavzu | Tekis o'zgaruvchan harakatni grafik ravishda tasvirlash</h3>
+    </div>
+  </div>
+
+  <!-- 7 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/qZyEkJVXL8o" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>7-mavzu | Nisbiy harakat</h3>
+    </div>
+  </div>
+
+  <!-- 8 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/7Tvz6IJGvd0" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>8-mavzu | Egri chiziqli harakat</h3>
+    </div>
+  </div>
+
+  <!-- 9 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/ueSnoH0wjV8" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>9-mavzu | Aylanma harakatni uzatish</h3>
+    </div>
+  </div>
+
+  <!-- 10 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/XPKT36VymyE" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>10-mavzu | Aylana bo'ylab notekis harakat</h3>
+    </div>
+  </div>
+
+  <!-- 11 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/ijNFthEfTNI" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>11-mavzu | Kuch. Nyutonning birinchi qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 12 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/sguR_54X3xY" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>12-mavzu | Nyutonning ikkinchi qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 13 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/x6oBZB4sqAQ" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>13-mavzu | Butun olam tortishish qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 14 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/VONCCEX-FwI" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>14-mavzu | Elastiklik kuchi. Guk qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 15 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/niSTvbnML14" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>15-mavzu | Vertikal harakat</h3>
+    </div>
+  </div>
+
+  <!-- 15.1 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/-Tdxh9z63r0" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>15.1-mavzu | Masala yechishdagi qonuniyatlar</h3>
+    </div>
+  </div>
+
+  <!-- 16 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/GYI-g55nYIg" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>16-mavzu | Burchak ostida otilgan jism</h3>
+    </div>
+  </div>
+
+  <!-- 17 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/lcvwoYL7wTE" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>17-mavzu | Ishqalanish kuchlari</h3>
+    </div>
+  </div>
+
+  <!-- 18 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/cc_KNfaNP2Q" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>18-mavzu | Bir nechta kuch ta'siri</h3>
+    </div>
+  </div>
+
+  <!-- 19 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/hIYNWyl6uNw" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>19-mavzu | Muvozanat shartlari</h3>
+    </div>
+  </div>
+
+  <!-- 20 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/GHO7Blk_YeA" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>20-mavzu | Impulsning saqlanish qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 21 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/NoC-7I8521g" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>21-mavzu | Mexanik ish va energiya</h3>
+    </div>
+  </div>
+
+  <!-- 22 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/x8MfBrBGULg" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>22-mavzu | Prujina potensial energiyasi</h3>
+    </div>
+  </div>
+
+  <!-- 23 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/VFxrUrrWqDM" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>23-mavzu | Quvvat va FIK</h3>
+    </div>
+  </div>
+
+  <!-- 24 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/zZC8Xlc68xY" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>24-mavzu | Bosim. Paskal qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 25 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/UmYG_rFTOQk" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>25-mavzu | Gidrostatik bosim</h3>
+    </div>
+  </div>
+
+  <!-- 26 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/Et5tKMzZQ0k" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>26-mavzu | Atmosfera bosimi</h3>
+    </div>
+  </div>
+
+  <!-- 27 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/JlR-tSyZ5ww" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>27-mavzu | Tutash idishlar</h3>
+    </div>
+  </div>
+
+  <!-- 28 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/trMV-Jc_ESM" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>28-mavzu | Gidravlik press</h3>
+    </div>
+  </div>
+
+  <!-- 29 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/CHyw0RFhS34" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>29-mavzu | Arximed kuchi</h3>
+    </div>
+  </div>
+
+  <!-- 30 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/qlBn-e5HnOc" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>30-mavzu | Bernulli qonuni</h3>
+    </div>
+  </div>
+
+  <!-- 31 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/rFH_f9mS8n0" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>31-mavzu | Garmonik tebranishlar</h3>
+    </div>
+  </div>
+
+  <!-- 32 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/hAzxj4vg980" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>32-mavzu | Matematik mayatnik</h3>
+    </div>
+  </div>
+
+  <!-- 33 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/AKNDZD2WH80" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>33-mavzu | Prujinali mayatnik</h3>
+    </div>
+  </div>
+
+  <!-- 34 -->
+
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/zSufU3WnQC0" allowfullscreen></iframe>
+    <div class="video-info">
+      <h3>34-mavzu | To'lqin uzunligi</h3>
+    </div>
+  </div>
+
+</section>
+
+    <!-- SHU YERGA MEN YUBORGAN VIDEO KODINI QO'YASIZ -->
+
+  </div>
+
+<script>
+
+if(
+  localStorage.getItem("lesson2Unlocked")
+  === "true"
+){
+
+  document
+  .getElementById("lesson2")
+  .classList.remove("locked");
+
+}
+
+</script>
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="auth-check.js"></script>
+
+</body>
+
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Profil | OliyFizika.uz</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(135deg,#020817,#07122f,#020817);
+
+  color:white;
+
+  overflow-x:hidden;
+}
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
+
+  z-index:-1;
+}
+
+.container{
+
+  width:92%;
+
+  max-width:1200px;
+
+  margin:auto;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+  margin-top:20px;
+
+  padding:18px 28px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+}
+
+.logo{
+
+  font-size:38px;
+
+  font-weight:800;
+}
+
+.logo span{
+
+  color:#38bdf8;
+}
+
+.home-btn{
+
+  text-decoration:none;
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  font-weight:600;
+}
+
+
+/* PROFILE */
+
+.profile-box{
+
+  margin-top:40px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:34px;
+
+  padding:45px;
+}
+
+.profile-top{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:35px;
+
+  margin-bottom:45px;
+}
+
+.avatar{
+
+  width:150px;
+
+  height:150px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(135deg,#2563eb,#38bdf8);
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:60px;
+
+  font-weight:800;
+
+  box-shadow:
+  0 0 40px rgba(37,99,235,.45);
+}
+
+.profile-info h1{
+
+  font-size:52px;
+
+  margin-bottom:12px;
+}
+
+.profile-info p{
+
+  color:#cbd5e1;
+
+  font-size:18px;
+
+  margin-bottom:10px;
+}
+
+.username{
+
+  color:#38bdf8 !important;
+
+  font-weight:700;
+}
+
+
+/* STATS */
+
+.stats{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:25px;
+
+  margin-top:30px;
+}
+
+.stat-card{
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:28px;
+
+  padding:35px;
+
+  text-align:center;
+}
+
+.stat-card h2{
+
+  font-size:52px;
+
+  margin-bottom:12px;
+
+  color:#38bdf8;
+}
+
+.stat-card p{
+
+  color:#cbd5e1;
+
+  font-size:18px;
+}
+
+
+/* LOGOUT */
+
+.logout-btn{
+
+  margin-top:35px;
+
+  width:100%;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#ef4444,#dc2626);
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.logout-btn:hover{
+
+  transform:translateY(-3px);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .profile-top{
+
+    flex-direction:column;
+
+    text-align:center;
+  }
+
+  .stats{
+
+    grid-template-columns:1fr;
+  }
+
+  .profile-info h1{
+
+    font-size:38px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+Oliy<span>Fizika</span>
+</div>
+
+<a href="index.html"
+class="home-btn">
+
+🏠 Bosh sahifa
+
+</a>
+
+</nav>
+
+
+
+<!-- PROFILE -->
+
+<div class="profile-box">
+
+
+<div class="profile-top">
+
+<div class="avatar"
+id="avatar">
+
+U
+
+</div>
+
+
+<div class="profile-info">
+
+<h1 id="fullname">
+Foydalanuvchi
+</h1>
+
+<p id="email">
+email@gmail.com
+</p>
+
+<p
+class="username"
+id="username">
+
+@username
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h2 id="level">
+1
+</h2>
+
+<p>
+Level
+</p>
+
+</div>
+
+
+<div class="stat-card">
+
+<h2 id="xp">
+0
+</h2>
+
+<p>
+XP Ball
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- LOGOUT -->
+
+<button
+class="logout-btn"
+id="logoutBtn">
+
+🚪 Akkountdan chiqish
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<script type="module">
+
+import {
+
+  auth,
+  db
+
+}
+
+from "./js/firebase.js";
+
+
+import {
+
+  onAuthStateChanged,
+  signOut
+
+}
+
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+import {
+
+  doc,
+  getDoc
+
+}
+
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+
+const fullname =
+document.getElementById("fullname");
+
+const email =
+document.getElementById("email");
+
+const username =
+document.getElementById("username");
+
+const avatar =
+document.getElementById("avatar");
+
+const level =
+document.getElementById("level");
+
+const xp =
+document.getElementById("xp");
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+
+
+onAuthStateChanged(auth, async (user)=>{
+
+
+  if(user){
+
+
+    const docRef =
+    doc(db, "users", user.uid);
+
+    const docSnap =
+    await getDoc(docRef);
+
+
+
+    if(docSnap.exists()){
+
+
+      const data =
+      docSnap.data();
+
+
+
+      fullname.innerHTML =
+
+      data.firstName + " " +
+      data.lastName;
+
+
+
+      email.innerHTML =
+      data.email;
+
+
+
+      username.innerHTML =
+      "@" + data.username;
+
+
+
+      avatar.innerHTML =
+
+      data.firstName
+      .charAt(0)
+      .toUpperCase();
+
+
+
+      level.innerHTML =
+      data.level || 1;
+
+
+
+      xp.innerHTML =
+      data.xp || 0;
+
+    }
+
+  }
+
+
+  else{
+
+    window.location.href =
+    "login.html";
+
+  }
+
+});
+
+
+
+logoutBtn.addEventListener("click", async ()=>{
+
+  await signOut(auth);
+
+  window.location.href =
+  "login.html";
+
+});
+
+</script>
+
+</body>
+</html>

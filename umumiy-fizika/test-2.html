@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2-Mavzu Testi | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:#020817;
+  color:white;
+  padding:36px 20px;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+  z-index:-1;
+}
+
+.quiz-container{
+  width:100%;
+  max-width:1020px;
+  margin:auto;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:36px;
+}
+
+.back-link{
+  color:white;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+h1{
+  font-size:44px;
+  line-height:1.2;
+}
+
+.subtitle{
+  color:#cbd5e1;
+  margin-top:10px;
+}
+
+.question{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  padding:28px;
+  border-radius:24px;
+  margin-bottom:24px;
+}
+
+.question h2{
+  margin-bottom:18px;
+  font-size:22px;
+  line-height:1.6;
+}
+
+.graph-box{
+  margin:4px 0 20px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(2,8,23,.75);
+  border:1px solid rgba(148,163,184,.24);
+  overflow-x:auto;
+}
+
+.graph-box svg{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+
+.answers{
+  display:grid;
+  gap:12px;
+}
+
+.answer-option{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:15px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.answer-option:hover{
+  background:rgba(37,99,235,.22);
+}
+
+.answer-option.correct{
+  border-color:#22c55e;
+  background:rgba(34,197,94,.18);
+}
+
+.answer-option.wrong{
+  border-color:#ef4444;
+  background:rgba(239,68,68,.18);
+}
+
+.submit-btn{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+  color:white;
+  font-size:20px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:28px;
+  padding:22px;
+  border-radius:20px;
+  text-align:center;
+  font-size:24px;
+  font-weight:700;
+  background:rgba(255,255,255,.05);
+}
+
+.result:empty{
+  display:none;
+}
+
+.result.success{
+  color:#86efac;
+}
+
+.result.error{
+  color:#fca5a5;
+}
+
+@media(max-width:720px){
+  .topbar{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  h1{
+    font-size:34px;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="quiz-container">
+  <div class="topbar">
+    <div>
+      <h1>2-Mavzu | To‘g‘ri chiziqli tekis harakat testi</h1>
+      <p class="subtitle">Kamida 80% natija 3-darsni ochadi.</p>
+    </div>
+    <a href="mexanika.html" class="back-link">Orqaga</a>
+  </div>
+
+  <div id="questions"></div>
+  <button type="button" class="submit-btn" id="submitBtn">Testni yakunlash</button>
+  <div class="result" id="result"></div>
+</main>
+
+<script type="module">
+import { renderMultipleChoiceTest } from "../js/multiple-choice-test.js";
+
+const linearDistanceGraph = `
+<svg viewBox="0 0 340 210" width="340" height="210" aria-label="Yo‘lning vaqtga bog‘lanish grafigi">
+  <rect width="340" height="210" fill="transparent"/>
+  <g stroke="rgba(255,255,255,.22)" stroke-width="1">
+    <line x1="52" y1="168" x2="300" y2="168"/>
+    <line x1="52" y1="168" x2="52" y2="24"/>
+    <path d="M52 140H300M52 112H300M52 84H300M52 56H300M52 28H300" opacity=".5"/>
+    <path d="M100 168V24M148 168V24M196 168V24M244 168V24M292 168V24" opacity=".35"/>
+  </g>
+  <path d="M52 168 L292 28" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <g fill="#e5f3ff" font-size="13">
+    <text x="28" y="31">25</text><text x="28" y="59">20</text><text x="28" y="87">15</text>
+    <text x="34" y="115">10</text><text x="40" y="143">5</text>
+    <text x="96" y="188">1</text><text x="144" y="188">2</text><text x="192" y="188">3</text>
+    <text x="240" y="188">4</text><text x="288" y="188">5</text>
+    <text x="58" y="18">s (m)</text><text x="278" y="164">t (s)</text>
+  </g>
+</svg>`;
+
+const threeObjectsGraph = `
+<svg viewBox="0 0 340 210" width="340" height="210" aria-label="Uchta jismning s-t grafigi">
+  <g stroke="rgba(255,255,255,.24)" stroke-width="1">
+    <line x1="52" y1="168" x2="300" y2="168"/>
+    <line x1="52" y1="168" x2="52" y2="24"/>
+  </g>
+  <path d="M52 168 L130 28" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <path d="M52 168 L230 42" stroke="#22c55e" stroke-width="4" fill="none"/>
+  <path d="M52 168 L292 72" stroke="#f59e0b" stroke-width="4" fill="none"/>
+  <g fill="#e5f3ff" font-size="15" font-weight="700">
+    <text x="138" y="38">1</text><text x="236" y="52">2</text><text x="298" y="82">3</text>
+    <text x="58" y="20">s</text><text x="282" y="164">t</text>
+  </g>
+</svg>`;
+
+const invalidDistanceGraphs = `
+<svg viewBox="0 0 620 180" width="620" height="180" aria-label="To‘rtta S-t grafik">
+  <g fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.3">
+    <path d="M35 132H135M35 132V32M185 132H285M185 132V32M335 132H435M335 132V32M485 132H585M485 132V32"/>
+  </g>
+  <path d="M35 132L130 42" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <path d="M185 132C215 105 250 82 282 42" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <path d="M335 42L430 132" stroke="#ef4444" stroke-width="4" fill="none"/>
+  <path d="M485 132L585 132" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <g fill="#e5f3ff" font-size="14" font-weight="700">
+    <text x="76" y="22">I</text><text x="222" y="22">II</text><text x="370" y="22">III</text><text x="522" y="22">IV</text>
+    <text x="38" y="28">S</text><text x="188" y="28">S</text><text x="338" y="28">S</text><text x="488" y="28">S</text>
+    <text x="122" y="152">t</text><text x="272" y="152">t</text><text x="422" y="152">t</text><text x="572" y="152">t</text>
+  </g>
+</svg>`;
+
+const coordinatePathGraph = `
+<svg viewBox="0 0 360 250" width="360" height="250" aria-label="Koordinata-vaqt grafigi">
+  <g stroke="rgba(255,255,255,.24)" stroke-width="1">
+    <line x1="54" y1="180" x2="314" y2="180"/>
+    <line x1="54" y1="48" x2="54" y2="220"/>
+    <path d="M54 60H314M54 100H314M54 140H314M54 220H314" opacity=".45"/>
+  </g>
+  <path d="M54 180 L104 100 L154 60 L204 180 L254 220 L304 180" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <g fill="#e5f3ff" font-size="13">
+    <text x="24" y="64">15</text><text x="24" y="104">10</text><text x="30" y="144">5</text>
+    <text x="24" y="224">-10</text><text x="100" y="198">1</text><text x="150" y="198">2</text>
+    <text x="200" y="198">3</text><text x="250" y="198">4</text><text x="300" y="198">5</text>
+    <text x="58" y="38">x, m</text><text x="286" y="174">t, s</text>
+  </g>
+</svg>`;
+
+const equationGraph = `
+<svg viewBox="0 0 340 220" width="340" height="220" aria-label="x ning t ga bog‘lanish grafigi">
+  <g stroke="rgba(255,255,255,.24)" stroke-width="1">
+    <line x1="52" y1="168" x2="300" y2="168"/>
+    <line x1="52" y1="24" x2="52" y2="184"/>
+  </g>
+  <path d="M52 48 L292 168" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <g fill="#e5f3ff" font-size="13">
+    <text x="30" y="52">6</text><text x="30" y="112">3</text>
+    <text x="96" y="188">1</text><text x="144" y="188">2</text><text x="192" y="188">3</text>
+    <text x="240" y="188">4</text><text x="288" y="188">5</text>
+    <text x="56" y="20">x, m</text><text x="280" y="162">t, s</text>
+  </g>
+</svg>`;
+
+const sectionSpeedGraph = `
+<svg viewBox="0 0 360 220" width="360" height="220" aria-label="Harakat qismlari grafigi">
+  <g stroke="rgba(255,255,255,.24)" stroke-width="1">
+    <line x1="56" y1="174" x2="320" y2="174"/>
+    <line x1="56" y1="174" x2="56" y2="32"/>
+  </g>
+  <path d="M56 150 L92 72 L142 56 L198 56 L248 94 L300 138" stroke="#38bdf8" stroke-width="4" fill="none"/>
+  <g fill="#e5f3ff" font-size="14" font-weight="700">
+    <text x="68" y="112">I</text><text x="110" y="54">II</text><text x="166" y="48">III</text>
+    <text x="218" y="82">IV</text><text x="276" y="126">V</text>
+    <text x="60" y="26">x, m</text><text x="298" y="168">t, s</text>
+  </g>
+</svg>`;
+
+const questions = [
+  {
+    text: "Qanday harakat to‘g‘ri chiziqli tekis harakat bo‘ladi?",
+    answers: [
+      "Teng vaqt oraliqlarida bir xil masofaga ko‘chuvchi va trayektoriyasi to‘g‘ri chiziqdan iborat harakat",
+      "Trayektoriyasi to‘g‘ri chiziqdan iborat harakat",
+      "Hech qanday tezlanishga ega bo‘lmagan harakat",
+      "Teng vaqt oraliqlarida teng masofalar o‘tuvchi har qanday harakat"
+    ],
+    correct: 0
+  },
+  {
+    text: "To‘g‘ri chiziqli tekis harakatda tezlik vektorining qanday kattaliklari o‘zgarmaydi?",
+    answers: [
+      "Moduli tekis oshib, yo‘nalishi o‘zgarmaydi",
+      "Moduli va yo‘nalishi o‘zgarmas saqlanadi",
+      "Moduli va yo‘nalishi o‘zgarib turadi",
+      "Moduli o‘zgarmas bo‘lib, yo‘nalishi uzluksiz o‘zgaradi"
+    ],
+    correct: 1
+  },
+  {
+    text: "918 km/h tezlik necha m/s bo‘ladi?",
+    answers: ["260", "240", "250", "255"],
+    correct: 0
+  },
+  {
+    text: "Uzunligi 9 m bo‘lgan ip boshidan jo‘nagan chumoli ip oxiriga 5 minutda yetdi. Chumolining tezligini toping.",
+    answers: ["1,8 cm/s", "3 cm/s", "3,5 cm/s", "4,5 cm/s"],
+    correct: 1
+  },
+  {
+    text: "Uzunligi 200 m bo‘lgan poyezd 10 m/s tezlik bilan 300 m tunnelga kirib bormoqda. Necha sekunddan keyin poyezd tunneldan butunlay chiqib ketadi?",
+    answers: ["50", "30", "25", "20", "10"],
+    correct: 0
+  },
+  {
+    text: "Birinchi avtomobil 4S masofani 2t vaqtda 2v tezlik bilan bosib o‘tdi. Ikkinchi avtomobil 3S yo‘lni 2t vaqtda bosib o‘tsa, uning tezligini toping.",
+    answers: ["2.25v", "2.5v", "1.5v", "0.5v", "v"],
+    correct: 2
+  },
+  {
+    text: "Uzunligi 300 m bo‘lgan, 36 km/h tezlik bilan harakatlanayotgan mashinalar qatori 60 m ko‘prikdan necha sekundda o‘tib ketadi?",
+    answers: ["30", "60", "90", "120"],
+    correct: 2
+  },
+  {
+    text: "Ikki jismning harakat tenglamalari x1 = 25 + t, x2 = 85 - 0.5t. Ularning uchrashish vaqti va joyini toping.",
+    answers: [
+      "40 s dan so‘ng, koordinata boshidan 65 m masofada",
+      "18 s dan so‘ng, koordinata boshidan 114 m masofada",
+      "10 s dan so‘ng, koordinata boshidan 5 m masofada",
+      "30 s dan so‘ng, koordinata boshidan 60 m masofada"
+    ],
+    correct: 0
+  },
+  {
+    text: "Grafik bo‘yicha bolaning t1 = 1 s va t2 = 5 s oralig‘ida bosib o‘tgan yo‘lini aniqlang.",
+    graphHtml: linearDistanceGraph,
+    answers: ["10 m", "20 m", "5 m", "15 m"],
+    correct: 1
+  },
+  {
+    text: "Grafik bo‘yicha t = 4.28 s vaqt momentidagi tezlik qanday?",
+    graphHtml: linearDistanceGraph,
+    answers: ["5 m/s", "12 m/s", "10 m/s", "6 m/s"],
+    correct: 0
+  },
+  {
+    text: "Uchta moddiy nuqtadan qaysi birining tezligi eng katta?",
+    graphHtml: threeObjectsGraph,
+    answers: ["1", "2", "3", "Hammasiniki bir xil"],
+    correct: 0
+  },
+  {
+    text: "Qaysi grafik jism o‘tgan yo‘lning vaqtga bog‘lanishini ifodalay olmaydi?",
+    graphHtml: invalidDistanceGraphs,
+    answers: ["II, III", "I, II, III", "III", "I, IV"],
+    correct: 2
+  },
+  {
+    text: "Grafikdan foydalanib OX o‘q bo‘ylab harakat qilayotgan moddiy nuqtaning 5 s da bosib o‘tgan yo‘lini aniqlang.",
+    graphHtml: coordinatePathGraph,
+    answers: ["50 m", "32.5 m", "0 m", "10 m"],
+    correct: 0
+  },
+  {
+    text: "Jism koordinatasining vaqtga bog‘liqlik grafigi uchun harakat tenglamasini yozing.",
+    graphHtml: equationGraph,
+    answers: ["x = -2 + 4t", "x = 6 + 3t", "x = -6 + 3t", "x = 6 - 2t"],
+    correct: 3
+  },
+  {
+    text: "Grafikning qaysi qismida jismning tezligi eng katta bo‘lgan?",
+    graphHtml: sectionSpeedGraph,
+    answers: ["III", "II", "I", "IV"],
+    correct: 2
+  }
+];
+
+renderMultipleChoiceTest({
+  questions,
+  form: document.getElementById("questions"),
+  result: document.getElementById("result"),
+  submitButton: document.getElementById("submitBtn"),
+  unlockLesson: 3
+});
+</script>
+</body>
+</html>
