@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pedagogika Test 2</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>📚 Pedagogika Testi</h1>
+        <p>20 ta tasodifiy savol</p>
+    </div>
+
+    <div id="quiz-container">
+
+        <div class="progress" id="progress">
+            Savol 1 / 20
+        </div>
+
+        <div class="question-card">
+
+            <div class="question" id="question">
+                Savol yuklanmoqda...
+            </div>
+
+            <div class="answers" id="answers"></div>
+
+        </div>
+
+        <div class="navigation">
+
+            <button class="nav-btn"
+                    id="prevBtn">
+                ⬅ Oldingi
+            </button>
+
+            <button class="nav-btn"
+                    id="nextBtn">
+                Keyingi ➡
+            </button>
+
+        </div>
+
+        <button class="finish-btn"
+                id="finishBtn">
+            Testni yakunlash
+        </button>
+
+    </div>
+
+    <div class="result-card"
+         id="resultCard">
+
+        <h2>Natija</h2>
+
+        <div class="score"
+             id="score">
+        </div>
+
+        <div class="stats"
+             id="stats">
+        </div>
+
+        <button class="restart-btn"
+                onclick="location.reload()">
+            Qayta ishlash
+        </button>
+
+    </div>
+
+</div>
+
+<script src="questions3.js"></script>
+
+<script>
+
+const TEST_SIZE = 20;
+
+function shuffle(array){
+    return [...array].sort(() => Math.random() - 0.5);
+}
+
+const selectedQuestions =
+shuffle(questions).slice(0, TEST_SIZE);
+
+selectedQuestions.forEach(q => {
+
+    const correctAnswer =
+        q.answers[q.correct];
+
+    q.answers =
+        shuffle(q.answers);
+
+    q.correct =
+        q.answers.indexOf(correctAnswer);
+});
+
+let currentQuestion = 0;
+let userAnswers =
+    new Array(TEST_SIZE).fill(null);
+
+const questionEl =
+    document.getElementById("question");
+
+const answersEl =
+    document.getElementById("answers");
+
+const progressEl =
+    document.getElementById("progress");
+
+function renderQuestion(){
+
+    const q =
+        selectedQuestions[currentQuestion];
+
+    progressEl.textContent =
+        `Savol ${currentQuestion + 1} / ${TEST_SIZE}`;
+
+    questionEl.textContent =
+        q.question;
+
+    answersEl.innerHTML = "";
+
+    q.answers.forEach((answer,index)=>{
+
+        const btn =
+            document.createElement("button");
+
+        btn.className =
+            "answer-btn";
+
+        btn.textContent =
+            answer;
+
+        if(userAnswers[currentQuestion]
+            === index){
+
+            btn.classList.add("selected");
+        }
+
+        btn.onclick = ()=>{
+
+            userAnswers[currentQuestion]
+                = index;
+
+            renderQuestion();
+        };
+
+        answersEl.appendChild(btn);
+    });
+}
+
+document.getElementById("nextBtn")
+.addEventListener("click",()=>{
+
+    if(currentQuestion <
+       TEST_SIZE - 1){
+
+       currentQuestion++;
+
+       renderQuestion();
+    }
+});
+
+document.getElementById("prevBtn")
+.addEventListener("click",()=>{
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        renderQuestion();
+    }
+});
+
+document.getElementById("finishBtn")
+.addEventListener("click",()=>{
+
+    let correct = 0;
+
+    selectedQuestions.forEach(
+        (q,index)=>{
+
+        if(userAnswers[index]
+            === q.correct){
+
+            correct++;
+        }
+    });
+
+    const wrong =
+        TEST_SIZE - correct;
+
+    const percent =
+        Math.round(
+        correct / TEST_SIZE * 100
+        );
+
+    document
+    .getElementById("quiz-container")
+    .style.display = "none";
+
+    document
+    .getElementById("resultCard")
+    .style.display = "block";
+
+    document
+    .getElementById("score")
+    .textContent =
+        percent + "%";
+
+    document
+    .getElementById("stats")
+    .innerHTML = `
+        ✅ To'g'ri: ${correct}<br>
+        ❌ Noto'g'ri: ${wrong}
+    `;
+});
+
+renderQuestion();
+
+</script>
+
+</body>
+</html>

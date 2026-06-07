@@ -1,0 +1,208 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top,
+    #0d2f80 0%,
+    #05153f 70%);
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.header-icon{
+    text-align:center;
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.header-icon i{
+    color:#8fb4ff;
+}
+
+h1{
+    text-align:center;
+    font-size:64px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#b7c5ea;
+    font-size:22px;
+    margin-bottom:50px;
+}
+
+.card{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+
+    border-radius:35px;
+
+    padding:40px 50px;
+    margin-bottom:40px;
+    min-height:260px;
+
+    transition:.35s;
+}
+
+.physics{
+    background:
+    linear-gradient(
+    135deg,
+    #1c66ff,
+    #032b92
+    );
+
+    border:2px solid #3d89ff;
+}
+
+.pedagogy{
+    background:
+    linear-gradient(
+    135deg,
+    #8247ff,
+    #24116f
+    );
+
+    border:2px solid #9d6cff;
+}
+
+.card:hover{
+    transform:
+    translateY(-8px)
+    scale(1.01);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+}
+
+.card-icon{
+    width:180px;
+    height:180px;
+    font-size:85px;
+    margin-right:50px;
+
+    border-radius:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:65px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    margin-right:40px;
+}
+
+.card-content{
+    flex:1;
+}
+
+.card-content h2{
+    font-size:72px;
+    margin-bottom:15px;
+}
+
+.card-content p{
+    font-size:28px;
+    color:#d9e3ff;
+    line-height:1.5;
+}
+
+.arrow{
+    width:100px;
+    height:100px;
+    font-size:40px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+}
+
+.back-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+    color:#c9d7ff;
+
+    font-size:24px;
+
+    margin-top:30px;
+}
+
+.back-btn:hover{
+    color:white;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:40px 40px;
+    opacity:.12;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:42px;
+    }
+
+    .card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .card-icon{
+        margin-right:0;
+        margin-bottom:20px;
+    }
+
+    .card-content h2{
+        font-size:40px;
+    }
+
+    .card-content p{
+        font-size:18px;
+    }
+
+    .arrow{
+        margin-top:20px;
+    }
+}

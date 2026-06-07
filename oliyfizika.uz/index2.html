@@ -264,103 +264,7 @@ body::before{
 }
 
 
-/* ATOM */
-
-.atom{
-
-  position:relative;
-
-  width:520px;
-
-  height:520px;
-}
-
-.nucleus{
-
-  position:absolute;
-
-  width:120px;
-
-  height:120px;
-
-  border-radius:50%;
-
-  background:
-  radial-gradient(circle,#60a5fa,#2563eb,#0f172a);
-
-  top:50%;
-
-  left:50%;
-
-  transform:translate(-50%,-50%);
-
-  box-shadow:
-    0 0 40px #3b82f6,
-    0 0 80px #2563eb;
-}
-
-.orbit{
-
-  position:absolute;
-
-  inset:0;
-
-  border:3px solid rgba(96,165,250,.8);
-
-  border-radius:50%;
-
-  animation:spin 10s linear infinite;
-
-  box-shadow:
-  0 0 30px rgba(59,130,246,.35);
-}
-
-.orbit:nth-child(2){
-
-  transform:rotate(60deg);
-}
-
-.orbit:nth-child(3){
-
-  transform:rotate(-60deg);
-}
-
-.electron{
-
-  width:24px;
-
-  height:24px;
-
-  border-radius:50%;
-
-  background:#7dd3fc;
-
-  position:absolute;
-
-  top:8%;
-
-  left:50%;
-
-  transform:translateX(-50%);
-
-  box-shadow:
-  0 0 25px #38bdf8;
-}
-
-@keyframes spin{
-
-  from{
-    transform:rotate(0deg);
-  }
-
-  to{
-    transform:rotate(360deg);
-  }
-
-}
-
-
-/* CARDS */
+/* Solar system styles are defined below (replaces previous atom rules) */
 
 .cards{
 
@@ -396,6 +300,98 @@ body::before{
   text-decoration:none;
 
   color:white;
+}
+
+
+/* --- Solar system styles (replaces atom visuals) --- */
+.atom{
+  width:100%;
+  max-width:1200px;
+  aspect-ratio:16/9;
+  height:auto;
+  min-height:680px;
+  position:relative;
+  background:transparent;
+  overflow:hidden;
+}
+
+.sun{
+  position:absolute;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background: radial-gradient(circle,#fff176,#ffc107,#ff6f00);
+  box-shadow: 0 0 80px rgba(255,193,7,.35), 0 0 140px rgba(255,152,0,.12) inset;
+}
+
+/* solar-specific orbit (keeps previous .orbit intact elsewhere) */
+.solar-orbit{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1.5px dashed rgba(255,255,255,.06);
+  animation:spin linear infinite;
+  transform-origin:center center;
+}
+
+/* sizes / radii for each orbit */
+.solar-orbit.orbit-1{ width:140px; height:140px; }
+.solar-orbit.orbit-2{ width:220px; height:220px; }
+.solar-orbit.orbit-3{ width:320px; height:320px; }
+.solar-orbit.orbit-4{ width:460px; height:460px; }
+
+.solar-orbit.orbit-1{ animation-duration:6s; }
+.solar-orbit.orbit-2{ animation-duration:12s; }
+.solar-orbit.orbit-3{ animation-duration:20s; }
+.solar-orbit.orbit-4{ animation-duration:30s; }
+
+.planet{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  will-change:transform;
+}
+
+.planet.mercury{ width:10px; height:10px; background:#b0bec5; box-shadow:0 0 6px rgba(176,190,197,.9);} 
+.planet.venus{ width:14px; height:14px; background:#f3c78a; box-shadow:0 0 8px rgba(243,199,138,.9);} 
+.planet.earth{ width:18px; height:18px; background:linear-gradient(180deg,#2196f3,#4fc3f7); box-shadow:0 0 10px rgba(33,150,243,.9); position:relative; }
+.planet.mars{ width:12px; height:12px; background:#e57373; box-shadow:0 0 8px rgba(229,115,115,.9);} 
+
+/* Moon orbiting the Earth */
+.moon-orbit{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:50px;
+  height:50px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  transform-origin:center center;
+  animation:spin 1.6s linear infinite;
+}
+
+.moon{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:8px;
+  height:8px;
+  background:#e0e0e0;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 6px rgba(224,224,224,.9);
+}
+
+@keyframes spin{
+  from{ transform:translate(-50%,-50%) rotate(0deg); }
+  to{ transform:translate(-50%,-50%) rotate(360deg); }
 }
 
 .card:hover{
@@ -618,9 +614,12 @@ body::before{
 
   .atom{
 
-    width:340px;
+    width:100%;
 
-    height:340px;
+    height:520px;
+
+    max-width:100%;
+
   }
 
   .cards{
@@ -693,10 +692,10 @@ Ro'yxatdan o'tish
 
 <h1>
 
-FIZIKLAR JAMYATIGA <br>
+Fizikani tushuning, <br>
 
 <span>
-XUSH KELIBSIZ!
+kelajagingni yarating!
 </span>
 
 </h1>
@@ -733,21 +732,16 @@ class="btn btn-outline big-btn">
 <div class="hero-right">
 
 <div class="atom">
-
-<div class="orbit">
-<div class="electron"></div>
-</div>
-
-<div class="orbit">
-<div class="electron"></div>
-</div>
-
-<div class="orbit">
-<div class="electron"></div>
-</div>
-
-<div class="nucleus"></div>
-
+  <canvas id="solarCanvas" style="display:block; width:100%; height:100%; background:transparent;"></canvas>
+  <div style="position:absolute;left:12px;top:12px;z-index:10;display:flex;gap:10px;align-items:center;">
+    <button id="toggleSim" class="btn btn-outline">Pause</button>
+    <label style="color:#cbd5e1;font-size:13px;display:flex;align-items:center;gap:8px">Speed
+      <input id="speedRange" type="range" min="0.2" max="3" step="0.1" value="1" style="width:120px">
+    </label>
+    <label style="color:#cbd5e1;font-size:13px;display:flex;align-items:center;gap:6px">Trails
+      <input id="trailToggle" type="checkbox" checked>
+    </label>
+  </div>
 </div>
 
 </div>
@@ -757,6 +751,130 @@ class="btn btn-outline big-btn">
 
 
 <!-- CARDS -->
+
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  const canvas = document.getElementById('solarCanvas');
+  const atom = canvas.parentElement;
+  const speedRange = document.getElementById('speedRange');
+  const trailToggle = document.getElementById('trailToggle');
+  function resize(){
+    const rect = atom.getBoundingClientRect();
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const w = Math.round(rect.width);
+    const h = Math.round(rect.height);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  const ctx = canvas.getContext('2d',{alpha:true});
+  let running = true;
+  document.getElementById('toggleSim').addEventListener('click', ()=>{
+    running = !running; document.getElementById('toggleSim').textContent = running ? 'Pause' : 'Play';
+    if(running) last = performance.now();
+  });
+
+  let last = performance.now();
+  const planets = [
+    {name:'Merkuri', color:'#e3c14f', orbitRatio:0.18, radiusRatio:0.028, period:4.5},
+    {name:'Venera', color:'#f2a14d', orbitRatio:0.32, radiusRatio:0.035, period:7.6},
+    {name:'Yer', color:'#4da6ff', orbitRatio:0.52, radiusRatio:0.045, period:11.9},
+    {name:'Mars', color:'#e26b5c', orbitRatio:0.66, radiusRatio:0.04, period:18},
+    {name:'Yupiter', color:'#f5c16c', orbitRatio:0.78, radiusRatio:0.06, period:26},
+    {name:'Saturn', color:'#d9b067', orbitRatio:0.88, radiusRatio:0.055, period:33},
+    {name:'Uran', color:'#7bd7f5', orbitRatio:0.96, radiusRatio:0.05, period:44},
+    {name:'Neptun', color:'#3e7afa', orbitRatio:1.04, radiusRatio:0.045, period:60}
+  ];
+
+  function drawOrbitRings(cx,cy,radii){
+    ctx.save(); ctx.translate(cx,cy);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)'; ctx.lineWidth = 1.4;
+    for(let r of radii){ ctx.beginPath(); ctx.arc(0,0,r,0,Math.PI*2); ctx.stroke(); }
+    ctx.restore();
+  }
+
+  function drawFrame(t){
+    const now = t || performance.now();
+    let dt = Math.min(40, now - last) / 1000;
+    last = now;
+    const speed = parseFloat(speedRange.value) || 1;
+    dt *= speed;
+    if(!running){ requestAnimationFrame(drawFrame); return; }
+
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    const cx = w/2;
+    const cy = h/2;
+    const minR = Math.min(w,h)/2;
+
+    if(trailToggle.checked){
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.fillStyle = 'rgba(0,0,0,0.03)';
+      ctx.fillRect(0,0,w,h);
+      ctx.restore();
+    } else {
+      ctx.clearRect(0,0,w,h);
+    }
+
+    ctx.save();
+    ctx.fillStyle='rgba(255,255,255,0.03)';
+    for(let i=0;i<35;i++){
+      const sx = (i*53) % w;
+      const sy = (i*89) % h;
+      ctx.fillRect(sx,sy,1,1);
+    }
+    ctx.restore();
+
+    const radii = planets.map((planet)=>(planet.orbitRatio * minR * 0.98));
+    drawOrbitRings(cx,cy,radii);
+
+    const sunR = Math.max(18, minR * 0.06);
+    ctx.beginPath(); ctx.arc(cx,cy,sunR,0,Math.PI*2);
+    const sunGrad = ctx.createRadialGradient(cx,cy,sunR*0.2,cx,cy,sunR*2.2);
+    sunGrad.addColorStop(0,'#fff9c4');
+    sunGrad.addColorStop(0.45,'#ffd54a');
+    sunGrad.addColorStop(1,'#ff8f00');
+    ctx.fillStyle = sunGrad;
+    ctx.shadowColor='rgba(255,180,0,0.8)'; ctx.shadowBlur=28;
+    ctx.fill(); ctx.shadowBlur=0; ctx.closePath();
+
+    ctx.fillStyle='rgba(255,255,255,0.9)';
+    ctx.font='13px Inter, Arial';
+    ctx.textAlign='center';
+    ctx.fillText('Quyosh',cx,cy - sunR - 12);
+
+    planets.forEach((planet,index)=>{
+      const orbitR = radii[index];
+      const angle = now/1000 * (Math.PI*2 / planet.period) + index * 0.4;
+      const px = cx + Math.cos(angle) * orbitR;
+      const py = cy + Math.sin(angle) * orbitR;
+      const pr = Math.max(5, minR * planet.radiusRatio);
+
+      ctx.beginPath(); ctx.arc(px,py,pr,0,Math.PI*2);
+      const grad = ctx.createRadialGradient(px - pr*0.25, py - pr*0.25, pr*0.15, px, py, pr*1.8);
+      grad.addColorStop(0,'#ffffff');
+      grad.addColorStop(1,planet.color);
+      ctx.fillStyle = grad;
+      ctx.fill();
+      ctx.closePath();
+
+      ctx.fillStyle='rgba(255,255,255,0.9)';
+      ctx.font='11px Inter, Arial';
+      ctx.fillText(planet.name, px, py - pr - 8);
+    });
+
+    requestAnimationFrame(drawFrame);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(drawFrame);
+});
+</script>
 
 <section class="cards">
 
@@ -820,7 +938,7 @@ tayyorlanish va test ishlash
 
 
 
-<a href="attestatsiya/attestatsiya.html"
+<a href="#"
 class="card">
 
 <div class="card-icon">
@@ -854,7 +972,7 @@ class="quick-card">
 </div>
 
 <span>
-DARSLAR
+Darslar
 </span>
 
 </a>
@@ -868,7 +986,7 @@ class="quick-card">
 </div>
 
 <span>
-SIMULYATORLAR
+Simulyatorlar
 </span>
 
 </a>
@@ -882,7 +1000,7 @@ class="quick-card">
 </div>
 
 <span>
-QUIZLAR
+Quizs
 </span>
 
 </a>
@@ -896,22 +1014,22 @@ class="quick-card">
 </div>
 
 <span>
-KUTUBXONA
+Maqolalar
 </span>
 
 </a>
 
 
-<a href="interaktiv-oyinlar/interaktiv-oyinlar.html"
+<a href="#"
 class="quick-card">
 
-    <div class="quick-icon">
-        🧩
-    </div>
+<div class="quick-icon">
+❓
+</div>
 
-    <span>
-        Interaktiv o‘yinlar
-    </span>
+<span>
+Yordam
+</span>
 
 </a>
 

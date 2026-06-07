@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quizs | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+color:white;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
+z-index:-1;
+}
+
+.container{
+width:92%;
+max-width:1500px;
+margin:auto;
+padding:20px 0 50px;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 28px;
+border-radius:24px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+margin-bottom:40px;
+}
+
+.logo{
+font-size:38px;
+font-weight:800;
+}
+
+.logo span{
+color:#38bdf8;
+}
+
+.back-btn{
+text-decoration:none;
+color:white;
+padding:14px 24px;
+border-radius:16px;
+background:linear-gradient(135deg,#2563eb,#38bdf8);
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+margin-bottom:40px;
+}
+
+.hero h1{
+font-size:68px;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#cbd5e1;
+font-size:20px;
+}
+
+/* MASTER CARD */
+
+.master-card{
+
+display:flex;
+align-items:center;
+gap:30px;
+
+padding:35px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#38bdf8
+);
+
+margin-bottom:35px;
+
+transition:.3s;
+}
+
+.master-card:hover{
+
+transform:translateY(-5px);
+}
+
+.master-icon{
+
+font-size:70px;
+}
+
+.master-card h2{
+
+font-size:40px;
+
+margin-bottom:8px;
+}
+
+/* GRID */
+
+.topic-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
+}
+
+.topic-card{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+backdrop-filter:
+blur(18px);
+
+border-radius:22px;
+
+padding:22px;
+
+text-decoration:none;
+
+color:white;
+
+min-height:150px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+transition:.3s;
+}
+
+.topic-card:hover{
+
+transform:translateY(-5px);
+
+border-color:#38bdf8;
+
+box-shadow:
+0 0 25px
+rgba(56,189,248,.3);
+}
+
+.topic-number{
+
+font-size:32px;
+
+font-weight:700;
+
+color:#38bdf8;
+
+margin-bottom:12px;
+}
+
+.topic-title{
+
+font-size:15px;
+
+line-height:1.5;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+.topic-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.topic-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.master-card{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+@media(max-width:500px){
+
+.topic-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav class="navbar">
+
+<div class="logo">
+Oliy<span>Fizika</span>
+</div>
+
+<a href="../index.html"
+class="back-btn">
+
+🏠 Bosh sahifa
+
+</a>
+
+</nav>
+
+
+<section class="hero">
+
+<h1>🧠 Quizs</h1>
+
+<p>
+
+Mavzuni tanlang va bilimlaringizni sinab ko'ring
+
+</p>
+
+</section>
+
+
+<a href="../umumiy-fizika/umumiy-fizika.html"
+class="master-card">
+
+<div class="master-icon">
+📘
+</div>
+
+<div>
+
+<h2>
+Umumiy fizika
+</h2>
+
+<p>
+
+Barcha 64 mavzudan aralash quizlar
+
+</p>
+
+</div>
+
+</a>
+
+
+<div class="topic-grid" id="topicGrid"></div>
+
+</div>
+
+
+<script>
+
+const topics = [
+
+"To'g'ri chiziqli tekis harakat",
+"Tekis o'zgaruvchan harakat",
+"Harakatning nisbiyligi",
+"Egri chiziqli harakat",
+"Kuch. Nyutonning birinchi qonuni",
+"Nyutonning ikkinchi va uchinchi qonuni",
+"Butun olam tortishish qonuni",
+"Elastiklik kuchi",
+"Vertikal harakat",
+"Gorizontal va burchak ostida otilgan jism",
+"Ishqalanish kuchi",
+"Bir necha kuch ta'siridagi harakat",
+"Og'irlik markazi",
+"Impulsning saqlanish qonuni",
+"Mexanik ish va energiya",
+"Mexanik energiyaning saqlanishi",
+"Kuchlarning ishi",
+"Quvvat va FIK",
+"Bosim. Paskal qonuni",
+"Atmosfera bosimi",
+"Arximed kuchi",
+"Tebranma harakat",
+"Prujinali va matematik mayatnik",
+"Rezonans va mexanik to'lqinlar",
+"Molekulyar kinetik nazariya",
+"Ideal gaz",
+"Gaz molekulalari tezligi",
+"Klapeyron tenglamasi",
+"Izojarayonlar",
+"To'yingan bug'",
+"Kapillarlik va sirt taranglik",
+"Qattiq jismlar",
+"Ichki energiya",
+"Termodinamikaning I qonuni",
+"Termodinamikaning II qonuni",
+"Elektr zaryad",
+"Elektr maydon",
+"O'tkazgich va dielektrik",
+"Elektr maydon ishi",
+"Ekvipotensial sirtlar",
+"Kondensatorlar",
+"Elektr toki va Om qonuni",
+"Elektr zanjirlari",
+"Ampermetr va voltmetr",
+"Tokning ishi va quvvati",
+"To'liq zanjir uchun Om qonuni",
+"Turli muhitlarda elektr toki",
+"Magnit maydon",
+"Amper va Lorens kuchi",
+"Magnit oqimi",
+"Elektromagnit induksiya",
+"Tebranishlar konturi",
+"Kontur energiyasi",
+"O'zgaruvchan tok zanjiri",
+"Transformator",
+"Yorug'likning qaytishi va sinishi",
+"Linzalar",
+"Interferensiya va difraksiya",
+"Nisbiylik nazariyasi",
+"Yorug'lik kvantlari",
+"Fotoeffekt",
+"Rezerford tajribasi",
+"Radioaktivlik",
+"Yadro reaksiyalari"
+
+];
+
+const grid =
+document.getElementById("topicGrid");
+
+topics.forEach((topic,index)=>{
+
+grid.innerHTML += `
+
+<a href="mavzu-${index+1}.html"
+class="topic-card">
+
+<div class="topic-number">
+
+${index+1}
+
+</div>
+
+<div class="topic-title">
+
+${topic}
+
+</div>
+
+</a>
+
+`;
+
+});
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3-Mavzu Testi | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:#020817;
+  color:white;
+  padding:36px 20px;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+  z-index:-1;
+}
+
+.quiz-container{
+  width:100%;
+  max-width:1020px;
+  margin:auto;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:36px;
+}
+
+.back-link{
+  color:white;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+h1{
+  font-size:44px;
+  line-height:1.2;
+}
+
+.subtitle{
+  color:#cbd5e1;
+  margin-top:10px;
+}
+
+.question{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  padding:28px;
+  border-radius:24px;
+  margin-bottom:24px;
+}
+
+.question h2{
+  margin-bottom:18px;
+  font-size:22px;
+  line-height:1.6;
+}
+
+.graph-box{
+  margin:4px 0 20px;
+  padding:18px;
+  border-radius:18px;
+  background: white;
+  border:1px solid rgba(148,163,184,.24);
+  overflow-x:auto;
+}
+
+.graph-box img{
+  width:100%;
+  max-width:300px;
+  display:block;
+  margin:auto;
+}
+
+.answers{
+  display:grid;
+  gap:12px;
+}
+
+.answer-option{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:15px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.answer-option:hover{
+  background:rgba(37,99,235,.22);
+}
+
+.answer-option.correct{
+  border-color:#22c55e;
+  background:rgba(34,197,94,.18);
+}
+
+.answer-option.wrong{
+  border-color:#ef4444;
+  background:rgba(239,68,68,.18);
+}
+
+.submit-btn{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+  color:white;
+  font-size:20px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:28px;
+  padding:22px;
+  border-radius:20px;
+  text-align:center;
+  font-size:24px;
+  font-weight:700;
+  background:rgba(255,255,255,.05);
+}
+
+.result:empty{
+  display:none;
+}
+
+.result.success{
+  color:#86efac;
+}
+
+.result.error{
+  color:#fca5a5;
+}
+
+@media(max-width:720px){
+  .topbar{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  h1{
+    font-size:34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="quiz-container">
+
+<div class="topbar">
+  <div>
+    <h1>3-Mavzu | To‘g‘ri chiziqli harakatni grafik ravishda tasvirlash</h1>
+    <p class="subtitle">Kamida 80% natija 4-darsni ochadi.</p>
+  </div>
+
+  <a href="mexanika.html" class="back-link">Orqaga</a>
+</div>
+
+<div id="questions"></div>
+
+<button
+type="button"
+class="submit-btn"
+id="submitBtn">
+Testni yakunlash
+</button>
+
+<div class="result" id="result"></div>
+
+</main>
+
+<script type="module">
+
+import { renderMultipleChoiceTest }
+from "../js/multiple-choice-test.js";
+
+const graph1 = `
+<img src="rasmlar3/test3-1.png">
+`;
+
+const graph2 = `
+<img src="rasmlar3/test3-2.png">
+`;
+
+const graph3 = `
+<img src="rasmlar3/test3-3.png">
+`;
+
+const graph4 = `
+<img src="rasmlar3/test3-4.png">
+`;
+
+const graph5 = `
+<img src="rasmlar3/test3-5.png">
+`;
+
+const graph6 = `
+<img src="rasmlar3/test3-6.png">
+`;
+
+const graph7 = `
+<img src="rasmlar3/test3-7.png">
+`;
+
+const graph8 = `
+<img src="rasmlar3/test3-8.png">
+`;
+
+const graph9 = `
+<img src="rasmlar3/test3-9.png">
+`;
+
+const graph10 = `
+<img src="rasmlar3/test3-10.png">
+`;
+
+const graph11 = `
+<img src="rasmlar3/test3-11.png">
+`;
+
+const graph12 = `
+<img src="rasmlar3/test3-12.png">
+`;
+
+const questions = [
+{
+  text: "Rasmda bola bosib o‘tgan yo‘lning vaqtga bog‘lanish grafigi keltirilgan. Bolaning t₁ = 1 s va t₂ = 5 s vaqt oralig‘ida bosib o‘tgan yo‘lini aniqlang.",
+  graphHtml: graph1,
+  answers:["10 m","20 m","5 m","15 m"],
+  correct:1
+},
+
+{
+  text:"Rasmda velosipedchi o‘tgan yo‘lning vaqtga bog‘lanish grafigi keltirilgan. Uning t = 4.28 s vaqt momentidagi tezligi qanday (m/s)?",
+  graphHtml: graph2,
+  answers:["5","12","10","6"],
+  correct:0
+},
+
+{
+  text:"Rasmda uchta moddiy nuqta bosib o‘tgan yo‘lning vaqtga bog‘lanish grafigi berilgan. Qaysi moddiy nuqtaning tezligi eng katta?",
+  graphHtml: graph3,
+  answers:["1","2","3","Hammasiniki bir xil"],
+  correct:0
+},
+
+{
+  text:"Quyidagi grafikdan foydalanib jismning harakat tezligini aniqlang (m/s).",
+  graphHtml: graph4,
+  answers:["√3","√3/3","3","1"],
+  correct:1
+},
+
+{
+  text:"Qaysi grafik jism o‘tgan yo‘lning vaqtga bog‘lanishini ifodalaydi?",
+  graphHtml: graph5,
+  answers:[
+    "II, III",
+    "I, II, III",
+    "III",
+    "I, IV"
+  ],
+  correct:2
+},
+
+{
+  text:"Chizmada uchta moddiy nuqtaning harakat grafiklari berilgan. Ularning tezliklari haqida nima deyish mumkin?",
+  graphHtml: graph6,
+  answers:[
+    "v₁ = v₂ < v₃",
+    "v₁ > v₂ > v₃",
+    "v₁ < v₂ < v₃",
+    "v₁ = v₂ > v₃"
+  ],
+  correct:2
+},
+
+{
+  text:"Grafikdan foydalanib OX o‘q bo‘ylab harakat qilayotgan moddiy nuqtaning 5 s da bosib o‘tgan yo‘lini aniqlang (m).",
+  graphHtml: graph7,
+  answers:[
+    "50",
+    "32.5",
+    "0",
+    "10"
+  ],
+  correct:0
+},
+
+{
+  text:"Rasmda jism koordinatasining vaqtga bog‘liqlik grafigi berilgan. Jismning harakat tenglamasini yozing.",
+  graphHtml: graph8,
+  answers:[
+    "x = −2 + 4t",
+    "x = 6 + 3t",
+    "x = −6 + 3t",
+    "x = 6 − 2t"
+  ],
+  correct:3
+},
+
+{
+  text:"Rasmda jismning harakat grafigi keltirilgan. t = 3 s paytdagi jismning koordinatasini aniqlang (m).",
+  graphHtml: graph9,
+  answers:[
+    "1.8",
+    "1.6",
+    "2.8",
+    "1.2"
+  ],
+  correct:2
+},
+
+{
+  text:"Rasmda jism koordinatasining vaqtga bog‘lanish grafigi tasvirlangan. Jismning (1−4)s vaqt oralig‘idagi ko‘chishini va yo‘lini aniqlang (m).",
+  graphHtml: graph10,
+  answers:[
+    "1; 4",
+    "2; 4",
+    "1; 3",
+    "2; 3"
+  ],
+  correct:1
+},
+
+{
+  text:"Rasmda jismning harakat grafigi ko‘rsatilgan. Grafikning qaysi qismida jismning tezligi eng katta bo‘lgan?",
+  graphHtml: graph11,
+  answers:[
+    "III",
+    "II",
+    "I",
+    "IV"
+  ],
+  correct:2
+},
+
+{
+  text:"Chizmada keltirilgan tezlik grafigidan foydalanib X o‘qi bo‘ylab harakatlanayotgan jismning harakat tenglamasini tuzing. Boshlang‘ich koordinata −10 m.",
+  graphHtml: graph12,
+  answers:[
+    "x = −10 + 4t",
+    "x = −10 + 2t²",
+    "x = −10t + 4t²",
+    "x = −10 + 2t"
+  ],
+  correct:0
+}
+];
+
+renderMultipleChoiceTest({
+  questions,
+  form: document.getElementById("questions"),
+  result: document.getElementById("result"),
+  submitButton: document.getElementById("submitBtn"),
+  unlockLesson: 4
+});
+
+</script>
+
+</body>
+</html>
