@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<main class="dashboard-shell">
+
+<nav class="dashboard-nav">
+<a class="logo" href="../index.html">Oliy<span>Fizika</span>.uz</a>
+
+<div class="nav-links">
+<a class="btn" href="../index.html">Bosh sahifa</a>
+<a class="btn btn-primary" href="settings.html">Sozlamalar</a>
+</div>
+</nav>
+
+<header class="page-header">
+<h1>Profil</h1>
+<p>Hisobingiz ma'lumotlari Firestore dagi shaxsiy profilingizdan olinadi.</p>
+</header>
+
+<section class="panel">
+<div class="profile-grid">
+
+<article class="info-card">
+<div class="info-label">Full Name</div>
+<div class="info-value" id="profileFullName">Yuklanmoqda...</div>
+</article>
+
+<article class="info-card">
+<div class="info-label">Email</div>
+<div class="info-value" id="profileEmail">Yuklanmoqda...</div>
+</article>
+
+<article class="info-card">
+<div class="info-label">Phone</div>
+<div class="info-value" id="profilePhone">Yuklanmoqda...</div>
+</article>
+
+<article class="info-card">
+<div class="info-label">XP</div>
+<div class="info-value" id="profileXp">0</div>
+</article>
+
+<article class="info-card">
+<div class="info-label">Level</div>
+<div class="info-value" id="profileLevel">1</div>
+</article>
+
+<article class="info-card">
+<div class="info-label">Registration Date</div>
+<div class="info-value" id="profileCreatedAt">Yuklanmoqda...</div>
+</article>
+
+</div>
+</section>
+
+<p class="status" id="profileStatus" role="status" aria-live="polite"></p>
+
+</main>
+
+<script type="module" src="../js/profile-page.js"></script>
+
+</body>
+</html>

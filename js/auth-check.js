@@ -12,7 +12,7 @@ onAuthStateChanged(auth, (user) => {
   if(!user){
 
     window.location.href =
-    new URL("../login.html", import.meta.url).href;
+    new URL("../index.html", import.meta.url).href;
 
   }
 

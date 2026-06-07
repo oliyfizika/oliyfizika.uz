@@ -31,6 +31,10 @@ body{
   overflow-x:hidden;
 }
 
+body.auth-modal-open{
+  overflow:hidden;
+}
+
 body::before{
 
   content:"";
@@ -112,7 +116,13 @@ body::before{
 
   display:flex;
 
+  align-items:center;
+
   gap:14px;
+
+  position:relative;
+
+  flex-wrap:wrap;
 }
 
 .btn{
@@ -153,6 +163,235 @@ body::before{
 .btn:hover{
 
   transform:translateY(-2px);
+}
+
+.user-menu{
+  position:relative;
+}
+
+.user-menu-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:260px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.user-menu-icon{
+  font-size:18px;
+  line-height:1;
+}
+
+.user-menu-name{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.user-dropdown{
+  position:absolute;
+  top:calc(100% + 12px);
+  right:0;
+  min-width:190px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;
+  background:rgba(8,16,42,.96);
+  backdrop-filter:blur(18px);
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
+  z-index:20;
+}
+
+.user-dropdown[hidden]{
+  display:none;
+}
+
+.user-dropdown-item{
+  width:100%;
+  padding:11px 12px;
+  border:0;
+  border-radius:12px;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+  font-size:14px;
+  text-align:left;
+  transition:.2s;
+}
+
+.user-dropdown-item:hover,
+.user-dropdown-item:focus{
+  background:rgba(59,130,246,.18);
+  outline:none;
+}
+
+.auth-modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(2,8,23,.76);
+  backdrop-filter:blur(14px);
+}
+
+.auth-modal[hidden]{
+  display:none;
+}
+
+.auth-panel{
+  width:min(100%,520px);
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;
+  background:rgba(6,14,38,.98);
+  box-shadow:0 30px 90px rgba(0,0,0,.45);
+}
+
+.auth-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+  padding:28px 28px 12px;
+}
+
+.auth-title{
+  font-size:28px;
+  font-weight:700;
+}
+
+.auth-subtitle{
+  margin-top:8px;
+  color:#b6c5dc;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.auth-close{
+  width:42px;
+  height:42px;
+  flex:0 0 auto;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  background:rgba(255,255,255,.05);
+  color:white;
+  cursor:pointer;
+  font-size:24px;
+  line-height:1;
+}
+
+.auth-tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  padding:0 28px 18px;
+}
+
+.auth-tab{
+  padding:12px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  color:#cbd5e1;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.auth-tab.is-active{
+  color:white;
+  border-color:rgba(56,189,248,.55);
+  background:rgba(37,99,235,.35);
+}
+
+.auth-form{
+  display:grid;
+  gap:14px;
+  padding:0 28px 28px;
+}
+
+.auth-form[hidden]{
+  display:none;
+}
+
+.auth-field{
+  display:grid;
+  gap:8px;
+}
+
+.auth-field label{
+  color:#dbeafe;
+  font-size:14px;
+  font-weight:500;
+}
+
+.auth-field input,
+.auth-field select{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+  color:white;
+  font-size:15px;
+  outline:none;
+}
+
+.auth-field input:focus,
+.auth-field select:focus{
+  border-color:#38bdf8;
+  box-shadow:0 0 0 3px rgba(56,189,248,.16);
+}
+
+.auth-field select option{
+  color:#0f172a;
+}
+
+.auth-actions{
+  display:grid;
+  gap:12px;
+  margin-top:6px;
+}
+
+.auth-submit{
+  width:100%;
+  padding:14px 18px;
+  border-radius:14px;
+  border:0;
+  color:white;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:700;
+  background:linear-gradient(135deg,#1d4fff,#2797ff);
+  box-shadow:0 0 20px rgba(37,99,235,.42);
+}
+
+.auth-submit:disabled{
+  cursor:not-allowed;
+  opacity:.7;
+}
+
+.auth-switch{
+  border:0;
+  background:transparent;
+  color:#7dd3fc;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.auth-message{
+  min-height:22px;
+  padding:0 28px 28px;
+  color:#fecaca;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.auth-message.success{
+  color:#86efac;
 }
 
 
@@ -606,6 +845,37 @@ body::before{
     gap:20px;
   }
 
+  .nav-buttons{
+    width:100%;
+    justify-content:center;
+  }
+
+  .user-menu,
+  .user-menu-btn{
+    width:100%;
+  }
+
+  .user-menu-btn{
+    justify-content:center;
+  }
+
+  .user-dropdown{
+    left:0;
+    right:0;
+  }
+
+  .auth-panel{
+    border-radius:20px;
+  }
+
+  .auth-header,
+  .auth-tabs,
+  .auth-form,
+  .auth-message{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
   .hero h1{
 
     font-size:48px;
@@ -659,21 +929,19 @@ body::before{
 Oliy<span>Fizika</span>.uz
 </div>
 
-<div class="nav-buttons">
+<div class="nav-buttons" id="authNav">
 
-<a href="login.html"
+<button
+id="openLogin"
 class="btn btn-outline">
-
 Kirish
+</button>
 
-</a>
-
-<a href="login.html"
+<button
+id="openRegister"
 class="btn btn-primary">
-
 Ro'yxatdan o'tish
-
-</a>
+</button>
 
 </div>
 
@@ -711,7 +979,8 @@ fizikani oson va qiziqarli o‘rganing.
 <div class="hero-buttons">
 
 <a href="umumiy-fizika/umumiy-fizika.html"
-class="btn btn-primary big-btn">
+class="btn btn-primary big-btn"
+data-requires-auth="true">
 
 🚀 Boshlash
 
@@ -761,7 +1030,8 @@ class="btn btn-outline big-btn">
 <section class="cards">
 
 <a href="umumiy-fizika/umumiy-fizika.html"
-class="card">
+class="card"
+data-requires-auth="true">
 
 <div class="card-icon">
 📘
@@ -821,7 +1091,8 @@ tayyorlanish va test ishlash
 
 
 <a href="attestatsiya/attestatsiya.html"
-class="card">
+class="card"
+data-requires-auth="true">
 
 <div class="card-icon">
 📝
@@ -846,8 +1117,9 @@ tayyorgarlik ko‘rish
 
 <section class="quick-links">
 
-<a href="#"
-class="quick-card">
+<a href="umumiy-fizika/umumiy-fizika.html"
+class="quick-card"
+data-requires-auth="true">
 
 <div class="quick-icon">
 📚
@@ -861,7 +1133,8 @@ DARSLAR
 
 
 <a href="simulations/simulations.html"
-class="quick-card">
+class="quick-card"
+data-requires-auth="true">
 
 <div class="quick-icon">
 🧪
@@ -875,7 +1148,8 @@ SIMULYATORLAR
 
 
 <a href="quizs/quizs.html"
-class="quick-card">
+class="quick-card"
+data-requires-auth="true">
 
 <div class="quick-icon">
 🧠
@@ -888,8 +1162,9 @@ QUIZLAR
 </a>
 
 
-<a href="#"
-class="quick-card">
+<a href="kutubxona/kutubxona.html"
+class="quick-card"
+data-requires-auth="true">
 
 <div class="quick-icon">
 📖
@@ -903,7 +1178,8 @@ KUTUBXONA
 
 
 <a href="interaktiv-oyinlar/interaktiv-oyinlar.html"
-class="quick-card">
+class="quick-card"
+data-requires-auth="true">
 
     <div class="quick-icon">
         🧩
@@ -991,7 +1267,191 @@ Qoniqish darajasi
 
 </div>
 
-<script type="module" src="js/firebase.js"></script>
+<div
+id="authModal"
+class="auth-modal"
+hidden
+aria-hidden="true">
+
+<div
+class="auth-panel"
+role="dialog"
+aria-modal="true"
+aria-labelledby="authTitle">
+
+<div class="auth-header">
+
+<div>
+
+<div
+class="auth-title"
+id="authTitle">
+Kirish
+</div>
+
+<p
+class="auth-subtitle"
+id="authSubtitle">
+Hisobingizga email va parol orqali kiring.
+</p>
+
+</div>
+
+<button
+type="button"
+class="auth-close"
+id="closeAuthModal"
+aria-label="Modalni yopish">
+&times;
+</button>
+
+</div>
+
+<div
+class="auth-tabs"
+role="tablist"
+aria-label="Authentication tabs">
+
+<button
+type="button"
+class="auth-tab is-active"
+id="loginTab"
+data-auth-switch="login">
+Kirish
+</button>
+
+<button
+type="button"
+class="auth-tab"
+id="registerTab"
+data-auth-switch="register">
+Ro'yxatdan o'tish
+</button>
+
+</div>
+
+<form
+class="auth-form"
+id="loginForm"
+novalidate>
+
+<div class="auth-field">
+<label for="loginEmail">Email</label>
+<input
+type="email"
+id="loginEmail"
+autocomplete="email"
+required>
+</div>
+
+<div class="auth-field">
+<label for="loginPassword">Password</label>
+<input
+type="password"
+id="loginPassword"
+autocomplete="current-password"
+required>
+</div>
+
+<div class="auth-actions">
+<button
+type="submit"
+class="auth-submit"
+id="loginSubmit">
+Kirish
+</button>
+
+<button
+type="button"
+class="auth-switch"
+data-auth-switch="register">
+Hisobingiz yo'qmi? Ro'yxatdan o'ting
+</button>
+</div>
+
+</form>
+
+<form
+class="auth-form"
+id="registerForm"
+hidden
+novalidate>
+
+<div class="auth-field">
+<label for="registerFullName">Full Name</label>
+<input
+type="text"
+id="registerFullName"
+autocomplete="name"
+required>
+</div>
+
+<div class="auth-field">
+<label for="registerPhone">Phone Number</label>
+<input
+type="tel"
+id="registerPhone"
+autocomplete="tel"
+required>
+</div>
+
+<div class="auth-field">
+<label for="registerEmail">Email</label>
+<input
+type="email"
+id="registerEmail"
+autocomplete="email"
+required>
+</div>
+
+<div class="auth-field">
+<label for="registerPassword">Password</label>
+<input
+type="password"
+id="registerPassword"
+autocomplete="new-password"
+required>
+</div>
+
+<div class="auth-field">
+<label for="registerConfirmPassword">Confirm Password</label>
+<input
+type="password"
+id="registerConfirmPassword"
+autocomplete="new-password"
+required>
+</div>
+
+<div class="auth-actions">
+<button
+type="submit"
+class="auth-submit"
+id="registerSubmit">
+Ro'yxatdan o'tish
+</button>
+
+<button
+type="button"
+class="auth-switch"
+data-auth-switch="login">
+Hisobingiz bormi? Kirish
+</button>
+</div>
+
+</form>
+
+<div
+class="auth-message"
+id="authMessage"
+role="status"
+aria-live="polite">
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="js/auth.js"></script>
 
 </body>
 </html>
