@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olimpiada | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#020817;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+    z-index:-2;
+}
+
+.card{
+    width:90%;
+    max-width:700px;
+    text-align:center;
+    padding:60px 40px;
+    border-radius:30px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+}
+
+.icon{
+    font-size:80px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+p{
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:14px 28px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#1d4fff,#2797ff);
+    font-weight:600;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+
+    <div class="icon">🏆</div>
+
+    <h1>Olimpiada</h1>
+
+    <p>
+        Olimpiada bo‘limi ustida ish olib borilmoqda.
+        Masalalar, nazariy materiallar va tayyorlov kurslari
+        tez orada joylashtiriladi.
+    </p>
+
+    <a href="../index.html" class="btn">
+        Bosh sahifaga qaytish
+    </a>
+
+</div>
+
+</body>
+</html>

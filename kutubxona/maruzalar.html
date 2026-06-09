@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Laboratoriya ishlari | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#020817;
+    color:white;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+    z-index:-2;
+}
+
+.container{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.navbar{
+    margin-top:20px;
+    padding:18px 28px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    background:rgba(5,12,35,.7);
+    backdrop-filter:blur(18px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    text-decoration:none;
+    color:white;
+    font-size:36px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#1d9cff;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+    padding:12px 20px;
+    border-radius:14px;
+}
+
+.header{
+    text-align:center;
+    padding:60px 0;
+}
+
+.header h1{
+    font-size:54px;
+    margin-bottom:15px;
+}
+
+.header p{
+    color:#cbd5e1;
+}
+
+.books{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+    margin-bottom:60px;
+}
+
+.book-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:25px;
+    transition:.3s;
+}
+
+.book-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(37,99,235,.25);
+}
+
+.book-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.book-title{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.book-author{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.book-desc{
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.open-btn{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(135deg,#1d4fff,#2797ff);
+    padding:12px 22px;
+    border-radius:14px;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .header h1{
+        font-size:38px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav class="navbar">
+
+<a href="../index.html" class="logo">
+Oliy<span>Fizika</span>.uz
+</a>
+
+<a href="kutubxona.html" class="back-btn">
+← Kutubxona
+</a>
+
+</nav>
+
+<div class="header">
+<h1> 📚 Ma'ruza kitoblar</h1>
+<p>Fizika fanidan ma'ruza materiallari uchun o'quv qo'llanmalar</p>
+</div>
+
+<div class="books">
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Atom fizikasi</div>
+        <div class="book-author">Axmedova G.</div>
+        <div class="book-desc">
+            Atom tuzilishi, atom modellari va atom hodisalari bo'yicha ma'ruzalar.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/atom-fizikasi-ahmedova.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Atom fizikasi</div>
+        <div class="book-author">E. V. Shpolskiy</div>
+        <div class="book-desc">
+            Atom fizikasi va kvant nazariyasining asoslari bo'yicha klassik qo'llanma.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/atom-fizikasi-shpolskiy.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Nazariy mexanika</div>
+        <div class="book-author">Fayzullayev B.</div>
+        <div class="book-desc">
+            Klassik mexanika va harakat qonunlari bo'yicha ma'ruza materiallari.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/nazariy-mexanika.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Elektr va magnetizm</div>
+        <div class="book-author">Kalashnikov</div>
+        <div class="book-desc">
+            Elektr maydoni, magnit maydoni va elektromagnit hodisalar.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/elektr-va-magnetizm.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Molekulyar fizika va termodinamika</div>
+        <div class="book-author">Kikoin</div>
+        <div class="book-desc">
+            Molekulyar fizika, gazlar nazariyasi va termodinamika qonunlari.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/molekulyar-fizika.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Optika</div>
+        <div class="book-author">Landsberg</div>
+        <div class="book-desc">
+            Yorug'lik hodisalari, interferensiya, difraksiya va optik tizimlar.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/Landsberg-optika.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Yadro fizikasi</div>
+        <div class="book-author">Rahim Bekjonov</div>
+        <div class="book-desc">
+            Atom yadrosi, radioaktivlik va yadro reaksiyalari bo'yicha ma'ruzalar.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/yadro-fizikasi.PDF"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+    <div class="book-card">
+        <div class="book-icon">📄</div>
+        <div class="book-title">Umumiy fizika kursi (3-tom)</div>
+        <div class="book-author">Savelev I. V.</div>
+        <div class="book-desc">
+            Oliy ta'lim uchun umumiy fizika kursining uchinchi qismi.
+        </div>
+        <a class="open-btn"
+           href="maruzalar/umumiy-fizika-3tom.pdf"
+           target="_blank">
+            📖 PDF ochish
+        </a>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

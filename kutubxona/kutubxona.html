@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kutubxona | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#020817;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+        linear-gradient(135deg,#020817,#07122f,#020817);
+    z-index:-3;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:.15;
+    z-index:-2;
+}
+
+.container{
+    width:92%;
+    max-width:1450px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+.navbar{
+    margin-top:20px;
+    padding:18px 28px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    background:rgba(5,12,35,.7);
+    backdrop-filter:blur(18px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:42px;
+    font-weight:800;
+    text-decoration:none;
+    color:white;
+}
+
+.logo span{
+    color:#1d9cff;
+}
+
+.back-btn{
+    padding:12px 22px;
+    border-radius:16px;
+    text-decoration:none;
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:rgba(255,255,255,.08);
+}
+
+/* PAGE HEADER */
+
+.page-header{
+    text-align:center;
+    padding:80px 20px 50px;
+}
+
+.page-header h1{
+    font-size:64px;
+    margin-bottom:20px;
+}
+
+.page-header p{
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* LIBRARY CARDS */
+
+.quick-links{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:22px;
+    margin-bottom:80px;
+}
+
+.quick-card{
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+    border-radius:28px;
+    padding:40px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    transition:.35s;
+}
+
+.quick-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 35px rgba(37,99,235,.28);
+}
+
+.quick-icon{
+    font-size:54px;
+}
+
+.quick-card span{
+    font-size:20px;
+    font-weight:600;
+    text-align:center;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .quick-links{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .page-header h1{
+        font-size:42px;
+    }
+
+    .page-header p{
+        font-size:16px;
+    }
+
+    .quick-links{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="../index.html" class="logo">
+            Oliy<span>Fizika</span>.uz
+        </a>
+
+        <a href="../index.html" class="back-btn">
+            ← Bosh sahifa
+        </a>
+
+    </nav>
+
+    <!-- HEADER -->
+
+    <section class="page-header">
+
+        <h1>📚 KUTUBXONA</h1>
+
+        <p>
+            Fizika bo'yicha darsliklar, ma'ruzalar,
+            masalalar to'plami, laboratoriya ishlari
+            va prezentatsiyalarni bir joyda toping.
+        </p>
+
+    </section>
+
+    <!-- LIBRARY SECTIONS -->
+
+    <section class="quick-links">
+
+        <a href="maruzalar.html" class="quick-card">
+            <div class="quick-icon">📄</div>
+            <span>Ma'ruzalar</span>
+        </a>
+
+        <a href="darsliklar.html" class="quick-card">
+            <div class="quick-icon">📖</div>
+            <span>Darsliklar</span>
+        </a>
+
+        <a href="masalalar.html" class="quick-card">
+            <div class="quick-icon">🎯</div>
+            <span>Masalalar to'plami</span>
+        </a>
+
+        <a href="laboratoriya.html" class="quick-card">
+            <div class="quick-icon">🧪</div>
+            <span>Laboratoriya ishlari</span>
+        </a>
+
+        <a href="prezentatsiyalar.html" class="quick-card">
+            <div class="quick-icon">📊</div>
+            <span>Prezentatsiyalar</span>
+        </a>
+
+    </section>
+
+</div>
+
+</body>
+</html>
