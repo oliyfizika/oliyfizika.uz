@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexanika | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:#020817;
+  color:white;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+  z-index:-2;
+}
+
+.container{
+  width:92%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.navbar{
+  margin-top:20px;
+  padding:18px 28px;
+  border-radius:24px;
+  background:rgba(5,12,35,.75);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.logo{
+  font-size:38px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#1d9cff;
+}
+
+.back-btn{
+  text-decoration:none;
+  color:white;
+  padding:14px 24px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#1d4fff,#2797ff);
+}
+
+.hero{
+  text-align:center;
+  padding:70px 0 50px;
+}
+
+.hero h1{
+  font-size:64px;
+  margin-bottom:20px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  background:linear-gradient(to right,#38bdf8,#2563eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#cbd5e1;
+  font-size:20px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.videos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+  margin-bottom:80px;
+}
+
+.video-card{
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  backdrop-filter:blur(12px);
+  transition:.3s;
+}
+
+.video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 35px rgba(37,99,235,.25);
+}
+
+.video-card.is-locked{
+  opacity:.55;
+}
+
+.video-card.is-locked iframe,
+.video-card.is-locked .video-info{
+  filter:blur(2px);
+  pointer-events:none;
+}
+
+iframe{
+  width:100%;
+  height:320px;
+  border:none;
+  display:block;
+}
+
+.video-info{
+  padding:22px;
+}
+
+.video-info h3{
+  min-height:66px;
+  font-size:22px;
+  line-height:1.5;
+}
+
+.test-btn,
+.test-status{
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  padding:14px;
+  border-radius:14px;
+  margin-top:15px;
+  font-weight:700;
+}
+
+.test-btn{
+  color:white;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+  transition:.3s;
+}
+
+.test-btn:hover{
+  transform:translateY(-2px);
+}
+
+.test-status{
+  color:#cbd5e1;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.lock-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  text-align:center;
+  color:white;
+  font-weight:800;
+  line-height:1.5;
+  background:rgba(2,8,23,.42);
+}
+
+@media(max-width:900px){
+  .videos{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .navbar{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">Oliy<span>Fizika</span>.uz</div>
+    <a href="umumiy-fizika.html" class="back-btn">← Orqaga qaytish</a>
+  </nav>
+
+  <section class="hero">
+    <h1><span>Atom va yadro fizikasi</span> darslari</h1>
+    <p>Atom va yadro fizikasi bo‘yicha video darslar, testlar va bosqichma-bosqich ochiladigan mavzular.</p>
+  </section>
+
+  <section class="videos" id="videos" aria-label="Atom va yadro fizikasi video darslari"></section>
+</div>
+
+<script type="module">
+import { renderMechanicsLessons } from "../../js/mechanics-progress.js";
+
+
+
+const lessons = [ 
+    { number:82, numberLabel:"82-mavzu", title:"Atom va yadro fizikasi", youtubeId:"oNJ6VLNHZMc" } 
+
+];
+
+
+
+renderMechanicsLessons(lessons, document.getElementById("videos"));
+</script>
+</body>
+</html>
