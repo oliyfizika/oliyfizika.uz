@@ -16,6 +16,9 @@ href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
 
 *{
@@ -910,6 +913,81 @@ body::before{
 
 }
 
+
+/* FOOTER */
+
+.footer{
+    margin-top:100px;
+    padding:60px 0 20px;
+    background:rgba(255,255,255,.03);
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-container{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.footer-section h3{
+    color:#38bdf8;
+    margin-bottom:18px;
+    font-size:22px;
+}
+
+.footer-section p{
+    color:#cbd5e1;
+    line-height:1.9;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#cbd5e1;
+    margin-bottom:14px;
+}
+
+.contact-item i{
+    color:#38bdf8;
+}
+
+.social-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#cbd5e1;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.social-link:hover{
+    color:#38bdf8;
+    transform:translateX(5px);
+}
+
+.social-link i{
+    font-size:20px;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#94a3b8;
+}
+
+.footer-bottom span{
+    color:#38bdf8;
+}
+
+
+
 </style>
 
 </head>
@@ -1452,6 +1530,69 @@ aria-live="polite">
 </div>
 
 <script type="module" src="js/auth.js"></script>
+
+
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>OliyFizika.uz</h3>
+
+            <p>
+                Fizika fanidan attestatsiya, milliy sertifikat,
+                olimpiada va umumiy fizika kurslariga tayyorlanish
+                uchun zamonaviy ta'lim platformasi.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Bog'lanish</h3>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+998 90 009 02 90</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>oliyfizika@gmail.com</span>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Ijtimoiy tarmoqlar</h3>
+
+            <a href="https://t.me/Sarvar_Physics"
+               target="_blank"
+               class="social-link">
+                <i class="fa-brands fa-telegram"></i>
+                Telegram kanal
+            </a>
+
+            <a href="https://www.youtube.com/@Sarvar_Physics"
+               target="_blank"
+               class="social-link">
+                <i class="fa-brands fa-youtube"></i>
+                YouTube kanal
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 <span>OliyFizika.uz</span> |
+        Barcha huquqlar himoyalangan
+    </div>
+
+</footer>
+
+
+
+
+
 
 </body>
 </html>
