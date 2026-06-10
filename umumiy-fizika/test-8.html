@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3-Mavzu Testi | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:#020817;
+  color:white;
+  padding:36px 20px;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+  z-index:-1;
+}
+
+.quiz-container{
+  width:100%;
+  max-width:1020px;
+  margin:auto;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:36px;
+}
+
+.back-link{
+  color:white;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+h1{
+  font-size:44px;
+  line-height:1.2;
+}
+
+.subtitle{
+  color:#cbd5e1;
+  margin-top:10px;
+}
+
+.question{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  padding:28px;
+  border-radius:24px;
+  margin-bottom:24px;
+}
+
+.question h2{
+  margin-bottom:18px;
+  font-size:22px;
+  line-height:1.6;
+}
+
+.graph-box{
+  margin:4px 0 20px;
+  padding:18px;
+  border-radius:18px;
+  background: white;
+  border:1px solid rgba(148,163,184,.24);
+  overflow-x:auto;
+}
+
+.graph-box img{
+  width:100%;
+  max-width:300px;
+  display:block;
+  margin:auto;
+}
+
+.answers{
+  display:grid;
+  gap:12px;
+}
+
+.answer-option{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:15px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.answer-option:hover{
+  background:rgba(37,99,235,.22);
+}
+
+.answer-option.correct{
+  border-color:#22c55e;
+  background:rgba(34,197,94,.18);
+}
+
+.answer-option.wrong{
+  border-color:#ef4444;
+  background:rgba(239,68,68,.18);
+}
+
+.submit-btn{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+  color:white;
+  font-size:20px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.result{
+  margin-top:28px;
+  padding:22px;
+  border-radius:20px;
+  text-align:center;
+  font-size:24px;
+  font-weight:700;
+  background:rgba(255,255,255,.05);
+}
+
+.result:empty{
+  display:none;
+}
+
+.result.success{
+  color:#86efac;
+}
+
+.result.error{
+  color:#fca5a5;
+}
+
+@media(max-width:720px){
+  .topbar{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  h1{
+    font-size:34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="quiz-container">
+
+<div class="topbar">
+  <div>
+    <h1>7-Mavzu | Nisbiy harakat</h1>
+    <p class="subtitle">Kamida 80% natija 7-darsni ochadi.</p>
+  </div>
+
+  <a href="mexanika.html" class="back-link">Orqaga</a>
+</div>
+
+<div id="questions"></div>
+
+<button
+type="button"
+class="submit-btn"
+id="submitBtn">
+Testni yakunlash
+</button>
+
+<div class="result" id="result"></div>
+
+</main>
+
+<script type="module">
+
+import { renderMultipleChoiceTest }
+from "../js/multiple-choice-test.js";
+
+
+const graph12 = `
+<img src="rasmlar7/test7-12.png">
+`;
+
+
+const questions = [
+
+{
+  "text": "Disk 1 minutda 1200 marta aylanadi. Uning aylanish chastotasini toping (1/s).",
+  "answers": ["20", "1200", "60", "30"],
+  "correct": 0
+},
+{
+  "text": "Aylanish chastotasi 30 Hz bo‘lgan disk 5 s da necha marta aylanadi?",
+  "answers": ["20", "150", "6", "30"],
+  "correct": 1
+},
+{
+  "text": "Aylanish chastotasi 20 s−1 bo‘lgan disk 1000 marta aylanishi uchun qancha vaqt kerak bo‘ladi?",
+  "answers": ["20", "0,02", "50", "1000"],
+  "correct": 2
+},
+{
+  "text": "Mushuk aylanani 20 s da 4 marta aylandi. Mushukning aylanish davrini toping (s).",
+  "answers": ["20", "80", "50", "5"],
+  "correct": 3
+},
+{
+  "text": "Sportchi yugurish maydonchasini 10 marta aylanishi uchun qancha vaqt kerak bo‘ladi (min)? Uning aylanish davri 42 s.",
+  "answers": ["10", "7", "42", "420"],
+  "correct": 1
+},
+{
+  "text": "Aylanish davri 0,785 s bo‘lgan jismning burchak tezligini toping (rad/s).",
+  "answers": ["1,57", "8", "3,14", "6,28"],
+  "correct": 1
+},
+{
+  "text": "Aylanish chastotasi 0,0796 s−1 bo‘lgan maxovikning maksimal burchak tezligini toping (rad/s).",
+  "answers": ["10", "0,5", "4", "20"],
+  "correct": 2
+},
+{
+  "text": "Aylanish davri 3 s bo‘lgan jism 4 s da necha gradusga buriladi?",
+  "answers": ["270◦", "480◦", "300◦", "360◦"],
+  "correct": 0
+},
+{
+  "text": "Quyidagilarni qaysi biri 12 · 103 sekund vaqt miqdorini ifodalaydi?",
+  "answers": ["2 soat–40 min", "3 soat–20 min", "4 soat–15 min", "4 soat–40 min"],
+  "correct": 2
+},
+{
+  "text": "Yukni 0,4 m/s tezlik bilan ko‘tarishda diametri 16 sm bo‘lgan chig‘ir barabanining aylanish chastotasi qanday bo‘lishining toping (s−1).",
+  "answers": ["0,8", "16", "0,4", "0,2"],
+  "correct": 2
+},
+{
+  "text": "Radiusi 0,25 m bo‘lgan g‘ildirak 12 m/s tezlik bilan g‘ildiramoqda. G‘ildirakning burchak tezligini toping (rad/s).",
+  "answers": ["12", "24", "36", "12π"],
+  "correct": 0
+},
+{
+  "text": "Sharcha radiusi 1 m bo‘lgan aylana bo‘ylab doimiy 4 m/s tezlik bilan harakatlanmoqda. Uning aylanish davri qanday (s)?",
+  "answers": ["1,57", "3,14", "4,71", "6,28"],
+  "correct": 1
+},
+{
+  "text": "Avtomobilning tezligi 72 km/soat, g‘ildiragining diametri 62 sm. G‘ildirakning burchak tezligini toping (rad/s larda).",
+  "answers": ["64,5", "62,5", "62", "32"],
+  "correct": 1
+},
+{
+  "text": "Elektovoz g‘ildiragining diametri 1 m bo‘lib, u 1 minutda 300 marta aylansa, poezdning tezligi necha m/s bo‘ladi? (π = 3 deb hisoblang).",
+  "answers": ["10", "12", "15", "20"],
+  "correct": 1
+},
+{
+  "text": "Aylana bo‘ylab tekis harakat qilayotgan moddiy nuqtaning chiziqli tezligi 2 m/s va burchak tezligi 5 rad/s bo‘lsa, markazga intilma tezlanishi qanday (m/s2)?",
+  "answers": ["0,4", "2", "2,5", "5"],
+  "correct": 3
+},
+{
+  "text": "Poezd egrilik radiusi 800 m bo‘lgan burilishda 20 m/s tezlik bilan harakatlanayotganining markazga intilma tezlanishi qanday (m/s2)?",
+  "answers": ["10", "1", "0,2", "0,5"],
+  "correct": 0
+},
+{
+  "text": "Velosipedchi egrilik radiusi 48 m bo‘lgan burilishda 12 m/s tezlikda harakatlanmoqda. Markazga intilma tezlanishini toping (m/s2).",
+  "answers": ["4", "3", "0,25", "0,5"],
+  "correct": 1
+},
+{
+  "text": "Lokomotiv yo‘lining radiusi 750 m bo‘lgan burilish joyidan 54 km/soat tezlik bilan o‘tmoqda. Tezligi 2 marta kamaysa, lokomotivning markazga intilma tezlanishi qanday o‘zgaradi?",
+  "answers": ["3 marta kamayadi", "4 marta kamayadi", "2 marta kamayadi", "4 marta ortadi"],
+  "correct": 3
+},
+{
+  "text": "Chekka nuqtasining markazga intilma tezlanishi 49,3 m/s2 bo‘lgan diskning radiusi 5 sm. Diskning aylanish chastotasini toping (Hz).",
+  "answers": ["5", "10", "3", "6"],
+  "correct": 2
+},
+{
+  "text": "Radiusi 10 sm bo‘lgan aylana bo‘ylab tekis harakat qilayotgan moddiy nuqtaning aylanish davri 2 s bo‘lsa, uning markazga intilma tezlanishini toping (m/s2).",
+  "answers": ["1,57", "0,57", "1,1", "1,05"],
+  "correct": 0
+},
+{
+  "text": "Aylana bo‘ylab tekis harakat qilayotgan jismning burchak tezligi 5,5 marta ortsa, chiziqli tezligi esa shuncha marta kamaymasa, jismning markazga intilma tezlanishi qanday o‘zgaradi?",
+  "answers": ["8,5 marta ortadi", "8,5 marta kamayadi", "o‘zgarmaydi", "17 marta kamayadi"],
+  "correct": 3
+},
+{
+  "text": "Avtomobil 72 km/soat tezlik bilan harakatlanganda g‘ildiraklarining aylanish chastotasi 8 s−1 bo‘lsa, avtomobil g‘ildiraklarining yo‘lga tegadigan nuqtalarining markazga intilma tezlanishini topilsin (m/s2).",
+  "answers": ["10", "2", "15", "1"],
+  "correct": 1
+},
+{
+  "text": "Aylanish davri 0,2 s va radiusi 5 sm bo‘lgan disk chekka nuqtasining markazga intilma tezlanishini toping (m/s2).",
+  "answers": ["9,9", "12,3", "15,7", "49,3"],
+  "correct": 3
+},
+{
+  "text": "Velosiped 10 m/s o‘zgarmas tezlik bilan harakatlanmoqda. Uning g‘ildiragi diametri 80 sm. G‘ildirakning pastki nuqtasi yerga nisbatan necha m/s2 tezlanish bilan harakatlanadi?",
+  "answers": ["0", "1,25", "250", "125"],
+  "correct": 2
+},
+{
+  "text": "Jism aylana bo‘ylab tekis harakat qilmoqda. Agar aylana radiusi o‘zgarmasdan, jism tezligi 3 marta kamaysa, markazga intilma tezlanish qanday o‘zgaradi?",
+  "answers": ["9 marta kamayadi", "3 marta ortadi", "3 marta kamayadi", "9 marta ortadi"],
+  "correct": 3
+},
+{
+  "text": "R1 va R2 = 4R1 radiusli aylana bo‘ylab harakatlanayotgan moddiy nuqtalarning aylanish davrlari teng bo‘lsa, ularning markazga intilma tezlanishlari uchun quyidagi munosabatlarning qaysi biri o‘rinli bo‘ladi?",
+  "answers": ["a1 = a2", "a1 = 2a2", "a2 = 4a1", "a2 = 2a1"],
+  "correct": 2
+},
+{
+  "text": "Gidroturbina ishchi g‘ildiragining radiusi bug‘ turbinasinikiga qaraganda 8 marta katta, aylanish chastotasi esa 40 marta kichik. Turbina g‘ildiraklarining chetidagi nuqtalar tezlanishlarini taqqoslang.",
+  "answers": ["1:2", "1:20", "1:200", "1:400"],
+  "correct": 2
+},
+{
+  "text": "Moddiy nuqta aylana bo‘ylab 25 m/s tezlik bilan tekis aylanmoqda. Davrning to‘rtdan bir qismida moddiy nuqta tezligi o‘zgarishining moduli qanday (m/s)?",
+  "answers": ["0", "5", "25", "25√2"],
+  "correct": 3
+},
+{
+  "text": "Moddiy nuqta aylana bo‘ylab 6 m/s tezlik bilan tekis aylanmoqda. Davrning to‘rtdan bir qismida moddiy nuqta tezligi o‘zgarishining moduli qanday (m/s)?",
+  "answers": ["0", "3", "12", "6√2"],
+  "correct": 3
+},
+{
+  "text": "Agar aylanayotgan disk ustidagi radiuslar 1 sm ga farq qiladigan ikki nuqtaning chiziqli tezliklari orasidagi farq 0,314 m/s ga teng bo‘lsa, diskning aylanish chastotasini toping (Hz).",
+  "answers": ["6,28", "5", "3,14", "1"],
+  "correct": 2
+}
+
+];
+
+renderMultipleChoiceTest({
+  questions,
+  form: document.getElementById("questions"),
+  result: document.getElementById("result"),
+  submitButton: document.getElementById("submitBtn"),
+  unlockLesson: 8
+});
+
+</script>
+
+</body>
+</html>
