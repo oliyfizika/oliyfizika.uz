@@ -3,6 +3,8 @@ import { auth, db } from "./firebase.js";
 import {
   createUserWithEmailAndPassword,
   deleteUser,
+  sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged
@@ -27,6 +29,10 @@ const AUTH_TEXT = {
   register: {
     title: "Ro'yxatdan o'tish",
     subtitle: "Yangi hisob yaratish uchun ma'lumotlaringizni kiriting."
+  },
+  reset: {
+    title: "Parolni tiklash",
+    subtitle: "Email manzilingizni kiriting, parolni tiklash havolasini yuboramiz."
   }
 };
 
@@ -34,7 +40,9 @@ const ERROR_MESSAGES = {
   "auth/email-already-in-use": "Bu email bilan hisob allaqachon mavjud.",
   "auth/invalid-email": "Email manzil noto'g'ri kiritilgan.",
   "auth/invalid-credential": "Email yoki parol noto'g'ri.",
+  "auth/missing-email": "Email manzilni kiriting.",
   "auth/missing-password": "Parolni kiriting.",
+  "auth/network-request-failed": "Tarmoqda muammo yuz berdi. Internet aloqangizni tekshirib, qayta urinib ko'ring.",
   "auth/too-many-requests": "Juda ko'p urinish bo'ldi. Birozdan keyin qayta urinib ko'ring.",
   "auth/user-not-found": "Bunday email bilan hisob topilmadi.",
   "auth/weak-password": "Parol kamida 6 ta belgidan iborat bo'lishi kerak.",
@@ -44,20 +52,24 @@ const ERROR_MESSAGES = {
 let authNav;
 let authModal;
 let closeAuthModalButton;
+let authTabs;
 let authTitle;
 let authSubtitle;
 let authMessage;
 let loginForm;
+let passwordResetForm;
 let registerForm;
 
 function initAuth(){
   authNav = document.getElementById("authNav");
   authModal = document.getElementById("authModal");
   closeAuthModalButton = document.getElementById("closeAuthModal");
+  authTabs = document.getElementById("authTabs");
   authTitle = document.getElementById("authTitle");
   authSubtitle = document.getElementById("authSubtitle");
   authMessage = document.getElementById("authMessage");
   loginForm = document.getElementById("loginForm");
+  passwordResetForm = document.getElementById("passwordResetForm");
   registerForm = document.getElementById("registerForm");
 
   bindNavbarEvents();
@@ -150,6 +162,7 @@ function bindModalEvents(){
 
 function bindFormEvents(){
   loginForm?.addEventListener("submit", loginUser);
+  passwordResetForm?.addEventListener("submit", resetPassword);
   registerForm?.addEventListener("submit", registerUser);
 }
 
@@ -209,12 +222,15 @@ function closeAuthModal(){
 }
 
 function setAuthView(view){
-  const nextView = view === "register" ? "register" : "login";
+  const nextView = view === "register" || view === "reset" ? view : "login";
   const isRegister = nextView === "register";
+  const isReset = nextView === "reset";
   const text = AUTH_TEXT[nextView];
 
-  if(loginForm) loginForm.hidden = isRegister;
+  if(loginForm) loginForm.hidden = nextView !== "login";
+  if(passwordResetForm) passwordResetForm.hidden = !isReset;
   if(registerForm) registerForm.hidden = !isRegister;
+  if(authTabs) authTabs.hidden = isReset;
   if(authTitle) authTitle.textContent = text.title;
   if(authSubtitle) authSubtitle.textContent = text.subtitle;
 
@@ -223,6 +239,29 @@ function setAuthView(view){
   });
 
   clearAuthMessage();
+}
+
+async function resetPassword(event){
+  event.preventDefault();
+
+  const email = document.getElementById("passwordResetEmail")?.value.trim() || "";
+
+  if(!email){
+    showAuthMessage("Email manzilni kiriting.");
+    return;
+  }
+
+  setFormLoading(passwordResetForm, true);
+
+  try{
+    await sendPasswordResetEmail(auth, email);
+    passwordResetForm.reset();
+    showAuthMessage("Parolni tiklash havolasi emailingizga yuborildi.", "success");
+  }catch(error){
+    showAuthMessage(getErrorMessage(error));
+  }finally{
+    setFormLoading(passwordResetForm, false);
+  }
 }
 
 async function registerUser(event){
@@ -300,6 +339,14 @@ async function logoutUser(){
   }catch(error){
     console.error("Logout failed:", error);
   }
+}
+
+export async function sendVerificationEmail(user = auth.currentUser){
+  if(!user){
+    throw new Error("Email verification requires an authenticated user.");
+  }
+
+  await sendEmailVerification(user);
 }
 
 async function createUserProfile(uid, profile){
@@ -455,6 +502,7 @@ function validateRegistration(formData){
 }
 
 function getActiveForm(){
+  if(passwordResetForm && !passwordResetForm.hidden) return passwordResetForm;
   if(registerForm && !registerForm.hidden) return registerForm;
   return loginForm;
 }
