@@ -294,6 +294,10 @@ body::before{
   padding:0 28px 18px;
 }
 
+.auth-tabs[hidden]{
+  display:none;
+}
+
 .auth-tab{
   padding:12px;
   border:1px solid rgba(255,255,255,.1);
@@ -383,6 +387,29 @@ body::before{
   color:#7dd3fc;
   cursor:pointer;
   font-size:14px;
+}
+
+.auth-link-row{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:-4px;
+}
+
+.auth-forgot-link{
+  border:0;
+  background:transparent;
+  color:#7dd3fc;
+  cursor:pointer;
+  font-size:14px;
+  text-align:right;
+}
+
+.auth-switch:hover,
+.auth-switch:focus,
+.auth-forgot-link:hover,
+.auth-forgot-link:focus{
+  color:#bae6fd;
+  outline:none;
 }
 
 .auth-message{
@@ -1398,6 +1425,7 @@ aria-label="Modalni yopish">
 
 <div
 class="auth-tabs"
+id="authTabs"
 role="tablist"
 aria-label="Authentication tabs">
 
@@ -1442,6 +1470,15 @@ autocomplete="current-password"
 required>
 </div>
 
+<div class="auth-link-row">
+<button
+type="button"
+class="auth-forgot-link"
+data-auth-switch="reset">
+Parolni unutdingizmi?
+</button>
+</div>
+
 <div class="auth-actions">
 <button
 type="submit"
@@ -1455,6 +1492,39 @@ type="button"
 class="auth-switch"
 data-auth-switch="register">
 Hisobingiz yo'qmi? Ro'yxatdan o'ting
+</button>
+</div>
+
+</form>
+
+<form
+class="auth-form"
+id="passwordResetForm"
+hidden
+novalidate>
+
+<div class="auth-field">
+<label for="passwordResetEmail">Email</label>
+<input
+type="email"
+id="passwordResetEmail"
+autocomplete="email"
+required>
+</div>
+
+<div class="auth-actions">
+<button
+type="submit"
+class="auth-submit"
+id="passwordResetSubmit">
+Tiklash havolasini yuborish
+</button>
+
+<button
+type="button"
+class="auth-switch"
+data-auth-switch="login">
+Kirishga qaytish
 </button>
 </div>
 
