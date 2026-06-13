@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mavzu 29 Quiz | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+}
+
+.quiz-box{
+
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+}
+
+.progress{
+
+height:12px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+transition:.3s;
+}
+
+.timer{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:#38bdf8;
+}
+
+.question{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+}
+
+.answers{
+
+display:grid;
+
+gap:15px;
+}
+
+.answer{
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.answer:hover{
+
+border-color:#38bdf8;
+}
+
+.correct{
+
+background:#16a34a !important;
+}
+
+.wrong{
+
+background:#dc2626 !important;
+}
+
+.next-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:none;
+}
+
+.result{
+
+display:none;
+
+text-align:center;
+}
+
+.result h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+}
+
+.result p{
+
+font-size:22px;
+
+line-height:2;
+}
+
+.restart{
+
+margin-top:20px;
+
+padding:16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+.back-to-quizs{
+
+display:inline-block;
+
+margin-top:15px;
+
+margin-left:10px;
+
+padding:16px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+background:
+linear-gradient(135deg,#0f766e,#14b8a6);
+
+transition:.3s;
+
+}
+
+.back-to-quizs:hover{
+
+transform:translateY(-3px);
+
+}
+
+#background-texts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.floating-text{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:rgba(255,255,255,0.06);
+white-space:nowrap;
+user-select:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="quiz-box">
+
+<h1>
+    QUIZ:
+ðŸš€ Izojarayonlar
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+
+const questions = [
+
+{
+q:"O'zgarmas temperaturada ($T=const$) kechuvchi jarayon nima deb ataladi?",
+a:["Izobarik jarayon","Izotermik jarayon","Izoxorik jarayon","Adiabatik jarayon"],
+c:1
+},
+
+{
+q:"**Boyl-Mariott** qonuni ideal gaz uchun qanday bog'liqlikni ifodalaydi?",
+a:["$V/T = const$","$P/T = const$","$PV = const$","$PV/T = const$"],
+c:2
+},
+
+{
+q:"O'zgarmas bosimda ($P=const$) kechuvchi jarayon qanday nomlanadi?",
+a:["Izotermik","Izoxorik","Izobarik","Adiabatik"],
+c:2
+},
+
+{
+q:"**Gey-Lussak** qonunining (izobarik jarayon) matematik ifodasi qaysi?",
+a:["$P_1/T_1 = P_2/T_2$","$V_1/T_1 = V_2/T_2$","$P_1V_1 = P_2V_2$","$PV^γ = const$"],
+c:1
+},
+
+{
+q:"O'zgarmas hajmda ($V=const$) kechuvchi jarayon nima deb ataladi?",
+a:["Izobarik","Izotermik","Adiabatik","Izoxorik"],
+c:3
+},
+
+{
+q:"**Sharl** qonuniga ko'ra, o'zgarmas massali gazda bosim temperaturaga qanday bog'langan?",
+a:["Teskari proporsional","To'g'ri proporsional ($P/T = const$)","Bog'liq emas","Kvadratik bog'liq"],
+c:1
+},
+
+{
+q:"Qaysi termodinamik jarayonda gaz **ish bajarmaydi** ($A=0$)?",
+a:["Izotermik","Izobarik","Izoxorik","Adiabatik"],
+c:2
+},
+
+{
+q:"Izotermik jarayonda gazga berilgan **issiqlik miqdori** ($Q$) nimaga sarflanadi?",
+a:["Faqat ichki energiyani oshirishga","Faqat tashqi kuchlar ustidan ish bajarishga ($Q=A$)","Ichki energiya va ishga teng taqsimlanadi","Gazni sovitishga"],
+c:1
+},
+
+{
+q:"Izoxorik jarayonda gazga berilgan issiqlik miqdori ($Q$) nimaga teng bo'ladi?",
+a:["$Q = A$","$Q = ΔU$ (ichki energiya o'zgarishiga)","$Q = 0$","$Q = A + ΔU$"],
+c:1
+},
+
+{
+q:"Tashqi muhit bilan **issiqlik almashinmasdan** ($Q=0$) sodir bo'ladigan jarayon nima deyiladi?",
+a:["Izotermik","Izobarik","Adiabatik","Izoxorik"],
+c:2
+},
+
+{
+q:"Izotermik jarayonda ideal gazning **ichki energiyasi** ($ΔU$) qanday o'zgaradi?",
+a:["Ortadi","Kamayadi","O'zgarmaydi ($ΔU=0$)","Bosimga qarab o'zgaradi"],
+c:2
+},
+
+{
+q:"Izotermik kengayishda gaz **bosimi** qanday o'zgaradi?",
+a:["Ortadi","Kamayadi (chunki hajm ortadi)","O'zgarmaydi","Dastlab ortib, keyin kamayadi"],
+c:1
+},
+
+{
+q:"Izobarik jarayonda absolut temperatura 2 marta ortsa, **molekulalar konsentratsiyasi** ($n$) qanday o'zgaradi?",
+a:["2 marta ortadi","2 marta kamayadi","O'zgarmaydi","4 marta kamayadi"],
+c:1
+},
+
+{
+q:"Ideal gazni qaysi jarayonda **isitish osonroq** (energiya deyarli to'la isitishga sarflanadi)?",
+a:["Izobarik jarayonda","Izotermik jarayonda","Izoxorik jarayonda","Adiabatik jarayonda"],
+c:2
+},
+
+{
+q:"Ideal gaz **adiabatik kengayganda**, uning temperaturasi qanday o'zgaradi?",
+a:["Ko'tariladi","O'zgarmaydi","Pasayadi","Bosimga bog'liq"],
+c:2
+},
+
+{
+q:"Izobarik jarayonda bajarilgan **ish** ($A$) qaysi formula bilan aniqlanadi?",
+a:["$A = PΔV$","$A = ΔU$","$A = Q$","$A = 0$"],
+c:0
+},
+
+{
+q:"**Boyl-Mariott** qonuni grafikda ($P-V$ koordinatalarda) qanday chiziq bilan tasvirlanadi?",
+a:["To'g'ri chiziq","Giperbola (izoterma)","Parabola","Vertikal chiziq"],
+c:1
+},
+
+{
+q:"Gazni **adiabatik siqishda** tashqi kuchlar 50 MJ ish bajardi. Gazning ichki energiyasi qanday o'zgaradi?",
+a:["50 MJ ga kamayadi","50 MJ ga ortadi","O'zgarmaydi","Nolga tenglashadi"],
+c:1
+},
+
+{
+q:"Izobarik jarayonda bir atomli ideal gazga berilgan issiqlik miqdorining qanday qismi **ichki energiyani** oshirishga sarflanadi?",
+a:["40% (0,4 Q)","60% (0,6 Q)","100%","50%"],
+c:1
+},
+
+{
+q:"Quyidagi parametrlarning qaysi biri **izoxorik** jarayonda o'zgarmas qoladi?",
+a:["Bosim","Temperatura","Zichlik va hajm","Ichki energiya"],
+c:2
+}
+
+];
+
+function shuffleArray(array){
+
+for(let i=array.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[array[i],array[j]]=
+[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+shuffleArray(questions);
+
+let current = 0;
+let score = 0;
+let wrong = 0;
+let timeout = 0;
+
+let timer;
+let timeLeft = 15;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 15;
+
+document.getElementById("timer")
+.innerHTML = "⏱ " + timeLeft;
+
+const q = questions[current];
+
+question.innerHTML =
+(current+1)+". "+q.q;
+
+answers.innerHTML = "";
+
+let shuffledAnswers =
+q.a.map((answer,index)=>({
+
+text:answer,
+
+correct:index===q.c
+
+}));
+
+shuffleArray(shuffledAnswers);
+
+shuffledAnswers.forEach((item)=>{
+
+const div =
+document.createElement("div");
+
+div.className="answer";
+
+div.innerHTML=item.text;
+
+div.onclick=()=>selectAnswer(
+item.correct,
+div
+);
+
+answers.appendChild(div);
+
+});
+
+document.getElementById("progressBar")
+.style.width =
+(current/questions.length)*100 + "%";
+
+startTimer();
+
+}
+
+function startTimer(){
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer")
+.innerHTML="⏱ "+timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timeout++;
+
+nextQuestion();
+
+}
+
+},1000);
+
+}
+
+function selectAnswer(
+
+isCorrect,
+
+selectedBtn
+
+){
+
+clearInterval(timer);
+
+const all =
+document.querySelectorAll(".answer");
+
+all.forEach(a=>
+a.style.pointerEvents="none");
+
+if(isCorrect){
+
+selectedBtn
+.classList.add("correct");
+
+score++;
+
+}else{
+
+selectedBtn
+.classList.add("wrong");
+
+wrong++;
+
+all.forEach(btn=>{
+
+const text =
+btn.innerText;
+
+const q =
+questions[current];
+
+if(text===q.a[q.c]){
+
+btn.classList.add(
+"correct"
+);
+
+}
+
+});
+
+}
+
+nextBtn.style.display="block";
+
+}
+
+nextBtn.onclick=()=>{
+
+nextQuestion();
+
+};
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+nextBtn.style.display="none";
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+clearInterval(timer);
+
+document.getElementById("quizArea")
+.style.display="none";
+
+document.getElementById("timer")
+.style.display="none";
+
+document.getElementById("result")
+.style.display="block";
+
+const percent =
+(score/questions.length)*100;
+
+document.getElementById("resultText")
+.innerHTML=
+
+`
+✅ To'g'ri: ${score}<br>
+❌ Noto'g'ri: ${wrong}<br>
+⏱ Vaqti tugagan: ${timeout}<br>
+📊 Natija: ${percent.toFixed(0)}%
+`;
+
+document.getElementById("progressBar")
+.style.width="100%";
+
+}
+
+loadQuestion();
+
+const bgContainer =
+document.getElementById("background-texts");
+
+const texts = [];
+
+for(let i=0;i<8;i++){
+
+const el =
+document.createElement("div");
+
+el.className = "floating-text";
+
+el.innerText = "OliyFizika.uz";
+
+bgContainer.appendChild(el);
+
+texts.push({
+el,
+x:Math.random()*(window.innerWidth-200),
+y:Math.random()*(window.innerHeight-50),
+dx:(Math.random()*2+1)*(Math.random()>0.5?1:-1),
+dy:(Math.random()*2+1)*(Math.random()>0.5?1:-1)
+});
+
+}
+
+function animateTexts(){
+
+texts.forEach(t=>{
+
+t.x += t.dx;
+t.y += t.dy;
+
+const w = t.el.offsetWidth;
+const h = t.el.offsetHeight;
+
+if(t.x <= 0 || t.x + w >= window.innerWidth){
+t.dx *= -1;
+}
+
+if(t.y <= 0 || t.y + h >= window.innerHeight){
+t.dy *= -1;
+}
+
+t.el.style.transform =
+`translate(${t.x}px, ${t.y}px)`;
+
+});
+
+requestAnimationFrame(animateTexts);
+}
+
+animateTexts();
+
+</script>
+
+</body>
+</html>
+

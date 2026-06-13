@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mavzu 31 Quiz | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+}
+
+.quiz-box{
+
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+}
+
+.progress{
+
+height:12px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+transition:.3s;
+}
+
+.timer{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:#38bdf8;
+}
+
+.question{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+}
+
+.answers{
+
+display:grid;
+
+gap:15px;
+}
+
+.answer{
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.answer:hover{
+
+border-color:#38bdf8;
+}
+
+.correct{
+
+background:#16a34a !important;
+}
+
+.wrong{
+
+background:#dc2626 !important;
+}
+
+.next-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:none;
+}
+
+.result{
+
+display:none;
+
+text-align:center;
+}
+
+.result h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+}
+
+.result p{
+
+font-size:22px;
+
+line-height:2;
+}
+
+.restart{
+
+margin-top:20px;
+
+padding:16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+.back-to-quizs{
+
+display:inline-block;
+
+margin-top:15px;
+
+margin-left:10px;
+
+padding:16px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+background:
+linear-gradient(135deg,#0f766e,#14b8a6);
+
+transition:.3s;
+
+}
+
+.back-to-quizs:hover{
+
+transform:translateY(-3px);
+
+}
+
+#background-texts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.floating-text{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:rgba(255,255,255,0.06);
+white-space:nowrap;
+user-select:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="quiz-box">
+
+<h1>
+    QUIZ:
+ðŸš€ Kapillarlik va sirt taranglik
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+
+const questions = [
+
+{
+q:"Sirt taranglik koeffitsiyenti ($\sigma$) Xalqaro birliklar sistemasi (XBS) da qanday birlikda ifodalanadi?",
+a:["J·s","N/m²","N/m","J/m³"],
+c:2
+},
+
+{
+q:"'Kapillyar' so'zi lotinchadan olingan bo'lib, qanday ma'noni bildiradi?",
+a:["Ingichka nay","Soch tolasi","Suv yo'li","Kichik teshik"],
+c:1
+},
+
+{
+q:"Sirt taranglik koeffitsiyentining formulasi qaysi javobda to'g'ri ko'rsatilgan? ($W$ – sirt energiyasi, $S$ – yuza)",
+a:["σ = S/W","σ = W/S","σ = W·S","σ = F·S"],
+c:1
+},
+
+{
+q:"$F/\sigma$ ifodaning birligi qanday? ($F$ – kuch, $\sigma$ – sirt taranglik koeffitsiyenti)",
+a:["m","1/m","m²","m³"],
+c:0
+},
+
+{
+q:"Suyuqlik molekulalari orasidagi tortishish kuchi suyuqlik va qattiq jism molekulalari orasidagi tortishish kuchidan **kichik** bo'lsa, qanday hodisa ro'y beradi?",
+a:["Ho'llamaslik","Ho'llash","Kapillyar pasayish","Diffuziya"],
+c:1
+},
+
+{
+q:"Xo'llash burchagi ($\theta$) qanday bo'lganda suyuqlik qattiq jismni **ho'llaydigan** hisoblanadi?",
+a:["θ = 180°","θ > 90° (o'tmas)","θ < 90° (o'tkir)","θ = 90°"],
+c:2
+},
+
+{
+q:"Nima sababdan suyuqlik sirti doimo eng kichik yuzani egallashga (masalan, sharsimon shakl olishga) intiladi?",
+a:["Atmosfera bosimi tufayli","Sirt qatlamidagi molekulalarning suyuqlik ichiga yo'nalgan natijaviy kuchi tufayli","Og'irlik kuchi ta'sirida","Inersiya natijasida"],
+c:1
+},
+
+{
+q:"Suyuqlikning sirt taranglik koeffitsiyenti nimalarga bog'liq?",
+a:["Faqat suyuqlik hajmiga","Suyuqlikning turiga, temperaturasiga va undagi aralashmalarga","Idishning shakliga","Faqat atmosfera bosimiga"],
+c:1
+},
+
+{
+q:"Shar shaklidagi bir xil haroratli bir nechta simob tomchilari birlashib, yagona tomchi hosil qilsa, harorat qanday o'zgaradi?",
+a:["O'zgarmaydi","Pasayadi","Ko'tariladi (chunki sirt energiyasi kamayadi)","Nolga tenglashadi"],
+c:2
+},
+
+{
+q:"Kapillyar nayda suyuqlikning ko'tarilish balandligi ($h$) nayning radiusiga ($r$) qanday bog'liq?",
+a:["To'g'ri proporsional","Bog'liq emas","Teskari proporsional ($h \propto 1/r$)","Kvadratik bog'liq"],
+c:2
+},
+
+{
+q:"Yer sirtidagi kapillyar nayda suv 24 mm ga ko'tarildi. Oyda ($g_{oy} \approx g_{yer}/6$) shu naychada suv qancha balandlikka ko'tariladi?",
+a:["4 mm","24 mm","144 mm","72 mm"],
+c:2
+},
+
+{
+q:"$\sigma \cdot S$ ifoda qaysi fizik kattalikni va birlikni bildiradi?",
+a:["Sirt energiyasi, Joul (J)","Sirt taranglik kuchi, Nyuton (N)","Bosim, Paskal (Pa)","Massa, kg"],
+c:0
+},
+
+{
+q:"Temperatura ortishi bilan suyuqlikning sirt taranglik koeffitsiyenti qanday o'zgaradi?",
+a:["Ortadi","Kamayadi","O'zgarmaydi","Dastlab ortib, keyin kamayadi"],
+c:1
+},
+
+{
+q:"Ikkita parallel plastina orasidagi masofa kapillyar nayning radiusiga teng ($d=r$). Ulardagi suyuqlik ko'tarilish balandliklari ($h_{pl}$ va $h_{nay}$) qanday munosabatda bo'ladi?",
+a:["h_pl = h_nay","h_pl = 2·h_nay","2·h_pl = h_nay","h_pl = 1,5·h_nay"],
+c:2
+},
+
+{
+q:"Sirt taranglik kuchi suyuqlik sirtini chegaralab turgan chiziqqa nisbatan qanday yo'nalgan bo'ladi?",
+a:["Parallel","Ixtiyoriy burchak ostida","Perpendikulyar va sirtni qisqartirish tomonga","Vertikal yuqoriga"],
+c:2
+},
+
+{
+q:"Birinchi kapillyar nayning radiusi 3 mm, ikkinchisiniki 2 mm. Birinchi nayda suv 4,87 mm ga ko'tarilgan bo'lsa, ikkinchisida necha mm ga ko'tariladi?",
+a:["3,25 mm","7,3 mm","9,74 mm","4,87 mm"],
+c:1
+},
+
+{
+q:"Suyuqlik sirtiga sovun (yoki yuvuvchi vositalar) qo'shilsa, sirt taranglik koeffitsiyenti qanday o'zgaradi?",
+a:["Ortadi","Kamayadi","O'zgarmaydi","Nolga teng bo'ladi"],
+c:1
+},
+
+{
+q:"Suyuqlik ichidagi gaz pufakchasi sirt taranglik tufayli qanday qo'shimcha bosimga ega bo'ladi? ($r$ – pufakcha radiusi)",
+a:["P = σ/r","P = 2σ/r","P = 4σ/r","P = σ·r"],
+c:1
+},
+
+{
+q:"Quyidagilardan qaysi biri kapillyar hodisalarga misol bo'la oladi?",
+a:["Avtomobilning tormozlanishi","Daraxt ildizlari orqali namlikning yuqoriga ko'tarilishi","Gazning kengayishi","Muzning erishi"],
+c:1
+},
+
+{
+q:"Sirt taranglik koeffitsiyenti birligi uchun quyidagilardan qaysi biri to'g'ri?",
+a:["N/m","J/m²","Ikkala javob ham to'g'ri","Faqat N/m²"],
+c:2
+}
+
+];
+
+function shuffleArray(array){
+
+for(let i=array.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[array[i],array[j]]=
+[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+shuffleArray(questions);
+
+let current = 0;
+let score = 0;
+let wrong = 0;
+let timeout = 0;
+
+let timer;
+let timeLeft = 15;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 15;
+
+document.getElementById("timer")
+.innerHTML = "⏱ " + timeLeft;
+
+const q = questions[current];
+
+question.innerHTML =
+(current+1)+". "+q.q;
+
+answers.innerHTML = "";
+
+let shuffledAnswers =
+q.a.map((answer,index)=>({
+
+text:answer,
+
+correct:index===q.c
+
+}));
+
+shuffleArray(shuffledAnswers);
+
+shuffledAnswers.forEach((item)=>{
+
+const div =
+document.createElement("div");
+
+div.className="answer";
+
+div.innerHTML=item.text;
+
+div.onclick=()=>selectAnswer(
+item.correct,
+div
+);
+
+answers.appendChild(div);
+
+});
+
+document.getElementById("progressBar")
+.style.width =
+(current/questions.length)*100 + "%";
+
+startTimer();
+
+}
+
+function startTimer(){
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer")
+.innerHTML="⏱ "+timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timeout++;
+
+nextQuestion();
+
+}
+
+},1000);
+
+}
+
+function selectAnswer(
+
+isCorrect,
+
+selectedBtn
+
+){
+
+clearInterval(timer);
+
+const all =
+document.querySelectorAll(".answer");
+
+all.forEach(a=>
+a.style.pointerEvents="none");
+
+if(isCorrect){
+
+selectedBtn
+.classList.add("correct");
+
+score++;
+
+}else{
+
+selectedBtn
+.classList.add("wrong");
+
+wrong++;
+
+all.forEach(btn=>{
+
+const text =
+btn.innerText;
+
+const q =
+questions[current];
+
+if(text===q.a[q.c]){
+
+btn.classList.add(
+"correct"
+);
+
+}
+
+});
+
+}
+
+nextBtn.style.display="block";
+
+}
+
+nextBtn.onclick=()=>{
+
+nextQuestion();
+
+};
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+nextBtn.style.display="none";
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+clearInterval(timer);
+
+document.getElementById("quizArea")
+.style.display="none";
+
+document.getElementById("timer")
+.style.display="none";
+
+document.getElementById("result")
+.style.display="block";
+
+const percent =
+(score/questions.length)*100;
+
+document.getElementById("resultText")
+.innerHTML=
+
+`
+✅ To'g'ri: ${score}<br>
+❌ Noto'g'ri: ${wrong}<br>
+⏱ Vaqti tugagan: ${timeout}<br>
+📊 Natija: ${percent.toFixed(0)}%
+`;
+
+document.getElementById("progressBar")
+.style.width="100%";
+
+}
+
+loadQuestion();
+
+const bgContainer =
+document.getElementById("background-texts");
+
+const texts = [];
+
+for(let i=0;i<8;i++){
+
+const el =
+document.createElement("div");
+
+el.className = "floating-text";
+
+el.innerText = "OliyFizika.uz";
+
+bgContainer.appendChild(el);
+
+texts.push({
+el,
+x:Math.random()*(window.innerWidth-200),
+y:Math.random()*(window.innerHeight-50),
+dx:(Math.random()*2+1)*(Math.random()>0.5?1:-1),
+dy:(Math.random()*2+1)*(Math.random()>0.5?1:-1)
+});
+
+}
+
+function animateTexts(){
+
+texts.forEach(t=>{
+
+t.x += t.dx;
+t.y += t.dy;
+
+const w = t.el.offsetWidth;
+const h = t.el.offsetHeight;
+
+if(t.x <= 0 || t.x + w >= window.innerWidth){
+t.dx *= -1;
+}
+
+if(t.y <= 0 || t.y + h >= window.innerHeight){
+t.dy *= -1;
+}
+
+t.el.style.transform =
+`translate(${t.x}px, ${t.y}px)`;
+
+});
+
+requestAnimationFrame(animateTexts);
+}
+
+animateTexts();
+
+</script>
+
+</body>
+</html>
+

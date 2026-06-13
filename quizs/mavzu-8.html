@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mavzu 8 Quiz | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+}
+
+.quiz-box{
+
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+}
+
+.progress{
+
+height:12px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+transition:.3s;
+}
+
+.timer{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:#38bdf8;
+}
+
+.question{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+}
+
+.answers{
+
+display:grid;
+
+gap:15px;
+}
+
+.answer{
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.answer:hover{
+
+border-color:#38bdf8;
+}
+
+.correct{
+
+background:#16a34a !important;
+}
+
+.wrong{
+
+background:#dc2626 !important;
+}
+
+.next-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:none;
+}
+
+.result{
+
+display:none;
+
+text-align:center;
+}
+
+.result h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+}
+
+.result p{
+
+font-size:22px;
+
+line-height:2;
+}
+
+.restart{
+
+margin-top:20px;
+
+padding:16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+.back-to-quizs{
+
+display:inline-block;
+
+margin-top:15px;
+
+margin-left:10px;
+
+padding:16px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+background:
+linear-gradient(135deg,#0f766e,#14b8a6);
+
+transition:.3s;
+
+}
+
+.back-to-quizs:hover{
+
+transform:translateY(-3px);
+
+}
+
+#background-texts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.floating-text{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:rgba(255,255,255,0.06);
+white-space:nowrap;
+user-select:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="quiz-box">
+
+<h1>
+    QUIZ:
+ðŸš€ Elastiklik kuchi
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+
+const questions = [
+
+{
+q:"Jismning tashqi kuch ta’sirida o’z shakli va hajmini o’zgartirishi nima deyiladi?",
+a:["Harakat","Inersiya","Deformatsiya","Tezlanish"],
+c:2
+},
+
+{
+q:"Kuch ta’siri to’xtagandan so’ng jism avvalgi holatiga qaytsa, u qanday deformatsiya?",
+a:["Plastik","Noelastik","Elastik","Absolyut"],
+c:2
+},
+
+{
+q:"Elastiklik kuchi qanday tabiatga ega?",
+a:["Gravitatsion","Elektromagnit","Yadroviy","Mexanik"],
+c:1
+},
+
+{
+q:"Elastiklik kuchi har doim qaysi tomonga yo'naladi?",
+a:["Tashqi kuch bilan bir xil tomonga","Deformatsiyalovchi kuchga qarama-qarshi","Markazga qarab","Vertikal pastga"],
+c:1
+},
+
+{
+q:"Jismning elastik deformatsiyasi turiga qarab necha xil bo'ladi?",
+a:["2 turga","3 turga","4 turga","5 turga"],
+c:3
+},
+
+{
+q:"Guk qonunining matematik ifodasi qaysi?",
+a:["F = ma","F = k|x|","F = mg","F = GmM/r²"],
+c:1
+},
+
+{
+q:"Jismning oxirgi va dastlabki uzunliklari farqi (Δx) nima deyiladi?",
+a:["Absolyut uzayish","Nisbiy uzayish","Mexanik kuchlanish","Bikrlik"],
+c:0
+},
+
+{
+q:"Absolyut uzayishning (Δx) dastlabki uzunlikka (x0) nisbati nima deyiladi?",
+a:["Absolyut uzayish","Nisbiy uzayish","Qarshilik","Modul"],
+c:1
+},
+
+{
+q:"Yuza birligiga tik ta’sir etuvchi elastiklik kuchi nima deyiladi?",
+a:["Bikrlik","Bosim yoki mexanik kuchlanish","Energiya","Impuls"],
+c:1
+},
+
+{
+q:"Prujinalar parallel ulanganda umumiy bikrlik (k_um) qanday topiladi?",
+a:["k_um = k1 + k2 + ...","1/k_um = 1/k1 + 1/k2","k_um = k/n","k_um = k1 * k2"],
+c:0
+},
+
+{
+q:"Prujinalar ketma-ket ulanganda umumiy bikrlik formulasi qanday?",
+a:["k_um = k1 + k2","1/k_um = 1/k1 + 1/k2 + ...","k_um = nk","k_um = k1 - k2"],
+c:1
+},
+
+{
+q:"Qaysi kuchlarning bajargan ishi trayektoriya shakliga bog’liq emas?",
+a:["Ishqalanish kuchlari","Tortishish va elastik kuchlar","Havo qarshiligi","Yadro kuchlari"],
+c:1
+},
+
+{
+q:"Bikrliklari bir xil 'k' bo’lgan n ta prujina parallel ulansa, umumiy bikrlik nimaga teng?",
+a:["k / n","n * k","k + n","k - n"],
+c:1
+},
+
+{
+q:"Bikrliklari bir xil 'k' bo’lgan n ta prujina ketma-ket ulansa, natijaviy bikrlik qanday bo'ladi?",
+a:["k / n","n * k","k²","k + n"],
+c:0
+},
+
+{
+q:"Tashqi kuch ta’sirida deformatsiyalanmaydigan jismda yuzaga keluvchi kuch nima?",
+a:["Ishqalanish kuchi","Taranglik kuchi","Og'irlik kuchi","Arximed kuchi"],
+c:1
+},
+
+{
+q:"Guk qonuniga ko’ra mexanik kuchlanish (σ) nimaga to'g'ri proporsional?",
+a:["Absolyut uzayishga","Massaga","Nisbiy uzayishga (ε)","Vaqtga"],
+c:2
+},
+
+{
+q:"Elastiklik kuchining ishi trayektoriya shakliga bog’liq bo’lmagani uchun u qanday kuch deyiladi?",
+a:["Girdobli kuch","Noelastik kuch","Konservativ (potensial) kuch","Tashqi kuch"],
+c:2
+},
+
+{
+q:"Nisbiy uzayishning o'lchov birligi nima?",
+a:["Metr","Nyuton","Paskal","O'lchov birligiga ega emas"],
+c:3
+},
+
+{
+q:"Prujinaning bikrligi (k) qaysi birlikda o'lchanadi?",
+a:["N / m","N * m","kg / m","J / m"],
+c:0
+},
+
+{
+q:"Quyidagilardan qaysi biri elastik deformatsiya turi hisoblanadi?",
+a:["Erish","Bug'lanish","Buralish va siljish","Diffuziya"],
+c:2
+}
+
+];
+
+function shuffleArray(array){
+
+for(let i=array.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[array[i],array[j]]=
+[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+shuffleArray(questions);
+
+let current = 0;
+let score = 0;
+let wrong = 0;
+let timeout = 0;
+
+let timer;
+let timeLeft = 15;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 15;
+
+document.getElementById("timer")
+.innerHTML = "⏱ " + timeLeft;
+
+const q = questions[current];
+
+question.innerHTML =
+(current+1)+". "+q.q;
+
+answers.innerHTML = "";
+
+let shuffledAnswers =
+q.a.map((answer,index)=>({
+
+text:answer,
+
+correct:index===q.c
+
+}));
+
+shuffleArray(shuffledAnswers);
+
+shuffledAnswers.forEach((item)=>{
+
+const div =
+document.createElement("div");
+
+div.className="answer";
+
+div.innerHTML=item.text;
+
+div.onclick=()=>selectAnswer(
+item.correct,
+div
+);
+
+answers.appendChild(div);
+
+});
+
+document.getElementById("progressBar")
+.style.width =
+(current/questions.length)*100 + "%";
+
+startTimer();
+
+}
+
+function startTimer(){
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer")
+.innerHTML="⏱ "+timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timeout++;
+
+nextQuestion();
+
+}
+
+},1000);
+
+}
+
+function selectAnswer(
+
+isCorrect,
+
+selectedBtn
+
+){
+
+clearInterval(timer);
+
+const all =
+document.querySelectorAll(".answer");
+
+all.forEach(a=>
+a.style.pointerEvents="none");
+
+if(isCorrect){
+
+selectedBtn
+.classList.add("correct");
+
+score++;
+
+}else{
+
+selectedBtn
+.classList.add("wrong");
+
+wrong++;
+
+all.forEach(btn=>{
+
+const text =
+btn.innerText;
+
+const q =
+questions[current];
+
+if(text===q.a[q.c]){
+
+btn.classList.add(
+"correct"
+);
+
+}
+
+});
+
+}
+
+nextBtn.style.display="block";
+
+}
+
+nextBtn.onclick=()=>{
+
+nextQuestion();
+
+};
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+nextBtn.style.display="none";
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+clearInterval(timer);
+
+document.getElementById("quizArea")
+.style.display="none";
+
+document.getElementById("timer")
+.style.display="none";
+
+document.getElementById("result")
+.style.display="block";
+
+const percent =
+(score/questions.length)*100;
+
+document.getElementById("resultText")
+.innerHTML=
+
+`
+✅ To'g'ri: ${score}<br>
+❌ Noto'g'ri: ${wrong}<br>
+⏱ Vaqti tugagan: ${timeout}<br>
+📊 Natija: ${percent.toFixed(0)}%
+`;
+
+document.getElementById("progressBar")
+.style.width="100%";
+
+}
+
+loadQuestion();
+
+const bgContainer =
+document.getElementById("background-texts");
+
+const texts = [];
+
+for(let i=0;i<8;i++){
+
+const el =
+document.createElement("div");
+
+el.className = "floating-text";
+
+el.innerText = "OliyFizika.uz";
+
+bgContainer.appendChild(el);
+
+texts.push({
+el,
+x:Math.random()*(window.innerWidth-200),
+y:Math.random()*(window.innerHeight-50),
+dx:(Math.random()*2+1)*(Math.random()>0.5?1:-1),
+dy:(Math.random()*2+1)*(Math.random()>0.5?1:-1)
+});
+
+}
+
+function animateTexts(){
+
+texts.forEach(t=>{
+
+t.x += t.dx;
+t.y += t.dy;
+
+const w = t.el.offsetWidth;
+const h = t.el.offsetHeight;
+
+if(t.x <= 0 || t.x + w >= window.innerWidth){
+t.dx *= -1;
+}
+
+if(t.y <= 0 || t.y + h >= window.innerHeight){
+t.dy *= -1;
+}
+
+t.el.style.transform =
+`translate(${t.x}px, ${t.y}px)`;
+
+});
+
+requestAnimationFrame(animateTexts);
+}
+
+animateTexts();
+
+</script>
+
+</body>
+</html>
+

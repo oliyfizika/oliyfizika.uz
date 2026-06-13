@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mavzu 33 Quiz | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+}
+
+.quiz-box{
+
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+}
+
+.progress{
+
+height:12px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+transition:.3s;
+}
+
+.timer{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:#38bdf8;
+}
+
+.question{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+}
+
+.answers{
+
+display:grid;
+
+gap:15px;
+}
+
+.answer{
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.answer:hover{
+
+border-color:#38bdf8;
+}
+
+.correct{
+
+background:#16a34a !important;
+}
+
+.wrong{
+
+background:#dc2626 !important;
+}
+
+.next-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:none;
+}
+
+.result{
+
+display:none;
+
+text-align:center;
+}
+
+.result h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+}
+
+.result p{
+
+font-size:22px;
+
+line-height:2;
+}
+
+.restart{
+
+margin-top:20px;
+
+padding:16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+.back-to-quizs{
+
+display:inline-block;
+
+margin-top:15px;
+
+margin-left:10px;
+
+padding:16px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+background:
+linear-gradient(135deg,#0f766e,#14b8a6);
+
+transition:.3s;
+
+}
+
+.back-to-quizs:hover{
+
+transform:translateY(-3px);
+
+}
+
+#background-texts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.floating-text{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:rgba(255,255,255,0.06);
+white-space:nowrap;
+user-select:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="quiz-box">
+
+<h1>
+    QUIZ:
+ðŸš€ Ichki energiya
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+
+const questions = [
+
+{
+q:"Jismning (moddaning) ichki energiyasi deb nimaga aytiladi?",
+a:["Jismning faqat kinetik energiyasiga","Jismning faqat potensial energiyasiga","Moddani tashkil qiluvchi zarralarning potensial va kinetik energiyalari yig'indisiga","Jismning balandlikdagi energiyasiga"],
+c:2
+},
+
+{
+q:"Bir atomli ideal gazning ichki energiyasi (U) qaysi formula bilan aniqlanadi?",
+a:["U = 1/2 mv²","U = 3/2 (m/M)RT","U = mgh","U = qU"],
+c:1
+},
+
+{
+q:"Ideal gazning ichki energiyasi qaysi termodinamik parametrga bog'liq?",
+a:["Faqat bosimga","Faqat hajmga","Faqat absolut temperaturaga","Idish shakliga"],
+c:2
+},
+
+{
+q:"Izotermik jarayonda ($T=const$) ideal gazning ichki energiyasi qanday o'zgaradi?",
+a:["Ortadi","Kamayadi","O'zgarmaydi (ΔU = 0)","Bosimga qarab o'zgaradi"],
+c:2
+},
+
+{
+q:"Qanday termodinamik jarayonda gazga berilgan issiqlik miqdori to'laligicha uning ichki energiyasini oshirishga sarflanadi?",
+a:["Izobarik","Izotermik","Izoxorik (V=const)","Adiabatik"],
+c:2
+},
+
+{
+q:"Bir atomli ideal gaz izobarik qizdirilganda, unga berilgan issiqlik miqdorining (Q) qanday qismi ichki energiyani oshirishga sarflanadi?",
+a:["0,2 Q","0,4 Q","0,6 Q","1,0 Q"],
+c:2
+},
+
+{
+q:"Idishdagi geliyning hajmi 2 litr, bosimi 10 kPa bo'lsa, uning ichki energiyasini (J) toping.",
+a:["20 J","30 J","45 J","60 J"],
+c:1
+},
+
+{
+q:"Ideal gazning bosimi 50% ga, hajmi 20% ga ortsa, uning ichki energiyasi qanchaga o'zgaradi?",
+a:["1,2 marta ortadi","1,5 marta ortadi","1,8 marta ortadi","2 marta ortadi"],
+c:2
+},
+
+{
+q:"1 kg massali suv, muz va suv bug'idan qaysi birining ichki energiyasi eng katta ($100^o$C da)?",
+a:["Muzniki","Suvniki","Suv bug'iniki","Hammasiniki bir xil"],
+c:2
+},
+
+{
+q:"Gaz ustida 7,2 kJ ish bajarildi va bu jarayonda atrof-muhitga 6 kJ issiqlik berildi. Gazning ichki energiyasi qanchaga o'zgargan (kJ)?",
+a:["13,2 kJ ga ortgan","1,2 kJ ga ortgan","1,2 kJ ga kamaygan","0,6 kJ ga ortgan"],
+c:1
+},
+
+{
+q:"Temperaturasi -73°C bo'lgan 1 mol bir atomli ideal gazning ichki energiyasini toping (J).",
+a:["831 J","1662 J","2493 J","1246 J"],
+c:2
+},
+
+{
+q:"Ballondagi gazning 25% qismi chiqib ketishi natijasida temperatura 1,2 marta pasaydi. Ichki energiya necha marta kamayadi?",
+a:["1,2 marta","1,5 marta","1,6 marta","2,4 marta"],
+c:2
+},
+
+{
+q:"Og'zi ochiq idish qizdirilganda, idish ichidagi havoning ichki energiyasi qanday o'zgaradi?",
+a:["Ortadi","Kamayadi (chunki massa kamayadi)","O'zgarmaydi","Dastlab ortib, keyin kamayadi"],
+c:1
+},
+
+{
+q:"Ideal gazning bosimi va hajmi bir vaqtda 2 martadan oshsa, uning ichki energiyasi necha marta oshadi?",
+a:["2 marta","4 marta","8 marta","O'zgarmaydi"],
+c:1
+},
+
+{
+q:"Adiabatik kengayishda gazning ichki energiyasi qanday o'zgaradi?",
+a:["Ortadi","Kamayadi (ish bajarishi hisobiga)","O'zgarmaydi","Faqat bosimga bog'liq"],
+c:1
+},
+
+{
+q:"Ideal gaz ustida izoxorik jarayon bajarilganda bosim ortsa, ichki energiya qanday o'zgaradi?",
+a:["Kamayadi","O'zgarmaydi","Ortadi","Nolga tenglashadi"],
+c:2
+},
+
+{
+q:"pV diagrammadagi qaysi nuqtaga ideal gazning eng katta ichki energiyasi mos keladi?",
+a:["p va V ko'paytmasi eng kichik bo'lgan nuqtaga","p va V ko'paytmasi eng katta bo'lgan nuqtaga","Faqat p katta bo'lgan nuqtaga","Faqat V katta bo'lgan nuqtaga"],
+c:1
+},
+
+{
+q:"O'zgarmas massali ideal gaz izobarik siqilganda uning ichki energiyasi qanday o'zgaradi?",
+a:["Ortadi","Kamayadi (chunki T kamayadi)","O'zgarmaydi","Nolga tenglashadi"],
+c:1
+},
+
+{
+q:"Ichki energiyaning Xalqaro birliklar sistemasi (XBS) dagi birligi nima?",
+a:["Vatt (W)","Paskal (Pa)","Joul (J)","Kelvin (K)"],
+c:2
+}
+
+];
+
+function shuffleArray(array){
+
+for(let i=array.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[array[i],array[j]]=
+[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+shuffleArray(questions);
+
+let current = 0;
+let score = 0;
+let wrong = 0;
+let timeout = 0;
+
+let timer;
+let timeLeft = 15;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 15;
+
+document.getElementById("timer")
+.innerHTML = "⏱ " + timeLeft;
+
+const q = questions[current];
+
+question.innerHTML =
+(current+1)+". "+q.q;
+
+answers.innerHTML = "";
+
+let shuffledAnswers =
+q.a.map((answer,index)=>({
+
+text:answer,
+
+correct:index===q.c
+
+}));
+
+shuffleArray(shuffledAnswers);
+
+shuffledAnswers.forEach((item)=>{
+
+const div =
+document.createElement("div");
+
+div.className="answer";
+
+div.innerHTML=item.text;
+
+div.onclick=()=>selectAnswer(
+item.correct,
+div
+);
+
+answers.appendChild(div);
+
+});
+
+document.getElementById("progressBar")
+.style.width =
+(current/questions.length)*100 + "%";
+
+startTimer();
+
+}
+
+function startTimer(){
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer")
+.innerHTML="⏱ "+timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timeout++;
+
+nextQuestion();
+
+}
+
+},1000);
+
+}
+
+function selectAnswer(
+
+isCorrect,
+
+selectedBtn
+
+){
+
+clearInterval(timer);
+
+const all =
+document.querySelectorAll(".answer");
+
+all.forEach(a=>
+a.style.pointerEvents="none");
+
+if(isCorrect){
+
+selectedBtn
+.classList.add("correct");
+
+score++;
+
+}else{
+
+selectedBtn
+.classList.add("wrong");
+
+wrong++;
+
+all.forEach(btn=>{
+
+const text =
+btn.innerText;
+
+const q =
+questions[current];
+
+if(text===q.a[q.c]){
+
+btn.classList.add(
+"correct"
+);
+
+}
+
+});
+
+}
+
+nextBtn.style.display="block";
+
+}
+
+nextBtn.onclick=()=>{
+
+nextQuestion();
+
+};
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+nextBtn.style.display="none";
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+clearInterval(timer);
+
+document.getElementById("quizArea")
+.style.display="none";
+
+document.getElementById("timer")
+.style.display="none";
+
+document.getElementById("result")
+.style.display="block";
+
+const percent =
+(score/questions.length)*100;
+
+document.getElementById("resultText")
+.innerHTML=
+
+`
+✅ To'g'ri: ${score}<br>
+❌ Noto'g'ri: ${wrong}<br>
+⏱ Vaqti tugagan: ${timeout}<br>
+📊 Natija: ${percent.toFixed(0)}%
+`;
+
+document.getElementById("progressBar")
+.style.width="100%";
+
+}
+
+loadQuestion();
+
+const bgContainer =
+document.getElementById("background-texts");
+
+const texts = [];
+
+for(let i=0;i<8;i++){
+
+const el =
+document.createElement("div");
+
+el.className = "floating-text";
+
+el.innerText = "OliyFizika.uz";
+
+bgContainer.appendChild(el);
+
+texts.push({
+el,
+x:Math.random()*(window.innerWidth-200),
+y:Math.random()*(window.innerHeight-50),
+dx:(Math.random()*2+1)*(Math.random()>0.5?1:-1),
+dy:(Math.random()*2+1)*(Math.random()>0.5?1:-1)
+});
+
+}
+
+function animateTexts(){
+
+texts.forEach(t=>{
+
+t.x += t.dx;
+t.y += t.dy;
+
+const w = t.el.offsetWidth;
+const h = t.el.offsetHeight;
+
+if(t.x <= 0 || t.x + w >= window.innerWidth){
+t.dx *= -1;
+}
+
+if(t.y <= 0 || t.y + h >= window.innerHeight){
+t.dy *= -1;
+}
+
+t.el.style.transform =
+`translate(${t.x}px, ${t.y}px)`;
+
+});
+
+requestAnimationFrame(animateTexts);
+}
+
+animateTexts();
+
+</script>
+
+</body>
+</html>
+

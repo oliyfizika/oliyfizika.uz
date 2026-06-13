@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mavzu 5 Quiz | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+}
+
+.quiz-box{
+
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+}
+
+.progress{
+
+height:12px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+transition:.3s;
+}
+
+.timer{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:#38bdf8;
+}
+
+.question{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+}
+
+.answers{
+
+display:grid;
+
+gap:15px;
+}
+
+.answer{
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.answer:hover{
+
+border-color:#38bdf8;
+}
+
+.correct{
+
+background:#16a34a !important;
+}
+
+.wrong{
+
+background:#dc2626 !important;
+}
+
+.next-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:none;
+}
+
+.result{
+
+display:none;
+
+text-align:center;
+}
+
+.result h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+}
+
+.result p{
+
+font-size:22px;
+
+line-height:2;
+}
+
+.restart{
+
+margin-top:20px;
+
+padding:16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+.back-to-quizs{
+
+display:inline-block;
+
+margin-top:15px;
+
+margin-left:10px;
+
+padding:16px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+background:
+linear-gradient(135deg,#0f766e,#14b8a6);
+
+transition:.3s;
+
+}
+
+.back-to-quizs:hover{
+
+transform:translateY(-3px);
+
+}
+
+#background-texts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.floating-text{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:rgba(255,255,255,0.06);
+white-space:nowrap;
+user-select:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="quiz-box">
+
+<h1>
+    QUIZ:
+ðŸš€ Kuch. Nyutonning birinchi qonuni
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+
+const questions = [
+
+{
+q:"Nyutonning birinchi qonuniga ko'ra, jismga boshqa jismlar ta'sir qilmasa yoki kuchlar yig'indisi nolga teng bo'lsa, u qanday holatda bo'ladi?",
+a:["Faqat tinch turadi","Tezlanish bilan harakatlanadi","Tinch holatini yoki to'g'ri chiziqli tekis harakatini saqlaydi","Aylana bo'ylab harakatlanadi"],
+c:2
+},
+
+{
+q:"Nyutonning birinchi qonuni yana qanday nomlanadi?",
+a:["Dinamika qonuni","Butun olam tortishish qonuni","Inersiya qonuni","Energiya saqlanish qonuni"],
+c:2
+},
+
+{
+q:"'Inertsiya' so'zining lotinchadan tarjimasi qanday ma'noni bildiradi?",
+a:["'Qotib qolishlik', 'harakatsizlik'","'Harakat', 'tezlik'","'Kuchli', 'quvvatli'","'O'zgaruvchan', 'beqaror'"],
+c:0
+},
+
+{
+q:"Jismlarning o'z harakat tezligini saqlash xossasi nima deyiladi?",
+a:["Inersiya","Inertlik","Energiya","Impuls"],
+c:0
+},
+
+{
+q:"Nyutonning birinchi qonuni o'rinli bo'lgan sanoq sistemalari nima deb ataladi?",
+a:["Nisbiy sanoq sistemalari","Qo'zg'aluvchan sanoq sistemalari","Inersial sanoq sistemalari","Absolut sanoq sistemalari"],
+c:2
+},
+
+{
+q:"Jismning inertlik xossasining miqdoriy o'lchovi nima?",
+a:["Kuch","Tezlanish","Massa","Tezlik"],
+c:2
+},
+
+{
+q:"Inersial sanoq sistemasida jismga ta'sir etuvchi kuchlarning vektorial yig'indisi nolga teng bo'lsa (F=0), jism tezligi qanday o'zgaradi?",
+a:["O'zgarmaydi (v=const)","Nolgacha kamayadi","Cheksiz ortadi","Yo'nalishini o'zgartiradi"],
+c:0
+},
+
+{
+q:"Massa qanday fizik kattalik hisoblanadi?",
+a:["Vektor va additiv","Vektor va skalyar","Faqat o'zgaruvchan","Skalyar va additiv"],
+c:3
+},
+
+{
+q:"Har qanday jismning o'z holatini saqlashga intilish xususiyati nima deyiladi?",
+a:["Gravitatsiya","Inertlik","Tezlanish","Bosim"],
+c:1
+},
+
+{
+q:"Klassik mexanikaning asosiy qonunlarini mukammal tavsiflagan ingliz olimi kim?",
+a:["G. Galiley","I. Nyuton","A. Eynshteyn","J. Maksvell"],
+c:1
+},
+
+{
+q:"Barcha inersial sanoq sistemalarida mexanika qonunlari bir xilda kechishi qaysi prinsipda aytiladi?",
+a:["Harakat mustaqilligi prinsipi","Paskal prinsipi","Galileyning nisbiylik prinsipi","Inersiya prinsipi"],
+c:2
+},
+
+{
+q:"O'zaro ta'sirning o'lchovi bo'lib hisoblanuvchi fizik vektor kattalik nima?",
+a:["Kuch","Massa","Zichlik","Hajm"],
+c:0
+},
+
+{
+q:"Nyutonning birinchi qonuniga ko'ra, jismning holati qachon o'zgaradi?",
+a:["Vaqt o'tishi bilan o'z-o'zidan","Unga boshqa jism (kuch) ta'sir qilganda","Faqat kosmosda","Hech qachon o'zgarmaydi"],
+c:1
+},
+
+{
+q:"Tinch turgan jismga tashqi kuch ta'sir qilmasa, u qanday holatda qoladi?",
+a:["Sekin harakat boshlaydi","Tezlanish oladi","O'z tinch holatini saqlaydi","Harakatga keladi"],
+c:2
+},
+
+{
+q:"To'g'ri chiziqli tekis harakat qilayotgan jismga kuchlar ta'siri to'xtatilsa, u harakatini qanday davom ettiradi?",
+a:["O'z harakatini to'g'ri chiziqli tekis davom ettiradi","Darhol to'xtaydi","Sekinlanib to'xtaydi","Egri chiziq bo'ylab harakatlanadi"],
+c:0
+},
+
+{
+q:"Massa tushunchasini fanga kiritgan olim kim?",
+a:["Arximed","Nyuton","Paskal","Torrichelli"],
+c:1
+},
+
+{
+q:"Inersiya hodisasi qaysi holda kuzatiladi?",
+a:["Faqat jism tezlanish bilan harakatlanganda","Faqat jism tinch turganda","Jismga ta'sir etuvchi kuchlar natijaviysi nol bo'lganda","Faqat tashqi kuch mavjud bo'lganda"],
+c:2
+},
+
+{
+q:"Sanoq sistemasi nimalardan tashkil topadi?",
+a:["Faqat sanoq jism va vaqt","Faqat koordinatalar sistemasi","Sanoq jism, koordinatalar sistemasi va vaqt o'lchagich","Tezlik va tezlanish o'lchagich"],
+c:2
+},
+
+{
+q:"Nyutonning birinchi qonuni qaysi olimning dastlabki tajribaviy kuzatishlariga (inersiya haqida) tayanadi?",
+a:["A. Eynshteyn","M. Faradey","J. Joul","G. Galiley"],
+c:3
+},
+
+{
+q:"Nyutonning birinchi qonuni mohiyati nimadan iborat?",
+a:["Kuchning aniqlanishidan","Sanoq sistemalarining inersialligini aniqlash va inersiya xossasini ta'riflashdan","Tezlanishning hisoblanishidan","Og'irlik kuchini topishdan"],
+c:1
+}
+
+];
+
+function shuffleArray(array){
+
+for(let i=array.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[array[i],array[j]]=
+[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+shuffleArray(questions);
+
+let current = 0;
+let score = 0;
+let wrong = 0;
+let timeout = 0;
+
+let timer;
+let timeLeft = 15;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 15;
+
+document.getElementById("timer")
+.innerHTML = "⏱ " + timeLeft;
+
+const q = questions[current];
+
+question.innerHTML =
+(current+1)+". "+q.q;
+
+answers.innerHTML = "";
+
+let shuffledAnswers =
+q.a.map((answer,index)=>({
+
+text:answer,
+
+correct:index===q.c
+
+}));
+
+shuffleArray(shuffledAnswers);
+
+shuffledAnswers.forEach((item)=>{
+
+const div =
+document.createElement("div");
+
+div.className="answer";
+
+div.innerHTML=item.text;
+
+div.onclick=()=>selectAnswer(
+item.correct,
+div
+);
+
+answers.appendChild(div);
+
+});
+
+document.getElementById("progressBar")
+.style.width =
+(current/questions.length)*100 + "%";
+
+startTimer();
+
+}
+
+function startTimer(){
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer")
+.innerHTML="⏱ "+timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timeout++;
+
+nextQuestion();
+
+}
+
+},1000);
+
+}
+
+function selectAnswer(
+
+isCorrect,
+
+selectedBtn
+
+){
+
+clearInterval(timer);
+
+const all =
+document.querySelectorAll(".answer");
+
+all.forEach(a=>
+a.style.pointerEvents="none");
+
+if(isCorrect){
+
+selectedBtn
+.classList.add("correct");
+
+score++;
+
+}else{
+
+selectedBtn
+.classList.add("wrong");
+
+wrong++;
+
+all.forEach(btn=>{
+
+const text =
+btn.innerText;
+
+const q =
+questions[current];
+
+if(text===q.a[q.c]){
+
+btn.classList.add(
+"correct"
+);
+
+}
+
+});
+
+}
+
+nextBtn.style.display="block";
+
+}
+
+nextBtn.onclick=()=>{
+
+nextQuestion();
+
+};
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+nextBtn.style.display="none";
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+clearInterval(timer);
+
+document.getElementById("quizArea")
+.style.display="none";
+
+document.getElementById("timer")
+.style.display="none";
+
+document.getElementById("result")
+.style.display="block";
+
+const percent =
+(score/questions.length)*100;
+
+document.getElementById("resultText")
+.innerHTML=
+
+`
+✅ To'g'ri: ${score}<br>
+❌ Noto'g'ri: ${wrong}<br>
+⏱ Vaqti tugagan: ${timeout}<br>
+📊 Natija: ${percent.toFixed(0)}%
+`;
+
+document.getElementById("progressBar")
+.style.width="100%";
+
+}
+
+loadQuestion();
+
+const bgContainer =
+document.getElementById("background-texts");
+
+const texts = [];
+
+for(let i=0;i<8;i++){
+
+const el =
+document.createElement("div");
+
+el.className = "floating-text";
+
+el.innerText = "OliyFizika.uz";
+
+bgContainer.appendChild(el);
+
+texts.push({
+el,
+x:Math.random()*(window.innerWidth-200),
+y:Math.random()*(window.innerHeight-50),
+dx:(Math.random()*2+1)*(Math.random()>0.5?1:-1),
+dy:(Math.random()*2+1)*(Math.random()>0.5?1:-1)
+});
+
+}
+
+function animateTexts(){
+
+texts.forEach(t=>{
+
+t.x += t.dx;
+t.y += t.dy;
+
+const w = t.el.offsetWidth;
+const h = t.el.offsetHeight;
+
+if(t.x <= 0 || t.x + w >= window.innerWidth){
+t.dx *= -1;
+}
+
+if(t.y <= 0 || t.y + h >= window.innerHeight){
+t.dy *= -1;
+}
+
+t.el.style.transform =
+`translate(${t.x}px, ${t.y}px)`;
+
+});
+
+requestAnimationFrame(animateTexts);
+}
+
+animateTexts();
+
+</script>
+
+</body>
+</html>
+

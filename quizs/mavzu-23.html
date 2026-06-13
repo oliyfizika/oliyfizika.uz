@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mavzu 23 Quiz | OliyFizika.uz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#020817,#07122f,#020817);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+color:white;
+}
+
+.quiz-box{
+
+width:100%;
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:35px;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+}
+
+.progress{
+
+height:12px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+transition:.3s;
+}
+
+.timer{
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:#38bdf8;
+}
+
+.question{
+
+font-size:24px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+}
+
+.answers{
+
+display:grid;
+
+gap:15px;
+}
+
+.answer{
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.answer:hover{
+
+border-color:#38bdf8;
+}
+
+.correct{
+
+background:#16a34a !important;
+}
+
+.wrong{
+
+background:#dc2626 !important;
+}
+
+.next-btn{
+
+margin-top:20px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:none;
+}
+
+.result{
+
+display:none;
+
+text-align:center;
+}
+
+.result h2{
+
+font-size:42px;
+
+margin-bottom:25px;
+}
+
+.result p{
+
+font-size:22px;
+
+line-height:2;
+}
+
+.restart{
+
+margin-top:20px;
+
+padding:16px 30px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(135deg,#2563eb,#38bdf8);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+}
+
+.back-to-quizs{
+
+display:inline-block;
+
+margin-top:15px;
+
+margin-left:10px;
+
+padding:16px 30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+background:
+linear-gradient(135deg,#0f766e,#14b8a6);
+
+transition:.3s;
+
+}
+
+.back-to-quizs:hover{
+
+transform:translateY(-3px);
+
+}
+
+#background-texts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+pointer-events:none;
+}
+
+.floating-text{
+position:absolute;
+font-size:28px;
+font-weight:700;
+color:rgba(255,255,255,0.06);
+white-space:nowrap;
+user-select:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="quiz-box">
+
+<h1>
+    QUIZ:
+ðŸš€ Prujinali va matematik mayatnik
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+
+const questions = [
+
+{
+q:"Matematik mayatnikning tebranish davri formulasini ko'rsating.",
+a:["T = 2π√(m/k)","T = 2π√(l/g)","T = 2π√(g/l)","T = 2π√(k/m)"],
+c:1
+},
+
+{
+q:"Prujinali mayatnikning tebranish davri nimalarga bog'liq?",
+a:["Faqat ip uzunligiga","Yukning massasi va prujina bikrligiga","Faqat erkin tushish tezlanishiga","Tebranish amplitudasiga"],
+c:1
+},
+
+{
+q:"Matematik mayatnikning ipi 4 marta uzaytirilsa, uning tebranish davri qanday o'zgaradi?",
+a:["2 marta ortadi","4 marta ortadi","2 marta kamayadi","O'zgarmaydi"],
+c:0
+},
+
+{
+q:"Vaznsizlik holatida (erkin tushishda) matematik mayatnikning tebranishi qanday bo'ladi?",
+a:["Tebranish davri kamayadi","Tebranish amplitudasi ortadi","Mayatnik tebranmaydi (davri cheksiz bo'ladi)","Tezroq tebranadi"],
+c:2
+},
+
+{
+q:"Prujinali mayatnikdagi yukning massasi 4 marta ortsa, tebranish davri qanday o'zgaradi?",
+a:["2 marta ortadi","4 marta ortadi","2 marta kamayadi","O'zgarmaydi"],
+c:0
+},
+
+{
+q:"Matematik mayatnikning tebranish davri unga osilgan yuk massasiga qanday bog'liq?",
+a:["To'g'ri proporsional","Teskari proporsional","Bog'liq emas","Kvadratik bog'liq"],
+c:2
+},
+
+{
+q:"Kichik tebranishlar davrining amplitudaga bog'liq bo'lmaslik xossasi nima deyiladi?",
+a:["Rezonans","Izoxronlik","Diffuziya","Interferensiya"],
+c:1
+},
+
+{
+q:"Bikrliklari k1 va k2 bo'lgan ikki prujina parallel ulansa, umumiy bikrlik qanday topiladi?",
+a:["k = k1 + k2","1/k = 1/k1 + 1/k2","k = k1 * k2","k = (k1+k2)/2"],
+c:0
+},
+
+{
+q:"Matematik mayatnik muvozanat vaziyatidan o'tayotganda qaysi energiya maksimal bo'ladi?",
+a:["Potensial energiya","Kinetik energiya","To'la energiya har doim nol bo'ladi","Ichki energiya"],
+c:1
+},
+
+{
+q:"Prujinaga osilgan yukning tebranish amplitudasi 2 marta orttirilsa, uning tebranish davri qanday o'zgaradi?",
+a:["2 marta ortadi","2 marta kamayadi","O'zgarmaydi","4 marta ortadi"],
+c:2
+},
+
+{
+q:"Matematik mayatnik ipining uzunligi l, erkin tushish tezlanishi g bo'lsa, uning xususiy tebranish chastotasi (ν) formulasini aniqlang.",
+a:["ν = 2π√(l/g)","ν = 1/(2π) * √(g/l)","ν = √(l/g)","ν = 2π√(g/l)"],
+c:1
+},
+
+{
+q:"4 ta bir xil bikrlikli (k) prujina ketma-ket ulansa, sistemaning umumiy bikrligi qanday bo'ladi?",
+a:["4k","k/4","k","k²"],
+c:1
+},
+
+{
+q:"Matematik mayatnik Yerdan Oyga olib o'tilsa (g_oy < g_yer), uning tebranish davri qanday o'zgaradi?",
+a:["Ortadi","Kamayadi","O'zgarmaydi","Nolga teng bo'ladi"],
+c:0
+},
+
+{
+q:"Tebranish amplitudasining ta'rifi qaysi javobda to'g'ri berilgan?",
+a:["Bir to'la tebranish uchun ketgan vaqt","Vaqt birligidagi tebranishlar soni","Muvozanat vaziyatidan eng katta siljish moduli","Mayatnik ipining uzunligi"],
+c:2
+},
+
+{
+q:"Prujinali mayatnikning yuk massasi o'zgarmasdan, prujina bikrligi 9 marta orttirilsa, tebranish chastotasi qanday o'zgaradi?",
+a:["3 marta ortadi","3 marta kamayadi","9 marta ortadi","O'zgarmaydi"],
+c:0
+},
+
+{
+q:"Garmonik tebranishda qaytaruvchi kuch (F) siljishga (x) qanday bog'liq?",
+a:["F ∝ v","F ∝ x (F = -kx)","F ∝ t","F ∝ m"],
+c:1
+},
+
+{
+q:"Matematik mayatnik tebranish davri 2 s bo'lishi uchun uning uzunligi taxminan qancha bo'lishi kerak (g ≈ 10, π² ≈ 10)?",
+a:["0,5 m","2 m","1 m","10 m"],
+c:2
+},
+
+{
+q:"Bir xil k bikrlikli ikkita prujina parallel ulangan sistemaning tebranish davri, bitta prujinaga osilgan yuknikidan necha marta farq qiladi?",
+a:["√2 marta ortadi","√2 marta kamayadi (chunki k ortadi)","2 marta kamayadi","Farq qilmaydi"],
+c:1
+},
+
+{
+q:"Matematik mayatnik ipining uzunligi 9 m, g ≈ π² bo'lsa, tebranish davri qancha (s)?",
+a:["3 s","6 s","9 s","18 s"],
+c:1
+},
+
+{
+q:"Prujinali mayatnik tezlanish bilan yuqoriga yoki pastga harakatlanayotgan liftga o'rnatilsa, uning tebranish davri qanday o'zgaradi?",
+a:["Ortadi","Kamayadi","O'zgarmaydi (chunki T g ga bog'liq emas)","Lift tezlanishiga qarab o'zgaradi"],
+c:2
+}
+
+];
+
+function shuffleArray(array){
+
+for(let i=array.length-1;i>0;i--){
+
+const j=Math.floor(
+Math.random()*(i+1)
+);
+
+[array[i],array[j]]=
+[array[j],array[i]];
+
+}
+
+return array;
+
+}
+
+shuffleArray(questions);
+
+let current = 0;
+let score = 0;
+let wrong = 0;
+let timeout = 0;
+
+let timer;
+let timeLeft = 15;
+
+const question =
+document.getElementById("question");
+
+const answers =
+document.getElementById("answers");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+function loadQuestion(){
+
+clearInterval(timer);
+
+timeLeft = 15;
+
+document.getElementById("timer")
+.innerHTML = "⏱ " + timeLeft;
+
+const q = questions[current];
+
+question.innerHTML =
+(current+1)+". "+q.q;
+
+answers.innerHTML = "";
+
+let shuffledAnswers =
+q.a.map((answer,index)=>({
+
+text:answer,
+
+correct:index===q.c
+
+}));
+
+shuffleArray(shuffledAnswers);
+
+shuffledAnswers.forEach((item)=>{
+
+const div =
+document.createElement("div");
+
+div.className="answer";
+
+div.innerHTML=item.text;
+
+div.onclick=()=>selectAnswer(
+item.correct,
+div
+);
+
+answers.appendChild(div);
+
+});
+
+document.getElementById("progressBar")
+.style.width =
+(current/questions.length)*100 + "%";
+
+startTimer();
+
+}
+
+function startTimer(){
+
+timer=setInterval(()=>{
+
+timeLeft--;
+
+document.getElementById("timer")
+.innerHTML="⏱ "+timeLeft;
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+timeout++;
+
+nextQuestion();
+
+}
+
+},1000);
+
+}
+
+function selectAnswer(
+
+isCorrect,
+
+selectedBtn
+
+){
+
+clearInterval(timer);
+
+const all =
+document.querySelectorAll(".answer");
+
+all.forEach(a=>
+a.style.pointerEvents="none");
+
+if(isCorrect){
+
+selectedBtn
+.classList.add("correct");
+
+score++;
+
+}else{
+
+selectedBtn
+.classList.add("wrong");
+
+wrong++;
+
+all.forEach(btn=>{
+
+const text =
+btn.innerText;
+
+const q =
+questions[current];
+
+if(text===q.a[q.c]){
+
+btn.classList.add(
+"correct"
+);
+
+}
+
+});
+
+}
+
+nextBtn.style.display="block";
+
+}
+
+nextBtn.onclick=()=>{
+
+nextQuestion();
+
+};
+
+function nextQuestion(){
+
+current++;
+
+if(current<questions.length){
+
+nextBtn.style.display="none";
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+clearInterval(timer);
+
+document.getElementById("quizArea")
+.style.display="none";
+
+document.getElementById("timer")
+.style.display="none";
+
+document.getElementById("result")
+.style.display="block";
+
+const percent =
+(score/questions.length)*100;
+
+document.getElementById("resultText")
+.innerHTML=
+
+`
+✅ To'g'ri: ${score}<br>
+❌ Noto'g'ri: ${wrong}<br>
+⏱ Vaqti tugagan: ${timeout}<br>
+📊 Natija: ${percent.toFixed(0)}%
+`;
+
+document.getElementById("progressBar")
+.style.width="100%";
+
+}
+
+loadQuestion();
+
+const bgContainer =
+document.getElementById("background-texts");
+
+const texts = [];
+
+for(let i=0;i<8;i++){
+
+const el =
+document.createElement("div");
+
+el.className = "floating-text";
+
+el.innerText = "OliyFizika.uz";
+
+bgContainer.appendChild(el);
+
+texts.push({
+el,
+x:Math.random()*(window.innerWidth-200),
+y:Math.random()*(window.innerHeight-50),
+dx:(Math.random()*2+1)*(Math.random()>0.5?1:-1),
+dy:(Math.random()*2+1)*(Math.random()>0.5?1:-1)
+});
+
+}
+
+function animateTexts(){
+
+texts.forEach(t=>{
+
+t.x += t.dx;
+t.y += t.dy;
+
+const w = t.el.offsetWidth;
+const h = t.el.offsetHeight;
+
+if(t.x <= 0 || t.x + w >= window.innerWidth){
+t.dx *= -1;
+}
+
+if(t.y <= 0 || t.y + h >= window.innerHeight){
+t.dy *= -1;
+}
+
+t.el.style.transform =
+`translate(${t.x}px, ${t.y}px)`;
+
+});
+
+requestAnimationFrame(animateTexts);
+}
+
+animateTexts();
+
+</script>
+
+</body>
+</html>
+
