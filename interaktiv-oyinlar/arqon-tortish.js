@@ -72,6 +72,7 @@ let score2 = 0;
 let answered = false;
 
 const questionEl = document.getElementById("question");
+const questionEl2 = document.getElementById("question2");
 const p1 = document.getElementById("player1-options");
 const p2 = document.getElementById("player2-options");
 
@@ -103,7 +104,7 @@ const q =
 questions[currentQuestion % questions.length];
 
 questionEl.textContent = q.q;
-
+questionEl2.textContent = q.q;
 p1.innerHTML = "";
 p2.innerHTML = "";
 
