@@ -190,14 +190,14 @@ moveTeams();
 
 if(position <= -5){
 
-    finish("🏆 Olimlar g'olib!");
+    finish("🏆 Birinchi jamoa g'olib!");
 
     return;
 }
 
 if(position >= 5){
 
-    finish("🏆 Yalqovlar g'olib!");
+    finish("🏆 Ikkinchi jamoa g'olib!");
 
     return;
 }
