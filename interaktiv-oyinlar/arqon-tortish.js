@@ -1,30 +1,67 @@
 const questions = [
 {
-    question:"Kuch formulasi qaysi?",
-    options:["v=s/t","p=mv","F=ma","A=Fs"],
-    answer:2
+q:"To'g'ri chiziqli tekis harakatda jismning tezligi qanday bo'ladi?",
+a:["O'zgaradi","Doimiy","Nol","Ortadi"],
+c:1
 },
+
 {
-    question:"Tezlik formulasi qaysi?",
-    options:["ρ=m/V","v=s/t","A=Fs","p=mv"],
-    answer:1
+q:"Tekis harakatda tezlanish nechiga teng?",
+a:["10","5","0","1"],
+c:2
 },
+
 {
-    question:"Bosim formulasi qaysi?",
-    options:["p=F/S","F=ma","v=s/t","N=A/t"],
-    answer:0
+q:"Tekis harakatda ko'chish formulasi?",
+a:["S=vt","S=at²","S=v²/2a","S=gt²"],
+c:0
 },
+
 {
-    question:"Ohm qonuni qaysi?",
-    options:["I=U/R","F=ma","p=mv","A=Fs"],
-    answer:0
+q:"Tekis harakatda ko'chish s(t) grafigi qanday bo'ladi?",
+a:["Parabola","To'g'ri chiziq","Aylana","Giperbola"],
+c:1
 },
+
 {
-    question:"Impuls formulasi qaysi?",
-    options:["F=ma","p=mv","I=U/R","ρ=m/V"],
-    answer:1
+q:"Tezlik birligi qanday?",
+a:["kg","N","m","m/s"],
+c:3
+},
+
+{
+q:"5 m/s tezlik bilan 10 s harakat qilgan jism qancha yo'l bosadi?",
+a:["50 m","10 m","15 m","100 m"],
+c:0
+},
+
+{
+q:"Tekis harakat traektoriyasi?",
+a:["Aylana","Parabola","To'g'ri chiziq","Egri"],
+c:2
+},
+
+{
+q:"v-t grafikida tekis harakat?",
+a:["Gorizontal chiziq","Parabola","Vertikal","Sinus"],
+c:0
+},
+
+{
+q:"Tekis harakatning asosiy belgisi?",
+a:["Tezlik doimiy","Tezlik ortadi","Tezlanish katta","Kuch ortadi"],
+c:0
+},
+
+{
+q:"Agar tezlik o'zgarmasdan jismning harakat vaqti 2 marta ortsa, ko'chish qanday o'zgaradi?",
+a:["4 marta","2 marta","O'zgarmaydi","Kamayadi"],
+c:1
 }
 ];
+
+let timeLeft = 10;
+let timer;
 
 let currentQuestion = 0;
 let position = 0;
@@ -32,84 +69,203 @@ let position = 0;
 let score1 = 0;
 let score2 = 0;
 
+let answered = false;
+
 const questionEl = document.getElementById("question");
 const p1 = document.getElementById("player1-options");
 const p2 = document.getElementById("player2-options");
 
-const flag = document.getElementById("flag");
+function shuffleArray(array){
+
+
+for(let i=array.length-1;i>0;i--){
+
+    const j =
+    Math.floor(Math.random()*(i+1));
+
+    [array[i],array[j]] =
+    [array[j],array[i]];
+}
+
+
+}
+
+shuffleArray(questions);
 
 function loadQuestion(){
 
-    const q = questions[currentQuestion % questions.length];
 
-    questionEl.textContent = q.question;
+answered = false;
 
-    p1.innerHTML = "";
-    p2.innerHTML = "";
+startTimer();
 
-    q.options.forEach((option,index)=>{
+const q =
+questions[currentQuestion % questions.length];
 
-        const btn1 = document.createElement("button");
-        btn1.textContent = option;
-        btn1.onclick = () => answer(1,index);
+questionEl.textContent = q.q;
 
-        const btn2 = document.createElement("button");
-        btn2.textContent = option;
-        btn2.onclick = () => answer(2,index);
+p1.innerHTML = "";
+p2.innerHTML = "";
 
-        p1.appendChild(btn1);
-        p2.appendChild(btn2);
-    });
+const options = [...q.a];
+
+const correctAnswer = options[q.c];
+
+shuffleArray(options);
+
+const newCorrectIndex =
+options.indexOf(correctAnswer);
+
+q.currentAnswer = newCorrectIndex;
+
+options.forEach((option,index)=>{
+
+    const btn1 =
+    document.createElement("button");
+
+    btn1.className = "answer-btn";
+
+    btn1.textContent = option;
+
+    btn1.onclick =
+    () => answer(1,index);
+
+    const btn2 =
+    document.createElement("button");
+
+    btn2.className = "answer-btn";
+
+    btn2.textContent = option;
+
+    btn2.onclick =
+    () => answer(2,index);
+
+    p1.appendChild(btn1);
+    p2.appendChild(btn2);
+
+});
+
 
 }
 
 function answer(player,index){
 
-    const q = questions[currentQuestion % questions.length];
 
-    if(index !== q.answer){
-        return;
-    }
+if(answered) return;
 
-    if(player === 1){
-        score1++;
-        position--;
-    }else{
-        score2++;
-        position++;
-    }
+const q =
+questions[currentQuestion % questions.length];
 
-    document.getElementById("score1").textContent = score1;
-    document.getElementById("score2").textContent = score2;
+if(index !== q.currentAnswer){
 
-    updateFlag();
+    return;
+}
 
-    if(position <= -7){
-        finish("🏆 O'quvchi 1 g'olib!");
-        return;
-    }
+answered = true;
 
-    if(position >= 7){
-        finish("🏆 O'quvchi 2 g'olib!");
-        return;
-    }
+clearInterval(timer);
+
+if(player === 1){
+
+    score1++;
+
+    position--;
+
+}else{
+
+    score2++;
+
+    position++;
+
+}
+
+document.getElementById("score1")
+    .textContent = score1;
+
+document.getElementById("score2")
+    .textContent = score2;
+
+moveTeams();
+
+if(position <= -5){
+
+    finish("🏆 Olimlar g'olib!");
+
+    return;
+}
+
+if(position >= 5){
+
+    finish("🏆 Yalqovlar g'olib!");
+
+    return;
+}
+
+setTimeout(()=>{
 
     currentQuestion++;
 
     loadQuestion();
+
+},700);
+
+
 }
 
-function updateFlag(){
+function moveTeams(){
 
-    flag.style.left = `${50 + position*6}%`;
+
+const tug =
+document.getElementById("tugContainer");
+
+if(!tug) return;
+
+tug.style.transform =
+`translateX(${position * 30}px)`;
+
+
 }
 
 function finish(text){
 
-    document.getElementById("winner").textContent = text;
 
-    p1.innerHTML = "";
-    p2.innerHTML = "";
+document.getElementById("winner")
+    .textContent = text;
+
+p1.innerHTML = "";
+p2.innerHTML = "";
+
+
+}
+
+function startTimer(){
+
+    clearInterval(timer);
+
+    timeLeft = 10;
+
+    document.getElementById("timer")
+        .textContent = `⏱ ${timeLeft}`;
+
+    timer = setInterval(()=>{
+
+        timeLeft--;
+
+        document.getElementById("timer")
+            .textContent = `⏱ ${timeLeft}`;
+
+        if(timeLeft <= 0){
+
+            clearInterval(timer);
+
+            answered = true;
+
+            currentQuestion++;
+
+            loadQuestion();
+        }
+
+    },1000);
 }
 
 loadQuestion();
