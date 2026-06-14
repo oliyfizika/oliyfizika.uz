@@ -1,0 +1,105 @@
+{
+"title": "Bosim. Paskal qonuni",
+"questions": [
+{
+"q": "Sirtning birlik yuzasiga ta’sir qiluvchi kuch nima deyiladi?",
+"a": ["Massa", "Tezlanish", "Bosim", "Energiya"],
+"c": 2
+},
+{
+"q": "Bosimning Xalqaro birliklar sistemasi (XBS) dagi birligi nima?",
+"a": ["Joul", "Nyuton", "Paskal (Pa)", "Vatt"],
+"c": 2
+},
+{
+"q": "Suyuqlik yoki gazga berilgan bosim barcha yo‘nalishda bir xil va o‘zgarmas uzatiladi. Bu qaysi qonun?",
+"a": ["Nyuton qonuni", "Paskal qonuni", "Guk qonuni", "Arximed qonuni"],
+"c": 1
+},
+{
+"q": "Gidrostatik bosim (suyuqlikning idish tubiga bosimi) qaysi formula bilan aniqlanadi?",
+"a": ["P = F/S", "P = ρgh", "P = mg", "P = mv²/2"],
+"c": 1
+},
+{
+"q": "Atmosfera bosimini birinchi bo‘lib o‘lchagan olim kim?",
+"a": ["I. Nyuton", "G. Galiley", "E. Torrichelli", "B. Paskal"],
+"c": 2
+},
+{
+"q": "Dengiz sathidan har necha metr balandlikka ko‘tarilganda atmosfera bosimi 1 mm simob ustuniga kamayadi?",
+"a": ["10 m", "12 m", "100 m", "5 m"],
+"c": 1
+},
+{
+"q": "Berk idishdagi gaz yoki suyuqlik bosimini o‘lchaydigan asbob nima?",
+"a": ["Barometr", "Manometr", "Termometr", "Spidometr"],
+"c": 1
+},
+{
+"q": "Gidravlik pressning ishlash prinsipi qaysi qonun va qoidaga asoslangan?",
+"a": ["Faqat Nyuton qonuniga", "Paskal qonuni va mexanikaning oltin qoidasiga", "Faqat Guk qonuniga", "Arximed qonuniga"],
+"c": 1
+},
+{
+"q": "Atmosfera bosimini o'lchash uchun ishlatiladigan asboblar qanday ataladi?",
+"a": ["Barometr yoki aneroid", "Manometr", "Dinamometr", "Akselerometr"],
+"c": 0
+},
+{
+"q": "Balandlikni bosim o‘zgarishiga qarab o‘lchaydigan asbob nima?",
+"a": ["Termometr", "Altimetr", "Gigrometr", "Vattmetr"],
+"c": 1
+},
+{
+"q": "Suyuqlik vaznining suyuqlikning idish tubiga ko‘rsatuvchi bosim kuchidan farq qilish hodisasi nima deyiladi?",
+"a": ["Gidrostatik paradoks", "Inersiya hodisasi", "Vaznsizlik", "Reaktiv harakat"],
+"c": 0
+},
+{
+"q": "Nima uchun atmosfera bosimini P = ρgh formulasi bilan aniq hisoblab bo‘lmaydi?",
+"a": ["Havo zichligi balandlik ortishi bilan kamayishi va atmosferaning aniq chegarasi yo'qligi sababli", "Havo massasi yo‘qligi uchun", "Yer aylanishi tufayli", "Gravitatsiya doimiysi o‘zgargani uchun"],
+"c": 0
+},
+{
+"q": "Normal atmosfera bosimi o‘rtacha necha mm simob ustuniga teng deb qabul qilingan?",
+"a": ["700 mm", "760 mm", "100 mm", "1000 mm"],
+"c": 1
+},
+{
+"q": "Suyuqlikning idish tubiga beradigan gidrostatik bosimi nimalarga bog‘liq?",
+"a": ["Faqat idish shakliga", "Suyuqlik zichligi, erkin tushish tezlanishi va balandlikka", "Faqat jism massasiga", "Havo haroratiga"],
+"c": 1
+},
+{
+"q": "Bosim (P) va sirt yuzasi (S) orasidagi bog‘liqlik qanday?",
+"a": ["To‘g‘ri proporsional", "Teskari proporsional", "Bog‘liq emas", "Kvadratik bog‘liq"],
+"c": 1
+},
+{
+"q": "1 Paskal bosimga berilgan to‘g‘ri ta’rif qaysi?",
+"a": ["1 m² yuzaga 1 N kuch tik ta’sir etgandagi bosim", "10 kg massali jism bosimi", "Suvning 1 m chuqurlikdagi bosimi", "Atmosferaning dengiz sathidagi bosimi"],
+"c": 0
+},
+{
+"q": "Suyuqliklarda bosim qaysi yo‘nalishlarda uzatiladi?",
+"a": ["Faqat pastga", "Faqat yon tomonga", "Barcha yo‘nalishlarda bir xilda", "Faqat yuqoriga"],
+"c": 2
+},
+{
+"q": "Gidravlik press nimalardan tashkil topgan?",
+"a": ["Bitta silindr va bitta porshen", "Diametrlari har xil bo‘lgan, o‘zaro tutashgan ikki silindr va porshenlar", "Faqat prujinalar", "Aylanuvchi disklar"],
+"c": 1
+},
+{
+"q": "Gidrostatik bosim suyuqlik ustuni balandligiga qanday bog‘langan?",
+"a": ["Teskari proporsional", "To‘g‘ri proporsional", "Kvadratik bog‘liq", "Bog‘liq emas"],
+"c": 1
+},
+{
+"q": "Simobli barometr balanddan erkin tushayotgan bo‘lsa (vaznsizlikda), barometr nayidagi simob ustunida qanday o‘zgarish bo‘ladi?",
+"a": ["Pastga tushadi", "O‘zgarmaydi", "Simob kapillyarni to‘ldiradi", "Nolga tenglashadi"],
+"c": 2
+}
+]
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Qattiq jismlar",
+  "questions": [
+    {
+      "q": "Kristall qattiq jismlarning erish jarayonida temperaturasi qanday o'zgaradi?",
+      "a": ["Doimiy ortib boradi", "Kamayadi", "O'zgarmaydi", "Dastlab ortib, keyin kamayadi"],
+      "c": 2
+    },
+    {
+      "q": "Amorf qattiq jismlarning erish jarayonida harorat qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "Ortib boradi", "Kamayadi", "Nolga tenglashadi"],
+      "c": 1
+    },
+    {
+      "q": "Qattiq jism fizik xossalarining turli yo'nalishlarda turlicha bo'lishi nima deyiladi?",
+      "a": ["Izotroplik", "Anizotroplik", "Diffuziya", "Sublimatsiya"],
+      "c": 1
+    },
+    {
+      "q": "Har qanday monokristall quyidagi xossalardan qaysi biriga albatta ega bo'ladi?",
+      "a": ["Izotroplik", "Anizotroplik", "Shaffoflik", "Suyuqlik xossasi"],
+      "c": 1
+    },
+    {
+      "q": "Amorf moddalar uchun quyidagi xususiyatlardan qaysi biri xos?",
+      "a": ["Anizotroplik", "Aniq erish haroratiga ega emaslik (yumshash)", "Qat'iy kristall panjaraga egalik", "Faqat past haroratda mavjudlik"],
+      "c": 1
+    },
+    {
+      "q": "Mexanik kuchlanish (σ) qaysi formula bilan aniqlanadi?",
+      "a": ["σ = F·S", "σ = F/S", "σ = E/ε", "σ = Δl/l"],
+      "c": 1
+    },
+    {
+      "q": "Nisbiy deformatsiya (ε) formulasini ko'rsating.",
+      "a": ["ε = l/Δl", "ε = Δl/l₀", "ε = σ/E", "Ikkala (B va C) javob ham to'g'ri"],
+      "c": 3
+    },
+    {
+      "q": "Guk qonunining mexanik kuchlanish orqali ifodasini ko'rsating.",
+      "a": ["σ = E·ε", "σ = F/S", "F = -kx", "σ = E/ε"],
+      "c": 0
+    },
+    {
+      "q": "Yung moduli (E) qanday birlikda o'lchanadi?",
+      "a": ["N/m", "N·m", "Paskal (Pa)", "Joul (J)"],
+      "c": 2
+    },
+    {
+      "q": "Sterjenning uzunligi 3 marta orttirilsa, uning bikrligi (k) qanday o'zgaradi?",
+      "a": ["3 marta ortadi", "3 marta kamayadi", "9 marta kamayadi", "O'zgarmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Sterjenning ko'ndalang kesim yuzi 4 marta ortsa, uning bikrligi qanday o'zgaradi?",
+      "a": ["4 marta ortadi", "4 marta kamayadi", "2 marta ortadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Cho'zilish diagrammasining qaysi qismida Guk qonuni bajariladi?",
+      "a": ["Diagrammaning egilgan qismida", "Diagrammaning chiziqli (to'g'ri) qismida", "Faqat uzilish nuqtasida", "O'zgarmas kuchlanish sohasida"],
+      "c": 1
+    },
+    {
+      "q": "Mustahkamlik chegarasi σ va zichligi ρ bo'lgan sim o'z og'irligi ta'sirida uzilib ketmasligi uchun uning maksimal uzunligi (L) qanday bo'lishi kerak?",
+      "a": ["L = σ·ρ·g", "L = σ/(ρ·g)", "L = ρ·g/σ", "L = σ/ρ"],
+      "c": 1
+    },
+    {
+      "q": "Polikristall jismlar (masalan, metallar) makroskopik jihatdan qanday xossaga ega?",
+      "a": ["Anizotrop", "Izotrop", "Faqat shaffof", "Suyuqlik kabi oqadi"],
+      "c": 1
+    },
+    {
+      "q": "Deformatsiya to'xtatilgandan keyin jism o'z shaklini to'la tiklasa, bunday deformatsiya qanday ataladi?",
+      "a": ["Plastik deformatsiya", "Elastik deformatsiya", "Qoldiq deformatsiya", "Mo'rt deformatsiya"],
+      "c": 1
+    },
+    {
+      "q": "Tashqi kuch ta'siri to'xtagandan keyin jism o'z shaklini tiklamasa, bu qanday deformatsiya?",
+      "a": ["Elastik", "Plastik", "Garmonik", "Izotermik"],
+      "c": 1
+    },
+    {
+      "q": "Yung moduli (E) nimani xarakterlaydi?",
+      "a": ["Jismning og'irligini", "Moddaning elastik xossalarini", "Jismning hajmini", "Atmosfera bosimini"],
+      "c": 1
+    },
+    {
+      "q": "Metall jism yuqori haroratgacha qizitilsa, uning zichligi va hajmi qanday o'zgaradi?",
+      "a": ["Hajmi ortadi, zichligi kamayadi", "Ikkalasi ham ortadi", "Hajmi kamayadi, zichligi ortadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Simning nisbiy uzayishi 2% ga teng. Agar Yung moduli 200 GPa bo'lsa, mexanik kuchlanishni toping.",
+      "a": ["4 GPa", "400 MPa", "4000 Pa", "40 GPa"],
+      "c": 1
+    },
+    {
+      "q": "Cho'zilish diagrammasida materialning uzilishidan oldingi eng katta kuchlanish nima deyiladi?",
+      "a": ["Oquvchanlik chegarasi", "Proportsionallik chegarasi", "Mustahkamlik chegarasi", "Elastiklik chegarasi"],
+      "c": 2
+    }
+  ]
+}

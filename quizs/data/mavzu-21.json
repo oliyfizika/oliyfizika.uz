@@ -1,0 +1,105 @@
+{
+  "title": "Arximed kuchi",
+  "questions": [
+    {
+      "q": "Suyuqlik yoki gazlarga to'liq botirilgan jism o'z hajmiga teng miqdordagi suyuqlik yoki gazni siqib chiqarishi qaysi qonunda aytiladi?",
+      "a": ["Nyuton qonuni", "Paskal qonuni", "Arximed qonuni", "Guk qonuni"],
+      "c": 2
+    },
+    {
+      "q": "Arximed kuchi jismga qaysi yo'nalishda ta'sir qiladi?",
+      "a": ["Gorizontal", "Vertikal pastga", "Pastdan yuqoriga qarab", "Ixtiyoriy yo'nalishda"],
+      "c": 2
+    },
+    {
+      "q": "Arximed kuchining matematik ifodasi (formulasi) qaysi?",
+      "a": ["Fa = ma", "Fa = ρ·g·V", "Fa = mg", "Fa = P/S"],
+      "c": 1
+    },
+    {
+      "q": "Arximed kuchi jismning qaysi parametriga bog'liq?",
+      "a": ["Massasiga", "Zichligiga", "Suyuqlikka botgan qismining hajmiga", "Shakliga"],
+      "c": 2
+    },
+    {
+      "q": "Jism suyuqlik ichida muvozanatda (suzib) turishi uchun qanday shart bajarilishi kerak?",
+      "a": ["Fa > mg", "Fa < mg", "Fa = mg", "Fa = 0"],
+      "c": 2
+    },
+    {
+      "q": "Agar jismga ta'sir etuvchi Arximed kuchi uning og'irlik kuchidan kichik bo'lsa (Fa < mg), jism qanday holatda bo'ladi?",
+      "a": ["Suzadi", "Cho'kadi", "Sirtga chiqadi", "Tinch turadi"],
+      "c": 1
+    },
+    {
+      "q": "Jism idishdagi suyuqlik bilan birga erkin tushayotgan bo'lsa (vaznsizlik), unga ta'sir etuvchi itarib chiqaruvchi kuch nimaga teng?",
+      "a": ["Maksimal qiymatga", "Jism og'irligiga", "Nolga", "Suyuqlik zichligiga"],
+      "c": 2
+    },
+    {
+      "q": "Arximed kuchi yana qanday nomlanadi?",
+      "a": ["Tortishish kuchi", "Itarib chiqaruvchi kuch", "Ishqalanish kuchi", "Bosim kuchi"],
+      "c": 1
+    },
+    {
+      "q": "Arximed kuchi suyuqlikning qaysi xossasiga bog'liq?",
+      "a": ["Hajmiga", "Zichligiga", "Rangi va haroratiga", "Idish shakliga"],
+      "c": 1
+    },
+    {
+      "q": "Suv tubida yotgan suvosti kemasiga qaysi kuchlar ta'sir qiladi?",
+      "a": ["Faqat og'irlik kuchi", "Faqat Arximed kuchi", "Og'irlik, Arximed va suvning qarshilik kuchlari", "Faqat ishqalanish kuchi"],
+      "c": 2
+    },
+    {
+      "q": "Havo sharlarining yuqoriga ko'tarilishi nima bilan tushuntiriladi?",
+      "a": ["Inersiya bilan", "Gazlardagi Arximed kuchi bilan", "Paskal qonuni bilan", "Butun olam tortishish qonuni bilan"],
+      "c": 1
+    },
+    {
+      "q": "Jismning suyuqlikdagi og'irligi (P1) havodagi og'irligidan (P) qanchaga farq qiladi?",
+      "a": ["P1 = P + Fa", "P1 = P - Fa", "P1 = Fa", "P1 = P × Fa"],
+      "c": 1
+    },
+    {
+      "q": "Arximed kuchi jismning suyuqlikka botish chuqurligiga (to'liq botgan holatda) bog'liqmi?",
+      "a": ["Ha, chuqurlashgan sari ortadi", "Yo'q, bog'liq emas", "Chuqurlashgan sari kamayadi", "Faqat dengizlarda bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "Suyuqlik yuzasida suzib yurgan jism uchun Arximed kuchi nimaga teng?",
+      "a": ["Jismning to'la hajmidagi suyuqlik og'irligiga", "Jism siqib chiqargan suyuqlik og'irligiga", "Nolga", "Faqat jism massasiga"],
+      "c": 1
+    },
+    {
+      "q": "Areometr asbobi nima uchun ishlatiladi?",
+      "a": ["Bosimni o'lchash uchun", "Suyuqlik zichligini aniqlash uchun", "Tezlikni o'lchash uchun", "Kuchni aniqlash uchun"],
+      "c": 1
+    },
+    {
+      "q": "Muz suvda suzganda uning qancha qismi suv ostida bo'ladi (ρmuz = 900 kg/m³, ρsuv = 1000 kg/m³)?",
+      "a": ["10% qismi", "50% qismi", "90% qismi", "Hammasi suv ustida bo'ladi"],
+      "c": 2
+    },
+    {
+      "q": "Arximed kuchi qaysi muhitlarda mavjud bo'ladi?",
+      "a": ["Faqat suyuqliklarda", "Faqat gazlarda", "Suyuqlik va gazlarda", "Vakuumda"],
+      "c": 2
+    },
+    {
+      "q": "Jismning shakli o'zgartirilsa (hajmi o'zgarmasdan), unga ta'sir qiluvchi Arximed kuchi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "Suyuqlikka botirilgan jismga Arximed kuchi nima sababdan ta'sir qiladi?",
+      "a": ["Suyuqlikning yuqori va pastki qismlaridagi bosimlar farqi tufayli", "Ishqalanish tufayli", "Elektr zaryadlari tufayli", "Massa ortishi tufayli"],
+      "c": 0
+    },
+    {
+      "q": "Kema daryodan dengizga o'tsa, uning suvga botish chuqurligi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi (sho'r suv zichligi katta bo'lgani uchun)", "O'zgarmaydi", "To'liq cho'kadi"],
+      "c": 1
+    }
+  ]
+}

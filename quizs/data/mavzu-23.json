@@ -1,0 +1,105 @@
+{
+  "title": "Prujina va matematik mayatnik",
+  "questions": [
+    {
+      "q": "Matematik mayatnikning tebranish davri formulasini ko'rsating.",
+      "a": ["T = 2π√(m/k)", "T = 2π√(l/g)", "T = 2π√(g/l)", "T = 2π√(k/m)"],
+      "c": 1
+    },
+    {
+      "q": "Prujinali mayatnikning tebranish davri nimalarga bog'liq?",
+      "a": ["Faqat ip uzunligiga", "Yukning massasi va prujina bikrligiga", "Faqat erkin tushish tezlanishiga", "Tebranish amplitudasiga"],
+      "c": 1
+    },
+    {
+      "q": "Matematik mayatnikning ipi 4 marta uzaytirilsa, uning tebranish davri qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "2 marta kamayadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Vaznsizlik holatida (erkin tushishda) matematik mayatnikning tebranishi qanday bo'ladi?",
+      "a": ["Tebranish davri kamayadi", "Tebranish amplitudasi ortadi", "Mayatnik tebranmaydi (davri cheksiz bo'ladi)", "Tezroq tebranadi"],
+      "c": 2
+    },
+    {
+      "q": "Prujinali mayatnikdagi yukning massasi 4 marta ortsa, tebranish davri qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "2 marta kamayadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Matematik mayatnikning tebranish davri unga osilgan yuk massasiga qanday bog'liq?",
+      "a": ["To'g'ri proporsional", "Teskari proporsional", "Bog'liq emas", "Kvadratik bog'liq"],
+      "c": 2
+    },
+    {
+      "q": "Kichik tebranishlar davrining amplitudaga bog'liq bo'lmaslik xossasi nima deyiladi?",
+      "a": ["Rezonans", "Izoxronlik", "Diffuziya", "Interferensiya"],
+      "c": 1
+    },
+    {
+      "q": "Bikrliklari k₁ va k₂ bo'lgan ikki prujina parallel ulansa, umumiy bikrlik qanday topiladi?",
+      "a": ["k = k₁ + k₂", "1/k = 1/k₁ + 1/k₂", "k = k₁·k₂", "k = (k₁+k₂)/2"],
+      "c": 0
+    },
+    {
+      "q": "Matematik mayatnik muvozanat vaziyatidan o'tayotganda qaysi energiya maksimal bo'ladi?",
+      "a": ["Potensial energiya", "Kinetik energiya", "To'la energiya nol bo'ladi", "Ichki energiya"],
+      "c": 1
+    },
+    {
+      "q": "Prujinaga osilgan yukning tebranish amplitudasi 2 marta orttirilsa, uning tebranish davri qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "2 marta kamayadi", "O'zgarmaydi", "4 marta ortadi"],
+      "c": 2
+    },
+    {
+      "q": "Matematik mayatnikning xususiy tebranish chastotasi (ν) formulasini aniqlang.",
+      "a": ["ν = 2π√(l/g)", "ν = 1/(2π)·√(g/l)", "ν = √(l/g)", "ν = 2π√(g/l)"],
+      "c": 1
+    },
+    {
+      "q": "4 ta bir xil bikrlikli (k) prujina ketma-ket ulansa, sistemaning umumiy bikrligi qanday bo'ladi?",
+      "a": ["4k", "k/4", "k", "k²"],
+      "c": 1
+    },
+    {
+      "q": "Matematik mayatnik Yerdan Oyga olib o'tilsa (gOy < gYer), uning tebranish davri qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi", "Nolga teng bo'ladi"],
+      "c": 0
+    },
+    {
+      "q": "Tebranish amplitudasining ta'rifi qaysi javobda to'g'ri berilgan?",
+      "a": ["Bir to'la tebranish uchun ketgan vaqt", "Vaqt birligidagi tebranishlar soni", "Muvozanat vaziyatidan eng katta siljish moduli", "Mayatnik ipining uzunligi"],
+      "c": 2
+    },
+    {
+      "q": "Prujinali mayatnikning yuk massasi o'zgarmasdan, prujina bikrligi 9 marta orttirilsa, tebranish chastotasi qanday o'zgaradi?",
+      "a": ["3 marta ortadi", "3 marta kamayadi", "9 marta ortadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Garmonik tebranishda qaytaruvchi kuch (F) siljishga (x) qanday bog'liq?",
+      "a": ["F ∝ v", "F ∝ x (F = -kx)", "F ∝ t", "F ∝ m"],
+      "c": 1
+    },
+    {
+      "q": "Matematik mayatnik tebranish davri 2 s bo'lishi uchun uning uzunligi taxminan qancha bo'lishi kerak (g ≈ 10 m/s², π² ≈ 10)?",
+      "a": ["0,5 m", "2 m", "1 m", "10 m"],
+      "c": 2
+    },
+    {
+      "q": "Bir xil k bikrlikli ikkita prujina parallel ulangan sistemaning tebranish davri, bitta prujinaga osilgan yuknikidan necha marta farq qiladi?",
+      "a": ["√2 marta ortadi", "√2 marta kamayadi", "2 marta kamayadi", "Farq qilmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Matematik mayatnik ipining uzunligi 9 m, g ≈ π² bo'lsa, tebranish davri qancha?",
+      "a": ["3 s", "6 s", "9 s", "18 s"],
+      "c": 1
+    },
+    {
+      "q": "Prujinali mayatnik tezlanish bilan yuqoriga yoki pastga harakatlanayotgan liftga o'rnatilsa, uning tebranish davri qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi (T g ga bog'liq emas)", "Lift tezlanishiga qarab o'zgaradi"],
+      "c": 2
+    }
+  ]
+}

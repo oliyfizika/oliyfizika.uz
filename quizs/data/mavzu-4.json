@@ -1,0 +1,105 @@
+{
+"title": "Egri chiziqli harakat",
+"questions": [
+{
+"q": "Egri chiziqli harakatda oniy tezlik vektori trayektoriyaga nisbatan qanday yo'naladi?",
+"a": ["Perpendikulyar", "Urinma bo'ylab", "Markazga qarab", "Ixtiyoriy yo'nalishda"],
+"c": 1
+},
+{
+"q": "Qaysi turdagi harakat har doim tezlanishli bo'ladi?",
+"a": ["To'g'ri chiziqli tekis harakat", "Egri chiziqli harakat", "Tinch holatdagi jism harakati", "Hech biri"],
+"c": 1
+},
+{
+"q": "Har qanday tekis aylanma harakatning asosiy sharti nima?",
+"a": ["Tezlik moduli o'zgarishi", "Burchak tezlikning o'zgarmasligi (ω=const)", "Tezlanish nolga teng bo'lishi", "Trayektoriya to'g'ri chiziq bo'lishi"],
+"c": 1
+},
+{
+"q": "Chiziqli tezlik yo'nalishining o'zgarishini xarakterlovchi kattalik nima?",
+"a": ["Tangensial tezlanish", "Markazga intilma (normal) tezlanish", "Burchak tezlik", "Aylanish davri"],
+"c": 1
+},
+{
+"q": "Jismning bir marta to'la aylanishi uchun ketgan vaqt nima deb ataladi?",
+"a": ["Chastota", "Aylanish davri", "Oniy vaqt", "Burchak tezlanish"],
+"c": 1
+},
+{
+"q": "Aylanish chastotasining XBS dagi birligi qaysi?",
+"a": ["Sekund", "metr/sekund", "rad/sekund", "Hz (Gers) yoki 1/s"],
+"c": 3
+},
+{
+"q": "Burchak tezlikning yo'nalishi qaysi qoida yordamida aniqlanadi?",
+"a": ["Chap qo'l qoidasi", "Parma (burg'u) qoidasi", "Lens qoidasi", "Amper qoidasi"],
+"c": 1
+},
+{
+"q": "Gorizontal otilgan jismning harakat trayektoriyasi qanday shaklda bo'ladi?",
+"a": ["To'g'ri chiziq", "Aylana yoyi", "Parabola", "Giperbola"],
+"c": 2
+},
+{
+"q": "Agar istalgan vaqt momentida jismning tezlik va tezlanish vektori o'zaro to'g'ri burchak (90°) hosil qilsa, u qanday harakatda bo'ladi?",
+"a": ["Tekis tezlanuvchan", "Aylana bo'ylab tekis harakatda", "Tekis sekinlanuvchan", "Erkin tushishda"],
+"c": 1
+},
+{
+"q": "Chiziqli tezlik modulining o'zgarishini qaysi kattalik xarakterlaydi?",
+"a": ["Normal tezlanish", "Tangensial (urinma) tezlanish", "Burchakli tezlik", "Markazga intilma kuch"],
+"c": 1
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning tezligi trayektoriyaning qaysi nuqtasida minimal bo'ladi?",
+"a": ["Otilish boshida", "Yerga tushish momentida", "Eng balandga ko'tarilganda", "Minimal bo'lmaydi"],
+"c": 2
+},
+{
+"q": "Jism bir vaqtda ham tekis harakatda, ham tekis o'zgaruvchan harakatda ishtirok etsa, uning trayektoriyasi qanday shaklda bo'ladi?",
+"a": ["Sinusoida", "Aylana", "Parabola", "To'g'ri chiziq"],
+"c": 2
+},
+{
+"q": "Markazga intilma tezlanish vektori trayektoriya bo'ylab qayerga yo'nalgan bo'ladi?",
+"a": ["Urinma bo'ylab", "Aylanish o'qi bo'ylab", "Aylana markaziga", "Harakatga teskari yo'nalishda"],
+"c": 2
+},
+{
+"q": "Vaqt birligi ichidagi aylanishlar soniga nima deyiladi?",
+"a": ["Davr", "Aylanish chastotasi", "Burchak tezlik", "Chiziqli tezlik"],
+"c": 1
+},
+{
+"q": "Trayektoriyasining shakliga qarab mexanik harakat qanday turlarga bo'linadi?",
+"a": ["3 turga", "4 turga", "2 turga: egri va to'g'ri chiziqli", "Faqat bir turga"],
+"c": 2
+},
+{
+"q": "Burchak tezlikning XBS dagi o'lchov birligi nima?",
+"a": ["metr/sekund", "rad/sekund", "Gers", "gradus/sekund"],
+"c": 1
+},
+{
+"q": "Egri chiziqli harakatda oniy tezlik trayektoriyaning ixtiyoriy nuqtasida qanday yo'naladi?",
+"a": ["Normal bo'ylab", "Urinma bo'ylab", "Radius bo'ylab", "Markazga qarab"],
+"c": 1
+},
+{
+"q": "Aylanish davri (T) va chastotasi (ν) orasidagi bog'lanish qanday?",
+"a": ["T = 1/ν", "T = ν", "T = 2πν", "T = ν²"],
+"c": 0
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning vertikal tezlik tashkil etuvchisi eng yuqori nuqtada nimaga teng?",
+"a": ["Maximal qiymatga", "Nolga", "Boshlang'ich tezlikka", "g ga"],
+"c": 1
+},
+{
+"q": "Burchak tezlik yo'nalishi aylanish tekisligiga nisbatan qanday joylashadi?",
+"a": ["Parallel", "Tekislikda yotadi", "Aylanish o'qi bo'ylab (tik)", "Ixtiyoriy"],
+"c": 2
+}
+]
+}

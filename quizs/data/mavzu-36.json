@@ -1,0 +1,70 @@
+{
+  "title": "Elektr zaryad",
+  "questions": [
+    {
+      "q": "Litiyning neytral atomida 3 ta elektron bor. Uning yadrosida nechta proton bor?",
+      "a": ["0", "1", "2", "3"],
+      "c": 3
+    },
+    {
+      "q": "Zaryadsiz (neytral) jism elektron yo‘qotsa, u qanday zaryadlanadi?",
+      "a": ["Manfiy", "Musbat", "Neytralligicha qoladi", "Zaryadlanmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Elektr zaryadlarining saqlanish qonuni qaysi javobda to'g'ri ifodalangan?",
+      "a": ["Yopiq sistemada zaryadlar yig'indisi ortib boradi", "Atrof-muhit bilan zaryad almashmaydigan tizimlarda zaryadlarning algebraik yig‘indisi o‘zgarmaydi", "Zaryadli zarralar soni har doim o'zgarmas qoladi", "Zaryadlar faqat ishqalanishda yo'qoladi"],
+      "c": 1
+    },
+    {
+      "q": "Vakuumda joylashgan ikki qo'zg'almas nuqtaviy zaryadning o'zaro ta'sir kuchi (Kulon kuchi) ular orasidagi masofaning kvadratiga qanday proporsional?",
+      "a": ["To'g'ri proporsional", "Bog'liq emas", "Teskari proporsional", "Kvadratik proporsional"],
+      "c": 2
+    },
+    {
+      "q": "Argon neytral atomining yadrosida 18 ta proton va 22 ta neytron bor. Bu atomning elektron qobig'ida nechta elektron bor?",
+      "a": ["40", "22", "18", "4"],
+      "c": 2
+    },
+    {
+      "q": "Musbat zaryadlangan metall sharga tekkizish yo‘li bilan yana musbat zaryad berildi. Bunda uning massasi qanday o‘zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O‘zgarmaydi", "Dastlab kamayib, keyin ortadi"],
+      "c": 1
+    },
+    {
+      "q": "Shisha tayoqcha ipak (yoki teri) matoga ishqalansa, tayoqcha qanday zaryadlanadi?",
+      "a": ["Manfiy", "Musbat", "Neytral bo'lib qoladi", "Zaryad mato turiga bog'liq emas"],
+      "c": 1
+    },
+    {
+      "q": "Bir jinsli metall kub zaryadlanganda, zaryadlar kubning qayerida joylashadi?",
+      "a": ["Faqat kubning markazida", "Kubning butun hajmi bo'ylab tekis", "Kubning sirti bo'ylab", "Faqat kubning uchlarida"],
+      "c": 2
+    },
+    {
+      "q": "+2q elektr zaryadga ega bo‘lgan tomchidan –q zaryadli kichik tomchi ajraldi. Qolgan qismining zaryadi qanday bo‘ladi?",
+      "a": ["+q", "+3q", "–3q", "+2q"],
+      "c": 1
+    },
+    {
+      "q": "Elektr maydonning manbasini ko‘rsating.",
+      "a": ["Neytronlar", "Massiv jismlar", "Doimiy magnitlar", "Elektr zaryadlar"],
+      "c": 3
+    },
+    {
+      "q": "Birinchi nuqtaviy zaryad 5 nC, ikkinchisi –8 nC zaryadga ega. Ular o'zaro ta’sirlashganda qaysi biriga kattaroq Kulon kuchi ta’sir etadi?",
+      "a": ["Birinchisiga", "Ikkinchisiga", "Ularning ta’sirlashuv kuchi modul jihatidan o‘zaro teng", "Zaryadi kattasiga"],
+      "c": 2
+    },
+    {
+      "q": "Qachon elektr zaryadni 'nuqtaviy' deb hisoblash mumkin?",
+      "a": ["Agar zaryadlangan jism shar shaklida bo'lsa", "Agar jism o'lchamlari ular orasidagi masofadan ancha kichik bo'lsa", "Faqat elektronlar uchun", "Agar jism massasi juda kichik bo'lsa"],
+      "c": 1
+    },
+    {
+      "q": "Elektr zaryadini o‘lchash (mavjudligini aniqlash) uchun qanday asbob ishlatiladi?",
+      "a": ["Voltmetr", "Elektroskop (yoki elektrometr)", "Ampermetr", "Gigrometr"],
+      "c": 1
+    }
+  ]
+}

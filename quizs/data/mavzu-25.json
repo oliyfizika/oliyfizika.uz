@@ -1,0 +1,105 @@
+{
+  "title": "Molekulyar-kinetik nazariya",
+  "questions": [
+    {
+      "q": "Molekulyar-kinetik nazariyaning asosiy qoidalari qaysi javobda to'liq bayon qilingan?",
+      "a": ["Modda mayda bo'laklardan tuziladi va ular fazoni uzluksiz to'ldiradi", "Har qanday jism molekulalardan tuzilgan, ular betartib harakatda bo'ladi va ular orasida o'zaro ta'sir kuchlari mavjud", "Modda elementar zarralardan tuziladi va ular bir-biriga tinimsiz aylanib turadi", "Barcha moddalar faqat elektron va protonlardan iborat"],
+      "c": 1
+    },
+    {
+      "q": "Modda miqdorining Xalqaro birliklar sistemasi (XBS) dagi asosiy birligi nima?",
+      "a": ["Kilogramm (kg)", "Massa atom birligi (m.a.b)", "Mol (mol)", "Gramm/mol (g/mol)"],
+      "c": 2
+    },
+    {
+      "q": "Avogadro doimiysi (NA) ning qiymati qanchaga teng?",
+      "a": ["1,38·10⁻²³ J/K", "6,02·10²³ mol⁻¹", "8,31·10²³ J/(mol·K)", "6,62·10⁻³⁴ J·s"],
+      "c": 1
+    },
+    {
+      "q": "Molyar massa deb nimaga aytiladi?",
+      "a": ["1 m³ hajmdagi modda massasiga", "NA ta zarrachadan tashkil topgan modda massasiga", "Bitta molekulaning grammlardagi massasiga", "Molekula massasining vodorod atomiga nisbatiga"],
+      "c": 1
+    },
+    {
+      "q": "Gaz nima sababli idish devorlariga bosim bilan ta'sir etadi?",
+      "a": ["Molekulalarning o'zaro tortilishi sababli", "Molekulalarning idish devorlariga urilishi natijasida", "Gazning og'irligi sababli", "Molekulalar o'lchamining kattaligi tufayli"],
+      "c": 1
+    },
+    {
+      "q": "Molekulyar-kinetik nazariyaning asosiy tenglamasini ko'rsating.",
+      "a": ["P = 2/3·nEk", "P = m/V", "P = F/S", "PV = const"],
+      "c": 0
+    },
+    {
+      "q": "Temperaturaning fizik ma'nosi nima?",
+      "a": ["Modda zichligining o'lchovi", "Molekulalar sonining o'lchovi", "Molekulalar o'rtacha kinetik energiyasining o'lchovi", "Jism hajmining o'lchovi"],
+      "c": 2
+    },
+    {
+      "q": "Bitta molekulaning ilgarilanma harakat o'rtacha kinetik energiyasi qaysi formula bilan aniqlanadi?",
+      "a": ["Ek = 1/2·kT", "Ek = 3/2·kT", "Ek = 3/2·RT", "Ek = nkT"],
+      "c": 1
+    },
+    {
+      "q": "Bolsman doimiysi (k) ning qiymati qanchaga teng?",
+      "a": ["1,38·10⁻²³ J/K", "8,31 J/(mol·K)", "6,02·10²³ mol⁻¹", "1,6·10⁻¹⁹ C"],
+      "c": 0
+    },
+    {
+      "q": "Suyuqlik yoki gazga solingan mayda zarralarning molekulalar zarbi natijasida tartibsiz harakatlanishi nima deyiladi?",
+      "a": ["Diffuziya", "Broun harakati", "Konveksiya", "Depozitsiya"],
+      "c": 1
+    },
+    {
+      "q": "Gazni ideal deb hisoblash uchun qaysi shart bajarilishi kerak?",
+      "a": ["Molekulalar harakatini hisobga olmaslik", "Faqat massasini hisobga olish", "Molekulalarning o'zaro ta'siri va o'lchamlarini e'tiborga olmaslik", "Gazni yuqori bosimda saqlash"],
+      "c": 2
+    },
+    {
+      "q": "Mendeleev-Klapeyron tenglamasini ko'rsating.",
+      "a": ["P = nkT", "PV = mRT/M", "V/T = const", "P₁V₁ = P₂V₂"],
+      "c": 1
+    },
+    {
+      "q": "Gaz molekulalarining o'rtacha kvadratik tezligi qaysi formula bilan topiladi?",
+      "a": ["v = √(3kT/m₀)", "v = 3/2·kT", "v = √(2g/h)", "v = ωR"],
+      "c": 0
+    },
+    {
+      "q": "Hajm birligidagi molekulalar soni (n=N/V) nima deb ataladi?",
+      "a": ["Zichlik", "Modda miqdori", "Molekulalar konsentratsiyasi", "Avogadro soni"],
+      "c": 2
+    },
+    {
+      "q": "Idishdagi gazlar aralashmasining umumiy bosimi har bir gazning parsial bosimlari yig'indisiga teng. Bu qaysi qonun?",
+      "a": ["Paskal qonuni", "Dalton qonuni", "Boyl-Mariott qonuni", "Sharl qonuni"],
+      "c": 1
+    },
+    {
+      "q": "Universal gaz doimiysi (R) ning qiymati nimaga teng?",
+      "a": ["1,38 J/(K·mol)", "8,31 J/(mol·K)", "6,02 mol⁻¹", "22,4 l/mol"],
+      "c": 1
+    },
+    {
+      "q": "Diffuziya hodisasi qaysi moddalarda kuzatiladi?",
+      "a": ["Faqat gazlarda", "Faqat suyuqliklarda", "Gaz, suyuqlik va qattiq jismlarda", "Faqat vakuumda"],
+      "c": 2
+    },
+    {
+      "q": "Absolyut nol temperatura (0 K) qanday holatga mos keladi?",
+      "a": ["Suvning muzlash haroratiga", "Molekulalarning ilgarilanma harakati to'xtaydigan holatga", "Gazning suyuqlikka aylanishiga", "Atmosfera bosimi nol bo'lgan holatga"],
+      "c": 1
+    },
+    {
+      "q": "32 g vodoroddagi modda miqdorini aniqlang (M = 2 g/mol).",
+      "a": ["16 mol", "32 mol", "64 mol", "1 mol"],
+      "c": 0
+    },
+    {
+      "q": "Ideal gazning absolut temperaturasi 4 marta ortsa, molekulalarning o'rtacha kvadratik tezligi qanday o'zgaradi?",
+      "a": ["4 marta ortadi", "2 marta ortadi", "O'zgarmaydi", "16 marta ortadi"],
+      "c": 1
+    }
+  ]
+}

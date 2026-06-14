@@ -1,0 +1,105 @@
+{
+  "title": "Klapeyron-Mendeleyev tenglamasi",
+  "questions": [
+    {
+      "q": "Mendeleyev-Klapeyron tenglamasining (ideal gaz holat tenglamasi) to'g'ri ifodasini ko'rsating.",
+      "a": ["pV = (m/M)RT", "pV = const", "V/T = const", "p = nkT"],
+      "c": 0
+    },
+    {
+      "q": "Universal gaz doimiysi (R) ning Xalqaro birliklar sistemasi (XBS) dagi birligi nima?",
+      "a": ["J/(kg·K)", "J·mol/K", "J/(mol·K)", "Pa·m³/K"],
+      "c": 2
+    },
+    {
+      "q": "Universal gaz doimiysi (R) ning fizik ma'nosi nima?",
+      "a": ["1 mol gazdagi molekulalar soni", "1 mol ideal gazni o'zgarmas bosimda 1 K ga isitishda bajarilgan ish", "Molekulalarning o'rtacha kinetik energiyasi", "Absolut nol temperaturadagi bosim"],
+      "c": 1
+    },
+    {
+      "q": "Quyidagi formulalarning qaysi biri Klapeyron tenglamasi (birlashtirilgan gaz qonuni) deyiladi?",
+      "a": ["pV = const", "V/T = const", "pV/T = const", "p/T = const"],
+      "c": 2
+    },
+    {
+      "q": "Universal gaz doimiysi (R) qaysi ikki doimiyning ko'paytmasiga teng (R = k·NA)?",
+      "a": ["Bolsman doimiysi va Avogadro doimiysi", "Plank doimiysi va zaryad miqdori", "Zichlik va hajm", "Massa va tezlanish"],
+      "c": 0
+    },
+    {
+      "q": "Ideal gazning bosimi (p), absolut temperaturasi (T) va molyar massasi (M) ma'lum bo'lsa, uning zichligi (ρ) qaysi formula bilan aniqlanadi?",
+      "a": ["ρ = MRT/p", "ρ = pM/(RT)", "ρ = p/(MRT)", "ρ = m/V"],
+      "c": 1
+    },
+    {
+      "q": "Hajmi va absolut harorati 2 martadan oshirilsa, ideal gazning bosimi qanday o'zgaradi?",
+      "a": ["2 marta kamayadi", "2 marta ortadi", "O'zgarmaydi", "4 marta ortadi"],
+      "c": 2
+    },
+    {
+      "q": "Ideal gazning absolut harorati va hajmi 4 martadan kamaysa, uning bosimi qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "4 marta ortadi", "16 marta kamayadi", "2 marta ortadi"],
+      "c": 0
+    },
+    {
+      "q": "Modda miqdori (ν) qanday topiladi?",
+      "a": ["ν = m/M", "ν = N/NA", "Ikkala javob ham to'g'ri", "ν = pV"],
+      "c": 2
+    },
+    {
+      "q": "Universal gaz doimiysi (R) ning qiymati qanchaga teng?",
+      "a": ["1,38·10⁻²³ J/K", "6,02·10²³ mol⁻¹", "8,31 J/(mol·K)", "1,6·10⁻¹⁹ C"],
+      "c": 2
+    },
+    {
+      "q": "Ideal gaz bosimi p = nkT ifodasidagi 'n' nimani anglatadi?",
+      "a": ["Modda miqdori", "Molekulalar konsentratsiyasi (hajm birligidagi zarralar soni)", "Gaz massasi", "Neytronlar soni"],
+      "c": 1
+    },
+    {
+      "q": "V hajmli idishdagi molekulalar konsentratsiyasi n bo'lsa, idishda necha mol (ν) gaz bor?",
+      "a": ["ν = V·NA/n", "ν = nV/NA", "ν = nV/R", "ν = n/V"],
+      "c": 1
+    },
+    {
+      "q": "O'zgarmas bosimda (p = const) gazning zichligi temperatura (T) ga qanday bog'liq?",
+      "a": ["To'g'ri proporsional", "Teskari proporsional (ρ ∝ 1/T)", "Bog'liq emas", "Kvadratik bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "1 mol miqdordagi bir atomli ideal gazning ichki energiyasi (U) qaysi formula bilan aniqlanadi?",
+      "a": ["U = 3/2 kT", "U = 3/2 RT", "U = 3/2 NA", "U = pV"],
+      "c": 1
+    },
+    {
+      "q": "Hajmi 8,31 litr bo'lgan 1 mol gazning 27°C (300 K) haroratdagi bosimi necha Pa bo'ladi? (R = 8,31)",
+      "a": ["2·10⁵ Pa", "3·10⁵ Pa", "4·10⁵ Pa", "10⁵ Pa"],
+      "c": 1
+    },
+    {
+      "q": "Mendeleyev-Klapeyron tenglamasiga ko'ra, gazning massasi (m) qanday topiladi?",
+      "a": ["m = pVM/(RT)", "m = pV/(MRT)", "m = RT/(pVM)", "m = nM"],
+      "c": 0
+    },
+    {
+      "q": "Normal sharoitda (T = 273,15 K, p = 10⁵ Pa) har qanday ideal gazning 1 moli qancha hajm egallaydi (V₀)?",
+      "a": ["1 m³", "22,4 litr (22,4·10⁻³ m³)", "10 litr", "100 litr"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gaz pV diagrammadagi qaysi nuqtaga mos holatda eng katta ichki energiyaga ega bo'ladi (U ∝ pV)?",
+      "a": ["Bosim va hajm ko'paytmasi (pV) eng kichik bo'lgan nuqtada", "Bosim va hajm ko'paytmasi (pV) eng katta bo'lgan nuqtada", "Faqat bosim katta bo'lgan nuqtada", "Faqat hajm katta bo'lgan nuqtada"],
+      "c": 1
+    },
+    {
+      "q": "Idishdagi gazlar aralashmasining umumiy bosimi parsial bosimlar yig'indisiga tengligi qaysi qonun?",
+      "a": ["Paskal qonuni", "Dalton qonuni", "Shar qonuni", "Guk qonuni"],
+      "c": 1
+    },
+    {
+      "q": "Gaz bosimini ifodalovchi p = 2/3 nEk munosabatidagi Ek nimani anglatadi?",
+      "a": ["Molekulalarning potensial energiyasi", "Molekulalarning o'rtacha kinetik energiyasi", "Gazning to'la energiyasi", "Tashqi kuchlar bajargan ish"],
+      "c": 1
+    }
+  ]
+}

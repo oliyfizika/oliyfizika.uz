@@ -1,0 +1,105 @@
+{
+"title": "Mexanik energiyaning saqlanishi",
+"questions": [
+{
+"q": "Jismning to'liq mexanik energiyasi nimaga teng?",
+"a": ["Faqat kinetik energiyaga", "Faqat potensial energiyaga", "Kinetik va potensial energiyalar yig'indisiga", "Ish va quvvat ko'paytmasiga"],
+"c": 2
+},
+{
+"q": "Energiyaning saqlanish qonuni vaqtning qaysi xossasi natijasidir?",
+"a": ["Izotropligi", "Zichligi", "Bir jinsliligi", "Cheksizligi"],
+"c": 2
+},
+{
+"q": "Berk sistemada to'la mexanik energiya qanday o'zgaradi?",
+"a": ["Ortadi", "Kamayadi", "O'zgarmas qoladi (E = const)", "Nolga teng bo'ladi"],
+"c": 2
+},
+{
+"q": "Energiyaning saqlanish qonuniga ko'ra, energiya bordan yo'q bo'ladimi?",
+"a": ["Ha, issiqlikka aylanib yo'qoladi", "Yo'q, u faqat bir turdan ikkinchi turga aylanadi", "Faqat kosmosda yo'qolishi mumkin", "Faqat ishqalanishda yo'qoladi"],
+"c": 1
+},
+{
+"q": "Bajargan ishi trayektoriya shakliga bog'liq bo'lmagan kuchlar nima deyiladi?",
+"a": ["Dissipativ kuchlar", "Konservativ (potensial) kuchlar", "Tashqi kuchlar", "Girdobli kuchlar"],
+"c": 1
+},
+{
+"q": "Quyidagi kuchlarning qaysilari konservativ kuchlar hisoblanadi?",
+"a": ["Ishqalanish va havo qarshiligi", "Tortishish va elastiklik kuchlari", "Faqat Lorens kuchi", "Faqat markazdan qochma kuch"],
+"c": 1
+},
+{
+"q": "Jismning faqat harakati bilan bog'liq bo'lgan energiya qanday ataladi?",
+"a": ["Potensial energiya", "Kinetik energiya", "Ichki energiya", "Statik energiya"],
+"c": 1
+},
+{
+"q": "Jismlarning o'zaro vaziyati yoki holati bilan bog'liq bo'lgan energiya nima?",
+"a": ["Kinetik energiya", "Issiqlik energiyasi", "Magnit energiyasi", "Potensial energiya"],
+"c": 3
+},
+{
+"q": "Energiyalarning o'zgarishi (ΔE) har doim nimaga teng bo'ladi?",
+"a": ["Kuchga", "Bajarilgan ishga", "Quvvatga", "Vaqtga"],
+"c": 1
+},
+{
+"q": "Absolyut noelastik to'qnashishda mexanik energiya nima uchun to'la saqlanmaydi?",
+"a": ["Impuls yo'qolgani uchun", "Bir qismi ichki energiyaga (issiqlikka) aylangani uchun", "Tashqi kuchlar ta'sir qilgani uchun", "Massa o'zgargani uchun"],
+"c": 1
+},
+{
+"q": "Barcha turdagi harakatlarning universal o'lchovi nima?",
+"a": ["Vaqt", "Kuch", "Energiya", "Massa"],
+"c": 2
+},
+{
+"q": "Ishqalanish va qarshilik kuchlarining bajargan ishi natijasida mexanik energiya nimaga aylanadi?",
+"a": ["Potensial energiyaga", "Kinetik energiyaga", "Ichki energiyaga (issiqlikka)", "Yadro energiyasiga"],
+"c": 2
+},
+{
+"q": "Matematik mayatnik tebranishida energiya qanday o'zgaradi?",
+"a": ["Faqat kamayadi", "Faqat ortadi", "Potensial va kinetik energiya davriy ravishda bir-biriga aylanadi", "O'zgarmay qoladi"],
+"c": 2
+},
+{
+"q": "Energiya so'zi qaysi tildan olingan va qanday ma'noni bildiradi?",
+"a": ["Lotincha 'harakat'", "Grekcha 'ta'sir' (ta'sirchanlik)", "Inglizcha 'kuch'", "Ruscha 'quvvat'"],
+"c": 1
+},
+{
+"q": "Tebranishlar konturida (LC) qanday energiyalar o'zaro almashinib turadi?",
+"a": ["Issiqlik va nur", "Elektr va magnit maydon energiyalari", "Kinetik va og'irlik", "Yadro va atom"],
+"c": 1
+},
+{
+"q": "Vaznsizlik holatida (erkin tushishda) itarib chiqaruvchi (Arximed) kuchining ishi nimaga teng bo'ladi?",
+"a": ["Maksimal", "Minimal", "Nolga", "Manfiy"],
+"c": 2
+},
+{
+"q": "Jism har doim qanday holatni olishga intiladi?",
+"a": ["Eng katta kinetik energiyali", "Eng kam potensial energiyali", "Eng yuqori tezlikli", "Eng katta massali"],
+"c": 1
+},
+{
+"q": "Havoning qarshilik kuchini yengish uchun bajarilgan ish nimaga teng?",
+"a": ["To'la energiya yig'indisiga", "Potensial va kinetik energiyalar o'zgarishi ayirmasiga", "Faqat kinetik energiyaga", "Faqat massaga"],
+"c": 1
+},
+{
+"q": "Impuls momentining saqlanish qonuni fazoning qaysi xossasi natijasidir?",
+"a": ["Bir jinsliligi", "Cheksizligi", "Izotropligi", "Zichligi"],
+"c": 2
+},
+{
+"q": "Tinch holatdagi jismning kinetik energiyasi nimaga teng?",
+"a": ["Maksimal qiymatga", "Nolga", "Potensial energiyasiga", "Massasiga"],
+"c": 1
+}
+]
+}

@@ -1,0 +1,100 @@
+{
+  "title": "Kapillarlik va sirt taranglik",
+  "questions": [
+    {
+      "q": "Sirt taranglik koeffitsiyenti (σ) Xalqaro birliklar sistemasi (XBS) da qanday birlikda ifodalanadi?",
+      "a": ["J·s", "N/m²", "N/m", "J/m³"],
+      "c": 2
+    },
+    {
+      "q": "'Kapillyar' so'zi lotinchadan olingan bo'lib, qanday ma'noni bildiradi?",
+      "a": ["Ingichka nay", "Soch tolasi", "Suv yo'li", "Kichik teshik"],
+      "c": 1
+    },
+    {
+      "q": "Sirt taranglik koeffitsiyentining formulasi qaysi javobda to'g'ri ko'rsatilgan? (W – sirt energiyasi, S – yuza)",
+      "a": ["σ = S/W", "σ = W/S", "σ = W·S", "σ = F·S"],
+      "c": 1
+    },
+    {
+      "q": "F/σ ifodaning birligi qanday? (F – kuch, σ – sirt taranglik koeffitsiyenti)",
+      "a": ["m", "1/m", "m²", "m³"],
+      "c": 0
+    },
+    {
+      "q": "Suyuqlik molekulalari orasidagi tortishish kuchi suyuqlik va qattiq jism molekulalari orasidagi tortishish kuchidan kichik bo'lsa, qanday hodisa ro'y beradi?",
+      "a": ["Ho'llamaslik", "Ho'llash", "Kapillyar pasayish", "Diffuziya"],
+      "c": 1
+    },
+    {
+      "q": "Ho'llash burchagi (θ) qanday bo'lganda suyuqlik qattiq jismni ho'llaydigan hisoblanadi?",
+      "a": ["θ = 180°", "θ > 90° (o'tmas)", "θ < 90° (o'tkir)", "θ = 90°"],
+      "c": 2
+    },
+    {
+      "q": "Nima sababdan suyuqlik sirti doimo eng kichik yuzani egallashga intiladi?",
+      "a": ["Atmosfera bosimi tufayli", "Sirt qatlamidagi molekulalarning suyuqlik ichiga yo'nalgan natijaviy kuchi tufayli", "Og'irlik kuchi ta'sirida", "Inersiya natijasida"],
+      "c": 1
+    },
+    {
+      "q": "Suyuqlikning sirt taranglik koeffitsiyenti nimalarga bog'liq?",
+      "a": ["Faqat suyuqlik hajmiga", "Suyuqlikning turiga, temperaturasiga va undagi aralashmalarga", "Idishning shakliga", "Faqat atmosfera bosimiga"],
+      "c": 1
+    },
+    {
+      "q": "Shar shaklidagi bir xil haroratli bir nechta simob tomchilari birlashib, yagona tomchi hosil qilsa, harorat qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "Pasayadi", "Ko'tariladi (chunki sirt energiyasi kamayadi)", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "Kapillyar nayda suyuqlikning ko'tarilish balandligi (h) nayning radiusiga (r) qanday bog'liq?",
+      "a": ["To'g'ri proporsional", "Bog'liq emas", "Teskari proporsional (h ∝ 1/r)", "Kvadratik bog'liq"],
+      "c": 2
+    },
+    {
+      "q": "Yer sirtidagi kapillyar nayda suv 24 mm ga ko'tarildi. Oyda (g_oy ≈ g_yer/6) shu naychada suv qancha balandlikka ko'tariladi?",
+      "a": ["4 mm", "24 mm", "144 mm", "72 mm"],
+      "c": 2
+    },
+    {
+      "q": "σ·S ifoda qaysi fizik kattalikni bildiradi?",
+      "a": ["Sirt energiyasi, Joul (J)", "Sirt taranglik kuchi, Nyuton (N)", "Bosim, Paskal (Pa)", "Massa, kg"],
+      "c": 0
+    },
+    {
+      "q": "Temperatura ortishi bilan suyuqlikning sirt taranglik koeffitsiyenti qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi", "Dastlab ortib, keyin kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Ikkita parallel plastina orasidagi masofa kapillyar nayning radiusiga teng (d=r). Ulardagi suyuqlik ko'tarilish balandliklari (h_pl va h_nay) qanday munosabatda bo'ladi?",
+      "a": ["h_pl = h_nay", "h_pl = 2·h_nay", "2·h_pl = h_nay", "h_pl = 1,5·h_nay"],
+      "c": 2
+    },
+    {
+      "q": "Sirt taranglik kuchi suyuqlik sirtini chegaralab turgan chiziqqa nisbatan qanday yo'nalgan bo'ladi?",
+      "a": ["Parallel", "Ixtiyoriy burchak ostida", "Perpendikulyar va sirtni qisqartirish tomonga", "Vertikal yuqoriga"],
+      "c": 2
+    },
+    {
+      "q": "Suyuqlik sirtiga sovun (yoki yuvuvchi vositalar) qo'shilsa, sirt taranglik koeffitsiyenti qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi", "Nolga teng bo'ladi"],
+      "c": 1
+    },
+    {
+      "q": "Suyuqlik ichidagi gaz pufakchasi sirt taranglik tufayli qanday qo'shimcha bosimga ega bo'ladi? (r – pufakcha radiusi)",
+      "a": ["P = σ/r", "P = 2σ/r", "P = 4σ/r", "P = σ·r"],
+      "c": 1
+    },
+    {
+      "q": "Quyidagilardan qaysi biri kapillyar hodisalarga misol bo'la oladi?",
+      "a": ["Avtomobilning tormozlanishi", "Daraxt ildizlari orqali namlikning yuqoriga ko'tarilishi", "Gazning kengayishi", "Muzning erishi"],
+      "c": 1
+    },
+    {
+      "q": "Sirt taranglik koeffitsiyenti birligi uchun quyidagilardan qaysi biri to'g'ri?",
+      "a": ["N/m", "J/m²", "Ikkala javob ham to'g'ri", "Faqat N/m²"],
+      "c": 2
+    }
+  ]
+}

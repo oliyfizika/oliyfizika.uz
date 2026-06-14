@@ -1,0 +1,105 @@
+{
+"title": "Elastiklik kuchi",
+"questions": [
+{
+"q": "Jismning tashqi kuch ta’sirida o‘z shakli va hajmini o‘zgartirishi nima deyiladi?",
+"a": ["Harakat", "Inersiya", "Deformatsiya", "Tezlanish"],
+"c": 2
+},
+{
+"q": "Kuch ta’siri to‘xtagandan so‘ng jism avvalgi holatiga qaytsa, u qanday deformatsiya?",
+"a": ["Plastik", "Noelastik", "Elastik", "Absolyut"],
+"c": 2
+},
+{
+"q": "Elastiklik kuchi qanday tabiatga ega?",
+"a": ["Gravitatsion", "Elektromagnit", "Yadroviy", "Mexanik"],
+"c": 1
+},
+{
+"q": "Elastiklik kuchi har doim qaysi tomonga yo'naladi?",
+"a": ["Tashqi kuch bilan bir xil tomonga", "Deformatsiyalovchi kuchga qarama-qarshi", "Markazga qarab", "Vertikal pastga"],
+"c": 1
+},
+{
+"q": "Jismning elastik deformatsiyasi turiga qarab necha xil bo'ladi?",
+"a": ["2 turga", "3 turga", "4 turga", "5 turga"],
+"c": 3
+},
+{
+"q": "Guk qonunining matematik ifodasi qaysi?",
+"a": ["F = ma", "F = k|x|", "F = mg", "F = GmM/r²"],
+"c": 1
+},
+{
+"q": "Jismning oxirgi va dastlabki uzunliklari farqi (Δx) nima deyiladi?",
+"a": ["Absolyut uzayish", "Nisbiy uzayish", "Mexanik kuchlanish", "Bikrlik"],
+"c": 0
+},
+{
+"q": "Absolyut uzayishning (Δx) dastlabki uzunlikka (x₀) nisbati nima deyiladi?",
+"a": ["Absolyut uzayish", "Nisbiy uzayish", "Qarshilik", "Modul"],
+"c": 1
+},
+{
+"q": "Yuza birligiga tik ta’sir etuvchi elastiklik kuchi nima deyiladi?",
+"a": ["Bikrlik", "Bosim yoki mexanik kuchlanish", "Energiya", "Impuls"],
+"c": 1
+},
+{
+"q": "Prujinalar parallel ulanganda umumiy bikrlik (k_um) qanday topiladi?",
+"a": ["k_um = k₁ + k₂ + ...", "1/k_um = 1/k₁ + 1/k₂", "k_um = k/n", "k_um = k₁ · k₂"],
+"c": 0
+},
+{
+"q": "Prujinalar ketma-ket ulanganda umumiy bikrlik formulasi qanday?",
+"a": ["k_um = k₁ + k₂", "1/k_um = 1/k₁ + 1/k₂ + ...", "k_um = nk", "k_um = k₁ - k₂"],
+"c": 1
+},
+{
+"q": "Qaysi kuchlarning bajargan ishi trayektoriya shakliga bog‘liq emas?",
+"a": ["Ishqalanish kuchlari", "Tortishish va elastik kuchlar", "Havo qarshiligi", "Yadro kuchlari"],
+"c": 1
+},
+{
+"q": "Bikrliklari bir xil k bo‘lgan n ta prujina parallel ulansa, umumiy bikrlik nimaga teng?",
+"a": ["k/n", "n·k", "k+n", "k−n"],
+"c": 1
+},
+{
+"q": "Bikrliklari bir xil k bo‘lgan n ta prujina ketma-ket ulansa, natijaviy bikrlik qanday bo'ladi?",
+"a": ["k/n", "n·k", "k²", "k+n"],
+"c": 0
+},
+{
+"q": "Tashqi kuch ta’sirida deformatsiyalanmaydigan jismda yuzaga keluvchi kuch nima?",
+"a": ["Ishqalanish kuchi", "Taranglik kuchi", "Og'irlik kuchi", "Arximed kuchi"],
+"c": 1
+},
+{
+"q": "Guk qonuniga ko‘ra mexanik kuchlanish (σ) nimaga to‘g‘ri proporsional?",
+"a": ["Absolyut uzayishga", "Massaga", "Nisbiy uzayishga (ε)", "Vaqtga"],
+"c": 2
+},
+{
+"q": "Elastiklik kuchining ishi trayektoriya shakliga bog‘liq bo‘lmagani uchun u qanday kuch deyiladi?",
+"a": ["Girdobli kuch", "Noelastik kuch", "Konservativ (potensial) kuch", "Tashqi kuch"],
+"c": 2
+},
+{
+"q": "Nisbiy uzayishning o'lchov birligi nima?",
+"a": ["Metr", "Nyuton", "Paskal", "O'lchov birligiga ega emas"],
+"c": 3
+},
+{
+"q": "Prujinaning bikrligi (k) qaysi birlikda o'lchanadi?",
+"a": ["N/m", "N·m", "kg/m", "J/m"],
+"c": 0
+},
+{
+"q": "Quyidagilardan qaysi biri elastik deformatsiya turi hisoblanadi?",
+"a": ["Erish", "Bug'lanish", "Buralish va siljish", "Diffuziya"],
+"c": 2
+}
+]
+}

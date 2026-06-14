@@ -1,0 +1,105 @@
+{
+"title": "Mexanik energiya va ish",
+"questions": [
+{
+"q": "Jismga ta’sir etuvchi kuchning ko‘chishga va ular orasidagi burchak kosinusiga ko‘paytmasi nima deyiladi?",
+"a": ["Quvvat", "Mexanik ish", "Energiya", "Impuls"],
+"c": 1
+},
+{
+"q": "Mexanik ishning XBS dagi birligi nima?",
+"a": ["Nyuton", "Vatt", "Joul", "Paskal"],
+"c": 2
+},
+{
+"q": "Qaysi kuchlar harakat yo'nalishiga perpendikulyar bo'lgani uchun ish bajarmaydi?",
+"a": ["Ishqalanish kuchlari", "Og'irlik kuchi", "Markazga intilma va Lorens kuchlari", "Elastiklik kuchi"],
+"c": 2
+},
+{
+"q": "Ta’sir etuvchi kuch harakat yo‘nalishiga qarama-qarshi bo‘lsa, ish qanday bo'ladi?",
+"a": ["Musbat", "Nol", "Manfiy", "Cheksiz"],
+"c": 2
+},
+{
+"q": "Ishqalanish va qarshilik kuchlarining bajargan ishi natijasida mexanik energiya nimaga aylanadi?",
+"a": ["Potensial energiyaga", "Ichki energiyaga (issiqlikka)", "Kinetik energiyaga", "Yadro energiyasiga"],
+"c": 1
+},
+{
+"q": "Vaqt birligi ichidagi bajarilgan ishga nima deyiladi?",
+"a": ["Energiya", "Kuch", "Quvvat", "Tezlanish"],
+"c": 2
+},
+{
+"q": "Quvvatning XBS dagi birligi qaysi?",
+"a": ["Joul", "Vatt", "Nyuton", "Ot kuchi"],
+"c": 1
+},
+{
+"q": "1 ot kuchi taxminan necha Vattga (W) teng?",
+"a": ["1000 W", "500 W", "735,75 W", "360 W"],
+"c": 2
+},
+{
+"q": "Foydali ishning umumiy bajarilgan ishga nisbati nima deyiladi?",
+"a": ["Ish koeffitsiyenti", "Foydali ish koeffitsiyenti (FIK)", "Quvvat unumdorligi", "Energiya zaxirasi"],
+"c": 1
+},
+{
+"q": "Mexanizmlarning ish bajara olish qobiliyati nima?",
+"a": ["Kuch", "Massa", "Energiya", "Tezlik"],
+"c": 2
+},
+{
+"q": "Jismlarning faqat harakati bilan bog‘liq bo‘lgan energiya qanday ataladi?",
+"a": ["Potensial energiya", "Kinetik energiya", "Ichki energiya", "Statik energiya"],
+"c": 1
+},
+{
+"q": "Jismlarning o'zaro vaziyati yoki holati bilan bog‘liq bo‘lgan energiya nima?",
+"a": ["Kinetik energiya", "Issiqlik energiyasi", "Potensial energiya", "Magnit energiyasi"],
+"c": 2
+},
+{
+"q": "Jismning to‘liq mexanik energiyasi nimaga teng?",
+"a": ["Kinetik va potensial energiyalar yig‘indisiga", "Ish va quvvat ko'paytmasiga", "Faqat kinetik energiyaga", "Massa va tezlik ko'paytmasiga"],
+"c": 0
+},
+{
+"q": "Energiyaning saqlanish qonuni vaqtning qaysi xossasi natijasidir?",
+"a": ["Izotropligi", "Cheksizligi", "Bir jinsliligi", "Zichligi"],
+"c": 2
+},
+{
+"q": "Bajargan ishi trayektoriya shakliga bog‘liq bo‘lmagan kuchlar nima deyiladi?",
+"a": ["Dissipativ kuchlar", "Konservativ (potensial) kuchlar", "Tashqi kuchlar", "Girdobli kuchlar"],
+"c": 1
+},
+{
+"q": "Quyidagi kuchlarning qaysilari konservativ kuchlar hisoblanadi?",
+"a": ["Faqat ishqalanish kuchi", "Tortishish, elastik va elektrostatik kuchlar", "Havo qarshilik kuchlari", "Faqat Lorens kuchi"],
+"c": 1
+},
+{
+"q": "Barcha turdagi harakatlarning universal o‘lchovi nima?",
+"a": ["Vaqt", "Kuch", "Energiya", "Massa"],
+"c": 2
+},
+{
+"q": "Absolyut noelastik to‘qnashishda mexanik energiya nima uchun to‘la saqlanmaydi?",
+"a": ["Impuls yo'qolgani uchun", "Bir qismi ichki energiyaga (issiqlik yoki deformatsiya energiyasiga) aylangani uchun", "Tashqi kuchlar ta'sir qilgani uchun", "Massa o'zgargani uchun"],
+"c": 1
+},
+{
+"q": "Energiyalarning o‘zgarishi (ΔE) doimo nimaga teng bo‘ladi?",
+"a": ["Kuchga", "Bajarilgan ishga", "Quvvatga", "Vaqtga"],
+"c": 1
+},
+{
+"q": "Mexanikaning 'oltin qoidasi'ga ko'ra, kuchdan qancha marta yutulsa, masofadan shuncha marta nima qilinadi?",
+"a": ["Yutiladi", "Yutqaziladi", "O'zgarmaydi", "Ikki barobar ortadi"],
+"c": 1
+}
+]
+}

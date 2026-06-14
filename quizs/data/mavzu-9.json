@@ -1,0 +1,105 @@
+{
+"title": "Vertikal harakat",
+"questions": [
+{
+"q": "Erkin tushish deb nimaga aytiladi?",
+"a": ["Havo qarshiligi ostidagi harakatga", "Faqat og'irlik kuchi ta'siridagi harakatga", "Tezligi o'zgarmas harakatga", "Egri chiziqli harakatga"],
+"c": 1
+},
+{
+"q": "Erkin tushish tezlanishi (g) Yerning qayerida eng katta qiymatga (9,83 m/s²) ega?",
+"a": ["Ekvatorda", "Qutblarda", "Tog' tepasida", "Dengiz sathida"],
+"c": 1
+},
+{
+"q": "Erkin tushish tezlanishi Yer ekvatorida taxminan qanchaga teng?",
+"a": ["9,83 m/s²", "9,81 m/s²", "9,78 m/s²", "10 m/s²"],
+"c": 2
+},
+{
+"q": "Erkin tushish tezlanishining (g) qiymati nimalarga bog'liq?",
+"a": ["Faqat jism massasiga", "Planetaning massasi, radiusi va zichligiga", "Jismning shakli va hajmiga", "Atmosfera bosimiga"],
+"c": 1
+},
+{
+"q": "Erkin tushayotgan jism qanday turdagi harakatni amalga oshiradi?",
+"a": ["Tekis harakat", "Tekis sekinlanuvchan", "Tekis tezlanuvchan", "Egri chiziqli"],
+"c": 2
+},
+{
+"q": "Yuqoriga tik otilgan jismning ko'tarilishdagi harakati qanday bo'ladi?",
+"a": ["Tekis tezlanuvchan", "Tekis sekinlanuvchan", "Notekis o'zgaruvchan", "Aylanma"],
+"c": 1
+},
+{
+"q": "Yuqoriga tik otilgan jismda tezlik va tezlanish vektorlari yo'nalishi qanday joylashadi?",
+"a": ["Bir tomonga yo'nalgan", "O'zaro perpendikulyar", "O'zaro qarama-qarshi", "Burchak ostida"],
+"c": 2
+},
+{
+"q": "Yuqoriga tik otilgan jism trayektoriyasining eng yuqori nuqtasida oniy tezligi nimaga teng?",
+"a": ["Boshlang'ich tezlikka", "Nolga", "Erkin tushish tezlanishiga (g)", "Maksimal tezlikka"],
+"c": 1
+},
+{
+"q": "Tinch holatdan (v₀ = 0) erkin tushayotgan jismning tushish vaqti qaysi formula bilan topiladi?",
+"a": ["t = v/g", "t = √(2h/g)", "t = h/g", "t = g/h"],
+"c": 1
+},
+{
+"q": "Yuqoriga tik otilgan jismning maksimal ko'tarilish vaqti qaysi formula bilan aniqlanadi?",
+"a": ["t = v₀/g", "t = √(2h/g)", "t = v₀·g", "t = g/v₀"],
+"c": 0
+},
+{
+"q": "Ideal holatda (havo qarshiligisiz) jismning ko'tarilish vaqti va tushish vaqti munosabati qanday?",
+"a": ["Ko'tarilish vaqti tushish vaqtidan ko'p", "Tushish vaqti ko'tarilish vaqtidan ko'p", "Ular o'zaro teng", "Boshlang'ich tezlikka bog'liq emas"],
+"c": 2
+},
+{
+"q": "Real holatda ko'tarilish vaqti tushish vaqtiga teng bo'lmasligining asosiy sababi nima?",
+"a": ["Inersiya hodisasi", "Havoning qarshilik kuchi", "Yerning o'z o'qi atrofida aylanishi", "Gravitatsiya doimiysining o'zgarishi"],
+"c": 1
+},
+{
+"q": "Erkin tushayotgan jismning n-chi sekunddagi ko'chishi (Sₙ) qaysi formula bilan topiladi?",
+"a": ["Sₙ = g(2n−1)/2", "Sₙ = gt²/2", "Sₙ = v₀ + at", "Sₙ = g/2"],
+"c": 0
+},
+{
+"q": "Erkin tushayotgan jismning tezlik va tezlanish vektorlari qayerga yo'nalgan bo'ladi?",
+"a": ["Gorizontal yo'nalishda", "Vertikal yuqoriga", "Vertikal pastga (Yer markaziga)", "Harakatga teskari yo'nalishda"],
+"c": 2
+},
+{
+"q": "Yer yuzi turli nuqtalarida g ning qiymati turlicha bo'lishiga sabab nima?",
+"a": ["Havo harorati har xilligi", "Yer sharining radiusi turli nuqtalarda turlichaligi", "Dengiz sathidan balandlik o'zgarmasligi", "Quyoshning tortish kuchi"],
+"c": 1
+},
+{
+"q": "Jismning boshlang'ich tezliksiz (v₀ = 0) tushish balandligi (h) formulasi qaysi?",
+"a": ["h = gt²/2", "h = vt", "h = gt", "h = v²/g"],
+"c": 0
+},
+{
+"q": "Yuqoriga tik otilgan jismning maksimal ko'tarilish balandligi (hmax) qanday aniqlanadi?",
+"a": ["h = v₀²/2g", "h = v₀/g", "h = gt²/2", "h = v₀t"],
+"c": 0
+},
+{
+"q": "Erkin tushayotgan jismning t vaqtdagi oniy tezligi (v) qanday topiladi?",
+"a": ["v = v₀ + gt", "v = gt²/2", "v = √(2gh)", "v = v₀ - gt"],
+"c": 0
+},
+{
+"q": "Vertikal harakatda erkin tushish tezlanishi (g) har doim qayerga yo'nalgan?",
+"a": ["Harakat yo'nalishida", "Harakatga qarama-qarshi", "Vertikal pastga (Yer markaziga)", "Gorizontal yo'nalishda"],
+"c": 2
+},
+{
+"q": "Havoning qarshiligi hisobga olinsa, yuqoriga tik otilgan jismning to'liq mexanik energiyasi qachon eng katta bo'ladi?",
+"a": ["Otilish boshida", "Eng yuqori nuqtaga yetganda", "Tushish o'rtasida", "Yerga tushish momentida"],
+"c": 0
+}
+]
+}

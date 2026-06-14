@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz | OliyFizika.uz</title>
+
+<link rel="stylesheet" href="css/quiz.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="background-texts"></div>
+
+<div class="container">
+
+<div class="quiz-box">
+
+<h1 class="quiz-title" id="quizTitle">
+Yuklanmoqda...
+</h1>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<div
+class="timer"
+id="timer">
+
+15
+
+</div>
+
+<div id="quizArea">
+
+<div
+class="question"
+id="question">
+
+</div>
+
+<div
+class="answers"
+id="answers">
+
+</div>
+
+<button
+class="next-btn"
+id="nextBtn">
+
+Keyingi savol
+
+</button>
+
+</div>
+
+<div
+class="result"
+id="result">
+
+<h2>
+🎉 Quiz yakunlandi
+</h2>
+
+<p id="resultText"></p>
+
+<button
+class="restart"
+onclick="location.reload()">
+
+🔄 Qayta ishlash
+
+</button>
+
+<a
+href="quizs.html"
+class="back-to-quizs">
+
+📚 Quizlarga qaytish
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const topicId =
+params.get("id");
+
+if(!topicId){
+
+document.body.innerHTML = `
+<h1 style="text-align:center;margin-top:50px;">
+Mavzu topilmadi
+</h1>
+`;
+
+throw new Error("id mavjud emas");
+
+}
+
+window.quizDataFile =
+`data/mavzu-${topicId}.json`;
+
+</script>
+
+<script src="js/background.js"></script>
+<script src="js/quiz-engine.js"></script>
+
+</body>
+</html>

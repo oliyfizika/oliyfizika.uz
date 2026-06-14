@@ -1,0 +1,105 @@
+{
+"title": "Ishqalanish kuchi",
+"questions": [
+{
+"q": "Jismlarning bir-biriga tegib turgan yuzalari orasida paydo bo'ladigan va harakatga qarshilik qiladigan kuch nima?",
+"a": ["Og'irlik kuchi", "Ishqalanish kuchi", "Elastiklik kuchi", "Arximed kuchi"],
+"c": 1
+},
+{
+"q": "Qaysi kuchning bajargan ishi trayektoriya shakliga bog'liq?",
+"a": ["Og'irlik kuchi", "Elektr maydon kuchi", "Ishqalanish kuchi", "Elastiklik kuchi"],
+"c": 2
+},
+{
+"q": "Ishqalanish kuchi odatda qanday ish bajaradi?",
+"a": ["Musbat", "Manfiy", "Nol", "Hech qanday"],
+"c": 1
+},
+{
+"q": "Tashqi ishqalanish kuchi necha turga bo'linadi?",
+"a": ["2 turga", "3 turga", "4 turga", "5 turga"],
+"c": 1
+},
+{
+"q": "Ishqalanish koeffitsiyenti (μ) quyidagilarning qaysi biriga bog'liq emas?",
+"a": ["Modda turiga", "Sirtning silliqligiga", "Yuzaning geometrik o'lchamiga", "Temperaturaga"],
+"c": 2
+},
+{
+"q": "Jismning turli qismlari (qatlamlari) orasida yuzaga keladigan ishqalanish nima deyiladi?",
+"a": ["Tashqi ishqalanish", "Ichki ishqalanish", "Tinchlikdagi ishqalanish", "Sirpanish ishqalanish"],
+"c": 1
+},
+{
+"q": "Ishqalanish kuchining bajargan ishi natijasida mexanik energiya nimaga aylanadi?",
+"a": ["Potensial energiyaga", "Kinetik energiyaga", "Ichki energiyaga (issiqlikka)", "Yadro energiyasiga"],
+"c": 2
+},
+{
+"q": "Dumalanish ishqalanishining asosiy sababi nima?",
+"a": ["Jism og'irligi", "Sirt deformatsiyasi", "Tezlik ortishi", "Havo qarshiligi"],
+"c": 1
+},
+{
+"q": "Ishqalanish kuchi jism harakat yo'nalishiga nisbatan qanday yo'naladi?",
+"a": ["Harakat yo'nalishida", "Harakatga perpendikulyar", "Harakatga qarama-qarshi", "Pastga qarab"],
+"c": 2
+},
+{
+"q": "Jism endi joyidan qo'zg'alish arafasida bo'lganda qaysi ishqalanish kuchi maksimal qiymatga ega bo'ladi?",
+"a": ["Sirpanish ishqalanish", "Dumalanish ishqalanish", "Tinchlikdagi ishqalanish", "Ichki ishqalanish"],
+"c": 2
+},
+{
+"q": "Sirtlar qanchalik silliq bo'lsa, ishqalanish kuchi qanday o'zgaradi?",
+"a": ["Ortadi", "O'zgarmaydi", "Kamayadi", "Cheksiz ortadi"],
+"c": 2
+},
+{
+"q": "Ishqalanish kuchi normal bosim kuchiga qanday bog'langan?",
+"a": ["Teskari proporsional", "Kvadratik bog'liq", "To'g'ri proporsional", "Bog'liq emas"],
+"c": 2
+},
+{
+"q": "Ishqalanish koeffitsiyentining birligi nima?",
+"a": ["Nyuton", "Metr", "Paskal", "O'lchov birligiga ega emas"],
+"c": 3
+},
+{
+"q": "Tinch turgan jismni joyidan qo'zg'atishga to'sqinlik qiluvchi kuch nima?",
+"a": ["Tinchlikdagi ishqalanish", "Sirpanish ishqalanish", "Og'irlik kuchi", "Dumalanish ishqalanish"],
+"c": 0
+},
+{
+"q": "Ishqalanish kuchini qaysi asbob yordamida o'lchash mumkin?",
+"a": ["Spidometr", "Dinamometr", "Termometr", "Barometr"],
+"c": 1
+},
+{
+"q": "Ichki ishqalanish kuchi asosan qayerda mavjud bo'ladi?",
+"a": ["Faqat qattiq jismlarda", "Suyuqlik va gazlarda", "Vakuumda", "Hech qayerda"],
+"c": 1
+},
+{
+"q": "Dumalanish ishqalanish kuchi sirpanish ishqalanish kuchidan odatda qanday farq qiladi?",
+"a": ["Kattaroq bo'ladi", "Teng bo'ladi", "Ancha kichik bo'ladi", "Farq qilmaydi"],
+"c": 2
+},
+{
+"q": "Bajargan ishi trayektoriya shakliga bog'liq bo'lmagan kuchlar nima deyiladi?",
+"a": ["Dissipativ kuchlar", "Konservativ kuchlar", "Ishqalanish kuchlari", "Havo qarshiligi"],
+"c": 1
+},
+{
+"q": "Berk trayektoriya (yopiq yo'l) bo'ylab ishqalanish kuchining to'la ishi nimaga teng?",
+"a": ["Nolga", "Noldan farqli manfiy qiymatga", "Massaga", "Tezlikka"],
+"c": 1
+},
+{
+"q": "Suyuqliklarda temperatura ortishi bilan ichki ishqalanish kuchi (yopishqoqlik) qanday o'zgaradi?",
+"a": ["Ortadi", "Kamayadi", "O'zgarmaydi", "Nolga tenglashadi"],
+"c": 1
+}
+]
+}

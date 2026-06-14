@@ -1,0 +1,105 @@
+{
+  "title": "Ideal gaz",
+  "questions": [
+    {
+      "q": "Gazni ideal deb hisoblash uchun quyidagilarning qaysi biri hisobga olinmaydi?",
+      "a": ["Molekulalarning massasi", "Molekulalarning o'zaro to'qnashuvi", "Molekulalarning masofadan turib o'zaro ta'sirlashishi", "Molekulalarning xaotik harakati"],
+      "c": 2
+    },
+    {
+      "q": "Ideal gaz bosimi nima sababli yuzaga keladi?",
+      "a": ["Molekulalarning o'zaro tortilishi tufayli", "Molekulalarning idish devorlariga kelib urilishi natijasida", "Gazning og'irligi tufayli", "Hajm o'zgarishi natijasida"],
+      "c": 1
+    },
+    {
+      "q": "Mendeleev-Klapeyron tenglamasining (ideal gaz holat tenglamasi) to'g'ri ifodasini ko'rsating.",
+      "a": ["PV = nkT", "PV = (m/μ)RT", "P = 2/3 nEk", "V/T = const"],
+      "c": 1
+    },
+    {
+      "q": "Absolut temperatura (T) molekulalarning qaysi parametrini xarakterlaydi?",
+      "a": ["Molekulalar sonini", "Molekulalarning o'lchamini", "Molekulalar ilgarilanma harakati o'rtacha kinetik energiyasini", "Gaz zichligini"],
+      "c": 2
+    },
+    {
+      "q": "O'zgarmas massali gazda izoxorik jarayon (V = const) uchun qaysi qonun o'rinli?",
+      "a": ["P/T = const (Sharl qonuni)", "PV = const (Boyl-Mariott qonuni)", "V/T = const (Gey-Lussak qonuni)", "P/V = const"],
+      "c": 0
+    },
+    {
+      "q": "Universal gaz doimiysi (R) ning fizik ma'nosi nima?",
+      "a": ["1 mol gazdagi molekulalar soni", "1 mol ideal gazni o'zgarmas bosimda 1 K ga isitishda bajarilgan ish", "Molekulalarning o'rtacha tezligi", "Absolut nol temperaturadagi bosim"],
+      "c": 1
+    },
+    {
+      "q": "Bolsman doimiysi (k) ning qiymati qanchaga teng?",
+      "a": ["8,31 J/(mol·K)", "6,02·10²³ mol⁻¹", "1,38·10⁻²³ J/K", "1,6·10⁻¹⁹ C"],
+      "c": 2
+    },
+    {
+      "q": "Izotermik jarayonda (T = const) gaz bosimi 2 marta ortsa, uning hajmi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "O'zgarmaydi", "2 marta kamayadi", "4 marta kamayadi"],
+      "c": 2
+    },
+    {
+      "q": "Absolut nol temperatura (0 K) da molekulalarning qaysi harakati to'xtaydi?",
+      "a": ["Barcha turdagi harakatlar", "Faqat aylanma harakati", "Faqat ilgarilanma harakati", "Faqat tebranma harakati"],
+      "c": 2
+    },
+    {
+      "q": "Gaz molekulalarining o'rtacha kvadratik tezligi absolut haroratga qanday bog'liq?",
+      "a": ["T ga to'g'ri proporsional", "T ning kvadrat ildiziga proporsional", "T ga teskari proporsional", "Bog'liq emas"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi termodinamik jarayonda ideal gaz tashqi kuchlar ustidan ish bajarmaydi?",
+      "a": ["Izobarik jarayonda", "Izotermik jarayonda", "Izoxorik jarayonda", "Adiabatik jarayonda"],
+      "c": 2
+    },
+    {
+      "q": "Idishdagi gazlar aralashmasining umumiy bosimi parsial bosimlar yig'indisiga tengligi qaysi qonun?",
+      "a": ["Paskal qonuni", "Dalton qonuni", "Sharl qonuni", "Guk qonuni"],
+      "c": 1
+    },
+    {
+      "q": "Bir atomli ideal gazning ichki energiyasi qaysi formula bilan aniqlanadi?",
+      "a": ["U = 1/2mv²", "U = 3/2(m/μ)RT", "U = mgh", "U = PV/T"],
+      "c": 1
+    },
+    {
+      "q": "O'zgarmas bosimda (P = const) kechadigan izobarik jarayon qaysi olim nomi bilan bog'liq?",
+      "a": ["Boyl-Mariott", "Sharl", "Gey-Lussak", "Klapeyron"],
+      "c": 2
+    },
+    {
+      "q": "Molekulyar-kinetik nazariyaning asosiy tenglamasini ko'rsating.",
+      "a": ["P = nkT", "P = 1/3nm₀v² (yoki P = 2/3nEk)", "PV = const", "V/T = const"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi jarayonda gazga berilgan issiqlik miqdori to'laligicha uning ichki energiyasini oshirishga sarflanadi?",
+      "a": ["Izobarik", "Izotermik", "Izoxorik", "Adiabatik"],
+      "c": 2
+    },
+    {
+      "q": "Normal sharoitda (T=273,15 K, P=10⁵ Pa) 1 mol ideal gaz qancha hajm egallaydi?",
+      "a": ["1 m³", "22,4 litr", "10 litr", "100 litr"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazning zichligi (ρ) uning bosimi (P) va temperaturasiga (T) qanday bog'langan?",
+      "a": ["ρ = μRT/P", "ρ = μP/(RT)", "ρ = P/(μT)", "Bog'liq emas"],
+      "c": 1
+    },
+    {
+      "q": "Loshtmid soni nimani ifodalaydi?",
+      "a": ["1 kg moddadagi molekulalar sonini", "Normal sharoitda 1 m³ gazdagi molekulalar sonini", "1 mol modda hajmini", "Yorug'lik tezligini"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gaz izobarik kengayganda uning ichki energiyasi qanday o'zgaradi?",
+      "a": ["Kamayadi", "O'zgarmaydi", "Ortadi", "Nolga tenglashadi"],
+      "c": 2
+    }
+  ]
+}

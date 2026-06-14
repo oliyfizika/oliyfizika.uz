@@ -1,0 +1,105 @@
+{
+"title": "Kuch. Nyutonning ikkinchi qonuni",
+"questions": [
+{
+"q": "O'zaro ta'sirning o'lchovi bo'lib hisoblanuvchi fizik vektor kattalik nima?",
+"a": ["Massa", "Tezlanish", "Kuch", "Bosim"],
+"c": 2
+},
+{
+"q": "Kuchning Xalqaro birliklar sistemasi (XBS) dagi birligi nima?",
+"a": ["Kilogramm", "Nyuton", "Paskal", "Joul"],
+"c": 1
+},
+{
+"q": "Nyutonning ikkinchi qonuni qanday ta'riflanadi?",
+"a": ["Jismga kuch ta'sir etmasa, u tinch turadi", "Tezlanish kuchga to'g'ri, massaga teskari proporsional", "Ta'sir aks ta'sirga teng", "Jism o'z holatini saqlashga intiladi"],
+"c": 1
+},
+{
+"q": "1 Nyuton (N) kuchga berilgan to'g'ri ta'rif qaysi?",
+"a": ["1 kg massali jismga 1 m/s² tezlanish bera oladigan kuch", "10 kg massali jismni ko'taradigan kuch", "1 m masofaga ko'chirish uchun kerakli kuch", "Vaqt birligidagi energiya sarfi"],
+"c": 0
+},
+{
+"q": "Jismning o'z holatini (tezligini) saqlashga intilish xususiyati nima deyiladi?",
+"a": ["Gravitatsiya", "Inertlik", "Harakat", "Energiya"],
+"c": 1
+},
+{
+"q": "Inertlikning miqdoriy o'lchovi bo'lib xizmat qiluvchi kattalik nima?",
+"a": ["Kuch", "Tezlanish", "Massa", "Vaqt"],
+"c": 2
+},
+{
+"q": "Massa qanday fizik kattalik hisoblanadi?",
+"a": ["Vektor va additiv", "Vektor va skalyar", "Skalyar va additiv", "Faqat o'zgaruvchan"],
+"c": 2
+},
+{
+"q": "Kuchni o'lchaydigan asbob nima deb ataladi?",
+"a": ["Akselerometr", "Spidometr", "Dinamometr", "Manometr"],
+"c": 2
+},
+{
+"q": "Massa tushunchasini fanga birinchi bo'lib qaysi olim kiritgan?",
+"a": ["G. Galiley", "I. Nyuton", "A. Eynshteyn", "Arximed"],
+"c": 1
+},
+{
+"q": "Jismga ta'sir etuvchi kuchni uning ta'sir qilish vaqtiga ko'paytmasi nima deyiladi?",
+"a": ["Jism impulsi", "Kuch impulsi", "Ish", "Quvvat"],
+"c": 1
+},
+{
+"q": "Kuch impulsi nimaga teng?",
+"a": ["Tezlik o'zgarishiga", "Harakat miqdori (impuls)ning o'zgarishiga", "Jism massasiga", "Bosib o'tilgan yo'lga"],
+"c": 1
+},
+{
+"q": "Kuch impulsining birligi nima?",
+"a": ["1 kg·m/s (yoki N·s)", "1 kg/m³", "1 Joul", "1 Vatt"],
+"c": 0
+},
+{
+"q": "Inersial sanoq sistemasida jismga kuch ta'sir etsa, u birinchi bo'lib nima oladi?",
+"a": ["Tezlik", "Trayektoriya", "Tezlanish", "Bosim"],
+"c": 2
+},
+{
+"q": "Nyutonning ikkinchi qonuni qaysi fizik bo'limda o'rganiladi?",
+"a": ["Statika", "Kinematika", "Dinamika", "Optika"],
+"c": 2
+},
+{
+"q": "Nyutonning ikkinchi qonuni formulasini ko'rsating.",
+"a": ["F = ma", "F = m/a", "F = v/t", "F = GmM/r²"],
+"c": 0
+},
+{
+"q": "Kuchlar ta'sirining mustaqillik prinsipiga ko'ra, har bir kuch jismga qanday tezlanish beradi?",
+"a": ["Boshqa kuchlarga bog'liq holda", "Nolga teng tezlanish", "Go'yoki boshqa kuchlar yo'qdek Nyutonning II-qonuni bo'yicha", "Faqat o'rtacha tezlanish"],
+"c": 2
+},
+{
+"q": "SGS sistemasida massaning asosiy birligi qaysi?",
+"a": ["Kilogramm", "Nyuton", "Gramm", "Tonnametr"],
+"c": 2
+},
+{
+"q": "Agar jismga ta'sir etuvchi kuchlar natijaviysi (yig'indisi) nolga teng bo'lmasa, jism harakati qanday bo'ladi?",
+"a": ["Tekis harakat", "Tinch holat", "Tezlanishli harakat", "Aylanma harakat"],
+"c": 2
+},
+{
+"q": "Dinamometr so'zining ma'nosi nima?",
+"a": ["Vaqt o'lchayman", "Kuch o'lchayman", "Tezlik o'lchayman", "Bosim o'lchayman"],
+"c": 1
+},
+{
+"q": "Inertlik xossasi barcha jismlar uchun xosmi?",
+"a": ["Faqat qattiq jismlar uchun", "Faqat suyuqliklar uchun", "Ha, har qanday jism uchun xos", "Faqat harakatlanayotgan jismlar uchun"],
+"c": 2
+}
+]
+}

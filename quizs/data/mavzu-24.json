@@ -1,0 +1,105 @@
+{
+  "title": "Rezonans va mexanik to'lqinlar",
+  "questions": [
+    {
+      "q": "Sistemaga ta’sir etuvchi tashqi kuch chastotasi sistemaning erkin tebranishlar chastotasiga tenglashganda, majburiy tebranishlar amplitudasining keskin ortishi nima deyiladi?",
+      "a": ["Interferensiya", "Rezonans", "Difraksiya", "Dopler effekti"],
+      "c": 1
+    },
+    {
+      "q": "'Rezonans' so'zi qanday ma'noni bildiradi?",
+      "a": ["Kuchayish", "Tebranish", "Aks-sado", "Qaytarish"],
+      "c": 2
+    },
+    {
+      "q": "Tebranish davri T bo'lgan matematik mayatnikda rezonans yuzaga kelishi uchun tashqi ta'sir chastotasi (ν) qanday bo'lishi kerak?",
+      "a": ["ν = T", "ν = 1/T", "ν = 2πT", "ν = T/2π"],
+      "c": 1
+    },
+    {
+      "q": "Tebranishlarning elastik muhitda tarqalishi nima deyiladi?",
+      "a": ["Garmonik tebranish", "Mexanik to'lqin", "Avtotebranish", "Interferensiya"],
+      "c": 1
+    },
+    {
+      "q": "Muhit zarrachalarining tebranish yo'nalishi to'lqin tarqalish yo'nalishiga parallel bo'lgan to'lqinlar qanday ataladi?",
+      "a": ["Ko'ndalang to'lqinlar", "Bo'ylama to'lqinlar", "Sferik to'lqinlar", "Uzluksiz to'lqinlar"],
+      "c": 1
+    },
+    {
+      "q": "Muhit zarrachalari to'lqin tarqalish yo'nalishiga perpendikulyar yo'nalishda tebranadigan to'lqinlar nima deyiladi?",
+      "a": ["Bo'ylama to'lqinlar", "Garmonik to'lqinlar", "Ko'ndalang to'lqinlar", "Akustik to'lqinlar"],
+      "c": 2
+    },
+    {
+      "q": "Mexanik to'lqinlarning tarqalish tezligi qanday muhitda eng katta bo'ladi?",
+      "a": ["Havoda", "Suvda", "Qattiq jismda", "Vakuumda"],
+      "c": 2
+    },
+    {
+      "q": "Mexanik to'lqinlar quyidagi parametrlarning qaysi biri bir muhitdan boshqasiga o'tganda o'zgarmaydi?",
+      "a": ["Tezligi", "To'lqin uzunligi", "Amplitudasi", "Chastotasi"],
+      "c": 3
+    },
+    {
+      "q": "Inson qulog'i qabul qiladigan tovush to'lqinlari qanday chastota oralig'ini egallaydi?",
+      "a": ["1 Hz dan 100 Hz gacha", "17 Hz dan 20000 Hz gacha", "17 kHz dan 50 kHz gacha", "20000 Hz dan yuqori"],
+      "c": 1
+    },
+    {
+      "q": "Chastotasi 20000 Hz dan katta bo'lgan mexanik to'lqinlarga nima deyiladi?",
+      "a": ["Infratovush", "Ultratovush", "Gipertovush", "Akustik tovush"],
+      "c": 1
+    },
+    {
+      "q": "Chastotasi 17 Hz dan kichik bo'lgan mexanik to'lqinlarga nima deyiladi?",
+      "a": ["Infratovush", "Ultratovush", "Relyativistik to'lqin", "Gers to'lqini"],
+      "c": 0
+    },
+    {
+      "q": "Tovushning yuksakligi (balandligi) uning qaysi parametriga bog'liq?",
+      "a": ["Amplitudasiga", "Tezligiga", "Chastotasiga", "Fazasiga"],
+      "c": 2
+    },
+    {
+      "q": "Tovushning qattiqligi nimaga bog'liq?",
+      "a": ["Tebranish chastotasiga", "Tebranish amplitudasiga", "To'lqin uzunligiga", "Muhit zichligiga"],
+      "c": 1
+    },
+    {
+      "q": "Chastotalari bir xil va fazalar farqi o'zgarmas bo'lgan to'lqinlar nima deb ataladi?",
+      "a": ["Kogerent to'lqinlar", "Monoxromatik to'lqinlar", "Bo'ylama to'lqinlar", "Garmonik to'lqinlar"],
+      "c": 0
+    },
+    {
+      "q": "Ikki kogerent to'lqin qo'shilganda hosil bo'lgan natijaviy to'lqin amplitudasining kuchayishi yoki susayishi hodisasi nima deyiladi?",
+      "a": ["Difraksiya", "Interferensiya", "Dispersiya", "Rezonans"],
+      "c": 1
+    },
+    {
+      "q": "To'lqinlarning to'siqlarni aylanib o'tishi va soya sohasiga og'ib tarqalishi nima deyiladi?",
+      "a": ["Refraksiya", "Interferensiya", "Difraksiya", "Polyarizatsiya"],
+      "c": 2
+    },
+    {
+      "q": "Bir xil fazada tebranuvchi nuqtalarning geometrik o'rni nima deb ataladi?",
+      "a": ["To'lqin uzunligi", "To'lqin sirti", "To'lqin nuri", "Amplituda"],
+      "c": 1
+    },
+    {
+      "q": "Tovush to'lqinlari qaysi muhitda mutlaqo tarqala olmaydi?",
+      "a": ["Qattiq jismda", "Suyuqlikda", "Gazda", "Vakuumda"],
+      "c": 3
+    },
+    {
+      "q": "Inson tovush manbalarini (masalan, turli cholg'u asboblarini) bir-biridan qaysi xossasiga ko'ra ajrata oladi?",
+      "a": ["Balandligiga", "Tembriga", "Tezligiga", "Fazasiga"],
+      "c": 1
+    },
+    {
+      "q": "Bir-biriga eng yaqin va bir xil fazada tebranuvchi nuqtalar orasidagi masofa nima deyiladi?",
+      "a": ["To'lqin uzunligi", "Amplituda", "Siljish", "To'lqin sirti"],
+      "c": 0
+    }
+  ]
+}

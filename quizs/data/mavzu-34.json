@@ -1,0 +1,95 @@
+{
+  "title": "Termodinamikaning I qonuni",
+  "questions": [
+    {
+      "q": "Termodinamikaning birinchi qonuni formulasini ko'rsating.",
+      "a": ["Q = λm", "Q = A + ΔU", "Q = cmΔt", "PV = const"],
+      "c": 1
+    },
+    {
+      "q": "Termodinamikaning birinchi qonuni fizik ma'nosiga ko'ra qaysi qonunning issiqlik jarayonlariga tatbiqidir?",
+      "a": ["Impulsning saqlanish qonuni", "Energiyaning saqlanish qonuni", "Butun olam tortishish qonuni", "Nyutonning ikkinchi qonuni"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi qonun birinchi tur abadiy dvigatel (perpetuum mobile) yasab bo'lmasligini ko'rsatadi?",
+      "a": ["Nyutonning birinchi qonuni", "Termodinamikaning ikkinchi qonuni", "Termodinamikaning birinchi qonuni", "Guk qonuni"],
+      "c": 2
+    },
+    {
+      "q": "Izoxorik jarayon (V=const) uchun termodinamikaning birinchi qonuni qanday ko'rinishda bo'ladi?",
+      "a": ["Q = A", "Q = ΔU", "A = -ΔU", "Q = 0"],
+      "c": 1
+    },
+    {
+      "q": "Izotermik jarayonda (T=const) gazga berilgan issiqlik miqdori (Q) nimaga sarflanadi?",
+      "a": ["Faqat ichki energiyani oshirishga", "Faqat tashqi kuchlarga qarshi ish bajarishga (Q = A)", "Ish bajarishga va gazni qizdirishga", "Gazni sovitishga"],
+      "c": 1
+    },
+    {
+      "q": "Tashqi muhit bilan issiqlik almashmasdan (Q=0) sodir bo'ladigan jarayon qanday ataladi?",
+      "a": ["Izobarik", "Izoxorik", "Adiabatik", "Izotermik"],
+      "c": 2
+    },
+    {
+      "q": "Adiabatik kengayishda gazning ichki energiyasi qanday o'zgaradi?",
+      "a": ["Ortadi", "O'zgarmaydi", "Kamayadi (chunki ΔU = -A)", "Bosimga qarab o'zgaradi"],
+      "c": 2
+    },
+    {
+      "q": "Bir atomli ideal gazni izobarik isitishda unga berilgan issiqlikning qanday qismi ichki energiyani oshirishga sarflanadi?",
+      "a": ["0,4 Q", "0,5 Q", "0,6 Q", "1,0 Q"],
+      "c": 2
+    },
+    {
+      "q": "Gazga izobarik jarayonda 16 J issiqlik berildi, natijada ichki energiya 8 J ga ortdi. Agar hajm 0,002 m³ ga oshgan bo'lsa, gaz bosimini (kPa) toping.",
+      "a": ["2 kPa", "3 kPa", "4 kPa", "6 kPa"],
+      "c": 2
+    },
+    {
+      "q": "Sistemaga issiqlik miqdori berilayotgan bo'lsa, Q qanday ishora bilan olinadi?",
+      "a": ["Manfiy", "Musbat", "Nolga teng", "Ixtiyoriy"],
+      "c": 1
+    },
+    {
+      "q": "Gaz adiabatik siqilsa, uning temperaturasi qanday o'zgaradi?",
+      "a": ["Pasayadi", "O'zgarmaydi", "Ortadi", "Dastlab pasayib, keyin ortadi"],
+      "c": 2
+    },
+    {
+      "q": "Tashqi kuchlar sistema ustida ish bajarayotgan bo'lsa, sistemaning bajargan ishi (A) qanday bo'ladi?",
+      "a": ["A > 0", "A < 0 (manfiy)", "A = 0", "A = Q"],
+      "c": 1
+    },
+    {
+      "q": "Izotermik kengayishda (T=const) sistemaning ichki energiyasi o'zgarishi (ΔU) nimaga teng?",
+      "a": ["ΔU = Q", "ΔU = A", "ΔU = 0", "ΔU = -A"],
+      "c": 2
+    },
+    {
+      "q": "Birinchi tur 'perpetuum mobile' nima?",
+      "a": ["Energiyani saqlovchi qurilma", "Teng miqdorda energiya sarflamasdan ish bajara oladigan qurilma", "Faqat issiqlik yutuvchi mashina", "Faqat ish bajaruvchi qurilma"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi jarayonda gaz eng ko'p ish bajaradi?",
+      "a": ["Izoxorik", "Izobarik", "Izotermik", "Adiabatik"],
+      "c": 1
+    },
+    {
+      "q": "Gaz molekulalarining tartibsiz harakati kinetik energiyasi va o'zaro ta'sir potensial energiyalari yig'indisi nima deyiladi?",
+      "a": ["Issiqlik miqdori", "Ish", "Ichki energiya", "Entropiya"],
+      "c": 2
+    },
+    {
+      "q": "Izoxorik qizdirishda gazga berilgan 50 J issiqlik nimaga sarflanadi?",
+      "a": ["Faqat gazning ichki energiyasini oshirishga", "Faqat ish bajarishga", "Yarmi ishga, yarmi energiyaga", "Gazni kengaytirishga"],
+      "c": 0
+    },
+    {
+      "q": "Adiabatik jarayon uchun termodinamikaning birinchi qonuni ko'rinishini aniqlang.",
+      "a": ["Q = ΔU", "ΔU + A = 0", "Q = A", "ΔU = 0"],
+      "c": 1
+    }
+  ]
+}

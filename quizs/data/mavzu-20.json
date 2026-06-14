@@ -1,0 +1,80 @@
+{
+  "title": "Atmosfera bosimi",
+  "questions": [
+    {
+      "q": "Atmosfera bosimi deb nimaga aytiladi?",
+      "a": ["Suyuqlik bosimiga", "Atmosfera havosining Yer va undagi jismlarga ko'rsatadigan bosimiga", "Faqat shamol bosimiga", "Gaz zichligiga"],
+      "c": 1
+    },
+    {
+      "q": "Atmosfera bosimini birinchi bo'lib o'lchagan olim kim?",
+      "a": ["I. Nyuton", "B. Paskal", "E. Torrichelli", "G. Galiley"],
+      "c": 2
+    },
+    {
+      "q": "Atmosfera bosimini o'lchash uchun ishlatiladigan asbob nima deyiladi?",
+      "a": ["Manometr", "Barometr", "Dinamometr", "Termometr"],
+      "c": 1
+    },
+    {
+      "q": "Normal atmosfera bosimi necha mm simob ustuniga teng?",
+      "a": ["700 mm", "750 mm", "760 mm", "800 mm"],
+      "c": 2
+    },
+    {
+      "q": "Normal atmosfera bosimi taxminan necha paskalga teng?",
+      "a": ["101325 Pa", "1000 Pa", "760 Pa", "1000000 Pa"],
+      "c": 0
+    },
+    {
+      "q": "Dengiz sathidan balandlik ortishi bilan atmosfera bosimi qanday o'zgaradi?",
+      "a": ["Ortadi", "O'zgarmaydi", "Kamayadi", "Avval ortib keyin kamayadi"],
+      "c": 2
+    },
+    {
+      "q": "Atmosfera bosimining mavjudligini isbotlovchi tajribani kim o'tkazgan?",
+      "a": ["Torrichelli", "Arximed", "Faradey", "Amper"],
+      "c": 0
+    },
+    {
+      "q": "Torrichelli tajribasida qaysi suyuqlik ishlatilgan?",
+      "a": ["Suv", "Spirt", "Simob", "Moy"],
+      "c": 2
+    },
+    {
+      "q": "Barometr ko'rsatkichi pasaysa, ob-havo odatda qanday tomonga o'zgaradi?",
+      "a": ["Yaxshilanadi", "O'zgarmaydi", "Yomg'irli yoki beqaror bo'ladi", "Juda sovuq bo'ladi"],
+      "c": 2
+    },
+    {
+      "q": "Barometr ko'rsatkichi ko'tarilsa, ob-havo odatda qanday bo'ladi?",
+      "a": ["Yaxshilanadi", "Yomg'ir yog'adi", "Tuman tushadi", "Qor yog'adi"],
+      "c": 0
+    },
+    {
+      "q": "Atmosfera bosimi nima sababdan mavjud?",
+      "a": ["Yer magnit maydoni tufayli", "Havoning og'irligi tufayli", "Quyosh nuri tufayli", "Shamol tufayli"],
+      "c": 1
+    },
+    {
+      "q": "Balandlikni bosim o'zgarishiga qarab o'lchaydigan asbob nima deyiladi?",
+      "a": ["Gigrometr", "Altimetr", "Manometr", "Aneroid"],
+      "c": 1
+    },
+    {
+      "q": "Atmosfera bosimi taxminan har necha metr balandlikka ko'tarilganda 1 mm simob ustuniga kamayadi?",
+      "a": ["10 m", "12 m", "50 m", "100 m"],
+      "c": 1
+    },
+    {
+      "q": "Kosmosda atmosfera bosimi qanday bo'ladi?",
+      "a": ["Juda katta", "Yer dagidan katta", "Deyarli nolga teng", "760 mm simob ustuniga teng"],
+      "c": 2
+    },
+    {
+      "q": "Nima uchun atmosfera bosimini P = ρgh formulasi bilan aniq hisoblab bo'lmaydi?",
+      "a": ["Havo zichligi balandlik bilan o'zgaradi", "Yer tortish kuchi yo'q", "Havo massaga ega emas", "Atmosfera harakatlanmaydi"],
+      "c": 0
+    }
+  ]
+}

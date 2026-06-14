@@ -1,0 +1,105 @@
+{
+  "title": "Termodinamikaning II qonuni",
+  "questions": [
+    {
+      "q": "Termodinamikaning ikkinchi qonuni issiqlik jarayonlarining qaysi xususiyatini ko'rsatib beradi?",
+      "a": ["Energiyaning saqlanishini", "Jarayonlarning yo'nalishini", "Bosimning o'zgarishini", "Modda miqdorini"],
+      "c": 1
+    },
+    {
+      "q": "'Issiqlik o‘z-o’zidan harorati past jismdan harorati yuqori jismga o’tmaydi'. Bu termodinamikaning 2-qonuniga berilgan qaysi olimning ta’rifi?",
+      "a": ["Plank", "Karno", "Klauzis", "Kelvin"],
+      "c": 2
+    },
+    {
+      "q": "'Tabiatda issiqlik miqdori to’laligicha ishga aylanadigan jarayon bo’lishi mumkin emas'. Bu ta’rif qaysi olimga tegishli?",
+      "a": ["Nyuton", "Plank", "Bolsman", "Amper"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi qonun ikkinchi tur abadiy dvigatel (perpetuum mobile) yasab bo'lmasligini ko'rsatadi?",
+      "a": ["Nyutonning birinchi qonuni", "Termodinamikaning birinchi qonuni", "Termodinamikaning ikkinchi qonuni", "Guk qonuni"],
+      "c": 2
+    },
+    {
+      "q": "Ikkinchi tur 'perpetuum mobile' nima?",
+      "a": ["Hech qanday energiya sarflamasdan ish bajaradigan mashina", "Okean suvlarining sovishidan ajralgan energiyani ishga aylantirish g'oyasiga asoslangan mashina", "Faqat issiqlik yutuvchi qurilma", "Vakuumda ishlaydigan dvigatel"],
+      "c": 1
+    },
+    {
+      "q": "Ideal issiqlik mashinasining FIK i faqat isitkich va sovutkich temperaturalariga bog'liqligini kim ta’riflagan?",
+      "a": ["Kelvin", "Klauzis", "Karno", "Mendeleyev"],
+      "c": 2
+    },
+    {
+      "q": "Issiqlik sovuqroq tizimdan issiqroq tizimga qanday holda uzatilishi mumkin?",
+      "a": ["Hech qachon mumkin emas", "O'z-o'zidan (tabiiy ravishda)", "Tizimda yoki atrofdagi jismlarda o'zgarish (ish) bajarilganda", "Faqat vakuum sharoitida"],
+      "c": 2
+    },
+    {
+      "q": "Karno sikli qanday jarayonlardan tashkil topgan?",
+      "a": ["Ikki izobara va ikki izoterma", "Ikki izoxora va ikki adiabata", "Ikki izoterma va ikki adiabata", "To'rtta izobarik jarayon"],
+      "c": 2
+    },
+    {
+      "q": "Karnoning ideal dvigateli isitkichdan 30 kJ issiqlik olib, 25 kJ ish bajardi. Sovutkichga qancha issiqlik berilgan (kJ)?",
+      "a": ["5 kJ", "55 kJ", "15 kJ", "30 kJ"],
+      "c": 0
+    },
+    {
+      "q": "Issiqlik mashinasining foydali ish koeffitsiyenti (η) qaysi formula bilan aniqlanadi?",
+      "a": ["η = (Q1 + Q2) / Q1", "η = (Q1 - Q2) / Q1", "η = Q2 / Q1", "η = T1 / T2"],
+      "c": 1
+    },
+    {
+      "q": "Karno sikli bo'yicha ishlovchi issiqlik mashinasi FIK i 60% va sovutkich temperaturasi 280 K bo'lsa, isitkich temperaturasi qancha (K)?",
+      "a": ["500 K", "700 K", "600 K", "400 K"],
+      "c": 1
+    },
+    {
+      "q": "Tabiatda issiqlik har doim o'z-o'zidan qanday yo'nalishda uzatiladi?",
+      "a": ["Past haroratdan yuqori haroratga", "Yuqori haroratdan past haroratga", "Faqat bir xil temperaturali jismlar orasida", "O'zgarmas hajmda"],
+      "c": 1
+    },
+    {
+      "q": "Karno sikli bo'yicha ishlovchi mashinada isitkich temperaturasi o'zgarmay, sovutkich temperaturasi oshirilsa, uning FIK i va bajargan ishi qanday o'zgaradi?",
+      "a": ["Oshadi", "O'zgarmaydi", "Kamayadi", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "Qaysi turdagi issiqlik mashinalari teskari siklda (soat strelkasiga qarshi) ishlaydi?",
+      "a": ["Ichki yonuv dvigatellari", "Bug' turbinalari", "Sovitgich mashinalari", "Reaktiv dvigatellar"],
+      "c": 2
+    },
+    {
+      "q": "Dvigatelning ishchi jismi (gaz) bir sikl davomida isitkichdan Q1 issiqlik oladi va sovutkichga Q2 issiqlik beradi. Bunda gazning ichki energiyasi o'zgarishi (ΔU) nimaga teng?",
+      "a": ["ΔU = Q1 - Q2", "ΔU = Q1 + Q2", "ΔU = 0", "ΔU = A"],
+      "c": 2
+    },
+    {
+      "q": "Karnoning ideal dvigateli 600 K temperaturali isitkichdan 20 kJ issiqlik olib, sovutkichga 11 kJ issiqlik berdi. Sovutkich temperaturasi qancha (K)?",
+      "a": ["300 K", "330 K", "450 K", "480 K"],
+      "c": 1
+    },
+    {
+      "q": "Termodinamikaning ikkinchi qonuni birinchi bo'lib kim tomonidan ishlab chiqilgan?",
+      "a": ["G. Galiley", "I. Nyuton", "R. Klauzius", "V. Nernst"],
+      "c": 2
+    },
+    {
+      "q": "Real issiqlik mashinasi isitgichdan 2 kJ issiqlik olib, sovutgichga 600 J issiqlik berdi. Uning FIK i necha foiz?",
+      "a": ["30%", "70%", "60%", "40%"],
+      "c": 1
+    },
+    {
+      "q": "Dizel dvigatelida yoqilg'ining yonishi qanday jarayonda sodir bo'ladi?",
+      "a": ["O'zgarmas hajmda", "O'zgarmas bosimda", "O'zgarmas temperaturada", "Adiabatik jarayonda"],
+      "c": 1
+    },
+    {
+      "q": "Karburatorli dvigatellarda yoqilg'ining yonishi qanday jarayonda ro'y beradi?",
+      "a": ["O'zgarmas bosimda", "O'zgarmas hajmda", "Izotermik jarayonda", "Adiabatik kengayishda"],
+      "c": 1
+    }
+  ]
+}

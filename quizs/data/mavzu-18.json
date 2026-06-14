@@ -1,0 +1,105 @@
+{
+"title": "Quvvat va FIK",
+"questions": [
+{
+"q": "Vaqt birligi ichidagi bajarilgan ishga nima deyiladi?",
+"a": ["Energiya", "Kuch", "Quvvat", "Bosim"],
+"c": 2
+},
+{
+"q": "Quvvatning Xalqaro birliklar sistemasi (XBS) dagi birligi nima?",
+"a": ["Joul", "Nyuton", "Vatt (W)", "Paskal"],
+"c": 2
+},
+{
+"q": "Quvvatni hisoblash uchun asosiy formulani ko'rsating.",
+"a": ["N = A / t", "N = A × t", "N = F / S", "N = m × g"],
+"c": 0
+},
+{
+"q": "1 ot kuchi (o.k.) taxminan necha Vattga teng?",
+"a": ["1000 W", "500 W", "735,75 W", "360 W"],
+"c": 2
+},
+{
+"q": "75 kg massali jismni 1 sekundda 1 metr masofaga ko'chira oladigan mexanizm quvvati nima deyiladi?",
+"a": ["1 Vatt", "1 ot kuchi", "1 Joul", "1 Kilovatt"],
+"c": 1
+},
+{
+"q": "Mexanizmlarning foydali bajarilgan ishini umumiy bajarilgan ishiga nisbati nima deyiladi?",
+"a": ["Quvvat unumdorligi", "Foydali ish koeffitsiyenti (FIK)", "Ish koeffitsiyenti", "Energetik quvvat"],
+"c": 1
+},
+{
+"q": "Foydali ish koeffitsiyenti (η) odatda qanday birlikda ifodalanadi?",
+"a": ["Joul", "Vatt", "Foiz (%) yoki birliksiz son", "Nyuton"],
+"c": 2
+},
+{
+"q": "Quvvatning kuch va tezlik orqali ifodalangan formulasini ko'rsating.",
+"a": ["N = F·v·cosα", "N = F / v", "N = mv² / 2", "N = P·S"],
+"c": 0
+},
+{
+"q": "Elektr tokining quvvatini o'lchaydigan asbob nima deb ataladi?",
+"a": ["Ampermetr", "Vattmetr", "Voltmeter", "Ommetr"],
+"c": 1
+},
+{
+"q": "Transformatorning foydali ish koeffitsiyenti (η) qanday topiladi?",
+"a": ["η = P₂ / P₁", "η = P₁ / P₂", "η = U₁ / U₂", "η = I₁ / I₂"],
+"c": 0
+},
+{
+"q": "Nima uchun real mexanizmlarning FIK koeffitsiyenti har doim 100% dan kichik bo'ladi?",
+"a": ["Inersiya tufayli", "Massa kamligi sababli", "Ishqalanish va energiya isroflari tufayli", "Vaqt yetishmasligi sababli"],
+"c": 2
+},
+{
+"q": "Ideal issiqlik mashinasining (Karno sikli) FIK formulasi qaysi?",
+"a": ["η = (T₁ - T₂) / T₁", "η = T₂ / T₁", "η = T₁ + T₂", "η = T₁ × T₂"],
+"c": 0
+},
+{
+"q": "Elektr tokining tashqi zanjirdagi quvvati (Pₜₐₛₕ) qaysi formula bilan aniqlanadi?",
+"a": ["P = I²R", "P = I·r", "P = E / t", "P = F·v"],
+"c": 0
+},
+{
+"q": "1 Vatt quvvat jismning 1 sekundda qancha ish bajarishini bildiradi?",
+"a": ["10 Joul", "1 Joul", "0,5 Joul", "100 Joul"],
+"c": 1
+},
+{
+"q": "Issiqlik mashinalarida FIKni oshirishning asosiy yo'li nima?",
+"a": ["Isitgich haroratini oshirish va sovitkich haroratini kamaytirish", "Ikkala haroratni ham oshirish", "Faqat sovitkichni qizdirish", "Ishchi jism massasini kamaytirish"],
+"c": 0
+},
+{
+"q": "Vaqt o'zgarmas bo'lganda, bajarilgan ish quvvatga qanday bog'liq?",
+"a": ["Teskari proporsional", "To'g'ri proporsional", "Kvadratik bog'liq", "Bog'liq emas"],
+"c": 1
+},
+{
+"q": "Ichki zanjirdagi quvvat isrofi (Pᵢch) qanday topiladi?",
+"a": ["P = I²r", "P = U·I", "P = A / t", "P = F·s"],
+"c": 0
+},
+{
+"q": "Mexanikaning 'oltin qoidasi'ga ko'ra, mexanizmlar ishdan yoki quvvatdan yutuq beradimi?",
+"a": ["Ha, 2 marta", "Faqat ishdan yutuq beradi", "Yo'q, ishdan ham quvvatdan ham yutuq bermaydi", "Faqat quvvatdan yutuq beradi"],
+"c": 2
+},
+{
+"q": "Transformatorlarda kuchlanish k marta orttirilsa, energiya isrofi qanday o'zgaradi?",
+"a": ["k marta kamayadi", "k² marta kamayadi", "k marta ortadi", "O'zgarmaydi"],
+"c": 1
+},
+{
+"q": "Qaysi turdagi kuchlar harakat yo'nalishiga perpendikulyar bo'lgani uchun ish bajarmaydi va quvvat hosil qilmaydi?",
+"a": ["Ishqalanish kuchlari", "Markazga intilma va Lorens kuchlari", "Og'irlik kuchi", "Elastiklik kuchlari"],
+"c": 1
+}
+]
+}

@@ -1,0 +1,105 @@
+{
+"title": "Gorizontal va burchak ostida otilgan jism harakati",
+"questions": [
+{
+"q": "Jism bir vaqtning o'zida ham tekis harakatda, ham tekis o'zgaruvchan harakatda ishtirok etsa, uning trayektoriyasi qanday shaklda bo'ladi?",
+"a": ["Aylana", "To'g'ri chiziq", "Parabola", "Giperbola"],
+"c": 2
+},
+{
+"q": "Gorizontal otilgan jismning gorizontal (X o'qi) bo'ylab harakati qanday turga kiradi?",
+"a": ["To'g'ri chiziqli tekis harakat", "Tekis tezlanuvchan harakat", "Tekis sekinlanuvchan harakat", "Aylanma harakat"],
+"c": 0
+},
+{
+"q": "Gorizontal otilgan jismning vertikal (Y o'qi) bo'ylab harakati qanday tavsiflanadi?",
+"a": ["To'g'ri chiziqli tekis harakat", "Tekis tezlanuvchan (erkin tushish)", "O'zgarmas tezlikli harakat", "Tinch holat"],
+"c": 1
+},
+{
+"q": "Gorizontal otilgan jismning ixtiyoriy vaqtdagi natijaviy (oniy) tezligi qaysi formula bilan aniqlanadi?",
+"a": ["v = v₀ + gt", "v = √(v₀² + (gt)²)", "v = v₀ - gt", "v = gt"],
+"c": 1
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning tezligi trayektoriyaning qaysi nuqtasida minimal bo'ladi?",
+"a": ["Otilish nuqtasida", "Yerga tushish momentida", "Eng yuqori nuqtaga ko'tarilganda", "Hech qachon minimal bo'lmaydi"],
+"c": 2
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning gorizontal tezlik tashkil etuvchisi (vx) harakat davomida qanday o'zgaradi?",
+"a": ["Vaqt o'tishi bilan ortadi", "Vaqt o'tishi bilan kamayadi", "O'zgarmas qoladi (vx = const)", "Nolga tenglashadi"],
+"c": 2
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning vertikal tezlik tashkil etuvchisi (vy) uchun to'g'ri formulani ko'rsating.",
+"a": ["vy = v₀·cosα", "vy = v₀·sinα − gt", "vy = gt", "vy = v₀·tanα"],
+"c": 1
+},
+{
+"q": "Gorizontal otilgan jismning tushish vaqti (t) asosan nimaga bog'liq?",
+"a": ["Boshlang'ich tezlikka (v₀)", "Jismning massasiga", "Boshlang'ich balandlikka (h)", "Jismning shakliga"],
+"c": 2
+},
+{
+"q": "Gorizontga burchak ostida otilgan jism trayektoriyasining eng yuqori nuqtasida uning vertikal tezligi (vy) nimaga teng?",
+"a": ["Boshlang'ich tezlikka (v₀)", "Erkin tushish tezlanishiga (g)", "Nolga", "v₀·sinα ga"],
+"c": 2
+},
+{
+"q": "Egri chiziqli harakatda oniy tezlik vektori trayektoriyaga nisbatan qanday yo'naladi?",
+"a": ["Normal (tik) bo'ylab", "Markazga qarab", "Trayektoriyaga o'tkazilgan urinma bo'ylab", "Ixtiyoriy yo'nalishda"],
+"c": 2
+},
+{
+"q": "Gorizontal otilgan jismning uchish uzoqligi (S) qanday topiladi?",
+"a": ["S = v₀·t", "S = gt²/2", "S = v₀/t", "S = v²/2g"],
+"c": 0
+},
+{
+"q": "Erkin tushish tezlanishi (g) Yer qutblarida qanday qiymatga ega?",
+"a": ["9,78 m/s²", "9,81 m/s²", "9,83 m/s²", "10 m/s²"],
+"c": 2
+},
+{
+"q": "Erkin tushish tezlanishi Yer ekvatorida taxminan qanchaga teng?",
+"a": ["9,83 m/s²", "9,81 m/s²", "9,78 m/s²", "9,75 m/s²"],
+"c": 2
+},
+{
+"q": "Jism bir vaqtda bir nechta harakatda ishtirok etsa, bu harakatlar bir-biriga to'sqinlik qilmasligi qanday ataladi?",
+"a": ["Nisbiylik prinsipi", "Harakatning mustaqillik qonuni (prinsipi)", "Inersiya qonuni", "Energiya saqlanish qonuni"],
+"c": 1
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning eng yuqori nuqtasidagi to'la tezligi nimaga teng?",
+"a": ["Nolga", "Faqat gorizontal tashkil etuvchiga (v₀·cosα)", "Faqat vertikal tashkil etuvchiga (v₀·sinα)", "Boshlang'ich tezlikka (v₀)"],
+"c": 1
+},
+{
+"q": "Jismning h balandlikdan boshlang'ich tezliksiz (v₀=0) tushish vaqti qaysi formula bilan aniqlanadi?",
+"a": ["t = h/g", "t = √(2h/g)", "t = v/g", "t = 2h/g"],
+"c": 1
+},
+{
+"q": "Gorizontga burchak ostida otilgan jismning trayektoriya shakli qanday bo'ladi?",
+"a": ["To'g'ri chiziq", "Aylana yoyi", "Parabola", "Sinusoida"],
+"c": 2
+},
+{
+"q": "Qaysi turdagi harakat har doim tezlanishli bo'ladi?",
+"a": ["To'g'ri chiziqli tekis harakat", "Egri chiziqli harakat", "Tinch holatdagi jism harakati", "Hech biri"],
+"c": 1
+},
+{
+"q": "Gorizontal otilgan jismning tushish balandligi (h) va vaqti (t) orasidagi bog'lanish (v₀y = 0 bo'lganda) qanday?",
+"a": ["h = gt²/2", "h = v₀·t", "h = gt", "h = v²/g"],
+"c": 0
+},
+{
+"q": "Trayektoriyasining shakliga qarab mexanik harakat necha asosiy turga bo'linadi?",
+"a": ["3 turga", "2 turga: egri va to'g'ri chiziqli", "4 turga", "Faqat bir turga"],
+"c": 1
+}
+]
+}

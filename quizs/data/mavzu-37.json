@@ -1,0 +1,105 @@
+{
+  "title": "Elektr maydon",
+  "questions": [
+    {
+      "q": "Elektr maydonning manbasini ko‘rsating.",
+      "a": ["Neytronlar", "Massiv jismlar", "Elektr zaryadlar", "Doimiy magnitlar"],
+      "c": 2
+    },
+    {
+      "q": "Elektr maydon kuchlanganligining to‘g‘ri va to‘la ta’rifini ko‘rsating.",
+      "a": ["Maydon kuchlanganligi – shu nuqtadagi birlik musbat zaryadga ta’sir qiluvchi kuchga son jihatidan teng bo‘lgan vektor kattalik", "Kuchlanganlik – maydonning energetik xarakteristikasidir", "Kuchlanganlik – zaryadning potensial energiyasini aniqlaydi", "Kuchlanganlik – maydonning skalar xarakteristikasidir"],
+      "c": 0
+    },
+    {
+      "q": "Vakuumdagi nuqtaviy zaryadning o‘zidan r masofada hosil qiladigan elektr maydoni kuchlanganligi qaysi formula bilan aniqlanadi?",
+      "a": ["E = F·q", "E = k·q/r²", "E = U/d²", "E = A/q"],
+      "c": 1
+    },
+    {
+      "q": "Elektr maydon kuchlanganligi qanday birlikda o‘lchanadi?",
+      "a": ["V/m (yoki N/C)", "J/C", "Farada (F)", "Pa·m"],
+      "c": 0
+    },
+    {
+      "q": "Elektr maydon kuchlanganligi vektori qanday yo‘nalgan bo‘ladi?",
+      "a": ["Faqat musbat zaryadga qarab", "Potensial kamayishi tomoniga", "Potensial ortishi tomoniga", "Ekvipotensial sirt bo'ylab"],
+      "c": 1
+    },
+    {
+      "q": "Barcha nuqtalarida kuchlanganlik vektori o‘zgarmas bo‘lgan elektr maydoni qanday ataladi?",
+      "a": ["Uyurmali maydon", "O'zgaruvchan maydon", "Bir jinsli elektr maydon", "Garmonik maydon"],
+      "c": 2
+    },
+    {
+      "q": "Elektr jihatdan yaxshi o‘tkazgich ichidagi elektr maydon kuchlanganligi (E) va potensiali (φ) uchun qaysi tasdiq to‘g‘ri?",
+      "a": ["E = 0, φ = const", "E = const, φ = 0", "E ≠ 0, φ = 0", "E = 0, φ = 0"],
+      "c": 0
+    },
+    {
+      "q": "Vakuumda turgan nuqtaviy zaryadning ekvipotensial sirtlari qanday shaklda bo‘ladi?",
+      "a": ["Silindr", "Tekislik", "Sfera (konsentrik aylanalar)", "Konus"],
+      "c": 2
+    },
+    {
+      "q": "Zaryadni ekvipotensial sirt bo‘ylab ko‘chirishda elektr maydon kuchlari qancha ish bajaradi?",
+      "a": ["Maksimal ish", "Nolga teng ish", "Zaryad miqdoriga teng ish", "Sirt yuzasiga bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "Elektr maydon kuchlanganligi (E) va potensiallar ayirmasi (U) orasidagi bog‘lanish formulasini ko‘rsating.",
+      "a": ["E = U/d", "E = U·d", "E = F/U", "E = qU"],
+      "c": 0
+    },
+    {
+      "q": "Elektr maydonning berilgan nuqtadagi potensiali deb nimaga aytiladi?",
+      "a": ["Maydonning kuch xarakteristikasiga", "Birlik musbat zaryadning shu nuqtadagi potensial energiyasiga teng skalar kattalikka", "Zaryadga ta'sir etuvchi kuchga", "Maydonning energiya zichligiga"],
+      "c": 1
+    },
+    {
+      "q": "Bir jinsli elektr maydonning ishi (A) qaysi formula bilan aniqlanadi?",
+      "a": ["A = qEd cosα", "A = F/E", "A = k q1 q2 / r", "A = E / q"],
+      "c": 0
+    },
+    {
+      "q": "O‘tkazgichga berilgan zaryad uning qayerida joylashadi?",
+      "a": ["Faqat markazida", "Butun hajmi bo'ylab tekis", "O'tkazgichning sirti bo'ylab", "Faqat burchaklarida"],
+      "c": 2
+    },
+    {
+      "q": "Quyidagi qaysi qatorda faqat skalar fizik kattaliklar keltirilgan?",
+      "a": ["Tok kuchi, kuchlanish, zaryad", "Kuchlanganlik, potensial, zaryad", "Elektr kuchi, potensial, tok zichligi", "Tok zichligi, EYK, zaryad"],
+      "c": 0
+    },
+    {
+      "q": "Dielektrik singdiruvchanligi ε bo'lgan muhitga kiritilgan nuqtaviy zaryadning maydon kuchlanganligi vakuumdagiga nisbatan qanday o'zgaradi?",
+      "a": ["ε marta ortadi", "ε marta kamayadi", "O'zgarmaydi", "ε² marta kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Nuqtaviy zaryad maydonida potensial 5 marta kamayadigan masofada, kuchlanganlik necha marta kamayadi?",
+      "a": ["5 marta", "10 marta", "25 marta", "O'zgarmaydi"],
+      "c": 2
+    },
+    {
+      "q": "Elektr maydon energiya zichligi (w) formulasi qaysi javobda to'g'ri?",
+      "a": ["w = εε₀E²/2", "w = qEd", "w = U/d", "w = CU²/2"],
+      "c": 0
+    },
+    {
+      "q": "O'tkazgichning elektr sig'imi (C) nimalarga bog'liq?",
+      "a": ["Faqat unga berilgan zaryadga", "Faqat uning potensialiga", "O'tkazgichning shakli, o'lchami va atrofidagi muhitga", "Tashqi elektr maydon kuchiga"],
+      "c": 2
+    },
+    {
+      "q": "Musbat zaryadlangan sharcha bir jinsli elektr maydonda vertikaldan o‘ng tomonga og‘sa, maydon kuch chiziqlari qaysi tomonga yo‘nalgan?",
+      "a": ["Pastga", "Yuqoriga", "O'ngga", "Chapga"],
+      "c": 2
+    },
+    {
+      "q": "Ikki nuqta orasidagi potensiallar farqi 100 V. Shu nuqtalar orasida 2 µC zaryad ko'chganda maydon kuchlari necha J ish bajaradi?",
+      "a": ["200 J", "0,2 mJ", "2 mJ", "50 mJ"],
+      "c": 1
+    }
+  ]
+}

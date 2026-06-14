@@ -1,0 +1,105 @@
+{
+"title": "Butun olam tortishish qonuni",
+"questions": [
+{
+"q": "Butun olam tortishish qonuniga ko'ra, ikki moddiy nuqta orasidagi tortishish kuchi qanday aniqlanadi?",
+"a": ["Massalar yig'indisiga to'g'ri proporsional", "Massalar ko'paytmasiga to'g'ri, masofa kvadratiga teskari proporsional", "Masofaga to'g'ri proporsional", "Faqat jismlar zichligiga bog'liq"],
+"c": 1
+},
+{
+"q": "Gravitatsion doimiysining (G) son qiymati qanchaga teng?",
+"a": ["9,81 m/s²", "6,67 • 10^-11 N·m²/kg²", "1,6 • 10^-19 Cl", "3 • 10^8 m/s"],
+"c": 1
+},
+{
+"q": "Gravitatsion doimiyning qiymatini birinchi bo'lib tajribada kim aniqlagan?",
+"a": ["I. Nyuton", "G. Galiley", "Kavendish", "A. Eynshteyn"],
+"c": 2
+},
+{
+"q": "Kavendish gravitatsion doimiyni o'lchashda qaysi asbobdan foydalangan?",
+"a": ["Dinamometr", "Sezgir burama tarozi", "Akselerometr", "Barometr"],
+"c": 1
+},
+{
+"q": "Qaysi sayyora Butun olam tortishish qonuni ifodasi yordamida (nazariy hisoblab) topilgan?",
+"a": ["Mars", "Venera", "Pluton", "Yupiter"],
+"c": 2
+},
+{
+"q": "Gravitatsion ta'sir qanday zarralar orqali amalga oshadi?",
+"a": ["Fotonlar", "Glyuonlar", "Gravitonlar", "Neytronlar"],
+"c": 2
+},
+{
+"q": "Erkin tushish tezlanishi (g) ning qiymati nimalarga bog'liq?",
+"a": ["Faqat jism massasiga", "Planeta massasi, radiusi va zichligiga", "Faqat jismning shakliga", "Havo haroratiga"],
+"c": 1
+},
+{
+"q": "Erkin tushish tezlanishi Yerning qayerida eng katta qiymatga (9,83 m/s²) ega?",
+"a": ["Ekvatorda", "Qutblarda", "Tog' cho'qqisida", "Dengiz sathida"],
+"c": 1
+},
+{
+"q": "Jism Yerning sun'iy yo'ldoshi bo'lib qolishi uchun unga berilishi kerak bo'lgan eng kichik tezlik nima deyiladi?",
+"a": ["Ikkinchi kosmik tezlik", "Birinchi kosmik tezlik", "Yorug'lik tezligi", "Tovush tezligi"],
+"c": 1
+},
+{
+"q": "Birinchi kosmik tezlikning qiymati taxminan qanchaga teng?",
+"a": ["11,2 km/s", "16,7 km/s", "7,9 km/s", "300 000 km/s"],
+"c": 2
+},
+{
+"q": "Jism Yerning tortish maydonini yengib, Quyoshning sun'iy yo'ldoshiga aylanishi uchun kerakli tezlik (11,2 km/s) nima deyiladi?",
+"a": ["Birinchi kosmik tezlik", "Ikkinchi kosmik tezlik", "Uchinchi kosmik tezlik", "Oniy tezlik"],
+"c": 1
+},
+{
+"q": "Uchinchi kosmik tezlik (16,7 km/s) qanday maqsad uchun zarur?",
+"a": ["Yer atrofida aylanish uchun", "Oyga qo'nish uchun", "Quyosh sistemasini tark etish uchun", "Atmosferadan chiqmaslik uchun"],
+"c": 2
+},
+{
+"q": "Lift yuqoriga a tezlanish bilan harakatlansa, jismning og'irligi qanday o'zgaradi?",
+"a": ["O'zgarmaydi", "Kamayadi (P=m(g-a))", "Ortadi (P=m(g+a))", "Nolga teng bo'ladi"],
+"c": 2
+},
+{
+"q": "Lift a=g tezlanish bilan pastga tushsa, jismda qanday holat yuz beradi?",
+"a": ["Og'irligi ikki marta ortadi", "Vaznsizlik holati (P=0)", "Inersiya ortadi", "Tezligi o'zgarmaydi"],
+"c": 1
+},
+{
+"q": "Qavariq ko'prikning eng yuqori nuqtasida jism og'irligi qanday topiladi?",
+"a": ["P = m(g + v²/R)", "P = mg", "P = m(g - v²/R)", "P = 0"],
+"c": 2
+},
+{
+"q": "Botiq ko'prikning eng quyi nuqtasida harakatlanayotgan jism og'irligi qanday aniqlanadi?",
+"a": ["P = m(g + v²/R)", "P = m(g - v²/R)", "P = mg", "P = mv²/R"],
+"c": 0
+},
+{
+"q": "Barcha planetalar orbitalari ellipsdan iborat bo'lib, uning fokuslaridan birida Quyosh turishi qaysi qonun?",
+"a": ["Nyutonning 1-qonuni", "Keplerning 1-qonuni", "Guk qonuni", "Paskal qonuni"],
+"c": 1
+},
+{
+"q": "Yerga tortilishi natijasida jismning tayanch yoki ilgakka ko'rsatadigan bosim kuchi nima deyiladi?",
+"a": ["Massa", "Inersiya", "Og'irlik", "Ishqalanish"],
+"c": 2
+},
+{
+"q": "Agar kosmik kema tezligi 16,7 km/s dan katta bo'lsa, uning orbitasi qanday shaklda bo'ladi?",
+"a": ["Aylana", "Ellips", "Parabola", "Giperbola"],
+"c": 3
+},
+{
+"q": "Gravitatsion ta'sir qaysi zarralar orasida paydo bo'ladi?",
+"a": ["Faqat zaryadli zarralar", "Faqat nuklonlar", "Barcha zarralar", "Faqat metallar"],
+"c": 2
+}
+]
+}
