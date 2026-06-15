@@ -1,0 +1,96 @@
+{
+  "id": 3,
+  "title": "3-Mavzu | To‘g‘ri chiziqli harakatni grafik ravishda tasvirlash",
+  "subtitle": "Kamida 80% natija 4-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 4,
+  "questions": [
+    {
+      "text": "Rasmda bola bosib o‘tgan yo‘lning vaqtga bog‘lanish grafigi keltirilgan. Bolaning t₁ = 1 s va t₂ = 5 s vaqt oralig‘ida bosib o‘tgan yo‘lini aniqlang.",
+      "image": "../rasmlar3/test3-1.png",
+      "answers": ["10 m", "20 m", "5 m", "15 m"],
+      "correct": 1
+    },
+    {
+      "text": "Rasmda velosipedchi o‘tgan yo‘lning vaqtga bog‘lanish grafigi keltirilgan. Uning t = 4.28 s vaqt momentidagi tezligi qanday (m/s)?",
+      "image": "../rasmlar3/test3-2.png",
+      "answers": ["5", "12", "10", "6"],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda uchta moddiy nuqta bosib o‘tgan yo‘lning vaqtga bog‘lanish grafigi berilgan. Qaysi moddiy nuqtaning tezligi eng katta?",
+      "image": "../rasmlar3/test3-3.png",
+      "answers": ["1", "2", "3", "Hammasiniki bir xil"],
+      "correct": 0
+    },
+    {
+      "text": "Quyidagi grafikdan foydalanib jismning harakat tezligini aniqlang (m/s).",
+      "image": "../rasmlar3/test3-4.png",
+      "answers": ["√3", "√3/3", "3", "1"],
+      "correct": 1
+    },
+    {
+      "text": "Qaysi grafik jism o‘tgan yo‘lning vaqtga bog‘lanishini ifodalaydi?",
+      "image": "../rasmlar3/test3-5.png",
+      "answers": ["II, III", "I, II, III", "III", "I, IV"],
+      "correct": 2
+    },
+    {
+      "text": "Chizmada uchta moddiy nuqtaning harakat grafiklari berilgan. Ularning tezliklari haqida nima deyish mumkin?",
+      "image": "../rasmlar3/test3-6.png",
+      "answers": [
+        "v₁ = v₂ < v₃",
+        "v₁ > v₂ > v₃",
+        "v₁ < v₂ < v₃",
+        "v₁ = v₂ > v₃"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Grafikdan foydalanib OX o‘q bo‘ylab harakat qilayotgan moddiy nuqtaning 5 s da bosib o‘tgan yo‘lini aniqlang (m).",
+      "image": "../rasmlar3/test3-7.png",
+      "answers": ["50", "32.5", "0", "10"],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda jism koordinatasining vaqtga bog‘liqlik grafigi berilgan. Jismning harakat tenglamasini yozing.",
+      "image": "../rasmlar3/test3-8.png",
+      "answers": [
+        "x = −2 + 4t",
+        "x = 6 + 3t",
+        "x = −6 + 3t",
+        "x = 6 − 2t"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda jismning harakat grafigi keltirilgan. t = 3 s paytdagi jismning koordinatasini aniqlang (m).",
+      "image": "../rasmlar3/test3-9.png",
+      "answers": ["1.8", "1.6", "2.8", "1.2"],
+      "correct": 2
+    },
+    {
+      "text": "Rasmda jism koordinatasining vaqtga bog‘lanish grafigi tasvirlangan. Jismning (1−4)s vaqt oralig‘idagi ko‘chishini va yo‘lini aniqlang (m).",
+      "image": "../rasmlar3/test3-10.png",
+      "answers": ["1; 4", "2; 4", "1; 3", "2; 3"],
+      "correct": 1
+    },
+    {
+      "text": "Rasmda jismning harakat grafigi ko‘rsatilgan. Grafikning qaysi qismida jismning tezligi eng katta bo‘lgan?",
+      "image": "../rasmlar3/test3-11.png",
+      "answers": ["III", "II", "I", "IV"],
+      "correct": 2
+    },
+    {
+      "text": "Chizmada keltirilgan tezlik grafigidan foydalanib X o‘qi bo‘ylab harakatlanayotgan jismning harakat tenglamasini tuzing. Boshlang‘ich koordinata −10 m.",
+      "image": "../rasmlar3/test3-12.png",
+      "answers": [
+        "x = −10 + 4t",
+        "x = −10 + 2t²",
+        "x = −10t + 4t²",
+        "x = −10 + 2t"
+      ],
+      "correct": 0
+    }
+  ]
+}

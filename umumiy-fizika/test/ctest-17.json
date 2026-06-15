@@ -1,0 +1,135 @@
+{
+  "id": 17,
+  "title": "17-Mavzu | Ishqalanish kuchi va qiya tekislik",
+  "subtitle": "Kamida 80% natija 18-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 18,
+  "questions": [
+    {
+      "text": "YPX xodimi avtomobilning asfalt yo‘lidagi tormozlanish izi 40 m ga teng ekanligini aniqladi. G‘ildiraklarning asfaltga ishqalanish koeffitsiyenti 0,5 bo‘lsa, avtomobil qanday tezlik bilan harakatlangan? (km/h)",
+      "answers": ["54", "72", "90", "108"],
+      "correct": 1
+    },
+    {
+      "text": "1 kg massali jism gorizontal tekislikda joylashgan. Jismga 2 N gorizontal kuch ta’sir qiladi. Ishqalanish koeffitsiyenti 0,3 bo‘lsa, ishqalanish kuchini aniqlang.",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "10 kg massali jism gorizontal tekislikda joylashgan. Jismga gorizontga 30° burchak ostida yo‘nalgan 50 N kuch ta’sir qiladi. Ishqalanish koeffitsiyenti 0,2 bo‘lsa, ishqalanish kuchini aniqlang.",
+      "answers": ["10", "12", "15", "20"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 8 kg bo‘lgan jism o‘ziga qo‘yilgan kuch ta’sirida stol bo‘ylab tekis harakatlanayotgan bo‘lsa, shu gorizontal kuchning qiymati qanday?",
+      "answers": ["16", "20", "24", "30"],
+      "correct": 2
+    },
+    {
+      "text": "3 kg massali brusok gorizontal prujina yordamida gorizontal joylashgan doska bo‘ylab tekis tortilmoqda. Agar prujina 5 cm ga uzaygan bo‘lsa, uning bikrligi qanday?",
+      "answers": ["100", "120", "150", "180"],
+      "correct": 2
+    },
+    {
+      "text": "2 kg massali jism gorizontal kuch ta’sirida gorizontal sirt bo‘ylab 2 m/s² tezlanish bilan harakatlanmoqda. Ishqalanish koeffitsiyenti 0,2 bo‘lsa, kuchning miqdorini toping.",
+      "answers": ["4", "6", "8", "10"],
+      "correct": 2
+    },
+    {
+      "text": "Yuk mashinasi kuzovidagi yuk siljimasligi uchun qanday eng katta tezlanish bilan harakatlanishi kerak?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "6 kg massali chanani doimiy tezlikda tortishda arqonning taranglik kuchini aniqlang. tgα = 0,75, μ = 0,3.",
+      "answers": ["12", "15", "18", "24"],
+      "correct": 2
+    },
+    {
+      "text": "6 kg massali chanani gorizontga 30° burchak ostida yo‘nalgan 20 N kuch bilan tortganda u qanday tezlanish oladi?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "2,8 kg massali brusok vertikal devor bo‘ylab yuqoriga harakatlanmoqda. sinα = 0,6 va μ = 0,4. Brusokning tezlanishini toping.",
+      "answers": ["2", "4", "6", "8"],
+      "correct": 1
+    },
+
+    {
+      "text": "Jism qiya tekislik bo‘ylab tekis sirpanmoqda. Agar ishqalanish koeffitsiyenti 0,2 bo‘lsa, tekislikning gorizontga qiyalik burchagi kotangensi nimaga teng?",
+      "answers": ["5", "4", "2", "10"],
+      "correct": 0
+    },
+    {
+      "text": "Qiyalik burchaklari 30° va 60° bo‘lgan ikki qiya tekislik uchun ishqalanish kuchlari taqqoslansin. μ = 0,8.",
+      "answers": ["15", "20", "25", "30"],
+      "correct": 2
+    },
+    {
+      "text": "Jism balandligi 3 m va uzunligi 5 m bo‘lgan qiya tekislikdan sirpanib tushadi. μ = 0,5. Tezlanishni toping.",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Jismga turtki bilan qiya tekislik bo‘ylab yuqoriga tezlik berildi. h = 4 m, l = 5 m, μ = 0,5. Tezlanish miqdorini toping.",
+      "answers": ["11", "9", "7", "13"],
+      "correct": 0
+    },
+    {
+      "text": "Qiya tekislikning balandligi 3 m, uzunligi 5 m va μ = 0,6. Yuqoriga va pastga harakat tezlanishlari nisbatini toping.",
+      "answers": ["3", "6", "12", "9"],
+      "correct": 3
+    },
+    {
+      "text": "Balandligi 5 m va qiyalik burchagi 45° bo‘lgan qiya tekislikdan jism sirpanmoqda. μ = 0,19. Tushish oxiridagi tezlikni toping.",
+      "answers": ["7", "8", "9", "10"],
+      "correct": 2
+    },
+    {
+      "text": "Jism balandligi 5 m va uzunligi 13 m bo‘lgan qiya tekislikdan sirpanib tushadi. μ = 0,4. Harakat vaqtini toping.",
+      "answers": ["10", "11", "12", "13"],
+      "correct": 3
+    },
+    {
+      "text": "Kichik shayba qiyalik burchagi 30° bo‘lgan qiya tekislikdan tekis tushadi. Balandligi 2,5 m va burchagi 60° bo‘lgan qiya tekislikdan qancha vaqtda tushadi?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 0
+    },
+    {
+      "text": "Jism qiya tekislik uchigacha chiqa olishi uchun minimal boshlang‘ich tezlikni toping. h = 6 m, l = 10 m, μ = 0,5.",
+      "answers": ["10", "12", "14", "16"],
+      "correct": 2
+    },
+    {
+      "text": "Uzunligi 26 m va balandligi 10 m bo‘lgan qiya tekislikda brusok asosigacha yeta olishi uchun qanday minimal tezlik berish kerak? μ = 0,45.",
+      "answers": ["2", "4", "6", "8"],
+      "correct": 1
+    },
+    {
+      "text": "45° qiya tekislik bo‘ylab yuqoriga turtib yuborilgan shaybaning tushish vaqti ko‘tarilish vaqtidan necha marta katta? μ = 0,8.",
+      "answers": ["2", "3", "4", "5"],
+      "correct": 1
+    },
+    {
+      "text": "5 kg massali jismni h = 3 m va l = 5 m bo‘lgan qiya tekislik bo‘ylab tekis ko‘tarishmoqda. μ = 0,3. Kuchni toping.",
+      "answers": ["32", "36", "42", "48"],
+      "correct": 2
+    },
+    {
+      "text": "50 kg massali yukni 1 m/s² tezlanish bilan qiya tekislik bo‘ylab yuqoriga tortish uchun qanday kuch kerak? h = 3 m, l = 5 m, μ = 0,2.",
+      "answers": ["430", "380", "330", "480"],
+      "correct": 0
+    },
+    {
+      "text": "Qiya tekislik bo‘ylab yuqoriga ko‘tarilayotgan jismga gorizontal kuch qo‘yilgan. Kuch og‘irlik kuchidan 2 marta katta. h = 3 m, l = 5 m, μ = 0,2. Tezlanishni toping.",
+      "answers": ["2", "4", "6", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Qiya tekislik ustidagi jism gorizontal yo‘nalishda og‘irlik kuchidan ikki marta kichik kuch bilan tortiladi. h = 3 m, l = 5 m, μ = 0,8. Jism qanday tezlanish bilan tusha boshlaydi?",
+      "answers": ["4", "6", "8", "10"],
+      "correct": 1
+    }
+  ]
+}

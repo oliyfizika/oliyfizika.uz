@@ -1,0 +1,144 @@
+{
+  "id": 21,
+  "title": "21-Mavzu | Ish va energiya",
+  "subtitle": "Kamida 80% natija 22-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 22,
+  "questions": [
+    {
+      "text": "Minorali kran uzunligi 5 m va kesimi 0,01 m² bo‘lgan po‘lat balkani gorizontal holatida 15 m balandlikka tekis ko‘taradi. Kran bajaradigan ishni toping. Balka materialining zichligi 7800 kg/m³. g = 10 m/s².",
+      "answers": ["29250", "5850", "58500", "117000"],
+      "correct": 2
+    },
+    {
+      "text": "2 kg massali jismni 3 m/s² tezlanish bilan 1 m balandlikka ko‘tarishda kishi qanday ish bajaradi? g = 10 m/s².",
+      "answers": ["26", "20", "13", "32"],
+      "correct": 0
+    },
+    {
+      "text": "Yukni doimiy tezlanish bilan vertikal yuqoriga ko‘tara boshlashadi. Harakatning birinchi sekundida bajarilgan ish keyingi, ikkinchi sekundida bajarilgan ishdan necha marta kichik?",
+      "answers": ["2", "3", "4", "5"],
+      "correct": 1
+    },
+    {
+      "text": "1 kg massali yukni ip orqali vertikal yuqoriga o‘zgarmas tezlanish bilan ko‘tarishadi. 2 s ichida arqonning taranglik kuchi bilan 48 J ish bajarildi. Yukning tezlanishini toping. g = 10 m/s².",
+      "answers": ["4", "1", "5", "2"],
+      "correct": 3
+    },
+    {
+      "text": "20 N kuch 2 kg massali yukni 5 m/s² tezlanish bilan qiya tekislik bo‘ylab 2,5 m balandlikka ko‘tarib qanday ish bajaradi? Kuch qiya tekislikka parallel ta’sir qiladi. Ishqalanish inobatga olinmasin. g = 10 m/s².",
+      "answers": ["100", "50", "200", "150"],
+      "correct": 0
+    },
+    {
+      "text": "20 kg massali jismni qiya tekislik bo‘ylab 6 m balandlikka ko‘tarishadi, bunda u tekislik bo‘ylab 10 m o‘tadi. Agar tortish kuchi tekislikka parallel va ishqalanish koeffitsiyenti 0,2 bo‘lsa, ishqalanish kuchining ishini (modulini) toping. g = 10 m/s².",
+      "answers": ["160", "640", "320", "400"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 0,5 kg bo‘lgan jism 7 m balandlikdagi qiya tekislik uchidan uning asosigacha sirpanib tushadi. Tekislikning qiyalik burchagi gorizontga 45°, va ishqalanish koeffitsiyenti 0,2. Ishqalanish kuchining ishini (modulini) toping. g = 10 m/s².",
+      "answers": ["14", "3,5", "7", "10"],
+      "correct": 2
+    },
+    {
+      "text": "Jism qandaydir balandlikdan 10 m/s tezlik bilan gorizontal otilgan. Necha sekunddan keyin jismning kinetik energiyasi ikki marta ortadi? g = 10 m/s².",
+      "answers": ["2", "1", "0,5", "1,5"],
+      "correct": 1
+    },
+    {
+      "text": "Qandaydir balandlikdan 20 m/s tezlik bilan tosh gorizontal otildi. Otishdan 4 s o‘tib toshning kinetik energiyasi 3000 J ga teng bo‘ldi. Toshning massasi qanday? g = 10 m/s².",
+      "answers": ["3", "1,5", "6", "4,5"],
+      "correct": 0
+    },
+    {
+      "text": "3 kg massali jism yer sirtidan gorizontga 60° burchak ostida 8 m/s tezlik bilan otildi. Jismning ko‘tarilishning eng yuqori nuqtasidagi kinetik energiyasini toping.",
+      "answers": ["12", "48", "36", "24"],
+      "correct": 3
+    },
+    {
+      "text": "Toshning maksimal ko‘tarilish nuqtasidagi kinetik energiyasi otish nuqtasidagi kinetik energiyasining 25% ni tashkil qilishi uchun toshni gorizontga qanday burchak ostida otish kerak? Javobni graduslarda bering.",
+      "answers": ["30", "45", "60", "75"],
+      "correct": 2
+    },
+    {
+      "text": "Avtomobil tekis tezlanuvchan harakat boshladi. Harakatning dastlabki 10 s da uning kinetik energiyasining o‘zgarishi keyingi 10 s dagi o‘zgarishidan necha marta kichik?",
+      "answers": ["3", "2", "4", "9"],
+      "correct": 0
+    },
+    {
+      "text": "0,8 kg massali basketbol to‘pi 10 m/s tezlik bilan uchadi. O‘yinchi to‘pni tutib oladi va 0,1 s ichida uni to‘xtatadi. O‘yinchi qanday o‘rtacha quvvatga erishadi? (Quvvatning absolyut qiymatini ko‘rsating).",
+      "answers": ["200", "400", "800", "600"],
+      "correct": 1
+    },
+    {
+      "text": "4 kg massali erkin tushayotgan jismning tezligi qandaydir masofada 2 m/s dan 8 m/s gacha oshdi. Shu yo‘ldagi og‘irlik kuchining ishini toping.",
+      "answers": ["60", "240", "120", "180"],
+      "correct": 2
+    },
+    {
+      "text": "200 g massali tosh gorizontal yuzadan gorizontga burchak ostida otildi va shu yuzaga 40 m masofada 4 s dan so‘ng kelib tushdi. Shu otishga sarflangan ish qanchaga teng? g = 10 m/s².",
+      "answers": ["25", "50", "100", "75"],
+      "correct": 1
+    },
+    {
+      "text": "800 m/s tezlik bilan gorizontal uchayotgan 5 g massali o‘q taxtani teshib o‘tadi va undan 400 m/s tezlikda uchib chiqadi. Taxtaning qarshilik kuchi tomonidan o‘q ustida bajarilgan ishning absolyut qiymatini toping.",
+      "answers": ["1200", "600", "2400", "1800"],
+      "correct": 0
+    },
+    {
+      "text": "Qandaydir tezlik bilan uchayotgan o‘q qum joylangan qopga tegadi va uning ichida 15 cm chuqurlikkacha kirib ketadi. Agar shuncha massali o‘qning harakat tezligi ikki marta katta bo‘lsa, o‘q qumga qanday chuqurlikkacha (cm da) kirib ketadi?",
+      "answers": ["30", "45", "75", "60"],
+      "correct": 3
+    },
+    {
+      "text": "30 m balandlikdagi minoradan tosh gorizontal otildi. Harakat boshlanganidan 2 s o‘tgandagi toshning potensial energiyasini toping. Toshning massasi 0,2 kg. Yer yuzasidagi potensial energiya nolga teng. g = 10 m/s².",
+      "answers": ["40", "20", "60", "10"],
+      "correct": 1
+    },
+    {
+      "text": "2 kg massali jism yer sirtidan 6 m/s tezlik bilan gorizontga 30° burchak ostida otildi. Jism ko‘tarilishning eng baland nuqtasiga erishganda uning potensial energiyasi qanchaga ortadi?",
+      "answers": ["4,5", "18", "9", "12"],
+      "correct": 2
+    },
+    {
+      "text": "Har birining massasi 80 kg va qalinligi 0,2 m bo‘lgan uchta bir jinsli to‘g‘ri burchakli plita biri boshqasining yonida yer yuzasida gorizontal yotibdi. Plitalarni bir-birining ustiga terib qo‘yish uchun qanday minimal ish bajarish kerak? g = 10 m/s².",
+      "answers": ["240", "480", "960", "720"],
+      "correct": 1
+    },
+    {
+      "text": "Uzunligi 1,5 m va massasi 10 kg bo‘lgan yupqa lom gorizontal yuzada yotibdi. Uni yerga vertikal holatda qo‘yish uchun qanday minimal ish bajarish kerak? g = 10 m/s².",
+      "answers": ["150", "37,5", "75", "100"],
+      "correct": 2
+    },
+    {
+      "text": "Agar 200 kg massali brusokni gorizontal holatdan vertikal holatga o‘tkazilsa, uning potensial energiyasi qanchaga o‘zgaradi? Brusok 1 m uzunlikka va tomoni 20 cm bo‘lgan kvadrat kesimga ega. g = 10 m/s².",
+      "answers": ["400", "800", "1600", "1200"],
+      "correct": 1
+    },
+    {
+      "text": "Gorizontal tekislikda uzunligi 2 m va massasi 5 kg bo‘lgan yupqa zanjir yotibdi. Zanjirni bir uchidan ushlab, uning pastki uchi tekislikdan o‘zining uzunligiga teng bo‘lgan balandlikka ko‘tarishda bajariladigan minimal ish qanchaga teng? g = 10 m/s².",
+      "answers": ["75", "300", "200", "150"],
+      "correct": 3
+    },
+    {
+      "text": "Yuzasi 10 m² va chuqurligi 2 m bo‘lgan basseynni yarmigacha to‘ldirib turgan suvni yer yuzasiga chiqarib tashlash uchun qanday minimal ish (kJ da) bajarish kerak? g = 10 m/s².",
+      "answers": ["150", "75", "300", "200"],
+      "correct": 0
+    },
+    {
+      "text": "Yuzasi 15 m² bo‘lgan chuqur basseyn 1 m chuqurlikkacha suv bilan to‘ldirilgan va teng yarmidan vertikal to‘siq bilan to‘silgan. To‘siqni asta-sekinlik bilan shunday ko‘chiriladiki, bunda to‘siq basseynni 1:3 nisbatda bo‘ladi. Shunda qanday ish (kJ da) bajariladi?",
+      "answers": ["12,5", "50", "25", "37,5"],
+      "correct": 2
+    },
+    {
+      "text": "10 kN/m bikrlikli siqilgan prujina 50 J ga teng potensial energiya zahirasiga ega. Prujina necha santimetrga siqilgan?",
+      "answers": ["5", "10", "20", "15"],
+      "correct": 1
+    },
+    {
+      "text": "Agar 30 N kuch ta’siri ostida prujina 1 cm ga siqilsa, uni 20 cm ga siqish uchun bajarilishi kerak bo‘lgan ishni (J) toping.",
+      "answers": ["30", "120", "90", "60"],
+      "correct": 3
+    }
+  ]
+}

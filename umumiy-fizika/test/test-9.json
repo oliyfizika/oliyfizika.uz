@@ -1,0 +1,94 @@
+{
+  "id": 9,
+  "title": "9-Mavzu | Aylanma harakatni uzatish",
+  "subtitle": "Kamida 80% natija 10-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 10,
+  "questions": [
+    {
+      "text": "Harakat I g‘ildirakdan tasmali uzatma yordamida uzatiladi. Agar I g‘ildirak minutiga 2400 marta aylansa, g‘ildiraklarning radiuslari mos ravishda 3 va 6 sm bo‘lsa, ikkinchi g‘ildirakning burchak tezligi qanday (rad/s) bo‘ladi?",
+      "answers": ["2π", "40π", "20π", "10π"],
+      "correct": 1
+    },
+    {
+      "text": "Zanjirli uzatma yordamida bog‘langan ikkita tishli g‘ildirakning biridagi tishlar soni N₁ ikkinchisidagi tishlar soni N₂ dan 4 marta ko‘p bo‘lsa, g‘ildiraklarning burchak tezliklari orasidagi munosabat qanday bo‘ladi?",
+      "answers": ["ω₂ = 2ω₁", "ω₂ = 4ω₁", "ω₁ = 2ω₂", "ω₁ = 4ω₂"],
+      "correct": 3
+    },
+    {
+      "text": "Tasma orqali biriktirilgan ikki shkivning radiuslari 10 sm va 15 sm. Birinchi shkivning chiziqli tezligi 2 m/s bo‘lsa, ikkinchi shkivning chiziqli tezligini toping (m/s).",
+      "answers": ["1,3", "2", "3", "4,3"],
+      "correct": 1
+    },
+    {
+      "text": "Tishlarining soni N₁ = 150 va N₂ bo‘lgan shesternalar bir-biriga bog‘langan. Birinchi shesterna har sekundda 20 marta aylanganda, ikkinchisi har minutda 250 marta aylansa N₂ ni toping.",
+      "answers": ["720", "250", "150", "750"],
+      "correct": 0
+    },
+    {
+      "text": "“Penza” velosipedi g‘ildiragining diametri 70 sm, yetakchi tishli g‘ildiragining tishlari 48 ta, yetaklanuvchi tishli g‘ildiragining tishlari 18 ta. Pedallarning aylanish chastotasi 1 ayl/s bo‘lsa, velosipedchi qanday tezlik bilan harakatlanmoqda (m/s)?",
+      "answers": ["3,7", "4,3", "6,6", "5,9"],
+      "correct": 3
+    },
+    {
+      "text": "Yig‘ma “Kama” velosipedi g‘ildiragining diametri 50 sm, tishli g‘ildiraklarining tishlari 48 ta va 15 ta hamda pedallarning aylanish chastotasi 1 ayl/s bo‘lsa, velosipedchi qanday tezlik bilan harakatlanadi (m/s)?",
+      "answers": ["20", "10", "5", "0,2"],
+      "correct": 2
+    },
+    {
+      "text": "Tasma orqali biriktirilgan ikki shkivning radiuslari 10 sm va 15 sm. Birinchi shkivning burchak tezligi 2 rad/s bo‘lsa, ikkinchi shkivning burchak tezligini toping (rad/s).",
+      "answers": ["1,3", "2", "3", "4,3"],
+      "correct": 0
+    },
+    {
+      "text": "Gidroturbina ishchi g‘ildiragining radiusi bug‘ turbinasinikiga qaraganda 8 marta katta, aylanish chastotasi esa 40 marta kichik. Turbina g‘ildiraklari chetidagi nuqtalar tezliklarini taqqoslang.",
+      "answers": ["1:4", "1:5", "1:2", "2:5"],
+      "correct": 1
+    },
+    {
+      "text": "Radiusi 32 sm bo‘lgan katta shkiv 180 ayl/min chastota bilan aylanmoqda va u radiusi 24 sm bo‘lgan kichkina shkiv bilan tasma orqali bog‘langan. Kichik shkivning burchak tezligini toping (rad/s).",
+      "answers": ["11/3", "8π", "3π", "6π"],
+      "correct": 1
+    },
+    {
+      "text": "Rasmda traktorning katta g‘ildiragidagi A nuqtaning yerga nisbatan oniy tezligi 4√2 m/s bo‘lsa, B nuqtaning yerga nisbatan oniy tezligini toping (m/s).",
+      "answers": ["12", "10", "8", "24"],
+      "correct": 2
+    },
+    {
+      "text": "Bitta o‘qqa mahkamlangan ikki shkivning radiuslari mos ravishda 20 sm va 25 sm. Ikkinchi shkivning aylanish davri 4 s bo‘lsa, birinchi shkivning aylanish chastotasini toping (1/s).",
+      "answers": ["4", "0,25", "5", "0,2"],
+      "correct": 1
+    },
+    {
+      "text": "Bir nuqtaga mahkamlangan radiuslari 10 sm va 25 sm bo‘lgan shkivlardan birinchisining aylanish davri 10 s bo‘lsa, ikkinchisining aylanish davrini toping (s).",
+      "answers": ["15", "4", "25", "10"],
+      "correct": 3
+    },
+    {
+      "text": "Bitta o‘qqa mahkamlangan radiuslari 15 sm va 25 sm bo‘lgan shkivlardan kichigining eng chekka nuqtalaridagi chiziqli tezligi 2,25 m/s. Katta shkivning eng chekka nuqtalaridagi chiziqli tezligini toping (m/s).",
+      "answers": ["6,25", "2,5", "1,5", "3,75"],
+      "correct": 3
+    },
+    {
+      "text": "Bitta o‘qqa mahkamlangan radiuslari 20 sm va 35 sm bo‘lgan shkivlardan kattasining eng chekka nuqtalaridagi markazga intilma tezlanishi 1,4 m/s². Kichik shkiv eng chekka nuqtalarining markazga intilma tezlanishini toping (m/s²).",
+      "answers": ["25", "3,5", "2", "0,8"],
+      "correct": 3
+    },
+    {
+      "text": "Bitta o‘qqa mahkamlangan radiuslari 15 sm va 25 sm bo‘lgan shkivlardan kichigining eng chekka nuqtalarining aylanish davri 2,25 s. Katta shkivning eng chekka nuqtalarining aylanish davrini toping (s).",
+      "answers": ["6,25", "2,5", "1,5", "2,25"],
+      "correct": 3
+    },
+    {
+      "text": "Disk o‘q atrofida o‘zgarmas tezlik bilan aylanmoqda. Aylanish o‘qidan har xil masofada joylashgan 1, 2 va 3 nuqtalarning markazga intilma tezlanishlari qanday munosabatda bo‘ladi?",
+      "answers": [
+        "a₁ > a₂ > a₃",
+        "a₁ = a₂ = a₃",
+        "a₁ = a₂ > a₃",
+        "a₁ < a₂ < a₃"
+      ],
+      "correct": 3
+    }
+  ]
+}

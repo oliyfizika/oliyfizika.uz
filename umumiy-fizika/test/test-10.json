@@ -1,0 +1,125 @@
+{
+  "id": 10,
+  "title": "10-Mavzu | Aylana bo‘ylab notekis harakat",
+  "subtitle": "Kamida 80% natija 11-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 11,
+  "questions": [
+    {
+      "text": "Moddiy nuqta aylana bo‘ylab tekis harakatlanmoqda. Uning tezlik va tezlanish vektorlari orasidagi burchak qanday?",
+      "answers": ["180°", "90°", "60°", "30°"],
+      "correct": 1
+    },
+    {
+      "text": "Avtomobil radiusi 50 m bo‘lgan aylanani 40° ga mos yoyini 4 m/s, 60° ga mos yoyini 6 m/s, 70° ga mos yoyini 7 m/s va qolgan qismini 8 m/s tezlik bilan o‘tdi. Avtomobilning butun aylanadagi o‘rtacha tezligini toping (km/soat).",
+      "answers": ["2,15", "24,1", "36", "42,1"],
+      "correct": 1
+    },
+    {
+      "text": "Aylana bo‘ylab harakatlanayotgan jismning boshlang‘ich burchak tezligi 3 rad/s va burchak tezlanishi 0,1 rad/s². U 0,5 s da qancha aylana yoyi chizadi?",
+      "answers": ["86,7°", "80,7°", "60,7°", "90°"],
+      "correct": 0
+    },
+    {
+      "text": "Aylana bo‘ylab tekis tezlanuvchan harakat qilayotgan moddiy nuqtaning boshlang‘ich burchak tezligi 3 rad/s, burchak tezlanishi 0,1 rad/s². Uning 5 s dan keyingi burchak tezligini toping (rad/s).",
+      "answers": ["2,5", "4", "3,5", "2"],
+      "correct": 2
+    },
+    {
+      "text": "Aylana bo‘ylab tekis tezlanuvchan harakat qilayotgan moddiy nuqtaning boshlang‘ich burchak tezligi 4 rad/s, burchak tezlanishi 0,2 rad/s². Uning 4 s dan keyingi burilish burchagini toping (rad).",
+      "answers": ["17,6", "16", "1,6", "1,75"],
+      "correct": 0
+    },
+    {
+      "text": "Jism aylana bo‘ylab ω = 2 + 0,5t tenglama bilan ifodalanadigan burchak tezlik bilan harakat qilmoqda. U 20 s da necha marta aylanadi?",
+      "answers": ["62", "22", "42", "32"],
+      "correct": 1
+    },
+    {
+      "text": "Boshlang‘ich burchak tezligi 3 rad/s va burchak tezlanishi 0,5 rad/s² bo‘lgan jism aylana bo‘ylab tekis tezlanuvchan harakat qilmoqda. Aylana radiusi 5 dm bo‘lsa, 6 s dan keyingi chiziqli tezlikni toping (m/s).",
+      "answers": ["3", "2", "6", "8"],
+      "correct": 0
+    },
+    {
+      "text": "Tinch holatdan boshlab aylana bo‘ylab 0,4 rad/s² burchak tezlanish bilan harakatlanayotgan moddiy nuqtaning 20 s dan keyingi chiziqli tezligini toping (m/s). Aylananing radiusi 5 m.",
+      "answers": ["40", "20", "10", "5"],
+      "correct": 0
+    },
+    {
+      "text": "Egri chiziqli harakatda oniy tezlik vektorining yo‘nalishi qanday?",
+      "answers": [
+        "Bunday harakatda oniy tezlik yo‘nalishini aniqlab bo‘lmaydi",
+        "Trayektoriyaga o‘tkazilgan urinma bo‘ylab",
+        "Egri chiziq radiusiga urinma bo‘ylab",
+        "Egri chiziq radiusi bo‘yicha markazdan"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Jismning AB trayektoriya bo‘ylab harakatlanishi natijasida uning tezligi v₁ dan v₂ gacha o‘zgaradi. O‘rtacha tezlanish vektori qanday yo‘nalgan bo‘ladi?",
+      "answers": [
+        "v₁ vektor yo‘nalishiga mos yo‘nalgan",
+        "v₂ vektor yo‘nalishiga mos yo‘nalgan",
+        "v₂ vektor uchidan v₁ vektor uchiga qarab yo‘nalgan",
+        "v₁ vektor uchidan v₂ vektor uchiga qarab yo‘nalgan"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Jismning urinma tezlanishi 5 m/s² va natijaviy tezlanishi 10 m/s². Uning markazga intilma tezlanishini toping (m/s²).",
+      "answers": ["5√3", "5√5", "5", "15"],
+      "correct": 0
+    },
+    {
+      "text": "Moddiy nuqta radiusi 3 m bo‘lgan aylana bo‘ylab 4 rad/s burchak tezlik bilan tekis harakatlanmoqda. Uning tangensial tezlanishini toping (m/s²).",
+      "answers": ["48", "0", "24", "1,33"],
+      "correct": 1
+    },
+    {
+      "text": "Moddiy nuqta radiusi 20 sm bo‘lgan aylana bo‘ylab 5 sm/s² urinma tezlanish bilan tekis tezlanuvchan harakat qilmoqda. Harakat boshlangandan keyin qancha vaqt o‘tgach normal tezlanishi urinma tezlanishdan 2 marta katta bo‘ladi?",
+      "answers": ["2,78", "2,20", "1,07", "3,48"],
+      "correct": 0
+    },
+    {
+      "text": "Jism tangensial tezlanishi 6 m/s², markazga intilma tezlanishi 8 m/s² ga teng bo‘lsa, uning natijaviy tezlanishi necha m/s² ga teng?",
+      "answers": ["6", "8", "10", "2"],
+      "correct": 2
+    },
+    {
+      "text": "Gorizontal sirtda harakatlanayotgan moddiy nuqtaning tezligi va tezlanishi orasidagi burchak π/3 ga teng. Nuqtaning harakat xarakteri qanday?",
+      "answers": [
+        "To‘g‘ri chiziqli notekis",
+        "To‘g‘ri chiziqli tekis",
+        "Egri chiziqli notekis",
+        "Egri chiziqli tekis"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Moddiy nuqta radiusi 4 m bo‘lgan aylana bo‘ylab boshlang‘ich 2 rad/s burchak tezlik va 2 rad/s² burchak tezlanish bilan tekis tezlanuvchan harakatlanmoqda. Uning 5 s dan keyingi normal tezlanishining tangensial tezlanishga nisbatini toping.",
+      "answers": ["72", "48", "12", "24"],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 100 sm bo‘lgan g‘ildirak gardishidagi A nuqta 6 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. Tormozlanish boshlanganidan 2,5 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
+      "answers": ["90°", "45°", "135°", "120°"],
+      "correct": 2
+    },
+    {
+      "text": "Radiusi √3 m bo‘lgan g‘ildirak gardishidagi A nuqta 4,2 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. Tormozlanish boshlanganidan 0,4 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
+      "answers": ["90°", "45°", "135°", "120°"],
+      "correct": 3
+    },
+    {
+      "text": "G‘ildirak A nuqtasining yerga nisbatan tezligi 3 m/s ga teng. S nuqtaning yerga nisbatan tezligi −2 m/s ga teng. Aylana diametri 1 m ga teng. G‘ildirak gardishining markazga intilma tezlanishini toping (m/s²).",
+      "answers": ["12,5", "50", "8", "18"],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 100 sm bo‘lgan g‘ildirak gardishidagi A nuqta 4,8 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. Tormozlanish boshlanganidan 0,6 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
+      "answers": ["90°", "90° + arcctg 6", "45°", "120°"],
+      "correct": 1
+    }
+  ]
+}
+

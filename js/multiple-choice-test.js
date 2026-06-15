@@ -45,6 +45,26 @@ export function renderMultipleChoiceTest({
       card.appendChild(graph);
     }
 
+    if(question.image){
+      const imageBox = document.createElement("div");
+      imageBox.className = "graph-box";
+
+      const image = document.createElement("img");
+
+      image.src = question.image;
+      image.alt = "Grafik";
+      image.loading = "lazy";
+
+      image.style.maxWidth = "100%";
+      image.style.height = "auto";
+      image.style.display = "block";
+      image.style.margin = "0 auto";
+      image.style.borderRadius = "10px";
+
+      imageBox.appendChild(image);
+      card.appendChild(imageBox);
+    }
+
     const answers = document.createElement("div");
     answers.className = "answers";
 

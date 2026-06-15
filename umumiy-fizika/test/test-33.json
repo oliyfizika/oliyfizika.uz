@@ -1,0 +1,69 @@
+{
+  "id": 26,
+  "title": "26-Mavzu | Tebranishlar",
+  "subtitle": "Kamida 80% natija 26-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 26,
+  "questions": [
+    {
+    "text": "1. Bikrligi 10 N/m bo‘lgan prujinaga qanday massali (kg) yuk osilsa, tebranish davri 1 s bo‘lgan mayatnik hosil bo‘ladi? π2 = 10.",
+    "answers": ["10.", "0,25.", "2,5.", "0,025."],
+    "correct": 1
+  },
+  {
+    "text": "2. Prujinaga osilgan 200 g massali yuk bir minutda 30 marta tebranadi. Prujinaning bikrligi necha N/m? π2 = 10.",
+    "answers": ["0,2.", "0,05.", "0,3.", "0,63."],
+    "correct": 0
+  },
+  {
+    "text": "3. Bikrligi 200 N/m bo‘lgan prujinaga osilgan yuk 8 s da 10 marta tebrandi. Yukning massasi qanday (kg)? π2 = 10.",
+    "answers": ["3,6.", "3,2.", "2,5.", "1,6."],
+    "correct": 2
+  },
+  {
+    "text": "4. Prujinali mayatnik, og‘irlik kuchi tezlanishi Yernikidan 4 marta katta bo‘lgan planetaga Yerdan olib o‘tildi. Bunda uning tebranish davri qanday o‘zgaradi?",
+    "answers": ["o‘zgarmaydi.", "2 marta ortadi.", "4 marta ortadi.", "2 marta kamayadi."],
+    "correct": 0
+  },
+  {
+    "text": "5. Agar tebranishlar davri T bo‘lgan prujinali mayatnikga osilgan yukning massasi n marta oshirilsa, tebranishlar davri qanday bo‘ladi?",
+    "answers": ["nT", "n2T", "T√ n", "√ nT"],
+    "correct": 3
+  },
+  {
+    "text": "6. Prujinali tebrangich (mayatnik) dagi yukning massasi 9 marta ortsa, bo‘ylama tebranishlar davri qanday o‘zgaradi?",
+    "answers": ["3 marta kamayadi.", "3 marta ortadi.", "o‘zgarmaydi.", "9 marta ortadi."],
+    "correct": 1
+  },
+  {
+    "text": "7. Agar prujina 2 marta qisqartirilib, yukning massasi 2 marta orttirilsa, prujinali mayatnikning tebranish davri qanday o‘zgaradi?",
+    "answers": ["o‘zgarmaydi.", "2 marta kamayadi.", "2 marta ortadi.", "4 marta kamayadi."],
+    "correct": 0
+  },
+  {
+    "text": "8. 1-rasmdagi sistemaning tebranish davri 10 s, 2-rasmda esa 8 s. 3-rasmdagi yukning tebranish davrini toping (s). Barcha prujinalarning bikirligi bir xil.",
+    "answers": ["4.", "5.", "6.", "9."],
+    "correct": 1
+  },
+  {
+    "text": "9. Rasmda tasvirlangan prujinali mayatniklarning tebranish davrlari nisbati T1/T2 ni toping? 1) k, 3k (parallel); 2) 2k, 2k (ketma-ket), 4m massali.",
+    "answers": ["4.", "1/4.", "2.", "1/2."],
+    "correct": 3
+  },
+  {
+    "text": "10. Prujina o‘ziga osilgan yuk ta’sirida 2,5 cm ga cho‘zildi. Shu prujinali mayatnikning tebranish chastotasini aniqlang (Hz).",
+    "answers": ["1,6.", "25.", "3,2.", "5."],
+    "correct": 1
+  },
+  {
+    "text": "11. Quyidagi m massali yukning tebranish davrini aniqlang (prujinalar k, k, k ko'rinishida ulanishi).",
+    "answers": [
+      "T = 2π √ (3m / 2k)",
+      "T = 2π √ (2m / 3k)",
+      "T = 2π √ (3m / k)",
+      "T = 2π √ (m / 3k)"
+    ],
+    "correct": 3
+  }
+  ]
+}

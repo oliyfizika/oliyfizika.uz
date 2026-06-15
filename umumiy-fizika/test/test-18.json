@@ -1,0 +1,102 @@
+{
+  "id": 18,
+  "title": "18-Mavzu | Bir necha kuch ta’sirida harakat",
+  "subtitle": "Kamida 80% natija 19-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 19,
+  "questions": [
+    {
+      "text": "6 kg massali jism gorizontal tekislikda tinch turibdi. U qanday kuch ta’sirida 1 s da 2 m/s tezlikka erishadi? Ishqalanish kuchi 4 N.",
+      "answers": ["18", "16", "12", "8", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Avtomobil 10 m/s² tezlanish bilan harakat qilmoqda. Tortish koeffitsienti qanday? Qarshilik koeffitsienti 0,5.",
+      "answers": ["1,5", "1", "0,75", "0,5", "2"],
+      "correct": 0
+    },
+    {
+      "text": "Inersiya bo‘yicha harakatlanayotgan jismga ishqalanish kuchlari ta’sir eta boshlagach qanday harakat qiladi?",
+      "answers": [
+        "harakati o‘zgarmaydi",
+        "tekis sekinlanuvchan",
+        "tekis",
+        "tekis tezlanuvchan",
+        "tinch turadi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Gorizontal muz ustida sirpanayotgan shayba bilan muz orasidagi ishqalanish koeffitsiyenti 0,02. Shaybaning tezlanishi qanday?",
+      "answers": ["-0,3", "-0,2", "-0,03", "-0,02", "0"],
+      "correct": 1
+    },
+    {
+      "text": "Tormozlanish yo‘li L = v₀² / 2μg formulasi bilan aniqlanadi. Tormozlanish yo‘lini kamaytirish uchun nima qilish kerak?",
+      "answers": [
+        "v₀ ni oshirib, μ kamaytirish",
+        "v₀ kamaytirilib, μ oshirish",
+        "v₀ va μ mutanosib kamaytirish",
+        "v₀ va μ mutanosib oshirish",
+        "μ o‘zgarmay v₀ oshirish"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Massasi 4 kg bo‘lgan jism havoda 8,5 m/s² tezlanish bilan tushmoqda. Havoning qarshilik kuchini toping.",
+      "answers": ["34", "24", "17", "12", "6"],
+      "correct": 4
+    },
+    {
+      "text": "80 g massali jism yuqoriga otilgan. Havoning qarshilik kuchi 0,8 N. Tezlanish moduli qanday?",
+      "answers": ["25", "20", "15", "10", "5"],
+      "correct": 1
+    },
+    {
+      "text": "300 g massali jism qiya tekislik bo‘ylab yuqoriga o‘zgarmas tezlik bilan tortilmoqda. α = 30°, g = 10 N/kg. Ishqalanish koeffitsiyentini toping.",
+      "answers": ["0,6", "0,4", "0,65", "0,58", "0,1"],
+      "correct": 3
+    },
+    {
+      "text": "Uzunligi 5 m va balandligi 3 m bo‘lgan qiya tekislikda 50 kg massali yuk turibdi. Yukni tutib turish uchun qanday kuch kerak?",
+      "answers": ["430", "380", "250", "220", "22"],
+      "correct": 3
+    },
+    {
+      "text": "Ishqalanishsiz sirtda ikkita jismga F₁ va F₂ kuchlar ta’sir qiladi. Taranglik kuchlari nisbati T₁/T₂ ni toping.",
+      "answers": ["1/2", "2/3", "1", "3/2", "2"],
+      "correct": 0
+    },
+    {
+      "text": "Har biri 10 kg bo‘lgan 5 ta brusok zanjiri F = 100 N kuch bilan tortilmoqda. 1- va 2-brusok orasidagi ip tarangligini toping.",
+      "answers": ["60", "70", "80", "85", "90"],
+      "correct": 2
+    },
+    {
+      "text": "Sistemaning tezlanishi, yuqori ip tarangligi T₁ va F kuchni aniqlang. T₂ = 24 N.",
+      "answers": [
+        "2; 6; 49",
+        "2; 60; 108",
+        "3; 10; 66",
+        "1; 96; 29",
+        "6; 96; 54"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Atvud mashinasida (2m va m massalar) ipning taranglik kuchini toping.",
+      "answers": ["mg/2", "2mg/3", "mg", "mg/3", "4mg/3"],
+      "correct": 4
+    },
+    {
+      "text": "m₁ = 10 kg va m₂ = 15 kg yuklar blok orqali bog‘langan. Sistemaning tezlanishini toping.",
+      "answers": ["1", "2", "4", "5", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Ishqalanishsiz sirtdagi 3 kg va 2 kg jismlar F = 15 N kuch bilan surilmoqda. Jismlar orasidagi ta’sir kuchini toping.",
+      "answers": ["2", "6", "4,5", "3,6", "8"],
+      "correct": 1
+    }
+  ]
+}

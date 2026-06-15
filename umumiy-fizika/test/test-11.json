@@ -1,0 +1,114 @@
+{
+  "id": 11,
+  "title": "11-Mavzu | Kuch. Nyutonning birinchi qonuni",
+  "subtitle": "Kamida 80% natija 12-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 12,
+  "questions": [
+    {
+      "text": "Jismning bir nuqtasiga 6 N va 8 N kuch bir-biriga nisbatan 180° burchak ostida qo‘yilgan. Jismga ta’sir qiluvchi natijaviy kuchni toping (N).",
+      "answers": ["8", "6", "2", "10"],
+      "correct": 2
+    },
+    {
+      "text": "Arqon tortish musobaqasida to‘rt kishi ishtirok etmoqda. Ulardan ikkitasi arqonni 250 N va 200 N kuch bilan o‘ng tomonga, qolgan ikkitasi 350 N va 50 N kuch bilan chap tomonga tortmoqda. Teng ta’sir etuvchi kuch qanday? Arqon qaysi tomonga harakatlanadi?",
+      "answers": ["50 N, o‘ngga", "450 N, o‘ngga", "350 N, chapga", "850 N, o‘ngga"],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda ko‘rsatilganidek O nuqtaga ikkita F1 va F2 kuchlar ta’sir etmoqda. Ularning natijaviy kuchi qanday yo‘nalgan?",
+      "answers": ["N", "L", "M", "K"],
+      "correct": 0
+    },
+    {
+      "text": "Rasmdagi O nuqtaga qo‘yilgan kuchlarning teng ta’sir etuvchisi qanday (N)?",
+      "answers": ["2√26", "2√13", "0", "√13"],
+      "correct": 2
+    },
+    {
+      "text": "Ushbu uchta kuchning teng ta’sir etuvchisini toping.",
+      "answers": ["F", "2F", "√2F", "3F", "2√2F"],
+      "correct": 3
+    },
+    {
+      "text": "Ushbu uchta kuchning teng ta’sir etuvchisini toping.",
+      "answers": ["F", "√3F", "√2F", "2√3F", "2√2F"],
+      "correct": 0
+    },
+    {
+      "text": "M moddiy nuqtaga F1, F2, F3 va F4 kuchlar rasmda ko‘rsatilgandek ta’sir qilmoqda. Moddiy nuqta qaysi tomonga va qanday kuch ta’siri ostida harakatlanadi?",
+      "answers": ["F2 yo‘nalishda 10 N", "F1 yo‘nalishda 20 N", "F3 yo‘nalishda 30 N", "F4 yo‘nalishda 40 N"],
+      "correct": 3
+    },
+    {
+      "text": "Ushbu to‘rtta kuchning teng ta’sir etuvchisini toping (N).",
+      "answers": ["34", "89", "26", "18"],
+      "correct": 2
+    },
+    {
+      "text": "Quyidagi O nuqtaga qo‘yilgan kuchlarning teng ta’sir etuvchisini toping (N).",
+      "answers": ["√22", "2√10", "15", "40"],
+      "correct": 1
+    },
+    {
+      "text": "Moddiy nuqtaga ta’sir etuvchi kuchlar muvozanatda bo‘lgandagi harakatlar qaysi grafiklarda tasvirlangan?",
+      "answers": ["1,2", "3,4", "2,4", "2,3,4"],
+      "correct": 3
+    },
+    {
+      "text": "Nyutonning birinchi qonunini tavsiflovchi ifodani ko‘rsating.",
+      "answers": ["v = const, F = 0", "v = const, v = at", "F = const, v = v₀ + at", "F = 0, s = const"],
+      "correct": 0
+    },
+    {
+      "text": "Avtomobil to‘g‘ri gorizontal yo‘lda o‘zgarmas tezlik bilan harakatlanmoqda. Unga ta’sir qilayotgan kuchlarning teng ta’sir etuvchisi haqida nima deyish mumkin?",
+      "answers": [
+        "og‘irlik va ishqalanish kuchlari yig‘indisiga teng",
+        "og‘irlik kuchiga teng va yuqoriga yo‘nalgan",
+        "qarshilik kuchiga teng va harakat yo‘nalishiga qarshi yo‘nalgan",
+        "TJY"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 20 kg bo‘lgan toshning hajmi 5 l ga teng. Uning zichligini toping (kg/m³).",
+      "answers": ["4000", "2000", "3000", "5000"],
+      "correct": 0
+    },
+    {
+      "text": "Uzunligi 30 cm, eni 5 cm va qalinligi 2 cm bo‘lgan jismning massasi 1.2 kg ga teng. Shu jismning zichligini toping (g/cm³).",
+      "answers": ["1", "2", "4", "0.8"],
+      "correct": 2
+    },
+    {
+      "text": "18 kg muzning hajmini va erigandan keyingi hajmini toping (l). ρmuz = 900 kg/m³, ρsuv = 1000 kg/m³.",
+      "answers": ["12; 18", "18; 18", "20; 20", "20; 18"],
+      "correct": 3
+    },
+    {
+      "text": "Parijdagi po‘latdan yasalgan, balandligi 300 m bo‘lgan Eyfel minorasining massasi 7200 t. Bu minoraning zichligi po‘latnikidan 2 marta kichik bo‘lgan moddadan yasalgan, balandligi 30 cm bo‘lgan modelining massasi qanday bo‘ladi?",
+      "answers": ["3.6 t", "3.6 kg", "360 g", "3.6 g"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda bir xil massali turli xil suyuqliklar solingan uchta idish tasvirlangan. Suv, spirt va simob qaysi idishlarda ekanligini aniqlang.",
+      "answers": [
+        "1-suv; 2-spirt; 3-simob",
+        "2-suv; 3-spirt; 1-simob",
+        "1-spirt; 2-simob; 3-suv",
+        "1-spirt; 2-suv; 3-simob"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Bir xil hajmli to‘rtta jismning zichliklari ρ₁ < ρ₂ < ρ₃ < ρ₄ munosabatda bo‘lsa, ulardan qaysi birining inertligi eng katta?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 3
+    },
+    {
+      "text": "Shar shaklidagi 2 ta bir xil oltin quyma bor. Ulardan biri eritilib, kub shaklidagi qirrasining uzunligi 30 cm bo‘lgan yupqa devorli idishga quyildi. Agar idishning 2/5 qismi bo‘sh qolgan bo‘lsa, idishni to‘ldirish uchun ikkinchi sharning qancha hajmini (cm³) eritish kerak?",
+      "answers": ["5400", "8100", "10800", "4050"],
+      "correct": 2
+    }
+  ]
+}

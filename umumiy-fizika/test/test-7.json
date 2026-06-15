@@ -1,0 +1,101 @@
+{
+  "id": 7,
+  "title": "7-Mavzu | Nisbiy harakat",
+  "subtitle": "Kamida 80% natija 8-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 8,
+  "questions": [
+    {
+      "text": "Avtomobil dvigateli parragi chetki nuqtalarining harakat traektoriyasi: avtomobil bilan bog‘langan sanoq sistemasiga; yer bilan bog‘langan sanoq sistemasiga nisbatan qanday shaklda bo‘ladi?",
+      "answers": [
+        "aylana; vintsimon",
+        "vintsimon; aylana",
+        "parabola; egri chiziq",
+        "aylana; aylana"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Oqimga qarshi suzayotgan bolaning suvga nisbatan tezligi 1.5 m/s, suvning qirg‘oqqa nisbatan tezligi 0.5 m/s bo‘lsa, bolaning qirg‘oqqa nisbatan tezligi qanday (m/s) bo‘ladi?",
+      "answers": ["2.5", "2", "1.5", "1"],
+      "correct": 3
+    },
+    {
+      "text": "Rels ustida 0.4 m/s tezlik bilan gorizontal harakatlanayotgan kran yukni 0.3 m/s tezlik bilan vertikal yuqoriga ko‘tarmoqda. Yer bilan bog‘langan sanoq tizimida yukning tezligi qanday (m/s)?",
+      "answers": ["0.1", "0.25", "0.35", "0.5"],
+      "correct": 3
+    },
+    {
+      "text": "Suzuvchining suvga nisbatan tezligi 0.9 m/s ga teng va qirg‘oqqa tik yo‘nalgan, suvning oqish tezligi esa 1.2 m/s ga teng. Suzuvchining qirg‘oqqa nisbatan tezligi qanday (m/s)?",
+      "answers": ["0.3", "0.9", "1.2", "1.5"],
+      "correct": 3
+    },
+    {
+      "text": "Jism harakat tezligining 2 ta tashkil etuvchisi bir-biriga nisbatan 60° burchak ostida yo‘nalgan bo‘lib, modullari mos ravishda 4 va 6 m/s ga teng. Natijaviy tezlik qanday (m/s)?",
+      "answers": ["5", "7.7", "8.7", "10"],
+      "correct": 2
+    },
+    {
+      "text": "Metrodagi eskalator odamni yuqoriga 45 s da olib chiqadi. Odam va eskalator birgalikda harakat qilsa, odam 15 s da ko‘tariladi. Eskalator tinch tursa, odam necha sekundda yuqoriga chiqadi?",
+      "answers": ["30", "22.5", "60", "15.5"],
+      "correct": 1
+    },
+    {
+      "text": "5 m/s tezlik bilan esayotgan shamolga qarshi 90 km/h tezlik bilan harakatlanayotgan avtomobilning shamolga nisbatan tezligi qanday (m/s)?",
+      "answers": ["10", "5", "30", "25"],
+      "correct": 2
+    },
+    {
+      "text": "Shosseda avtobuslar kolonnasi 30 km/h tezlik bilan harakatlanmoqda. 70 km/h tezlik bilan harakatlanayotgan mototsiklchi kolonnani quvib o‘tyapti. Mototsiklning kolonnaga nisbatan tezligi qanday (km/h)?",
+      "answers": ["30", "40", "50", "70"],
+      "correct": 1
+    },
+    {
+      "text": "Asfalt yo‘l bo‘ylab velosipedchi to‘g‘ri chiziqli tekis harakat qilyapti. U yo‘l chetidagi ikki ketma-ket telegraf ustunlari oralig‘idagi masofani 10 s da bosib o‘tyapti. Ustunlar oralig‘i 50 m. Velosipedchi qarshisidan kelayotgan avtomobilning spidometri 36 km/soat ni ko‘rsatyapti. Velosipedchi avtomobilga nisbatan qanday tezlik bilan harakatlanyapti (m/s)?",
+      "answers": ["20", "25", "15", "5"],
+      "correct": 2
+    },
+    {
+      "text": "Ikki avtomobil to‘g‘ri burchak ostida kesishuvchi ikki yo‘l bo‘ylab harakatlanmoqda. Ulardan biri chorrahaga 16 m/s tezlik bilan yaqinlashmoqda, ikkinchisi esa 12 m/s tezlik bilan uzoqlashmoqda. 1-avtomobilning 2-avtomobilga nisbatan tezligi moduli qanday (m/s)?",
+      "answers": ["28", "20", "16", "12"],
+      "correct": 1
+    },
+    {
+      "text": "O‘zaro 60° burchak hosil qilib, yerga nisbatan v tezlik bilan harakatlanayotgan ikki jismning bir-biriga nisbatan tezligining moduli nimaga teng?",
+      "answers": ["v/2", "√3v/2", "√3v", "v"],
+      "correct": 3
+    },
+    {
+      "text": "Tezliklari v₁ = 10 m/s va v₂ = 12 m/s bo‘lgan jismlar berilgan chizma orqali harakat qilmoqda. Ularning nisbiy tezligini toping (m/s). α = 30°, β = 30°.",
+      "image": "../rasmlar7/test7-12.png",
+      "answers": [
+        "2√31",
+        "√31",
+        "√244",
+        "2√91"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ikki parallel yo‘ldan uzunligi 360 m, tezligi 54 km/h bo‘lgan yuk poyezdi va uzunligi 140 m, tezligi 90 km/h bo‘lgan passajir poyezdi bir tomonga harakatlanmoqda. Ikkinchi poyezd birinchi poyezdni necha sekund davomida quvib o‘tadi?",
+      "answers": ["50", "22", "15", "12.5"],
+      "correct": 0
+    },
+    {
+      "text": "Yuk poyezdi stansiyadan 36 km/h tezlik bilan chiqdi. 15 min vaqt o‘tgach, xuddi o‘sha yo‘nalishda tezligi 90 km/h bo‘lgan ekspress poyezdi yo‘lga chiqdi. Yuk poyezdi yo‘lga chiqqandan keyin qancha vaqt (soat) o‘tgach va stansiyadan qanday masofada (km) ekspress poyezdi yuk poyezdiga yetib oladi?",
+      "answers": [
+        "1.2; 72",
+        "2; 18",
+        "1; 36",
+        "1/6; 15"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "P va Q qishloqlar to‘g‘ri yo‘l yoqasida bir-biridan 4000 m masofada joylashgan. P qishloqdan Q tomon doimiy 8 m/s tezlik bilan avtomobil jo‘nadi. Shundan 30 s o‘tgach Q dan P tomon doimiy 12 m/s tezlik bilan boshqa avtomobil yo‘lga chiqdi. Ular P qishloqdan qanday masofada uchrashadilar (m)?",
+      "answers": ["1744", "1920", "2080", "2280"],
+      "correct": 0
+    }
+  ]
+}
+

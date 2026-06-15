@@ -1,0 +1,100 @@
+{
+  "title": "Ichki energiya",
+  "questions": [
+    {
+      "q": "Jismning (moddaning) ichki energiyasi deb nimaga aytiladi?",
+      "a": ["Jismning faqat kinetik energiyasiga", "Jismning faqat potensial energiyasiga", "Moddani tashkil qiluvchi zarralarning potensial va kinetik energiyalari yig'indisiga", "Jismning balandlikdagi energiyasiga"],
+      "c": 2
+    },
+    {
+      "q": "Bir atomli ideal gazning ichki energiyasi (U) qaysi formula bilan aniqlanadi?",
+      "a": ["U = 1/2 mv²", "U = 3/2 (m/M)RT", "U = mgh", "U = qU"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazning ichki energiyasi qaysi termodinamik parametrga bog'liq?",
+      "a": ["Faqat bosimga", "Faqat hajmga", "Faqat absolut temperaturaga", "Idish shakliga"],
+      "c": 2
+    },
+    {
+      "q": "Izotermik jarayonda (T=const) ideal gazning ichki energiyasi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi (ΔU = 0)", "Bosimga qarab o'zgaradi"],
+      "c": 2
+    },
+    {
+      "q": "Qanday termodinamik jarayonda gazga berilgan issiqlik miqdori to'laligicha uning ichki energiyasini oshirishga sarflanadi?",
+      "a": ["Izobarik", "Izotermik", "Izoxorik (V=const)", "Adiabatik"],
+      "c": 2
+    },
+    {
+      "q": "Bir atomli ideal gaz izobarik qizdirilganda, unga berilgan issiqlik miqdorining (Q) qanday qismi ichki energiyani oshirishga sarflanadi?",
+      "a": ["0,2 Q", "0,4 Q", "0,6 Q", "1,0 Q"],
+      "c": 2
+    },
+    {
+      "q": "Idishdagi geliyning hajmi 2 litr, bosimi 10 kPa bo'lsa, uning ichki energiyasini (J) toping.",
+      "a": ["20 J", "30 J", "45 J", "60 J"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazning bosimi 50% ga, hajmi 20% ga ortsa, uning ichki energiyasi qanchaga o'zgaradi?",
+      "a": ["1,2 marta ortadi", "1,5 marta ortadi", "1,8 marta ortadi", "2 marta ortadi"],
+      "c": 2
+    },
+    {
+      "q": "1 kg massali suv, muz va suv bug'idan qaysi birining ichki energiyasi eng katta (100°C da)?",
+      "a": ["Muzniki", "Suvniki", "Suv bug'iniki", "Hammasiniki bir xil"],
+      "c": 2
+    },
+    {
+      "q": "Gaz ustida 7,2 kJ ish bajarildi va bu jarayonda atrof-muhitga 6 kJ issiqlik berildi. Gazning ichki energiyasi qanchaga o'zgargan (kJ)?",
+      "a": ["13,2 kJ ga ortgan", "1,2 kJ ga ortgan", "1,2 kJ ga kamaygan", "0,6 kJ ga ortgan"],
+      "c": 1
+    },
+    {
+      "q": "Temperaturasi -73°C bo'lgan 1 mol bir atomli ideal gazning ichki energiyasini toping (J).",
+      "a": ["831 J", "1662 J", "2493 J", "1246 J"],
+      "c": 2
+    },
+    {
+      "q": "Ballondagi gazning 25% qismi chiqib ketishi natijasida temperatura 1,2 marta pasaydi. Ichki energiya necha marta kamayadi?",
+      "a": ["1,2 marta", "1,5 marta", "1,6 marta", "2,4 marta"],
+      "c": 2
+    },
+    {
+      "q": "Og'zi ochiq idish qizdirilganda, idish ichidagi havoning ichki energiyasi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi (chunki massa kamayadi)", "O'zgarmaydi", "Dastlab ortib, keyin kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazning bosimi va hajmi bir vaqtda 2 martadan oshsa, uning ichki energiyasi necha marta oshadi?",
+      "a": ["2 marta", "4 marta", "8 marta", "O'zgarmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Adiabatik kengayishda gazning ichki energiyasi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi (ish bajarishi hisobiga)", "O'zgarmaydi", "Faqat bosimga bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gaz ustida izoxorik jarayon bajarilganda bosim ortsa, ichki energiya qanday o'zgaradi?",
+      "a": ["Kamayadi", "O'zgarmaydi", "Ortadi", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "pV diagrammadagi qaysi nuqtaga ideal gazning eng katta ichki energiyasi mos keladi?",
+      "a": ["p va V ko'paytmasi eng kichik bo'lgan nuqtaga", "p va V ko'paytmasi eng katta bo'lgan nuqtaga", "Faqat p katta bo'lgan nuqtaga", "Faqat V katta bo'lgan nuqtaga"],
+      "c": 1
+    },
+    {
+      "q": "O'zgarmas massali ideal gaz izobarik siqilganda uning ichki energiyasi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi (chunki T kamayadi)", "O'zgarmaydi", "Nolga tenglashadi"],
+      "c": 1
+    },
+    {
+      "q": "Ichki energiyaning Xalqaro birliklar sistemasi (XBS) dagi birligi nima?",
+      "a": ["Vatt (W)", "Paskal (Pa)", "Joul (J)", "Kelvin (K)"],
+      "c": 2
+    }
+  ]
+}

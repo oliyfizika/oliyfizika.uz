@@ -1,0 +1,114 @@
+{
+  "id": 23,
+  "title": "23-Mavzu | O‘zgarmas quvvat. FIK",
+  "subtitle": "Kamida 80% natija 24-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 24,
+  "questions": [
+    {
+      "text": "II-62 samolyoti har birining tortish kuchi 100 kN bo‘lgan to‘rt dvigatelga ega. Samolyotning 240 m/s tezligida dvigatellarning umumiy foydali quvvati (kW da) qanday?",
+      "answers": ["84000", "96000", "102000", "72000"],
+      "correct": 1
+    },
+    {
+      "text": "Massasi 2000 kg bo‘lgan avtomobil gorizontal yo‘lda 72 km/h tezlik bilan harakatlanadi. Harakatga qarshilik kuchi avtomobil og‘irligining 1/20 ini tashkil qiladi. Avtomobilning foydali quvvatini (kW da) aniqlang. g = 10 m/s^2.",
+      "answers": ["10", "15", "20", "25"],
+      "correct": 2
+    },
+    {
+      "text": "Qayiq eshkakchi bilan birga 0,6 m/s tezlikda harakatlanadi. Agar eshkakchi tomonidan erishiladigan quvvat 18 W ga teng bo‘lsa, suvning qarshilik kuchini aniqlang.",
+      "answers": ["30", "40", "20", "10"],
+      "correct": 0
+    },
+    {
+      "text": "Qiyaligi yo‘lning har 10 metrida 1 m ni tashkil qiluvchi yo‘l bo‘ylab 9 km/h tezlik bilan ko‘tarilayotgan gusenitsali traktor qanday foydali quvvatga (kW da) erishadi? Traktorning massasi 6 t. g = 10 m/s^2.",
+      "answers": ["10", "20", "30", "15"],
+      "correct": 3
+    },
+    {
+      "text": "36 km/h tezlik bilan harakatlanishda elektrovoz 60 kW quvvat sarflaydi. Agar elektrovozning FIK 80% ga teng bo‘lsa, uning tortish kuchini aniqlang.",
+      "answers": ["4800", "3600", "5400", "6000"],
+      "correct": 0
+    },
+    {
+      "text": "Quvvat sarfi 10 kW bo‘lgan nasos yordamida 500 m chuqurlikdagi quduqdan neft tortib chiqariladi. Agar nasos ishining bir minutida yer sirtiga 96 kg neft yetkazib berilsa, nasosning FIK (foizlarda) qanday? g = 10 m/s^2.",
+      "answers": ["60", "80", "90", "70"],
+      "correct": 1
+    },
+    {
+      "text": "Suv nasosi bir minutda 300 kg suvni 80 m balandlikka tekis yetkazib beradi. Agar nasosning FIK 80% ga teng bo‘lsa, nasosni harakatga keltiruvchi motorning quvvatini (kW da) aniqlang. g = 10 m/s^2.",
+      "answers": ["4", "8", "5", "6"],
+      "correct": 2
+    },
+    {
+      "text": "Ko‘tarma kran quvvati 10 kW bo‘lgan dvigatel yordamida harakatga keltiriladi. Agar dvigatelning FIK 80% bo‘lsa, 2 t massali yukni 50 m balandlikka tekis ko‘tarish uchun necha sekund talab qilinadi? g = 10 m/s^2.",
+      "answers": ["100", "150", "125", "200"],
+      "correct": 2
+    },
+    {
+      "text": "Agar tramvay harakat boshlanganidan keyin 5-chi sekundning oxirida 18 km/h tezlikka erishgan bo‘lsa, uning shu paytdagi quvvatini (kW da) aniqlang. Tramvayning massasi 10 t. Harakatga qarshilik inobatga olinmasin.",
+      "answers": ["50", "40", "60", "80"],
+      "correct": 0
+    },
+    {
+      "text": "1 t massali avtomobil joyidan qo‘zg‘aladi va tekis tezlanuvchan harakatlanib, 5 s ichida 50 m yo‘lni bosib o‘tadi. Avtomobil o‘z harakatining beshinchi sekundi oxirida qanday quvvatga (kW da) erishadi? Harakatga qarshilik hisobga olinmasin.",
+      "answers": ["60", "40", "80", "100"],
+      "correct": 2
+    },
+    {
+      "text": "6 kg massali jismning boshlang‘ich tezliksiz erkin tushish jarayonida dastlabki sekund ichida og‘irlik kuchi erishadigan o‘rtacha quvvatni toping. g = 10 m/s^2.",
+      "answers": ["300", "150", "450", "600"],
+      "correct": 0
+    },
+    {
+      "text": "3 kg massali jismga 36 N kuch qo‘ygan holda, uni yerdan vertikal yuqoriga ko‘tarishadi. Harakat boshlanganidan 2 s o‘tgach shu kuch qanday quvvatga erishadi? g = 10 m/s^2.",
+      "answers": ["120", "144", "160", "180"],
+      "correct": 1
+    },
+    {
+      "text": "3 kg massali jismga 42 N kuch qo‘ygan holda, uni yerdan vertikal yuqoriga ko‘tarishadi. Jism 2 m balandlikda bo‘lgan paytda shu kuch qanday quvvatga erishadi? g = 10 m/s^2.",
+      "answers": ["140", "150", "168", "180"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 24,5 kg bo‘lgan qum to‘ldirilgan paqirni ko‘chmas blok yordamida 10 m balandlikka tekis ko‘tarishda arqonga doimiy 250 N kuch qo‘yildi. FIK ni hisoblang.",
+      "answers": ["95%", "96%", "92%", "98%"],
+      "correct": 3
+    },
+    {
+      "text": "Ko‘chmas blok yordamida 50 kg massali yuk 3 m balandlikka ko‘tarildi. FIK 96% bo‘lsa, bajarilgan ishni toping.",
+      "answers": ["1,56 kJ", "2,1 kJ", "0,9 kJ", "1,2 kJ"],
+      "correct": 0
+    },
+    {
+      "text": "Ko‘chmas blok yordamida yuk 13 m balandlikka ko‘tarildi. Ko‘tarish davomida 20,7 kJ ish bajarildi. Mexanizmning FIK 94,2% bo‘lsa, ko‘tarilgan yuk massasini toping.",
+      "answers": ["100 kg", "150 kg", "200 kg", "120 kg"],
+      "correct": 1
+    },
+    {
+      "text": "600 N og‘irlikdagi yukni richag yordamida 1 m balandlikka ko‘tarildi. Bunda 350 N kuch qo‘yilgan uzun yelka 1,8 m ga pastladi. Richagning FIK ni aniqlang.",
+      "answers": ["90%", "92%", "95%", "98%"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 245 kg bo‘lgan yukni richag yordamida 6 sm balandlikka ko‘tarildi. Ko‘tarish jarayonida 500 N kuch qo‘yilgan uzun yelka 0,3 m ga pastladi. Richagning FIK ni aniqlang.",
+      "answers": ["98%", "95%", "94%", "96%"],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 6 t bo‘lgan yuk dvigatelining quvvati 6 kW bo‘lgan ko‘tarma kran yordamida 8 m balandlikka ko‘tarildi. FIK 80% bo‘lsa, ko‘tarish qancha vaqt davom etgan?",
+      "answers": ["80 s", "100 s", "120 s", "150 s"],
+      "correct": 1
+    },
+    {
+      "text": "Uzunligi 4,5 m, balandligi 1,5 m qiya taxta ustida 300 N og‘irlikdagi yashik 120 N kuch bilan tortib yuqoriga ko‘tarildi. FIK ni aniqlang.",
+      "answers": ["80%", "75%", "83,3%", "90%"],
+      "correct": 2
+    },
+    {
+      "text": "Dinamometrga bog‘langan 15 kg massali yuk qiya tekislik bo‘ylab yuqoriga tekis tortilganda dinamometr 40 N ni ko‘rsatdi. Agar tekislik uzunligi 1,8 m, balandligi 30 sm bo‘lsa, FIK ni aniqlang.",
+      "answers": ["60%", "62,5%", "65%", "50%"],
+      "correct": 1
+    }
+  ]
+}

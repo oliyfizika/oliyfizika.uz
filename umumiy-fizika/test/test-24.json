@@ -1,0 +1,89 @@
+{
+  "id": 24,
+  "title": "24-Mavzu | Bosim. Paskal qonuni",
+  "subtitle": "Kamida 80% natija 25-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 25,
+  "questions": [
+    {
+      "text": "Atmosfera tomga 20 MN kuch bilan ta’sir qilmoqda. Atmosfera bosimi 100 kPa bo‘lsa, tomning yuzasini toping (m2).",
+      "answers": ["20", "50", "200", "30"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 4 kg va yuzi 8 m2 bo‘lgan gilam polga qanday bosim beradi (Pa)?",
+      "answers": ["0,2", "0,5", "2", "5"],
+      "correct": 3
+    },
+    {
+      "text": "Nasos gidravlik pressga moyni 300 N/cm2 bosim bilan yuboradi. Katta porshenning kesim yuzi 900 cm2 bo‘lsa, u qanday kuch bilan ta’sir etadi (kN)?",
+      "answers": ["250", "90", "270", "300"],
+      "correct": 2
+    },
+    {
+      "text": "Rasmda uchta g‘isht stol ustiga to‘rt holatda qo‘yilgan. Qaysi holatda g‘ishtlar stolni kattaroq kuch bilan bosadi?",
+      "answers": ["1", "2", "3", "hamma holatlarda bir xil kuch bilan bosadi."],
+      "correct": 3
+    },
+    {
+      "text": "G‘isht stol ustiga rasmda tasvirlangandek 3 xil holatda qo‘yilgan. G‘ishtning qaysi holatida uning stolga bosimi eng katta?",
+      "answers": ["1", "2", "3", "hamma holatlarda bosim bir xil."],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 2 marta ortganda, doira shaklidagi sirtga biror kuchning bosimi qanday o‘zgaradi?",
+      "answers": ["2 marta ortadi.", "2 marta kamayadi.", "4 marta ortadi.", "4 marta kamayadi."],
+      "correct": 3
+    },
+    {
+      "text": "Bino bir nechta granit ustunlarga ega bo‘lib, har bir ustunning hajmi 9 m3 ga, asosining yuzi 1,4 m2 ga teng. Granitning zichligi 2800 kg/m3. Bitta ustun o‘z og‘irligi ta’sirida poydevorga qancha bosim (kPa) beradi?",
+      "answers": ["160", "200", "180", "220"],
+      "correct": 2
+    },
+    {
+      "text": "Blokka osilgan jismlar rasmdagi kabi muvozanatda turibdi. Katta yukning stol sirtiga tegib turgan qismining yuzi 0,4 m2 bo‘lsa, u stolga necha Pa bosim bermoqda? (M_katta = 5kg, m_kichik = 1kg)",
+      "answers": ["100", "400", "200", "500"],
+      "correct": 0
+    },
+    {
+      "text": "F = 120 N kuch S = 0,6 m2 yuzaga vertikalga nisbatan α = 37° burchak ostida ta’sir qilmoqda. Bu kuchning bosimini aniqlang (Pa).",
+      "answers": ["120", "300", "240", "160"],
+      "correct": 3
+    },
+    {
+      "text": "Qirrasining uzunligi 2 m bo‘lgan kub shaklidagi og‘irligi 20 N bo‘lib u qiya tekislik ustida tinch turibdi. Jismning qiya tekislik yuzasiga berayotgan bosimini aniqlang (Pa). (α = 53°)",
+      "answers": ["5", "4", "3", "2"],
+      "correct": 2
+    },
+    {
+      "text": "Paskal qonunining to‘g‘ri ta’rifini ko‘rsating.",
+      "answers": [
+        "Suyuqlik yoki gazlarga ko‘rsatilgan tashqi bosim ularning hamma nuqtalariga o‘zgarishsiz uzatiladi.",
+        "Muvozanatdagi barcha jismlarga berilgan tashqi bosim hamma tomonga bir xil uzatiladi.",
+        "Suyuqlikka botirilgan jism o‘z og‘irligini qisman yo‘qotadi.",
+        "Atmosfera og‘irligi tufayli yerga bosim bilan ta’sir etadi."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Berk idishdagi suyuqliklar va gazlar o‘zlariga berilgan tashqi bosimni ...",
+      "answers": [
+        "shu bosim yo‘nalishi bo‘yicha uzatadi.",
+        "hamma yo‘nalishlarda bir xil uzatadi.",
+        "shu bosimga tik yo‘nalish bo‘yicha uzatadi.",
+        "ta’sir etuvchi kuchga qarama-qarshi yo‘nalishda uzatadi."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "... ko‘rsatilgan tashqi bosim barcha yo‘nalishlarda bir xil uzatiladi.",
+      "answers": ["faqat suyuqliklarda.", "faqat gazlarda.", "gazlar va suyuqliklarda.", "qattiq jismlarda."],
+      "correct": 2
+    },
+    {
+      "text": "Ichiga havo qamalgan koptokni siqsak, bosim qayerda ko‘proq ortadi?",
+      "answers": ["kuch yo‘nalishida.", "barcha nuqtasida.", "pastki qismida.", "yuqori qismida."],
+      "correct": 1
+    }
+  ]
+}

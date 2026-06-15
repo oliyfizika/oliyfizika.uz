@@ -1,0 +1,54 @@
+{
+  "id": 28,
+  "title": "28-Mavzu | Gidravlik press",
+  "subtitle": "Kamida 80% natija 29-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 29,
+  "questions": [
+    {
+      "text": "Gidravlik press katta porshenining yuzi 5 dm2, kichik porsheniniki esa 20 cm2 ga teng. Press kichik porshenini 500 N kuch bilan bossak, katta porshenida qancha kuch hosil bo‘ladi (kN)?",
+      "answers": ["20", "30", "12,5", "25"],
+      "correct": 2
+    },
+    {
+      "text": "Gidravlik pressning 10 cm2 yuzaga ega bo‘lgan kichik porsheniga 100 N kuch ta’sir etsa, yuzi 1 m2 bo‘lgan katta porshenida qanday kuch paydo bo‘ladi (N)?",
+      "answers": ["100000", "10000", "1000", "100"],
+      "correct": 0
+    },
+    {
+      "text": "Gidravlik press katta porshenining yuzi 375 cm2. Uning kichik porsheniga 160 N kuch bilan ta’sir qilib, og‘irligi 12 kN bo‘lgan yukni ko‘tarish uchun kichik porshenning yuzi qanday (cm2) bo‘lishi kerak?",
+      "answers": ["5", "8", "4", "2,5"],
+      "correct": 0
+    },
+    {
+      "text": "Gidravlik domkrat kichik porshenining yuzi 2,4 cm2 bo‘lib, unga ta’sir qiluvchi kuch 1000 N. Katta porshen yuzi 2880 cm2 bo‘lsa, bu domkrat necha tonna massali yukni ko‘tarishi mumkin?",
+      "answers": ["5", "10", "120", "100"],
+      "correct": 2
+    },
+    {
+      "text": "Rasmda tasvirlangan sistemada katta porshen siljimasligi uchun uning ustiga qanday yuk qo‘yilishi lozim (kg)? S2 = 4,5S1 (kichik porshendagi yuk 5 kg).",
+      "answers": ["2,5", "5", "10", "22,5"],
+      "correct": 3
+    },
+    {
+      "text": "Gidravlik press kichik porshenining yuzi 8 cm2, katta porsheniniki 800 cm2. Kichik porshenga 600 N kuch berilganda, katta porshendan 54 kN kuch olindi. Ishqalanish bo‘lmaganda va ishqalanish bo‘lganda, shu press yordamida kuchni necha marta oshirish mumkin bo‘ladi?",
+      "answers": ["67,5; 75", "90; 100", "100; 90", "75; 67,5"],
+      "correct": 1
+    },
+    {
+      "text": "Gidravlik press kichik porshenining yuzi 4 cm2, kattasiniki esa 500 cm2. Agar kichik porshenni 25 cm/s tezlik bilan tushirsak, katta porshen qanday tezlik bilan ko‘tariladi (cm/s)?",
+      "answers": ["1", "0,6", "0,4", "0,2"],
+      "correct": 3
+    },
+    {
+      "text": "Gidravlik pressning kichik porsheni 60 N kuch ta’siri ostida 15 cm pastga tushdi. Bunda katta porshen 5 cm yuqoriga ko‘tarilsa, katta porshenga necha Nyuton kuch ta’sir qilgan?",
+      "answers": ["600", "180", "220", "100"],
+      "correct": 1
+    },
+    {
+      "text": "Gidravlik press kichik porsheniga yelkalari 1:5 nisbatda bo‘lgan richag yordamida ta’sir ko‘rsatiladi. Agar gidravlik press porshenlarining yuzalari 4 marta farq qilsa, ushbu mexanizm kuchdan umumiy qancha yutuq beradi?",
+      "answers": ["25", "15", "10", "20"],
+      "correct": 3
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": 34,
+  "title": "34 -Mavzu | To‘lqin uzunligi",
+  "subtitle": "Kamida 80% natija Molekulyar fizika bo'limiga kiruvchi 35-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 35,
+  "questions": [
+    {
+      "text": "To‘lqin uzunligi qanday harf bilan belgilanadi?",
+      "answers": ["ν", "λ", "T", "v"],
+      "correct": 1
+    },
+    {
+      "text": "To‘lqin uzunligi deb nimaga aytiladi?",
+      "answers": [
+        "Bir sekunddagi tebranishlar soniga",
+        "To‘lqinning tarqalish tezligiga",
+        "Bir xil fazada tebranayotgan eng yaqin nuqtalar orasidagi masofaga",
+        "Tebranish amplitudasiga"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "To‘lqin uzunligining SI dagi birligi qaysi?",
+      "answers": ["Hz", "m", "s", "m/s"],
+      "correct": 1
+    },
+    {
+      "text": "To‘lqin tezligi 24 m/s, chastotasi 6 Hz bo‘lsa, to‘lqin uzunligini toping (m).",
+      "answers": ["2", "3", "4", "6"],
+      "correct": 2
+    },
+    {
+      "text": "To‘lqin uzunligi 5 m, chastotasi 4 Hz bo‘lsa, to‘lqin tezligini toping (m/s).",
+      "answers": ["10", "15", "20", "25"],
+      "correct": 2
+    },
+    {
+      "text": "To‘lqin uzunligi 8 m, tezligi 40 m/s bo‘lsa, chastotani toping (Hz).",
+      "answers": ["2", "4", "5", "8"],
+      "correct": 2
+    },
+    {
+      "text": "To‘lqin uzunligini hisoblash formulasi qaysi?",
+      "answers": [
+        "λ = ν/v",
+        "λ = v·ν",
+        "λ = v/ν",
+        "λ = T/v"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "To‘lqin chastotasi 2 marta ortsa, tarqalish tezligi o‘zgarmasa, to‘lqin uzunligi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi",
+        "4 marta ortadi",
+        "2 marta kamayadi",
+        "O‘zgarmaydi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "To‘lqin uzunligi 12 m, davri 3 s bo‘lsa, to‘lqin tezligini toping (m/s).",
+      "answers": ["2", "4", "6", "8"],
+      "correct": 1
+    },
+    {
+      "text": "To‘lqin tezligi 18 m/s va davri 2 s bo‘lsa, to‘lqin uzunligi qanday (m)?",
+      "answers": ["9", "18", "20", "36"],
+      "correct": 3
+    },
+    {
+      "text": "Bir xil fazada tebranayotgan qo‘shni ikki cho‘qqi orasidagi masofa 7 m bo‘lsa, to‘lqin uzunligini toping (m).",
+      "answers": ["3,5", "7", "14", "21"],
+      "correct": 1
+    },
+    {
+      "text": "To‘lqin uzunligi 0,4 m va chastotasi 850 Hz bo‘lsa, tovushning tezligini toping (m/s).",
+      "answers": ["170", "340", "680", "850"],
+      "correct": 1
+    },
+    {
+      "text": "Elektromagnit to‘lqinning chastotasi 150 MHz bo‘lsa, uning uzunligini toping (m). c = 3·10⁸ m/s.",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Suv to‘lqinining uzunligi 3 m, tarqalish tezligi 12 m/s bo‘lsa, tebranish davrini toping (s).",
+      "answers": ["0,25", "0,5", "1", "4"],
+      "correct": 0
+    },
+    {
+      "text": "To‘lqin uzunligi 6 m bo‘lgan to‘lqin 15 sekundda 180 m masofani bosib o‘tdi. Chastotani toping (Hz).",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    }
+  ]
+}

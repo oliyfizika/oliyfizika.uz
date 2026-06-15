@@ -1,0 +1,169 @@
+{
+  "id": 2,
+  "title": "2-Mavzu | To‘g‘ri chiziqli tekis harakat testi",
+  "subtitle": "Kamida 80% natija 3-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 3,
+  "questions": [
+    {
+      "text": "Qanday harakat to‘g‘ri chiziqli tekis harakat bo‘ladi?",
+      "answers": [
+        "Teng vaqt oraliqlarida bir xil masofaga ko‘chuvchi va trayektoriyasi to‘g‘ri chiziqdan iborat harakat",
+        "Trayektoriyasi to‘g‘ri chiziqdan iborat harakat",
+        "Hech qanday tezlanishga ega bo‘lmagan harakat",
+        "Teng vaqt oraliqlarida teng masofalar o‘tuvchi har qanday harakat"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "To‘g‘ri chiziqli tekis harakatda tezlik vektorining qanday kattaliklari o‘zgarmaydi?",
+      "answers": [
+        "Moduli tekis oshib, yo‘nalishi o‘zgarmaydi",
+        "Moduli va yo‘nalishi o‘zgarmas saqlanadi",
+        "Moduli va yo‘nalishi o‘zgarib turadi",
+        "Moduli o‘zgarmas bo‘lib, yo‘nalishi uzluksiz o‘zgaradi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "918 km/h tezlik necha m/s bo‘ladi?",
+      "answers": [
+        "260",
+        "240",
+        "250",
+        "255"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Uzunligi 9 m bo‘lgan ip boshidan jo‘nagan chumoli ip oxiriga 5 minutda yetdi. Chumolining tezligini toping.",
+      "answers": [
+        "1,8 cm/s",
+        "3 cm/s",
+        "3,5 cm/s",
+        "4,5 cm/s"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Uzunligi 200 m bo‘lgan poyezd 10 m/s tezlik bilan 300 m tunnelga kirib bormoqda. Necha sekunddan keyin poyezd tunneldan butunlay chiqib ketadi?",
+      "answers": [
+        "50",
+        "30",
+        "25",
+        "20",
+        "10"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Birinchi avtomobil 4S masofani 2t vaqtda 2v tezlik bilan bosib o‘tdi. Ikkinchi avtomobil 3S yo‘lni 2t vaqtda bosib o‘tsa, uning tezligini toping.",
+      "answers": [
+        "2.25v",
+        "2.5v",
+        "1.5v",
+        "0.5v",
+        "v"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Uzunligi 300 m bo‘lgan, 36 km/h tezlik bilan harakatlanayotgan mashinalar qatori 60 m ko‘prikdan necha sekundda o‘tib ketadi?",
+      "answers": [
+        "30",
+        "60",
+        "90",
+        "120"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Ikki jismning harakat tenglamalari x₁ = 25 + t, x₂ = 85 - 0.5t. Ularning uchrashish vaqti va joyini toping.",
+      "answers": [
+        "40 s dan so‘ng, koordinata boshidan 65 m masofada",
+        "18 s dan so‘ng, koordinata boshidan 114 m masofada",
+        "10 s dan so‘ng, koordinata boshidan 5 m masofada",
+        "30 s dan so‘ng, koordinata boshidan 60 m masofada"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Grafik bo‘yicha bolaning t₁ = 1 s va t₂ = 5 s oralig‘ida bosib o‘tgan yo‘lini aniqlang.",
+      "image": "../rasmlar3/test3-1.png",
+      "answers": [
+        "10 m",
+        "20 m",
+        "5 m",
+        "15 m"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Grafik bo‘yicha t = 4.28 s vaqt momentidagi tezlik qanday?",
+      "image": "../rasmlar3/test3-1.png",
+      "answers": [
+        "5 m/s",
+        "12 m/s",
+        "10 m/s",
+        "6 m/s"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Uchta moddiy nuqtadan qaysi birining tezligi eng katta?",
+      "image": "../rasmlar3/test3-2.png",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "Hammasiniki bir xil"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Qaysi grafik jism o‘tgan yo‘lning vaqtga bog‘lanishini ifodalay olmaydi?",
+      "image": "../rasmlar3/test3-3.png",
+      "answers": [
+        "II, III",
+        "I, II, III",
+        "III",
+        "I, IV"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Grafikdan foydalanib OX o‘q bo‘ylab harakat qilayotgan moddiy nuqtaning 5 s da bosib o‘tgan yo‘lini aniqlang.",
+      "image": "../rasmlar3/test3-4.png",
+      "answers": [
+        "50 m",
+        "32.5 m",
+        "0 m",
+        "10 m"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Jism koordinatasining vaqtga bog‘liqlik grafigi uchun harakat tenglamasini yozing.",
+      "image": "../rasmlar3/test3-5.png",
+      "answers": [
+        "x = -2 + 4t",
+        "x = 6 + 3t",
+        "x = -6 + 3t",
+        "x = 6 - 2t"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Grafikning qaysi qismida jismning tezligi eng katta bo‘lgan?",
+      "image": "../rasmlar3/test3-6.png",
+      "answers": [
+        "III",
+        "II",
+        "I",
+        "IV"
+      ],
+      "correct": 2
+    }
+  ]
+}
+

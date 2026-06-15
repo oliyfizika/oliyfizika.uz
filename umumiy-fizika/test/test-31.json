@@ -1,0 +1,179 @@
+{
+  "id": 31,
+  "title": "31-Mavzu | Garmonik tebranishlar",
+  "subtitle": "Kamida 80% natija 32-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 32,
+  "questions": [
+    {
+      "text": "Moddiy nuqtaning garmonik tebranish tenglamasi x = 0,04 sin(4πt + π) (m) bo‘lsa, uning chastotasi (Hz) toping.",
+      "answers": ["2", "4", "6", "3"],
+      "correct": 0
+    },
+    {
+      "text": "Garmonik tebranishlar tenglamasi x = 0,01 cos 10t ([x]=m, [t]=s) dan foydalanib, bu tebranishlarning chastotasini aniqlang (Hz).",
+      "answers": ["5/π", "10/π", "5", "10"],
+      "correct": 0
+    },
+    {
+      "text": "Harakat tenglamasi x = 0,06 cos 100πt (m) ko‘rinishiga ega. Tebranish chastotasi qanday (Hz)?",
+      "answers": ["50", "4", "25", "20"],
+      "correct": 0
+    },
+    {
+      "text": "Garmonink tebranayotgan jismning harakat tenglamasi x = 0,5 cos 10πt. Jism tebranishlarining chastotasi necha gers?",
+      "answers": ["10", "50", "0,5", "5"],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 0,1 kg bo‘lgan prujinali mayatnikning tebranish qonuni x = 0,5 sin 10t (m) ko‘rinishga ega. Prujinaning bikrligi qanday (N/m)?",
+      "answers": ["2", "10", "5", "6,4"],
+      "correct": 1
+    },
+    {
+      "text": "Kosinus qonuni bo‘yicha garmonik tebranayotgan nuqtaning π/3 fazadagi siljishi 1 sm bo‘lsa, 5π/3 fazadagi siljishi qanday bo‘ladi (sm)?",
+      "answers": ["0,5", "1", "1,25", "2,5"],
+      "correct": 1
+    },
+    {
+      "text": "Amplitudasi 1 mm, chastotasi 1000 Hz, boshlang‘ich fazasi π/3 bo‘lgan garmonik tebranishning tenglamasini tuzing (m).",
+      "answers": ["x = 0,001 sin(2000πt)", "x = sin(1000πt + π/3)", "x = cos(1000πt + π/3)", "x = 0,001 cos(2000πt + π/3)"],
+      "correct": 3
+    },
+    {
+      "text": "Amplitudasi 5 sm va davri 0,05 s bo‘lgan garmonik tebranishning tenglamasini tuzing (m).",
+      "answers": ["x = 0,5 cos 40πt", "x = 0,05 sin 20πt", "x = 0,05 cos 20πt", "x = 0,05 sin 40πt"],
+      "correct": 3
+    },
+    {
+      "text": "Garmonik tebranish fazasi ifodasini ko‘rsating.",
+      "answers": ["cos(ωt + α)", "ωt + α", "sin(ωt + α)", "ωt"],
+      "correct": 1
+    },
+    {
+      "text": "Keltirilganlar ichidan garmonik tebranishni xarakterlovchi ifodalarni toping: 1) x = A sin(ωt + α); 2) x = x0 + v0t + at^2/2; 3) x = A cos(ωt + α); 4) x = F/k.",
+      "answers": ["1, 2", "1, 3", "2, 3", "3, 4"],
+      "correct": 1
+    },
+    {
+      "text": "OX o‘qi bo‘ylab yuk tebranishi x = 3 cos(2t + π/2) tenglama bilan ifodalanadi. t = 3 s paytdagi tebranish fazasi aniqlansin.",
+      "answers": ["6", "3", "6 + π/2", "π/2"],
+      "correct": 2
+    },
+    {
+      "text": "Garmonik tebranish tenglamasi x = 0,02 cos πt ko‘rinishga ega, 0,25 s dan keyingi siljishdan 1,25 s dan keyingi siljish ayirmasini toping (sm).",
+      "answers": ["4,2", "1,4", "28", "2,8"],
+      "correct": 3
+    },
+    {
+      "text": "Keltirilgan grafikdan foydalanib, t = 0,6 s paytdagi tebranish fazasini aniqlang.",
+      "answers": ["0,6π", "1,2π", "0,3π", "0,4π"],
+      "correct": 0
+    },
+    {
+      "text": "Garmonik tebranishlarning amplitudasi 5 sm, boshlang‘ich fazasi 3π/2 ga teng. Tebranishlar soni minutiga 120 marta tebranadi. Tebranish tenglamasini ko‘rsating (m).",
+      "answers": ["x = 0,05 cos(4πt + 3π/2)", "x = 5 cos(2πt + 3π/2)", "x = 0,05 sin 4πt", "x = 5 sin(4πt + π/2)"],
+      "correct": 0
+    },
+    {
+      "text": "Jism OX o‘qi bo‘ylab x(t) = 6π cos(π/2 t + π/4) (m) qonunga muvofiq tebranadi. Tebranishlar siklik chastotasini (rad/s) ko‘rsating.",
+      "answers": ["π/2", "π/4", "6π", "π"],
+      "correct": 0
+    },
+    {
+      "text": "Agar tebranishlar sinuslar qonuniga asosan sodir bo‘lsa, siljish qanday fazalarda modul bo‘yicha amplitudaning taqriban 0,87 qismiga teng bo‘ladi?",
+      "answers": ["π/3; 2π/3; 4π/3; 5π/3", "π/4; π/2; 3π/4; 7π/4", "π/6; π/3; π/2; 2π/3", "π/2; π; 3π/2"],
+      "correct": 0
+    },
+    {
+      "text": "Amplitudalari 5 sm va 2 sm bo‘lgan ikki garmonik tebranish bir xil yo‘nalishda va davrda (1,2 s) sodir bo‘lmoqda. Fazalar bir xil bo‘lganda boshlangandan 0,1 s keyingi natijaviy siljishni aniqlang (m).",
+      "answers": ["0,2 · 10^-2", "1,5 · 10^-3", "7 · 10^-2", "3,5 · 10^-2"],
+      "correct": 3
+    },
+    {
+      "text": "Tebranishlar amplitudasi 10 sm, chastotasi 0,5 Hz. Qancha vaqtdan keyin siljish 7,1 sm bo‘ladi? (Tebranish sinus qonuniga bo‘ysunadi).",
+      "answers": ["0,5 va 1,5 s", "0,25 va 2,4 s", "0,4 va 1,75 s", "0,25 va 1,75 s"],
+      "correct": 3
+    },
+    {
+      "text": "Tebranish davri 36 s bo‘lgan moddiy nuqta muvozanat vaziyatidan yarim amplitudagacha qancha vaqtda siljiydi (s)?",
+      "answers": ["9", "8", "4,5", "3"],
+      "correct": 3
+    },
+    {
+      "text": "Agar mayatnik 12 s davr bilan garmonik tebransa, chetki vaziyatidan amplitudaning yarmigacha bo‘lgan masofani necha sekundda bosib o‘tadi?",
+      "answers": ["2", "4", "6", "3"],
+      "correct": 1
+    },
+    {
+      "text": "Tebranayotgan jism amplituda yarmidan eng chekka nuqtagacha davrning qanday qismida siljiydi?",
+      "answers": ["T/12", "T/3", "T/4", "T/6"],
+      "correct": 3
+    },
+    {
+      "text": "Tebranayotgan jism muvozanat vaziyatidan amplitudagacha bo‘lgan masofani qancha vaqtda bosib o‘tadi?",
+      "answers": ["T/12", "T/3", "T/4", "T/8"],
+      "correct": 2
+    },
+    {
+      "text": "Tebranayotgan jism muvozanat vaziyatidan amplitudagacha borib yana muvozanat vaziyatiga qaytib kelishi uchun qancha vaqt ketadi? Tebranish davri 6 s.",
+      "answers": ["3", "6", "2", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Garmonik tebranayotgan jism muvozanat vaziyatidan chetki vaziyatgacha bo‘lgan masofaning birinchi yarmini davrning qanday qismida o‘tadi?",
+      "answers": ["1/6", "1/4", "1/12", "1/8"],
+      "correct": 2
+    },
+    {
+      "text": "Tebranayotgan jism tezligining tenglamasi ϑ = 5 sin(3t + π/3) m/s bo‘lsa, jism siljishining boshlang‘ich fazasi qanday?",
+      "answers": ["3t + π/3", "3t", "5", "-π/6"],
+      "correct": 3
+    },
+    {
+      "text": "Nuqtaning muvozanat vaziyatidan 4 sm uzoqlikdagi tezligi 6 sm/s, 3 sm uzoqlikdagi tezligi 8 sm/s ga teng. Tebranish amplitudasini toping (sm).",
+      "answers": ["4", "5", "6,7", "8"],
+      "correct": 1
+    },
+    {
+      "text": "Garmonik tebranayotgan nuqta tezligi vaqtga bog‘liq ravishda qanday o‘zgaradi?",
+      "answers": ["o‘zgarmas saqlanadi", "vaqtga to‘g‘ri proporsional", "sinus yoki kosinus qonuni bo‘yicha", "vaqtga teskari proporsional"],
+      "correct": 2
+    },
+    {
+      "text": "Mayatnikning tebranish qonuni x = 0,1 sin(πt + π) [m] ko‘rinishga ega. Tezlikning amplitudaviy qiymatini toping (m/s).",
+      "answers": ["0,1", "0,1π", "1", "π"],
+      "correct": 1
+    },
+    {
+      "text": "Moddiy nuqta koordinatasi x = 2 + 3 sin(4πt + π/2) qonun bo‘yicha o‘zgarmoqda. t = 0 vaqtda nuqta tezligi qanday bo‘lgan?",
+      "answers": ["5,3", "37,7", "12,0", "0"],
+      "correct": 3
+    },
+    {
+      "text": "Zarraning muvozanat vaziyatidagi tezligi 50 sm/s va amplitudasi 10 mm bo‘lsa, siljish 6 mm bo‘lgandagi tezligi (sm/s) qanday bo‘ladi?",
+      "answers": ["300", "500", "400", "600"],
+      "correct": 2
+    },
+    {
+      "text": "Garmonik tebranayotgan jismning siljishi moduli bo‘yicha eng katta qiymatga erishgan momentda tezligi qanday bo‘ladi?",
+      "answers": ["eng katta", "0 ga teng", "o‘rta qiymatda", "aniqlab bo‘lmaydi"],
+      "correct": 1
+    },
+    {
+      "text": "Prujinaga osilgan 5 kg massali yuk 0,25 s davr bilan tebranmoqda va bir davrda 30 sm yo‘l bosmoqda. Yukning maksimal tezlanishini (m/s^2) toping.",
+      "answers": ["37,5", "47,3", "60", "9,6"],
+      "correct": 1
+    },
+    {
+      "text": "Matematik mayatnikning tebranish qonuni x = 0,1 sin(10πt + π) (m) ko‘rinishga ega. Tezlanishning amplitudaviy qiymatini toping (m/s^2).",
+      "answers": ["10π^2", "100", "10", "π^2"],
+      "correct": 0
+    },
+    {
+      "text": "Mayatnik x = A sin 100πt qonun bo‘yicha tebranmoqda. Uning tezlanish qonuni qanday ifodalanadi?",
+      "answers": ["ax = 10A cos 100πt", "ay = -10^4Aπ^2t", "ax = 500Ax", "ax = -10^4π^2x"],
+      "correct": 3
+    }
+  ]
+}

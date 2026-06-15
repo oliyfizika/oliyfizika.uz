@@ -1,0 +1,164 @@
+{
+  "id": 29,
+  "title": "29-Mavzu | Arximed qonuni",
+  "subtitle": "Kamida 80% natija 30-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 30,
+  "questions": [
+    {
+      "text": "Suvda to’liq cho’kkan, 0,5 m3 hajmli toshga ta’sir etadigan itarib chiquvchi kuchni (kN da) aniqlang. g = 10 m/s2.",
+      "answers": ["10", "5", "15", "2,5"],
+      "correct": 1
+    },
+    {
+      "text": "Havoda 50 dm3 hajmli jismga ta’sir qiladigan arximed kuchi (mN da) qanchaga teng? Havoning zichligi 1,29 kg/m3. g = 10 m/s2.",
+      "answers": ["645", "500", "129", "322"],
+      "correct": 0
+    },
+    {
+      "text": "Havodagi og’irligi 350 N bo’lgan toshni suv ostida ushlab turish uchun qanday kuch qo’yish kerak? Tosh moddasining zichligi 2500 kg/m3.",
+      "answers": ["140", "280", "210", "175"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 2 kg va hajmi 0,001 m3 bo’lgan jism ko’l ichida 5 m chuqurlikda joylashgan. Uni suv sirtidan 5 m balandlikkacha sekinlik bilan ko’tarish uchun qanday ish bajarish kerak? g = 10 m/s2.",
+      "answers": ["100", "200", "75", "150"],
+      "correct": 3
+    },
+    {
+      "text": "Alyuminiy bo’lagining havodagi og’irligi 270 N, glitserindagi og’irligi esa 144 N. Agar alyuminiyning zichligi 2700 kg/m3 bo’lsa, glitserinning zichligini aniqlang.",
+      "answers": ["1260", "1000", "800", "1150"],
+      "correct": 0
+    },
+    {
+      "text": "Jismning suvdagi og’irligi havodagi og’irligidan 2 marta kichik. Jism moddasining zichligi (g/cm3 da) qanday?",
+      "answers": ["1,5", "2,5", "2", "3"],
+      "correct": 2
+    },
+    {
+      "text": "Agar qandaydir bir jismning zichligi 800 kg/m3 bo’lgan suyuqlikdagi og’irligi havodagi og’irligiga qaraganda 3 marta kichik bo’lsa, jismning zichligi shu suyuqlik zichligidan qanchaga katta?",
+      "answers": ["400", "800", "1200", "600"],
+      "correct": 0
+    },
+    {
+      "text": "Bir jismning zichligi suvning zichligidan 1,25 marta katta. Shu jismning suvdagi og’irligi havodagi og’irligidan necha marta kichik bo’ladi?",
+      "answers": ["4", "5", "1,25", "2,5"],
+      "correct": 1
+    },
+    {
+      "text": "Metall bo’lagining suvdagi og’irligi 6800 N, benzindagi og’irligi esa 7100 N. Benzinning zichligini aniqlang. Metallning zichligi 7800 kg/m3.",
+      "answers": ["800", "900", "700", "750"],
+      "correct": 2
+    },
+    {
+      "text": "Jism havoda 3 N, suvda 1,8 N va noma’lum zichlikdagi suyuqlikda esa 2,04 N og’irlikka ega. Shu noma’lum suyuqlikning zichligi qanday?",
+      "answers": ["600", "800", "1000", "900"],
+      "correct": 1
+    },
+    {
+      "text": "Probka bo’lagi havoda 1 N og’irlikka, metall bo’lagi esa 10 N og’irlikka ega. Agar bu bo’laklarni ip bilan bog’lab kerosinga to’liq botirilsa, ularning umumiy og’irligi 5 N bo’ladi. Probkaning zichligini toping. Kerosinning zichligi 800 kg/m3, metallning zichligi 4000 kg/m3.",
+      "answers": ["200", "400", "150", "300"],
+      "correct": 0
+    },
+    {
+      "text": "Kvars ichiga joylangan sof oltin u bilan birgalikda dinamometr prujinasini 2,26 N kuch bilan cho’zadi. Oltin suvga botirilganda unga 0,2 N itarib chiquvchi kuch ta’sir qiladi. Oltinning massasini (g da) toping. Oltinning zichligi 19,3 g/cm3, kvarsning zichligi 3,3 g/cm3. g = 10 m/s2.",
+      "answers": ["100", "193", "226", "150"],
+      "correct": 1
+    },
+    {
+      "text": "Oltin va kumush qotishmasidan tayyorlangan toj tarkibidagi oltinning massasini (g da) toping. Tojning havodagi og’irligi 25,4 N, suvdagisi esa 23,4 N. Oltinning zichligi 19,3 g/cm3, kumushniki - 10,5 g/cm3. g = 10 m/s2.",
+      "answers": ["500", "800", "965", "1200"],
+      "correct": 2
+    },
+    {
+      "text": "1 cm3 hajmli shisha sharcha suvda tekis tushib bormoqda. Sharchaning 10 m ga ko’chishida 0,17 J issiqlik ajraladi. Shishaning zichligini toping. g = 10 m/s2.",
+      "answers": ["2500", "2700", "2000", "3000"],
+      "correct": 1
+    },
+    {
+      "text": "Suvli idish ichida shar shunday yotibdiki, bunda uning yarmi suvda joylashgan va u idish tubiga tegib turadi. Agar sharning havodagi og’irligi 8 N bo’lsa, u idish tubiga qanday kuch bilan bosadi? Shar moddasining zichligi 800 kg/m3.",
+      "answers": ["5", "3", "4", "2"],
+      "correct": 1
+    },
+    {
+      "text": "60 g massali bir jinsli sharcha bo’sh stakanning ostida yotibdi. Stakanga suyuqlik shunday quyiladiki, bunda sharcha hajmining suyuqlikka botgan qismi uning umumiy hajmidan 6 marta kichik bo’lib qoladi. Suyuqlikning zichligi sharcha materialining zichligidan 3 marta katta. Sharchaning stakan tubiga bosim kuchini (mN da) toping. g = 10 m/s2.",
+      "answers": ["300", "600", "150", "450"],
+      "correct": 0
+    },
+    {
+      "text": "Uzunligi 2 m va ko’ndalang kesim yuzasi 100 cm2 bo’lgan alyuminiyli silindr suv havzasidan o’zgarmas tezlik bilan asta-sekin tortib chiqariladi. Havzadan silindr uzunligining 0,25 ga teng qismi chiqqan paytda arqon uzilib ketdi. Arqonning maksimal tarangligini aniqlang. Alyuminiyning zichligi 2700 kg/m3, g = 10 m/s2.",
+      "answers": ["540", "390", "450", "300"],
+      "correct": 1
+    },
+    {
+      "text": "Ipning bir uchi tubga, ikkinchisi esa probkali po’kakka mahkamlangan. Bunda po’kakning butun hajmining 75% i suvga botgan. Agar po’kakning massasi 2 kg ga teng bo’lsa, ipning taranglik kuchini aniqlang. Po’kakning zichligi 300 kg/m3, g = 10 m/s2.",
+      "answers": ["20", "40", "30", "50"],
+      "correct": 2
+    },
+    {
+      "text": "Ichida suvi bor silindrik idishda muz parchasi ip bilan idish tubiga tortilgan holda suzib yuribdi. Muz parchasi erigach, suv sathi 1 cm ga pasaydi. Ipning taranglik kuchi qanday bo’lgan? Idish tubining yuzasi 100 cm2. g = 10 m/s2.",
+      "answers": ["1", "10", "0,1", "5"],
+      "correct": 0
+    },
+    {
+      "text": "Yuzi 300 cm2 bo’lgan suvli silindrik idishning tubida 3000 kg/m3 zichlikdagi materialdan tayyorlangan, asosining yuzi 100 cm2 va balandligi 40 cm bo’lgan silindr turibdi. Agar suv qatlamining boshlang’ich qalinligi 30 cm bo’lsa, silindrni suvdan chiqarib olish uchun qanday ish bajarish kerak? g = 10 m/s2.",
+      "answers": ["21", "42", "10", "30"],
+      "correct": 0
+    },
+    {
+      "text": "Yuzi 400 cm2 bo’lgan suvli silindrik idishning tubida 2500 kg/m3 zichlikdagi materialdan tayyorlangan, asosining yuzi 100 cm2 va balandligi 40 cm bo’lgan silindr turibdi. Agar suv qatlamining boshlang’ich qalinligi 60 cm bo’lsa, silindrni suvdan chiqarib olish uchun qanday ish bajarish kerak? g = 10 m/s2.",
+      "answers": ["20", "40", "36", "54"],
+      "correct": 2
+    },
+    {
+      "text": "Yupqa bir jinsli tayoqcha yuqori uchidan sharnirli mahkamlangan. Tayoqchaning pastki qismi suvga botirilgan. Tayoqcha suv yuzasiga nisbatan qiya joylashib, uning yarmi suv ichida bo’lgan vaqtda muvozanat vaziyati ro’y beradi. Tayoqcha yasalgan materialning zichligi qanday?",
+      "answers": ["500", "750", "800", "600"],
+      "correct": 1
+    },
+    {
+      "text": "Balandligi 8 cm va radiusi 3 cm bo’lgan silliq stakan ichiga 12 cm uzunlikdagi va 100 g massali bir jinsli tayoqcha qo’yildi. Stakan zichligi tayoqcha materialining zichligidan ikki marta kichik bo’lgan suyuqlik bilan to’ldirildi. Tayoqcha stakanning chetini qanday kuch (mN da) bilan bosadi? g = 10 m/s2.",
+      "answers": ["235", "470", "117", "300"],
+      "correct": 0
+    },
+    {
+      "text": "4 cm radiusli silliq baland stakan ichiga uzunligi 10 cm va massasi 60 g bo’lgan tayoqcha qo’yildi, so’ngra stakanga 3 cm balandlikkacha zichligi tayoqcha materialining zichligidan bir yarim marta katta bo’lgan suyuqlik quyildi. Tayoqchaning yuqori uchi stakanning devoriga qanday kuch bilan (mN da) bosadi? g = 10 m/s2.",
+      "answers": ["125", "500", "250", "375"],
+      "correct": 2
+    },
+    {
+      "text": "Yaxlit jism suvda suzmoqda, bunda jism hajmining 3/4 qismi suvga botgan. Jismning hajmi 0,1 m3. Jismga ta’sir etuvchi og’irlik kuchini aniqlang. g = 10 m/s2.",
+      "answers": ["1000", "500", "750", "250"],
+      "correct": 2
+    },
+    {
+      "text": "Yog’och bo’lagi hajmining 3/4 qismi suvga botgan holda suvda suzmoqda. Yog’och qanday zichlikka ega?",
+      "answers": ["750", "800", "600", "500"],
+      "correct": 0
+    },
+    {
+      "text": "Hajmi 0,0002 m3 bo’lgan bir jinsli jism zichligi jism materiali zichligidan 4 marta katta bo’lgan suyuqlikda suzmoqda. Jismning qanday hajmi (cm3 da) suyuqlik sirtidan chiqib turadi?",
+      "answers": ["50", "100", "150", "200"],
+      "correct": 2
+    },
+    {
+      "text": "Zichligi 800 kg/m3 bo’lgan jism zichligi 1000 kg/m3 bo’lgan suyuqlikda suzadi. Jism hajmining qanday qismi (foizlarda) suyuqlikka botgan?",
+      "answers": ["20", "80", "50", "75"],
+      "correct": 1
+    },
+    {
+      "text": "Suvda suzuvchi suv ichida chalqancha holda harakatsiz yotibdi. Bunda uning yuzining oz qismidan tashqari, butun tanasi suvga botgan. Suzuvchining massasi 75 kg. Uning tanasining hajmini (dm3 da) toping.",
+      "answers": ["75", "80", "70", "100"],
+      "correct": 0
+    },
+    {
+      "text": "Kemaga ta’sir qiluvchi og’irlik kuchi 10^3 kN ga teng. Bu kema qanday hajmdagi suvni siqib chiqaradi?",
+      "answers": ["10", "1000", "100", "50"],
+      "correct": 2
+    },
+    {
+      "text": "Tubining yuzasi 38 cm2 va balandligi 6 cm bo’lgan to’g’ri burchakli tunuka quticha suvda shunday suzmoqdaki, bunda uning suv yuzidagi qismining balandligi 4 cm ga teng. Qutichaning massasini (g da) aniqlang.",
+      "answers": ["38", "76", "152", "114"],
+      "correct": 1
+    }
+  ]
+}

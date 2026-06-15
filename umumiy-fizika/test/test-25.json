@@ -1,0 +1,89 @@
+{
+  "id": 25,
+  "title": "25-Mavzu | Gidrostatik bosim",
+  "subtitle": "Kamida 80% natija 26-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 26,
+  "questions": [
+    {
+      "text": "Suyuqlik bosimi formulasi qaysi javobda to‘g‘ri ko‘rsatilgan?",
+      "answers": ["p = mgh", "p = mg", "p = ρVg", "p = ρgh"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda tasvirlangan nuqtalardagi (1, 2, 3, 4) suyuqlik bosimlarni taqqoslang.",
+      "answers": ["4 katta, 2 kichik", "1 kichik, 4 katta", "hamma bir xil", "1 katta, 2 kichik"],
+      "correct": 1
+    },
+    {
+      "text": "Idish tubiga gidrostatik bosim nimalarga bog‘liq? 1) idish shakliga; 2) idish tubining yuziga; 3) idishdagi suyuqlik zichligiga; 4) suyuqlik ustunining balandligiga.",
+      "answers": ["1 va 2", "2 va 3", "3 va 4", "1 va 4"],
+      "correct": 2
+    },
+    {
+      "text": "Suyuqlikning idish tubiga bosimi qanday bog‘lanishga ega?",
+      "answers": [
+        "suyuqlik zichligiga to‘g‘ri, ustunining balandligiga teskari proporsional",
+        "suyuqlik ustuni balandligiga to‘g‘ri proporsional bo‘lib, suyuqlik zichligiga teskari proporsional",
+        "suyuqlik ustunining balandligiga to‘g‘ri proporsional bo‘lib, suyuqlik zichligiga bog‘liq emas",
+        "suyuqlik zichligiga va ustunining balandligiga to‘g‘ri proporsional"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Qalinligi 0,5 m bo‘lgan benzin qatlami idish tubiga qanday bosim beradi (kPa)? Benzinning zichligi 800 kg/m3.",
+      "answers": ["2", "4", "5", "6"],
+      "correct": 1
+    },
+    {
+      "text": "Zichligi 900 kg/m3 bo‘lgan suyuqlikning 30 cm chuqurlikka ega bo‘lgan joydagi bosimini toping (Pa).",
+      "answers": ["2700", "27000", "270000", "3000"],
+      "correct": 0
+    },
+    {
+      "text": "Balandligi 40 m bo‘lgan suv ustunining bosimini aniqlang (kPa). Suvning zichligi 1000 kg/m3, g = 10 N/kg.",
+      "answers": ["4", "4,5", "40", "400"],
+      "correct": 3
+    },
+    {
+      "text": "Suvning ko‘l tubiga beradigan bosimi 200 kPa bo‘lishi uchun, ko‘lning chuqurligi qanday bo‘lishi kerak (m)?",
+      "answers": ["2", "10", "20", "100"],
+      "correct": 1
+    },
+    {
+      "text": "Idishlarning biriga suv, ikkinchisiga kerosin quyilgan va elastik parda bilan ajratilgan. Qaysi idish tubiga bosim kattaroq va parda qaysi tomonga egiladi?",
+      "answers": [
+        "psuv = pker, egilmaydi",
+        "psuv > pker, suv tomonga",
+        "psuv > pker, kerosin tomonga",
+        "pker > psuv, kerosin tomonga"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Turli shakldagi 3 ta idishga bir xil suyuqlik bir xil balandlikkacha quyilgan. Idishlar tubiga bosimlar munosabati qanday bo‘ladi?",
+      "answers": ["p1 = p2 = p3", "p2 > p1 > p3", "p1 = p3 < p2", "p2 > p1 < p3"],
+      "correct": 0
+    },
+    {
+      "text": "Suvning idish tubiga bosim kuchi uning yon sirtiga beradigan bosim kuchiga teng bo‘lishi uchun suv to‘ldirilgan radiusi 5 cm li silindr idishning balandligi qanday bo‘lishi kerak (m)?",
+      "answers": ["0,5", "0,1", "0,05", "0,8"],
+      "correct": 2
+    },
+    {
+      "text": "Qanday shart bajarilganda, suyuqlikning silindrik idish tubiga bosim kuchi uning yon sirtiga bosim kuchiga teng bo‘ladi? (r – radius, h – balandlik)",
+      "answers": ["h = 2r", "h = r", "h = πr", "h = r/π"],
+      "correct": 1
+    },
+    {
+      "text": "Asosining yuzi 1 cm2 bo‘lgan silindrik idishdagi suv 10 kPa bosim bermoqda. Agar suvni asosi 10 marta katta idishga quysak, avvalgi bosimni berishi uchun yana necha litr suv quyish kerak?",
+      "answers": ["9", "1,8", "0,45", "0,9"],
+      "correct": 3
+    },
+    {
+      "text": "Agar suvning idish tubiga bosimi kerosin bosimidan 2 marta katta bo‘lsa, suv ustuni balandligining kerosin ustuni balandligiga nisbati nimaga teng? (ρsuv = 1000, ρker = 800)",
+      "answers": ["1,6", "2", "1", "0,8"],
+      "correct": 0
+    }
+  ]
+}

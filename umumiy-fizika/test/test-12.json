@@ -1,0 +1,119 @@
+{
+  "id": 12,
+  "title": "12-Mavzu | Nyutonning ikkinchi qonuni",
+  "subtitle": "Kamida 80% natija 13-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 13,
+  "questions": [
+    {
+      "text": "Jismning boshqa jism bilan o‘zaro ta’sirlashishi natijasida olgan tezlanishi unga ta’sir qilayotgan kuchga to‘g‘ri proporsional va uning massasiga teskari proporsional. Bu ... .",
+      "answers": ["Nyutonning III qonuni", "Impuls saqlanish qonuni", "Nyutonning I qonuni", "Nyutonning II qonuni"],
+      "correct": 3
+    },
+    {
+      "text": "Javoblarda berilgan birliklarning qaysi biri m/s² birligining o‘rniga ishlatilishi mumkin?",
+      "answers": ["kg·m/s", "kg/m", "N/kg", "kg·m/s²"],
+      "correct": 2
+    },
+    {
+      "text": "Quyidagi fikrlarning qaysilari Galileyning nisbiylik prinsipini ifodalaydi?",
+      "answers": ["2 va 3", "1 va 2", "2 va 4", "1 va 3"],
+      "correct": 0
+    },
+    {
+      "text": "Tinch turgan jismga bir xil masofada 2 marta katta tezlik berish uchun kuchni necha marta oshirish lozim?",
+      "answers": ["2", "√2", "3", "4"],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 500 t bo‘lgan passajir poyezdi tormozlanishda tekis sekinlanuvchan harakat qilib, tezligini 60 s da 39,6 km/soat dan 27 km/soat gacha kamaytirgan. Tormozlanish kuchini toping (kN).",
+      "answers": ["32,4", "56,4", "14,2", "29,2"],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 12 kg bo‘lgan tinch turgan jismga 8 s davomida 6 N kuch ta’sir qilgan bo‘lsa, jismning olgan tezlanishi, shu vaqtda erishgan tezligi va o‘tgan yo‘lini toping.",
+      "answers": ["0,5; 2; 4", "4; 0,5; 2", "0,5; 4; 16", "25; 4; 2"],
+      "correct": 2
+    },
+    {
+      "text": "72 km/soat tezlik bilan harakatlanayotgan massasi 200 t bo‘lgan poyezdni tormozlash natijasida 10 s dan keyin uning tezligi 54 km/soat bo‘lib qoldi. Tormozlash kuchini toping (N).",
+      "answers": ["10³", "10⁵", "10⁴", "10⁸"],
+      "correct": 1
+    },
+    {
+      "text": "Massasi 180 kg bo‘lgan arava harakatining birinchi sekundida 15 sm yo‘l bosdi. Tezlanish beruvchi kuchni toping (N).",
+      "answers": ["12", "48", "27", "54"],
+      "correct": 3
+    },
+    {
+      "text": "20 N kuch jism tezligini 5 s ichida 1 m/s dan 2 m/s gacha oshirib bergan bo‘lsa, jismning massasi qancha (kg)?",
+      "answers": ["100", "20", "50", "200"],
+      "correct": 0
+    },
+    {
+      "text": "Avtomobil 1 m/s² tezlanish bilan harakat qilmoqda. Massasi 70 kg bo‘lgan odam o‘rindiq suyangichga qanday kuch bilan bosadi (N)?",
+      "answers": ["140", "35", "70", "700"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 1500 t bo‘lgan poyezd 57,6 km/soat tezlik bilan harakat qilmoqda va tormozlanish paytida 200 m yo‘lni o‘tib to‘xtaydi. Poyezd ikki marta kam yo‘lni o‘tib to‘xtashi uchun tormozlanish kuchi qanday o‘zgarishi kerak?",
+      "answers": [
+        "6,2·10⁵ N; ikki baravar ortishi kerak",
+        "3,3·10⁴ N; ikki baravar ortishi kerak",
+        "9,6·10⁵ N; ikki baravar kamayishi kerak",
+        "9,6·10⁵ N; ikki baravar ortishi kerak"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 1 kg bo‘lgan jismning harakat tenglamasi x = 2t + 15t² ko‘rinishga ega. Jismga ta’sir etuvchi kuchni aniqlang (N).",
+      "answers": ["2", "7,5", "15", "30"],
+      "correct": 3
+    },
+    {
+      "text": "Yengil avtomobilning massasi 2 t, yuk avtomobilniki 8 t. Yuk avtomobilining tortish kuchi yengil avtomobilnikiga qaraganda 2 marta katta bo‘lsa, avtomobillarning tezlanishlarini taqqoslang.",
+      "answers": [
+        "yengil avtomobilning tezlanishi 2 marta katta",
+        "yengil avtomobilning tezlanishi 4 marta katta",
+        "yengil avtomobilning tezlanishi 2 marta kichik",
+        "yengil avtomobilning tezlanishi 4 marta kichik"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 2 t bo‘lgan traktor bo‘sh prisepga 0,6 m/s² tezlanish, 2,5 t yukli xuddi shunday prisepga esa 0,3 m/s² tezlanish beradi. Bo‘sh prisepning massasini aniqlang (kg).",
+      "answers": ["300", "500", "900", "1200"],
+      "correct": 1
+    },
+    {
+      "text": "Massasi 4 t bo‘lgan bo‘sh yuk avtomobili 0,3 m/s² tezlanish bilan harakatlana boshladi. Agar avtomobil o‘sha tortish kuchida joyidan 0,2 m/s² tezlanish bilan qo‘zg‘alsa, avtomobilga ortilgan yukning massasi qanday (t)?",
+      "answers": ["1", "4", "5", "2"],
+      "correct": 3
+    },
+    {
+      "text": "Vertikal yo‘nalishda pastga 250 m balandlikdan 20 m/s tezlik bilan otilgan jism 20 sm chuqurlikda yerga kiradi. Agar jism massasi 2 kg bo‘lsa, tuproqning o‘rtacha qarshilik kuchini aniqlang (N).",
+      "answers": ["14200", "1800", "47500", "27000"],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 2 kg bo‘lgan jism tezligining o‘zgarish grafigiga asosan, harakatning har bir bosqichida jismga ta’sir etayotgan kuchning proyeksiyasi Fₓ ni toping (N).",
+      "answers": ["1; 0; -2", "4; 0; -2", "5; 0; -2", "2; 0; -4"],
+      "correct": 1
+    },
+    {
+      "text": "Inersial sanoq sistemasida jismga ikki kuch ta’sir etmoqda. Quyidagi vektorlardan qaysi biri jism tezlanishi yo‘nalishini to‘g‘ri tasvirlaydi?",
+      "answers": ["3", "4", "2", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Avtodrezina ikkita platformani tekis tezlanuvchan harakat bilan olib borayotib tortish kuchi 1,8 kN ga teng bo‘lgan. Platformalarning massalari 12 va 8 t. Bu ikki platforma orasidagi tirkash moslamasi qanday kuch bilan tortiladi (kN)?",
+      "answers": ["0,8", "0,48", "0,32", "0,72"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda to‘rtta kuch vektori tasvirlangan. Qaysi kuch olib tashlansa qolgan kuchlarning teng ta’sir etuvchisi nolga teng bo‘ladi?",
+      "answers": ["F1", "F2", "F3", "F4"],
+      "correct": 0
+    }
+  ]
+}

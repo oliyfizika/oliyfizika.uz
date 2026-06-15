@@ -1,0 +1,105 @@
+{
+  "title": "Izojarayonlar",
+  "questions": [
+    {
+      "q": "O'zgarmas temperaturada (T=const) kechuvchi jarayon nima deb ataladi?",
+      "a": ["Izobarik jarayon", "Izotermik jarayon", "Izoxorik jarayon", "Adiabatik jarayon"],
+      "c": 1
+    },
+    {
+      "q": "Boyl-Mariott qonuni ideal gaz uchun qanday bog'liqlikni ifodalaydi?",
+      "a": ["V/T = const", "P/T = const", "PV = const", "PV/T = const"],
+      "c": 2
+    },
+    {
+      "q": "O'zgarmas bosimda (P=const) kechuvchi jarayon qanday nomlanadi?",
+      "a": ["Izotermik", "Izoxorik", "Izobarik", "Adiabatik"],
+      "c": 2
+    },
+    {
+      "q": "Gey-Lussak qonunining (izobarik jarayon) matematik ifodasi qaysi?",
+      "a": ["P₁/T₁ = P₂/T₂", "V₁/T₁ = V₂/T₂", "P₁V₁ = P₂V₂", "PVᵞ = const"],
+      "c": 1
+    },
+    {
+      "q": "O'zgarmas hajmda (V=const) kechuvchi jarayon nima deb ataladi?",
+      "a": ["Izobarik", "Izotermik", "Adiabatik", "Izoxorik"],
+      "c": 3
+    },
+    {
+      "q": "Sharl qonuniga ko'ra, o'zgarmas massali gazda bosim temperaturaga qanday bog'langan?",
+      "a": ["Teskari proporsional", "To'g'ri proporsional (P/T = const)", "Bog'liq emas", "Kvadratik bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi termodinamik jarayonda gaz ish bajarmaydi (A=0)?",
+      "a": ["Izotermik", "Izobarik", "Izoxorik", "Adiabatik"],
+      "c": 2
+    },
+    {
+      "q": "Izotermik jarayonda gazga berilgan issiqlik miqdori (Q) nimaga sarflanadi?",
+      "a": ["Faqat ichki energiyani oshirishga", "Faqat tashqi kuchlar ustidan ish bajarishga (Q=A)", "Ichki energiya va ishga teng taqsimlanadi", "Gazni sovitishga"],
+      "c": 1
+    },
+    {
+      "q": "Izoxorik jarayonda gazga berilgan issiqlik miqdori (Q) nimaga teng bo'ladi?",
+      "a": ["Q = A", "Q = ΔU", "Q = 0", "Q = A + ΔU"],
+      "c": 1
+    },
+    {
+      "q": "Tashqi muhit bilan issiqlik almashinmasdan (Q=0) sodir bo'ladigan jarayon nima deyiladi?",
+      "a": ["Izotermik", "Izobarik", "Adiabatik", "Izoxorik"],
+      "c": 2
+    },
+    {
+      "q": "Izotermik jarayonda ideal gazning ichki energiyasi (ΔU) qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi (ΔU=0)", "Bosimga qarab o'zgaradi"],
+      "c": 2
+    },
+    {
+      "q": "Izotermik kengayishda gaz bosimi qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi (chunki hajm ortadi)", "O'zgarmaydi", "Dastlab ortib, keyin kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Izobarik jarayonda absolut temperatura 2 marta ortsa, molekulalar konsentratsiyasi (n) qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "2 marta kamayadi", "O'zgarmaydi", "4 marta kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazni qaysi jarayonda isitish osonroq (energiya deyarli to'la isitishga sarflanadi)?",
+      "a": ["Izobarik jarayonda", "Izotermik jarayonda", "Izoxorik jarayonda", "Adiabatik jarayonda"],
+      "c": 2
+    },
+    {
+      "q": "Ideal gaz adiabatik kengayganda, uning temperaturasi qanday o'zgaradi?",
+      "a": ["Ko'tariladi", "O'zgarmaydi", "Pasayadi", "Bosimga bog'liq"],
+      "c": 2
+    },
+    {
+      "q": "Izobarik jarayonda bajarilgan ish (A) qaysi formula bilan aniqlanadi?",
+      "a": ["A = PΔV", "A = ΔU", "A = Q", "A = 0"],
+      "c": 0
+    },
+    {
+      "q": "Boyl-Mariott qonuni grafikda (P-V koordinatalarda) qanday chiziq bilan tasvirlanadi?",
+      "a": ["To'g'ri chiziq", "Giperbola (izoterma)", "Parabola", "Vertikal chiziq"],
+      "c": 1
+    },
+    {
+      "q": "Gazni adiabatik siqishda tashqi kuchlar 50 MJ ish bajardi. Gazning ichki energiyasi qanday o'zgaradi?",
+      "a": ["50 MJ ga kamayadi", "50 MJ ga ortadi", "O'zgarmaydi", "Nolga tenglashadi"],
+      "c": 1
+    },
+    {
+      "q": "Izobarik jarayonda bir atomli ideal gazga berilgan issiqlik miqdorining qanday qismi ichki energiyani oshirishga sarflanadi?",
+      "a": ["40% (0,4Q)", "60% (0,6Q)", "100%", "50%"],
+      "c": 1
+    },
+    {
+      "q": "Quyidagi parametrlarning qaysi biri izoxorik jarayonda o'zgarmas qoladi?",
+      "a": ["Bosim", "Temperatura", "Zichlik va hajm", "Ichki energiya"],
+      "c": 2
+    }
+  ]
+}

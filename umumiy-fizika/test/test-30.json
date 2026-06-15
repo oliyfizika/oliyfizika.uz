@@ -1,0 +1,134 @@
+{
+  "id": 30,
+  "title": "30-Mavzu | Bernulli qonuni",
+  "subtitle": "Kamida 80% natija 31-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 31,
+  "questions": [
+    {
+      "text": "Gorizontal nayning ingichka qismidan oqayotgan suvning tezligi 2 m/s. Suvni nayning yug‘on qismidan oqish tezligini toping (m/s). Nayning ingichka va yug‘on qismlarining ko‘ndalang kesim yuzlari mos ravishda 200 cm2 va 800 cm2.",
+      "answers": ["0,1", "5", "0,5", "0,2"],
+      "correct": 2
+    },
+    {
+      "text": "Trubaning keng qismida suvning oqish tezligi 10 sm/s. Uning diametri keng qismiga qaraganda 4 marta kichik bo‘lgan qismida suvning oqish tezligi (m/s) qanday bo‘ladi?",
+      "answers": ["1,8", "1,6", "1,5", "1,7"],
+      "correct": 1
+    },
+    {
+      "text": "Chizmada tasvirlangan quvurlardan to‘la holda suyuqlik oqmoqda. Uning qaysi qismida suyuqlikning tezligi eng katta bo‘ladi?",
+      "answers": ["4", "3", "2", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda gorizontal joylashgan trubadan suv to‘la holda oqayotgani ko‘rsatilgan. ϑ1 tezlik nimaga teng?",
+      "answers": ["4", "3", "2", "1"],
+      "correct": 1
+    },
+    {
+      "text": "Truba kesimining keng qismida suv 20 m/s tezlik bilan oqmoqda. Trubaning diametri 1,5 marta kichik bo‘lgan qismida oqim tezligi qanday bo‘ladi (m/s)?",
+      "answers": ["30", "45", "15", "12,6"],
+      "correct": 1
+    },
+    {
+      "text": "Ko‘ndalang kesim yuzi o‘zgaruvchi quvurdan suyuqlik oqmoqda (rasmga q.). Bu suyuqlikning qaysi kesimdagi bosimi eng kichik?",
+      "answers": ["3", "1", "2", "oqayotgan suyuqlik qo‘shimcha bosim hosil qilmaydi"],
+      "correct": 2
+    },
+    {
+      "text": "Ko‘ndalang kesimi turli (S1; S2; S3) bo‘lgan naylar orqali oqayotgan suv bosimlarining nisbati qaysi javobda to‘g‘ri keltirilgan?",
+      "answers": ["P1 = P2 = P3", "P1 = P2 < P3", "P1 > P2 > P3", "P1 < P2 < P3"],
+      "correct": 3
+    },
+    {
+      "text": "Suyuqlik ko‘ndalang kesimi o‘zgaruvchi nay bo‘ylab oqmoqda. Qaysi kesimda suyuqlik hosil qilayotgan bosim minimal bo‘ladi?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Diametri 0,5 m bo‘lgan neft quvuri orqali 1 m/s tezlikda neft oqayotgan bo‘lsa, 1 soatda qancha miqdor neft olinadi (kg)? ρ = 890 kg/m3.",
+      "answers": ["54, 6 · 10^5", "4, 5 · 10^4", "5, 9 · 10^5", "5, 1 · 10^7"],
+      "correct": 2
+    },
+    {
+      "text": "Trubadagi suvning tezligi 3,6 km/soat. Trubaning ko‘ndalang kesimidan har soatda 7,2 tonna suv oqib o‘tsa, trubaning ko‘ndalang kesimi yuzi (sm2) qanchaga teng bo‘ladi?",
+      "answers": ["2", "20", "1", "10"],
+      "correct": 1
+    },
+    {
+      "text": "Katta shlankadan suv otilib chiqmoqda. Suv sarfi har minutda 60 l ga teng. Suvning 2 metr balandlikdagi ko‘ndalang kesim yuzasi (sm2) nimaga teng. Shlang ichidagi yuza 1,5 sm2 ga teng.",
+      "answers": ["3,32", "4,88", "4,37", "4,1"],
+      "correct": 2
+    },
+    {
+      "text": "Neft quduqdan diametri 60 mm bo‘lgan quvur orqali ko‘tariladi. Har soatda 9,12 t neft ko‘tarilayotgan bo‘lsa, neftning oqish tezligi topilsin (m/s). Neftning zichligi 800 kg/m3.",
+      "answers": ["2,4", "1,2", "1,12", "6,2"],
+      "correct": 2
+    },
+    {
+      "text": "Ichida suvi bo‘lgan silindrik idishning tubiga diametri 2 sm bo‘lgan teshik ochildi va idishga har sekundda 360 g suv quyila boshlandi. Idishdagi suvning dastlabki balandligi (sm) qanday bo‘lganida uning sathi suv quyilib tursa o‘zgarmay turadi?",
+      "answers": ["7,2", "3,6", "6,7", "2,8"],
+      "correct": 2
+    },
+    {
+      "text": "Vodoprovod quvuri teshigidan tik yuqoriga otilayotgan suv oqimi 1,25 m ga ko‘tarilayotgan bo‘lsa, suv teshikdan necha m/s tezlik bilan otilib chiqmoqda?",
+      "answers": ["1,25", "2,5", "5,5", "5"],
+      "correct": 3
+    },
+    {
+      "text": "Daryo suvining tezligini o‘lchash maqsadida oqayotgan daryo suviga 90° ga egilgan truba tushirilgan. Suv trubaga daryo suvining erkin sirtiga qaraganda 30 sm ga ko‘tarilgan bo‘lsa, daryo suvining tezligini (m/s) toping.",
+      "answers": ["2", "√5", "√3", "√6"],
+      "correct": 3
+    },
+    {
+      "text": "Suv katerining tumshuq qismida vertikal bo‘ylab 1 m balandlikka ko‘tarilayotgan bo‘lsa, katerning tezligini taxminan qanday baholash mumkin (m/s)?",
+      "answers": ["8,2", "4,4", "1,6", "3,8"],
+      "correct": 1
+    },
+    {
+      "text": "Yuzasi 0,5 sm2 bo‘lgan shpris porshenga 40 N kuch bilan bosim bersa, shpris teshigidan suv qanday (m/s) tezlik bilan oqib chiqadi?",
+      "answers": ["20", "10", "40", "15"],
+      "correct": 2
+    },
+    {
+      "text": "Agar suyuqlikning oqish tezligi 2 marta ortsa, uning perpendikulyar uriladigan to‘siqqa ko‘rsatadigan bosimi necha marta ortadi?",
+      "answers": ["2 marta", "4 marta", "8 marta", "o‘zgarmaydi"],
+      "correct": 1
+    },
+    {
+      "text": "Agar bo‘yoq pultidan 25 m/s tezlik bilan suyuq bo‘yoq oqib chiqayotgan bo‘lsa, kompressor bo‘yoq pultida qanday bosim (Pa) hosil qiladi? Bo‘yoqning zichligi 800 kg/m3.",
+      "answers": ["2 · 10^5", "1, 5 · 10^5", "2, 5 · 10^5", "10^5"],
+      "correct": 2
+    },
+    {
+      "text": "Suv kraniga quvur ulangan. Kran 2 kPa bosim hosil qilayotgan bo‘lsa, quvurdan chiqayotgan suvning oqim tezligini toping (m/s).",
+      "answers": ["3", "1,2", "4,2", "2"],
+      "correct": 3
+    },
+    {
+      "text": "Purkagichdan suyuqlik 25 m/s tezlik bilan otilib chiqmoqda, suyuqlikning zichligi 1 g/cm3. Purkagich idishining hajmida kompressor qanday bosim hosil qiladi (atm)?",
+      "answers": ["6,5", "3,1", "2,5", "3,9"],
+      "correct": 1
+    },
+    {
+      "text": "Ko‘ndalang kesim radiusi 4 sm bo‘lgan quvurdan zichligi 0,9 g/cm3 bo‘lgan moy oqmoqda. Oqim tezligi 4 m/s ga teng. Yog‘ning harakat yo‘nalishidagi gidrodinamik bosimini toping (kPa).",
+      "answers": ["7,2", "4", "8,1", "1,2"],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 12 sm bo‘lgan trubada suv 12 m/s tezlik bilan harakatlanmoqda, suv oqimining quvvatini toping (Wt).",
+      "answers": ["880", "8000", "3110", "9767"],
+      "correct": 3
+    },
+    {
+      "text": "Diametri 25 sm bo‘lgan trubada zichligi 800 kg/m3 bo‘lgan neft qanday tezlik (m/s) bilan harakatlanganda, oqimining quvvati 2453,25 Wt bo‘ladi?",
+      "answers": ["3", "12", "6", "5"],
+      "correct": 3
+    },
+    {
+      "text": "Diametri 20 sm bo‘lgan teshikdan 4 m/s tezlik bilan chiqayotgan suv oqimining quvvatini toping (kVt).",
+      "answers": ["10", "1", "50", "1000"],
+      "correct": 1
+    }
+  ]
+}

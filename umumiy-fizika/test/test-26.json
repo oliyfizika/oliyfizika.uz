@@ -1,0 +1,44 @@
+{
+  "id": 26,
+  "title": "26-Mavzu | Atmosfera bosimi",
+  "subtitle": "Kamida 80% natija 27-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 27,
+  "questions": [
+    {
+      "text": "Torrichelli tajribasi uzunliklari 1 m dan bo‘lgan, ko‘ndalang kesimlari farq qiluvchi 3 ta nayda o‘tkazilsa, naylardagi simob ustunlarining balandliklari farq qiladimi?",
+      "answers": ["h1 > h2 > h3", "h1 < h2 > h3", "h1 > h2 < h3", "h1 = h2 = h3"],
+      "correct": 3
+    },
+    {
+      "text": "Torichelli tajribasida ishlatiladigan simobli barometr (bir uchi berk shisha nay va simobli idish) biror balandlikdan vertikal tashlab yuborilsa, nay ichidagi simob sathining balandligi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "simob nayni butunlay to‘ldiradi", "nay ichidagi simob butunlay oqib chiqadi", "avval oshadi, so‘ngra o‘zgarmaydi"],
+      "correct": 0
+    },
+    {
+      "text": "Havosi so‘rib olingan nayni normal sharoitda simobga tushirilsa, simob atmosfera bosimi ta’sirida shu nay orqali 76 cm ko‘tariladi. Shu nay suvga tushirilsa, suv necha metr balandlikka ko‘tarilgan bo‘lar edi?",
+      "answers": ["10,33", "8,5", "9,8", "11"],
+      "correct": 0
+    },
+    {
+      "text": "Diametrlari d1 < d2 < d3 < d4 munosabatda bo‘lgan bir uchi berk 4 ta shisha naycha 4 xil suyuqlik bilan to‘ldirilib, ochiq uchi bilan o‘z suyuqliklariga to‘nkarilganda, ulardagi suyuqliklarning balandliklari h1 = h4 < h2 = h3 munosabatda bo‘ladi. Suyuqlik zichliklari uchun qaysi munosabat o‘rinli?",
+      "answers": ["ρ4 > ρ3 > ρ2 > ρ1", "ρ4 > ρ1 > ρ2 > ρ3", "ρ1 = ρ4 > ρ2 = ρ3", "ρ2 > ρ3, ρ1 > ρ4"],
+      "correct": 2
+    },
+    {
+      "text": "Toshkent shahri dengiz sathidan 407 m balandlikda joylashgan. Yunusoboddagi televizion minoraning balandligi 385 m. Agar dengiz sathidagi atmosfera bosimi 760 mm Hg ga teng bo‘lsa, minoraning uchidagi barometr qanday bosimni (mm Hg) ko‘rsatadi?",
+      "answers": ["704", "698", "694", "684"],
+      "correct": 1
+    },
+    {
+      "text": "Shaxta tubida atmosfera bosimi 820 mm simob ustuniga teng bo‘lsa, shaxta chuqurligi necha metr?",
+      "answers": ["820", "760", "600", "720"],
+      "correct": 3
+    },
+    {
+      "text": "Toshkent shahri dengiz sathidan 408 m balandlikda. Televizion minoraning balandligi 192 m. Minoraning tepasida barometr necha mm Hg bosimni ko‘rsatadi? 100 m ga ko‘tarilganda bosim 9 mm Hg ga kamayadi deb hisoblang. Dengiz sathidagi bosim 760 mm Hg.",
+      "answers": ["760", "706", "728", "710"],
+      "correct": 1
+    }
+  ]
+}

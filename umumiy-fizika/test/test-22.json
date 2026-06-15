@@ -1,0 +1,49 @@
+{
+  "id": 22,
+  "title": "22-Mavzu | Prujina potensial energiyasi",
+  "subtitle": "Kamida 80% natija 23-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 23,
+  "questions": [
+    {
+      "text": "Deformatsiyalanmagan prujina yordamida vertikal devorga ulangan brusok silliq polda yotadi. Prujinaning o’qi gorizontal, uning bikirligi 50 N/m. Brusokka prujina o’qi bo’ylab yo’nalgan 4 N o’zgarmas kuch ta’sir eta boshlaydi. Prujinaning maksimal deformatsiyasini (cm da) toping.",
+      "answers": ["8", "16", "24", "32"],
+      "correct": 1
+    },
+    {
+      "text": "Deformatsiyalanmagan prujina yordamida vertikal devorga ulangan 100 g massali brusok silliq polda yotadi. Prujinaning o’qi gorizontal, uning bikirligi 250 N/m. Brusokka prujina o’qi bo’ylab yo’nalgan 4 N o’zgarmas kuch ta’sir eta boshlaydi. Brusokning maksimal tezligini (cm/s da) toping.",
+      "answers": ["40", "60", "80", "100"],
+      "correct": 2
+    },
+    {
+      "text": "Deformatsiyalanmagan prujina yordamida vertikal devorga ulangan 250 g massali brusok polda yotadi. Prujinaning o’qi gorizontal, uning bikirligi 100 N/m, ishqalanish koeffitsiyenti 0,4. Brusokka prujina o’qi bo’ylab yo’nalgan 3 N o’zgarmas kuch ta’sir eta boshlaydi. Prujinaning maksimal deformatsiyasini (cm da) toping. (g = 10 m/s^2)",
+      "answers": ["4", "2", "6", "8"],
+      "correct": 0
+    },
+    {
+      "text": "Deformatsiyalanmagan prujina yordamida vertikal devorga ulangan 250 g massali brusok polda yotadi. Prujinaning o’qi gorizontal, uning bikirligi 100 N/m, ishqalanish koeffitsiyenti 0,4. Brusokka prujina o’qi bo’ylab yo’nalgan 3 N o’zgarmas kuch ta’sir eta boshlaydi. Brusokning maksimal tezligini (cm/s da) toping. (g = 10 m/s^2)",
+      "answers": ["20", "30", "50", "40"],
+      "correct": 3
+    },
+    {
+      "text": "Shiftga 100 N/m bikirlikdagi prujina yordamida yuk osilgan. Yukka vertikal pastga yo’nalgan 6 N o’zgarmas kuch ta’sir eta boshlaydi. Yukning maksimal ko’chishini (cm da) toping.",
+      "answers": ["6", "12", "18", "24"],
+      "correct": 1
+    },
+    {
+      "text": "Shiftga 50 N/m bikirlikdagi prujina yordamida 0,5 kg massadagi yuk osilgan. Yukka vertikal pastga yo’nalgan 10 N o’zgarmas kuch ta’sir eta boshlaydi. Yukning maksimal tezligini (m/s) toping.",
+      "answers": ["1", "4", "2", "3"],
+      "correct": 2
+    },
+    {
+      "text": "100 N/m bikirlikdagi prujina yordamida qiya tekislikning uchi bilan ulangan brusok shu silliq qiya tekislikda yotadi. Brusokka tekislik bo’ylab pastga yo’nalgan 12 N o’zgarmas kuch ta’sir eta boshlaydi. Brusokning maksimal ko’chishini (cm da) toping.",
+      "answers": ["24", "12", "36", "48"],
+      "correct": 0
+    },
+    {
+      "text": "Gorizont bilan burchak hosil qiluvchi (sin alpha = 0,6) qiya tekislikda 1 kg massali brusok yotadi. Brusok qiya tekislikning uchi bilan 64 N/m bikirlikdagi deformatsiyalanmagan prujina yordamida ulangan. Brusokning tekislikka ishqalanish koeffitsiyenti 0,8. Brusokka tekislik bo’ylab yuqoriga yo’nalgan 14 N o’zgarmas kuch ta’sir eta boshlaydi. Brusok to’xtaguncha qanday masofani (cm da) bosib o’tadi? (g = 10 m/s^2)",
+      "answers": ["2,5", "7,5", "10", "5"],
+      "correct": 3
+    }
+  ]
+}

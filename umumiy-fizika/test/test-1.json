@@ -1,0 +1,109 @@
+{
+  "id": 1,
+  "title": "1-Mavzu | Mexanik harakat testi",
+  "subtitle": "Kamida 80% natija 2-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 2,
+  "questions": [
+    {
+      "text": "Mexanik harakat deb nimaga aytiladi?",
+      "answers": [
+        "Jism massasining o‘zgarishiga",
+        "Jismning boshqa jismlarga nisbatan o‘rnining vaqt davomida o‘zgarishiga",
+        "Jismning rang o‘zgarishiga",
+        "Jismning hajm o‘zgarishiga"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Trayektoriya nima?",
+      "answers": [
+        "Jismning massasi",
+        "Jismning tezligi",
+        "Jism harakat davomida chizgan izi",
+        "Jismning hajmi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Tezlik formulasi qaysi javobda to‘g‘ri berilgan?",
+      "answers": [
+        "v = s · t",
+        "v = t/s",
+        "v = s/t",
+        "v = s + t"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Xalqaro birliklar sistemasida tezlik birligi qaysi?",
+      "answers": [
+        "m",
+        "s",
+        "m/s",
+        "N"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Jism 120 m masofani 20 s da bosib o‘tdi. Uning tezligini toping.",
+      "answers": [
+        "4 m/s",
+        "5 m/s",
+        "6 m/s",
+        "8 m/s"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Tekis harakat deb qanday harakatga aytiladi?",
+      "answers": [
+        "Tezligi o‘zgaradigan harakatga",
+        "Trayektoriyasi egri chiziqli bo‘lgan harakatga",
+        "Teng vaqt oralig‘ida teng masofa bosib o‘tiladigan harakatga",
+        "Faqat vertikal harakatga"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Jismning bosib o‘tgan yo‘li qanday harf bilan belgilanadi?",
+      "answers": [
+        "t",
+        "m",
+        "s",
+        "v"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Vaqtning SI dagi birligi qaysi?",
+      "answers": [
+        "minut",
+        "soat",
+        "sekund",
+        "sutka"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Agar jism tezligi ortib borsa, bu qanday harakat deyiladi?",
+      "answers": [
+        "Tekis harakat",
+        "Notekis harakat",
+        "Tinch holat",
+        "Aylana harakat"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Yo‘l formulasi qaysi javobda to‘g‘ri ko‘rsatilgan?",
+      "answers": [
+        "s = vt",
+        "s = v/t",
+        "s = t/v",
+        "s = v + t"
+      ],
+      "correct": 0
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": 19,
+  "title": "19-Mavzu | Statika va kuch momenti",
+  "subtitle": "Kamida 80% natija 20-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 20,
+  "questions": [
+    {
+      "text": "Aylanish o‘qidan kuch qo‘yilgan nuqtagacha bo‘lgan masofa 2,5 m, aylanish o‘qidan kuchning ta’sir chizig‘igacha bo‘lgan masofa 1,5 m. Agar kuchning kattaligi 50 N bo‘lsa, kuch momentini toping (N·m).",
+      "answers": ["75", "50", "100", "125"],
+      "correct": 0
+    },
+    {
+      "text": "Kuchni uch marta orttirib, yelkani 2 marta kamaytirsak, kuch momenti qanday o‘zgaradi?",
+      "answers": ["1,5 marta ortadi", "1,5 marta kamayadi", "3 marta ortadi", "3 marta kamayadi"],
+      "correct": 0
+    },
+    {
+      "text": "Qanday shart bajarilganda aylanish o‘qiga ega bo‘lgan jism muvozanatda bo‘ladi?",
+      "answers": [
+        "kuchlarning geometrik yig‘indisi nolga teng bo‘lsa",
+        "jismni o‘ngga va chapga aylantiruvchi momentlar noldan farqli bo‘lsa",
+        "musbat va manfiy kuch momentlari yig‘indisi teng bo‘lsa",
+        "kuchlarning algebraik yig‘indisi noldan farqli bo‘lsa"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Aylanish o‘qidan kuch qo‘yilgan nuqtagacha bo‘lgan masofa d bo‘lsa, kuch momenti formulasini toping.",
+      "answers": ["M = Fd·tgα", "M = Fd", "M = Fd·cosα", "M = Fd·sinα"],
+      "correct": 3
+    },
+    {
+      "text": "Richagning kichik yelkasiga 300 N, katta yelkasiga 20 N kuch ta’sir qiladi. Kichik yelka 5 sm. Katta yelkani toping (sm).",
+      "answers": ["75", "40", "150", "35"],
+      "correct": 0
+    },
+    {
+      "text": "Richag uchlariga 40 N va 240 N kuchlar ta’sir qiladi. Tayanchdan kichik kuchgacha 60 sm. Richag uzunligini toping (sm).",
+      "answers": ["9", "14", "70", "7"],
+      "correct": 2
+    },
+    {
+      "text": "1 m uzunlikdagi vaznsiz richag uchlarida 5 kg dan yuk osilgan. Tayanch yuklardan biridan 20 sm masofada. Shu tomonga 30 kg yuk qo‘yilsa, u tayanchdan qanday masofada bo‘lishi kerak? (sm)",
+      "answers": ["8", "12", "10", "15"],
+      "correct": 2
+    },
+    {
+      "text": "Richag uzunligi 200 sm. Bir uchida 10 kg, ikkinchisida 40 kg yuk. Muvozanat uchun tayanch og‘ir yuk tomondan qancha masofada bo‘lishi kerak? (sm)",
+      "answers": ["40", "10", "50", "20"],
+      "correct": 0
+    },
+    {
+      "text": "10 N va 25 N parallel qarama-qarshi kuchlar 1,5 m masofada ta’sir qilmoqda. Ularni muvozanatlovchi kuchni aniqlang.",
+      "answers": ["15; 2,5", "30; 2,5", "25; 5", "To‘g‘ri javob yo‘q"],
+      "correct": 3
+    },
+    {
+      "text": "Qaysi qurilma yordamida yukni ko‘tarishda kuchdan yutish mumkin?",
+      "answers": [
+        "qo‘zg‘almas blok",
+        "richag",
+        "qiya tekislik",
+        "uchovida teng ish bajariladi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Vaznsiz richagda 3 kg va 2 kg yuklar muvozanatda. AB = 30 sm bo‘lsa, BC ni toping (cm).",
+      "image": "../rasmlar19/test19-11.png",
+      "answers": ["24", "18", "15", "20"],
+      "correct": 1
+    },
+    {
+      "text": "A nuqtaga nisbatan natijaviy moment 0 bo‘lsa, x ni toping.",
+      "image": "../rasmlar19/test19-12.png",
+      "answers": ["30F/11", "4F", "28F/7", "24F/7"],
+      "correct": 3
+    },
+    {
+      "text": "OA sterjen uchiga 30° burchak ostida 200 N kuch ta’sir qiladi. Muvozanat uchun o‘rtasiga qanday massa qo‘yish kerak? (kg)",
+      "image": "../rasmlar19/test19-13.png",
+      "answers": ["25", "30", "20", "43"],
+      "correct": 2
+    },
+    {
+      "text": "Bir jinsli balka muvozanatda. Kuchlar orasidagi to‘g‘ri munosabatni toping.",
+      "image": "../rasmlar19/test19-14.png",
+      "answers": [
+        "F₁ = F₂",
+        "F₁ = sinα·F₂",
+        "F₂ = 2tgα·F₁",
+        "F₁ = 2ctgα·F₂"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 20 kg bo‘lgan kubning bir chetini ko‘tarish uchun qanday gorizontal kuch kerak? (N)",
+      "image": "../rasmlar19/test19-15.png",
+      "answers": ["10", "20", "50", "100"],
+      "correct": 3
+    },
+    {
+      "text": "Sterjenning 1/4 qismi stoldan chiqib turibdi. Uchini bosib boshqa uchini ko‘tarish uchun minimal kuchni toping.",
+      "answers": ["2mg", "mg/2", "mg", "mg/3"],
+      "correct": 2
+    },
+    {
+      "text": "24 kN og‘irlikdagi avtomobilning og‘irlik markazi o‘qlar orasini 1:3 nisbatda bo‘ladi. Tayanch reaksiyalarini toping (kN).",
+      "answers": ["6; 6", "9; 6", "18; 6", "18; 12"],
+      "correct": 2
+    },
+    {
+      "text": "Silindrsimon sterjenning yarmi ρ, yarmi 3ρ zichlikli metalldan tayyorlangan. Og‘irlik markazi markazdan qancha siljigan?",
+      "answers": ["L/16", "L/20", "L/8", "L/4"],
+      "correct": 0
+    },
+    {
+      "text": "Aravachaning ikki chetida 70 kg va 90 kg bolalar turibdi. Birinchi bola markazgacha yurganda og‘irlik markazi qancha siljiydi?",
+      "answers": ["0,27", "0,13", "0,42", "0"],
+      "correct": 3
+    },
+    {
+      "text": "1 kg, 5 kg, 7 kg va 3 kg sharlar tizimining og‘irlik markazi uchinchi shardan qancha masofada joylashgan?",
+      "answers": ["-1,5", "-0,5", "-0,2", "-0,05"],
+      "correct": 3
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Gaz molekulalari tezligi",
+  "questions": [
+    {
+      "q": "Gaz molekulalarining o‘rtacha kvadratik tezligi (v) qaysi formula orqali aniqlanadi?",
+      "a": ["v = √(3RT/M)", "v = 3/2 kT", "v = √(2gh)", "v = m/V"],
+      "c": 0
+    },
+    {
+      "q": "Ideal gazning absolut temperaturasi 4 marta orttirilsa, molekulalarning o‘rtacha kvadratik tezligi qanday o‘zgaradi?",
+      "a": ["4 marta ortadi", "2 marta ortadi", "O'zgarmaydi", "16 marta ortadi"],
+      "c": 1
+    },
+    {
+      "q": "Bir xil temperaturada vodorod (H₂, M=2 g/mol) va kislorod (O₂, M=32 g/mol) molekulalarining o'rtacha kvadratik tezliklarini taqqoslang.",
+      "a": ["Vodorodniki 4 marta katta", "Kislorodniki 4 marta katta", "Tezliklari o'zaro teng", "Vodorodniki 16 marta katta"],
+      "c": 0
+    },
+    {
+      "q": "Gaz molekulalari tezligi (v) va bitta molekula massasi (m₀) orqali ifodalangan 1/3·n·m₀·v² ifodasi qaysi fizik kattalikni bildiradi?",
+      "a": ["Energiya", "Bosim", "Kuch", "Hajm"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazning bosimi (P) va zichligi (ρ) ma'lum bo'lsa, molekulalarning tezligi qanday topiladi?",
+      "a": ["v = √(P/ρ)", "v = √(3P/ρ)", "v = P·ρ", "v = 3P·ρ"],
+      "c": 1
+    },
+    {
+      "q": "Ideal gazning absolut harorati 9 marta ortsa, molekulalarning o'rtacha kvadratik tezligi necha marta ortadi?",
+      "a": ["9 marta", "3 marta", "81 marta", "4,5 marta"],
+      "c": 1
+    },
+    {
+      "q": "Kislorod molekulalarining o'rtacha kvadratik tezligi 600 m/s bo'lishi uchun harorat taxminan qancha bo'lishi kerak?",
+      "a": ["275 K", "462 K", "530 K", "622 K"],
+      "c": 1
+    },
+    {
+      "q": "v = √(3RT/M) formuladagi R doimiysi nimani anglatadi?",
+      "a": ["Bolsman doimiysi", "Universal gaz doimiysi", "Avogadro soni", "Plank doimiysi"],
+      "c": 1
+    },
+    {
+      "q": "Gaz molekulalarining o'rtacha kvadratik tezligini 400 m/s dan 200 m/s gacha kamaytirish uchun absolut haroratni qanday o'zgartirish kerak?",
+      "a": ["2 marta kamaytirish", "4 marta kamaytirish", "O'zgarmas saqlash", "2 marta orttirish"],
+      "c": 1
+    },
+    {
+      "q": "Bir xil haroratda kislorod (O₂) va suv bug‘i (H₂O) molekulalarining tezliklari nisbati v(O₂)/v(H₂O) qanchaga teng?",
+      "a": ["3/4", "16/9", "9/16", "4/3"],
+      "c": 0
+    },
+    {
+      "q": "Absolyut nol temperatura (0 K) tushunchasining molekulalar tezligi bilan bog'liqligi nimada?",
+      "a": ["Tezlik yorug'lik tezligiga tenglashadi", "Molekulalar harakati to'xtaydi", "Tezlik maksimal qiymatga yetadi", "Faqat og'ir molekulalar harakatlanadi"],
+      "c": 1
+    },
+    {
+      "q": "Konsentratsiya o'zgarmas bo'lgan holatda o'rtacha kvadratik tezlik 4 marta ortsa, gaz bosimi necha marta o'zgaradi?",
+      "a": ["4 marta ortadi", "16 marta ortadi", "2 marta ortadi", "8 marta ortadi"],
+      "c": 1
+    },
+    {
+      "q": "Ballondagi neonning absolut harorati 4 marta ortsa, uning molekulalari tezligi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "O'zgarmaydi", "8 marta ortadi"],
+      "c": 0
+    },
+    {
+      "q": "Bir xil haroratda atmosferadagi qaysi gaz molekulalari eng tez harakatlanadi?",
+      "a": ["Azot (N₂)", "Kislorod (O₂)", "Vodorod (H₂)", "Karbonat angidrid (CO₂)"],
+      "c": 2
+    },
+    {
+      "q": "Gaz molekulalarining tezligini birinchi bo'lib tajriba yo'li bilan kim aniqlagan?",
+      "a": ["I. Nyuton", "E. Torrichelli", "O. Shtern", "A. Eynshteyn"],
+      "c": 2
+    }
+  ]
+}

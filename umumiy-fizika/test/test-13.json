@@ -1,0 +1,128 @@
+{
+  "id": 13,
+  "title": "13-Mavzu | Butun olam tortishish qonuni",
+  "subtitle": "Kamida 80% natija 14-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 14,
+  "questions": [
+    {
+      "text": "Gravitatsiya doimiysining birligini XBS ning asosiy birliklari orqali ifodalang.",
+      "answers": [
+        "kg·s²/m³",
+        "N·m²/kg²",
+        "m³/(kg·s²)",
+        "m³/(kg·s)",
+        "m³/(kg³·s²)"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Massalari 2 kg va 1 kg bo‘lgan nuqtaviy jismlar bir-birini 1.334·10⁻¹⁰ N kuch bilan tortadi. Ular orasidagi masofani toping (m).",
+      "answers": ["2.5", "1.5", "1", "2", "3"],
+      "correct": 2
+    },
+    {
+      "text": "Ikki jism orasidagi gravitatsiya kuchi 64 marta kamaygan bo‘lsa, ular orasidagi masofa qanday o‘zgargan?",
+      "answers": [
+        "8 marta kamaygan",
+        "8 marta ortgan",
+        "64 marta ortgan",
+        "o‘zgarmagan",
+        "TJY"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Uchta jism bir tekislikda joylashgan. O‘rtadagi jismga ta’sir qiluvchi natijaviy gravitatsion kuchni toping.",
+      "answers": [
+        "2Gm²/7r²",
+        "3Gm²/r²",
+        "0",
+        "Gm²/r²",
+        "5Gm²/2r²"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "M massali sayyora atrofida m₀ va m massali sun’iy yo‘ldoshlar mos ravishda 3R va 5R radiusli orbitalarda harakatlanmoqda. Ularning o‘zaro gravitatsion ta’sir kuchini aniqlang.",
+      "answers": [
+        "γm₀m/16R²",
+        "γMm₀/16R²",
+        "γm₀m/9R²",
+        "γm₀m/25R²",
+        "γm₀m/5R²"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 50 kg bo‘lgan jismga ta’sir etuvchi og‘irlik kuchi qanday (N)? g = 10 m/s².",
+      "answers": ["500", "50", "10", "5", "0.2"],
+      "correct": 0
+    },
+    {
+      "text": "Vertikal ipga osilgan 10 kg massali jism yerda yotibdi. Agar ipning taranglik kuchi 30 N bo‘lsa, jism yerni necha Nyuton kuch bilan bosmoqda?",
+      "answers": ["70", "50", "40", "20", "100"],
+      "correct": 0
+    },
+    {
+      "text": "Massasi va radiusi Yernikidan 3 marta kichik bo‘lgan sayyora sirtida jismning og‘irlik kuchi qanday bo‘ladi?",
+      "answers": [
+        "farq qilmaydi",
+        "3 marta kam bo‘ladi",
+        "3 marta ko‘p bo‘ladi",
+        "9 marta kam bo‘ladi",
+        "9 marta ko‘p bo‘ladi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Oy radiusi Yer radiusidan 3.6 marta, massasi esa 81 marta kichik. Oy uchun erkin tushish tezlanishini aniqlang (m/s²).",
+      "answers": ["1.6", "1.7", "1.8", "1.9", "2.25"],
+      "correct": 0
+    },
+    {
+      "text": "Qanday balandlikda jismning og‘irligi Yer sirtidagiga qaraganda n marta kichik bo‘ladi?",
+      "answers": [
+        "R(n−1)",
+        "R(n+1)",
+        "R/(n−1)",
+        "R−n",
+        "R/n"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Uch Yer radiusiga teng balandlikda erkin tushish tezlanishi Yer sirtidagiga nisbatan qanday bo‘ladi?",
+      "answers": [
+        "16 marta katta",
+        "4 marta katta",
+        "16 marta kichik",
+        "4 marta kichik",
+        "3 marta kichik"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Yer sirtidan R balandlikda jismning og‘irlik kuchi F ga teng. Qanday balandlikda og‘irlik kuchi 2F ga teng bo‘ladi?",
+      "answers": [
+        "2R",
+        "2√2R",
+        "(√2−1)R",
+        "R/2",
+        "(√2+1)R"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Yer sirtidan qanday balandlikda og‘irlik kuchi Yer sirtidagi og‘irlik kuchining 64% ini tashkil qiladi?",
+      "answers": [
+        "1600",
+        "1400",
+        "1700",
+        "1650",
+        "1500"
+      ],
+      "correct": 0
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": 15,
+  "title": "15-Mavzu | Erkin tushish va vertikal harakat",
+  "subtitle": "Kamida 80% natija 16-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 16,
+  "questions": [
+    {
+      "text": "Yerdan 12 m balandlikdan boshlang‘ich tezliksiz jism tushadi. Tushish boshidan 1 s o‘tgach jism qanday balandlikda bo‘ladi? g = 10 m/s².",
+      "answers": ["5", "7", "10", "12"],
+      "correct": 1
+    },
+    {
+      "text": "Erkin tushayotgan jismning o‘ninchi sekundda o‘tgan yo‘li, undan oldingi sekundda o‘tgan yo‘lidan necha metrga ko‘p? g = 10 m/s².",
+      "answers": ["20", "5", "10", "15"],
+      "correct": 2
+    },
+    {
+      "text": "Otish momentidan jismning yerga tushish momentigacha bo‘lgan vaqt 3 s ga teng bo‘lishi uchun uni yer sirtidan qanday tezlik bilan vertikal yuqoriga otish kerak? g = 10 m/s².",
+      "answers": ["15", "25", "10", "20"],
+      "correct": 0
+    },
+    {
+      "text": "Jism yer sirtidan 20 m/s tezlik bilan vertikal yuqoriga otildi. U qanday maksimal balandlikka ko‘tariladi? g = 10 m/s².",
+      "answers": ["10", "15", "25", "20"],
+      "correct": 3
+    },
+    {
+      "text": "Vertikal yuqoriga otilgan sharcha otilish nuqtasiga 2,4 s dan so‘ng qaytib keldi. Sharcha qanday balandlikka ko‘tarilgan? (sm)",
+      "answers": ["360", "720", "144", "72"],
+      "correct": 1
+    },
+    {
+      "text": "Yerdan ikki jism vertikal yuqoriga otildi. Birinchi jismning boshlang‘ich tezligi ikkinchisining boshlang‘ich tezligidan 4 marta katta. Birinchi jism necha marta balandroq ko‘tariladi?",
+      "answers": ["4", "8", "16", "32"],
+      "correct": 2
+    },
+    {
+      "text": "Qaysidir vaqt momentida erkin tushayotgan jismning tezligi 6 m/s bo‘ladi. 2 s dan keyin jismning tezligi qanday bo‘ladi? g = 10 m/s².",
+      "answers": ["26", "16", "36", "6"],
+      "correct": 0
+    },
+    {
+      "text": "Koptok qandaydir balandlikdan 4 m/s tezlik bilan vertikal pastga otildi. Harakatning dastlabki ikki sekundidagi o‘rtacha tezlikni toping.",
+      "answers": ["12", "14", "16", "10"],
+      "correct": 1
+    },
+    {
+      "text": "Tosh 2 m/s tezlik bilan vertikal pastga otildi. Otishdan 1 s o‘tgach uning tezligi necha marta ortadi?",
+      "answers": ["2", "10", "6", "5"],
+      "correct": 2
+    },
+    {
+      "text": "Vertikal pastga otilgan jismning tezligi bir sekunddan so‘ng 6 martaga ortdi. Otishdan ikki sekund o‘tgach uning tezligi boshlang‘ichiga nisbatan necha marta ortadi?",
+      "answers": ["11", "6", "22", "15"],
+      "correct": 0
+    },
+    {
+      "text": "Ko‘tarilishda jismning tezligi otishdan 0,8 s o‘tgach ikki marta kamaygan bo‘lsa, u qanday tezlik bilan vertikal yuqoriga otilgan?",
+      "answers": ["8", "20", "12", "16"],
+      "correct": 3
+    },
+    {
+      "text": "20 m balandlikdan doskaga tushgan metall sharcha undan 25% tezligini yo‘qotib sakraydi. Sharcha urilishdan necha sekund o‘tib doskaga ikkinchi bor tushadi?",
+      "answers": ["2", "3", "5", "1"],
+      "correct": 1
+    },
+    {
+      "text": "Tosh 50 m/s tezlik bilan vertikal yuqoriga otildi. Necha sekund o‘tgach uning tezligi 30 m/s bo‘lib pastga yo‘nalgan bo‘ladi?",
+      "answers": ["10", "5", "8", "12"],
+      "correct": 2
+    },
+    {
+      "text": "Jism 40 m balandlikdan 5 m/s boshlang‘ich tezlik bilan vertikal yuqoriga otildi. 2 s o‘tgach jism qanday balandlikda bo‘ladi?",
+      "answers": ["30", "40", "20", "10"],
+      "correct": 0
+    },
+    {
+      "text": "Jism vertikal yuqoriga 20 m/s tezlik bilan otildi. Harakat boshidan 3 s ichida o‘tgan yo‘lni toping.",
+      "answers": ["15", "20", "30", "25"],
+      "correct": 3
+    },
+    {
+      "text": "Yerdan 8 m balandda bo‘lgan nuqtadan vertikal yuqoriga otilgan jism otish paytidan 2 s o‘tgach yerga tushadi. Jism qanday tezlik bilan otilgan?",
+      "answers": ["12", "6", "8", "10"],
+      "correct": 1
+    },
+    {
+      "text": "Jism 15 m balandlikdan 10 m/s boshlang‘ich tezlik bilan vertikal yuqoriga otildi. Necha sekunddan so‘ng yerga tushadi?",
+      "answers": ["5", "4", "3", "2"],
+      "correct": 2
+    },
+    {
+      "text": "To‘p 2,4 m balandlikdan 1 m/s tezlik bilan vertikal pastga otildi. Yerga tushish paytidagi tezligini toping.",
+      "answers": ["7", "1", "14", "10"],
+      "correct": 0
+    },
+    {
+      "text": "To‘p 2,4 m balandlikdan 1 m/s tezlik bilan vertikal pastga otildi. Qancha vaqtdan so‘ng yer sirtiga yetadi? (ms)",
+      "answers": ["240", "100", "400", "600"],
+      "correct": 3
+    },
+    {
+      "text": "Jism 80 m balandlikdan erkin tushadi. U tushish vaqtining so‘nggi sekundida qanday yo‘l o‘tadi?",
+      "answers": ["15", "35", "25", "45"],
+      "correct": 1
+    },
+    {
+      "text": "Agar jism tushish vaqtining oxirgi sekundida 45 m yo‘l o‘tgan bo‘lsa, u qanday balandlikdan tushgan?",
+      "answers": ["100", "150", "125", "175"],
+      "correct": 2
+    },
+    {
+      "text": "Jism maksimal ko‘tarilish balandligining 8/9 qismidagi balandlikda bo‘lsa, uning tezligi boshlang‘ich tezlikdan necha marta kichik bo‘ladi?",
+      "answers": ["3", "9", "6", "2"],
+      "correct": 0
+    },
+    {
+      "text": "Jism 75 m balandlikdagi nuqtada 2 s interval bilan ikki marta bo‘ldi. Boshlang‘ich tezlikni toping.",
+      "answers": ["30", "50", "40", "60"],
+      "correct": 2
+    },
+    {
+      "text": "Vertikal yuqoriga otilgan tosh bir balandlikda 0,8 s va 1,5 s da bo‘ldi. Bu balandlik qancha?",
+      "answers": ["1", "2", "4", "6"],
+      "correct": 3
+    },
+    {
+      "text": "Agar oxirgi sekunddagi yo‘l dastlabki sekunddagi yo‘ldan 5 marta katta bo‘lsa, jism qanday balandlikdan tushgan?",
+      "answers": ["45", "15", "30", "90"],
+      "correct": 0
+    },
+    {
+      "text": "Erkin tushayotgan jism oxirgi 10 sekundda butun yo‘lning 3/4 qismini o‘tadi. Jism qanday balandlikdan tushgan?",
+      "answers": ["10", "50", "200", "100"],
+      "correct": 2
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": 20,
+  "title": "20-Mavzu | Jism impulsi. Impulsning saqlanish qonuni",
+  "subtitle": "Kamida 80% natija 21-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 21,
+  "questions": [
+    {
+      "text": "Massasi 4 t bo‘lgan avtobusning tezligi yo‘lning to‘g‘ri chiziqli qismida 5 m/s dan 10 m/s gacha ortdi. Avtobus impulsining o‘zgarishini toping.",
+      "answers": ["10 kN·s", "20 kN·s", "15 kN·s", "25 kN·s"],
+      "correct": 1
+    },
+    {
+      "text": "300 m/s tezlik bilan gorizontal yo‘nalishda uchayotgan massasi 6 g bo‘lgan o‘q silliq stol ustida yotgan 500 g massali brusokni teshib kiradi va undan 150 m/s tezlikda uchib chiqadi. Brusokning harakat tezligini aniqlang (m/s).",
+      "answers": ["1,8", "2,2", "0,9", "3,0"],
+      "correct": 0
+    },
+    {
+      "text": "Massalari 400 g va 200 g bo‘lgan ikki jism to‘qnashuvdan so‘ng to‘xtab qoldi. Agar birinchi jism tezligi to‘qnashuvdan oldin 0,8 m/s bo‘lgan bo‘lsa, ikkinchi jism tezligi qanday bo‘lgan (m/s)?",
+      "answers": ["0,8", "2,4", "1,6", "3,2"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 80 g bo‘lgan shar tinch turgan 40 g massali shar tomon harakatlanmoqda. To‘qnashuvni markaziy absolyut noelastik deb hisoblab, ikkinchi shar impulsining o‘zgarishini toping.",
+      "answers": ["40 mN·s", "65 mN·s", "35 mN·s", "53 mN·s"],
+      "correct": 3
+    },
+    {
+      "text": "2 kg massali bir xil ikkita sharcha bir-biriga qarama-qarshi harakatlanadi. Bir sharchaning tezligi 3 m/s, ikkinchisiniki 7 m/s. Ikkala sharchaning natijaviy impulsining qiymatini toping.",
+      "answers": ["8", "10", "14", "20"],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 1 kg bo‘lgan jism boshlang‘ich tezliksiz 6 m/s² tezlanish bilan to‘g‘ri chiziqli tekis tezlanuvchan harakat boshladi. Uning 3 m yo‘ldagi impuls o‘zgarishini aniqlang (N·s).",
+      "answers": ["3", "6", "12", "18"],
+      "correct": 1
+    },
+    {
+      "text": "Gorizontal yo‘nalishda 600 m/s tezlik bilan uchayotgan massasi 40 kg bo‘lgan snaryad portlab ikki bo‘lakka: 30 kg va 10 kg bo‘lindi. Katta bo‘lak dastlabki harakat yo‘nalishida 900 m/s tezlikda harakatlandi. Kichik bo‘lakning tezligining modulini toping (m/s).",
+      "answers": ["150", "450", "300", "600"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 1 kg bo‘lgan jism 1 m radiusli aylana bo‘ylab 2 rad/s burchak tezlik bilan tekis aylanadi. Aylana markazidan jismga o‘tkazilgan radius-vektorning 180° ga burilgandagi jism impulsining o‘zgarish modulini toping.",
+      "answers": ["1", "2", "8", "4"],
+      "correct": 3
+    },
+    {
+      "text": "Ikki jism bir-biriga tomon harakatlanmoqda. Biri 3 m/s tezlikda harakatlanmoqda. To‘qnashuvdan so‘ng birinchi jism harakat yo‘nalishida 1,5 m/s tezlikda harakatlanadi. Ular massalari nisbatini toping.",
+      "answers": ["3", "1,5", "4,5", "2"],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 900 kg bo‘lgan zambarakdan 10 kg massali snaryad gorizontga 60° burchak ostida 200 m/s tezlikda uchib chiqadi. Otish paytida qurol qanday tezlik oladi (m/s)?",
+      "answers": ["2,2", "1,1", "0,5", "3,3"],
+      "correct": 1
+    },
+    {
+      "text": "Mototsiklchi qiya trekda qayrilishni bajaradi. Agar ishqalanish koeffitsiyenti 0,75, trekning qiyalik burchagi esa gorizontga 45° bo‘lsa, harakatning mumkin bo‘lgan maksimal tezligi minimalidan necha marta ortiq?",
+      "answers": ["3,5", "5", "7", "14"],
+      "correct": 2
+    },
+    {
+      "text": "Muzda turgan odam, muz bo‘ylab massasi 0,5 kg bo‘lgan toshni uloqtirdi. Tosh to‘xtaguncha 2 s ichida 20 m yo‘l bosdi. Agar odamning massasi 60 kg bo‘lsa, tosh otish natijasida odam qanday tezlik bilan harakatlana boshlaydi (m/s)?",
+      "answers": ["0,34", "0,51", "0,08", "0,17"],
+      "correct": 3
+    },
+    {
+      "text": "5 kg massali miltiqdan o‘q uziladi. Merganning yelkasiga tiralmagan miltiqning orqaga tisarilish tezligi mergan miltiqni yelkasiga qattiq tirab turgan holatdagi orqaga tisarilish tezligidan necha marta ortiq bo‘ladi? Merganning massasi 75 kg.",
+      "answers": ["16", "15", "8", "20"],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 200 kg bo‘lgan sol qirg‘oq bo‘ylab 0,8 m/s tezlik bilan suzmoqda. Unga massasi 60 kg bo‘lgan odam qirg‘oqqa tik yo‘nalishda 5 m/s tezlik bilan sakradi. Solning odam bilan birgalikdagi tezligi qanday bo‘lib qoldi (m/s)?",
+      "answers": ["1,8", "1,3", "2,1", "0,9"],
+      "correct": 1
+    },
+    {
+      "text": "Balandligi 1 m bo‘lgan stolning qirrasida massasi 100 g bo‘lgan kichik sharcha turibdi. Unga gorizontal yo‘nalishda 100 m/s tezlik bilan harakatlanayotgan 10 g massali o‘q tegdi va unda tiqilib qoldi. Sharcha stoldan qanday masofada (m) yerga tushadi?",
+      "answers": ["2", "6", "4", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Silliq relslarda turgan aravachaning bir uchidan ikkinchi uchiga relslarga parallel ravishda odam yurib o‘tsa, aravacha yerga nisbatan qanday masofaga siljiydi (m)? Odam massasi 60 kg, aravacha massasi 120 kg, uzunligi 6 m.",
+      "answers": ["1", "3", "4", "2"],
+      "correct": 3
+    },
+    {
+      "text": "Ko‘ndalang kesimi 6 cm² bo‘lgan suv oqimi devorga o‘tkazilgan normalga 60° burchak ostida urilib, undan elastik qaytmoqda. Suv oqimining tezligi 12 m/s bo‘lsa, devorga ta’sir etuvchi kuchni toping (N).",
+      "answers": ["86,4", "43,2", "172,8", "64,8"],
+      "correct": 0
+    },
+    {
+      "text": "Quroldan 600 m/s tezlik bilan snaryad uchib chiqadi. Agar porox gazlarining o‘rtacha bosim kuchi 2700 kN ga teng bo‘lsa va snaryad stvol ichida 0,002 s harakatlansa, snaryadning massasini aniqlang.",
+      "answers": ["4,5", "9", "18", "13,5"],
+      "correct": 1
+    },
+    {
+      "text": "1000 kg massali bosqon 1,8 m balandlikdan sandonga tushadi. Zarbning davomiyligi 0,1 s. Urilish noelastik. Sandon va bosqonning o‘zaro ta’sir kuchining (kN da) o‘rtacha qiymatini aniqlang.",
+      "answers": ["35", "140", "70", "105"],
+      "correct": 2
+    },
+    {
+      "text": "0,5 kg massali koptok vertikalga 60° burchak ostida yo‘nalgan 10 m/s tezlik bilan polga urilib sakrab ketadi. Agar urilish 0,1 s davom etsa, koptokning pol bilan o‘zaro ta’sirlashuvining o‘rtacha kuchini toping (N).",
+      "answers": ["25", "110", "85", "55"],
+      "correct": 3
+    },
+    {
+      "text": "6 km/s tezlik bilan uchayotgan 5 t massali raketa burilish uchun reaktiv dvigatelini yoqadi. Gazlarning tezligi 2 km/s, yoqilg‘i sarfi 10 kg/s. Qanday radiusli (km da) aylana bo‘ylab burilish sodir bo‘ladi?",
+      "answers": ["1500", "9000", "3000", "4500"],
+      "correct": 1
+    },
+    {
+      "text": "Suv oqimi perpendikulyar joylashgan vertikal devorga uriladi va pastga oqib tushadi. Agar oqimning kesim yuzasi 5 cm², tezligi esa 8 m/s bo‘lsa, oqim devorga qanday kuch bilan ta’sir qilishini toping (N).",
+      "answers": ["16", "32", "64", "48"],
+      "correct": 1
+    }
+  ]
+}

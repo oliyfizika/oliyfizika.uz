@@ -1,0 +1,128 @@
+
+{
+  "id": 6,
+  "title": "6-Mavzu | Tekis o‘zgaruvchan harakatni grafik ravishda tasvirlash",
+  "subtitle": "Kamida 80% natija 7-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 7,
+  "questions": [
+    {
+      "text": "Rasmda 5 ta jism tezliklarining vaqtga bog‘lanish grafiklari keltirilgan. Qaysi jismlar tekis harakat qiladi?",
+      "image": "../rasmlar5/test5-1.png",
+      "answers": ["1,4", "2", "1,2,4", "3,5"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda jism tezlanishining vaqtga bog‘lanishi berilgan. Vaqtning qaysi oralig‘ida jism tekis tezlanuvchan harakat qilgan?",
+      "image": "../rasmlar5/test5-2.png",
+      "answers": ["2–3", "1–2", "0–1", "0–1, 2–3"],
+      "correct": 1
+    },
+    {
+      "text": "Quyidagi grafikdagi α burchak tangensi qanday fizik ma’noga ega?",
+      "image": "../rasmlar5/test5-3.png",
+      "answers": [
+        "tezlanish o‘zgarishi",
+        "tezlanish",
+        "tezlik o‘zgarishi",
+        "tezlik"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Keltirilgan grafikdan foydalanib, jismning harakat tezlanishini toping (m/s²).",
+      "image": "../rasmlar5/test5-4.png",
+      "answers": ["3", "6", "2", "4"],
+      "correct": 2
+    },
+    {
+      "text": "Jism tezligining vaqtga bog‘lanish grafigi rasmda ko‘rsatilgan. 1-, 2- va 3-nuqtalarga mos keluvchi tezlanishlarni taqqoslang.",
+      "image": "../rasmlar5/test5-5.png",
+      "answers": [
+        "a₁ < a₂ < a₃",
+        "a₂ > a₁ > a₃",
+        "a₁ > a₂ > a₃",
+        "a₂ < a₁ < a₃"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda to‘g‘ri chiziqli harakat qilayotgan jismning tezlik grafigi keltirilgan. Bu harakatning tezlik tenglamasi qanday bo‘ladi?",
+      "image": "../rasmlar5/test5-6.png",
+      "answers": [
+        "v = 1 + 2t",
+        "v = 1 + t",
+        "v = 2 + 2t",
+        "v = 2 + t"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Jism rasmdagi kabi tekis o‘zgaruvchan harakatlanmoqda. Tezlanish yo‘nalishi o‘zgarmagan. Jismning 8 s da o‘tgan yo‘li (m) va ko‘chishini aniqlang (m).",
+      "image": "../rasmlar5/test5-7.png",
+      "answers": [
+        "10; 10",
+        "6; 10",
+        "8; 4",
+        "10; 1"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Quyida turli jismlarning tezlik grafiklari keltirilgan. Ularning qaysi biri shaharlararo yo‘ldan ketayotib, biror sabab bilan yo‘l chetiga chiqib to‘xtagan avtobus harakatini tavsiflashi mumkin?",
+      "image": "../rasmlar5/test5-8.png",
+      "answers": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan grafikdan foydalangan holda birinchi va ikkinchi jismlar 4 s davomidagi ko‘chishlarining farqini toping (m).",
+      "image": "../rasmlar5/test5-9.png",
+      "answers": [
+        "20",
+        "30",
+        "40",
+        "60"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda jism tezligining vaqtga bog‘lanish grafigi keltirilgan. Jismning (3 s; 8 s) vaqt oralig‘ida bosib o‘tgan yo‘lini toping (m).",
+      "image": "../rasmlar5/test5-10.png",
+      "answers": [
+        "1,3",
+        "1,75",
+        "1,45",
+        "3,25"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Quyida jism tezligining vaqtga bog‘langan grafigi keltirilgan bo‘lib, uning 0–8 s oraliqdagi o‘rtacha tezligi 17 m/s ga teng ekanligi ma’lum. Bundan foydalanib, jismning 0–4 s oraliqdagi o‘rtacha tezligini toping (m/s).",
+      "image": "../rasmlar5/test5-11.png",
+      "answers": [
+        "13",
+        "15",
+        "14",
+        "12"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Quyida boshlang‘ich tezligi 10 m/s bo‘lgan jism tezlanishining vaqtga bog‘lanish grafigi tasvirlangan. Jism 20 s da 500 m yo‘l yurgan bo‘lsa, a nimaga teng (m/s²)?",
+      "image": "../rasmlar5/test5-12.png",
+      "answers": [
+        "1,5",
+        "2",
+        "2,5",
+        "3"
+      ],
+      "correct": 1
+    }
+  ]
+}
+
