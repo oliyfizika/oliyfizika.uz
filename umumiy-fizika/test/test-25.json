@@ -12,6 +12,7 @@
     },
     {
       "text": "Rasmda tasvirlangan nuqtalardagi (1, 2, 3, 4) suyuqlik bosimlarni taqqoslang.",
+      "images": "../rasmlar25/rasm2.png",
       "answers": ["4 katta, 2 kichik", "1 kichik, 4 katta", "hamma bir xil", "1 katta, 2 kichik"],
       "correct": 1
     },
@@ -52,7 +53,8 @@
     },
     {
       "text": "Idishlarning biriga suv, ikkinchisiga kerosin quyilgan va elastik parda bilan ajratilgan. Qaysi idish tubiga bosim kattaroq va parda qaysi tomonga egiladi?",
-      "answers": [
+        "images": "../rasmlar25/rasm9.png",
+        "answers": [
         "psuv = pker, egilmaydi",
         "psuv > pker, suv tomonga",
         "psuv > pker, kerosin tomonga",
@@ -62,6 +64,7 @@
     },
     {
       "text": "Turli shakldagi 3 ta idishga bir xil suyuqlik bir xil balandlikkacha quyilgan. Idishlar tubiga bosimlar munosabati qanday bo‘ladi?",
+      "images": "../rasmlar25/rasm10.png",
       "answers": ["p1 = p2 = p3", "p2 > p1 > p3", "p1 = p3 < p2", "p2 > p1 < p3"],
       "correct": 0
     },

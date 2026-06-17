@@ -33,7 +33,8 @@
       "correct": 1
     },
     {
-      "text": "Uchta jism bir tekislikda joylashgan. O‘rtadagi jismga ta’sir qiluvchi natijaviy gravitatsion kuchni toping.",
+      "text": "Uchta jism bir tekislikda joylashgan. O‘rtadagi jismga ta’sir qiluvchi natijaviy gravitatsion kuchни toping.",
+      "images": "../rasmlar13/rasm3.png",
       "answers": [
         "2Gm²/7r²",
         "3Gm²/r²",
@@ -45,6 +46,7 @@
     },
     {
       "text": "M massali sayyora atrofida m₀ va m massali sun’iy yo‘ldoshlar mos ravishda 3R va 5R radiusli orbitalarda harakatlanmoqda. Ularning o‘zaro gravitatsion ta’sir kuchini aniqlang.",
+      "images": "../rasmlar13/rasm4.png",
       "answers": [
         "γm₀m/16R²",
         "γMm₀/16R²",

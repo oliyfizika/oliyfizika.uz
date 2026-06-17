@@ -21,12 +21,14 @@
       "correct": 2
     },
     {
-      "text": "Rasmda uchta g‘isht stol ustiga to‘rt holatda qo‘yilgan. Qaysi holatda g‘ishtlar stolni kattaroq kuch bilan bosadi?",
+      "text": "Rasmda uchta g‘isht stol ustiga to‘rt holatda qo‘yilgan. Qaysi holatda g‘ishtlar stolни kattaroq kuch bilan bosadi?",
+      "images": "../rasmlar24/rasm4.png",
       "answers": ["1", "2", "3", "hamma holatlarda bir xil kuch bilan bosadi."],
       "correct": 3
     },
     {
       "text": "G‘isht stol ustiga rasmda tasvirlangandek 3 xil holatda qo‘yilgan. G‘ishtning qaysi holatida uning stolga bosimi eng katta?",
+      "images": "../rasmlar24/rasm5.png",
       "answers": ["1", "2", "3", "hamma holatlarda bosim bir xil."],
       "correct": 0
     },
@@ -42,16 +44,19 @@
     },
     {
       "text": "Blokka osilgan jismlar rasmdagi kabi muvozanatda turibdi. Katta yukning stol sirtiga tegib turgan qismining yuzi 0,4 m2 bo‘lsa, u stolga necha Pa bosim bermoqda? (M_katta = 5kg, m_kichik = 1kg)",
+      "images": "../rasmlar24/rasm8.png",
       "answers": ["100", "400", "200", "500"],
       "correct": 0
     },
     {
       "text": "F = 120 N kuch S = 0,6 m2 yuzaga vertikalga nisbatan α = 37° burchak ostida ta’sir qilmoqda. Bu kuchning bosimini aniqlang (Pa).",
+      "images": "../rasmlar24/rasm9.png",
       "answers": ["120", "300", "240", "160"],
       "correct": 3
     },
     {
       "text": "Qirrasining uzunligi 2 m bo‘lgan kub shaklidagi og‘irligi 20 N bo‘lib u qiya tekislik ustida tinch turibdi. Jismning qiya tekislik yuzasiga berayotgan bosimini aniqlang (Pa). (α = 53°)",
+      "images": "../rasmlar24/rasm10.png",
       "answers": ["5", "4", "3", "2"],
       "correct": 2
     },

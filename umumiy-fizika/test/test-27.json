@@ -7,6 +7,7 @@
   "questions": [
     {
       "text": "Tutash idishlar bitta tirsagida simob ustuni 16 cm. Ikkinchi tirsakdagi kerosin ustunining balandligi necha metr? Simobning zichligi 13,6 g/cm3, kerosinniki 0,8 g/cm3 ga teng.",
+      "images": "../rasmlar27/rasm1.png",
       "answers": ["1,36", "2,72", "13,6", "16"],
       "correct": 1
     },
@@ -32,21 +33,25 @@
     },
     {
       "text": "U-simon (tutash) idishga quyilgan va bir-biri bilan aralashmaydigan ikki xil suyuqliklarning ajralish sathidan boshlanadigan balandliklarining nisbati h1/h2 = 2 bo‘lsa, bu suyuqliklarning zichliklari nisbati ρ1/ρ2 qanday?",
+      "images": "../rasmlar27/rasm6.png",
       "answers": ["0,5", "0,25", "1", "2"],
       "correct": 0
     },
     {
       "text": "Tutash idishda dastlab suv va simob bor edi. Suv ustunining balandligi 68 cm. Simob idishning ikkala qismida bir xil balandlikka ega bo‘lishi uchun idishning ikkinchi tomoniga necha cm balandlikkacha kerosin quyish kerak?",
+      "images": "../rasmlar27/rasm7.png",
       "answers": ["15", "53", "68", "85"],
       "correct": 3
     },
     {
       "text": "Tutash idishlarga simob, kerosin va x suyuqlik rasmdagi kabi quyilgan. x suyuqlikning zichligini toping (kg/m3). (Kerosin ustuni 40 cm, x suyuqlik 30 cm)",
+      "images": "../rasmlar27/rasm8.png",
       "answers": ["2500", "5300", "7800", "4000"],
       "correct": 3
     },
     {
       "text": "Tutash idishlarga simob quyilgan. S1 = 10 cm2 yuzali tirsakka m = 204 g massali suv quyildi. S2 = 5 cm2 yuzali tirsakda simob qancha h balandlikka ko‘tariladi (cm)?",
+      "images": "../rasmlar27/rasm9.png",
       "answers": ["2,5", "2", "1", "1,5"],
       "correct": 2
     }

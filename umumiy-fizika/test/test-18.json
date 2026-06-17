@@ -17,6 +17,7 @@
     },
     {
       "text": "Inersiya bo‘yicha harakatlanayotgan jismga ishqalanish kuchlari ta’sir eta boshlagach qanday harakat qiladi?",
+      "images": "../rasmlar18/rasm3.png",
       "answers": [
         "harakati o‘zgarmaydi",
         "tekis sekinlanuvchan",
@@ -64,16 +65,19 @@
     },
     {
       "text": "Ishqalanishsiz sirtda ikkita jismga F₁ va F₂ kuchlar ta’sir qiladi. Taranglik kuchlari nisbati T₁/T₂ ni toping.",
+      "images": "../rasmlar18/rasm10.png",
       "answers": ["1/2", "2/3", "1", "3/2", "2"],
       "correct": 0
     },
     {
       "text": "Har biri 10 kg bo‘lgan 5 ta brusok zanjiri F = 100 N kuch bilan tortilmoqda. 1- va 2-brusok orasidagi ip tarangligini toping.",
+      "images": "../rasmlar18/rasm11.png",
       "answers": ["60", "70", "80", "85", "90"],
       "correct": 2
     },
     {
       "text": "Sistemaning tezlanishi, yuqori ip tarangligi T₁ va F kuchni aniqlang. T₂ = 24 N.",
+      "images": "../rasmlar18/rasm12.png",
       "answers": [
         "2; 6; 49",
         "2; 60; 108",
@@ -85,16 +89,19 @@
     },
     {
       "text": "Atvud mashinasida (2m va m massalar) ipning taranglik kuchini toping.",
+      "images": "../rasmlar18/rasm13.png",
       "answers": ["mg/2", "2mg/3", "mg", "mg/3", "4mg/3"],
       "correct": 4
     },
     {
       "text": "m₁ = 10 kg va m₂ = 15 kg yuklar blok orqali bog‘langan. Sistemaning tezlanishini toping.",
+      "images": "../rasmlar18/rasm14.png",
       "answers": ["1", "2", "4", "5", "8"],
       "correct": 2
     },
     {
       "text": "Ishqalanishsiz sirtdagi 3 kg va 2 kg jismlar F = 15 N kuch bilan surilmoqda. Jismlar orasidagi ta’sir kuchini toping.",
+      "images": "../rasmlar18/rasm15.png",
       "answers": ["2", "6", "4,5", "3,6", "8"],
       "correct": 1
     }

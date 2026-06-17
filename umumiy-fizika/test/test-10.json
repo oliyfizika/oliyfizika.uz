@@ -57,6 +57,7 @@
     },
     {
       "text": "Jismning AB trayektoriya bo‘ylab harakatlanishi natijasida uning tezligi v₁ dan v₂ gacha o‘zgaradi. O‘rtacha tezlanish vektori qanday yo‘nalgan bo‘ladi?",
+      "images": "../rasmlar10/rasm10.png",
       "answers": [
         "v₁ vektor yo‘nalishiga mos yo‘nalgan",
         "v₂ vektor yo‘nalishiga mos yo‘nalgan",
@@ -112,6 +113,7 @@
     },
     {
       "text": "G‘ildirak A nuqtasining yerga nisbatan tezligi 3 m/s ga teng. S nuqtaning yerga nisbatan tezligi −2 m/s ga teng. Aylana diametri 1 m ga teng. G‘ildirak gardishining markazga intilma tezlanishini toping (m/s²).",
+      "images": "../rasmlar10/rasm19.png",
       "answers": ["12,5", "50", "8", "18"],
       "correct": 0
     },
@@ -122,4 +124,3 @@
     }
   ]
 }
-

@@ -47,11 +47,13 @@
     },
     {
       "text": "Radiusi 32 sm bo‘lgan katta shkiv 180 ayl/min chastota bilan aylanmoqda va u radiusi 24 sm bo‘lgan kichkina shkiv bilan tasma orqali bog‘langan. Kichik shkivning burchak tezligini toping (rad/s).",
+      
       "answers": ["11/3", "8π", "3π", "6π"],
       "correct": 1
     },
     {
       "text": "Rasmda traktorning katta g‘ildiragidagi A nuqtaning yerga nisbatan oniy tezligi 4√2 m/s bo‘lsa, B nuqtaning yerga nisbatan oniy tezligini toping (m/s).",
+      "images": "../rasmlar9/rasm10.png",
       "answers": ["12", "10", "8", "24"],
       "correct": 2
     },
@@ -82,6 +84,7 @@
     },
     {
       "text": "Disk o‘q atrofida o‘zgarmas tezlik bilan aylanmoqda. Aylanish o‘qidan har xil masofada joylashgan 1, 2 va 3 nuqtalarning markazga intilma tezlanishlari qanday munosabatda bo‘ladi?",
+      "images": "../rasmlar9/rasm16.png",
       "answers": [
         "a₁ > a₂ > a₃",
         "a₁ = a₂ = a₃",
