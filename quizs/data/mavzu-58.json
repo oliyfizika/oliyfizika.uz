@@ -1,0 +1,95 @@
+{
+  "title": "Nisbiylik nazariyasi elementlari",
+  "questions": [
+    {
+      "q": "Maxsus nisbiylik nazariyasi fizikaning qaysi sohasini o‘rganadi?",
+      "a": [
+        "Atom va yadro tuzilishini",
+        "Fazo va vaqtning asosiy xususiyatlarini",
+        "Yulduzlar va yulduzlar sistemalarini",
+        "Qattiq jismlar mexanikasini"
+      ],
+      "c": 1,
+      "ref": "[1]"
+    },
+    {
+      "q": "Eynshteynning nisbiylik nazariyasi bo‘yicha 1-postulati qanday ifodalanadi?",
+      "a": [
+        "Tabiatdagi barcha jarayonlar har qanday inersial sistemada bir xilda yuz beradi",
+        "Yorug'lik tezligi sanoq sistemasiga bog'liq",
+        "Faqat mexanik hodisalar barcha sistemalarda bir xil kechadi",
+        "Harakatlanayotgan jism massasi kamayadi"
+      ],
+      "c": 0,
+      "ref": "[2, 3]"
+    },
+    {
+      "q": "Vakuumdagi yorug‘lik tezligi haqidagi qaysi tasdiq nisbiylik nazariyasi postulatlariga mos keladi?",
+      "a": [
+        "Manba tezligiga bog'liq ravishda o'zgaradi",
+        "Barcha inersial sanoq sistemalarida bir xildir va manba tezligiga bog'liq emas",
+        "Faqat tinch turgan sistemalarda o'zgarmasdir",
+        "Muhitning optik zichligiga qarab ortadi"
+      ],
+      "c": 1,
+      "ref": "[2, 3]"
+    },
+    {
+      "q": "Jism massasi 2 marta ortishi uchun u qanday tezlikda harakatlanishi zarur? (c – yorug'lik tezilgi)",
+      "a": ["0,5c", "0,6c", "0,8c", "0,87c"],
+      "c": 3,
+      "ref": "[4]"
+    },
+    {
+      "q": "Zarraning tezligi 0,8c bo‘lsa, uning kinetik energiyasining to‘la energiyasiga nisbati nimaga teng?",
+      "a": ["1/5", "1/4", "2/5", "2/3"],
+      "c": 2,
+      "ref": "[5]"
+    },
+    {
+      "q": "Zarracha v = √13c/7 tezlikda harakatlansa, uning to'la energiyasi kinetik energiyasidan necha marta katta bo'ladi?",
+      "a": ["6/5", "7/6", "6", "7"],
+      "c": 3,
+      "ref": "[6]"
+    },
+    {
+      "q": "Zarraning tezligi 0,8c dan 0,6c gacha kamaydi. Bunda uning relyativistik massasi necha marta kamaygan?",
+      "a": ["4/3", "2", "3/2", "5/3"],
+      "c": 0,
+      "ref": "[7]"
+    },
+    {
+      "q": "Nisbiylik nazariyasiga ko‘ra, quyidagi tasdiqlardan qaysi biri to‘g‘ri?",
+      "a": [
+        "Vaqt oralig'i barcha sanoq sistemalarida mutloqdir",
+        "Jismlarning harakat yo'nalishidagi o'lchamlari nisbiydir",
+        "Tezlik ortishi bilan vaqt oqimi tezlashadi",
+        "Yorug'lik tezligidan yuqori tezlik mavjud"
+      ],
+      "c": 1,
+      "ref": "[3]"
+    },
+    {
+      "q": "Barcha inersial sanoq sistemalarida mexanika qonunlari bir xilda kechishi qanday ataladi?",
+      "a": [
+        "Eynshteyn postulati",
+        "Galileyning nisbiylik prinsipi",
+        "Nyutonning birinchi qonuni",
+        "Harakatlarning mustaqillik prinsipi"
+      ],
+      "c": 1,
+      "ref": "[8, 9]"
+    },
+    {
+      "q": "Nisbiylik nazariyasiga ko'ra, voqealarning bir vaqtda yuz berishi qanday xarakterga ega?",
+      "a": [
+        "Mutloq (hamma joyda bir xil)",
+        "Nisbiy (sanoq sistemasiga bog'liq)",
+        "Faqat vakuumda bir xil",
+        "Faqat yorug'lik manbai uchun mutloq"
+      ],
+      "c": 1,
+      "ref": "[3]"
+    }
+  ]
+}

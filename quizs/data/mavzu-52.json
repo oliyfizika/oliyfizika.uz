@@ -1,0 +1,75 @@
+{
+  "title": "Elektromagnit tebranishlar",
+  "questions": [
+    {
+      "q": "Elektromagnit tebranishlar konturi qanday elementlardan tashkil topadi?",
+      "a": [
+        "G'altak va rezistordan",
+        "Kondensator va g'altakdan",
+        "Manba va kondensatordan",
+        "Rezistor va kondensatordag"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Ideal tebranish konturining xususiy tebranishlar davrini topish formulasini ko'rsating (Tomson formulasi).",
+      "a": [
+        "T = 1 / \u221a(LC)",
+        "T = 2\u03c0\u221a(LC)",
+        "T = 2\u03c0LC",
+        "T = \u221a(LC) / 2\u03c0"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Kuzatish boshlangan vaqtda ideal tebranish konturidagi elektr maydon energiyasi 6 mJ, magnit maydon energiyasi 8 mJ bo\u2018lgan. Sistemaning to\u2018la energiyasini (mJ) aniqlang.",
+      "a": ["48 mJ", "14 mJ", "10 mJ", "2 mJ"],
+      "c": 1
+    },
+    {
+      "q": "Tebranish konturidagi g\u2018altakning induktivligi 4 marta orttirilsa, konturdagi elektromagnit tebranishlar davri qanday o\u2018zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "2 marta kamayadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Ideal tebranish konturidagi elektromagnit tebranishlar chastotasini 3 marta orttirish uchun konturdagi kondensatorning elektr sig\u2018imini qanday o\u2018zgartirish kerak?",
+      "a": [
+        "9 marta orttirish kerak",
+        "3 marta kamaytirish kerak",
+        "9 marta kamaytirish kerak",
+        "3 marta orttirish kerak"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Past chastotali elektr tebranishlarini yuqori chastotali elektr tebranishlariga qo\u2018shib yuborish jarayoni nima deyiladi?",
+      "a": ["Modulyatsiya", "Detektorlash", "Rezonans", "Interferensiya"],
+      "c": 0
+    },
+    {
+      "q": "Elektromagnit to\u2018lqinlar to\u2018lqinlarning qaysi turiga kiradi?",
+      "a": ["Bo\u2018ylama", "Statsionar", "Ko\u2018ndalang", "Mexanik"],
+      "c": 2
+    },
+    {
+      "q": "Qanday sharoitda elektromagnit to'lqinlar nurlanadi?",
+      "a": ["Zaryad to'g'ri chiziqli tekis harakatlanganda", "Zaryad tinch holatda turganda", "Zaryad tebranganda yoki tezlanish bilan harakatlanganda", "Faqat metallarda tok o'tganda"],
+      "c": 2
+    },
+    {
+      "q": "Tebranishlar konturidagi zaryadning o\u2018zgarish qonuni q = sin(10t) (C) ko\u2018rinishga ega bo'lsa, tok kuchi tebranishlarining amplitudasini toping (A).",
+      "a": ["1 A", "0,1 A", "10 A", "100 A"],
+      "c": 2
+    },
+    {
+      "q": "Tebranish jarayonida elektr tebranishlar konturida qanday fizik kattaliklar bir-biriga davriy aylanadi?",
+      "a": [
+        "Induktivlik va sig'im",
+        "Zaryadlar va toklar",
+        "Elektr va magnit maydonlar energiyalari",
+        "Potensial va kinetik energiyalar"
+      ],
+      "c": 2
+    }
+  ]
+}

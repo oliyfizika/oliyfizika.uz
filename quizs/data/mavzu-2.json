@@ -1,0 +1,135 @@
+{
+  "title": "Tekis o'zgaruvchan harakat",
+  "questions": [
+    {
+      "q": "Trayektoriyasi to'g'ri chiziqdan iborat bo'lib, teng vaqtlar ichida tezligi bir xil miqdorda o'zgaradigan harakat nima deyiladi?",
+      "a": [
+        "Egri chiziqli harakat",
+        "To'g'ri chiziqli tekis harakat",
+        "To'g'ri chiziqli tekis o'zgaruvchan harakat",
+        "Aylanma harakat"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Tekis tezlanuvchan harakatda tezlanish vektori va tezlik vektori yo'nalishlari qanday bo'ladi?",
+      "a": [
+        "O'zaro perpendikulyar",
+        "Bir xil yo'nalishda",
+        "Qarama-qarshi yo'nalishda",
+        "Ixtiyoriy burchak ostida"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Tekis sekinlanuvchan harakatda tezlanish vektori tezlik yo'nalishiga nisbatan qanday yo'nalgan bo'ladi?",
+      "a": [
+        "Bir xil yo'nalishda",
+        "90 gradus burchak ostida",
+        "Qarama-qarshi yo'nalishda",
+        "Yo'nalishga ega emas"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Tezlikning vaqtga bog'lanish grafigi (v-t) ostidagi yuza son jihatdan nimaga teng?",
+      "a": ["Tezlanishga", "Bosib o'tilgan yo'lga", "Kuchga", "Vaqtga"],
+      "c": 1
+    },
+    {
+      "q": "Tezlikning vaqtga bog'lanish grafigidagi og'ish burchagi tangensi (tan α) qanday fizik ma'noga ega?",
+      "a": ["Yo'l", "Vaqt", "Tezlanish", "Koordinata"],
+      "c": 2
+    },
+    {
+      "q": "Xalqaro birliklar sistemasida (SI) tezlanish qanday birlikda o'lchanadi?",
+      "a": ["m/s", "m*s", "m/s²", "km/h"],
+      "c": 2
+    },
+    {
+      "q": "Tinch holatdan tekis tezlanuvchan harakat boshlagan jism 2,5 s da tezligini 60 cm/s ga yetkazdi. Jism tezlanishini toping (m/s²).",
+      "a": ["0,24", "2,4", "24", "0,12"],
+      "c": 0
+    },
+    {
+      "q": "20 m/s tezlik bilan ketayotgan avtomobil tormozlanish natijasida 2 s da to'xtadi. Tormozlanish yo'lini aniqlang (m).",
+      "a": ["40 m", "20 m", "10 m", "50 m"],
+      "c": 1
+    },
+    {
+      "q": "Moddiy nuqtaning harakat tenglamasi x = 10t² bo'lsa, uning tezlanishi necha m/s² ga teng?",
+      "a": ["10", "5", "20", "40"],
+      "c": 2
+    },
+    {
+      "q": "Jismning tezlik tenglamasi v = 15 - 1,5t ko'rinishida bo'lsa, u qanday harakat qilmoqda?",
+      "a": [
+        "Tekis tezlanuvchan",
+        "Tekis harakat",
+        "Tekis sekinlanuvchan",
+        "Tinch turibdi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Havosi so'rib olingan nayda metall tanga va qush pati tushmoqda. Qaysi biri kattaroq tezlanish bilan tushadi?",
+      "a": [
+        "Metall tanga",
+        "Qush pati",
+        "Ikkalasi bir xil g tezlanish bilan",
+        "Nay uzunligiga bog'liq"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Tekis o'zgaruvchan harakatda o'rtacha tezlik qaysi formula bilan hisoblanadi?",
+      "a": ["v = s/t", "v = (v0 + v)/2", "v = at", "v = sqrt(2as)"],
+      "c": 1
+    },
+    {
+      "q": "Moddiy nuqta v = 4t qonuniyat bilan harakatlansa, uning 5-sekundda o'tgan yo'li qancha (m)?",
+      "a": ["18 m", "50 m", "20 m", "4 m"],
+      "c": 0
+    },
+    {
+      "q": "Boshlang'ich tezlikka ega bo'lgan tekis sekinlanuvchan harakatning koordinata tenglamasini ko'rsating.",
+      "a": ["x = x0 + vt", "x = x0 + v0t + at²/2", "x = x0 + v0t - at²/2", "x = at²/2"],
+      "c": 2
+    },
+    {
+      "q": "Moddiy nuqtaning m uayyan vaqtdagi yoki trayektoriyaning ma’lum nuqtasidagi tezligiga nima deyiladi?",
+      "a": ["O'rtacha tezlik", "Oniy tezlik", "Nisbiy tezlik", "Absolut tezlik"],
+      "c": 1
+    },
+    {
+      "q": "Lift yuqoriga a tezlanish bilan harakatlanmoqda. Liftdagi odam qo'lidan tushib ketgan kitob liftga nisbatan qanday tezlanish bilan tushadi?",
+      "a": ["g - a", "g + a", "g", "0"],
+      "c": 1
+    },
+    {
+      "q": "Boshlang'ich tezliksiz tekis tezlanuvchan harakatda jismning n-sekunddagi ko'chishi qaysi qonuniyatga bo'ysunadi?",
+      "a": [
+        "Toq sonlar qatoriga (1, 3, 5...)",
+        "Juft sonlar qatoriga",
+        "O'zgarmas bo'ladi",
+        "Vaqtning kvadratiga teskari proporsional"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Vagonning tezlanishi 36000 km/h² bo'lsa, u necha m/s² ga teng?",
+      "a": ["10", "1", "2,78", "0,28"],
+      "c": 2
+    },
+    {
+      "q": "Jismning tezlik vektori bilan tezlanish vektori orasidagi burchak 180 gradus bo'lsa, jism qanday harakat qiladi?",
+      "a": ["Tekis tezlanuvchan", "Tekis sekinlanuvchan", "Aylana bo'ylab", "Tinch turadi"],
+      "c": 1
+    },
+    {
+      "q": "Bitta vertikal chiziqda turli balandlikdan bir vaqtda erkin tusha boshlagan ikki jism orasidagi masofa tushish davomida qanday o'zgaradi?",
+      "a": ["Kamayadi", "Ortadi", "O'zgarmaydi", "Boshida ortib, keyin kamayadi"],
+      "c": 2
+    }
+  ]
+}

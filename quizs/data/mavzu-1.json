@@ -1,0 +1,70 @@
+{
+  "title": "To'g'ri chiziqli tekis harakat",
+  "questions": [
+    {
+      "q": "Qanday harakat to‘g‘ri chiziqli tekis harakat deb ataladi?",
+      "a": [
+        "Trayektoriyasi to‘g‘ri chiziqdan iborat ixtiyoriy harakat",
+        "Teng vaqt oraliqlarida bir xil masofaga ko‘chuvchi va trayektoriyasi to‘g‘ri chiziqdan iborat bo‘lgan harakat",
+        "Tezlikning yo‘nalishi o‘zgarmaydigan harakat",
+        "Hech qanday tezlanishga ega bo‘lmagan harakat"
+      ],
+      "c": 1
+    },
+    {
+      "q": "To‘g‘ri chiziqli tekis harakatda tezlik vektorining moduli va yo‘nalishi qanday o‘zgaradi?",
+      "a": [
+        "Moduli tekis oshib, yo‘nalishi o‘zgarmaydi",
+        "Moduli tekis kamayib, yo‘nalishi o‘zgaradi",
+        "Moduli va yo‘nalishi o‘zgarmas saqlanadi",
+        "Moduli o‘zgarmas bo‘lib, yo‘nalishi uzluksiz o‘zgaradi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "918 km/h tezlik necha m/s ga teng bo‘ladi?",
+      "a": ["250", "230", "240", "255"],
+      "c": 3
+    },
+    {
+      "q": "To‘g‘ri chiziqli tekis harakatda tezlanish vektori nimaga teng bo‘ladi?",
+      "a": [
+        "Moduli va yo‘nalishi o‘zgarib turadi",
+        "Nolga teng",
+        "Moduli o‘zgarmas, yo‘nalishi uzluksiz o‘zgaruvchi",
+        "a > 0 bo'ladi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Motosikl yo‘lga chiqib, bir muddat o‘tgach o‘z o‘rniga qaytib keldi. Hisoblagich ko‘rsatishi 300 km ga ortgan bo‘lsa, motosiklning yo‘li va ko‘chish moduli nimaga teng (km)?",
+      "a": ["300; 300", "300; 150", "300; 0", "150; 150"],
+      "c": 2
+    },
+    {
+      "q": "Boshlang‘ich koordinatasi x₀ = -7 m bo‘lgan va Ox o‘qi bo‘ylab 6 m/s tezlikda tekis harakatlanayotgan jism qancha vaqtdan keyin x = 5 m koordinataga yetib boradi (s)?",
+      "a": ["1 s", "4 s", "3 s", "2 s"],
+      "c": 3
+    },
+    {
+      "q": "Moddiy nuqta A(3; 4) koordinatadan B(9; 12) koordinataga 2 s da to‘g‘ri chiziqli tekis harakatlanib ko‘chdi. Nuqta tezligining y o‘qiga proyeksiyasini (m/s) aniqlang.",
+      "a": ["4", "2,5", "3", "4,5"],
+      "c": 0
+    },
+    {
+      "q": "To‘g‘ri chiziqli tekis harakatni ifodalovchi tezlik grafigida shtrixlangan yuza (v-t grafigi ostidagi yuza) nimani anglatadi?",
+      "a": ["Tezlanishni", "Tezlik o'zgarishini", "Bosib o‘tilgan yo‘lni", "Koordinata o‘zgarishini"],
+      "c": 2
+    },
+    {
+      "q": "Harakat tenglamasi x = x₀ + v₀t + at²/2 ko‘rinishida berilgan bo'lsa, u to‘g‘ri chiziqli tekis harakatni ifodalashi uchun qanday shart bajarilishi kerak?",
+      "a": ["x₀ = 0", "v₀ = 0", "a = 0", "v₀ = 0; a = 0"],
+      "c": 2
+    },
+    {
+      "q": "Qanday shartlar bajarilganda moddiy nuqta to‘g‘ri chiziqli tekis harakat qiladi? (aₙ – normal, aₜ – tangensial tezlanish)",
+      "a": ["aₙ = 0, aₜ = 0", "aₙ = 0, aₜ = const", "aₙ = const, aₜ = 0", "aₙ = const, aₜ = const"],
+      "c": 0
+    }
+  ]
+}

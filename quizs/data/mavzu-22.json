@@ -1,0 +1,98 @@
+{
+  "title": "Tebranma harakat mavzusida quiz",
+  "questions": [
+    {
+      "q": "Tebranishlar amplitudasi deb nimaga aytiladi?",
+      "a": [
+        "Bir to'la davr ichidagi siljishga",
+        "Muvozanat vaziyatidan eng katta siljish moduliga",
+        "T/2 vaqt ichidagi siljishga",
+        "Vaqt birligidagi tebranishlar soniga"
+      ],
+      "c": 1
+    },
+    {
+      "q": "1 minutda 20 marta tebranayotgan mayatnikning tebranish davri necha sekundga teng?",
+      "a": ["0,5 s", "2 s", "3 s", "4 s"],
+      "c": 2
+    },
+    {
+      "q": "1 minutda 300 marta tebranayotgan mayatnikning tebranish chastotasini toping (Hz).",
+      "a": ["2 Hz", "5 Hz", "10 Hz", "300 Hz"],
+      "c": 1
+    },
+    {
+      "q": "Siklik chastota ($\u03c9$) tushunchasiga qaysi ta'rif mos keladi?",
+      "a": [
+        "1 sekunddagi tebranishlar soni",
+        "Bitta to'la tebranish uchun ketgan vaqt",
+        "2\u03c0 sekunddagi tebranishlar soni",
+        "Amplitudaning vaqtga ko'paytmasi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Jismni tebranma harakatga keltiruvchi kuchning xususiyati qanday?",
+      "a": [
+        "Kattaligi o'zgarmas, yo'nalishi o'zgaruvchan",
+        "Yo'nalishi o'zgarmas, kattaligi o'zgaruvchan",
+        "Kattaligi va yo'nalishi davriy ravishda o'zgaradi",
+        "Har doim o'zgarmas qoladi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Bikrligi k bo'lgan prujinaga osilgan m massali yukning tebranish davri qaysi formula bilan topiladi?",
+      "a": ["T = 2\u03c0\u221a(l/g)", "T = 2\u03c0\u221a(m/k)", "T = 1/\u03bd", "T = 2\u03c0\u03c9"],
+      "c": 1
+    },
+    {
+      "q": "Prujinali mayatnikdagi yukning massasi 9 marta ortsa, uning tebranish davri qanday o'zgaradi?",
+      "a": ["3 marta kamayadi", "3 marta ortadi", "9 marta ortadi", "O'zgarmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Uzunligi l bo'lgan matematik mayatnikning tebranish davri formulasini ko'rsating.",
+      "a": ["T = 2\u03c0\u221a(m/k)", "T = 2\u03c0\u221a(l/g)", "T = \u221a(lg)", "T = 2\u03c0l/g"],
+      "c": 1
+    },
+    {
+      "q": "Qanday sharoitda matematik mayatnikning tebranish davri cheksiz katta bo'ladi?",
+      "a": ["Ekvatorda", "Qutbda", "Vaznsizlikda", "Tog' cho'qqisida"],
+      "c": 2
+    },
+    {
+      "q": "Garmonik tebranish fazasi ifodasini ko'rsating ($x = A \\cos(\u03c9t + \u03b1)$).",
+      "a": ["A", "\u03c9t", "\u03b1", "\u03c9t + \u03b1"],
+      "c": 3
+    },
+    {
+      "q": "Jismning tebranish tenglamasi $x = 0,5 \\sin \u03c0t$ (m) bo'lsa, uning tezlik amplitudasi qanday (m/s)?",
+      "a": ["0,5 m/s", "\u03c0 m/s", "1,57 m/s", "3,14 m/s"],
+      "c": 2
+    },
+    {
+      "q": "Jism $x = 0,4 \\sin 2t$ (m) qonuniyat bilan tebranmoqda. Tezlanish amplitudasi necha m/s\u00b2?",
+      "a": ["0,4", "0,8", "1,6", "2,0"],
+      "c": 2
+    },
+    {
+      "q": "Prujinali mayatnikning to'la mexanik energiyasi qaysi formula bilan aniqlanadi?",
+      "a": ["E = kA\u00b2 / 2", "E = mv\u00b2 / 2", "E = mgh", "E = kx \u00b2 / 2"],
+      "c": 0
+    },
+    {
+      "q": "Garmonik tebranayotgan moddiy nuqta tezligining o'zgarishi siljish o'zgarishidan faza jihatdan qanday farq qiladi?",
+      "a": "Farq qilmaydi",
+      "b": "\u03c0/2 ga orqada",
+      "c": "\u03c0/2 ga oldinda",
+      "d": "\u03c0 ga oldinda",
+      "c": 2
+    },
+    {
+      "q": "Matematik mayatnikning ipi 4 marta uzaytirilsa, tebranish chastotasi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "2 marta kamayadi", "4 marta kamayadi", "O'zgarmaydi"],
+      "c": 1
+    }
+  ]
+}

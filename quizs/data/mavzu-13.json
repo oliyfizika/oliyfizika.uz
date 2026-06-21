@@ -1,0 +1,80 @@
+{
+  "title": "Jismning og'irlik markazi va statika",
+  "questions": [
+    {
+      "q": "Massa markazi (og'irlik markazi) deb nimaga aytiladi?",
+      "a": [
+        "Jismning geometrik o'rtasidagi nuqtaga",
+        "Jismga ta’sir etuvchi barcha kuch yo’nalishlari uchrashgan va jism massasi mujassamlashgandek bo'ladigan nuqtaga",
+        "Faqat jismning eng og'ir qismiga",
+        "Jismning tayanchga tegib turgan nuqtasiga"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Aniq geometrik shaklga ega bo'lgan bir jinsli jismlarning (doira, kub, shar) massa markazi qayerda yotadi?",
+      "a": [
+        "Sirtida",
+        "Pastki qismida",
+        "Geometrik markazida",
+        "Ixtiyoriy nuqtada"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Murakkab shaklga ega bo'lgan jismlarning massa markazi qanday aniqlanadi?",
+      "a": [
+        "Og'irlik kuch chiziqlari kesishgan nuqtada",
+        "Eng uzun o'qi bo'ylab",
+        "Tashqi sirti bo'ylab",
+        "Hajmini hisoblash orqali"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Bir jinsli uzun sterjenning bir uchidan 40 cm qirqib olinsa, uning og'irlik markazi ikkinchi uchi tomon necha cm ga siljiydi?",
+      "a": ["40 cm", "30 cm", "15 cm", "20 cm"],
+      "c": 3
+    },
+    {
+      "q": "Jismga qo'yilgan kuch yo'nalishi jismning massa markazidan o'tsa, jism qanday harakat qiladi?",
+      "a": [
+        "Faqat aylanma harakat",
+        "Faqat ilgarilanma harakat",
+        "Ham ilgarilanma, ham aylanma harakat",
+        "Harakatlanmaydi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "1 m uzunlikdagi bir jinsli sterjenning og'irlik markazini 10 cm surish uchun uning bir uchidan necha cm qismini kesib olish kerak?",
+      "a": ["10 cm", "20 cm", "40 cm", "5 cm"],
+      "c": 1
+    },
+    {
+      "q": "Uzunligi 4 m bo‘lgan bir xil ko‘ndalang kesimli to‘sinning yarmi qo‘rg‘oshin va yarmi temirdan iborat bo'lsa, og'irlik markazi qayerga suriladi? (ρq=11,3 g/cm³, ρt=7,8 g/cm³)",
+      "a": [
+        "O'rtasida qoladi",
+        "Qo'rg'oshin tomonga suriladi",
+        "Temir tomonga suriladi",
+        "To'sin uchiga o'tadi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Uchlaridan biriga 1,2 kg massali yuk mahkamlangan bir jinsli sterjen yukli uchidan 1/5 uzunlikdagi nuqtasidan ko'tarilganda muvozanatda bo'lsa, sterjen massasi (kg) qancha?",
+      "a": ["0,8 kg", "0,4 kg", "0,6 kg", "1,2 kg"],
+      "c": 0
+    },
+    {
+      "q": "Kuch yo'nalishi bilan massa markazi orasidagi eng qisqa masofaga nima deyiladi?",
+      "a": ["Kuch momenti", "Kuch yelkasi", "Kuch impulsi", "Ish bosimi"],
+      "c": 1
+    },
+    {
+      "q": "Ikki uchi mahkamlangan arqon erkin osilib turganida, uning o'rtasidan pastga tortilsa, og'irlik markazi qanday siljiydi?",
+      "a": ["Yuqoriga", "Pastga", "Siljimaydi", "O'ngga"],
+      "c": 1
+    }
+  ]
+}
