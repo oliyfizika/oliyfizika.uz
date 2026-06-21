@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexanika | OliyFizika.uz</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:#020817;
+  color:white;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
+    linear-gradient(135deg,#020817,#07122f,#020817);
+  z-index:-2;
+}
+
+.container{
+  width:92%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.navbar{
+  margin-top:20px;
+  padding:18px 28px;
+  border-radius:24px;
+  background:rgba(5,12,35,.75);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.logo{
+  font-size:38px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#1d9cff;
+}
+
+.back-btn{
+  text-decoration:none;
+  color:white;
+  padding:14px 24px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#1d4fff,#2797ff);
+}
+
+.hero{
+  text-align:center;
+  padding:70px 0 50px;
+}
+
+.hero h1{
+  font-size:64px;
+  margin-bottom:20px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  background:linear-gradient(to right,#38bdf8,#2563eb);
+  background-clip: text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#cbd5e1;
+  font-size:20px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.videos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+  margin-bottom:80px;
+}
+
+.video-card{
+  position:relative;
+  overflow:hidden;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  backdrop-filter:blur(12px);
+  transition:.3s;
+}
+
+.video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 35px rgba(37,99,235,.25);
+}
+
+.video-card.is-locked{
+  opacity:.55;
+}
+
+.video-card.is-locked iframe,
+.video-card.is-locked .video-info{
+  filter:blur(2px);
+  pointer-events:none;
+}
+
+iframe{
+  width:100%;
+  height:320px;
+  border:none;
+  display:block;
+}
+
+.video-info{
+  padding:22px;
+}
+
+.video-info h3{
+  min-height:66px;
+  font-size:22px;
+  line-height:1.5;
+}
+
+.test-btn,
+.test-status{
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  padding:14px;
+  border-radius:14px;
+  margin-top:15px;
+  font-weight:700;
+}
+
+.test-btn{
+  color:white;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+  transition:.3s;
+}
+
+.test-btn:hover{
+  transform:translateY(-2px);
+}
+
+.test-status{
+  color:#cbd5e1;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.lock-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  text-align:center;
+  color:white;
+  font-weight:800;
+  line-height:1.5;
+  background:rgba(2,8,23,.42);
+}
+
+@media(max-width:900px){
+  .videos{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .navbar{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">Oliy<span>Fizika</span>.uz</div>
+    <a href="umumiy-fizika.html" class="back-btn">← Orqaga qaytish</a>
+  </nav>
+
+  <section class="hero">
+    <h1><span>Molekulyar fizika</span> darslari</h1>
+    <p>Molekulyar fizika bo'limi bo‘yicha video darslar, testlar va bosqichma-bosqich ochiladigan mavzular.</p>
+  </section>
+
+  <section class="videos" id="videos" aria-label="Molekulyar fizika video darslari"></section>
+</div>
+
+<script type="module">
+import { renderMechanicsLessons } from "../js/mechanics-progress.js";
+
+
+const lessons = [
+  { number:35, numberLabel:"35-mavzu", title:"Molekulyar kinetik nazariya (MKN) asosiy tushunchalari", youtubeId:"Uzxy_vxjoxQ", testUrl:"test/test.html?id=35" },
+  { number:36, numberLabel:"36-mavzu", title:"Molekulalar massasi. Modda miqdori", youtubeId:"Uu1MXQ6-vqk", testUrl:"test/test.html?id=36" },
+  { number:37, numberLabel:"37-mavzu", title:"Ideal gaz. Gaz MKN asosiy tenglamasi. Dalton qonuni", youtubeId:"fg77rgVSruQ", testUrl:"test/test.html?id=37" },
+  { number:38, numberLabel:"38-mavzu", title:"Gaz molekulalarining o‘rtacha tezliklari", youtubeId:"KsmguXaGC2A", testUrl:"test/test.html?id=38" },
+  { number:39, numberLabel:"39-mavzu", title:"Ideal gaz holat tenglamasi", youtubeId:"aPzwzNXabc4", testUrl:"test/test.html?id=39" },
+  { number:40, numberLabel:"40-mavzu", title:"Izotermik jarayon", youtubeId:"E8Aw3i-2oTw", testUrl:"test/test.html?id=40" },
+  { number:41, numberLabel:"41-mavzu", title:"Izobarik jarayon", youtubeId:"nwKyXqg-82g", testUrl:"test/test.html?id=41" },
+  { number:42, numberLabel:"42-mavzu", title:"Izoxorik jarayon", youtubeId:"jHCMld8PHdo", testUrl:"test/test.html?id=42" },
+  { number:43, numberLabel:"43-mavzu", title:"To‘yingan bug‘. Havoning namligi. Nisbiy namlik", youtubeId:"dYcEa0w7Jyw", testUrl:"test/test.html?id=43" },
+  { number:44, numberLabel:"44-mavzu", title:"Kapillarlik hodisasi. Kapillar nay", youtubeId:"jqdVaY1zOZw", testUrl:"test/test.html?id=44" },
+  { number:45, numberLabel:"45-mavzu", title:"Sirt taranglik koeffitsienti", youtubeId:"BktDruu23xI", testUrl:"test/test.html?id=45" },
+  { number:46, numberLabel:"46-mavzu", title:"Ichki energiya", youtubeId:"Q0MpyhoXijU", testUrl:"test/test.html?id=46" },
+  { number:47, numberLabel:"47-mavzu", title:"Termodinamikaning birinchi qonuni", youtubeId:"RPP6bz5DMW0", testUrl:"test/test.html?id=47" },
+  { number:48, numberLabel:"48-mavzu", title:"Erkinlik darajalari", youtubeId:"2fsfCeA9RzU", testUrl:"test/test.html?id=48" },
+  { number:49, numberLabel:"49-mavzu", title:"Adiabatik jarayon", youtubeId:"hMbGCJe1ie8", testUrl:"test/test.html?id=49" },
+  { number:50, numberLabel:"50-mavzu", title:"Termodinamikaning ikkinchi qonuni. Issiqlik mashinalari", youtubeId:"SHLPKDcTxJY", testUrl:"test/test.html?id=50" }
+];
+
+
+
+renderMechanicsLessons(lessons, document.getElementById("videos"));
+</script>
+</body>
+</html>
