@@ -17,41 +17,49 @@
     },
     {
       "text": "Rasmda ko‘rsatilganidek O nuqtaga ikkita F1 va F2 kuchlar ta’sir etmoqda. Ularning natijaviy kuchi qanday yo‘nalgan?",
+      "images": "../rasmlar11/rasm3.png",
       "answers": ["N", "L", "M", "K"],
       "correct": 0
     },
     {
       "text": "Rasmdagi O nuqtaga qo‘yilgan kuchlarning teng ta’sir etuvchisi qanday (N)?",
+      "images": "../rasmlar11/rasm4.png",
       "answers": ["2√26", "2√13", "0", "√13"],
       "correct": 2
     },
     {
       "text": "Ushbu uchta kuchning teng ta’sir etuvchisini toping.",
+      "images": "../rasmlar11/rasm5.png",
       "answers": ["F", "2F", "√2F", "3F", "2√2F"],
       "correct": 3
     },
     {
       "text": "Ushbu uchta kuchning teng ta’sir etuvchisini toping.",
+      "images": "../rasmlar11/rasm6.png",
       "answers": ["F", "√3F", "√2F", "2√3F", "2√2F"],
       "correct": 0
     },
     {
       "text": "M moddiy nuqtaga F1, F2, F3 va F4 kuchlar rasmda ko‘rsatilgandek ta’sir qilmoqda. Moddiy nuqta qaysi tomonga va qanday kuch ta’siri ostida harakatlanadi?",
+      "images": "../rasmlar11/rasm7.png",
       "answers": ["F2 yo‘nalishda 10 N", "F1 yo‘nalishda 20 N", "F3 yo‘nalishda 30 N", "F4 yo‘nalishda 40 N"],
       "correct": 3
     },
     {
       "text": "Ushbu to‘rtta kuchning teng ta’sir etuvchisini toping (N).",
+      "images": "../rasmlar11/rasm8.png",
       "answers": ["34", "89", "26", "18"],
       "correct": 2
     },
     {
       "text": "Quyidagi O nuqtaga qo‘yilgan kuchlarning teng ta’sir etuvchisini toping (N).",
+      "images": "../rasmlar11/rasm9.png",
       "answers": ["√22", "2√10", "15", "40"],
       "correct": 1
     },
     {
       "text": "Moddiy nuqtaga ta’sir etuvchi kuchlar muvozanatda bo‘lgandagi harakatlar qaysi grafiklarda tasvirlangan?",
+      "images": "../rasmlar11/rasm10.png",
       "answers": ["1,2", "3,4", "2,4", "2,3,4"],
       "correct": 3
     },

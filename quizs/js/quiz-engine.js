@@ -33,9 +33,11 @@ await response.json();
 quizTitle.innerHTML =
 "🚀 " + quizData.title;
 
-shuffleArray(
-quizData.questions
-);
+shuffleArray(quizData.questions);
+
+// Faqat 15 ta savol tanlanadi
+quizData.questions =
+quizData.questions.slice(0,15);
 
 loadQuestion();
 
