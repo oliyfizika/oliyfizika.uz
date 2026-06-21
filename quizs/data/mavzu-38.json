@@ -1,0 +1,155 @@
+{
+  "title": "O'tkazgich va dielektriklar",
+  "questions": [
+    {
+      "q": "Qanday moddalar dielektriklar deb ataladi?",
+      "a": [
+        "Tarkibida erkin harakatlana oladigan zaryadli zarralari bo'lmagan moddalar",
+        "Tarkibida erkin harakatlana oladigan zaryadli zarralari bo'lgan moddalar",
+        "Faqat issiqlikni yaxshi o'tkazuvchi moddalar",
+        "Faqat yorug'likni yaxshi o'tkazuvchi moddalar"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Ayrim kristallar tashqi maydon bo'lmaganda ham o'z-o'zidan (spontan) qutblanadi. Bunday moddalar nima deyiladi?",
+      "a": [
+        "Yarimo'tkazgichlar",
+        "Segnetoelektriklar",
+        "Paramagnitlar",
+        "Izolyatorlar"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Ba’zi dielektrik moddalar mexanik deformatsiyalanganda qutblanish kuzatiladi. Bu hodisa nima deyiladi?",
+      "a": [
+        "Ionizatsiya",
+        "Pyezoelektrik effekt",
+        "Fotoeffekt",
+        "Rekombinatsiya"
+      ],
+      "c": 1
+    },
+    {
+      "q": "n turdagi yarimo'tkazgichlarda asosiy zaryad tashuvchilar qaysi zarralar hisoblanadi?",
+      "a": [
+        "Kovaklar",
+        "Musbat ionlar",
+        "Elektronlar",
+        "Protonlar"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Turli kondensatorlar kuchlanish manbaiga parallel ulangan bo'lsa, ularning qanday xarakteristikalari bir-biriga qo'shiladi? ",
+      "a": [
+        "Kuchlanishlari",
+        "O'tkazuvchanliklari",
+        "Tok kuchlari",
+        "Zaryadlari"
+      ],
+      "c": 3
+    },
+    {
+      "q": "Kondensator zaryadi deganda nima tushuniladi? ",
+      "a": [
+        "Qoplamalaridagi zaryadlar yig'indisi",
+        "Qoplamalaridan biridagi zaryad miqdori",
+        "Dielektrikdagi bog'langan zaryadlar",
+        "Manba bergan to'la zaryad"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Elektrolitlarda elektr toki nimalarning tartibli harakatidan iborat?",
+      "a": [
+        "Faqat elektronlarning",
+        "Musbat va manfiy ionlarning",
+        "Elektronlar va kovaklarning",
+        "Neytronlarning"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Vakuumli diodning 'to'yinish' toki qanday holatda o'zgarmas qoladi?",
+      "a": [
+        "Kuchlanish kamayganda",
+        "Katodni qizdiruvchi element quvvati ortishi yoki kamayishiga bog'liq emas",
+        "Faqat magnit maydon ta'sirida",
+        "Anod temperaturasi pasayganda"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Yarimo'tkazgichlar qarshiligi harorat ortishi bilan qanday o'zgaradi?",
+      "a": [
+        "Ortadi",
+        "Kamayadi",
+        "O'zgarmaydi",
+        "Dastlab ortib, keyin kamayadi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Akseptor aralashmali yarimo'tkazgichlar qanday turdagi yarimo'tkazgichlar hisoblanadi?",
+      "a": [
+        "n turdagi",
+        "p turdagi",
+        "Elektronli",
+        "Ixtiyoriy"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Ideal tebranish konturidagi elektromagnit tebranishlar chastotasini 2 marta kamaytirish uchun kondensator sig'imi qanday o'zgarishi kerak?",
+      "a": [
+        "2 marta orttirishi kerak",
+        "4 marta orttirishi kerak",
+        "4 marta kamaytirishi kerak",
+        "2 marta kamaytirishi kerak"
+      ],
+      "c": 1
+    },
+    {
+      "q": "O'tkazgichning elektr sig'imi (C) nimalarga bog'liq?",
+      "a": [
+        "Faqat unga berilgan zaryadga",
+        "Faqat uning potensialiga",
+        "O'tkazgichning shakli, o'lchami va atrofidagi muhitga",
+        "Tashqi elektr maydon kuchiga"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Dielektrik elektrostatik maydonga kiritilsa, qanday hodisa yuz beradi?",
+      "a": [
+        "Dielektrik qutblanadi va tashqi maydonni susaytiradi",
+        "Maydon kuchlanganligi ortadi",
+        "Hech qanday o'zgarish bo'lmaydi",
+        "Elektronlar bir qoplamadan ikkinchisiga o'tadi"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Yarimo'tkazgichli diod qanday vazifani bajaradi?",
+      "a": [
+        "Tokni kuchaytiradi",
+        "O'zgaruvchan tokni to'g'rilaydi",
+        "Energiyani to'playdi",
+        "Zanjirni uzib qo'yadi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Metall o'tkazgichlarda elektr tokini qanday zarralar tashiydi?",
+      "a": [
+        "Ionlar",
+        "Erkin elektronlar",
+        "Kovaklar",
+        "Protonlar"
+      ],
+      "c": 1
+    }
+  ]
+}

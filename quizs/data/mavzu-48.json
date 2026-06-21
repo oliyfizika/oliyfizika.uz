@@ -1,0 +1,105 @@
+{
+  "title": "Magnit maydon",
+  "questions": [
+    {
+      "q": "Magnit maydon kuch chiziqlari berk egri chiziqlardan iborat bo'lgani uchun u qanday maydon deyiladi?",
+      "a": ["Potensial maydon", "Uyurmali maydon", "Statsionar maydon", "Garmonik maydon"],
+      "c": 1
+    },
+    {
+      "q": "Doimiy magnitni ikkiga bo'lish orqali faqat bitta qutbli (masalan, faqat shimoliy) magnit hosil qilish mumkinmi?",
+      "a": ["Ha, mumkin", "Faqat laboratoriya sharoitida mumkin", "Yo'q, bir qutbli magnitni hosil qilib bo'lmaydi", "Faqat ferromagnitlarda mumkin"],
+      "c": 2
+    },
+    {
+      "q": "O'zgarmas tok o'tayotgan o'tkazgich atrofida qanday maydon vujudga keladi?",
+      "a": ["Faqat elektrostatik maydon", "Hech qanday maydon bo'lmaydi", "Magnit maydon", "Faqat gravitatsiya maydoni"],
+      "c": 2
+    },
+    {
+      "q": "Magnit maydon induksiya oqimi ($\Phi$) Xalqaro birliklar sistemasi (XBS) da qanday birlikda o'lchanadi?",
+      "a": ["Tesla (T)", "Genri (H)", "Amper (A)", "Veber (Wb)"],
+      "c": 3
+    },
+    {
+      "q": "Tokli o'tkazgichga magnit maydon tomonidan ta'sir etuvchi kuch qaysi formula bilan aniqlanadi (Amper kuchi)?",
+      "a": ["F = qvB sinα", "F = BIl sinα", "F = qE", "F = k q₁q₂ / r²"],
+      "c": 1
+    },
+    {
+      "q": "Lorens kuchi zaryadlangan zarra trayektoriyasi bo'ylab harakatlanganda qancha ish bajaradi?",
+      "a": ["Maksimal ish bajaradi", "Nolga teng (ish bajarmaydi)", "Zaryadning tezligiga bog'liq", "Maydon induksiyasiga bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "Magnit induksiya vektori ($B$) ning XBS dagi birligi nima?",
+      "a": ["Veber (Wb)", "Tesla (T)", "Genri (H)", "Simens (Sm)"],
+      "c": 1
+    },
+    {
+      "q": "Induktivligi L bo'lgan g'altakdagi tok magnit maydoni energiyasi qaysi formula bilan topiladi?",
+      "a": ["W = CU²/2", "W = qU/2", "W = LI²/2", "W = q²/2C"],
+      "c": 2
+    },
+    {
+      "q": "Magnit maydonni oz miqdorda kuchaytiruvchi moddalar ($\mu > 1$) nima deyiladi?",
+      "a": ["Diamagnitlar", "Ferromagnitlar", "Paramagnitlar", "Izolyatorlar"],
+      "c": 2
+    },
+    {
+      "q": "Ferromagnit moddalar o'zining ferromagnitlik xossasini yo'qotib, paramagnitga aylanadigan harorat nima deyiladi?",
+      "a": ["Absolyut nol nuqtasi", "Qaynash harorati", "Kyuri nuqtasi", "Erish nuqtasi"],
+      "c": 2
+    },
+    {
+      "q": "Zaryadlangan zarra magnit maydoniga induksiya chiziqlari yo'nalishida (parallel) uchib kirsa, unga ta'sir etuvchi Lorens kuchi qancha bo'ladi?",
+      "a": ["F = qvB", "F = 0", "F = qv", "F = B/qv"],
+      "c": 1
+    },
+    {
+      "q": "O'tkazgich konturining induktivligi (L) qanday birlikda ifodalanadi?",
+      "a": ["Genri (H)", "Tesla (T)", "Veber (Wb)", "Farada (F)"],
+      "c": 0
+    },
+    {
+      "q": "Elektromagnit induksiya hodisasini (magnit oqimi o'zgarganda tok hosil bo'lishini) kim kashf qilgan?",
+      "a": ["X. Ersted", "A. Amper", "M. Faradey", "D. Lens"],
+      "c": 2
+    },
+    {
+      "q": "Induksion tok har doim o'zini hosil qilgan sababga (oqim o'zgarishiga) qarshi yo'nalgan bo'ladi. Bu qoida kimga tegishli?",
+      "a": ["Kulon", "Om", "Lens", "Lorens"],
+      "c": 2
+    },
+    {
+      "q": "Agar zaryadli zarra magnit maydoniga induksiya chiziqlariga tik ($\alpha=90^\circ$) ravishda uchib kirsa, uning trayektoriyasi qanday shaklda bo'ladi?",
+      "a": ["To'g'ri chiziq", "Parabola", "Aylana", "Vintsimon chiziq"],
+      "c": 2
+    },
+    {
+      "q": "Yerning magnit qutblarida magnit mili qanday holatda bo'ladi?",
+      "a": ["Gorizontal", "Vertikal", "45 gradus burchak ostida", "Tinimsiz aylanadi"],
+      "c": 1
+    },
+    {
+      "q": "Magnit maydonni zaiflashtiruvchi moddalar ($\mu < 1$) qanday ataladi?",
+      "a": ["Ferromagnitlar", "Paramagnitlar", "Diamagnitlar", "Segnetoelektriklar"],
+      "c": 2
+    },
+    {
+      "q": "Ideal tebranish konturining to'la energiyasi nimaga teng?",
+      "a": ["Faqat elektr maydon energiyasiga", "Elektr va magnit maydon energiyalari yig'indisiga", "Faqat magnit maydon energiyasiga", "Nolga"],
+      "c": 1
+    },
+    {
+      "q": "Tok manbai o'chirilganda g'altakda tokning birdan yo'qolmasligiga sabab bo'luvchi hodisa nima?",
+      "a": ["Elektroliz", "O'zinduksiya", "Fotoeffekt", "Ionizatsiya"],
+      "c": 1
+    },
+    {
+      "q": "Lorens kuchining yo'nalishi qaysi qoida yordamida aniqlanadi?",
+      "a": ["O'ng qo'l qoidasi", "Parma qoidasi", "Chap qo'l qoidasi", "Guk qonuni"],
+      "c": 2
+    }
+  ]
+}

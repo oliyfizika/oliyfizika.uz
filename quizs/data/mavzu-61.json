@@ -1,0 +1,80 @@
+{
+  "title": "Yadro reaksiyalari",
+  "questions": [
+    {
+      "q": "Atom yadrolarining elementar zarralar yoki boshqa atom yadrolari ta’sirida bo‘ladigan aylanish jarayoni nima deb ataladi?",
+      "a": ["Radioaktivlik", "Yadro reaksiyasi", "Ionizatsiya", "Annigilatsiya"],
+      "c": 1
+    },
+    {
+      "q": "Quyidagi zarrachalarning qaysi biri yadroga osongina kira oladi va yadro reaksiyasini yuzaga keltira oladi?",
+      "a": ["Proton", "Elektron", "Alfa zarra", "Neytron"],
+      "c": 3
+    },
+    {
+      "q": "Yadro reaksiyasidagi noma’lum zarrani aniqlang: ${}^{7}_{3}Li + {}^{1}_{1}p \\to {}^{7}_{4}Be + X$",
+      "a": ["Neytron", "Alfa zarra", "Elektron", "Pozitron"],
+      "c": 0
+    },
+    {
+      "q": "Yengil yadrolarning qo‘shilib og‘irroq yadro hosil qilishi qanday reaksiya deyiladi?",
+      "a": ["Zanjir reaksiya", "Alfa yemirilish", "Yadro sintezi (Termoyadro)", "Ekzotermik yemirilish"],
+      "c": 2
+    },
+    {
+      "q": "Quyidagi reaksiyada qanday zarracha ajralib chiqadi? ${}^{14}_{7}N + {}^{4}_{2}He \\to {}^{17}_{8}O + X$",
+      "a": ["Neytron", "Proton", "Elektron", "Gamma kvant"],
+      "c": 1
+    },
+    {
+      "q": "Yadro reaksiyasidagi noma’lum zarrani (X) toping: ${}^{27}_{13}Al + {}^{4}_{2}He \\to {}^{30}_{15}P + X$",
+      "a": ["Pozitron", "Proton", "Neytron", "Alfa zarra"],
+      "c": 2
+    },
+    {
+      "q": "Termoyadro reaksiyasini (sintez) amalga oshirish uchun taxminan qancha harorat zarur?",
+      "a": ["1000 °C", "100 000 °C", "10 mln °C", "1 mlrd °C"],
+      "c": 2
+    },
+    {
+      "q": "Insoniyat tarixida birinchi marta uranning bo‘linish yadro zanjir reaksiyasini kim amalga oshirgan?",
+      "a": ["E. Rezerford", "E. Fermi", "D. Chedvik", "A. Bekkerel"],
+      "c": 1
+    },
+    {
+      "q": "Yadroda proton neytronga aylanganda, antineytrino bilan birga yana qanday zarra ajralib chiqadi?",
+      "a": ["Elektron", "Alfa zarra", "Pozitron", "Deytron"],
+      "c": 2
+    },
+    {
+      "q": "Quyidagi reaksiyada yetishmayotgan elementni aniqlang: ${}^{11}_{5}B + {}^{1}_{1}p \\to 3X$",
+      "a": ["Alfa zarra", "Neytron", "Pozitron", "Litiy"],
+      "c": 0
+    },
+    {
+      "q": "Yadro energiyasini olishning necha xil turi mavjud?",
+      "a": ["1 tur: faqat sintez", "2 tur: bo'linish va sintez", "3 tur: alfa, beta, gamma", "4 tur"],
+      "c": 1
+    },
+    {
+      "q": "Erkin proton va neytronlardan atom yadrosi hosil bo‘lish jarayonida energiya ajraladimi yoki yutiladi?",
+      "a": ["Yutiladi", "O'zgarmaydi", "Ajraladi", "Dastlab yutilib, keyin ajraladi"],
+      "c": 2
+    },
+    {
+      "q": "Yadro reaksiyasidagi noma’lum zarrani aniqlang: ${}^{19}_{9}F + {}^{1}_{1}p \\to {}^{16}_{8}O + X$",
+      "a": ["Neytron", "Pozitron", "Alfa zarra", "Proton"],
+      "c": 2
+    },
+    {
+      "q": "Termoyadro reaksiyasini boshqarishdagi asosiy qiyinchilik nima?",
+      "a": ["Neytronlarni tutib qolish", "O'ta yuqori haroratni ushlab turish", "Vodorod tanqisligi", "Gamma nurlanishdan himoyalanish"],
+      "c": 1
+    },
+    {
+      "q": "Yadro reaktorida zanjir reaksiyasini boshqarishda neytronlarni yutish uchun qanday moddalar ishlatiladi?",
+      "a": ["Uran va plutoniy", "Grafit va og'ir suv", "Kadmiy va bor", "Suyuq natriy"],
+      "c": 2
+    }
+  ]
+}

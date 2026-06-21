@@ -1,0 +1,80 @@
+{
+  "title": "Elektr toki va Om qonuni",
+  "questions": [
+    {
+      "q": "O'tkazgichning ko'ndalang kesimidan vaqt birligida o'tuvchi zaryad miqdoriga teng bo'lgan fizik kattalikka nima deyiladi?",
+      "a": ["Elektr kuchlanish", "Elektr qarshiligi", "Tok kuchi", "Elektr sig'imi"],
+      "c": 2
+    },
+    {
+      "q": "Tok kuchining ta’rifiga mos keluvchi formulani ko‘rsating.",
+      "a": ["I = U/R", "I = q/t", "I = ε/(R+r)", "I = envS"],
+      "c": 1
+    },
+    {
+      "q": "Zanjirning bir qismi uchun Om qonuni qanday ifodalanadi?",
+      "a": ["Tok kuchi kuchlanishga to'g'ri, qarshilikka teskari proporsional", "Tok kuchi qarshilikka to'g'ri proporsional", "Tok kuchi kuchlanishga teskari proporsional", "Tok kuchi faqat o'tkazgich materialiga bog'liq"],
+      "c": 0
+    },
+    {
+      "q": "O‘tkazgich uchlaridagi kuchlanish 2 marta ortsa va qarshiligi o'zgarmas qolsa, undagi tok kuchi qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "2 marta kamayadi", "4 marta ortadi", "2 marta ortadi"],
+      "c": 3
+    },
+    {
+      "q": "Yopiq zanjir uchun Om qonuni formulasini ko'rsating (ε – EYK, R – tashqi qarshilik, r – ichki qarshilik).",
+      "a": ["I = ε / R", "I = U / (R+r)", "I = ε / (R+r)", "I = ε / r"],
+      "c": 2
+    },
+    {
+      "q": "Zanjirning iste’molchisiz (faqat sim orqali) ulanib qolishi natijasida tok kuchining keskin ortib ketishi nima deyiladi?",
+      "a": ["Izolyatsiya", "Qisqa tutashuv", "Elektr induksiya", "Ionizatsiya"],
+      "c": 1
+    },
+    {
+      "q": "Tok manbaining elektr yurituvchi kuchi (EYK) qanday birlikda ifodalanadi?",
+      "a": ["Joul (J)", "Amper (A)", "Volt (V)", "Om (Ω)"],
+      "c": 2
+    },
+    {
+      "q": "O'tkazgichning qarshiligi (R) uning uchlaridagi kuchlanish (U) va undan o'tayotgan tok kuchi (I) ga qanday bog'liq?",
+      "a": ["U ga to'g'ri proporsional", "I ga teskari proporsional", "Bog'liq emas (faqat o'lchamlari va materialiga bog'liq)", "Ikkala kattalikka ham bog'liq"],
+      "c": 2
+    },
+    {
+      "q": "Quyidagi formulalardan qaysi biri o'tkazgichda ajraladigan issiqlik miqdorini (Joul-Lens qonuni) ifodalaydi?",
+      "a": ["Q = IUt", "Q = I²Rt", "Q = (U²/R)t", "Barcha javoblar to'g'ri"],
+      "c": 3
+    },
+    {
+      "q": "O'lchamligi V²/Ω (Volt kvadrat bo'lingan Om) bo'lgan fizik kattalikni ko'rsating.",
+      "a": ["Ish", "Tok kuchi", "Quvvat", "Zaryad"],
+      "c": 2
+    },
+    {
+      "q": "Quyidagi qatorda faqat skalar fizik kattaliklar keltirilgan javobni toping.",
+      "a": ["Tok kuchi, EYK, zaryad", "Kuchlanish, tok zichligi, kuch", "Zaryad, maydon kuchlanganligi, EYK", "Potensial, tok kuchi, magnit induksiyasi"],
+      "c": 0
+    },
+    {
+      "q": "Zanjirning ko’ndalang kesimidan t vaqtda +q zaryadli ionlar bir yo’nalishda, –2q zaryadli ionlar qarama-qarshi yo’nalishda o’tgan bo'lsa, to'la tok kuchi qancha bo'ladi?",
+      "a": ["q/t", "2q/t", "3q/t", "q/2t"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbai ichida birlik musbat zaryadni ko'chirishda chet kuchlar bajargan ishiga teng kattalik nima deyiladi?",
+      "a": ["Kuchlanish", "Elektr yurituvchi kuch (EYK)", "Tok quvvati", "Elektr sig'imi"],
+      "c": 1
+    },
+    {
+      "q": "O'tkazgichdan o'tayotgan tok kuchi 10 s ichida 0 dan 5 A gacha chiziqli ortgan bo'lsa, o'tgan to'la zaryadni toping (C).",
+      "a": ["50 C", "25 C", "5 C", "2,5 C"],
+      "c": 1
+    },
+    {
+      "q": "Qisqa tutashuv toki (I_qt) qaysi formula bilan aniqlanadi?",
+      "a": ["I = U/r", "I = ε/R", "I = ε/r", "I = (ε-U)/R"],
+      "c": 2
+    }
+  ]
+}

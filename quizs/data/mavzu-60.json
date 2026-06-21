@@ -1,0 +1,80 @@
+{
+  "title": "Radioaktivlik va yadro fizikasi",
+  "questions": [
+    {
+      "q": "Ayrim atom yadrolarining o‘z-o‘zidan zarrachalar chiqarib, boshqa yadrolarga aylanish xususiyati nima deyiladi?",
+      "a": ["Ionizatsiya", "Izotopiya", "Radioaktivlik", "Yadro sintezi"],
+      "c": 2
+    },
+    {
+      "q": "Radioaktivlik hodisasini 1896-yilda birinchi bo'lib kim kashf etgan?",
+      "a": ["E. Rezerford", "A. Bekkerel", "M. Kyuri", "D. Chedvik"],
+      "c": 1
+    },
+    {
+      "q": "Alfa (α) nurlanish nimalardan iborat?",
+      "a": ["Elektronlar oqimi", "Elektromagnit to'lqin", "Geliydagi kabi 2 ta proton va 2 ta neytrondan iborat zarralar", "Neytronlar oqimi"],
+      "c": 2
+    },
+    {
+      "q": "Gamma (γ) nurlanishning fizik tabiati qanday?",
+      "a": ["Musbat ionlar oqimi", "Manfiy zaryadlangan zarralar", "Elektromagnit to'lqin", "Protonlar oqimi"],
+      "c": 2
+    },
+    {
+      "q": "Quyidagi nurlanish turlaridan qaysi biri eng katta kiruvchanlik (o'tuvchanlik) qobiliyatiga ega?",
+      "a": ["α-nurlanish", "β-nurlanish", "γ-nurlanish", "Ikkala zarra ham bir xil"],
+      "c": 2
+    },
+    {
+      "q": "Qaysi nurlanish turi moddani ionlashtirish qobiliyati bo'yicha eng kuchli hisoblanadi?",
+      "a": ["γ-nurlanish", "β-nurlanish", "α-nurlanish", "Neytrino"],
+      "c": 2
+    },
+    {
+      "q": "Bitta α-yemirilish natijasida hosil bo'lgan yangi element davriy sistemada qanday siljiydi?",
+      "a": ["Boshiga qarab 2 katakka", "Oxiriga qarab 1 katakka", "Boshiga qarab 4 katakka", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "β-yemirilish natijasida elementning tartib raqami (Z) qanday o'zgaradi?",
+      "a": ["2 taga kamayadi", "1 taga ortadi", "O'zgarmaydi", "1 taga kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Radioaktiv preparatning aktivligi 12 yilda 8 marta kamaygan bo'lsa, uning yarim yemirilish davri (T) qancha?",
+      "a": ["6 yil", "4 yil", "2 yil", "8 yil"],
+      "c": 1
+    },
+    {
+      "q": "Radioaktivlikning Xalqaro birliklar sistemasi (SI) dagi birligi nima?",
+      "a": ["Kyuri (Cu)", "Rentgen (R)", "Bekkerel (Bk)", "Joul (J)"],
+      "c": 2
+    },
+    {
+      "q": "Yarim yemirilish davri nimalarga bog'liq?",
+      "a": ["Tashqi bosimga", "Moddaning kimyoviy tarkibiga", "Bog'liq emas (faqat yadro turiga bog'liq)", "Temperaturaga"],
+      "c": 2
+    },
+    {
+      "q": "150 s vaqt ichida radioaktiv yadrolar dastlabki sonining 7/8 qismi yemirildi. Bu yadroning yarim yemirilish davri (s) qancha?",
+      "a": ["25 s", "75 s", "50 s", "100 s"],
+      "c": 2
+    },
+    {
+      "q": "Radioaktiv nurlarni qayd qilish uchun ishlatiladigan, gazning ionlashishiga asoslangan asbob qaysi?",
+      "a": ["Vilson kamerasi", "Geyger hisoblagichi", "Lupa", "Spektrometr"],
+      "c": 1
+    },
+    {
+      "q": "Yengil yadrolarning qo'shilib og'irroq yadro hosil qilishi va bunda energiya ajralishi qanday reaksiya deyiladi?",
+      "a": ["Zanjirli reaksiya", "Termoyadro sintezi", "Alfa yemirilish", "Endotermik reaksiya"],
+      "c": 1
+    },
+    {
+      "q": "Yadro reaktorida sekinlatkich sifatida qanday modda ishlatiladi?",
+      "a": ["Kadmiy", "Bor", "Grafit yoki og'ir suv", "Uran"],
+      "c": 2
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Ampermetr va voltmetr",
+  "questions": [
+    {
+      "q": "Ampermetr va voltmetr elektr zanjiriga qanday ulanadi?",
+      "a": [
+        "Ampermetr parallel, voltmetr ketma-ket",
+        "Ampermetr ketma-ket, voltmetr parallel",
+        "Ikkalasi ham parallel",
+        "Ikkalasi ham ketma-ket"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Ampermetrning o‘lchash chegarasini oshirish uchun unga qanday qarshilik va qanday ulanadi?",
+      "a": [
+        "Qo'shimcha qarshilik parallel",
+        "Shunt parallel",
+        "Shunt ketma-ket",
+        "Qo'shimcha qarshilik ketma-ket"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Voltmetrning o‘lchash chegarasini oshirish uchun unga ulanadigan qo'shimcha qarshilik qanday ulanadi?",
+      "a": [
+        "Ketma-ket",
+        "Parallel",
+        "Aralash",
+        "Ulanmaydi"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Ampermetrning o‘lchash chegarasini n marta oshirish uchun kerak bo‘lgan shunt qarshiligi ($R_s$) qaysi formula bilan aniqlanadi?",
+      "a": [
+        "Rs = Ra * (n - 1)",
+        "Rs = Ra / (n - 1)",
+        "Rs = Ra / n",
+        "Rs = Ra * n"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Yuqori o‘lchash chegarasi 200 mA bo‘lgan, ichki qarshiligi 12 Ω li ampermetr yordamida 1000 mA gacha tokni o‘lchash uchun necha Ω li shunt kerak?",
+      "a": [
+        "2 Ω",
+        "4 Ω",
+        "3 Ω",
+        "6 Ω"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Ichki qarshiligi 180 Ω bo‘lgan ampermetrning o‘lchash chegarasini 9 marta oshirish uchun necha Ω li shunt kerak?",
+      "a": [
+        "18 Ω",
+        "22,5 Ω",
+        "20 Ω",
+        "45 Ω"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Voltmetrning ichki qarshiligi 2 kΩ bo‘lib, u 8 V gacha o‘lchashga mo‘ljallangan. 40 V ni o‘lchash uchun unga qanday qo‘shimcha qarshilik (kΩ) kerak?",
+      "a": [
+        "10 kΩ",
+        "12 kΩ",
+        "8 kΩ",
+        "5 kΩ"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Reostat surgichi o‘ngga surilganda (qarshilik ortganda), unga parallel ulangan voltmetr (2) va zanjirga ketma-ket ulangan ampermetr (1) ko‘rsatishi qanday o‘zgaradi?",
+      "a": [
+        "1-ortadi, 2-kamayadi",
+        "1-kamayadi, 2-ortadi",
+        "Ikkalasi ham ortadi",
+        "Ikkalasi ham kamayadi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "150 V ga mo‘ljallangan ikkita voltmetr yordamida 220 V kuchlanishni qanday o‘lchash mumkin?",
+      "a": [
+        "Voltmetrlarni parallel ulab",
+        "Voltmetrlarni ketma-ket ulab",
+        "Faqat bitta voltmetr orqali",
+        "Iloji yo'q"
+      ],
+      "c": 1
+    },
+    {
+      "q": "O'lchov asbobining xatoligi qanday aniqlanadi?",
+      "a": [
+        "Shkalaning eng katta qiymatiga teng",
+        "Shkalaning eng kichik bo'lim qiymatiga (oralig'iga) teng",
+        "Doim 1 Voltga teng",
+        "Asbobning ichki qarshiligiga teng"
+      ],
+      "c": 1
+    }
+  ]
+}

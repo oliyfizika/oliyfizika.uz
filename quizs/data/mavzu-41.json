@@ -1,0 +1,80 @@
+{
+  "title": "Kondensatorlar va elektr sig'imi",
+  "questions": [
+    {
+      "q": "O'tkazgich zaryadining uning potensialiga nisbati bilan o'lchanadigan kattalikka nima deyiladi?",
+      "a": ["Elektr kuchlanish", "Elektr sig'imi", "Elektr maydon kuchi", "Elektr qarshiligi"],
+      "c": 1
+    },
+    {
+      "q": "BXSda o'lchamligi J/V² bo'lgan fizik kattalik birligining nomi nima?",
+      "a": ["Kulon", "Om", "Farad", "Amper"],
+      "c": 2
+    },
+    {
+      "q": "Turli kondensatorlar kuchlanish manbaiga parallel ulangan bo'lsa, ularning qanday xarakteristikalari bir-biriga qo'shiladi?",
+      "a": ["Kuchlanishlari", "Zaryadlari", "Tok kuchlari", "O'tkazuvchanliklari"],
+      "c": 1
+    },
+    {
+      "q": "Yassi kondensator plastinalari orasidagi masofa 2 marta orttirilsa, uning elektr sig'imi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta kamayadi", "2 marta kamayadi", "O'zgarmaydi"],
+      "c": 2
+    },
+    {
+      "q": "Kondensator zaryadi 4 marta ortsa, uning elektr sig'imi qanday o'zgaradi?",
+      "a": ["4 marta ortadi", "16 marta ortadi", "4 marta kamayadi", "O'zgarmaydi"],
+      "c": 3
+    },
+    {
+      "q": "Ketma-ket ulangan kondensatorlar batareyasi uchun qaysi munosabat to'g'ri?",
+      "a": ["U = U1 = U2", "q = q1 = q2", "C = C1 + C2", "q = q1 + q2"],
+      "c": 1
+    },
+    {
+      "q": "Zaryadlangan kondensatorning elektr maydon energiyasi qaysi formula bilan aniqlanadi?",
+      "a": ["W = qU/2", "W = CU²/2", "W = q²/(2C)", "Barcha javoblar to'g'ri"],
+      "c": 3
+    },
+    {
+      "q": "Yassi kondensator qoplamalari orasi ε=2 bo'lgan dielektrik bilan to'ldirilsa, uning sig'imi qanday o'zgaradi?",
+      "a": ["2 marta kamayadi", "2 marta oshadi", "4 marta oshadi", "O'zgarmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Zaryadlangan va tok manbaidan uzilgan kondensator plastinalari orasidagi masofa 2 marta orttirilsa, uning zaryadi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "2 marta kamayadi", "O'zgarmaydi", "4 marta kamayadi"],
+      "c": 2
+    },
+    {
+      "q": "O'zgaruvchan tok zanjirida kondensator va tok kuchi orasidagi faza farqi qanchaga teng?",
+      "a": ["π", "π/2", "0", "π/4"],
+      "c": 1
+    },
+    {
+      "q": "Ideal tebranish konturining to'la energiyasi nimaga teng?",
+      "a": ["Faqat elektr maydon energiyasiga", "Elektr va magnit maydon energiyalari yig'indisiga", "Faqat magnit maydon energiyasiga", "Nolga"],
+      "c": 1
+    },
+    {
+      "q": "Sig'imi 4 μF bo'lgan kondensator 200 V kuchlanishga ulangan. Uning energiyasini toping (J).",
+      "a": ["0,08 J", "0,4 J", "0,04 J", "0,8 J"],
+      "c": 0
+    },
+    {
+      "q": "Tebranish konturidagi kondensator sig'imi 4 marta orttirilsa, erkin tebranishlar davri qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "2 marta kamayadi", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Kondensator zaryadi deganda nima tushuniladi?",
+      "a": ["Plastinalardagi zaryadlar yig'indisi", "Plastinalardan biridagi zaryad miqdori", "Dielektrikdagi zaryad", "Manba bergan to'la ish"],
+      "c": 1
+    },
+    {
+      "q": "Zaryadlangan va manbadan uzilgan kondensatordan dielektrik plastina chiqarib olinsa, uning energiyasi qanday o'zgaradi (ε=3)?",
+      "a": ["3 marta kamayadi", "3 marta ortadi", "9 marta ortadi", "O'zgarmaydi"],
+      "c": 1
+    }
+  ]
+}

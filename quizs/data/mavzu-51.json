@@ -1,0 +1,80 @@
+{
+  "title": "Magnit oqimi va elektromagnit induksiya",
+  "questions": [
+    {
+      "q": "O‘lchov birliklarining xalqaro sistemasida (SI) magnit oqimining birligi qanday?",
+      "a": ["Tesla (T)", "Veber (Wb)", "Genri (H)", "Amper (A)"],
+      "c": 1
+    },
+    {
+      "q": "Magnit oqimini (Φ) aniqlash formulasini ko'rsating (α – sirt normali va induksiya vektori orasidagi burchak).",
+      "a": ["Φ = BS sinα", "Φ = BS cosα", "Φ = LI²/2", "Φ = B / S"],
+      "c": 1
+    },
+    {
+      "q": "Yuzasi 0,2 m² bo'lgan kontur tekisligi induksiya chiziqlariga parallel joylashgan bo'lsa, konturdan o'tayotgan magnit oqimi nimaga teng?",
+      "a": ["Maksimal", "0", "0,1 Wb", "5 Wb"],
+      "c": 1
+    },
+    {
+      "q": "Induktiv g‘altakda tok kuchi I bo‘lganida magnit oqimi Φ ga teng. Magnit maydon energiyasi (W) qaysi formula bilan topiladi?",
+      "a": ["W = Φ * I", "W = Φ * I / 2", "W = Φ² * I", "W = Φ / I"],
+      "c": 1
+    },
+    {
+      "q": "Radiusi 20 cm bo‘lgan xalqa induksiyasi 0,3 T bo‘lgan maydonda sirt normali bilan 37° burchak hosil qilib turibdi. Magnit oqimini toping (mWb). (π≈3; cos37°=0,8)",
+      "a": ["28,8 mWb", "14,4 mWb", "10,0 mWb", "30,0 mWb"],
+      "c": 0
+    },
+    {
+      "q": "Magnit maydon oqimi qanday hollarda ortadi?",
+      "a": ["Faqat induksiya ortsa", "Faqat yuza ortsa", "Induksiya yoki yuza ortsa", "Burchak ortsa"],
+      "c": 2
+    },
+    {
+      "q": "Qarshiligi 0,8 Ω bo‘lgan ramka orqali o‘tuvchi magnit oqimi 4 s ichida 6 Wb dan −10 Wb gacha tekis kamaydi. Ramkada vujudga kelgan tok kuchini (A) toping.",
+      "a": ["0,5 A", "2 A", "5 A", "20 A"],
+      "c": 2
+    },
+    {
+      "q": "Solenoidda tok kuchi 10 A bo‘lganda, magnit maydon energiyasi 2,5 J bo‘lsa, hosil bo‘lgan magnit oqimi necha Veber?",
+      "a": ["0,25 Wb", "0,5 Wb", "1 Wb", "5 Wb"],
+      "c": 1
+    },
+    {
+      "q": "Induktivligi L bo'lgan konturdan o'tayotgan magnit oqimi qaysi formula bilan ifodalanadi?",
+      "a": ["Φ = L / I", "Φ = L * I", "Φ = B * I", "Φ = L * I²"],
+      "c": 1
+    },
+    {
+      "q": "Elektromagnit induksiya hodisasini (magnit oqimi o'zgarganda tok hosil bo'lishini) kim kashf qilgan?",
+      "a": ["X. Ersted", "A. Amper", "M. Faradey", "D. Lens"],
+      "c": 2
+    },
+    {
+      "q": "Yupqa simli o‘ram bir jinsli magnit maydonga tik holda joylashgan. O‘ram 180° ga burilganda undan qanday zaryad (q) o'tadi?",
+      "a": ["q = Φ / R", "q = 2Φ / R", "q = 0", "q = Φ * R"],
+      "c": 1
+    },
+    {
+      "q": "Induksiyasi 0,4 T bo‘lgan maydonda yuzi 1 m² bo‘lgan sirtdan 0,2 Wb magnit oqim o‘tayotgan bo'lsa, induksiya vektori va sirt normali orasidagi burchakni toping.",
+      "a": ["0°", "30°", "45°", "60°"],
+      "c": 3
+    },
+    {
+      "q": "Kontur orqali o‘tuvchi magnit oqimi Φ = –13,5t + 0,28 (Wb) qonuniyat bilan o'zgarsa, hosil bo'lgan induksiya EYKini toping.",
+      "a": ["0,28 V", "13,5 V", "–13,5 V", "27,0 V"],
+      "c": 1
+    },
+    {
+      "q": "Induktiv g‘altakdagi tok kuchi 6 A bo‘lganida magnit maydon energiyasi 180 mJ ga teng bo'lsa, magnit oqimi (mWb) nimaga teng?",
+      "a": ["30 mWb", "60 mWb", "50 mWb", "25 mWb"],
+      "c": 1
+    },
+    {
+      "q": "Magnit oqimining o'zgarish tezligi nimani belgilaydi?",
+      "a": ["Tok kuchini", "Magnit induksiyasini", "Induksiya EYKini", "Induktivlikni"],
+      "c": 2
+    }
+  ]
+}

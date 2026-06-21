@@ -1,0 +1,115 @@
+{
+  "title": "Interferensiya va difraksiya",
+  "questions": [
+    {
+      "q": "Ikki kogerent yorug‘lik to‘lqinlarining qo‘shilishi natijasida yorug‘lik intensivligining fazoda qayta taqsimlanish hodisasi nima deyiladi?",
+      "a": ["Difraksiya", "Interferensiya", "Dispersiya", "Qutblanish"],
+      "c": 1
+    },
+    {
+      "q": "To‘lqinlar interferensiyasi kuzatilishi uchun ular qanday shartni bajarishi kerak?",
+      "a": [
+        "Amplitudalari teng bo'lishi",
+        "Chastotalari bir xil va fazalar farqi o'zgarmas bo'lishi (kogerentlik)",
+        "Faqat bir xil yo'nalishda tarqalishi",
+        "Faqat vakuumda uchrashishi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Interferensiya natijasida natijaviy tebranish amplitudasi maksimal ($A = 2a$) bo'lishi uchun yo'llar farqi (Δ) nimaga teng bo'lishi kerak?",
+      "a": [
+        "Toq sondagi yarim to'lqin uzunligiga",
+        "Butun sondagi to'lqin uzunligiga (k\u03bb)",
+        "Faqat to'lqin uzunligining yarmiga",
+        "Nolga"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Yorug'lik to'lqinlarining to'siqlarni aylanib o'tishi va geometrik soya sohasiga og'ishi nima deyiladi?",
+      "a": ["Difraksiya", "Interferensiya", "Sinish", "Qaytish"],
+      "c": 0
+    },
+    {
+      "q": "Difraksion panjara doimiysi (davri) $d$ qanday aniqlanadi?",
+      "a": [
+        "d = a - b",
+        "d = a / b",
+        "d = a + b (shaffof va noshaffof tirqishlar kengligi yig'indisi)",
+        "d = 1 / \u03bb"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Difraksion panjarada bosh maksimumlar sharti qaysi formula bilan ifodalanadi?",
+      "a": [
+        "d sin\u03c6 = k\u03bb",
+        "d cos\u03c6 = k\u03bb",
+        "d / sin\u03c6 = \u03bb",
+        "E = h\u03bd"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Newton halqalari qaysi optik hodisa natijasida hosil bo'ladi?",
+      "a": ["Difraksiya", "Dispersiya", "Interferensiya", "Fotoeffekt"],
+      "c": 2
+    },
+    {
+      "q": "To'lqin uzunliklari har xil bo'lgan to'lqinlar interferensiyalana oladimi?",
+      "a": [
+        "Ha, har doim",
+        "Faqat shaffof muhitda",
+        "Yo'q, interferensiyalanmaydi",
+        "Faqat amplitudalari teng bo'lsa"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Interferensiya hodisasi murakkab (oq) nurlardan hosil bo'lsa, manzara qanday ko'rinishda bo'ladi?",
+      "a": [
+        "Faqat oq-qora chiziqlar",
+        "Rangli polosalardan iborat bo'ladi",
+        "Hech qanday manzara hosil bo'lmaydi",
+        "Yagona yorug' dog' ko'rinadi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Difraksion panjaraning davri 2 \u00b5m bo'lsa, uning har bir millimetrida nechta shtrix bor?",
+      "a": ["1000", "500", "200", "2000"],
+      "c": 1
+    },
+    {
+      "q": "Yorug'lik qanday sharoitda to'g'ri chiziq bo'ylab tarqalishdan sezilarli darajada chetlashadi?",
+      "a": [
+        "Bir jinsli muhitda",
+        "To'siq o'lchamlari to'lqin uzunligi bilan solishtirarli bo'lganda",
+        "Faqat ko'zgu sirtiga tushganda",
+        "Istalgan sharoitda"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Difraksion panjara davri d = \u03bb bo'lsa, ekranda nechta difraksion maksimum kuzatiladi?",
+      "a": ["1", "3", "2", "5"],
+      "c": 0
+    },
+    {
+      "q": "Past chastotali elektr tebranishlarini yuqori chastotali tebranishlarga qo'shish jarayoni nima?",
+      "a": ["Modulyatsiya", "Detektorlash", "Interferensiya", "Rezonans"],
+      "c": 0
+    },
+    {
+      "q": "Sovun pufakchasining rangli tovlanishi qaysi hodisaga misol bo'ladi?",
+      "a": ["Difraksiya", "Interferensiya", "Dispersiya", "Qutblanish"],
+      "c": 1
+    },
+    {
+      "q": "Difraksion panjara davri kattaroq bo'lgan panjara bilan almashtirilsa, maksimumlar orasidagi masofa qanday o'zgaradi?",
+      "a": ["Ortadi", "Kamayadi", "O'zgarmaydi", "Nolga tenglashadi"],
+      "c": 1
+    }
+  ]
+}

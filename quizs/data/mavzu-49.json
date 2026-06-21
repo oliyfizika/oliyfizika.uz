@@ -1,0 +1,80 @@
+{
+  "title": "Amper va Lorens kuchi",
+  "questions": [
+    {
+      "q": "Magnit maydonning tokli o‘tkazgichga ta’sir kuchi (Amper kuchi) formulasini ko‘rsating.",
+      "a": ["F = IBl cosα", "F = IBl sinα", "F = qvB sinα", "F = Eq"],
+      "c": 1
+    },
+    {
+      "q": "Harakatlanayotgan zaryadli zarraga magnit maydon tomonidan ta’sir etuvchi Lorens kuchi qaysi formula bilan aniqlanadi?",
+      "a": ["F = IBl sinα", "F = Eq", "F = qvB sinα", "F = k q₁q₂ / r²"],
+      "c": 2
+    },
+    {
+      "q": "Amper va Lorens kuchlarining yo'nalishi qaysi qoida yordamida aniqlanadi?",
+      "a": ["O'ng qo'l qoidasi", "Parma qoidasi", "Chap qo'l qoidasi", "Guk qonuni"],
+      "c": 2
+    },
+    {
+      "q": "Lorens kuchi harakatdagi zaryadli zarra tezligini qanday o'zgartiradi?",
+      "a": ["Tezlik modulini o'zgartiradi", "Tezlik yo'nalishini o'zgartiradi (modul o'zgarmaydi)", "Tezlikni ham yo'nalish, ham modul jihatdan o'zgartiradi", "Tezlikni o'zgartirmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Lorens kuchi zaryadlangan zarra trayektoriyasi bo'ylab harakatlanganda qancha ish bajaradi?",
+      "a": ["Maksimal ish bajaradi", "Nolga teng (ish bajarmaydi)", "Zaryad miqdoriga bog'liq", "Maydon induksiyasiga bog'liq"],
+      "c": 1
+    },
+    {
+      "q": "Bir jinsli magnit maydonda harakatlanayotgan elektronning trayektoriyasi qanday shaklda bo'lishi mumkin?",
+      "a": ["Faqat to'g'ri chiziq", "Faqat aylana", "Aylana yoki vintsimon (spiral)", "Parabola"],
+      "c": 2
+    },
+    {
+      "q": "Zaryadli zarra magnit maydoniga induksiya chiziqlari yo‘nalishida (parallel) uchib kirsa, unga ta’sir etuvchi Lorens kuchi qancha bo‘ladi?",
+      "a": ["F = qvB", "F = 0", "F = qv", "F = B / qv"],
+      "c": 1
+    },
+    {
+      "q": "Induksiyasi 20 T bo‘lgan bir jinsli magnit maydonda 3 A tok o‘tayotgan, uzunligi 40 cm li o'tkazgich induksiya chiziqlari bilan 37° burchak hosil qilsa, Amper kuchini toping (N). (sin37°=0,6)",
+      "a": ["14,4 N", "12,8 N", "10,2 N", "24,0 N"],
+      "c": 0
+    },
+    {
+      "q": "Induksiyasi 20 T bo‘lgan magnit maydonga 0,2 C zaryadli zarra 25 m/s tezlik bilan induksiya chiziqlariga 53° burchak ostida uchib kirdi. Lorens kuchini toping (N). (sin53°=0,8)",
+      "a": ["100 N", "60 N", "80 N", "40 N"],
+      "c": 2
+    },
+    {
+      "q": "Vakuumda bir-biridan 10 cm masofada parallel joylashgan ikki o'tkazgichdan bir xil 10 A tok o'tsa, o'tkazgichlarning har 1 m uzunligiga qanday o'zaro ta'sir kuchi (Amper kuchi) to'g'ri keladi?",
+      "a": ["2·10⁻⁴ N", "4·10⁻⁷ N", "2·10⁻⁵ N", "2·10⁻⁷ N"],
+      "c": 0
+    },
+    {
+      "q": "Magnit induksiyasi 1,5 T bo'lgan maydonda yuzi 4 cm² li ramkadan 0,5 A tok o'tmoqda. Ramkaga ta'sir etuvchi maksimal kuch momentini toping (N·m).",
+      "a": ["0,75 N·m", "3·10⁻⁴ N·m", "0,03 N·m", "6·10⁻⁴ N·m"],
+      "c": 1
+    },
+    {
+      "q": "Elektron bir jinsli magnit maydonga uchib kirsa, uning kinetik energiyasi vaqt bo'yicha qanday o'zgaradi?",
+      "a": ["Tekis o'sadi", "Tekis kamayadi", "O'zgarmas qoladi", "Davriy o'zgaradi"],
+      "c": 2
+    },
+    {
+      "q": "Zaryadning ishorasi musbatdan manfiyga o'zgarsa, Lorens kuchining yo'nalishi qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "Qarama-qarshisiga o'zgaradi", "90 gradusga buriladi", "Nolga teng bo'ladi"],
+      "c": 1
+    },
+    {
+      "q": "Chap qo'l qoidasiga ko'ra, kaftga nima kirishi kerak?",
+      "a": ["Tok yo'nalishi", "Tezlik vektori", "Magnit induksiya chiziqlari", "Kuch yo'nalishi"],
+      "c": 2
+    },
+    {
+      "q": "Zaryadli zarra magnit maydonida tinch tursa, unga Lorens kuchi ta'sir qiladimi?",
+      "a": ["Ha, maksimal kuch ta'sir qiladi", "Yo'q, v=0 bo'lgani uchun F=0 bo'ladi", "Faqat manfiy zaryadga ta'sir qiladi", "Faqat protonlarga ta'sir qiladi"],
+      "c": 1
+    }
+  ]
+}

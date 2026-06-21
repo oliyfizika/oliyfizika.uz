@@ -1,0 +1,105 @@
+{
+  "title": "Elektr tokining ishi va quvvati",
+  "questions": [
+    {
+      "q": "O'zgarmas tok zanjirida quvvat (N) formulasini ko'rsating.",
+      "a": ["N = UI", "N = A/t", "N = I²R", "Barcha javoblar to'g'ri"],
+      "c": 3
+    },
+    {
+      "q": "Elektr tokining ishi (A) Xalqaro birliklar sistemasida (XBS) qanday birlikda o'lchanadi?",
+      "a": ["Vatt (W)", "Joul (J)", "Amper (A)", "Volt (V)"],
+      "c": 1
+    },
+    {
+      "q": "O'lchamligi V²/Ω (Volt kvadrat bo'lingan Om) bo'lgan fizik kattalikni ko'rsating.",
+      "a": ["Ish", "Tok kuchi", "Quvvat", "Zaryad"],
+      "c": 2
+    },
+    {
+      "q": "Elektr tokining issiqlik ta’siri (Joul-Lens qonuni) qaysi muhitda kuzatilmaydi?",
+      "a": ["Metallarda", "Vakuumda", "Elektrolitlarda", "Gazlarda"],
+      "c": 1
+    },
+    {
+      "q": "EYKi 2 V bo‘lgan manbaga lampochka ulangan, zanjirdagi tok 0,4 A. 1 minutda bu manbada chet kuchlar qancha ish (J) bajaradi?",
+      "a": ["48 J", "45 J", "24 J", "60 J"],
+      "c": 0
+    },
+    {
+      "q": "Ketma-ket ulangan o‘zgaruvchan tok zanjirida induktiv qarshilik 600 Ω, aktiv qarshilik 400 Ω, sig‘im qarshiligi 300 Ω va effektiv tok kuchi 2 A bo‘lsa, quvvatni (W) toping.",
+      "a": ["2000 W", "1800 W", "1600 W", "2400 W"],
+      "c": 2
+    },
+    {
+      "q": "20 s da 100 J ish bajaradigan mashinaning quvvatini toping (W).",
+      "a": ["5 W", "0,2 W", "2000 W", "80 W"],
+      "c": 0
+    },
+    {
+      "q": "TU-154 samolyoti dvigatelining quvvati 24 MW, MI-10 vertolyotiniki esa 8000 kW. Vertolyot dvigateli necha sekundda samolyotning 1 s dagi ishiga teng ish bajaradi?",
+      "a": ["30 s", "12 s", "3 s", "1 s"],
+      "c": 2
+    },
+    {
+      "q": "O‘zgaruvchan tok zanjirida aktiv qarshilik 5 Ω, tok amplitudasi 2√2 A bo‘lsa, tokning o‘rtacha quvvatini (W) toping.",
+      "a": ["10 W", "20 W", "40 W", "5 W"],
+      "c": 1
+    },
+    {
+      "q": "O'tkazgichdagi tok kuchi 2 marta ortsa, unda ajraladigan issiqlik miqdori (Joul-Lens qonuniga ko'ra) qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "2 marta kamayadi", "O'zgarmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Elektr tarmog‘ida qarshiliklari 100 Ω va 200 Ω bo‘lgan ikkita lampa parallel ulangan. Qaysi biri ko‘proq quvvat sarflaydi?",
+      "a": ["Birinchisi (100 Ω)", "Ikkinchisi (200 Ω)", "Ikkalasi teng", "O'lchamiga bog'liq"],
+      "c": 0
+    },
+    {
+      "q": "O‘zgaruvchan kuchlanish tarmog‘iga rezistor (4 Ω) va g‘altak (3 Ω) ketma-ket ulangan. Quvvat koeffitsiyentini (cosφ) toping.",
+      "a": ["0,6", "0,5", "0,8", "0,25"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbaining foydali ish koeffitsiyenti (FIK) qaysi formula bilan aniqlanadi?",
+      "a": ["η = U/ε", "η = R/(R+r)", "Ikkala javob ham to'g'ri", "η = I/U"],
+      "c": 2
+    },
+    {
+      "q": "Elektr zanjirda R qarshilikdagi kuchlanish tushuvi 8 V, manba EYKi 6 V va tok kuchi 1 A bo'lsa, 10 s da necha Joul issiqlik ajraladi? (r=0)",
+      "a": ["80 J", "60 J", "20 J", "140 J"],
+      "c": 2
+    },
+    {
+      "q": "Qisqa tutashuv toki 8 A bo'lgan manbaga 12 Ω tashqi qarshilik ulanganda manba FIK i 75% bo'lsa, foydali quvvatni (W) toping.",
+      "a": ["48 W", "36 W", "16 W", "12 W"],
+      "c": 0
+    },
+    {
+      "q": "20 m/s tezlik bilan uchayotgan 0,6 kg li futbol to'pini darvozabon 0,1 s da to'xtatdi. Darvozabonning quvvatini toping (W).",
+      "a": ["900 W", "1200 W", "600 W", "1000 W"],
+      "c": 1
+    },
+    {
+      "q": "Tok manbai ichida chet kuchlar 3 C zaryadni ko'chirishda 150 J ish bajarsa, manbaning EYKi necha Volt?",
+      "a": ["450 V", "50 V", "25 V", "0,02 V"],
+      "c": 1
+    },
+    {
+      "q": "O'tkazgichdan o'tayotgan tok 10 s ichida 0 dan 5 A gacha chiziqli ortsa, o'tgan to'la zaryad (C) qancha?",
+      "a": ["2,5 C", "5 C", "25 C", "50 C"],
+      "c": 2
+    },
+    {
+      "q": "Mashinaning to'liq ishi 200 J, foydali ishi esa 160 J bo'lsa, uning FIK ini (%) toping.",
+      "a": ["50 %", "80 %", "20 %", "40 %"],
+      "c": 1
+    },
+    {
+      "q": "Elektr toki bajargan ishning universal o'lchovi nima?",
+      "a": ["Quvvat", "Kuchlanish", "Energiya", "Tok kuchi"],
+      "c": 2
+    }
+  ]
+}

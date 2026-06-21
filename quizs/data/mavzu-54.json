@@ -1,0 +1,120 @@
+{
+  "title": "Transformator",
+  "questions": [
+    {
+      "q": "Transformator qanday qurilma?",
+      "a": [
+        "O'zgarmas tokni o'zgaruvchan tokka aylantiruvchi",
+        "O'zgaruvchan tok kuchlanishini yoki kuchini o'zgartirib beruvchi",
+        "Elektr energiyasini mexanik energiyaga aylantiruvchi",
+        "Faqat tok chastotasini o'zgartiruvchi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Transformatorning ishlashi qaysi hodisaga asoslangan?",
+      "a": [
+        "Joul-Lens qonuni",
+        "Elektrostatik induksiya",
+        "Elektromagnit induksiya qonuni",
+        "Fotoeffekt hodisasi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Transformatorning birlamchi chulg'ami (o'rami) nimaga ulanadi?",
+      "a": [
+        "Iste'molchiga",
+        "O'zgaruvchan tok tarmog'iga",
+        "O'zgarmas tok manbaiga",
+        "Yerga (zazemleniya)"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Transformatsiya koeffitsiyenti (k) ifodasini ko'rsating.",
+      "a": [
+        "k = U1 / U2",
+        "k = U2 / U1",
+        "k = U1 * U2",
+        "k = I2 / I1"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Qanday holatda transformator pasaytiruvchi (susaytiruvchi) deyiladi?",
+      "a": [
+        "k < 1 bo'lsa",
+        "k = 1 bo'lsa",
+        "k > 1 bo'lsa (U1 > U2)",
+        "N1 < N2 bo'lsa"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Birlamchi o'ramlar soni 800 ta, ikkinchisiniki esa 3200 ta bo'lsa, transformatsiya koeffitsiyentini aniqlang.",
+      "a": ["4", "0,25", "2", "0,5"],
+      "c": 1
+    },
+    {
+      "q": "Kuchaytiruvchi transformator uchun qaysi munosabat to'g'ri?",
+      "a": [
+        "k > 1, U1 > U2",
+        "k < 1, U1 < U2",
+        "N1 > N2",
+        "I2 > I1"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Transformatorning birlamchi chulg'amiga 220 V kuchlanish berilgan. Birlamchi o'ramlar soni 400, ikkilamchi o'ramlar soni 200 bo'lsa, chiqishdagi kuchlanishni toping (V).",
+      "a": ["440 V", "220 V", "110 V", "100 V"],
+      "c": 2
+    },
+    {
+      "q": "Kuchlanish k marta orttirilsa, tarmoqdagi quvvat isrofi qanday o'zgaradi?",
+      "a": [
+        "k marta kamayadi",
+        "k² marta kamayadi",
+        "k² marta ortadi",
+        "O'zgarmaydi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Bitta chulg'amdan iborat bo'lib, uning bir qismi ikkinchi chulg'am vazifasini o'taydigan transformator qanday ataladi?",
+      "a": ["Ideal transformator", "Stabilizator", "Avtotransformator", "Generator"],
+      "c": 2
+    },
+    {
+      "q": "Transformatorning FIK (foydali ish koeffitsiyenti) maksimal qiymati qancha bo'lishi mumkin?",
+      "a": ["50%", "75%", "90% gacha", "99% gacha"],
+      "c": 3
+    },
+    {
+      "q": "Ikkilamchi chulg'amdagi kuchlanish 80 V va tok kuchi 2 A. Birlamchi chulg'amdagi kuchlanish 160 V bo'lsa, undagi tok kuchi qancha (A)? (Isrofni hisobga olmang)",
+      "a": ["4 A", "1 A", "0,5 A", "2 A"],
+      "c": 1
+    },
+    {
+      "q": "Transformatorning birlamchi chulg'amidagi kuchlanish 200 V, tok kuchi 0,5 A. Ikkilamchi chulg'amda 38 V va 2,5 A bo'lsa, FIK ni (%) aniqlang.",
+      "a": ["70%", "85%", "95%", "100%"],
+      "c": 2
+    },
+    {
+      "q": "Pasaytiruvchi transformatorda qaysi chulg'am simining kesim yuzasi kattaroq (yo'g'onroq) bo'lishi kerak?",
+      "a": [
+        "Birlamchi chulg'amniki",
+        "Ikkilamchi chulg'amniki (tok kuchi katta bo'lgani uchun)",
+        "Ikkalasiniki bir xil bo'ladi",
+        "Kesim yuzasining ahamiyati yo'q"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Transformatorning ikkilamchi chulg'amiga 220 V kuchlanishli 100 ta lampochka ulangan bo'lsa, bu chulg'am nimaga ulangan hisoblanadi?",
+      "a": ["O'zgaruvchan tok tarmog'iga", "Iste'molchiga", "Generatorga", "Reostatga"],
+      "c": 1
+    }
+  ]
+}

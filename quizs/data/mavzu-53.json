@@ -1,0 +1,85 @@
+{
+  "title": "O'zgaruvchan tok zanjiri",
+  "questions": [
+    {
+      "q": "Vaqt davomida yo‘nalishi va kuchi muntazam o‘zgarib turadigan elektr tokiga nima deyiladi?",
+      "a": [
+        "O'zgarmas tok",
+        "O'zgaruvchan tok",
+        "Garmonik tebranish",
+        "Uyurmali tok"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Qaysi asbob yordamida o‘zgaruvchan tokni o‘zgarmas tokka aylantirish mumkin?",
+      "a": ["Transformator", "Kondensator", "Diod", "Reostat"],
+      "c": 2
+    },
+    {
+      "q": "O‘zgaruvchan tok zanjiriga faqat aktiv qarshilik ($R$) ulangan bo'lsa, kuchlanish va tok kuchi orasidagi faza farqi nimaga teng?",
+      "a": ["π", "π/2", "0", "π/3"],
+      "c": 2
+    },
+    {
+      "q": "O‘zgaruvchan tok zanjiriga faqat ideal kondensator ulangan bo'lsa, kuchlanish va tok kuchi orasidagi faza farqi qanday bo'ladi?",
+      "a": ["Faza farqi bo'lmaydi", "π/2", "π", "π/4"],
+      "c": 1
+    },
+    {
+      "q": "O‘zgaruvchan tok zanjiriga faqat ideal induktiv g‘altak ulangan bo'lsa, kuchlanish va tok kuchi orasidagi faza farqi nimaga teng?",
+      "a": ["0", "π", "π/3", "π/2"],
+      "c": 3
+    },
+    {
+      "q": "Tok kuchining amplituda qiymati $I_m = 10$ A bo'lsa, uning ta’sir etuvchi (effektiv) qiymati qanday (A)?",
+      "a": ["10 A", "10 / √2 A", "10 * √2 A", "5 A"],
+      "c": 1
+    },
+    {
+      "q": "Induktiv qarshilik ($X_L$) qaysi formula bilan aniqlanadi?",
+      "a": ["XL = 1 / (ωC)", "XL = ωL", "XL = R * L", "XL = ω / L"],
+      "c": 1
+    },
+    {
+      "q": "Sig‘im qarshiligi ($X_C$) ifodasini ko'rsating.",
+      "a": ["XC = ωC", "XC = L / C", "XC = 1 / (ωC)", "XC = ω / C"],
+      "c": 2
+    },
+    {
+      "q": "Ketma-ket ulangan RLC zanjirining to'la qarshiligi ($Z$) qaysi formula bilan topiladi?",
+      "a": ["Z = R + ωL + 1/ωC", "Z = √(R² + (ωL + 1/ωC)²)", "Z = R² + (ωL - 1/ωC)²", "Z = √(R² + (ωL - 1/ωC)²)"],
+      "c": 3
+    },
+    {
+      "q": "Ketma-ket ulangan o‘zgaruvchan tok zanjirida induktiv qarshilik 600 Ω, aktiv qarshilik 400 Ω, sig‘im qarshiligi 300 Ω va effektiv tok kuchi 2 A bo‘lsa, tokning quvvati (W) qanday?",
+      "a": ["2400 W", "2000 W", "1800 W", "1600 W"],
+      "c": 3
+    },
+    {
+      "q": "O'zgaruvchan tok chastotasi 2 marta orttirilsa, zanjirning aktiv qarshiligi qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "2 marta ortadi", "2 marta kamayadi", "4 marta ortadi"],
+      "c": 0
+    },
+    {
+      "q": "O'zgaruvchan tok chastotasi 2 marta ortsa, g'altakning induktiv qarshiligi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "2 marta kamayadi", "O'zgarmaydi", "4 marta ortadi"],
+      "c": 0
+    },
+    {
+      "q": "O'zgaruvchan tok chastotasi 2 marta kamaytirilsa, kondensatorning sig'im qarshiligi qanday o'zgaradi?",
+      "a": ["2 marta kamayadi", "2 marta ortadi", "O'zgarmaydi", "4 marta kamayadi"],
+      "c": 1
+    },
+    {
+      "q": "Zanjirda rezonans hodisasi yuz berganda ($X_L = X_C$), tok va kuchlanish orasidagi faza farqi nimaga teng bo'ladi?",
+      "a": ["π/2", "π", "Nolga teng", "π/4"],
+      "c": 2
+    },
+    {
+      "q": "Rezonans vaqtida zanjirning to‘la qarshiligi nimaga teng bo‘ladi?",
+      "a": ["Faqat induktiv qarshilikka", "Faqat sig'im qarshiligiga", "Aktiv qarshilikka", "Nolga"],
+      "c": 2
+    }
+  ]
+}

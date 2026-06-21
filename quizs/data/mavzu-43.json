@@ -1,0 +1,80 @@
+{
+  "title": "Elektr zanjirlari",
+  "questions": [
+    {
+      "q": "Zanjirning ko’ndalang kesimidan t vaqtda +q zaryadli ionlar bir yo’nalishda, –2q zaryadli ionlar qarama-qarshi yo’nalishda o’tgan bo'lsa, tok kuchi qanday aniqlanadi?",
+      "a": ["q/t", "2q/t", "3q/t", "q/2t"],
+      "c": 2
+    },
+    {
+      "q": "Ketma-ket ulangan o‘zgaruvchan tok zanjirida induktiv qarshilik 600 Ω, aktiv qarshilik 400 Ω, sig‘im qarshiligi 300 Ω va tok kuchi 2 A bo‘lsa, quvvatni (W) toping.",
+      "a": ["2400 W", "1800 W", "1600 W", "2000 W"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbaining elektr yurituvchi kuchi (EYK) qanday birlikda ifodalanadi?",
+      "a": ["Nyuton (N)", "Joul (J)", "Amper (A)", "Volt (V)"],
+      "c": 3
+    },
+    {
+      "q": "Qarshiliklari 3 Ω va 4 Ω bo‘lgan o‘tkazgichlar ketma-ket ulangan bo'lsa, umumiy qarshilik necha Ω bo'ladi?",
+      "a": ["1,7 Ω", "7 Ω", "12 Ω", "1 Ω"],
+      "c": 1
+    },
+    {
+      "q": "Yopiq zanjir uchun Om qonuni formulasini ko'rsating.",
+      "a": ["I = U/R", "I = ε / (R + r)", "I = q/t", "I = ε / r"],
+      "c": 1
+    },
+    {
+      "q": "Zanjirga n ta bir xil qarshiliklar parallel ulangan edi. Agar ular ketma-ket ulansa, zanjirning umumiy qarshiligi qanday o’zgaradi?",
+      "a": ["o’zgarmaydi", "n marta ortadi", "n² marta ortadi", "n marta kamayadi"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbai ichidagi chet kuchlar 3 C zaryadni ko'chirishda 150 J ish bajarsa, manbaning EYKi necha Volt?",
+      "a": ["450 V", "50 V", "25 V", "0,02 V"],
+      "c": 1
+    },
+    {
+      "q": "Metall o‘tkazgichlar qizdirilganda ularning qarshiligi qanday o‘zgaradi?",
+      "a": ["Kamayadi", "O‘zgarmaydi", "Ortadi", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "Ichki qarshiligi 40 mΩ bo‘lgan tok manbai qisqa tutashganda, tok kuchi 300 A bo‘ldi. Manbaning EYKini toping.",
+      "a": ["9 V", "10 V", "12 V", "24 V"],
+      "c": 2
+    },
+    {
+      "q": "Elektr tarmog'ida qarshiliklari 100 Ω va 200 Ω bo'lgan ikkita lampa parallel ulangan. Qaysi biri ko'proq quvvat sarflaydi?",
+      "a": ["Quvvat sarfi teng", "Ikkinchisi (200 Ω) 2 marta ko'p", "Birinchisi (100 Ω) 2 marta ko'p", "Birinchisi 4 marta ko'p"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbaining foydali ish koeffitsiyenti (FIK) 80% bo'lishi uchun tashqi qarshilik (R) va ichki qarshilik (r) nisbati qanday bo'lishi kerak?",
+      "a": ["R = r", "R = 4r", "R = 5r", "R = 2r"],
+      "c": 1
+    },
+    {
+      "q": "EYK 12 V va ichki qarshiligi 2 Ω bo'lgan akkumulyatorga 10 Ω qarshilik ulandi. 2 sekundda unda qancha issiqlik (J) ajraladi?",
+      "a": ["20 J", "10 J", "24 J", "12 J"],
+      "c": 0
+    },
+    {
+      "q": "Qisqa tutashuv toki qaysi formula bilan aniqlanadi?",
+      "a": ["I = ε / R", "I = ε / r", "I = U / r", "I = ε / (R+r)"],
+      "c": 1
+    },
+    {
+      "q": "O'tkazgichning qarshiligi (R) 10 Ω, uchlaridagi kuchlanish (U) 60 V bo'lsa, undan o'tayotgan tok kuchi (I) necha Amper?",
+      "a": ["600 A", "6 A", "1/6 A", "50 A"],
+      "c": 1
+    },
+    {
+      "q": "Ketma-ket ulangan 6 ta bir xil (ε=2 V, r=0,3 Ω) elementlardan iborat batareya 1,2 Ω tashqi qarshilikka ulandi. Tok kuchini toping.",
+      "a": ["4 A", "2 A", "3,6 A", "3,2 A"],
+      "c": 0
+    }
+  ]
+}

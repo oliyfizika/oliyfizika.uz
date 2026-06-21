@@ -1,0 +1,85 @@
+{
+  "title": "To'liq zanjir uchun Om qonuni",
+  "questions": [
+    {
+      "q": "Yopiq (to'la) zanjir uchun Om qonuni formulasini ko'rsating.",
+      "a": ["I = U / R", "I = ε / (R + r)", "I = q / t", "I = ε / r"],
+      "c": 1
+    },
+    {
+      "q": "Elektr yurituvchi kuch (EYK) deb nimaga aytiladi?",
+      "a": [
+        "Elektronni yopiq zanjir bo'ylab ko'chirishda chet kuchlar bajaradigan ishning zaryad miqdoriga nisbati",
+        "Zanjir qismidagi kuchlanishlar yig'indisi",
+        "Faqat manba ichidagi potensiallar ayirmasi",
+        "Zaryadli zarralarning tartibli harakati"
+      ],
+      "c": 0
+    },
+    {
+      "q": "Zanjirning iste’molchisiz (tashqi qarshilik $R=0$ bo'lganda) ulanib qolishi natijasida hosil bo'ladigan tok kuchi nima deyiladi?",
+      "a": ["Nominal tok", "Ishchi tok", "Qisqa tutashuv toki", "Foydali tok"],
+      "c": 2
+    },
+    {
+      "q": "Qisqa tutashuv toki ($I_{qt}$) qaysi formula bilan aniqlanadi?",
+      "a": ["I = ε / R", "I = U / r", "I = ε / r", "I = ε / (R + r)"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbai ichidagi chet kuchlar 3 C zaryadni ko'chirishda 150 J ish bajarsa, manbaning EYKi necha Voltga teng?",
+      "a": ["450 V", "0,02 V", "50 V", "25 V"],
+      "c": 2
+    },
+    {
+      "q": "EYK lari $\\varepsilon_1=3 V$ va $\\varepsilon_2=6 V$, ichki qarshiliklari $r_1=2 \\Omega$ va $r_2=2 \\Omega$ bo'lgan ikkita manba va $R=5 \\Omega$ qarshilik ketma-ket ulangan. Zanjirdagi tok kuchi (A) nimaga teng?",
+      "a": ["2 A", "1 A", "0,5 A", "1,5 A"],
+      "c": 1
+    },
+    {
+      "q": "Manba qisqichlaridagi (tashqi zanjirdagi) kuchlanish ($U$) qanday topiladi?",
+      "a": ["U = ε + Ir", "U = ε - Ir", "U = ε / r", "U = Ir"],
+      "c": 1
+    },
+    {
+      "q": "Qisqa tutashuv vaqtida manba qutblaridagi kuchlanish nimaga teng bo'ladi?",
+      "a": ["EYK ga teng", "EYK dan 2 marta kichik", "Nolga teng", "Cheksiz katta"],
+      "c": 2
+    },
+    {
+      "q": "EYK $\\varepsilon$ va ichki qarshiligi $r$ bo'lgan $n$ ta bir xil tok manbalari parallel ulanganda berk zanjir uchun Om qonuni qanday bo'ladi?",
+      "a": ["I = nε / (R + r)", "I = ε / (R + nr)", "I = ε / (R + r/n)", "I = nε / (nR + r)"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbaining foydali ish koeffitsiyenti ($\eta$) uchun qaysi munosabat to'g'ri?",
+      "a": ["η = R / (R + r)", "η = U / ε", "Ikkala javob ham to'g'ri", "η = r / R"],
+      "c": 2
+    },
+    {
+      "q": "EYK 12 V va ichki qarshiligi 2 $\\Omega$ bo'lgan akkumulyatorga 10 $\\Omega$ qarshilik ulandi. Tashqi zanjirdagi kuchlanish tushuvini (V) toping.",
+      "a": ["12 V", "10 V", "2 V", "1 V"],
+      "c": 1
+    },
+    {
+      "q": "Manbaning EYKi 1,5 V, ichki qarshiligi 1 $\\Omega$ va tashqi qarshilik 2 $\\Omega$. 10 s ichida manba ichida (ichki qarshilikda) qancha issiqlik (J) ajraladi?",
+      "a": ["5 J", "7,5 J", "2,5 J", "22,5 J"],
+      "c": 2
+    },
+    {
+      "q": "Ikkita har xil manba ($\\varepsilon_1, r_1$ va $\\varepsilon_2, r_2$) tok yo'nalishlari qarama-qarshi holda ketma-ket ulansa, umumiy EYK qanday aniqlanadi?",
+      "a": ["ε_um = ε1 + ε2", "ε_um = |ε1 - ε2|", "ε_um = ε1 * ε2", "ε_um = 0"],
+      "c": 1
+    },
+    {
+      "q": "Zanjirdagi tashqi qarshilik manbaning ichki qarshiligiga teng bo'lsa ($R=r$), manba FIK i necha foiz bo'ladi?",
+      "a": ["100%", "75%", "50%", "25%"],
+      "c": 2
+    },
+    {
+      "q": "Tok manbaining elektr yurituvchi kuchi qanday birlikda ifodalanadi?",
+      "a": ["Amper (A)", "Volt (V)", "Joul (J)", "Vatt (W)"],
+      "c": 1
+    }
+  ]
+}

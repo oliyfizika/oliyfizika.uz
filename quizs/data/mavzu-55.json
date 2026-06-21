@@ -1,0 +1,80 @@
+{
+  "title": "Yorug'likning qaytishi va sinishi",
+  "questions": [
+    {
+      "q": "Yorug'likning qaytish qonuniga ko'ra, tushish burchagi (α) va qaytish burchagi (β) orasidagi munosabat qanday?",
+      "a": ["α > β", "α < β", "α = β", "α + β = 90°"],
+      "c": 2
+    },
+    {
+      "q": "Yassi ko'zguga tushayotgan va undan qaytayotgan nurlar orasidagi burchak 50° bo'lsa, nurning tushish burchagi qancha?",
+      "a": ["50°", "25°", "40°", "100°"],
+      "c": 1
+    },
+    {
+      "q": "Absolyut sindirish ko'rsatkichi (n) yorug'likning vakuumdagi tezligi (c) va muhitdagi tezligi (v) orqali qanday aniqlanadi?",
+      "a": ["n = v / c", "n = c / v", "n = c * v", "n = √(c * v)"],
+      "c": 1
+    },
+    {
+      "q": "Yorug'lik nuri havodan absolyut sindirish ko'rsatkichi √3 bo'lgan muhitga o'tganda, tushish burchagi 60° bo'lsa, sinish burchagi qancha?",
+      "a": ["30°", "45°", "60°", "20°"],
+      "c": 0
+    },
+    {
+      "q": "To'la ichki qaytish hodisasi qanday sharoitda kuzatiladi?",
+      "a": ["Nur optik zichligi kichik muhitdan kattasiga o'tganda", "Nur ixtiyoriy muhitdan o'tganda", "Nur optik zichligi katta muhitdan kichigiga o'tganda", "Faqat nur vakuumga tushganda"],
+      "c": 2
+    },
+    {
+      "q": "Sindirish ko'rsatkichi n bo'lgan shisha plastinkada singan nur qaytgan nurga perpendikulyar bo'lishi uchun tushish burchagi qanday bo'lishi kerak?",
+      "a": ["sin α = n", "cos α = n", "tg α = n", "ctg α = n"],
+      "c": 2
+    },
+    {
+      "q": "Yassi ko'zgu 15° burchakka burilsa, undan qaytgan nur necha gradusga buriladi?",
+      "a": ["15°", "7,5°", "30°", "45°"],
+      "c": 2
+    },
+    {
+      "q": "Yorug'lik vakuumdan to'la ichki qaytish chegaraviy burchagi 30° bo'lgan muhitga o'tganda, to'lqin uzunligi necha marta kamayadi?",
+      "a": ["2 marta", "√2 marta", "1,5 marta", "O'zgarmaydi"],
+      "c": 0
+    },
+    {
+      "q": "Silliq shisha yoki jilolangan metall sirtidan nurlarning parallel dasta bo'lib qaytishi nima deyiladi?",
+      "a": ["Diffuz qaytish", "Tarqoq qaytish", "Ko'zgusimon (tekis) qaytish", "Sinish"],
+      "c": 2
+    },
+    {
+      "q": "Yorug'lik nuri absolyut sindirish ko'rsatkichi 1,5 bo'lgan shaffof muhitda qanday tezlik (m/s) bilan tarqaladi?",
+      "a": ["3·10⁸", "2·10⁸", "1,5·10⁸", "2,25·10⁸"],
+      "c": 1
+    },
+    {
+      "q": "Yorug'lik nuri havodan suvga o'tganda (α – tushish, β – sinish burchagi), quyidagi munosabatlardan qaysi biri o'rinli?",
+      "a": ["β < α", "β > α", "β = α", "β = 2α"],
+      "c": 0
+    },
+    {
+      "q": "Vakuum uchun absolyut sindirish ko'rsatkichi nechaga teng deb olinadi?",
+      "a": ["0", "1", "1,33", "∞"],
+      "c": 1
+    },
+    {
+      "q": "Suv tubidagi yashil nur o'rniga qizil nur ishlatilsa, uning suv tubidagi yetib borish nuqtasi qanday o'zgaradi?",
+      "a": ["O'zgarmaydi", "A nuqtadan chapga suriladi", "A nuqtadan o'ngga suriladi", "To'la qaytib, tubiga yetib bormaydi"],
+      "c": 2
+    },
+    {
+      "q": "To'la ichki qaytishning chegaraviy burchagi α₀ qaysi formula bilan topiladi ($n_1 > n_2$)?",
+      "a": ["sin α₀ = n₁ / n₂", "sin α₀ = n₂ / n₁", "cos α₀ = n₂ / n₁", "tg α₀ = n₂ / n₁"],
+      "c": 1
+    },
+    {
+      "q": "Odam vertikal ko'zgudan 3 m uzoqlashsa, u bilan uning tasviri orasidagi masofa qanchaga ortadi?",
+      "a": ["3 m", "1,5 m", "6 m", "o'zgarmaydi"],
+      "c": 2
+    }
+  ]
+}

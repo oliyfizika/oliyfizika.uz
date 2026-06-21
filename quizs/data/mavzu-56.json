@@ -1,0 +1,255 @@
+{
+  "title": "Linzalar mavzusida kengaytirilgan quiz",
+  "questions": [
+    {
+      "q": "Bir yoki ikki tomoni sferik sirt bilan chegaralangan shaffof jism nima deyiladi?",
+      "a": [
+        "Prizma ",
+        "Ko'zgu",
+        "Linza",
+        "Shisha plastina"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Linza optik kuchining o‘lchov birligi qaysi javobda to'g'ri ko'rsatilgan?",
+      "a": [
+        "Metr (m) ",
+        "Dioptriya (1/m)",
+        "Vatt (W) ",
+        "Nyuton (N) "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Qaysi nur linzadan o‘tgach o‘z yo‘nalishini o‘zgartirmaydi?",
+      "a": [
+        "Fokusdan o'tuvchi nur ",
+        "Bosh optik o'qqa parallel nur",
+        "Optik markazdan o'tuvchi nur ",
+        "Fokal tekislikka tik tushuvchi nur "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Linzaning bosh optik o‘qiga perpendikulyar bo‘lgan va fokus nuqtasidan o‘tadigan tekislik nima deyiladi?",
+      "a": [
+        "Bosh tekislik ",
+        "Optik tekislik ",
+        "Fokal tekislik ",
+        "Garmonik tekislik "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Buyum yig‘uvchi (qavariq) linzadan d > 2F masofada joylashgan bo‘lsa, uning tasviri qanday xarakterga ega bo'ladi?",
+      "a": [
+        "Haqiqiy, teskari, kattalashgan ",
+        "Mavhum, to'g'ri, kichraygan ",
+        "Haqiqiy, teskari, kichraygan ",
+        "Tasvir hosil bo'lmaydi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Sochuvchi (botiq) linza buyum linzadan har qanday chekli masofada turganda qanday tasvir beradi?",
+      "a": [
+        "Har doim haqiqiy va teskari ",
+        "Har doim mavhum, to'g'ri va kichraygan ",
+        "Buyum masofasiga qarab har xil ",
+        "Faqat kattalashgan tasvir "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Buyum yig‘uvchi linzadan d = 2F masofada joylashgan bo‘lsa, uning tasviri qanday kattalikda bo'ladi?",
+      "a": [
+        "Buyumdan 2 marta katta",
+        "Buyumdan 2 marta kichik",
+        "Buyumning o'ziga teng ",
+        "Nuqtasimon "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Lupada (kattalashtiruvchi oyna) qanday tasvir hosil bo‘ladi?",
+      "a": [
+        "Haqiqiy, teskari, kattalashgan ",
+        "Mavhum, teskari, kattalashgan",
+        "Mavhum, to‘g‘ri, kattalashgan ",
+        "Haqiqiy, to‘g‘ri, teng "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Fokus masofasi F bo‘lgan yig‘uvchi linza yordamida ekranda tasvir hosil qilish uchun buyum va ekran orasidagi masofa kamida qanday bo‘lishi kerak?",
+      "a": [
+        "2F",
+        "F ",
+        "4F ",
+        "0,5F "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Fokus masofasi 12 cm bo‘lgan yupqa yig‘uvchi linza yordamida buyumning 2 marta kattalashgan mavhum tasviri hosil qilindi. Linzadan tasvirgacha masofani (cm) aniqlang.",
+      "a": [
+        "10 cm ",
+        "12 cm ",
+        "18 cm ",
+        "6 cm "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Linzadan buyumgacha bo'lgan masofa 1 m, tasvirdan linzagacha 25 cm bo'lsa, yig'uvchi linzaning fokus masofasi necha cm?",
+      "a": [
+        "20 cm ",
+        "15 cm ",
+        "12,5 cm ",
+        "33 cm "
+      ],
+      "c": 0
+    },
+    {
+      "q": "Fokus masofasi 12,5 cm bo'lgan linzaning optik kuchi necha dioptriya?",
+      "a": [
+        "4 D",
+        "2 D",
+        "8 D",
+        "0,8 D"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Optik kuchi 4 D bo'lgan linzaning fokus masofasi necha cm?",
+      "a": [
+        "0,25 cm ",
+        "25 cm ",
+        "4 cm ",
+        "40 cm "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Fokus masofasi F1=20 cm bo'lgan yig'uvchi linza va optik kuchi D2=2 D bo'lgan linza birlashtirilsa, sistemaning optik kuchi qancha (D)?",
+      "a": [
+        "3 D",
+        "7 D",
+        "4 D ",
+        "5 D"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Ko‘zning yaqindan ko‘rish (miopiya) nuqsonini tuzatish uchun qanday linzali ko‘zoynak ishlatiladi?",
+      "a": [
+        "Yig'uvchi ",
+        "Sochuvchi ",
+        "Silindrik ",
+        "Yassi plastinka "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Normal (nuqsonsiz) ko‘zning eng yaxshi ko‘rish masofasi necha cm deb qabul qilingan?",
+      "a": [
+        "15 cm",
+        "20 cm",
+        "25 cm",
+        "30 cm "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Ikki tomoni qavariq, egrilik radiuslari bir xil R1=R2=0,5 m va sindirish ko‘rsatkichi 1,5 bo‘lgan linzaning optik kuchini toping.",
+      "a": [
+        "1 D",
+        "2 D ",
+        "0,5 D ",
+        "4 D "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Yig‘uvchi linza yordamida mavhum tasvir hosil qilish uchun buyum qayerda joylashgan bo‘lishi kerak?",
+      "a": [
+        "Fokusda ",
+        "Fokus va linza orasida ",
+        "Fokus va ikkilangan fokus orasida ",
+        "Ikkilangan fokusdan keyin "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Linza suyuqlikka tushirilganda (agar linza materialining sindirish ko'rsatkichi suyuqliknikidan katta bo'lsa), uning fokus masofasi qanday o'zgaradi?",
+      "a": [
+        "Kamayadi",
+        "O'zgarmaydi",
+        "Ortadi ",
+        "Nolga tenglashadi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Sochuvchi yupqa linza uchun linza formulasi qaysi javobda to'g'ri ko'rsatilgan?",
+      "a": [
+        "1/F = 1/d + 1/f ",
+        "-1/F = 1/d + 1/f",
+        "-1/F = 1/d - 1/f ",
+        "1/F = 1/d - 1/f "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Buyum yig'uvchi linzadan d=F masofada tursa, uning tasviri qayerda hosil bo'ladi?",
+      "a": [
+        "Linza markazida ",
+        "Ikkilangan fokusda ",
+        "Cheksizlikda ",
+        "Fokusning yarmida "
+      ],
+      "c": 2
+    },
+    {
+      "q": "Buyum bilan yig'uvchi linza oralig'i 3F bo'lsa, tasvirning o'lchami buyum o'lchamidan necha marta katta yoki kichik bo'ladi?",
+      "a": [
+        "2 marta kichik",
+        "2 marta katta ",
+        "0,5 marta kichik ",
+        "1,5 marta katta"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Uzoqdan ko'rar odamning ko'rish nuqsonini tuzatish uchun qanday ko'zoynak taqishi kerak?",
+      "a": [
+        "Sochuvchi linzali",
+        "Yig'uvchi linzali",
+        "Faqat qora ko'zoynak",
+        "Silindrik linzali "
+      ],
+      "c": 1
+    },
+    {
+      "q": "Buyumdan yig'uvchi linzaning fokusigacha masofa 2 cm, haqiqiy tasvirdan ikkinchi fokusgacha masofa 8 cm bo'lsa, linzaning fokus masofasi necha cm?",
+      "a": [
+        "2,5 cm ",
+        "5 cm ",
+        "10 cm ",
+        "4 cm "
+      ],
+      "c": 3
+    },
+    {
+      "q": "Lupa sifatida ishlatilayotgan linzadan buyumgacha bo'lgan masofa d qanday bo'lishi kerak?",
+      "a": [
+        "d > 2F ",
+        "F < d < 2F",
+        "d < F ",
+        "d = 2F "
+      ],
+      "c": 2
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Elektr maydon bajargan ish",
+  "questions": [
+    {
+      "q": "Zaryadni ko‘chirishda elektrostatik maydon bajargan ishini hisoblash uchun qaysi formuladan foydalaniladi?",
+      "a": ["A = qU", "A = qU/2", "A = qU²", "A = U/q"],
+      "c": 0
+    },
+    {
+      "q": "Zaryad ekvipotensial sirt bo‘ylab ko‘chganda elektr maydon kuchlari qancha ish bajaradi?",
+      "a": ["Maksimal ish", "Nolga teng ish", "Zaryad miqdoriga teng ish", "Potensialga teng ish"],
+      "c": 1
+    },
+    {
+      "q": "Elektr maydon kuchlarining ishi zaryadning harakat trayektoriyasi shakliga bog'liqmi?",
+      "a": ["Ha, bog'liq", "Faqat egri chiziqli trayektoriyada bog'liq", "Bog'liq emas (faqat boshlang'ich va oxirgi nuqtalar potensialiga bog'liq)", "Faqat vakuumda bog'liq emas"],
+      "c": 2
+    },
+    {
+      "q": "Zaryadni berk kontur bo'ylab ko'chirib, yana boshlang'ich nuqtaga qaytarilganda bajarilgan to'la ish nimaga teng?",
+      "a": ["2qU", "qEd", "Nolga", "U/q"],
+      "c": 2
+    },
+    {
+      "q": "Bir jinsli elektr maydonda zaryadni ko'chirishda bajarilgan ish formulasi qaysi?",
+      "a": ["A = qEd cosα", "A = k q₁q₂ / r", "A = E / d", "A = F / q"],
+      "c": 0
+    },
+    {
+      "q": "Potensiallar farqi 50 V bo'lgan ikki nuqta orasida 2 µC musbat zaryad ko'chganda maydon qanday ish (µJ) bajaradi?",
+      "a": ["25", "100", "50", "200"],
+      "c": 1
+    },
+    {
+      "q": "20 nC zaryad potensiali 700 V bo'lgan nuqtadan 200 V bo'lgan nuqtaga ko'chganda maydon bajargan ishni toping (µJ).",
+      "a": ["10", "15", "5", "20"],
+      "c": 0
+    },
+    {
+      "q": "Elektr maydon kuchlanganligi 500 V/m bo'lgan bir jinsli maydonda zaryad kuch chiziqlari bo'ylab 4 cm ko'chdi. Bunda energiyasi necha eV ortadi?",
+      "a": ["10", "20", "40", "80"],
+      "c": 1
+    },
+    {
+      "q": "5 µC zaryadni cheksizlikdan maydonning biror nuqtasiga ko'chirib kelishda 30 µJ ish bajarildi. Shu nuqtaning potensiali necha Volt?",
+      "a": ["150", "6", "15", "30"],
+      "c": 1
+    },
+    {
+      "q": "Zaryadlangan sharcha rasmda ko'rsatilgan 4 ta turli trayektoriya bo'ylab K nuqtadan M nuqtaga ko'chirildi. Qaysi holatda ish maksimal bo'ladi?",
+      "a": ["1-trayektoriyada", "4-trayektoriyada", "Hammasida bir xil", "3-trayektoriyada"],
+      "c": 2
+    },
+    {
+      "q": "Elektron 10 kV/m kuchlanganlikka ega maydonda 4 mm masofani o'tsa, qancha Joul ish bajariladi? (e = 1,6·10⁻¹⁹ C)",
+      "a": ["6,4·10⁻¹⁸ J", "4·10⁻¹⁸ J", "1,6·10⁻¹⁸ J", "6,4·10⁻¹⁹ J"],
+      "c": 0
+    },
+    {
+      "q": "Zaryad potensiali 12 V bo'lgan nuqtadan potensiali -15 V bo'lgan nuqtaga ko'chsa, potensiallar ayirmasi qanchaga teng bo'ladi?",
+      "a": ["-3 V", "3 V", "27 V", "-27 V"],
+      "c": 2
+    },
+    {
+      "q": "Zaryad maydon kuchlari ta'sirida potensiali yuqori nuqtadan potensiali past nuqtaga ko'chirilsa, uning kinetik energiyasi qanday o'zgaradi?",
+      "a": ["Kamayadi", "O'zgarmaydi", "Ortadi", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "Kuchlanganligi 3·10⁶ N/C bo'lgan maydonda zaryadni 2 cm ko'chirishda 0,012 J ish bajarilgan bo'lsa, zaryad miqdorini toping (C).",
+      "a": ["2·10⁻⁷", "1,2·10⁻³", "3·10⁻⁹", "4·10⁻⁶"],
+      "c": 0
+    },
+    {
+      "q": "Tok manbai ichida chet kuchlar 3 C zaryadni ko'chirishda 150 J ish bajarsa, manbaning EYuKi necha Volt?",
+      "a": ["450", "0,02", "50", "25"],
+      "c": 2
+    }
+  ]
+}

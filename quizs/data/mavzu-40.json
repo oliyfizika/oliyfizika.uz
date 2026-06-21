@@ -1,0 +1,105 @@
+{
+  "title": "Ekvipotensial sirtlar",
+  "questions": [
+    {
+      "q": "Barcha nuqtalarida potensiali bir xil bo‘lgan sirtlar nima deyiladi?",
+      "a": [
+        "Potensial sirtlar",
+        "Ekvivalent sirtlar",
+        "Ekvipotensial sirtlar",
+        "Bir jinsli sirtlar"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Zaryad ekvipotensial sirt bo‘ylab ko‘chganda elektr maydon kuchlari bajargan ish nimaga teng?",
+      "a": [
+        "A = qU",
+        "Nolga (A = 0)",
+        "Maksimal qiymatga",
+        "A = q/U"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Elektr maydon kuchlanganlik chiziqlari ekvipotensial sirtlarga nisbatan qanday joylashadi?",
+      "a": [
+        "Sirtga urinma ravishda",
+        "Sirtga tik (perpendikulyar) ravishda",
+        "Ixtiyoriy burchak ostida",
+        "Sirtga parallel ravishda"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Vakuumda turgan nuqtaviy zaryad elektr maydonining ekvipotensial sirtlari qanday shaklda bo‘ladi?",
+      "a": [
+        "Parallel tekisliklar",
+        "Silindrlar",
+        "Sferalar (konsentrik aylanalar)",
+        "Konuslar"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Bir jinsli elektr maydonning ekvipotensial sirtlari qanday ko'rinishga ega?",
+      "a": [
+        "Sferik sirtlar",
+        "Parallel tekisliklar",
+        "Egri chiziqlar",
+        "Nuqtalar to'plami"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Zaryad ekvipotensial sirt bo‘ylab ko‘chirilganda uning potensial energiyasi qanday o‘zgaradi?",
+      "a": [
+        "Ortadi",
+        "Kamayadi",
+        "O‘zgarmaydi",
+        "Nolga tenglashadi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Elektr maydon kuch chiziqlari potensiali $\\phi_1$ va $\\phi_2$ bo'lgan sirtlar orasida qaysi tomonga yo'nalgan bo'ladi?",
+      "a": [
+        "Potensial oshadigan yo'nalishda",
+        "Potensial kamayadigan yo'nalishda",
+        "Sirt bo'ylab ixtiyoriy tomonga",
+        "Yo'nalishga ega emas"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Ekvipotensial sirtlar bir-biri bilan kesishishi mumkinmi?",
+      "a": [
+        "Ha, har doim kesishadi",
+        "Faqat manfiy zaryadlar atrofida kesishadi",
+        "Yo'q, ekvipotensial sirtlar kesishmaydi",
+        "Faqat o'ta kuchli maydonlarda kesishadi"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Manfiy zaryadni o'rab turgan ikki ekvipotensial sirtning qaysi birida potensial yuqori bo'ladi?",
+      "a": [
+        "Zaryadga yaqinroq sirtda",
+        "Zaryaddan uzoqroq sirtda",
+        "Ikkala sirtda ham bir xil",
+        "Manfiy zaryadda ekvipotensial sirt bo'lmaydi"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Bir jinsli elektr maydonda zaryadni bitta ekvipotensial sirtning bir nuqtasidan ikkinchi nuqtasiga turli trayektoriyalar bo'ylab ko'chirish ishlari qanday taqqoslanadi?",
+      "a": [
+        "Trayektoriya uzunligiga qarab farq qiladi",
+        "Eng qisqa yo'lda ish maksimal bo'ladi",
+        "Barcha trayektoriyalar bo'ylab ish nolga teng",
+        "Faqat to'g'ri chiziqli trayektoriyada ish nolga teng"
+      ],
+      "c": 2
+    }
+  ]
+}

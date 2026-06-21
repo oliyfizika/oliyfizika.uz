@@ -1,0 +1,105 @@
+{
+  "title": "Fotoeffekt mavzusida quiz",
+  "questions": [
+    {
+      "q": "Yorug‘lik ta’sirida moddalardan elektronning uzilib chiqishi hodisasi nima deyiladi?",
+      "a": [
+        "Termoelektron emissiya",
+        "Fotoeffekt",
+        "Elektroliz",
+        "Ionizatsiya"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Fotoeffekt hodisasini 1887-yilda kim kashf qilgan?",
+      "a": ["A. Stoletov", "A. Eynshteyn", "G. Gers", "M. Plank"],
+      "c": 2
+    },
+    {
+      "q": "Fotoeffekt uchun Eynshteyn tenglamasini ko'rsating.",
+      "a": ["E = mc²", "hν = A + mv²/2", "φ = BS cosα", "F = qvB sinα"],
+      "c": 1
+    },
+    {
+      "q": "Fotoeffektning qizil chegarasi nimalarga bog'liq?",
+      "a": [
+        "Yorug'lik intensivligi va katod yuziga",
+        "Faqat yorug'lik chastotasiga",
+        "Katodning chiqish ishi va yorug'lik chastotasiga",
+        "Faqat yorug'lik oqimiga"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Yorug'lik intensivligi (oqimi) 2 marta orttirilsa, fotoelektronlarning maksimal kinetik energiyasi qanday o'zgaradi?",
+      "a": ["2 marta ortadi", "4 marta ortadi", "O'zgarmaydi", "2 marta kamayadi"],
+      "c": 2
+    },
+    {
+      "q": "Vaqt birligi ichida chiqayotgan fotoelektronlar soni (to'yinish toki) nimaga to'g'ri proporsional?",
+      "a": [
+        "Yorug'lik chastotasiga",
+        "Yorug'lik intensivligiga",
+        "Elektron massasiga",
+        "Tormozlovchi kuchlanishga"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Fotoeffekt hodisasi yorug'likning qaysi nazariyasini (tabiatini) tasdiqlaydi?",
+      "a": ["To'lqin nazariyasini", "Kvant (zarra) nazariyasini", "Elektromagnetizm nazariyasini", "Mexanik nazariyani"],
+      "c": 1
+    },
+    {
+      "q": "Tushayotgan yorug'lik chastotasi (ν) uchun qanday shart bajarilganda fotoeffekt hodisasi kuzatiladi? (A - chiqish ishi)",
+      "a": ["v < A/h", "v = 0", "v ≥ A/h", "v = A/c"],
+      "c": 2
+    },
+    {
+      "q": "Fotoelektronlarning maksimal kinetik energiyasi bilan to'xtatuvchi (tormozlovchi) kuchlanish orasidagi bog'liqlikni ko'rsating.",
+      "a": ["Ek = e * U₀", "Ek = h / ν", "Ek = A - hν", "Ek = U₀ / e"],
+      "c": 0
+    },
+    {
+      "q": "Yorug'lik energiyasini elektr energiyasiga aylantirib beruvchi asbob nima deyiladi?",
+      "a": ["Transformator", "Fotoelement", "Reostat", "Kondensator"],
+      "c": 1
+    },
+    {
+      "q": "Moddadan fotoelektronlarni urib chiqarish uchun yetarli bo‘lgan yorug‘lik to‘lqin uzunligining eng katta qiymati nima deyiladi?",
+      "a": ["Maksimal to'lqin", "Foton chegarasi", "Fotoeffektning qizil chegarasi", "Kogerentlik chegarasi"],
+      "c": 2
+    },
+    {
+      "q": "Nima uchun fotoeffekt chegarasi \"qizil\" chegara deyiladi?",
+      "a": [
+        "Faqat qizil nurda kuzatilgani uchun",
+        "Qizil nur eng katta to'lqin uzunligi va eng kam energiyaga ega bo'lgani uchun",
+        "Katod qiziganida qizil tusga kirishi uchun",
+        "Barcha metallar qizil nurda ko'p elektron chiqarishi uchun"
+      ],
+      "c": 1
+    },
+    {
+      "q": "Agar atomdan ajratib olingan elektron moddaning ichida qolsa, bunday hodisa nima deyiladi?",
+      "a": ["Tashqi fotoeffekt", "Ichki fotoeffekt", "Kompton effekti", "Lyuminessensiya"],
+      "c": 1
+    },
+    {
+      "q": "Eynshteynning fotoeffekt tenglamasi qaysi qonunning umumlashmasi hisoblanadi?",
+      "a": [
+        "Impulsning saqlanish qonuni",
+        "Zaryadning saqlanish qonuni",
+        "Energiyaning saqlanish qonuni",
+        "Nyutonning ikkinchi qonuni"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Fotoeffekt natijasida metallar qanday zaryadlanadi?",
+      "a": ["Manfiy", "Zaryadlanmaydi", "Musbat", "Neytral bo'lib qoladi"],
+      "c": 2
+    }
+  ]
+}

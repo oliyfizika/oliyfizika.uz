@@ -1,0 +1,105 @@
+{
+  "title": "Turli muhitlarda elektr toki",
+  "questions": [
+    {
+      "q": "Metallarda elektr tokini qanday zarralar oqimi hosil qiladi?",
+      "a": ["Musbat va manfiy ionlar", "Faqat elektronlar", "Elektronlar va kovaklar", "Protonlar"],
+      "c": 1
+    },
+    {
+      "q": "Metall o‘tkazgichlar qizdirilganda ularning qarshiligi qanday o‘zgaradi?",
+      "a": ["Kamayadi", "O‘zgarmaydi", "Ortadi", "Nolga tenglashadi"],
+      "c": 2
+    },
+    {
+      "q": "Elektrolitlarda elektr toki nimalarning tartibli harakatidan iborat?",
+      "a": ["Elektronlarning", "Musbat va manfiy ionlarning", "Faqat musbat ionlarning", "Elektronlar va kovaklarning"],
+      "c": 1
+    },
+    {
+      "q": "Qaysi muhitda elektr tokining issiqlik ta’siri (Joul-Lens) kuzatilmaydi?",
+      "a": ["Gazlarda", "Metallarda", "Vakuumda", "Elektrolitlarda"],
+      "c": 2
+    },
+    {
+      "q": "Temperatura ortishi bilan yarimo‘tkazgichning elektr qarshiligi qanday o‘zgaradi?",
+      "a": ["Kamayadi", "Ortadi", "O‘zgarmaydi", "Dastlab ortib, keyin kamayadi"],
+      "c": 0
+    },
+    {
+      "q": "n turdagi yarimo‘tkazgichlarda asosiy zaryad tashuvchilar qaysi zarralar hisoblanadi?",
+      "a": ["Kovaklar", "Musbat ionlar", "Elektronlar", "Neytronlar"],
+      "c": 2
+    },
+    {
+      "q": "Qizdirilgan qattiq jism sirtidan elektronlarning nurlanishi (uchib chiqishi) nima deyiladi?",
+      "a": ["Fotoeffekt", "Termoelektron emissiya", "Ionizatsiya", "Rekombinatsiya"],
+      "c": 1
+    },
+    {
+      "q": "Elektr tokining magnit ta’siri qaysi muhitlarda kuzatiladi?",
+      "a": ["Faqat metallarda", "Faqat suyuqliklarda", "Istalgan muhitda", "Faqat vakuumda"],
+      "c": 2
+    },
+    {
+      "q": "Germaniyga 5 valentli fosfor aralashmasi kiritilsa, qanday turdagi o‘tkazuvchanlik hosil bo‘ladi?",
+      "a": ["p-turdagi", "n-turdagi", "Metall o'tkazuvchanlik", "Xususiy o'tkazuvchanlik"],
+      "c": 1
+    },
+    {
+      "q": "Gazlarda elektr toki qanday zaryadlarning tartibli harakati tufayli hosil bo‘ladi?",
+      "a": ["Faqat elektronlar", "Musbat ionlar va elektronlar", "Musbat, manfiy ionlar va elektronlar", "Faqat ionlar"],
+      "c": 2
+    },
+    {
+      "q": "O'zgaruvchan tokni o‘zgarmas tokka aylantirish uchun qaysi asbob ishlatiladi?",
+      "a": ["Transformator", "Reostat", "Diod", "Kondensator"],
+      "c": 2
+    },
+    {
+      "q": "Yarimo‘tkazgichda elektron va teshik (kovak) uchrashganda qanday hodisa yuz beradi?",
+      "a": ["Energiya yutiladi", "Energiya ajraladi (rekombinatsiya)", "Musbat ion hosil bo'ladi", "Hech narsa o'zgarmaydi"],
+      "c": 1
+    },
+    {
+      "q": "Vakuumda elektr toki qanday zarralarning harakati hisobiga vujudga keladi?",
+      "a": ["Ionlar", "Protonlar", "Elektronlar", "Fotonlar"],
+      "c": 2
+    },
+    {
+      "q": "p-turdagi yarimo‘tkazgichlarda asosiy zaryad tashuvchilar nima?",
+      "a": ["Elektronlar", "Kovaklar (teshiklar)", "Manfiy ionlar", "Alfa zarralar"],
+      "c": 1
+    },
+    {
+      "q": "Elektroliz jarayonida katodda ajralib chiqqan modda massasi (m) qaysi formula bilan topiladi?",
+      "a": ["m = kIt", "m = qU", "m = CV", "m = ρV"],
+      "c": 0
+    },
+    {
+      "q": "Gazlar past haroratlarda odatda qanday xossaga ega bo'ladi?",
+      "a": ["O'tkazgich", "O'ta o'tkazgich", "Dielektrik", "Yarimo'tkazgich"],
+      "c": 2
+    },
+    {
+      "q": "Faradey doimiysi (F) qaysi munosabat bilan aniqlanadi?",
+      "a": ["F = e * Na (elementar zaryad va Avogadro soni ko'paytmasi)", "F = m / q", "F = k / e", "F = I * t"],
+      "c": 0
+    },
+    {
+      "q": "Yarimo‘tkazgichli diodning asosiy vazifasi nima?",
+      "a": ["Tokni kuchaytirish", "Tokni to'g'rilash (to'g'rilagich)", "Energiyani saqlash", "Kuchlanishni oshirish"],
+      "c": 1
+    },
+    {
+      "q": "Vakuumli dioddagi tok kuchi to‘yinishga erishmagan holatda, anod kuchlanishi 4 marta ortsa, quvvat necha marta ortadi?",
+      "a": ["4 marta", "16 marta", "32 marta", "8 marta"],
+      "c": 2
+    },
+    {
+      "q": "O‘tkazgichda elektr tokining tarqalish tezligi deganda nima tushuniladi?",
+      "a": ["Elektronlarning tartibli harakat tezligi", "Elektronlarning issiqlik harakati tezligi", "Elektr maydonning tarqalish tezligi (yorug'lik tezligiga yaqin)", "Ionlarning harakat tezligi"],
+      "c": 2
+    }
+  ]
+}
