@@ -1,4 +1,5 @@
 import { unlockMechanicsLesson } from "./mechanics-progress.js";
+import { saveResult } from "./services/result-service.js";
 
 function createAnswer(questionIndex, answer, answerIndex){
   const label = document.createElement("label");
@@ -78,7 +79,7 @@ export function renderMultipleChoiceTest({
 
   form.replaceChildren(fragment);
 
-  submitButton.addEventListener("click", ()=>{
+  submitButton.addEventListener("click", async () => {
     let score = 0;
 
     questions.forEach((question, index)=>{
@@ -102,6 +103,17 @@ export function renderMultipleChoiceTest({
     });
 
     const percent = Math.round((score / questions.length) * 100);
+
+    await saveResult({
+      lessonId: unlockLesson - 1,
+      lessonTitle: document.title,
+      course: "mechanics",
+      score,
+      totalQuestions: questions.length,
+      percent,
+      passed: percent >= passPercent
+    });
+
     result.className = `result ${percent >= passPercent ? "success" : "error"}`;
 
     if(percent >= passPercent){
