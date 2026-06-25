@@ -24,11 +24,19 @@ async function initQuiz(){
 
 try{
 
-const response =
-await fetch(window.quizDataFile);
+if(window.isMixedQuiz){
 
-quizData =
-await response.json();
+    await loadMixedQuiz();
+
+}else{
+
+    const response =
+    await fetch(window.quizDataFile);
+
+    quizData =
+    await response.json();
+
+}
 
 quizTitle.innerHTML =
 "🚀 " + quizData.title;
@@ -81,6 +89,42 @@ Math.random()*(i+1)
 return array;
 
 }
+
+
+async function loadMixedQuiz(){
+
+    let allQuestions = [];
+
+    for(let i = 1; i <= 64; i++){
+
+        try{
+
+            const response =
+            await fetch(`data/mavzu-${i}.json`);
+
+            const data =
+            await response.json();
+
+            allQuestions.push(...data.questions);
+
+        }catch(error){
+
+            console.log(`mavzu-${i}.json topilmadi`);
+
+        }
+
+    }
+
+    quizData = {
+
+        title: "Umumiy fizika",
+
+        questions: allQuestions
+
+    };
+
+}
+
 
 function loadQuestion(){
 

@@ -107,20 +107,28 @@ window.location.search
 const topicId =
 params.get("id");
 
-if(!topicId){
+if(topicId === "0"){
 
-document.body.innerHTML = `
-<h1 style="text-align:center;margin-top:50px;">
-Mavzu topilmadi
-</h1>
-`;
+    window.isMixedQuiz = true;
 
-throw new Error("id mavjud emas");
+}else{
+
+    if(!topicId){
+
+        document.body.innerHTML = `
+        <h1 style="text-align:center;margin-top:50px;">
+        Mavzu topilmadi
+        </h1>
+        `;
+
+        throw new Error("id mavjud emas");
+
+    }
+
+    window.quizDataFile =
+    `data/mavzu-${topicId}.json`;
 
 }
-
-window.quizDataFile =
-`data/mavzu-${topicId}.json`;
 
 </script>
 
