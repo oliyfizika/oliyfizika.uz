@@ -81,38 +81,44 @@ export function renderMultipleChoiceTest({
   form.replaceChildren(fragment);
 
   submitButton.addEventListener("click", async () => {
+
+    const unanswered = questions.filter((_, index) => {
+      return !form.querySelector(`input[name="q${index}"]:checked`);
+    }).length;
+
+    let message = "Haqiqatan ham testni yakunlamoqchimisiz?";
+
+    if (unanswered > 0) {
+      message =
+        `Siz ${unanswered} ta savolni javobsiz qoldirgansiz.\n\nBaribir testni yakunlamoqchimisiz?`;
+    }
+
+    if (!confirm(message)) {
+      return;
+    }
+
     let score = 0;
 
-    questions.forEach((question, index)=>{
-      const selectedAnswer = form.querySelector(`input[name="q${index}"]:checked`);
-      const labels = form.querySelectorAll(`input[name="q${index}"]`);
+    questions.forEach((question, index) => {
 
-      labels.forEach((input)=>{
-        const label = input.closest("label");
-        label.classList.remove("correct", "wrong");
+    const selectedAnswer = form.querySelector(`input[name="q${index}"]:checked`);
 
-        if(Number(input.value) === question.correct){
-          label.classList.add("correct");
-        }
-      });
-
-      if(selectedAnswer && Number(selectedAnswer.value) === question.correct){
+    if (selectedAnswer && Number(selectedAnswer.value) === question.correct) {
         score++;
-      }else if(selectedAnswer){
-        selectedAnswer.closest("label").classList.add("wrong");
-      }
+    }
+
     });
 
     const lessonId = unlockLesson - 1;
     const percent = Math.round((score / questions.length) * 100);
 
-    // Avval XP beriladi
+    // XP
     await awardXP({
       lessonId,
       percent
     });
 
-    // Keyin natija saqlanadi
+// Natijani saqlash
     await saveResult({
       lessonId,
       lessonTitle: document.title,
@@ -123,8 +129,14 @@ export function renderMultipleChoiceTest({
       passed: percent >= passPercent
     });
 
+// Savollarni yashirish
+    form.replaceChildren();
+    submitButton.remove();
+
     result.className = `result ${percent >= passPercent ? "success" : "error"}`;
 
+
+    
     if(percent >= passPercent){
       unlockMechanicsLesson(unlockLesson);
 

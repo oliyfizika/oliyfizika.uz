@@ -1,0 +1,131 @@
+
+{
+  "id": 5,
+  "title": "5-Mavzu | Tekis o‘zgaruvchan harakatda ko‘chish",
+  "subtitle": "Kamida 80% natija 6-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 6,
+  "questions": [
+    {
+      "text": "Jism tinch holatdan 2 m/s² tezlanish bilan 5 s harakatlandi. Uning ko‘chishini toping (m).",
+      "answers": ["10", "20", "25", "50"],
+      "correct": 2
+    },
+    {
+      "text": "Boshlang‘ich tezligi 4 m/s, tezlanishi 3 m/s² bo‘lgan jismning 2 s dagi ko‘chishini toping (m).",
+      "answers": ["8", "12", "14", "20"],
+      "correct": 2
+    },
+    {
+      "text": "Tekis tezlanuvchan harakatda ko‘chish formulasi qaysi?",
+      "answers": [
+        "s = vt",
+        "s = v₀t + at²",
+        "s = v₀t + at²/2",
+        "s = at"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Boshlang‘ich tezliksiz harakat qilayotgan jism 3 s da 18 m yo‘l bosdi. Uning tezlanishini toping (m/s²).",
+      "answers": ["2", "3", "4", "6"],
+      "correct": 2
+    },
+    {
+      "text": "Jism 6 m/s boshlang‘ich tezlik bilan 2 m/s² tezlanishda 4 s harakatlandi. Ko‘chish qancha (m)?",
+      "answers": ["24", "32", "40", "48"],
+      "correct": 2
+    },
+    {
+      "text": "Tinch holatdan 5 s davomida 4 m/s² tezlanish bilan harakatlangan jism qancha yo‘l bosadi (m)?",
+      "answers": ["25", "40", "50", "60"],
+      "correct": 2
+    },
+    {
+      "text": "Boshlang‘ich tezligi 10 m/s bo‘lgan jism 1 m/s² tezlanish bilan 6 s harakatlandi. Ko‘chishi qancha (m)?",
+      "answers": ["60", "72", "78", "96"],
+      "correct": 2
+    },
+    {
+      "text": "Tekis sekinlanuvchan harakatda ko‘chish formulasi qaysi?",
+      "answers": [
+        "s = v₀t − at²/2",
+        "s = at²",
+        "s = vt",
+        "s = at"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Boshlang‘ich tezliksiz harakat qilayotgan jismning tezlanishi 5 m/s². 4 s dagi ko‘chishini toping (m).",
+      "answers": ["20", "30", "40", "50"],
+      "correct": 2
+    },
+    {
+      "text": "Jism 8 m/s boshlang‘ich tezlik va 2 m/s² tezlanish bilan 3 s harakatlandi. Ko‘chish qancha (m)?",
+      "answers": ["24", "30", "33", "36"],
+      "correct": 2
+    },
+    {
+      "text": "Ko‘chishning SI dagi o‘lchov birligi qaysi?",
+      "answers": ["km", "m", "cm", "mm"],
+      "correct": 1
+    },
+    {
+      "text": "Jism tinch holatdan harakatlanib 8 s da 64 m yo‘l bosdi. Tezlanishni toping (m/s²).",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Boshlang‘ich tezligi 5 m/s bo‘lgan jism 2 s da 14 m ko‘chdi. Tezlanishi qancha (m/s²)?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Tekis o‘zgaruvchan harakatda ko‘chish nimaga bog‘liq?",
+      "answers": [
+        "Faqat vaqtga",
+        "Faqat tezlanishga",
+        "Boshlang‘ich tezlik, vaqt va tezlanishga",
+        "Faqat tezlikka"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Jism 12 m/s boshlang‘ich tezlik bilan 2 m/s² sekinlanmoqda. 3 s dagi ko‘chishini toping (m).",
+      "answers": ["18", "21", "27", "30"],
+      "correct": 2
+    },
+    {
+      "text": "Tinch holatdan 6 s davomida 1,5 m/s² tezlanish bilan harakatlangan jism qancha yo‘l bosadi (m)?",
+      "answers": ["18", "24", "27", "30"],
+      "correct": 2
+    },
+    {
+      "text": "Boshlang‘ich tezligi 15 m/s bo‘lgan jism 5 s davomida 1 m/s² tezlanish bilan harakatlandi. Ko‘chishini toping (m).",
+      "answers": ["75", "82,5", "87,5", "90"],
+      "correct": 2
+    },
+    {
+      "text": "Tekis tezlanuvchan harakatda vaqt ikki marta oshirilsa (v₀ = 0), ko‘chish necha marta ortadi?",
+      "answers": ["2", "3", "4", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Boshlang‘ich tezligi 20 m/s bo‘lgan jism 2 m/s² tezlanish bilan 5 s harakatlandi. Ko‘chishini toping (m).",
+      "answers": ["100", "110", "125", "150"],
+      "correct": 2
+    },
+    {
+      "text": "Tekis o‘zgaruvchan harakatda ko‘chishning vaqtga bog‘liqlik grafigi qanday ko‘rinishga ega?",
+      "answers": [
+        "To‘g‘ri chiziq",
+        "Giperbola",
+        "Parabola",
+        "Aylana"
+      ],
+      "correct": 2
+    }
+  ]
+}
+
