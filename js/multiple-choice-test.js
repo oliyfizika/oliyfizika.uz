@@ -103,10 +103,18 @@ export function renderMultipleChoiceTest({
       }
     });
 
+    const lessonId = unlockLesson - 1;
     const percent = Math.round((score / questions.length) * 100);
 
+    // Avval XP beriladi
+    await awardXP({
+      lessonId,
+      percent
+    });
+
+    // Keyin natija saqlanadi
     await saveResult({
-      lessonId: unlockLesson - 1,
+      lessonId,
       lessonTitle: document.title,
       course: "mechanics",
       score,
