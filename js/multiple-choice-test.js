@@ -1,5 +1,6 @@
 import { unlockMechanicsLesson } from "./mechanics-progress.js";
 import { saveResult } from "./services/result-service.js";
+import { awardXP } from "./services/xp-service.js";
 
 function createAnswer(questionIndex, answer, answerIndex){
   const label = document.createElement("label");
