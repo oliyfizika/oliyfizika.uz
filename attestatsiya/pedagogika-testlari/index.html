@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pedagogika Testlari | OliyFizika.uz</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        .tests-header{
+            text-align:center;
+            margin-bottom:45px;
+        }
+
+        .tests-header h1{
+            font-size:48px;
+            margin-bottom:12px;
+        }
+
+        .tests-header p{
+            color:#c5d4ff;
+            font-size:17px;
+        }
+
+
+        .tests-grid{
+            display:grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap:25px;
+        }
+
+
+        .test-card{
+            display:block;
+
+            padding:30px;
+
+            text-decoration:none;
+            color:white;
+
+            background:
+                rgba(255,255,255,.06);
+
+            border:
+                1px solid rgba(255,255,255,.12);
+
+            border-radius:22px;
+
+            transition:
+                transform .25s ease,
+                background .25s ease,
+                border-color .25s ease;
+        }
+
+
+        .test-card:hover{
+            transform:translateY(-6px);
+
+            background:
+                rgba(255,255,255,.10);
+
+            border-color:
+                rgba(96,165,250,.6);
+        }
+
+
+        .test-number{
+            display:inline-block;
+
+            color:#9db7ff;
+
+            font-size:15px;
+            font-weight:600;
+
+            margin-bottom:15px;
+        }
+
+
+        .test-title{
+            font-size:26px;
+            font-weight:700;
+
+            margin-bottom:15px;
+        }
+
+
+        .test-info{
+            color:#c5d4ff;
+
+            line-height:1.6;
+            font-size:15px;
+        }
+
+
+        .back-link{
+            display:inline-flex;
+
+            align-items:center;
+
+            margin-top:45px;
+
+            padding:14px 24px;
+
+            border-radius:12px;
+
+            background:#2563eb;
+
+            color:white;
+
+            text-decoration:none;
+
+            font-weight:600;
+
+            transition:.25s;
+        }
+
+
+        .back-link:hover{
+            background:#1d4ed8;
+
+            transform:translateY(-2px);
+        }
+
+
+        @media(max-width:768px){
+
+            .tests-header h1{
+                font-size:34px;
+            }
+
+            .tests-grid{
+                grid-template-columns:1fr;
+            }
+
+            .test-card{
+                padding:25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- SAHIFA SARLAVHASI -->
+
+    <header class="tests-header">
+
+        <h1>
+            📚 Pedagogika Testlari
+        </h1>
+
+        <p>
+            Kerakli testni tanlang va bilimlaringizni sinab ko'ring
+        </p>
+
+    </header>
+
+
+    <!-- TESTLAR -->
+
+    <main class="tests-grid">
+
+
+        <!-- TEST 1 -->
+
+        <a
+            href="test.html?test=1"
+            class="test-card"
+        >
+
+            <div class="test-number">
+                Test №1
+            </div>
+
+            <div class="test-title">
+                Pedagogika attestatsiyasi
+            </div>
+
+            <div class="test-info">
+                20 ta tasodifiy savol.
+                Yakunda natijangiz foizlarda ko'rsatiladi.
+            </div>
+
+        </a>
+
+
+        <!-- TEST 2 -->
+
+        <a
+            href="test.html?test=2"
+            class="test-card"
+        >
+
+            <div class="test-number">
+                Test №2
+            </div>
+
+            <div class="test-title">
+                Pedagogika attestatsiyasi
+            </div>
+
+            <div class="test-info">
+                20 ta tasodifiy savol.
+                Yakunda natijangiz foizlarda ko'rsatiladi.
+            </div>
+
+        </a>
+
+
+        <!-- TEST 3 -->
+
+        <a
+            href="test.html?test=3"
+            class="test-card"
+        >
+
+            <div class="test-number">
+                Test №3
+            </div>
+
+            <div class="test-title">
+                Pedagogika attestatsiyasi
+            </div>
+
+            <div class="test-info">
+                20 ta tasodifiy savol.
+                Yakunda natijangiz foizlarda ko'rsatiladi.
+            </div>
+
+        </a>
+
+
+    </main>
+
+
+    <!-- ORQAGA -->
+
+    <a
+        href="../pedagogika.html"
+        class="back-link"
+    >
+        ← Attestatsiya bo'limiga qaytish
+    </a>
+
+
+</div>
+
+</body>
+</html>

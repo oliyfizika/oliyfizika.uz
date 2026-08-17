@@ -1,4 +1,4 @@
-const questions = [
+window.testQuestions = [
 {
     question: "Nima uchun o'quvchilarning yutuqlarini baholash va bahoni asoslab berish juda muhim?",
     answers: [

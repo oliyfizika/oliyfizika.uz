@@ -1,4 +1,4 @@
-const questions = [
+window.testQuestions = [
 
 {
     question: "Tanaffus vaqtida ikkita o'quvchi tadbirda boshlovchi bo'lish uchun o'zaro tortishib qolishdi. O'qituvchi vaziyatni yumshatish uchun qanday yo'l tutgani ma'qul?",

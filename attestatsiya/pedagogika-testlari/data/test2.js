@@ -1,4 +1,4 @@
-const questions = [
+window.testQuestions = [
 {
     question: "O'qituvchining nizoli (konfiktlar) pedagogik ziddiyatlardan janjalsiz chiqishni fikran izlanish asosida bartaraf qilishini nima ta'minlaydi?",
     answers: [

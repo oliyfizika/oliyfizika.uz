@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pedagogika Testi | OliyFizika.uz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         TEST SARLAVHASI
+    ========================== -->
+
+    <header class="header">
+
+        <h1 id="testTitle">
+            📚 Pedagogika Testi
+        </h1>
+
+        <p id="testSubtitle">
+            20 ta tasodifiy savol
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         TEST QISMI
+    ========================== -->
+
+    <main id="quiz-container">
+
+        <div
+            class="progress"
+            id="progress"
+        >
+            Savol 1 / 20
+        </div>
+
+
+        <!-- SAVOL -->
+
+        <section class="question-card">
+
+            <div
+                class="question"
+                id="question"
+            >
+                Savol yuklanmoqda...
+            </div>
+
+
+            <!-- JAVOBLAR -->
+
+            <div
+                class="answers"
+                id="answers"
+            ></div>
+
+        </section>
+
+
+        <!-- NAVIGATSIYA -->
+
+        <div class="navigation">
+
+            <button
+                class="nav-btn"
+                id="prevBtn"
+                type="button"
+            >
+                ← Oldingi
+            </button>
+
+
+            <button
+                class="nav-btn"
+                id="nextBtn"
+                type="button"
+            >
+                Keyingi →
+            </button>
+
+        </div>
+
+
+        <!-- TESTNI YAKUNLASH -->
+
+        <button
+            class="finish-btn"
+            id="finishBtn"
+            type="button"
+        >
+            Testni yakunlash
+        </button>
+
+    </main>
+
+
+    <!-- =========================
+         NATIJA QISMI
+    ========================== -->
+
+    <section
+        class="result-card"
+        id="resultCard"
+    >
+
+        <h2>🎉 Test natijasi</h2>
+
+        <div
+            class="score"
+            id="score"
+        ></div>
+
+        <div
+            class="stats"
+            id="stats"
+        ></div>
+
+
+        <!-- JAVOBLARNI KO'RISH -->
+
+        <button
+            class="review-btn"
+            id="reviewBtn"
+            type="button"
+        >
+            📋 Javoblarni ko'rish
+        </button>
+
+
+        <!-- QAYTA ISHLASH -->
+
+        <button
+            class="restart-btn"
+            id="restartBtn"
+            type="button"
+        >
+            🔄 Qayta ishlash
+        </button>
+
+
+        <!-- TESTLAR RO'YXATI -->
+
+        <a
+            href="index.html"
+            class="back-to-tests"
+        >
+            ← Testlar ro'yxatiga qaytish
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         JAVOBLARNI TAHLIL QILISH
+    ========================== -->
+
+    <section
+        class="review-container"
+        id="reviewContainer"
+    >
+
+        <div class="review-header">
+
+            <h2>
+                📋 Javoblaringiz tahlili
+            </h2>
+
+            <p>
+                Har bir savol bo'yicha natijangizni ko'ring
+            </p>
+
+        </div>
+
+
+        <!-- SAVOLLAR SHU YERGA CHIQADI -->
+
+        <div
+            id="reviewList"
+        ></div>
+
+
+        <div class="review-actions">
+
+            <button
+                class="restart-btn"
+                id="backToResultBtn"
+                type="button"
+            >
+                ← Natijaga qaytish
+            </button>
+
+
+            <a
+                href="index.html"
+                class="back-to-tests"
+            >
+                Testlar ro'yxatiga qaytish
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="quiz.js"></script>
+
+</body>
+</html>
