@@ -180,23 +180,13 @@ window.testQuestions = [
     correct: 1
 },
 {
-    question: "Pedagogik qobiliyatlar mosligini toping: 1. Empatik (f), 2. Avtoritar (b), 3. Konstruktiv (e).",
-    answers: [
-        "1-f, 2-b, 3-e",
-        "1-b, 2-f, 3-e",
-        "1-e, 2-b, 3-f",
-        "1-f, 2-e, 3-b"
-    ],
+    question: "Pedagogik qobiliyatlarni ko'rinishlari bilan moslang:\n1. Empatik qobiliyat\n2. Avtoritar qobiliyat\n3. Konstruktiv qobiliyat\n\nKo'rinishlar:\nb) O'quvchilarning o'qituvchini yaxshi ko'rib, hurmat qilishi\ne) O'quvchi ehtiyojini inobatga olib qo'shimcha material bilan darsni tashkil etish\nf) O'quvchilar xato qilganda ularni tushunib qo'llab-quvvatlash",
+    answers: ["1-f, 2-b, 3-e", "1-b, 2-f, 3-e", "1-e, 2-b, 3-f", "1-f, 2-e, 3-b"],
     correct: 0
 },
 {
-    question: "Ko'nikmalar mosligini toping: 1. Loyihalashtirish (d), 2. Texnologik madaniyat (b), 3. Baholash madaniyati (a).",
-    answers: [
-        "1-e, 2-d, 3-a",
-        "1-d, 2-b, 3-a",
-        "1-b, 2-a, 3-d",
-        "1-d, 2-a, 3-b"
-    ],
+    question: "Pedagogik qobiliyat/madaniyatlarni ko'nikmalar bilan moslang:\n1. Loyihalashtirish qobiliyati\n2. Texnologik madaniyat\n3. Baholash madaniyati\n\nKo'nikmalar:\na) O'quvchilar yozma nutqini insho yordamida to'g'ri tekshirish\nb) Mavzuni interaktiv doska yordamida tushuntira olish\nd) Ehtimoliy xatolarni va qiyinchiliklarni oldindan ko'ra bilish",
+    answers: ["1-e, 2-d, 3-a", "1-d, 2-b, 3-a", "1-b, 2-a, 3-d", "1-d, 2-a, 3-b"],
     correct: 1
 }
 ];
