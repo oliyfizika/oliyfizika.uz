@@ -1,22 +1,12 @@
 window.testQuestions = [
 {
-    question: "Moslikni aniqlang: 1. Surdopedagogika (Eshitishda nuqsoni borlar), 2. Oligofrenopedagogika (Aqliy rivojlanishda orqada qolganlar)",
-    answers: [
-        "1-A, 2-D",
-        "1-B, 2-C",
-        "1-A, 2-C",
-        "1-B, 2-A"
-    ],
+    question: "Tushunchalarni ta'riflari bilan moslang:\n1. Surdopedagogika\n2. Oligofrenopedagogika\n\nTa'riflar:\nA) Eshitish qobiliyati buzilgan bolalar bilan ishlash va o'qitish\nB) Ko'rish qobiliyati buzilgan bolalarning rivojlanishi va ta'limi\nC) Aqliy rivojlanishida orqada qolgan bolalarni o'qitish va tarbiyalash",
+    answers: ["1-A, 2-B", "1-B, 2-C", "1-A, 2-C", "1-C, 2-A"],
     correct: 2
 },
 {
-    question: "Moslikni aniqlang: 1. Tiflopedagogika (Ko'rishda nuqsoni borlar), 2. Logopediya (Nutqida nuqsoni borlar)",
-    answers: [
-        "1-C, 2-B",
-        "1-C, 2-A",
-        "1-A, 2-D",
-        "1-B, 2-C"
-    ],
+    question: "Tushunchalarni ta'riflari bilan moslang:\n1. Tiflopedagogika\n2. Logopediya\n\nTa'riflar:\nA) Eshitish qobiliyati buzilgan bolalar bilan ishlash\nB) Nutqida nuqsonlar mavjud bo'lgan bolalar bilan ishlash\nC) Ko'rish qobiliyati buzilgan bolalarning rivojlanishi va ta'limi",
+    answers: ["1-C, 2-B", "1-C, 2-A", "1-A, 2-B", "1-B, 2-C"],
     correct: 0
 },
 {
@@ -60,13 +50,8 @@ window.testQuestions = [
     correct: 2
 },
 {
-    question: "Pedagogik tamoyillarni moslang: 1. Tushunarlilik, 2. Tizimlilik, 3. Ko'rgazmalilik.",
-    answers: [
-        "1-c, 2-a, 3-b",
-        "1-a, 2-b, 3-c",
-        "1-b, 2-c, 3-a",
-        "1-c, 2-b, 3-a"
-    ],
+    question: "Tamoyillarni talablari bilan moslang:\n1. Tushunarlilik\n2. Tizimlilik\n3. Ko'rgazmalilik\n\nTalablar:\na) Bilimni ma'lum bir tizimda va uzluksiz berish\nb) 'Yuz bor eshitgandan bir bor ko'rgan yaxshi' qoidasiga amal qilish\nc) Bilimni hamma uchun ommabop va tushunarli qilib berish",
+    answers: ["1-c, 2-a, 3-b", "1-a, 2-b, 3-c", "1-b, 2-c, 3-a", "1-c, 2-b, 3-a"],
     correct: 0
 },
 {
