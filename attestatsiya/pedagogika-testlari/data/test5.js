@@ -40,13 +40,8 @@ window.testQuestions = [
     correct: 2
 },
 {
-    question: "Fikrlash usullarini moslashtiring: 1. Deduksiya (Umumiy->Xususiy), 2. Induksiya (Xususiy->Umumiy), 3. Analogiya (O'xshashlik).",
-    answers: [
-        "1-A, 2-B, 3-C",
-        "1-B, 2-A, 3-C",
-        "1-C, 2-B, 3-A",
-        "1-A, 2-C, 3-B"
-    ],
+    question: "Fikrlash usullarini moslang:\n1. Deduksiya\n2. Induksiya\n3. Analogiya\n\nTa'riflar:\nA) Umumiy qoidadan alohida holat haqida xulosa chiqarish\nB) Alohida kuzatishlar asosida umumiy xulosa chiqarish\nC) O'xshashlik asosida yangi holat haqida xulosa chiqarish",
+    answers: ["1-A, 2-B, 3-C", "1-B, 2-A, 3-C", "1-C, 2-B, 3-A", "1-A, 2-C, 3-B"],
     correct: 0
 },
 {
@@ -80,13 +75,8 @@ window.testQuestions = [
     correct: 1
 },
 {
-    question: "Ta'lim turlarini moslang: 1-Muammoli (B), 2-Modul (A), 3-Dasturiy (C), 4-Rivojlantiruvchi (D).",
-    answers: [
-        "1-B, 2-C, 3-A, 4-D",
-        "1-A, 2-B, 3-C, 4-D",
-        "1-B, 2-A, 3-C, 4-D",
-        "1-C, 2-A, 3-B, 4-D"
-    ],
+    question: "Ta'lim turlarini moslang:\n1. Muammoli ta'lim\n2. Modul ta'limi\n3. Dasturiy ta'lim\n4. Rivojlantiruvchi ta'lim\n\nTavsiflar:\nA) Material blok-modullar asosida mustaqil o'zlashtiriladi\nB) O'quvchi muammoli vaziyatda izlanish va xulosa chiqarishga o'rgatiladi\nC) Maxsus dasturlar asosida ta'lim tashkil etiladi\nD) Shaxsning ichki imkoniyatlarini va ijodiy fikrlashni rivojlantirishga yo'naltiriladi",
+    answers: ["1-B, 2-C, 3-A, 4-D", "1-A, 2-B, 3-C, 4-D", "1-B, 2-A, 3-C, 4-D", "1-C, 2-A, 3-B, 4-D"],
     correct: 2
 },
 {
@@ -120,13 +110,8 @@ window.testQuestions = [
     correct: 1
 },
 {
-    question: "Tushunchalarni moslashtiring: 1. Evristik metod (B, D), 2. Masofaviy ta'lim (A, C).",
-    answers: [
-        "1–B, D; 2–A, C",
-        "1–A, C; 2–B, D",
-        "1–B, C; 2–A, D",
-        "1–D, A; 2–B, C"
-    ],
+    question: "Tushunchalarni moslang:\n1. Evristik metod\n2. Masofaviy ta'lim\n\nBelgilar:\nA) Texnik vositalar va maxsus sharoit orqali o'qitish\nB) Savollar orqali o'quvchini bilimni o'zi topishga yo'naltirish\nC) Motivatsiya pasayishi ehtimoli bo'lgan ta'lim shakli\nD) O'qituvchidan yuqori mahorat talab etiladigan metod",
+    answers: ["1–B, D; 2–A, C", "1–A, C; 2–B, D", "1–B, C; 2–A, D", "1–D, A; 2–B, C"],
     correct: 0
 },
 {
