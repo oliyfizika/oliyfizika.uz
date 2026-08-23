@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baraban | OliyFizika.uz</title>
+
+    <link rel="stylesheet" href="baraban.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- =========================
+         O'YIN SOZLAMALARI
+    ========================== -->
+
+    <section class="setup-card">
+
+        <h1>🎡 Baraban</h1>
+
+        <p class="subtitle">
+            Savollarni kiriting va jamoalar bilan bilim bellashuvini boshlang.
+        </p>
+
+        <div class="form-grid">
+
+            <div class="field">
+                <label for="gameName">
+                    O'yin nomi
+                </label>
+
+                <input
+                    id="gameName"
+                    type="text"
+                    placeholder="Masalan: Mexanika bilimlar bellashuvi"
+                >
+            </div>
+
+            <div class="field">
+                <label for="topic">
+                    Mavzu
+                </label>
+
+                <input
+                    id="topic"
+                    type="text"
+                    placeholder="Masalan: Tekis harakat"
+                >
+            </div>
+
+            <div class="field">
+                <label for="teamCount">
+                    Jamoalar soni
+                </label>
+
+                <select id="teamCount">
+
+                    <option value="2">
+                        2 ta jamoa
+                    </option>
+
+                    <option value="3" selected>
+                        3 ta jamoa
+                    </option>
+
+                    <option value="4">
+                        4 ta jamoa
+                    </option>
+
+                    <option value="5">
+                        5 ta jamoa
+                    </option>
+
+                    <option value="6">
+                        6 ta jamoa
+                    </option>
+
+                </select>
+            </div>
+
+        </div>
+
+
+        <!-- JAMOALAR -->
+
+        <div class="teams-preview">
+
+            <h2>Jamoalar</h2>
+
+            <div
+                id="teamsList"
+                class="teams-list">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SAVOLLAR
+    ========================== -->
+
+    <section class="questions-card">
+
+        <div class="section-header">
+
+            <div>
+                <h2>📝 Savollar</h2>
+
+                <span
+                    id="questionCount"
+                    class="count">
+                    0 ta
+                </span>
+            </div>
+
+        </div>
+
+
+        <div
+            id="questionsList"
+            class="questions-list">
+        </div>
+
+
+        <!-- MUHIM:
+             TUGMA SAVOLLARDAN KEYIN -->
+
+        <button
+            id="addQuestionBtn"
+            class="add-question-btn"
+            type="button">
+
+            ＋ Savol qo'shish
+
+        </button>
+
+
+        <button
+            id="startGameBtn"
+            class="start-game-btn"
+            type="button">
+
+            ▶ O'yinni boshlash
+
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         O'YIN MAYDONI
+    ========================== -->
+
+    <section
+        id="gameSection"
+        class="game-section hidden">
+
+        <div class="game-header">
+
+            <div>
+                <h1 id="gameTitle">
+                    Baraban
+                </h1>
+
+                <p id="gameTopic">
+                    Fizika
+                </p>
+            </div>
+
+            <div class="turn-box">
+
+                Navbat:
+
+                <strong id="currentTeam">
+                    Birinchi jamoa
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- BALLAR -->
+
+        <div
+            id="scoreBoard"
+            class="score-board">
+        </div>
+
+
+        <!-- BARABAN -->
+
+        <div class="wheel-area">
+
+            <div class="pointer">
+                ▼
+            </div>
+
+            <div
+                id="drum"
+                class="drum">
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="spinBtn"
+            class="spin-btn"
+            type="button">
+
+            🎡 BARABANNI AYlANTIRISH
+
+        </button>
+
+
+        <!-- TANLANGAN SAVOL -->
+
+        <section
+            id="questionArea"
+            class="question-area hidden">
+
+            <div class="selected-question">
+
+                <div class="question-badge">
+
+                    <span id="selectedQuestionNumber">
+                        1-SAVOL
+                    </span>
+
+                    <span id="selectedQuestionPoints">
+                        1 BALL
+                    </span>
+
+                </div>
+
+
+                <h2 id="selectedQuestionText">
+                    Savol
+                </h2>
+
+
+                <div class="answer-controls">
+
+                    <button
+                        id="correctBtn"
+                        class="correct-btn"
+                        type="button">
+
+                        ✓ TO'G'RI JAVOB
+
+                    </button>
+
+
+                    <button
+                        id="wrongBtn"
+                        class="wrong-btn"
+                        type="button">
+
+                        ✕ NOTO'G'RI JAVOB
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- G'OLIB -->
+
+        <section
+            id="winnerArea"
+            class="winner-area hidden">
+
+            <div class="winner-icon">
+                🏆
+            </div>
+
+            <h2>
+                O'yin yakunlandi!
+            </h2>
+
+            <div
+                id="winnerText"
+                class="winner-text">
+            </div>
+
+
+            <div
+                id="finalScores"
+                class="final-scores">
+            </div>
+
+        </section>
+
+    </section>
+
+</div>
+
+
+<script src="baraban.js"></script>
+
+</body>
+</html>

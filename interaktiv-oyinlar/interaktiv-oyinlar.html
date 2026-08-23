@@ -1,197 +1,483 @@
 <!DOCTYPE html>
+
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktiv O'yinlar | OliyFizika.uz</title>
 
-    <link rel="stylesheet" href="style.css">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Segoe UI',sans-serif;
-        }
+<title>Interaktiv O'yinlar | OliyFizika.uz</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+        min-height:100vh;
+        background:linear-gradient(135deg,#0f172a,#1e293b);
+        color:white;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        padding:30px 20px;
+    }
+
+    .container{
+        width:100%;
+        max-width:1100px;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    h1{
+        text-align:center;
+        margin-bottom:10px;
+        font-size:2.5rem;
+    }
+
+    .subtitle{
+        text-align:center;
+        color:#cbd5e1;
+        margin-bottom:40px;
+        font-size:16px;
+    }
+
+    /* =========================
+       GAMES GRID
+    ========================= */
+
+    .games-grid{
+        display:grid;
+
+        grid-template-columns:
+            repeat(auto-fit,minmax(220px,1fr));
+
+        gap:20px;
+    }
+
+    /* =========================
+       GAME CARD
+    ========================= */
+
+    .game-card{
+        background:rgba(255,255,255,0.08);
+
+        backdrop-filter:blur(10px);
+
+        border:1px solid rgba(255,255,255,0.10);
+
+        border-radius:20px;
+
+        padding:25px;
+
+        text-align:center;
+
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease,
+            border-color .3s ease;
+    }
+
+    .game-card:hover{
+        transform:translateY(-8px);
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.25);
+
+        border-color:
+            rgba(255,255,255,.20);
+    }
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .icon{
+        font-size:3rem;
+        margin-bottom:15px;
+    }
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    .game-card h3{
+        margin-bottom:10px;
+        font-size:20px;
+    }
+
+    /* =========================
+       DESCRIPTION
+    ========================= */
+
+    .game-card p{
+        color:#cbd5e1;
+
+        font-size:14px;
+
+        line-height:1.5;
+
+        margin-bottom:20px;
+
+        min-height:42px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .btn{
+        display:inline-block;
+
+        text-decoration:none;
+
+        padding:10px 20px;
+
+        border-radius:10px;
+
+        font-weight:bold;
+
+        transition:.3s;
+
+        border:none;
+
+        font-size:14px;
+
+        cursor:pointer;
+    }
+
+    /* PLAY */
+
+    .play-btn{
+        background:#22c55e;
+        color:white;
+    }
+
+    .play-btn:hover{
+        background:#16a34a;
+        transform:scale(1.04);
+    }
+
+    /* SOON */
+
+    .soon-btn{
+        background:#475569;
+        color:white;
+
+        cursor:not-allowed;
+    }
+
+    /* =========================
+       BARABAN SPECIAL
+    ========================= */
+
+    .baraban-card{
+        border-color:
+            rgba(34,197,94,.25);
+    }
+
+    .baraban-card:hover{
+        border-color:
+            rgba(34,197,94,.6);
+
+        box-shadow:
+            0 15px 40px rgba(34,197,94,.15);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer{
+        margin-top:40px;
+
+        text-align:center;
+    }
+
+    .back-btn{
+        display:inline-block;
+
+        text-decoration:none;
+
+        color:white;
+
+        background:#2563eb;
+
+        padding:12px 25px;
+
+        border-radius:12px;
+
+        transition:.3s;
+    }
+
+    .back-btn:hover{
+        background:#1d4ed8;
+
+        transform:translateY(-2px);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:600px){
 
         body{
-            min-height:100vh;
-            background:linear-gradient(135deg,#0f172a,#1e293b);
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding:20px;
-        }
-
-        .container{
-            width:100%;
-            max-width:1000px;
+            padding:20px 12px;
         }
 
         h1{
-            text-align:center;
-            margin-bottom:10px;
-            font-size:2.5rem;
+            font-size:2rem;
         }
 
         .subtitle{
-            text-align:center;
-            color:#cbd5e1;
-            margin-bottom:40px;
+            margin-bottom:25px;
         }
 
         .games-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
+            grid-template-columns:1fr;
         }
 
         .game-card{
-            background:rgba(255,255,255,0.08);
-            backdrop-filter:blur(10px);
-            border:1px solid rgba(255,255,255,0.1);
-            border-radius:20px;
-            padding:25px;
-            text-align:center;
-            transition:0.3s;
+            padding:22px;
         }
+    }
 
-        .game-card:hover{
-            transform:translateY(-8px);
-            box-shadow:0 10px 25px rgba(0,255,255,0.2);
-        }
+</style>
 
-        .icon{
-            font-size:3rem;
-            margin-bottom:15px;
-        }
 
-        .game-card h3{
-            margin-bottom:10px;
-        }
-
-        .game-card p{
-            color:#cbd5e1;
-            font-size:14px;
-            margin-bottom:20px;
-            min-height:40px;
-        }
-
-        .btn{
-            display:inline-block;
-            text-decoration:none;
-            padding:10px 20px;
-            border-radius:10px;
-            font-weight:bold;
-            transition:0.3s;
-        }
-
-        .play-btn{
-            background:#22c55e;
-            color:white;
-        }
-
-        .play-btn:hover{
-            background:#16a34a;
-        }
-
-        .soon-btn{
-            background:#475569;
-            color:white;
-            cursor:not-allowed;
-        }
-
-        .footer{
-            margin-top:40px;
-            text-align:center;
-        }
-
-        .back-btn{
-            display:inline-block;
-            text-decoration:none;
-            color:white;
-            background:#2563eb;
-            padding:12px 25px;
-            border-radius:12px;
-            transition:0.3s;
-        }
-
-        .back-btn:hover{
-            background:#1d4ed8;
-        }
-    </style>
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>🧩 Interaktiv O'yinlar</h1>
-    <p class="subtitle">
-        Fizikani o'yin orqali o'rganing
-    </p>
+```
+<!-- =========================
+     HEADER
+========================= -->
 
-    <div class="games-grid">
+<h1>🧩 Interaktiv O'yinlar</h1>
 
-        <div class="game-card">
-            <div class="icon">🎯</div>
-            <h3>Formula Hunt</h3>
-            <p>Formulalarni toping va bilimingizni sinab ko'ring.</p>
+<p class="subtitle">
+    Fizikani o'yin orqali o'rganing
+</p>
 
-            <a href="formula-hunt.html" class="btn play-btn">
-                O'ynash
-            </a>
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<div class="games-grid">
+
+
+    <!-- =========================
+         FORMULA HUNT
+    ========================= -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            🎯
         </div>
 
+        <h3>
+            Formula Hunt
+        </h3>
 
-        <div class="game-card">
-             <div class="icon">🪢</div>
-             <h3>Arqon Tortish</h3>
-             <p>Ikki o‘quvchi fizikadan bellashadi.</p>
+        <p>
+            Formulalarni toping va
+            bilimingizni sinab ko'ring.
+        </p>
 
-             <a href="arqon-tortish.html" class="btn play-btn">
-                 O'ynash
-            </a>
-        </div>
+        <a
+            href="formula-hunt/formula-hunt.html"
+            class="btn play-btn">
 
-        <div class="game-card">
-            <div class="icon">⚔️</div>
-            <h3>Fizika Battle</h3>
-            <p>Vaqtga qarshi fizik testlar.</p>
+            O'ynash
 
-            <button class="btn soon-btn">
-                Tez kunda
-            </button>
-        </div>
-
-        <div class="game-card">
-            <div class="icon">💪</div>
-            <h3>Kuchni Top</h3>
-            <p>Massa va tezlanishdan kuchni hisoblang.</p>
-
-            <button class="btn soon-btn">
-                Tez kunda
-            </button>
-        </div>
-
-        <div class="game-card">
-            <div class="icon">🚀</div>
-            <h3>Raketani Uchirish</h3>
-            <p>Nishonga raketa uchirib fizikani o'rganing.</p>
-
-            <button class="btn soon-btn">
-                Tez kunda
-            </button>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        <a href="../index.html" class="back-btn">
-            ⬅ Asosiy sahifaga qaytish
         </a>
+
     </div>
+
+
+    <!-- =========================
+         ARQON TORTISH
+    ========================= -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            🪢
+        </div>
+
+        <h3>
+            Arqon Tortish
+        </h3>
+
+        <p>
+            Ikki o'quvchi fizikadan
+            tezkor bellashadi.
+        </p>
+
+        <a
+            href="arqon-tortish/arqon-tortish.html"
+            class="btn play-btn">
+
+            O'ynash
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         BARABAN
+    ========================= -->
+
+    <div class="game-card baraban-card">
+
+        <div class="icon">
+            🎡
+        </div>
+
+        <h3>
+            Baraban
+        </h3>
+
+        <p>
+            Mavzu, savollar va jamoalarni
+            o'zingiz yaratib, viktorina o'tkazing.
+        </p>
+
+        <a
+            href="baraban/baraban.html"
+            class="btn play-btn">
+
+            Boshlash
+
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         FIZIKA BATTLE
+    ========================= -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            ⚔️
+        </div>
+
+        <h3>
+            Fizika Battle
+        </h3>
+
+        <p>
+            Vaqtga qarshi fizik
+            savollarda bellashing.
+        </p>
+
+        <button
+            class="btn soon-btn"
+            type="button">
+
+            Tez kunda
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         KUCHNI TOP
+    ========================= -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            💪
+        </div>
+
+        <h3>
+            Kuchni Top
+        </h3>
+
+        <p>
+            Massa va tezlanishdan
+            kuchni aniqlang.
+        </p>
+
+        <button
+            class="btn soon-btn"
+            type="button">
+
+            Tez kunda
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         RAKETANI UCHIRISH
+    ========================= -->
+
+    <div class="game-card">
+
+        <div class="icon">
+            🚀
+        </div>
+
+        <h3>
+            Raketani Uchirish
+        </h3>
+
+        <p>
+            Nishonga raketa uchirib,
+            fizikani o'rganing.
+        </p>
+
+        <button
+            class="btn soon-btn"
+            type="button">
+
+            Tez kunda
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer">
+
+    <a
+        href="../index.html"
+        class="back-btn">
+
+        ⬅ Asosiy sahifaga qaytish
+
+    </a>
+
+</div>
+
 
 </div>
 
