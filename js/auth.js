@@ -18,8 +18,17 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const PENDING_DESTINATION_KEY = "oliyFizikaPendingDestination";
+
 const PROTECTED_ACCESS_MESSAGE =
   "Ushbu bo‘limdan foydalanish uchun tizimga kiring yoki ro‘yxatdan o‘ting.";
+
+// ==================================================
+// FOYDALANUVCHI AKTIVLIGINI KUZATISH
+// ==================================================
+
+const ACTIVITY_UPDATE_INTERVAL = 5 * 60 * 1000; // 5 daqiqa
+
+let activityInterval = null;
 
 const AUTH_TEXT = {
   login: {
@@ -42,10 +51,13 @@ const ERROR_MESSAGES = {
   "auth/invalid-credential": "Email yoki parol noto'g'ri.",
   "auth/missing-email": "Email manzilni kiriting.",
   "auth/missing-password": "Parolni kiriting.",
-  "auth/network-request-failed": "Tarmoqda muammo yuz berdi. Internet aloqangizni tekshirib, qayta urinib ko'ring.",
-  "auth/too-many-requests": "Juda ko'p urinish bo'ldi. Birozdan keyin qayta urinib ko'ring.",
+  "auth/network-request-failed":
+    "Tarmoqda muammo yuz berdi. Internet aloqangizni tekshirib, qayta urinib ko'ring.",
+  "auth/too-many-requests":
+    "Juda ko'p urinish bo'ldi. Birozdan keyin qayta urinib ko'ring.",
   "auth/user-not-found": "Bunday email bilan hisob topilmadi.",
-  "auth/weak-password": "Parol kamida 6 ta belgidan iborat bo'lishi kerak.",
+  "auth/weak-password":
+    "Parol kamida 6 ta belgidan iborat bo'lishi kerak.",
   "auth/wrong-password": "Email yoki parol noto'g'ri."
 };
 
@@ -60,7 +72,7 @@ let loginForm;
 let passwordResetForm;
 let registerForm;
 
-function initAuth(){
+function initAuth() {
   authNav = document.getElementById("authNav");
   authModal = document.getElementById("authModal");
   closeAuthModalButton = document.getElementById("closeAuthModal");
@@ -79,79 +91,85 @@ function initAuth(){
   listenForAuthState();
 }
 
-function bindNavbarEvents(){
-  if(!authNav) return;
+function bindNavbarEvents() {
+  if (!authNav) return;
 
-  authNav.addEventListener("click", async (event)=>{
+  authNav.addEventListener("click", async (event) => {
     const loginButton = event.target.closest("#openLogin");
     const registerButton = event.target.closest("#openRegister");
     const menuButton = event.target.closest("#userMenuBtn");
     const menuAction = event.target.closest("[data-menu-action]");
 
-    if(loginButton){
+    if (loginButton) {
       openAuthModal("login");
       return;
     }
 
-    if(registerButton){
+    if (registerButton) {
       openAuthModal("register");
       return;
     }
 
-    if(menuButton){
+    if (menuButton) {
       toggleUserMenu();
       return;
     }
 
-    if(!menuAction) return;
+    if (!menuAction) return;
 
-    if(menuAction.dataset.menuAction === "logout"){
+    if (menuAction.dataset.menuAction === "logout") {
       await logoutUser();
       return;
     }
 
-    if(menuAction.dataset.menuAction === "profile"){
-      window.location.href = new URL("../dashboard/profile.html", import.meta.url).href;
+    if (menuAction.dataset.menuAction === "profile") {
+      window.location.href = new URL(
+        "../dashboard/profile.html",
+        import.meta.url
+      ).href;
       return;
     }
 
-    if(menuAction.dataset.menuAction === "settings"){
-      window.location.href = new URL("../dashboard/settings.html", import.meta.url).href;
+    if (menuAction.dataset.menuAction === "settings") {
+      window.location.href = new URL(
+        "../dashboard/settings.html",
+        import.meta.url
+      ).href;
       return;
     }
 
     closeUserMenu();
   });
 
-  document.addEventListener("click", (event)=>{
-    if(!authNav.contains(event.target)){
+  document.addEventListener("click", (event) => {
+    if (!authNav.contains(event.target)) {
       closeUserMenu();
     }
   });
 }
 
-function bindModalEvents(){
-  if(!authModal) return;
+function bindModalEvents() {
+  if (!authModal) return;
 
-  authModal.addEventListener("click", (event)=>{
+  authModal.addEventListener("click", (event) => {
     const switchButton = event.target.closest("[data-auth-switch]");
 
-    if(switchButton){
+    if (switchButton) {
       setAuthView(switchButton.dataset.authSwitch);
       return;
     }
 
-    if(event.target === authModal){
+    if (event.target === authModal) {
       closeAuthModal();
     }
   });
 
   closeAuthModalButton?.addEventListener("click", closeAuthModal);
 
-  document.addEventListener("keydown", (event)=>{
-    if(event.key !== "Escape") return;
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
 
-    if(authModal && !authModal.hidden){
+    if (authModal && !authModal.hidden) {
       closeAuthModal();
       return;
     }
@@ -160,21 +178,21 @@ function bindModalEvents(){
   });
 }
 
-function bindFormEvents(){
+function bindFormEvents() {
   loginForm?.addEventListener("submit", loginUser);
   passwordResetForm?.addEventListener("submit", resetPassword);
   registerForm?.addEventListener("submit", registerUser);
 }
 
-function bindProtectedLinks(){
-  document.addEventListener("click", (event)=>{
+function bindProtectedLinks() {
+  document.addEventListener("click", (event) => {
     const link = event.target.closest("a[data-requires-auth='true']");
 
-    if(!link || auth.currentUser) return;
+    if (!link || auth.currentUser) return;
 
     const destination = link.getAttribute("href");
 
-    if(!destination || destination === "#") return;
+    if (!destination || destination === "#") return;
 
     event.preventDefault();
     setPendingDestination(destination);
@@ -182,24 +200,116 @@ function bindProtectedLinks(){
   });
 }
 
-function listenForAuthState(){
-  onAuthStateChanged(auth, async (user)=>{
-    if(!user){
+// ==================================================
+// AUTH STATE
+// ==================================================
+
+function listenForAuthState() {
+  onAuthStateChanged(auth, async (user) => {
+    if (!user) {
+      stopActivityTracking();
       renderGuestNavbar();
       return;
     }
+
+    // Foydalanuvchi saytga kirgan zahoti aktivligini yozamiz
+    await updateUserActivity(user.uid);
+
+    // Keyingi aktivliklarni kuzatishni boshlaymiz
+    startActivityTracking(user.uid);
 
     const profile = await getUserProfile(user.uid);
     renderAuthenticatedNavbar(user, profile);
   });
 }
 
-function openAuthModal(view = "login", message = ""){
-  if(!authModal) return;
+// ==================================================
+// FOYDALANUVCHI AKTIVLIGI
+// ==================================================
+
+async function updateUserActivity(uid) {
+  if (!uid) return;
+
+  try {
+    await setDoc(
+      doc(db, "users", uid),
+      {
+        lastActiveAt: serverTimestamp()
+      },
+      {
+        merge: true
+      }
+    );
+
+    console.log("User activity updated:", uid);
+  } catch (error) {
+    console.error("Could not update user activity:", error);
+  }
+}
+
+function startActivityTracking(uid) {
+  // Agar oldingi interval mavjud bo'lsa, avval to'xtatamiz
+  stopActivityTracking();
+
+  // Har 5 daqiqada yangilash
+  activityInterval = window.setInterval(() => {
+    if (!auth.currentUser) {
+      stopActivityTracking();
+      return;
+    }
+
+    updateUserActivity(uid);
+  }, ACTIVITY_UPDATE_INTERVAL);
+
+  // Foydalanuvchi boshqa tabdan qaytganida yangilash
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+
+  // Foydalanuvchi sahifaga qaytganda yangilash
+  window.addEventListener("focus", handleWindowFocus);
+}
+
+function stopActivityTracking() {
+  if (activityInterval !== null) {
+    window.clearInterval(activityInterval);
+    activityInterval = null;
+  }
+
+  document.removeEventListener(
+    "visibilitychange",
+    handleVisibilityChange
+  );
+
+  window.removeEventListener("focus", handleWindowFocus);
+}
+
+function handleVisibilityChange() {
+  if (document.visibilityState !== "visible") return;
+
+  const user = auth.currentUser;
+
+  if (user) {
+    updateUserActivity(user.uid);
+  }
+}
+
+function handleWindowFocus() {
+  const user = auth.currentUser;
+
+  if (user) {
+    updateUserActivity(user.uid);
+  }
+}
+
+// ==================================================
+// AUTH MODAL
+// ==================================================
+
+function openAuthModal(view = "login", message = "") {
+  if (!authModal) return;
 
   setAuthView(view);
 
-  if(message){
+  if (message) {
     showAuthMessage(message);
   }
 
@@ -207,13 +317,13 @@ function openAuthModal(view = "login", message = ""){
   authModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("auth-modal-open");
 
-  window.setTimeout(()=>{
+  window.setTimeout(() => {
     getActiveForm()?.querySelector("input, select, button")?.focus();
   }, 0);
 }
 
-function closeAuthModal(){
-  if(!authModal) return;
+function closeAuthModal() {
+  if (!authModal) return;
 
   authModal.hidden = true;
   authModal.setAttribute("aria-hidden", "true");
@@ -221,165 +331,233 @@ function closeAuthModal(){
   clearAuthMessage();
 }
 
-function setAuthView(view){
-  const nextView = view === "register" || view === "reset" ? view : "login";
+function setAuthView(view) {
+  const nextView =
+    view === "register" || view === "reset" ? view : "login";
+
   const isRegister = nextView === "register";
   const isReset = nextView === "reset";
   const text = AUTH_TEXT[nextView];
 
-  if(loginForm) loginForm.hidden = nextView !== "login";
-  if(passwordResetForm) passwordResetForm.hidden = !isReset;
-  if(registerForm) registerForm.hidden = !isRegister;
-  if(authTabs) authTabs.hidden = isReset;
-  if(authTitle) authTitle.textContent = text.title;
-  if(authSubtitle) authSubtitle.textContent = text.subtitle;
+  if (loginForm) loginForm.hidden = nextView !== "login";
+  if (passwordResetForm) passwordResetForm.hidden = !isReset;
+  if (registerForm) registerForm.hidden = !isRegister;
+  if (authTabs) authTabs.hidden = isReset;
+  if (authTitle) authTitle.textContent = text.title;
+  if (authSubtitle) authSubtitle.textContent = text.subtitle;
 
-  document.querySelectorAll(".auth-tab[data-auth-switch]").forEach((button)=>{
-    button.classList.toggle("is-active", button.dataset.authSwitch === nextView);
-  });
+  document
+    .querySelectorAll(".auth-tab[data-auth-switch]")
+    .forEach((button) => {
+      button.classList.toggle(
+        "is-active",
+        button.dataset.authSwitch === nextView
+      );
+    });
 
   clearAuthMessage();
 }
 
-async function resetPassword(event){
+// ==================================================
+// PAROLNI TIKLASH
+// ==================================================
+
+async function resetPassword(event) {
   event.preventDefault();
 
-  const email = document.getElementById("passwordResetEmail")?.value.trim() || "";
+  const email =
+    document.getElementById("passwordResetEmail")?.value.trim() || "";
 
-  if(!email){
+  if (!email) {
     showAuthMessage("Email manzilni kiriting.");
     return;
   }
 
   setFormLoading(passwordResetForm, true);
 
-  try{
+  try {
     await sendPasswordResetEmail(auth, email);
+
     passwordResetForm.reset();
-    showAuthMessage("Parolni tiklash havolasi emailingizga yuborildi.", "success");
-  }catch(error){
+
+    showAuthMessage(
+      "Parolni tiklash havolasi emailingizga yuborildi.",
+      "success"
+    );
+  } catch (error) {
     showAuthMessage(getErrorMessage(error));
-  }finally{
+  } finally {
     setFormLoading(passwordResetForm, false);
   }
 }
 
-async function registerUser(event){
+// ==================================================
+// RO'YXATDAN O'TISH
+// ==================================================
+
+async function registerUser(event) {
   event.preventDefault();
 
   const formData = getRegisterFormData();
   const validationError = validateRegistration(formData);
 
-  if(validationError){
+  if (validationError) {
     showAuthMessage(validationError);
     return;
   }
 
   setFormLoading(registerForm, true);
 
-  try{
+  try {
     const credential = await createUserWithEmailAndPassword(
       auth,
       formData.email,
       formData.password
     );
 
-    try{
+    try {
       await createUserProfile(credential.user.uid, {
         fullName: formData.fullName,
         phone: formData.phone,
         email: credential.user.email || formData.email
       });
-    }catch(profileError){
+    } catch (profileError) {
       await rollbackCreatedUser(credential.user);
       throw profileError;
     }
 
+    // Yangi foydalanuvchining birinchi aktivligini yozamiz
+    await updateUserActivity(credential.user.uid);
+
     registerForm.reset();
     closeAuthModal();
-    renderAuthenticatedNavbar(credential.user, { fullName: formData.fullName });
+
+    renderAuthenticatedNavbar(credential.user, {
+      fullName: formData.fullName
+    });
+
+    // Aktivlik kuzatuvini boshlash
+    startActivityTracking(credential.user.uid);
+
     continueToPendingDestination();
-  }catch(error){
+  } catch (error) {
     showAuthMessage(getErrorMessage(error));
-  }finally{
+  } finally {
     setFormLoading(registerForm, false);
   }
 }
 
-async function loginUser(event){
+// ==================================================
+// LOGIN
+// ==================================================
+
+async function loginUser(event) {
   event.preventDefault();
 
-  const email = document.getElementById("loginEmail")?.value.trim() || "";
-  const password = document.getElementById("loginPassword")?.value || "";
+  const email =
+    document.getElementById("loginEmail")?.value.trim() || "";
 
-  if(!email || !password){
+  const password =
+    document.getElementById("loginPassword")?.value || "";
+
+  if (!email || !password) {
     showAuthMessage("Email va parolni kiriting.");
     return;
   }
 
   setFormLoading(loginForm, true);
 
-  try{
+  try {
     await signInWithEmailAndPassword(auth, email, password);
+
     loginForm.reset();
     closeAuthModal();
     continueToPendingDestination();
-  }catch(error){
+  } catch (error) {
     showAuthMessage(getErrorMessage(error));
-  }finally{
+  } finally {
     setFormLoading(loginForm, false);
   }
 }
 
-async function logoutUser(){
-  try{
+// ==================================================
+// LOGOUT
+// ==================================================
+
+async function logoutUser() {
+  try {
+    // Aktivlik kuzatuvini to'xtatamiz
+    stopActivityTracking();
+
     await signOut(auth);
+
     closeUserMenu();
     renderGuestNavbar();
-  }catch(error){
+  } catch (error) {
     console.error("Logout failed:", error);
   }
 }
 
-export async function sendVerificationEmail(user = auth.currentUser){
-  if(!user){
-    throw new Error("Email verification requires an authenticated user.");
+// ==================================================
+// EMAIL VERIFICATION
+// ==================================================
+
+export async function sendVerificationEmail(user = auth.currentUser) {
+  if (!user) {
+    throw new Error(
+      "Email verification requires an authenticated user."
+    );
   }
 
   await sendEmailVerification(user);
 }
 
-async function createUserProfile(uid, profile){
+// ==================================================
+// USER PROFILE
+// ==================================================
+
+async function createUserProfile(uid, profile) {
   await setDoc(doc(db, "users", uid), {
     fullName: profile.fullName,
     phone: profile.phone,
     email: profile.email,
     xp: 0,
     level: 1,
-    createdAt: serverTimestamp()
+    createdAt: serverTimestamp(),
+    lastActiveAt: serverTimestamp()
   });
 }
 
-async function rollbackCreatedUser(user){
-  try{
+async function rollbackCreatedUser(user) {
+  try {
     await deleteUser(user);
-  }catch(error){
-    console.error("Could not roll back Auth user after profile creation failed:", error);
+  } catch (error) {
+    console.error(
+      "Could not roll back Auth user after profile creation failed:",
+      error
+    );
   }
 }
 
-async function getUserProfile(uid){
-  try{
+async function getUserProfile(uid) {
+  try {
     const snapshot = await getDoc(doc(db, "users", uid));
-    return snapshot.exists() ? snapshot.data() : null;
-  }catch(error){
+
+    return snapshot.exists()
+      ? snapshot.data()
+      : null;
+  } catch (error) {
     console.error("Could not load user profile:", error);
     return null;
   }
 }
 
-function renderGuestNavbar(){
-  if(!authNav) return;
+// ==================================================
+// NAVBAR
+// ==================================================
+
+function renderGuestNavbar() {
+  if (!authNav) return;
 
   const loginButton = createButton({
     id: "openLogin",
@@ -396,10 +574,11 @@ function renderGuestNavbar(){
   authNav.replaceChildren(loginButton, registerButton);
 }
 
-function renderAuthenticatedNavbar(user, profile){
-  if(!authNav) return;
+function renderAuthenticatedNavbar(user, profile) {
+  if (!authNav) return;
 
   const displayName = getDisplayName(user, profile);
+
   const userMenu = document.createElement("div");
   userMenu.className = "user-menu";
 
@@ -408,21 +587,25 @@ function renderAuthenticatedNavbar(user, profile){
     className: "btn user-menu-btn",
     text: ""
   });
+
   menuButton.setAttribute("aria-haspopup", "true");
   menuButton.setAttribute("aria-expanded", "false");
 
   const icon = document.createElement("span");
+
   icon.className = "user-menu-icon";
   icon.setAttribute("aria-hidden", "true");
   icon.textContent = "\uD83D\uDC64";
 
   const name = document.createElement("span");
+
   name.className = "user-menu-name";
   name.textContent = displayName;
 
   menuButton.append(icon, name);
 
   const dropdown = document.createElement("div");
+
   dropdown.className = "user-dropdown";
   dropdown.id = "userDropdown";
   dropdown.hidden = true;
@@ -437,144 +620,222 @@ function renderAuthenticatedNavbar(user, profile){
   authNav.replaceChildren(userMenu);
 }
 
-function createButton({ id, className, text }){
+function createButton({ id, className, text }) {
   const button = document.createElement("button");
+
   button.type = "button";
   button.id = id;
   button.className = className;
   button.textContent = text;
+
   return button;
 }
 
-function createMenuItem(action, text){
+function createMenuItem(action, text) {
   const button = document.createElement("button");
+
   button.type = "button";
   button.className = "user-dropdown-item";
   button.dataset.menuAction = action;
   button.textContent = text;
+
   return button;
 }
 
-function toggleUserMenu(){
+function toggleUserMenu() {
   const dropdown = document.getElementById("userDropdown");
   const menuButton = document.getElementById("userMenuBtn");
 
-  if(!dropdown || !menuButton) return;
+  if (!dropdown || !menuButton) return;
 
   dropdown.hidden = !dropdown.hidden;
-  menuButton.setAttribute("aria-expanded", String(!dropdown.hidden));
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(!dropdown.hidden)
+  );
 }
 
-function closeUserMenu(){
+function closeUserMenu() {
   const dropdown = document.getElementById("userDropdown");
   const menuButton = document.getElementById("userMenuBtn");
 
-  if(!dropdown || !menuButton) return;
+  if (!dropdown || !menuButton) return;
 
   dropdown.hidden = true;
-  menuButton.setAttribute("aria-expanded", "false");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
 }
 
-function getRegisterFormData(){
+// ==================================================
+// REGISTER FORM
+// ==================================================
+
+function getRegisterFormData() {
   return {
-    fullName: document.getElementById("registerFullName")?.value.trim() || "",
-    phone: document.getElementById("registerPhone")?.value.trim() || "",
-    email: document.getElementById("registerEmail")?.value.trim() || "",
-    password: document.getElementById("registerPassword")?.value || "",
-    confirmPassword: document.getElementById("registerConfirmPassword")?.value || ""
+    fullName:
+      document.getElementById("registerFullName")?.value.trim() || "",
+
+    phone:
+      document.getElementById("registerPhone")?.value.trim() || "",
+
+    email:
+      document.getElementById("registerEmail")?.value.trim() || "",
+
+    password:
+      document.getElementById("registerPassword")?.value || "",
+
+    confirmPassword:
+      document.getElementById("registerConfirmPassword")?.value || ""
   };
 }
 
-function validateRegistration(formData){
-  if(!formData.fullName || !formData.phone || !formData.email || !formData.password || !formData.confirmPassword){
+function validateRegistration(formData) {
+  if (
+    !formData.fullName ||
+    !formData.phone ||
+    !formData.email ||
+    !formData.password ||
+    !formData.confirmPassword
+  ) {
     return "Barcha maydonlarni to'ldiring.";
   }
 
-  if(formData.password.length < 6){
+  if (formData.password.length < 6) {
     return "Parol kamida 6 ta belgidan iborat bo'lishi kerak.";
   }
 
-  if(formData.password !== formData.confirmPassword){
+  if (formData.password !== formData.confirmPassword) {
     return "Parollar mos emas.";
   }
 
   return "";
 }
 
-function getActiveForm(){
-  if(passwordResetForm && !passwordResetForm.hidden) return passwordResetForm;
-  if(registerForm && !registerForm.hidden) return registerForm;
+// ==================================================
+// FORM UTILITIES
+// ==================================================
+
+function getActiveForm() {
+  if (passwordResetForm && !passwordResetForm.hidden) {
+    return passwordResetForm;
+  }
+
+  if (registerForm && !registerForm.hidden) {
+    return registerForm;
+  }
+
   return loginForm;
 }
 
-function getDisplayName(user, profile){
+function getDisplayName(user, profile) {
   const fullName = profile?.fullName?.trim();
 
-  if(fullName){
+  if (fullName) {
     return fullName;
   }
 
   return user.email || "Foydalanuvchi";
 }
 
-function setPendingDestination(destination){
-  const resolvedDestination = new URL(destination, window.location.href).href;
-  sessionStorage.setItem(PENDING_DESTINATION_KEY, resolvedDestination);
+function setPendingDestination(destination) {
+  const resolvedDestination = new URL(
+    destination,
+    window.location.href
+  ).href;
+
+  sessionStorage.setItem(
+    PENDING_DESTINATION_KEY,
+    resolvedDestination
+  );
 }
 
-function getPendingDestination(){
-  return sessionStorage.getItem(PENDING_DESTINATION_KEY);
+function getPendingDestination() {
+  return sessionStorage.getItem(
+    PENDING_DESTINATION_KEY
+  );
 }
 
-function clearPendingDestination(){
-  sessionStorage.removeItem(PENDING_DESTINATION_KEY);
+function clearPendingDestination() {
+  sessionStorage.removeItem(
+    PENDING_DESTINATION_KEY
+  );
 }
 
-function continueToPendingDestination(){
+function continueToPendingDestination() {
   const destination = getPendingDestination();
 
-  if(!destination) return;
+  if (!destination) return;
 
   clearPendingDestination();
+
   window.location.href = destination;
 }
 
-function setFormLoading(form, isLoading){
-  const submitButton = form?.querySelector(".auth-submit");
+function setFormLoading(form, isLoading) {
+  const submitButton =
+    form?.querySelector(".auth-submit");
 
-  if(!submitButton) return;
+  if (!submitButton) return;
 
-  if(isLoading){
-    submitButton.dataset.defaultText = submitButton.textContent;
+  if (isLoading) {
+    submitButton.dataset.defaultText =
+      submitButton.textContent;
+
     submitButton.textContent = "Kutilmoqda...";
     submitButton.disabled = true;
+
     return;
   }
 
-  submitButton.textContent = submitButton.dataset.defaultText || submitButton.textContent;
+  submitButton.textContent =
+    submitButton.dataset.defaultText ||
+    submitButton.textContent;
+
   submitButton.disabled = false;
 }
 
-function showAuthMessage(message, type = "error"){
-  if(!authMessage) return;
+// ==================================================
+// AUTH MESSAGES
+// ==================================================
+
+function showAuthMessage(message, type = "error") {
+  if (!authMessage) return;
 
   authMessage.textContent = message;
-  authMessage.className = `auth-message ${type === "success" ? "success" : ""}`.trim();
+
+  authMessage.className =
+    `auth-message ${
+      type === "success" ? "success" : ""
+    }`.trim();
 }
 
-function clearAuthMessage(){
-  if(!authMessage) return;
+function clearAuthMessage() {
+  if (!authMessage) return;
 
   authMessage.textContent = "";
   authMessage.className = "auth-message";
 }
 
-function getErrorMessage(error){
-  return ERROR_MESSAGES[error.code] || "Amalni bajarishda xatolik yuz berdi.";
+function getErrorMessage(error) {
+  return (
+    ERROR_MESSAGES[error.code] ||
+    "Amalni bajarishda xatolik yuz berdi."
+  );
 }
 
-if(document.readyState === "loading"){
-  document.addEventListener("DOMContentLoaded", initAuth);
-}else{
+// ==================================================
+// INIT
+// ==================================================
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initAuth
+  );
+} else {
   initAuth();
 }
