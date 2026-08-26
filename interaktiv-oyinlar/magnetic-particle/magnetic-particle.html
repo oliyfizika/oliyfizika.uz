@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnit Maydon — Zarrani Qutqar | OliyFizika.uz</title>
+<link rel="stylesheet" href="magnetic-particle.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark">⊙</span>
+      <div class="brand-text">
+        <span class="brand-site">OLIYFIZIKA.UZ</span>
+        <h1 class="brand-title">Magnit Maydon — Zarrani Qutqar</h1>
+      </div>
+    </div>
+    <div id="recordBadge" class="record-badge" hidden>
+      <span class="record-eyebrow">Rekord</span>
+      <span class="record-number" id="recordValue">0</span>
+    </div>
+  </header>
+
+  <main class="app-layout">
+
+    <!-- ============ LEFT: CONTROL PANEL ============ -->
+    <section class="panel controls-panel" aria-label="Sozlamalar paneli">
+
+      <p class="panel-intro">
+        Fizik parametrlarni tanlang va START tugmasini bosing. Parametrlar butun
+        3 daqiqalik o'yin davomida o'zgarmaydi — maqsad shu bitta fizik tizimda
+        imkon qadar ko'p targetga yetib borish.
+      </p>
+
+      <div class="control-group">
+        <div class="control-row">
+          <label for="charge">Zaryad <var>q</var></label>
+          <output for="charge" id="chargeValue">+2.0 μC</output>
+        </div>
+        <input type="range" id="charge" min="-10" max="10" step="0.1" value="2">
+        <div class="control-hint">Musbat va manfiy zaryadlar qarama-qarshi buriladi</div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-row">
+          <label for="mass">Massa <var>m</var></label>
+          <output for="mass" id="massValue">1.0 mg</output>
+        </div>
+        <input type="range" id="mass" min="0.1" max="10" step="0.1" value="1">
+      </div>
+
+      <div class="control-group">
+        <div class="control-row">
+          <label for="speed">Boshlang'ich tezlik <var>v</var></label>
+          <output for="speed" id="speedValue">20 m/s</output>
+        </div>
+        <input type="range" id="speed" min="1" max="100" step="1" value="20">
+      </div>
+
+      <div class="control-group">
+        <div class="control-row">
+          <label for="field">Magnit maydon <var>B</var></label>
+          <output for="field" id="fieldValue">0.50 T</output>
+        </div>
+        <input type="range" id="field" min="0" max="2" step="0.01" value="0.5">
+      </div>
+
+      <div class="control-group">
+        <div class="control-row">
+          <label for="angle">Boshlang'ich yo'nalish <var>θ</var></label>
+          <output for="angle" id="angleValue">0°</output>
+        </div>
+        <input type="range" id="angle" min="0" max="360" step="1" value="0">
+      </div>
+
+      <div class="control-group two-col">
+        <div>
+          <label for="x0">Boshlang'ich x₀ (m)</label>
+          <input type="number" id="x0" value="-50" step="1">
+        </div>
+        <div>
+          <label for="y0">Boshlang'ich y₀ (m)</label>
+          <input type="number" id="y0" value="0" step="1">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="group-label">Magnit maydon yo'nalishi <var>B</var></label>
+        <div class="toggle-pair" role="radiogroup" aria-label="B yo'nalishi">
+          <button type="button" id="bOut" class="toggle-btn active" aria-pressed="true">
+            <span class="toggle-icon">⊙</span> Ekrandan tashqariga
+          </button>
+          <button type="button" id="bIn" class="toggle-btn" aria-pressed="false">
+            <span class="toggle-icon">⊗</span> Ekranga ichkariga
+          </button>
+        </div>
+      </div>
+
+      <div id="errorBox" class="error-box" hidden></div>
+
+      <div class="control-buttons">
+        <button type="button" id="startBtn" class="btn btn-primary">▶ START</button>
+        <button type="button" id="pauseBtn" class="btn btn-secondary" disabled>⏸ PAUSE</button>
+        <button type="button" id="stepBtn" class="btn btn-secondary">⏩ STEP</button>
+        <button type="button" id="resetBtn" class="btn btn-ghost">↻ RESET</button>
+      </div>
+
+    </section>
+
+    <!-- ============ CENTER: SIMULATION ============ -->
+    <section class="panel simulation-panel" aria-label="Simulyatsiya">
+
+      <div class="stats-bar">
+        <div class="stat-card">
+          <span class="stat-label">VAQT</span>
+          <span class="stat-value" id="timeDisplay">03:00</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">🎯 TARGETLAR</span>
+          <span class="stat-value" id="targetCountDisplay">0</span>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="simCanvas" width="800" height="560" role="img"
+          aria-label="Magnit maydonda harakatlanayotgan zarracha simulyatsiyasi"></canvas>
+      </div>
+
+      <div class="sim-toolbar">
+        <span id="stateLabel" class="state-pill state-idle">TAYYOR</span>
+        <div class="legend">
+          <span class="legend-item"><i class="swatch swatch-v"></i>Tezlik v</span>
+          <span class="legend-item"><i class="swatch swatch-f"></i>Lorens kuchi F</span>
+          <span class="legend-item"><i class="swatch swatch-trail"></i>Trayektoriya</span>
+        </div>
+        <button type="button" id="resetSmall" class="btn btn-ghost btn-small">RESET</button>
+      </div>
+
+      <!-- Canvasni hech qachon yopmaydigan, oddiy oqim ichidagi natija paneli -->
+      <div id="resultPanel" class="result-panel" hidden>
+        <div class="result-trophy">🏆</div>
+        <h2 class="result-title">O'YIN YAKUNLANDI</h2>
+        <p class="result-caption">3 daqiqalik natija</p>
+        <div class="result-score">
+          <span class="result-score-label">🎯 TARGETLAR</span>
+          <span class="result-score-value" id="resultCount">0</span>
+        </div>
+        <p class="result-summary" id="resultSummary">Siz 3 daqiqa davomida 0 ta targetga yetdingiz!</p>
+        <p id="resultRecord" class="result-record" hidden>🏆 Yangi rekord!</p>
+        <button type="button" id="replayBtn" class="btn btn-primary result-replay">QAYTA O'YNASH</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============ BOTTOM: PHYSICS READOUT ============ -->
+  <footer class="panel readout-panel" aria-label="Fizik kattaliklar">
+    <h2 class="readout-title">Fizik kattaliklar</h2>
+    <div class="readout-grid">
+      <div class="readout-item"><span class="readout-label">t</span><span class="readout-value" id="outT">0.00 s</span></div>
+      <div class="readout-item"><span class="readout-label">x</span><span class="readout-value" id="outX">0.0 m</span></div>
+      <div class="readout-item"><span class="readout-label">y</span><span class="readout-value" id="outY">0.0 m</span></div>
+      <div class="readout-item"><span class="readout-label">vₓ</span><span class="readout-value" id="outVx">0.0 m/s</span></div>
+      <div class="readout-item"><span class="readout-label">v_y</span><span class="readout-value" id="outVy">0.0 m/s</span></div>
+      <div class="readout-item"><span class="readout-label">|v|</span><span class="readout-value" id="outV">0.0 m/s</span></div>
+      <div class="readout-item"><span class="readout-label">F</span><span class="readout-value" id="outF">0.0 N</span></div>
+      <div class="readout-item"><span class="readout-label">a</span><span class="readout-value" id="outA">0.0 m/s²</span></div>
+      <div class="readout-item"><span class="readout-label">r</span><span class="readout-value" id="outR">— m</span></div>
+      <div class="readout-item"><span class="readout-label">ω</span><span class="readout-value" id="outOmega">— rad/s</span></div>
+      <div class="readout-item"><span class="readout-label">T</span><span class="readout-value" id="outPeriod">— s</span></div>
+      <div class="readout-item"><span class="readout-label">d → target</span><span class="readout-value" id="outDist">— m</span></div>
+    </div>
+  </footer>
+
+  <script src="magnetic-particle.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+{
+  "id": 35,
+  "title": "35-Mavzu | Molekulyar kinetik nazariya asosiy tushunchalari",
+  "subtitle": "Kamida 80% natija keyingi bo‘limni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 36,
+  "questions": [
+    {
+      "text": "Molekular-kinetik nazariyaning asosiy qoidalari qaysi javobda nisbatan to‘liq bayon qilingan?",
+      "answers": [
+        "har qanday jism molekulalardan tuzilgan, ular betartib harakatda bo‘ladi, ular orasida o‘zaro ta’sir kuchlari mavjud.",
+        "modda mayda zarralardan tashkil topgan va ular orasida o‘zaro ta’sir kuchlari mavjud.",
+        "modda mayda bo‘laklardan tuziladi va ular fazoni uzluksiz to‘ldiradi.",
+        "modda elementar zarralardan tuziladi va ular bir-biriga tinimsiz aylanib turadi."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "1 mol BXS da qaysi kattalikning birligidir?",
+      "answers": [
+        "massa.",
+        "modda miqdori.",
+        "molyar massa.",
+        "hajm."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Modda miqdorining birligi nima?",
+      "answers": [
+        "mol.",
+        "kg.",
+        "kg/mol.",
+        "m.a.b."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Avagadro soni deb qanday fizik kattalikka aytiladi?",
+      "answers": [
+        "12 g ugleroddagi atomlar soniga.",
+        "bitta uglerod atomi massasining 1/12 qismiga.",
+        "1 mol modda massasi.",
+        "bitta atom massasining uglerod atomi massasining 1/12 qismiga nisbatiga."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Misning nisbiy atom massasi 64 m.a.b. Bitta mis atomining massasini toping(kg). 1 m.a.b = 1,67 · 10⁻²⁷ kg.",
+      "answers": [
+        "1,2 · 10⁻²⁶.",
+        "1,5 · 10⁻²⁶.",
+        "2,03 · 10⁻²⁵.",
+        "1,07 · 10⁻²⁵."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Bitta oltin atomining massasi 3,29 · 10⁻²⁵ kg. Uning nisbiy atom massasini toping (m.a.b).",
+      "answers": [
+        "32.",
+        "108.",
+        "197.",
+        "29."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Molekulalar soni 1,806 · 10²³ ta bo‘lgan moddaning miqdorini toping (mol). Avogadro soni NA = 6,02 · 10²³ mol⁻¹.",
+      "answers": [
+        "0,8.",
+        "0,3.",
+        "0,2.",
+        "0,5."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Molekulalar soni 15,05 · 10²⁴ ta bo‘lgan moddaning miqdorini toping (mol). NA = 6,02 · 10²³ mol⁻¹.",
+      "answers": [
+        "15.",
+        "18.",
+        "25.",
+        "20."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "39,4 kg oltindagi modda miqdorini aniqlang(mol). µ = 197 g/mol.",
+      "answers": [
+        "400.",
+        "200.",
+        "100.",
+        "150."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "9 g suvda necha mol modda bor? µ = 18 g/mol.",
+      "answers": [
+        "0,45.",
+        "0,5.",
+        "0,9.",
+        "4,5."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "28,8 g kislorod moddasining miqdorini (mol) aniqlang. µ = 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "0,5.",
+        "1.",
+        "2.",
+        "0,9."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "5 mol geliyning massasi qanday? µ = 4 g/mol.",
+      "answers": [
+        "0,1 kg.",
+        "0,2 kg.",
+        "10 g.",
+        "20 g."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "450 mol kislorodning massasi qanday (kg)? µ = 32 g/mol.",
+      "answers": [
+        "14,4.",
+        "4,5.",
+        "7,2.",
+        "9."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "5 mol kislorodning massasini toping. Kislorodning molyar massasi 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "320 g.",
+        "32 g.",
+        "1,6 kg.",
+        "160 g."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Modda miqdorlari teng bo‘lgan qalay va nikel quymalarning massalarini taqqoslang. Qalayning molyar massasi µq = 118,7 g/mol, nikelniki esa µn = 58,7 g/mol.",
+      "answers": [
+        "mq = 4mn.",
+        "mn = 2mq.",
+        "mq = 2mn.",
+        "mn = 4mq."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Butan (C4H10) ning molyar massasini toping (kg/mol). Ar(H) = 1 u, Ar(C) = 12 u, 1 u = 1,66 · 10⁻²⁷ kg.",
+      "answers": [
+        "17 · 10⁻³.",
+        "41 · 10⁻³.",
+        "80 · 10⁻³.",
+        "58 · 10⁻³."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Azot kislota (HNO3) ning molyar massasini toping (kg/mol). Ar(H) = 1 u, Ar(N) = 14 u, Ar(O) = 16 u, 1 u = 1,66 · 10⁻²⁷ kg.",
+      "answers": [
+        "56 · 10⁻³.",
+        "63 · 10⁻³.",
+        "31 · 10⁻³.",
+        "15 · 10⁻³."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Mis kuporosi (CuSO4) ning uch moli massasini aniqlang (g). Ar(O) = 16 u, Ar(Cu) = 64 u, Ar(S) = 32 u, 1 m.a.b. = 1,66 · 10⁻²⁷ kg, NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "160.",
+        "540.",
+        "480.",
+        "240."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Gazning bitta molekulasining massasi 4,8 · 10⁻²⁶ kg ga teng. Shu gazning molyar massasi qanday (g/mol). NA = 6,02 · 10²³ mol⁻¹.",
+      "answers": [
+        "8.",
+        "32.",
+        "12.",
+        "2."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Moddaning molyar massasi 36 g/mol bo‘lsa, bitta molekulasining massasi necha kilogramm bo‘ladi? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "6 · 10⁻²³.",
+        "6 · 10⁻²⁶.",
+        "216 · 10⁻²⁰.",
+        "36 · 10⁻²³."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Azotning molyar massasi 0,028 kg/mol. Azot molekulasining massasi qanday (kg)? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "5,3 · 10⁻²³.",
+        "4,7 · 10⁻²⁶.",
+        "5,3 · 10⁻²⁷.",
+        "8,6 · 10⁻²²."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Piyolaga quyilgan 180 g suv bir haftada to‘la bug‘lanib ketadi. Piyoladan bir sekundda o‘rta hisobda nechta molekula bug‘lanib turganligini baholang. NA = 6 · 10²³ mol⁻¹, µ = 18 g/mol.",
+      "answers": [
+        "10²².",
+        "10¹⁹.",
+        "10¹⁵.",
+        "10⁹."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Idishdagi gaz massasining 84 foizini azot, 16 foizini kislorod tashkil qilsa, bitta kislorod molekulasiga nechta azot molekulasi to‘g‘ri keladi? MA = 28 g/mol, MK = 32 g/mol.",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "6."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Sirt yuzasi 20 cm² bo‘lgan qurilmaning sirtiga 1 µm qalinlikda oltin qatlami qoplandi. Qoplamda nechta oltin atomi bor? NA = 6 · 10²³ mol⁻¹, oltinning atom massasi 197 m.a.b., zichligi esa 19,3 g/cm³.",
+      "answers": [
+        "1,18 · 10²⁰.",
+        "1,5 · 10²⁰.",
+        "2 · 10²⁰.",
+        "1,13 · 10²⁰."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Bitta molekula massasi 6 · 10⁻²⁶ kg va molekulalar konsentratsiyasi 2,5 · 10²⁹ m⁻³ bo‘lgan metallning zichligini toping (kg/m³).",
+      "answers": [
+        "1200.",
+        "6000.",
+        "15000.",
+        "2000."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Diffuziya qanday moddalarda kuzatiladi?",
+      "answers": [
+        "Faqat gazlarda.",
+        "Gazlar, suyuq va qattiq jismlarda.",
+        "Faqat suyuqlik va qattiq jismlarda.",
+        "Faqat gaz va suyuqliklarda."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Broun harakati deyilganda, nima tushuniladi?",
+      "answers": [
+        "suyuqlik molekulalarining issiqlik harakati.",
+        "suyuqlikka solingan qattiq jism zarralarining suyuqlik molekulalari ta’siridagi harakati.",
+        "suyuqlik molekulalarining unga solingan mayda zarralar ta’siridagi harakati.",
+        "suyuqlikka solingan qattiq jism zarralarining o‘zaro ta’sirlashuvlari natijasida yuzaga keladigan harakati."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Idishdagi kislorod molekulalarining konsentratsiyasi n = 6 · 10²⁵ m⁻³ bo‘lsa, gaz zichligi qanday (kg/m³)? NA = 6 · 10²³ mol⁻¹, µ = 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "0,6.",
+        "1,2.",
+        "1,6.",
+        "3,2."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Massasi 320 g bo‘lgan kislorod 0,02 m³ hajmni egallab turibdi. Molekulalar konsentratsiyasini toping (m⁻³). µ = 32 g/mol, NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "3,01 · 10²⁷.",
+        "3,01 · 10²⁶.",
+        "6,02 · 10²¹.",
+        "6,02 · 10²⁷."
+      ],
+      "correct": 1
+    }
+  ]
+}
