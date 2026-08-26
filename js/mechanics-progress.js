@@ -1,11 +1,12 @@
-import { auth, hasFullAccess }
-from "./auth.js";
+import { auth, db } from "./firebase.js";
 
-const STORAGE_KEY =
-  "mechanicsUnlockedLesson";
+import {
+  doc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const LEGACY_LESSON_2_KEY =
-  "lesson2Unlocked";
+const STORAGE_KEY = "mechanicsUnlockedLesson";
+const LEGACY_LESSON_2_KEY = "lesson2Unlocked";
 
 
 // ==================================================
@@ -15,7 +16,9 @@ const LEGACY_LESSON_2_KEY =
 export function getMechanicsUnlockedLesson() {
 
   const stored =
-    Number(localStorage.getItem(STORAGE_KEY)) || 1;
+    Number(
+      localStorage.getItem(STORAGE_KEY)
+    ) || 1;
 
   const legacyLesson =
     localStorage.getItem(
@@ -55,10 +58,54 @@ export function unlockMechanicsLesson(
   );
 
   if (nextLesson >= 2) {
+
     localStorage.setItem(
       LEGACY_LESSON_2_KEY,
       "true"
     );
+  }
+}
+
+
+// ==================================================
+// FULL ACCESS
+// ==================================================
+
+async function checkFullAccess() {
+
+  const user = auth.currentUser;
+
+  if (!user) {
+    return false;
+  }
+
+  try {
+
+    const snapshot =
+      await getDoc(
+        doc(
+          db,
+          "users",
+          user.uid
+        )
+      );
+
+    if (!snapshot.exists()) {
+      return false;
+    }
+
+    return (
+      snapshot.data()?.fullAccess === true
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Full access tekshirishda xatolik:",
+      error
+    );
+
+    return false;
   }
 }
 
@@ -72,44 +119,43 @@ export async function renderMechanicsLessons(
   container
 ) {
 
-  if (!container) return;
-
-  // -----------------------------------------------
-  // FULL ACCESS TEKSHIRISH
-  // -----------------------------------------------
-
-  let fullAccess = false;
-
-  if (auth.currentUser) {
-    fullAccess =
-      await hasFullAccess(
-        auth.currentUser
-      );
+  if (!container) {
+    console.error(
+      "Videos container topilmadi."
+    );
+    return;
   }
 
+
   // -----------------------------------------------
-  // QANCHA DARS OCHIQ?
+  // FULL ACCESS
+  // -----------------------------------------------
+
+  const fullAccess =
+    await checkFullAccess();
+
+
+  // -----------------------------------------------
+  // ODDIY UNLOCK
   // -----------------------------------------------
 
   const unlockedLesson =
-    fullAccess
-      ? Infinity
-      : getMechanicsUnlockedLesson();
+    getMechanicsUnlockedLesson();
 
 
   console.log(
-    "Full access:",
+    "Full Access:",
     fullAccess
   );
 
   console.log(
-    "Unlocked lesson:",
+    "Unlocked Lesson:",
     unlockedLesson
   );
 
 
   // -----------------------------------------------
-  // DARS CARDLARI
+  // CARDLAR
   // -----------------------------------------------
 
   const fragment =
@@ -129,7 +175,7 @@ export async function renderMechanicsLessons(
 
 
     // ---------------------------------------------
-    // LOCK HOLATI
+    // LOCK
     // ---------------------------------------------
 
     const isLocked =
@@ -138,6 +184,7 @@ export async function renderMechanicsLessons(
 
 
     if (isLocked) {
+
       card.classList.add(
         "is-locked"
       );
@@ -157,14 +204,18 @@ export async function renderMechanicsLessons(
     iframe.title =
       `${lesson.number}-mavzu | ${lesson.title}`;
 
-    iframe.allowFullscreen = true;
+    iframe.allowFullscreen =
+      true;
 
-    iframe.loading = "lazy";
+    iframe.loading =
+      "lazy";
 
     iframe.referrerPolicy =
       "strict-origin-when-cross-origin";
 
-    card.appendChild(iframe);
+    card.appendChild(
+      iframe
+    );
 
 
     // ---------------------------------------------
@@ -187,7 +238,9 @@ export async function renderMechanicsLessons(
         `${lesson.number}-mavzu`
       } | ${lesson.title}`;
 
-    info.appendChild(heading);
+    info.appendChild(
+      heading
+    );
 
 
     // ---------------------------------------------
@@ -208,7 +261,9 @@ export async function renderMechanicsLessons(
       testLink.textContent =
         "Testni boshlash";
 
-      info.appendChild(testLink);
+      info.appendChild(
+        testLink
+      );
 
     } else {
 
@@ -221,11 +276,15 @@ export async function renderMechanicsLessons(
       status.textContent =
         "Test tayyorlanmoqda";
 
-      info.appendChild(status);
+      info.appendChild(
+        status
+      );
     }
 
 
-    card.appendChild(info);
+    card.appendChild(
+      info
+    );
 
 
     // ---------------------------------------------
@@ -254,8 +313,13 @@ export async function renderMechanicsLessons(
     fragment.appendChild(
       card
     );
+
   });
 
+
+  // -----------------------------------------------
+  // SAHIFAGA JOYLASHTIRISH
+  // -----------------------------------------------
 
   container.replaceChildren(
     fragment
