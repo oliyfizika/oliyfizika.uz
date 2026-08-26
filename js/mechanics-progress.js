@@ -1,16 +1,16 @@
-import { auth, db } from "./firebase.js";
+// ==================================================
+// MEXANIKA PROGRESS
+// ==================================================
 
-import {
-  doc,
-  getDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const STORAGE_KEY =
+  "mechanicsUnlockedLesson";
 
-const STORAGE_KEY = "mechanicsUnlockedLesson";
-const LEGACY_LESSON_2_KEY = "lesson2Unlocked";
+const LEGACY_LESSON_2_KEY =
+  "lesson2Unlocked";
 
 
 // ==================================================
-// ODDIY PROGRESS
+// OCHILGAN DARSNI OLISH
 // ==================================================
 
 export function getMechanicsUnlockedLesson() {
@@ -36,7 +36,7 @@ export function getMechanicsUnlockedLesson() {
 
 
 // ==================================================
-// DARS OCHISH
+// KEYINGI DARSNI OCHISH
 // ==================================================
 
 export function unlockMechanicsLesson(
@@ -68,42 +68,124 @@ export function unlockMechanicsLesson(
 
 
 // ==================================================
-// FULL ACCESS
+// FULL ACCESS TEKSHIRISH
 // ==================================================
 
 async function checkFullAccess() {
 
-  const user = auth.currentUser;
-
-  if (!user) {
-    return false;
-  }
-
   try {
 
-    const snapshot =
-      await getDoc(
-        doc(
-          db,
-          "users",
-          user.uid
-        )
+    // Firebase faylini dinamik yuklaymiz.
+    // Shu sababli Firebase xatosi videolarni
+    // render qilishga xalaqit bermaydi.
+
+    const firebaseModule =
+      await import("./firebase.js");
+
+
+    const auth =
+      firebaseModule.auth;
+
+    const db =
+      firebaseModule.db;
+
+
+    if (!auth || !db) {
+      return false;
+    }
+
+
+    // Foydalanuvchi hali aniqlanmagan bo‘lsa,
+    // bir oz kutib ko‘ramiz.
+
+    let user =
+      auth.currentUser;
+
+
+    if (!user) {
+
+      const authModule =
+        await import(
+          "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+        );
+
+
+      user =
+        await new Promise((resolve) => {
+
+          let finished = false;
+
+          const unsubscribe =
+            authModule.onAuthStateChanged(
+              auth,
+              (currentUser) => {
+
+                if (finished) {
+                  return;
+                }
+
+                finished = true;
+
+                unsubscribe();
+
+                resolve(
+                  currentUser
+                );
+              }
+            );
+
+        });
+    }
+
+
+    if (!user) {
+      return false;
+    }
+
+
+    // Firestore'dan foydalanuvchi profilini olamiz.
+
+    const firestoreModule =
+      await import(
+        "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
       );
+
+
+    const userRef =
+      firestoreModule.doc(
+        db,
+        "users",
+        user.uid
+      );
+
+
+    const snapshot =
+      await firestoreModule.getDoc(
+        userRef
+      );
+
 
     if (!snapshot.exists()) {
       return false;
     }
 
-    return (
-      snapshot.data()?.fullAccess === true
-    );
+
+    const data =
+      snapshot.data();
+
+
+    return data?.fullAccess === true;
 
   } catch (error) {
 
-    console.error(
-      "Full access tekshirishda xatolik:",
+    console.warn(
+      "Full access tekshirilmadi:",
       error
     );
+
+    // Muhim:
+    // Firebase xato bersa ham false qaytaramiz.
+    // Videolar baribir render bo‘ladi.
 
     return false;
   }
@@ -114,49 +196,32 @@ async function checkFullAccess() {
 // DARSlarni RENDER QILISH
 // ==================================================
 
-export async function renderMechanicsLessons(
+export function renderMechanicsLessons(
   lessons,
   container
 ) {
 
   if (!container) {
+
     console.error(
-      "Videos container topilmadi."
+      "❌ #videos elementi topilmadi."
     );
+
     return;
   }
 
 
-  // -----------------------------------------------
-  // FULL ACCESS
-  // -----------------------------------------------
-
-  const fullAccess =
-    await checkFullAccess();
-
-
-  // -----------------------------------------------
-  // ODDIY UNLOCK
-  // -----------------------------------------------
+  // ==================================================
+  // ODDIY FOYDALANUVCHI UCHUN PROGRESS
+  // ==================================================
 
   const unlockedLesson =
     getMechanicsUnlockedLesson();
 
 
-  console.log(
-    "Full Access:",
-    fullAccess
-  );
-
-  console.log(
-    "Unlocked Lesson:",
-    unlockedLesson
-  );
-
-
-  // -----------------------------------------------
-  // CARDLAR
-  // -----------------------------------------------
+  // ==================================================
+  // VIDEO CARDLAR
+  // ==================================================
 
   const fragment =
     document.createDocumentFragment();
@@ -165,22 +230,26 @@ export async function renderMechanicsLessons(
   lessons.forEach((lesson) => {
 
     const card =
-      document.createElement("article");
+      document.createElement(
+        "article"
+      );
+
 
     card.className =
       "video-card";
+
 
     card.dataset.lesson =
       String(lesson.number);
 
 
-    // ---------------------------------------------
+    // ==================================================
     // LOCK
-    // ---------------------------------------------
+    // ==================================================
 
     const isLocked =
-      !fullAccess &&
-      lesson.number > unlockedLesson;
+      lesson.number >
+      unlockedLesson;
 
 
     if (isLocked) {
@@ -191,46 +260,60 @@ export async function renderMechanicsLessons(
     }
 
 
-    // ---------------------------------------------
+    // ==================================================
     // VIDEO
-    // ---------------------------------------------
+    // ==================================================
 
     const iframe =
-      document.createElement("iframe");
+      document.createElement(
+        "iframe"
+      );
+
 
     iframe.src =
       `https://www.youtube.com/embed/${lesson.youtubeId}`;
 
+
     iframe.title =
       `${lesson.number}-mavzu | ${lesson.title}`;
+
 
     iframe.allowFullscreen =
       true;
 
+
     iframe.loading =
       "lazy";
 
+
     iframe.referrerPolicy =
       "strict-origin-when-cross-origin";
+
 
     card.appendChild(
       iframe
     );
 
 
-    // ---------------------------------------------
+    // ==================================================
     // INFO
-    // ---------------------------------------------
+    // ==================================================
 
     const info =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
+
 
     info.className =
       "video-info";
 
 
     const heading =
-      document.createElement("h3");
+      document.createElement(
+        "h3"
+      );
+
 
     heading.textContent =
       `${
@@ -238,28 +321,35 @@ export async function renderMechanicsLessons(
         `${lesson.number}-mavzu`
       } | ${lesson.title}`;
 
+
     info.appendChild(
       heading
     );
 
 
-    // ---------------------------------------------
+    // ==================================================
     // TEST
-    // ---------------------------------------------
+    // ==================================================
 
     if (lesson.testUrl) {
 
       const testLink =
-        document.createElement("a");
+        document.createElement(
+          "a"
+        );
+
 
       testLink.href =
         lesson.testUrl;
 
+
       testLink.className =
         "test-btn";
 
+
       testLink.textContent =
         "Testni boshlash";
+
 
       info.appendChild(
         testLink
@@ -268,13 +358,18 @@ export async function renderMechanicsLessons(
     } else {
 
       const status =
-        document.createElement("span");
+        document.createElement(
+          "span"
+        );
+
 
       status.className =
         "test-status";
 
+
       status.textContent =
         "Test tayyorlanmoqda";
+
 
       info.appendChild(
         status
@@ -287,22 +382,27 @@ export async function renderMechanicsLessons(
     );
 
 
-    // ---------------------------------------------
+    // ==================================================
     // LOCK OVERLAY
-    // ---------------------------------------------
+    // ==================================================
 
     if (isLocked) {
 
       const overlay =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       overlay.className =
         "lock-overlay";
+
 
       overlay.textContent =
         `Avval ${
           lesson.number - 1
         }-mavzu testidan kamida 80% o‘ting`;
+
 
       card.appendChild(
         overlay
@@ -317,11 +417,82 @@ export async function renderMechanicsLessons(
   });
 
 
-  // -----------------------------------------------
-  // SAHIFAGA JOYLASHTIRISH
-  // -----------------------------------------------
+  // ==================================================
+  // VIDEOLARNI SAHIFAGA JOYLASHTIRISH
+  // ==================================================
 
   container.replaceChildren(
     fragment
   );
+
+
+  // ==================================================
+  // FULL ACCESS TEKSHIRISH
+  // ==================================================
+
+  checkFullAccess()
+    .then((fullAccess) => {
+
+      console.log(
+        "Full Access:",
+        fullAccess
+      );
+
+
+      // Agar maxsus ruxsat bo‘lmasa,
+      // hech narsani o‘zgartirmaymiz.
+
+      if (!fullAccess) {
+        return;
+      }
+
+
+      // ==================================================
+      // BARCHA LOCKLARNI OLIB TASHLASH
+      // ==================================================
+
+      const lockedCards =
+        container.querySelectorAll(
+          ".video-card.is-locked"
+        );
+
+
+      lockedCards.forEach(
+        (card) => {
+
+          card.classList.remove(
+            "is-locked"
+          );
+
+
+          const overlay =
+            card.querySelector(
+              ".lock-overlay"
+            );
+
+
+          if (overlay) {
+            overlay.remove();
+          }
+
+        }
+      );
+
+
+      console.log(
+        "✅ Full Access: barcha Mexanika darslari ochildi."
+      );
+
+    })
+    .catch((error) => {
+
+      // Hech qanday holatda
+      // videolarni buzmaymiz.
+
+      console.warn(
+        "Full Access jarayonida xatolik:",
+        error
+      );
+
+    });
 }
