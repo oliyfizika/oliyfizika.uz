@@ -1,0 +1,42 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; color: #edf4ff; font-family: "Poppins", sans-serif; background: radial-gradient(circle at 10% 0%, #174da3 0, transparent 30rem), radial-gradient(circle at 90% 100%, #153778 0, transparent 28rem), #020817; }
+.certificate-page, .mock-page { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 38px 0 72px; }
+.back-link { display: inline-flex; color: #b8cdfa; font-size: .94rem; text-decoration: none; transition: color .2s; }
+.back-link:hover, .back-link:focus-visible { color: #fff; }
+.certificate-hero, .mock-header { max-width: 720px; margin: 55px auto 38px; text-align: center; }
+.eyebrow { color: #78b6ff; font-size: .78rem; font-weight: 700; letter-spacing: .15em; }
+.hero-icon { margin: 16px 0 8px; font-size: 4rem; }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1 { margin-bottom: 13px; font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.15; }
+.certificate-hero p, .mock-header p { color: #bdcbe4; line-height: 1.7; }
+.module-card, .mock-detail { border: 1px solid rgba(134, 181, 255, .23); border-radius: 22px; background: rgba(10, 30, 72, .72); box-shadow: 0 20px 55px rgba(0, 0, 0, .22); }
+.module-card { display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center; max-width: 850px; margin: auto; padding: 28px; }
+.module-card__icon { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 17px; background: #174ca8; font-size: 1.75rem; }
+.module-card h2 { margin-bottom: 6px; font-size: 1.35rem; }
+.module-card p { margin-bottom: 0; color: #bdcbe4; font-size: .92rem; line-height: 1.65; }
+.primary-button { display: inline-flex; justify-content: center; padding: 13px 19px; border-radius: 12px; background: linear-gradient(135deg, #2578ff, #33b5ff); color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.telegram-button { display: table; width: fit-content; margin: 0 auto; padding: 13px 19px; border: 1px solid #5ab4ff; border-radius: 12px; color: #dceeff; font-weight: 600; text-decoration: none; }
+.telegram-button:hover, .telegram-button:focus-visible { background: rgba(67, 153, 255, .18); outline: none; }
+.access-message { margin: 24px auto; color: #bdcbe4; text-align: center; }
+.module-card .access-message { grid-column: 1 / -1; margin: 0; text-align: left; }
+.module-card .telegram-button { grid-column: 1 / -1; margin: 0; }
+.mock-header { margin-bottom: 32px; }
+.mock-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.mock-card { position: relative; padding: 24px; overflow: hidden; border: 1px solid rgba(134, 181, 255, .22); border-radius: 18px; background: rgba(12, 34, 78, .8); color: inherit; text-align: left; cursor: pointer; transition: transform .2s, border-color .2s, background .2s; }
+.mock-card:hover, .mock-card:focus-visible { border-color: #65a8ff; background: rgba(18, 51, 111, .94); outline: none; transform: translateY(-3px); }
+.mock-card__number { display: block; margin-bottom: 16px; color: #7db9ff; font-size: .78rem; font-weight: 700; letter-spacing: .12em; }
+.mock-card h2 { margin-bottom: 5px; font-size: 1.25rem; }
+.mock-card p { margin-bottom: 16px; color: #b8c8e4; font-size: .9rem; }
+.mock-card > span:last-child { color: #71b2ff; font-size: .85rem; font-weight: 600; }
+.mock-detail { margin-top: 34px; padding: clamp(22px, 5vw, 42px); scroll-margin-top: 24px; }
+.mock-detail > h2 { margin-bottom: 28px; font-size: clamp(1.45rem, 4vw, 2rem); }
+.pdf-section { margin-bottom: 35px; padding: 24px; border-radius: 16px; background: rgba(3, 14, 39, .65); }
+.pdf-section h3, .video-heading { margin-bottom: 8px; font-size: 1.22rem; }
+.pdf-section p { margin-bottom: 18px; color: #bdcbe4; line-height: 1.6; }
+.video-heading { margin-bottom: 18px; }
+.video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.video-card { overflow: hidden; border: 1px solid rgba(134, 181, 255, .18); border-radius: 14px; background: #071530; }
+.video-card h4 { margin: 0; padding: 15px 16px; color: #dce9ff; font-size: .92rem; }
+.video-card iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+@media (max-width: 680px) { .certificate-page, .mock-page { width: min(100% - 24px, 1120px); padding-top: 25px; } .certificate-hero, .mock-header { margin-top: 42px; } .module-card { grid-template-columns: auto 1fr; gap: 14px; padding: 22px; } .module-card .primary-button, .module-card .access-message { grid-column: 1 / -1; } .module-card .primary-button { width: 100%; } .mock-grid, .video-grid { grid-template-columns: 1fr; } }
