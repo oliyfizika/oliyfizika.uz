@@ -1,88 +1,29 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milliy sertifikat | OliyFizika.uz</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
-    linear-gradient(135deg,#020817,#07122f,#020817);
-}
-
-.container{
-    max-width:700px;
-    padding:40px;
-}
-
-.icon{
-    font-size:90px;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:48px;
-    margin-bottom:20px;
-}
-
-p{
-    color:#cbd5e1;
-    line-height:1.8;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(135deg,#1d4fff,#2797ff);
-    padding:14px 28px;
-    border-radius:16px;
-    font-weight:600;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milliy sertifikat | OliyFizika.uz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mock-tests.css">
 </head>
-
 <body>
-
-<div class="container">
-
-    <div class="icon">📄</div>
-
-    <h1>Milliy sertifikat bo'limi</h1>
-
-    <p>
-        Milliy sertifikat masalalari, nazariy materiallar va
-        tayyorgarlik kurslari hozirda yuklanmoqda.
-        Ma'lumotlar tez orada saytga joylashtiriladi.
-    </p>
-
-    <a href="../index.html" class="btn">
-        ← Bosh sahifaga qaytish
-    </a>
-
-</div>
-
+  <main class="certificate-page">
+    <a class="back-link" href="../index.html">← Bosh sahifaga qaytish</a>
+    <section class="certificate-hero">
+      <span class="eyebrow">MILLIY SERTIFIKAT</span>
+      <div class="hero-icon" aria-hidden="true">📄</div>
+      <h1>Milliy sertifikat bo‘limi</h1>
+      <p>Test variantlari va ularning batafsil video yechimlari bir joyda.</p>
+    </section>
+    <section class="module-card" aria-labelledby="mock-tests-title">
+      <div class="module-card__icon" aria-hidden="true">🎯</div>
+      <div><h2 id="mock-tests-title">Mock testlar</h2><p>10 ta test varianti, har birida 45 ta savol, PDF va 9 ta video yechim.</p></div>
+      <a id="mockTestsLink" class="primary-button" href="mock-tests.html" hidden>Mock testlarni ochish</a>
+      <p id="mockTestsAccessMessage" class="access-message" aria-live="polite">Ruxsat tekshirilmoqda…</p>
+      <a id="telegramAccessLink" class="telegram-button" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" hidden>Telegram orqali ruxsat olish</a>
+    </section>
+  </main>
+  <script type="module" src="milliy-sertifikat-access.js"></script>
 </body>
 </html>
