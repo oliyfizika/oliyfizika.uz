@@ -1,0 +1,344 @@
+{
+  "id": 50,
+  "title": "50-Mavzu | Termodinamikaning ikkinchi qonuni. Issiqlik mashinalari",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 51,
+  "questions": [
+    {
+      "text": "Issiqlik mashinasining ishchi jismi bo‘lgan gaz ichki energiyasining bir sikl davomidagi o‘zgarishini toping. Sikl davomida gaz isitkichdan Q1 issiqlik miqdori oladi, sovitkichga Q2 issiqlik miqdori beradi va A ish bajaradi.",
+      "answers": [
+        "Q1 - Q2 + A",
+        "Q1 - Q2",
+        "A - Q1 - Q2",
+        "0"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Real issiqlik mashinasi FIK ifodasini ko‘rsating.",
+      "answers": [
+        "((Q1 - Q2) / Q2) · 100%",
+        "((Q1 - Q2) / Q1) · 100%",
+        "((Q2 - Q1) / Q1) · 100%",
+        "((T1 - T2) / T1) · 100%"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Real issiqlik mashinasida ishchi qism isitkichdan 2 kJ issiqlik olib, sovitkichga 600 J issiqlik berdi. Uning bajargan foydali ishini toping (J).",
+      "answers": [
+        "2600",
+        "2000",
+        "1400",
+        "600"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Real issiqlik mashinasida ishchi qism isitkichdan 600 J issiqlik olib, 400 J foydali ish bajardi. U sovitkichga qancha issiqlik bergan (J)?",
+      "answers": [
+        "1000",
+        "200",
+        "0",
+        "600"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Real issiqlik mashinasi 520 J foydali ish bajardi. Bunda sovitkichga 180 J issiqlik berildi. Ishchi qism isitkichdan qancha issiqlik olgan (J)?",
+      "answers": [
+        "700",
+        "0",
+        "180",
+        "520"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Issiqlik mashinasi sikl davomida isitkichdan 100 J issiqlik oldi va sovitkichga 60 J issiqlik berdi. Mashinaning FIK ni toping.",
+      "answers": [
+        "67%",
+        "60%",
+        "40%",
+        "25%"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "FIK η bo‘lgan issiqlik mashinasi isitkichdan Q issiqlik miqdori olganda qanday ish bajaradi?",
+      "answers": [
+        "ηQ",
+        "(1 + η)Q",
+        "(1 - η)Q",
+        "Q/η"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Issiqlik dvigateli isitkichdan har sekundda 7200 kJ issiqlik oladi va sovitkichga 6400 kJ issiqlik beradi. Dvigatelning FIK qanday?",
+      "answers": [
+        "62%",
+        "41%",
+        "24%",
+        "11%"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Issiqlik dvigateli isitkichdan 0,8 MJ issiqlik miqdori olib, sovitkichga 0,3 MJ issiqlik miqdorini beradi. Bu issiqlik dvigatelining FIK ni (%) toping.",
+      "answers": [
+        "30",
+        "48",
+        "50",
+        "62,5"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Issiqlik dvigateli isitkichdan 0,4 MJ issiqlik miqdori olib, sovitkichga 0,26 MJ issiqlik miqdorini uzatadi. Dvigatelning FIK ni hisoblang (%).",
+      "answers": [
+        "30",
+        "35",
+        "40",
+        "45"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Bitta siklda issiqlik mashinasi 28 kJ ish bajarib, sovitkichga 42 kJ issiqlik miqdorini beradi. Mashinaning FIK ni aniqlang (%).",
+      "answers": [
+        "30",
+        "42",
+        "40",
+        "50"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "FIK 25% bo‘lgan issiqlik mashinasi sovitkichga 600 J issiqlik beradi. U qanday foydali ish bajaradi (J)?",
+      "answers": [
+        "200",
+        "300",
+        "400",
+        "500"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "FIK 40% bo‘lgan issiqlik mashinasi bitta siklda sovitkichga 42 kJ issiqlik beradi. Mashina bitta siklda necha kJ ish bajaradi?",
+      "answers": [
+        "21",
+        "28",
+        "168",
+        "56"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Issiqlik mashinasining FIK 25%. Uning isitkichdan olgan issiqlik miqdori 800 J bo‘lsa, foydali ishi necha Joul bo‘ladi?",
+      "answers": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Foydali ish koeffitsiyenti 30% bo‘lgan ideal issiqlik mashinasi qizdirgichdan 10 kJ issiqlik oladi. Sovitkichga berilayotgan issiqlik miqdori qanday (kJ)?",
+      "answers": [
+        "6",
+        "7",
+        "3",
+        "2,4"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Isitkichning harorati 150°C, sovitkichniki 20°C. Ideal issiqlik mashinasining FIK necha foiz?",
+      "answers": [
+        "20",
+        "23",
+        "25",
+        "30,7"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ideal issiqlik mashina isitkichining harorati 117°C, sovitkichniki 27°C. Mashinaning FIK ni toping (%).",
+      "answers": [
+        "23",
+        "33",
+        "70",
+        "30"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Karno siklida ishlayotgan issiqlik mashinasiga temperaturasi 480°C bo‘lgan bug‘ kirib, undan 30°C temperaturada chiqsa, mashinaning FIK qanday (%)?",
+      "answers": [
+        "30",
+        "40",
+        "50",
+        "60"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Bug‘ turbinasiga bug‘ 500°C harorat bilan kirib, undan 30°C harorat bilan chiqib ketadi. Bug‘ turbinasini ideal issiqlik mashinasi deb hisoblab, uning FIK ni toping (%).",
+      "answers": [
+        "30",
+        "47",
+        "61",
+        "77"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Isitkichining harorati 227°C, sovitkichniki 27°C bo‘lgan issiqlik mashinasining maksimal FIK necha foiz?",
+      "answers": [
+        "20",
+        "30",
+        "40",
+        "45"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "FIK ning maksimal qiymati 50% bo‘lishi uchun isitkichining harorati 527°C bo‘lgan issiqlik mashinasi sovitkichining harorati qanday (°C) bo‘lishi kerak?",
+      "answers": [
+        "400",
+        "351",
+        "263,5",
+        "127"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Isitkichining harorati 500 K bo‘lgan issiqlik mashinasining FIK 50%. Sovitkichning harorati qanday (K)?",
+      "answers": [
+        "190",
+        "200",
+        "230",
+        "250"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "FIK ning maksimal qiymati 70% bo‘lishi uchun isitkichining harorati 727°C bo‘lgan issiqlik mashinasi sovitkichining harorati qanday (°C) bo‘lishi kerak?",
+      "answers": [
+        "27",
+        "218",
+        "300",
+        "315"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Isitkich harorati 427°C bo‘lib, sovitkich harorati 127°C. Issiqlik mashinasi bir siklda 600 J issiqlik olib, sovitkichga 400 J issiqlik beradi. Real mashinaning FIK ideal mashina FIK ning qancha qismini tashkil qiladi?",
+      "answers": [
+        "1/2",
+        "6/7",
+        "7/8",
+        "7/9"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "FIK η bo‘lgan issiqlik dvigatelida gaz bajargan ishni 13 marta oshirish uchun isitkichdan olinadigan issiqlik miqdorini qanday o‘zgartirish kerak? η = const.",
+      "answers": [
+        "13/η marta orttirish",
+        "13 marta orttirish",
+        "13 marta kamaytirish",
+        "13η marta orttirish"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Karno siklida ishlaydigan mashinada isitkich va sovitkich absolyut temperaturalarining nisbati 5 ga teng. Agar bir siklda sovitkichga 36 kJ issiqlik berilgan bo‘lsa, isitkichdan olingan issiqlik miqdori qanday (kJ)?",
+      "answers": [
+        "900",
+        "180",
+        "72",
+        "7,2"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Ideal issiqlik mashinasi bir sikl davomida 5,36 · 10⁴ J ish bajardi. Isitkich temperaturasi 100°C, sovitkichniki esa 0°C bo‘lsa, mashina bir siklda isitkichdan qanday (kJ) issiqlik miqdori oladi?",
+      "answers": [
+        "150",
+        "170",
+        "200",
+        "210"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Isitkichining temperaturasi T1, sovitkichining temperaturasi T2 bo‘lgan issiqlik mashinasi bor. T1 ni ΔT ga orttirib, T2 ni o‘zgartirmagan va T2 ni ΔT ga kamaytirib, T1 ni o‘zgartirmagan hollardagi FIK larning nisbatini toping.",
+      "answers": [
+        "(T1 - ΔT) / T1",
+        "(T1 + ΔT) / (T2 + ΔT)",
+        "T1 / (T1 + ΔT)",
+        "(T1 - T2) / T1"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan siklning qaysi qismida gaz manfiy ish bajaradi?",
+      "images": "../rasmlar50/rasm29.png",
+      "answers": [
+        "bunda gaz manfiy ish bajarmaydi",
+        "2-3",
+        "1-2",
+        "3-1"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Gazning rasmda ko‘rsatilgan siklni o‘tishda bajargan ishini toping.",
+      "images": "../rasmlar50/rasm30.png",
+      "answers": [
+        "(p1 - p2)(V2 - V1)",
+        "p2(V2 - V1)",
+        "(p1 - p2)V1",
+        "(p1 - p2)V2"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan siklda bajarilgan ishni quyidagi ifodalarning qaysi biridan foydalanib topish mumkin?",
+      "images": "../rasmlar50/rasm31.png",
+      "answers": [
+        "(p1 + p2)(V2 - V1)",
+        "p2(V2 - V1)",
+        "(p1 - p4)(V2 - V1)",
+        "p1(V2 - V1)"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Diagrammada ko‘rsatilgan sikl bo‘yicha ishlovchi issiqlik mashinasi bir sikl davomida qanday (kJ) ish bajaradi?",
+      "images": "../rasmlar50/rasm32.png",
+      "answers": [
+        "3",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Diagrammada ko‘rsatilgan sikl bo‘yicha ishlovchi issiqlik mashinasi bir sikl davomida qanday (kJ) ish bajaradi?",
+      "images": "../rasmlar50/rasm33.png",
+      "answers": [
+        "3",
+        "4",
+        "6",
+        "7"
+      ],
+      "correct": 1
+    }
+  ]
+}

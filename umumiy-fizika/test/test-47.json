@@ -1,0 +1,149 @@
+{
+  "id": 47,
+  "title": "47-Mavzu | Termodinamikaning birinchi qonuni",
+  "subtitle": "Kamida 80% Natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 48,
+  "questions": [
+    {
+      "text": "Termodinamika 1-qonuni nimani tavsiflaydi?",
+      "answers": [
+        "energiyaning saqlanish qonunini.",
+        "elastik deformatsiya energiyasini.",
+        "issiqlik muvozanatini.",
+        "issiqlik uzatilish jarayonini."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Tashqi kuchlar gaz ustida 300 J ish bajarishdi. Agar bunda gazning ichki energiyasi 400 J ga ortgan bo‘lsa, unga qanday (J) issiqlik miqdori berilgan?",
+      "answers": [
+        "-100",
+        "500",
+        "100",
+        "700"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Tashqi kuchlarga qarshi 250 J ish bajarildi va bunda gazning ichki energiyasi 550 J ortdi. Gazga qancha issiqlik miqdori berilgan (J)?",
+      "answers": [
+        "-300",
+        "500",
+        "800",
+        "300"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Tashqi kuchlar gaz ustida 400 J ish bajardi va bunda gazning ichki energiyasi 550 J ortdi. Gazga qancha issiqlik miqdori berilgan (J)?",
+      "answers": [
+        "-800",
+        "500",
+        "800",
+        "150"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Gazga 900 J issiqlik berish natijasida uning ichki energiyasi 725 J ortdi. Tashqi kuchlarga qarshi bajarilgan ishni toping (J).",
+      "answers": [
+        "-175",
+        "500",
+        "800",
+        "175"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Gazga 900 J issiqlik berildi va gaz ustida 175 J ish bajarildi. Uning ichki energiyasi o‘zgarishini toping (J).",
+      "answers": [
+        "-725",
+        "1075",
+        "-1075",
+        "725"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Termodinamik jarayonda ideal gazning ichki energiyasi 300 J ga ortib, tashqariga 200 J issiqlik chiqqan. Bu jarayonda gaz qanday ish bajargan?",
+      "answers": [
+        "500",
+        "-500",
+        "100",
+        "-100"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Sistema ichki energiyalari teng, bir xil gaz bilan to‘ldirilgan va o‘zaro havosiz bo‘shliq bilan ajratilgan uchta idishdan iborat. Idishlardagi gazlarning massasi va harorati mos holda m1 = 4 kg, m2 = 3 kg, m3 = 0,5 kg va T1 = 300 K, T2 = 400 K, T3 = 600 K. Vaqt o‘tishi bilan idishlardagi harorat qanday o‘zgaradi?",
+      "answers": [
+        "birinchi va ikkinchi idishlarda ko‘tariladi, uchinchisida pasayadi",
+        "ikkinchi va uchinchi idishlarda pasayadi, birinchisida ortadi",
+        "idishlardagi harorat o‘zgarmaydi",
+        "birinchi idishda ortadi, ikkinchida o‘zgarmaydi, uchinchisida pasayadi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Qaysi qonun tabiatdagi jarayonlarning yo‘nalishini ko‘rsatadi?",
+      "answers": [
+        "energiyaning saqlanish qonuni",
+        "termodinamikaning I-qonuni",
+        "termodinamikaning II-qonuni",
+        "zaryad miqdorining saqlanish qonuni"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Kislorod izotermik kengayganda A ish bajardi. Gaz bunda qancha issiqlik miqdori olgan?",
+      "answers": [
+        "Q = A + ΔU",
+        "Q = A",
+        "Q = -A",
+        "Q = A - ΔU"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Qanday jarayonda gazga berilgan issiqlik miqdorining hammasi bajarilgan ishga sarflanadi?",
+      "answers": [
+        "adiabatik",
+        "izobarik",
+        "izoxorik",
+        "izotermik"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Gaz izotermik kengayib 10 kJ ish bajardi. Gazning ichki energiyasi o‘zgarishini toping (kJ).",
+      "answers": [
+        "0",
+        "10",
+        "-10",
+        "30"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Gaz izotermik kengayib 10 kJ ish bajardi. Gazga berilgan issiqlik miqdorini toping (kJ).",
+      "answers": [
+        "0",
+        "10",
+        "-10",
+        "15"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Gaz izotermik kengayib 30 kJ ish bajardi. Gazga berilgan issiqlik miqdorini toping (kJ).",
+      "answers": [
+        "0",
+        "30",
+        "-10",
+        "15"
+      ],
+      "correct": 1
+    }
+  ]
+}
