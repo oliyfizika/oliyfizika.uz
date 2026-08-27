@@ -1,0 +1,209 @@
+{
+  "id": 39,
+  "title": "39-Mavzu | Ideal gaz holat tenglamasi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 40,
+  "questions": [
+    {
+      "text": "1 sm³ hajmdagi gazning normal sharoitdagi molekulalar sonini hisoblang (sm⁻³).",
+      "answers": [
+        "2,1 · 10¹⁸",
+        "4,6 · 10¹⁸",
+        "1,5 · 10¹⁹",
+        "2,7 · 10¹⁹"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "1 m³ kisloroddagi molekulalar soni normal sharoitda qancha bo‘lishini aniqlang.",
+      "answers": [
+        "8,1 · 10²⁵",
+        "2,7 · 10²⁵",
+        "1,8 · 10²³",
+        "3,8 · 10²⁵"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Normal sharoitda 1 m³ gazdagi molekulalar soni... bilan aniqlanadi.",
+      "answers": [
+        "Bolstman doimiysi",
+        "molyar gaz doimiysi",
+        "Avogadro soni",
+        "Loshmidt soni"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Hozirgi zamon texnikasi yordamida 1 pPa vakuum hosil qilish mumkin. Ana shunday 1 sm³ vakuumda 300 K temperaturada nechta gaz molekulasi qoladi?",
+      "answers": [
+        "22",
+        "242",
+        "424",
+        "214"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "O‘lchami 2,5 × 4 × 3 m³ bo‘lgan idishdagi gazning bosimi 831 mm.sim.ust., temperaturasi 27°C bo‘lsa, undagi molekulalar soni nechta?",
+      "answers": [
+        "1,8 · 10²⁵",
+        "6 · 10²⁶",
+        "2,4 · 10²³",
+        "8 · 10²⁶"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Normal sharoitdagi hajm 1 l bo‘lgan havo molekulalarining sonini aniqlang.",
+      "answers": [
+        "2,7 · 10²²",
+        "6 · 10²³",
+        "2 · 10²⁰",
+        "2,7 · 10¹⁵"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Agar 15 l hajmli idishda 1,8 · 10²⁴ molekula bo‘lsa, 0,5 MPa bosimdagi bu gazning temperaturasi qanday (K)?",
+      "answers": [
+        "123",
+        "504",
+        "234",
+        "301"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Hajmi 0,8 m³ bo‘lgan gazning 300 K temperaturadagi bosimi 2,8 · 10⁵ Pa. Shu gaz 3,2 · 10⁵ Pa bosimda 1,4 m³ hajmni egallasa, uning temperaturasi qanday bo‘ladi (K)?",
+      "answers": [
+        "150",
+        "165",
+        "330",
+        "600"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Gazning 7,2 · 10⁵ Pa bosim va 288 K temperaturadagi hajmi 0,6 m³ ga teng. Agar bosim 2,25 · 10⁵ Pa bo‘lsa, xuddi shuncha gaz massasi qanday temperaturada 1,6 m³ hajmni egallaydi (K)?",
+      "answers": [
+        "330",
+        "120",
+        "240",
+        "480"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Bosimi 6 atm va temperaturasi 293 K bo‘lganda gaz 586 l hajmni egallaydi. Xuddi shu gaz massasining 248 K temperatura va 4 atm bosimda qanday hajmni egallashini toping (l).",
+      "answers": [
+        "729",
+        "428",
+        "676",
+        "744"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "8 litr hajmli ideal gaz 900 K haroratda 1,5 atm bosim hosil qiladi. Shu gazning bosimi 4 litr hajmda 1 atm bo‘lishi uchun uning harorati qanday bo‘lishi kerak (°C)?",
+      "answers": [
+        "30",
+        "27",
+        "127",
+        "237"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Suv havzasi tubidan sirtiga ko‘tarilgan havo pufagining diametri 1,5 marta ortdi. Suv tubidagi harorat 5°C sirtidagi esa 27°C bo‘lsa, suv havzasining chuqurligi necha metr?",
+      "answers": [
+        "36",
+        "25",
+        "21,3",
+        "60"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Hajm va absolyut harorati 2 martadan oshirilsa, ideal gazning bosimi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi",
+        "2 marta ortadi",
+        "4 marta kamayadi",
+        "4 marta ortadi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Agar gaz temperaturasi 300 K ga ko‘tarilganda, bosim va hajm 2 martadan ortgan bo‘lsa, gazning oxirgi temperaturasi necha kelvinga teng?",
+      "answers": [
+        "350",
+        "400",
+        "600",
+        "900"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Shar zond 27°C temperaturada 105 kPa bosimgacha gaz bilan to‘ldirilgan. Shar 80 kPa bosimli balandlikka ko‘tarilgandan so‘ng hajmi 5% ortgan bo‘lsa, u yerdagi haroratni (K) toping.",
+      "answers": [
+        "125",
+        "445",
+        "500",
+        "255"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gazning absolyut temperaturasi 2 marta ortganda uning bosimi 25% ortdi. Bunda hajmi necha marta o‘zgaradi?",
+      "answers": [
+        "1,6 marta ortadi",
+        "1,6 marta kamayadi",
+        "0,25 marta ortadi",
+        "0,25 marta kamayadi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Rezina qayiqqa 7°C temperaturada 108 kPa ishchi bosimgacha dam berildi. Harorat 37°C ga yetganda qayiqning yorilish xavfi bormi?",
+      "answers": [
+        "Bor",
+        "Yo‘q",
+        "Qayiqning massasiga bog‘liq",
+        "Ma’lumot yetarli emas"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Radiusi 2 sm bo‘lgan yupqa devorli rezina sharga 0,1 MPa bosimda va 20°C temperaturada havo qamalgan. Uni 4°C temperaturali ko‘lga 20 m chuqurlikkacha tushirilsa, shar radiusi qancha bo‘ladi (sm)?",
+      "answers": [
+        "0,75",
+        "2,12",
+        "1,37",
+        "1,78"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Ideal gazning harorati 4 marta ortganda uning hajmi 2 marta ortsa, bosimi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta ortadi",
+        "o‘zgarmaydi",
+        "2 marta kamayadi",
+        "2 marta ortadi"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gazning mutlaq harorati 3 marta oshganda bosimi 1,5 marta oshgan bo‘lsa, uning zichligi qanday o‘zgargan?",
+      "answers": [
+        "1,5 marta oshgan",
+        "1,5 marta kamaygan",
+        "o‘zgarmagan",
+        "2 marta kamaygan"
+      ],
+      "correct": 3
+    }
+  ]
+}

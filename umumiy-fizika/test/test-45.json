@@ -1,0 +1,124 @@
+{
+  "id": 45,
+  "title": "45-Mavzu | Sirt taranglik koeffitsiyenti",
+  "subtitle": "Kamida 80% natija keyingi bo‘limni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 46,
+  "questions": [
+    {
+      "text": "Sirt taranglik koeffitsiyentining birligini ko‘rsating.",
+      "answers": ["N", "J", "J/m", "J/m²"],
+      "correct": 3
+    },
+    {
+      "text": "Sirt taranglik koeffitsiyenti qanday birlikda ifodalanadi?",
+      "answers": ["J · s", "J/m³", "J/m²", "N/m"],
+      "correct": 3
+    },
+    {
+      "text": "Qo‘zg‘aluvchan simning uzunligi 5 sm bo‘lgan simli ramkadagi sovun pardasi 10 sm ga cho‘zilgan bo‘lsa, cho‘zuvchi kuchning modulini toping (mN). Sovun eritmasining sirt taranglik koeffitsiyenti 40 mN/m.",
+      "answers": ["20", "2", "4", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Diametri 4 mm bo‘lgan kapillyar naychadan tomayotgan suv tomchisining massasini toping (mg). σ = 73 mN/m.",
+      "answers": ["94", "187", "24", "31,4"],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 1 mm bo‘lgan vertikal shisha naychadan suv tomchisi uzildi. Tomchining og‘irligi qanday (mN)? Suvning sirt taranglik koeffitsiyenti σ = 73 mN/m.",
+      "answers": ["0,11", "0,23", "0,32", "0,41"],
+      "correct": 1
+    },
+    {
+      "text": "Suv diametri 1,8 mm bo‘lgan naychadan tomchilayotgan bo‘lsa, 1 cm³ suvda nechta tomchi bo‘ladi? Suvning sirt taranglik koeffitsiyenti σ = 72 mN/m.",
+      "answers": ["30", "25", "12", "49"],
+      "correct": 1
+    },
+    {
+      "text": "Teshigining diametri 2,0 mm bo‘lgan tomizgichdan har bir sekundda bittadan kerosin tomchilari tushmoqda. 25 cm³ kerosin qancha vaqtda (min) oqib tushadi? ρ = 800 kg/m³, σ = 24 mN/m.",
+      "answers": ["28", "16", "22", "48"],
+      "correct": 2
+    },
+    {
+      "text": "Radiusi yarim millimetr bo‘lgan tomizgichdan sirt taranglik koeffitsiyenti 50 mN/m bo‘lgan 100 g massali suyuqlik nechta tomchi bo‘lib tomib ketadi?",
+      "answers": ["6248", "7459", "3456", "4560"],
+      "correct": 0
+    },
+    {
+      "text": "Pastga 4,5 m/s² tezlanish bilan harakatlanayotgan diametri 1 mm bo‘lgan tomizgichdan uzilgan suv tomchisining massasini toping (mg). σ = 73 mN/m.",
+      "answers": ["18", "43,24", "24", "22,94"],
+      "correct": 1
+    },
+    {
+      "text": "Hajmi 6 cm³ bo‘lgan vannachaga naychadan suv tomchilab tushmoqda. Naychaning ichki diametri 1,0 mm ga teng. Vannachani 20°C temperaturali suv bilan to‘ldirish uchun naychadan necha tomchi suv tushishi kerak? ρ = 1000 kg/m³, σ = 72 mN/m.",
+      "answers": ["242", "196", "225", "265"],
+      "correct": 3
+    },
+    {
+      "text": "Teshigining diametri 2 mm bo‘lgan tomizgichda 219 cm³ suv bor. Tomizgichdan hammasi bo‘lib nechta tomchi tomadi? π = 3, g = 10 m/s² deb hisoblang.",
+      "answers": ["2180", "4000", "5000", "6000"],
+      "correct": 2
+    },
+    {
+      "text": "Tomizgich teshigining diametri 1,2 mm. Tomizgichdan oqib chiqayotgan suv tomchisining uzilish momentidagi massasi qancha (mg)?",
+      "answers": ["56", "28", "2,8", "5,6"],
+      "correct": 1
+    },
+    {
+      "text": "Suv ostidagi 18 mm diametrli havo pufagi sirti hosil qiladigan qo‘shimcha bosim qiymatini (Pa) aniqlang. σ = 72 mN/m.",
+      "answers": ["32", "16", "48", "34"],
+      "correct": 1
+    },
+    {
+      "text": "20 mm diametrli sovun pufagi sirti hosil qiladigan qo‘shimcha bosim qiymatini aniqlang (Pa). σ = 0,04 N/m.",
+      "answers": ["12", "16", "28", "40"],
+      "correct": 1
+    },
+    {
+      "text": "50 mm diametrli sovun pufagi sirtining ortiqcha potensial energiyasini hisoblang (J). σ = 0,04 N/m.",
+      "answers": ["2,4 · 10⁻²", "24 · 10⁻⁵", "8,3 · 10⁻⁴", "6,3 · 10⁻⁴"],
+      "correct": 1
+    },
+    {
+      "text": "Radiusi 4 sm bo‘lgan sovunli suv pufagining sirt energiyasi (mJ) nimaga teng? σ = 40 mN/m, π = 3.",
+      "answers": ["0,77", "2,24", "1,54", "2,3"],
+      "correct": 2
+    },
+    {
+      "text": "Sovun pufakchasining sirt energiyasi 64 marta ortishi uchun uning radiusi necha marta orttirilishi kerak?",
+      "answers": ["16 marta", "64 marta", "8 marta", "4 marta"],
+      "correct": 2
+    },
+    {
+      "text": "Sovun pufagining radiusini 1 sm dan 6 sm gacha puflab shishirish uchun qanday ish bajarish kerak (mJ)? σ = 45 mN/m.",
+      "answers": ["4,5", "4", "3,6", "2"],
+      "correct": 1
+    },
+    {
+      "text": "Sovun pufagining yuzasini 1 cm² dan 3 cm² gacha oshirish uchun necha mikrojoul ish bajarish kerak? σ = 5 · 10⁻² N/m.",
+      "answers": ["1", "5", "20", "50"],
+      "correct": 2
+    },
+    {
+      "text": "Radiusi 0,6 mm bo‘lgan suv tomchisi silliq sirtga urilib 8 ta bir xil kichik tomchiga ajralib ketdi. Bunda tomchi tushgan balandlikning eng kichik qiymati necha sm bo‘ladi? σ = 72 mN/m.",
+      "answers": ["2,8", "2,6", "3,6", "4,3"],
+      "correct": 2
+    },
+    {
+      "text": "Radiusi 0,3 mm bo‘lgan suv tomchisi silliq sirtga urilib 8 ta bir xil kichik tomchiga ajralib ketdi. Bunda tomchi tushgan balandlikning eng kichik qiymati necha sm bo‘ladi? σ = 72 mN/m.",
+      "answers": ["4,3", "5,2", "7,2", "8,6"],
+      "correct": 2
+    },
+    {
+      "text": "Shar shaklidagi sakkizta bir xil haroratli simob tomchilari birlashib yagona tomchi hosil qildi. Bunda harorat qanday va nima sababdan o‘zgaradi?",
+      "answers": [
+        "Ortadi, chunki sirt energiyasi ortadi.",
+        "Pasayadi, chunki sirt energiyasi kamayadi.",
+        "Ko‘tariladi, chunki sirt energiyasi kamayadi.",
+        "O‘zgarmaydi, chunki sirt energiyasi o’zgarmaydi."
+      ],
+      "correct": 2
+    }
+  ]
+}

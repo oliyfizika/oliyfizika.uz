@@ -1,0 +1,119 @@
+{
+  "id": 37,
+  "title": "37-Mavzu | Ideal gaz. Gaz MKN asosiy tenglamasi. Dalton qonuni",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 38,
+  "questions": [
+    {
+      "text": "Gazni ideal deb hisoblash uchun nimani hisobga olmaslik kerak?",
+      "answers": [
+        "molekulalarining to‘qnashuvini",
+        "molekulalarining to‘qnashuvidagi o‘zaro ta’sirini",
+        "molekulalarining harakatini",
+        "molekulalarining masofadan ta’sirlashishini"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "v_x² = 1/3 v² ifoda quyida keltirilgan mulohazalarning qaysi biriga asoslanib yozilgan?",
+      "answers": [
+        "molekulalar soni kam",
+        "molekulalar o‘zaro elastik to‘qnashadi",
+        "molekulalar shar shaklida",
+        "molekulalar tartibsiz harakat qiladi"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gazning bosimi 166 kPa, molekulalar konsentratsiyasi 1,14·10²⁶ m⁻³ va bitta molekula massasi 2,8·10⁻²⁶ kg. Molekulalarning o‘rtacha kvadrat tezligini toping (m/s).",
+      "answers": ["845", "220", "395", "350"],
+      "correct": 2
+    },
+    {
+      "text": "Ideal gazning bosimi 266 kPa, molekulalar konsentratsiyasi 1,14·10²⁶ m⁻³ va bitta molekula massasi 2,8·10⁻²⁶ kg. Molekulalarning o‘rtacha kvadrat tezligini toping (m/s).",
+      "answers": ["845", "220", "400", "500"],
+      "correct": 3
+    },
+    {
+      "text": "Bitta molekulasining o‘rtacha kinetik energiyasi 7,5·10⁻²¹ J va molekulalar konsentratsiyasi 1,14·10²⁴ m⁻³ bo‘lgan gazning bosimini toping (kPa).",
+      "answers": ["84,5", "22", "40", "5,7"],
+      "correct": 3
+    },
+    {
+      "text": "Bitta molekulasining o‘rtacha kinetik energiyasi 8,5·10⁻²¹ J va molekulalar konsentratsiyasi 1,14·10²⁴ m⁻³ bo‘lgan gazning bosimini toping (kPa).",
+      "answers": ["84,55", "22,11", "40", "6,46"],
+      "correct": 3
+    },
+    {
+      "text": "Molekulalarning o‘rtacha kvadratik tezligi 1 km/s va molekulalarning massasi 3·10⁻²⁷ kg bo‘lganda 1 mm³ da 100 milliard bo‘lgan konsentratsiyadagi ideal gaz idish devorlariga qanday bosim (Pa) beradi?",
+      "answers": ["0,1", "0,8", "3", "0,5"],
+      "correct": 0
+    },
+    {
+      "text": "Agar 1-gaz molekulalarining massasi 2-gaz molekulalarining massasidan 4 marta katta bo‘lsa, 1-gaz molekulalarining konsentratsiyasi esa 2-gaznikidan 2 marta kichik bo‘lsa, gaz zichliklarining nisbati ρ₁/ρ₂ qanday bo‘ladi?",
+      "answers": ["2", "4", "1/8", "1/4"],
+      "correct": 0
+    },
+    {
+      "text": "Gaz molekulasining o‘rtacha kvadratik tezligi 500 m/s va gazning bosimi 121 kPa bo‘lsa, gaz zichligini toping (kg/m³).",
+      "answers": ["4,55", "2,11", "4", "1,45"],
+      "correct": 3
+    },
+    {
+      "text": "Vektor kattaliklarni ko‘rsating: 1) modda miqdori; 2) molekulalar tezligi; 3) molekulalar konsentratsiyasi; 4) molekulalar bosimi.",
+      "answers": ["2, 4", "1, 3", "2", "3, 4"],
+      "correct": 2
+    },
+    {
+      "text": "Agar kislorodning bosimi 0,2 MPa molekulalarining o‘rtacha kvadratik tezligi 700 m/s ga teng bo‘lsa, uning molekulalari konsentratsiyasini toping (m⁻³).",
+      "answers": ["2,3 · 10²⁴", "2,3 · 10²⁵", "2,3 · 10²⁷", "2,8 · 10²⁵"],
+      "correct": 1
+    },
+    {
+      "text": "Gaz 6 kg massaga ega. U 200 kPa bosimda 5 m³ hajmni egallasa, shu gaz molekulalari harakatining o‘rtacha kvadratik tezligi qanday bo‘ladi (m/s)?",
+      "answers": ["707", "70", "210", "240"],
+      "correct": 0
+    },
+    {
+      "text": "Gaz molekulasining o‘rtacha kvadratik tezligi 370 m/s va gazning bosimi 66,2 kPa bo‘lsa, gaz zichligini toping (kg/m³).",
+      "answers": ["4,55", "2,11", "4", "1,45"],
+      "correct": 3
+    },
+    {
+      "text": "Quyidagi qaysi munosabat molekulyar kinetik nazariyaning asosiy tenglamasidir: 1) p = 1/3 n k T ; 2) p V = m R T/µ; 3) p = (1/3) n m₀ v²; 4) E_k = 3 k T/2?",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 2
+    },
+    {
+      "text": "Bir atomli gazning hajmi ikki marta orttirilib, molekulalar o‘rtacha kinetik energiyasi ham ikki marta orttirilsa, gazning bosimi qanday o‘zgaradi?",
+      "answers": ["4 marta ortadi", "4 marta kamayadi", "2 marta ortadi", "o‘zgarmaydi"],
+      "correct": 3
+    },
+    {
+      "text": "Agar gazning hajmi 2 marta ortsa va gaz molekulalarining o‘rtacha kvadratik tezligi shuncha marta kamaysa, uning bosimi qanday o‘zgaradi?",
+      "answers": ["8 marta kamayadi", "4 marta ortadi", "4 marta kamayadi", "8 marta ortadi"],
+      "correct": 0
+    },
+    {
+      "text": "Gazning bosimi 6 marta orttirilib, hajmi 1,5 marta kamaytirilsa, gaz molekulalarining o‘rtacha kvadratik tezligi qanday o‘zgaradi?",
+      "answers": ["2 marta ortadi", "2 marta kamayadi", "4 marta ortadi", "4 marta kamayadi"],
+      "correct": 0
+    },
+    {
+      "text": "Bir atomli ideal gaz bosimi 250 kPa molekulalarining o‘rtacha kinetik energiyasi 7,5·10⁻²¹ J ga teng. Gaz molekulalarining konsentratsiyasi nimaga teng?",
+      "answers": ["5 · 10²⁵", "5 · 10²⁴", "5 · 10²³", "5 · 10²²"],
+      "correct": 0
+    },
+    {
+      "text": "Berk idishdagi ideal gazning molekulalari o‘rtacha kvadratik tezligi 20% ga ko‘paytirilsa, gazning bosimi necha foizga o‘zgaradi?",
+      "answers": ["22% ga kamayadi", "22% ga ko‘payadi", "44% ga ko‘payadi", "44% ga kamayadi"],
+      "correct": 2
+    },
+    {
+      "text": "Tezligi 1200 m/s bo‘lgan kislorod molekulasining idish devoriga 60° burchak ostida mutlaq elastik urulishi natijasida idish devori olgan kuch impulsini toping (N · s). NA = 6 · 10²³ mol⁻¹.",
+      "answers": ["3,2 · 10⁻²³", "0", "3,2 · 10⁻²⁵", "6,4 · 10⁻²³"],
+      "correct": 3
+    }
+  ]
+}

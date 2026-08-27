@@ -42,11 +42,13 @@
   },
   {
     "text": "8. 1-rasmdagi sistemaning tebranish davri 10 s, 2-rasmda esa 8 s. 3-rasmdagi yukning tebranish davrini toping (s). Barcha prujinalarning bikirligi bir xil.",
+    "images": "../rasmlar33/rasm8.png",
     "answers": ["4.", "5.", "6.", "9."],
     "correct": 1
   },
   {
     "text": "9. Rasmda tasvirlangan prujinali mayatniklarning tebranish davrlari nisbati T1/T2 ni toping? 1) k, 3k (parallel); 2) 2k, 2k (ketma-ket), 4m massali.",
+    "images": "../rasmlar33/rasm9.png",
     "answers": ["4.", "1/4.", "2.", "1/2."],
     "correct": 3
   },
@@ -57,6 +59,7 @@
   },
   {
     "text": "11. Quyidagi m massali yukning tebranish davrini aniqlang (prujinalar k, k, k ko'rinishida ulanishi).",
+    "images": "../rasmlar33/rasm11.png",
     "answers": [
       "T = 2π √ (3m / 2k)",
       "T = 2π √ (2m / 3k)",

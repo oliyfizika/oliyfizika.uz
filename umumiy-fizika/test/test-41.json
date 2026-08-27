@@ -1,0 +1,114 @@
+{
+  "id": 41,
+  "title": "41-Mavzu | Izobarik jarayon",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 42,
+  "questions": [
+    {
+      "text": "Izobarik jarayon deb qanday jarayonga aytiladi?",
+      "answers": [
+        "doimiy bosim ostida kechuvchi jarayonga",
+        "doimiy haroratda kechuvchi jarayonga",
+        "issiqlik almashmasdan kechuvchi jarayonga",
+        "doimiy hajmda kechuvchi jarayonga"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Izobarik jarayonda ...",
+      "answers": [
+        "p va V o‘zgaradi, T o‘zgarmaydi.",
+        "p va T o‘zgaradi, V o‘zgarmaydi.",
+        "V va T o‘zgaradi, p o‘zgarmaydi.",
+        "p, V va T o‘zgaradi va tashqi muhit bilan issiqlik almashinish bo‘lmaydi."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Agar ideal gaz 270 K ga izobarik ravishda sovitilganda, hajmi 4 marta kamaygan bo‘lsa, uning dastlabki temperaturasi necha °C bo‘lgan?",
+      "answers": ["60", "81", "87", "807"],
+      "correct": 2
+    },
+    {
+      "text": "O‘txonadan trubaga kirgan gazlar 1320°C dan 200°C temperaturagacha soviydi. Ularning hajmi necha marta kamayadi?",
+      "answers": ["1,5", "3,4", "2,1", "4"],
+      "correct": 1
+    },
+    {
+      "text": "Agar gaz 27°C da 6 l hajmga ega bo‘lsa, 77°C da qanday hajmni egallaydi (l)?",
+      "answers": ["2", "14", "5", "7"],
+      "correct": 3
+    },
+    {
+      "text": "Gaz 12,32 l hajmni egallagan. U o‘zgarmas bosimda 45 K ga sovitildi, uning hajmi 10,52 l bo‘lib qoldi. Gazning boshlang‘ich temperaturasi qanday bo‘lgan (K)?",
+      "answers": ["300", "265", "308", "900"],
+      "correct": 2
+    },
+    {
+      "text": "Gaz 27°C dan 39°C gacha isitildi. Agar bosim o‘zgarmagan bo‘lsa, gaz hajmi necha % ortgan?",
+      "answers": ["4", "30,7", "44,4", "50"],
+      "correct": 0
+    },
+    {
+      "text": "O‘zgarmas bosimda gazni 0°C dan necha °C gacha isitganda uning hajmi 2 marta oshadi?",
+      "answers": ["100", "173", "120", "273"],
+      "correct": 3
+    },
+    {
+      "text": "Qanday temperaturali (°C) gaz 1°C isitilganda hajmi 2 marta ortadi? (p = const)",
+      "answers": ["0", "1", "-272,15", "272"],
+      "correct": 2
+    },
+    {
+      "text": "Gaz 27°C dan 57°C gacha isitilgan. Agar bosim o‘zgarmagan bo‘lsa, gaz hajmi necha foiz ortgan?",
+      "answers": ["4", "8", "10", "20"],
+      "correct": 2
+    },
+    {
+      "text": "Gaz o‘zgarmas bosimda 27°C dan 51°C gacha isitilganda hajmi necha foizga ortadi?",
+      "answers": ["7", "9", "10", "8"],
+      "correct": 3
+    },
+    {
+      "text": "Gaz temperaturasi 60 K ga ortganda uning hajmi 1 l ga ortdi. Agar temperatura yana 30 K ga ortsa, hajmi dastlabki hajmga qaraganda qanchaga ortadi (l)? (p = const)",
+      "answers": ["2,5", "1,5", "3,8", "0,15"],
+      "correct": 1
+    },
+    {
+      "text": "Gazni o‘zgarmas bosimda 1°C isitganda uning hajmi ikki marta ortgan. Isitish qanday temperaturalar intervalida sodir bo‘lgan (K)?",
+      "answers": ["(4;6)", "(2;4)", "(-2;0)", "(0,5;2)"],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gaz hajmining termik koeffitsiyenti nimaga teng?",
+      "answers": [
+        "Δp / p₀",
+        "Δp / (p₀ · T)",
+        "ΔV / (V₀ · ΔT)",
+        "ΔV / V₀"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Hajmi 250 sm³ bo‘lgan og‘zi ochiq shisha kolba 127°C gacha qizdirildi va ochiq og‘zi bilan suvga tushirildi. Natijada kolba 7°C temperaturagacha sovidi. Bunda kolbaga necha gramm suv kirgan?",
+      "answers": ["125", "75", "50", "25"],
+      "correct": 1
+    },
+    {
+      "text": "Agar ochiq idishdagi ideal gazning absolyut temperaturasi 1,1 marta ortsa, gaz molekulalarining konsentratsiyasi qanday o‘zgaradi?",
+      "answers": [
+        "1,1 marta ortadi",
+        "1,1 marta kamayadi",
+        "1,21 marta kamayadi",
+        "o‘zgarmaydi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Hajmi 0,1 m³ bo‘lgan silindrik idish yuzi 0,01 m² bo‘lgan porshen bilan yopilgan. Gazning absolyut temperaturasi izobarik ravishda 4 marta pasaytirilganda porshen idish tubidan necha metr balandlikda bo‘ladi?",
+      "answers": ["1,52", "2", "2,5", "3"],
+      "correct": 2
+    }
+  ]
+}

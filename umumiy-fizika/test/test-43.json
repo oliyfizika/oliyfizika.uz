@@ -1,0 +1,349 @@
+{
+  "id": 43,
+  "title": "43-Mavzu | To‘yingan bug‘. Havoning namligi. Nisbiy namlik",
+  "subtitle": "Kamida 80% natija keyingi bo‘limni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 44,
+  "questions": [
+    {
+      "text": "Suyuqlikdan biror vaqt ichida chiqib ketayotgan molekulalar soni o‘sha vaqt ichida suyuqlikka qaytib tushayotgan bug‘ molekulalari soniga teng bo‘lishiga nima deyiladi?",
+      "answers": [
+        "Termodinamik muvozanat",
+        "Kyuri holati",
+        "Dinamik muvozanat",
+        "Kritik holat"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "To‘yingan bug‘ bosimining hajmga bog‘lanishi qanday?",
+      "answers": [
+        "hajmga to‘g‘ri proporsional",
+        "hajmga bog‘liq emas",
+        "hajmga teskari proporsional",
+        "hajmning kvadratiga proporsional"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Germetik berk idishda faqat to‘yingan suv bug‘i bor (suv yo‘q). Idish isitilganda bug‘ molekulalarining konsentratsiyasi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi",
+        "kamayadi",
+        "ortadi",
+        "ortishi ham kamayishi ham mumkin"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "1-yopiq idishda suv va suv bug‘i bor, ikkinchi idishda faqat to‘yingan suv bug‘i bor. Harorat ortganida bu idishlardagi bosim qanday o‘zgaradi?",
+      "answers": [
+        "Ikkalasida bir xil ortadi",
+        "1-sida ko‘proq ortadi",
+        "2-sida ko‘proq ortadi",
+        "1-sida o‘zgarmaydi, 2-sida ortadi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Moddaga tegishli bo‘lgan kritik temperaturadan yuqori haroratda modda qanday agregat holatida bo‘ladi?",
+      "answers": [
+        "gaz",
+        "suyuqlik",
+        "qattiq",
+        "to‘yingan bug‘"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Qaysi holda gazlarni suyuqlikka aylantirish mumkin bo‘ladi?",
+      "answers": [
+        "har qanday temperaturada",
+        "kritik temperaturadan yuqori temperaturada",
+        "faqat 0°C haroratda",
+        "kritik temperaturadan past temperaturada"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Berilgan jumlalarning qaysi biri noto‘g‘ri?",
+      "answers": [
+        "to‘yingan bug‘ Mendeleyev-Klapeyron qonuniga bo‘ysunadi.",
+        "kritik temperaturada suyuqlik bilan to‘yingan bug‘ning fizik xossalari farqi yo‘qoladi.",
+        "temperatura qancha yuqori bo‘lsa, to‘yingan bug‘ning elastikligi shuncha katta bo‘ladi.",
+        "to‘yingan bug‘ning elastikligi o‘zgarmas temperaturada bug‘ egallab turgan hajmga bog‘liq."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "O‘zgarmas temperaturada to‘yingan bug‘ning hajmi 4 marta kamaytirilsa, bosim qanday o‘zgaradi?",
+      "answers": [
+        "2 marta oshadi",
+        "2 marta kamayadi",
+        "o‘zgarmaydi",
+        "4 marta kamayadi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Yopiq idishda suv va uning to‘yingan bug‘i bor. Harorat pasayganda to‘yingan bug‘ning zichligi qanday o‘zgaradi?",
+      "answers": [
+        "kamayadi",
+        "ortadi",
+        "o‘zgarmaydi",
+        "ortishi ham kamayishi ham mumkin"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "To‘yingan suv bug‘ining temperaturasi 100°C, u biror hajmni egallab turibdi. Dastlabki temperaturani saqlagan holda bug‘ning hajmini ikki marta kamaytirsak, uning bosimi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi",
+        "ortadi",
+        "kamayadi",
+        "2 marta ortadi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Idishda suv va uning to‘yingan bug‘i bor. Harorat o‘zgartirilmasdan to‘yingan bug‘ning hajmi ikki marta kamaytirilsa, uning bosimi qanday o‘zgaradi?",
+      "answers": [
+        "1,4 marta kamayadi",
+        "1,4 marta ortadi",
+        "o‘zgarmaydi",
+        "2 marta ortadi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Kritik temperaturada suyuqlikning zichligi 925 kg/m³. Shu temperaturada uning bug‘ining zichligini toping (kg/m³).",
+      "answers": [
+        "1",
+        "9,25",
+        "92,5",
+        "925"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "100°C da to‘yingan suv bug‘ining zichligi qanday bo‘ladi (kg/m³)?",
+      "answers": [
+        "0,59",
+        "0,28",
+        "0,16",
+        "0,75"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Kritik temperaturada suyuqlikning zichligi 850 kg/m³. Shu temperaturada uning bug‘ining zichligini toping (kg/m³).",
+      "answers": [
+        "1",
+        "0,825",
+        "8,25",
+        "850"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "To‘yingan bug‘ning bosimi 29,5 kPa. Uning hajmini ikki marta orttirsak 2 soatdan keyin bosimi nimaga teng bo‘ladi (kPa). T = const.",
+      "answers": [
+        "1",
+        "100",
+        "14,75",
+        "29,5"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ta’rifni davom ettiring: ”Havodagi suv bug‘ining parsial bosimi bu.........”",
+      "answers": [
+        "bug‘ kondensatsiyalanadigan bosim",
+        "suv bug‘i to‘yinganda hosil qiladigan bosim",
+        "boshqa gazlar bo‘lmaganda suv bug‘i hosil qiladigan bosim",
+        "havoning barometr ko‘rsatadigan bosimi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Gapni davom ettiring. Absolyut namlik deb: 1) berilgan temperaturadagi to‘yingan bug‘ bosimiga aytiladi. 2) berilgan temperaturada havodagi suv bug‘ining parsial bosimiga aytiladi. 3) havodagi to‘yingan bug‘ massasiga aytiladi. 4) 1m³ havodagi suv bug‘larining miqdoriga aytiladi. 5) havoda bo‘lgan suv bug‘ining miqdori bilan o‘lchanadigan kattalikka aytiladi.",
+      "answers": [
+        "1, 5",
+        "2, 4, 5",
+        "2, 3",
+        "3, 4"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Shudring nuqtasi qaysi asbob yordamida aniqlanadi?",
+      "answers": [
+        "ariometr",
+        "manometr",
+        "taxometr",
+        "gigrometr"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Quyida keltirilgan fikrlarning qaysi biri noto‘g‘ri? 1) shudring nuqtasida havoning nisbiy namligi 100% oshadi, 2) suv bug‘i toyinadigan holdagi temperatura shudring nuqtasi deb ataladi 3) havo shudring nuqtasigacha sovisa bug‘ kondensatsiyalanib boshlaydi: tuman hosil bo‘ladi, shudring tushadi. 4) shudring nuqtasida havodagi suv bug‘larining elastligi to‘yingan bug‘ elastligiga teng. 5) shudring nuqtasida havodagi suv bug‘larining zichligi to‘yingan bug‘ zichligiga teng.",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Ichida namlikni yutuvchi modda bo‘lgan naycha orqali 20 l havo o‘tkazilgan. Bunda naychaning massasi 400 mg ortdi. Havoning absolyut namligi qanday (g/m³)?",
+      "answers": [
+        "40",
+        "30",
+        "20",
+        "50"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Ichida namlikni yutuvchi modda bo‘lgan naycha orqali 2 l havo o‘tkazilganda havoning absolyut namligi 60 g/m³ ekanligi aniqlandi. Bunda naychaning massasi qanchaga ortgan?",
+      "answers": [
+        "30 g",
+        "12 g",
+        "12 mg",
+        "120 mg"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "20°C temperaturada 5 m³ havoda 50 g suv bug‘i bo‘lsa, havoning nisbiy namligi qanday? (20°C temperaturada to‘yingan suv bug‘ining zichligi 17,3 g/m³).",
+      "answers": [
+        "65%",
+        "62%",
+        "58%",
+        "76%"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Namligi 15% bo‘lgan 1 m³ havo namligi 30% bo‘lgan 2 m³ havo bilan aralashtirildi. Aralashma o‘sha haroratda 3 m³ hajmni egallaydi. Aralashmaning namligini toping.",
+      "answers": [
+        "25%",
+        "21,5%",
+        "26,7%",
+        "28%"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Sig‘imi 2 litr bo‘lgan berk idishda 20°C temperaturada to‘yingan suv bug‘i bor. Temperatura 5°C gacha pasayishida idishda qancha suv hosil bo‘ladi? (to‘yingan bug‘ning zichligi 20°C da 17,3 g/m³; 5°C da 6,8 g/m³).",
+      "answers": [
+        "13,6 mg",
+        "21 mg",
+        "10,6 mg",
+        "5,33 mg"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Xona havosining namligi 90%. Agar psixrometrning T1 – quruq termometrning ko‘rsatkichi, T2 – ho‘l termometrning ko‘rsatkichi bo‘lsa, quyidagi munosabatlarning qaysi biri to‘g‘ri?",
+      "answers": [
+        "T1 > T2",
+        "T1 < T2",
+        "T1 = T2",
+        "T1 = T2 + 90K"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Psixrometrning quruq va nam termometrlari ko‘rsatkichlarining farqi ortsa, havoning nisbiy namligi qanday o‘zgaradi?",
+      "answers": [
+        "kamayadi",
+        "ortadi",
+        "o‘zgarmaydi",
+        "ortishi ham kamayishi ham mumkin"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Psixrometrning quruq va nam termometrlari ko‘rsatkichlarining farqi kamaysa, havoning nisbiy namligi qanday o‘zgaradi?",
+      "answers": [
+        "kamayadi",
+        "ortadi",
+        "o‘zgarmaydi",
+        "ortishi ham kamayishi ham mumkin"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Psixrometr quruq termometrni temperaturasi o‘zgarmas qoldirib nam termometr temperaturasini pasaytirsak havoning nisbiy namligi qanday o‘zgaradi?",
+      "answers": [
+        "kamayadi",
+        "ortadi",
+        "o‘zgarmaydi",
+        "ortishi ham kamayishi ham mumkin"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Havoning absolyut namligini aniqlang (kg/m³). Havodagi bug‘ning parsial bosimi 14 kPa, temperatura 60°C (T = 333 K). Suvning molyar massasi 0,018 kg/mol.",
+      "answers": [
+        "0,065",
+        "0,091",
+        "0,65",
+        "0,340"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Xonadagi havoning temperaturasi 19°C ga suv bug‘ining partsial bosimi esa 1,1 kPa ga teng. Agar bu temperaturada to‘yingan suv bug‘ining bosimi 2,2 kPa ga teng bo‘lsa, shu xonadagi nisbiy namlik qanday % ?",
+      "answers": [
+        "40",
+        "50",
+        "55",
+        "60"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Sig‘imi 2 l bo‘lgan berk idishda 20°C da to‘yingan suv bug‘i bor. Temperatura 5°C gacha pasayishida idishda qancha suv hosil bo‘ladi (mg)? 278 K, 291 K, 293 K temperaturada to‘yingan bug‘ zichliklari mos ravishda 6,8 g/m³, 15,4 g/m³, 17,3 g/m³.",
+      "answers": [
+        "12",
+        "21",
+        "42",
+        "82"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "To‘yingan suv bug‘i molekulalarining konsentratsiyasi 10°C dagiga qaraganda 20°C da necha marta katta bo‘ladi? 283 K, 291 K, 293 K temperaturada to‘yingan bug‘ zichliklari mos ravishda 9,4 g/m³, 15,4 g/m³, 17,3 g/m³.",
+      "answers": [
+        "2,83 marta",
+        "1,83 marta",
+        "1,21 marta",
+        "1,12 marta"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Kunduzi 20°C da havoning nisbiy namligi 60% bo‘lgan. Agar tunda temperatura 8°C gacha pasaysa, har bir kub metr havodan qancha suv shudring ko‘rinishida ajralib chiqadi (g)? 281 K, 284 K, 293 K temperaturada to‘yingan bug‘ zichliklari mos ravishda 8,3 g/m³, 10 g/m³, 17,3 g/m³.",
+      "answers": [
+        "0,4",
+        "21",
+        "3,4",
+        "2,1"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Kechqurun 16°C da havoning nisbiy namligi 55% ga teng. Agar tunda temperatura 8°C gacha pasaysa, shudring tushadimi? 281 K, 284 K, 289 K temperaturada to‘yingan bug‘ zichliklari mos ravishda 8,3 g/m³, 10 g/m³, 13,6 g/m³.",
+      "answers": [
+        "Shudring tushmaydi",
+        "Ha tushadi",
+        "Tushishi ham tushmasligi ham mumkin",
+        "Noma’lum"
+      ],
+      "correct": 0
+    }
+  ]
+}

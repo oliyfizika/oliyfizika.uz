@@ -1,0 +1,209 @@
+{
+  "id": 36,
+  "title": "36-Mavzu | Molekulalar massasi. Modda miqdori",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 37,
+  "questions": [
+    {
+      "text": "16 g kislorod moddasining miqdorini (mol) aniqlang. M = 32 · 10⁻³ kg/mol.",
+      "answers": ["0,5", "1", "2", "16"],
+      "correct": 0
+    },
+    {
+      "text": "450 mol kislorodning massasini aniqlang (kg).",
+      "answers": ["4,5", "7,2", "9", "14,4"],
+      "correct": 3
+    },
+    {
+      "text": "Modda miqdorining birligi nima?",
+      "answers": ["kg", "N", "mol", "kg/mol"],
+      "correct": 2
+    },
+    {
+      "text": "Modda miqdorlari teng bo‘lgan qalay va qo‘rg‘oshindan qilingan jismlarning massalarini va hajmlarini taqqoslang. MSn = 116,7 g/mol, ωSn = 7300 kg/m³, MPb = 207,2 g/mol, ωPb = 11300 kg/m³.",
+      "answers": [
+        "Qo’rg’oshin jismning massasi 1,7 marta, hajmi 1,1 marta katta",
+        "Qalay jismning massasi 1,7 marta, hajmi 1,1 marta katta",
+        "Qo’rg’oshin jismning massasi 1,7 marta, hajmi 1,1 marta kichik",
+        "Qalay jismning massasi 1,7 marta, hajmi 1,1 marta kichik"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "1 g karbonat angidrid (CO2) da qancha molekula bor?",
+      "answers": [
+        "1,4 · 10²²",
+        "1,4 · 10¹⁹",
+        "2,8 · 10²²",
+        "1,2 · 10²²"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 1 mm li suv tomchisida nechta molekula bor? NA = 6,02 · 10²³ mol⁻¹.",
+      "answers": [
+        "1,75 · 10¹⁸",
+        "2 · 10¹⁷",
+        "1,75 · 10²⁹",
+        "1,75 · 10¹⁹"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Molekulalar soni 3 · 10²³ bo‘lgan azotning massasini hisoblang (g)? M = 28 g/mol.",
+      "answers": ["14", "28", "56", "84"],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 135 g bo‘lgan alyuminiy buyumda qancha atom borligini toping. MAl = 27 g/mol.",
+      "answers": [
+        "2 · 10²⁴",
+        "6 · 10²⁴",
+        "1,5 · 10²⁴",
+        "3 · 10²⁴"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "36 sm³ hajmdagi suvda nechta molekula bor? M = 18 g/mol; NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "3,6 · 10²⁴",
+        "2,4 · 10²⁴",
+        "1,2 · 10²⁴",
+        "6 · 10²⁴"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 3 g bo‘lgan suv tomchisida nechta elektron bor? NA = 6 · 10²³ mol⁻¹.",
+      "answers": ["10²⁶", "10²⁵", "10²⁴", "10²³"],
+      "correct": 2
+    },
+    {
+      "text": "Berk idishdagi gaz molekulalari soni 68 marta kamaytirildi. Gazning massasi qanday o‘zgaradi?",
+      "answers": [
+        "68 marta kamayadi",
+        "68 marta ortadi",
+        "34 marta kamayadi",
+        "34 marta ortadi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Massasi 20 g bo‘lgan sof oltin uzukda nechta oltin atomi bo‘ladi? Oltinning molyar massasi 197 g/mol ga teng. NA = 6 · 10²³ 1/mol.",
+      "answers": [
+        "6,1 · 10²²",
+        "5,1 · 10²²",
+        "6,7 · 10²²",
+        "3,1 · 10²³"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "3 l suvdagi molekulalar sonini aniqlang. Avogadro soni 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "1 · 10²⁵",
+        "3,3 · 10²⁵",
+        "3,3 · 10²⁶",
+        "1 · 10²⁶"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Moddaning molyar massasi XBS da qanday birlikka ega?",
+      "answers": [
+        "kg · m⁻³ · mol",
+        "kg · mol",
+        "kg · m⁻³",
+        "kg · mol⁻¹"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Molekulyar kinetik nazariyaning asosiy qoidalari qaysi javobda nisbatan to‘liq bayon qilingan?",
+      "answers": [
+        "Har qanday jism molekulalardan tuzilgan, ular betartib harakatda bo’ladi, ular orasida o’zaro ta’sir kuchlari mavjud.",
+        "Modda mayda zarralardan tashkil topgan va ular orasida o’zaro ta’sir kuchlari mavjud.",
+        "Modda mayda bo’laklardan tuziladi va ular fazoni uzluksiz to’ldiradi.",
+        "Modda elementar zarralardan tuziladi va ular bir-biriga tinimsiz aylanib turadi."
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Oltinning nisbiy atom massasi 197 g/mol ga teng. Massasi 3,94 g bo‘lgan oltin uzukda nechta oltin atomi bor? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "2,4 · 10²²",
+        "6 · 10²¹",
+        "1,1 · 10²¹",
+        "1,2 · 10²²"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "m = 49 g bo‘lgan sulfat kislotalarda (H2SO4) nechta molekula bor? Atomning nisbiy massalari: Ar(H) = 1, Ar(S) = 32 va Ar(O) = 16, NA = 6 · 10²³ mol⁻¹.",
+      "answers": ["10²³", "3 · 10²³", "4 · 10²³", "5 · 10²³"],
+      "correct": 1
+    },
+    {
+      "text": "m = 96 g metanda (CH4) qancha molekula borligini aniqlang. NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "10²³",
+        "3,6 · 10²⁴",
+        "3,6 · 10²³",
+        "5 · 10²³"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Zichligi 4,4 kg/m³ bo‘lgan karbonat angidrid gazining 1 m³ hajmida qancha molekula bor? M = 44 · 10⁻³ kg/mol; NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "1 · 10²⁵",
+        "1,1 · 10²⁴",
+        "4 · 10²⁵",
+        "6 · 10²⁵"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "1 g to‘la dissotsiyalangan azotda molekulalar soni qancha bo‘lishini aniqlang. MAz = 28 g/mol.",
+      "answers": [
+        "26 · 10²²",
+        "43 · 10²²",
+        "2,6 · 10²²",
+        "4,3 · 10²²"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Avogadro soni deb qanday fizik kattalikka aytiladi?",
+      "answers": [
+        "12 g ugleroddagi atomlar soniga",
+        "1 mol moddadagi zarralar soniga",
+        "32 g kisloroddagi molekulalar soniga",
+        "2 g vodoroddagi molekulalar soniga"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Molyar massa deb nimaga aytiladi?",
+      "answers": [
+        "0°C da 1 m³ hajmdagi modda massasiga",
+        "1 mol moddaning massasiga",
+        "Uglerod atomi massasining 1/12 qismiga nisbatiga",
+        "NA = 6 · 10²³ ta zarrachadan tashkil topgan modda massasiga"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Uranning nisbiy atom massasi 238 m.a.b. ga teng. Bitta uran atomining massasini aniqlang (g). 1 m.a.b. = 1,66 · 10⁻²⁷ kg.",
+      "answers": [
+        "3,95 · 10⁻²³",
+        "3,95 · 10⁻²²",
+        "238 · 10⁻⁴",
+        "3,95 · 10⁻²⁶"
+      ],
+      "correct": 1
+    }
+  ]
+}

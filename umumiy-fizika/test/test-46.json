@@ -1,0 +1,319 @@
+{
+  "id": 46,
+  "title": "46-Mavzu | Ichki energiya",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 47,
+  "questions": [
+    {
+      "text": "Jismning (moddaning) ichki energiyasi deganda, nimani tushunamiz:\n(a) 1 kg massali moddaning temperaturasini 1 gradusga oshirish uchun sarflangan issiqlik miqdori;\n(b) issiqlik almashishida jism olgan yoki uzatgan issiqlik miqdori;\n(c) moddaning temperaturasini 1 gradusga oshirish uchun sarflangan issiqlik miqdori;\n(d) jismni tashkil etuvchi barcha molekulalarning kinetik va o‘zaro ta’sir potensial energiyalarining yig‘indisi.",
+      "answers": ["4", "3", "2", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Temperaturasi 361 K bo‘lgan 4 mol bir atomli gazning ichki energiyasini toping (kJ).",
+      "answers": ["20", "18", "30", "38"],
+      "correct": 1
+    },
+    {
+      "text": "Ichki energiyasi 20 kJ bo‘lgan 6 mol bir atomli gazning temperaturasini toping (K).",
+      "answers": ["267,4", "607,5", "165,9", "982,8"],
+      "correct": 0
+    },
+    {
+      "text": "Temperaturasi 127°C bo‘lgan bir atomli gazning ichki energiyasi 74,79 kJ ga teng. Gazning modda miqdorini toping (mol).",
+      "answers": ["28", "18", "30", "15"],
+      "correct": 3
+    },
+    {
+      "text": "1 mol miqdordagi bir atomli ideal gazning ichki energiyasini aniqlovchi ifodani toping:\n(a) 3kT/2\n(b) 3RT/2\n(c) 3NAkT/2\n(d) kT/2",
+      "answers": ["1", "1 va 2", "2 va 3", "4"],
+      "correct": 2
+    },
+    {
+      "text": "1 mol bir atomli ideal gaz molekulalarining o‘rtacha kinetik energiyalari yig‘indisi qaysi ifodada to‘g‘ri ko‘rsatilgan?",
+      "answers": ["Ek = 3kT", "Ek = 3RT/2", "Ek = 3kT/2", "Ek = 3RT"],
+      "correct": 1
+    },
+    {
+      "text": "Temperaturasi -73°C bo‘lgan bir mol bir atomli ideal gazning ichki energiyasini toping (J).",
+      "answers": ["1246", "1662", "2077", "2493"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda bir atomli ideal gaz ichki energiyasining absolut temperaturaga bog‘lanish grafigi tasvirlangan. Grafikdan foydalanib, gazning modda miqdorini (mol) aniqlang. R = 8,31 J/(mol·K).",
+      "images": "../rasmlar46/rasm8.png",
+      "answers": ["0,5", "1,6", "10", "16"],
+      "correct": 1
+    },
+    {
+      "text": "225 K temperaturali bir atomli gaz berilgan. Undagi molekulalar soni 7 · 10²⁴ ta bo‘lsa, gaz ichki energiyasini toping (kJ).",
+      "answers": ["25,8", "21,8", "32,6", "28,1"],
+      "correct": 2
+    },
+    {
+      "text": "Massasi 200 g bo‘lgan geliy gazining temperaturasi 500 K ga teng. Uning ichki energiyasini toping (kJ). µ = 4 g/mol.",
+      "answers": ["564,45", "345,52", "876,065", "311,625"],
+      "correct": 3
+    },
+    {
+      "text": "Temperaturasi -73°C va ichki energiyasi 2493 J bo‘lgan geliy gazining massasini aniqlang (g).",
+      "answers": ["3", "4", "6", "17"],
+      "correct": 1
+    },
+    {
+      "text": "Ichki energiyasi 50 kJ bo‘lgan neon gazining massasi 1,2 kg ga teng. Uning haroratini toping (K). µ = 20 g/mol.",
+      "answers": ["64,45", "35,26", "66,85", "11,15"],
+      "correct": 2
+    },
+    {
+      "text": "Ichki energiyasi 100 kJ bo‘lgan bir atomli gazning massasi 334,27 g va temperaturasi 327°C ga teng. Uning molyar massasini toping (g/mol).",
+      "answers": ["25", "21", "32", "28"],
+      "correct": 0
+    },
+    {
+      "text": "10 litr hajmli bir atomli gazning bosimi 40 kPa ga teng. Uning ichki energiyasini toping (J).",
+      "answers": ["250", "420", "130", "600"],
+      "correct": 3
+    },
+    {
+      "text": "Bosimi 24 Pa bo‘lgan bir atomli gazning ichki energiyasi 36 J ga teng. Uning hajmini toping (m³).",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 0
+    },
+    {
+      "text": "Idishning hajmi 2 litr, undagi geliyning bosimi 10 kPa. Gazning ichki energiyasi (J) nimaga teng?",
+      "answers": ["20", "60", "30", "45"],
+      "correct": 2
+    },
+    {
+      "text": "Agar bir atomli ideal gazning hajmi 2 m³ va ichki energiyasi 1500 J bo‘lsa, uning bosimi qanday (Pa)?",
+      "answers": ["500", "1500", "1000", "300"],
+      "correct": 0
+    },
+    {
+      "text": "Bosimi 4 · 10⁵ Pa bo‘lgan 1 m³ bir atomli ideal gaz molekulalarining kinetik energiyalari yig‘indisini toping (J).",
+      "answers": ["2 · 10⁵", "6 · 10⁵", "8 · 10⁵", "12 · 10⁵"],
+      "correct": 1
+    },
+    {
+      "text": "Molekulalarining o‘rtacha kvadratik tezligi 500 m/s bo‘lgan 20 g massali bir atomli gazning ichki energiyasi necha Joul bo‘ladi?",
+      "answers": ["50", "250", "200", "2500"],
+      "correct": 2
+    },
+    {
+      "text": "Bosimlari va hajmlari bir xil bo‘lgan kislorod va vodorod gazlarining U₁ va U₂ ichki energiyalarini solishtiring.",
+      "answers": ["U1 = 32U2", "U1 = 16U2", "U1 = U2", "U2 = 16U1"],
+      "correct": 2
+    },
+    {
+      "text": "Bosimlari p₁ = 2p₂, hajmlari V₂ = 2V₁ bo‘lgan bir atomli ideal gazlarining ichki energiyalarini taqqoslang.",
+      "answers": ["U1 = 4U2", "U1 = 2U2", "U1 = U2", "U2 = 2U1"],
+      "correct": 2
+    },
+    {
+      "text": "Argon va geliy gazlari bir xil massaga ega bo‘lib, bir xil sharoitda turibdi. Ularning ichki energiyalarini taqqoslang. (µAr = 40 g/mol, µHe = 4 g/mol)",
+      "answers": ["geliyniki 10 marta katta.", "argonniki 10 marta katta.", "barobar.", "argonniki 4 marta kichik."],
+      "correct": 0
+    },
+    {
+      "text": "Temperaturalari bir xil bo‘lgan teng massali geliy va argonning ichki energiyalari nisbati qanday bo‘ladi? Geliyning molyar massasi 4 g/mol, argonniki 40 g/mol.",
+      "answers": ["1", "2", "10", "1/4"],
+      "correct": 2
+    },
+    {
+      "text": "Bir atomli gaz molekulalarining konsentratsiyasi n bo‘lsa, T haroratda V hajmni egallagan gazning ichki energiyasi qanday bo‘ladi?",
+      "answers": ["3mV / (2µ) RT", "3nV / 2 RT", "3m / 2µ RT", "1,5 n V k T"],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gaz pV diagrammada qaysi nuqtaga mos keluvchi holatda eng katta ichki energiyaga ega bo‘ladi?",
+      "images": "../rasmlar46/rasm25.png",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 2
+    },
+    {
+      "text": "Grafikda p–V koordinatalarda ideal gaz holatining o‘zgarishi ifodalangan. Gazning ichki energiyasi qaysi nuqtasiga mos holatda eng katta qiymatga erishadi?",
+      "images": "../rasmlar46/rasm26.png",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gaz holatining o‘zgarish diagrammasida qaysi nuqtaga ichki energiyaning eng katta qiymati mos keladi?",
+      "images": "../rasmlar46/rasm27.png",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gaz holatining o‘zgarish diagrammasidagi qaysi nuqtaga ichki energiyaning eng kichik qiymati mos keladi?",
+      "images": "../rasmlar46/rasm28.png",
+      "answers": ["1", "2", "3", "4"],
+      "correct": 0
+    },
+    {
+      "text": "p–ρ koordinatalarda gazning holatini ifodalovchi nuqtalar berilgan (p – bosim, ρ – zichlik). Bu nuqtalardan qaysi birida gazning ichki energiyasi eng katta bo‘ladi?",
+      "images": "../rasmlar46/rasm29.png",
+      "answers": ["1", "4", "2", "3"],
+      "correct": 0
+    },
+    {
+      "text": "Boshlang‘ich temperaturasi 250 K va oxirgi temperaturasi 400 K bo‘lgan 12 g geliyning ichki energiya o‘zgarishini toping (J).",
+      "answers": ["5421,05", "1894,04", "2345,54", "5609,25"],
+      "correct": 3
+    },
+    {
+      "text": "Temperaturasi 400 K bo‘lgan 3 mol argon gaziga issiqlik berib, temperaturasini 460 K ga yetkazildi. Uning ichki energiya o‘zgarishini toping (J).",
+      "answers": ["5645,5", "2243,7", "9804,3", "5670,1"],
+      "correct": 1
+    },
+    {
+      "text": "2 mol geliy 20°C dan -80°C gacha sovitilganda, uning ichki energiyasi necha kJ kamayadi?",
+      "answers": ["8,31", "25", "2,5", "16,62"],
+      "correct": 2
+    },
+    {
+      "text": "4 · 10²³ ta molekulaga ega bo‘lgan bir atomli ideal gazning temperaturasi 100 K ga ortganda, ichki energiyasi necha J ga o‘zgaradi? NA = 6 · 10²³ mol⁻¹.",
+      "answers": ["8,31", "38,1", "415", "831"],
+      "correct": 3
+    },
+    {
+      "text": "Hajmi 80 l bo‘lgan ballonda bir atomli ideal gaz bor. Uning bosimi 150 kPa dan 220 kPa gacha oshsa ichki energiyasi qancha oshadi (kJ)?",
+      "answers": ["8,4", "3,8", "6,6", "9,7"],
+      "correct": 0
+    },
+    {
+      "text": "Bosimi 200 kPa bo‘lgan bir atomli ideal gazning hajmi izobarik ravishda 75 l dan 195 l gacha ortdi. Uning ichki energiyasi o‘zgarishini toping (kJ)?",
+      "answers": ["45", "93", "84", "36"],
+      "correct": 3
+    },
+    {
+      "text": "Bir atomli ideal gaz izobarik ravishda 0,05 m³ ga kengaydi. Agar gazning bosimi 10⁵ Pa bo‘lsa, gazning ichki energiyasi necha kJ ortgan?",
+      "answers": ["5,5", "8", "7,5", "9"],
+      "correct": 2
+    },
+    {
+      "text": "Gazning izotermik kengayishida uning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["ortadi", "o‘zgarmaydi", "kamayadi", "ichki energiya ixtiyoriy bo‘lishi mumkin"],
+      "correct": 1
+    },
+    {
+      "text": "Metall silindrdagi gaz porshen bilan izotermik siqilganda, uning hajmi 5 marta kamaydi. Bunda gazning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["5 marta ortadi", "o‘zgarmaydi", "5 marta kamayadi", "2,5 marta ortadi"],
+      "correct": 1
+    },
+    {
+      "text": "Ideal gaz bosimi va absolut temperaturasi 2 marta oshsa, uning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "2 marta kamayadi", "2 marta oshadi", "4 marta kamayadi"],
+      "correct": 2
+    },
+    {
+      "text": "Ideal gaz bir holatdan ikkinchi holatga 3 xil usul bilan o‘tkazildi: 1 → a → 2, 1 → b → 2, 1 → c → 2. Bu usullarda gazning ichki energiya o‘zgarishini taqqoslang.",
+      "images": "../rasmlar46/rasm40.png",
+      "answers": ["ΔUa > ΔUb > ΔUc", "ΔUa < ΔUb < ΔUc", "ΔUa = ΔUb = ΔUc", "ΔUa = ΔUb = ΔUc = 0"],
+      "correct": 2
+    },
+    {
+      "text": "Grafikda gazning hajmi va ichki energiyasining bog‘lanishi tasvirlangan. 2-3 jarayonda gazning zichligi va bosimi qanday o‘zgargan?",
+      "images": "../rasmlar46/rasm41.png",
+      "answers": ["o‘zgarmagan, ortgan", "ortgan, kamaygan", "pasaygan, ortgan", "ortgan, ortgan"],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gaz ustida grafikda ko‘rsatilganidek ikki xil izotermik jarayon bajarildi. Birinchi holda gazning ichki energiyasi 111 kJ ni tashkil etgan. Ikkinchi holda esa birinchisidan 37 kJ ga farq qilgan. Agar ikkala jarayondagi temperaturalar farqi 125 K ni tashkil qilgan bo‘lsa, ikkinchi holdagi temperaturani (K) aniqlang.",
+      "images": "../rasmlar46/rasm42.png",
+      "answers": ["227", "375", "250", "500"],
+      "correct": 3
+    },
+    {
+      "text": "Bir xil miqdorda olingan H₂, O₂, N₂ gazlarining temperaturasi bir xil orttirilsa, qaysi gazning ichki energiyasi ko‘proq o‘zgaradi?",
+      "answers": ["H2", "O2", "N2", "barchasiniki bir xil o‘zgaradi"],
+      "correct": 3
+    },
+    {
+      "text": "Gaz bosimini ifodalovchi quyidagi munosabatlarning qaysi biri to‘g‘ri emas?",
+      "answers": ["p = nkT", "p = 2/3 nEk", "p = 1/2 ρ v²", "p = 2U / (3V)"],
+      "correct": 2
+    },
+    {
+      "text": "Izobarik qizdirilgan bir atomli gazning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "kamayadi", "ortadi", "istalgancha o‘zgarishi mumkin"],
+      "correct": 2
+    },
+    {
+      "text": "Izobarik kengayganida ideal gazning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "kamayadi", "ortadi", "javob bosimga bog‘liq"],
+      "correct": 2
+    },
+    {
+      "text": "Izobarik siqilganda ideal gazning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "kamayadi", "ortadi", "ideal gazning ichki energiyasi hamma vaqt nolga teng"],
+      "correct": 1
+    },
+    {
+      "text": "Grafikda tasvirlangan jarayonda ideal gazning ichki energiyasi ...",
+      "images": "../rasmlar46/rasm48.png",
+      "answers": ["oldin ortadi, keyin kamayadi", "ortadi", "kamayadi", "o‘zgarmaydi"],
+      "correct": 1
+    },
+    {
+      "text": "Agar ideal gaz bosimi va hajmi 2 marta oshsa, uning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["2 marta oshadi", "8 marta oshadi", "2 marta kamayadi", "4 marta oshadi"],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gazning bosimi 2 marta ortsa va hajmi 2 marta kamaysa, uning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "4 marta kamayadi", "4 marta ortadi", "2 marta kamayadi"],
+      "correct": 0
+    },
+    {
+      "text": "Ideal gazning bosimi 2 marta kamayib, hajmi 3 marta ortsa, uning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["6 marta kamayadi", "6 marta ortadi", "1,5 marta kamayadi", "1,5 marta ortadi"],
+      "correct": 3
+    },
+    {
+      "text": "Bir atomli ideal gazning bosimi 50% kamayib, hajmi 2 marta oshsa, uning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["o‘zgarmaydi", "4 marta kamayadi", "4 marta ortadi", "2 marta kamayadi"],
+      "correct": 0
+    },
+    {
+      "text": "Ideal gaz izoxorik ravishda sovitilganda ichki energiyasi 1,5 marta kamaygan. Uning hajmi qanday o‘zgargan?",
+      "answers": ["o‘zgarmagan", "1,5 marta kamaygan", "2,25 marta kamaygan", "2,25 marta ortgan"],
+      "correct": 0
+    },
+    {
+      "text": "Bir atomli gazning hajmi 3 marta kamayganda, bosimi 50% ga oshgan bo‘lsa, uning ichki energiyasi qanday o‘zgargan?",
+      "answers": ["3 marta oshgan", "2 marta kamaygan", "3 marta kamaygan", "o‘zgarmagan"],
+      "correct": 1
+    },
+    {
+      "text": "Agar bir atomli ideal gazning bosimi 3 marta ortib, hajmi 2 marta kamaygan bo‘lsa, uning ichki energiyasi qanday o‘zgaradi? (m = const)",
+      "answers": ["6 marta oshadi", "3 marta oshadi", "3 marta kamayadi", "1,5 marta oshadi"],
+      "correct": 3
+    },
+    {
+      "text": "Og‘zi ochiq idish qizdirildi. Idish ichidagi havoning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["ortadi", "o‘zgarmaydi", "avval kamayadi, keyin ortadi", "kamayadi"],
+      "correct": 1
+    },
+    {
+      "text": "Xonada pechka yoqilganda, xonadagi havoning ichki energiyasi qanday o‘zgaradi?",
+      "answers": ["kamayadi", "ortadi", "o‘zgarmaydi", "tashqi muhit temperaturasiga bog‘liq"],
+      "correct": 2
+    },
+    {
+      "text": "Ballondagi gazning temperaturasi 100 K ga ortganda, uning bosimi 2 marta oshgan bo‘lsa, ichki energiyasi necha marta ortgan?",
+      "answers": ["1,5", "2", "4", "25"],
+      "correct": 1
+    },
+    {
+      "text": "Agar ballondagi gazning 25% chiqib ketishi natijasida temperatura 1,2 marta pasaysa, ichki energiya necha marta kamayadi?",
+      "answers": ["4,8", "3,2", "1,6", "2,4"],
+      "correct": 2
+    },
+    {
+      "text": "Ballondagi gazning yarmi chiqib ketganda, bosim 3 marta kamaygan bo‘lsa, gazning ichki energiyasi qanday o‘zgargan?",
+      "answers": ["1,5 marta kamaygan", "3 marta oshgan", "3 marta kamaygan", "1,5 marta oshgan"],
+      "correct": 2
+    }
+  ]
+}

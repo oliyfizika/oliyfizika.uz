@@ -1,0 +1,176 @@
+{
+  "id": 40,
+  "title": "40-Mavzu | Izotermik jarayon",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 41,
+  "questions": [
+    {
+      "text": "Boyl-Mariott ideal gaz uchun qanday bog‘lanishni o‘rgangan?",
+      "answers": ["p → V", "p → T", "V → T", "p → 1/V"],
+      "correct": 3
+    },
+    {
+      "text": "Qaysi jarayonda molekulalarning o‘rtacha kinetik energiyasi o‘zgarmaydi?",
+      "answers": ["izoxorik", "izotermik", "adiabatik", "izobarik"],
+      "correct": 1
+    },
+    {
+      "text": "Izotermik jarayonda ...",
+      "answers": [
+        "p, V va T o‘zgaradi va tashqi muhit bilan issiqlik almashinish yuz bermaydi.",
+        "V va T o‘zgaradi, p o‘zgarmaydi.",
+        "p va T o‘zgaradi, V o‘zgarmaydi.",
+        "p va V o‘zgaradi, T o‘zgarmaydi."
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Izotermik jarayon deb qanday jarayonga aytiladi?",
+      "answers": [
+        "doimiy issiqlik sig‘imida ...",
+        "doimiy bosim ostida ...",
+        "doimiy haroratda ...",
+        "issiqlik almashmasdan ..."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Molekulyar kinetik nazariya asosida Boyl-Mariot qonunini qanday tushuntirish mumkin?",
+      "answers": [
+        "Gaz hajmi kamayganda uning zichligi ortadi, urilishlar soni ortadi",
+        "Gaz hajmi ortganda uning zichligi ortadi, urilishlar soni ortadi",
+        "Gaz hajmi kamayganda uning zichligi ortadi, urilishlar soni kamayadi",
+        "Gaz hajmi kamayganda uning zichligi o’zgarmaydi, urilishlar soni ortadi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Rezina kameraga 780 mm.sim.ust. bosim ostida havo qamalgan. Kamera shunday siqildiki, uning hajmi dastlabki holatdagiga nisbatan 2/5 qism kamaydi. Bunda bosim qanday bo‘ladi (Pa)?",
+      "answers": ["1,16 · 10⁵", "2,35 · 10⁵", "0,75 · 10⁵", "1,74 · 10⁵"],
+      "correct": 3
+    },
+    {
+      "text": "Hajmi 1 l bo‘lgan idishda 183°C temperaturada 1,6 · 10²² gaz molekulasi bor. Agar idish hajmi 5 marta izotermik kengaytirilsa, gazning p bosimi qanday bo‘ladi (kPa)?",
+      "answers": ["15", "65", "20", "40"],
+      "correct": 2
+    },
+    {
+      "text": "Normal sharoitda gaz 1 m³ hajmni egallaydi. Shu gaz 4,9 · 10⁶ N/m² bosimda qanday hajmni egallaydi (m³)?",
+      "answers": ["0,4", "0,02", "0,08", "0,1"],
+      "correct": 1
+    },
+    {
+      "text": "Gazning hajmi 3 marta kamayganda uning bosimi necha marta o‘zgaradi? Molekulalarning o‘rtacha harakatlanish tezligi o‘zgarishsiz qoldi.",
+      "answers": ["3 marta ortadi", "√3 marta ortadi", "3 marta kamayadi", "o‘zgarmaydi"],
+      "correct": 0
+    },
+    {
+      "text": "Gazni 8 l hajmdan 6 l hajmgacha siqildi. Bosim esa 4 kPa ortdi. Boshlang‘ich bosim qancha bo‘lgan (kPa)?",
+      "answers": ["42", "24", "34", "12"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda o‘zgarmas massali ideal gazning turli holatlari ko‘rsatilgan (p-T grafigida bitta vertikal chiziqdagi 1, 2, 3, 4, 5 nuqtalar). Shu holatlarning qaysi birida gaz hajmi eng katta?",
+      "images": "../rasmlar40/rasm11.png",
+      "answers": ["1", "2", "3", "5"],
+      "correct": 0
+    },
+    {
+      "text": "Chizmadagi grafikda uchta izoterma tasvirlangan. Ulardan qaysi biri eng yuqori temperaturaga mos keladi?",
+      "images": "../rasmlar40/rasm12.png",
+      "answers": ["1", "3", "2", "barchasi bir xil"],
+      "correct": 0
+    },
+    {
+      "text": "V₁ = 10 l hajmli ballonni 100 kPa bosimda havo qamalgan. 30 l hajmli ballon bilan tutashtirilganda umumiy bosim 200 kPa ga teng bo‘lishi uchun V₂ hajmli ballonga qanday bosimda havo qamash lozim (kPa)?",
+      "answers": ["250", "275", "200", "233,3"],
+      "correct": 3
+    },
+    {
+      "text": "Hajmlari 3 l va 2 l bo‘lgan va kranli nay yordamida bir-biri bilan tutashtirilgan ikki idish turli gazlar bilan mos ravishda 20 kPa va 40 kPa bosim ostida to‘ldirilgan. Kran ochilgach temperatura o‘zgarmasa idishlarda qanday (kPa) bosim qaror topadi?",
+      "answers": ["28", "12", "16", "14"],
+      "correct": 0
+    },
+    {
+      "text": "40 l va 20 l hajmli ikki idishda temperaturasi bir xil, lekin bosimi har xil gaz bor. Idishlar tutashtirilgandan keyin ularda 1 MPa bosim qaror topdi. Agar kichik idishdagi boshlang‘ich bosim 600 kPa bo‘lsa, katta idishdagi boshlang‘ich bosim qancha bo‘lgan (MPa)?",
+      "answers": ["2,6", "1,2", "1,8", "3,6"],
+      "correct": 2
+    },
+    {
+      "text": "Ikki uchi berk gorizontal silindr porshen bilan uch seksiyaga bo‘lingan. Har bir seksiyaning bosimi va hajmi mos ravishda 2 · 10⁴ Pa va 36 sm³, 6 · 10⁴ Pa va 60 sm³, 5 · 10⁴ Pa va 104 sm³. Ikkinchi seksiyadagi gazning porshenlar bo‘shatilgandan keyingi bosimi (Pa) va hajmini aniqlang (sm³).",
+      "answers": [
+        "8 · 10⁴; 45",
+        "4 · 10⁴; 45",
+        "4 · 10⁴; 4,5",
+        "2 · 10⁴; 25"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Germetik, uzunligi 1 metr bo‘lgan silindr ishqalanishsiz harakatlana oladigan porshen bilan teng ikkiga bo‘lingan. Bir tomondagi bosim ikkinchisidan ikki marta katta bo‘lsa, porshen bo‘shatilganda qanday masofaga siljiydi (m)?",
+      "answers": ["0,4", "0,2", "0,33", "1/6"],
+      "correct": 3
+    },
+    {
+      "text": "Ko‘lning tubidagi havo pufagi suv yuziga chiqquncha 4 marta kattalashadi. Havzaning chuqurligi qanday (m)? T = const.",
+      "answers": ["25", "30", "15", "10"],
+      "correct": 1
+    },
+    {
+      "text": "20 m chuqurlikdagi ko‘lning tubidan havo pufakchasi suv sirtiga ko‘tarilganda, uning hajmi necha marta ortadi?",
+      "answers": ["2", "3", "7", "10"],
+      "correct": 1
+    },
+    {
+      "text": "Hovuz tubida hosil bo‘lgan gazli pufakcha diametri suv sirtiga yetganida 1,1 marta ortgan. Hovuzning chuqurligini (m) toping.",
+      "answers": ["1", "2", "3,3", "4"],
+      "correct": 2
+    },
+    {
+      "text": "5 m chuqurlikdagi suvda suzib yurgan havo pufakchasining hajmi 5 mm³ ga teng. Suv yuziga qalqib chiqqan havo pufakchasining hajmi qanday bo‘ladi (mm³)?",
+      "answers": ["5,3", "6", "6,5", "7,1"],
+      "correct": 2
+    },
+    {
+      "text": "Hovuz tubida hosil bo‘lgan pufakcha diametri suv sirtiga yetganida 1,2 marta oshgan. Hovuzning chuqurligini (m) toping.",
+      "answers": ["6,68", "5,48", "6,24", "7,28"],
+      "correct": 3
+    },
+    {
+      "text": "Hajmi 12 l bo‘lgan avtomobil kamerasidagi bosim 35 atm ga teng bo‘lishi kerak. Har bir dam berishda normal bosimda 500 sm³ havo oladigan nasos bilan necha marta dam berish kerak bo‘ladi?",
+      "answers": ["120", "168", "840", "420"],
+      "correct": 2
+    },
+    {
+      "text": "Boyl-Mariot qonunini tekshirish uchun mo‘ljallangan naychada uzunligi 75 mm bo‘lgan simob ustuni bor. Naycha yopiq uchi pastga qaratilgan holda vertikal qo‘yilganda havo ustunining uzunligi 120 mm, naycha gorizontal qo‘yilganda esa 132 mm bo‘lgan. Atmosfera bosimini aniqlang (Pa).",
+      "answers": ["2,0 · 10⁵", "1,0 · 10²", "1,0 · 10⁵", "1,0 · 10⁴"],
+      "correct": 2
+    },
+    {
+      "text": "Hajmi 12 l bo‘lgan avtomobil kamerasidagi bosim 35 atm ga teng bo‘lishi kerak. Agar kamera dastlabki holatda bo‘sh bo‘lsa (1 atm), har bir dam berishda 500 sm³ havo oladigan nasos bilan necha marta dam berish kerak bo‘ladi?",
+      "answers": ["816", "470", "340", "940"],
+      "correct": 0
+    },
+    {
+      "text": "Porshenli nasos bilan 2 l hajmli ballondan havosi so‘rib olinmoqda. Porshenning har bir yurishida ballondagi bosim 1,2 marta kamayadi. Nasos so‘rish kamerasining hajmini aniqlang (l).",
+      "answers": ["0,16", "1,2", "0,2", "0,4"],
+      "correct": 3
+    },
+    {
+      "text": "Agar porshenli nasosning har bir harakatida bosim 1,2 marta kamaysa, 4 l hajmli ballondan havoni so‘rib olish uchun nasosning kamerasining hajmi qanday bo‘lishi kerak (l)?",
+      "answers": ["8", "0,8", "0,2", "2"],
+      "correct": 1
+    },
+    {
+      "text": "Vertikal o‘rnatilgan ostki uchi kavsharlangan shisha nayning ichida geliy gazi va gazning ustida qalinligi 6 sm bo‘lgan simob ustuni bor. Nayning ochiq uchi pastga qaratib to‘nkarilganda, undagi simob ustunining qalinligi 5 sm bo‘lib qoldi. Nayning uzunligini toping (sm). T = const.",
+      "answers": ["14,4", "17,4", "8,7", "6,45"],
+      "correct": 3
+    },
+    {
+      "text": "Vertikal o‘rnatilgan ostki uchi kavsharlangan shisha nayning ichida geliy gazi va ustida 2 sm bo‘lgan simob ustuni bor. Nayning ochiq uchi pastga qarab to‘nkarilganda undagi simob ustining qalinligi 1 sm bo‘lib qoldi. Nayning uzunligini toping (sm).",
+      "answers": ["39,5", "32", "36,8", "27"],
+      "correct": 3
+    }
+  ]
+}

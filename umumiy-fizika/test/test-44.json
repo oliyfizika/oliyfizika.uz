@@ -1,0 +1,229 @@
+{
+  "id": 44,
+  "title": "44-Mavzu | Kapillarlik hodisasi. Kapillar nay",
+  "subtitle": "Kamida 80% natija keyingi bo‘limni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 45,
+  "questions": [
+    {
+      "text": "Agar suyuqlik molekulalari orasidagi o‘zaro ta’sir kuchi suyuqlik molekulasi bilan qattiq jism molekulasi orasidagi o‘zaro ta’sir kuchidan kichik bo‘lsa, qanday hodisa ro‘y beradi?",
+      "answers": [
+        "Dinamik muvozanat",
+        "Qaynash",
+        "Sublimatsiya",
+        "Xo‘llash"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Agar suyuqlik molekulalari orasidagi o‘zaro ta’sir kuchi suyuqlik molekulasi bilan qattiq jism molekulasi orasidagi o‘zaro ta’sir kuchidan katta bo‘lsa, qanday hodisa ro‘y beradi?",
+      "answers": [
+        "Dinamik muvozanat",
+        "Qaynash",
+        "Xo‘llamaslik",
+        "Xo‘llash"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Xo‘llaydigan suyuqlik uchun xo‘llash burchagi necha gradus bo‘lishi mumkin?",
+      "answers": [
+        "67",
+        "Barchasi to‘g‘ri",
+        "41",
+        "12"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Xo‘llaydigan suyuqlik uchun xo‘llash burchagi quyidagilardan qaysi biri bo‘lishi mumkin?",
+      "answers": [
+        "67",
+        "112",
+        "90",
+        "A va B javoblar to‘g‘ri"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Xo‘llamaydigan suyuqlik uchun xo‘llash burchagi necha gradus bo‘lishi mumkin?",
+      "answers": [
+        "105",
+        "150",
+        "71",
+        "A va B javoblar to‘g‘ri"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Radiusi 24 µm bo‘lgan kapillyar naychada kerosin qanday balandlikka ko‘tariladi (sm)? Kerosinning sirt taranglik koeffitsiyenti 24 mN/m ga, ρ = 0,8 g/sm³ ga teng.",
+      "answers": [
+        "25",
+        "12,5",
+        "50",
+        "75"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Diametri 0,3 mm bo‘lgan kapillyarda kerosin 20 mm ko‘tarildi. Kerosinning sirt taranglik koeffitsiyentini aniqlang (mN/m). ρ = 0,8 g/sm³.",
+      "answers": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Diametri 0,73 mm bo‘lgan kapillyar nayda suv qancha balandlikka (sm) ko‘tariladi? Suvning sirt taranglik koeffitsiyenti 73 mN/m ga teng.",
+      "answers": [
+        "2",
+        "1",
+        "4",
+        "6"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Yerda ho‘llovchi suyuqlik kapillyar bo‘ylab 4 sm ko‘tariladi. Erkin tushish tezlanishi 5 m/s² bo‘lgan sayyoralarda bu balandlik qanday bo‘ladi (sm)? Yerda g = 10 m/s².",
+      "answers": [
+        "8",
+        "2",
+        "4",
+        "1"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Suyuqlikning kapillyar naychadagi ko‘tarilish balandligi 10 mm. Radiusi 3 marta kichik bo‘lgan boshqa kapillyar naychada shu suyuqlik qanday balandlikka ko‘tariladi?",
+      "answers": [
+        "3 m",
+        "3 sm",
+        "0,3 m",
+        "30 mm"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Yer sirtida joylashgan kapillyar naychada suv 24 mm ga ko‘tariladi. Oyda erkin tushish tezlanishi Yerdagidan 6 marta kichik. Oyda shu naychadagi suv qanday (mm) balandlikka ko‘tariladi?",
+      "answers": [
+        "134",
+        "35",
+        "144",
+        "102"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Ichki diametrlari 1 va 2 mm bo‘lgan ikkita kapillyardagi suv sathlarining farqini aniqlang (mm). σ = 72 mN/m.",
+      "answers": [
+        "0",
+        "14,4",
+        "28,8",
+        "43,2"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Ikkita kapillyar nay ikkita suyuqlikka tushirilgan. 2-nayning radiusi 4 marta kichik va u sirt taranglik koeffitsiyenti 2 marta katta bo‘lgan suyuqlikka botirilgan. 2-nayda suyuqlik 1-naydagidan necha marta baland ko‘tariladi?",
+      "answers": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Ikkala uchi ochiq bo‘lgan shisha kapillyar pastki uchi bilan suvga tushirildi (σ = 73 mN/m). Agar suv shishani to‘liq ho‘llasa suv kapillyarda qanday balandlikka (mm) ko‘tariladi? Kapillyarning ichki radiusi 1 mm ga teng.",
+      "answers": [
+        "7,3",
+        "14,6",
+        "21,9",
+        "29,2"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Simobli barometr naychasining diametri 3 mm. Agar simobning kapillyar pasayishini hisobga olsak, barometrning ko‘rsatishiga qanday tuzatish kiritish lozim (mm)? σ = 22 mN/m.",
+      "answers": [
+        "5,9",
+        "5,1",
+        "4,7",
+        "4,2"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Uchta bir xil kapillyar nay bir uchi bilan ularni ho‘llovchi va sirt taranglik koeffitsiyentlari σ, 2σ va 3σ bo‘lgan suyuqliklarga tushirilgan. Suyuqlikning ko‘tarilish balandliklari orasidagi munosabatni aniqlang.",
+      "answers": [
+        "h1 = h2 = h3",
+        "h1 = h2 = 3h3",
+        "aniqlab bo‘lmaydi, chunki zichliklar berilmagan",
+        "h1 = h2/2 = h3/3"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "U-simon kapillyar nayning o‘ng va chap tirsaklarining ichki diametrlari mos ravishda 1 mm va 0,2 mm ga teng. Nayga quyilgan suv sathlari farqini toping (sm). σ = 73 mN/m.",
+      "answers": [
+        "1,2",
+        "1,46",
+        "18",
+        "2,4"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Ikkita parallel plastina va kapillyar nay ho‘llaydigan suyuqlikka tushirildi. Plastinalar orasidagi masofa kapillyar nayning radiusiga teng bo‘lsa, ularda ko‘tarilgan suyuqlik ustunlarining balandliklari h1 va h2 qanday munosabatda bo‘ladi?",
+      "answers": [
+        "h1 = 1,5h2",
+        "2h1 = h2",
+        "h1 = 2h2",
+        "h1 = h2"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Oralaridagi masofasi 0,73 mm bo‘lgan parallel plastinkada suv qancha balandlikka ko‘tariladi (sm)? Suvning sirt taranglik koeffitsiyenti 73 mN/m ga teng.",
+      "answers": [
+        "2",
+        "1",
+        "4",
+        "6"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Oralaridagi masofasi 2 mm bo‘lgan parallel plastinkada suv qancha balandlikka (sm) ko‘tariladi? Suvning sirt taranglik koeffitsiyenti 73 mN/m ga teng.",
+      "answers": [
+        "7,3",
+        "1,76",
+        "0,73",
+        "0,365"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Parallel plastinkalar oralaridagi masofa necha mm bo‘lganda, suv 7,3 mm ga ko‘tariladi? Suvning sirt taranglik koeffitsiyenti 73 mN/m ga teng.",
+      "answers": [
+        "7,3",
+        "1,76",
+        "2",
+        "0,365"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Kapillyar nayning radiusi 0,5 mm va undagi suyuqlikning sirt taranglik koeffitsiyenti 40 mN/m bo‘lsa, qo‘shimcha bosimni aniqlang (Pa).",
+      "answers": [
+        "80",
+        "160",
+        "240",
+        "320"
+      ],
+      "correct": 1
+    }
+  ]
+}

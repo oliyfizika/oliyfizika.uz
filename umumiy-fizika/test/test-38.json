@@ -1,0 +1,149 @@
+{
+  "id": 38,
+  "title": "38-Mavzu | Gaz molekulalarining o‘rtacha tezliklari",
+  "subtitle": "Kamida 80% natija keyingi bo‘limni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 39,
+  "questions": [
+    {
+      "text": "Ideal gazning absolyut temperaturasini necha marta ko‘targanda, molekulalarning o‘rtacha kvadratik tezligi 2 marta ortadi?",
+      "answers": ["√2", "4", "2", "16"],
+      "correct": 1
+    },
+    {
+      "text": "Kislorod molekulasi issiqlik harakatining o‘rtacha kvadratik tezligi vodorod molekulasinikidan necha marta kichik?",
+      "answers": ["2", "3", "4", "8"],
+      "correct": 2
+    },
+    {
+      "text": "Agar azot gazining absolyut temperaturasi 4 marta ortsa, molekulalarining o‘rtacha kvadratik tezligi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi",
+        "4 marta ortadi",
+        "2 marta kamayadi",
+        "2 marta ortadi"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Ideal gazning absolyut harorati 2 marta kamayganda molekulalarining o‘rtacha kvadratik tezligi necha marta kamayadi?",
+      "answers": ["√2", "2", "2√2", "4"],
+      "correct": 0
+    },
+    {
+      "text": "Gaz temperaturasi 21 % ga ortsa, molekulalarning o‘rtacha kvadratik tezligi necha foizga ortadi?",
+      "answers": ["10", "50", "20", "25"],
+      "correct": 0
+    },
+    {
+      "text": "Temperatura qanday bo‘lganda (K) azot molekulalarining o‘rtacha kvadratik tezligi 830 m/s bo‘ladi? MAzot = 28 g/mol.",
+      "answers": ["744", "774", "374", "425"],
+      "correct": 1
+    },
+    {
+      "text": "27°C haroratli vodorod molekulalarining o‘rtacha kvadratik tezligini (km/s) va shu tezlikdagi bitta molekulaning impulsini toping (kg · m/s). Vodorodning molyar massasi µ = 2,0 g/mol.",
+      "answers": [
+        "2,46; 6,4 · 10⁻²⁷",
+        "1,93; 6,4 · 10⁻²⁴",
+        "1,93; 6,4 · 10⁻²¹",
+        "3,54; 6,4 · 10⁻²¹"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Havoni bir jinsli gaz deb hisoblang, havoda muallaq turgan 1,74 · 10⁻¹² kg massali chang zarrasining o‘rtacha kvadratik tezligi havo molekulalari harakatining o‘rtacha kvadratik tezligidan necha marta kichik ekanini toping. Mhavo = 29 g/mol.",
+      "answers": [
+        "6 · 10⁴ marta",
+        "6 · 10⁶ marta",
+        "3 · 10⁶ marta",
+        "2 · 10⁶ marta"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Ideal gazning mutlaq temperaturasi 3 marta ortganida, molekulalarining o‘rtacha kvadratik tezligi necha marta ortadi?",
+      "answers": ["9", "3√3", "3", "√3"],
+      "correct": 3
+    },
+    {
+      "text": "Atmosferadagi qaysi gaz molekulalari tezroq harakat qiladi?",
+      "answers": ["N2", "O2", "H2", "CO2"],
+      "correct": 2
+    },
+    {
+      "text": "Gazning temperaturasi 10°C dan 20°C gacha ortdi. Bunda molekulalar issiqlik harakatining o‘rtacha kvadratik tezligi qanday o‘zgaradi?",
+      "answers": [
+        "bir oz ortadi",
+        "2 marta ortadi",
+        "o‘zgarmaydi",
+        "√2 marta ortadi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Qanday temperaturada (K) vodorod molekulalarining o‘rtacha kvadratik tezligi 2 km/s bo‘ladi? Vodorodning molyar massasi 0,002 kg/mol.",
+      "answers": ["273", "300", "350", "321"],
+      "correct": 3
+    },
+    {
+      "text": "Germetik berk idishdagi gaz molekulalarining kvadratik tezligi 2 marta ortishi uchun uning harorati 250°C dan qanchagacha ko‘tarilishi kerak?",
+      "answers": ["473°C", "773°C", "1819°C", "1350°C"],
+      "correct": 2
+    },
+    {
+      "text": "Gaz molekulalarining o‘rtacha kvadratik tezligi 600 m/s dan 750 m/s ga oshganda uning temperaturasi 30 K ortdi. O‘rtacha kvadratik tezligi 750 m/s dan 900 m/s ga ortsa, uning temperaturasi qancha ortadi (K)?",
+      "answers": ["27,3", "40,1", "30", "36,7"],
+      "correct": 3
+    },
+    {
+      "text": "Gaz molekulalarining o‘rtacha kvadratik tezligi 500 m/s dan 620 m/s ga oshganda uning temperaturasi 70 K ortdi. O‘rtacha kvadratik tezligi 620 m/s dan 800 m/s ga ortsa uning temperaturasi qancha ortadi (K)?",
+      "answers": ["77,3", "80,1", "93,2", "133,1"],
+      "correct": 3
+    },
+    {
+      "text": "173 K temperaturadagi vodorod molekulalarining o‘rtacha kvadratik tezligini (m/s) va ilgarilanma harakat energiyasini hisoblang (J). MH = 2 g/mol.",
+      "answers": [
+        "2350, 1,8 · 10⁻²¹",
+        "1468, 3,6 · 10⁻²¹",
+        "1465, 3,2 · 10⁻¹⁹",
+        "2523, 3,2 · 10⁻²¹"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Normal sharoitda bitta gaz molekulasi ilgarilanma harakatining o‘rtacha kinetik energiyasini (J) hisoblang.",
+      "answers": [
+        "7,5 · 10⁻²⁰",
+        "5,65 · 10⁻²¹",
+        "1,25 · 10⁻²¹",
+        "5,7 · 10⁻²⁰"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "273 K temperaturadagi vodorod molekulalarining o‘rtacha kvadratik tezligini (m/s) va ilgarilanma harakat energiyasini hisoblang (J). MH = 2 g/mol.",
+      "answers": [
+        "1840, 4,5 · 10⁻²¹",
+        "1844, 5,6 · 10⁻²¹",
+        "1205, 4,5 · 10⁻²¹",
+        "7520, 5,6 · 10⁻²¹"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Shtern tajribasida tashqi silindrning ichki sirtida paydo bo‘ladigan kumush poloska (yo‘l) chaplashgan bo‘lib chiqadi. Bundan qanday xulosa chiqarish mumkin?",
+      "answers": [
+        "Molekulalarning harakat tezliklari turlicha",
+        "Molekulalarning harakat tezliklari bir xil",
+        "Molekulalarning harakat tezliklariga bog‘liq emas",
+        "Barcha javoblar noto’g’ri"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Agar Shtern tajribasida asbobning aylanish chastotasi 150 s⁻¹ bo‘lgan kumush molekulasining burchak siljishi 5,4° ni tashkil etsa, bunda kumush bug‘ining molekulasi qanday tezlikka ega bo‘lgan (m/s)? Ichki va tashqi silindrlar orasidagi masofa 2 sm ga teng.",
+      "answers": ["500", "100", "400", "200"],
+      "correct": 3
+    }
+  ]
+}
