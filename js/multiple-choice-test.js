@@ -47,13 +47,15 @@ export function renderMultipleChoiceTest({
       card.appendChild(graph);
     }
 
-    if(question.image){
+    const imageSource = question.image || question.images;
+
+    if(imageSource){
       const imageBox = document.createElement("div");
       imageBox.className = "graph-box";
 
       const image = document.createElement("img");
 
-      image.src = question.image;
+      image.src = imageSource;
       image.alt = "Grafik";
       image.loading = "lazy";
 
