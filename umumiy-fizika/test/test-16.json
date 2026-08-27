@@ -1,0 +1,134 @@
+{
+  "id": 16,
+  "title": "16-Mavzu | Gorizontga nisbatan burchak ostida otilgan jismning harakati",
+  "subtitle": "Kamida 80% natija Dinamika bo'limiga kiruvchi 17-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 17,
+  "questions": [
+    {
+      "text": "Gorizontga burchak ostida otilgan jismning traektoriyasi qanday bo‘ladi? Havoning qarshiligini hisobga olmang.",
+      "answers": ["ellips", "gorizontga qiya to‘g‘ri chiziq", "aylana", "parabola"],
+      "correct": 3
+    },
+    {
+      "text": "Rasmda gorizontga α burchak ostida v tezlik bilan otilgan jismning harakat traektoriyasi ko‘rsatilgan. Rasmda ko‘rsatilgan vektorlardan qaysi biri jismning A nuqtadagi tezlanishi yo‘nalishini ko‘rsatadi?",
+      "answers": ["a", "b", "c", "d"],
+      "correct": 1
+    },
+    {
+      "text": "Gorizontga burchak ostida otilgan jismning tezlanishi qanday bo‘ladi?",
+      "answers": ["nolga teng", "g, pastga yo‘nalgan", "g, yuqoriga yo‘nalgan", "g, tezlik vektori bo‘ylab yo‘nalgan"],
+      "correct": 1
+    },
+    {
+      "text": "Sharcha gorizontga 30° burchak ostida 30 m/s boshlang‘ich tezlik bilan otildi. Boshlang‘ich tezlik vektorining gorizontal va vertikal tashkil etuvchilari qanday (m/s)?",
+      "answers": ["26; 15", "15; 26", "15; 15", "26; 26"],
+      "correct": 0
+    },
+    {
+      "text": "Jism gorizontga 30° burchak ostida 20 m/s boshlang‘ich tezlik bilan otildi. Harakatning 0,3-sekund oxiridagi tezlik vektorining gorizontal va vertikal tashkil etuvchilari qanday (m/s)? sin 30° = 0,5; cos 30° = 0,87.",
+      "answers": ["10 va 17,3", "17,3 va 10", "17,3 va 7", "17,3 va 17,3"],
+      "correct": 2
+    },
+    {
+      "text": "Gorizontga 45° burchak ostida otilgan jismning 2 s dan keyin tezligi minimal qiymatga erishgan bo‘lsa, u qanday tezlik bilan otilgan (m/s)? g = 10 m/s².",
+      "answers": ["20", "10√2", "20√2", "40"],
+      "correct": 2
+    },
+    {
+      "text": "Gorizontga 30° burchak ostida 20 m/s tezlik bilan otilgan jismning tezlik vektori qancha vaqtdan so‘ng gorizont bilan 0° burchak hosil qiladi (s)? g = 10 m/s².",
+      "answers": ["2", "3", "4", "1"],
+      "correct": 3
+    },
+    {
+      "text": "Gorizontga burchak ostida 10 m/s tezlik bilan otilgan jismning uchish davomidagi minimal tezligi 6 m/s bo‘lsa, uning uchish vaqti qanday (s) bo‘ladi? g = 10 m/s².",
+      "answers": ["1,6", "0,8", "0,6", "1,2"],
+      "correct": 0
+    },
+    {
+      "text": "Gorizontga burchak ostida 25 m/s tezlik bilan otilgan jism 4 s da yerga qaytib tushdi. Uning uchish davomidagi minimal tezligi qanday (m/s)?",
+      "answers": ["15", "10", "20", "25"],
+      "correct": 0
+    },
+    {
+      "text": "Zambarakdan gorizontga burchak ostida uchib chiqqan snaryad 12 s uchgan. Snaryad ko‘tarilgan eng yuqori balandlik qanday (m)?",
+      "answers": ["170", "180", "190", "200"],
+      "correct": 1
+    },
+    {
+      "text": "Ikki o‘quvchi bir-biriga to‘p otib o‘ynamoqda. Agar to‘p birinchi o‘quvchidan ikkinchi o‘quvchiga 2 s vaqt mobaynida yetib borsa, to‘p o‘yin vaqtida qanday eng yuqori balandlikka (m) erishadi? g = 10 m/s².",
+      "answers": ["1", "2", "3", "5"],
+      "correct": 3
+    },
+    {
+      "text": "Zambarakdan gorizontga nisbatan burchak ostida otilgan snaryad 20 m balandlikka ko‘tarildi. Uning uchish vaqtini toping (s). g = 10 m/s².",
+      "answers": ["10", "20", "1", "4"],
+      "correct": 3
+    },
+    {
+      "text": "Gorizontga nisbatan 45° burchak ostida 10 m/s tezlik bilan otilgan jism 8 m naridagi vertikal devorga mutloq elastik urilib qaytdi va yerga tushdi. Jism otilish nuqtasidan qanday masofada tushadi (m)? g = 10 m/s².",
+      "answers": ["6", "4", "8", "2"],
+      "correct": 0
+    },
+    {
+      "text": "20 m/s tezlik bilan gorizontga burchak ostida otilgan jismning maksimal ko‘tarilish balandligi 15 m bo‘lsa, uning uchish davomidagi minimal tezligi necha m/s bo‘lgan?",
+      "answers": ["20", "15", "10", "5"],
+      "correct": 2
+    },
+    {
+      "text": "Gorizontga burchak ostida otilgan jismning uchish davomidagi minimal tezligi 16 m/s, uchish vaqti esa 2,4 s bo‘lsa, u qanday (m/s) tezlik bilan otilgan?",
+      "answers": ["35", "30", "24", "20"],
+      "correct": 3
+    },
+    {
+      "text": "Gorizontga burchak ostida 20 m/s tezlik bilan otilgan jismning uchish davomidagi minimal tezligi 10 m/s bo‘lsa, u necha metr balandlikka ko‘tarilgan? g = 10 m/s².",
+      "answers": ["5", "25", "20", "15"],
+      "correct": 3
+    },
+    {
+      "text": "Bir vaqtning o‘zida ikkita jism bir nuqtadan bir xil 10 m/s boshlang‘ich tezlik bilan biri vertikal va ikkinchisi gorizontga nisbatan 30° burchak ostida yuqoriga otildi. 1 s dan keyin jismlar orasidagi masofa qanday bo‘ladi (m)?",
+      "answers": ["5", "7,4", "10", "12,5"],
+      "correct": 2
+    },
+    {
+      "text": "Uchish uzoqligi ko‘tarilish balandligidan 4 marta ortiq bo‘lishi uchun jism gorizontga qanday burchak ostida otilishi kerak?",
+      "answers": ["arctg3", "arctg2", "30°", "45°"],
+      "correct": 3
+    },
+    {
+      "text": "Gorizontga 45° burchak ostida otilgan disk 20 m ko‘tarildi. Uning uchish uzoqligi qanday (m)?",
+      "answers": ["20", "40", "80", "160"],
+      "correct": 2
+    },
+    {
+      "text": "Gorizontga α burchak ostida otilgan jismning harakatida h/x ning qiymatini toping.",
+      "answers": ["1/3", "1/4", "1/8", "3/8"],
+      "correct": 2
+    },
+    {
+      "text": "Bir nuqtadan ikkita jism gorizontga burchak ostida rasmdagi kabi otildi. Rasmdagi ma’lumotlardan foydalanib, h1/h2 nisbatni toping. α = 37°.",
+      "answers": ["4/5", "5/7", "7/9", "1"],
+      "correct": 2
+    },
+    {
+      "text": "Jism gorizontga 60° burchak ostida 20 m/s tezlik bilan otildi. Jism maksimal balandlikka ko‘tarilgan nuqtada traektoriyaning egrilik radiusi qanday bo‘ladi (m)?",
+      "answers": ["5", "10", "20", "40"],
+      "correct": 1
+    },
+    {
+      "text": "Gorizontga burchak ostida otilgan jismning ko‘tarilish balandligi 3 m, traektoriyaning eng yuqori nuqtasidagi egrilik radiusi 2 m bo‘lsa, jism gorizontga qanday burchak ostida otilgan?",
+      "answers": ["45°", "75°", "60°", "30°"],
+      "correct": 2
+    },
+    {
+      "text": "Gorizontga burchak ostida otilgan jism harakat traektoriyasining eng yuqori nuqtasining egrilik radiusi jismning maksimal ko‘tarilish balandligiga teng bo‘lsa, jismning otilish burchagini toping. Erkin tushish tezlanishini 10 m/s² deb oling.",
+      "answers": ["arctg√2", "arctg4", "arctg2", "45°"],
+      "correct": 0
+    },
+    {
+      "text": "Jism gorizontga 60° burchak ostida 20 m/s tezlik bilan otildi. Necha sekunddan so‘ng tezlik vektori gorizont bilan 45° burchak hosil qiladi? (√3 ≈ 1,73)",
+      "answers": ["1 va 2", "0,73 va 2,73", "3", "1 va 2,8"],
+      "correct": 1
+    }
+  ]
+}
