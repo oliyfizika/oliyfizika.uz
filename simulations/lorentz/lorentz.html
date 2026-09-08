@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lorentz kuchi | OliyFizika.uz</title>
+
+    <link rel="stylesheet" href="lorentz.css">
+</head>
+
+<body>
+
+<main class="lorentz-page">
+
+    <section class="simulation">
+
+        <!-- HEADER -->
+        <header class="simulation-header">
+
+            <div>
+                <div class="eyebrow">
+                    ELEKTROMAGNETIZM
+                </div>
+
+                <h1>
+                    Lorentz kuchi
+                </h1>
+
+                <p>
+                    Magnit maydonida harakatlanayotgan zaryadli zarra
+                    trayektoriyasini kuzating.
+                </p>
+            </div>
+
+            <div class="formula">
+                <span>F⃗ = q(v⃗ × B⃗)</span>
+            </div>
+
+        </header>
+
+
+        <!-- CANVAS -->
+        <section class="simulation-screen">
+
+            <canvas
+                id="lorentzCanvas"
+                aria-label="Lorentz kuchi simulyatsiyasi"
+            ></canvas>
+
+        </section>
+
+
+        <!-- CONTROLS -->
+        <section class="controls">
+
+            <div class="control-card">
+
+                <div class="control-top">
+                    <label for="magneticField">
+                        Magnit maydon B
+                    </label>
+
+                    <strong id="magneticFieldValue">
+                        1.0 T
+                    </strong>
+                </div>
+
+                <input
+                    id="magneticField"
+                    type="range"
+                    min="-2"
+                    max="2"
+                    step="0.1"
+                    value="1"
+>
+
+                <div class="range-labels">
+                    <span>-2 T</span>
+                    <span>+2 T</span>
+                </div>
+
+            </div>
+
+
+            <div class="control-card">
+
+                <div class="control-top">
+                    <label for="velocity">
+                        Boshlang‘ich tezlik v
+                    </label>
+
+                    <strong id="velocityValue">
+                        3.0 × 10⁶ m/s
+                    </strong>
+                </div>
+
+                <input
+                    id="velocity"
+                    type="range"
+                    min="1"
+                    max="6"
+                    step="0.1"
+                    value="3"
+                >
+
+                <div class="range-labels">
+                    <span>1 × 10⁶</span>
+                    <span>6 × 10⁶ m/s</span>
+                </div>
+
+            </div>
+
+
+            <div class="control-card">
+
+                <label for="particleCharge">
+                    Zarra
+                </label>
+
+                <select id="particleCharge">
+
+                    <option value="-1">
+                        Elektron (−e)
+                    </option>
+
+                    <option value="1">
+                        Musbat ion (+e)
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- PHYSICAL VALUES -->
+        <section class="results">
+
+            <div class="result-card">
+
+                <span>
+                    Lorentz kuchi
+                </span>
+
+                <strong id="forceValue">
+                    0 N
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    Trayektoriya radiusi
+                </span>
+
+                <strong id="radiusValue">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    Burchak tezlik
+                </span>
+
+                <strong id="angularVelocityValue">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    B maydon yo‘nalishi
+                </span>
+
+                <strong>
+                    ⊙ B
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- BUTTONS -->
+        <section class="actions">
+
+            <button
+                id="startButton"
+                class="button primary"
+                type="button"
+            >
+                ▶ Boshlash
+            </button>
+
+            <button
+                id="pauseButton"
+                class="button"
+                type="button"
+            >
+                Ⅱ Pauza
+            </button>
+
+            <button
+                id="resetButton"
+                class="button"
+                type="button"
+            >
+                ↻ Qayta boshlash
+            </button>
+
+        </section>
+
+
+        <!-- EXPLANATION -->
+        <section class="explanation">
+
+            <div class="explanation-icon">
+                i
+            </div>
+
+            <div>
+                <strong>
+                    Fizik mazmun
+                </strong>
+
+                <p id="simulationMessage">
+                    Elektron magnit maydoniga kirganda Lorentz kuchi
+                    uning tezlik yo‘nalishiga perpendikulyar ta’sir qiladi.
+                </p>
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<script src="lorentz.js"></script>
+
+</body>
+</html>

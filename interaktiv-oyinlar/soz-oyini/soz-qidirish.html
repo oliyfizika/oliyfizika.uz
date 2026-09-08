@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>So‘z qidirish | OliyFizika.uz</title>
+
+    <link rel="stylesheet" href="soz-qidirish.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="topbar">
+
+        <div>
+            <div class="eyebrow">
+                INTERAKTIV O‘YIN
+            </div>
+
+            <h1>
+                So‘z qidirish
+            </h1>
+
+            <p>
+                Berilgan so‘zlarni 12×12 harflar jadvalidan toping.
+            </p>
+        </div>
+
+        <button
+            id="new-game-btn"
+            class="ghost-btn"
+            type="button"
+        >
+            Yangi o‘yin
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         1. O‘YIN SOZLAMALARI
+         ===================================================== -->
+
+    <section
+        id="setup-screen"
+        class="screen active"
+    >
+
+        <div class="card setup-card">
+
+            <div class="section-title">
+
+                <span class="step">
+                    1
+                </span>
+
+                <div>
+
+                    <h2>
+                        O‘yinni sozlash
+                    </h2>
+
+                    <p>
+                        Mavzu, alifbo va yashiriladigan so‘zlarni kiriting.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAVZU -->
+
+            <label for="topic">
+                Mavzu
+            </label>
+
+            <input
+                id="topic"
+                type="text"
+                maxlength="60"
+                placeholder="Masalan: Mexanika"
+            >
+
+
+            <!-- ALIFBO -->
+
+            <div class="alphabet-option">
+
+                <label for="alphabet-mode">
+                    Doska alifbosi
+                </label>
+
+                <select id="alphabet-mode">
+
+                    <option value="latin">
+                        Lotin alifbosi
+                    </option>
+
+                    <option value="cyrillic">
+                        Kirill alifbosi
+                    </option>
+
+                </select>
+
+                <p class="field-hint">
+                    Doskadagi tasodifiy harflar tanlangan alifboda bo‘ladi.
+                </p>
+
+            </div>
+
+
+            <!-- SO‘ZLAR -->
+
+            <div class="words-head">
+
+                <label>
+                    Yashiriladigan so‘zlar
+                </label>
+
+                <span id="word-count">
+                    0 / 15
+                </span>
+
+            </div>
+
+
+            <div
+                id="word-inputs"
+                class="word-inputs"
+            ></div>
+
+
+            <button
+                id="add-word-btn"
+                class="secondary-btn"
+                type="button"
+            >
+                ＋ So‘z qo‘shish
+            </button>
+
+
+
+          
+
+
+
+
+
+            <!-- QO‘SHIMCHA SOZLAMALAR -->
+
+            <div class="setup-options">
+
+                <div class="option-box">
+
+                    <label for="direction-mode">
+                        Joylashtirish
+                    </label>
+
+                    <select id="direction-mode">
+
+                        <option value="all">
+                            Barcha yo‘nalishlar
+                        </option>
+
+                        <option value="straight">
+                            Faqat gorizontal va vertikal
+                        </option>
+
+                        <option value="diagonal">
+                            Diagonal ham
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="option-box">
+
+                    <label for="timer-mode">
+                        Vaqt
+                    </label>
+
+                    <select id="timer-mode">
+
+                        <option value="none">
+                            Cheklanmagan
+                        </option>
+
+                        <option value="60">
+                            1 daqiqa
+                        </option>
+
+                        <option value="120">
+                            2 daqiqa
+                        </option>
+
+                        <option value="180">
+                            3 daqiqa
+                        </option>
+
+                        <option value="300">
+                            5 daqiqa
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="setup-error"
+                class="error-message"
+            ></div>
+
+
+            <button
+                id="generate-btn"
+                class="primary-btn"
+                type="button"
+            >
+                DOSKANI YARATISH
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         2. O‘QITUVCHI PREVIEW
+         ===================================================== -->
+
+    <section
+        id="preview-screen"
+        class="screen"
+    >
+
+        <div class="game-header">
+
+            <div>
+
+                <div class="eyebrow">
+                    O‘QITUVCHI PREVIEW
+                </div>
+
+                <h2 id="preview-topic">
+                    Mavzu
+                </h2>
+
+                <p id="preview-info"></p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    id="back-setup-btn"
+                    class="ghost-btn"
+                    type="button"
+                >
+                    Sozlamalarni o‘zgartirish
+                </button>
+
+                <button
+                    id="regenerate-btn"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    Qayta yaratish
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="preview-layout">
+
+            <div class="card board-card">
+
+                <!--
+                    MUHIM:
+                    Bu preview'da yashirilgan
+                    so‘zlarning joylashuvi
+                    ko‘rsatilmaydi.
+                -->
+
+                <div
+                    id="preview-board"
+                    class="board"
+                    aria-label="So‘z qidirish doskasi"
+                ></div>
+
+            </div>
+
+
+            <div class="card word-card">
+
+                <h3>
+                    Yashirilgan so‘zlar
+                </h3>
+
+                <div
+                    id="preview-word-list"
+                    class="word-list"
+                ></div>
+
+                <button
+                    id="start-game-btn"
+                    class="primary-btn"
+                    type="button"
+                >
+                    O‘YINNI BOSHLASH
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         3. O‘YIN
+         ===================================================== -->
+
+    <section
+        id="game-screen"
+        class="screen"
+    >
+
+        <div class="game-header">
+
+            <div>
+
+                <div
+                    id="game-topic-label"
+                    class="eyebrow"
+                >
+                    MAVZU
+                </div>
+
+                <h2>
+                    So‘zlarni toping
+                </h2>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <span>
+                        Topildi
+                    </span>
+
+                    <strong id="found-count">
+                        0 / 0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <span>
+                        Vaqt
+                    </span>
+
+                    <strong id="timer">
+                        ∞
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="game-layout">
+
+            <div class="card board-card">
+
+                <div
+                    id="game-board"
+                    class="board selectable-board"
+                ></div>
+
+
+                <div
+                    id="selection-hint"
+                    class="selection-hint"
+                >
+                    So‘zni topish uchun birinchi va oxirgi harfni tanlang.
+                </div>
+
+            </div>
+
+
+            <aside class="card word-card">
+
+                <div class="word-card-title">
+
+                    <h3>
+                        Topiladigan so‘zlar
+                    </h3>
+
+                    <span id="remaining-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="game-word-list"
+                    class="word-list"
+                ></div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         4. NATIJA
+         ===================================================== -->
+
+    <section
+        id="result-screen"
+        class="screen"
+    >
+
+        <div class="card result-card">
+
+            <div class="result-icon">
+                ✓
+            </div>
+
+            <div class="eyebrow">
+                O‘YIN YAKUNLANDI
+            </div>
+
+            <h2 id="result-title">
+                Ajoyib!
+            </h2>
+
+            <p id="result-message"></p>
+
+
+            <div class="result-stats">
+
+                <div>
+
+                    <span>
+                        Natija
+                    </span>
+
+                    <strong id="result-score">
+                        0 / 0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Vaqt
+                    </span>
+
+                    <strong id="result-time">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="result-words"
+                class="result-words"
+            ></div>
+
+
+            <div class="result-actions">
+
+                <button
+                    id="play-again-btn"
+                    class="primary-btn"
+                    type="button"
+                >
+                    QAYTA O‘YNASH
+                </button>
+
+                <button
+                    id="setup-again-btn"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    YANGI DOSKA
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="soz-qidirish.js"></script>
+
+</body>
+</html>

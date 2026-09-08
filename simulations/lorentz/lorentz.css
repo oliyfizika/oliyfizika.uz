@@ -1,0 +1,553 @@
+/* =========================================================
+   LORENTZ SIMULATION
+   OliyFizika.uz
+   ========================================================= */
+
+:root {
+    --bg: #070b12;
+    --panel: #0d131d;
+    --panel-light: #111a27;
+    --border: rgba(255, 255, 255, 0.10);
+
+    --text: #f4f7fb;
+    --muted: #9ba8b8;
+
+    --blue: #3182f6;
+    --cyan: #28d7f5;
+    --green: #39e879;
+    --orange: #ff7b4a;
+
+    --radius: 16px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #101b2b 0%,
+            var(--bg) 50%
+        );
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.lorentz-page {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px 60px;
+}
+
+
+/* =========================================================
+   MAIN SIMULATION
+   ========================================================= */
+
+.simulation {
+    width: 100%;
+
+    background: rgba(13, 19, 29, 0.96);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.simulation-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 28px 30px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.eyebrow {
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    margin-bottom: 8px;
+}
+
+
+.simulation-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+
+    line-height: 1.15;
+}
+
+
+.simulation-header p {
+    margin: 0;
+
+    max-width: 620px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+.formula {
+    flex-shrink: 0;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    background: rgba(49, 130, 246, 0.10);
+
+    border: 1px solid rgba(49, 130, 246, 0.25);
+
+    color: #dce9ff;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CANVAS
+   ========================================================= */
+
+.simulation-screen {
+    padding: 20px;
+}
+
+
+#lorentzCanvas {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 380px;
+
+    background: #050912;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.controls {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    padding: 0 20px 20px;
+}
+
+
+.control-card {
+    padding: 16px;
+
+    background: var(--panel-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+
+.control-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+.control-card label {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.control-card strong {
+    color: var(--cyan);
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.control-card input[type="range"] {
+    width: 100%;
+
+    accent-color: var(--blue);
+
+    cursor: pointer;
+}
+
+
+.range-labels {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.control-card select {
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 9px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #0a1019;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.control-card select:focus {
+    border-color: var(--blue);
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.results {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding: 0 20px 20px;
+}
+
+
+.result-card {
+    padding: 14px;
+
+    background: var(--panel-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+
+.result-card span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-bottom: 6px;
+}
+
+
+.result-card strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 0 20px 20px;
+}
+
+
+.button {
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel-light);
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+
+.button:hover {
+    transform: translateY(-1px);
+
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+
+.button:active {
+    transform: translateY(0);
+}
+
+
+.button.primary {
+    background: var(--blue);
+
+    border-color: var(--blue);
+
+    color: white;
+}
+
+
+/* =========================================================
+   EXPLANATION
+   ========================================================= */
+
+.explanation {
+    display: flex;
+
+    gap: 12px;
+
+    margin: 0 20px 20px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(49, 130, 246, 0.07);
+
+    border: 1px solid rgba(49, 130, 246, 0.18);
+}
+
+
+.explanation-icon {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: rgba(49, 130, 246, 0.20);
+
+    color: #a9c9ff;
+
+    font-weight: 800;
+}
+
+
+.explanation strong {
+    font-size: 14px;
+}
+
+
+.explanation p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .simulation-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .formula {
+        font-size: 19px;
+    }
+
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+
+    .results {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .lorentz-page {
+        padding: 10px;
+    }
+
+
+    .simulation-header {
+        padding: 22px 18px;
+    }
+
+
+    .simulation-header h1 {
+        font-size: 26px;
+    }
+
+
+    .simulation-screen {
+        padding: 12px;
+    }
+
+
+    #lorentzCanvas {
+        min-height: 300px;
+    }
+
+
+    .controls,
+    .results {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .actions {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .explanation {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+
+    .button {
+        flex: 1;
+    }
+
+}
