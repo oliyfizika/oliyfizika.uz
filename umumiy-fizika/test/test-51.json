@@ -1,0 +1,211 @@
+{
+  "id": 51,
+  "title": "51-Mavzu | Elektr zaryadlari. Kulon qonuni",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../molekulyar.html",
+  "unlockLesson": 51,
+  "questions": [
+    {
+      "text": "Elektr zaryadining SI sistemasidagi birligi qaysi?",
+      "answers": [
+        "Nyuton",
+        "Joul",
+        "Kulon",
+        "Volt"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Elektronning zaryadi qanday?",
+      "answers": [
+        "+1,6·10⁻¹⁹ C",
+        "-1,6·10⁻¹⁹ C",
+        "+9·10⁹ C",
+        "-9·10⁹ C"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Protonning elektr zaryadi qanday?",
+      "answers": [
+        "−1,6·10⁻¹⁹ C",
+        "-9·10⁹ C",
+        "+9·10⁹ C",
+        "+1,6·10⁻¹⁹ C"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Bir xil ishorali ikkita elektr zaryadi qanday ta’sirlashadi?",
+      "answers": [
+        "Bir-birini tortadi",
+        "Bir-birini itaradi",
+        "Ta’sirlashmaydi",
+        "Avval tortadi, keyin itaradi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Qarama-qarshi ishorali ikkita elektr zaryadi qanday ta’sirlashadi?",
+      "answers": [
+        "Bir-birini itaradi",
+        "Ta’sirlashmaydi",
+        "Bir-birini tortadi",
+        "Faqat musbat zaryad harakat qiladi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Kulon qonuni qaysi formula bilan ifodalanadi?",
+      "answers": [
+        "F = ma",
+        "F = k|q₁q₂|/r²",
+        "F = Gm₁m₂/r²",
+        "F = mg"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Kulon qonunidagi r nimani bildiradi?",
+      "answers": [
+        "Zaryad miqdorini",
+        "Elektron massasini",
+        "Zaryadlar orasidagi masofani",
+        "Muhitning zichligini"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Zaryadlar orasidagi masofa 2 marta oshirilsa, ular orasidagi Kulon kuchi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi",
+        "2 marta kamayadi",
+        "4 marta ortadi",
+        "4 marta kamayadi"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Zaryadlardan birining miqdori 2 marta oshirilsa, boshqa shartlar o‘zgarmasa, Kulon kuchi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta ortadi",
+        "2 marta ortadi",
+        "2 marta kamayadi",
+        "O‘zgarmaydi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Vakuumdagi Kulon doimiysi k ning taxminiy qiymati qaysi?",
+      "answers": [
+        "9·10⁻⁹ N·m²/C²",
+        "9·10⁹ N·m²/C²",
+        "8,85·10⁻¹² N·m²/C²",
+        "3·10⁸ N·m²/C²"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Vakuumning dielektrik singdiruvchanligi ε₀ ning taxminiy qiymati qaysi?",
+      "answers": [
+        "8,85·10⁻¹² C²/(N·m²)",
+        "9·10⁹ C²/(N·m²)",
+        "1,6·10⁻¹⁹ C",
+        "3·10⁸ m/s"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Kulon doimiysi k va ε₀ orasidagi bog‘lanish qaysi?",
+      "answers": [
+        "k = 4πε₀",
+        "k = 1/(4πε₀) ",
+        "k = ε₀/(4π)",
+        "k = 4π/ε₀"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Ikki nuqtaviy zaryad orasidagi kuch 9 N ga teng. Zaryadlar orasidagi masofa 3 marta oshirilsa, kuch qancha bo‘ladi?",
+      "answers": [
+        "3 N",
+        "1 N",
+        "9 N",
+        "81 N"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "q₁ = 1 μC va q₂ = 1 μC zaryadlar vakuumda 1 m masofada joylashgan. Ular orasidagi kuch qancha millinyuton? (mN)",
+      "answers": [
+        "9",
+        "90",
+        "900",
+        "0,9"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Ikki zaryad orasidagi kuch F ga teng. Agar ikkala zaryad ham 2 marta oshirilsa, kuch qanday bo‘ladi?",
+      "answers": [
+        "F",
+        "F/4",
+        "F/2",
+        "4F"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Elektr zaryadlarining saqlanish qonuniga ko‘ra, yopiq sistemada...",
+      "answers": [
+        "Zaryadlar doimo yo‘qolib ketadi",
+        "Umumiy elektr zaryadi o‘zgarmaydi",
+        "Faqat musbat zaryad saqlanadi",
+        "Faqat elektronlar saqlanadi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Yopiq sistemadagi uchta zaryad uchun qaysi ifoda zaryadning saqlanish qonunini ifodalaydi?",
+      "answers": [
+        "q₁ + q₂ + q₃ = const",
+        "q₁q₂q₃ = const",
+        "q₁ − q₂ − q₃ = 0",
+        "q₁/q₂ = const"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Bir zaryadga bir nechta zaryad ta’sir qilayotgan bo‘lsa, natijaviy kuch qanday aniqlanadi?",
+      "answers": [
+        "Faqat eng katta kuch olinadi",
+        "Kuchlar vektor sifatida qo‘shiladi",
+        "Kuchlar ko‘paytiriladi",
+        "Kuchlarning faqat modullari ayiriladi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Kulon kuchining yo‘nalishi qanday aniqlanadi?",
+      "answers": [
+        "Har doim aylana bo‘ylab",
+        "Faqat pastga yo‘naladi",
+        "Zaryadlarni tutashtiruvchi to‘g‘ri chiziq bo‘ylab",
+        "Faqat yuqoriga yo‘naladi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Agar ikki zaryad orasidagi masofa o‘zgarmasa, zaryadlardan birining miqdori 3 marta kamaytirilsa, Kulon kuchi qanday o‘zgaradi?",
+      "answers": [
+        "3 marta kamayadi",
+        "3 marta ortadi",
+        "9 marta ortadi",
+        "O‘zgarmaydi"
+      ],
+      "correct": 0
+    }
+  ]
+}
+    
+
