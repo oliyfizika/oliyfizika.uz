@@ -1,0 +1,768 @@
+{
+ "schemaVersion": 1,
+ "id": "mock-test-15",
+ "number": 15,
+ "title": "Fizika Mock Test №15",
+ "subtitle": "Milliy sertifikat: 29-sentabr 2026, 2-smena • 29–32-topshiriqlar yangidan tuzilgan • 45 ta topshiriq • 55 ta baholanadigan band • 3 soat • formula jadvali va kalkulyator bilan",
+ "sourceVariant": "Milliy sertifikat: 29-sentabr 2026, 2-smena",
+ "durationMinutes": 180,
+ "author": {
+  "name": "Amirov Sarvar",
+  "telegram": "@oliyfizika_uz",
+  "telegramUrl": "https://t.me/oliyfizika_uz"
+ },
+ "scoring": {
+  "mode": "local",
+  "maxScore": 55,
+  "defaultRelativeTolerance": 1e-06
+ },
+ "review": {
+  "enabled": true,
+  "showCorrectAnswers": true
+ },
+ "resultCode": {
+  "prefix": "OFMT15",
+  "version": 2
+ },
+ "formulaSheet": {
+  "pages": [
+   "assets/formulas/formula-sheet-1.png",
+   "assets/formulas/formula-sheet-2.png"
+  ],
+  "cards": [
+   {
+    "title": "Mexanika",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Aylanish va energiya",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molekulyar fizika",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Issiqlik",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Elektr toki",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Kondensator va AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnit maydon",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optika",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Kvant va yadro",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_chiq",
+     "A,Z saqlanish qonunlari"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "type": "mcq",
+   "text": "1,8 km/min tezlikni m/s da ifodalang.",
+   "options": [
+    "1800 m/s",
+    "30 m/s",
+    "108 m/s",
+    "3 m/s"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 2,
+   "type": "mcq",
+   "text": "Jismga F₁ = 60 N va F₂ = 80 N kuchlar ta’sir qiladi. Natijaviy kuchning maksimal va minimal qiymatlari farqini toping.",
+   "options": [
+    "20 N",
+    "140 N",
+    "120 N",
+    "100 N"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 3,
+   "type": "mcq",
+   "text": "SOS signalining (radioto‘lqin) to‘lqin uzunligi 600 nm. Uning chastotasini toping.",
+   "options": [
+    "5·10¹⁴ Hz",
+    "5·10⁵ Hz",
+    "1,8·10¹⁷ Hz",
+    "2·10⁻¹⁵ Hz"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 4,
+   "type": "mcq",
+   "text": "Gorizontal joylashgan kondensator plastinalari orasidagi kuchlanish 20 V bo‘lganda zaryadlangan zarra muallaq turibdi. Kuchlanish 24 V ga yetkazilsa, zarra qanday tezlanish oladi?",
+   "options": [
+    "2 m/s²",
+    "12 m/s²",
+    "1,2 m/s²",
+    "4 m/s²"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 5,
+   "type": "mcq",
+   "text": "Suvda suzib yurgan muz bo‘lagi ichida po‘kak bor. Muz erisa, idishdagi suv sathi qanday o‘zgaradi?",
+   "options": [
+    "ko‘tariladi",
+    "pasayadi",
+    "o‘zgarmaydi",
+    "po‘kak massasiga bog‘liq"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 6,
+   "type": "mcq",
+   "text": "Matematik mayatnikda uzunligi 90 cm bo‘lgan ipga sharcha osilgan. Muvozanat vaziyatidan o‘tayotgan paytda sharcha tezligi 0,15 m/s. Tebranish amplitudasini toping.",
+   "options": [
+    "4,5 cm",
+    "13,5 cm",
+    "9 cm",
+    "0,45 cm"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 7,
+   "type": "mcq",
+   "text": "O‘tkazgichning ko‘ndalang kesimidan 2 min da 240 C zaryad o‘tdi. Tok kuchini toping.",
+   "options": [
+    "2 A",
+    "120 A",
+    "4 A",
+    "0,5 A"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 8,
+   "type": "mcq",
+   "text": "Temperaturasi −20 °C bo‘lgan 500 g muzga 120 kJ issiqlik berildi. Muzning necha foizi eriydi? c_muz = 2100 J/(kg·K), λ = 330 kJ/kg.",
+   "options": [
+    "30 %",
+    "60 %",
+    "73 %",
+    "100 %"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 9,
+   "type": "mcq",
+   "text": "Hajmi 3 l bo‘lgan idishda 1,2 mol gaz bor. Gaz molekulalarining konsentratsiyasini toping. N_A = 6×10²³ mol⁻¹.",
+   "options": [
+    "2,4·10²³ m⁻³",
+    "7,2·10²³ m⁻³",
+    "2,4·10²⁶ m⁻³",
+    "1,5·10²⁶ m⁻³"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 10,
+   "type": "mcq",
+   "text": "Ketma-ket ulangan ikkita elektrolitik vannadan birida Al³⁺ ionlari, ikkinchisida Cu²⁺ ionlari bo‘lgan eritma bor. Ma’lum vaqt ichida ikkinchi vannada 48 mg mis ajraldi. Shu vaqtda birinchi vannada qancha alyuminiy ajraladi? M(Al) = 27 g/mol, M(Cu) = 64 g/mol.",
+   "options": [
+    "13,5 mg",
+    "20,25 mg",
+    "32 mg",
+    "170,7 mg"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 11,
+   "type": "mcq",
+   "text": "Zanjirda uchta bir xil manba (har birining EYuK i ℰ, ichki qarshiligi r) berk halqa shaklida ketma-ket ulangan. Rasmga ko‘ra uchala manba qutblari halqa bo‘ylab bir xil yo‘nalgan. 2-manba qutblari orasidagi kuchlanish qancha?",
+   "options": [
+    "ℰ",
+    "0",
+    "ℰ/3",
+    "3ℰ"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 12,
+   "type": "mcq",
+   "text": "Massasi 3,6 kg bo‘lgan quruq o‘tin to‘liq yonganda qancha issiqlik ajraladi (kW·h da)? O‘tinning solishtirma yonish issiqligi q = 1×10⁷ J/kg.",
+   "options": [
+    "36 kW·h",
+    "10 kW·h",
+    "1 kW·h",
+    "3,6 kW·h"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 13,
+   "type": "mcq",
+   "text": "Ikki jismning harakat tenglamalari x₁ = 2t va x₂ = 30 − 3t − 4t² (SI da). Harakat boshlangandan 3 s o‘tgach jismlarning bir-biriga nisbatan tezligini toping.",
+   "options": [
+    "25 m/s",
+    "29 m/s",
+    "17 m/s",
+    "14 m/s"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 14,
+   "type": "mcq",
+   "text": "Obyektivining fokus masofasi 5 cm bo‘lgan fotoapparat yordamida 200 m uzoqlikdagi binoning balandligi 5 mm bo‘lgan tasviri hosil qilindi. Binoning balandligini toping.",
+   "options": [
+    "2 m",
+    "200 m",
+    "20 m",
+    "50 m"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 15,
+   "type": "mcq",
+   "text": "Vodorod atomi uchta foton nurladi. Rasmga ko‘ra: 1-foton n = 4 → n = 1, 2-foton n = 3 → n = 2, 3-foton n = 3 → n = 1 o‘tishlarda chiqqan. Sathlar energiyasi: E₁ = −13,6, E₂ = −3,4, E₃ = −1,51, E₄ = −0,85 eV. Nurlangan foton impulslarini taqqoslang.",
+   "options": [
+    "p₂ > p₃ > p₁",
+    "p₃ > p₁ > p₂",
+    "p₁ > p₂ > p₃",
+    "p₁ > p₃ > p₂"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 16,
+   "type": "mcq",
+   "text": "²⁰⁷₈₂Pb qo‘rg‘oshin yadrosidagi neytronlar sonini aniqlang.",
+   "options": [
+    "207",
+    "125",
+    "82",
+    "289"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 17,
+   "type": "mcq",
+   "text": "Massasi 1,75 kg bo‘lgan jismga 3 N va 5 N kuchlar ta’sir etmoqda. Jism 4 m/s² tezlanish olsa, kuchlar orasidagi burchak qanday?",
+   "options": [
+    "30°",
+    "90°",
+    "60°",
+    "120°"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 18,
+   "type": "mcq",
+   "text": "Liftga o‘rnatilgan dinamometr 8 N ni ko‘rsatmoqda. Unga ilingan yukning massasi 500 g bo‘lsa, lift qanday tezlanish bilan harakatlanmoqda?",
+   "options": [
+    "16 m/s²",
+    "6 m/s²",
+    "4 m/s²",
+    "2 m/s²"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 19,
+   "type": "mcq",
+   "text": "Massasi 2 kg, hajmi 4 dm³ bo‘lgan jism suv ostida 6 m chuqurlikda ushlab turilibdi. Jism qo‘yib yuborilgandan keyin suv sirtidan 4 m balandlikda uning kinetik energiyasi qanday bo‘ladi? Qarshilik kuchlarini hisobga olmang.",
+   "options": [
+    "120 J",
+    "80 J",
+    "200 J",
+    "40 J"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 20,
+   "type": "mcq",
+   "text": "Massasi 2 kg bo‘lgan jism h balandlikdan 10 m/s boshlang‘ich tezlik bilan tik yuqoriga otildi. U erishgan maksimal potensial energiya 160 J bo‘lsa, h ni toping.",
+   "options": [
+    "3 m",
+    "8 m",
+    "5 m",
+    "13 m"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 21,
+   "type": "mcq",
+   "text": "Uzunligi 16 m, massasi 12 kg bo‘lgan bir jinsli to‘sin O tayanchga qo‘yilgan (to‘sin 8 ta teng bo‘lakka bo‘lingan). Rasmga ko‘ra tayanch chap uchdan 2 bo‘lak (4 m) masofada, to‘sinning chap uchiga pastga F kuch qo‘yilgan, o‘ng uchiga ilingan dinamometr 25 N ko‘rsatadi (yuqoriga tortadi). To‘sin muvozanatda. F kuchning O nuqtaga nisbatan momentini aniqlang.",
+   "options": [
+    "300 N·m",
+    "180 N·m",
+    "780 N·m",
+    "45 N·m"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 22,
+   "type": "mcq",
+   "text": "Yopiq idishdagi gaz temperaturasi 4 marta pasayganda uning bosimi 60 kPa ga kamaydi. Gazning oxirgi bosimini toping.",
+   "options": [
+    "80 kPa",
+    "20 kPa",
+    "15 kPa",
+    "240 kPa"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 23,
+   "type": "mcq",
+   "text": "Yassi kondensator qoplamalaridan biridagi zaryad miqdori 3 marta orttirilsa, kondensator sig‘imi qanday o‘zgaradi?",
+   "options": [
+    "3 marta ortadi",
+    "3 marta kamayadi",
+    "9 marta ortadi",
+    "o‘zgarmaydi"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 24,
+   "type": "mcq",
+   "text": "Bir xil materialdan yasalgan ikkita prujinaning diametrlari d₂ = 2d₁, hajmlari V₂ = 2V₁. Ularning har ikkisiga bir xil yuk osilsa, absolyut uzayishlari nisbati x₁/x₂ nimaga teng bo‘ladi? (Prujinalar Guk qonuniga bo‘ysunuvchi silindrsimon elastik jism kabi qaraladi.)",
+   "options": [
+    "1/8",
+    "4",
+    "8",
+    "2"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 25,
+   "type": "mcq",
+   "text": "4 m balandlikkacha suv quyilgan idish tubidagi yuzasi 30 cm² bo‘lgan teshik tiqin bilan berkitilgan. Tiqinga ta’sir qiluvchi gidrostatik bosim kuchini aniqlang.",
+   "options": [
+    "120 N",
+    "12 N",
+    "1200 N",
+    "80 N"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 26,
+   "type": "mcq",
+   "text": "Induktivligi 12 mH bo‘lgan g‘altakdagi tok kuchi 2 A ga ortganda undagi magnit maydon energiyasi 48 mJ ga ortdi. G‘altakdagi oxirgi magnit oqimini toping.",
+   "options": [
+    "24 mWb",
+    "36 mWb",
+    "12 mWb",
+    "48 mWb"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 27,
+   "type": "mcq",
+   "text": "Monoxromatik yorug‘lik davri d = 3 µm bo‘lgan difraksion panjaraga tik tushmoqda. Yorug‘likning to‘lqin uzunligi 600 nm. Kuzatilishi mumkin bo‘lgan eng katta maksimum tartibi qanday?",
+   "options": [
+    "5",
+    "4",
+    "3",
+    "10"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 28,
+   "type": "mcq",
+   "text": "Elektronning impulsi to‘lqin uzunligi 490 nm bo‘lgan foton impulsiga teng. Elektronning tezligini toping (h = 6,63×10⁻³⁴ J·s, mₑ = 9,1×10⁻³¹ kg).",
+   "options": [
+    "3,6 km/s",
+    "1,5 km/s",
+    "0,74 km/s",
+    "1,5 m/s"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 29,
+   "type": "mcq",
+   "text": "Massasi 2 kg bo‘lgan shar 6 m/s tezlik bilan harakatlanib, tinch turgan 4 kg massali sharga urildi. Urilishdan keyin sharlar birgalikda harakatlandi. Urilishda qancha mexanik energiya issiqlikka aylangan?",
+   "note": "Izoh: 29–32-topshiriqlar asl manbada berilmagan. Test formatini to‘ldirish uchun ular yangidan tuzilgan (AI yordamida yaratilgan).",
+   "options": [
+    "12 J",
+    "24 J",
+    "36 J",
+    "18 J"
+   ],
+   "answer": "B",
+   "origin": "ai-generated"
+  },
+  {
+   "n": 30,
+   "type": "mcq",
+   "text": "²³⁸₉₂U yadrosi ketma-ket ikkita α-yemirilish va ikkita β⁻-yemirilishga uchradi. Hosil bo‘lgan yadroning zaryad soni Z va massa soni A ni toping.",
+   "note": "Izoh: 29–32-topshiriqlar asl manbada berilmagan. Test formatini to‘ldirish uchun ular yangidan tuzilgan (AI yordamida yaratilgan).",
+   "options": [
+    "Z = 88, A = 230",
+    "Z = 90, A = 234",
+    "Z = 92, A = 230",
+    "Z = 90, A = 230"
+   ],
+   "answer": "D",
+   "origin": "ai-generated"
+  },
+  {
+   "n": 31,
+   "type": "mcq",
+   "text": "Yorug‘lik nuri sindirish ko‘rsatkichi n = √2 bo‘lgan shishadan havoga o‘tmoqda. To‘la ichki qaytish kuzatila boshlaydigan chegaraviy tushish burchagini toping.",
+   "note": "Izoh: 29–32-topshiriqlar asl manbada berilmagan. Test formatini to‘ldirish uchun ular yangidan tuzilgan (AI yordamida yaratilgan).",
+   "options": [
+    "30°",
+    "60°",
+    "45°",
+    "90°"
+   ],
+   "answer": "C",
+   "origin": "ai-generated"
+  },
+  {
+   "n": 32,
+   "type": "mcq",
+   "text": "Ideal transformatorning birlamchi chulg‘amida 1100 ta, ikkilamchi chulg‘amida 50 ta o‘ram bor. Birlamchi chulg‘am 220 V kuchlanishli tarmoqqa ulangan. Ikkilamchi chulg‘amga qarshiligi 5 Ω bo‘lgan iste’molchi ulansa, undan qanday tok o‘tadi?",
+   "note": "Izoh: 29–32-topshiriqlar asl manbada berilmagan. Test formatini to‘ldirish uchun ular yangidan tuzilgan (AI yordamida yaratilgan).",
+   "options": [
+    "2 A",
+    "44 A",
+    "0,5 A",
+    "10 A"
+   ],
+   "answer": "A",
+   "origin": "ai-generated"
+  },
+  {
+   "n": 33,
+   "type": "mcq",
+   "text": "Ampermetr ko‘rsatishi (A).",
+   "note": "Zanjir bitta berk konturdan iborat: ketma-ket ℰ₂ (r₂), ℰ₁ (r₁) manbalar, R₃ rezistor, ideal ampermetr va o‘zaro parallel ulangan R₁, R₂ (unga ideal voltmetr parallel). Rasmga ko‘ra ikkala manbaning musbat qutbi yuqorida. R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8,5 Ω, r₁ = 3,5 Ω, r₂ = 1,5 Ω, ℰ₁ = 80 V, ℰ₂ = 20 V. Topshiriqlar (33–35) va javob variantlari (A–F) ni o‘zaro to‘g‘ri moslashtiring.",
+   "options": [
+    "4",
+    "1,5",
+    "8",
+    "6",
+    "12",
+    "2"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 34,
+   "type": "mcq",
+   "text": "Voltmetr ko‘rsatishi (V).",
+   "note": "Zanjir bitta berk konturdan iborat: ketma-ket ℰ₂ (r₂), ℰ₁ (r₁) manbalar, R₃ rezistor, ideal ampermetr va o‘zaro parallel ulangan R₁, R₂ (unga ideal voltmetr parallel). Rasmga ko‘ra ikkala manbaning musbat qutbi yuqorida. R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8,5 Ω, r₁ = 3,5 Ω, r₂ = 1,5 Ω, ℰ₁ = 80 V, ℰ₂ = 20 V. Topshiriqlar (33–35) va javob variantlari (A–F) ni o‘zaro to‘g‘ri moslashtiring.",
+   "options": [
+    "4",
+    "1,5",
+    "8",
+    "6",
+    "12",
+    "2"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 35,
+   "type": "mcq",
+   "text": "0,1 s da ikkinchi manba energiyasining o‘zgarishi (J).",
+   "note": "Zanjir bitta berk konturdan iborat: ketma-ket ℰ₂ (r₂), ℰ₁ (r₁) manbalar, R₃ rezistor, ideal ampermetr va o‘zaro parallel ulangan R₁, R₂ (unga ideal voltmetr parallel). Rasmga ko‘ra ikkala manbaning musbat qutbi yuqorida. R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8,5 Ω, r₁ = 3,5 Ω, r₂ = 1,5 Ω, ℰ₁ = 80 V, ℰ₂ = 20 V. Topshiriqlar (33–35) va javob variantlari (A–F) ni o‘zaro to‘g‘ri moslashtiring.",
+   "options": [
+    "4",
+    "1,5",
+    "8",
+    "6",
+    "12",
+    "2"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 36,
+   "type": "open2",
+   "text": "Vaznsiz blok orqali o‘tkazilgan ipning bir uchiga 10 kg, ikkinchi uchiga 5 kg yuk osilgan. Blok 200 N kuch bilan vertikal yuqoriga ko‘tarilmoqda.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Blokning ilgarilanma tezlanishini toping.",
+     "answer": 5,
+     "unit": "m/s²",
+     "tolerance": 0.01
+    },
+    {
+     "key": "b",
+     "text": "10 kg li yukning Yerga nisbatan tezlanishini toping.",
+     "answer": 0,
+     "unit": "m/s²",
+     "tolerance": 0.01
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "type": "open2",
+   "text": "Qoplamalari orasidagi masofa 4 mm bo‘lgan kondensatorga dielektrik singdiruvchanligi 2 ga teng modda kiritildi va u 80 V kuchlanishga ulandi (ε₀ = 8,85×10⁻¹² F/m).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Elektr maydon kuchlanganligini toping (kV/m).",
+     "answer": 20,
+     "unit": "kV/m",
+     "tolerance": 0.05
+    },
+    {
+     "key": "b",
+     "text": "Elektr maydon energiyasining zichligini toping.",
+     "answer": 0.00354,
+     "unit": "J/m³",
+     "tolerance": 6e-05,
+     "hint": "Masalan: 3,5e-3",
+     "scientific": true
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "type": "open2",
+   "text": "0,8c tezlik bilan harakatlanayotgan jismning impulsi 4×10⁻²⁰ kg·m/s ga teng (c = 3×10⁸ m/s).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Jismning to‘la energiyasi qancha (pJ)?",
+     "answer": 15,
+     "unit": "pJ",
+     "tolerance": 0.05
+    },
+    {
+     "key": "b",
+     "text": "Jismning kinetik energiyasi qancha (pJ)?",
+     "answer": 6,
+     "unit": "pJ",
+     "tolerance": 0.05
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "type": "open2",
+   "text": "Karno sikli bo‘yicha ishlovchi mashinaning isitkichi temperaturasi sovitkichnikidan 4 marta katta. Mashina bir siklda 30 kJ ish bajaradi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Mashinaning foydali ish koeffitsiyenti necha foiz?",
+     "answer": 75,
+     "unit": "%",
+     "tolerance": 0.1
+    },
+    {
+     "key": "b",
+     "text": "2 siklda sovitkichga berilgan issiqlik miqdori qancha?",
+     "answer": 20,
+     "unit": "kJ",
+     "tolerance": 0.1
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "type": "open2",
+   "text": "Buyumdan ekrangacha masofa 2,4 m. Ekranda buyumning 5 marta kattalashgan haqiqiy tasviri hosil bo‘ldi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Buyumdan linzagacha masofa qancha?",
+     "answer": 0.4,
+     "unit": "m",
+     "tolerance": 0.005
+    },
+    {
+     "key": "b",
+     "text": "Linzaning optik kuchi qancha?",
+     "answer": 3,
+     "unit": "dptr",
+     "tolerance": 0.02
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "type": "open2",
+   "text": "Neft stansiyasida nasos har minutda 2,4 m³ hajmdagi neftni ko‘ndalang kesim yuzi 0,8 dm² bo‘lgan quvur orqali 48 m balandlikka ko‘taradi. Neftning zichligi 800 kg/m³.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Neftning quvurdagi tezligi qancha?",
+     "answer": 5,
+     "unit": "m/s",
+     "tolerance": 0.01
+    },
+    {
+     "key": "b",
+     "text": "Nasosning minimal quvvati qancha?",
+     "answer": 15.76,
+     "unit": "kW",
+     "tolerance": 0.1
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "type": "open2",
+   "text": "Solenoid ichidagi magnit maydon energiyasining hajmiy zichligi 2,4×10⁻⁴ J/m³, ko‘ndalang kesim yuzi 4 cm², uzunligi 50 cm, induktivligi 3×10⁻⁷ H. π ≈ 3 deb oling (μ₀ = 4π·10⁻⁷ ≈ 1,2·10⁻⁶ H/m).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Solenoiddagi tok kuchini toping.",
+     "answer": 0.566,
+     "unit": "A",
+     "tolerance": 0.01
+    },
+    {
+     "key": "b",
+     "text": "Magnit maydon kuchlanganligini toping.",
+     "answer": 20,
+     "unit": "A/m",
+     "tolerance": 0.1
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "type": "open2",
+   "text": "Yung moduli 180 GPa bo‘lgan sterjenning boshlang‘ich uzunligi 4 m, ko‘ndalang kesim yuzi 12 mm². Unga tashqi kuch qo‘yilganda sterjen 80 cm ga cho‘zildi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Nisbiy uzayishni toping (%).",
+     "answer": 20,
+     "unit": "%",
+     "tolerance": 0.05
+    },
+    {
+     "key": "b",
+     "text": "Tashqi kuchni toping (kN).",
+     "answer": 432,
+     "unit": "kN",
+     "tolerance": 0.5
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "type": "open2",
+   "text": "Jism 5 s da 3 m/s² tezlanish bilan tekis tezlanuvchan harakatlanib, 70 m masofani bosib o‘tdi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Jismning boshlang‘ich tezligini toping.",
+     "answer": 6.5,
+     "unit": "m/s",
+     "tolerance": 0.01
+    },
+    {
+     "key": "b",
+     "text": "Shu 5 s dan oldingi 2 s da jism qancha yo‘l bosib o‘tgan? (Tezlanish o‘zgarmagan.)",
+     "answer": 7,
+     "unit": "m",
+     "tolerance": 0.05
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "type": "open2",
+   "text": "Fotoelementga chastotasi 4×10¹⁵ Hz bo‘lgan fotonlar oqimi tushmoqda. Chastota 3 marta orttirilsa, to‘xtatuvchi kuchlanish 4 marta ortadi. h = 6,63×10⁻³⁴ J·s, c = 3×10⁸ m/s, e = 1,6×10⁻¹⁹ C.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Ushbu modda uchun fotoeffektning qizil chegarasini toping (nm).",
+     "answer": 225,
+     "unit": "nm",
+     "tolerance": 1
+    },
+    {
+     "key": "b",
+     "text": "Keyingi holatdagi fotoelektronlarning kinetik energiyasini toping (eV).",
+     "answer": 44.2,
+     "unit": "eV",
+     "tolerance": 0.5
+    }
+   ]
+  }
+ ],
+ "notice": "29–32-topshiriqlar asl manbada berilmagan; ular yangidan tuzilgan (AI yordamida yaratilgan). Qolgan topshiriqlar 29-sentabr 2026, 2-smena imtihon savollari asosida."
+}

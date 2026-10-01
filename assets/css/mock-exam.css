@@ -1,0 +1,160 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Mock test sahifasi (milliy-sertifikat/mock-testlar/test.html) uchun ko'rinish qatlami.
+   Engine'ning o'z uslubi (mock-testlar/css/mock-testlar.css) o'zgartirilmagan va yuklanadi — bu fayl:
+     1) engine o'zgaruvchilarini (--bg, --surface, --accent, ...) OliyFizika 2.0 tokenlariga bog'laydi
+        (yorug' va qorong'i mavzu avtomatik);
+     2) engine'ning sahifa darajasidagi global uslublarini (body foni, watermark, sticky topbar) qobiqqa moslaydi;
+     3) test paytida "diqqat rejimi": sidebar ixcham, mobil pastki navigatsiya yashirin.
+   Hech qanday engine mantig'i (id, hodisa, taymer, baholash) bu yerga bog'liq emas.
+   ========================================================================== */
+
+body.of-exam-page {
+  /* engine palitrasi -> OF tokenlari (body ichidagi barcha elementlar, modallar ham, shu qiymatlarni oladi) */
+  --bg: var(--of-bg);
+  --bg-glow-1: transparent;
+  --bg-glow-2: transparent;
+  --surface: var(--of-surface);
+  --surface-strong: var(--of-surface);
+  --surface-soft: var(--of-surface-2);
+  --border: var(--of-border);
+  --border-strong: color-mix(in srgb, var(--of-primary) 38%, var(--of-border));
+  --text: var(--of-text);
+  --text-strong: var(--of-text);
+  --muted: var(--of-text-2);
+  --accent: var(--of-primary-solid);
+  --accent-2: var(--of-primary-text);
+  --accent-soft: var(--of-primary-soft);
+  --ok: var(--of-success-text);
+  --ok-soft: var(--of-success-soft);
+  --bad: var(--of-danger-text);
+  --bad-soft: var(--of-danger-soft);
+  --warn: var(--of-warning-text);
+  --warn-soft: var(--of-warning-soft);
+  --shadow: var(--of-shadow-sm);
+  --watermark: transparent;
+  --topbar: var(--of-surface);
+  --input-bg: var(--of-surface);
+
+  /* engine body uslubini qobiqqa qaytarish */
+  min-width: 0;
+  background: var(--of-bg) !important;
+  background-attachment: scroll;
+  color: var(--of-text);
+  font-family: var(--of-font-sans);
+  line-height: normal;
+}
+body.of-exam-page::before { content: none !important; display: none !important; }
+html:has(body.of-exam-page) { scroll-behavior: auto; }
+body.of-exam-page .of-chrome a { color: inherit; }
+
+/* ------------------------------------------------------------ sahifa konteyneri */
+.of-exam { padding-top: 0 !important; display: flex; flex-direction: column; }
+.of-exam .shell { max-width: 1320px; width: 100%; margin: 0 auto; padding: 18px 0 8px; }
+
+/* ------------------------------------------------------------ test asboblar paneli (engine topbar o'rnida) */
+.of-exam-bar {
+  position: sticky; top: var(--of-header-h); z-index: 30;
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 calc(-1 * var(--of-exam-pad, 32px));
+  padding: 10px var(--of-exam-pad, 32px);
+  background: var(--of-bg);
+  border-bottom: 1px solid var(--of-border);
+}
+.of-exam-bar__back {
+  display: flex; align-items: center; gap: 8px; min-width: 0;
+  color: var(--of-text) !important; text-decoration: none !important;
+  border-radius: var(--of-radius-md); padding: 4px 8px 4px 2px;
+}
+.of-exam-bar__back:hover { background: var(--of-surface-sunken); }
+.of-exam-bar__back > svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; color: var(--of-text-2); }
+.of-exam-bar__text { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.of-exam-bar__eyebrow { font-size: var(--of-text-xs); color: var(--of-text-3); font-weight: 600; }
+.of-exam-bar__text strong { font-size: var(--of-text-sm); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.of-exam-bar__spacer { flex: 1; }
+.of-exam-bar .iconbtn {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px;
+  border-radius: var(--of-radius-md); background: var(--of-surface); border-color: var(--of-border);
+  font-weight: 600; font-size: var(--of-text-sm); color: var(--of-text);
+}
+.of-exam-bar .iconbtn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.of-exam-bar .timer {
+  min-height: 40px; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--of-primary-soft); border-color: color-mix(in srgb, var(--of-primary) 35%, var(--of-border));
+  color: var(--of-primary-text); border-radius: var(--of-radius-md);
+}
+.of-exam-bar .timer.danger { background: var(--of-danger); border-color: var(--of-danger); color: #fff; }
+.of-exam-bar [hidden] { display: none !important; }
+
+/* ------------------------------------------------------------ engine komponentlari: OF ko'rinishi */
+body.of-exam-page .glass { backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: var(--of-radius-xl); box-shadow: var(--of-shadow-sm); }
+body.of-exam-page .btn { border-radius: var(--of-radius-md); font-weight: 650; min-height: 44px; }
+body.of-exam-page .btn-primary { background: var(--of-primary-solid); box-shadow: none; }
+body.of-exam-page .btn-primary:hover { background: var(--of-primary-solid-hover); filter: none; }
+body.of-exam-page .btn-danger { background: #b42330; color: #fff; }
+body.of-exam-page .btn:focus-visible, body.of-exam-page .navbtn:focus-visible, body.of-exam-page .option:focus-visible,
+body.of-exam-page .iconbtn:focus-visible, body.of-exam-page .tab:focus-visible, body.of-exam-page .closebtn:focus-visible,
+body.of-exam-page .answerbox input:focus-visible, body.of-exam-page .review-nav a:focus-visible, body.of-exam-page .link-btn:focus-visible {
+  outline: 2px solid var(--of-primary); outline-offset: 2px;
+}
+body.of-exam-page .q-number, body.of-exam-page .option.selected .letter, body.of-exam-page .participant__avatar,
+body.of-exam-page .review-qnum i, body.of-exam-page .calc-grid .eq { background: var(--of-primary-solid); }
+body.of-exam-page .progressbar i { background: var(--of-success); }
+body.of-exam-page .qtext { font-family: var(--of-font-sans); font-size: 1.14rem; line-height: 1.7; }
+body.of-exam-page .question-card { scroll-margin-top: calc(var(--of-header-h) + 76px); min-height: 0; }
+body.of-exam-page .side { top: calc(var(--of-header-h) + 76px); }
+body.of-exam-page .option { background: var(--of-surface); min-height: 48px; }
+body.of-exam-page .option.selected { border-color: var(--of-primary); }
+body.of-exam-page .diagram-wrap img, body.of-exam-page .option-img, body.of-exam-page .formula-img { background: #fff; }
+body.of-exam-page .answerbox input { min-height: 44px; }
+body.of-exam-page .modal { background: rgb(12 17 28 / 0.55); z-index: 2000; }
+body.of-exam-page .modal-card { border-radius: var(--of-radius-xl); box-shadow: var(--of-shadow-lg); }
+body.of-exam-page .closebtn { color: var(--of-text); }
+body.of-exam-page .calc-display, body.of-exam-page .codebox { background: #0f1522; }
+
+/* start va natija "hero" bloklari — ko'k gradient o'rniga OF uslubi */
+body.of-exam-page .hero, body.of-exam-page .result-hero { background: var(--of-primary-solid); }
+body.of-exam-page :is(.hero, .result-hero) :where(h1, h2, h3) { color: #fff; }
+body.of-exam-page .hero::after { color: rgb(255 255 255 / .1); }
+body.of-exam-page .stat { background: rgb(255 255 255 / .12); }
+body.of-exam-page .site-footer { padding: 22px 0 8px; }
+
+/* ------------------------------------------------------------ diqqat rejimi (test davomida) */
+/* Sidebar ixcham (foydalanuvchi sozlamasi o'zgarmaydi — faqat ko'rinish) */
+@media (min-width: 900px) {
+  html:has(body.of-exam-page.in-exam) .of-app { --_sbw: var(--of-sidebar-w-collapsed); }
+  html:has(body.of-exam-page.in-exam) .of-sidebar { width: var(--of-sidebar-w-collapsed); }
+  html:has(body.of-exam-page.in-exam) .of-sidebar :is(.of-logo__text, .of-nav-group__label, .of-nav-link__label, .of-nav-link__lock, .of-collapse-btn, .of-sidebar__footer) { display: none; }
+  html:has(body.of-exam-page.in-exam) .of-sidebar__brand { justify-content: center; padding: 0; }
+  html:has(body.of-exam-page.in-exam) .of-nav-link { justify-content: center; padding: 0; }
+}
+/* Mobil: pastki navigatsiya test paytida yashirin (savollar paneli va tugmalar bilan to'qnashmasin) */
+@media (max-width: 899px) {
+  html:has(body.of-exam-page.in-exam) .of-bottom-nav { display: none !important; }
+  html:has(body.of-exam-page.in-exam) .of-app { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* ------------------------------------------------------------ o'lchamlar */
+@media (min-width: 900px) and (max-width: 1199px) { .of-exam { --of-exam-pad: 24px; } }
+@media (max-width: 980px) {
+  body.of-exam-page .side { top: auto; z-index: 1100; box-shadow: var(--of-shadow-lg); }
+  /* Savollar paneli (pastdan chiqadigan): yakunlash tugmasi doim ko'rinsin */
+  body.of-exam-page .side .finish { position: sticky; bottom: -18px; margin-bottom: -18px; box-shadow: 0 -10px 16px -8px var(--of-surface); }
+}
+@media (min-width: 651px) and (max-width: 980px) {
+  body.of-exam-page .navgrid { grid-template-columns: repeat(9, 1fr); }
+}
+@media (max-width: 899px) {
+  .of-exam { --of-exam-pad: 16px; }
+  .of-exam-bar { gap: 8px; }
+  .of-exam .shell { padding-top: 14px; }
+}
+@media (max-width: 520px) {
+  .of-exam-bar__eyebrow { display: none; }
+  .of-exam-bar .iconbtn { padding: 8px 10px; }
+  body.of-exam-page.in-exam .of-exam-bar__text { display: none; }
+  .of-exam-bar .timer { min-width: 86px; padding: 6px 8px; }
+}
+@media print {
+  .of-exam-bar, .of-sidebar, .of-header, .of-bottom-nav { display: none !important; }
+  .of-app { padding: 0 !important; }
+}

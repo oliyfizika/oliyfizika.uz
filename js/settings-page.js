@@ -16,7 +16,6 @@ const homeUrl = new URL("../index.html", import.meta.url).href;
 
 const form = document.getElementById("settingsForm");
 const fullNameInput = document.getElementById("settingsFullName");
-const phoneInput = document.getElementById("settingsPhone");
 const emailInput = document.getElementById("settingsEmail");
 const submitButton = document.getElementById("settingsSubmit");
 const status = document.getElementById("settingsStatus");
@@ -44,7 +43,6 @@ async function loadSettings(user){
     hasProfileDocument = Boolean(profile);
 
     fullNameInput.value = profile?.fullName || "";
-    phoneInput.value = profile?.phone || "";
     emailInput.value = profile?.email || user.email || "";
 
     if(!profile){
@@ -64,11 +62,10 @@ async function saveSettings(event){
   if(!currentUser) return;
 
   const fullName = fullNameInput.value.trim();
-  const phone = phoneInput.value.trim();
   const email = currentUser.email || emailInput.value.trim();
 
-  if(!fullName || !phone){
-    setStatus("Full Name va Phone maydonlarini to'ldiring.", "error");
+  if(!fullName){
+    setStatus("Ism-familiyani kiriting.", "error");
     return;
   }
 
@@ -78,15 +75,14 @@ async function saveSettings(event){
     const userRef = doc(db, "users", currentUser.uid);
 
     if(hasProfileDocument){
+      // Telefon raqami endi so'ralmaydi; mavjud qiymat o'zgartirilmaydi.
       await updateDoc(userRef, {
         fullName,
-        phone,
         email
       });
     }else{
       await setDoc(userRef, {
         fullName,
-        phone,
         email,
         xp: 0,
         level: 1,

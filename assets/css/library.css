@@ -1,0 +1,85 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Kutubxona (kutubxona/*.html)
+   Bo'lim kartalari, material kartalari (fayl turi, muallif, tavsif, amal tugmasi).
+   Umumiy qismlar (sarlavha, chiplar) — catalog.css.
+   ========================================================================== */
+
+.of-lib-h2 { font: 700 var(--of-text-lg)/1.3 var(--of-font-sans) !important; letter-spacing: normal !important; margin-bottom: 10px !important; }
+.of-lib-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+.of-back-link {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 40px; padding: 0 14px 0 10px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-pill);
+  background: var(--of-surface); color: var(--of-text-2) !important;
+  font: 600 var(--of-text-sm)/1 var(--of-font-sans); text-decoration: none !important;
+  transition: border-color var(--of-dur-fast), color var(--of-dur-fast), background var(--of-dur-fast);
+}
+.of-back-link:hover { border-color: var(--of-border-strong); color: var(--of-text) !important; background: var(--of-surface-sunken); }
+.of-back-link svg { width: 18px; height: 18px; }
+
+/* ------------------------------------------------------------ Bo'limlar */
+.of-lib-cats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.of-lib-cats > li { display: flex; min-width: 0; }
+.of-lib-cat {
+  flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px;
+  color: inherit !important; text-decoration: none !important;
+  transition: border-color var(--of-dur-base), box-shadow var(--of-dur-base), transform var(--of-dur-base) var(--of-ease-out);
+}
+.of-lib-cat:hover { border-color: var(--of-primary-soft-2); box-shadow: var(--of-shadow-md); transform: translateY(-2px); }
+.of-lib-cat:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 3px; }
+.of-lib-cat__icon { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 12px; background: var(--of-primary-soft); color: var(--of-primary); }
+.of-lib-cat__icon svg { width: 22px; height: 22px; }
+.of-lib-cat__body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.of-lib-cat__title { font-weight: 700; font-size: var(--of-text-sm); line-height: 1.3; hyphens: manual; }
+.of-lib-cat__count { color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.of-lib-cat__go { display: none; }
+
+/* bo'lim sahifasidagi bo'limlar navigatsiyasi (havolalar) */
+.of-chips a.of-chip { text-decoration: none; }
+.of-chips a.of-chip[aria-current="page"] { background: var(--of-primary-soft); border-color: color-mix(in srgb, var(--of-primary) 40%, var(--of-border)); color: var(--of-primary-text); }
+
+/* ------------------------------------------------------------ Materiallar */
+.of-res-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin: 12px 0 0; padding: 0; list-style: none; }
+.of-res-grid > li { display: flex; min-width: 0; }
+.of-res-grid > li[hidden] { display: none !important; }
+.of-res-grid > li.is-pending { opacity: 0; }
+.of-res {
+  flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 16px;
+  transition: border-color var(--of-dur-base), box-shadow var(--of-dur-base);
+}
+.of-res:hover { border-color: var(--of-primary-soft-2); box-shadow: var(--of-shadow-md); }
+.of-res__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.of-res__type {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px 3px 7px; border-radius: 8px;
+  background: var(--of-primary-soft); color: var(--of-primary-text);
+  font: 800 var(--of-text-xs)/1.2 var(--of-font-sans); letter-spacing: .04em;
+}
+.of-res[data-type="PPTX"] .of-res__type { background: var(--of-success-soft); color: var(--of-success-text); }
+.of-res__type svg { width: 14px; height: 14px; }
+.of-res__title { font: 700 var(--of-text-md)/1.35 var(--of-font-sans) !important; letter-spacing: normal !important; overflow-wrap: anywhere; }
+.of-res__by { color: var(--of-text-2); font-size: var(--of-text-sm); font-weight: 600; overflow-wrap: anywhere; }
+.of-res__desc { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; overflow-wrap: anywhere; }
+.of-res__foot { margin-top: auto; padding-top: 6px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.of-res__host { display: inline-flex; align-items: center; gap: 5px; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.of-res__host svg { width: 14px; height: 14px; }
+.of-res__foot .of-btn { min-height: 40px; }
+
+@media (max-width: 640px) {
+  .of-lib-cats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .of-lib-cat { padding: 10px; flex-direction: row; align-items: center; gap: 10px; }
+  .of-lib-cat__icon { width: 34px; height: 34px; border-radius: 10px; }
+  .of-lib-cat__icon svg { width: 18px; height: 18px; }
+  .of-res-grid { grid-template-columns: 1fr; gap: 10px; }
+  .of-res__foot .of-btn { width: 100%; min-height: 44px; }
+  .of-back-link { min-height: 44px; }
+}
+@media (max-width: 400px) {
+  .of-lib-cat { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .of-res-grid > li.is-pending { opacity: 1; }
+  .of-lib-cat:hover { transform: none; }
+}

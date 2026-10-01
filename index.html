@@ -1,1693 +1,235 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Oliy Fizika – Fizika darslari, testlar, attestatsiya va milliy sertifikat</title>
-
-<meta name="description"
-content="OliyFizika.uz - fizika darslari, attestatsiya testlari, milliy sertifikat tayyorgarligi, olimpiada masalalari, interaktiv simulyatorlar va quizlar platformasi.">
-
-<meta name="keywords"
-content="oliy fizika, fizika, fizika testlari, attestatsiya, milliy sertifikat, fizika olimpiadasi, fizika darslari, fizika quiz">
-
-<meta name="robots"
-content="index, follow">
-
-<link rel="canonical"
-href="https://oliyfizika.uz/">
-
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-body{
-  background:#020817;
-  color:white;
-  overflow-x:hidden;
-}
-
-body.auth-modal-open{
-  overflow:hidden;
-}
-
-body::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
-    linear-gradient(135deg,#020817,#07122f,#020817);
-
-  z-index:-3;
-}
-
-.stars{
-
-  position:fixed;
-
-  inset:0;
-
-  background-image:
-    radial-gradient(white 1px,transparent 1px);
-
-  background-size:40px 40px;
-
-  opacity:.15;
-
-  z-index:-2;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:24px;
-
-  background:rgba(5,12,35,.7);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-}
-
-.logo{
-
-  font-size:42px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#1d9cff;
-}
-
-.nav-buttons{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:14px;
-
-  position:relative;
-
-  flex-wrap:wrap;
-}
-
-.btn{
-
-  padding:12px 22px;
-
-  border-radius:16px;
-
-  border:none;
-
-  cursor:pointer;
-
-  font-size:15px;
-
-  color:white;
-
-  transition:.3s;
-
-  text-decoration:none;
-}
-
-.btn-outline{
-
-  background:transparent;
-
-  border:1px solid rgba(255,255,255,.2);
-}
-
-.btn-primary{
-
-  background:
-  linear-gradient(135deg,#1d4fff,#2797ff);
-
-  box-shadow:
-  0 0 20px rgba(37,99,235,.5);
-}
-
-.btn:hover{
-
-  transform:translateY(-2px);
-}
-
-.user-menu{
-  position:relative;
-}
-
-.user-menu-btn{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  max-width:260px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.16);
-}
-
-.user-menu-icon{
-  font-size:18px;
-  line-height:1;
-}
-
-.user-menu-name{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-.user-dropdown{
-  position:absolute;
-  top:calc(100% + 12px);
-  right:0;
-  min-width:190px;
-  padding:8px;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:18px;
-  background:rgba(8,16,42,.96);
-  backdrop-filter:blur(18px);
-  box-shadow:0 18px 45px rgba(0,0,0,.35);
-  z-index:20;
-}
-
-.user-dropdown[hidden]{
-  display:none;
-}
-
-.user-dropdown-item{
-  width:100%;
-  padding:11px 12px;
-  border:0;
-  border-radius:12px;
-  background:transparent;
-  color:white;
-  cursor:pointer;
-  font-size:14px;
-  text-align:left;
-  transition:.2s;
-}
-
-.user-dropdown-item:hover,
-.user-dropdown-item:focus{
-  background:rgba(59,130,246,.18);
-  outline:none;
-}
-
-.auth-modal{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:grid;
-  place-items:center;
-  padding:24px;
-  background:rgba(2,8,23,.76);
-  backdrop-filter:blur(14px);
-}
-
-.auth-modal[hidden]{
-  display:none;
-}
-
-.auth-panel{
-  width:min(100%,520px);
-  max-height:calc(100vh - 48px);
-  overflow:auto;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:24px;
-  background:rgba(6,14,38,.98);
-  box-shadow:0 30px 90px rgba(0,0,0,.45);
-}
-
-.auth-header{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:18px;
-  padding:28px 28px 12px;
-}
-
-.auth-title{
-  font-size:28px;
-  font-weight:700;
-}
-
-.auth-subtitle{
-  margin-top:8px;
-  color:#b6c5dc;
-  line-height:1.6;
-  font-size:14px;
-}
-
-.auth-close{
-  width:42px;
-  height:42px;
-  flex:0 0 auto;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:50%;
-  background:rgba(255,255,255,.05);
-  color:white;
-  cursor:pointer;
-  font-size:24px;
-  line-height:1;
-}
-
-.auth-tabs{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  padding:0 28px 18px;
-}
-
-.auth-tabs[hidden]{
-  display:none;
-}
-
-.auth-tab{
-  padding:12px;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;
-  background:rgba(255,255,255,.04);
-  color:#cbd5e1;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.auth-tab.is-active{
-  color:white;
-  border-color:rgba(56,189,248,.55);
-  background:rgba(37,99,235,.35);
-}
-
-.auth-form{
-  display:grid;
-  gap:14px;
-  padding:0 28px 28px;
-}
-
-.auth-form[hidden]{
-  display:none;
-}
-
-.auth-field{
-  display:grid;
-  gap:8px;
-}
-
-.auth-field label{
-  color:#dbeafe;
-  font-size:14px;
-  font-weight:500;
-}
-
-.auth-field input,
-.auth-field select{
-  width:100%;
-  padding:13px 14px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:14px;
-  background:rgba(255,255,255,.06);
-  color:white;
-  font-size:15px;
-  outline:none;
-}
-
-.auth-field input:focus,
-.auth-field select:focus{
-  border-color:#38bdf8;
-  box-shadow:0 0 0 3px rgba(56,189,248,.16);
-}
-
-.auth-field select option{
-  color:#0f172a;
-}
-
-.auth-actions{
-  display:grid;
-  gap:12px;
-  margin-top:6px;
-}
-
-.auth-submit{
-  width:100%;
-  padding:14px 18px;
-  border-radius:14px;
-  border:0;
-  color:white;
-  cursor:pointer;
-  font-size:15px;
-  font-weight:700;
-  background:linear-gradient(135deg,#1d4fff,#2797ff);
-  box-shadow:0 0 20px rgba(37,99,235,.42);
-}
-
-.auth-submit:disabled{
-  cursor:not-allowed;
-  opacity:.7;
-}
-
-.auth-switch{
-  border:0;
-  background:transparent;
-  color:#7dd3fc;
-  cursor:pointer;
-  font-size:14px;
-}
-
-.auth-link-row{
-  display:flex;
-  justify-content:flex-end;
-  margin-top:-4px;
-}
-
-.auth-forgot-link{
-  border:0;
-  background:transparent;
-  color:#7dd3fc;
-  cursor:pointer;
-  font-size:14px;
-  text-align:right;
-}
-
-.auth-switch:hover,
-.auth-switch:focus,
-.auth-forgot-link:hover,
-.auth-forgot-link:focus{
-  color:#bae6fd;
-  outline:none;
-}
-
-.auth-message{
-  min-height:22px;
-  padding:0 28px 28px;
-  color:#fecaca;
-  font-size:14px;
-  line-height:1.5;
-}
-
-.auth-message.success{
-  color:#86efac;
-}
-
-
-/* HERO */
-
-.hero{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:50px;
-
-  min-height:88vh;
-}
-
-.hero-left{
-
-  flex:1;
-}
-
-.badge{
-
-  display:inline-block;
-
-  padding:12px 20px;
-
-  border-radius:50px;
-
-  border:1px solid rgba(255,255,255,.12);
-
-  background:rgba(255,255,255,.04);
-
-  color:#dbeafe;
-
-  margin-bottom:25px;
-
-  box-shadow:
-  0 0 30px rgba(59,130,246,.15);
-}
-
-.hero h1{
-
-  font-size:78px;
-
-  line-height:1.1;
-
-  margin-bottom:24px;
-
-  font-weight:800;
-}
-
-.hero h1 span{
-
-  background:
-  linear-gradient(to right,#38bdf8,#2563eb);
-
-  -webkit-background-clip:text;
-
-  -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-
-  color:#cbd5e1;
-
-  font-size:24px;
-
-  line-height:1.8;
-
-  max-width:700px;
-
-  margin-bottom:40px;
-}
-
-.hero-buttons{
-
-  display:flex;
-
-  gap:20px;
-
-  margin-bottom:45px;
-}
-
-.big-btn{
-
-  padding:18px 34px;
-
-  border-radius:18px;
-
-  font-size:18px;
-
-  font-weight:600;
-}
-
-.hero-right{
-
-  flex:1;
-
-  position:relative;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-}
-
-
-
-
-/* MATEMATIK MAYATNIK */
-
-.pendulum-container{
-    position:relative;
-    width:550px;
-    height:500px;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-}
-
-/* Shift */
-
-.pendulum-support{
-    position:absolute;
-    top:20px;
-    width:160px;
-    height:12px;
-    border-radius:10px;
-
-    background:linear-gradient(
-        90deg,
-        #64748b,
-        #e2e8f0,
-        #64748b
-    );
-
-    box-shadow:0 0 15px rgba(255,255,255,.2);
-}
-
-
-
-/* Ip */
-
-.pendulum-string{
-    position:absolute;
-    top:32px;
-
-    width:2px;
-    height:280px;
-
-    background:linear-gradient(
-        to bottom,
-        #cbd5e1,
-        #94a3b8
-    );
-
-    transform-origin:top center;
-
-    animation:swing 3s ease-in-out infinite;
-}
-
-
-.pendulum-arc{
-    position:absolute;
-    top:35px;
-    width:600px;
-    height:320px;
-    pointer-events:none;
-}
-
-/* Shar */
-
-.pendulum-ball{
-    position:absolute;
-
-    top:290px;
-
-    width:40px;
-    height:40px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle at 30% 30%,
-        #7dd3fc,
-        #2563eb,
-        #0f172a
-    );
-
-    box-shadow:
-      0 0 25px #38bdf8,
-      0 0 60px rgba(37,99,235,.5);
-
-    transform-origin:center -258px;
-
-    animation:swing 3s ease-in-out infinite;
-}
-
-@keyframes swing{
-
-    0%{
-        transform:rotate(-30deg);
-    }
-
-    50%{
-        transform:rotate(30deg);
-    }
-
-    100%{
-        transform:rotate(-30deg);
-    }
-
-}
-
-
-/* CARDS */
-
-.cards{
-
-  display:grid;
-
-  grid-template-columns:repeat(4,1fr);
-
-  gap:25px;
-
-  margin-top:30px;
-
-  margin-bottom:60px;
-}
-
-.card{
-
-  padding:32px;
-
-  border-radius:28px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  background:rgba(255,255,255,.03);
-
-  backdrop-filter:blur(18px);
-
-  transition:.4s;
-
-  text-decoration:none;
-
-  color:white;
-}
-
-.card:hover{
-
-  transform:translateY(-8px);
-
-  box-shadow:
-  0 0 40px rgba(37,99,235,.25);
-}
-
-.card::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:200px;
-
-  height:200px;
-
-  background:rgba(37,99,235,.25);
-
-  border-radius:50%;
-
-  top:-80px;
-
-  right:-80px;
-
-  filter:blur(40px);
-}
-
-.card-icon{
-
-  font-size:52px;
-
-  margin-bottom:18px;
-}
-
-.card h3{
-
-  font-size:34px;
-
-  margin-bottom:12px;
-}
-
-.card p{
-
-  color:#cbd5e1;
-
-  line-height:1.8;
-
-  font-size:16px;
-}
-
-
-/* QUICK LINKS */
-
-.quick-links{
-
-  display:grid;
-
-  grid-template-columns:repeat(5,1fr);
-
-  gap:22px;
-
-  margin-bottom:70px;
-}
-
-.quick-card{
-
-  text-decoration:none;
-
-  color:white;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(14px);
-
-  border-radius:28px;
-
-  padding:32px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:16px;
-
-  transition:.35s;
-}
-
-.quick-card:hover{
-
-  transform:translateY(-7px);
-
-  box-shadow:
-  0 0 35px rgba(37,99,235,.28);
-}
-
-.quick-icon{
-
-  font-size:42px;
-}
-
-.quick-card span{
-
-  font-size:19px;
-
-  font-weight:600;
-}
-
-
-/* STATS */
-
-.stats{
-
-  margin-bottom:60px;
-
-  display:grid;
-
-  grid-template-columns:repeat(5,1fr);
-
-  gap:20px;
-}
-
-.stat{
-
-  padding:30px;
-
-  text-align:center;
-
-  border-radius:22px;
-
-  background:rgba(255,255,255,.03);
-
-  border:1px solid rgba(255,255,255,.06);
-
-  backdrop-filter:blur(10px);
-}
-
-.stat h2{
-
-  font-size:42px;
-
-  margin-bottom:10px;
-
-  color:#38bdf8;
-}
-
-.stat p{
-
-  color:#cbd5e1;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1200px){
-
-  .hero{
-
-    flex-direction:column;
-
-    text-align:center;
-  }
-
-  .hero p{
-
-    margin:auto;
-
-    margin-bottom:35px;
-  }
-
-  .hero-buttons{
-
-    justify-content:center;
-  }
-
-  .cards{
-
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .quick-links{
-
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .stats{
-
-    grid-template-columns:repeat(2,1fr);
-  }
-
-}
-
-@media(max-width:768px){
-
-  .navbar{
-
-    flex-direction:column;
-
-    gap:20px;
-  }
-
-  .nav-buttons{
-    width:100%;
-    justify-content:center;
-  }
-
-  .user-menu,
-  .user-menu-btn{
-    width:100%;
-  }
-
-  .user-menu-btn{
-    justify-content:center;
-  }
-
-  .user-dropdown{
-    left:0;
-    right:0;
-  }
-
-  .auth-panel{
-    border-radius:20px;
-  }
-
-  .auth-header,
-  .auth-tabs,
-  .auth-form,
-  .auth-message{
-    padding-left:20px;
-    padding-right:20px;
-  }
-
-  .hero h1{
-
-    font-size:48px;
-  }
-
-  .hero p{
-
-    font-size:18px;
-  }
-
-  .atom{
-
-    width:340px;
-
-    height:340px;
-  }
-
-  .cards{
-
-    grid-template-columns:1fr;
-  }
-
-  .quick-links{
-
-    grid-template-columns:1fr;
-  }
-
-  .stats{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-
-/* FOOTER */
-
-.footer{
-    margin-top:100px;
-    padding:60px 0 20px;
-    background:rgba(255,255,255,.03);
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-.footer-container{
-    width:92%;
-    max-width:1400px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:40px;
-}
-
-.footer-section h3{
-    color:#38bdf8;
-    margin-bottom:18px;
-    font-size:22px;
-}
-
-.footer-section p{
-    color:#cbd5e1;
-    line-height:1.9;
-}
-
-.contact-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:#cbd5e1;
-    margin-bottom:14px;
-}
-
-.contact-item i{
-    color:#38bdf8;
-}
-
-.social-link{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:#cbd5e1;
-    margin-bottom:12px;
-    transition:.3s;
-}
-
-.social-link:hover{
-    color:#38bdf8;
-    transform:translateX(5px);
-}
-
-.social-link i{
-    font-size:20px;
-}
-
-.footer-bottom{
-    text-align:center;
-    margin-top:40px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.08);
-    color:#94a3b8;
-}
-
-.footer-bottom span{
-    color:#38bdf8;
-}
-
-
-
-</style>
-
+<meta name="description" content="OliyFizika.uz - fizika darslari, attestatsiya testlari, milliy sertifikat tayyorgarligi, olimpiada masalalari, interaktiv simulyatorlar va quizlar platformasi.">
+<meta name="keywords" content="oliy fizika, fizika, fizika testlari, attestatsiya, milliy sertifikat, fizika olimpiadasi, fizika darslari, fizika quiz">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://oliyfizika.uz/">
+<meta property="og:title" content="OliyFizika.uz — fizikani o‘rganish platformasi">
+<meta property="og:description" content="Video darslar, testlar, interaktiv simulyatsiyalar va milliy sertifikatga tayyorgarlik.">
+<meta property="og:url" content="https://oliyfizika.uz/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2150dc">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="assets/css/app.css">
+<link rel="stylesheet" href="assets/css/home.css">
+<script type="module" src="assets/js/shell/app-shell.js"></script>
+<script type="module" src="assets/js/home/home.js"></script>
 </head>
 
-<body>
-
-<div class="stars"></div>
-
-<div class="container">
-
-
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-<div class="logo">
-Oliy<span>Fizika</span>.uz
-</div>
-
-<div class="nav-buttons" id="authNav">
-
-<button
-id="openLogin"
-class="btn btn-outline">
-Kirish
-</button>
-
-<button
-id="openRegister"
-class="btn btn-primary">
-Ro'yxatdan o'tish
-</button>
-
-</div>
-
-</nav>
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-left">
-
-
-<div class="badge">
-🚀 Fizika – olam sirlarini ochuvchi fan!
-</div>
-
-<h1>
-
-FIZIKLAR JAMYATIGA <br>
-
-<span>
-XUSH KELIBSIZ!
-</span>
-
-</h1>
-
-<p>
-
-Interaktiv darslar, simulyatorlar va testlar yordamida
-fizikani oson va qiziqarli o‘rganing!
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="umumiy-fizika/umumiy-fizika.html"
-class="btn btn-primary big-btn"
-data-requires-auth="true">
-
-🚀 Boshlash
-
-</a>
-
-<a href="#stats"
-class="btn btn-outline big-btn">
-
-▶ Qanday ishlaydi?
-
-</a>
-
-</div>
-
-</div>
-
-
-
-<div class="hero-right">
-
-
-
-<div class="pendulum-container">
-
-    <div class="pendulum-support"></div>
-
-    <div class="pendulum-string"></div>
-
-    <div class="pendulum-ball"></div>
-
-</div>
-
-
-
-
-
-</div>
-
-</section>
-
-
-
-<!-- CARDS -->
-
-<section class="cards">
-
-<a href="umumiy-fizika/umumiy-fizika.html"
-class="card"
-data-requires-auth="true">
-
-<div class="card-icon">
-📘
-</div>
-
-<h3>
-Umumiy fizika
-</h3>
-
-<p>
-Fizikaning 5 ta asosiy bo'limi bo‘yicha video darslar va amaliy mashg'ulotlar
-</p>
-
-</a>
-
-
-
-<a href="olimpiada/olimpiada.html" 
-class="card">
-
-<div class="card-icon">
-🏆
-</div>
-
-<h3>
-Olimpiada
-</h3>
-
-<p>
-Olimpiada uchun darslar va masalalari
-</p>
-
-</a>
-
-
-
-<a href="milliy-sertifikat/milliy-sertifikat.html"
-class="card">
-
-<div class="card-icon">
-📄
-</div>
-
-<h3>
-Milliy sertifikat
-</h3>
-
-<p>
-Milliy sertifikat imtihonlariga
-tayyorlanish va test ishlash
-</p>
-
-</a>
-
-
-
-<a href="attestatsiya/attestatsiya.html"
-class="card"
-data-requires-auth="true">
-
-<div class="card-icon">
-📝
-</div>
-
-<h3>
-Attestatsiya
-</h3>
-
-<p>
-Attestatsiya imtihonlariga
-tayyorgarlik ko‘rish
-</p>
-
-</a>
-
-</section>
-
-
-
-<!-- QUICK LINKS -->
-
-<section class="quick-links">
-
-<a href="umumiy-fizika/umumiy-fizika.html"
-class="quick-card"
-data-requires-auth="true">
-
-<div class="quick-icon">
-📚
-</div>
-
-<span>
-DARSLAR
-</span>
-
-</a>
-
-
-<a href="simulations/simulations.html"
-class="quick-card"
-data-requires-auth="true">
-
-<div class="quick-icon">
-🧪
-</div>
-
-<span>
-SIMULYATORLAR
-</span>
-
-</a>
-
-
-<a href="quizs/quizs.html"
-class="quick-card"
-data-requires-auth="true">
-
-<div class="quick-icon">
-🧠
-</div>
-
-<span>
-QUIZLAR
-</span>
-
-</a>
-
-
-<a href="kutubxona/kutubxona.html"
-class="quick-card"
-data-requires-auth="true">
-
-<div class="quick-icon">
-📖
-</div>
-
-<span>
-KUTUBXONA
-</span>
-
-</a>
-
-
-<a href="interaktiv-oyinlar/interaktiv-oyinlar.html"
-class="quick-card"
-data-requires-auth="true">
-
-    <div class="quick-icon">
-        🧩
+<body class="of-ui" data-shell-title="Bosh sahifa" data-shell-search="Bo‘lim yoki kursni qidirish…" data-search-target="#home">
+
+<div class="of-page of-container of-home" id="home" data-auth-state="loading">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="of-hero of-card" aria-labelledby="heroTitle">
+    <div class="of-hero__text">
+      <p class="of-hero__eyebrow"><span data-icon="atom"></span>OliyFizika.uz · fizika platformasi</p>
+      <h1 class="of-hero__title" id="heroTitle" data-hero-title>Fizikani o‘rganing, sinang va tajriba qiling.</h1>
+      <p class="of-hero__lead" data-hero-lead>Video darslar, testlar, interaktiv simulyatsiyalar va milliy sertifikatga tayyorgarlik — barchasi bir joyda.</p>
+      <div class="of-hero__actions" data-guest-only>
+        <button type="button" class="of-btn of-btn--primary of-btn--lg" data-auth-open="register">Ro‘yxatdan o‘tish</button>
+        <a class="of-btn of-btn--lg" href="#sections">Bo‘limlarni ko‘rish</a>
+      </div>
     </div>
 
-    <span>
-        Interaktiv o‘yinlar
-    </span>
-
-</a>
-
-</section>
-
-
-
-<!-- STATS -->
-
-<section class="stats" id="stats">
-
-<div class="stat">
-
-<h2>
-15 000+
-</h2>
-
-<p>
-Foydalanuvchilar
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h2>
-500+
-</h2>
-
-<p>
-Darslar
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h2>
-200+
-</h2>
-
-<p>
-Simulyatorlar
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h2>
-3000+
-</h2>
-
-<p>
-Testlar
-</p>
-
-</div>
-
-
-<div class="stat">
-
-<h2>
-98%
-</h2>
-
-<p>
-Qoniqish darajasi
-</p>
-
-</div>
-
-</section>
-
-</div>
-
-<div
-id="authModal"
-class="auth-modal"
-hidden
-aria-hidden="true">
-
-<div
-class="auth-panel"
-role="dialog"
-aria-modal="true"
-aria-labelledby="authTitle">
-
-<div class="auth-header">
-
-<div>
-
-<div
-class="auth-title"
-id="authTitle">
-Kirish
-</div>
-
-<p
-class="auth-subtitle"
-id="authSubtitle">
-Hisobingizga email va parol orqali kiring.
-</p>
-
-</div>
-
-<button
-type="button"
-class="auth-close"
-id="closeAuthModal"
-aria-label="Modalni yopish">
-&times;
-</button>
-
-</div>
-
-<div
-class="auth-tabs"
-id="authTabs"
-role="tablist"
-aria-label="Authentication tabs">
-
-<button
-type="button"
-class="auth-tab is-active"
-id="loginTab"
-data-auth-switch="login">
-Kirish
-</button>
-
-<button
-type="button"
-class="auth-tab"
-id="registerTab"
-data-auth-switch="register">
-Ro'yxatdan o'tish
-</button>
-
-</div>
-
-<form
-class="auth-form"
-id="loginForm"
-novalidate>
-
-<div class="auth-field">
-<label for="loginEmail">Email</label>
-<input
-type="email"
-id="loginEmail"
-autocomplete="email"
-required>
-</div>
-
-<div class="auth-field">
-<label for="loginPassword">Password</label>
-<input
-type="password"
-id="loginPassword"
-autocomplete="current-password"
-required>
-</div>
-
-<div class="auth-link-row">
-<button
-type="button"
-class="auth-forgot-link"
-data-auth-switch="reset">
-Parolni unutdingizmi?
-</button>
-</div>
-
-<div class="auth-actions">
-<button
-type="submit"
-class="auth-submit"
-id="loginSubmit">
-Kirish
-</button>
-
-<button
-type="button"
-class="auth-switch"
-data-auth-switch="register">
-Hisobingiz yo'qmi? Ro'yxatdan o'ting
-</button>
-</div>
-
-</form>
-
-<form
-class="auth-form"
-id="passwordResetForm"
-hidden
-novalidate>
-
-<div class="auth-field">
-<label for="passwordResetEmail">Email</label>
-<input
-type="email"
-id="passwordResetEmail"
-autocomplete="email"
-required>
-</div>
-
-<div class="auth-actions">
-<button
-type="submit"
-class="auth-submit"
-id="passwordResetSubmit">
-Tiklash havolasini yuborish
-</button>
-
-<button
-type="button"
-class="auth-switch"
-data-auth-switch="login">
-Kirishga qaytish
-</button>
-</div>
-
-</form>
-
-<form
-class="auth-form"
-id="registerForm"
-hidden
-novalidate>
-
-<div class="auth-field">
-<label for="registerFullName">Full Name</label>
-<input
-type="text"
-id="registerFullName"
-autocomplete="name"
-required>
-</div>
-
-<div class="auth-field">
-<label for="registerPhone">Phone Number</label>
-<input
-type="tel"
-id="registerPhone"
-autocomplete="tel"
-required>
-</div>
-
-<div class="auth-field">
-<label for="registerEmail">Email</label>
-<input
-type="email"
-id="registerEmail"
-autocomplete="email"
-required>
-</div>
-
-<div class="auth-field">
-<label for="registerPassword">Password</label>
-<input
-type="password"
-id="registerPassword"
-autocomplete="new-password"
-required>
-</div>
-
-<div class="auth-field">
-<label for="registerConfirmPassword">Confirm Password</label>
-<input
-type="password"
-id="registerConfirmPassword"
-autocomplete="new-password"
-required>
-</div>
-
-<div class="auth-actions">
-<button
-type="submit"
-class="auth-submit"
-id="registerSubmit">
-Ro'yxatdan o'tish
-</button>
-
-<button
-type="button"
-class="auth-switch"
-data-auth-switch="login">
-Hisobingiz bormi? Kirish
-</button>
-</div>
-
-</form>
-
-<div
-class="auth-message"
-id="authMessage"
-role="status"
-aria-live="polite">
-</div>
-
-</div>
-
-</div>
-
-<script type="module" src="js/auth.js"></script>
-
-
-
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <div class="footer-section">
-            <h3>OliyFizika.uz</h3>
-
-            <p>
-                Fizika fanidan GRE, attestatsiya, milliy sertifikat hamda 
-                olimpiada kurslariga tayyorlanish
-                uchun zamonaviy ta'lim platformasi.
-                
-                Platforma asoschisi AMIROV SARVAR
-            </p>
+    <figure class="of-sim of-physics-grid" data-sim aria-labelledby="simCaption">
+      <div class="of-sim__formula" aria-hidden="true">y = x·tg α − <span class="of-frac"><span>g·x²</span><span>2v²·cos²α</span></span></div>
+      <canvas class="of-sim__canvas" role="img" aria-label="Gorizontga burchak ostida otilgan jism simulyatsiyasi"></canvas>
+      <figcaption class="of-sr-only" id="simCaption">Gorizontga burchak ostida otilgan jism harakati: trayektoriya, tezlik vektori va uning tashkil etuvchilari.</figcaption>
+
+      <div class="of-sim__panel">
+        <div class="of-sim__buttons">
+          <button type="button" class="of-icon-btn of-sim__play" data-sim-play aria-pressed="true" aria-label="Simulyatsiyani to‘xtatish">
+            <span class="of-sim__icon-pause" data-icon="pause"></span><span class="of-sim__icon-play" data-icon="play"></span>
+          </button>
+          <button type="button" class="of-icon-btn" data-sim-reset aria-label="Boshlang‘ich qiymatlarga qaytarish"><span data-icon="reset"></span></button>
         </div>
+        <label class="of-sim__slider">
+          <span>Burchak <output data-sim-angle-out>45°</output></span>
+          <input type="range" min="15" max="75" step="1" value="45" data-sim-angle aria-label="Otish burchagi, gradus">
+        </label>
+        <label class="of-sim__slider">
+          <span>Tezlik <output data-sim-speed-out>20 m/s</output></span>
+          <input type="range" min="10" max="30" step="1" value="20" data-sim-speed aria-label="Boshlang‘ich tezlik, metr sekundiga">
+        </label>
+        <dl class="of-sim__readouts">
+          <div><dt>H<sub>max</sub></dt><dd data-sim-h>—</dd></div>
+          <div><dt>L</dt><dd data-sim-l>—</dd></div>
+          <div><dt>t</dt><dd data-sim-t>—</dd></div>
+        </dl>
+      </div>
+    </figure>
+  </section>
 
-        <div class="footer-section">
-            <h3>Bog'lanish</h3>
+  <!-- ====================== STATISTIKA (kirgan) ====================== -->
+  <section class="of-home-section" data-auth-only hidden aria-labelledby="statsTitle">
+    <h2 class="of-sr-only" id="statsTitle">Mening statistikam</h2>
+    <ul class="of-stats" data-stats aria-busy="true">
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--blue" data-icon="book"></span><span class="of-stat__value of-num" data-stat="topics"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Yakunlangan mavzular</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--green" data-icon="clipboard"></span><span class="of-stat__value of-num" data-stat="tests"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Topshirilgan testlar</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--orange" data-icon="bolt"></span><span class="of-stat__value of-num" data-stat="xp"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">XP ball</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--purple" data-icon="medal"></span><span class="of-stat__value of-num" data-stat="level"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Daraja</span></li>
+    </ul>
+  </section>
 
-            <div class="contact-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+998 90 009 02 90</span>
-            </div>
-
-            <div class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>oliyfizika@gmail.com</span>
-            </div>
-        </div>
-
-        <div class="footer-section">
-            <h3>Ijtimoiy tarmoqlar</h3>
-
-            <a href="https://t.me/oliyfizika_uz"
-               target="_blank"
-               class="social-link">
-                <i class="fa-brands fa-telegram"></i>
-                Telegram kanal
-            </a>
-
-            <a href="https://www.youtube.com/@OliyfizikaUz"
-               target="_blank"
-               class="social-link">
-                <i class="fa-brands fa-youtube"></i>
-                YouTube kanal
-            </a>
-        </div>
-
+  <!-- ====================== MENING PROGRESSIM (kirgan) ====================== -->
+  <section class="of-home-section" data-auth-only hidden aria-labelledby="progressTitle">
+    <div class="of-section-title">
+      <h2 id="progressTitle">Mening progressim</h2>
+      <a class="of-link-more" href="dashboard/natijalar.html">Barcha natijalar <span data-icon="arrowRight"></span></a>
     </div>
-
-    <div class="footer-bottom">
-        © 2026 <span>OliyFizika.uz</span> |
-        Barcha huquqlar himoyalangan
+    <div class="of-progress-board" data-progress aria-busy="true">
+      <div class="of-card of-card--pad of-course-total">
+        <span class="of-skeleton of-skeleton--title"></span>
+        <span class="of-skeleton" style="height:12px;margin-top:16px"></span>
+      </div>
+      <ul class="of-course-list">
+        <li class="of-card of-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="margin-top:14px"></span></li>
+        <li class="of-card of-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="margin-top:14px"></span></li>
+        <li class="of-card of-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="margin-top:14px"></span></li>
+      </ul>
     </div>
+  </section>
 
-</footer>
+  <!-- ====================== MEHMON: taklif ====================== -->
+  <section class="of-home-section" data-guest-only aria-labelledby="guestCtaTitle">
+    <div class="of-guest-cta of-card">
+      <span class="of-guest-cta__icon" data-icon="chart"></span>
+      <div class="of-guest-cta__text">
+        <h2 id="guestCtaTitle">Progressingizni kuzatish uchun ro‘yxatdan o‘ting.</h2>
+        <p class="of-muted">Har bir mavzu, test natijasi va XP ballaringiz saqlanadi — istalgan qurilmadan davom ettirasiz.</p>
+      </div>
+      <div class="of-guest-cta__actions">
+        <button type="button" class="of-btn of-btn--primary" data-auth-open="register">Ro‘yxatdan o‘tish</button>
+        <button type="button" class="of-btn" data-auth-open="login">Kirish</button>
+      </div>
+    </div>
+  </section>
 
+  <!-- ====================== BO'LIMLAR ====================== -->
+  <section class="of-home-section" id="sections" aria-labelledby="sectionsTitle">
+    <div class="of-section-title">
+      <h2 id="sectionsTitle">Bo‘limlar</h2>
+    </div>
+    <ul class="of-feature-grid" data-feature-grid>
+      <li class="of-feature-item of-feature-item--wide" data-search-item data-search-text="umumiy fizika mexanika molekulyar fizika elektr magnetizm optika atom yadro video darslar testlar">
+        <a class="of-feature of-card of-card--link" href="umumiy-fizika/umumiy-fizika.html">
+          <span class="of-feature__icon of-feature__icon--blue" data-icon="atom"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Umumiy fizika</span>
+            <span class="of-feature__desc">Mexanika, molekulyar fizika, elektr, optika va atom-yadro fizikasi — video darslar va mavzu testlari.</span>
+            <span class="of-feature__chips" aria-hidden="true"><span>Mexanika</span><span>Molekulyar</span><span>Elektr</span><span>Optika</span><span>Atom</span></span>
+          </span>
+          <span class="of-feature__action">Darslarni ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item of-feature-item--wide" data-search-item data-search-text="milliy sertifikat mock test video yechim dtm imtihon">
+        <a class="of-feature of-card of-card--link" href="milliy-sertifikat/milliy-sertifikat.html" data-protected>
+          <span class="of-feature__icon of-feature__icon--green" data-icon="certificate"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Milliy sertifikat</span>
+            <span class="of-feature__desc">Interaktiv mock testlar, taymer bilan imtihon rejimi hamda video va PDF yechimlar.</span>
+          </span>
+          <span class="of-feature__action">Tayyorlanish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item" data-search-item data-search-text="attestatsiya pedagogika testlari o'qituvchi">
+        <a class="of-feature of-card of-card--link" href="attestatsiya/attestatsiya.html" data-protected>
+          <span class="of-feature__icon of-feature__icon--blue" data-icon="clipboard"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Attestatsiya</span>
+            <span class="of-feature__desc">O‘qituvchilar attestatsiyasi uchun fizika va pedagogika testlari.</span>
+          </span>
+          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item" data-search-item data-search-text="olimpiada masalalar tayyorgarlik">
+        <a class="of-feature of-card of-card--link" href="olimpiada/olimpiada.html" data-protected>
+          <span class="of-feature__icon of-feature__icon--purple" data-icon="trophy"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Olimpiada</span>
+            <span class="of-feature__desc">Olimpiadaga tayyorgarlik uchun darslar va murakkab masalalar.</span>
+          </span>
+          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item" data-search-item data-search-text="quizlar quiz test savollar tezkor">
+        <a class="of-feature of-card of-card--link" href="quizs/quizs.html">
+          <span class="of-feature__icon of-feature__icon--blue" data-icon="quiz"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Quizlar</span>
+            <span class="of-feature__desc">Har bir mavzu bo‘yicha qisqa quizlar bilan bilimingizni tekshiring.</span>
+          </span>
+          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item" data-search-item data-search-text="interaktiv o'yinlar o‘yin baraban arqon tortish formula so'z qidirish magnit">
+        <a class="of-feature of-card of-card--link" href="interaktiv-oyinlar/interaktiv-oyinlar.html">
+          <span class="of-feature__icon of-feature__icon--green" data-icon="gamepad"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Interaktiv o‘yinlar</span>
+            <span class="of-feature__desc">Formulalar, atamalar va qonunlarni o‘yin orqali mustahkamlang.</span>
+          </span>
+          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item" data-search-item data-search-text="simulyatsiyalar simulyator tajriba mayatnik prujina nyuton kulon om lorens sinish">
+        <a class="of-feature of-card of-card--link" href="simulations/simulations.html" data-protected>
+          <span class="of-feature__icon of-feature__icon--blue" data-icon="flask"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Simulyatsiyalar</span>
+            <span class="of-feature__desc">Fizik hodisalarni interaktiv tajribalar orqali o‘rganing.</span>
+          </span>
+          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+      <li class="of-feature-item" data-search-item data-search-text="kutubxona darsliklar ma'ruzalar masalalar to'plami laboratoriya prezentatsiyalar kitob">
+        <a class="of-feature of-card of-card--link" href="kutubxona/kutubxona.html" data-protected>
+          <span class="of-feature__icon of-feature__icon--green" data-icon="book"></span>
+          <span class="of-feature__body">
+            <span class="of-feature__title">Kutubxona</span>
+            <span class="of-feature__desc">Darsliklar, ma’ruzalar, masalalar to‘plami, laboratoriya ishlari va prezentatsiyalar.</span>
+          </span>
+          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+        </a>
+      </li>
+    </ul>
+  </section>
 
+  <!-- ====================== PLATFORMA HAQIDA ====================== -->
+  <section class="of-home-section of-about" aria-labelledby="aboutTitle">
+    <div class="of-about__text">
+      <h2 id="aboutTitle">OliyFizika.uz haqida</h2>
+      <p class="of-muted">Fizika fanidan attestatsiya, milliy sertifikat va olimpiadaga tayyorlanish uchun zamonaviy ta’lim platformasi. Mavzular ketma-ket ochiladi: har bir mavzu testidan kamida 80% olsangiz, keyingisi ochiladi.</p>
+      <p class="of-subtle">Platforma asoschisi va muallif: Amirov Sarvar</p>
+    </div>
+    <ul class="of-about__facts">
+      <li><span class="of-num" data-fact="lessons">—</span><span>video dars va mavzu</span></li>
+      <li><span class="of-num" data-fact="courses">—</span><span>umumiy fizika kursi</span></li>
+      <li data-fact-wrap="mock" hidden><span class="of-num" data-fact="mock">—</span><span>interaktiv mock test</span></li>
+    </ul>
+  </section>
 
+  <footer class="of-home-footer">
+    <div class="of-home-footer__links">
+      <a href="https://t.me/oliyfizika_uz" target="_blank" rel="noopener noreferrer"><span data-icon="telegram"></span>Telegram kanal</a>
+      <a href="https://www.youtube.com/@OliyfizikaUz" target="_blank" rel="noopener noreferrer"><span data-icon="play"></span>YouTube kanal</a>
+      <a href="mailto:oliyfizika@gmail.com"><span data-icon="mail"></span>oliyfizika@gmail.com</a>
+    </div>
+    <p class="of-subtle">© 2026 OliyFizika.uz · Barcha huquqlar himoyalangan</p>
+  </footer>
+</div>
 
-
-
+<noscript>
+  <p style="padding:16px;text-align:center">OliyFizika.uz to‘liq ishlashi uchun brauzeringizda JavaScript yoqilgan bo‘lishi kerak.</p>
+</noscript>
 </body>
 </html>
-

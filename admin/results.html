@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: test natijalari">
+<title>Natijalar | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/results.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Natijalar">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Test natijalari</h1><p class="of-muted">Umumiy fizika mavzu testlari natijalari (Firestore “results”).</p></div>
+    </header>
+    <form class="of-card of-admin-toolbar of-admin-toolbar--results" data-results-form novalidate>
+      <div class="of-field of-admin-toolbar__search">
+        <label class="of-label" for="resUser">Foydalanuvchi</label>
+        <input class="of-input" id="resUser" type="text" autocomplete="off" spellcheck="false" placeholder="UID yoki email" aria-describedby="resUserHint">
+        <p class="of-hint" id="resUserHint">Aniq UID yoki email.</p>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="resPassed">Holat</label>
+        <select class="of-input of-admin-select" id="resPassed"><option value="">Barchasi</option><option value="true">O‘tgan (≥80%)</option><option value="false">O‘tmagan</option></select>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="resCourse">Kurs</label>
+        <select class="of-input of-admin-select" id="resCourse"><option value="">Barchasi</option><option value="mechanics">mechanics (Umumiy fizika)</option></select>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="resFrom">Sanadan</label>
+        <input class="of-input" id="resFrom" type="date">
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="resTo">Sanagacha</label>
+        <input class="of-input" id="resTo" type="date">
+      </div>
+      <div class="of-admin-toolbar__actions">
+        <button type="submit" class="of-btn of-btn--primary">Qo‘llash</button>
+        <button type="button" class="of-btn of-btn--ghost" data-results-reset>Tozalash</button>
+      </div>
+    </form>
+    <p class="of-admin-note" data-results-hint aria-live="polite"></p>
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="resTableTitle">
+      <h2 class="of-sr-only" id="resTableTitle">Natijalar ro‘yxati</h2>
+      <div class="of-admin-table-wrap">
+        <table class="of-admin-table">
+          <caption class="of-sr-only">Test natijalari: foydalanuvchi, mavzu, kurs, ball, foiz, holat, urinish va sana</caption>
+          <thead><tr>
+            <th scope="col">Foydalanuvchi</th><th scope="col">Mavzu</th><th scope="col">Kurs</th><th scope="col" class="of-num">Ball</th>
+            <th scope="col" class="of-num">Foiz</th><th scope="col">Holat</th><th scope="col" class="of-num">Urinish</th><th scope="col">Sana</th>
+          </tr></thead>
+          <tbody data-results-body aria-busy="true"></tbody>
+        </table>
+      </div>
+      <div data-results-state></div>
+      <div class="of-admin-more"><button type="button" class="of-btn of-btn--ghost" data-results-more hidden>Ko‘proq yuklash</button></div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

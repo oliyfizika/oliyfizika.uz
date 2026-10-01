@@ -1,29 +1,77 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Milliy sertifikat | OliyFizika.uz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="mock-tests.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milliy sertifikat | OliyFizika.uz</title>
+<meta name="description" content="Milliy sertifikat fizika: interaktiv mock testlar hamda test variantlarining video va PDF yechimlari.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/catalog.css">
+<link rel="stylesheet" href="../assets/css/milliy-sertifikat.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/milliy-sertifikat/overview.js"></script>
 </head>
-<body>
-  <main class="certificate-page">
-    <a class="back-link" href="../index.html">← Bosh sahifaga qaytish</a>
-    <section class="certificate-hero">
-      <span class="eyebrow">MILLIY SERTIFIKAT</span>
-      <div class="hero-icon" aria-hidden="true">📄</div>
-      <h1>Milliy sertifikat bo‘limi</h1>
-      <p>Test variantlari va ularning batafsil video yechimlari bir joyda.</p>
-    </section>
-    <section class="module-card" aria-labelledby="mock-tests-title">
-      <div class="module-card__icon" aria-hidden="true">🎯</div>
-      <div><h2 id="mock-tests-title">Mock testlar</h2><p>10 ta test varianti, har birida 45 ta savol, PDF va 9 ta video yechim.</p></div>
-      <a id="mockTestsLink" class="primary-button" href="mock-tests.html" hidden>Mock testlarni ochish</a>
-      <p id="mockTestsAccessMessage" class="access-message" aria-live="polite">Ruxsat tekshirilmoqda…</p>
-      <a id="telegramAccessLink" class="telegram-button" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" hidden>Telegram orqali ruxsat olish</a>
-    </section>
-  </main>
-  <script type="module" src="milliy-sertifikat-access.js"></script>
+<!--
+  Milliy sertifikat — umumiy sahifa (OliyFizika 2.0).
+  Ikki mavjud yo'nalish o'zgarmagan:
+   1) mock-testlar/  — interaktiv test tizimi (test.html engine'i, data/*.json);
+   2) mock-tests.html — video/PDF yechimlar (Firebase + users/{uid}.mockTestsAccess + Telegram).
+  Ruxsat tekshiruvi mavjud milliy-sertifikat-access.js orqali (id'lar saqlangan:
+  #mockTestsLink, #mockTestsAccessMessage, #telegramAccessLink).
+  Kirish talabi avvalgidek: bo'limga kirish havolalari (sidebar, Bosh sahifa) himoyalangan, sahifaning o'zi ochiq.
+-->
+<body class="of-ui" data-shell-title="Milliy sertifikat" data-shell-public="true">
+<div class="of-page of-container of-cat of-ms">
+  <header class="of-cat-head">
+    <div>
+      <h1>Milliy sertifikat</h1>
+      <p>Interaktiv mock testlar hamda test variantlarining batafsil video va PDF yechimlari bir joyda.</p>
+    </div>
+  </header>
+
+  <section class="of-ms-actions" aria-labelledby="msActionsTitle">
+    <h2 class="of-sr-only" id="msActionsTitle">Mock testlar</h2>
+
+    <!-- 1) Interaktiv mock test tizimi -->
+    <article class="of-card of-ms-card of-ms-card--solve">
+      <span class="of-ms-card__icon" data-icon="clipboard" aria-hidden="true"></span>
+      <div class="of-ms-card__body">
+        <h3>Mock test yechish</h3>
+        <p>Imtihon formatidagi interaktiv testlar: har birida 45 ta savol, 180 daqiqalik taymer, ilmiy kalkulyator va formula jadvali.</p>
+        <ul class="of-ms-facts" data-solve-facts aria-label="Interaktiv testlar haqida">
+          <li><b>45</b> ta savol</li>
+          <li><b>180</b> daqiqa</li>
+          <li>Kalkulyator</li>
+          <li>Formula jadvali</li>
+        </ul>
+      </div>
+      <a class="of-btn of-btn--primary of-ms-card__cta" href="mock-testlar/">Testlarni ko‘rish <span data-icon="arrowRight"></span></a>
+    </article>
+
+    <!-- 2) Video/PDF yechimlar (mavjud ruxsat tizimi) -->
+    <article class="of-card of-ms-card of-ms-card--video">
+      <span class="of-ms-card__icon" data-icon="video" aria-hidden="true"></span>
+      <div class="of-ms-card__body">
+        <h3>Mock test video yechimlari</h3>
+        <p>10 ta test varianti, har birida 45 ta savol, PDF va 9 ta video yechim.</p>
+        <p id="mockTestsAccessMessage" class="of-ms-access" aria-live="polite">Ruxsat tekshirilmoqda…</p>
+      </div>
+      <div class="of-ms-card__cta of-ms-card__cta--stack">
+        <a id="mockTestsLink" class="of-btn of-btn--soft" href="mock-tests.html">Video yechimlarni ochish <span data-icon="arrowRight"></span></a>
+        <a id="telegramAccessLink" class="of-btn of-btn--ghost" href="https://t.me/oliyfizika_uz" target="_blank" rel="noopener noreferrer" hidden><span data-icon="telegram"></span>Telegram orqali ruxsat olish</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="of-ms-tests" aria-labelledby="msTestsTitle">
+    <div class="of-lib-head">
+      <h2 id="msTestsTitle">Interaktiv mock testlar</h2>
+      <a class="of-link-more" href="mock-testlar/">Barchasi <span data-icon="chevronRight"></span></a>
+    </div>
+    <p class="of-subtle" data-tests-summary>Testlar ro‘yxati yuklanmoqda…</p>
+  </section>
+</div>
+<script type="module" src="milliy-sertifikat-access.js"></script>
 </body>
 </html>

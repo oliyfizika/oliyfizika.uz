@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: sozlamalar">
+<title>Sozlamalar | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/admin-settings.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Sozlamalar">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Admin sozlamalari</h1><p class="of-muted">Joriy hisob, ko‘rinish va xavfsizlik holati.</p></div>
+    </header>
+    <div class="of-admin-split">
+      <section class="of-card of-admin-panel" aria-labelledby="meTitle">
+        <div class="of-admin-panel__head"><h2 id="meTitle">Joriy administrator</h2></div>
+        <dl class="of-admin-dl" data-me></dl>
+        <div class="of-admin-actions"><button type="button" class="of-btn of-btn--danger" data-admin-logout><span data-icon="logout"></span>Chiqish</button></div>
+      </section>
+      <section class="of-card of-admin-panel" aria-labelledby="themeTitle">
+        <div class="of-admin-panel__head"><h2 id="themeTitle">Mavzu</h2></div>
+        <fieldset class="of-admin-themes"><legend class="of-sr-only">Sayt mavzusi</legend>
+          <label class="of-admin-theme"><input type="radio" name="theme" value="light"><span><span data-icon="sun"></span>Yorug‘</span></label><label class="of-admin-theme"><input type="radio" name="theme" value="dark"><span><span data-icon="moon"></span>Qorong‘i</span></label><label class="of-admin-theme"><input type="radio" name="theme" value="system"><span><span data-icon="monitor"></span>Tizim</span></label>
+        </fieldset>
+        <p class="of-admin-note">Tanlov shu brauzerda saqlanadi (butun sayt uchun).</p>
+      </section>
+      <section class="of-card of-admin-panel of-admin-panel--wide" aria-labelledby="secTitle">
+        <div class="of-admin-panel__head"><h2 id="secTitle">Xavfsizlik holati</h2></div>
+        <ul class="of-admin-checks">
+          <li><span data-icon="shield"></span><div><b>Firestore Rules</b><p>Himoya Firestore Rules orqali: oddiy foydalanuvchi role, Full Access, Mock Test Access, email va createdAt maydonlarini o‘zgartira olmaydi; admin paneldagi o‘zgartirishlarni faqat administrator bajara oladi. Qoidalar repositorydagi <code>firestore.rules</code> faylida; Firebase Console’da joriy qoidalar bilan bir xilligini tekshirib turing.</p></div></li>
+          <li><span data-icon="info"></span><div><b>Administratorni tayinlash</b><p>Birinchi administrator faqat Firebase Console orqali belgilanadi (<code>users/UID.role = "admin"</code>). Keyingilari — shu paneldagi “Foydalanuvchi” sahifasidan.</p></div></li>
+          <li><span data-icon="alert"></span><div><b>Amallar jurnali</b><p>Admin amallari hali alohida jurnal (audit log) sifatida saqlanmaydi.</p></div></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

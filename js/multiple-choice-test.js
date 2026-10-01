@@ -114,14 +114,8 @@ export function renderMultipleChoiceTest({
     const lessonId = unlockLesson - 1;
     const percent = Math.round((score / questions.length) * 100);
 
-    // XP
-    await awardXP({
-      lessonId,
-      percent
-    });
-
-// Natijani saqlash
-    await saveResult({
+// Natijani saqlash (Phase 19C: avval natija, keyin unga bog'langan XP)
+    const resultId = await saveResult({
       lessonId,
       lessonTitle: document.title,
       course: "mechanics",
@@ -129,6 +123,13 @@ export function renderMultipleChoiceTest({
       totalQuestions: questions.length,
       percent,
       passed: percent >= passPercent
+    });
+
+    // XP — bitta mavzu uchun bir marta (idempotent, results/{resultId} ga bog'langan)
+    const xpAward = await awardXP({
+      lessonId,
+      percent,
+      resultId
     });
 
 // Savollarni yashirish
@@ -149,6 +150,8 @@ export function renderMultipleChoiceTest({
         <p style="color:#22c55e;">
         ✅ ${unlockLesson}-mavzu ochildi.
         </p>
+        ${xpAward?.status === "awarded" ? `<p data-xp-status="awarded"><strong>+${xpAward.xp} XP</strong></p>`
+          : xpAward?.status === "already-awarded" ? `<p data-xp-status="already-awarded">Bu mavzu uchun XP avval berilgan.</p>` : ""}
 
         <br>
 

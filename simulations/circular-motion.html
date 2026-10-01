@@ -16,16 +16,22 @@ href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
 
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/sim-page.js"></script>
 <style>
 
-*{
+.of-sim,
+.of-sim *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
 
-body{
+.of-sim{
 
   min-height:100vh;
 
@@ -37,7 +43,7 @@ body{
   overflow:hidden;
 }
 
-body::before{
+.of-sim::before{
 
   content:"";
 
@@ -276,27 +282,13 @@ canvas{
 
 </head>
 
-<body>
+<body class="of-ui of-sim-page" data-shell-title="Circular Motion" data-shell-public="true">
 
-<div class="container">
+<div class="of-page of-sim-wrap">
 
+<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-<div class="logo">
-Oliy<span>Fizika</span>
-</div>
-
-<a href="simulations.html"
-class="back-btn">
-
-🧪 Simulyatorlar
-
-</a>
-
-</nav>
+<div class="container of-sim">
 
 
 
@@ -310,14 +302,14 @@ class="back-btn">
 <div class="controls">
 
 <h2>
-🌀 Circular Motion
+<span aria-hidden="true">🌀</span> Circular Motion
 </h2>
 
 
 
 <div class="control-group">
 
-<label>
+<label for="radius">
 Radius
 </label>
 
@@ -342,7 +334,7 @@ id="radiusValue">
 
 <div class="control-group">
 
-<label>
+<label for="speed">
 Tezlik
 </label>
 
@@ -369,7 +361,7 @@ id="speedValue">
 class="start-btn"
 id="startBtn">
 
-🚀 Boshlash
+<span aria-hidden="true">🚀</span> Boshlash
 
 </button>
 
@@ -397,9 +389,11 @@ Angular Velocity: 0
 
 </div>
 
-<canvas id="canvas">
+<canvas id="canvas" role="img" aria-label="Circular Motion simulyatsiyasi">
 
 </canvas>
+
+</div>
 
 </div>
 

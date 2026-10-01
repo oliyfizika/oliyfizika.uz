@@ -14,7 +14,6 @@ const homeUrl = new URL("../index.html", import.meta.url).href;
 const elements = {
   fullName: document.getElementById("profileFullName"),
   email: document.getElementById("profileEmail"),
-  phone: document.getElementById("profilePhone"),
   xp: document.getElementById("profileXp"),
   level: document.getElementById("profileLevel"),
   createdAt: document.getElementById("profileCreatedAt"),
@@ -37,7 +36,6 @@ async function renderProfile(user){
 
     setText(elements.fullName, profile?.fullName || "Kiritilmagan");
     setText(elements.email, profile?.email || user.email || "Kiritilmagan");
-    setText(elements.phone, profile?.phone || "Kiritilmagan");
     setText(elements.xp, String(profile?.xp ?? 0));
     setText(elements.level, String(profile?.level ?? 1));
     setText(elements.createdAt, formatDate(profile?.createdAt));

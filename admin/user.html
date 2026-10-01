@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: foydalanuvchi profili va huquqlari">
+<title>Foydalanuvchi | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/user-detail.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Foydalanuvchi">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <p class="of-admin-back"><a class="of-admin-link" href="users.html"><span data-icon="chevronLeft"></span>Foydalanuvchilar ro‘yxatiga qaytish</a></p>
+    <header class="of-admin-head">
+      <div><h1><span data-user-title>Foydalanuvchi</span></h1><p class="of-muted"><span data-user-sub>Profil va huquqlar</span></p></div>
+    </header>
+    <div data-user-state></div>
+    <div class="of-admin-split" data-user-content hidden>
+      <section class="of-card of-admin-panel" aria-labelledby="profTitle">
+        <div class="of-admin-panel__head"><h2 id="profTitle">Profil</h2><span class="of-admin-note">Faqat ko‘rish</span></div>
+        <dl class="of-admin-dl" data-user-profile></dl>
+      </section>
+      <section class="of-card of-admin-panel" aria-labelledby="accTitle">
+        <div class="of-admin-panel__head"><h2 id="accTitle">Huquqlar</h2></div>
+        <div class="of-admin-switch-row" data-access-row="role">
+          <div class="of-admin-switch-row__text">
+            <p class="of-admin-switch-row__label" id="lbl-role">Administrator</p>
+            <p class="of-admin-switch-row__desc" id="desc-role">Admin panelga kirish va huquqlarni boshqarish.</p>
+          </div>
+          <button type="button" class="of-admin-switch" role="switch" aria-checked="false" aria-labelledby="lbl-role" aria-describedby="desc-role" data-access="role" disabled>
+            <span class="of-admin-switch__track" aria-hidden="true"><span class="of-admin-switch__thumb"></span></span>
+            <span class="of-admin-switch__state" data-switch-state>—</span>
+          </button>
+        </div>
+        <div class="of-admin-switch-row" data-access-row="fullAccess">
+          <div class="of-admin-switch-row__text">
+            <p class="of-admin-switch-row__label" id="lbl-fullAccess">Full Access</p>
+            <p class="of-admin-switch-row__desc" id="desc-fullAccess">Umumiy fizikadagi barcha mavzular ochiq bo‘ladi.</p>
+          </div>
+          <button type="button" class="of-admin-switch" role="switch" aria-checked="false" aria-labelledby="lbl-fullAccess" aria-describedby="desc-fullAccess" data-access="fullAccess" disabled>
+            <span class="of-admin-switch__track" aria-hidden="true"><span class="of-admin-switch__thumb"></span></span>
+            <span class="of-admin-switch__state" data-switch-state>—</span>
+          </button>
+        </div>
+        <div class="of-admin-switch-row" data-access-row="mockTestsAccess">
+          <div class="of-admin-switch-row__text">
+            <p class="of-admin-switch-row__label" id="lbl-mockTestsAccess">Mock Test Access</p>
+            <p class="of-admin-switch-row__desc" id="desc-mockTestsAccess">Milliy sertifikat video/PDF yechimlari ochiladi.</p>
+          </div>
+          <button type="button" class="of-admin-switch" role="switch" aria-checked="false" aria-labelledby="lbl-mockTestsAccess" aria-describedby="desc-mockTestsAccess" data-access="mockTestsAccess" disabled>
+            <span class="of-admin-switch__track" aria-hidden="true"><span class="of-admin-switch__thumb"></span></span>
+            <span class="of-admin-switch__state" data-switch-state>—</span>
+          </button>
+        </div>
+        <p class="of-admin-note" data-self-note hidden>O‘z administrator huquqingizni o‘zgartira olmaysiz — bu adminni tasodifan yo‘qotishning oldini oladi.</p>
+        <div class="of-alert" data-access-msg role="status" hidden></div>
+      </section>
+      <section class="of-card of-admin-panel of-admin-panel--wide" aria-labelledby="xpTitle">
+        <div class="of-admin-panel__head"><h2 id="xpTitle">XP tarixi</h2><span class="of-admin-note">O‘zgarmas jurnal (users/UID/xpGrants)</span></div>
+        <div data-user-xp aria-busy="true"><span class="of-skeleton of-skeleton--text"></span></div>
+      </section>
+      <section class="of-card of-admin-panel of-admin-panel--wide" aria-labelledby="userResTitle">
+        <div class="of-admin-panel__head"><h2 id="userResTitle">So‘nggi natijalar</h2><a class="of-admin-link" data-user-results-link href="results.html">Barcha natijalari</a></div>
+        <div data-user-results aria-busy="true"><span class="of-skeleton of-skeleton--text"></span></div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

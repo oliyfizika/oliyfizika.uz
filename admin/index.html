@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin panel bosh sahifasi">
+<title>Dashboard | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/dashboard.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Dashboard">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Admin dashboard</h1><p class="of-muted">OliyFizika.uz foydalanuvchilari, huquqlar va test natijalari.</p></div>
+    </header>
+    <section aria-labelledby="statsTitle">
+      <h2 class="of-sr-only" id="statsTitle">Ko‘rsatkichlar</h2>
+      <ul class="of-admin-stats" aria-busy="true" data-stats>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--blue" data-icon="users"></span>
+          <span class="of-admin-stat__value" data-stat="users"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Jami foydalanuvchilar</span>
+        </li>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--purple" data-icon="shield"></span>
+          <span class="of-admin-stat__value" data-stat="admins"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Administratorlar</span>
+        </li>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--green" data-icon="key"></span>
+          <span class="of-admin-stat__value" data-stat="fullAccess"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Full Access berilgan</span>
+        </li>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--orange" data-icon="certificate"></span>
+          <span class="of-admin-stat__value" data-stat="mock"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Mock Test Access berilgan</span>
+        </li>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--blue" data-icon="clipboard"></span>
+          <span class="of-admin-stat__value" data-stat="results"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Jami test natijalari</span>
+        </li>
+      </ul>
+      <p class="of-admin-note">Sonlar Firestore'dan aniq hisoblanadi (count so‘rovi); barcha hujjatlar brauzerga yuklanmaydi.</p>
+    </section>
+    <div class="of-admin-split">
+      <section class="of-card of-admin-panel" aria-labelledby="recentUsersTitle">
+        <div class="of-admin-panel__head"><h2 id="recentUsersTitle">So‘nggi ro‘yxatdan o‘tganlar</h2><a class="of-admin-link" href="users.html">Barchasi</a></div>
+        <div data-recent-users aria-busy="true"><span class="of-skeleton of-skeleton--text"></span></div>
+      </section>
+      <section class="of-card of-admin-panel" aria-labelledby="recentResultsTitle">
+        <div class="of-admin-panel__head"><h2 id="recentResultsTitle">So‘nggi natijalar</h2><a class="of-admin-link" href="results.html">Barchasi</a></div>
+        <div data-recent-results aria-busy="true"><span class="of-skeleton of-skeleton--text"></span></div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: foydalanuvchilar ro‘yxati">
+<title>Foydalanuvchilar | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/users.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Foydalanuvchilar">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Foydalanuvchilar</h1><p class="of-muted">Ro‘yxat sahifalab yuklanadi (har safar 20 ta).</p></div>
+    </header>
+    <form class="of-card of-admin-toolbar" data-users-form role="search" novalidate>
+      <div class="of-field of-admin-toolbar__search">
+        <label class="of-label" for="userSearch">Foydalanuvchini qidirish</label>
+        <input class="of-input" id="userSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Email, ism yoki UID boshlanishi" aria-describedby="userSearchHint">
+        <p class="of-hint" id="userSearchHint">Kamida 2 ta belgi. Email, to‘liq ism boshlanishi yoki aniq UID bo‘yicha.</p>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="userFilter">Filtr</label>
+        <select class="of-input of-admin-select" id="userFilter">
+          <option value="all">Barchasi</option>
+          <option value="admin">Adminlar</option>
+          <option value="user">Oddiy foydalanuvchilar</option>
+          <option value="fullAccess">Full Access</option>
+          <option value="mock">Mock Test Access</option>
+        </select>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="userSort">Tartib</label>
+        <select class="of-input of-admin-select" id="userSort">
+          <option value="createdAt">Ro‘yxat sanasi (yangi)</option>
+          <option value="lastActiveAt">Oxirgi faollik</option>
+          <option value="xp">XP (ko‘p)</option>
+          <option value="level">Daraja (yuqori)</option>
+          <option value="fullName">Ism (A–Z)</option>
+          <option value="__id">Barchasi (hujjat ID)</option>
+        </select>
+      </div>
+    </form>
+    <p class="of-admin-note" data-users-hint aria-live="polite"></p>
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="usersTableTitle">
+      <h2 class="of-sr-only" id="usersTableTitle">Foydalanuvchilar ro‘yxati</h2>
+      <div class="of-admin-table-wrap">
+        <table class="of-admin-table">
+          <caption class="of-sr-only">Foydalanuvchilar: ism, email, role, huquqlar, XP, daraja va sanalar</caption>
+          <thead><tr>
+            <th scope="col">Ism</th><th scope="col">Familiya</th><th scope="col">Email</th><th scope="col">Role</th>
+            <th scope="col">Full Access</th><th scope="col">Mock Access</th><th scope="col" class="of-num">XP</th><th scope="col" class="of-num">Daraja</th>
+            <th scope="col">Ro‘yxat sanasi</th><th scope="col">Oxirgi faollik</th><th scope="col"><span class="of-sr-only">Amal</span></th>
+          </tr></thead>
+          <tbody data-users-body aria-busy="true"></tbody>
+        </table>
+      </div>
+      <div data-users-state></div>
+      <div class="of-admin-more"><button type="button" class="of-btn of-btn--ghost" data-users-more hidden>Ko‘proq yuklash</button></div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

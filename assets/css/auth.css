@@ -1,0 +1,112 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Kirish / Ro'yxatdan o'tish oynasi va tasdiqlash sahifasi
+   ========================================================================== */
+
+.of-auth .of-modal__dialog { width: min(460px, 100%); padding: 28px 28px 24px; }
+.of-auth .of-modal__title { margin-bottom: 4px; }
+.of-auth__subtitle { margin: 0 0 20px !important; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+.of-auth__form { display: grid; gap: 14px; }
+.of-auth__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.of-auth__between { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.of-auth__foot { margin-top: 18px !important; text-align: center; color: var(--of-text-2); font-size: var(--of-text-sm); }
+.of-auth__foot button, .of-link-btn {
+  padding: 2px; border: 0; background: none;
+  color: var(--of-primary); font: 600 var(--of-text-sm)/1.4 var(--of-font-sans);
+  cursor: pointer; border-radius: 4px;
+}
+.of-link-btn:hover, .of-auth__foot button:hover { text-decoration: underline; text-underline-offset: 3px; }
+.of-auth__divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 4px 0; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600;
+}
+.of-auth__divider::before, .of-auth__divider::after { content: ""; flex: 1; height: 1px; background: var(--of-border); }
+.of-google-btn { gap: 10px; }
+.of-google-btn svg { width: 18px; height: 18px; }
+
+/* Qadamlar */
+.of-steps { display: flex; gap: 6px; margin: 0 0 18px !important; padding: 0 !important; list-style: none; counter-reset: s; }
+.of-steps li {
+  flex: 1; display: flex; flex-direction: column; gap: 6px;
+  color: var(--of-text-3); font: 600 0.72rem/1.2 var(--of-font-sans);
+}
+.of-steps li::before {
+  content: ""; height: 4px; border-radius: 4px; background: var(--of-surface-sunken);
+  transition: background var(--of-dur-slow) var(--of-ease-out);
+}
+.of-steps li[data-state="done"]::before { background: var(--of-success); }
+.of-steps li[data-state="current"]::before { background: var(--of-primary); }
+.of-steps li[data-state="current"] { color: var(--of-primary-text); }
+.of-steps li[data-state="done"] { color: var(--of-success-text); }
+
+/* Parol talablari */
+.of-pw-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; margin: 2px 0 0 !important; padding: 0 !important; list-style: none; }
+.of-pw-rules li {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--of-text-3); font-size: var(--of-text-xs); line-height: 1.3;
+  transition: color var(--of-dur-base);
+}
+.of-pw-rules li svg { width: 15px; height: 15px; flex: none; }
+.of-pw-rules li[data-ok="true"] { color: var(--of-success-text); font-weight: 600; }
+.of-pw-match { font-size: var(--of-text-xs); }
+.of-pw-match[data-ok="true"] { color: var(--of-success-text); }
+.of-pw-match[data-ok="false"] { color: var(--of-danger-text); }
+
+/* Email tasdiqlash ekrani */
+.of-verify { text-align: center; }
+.of-verify__icon {
+  display: grid; place-items: center;
+  width: 64px; height: 64px; margin: 0 auto 16px;
+  border-radius: 20px;
+  background: var(--of-primary-soft); color: var(--of-primary);
+  position: relative;
+}
+.of-verify__icon svg { width: 30px; height: 30px; }
+.of-verify__icon::after {
+  content: ""; position: absolute; inset: -6px; border-radius: 24px;
+  border: 2px solid var(--of-primary-soft-2);
+  animation: of-pulse 2.2s var(--of-ease-out) infinite;
+}
+.of-verify__icon--ok { background: var(--of-success-soft); color: var(--of-success); }
+.of-verify__icon--ok::after, .of-verify__icon--error::after { display: none; }
+.of-verify__icon--error { background: var(--of-danger-soft); color: var(--of-danger); }
+.of-verify__email {
+  display: inline-block; max-width: 100%;
+  margin: 2px 0 14px !important; padding: 6px 12px;
+  border-radius: var(--of-radius-pill);
+  background: var(--of-surface-sunken);
+  font: 600 var(--of-text-sm)/1.3 var(--of-font-sans); color: var(--of-text);
+  overflow-wrap: anywhere;
+}
+.of-verify__text { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.6; margin: 0 0 18px !important; }
+.of-verify__actions { display: grid; gap: 10px; }
+.of-verify__hint { margin-top: 14px !important; color: var(--of-text-3); font-size: var(--of-text-xs); line-height: 1.5; }
+.of-verify__waiting { display: inline-flex; align-items: center; gap: 8px; color: var(--of-text-3); font-size: var(--of-text-xs); margin-top: 12px !important; }
+.of-verify__waiting::before {
+  content: ""; width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid var(--of-primary); border-right-color: transparent;
+  animation: of-spin 0.9s linear infinite;
+}
+@keyframes of-pulse { 0% { opacity: 0.9; transform: scale(0.92); } 70%, 100% { opacity: 0; transform: scale(1.15); } }
+
+/* Mustaqil tasdiqlash sahifasi (auth/tasdiqlash.html) */
+.of-auth-page {
+  min-height: 100vh; min-height: 100dvh;
+  display: grid; place-items: center;
+  padding: 24px 16px;
+}
+.of-auth-page__card { width: min(460px, 100%); padding: 32px 28px; }
+.of-auth-page__brand { display: flex; justify-content: center; margin-bottom: 24px; }
+
+@media (max-width: 520px) {
+  .of-auth .of-modal { align-items: end; padding: 0; }
+  .of-auth.of-modal { align-items: end; padding: 0; }
+  .of-auth .of-modal__dialog {
+    width: 100%;
+    max-height: 94dvh;
+    padding: 24px 18px calc(20px + env(safe-area-inset-bottom));
+    border-radius: 22px 22px 0 0;
+  }
+  .of-auth__row { grid-template-columns: 1fr; }
+  .of-pw-rules { grid-template-columns: 1fr; }
+  .of-auth-page__card { padding: 26px 18px; }
+}

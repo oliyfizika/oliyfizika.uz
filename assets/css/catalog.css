@@ -1,0 +1,173 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Katalog sahifalari: Quizlar va Interaktiv o'yinlar
+   Umumiy: sarlavha, filtr chiplari, kartalar to'ri.
+   ========================================================================== */
+
+.of-cat { display: flex; flex-direction: column; gap: 22px; }
+.of-cat-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.of-cat-head h1 { margin-bottom: 6px; }
+.of-cat-head p { color: var(--of-text-2); max-width: 62ch; line-height: 1.55; }
+.of-cat-count { color: var(--of-text-3); font-size: var(--of-text-sm); }
+
+/* Filtr chiplari (gorizontal aylantiriladi — mobilda ham barmoq uchun qulay) */
+.of-chips { display: flex; gap: 8px; margin: 0; padding: 2px 0 4px; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.of-chips::-webkit-scrollbar { display: none; }
+.of-chip {
+  display: inline-flex; align-items: center; gap: 6px; flex: none; white-space: nowrap;
+  min-height: 38px; padding: 0 14px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-pill);
+  background: var(--of-surface); color: var(--of-text-2);
+  font: 600 var(--of-text-sm)/1 var(--of-font-sans); cursor: pointer;
+  transition: background var(--of-dur-fast), border-color var(--of-dur-fast), color var(--of-dur-fast);
+}
+.of-chip:hover { border-color: var(--of-border-strong); color: var(--of-text); }
+.of-chip[aria-pressed="true"] { background: var(--of-primary-soft); border-color: color-mix(in srgb, var(--of-primary) 40%, var(--of-border)); color: var(--of-primary-text); }
+.of-chip small { font-weight: 600; color: var(--of-text-3); font-variant-numeric: tabular-nums; }
+.of-chip[aria-pressed="true"] small { color: var(--of-primary-text); }
+
+/* ------------------------------------------------------------ Quizlar */
+.of-quiz-featured {
+  display: flex; align-items: center; gap: 18px; padding: 20px 22px;
+  background: linear-gradient(120deg, var(--of-primary-soft), var(--of-surface) 65%);
+  position: relative; overflow: hidden;
+}
+.of-quiz-featured::after { content: ""; position: absolute; right: -50px; bottom: -80px; width: 200px; height: 200px; border: 1px dashed var(--of-primary-soft-2); border-radius: 50%; pointer-events: none; }
+.of-quiz-featured__icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; background: var(--of-primary-solid); color: #fff; flex: none; }
+.of-quiz-featured__icon svg { width: 26px; height: 26px; }
+.of-quiz-featured__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; position: relative; z-index: 1; }
+.of-quiz-featured__body h2 { font-size: var(--of-text-lg) !important; }
+.of-quiz-featured__body p { color: var(--of-text-2); font-size: var(--of-text-sm); }
+.of-quiz-featured .of-btn { position: relative; z-index: 1; }
+
+.of-quiz-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.of-quiz-grid > li { display: flex; min-width: 0; }
+.of-quiz-grid > li[hidden] { display: none !important; }
+.of-quiz-grid > li.is-pending { opacity: 0; }
+.of-quiz {
+  flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 16px;
+  transition: border-color var(--of-dur-base), box-shadow var(--of-dur-base), transform var(--of-dur-base) var(--of-ease-out);
+}
+.of-quiz:hover { border-color: var(--of-primary-soft-2); box-shadow: var(--of-shadow-md); transform: translateY(-2px); }
+.of-quiz__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.of-quiz__num { display: grid; place-items: center; min-width: 34px; height: 34px; padding: 0 6px; border-radius: 10px; background: var(--of-surface-sunken); color: var(--of-text-2); font: 800 0.85rem/1 var(--of-font-display); font-variant-numeric: tabular-nums; }
+.of-quiz__title { font: 700 var(--of-text-md)/1.35 var(--of-font-sans) !important; letter-spacing: normal !important; flex: 1; overflow-wrap: anywhere; }
+.of-quiz__meta { display: flex; align-items: center; gap: 6px; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.of-quiz__meta svg { width: 14px; height: 14px; }
+.of-quiz__foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-top: 4px; }
+.of-quiz__foot .of-btn { min-height: 38px; }
+.of-quiz__lock { display: inline-flex; align-items: center; gap: 5px; color: var(--of-text-3); font-size: var(--of-text-xs); }
+.of-quiz__lock svg { width: 13px; height: 13px; }
+
+/* ------------------------------------------------------------ O'yinlar (biroz o'yinqaroq, lekin brend doirasida) */
+.of-games { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.of-games > li { display: flex; min-width: 0; }
+.of-games > li[hidden] { display: none !important; }
+.of-games > li.is-pending { opacity: 0; }
+.of-game {
+  --_c1: var(--of-blue-500); --_c2: var(--of-green-500);
+  flex: 1; display: flex; flex-direction: column; overflow: hidden;
+  color: inherit !important; text-decoration: none !important;
+  transition: transform var(--of-dur-base) var(--of-ease-out), box-shadow var(--of-dur-base), border-color var(--of-dur-base);
+}
+.of-game:hover { transform: translateY(-4px); box-shadow: var(--of-shadow-lg); border-color: color-mix(in srgb, var(--_c1) 35%, var(--of-border)); }
+.of-game:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 3px; }
+.of-game__art {
+  position: relative; height: 128px; display: grid; place-items: center;
+  background:
+    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--_c1) 22%, transparent) 0 32%, transparent 33%),
+    radial-gradient(circle at 85% 75%, color-mix(in srgb, var(--_c2) 22%, transparent) 0 26%, transparent 27%),
+    linear-gradient(135deg, color-mix(in srgb, var(--_c1) 12%, var(--of-surface)), color-mix(in srgb, var(--_c2) 12%, var(--of-surface)));
+  border-bottom: 1px solid var(--of-border);
+}
+.of-game__art::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(var(--of-grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--of-grid-line) 1px, transparent 1px);
+  background-size: 22px 22px; opacity: 0.9;
+}
+.of-game__badge {
+  position: relative; display: grid; place-items: center; width: 68px; height: 68px; border-radius: 20px;
+  background: linear-gradient(135deg, var(--_c1), var(--_c2)); color: #fff;
+  box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--_c1) 70%, transparent);
+  transition: transform var(--of-dur-slow) var(--of-ease-out);
+}
+.of-game:hover .of-game__badge { transform: rotate(-6deg) scale(1.05); }
+.of-game__badge svg { width: 34px; height: 34px; }
+.of-game__body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+.of-game__title { font: 750 var(--of-text-lg)/1.25 var(--of-font-display) !important; }
+.of-game__desc { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+.of-game__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.of-game__foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 6px; }
+.of-game__play { display: inline-flex; align-items: center; gap: 6px; color: var(--of-primary); font: 700 var(--of-text-sm)/1 var(--of-font-sans); }
+.of-game__play svg { width: 16px; height: 16px; transition: transform var(--of-dur-base) var(--of-ease-out); }
+.of-game:hover .of-game__play svg { transform: translateX(3px); }
+.of-game__record { color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.of-game__record[hidden] { display: none; }
+
+.of-game[data-accent="orange"] { --_c1: var(--of-orange-500); --_c2: var(--of-blue-500); }
+.of-game[data-accent="purple"] { --_c1: var(--of-purple-500); --_c2: var(--of-blue-500); }
+.of-game[data-accent="green"]  { --_c1: var(--of-green-500); --_c2: var(--of-blue-400); }
+
+/* ------------------------------------------------------------ Simulyatsiyalar (toza, ilmiy: chizma + ma'lumot) */
+.of-sims { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.of-sims > li { display: flex; min-width: 0; }
+.of-sims > li[hidden] { display: none !important; }
+.of-sims > li.is-pending { opacity: 0; }
+.of-sim-card {
+  flex: 1; display: flex; flex-direction: column; overflow: hidden; padding: 0;
+  transition: border-color var(--of-dur-base), box-shadow var(--of-dur-base), transform var(--of-dur-base) var(--of-ease-out);
+}
+.of-sim-card:hover { border-color: var(--of-primary-soft-2); box-shadow: var(--of-shadow-md); transform: translateY(-2px); }
+.of-sim-card__art {
+  display: block; width: 100%; height: 112px; padding: 10px 0;
+  background-color: var(--of-surface-sunken);
+  background-image: linear-gradient(var(--of-grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--of-grid-line) 1px, transparent 1px);
+  background-size: 16px 16px;
+  border-bottom: 1px solid var(--of-border);
+  fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+}
+.of-sim-card__art .m { stroke: var(--of-text-3); stroke-width: 1.6; }
+.of-sim-card__art .a { stroke: var(--of-primary); }
+.of-sim-card__art .b { stroke: var(--of-success); }
+.of-sim-card__art .w { stroke: #fff; stroke-width: 2.4; }
+.of-sim-card__art .f { stroke: none; }
+.of-sim-card__art .a.f { fill: var(--of-primary); }
+.of-sim-card__art .b.f { fill: var(--of-success); }
+.of-sim-card__art .m.f { fill: var(--of-text-3); }
+.of-sim-card__art .m.f.o { fill: var(--of-primary-soft-2); }
+.of-sim-card[data-topic="elektr"] .of-sim-card__art .a { stroke: var(--of-success); }
+.of-sim-card[data-topic="elektr"] .of-sim-card__art .a.f { fill: var(--of-success); }
+.of-sim-card[data-topic="elektr"] .of-sim-card__art .b { stroke: var(--of-primary); }
+.of-sim-card[data-topic="elektr"] .of-sim-card__art .b.f { fill: var(--of-primary); }
+.of-sim-card__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 16px 16px; }
+.of-sim-card__title { font: 700 var(--of-text-md)/1.3 var(--of-font-sans) !important; letter-spacing: normal !important; overflow-wrap: anywhere; }
+.of-sim-card__desc { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+.of-sim-card__params { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.of-sim-card__params span:not(.of-sr-only) {
+  padding: 3px 8px; border-radius: var(--of-radius-pill); background: var(--of-surface-sunken);
+  color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600;
+}
+.of-sim-card__foot { margin-top: auto; padding-top: 6px; width: 100%; }
+.of-sim-card__foot .of-btn { min-height: 40px; }
+
+@media (max-width: 640px) {
+  .of-sims { grid-template-columns: 1fr; gap: 12px; }
+  .of-sim-card__art { height: 96px; }
+  .of-sim-card__foot .of-btn { width: 100%; min-height: 44px; }
+}
+
+@media (max-width: 640px) {
+  .of-quiz-featured { flex-wrap: wrap; padding: 18px 16px; }
+  .of-quiz-featured .of-btn { width: 100%; min-height: 44px; }
+  .of-quiz-grid { grid-template-columns: 1fr; gap: 8px; }
+  .of-quiz { flex-direction: row; flex-wrap: wrap; align-items: center; padding: 12px 14px; gap: 8px 12px; }
+  .of-quiz__top { flex: 1 1 calc(100% - 0px); }
+  .of-quiz__foot { flex: 1 1 100%; }
+  .of-quiz__foot .of-btn { min-height: 44px; }
+  .of-games { grid-template-columns: 1fr; gap: 12px; }
+  .of-game__art { height: 104px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .of-quiz-grid > li.is-pending, .of-games > li.is-pending, .of-sims > li.is-pending { opacity: 1; }
+  .of-game:hover, .of-quiz:hover, .of-sim-card:hover { transform: none; }
+  .of-game:hover .of-game__badge { transform: none; }
+}

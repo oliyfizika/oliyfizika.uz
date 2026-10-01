@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qobiq sinovi | OliyFizika.uz</title>
+<meta name="robots" content="noindex">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+</head>
+<body class="of-ui" data-shell-title="Dizayn tizimi sinovi" data-shell-search="Komponentlarni qidirish…" data-search-target="#list">
+<div class="of-page of-container of-stack">
+  <h1>Dizayn tizimi</h1>
+  <p class="of-muted">Bu sahifa faqat ishlab chiqish uchun (QA bosqichida o‘chiriladi).</p>
+  <div class="of-row" style="flex-wrap:wrap">
+    <button class="of-btn of-btn--primary">Asosiy</button>
+    <button class="of-btn of-btn--success">Muvaffaqiyat</button>
+    <button class="of-btn of-btn--soft">Yumshoq</button>
+    <button class="of-btn">Oddiy</button>
+    <button class="of-btn of-btn--ghost">Ghost</button>
+    <button class="of-btn of-btn--danger">Xavfli</button>
+    <button class="of-btn of-btn--primary is-loading">Yuklanmoqda</button>
+  </div>
+  <div class="of-row" style="flex-wrap:wrap">
+    <span class="of-badge of-badge--blue">Ko‘k</span><span class="of-badge of-badge--green">Yakunlandi</span>
+    <span class="of-badge of-badge--orange">Diqqat</span><span class="of-badge of-badge--purple">Maxsus</span><span class="of-badge of-badge--red">Xato</span>
+  </div>
+  <div class="of-card of-card--pad of-stack" style="max-width:520px">
+    <div class="of-field"><label class="of-label" for="e">Email</label><input id="e" class="of-input" placeholder="siz@example.com"></div>
+    <div class="of-progress" style="--value:64" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Umumiy progress"><span></span></div>
+    <div class="of-alert of-alert--error">Internet aloqasi bilan muammo yuz berdi.</div>
+    <span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span>
+  </div>
+  <div id="list" class="of-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+    <a class="of-card of-card--pad of-card--link" data-search-item href="#">Mexanika</a>
+    <a class="of-card of-card--pad of-card--link" data-search-item href="#">Molekulyar fizika</a>
+    <a class="of-card of-card--pad of-card--link" data-search-item href="#">Elektr va magnetizm</a>
+    <a class="of-card of-card--pad of-card--link" data-search-item href="#">Optika</a>
+    <a class="of-card of-card--pad of-card--link" data-search-item href="#">Atom va yadro fizikasi</a>
+  </div>
+  <div class="of-accordion">
+    <details><summary>Progress qanday hisoblanadi?</summary><div>Har bir mavzu testidan kamida 80% olsangiz, mavzu yakunlangan hisoblanadi.</div></details>
+    <details><summary>Sertifikat qachon beriladi?</summary><div>Kurs to‘liq yakunlangach.</div></details>
+  </div>
+</div>
+</body>
+</html>

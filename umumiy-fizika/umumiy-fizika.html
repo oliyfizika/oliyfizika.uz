@@ -1,394 +1,59 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Umumiy fizika | OliyFizika.uz</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
-
-    body{
-      background:#020817;
-      color:white;
-      min-height:100vh;
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-        radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
-        linear-gradient(135deg,#020817,#07122f,#020817);
-      z-index:-2;
-    }
-
-    .stars{
-      position:fixed;
-      inset:0;
-      background-image:
-        radial-gradient(white 1px,transparent 1px);
-      background-size:40px 40px;
-      opacity:.12;
-      z-index:-1;
-    }
-
-    .container{
-      width:92%;
-      max-width:1400px;
-      margin:auto;
-    }
-
-    /* NAVBAR */
-
-    .navbar{
-      margin-top:20px;
-      padding:18px 28px;
-      border-radius:24px;
-      background:rgba(5,12,35,.75);
-      border:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(18px);
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .logo{
-      font-size:38px;
-      font-weight:800;
-    }
-
-    .logo span{
-      color:#1d9cff;
-    }
-
-    .back-btn{
-      text-decoration:none;
-      color:white;
-      padding:14px 24px;
-      border-radius:16px;
-      background:linear-gradient(135deg,#1d4fff,#2797ff);
-      transition:.3s;
-      box-shadow:0 0 20px rgba(37,99,235,.4);
-    }
-
-    .back-btn:hover{
-      transform:translateY(-3px);
-    }
-
-    /* HERO */
-
-    .hero{
-      text-align:center;
-      padding:90px 0 70px;
-    }
-
-    .hero h1{
-      font-size:72px;
-      margin-bottom:20px;
-      font-weight:800;
-    }
-
-    .hero h1 span{
-      background:linear-gradient(to right,#38bdf8,#2563eb);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .hero p{
-      font-size:22px;
-      color:#cbd5e1;
-      max-width:850px;
-      margin:auto;
-      line-height:1.8;
-    }
-
-    /* SUBJECTS */
-
-    .subjects{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-      margin-bottom:80px;
-    }
-
-    .subject-card{
-      position:relative;
-      overflow:hidden;
-
-      padding:40px 35px;
-      border-radius:28px;
-
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-
-      backdrop-filter:blur(18px);
-
-      text-decoration:none;
-      color:white;
-
-      transition:.4s;
-    }
-
-    .subject-card:hover{
-      transform:translateY(-10px) scale(1.02);
-      box-shadow:0 0 40px rgba(37,99,235,.3);
-    }
-
-    .subject-card::before{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      top:-100px;
-      right:-100px;
-      filter:blur(45px);
-      opacity:.5;
-    }
-
-    .mechanics::before{
-      background:#00c2ff;
-    }
-
-    .molecular::before{
-      background:#8b5cf6;
-    }
-
-    .electro::before{
-      background:#2563eb;
-    }
-
-    .optics::before{
-      background:#f43f5e;
-    }
-
-    .nuclear::before{
-      background:#f59e0b;
-    }
-
-    .subject-icon{
-      font-size:65px;
-      margin-bottom:25px;
-    }
-
-    .subject-title{
-      font-size:34px;
-      font-weight:700;
-      margin-bottom:15px;
-    }
-
-    .subject-desc{
-      color:#cbd5e1;
-      line-height:1.8;
-      font-size:16px;
-    }
-
-    .arrow{
-      position:absolute;
-      right:30px;
-      bottom:25px;
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.15);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      font-size:22px;
-      transition:.3s;
-    }
-
-    .subject-card:hover .arrow{
-      transform:translateX(5px);
-      background:#2563eb;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:1100px){
-
-      .subjects{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .hero h1{
-        font-size:54px;
-      }
-
-    }
-
-    @media(max-width:768px){
-
-      .subjects{
-        grid-template-columns:1fr;
-      }
-
-      .hero h1{
-        font-size:42px;
-      }
-
-      .hero p{
-        font-size:18px;
-      }
-
-      .navbar{
-        flex-direction:column;
-        gap:20px;
-      }
-
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umumiy fizika | OliyFizika.uz</title>
+<meta name="description" content="Umumiy fizika: mexanika, molekulyar fizika, elektr va magnetizm, optika, atom va yadro fizikasi bo‘yicha video darslar va mavzu testlari.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/umumiy-fizika.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/umumiy-fizika/hub.js"></script>
 </head>
-<body>
+<body class="of-ui" data-shell-title="Umumiy fizika" data-shell-public="true">
+<div class="of-page of-container of-uf" id="ufHub">
 
-  <div class="stars"></div>
+  <section class="of-uf-hero of-card" aria-labelledby="ufTitle">
+    <div class="of-uf-hero__text">
+      <p class="of-uf-hero__eyebrow"><span data-icon="atom"></span>To‘liq kurs · 5 bo‘lim</p>
+      <h1 id="ufTitle">Umumiy fizika</h1>
+      <p>Fizikaning asosiy bo‘limlarini tanlang va interaktiv darslar, formulalar hamda testlar orqali bilimlaringizni mustahkamlang. Mavzular ketma-ket ochiladi: har bir mavzu testidan kamida 80% natija keyingi mavzuni ochadi.</p>
+    </div>
 
-  <div class="container">
+    <div class="of-uf-hero__side" data-auth-only hidden aria-live="polite">
+      <div class="of-uf-metric"><span>Umumiy progress</span><strong class="of-num" data-overall-pct><span class="of-skeleton" style="display:inline-block;width:56px;height:24px"></span></strong></div>
+      <div class="of-progress of-progress--lg" role="progressbar" aria-label="Umumiy fizika progressi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--value:0" data-overall-bar><span></span></div>
+      <p data-overall-text>Progress yuklanmoqda…</p>
+      <div data-overall-action></div>
+    </div>
 
-    <!-- NAVBAR -->
-
-    <nav class="navbar">
-
-      <div class="logo">
-        Oliy<span>Fizika</span>.uz
+    <div class="of-uf-hero__side" data-guest-only>
+      <p><b>Progressingizni kuzatish uchun ro‘yxatdan o‘ting.</b> Har bir mavzu va test natijangiz saqlanadi.</p>
+      <div class="of-row" style="flex-wrap:wrap">
+        <button type="button" class="of-btn of-btn--primary" data-auth-open="register">Ro‘yxatdan o‘tish</button>
+        <button type="button" class="of-btn" data-auth-open="login">Kirish</button>
       </div>
+    </div>
+  </section>
 
-      <a href="../index.html" class="back-btn">
-        ← Bosh sahifaga qaytish
-      </a>
+  <section class="of-uf-results" data-results hidden aria-labelledby="ufResultsTitle">
+    <h2 id="ufResultsTitle">Mavzular</h2>
+    <ul data-results-list></ul>
+  </section>
 
-    </nav>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <h1>
-        <span>Umumiy fizika</span> bo‘limi
-      </h1>
-
-      <p>
-        Fizikaning asosiy bo‘limlarini tanlang va
-        interaktiv darslar, formulalar hamda testlar orqali bilimlaringizni mustahkamlang.
-      </p>
-
-    </section>
-
-    <!-- SUBJECTS -->
-
-    <section class="subjects">
-
-      <!-- MEXANIKA -->
-
-      <a href="mexanika.html" class="subject-card mechanics">
-
-        <div class="subject-icon">⚙️</div>
-
-        <div class="subject-title">
-          Mexanika
-        </div>
-
-        <div class="subject-desc">
-          Harakat, kuch, energiya, impuls va Nyuton qonunlarini o‘rganing.
-        </div>
-
-        <div class="arrow">→</div>
-
-      </a>
-
-      <!-- MOLEKULYAR -->
-
-      <a href="molekulyar.html" class="subject-card molecular">
-
-        <div class="subject-icon">🧪</div>
-
-        <div class="subject-title">
-          Molekulyar fizika
-        </div>
-
-        <div class="subject-desc">
-          Gazlar, issiqlik hodisalari va termodinamika qonunlarini o‘rganing.
-        </div>
-
-        <div class="arrow">→</div>
-
-      </a>
-
-      <!-- ELEKTRO -->
-
-      <a href="elektr.html" class="subject-card electro">
-
-        <div class="subject-icon">⚡</div>
-
-        <div class="subject-title">
-          Elektromagnitizm
-        </div>
-
-        <div class="subject-desc">
-          Elektr maydoni, tok, magnit maydon va elektromagnit hodisalar.
-        </div>
-
-        <div class="arrow">→</div>
-
-      </a>
-
-      <!-- OPTIKA -->
-
-      <a href="optika.html" class="subject-card optics">
-
-        <div class="subject-icon">🔭</div>
-
-        <div class="subject-title">
-          Optika
-        </div>
-
-        <div class="subject-desc">
-          Yorug‘lik, linzalar, interferensiya va optik hodisalarni o‘rganing.
-        </div>
-
-        <div class="arrow">→</div>
-
-      </a>
-
-      <!-- ATOM -->
-
-      <a href="atom.html" class="subject-card nuclear">
-
-        <div class="subject-icon">☢️</div>
-
-        <div class="subject-title">
-          Atom yadro fizikasi
-        </div>
-
-        <div class="subject-desc">
-          Atom tuzilishi, radioaktivlik va yadro reaksiyalarini o‘rganing.
-        </div>
-
-        <div class="arrow">→</div>
-
-      </a>
-
-    </section>
-
-  </div>
-
+  <section aria-labelledby="ufCoursesTitle">
+    <div class="of-section-title"><h2 id="ufCoursesTitle">Kurslar</h2></div>
+    <ul class="of-uf-courses" data-courses aria-busy="true">
+      <li><div class="of-card of-uf-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text" style="width:70%"></span><span class="of-skeleton" style="height:40px;width:140px"></span></div></li>
+      <li><div class="of-card of-uf-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text" style="width:70%"></span><span class="of-skeleton" style="height:40px;width:140px"></span></div></li>
+      <li><div class="of-card of-uf-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text" style="width:70%"></span><span class="of-skeleton" style="height:40px;width:140px"></span></div></li>
+      <li><div class="of-card of-uf-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text" style="width:70%"></span><span class="of-skeleton" style="height:40px;width:140px"></span></div></li>
+      <li><div class="of-card of-uf-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text" style="width:70%"></span><span class="of-skeleton" style="height:40px;width:140px"></span></div></li>
+    </ul>
+  </section>
+</div>
 </body>
 </html>

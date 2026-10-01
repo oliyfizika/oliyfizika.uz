@@ -1,0 +1,171 @@
+{
+  "_izoh": "Simulyatsiyalar katalogi (simulations/simulations.html). Nomlar va tavsiflar mavjud sahifalardan olingan; 'params' — sahifadagi haqiqiy boshqaruv elementlari. Simulyatsiya kodlari bu faylda yo'q va katalog sahifasida yuklanmaydi.",
+  "topics": [
+    {
+      "id": "mexanika",
+      "title": "Mexanika"
+    },
+    {
+      "id": "elektr",
+      "title": "Elektr va magnetizm"
+    },
+    {
+      "id": "optika",
+      "title": "Optika"
+    }
+  ],
+  "simulations": [
+    {
+      "id": "projectile",
+      "title": "Projectile Motion",
+      "href": "projectile.html",
+      "topic": "mexanika",
+      "description": "Jismning parabola bo‘ylab harakatini kuzating. Burchak, tezlik va gravitatsiyani boshqaring.",
+      "params": [
+        "Burchak",
+        "Tezlik",
+        "Gravitatsiya"
+      ],
+      "keywords": "gorizontga burchak ostida otilgan jism parabola trayektoriya uchish uzoqligi maksimal balandlik"
+    },
+    {
+      "id": "pendulum",
+      "title": "Matematik mayatnik",
+      "href": "pendulum.html",
+      "topic": "mexanika",
+      "description": "Mayatnik tebranishini real vaqt rejimida kuzating. Uzunlik, burchak va gravitatsiyani boshqaring.",
+      "params": [
+        "Uzunlik",
+        "Boshlang‘ich burchak",
+        "Gravitatsiya"
+      ],
+      "keywords": "pendulum tebranish davr mayatnik"
+    },
+    {
+      "id": "spring",
+      "title": "Spring Oscillator",
+      "href": "spring.html",
+      "topic": "mexanika",
+      "description": "Prujinali mayatnik tebranishini kuzating. Massa, amplituda va qattiqlikni boshqaring.",
+      "params": [
+        "Massa",
+        "Prujina qattiqligi k",
+        "Amplituda"
+      ],
+      "keywords": "prujinali mayatnik prujina tebranish garmonik"
+    },
+    {
+      "id": "circular-motion",
+      "title": "Circular Motion",
+      "href": "circular-motion.html",
+      "topic": "mexanika",
+      "description": "Aylana bo‘ylab harakatni kuzating. Radius va tezlikni boshqaring.",
+      "params": [
+        "Radius",
+        "Tezlik"
+      ],
+      "keywords": "aylana bo'ylab harakat markazga intilma tezlanish aylanma"
+    },
+    {
+      "id": "vertical-motion",
+      "title": "Vertical Motion",
+      "href": "vertical-motion.html",
+      "topic": "mexanika",
+      "description": "Vertikal otilgan jism harakatini kuzating. Tezlik va gravitatsiyani boshqaring.",
+      "params": [
+        "Boshlang‘ich tezlik",
+        "Gravitatsiya"
+      ],
+      "keywords": "vertikal otilgan jism erkin tushish yuqoriga otish"
+    },
+    {
+      "id": "gravity-law",
+      "title": "Gravity Law",
+      "href": "gravity-law.html",
+      "topic": "mexanika",
+      "description": "Nyutonning butun olam tortishish qonunini interaktiv tarzda kuzating.",
+      "params": [
+        "1-massa",
+        "2-massa",
+        "Masofa"
+      ],
+      "keywords": "butun olam tortishish qonuni gravitatsiya nyuton"
+    },
+    {
+      "id": "newton-second-law",
+      "title": "Newton Second Law",
+      "href": "newton-second-law.html",
+      "topic": "mexanika",
+      "description": "Nyutonning ikkinchi qonunini interaktiv tarzda kuzating va F = ma bog‘lanishini tahlil qiling.",
+      "params": [
+        "Kuch F",
+        "Massa m"
+      ],
+      "keywords": "nyutonning ikkinchi qonuni f=ma kuch tezlanish dinamika"
+    },
+    {
+      "id": "inclined-plane",
+      "title": "Inclined Plane",
+      "href": "inclined-plane.html",
+      "topic": "mexanika",
+      "description": "Qiya tekislikdagi jism harakatini va ishqalanish ta’sirini kuzating.",
+      "params": [
+        "Burchak",
+        "Massa",
+        "Ishqalanish μ"
+      ],
+      "keywords": "qiya tekislik ishqalanish koeffitsiyenti"
+    },
+    {
+      "id": "coulomb-law",
+      "title": "Coulomb Law",
+      "href": "coulomb-law.html",
+      "topic": "elektr",
+      "description": "Elektr zaryadlar orasidagi tortishish va itarilishni interaktiv tarzda kuzating.",
+      "params": [
+        "1-zaryad q₁",
+        "2-zaryad q₂",
+        "Masofa"
+      ],
+      "keywords": "kulon qonuni elektr zaryad tortishish itarilish elektrostatika"
+    },
+    {
+      "id": "ohm-law",
+      "title": "Ohm Law",
+      "href": "ohm-law.html",
+      "topic": "elektr",
+      "description": "Zanjirning bir qismi uchun Om qonunini interaktiv tarzda kuzating.",
+      "params": [
+        "Kuchlanish U",
+        "Qarshilik R"
+      ],
+      "keywords": "om qonuni tok kuchi kuchlanish qarshilik zanjir"
+    },
+    {
+      "id": "lorentz",
+      "title": "Lorentz kuchi",
+      "href": "lorentz/lorentz.html",
+      "topic": "elektr",
+      "description": "Magnit maydonida harakatlanayotgan zaryadli zarra trayektoriyasini kuzating.",
+      "params": [
+        "Magnit maydon B",
+        "Tezlik v",
+        "Zarra turi"
+      ],
+      "keywords": "lorens kuchi lorentz magnit maydon zaryadli zarra elektron ion elektromagnetizm"
+    },
+    {
+      "id": "refraction-law",
+      "title": "Refraction Law",
+      "href": "refraction-law.html",
+      "topic": "optika",
+      "description": "Yorug‘likning sinish qonunini interaktiv tarzda kuzating va burchaklarni boshqaring.",
+      "params": [
+        "Tushish burchagi",
+        "1-muhit n₁",
+        "2-muhit n₂"
+      ],
+      "keywords": "yorug'likning sinish qonuni snell sindirish ko'rsatkichi"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: huquqlarni boshqarish">
+<title>Access boshqaruvi | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/access.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Access boshqaruvi">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Access boshqaruvi</h1><p class="of-muted">Administratorlar, Full Access va Mock Test Access egalari.</p></div>
+    </header>
+    <form class="of-card of-admin-toolbar" data-find-form novalidate>
+      <div class="of-field of-admin-toolbar__search">
+        <label class="of-label" for="findEmail">Foydalanuvchini topish</label>
+        <input class="of-input" id="findEmail" type="email" autocomplete="off" spellcheck="false" placeholder="email@example.com" aria-describedby="findEmail-err">
+        <p class="of-field-error" id="findEmail-err" role="alert"></p>
+      </div>
+      <div class="of-admin-toolbar__actions"><button type="submit" class="of-btn of-btn--primary">Topish</button></div>
+    </form>
+    <div data-find-results></div>
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-label="Huquq egalari">
+      <div class="of-admin-tabs" role="tablist" aria-label="Huquq turi">
+        <button type="button" role="tab" class="of-admin-tab" id="tab-admin" aria-controls="panel-access" aria-selected="true" tabindex="0" data-tab="admin">Adminlar <span class="of-admin-tab__count" data-tab-count="admin"></span></button>
+        <button type="button" role="tab" class="of-admin-tab" id="tab-fullAccess" aria-controls="panel-access" aria-selected="false" tabindex="-1" data-tab="fullAccess">Full Access <span class="of-admin-tab__count" data-tab-count="fullAccess"></span></button>
+        <button type="button" role="tab" class="of-admin-tab" id="tab-mockTestsAccess" aria-controls="panel-access" aria-selected="false" tabindex="-1" data-tab="mockTestsAccess">Mock Test Access <span class="of-admin-tab__count" data-tab-count="mockTestsAccess"></span></button>
+      </div>
+      <div id="panel-access" role="tabpanel" aria-labelledby="tab-admin" tabindex="0">
+        <ul class="of-admin-list" data-access-list aria-busy="true"></ul>
+        <div data-access-state></div>
+        <div class="of-admin-more"><button type="button" class="of-btn of-btn--ghost" data-access-more hidden>Ko‘proq yuklash</button></div>
+      </div>
+      <div class="of-alert" data-access-msg role="status" hidden></div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

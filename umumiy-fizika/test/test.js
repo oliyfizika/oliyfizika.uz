@@ -29,5 +29,8 @@ renderMultipleChoiceTest({
     result: document.getElementById("result"),
     submitButton:
         document.getElementById("submitBtn"),
-    unlockLesson: data.unlockLesson
+    unlockLesson: data.unlockLesson,
+    // "Mavzularga qaytish" tugmasi to'g'ri kurs sahifasiga olib borishi uchun
+    // (avval test/mexanika.html — mavjud bo'lmagan manzilga olib borardi)
+    redirectUrl: data.backUrl
 });

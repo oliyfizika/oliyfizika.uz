@@ -1,0 +1,70 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Simulyatsiya sahifalari (simulations/*.html) uchun tashqi qism.
+   Qobiq (sidebar/header) ichida: "← Simulyatsiyalarga qaytish" havolasi va simulyatsiyaning
+   o'z qorong'i "laboratoriya" paneli. Simulyatsiyaning boshqaruvlari, canvas va JS kodi O'ZGARMAGAN —
+   bu fayl faqat panelni qobiqqa moslaydi va tor ekranlarda ustunlarni ustma-ust joylaydi.
+   ========================================================================== */
+
+.of-sim-wrap { display: flex; flex-direction: column; gap: 14px; }
+
+.of-sim-back {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 40px; padding: 0 14px 0 10px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-pill);
+  background: var(--of-surface); color: var(--of-text-2) !important;
+  font: 600 var(--of-text-sm)/1 var(--of-font-sans);
+  text-decoration: none !important;
+  transition: border-color var(--of-dur-fast), color var(--of-dur-fast), background var(--of-dur-fast);
+}
+.of-sim-back:hover { border-color: var(--of-border-strong); color: var(--of-text) !important; background: var(--of-surface-sunken); }
+.of-sim-back svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Eski sahifalar: body uslubi (qorong'i fon) panelga ko'chirilgan (.of-sim), sahifa esa qobiq ichida. */
+.of-sim.container {
+  width: 100%; max-width: 1450px; min-height: 0; margin: 0 auto;
+  padding: clamp(12px, 2.4vw, 28px);
+  border-radius: 20px;
+  position: relative; isolation: isolate; overflow: hidden;
+  container-type: inline-size;
+  box-shadow: var(--of-shadow-md);
+}
+.of-sim-page .of-sim::before { position: absolute; }  /* avval body::before (fixed) edi — endi faqat panel ichida */
+.of-sim .main { margin-top: 0; }
+/* Sarlavhalar avvalgidek panel matn rangini oladi (umumiy .of-ui sarlavha rangi emas) */
+.of-sim-page .of-sim :where(h1, h2, h3), .of-sim-page .lorentz-page :where(h1, h2, h3) { color: inherit; }
+
+/* Panel tor bo'lsa (sidebar bilan planshet / mobil) — boshqaruvlar canvas ustida */
+@container (max-width: 860px) {
+  .of-sim .main { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+/* O'rta kenglik: boshqaruvlar ixcham to'rda (panel balandligi kamayadi, canvas ko'rinadi) */
+@container (min-width: 561px) and (max-width: 860px) {
+  .of-sim .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); column-gap: 24px; align-items: end; }
+  .of-sim .controls > h2, .of-sim .controls > button { grid-column: 1 / -1; }
+  .of-sim .controls h2 { margin-bottom: 20px; }
+}
+@container (max-width: 560px) {
+  .of-sim .controls { padding: 18px; border-radius: 20px; }
+  .of-sim .controls h2 { font-size: 22px; margin-bottom: 18px; }
+  .of-sim .control-group { margin-bottom: 18px; }
+  .of-sim .canvas-box { border-radius: 18px; }
+  /* Ma'lumot oynasi kichik canvasni yopib qo'ymasin — canvas ustida alohida qator */
+  .of-sim .info { position: static; display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 10px 0; padding: 10px 12px; border-radius: 12px; }
+  .of-sim .info p { margin: 0; font-size: 13px; }
+}
+
+/* Lorentz kuchi (alohida css/js): o'zining qorong'i paneli (.simulation) bor — sahifa foni endi qobiqniki,
+   matn rangi va shrift esa avvalgidek (body o'rniga shu konteynerda). */
+.of-sim-page .lorentz-page {
+  width: 100%; max-width: 1100px; margin: 0 auto; padding: 0;
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.of-sim-page .lorentz-page :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.of-sim-page .of-sim :focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }
+
+@media (max-width: 640px) {
+  .of-sim.container { border-radius: 16px; }
+  .of-sim-back { min-height: 44px; }
+}

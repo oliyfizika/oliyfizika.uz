@@ -25,7 +25,7 @@ export async function saveResult({
 
   if (!user) {
     console.warn("❌ Foydalanuvchi tizimga kirmagan.");
-    return;
+    return null;
   }
 
   try {
@@ -44,7 +44,7 @@ export async function saveResult({
     }
 
     // Natijani saqlash
-    await addDoc(collection(db, "results"), {
+    const ref = await addDoc(collection(db, "results"), {
       uid: user.uid,
 
       fullName,
@@ -66,7 +66,18 @@ export async function saveResult({
     });
 
     console.log("✅ Natija muvaffaqiyatli saqlandi.");
+
+    // Yangi natija: bildirishnomalar keshini yangilash (OliyFizika 2.0 header'i)
+    try {
+      Object.keys(sessionStorage)
+        .filter((key) => key.startsWith("oliyfizika:notif-cache:"))
+        .forEach((key) => sessionStorage.removeItem(key));
+    } catch (e) { /* storage mavjud emas */ }
+
+    // Phase 19C: XP mukofoti shu natijaga bog'lanadi (xp-service.awardXP → resultId)
+    return ref.id;
   } catch (error) {
     console.error("❌ Natijani saqlashda xatolik:", error);
+    return null;
   }
 }

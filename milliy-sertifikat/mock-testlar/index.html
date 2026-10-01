@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock test yechish | OliyFizika.uz</title>
+<meta name="description" content="Milliy sertifikat fizika fanidan interaktiv mock testlar: 45 ta savol, 180 daqiqa, kalkulyator va formula jadvali bilan. OliyFizika.uz">
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../../assets/css/catalog.css">
+<link rel="stylesheet" href="../../assets/css/milliy-sertifikat.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../../assets/js/milliy-sertifikat/mock-catalog.js"></script>
+</head>
+<!--
+  Interaktiv mock testlar katalogi (OliyFizika 2.0 qobig'ida).
+  Test engine O'ZGARMAGAN: test.html?id=mock-test-N + js/test-engine.js (+ timer, scoring, result, storage).
+  Katalog avvalgidek data/tests.json va data/mock-test-N.json dan quriladi — yangi test qo'shish tartibi (README) o'zgarmagan.
+  Ruxsat: js/access-gate.js (checkMockAccess) — engine bilan bir xil tekshiruv. Eski katalog kodi js/catalog.js saqlangan.
+-->
+<body class="of-ui" data-shell-title="Mock test yechish" data-shell-public="true">
+<div class="of-page of-container of-cat of-ms" id="mockCatalog">
+  <header class="of-cat-head">
+    <div>
+      <h1>Mock test yechish</h1>
+      <p>Haqiqiy imtihon formatidagi interaktiv testlar: 35 ta test va 10 ta ikki qismli ochiq savol, 180 daqiqalik taymer, ilmiy kalkulyator va formula jadvali. Javoblaringiz qurilmada avtomatik saqlanadi.</p>
+    </div>
+    <p class="of-cat-count" data-mock-count aria-live="polite"></p>
+  </header>
+
+  <p class="of-ms-user" data-user-hint role="status" hidden></p>
+
+  <section aria-labelledby="mockListTitle">
+    <h2 class="of-sr-only" id="mockListTitle">Mock testlar ro‘yxati</h2>
+    <ul class="of-mock-grid" data-mock-list aria-busy="true">
+      <li><div class="of-card of-mock"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-mock"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-mock"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+    </ul>
+  </section>
+
+  <aside class="of-card of-ms-note">
+    <span data-icon="video" aria-hidden="true"></span>
+    <p>Video va PDF yechimlar alohida bo‘limda: <a href="../mock-tests.html">Mock test video yechimlari</a></p>
+  </aside>
+</div>
+</body>
+</html>
