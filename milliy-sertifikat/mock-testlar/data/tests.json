@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "tests": [
+    {
+      "id": "mock-test-1",
+      "file": "data/mock-test-1.json"
+    },
+    {
+      "id": "mock-test-2",
+      "file": "data/mock-test-2.json"
+    },
+    {
+      "id": "mock-test-3",
+      "file": "data/mock-test-3.json"
+    },
+    {
+      "id": "mock-test-4",
+      "file": "data/mock-test-4.json"
+    },
+    {
+      "id": "mock-test-5",
+      "file": "data/mock-test-5.json"
+    },
+    {
+      "id": "mock-test-6",
+      "file": "data/mock-test-6.json"
+    },
+    {
+      "id": "mock-test-7",
+      "file": "data/mock-test-7.json"
+    },
+    {
+      "id": "mock-test-8",
+      "file": "data/mock-test-8.json"
+    },
+    {
+      "id": "mock-test-9",
+      "file": "data/mock-test-9.json"
+    },
+    {
+      "id": "mock-test-10",
+      "file": "data/mock-test-10.json"
+    },
+    {
+      "id": "mock-test-11",
+      "file": "data/mock-test-11.json"
+    },
+    {
+      "id": "mock-test-12",
+      "file": "data/mock-test-12.json"
+    },
+    {
+      "id": "mock-test-13",
+      "file": "data/mock-test-13.json"
+    },
+    {
+      "id": "mock-test-14",
+      "file": "data/mock-test-14.json"
+    },
+    {
+      "id": "mock-test-15",
+      "file": "data/mock-test-15.json"
+    }
+  ]
+}

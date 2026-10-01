@@ -3,58 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Sozlamalar | OliyFizika.uz</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="dashboard.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/account.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/account/settings-page.js"></script>
 </head>
-<body>
+<body class="of-ui" data-shell-title="Sozlamalar">
+<div class="of-page of-container of-acc" id="settingsPage">
 
-<main class="dashboard-shell">
+  <header class="of-acc-head">
+    <h1>Sozlamalar</h1>
+    <p class="of-muted">Hisob, xavfsizlik va ko‘rinish sozlamalari.</p>
+  </header>
 
-<nav class="dashboard-nav">
-<a class="logo" href="../index.html">Oliy<span>Fizika</span>.uz</a>
+  <nav class="of-acc-jump" aria-label="Sozlamalar bo‘limlari">
+    <a href="#profile"><span data-icon="user"></span>Profil</a>
+    <a href="#security"><span data-icon="key"></span>Parol</a>
+    <a href="#appearance"><span data-icon="sun"></span>Ko‘rinish</a>
+    <a href="#session"><span data-icon="logout"></span>Sessiya</a>
+  </nav>
 
-<div class="nav-links">
-<a class="btn" href="../index.html">Bosh sahifa</a>
-<a class="btn btn-primary" href="profile.html">Profil</a>
+  <p class="of-acc-group" aria-hidden="true">Hisob</p>
+
+  <!-- ACCOUNT → Profil -->
+  <section class="of-card of-acc-section" id="profile" aria-labelledby="setProfileTitle" tabindex="-1">
+    <div class="of-acc-section__head">
+      <span class="of-acc-section__icon" data-icon="user"></span>
+      <div>
+        <h2 id="setProfileTitle">Profil ma’lumotlari</h2>
+        <p class="of-muted">Ism va familiyangiz sertifikat, natijalar va profilda ko‘rinadi.</p>
+      </div>
+    </div>
+    <form class="of-acc-form" id="profileForm" novalidate aria-busy="true">
+      <div class="of-acc-row">
+        <div class="of-field">
+          <label class="of-label" for="setFirstName">Ism</label>
+          <input class="of-input" id="setFirstName" name="firstName" type="text" autocomplete="given-name" maxlength="40" spellcheck="false" aria-describedby="setFirstName-err" disabled>
+          <p class="of-field-error" id="setFirstName-err" role="alert"></p>
+        </div>
+        <div class="of-field">
+          <label class="of-label" for="setLastName">Familiya</label>
+          <input class="of-input" id="setLastName" name="lastName" type="text" autocomplete="family-name" maxlength="40" spellcheck="false" aria-describedby="setLastName-err" disabled>
+          <p class="of-field-error" id="setLastName-err" role="alert"></p>
+        </div>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="setEmail">Email</label>
+        <input class="of-input" id="setEmail" type="email" readonly aria-readonly="true" aria-describedby="setEmail-hint">
+        <p class="of-hint" id="setEmail-hint">Email manzil kirish uchun ishlatiladi va bu yerda o‘zgartirilmaydi.</p>
+      </div>
+      <div class="of-alert" data-profile-msg role="status" hidden></div>
+      <div class="of-acc-form__foot">
+        <button type="submit" class="of-btn of-btn--primary" id="profileSave" disabled>Saqlash</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ACCOUNT → Parol -->
+  <section class="of-card of-acc-section" id="security" aria-labelledby="setSecTitle" tabindex="-1">
+    <div class="of-acc-section__head">
+      <span class="of-acc-section__icon" data-icon="key"></span>
+      <div>
+        <h2 id="setSecTitle">Parolni o‘zgartirish</h2>
+        <p class="of-muted">Xavfsizlik uchun avval joriy parolingizni kiriting.</p>
+      </div>
+    </div>
+    <div data-security aria-busy="true">
+      <span class="of-skeleton of-skeleton--text"></span>
+      <span class="of-skeleton of-skeleton--text" style="margin-top:12px;width:70%"></span>
+    </div>
+  </section>
+
+  <p class="of-acc-group" aria-hidden="true">Ko‘rinish</p>
+
+  <!-- APPEARANCE -->
+  <section class="of-card of-acc-section" id="appearance" aria-labelledby="setThemeTitle" tabindex="-1">
+    <div class="of-acc-section__head">
+      <span class="of-acc-section__icon" data-icon="sun"></span>
+      <div>
+        <h2 id="setThemeTitle">Mavzu</h2>
+        <p class="of-muted">Tanlov shu brauzerda saqlanadi.</p>
+      </div>
+    </div>
+    <fieldset class="of-acc-theme" data-theme-group>
+      <legend class="of-sr-only">Sayt mavzusi</legend>
+      <label class="of-acc-theme__opt">
+        <input type="radio" name="theme" value="light">
+        <span class="of-acc-theme__card"><span class="of-acc-theme__preview of-acc-theme__preview--light" aria-hidden="true"></span><span class="of-acc-theme__label"><span data-icon="sun"></span>Yorug‘</span></span>
+      </label>
+      <label class="of-acc-theme__opt">
+        <input type="radio" name="theme" value="dark">
+        <span class="of-acc-theme__card"><span class="of-acc-theme__preview of-acc-theme__preview--dark" aria-hidden="true"></span><span class="of-acc-theme__label"><span data-icon="moon"></span>Qorong‘i</span></span>
+      </label>
+      <label class="of-acc-theme__opt">
+        <input type="radio" name="theme" value="system">
+        <span class="of-acc-theme__card"><span class="of-acc-theme__preview of-acc-theme__preview--system" aria-hidden="true"></span><span class="of-acc-theme__label"><span data-icon="monitor"></span>Tizim</span></span>
+      </label>
+    </fieldset>
+  </section>
+
+  <p class="of-acc-group" aria-hidden="true">Sessiya</p>
+
+  <!-- SESSION -->
+  <section class="of-card of-acc-section" id="session" aria-labelledby="setSessionTitle" tabindex="-1">
+    <div class="of-acc-section__head">
+      <span class="of-acc-section__icon of-acc-section__icon--danger" data-icon="logout"></span>
+      <div>
+        <h2 id="setSessionTitle">Hisobdan chiqish</h2>
+        <p class="of-muted" data-session-text>Shu qurilmadagi sessiyangiz yakunlanadi.</p>
+      </div>
+    </div>
+    <div class="of-acc-form__foot">
+      <button type="button" class="of-btn of-btn--danger" data-session-logout disabled><span data-icon="logout"></span>Chiqish</button>
+    </div>
+  </section>
 </div>
-</nav>
-
-<header class="page-header">
-<h1>Sozlamalar</h1>
-<p>Ism-familiya va telefon raqamingizni yangilang. Email xavfsizlik sababli bu sahifada o'zgartirilmaydi.</p>
-</header>
-
-<section class="panel">
-<form class="settings-form" id="settingsForm" novalidate>
-
-<div class="form-field">
-<label for="settingsFullName">Full Name</label>
-<input type="text" id="settingsFullName" autocomplete="name" required>
-</div>
-
-<div class="form-field">
-<label for="settingsPhone">Phone</label>
-<input type="tel" id="settingsPhone" autocomplete="tel" required>
-</div>
-
-<div class="form-field">
-<label for="settingsEmail">Email</label>
-<input type="email" id="settingsEmail" readonly>
-</div>
-
-<div class="form-actions">
-<button type="submit" class="btn btn-primary" id="settingsSubmit">Saqlash</button>
-<span class="status" id="settingsStatus" role="status" aria-live="polite"></span>
-</div>
-
-</form>
-</section>
-
-</main>
-
-<script type="module" src="../js/settings-page.js"></script>
-
 </body>
 </html>

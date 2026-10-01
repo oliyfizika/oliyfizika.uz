@@ -3,251 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Darsliklar | OliyFizika.uz</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:#020817;
-    color:white;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
-    linear-gradient(135deg,#020817,#07122f,#020817);
-    z-index:-2;
-}
-
-.container{
-    width:92%;
-    max-width:1400px;
-    margin:auto;
-}
-
-.navbar{
-    margin-top:20px;
-    padding:18px 28px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:24px;
-    background:rgba(5,12,35,.7);
-    backdrop-filter:blur(18px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    text-decoration:none;
-    color:white;
-    font-size:36px;
-    font-weight:800;
-}
-
-.logo span{
-    color:#1d9cff;
-}
-
-.back-btn{
-    text-decoration:none;
-    color:white;
-    border:1px solid rgba(255,255,255,.2);
-    padding:12px 20px;
-    border-radius:14px;
-}
-
-.header{
-    text-align:center;
-    padding:60px 0;
-}
-
-.header h1{
-    font-size:54px;
-    margin-bottom:15px;
-}
-
-.header p{
-    color:#cbd5e1;
-}
-
-.books{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
-    margin-bottom:60px;
-}
-
-.book-card{
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:24px;
-    padding:25px;
-    transition:.3s;
-}
-
-.book-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 25px rgba(37,99,235,.25);
-}
-
-.book-icon{
-    font-size:55px;
-    margin-bottom:15px;
-}
-
-.book-title{
-    font-size:24px;
-    font-weight:600;
-    margin-bottom:10px;
-}
-
-.book-year{
-    color:#60a5fa;
-    margin-bottom:15px;
-}
-
-.book-desc{
-    color:#cbd5e1;
-    line-height:1.7;
-    margin-bottom:20px;
-}
-
-.open-btn{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(135deg,#1d4fff,#2797ff);
-    padding:12px 22px;
-    border-radius:14px;
-    font-weight:600;
-}
-
-@media(max-width:768px){
-
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .header h1{
-        font-size:38px;
-    }
-
-}
-</style>
+<meta name="description" content="Fizika fanidan elektron darsliklar">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/catalog.css">
+<link rel="stylesheet" href="../assets/css/library.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/library/library-page.js"></script>
 </head>
+<!--
+  Kutubxona (OliyFizika 2.0). Materiallar ro'yxati: data/manifest.json (mavjud kartalardan olingan, URL'lar o'zgarmagan).
+  Fayllar Google Drive'da — bu sahifada ularning mazmuni yuklanmaydi. Kirish talabi avvalgidek:
+  bo'limga kirish havolalari (sidebar, Bosh sahifa) himoyalangan, sahifalarning o'zi to'g'ridan-to'g'ri havola bilan ochiladi.
+-->
+<body class="of-ui" data-library-category="darsliklar" data-shell-title="Darsliklar" data-shell-public="true">
+<div class="of-page of-container of-cat">
+  <a class="of-back-link" href="kutubxona.html"><span data-icon="chevronLeft"></span>Kutubxona</a>
+  <header class="of-cat-head">
+    <div>
+      <h1>Darsliklar</h1>
+      <p>Fizika fanidan elektron darsliklar</p>
+    </div>
+    <p class="of-cat-count" data-lib-count aria-live="polite"></p>
+  </header>
 
-<body>
+  <nav aria-label="Kutubxona bo‘limlari">
+    <ul class="of-chips" data-lib-sections></ul>
+  </nav>
 
-<div class="container">
-
-<nav class="navbar">
-
-<a href="../index.html" class="logo">
-Oliy<span>Fizika</span>.uz
-</a>
-
-<a href="kutubxona.html" class="back-btn">
-← Kutubxona
-</a>
-
-</nav>
-
-<div class="header">
-<h1>📖 Darsliklar</h1>
-<p>Fizika fanidan elektron darsliklar</p>
+  <section aria-label="Darsliklar materiallari">
+    <ul class="of-res-grid" data-resources aria-busy="true">
+      <li><div class="of-card of-res"><span class="of-skeleton of-skeleton--text" style="width:30%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-res"><span class="of-skeleton of-skeleton--text" style="width:30%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-res"><span class="of-skeleton of-skeleton--text" style="width:30%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+    </ul>
+  </section>
 </div>
-
-<div class="books">
-
-<div class="book-card">
-<div class="book-icon">📘</div>
-<div class="book-title">7-sinf Fizika</div>
-<div class="book-year">2022-yil nashri</div>
-<div class="book-desc">
-7-sinf o'quvchilari uchun fizika darsligi.
-</div>
-<a class="open-btn"
-href="https://drive.google.com/file/d/1Hb2OiqwttjL8lB2rjmKQ54QSHYD2OurA/view?usp=drive_link"
-target="_blank">
-PDF ochish
-</a>
-</div>
-
-<div class="book-card">
-<div class="book-icon">📘</div>
-<div class="book-title">8-sinf Fizika</div>
-<div class="book-year">2019-yil nashri</div>
-<div class="book-desc">
-8-sinf o'quvchilari uchun fizika darsligi.
-</div>
-<a class="open-btn"
-href="https://drive.google.com/file/d/1wIZKcZf8YGm4wsnFpUQmtsdM8mlHfLHK/view?usp=drive_link"
-target="_blank">
-PDF ochish
-</a>
-</div>
-
-<div class="book-card">
-<div class="book-icon">📘</div>
-<div class="book-title">9-sinf Fizika</div>
-<div class="book-year">2019-yil nashri</div>
-<div class="book-desc">
-9-sinf o'quvchilari uchun fizika darsligi.
-</div>
-<a class="open-btn"
-href="https://drive.google.com/file/d/1f7fq65ypKfxIF8og_ytGszU2WBag4EY6/view?usp=drive_link"
-target="_blank">
-PDF ochish
-</a>
-</div>
-
-<div class="book-card">
-<div class="book-icon">📘</div>
-<div class="book-title">10-sinf Fizika</div>
-<div class="book-year">2022-yil nashri</div>
-<div class="book-desc">
-10-sinf o'quvchilari uchun fizika darsligi.
-</div>
-<a class="open-btn"
-href="https://drive.google.com/file/d/1FgZTtYv3IhCULuGI0FVfb0qLtbUQptPO/view?usp=drive_link"
-target="_blank">
-PDF ochish
-</a>
-</div>
-
-<div class="book-card">
-<div class="book-icon">📘</div>
-<div class="book-title">11-sinf Fizika</div>
-<div class="book-year">2017-yil nashri</div>
-<div class="book-desc">
-11-sinf o'quvchilari uchun fizika darsligi.
-</div>
-<a class="open-btn"
-href="https://drive.google.com/file/d/1WzRW3bJtWM9jNJ2uOtdKNJnzGBHZ0O_S/view?usp=drive_link"
-target="_blank">
-PDF ochish
-</a>
-</div>
-
-</div>
-
-</div>
-
 </body>
 </html>

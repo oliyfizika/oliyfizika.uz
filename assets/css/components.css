@@ -1,0 +1,358 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Qayta ishlatiladigan komponentlar
+   Barcha klasslar `of-` prefiksi bilan — eski sahifa stillari bilan to'qnashmaydi.
+   ========================================================================== */
+
+/* ---------- Tugmalar ---------- */
+.of-btn {
+  --_bg: var(--of-surface);
+  --_fg: var(--of-text);
+  --_bd: var(--of-border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid var(--_bd);
+  border-radius: var(--of-radius-md);
+  background: var(--_bg);
+  color: var(--_fg);
+  font: 600 var(--of-text-sm)/1 var(--of-font-sans);
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--of-dur-fast), border-color var(--of-dur-fast),
+              box-shadow var(--of-dur-fast), transform var(--of-dur-fast);
+}
+.of-btn:hover { --_bg: var(--of-surface-sunken); }
+.of-btn:active { transform: translateY(1px); }
+.of-btn:disabled, .of-btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.of-btn svg { width: 18px; height: 18px; flex: none; }
+
+.of-btn--primary { --_bg: var(--of-primary-solid); --_fg: #fff; --_bd: transparent; box-shadow: 0 1px 2px rgb(33 80 220 / 0.25); }
+.of-btn--primary:hover { --_bg: var(--of-primary-solid-hover); }
+.of-btn--success { --_bg: var(--of-success-solid); --_fg: #fff; --_bd: transparent; }
+.of-btn--success:hover { --_bg: var(--of-green-800); }
+.of-btn--soft { --_bg: var(--of-primary-soft); --_fg: var(--of-primary-text); --_bd: transparent; }
+.of-btn--soft:hover { --_bg: var(--of-primary-soft-2); }
+.of-btn--ghost { --_bg: transparent; --_bd: transparent; --_fg: var(--of-text-2); }
+.of-btn--ghost:hover { --_bg: var(--of-surface-sunken); --_fg: var(--of-text); }
+.of-btn--danger { --_bg: var(--of-danger-soft); --_fg: var(--of-danger-text); --_bd: transparent; }
+.of-btn--lg { min-height: 48px; padding: 0 22px; font-size: var(--of-text-md); border-radius: var(--of-radius-md); }
+.of-btn--sm { min-height: 34px; padding: 0 12px; font-size: var(--of-text-xs); border-radius: var(--of-radius-sm); }
+.of-btn--block { width: 100%; }
+
+.of-icon-btn {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 40px; height: 40px;
+  border: 1px solid transparent;
+  border-radius: var(--of-radius-md);
+  background: transparent;
+  color: var(--of-text-2);
+  cursor: pointer;
+  transition: background var(--of-dur-fast), color var(--of-dur-fast);
+}
+.of-icon-btn:hover { background: var(--of-surface-sunken); color: var(--of-text); }
+.of-icon-btn svg { width: 20px; height: 20px; }
+
+/* Yuklanish holati */
+.of-btn.is-loading { color: transparent !important; pointer-events: none; position: relative; }
+.of-btn.is-loading::after {
+  content: ""; position: absolute; width: 18px; height: 18px;
+  border: 2px solid currentColor; border-color: var(--_fg) var(--_fg) transparent transparent;
+  border-radius: 50%; animation: of-spin 0.7s linear infinite;
+}
+
+[data-search-item][hidden], .of-card[hidden] { display: none !important; }
+
+/* ---------- Kartalar ---------- */
+.of-card {
+  background: var(--of-surface);
+  border: 1px solid var(--of-border);
+  border-radius: var(--of-radius-lg);
+  box-shadow: var(--of-shadow-xs);
+}
+.of-card--pad { padding: var(--of-space-6); }
+.of-card--link {
+  display: block;
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: transform var(--of-dur-base) var(--of-ease-out), box-shadow var(--of-dur-base), border-color var(--of-dur-base);
+}
+.of-card--link:hover { transform: translateY(-2px); box-shadow: var(--of-shadow-md); border-color: var(--of-primary-soft-2); }
+
+.of-section-title {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  margin-bottom: var(--of-space-4);
+}
+.of-section-title h2 { font-size: var(--of-text-lg); }
+
+/* ---------- Formalar ---------- */
+.of-field { display: flex; flex-direction: column; gap: 6px; }
+.of-label { font: 600 var(--of-text-sm)/1.3 var(--of-font-sans); color: var(--of-text); }
+.of-hint  { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.of-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--of-border-strong);
+  border-radius: var(--of-radius-md);
+  background: var(--of-surface);
+  color: var(--of-text);
+  font: 400 var(--of-text-md)/1.4 var(--of-font-sans);
+  transition: border-color var(--of-dur-fast), box-shadow var(--of-dur-fast);
+}
+.of-input::placeholder { color: var(--of-text-3); }
+.of-input:hover { border-color: var(--of-slate-400); }
+.of-input:focus { outline: none; border-color: var(--of-primary); box-shadow: var(--of-focus-ring); }
+.of-input[aria-invalid="true"] { border-color: var(--of-danger); }
+.of-field-error { font-size: var(--of-text-xs); color: var(--of-danger-text); }
+
+.of-input-wrap { position: relative; }
+.of-input-wrap .of-input { padding-right: 46px; }
+.of-input-wrap .of-input-action {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px;
+}
+
+/* Kontekstli qidiruv maydoni */
+.of-search {
+  position: relative;
+  display: flex; align-items: center;
+  width: 100%;
+}
+.of-search svg {
+  position: absolute; left: 12px; width: 18px; height: 18px;
+  color: var(--of-text-3); pointer-events: none;
+}
+.of-search input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px 0 40px;
+  border: 1px solid var(--of-border);
+  border-radius: var(--of-radius-md);
+  background: var(--of-surface-sunken);
+  color: var(--of-text);
+  font: 400 var(--of-text-sm)/1 var(--of-font-sans);
+  transition: background var(--of-dur-fast), border-color var(--of-dur-fast), box-shadow var(--of-dur-fast);
+}
+.of-search input:focus { outline: none; background: var(--of-surface); border-color: var(--of-primary); box-shadow: var(--of-focus-ring); }
+.of-search input::-webkit-search-cancel-button { cursor: pointer; }
+
+/* ---------- Badge / chip ---------- */
+.of-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 24px; padding: 0 10px;
+  border-radius: var(--of-radius-pill);
+  background: var(--of-surface-sunken);
+  color: var(--of-text-2);
+  font: 600 var(--of-text-xs)/1 var(--of-font-sans);
+}
+.of-badge--blue    { background: var(--of-primary-soft); color: var(--of-primary-text); }
+.of-badge--green   { background: var(--of-success-soft); color: var(--of-success-text); }
+.of-badge--orange  { background: var(--of-warning-soft); color: var(--of-warning-text); }
+.of-badge--purple  { background: var(--of-special-soft); color: var(--of-special); }
+.of-badge--red     { background: var(--of-danger-soft); color: var(--of-danger-text); }
+
+/* ---------- Progress ---------- */
+.of-progress {
+  --value: 0;
+  position: relative;
+  height: 8px;
+  border-radius: var(--of-radius-pill);
+  background: var(--of-surface-sunken);
+  overflow: hidden;
+}
+.of-progress > span {
+  position: absolute; inset: 0 auto 0 0;
+  width: calc(var(--value) * 1%);
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--of-blue-500), var(--of-green-500));
+  transition: width 900ms var(--of-ease-out);
+}
+.of-progress--success > span { background: var(--of-success); }
+.of-progress--lg { height: 12px; }
+
+/* Qulflangan kurs izohi (Home, Umumiy fizika, Natijalar) */
+.of-course__locked { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--of-text-3); font-size: var(--of-text-xs); line-height: 1.4; }
+.of-course__locked svg { width: 14px; height: 14px; flex: none; }
+
+/* ---------- Dropdown / popover ---------- */
+.of-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 240px;
+  padding: 6px;
+  border: 1px solid var(--of-border);
+  border-radius: var(--of-radius-lg);
+  background: var(--of-surface);
+  box-shadow: var(--of-shadow-lg);
+  z-index: var(--of-z-overlay);
+  transform-origin: top right;
+  animation: of-pop-in var(--of-dur-base) var(--of-ease-out);
+}
+.of-popover[hidden] { display: none; }
+.of-menu-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0; border-radius: var(--of-radius-sm);
+  background: transparent;
+  color: var(--of-text) !important;
+  font: 500 var(--of-text-sm)/1.2 var(--of-font-sans);
+  text-align: left; text-decoration: none !important;
+  cursor: pointer;
+}
+.of-menu-item:hover, .of-menu-item:focus-visible { background: var(--of-surface-sunken); }
+.of-menu-item svg { width: 18px; height: 18px; color: var(--of-text-3); }
+.of-menu-item--danger { color: var(--of-danger-text) !important; }
+.of-menu-item--danger svg { color: currentColor; }
+.of-menu-sep { height: 1px; margin: 6px 4px; background: var(--of-border); }
+
+/* ---------- Modal ---------- */
+.of-modal {
+  position: fixed; inset: 0;
+  z-index: var(--of-z-modal);
+  display: grid; place-items: center;
+  padding: 16px;
+}
+.of-modal[hidden] { display: none; }
+.of-modal__backdrop {
+  position: absolute; inset: 0;
+  background: var(--of-overlay);
+  backdrop-filter: blur(3px);
+  animation: of-fade-in var(--of-dur-base) ease-out;
+}
+.of-modal__dialog {
+  position: relative;
+  width: min(440px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 28px;
+  border-radius: var(--of-radius-xl);
+  background: var(--of-surface);
+  border: 1px solid var(--of-border);
+  box-shadow: var(--of-shadow-lg);
+  animation: of-slide-up var(--of-dur-slow) var(--of-ease-out);
+}
+.of-modal__close { position: absolute; top: 12px; right: 12px; }
+.of-modal__icon {
+  display: grid; place-items: center;
+  width: 52px; height: 52px; margin-bottom: 16px;
+  border-radius: 16px;
+  background: var(--of-primary-soft); color: var(--of-primary);
+}
+.of-modal__icon svg { width: 26px; height: 26px; }
+.of-modal__title { font: 750 var(--of-text-xl)/1.25 var(--of-font-display); color: var(--of-text); margin: 0 0 8px; }
+.of-modal__text { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.6; margin: 0 0 22px; }
+.of-modal__actions { display: grid; gap: 10px; }
+body.of-scroll-lock { overflow: hidden; }
+
+/* ---------- Skeleton ---------- */
+.of-skeleton {
+  display: block;
+  border-radius: var(--of-radius-sm);
+  background: linear-gradient(90deg, var(--of-surface-sunken) 25%, var(--of-surface-2) 50%, var(--of-surface-sunken) 75%);
+  background-size: 200% 100%;
+  animation: of-shimmer 1.3s linear infinite;
+}
+.of-skeleton--text { height: 12px; }
+.of-skeleton--title { height: 20px; width: 60%; }
+.of-skeleton--circle { border-radius: 50%; }
+
+/* ---------- Xabar / alert ---------- */
+.of-alert {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: var(--of-radius-md);
+  font-size: var(--of-text-sm); line-height: 1.5;
+  background: var(--of-primary-soft); color: var(--of-primary-text);
+}
+.of-alert svg { width: 18px; height: 18px; flex: none; margin-top: 1px; }
+.of-alert--error   { background: var(--of-danger-soft);  color: var(--of-danger-text); }
+.of-alert--success { background: var(--of-success-soft); color: var(--of-success-text); }
+.of-alert--warning { background: var(--of-warning-soft); color: var(--of-warning-text); }
+
+/* ---------- Toast ---------- */
+.of-toast-region {
+  position: fixed; right: 16px; bottom: 16px;
+  z-index: var(--of-z-toast);
+  display: flex; flex-direction: column; gap: 8px;
+  pointer-events: none;
+}
+.of-toast {
+  display: flex; align-items: center; gap: 10px;
+  max-width: 360px;
+  padding: 12px 16px;
+  border-radius: var(--of-radius-md);
+  background: var(--of-slate-900); color: #fff;
+  font: 500 var(--of-text-sm)/1.4 var(--of-font-sans);
+  box-shadow: var(--of-shadow-lg);
+  pointer-events: auto;
+  animation: of-slide-up var(--of-dur-slow) var(--of-ease-out);
+}
+
+/* ---------- Accordion (Yordam / FAQ) ---------- */
+.of-accordion { border: 1px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface); overflow: hidden; }
+.of-accordion details + details { border-top: 1px solid var(--of-border); }
+.of-accordion summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 16px 20px;
+  font-weight: 600; cursor: pointer; list-style: none;
+}
+.of-accordion summary::-webkit-details-marker { display: none; }
+.of-accordion summary::after {
+  content: ""; width: 9px; height: 9px; flex: none;
+  border-right: 2px solid var(--of-text-3); border-bottom: 2px solid var(--of-text-3);
+  transform: rotate(45deg); transition: transform var(--of-dur-base) var(--of-ease-out);
+}
+.of-accordion details[open] summary::after { transform: rotate(225deg); }
+.of-accordion details > div { padding: 0 20px 18px; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.7; }
+
+/* ---------- Segment (tema tanlash va h.k.) ---------- */
+.of-segment {
+  display: inline-flex; padding: 4px; gap: 4px;
+  border-radius: var(--of-radius-md);
+  background: var(--of-surface-sunken);
+}
+.of-segment button {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 34px; padding: 0 14px;
+  border: 0; border-radius: var(--of-radius-sm);
+  background: transparent; color: var(--of-text-2);
+  font: 600 var(--of-text-sm)/1 var(--of-font-sans);
+  cursor: pointer;
+}
+.of-segment button[aria-pressed="true"] { background: var(--of-surface); color: var(--of-text); box-shadow: var(--of-shadow-sm); }
+.of-segment svg { width: 16px; height: 16px; }
+
+/* ==========================================================================
+   Animatsiya tili — qisqa, silliq, kam
+   ========================================================================== */
+@keyframes of-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes of-slide-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes of-pop-in   { from { opacity: 0; transform: scale(0.96) translateY(-4px); } to { opacity: 1; transform: none; } }
+@keyframes of-shimmer  { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes of-spin     { to { transform: rotate(360deg); } }
+
+.of-animate-in {
+  opacity: 0;
+  animation: of-slide-up 480ms var(--of-ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .of-animate-in { opacity: 1; }
+  .of-skeleton { animation: none; }
+}

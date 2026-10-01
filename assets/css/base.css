@@ -1,0 +1,87 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Base
+   Faqat `body.of-ui` bo'lgan (yangi dizayndagi) sahifalarga ta'sir qiladi,
+   shuning uchun eski sahifalar bosqichma-bosqich ko'chirilguncha buzilmaydi.
+   ========================================================================== */
+
+html.of-shell { -webkit-text-size-adjust: 100%; }
+
+body.of-ui {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--of-bg);
+  color: var(--of-text);
+  font-family: var(--of-font-sans);
+  font-size: var(--of-text-md);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.of-ui :where(*, *::before, *::after) { box-sizing: border-box; }
+
+.of-ui :where(h1, h2, h3, h4) {
+  margin: 0;
+  font-family: var(--of-font-display);
+  color: var(--of-text);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.of-ui :where(h1) { font-size: var(--of-text-3xl); font-weight: 800; }
+.of-ui :where(h2) { font-size: var(--of-text-xl); font-weight: 750; }
+.of-ui :where(h3) { font-size: var(--of-text-lg); font-weight: 700; }
+.of-ui :where(p) { margin: 0; }
+.of-ui :where(a) { color: var(--of-primary); text-decoration: none; }
+.of-ui :where(a:hover) { text-decoration: underline; text-underline-offset: 3px; }
+.of-ui :where(img, svg, video, canvas) { display: block; max-width: 100%; }
+.of-ui :where(button, input, select, textarea) { font: inherit; color: inherit; }
+.of-ui ::selection { background: var(--of-primary-soft-2); }
+
+/* Ko'rinadigan fokus — barcha interaktiv elementlar uchun */
+.of-shell :focus-visible,
+.of-ui :focus-visible {
+  outline: 2px solid var(--of-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.of-sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+.of-skip-link {
+  position: fixed;
+  left: 12px; top: -60px;
+  z-index: calc(var(--of-z-toast) + 1);
+  padding: 10px 16px;
+  border-radius: var(--of-radius-sm);
+  background: var(--of-primary);
+  color: #fff !important;
+  font: 600 14px/1 var(--of-font-sans);
+  transition: top var(--of-dur-base) var(--of-ease-out);
+}
+.of-skip-link:focus { top: 12px; }
+
+/* ---- Layout yordamchilari ---- */
+.of-container { width: 100%; max-width: var(--of-content-max); margin-inline: auto; }
+.of-stack  { display: flex; flex-direction: column; gap: var(--of-space-4); }
+.of-row    { display: flex; align-items: center; gap: var(--of-space-3); }
+.of-grid   { display: grid; gap: var(--of-space-4); }
+.of-muted  { color: var(--of-text-2); }
+.of-subtle { color: var(--of-text-3); font-size: var(--of-text-sm); }
+.of-num    { font-variant-numeric: tabular-nums; }
+
+/* Fizika identifikatsiyasi: nozik koordinata to'ri */
+.of-physics-grid {
+  background-image:
+    linear-gradient(var(--of-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--of-grid-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* `hidden` atributi har doim ustun (komponent display qoidalaridan qat'i nazar) */
+.of-ui [hidden], .of-chrome [hidden], .of-chrome[hidden] { display: none !important; }

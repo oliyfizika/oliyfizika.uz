@@ -3,8 +3,9 @@ import { auth, db } from "../firebase.js";
 import {
   doc,
   getDoc,
-  updateDoc,
   collection,
+  runTransaction,
+  serverTimestamp,
   query,
   where,
   limit,
@@ -62,67 +63,86 @@ function calculateLevel(xp) {
 }
 
 /**
- * XP berish
+ * XP berish — Phase 19C: idempotent + atomik + audit.
+ *
+ * Mukofot identifikatori: users/{uid}/xpGrants/L{lessonId}
+ *   (mavjud semantika saqlangan: mavzu uchun XP faqat BIRINCHI muvaffaqiyatli topshirishda beriladi;
+ *    qayta topshirish yangi result yaratadi, lekin yangi XP bermaydi).
+ * Grant hujjati natijaga (resultId) bog'lanadi va users.xp/level/lastXpGrant bilan BITTA tranzaksiyada yoziladi.
+ * firestore.rules: grant o'zgarmas, ikkinchi marta yaratib bo'lmaydi; XP faqat shu grant bilan birga oshadi.
+ * Parallel chaqiruvlar: tranzaksiya qayta o'qiydi va grant mavjudligini ko'radi; Rules ham ikkinchi yozuvni rad etadi.
+ *
+ * @returns {Promise<{status: "awarded"|"already-awarded"|"not-passed"|"no-result"|"no-profile"|"signed-out"|"error", xp?: number, newXp?: number, level?: number}>}
  */
 export async function awardXP({
 
   lessonId,
-  percent
+  percent,
+  resultId
 
 }) {
 
   const user = auth.currentUser;
 
-  if (!user) return;
+  if (!user) return { status: "signed-out" };
 
   // 80% dan past bo'lsa XP yo'q
-  if (percent < 80) return;
-
-  // Shu mavzu uchun oldin o'tganmi?
-  const q = query(
-    collection(db, "results"),
-    where("uid", "==", user.uid),
-    where("lessonId", "==", lessonId),
-    where("passed", "==", true),
-    limit(1)
-  );
-
-  const snapshot = await getDocs(q);
-
-  // Oldin o'tgan bo'lsa XP bermaymiz
-  if (!snapshot.empty) {
-
-    console.log("XP oldin berilgan.");
-
-    return;
-
-  }
-
   const xp = calculateXP(percent);
+  if (xp === 0) return { status: "not-passed" };
 
-  if (xp === 0) return;
+  // XP aniq bir natijaga bog'lanadi (natija saqlanmagan bo'lsa — XP ham berilmaydi)
+  if (!resultId) return { status: "no-result" };
 
   const userRef = doc(db, "users", user.uid);
+  const grantRef = doc(db, "users", user.uid, "xpGrants", `L${lessonId}`);
 
-  const userSnap = await getDoc(userRef);
+  try {
+    // Phase 19C'gacha (grant jurnalisiz) o'tilgan mavzular: avvalgidek qayta XP berilmaydi.
+    const grantSnap = await getDoc(grantRef);
+    if (grantSnap.exists()) return { status: "already-awarded" };
+    const earlier = await getDocs(query(
+      collection(db, "results"),
+      where("uid", "==", user.uid),
+      where("lessonId", "==", lessonId),
+      where("passed", "==", true),
+      limit(5)
+    ));
+    if (earlier.docs.some((d) => d.id !== resultId)) return { status: "already-awarded" };
 
-  if (!userSnap.exists()) return;
+    return await runTransaction(db, async (tx) => {
+      const grant = await tx.get(grantRef);
+      if (grant.exists()) return { status: "already-awarded" };
 
-  const data = userSnap.data();
+      const userSnap = await tx.get(userRef);
+      if (!userSnap.exists()) return { status: "no-profile" };
 
-  const currentXP = data.xp || 0;
+      const data = userSnap.data();
+      const previousXp = typeof data.xp === "number" ? data.xp : 0;
+      const newXp = previousXp + xp;
+      const level = calculateLevel(newXp);
 
-  const newXP = currentXP + xp;
+      tx.set(grantRef, {
+        uid: user.uid,
+        lessonId,
+        resultId,
+        percent,
+        xp,
+        previousXp,
+        newXp,
+        level,
+        createdAt: serverTimestamp(),
+      });
+      tx.update(userRef, { xp: newXp, level, lastXpGrant: grantRef.id });
 
-  const newLevel = calculateLevel(newXP);
-
-  await updateDoc(userRef, {
-
-    xp: newXP,
-
-    level: newLevel
-
-  });
-
-  console.log(`+${xp} XP berildi.`);
+      return { status: "awarded", xp, newXp, level };
+    });
+  } catch (error) {
+    // Rules rad etsa (masalan, parallel so'rov allaqachon yozgan) — XP o'zgarmaydi
+    console.warn("[xp] XP berilmadi:", error?.code || error);
+    return { status: "error" };
+  }
 }
+
+// Daraja jadvali va formulasi boshqa sahifalarda (Mening natijalarim) qayta ishlatiladi —
+// formula nusxalanmaydi.
+export { LEVELS, calculateLevel };

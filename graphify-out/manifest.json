@@ -1,0 +1,2084 @@
+{
+  "attestatsiya/pedagogika-testlari/data/test1.js": {
+    "mtime": 1786997692.3383248,
+    "seen": 1790616085.229853,
+    "ast_hash": "438354ca8ccd7a18f8fa1c8499e26e11",
+    "semantic_hash": "438354ca8ccd7a18f8fa1c8499e26e11"
+  },
+  "attestatsiya/pedagogika-testlari/data/test10.js": {
+    "mtime": 1787000029.439691,
+    "seen": 1790616085.229855,
+    "ast_hash": "ececd44df92eef5e40f026702e73d72c",
+    "semantic_hash": "ececd44df92eef5e40f026702e73d72c"
+  },
+  "attestatsiya/pedagogika-testlari/data/test11.js": {
+    "mtime": 1787000072.034263,
+    "seen": 1790616085.229856,
+    "ast_hash": "87e771650a4ef6353116428dd8898a13",
+    "semantic_hash": "87e771650a4ef6353116428dd8898a13"
+  },
+  "attestatsiya/pedagogika-testlari/data/test12.js": {
+    "mtime": 1787000110.02826,
+    "seen": 1790616085.229857,
+    "ast_hash": "98994824529b7942c6300c520a8b6551",
+    "semantic_hash": "98994824529b7942c6300c520a8b6551"
+  },
+  "attestatsiya/pedagogika-testlari/data/test13.js": {
+    "mtime": 1787002585.5499268,
+    "seen": 1790616085.229857,
+    "ast_hash": "f170a9848e0b8d1577ea243dee18d63a",
+    "semantic_hash": "f170a9848e0b8d1577ea243dee18d63a"
+  },
+  "attestatsiya/pedagogika-testlari/data/test2.js": {
+    "mtime": 1786997614.4761431,
+    "seen": 1790616085.2298582,
+    "ast_hash": "ee1b9b80dd44a2f51aa8274bca869b50",
+    "semantic_hash": "ee1b9b80dd44a2f51aa8274bca869b50"
+  },
+  "attestatsiya/pedagogika-testlari/data/test3.js": {
+    "mtime": 1786997683.1610434,
+    "seen": 1790616085.2298582,
+    "ast_hash": "5dac77516acf202416808bba9979fe56",
+    "semantic_hash": "5dac77516acf202416808bba9979fe56"
+  },
+  "attestatsiya/pedagogika-testlari/data/test4.js": {
+    "mtime": 1787001839.3026066,
+    "seen": 1790616085.229859,
+    "ast_hash": "4f99358b16aa76c21bf0ae770b844795",
+    "semantic_hash": "4f99358b16aa76c21bf0ae770b844795"
+  },
+  "attestatsiya/pedagogika-testlari/data/test5.js": {
+    "mtime": 1787002280.1488373,
+    "seen": 1790616085.229859,
+    "ast_hash": "9e843995e5ff1d97d08757fc5c14f481",
+    "semantic_hash": "9e843995e5ff1d97d08757fc5c14f481"
+  },
+  "attestatsiya/pedagogika-testlari/data/test6.js": {
+    "mtime": 1787000339.7900486,
+    "seen": 1790616085.22986,
+    "ast_hash": "62fdca868213beb9ac81439ebd24933a",
+    "semantic_hash": "62fdca868213beb9ac81439ebd24933a"
+  },
+  "attestatsiya/pedagogika-testlari/data/test7.js": {
+    "mtime": 1786999904.947346,
+    "seen": 1790616085.22986,
+    "ast_hash": "31ec776f17aafeeb125ce66fd7070b0b",
+    "semantic_hash": "31ec776f17aafeeb125ce66fd7070b0b"
+  },
+  "attestatsiya/pedagogika-testlari/data/test8.js": {
+    "mtime": 1786999943.805518,
+    "seen": 1790616085.229861,
+    "ast_hash": "a8a34f32cce0c4d513a3052eb68b2505",
+    "semantic_hash": "a8a34f32cce0c4d513a3052eb68b2505"
+  },
+  "attestatsiya/pedagogika-testlari/data/test9.js": {
+    "mtime": 1786999983.1303952,
+    "seen": 1790616085.229861,
+    "ast_hash": "77a211484065a9a631b4badc3ad947be",
+    "semantic_hash": "77a211484065a9a631b4badc3ad947be"
+  },
+  "attestatsiya/pedagogika-testlari/quiz.js": {
+    "mtime": 1786997995.4274347,
+    "seen": 1790616085.229862,
+    "ast_hash": "24faca5c7d146d430411773bf482819c",
+    "semantic_hash": "24faca5c7d146d430411773bf482819c"
+  },
+  "interaktiv-oyinlar/arqon-tortish/arqon-tortish.js": {
+    "mtime": 1786990598.4540784,
+    "seen": 1790616085.229862,
+    "ast_hash": "368f89a66e933ebe054394b88f94610c",
+    "semantic_hash": "368f89a66e933ebe054394b88f94610c"
+  },
+  "interaktiv-oyinlar/baraban/baraban.js": {
+    "mtime": 1787488806.2991836,
+    "seen": 1790616085.229863,
+    "ast_hash": "4d6b78c99822d11906029ca2253f093a",
+    "semantic_hash": "4d6b78c99822d11906029ca2253f093a"
+  },
+  "interaktiv-oyinlar/formula-hunt/formula-hunt.js": {
+    "mtime": 1786990598.4558854,
+    "seen": 1790616085.229863,
+    "ast_hash": "40281c3718e09cda39ac38178a0ec6b5",
+    "semantic_hash": "40281c3718e09cda39ac38178a0ec6b5"
+  },
+  "interaktiv-oyinlar/formula-hunt/script.js": {
+    "mtime": 1786990598.4561403,
+    "seen": 1790616085.229864,
+    "ast_hash": "2a02fdd854e892635f8f65946d577425",
+    "semantic_hash": "2a02fdd854e892635f8f65946d577425"
+  },
+  "interaktiv-oyinlar/magnetic-particle/magnetic-particle.js": {
+    "mtime": 1787643499.9215724,
+    "seen": 1790616085.229864,
+    "ast_hash": "2b1f003496d30fa177ab016154449d7b",
+    "semantic_hash": "2b1f003496d30fa177ab016154449d7b"
+  },
+  "interaktiv-oyinlar/soz-qidirish/soz-qidirish.js": {
+    "mtime": 1788845592.0918248,
+    "seen": 1790616085.229865,
+    "ast_hash": "73c71039e9df551293cf61ddbfba4774",
+    "semantic_hash": "73c71039e9df551293cf61ddbfba4774"
+  },
+  "js/auth-check.js": {
+    "mtime": 1786990598.4563923,
+    "seen": 1790616085.229865,
+    "ast_hash": "e1b8defbc05e2211df1b5a6466054221",
+    "semantic_hash": "e1b8defbc05e2211df1b5a6466054221"
+  },
+  "js/auth.js": {
+    "mtime": 1787747713.288402,
+    "seen": 1790616085.229866,
+    "ast_hash": "bd86fcfa331bf3bb9e801da85f2918ee",
+    "semantic_hash": "bd86fcfa331bf3bb9e801da85f2918ee"
+  },
+  "js/firebase.js": {
+    "mtime": 1786990598.456657,
+    "seen": 1790616085.229866,
+    "ast_hash": "91e18e7cea95bd8bc5273637236905fc",
+    "semantic_hash": "91e18e7cea95bd8bc5273637236905fc"
+  },
+  "js/mechanics-progress.js": {
+    "mtime": 1787758530.921213,
+    "seen": 1790616085.229867,
+    "ast_hash": "065bb555a5b63cdb570c24d2e169db00",
+    "semantic_hash": "065bb555a5b63cdb570c24d2e169db00"
+  },
+  "js/multiple-choice-test.js": {
+    "mtime": 1787844460.54209,
+    "seen": 1790616085.229867,
+    "ast_hash": "f8e7ce095ae186611c7f7cdb657d261d",
+    "semantic_hash": "f8e7ce095ae186611c7f7cdb657d261d"
+  },
+  "js/profile-page.js": {
+    "mtime": 1786990598.456989,
+    "seen": 1790616085.229867,
+    "ast_hash": "0c226128736e541f136dfa506c439afc",
+    "semantic_hash": "0c226128736e541f136dfa506c439afc"
+  },
+  "js/progress.js": {
+    "mtime": 1786990598.4570863,
+    "seen": 1790616085.229868,
+    "ast_hash": "23de30743d9fc05a2928f63c1169164a",
+    "semantic_hash": "23de30743d9fc05a2928f63c1169164a"
+  },
+  "js/services/result-service.js": {
+    "mtime": 1786990598.457258,
+    "seen": 1790616085.229868,
+    "ast_hash": "773634421ed89a5af5514faee8d79844",
+    "semantic_hash": "773634421ed89a5af5514faee8d79844"
+  },
+  "js/services/xp-service.js": {
+    "mtime": 1786990598.4573593,
+    "seen": 1790616085.2298691,
+    "ast_hash": "4abde8cc7de1f6f37c46098582ffcb9e",
+    "semantic_hash": "4abde8cc7de1f6f37c46098582ffcb9e"
+  },
+  "js/settings-page.js": {
+    "mtime": 1786990598.4574547,
+    "seen": 1790616085.2298691,
+    "ast_hash": "c639d8c69dcd11333f9350d30371b554",
+    "semantic_hash": "c639d8c69dcd11333f9350d30371b554"
+  },
+  "milliy-sertifikat/milliy-sertifikat-access.js": {
+    "mtime": 1787833968.4883018,
+    "seen": 1790616085.22987,
+    "ast_hash": "015d851c4c13df7f101dbbf447d2aad7",
+    "semantic_hash": "015d851c4c13df7f101dbbf447d2aad7"
+  },
+  "milliy-sertifikat/mock-testlar/data/mock-test-1.json": {
+    "mtime": 1790606850.1329756,
+    "seen": 1790616085.22987,
+    "ast_hash": "c536587d79441bd961a8489ebbf08dc7",
+    "semantic_hash": "c536587d79441bd961a8489ebbf08dc7"
+  },
+  "milliy-sertifikat/mock-testlar/data/mock-test-2.json": {
+    "mtime": 1790606850.6094363,
+    "seen": 1790616085.229871,
+    "ast_hash": "e074732251adc0b5ae39546b4f272f3f",
+    "semantic_hash": "e074732251adc0b5ae39546b4f272f3f"
+  },
+  "milliy-sertifikat/mock-testlar/data/mock-test-3.json": {
+    "mtime": 1790606851.0561519,
+    "seen": 1790616085.229871,
+    "ast_hash": "690605eb5e49968041e434c0814f4db7",
+    "semantic_hash": "690605eb5e49968041e434c0814f4db7"
+  },
+  "milliy-sertifikat/mock-testlar/data/mock-test-4.json": {
+    "mtime": 1790616039.904307,
+    "seen": 1790616085.229871,
+    "ast_hash": "1957dfed171019e7ebd1933e80c7138d",
+    "semantic_hash": "1957dfed171019e7ebd1933e80c7138d"
+  },
+  "milliy-sertifikat/mock-testlar/data/tests.json": {
+    "mtime": 1790607742.7790864,
+    "seen": 1790616085.2298722,
+    "ast_hash": "e61bf45e23d22df450e899345ac77b09",
+    "semantic_hash": "e61bf45e23d22df450e899345ac77b09"
+  },
+  "milliy-sertifikat/mock-testlar/js/access-gate.js": {
+    "mtime": 1790606851.5016248,
+    "seen": 1790616085.2298722,
+    "ast_hash": "dd5c1169d801efe8a9b9c2ad7aeb3e58",
+    "semantic_hash": "dd5c1169d801efe8a9b9c2ad7aeb3e58"
+  },
+  "milliy-sertifikat/mock-testlar/js/attempt-service.js": {
+    "mtime": 1790606851.946093,
+    "seen": 1790616085.229873,
+    "ast_hash": "73d21c23535555fe2c7882c6d3defea2",
+    "semantic_hash": "73d21c23535555fe2c7882c6d3defea2"
+  },
+  "milliy-sertifikat/mock-testlar/js/calculator.js": {
+    "mtime": 1790605210.2285008,
+    "seen": 1790616085.229873,
+    "ast_hash": "48a7d2b7b8dab2f8649e570196602ac8",
+    "semantic_hash": "48a7d2b7b8dab2f8649e570196602ac8"
+  },
+  "milliy-sertifikat/mock-testlar/js/catalog.js": {
+    "mtime": 1790606852.4056275,
+    "seen": 1790616085.229874,
+    "ast_hash": "8c1e82c56abde605c23d74e5746d98fa",
+    "semantic_hash": "8c1e82c56abde605c23d74e5746d98fa"
+  },
+  "milliy-sertifikat/mock-testlar/js/config.js": {
+    "mtime": 1790606853.1440513,
+    "seen": 1790616085.229874,
+    "ast_hash": "92afe9d2342e7623c821b3e51d714a12",
+    "semantic_hash": "92afe9d2342e7623c821b3e51d714a12"
+  },
+  "milliy-sertifikat/mock-testlar/js/dom.js": {
+    "mtime": 1790605211.924552,
+    "seen": 1790616085.2298748,
+    "ast_hash": "452a256eb469b7183adfdc4e4b51ca5e",
+    "semantic_hash": "452a256eb469b7183adfdc4e4b51ca5e"
+  },
+  "milliy-sertifikat/mock-testlar/js/formula.js": {
+    "mtime": 1790605212.3527875,
+    "seen": 1790616085.2298748,
+    "ast_hash": "3bdc5ac2a8d779766802f9fb3dad3a19",
+    "semantic_hash": "3bdc5ac2a8d779766802f9fb3dad3a19"
+  },
+  "milliy-sertifikat/mock-testlar/js/result.js": {
+    "mtime": 1790606853.6220133,
+    "seen": 1790616085.229876,
+    "ast_hash": "7f13dfabeb598d0bf172196125b77967",
+    "semantic_hash": "7f13dfabeb598d0bf172196125b77967"
+  },
+  "milliy-sertifikat/mock-testlar/js/scoring.js": {
+    "mtime": 1790605213.46321,
+    "seen": 1790616085.229876,
+    "ast_hash": "ed7445fd0269bf4906b51a21ecdd6b16",
+    "semantic_hash": "ed7445fd0269bf4906b51a21ecdd6b16"
+  },
+  "milliy-sertifikat/mock-testlar/js/session.js": {
+    "mtime": 1790606855.0090168,
+    "seen": 1790616085.229877,
+    "ast_hash": "cd1adc95dd82c099507fd5e2d8ae5c00",
+    "semantic_hash": "cd1adc95dd82c099507fd5e2d8ae5c00"
+  },
+  "milliy-sertifikat/mock-testlar/js/storage.js": {
+    "mtime": 1790606854.0894485,
+    "seen": 1790616085.229877,
+    "ast_hash": "8cfe4f8a0c9b17da5ed41ab9e85abf89",
+    "semantic_hash": "8cfe4f8a0c9b17da5ed41ab9e85abf89"
+  },
+  "milliy-sertifikat/mock-testlar/js/test-engine.js": {
+    "mtime": 1790606854.5600073,
+    "seen": 1790616085.229878,
+    "ast_hash": "2c10381d3d300ab48555487418c1df89",
+    "semantic_hash": "2c10381d3d300ab48555487418c1df89"
+  },
+  "milliy-sertifikat/mock-testlar/js/theme.js": {
+    "mtime": 1790605215.407059,
+    "seen": 1790616085.229878,
+    "ast_hash": "30fbab4c14506d42b6ccda0777e1b62a",
+    "semantic_hash": "30fbab4c14506d42b6ccda0777e1b62a"
+  },
+  "milliy-sertifikat/mock-testlar/js/timer.js": {
+    "mtime": 1790605216.1172144,
+    "seen": 1790616085.2298791,
+    "ast_hash": "3713d747054a9c453919b03cdfecfb41",
+    "semantic_hash": "3713d747054a9c453919b03cdfecfb41"
+  },
+  "milliy-sertifikat/mock-tests-data.js": {
+    "mtime": 1787833968.48866,
+    "seen": 1790616085.2298791,
+    "ast_hash": "c246813cff08c47b30f605ed0fe97a47",
+    "semantic_hash": "c246813cff08c47b30f605ed0fe97a47"
+  },
+  "milliy-sertifikat/mock-tests.js": {
+    "mtime": 1787833968.489173,
+    "seen": 1790616085.2298791,
+    "ast_hash": "2abfbb688e96fe5c0e4f80a7192ddb6e",
+    "semantic_hash": "2abfbb688e96fe5c0e4f80a7192ddb6e"
+  },
+  "quizs/data/mavzu-1.json": {
+    "mtime": 1786990598.459193,
+    "seen": 1790616085.22988,
+    "ast_hash": "f74c10e79ff934316414126b70e015cb",
+    "semantic_hash": "f74c10e79ff934316414126b70e015cb"
+  },
+  "quizs/data/mavzu-10.json": {
+    "mtime": 1786990598.4593189,
+    "seen": 1790616085.22988,
+    "ast_hash": "11c6716278fc3f6d69887399eb2924ae",
+    "semantic_hash": "11c6716278fc3f6d69887399eb2924ae"
+  },
+  "quizs/data/mavzu-11.json": {
+    "mtime": 1786990598.459431,
+    "seen": 1790616085.229881,
+    "ast_hash": "8bbf4b42fe289a694cb6d930dafdb47a",
+    "semantic_hash": "8bbf4b42fe289a694cb6d930dafdb47a"
+  },
+  "quizs/data/mavzu-12.json": {
+    "mtime": 1786990598.4595501,
+    "seen": 1790616085.229881,
+    "ast_hash": "e3f5ca2f2c96d02e9644f64208c3bc02",
+    "semantic_hash": "e3f5ca2f2c96d02e9644f64208c3bc02"
+  },
+  "quizs/data/mavzu-13.json": {
+    "mtime": 1786990598.459693,
+    "seen": 1790616085.229882,
+    "ast_hash": "ac1d8140b8688e5c3ae308bbfdceedaa",
+    "semantic_hash": "ac1d8140b8688e5c3ae308bbfdceedaa"
+  },
+  "quizs/data/mavzu-14.json": {
+    "mtime": 1786990598.4598134,
+    "seen": 1790616085.229882,
+    "ast_hash": "7057f0b49cb11f15ae7165f0e428bd9a",
+    "semantic_hash": "7057f0b49cb11f15ae7165f0e428bd9a"
+  },
+  "quizs/data/mavzu-15.json": {
+    "mtime": 1786990598.4599268,
+    "seen": 1790616085.229883,
+    "ast_hash": "42ab0fc2859e23f4e684058044511fa2",
+    "semantic_hash": "42ab0fc2859e23f4e684058044511fa2"
+  },
+  "quizs/data/mavzu-16.json": {
+    "mtime": 1786990598.4600348,
+    "seen": 1790616085.229883,
+    "ast_hash": "fc60d3da3fa921005eb3d06b01a37556",
+    "semantic_hash": "fc60d3da3fa921005eb3d06b01a37556"
+  },
+  "quizs/data/mavzu-18.json": {
+    "mtime": 1786990598.4601433,
+    "seen": 1790616085.229884,
+    "ast_hash": "82129084faa847478af3f91bd31a3e13",
+    "semantic_hash": "82129084faa847478af3f91bd31a3e13"
+  },
+  "quizs/data/mavzu-19.json": {
+    "mtime": 1786990598.4602501,
+    "seen": 1790616085.229884,
+    "ast_hash": "406b68922e36454d69c9dbec163cf7d9",
+    "semantic_hash": "406b68922e36454d69c9dbec163cf7d9"
+  },
+  "quizs/data/mavzu-2.json": {
+    "mtime": 1786990598.4603827,
+    "seen": 1790616085.229884,
+    "ast_hash": "9b6f61051b7b358e50fe9553bc4baa5e",
+    "semantic_hash": "9b6f61051b7b358e50fe9553bc4baa5e"
+  },
+  "quizs/data/mavzu-20.json": {
+    "mtime": 1786990598.4605238,
+    "seen": 1790616085.2298849,
+    "ast_hash": "c5543f31d02cac3801e698f002c04706",
+    "semantic_hash": "c5543f31d02cac3801e698f002c04706"
+  },
+  "quizs/data/mavzu-21.json": {
+    "mtime": 1786990598.4606457,
+    "seen": 1790616085.2298849,
+    "ast_hash": "2b3d55148f7c0517cfd63b956f561d17",
+    "semantic_hash": "2b3d55148f7c0517cfd63b956f561d17"
+  },
+  "quizs/data/mavzu-22.json": {
+    "mtime": 1786990598.4607477,
+    "seen": 1790616085.229886,
+    "ast_hash": "ada30212faa6770b79038d34cadac6e4",
+    "semantic_hash": "ada30212faa6770b79038d34cadac6e4"
+  },
+  "quizs/data/mavzu-23.json": {
+    "mtime": 1786990598.4608629,
+    "seen": 1790616085.229886,
+    "ast_hash": "3f4bdf086f6127c9c5c51f81fe29911a",
+    "semantic_hash": "3f4bdf086f6127c9c5c51f81fe29911a"
+  },
+  "quizs/data/mavzu-24.json": {
+    "mtime": 1786990598.4609802,
+    "seen": 1790616085.229887,
+    "ast_hash": "52eadc1e387aba2067a5549fa597dc7d",
+    "semantic_hash": "52eadc1e387aba2067a5549fa597dc7d"
+  },
+  "quizs/data/mavzu-25.json": {
+    "mtime": 1786990598.4611025,
+    "seen": 1790616085.229887,
+    "ast_hash": "ef3c9949a02031fd2c494d8874bb3056",
+    "semantic_hash": "ef3c9949a02031fd2c494d8874bb3056"
+  },
+  "quizs/data/mavzu-26.json": {
+    "mtime": 1786990598.4612238,
+    "seen": 1790616085.229887,
+    "ast_hash": "5d8b2fc95afa6621d73283023ea20d4f",
+    "semantic_hash": "5d8b2fc95afa6621d73283023ea20d4f"
+  },
+  "quizs/data/mavzu-27.json": {
+    "mtime": 1786990598.4613228,
+    "seen": 1790616085.229888,
+    "ast_hash": "fc88006c2f6af0c7d9e350de85fa44cd",
+    "semantic_hash": "fc88006c2f6af0c7d9e350de85fa44cd"
+  },
+  "quizs/data/mavzu-28.json": {
+    "mtime": 1786990598.4614515,
+    "seen": 1790616085.229888,
+    "ast_hash": "47a831c415f6207ccbc14e9b30108e8d",
+    "semantic_hash": "47a831c415f6207ccbc14e9b30108e8d"
+  },
+  "quizs/data/mavzu-29.json": {
+    "mtime": 1786990598.4615562,
+    "seen": 1790616085.229889,
+    "ast_hash": "a1b9fed0077b05930aae124f62df5497",
+    "semantic_hash": "a1b9fed0077b05930aae124f62df5497"
+  },
+  "quizs/data/mavzu-3.json": {
+    "mtime": 1786990598.4616802,
+    "seen": 1790616085.229889,
+    "ast_hash": "f282f4569e8f2bea5db072935b960be3",
+    "semantic_hash": "f282f4569e8f2bea5db072935b960be3"
+  },
+  "quizs/data/mavzu-30.json": {
+    "mtime": 1786990598.461792,
+    "seen": 1790616085.22989,
+    "ast_hash": "d5f2d6fbb0f8a7f4826c1ca57c6b4afb",
+    "semantic_hash": "d5f2d6fbb0f8a7f4826c1ca57c6b4afb"
+  },
+  "quizs/data/mavzu-31.json": {
+    "mtime": 1786990598.4619098,
+    "seen": 1790616085.22989,
+    "ast_hash": "4b72ce229eee6ee25e2f6178c70fe994",
+    "semantic_hash": "4b72ce229eee6ee25e2f6178c70fe994"
+  },
+  "quizs/data/mavzu-32.json": {
+    "mtime": 1786990598.4620216,
+    "seen": 1790616085.229891,
+    "ast_hash": "249e2a990e886af93c424d64ad8058b1",
+    "semantic_hash": "249e2a990e886af93c424d64ad8058b1"
+  },
+  "quizs/data/mavzu-33.json": {
+    "mtime": 1786990598.4621313,
+    "seen": 1790616085.229891,
+    "ast_hash": "bb1a67478ca3bc76e990aeff2aae84cf",
+    "semantic_hash": "bb1a67478ca3bc76e990aeff2aae84cf"
+  },
+  "quizs/data/mavzu-34.json": {
+    "mtime": 1786990598.4622405,
+    "seen": 1790616085.229892,
+    "ast_hash": "a8889fbd51897ed7bba445b3db1c4058",
+    "semantic_hash": "a8889fbd51897ed7bba445b3db1c4058"
+  },
+  "quizs/data/mavzu-35.json": {
+    "mtime": 1786990598.4623637,
+    "seen": 1790616085.229892,
+    "ast_hash": "90745e02afc93d8f4cc5c27f0f328422",
+    "semantic_hash": "90745e02afc93d8f4cc5c27f0f328422"
+  },
+  "quizs/data/mavzu-36.json": {
+    "mtime": 1786990598.4625018,
+    "seen": 1790616085.2298932,
+    "ast_hash": "7648c4b304ce10952943178fc2569f47",
+    "semantic_hash": "7648c4b304ce10952943178fc2569f47"
+  },
+  "quizs/data/mavzu-37.json": {
+    "mtime": 1786990598.4626336,
+    "seen": 1790616085.2298932,
+    "ast_hash": "de6d97b34fe8ff4198bf61dfce3655cb",
+    "semantic_hash": "de6d97b34fe8ff4198bf61dfce3655cb"
+  },
+  "quizs/data/mavzu-38.json": {
+    "mtime": 1786990598.4627597,
+    "seen": 1790616085.229894,
+    "ast_hash": "b5512db022c8c2ef1c9701dc7e7301b3",
+    "semantic_hash": "b5512db022c8c2ef1c9701dc7e7301b3"
+  },
+  "quizs/data/mavzu-39.json": {
+    "mtime": 1786990598.4628549,
+    "seen": 1790616085.229894,
+    "ast_hash": "5881c607a0f889c3494c0b42fb281478",
+    "semantic_hash": "5881c607a0f889c3494c0b42fb281478"
+  },
+  "quizs/data/mavzu-4.json": {
+    "mtime": 1786990598.462948,
+    "seen": 1790616085.229894,
+    "ast_hash": "b269d81848d2a707f64168d5ec289aef",
+    "semantic_hash": "b269d81848d2a707f64168d5ec289aef"
+  },
+  "quizs/data/mavzu-40.json": {
+    "mtime": 1786990598.4630377,
+    "seen": 1790616085.2298949,
+    "ast_hash": "9519f5c69b8550d32b81054afbd58fa3",
+    "semantic_hash": "9519f5c69b8550d32b81054afbd58fa3"
+  },
+  "quizs/data/mavzu-41.json": {
+    "mtime": 1786990598.4631507,
+    "seen": 1790616085.2298958,
+    "ast_hash": "8a47c1cf52a43f614c141e4568c33619",
+    "semantic_hash": "8a47c1cf52a43f614c141e4568c33619"
+  },
+  "quizs/data/mavzu-42.json": {
+    "mtime": 1786990598.4632833,
+    "seen": 1790616085.2298958,
+    "ast_hash": "7523825cab9ccf88fe5c1b8edbe2cf44",
+    "semantic_hash": "7523825cab9ccf88fe5c1b8edbe2cf44"
+  },
+  "quizs/data/mavzu-43.json": {
+    "mtime": 1786990598.4634054,
+    "seen": 1790616085.229897,
+    "ast_hash": "6ebcc7808fa54a169ddff2f8e6cb5205",
+    "semantic_hash": "6ebcc7808fa54a169ddff2f8e6cb5205"
+  },
+  "quizs/data/mavzu-44.json": {
+    "mtime": 1786990598.4635072,
+    "seen": 1790616085.229897,
+    "ast_hash": "1186fad1268578dab3d903bdeebac29d",
+    "semantic_hash": "1186fad1268578dab3d903bdeebac29d"
+  },
+  "quizs/data/mavzu-45.json": {
+    "mtime": 1786990598.4636211,
+    "seen": 1790616085.229898,
+    "ast_hash": "15fcea2a22a1d11bd5c1def1927d3007",
+    "semantic_hash": "15fcea2a22a1d11bd5c1def1927d3007"
+  },
+  "quizs/data/mavzu-46.json": {
+    "mtime": 1786990598.4637344,
+    "seen": 1790616085.229898,
+    "ast_hash": "98f92d933464e62dcb68808edcd6cd7f",
+    "semantic_hash": "98f92d933464e62dcb68808edcd6cd7f"
+  },
+  "quizs/data/mavzu-47.json": {
+    "mtime": 1786990598.4638472,
+    "seen": 1790616085.229899,
+    "ast_hash": "8629094fdfc680f2685bf932323d9696",
+    "semantic_hash": "8629094fdfc680f2685bf932323d9696"
+  },
+  "quizs/data/mavzu-48.json": {
+    "mtime": 1786990598.4639783,
+    "seen": 1790616085.229899,
+    "ast_hash": "79dacbcf6c034ee0ec8cc5bef95e891c",
+    "semantic_hash": "79dacbcf6c034ee0ec8cc5bef95e891c"
+  },
+  "quizs/data/mavzu-49.json": {
+    "mtime": 1786990598.464091,
+    "seen": 1790616085.229899,
+    "ast_hash": "a39bf1ad2afba39b22c23d9c1c790412",
+    "semantic_hash": "a39bf1ad2afba39b22c23d9c1c790412"
+  },
+  "quizs/data/mavzu-5.json": {
+    "mtime": 1786990598.4641917,
+    "seen": 1790616085.2299001,
+    "ast_hash": "a90d68b9912a6cdc1ff993698e4b5e4e",
+    "semantic_hash": "a90d68b9912a6cdc1ff993698e4b5e4e"
+  },
+  "quizs/data/mavzu-50.json": {
+    "mtime": 1786990598.4643052,
+    "seen": 1790616085.2299001,
+    "ast_hash": "6ffbb8a380a9600fff4b2afc7ac63376",
+    "semantic_hash": "6ffbb8a380a9600fff4b2afc7ac63376"
+  },
+  "quizs/data/mavzu-51.json": {
+    "mtime": 1786990598.464403,
+    "seen": 1790616085.229901,
+    "ast_hash": "31bcbcafd49fcee9f33bdb1dbbf2dc89",
+    "semantic_hash": "31bcbcafd49fcee9f33bdb1dbbf2dc89"
+  },
+  "quizs/data/mavzu-52.json": {
+    "mtime": 1786990598.4645026,
+    "seen": 1790616085.229901,
+    "ast_hash": "0f59810f24cd40a54a8600877570ac0a",
+    "semantic_hash": "0f59810f24cd40a54a8600877570ac0a"
+  },
+  "quizs/data/mavzu-53.json": {
+    "mtime": 1786990598.464612,
+    "seen": 1790616085.229902,
+    "ast_hash": "a978fe652208fb0765158319a336fa90",
+    "semantic_hash": "a978fe652208fb0765158319a336fa90"
+  },
+  "quizs/data/mavzu-54.json": {
+    "mtime": 1786990598.464715,
+    "seen": 1790616085.229902,
+    "ast_hash": "d3df54501b6e166e73b88ba58f429077",
+    "semantic_hash": "d3df54501b6e166e73b88ba58f429077"
+  },
+  "quizs/data/mavzu-55.json": {
+    "mtime": 1786990598.4648204,
+    "seen": 1790616085.2299032,
+    "ast_hash": "21769c50ae5d46d25e2461146f8c8c2e",
+    "semantic_hash": "21769c50ae5d46d25e2461146f8c8c2e"
+  },
+  "quizs/data/mavzu-56.json": {
+    "mtime": 1786990598.4649384,
+    "seen": 1790616085.2299032,
+    "ast_hash": "11cb3158e663cfdf27d15d0a1e220460",
+    "semantic_hash": "11cb3158e663cfdf27d15d0a1e220460"
+  },
+  "quizs/data/mavzu-57.json": {
+    "mtime": 1786990598.4650364,
+    "seen": 1790616085.229904,
+    "ast_hash": "ff323488073bfcfba4745f15cec546a7",
+    "semantic_hash": "ff323488073bfcfba4745f15cec546a7"
+  },
+  "quizs/data/mavzu-58.json": {
+    "mtime": 1786990598.4651344,
+    "seen": 1790616085.229904,
+    "ast_hash": "040873939a86c2b7d488635b3b5c2b7c",
+    "semantic_hash": "040873939a86c2b7d488635b3b5c2b7c"
+  },
+  "quizs/data/mavzu-59.json": {
+    "mtime": 1786990598.4652386,
+    "seen": 1790616085.229905,
+    "ast_hash": "36ca5e9ddabeae084c7e34bce0932a28",
+    "semantic_hash": "36ca5e9ddabeae084c7e34bce0932a28"
+  },
+  "quizs/data/mavzu-6.json": {
+    "mtime": 1786990598.465335,
+    "seen": 1790616085.229905,
+    "ast_hash": "0c2f2e678e3bfb26072711bfbce92b62",
+    "semantic_hash": "0c2f2e678e3bfb26072711bfbce92b62"
+  },
+  "quizs/data/mavzu-60.json": {
+    "mtime": 1786990598.465431,
+    "seen": 1790616085.229905,
+    "ast_hash": "f9f6ec6a52112d395cd646911f53ade3",
+    "semantic_hash": "f9f6ec6a52112d395cd646911f53ade3"
+  },
+  "quizs/data/mavzu-7.json": {
+    "mtime": 1786990598.465687,
+    "seen": 1790616085.2299058,
+    "ast_hash": "99ce2f9728e6b99439abdb3ed4453693",
+    "semantic_hash": "99ce2f9728e6b99439abdb3ed4453693"
+  },
+  "quizs/data/mavzu-8.json": {
+    "mtime": 1786990598.4657907,
+    "seen": 1790616085.2299058,
+    "ast_hash": "08fdbfffe378d4ba3a449bbcb94ab252",
+    "semantic_hash": "08fdbfffe378d4ba3a449bbcb94ab252"
+  },
+  "quizs/data/mavzu-9.json": {
+    "mtime": 1786990598.4658968,
+    "seen": 1790616085.229907,
+    "ast_hash": "fe6d62437186fe1d6291e82ac0597649",
+    "semantic_hash": "fe6d62437186fe1d6291e82ac0597649"
+  },
+  "quizs/js/background.js": {
+    "mtime": 1786990598.4660513,
+    "seen": 1790616085.229907,
+    "ast_hash": "456bfe244a868b7de966343b25358ab4",
+    "semantic_hash": "456bfe244a868b7de966343b25358ab4"
+  },
+  "quizs/js/quiz-engine.js": {
+    "mtime": 1786990598.4661553,
+    "seen": 1790616085.229908,
+    "ast_hash": "4b638088734a1c9eadade9298588e5be",
+    "semantic_hash": "4b638088734a1c9eadade9298588e5be"
+  },
+  "simulations/lorentz/lorentz.js": {
+    "mtime": 1788247058.0795443,
+    "seen": 1790616085.229908,
+    "ast_hash": "3f074f80867e83c6060f27a068d76822",
+    "semantic_hash": "3f074f80867e83c6060f27a068d76822"
+  },
+  "umumiy-fizika/test/test-1.json": {
+    "mtime": 1786990598.4799154,
+    "seen": 1790616085.229909,
+    "ast_hash": "fd9585ebdd86acc132b5eadd2b30b828",
+    "semantic_hash": "fd9585ebdd86acc132b5eadd2b30b828"
+  },
+  "umumiy-fizika/test/test-10.json": {
+    "mtime": 1786990598.4800167,
+    "seen": 1790616085.229909,
+    "ast_hash": "99e347a8f1d40609fdcb09e51cdb4801",
+    "semantic_hash": "99e347a8f1d40609fdcb09e51cdb4801"
+  },
+  "umumiy-fizika/test/test-11.json": {
+    "mtime": 1786990598.4801154,
+    "seen": 1790616085.22991,
+    "ast_hash": "02ced031257addb12e302017479c8786",
+    "semantic_hash": "02ced031257addb12e302017479c8786"
+  },
+  "umumiy-fizika/test/test-12.json": {
+    "mtime": 1786990598.4802077,
+    "seen": 1790616085.22991,
+    "ast_hash": "8a10a54e6c07c6c7878b8cc3258cbe59",
+    "semantic_hash": "8a10a54e6c07c6c7878b8cc3258cbe59"
+  },
+  "umumiy-fizika/test/test-13.json": {
+    "mtime": 1787844406.9335084,
+    "seen": 1790616085.229911,
+    "ast_hash": "b5ae2c1768bb9d7a28acfcfc5414398b",
+    "semantic_hash": "b5ae2c1768bb9d7a28acfcfc5414398b"
+  },
+  "umumiy-fizika/test/test-15.json": {
+    "mtime": 1786990598.4803743,
+    "seen": 1790616085.229911,
+    "ast_hash": "f3299bd051cbbb414f56aee1b080f9e4",
+    "semantic_hash": "f3299bd051cbbb414f56aee1b080f9e4"
+  },
+  "umumiy-fizika/test/test-16.json": {
+    "mtime": 1787810216.7472467,
+    "seen": 1790616085.229912,
+    "ast_hash": "565741819793e240d3da7b945c4392d0",
+    "semantic_hash": "565741819793e240d3da7b945c4392d0"
+  },
+  "umumiy-fizika/test/test-17.json": {
+    "mtime": 1786990598.4804606,
+    "seen": 1790616085.229912,
+    "ast_hash": "d5a1153e6b08a6988d1212ccdd0ec6de",
+    "semantic_hash": "d5a1153e6b08a6988d1212ccdd0ec6de"
+  },
+  "umumiy-fizika/test/test-18.json": {
+    "mtime": 1786990598.4805467,
+    "seen": 1790616085.229912,
+    "ast_hash": "8bb232148b8e0bd687527a7aad7e2329",
+    "semantic_hash": "8bb232148b8e0bd687527a7aad7e2329"
+  },
+  "umumiy-fizika/test/test-19.json": {
+    "mtime": 1786990598.4806447,
+    "seen": 1790616085.229913,
+    "ast_hash": "1e2e7c3d4b069043a8092a63514bfbfc",
+    "semantic_hash": "1e2e7c3d4b069043a8092a63514bfbfc"
+  },
+  "umumiy-fizika/test/test-2.json": {
+    "mtime": 1786990598.4807372,
+    "seen": 1790616085.229913,
+    "ast_hash": "c77a69eb35c5181bdbab51e18c4db4cc",
+    "semantic_hash": "c77a69eb35c5181bdbab51e18c4db4cc"
+  },
+  "umumiy-fizika/test/test-20.json": {
+    "mtime": 1786990598.4808297,
+    "seen": 1790616085.2299142,
+    "ast_hash": "7e3003a2776fd04fd5595bab26e70279",
+    "semantic_hash": "7e3003a2776fd04fd5595bab26e70279"
+  },
+  "umumiy-fizika/test/test-21.json": {
+    "mtime": 1786990598.4809284,
+    "seen": 1790616085.2299142,
+    "ast_hash": "9be9b02a7b69c271fb53c6417292fcca",
+    "semantic_hash": "9be9b02a7b69c271fb53c6417292fcca"
+  },
+  "umumiy-fizika/test/test-22.json": {
+    "mtime": 1786990598.4810119,
+    "seen": 1790616085.229915,
+    "ast_hash": "e4b0b5b57a3c323e6de1362bc3674ffc",
+    "semantic_hash": "e4b0b5b57a3c323e6de1362bc3674ffc"
+  },
+  "umumiy-fizika/test/test-23.json": {
+    "mtime": 1786990598.4811096,
+    "seen": 1790616085.229915,
+    "ast_hash": "b3f39954127362fa0869ce2b74b43783",
+    "semantic_hash": "b3f39954127362fa0869ce2b74b43783"
+  },
+  "umumiy-fizika/test/test-24.json": {
+    "mtime": 1786990598.4812026,
+    "seen": 1790616085.2299159,
+    "ast_hash": "fb0341fc55d3f6eb752623990a832754",
+    "semantic_hash": "fb0341fc55d3f6eb752623990a832754"
+  },
+  "umumiy-fizika/test/test-25.json": {
+    "mtime": 1786990598.4813042,
+    "seen": 1790616085.2299159,
+    "ast_hash": "619a002d3deaf8b14f763c14c62828e4",
+    "semantic_hash": "619a002d3deaf8b14f763c14c62828e4"
+  },
+  "umumiy-fizika/test/test-26.json": {
+    "mtime": 1786990598.4813921,
+    "seen": 1790616085.2299168,
+    "ast_hash": "0d8c0367cc0c67b2bf0080fc3bb3aa38",
+    "semantic_hash": "0d8c0367cc0c67b2bf0080fc3bb3aa38"
+  },
+  "umumiy-fizika/test/test-27.json": {
+    "mtime": 1786990598.4814703,
+    "seen": 1790616085.2299168,
+    "ast_hash": "067232c49dc328b4949ba89096dbfcc9",
+    "semantic_hash": "067232c49dc328b4949ba89096dbfcc9"
+  },
+  "umumiy-fizika/test/test-28.json": {
+    "mtime": 1786990598.481549,
+    "seen": 1790616085.2299168,
+    "ast_hash": "20a966de5ea277eef54274900d34bdc5",
+    "semantic_hash": "20a966de5ea277eef54274900d34bdc5"
+  },
+  "umumiy-fizika/test/test-29.json": {
+    "mtime": 1786990598.4816768,
+    "seen": 1790616085.229918,
+    "ast_hash": "cb6e5483b4563ce164d45d3deab7c71c",
+    "semantic_hash": "cb6e5483b4563ce164d45d3deab7c71c"
+  },
+  "umumiy-fizika/test/test-3.json": {
+    "mtime": 1786990598.4817564,
+    "seen": 1790616085.229918,
+    "ast_hash": "6c77aa6b31fed22ce8f4044ccee1a971",
+    "semantic_hash": "6c77aa6b31fed22ce8f4044ccee1a971"
+  },
+  "umumiy-fizika/test/test-30.json": {
+    "mtime": 1786990598.481853,
+    "seen": 1790616085.229919,
+    "ast_hash": "58789dc80aa316813a338b7a20862be8",
+    "semantic_hash": "58789dc80aa316813a338b7a20862be8"
+  },
+  "umumiy-fizika/test/test-31.json": {
+    "mtime": 1786990598.481941,
+    "seen": 1790616085.229919,
+    "ast_hash": "37d7bfbd6637580a67a518ed38878540",
+    "semantic_hash": "37d7bfbd6637580a67a518ed38878540"
+  },
+  "umumiy-fizika/test/test-32.json": {
+    "mtime": 1786990598.4820123,
+    "seen": 1790616085.22992,
+    "ast_hash": "8be2403d95a138c2cb6157c7e053c685",
+    "semantic_hash": "8be2403d95a138c2cb6157c7e053c685"
+  },
+  "umumiy-fizika/test/test-33.json": {
+    "mtime": 1787841070.4082165,
+    "seen": 1790616085.22992,
+    "ast_hash": "af59b4440f5c901974c712b1035a1aad",
+    "semantic_hash": "af59b4440f5c901974c712b1035a1aad"
+  },
+  "umumiy-fizika/test/test-34.json": {
+    "mtime": 1786990598.4821608,
+    "seen": 1790616085.229921,
+    "ast_hash": "3dc4c3f20f9a419145836557cc059935",
+    "semantic_hash": "3dc4c3f20f9a419145836557cc059935"
+  },
+  "umumiy-fizika/test/test-35.json": {
+    "mtime": 1787748103.800213,
+    "seen": 1790616085.229921,
+    "ast_hash": "fdbb807d5f27a1eeb050db9d80dd5ed3",
+    "semantic_hash": "fdbb807d5f27a1eeb050db9d80dd5ed3"
+  },
+  "umumiy-fizika/test/test-36.json": {
+    "mtime": 1787839301.7527943,
+    "seen": 1790616085.229922,
+    "ast_hash": "530bce9bb148671379d0f7b29d9e916f",
+    "semantic_hash": "530bce9bb148671379d0f7b29d9e916f"
+  },
+  "umumiy-fizika/test/test-37.json": {
+    "mtime": 1787839594.445259,
+    "seen": 1790616085.229922,
+    "ast_hash": "908d8007b4afcf3cacb6b5dd9d0d343e",
+    "semantic_hash": "908d8007b4afcf3cacb6b5dd9d0d343e"
+  },
+  "umumiy-fizika/test/test-38.json": {
+    "mtime": 1787843574.7215166,
+    "seen": 1790616085.229923,
+    "ast_hash": "711f115d5eb5cd21d6921c5b97676696",
+    "semantic_hash": "711f115d5eb5cd21d6921c5b97676696"
+  },
+  "umumiy-fizika/test/test-39.json": {
+    "mtime": 1787840158.0789638,
+    "seen": 1790616085.229923,
+    "ast_hash": "33a6d6c50e321f83388ee3c2f3ff400d",
+    "semantic_hash": "33a6d6c50e321f83388ee3c2f3ff400d"
+  },
+  "umumiy-fizika/test/test-4.json": {
+    "mtime": 1786990598.482248,
+    "seen": 1790616085.229923,
+    "ast_hash": "6651cff062102bf1d6cd8424eb3fb4ad",
+    "semantic_hash": "6651cff062102bf1d6cd8424eb3fb4ad"
+  },
+  "umumiy-fizika/test/test-40.json": {
+    "mtime": 1787840961.0457766,
+    "seen": 1790616085.2299242,
+    "ast_hash": "1c6a7b30a5435704225c1af154d417be",
+    "semantic_hash": "1c6a7b30a5435704225c1af154d417be"
+  },
+  "umumiy-fizika/test/test-41.json": {
+    "mtime": 1787840428.6424236,
+    "seen": 1790616085.2299242,
+    "ast_hash": "17a04a73ba47faa68ae3477ec5c2b861",
+    "semantic_hash": "17a04a73ba47faa68ae3477ec5c2b861"
+  },
+  "umumiy-fizika/test/test-42.json": {
+    "mtime": 1787841014.4922621,
+    "seen": 1790616085.2299252,
+    "ast_hash": "830041fdcfa108d6de2faff58b86434d",
+    "semantic_hash": "830041fdcfa108d6de2faff58b86434d"
+  },
+  "umumiy-fizika/test/test-43.json": {
+    "mtime": 1787841321.849571,
+    "seen": 1790616085.2299252,
+    "ast_hash": "ee3d448f3f6ec2658a713b55ff26384f",
+    "semantic_hash": "ee3d448f3f6ec2658a713b55ff26384f"
+  },
+  "umumiy-fizika/test/test-44.json": {
+    "mtime": 1787841383.0483024,
+    "seen": 1790616085.2299259,
+    "ast_hash": "2016118d95d4fdab89ff0e8a79c33af9",
+    "semantic_hash": "2016118d95d4fdab89ff0e8a79c33af9"
+  },
+  "umumiy-fizika/test/test-45.json": {
+    "mtime": 1787841520.089939,
+    "seen": 1790616085.2299259,
+    "ast_hash": "285f01722cca96c55dffe0e9be269e4a",
+    "semantic_hash": "285f01722cca96c55dffe0e9be269e4a"
+  },
+  "umumiy-fizika/test/test-46.json": {
+    "mtime": 1787843516.283201,
+    "seen": 1790616085.2299268,
+    "ast_hash": "9c1b8e0aea2c41f1dbd925d179984ff8",
+    "semantic_hash": "9c1b8e0aea2c41f1dbd925d179984ff8"
+  },
+  "umumiy-fizika/test/test-47.json": {
+    "mtime": 1787845571.9760103,
+    "seen": 1790616085.2299268,
+    "ast_hash": "5a64fe6d125883fd865e0cf8c68844ac",
+    "semantic_hash": "5a64fe6d125883fd865e0cf8c68844ac"
+  },
+  "umumiy-fizika/test/test-48.json": {
+    "mtime": 1787845637.7770555,
+    "seen": 1790616085.229928,
+    "ast_hash": "0ef468b1ea922af12be97b165ae88b21",
+    "semantic_hash": "0ef468b1ea922af12be97b165ae88b21"
+  },
+  "umumiy-fizika/test/test-49.json": {
+    "mtime": 1787845691.0571094,
+    "seen": 1790616085.229928,
+    "ast_hash": "5852f02eaab716db05e3b77924c85d93",
+    "semantic_hash": "5852f02eaab716db05e3b77924c85d93"
+  },
+  "umumiy-fizika/test/test-5.json": {
+    "mtime": 1786990598.482338,
+    "seen": 1790616085.229929,
+    "ast_hash": "9cee52201b718fba8a1e7a4631290339",
+    "semantic_hash": "9cee52201b718fba8a1e7a4631290339"
+  },
+  "umumiy-fizika/test/test-50.json": {
+    "mtime": 1787845830.2874088,
+    "seen": 1790616085.229929,
+    "ast_hash": "4b66be56e1641261d2bd9da3605d42b0",
+    "semantic_hash": "4b66be56e1641261d2bd9da3605d42b0"
+  },
+  "umumiy-fizika/test/test-51.json": {
+    "mtime": 1790508457.8440716,
+    "seen": 1790616085.22993,
+    "ast_hash": "c63c9751da0d8d77465692f4f495a7db",
+    "semantic_hash": "c63c9751da0d8d77465692f4f495a7db"
+  },
+  "umumiy-fizika/test/test-6.json": {
+    "mtime": 1786990598.4824116,
+    "seen": 1790616085.22993,
+    "ast_hash": "0608aceb677c5d1efbc8b351ae73ae8c",
+    "semantic_hash": "0608aceb677c5d1efbc8b351ae73ae8c"
+  },
+  "umumiy-fizika/test/test-7.json": {
+    "mtime": 1786990598.482496,
+    "seen": 1790616085.229931,
+    "ast_hash": "b86938f34fc34473ff683d0356de90b6",
+    "semantic_hash": "b86938f34fc34473ff683d0356de90b6"
+  },
+  "umumiy-fizika/test/test-8.json": {
+    "mtime": 1786990598.4825852,
+    "seen": 1790616085.229931,
+    "ast_hash": "a69d4c8d61cbb23a3c099c510b209ccd",
+    "semantic_hash": "a69d4c8d61cbb23a3c099c510b209ccd"
+  },
+  "umumiy-fizika/test/test-9.json": {
+    "mtime": 1786990598.4826782,
+    "seen": 1790616085.229932,
+    "ast_hash": "6ee3b5218b78623b4d313c941d01da27",
+    "semantic_hash": "6ee3b5218b78623b4d313c941d01da27"
+  },
+  "umumiy-fizika/test/test.js": {
+    "mtime": 1786990598.4828842,
+    "seen": 1790616085.229932,
+    "ast_hash": "a3aa02af20061f380b1a8d835eac7df5",
+    "semantic_hash": "a3aa02af20061f380b1a8d835eac7df5"
+  },
+  "attestatsiya/attestatsiya.html": {
+    "mtime": 1787001701.7756712,
+    "seen": 1790618418.408777,
+    "ast_hash": "1d322068fe8734528e59498c296cbfcb",
+    "semantic_hash": "1d322068fe8734528e59498c296cbfcb"
+  },
+  "attestatsiya/fizikaattestatsiya.html": {
+    "mtime": 1786990598.451867,
+    "seen": 1790618418.408779,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "attestatsiya/pedagogika-testlari/index.html": {
+    "mtime": 1787000336.9638298,
+    "seen": 1790618418.408779,
+    "ast_hash": "699251a9cd04007e235fc33fb3f80d75",
+    "semantic_hash": "699251a9cd04007e235fc33fb3f80d75"
+  },
+  "attestatsiya/pedagogika-testlari/test.html": {
+    "mtime": 1786997980.4888308,
+    "seen": 1790618418.40878,
+    "ast_hash": "eeded56e2fb6a52adc781e7b58ac9ac7",
+    "semantic_hash": "eeded56e2fb6a52adc781e7b58ac9ac7"
+  },
+  "attestatsiya/pedagogika.html": {
+    "mtime": 1786990598.4529803,
+    "seen": 1790618418.40878,
+    "ast_hash": "0d09286b73a9e89660f07ea3c95bfe21",
+    "semantic_hash": "0d09286b73a9e89660f07ea3c95bfe21"
+  },
+  "dashboard/profile.html": {
+    "mtime": 1786990598.4532807,
+    "seen": 1790618418.408781,
+    "ast_hash": "78b337e49967ca766527d67758da821e",
+    "semantic_hash": "78b337e49967ca766527d67758da821e"
+  },
+  "dashboard/settings.html": {
+    "mtime": 1786990598.453389,
+    "seen": 1790618418.408782,
+    "ast_hash": "18e4d6cdadd7cbf824b57361fafa77a6",
+    "semantic_hash": "18e4d6cdadd7cbf824b57361fafa77a6"
+  },
+  "google1ae7f91e5de4883e.html": {
+    "mtime": 1786990598.4534905,
+    "seen": 1790618418.4087832,
+    "ast_hash": "2fa22e20bfeb30185e1ef68ce420a670",
+    "semantic_hash": "2fa22e20bfeb30185e1ef68ce420a670"
+  },
+  "index.html": {
+    "mtime": 1787833633.7867167,
+    "seen": 1790618418.4087832,
+    "ast_hash": "4b16f03b71fd085d8d6362f2e183dedc",
+    "semantic_hash": "4b16f03b71fd085d8d6362f2e183dedc"
+  },
+  "interaktiv-oyinlar/arqon-tortish/arqon-tortish.html": {
+    "mtime": 1786990598.4539638,
+    "seen": 1790618418.408784,
+    "ast_hash": "843dce4e938e2bf88b6fe83a21f596c7",
+    "semantic_hash": "843dce4e938e2bf88b6fe83a21f596c7"
+  },
+  "interaktiv-oyinlar/baraban/baraban.html": {
+    "mtime": 1787488786.05549,
+    "seen": 1790618418.408784,
+    "ast_hash": "d4c412eeb1f8f82ee5a72f67c86dcd4e",
+    "semantic_hash": "d4c412eeb1f8f82ee5a72f67c86dcd4e"
+  },
+  "interaktiv-oyinlar/formula-hunt/formula-hunt.html": {
+    "mtime": 1786990598.455759,
+    "seen": 1790618418.4087849,
+    "ast_hash": "22fde0cab0e8fbb81a3d8cc88e915d9b",
+    "semantic_hash": "22fde0cab0e8fbb81a3d8cc88e915d9b"
+  },
+  "interaktiv-oyinlar/interaktiv-oyinlar.html": {
+    "mtime": 1788846972.726063,
+    "seen": 1790618418.4087849,
+    "ast_hash": "b7c2080b327522b20d959c0752e149ad",
+    "semantic_hash": "b7c2080b327522b20d959c0752e149ad"
+  },
+  "interaktiv-oyinlar/magnetic-particle/magnetic-particle.html": {
+    "mtime": 1787643524.700309,
+    "seen": 1790618418.4087858,
+    "ast_hash": "dc2505cbb5f049a55bb71d3abee1b395",
+    "semantic_hash": "dc2505cbb5f049a55bb71d3abee1b395"
+  },
+  "interaktiv-oyinlar/soz-qidirish/soz-qidirish.html": {
+    "mtime": 1788845967.6189353,
+    "seen": 1790618418.4087858,
+    "ast_hash": "7997f23cd4ac379bc4b33a26b74ad48b",
+    "semantic_hash": "7997f23cd4ac379bc4b33a26b74ad48b"
+  },
+  "kutubxona/darsliklar.html": {
+    "mtime": 1786990598.4576333,
+    "seen": 1790618418.408787,
+    "ast_hash": "9aeb64292d2161eee6d0c62b23a2d871",
+    "semantic_hash": "9aeb64292d2161eee6d0c62b23a2d871"
+  },
+  "kutubxona/kutubxona.html": {
+    "mtime": 1786990598.457756,
+    "seen": 1790618418.408787,
+    "ast_hash": "79555fbfd0748feddf6591beae712bf8",
+    "semantic_hash": "79555fbfd0748feddf6591beae712bf8"
+  },
+  "kutubxona/laboratoriya.html": {
+    "mtime": 1786990598.4578965,
+    "seen": 1790618418.408788,
+    "ast_hash": "3a42b3b83cfc7b06661bcb5ea4defc7d",
+    "semantic_hash": "3a42b3b83cfc7b06661bcb5ea4defc7d"
+  },
+  "kutubxona/maruzalar.html": {
+    "mtime": 1786990598.4580066,
+    "seen": 1790618418.408788,
+    "ast_hash": "6108c2d6f5dd1ba588a5cfccd933eb37",
+    "semantic_hash": "6108c2d6f5dd1ba588a5cfccd933eb37"
+  },
+  "kutubxona/masalalar.html": {
+    "mtime": 1786990598.4581258,
+    "seen": 1790618418.408789,
+    "ast_hash": "2b76af7671d9fe98cc6cbf5fca366b77",
+    "semantic_hash": "2b76af7671d9fe98cc6cbf5fca366b77"
+  },
+  "kutubxona/prezentatsiyalar.html": {
+    "mtime": 1786990598.458252,
+    "seen": 1790618418.408789,
+    "ast_hash": "f25b224ded44da6205219001806f05f1",
+    "semantic_hash": "f25b224ded44da6205219001806f05f1"
+  },
+  "login.html": {
+    "mtime": 1786990598.4583445,
+    "seen": 1790618418.40879,
+    "ast_hash": "640818397880452c47db70305a1113ef",
+    "semantic_hash": "640818397880452c47db70305a1113ef"
+  },
+  "milliy-sertifikat/milliy-sertifikat.html": {
+    "mtime": 1790606847.9030037,
+    "seen": 1790618418.40879,
+    "ast_hash": "1576fdee1783b41d8d5e975aff75221b",
+    "semantic_hash": "1576fdee1783b41d8d5e975aff75221b"
+  },
+  "milliy-sertifikat/mock-testlar/README.md": {
+    "mtime": 1790606849.2374725,
+    "seen": 1790618418.408791,
+    "ast_hash": "96b991663a7cc38d6302512f6ca0fc5d",
+    "semantic_hash": "96b991663a7cc38d6302512f6ca0fc5d"
+  },
+  "milliy-sertifikat/mock-testlar/index.html": {
+    "mtime": 1790606848.8172853,
+    "seen": 1790618418.408791,
+    "ast_hash": "c5edb0ed42bdc1ab5e73fa0d78856843",
+    "semantic_hash": "c5edb0ed42bdc1ab5e73fa0d78856843"
+  },
+  "milliy-sertifikat/mock-testlar/test.html": {
+    "mtime": 1790605216.6358151,
+    "seen": 1790618418.408792,
+    "ast_hash": "3b38b330772cc40de6fa4962e3b2dda0",
+    "semantic_hash": "3b38b330772cc40de6fa4962e3b2dda0"
+  },
+  "profile.html": {
+    "mtime": 1786990598.4587696,
+    "seen": 1790618418.408792,
+    "ast_hash": "c4573a2f3a74ec6508b274ebd96b016f",
+    "semantic_hash": "c4573a2f3a74ec6508b274ebd96b016f"
+  },
+  "quizs/quiz.html": {
+    "mtime": 1786990598.4662433,
+    "seen": 1790618418.408793,
+    "ast_hash": "5be4ac00342e2bea0637f2c60dcd2bf4",
+    "semantic_hash": "5be4ac00342e2bea0637f2c60dcd2bf4"
+  },
+  "quizs/quizs.html": {
+    "mtime": 1786990598.466332,
+    "seen": 1790618418.408793,
+    "ast_hash": "21ee402d8ee999f36c94fe228eb9ffb0",
+    "semantic_hash": "21ee402d8ee999f36c94fe228eb9ffb0"
+  },
+  "robots.txt": {
+    "mtime": 1786990598.4664094,
+    "seen": 1790618418.4087942,
+    "ast_hash": "754438367a264d7975c4bc6455272d0d",
+    "semantic_hash": "754438367a264d7975c4bc6455272d0d"
+  },
+  "simulations/circular-motion.html": {
+    "mtime": 1786990598.4665787,
+    "seen": 1790618418.4087942,
+    "ast_hash": "e2e1ceb8b5b7dbdd49b7fe435d1b3d2e",
+    "semantic_hash": "e2e1ceb8b5b7dbdd49b7fe435d1b3d2e"
+  },
+  "simulations/coulomb-law.html": {
+    "mtime": 1786990598.4667063,
+    "seen": 1790618418.4087949,
+    "ast_hash": "50b21d69408ab5488a242dc2b93e4fbf",
+    "semantic_hash": "50b21d69408ab5488a242dc2b93e4fbf"
+  },
+  "simulations/gravity-law.html": {
+    "mtime": 1786990598.4668043,
+    "seen": 1790618418.4087949,
+    "ast_hash": "faae3e04430c2306bcf12c67b067e982",
+    "semantic_hash": "faae3e04430c2306bcf12c67b067e982"
+  },
+  "simulations/inclined-plane.html": {
+    "mtime": 1786990598.46695,
+    "seen": 1790618418.4087949,
+    "ast_hash": "1ab5a5231ee71f1c68aad727d6340c5b",
+    "semantic_hash": "1ab5a5231ee71f1c68aad727d6340c5b"
+  },
+  "simulations/lorentz/lorentz.html": {
+    "mtime": 1788246804.1904004,
+    "seen": 1790618418.4087958,
+    "ast_hash": "2cfb40f5e553ef69858ce891abe9e50b",
+    "semantic_hash": "2cfb40f5e553ef69858ce891abe9e50b"
+  },
+  "simulations/newton-second-law.html": {
+    "mtime": 1786990598.4670634,
+    "seen": 1790618418.4087958,
+    "ast_hash": "a422b5b11eb637ae47d392117743605c",
+    "semantic_hash": "a422b5b11eb637ae47d392117743605c"
+  },
+  "simulations/ohm-law.html": {
+    "mtime": 1786990598.4671917,
+    "seen": 1790618418.408797,
+    "ast_hash": "d0690c338e8243d06b0a7acc4aa07576",
+    "semantic_hash": "d0690c338e8243d06b0a7acc4aa07576"
+  },
+  "simulations/pendulum.html": {
+    "mtime": 1786990598.4673169,
+    "seen": 1790618418.408797,
+    "ast_hash": "15ae79bb42004b3630b3c9e9cb32320e",
+    "semantic_hash": "15ae79bb42004b3630b3c9e9cb32320e"
+  },
+  "simulations/projectile.html": {
+    "mtime": 1786990598.4674551,
+    "seen": 1790618418.408798,
+    "ast_hash": "c39cc87aec5c535e7683a30cf45d352f",
+    "semantic_hash": "c39cc87aec5c535e7683a30cf45d352f"
+  },
+  "simulations/refraction-law.html": {
+    "mtime": 1786990598.4675596,
+    "seen": 1790618418.408798,
+    "ast_hash": "b686560f2da0c0ec6d400443257a79d7",
+    "semantic_hash": "b686560f2da0c0ec6d400443257a79d7"
+  },
+  "simulations/simulations.html": {
+    "mtime": 1786990598.4676955,
+    "seen": 1790618418.408799,
+    "ast_hash": "d41c97a942fad8889ba0fbf9512402fb",
+    "semantic_hash": "d41c97a942fad8889ba0fbf9512402fb"
+  },
+  "simulations/vertical-motion.html": {
+    "mtime": 1786990598.4678812,
+    "seen": 1790618418.408799,
+    "ast_hash": "170a1c6737fe50c01afabd672373922d",
+    "semantic_hash": "170a1c6737fe50c01afabd672373922d"
+  },
+  "umumiy-fizika/atom.html": {
+    "mtime": 1786990598.4681265,
+    "seen": 1790618418.4088,
+    "ast_hash": "f40fd52097b8ed382555aa512a6328ed",
+    "semantic_hash": "f40fd52097b8ed382555aa512a6328ed"
+  },
+  "umumiy-fizika/elektr.html": {
+    "mtime": 1786990598.4682178,
+    "seen": 1790618418.4088,
+    "ast_hash": "0f64aeda1a33e6ff85de1e97254e80ed",
+    "semantic_hash": "0f64aeda1a33e6ff85de1e97254e80ed"
+  },
+  "umumiy-fizika/mexanika.html": {
+    "mtime": 1787810990.4916928,
+    "seen": 1790618418.408801,
+    "ast_hash": "5efb0a46a37cb2b18e64492274101f30",
+    "semantic_hash": "5efb0a46a37cb2b18e64492274101f30"
+  },
+  "umumiy-fizika/molekulyar.html": {
+    "mtime": 1786990598.468425,
+    "seen": 1790618418.408801,
+    "ast_hash": "6dd279425f851fac498b4c04be1d9767",
+    "semantic_hash": "6dd279425f851fac498b4c04be1d9767"
+  },
+  "umumiy-fizika/optika.html": {
+    "mtime": 1786990598.4685183,
+    "seen": 1790618418.408802,
+    "ast_hash": "1b3784ea55c96584030c65d1cf1694da",
+    "semantic_hash": "1b3784ea55c96584030c65d1cf1694da"
+  },
+  "umumiy-fizika/umumiy-fizika.html": {
+    "mtime": 1786990598.4829772,
+    "seen": 1790618418.408802,
+    "ast_hash": "f65294fd06e77642042d75c8d63f2957",
+    "semantic_hash": "f65294fd06e77642042d75c8d63f2957"
+  },
+  "Amaliy mashg'ulot/Mexanik harakat.pdf": {
+    "mtime": 1786990598.4513843,
+    "seen": 1790618418.408803,
+    "ast_hash": "0ad7a76656ef91e33ef5edad8f5d0d22",
+    "semantic_hash": "0ad7a76656ef91e33ef5edad8f5d0d22"
+  },
+  "milliy-sertifikat/Mock Test 4 @Fizika_Pro.pdf": {
+    "mtime": 1742835374.0,
+    "seen": 1790618418.408803,
+    "ast_hash": "31f9a1ac9d455680447f7a7e3bc70075",
+    "semantic_hash": "31f9a1ac9d455680447f7a7e3bc70075"
+  },
+  "milliy-sertifikat/javoblar.pdf": {
+    "mtime": 1746245220.0,
+    "seen": 1790618418.4088042,
+    "ast_hash": "f4f956d057492cfd081f8fd54e3d5977",
+    "semantic_hash": "f4f956d057492cfd081f8fd54e3d5977"
+  },
+  "interaktiv-oyinlar/arqon-tortish/assets/tug-war.png": {
+    "mtime": 1786990598.455565,
+    "seen": 1790618418.4088042,
+    "ast_hash": "ba065800abb132412d87310d55c912a5",
+    "semantic_hash": "ba065800abb132412d87310d55c912a5"
+  },
+  "milliy-sertifikat/mock-testlar/assets/formulas/formula-sheet-1.png": {
+    "mtime": 1790605186.5729554,
+    "seen": 1790618418.4088042,
+    "ast_hash": "e3fc4afbc87a2d7514110dca9a62c351",
+    "semantic_hash": "e3fc4afbc87a2d7514110dca9a62c351"
+  },
+  "milliy-sertifikat/mock-testlar/assets/formulas/formula-sheet-2.png": {
+    "mtime": 1790605187.5861938,
+    "seen": 1790618418.4088051,
+    "ast_hash": "aac613c963b5cac91fd4df62234e776e",
+    "semantic_hash": "aac613c963b5cac91fd4df62234e776e"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q01.png": {
+    "mtime": 1790605188.5898383,
+    "seen": 1790618418.4088051,
+    "ast_hash": "07283bb1012efd143460e89882c16412",
+    "semantic_hash": "07283bb1012efd143460e89882c16412"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q04.png": {
+    "mtime": 1790605189.3077657,
+    "seen": 1790618418.4088058,
+    "ast_hash": "bd2e390d42901f2f0d2480ea637be933",
+    "semantic_hash": "bd2e390d42901f2f0d2480ea637be933"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q05.png": {
+    "mtime": 1790605189.923942,
+    "seen": 1790618418.4088058,
+    "ast_hash": "21cfae08250082ea7b10c2665882afee",
+    "semantic_hash": "21cfae08250082ea7b10c2665882afee"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q08.png": {
+    "mtime": 1790605190.50889,
+    "seen": 1790618418.4088068,
+    "ast_hash": "7efc618e644789adb7b7a67aeb7bd4ed",
+    "semantic_hash": "7efc618e644789adb7b7a67aeb7bd4ed"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q10.png": {
+    "mtime": 1790605191.1400518,
+    "seen": 1790618418.4088068,
+    "ast_hash": "22e76dd183ac183bdda02b3788b2f8ee",
+    "semantic_hash": "22e76dd183ac183bdda02b3788b2f8ee"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q15.png": {
+    "mtime": 1790605191.7536547,
+    "seen": 1790618418.408808,
+    "ast_hash": "4214c172c16abddca68bb49b0cd622aa",
+    "semantic_hash": "4214c172c16abddca68bb49b0cd622aa"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q16.png": {
+    "mtime": 1790605192.2643998,
+    "seen": 1790618418.408808,
+    "ast_hash": "e091b7b8402e15b546d44fcc5e2261bd",
+    "semantic_hash": "e091b7b8402e15b546d44fcc5e2261bd"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q33.png": {
+    "mtime": 1790605192.8796673,
+    "seen": 1790618418.408809,
+    "ast_hash": "3da4b4707283ad791d4ae7dc5793fc5a",
+    "semantic_hash": "3da4b4707283ad791d4ae7dc5793fc5a"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q38.png": {
+    "mtime": 1790605193.4124718,
+    "seen": 1790618418.408809,
+    "ast_hash": "092a331a82b9970578d302f62902a454",
+    "semantic_hash": "092a331a82b9970578d302f62902a454"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-1/q41.png": {
+    "mtime": 1790605193.9031792,
+    "seen": 1790618418.40881,
+    "ast_hash": "9e15af8379611b882be5e77553a60408",
+    "semantic_hash": "9e15af8379611b882be5e77553a60408"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q01.png": {
+    "mtime": 1790605194.5190241,
+    "seen": 1790618418.40881,
+    "ast_hash": "c324402a6b7c695f86fba4de86833ef7",
+    "semantic_hash": "c324402a6b7c695f86fba4de86833ef7"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q06.png": {
+    "mtime": 1790605195.1368225,
+    "seen": 1790618418.40881,
+    "ast_hash": "cbc642a82243ac9bb7f6fd7a9df56ae0",
+    "semantic_hash": "cbc642a82243ac9bb7f6fd7a9df56ae0"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q09.png": {
+    "mtime": 1790605195.7467978,
+    "seen": 1790618418.408811,
+    "ast_hash": "1ad9c030945cd9a6d28f70151a90ffda",
+    "semantic_hash": "1ad9c030945cd9a6d28f70151a90ffda"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q33.png": {
+    "mtime": 1790605196.629832,
+    "seen": 1790618418.408811,
+    "ast_hash": "768d7576a9de9808fd511dc9baaf35ca",
+    "semantic_hash": "768d7576a9de9808fd511dc9baaf35ca"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q37.png": {
+    "mtime": 1790605197.374596,
+    "seen": 1790618418.408812,
+    "ast_hash": "fd163e7e58710b4de5e2244af17d31fd",
+    "semantic_hash": "fd163e7e58710b4de5e2244af17d31fd"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q38.png": {
+    "mtime": 1790605197.999056,
+    "seen": 1790618418.408812,
+    "ast_hash": "6d47305df01ab3dc9b39422ca6d76a8b",
+    "semantic_hash": "6d47305df01ab3dc9b39422ca6d76a8b"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-2/q40.png": {
+    "mtime": 1790605199.017052,
+    "seen": 1790618418.408813,
+    "ast_hash": "4213ff0cc5c782cf06cdf59b18758374",
+    "semantic_hash": "4213ff0cc5c782cf06cdf59b18758374"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q01.png": {
+    "mtime": 1790605199.6392426,
+    "seen": 1790618418.408813,
+    "ast_hash": "29d72789edf699331385d5f0129777cc",
+    "semantic_hash": "29d72789edf699331385d5f0129777cc"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q04.png": {
+    "mtime": 1790605200.354672,
+    "seen": 1790618418.4088142,
+    "ast_hash": "b6282f496f9de657f05bd8c832dd2322",
+    "semantic_hash": "b6282f496f9de657f05bd8c832dd2322"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q05.png": {
+    "mtime": 1790605201.0525026,
+    "seen": 1790618418.4088142,
+    "ast_hash": "e54e56d7007dca8ff7a4b66bcf36ce8d",
+    "semantic_hash": "e54e56d7007dca8ff7a4b66bcf36ce8d"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q08.png": {
+    "mtime": 1790605201.5846362,
+    "seen": 1790618418.4088151,
+    "ast_hash": "e324c9654364ce9a99c65ac5c5c1db50",
+    "semantic_hash": "e324c9654364ce9a99c65ac5c5c1db50"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q15.png": {
+    "mtime": 1790605202.2004962,
+    "seen": 1790618418.4088151,
+    "ast_hash": "cdef7495668f30849e1e60dfc3e2e890",
+    "semantic_hash": "cdef7495668f30849e1e60dfc3e2e890"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q19.png": {
+    "mtime": 1790605203.0092235,
+    "seen": 1790618418.408816,
+    "ast_hash": "255ba24e6a3f0726a1bbf943802e048c",
+    "semantic_hash": "255ba24e6a3f0726a1bbf943802e048c"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q33.png": {
+    "mtime": 1790605203.939607,
+    "seen": 1790618418.408816,
+    "ast_hash": "8672777783cd5d75259d97dfecc3e974",
+    "semantic_hash": "8672777783cd5d75259d97dfecc3e974"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q38.png": {
+    "mtime": 1790605204.7009802,
+    "seen": 1790618418.408816,
+    "ast_hash": "3ed2afe4d72a2abf2be33858a2f3ddd9",
+    "semantic_hash": "3ed2afe4d72a2abf2be33858a2f3ddd9"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-3/q41.png": {
+    "mtime": 1790605205.3732095,
+    "seen": 1790618418.4088168,
+    "ast_hash": "6b279bd05d73722859e65e45c9735e77",
+    "semantic_hash": "6b279bd05d73722859e65e45c9735e77"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q01.png": {
+    "mtime": 1790607743.4621432,
+    "seen": 1790618418.4088168,
+    "ast_hash": "24ebc29f1e9c512d4b684c1118a2986f",
+    "semantic_hash": "24ebc29f1e9c512d4b684c1118a2986f"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q07.png": {
+    "mtime": 1790607743.9980838,
+    "seen": 1790618418.408818,
+    "ast_hash": "d4bf4f2e726bf602c62ed6cbec7aad68",
+    "semantic_hash": "d4bf4f2e726bf602c62ed6cbec7aad68"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q08.png": {
+    "mtime": 1790607744.6131272,
+    "seen": 1790618418.408818,
+    "ast_hash": "aac2b5a0fef5ff44f5a9820235b933be",
+    "semantic_hash": "aac2b5a0fef5ff44f5a9820235b933be"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q11.png": {
+    "mtime": 1790607745.0841973,
+    "seen": 1790618418.408819,
+    "ast_hash": "ce17dbccb2376e25866bdf98b70e822d",
+    "semantic_hash": "ce17dbccb2376e25866bdf98b70e822d"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q12.png": {
+    "mtime": 1790607745.7943003,
+    "seen": 1790618418.408819,
+    "ast_hash": "464668fd878f59304d3847770c49d843",
+    "semantic_hash": "464668fd878f59304d3847770c49d843"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q21.png": {
+    "mtime": 1790607746.250411,
+    "seen": 1790618418.40882,
+    "ast_hash": "f07faa59201214c63a44a041bac9b4c0",
+    "semantic_hash": "f07faa59201214c63a44a041bac9b4c0"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q30.png": {
+    "mtime": 1790607746.9340627,
+    "seen": 1790618418.40882,
+    "ast_hash": "465112683d21efe6a44b81554c2fcde3",
+    "semantic_hash": "465112683d21efe6a44b81554c2fcde3"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q33.png": {
+    "mtime": 1790607747.5036826,
+    "seen": 1790618418.408821,
+    "ast_hash": "240dd84e13b62e51893ec4d2b7a51344",
+    "semantic_hash": "240dd84e13b62e51893ec4d2b7a51344"
+  },
+  "milliy-sertifikat/mock-testlar/assets/images/test-4/q37.png": {
+    "mtime": 1790607748.0539086,
+    "seen": 1790618418.408821,
+    "ast_hash": "d7523431e3521629986418e8733b58bb",
+    "semantic_hash": "d7523431e3521629986418e8733b58bb"
+  },
+  "umumiy-fizika/rasmlar10/rasm10.png": {
+    "mtime": 1786990598.4687052,
+    "seen": 1790618418.408822,
+    "ast_hash": "2cb14ba364f090d9d1124812b6af7631",
+    "semantic_hash": "2cb14ba364f090d9d1124812b6af7631"
+  },
+  "umumiy-fizika/rasmlar10/rasm19.png": {
+    "mtime": 1786990598.468867,
+    "seen": 1790618418.408822,
+    "ast_hash": "e7fc7bb7ec918c3682b653ae3cb660f6",
+    "semantic_hash": "e7fc7bb7ec918c3682b653ae3cb660f6"
+  },
+  "umumiy-fizika/rasmlar11/rasm10.png": {
+    "mtime": 1786990598.4690526,
+    "seen": 1790618418.408823,
+    "ast_hash": "2d137445870597c58ebacb84083ceaad",
+    "semantic_hash": "2d137445870597c58ebacb84083ceaad"
+  },
+  "umumiy-fizika/rasmlar11/rasm3.png": {
+    "mtime": 1786990598.4692068,
+    "seen": 1790618418.408823,
+    "ast_hash": "1200e5eacd1a8cdd0ddd1d42c98197d2",
+    "semantic_hash": "1200e5eacd1a8cdd0ddd1d42c98197d2"
+  },
+  "umumiy-fizika/rasmlar11/rasm4.png": {
+    "mtime": 1786990598.4693296,
+    "seen": 1790618418.408824,
+    "ast_hash": "56238e40c5edc43c01dc7541a019f3e1",
+    "semantic_hash": "56238e40c5edc43c01dc7541a019f3e1"
+  },
+  "umumiy-fizika/rasmlar11/rasm5.png": {
+    "mtime": 1786990598.4694705,
+    "seen": 1790618418.408824,
+    "ast_hash": "b2768497c48d9b099c426d750620dd6a",
+    "semantic_hash": "b2768497c48d9b099c426d750620dd6a"
+  },
+  "umumiy-fizika/rasmlar11/rasm6.png": {
+    "mtime": 1786990598.469611,
+    "seen": 1790618418.4088252,
+    "ast_hash": "31e0e94c8e0cf897e6a80dabb4330af5",
+    "semantic_hash": "31e0e94c8e0cf897e6a80dabb4330af5"
+  },
+  "umumiy-fizika/rasmlar11/rasm7.png": {
+    "mtime": 1786990598.4697435,
+    "seen": 1790618418.4088252,
+    "ast_hash": "331171623bab877724c0d13ac53583a8",
+    "semantic_hash": "331171623bab877724c0d13ac53583a8"
+  },
+  "umumiy-fizika/rasmlar11/rasm8.png": {
+    "mtime": 1786990598.4698734,
+    "seen": 1790618418.408826,
+    "ast_hash": "6a78036cc58d7bf133ceac5fbef4aeeb",
+    "semantic_hash": "6a78036cc58d7bf133ceac5fbef4aeeb"
+  },
+  "umumiy-fizika/rasmlar11/rasm9.png": {
+    "mtime": 1786990598.470015,
+    "seen": 1790618418.408826,
+    "ast_hash": "bb0bbdee9ccc5571fa41a65b448dd19a",
+    "semantic_hash": "bb0bbdee9ccc5571fa41a65b448dd19a"
+  },
+  "umumiy-fizika/rasmlar12/rasm18.png": {
+    "mtime": 1786990598.4702106,
+    "seen": 1790618418.408826,
+    "ast_hash": "2eda8da570f203fb6c00b7d3e5364e92",
+    "semantic_hash": "2eda8da570f203fb6c00b7d3e5364e92"
+  },
+  "umumiy-fizika/rasmlar12/rasm20.png": {
+    "mtime": 1786990598.4703224,
+    "seen": 1790618418.4088268,
+    "ast_hash": "d93b91c6c6baae489601e74e749a0c6d",
+    "semantic_hash": "d93b91c6c6baae489601e74e749a0c6d"
+  },
+  "umumiy-fizika/rasmlar13/rasm4.png": {
+    "mtime": 1786990598.4705012,
+    "seen": 1790618418.4088268,
+    "ast_hash": "3a9d078b2f6dfc49f5159591ea055c34",
+    "semantic_hash": "3a9d078b2f6dfc49f5159591ea055c34"
+  },
+  "umumiy-fizika/rasmlar13/rasm5.png": {
+    "mtime": 1786990598.4706495,
+    "seen": 1790618418.408828,
+    "ast_hash": "f3b228f3afa552fc4195053ec2efc5dc",
+    "semantic_hash": "f3b228f3afa552fc4195053ec2efc5dc"
+  },
+  "umumiy-fizika/rasmlar14/rasm13.png": {
+    "mtime": 1786990598.4708548,
+    "seen": 1790618418.408828,
+    "ast_hash": "8de9990af5145369e0d45a84bf0b64af",
+    "semantic_hash": "8de9990af5145369e0d45a84bf0b64af"
+  },
+  "umumiy-fizika/rasmlar14/rasm14.png": {
+    "mtime": 1786990598.4710035,
+    "seen": 1790618418.408829,
+    "ast_hash": "722fb7c9e5b8775d60e4ab5e9ae20464",
+    "semantic_hash": "722fb7c9e5b8775d60e4ab5e9ae20464"
+  },
+  "umumiy-fizika/rasmlar14/rasm16.png": {
+    "mtime": 1786990598.4711213,
+    "seen": 1790618418.408829,
+    "ast_hash": "c8640fcbe4355359a96eea3c77e18e93",
+    "semantic_hash": "c8640fcbe4355359a96eea3c77e18e93"
+  },
+  "umumiy-fizika/rasmlar14/rasm17.png": {
+    "mtime": 1786990598.4713042,
+    "seen": 1790618418.40883,
+    "ast_hash": "951dbcf22bccae72cc6df1e9e0ae7c5a",
+    "semantic_hash": "951dbcf22bccae72cc6df1e9e0ae7c5a"
+  },
+  "umumiy-fizika/rasmlar14/rasm18.png": {
+    "mtime": 1786990598.4715579,
+    "seen": 1790618418.40883,
+    "ast_hash": "f88a283788eef4acffc7f76479e4fdd1",
+    "semantic_hash": "f88a283788eef4acffc7f76479e4fdd1"
+  },
+  "umumiy-fizika/rasmlar18/rasm10.png": {
+    "mtime": 1786990598.4718218,
+    "seen": 1790618418.408831,
+    "ast_hash": "b551f3f27a818d5bd27dc17c409185d4",
+    "semantic_hash": "b551f3f27a818d5bd27dc17c409185d4"
+  },
+  "umumiy-fizika/rasmlar18/rasm11.png": {
+    "mtime": 1786990598.4719512,
+    "seen": 1790618418.408831,
+    "ast_hash": "a9a0edc8a72a5f784aaa9ec47a859199",
+    "semantic_hash": "a9a0edc8a72a5f784aaa9ec47a859199"
+  },
+  "umumiy-fizika/rasmlar18/rasm12.png": {
+    "mtime": 1786990598.4720705,
+    "seen": 1790618418.408831,
+    "ast_hash": "99a99bd5d8f63a42e52e1f6b192adf3a",
+    "semantic_hash": "99a99bd5d8f63a42e52e1f6b192adf3a"
+  },
+  "umumiy-fizika/rasmlar18/rasm13.png": {
+    "mtime": 1786990598.4721904,
+    "seen": 1790618418.408832,
+    "ast_hash": "5606bded7493ea5e774d8d846ccff375",
+    "semantic_hash": "5606bded7493ea5e774d8d846ccff375"
+  },
+  "umumiy-fizika/rasmlar18/rasm14.png": {
+    "mtime": 1786990598.4724045,
+    "seen": 1790618418.408832,
+    "ast_hash": "dc7ae5654d426d9f1ec6d72c83995da6",
+    "semantic_hash": "dc7ae5654d426d9f1ec6d72c83995da6"
+  },
+  "umumiy-fizika/rasmlar18/rasm15.png": {
+    "mtime": 1786990598.4725404,
+    "seen": 1790618418.408833,
+    "ast_hash": "91b1782da82cf3a8f54f78fc70c5ea09",
+    "semantic_hash": "91b1782da82cf3a8f54f78fc70c5ea09"
+  },
+  "umumiy-fizika/rasmlar18/rasm3.png": {
+    "mtime": 1786990598.4726584,
+    "seen": 1790618418.408833,
+    "ast_hash": "a0fa34b4f4d7db2396901bb26f11dbc9",
+    "semantic_hash": "a0fa34b4f4d7db2396901bb26f11dbc9"
+  },
+  "umumiy-fizika/rasmlar19/test19-11.png": {
+    "mtime": 1786990598.4728425,
+    "seen": 1790618418.408834,
+    "ast_hash": "967b6100e1b8b6edf8ec12995442affa",
+    "semantic_hash": "967b6100e1b8b6edf8ec12995442affa"
+  },
+  "umumiy-fizika/rasmlar19/test19-12.png": {
+    "mtime": 1786990598.4730062,
+    "seen": 1790618418.408834,
+    "ast_hash": "e8596d2aaa98a2f8fea9656332c60b9e",
+    "semantic_hash": "e8596d2aaa98a2f8fea9656332c60b9e"
+  },
+  "umumiy-fizika/rasmlar19/test19-13.png": {
+    "mtime": 1786990598.473159,
+    "seen": 1790618418.4088352,
+    "ast_hash": "4b873caea4cde7bc528e64a71bcf1731",
+    "semantic_hash": "4b873caea4cde7bc528e64a71bcf1731"
+  },
+  "umumiy-fizika/rasmlar19/test19-14.png": {
+    "mtime": 1786990598.4733067,
+    "seen": 1790618418.4088352,
+    "ast_hash": "f6a0525e73d0d7ff4538b53fe0e2cfaa",
+    "semantic_hash": "f6a0525e73d0d7ff4538b53fe0e2cfaa"
+  },
+  "umumiy-fizika/rasmlar19/test19-15.png": {
+    "mtime": 1786990598.4734244,
+    "seen": 1790618418.4088361,
+    "ast_hash": "bf8bbac701dc87b65f276aad38d4f1e9",
+    "semantic_hash": "bf8bbac701dc87b65f276aad38d4f1e9"
+  },
+  "umumiy-fizika/rasmlar24/rasm10.png": {
+    "mtime": 1786990598.4736216,
+    "seen": 1790618418.4088361,
+    "ast_hash": "aa3b3e9bec939b6af01e701aeb0de693",
+    "semantic_hash": "aa3b3e9bec939b6af01e701aeb0de693"
+  },
+  "umumiy-fizika/rasmlar24/rasm4.png": {
+    "mtime": 1786990598.4737422,
+    "seen": 1790618418.408837,
+    "ast_hash": "a19b9e4ba0a93242709b3569c9e75f32",
+    "semantic_hash": "a19b9e4ba0a93242709b3569c9e75f32"
+  },
+  "umumiy-fizika/rasmlar24/rasm5.png": {
+    "mtime": 1786990598.4738576,
+    "seen": 1790618418.408837,
+    "ast_hash": "f5b6a0a704e0be0829726285ae436f28",
+    "semantic_hash": "f5b6a0a704e0be0829726285ae436f28"
+  },
+  "umumiy-fizika/rasmlar24/rasm8.png": {
+    "mtime": 1786990598.4739943,
+    "seen": 1790618418.4088378,
+    "ast_hash": "92d389dc3835e4bc87e3585f00331196",
+    "semantic_hash": "92d389dc3835e4bc87e3585f00331196"
+  },
+  "umumiy-fizika/rasmlar24/rasm9.png": {
+    "mtime": 1786990598.4741187,
+    "seen": 1790618418.4088378,
+    "ast_hash": "f917a2e736da65e45b9eb72110f29f4e",
+    "semantic_hash": "f917a2e736da65e45b9eb72110f29f4e"
+  },
+  "umumiy-fizika/rasmlar25/rasm10.png": {
+    "mtime": 1786990598.4743319,
+    "seen": 1790618418.4088378,
+    "ast_hash": "d94641821c50bc90bb560ccd1d672748",
+    "semantic_hash": "d94641821c50bc90bb560ccd1d672748"
+  },
+  "umumiy-fizika/rasmlar25/rasm2.png": {
+    "mtime": 1786990598.4744523,
+    "seen": 1790618418.408839,
+    "ast_hash": "622f13a9904261c905ded6d2161cc8f1",
+    "semantic_hash": "622f13a9904261c905ded6d2161cc8f1"
+  },
+  "umumiy-fizika/rasmlar25/rasm9.png": {
+    "mtime": 1786990598.4746017,
+    "seen": 1790618418.408839,
+    "ast_hash": "4666c1424535e6cfb7edeaf65bd8bce9",
+    "semantic_hash": "4666c1424535e6cfb7edeaf65bd8bce9"
+  },
+  "umumiy-fizika/rasmlar27/rasm1.png": {
+    "mtime": 1786990598.4748385,
+    "seen": 1790618418.40884,
+    "ast_hash": "6fd4106bfadeae48c2d532fd0002b302",
+    "semantic_hash": "6fd4106bfadeae48c2d532fd0002b302"
+  },
+  "umumiy-fizika/rasmlar27/rasm6.png": {
+    "mtime": 1786990598.474991,
+    "seen": 1790618418.40884,
+    "ast_hash": "089b270181dca7db2c3d5ac2bf72c4c0",
+    "semantic_hash": "089b270181dca7db2c3d5ac2bf72c4c0"
+  },
+  "umumiy-fizika/rasmlar27/rasm7.png": {
+    "mtime": 1786990598.4751806,
+    "seen": 1790618418.408841,
+    "ast_hash": "57468694f9e6c715fe88ecaeb983e62f",
+    "semantic_hash": "57468694f9e6c715fe88ecaeb983e62f"
+  },
+  "umumiy-fizika/rasmlar27/rasm8.png": {
+    "mtime": 1786990598.4753923,
+    "seen": 1790618418.408841,
+    "ast_hash": "6b897eb5704d75433b434ebc2e2ea273",
+    "semantic_hash": "6b897eb5704d75433b434ebc2e2ea273"
+  },
+  "umumiy-fizika/rasmlar27/rasm9.png": {
+    "mtime": 1786990598.475602,
+    "seen": 1790618418.408842,
+    "ast_hash": "43ff334b1999875fb5213e6e172269a9",
+    "semantic_hash": "43ff334b1999875fb5213e6e172269a9"
+  },
+  "umumiy-fizika/rasmlar3/test3-1.png": {
+    "mtime": 1786990598.4758077,
+    "seen": 1790618418.408842,
+    "ast_hash": "31f658e5a7fb8bcb45a57894318e7e5c",
+    "semantic_hash": "31f658e5a7fb8bcb45a57894318e7e5c"
+  },
+  "umumiy-fizika/rasmlar3/test3-10.png": {
+    "mtime": 1786990598.4759493,
+    "seen": 1790618418.408843,
+    "ast_hash": "702a30e451c4ccd050f4de225e5c5e44",
+    "semantic_hash": "702a30e451c4ccd050f4de225e5c5e44"
+  },
+  "umumiy-fizika/rasmlar3/test3-11.png": {
+    "mtime": 1786990598.476097,
+    "seen": 1790618418.408843,
+    "ast_hash": "f04e7cfc88dabe12a22fb19077673ce6",
+    "semantic_hash": "f04e7cfc88dabe12a22fb19077673ce6"
+  },
+  "umumiy-fizika/rasmlar3/test3-12.png": {
+    "mtime": 1786990598.4762163,
+    "seen": 1790618418.408844,
+    "ast_hash": "161603e96694ed569fabef79c29d83d4",
+    "semantic_hash": "161603e96694ed569fabef79c29d83d4"
+  },
+  "umumiy-fizika/rasmlar3/test3-2.png": {
+    "mtime": 1786990598.4763498,
+    "seen": 1790618418.408844,
+    "ast_hash": "05e1ab83daa8b310bb40306879c2dd1f",
+    "semantic_hash": "05e1ab83daa8b310bb40306879c2dd1f"
+  },
+  "umumiy-fizika/rasmlar3/test3-3.png": {
+    "mtime": 1786990598.4765015,
+    "seen": 1790618418.408844,
+    "ast_hash": "3e1ce6510d12c090b030e809167afd30",
+    "semantic_hash": "3e1ce6510d12c090b030e809167afd30"
+  },
+  "umumiy-fizika/rasmlar3/test3-4.png": {
+    "mtime": 1786990598.4766326,
+    "seen": 1790618418.408845,
+    "ast_hash": "d543e06134a36ad9890f1ac01ba2e7d0",
+    "semantic_hash": "d543e06134a36ad9890f1ac01ba2e7d0"
+  },
+  "umumiy-fizika/rasmlar3/test3-5.png": {
+    "mtime": 1786990598.476768,
+    "seen": 1790618418.408845,
+    "ast_hash": "6b65db04d38c198be335d0fc1c6375f6",
+    "semantic_hash": "6b65db04d38c198be335d0fc1c6375f6"
+  },
+  "umumiy-fizika/rasmlar3/test3-6.png": {
+    "mtime": 1786990598.4768972,
+    "seen": 1790618418.4088461,
+    "ast_hash": "c6f5b665741ae3d2abdc679416df8897",
+    "semantic_hash": "c6f5b665741ae3d2abdc679416df8897"
+  },
+  "umumiy-fizika/rasmlar3/test3-7.png": {
+    "mtime": 1786990598.4770393,
+    "seen": 1790618418.4088461,
+    "ast_hash": "8a4faa645e486e4df558e3af789bc733",
+    "semantic_hash": "8a4faa645e486e4df558e3af789bc733"
+  },
+  "umumiy-fizika/rasmlar3/test3-8.png": {
+    "mtime": 1786990598.4771664,
+    "seen": 1790618418.408847,
+    "ast_hash": "ba40720ed0a17a42afedd9f281ac2a34",
+    "semantic_hash": "ba40720ed0a17a42afedd9f281ac2a34"
+  },
+  "umumiy-fizika/rasmlar3/test3-9.png": {
+    "mtime": 1786990598.4772844,
+    "seen": 1790618418.408847,
+    "ast_hash": "483b004d2cc7548a8310d26a5717da2f",
+    "semantic_hash": "483b004d2cc7548a8310d26a5717da2f"
+  },
+  "umumiy-fizika/rasmlar33/rasm11.png": {
+    "mtime": 1786990598.4774992,
+    "seen": 1790618418.4088478,
+    "ast_hash": "3a89eb165c90dc61a605befa761fe63d",
+    "semantic_hash": "3a89eb165c90dc61a605befa761fe63d"
+  },
+  "umumiy-fizika/rasmlar33/rasm8.png": {
+    "mtime": 1786990598.477691,
+    "seen": 1790618418.4088478,
+    "ast_hash": "b3c4afe19ecfad96e7d4bc862fda2462",
+    "semantic_hash": "b3c4afe19ecfad96e7d4bc862fda2462"
+  },
+  "umumiy-fizika/rasmlar33/rasm9.png": {
+    "mtime": 1786990598.47786,
+    "seen": 1790618418.408849,
+    "ast_hash": "c0d3529a530313c0a23bdb8fd04c03a1",
+    "semantic_hash": "c0d3529a530313c0a23bdb8fd04c03a1"
+  },
+  "umumiy-fizika/rasmlar40/rasm11.png": {
+    "mtime": 1787840815.0351954,
+    "seen": 1790618418.408849,
+    "ast_hash": "15b4315e042c4b703dcac2aade5e1987",
+    "semantic_hash": "15b4315e042c4b703dcac2aade5e1987"
+  },
+  "umumiy-fizika/rasmlar40/rasm12.png": {
+    "mtime": 1787840826.1951756,
+    "seen": 1790618418.40885,
+    "ast_hash": "3a7086a33a51cbf6069c8c603d2d20fb",
+    "semantic_hash": "3a7086a33a51cbf6069c8c603d2d20fb"
+  },
+  "umumiy-fizika/rasmlar42/rasm13.png": {
+    "mtime": 1787840680.0377543,
+    "seen": 1790618418.40885,
+    "ast_hash": "4430e0ffff4c8ceb1bc787959858fc87",
+    "semantic_hash": "4430e0ffff4c8ceb1bc787959858fc87"
+  },
+  "umumiy-fizika/rasmlar42/rasm14.png": {
+    "mtime": 1787840689.6803808,
+    "seen": 1790618418.408851,
+    "ast_hash": "823d237705ea137ac80a71213bc11d1b",
+    "semantic_hash": "823d237705ea137ac80a71213bc11d1b"
+  },
+  "umumiy-fizika/rasmlar46/rasm25.png": {
+    "mtime": 1787842927.8372705,
+    "seen": 1790618418.408851,
+    "ast_hash": "bd77ac2169ad6388512735cbeb416da8",
+    "semantic_hash": "bd77ac2169ad6388512735cbeb416da8"
+  },
+  "umumiy-fizika/rasmlar46/rasm26.png": {
+    "mtime": 1787842936.796706,
+    "seen": 1790618418.408851,
+    "ast_hash": "f60f3ab43f31a96fd1bad87a35c4fda6",
+    "semantic_hash": "f60f3ab43f31a96fd1bad87a35c4fda6"
+  },
+  "umumiy-fizika/rasmlar46/rasm27.png": {
+    "mtime": 1787842954.8184657,
+    "seen": 1790618418.4088519,
+    "ast_hash": "452d561e44971f3e7dbbf1af588f2845",
+    "semantic_hash": "452d561e44971f3e7dbbf1af588f2845"
+  },
+  "umumiy-fizika/rasmlar46/rasm28.png": {
+    "mtime": 1787842967.81308,
+    "seen": 1790618418.4088519,
+    "ast_hash": "9a3ad676e8573f0cbea2f724588c0d01",
+    "semantic_hash": "9a3ad676e8573f0cbea2f724588c0d01"
+  },
+  "umumiy-fizika/rasmlar46/rasm29.png": {
+    "mtime": 1787842977.2145808,
+    "seen": 1790618418.408853,
+    "ast_hash": "dfdaf74f0a3842964dfd05fd30329a5e",
+    "semantic_hash": "dfdaf74f0a3842964dfd05fd30329a5e"
+  },
+  "umumiy-fizika/rasmlar46/rasm40.png": {
+    "mtime": 1787843007.3346543,
+    "seen": 1790618418.408853,
+    "ast_hash": "c20750318799d60679a91cf0e17b6c39",
+    "semantic_hash": "c20750318799d60679a91cf0e17b6c39"
+  },
+  "umumiy-fizika/rasmlar46/rasm41.png": {
+    "mtime": 1787843021.4643133,
+    "seen": 1790618418.408854,
+    "ast_hash": "3f322546673eccfd88ddab1b75ed5b88",
+    "semantic_hash": "3f322546673eccfd88ddab1b75ed5b88"
+  },
+  "umumiy-fizika/rasmlar46/rasm42.png": {
+    "mtime": 1787843033.4301898,
+    "seen": 1790618418.408854,
+    "ast_hash": "9d3a31245bc081ff1979fd9a28595d1c",
+    "semantic_hash": "9d3a31245bc081ff1979fd9a28595d1c"
+  },
+  "umumiy-fizika/rasmlar46/rasm48.png": {
+    "mtime": 1787843047.5302258,
+    "seen": 1790618418.408855,
+    "ast_hash": "ba994ed9572fb0a85de7f7542369dd3f",
+    "semantic_hash": "ba994ed9572fb0a85de7f7542369dd3f"
+  },
+  "umumiy-fizika/rasmlar46/rasm8.png": {
+    "mtime": 1787842900.9316964,
+    "seen": 1790618418.408855,
+    "ast_hash": "4d4113ba0b425a24bba3ccfbbdd150f4",
+    "semantic_hash": "4d4113ba0b425a24bba3ccfbbdd150f4"
+  },
+  "umumiy-fizika/rasmlar5/test5-1.png": {
+    "mtime": 1786990598.4780438,
+    "seen": 1790618418.4088562,
+    "ast_hash": "81085f7aa14cd0634920f19ba490f84c",
+    "semantic_hash": "81085f7aa14cd0634920f19ba490f84c"
+  },
+  "umumiy-fizika/rasmlar5/test5-10.png": {
+    "mtime": 1786990598.4781544,
+    "seen": 1790618418.4088562,
+    "ast_hash": "d2100afbd84ff94d76afc8bc43b4dfc1",
+    "semantic_hash": "d2100afbd84ff94d76afc8bc43b4dfc1"
+  },
+  "umumiy-fizika/rasmlar5/test5-11.png": {
+    "mtime": 1786990598.4782631,
+    "seen": 1790618418.408857,
+    "ast_hash": "a47ebf99735f25b11ab061b472c8f58c",
+    "semantic_hash": "a47ebf99735f25b11ab061b472c8f58c"
+  },
+  "umumiy-fizika/rasmlar5/test5-12.png": {
+    "mtime": 1786990598.4783697,
+    "seen": 1790618418.408857,
+    "ast_hash": "887ee5f7b21b54371967a123db759840",
+    "semantic_hash": "887ee5f7b21b54371967a123db759840"
+  },
+  "umumiy-fizika/rasmlar5/test5-2.png": {
+    "mtime": 1786990598.4784794,
+    "seen": 1790618418.408857,
+    "ast_hash": "9e76551bf33127e6f15ad8cef444d19c",
+    "semantic_hash": "9e76551bf33127e6f15ad8cef444d19c"
+  },
+  "umumiy-fizika/rasmlar5/test5-3.png": {
+    "mtime": 1786990598.4785666,
+    "seen": 1790618418.408858,
+    "ast_hash": "0d9eca99e527055982e9e0c6ce2704a4",
+    "semantic_hash": "0d9eca99e527055982e9e0c6ce2704a4"
+  },
+  "umumiy-fizika/rasmlar5/test5-4.png": {
+    "mtime": 1786990598.4786847,
+    "seen": 1790618418.408858,
+    "ast_hash": "9e0ded2f23e4150890f196b028754a14",
+    "semantic_hash": "9e0ded2f23e4150890f196b028754a14"
+  },
+  "umumiy-fizika/rasmlar5/test5-5.png": {
+    "mtime": 1786990598.47879,
+    "seen": 1790618418.4088588,
+    "ast_hash": "6a25e4e9f13bd49a327e432110c8992d",
+    "semantic_hash": "6a25e4e9f13bd49a327e432110c8992d"
+  },
+  "umumiy-fizika/rasmlar5/test5-6.png": {
+    "mtime": 1786990598.4788961,
+    "seen": 1790618418.4088588,
+    "ast_hash": "662bff6d89f83fb30a719254c8bc2b40",
+    "semantic_hash": "662bff6d89f83fb30a719254c8bc2b40"
+  },
+  "umumiy-fizika/rasmlar5/test5-7.png": {
+    "mtime": 1786990598.4790142,
+    "seen": 1790618418.40886,
+    "ast_hash": "d5cf62ffa615efaebaace01b7a252656",
+    "semantic_hash": "d5cf62ffa615efaebaace01b7a252656"
+  },
+  "umumiy-fizika/rasmlar5/test5-8.png": {
+    "mtime": 1786990598.479124,
+    "seen": 1790618418.40886,
+    "ast_hash": "b5dcd8e4ae523010420c0e536255eeee",
+    "semantic_hash": "b5dcd8e4ae523010420c0e536255eeee"
+  },
+  "umumiy-fizika/rasmlar5/test5-9.png": {
+    "mtime": 1786990598.479226,
+    "seen": 1790618418.408861,
+    "ast_hash": "c6b6f4f452d0dddfbcd7f90133e08798",
+    "semantic_hash": "c6b6f4f452d0dddfbcd7f90133e08798"
+  },
+  "umumiy-fizika/rasmlar50/rasm29.png": {
+    "mtime": 1787845237.0463724,
+    "seen": 1790618418.408861,
+    "ast_hash": "9748e11482da2396252663f98d66b2cb",
+    "semantic_hash": "9748e11482da2396252663f98d66b2cb"
+  },
+  "umumiy-fizika/rasmlar50/rasm30.png": {
+    "mtime": 1787845250.37014,
+    "seen": 1790618418.4088619,
+    "ast_hash": "99002006c80f164a1aa1a81bcbb92f62",
+    "semantic_hash": "99002006c80f164a1aa1a81bcbb92f62"
+  },
+  "umumiy-fizika/rasmlar50/rasm31.png": {
+    "mtime": 1787845274.4855444,
+    "seen": 1790618418.4088619,
+    "ast_hash": "d52a55ff051140bbabbd858b6c28b90a",
+    "semantic_hash": "d52a55ff051140bbabbd858b6c28b90a"
+  },
+  "umumiy-fizika/rasmlar50/rasm32.png": {
+    "mtime": 1787845293.6900647,
+    "seen": 1790618418.408864,
+    "ast_hash": "f345850549ed7f371822ab7b7eb6a5f4",
+    "semantic_hash": "f345850549ed7f371822ab7b7eb6a5f4"
+  },
+  "umumiy-fizika/rasmlar50/rasm33.png": {
+    "mtime": 1787845302.8075552,
+    "seen": 1790618418.408865,
+    "ast_hash": "f913ebebf03c19b43b198d13602a9b62",
+    "semantic_hash": "f913ebebf03c19b43b198d13602a9b62"
+  },
+  "umumiy-fizika/rasmlar7/test7-12.png": {
+    "mtime": 1786990598.4794064,
+    "seen": 1790618418.408865,
+    "ast_hash": "dffc8a4384dcc86088f59af17286e286",
+    "semantic_hash": "dffc8a4384dcc86088f59af17286e286"
+  },
+  "umumiy-fizika/rasmlar9/rasm10.png": {
+    "mtime": 1786990598.479625,
+    "seen": 1790618418.408865,
+    "ast_hash": "03050c389bb83de24ed6288cf5ee6861",
+    "semantic_hash": "03050c389bb83de24ed6288cf5ee6861"
+  },
+  "umumiy-fizika/rasmlar9/rasm16.png": {
+    "mtime": 1786990598.479774,
+    "seen": 1790618418.4088662,
+    "ast_hash": "fefff478fbba29399e635d5ebb59523d",
+    "semantic_hash": "fefff478fbba29399e635d5ebb59523d"
+  }
+}

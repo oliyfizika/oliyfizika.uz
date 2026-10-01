@@ -1,0 +1,750 @@
+{
+ "schemaVersion": 1,
+ "id": "mock-test-2",
+ "number": 2,
+ "title": "Fizika Mock Test №2",
+ "subtitle": "45 ta topshiriq • 55 ta baholanadigan band • 3 soat • formula jadvali va kalkulyator bilan",
+ "sourceVariant": null,
+ "durationMinutes": 180,
+ "author": {
+  "name": "Amirov Sarvar",
+  "telegram": "@oliyfizika_uz",
+  "telegramUrl": "https://t.me/oliyfizika_uz"
+ },
+ "scoring": {
+  "mode": "local",
+  "maxScore": 55,
+  "defaultRelativeTolerance": 1e-06
+ },
+ "review": {
+  "enabled": true,
+  "showCorrectAnswers": true
+ },
+ "resultCode": {
+  "prefix": "OFMT2",
+  "version": 2
+ },
+ "formulaSheet": {
+  "pages": [
+   "assets/formulas/formula-sheet-1.png",
+   "assets/formulas/formula-sheet-2.png"
+  ],
+  "cards": [
+   {
+    "title": "Mexanika",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Aylanish va energiya",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molekulyar fizika",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Issiqlik",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Elektr toki",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Kondensator va AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnit maydon",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optika",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Kvant va yadro",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_chiq",
+     "A,Z saqlanish qonunlari"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "type": "mcq",
+   "text": "Grafikdan foydalanib jismning (2–5) s oralig‘ida bosib o‘tgan yo‘lini aniqlang. (m)",
+   "image": "assets/images/test-2/q01.png",
+   "options": [
+    "20",
+    "40",
+    "60",
+    "10"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 2,
+   "type": "mcq",
+   "text": "Jismning harakat boshidagi tezligi 20 m/s ga teng. Yo‘l oxirida esa uning erishgan tezligi 60 m/s ekani ma’lum bo‘lsa, yo‘l yarmidagi tezligini (m/s) aniqlang. √5 = 2,2",
+   "options": [
+    "22",
+    "44",
+    "32",
+    "42"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 3,
+   "type": "mcq",
+   "text": "Massasi 6,5 kg bo‘lgan jismga F₁ = 12 N va F₂ = 5 N bo‘lgan kuchlar gorizontal yo‘nalishda o‘zaro 90° burchak ostida ta’sir qilmoqda. Natijada sistema qanday tezlanish (m/s²) bilan harakat qilishini aniqlang.",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "6"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 4,
+   "type": "mcq",
+   "text": "Yuqoriga tik otilgan jism 4 s vaqt momentida 40 m balandlikdan ikkinchi marta o‘tdi. Jismning boshlang‘ich tezligi qanday (m/s) bo‘lgan?",
+   "options": [
+    "10",
+    "30",
+    "40",
+    "20"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 5,
+   "type": "mcq",
+   "text": "Rasmda ko‘rsatilgan 3 ta jism vaznsiz ip yordamida bir-biriga mahkamlangan. Ularning massalari mos ravishda m₁ = 3 kg, m₂ = 6 kg, m₃ = 1 kg ga teng. Bu sistemaga F = 120 N kuch bilan gorizontal yo‘nalishda ta’sir ettirilsa, iplardagi T₁ va T₂ taranglik kuchlarini (N) aniqlang. Barcha jismlar uchun ishqalanish koeffitsiyenti bir xil, 0,5 ga teng.",
+   "image": "assets/images/test-2/q05.png",
+   "options": [
+    "40; 25",
+    "84; 12",
+    "69; 17",
+    "96; 23"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 6,
+   "type": "mcq",
+   "text": "Rasmda berilgan ma’lumotlar asosida jism olgan tezlanishni (m/s²) aniqlang.",
+   "image": "assets/images/test-2/q06.png",
+   "options": [
+    "1,5",
+    "1,1",
+    "2,5",
+    "2,8"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 7,
+   "type": "mcq",
+   "text": "Kerosinda 4 m/s² tezlanish bilan cho‘kkan jism suvda qanday tezlanish bilan cho‘kadi? ρₛᵤᵥ = 1 g/sm³, ρₖₑᵣₒₛᵢₙ = 0,8 g/sm³",
+   "options": [
+    "4",
+    "1,5",
+    "3",
+    "2,5"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 8,
+   "type": "mcq",
+   "text": "Rasmda ko‘rsatilganday bikirligi 2 kN/m bo‘lgan prujina uchlariga m₁ = 4 kg va m₂ = 6 kg massali yuklar mahkamlangan. Har bir yuk uchun ishqalanish koeffitsiyenti 0,1 ga teng. Prujina necha sm ga cho‘zilishini toping?",
+   "image": "assets/images/test-2/q08.png",
+   "options": [
+    "14",
+    "1,4",
+    "1,6",
+    "1,8"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 9,
+   "type": "mcq",
+   "text": "Matematik mayatnik 0,36g tezlanish bilan tushayotgan tezyurar lift kabinasiga joylashtirilganda, uning tebranishlar davri necha foizga ortadi?",
+   "options": [
+    "25",
+    "20",
+    "15",
+    "40"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 10,
+   "type": "mcq",
+   "text": "Ideal gaz birinchi holatdan ikkinchi holatga o‘tganda temperaturasi 330 °C ga o‘zgardi. Agar V₁ = 3,2 m³, V₂ = 6,4 m³ bo‘lsa, gazning dastlabki temperaturasi (K) qanday bo‘lgan?",
+   "image": "assets/images/test-2/q10.png",
+   "options": [
+    "660",
+    "250",
+    "580",
+    "330"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 11,
+   "type": "mcq",
+   "text": "Ideal gazning zichligi 1,2 kg/m³, bosimi 16 kPa. Gaz molekulalarining o‘rtacha kvadratik tezligi (m/s) qanday?",
+   "options": [
+    "500",
+    "400",
+    "300",
+    "200"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 12,
+   "type": "mcq",
+   "text": "Tekislikning ustiga qo‘yilgan yuk asosining yuzasi 10 sm². Agar tizim yuqoriga 2 m/s tezlik bilan harakatlantirilsa, yukning tekislikka ko‘rsatadigan bosimi qanday bo‘ladi? Yukning massasi 4 kg.",
+   "options": [
+    "6 · 10⁴ Pa",
+    "8 · 10⁴ Pa",
+    "4 · 10⁴ Pa",
+    "3 · 10⁴ Pa"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 13,
+   "type": "mcq",
+   "text": "Muzlatgichga qo‘yilgan 0 °C temperaturadagi 5 litr suv batamom muzlaguncha undan qanday issiqlik miqdori (kJ) chiqadi? λ = 334 kJ/kg.",
+   "options": [
+    "1670",
+    "1200",
+    "450",
+    "690"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 14,
+   "type": "mcq",
+   "text": "Diametri 75 μm bo‘lgan tuproq kapillyarda suv qanday balandlikka (sm) ko‘tariladi? Suv tuproqni to‘liq ho‘llaydi. Suvning sirt taranglik koeffitsiyenti 73 mN/m.",
+   "options": [
+    "20",
+    "10",
+    "80",
+    "40"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 15,
+   "type": "mcq",
+   "text": "Agar rezistorning qarshiligi R = 6 Om va undan o‘tayotgan tok kuchi I = 2 A bo‘lsa, B va A nuqtalardagi potensiallar farqi φB − φA ni (V) aniqlang.",
+   "image": "assets/images/test-2/q15.png",
+   "options": [
+    "12",
+    "8",
+    "−12",
+    "−8"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 16,
+   "type": "mcq",
+   "text": "Elektr sig‘imlari C₁ = 6 nF, C₂ = 2 nF va C₃ = 4 nF bo‘lgan kondensatorlardan elektr zanjiri tuzilgan. Kondensatorlar C₁ va C₂ o‘zaro parallel, C₃ esa ularga ketma-ket ulanib, o‘zgarmas kuchlanish manbaidan zaryadlangan. Birinchi kondensator olgan elektr zaryadi 12 nC ga teng bo‘lsa, uchinchi kondensatorning elektr zaryadini (nC) toping.",
+   "image": "assets/images/test-2/q16.png",
+   "options": [
+    "2",
+    "4",
+    "8",
+    "16"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 17,
+   "type": "mcq",
+   "text": "Tashqi zanjir ulangandan so‘ng batareya klemmalaridagi potensiallar farqi 18 V ga teng bo‘lgan. Tashqi zanjirning qarshiligi R = 6 Om. Batareyaning EYUKi 30 V bo‘lsa, batareyaning ichki qarshiligini toping.",
+   "options": [
+    "8 Om",
+    "4 Om",
+    "10 Om",
+    "6 Om"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 18,
+   "type": "mcq",
+   "text": "Tarmoqqa parallel ulangan uchta bir xil o‘tkazgichdan iborat zanjirdan t₁ = 40 s vaqt davomida ma’lum miqdorda issiqlik ajraladi. Agar shu o‘tkazgichlar ketma-ket ulansa, qanday t₂ vaqt ichida xuddi shuncha issiqlik miqdori ajraladi?",
+   "options": [
+    "6 minut",
+    "9 minut",
+    "3 minut",
+    "8 minut"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 19,
+   "type": "mcq",
+   "text": "Elektr sxema o‘zaro parallel ulangan 40 Om va 10 Om qarshiliklar va EYUKi 10 V bo‘lgan akkumulyatordan tuzilgan. Umumiy zanjirdagi tok I = 1 A. Akkumulyatorning qisqa tutashuv tokini aniqlang.",
+   "options": [
+    "5 A",
+    "8 A",
+    "6 A",
+    "2 A"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 20,
+   "type": "mcq",
+   "text": "Tinch holatdan 500 V potensiallar farqini o‘tgan 2 μC zaryadning kinetik energiyasini toping.",
+   "options": [
+    "2 mJ",
+    "4 mJ",
+    "9 mJ",
+    "1 mJ"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 21,
+   "type": "mcq",
+   "text": "20 ta parallel ulangan kondensatorlar batareyasini zaryadlashda 10 J issiqlik miqdori ajraldi. Har bir kondensatorning sig‘imi 4 μF bo‘lsa, kondensatorlardagi kuchlanishni aniqlang.",
+   "options": [
+    "450 V",
+    "500 V",
+    "240 V",
+    "650 V"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 22,
+   "type": "mcq",
+   "text": "Sig‘imi 1 μF bo‘lgan kondensator 50 Hz chastotali o‘zgaruvchan tok zanjiriga ulangan. Kondensatorning sig‘im qarshiligini aniqlang.",
+   "options": [
+    "3,2 kOm",
+    "4,5 Om",
+    "1,5 kOm",
+    "2,2 Om"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 23,
+   "type": "mcq",
+   "text": "B = 2 · 10⁻² T induksiyali magnit maydonga perpendikulyar joylashgan l = 0,5 m uzunlikdagi to‘g‘ri o‘tkazgichga F = 0,15 N kuch ta’sir qiladi. O‘tkazgich orqali o‘tayotgan tok kuchini toping.",
+   "options": [
+    "15 A",
+    "10 A",
+    "5 A",
+    "25 A"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 24,
+   "type": "mcq",
+   "text": "O‘zgaruvchan tok zanjiriga 40 Om aktiv qarshilik ulangan, tok kuchining ta’sir etuvchi qiymati 5 A ga teng. Zanjirdagi kuchlanishning maksimal qiymatini aniqlang.",
+   "options": [
+    "425 V",
+    "324 V",
+    "283 V",
+    "182 V"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 25,
+   "type": "mcq",
+   "text": "Matematik mayatnik ipining uzunligi 5 sm ga kamayganda chastotasi 1,5 marta ortgan bo‘lsa, mayatnik ipining dastlabki uzunligini toping.",
+   "options": [
+    "3 sm",
+    "7 sm",
+    "11 sm",
+    "9 sm"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 26,
+   "type": "mcq",
+   "text": "Transformatsiya koeffitsiyenti 8 ga teng bo‘lgan pasaytiruvchi transformatorning birinchi chulg‘ami 220 V kuchlanish tarmog‘iga ulangan. Ikkinchi o‘ram qarshiligi 2 Om, undagi tok kuchi 3 A. Ikkinchi o‘ram qisqichlaridagi kuchlanishni aniqlang.",
+   "options": [
+    "15,5 V",
+    "19,5 V",
+    "27,5 V",
+    "11,5 V"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 27,
+   "type": "mcq",
+   "text": "Fokus masofasi 12 sm bo‘lgan linza buyumning 3 marta kichiklashgan haqiqiy tasvirini beradi. Bu linza o‘rniga boshqa linza kiritilganda buyumning 3 marta kattalashgan tasviri hosil bo‘ldi. Bu linzaning fokus masofasini aniqlang.",
+   "options": [
+    "24 sm",
+    "36 sm",
+    "45 sm",
+    "32 sm"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 28,
+   "type": "mcq",
+   "text": "Predmetdan yig‘uvchi linzagacha bo‘lgan masofa linzaning fokus masofasidan n = 5 marta ortiq. Tasvir predmetdan necha marta kichik bo‘ladi?",
+   "options": [
+    "5",
+    "3",
+    "4",
+    "6"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 29,
+   "type": "mcq",
+   "text": "Metall sirtiga tushayotgan fotonlarning energiyasi 7,8 · 10⁻¹⁹ J, bu metalldan elektronning chiqish ishi 3 · 10⁻¹⁹ J. Elektronlarni tormozlovchi kuchlanishni aniqlang.",
+   "options": [
+    "5 V",
+    "3 V",
+    "2 V",
+    "1 V"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 30,
+   "type": "mcq",
+   "text": "Agar elektronlarning metall sirtidan chiqish ishi 6 · 10⁻¹⁹ J, urib chiqarilgan fotoelektronlarning maksimal kinetik energiyasi 6 · 10⁻²⁰ J bo‘lsa, metall sirtiga tushayotgan yorug‘likning to‘lqin uzunligini (nm) aniqlang. Plank doimiysi 6,6 · 10⁻³⁴ J·s.",
+   "options": [
+    "200",
+    "300",
+    "100",
+    "400"
+   ],
+   "answer": "B"
+  },
+  {
+   "n": 31,
+   "type": "mcq",
+   "text": "Agar yorug‘lik fotonining impulsi 1,1 · 10⁻²⁷ kg·m/s bo‘lsa, shu yorug‘likning to‘lqin uzunligi (nm) qanday? Plank doimiysi 6,6 · 10⁻³⁴ J·s.",
+   "options": [
+    "200",
+    "300",
+    "600",
+    "500"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 32,
+   "type": "mcq",
+   "text": "Quyidagi reaksiyada noma’lum X zarrani aniqlang:",
+   "reaction": "X + ¹²₆C → ⁴₂He + ¹₀n + ³⁴₁₇Cl",
+   "options": [
+    "⁹¹₃₆Kr",
+    "¹²₆C",
+    "³⁴₁₇Cl",
+    "²⁷₁₃Al"
+   ],
+   "answer": "D"
+  },
+  {
+   "n": 33,
+   "type": "mcq",
+   "text": "Grafikda berilgan 2 → 3 o‘tishda gazga 40 kJ issiqlik miqdori berilganda gazning ichki energiyasi qanchaga (kJ) o‘zgarishini aniqlang.",
+   "note": "Topshiriqlar (33–35) va javob variantlari (A–F) ni o‘zaro to‘g‘ri moslashtiring. Rasmda bir atomli ideal gaz ustida 1 → 2 → 3 o‘tishlar tasvirlangan.",
+   "image": "assets/images/test-2/q33.png",
+   "options": [
+    "24",
+    "400",
+    "10",
+    "36",
+    "16",
+    "800"
+   ],
+   "answer": "A"
+  },
+  {
+   "n": 34,
+   "type": "mcq",
+   "text": "1–2 o‘tishda gazga 10 kJ issiqlik miqdori berilgani ma’lum bo‘lsa, ichki energiya o‘zgarishini (kJ) aniqlang.",
+   "note": "Topshiriqlar (33–35) va javob variantlari (A–F) ni o‘zaro to‘g‘ri moslashtiring. Rasmda bir atomli ideal gaz ustida 1 → 2 → 3 o‘tishlar tasvirlangan.",
+   "image": "assets/images/test-2/q33.png",
+   "options": [
+    "24",
+    "400",
+    "10",
+    "36",
+    "16",
+    "800"
+   ],
+   "answer": "C"
+  },
+  {
+   "n": 35,
+   "type": "mcq",
+   "text": "1-nuqtada temperatura T₁ = 400 K, P₂ = 2P₁ = 20 kPa bo‘lsa, 2-nuqtadagi temperaturani (K) aniqlang.",
+   "note": "Topshiriqlar (33–35) va javob variantlari (A–F) ni o‘zaro to‘g‘ri moslashtiring. Rasmda bir atomli ideal gaz ustida 1 → 2 → 3 o‘tishlar tasvirlangan.",
+   "image": "assets/images/test-2/q35.png",
+   "options": [
+    "24",
+    "400",
+    "10",
+    "36",
+    "16",
+    "800"
+   ],
+   "answer": "F"
+  },
+  {
+   "n": 36,
+   "type": "open2",
+   "text": "Jism 320 m balandlikdan erkin qo‘yib yuborildi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Tushish vaqtini aniqlang.",
+     "answer": 8,
+     "unit": "s"
+    },
+    {
+     "key": "b",
+     "text": "Tashlangandan 5 s o‘tgan ondagi jismning erishgan tezligini aniqlang.",
+     "answer": 50,
+     "unit": "m/s"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "type": "open2",
+   "text": "Bikirligi 500 N/m bo‘lgan prujina lift shiftiga mahkamlanib, 2 kg massali jism ilingan.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Sistema yuqoriga 5 m/s² tezlanish bilan harakatlansa, prujina qanchaga cho‘ziladi?",
+     "answer": 6,
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Sistema pastga tomon 5 m/s tezlik bilan harakatlanib tushsa, prujina qanchaga deformatsiyalanadi?",
+     "answer": 4,
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "type": "open2",
+   "text": "Gorizontal sirtda yotgan ikki jism rasmda ko‘rsatilgandek birlashtirilgan. Jismlar va sirt orasidagi ishqalanish koeffitsiyenti bir xil, 0,4 ga teng.",
+   "image": "assets/images/test-2/q38.png",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Sistema olgan tezlanishni aniqlang.",
+     "answer": 8,
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "Jismlarni birlashtirib turuvchi ipning taranglik kuchini aniqlang.",
+     "answer": 96,
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "type": "open2",
+   "text": "Izobarik jarayonda bir atomli ideal gazga 10 kJ issiqlik miqdori berildi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Ichki energiya o‘zgarishini aniqlang.",
+     "answer": 6,
+     "unit": "kJ"
+    },
+    {
+     "key": "b",
+     "text": "Tashqi kuchlar gaz ustida bajargan ishni aniqlang.",
+     "answer": -4,
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "type": "open2",
+   "text": "Massalari 5 kg dan bo‘lgan ikki jism bir yo‘nalishda 3 m/s va 5 m/s tezliklar bilan harakatlanib bormoqda. Jismlar noelastik to‘qnashib, birga harakatlanadi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "To‘qnashuvdan so‘ng sistema olgan tezligini aniqlang.",
+     "answer": 4,
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "To‘qnashuvdan so‘ng jismlar sistemasining kinetik energiyasini aniqlang.",
+     "answer": 80,
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "type": "open2",
+   "text": "Chizmada keltirilgan 11 Om qarshilikka ega bo‘lgan rezistor EYUKi 26 V bo‘lgan manbaga ulangan. Agar rezistordan 2 A tok oqib o‘tgani ma’lum bo‘lsa:",
+   "image": "assets/images/test-2/q41.png",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Manbaning ichki qarshiligini aniqlang.",
+     "answer": 2,
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "Qisqa tutashuv tokini aniqlang.",
+     "answer": 13,
+     "unit": "A"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "type": "open2",
+   "text": "Aktiv qarshiligi 5 Om, induktiv qarshiligi 20 Om va sig‘im qarshiligi 8 Om bo‘lgan qarshiliklar o‘zaro ketma-ket ulangan holda zanjir tuzilgan.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Zanjirning umumiy qarshiligini toping.",
+     "answer": 13,
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "Agar aktiv qarshilik 0 bo‘lsa, umumiy qarshilik qanday bo‘lishini aniqlang.",
+     "answer": 12,
+     "unit": "Ω"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "type": "open2",
+   "text": "Fokus masofasi F = 6 sm bo‘lgan yig‘uvchi linzaning bosh optik o‘qidan d = 4 sm masofada nuqtaviy yorug‘lik manbai turibdi. Linzaning boshqa tomonida manbaning haqiqiy tasviri linzadan f = 12 sm masofada hosil qilindi.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Linzaning kattalashtirishini aniqlang (|m|).",
+     "answer": 1,
+     "unit": ""
+    },
+    {
+     "key": "b",
+     "text": "Yorug‘lik manbai va linza orasidagi masofani aniqlang.",
+     "answer": 12,
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "type": "open2",
+   "text": "Yig‘uvchi linzaning fokus masofasi F = 10 sm, predmet fokusdan l = 5 sm uzoqda turibdi. Predmetning chiziqli o‘lchamlari h = 2 sm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Haqiqiy tasvir hosil bo‘lganda uning balandligi H ni aniqlang.",
+     "answer": 4,
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Tasvir mavhum bo‘lsa, uning balandligi H ni aniqlang.",
+     "answer": 4,
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "type": "open2",
+   "text": "Sirtdagi yorug‘lik energiyasi oqimining zichligi 9 kW/m².",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Sirt yorug‘likni to‘la qaytargan holda yorug‘likning bosimini aniqlang.",
+     "answer": 60,
+     "unit": "μPa"
+    },
+    {
+     "key": "b",
+     "text": "Sirt yorug‘likni to‘la yutgan holda yorug‘likning bosimini aniqlang.",
+     "answer": 30,
+     "unit": "μPa"
+    }
+   ]
+  }
+ ]
+}

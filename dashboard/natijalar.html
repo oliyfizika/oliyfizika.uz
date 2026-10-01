@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Mening natijalarim | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/home.css">
+<link rel="stylesheet" href="../assets/css/natijalar.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/results/results-page.js"></script>
+</head>
+<body class="of-ui" data-shell-title="Mening natijalarim">
+<div class="of-page of-container of-res" id="resultsPage">
+
+  <header class="of-res-head">
+    <div>
+      <h1>Mening natijalarim</h1>
+      <p class="of-muted" data-res-greeting>O‘qish natijalaringiz, testlar va yutuqlar bir joyda.</p>
+    </div>
+  </header>
+
+  <!-- Qisqa ko'rsatkichlar -->
+  <section aria-labelledby="resSummaryTitle">
+    <h2 class="of-sr-only" id="resSummaryTitle">Umumiy ko‘rsatkichlar</h2>
+    <ul class="of-res-summary" data-summary aria-busy="true">
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--blue" data-icon="chart"></span><span class="of-stat__value of-num" data-sum="overall"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Umumiy progress</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--green" data-icon="book"></span><span class="of-stat__value of-num" data-sum="topics"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Tugatilgan mavzular</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--blue" data-icon="clipboard"></span><span class="of-stat__value of-num" data-sum="tests"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Topshirilgan testlar</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--orange" data-icon="bolt"></span><span class="of-stat__value of-num" data-sum="xp"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">To‘plangan XP</span></li>
+      <li class="of-stat of-res-level"><span class="of-stat__icon of-stat__icon--purple" data-icon="medal"></span><span class="of-stat__value of-num" data-sum="level"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label" data-level-label>Daraja</span><span class="of-res-level__bar" data-level-bar></span></li>
+    </ul>
+  </section>
+
+  <!-- Kurslarim -->
+  <section class="of-home-section" aria-labelledby="resCoursesTitle">
+    <div class="of-section-title"><h2 id="resCoursesTitle">Kurslarim</h2><span class="of-subtle">Umumiy fizika</span></div>
+    <ul class="of-course-list of-res-courses" data-courses aria-busy="true">
+      <li class="of-card of-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="margin-top:14px"></span></li>
+      <li class="of-card of-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="margin-top:14px"></span></li>
+      <li class="of-card of-course"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="margin-top:14px"></span></li>
+    </ul>
+  </section>
+
+  <!-- Yutuqlar + oxirgi faoliyat -->
+  <div class="of-res-split">
+    <section class="of-home-section" aria-labelledby="resAchTitle">
+      <div class="of-section-title"><h2 id="resAchTitle">Yutuqlarim</h2><span class="of-subtle" data-ach-count></span></div>
+      <ul class="of-ach-grid" data-achievements aria-busy="true"></ul>
+    </section>
+    <section class="of-home-section" aria-labelledby="resActTitle" data-activity-wrap hidden>
+      <div class="of-section-title"><h2 id="resActTitle">Oxirgi faoliyat</h2></div>
+      <div class="of-card of-card--pad of-activity" data-activity></div>
+    </section>
+  </div>
+
+  <!-- Test natijalari -->
+  <section class="of-home-section" id="test-natijalari" aria-labelledby="resTestsTitle">
+    <div class="of-section-title"><h2 id="resTestsTitle">Test natijalari</h2><span class="of-subtle" data-tests-count aria-live="polite"></span></div>
+    <div class="of-card of-res-tests" data-tests-card>
+      <div class="of-res-filters" data-filters hidden>
+        <label class="of-res-filter">
+          <span class="of-sr-only">Kurs bo‘yicha saralash</span>
+          <select class="of-input" data-filter-course>
+            <option value="">Barcha kurslar</option>
+          </select>
+        </label>
+        <div class="of-segment" role="group" aria-label="Holat bo‘yicha saralash" data-filter-status>
+          <button type="button" data-value="" aria-pressed="true">Barchasi</button>
+          <button type="button" data-value="passed" aria-pressed="false">O‘tgan</button>
+          <button type="button" data-value="failed" aria-pressed="false">O‘tmagan</button>
+        </div>
+      </div>
+      <div data-tests aria-busy="true"><div class="of-stack" style="padding:16px"><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text"></span><span class="of-skeleton of-skeleton--text" style="width:60%"></span></div></div>
+      <div class="of-res-more" data-more-wrap hidden><button type="button" class="of-btn" data-more>Ko‘proq ko‘rsatish</button></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

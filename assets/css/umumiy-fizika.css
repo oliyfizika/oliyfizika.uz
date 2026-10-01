@@ -1,0 +1,198 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Umumiy fizika bo'limi (bosh sahifa + 5 ta kurs sahifasi)
+   Faqat dizayn tizimi tokenlari va komponentlari ustiga quriladi.
+   ========================================================================== */
+
+.of-uf { display: flex; flex-direction: column; gap: 24px; }
+
+/* ------------------------------------------------------------ Bo'lim sarlavhasi */
+.of-uf-hero {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 24px; align-items: center;
+  padding: 26px 28px;
+  position: relative; overflow: hidden;
+}
+.of-uf-hero::after {
+  /* nozik orbital motiv */
+  content: ""; position: absolute; right: -70px; top: -90px; width: 260px; height: 260px;
+  border: 1px dashed var(--of-primary-soft-2); border-radius: 50%; pointer-events: none;
+}
+.of-uf-hero__text { display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
+.of-uf-hero__eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--of-primary-text); font: 700 0.76rem/1 var(--of-font-sans); letter-spacing: 0.05em; text-transform: uppercase; }
+.of-uf-hero__eyebrow svg { width: 16px; height: 16px; }
+.of-uf-hero__text p { color: var(--of-text-2); line-height: 1.6; max-width: 60ch; }
+.of-uf-hero__side { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; padding: 18px; border: 1px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface-2); }
+.of-uf-hero__side[hidden] { display: none; }
+.of-uf-metric { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.of-uf-metric strong { font: 800 1.8rem/1 var(--of-font-display); color: var(--of-primary-text); }
+.of-uf-metric span { color: var(--of-text-2); font-size: var(--of-text-sm); }
+.of-uf-hero__side .of-btn { align-self: flex-start; }
+.of-uf-hero__side p { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.5; }
+
+/* ------------------------------------------------------------ Kurs kartalari (bo'lim bosh sahifasi) */
+.of-uf-courses { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.of-uf-courses > li { display: flex; min-width: 0; }
+.of-uf-courses > li[hidden] { display: none !important; }
+.of-uf-courses > li.is-pending { opacity: 0; }
+.of-uf-course {
+  flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 18px;
+  transition: box-shadow var(--of-dur-base), border-color var(--of-dur-base), transform var(--of-dur-base) var(--of-ease-out);
+}
+.of-uf-course:hover { box-shadow: var(--of-shadow-md); border-color: var(--of-primary-soft-2); }
+.of-uf-course__head { display: flex; align-items: flex-start; gap: 12px; }
+.of-uf-course__icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 13px; background: var(--of-primary-soft); color: var(--of-primary); flex: none; }
+.of-uf-course__icon svg { width: 24px; height: 24px; }
+.of-uf-course[data-status="done"] .of-uf-course__icon { background: var(--of-success-soft); color: var(--of-success); }
+.of-uf-course__title { font: 750 var(--of-text-lg)/1.25 var(--of-font-display); }
+.of-uf-course__title a { color: var(--of-text); }
+.of-uf-course__title a:hover { color: var(--of-primary); }
+.of-uf-course__head .of-badge { margin-left: auto; flex: none; }
+.of-uf-course__desc { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; flex: 1; }
+.of-uf-course__stats { display: flex; justify-content: space-between; gap: 8px; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.of-uf-course__stats b { color: var(--of-text); }
+.of-uf-course__bar { display: flex; align-items: center; gap: 10px; }
+.of-uf-course__bar .of-progress { flex: 1; }
+.of-uf-course__bar > span { font: 700 var(--of-text-sm)/1 var(--of-font-sans); min-width: 3.5ch; text-align: right; }
+.of-uf-course__foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.of-uf-course__foot .of-btn { min-height: 40px; }
+.of-uf-course[data-status="done"] .of-progress > span { background: var(--of-success); }
+.of-uf-locknote { display: inline-flex; align-items: center; gap: 6px; color: var(--of-text-3); font-size: var(--of-text-xs); line-height: 1.4; }
+.of-uf-locknote svg { width: 14px; height: 14px; flex: none; }
+
+/* Qidiruv natijalari (mavzular) */
+.of-uf-results { display: flex; flex-direction: column; gap: 10px; }
+.of-uf-results[hidden] { display: none; }
+.of-uf-results h2 { font-size: var(--of-text-md) !important; }
+.of-uf-results ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.of-uf-results a {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface);
+  color: var(--of-text); text-decoration: none !important; font-size: var(--of-text-sm);
+}
+.of-uf-results a:hover { border-color: var(--of-primary-soft-2); background: var(--of-primary-soft); }
+.of-uf-results a small { margin-left: auto; color: var(--of-text-3); font-size: var(--of-text-xs); white-space: nowrap; }
+.of-uf-results a b { color: var(--of-primary-text); white-space: nowrap; }
+
+/* ------------------------------------------------------------ Kurs sahifasi */
+.of-cp-hero { display: flex; flex-direction: column; gap: 16px; padding: 22px 24px; }
+.of-cp-hero__top { display: flex; align-items: flex-start; gap: 16px; }
+.of-cp-hero__icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 15px; background: var(--of-primary-soft); color: var(--of-primary); flex: none; }
+.of-cp-hero__icon svg { width: 28px; height: 28px; }
+.of-cp-hero__text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.of-cp-hero__text p { color: var(--of-text-2); line-height: 1.55; }
+.of-cp-hero__progress { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 16px; }
+.of-cp-hero__progress .of-progress { grid-column: 1 / -1; }
+.of-cp-hero__progress p { color: var(--of-text-2); font-size: var(--of-text-sm); }
+.of-cp-hero__progress strong { font: 800 1.35rem/1 var(--of-font-display); color: var(--of-primary-text); }
+.of-cp-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.of-cp-hero__actions p { color: var(--of-text-3); font-size: var(--of-text-sm); }
+
+/* Kurslar orasida navigatsiya */
+.of-cp-switch { display: flex; align-items: center; gap: 8px; }
+.of-cp-switch__list { display: flex; gap: 6px; margin: 0; padding: 4px; list-style: none; border-radius: var(--of-radius-md); background: var(--of-surface-sunken); overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+.of-cp-switch__list::-webkit-scrollbar { display: none; }
+.of-cp-switch__list a {
+  display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px;
+  border-radius: var(--of-radius-sm); color: var(--of-text-2); font: 600 var(--of-text-sm)/1 var(--of-font-sans);
+  white-space: nowrap; text-decoration: none !important;
+}
+.of-cp-switch__list a svg { width: 16px; height: 16px; }
+.of-cp-switch__list a:hover { color: var(--of-text); background: color-mix(in srgb, var(--of-surface) 60%, transparent); }
+.of-cp-switch__list a[aria-current="page"] { background: var(--of-surface); color: var(--of-primary-text); box-shadow: var(--of-shadow-sm); }
+.of-cp-switch__arrow { flex: none; }
+.of-cp-switch__arrow[aria-disabled="true"] { visibility: hidden; }
+
+/* Mavzular ro'yxati */
+.of-cp-lessons { display: flex; flex-direction: column; gap: 12px; }
+.of-cp-lessons > .of-section-title { margin-bottom: 0; }
+.of-cp-chapter { border: 1px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface); overflow: hidden; }
+.of-cp-chapter > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; cursor: pointer; list-style: none; font-weight: 700; }
+.of-cp-chapter > summary::-webkit-details-marker { display: none; }
+.of-cp-chapter > .of-lesson-list { padding: 0 10px 10px; }
+
+.of-lesson-list { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.of-lesson {
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface);
+  transition: border-color var(--of-dur-base), box-shadow var(--of-dur-base);
+  scroll-margin-top: calc(var(--of-header-h) + 16px);
+}
+.of-lesson[hidden] { display: none !important; }
+.of-lesson.is-pending { opacity: 0; }
+.of-lesson[data-state="current"] { border-color: color-mix(in srgb, var(--of-primary) 45%, var(--of-border)); box-shadow: 0 0 0 3px var(--of-primary-soft); }
+.of-lesson.is-target { box-shadow: 0 0 0 3px color-mix(in srgb, var(--of-success) 35%, transparent); }
+.of-lesson:focus { outline: none; }
+.of-lesson:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.of-lesson__row { display: flex; align-items: center; gap: 14px; padding: 12px 14px; }
+.of-lesson__num {
+  flex: none; display: grid; place-items: center; min-width: 44px; height: 44px; padding: 0 6px;
+  border-radius: 12px; background: var(--of-surface-sunken); color: var(--of-text-2);
+  font: 800 0.95rem/1 var(--of-font-display); font-variant-numeric: tabular-nums;
+}
+.of-lesson[data-state="done"] .of-lesson__num { background: var(--of-success-soft); color: var(--of-success-text); }
+.of-lesson[data-state="current"] .of-lesson__num { background: var(--of-primary-solid); color: #fff; }
+.of-lesson[data-state="available"] .of-lesson__num { background: var(--of-primary-soft); color: var(--of-primary-text); }
+.of-lesson__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.of-lesson__title { font: 650 var(--of-text-md)/1.35 var(--of-font-sans) !important; color: var(--of-text); letter-spacing: normal !important; overflow-wrap: anywhere; }
+.of-lesson[data-state="locked"] .of-lesson__title { color: var(--of-text-2); }
+.of-lesson__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.of-lesson__status { display: inline-flex; align-items: center; gap: 4px; }
+.of-lesson__status svg { width: 14px; height: 14px; flex: none; }
+.of-lesson[data-state="done"] .of-lesson__status { color: var(--of-success-text); }
+.of-lesson[data-state="current"] .of-lesson__status { color: var(--of-primary-text); }
+.of-lesson__action { flex: none; min-width: 124px; }
+.of-lesson__action svg { transition: transform var(--of-dur-base) var(--of-ease-out); }
+.of-lesson__action[aria-expanded="true"] svg { transform: rotate(180deg); }
+.of-lesson__lock { flex: none; display: grid; place-items: center; width: 40px; height: 40px; color: var(--of-text-3); }
+.of-lesson__lock svg { width: 18px; height: 18px; }
+
+.of-lesson__panel { padding: 0 14px 14px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.of-lesson__panel[hidden] { display: none; }
+.of-lesson__panel.is-opening { animation: of-slide-up var(--of-dur-slow) var(--of-ease-out); }
+.of-video { position: relative; aspect-ratio: 16 / 9; border-radius: var(--of-radius-md); overflow: hidden; background: var(--of-slate-900); }
+.of-video iframe, .of-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.of-video__poster { display: block; padding: 0; cursor: pointer; background: var(--of-slate-900); }
+.of-video__poster img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: opacity var(--of-dur-base); }
+.of-video__poster:hover img { opacity: 1; }
+.of-video__play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  background: rgb(255 255 255 / 0.92); color: var(--of-blue-700); box-shadow: var(--of-shadow-lg);
+  transition: transform var(--of-dur-base) var(--of-ease-out);
+}
+.of-video__poster:hover .of-video__play, .of-video__poster:focus-visible .of-video__play { transform: translate(-50%, -50%) scale(1.06); }
+.of-video__play svg { width: 26px; height: 26px; margin-left: 3px; fill: currentColor; }
+.of-lesson__side { display: flex; flex-direction: column; gap: 10px; }
+.of-lesson__side h4 { font: 700 var(--of-text-sm)/1.3 var(--of-font-sans) !important; letter-spacing: normal !important; }
+.of-lesson__side p { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+.of-lesson__side .of-btn { align-self: flex-start; }
+.of-lesson__note { display: flex; gap: 8px; align-items: flex-start; padding: 10px 12px; border-radius: var(--of-radius-md); background: var(--of-warning-soft); color: var(--of-warning-text); font-size: var(--of-text-sm); line-height: 1.45; }
+.of-lesson__note svg { width: 16px; height: 16px; flex: none; margin-top: 2px; }
+.of-lesson__locked { display: flex; gap: 8px; align-items: center; padding: 0 14px 12px 72px; color: var(--of-text-3); font-size: var(--of-text-xs); }
+
+/* ------------------------------------------------------------ Moslashuvchanlik */
+@media (max-width: 1279px) {
+  .of-uf-courses { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1023px) {
+  .of-uf-hero { grid-template-columns: 1fr; }
+  .of-lesson__panel { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .of-uf { gap: 18px; }
+  .of-uf-hero, .of-cp-hero { padding: 18px 16px; }
+  .of-uf-courses { grid-template-columns: 1fr; gap: 10px; }
+  .of-uf-course__foot .of-btn, .of-uf-hero__side .of-btn, .of-cp-hero__actions .of-btn { width: 100%; min-height: 44px; }
+  .of-cp-hero__top { gap: 12px; }
+  .of-cp-hero__icon { width: 44px; height: 44px; }
+  .of-cp-switch__arrow { display: none; }
+  .of-lesson__row { flex-wrap: wrap; gap: 10px 12px; padding: 12px; }
+  .of-lesson__num { min-width: 40px; height: 40px; }
+  .of-lesson__main { flex: 1 1 calc(100% - 64px); }
+  .of-lesson__action { flex: 1 1 100%; min-height: 44px; }
+  .of-lesson__lock { display: none; }
+  .of-lesson__panel { padding: 0 12px 12px; }
+  .of-lesson__side .of-btn { width: 100%; min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .of-uf-courses > li.is-pending, .of-lesson.is-pending { opacity: 1; }
+}

@@ -1,0 +1,301 @@
+{
+  "_izoh": "Kutubxona katalogi. Barcha yozuvlar kutubxona/*.html sahifalaridagi mavjud kartalardan avtomatik olingan (nom, muallif/yil, tavsif, URL o'zgartirilmagan). Fayllar Google Drive'da; bu yerda faqat metama'lumot. Turi: Drive 'file/d/.../view' havolalari sahifada 'PDF ochish' deb berilgan; prezentatsiyalar docs.google.com/presentation ... rtpof=true (Drive'dagi Office fayli).",
+  "categories": [
+    {
+      "id": "darsliklar",
+      "title": "Darsliklar",
+      "href": "darsliklar.html",
+      "description": "Fizika fanidan elektron darsliklar"
+    },
+    {
+      "id": "maruzalar",
+      "title": "Ma’ruzalar",
+      "href": "maruzalar.html",
+      "description": "Fizika fanidan ma'ruza materiallari uchun o'quv qo'llanmalar"
+    },
+    {
+      "id": "masalalar",
+      "title": "Masalalar to‘plami",
+      "href": "masalalar.html",
+      "description": "Fizika fanidan masalalar uchun o'quv qo'llanmalar"
+    },
+    {
+      "id": "laboratoriya",
+      "title": "Laboratoriya ishlari",
+      "href": "laboratoriya.html",
+      "description": "Fizika fanidan laboratoriya mashg'ulotlari uchun o'quv qo'llanmalar"
+    },
+    {
+      "id": "prezentatsiyalar",
+      "title": "Prezentatsiyalar",
+      "href": "prezentatsiyalar.html",
+      "description": "Fizika fanidan prezentatsiyalar uchun materiallar"
+    }
+  ],
+  "resources": [
+    {
+      "id": "darsliklar-1",
+      "category": "darsliklar",
+      "title": "7-sinf Fizika",
+      "byline": "2022-yil nashri",
+      "description": "7-sinf o'quvchilari uchun fizika darsligi.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1Hb2OiqwttjL8lB2rjmKQ54QSHYD2OurA/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "darsliklar-2",
+      "category": "darsliklar",
+      "title": "8-sinf Fizika",
+      "byline": "2019-yil nashri",
+      "description": "8-sinf o'quvchilari uchun fizika darsligi.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1wIZKcZf8YGm4wsnFpUQmtsdM8mlHfLHK/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "darsliklar-3",
+      "category": "darsliklar",
+      "title": "9-sinf Fizika",
+      "byline": "2019-yil nashri",
+      "description": "9-sinf o'quvchilari uchun fizika darsligi.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1f7fq65ypKfxIF8og_ytGszU2WBag4EY6/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "darsliklar-4",
+      "category": "darsliklar",
+      "title": "10-sinf Fizika",
+      "byline": "2022-yil nashri",
+      "description": "10-sinf o'quvchilari uchun fizika darsligi.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1FgZTtYv3IhCULuGI0FVfb0qLtbUQptPO/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "darsliklar-5",
+      "category": "darsliklar",
+      "title": "11-sinf Fizika",
+      "byline": "2017-yil nashri",
+      "description": "11-sinf o'quvchilari uchun fizika darsligi.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1WzRW3bJtWM9jNJ2uOtdKNJnzGBHZ0O_S/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-1",
+      "category": "maruzalar",
+      "title": "Atom fizikasi",
+      "byline": "Axmedova G.",
+      "description": "Atom tuzilishi, atom modellari va atom hodisalari bo'yicha ma'ruzalar.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1ls1Co5wpS9m91ibnyZLiByvp4Svtb7v6/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-2",
+      "category": "maruzalar",
+      "title": "Atom fizikasi",
+      "byline": "E. V. Shpolskiy",
+      "description": "Atom fizikasi va kvant nazariyasining asoslari bo'yicha klassik qo'llanma.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1zaB8f2jWzCWOKSQlQVEWkE-pCReeTzKX/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-3",
+      "category": "maruzalar",
+      "title": "Nazariy mexanika",
+      "byline": "Fayzullayev B.",
+      "description": "Klassik mexanika va harakat qonunlari bo'yicha ma'ruza materiallari.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1NiNHvGCCIiyREoPlM3bQ1a4CHS32TRVR/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-4",
+      "category": "maruzalar",
+      "title": "Elektr va magnetizm",
+      "byline": "Kalashnikov",
+      "description": "Elektr maydoni, magnit maydoni va elektromagnit hodisalar.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1zbqYjlz7fTD8Qm0nH5XoD-NLHt8bP6FM/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-5",
+      "category": "maruzalar",
+      "title": "Molekulyar fizika va termodinamika",
+      "byline": "Kikoin",
+      "description": "Molekulyar fizika, gazlar nazariyasi va termodinamika qonunlari.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1yfKAMbf_FjBXtOcK29p6mrmIraQ3z1n_/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-6",
+      "category": "maruzalar",
+      "title": "Optika",
+      "byline": "Landsberg",
+      "description": "Yorug'lik hodisalari, interferensiya, difraksiya va optik tizimlar.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1ERYWomh41OkzK_UXmHdd0itPft-TXdPZ/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-7",
+      "category": "maruzalar",
+      "title": "Yadro fizikasi",
+      "byline": "Rahim Bekjonov",
+      "description": "Atom yadrosi, radioaktivlik va yadro reaksiyalari bo'yicha ma'ruzalar.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/10ADrVKiYS1P2WuwWLELR9B_0tkbl44gN/view?usp=sharing",
+      "host": "Google Drive"
+    },
+    {
+      "id": "maruzalar-8",
+      "category": "maruzalar",
+      "title": "Umumiy fizika kursi (3-tom)",
+      "byline": "Savelev I. V.",
+      "description": "Oliy ta'lim uchun umumiy fizika kursining uchinchi qismi.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1m65wYzwcnoPF45Xe02XN_XyurtVceKwI/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "masalalar-1",
+      "category": "masalalar",
+      "title": "Fizikadan masalalar to'plami",
+      "byline": "A. G. Chertov",
+      "description": "Fizikaning turli bo'limlari bo'yicha masalalar va ularning yechimlari jamlangan to'plam.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1NdH6jPwXH_IZkSTGMnAzkG7UBN4PB-KU/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "masalalar-2",
+      "category": "masalalar",
+      "title": "Fizikadan masalalar",
+      "byline": "Chernoutsan",
+      "description": "Fizika fanidan nazariy bilimlarni mustahkamlash uchun masalalar to'plami.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1AadUslE-4N-1t0T4Wm1JViDSSNDSTF_q/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "masalalar-3",
+      "category": "masalalar",
+      "title": "Fizikadan masalalar to'plami",
+      "byline": "Sedrik",
+      "description": "Fizikadan masalalarni bosqichma-bosqich yechish usullari va namunaviy misollar.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1-L6_8Eq226b18-VKzXbbP5B9ezgfVsOU/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "masalalar-4",
+      "category": "masalalar",
+      "title": "Fizikadan masalalar to'plami",
+      "byline": "Volkenshteyn",
+      "description": "Oliy ta'lim muassasalari talabalari uchun fizikadan murakkab masalalar to'plami.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1zyT6Q6e0srtImcx32cN_mKgjRQQyY74E/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "laboratoriya-1",
+      "category": "laboratoriya",
+      "title": "Fizik praktikum",
+      "byline": "Muallif: O'N. Xushvaqtov",
+      "description": "Fizika fanidan laboratoriya ishlarini bajarish, tajribalarni o'tkazish, natijalarni qayta ishlash va hisobot tayyorlash bo'yicha o'quv qo'llanma.",
+      "type": "PDF",
+      "action": "open",
+      "actionLabel": "PDF ochish",
+      "url": "https://drive.google.com/file/d/1LJKLV5veZjYk-8-PRqHz6b_ZoSNdCuxZ/view?usp=drive_link",
+      "host": "Google Drive"
+    },
+    {
+      "id": "prezentatsiyalar-1",
+      "category": "prezentatsiyalar",
+      "title": "Elektromagnit va elektromagnit rele",
+      "byline": "Prezentatsiya",
+      "description": "Elektromagnitlar, ularning ishlash prinsipi va elektromagnit relelar haqida.",
+      "type": "PPTX",
+      "action": "download",
+      "actionLabel": "Yuklab olish",
+      "url": "https://docs.google.com/presentation/d/1nHAVggbEdn5lQdcF_eD4dZYREU9lUel9/edit?usp=drive_link&ouid=118152706405570765784&rtpof=true&sd=true",
+      "host": "Google Drive"
+    },
+    {
+      "id": "prezentatsiyalar-2",
+      "category": "prezentatsiyalar",
+      "title": "Kvazarlar",
+      "byline": "Prezentatsiya",
+      "description": "Kvazarlar, ularning tuzilishi va astronomiyadagi ahamiyati.",
+      "type": "PPTX",
+      "action": "download",
+      "actionLabel": "Yuklab olish",
+      "url": "https://docs.google.com/presentation/d/1beweBkE3oI8KdDQqPOjhKTNfRzb_hxCs/edit?usp=drive_link&ouid=118152706405570765784&rtpof=true&sd=true",
+      "host": "Google Drive"
+    },
+    {
+      "id": "prezentatsiyalar-3",
+      "category": "prezentatsiyalar",
+      "title": "Qizil siljish",
+      "byline": "Prezentatsiya",
+      "description": "Galaktikalarning uzoqlashishi va qizil siljish hodisasi haqida.",
+      "type": "PPTX",
+      "action": "download",
+      "actionLabel": "Yuklab olish",
+      "url": "https://docs.google.com/presentation/d/1N1Zz7CfeJ9mhl2bXfQb7SdBMFHwyLSOr/edit?usp=drive_link&ouid=118152706405570765784&rtpof=true&sd=true",
+      "host": "Google Drive"
+    },
+    {
+      "id": "prezentatsiyalar-4",
+      "category": "prezentatsiyalar",
+      "title": "Maksvel tezliklar taqsimoti",
+      "byline": "Prezentatsiya",
+      "description": "Gaz molekulalarining tezliklar bo'yicha taqsimlanish qonuniyati.",
+      "type": "PPTX",
+      "action": "download",
+      "actionLabel": "Yuklab olish",
+      "url": "https://docs.google.com/presentation/d/1llU8IM7_SaOyrOrW13lgZqYG6taFz3hk/edit?usp=drive_link&ouid=118152706405570765784&rtpof=true&sd=true",
+      "host": "Google Drive"
+    }
+  ]
+}

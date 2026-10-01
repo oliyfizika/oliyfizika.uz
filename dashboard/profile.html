@@ -3,70 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Profil | OliyFizika.uz</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="dashboard.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/account.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/account/profile-page.js"></script>
 </head>
-<body>
+<body class="of-ui" data-shell-title="Profil">
+<div class="of-page of-container of-acc" id="profilePage">
 
-<main class="dashboard-shell">
+  <header class="of-acc-head">
+    <h1>Profil</h1>
+    <p class="of-muted">Hisobingiz haqidagi asosiy ma’lumotlar.</p>
+  </header>
 
-<nav class="dashboard-nav">
-<a class="logo" href="../index.html">Oliy<span>Fizika</span>.uz</a>
+  <div class="of-alert of-alert--error" data-profile-alert role="alert" hidden></div>
 
-<div class="nav-links">
-<a class="btn" href="../index.html">Bosh sahifa</a>
-<a class="btn btn-primary" href="settings.html">Sozlamalar</a>
+  <!-- Profil kartasi -->
+  <section class="of-card of-acc-hero" aria-labelledby="profileName" aria-busy="true" data-profile-hero>
+    <span class="of-acc-avatar" aria-hidden="true" data-profile-avatar><span class="of-skeleton of-skeleton--circle"></span></span>
+    <div class="of-acc-hero__text">
+      <h2 id="profileName" data-profile-name><span class="of-skeleton of-skeleton--title"></span></h2>
+      <p class="of-acc-hero__email" data-profile-email-line><span class="of-skeleton of-skeleton--text"></span></p>
+      <p class="of-acc-badges" data-profile-badges></p>
+    </div>
+    <a class="of-btn of-btn--soft of-acc-hero__edit" href="settings.html#profile"><span data-icon="settings"></span>Tahrirlash</a>
+  </section>
+
+  <div class="of-acc-grid">
+    <!-- Shaxsiy ma'lumotlar -->
+    <section class="of-card of-acc-card" aria-labelledby="profileInfoTitle">
+      <div class="of-acc-card__head">
+        <h2 id="profileInfoTitle">Shaxsiy ma’lumotlar</h2>
+        <a class="of-acc-link" href="settings.html#profile">O‘zgartirish</a>
+      </div>
+      <dl class="of-acc-dl" aria-busy="true" data-profile-info>
+        <div><dt>Ism</dt><dd data-f="firstName"><span class="of-skeleton of-skeleton--text"></span></dd></div>
+        <div><dt>Familiya</dt><dd data-f="lastName"><span class="of-skeleton of-skeleton--text"></span></dd></div>
+        <div><dt>Email</dt><dd data-f="email"><span class="of-skeleton of-skeleton--text"></span></dd></div>
+        <div><dt>Ro‘yxatdan o‘tgan</dt><dd data-f="createdAt"><span class="of-skeleton of-skeleton--text"></span></dd></div>
+        <div><dt>Kirish usuli</dt><dd data-f="method"><span class="of-skeleton of-skeleton--text"></span></dd></div>
+      </dl>
+    </section>
+
+    <!-- O'qish ko'rsatkichlari (users/{uid} dagi mavjud xp va level) -->
+    <section class="of-card of-acc-card" aria-labelledby="profileStatsTitle">
+      <div class="of-acc-card__head">
+        <h2 id="profileStatsTitle">O‘qish ko‘rsatkichlari</h2>
+        <a class="of-acc-link" href="natijalar.html">Natijalarim</a>
+      </div>
+      <ul class="of-acc-stats" aria-busy="true" data-profile-stats>
+        <li><span class="of-acc-stats__icon of-acc-stats__icon--orange" data-icon="bolt"></span><span class="of-acc-stats__value of-num" data-f="xp"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-acc-stats__label">To‘plangan XP</span></li>
+        <li><span class="of-acc-stats__icon of-acc-stats__icon--purple" data-icon="medal"></span><span class="of-acc-stats__value of-num" data-f="level"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-acc-stats__label">Daraja</span></li>
+      </ul>
+    </section>
+
+    <!-- Xavfsizlik -->
+    <section class="of-card of-acc-card" aria-labelledby="profileSecTitle">
+      <div class="of-acc-card__head">
+        <h2 id="profileSecTitle">Xavfsizlik</h2>
+      </div>
+      <p class="of-acc-card__text" data-profile-security><span class="of-skeleton of-skeleton--text"></span></p>
+      <div class="of-acc-actions">
+        <a class="of-btn of-btn--soft" href="settings.html#security" data-profile-pw-link hidden><span data-icon="key"></span>Parolni o‘zgartirish</a>
+        <a class="of-btn of-btn--ghost" href="settings.html"><span data-icon="settings"></span>Sozlamalar</a>
+      </div>
+    </section>
+  </div>
 </div>
-</nav>
-
-<header class="page-header">
-<h1>Profil</h1>
-<p>Hisobingiz ma'lumotlari Firestore dagi shaxsiy profilingizdan olinadi.</p>
-</header>
-
-<section class="panel">
-<div class="profile-grid">
-
-<article class="info-card">
-<div class="info-label">Full Name</div>
-<div class="info-value" id="profileFullName">Yuklanmoqda...</div>
-</article>
-
-<article class="info-card">
-<div class="info-label">Email</div>
-<div class="info-value" id="profileEmail">Yuklanmoqda...</div>
-</article>
-
-<article class="info-card">
-<div class="info-label">Phone</div>
-<div class="info-value" id="profilePhone">Yuklanmoqda...</div>
-</article>
-
-<article class="info-card">
-<div class="info-label">XP</div>
-<div class="info-value" id="profileXp">0</div>
-</article>
-
-<article class="info-card">
-<div class="info-label">Level</div>
-<div class="info-value" id="profileLevel">1</div>
-</article>
-
-<article class="info-card">
-<div class="info-label">Registration Date</div>
-<div class="info-value" id="profileCreatedAt">Yuklanmoqda...</div>
-</article>
-
-</div>
-</section>
-
-<p class="status" id="profileStatus" role="status" aria-live="polite"></p>
-
-</main>
-
-<script type="module" src="../js/profile-page.js"></script>
-
 </body>
 </html>

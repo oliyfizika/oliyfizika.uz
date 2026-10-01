@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mock test | OliyFizika.uz</title>
+<meta name="robots" content="noindex">
+<script src="../../assets/js/core/theme-boot.js"></script>
+<!-- Engine'ning mavzu sozlamasini (oliyfizika:mock:pref:theme) sayt mavzusiga tenglash — engine yuklanishidan oldin -->
+<script src="../../assets/js/milliy-sertifikat/exam-theme-sync.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="css/mock-testlar.css">
+<link rel="stylesheet" href="../../assets/css/mock-exam.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../../assets/js/milliy-sertifikat/exam-page.js"></script>
+</head>
+<!--
+  Mock test sahifasi (OliyFizika 2.0 qobig'ida). TEST ENGINE O'ZGARMAGAN:
+  js/test-engine.js (+ timer, scoring, result, storage, attempt-service, access-gate, session, calculator, formula, dom, theme).
+  Engine ishlatadigan barcha id'lar saqlangan: brandTitle, tools, formulaBtn, calcBtn, mobileNavBtn, timer, themeBtn,
+  loadingScreen, messageScreen, startScreen, examScreen, questionCard, qNumber, qTitle, qMeta, qContent, prevBtn, markBtn,
+  nextBtn, sideBackdrop, side, answerCount, progress, navgrid, finishBtn, resultScreen, formulaModal, formulaBody,
+  calcModal, calcBody, footerSlot. Faqat ko'rinish (CSS) va sahifa darajasidagi qulayliklar (exam-page.js) qo'shilgan.
+-->
+<body class="of-ui of-exam-page" data-shell-title="Mock test" data-shell-public="true">
+  <div class="of-page of-exam">
+    <div class="of-exam-bar" role="toolbar" aria-label="Test asboblari">
+      <a class="of-exam-bar__back" href="./" aria-label="Mock testlar ro‘yxatiga qaytish">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+        <span class="of-exam-bar__text"><span class="of-exam-bar__eyebrow">Mock testlar</span><strong id="brandTitle">Mock test</strong></span>
+      </a>
+      <div class="of-exam-bar__spacer"></div>
+      <div class="header-actions of-exam-bar__actions">
+        <div class="header-actions" id="tools" hidden>
+          <button class="iconbtn" id="formulaBtn" type="button" title="Formula jadvali" aria-label="Formula jadvali"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 5V4H6l6.5 8L6 20h12v-1"/></svg> <span class="label">Formulalar</span></button>
+          <button class="iconbtn" id="calcBtn" type="button" title="Kalkulyator" aria-label="Kalkulyator"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> <span class="label">Kalkulyator</span></button>
+          <button class="iconbtn mobile-nav-toggle" id="mobileNavBtn" type="button" title="Savollar" aria-label="Savollar ro‘yxati" aria-controls="side"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></button>
+          <div class="timer" id="timer" role="timer">03:00:00</div>
+        </div>
+        <!-- Engine mavzu tugmasi (theme.js) — sayt mavzusi qobiq orqali boshqariladi, shuning uchun yashirin -->
+        <button class="iconbtn" id="themeBtn" type="button" hidden tabindex="-1" aria-hidden="true">☀️</button>
+      </div>
+    </div>
+    <p class="of-sr-only" id="timerAnnounce" aria-live="polite"></p>
+
+    <main class="shell">
+      <section id="loadingScreen" class="loading" aria-live="polite"><div class="spinner"></div>Test yuklanmoqda…</section>
+      <section id="messageScreen" hidden></section>
+      <section id="startScreen" hidden></section>
+
+      <section id="examScreen" hidden>
+        <div class="exam-layout">
+          <article class="question-card glass" id="questionCard">
+            <div class="q-head">
+              <div class="q-number" id="qNumber">1</div>
+              <div><div class="q-title" id="qTitle">MOCK TEST</div><div class="q-sub" id="qMeta">1 / 45</div></div>
+            </div>
+            <div id="qContent" aria-live="polite"></div>
+            <div class="q-actions">
+              <div class="group">
+                <button class="btn btn-ghost" id="prevBtn" type="button" aria-label="Oldingi savol">← Oldingi</button>
+                <button class="btn btn-ghost markbtn" id="markBtn" type="button" aria-pressed="false">☆ Belgilash</button>
+              </div>
+              <div class="group"><button class="btn btn-primary" id="nextBtn" type="button">Keyingi →</button></div>
+            </div>
+          </article>
+          <div class="side-backdrop" id="sideBackdrop" hidden></div>
+          <aside class="side glass" id="side" aria-label="Savollar navigatsiyasi">
+            <div class="side-title"><strong>Savollar</strong><span id="answerCount">0 / 45</span></div>
+            <div class="progressbar"><i id="progress"></i></div>
+            <div class="navgrid" id="navgrid"></div>
+            <div class="legend"><span class="la">Javob berilgan</span><span class="lp">Qisman</span><span class="lm">Belgilangan</span><span>Javobsiz</span></div>
+            <button class="btn btn-danger finish" id="finishBtn" type="button">TESTNI YAKUNLASH</button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="result-wrap" hidden tabindex="-1" aria-label="Test natijasi"></section>
+    </main>
+
+    <div id="footerSlot"></div>
+  </div>
+
+  <div class="modal" id="formulaModal" data-static hidden role="dialog" aria-modal="true" aria-labelledby="formulaTitle">
+    <div class="modal-card">
+      <div class="modal-head"><strong id="formulaTitle">Fizika fanidan formula jadvali</strong><button class="closebtn" type="button" data-close="formulaModal" aria-label="Yopish">✕</button></div>
+      <div class="modal-body" id="formulaBody"></div>
+    </div>
+  </div>
+  <div class="modal" id="calcModal" data-static hidden role="dialog" aria-modal="true" aria-labelledby="calcTitle">
+    <div class="modal-card modal-card--calc">
+      <div class="modal-head"><strong id="calcTitle">Ilmiy kalkulyator</strong><button class="closebtn" type="button" data-close="calcModal" aria-label="Yopish">✕</button></div>
+      <div class="modal-body"><div id="calcBody"></div></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/test-engine.js"></script>
+</body>
+</html>

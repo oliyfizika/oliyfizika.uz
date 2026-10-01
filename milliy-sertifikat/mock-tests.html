@@ -1,3 +1,49 @@
 <!DOCTYPE html>
-<html lang="uz"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mock testlar | OliyFizika.uz</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="mock-tests.css"></head>
-<body><main class="mock-page"><a class="back-link" href="milliy-sertifikat.html">← Milliy sertifikatga qaytish</a><header class="mock-header"><span class="eyebrow">MILLIY SERTIFIKAT</span><h1>Mock testlar</h1><p>Har bir testda 45 ta savol, PDF test varianti va 9 ta video yechim mavjud.</p></header><p id="accessStatus" class="access-message" role="status">Ruxsat tekshirilmoqda…</p><a id="telegramAccessLink" class="telegram-button" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" hidden>Telegram orqali ruxsat olish</a><div id="protectedContent" hidden><section id="mockTestsList" class="mock-grid" aria-label="Mock testlar ro‘yxati"></section><section id="mockTestDetail" class="mock-detail" hidden aria-live="polite"></section></div></main><script type="module" src="mock-tests.js"></script></body></html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock testlar | OliyFizika.uz</title>
+<meta name="description" content="Milliy sertifikat mock test variantlari: PDF va video yechimlar.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/catalog.css">
+<link rel="stylesheet" href="../assets/css/milliy-sertifikat.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/milliy-sertifikat/video-solutions.js"></script>
+</head>
+<!--
+  Mock test video/PDF yechimlari (OliyFizika 2.0 qobig'ida).
+  Ma'lumot o'zgarmagan: mock-tests-data.js (10 variant, Drive PDF, 9 ta YouTube video).
+  Ruxsat mantig'i avvalgidek (mock-tests.js bilan bir xil): kirish + users/{uid}.mockTestsAccess === true.
+  Element id'lari saqlangan: accessStatus, telegramAccessLink, protectedContent, mockTestsList, mockTestDetail.
+  YouTube pleyerlari faqat foydalanuvchi "Ko‘rish" ni bosganda yuklanadi. Eski sahifa kodi mock-tests.js saqlangan.
+-->
+<body class="of-ui" data-shell-title="Mock testlar" data-shell-public="true">
+<div class="of-page of-container of-cat of-ms">
+  <header class="of-cat-head">
+    <div>
+      <h1>Mock testlar</h1>
+      <p>Har bir testda 45 ta savol, PDF test varianti va 9 ta video yechim mavjud.</p>
+    </div>
+    <p class="of-cat-count" data-video-count aria-live="polite"></p>
+  </header>
+
+  <div class="of-card of-ms-gate" data-access-box>
+    <p id="accessStatus" class="of-ms-gate__status" role="status">Ruxsat tekshirilmoqda…</p>
+    <div class="of-ms-gate__actions">
+      <button type="button" class="of-btn of-btn--primary" data-login hidden>Kirish</button>
+      <a id="telegramAccessLink" class="of-btn of-btn--soft" href="https://t.me/oliyfizika_uz" target="_blank" rel="noopener noreferrer" hidden><span data-icon="telegram"></span>Telegram orqali ruxsat olish</a>
+    </div>
+  </div>
+
+  <div id="protectedContent" hidden>
+    <section aria-labelledby="videoListTitle">
+      <h2 class="of-sr-only" id="videoListTitle">Mock testlar ro‘yxati</h2>
+      <ul id="mockTestsList" class="of-vs-grid" aria-label="Mock testlar ro‘yxati"></ul>
+    </section>
+    <section id="mockTestDetail" class="of-card of-vs-detail" hidden aria-live="polite" tabindex="-1"></section>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Design tokens
+   Yagona manba: ranglar, tipografiya, oraliqlar, soyalar, harakat.
+   Loyihada rang qiymatlarini to'g'ridan-to'g'ri yozmang — shu o'zgaruvchilardan foydalaning.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Brand palitra (WHITE + BLUE + GREEN) ---- */
+  --of-blue-50:  #eff5ff;
+  --of-blue-100: #dbe8ff;
+  --of-blue-200: #bcd4ff;
+  --of-blue-300: #8db5fd;
+  --of-blue-400: #5a8ef9;
+  --of-blue-500: #3369f0;
+  --of-blue-600: #2150dc;   /* asosiy brend */
+  --of-blue-700: #1c40b3;
+  --of-blue-800: #1d388d;
+  --of-blue-900: #1d3370;
+
+  --of-green-50:  #ecfdf4;
+  --of-green-100: #d1fae4;
+  --of-green-200: #a6f3cd;
+  --of-green-300: #6de6b0;
+  --of-green-400: #33cf8e;
+  --of-green-500: #10b574;
+  --of-green-600: #05935e;  /* ikkilamchi / muvaffaqiyat */
+  --of-green-700: #06764e;
+  --of-green-800: #0a5d40;
+
+  --of-slate-0:   #ffffff;
+  --of-slate-25:  #fbfcfe;
+  --of-slate-50:  #f5f7fb;
+  --of-slate-100: #eef1f7;
+  --of-slate-200: #e1e6ef;
+  --of-slate-300: #cad2df;
+  --of-slate-400: #97a3b8;
+  --of-slate-500: #69768d;
+  --of-slate-600: #4c586e;
+  --of-slate-700: #354055;
+  --of-slate-800: #1f2839;
+  --of-slate-900: #121826;
+  --of-slate-950: #0b101b;
+
+  /* ---- Semantik (faqat ma'no uchun) ---- */
+  --of-orange-500: #e8850c;
+  --of-orange-50:  #fff5e6;
+  --of-purple-500: #7c4ddb;
+  --of-purple-50:  #f4effe;
+  --of-red-500:    #d92d3a;
+  --of-red-50:     #fdeeef;
+
+  /* ---- Rol tokenlari (tema bo'yicha o'zgaradi) ---- */
+  --of-bg:            var(--of-slate-50);
+  --of-surface:       var(--of-slate-0);
+  --of-surface-2:     var(--of-slate-25);
+  --of-surface-sunken:var(--of-slate-100);
+  --of-border:        var(--of-slate-200);
+  --of-border-strong: var(--of-slate-300);
+
+  --of-text:          var(--of-slate-900);
+  --of-text-2:        var(--of-slate-600);
+  --of-text-3:        #5b677e;
+  --of-text-inverse:  #ffffff;
+
+  --of-primary:        var(--of-blue-600);
+  --of-primary-hover:  var(--of-blue-700);
+  --of-primary-solid:  var(--of-blue-600); /* matn oq bo'lgan fonlar uchun */
+  --of-primary-solid-hover: var(--of-blue-700);
+  --of-primary-soft:   var(--of-blue-50);
+  --of-primary-soft-2: var(--of-blue-100);
+  --of-primary-text:   var(--of-blue-700);
+
+  --of-success:        var(--of-green-600);
+  --of-success-strong: var(--of-green-700);
+  --of-success-solid:  var(--of-green-700); /* oq matnli tugmalar */
+  --of-success-soft:   var(--of-green-50);
+  --of-success-text:   var(--of-green-700);
+
+  --of-warning:       var(--of-orange-500);
+  --of-warning-soft:  var(--of-orange-50);
+  --of-warning-text:  #9a5504;
+  --of-special:       var(--of-purple-500);
+  --of-special-soft:  var(--of-purple-50);
+  --of-danger:        var(--of-red-500);
+  --of-danger-soft:   var(--of-red-50);
+  --of-danger-text:   #a51d28;
+
+  --of-focus-ring: 0 0 0 3px color-mix(in srgb, var(--of-blue-500) 35%, transparent);
+  --of-overlay: rgb(11 16 27 / 0.45);
+
+  /* Fizika fon naqshlari uchun */
+  --of-grid-line: color-mix(in srgb, var(--of-blue-600) 7%, transparent);
+  --of-brand-gradient: linear-gradient(135deg, var(--of-blue-600) 0%, var(--of-blue-500) 55%, var(--of-green-500) 130%);
+
+  /* ---- Tipografiya ---- */
+  --of-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --of-font-display: "Manrope", "Inter", system-ui, sans-serif;
+  --of-font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --of-text-xs:   0.75rem;
+  --of-text-sm:   0.875rem;
+  --of-text-md:   1rem;
+  --of-text-lg:   1.125rem;
+  --of-text-xl:   1.375rem;
+  --of-text-2xl:  1.75rem;
+  --of-text-3xl:  clamp(1.75rem, 1.3rem + 1.6vw, 2.375rem);
+
+  /* ---- Oraliqlar (4px shkala) ---- */
+  --of-space-1: 4px;
+  --of-space-2: 8px;
+  --of-space-3: 12px;
+  --of-space-4: 16px;
+  --of-space-5: 20px;
+  --of-space-6: 24px;
+  --of-space-8: 32px;
+  --of-space-10: 40px;
+  --of-space-12: 48px;
+
+  /* ---- Radius ---- */
+  --of-radius-sm: 8px;
+  --of-radius-md: 12px;
+  --of-radius-lg: 16px;
+  --of-radius-xl: 22px;
+  --of-radius-pill: 999px;
+
+  /* ---- Soyalar ---- */
+  --of-shadow-xs: 0 1px 2px rgb(18 24 38 / 0.05);
+  --of-shadow-sm: 0 1px 3px rgb(18 24 38 / 0.06), 0 1px 2px rgb(18 24 38 / 0.04);
+  --of-shadow-md: 0 6px 18px -6px rgb(18 24 38 / 0.12), 0 2px 6px rgb(18 24 38 / 0.05);
+  --of-shadow-lg: 0 20px 44px -16px rgb(18 24 38 / 0.24), 0 4px 12px rgb(18 24 38 / 0.06);
+
+  /* ---- Harakat ---- */
+  --of-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --of-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --of-dur-fast: 120ms;
+  --of-dur-base: 200ms;
+  --of-dur-slow: 360ms;
+
+  /* ---- Layout ---- */
+  --of-sidebar-w: 264px;
+  --of-sidebar-w-collapsed: 76px;
+  --of-header-h: 64px;
+  --of-bottomnav-h: 64px;
+  --of-content-max: 1240px;
+
+  --of-z-header: 40;
+  --of-z-sidebar: 50;
+  --of-z-overlay: 60;
+  --of-z-modal: 70;
+  --of-z-toast: 80;
+}
+
+/* ---- Qorong'i tema (Sozlamalar → Ko'rinish) ---- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --of-bg:            #0c111c;
+  --of-surface:       #131a28;
+  --of-surface-2:     #172031;
+  --of-surface-sunken:#0f1522;
+  --of-border:        #243048;
+  --of-border-strong: #33415c;
+
+  --of-text:          #e8edf6;
+  --of-text-2:        #aab5c8;
+  --of-text-3:        #8491a8;
+
+  --of-primary:        #5a8ef9;
+  --of-primary-hover:  #7aa5fb;
+  --of-primary-solid:  #2c5ee6;
+  --of-primary-solid-hover: #3369f0;
+  --of-primary-soft:   rgb(90 142 249 / 0.12);
+  --of-primary-soft-2: rgb(90 142 249 / 0.2);
+  --of-primary-text:   #8db5fd;
+
+  --of-success:        #33cf8e;
+  --of-success-strong: #6de6b0;
+  --of-success-soft:   rgb(51 207 142 / 0.12);
+  --of-success-text:   #6de6b0;
+
+  --of-warning-soft:  rgb(232 133 12 / 0.14);
+  --of-warning-text:  #f3b25a;
+  --of-special:      #b294f6;
+  --of-special-soft:  rgb(124 77 219 / 0.16);
+  --of-danger-soft:   rgb(217 45 58 / 0.14);
+  --of-danger-text:   #f2808a;
+
+  --of-overlay: rgb(3 6 12 / 0.6);
+  --of-grid-line: rgb(141 181 253 / 0.06);
+
+  --of-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --of-shadow-md: 0 8px 20px -8px rgb(0 0 0 / 0.5);
+  --of-shadow-lg: 0 24px 48px -16px rgb(0 0 0 / 0.6);
+}

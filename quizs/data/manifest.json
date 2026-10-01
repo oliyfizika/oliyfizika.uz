@@ -1,0 +1,382 @@
+{
+ "_izoh": "Quizlar ro'yxati (quizs/data/mavzu-N.json fayllaridan hosil qilingan). Nomlar — avvalgi quizs.html ro'yxatidagi nomlar. Yangi quiz fayli qo'shilsa, shu ro'yxatga ham qo'shing. `subject` — ro'yxat tartibi bo'yicha bo'lim.",
+ "perPlay": 15,
+ "subjects": [
+  {
+   "id": "mexanika",
+   "title": "Mexanika"
+  },
+  {
+   "id": "molekulyar",
+   "title": "Molekulyar fizika"
+  },
+  {
+   "id": "elektr",
+   "title": "Elektr va magnetizm"
+  },
+  {
+   "id": "optika",
+   "title": "Optika"
+  },
+  {
+   "id": "zamonaviy",
+   "title": "Zamonaviy fizika"
+  }
+ ],
+ "quizzes": [
+  {
+   "id": 1,
+   "title": "To'g'ri chiziqli tekis harakat",
+   "questions": 10,
+   "subject": "mexanika"
+  },
+  {
+   "id": 2,
+   "title": "Tekis o'zgaruvchan harakat",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 3,
+   "title": "Harakatning nisbiyligi",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 4,
+   "title": "Egri chiziqli harakat",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 5,
+   "title": "Kuch. Nyutonning birinchi qonuni",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 6,
+   "title": "Nyutonning ikkinchi va uchinchi qonuni",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 7,
+   "title": "Butun olam tortishish qonuni",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 8,
+   "title": "Elastiklik kuchi",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 9,
+   "title": "Vertikal harakat",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 10,
+   "title": "Gorizontal va burchak ostida otilgan jism",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 11,
+   "title": "Ishqalanish kuchi",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 12,
+   "title": "Bir necha kuch ta'siridagi harakat",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 13,
+   "title": "Og'irlik markazi",
+   "questions": 10,
+   "subject": "mexanika"
+  },
+  {
+   "id": 14,
+   "title": "Impulsning saqlanish qonuni",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 15,
+   "title": "Mexanik ish va energiya",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 16,
+   "title": "Mexanik energiyaning saqlanishi",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 18,
+   "title": "Quvvat va FIK",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 19,
+   "title": "Bosim. Paskal qonuni",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 20,
+   "title": "Atmosfera bosimi",
+   "questions": 15,
+   "subject": "mexanika"
+  },
+  {
+   "id": 21,
+   "title": "Arximed kuchi",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 22,
+   "title": "Tebranma harakat",
+   "questions": 15,
+   "subject": "mexanika"
+  },
+  {
+   "id": 23,
+   "title": "Prujinali va matematik mayatnik",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 24,
+   "title": "Rezonans va mexanik to'lqinlar",
+   "questions": 20,
+   "subject": "mexanika"
+  },
+  {
+   "id": 25,
+   "title": "Molekulyar kinetik nazariya",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 26,
+   "title": "Ideal gaz",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 27,
+   "title": "Gaz molekulalari tezligi",
+   "questions": 15,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 28,
+   "title": "Klapeyron tenglamasi",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 29,
+   "title": "Izojarayonlar",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 30,
+   "title": "To'yingan bug'",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 31,
+   "title": "Kapillarlik va sirt taranglik",
+   "questions": 19,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 32,
+   "title": "Qattiq jismlar",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 33,
+   "title": "Ichki energiya",
+   "questions": 19,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 34,
+   "title": "Termodinamikaning I qonuni",
+   "questions": 18,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 35,
+   "title": "Termodinamikaning II qonuni",
+   "questions": 20,
+   "subject": "molekulyar"
+  },
+  {
+   "id": 36,
+   "title": "Elektr zaryad",
+   "questions": 13,
+   "subject": "elektr"
+  },
+  {
+   "id": 37,
+   "title": "Elektr maydon",
+   "questions": 20,
+   "subject": "elektr"
+  },
+  {
+   "id": 38,
+   "title": "O'tkazgich va dielektrik",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 39,
+   "title": "Elektr maydon ishi",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 40,
+   "title": "Ekvipotensial sirtlar",
+   "questions": 10,
+   "subject": "elektr"
+  },
+  {
+   "id": 41,
+   "title": "Kondensatorlar",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 42,
+   "title": "Elektr toki va Om qonuni",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 43,
+   "title": "Elektr zanjirlari",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 44,
+   "title": "Ampermetr va voltmetr",
+   "questions": 10,
+   "subject": "elektr"
+  },
+  {
+   "id": 45,
+   "title": "Tokning ishi va quvvati",
+   "questions": 20,
+   "subject": "elektr"
+  },
+  {
+   "id": 46,
+   "title": "To'liq zanjir uchun Om qonuni",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 47,
+   "title": "Turli muhitlarda elektr toki",
+   "questions": 20,
+   "subject": "elektr"
+  },
+  {
+   "id": 48,
+   "title": "Magnit maydon",
+   "questions": 20,
+   "subject": "elektr"
+  },
+  {
+   "id": 49,
+   "title": "Amper va Lorens kuchi",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 50,
+   "title": "Magnit oqimi",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 51,
+   "title": "Elektromagnit induksiya",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 52,
+   "title": "Tebranishlar konturi",
+   "questions": 10,
+   "subject": "elektr"
+  },
+  {
+   "id": 53,
+   "title": "O'zgaruvchan tok zanjiri",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 54,
+   "title": "Transformator",
+   "questions": 15,
+   "subject": "elektr"
+  },
+  {
+   "id": 55,
+   "title": "Yorug'likning qaytishi va sinishi",
+   "questions": 15,
+   "subject": "optika"
+  },
+  {
+   "id": 56,
+   "title": "Linzalar",
+   "questions": 25,
+   "subject": "optika"
+  },
+  {
+   "id": 57,
+   "title": "Interferensiya va difraksiya",
+   "questions": 15,
+   "subject": "optika"
+  },
+  {
+   "id": 58,
+   "title": "Nisbiylik nazariyasi",
+   "questions": 10,
+   "subject": "zamonaviy"
+  },
+  {
+   "id": 59,
+   "title": "Fotoeffekt",
+   "questions": 15,
+   "subject": "zamonaviy"
+  },
+  {
+   "id": 60,
+   "title": "Radioaktivlik",
+   "questions": 15,
+   "subject": "zamonaviy"
+  }
+ ]
+}

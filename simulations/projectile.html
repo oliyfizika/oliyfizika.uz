@@ -16,16 +16,22 @@ href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
 rel="stylesheet">
 
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/sim-page.js"></script>
 <style>
 
-*{
+.of-sim,
+.of-sim *{
   margin:0;
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
 }
 
-body{
+.of-sim{
 
   background:
   linear-gradient(135deg,#020817,#07122f,#020817);
@@ -37,7 +43,7 @@ body{
   overflow:hidden;
 }
 
-body::before{
+.of-sim::before{
 
   content:"";
 
@@ -278,27 +284,13 @@ canvas{
 
 </head>
 
-<body>
+<body class="of-ui of-sim-page" data-shell-title="Projectile Motion" data-shell-public="true">
 
-<div class="container">
+<div class="of-page of-sim-wrap">
 
+<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-<div class="logo">
-Oliy<span>Fizika</span>
-</div>
-
-<a href="../index.html"
-class="back-btn">
-
-🏠 Bosh sahifa
-
-</a>
-
-</nav>
+<div class="container of-sim">
 
 
 
@@ -312,14 +304,14 @@ class="back-btn">
 <div class="controls">
 
 <h2>
-🧪 Projectile Motion
+<span aria-hidden="true">🧪</span> Projectile Motion
 </h2>
 
 
 
 <div class="control-group">
 
-<label>
+<label for="angle">
 Burchak (°)
 </label>
 
@@ -344,7 +336,7 @@ id="angleValue">
 
 <div class="control-group">
 
-<label>
+<label for="speed">
 Tezlik (m/s)
 </label>
 
@@ -369,7 +361,7 @@ id="speedValue">
 
 <div class="control-group">
 
-<label>
+<label for="gravity">
 Gravitatsiya (m/s²)
 </label>
 
@@ -397,7 +389,7 @@ id="gravityValue">
 class="launch-btn"
 id="launchBtn">
 
-🚀 Launch
+<span aria-hidden="true">🚀</span> Launch
 
 </button>
 
@@ -429,9 +421,11 @@ Max Height: 0 m
 
 </div>
 
-<canvas id="canvas">
+<canvas id="canvas" role="img" aria-label="Projectile Motion simulyatsiyasi">
 
 </canvas>
+
+</div>
 
 </div>
 

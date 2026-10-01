@@ -196,6 +196,46 @@ async function checkFullAccess() {
 // DARSlarni RENDER QILISH
 // ==================================================
 
+// ==================================================
+// QURILMADAGI QIYMATNI BOSHQA HISOB UCHUN ALMASHTIRISH
+// Ochilish qoidasi o'zgarmaydi. Faqat shu brauzerda boshqa foydalanuvchi
+// kirganda, oldingi hisobning ochilgan darsi unga "meros" bo'lib qolmasligi uchun
+// (progress-service.js chaqiradi; qiymat Firestore natijalaridan tiklanadi).
+// ==================================================
+
+export function replaceMechanicsUnlockedLesson(lessonNumber) {
+  const value = Math.max(1, Number(lessonNumber) || 1);
+  localStorage.setItem(STORAGE_KEY, String(value));
+  if (value >= 2) localStorage.setItem(LEGACY_LESSON_2_KEY, "true");
+  else localStorage.removeItem(LEGACY_LESSON_2_KEY);
+}
+
+// ==================================================
+// MAVZU KARTASI ID (bosh sahifadagi "Davom etish" havolalari uchun)
+// "15-mavzu" -> mavzu-15, "15.1-mavzu" -> mavzu-15-1
+// ==================================================
+
+export function lessonAnchorId(lesson) {
+  const label = String(lesson.numberLabel || lesson.number)
+    .replace(/-?mavzu$/i, "")
+    .trim()
+    .replace(/[^0-9a-z]+/gi, "-");
+  return `mavzu-${label}`;
+}
+
+function focusHashLesson(container) {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id.startsWith("mavzu-")) return;
+  const card = container.querySelector(`#${CSS.escape(id)}`);
+  if (!card) return;
+  card.setAttribute("tabindex", "-1");
+  card.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  card.focus({ preventScroll: true });
+  card.style.outline = "3px solid #10b574";
+  card.style.outlineOffset = "4px";
+  setTimeout(() => { card.style.outline = ""; card.style.outlineOffset = ""; }, 2600);
+}
+
 export function renderMechanicsLessons(
   lessons,
   container
@@ -241,6 +281,9 @@ export function renderMechanicsLessons(
 
     card.dataset.lesson =
       String(lesson.number);
+
+    card.id =
+      lessonAnchorId(lesson);
 
 
     // ==================================================
@@ -424,6 +467,8 @@ export function renderMechanicsLessons(
   container.replaceChildren(
     fragment
   );
+
+  focusHashLesson(container);
 
 
   // ==================================================
