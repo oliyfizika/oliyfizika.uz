@@ -140,6 +140,39 @@ async function showAttempts(t) {
   panel.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// ------------------------------------------------------------------ Firestore preflight
+// Firestore massiv ichida massivni saqlamaydi (batch.set() "Nested arrays are not supported" bilan rad etadi).
+// Import fayli Firestore'ga yozishdan OLDIN to'liq tekshiriladi; topilsa — hech narsa yozilmaydi.
+function nestedArrayPath(v, path = "", inArray = false) {
+  if (Array.isArray(v)) {
+    if (inArray) return path;
+    for (let i = 0; i < v.length; i++) {
+      const p = nestedArrayPath(v[i], `${path}[${i}]`, true);
+      if (p) return p;
+    }
+    return null;
+  }
+  if (v && typeof v === "object") {
+    for (const [k, x] of Object.entries(v)) {
+      const p = nestedArrayPath(x, path ? `${path}.${k}` : k, false);
+      if (p) return p;
+    }
+  }
+  return null;
+}
+function preflightNestedArrays(ops) {
+  const bad = [];
+  for (const o of ops) {
+    const p = nestedArrayPath(o.data);
+    if (p) bad.push(`${o.path} → ${p}`);
+  }
+  return bad;
+}
+function nestedArrayError(bad) {
+  return new Error(`Firestore massiv ichidagi massivni qabul qilmaydi: ${bad.length} ta hujjatda topildi (birinchisi: ${bad[0]}). `
+    + "Import fayli eski formatda — prepare_attestation_data.py ni qayta ishga tushirib, yangi firestore-import.json ni tanlang. Hech narsa yozilmadi.");
+}
+
 // ------------------------------------------------------------------ Import 1: savollar + testlar
 let bundle = null;
 $("[data-bundle]").addEventListener("change", async (e) => {
@@ -155,6 +188,12 @@ $("[data-bundle]").addEventListener("change", async (e) => {
     const t = count(/^attestationPhysicsDailyTests\/[^/]+$/);
     const auto = data.ops.filter((o) => /^attestationPhysicsQuestions\/[^/]+$/.test(o.path) && o.data.evaluationType === "auto").length;
     if (q !== 1027 || p !== 1027 || t !== 32 || auto !== 865) throw new Error(`hisob mos emas: ${q}/${p}/${t}/${auto}`);
+    const bad = preflightNestedArrays(data.ops);
+    if (bad.length) {
+      console.error("[admin] nested arrays:", bad);
+      info.textContent = nestedArrayError(bad).message;
+      return;
+    }
     bundle = data;
     info.textContent = `Tekshirildi: 1027 savol (865 auto), 32 kunlik test, ${data.ops.length} operatsiya · planHash ${data.planHash}. Dry-run uchun «Import qilish» ni bosing.`;
     $("[data-import]").disabled = false;
@@ -181,6 +220,13 @@ $("[data-import]").addEventListener("click", async (e) => {
     confirmLabel: "Import",
   });
   if (!ok) return;
+  // Qayta preflight (yozishdan oldin, filtrlangan ro'yxat bo'yicha) — xato bo'lsa batch umuman ochilmaydi
+  const bad = preflightNestedArrays(ops);
+  if (bad.length) {
+    console.error("[admin] nested arrays:", bad);
+    info.textContent = nestedArrayError(bad).message;
+    return;
+  }
   btn.classList.add("is-loading");
   try {
     // Kichik batch'lar: Rules har bir yozuvda isAdmin() uchun get() qiladi; batch uchun get() chegarasi 20.
@@ -248,6 +294,7 @@ $("[data-figdocs]").addEventListener("change", async (e) => {
   try {
     const data = JSON.parse(await e.target.files[0].text());
     if (data.format !== "oliyfizika-attestation-figures") throw new Error("format");
+    if (preflightNestedArrays(data.ops).length) throw new Error("nested");
     figBundle = data;
     $("[data-figdocs-info]").textContent = `${data.ops.length} ta rasm hujjati.`;
     $("[data-figdocs-import]").disabled = false;

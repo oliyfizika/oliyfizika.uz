@@ -236,6 +236,93 @@ def attach_figures(blocks, figs, missing):
                     attach_figures(c["blocks"], figs, missing)
 
 
+# ---------------------------------------------------------------- Firestore serializatsiya (canonical)
+# Firestore massiv ichida massivni saqlamaydi ("Nested arrays are not supported"). Ichki (texconv) format:
+#   list : {"t":"list",  "items": [[Block…], …]}
+#   table: {"t":"table", "rows":  [[Cell…], …]}        Cell = {"blocks":[Block…], "colspan"?}
+# Firestore'ga ketadigan YAGONA canonical shakl (public savol, private javob, versions, solutions — hammasi shu):
+#   list : {"t":"list",  "items": [{"blocks": [Block…]}, …]}
+#   table: {"t":"table", "rows":  [{"cells": [Cell…]}, …]}
+# Faqat konteyner shakli o'zgaradi: matn, formula, variant, javob, yechim, ID — bayt-bayt o'sha.
+# Transform idempotent (allaqachon canonical bo'lsa o'zgarmaydi); legacy_blocks — teskari transform (tekshiruv uchun).
+def fs_canonical(v):
+    if isinstance(v, list):
+        return [fs_canonical(x) for x in v]
+    if not isinstance(v, dict):
+        return v
+    out = OrderedDict()
+    for k, x in v.items():
+        if v.get("t") == "list" and k == "items" and isinstance(x, list):
+            out[k] = [OrderedDict([("blocks", fs_canonical(it))]) if isinstance(it, list) else fs_canonical(it) for it in x]
+        elif v.get("t") == "table" and k == "rows" and isinstance(x, list):
+            out[k] = [OrderedDict([("cells", fs_canonical(r))]) if isinstance(r, list) else fs_canonical(r) for r in x]
+        else:
+            out[k] = fs_canonical(x)
+    return out
+
+
+def legacy_blocks(v):
+    if isinstance(v, list):
+        return [legacy_blocks(x) for x in v]
+    if not isinstance(v, dict):
+        return v
+    out = OrderedDict()
+    for k, x in v.items():
+        if v.get("t") == "list" and k == "items" and isinstance(x, list):
+            out[k] = [legacy_blocks(it["blocks"]) if isinstance(it, dict) else legacy_blocks(it) for it in x]
+        elif v.get("t") == "table" and k == "rows" and isinstance(x, list):
+            out[k] = [legacy_blocks(r["cells"]) if isinstance(r, dict) else legacy_blocks(r) for r in x]
+        else:
+            out[k] = legacy_blocks(x)
+    return out
+
+
+def nested_array_paths(v, path="", in_array=False):
+    """Firestore qoidasi: massivning bevosita elementi massiv bo'lishi mumkin emas."""
+    found = []
+    if isinstance(v, list):
+        if in_array:
+            found.append(path)
+        for i, x in enumerate(v):
+            found += nested_array_paths(x, f"{path}[{i}]", True)
+    elif isinstance(v, dict):
+        for k, x in v.items():
+            found += nested_array_paths(x, f"{path}.{k}" if path else k, False)
+    return found
+
+
+def plain_text(blocks):
+    """Bloklarning to'liq matni (p/heading/math/list/table/figure; ikkala format ham) — mazmun tengligini tekshirish uchun."""
+    out = []
+
+    def walk(bs):
+        for b in bs or []:
+            if not isinstance(b, dict):
+                continue
+            if b.get("text"):
+                out.append(b["text"])
+            if b.get("t") == "math":
+                out.append("$$" + b.get("tex", "") + "$$")
+            if b.get("t") == "figure":
+                out.append("[fig:" + str(b.get("id") or b.get("fig")) + "]")
+            if "blocks" in b:
+                walk(b["blocks"])
+            for it in b.get("items", []) if b.get("t") == "list" else []:
+                walk(it["blocks"] if isinstance(it, dict) else it)
+            for r in b.get("rows", []) if b.get("t") == "table" else []:
+                for c in (r["cells"] if isinstance(r, dict) else r):
+                    walk(c.get("blocks"))
+    walk(blocks)
+    return "\n".join(out)
+
+
+def question_plain_text(pubq, privq):
+    parts = [plain_text(pubq["question"])]
+    parts += [o["key"] + ") " + plain_text(o["blocks"]) for o in pubq.get("options", [])]
+    parts.append(plain_text(privq.get("solution")))
+    return "\n§\n".join(parts)
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -542,10 +629,18 @@ process.stdin.on('data', d => buf += d).on('end', () => {
     gate("katex_all_formulas_ok", bool(args.katex) and not katex_report["failed"],
          f"{katex_report['checked']} formula, {len(katex_report['failed'])} xato")
 
+    # ---- Firestore canonical serializatsiya (bitta transform — barcha Firestore hujjatlari uchun)
+    fpub = OrderedDict((q, fs_canonical(pub[q])) for q in pub)
+    fpriv = OrderedDict((q, fs_canonical(priv[q])) for q in priv)
+    fversions = OrderedDict((tid, fs_canonical(versions[tid])) for tid in versions)
+    fsolutions = OrderedDict((tid, fs_canonical(solutions[tid])) for tid in solutions)
+    fkeys = OrderedDict((tid, fs_canonical(keys[tid])) for tid in keys)
+    ftests = [fs_canonical(t) for t in tests]
+
     # ---- Firestore hujjat o'lchamlari (1 MiB chegara, zaxira bilan 900 KB)
     sizes = {}
-    for tid in versions:
-        for name, doc in (("versions", versions[tid]), ("keys", keys[tid]), ("solutions", solutions[tid])):
+    for tid in fversions:
+        for name, doc in (("versions", fversions[tid]), ("keys", fkeys[tid]), ("solutions", fsolutions[tid])):
             sizes[f"{tid}/{name}/v1"] = len(json.dumps(doc, ensure_ascii=False).encode())
     gate("firestore_doc_size_ok", max(sizes.values()) < 900_000, f"max {max(sizes.values())} bayt")
 
@@ -563,6 +658,35 @@ process.stdin.on('data', d => buf += d).on('end', () => {
         ("schemaVersion", SCHEMA_VERSION),
         ("planHash", plan["planHash"]),
     ])
+
+    # Firestore import rejasi: deterministik yo'llar, faqat create/set (delete yo'q). Faqat canonical (f*) hujjatlar.
+    ops = [{"op": "set", "path": "attestationPhysicsSettings/config", "data": settings}]
+    for q in fpub:
+        ops.append({"op": "set", "path": f"attestationPhysicsQuestions/{q}", "data": fpub[q]})
+        ops.append({"op": "set", "path": f"attestationPhysicsQuestions/{q}/private/answer", "data": fpriv[q]})
+    for t in ftests:
+        tid = t["id"]
+        ops.append({"op": "set", "path": f"attestationPhysicsDailyTests/{tid}", "data": t})
+        ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/versions/v1", "data": fversions[tid]})
+        ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/keys/v1", "data": fkeys[tid]})
+        ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/solutions/v1", "data": fsolutions[tid]})
+
+    nested = [f"{o['path']}:{p}" for o in ops for p in nested_array_paths(o["data"])]
+    gate("firestore_no_nested_arrays", not nested, f"{len(nested)} ta" + (f" · {nested[:3]}" if nested else ""))
+    # Teskari transform asl (ichki) hujjatni bayt-bayt qaytarishi shart — mazmun o'zgarmaganining eng qat'iy isboti
+    pairs = ([(pub[q], fpub[q]) for q in pub] + [(priv[q], fpriv[q]) for q in priv]
+             + [(versions[t], fversions[t]) for t in versions] + [(solutions[t], fsolutions[t]) for t in solutions]
+             + [(keys[t], fkeys[t]) for t in keys] + list(zip(tests, ftests)))
+    same = lambda a, b: json.dumps(a, ensure_ascii=False, sort_keys=True) == json.dumps(b, ensure_ascii=False, sort_keys=True)
+    gate("canonical_roundtrip_exact", all(same(legacy_blocks(f), o) for o, f in pairs), f"{len(pairs)} hujjat")
+    pt_ok = sum(question_plain_text(pub[q], priv[q]) == question_plain_text(fpub[q], fpriv[q]) for q in pub)
+    gate("plaintext_preserved_1027", pt_ok == len(pub) == EXPECTED["questions"], f"{pt_ok}/{len(pub)}")
+    vq = {qq["id"]: qq for v in fversions.values() for qq in v["questions"]}
+    sq = {it["id"]: it for v in fsolutions.values() for it in v["items"]}
+    gate("versions_solutions_match_bank",
+         all(same(vq[q]["question"], fpub[q]["question"]) and same(vq[q]["options"], fpub[q]["options"]) for q in fpub)
+         and all(same(sq[q]["solution"], fpriv[q]["solution"]) for q in fpriv if q in sq),
+         f"versions {len(vq)}, solutions {len(sq)}")
 
     report = OrderedDict([
         ("status", "PASS" if not errors else "FAIL"),
@@ -597,20 +721,9 @@ process.stdin.on('data', d => buf += d).on('end', () => {
             print("ERR", e)
         sys.exit(f"VALIDATION FAIL ({len(errors)} xato) — import fayllari yozilmadi")
 
-    dump("questions.public.json", list(pub.values()))
-    dump("questions.private.json", list(priv.values()))
-    dump("daily-tests.json", tests)
-    # Firestore import rejasi: deterministik yo'llar, faqat create/set (delete yo'q)
-    ops = [{"op": "set", "path": "attestationPhysicsSettings/config", "data": settings}]
-    for q in pub:
-        ops.append({"op": "set", "path": f"attestationPhysicsQuestions/{q}", "data": pub[q]})
-        ops.append({"op": "set", "path": f"attestationPhysicsQuestions/{q}/private/answer", "data": priv[q]})
-    for t in tests:
-        tid = t["id"]
-        ops.append({"op": "set", "path": f"attestationPhysicsDailyTests/{tid}", "data": t})
-        ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/versions/v1", "data": versions[tid]})
-        ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/keys/v1", "data": keys[tid]})
-        ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/solutions/v1", "data": solutions[tid]})
+    dump("questions.public.json", list(fpub.values()))
+    dump("questions.private.json", list(fpriv.values()))
+    dump("daily-tests.json", ftests)
     bundle = OrderedDict([("format", "oliyfizika-attestation-import"), ("schemaVersion", SCHEMA_VERSION),
                           ("planHash", plan["planHash"]), ("operations", len(ops)),
                           ("contentHash", sha16(json.dumps(ops, ensure_ascii=False, sort_keys=True))),

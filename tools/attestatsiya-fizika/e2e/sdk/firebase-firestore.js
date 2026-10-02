@@ -16,6 +16,19 @@ export const serverTimestamp = () => SERVER;
 export const deleteField = () => ({ __delete: 1 });
 export const increment = (n) => ({ __inc: n });
 
+// Haqiqiy Firestore SDK kabi: massivning bevosita elementi massiv bo'lsa, yozuv serverga yuborilmasdan rad etiladi.
+// (Firestore xabari: "Function WriteBatch.set() called with invalid data. Nested arrays are not supported (found in document …)")
+function hasNestedArray(v, inArray = false) {
+  if (Array.isArray(v)) return inArray || v.some((x) => hasNestedArray(x, true));
+  if (v && typeof v === "object" && !(v instanceof Timestamp) && !(v instanceof Date)) return Object.values(v).some((x) => hasNestedArray(x, false));
+  return false;
+}
+function validate(fn, ref, data) {
+  if (hasNestedArray(data)) {
+    throw new FirebaseError("invalid-argument", `Function ${fn}() called with invalid data. Nested arrays are not supported (found in document ${ref.path})`);
+  }
+}
+
 function enc(v) {
   if (v === SERVER) return SERVER;
   if (v instanceof Timestamp) return { __ts: [v.seconds, v.nanoseconds] };
@@ -82,9 +95,11 @@ export async function getCountFromServer(q) {
   return { data: () => ({ count: s.size }) };
 }
 export async function setDoc(ref, data, opts = {}) {
+  validate("setDoc", ref, data);
   await api("commit", { writes: [{ type: "set", path: ref.path, data: enc(data), merge: Boolean(opts.merge) }] });
 }
 export async function updateDoc(ref, data) {
+  validate("updateDoc", ref, data);
   await api("commit", { writes: [{ type: "update", path: ref.path, data: enc(data) }] });
 }
 export async function addDoc(col, data) {
@@ -98,8 +113,8 @@ export async function deleteDoc(ref) {
 export function writeBatch() {
   const writes = [];
   return {
-    set(ref, data, opts = {}) { writes.push({ type: "set", path: ref.path, data: enc(data), merge: Boolean(opts.merge) }); return this; },
-    update(ref, data) { writes.push({ type: "update", path: ref.path, data: enc(data) }); return this; },
+    set(ref, data, opts = {}) { validate("WriteBatch.set", ref, data); writes.push({ type: "set", path: ref.path, data: enc(data), merge: Boolean(opts.merge) }); return this; },
+    update(ref, data) { validate("WriteBatch.update", ref, data); writes.push({ type: "update", path: ref.path, data: enc(data) }); return this; },
     delete(ref) { writes.push({ type: "delete", path: ref.path }); return this; },
     async commit() { await api("commit", { writes }); },
   };
@@ -108,8 +123,8 @@ export async function runTransaction(_db, fn) {
   const writes = [];
   const tx = {
     get: (ref) => getDoc(ref),
-    set(ref, data, opts = {}) { writes.push({ type: "set", path: ref.path, data: enc(data), merge: Boolean(opts.merge) }); return tx; },
-    update(ref, data) { writes.push({ type: "update", path: ref.path, data: enc(data) }); return tx; },
+    set(ref, data, opts = {}) { validate("Transaction.set", ref, data); writes.push({ type: "set", path: ref.path, data: enc(data), merge: Boolean(opts.merge) }); return tx; },
+    update(ref, data) { validate("Transaction.update", ref, data); writes.push({ type: "update", path: ref.path, data: enc(data) }); return tx; },
   };
   const out = await fn(tx);
   await api("commit", { writes });
