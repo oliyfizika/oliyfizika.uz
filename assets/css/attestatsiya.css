@@ -1,0 +1,345 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Attestatsiya bo'limi (landing + Fizika: dashboard, test, natija, yechim, statistika)
+   Faqat dizayn tizimi tokenlari (tokens.css) va komponentlari (components.css) ustiga quriladi —
+   o'z rang/shrift tizimi YO'Q. Qorong'i tema tokenlar orqali avtomatik ishlaydi.
+   ========================================================================== */
+
+.att { display: flex; flex-direction: column; gap: 24px; }
+.att-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--of-primary-text); font: 700 0.76rem/1 var(--of-font-sans); letter-spacing: 0.05em; text-transform: uppercase; }
+.att-eyebrow svg { width: 16px; height: 16px; }
+.att-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: var(--of-text-sm); color: var(--of-text-3); }
+.att-crumbs li + li::before { content: "/"; margin-right: 6px; color: var(--of-border-strong); }
+.att-crumbs a { color: var(--of-text-2); }
+.att-crumbs [aria-current] { color: var(--of-text); font-weight: 600; }
+
+/* ------------------------------------------------------------ Hero */
+.att-hero {
+  display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 24px; align-items: center;
+  padding: 26px 28px; position: relative; overflow: hidden;
+}
+.att-hero::after {
+  content: ""; position: absolute; right: -80px; top: -100px; width: 280px; height: 280px;
+  border: 1px dashed var(--of-primary-soft-2); border-radius: 50%; pointer-events: none;
+}
+.att-hero__text { display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
+.att-hero__text p { color: var(--of-text-2); line-height: 1.6; max-width: 62ch; }
+.att-hero__side {
+  position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; padding: 18px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface-2);
+}
+.att-metric { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.att-metric strong { font: 800 1.7rem/1 var(--of-font-display); color: var(--of-primary-text); }
+.att-metric span { color: var(--of-text-2); font-size: var(--of-text-sm); }
+.att-metrics-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.att-mini { padding: 10px 12px; border-radius: var(--of-radius-md); background: var(--of-surface); border: 1px solid var(--of-border); }
+.att-mini span { display: block; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600; }
+.att-mini b { font: 750 var(--of-text-lg)/1.3 var(--of-font-display); color: var(--of-text); }
+
+/* ------------------------------------------------------------ Landing kartalari */
+.att-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.att-choice { display: flex; flex-direction: column; gap: 14px; padding: 22px; height: 100%; color: inherit; text-decoration: none !important; }
+.att-choice__icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; background: var(--of-primary-soft); color: var(--of-primary); }
+.att-choice__icon svg { width: 28px; height: 28px; }
+.att-choice--green .att-choice__icon { background: var(--of-success-soft); color: var(--of-success); }
+.att-choice h2 { font-size: var(--of-text-xl); }
+.att-choice p { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.6; flex: 1; }
+.att-choice__feats { display: flex; flex-wrap: wrap; gap: 6px; }
+.att-choice__go { display: inline-flex; align-items: center; gap: 6px; font-weight: 650; color: var(--of-primary-text); font-size: var(--of-text-sm); }
+.att-choice__go svg { width: 16px; height: 16px; }
+
+/* ------------------------------------------------------------ Bugungi test */
+.att-today { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 20px 22px; border-left: 4px solid var(--of-primary); }
+.att-today[data-state="none"] { border-left-color: var(--of-border-strong); }
+.att-today[data-state="done"] { border-left-color: var(--of-success); }
+.att-daybadge {
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px;
+  background: var(--of-brand-gradient); color: #fff; text-align: center; line-height: 1; flex: none;
+}
+.att-daybadge small { display: block; font: 700 0.62rem/1 var(--of-font-sans); letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.9; }
+.att-daybadge b { display: block; font: 800 1.6rem/1.05 var(--of-font-display); }
+.att-today[data-state="none"] .att-daybadge { background: var(--of-surface-sunken); color: var(--of-text-3); }
+.att-today__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.att-today__label { color: var(--of-text-3); font: 700 var(--of-text-xs)/1 var(--of-font-sans); letter-spacing: 0.06em; text-transform: uppercase; }
+.att-today__title { font: 750 var(--of-text-lg)/1.3 var(--of-font-display); }
+.att-today__meta { display: flex; flex-wrap: wrap; gap: 6px 12px; color: var(--of-text-2); font-size: var(--of-text-sm); }
+.att-today__meta span { display: inline-flex; align-items: center; gap: 5px; }
+.att-today__meta svg { width: 15px; height: 15px; color: var(--of-text-3); }
+.att-today__actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+
+/* ------------------------------------------------------------ Bo'lim navigatsiyasi (tablar) */
+.att-tabs { display: flex; gap: 6px; padding: 5px; border-radius: var(--of-radius-md); background: var(--of-surface-sunken); overflow-x: auto; scrollbar-width: none; }
+.att-tabs a {
+  display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border-radius: 9px; white-space: nowrap;
+  color: var(--of-text-2); font: 600 var(--of-text-sm)/1 var(--of-font-sans); text-decoration: none !important;
+}
+.att-tabs a svg { width: 16px; height: 16px; }
+.att-tabs a:hover { color: var(--of-text); background: var(--of-surface); }
+.att-tabs a[aria-current="page"] { background: var(--of-surface); color: var(--of-primary-text); box-shadow: var(--of-shadow-xs); }
+
+/* ------------------------------------------------------------ Kunlik topshiriqlar */
+.att-days { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.att-day { display: flex; flex-direction: column; gap: 10px; padding: 16px; height: 100%; }
+.att-day__head { display: flex; align-items: center; gap: 10px; }
+.att-day__num { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--of-primary-soft); color: var(--of-primary-text); font: 800 var(--of-text-md)/1 var(--of-font-display); flex: none; }
+.att-day[data-state="done"] .att-day__num { background: var(--of-success-soft); color: var(--of-success-text); }
+.att-day[data-state="locked"] .att-day__num { background: var(--of-surface-sunken); color: var(--of-text-3); }
+.att-day__title { font: 700 var(--of-text-md)/1.3 var(--of-font-display); }
+.att-day__sub { color: var(--of-text-3); font-size: var(--of-text-xs); }
+.att-day__topics { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.45; flex: 1; }
+.att-day__stats { display: flex; flex-wrap: wrap; gap: 6px; }
+.att-day__foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.att-day__foot .of-btn { min-height: 36px; }
+.att-day[data-state="locked"] { background: var(--of-surface-2); border-style: dashed; }
+.att-day[data-state="locked"] .att-day__topics { color: var(--of-text-3); }
+.att-score { font: 800 var(--of-text-xl)/1 var(--of-font-display); color: var(--of-success-text); margin-left: auto; }
+
+/* ------------------------------------------------------------ Holat (empty/error) */
+.att-state { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 36px 20px; text-align: center; color: var(--of-text-2); }
+.att-state svg { width: 40px; height: 40px; color: var(--of-text-3); }
+.att-state h2 { font-size: var(--of-text-lg); color: var(--of-text); }
+.att-state p { max-width: 52ch; line-height: 1.6; }
+
+/* ------------------------------------------------------------ Test sahifasi */
+.att-test { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start; }
+.att-test__main { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.att-bar {
+  position: sticky; top: calc(var(--of-header-h) + 8px); z-index: 5;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 16px;
+  background: color-mix(in srgb, var(--of-surface) 92%, transparent); backdrop-filter: blur(8px);
+}
+.att-bar__title { font: 700 var(--of-text-md)/1.2 var(--of-font-display); }
+.att-bar__count { font: 700 var(--of-text-sm)/1 var(--of-font-sans); color: var(--of-text-2); }
+.att-bar .of-progress { flex: 1; min-width: 120px; }
+.att-clock { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border-radius: var(--of-radius-pill); background: var(--of-surface-sunken); font: 700 var(--of-text-sm)/1 var(--of-font-mono); color: var(--of-text); }
+.att-clock svg { width: 16px; height: 16px; color: var(--of-primary); }
+.att-q { padding: 22px 24px; display: flex; flex-direction: column; gap: 16px; }
+.att-q__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.att-q__num { font: 800 var(--of-text-lg)/1 var(--of-font-display); color: var(--of-primary-text); }
+.att-q__body { display: flex; flex-direction: column; gap: 10px; font-size: var(--of-text-md); line-height: 1.65; color: var(--of-text); overflow-wrap: anywhere; }
+.att-opts { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.att-opt {
+  display: flex; align-items: flex-start; gap: 12px; width: 100%; padding: 12px 14px; text-align: left;
+  border: 1.5px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface); color: var(--of-text);
+  cursor: pointer; transition: border-color var(--of-dur-fast), background var(--of-dur-fast), box-shadow var(--of-dur-fast);
+}
+.att-opt:hover { border-color: var(--of-primary-soft-2); background: var(--of-primary-soft); }
+.att-opt[aria-checked="true"] { border-color: var(--of-primary); background: var(--of-primary-soft); box-shadow: 0 0 0 1px var(--of-primary) inset; }
+.att-opt__key {
+  display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; flex: none;
+  background: var(--of-surface-sunken); color: var(--of-text-2); font: 800 var(--of-text-sm)/1 var(--of-font-sans);
+}
+.att-opt[aria-checked="true"] .att-opt__key { background: var(--of-primary-solid); color: #fff; }
+.att-opt__content { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 6px; padding-top: 5px; line-height: 1.55; overflow-wrap: anywhere; }
+.att-opt[data-review="correct"] { border-color: var(--of-success); background: var(--of-success-soft); }
+.att-opt[data-review="correct"] .att-opt__key { background: var(--of-success-solid); color: #fff; }
+.att-opt[data-review="wrong"] { border-color: var(--of-danger); background: var(--of-danger-soft); }
+.att-opt[data-review="wrong"] .att-opt__key { background: var(--of-danger); color: #fff; }
+.att-opt[disabled] { cursor: default; }
+.att-open-note { padding: 12px 14px; border-radius: var(--of-radius-md); background: var(--of-surface-sunken); color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+.att-q__nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+.att-side { position: sticky; top: calc(var(--of-header-h) + 8px); display: flex; flex-direction: column; gap: 14px; padding: 16px; }
+.att-side h2 { font-size: var(--of-text-md); }
+.att-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+.att-grid button {
+  width: 100%; aspect-ratio: 1; min-height: 36px; border-radius: 9px; border: 1.5px solid var(--of-border);
+  background: var(--of-surface); color: var(--of-text-2); font: 700 var(--of-text-xs)/1 var(--of-font-sans); cursor: pointer;
+}
+.att-grid button:hover { border-color: var(--of-primary-soft-2); }
+.att-grid button[data-answered="true"] { background: var(--of-primary-soft-2); border-color: var(--of-primary-soft-2); color: var(--of-primary-text); }
+.att-grid button[aria-current="true"] { border-color: var(--of-primary); box-shadow: 0 0 0 2px var(--of-primary-soft-2); color: var(--of-text); }
+.att-grid button[data-status="correct"] { background: var(--of-success-soft); border-color: var(--of-success); color: var(--of-success-text); }
+.att-grid button[data-status="wrong"] { background: var(--of-danger-soft); border-color: var(--of-danger); color: var(--of-danger-text); }
+.att-grid button[data-status="unanswered"] { background: var(--of-warning-soft); border-color: var(--of-warning); color: var(--of-warning-text); }
+.att-grid button[data-status="unscored"] { background: var(--of-surface-sunken); border-style: dashed; }
+.att-legend { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 0; padding: 0; list-style: none; font-size: var(--of-text-xs); color: var(--of-text-3); }
+.att-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.att-legend i { width: 12px; height: 12px; border-radius: 4px; border: 1.5px solid var(--of-border); background: var(--of-surface); }
+.att-legend i[data-k="answered"] { background: var(--of-primary-soft-2); border-color: var(--of-primary-soft-2); }
+.att-legend i[data-k="correct"] { background: var(--of-success-soft); border-color: var(--of-success); }
+.att-legend i[data-k="wrong"] { background: var(--of-danger-soft); border-color: var(--of-danger); }
+.att-legend i[data-k="unanswered"] { background: var(--of-warning-soft); border-color: var(--of-warning); }
+.att-legend i[data-k="unscored"] { background: var(--of-surface-sunken); border-style: dashed; }
+.att-side__summary { display: flex; justify-content: space-between; font-size: var(--of-text-sm); color: var(--of-text-2); }
+.att-saved { font-size: var(--of-text-xs); color: var(--of-text-3); min-height: 1.2em; }
+
+/* Kirish (start) kartasi */
+.att-intro { display: flex; flex-direction: column; gap: 16px; padding: 24px; max-width: 760px; }
+.att-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.att-facts li { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: var(--of-radius-md); background: var(--of-surface-2); border: 1px solid var(--of-border); font-size: var(--of-text-sm); color: var(--of-text-2); }
+.att-facts svg { width: 18px; height: 18px; color: var(--of-primary); flex: none; margin-top: 1px; }
+.att-facts b { display: block; color: var(--of-text); font-size: var(--of-text-md); }
+
+/* ------------------------------------------------------------ Natija */
+.att-result { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 20px; padding: 24px; align-items: center; }
+.att-result__score { display: flex; align-items: center; gap: 18px; }
+.att-ring {
+  --p: 0; width: 120px; height: 120px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  background: conic-gradient(var(--of-success) calc(var(--p) * 1%), var(--of-surface-sunken) 0);
+}
+.att-ring__inner { width: 92px; height: 92px; border-radius: 50%; background: var(--of-surface); display: grid; place-items: center; text-align: center; }
+.att-ring__inner b { font: 800 1.35rem/1 var(--of-font-display); color: var(--of-text); }
+.att-ring__inner span { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.att-result__big { font: 800 2.2rem/1 var(--of-font-display); }
+.att-result__big small { font-size: var(--of-text-lg); color: var(--of-text-3); font-weight: 700; }
+.att-counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.att-count { padding: 12px; border-radius: var(--of-radius-md); background: var(--of-surface-2); border: 1px solid var(--of-border); }
+.att-count span { display: flex; align-items: center; gap: 6px; font-size: var(--of-text-xs); font-weight: 650; color: var(--of-text-3); }
+.att-count b { font: 800 var(--of-text-2xl)/1.15 var(--of-font-display); }
+.att-count--ok b { color: var(--of-success-text); }
+.att-count--bad b { color: var(--of-danger-text); }
+.att-count--skip b { color: var(--of-warning-text); }
+.att-result__meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--of-text-2); font-size: var(--of-text-sm); }
+.att-result__meta span { display: inline-flex; align-items: center; gap: 6px; }
+.att-result__meta svg { width: 16px; height: 16px; color: var(--of-text-3); }
+.att-review { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.att-rev { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; border-left: 4px solid var(--of-border-strong); }
+.att-rev[data-status="correct"] { border-left-color: var(--of-success); }
+.att-rev[data-status="wrong"] { border-left-color: var(--of-danger); }
+.att-rev[data-status="unanswered"] { border-left-color: var(--of-warning); }
+.att-rev summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.att-rev summary::-webkit-details-marker { display: none; }
+.att-rev__verdict { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: var(--of-text-sm); }
+.att-rev__verdict svg { width: 18px; height: 18px; }
+.att-rev[data-status="correct"] .att-rev__verdict { color: var(--of-success-text); }
+.att-rev[data-status="wrong"] .att-rev__verdict { color: var(--of-danger-text); }
+.att-rev[data-status="unanswered"] .att-rev__verdict { color: var(--of-warning-text); }
+.att-rev[data-status="unscored"] .att-rev__verdict { color: var(--of-text-3); }
+.att-rev__answers { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px; font-size: var(--of-text-sm); color: var(--of-text-2); }
+.att-rev__answers b { color: var(--of-text); }
+.att-lock-note { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: var(--of-radius-md); background: var(--of-primary-soft); color: var(--of-primary-text); font-size: var(--of-text-sm); line-height: 1.55; }
+.att-lock-note svg { width: 18px; height: 18px; flex: none; margin-top: 1px; }
+
+/* ------------------------------------------------------------ Kontent bloklari (savol/yechim) */
+.att-p { margin: 0; }
+.att-list { margin: 0; padding-left: 1.6em; display: flex; flex-direction: column; gap: 4px; }
+.att-list[data-style="alpha"] { list-style-type: lower-alpha; }
+.att-list[data-style="upper"] { list-style-type: upper-alpha; }
+.att-table-wrap { max-width: 100%; overflow-x: auto; border-radius: var(--of-radius-sm); border: 1px solid var(--of-border); }
+.att-table { border-collapse: collapse; min-width: 100%; font-size: var(--of-text-sm); }
+.att-table td { border: 1px solid var(--of-border); padding: 8px 10px; vertical-align: top; }
+.att-table tr:first-child td { background: var(--of-surface-2); }
+.att-math--display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; }
+.att-math .katex { font-size: 1.06em; }
+.att-math--display .katex-display { margin: 0.4em 0; }
+.att-fig { margin: 4px 0; max-width: min(100%, var(--att-fig-w, 560px)); }
+.att-fig--inline { display: inline-block; vertical-align: middle; max-width: min(100%, 160px); margin: 0; }
+.att-fig__btn {
+  display: block; width: 100%; padding: 8px; border: 1px solid var(--of-border); border-radius: var(--of-radius-md);
+  background: #fff; cursor: zoom-in; aspect-ratio: var(--att-fig-ratio, auto);
+}
+.att-fig__btn:disabled { cursor: default; }
+.att-fig__btn img { width: 100%; height: 100%; object-fit: contain; }
+.att-fig[data-state="loading"] .att-fig__btn { background: linear-gradient(90deg, var(--of-surface-sunken), var(--of-surface-2), var(--of-surface-sunken)); background-size: 200% 100%; animation: att-shimmer 1.4s linear infinite; min-height: 80px; }
+.att-fig[data-state="loading"] img, .att-fig[data-state="error"] img { visibility: hidden; }
+.att-fig[data-state="error"] .att-fig__btn { min-height: 64px; background: var(--of-danger-soft); }
+.att-fig__status { display: block; font-size: var(--of-text-xs); color: var(--of-text-3); margin-top: 4px; }
+.att-fig__status:empty { display: none; }
+.att-fig[data-state="error"] .att-fig__status { color: var(--of-danger-text); }
+@keyframes att-shimmer { to { background-position: -200% 0; } }
+/* Qorong'i tema: chizmalar oq "qog'oz"da (qora chiziqli SVG o'qilishi uchun), atrofi xira */
+:root[data-theme="dark"] .att-fig__btn { background: #f3f6fb; border-color: var(--of-border-strong); }
+.att-zoom .of-modal__dialog { width: min(96vw, 1100px); max-width: none; }
+.att-zoom__img { width: 100%; max-height: 78vh; object-fit: contain; background: #fff; border-radius: var(--of-radius-md); }
+
+.att-sol { display: flex; flex-direction: column; gap: 12px; line-height: 1.65; overflow-wrap: anywhere; }
+.att-sol-heading { font: 750 var(--of-text-md)/1.3 var(--of-font-display); color: var(--of-primary-text); margin: 4px 0 0; }
+.att-box { padding: 12px 14px; border-radius: var(--of-radius-md); background: var(--of-surface-2); border: 1px solid var(--of-border); display: flex; flex-direction: column; gap: 6px; }
+.att-box__label { font: 700 var(--of-text-xs)/1 var(--of-font-sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--of-text-3); }
+.att-box--given { background: var(--of-primary-soft); border-color: transparent; }
+.att-box--given .att-box__label { color: var(--of-primary-text); }
+.att-box--answer { background: var(--of-success-soft); border-color: transparent; }
+.att-box--answer .att-box__label { color: var(--of-success-text); }
+.att-box--status { background: var(--of-warning-soft); border-color: transparent; }
+.att-box--status .att-box__label { color: var(--of-warning-text); }
+
+/* ------------------------------------------------------------ Yechimlar */
+.att-solq { padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
+.att-solq__answer { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: var(--of-text-sm); }
+.att-solq__sep { height: 1px; background: var(--of-border); margin: 4px 0; }
+
+/* ------------------------------------------------------------ Statistika */
+.att-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.att-tile { padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.att-tile span { color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 650; }
+.att-tile b { font: 800 var(--of-text-2xl)/1.1 var(--of-font-display); color: var(--of-text); }
+.att-tile small { color: var(--of-text-3); font-size: var(--of-text-xs); }
+.att-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.att-panel { padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.att-panel h2 { font-size: var(--of-text-md); }
+.att-tiles + .att-panels, .att-panels + .att-panel { margin-top: 16px; }
+.att-tile b { overflow-wrap: anywhere; }
+.att-bars { display: flex; flex-direction: column; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.att-bars li { display: grid; grid-template-columns: minmax(70px, 34%) minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: var(--of-text-sm); }
+.att-bars li > span:first-child { color: var(--of-text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.att-bars .of-progress { height: 10px; }
+.att-bars b { font-variant-numeric: tabular-nums; min-width: 4.2ch; text-align: right; }
+.att-cols { display: flex; align-items: flex-end; gap: 6px; height: 160px; padding: 6px 2px 0; border-bottom: 1px solid var(--of-border); overflow-x: auto; }
+.att-col { flex: 1 0 18px; max-width: 34px; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.att-col i { display: block; width: 100%; border-radius: 6px 6px 2px 2px; background: var(--of-primary); min-height: 3px; }
+.att-col--time i { background: var(--of-success); }
+.att-col small { font-size: 0.66rem; color: var(--of-text-3); font-variant-numeric: tabular-nums; }
+.att-history { width: 100%; border-collapse: collapse; font-size: var(--of-text-sm); }
+.att-history th { text-align: left; color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 650; padding: 8px 10px; border-bottom: 1px solid var(--of-border); }
+.att-history td { padding: 10px; border-bottom: 1px solid var(--of-border); vertical-align: middle; }
+.att-history tr:last-child td { border-bottom: 0; }
+
+/* ------------------------------------------------------------ Responsive */
+@media (max-width: 1080px) {
+  .att-test { grid-template-columns: minmax(0, 1fr); }
+  .att-side { position: static; order: 2; }
+  .att-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .att-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .att-hero, .att-result, .att-panels { grid-template-columns: minmax(0, 1fr); }
+  .att-hero { padding: 20px; }
+  .att-today { grid-template-columns: auto minmax(0, 1fr); }
+  .att-today__actions { grid-column: 1 / -1; justify-content: stretch; }
+  .att-today__actions .of-btn { flex: 1; }
+}
+@media (max-width: 640px) {
+  .att-choices { grid-template-columns: minmax(0, 1fr); }
+  .att-q { padding: 16px; }
+  .att-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .att-counts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .att-count { padding: 10px 8px; }
+  .att-count b { font-size: var(--of-text-xl); }
+  .att-result { padding: 18px; }
+  .att-result__score { flex-direction: column; align-items: flex-start; }
+  .att-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .att-tile b { font-size: var(--of-text-xl); }
+  .att-bar { top: calc(var(--of-header-h) + 4px); padding: 10px 12px; gap: 8px; }
+  .att-bar .of-progress { order: 5; flex-basis: 100%; }
+  .att-q__nav .of-btn { flex: 1; }
+  .att-history thead { display: none; }
+  .att-history tr { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 10px 0; border-bottom: 1px solid var(--of-border); }
+  .att-history td { border: 0; padding: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .att-fig[data-state="loading"] .att-fig__btn { animation: none; }
+  .att-opt, .att-grid button { transition: none; }
+}
+
+/* ------------------------------------------------------------ Yordamchi */
+.att .of-badge svg, .att-days .of-badge svg { width: 13px; height: 13px; flex: none; }
+.att-day__stats .of-badge, .att-today__meta .of-badge, .att-solq__answer .of-badge { height: auto; min-height: 24px; padding: 4px 10px; line-height: 1.3; white-space: normal; }
+.att-steps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px; }
+.att-steps li { display: flex; flex-direction: column; gap: 8px; }
+.att-steps code { font-size: var(--of-text-xs); background: var(--of-surface-sunken); padding: 2px 6px; border-radius: 6px; overflow-wrap: anywhere; }
+/* Ikonlar uchun xavfsiz standart o'lcham (aniq qoidalar ustun turadi) */
+.att :where(.of-icon) { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.18em; }
+.att-day__topics { display: flex; gap: 6px; align-items: flex-start; }
+
+/* Hali e'lon qilinmagan kunlar — ixcham (mazmun ko'rsatilmaydi) */
+.att-locked { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.att-locked li {
+  display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 8px;
+  border: 1px dashed var(--of-border-strong); border-radius: var(--of-radius-md); background: var(--of-surface-2);
+  color: var(--of-text-3); font: 650 var(--of-text-sm)/1 var(--of-font-sans);
+}
+.att-locked li svg { width: 14px; height: 14px; }
+.att-locked-title { margin-top: 18px; color: var(--of-text-2); font: 650 var(--of-text-sm)/1.3 var(--of-font-sans); }
+.att-count svg, .att-result__meta svg, .att-rev__verdict svg { width: 16px; height: 16px; flex: none; }
+.att-rev__verdict svg { width: 18px; height: 18px; }
