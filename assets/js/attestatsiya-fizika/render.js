@@ -131,9 +131,9 @@ function renderBlock(b, ctx) {
       list.className = "att-list";
       if (b.label === "a)") list.dataset.style = "alpha";
       if (b.label === "A)") list.dataset.style = "upper";
-      for (const it of b.items) {
+      for (const it of b.items || []) {
         const li = document.createElement("li");
-        li.append(renderBlocks(it, ctx));
+        li.append(renderBlocks(itemBlocks(it), ctx));
         list.append(li);
       }
       return list;
@@ -146,9 +146,9 @@ function renderBlock(b, ctx) {
       wrap.setAttribute("aria-label", "Jadval (gorizontal aylantirish mumkin)");
       const table = document.createElement("table");
       table.className = "att-table";
-      for (const row of b.rows) {
+      for (const row of b.rows || []) {
         const tr = document.createElement("tr");
-        for (const cell of row) {
+        for (const cell of rowCells(row)) {
           const td = document.createElement("td");
           if (cell.colspan) td.colSpan = cell.colspan;
           td.append(renderBlocks(cell.blocks, ctx));
@@ -248,6 +248,18 @@ function figureNode(b, ctx) {
   return fig;
 }
 
+/**
+ * Firestore massiv ichida massivni saqlamaydi, shuning uchun canonical shakl:
+ *   list.items = [{ blocks: [...] }],  table.rows = [{ cells: [...] }]
+ * Eski (ichki) shakl — items = [[...]], rows = [[...]] — ham o'qiladi (orqaga moslik).
+ */
+export function itemBlocks(it) {
+  return Array.isArray(it) ? it : (it && Array.isArray(it.blocks) ? it.blocks : []);
+}
+export function rowCells(row) {
+  return Array.isArray(row) ? row : (row && Array.isArray(row.cells) ? row.cells : []);
+}
+
 /** Variant harflari bilan ro'yxat tugmalari uchun matn (ekran o'quvchilar) */
 export function plainText(blocks) {
   const out = [];
@@ -256,7 +268,7 @@ export function plainText(blocks) {
     if (b.t === "math") out.push(b.tex);
     if (b.t === "figure") out.push("[rasm]");
     if (b.blocks) walk(b.blocks);
-    if (b.items) b.items.forEach(walk);
+    if (b.t === "list" && b.items) b.items.forEach((it) => walk(itemBlocks(it)));
   });
   walk(blocks);
   return out.join(" ").replace(/\s+/g, " ").trim();

@@ -20,6 +20,31 @@ const SDK = path.join(HERE, "sdk");
 const bundle = JSON.parse(fs.readFileSync(path.join(PRIV, "firestore-import.json"), "utf8"));
 const keyOf = (tid) => bundle.ops.find((o) => o.path === `attestationPhysicsDailyTests/${tid}/keys/v1`).data;
 const snapOf = (tid) => bundle.ops.find((o) => o.path === `attestationPhysicsDailyTests/${tid}/versions/v1`).data;
+const solOf = (tid) => bundle.ops.find((o) => o.path === `attestationPhysicsDailyTests/${tid}/solutions/v1`).data;
+// Firestore cheklovi: massiv ichida massiv yo'q (haqiqiy SDK batch.set() da rad etadi)
+const hasNested = (v, inArr = false) => Array.isArray(v) ? (inArr || v.some((x) => hasNested(x, true)))
+  : (v && typeof v === "object") ? Object.values(v).some((x) => hasNested(x, false)) : false;
+// Teskari (eski, ichki) format: items=[[...]], rows=[[...]] — preflight va SDK uni ushlashini tekshirish uchun
+const legacy = (v) => {
+  if (Array.isArray(v)) return v.map(legacy);
+  if (!v || typeof v !== "object") return v;
+  const o = {};
+  for (const [k, x] of Object.entries(v)) {
+    if (v.t === "list" && k === "items") o[k] = x.map((it) => legacy(it.blocks ?? it));
+    else if (v.t === "table" && k === "rows") o[k] = x.map((r) => legacy(r.cells ?? r));
+    else o[k] = legacy(x);
+  }
+  return o;
+};
+// Bloklardagi ro'yxat bandlari va jadval kataklari soni (canonical format)
+const countLT = (blocks, acc = { li: 0, td: 0 }) => {
+  for (const b of blocks || []) {
+    if (b.blocks) countLT(b.blocks, acc);
+    if (b.t === "list") for (const it of b.items) { acc.li++; countLT(it.blocks, acc); }
+    if (b.t === "table") for (const r of b.rows) for (const c of r.cells) { acc.td++; countLT(c.blocks, acc); }
+  }
+  return acc;
+};
 
 const checks = [];
 const ok = (name, cond, detail = "") => { checks.push({ name, pass: Boolean(cond), detail }); console.log(`${cond ? "PASS" : "FAIL"} ${name}${detail ? ` — ${detail}` : ""}`); };
@@ -66,6 +91,36 @@ const shot = (page, name) => page.screenshot({ path: path.join(OUT, `${name}.png
 const settle = (page, ms = 900) => page.waitForTimeout(ms);
 
 await setClock(null, T0);
+
+// ======================================================== 0. FIRESTORE FORMATI: massiv ichida massiv yo'q
+{
+  const nestedOps = bundle.ops.filter((o) => hasNested(o.data)).length;
+  ok("bundle: Firestore'ga mos (massiv ichida massiv 0 ta)", nestedOps === 0, `${nestedOps}/${bundle.ops.length}`);
+  const legacyBundle = { ...bundle, ops: bundle.ops.map((o) => ({ ...o, data: legacy(o.data) })) };
+  const legacyNested = legacyBundle.ops.filter((o) => hasNested(o.data)).length;
+  const legacyPath = path.join(OUT, "legacy-nested-bundle.json");
+  fs.writeFileSync(legacyPath, JSON.stringify(legacyBundle));
+  const { ctx, page } = await makeCtx({ uid: "admin1" });
+  await page.goto(B + "admin/attestatsiya-fizika.html");
+  await page.waitForSelector("[data-admin-root]:not([hidden])");
+  // (a) SDK darajasi: mock SDK haqiqiy Firestore kabi batch.set() ni darhol rad etadi
+  const sdkErr = await page.evaluate(async () => {
+    const m = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
+    try {
+      m.writeBatch(m.getFirestore()).set(m.doc(m.getFirestore(), "attestationPhysicsQuestions", "AF-1-001"), { question: [{ t: "list", items: [[{ t: "p", text: "x" }]] }] });
+      return null;
+    } catch (e) { return { code: e.code, message: e.message }; }
+  });
+  ok("mock SDK: nested array → invalid-argument (haqiqiy Firestore xabari)", sdkErr?.code === "invalid-argument" && /Nested arrays are not supported \(found in document attestationPhysicsQuestions\/AF-1-001\)/.test(sdkErr.message), sdkErr?.message || "xato yo'q");
+  // (b) Admin preflight: eski formatdagi fayl Firestore'ga yozilmasdan rad etiladi
+  await page.setInputFiles("[data-bundle]", legacyPath);
+  await page.waitForFunction(() => /massiv ichidagi massiv/.test(document.querySelector("[data-bundle-info]").textContent));
+  const pre = await page.textContent("[data-bundle-info]");
+  const disabled = await page.$eval("[data-import]", (b) => b.disabled);
+  const written = Object.keys((await post("__mock/dump", { prefix: "attestationPhysics" })).docs || {}).length;
+  ok("admin preflight: eski (nested) fayl rad etildi, Import o'chiq, 0 hujjat yozildi", legacyNested === 174 && disabled && written === 0 && /AF-1-001/.test(pre), `${legacyNested} nested hujjat · yozildi ${written} · «${pre.slice(0, 110)}…»`);
+  await ctx.close();
+}
 
 // ======================================================== 1. ADMIN: import + rasmlar + publish Day 1
 {
@@ -284,6 +339,22 @@ await allow("8b. user → yechim (solutionAvailableAt dan keyin)", apiAs("user1"
   const solN = await page.$$eval(".att-solq", (x) => x.length);
   const kx = await page.$$eval(".att-sol .katex", (x) => x.length);
   ok("yechimlar ochiq: 32 savol, to'liq yechim + KaTeX", solN === 32 && kx > 20, `${solN} savol, ${kx} formula`);
+  // Ro'yxat/jadval (canonical {blocks}/{cells}) to'liq render bo'ldi: bandlar va kataklar soni bundle bilan bir xil
+  {
+    const exp = { li: 0, td: 0 };
+    for (const q of snapOf("att-fizika-day-01").questions) { countLT(q.question, exp); for (const o of q.options) countLT(o.blocks, exp); }
+    for (const it of solOf("att-fizika-day-01").items) countLT(it.solution, exp);
+    const got = await page.evaluate(() => ({ li: document.querySelectorAll(".att-list > li").length, td: document.querySelectorAll(".att-table td").length }));
+    const first = await page.evaluate(() => document.querySelector(".att-solq .att-list > li")?.textContent.trim() || "");
+    ok("render: ro'yxat va jadvallar (yangi format) to'liq", exp.li > 0 && exp.td > 0 && got.li === exp.li && got.td === exp.td && first.startsWith("Poyezd Toshkentdan Termizga bordi"), `li ${got.li}/${exp.li} · td ${got.td}/${exp.td} · «${first.slice(0, 40)}»`);
+    // Orqaga moslik: eski format ham aynan bir xil HTML beradi; plainText ikkalasida bir xil
+    const compat = await page.evaluate(async ([canon, old]) => {
+      const r = await import("/assets/js/attestatsiya-fizika/render.js");
+      const html = (b) => { const d = document.createElement("div"); d.append(r.renderBlocks(b, { testId: "att-fizika-day-01", scope: "question" })); return d.innerHTML; };
+      return { html: html(canon) === html(old), text: r.plainText(canon) === r.plainText(old) && r.plainText(canon).length > 0 };
+    }, [snapOf("att-fizika-day-01").questions.flatMap((q) => q.question), legacy(snapOf("att-fizika-day-01").questions.flatMap((q) => q.question))]);
+    ok("render: eski format bilan orqaga moslik (HTML va plainText bir xil)", compat.html && compat.text, JSON.stringify(compat));
+  }
   const lazyBefore = await page.$$eval(".att-fig[data-state]", (f) => f.filter((x) => x.dataset.state === "loading").length);
   const figCount = await page.$$eval(".att-fig", (f) => f.length);
   for (let i = 0; i < figCount; i++) {

@@ -206,6 +206,16 @@ def main():
               and all(db.docs[p]["status"] == "draft" for p in tests))
     dry["status"] = "PASS" if dry_ok else "FAIL"
     expect("dry-run import: barcha operatsiyalar Rules'dan o'tdi va hisoblar to'g'ri", dry_ok)
+
+    def _nested(v, in_arr=False):
+        if isinstance(v, list):
+            return in_arr or any(_nested(x, True) for x in v)
+        if isinstance(v, dict):
+            return any(_nested(x, False) for x in v.values())
+        return False
+    nested_ops = [o["path"] for o in bundle["ops"] if _nested(o["data"])]
+    dry["nestedArrays"] = len(nested_ops)
+    expect("dry-run: Firestore formati — massiv ichida massiv yo'q (batch.set() rad etmaydi)", not nested_ops)
     # Oddiy foydalanuvchi import qila olmaydi
     expect("user import qila olmaydi (dailyTest create)",
            db.write(U1, "attestationPhysicsDailyTests/x", {"id": "x"}, t0, apply=False), False)
