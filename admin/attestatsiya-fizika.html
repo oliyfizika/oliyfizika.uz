@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: Attestatsiya — Fizika kunlik testlari">
+<title>Attestatsiya — Fizika | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="stylesheet" href="../assets/css/attestatsiya.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/attestation-fizika.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Attestatsiya — Fizika">
+<!-- Frontend gate xavfsizlik EMAS: himoya firestore.rules / storage.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div>
+        <h1>Attestatsiya → Fizika → Kunlik testlar</h1>
+        <p class="of-muted">32 kunlik kurs oldindan tayyor. Har kuni keyingi kunni <b>PUBLISH</b> qiling — test darhol foydalanuvchilarga ochiladi, yechimlar ertasi kuni 00:00 da (Toshkent) ochiladi.</p>
+      </div>
+    </header>
+
+    <ul class="of-admin-stats" data-stats aria-live="polite">
+      <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--blue" data-icon="list"></span><span class="of-admin-stat__value" data-stat="total">—</span><span class="of-admin-stat__label">Kunlik testlar</span></li>
+      <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--green" data-icon="checkCircle"></span><span class="of-admin-stat__value" data-stat="published">—</span><span class="of-admin-stat__label">E’lon qilingan</span></li>
+      <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--orange" data-icon="lock"></span><span class="of-admin-stat__value" data-stat="draft">—</span><span class="of-admin-stat__label">Draft</span></li>
+      <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--purple" data-icon="key"></span><span class="of-admin-stat__value" data-stat="access">—</span><span class="of-admin-stat__label">Access rejimi</span></li>
+    </ul>
+
+    <p class="of-admin-note" data-note aria-live="polite"></p>
+
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="attTblTitle">
+      <h2 class="of-sr-only" id="attTblTitle">Kunlik testlar jadvali</h2>
+      <div class="of-admin-table-wrap">
+        <table class="of-admin-table">
+          <caption class="of-sr-only">Kun, bo‘lim, mavzular, savollar soni, holat, e’lon sanasi, yechim sanasi, natijalar va amallar</caption>
+          <thead><tr><th scope="col">Day</th><th scope="col">Section</th><th scope="col">Topics</th><th scope="col">Savollar</th><th scope="col">Status</th><th scope="col">Publish date</th><th scope="col">Solution date</th><th scope="col">Urinishlar</th><th scope="col">Action</th></tr></thead>
+          <tbody data-body><tr><td colspan="9">Yuklanmoqda…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="of-card of-admin-panel" aria-labelledby="attAttTitle" data-attempts-panel hidden>
+      <div class="of-admin-panel__head"><h2 id="attAttTitle" data-attempts-title>Urinishlar</h2></div>
+      <div data-attempts></div>
+    </section>
+
+    <section class="of-card of-admin-panel" aria-labelledby="attImpTitle">
+      <div class="of-admin-panel__head"><h2 id="attImpTitle">Import (bir martalik)</h2></div>
+      <p class="of-muted">Fayllar kompyuteringizdan tanlanadi va faqat brauzerda o‘qiladi (serverga fayl sifatida yuklanmaydi). Yozuvlar sizning admin sessiyangiz va Firestore/Storage Rules orqali o‘tadi. Mavjud (ayniqsa e’lon qilingan) testlar QAYTA YOZILMAYDI.</p>
+      <ol class="att-steps">
+        <li>
+          <p><b>1. Savollar va kunlik testlar</b> — <code>_private/attestatsiya-fizika/firestore-import.json</code></p>
+          <div class="of-row" style="flex-wrap:wrap">
+            <label class="of-btn"><input type="file" accept="application/json,.json" data-bundle hidden>Faylni tanlash</label>
+            <button type="button" class="of-btn of-btn--primary" data-import disabled>Import qilish</button>
+          </div>
+          <p class="of-subtle" data-bundle-info aria-live="polite"></p>
+        </li>
+        <li>
+          <p><b>2. Savol rasmlari (Firebase Storage)</b> — <code>_private/attestatsiya-fizika/storage/</code> papkasini tanlang</p>
+          <div class="of-row" style="flex-wrap:wrap">
+            <label class="of-btn"><input type="file" webkitdirectory multiple data-figs hidden>Papkani tanlash</label>
+            <button type="button" class="of-btn of-btn--primary" data-upload disabled>Storage’ga yuklash</button>
+          </div>
+          <div class="of-progress" role="progressbar" aria-label="Rasmlar yuklanishi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--value:0" data-up-bar hidden><span></span></div>
+          <p class="of-subtle" data-figs-info aria-live="polite"></p>
+        </li>
+        <li>
+          <p><b>Muqobil (Storage ishlatilmasa):</b> rasmlarni Firestore’ga — <code>firestore-figures.json</code>; so‘ng sozlamada <code>figureBackend: "firestore"</code>.</p>
+          <div class="of-row" style="flex-wrap:wrap">
+            <label class="of-btn"><input type="file" accept="application/json,.json" data-figdocs hidden>Faylni tanlash</label>
+            <button type="button" class="of-btn" data-figdocs-import disabled>Firestore’ga yozish</button>
+            <button type="button" class="of-btn of-btn--ghost" data-backend></button>
+          </div>
+          <p class="of-subtle" data-figdocs-info aria-live="polite"></p>
+        </li>
+      </ol>
+    </section>
+  </div>
+</div>
+</body>
+</html>

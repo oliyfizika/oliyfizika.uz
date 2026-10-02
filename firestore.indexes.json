@@ -24,6 +24,30 @@
         { "fieldPath": "passed", "order": "ASCENDING" },
         { "fieldPath": "completedAt", "order": "DESCENDING" }
       ]
+    },
+    {
+      "collectionGroup": "attestationPhysicsDailyTests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "published", "order": "ASCENDING" },
+        { "fieldPath": "dayNumber", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "attestationPhysicsAttempts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "userId", "order": "ASCENDING" },
+        { "fieldPath": "dayNumber", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "attestationPhysicsAttempts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "testId", "order": "ASCENDING" },
+        { "fieldPath": "completedAt", "order": "DESCENDING" }
+      ]
     }
   ],
   "fieldOverrides": []

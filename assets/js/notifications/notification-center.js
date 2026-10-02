@@ -208,6 +208,8 @@ export function updateSession(state) {
     uid = state.user.uid; derived = []; readSet = new Set(); seen = {}; status = "idle";
   }
   if (!state.profileLoaded) { render(); return; }
+  // Attestatsiya → Fizika: e'lon qilingan kunlik test / ochilgan yechimlar (mavjud "of:notifications" ulanish nuqtasi orqali)
+  import("../attestatsiya-fizika/notify.js").then((m) => m.refresh(state)).catch(() => {});
   if (status === "idle") {
     status = "loading";
     render();

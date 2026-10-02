@@ -1,0 +1,76 @@
+rules_version = '2';
+
+// ============================================================================
+// OliyFizika.uz — Firebase Storage Security Rules (Attestatsiya → Fizika, 3-bosqich)
+//
+// DIQQAT: bu fayl repositoryda saqlanadi, avtomatik DEPLOY QILINMAYDI. Deploydan oldin Console'dagi
+// mavjud Storage qoidalari bilan solishtiring (repo kodi hozir Storage'ni boshqa joyda ishlatmaydi).
+//
+// Model (Firestore qoidalari bilan bir xil — cross-service firestore.get()):
+//   attestation-physics/questions/{testId}/{fileHash}
+//     • o'qish: admin; yoki access bor foydalanuvchi + attestationPhysicsDailyTests/{testId} published.
+//       Draft kunning rasmi oddiy foydalanuvchiga YOPIQ.
+//   attestation-physics/solutions/{testId}/{fileHash}
+//     • o'qish: admin; yoki access + published + request.time >= solutionAvailableAt.
+//   Yozish — faqat admin (import), faqat rasm, ≤ 2 MB. O'chirish — hech kim.
+//   Frontend rasmlarni getBlob() orqali oladi: har bir so'rov shu qoidalardan o'tadi
+//   (getDownloadURL token-URL'lari ishlatilmaydi — ular doimiy ommaviy havola bo'lib qoladi).
+//   Qolgan barcha yo'llar — yopiq.
+// ============================================================================
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        && userDoc().get('role', 'user') == 'admin';
+    }
+
+    function canAccess() {
+      return signedIn() && (
+        isAdmin()
+        || firestore.get(/databases/(default)/documents/attestationPhysicsSettings/config).data.get('accessMode', 'closed') == 'open'
+        || userDoc().get('attestationAccess', false) == true
+      );
+    }
+
+    function test(testId) {
+      return firestore.get(/databases/(default)/documents/attestationPhysicsDailyTests/$(testId)).data;
+    }
+
+    function visible(testId) {
+      return test(testId).published == true && test(testId).status in ['published', 'archived'];
+    }
+
+    function validImage() {
+      return request.resource.size < 2 * 1024 * 1024
+        && request.resource.contentType.matches('image/(webp|svg\\+xml|png)');
+    }
+
+    match /attestation-physics/questions/{testId}/{fileName} {
+      allow read: if isAdmin() || (canAccess() && visible(testId));
+      allow create: if isAdmin() && validImage();
+      allow update, delete: if false;
+    }
+
+    match /attestation-physics/solutions/{testId}/{fileName} {
+      allow read: if isAdmin()
+        || (canAccess() && visible(testId) && request.time >= test(testId).solutionAvailableAt);
+      allow create: if isAdmin() && validImage();
+      allow update, delete: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

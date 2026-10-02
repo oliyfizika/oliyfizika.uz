@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attestatsiya — Fizika | OliyFizika.uz</title>
+<meta name="description" content="Attestatsiya — Fizika: 32 kunlik kurs, bugungi test, kunlik topshiriqlar, yechimlar, natijalar va statistika.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/attestatsiya.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/attestatsiya-fizika/dashboard.js"></script>
+</head>
+<body class="of-ui" data-shell-title="Attestatsiya — Fizika">
+<div class="of-page of-container att" id="attDash">
+
+  <section class="of-card att-hero" aria-labelledby="attDashTitle">
+    <div class="att-hero__text">
+      <p class="att-eyebrow"><span data-icon="atom"></span>Attestatsiya — Fizika</p>
+      <h1 id="attDashTitle">Fizika attestatsiyasi: 32 kunlik kurs</h1>
+      <p>Har kuni administrator yangi testni e’lon qiladi. Testni istalgan vaqtda, vaqt chegarasisiz ishlaysiz — topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi, to‘liq yechimlar esa ertasi kuni soat 00:00 da (Toshkent vaqti) ochiladi.</p>
+    </div>
+    <div class="att-hero__side" aria-live="polite" data-hero-side>
+      <div class="att-metric"><span>Kurs progressi</span><strong class="of-num" data-progress-num><span class="of-skeleton" style="display:inline-block;width:64px;height:24px"></span></strong></div>
+      <div class="of-progress of-progress--lg" role="progressbar" aria-label="Kurs progressi (bajarilgan kunlar)" aria-valuemin="0" aria-valuemax="32" aria-valuenow="0" style="--value:0" data-progress-bar><span></span></div>
+      <div class="att-metrics-row">
+        <div class="att-mini"><span>O‘rtacha natija</span><b class="of-num" data-avg>—</b></div>
+        <div class="att-mini"><span>Eng yuqori</span><b class="of-num" data-best>—</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div data-tabs></div>
+
+  <section aria-labelledby="attTodayTitle">
+    <h2 class="of-sr-only" id="attTodayTitle">Bugungi test</h2>
+    <div class="of-card att-today" data-today data-state="none" aria-busy="true">
+      <span class="att-daybadge"><small>Day</small><b>…</b></span>
+      <div class="att-today__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="attDaysTitle" id="kunlik" tabindex="-1">
+    <div class="of-section-title"><h2 id="attDaysTitle">Kunlik topshiriqlar</h2></div>
+    <p class="of-subtle" style="margin-bottom:12px">E’lon qilingan kunlar ochiq. Hali e’lon qilinmagan kunlarning mazmuni ko‘rsatilmaydi.</p>
+    <ul class="att-days" data-days aria-busy="true">
+      <li><div class="of-card att-day"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card att-day"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card att-day"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+    </ul>
+    <div data-locked hidden>
+      <p class="att-locked-title" data-locked-title>Hali e’lon qilinmagan kunlar</p>
+      <ul class="att-locked"></ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>

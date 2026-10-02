@@ -1,0 +1,1174 @@
+{
+ "input_extracted_from_pdfs": 1167,
+ "merged_duplicates_before_book": 140,
+ "input_questions": 1027,
+ "unique_source_ids": 1027,
+ "solutions": 1027,
+ "missing_solution": [],
+ "solution_without_problem": [],
+ "exact_text_duplicates_remaining": 0,
+ "fingerprint_duplicates_remaining": 0,
+ "scoring": {
+  "auto": 865,
+  "self-check": 81,
+  "excluded": 81
+ },
+ "types": {
+  "mcq": 893,
+  "open": 81,
+  "match": 47,
+  "multi": 6
+ },
+ "difficulty": {
+  "1": 415,
+  "2": 359,
+  "3": 219,
+  "4": 34
+ },
+ "checks": {
+  "every_day_25_40": true,
+  "assigned_total": 1027,
+  "assigned_unique": 1027,
+  "unassigned": [],
+  "used_twice": [],
+  "days": 32,
+  "split_topics_consecutive": true
+ },
+ "ok": true,
+ "unscored_list": [
+  {
+   "qid": "AF-1-005",
+   "sourceId": "F27-072",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-009",
+   "sourceId": "F27-001",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-010",
+   "sourceId": "F27-003",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-014",
+   "sourceId": "F27-077",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-018",
+   "sourceId": "F30-020",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-1-024",
+   "sourceId": "F27-002",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-025",
+   "sourceId": "F27-030",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-026",
+   "sourceId": "F27-068",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-031",
+   "sourceId": "F27-033",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-036",
+   "sourceId": "F27-059",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-043",
+   "sourceId": "F30-034",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-050",
+   "sourceId": "F06-004",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-058",
+   "sourceId": "F25-028",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-065",
+   "sourceId": "F24-004",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-068",
+   "sourceId": "F27-017",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-069",
+   "sourceId": "F27-036",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-073",
+   "sourceId": "F27-061",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-077",
+   "sourceId": "F27-007",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-100",
+   "sourceId": "F29-029",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-101",
+   "sourceId": "F27-074",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-115",
+   "sourceId": "F27-038",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-134",
+   "sourceId": "F27-058",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-142",
+   "sourceId": "F02-013",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-158",
+   "sourceId": "F17-026",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-167",
+   "sourceId": "F22-004",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-176",
+   "sourceId": "F27-081",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-177",
+   "sourceId": "F30-019",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-181",
+   "sourceId": "F27-060",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-184",
+   "sourceId": "F27-069",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-193",
+   "sourceId": "F27-016",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-201",
+   "sourceId": "F19-005",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-202",
+   "sourceId": "F25-014",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-1-203",
+   "sourceId": "F27-064",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-204",
+   "sourceId": "F27-065",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-213",
+   "sourceId": "F10-008",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-217",
+   "sourceId": "F09-002",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-229",
+   "sourceId": "F27-004",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-237",
+   "sourceId": "F27-032",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-241",
+   "sourceId": "F24-021",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-1-249",
+   "sourceId": "F27-014",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-250",
+   "sourceId": "F27-075",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-1-252",
+   "sourceId": "F05-011",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-2-003",
+   "sourceId": "F27-057",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-006",
+   "sourceId": "F27-084",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-019",
+   "sourceId": "F27-021",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-025",
+   "sourceId": "F27-056",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-029",
+   "sourceId": "F02-030",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-2-045",
+   "sourceId": "F27-009",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-046",
+   "sourceId": "F27-082",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-048",
+   "sourceId": "F27-039",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-052",
+   "sourceId": "F23-008",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-2-057",
+   "sourceId": "F28-011",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-2-059",
+   "sourceId": "F30-003",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-2-061",
+   "sourceId": "F17-008",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-2-075",
+   "sourceId": "F27-086",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-078",
+   "sourceId": "F27-080",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-080",
+   "sourceId": "F27-031",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-082",
+   "sourceId": "F27-041",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-093",
+   "sourceId": "F25-034",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-2-099",
+   "sourceId": "F27-008",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-100",
+   "sourceId": "F27-067",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-2-109",
+   "sourceId": "F10-003",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-003",
+   "sourceId": "F27-062",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-006",
+   "sourceId": "F25-029",
+   "type": "match",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-007",
+   "sourceId": "F27-053",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-011",
+   "sourceId": "F27-052",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-021",
+   "sourceId": "F10-023",
+   "type": "match",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-025",
+   "sourceId": "F27-005",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-026",
+   "sourceId": "F27-006",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-033",
+   "sourceId": "F27-020",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-036",
+   "sourceId": "F10-025",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-040",
+   "sourceId": "F27-018",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-041",
+   "sourceId": "F27-054",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-066",
+   "sourceId": "F27-073",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-074",
+   "sourceId": "F27-023",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-079",
+   "sourceId": "F27-085",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-097",
+   "sourceId": "F27-051",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-114",
+   "sourceId": "F27-015",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-118",
+   "sourceId": "F28-014",
+   "type": "match",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-3-133",
+   "sourceId": "F27-011",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-142",
+   "sourceId": "F11-018",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-144",
+   "sourceId": "F27-024",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-145",
+   "sourceId": "F27-046",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-163",
+   "sourceId": "F12-015",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-172",
+   "sourceId": "F27-047",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-173",
+   "sourceId": "F12-033",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-177",
+   "sourceId": "F30-004",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-205",
+   "sourceId": "F12-029",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-215",
+   "sourceId": "F11-028",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-3-240",
+   "sourceId": "F13-019",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-244",
+   "sourceId": "F27-019",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-246",
+   "sourceId": "F27-034",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-261",
+   "sourceId": "F12-002",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-3-268",
+   "sourceId": "F27-012",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-269",
+   "sourceId": "F27-026",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-3-282",
+   "sourceId": "F25-009",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-003",
+   "sourceId": "F25-023",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-009",
+   "sourceId": "F09-028",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-010",
+   "sourceId": "F09-021",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-4-018",
+   "sourceId": "F27-045",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-4-020",
+   "sourceId": "F26-013",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-030",
+   "sourceId": "F27-063",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-4-033",
+   "sourceId": "F05-035",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-036",
+   "sourceId": "F05-034",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-040",
+   "sourceId": "F27-066",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-4-062",
+   "sourceId": "F27-022",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-4-089",
+   "sourceId": "F02-003",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-091",
+   "sourceId": "F29-030",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-4-098",
+   "sourceId": "F27-025",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-4-100",
+   "sourceId": "F09-025",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-002",
+   "sourceId": "F24-033",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-5-006",
+   "sourceId": "F21-026",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-008",
+   "sourceId": "F27-035",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-5-014",
+   "sourceId": "F09-019",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-024",
+   "sourceId": "F27-029",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-5-038",
+   "sourceId": "F30-024",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-047",
+   "sourceId": "F07-003",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-060",
+   "sourceId": "F27-043",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-5-067",
+   "sourceId": "F27-013",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-5-068",
+   "sourceId": "F27-044",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-5-074",
+   "sourceId": "F08-031",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-090",
+   "sourceId": "F08-033",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-5-091",
+   "sourceId": "F08-023",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-093",
+   "sourceId": "F08-025",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-096",
+   "sourceId": "F06-032",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-104",
+   "sourceId": "F27-040",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-5-107",
+   "sourceId": "F28-024",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-110",
+   "sourceId": "F03-009",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-5-111",
+   "sourceId": "F23-030",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-6-008",
+   "sourceId": "F27-010",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-015",
+   "sourceId": "F21-027",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-6-017",
+   "sourceId": "F02-010",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-037",
+   "sourceId": "F08-013",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-6-041",
+   "sourceId": "F22-035",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-043",
+   "sourceId": "F27-049",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-044",
+   "sourceId": "F27-071",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-045",
+   "sourceId": "F27-079",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-050",
+   "sourceId": "F27-027",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-051",
+   "sourceId": "F27-028",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-052",
+   "sourceId": "F27-048",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-053",
+   "sourceId": "F27-050",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-054",
+   "sourceId": "F27-070",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-055",
+   "sourceId": "F27-078",
+   "type": "open",
+   "scoring": "self-check",
+   "note": "variantsiz (ochiq) savol — yechim bilan o'zini tekshiradi"
+  },
+  {
+   "qid": "AF-6-056",
+   "sourceId": "F30-022",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-071",
+   "sourceId": "F28-018",
+   "type": "match",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-073",
+   "sourceId": "F03-021",
+   "type": "match",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-107",
+   "sourceId": "F28-045",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-6-122",
+   "sourceId": "F30-046",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-124",
+   "sourceId": "F30-050",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-128",
+   "sourceId": "F17-042",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-129",
+   "sourceId": "F17-043",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-130",
+   "sourceId": "F17-044",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-131",
+   "sourceId": "F20-042",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-133",
+   "sourceId": "F20-047",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-135",
+   "sourceId": "F20-050",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-138",
+   "sourceId": "F17-036",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-146",
+   "sourceId": "F03-048",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-148",
+   "sourceId": "F17-049",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-149",
+   "sourceId": "F17-050",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-150",
+   "sourceId": "F20-039",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: undetermined"
+  },
+  {
+   "qid": "AF-6-151",
+   "sourceId": "F20-048",
+   "type": "mcq",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  },
+  {
+   "qid": "AF-6-152",
+   "sourceId": "F30-042",
+   "type": "match",
+   "scoring": "excluded",
+   "note": "yechim holati: source_error"
+  }
+ ]
+}
