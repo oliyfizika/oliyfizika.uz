@@ -10,7 +10,7 @@
 // ==========================================================================
 import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } from "./admin-common.js";
 import { toast } from "../ui/feedback.js";
-import { listAllTests, publishTest, archiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
+import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
 import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, formatDuration, toMs } from "../attestatsiya-fizika/core.js";
 
 fillIcons($("#adminPage"));
@@ -60,7 +60,8 @@ async function load() {
   body.innerHTML = tests.map((t) => {
     const action = t.status === "draft"
       ? `<button type="button" class="of-btn of-btn--primary of-btn--sm" data-publish="${esc(t.id)}">PUBLISH</button>`
-      : t.status === "published" ? `<button type="button" class="of-btn of-btn--sm" data-archive="${esc(t.id)}">Archive</button>` : "—";
+      : t.status === "published" ? `<button type="button" class="of-btn of-btn--sm" data-archive="${esc(t.id)}">Archive</button>`
+      : t.status === "archived" ? `<button type="button" class="of-btn of-btn--sm" data-unarchive="${esc(t.id)}">Arxivdan chiqarish</button>` : "—";
     return `<tr>
       <td data-label="Day" class="of-num"><b>${t.dayNumber}</b></td>
       <td data-label="Section">${esc(t.sectionTitle)}</td>
@@ -77,6 +78,7 @@ async function load() {
 body.addEventListener("click", async (e) => {
   const pub = e.target.closest("[data-publish]");
   const arc = e.target.closest("[data-archive]");
+  const unarc = e.target.closest("[data-unarchive]");
   const att = e.target.closest("[data-attempts]");
   if (pub) {
     const t = tests.find((x) => x.id === pub.dataset.publish);
@@ -114,6 +116,28 @@ body.addEventListener("click", async (e) => {
       await load();
     } catch (err) {
       toast(errorText(err, "Arxivlab bo‘lmadi."));
+    }
+  }
+  if (unarc) {
+    const t = tests.find((x) => x.id === unarc.dataset.unarchive);
+    if (!t || t.status !== "archived") {
+      toast("Faqat arxivlangan kunni arxivdan chiqarish mumkin.");
+      return;
+    }
+    const ok = await confirmAction({
+      title: `Day ${t.dayNumber} ni arxivdan chiqarib, draft holatiga qaytarishni xohlaysizmi?`,
+      text: `Faqat holat o‘zgaradi (archived → draft). Versiya (v${t.currentVersion}), savollar, mavjud urinishlar va natijalar o‘zgarmaydi. Draft holatida test foydalanuvchilarga ko‘rinmaydi; qayta e’lon qilish — alohida PUBLISH bilan.`,
+      confirmLabel: "Arxivdan chiqarish",
+    });
+    if (!ok) return;
+    unarc.classList.add("is-loading");
+    try {
+      await unarchiveTest(t);
+      toast(`Day ${t.dayNumber} arxivdan chiqarildi va draft holatiga qaytarildi.`);
+      await load();
+    } catch (err) {
+      unarc.classList.remove("is-loading");
+      toast(errorText(err, `Day ${t.dayNumber} ni arxivdan chiqarib bo‘lmadi. Holat o‘zgarmadi.`));
     }
   }
   if (att) showAttempts(tests.find((x) => x.id === att.dataset.attempts));

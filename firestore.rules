@@ -377,6 +377,10 @@ service cloud.firestore {
         || (o.status == 'published' && n.status == 'archived' && n.published == true && attContentUnchanged()
           && n.archivedAt == request.time && n.currentVersion == o.currentVersion
           && n.solutionAvailableAt == o.solutionAvailableAt)
+        // UNARCHIVE (admin): archived → draft. Faqat status va published o'zgaradi; versiya, savollar,
+        // publishedAt, solutionAvailableAt va boshqa barcha maydonlar o'zgarmaydi. published → draft — rad.
+        || (o.status == 'archived' && n.status == 'draft' && n.published == false
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'published']))
       );
     }
 
@@ -406,7 +410,7 @@ service cloud.firestore {
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
-        allow update: if isAdmin() && attTest(testId).status == 'draft'
+        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
@@ -418,7 +422,7 @@ service cloud.firestore {
           && attVersionId(request.resource.data.version) == v
           && request.resource.data.answers is map
           && request.resource.data.answers.size() == request.resource.data.scorableCount;
-        allow update: if isAdmin() && attTest(testId).status == 'draft'
+        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
@@ -444,7 +448,7 @@ service cloud.firestore {
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
-        allow update: if isAdmin() && attTest(testId).status == 'draft'
+        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
