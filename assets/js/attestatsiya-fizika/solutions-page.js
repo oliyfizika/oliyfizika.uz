@@ -81,6 +81,7 @@ async function renderDay(tests, uid) {
     const li = document.createElement("li");
     const card = document.createElement("article");
     card.className = "of-card att-solq";
+    card.id = `sol-${q.id}`;   // natija sahifasidagi «To‘liq yechim» havolasi shu yerga olib keladi
     card.setAttribute("aria-labelledby", `sq${i}`);
     const head = document.createElement("div");
     head.className = "att-q__head";

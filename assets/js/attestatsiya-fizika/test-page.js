@@ -132,7 +132,7 @@ function renderIntro() {
 
 // ------------------------------------------------------------------ test ishlash
 async function openRunner() {
-  if (!snapshot) snapshot = await getSnapshot(test.id, attempt.testVersion);
+  if (!snapshot) snapshot = await getSnapshot(test.id, attemptVersion(attempt));
   await loadKatex().catch(() => {});
   const local = readLocalDraft();
   answers = { ...(attempt.answers || {}), ...(local?.answers || {}) };
@@ -334,22 +334,52 @@ async function finish() {
   }
 }
 
-// ------------------------------------------------------------------ natija
+// ------------------------------------------------------------------ natija + javoblarni ko'rib chiqish
+// Ma'lumot: savollar — urinish topshirilgan versiya snapshot'i (versions/v{testVersion}); javoblar — urinishning o'zi;
+// to'g'ri javob — keys/v{testVersion} (Rules faqat submit'dan keyin beradi); holat/ball — urinishda saqlangan (qayta
+// hisoblanmaydi). To'liq yechim bu yerda so'ralmaydi — faqat qulf va ochilish vaqti (yechim sahifasida, Rules bilan).
 const VERDICT = {
   correct: ["checkCircle", "To‘g‘ri"],
   wrong: ["xCircle", "Noto‘g‘ri"],
-  unanswered: ["circle", "Javobsiz"],
+  unanswered: ["circle", "Siz javob bermadingiz"],
   unscored: ["minusCircle", "Ballga kirmaydi"],
 };
+const FILTERS = [["all", "Hammasi"], ["wrong", "Noto‘g‘ri"], ["unanswered", "Javobsiz"], ["correct", "To‘g‘ri"]];
+
+/** Eski sxemalar: javoblar `answers` yoki `selectedAnswers` da bo'lishi mumkin. */
+function attemptAnswers(a) {
+  return a.answers || a.selectedAnswers || {};
+}
+function attemptVersion(a) {
+  return a.testVersion || test.currentVersion || 1;
+}
+
+let reviewObserver = null;
+function lazyCard(el, render) {
+  if (!("IntersectionObserver" in window)) return render();
+  if (!reviewObserver) {
+    reviewObserver = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { reviewObserver.unobserve(e.target); e.target._render?.(); }
+      }
+    }, { rootMargin: "600px 0px" });
+  }
+  el._render = render;
+  reviewObserver.observe(el);
+}
 
 async function renderResult(key) {
-  if (!snapshot) snapshot = await getSnapshot(test.id, attempt.testVersion);
+  const version = attemptVersion(attempt);
+  if (!snapshot || snapshot.version !== version) snapshot = await getSnapshot(test.id, version);
   await loadKatex().catch(() => {});
   const a = attempt;
-  const g = a.status === "graded" ? a : { ...a, ...gradeAnswers(a.answers || {}, key, a.questionCount) };
-  const ans = a.answers || {};
+  const ans = attemptAnswers(a);
+  const g = a.status === "graded" ? a : { ...a, ...gradeAnswers(ans, key, a.questionCount) };
   const solOpen = solutionOpen(test);
+  const solAt = esc(formatTashkent(test.solutionAvailableAt));
   const unscored = snapshot.questions.filter((q) => q.evaluationType !== "auto").length;
+  const statuses = snapshot.questions.map((q) => questionStatus(q.id, q.evaluationType, ans, g));
+  const count = (st) => statuses.filter((x) => x === st).length;
   setTitle(`Day ${test.dayNumber} — natija`);
   show(`
     <section class="of-card att-result" aria-labelledby="attResTitle">
@@ -376,9 +406,14 @@ async function renderResult(key) {
     </section>
     ${solOpen
       ? `<p class="att-lock-note">${ic("unlock")}<span>To‘liq bosqichma-bosqich yechimlar ochiq. <a href="fizika-yechimlar.html?day=${test.dayNumber}">Yechimlarni ko‘rish</a></span></p>`
-      : `<p class="att-lock-note">${ic("lock")}<span>To‘liq yechimlar <b>${esc(formatTashkent(test.solutionAvailableAt))}</b> da (Toshkent vaqti) «Yechimlar» bo‘limida ochiladi. Hozir har bir savol bo‘yicha natija va to‘g‘ri javob ko‘rsatilgan.</span></p>`}
-    <section aria-labelledby="attRevTitle" class="att">
-      <div class="of-section-title"><h2 id="attRevTitle">Savollar bo‘yicha natija</h2></div>
+      : `<p class="att-lock-note">${ic("lock")}<span>Javoblaringiz va to‘g‘ri javoblar hozir ochiq. To‘liq yechimlar <b>${solAt}</b> da (Toshkent vaqti) ochiladi.</span></p>`}
+    <section aria-labelledby="attRevTitle" class="att att-review-wrap">
+      <div class="of-section-title att-review-head">
+        <h2 id="attRevTitle">Javoblarni ko‘rib chiqish</h2>
+        <div class="att-filter" role="group" aria-label="Savollarni saralash">
+          ${FILTERS.map(([f, label], i) => `<button type="button" class="of-btn of-btn--sm ${i ? "of-btn--ghost" : "of-btn--soft"}" data-filter="${f}" aria-pressed="${i ? "false" : "true"}">${label}${f === "all" ? "" : ` <span class="of-num">${count(f)}</span>`}</button>`).join("")}
+        </div>
+      </div>
       <ol class="att-review" data-review></ol>
     </section>
     <div class="of-row" style="flex-wrap:wrap">
@@ -387,28 +422,39 @@ async function renderResult(key) {
     </div>`);
   const list = view.querySelector("[data-review]");
   snapshot.questions.forEach((q, i) => {
-    const st = questionStatus(q.id, q.evaluationType, ans, g);
+    const st = statuses[i];
     const [icn, label] = VERDICT[st];
-    const correctKey = key?.answers?.[q.id];
+    const mine = ans[q.id] || null;
+    // Kalit bo'lmasa (eski urinish): to'g'ri belgilangan savolda to'g'ri javob — foydalanuvchining o'z javobi
+    const correctKey = key?.answers?.[q.id] || (st === "correct" ? mine : null);
     const li = document.createElement("li");
+    li.dataset.status = st;
     li.innerHTML = `
-      <details class="of-card att-rev" data-status="${st}">
-        <summary>
-          <b class="of-num">${i + 1}.</b>
+      <article class="of-card att-rev" data-status="${st}" data-qid="${esc(q.id)}" aria-labelledby="rev${i}">
+        <header class="att-rev__head">
+          <b class="att-rev__num of-num" id="rev${i}">${i + 1}-savol</b>
+          <span class="of-badge of-badge--blue">${esc(q.topic)}</span>
           <span class="att-rev__verdict">${ic(icn)}${label}</span>
-          <span class="of-subtle">${esc(q.topic)}</span>
+        </header>
+        <div class="att-rev__body" data-body><span class="of-skeleton of-skeleton--text"></span></div>
+        <footer class="att-rev__foot">
           <span class="att-rev__answers">
-            ${q.optionCount ? `<span>Sizning javobingiz: <b>${esc(ans[q.id] || "—")}</b></span>` : "<span>Variantsiz savol</span>"}
-            ${correctKey && st !== "correct" ? `<span>To‘g‘ri javob: <b>${esc(correctKey)}</b></span>` : ""}
+            ${q.optionCount
+              ? (mine ? `<span>Sizning javobingiz: <b>${esc(mine)}</b></span>` : "<span>Siz javob bermadingiz</span>")
+              : "<span>Variantsiz savol</span>"}
+            ${correctKey ? `<span>To‘g‘ri javob: <b>${esc(correctKey)}</b></span>`
+              : (st === "unscored" ? "<span>Bu savol ballga kirmaydi — javob kaliti tekshirilmoqda</span>"
+                : (!key && q.optionCount ? "<span>To‘g‘ri javob ma’lumoti bu eski natijada mavjud emas</span>" : ""))}
           </span>
-        </summary>
-        <div data-body></div>
-      </details>`;
-    const det = li.querySelector("details");
-    det.addEventListener("toggle", () => {
-      if (!det.open || det.dataset.rendered) return;
-      det.dataset.rendered = "1";
-      const body = det.querySelector("[data-body]");
+          ${solOpen
+            ? `<a class="att-rev__sol" href="fizika-yechimlar.html?day=${test.dayNumber}#sol-${encodeURIComponent(q.id)}">${ic("book")}To‘liq yechim</a>`
+            : `<span class="att-rev__sol att-rev__sol--locked">${ic("lock")}To‘liq yechim · ${solAt} da ochiladi</span>`}
+        </footer>
+      </article>`;
+    const card = li.querySelector("article");
+    lazyCard(card, () => {
+      const body = card.querySelector("[data-body]");
+      body.textContent = "";
       const qb = document.createElement("div");
       qb.className = "att-q__body";
       qb.append(renderBlocks(q.question, { testId: test.id, scope: "question" }));
@@ -421,7 +467,8 @@ async function renderResult(key) {
           const d = document.createElement("div");
           d.className = "att-opt";
           if (o.key === correctKey) d.dataset.review = "correct";
-          else if (o.key === ans[q.id] && st === "wrong") d.dataset.review = "wrong";
+          else if (o.key === mine) d.dataset.review = "wrong";
+          if (o.key === mine) d.dataset.mine = "1";
           const k = document.createElement("span");
           k.className = "att-opt__key";
           k.textContent = o.key;
@@ -429,14 +476,33 @@ async function renderResult(key) {
           c.className = "att-opt__content";
           c.append(renderBlocks(o.blocks, { testId: test.id, scope: "question" }));
           d.append(k, c);
+          if (o.key === mine || o.key === correctKey) {
+            const tag = document.createElement("span");
+            tag.className = "att-opt__tag";
+            tag.textContent = o.key === mine && o.key === correctKey ? "Sizning javobingiz · to‘g‘ri"
+              : o.key === mine ? "Sizning javobingiz" : "To‘g‘ri javob";
+            d.append(tag);
+          }
           liO.append(d);
           ul.append(liO);
         });
         body.append(ul);
       }
+      fillIcons(body);
     });
     list.append(li);
   });
+  fillIcons(view);
+  view.querySelectorAll("[data-filter]").forEach((b) => b.addEventListener("click", () => {
+    const f = b.dataset.filter;
+    view.querySelectorAll("[data-filter]").forEach((x) => {
+      const on = x === b;
+      x.setAttribute("aria-pressed", String(on));
+      x.classList.toggle("of-btn--soft", on);
+      x.classList.toggle("of-btn--ghost", !on);
+    });
+    list.querySelectorAll(":scope > li").forEach((li) => { li.hidden = f !== "all" && li.dataset.status !== f; });
+  }));
 }
 
 // ------------------------------------------------------------------ yuklash
@@ -457,7 +523,8 @@ async function renderResult(key) {
     }
     attempt = await getMyAttempt(uid, test.id);
     if (attempt?.status === "graded") {
-      const key = await getKey(test.id, attempt.testVersion);
+      // Eski sxemadagi urinish (testVersion yo'q) uchun Rules kalitni bermaydi — review saqlangan natija bilan chiziladi
+      const key = await getKey(test.id, attemptVersion(attempt)).catch((e) => { console.warn("[att] kalit:", e?.code || e); return null; });
       return renderResult(key);
     }
     if (attempt?.status === "submitted") {

@@ -149,8 +149,8 @@ export function gradeAnswers(answers, key, totalQuestions) {
 /** Savol bo'yicha holat: correct | wrong | unanswered | unscored */
 export function questionStatus(qid, evaluationType, answers, grade) {
   if (evaluationType !== "auto") return "unscored";
-  if (grade.correctIds.includes(qid)) return "correct";
-  if (grade.wrongIds.includes(qid)) return "wrong";
+  if ((grade.correctIds || []).includes(qid)) return "correct";     // eski urinishlarda ro'yxat bo'lmasligi mumkin
+  if ((grade.wrongIds || []).includes(qid)) return "wrong";
   return answers?.[qid] ? "wrong" : "unanswered";
 }
 

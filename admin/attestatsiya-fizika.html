@@ -84,6 +84,17 @@
           </div>
           <p class="of-subtle" data-figdocs-info aria-live="polite"></p>
         </li>
+        <li>
+          <p><b>3. Canonical yangilanish (migratsiya)</b> — <code>_private/attestatsiya-fizika/migration/migration.json</code> (yoki <code>rollback.json</code>).
+            Faqat savollar, draft kunlar va e’lon qilingan kunning <em>yangi versiyasi</em> yoziladi; urinishlar, sozlamalar o‘zgarmaydi, hech narsa o‘chirilmaydi.</p>
+          <div class="of-row" style="flex-wrap:wrap">
+            <label class="of-btn"><input type="file" accept="application/json,.json" data-mig hidden>Faylni tanlash</label>
+            <button type="button" class="of-btn of-btn--primary" data-mig-apply disabled>Migratsiyani qo‘llash</button>
+            <label class="of-row" style="gap:6px"><input type="checkbox" data-mig-reopen checked> E’lon qilingan kunning yechim vaqtini keyingi 00:00 ga surish</label>
+          </div>
+          <div class="of-progress" role="progressbar" aria-label="Migratsiya" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--value:0" data-mig-bar hidden><span></span></div>
+          <div class="of-subtle" data-mig-info aria-live="polite"></div>
+        </li>
       </ol>
     </section>
   </div>

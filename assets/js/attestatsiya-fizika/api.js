@@ -176,12 +176,19 @@ export async function listAttemptsForTest(testId) {
 // ------------------------------------------------------------------ rasmlar
 async function storage() {
   if (!storagePromise) {
-    storagePromise = Promise.all([fb(), import(`${SDK}/firebase-storage.js`)]).then(([, st]) => ({ st, storage: st.getStorage() }));
+    storagePromise = Promise.all([fb(), import(`${SDK}/firebase-storage.js`)]).then(([, st]) => {
+      const s = st.getStorage();
+      // SDK standarti 2 daqiqagacha qayta urinadi — bucket ishlamasa rasm cheksiz «yuklanmoqda» holatida qoladi.
+      try { s.maxOperationRetryTime = STORAGE_TIMEOUT_MS; } catch { /* eski SDK */ }
+      return { st, storage: s };
+    });
   }
   return storagePromise;
 }
 
 const blobCache = new Map();
+const STORAGE_TIMEOUT_MS = 15000;
+const withTimeout = (p, ms, label) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(Object.assign(new Error(`${label}: ${ms} ms`), { code: "deadline-exceeded" })), ms))]);
 
 /**
  * Rasm (Blob URL). scope: "question" | "solution".
@@ -207,7 +214,8 @@ export async function figureUrl(testId, figId, scope = "question") {
     } else {
       const { st, storage: s } = await storage();
       const folder = scope === "solution" ? "solutions" : "questions";
-      blob = await st.getBlob(st.ref(s, `${settings.storageRoot || STORAGE_ROOT}/${folder}/${testId}/${figId}`));
+      blob = await withTimeout(st.getBlob(st.ref(s, `${settings.storageRoot || STORAGE_ROOT}/${folder}/${testId}/${figId}`)),
+        STORAGE_TIMEOUT_MS, "storage getBlob");
     }
     return URL.createObjectURL(blob);
   })();

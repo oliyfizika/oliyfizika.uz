@@ -32,7 +32,11 @@ async function loadSettings() {
   const snap = await getDoc(doc(fb.db, COL.settings, SETTINGS_DOC));
   settings = snap.exists() ? snap.data() : {};
   $('[data-stat="access"]').textContent = settings.accessMode || "—";
-  $("[data-backend]").textContent = `Rasm manbai: ${settings.figureBackend || "storage"} (almashtirish)`;
+  const cur = settings.figureBackend || "storage";
+  const next = cur === "storage" ? "firestore" : "storage";
+  // Tugma joriy (serverdagi) qiymatni va aniq maqsadni ko'rsatadi — «almashtirish» ikki marta bosilsa qaytib ketardi
+  $("[data-backend]").textContent = `Rasm manbai: ${cur} → «${next}» ga o‘tkazish`;
+  $("[data-backend]").dataset.current = cur;
 }
 
 async function load() {
@@ -187,7 +191,11 @@ $("[data-bundle]").addEventListener("change", async (e) => {
     const p = count(/^attestationPhysicsQuestions\/[^/]+\/private\/answer$/);
     const t = count(/^attestationPhysicsDailyTests\/[^/]+$/);
     const auto = data.ops.filter((o) => /^attestationPhysicsQuestions\/[^/]+$/.test(o.path) && o.data.evaluationType === "auto").length;
-    if (q !== 1027 || p !== 1027 || t !== 32 || auto !== 865) throw new Error(`hisob mos emas: ${q}/${p}/${t}/${auto}`);
+    // Hisoblar bundle'ning o'zida e'lon qilinadi (tiklangan kalitlar auto sonini o'zgartiradi); eski bundle — 865
+    const c = data.counts || { auto: 865, open: 81, unreliable: 81 };
+    if (q !== 1027 || p !== 1027 || t !== 32 || auto !== c.auto || c.auto + c.open + c.unreliable !== 1027) {
+      throw new Error(`hisob mos emas: ${q}/${p}/${t}/${auto} (kutilgan auto ${c.auto})`);
+    }
     const bad = preflightNestedArrays(data.ops);
     if (bad.length) {
       console.error("[admin] nested arrays:", bad);
@@ -195,7 +203,7 @@ $("[data-bundle]").addEventListener("change", async (e) => {
       return;
     }
     bundle = data;
-    info.textContent = `Tekshirildi: 1027 savol (865 auto), 32 kunlik test, ${data.ops.length} operatsiya · planHash ${data.planHash}. Dry-run uchun «Import qilish» ni bosing.`;
+    info.textContent = `Tekshirildi: 1027 savol (${auto} auto), 32 kunlik test, ${data.ops.length} operatsiya · planHash ${data.planHash}. Dry-run uchun «Import qilish» ni bosing.`;
     $("[data-import]").disabled = false;
   } catch (err) {
     info.textContent = `Fayl yaroqsiz (${err.message}). _private/attestatsiya-fizika/firestore-import.json ni tanlang.`;
@@ -322,17 +330,162 @@ $("[data-figdocs-import]").addEventListener("click", async (e) => {
   }
 });
 
+/** Firestore muqobili tayyormi: har bir testda figures/solutionFigures hujjatlari soni (faqat hisob, ma'lumot yuklanmaydi). */
+async function firestoreFiguresReady() {
+  const { collection, getCountFromServer } = fb.fsSdk;
+  const missing = [];
+  for (const t of tests) {
+    const n = (await getCountFromServer(collection(fb.db, COL.tests, t.id, "figures"))).data().count;
+    if (n < (t.figureCount || 0)) missing.push(`Day ${t.dayNumber}: ${n}/${t.figureCount}`);
+  }
+  return missing;
+}
+
 $("[data-backend]").addEventListener("click", async () => {
-  const next = (settings.figureBackend || "storage") === "storage" ? "firestore" : "storage";
-  const ok = await confirmAction({ title: `Rasm manbaini «${next}» ga o‘zgartirasizmi?`, text: "Foydalanuvchilar rasmlarni shu manbadan oladi. Avval tegishli rasmlar yuklanganiga ishonch hosil qiling.", confirmLabel: "O‘zgartirish" });
+  await loadSettings();                                   // serverdagi haqiqiy qiymat
+  const cur = settings.figureBackend || "storage";
+  const next = cur === "storage" ? "firestore" : "storage";
+  let note = "Foydalanuvchilar rasmlarni shu manbadan oladi.";
+  if (next === "firestore") {
+    try {
+      const missing = await firestoreFiguresReady();
+      if (missing.length) {
+        toast(`Firestore rasm hujjatlari to‘liq emas: ${missing.slice(0, 3).join(", ")}${missing.length > 3 ? "…" : ""}. Avval «Firestore'ga yozish».`);
+        return;
+      }
+      note += " Barcha kunlar uchun Firestore rasm hujjatlari tekshirildi.";
+    } catch (err) {
+      toast(errorText(err));
+      return;
+    }
+  } else {
+    note += " Storage'ga rasmlar yuklangan va bucket ishlayotganiga ishonch hosil qiling.";
+  }
+  const ok = await confirmAction({ title: `Rasm manbai: «${cur}» → «${next}»?`, text: note, confirmLabel: `«${next}» ga o‘tkazish` });
   if (!ok) return;
   try {
     await updateDoc(doc(fb.db, COL.settings, SETTINGS_DOC), { figureBackend: next });
     await loadSettings();
-    toast(`Rasm manbai: ${next}`);
+    const saved = settings.figureBackend || "storage";
+    toast(saved === next ? `Saqlandi: rasm manbai — ${saved}` : `Diqqat: serverda hali «${saved}»`);
   } catch (err) {
     toast(errorText(err));
   }
 });
 
 await load();
+
+// ------------------------------------------------------------------ 3. Canonical yangilanish (migratsiya / rollback)
+// Fayl: tools/attestatsiya-fizika/migration_plan.py natijasi. Faqat ruxsat etilgan yo'llar; o'chirish yo'q;
+// urinishlar va sozlamalar taqiqlangan. Idempotent: create — mavjud bo'lsa o'tkaziladi; patch — `requires` mos bo'lsa.
+const MIG_PATH_OK = [
+  /^attestationPhysicsQuestions\/[A-Za-z0-9_-]+$/,
+  /^attestationPhysicsQuestions\/[A-Za-z0-9_-]+\/private\/answer$/,
+  /^attestationPhysicsDailyTests\/[A-Za-z0-9_-]+$/,
+  /^attestationPhysicsDailyTests\/[A-Za-z0-9_-]+\/(versions|keys|solutions)\/v\d+$/,
+  /^attestationPhysicsDailyTests\/[A-Za-z0-9_-]+\/(figures|solutionFigures)\/[A-Za-z0-9_.-]+$/,
+];
+let mig = null;
+
+function validateMigration(data) {
+  if (!["oliyfizika-attestation-migration", "oliyfizika-attestation-rollback"].includes(data.format) || !Array.isArray(data.ops)) {
+    throw new Error("format: migration.json yoki rollback.json kerak");
+  }
+  for (const o of data.ops) {
+    if (!["create", "update", "patch"].includes(o.op)) throw new Error(`ruxsat etilmagan amal: ${o.op}`);
+    if (!MIG_PATH_OK.some((re) => re.test(o.path))) throw new Error(`ruxsat etilmagan yo‘l: ${o.path}`);
+    if (o.op === "patch" && !/^attestationPhysicsDailyTests\/[^/]+$/.test(o.path)) throw new Error(`patch faqat test meta uchun: ${o.path}`);
+  }
+  const bad = preflightNestedArrays(data.ops);
+  if (bad.length) throw nestedArrayError(bad);
+}
+
+async function attemptSummary(testId) {
+  const list = await listAttemptsForTest(testId);
+  const users = new Set(list.map((a) => a.userId));
+  const by = (s) => list.filter((a) => a.status === s).length;
+  return { total: list.length, users: users.size, graded: by("graded"), inProgress: by("in_progress"), submitted: by("submitted"),
+           userIds: [...users] };
+}
+
+$("[data-mig]").addEventListener("change", async (e) => {
+  const info = $("[data-mig-info]");
+  mig = null;
+  $("[data-mig-apply]").disabled = true;
+  try {
+    const data = JSON.parse(await e.target.files[0].text());
+    validateMigration(data);
+    const kinds = {};
+    for (const o of data.ops) kinds[o.op] = (kinds[o.op] || 0) + 1;
+    const patches = data.ops.filter((o) => o.op === "patch");
+    const lines = [`<p>${esc(data.format === "oliyfizika-attestation-rollback" ? "ROLLBACK" : "Migratsiya")}: <b>${data.ops.length}</b> amal
+      (${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(", ")}) · ${esc(data.from || "")} → ${esc(data.to || "")} · hash ${esc(data.hash || "")}</p>`];
+    for (const p of patches) {
+      const tid = p.path.split("/")[1];
+      const t = tests.find((x) => x.id === tid);
+      const s = await attemptSummary(tid);
+      const cur = t?.currentVersion;
+      const ok = Object.entries(p.requires || {}).every(([k, v]) => t?.[k] === v);
+      lines.push(`<p data-mig-test="${esc(tid)}"><b>Day ${t?.dayNumber ?? "?"}</b> (${esc(t?.status || "?")}): versiya ${cur} → ${p.data.currentVersion}
+        ${ok ? "" : " — <b>talab mos emas, o‘tkazib yuboriladi</b>"} · urinishlar: <b data-mig-attempts>${s.total}</b>
+        (userlar ${s.users}; graded ${s.graded}, jarayonda ${s.inProgress}) — ular o‘zgarmaydi va eski versiyada qoladi.
+        ${s.userIds.length ? `<br><span class="of-subtle">uid: ${s.userIds.slice(0, 10).map((u) => esc(u.slice(-6))).join(", ")}${s.userIds.length > 10 ? "…" : ""}</span>` : ""}</p>`);
+    }
+    info.innerHTML = lines.join("");
+    mig = data;
+    $("[data-mig-apply]").disabled = false;
+  } catch (err) {
+    info.textContent = `Fayl yaroqsiz: ${err.message}. Hech narsa yozilmadi.`;
+  }
+});
+
+$("[data-mig-apply]").addEventListener("click", async (e) => {
+  if (!mig) return;
+  const btn = e.currentTarget;
+  const info = $("[data-mig-info]");
+  const bar = $("[data-mig-bar]");
+  const reopen = $("[data-mig-reopen]").checked;
+  const ok = await confirmAction({
+    title: "Migratsiyani qo‘llaysizmi?",
+    text: `${mig.ops.length} amal. E’lon qilingan kunlar yangi versiyaga o‘tadi (eski versiya va urinishlar saqlanadi)${reopen ? ", yechim vaqti keyingi 00:00 ga suriladi" : ""}. Hech narsa o‘chirilmaydi.`,
+    confirmLabel: "Qo‘llash",
+  });
+  if (!ok) return;
+  const { getDoc, setDoc, updateDoc, Timestamp } = fb.fsSdk;
+  btn.classList.add("is-loading");
+  bar.hidden = false;
+  let done = 0, skipped = 0;
+  try {
+    for (const o of mig.ops) {
+      const ref = doc(fb.db, ...o.path.split("/"));
+      if (o.op === "create") {
+        if ((await getDoc(ref)).exists()) skipped++;
+        else await setDoc(ref, o.data);
+      } else if (o.op === "update") {
+        await setDoc(ref, o.data);
+      } else {
+        const cur = (await getDoc(ref)).data() || {};
+        if (Object.entries(o.requires || {}).some(([k, v]) => cur[k] !== v)) {
+          skipped++;
+        } else {
+          const patch = { ...o.data };
+          if (o.solutionAvailableAt === "nextMidnightTashkent" && reopen) patch.solutionAvailableAt = Timestamp.fromDate(nextMidnightTashkent(new Date()));
+          await updateDoc(ref, patch);
+        }
+      }
+      done++;
+      if (done % 10 === 0 || done === mig.ops.length) {
+        bar.style.setProperty("--value", Math.round((done * 100) / mig.ops.length));
+        bar.setAttribute("aria-valuenow", Math.round((done * 100) / mig.ops.length));
+        info.textContent = `Yozilmoqda… ${done}/${mig.ops.length} (o‘tkazib yuborildi ${skipped})`;
+      }
+    }
+    info.textContent = `Tayyor: ${done} amal, o‘tkazib yuborildi ${skipped}.`;
+    toast("Migratsiya qo‘llandi.");
+    await load();
+  } catch (err) {
+    info.textContent = `To‘xtadi: ${done}/${mig.ops.length} — ${errorText(err, "Migratsiya xatosi.")} Qayta ishga tushirish xavfsiz.`;
+  } finally {
+    btn.classList.remove("is-loading");
+  }
+});

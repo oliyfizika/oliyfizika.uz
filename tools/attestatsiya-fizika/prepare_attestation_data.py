@@ -57,6 +57,9 @@ DEFAULT_TIME_LIMIT = None   # 3-bosqich: kunlik testlarda vaqt chegarasi YO'Q (f
 SVG_MAX_BYTES = 250_000
 TIMEZONE = "Asia/Tashkent"
 EXPECTED = {"questions": 1027, "auto": 865, "open": 81, "unreliable": 81, "days": 32, "minQ": 26, "maxQ": 38}
+# 865/81/81 — tiklashdan OLDINGI holat. Tiklangan (answer_src=reconstructed) savollar open → auto o'tadi:
+#   auto = 865 + R, open = 81 − R, unreliable = 81 (o'zgarmaydi).
+ANSWER_DECISIONS = os.path.join(PRIV, "answer-key", "decisions.json")
 
 DIFFICULTY = {1: "easy", 2: "medium", 3: "hard", 4: "expert"}
 DIFFICULTY_UZ = {1: "oson", 2: "o'rta", 3: "murakkab", 4: "juda murakkab"}
@@ -407,7 +410,11 @@ def main():
             ("evaluationType", ev),
             ("evaluationNote", note),
             ("correctAnswer", correct),
-            ("bookAnswer", None if p["answer"] in ("none", "") else p["answer"]),
+            # valid — manba/kitob kaliti tasdiqlangan; reconstructed — yechimdan tiklangan; TEKSHIRISH_KERAK — kalit yo'q
+            ("keyStatus", ("reconstructed" if p.get("answer_src") == "reconstructed" else "valid") if ev == "auto"
+             else "TEKSHIRISH_KERAK"),
+            # Tiklangan kalit kitob/manba kaliti emas — bookAnswer bo'sh qoladi (asl qiymat .sol keyValue'da)
+            ("bookAnswer", None if p["answer"] in ("none", "") or p.get("answer_src") == "reconstructed" else p["answer"]),
             ("solutionResult", s.get("result")),
             ("solution", sblocks),
             ("solutionStatus", s["status"]),
@@ -569,8 +576,27 @@ process.stdin.on('data', d => buf += d).on('end', () => {
             for g in [pub[q]["question"]] + [o["blocks"] for o in pub[q]["options"]]:
                 qf |= {figs.manifest[k]["file"] for k in walk_figs(g)}
             sf |= {figs.manifest[k]["file"] for k in walk_figs(priv[q]["solution"])}
-        test_figs[t["id"]] = {"question": sorted(qf), "solution": sorted(sf - qf)}
+        # Yechim sahifasi yechim bloklarini "solution" doirasidan oladi — savoldagi rasm yechimda ham ishlatilsa,
+        # u solutionFigures/solutions ga ham yoziladi (avval sf − qf edi: 20 ta havola topilmasdi).
+        test_figs[t["id"]] = {"question": sorted(qf), "solution": sorted(sf)}
         t["figureCount"] = len(qf)
+
+    # Rasm to'plamlari xotirada quriladi; fayllar faqat barcha gate'lar o'tgandan keyin yoziladi
+    import base64
+    upload, fig_ops, fig_copies = [], [], []
+    for tid, groups in test_figs.items():
+        for scope, files in groups.items():
+            folder = "questions" if scope == "question" else "solutions"
+            for f in files:
+                m = fig_by_file[f]
+                src = os.path.join(FIG_PUBLIC_DIR if m["public"] else FIG_PRIVATE_DIR, f)
+                rel = f"{STORAGE_ROOT}/{folder}/{tid}/{f}"
+                fig_copies.append((src, rel))
+                upload.append({"path": rel, "mime": m["mime"], "bytes": m["bytes"], "testId": tid, "scope": scope})
+                data = base64.b64encode(open(src, "rb").read()).decode()
+                col = "figures" if scope == "question" else "solutionFigures"
+                fig_ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/{col}/{f}",
+                                "data": {"testId": tid, "id": f, "mime": m["mime"], "bytes": m["bytes"], "data": data}})
 
     # ---- umumiy validatsiya
     ids = list(pub)
@@ -587,8 +613,9 @@ process.stdin.on('data', d => buf += d).on('end', () => {
     gate("unique_ids_1027", len(set(ids)) == EXPECTED["questions"], str(len(set(ids))))
     gate("missing_ids_0", not (set(day_of) - set(pub)), str(sorted(set(day_of) - set(pub))[:5]))
     gate("duplicate_ids_0", len(ids) == len(set(ids)))
-    gate("eval_auto_865", ev_count["auto"] == EXPECTED["auto"], str(ev_count["auto"]))
-    gate("eval_open_81", ev_count["open"] == EXPECTED["open"], str(ev_count["open"]))
+    n_rec = sum(1 for q in priv if priv[q]["keyStatus"] == "reconstructed")
+    gate("eval_auto_865_plus_reconstructed", ev_count["auto"] == EXPECTED["auto"] + n_rec, f"{ev_count['auto']} = 865 + {n_rec}")
+    gate("eval_open_81_minus_reconstructed", ev_count["open"] == EXPECTED["open"] - n_rec, f"{ev_count['open']} = 81 − {n_rec}")
     gate("eval_unreliable_81", ev_count["unreliable"] == EXPECTED["unreliable"], str(ev_count["unreliable"]))
     gate("eval_sum_1027", sum(ev_count.values()) == EXPECTED["questions"])
     gate("daily_tests_32", len(tests) == EXPECTED["days"], str(len(tests)))
@@ -596,7 +623,7 @@ process.stdin.on('data', d => buf += d).on('end', () => {
     gate("duplicate_assignment_0", len(assigned) == len(set(assigned)))
     gate("unassigned_0", set(assigned) == set(pub), str(sorted(set(pub) - set(assigned))[:5]))
     gate("all_question_ids_in_bank", all(q in pub for q in assigned))
-    gate("keys_auto_only_865", sum(len(k["answers"]) for k in keys.values()) == EXPECTED["auto"]
+    gate("keys_auto_only", sum(len(k["answers"]) for k in keys.values()) == ev_count["auto"]
          and all(len(keys[t]["answers"]) == keys[t]["scorableCount"] for t in keys))
     gate("tests_26_38", all(EXPECTED["minQ"] <= t["questionCount"] <= EXPECTED["maxQ"] for t in tests))
     gate("tests_one_section", all(len({pub[q]["section"] for q in t["questionIds"]}) == 1 for t in tests))
@@ -688,6 +715,81 @@ process.stdin.on('data', d => buf += d).on('end', () => {
          and all(same(sq[q]["solution"], fpriv[q]["solution"]) for q in fpriv if q in sq),
          f"versions {len(vq)}, solutions {len(sq)}")
 
+    # ---- Answer key (G, H, I)
+    gate("answer_key_valid", all(priv[q]["correctAnswer"] in "ABCDE"[:pub[q]["optionCount"]]
+                                 and priv[q]["keyStatus"] in ("valid", "reconstructed")
+                                 for q in pub if pub[q]["evaluationType"] == "auto"))
+    unresolved = [q for q in pub if pub[q]["evaluationType"] != "auto"]
+    gate("unresolved_marked_TEKSHIRISH_KERAK", all(priv[q]["keyStatus"] == "TEKSHIRISH_KERAK" and priv[q]["correctAnswer"] is None
+                                                  for q in unresolved), f"{len(unresolved)} savol")
+    if os.path.exists(ANSWER_DECISIONS):
+        import answer_keys as AK
+        decisions = AK.load_decisions(ANSWER_DECISIONS)
+        dec_errs = AK.validate_all(decisions)
+        gate("distractors_validated", not dec_errs, f"{len(decisions)} qaror" + (f" · {dec_errs[:2]}" if dec_errs else ""))
+        rec_ids = {q for q in priv if priv[q]["keyStatus"] == "reconstructed"}
+        gate("reconstructed_equals_decisions", rec_ids == {d["id"] for d in decisions}, f"{len(rec_ids)}/{len(decisions)}")
+        bad = []
+        for d in decisions:
+            opts, letter = AK.options_in_order(d)
+            q = pub.get(d["id"])
+            got = [o["blocks"] for o in q["options"]] if q else []
+            want = [conv.blocks(o["tex"]) for o in opts]
+            if not q or priv[d["id"]]["correctAnswer"] != letter or plain_text(sum(got, [])) != plain_text(sum(want, [])):
+                bad.append(d["id"])
+        gate("reconstruction_reaches_bundle", not bad, f"{len(decisions) - len(bad)}/{len(decisions)}" + (f" · {bad[:3]}" if bad else ""))
+    else:
+        warnings.append("answer-key decisions.json yo'q — tiklash gate'lari o'tkazib yuborildi")
+
+    # ---- Rasm havolalari va render ma'lumotlari (J, K)
+    def fig_ids(bs, out):
+        for b in bs or []:
+            if b.get("t") == "figure":
+                out.append((b.get("id"), b.get("w"), b.get("h")))
+            fig_ids(b.get("blocks"), out)
+            for it in b.get("items", []) if b.get("t") == "list" else []:
+                fig_ids(it["blocks"] if isinstance(it, dict) else it, out)
+            for r in b.get("rows", []) if b.get("t") == "table" else []:
+                for c in (r["cells"] if isinstance(r, dict) else r):
+                    fig_ids(c.get("blocks"), out)
+        return out
+    have = {tuple(o["path"].split("/")[1:4]) for o in fig_ops}
+    ref_total, ref_missing, ref_badmeta = 0, [], []
+    for t in ftests:
+        tid = t["id"]
+        for qq in fversions[tid]["questions"]:
+            for fid, w, h in fig_ids(qq["question"], []) + [x for o in qq["options"] for x in fig_ids(o["blocks"], [])]:
+                ref_total += 1
+                if (tid, "figures", fid) not in have:
+                    ref_missing.append(f"{qq['id']}:{fid}")
+                if not (fid and w and h):
+                    ref_badmeta.append(f"{qq['id']}:{fid}")
+        for it in fsolutions[tid]["items"]:
+            for fid, w, h in fig_ids(it["solution"], []):
+                ref_total += 1
+                if (tid, "solutionFigures", fid) not in have:
+                    ref_missing.append(f"{it['id']}:sol:{fid}")
+                if not (fid and w and h):
+                    ref_badmeta.append(f"{it['id']}:{fid}")
+    gate("image_refs_resolved", not ref_missing and not ref_badmeta,
+         f"{ref_total} havola · topilmadi {len(ref_missing)} · meta {len(ref_badmeta)}" + (f" · {ref_missing[:3]}" if ref_missing else ""))
+    SIG = {"image/webp": lambda b: b[:4] == b"RIFF" and b[8:12] == b"WEBP", "image/png": lambda b: b[:8] == b"\x89PNG\r\n\x1a\n",
+           "image/svg+xml": lambda b: b.lstrip()[:5] in (b"<?xml", b"<svg ") or b.lstrip()[:4] == b"<svg"}
+    bad_data = []
+    for o in fig_ops:
+        d = o["data"]
+        raw = base64.b64decode(d["data"])
+        size = len(json.dumps(d))
+        if len(raw) != d["bytes"] or not SIG.get(d["mime"], lambda b: False)(raw) or size > 1_000_000:
+            bad_data.append(o["path"])
+    gate("image_render_data_valid", not bad_data,
+         f"{len(fig_ops)} hujjat · max {max(len(json.dumps(o['data'])) for o in fig_ops)} bayt" + (f" · {bad_data[:3]}" if bad_data else ""))
+
+    # ---- LaTeX ↔ JSON (L)
+    import latex_canonical as LC
+    lc_errs = LC.compare(LC.parse_chapters(), problems)
+    gate("LATEX_JSON_CONSISTENCY", not lc_errs, f"{len(problems)} savol" + (f" · {lc_errs[:2]}" if lc_errs else ""))
+
     report = OrderedDict([
         ("status", "PASS" if not errors else "FAIL"),
         ("summary", OrderedDict([
@@ -726,29 +828,20 @@ process.stdin.on('data', d => buf += d).on('end', () => {
     dump("daily-tests.json", ftests)
     bundle = OrderedDict([("format", "oliyfizika-attestation-import"), ("schemaVersion", SCHEMA_VERSION),
                           ("planHash", plan["planHash"]), ("operations", len(ops)),
+                          ("counts", OrderedDict([("questions", len(pub)), ("dailyTests", len(tests)),
+                                                  ("auto", ev_count["auto"]), ("open", ev_count["open"]),
+                                                  ("unreliable", ev_count["unreliable"]),
+                                                  ("reconstructed", n_rec)])),
                           ("contentHash", sha16(json.dumps(ops, ensure_ascii=False, sort_keys=True))),
                           ("ops", ops)])
     dump("firestore-import.json", bundle)
 
     # ---- Storage yuklash to'plami (admin sahifasi papkani tanlab yuklaydi) va Firestore muqobili
-    import base64
     stage_root = os.path.join(PRIV, "storage")
     shutil.rmtree(stage_root, ignore_errors=True)
-    upload, fig_ops = [], []
-    for tid, groups in test_figs.items():
-        for scope, files in groups.items():
-            src_dir = FIG_PUBLIC_DIR if scope == "question" else FIG_PRIVATE_DIR
-            folder = "questions" if scope == "question" else "solutions"
-            for f in files:
-                m = fig_by_file[f]
-                rel = f"{STORAGE_ROOT}/{folder}/{tid}/{f}"
-                os.makedirs(os.path.dirname(os.path.join(stage_root, rel)), exist_ok=True)
-                shutil.copyfile(os.path.join(src_dir, f), os.path.join(stage_root, rel))
-                upload.append({"path": rel, "mime": m["mime"], "bytes": m["bytes"], "testId": tid, "scope": scope})
-                data = base64.b64encode(open(os.path.join(src_dir, f), "rb").read()).decode()
-                col = "figures" if scope == "question" else "solutionFigures"
-                fig_ops.append({"op": "create", "path": f"attestationPhysicsDailyTests/{tid}/{col}/{f}",
-                                "data": {"testId": tid, "id": f, "mime": m["mime"], "bytes": m["bytes"], "data": data}})
+    for src, rel in fig_copies:
+        os.makedirs(os.path.dirname(os.path.join(stage_root, rel)), exist_ok=True)
+        shutil.copyfile(src, os.path.join(stage_root, rel))
     dump("storage-upload.json", {"root": STORAGE_ROOT, "files": len(upload),
                                  "question": sum(u["scope"] == "question" for u in upload),
                                  "solution": sum(u["scope"] == "solution" for u in upload), "items": upload})
