@@ -181,6 +181,24 @@ export async function listAttemptsForTest(testId) {
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
 }
 
+/**
+ * Admin «Savollar statistikasi»: faqat shu test + versiya urinishlari (equality filtrlar — single-field
+ * indekslar yetarli, composite indeks shart emas). Rules: boshqa userlar urinishlarini faqat admin o'qiydi.
+ */
+export async function listAttemptsForVersion(testId, version) {
+  const { db, fsSdk } = await fb();
+  const { collection, query, where, getDocs } = fsSdk;
+  const snap = await getDocs(query(collection(db, COL.attempts), where("testId", "==", testId), where("testVersion", "==", version)));
+  return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+/** Shu kun bo'yicha barcha urinishlar soni (versiya/holatdan qat'i nazar) — aggregation, hujjatlar yuklanmaydi. */
+export async function countAttemptsForTest(testId) {
+  const { db, fsSdk } = await fb();
+  const { collection, query, where, getCountFromServer } = fsSdk;
+  return (await getCountFromServer(query(collection(db, COL.attempts), where("testId", "==", testId)))).data().count;
+}
+
 // ------------------------------------------------------------------ rasmlar
 async function storage() {
   if (!storagePromise) {

@@ -501,6 +501,18 @@ def main():
     expect("published -> draft (faqat status) — rad", db.write(ADMIN, D1, {"status": "draft"}, t4, apply=False), False)
     expect("qayta archive — ruxsat", db.write(ADMIN, D1, {"status": "archived", "archivedAt": SERVER}, t4), True)
 
+    # ------------------------------------------------------------ 9c. admin «Savollar statistikasi» (faqat o'qish)
+    expect("statistika: admin kun urinishlarini so'raydi — ruxsat",
+           db.query(ADMIN, "attestationPhysicsAttempts", t4, ("testId", d1id))[0], True)
+    expect("statistika: user kun bo'yicha barcha urinishlarni so'ray olmaydi",
+           db.query(U1, "attestationPhysicsAttempts", t4, ("testId", d1id))[0], False)
+    expect("statistika: user versiya bo'yicha urinishlarni so'ray olmaydi",
+           db.query(U1, "attestationPhysicsAttempts", t4, ("testVersion", 1))[0], False)
+    expect("statistika: user boshqa userning urinishini o'qiy olmaydi", db.read(U1, A2, t4), False)
+    expect("statistika: urinishsiz user v2 kalitini o'qiy olmaydi", db.read(U3, D1 + "/keys/v2", t4), False)
+    expect("statistika: admin v1/v2 kalitlarini o'qiydi",
+           (db.read(ADMIN, D1 + "/keys/v1", t4), db.read(ADMIN, D1 + "/keys/v2", t4)) == (True, True))
+
     # ------------------------------------------------------------ 10. PAID rejim (kelajak)
     db.write(ADMIN, D2, {**pub, "solutionAvailableAt": next_midnight_tashkent(t4)}, t4)
     expect("settings: user accessMode'ni o'zgartira olmaydi",
