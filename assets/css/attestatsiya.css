@@ -369,3 +369,41 @@
   .att-opt { flex-wrap: wrap; }
   .att-review-head { align-items: flex-start; }
 }
+
+/* ---------- Admin: savollar statistikasi (faqat mavjud tokenlar; .of-progress qayta ishlatiladi) ---------- */
+.att-row-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.att-qstat-version { display: inline-flex; align-items: center; gap: 8px; font-size: var(--of-text-sm); }
+.att-qstat-version .of-input { min-height: 34px; width: auto; }
+.att-qstat-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.att-qstat-meta li { display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; border: 1px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface-2); min-width: 120px; }
+.att-qstat-meta span, .att-qstat-meta small { color: var(--of-text-2); font-size: var(--of-text-xs); }
+.att-qstat-meta b { font: 700 var(--of-text-lg)/1.2 var(--of-font-sans); color: var(--of-text); font-variant-numeric: tabular-nums; }
+.att-qstat-block { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.att-qstat-block h3 { margin: 0; font: 700 var(--of-text-md)/1.3 var(--of-font-sans); color: var(--of-text); }
+.att-qstat-block p { margin: 0; }
+.att-qstat-formula { font-size: var(--of-text-xs); }
+.att-qstat-list, .att-qrank { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.att-qstat-list { max-height: min(70vh, 640px); overflow-y: auto; padding: 8px 6px 8px 0; border-block: 1px solid var(--of-border); }
+.att-qstat-meta + .att-qstat-block, .att-qstat-block + .att-qstat-grid { margin-top: 8px; }
+.att-qstat-list:focus-visible { outline: none; box-shadow: var(--of-focus-ring); }
+.att-qstat { display: grid; grid-template-columns: 3ch minmax(0, 1fr) 7.5ch; gap: 10px; align-items: center; min-height: 28px; font-size: var(--of-text-sm); }
+.att-qrank .att-qstat { grid-template-columns: 8ch minmax(0, 1fr) 7.5ch; }
+.att-qstat__label { color: var(--of-text-2); font-variant-numeric: tabular-nums; text-align: right; }
+.att-qstat__name { color: var(--of-text); white-space: nowrap; }
+.att-qstat__note { color: var(--of-text-3); font-size: var(--of-text-xs); }
+.att-qstat__bar.of-progress { height: 10px; }
+.att-qstat__value { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.att-qstat__value b { color: var(--of-text); }
+.att-qstat__value small { color: var(--of-text-3); font-size: var(--of-text-xs); }
+.att-qstat--wrong .of-progress > span { background: var(--of-danger); }
+.att-qstat--skip .of-progress > span { background: var(--of-warning); }
+.att-qstat--off { opacity: 0.75; }
+.att-qstat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 860px) {
+  .att-qstat-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .att-qstat { grid-template-columns: 3ch minmax(0, 1fr) 6.5ch; gap: 8px; }
+  .att-qrank .att-qstat { grid-template-columns: 7ch minmax(0, 1fr) 6.5ch; }
+  .att-qstat-meta li { flex: 1 1 calc(50% - 8px); min-width: 0; }
+}

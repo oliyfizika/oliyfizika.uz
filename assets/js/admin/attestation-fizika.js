@@ -12,6 +12,7 @@ import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } f
 import { toast } from "../ui/feedback.js";
 import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
 import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, formatDuration, toMs } from "../attestatsiya-fizika/core.js";
+import { showQuestionStats } from "./attestation-question-stats.js";
 
 fillIcons($("#adminPage"));
 const { fb } = await requireAdmin();
@@ -70,7 +71,7 @@ async function load() {
       <td data-label="Status">${STATUS[t.status] || esc(t.status)}</td>
       <td data-label="Publish date">${t.publishedAt ? esc(formatTashkent(t.publishedAt)) : "—"}</td>
       <td data-label="Solution date">${t.solutionAvailableAt ? esc(formatTashkent(t.solutionAvailableAt)) : "—"}</td>
-      <td data-label="Urinishlar">${t.status === "draft" ? "—" : `<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-attempts="${esc(t.id)}">Ko‘rish</button>`}</td>
+      <td data-label="Urinishlar">${t.status === "draft" && !t.publishedAt ? "—" : `<div class="att-row-actions">${t.status === "draft" ? "" : `<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-attempts="${esc(t.id)}">Ko‘rish</button>`}<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-qstats="${esc(t.id)}">Savollar statistikasi</button></div>`}</td>
       <td data-label="Action">${action}</td></tr>`;
   }).join("");
 }
@@ -80,6 +81,7 @@ body.addEventListener("click", async (e) => {
   const arc = e.target.closest("[data-archive]");
   const unarc = e.target.closest("[data-unarchive]");
   const att = e.target.closest("[data-attempts]");
+  const qst = e.target.closest("[data-qstats]");
   if (pub) {
     const t = tests.find((x) => x.id === pub.dataset.publish);
     const solAt = nextMidnightTashkent(new Date());
@@ -140,6 +142,7 @@ body.addEventListener("click", async (e) => {
       toast(errorText(err, `Day ${t.dayNumber} ni arxivdan chiqarib bo‘lmadi. Holat o‘zgarmadi.`));
     }
   }
+  if (qst) showQuestionStats(tests.find((x) => x.id === qst.dataset.qstats));
   if (att) showAttempts(tests.find((x) => x.id === att.dataset.attempts));
 });
 

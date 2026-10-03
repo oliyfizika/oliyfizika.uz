@@ -54,6 +54,15 @@
       <div data-attempts></div>
     </section>
 
+    <section class="of-card of-admin-panel" aria-labelledby="attQsTitle" data-qstats-panel hidden>
+      <div class="of-admin-panel__head">
+        <h2 id="attQsTitle" data-qstats-title>Savollar statistikasi</h2>
+        <label class="att-qstat-version"><span class="of-subtle">Versiya</span>
+          <select class="of-input of-admin-select" data-qstats-version aria-label="Test versiyasi"></select></label>
+      </div>
+      <div data-qstats-body aria-live="polite"></div>
+    </section>
+
     <section class="of-card of-admin-panel" aria-labelledby="attImpTitle">
       <div class="of-admin-panel__head"><h2 id="attImpTitle">Import (bir martalik)</h2></div>
       <p class="of-muted">Fayllar kompyuteringizdan tanlanadi va faqat brauzerda o‘qiladi (serverga fayl sifatida yuklanmaydi). Yozuvlar sizning admin sessiyangiz va Firestore/Storage Rules orqali o‘tadi. Mavjud (ayniqsa e’lon qilingan) testlar QAYTA YOZILMAYDI.</p>
