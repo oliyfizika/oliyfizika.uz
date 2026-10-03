@@ -166,6 +166,14 @@ export async function archiveTest(test) {
   await fsSdk.updateDoc(fsSdk.doc(db, COL.tests, test.id), { status: "archived", archivedAt: fsSdk.serverTimestamp() });
 }
 
+/** UNARCHIVE (faqat admin): archived → draft. Faqat status va published o'zgaradi (Rules boshqasini rad etadi);
+ *  versiya, savollar, publishedAt, solutionAvailableAt va urinishlar o'zgarmaydi. */
+export async function unarchiveTest(test) {
+  if (test.status !== "archived") throw new Error("Faqat arxivlangan kunni arxivdan chiqarish mumkin.");
+  const { db, fsSdk } = await fb();
+  await fsSdk.updateDoc(fsSdk.doc(db, COL.tests, test.id), { status: "draft", published: false });
+}
+
 export async function listAttemptsForTest(testId) {
   const { db, fsSdk } = await fb();
   const { collection, query, where, getDocs } = fsSdk;

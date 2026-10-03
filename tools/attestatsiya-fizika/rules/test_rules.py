@@ -437,8 +437,69 @@ def main():
     # ------------------------------------------------------------ 9. archive
     expect("archive — ruxsat", db.write(ADMIN, D1, {"status": "archived", "archivedAt": SERVER}, t4), True)
     expect("archived test user'ga ko'rinadi (natija/yechim uchun)", db.read(U1, D1, t4), True)
-    expect("archived -> draft qaytarish — rad",
-           db.write(ADMIN, D1, {"status": "draft", "published": False}, t4, apply=False), False)
+
+    # ------------------------------------------------------------ 9b. UNARCHIVE (archived -> draft, faqat admin)
+    UN = {"status": "draft", "published": False}
+    meta0 = copy.deepcopy(db.docs[D1])
+    sub0 = {p: copy.deepcopy(v) for p, v in db.docs.items() if p.startswith(D1 + "/")}
+    att0 = {p: copy.deepcopy(v) for p, v in db.docs.items() if p.startswith("attestationPhysicsAttempts/")}
+    graded0 = [p for p, v in att0.items() if p.endswith("__" + d1id) and v.get("status") == "graded"]
+    expect("unarchive: user — rad", db.write(U1, D1, UN, t4, apply=False), False)
+    expect("unarchive: mehmon — rad", db.write(None, D1, UN, t4, apply=False), False)
+    expect("unarchive: published=true qoldirib — rad", db.write(ADMIN, D1, {"status": "draft"}, t4, apply=False), False)
+    expect("unarchive: questionIds o'zgartirib — rad",
+           db.write(ADMIN, D1, {**UN, "questionIds": meta0["questionIds"][:-1], "questionCount": meta0["questionCount"] - 1},
+                    t4, apply=False), False)
+    expect("unarchive: currentVersion o'zgartirib — rad",
+           db.write(ADMIN, D1, {**UN, "currentVersion": meta0["currentVersion"] + 1}, t4, apply=False), False)
+    expect("unarchive: publishedAt=null — rad", db.write(ADMIN, D1, {**UN, "publishedAt": None}, t4, apply=False), False)
+    expect("unarchive: solutionAvailableAt=null — rad",
+           db.write(ADMIN, D1, {**UN, "solutionAvailableAt": None}, t4, apply=False), False)
+    expect("unarchive: yangi maydon (unarchivedAt) — rad",
+           db.write(ADMIN, D1, {**UN, "unarchivedAt": SERVER}, t4, apply=False), False)
+    expect("unarchive: archived -> published to'g'ridan-to'g'ri — rad",
+           db.write(ADMIN, D1, {"status": "published"}, t4, apply=False), False)
+    expect("UNARCHIVE: admin archived -> draft — ruxsat", db.write(ADMIN, D1, UN, t4), True)
+    m1 = db.docs[D1]
+    expect("unarchive: faqat status va published o'zgardi",
+           {k for k in set(meta0) | set(m1) if meta0.get(k) != m1.get(k)} == {"status", "published"})
+    expect("unarchive: questionIds o'zgarmagan", m1["questionIds"] == meta0["questionIds"])
+    expect("unarchive: versiya o'zgarmagan (v2)", m1["currentVersion"] == meta0["currentVersion"] == 2)
+    expect("unarchive: publishedAt / solutionAvailableAt o'zgarmagan",
+           (m1["publishedAt"], m1["solutionAvailableAt"]) == (meta0["publishedAt"], meta0["solutionAvailableAt"]))
+    expect("unarchive: versions/keys/solutions/figures o'zgarmagan",
+           {p: v for p, v in db.docs.items() if p.startswith(D1 + "/")} == sub0)
+    expect("unarchive: barcha urinishlar o'zgarmagan",
+           {p: v for p, v in db.docs.items() if p.startswith("attestationPhysicsAttempts/")} == att0)
+    expect("unarchive: graded urinish o'zgarmagan (ball, holat, testVersion)",
+           bool(graded0) and all(db.docs[p] == att0[p] for p in graded0))
+    for col in ("versions", "keys", "solutions"):
+        for v in ("v1", "v2"):
+            expect(f"unarchive'dan keyin {col}/{v} ni tahrirlash — rad",
+                   db.write(ADMIN, f"{D1}/{col}/{v}", {"note": "x"}, t4, apply=False), False)
+    expect("unarchive'dan keyin draft tahriri (kontent) — rad",
+           db.write(ADMIN, D1, {"timeLimitSeconds": 3600}, t4, apply=False), False)
+    expect("unarchive'dan keyin user draft testni o'qiy olmaydi", db.read(U1, D1, t4), False)
+    expect("unarchive'dan keyin user published-so'rovida Day 1 yo'q",
+           db.query(U1, "attestationPhysicsDailyTests", t4, ("published", True))[0] and db.docs[D1]["published"] is False)
+    expect("unarchive'dan keyin yangi rasmiy urinish — rad",
+           db.write(U3, f"attestationPhysicsAttempts/user3__{d1id}", {**start, "userId": "user3", "testVersion": 2},
+                    t4, op="create", apply=False), False)
+    expect("draft -> archived to'g'ridan-to'g'ri — rad",
+           db.write(ADMIN, D1, {"status": "archived", "published": True}, t4, apply=False), False)
+    drafts = [p for p in tests if db.docs[p]["status"] == "draft" and db.docs[p].get("publishedAt") is None]
+    expect("hech qachon e'lon qilinmagan draft: versions/keys/solutions tahriri — ruxsat (migratsiya o'zgarmagan)",
+           all(db.write(ADMIN, f"{drafts[0]}/{c}/v1", {"note": "x"}, t4, apply=False) for c in ("versions", "keys", "solutions")))
+    sol_re = next_midnight_tashkent(t4)
+    expect("unarchive'dan keyin PUBLISH (mavjud logika) — ruxsat",
+           db.write(ADMIN, D1, {**pub, "solutionAvailableAt": sol_re}, t4), True)
+    expect("qayta publish: versiya va savollar o'zgarmagan",
+           db.docs[D1]["currentVersion"] == 2 and db.docs[D1]["questionIds"] == meta0["questionIds"])
+    expect("qayta publish: urinishlar o'zgarmagan",
+           {p: v for p, v in db.docs.items() if p.startswith("attestationPhysicsAttempts/")} == att0)
+    expect("published -> draft — rad", db.write(ADMIN, D1, UN, t4, apply=False), False)
+    expect("published -> draft (faqat status) — rad", db.write(ADMIN, D1, {"status": "draft"}, t4, apply=False), False)
+    expect("qayta archive — ruxsat", db.write(ADMIN, D1, {"status": "archived", "archivedAt": SERVER}, t4), True)
 
     # ------------------------------------------------------------ 10. PAID rejim (kelajak)
     db.write(ADMIN, D2, {**pub, "solutionAvailableAt": next_midnight_tashkent(t4)}, t4)
