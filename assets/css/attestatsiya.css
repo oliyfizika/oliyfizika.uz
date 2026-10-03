@@ -343,3 +343,29 @@
 .att-locked-title { margin-top: 18px; color: var(--of-text-2); font: 650 var(--of-text-sm)/1.3 var(--of-font-sans); }
 .att-count svg, .att-result__meta svg, .att-rev__verdict svg { width: 16px; height: 16px; flex: none; }
 .att-rev__verdict svg { width: 18px; height: 18px; }
+
+/* ---- Natija: javoblarni ko'rib chiqish (4C) ---- */
+.att-review-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.att-filter { display: flex; flex-wrap: wrap; gap: 6px; }
+.att-filter .of-num { opacity: .75; }
+.att-review > li[hidden] { display: none; }
+.att-rev__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.att-rev__num { font-size: var(--of-text-md); }
+.att-rev__head .att-rev__verdict { margin-left: auto; }
+.att-rev__body { display: flex; flex-direction: column; gap: 12px; min-height: 48px; }
+.att-rev__foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  padding-top: 12px; border-top: 1px solid var(--of-border); }
+.att-rev__foot .att-rev__answers { margin-left: 0; }
+.att-rev__sol { display: inline-flex; align-items: center; gap: 6px; font-size: var(--of-text-sm); font-weight: 650; }
+.att-rev__sol svg { width: 16px; height: 16px; }
+.att-rev__sol--locked { color: var(--of-text-3); font-weight: 600; }
+.att-opt[data-mine="1"] { outline: 2px solid var(--of-primary); outline-offset: -2px; }
+.att-opt__tag { margin-left: auto; align-self: center; font-size: var(--of-text-xs); font-weight: 700; color: var(--of-text-2); white-space: nowrap; }
+.att-opt[data-review="correct"] .att-opt__tag { color: var(--of-success-text); }
+.att-opt[data-review="wrong"] .att-opt__tag { color: var(--of-danger-text); }
+@media (max-width: 640px) {
+  .att-rev__head .att-rev__verdict { margin-left: 0; width: 100%; }
+  .att-opt__tag { width: 100%; margin-left: 0; }
+  .att-opt { flex-wrap: wrap; }
+  .att-review-head { align-items: flex-start; }
+}
