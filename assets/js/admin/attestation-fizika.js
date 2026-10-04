@@ -11,8 +11,10 @@
 import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } from "./admin-common.js";
 import { toast } from "../ui/feedback.js";
 import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
-import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, formatDuration, toMs } from "../attestatsiya-fizika/core.js";
+import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent } from "../attestatsiya-fizika/core.js";
 import { showQuestionStats } from "./attestation-question-stats.js";
+import { toggleAttempts, changeVersion, exportExcel, resetAttempts, detailsRow } from "./attestation-attempts.js";
+import { finalizeOverdueList } from "../attestatsiya-fizika/finalize.js";
 
 fillIcons($("#adminPage"));
 const { fb } = await requireAdmin();
@@ -58,6 +60,7 @@ async function load() {
   }
   const nextDraft = tests.find((t) => t.status === "draft");
   note.textContent = nextDraft ? `Keyingi e’lon qilinadigan kun: Day ${nextDraft.dayNumber}.` : "Barcha kunlar e’lon qilingan.";
+  resetAttempts();
   body.innerHTML = tests.map((t) => {
     const action = t.status === "draft"
       ? `<button type="button" class="of-btn of-btn--primary of-btn--sm" data-publish="${esc(t.id)}">PUBLISH</button>`
@@ -71,8 +74,8 @@ async function load() {
       <td data-label="Status">${STATUS[t.status] || esc(t.status)}</td>
       <td data-label="Publish date">${t.publishedAt ? esc(formatTashkent(t.publishedAt)) : "—"}</td>
       <td data-label="Solution date">${t.solutionAvailableAt ? esc(formatTashkent(t.solutionAvailableAt)) : "—"}</td>
-      <td data-label="Urinishlar">${t.status === "draft" && !t.publishedAt ? "—" : `<div class="att-row-actions">${t.status === "draft" ? "" : `<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-attempts="${esc(t.id)}">Ko‘rish</button>`}<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-qstats="${esc(t.id)}">Savollar statistikasi</button></div>`}</td>
-      <td data-label="Action">${action}</td></tr>`;
+      <td data-label="Urinishlar">${t.status === "draft" && !t.publishedAt ? "—" : `<div class="att-row-actions">${t.status === "draft" ? "" : `<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-action="view-attempts" data-test-id="${esc(t.id)}" data-attempts="${esc(t.id)}" aria-expanded="false">Ko‘rish</button>`}<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-qstats="${esc(t.id)}">Savollar statistikasi</button></div>`}</td>
+      <td data-label="Action">${action}</td></tr>${t.status === "draft" ? "" : detailsRow(t, 9)}`;
   }).join("");
 }
 
@@ -80,7 +83,8 @@ body.addEventListener("click", async (e) => {
   const pub = e.target.closest("[data-publish]");
   const arc = e.target.closest("[data-archive]");
   const unarc = e.target.closest("[data-unarchive]");
-  const att = e.target.closest("[data-attempts]");
+  const att = e.target.closest('[data-action="view-attempts"]');
+  const exp = e.target.closest("[data-att-export]");
   const qst = e.target.closest("[data-qstats]");
   if (pub) {
     const t = tests.find((x) => x.id === pub.dataset.publish);
@@ -143,33 +147,15 @@ body.addEventListener("click", async (e) => {
     }
   }
   if (qst) showQuestionStats(tests.find((x) => x.id === qst.dataset.qstats));
-  if (att) showAttempts(tests.find((x) => x.id === att.dataset.attempts));
+  if (att) toggleAttempts(tests.find((x) => x.id === att.dataset.testId), att, body);
+  if (exp) exportExcel(tests.find((x) => x.id === exp.dataset.attExport), exp);
 });
 
-async function showAttempts(t) {
-  const panel = $("[data-attempts-panel]");
-  const box = $("[data-attempts]");
-  panel.hidden = false;
-  $("[data-attempts-title]").textContent = `Day ${t.dayNumber} — urinishlar`;
-  box.innerHTML = '<p class="of-subtle">Yuklanmoqda…</p>';
-  try {
-    const list = (await listAttemptsForTest(t.id)).sort((a, b) => (toMs(b.completedAt) || 0) - (toMs(a.completedAt) || 0));
-    if (!list.length) { box.innerHTML = stateBox("empty", "Hali urinish yo‘q"); return; }
-    const graded = list.filter((a) => a.status === "graded");
-    const avg = graded.length ? Math.round(graded.reduce((s, a) => s + a.scorePercent, 0) / graded.length) : null;
-    box.innerHTML = `<p class="of-subtle">Jami ${list.length} · baholangan ${graded.length}${avg == null ? "" : ` · o‘rtacha ${avg}%`}</p>
-      <div class="of-admin-table-wrap"><table class="of-admin-table"><thead><tr><th>Foydalanuvchi</th><th>Holat</th><th>Natija</th><th>T/N/J</th><th>Vaqt</th><th>Topshirilgan</th></tr></thead><tbody>
-      ${list.map((a) => `<tr><td data-label="Foydalanuvchi"><a href="user.html?id=${encodeURIComponent(a.userId)}">${esc(a.userId)}</a></td>
-        <td data-label="Holat">${esc(a.status)}</td><td data-label="Natija" class="of-num">${a.status === "graded" ? `${a.scorePercent}%` : "—"}</td>
-        <td data-label="T/N/J" class="of-num">${a.status === "graded" ? `${a.correctAnswers}/${a.wrongAnswers}/${a.unanswered}` : "—"}</td>
-        <td data-label="Vaqt">${a.status === "graded" ? esc(formatDuration(a.timeSpentSeconds)) : "—"}</td>
-        <td data-label="Topshirilgan">${a.completedAt ? esc(formatTashkent(a.completedAt)) : "—"}</td></tr>`).join("")}
-      </tbody></table></div>`;
-  } catch (err) {
-    box.innerHTML = stateBox("error", "Yuklab bo‘lmadi", errorText(err));
-  }
-  panel.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+body.addEventListener("change", (e) => {
+  const sel = e.target.closest("[data-att-version]");
+  if (sel) changeVersion(tests.find((x) => x.id === sel.dataset.attVersion), sel);
+});
+
 
 // ------------------------------------------------------------------ Firestore preflight
 // Firestore massiv ichida massivni saqlamaydi (batch.set() "Nested arrays are not supported" bilan rad etadi).
@@ -401,6 +387,25 @@ $("[data-backend]").addEventListener("click", async () => {
 });
 
 await load();
+await sweepOverdueAttempts();
+
+/**
+ * Avtomatik yakunlash (lazy, admin): yechim vaqti o'tgan, lekin yakunlanmagan rasmiy urinishlar (foydalanuvchi qaytmagan
+ * bo'lsa ham) sahifa ochilganda yakunlanadi va baholanadi. Qaror Rules'da (server vaqti >= solutionAvailableAt).
+ */
+async function sweepOverdueAttempts() {
+  try {
+    const { collection, query, where, getDocs } = fb.fsSdk;
+    const snap = await getDocs(query(collection(fb.db, COL.attempts), where("status", "in", ["in_progress", "submitted"])));
+    const list = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    const { finalized, graded } = await finalizeOverdueList(list, new Map(tests.map((t) => [t.id, t])));
+    const msg = [finalized ? `${finalized} ta yakunlanmagan urinish yechim vaqti kelgani uchun avtomatik yakunlandi va baholandi` : "",
+      graded ? `${graded} ta topshirilgan urinish baholandi` : ""].filter(Boolean).join("; ");
+    if (msg) toast(`${msg}.`);
+  } catch (err) {
+    console.warn("[admin] avtomatik yakunlash:", err?.code || err);
+  }
+}
 
 // ------------------------------------------------------------------ 3. Canonical yangilanish (migratsiya / rollback)
 // Fayl: tools/attestatsiya-fizika/migration_plan.py natijasi. Faqat ruxsat etilgan yo'llar; o'chirish yo'q;

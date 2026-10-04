@@ -4,6 +4,7 @@
 // Kurs progressi (bajarilgan kunlar) va natija (foiz) — alohida tushunchalar.
 // ==========================================================================
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
+import { finalizeOverdueList } from "./finalize.js";
 import { esc, computeStats, solutionOpen, formatDuration, formatTashkent, TOTAL_DAYS_DEFAULT } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 
@@ -25,8 +26,9 @@ function columns(days, field, max, cls, fmt) {
 (async () => {
   const s = await whenUser();
   try {
-    const [settings, tests, attempts] = await Promise.all([getSettings(), listVisibleTests(), listMyAttempts(s.user.uid)]);
+    const [settings, tests, loaded] = await Promise.all([getSettings(), listVisibleTests(), listMyAttempts(s.user.uid)]);
     const testsById = new Map(tests.map((t) => [t.id, t]));
+    const { attempts } = await finalizeOverdueList(loaded, testsById);    // muddati o'tgan in_progress → graded
     const st = computeStats(attempts, testsById, settings.totalDays || TOTAL_DAYS_DEFAULT);
     if (!attempts.length) {
       view.innerHTML = stateHtml("chart", "Hali test topshirmagansiz", "Bugungi testni ishlang — natijalar va statistika shu yerda paydo bo‘ladi.",

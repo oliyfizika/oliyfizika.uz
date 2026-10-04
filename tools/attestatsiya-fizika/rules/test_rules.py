@@ -604,6 +604,81 @@ def main():
            sim["gradesAccepted"] == 30 * 3 and sim["days"] == 30)
     expect("simulyatsiya: barcha soxta results rad etildi", sim["forgeriesRejected"] == sim["forgeriesTried"])
 
+    # ------------------------------------------------------------ 14. AUTO-FINALIZE (yechim ochilgan vaqtda, lazy)
+    T2 = db.docs[D2]
+    S = T2["solutionAvailableAt"]
+    k2 = db.docs[f"{D2}/keys/v{T2['currentVersion']}"]
+    sec = lambda x: dt.timedelta(seconds=x)
+    for u in ("user4", "race1"):
+        db.docs[f"users/{u}"] = {"fullName": u, "email": f"{u}@example.com", "xp": 0, "level": 1, "fullAccess": False}
+    U4, UR = auth_of("user4"), auth_of("race1")
+    st2 = lambda uid: {"userId": uid, "testId": d2id, "dayNumber": T2["dayNumber"], "testVersion": T2["currentVersion"],
+                       "attemptNumber": 1, "kind": "official", "status": "in_progress", "startedAt": SERVER, "questionCount": T2["questionCount"]}
+    A3, A4, AR = (f"attestationPhysicsAttempts/{u}__{d2id}" for u in ("user3", "user4", "race1"))
+    t_start = S - dt.timedelta(hours=3)
+    expect("auto: start (user3, S − 3 soat)", db.write(U3, A3, st2("user3"), t_start, op="create"), True)
+    part = dict(list(k2["answers"].items())[:12])
+    part = {q: (a if i % 2 == 0 else ("A" if a != "A" else "B")) for i, (q, a) in enumerate(part.items())}
+    expect("auto: 12 ta javob saqlandi (S − 2 soat)", db.write(U3, A3, {"answers": part, "savedAt": SERVER}, S - dt.timedelta(hours=2)), True)
+    AUTO = {"status": "submitted", "completedAt": S, "answers": part, "autoFinalized": True}
+    expect("auto: yechim ochilishidan 1 s oldin — rad (egasi)", db.write(U3, A3, AUTO, S - sec(1), apply=False), False)
+    expect("auto: yechim ochilishidan 1 s oldin — rad (admin)", db.write(ADMIN, A3, AUTO, S - sec(1), apply=False), False)
+    expect("auto: qo'lda SUBMIT yechim ochilgan paytda (request.time == S) — rad",
+           db.write(U3, A3, {"status": "submitted", "completedAt": SERVER, "answers": part}, S, apply=False), False)
+    expect("auto: boshqa user — rad", db.write(U1, A3, AUTO, S + sec(60), apply=False), False)
+    expect("auto: javoblarni o'zgartirib — rad", db.write(U3, A3, {**AUTO, "answers": {**part, "AF-X": "A"}}, S + sec(60), apply=False), False)
+    expect("auto: javob qo'shib — rad", db.write(U3, A3, {**AUTO, "answers": dict(list(k2["answers"].items())[:13])}, S + sec(60), apply=False), False)
+    expect("auto: completedAt = hozir (vaqtni cho'zish) — rad", db.write(U3, A3, {**AUTO, "completedAt": SERVER}, S + dt.timedelta(hours=8), apply=False), False)
+    expect("auto: autoFinalized belgisisiz — rad", db.write(U3, A3, {k: v for k, v in AUTO.items() if k != "autoFinalized"}, S + sec(60), apply=False), False)
+    expect("auto: to'g'ridan-to'g'ri graded + natija — rad",
+           db.write(U3, A3, {**AUTO, **grade_of(part, k2, T2["questionCount"])}, S + sec(60), apply=False), False)
+    expect("auto: scorePercent qo'shib — rad", db.write(U3, A3, {**AUTO, "scorePercent": 100}, S + sec(60), apply=False), False)
+    t_back = S + dt.timedelta(hours=8)                        # user ertalab qaytdi
+    expect("auto: egasi qaytganda (S + 8 soat) — ruxsat", db.write(U3, A3, AUTO, t_back), True)
+    expect("auto: javoblar o'zgarmagan, completedAt = S", db.docs[A3]["answers"] == part and db.docs[A3]["completedAt"] == S)
+    expect("auto: ikkinchi marta — rad (idempotent)", db.write(ADMIN, A3, AUTO, t_back + sec(5), apply=False), False)
+    g3 = {**grade_of(part, k2, T2["questionCount"]), "timeSpentSeconds": int((S - t_start).total_seconds())}
+    expect("auto: vaqtni S dan keyingacha hisoblab baholash — rad",
+           db.write(U3, A3, {**g3, "timeSpentSeconds": int((t_back - t_start).total_seconds())}, t_back, apply=False), False)
+    expect("auto: soxta natija — rad", db.write(U3, A3, {**g3, "correctAnswers": g3["correctAnswers"] + 1}, t_back, apply=False), False)
+    expect("auto: mavjud GRADE (egasi) — ruxsat", db.write(U3, A3, g3, t_back), True)
+    expect("auto: natija 12 javob — 6 to'g'ri / 6 xato / qolgani javobsiz, vaqt 3 soat",
+           (db.docs[A3]["correctAnswers"], db.docs[A3]["wrongAnswers"], db.docs[A3]["unanswered"], db.docs[A3]["timeSpentSeconds"])
+           == (6, 6, k2["scorableCount"] - 12, 3 * 3600))
+    expect("auto: graded → qayta baholash — rad", db.write(ADMIN, A3, g3, t_back + sec(9), apply=False), False)
+    expect("auto: userId/testId/testVersion/attemptNumber o'zgarmagan",
+           all(db.docs[A3][f] == st2("user3")[f] for f in ("userId", "testId", "dayNumber", "testVersion", "attemptNumber", "kind")))
+    # javobsiz (answers maydoni yo'q) — admin yakunlaydi
+    expect("auto: start (user4), hech narsa saqlanmagan", db.write(U4, A4, st2("user4"), S - dt.timedelta(hours=1), op="create"), True)
+    expect("auto: answers yo'q → bo'sh bo'lmagan map — rad",
+           db.write(ADMIN, A4, {**AUTO, "answers": {"x": "A"}}, S + sec(30), apply=False), False)
+    expect("auto: admin yakunlaydi (answers = {})", db.write(ADMIN, A4, {**AUTO, "answers": {}}, S + sec(30)), True)
+    g4 = {**grade_of({}, k2, T2["questionCount"]), "timeSpentSeconds": 3600}
+    expect("auto: admin baholaydi — hammasi javobsiz, 0 %", db.write(ADMIN, A4, g4, S + sec(31)) and db.docs[A4]["unanswered"] == k2["scorableCount"]
+           and db.docs[A4]["scorePercent"] == 0)
+    # poyga: qo'lda submit S dan oldin muvaffaqiyatli → auto rad
+    expect("poyga: start", db.write(UR, AR, st2("race1"), S - dt.timedelta(hours=1), op="create"), True)
+    expect("poyga: qo'lda SUBMIT (S − 1 s) — ruxsat",
+           db.write(UR, AR, {"status": "submitted", "completedAt": SERVER, "answers": {}}, S - sec(1)), True)
+    expect("poyga: shu zahoti auto (S) — rad (bitta yakun)", db.write(ADMIN, AR, {**AUTO, "answers": {}}, S, apply=False), False)
+    expect("poyga: completedAt qo'lda yozilgan vaqt", db.docs[AR]["completedAt"] == S - sec(1) and "autoFinalized" not in db.docs[AR])
+    # testVersion yo'q eski urinish — taxmin qilinmaydi
+    OLD = f"attestationPhysicsAttempts/old1__{d2id}"
+    db.docs[OLD] = {"userId": "old1", "testId": d2id, "dayNumber": 2, "attemptNumber": 1, "kind": "official", "status": "in_progress",
+                    "startedAt": S - dt.timedelta(hours=1), "questionCount": T2["questionCount"]}
+    expect("auto: testVersion yo'q eski urinish — rad", db.write(ADMIN, OLD, {**AUTO, "answers": {}}, S + sec(60), apply=False), False)
+    del db.docs[OLD]
+    # v2 urinish → v2 kaliti (Day 1: currentVersion 2)
+    A5 = f"attestationPhysicsAttempts/user5__{d1id}"
+    k1v2 = db.docs[f"{D1}/keys/v2"]
+    S1 = db.docs[D1]["solutionAvailableAt"]
+    ans5 = dict(list(k1v2["answers"].items())[:5])
+    db.docs[A5] = {"userId": "user5", "testId": d1id, "dayNumber": 1, "testVersion": 2, "attemptNumber": 1, "kind": "official",
+                   "status": "in_progress", "startedAt": S1 - dt.timedelta(hours=2), "questionCount": db.docs[D1]["questionCount"], "answers": ans5}
+    expect("auto: v2 urinish yakunlanadi", db.write(ADMIN, A5, {**AUTO, "completedAt": S1, "answers": ans5}, S1 + sec(60)), True)
+    g5 = {**grade_of(ans5, k1v2, db.docs[D1]["questionCount"]), "timeSpentSeconds": 7200}
+    expect("auto: v2 kaliti bilan baholanadi (5/5 to'g'ri)", db.write(ADMIN, A5, g5, S1 + sec(61)) and db.docs[A5]["correctAnswers"] == 5)
+
     expect("Rules get() chegarasi (≤10) saqlangan", db.max_gets <= 10)
     report = {"status": "PASS" if all(c["pass"] for c in checks) else "FAIL",
               "passed": sum(c["pass"] for c in checks), "total": len(checks),

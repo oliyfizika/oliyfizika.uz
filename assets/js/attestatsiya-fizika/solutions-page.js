@@ -4,6 +4,7 @@
 // Yopiq kun uchun hech qanday yechim ma'lumoti yuklanmaydi.
 // ==========================================================================
 import { listVisibleTests, getSnapshot, getSolutions, getMyAttempt } from "./api.js";
+import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { esc, solutionOpen, formatTashkent } from "./core.js";
 import { renderBlocks, loadKatex } from "./render.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
@@ -52,7 +53,8 @@ async function renderDay(tests, uid) {
       '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
     return;
   }
-  const [attempt] = await Promise.all([getMyAttempt(uid, t.id).catch(() => null), loadKatex().catch(() => {})]);
+  let [attempt] = await Promise.all([getMyAttempt(uid, t.id).catch(() => null), loadKatex().catch(() => {})]);
+  if (isOverdue(attempt, t)) attempt = (await finalizeIfOverdue(attempt, t).catch(() => ({ attempt }))).attempt;
   const version = attempt?.testVersion || t.currentVersion;
   const [snap, sol] = await Promise.all([getSnapshot(t.id, version), getSolutions(t.id, version)]);
   const solById = new Map(sol.items.map((x) => [x.id, x]));
