@@ -9,6 +9,7 @@
 // ==========================================================================
 import { listVisibleTests, getMyAttempt, startAttempt, getSnapshot, saveDraft, submitAttempt, gradeAttempt, getKey } from "./api.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
+import { bindCalculatorButton, CALC_ICON } from "./calculator-panel.js";
 import { esc, toMs, officialOpen, solutionOpen, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
 import { renderBlocks, loadKatex, plainText } from "./render.js";
 import { ic, fillIcons, whenUser, stateHtml, errorMessage } from "./ui.js";
@@ -149,6 +150,7 @@ async function openRunner() {
           <span class="att-bar__count of-num" data-count aria-live="polite"></span>
           <div class="of-progress" role="progressbar" aria-label="Javob berilgan savollar" aria-valuemin="0" aria-valuemax="${n}" data-bar><span></span></div>
           <span class="att-clock" role="timer" aria-live="off">${ic("clock")}<span class="of-sr-only">Sarflangan vaqt:</span><span data-clock>00:00</span></span>
+          <button type="button" class="of-btn of-btn--sm att-calc-btn" data-calc title="Kalkulyator" aria-label="Kalkulyator">${CALC_ICON}<span class="att-calc-btn__label">Kalkulyator</span></button>
         </div>
         <article class="of-card att-q" data-q aria-labelledby="attQNum"></article>
       </div>
@@ -169,6 +171,7 @@ async function openRunner() {
     if (b) go(Number(b.dataset.go), true);
   });
   view.querySelector("[data-finish]").addEventListener("click", confirmFinish);
+  bindCalculatorButton(view.querySelector("[data-calc]"));      // mock test kalkulyatori (faqat brauzerda, holatga ta'sirsiz)
   renderQuestion();
   updateProgress();
   startClock();

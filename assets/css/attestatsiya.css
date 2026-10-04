@@ -433,3 +433,36 @@
   .att-attempts__tools, .att-attempts__tools .of-btn { width: 100%; }
   .att-attempts__tools .of-btn { justify-content: center; }
 }
+
+/* ---------- Test sahifasi: ilmiy kalkulyator (Milliy sertifikat mock testidagi kalkulyator; mantiq — calculator.js) ----------
+   mock-testlar.css global qoidalari (body, .modal, .toast) bu sahifaga ulanmaydi — faqat .calc-* qoidalari shu yerda,
+   o'zgaruvchilar mock-exam.css dagi kabi OliyFizika 2.0 tokenlariga bog'langan (yorug'/qorong'i avtomatik). */
+.att-calc-btn { flex: 0 0 auto; }
+.att-calc-btn .of-icon { width: 16px; height: 16px; }
+.att-calc-modal .of-modal__dialog { width: min(460px, 96vw); max-width: 460px; }
+.att-calc {
+  --border: var(--of-border);
+  --border-strong: color-mix(in srgb, var(--of-primary) 38%, var(--of-border));
+  --surface-soft: var(--of-surface-2);
+  --accent: var(--of-primary-solid);
+  --accent-2: var(--of-primary-text);
+  --accent-soft: var(--of-primary-soft);
+  --bad: var(--of-danger-text);
+  --bad-soft: var(--of-danger-soft);
+  text-align: left;
+}
+.att-calc .calc-display { background: #0f1522; color: #fff; border-radius: 16px; padding: 14px; margin-bottom: 10px; border: 1px solid rgba(134, 181, 255, .2); }
+.att-calc .calc-mini { font-size: .72rem; color: #9fb7d8; display: flex; justify-content: space-between; }
+.att-calc .calc-input { width: 100%; border: 0; background: transparent; color: #fff; font-size: 1.6rem; text-align: right; outline: none; padding: 8px 0 2px; font-variant-numeric: tabular-nums; }
+.att-calc .calc-result { text-align: right; color: #7ee2c0; font-weight: 700; min-height: 24px; font-variant-numeric: tabular-nums; }
+.att-calc .calc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.att-calc .calc-grid button { border: 1px solid var(--border); background: var(--surface-soft); color: var(--of-text); border-radius: 11px; padding: 13px 6px; font: 600 var(--of-text-sm)/1 var(--of-font-sans); cursor: pointer; }
+.att-calc .calc-grid button:hover { border-color: var(--border-strong); background: var(--accent-soft); }
+.att-calc .calc-grid button:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.att-calc .calc-grid .op { color: var(--accent-2); }
+.att-calc .calc-grid button.eq, .att-calc .calc-grid button.eq:hover { background: var(--of-primary-solid); color: #fff; border-color: transparent; }
+.att-calc .calc-grid .clr { color: var(--bad); background: var(--bad-soft); }
+@media (max-width: 640px) {
+  .att-calc-btn__label { display: none; }
+  .att-calc .calc-grid button { padding: 12px 4px; font-size: .85rem; }
+}
