@@ -2,6 +2,7 @@
 // So'rovlar: settings (1), published testlar (≤32 kichik meta hujjat), o'z urinishlari (where userId == uid).
 // Savollar, kalitlar va yechimlar bu sahifada YUKLANMAYDI.
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
+import { finalizeOverdueList } from "./finalize.js";
 import { esc, pickToday, officialOpen, solutionOpen, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 
@@ -134,11 +135,12 @@ function renderHero(stats) {
 (async () => {
   const s = await whenUser();
   try {
-    const [settings, tests, attempts] = await Promise.all([getSettings(), listVisibleTests(), listMyAttempts(s.user.uid)]);
+    const [settings, tests, loaded] = await Promise.all([getSettings(), listVisibleTests(), listMyAttempts(s.user.uid)]);
     const now = Date.now();
     const totalDays = settings.totalDays || TOTAL_DAYS_DEFAULT;
-    const attemptsByTest = new Map(attempts.map((a) => [a.testId, a]));
     const testsById = new Map(tests.map((t) => [t.id, t]));
+    const { attempts } = await finalizeOverdueList(loaded, testsById, now);   // muddati o'tgan in_progress → graded
+    const attemptsByTest = new Map(attempts.map((a) => [a.testId, a]));
     renderHero(computeStats(attempts, testsById, totalDays));
     const today = pickToday(tests, now);
     renderToday(today, today ? attemptsByTest.get(today.id) : null, now);

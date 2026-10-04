@@ -8,6 +8,7 @@
 // Frozen Mock Test engine ishlatilmaydi.
 // ==========================================================================
 import { listVisibleTests, getMyAttempt, startAttempt, getSnapshot, saveDraft, submitAttempt, gradeAttempt, getKey } from "./api.js";
+import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { esc, toMs, officialOpen, solutionOpen, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
 import { renderBlocks, loadKatex, plainText } from "./render.js";
 import { ic, fillIcons, whenUser, stateHtml, errorMessage } from "./ui.js";
@@ -327,6 +328,19 @@ async function finish() {
     renderResult(key);
     toast("Test yakunlandi. Natija saqlandi.");
   } catch (e) {
+    // Yechim vaqti kelib qolgan bo'lsa qo'lda SUBMIT rad etiladi — urinish oxirgi saqlangan javoblar bilan avtomatik yakunlanadi
+    if (e?.code === "permission-denied") {
+      try {
+        const r = await finalizeIfOverdue(await getMyAttempt(uid, test.id), test, Date.now(), { serverDecides: true });
+        if (r.attempt?.status === "graded") {
+          attempt = r.attempt;
+          clearLocalDraft();
+          renderResult(r.key || await getKey(test.id, attemptVersion(attempt)).catch(() => null));
+          toast("Yechim vaqti keldi — test oxirgi saqlangan javoblar bilan avtomatik yakunlandi.");
+          return;
+        }
+      } catch (e2) { console.warn("[att] avtomatik yakunlash:", e2?.code || e2); }
+    }
     console.error("[att] submit/grade:", e);
     show(stateHtml("alert", "Natijani saqlab bo‘lmadi", `${errorMessage(e)} Javoblaringiz shu qurilmada saqlangan.`,
       '<button type="button" class="of-btn of-btn--primary" data-retry>Qayta urinish</button>'));
@@ -522,6 +536,10 @@ async function renderResult(key) {
       return;
     }
     attempt = await getMyAttempt(uid, test.id);
+    // Yechim vaqti kelgan, lekin yakunlanmagan rasmiy urinish — oxirgi saqlangan javoblar bilan avtomatik yakunlanadi
+    if (isOverdue(attempt, test)) {
+      attempt = (await finalizeIfOverdue(attempt, test).catch((e) => { console.warn("[att] avtomatik yakunlash:", e?.code || e); return { attempt }; })).attempt;
+    }
     if (attempt?.status === "graded") {
       // Eski sxemadagi urinish (testVersion yo'q) uchun Rules kalitni bermaydi — review saqlangan natija bilan chiziladi
       const key = await getKey(test.id, attemptVersion(attempt)).catch((e) => { console.warn("[att] kalit:", e?.code || e); return null; });

@@ -277,6 +277,26 @@
         && attValidAnswers(o, n);
     }
 
+    // AUTO-FINALIZE (lazy): yechim ochilgan vaqtda (request.time >= solutionAvailableAt — yechimlar bilan BIR XIL chegara)
+    // hali in_progress bo'lgan rasmiy urinish «submitted» ga o'tkaziladi. Egasi (qaytib kirganda) yoki admin bajaradi.
+    // Javoblar O'ZGARMAYDI (oxirgi saqlangan qoralama; yo'q bo'lsa — bo'sh map), completedAt = solutionAvailableAt
+    // (sarflangan vaqt shu chegara bilan cheklanadi). Natija maydonlari bu yerda taqiqlangan — baholash mavjud GRADE orqali.
+    // Qo'lda SUBMIT esa faqat request.time < solutionAvailableAt: ikki yo'l server vaqti bo'yicha kesishmaydi.
+    function attValidAutoSubmit() {
+      let o = resource.data;
+      let n = request.resource.data;
+      let t = attTest(o.testId);
+      return signedIn() && (o.userId == request.auth.uid || isAdmin())
+        && o.status == 'in_progress' && o.kind == 'official' && o.testVersion is int
+        && t.solutionAvailableAt is timestamp && request.time >= t.solutionAvailableAt
+        && n.diff(o).affectedKeys().hasOnly(['status', 'completedAt', 'answers', 'autoFinalized'])
+        && n.status == 'submitted'
+        && n.completedAt == t.solutionAvailableAt
+        && n.autoFinalized == true
+        && (('answers' in o && n.answers == o.answers)
+            || (!('answers' in o) && n.answers is map && n.answers.size() == 0));
+    }
+
     // GRADE: faqat submit'dan keyin. Kalit (keys/v{N}.answers) — FAQAT auto savollar: {questionId: 'A'..'E'}.
     //   answers.diff(key): unchanged = to'g'ri, changed = noto'g'ri, removed = javobsiz (auto),
     //   added = baholanmaydigan (open/unreliable) savollarga berilgan javob — hisobga olinmaydi.
@@ -313,6 +333,6 @@
       allow get: if isAdmin() || (signedIn() && attemptId.split('__')[0] == request.auth.uid);
       allow list: if isAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
       allow create: if attValidStart(attemptId);
-      allow update: if attValidSave() || attValidSubmit() || attValidGrade();
+      allow update: if attValidSave() || attValidSubmit() || attValidAutoSubmit() || attValidGrade();
       allow delete: if false;
     }
