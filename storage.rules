@@ -51,20 +51,30 @@ service firebase.storage {
       return test(testId).published == true && test(testId).status in ['published', 'archived'];
     }
 
+    // Kun bo'yicha kirish (firestore.rules attDayOpen/attContentAccess bilan bir xil): Day 1–3 — har bir kirgan
+    // foydalanuvchiga; 4+ — canAccess(); o'z urinishi bor foydalanuvchi — o'z natijasini ko'rish uchun.
+    function dayAccess(testId) {
+      return signedIn() && (
+        (test(testId).dayNumber is int && test(testId).dayNumber <= 3)
+        || canAccess()
+        || firestore.exists(/databases/(default)/documents/attestationPhysicsAttempts/$(request.auth.uid + '__' + testId))
+      );
+    }
+
     function validImage() {
       return request.resource.size < 2 * 1024 * 1024
         && request.resource.contentType.matches('image/(webp|svg\\+xml|png)');
     }
 
     match /attestation-physics/questions/{testId}/{fileName} {
-      allow read: if isAdmin() || (canAccess() && visible(testId));
+      allow read: if isAdmin() || (dayAccess(testId) && visible(testId));
       allow create: if isAdmin() && validImage();
       allow update, delete: if false;
     }
 
     match /attestation-physics/solutions/{testId}/{fileName} {
       allow read: if isAdmin()
-        || (canAccess() && visible(testId) && request.time >= test(testId).solutionAvailableAt);
+        || (dayAccess(testId) && visible(testId) && request.time >= test(testId).solutionAvailableAt);
       allow create: if isAdmin() && validImage();
       allow update, delete: if false;
     }

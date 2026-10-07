@@ -3,7 +3,8 @@
 // Yechim hujjati faqat solutionAvailableAt'dan keyin so'raladi (Rules ham shu vaqtgacha rad etadi).
 // Yopiq kun uchun hech qanday yechim ma'lumoti yuklanmaydi.
 // ==========================================================================
-import { listVisibleTests, getSnapshot, getSolutions, getMyAttempt } from "./api.js";
+import { listVisibleTests, getSnapshot, getSolutions, getMyAttempt, listMyAttempts } from "./api.js";
+import { loadAccessContext, contentOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { esc, solutionOpen, formatTashkent } from "./core.js";
 import { renderBlocks, loadKatex } from "./render.js";
@@ -20,18 +21,23 @@ function show(html) {
   fillIcons(view);
 }
 
-function renderList(tests) {
+let access = null;
+const lockHtml = (d) => stateHtml("lock", `Day ${d}: ${ACCESS_TITLE.toLowerCase()}`, esc(ACCESS_TEXT),
+  `<div class="of-row" style="justify-content:center;flex-wrap:wrap"><a class="of-btn of-btn--primary" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 Kursga yozilish</a><a class="of-btn" href="fizika-yechimlar.html">Barcha yechimlar</a></div>`);
+
+function renderList(tests, mine = new Set()) {
   if (!tests.length) {
     show(stateHtml("book", "Hali yechimlar yo‘q", "Birinchi test e’lon qilinib, ertasi kuni 00:00 bo‘lganda yechimlar shu yerda paydo bo‘ladi."));
     return;
   }
   show(`<ul class="att-days">${tests.map((t) => {
-    const open = solutionOpen(t);
-    return `<li><article class="of-card att-day" data-state="${open ? "done" : "open"}" aria-labelledby="solD${t.dayNumber}">
+    const allowed = contentOpen(t, access, mine.has(t.id));
+    const open = solutionOpen(t) && allowed;
+    return `<li><article class="of-card att-day" data-state="${!allowed ? "restricted" : open ? "done" : "open"}" aria-labelledby="solD${t.dayNumber}">
       <div class="att-day__head"><span class="att-day__num">${t.dayNumber}</span>
         <div><p class="att-day__title" id="solD${t.dayNumber}">Day ${t.dayNumber} · ${esc(t.sectionTitle)}</p><p class="att-day__sub">${t.questionCount} savol</p></div></div>
       <p class="att-day__topics">${esc(t.topics.join(", "))}</p>
-      <div class="att-day__stats">${open
+      <div class="att-day__stats">${!allowed ? `<span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span>` : open
         ? `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`
         : `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(formatTashkent(t.solutionAvailableAt))} da ochiladi</span>`}</div>
       <div class="att-day__foot">${open ? `<a class="of-btn of-btn--primary of-btn--sm" href="fizika-yechimlar.html?day=${t.dayNumber}">${ic("book")}Yechimlarni ochish</a>` : ""}</div>
@@ -54,6 +60,7 @@ async function renderDay(tests, uid) {
     return;
   }
   let [attempt] = await Promise.all([getMyAttempt(uid, t.id).catch(() => null), loadKatex().catch(() => {})]);
+  if (!contentOpen(t, access, attempt)) { show(lockHtml(day)); return; }   // Day 4+ ruxsatsiz (Rules ham rad etadi)
   if (isOverdue(attempt, t)) attempt = (await finalizeIfOverdue(attempt, t).catch(() => ({ attempt }))).attempt;
   const version = attempt?.testVersion || t.currentVersion;
   const [snap, sol] = await Promise.all([getSnapshot(t.id, version), getSolutions(t.id, version)]);
@@ -134,9 +141,10 @@ async function renderDay(tests, uid) {
 (async () => {
   const s = await whenUser();
   try {
-    const tests = await listVisibleTests();
+    const [tests, ctx] = await Promise.all([listVisibleTests(), loadAccessContext(s.user.uid)]);
+    access = ctx;
     if (day) await renderDay(tests, s.user.uid);
-    else renderList(tests);
+    else renderList(tests, new Set((await listMyAttempts(s.user.uid).catch(() => [])).map((a) => a.testId)));
   } catch (e) {
     console.error("[att] yechimlar:", e);
     show(stateHtml("alert", "Yechimlarni yuklab bo‘lmadi", errorMessage(e)));

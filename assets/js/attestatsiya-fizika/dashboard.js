@@ -5,6 +5,7 @@ import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
 import { finalizeOverdueList } from "./finalize.js";
 import { esc, pickToday, officialOpen, solutionOpen, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
+import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 
 const root = document.getElementById("attDash");
 fillIcons(root);
@@ -16,8 +17,12 @@ const daysEl = root.querySelector("[data-days]");
 const testHref = (t) => `fizika-test.html?day=${t.dayNumber}`;
 const solHref = (t) => `fizika-yechimlar.html?day=${t.dayNumber}`;
 
+// Kirish konteksti (accessContext): Day 1–3 bepul, 4+ — ruxsat. O'z urinishi bor kun (tarix) — odatdagidek.
+let access = null;
+
 function dayState(test, attempt, now) {
   if (!test) return "locked";
+  if (!attempt && !dayOpen(test, access)) return "restricted";
   if (attempt?.status === "graded") return "done";
   if (attempt?.status === "submitted") return "submitted";
   if (officialOpen(test, now)) return attempt ? "progress" : "open";
@@ -43,6 +48,23 @@ function renderToday(today, attempt, now) {
     return;
   }
   const st = dayState(today, attempt, now);
+  if (st === "restricted") {
+    todayEl.dataset.state = "restricted";
+    todayEl.innerHTML = `
+      <span class="att-daybadge" aria-hidden="true"><small>Day</small><b>${today.dayNumber}</b></span>
+      <div class="att-today__body">
+        <span class="att-today__label">Bugungi test · Attestatsiya — Fizika</span>
+        <p class="att-today__title">Day ${today.dayNumber} — ${esc(today.sectionTitle)}</p>
+        <div class="att-today__meta">
+          <span>${ic(SECTION_ICON[today.section] || "atom")}${esc(today.topics.join(", "))}</span>
+          <span>${ic("list")}${today.questionCount} savol</span>
+          <span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span>
+        </div>
+        <p class="att-access-note">${esc(ACCESS_TEXT)}</p>
+      </div>
+      <div class="att-today__actions"><a class="of-btn of-btn--primary of-btn--lg" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 Kursga yozilish</a></div>`;
+    return;
+  }
   todayEl.dataset.state = st === "done" || st === "submitted" ? "done" : "open";
   const status = {
     open: '<span class="of-badge of-badge--blue">Yangi</span>',
@@ -85,6 +107,21 @@ function renderDays(totalDays, tests, attemptsByTest, now) {
     }
     const chips = [];
     let foot = "";
+    if (st === "restricted") {
+      // To'liq karta, lekin yopiq: start yo'q, urinish yaratilmaydi (Rules ham rad etadi)
+      items.push(`<li><article class="of-card att-day" data-state="restricted" data-day="${day}" aria-labelledby="attDay${day}">
+        <div class="att-day__head">
+          <span class="att-day__num">${day}</span>
+          <div><p class="att-day__title" id="attDay${day}">Day ${day} · ${esc(t.sectionTitle)}</p><p class="att-day__sub">${t.questionCount} savol${t.status === "archived" ? " · arxiv" : ""}</p></div>
+          <span class="att-day__lock" aria-hidden="true">${ic("lock")}</span>
+        </div>
+        <p class="att-day__topics">${esc(t.topics.join(", "))}</p>
+        <div class="att-day__stats"><span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span></div>
+        <p class="att-access-note">${esc(ACCESS_TEXT)}</p>
+        <div class="att-day__foot"><a class="of-btn of-btn--soft of-btn--sm" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer" data-access-cta>📲 Kursga yozilish</a></div>
+      </article></li>`);
+      continue;
+    }
     if (st === "done") {
       chips.push(`<span class="of-badge of-badge--green">${ic("check")} Bajarilgan</span>`);
       chips.push(`<span class="of-badge">To‘g‘ri ${a.correctAnswers} · Noto‘g‘ri ${a.wrongAnswers} · Javobsiz ${a.unanswered}</span>`);
@@ -135,7 +172,8 @@ function renderHero(stats) {
 (async () => {
   const s = await whenUser();
   try {
-    const [settings, tests, loaded] = await Promise.all([getSettings(), listVisibleTests(), listMyAttempts(s.user.uid)]);
+    const [settings, tests, loaded, ctx] = await Promise.all([getSettings(), listVisibleTests(), listMyAttempts(s.user.uid), loadAccessContext(s.user.uid)]);
+    access = ctx;
     const now = Date.now();
     const totalDays = settings.totalDays || TOTAL_DAYS_DEFAULT;
     const testsById = new Map(tests.map((t) => [t.id, t]));

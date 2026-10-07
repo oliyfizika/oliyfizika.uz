@@ -45,6 +45,28 @@
       );
     }
 
+    // KUN BO'YICHA KIRISH (umumiy qoida, kun raqami hard-code qilinmagan):
+    //   dayNumber <= 3            — har bir kirgan foydalanuvchiga ochiq (bepul kunlar);
+    //   dayNumber >= 4            — attCanAccess() (admin | accessMode 'open' | attestationAccess == true).
+    // accessMode 'open' bo'lsa hammasi ochiq (avvalgidek); 'paid' ga o'tkazilganda 4+ kunlar ruxsat talab qiladi.
+    function attFreeDay(t) {
+      return t.dayNumber is int && t.dayNumber <= 3;
+    }
+
+    function attDayOpen(t) {
+      return signedIn() && (attFreeDay(t) || attCanAccess());
+    }
+
+    // Tarix: shu testda o'z rasmiy urinishi bor foydalanuvchi o'z natijasi/ko'rib chiqishi uchun kontentni o'qishda
+    // davom etadi (ruxsat keyin olinsa ham). Yangi urinish boshlashga bu yetmaydi (attValidStart — attDayOpen).
+    function attHasOwnAttempt(testId) {
+      return signedIn() && exists(attAttemptPath(request.auth.uid + '__' + testId));
+    }
+
+    function attContentAccess(testId, t) {
+      return attDayOpen(t) || attHasOwnAttempt(testId);
+    }
+
     // published va archived — foydalanuvchiga ko'rinadi; draft — yo'q.
     function attVisible(t) {
       return t.published == true && t.status in ['published', 'archived'];
@@ -82,7 +104,8 @@
     }
 
     match /attestationPhysicsQuestions/{qid} {
-      allow get: if isAdmin() || (attCanAccess() && attVisible(attTest(resource.data.testId)));
+      allow get: if isAdmin() || (attVisible(attTest(resource.data.testId))
+        && attContentAccess(resource.data.testId, attTest(resource.data.testId)));
       allow list: if isAdmin();
       allow create, update: if isAdmin() && request.resource.data.id == qid && attNoSecrets(request.resource.data);
       allow delete: if false;
@@ -154,14 +177,16 @@
         (exists(attAttemptPath(aid))
           && get(attAttemptPath(aid)).data.status in ['submitted', 'graded']
           && attVersionId(get(attAttemptPath(aid)).data.testVersion) == v)
-        || (attCanAccess() && attSolutionOpen(attTest(testId)))
+        || (attDayOpen(attTest(testId)) && attSolutionOpen(attTest(testId)))
       );
     }
 
     match /attestationPhysicsDailyTests/{testId} {
-      allow get: if isAdmin() || (attCanAccess() && attVisible(resource.data));
+      // Meta (kun, bo'lim, mavzular, savollar soni, sanalar — javob/kontent yo'q): e'lon qilingan kun har bir kirgan
+      // foydalanuvchiga ko'rinadi (yopiq 4+ kunlar ham to'liq karta sifatida). Kontent va start — attDayOpen.
+      allow get: if isAdmin() || (signedIn() && attVisible(resource.data));
       // Foydalanuvchi so'rovi: where('published', '==', true) bo'lishi shart (draft hech qachon qaytmaydi)
-      allow list: if isAdmin() || (attCanAccess() && resource.data.published == true);
+      allow list: if isAdmin() || (signedIn() && resource.data.published == true);
       allow create: if isAdmin() && attValidTestShape(request.resource.data, testId)
         && request.resource.data.status == 'draft' && request.resource.data.published == false
         && request.resource.data.publishedAt == null && request.resource.data.solutionAvailableAt == null;
@@ -169,7 +194,7 @@
       allow delete: if false;
 
       match /versions/{v} {
-        allow get: if isAdmin() || (attCanAccess() && attVisible(attTest(testId)));
+        allow get: if isAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
@@ -193,21 +218,21 @@
       // Rasmlar (Firestore muqobili, settings.figureBackend == 'firestore'): savol rasmlari published bo'lganda,
       // yechim rasmlari solutionAvailableAt dan keyin. O'zgarmas.
       match /figures/{figId} {
-        allow get: if isAdmin() || (attCanAccess() && attVisible(attTest(testId)));
+        allow get: if isAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutionFigures/{figId} {
-        allow get: if isAdmin() || (attCanAccess() && attSolutionOpen(attTest(testId)));
+        allow get: if isAdmin() || (attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)));
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutions/{v} {
-        allow get: if isAdmin() || (attCanAccess() && attSolutionOpen(attTest(testId)));
+        allow get: if isAdmin() || (attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)));
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
@@ -222,7 +247,7 @@
     function attValidStart(attemptId) {
       let d = request.resource.data;
       let t = attTest(d.testId);
-      return attCanAccess()
+      return attDayOpen(t)
         && d.keys().hasOnly(['userId', 'testId', 'dayNumber', 'testVersion', 'attemptNumber', 'kind', 'status',
                              'startedAt', 'questionCount'])
         && d.keys().hasAll(['userId', 'testId', 'dayNumber', 'testVersion', 'attemptNumber', 'kind', 'status',

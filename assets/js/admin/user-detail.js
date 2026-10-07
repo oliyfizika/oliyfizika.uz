@@ -55,6 +55,7 @@ function renderProfile() {
     ["XP", esc(num(data.xp))], ["Daraja", esc(num(data.level))],
     ["Role", data.role === "admin" ? "Admin" : "Foydalanuvchi"],
     ["Full Access", yesNo(data.fullAccess)], ["Mock Test Access", yesNo(data.mockTestsAccess)],
+    ["Attestatsiya — Fizika", yesNo(data.attestationAccess)],
   ];
   $("[data-user-profile]").innerHTML = rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
   fillIcons($("[data-user-profile]"));
