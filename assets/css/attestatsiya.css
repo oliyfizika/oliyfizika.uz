@@ -466,3 +466,18 @@
   .att-calc-btn__label { display: none; }
   .att-calc .calc-grid button { padding: 12px 4px; font-size: .85rem; }
 }
+
+/* ---------- Kun bo'yicha kirish: e'lon qilingan, lekin ruxsat talab qiladigan kun (to'liq karta + qulf) ---------- */
+.att-day[data-state="restricted"] .att-day__num { background: var(--of-warning-soft); color: var(--of-warning-text); }
+.att-day__lock { margin-left: auto; display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: var(--of-warning-soft); color: var(--of-warning-text); }
+.att-day__lock svg { width: 16px; height: 16px; }
+.att-badge-lock { background: var(--of-warning-soft); color: var(--of-warning-text); }
+.att-badge-lock svg { width: 13px; height: 13px; }
+.att-access-note { margin: 0; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.5; }
+.att-today[data-state="restricted"] { border-left-color: var(--of-warning); }
+.att-today[data-state="restricted"] .att-daybadge { background: var(--of-warning-soft); color: var(--of-warning-text); }
+@media (max-width: 640px) {
+  .att-today[data-state="restricted"] { grid-template-columns: auto minmax(0, 1fr); }
+  .att-today[data-state="restricted"] .att-today__actions { grid-column: 1 / -1; justify-content: stretch; }
+  .att-today[data-state="restricted"] .att-today__actions .of-btn { width: 100%; justify-content: center; }
+}

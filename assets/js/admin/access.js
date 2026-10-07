@@ -1,5 +1,5 @@
 // Admin: Access boshqaruvi (admin/access.html).
-// Uch ro'yxat (tab): role == "admin", fullAccess == true, mockTestsAccess == true — where + documentId tartibi,
+// To'rt ro'yxat (tab): role == "admin", fullAccess == true, mockTestsAccess == true, attestationAccess == true — where + documentId tartibi,
 // limit(20) sahifalab (indekssiz). Har qatorda "Olib tashlash" (tasdiqlash bilan) va "Ochish".
 // Huquq berish — foydalanuvchi sahifasida (email bo'yicha topish shu yerda).
 import { requireAdmin, $, $$, esc, fillIcons, fullNameOf, stateBox, errorText, confirmAction, updateAccess, ACCESS_LABEL, PAGE_SIZE } from "./admin-common.js";
@@ -15,6 +15,7 @@ const TABS = {
   admin: { field: "role", on: "admin", off: "user", revoke: "Adminlikdan olish" },
   fullAccess: { field: "fullAccess", on: true, off: false, revoke: "Full Accessni o‘chirish" },
   mockTestsAccess: { field: "mockTestsAccess", on: true, off: false, revoke: "Mock Accessni o‘chirish" },
+  attestationAccess: { field: "attestationAccess", on: true, off: false, revoke: "Attestatsiya ruxsatini olish" },
 };
 const list = $("[data-access-list]");
 const stateEl = $("[data-access-state]");

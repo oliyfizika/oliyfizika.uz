@@ -156,8 +156,8 @@ export function confirmAction({ title, text, confirmLabel = "Tasdiqlash", danger
 }
 
 // ------------------------------------------------------------------ yozish (faqat ruxsat etilgan maydonlar)
-const ACCESS_FIELDS = ["role", "fullAccess", "mockTestsAccess"];
-/** Admin: faqat role / fullAccess / mockTestsAccess. Boshqa maydon yuborilmaydi (Rules ham rad etadi). */
+const ACCESS_FIELDS = ["role", "fullAccess", "mockTestsAccess", "attestationAccess"];
+/** Admin: faqat role / fullAccess / mockTestsAccess / attestationAccess. Boshqa maydon yuborilmaydi (Rules ham rad etadi). */
 export async function updateAccess(fb, uid, field, value) {
   if (!ACCESS_FIELDS.includes(field)) throw new Error(`Ruxsat etilmagan maydon: ${field}`);
   if (field === "role" && !["user", "admin"].includes(value)) throw new Error("Noto‘g‘ri role");
@@ -166,4 +166,4 @@ export async function updateAccess(fb, uid, field, value) {
   await updateDoc(doc(fb.db, "users", uid), { [field]: value });
 }
 
-export const ACCESS_LABEL = { role: "Administrator", fullAccess: "Full Access", mockTestsAccess: "Mock Test Access" };
+export const ACCESS_LABEL = { role: "Administrator", fullAccess: "Full Access", mockTestsAccess: "Mock Test Access", attestationAccess: "Attestatsiya — Fizika" };

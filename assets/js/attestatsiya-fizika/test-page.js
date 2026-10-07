@@ -10,6 +10,7 @@
 import { listVisibleTests, getMyAttempt, startAttempt, getSnapshot, saveDraft, submitAttempt, gradeAttempt, getKey } from "./api.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { bindCalculatorButton, CALC_ICON } from "./calculator-panel.js";
+import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 import { esc, toMs, officialOpen, solutionOpen, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
 import { renderBlocks, loadKatex, plainText } from "./render.js";
 import { ic, fillIcons, whenUser, stateHtml, errorMessage } from "./ui.js";
@@ -532,13 +533,19 @@ async function renderResult(key) {
   }
   setTitle(`Day ${day} — kunlik test`);
   try {
-    const tests = await listVisibleTests();
+    const [tests, access] = await Promise.all([listVisibleTests(), loadAccessContext(uid)]);
     test = tests.find((t) => t.dayNumber === day) || null;
     if (!test) {
       show(stateHtml("lock", `Day ${day} hali e’lon qilinmagan`, "Test administrator e’lon qilgandan keyin shu yerda ochiladi.", '<a class="of-btn of-btn--primary" href="fizikaattestatsiya.html">Dashboard</a>'));
       return;
     }
     attempt = await getMyAttempt(uid, test.id);
+    // Day 4+ ruxsatsiz: start ekrani ko'rsatilmaydi, urinish yaratilmaydi (Rules ham rad etadi). O'z urinishi bo'lsa — tarix.
+    if (!attempt && !dayOpen(test, access)) {
+      show(stateHtml("lock", `Day ${day}: ${ACCESS_TITLE.toLowerCase()}`, esc(ACCESS_TEXT),
+        `<div class="of-row" style="justify-content:center;flex-wrap:wrap"><a class="of-btn of-btn--primary" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 Kursga yozilish</a><a class="of-btn" href="fizikaattestatsiya.html">Dashboard</a></div>`));
+      return;
+    }
     // Yechim vaqti kelgan, lekin yakunlanmagan rasmiy urinish — oxirgi saqlangan javoblar bilan avtomatik yakunlanadi
     if (isOverdue(attempt, test)) {
       attempt = (await finalizeIfOverdue(attempt, test).catch((e) => { console.warn("[att] avtomatik yakunlash:", e?.code || e); return { attempt }; })).attempt;

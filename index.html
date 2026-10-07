@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="assets/css/home.css">
 <script type="module" src="assets/js/shell/app-shell.js"></script>
 <script type="module" src="assets/js/home/home.js"></script>
+<script type="module" src="assets/js/home/attestation-promo.js"></script>
 </head>
 
 <body class="of-ui" data-shell-title="Bosh sahifa" data-shell-search="Bo‘lim yoki kursni qidirish…" data-search-target="#home">
@@ -40,33 +41,29 @@
       </div>
     </div>
 
-    <figure class="of-sim of-physics-grid" data-sim aria-labelledby="simCaption">
-      <div class="of-sim__formula" aria-hidden="true">y = x·tg α − <span class="of-frac"><span>g·x²</span><span>2v²·cos²α</span></span></div>
-      <canvas class="of-sim__canvas" role="img" aria-label="Gorizontga burchak ostida otilgan jism simulyatsiyasi"></canvas>
-      <figcaption class="of-sr-only" id="simCaption">Gorizontga burchak ostida otilgan jism harakati: trayektoriya, tezlik vektori va uning tashkil etuvchilari.</figcaption>
-
-      <div class="of-sim__panel">
-        <div class="of-sim__buttons">
-          <button type="button" class="of-icon-btn of-sim__play" data-sim-play aria-pressed="true" aria-label="Simulyatsiyani to‘xtatish">
-            <span class="of-sim__icon-pause" data-icon="pause"></span><span class="of-sim__icon-play" data-icon="play"></span>
-          </button>
-          <button type="button" class="of-icon-btn" data-sim-reset aria-label="Boshlang‘ich qiymatlarga qaytarish"><span data-icon="reset"></span></button>
-        </div>
-        <label class="of-sim__slider">
-          <span>Burchak <output data-sim-angle-out>45°</output></span>
-          <input type="range" min="15" max="75" step="1" value="45" data-sim-angle aria-label="Otish burchagi, gradus">
-        </label>
-        <label class="of-sim__slider">
-          <span>Tezlik <output data-sim-speed-out>20 m/s</output></span>
-          <input type="range" min="10" max="30" step="1" value="20" data-sim-speed aria-label="Boshlang‘ich tezlik, metr sekundiga">
-        </label>
-        <dl class="of-sim__readouts">
-          <div><dt>H<sub>max</sub></dt><dd data-sim-h>—</dd></div>
-          <div><dt>L</dt><dd data-sim-l>—</dd></div>
-          <div><dt>t</dt><dd data-sim-t>—</dd></div>
-        </dl>
+    <!-- Attestatsiya — Fizika kursi (oldingi simulyatsiya promo bloki o'rnida; simulyatsiyalar bo'limi o'zgarmagan) -->
+    <aside class="of-promo of-physics-grid" data-promo aria-labelledby="promoTitle">
+      <div class="of-promo__top">
+        <span class="of-promo__badge"><span data-icon="certificate"></span>Kurs</span>
+        <button type="button" class="of-icon-btn of-promo__pause" data-promo-pause aria-pressed="false" aria-label="Xabarlar almashinuvini to‘xtatish">
+          <span class="of-promo__icon-pause" data-icon="pause"></span><span class="of-promo__icon-play" data-icon="play"></span>
+        </button>
       </div>
-    </figure>
+      <h2 class="of-promo__title" id="promoTitle">ATTESTATSIYA — FIZIKA</h2>
+      <div class="of-promo__stage">
+        <p class="of-promo__msg" data-promo-msg aria-hidden="true">32 kunlik tayyorgarlik challenge</p>
+      </div>
+      <ul class="of-sr-only" data-promo-list aria-label="Kurs haqida">
+        <li>32 kunlik tayyorgarlik challenge</li>
+        <li>1000+ test savollari</li>
+        <li>Har kuni yangi attestatsiya testi</li>
+        <li>Natijalar va shaxsiy statistika</li>
+        <li>Test jarayonida kalkulyator</li>
+        <li>Fizika attestatsiyasiga tizimli tayyorgarlik</li>
+      </ul>
+      <ol class="of-promo__dots" data-promo-dots aria-hidden="true"></ol>
+      <a class="of-btn of-btn--primary of-btn--lg of-promo__cta" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" data-promo-cta>📲 Kursga yozilish</a>
+    </aside>
   </section>
 
   <!-- ====================== STATISTIKA (kirgan) ====================== -->

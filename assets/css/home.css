@@ -282,3 +282,52 @@
   .of-feature-item.is-pending { opacity: 1; }
   .of-feature:hover .of-feature__icon, .of-feature:hover .of-feature__action svg { transform: none; }
 }
+
+/* ------------------------------------------------------------ Attestatsiya — Fizika kurs banneri (hero o'ng ustuni) */
+.of-promo {
+  position: relative; margin: 0; min-height: 300px;
+  display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  padding: 26px 28px;
+  border-radius: calc(var(--of-radius-lg) - 4px);
+  border: 1px solid var(--of-border);
+  background-color: var(--of-surface-2);
+  overflow: hidden; min-width: 0;
+}
+.of-promo__top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.of-promo__badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: var(--of-radius-pill);
+  background: var(--of-primary-soft); color: var(--of-primary-text); font: 700 var(--of-text-xs)/1 var(--of-font-sans);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.of-promo__badge svg { width: 15px; height: 15px; }
+.of-promo__pause { width: 36px; height: 36px; border: 1px solid var(--of-border); background: var(--of-surface); }
+.of-promo__pause svg { width: 16px; height: 16px; }
+.of-promo__pause[aria-pressed="false"] .of-promo__icon-play,
+.of-promo__pause[aria-pressed="true"] .of-promo__icon-pause { display: none; }
+.of-promo__title {
+  margin: 0; color: var(--of-text);
+  font: 800 clamp(1.35rem, 1rem + 1.4vw, 2rem)/1.15 var(--of-font-display) !important;
+  letter-spacing: 0.01em; overflow-wrap: anywhere;
+}
+.of-promo__stage { min-height: 3.2em; display: flex; align-items: center; }
+.of-promo__msg {
+  margin: 0; color: var(--of-text-2);
+  font: 650 clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem)/1.4 var(--of-font-sans);
+  transition: opacity 260ms var(--of-ease-out, ease), transform 260ms var(--of-ease-out, ease);
+}
+.of-promo__msg.is-leaving { opacity: 0; transform: translateY(6px); }
+.of-promo__dots { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.of-promo__dots li { width: 7px; height: 7px; border-radius: 50%; background: var(--of-border-strong); transition: width 260ms ease, background-color 260ms ease; }
+.of-promo__dots li.is-active { width: 20px; border-radius: var(--of-radius-pill); background: var(--of-primary); }
+.of-promo__cta { align-self: flex-start; min-height: 48px; }
+@media (max-width: 1099px) {
+  .of-promo { min-height: 0; padding: 22px 20px; }
+}
+@media (max-width: 640px) {
+  .of-promo { padding: 18px 14px; gap: 12px; }
+  .of-promo__cta { align-self: stretch; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .of-promo__msg, .of-promo__dots li { transition: none; }
+  .of-promo__msg.is-leaving { opacity: 1; transform: none; }
+}

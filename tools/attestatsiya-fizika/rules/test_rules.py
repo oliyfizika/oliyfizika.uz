@@ -520,7 +520,10 @@ def main():
     expect("settings: courseStartDate qo'shib bo'lmaydi",
            db.write(ADMIN, "attestationPhysicsSettings/config", {"courseStartDate": t4}, t4, apply=False), False)
     expect("admin accessMode=paid", db.write(ADMIN, "attestationPhysicsSettings/config", {"accessMode": "paid"}, t4), True)
-    expect("paid: ruxsatsiz user — rad", db.read(U3, D2, t4), False)
+    # Yangi model: e'lon qilingan kun metasi (karta) har bir kirgan foydalanuvchiga; Day 2 — bepul kun (kontent ham ochiq)
+    expect("paid: ruxsatsiz user — Day 2 meta (karta) ko'rinadi", db.read(U3, D2, t4), True)
+    expect("paid: ruxsatsiz user — Day 2 bepul kun kontenti ochiq", db.read(U3, D2 + "/versions/v1", t4), True)
+    expect("paid: mehmon — meta yopiq", db.read(None, D2, t4), False)
     expect("paid: user attestationAccess ni o'ziga yozolmaydi",
            db.write(U3, "users/user3", {"attestationAccess": True}, t4, apply=False), False)
     db.docs["users/user3"]["attestationAccess"] = True        # (kelajakda admin access sahifasidan)
@@ -678,6 +681,106 @@ def main():
     expect("auto: v2 urinish yakunlanadi", db.write(ADMIN, A5, {**AUTO, "completedAt": S1, "answers": ans5}, S1 + sec(60)), True)
     g5 = {**grade_of(ans5, k1v2, db.docs[D1]["questionCount"]), "timeSpentSeconds": 7200}
     expect("auto: v2 kaliti bilan baholanadi (5/5 to'g'ri)", db.write(ADMIN, A5, g5, S1 + sec(61)) and db.docs[A5]["correctAnswers"] == 5)
+
+    # ------------------------------------------------------------ 15. KUN BO'YICHA KIRISH (Day 1–3 bepul, 4+ — ruxsat)
+    CFG = "attestationPhysicsSettings/config"
+    byday = {db.docs[p]["dayNumber"]: p for p in tests}
+    DX = lambda d: byday[d]
+    at = lambda d: db.docs[DX(d)]["publishedAt"] + dt.timedelta(minutes=1)          # e'londan keyin, yechimdan oldin
+    after = lambda d: db.docs[DX(d)]["solutionAvailableAt"] + dt.timedelta(minutes=1)
+    for u in ("nox", "acc", "hist"):
+        db.docs[f"users/{u}"] = {"fullName": u, "email": f"{u}@example.com", "xp": 0, "level": 1, "fullAccess": False}
+    NOX, ACC, HIST = auth_of("nox"), auth_of("acc"), auth_of("hist")
+    def st(uid, d):
+        T_ = db.docs[DX(d)]
+        return {"userId": uid, "testId": DX(d).split("/")[1], "dayNumber": d, "testVersion": T_["currentVersion"], "attemptNumber": 1,
+                "kind": "official", "status": "in_progress", "startedAt": SERVER, "questionCount": T_["questionCount"]}
+    AP = lambda uid, d: f"attestationPhysicsAttempts/{uid}__{DX(d).split('/')[1]}"
+    def start(au, uid, d):
+        return db.write(au, AP(uid, d), st(uid, d), at(d), op="create", apply=False)
+    vread = lambda au, d, now=None: db.read(au, f"{DX(d)}/versions/v{db.docs[DX(d)]['currentVersion']}", now or at(d))
+    expect("access: admin accessMode=paid", db.write(ADMIN, CFG, {"accessMode": "paid"}, t4), True)
+    expect("access: Day 1–3, 4, 5, 9 e'lon qilingan (simulyatsiyadan)", all(db.docs[DX(d)]["published"] for d in (1, 2, 3, 4, 5, 9)))
+    # A–C: bepul kunlar
+    for d in (1, 2, 3):
+        expect(f"A–C: ruxsatsiz user Day {d} — meta + kontent ochiq", db.read(NOX, DX(d), at(d)) and vread(NOX, d))
+    expect("A–C: ruxsatsiz user Day 3 — start ruxsat", start(NOX, "nox", 3), True)
+    expect("A–C: ruxsatsiz user Day 2 — start ruxsat", db.write(NOX, AP("nox", 2), st("nox", 2), db.docs[D2]["publishedAt"] + dt.timedelta(minutes=1), op="create", apply=False), True)
+    # D–F, K, L: ruxsatsiz user, 4+ kunlar
+    for d in (4, 5, 9):
+        tid = DX(d).split("/")[1]
+        v = f"v{db.docs[DX(d)]['currentVersion']}"
+        expect(f"D–F: ruxsatsiz user Day {d} — meta (to'liq karta) ko'rinadi", db.read(NOX, DX(d), at(d)), True)
+        expect(f"D–F/L: ruxsatsiz user Day {d} — start (attempt yaratish) rad", start(NOX, "nox", d), False)
+        expect(f"K: ruxsatsiz user Day {d} — versions/{v} to'g'ridan-to'g'ri o'qish rad", vread(NOX, d), False)
+        expect(f"K: ruxsatsiz user Day {d} — yechim vaqtida ham solutions/keys rad",
+               (db.read(NOX, f"{DX(d)}/solutions/{v}", after(d)), db.read(NOX, f"{DX(d)}/keys/{v}", after(d))) == (False, False))
+        figs = [p for p in db.docs if p.startswith(f"{DX(d)}/figures/")]
+        if figs:
+            expect(f"K: ruxsatsiz user Day {d} — rasm hujjati rad", db.read(NOX, figs[0], at(d)), False)
+        qb = next((p for p in qdocs if db.docs[p].get("testId") == tid), None)
+        if qb:
+            expect(f"K: ruxsatsiz user Day {d} — savollar bazasi rad", db.read(NOX, qb, at(d)), False)
+    expect("K: ruxsatsiz user — 4+ kunlar ro'yxat so'rovi (published filtri) ruxsat (kartalar)",
+           db.query(NOX, "attestationPhysicsDailyTests", t4, ("published", True))[0], True)
+    # M: o'ziga ruxsat bera olmaydi
+    expect("M: user o'ziga attestationAccess yoza olmaydi", db.write(NOX, "users/nox", {"attestationAccess": True}, t4, apply=False), False)
+    expect("M: user boshqa userga attestationAccess yoza olmaydi", db.write(NOX, "users/acc", {"attestationAccess": True}, t4, apply=False), False)
+    expect("M: user o'z settings accessMode'ni ochiq qila olmaydi", db.write(NOX, CFG, {"accessMode": "open"}, t4, apply=False), False)
+    # admin ruxsat beradi / oladi (mavjud adminAccessUpdate)
+    expect("admin: attestationAccess=true beradi", db.write(ADMIN, "users/acc", {"attestationAccess": True}, t4), True)
+    expect("admin: attestationAccess boolean bo'lmasa — rad", db.write(ADMIN, "users/acc", {"attestationAccess": "yes"}, t4, apply=False), False)
+    expect("admin: attestationAccess bilan birga boshqa maydon (xp) — rad", db.write(ADMIN, "users/acc", {"attestationAccess": True, "xp": 999}, t4, apply=False), False)
+    # G–I: ruxsatli user
+    for d in (4, 5, 9):
+        expect(f"G–I: ruxsatli user Day {d} — kontent + start ruxsat", vread(ACC, d) and start(ACC, "acc", d))
+    expect("G–I: ruxsatli user — yechim vaqtida solutions ochiq", db.read(ACC, f"{DX(9)}/solutions/v{db.docs[DX(9)]['currentVersion']}", after(9)), True)
+    # N: admin
+    expect("N: admin Day 9 — kontent o'qiydi", vread(ADMIN, 9), True)
+    # J: e'lon qilinmagan kun
+    U9 = "attestationPhysicsDailyTests/att-fizika-day-x9"
+    db.docs[U9] = {**db.docs[DX(9)], "id": "att-fizika-day-x9", "status": "draft", "published": False, "publishedAt": None, "solutionAvailableAt": None}
+    db.docs[U9 + "/versions/v1"] = {**db.docs[f"{DX(9)}/versions/v1"], "testId": "att-fizika-day-x9"}
+    expect("J: e'lon qilinmagan Day 9 — ruxsatsiz user meta/kontent rad", (db.read(NOX, U9, t4), db.read(NOX, U9 + "/versions/v1", t4)) == (False, False))
+    expect("J: e'lon qilinmagan Day 9 — ruxsatli user ham rad (draft)", (db.read(ACC, U9, t4), db.read(ACC, U9 + "/versions/v1", t4)) == (False, False))
+    expect("J: e'lon qilinmagan Day 9 — start rad",
+           db.write(ACC, "attestationPhysicsAttempts/acc__att-fizika-day-x9", {**st("acc", 9), "testId": "att-fizika-day-x9"}, t4, op="create", apply=False), False)
+    del db.docs[U9], db.docs[U9 + "/versions/v1"]
+    # ruxsat olib tashlanadi
+    expect("admin: attestationAccess=false (olib tashlash)", db.write(ADMIN, "users/acc", {"attestationAccess": False}, t4), True)
+    expect("olib tashlangandan keyin: Day 9 start rad", start(ACC, "acc", 9), False)
+    # Tarix: ruxsat davrida Day 4 ni topshirgan, keyin ruxsatsiz qolgan foydalanuvchi
+    d4 = DX(4); tid4 = d4.split("/")[1]; v4 = db.docs[d4]["currentVersion"]
+    k4 = db.docs[f"{d4}/keys/v{v4}"]
+    ans_h = dict(list(k4["answers"].items())[:5])
+    HA = f"attestationPhysicsAttempts/hist__{tid4}"
+    db.docs[HA] = {"userId": "hist", "testId": tid4, "dayNumber": 4, "testVersion": v4, "attemptNumber": 1, "kind": "official",
+                   "status": "graded", "startedAt": at(4), "completedAt": at(4) + dt.timedelta(minutes=20), "questionCount": db.docs[d4]["questionCount"],
+                   "answers": ans_h, **{k: v for k, v in grade_of(ans_h, k4, db.docs[d4]["questionCount"]).items() if k != "gradedAt"},
+                   "gradedAt": at(4) + dt.timedelta(minutes=20), "timeSpentSeconds": 1200}
+    snap_h = copy.deepcopy(db.docs[HA])
+    expect("tarix: ruxsatsiz, lekin Day 4 urinishi bor — snapshot (Result Review) o'qiladi", vread(HIST, 4), True)
+    expect("tarix: o'z kaliti (v) o'qiladi", db.read(HIST, f"{d4}/keys/v{v4}", at(4)), True)
+    expect("tarix: yechim vaqtidan keyin o'z yechimi ochiq", db.read(HIST, f"{d4}/solutions/v{v4}", after(4)), True)
+    expect("tarix: o'z urinishini o'qiydi", db.read(HIST, HA, at(4)), True)
+    expect("tarix: yangi Day 5 start rad (tarix yangi ruxsat bermaydi)", start(HIST, "hist", 5), False)
+    expect("tarix: urinish o'zgarmagan", db.docs[HA] == snap_h)
+    # Ruxsat davrida boshlangan, tugatilmagan urinish — saqlash/avtomatik yakunlash ishlaydi (access shart emas)
+    IP = f"attestationPhysicsAttempts/hist__{DX(5).split('/')[1]}"
+    db.docs[IP] = {**st("hist", 5), "startedAt": at(5), "answers": {}}
+    expect("tarix: ruxsat davrida boshlangan urinish — snapshot o'qiladi va avtomatik yakunlanadi",
+           vread(HIST, 5) and db.write(HIST, IP, {"status": "submitted", "completedAt": db.docs[DX(5)]["solutionAvailableAt"], "answers": {}, "autoFinalized": True}, after(5), apply=False))
+    del db.docs[IP]
+    # Storage (rasm fayllari) — xuddi shu qoida
+    sq = lambda d: next((u for u in upload["items"] if u["testId"] == DX(d).split("/")[1] and u["scope"] == "question"), None)
+    for d, au, want, label in ((2, NOX, True, "ruxsatsiz user, bepul Day 2 — ruxsat"), (4, NOX, False, "ruxsatsiz user, Day 4 — rad"),
+                               (4, HIST, True, "tarix: Day 4 urinishi bor — ruxsat"), (5, HIST, False, "tarix: Day 5 (urinish yo'q) — rad")):
+        it = sq(d)
+        if it:
+            expect(f"Storage: {label}", stor(au, it["path"], at(d)), want)
+    # open rejim — avvalgi xatti-harakat
+    expect("open rejim: admin qaytaradi", db.write(ADMIN, CFG, {"accessMode": "open"}, t4), True)
+    expect("open rejim: ruxsatsiz user Day 9 — kontent + start (avvalgidek hammasi ochiq)", vread(NOX, 9) and start(NOX, "nox", 9))
 
     expect("Rules get() chegarasi (≤10) saqlangan", db.max_gets <= 10)
     report = {"status": "PASS" if all(c["pass"] for c in checks) else "FAIL",

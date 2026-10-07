@@ -35,6 +35,7 @@ async function loadSettings() {
   const snap = await getDoc(doc(fb.db, COL.settings, SETTINGS_DOC));
   settings = snap.exists() ? snap.data() : {};
   $('[data-stat="access"]').textContent = settings.accessMode || "—";
+  renderAccessMode();
   const cur = settings.figureBackend || "storage";
   const next = cur === "storage" ? "firestore" : "storage";
   // Tugma joriy (serverdagi) qiymatni va aniq maqsadni ko'rsatadi — «almashtirish» ikki marta bosilsa qaytib ketardi
@@ -381,6 +382,42 @@ $("[data-backend]").addEventListener("click", async () => {
     await loadSettings();
     const saved = settings.figureBackend || "storage";
     toast(saved === next ? `Saqlandi: rasm manbai — ${saved}` : `Diqqat: serverda hali «${saved}»`);
+  } catch (err) {
+    toast(errorText(err));
+  }
+});
+
+// ------------------------------------------------------------------ kirish rejimi (mavjud accessMode: open | paid)
+// open — barcha kirgan foydalanuvchilarga barcha e'lon qilingan kunlar ochiq (avvalgidek).
+// paid — Day 1–3 hamma uchun bepul; Day 4+ faqat users/{uid}.attestationAccess == true (Access sahifasida beriladi).
+// Haqiqiy tekshiruv — Firestore Rules (attDayOpen); bu tugma faqat sozlamani o'zgartiradi (attValidSettings).
+function renderAccessMode() {
+  const btn = $("[data-access-mode]");
+  const mode = settings.accessMode === "paid" ? "paid" : "open";
+  btn.disabled = false;
+  btn.dataset.current = mode;
+  btn.textContent = mode === "open" ? "Ruxsatli rejimga (paid) o‘tkazish" : "Ochiq rejimga (open) qaytarish";
+  $("[data-access-mode-info]").textContent = mode === "open"
+    ? "Hozir: open — barcha e’lon qilingan kunlar har bir foydalanuvchiga ochiq."
+    : "Hozir: paid — Day 1–3 hamma uchun bepul; Day 4 va keyingi e’lon qilingan kunlar faqat «Attestatsiya — Fizika» ruxsati borlarga (Access sahifasi). Oldingi natijalar saqlanadi.";
+}
+
+$("[data-access-mode]").addEventListener("click", async () => {
+  await loadSettings();
+  const next = settings.accessMode === "paid" ? "open" : "paid";
+  const ok = await confirmAction({
+    title: next === "paid" ? "Ruxsatli rejimni yoqasizmi?" : "Ochiq rejimga qaytarasizmi?",
+    text: next === "paid"
+      ? "Day 1–3 hamma uchun ochiq qoladi. Day 4 va keyingi e’lon qilingan kunlarni faqat «Attestatsiya — Fizika» ruxsati berilgan foydalanuvchilar boshlay oladi. Mavjud urinishlar va natijalar o‘zgarmaydi."
+      : "Barcha e’lon qilingan kunlar barcha foydalanuvchilarga ochiladi.",
+    confirmLabel: next === "paid" ? "paid ga o‘tkazish" : "open ga qaytarish",
+    danger: next === "paid",
+  });
+  if (!ok) return;
+  try {
+    await updateDoc(doc(fb.db, COL.settings, SETTINGS_DOC), { accessMode: next });
+    await loadSettings();
+    toast(settings.accessMode === next ? `Kirish rejimi: ${next}` : `Diqqat: serverda hali «${settings.accessMode}»`);
   } catch (err) {
     toast(errorText(err));
   }
