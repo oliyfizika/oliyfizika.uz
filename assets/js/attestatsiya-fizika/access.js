@@ -12,6 +12,9 @@ export const FREE_DAYS = 3;
 
 export const isFreeDay = (test) => Number.isInteger(test?.dayNumber) && test.dayNumber <= FREE_DAYS;
 
+/** Mock test (kind "mock", dayNumber 101+) — hamma kirgan foydalanuvchi uchun bepul (Rules: attIsMock). */
+export const isMockTest = (test) => test?.kind === "mock";
+
 /** @param {{accessMode?:string}} settings  @param {object|null} profile users/{uid} */
 export function accessContext(settings, profile) {
   return {
@@ -24,7 +27,7 @@ export function accessContext(settings, profile) {
 /** Yangi urinish boshlash / kontentni ko'rish mumkinmi (Rules: attDayOpen). */
 export function dayOpen(test, ctx) {
   if (!test) return false;
-  return isFreeDay(test) || !!(ctx && (ctx.open || ctx.admin || ctx.granted));
+  return isFreeDay(test) || isMockTest(test) || !!(ctx && (ctx.open || ctx.admin || ctx.granted));
 }
 
 /** Kontent (natija, ko'rib chiqish, yechim) — kun ochiq yoki o'z urinishi bor (Rules: attContentAccess). */

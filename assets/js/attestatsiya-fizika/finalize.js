@@ -39,7 +39,11 @@ export async function finalizeIfOverdue(attempt, test, now = Date.now(), { serve
     if (!isOverdue(a, test, serverDecides ? Number.MAX_SAFE_INTEGER : now)) return { attempt: a, key: null, finalized: false };
     const { db, fsSdk } = await fb();
     try {
-      await fsSdk.updateDoc(fsSdk.doc(db, COL.attempts, a.id), autoSubmitPatch(a, test));   // completedAt: Firestore Timestamp
+      const patch = autoSubmitPatch(a, test);
+      if (patch.completedAt && typeof patch.completedAt.toMillis !== "function") {          // limit bo'yicha: oddiy {seconds, nanoseconds} → Timestamp
+        patch.completedAt = new fsSdk.Timestamp(patch.completedAt.seconds, patch.completedAt.nanoseconds);
+      }
+      await fsSdk.updateDoc(fsSdk.doc(db, COL.attempts, a.id), patch);                      // completedAt: Firestore Timestamp
       finalized = true;
     } catch (err) {
       if (err?.code !== "permission-denied") throw err;

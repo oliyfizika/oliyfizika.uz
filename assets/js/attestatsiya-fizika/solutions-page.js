@@ -6,7 +6,7 @@
 import { listVisibleTests, getSnapshot, getSolutions, getMyAttempt, listMyAttempts } from "./api.js";
 import { loadAccessContext, contentOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
-import { esc, solutionOpen, formatTashkent } from "./core.js";
+import { esc, solutionOpen, formatTashkent, isMock, dayLabel, dayLabelOf, mockPoints, mockMax } from "./core.js";
 import { renderBlocks, loadKatex } from "./render.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 
@@ -30,13 +30,13 @@ function renderList(tests, mine = new Set()) {
     show(stateHtml("book", "Hali yechimlar yo‘q", "Birinchi test e’lon qilinib, ertasi kuni 00:00 bo‘lganda yechimlar shu yerda paydo bo‘ladi."));
     return;
   }
-  show(`<ul class="att-days">${tests.map((t) => {
+  show(`<ul class="att-days">${tests.slice().sort((a, b) => isMock(a) - isMock(b) || a.dayNumber - b.dayNumber).map((t) => {
     const allowed = contentOpen(t, access, mine.has(t.id));
     const open = solutionOpen(t) && allowed;
     return `<li><article class="of-card att-day" data-state="${!allowed ? "restricted" : open ? "done" : "open"}" aria-labelledby="solD${t.dayNumber}">
-      <div class="att-day__head"><span class="att-day__num">${t.dayNumber}</span>
-        <div><p class="att-day__title" id="solD${t.dayNumber}">Day ${t.dayNumber} · ${esc(t.sectionTitle)}</p><p class="att-day__sub">${t.questionCount} savol</p></div></div>
-      <p class="att-day__topics">${esc(t.topics.join(", "))}</p>
+      <div class="att-day__head"><span class="att-day__num">${isMock(t) ? "M" : t.dayNumber}</span>
+        <div><p class="att-day__title" id="solD${t.dayNumber}">${isMock(t) ? esc(dayLabel(t)) : `Day ${t.dayNumber} · ${esc(t.sectionTitle)}`}</p><p class="att-day__sub">${t.questionCount} savol${isMock(t) ? ` · ${mockMax(t)} ball` : ""}</p></div></div>
+      <p class="att-day__topics">${isMock(t) ? "40 ta fizika (5 bob × 8) + 10 ta pedagogika" : esc(t.topics.join(", "))}</p>
       <div class="att-day__stats">${!allowed ? `<span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span>` : open
         ? `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`
         : `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(formatTashkent(t.solutionAvailableAt))} da ochiladi</span>`}</div>
@@ -47,14 +47,14 @@ function renderList(tests, mine = new Set()) {
 
 async function renderDay(tests, uid) {
   const t = tests.find((x) => x.dayNumber === day);
-  window.OFShell?.setTitle?.(`Day ${day} — yechimlar`);
-  document.title = `Day ${day} — Yechimlar — Attestatsiya — Fizika | OliyFizika.uz`;
+  window.OFShell?.setTitle?.(`${dayLabelOf(day)} — yechimlar`);
+  document.title = `${dayLabelOf(day)} — Yechimlar — Attestatsiya — Fizika | OliyFizika.uz`;
   if (!t) {
-    show(stateHtml("lock", `Day ${day} hali e’lon qilinmagan`, "", '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
+    show(stateHtml("lock", `${dayLabelOf(day)} hali e’lon qilinmagan`, "", '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
     return;
   }
   if (!solutionOpen(t)) {
-    show(stateHtml("lock", `Day ${day} yechimlari hali yopiq`,
+    show(stateHtml("lock", `${dayLabelOf(day)} yechimlari hali yopiq`,
       `To‘liq yechimlar <b>${esc(formatTashkent(t.solutionAvailableAt))}</b> da (Toshkent vaqti) ochiladi.`,
       '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
     return;
@@ -66,20 +66,24 @@ async function renderDay(tests, uid) {
   const [snap, sol] = await Promise.all([getSnapshot(t.id, version), getSolutions(t.id, version)]);
   const solById = new Map(sol.items.map((x) => [x.id, x]));
   const my = attempt?.answers || {};
-  const prev = tests.filter((x) => x.dayNumber < day && solutionOpen(x)).pop();
-  const next = tests.find((x) => x.dayNumber > day && solutionOpen(x));
+  const mock = isMock(t);
+  const sameKind = tests.filter((x) => isMock(x) === mock);          // Day 1..N va Mock testlar o'zaro aralashmaydi
+  const prev = sameKind.filter((x) => x.dayNumber < day && solutionOpen(x)).pop();
+  const next = sameKind.find((x) => x.dayNumber > day && solutionOpen(x));
+  const label = (x) => dayLabel(x);
   show(`
     <section class="of-card att-hero" aria-labelledby="solTitle">
       <div class="att-hero__text">
-        <p class="att-eyebrow">${ic("book")}Yechimlar · Day ${t.dayNumber}</p>
-        <h1 id="solTitle">${esc(t.sectionTitle)}</h1>
-        <p>${esc(t.topics.join(", "))} · ${t.questionCount} savol${attempt?.status === "graded" ? ` · sizning natijangiz: <b>${attempt.scorePercent}%</b>` : ""}</p>
+        <p class="att-eyebrow">${ic("book")}Yechimlar · ${esc(label(t))}</p>
+        <h1 id="solTitle">${mock ? "Mock test: fizika va pedagogika" : esc(t.sectionTitle)}</h1>
+        <p>${mock ? `40 ta fizika + 10 ta pedagogika` : esc(t.topics.join(", "))} · ${t.questionCount} savol${attempt?.status === "graded"
+          ? ` · sizning natijangiz: <b>${mock ? `${mockPoints(attempt.correctAnswers, t)} / ${mockMax(t)} ball` : `${attempt.scorePercent}%`}</b>` : ""}</p>
       </div>
       <div class="att-hero__side">
         <div class="of-row" style="flex-wrap:wrap">
-          ${prev ? `<a class="of-btn" href="fizika-yechimlar.html?day=${prev.dayNumber}">${ic("chevronLeft")}Day ${prev.dayNumber}</a>` : ""}
-          ${next ? `<a class="of-btn" href="fizika-yechimlar.html?day=${next.dayNumber}">Day ${next.dayNumber}${ic("chevronRight")}</a>` : ""}
-          <a class="of-btn of-btn--ghost" href="fizika-yechimlar.html">Barcha kunlar</a>
+          ${prev ? `<a class="of-btn" href="fizika-yechimlar.html?day=${prev.dayNumber}">${ic("chevronLeft")}${esc(label(prev))}</a>` : ""}
+          ${next ? `<a class="of-btn" href="fizika-yechimlar.html?day=${next.dayNumber}">${esc(label(next))}${ic("chevronRight")}</a>` : ""}
+          <a class="of-btn of-btn--ghost" href="fizika-yechimlar.html">${mock ? "Barcha yechimlar" : "Barcha kunlar"}</a>
         </div>
       </div>
     </section>

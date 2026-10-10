@@ -11,7 +11,7 @@ import { listVisibleTests, getMyAttempt, startAttempt, getSnapshot, saveDraft, s
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { bindCalculatorButton, CALC_ICON } from "./calculator-panel.js";
 import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
-import { esc, toMs, officialOpen, solutionOpen, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
+import { esc, toMs, timeLimitOf, attemptEndMs, remainingSeconds, formatLimit, serverSkewMs, isMock, dayLabel, dayLabelOf, mockPoints, mockMax, officialOpen, solutionOpen, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
 import { renderBlocks, loadKatex, plainText } from "./render.js";
 import { ic, fillIcons, whenUser, stateHtml, errorMessage } from "./ui.js";
 import { openModal } from "../ui/modal.js";
@@ -30,6 +30,9 @@ let current = 0;
 let clockTimer = null;
 let saveTimer = null;
 let dirty = false;
+let skewMs = 0;                       // server soati − brauzer soati (hisoblagich haqiqiy vaqtni ko'rsatsin)
+let timeUpFired = false;
+const nowMs = () => Date.now() + skewMs;
 
 const draftKey = () => `oliyfizika:att:draft:${uid}:${test.id}`;
 const LETTERS = ["A", "B", "C", "D", "E"];
@@ -83,16 +86,58 @@ document.addEventListener("visibilitychange", () => { if (document.visibilitySta
 // ------------------------------------------------------------------ sekundomer (faqat o'tgan vaqt)
 function startClock() {
   stopClock();
-  const startMs = toMs(attempt.startedAt);
   const el = view.querySelector("[data-clock]");
+  if (timeLimitOf(test)) return startCountdown(el);
+  const startMs = toMs(attempt.startedAt);
   const tick = () => {
     if (!el.isConnected) return stopClock();
-    const sec = Math.max(0, Math.floor((Date.now() - startMs) / 1000));
+    const sec = Math.max(0, Math.floor((nowMs() - startMs) / 1000));
     el.textContent = formatClock(sec);
     el.parentElement.setAttribute("aria-label", `Sarflangan vaqt: ${formatDuration(sec)}`);
   };
   tick();
   clockTimer = setInterval(tick, 1000);
+}
+
+/** Yechim vaqti vaqt chegarasidan oldin kelsa (kechqurun boshlangan) — chegara = yechim vaqti */
+function limitedBySolution() {
+  const lim = timeLimitOf(test);
+  const sol = toMs(test.solutionAvailableAt);
+  return !!lim && sol != null && !attempt && nowMs() + lim * 1000 > sol;
+}
+
+// ------------------------------------------------------------------ teskari hisoblagich (vaqt chegarasi: mock — 2 soat)
+// Hisob: startedAt (SERVER vaqti, urinish hujjatida) + limit → sahifa yangilansa ham hisoblagich qolgan joyidan davom etadi.
+const ANNOUNCE = [1800, 600, 300, 60];          // soniya: ekran o'qigichlar uchun e'lon
+function startCountdown(el) {
+  const box = el.closest("[data-countdown]");
+  const live = view.querySelector("[data-time-live]");
+  const said = new Set();
+  const tick = () => {
+    if (!el.isConnected) return stopClock();
+    const left = remainingSeconds(attempt, test, nowMs());
+    if (left == null) return;
+    el.textContent = formatClock(left);
+    box.dataset.level = left <= 60 ? "danger" : left <= 600 ? "warn" : "ok";
+    box.setAttribute("aria-label", `Qolgan vaqt: ${formatDuration(left)}`);
+    const crossed = ANNOUNCE.filter((t) => left <= t);
+    if (left > 0 && crossed.some((t) => !said.has(t))) {         // yangi chegaradan o'tildi: bitta e'lon
+      crossed.forEach((t) => said.add(t));
+      if (live) live.textContent = `Qolgan vaqt: ${formatDuration(left)}`;
+    }
+    if (left <= 0) timeUp();
+  };
+  tick();
+  if (!timeUpFired) clockTimer = setInterval(tick, 1000);
+}
+
+/** Vaqt tugadi: joriy javoblar bilan avtomatik topshiriladi (tasdiqsiz). Server tekshiradi (Rules: attInTime). */
+function timeUp() {
+  if (timeUpFired) return;
+  timeUpFired = true;
+  stopClock();
+  toast("Vaqt tugadi — javoblaringiz avtomatik topshirilmoqda.");
+  finish();
 }
 function stopClock() {
   clearInterval(clockTimer);
@@ -104,15 +149,19 @@ function renderIntro() {
   const resumable = attempt?.status === "in_progress";
   show(`
     <section class="of-card att-intro" aria-labelledby="attIntroTitle">
-      <p class="att-eyebrow">${ic("atom")}Attestatsiya — Fizika · Day ${test.dayNumber}</p>
-      <h1 id="attIntroTitle">${esc(test.sectionTitle)}: ${esc(test.topics.join(", "))}</h1>
+      <p class="att-eyebrow">${ic("atom")}Attestatsiya — Fizika · ${esc(dayLabel(test))}</p>
+      <h1 id="attIntroTitle">${isMock(test)
+        ? `Mock test: ${test.physicsCount || 40} ta fizika + ${test.pedagogyCount || 10} ta pedagogika`
+        : `${esc(test.sectionTitle)}: ${esc(test.topics.join(", "))}`}</h1>
       <ul class="att-facts">
         <li>${ic("list")}<span><b>${test.questionCount}</b>savol</span></li>
-        <li>${ic("target")}<span><b>${test.scorableCount}</b>ballga kiradi</span></li>
-        <li>${ic("clock")}<span><b>Chegarasiz</b>faqat sekundomer</span></li>
+        <li>${ic("target")}<span><b>${isMock(test) ? `${mockMax(test)} ball` : test.scorableCount}</b>${isMock(test) ? `har savol ${test.pointsPerQuestion || 2} ball` : "ballga kiradi"}</span></li>
+        <li>${ic("clock")}<span>${timeLimitOf(test) ? `<b>${esc(formatLimit(timeLimitOf(test)))}</b>${resumable ? "qolgan vaqt: " + esc(formatClock(remainingSeconds(attempt, test, nowMs()))) : "boshlagandan hisoblanadi"}` : "<b>Chegarasiz</b>faqat sekundomer"}</span></li>
         <li>${ic("calendar")}<span><b>${esc(formatTashkent(test.solutionAvailableAt))}</b>yechimlar ochiladi</span></li>
       </ul>
       <p class="of-muted">Test faqat <b>bir marta rasmiy</b> topshiriladi. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.</p>
+      ${timeLimitOf(test) ? `<p class="att-limit-note">${ic("clock")}<span>«${resumable ? "Davom ettirish" : "Testni boshlash"}» bosilgan zahoti <b>${esc(formatLimit(timeLimitOf(test)))}</b> hisoblanadi. Sahifani yangilasangiz yoki yopsangiz ham vaqt to‘xtamaydi — qolgan vaqtdan davom etasiz. Vaqt tugaganda javoblaringiz <b>avtomatik topshiriladi</b>.${limitedBySolution() ? ` Yechimlar ${esc(formatTashkent(test.solutionAvailableAt))} da ochilgani uchun bugun sizda atigi <b>${esc(formatLimit(Math.max(60, Math.floor((toMs(test.solutionAvailableAt) - nowMs()) / 1000))))}</b> qolgan.` : ""}</span></p>` : ""}
+      ${isMock(test) ? `<p class="of-subtle">Fizika: Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — har bobdan 8 tadan; so‘ng Pedagogika bo‘limi.</p>` : ""}
       ${test.questionCount - test.scorableCount > 0 ? `<p class="of-subtle">${test.questionCount - test.scorableCount} ta savol (variantsiz yoki manbasida noaniqlik bor) testda qoladi, lekin ballga kirmaydi.</p>` : ""}
       <div class="of-row" style="flex-wrap:wrap">
         <button type="button" class="of-btn of-btn--primary of-btn--lg" data-start>${ic("play")}${resumable ? "Davom ettirish" : "Testni boshlash"}</button>
@@ -147,10 +196,13 @@ async function openRunner() {
     <div class="att-test">
       <div class="att-test__main">
         <div class="of-card att-bar">
-          <span class="att-bar__title">Day ${test.dayNumber}</span>
+          <span class="att-bar__title">${esc(dayLabel(test))}</span>
           <span class="att-bar__count of-num" data-count aria-live="polite"></span>
           <div class="of-progress" role="progressbar" aria-label="Javob berilgan savollar" aria-valuemin="0" aria-valuemax="${n}" data-bar><span></span></div>
-          <span class="att-clock" role="timer" aria-live="off">${ic("clock")}<span class="of-sr-only">Sarflangan vaqt:</span><span data-clock>00:00</span></span>
+          ${timeLimitOf(test)
+            ? `<span class="att-clock att-clock--left" role="timer" aria-live="off" data-level="ok" data-countdown>${ic("clock")}<span class="att-clock__label">Qolgan vaqt</span><span class="of-sr-only">:</span><span data-clock>--:--</span></span>
+          <span class="of-sr-only" role="status" aria-live="polite" data-time-live></span>`
+            : `<span class="att-clock" role="timer" aria-live="off">${ic("clock")}<span class="of-sr-only">Sarflangan vaqt:</span><span data-clock>00:00</span></span>`}
           <button type="button" class="of-btn of-btn--sm att-calc-btn" data-calc title="Kalkulyator" aria-label="Kalkulyator">${CALC_ICON}<span class="att-calc-btn__label">Kalkulyator</span></button>
         </div>
         <article class="of-card att-q" data-q aria-labelledby="attQNum"></article>
@@ -393,22 +445,23 @@ async function renderResult(key) {
   const a = attempt;
   const ans = attemptAnswers(a);
   const g = a.status === "graded" ? a : { ...a, ...gradeAnswers(ans, key, a.questionCount) };
+  const mock = isMock(test);
   const solOpen = solutionOpen(test);
   const solAt = esc(formatTashkent(test.solutionAvailableAt));
   const unscored = snapshot.questions.filter((q) => q.evaluationType !== "auto").length;
   const statuses = snapshot.questions.map((q) => questionStatus(q.id, q.evaluationType, ans, g));
   const count = (st) => statuses.filter((x) => x === st).length;
-  setTitle(`Day ${test.dayNumber} — natija`);
+  setTitle(`${dayLabel(test)} — natija`);
   show(`
     <section class="of-card att-result" aria-labelledby="attResTitle">
       <div class="att-result__score">
-        <div class="att-ring" style="--p:${g.scorePercent}" role="img" aria-label="Natija ${precisePercent(g.correctAnswers, g.scorableQuestions)} foiz">
-          <div class="att-ring__inner"><div><b>${precisePercent(g.correctAnswers, g.scorableQuestions)}%</b><br><span>natija</span></div></div>
+        <div class="att-ring" style="--p:${g.scorePercent}" role="img" aria-label="${mock ? `Natija ${mockPoints(g.correctAnswers, test)} ball, ${mockMax(test)} balldan` : `Natija ${precisePercent(g.correctAnswers, g.scorableQuestions)} foiz`}">
+          <div class="att-ring__inner"><div><b>${mock ? mockPoints(g.correctAnswers, test) : `${precisePercent(g.correctAnswers, g.scorableQuestions)}%`}</b><br><span>${mock ? "ball" : "natija"}</span></div></div>
         </div>
         <div>
-          <p class="att-eyebrow">Natija · Day ${test.dayNumber}</p>
-          <h1 id="attResTitle" class="att-result__big of-num">${g.correctAnswers} <small>/ ${g.scorableQuestions}</small></h1>
-          <p class="of-subtle">${esc(test.sectionTitle)} · ${esc(test.topics.join(", "))}</p>
+          <p class="att-eyebrow">Natija · ${esc(dayLabel(test))}</p>
+          <h1 id="attResTitle" class="att-result__big of-num">${mock ? mockPoints(g.correctAnswers, test) : g.correctAnswers} <small>/ ${mock ? `${mockMax(test)} ball` : g.scorableQuestions}</small></h1>
+          <p class="of-subtle">${mock ? `${g.correctAnswers} / ${g.scorableQuestions} to‘g‘ri · har bir to‘g‘ri javob ${test.pointsPerQuestion || 2} ball` : `${esc(test.sectionTitle)} · ${esc(test.topics.join(", "))}`}</p>
         </div>
       </div>
       <div class="att-counts">
@@ -531,12 +584,13 @@ async function renderResult(key) {
     show(stateHtml("alert", "Kun ko‘rsatilmagan", "Dashboard’dan kerakli kunni tanlang.", '<a class="of-btn of-btn--primary" href="fizikaattestatsiya.html">Dashboard</a>'));
     return;
   }
-  setTitle(`Day ${day} — kunlik test`);
+  setTitle(`${dayLabelOf(day)} — ${day >= 101 ? "mock test" : "kunlik test"}`);
   try {
-    const [tests, access] = await Promise.all([listVisibleTests(), loadAccessContext(uid)]);
+    const [tests, access, skew] = await Promise.all([listVisibleTests(), loadAccessContext(uid), serverSkewMs()]);
+    skewMs = skew;
     test = tests.find((t) => t.dayNumber === day) || null;
     if (!test) {
-      show(stateHtml("lock", `Day ${day} hali e’lon qilinmagan`, "Test administrator e’lon qilgandan keyin shu yerda ochiladi.", '<a class="of-btn of-btn--primary" href="fizikaattestatsiya.html">Dashboard</a>'));
+      show(stateHtml("lock", `${dayLabelOf(day)} hali e’lon qilinmagan`, "Test administrator e’lon qilgandan keyin shu yerda ochiladi.", '<a class="of-btn of-btn--primary" href="fizikaattestatsiya.html">Dashboard</a>'));
       return;
     }
     attempt = await getMyAttempt(uid, test.id);
@@ -547,8 +601,8 @@ async function renderResult(key) {
       return;
     }
     // Yechim vaqti kelgan, lekin yakunlanmagan rasmiy urinish — oxirgi saqlangan javoblar bilan avtomatik yakunlanadi
-    if (isOverdue(attempt, test)) {
-      attempt = (await finalizeIfOverdue(attempt, test).catch((e) => { console.warn("[att] avtomatik yakunlash:", e?.code || e); return { attempt }; })).attempt;
+    if (isOverdue(attempt, test, nowMs())) {
+      attempt = (await finalizeIfOverdue(attempt, test, nowMs()).catch((e) => { console.warn("[att] avtomatik yakunlash:", e?.code || e); return { attempt }; })).attempt;
     }
     if (attempt?.status === "graded") {
       // Eski sxemadagi urinish (testVersion yo'q) uchun Rules kalitni bermaydi — review saqlangan natija bilan chiziladi
@@ -560,9 +614,14 @@ async function renderResult(key) {
       attempt = r.attempt;
       return renderResult(r.key);
     }
+    // Vaqt chegarasi (mock: 2 soat) tugagan, lekin hali topshirilmagan (avto-yakunlash grace'i ichida): saqlangan javoblar bilan topshiriladi
+    if (attempt?.status === "in_progress" && timeLimitOf(test) && remainingSeconds(attempt, test, nowMs()) === 0) {
+      await openRunner();
+      return;
+    }
     if (!officialOpen(test)) {
       const solLink = solutionOpen(test) ? `<a class="of-btn of-btn--primary" href="fizika-yechimlar.html?day=${day}">Yechimlarni ko‘rish</a>` : "";
-      show(stateHtml("lock", `Day ${day}: rasmiy muddat tugagan`,
+      show(stateHtml("lock", `${dayLabelOf(day)}: rasmiy muddat tugagan`,
         attempt ? "Bu testni topshirmagansiz — rasmiy natija saqlanmadi." : "Bu kunning rasmiy testi yopilgan. To‘liq yechimlar bilan tanishishingiz mumkin.",
         `<div class="of-row" style="justify-content:center;flex-wrap:wrap">${solLink}<a class="of-btn" href="fizikaattestatsiya.html">Dashboard</a></div>`));
       return;

@@ -481,3 +481,19 @@
   .att-today[data-state="restricted"] .att-today__actions { grid-column: 1 / -1; justify-content: stretch; }
   .att-today[data-state="restricted"] .att-today__actions .of-btn { width: 100%; justify-content: center; }
 }
+
+/* Mock test balli: «74/100» */
+.att-score small { font-size: .6em; font-weight: 600; opacity: .7; }
+
+/* Teskari hisoblagich (vaqt chegarasi bor testlar: mock — 2 soat) */
+.att-clock--left { gap: 8px; }
+.att-clock__label { font: 600 var(--of-text-xs)/1 var(--of-font-body); color: var(--of-text-muted); }
+.att-clock--left [data-clock] { font-variant-numeric: tabular-nums; }
+.att-clock[data-level="warn"] { background: var(--of-warning-soft, #fff4e0); color: var(--of-warning-text, #8a5200); }
+.att-clock[data-level="warn"] svg { color: currentColor; }
+.att-clock[data-level="danger"] { background: var(--of-danger-soft, #fde8e8); color: var(--of-danger-text, #a61b1b); animation: att-pulse 1s ease-in-out infinite; }
+.att-clock[data-level="danger"] svg, .att-clock[data-level="danger"] .att-clock__label { color: currentColor; }
+@keyframes att-pulse { 50% { opacity: .65; } }
+@media (prefers-reduced-motion: reduce) { .att-clock[data-level="danger"] { animation: none; } }
+.att-limit-note { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: var(--of-radius-md, 12px); background: var(--of-surface-sunken); color: var(--of-text); }
+.att-limit-note svg { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--of-primary); }

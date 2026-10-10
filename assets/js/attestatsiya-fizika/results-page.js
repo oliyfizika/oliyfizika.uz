@@ -5,7 +5,7 @@
 // ==========================================================================
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
 import { finalizeOverdueList } from "./finalize.js";
-import { esc, computeStats, solutionOpen, formatDuration, formatTashkent, TOTAL_DAYS_DEFAULT } from "./core.js";
+import { esc, computeStats, solutionOpen, formatDuration, formatTashkent, TOTAL_DAYS_DEFAULT, isMock, isMockDay, dayLabelOf, mockPoints, mockMax } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 
 const root = document.getElementById("attRes");
@@ -37,7 +37,7 @@ function columns(days, field, max, cls, fmt) {
       return;
     }
     const maxTime = Math.max(...st.days.map((d) => d.time || 0), 1);
-    const history = attempts.slice().sort((a, b) => b.dayNumber - a.dayNumber);
+    const history = attempts.slice().sort((a, b) => isMockDay(a.dayNumber) - isMockDay(b.dayNumber) || b.dayNumber - a.dayNumber);   // avval kunlar, so'ng mock
     view.innerHTML = `
       <ul class="att-tiles" aria-label="Umumiy ko‘rsatkichlar">
         <li class="of-card att-tile"><span>Kurs progressi</span><b class="of-num">${st.completed}/${st.totalDays}</b><small>bajarilgan kunlar</small></li>
@@ -63,8 +63,9 @@ function columns(days, field, max, cls, fmt) {
             const solLink = t && solutionOpen(t)
               ? `<a href="fizika-yechimlar.html?day=${a.dayNumber}">Ochiq</a>`
               : t ? `<span class="of-subtle">${esc(formatTashkent(t.solutionAvailableAt))}</span>` : "—";
-            const res = a.status === "graded" ? `<b class="of-num">${a.scorePercent}%</b>` : a.status === "submitted" ? '<a href="fizika-test.html?day=' + a.dayNumber + '">Natijani ko‘rish</a>' : '<span class="of-badge of-badge--orange">Davom etmoqda</span>';
-            return `<tr><td><a href="fizika-test.html?day=${a.dayNumber}"><b>Day ${a.dayNumber}</b></a>${t ? `<br><span class="of-subtle">${esc(t.sectionTitle)}</span>` : ""}</td>
+            const mock = isMock(t) || isMockDay(a.dayNumber);
+            const res = a.status === "graded" ? `<b class="of-num">${mock ? `${mockPoints(a.correctAnswers, t)} / ${mockMax(t)} ball` : `${a.scorePercent}%`}</b>` : a.status === "submitted" ? '<a href="fizika-test.html?day=' + a.dayNumber + '">Natijani ko‘rish</a>' : '<span class="of-badge of-badge--orange">Davom etmoqda</span>';
+            return `<tr><td><a href="fizika-test.html?day=${a.dayNumber}"><b>${esc(dayLabelOf(a.dayNumber))}</b></a>${t ? `<br><span class="of-subtle">${mock ? "50 savol · 100 ball" : esc(t.sectionTitle)}</span>` : ""}</td>
               <td>${res}</td>
               <td class="of-num">${a.status === "graded" ? `${a.correctAnswers} / ${a.wrongAnswers} / ${a.unanswered}` : "—"}</td>
               <td class="of-num">${a.status === "graded" ? esc(formatDuration(a.timeSpentSeconds)) : "—"}</td>

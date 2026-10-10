@@ -3,7 +3,7 @@
 // Savollar, kalitlar va yechimlar bu sahifada YUKLANMAYDI.
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
 import { finalizeOverdueList } from "./finalize.js";
-import { esc, pickToday, officialOpen, solutionOpen, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT } from "./core.js";
+import { esc, pickToday, officialOpen, solutionOpen, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT, isMock, mockPoints, mockMax, timeLimitOf, formatLimit, formatClock, remainingSeconds } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 
@@ -157,6 +157,48 @@ function renderDays(totalDays, tests, attemptsByTest, now) {
   daysEl.removeAttribute("aria-busy");
 }
 
+// Mock test (50 savol, 100 ball): kurs kunlaridan alohida bo'lim. Hamma kirgan foydalanuvchi uchun bepul.
+function renderMock(tests, attemptsByTest, now) {
+  const section = root.querySelector("[data-mock-section]");
+  const list = tests.filter(isMock).sort((a, b) => b.dayNumber - a.dayNumber);
+  section.hidden = !list.length;
+  if (!list.length) return;
+  root.querySelector("[data-mock]").innerHTML = list.map((t) => {
+    const a = attemptsByTest.get(t.id);
+    const st = a?.status === "graded" ? "done" : a?.status === "submitted" ? "submitted"
+      : officialOpen(t, now) ? (a ? "progress" : "open") : "closed";
+    const chips = [`<span class="of-badge">${ic("list")} ${t.questionCount} savol</span>`, `<span class="of-badge">${mockMax(t)} ball</span>`];
+    if (timeLimitOf(t)) chips.push(`<span class="of-badge">${ic("clock")} ${esc(formatLimit(timeLimitOf(t)))}</span>`);
+    let foot = "";
+    if (st === "done") {
+      chips.push(`<span class="of-badge of-badge--green">${ic("check")} Bajarilgan</span>`);
+      chips.push(`<span class="of-badge">To‘g‘ri ${a.correctAnswers} · Noto‘g‘ri ${a.wrongAnswers} · Javobsiz ${a.unanswered}</span>`);
+      foot = `<a class="of-btn of-btn--soft of-btn--sm" href="${testHref(t)}">Natija</a>`;
+    } else if (st === "submitted") {
+      chips.push('<span class="of-badge of-badge--green">Topshirilgan</span>');
+      foot = `<a class="of-btn of-btn--soft of-btn--sm" href="${testHref(t)}">Natijani ko‘rish</a>`;
+    } else if (st === "open" || st === "progress") {
+      chips.push(st === "open" ? '<span class="of-badge of-badge--blue">Ochiq</span>' : '<span class="of-badge of-badge--orange">Davom etmoqda</span>');
+      if (st === "progress" && timeLimitOf(t)) chips.push(`<span class="of-badge of-badge--orange" data-mock-left>${ic("clock")} Qolgan vaqt: ${esc(formatClock(remainingSeconds(a, t, now)))}</span>`);
+      foot = `<a class="of-btn of-btn--primary of-btn--sm" href="${testHref(t)}">${st === "open" ? "Boshlash" : "Davom ettirish"}</a>`;
+    } else {
+      chips.push('<span class="of-badge">Rasmiy muddat tugagan</span>');
+    }
+    chips.push(solutionChip(t, now));
+    if (solutionOpen(t, now)) foot += `<a class="of-btn of-btn--ghost of-btn--sm" href="${solHref(t)}">${ic("book")}Yechimlar</a>`;
+    return `<li><article class="of-card att-day" data-state="${st === "done" || st === "submitted" ? "done" : "open"}" data-mock-card aria-labelledby="attMock${t.dayNumber}">
+      <div class="att-day__head">
+        <span class="att-day__num">M</span>
+        <div><p class="att-day__title" id="attMock${t.dayNumber}">Mock test${t.mockNumber > 1 ? ` ${t.mockNumber}` : ""}</p><p class="att-day__sub">40 fizika + 10 pedagogika${t.status === "archived" ? " · arxiv" : ""}</p></div>
+        ${st === "done" ? `<span class="att-score of-num" aria-label="Natija ${mockPoints(a.correctAnswers, t)} ball">${mockPoints(a.correctAnswers, t)}<small>/${mockMax(t)}</small></span>` : ""}
+      </div>
+      <p class="att-day__topics">${esc((t.topics || []).join(", "))}</p>
+      <div class="att-day__stats">${chips.join("")}</div>
+      <div class="att-day__foot">${foot}</div>
+    </article></li>`;
+  }).join("");
+}
+
 function renderHero(stats) {
   const num = root.querySelector("[data-progress-num]");
   num.textContent = `${stats.completed}/${stats.totalDays}`;
@@ -183,6 +225,7 @@ function renderHero(stats) {
     const today = pickToday(tests, now);
     renderToday(today, today ? attemptsByTest.get(today.id) : null, now);
     renderDays(totalDays, tests, attemptsByTest, now);
+    renderMock(tests, attemptsByTest, now);
     if (location.hash === "#kunlik") document.getElementById("kunlik").focus();
   } catch (e) {
     console.error("[att] dashboard:", e);

@@ -8,6 +8,7 @@
 import { $, esc, stateBox, errorText } from "./admin-common.js";
 import { getKey, listAttemptsForVersion, countAttemptsForTest } from "../attestatsiya-fizika/api.js";
 import { computeQuestionStats } from "../attestatsiya-fizika/question-stats.js";
+import { dayLabel } from "../attestatsiya-fizika/core.js";
 
 const panel = $("[data-qstats-panel]");
 const titleEl = $("[data-qstats-title]");
@@ -51,7 +52,7 @@ function render(test, st, totalAll) {
     </ul>`;
   if (!st.attempts) {
     return `${meta}${stateBox("empty", "Statistika uchun hali yetarli urinish mavjud emas.",
-      `Day ${test.dayNumber} v${st.version} bo‘yicha baholangan rasmiy urinish yo‘q. Boshqa versiyalardagi urinishlar bu versiyaga qo‘shilmaydi.`)}`;
+      `${dayLabel(test)} v${st.version} bo‘yicha baholangan rasmiy urinish yo‘q. Boshqa versiyalardagi urinishlar bu versiyaga qo‘shilmaydi.`)}`;
   }
   const notes = [];
   if (st.excluded) notes.push(`${st.excluded} ta urinish hali baholanmagan yoki rasmiy emas — hisobga olinmadi.`);
@@ -111,7 +112,7 @@ export function showQuestionStats(test) {
   current = test;
   totalAll = null;
   panel.hidden = false;
-  titleEl.textContent = `DAY ${test.dayNumber} — SAVOLLAR STATISTIKASI`;
+  titleEl.textContent = `${dayLabel(test).toUpperCase()} — SAVOLLAR STATISTIKASI`;
   const n = Number(test.currentVersion) || 1;
   select.innerHTML = Array.from({ length: n }, (_, i) => n - i)
     .map((v) => `<option value="${v}">v${v}${v === n ? " (joriy)" : ""}</option>`).join("");
