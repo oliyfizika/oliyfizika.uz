@@ -8,6 +8,7 @@
 // ==========================================================================
 import { esc, stateBox, errorText } from "./admin-common.js";
 import { toast } from "../ui/feedback.js";
+import { dayLabel } from "../attestatsiya-fizika/core.js";
 import { fb, listAttemptsForVersion } from "../attestatsiya-fizika/api.js";
 import { displayName, uniqueUserIds, chunks, buildAttemptRows, fmtTime, fmtDate, statusLabel, excelData } from "./attestation-attempts-core.js";
 import { buildXlsx, XLSX_MIME } from "./xlsx-writer.js";
@@ -33,13 +34,13 @@ const n = (v) => (v == null ? "—" : v);
 
 function renderBody(test, version, { graded, other }) {
   if (!graded.length && !other.length) {
-    return stateBox("empty", "Hali urinish yo‘q", `Day ${test.dayNumber} v${version} bo‘yicha urinish mavjud emas.`);
+    return stateBox("empty", "Hali urinish yo‘q", `${dayLabel(test)} v${version} bo‘yicha urinish mavjud emas.`);
   }
   const avg = graded.length && graded.every((r) => r.score != null)
     ? Math.round(graded.reduce((s, r) => s + r.score, 0) / graded.length) : null;
   const main = graded.length ? `
     <div class="of-admin-table-wrap"><table class="of-admin-table att-attempts__table" data-att-rows="${esc(test.id)}">
-      <caption class="of-sr-only">Day ${test.dayNumber} v${version}: baholangan rasmiy urinishlar</caption>
+      <caption class="of-sr-only">${dayLabel(test)} v${version}: baholangan rasmiy urinishlar</caption>
       <thead><tr><th scope="col">№</th><th scope="col">F.I.Sh.</th><th scope="col">Natija</th><th scope="col">To‘g‘ri</th><th scope="col">Xato</th>
         <th scope="col">Javobsiz</th><th scope="col">Vaqt</th><th scope="col">Topshirilgan</th><th scope="col">Holat</th></tr></thead>
       <tbody>${graded.map((r) => `<tr data-att-user="${esc(r.userId)}">
@@ -63,12 +64,12 @@ function renderBody(test, version, { graded, other }) {
 function shell(test) {
   const nV = Number(test.currentVersion) || 1;
   const opts = Array.from({ length: nV }, (_, i) => nV - i).map((v) => `<option value="${v}">v${v}${v === nV ? " (joriy)" : ""}</option>`).join("");
-  return `<div class="att-attempts" role="region" aria-label="Day ${test.dayNumber} — urinishlar">
+  return `<div class="att-attempts" role="region" aria-label="${dayLabel(test)} — urinishlar">
     <div class="att-attempts__head">
-      <h3>Day ${test.dayNumber} — urinishlar</h3>
+      <h3>${dayLabel(test)} — urinishlar</h3>
       <div class="att-attempts__tools">
         <label class="att-attempts__version"><span class="of-subtle">Versiya</span>
-          <select class="of-input of-admin-select" data-att-version="${esc(test.id)}" aria-label="Day ${test.dayNumber}: test versiyasi">${opts}</select></label>
+          <select class="of-input of-admin-select" data-att-version="${esc(test.id)}" aria-label="${dayLabel(test)}: test versiyasi">${opts}</select></label>
         <button type="button" class="of-btn of-btn--sm" data-att-export="${esc(test.id)}" disabled>Excel yuklash</button>
       </div>
     </div>
@@ -94,7 +95,7 @@ async function load(test, row) {
     st.rows = buildAttemptRows(test, st.version, attempts, names);
     body.innerHTML = renderBody(test, st.version, st.rows);
     btn.disabled = !st.rows.graded.length;
-    btn.title = st.rows.graded.length ? `Day ${test.dayNumber} v${st.version} — ${st.rows.graded.length} ta urinish` : "Eksport uchun baholangan urinish yo‘q";
+    btn.title = st.rows.graded.length ? `${dayLabel(test)} v${st.version} — ${st.rows.graded.length} ta urinish` : "Eksport uchun baholangan urinish yo‘q";
   } catch (err) {
     if (my === st.token) body.innerHTML = stateBox("error", "Urinishlarni yuklab bo‘lmadi", errorText(err));
   } finally {

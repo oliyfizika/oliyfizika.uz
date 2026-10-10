@@ -11,7 +11,7 @@
 import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } from "./admin-common.js";
 import { toast } from "../ui/feedback.js";
 import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
-import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent } from "../attestatsiya-fizika/core.js";
+import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, isMock, dayLabel } from "../attestatsiya-fizika/core.js";
 import { showQuestionStats } from "./attestation-question-stats.js";
 import { toggleAttempts, changeVersion, exportExcel, resetAttempts, detailsRow } from "./attestation-attempts.js";
 import { finalizeOverdueList } from "../attestatsiya-fizika/finalize.js";
@@ -59,7 +59,7 @@ async function load() {
     body.innerHTML = `<tr><td colspan="9">${stateBox("empty", "Hali import qilinmagan", "Pastdagi «Import» bo‘limida firestore-import.json faylini tanlang.")}</td></tr>`;
     return;
   }
-  const nextDraft = tests.find((t) => t.status === "draft");
+  const nextDraft = tests.find((t) => t.status === "draft" && !isMock(t));          // mock test kurs kunlari navbatiga kirmaydi
   note.textContent = nextDraft ? `Keyingi e’lon qilinadigan kun: Day ${nextDraft.dayNumber}.` : "Barcha kunlar e’lon qilingan.";
   resetAttempts();
   body.innerHTML = tests.map((t) => {
@@ -68,10 +68,10 @@ async function load() {
       : t.status === "published" ? `<button type="button" class="of-btn of-btn--sm" data-archive="${esc(t.id)}">Archive</button>`
       : t.status === "archived" ? `<button type="button" class="of-btn of-btn--sm" data-unarchive="${esc(t.id)}">Arxivdan chiqarish</button>` : "—";
     return `<tr>
-      <td data-label="Day" class="of-num"><b>${t.dayNumber}</b></td>
+      <td data-label="Day" class="of-num"><b>${isMock(t) ? "Mock" : t.dayNumber}</b></td>
       <td data-label="Section">${esc(t.sectionTitle)}</td>
-      <td data-label="Topics"><span class="of-admin-sub">${esc(t.topics.join(", "))}</span></td>
-      <td data-label="Savollar" class="of-num">${t.questionCount}<br><span class="of-admin-sub">${t.scorableCount} ballga</span></td>
+      <td data-label="Topics"><span class="of-admin-sub">${isMock(t) ? "40 fizika (5 bob × 8) + 10 pedagogika" : esc(t.topics.join(", "))}</span></td>
+      <td data-label="Savollar" class="of-num">${t.questionCount}<br><span class="of-admin-sub">${isMock(t) ? `${t.maxScore || 100} ball` : `${t.scorableCount} ballga`}</span></td>
       <td data-label="Status">${STATUS[t.status] || esc(t.status)}</td>
       <td data-label="Publish date">${t.publishedAt ? esc(formatTashkent(t.publishedAt)) : "—"}</td>
       <td data-label="Solution date">${t.solutionAvailableAt ? esc(formatTashkent(t.solutionAvailableAt)) : "—"}</td>
@@ -90,11 +90,11 @@ body.addEventListener("click", async (e) => {
   if (pub) {
     const t = tests.find((x) => x.id === pub.dataset.publish);
     const solAt = nextMidnightTashkent(new Date());
-    const nextDraft = tests.find((x) => x.status === "draft");
-    const order = nextDraft && nextDraft.id !== t.id ? ` Diqqat: navbatdagi kun Day ${nextDraft.dayNumber}, siz Day ${t.dayNumber} ni tanladingiz.` : "";
+    const nextDraft = tests.find((x) => x.status === "draft" && !isMock(x));
+    const order = !isMock(t) && nextDraft && nextDraft.id !== t.id ? ` Diqqat: navbatdagi kun Day ${nextDraft.dayNumber}, siz Day ${t.dayNumber} ni tanladingiz.` : "";
     const ok = await confirmAction({
-      title: `Day ${t.dayNumber} testini foydalanuvchilarga e’lon qilishni xohlaysizmi?`,
-      text: `${t.sectionTitle} · ${t.topics.join(", ")} · ${t.questionCount} savol. Test darhol ochiladi; yechimlar ${formatTashkent(solAt)} da (Toshkent) ochiladi. Bu amalni ortga qaytarib bo‘lmaydi (faqat arxivlash mumkin).${order}`,
+      title: `${dayLabel(t)} testini foydalanuvchilarga e’lon qilishni xohlaysizmi?`,
+      text: `${isMock(t) ? "Mock test · 40 fizika + 10 pedagogika" : `${t.sectionTitle} · ${t.topics.join(", ")}`} · ${t.questionCount} savol. Test darhol ochiladi; yechimlar ${formatTashkent(solAt)} da (Toshkent) ochiladi. Bu amalni ortga qaytarib bo‘lmaydi (faqat arxivlash mumkin).${order}`,
       confirmLabel: "PUBLISH",
     });
     if (!ok) return;
@@ -102,7 +102,7 @@ body.addEventListener("click", async (e) => {
     try {
       await publishTest(t, solAt);
       document.dispatchEvent(new CustomEvent("of:attestation-published", { detail: { testId: t.id, dayNumber: t.dayNumber, notification: t.notification } }));
-      toast(`Day ${t.dayNumber} e’lon qilindi.`);
+      toast(`${dayLabel(t)} e’lon qilindi.`);
       await load();
     } catch (err) {
       pub.classList.remove("is-loading");
@@ -112,14 +112,14 @@ body.addEventListener("click", async (e) => {
   if (arc) {
     const t = tests.find((x) => x.id === arc.dataset.archive);
     const ok = await confirmAction({
-      title: `Day ${t.dayNumber} testini arxivlaysizmi?`,
+      title: `${dayLabel(t)} testini arxivlaysizmi?`,
       text: "Test «Bugungi test»dan olib tashlanadi va yangi rasmiy urinish boshlab bo‘lmaydi. Natijalar va yechimlar saqlanadi (hech narsa o‘chirilmaydi).",
       confirmLabel: "Arxivlash", danger: true,
     });
     if (!ok) return;
     try {
       await archiveTest(t);
-      toast(`Day ${t.dayNumber} arxivlandi.`);
+      toast(`${dayLabel(t)} arxivlandi.`);
       await load();
     } catch (err) {
       toast(errorText(err, "Arxivlab bo‘lmadi."));
@@ -132,7 +132,7 @@ body.addEventListener("click", async (e) => {
       return;
     }
     const ok = await confirmAction({
-      title: `Day ${t.dayNumber} ni arxivdan chiqarib, draft holatiga qaytarishni xohlaysizmi?`,
+      title: `${dayLabel(t)} ni arxivdan chiqarib, draft holatiga qaytarishni xohlaysizmi?`,
       text: `Faqat holat o‘zgaradi (archived → draft). Versiya (v${t.currentVersion}), savollar, mavjud urinishlar va natijalar o‘zgarmaydi. Draft holatida test foydalanuvchilarga ko‘rinmaydi; qayta e’lon qilish — alohida PUBLISH bilan.`,
       confirmLabel: "Arxivdan chiqarish",
     });
@@ -140,11 +140,11 @@ body.addEventListener("click", async (e) => {
     unarc.classList.add("is-loading");
     try {
       await unarchiveTest(t);
-      toast(`Day ${t.dayNumber} arxivdan chiqarildi va draft holatiga qaytarildi.`);
+      toast(`${dayLabel(t)} arxivdan chiqarildi va draft holatiga qaytarildi.`);
       await load();
     } catch (err) {
       unarc.classList.remove("is-loading");
-      toast(errorText(err, `Day ${t.dayNumber} ni arxivdan chiqarib bo‘lmadi. Holat o‘zgarmadi.`));
+      toast(errorText(err, `${dayLabel(t)} ni arxivdan chiqarib bo‘lmadi. Holat o‘zgarmadi.`));
     }
   }
   if (qst) showQuestionStats(tests.find((x) => x.id === qst.dataset.qstats));
@@ -264,6 +264,67 @@ $("[data-import]").addEventListener("click", async (e) => {
     await load();
   } catch (err) {
     info.textContent = errorText(err, "Import xatosi.");
+  } finally {
+    btn.classList.remove("is-loading");
+  }
+});
+
+// ------------------------------------------------------------------ Mock test importi (50 savol: 40 fizika + 10 pedagogika)
+// Fayl: _private/attestatsiya-fizika/mock-import-NN.json (build_mock_test.py). Faqat 4 ta hujjat yo'li ruxsat etiladi;
+// mavjud mock test (draft ham, published ham) QAYTA YOZILMAYDI. Hech narsa o'chirilmaydi.
+let mockBundle = null;
+const MOCK_PATHS = (tid) => [new RegExp(`^${COL.tests}/${tid}$`), new RegExp(`^${COL.tests}/${tid}/versions/v1$`),
+  new RegExp(`^${COL.tests}/${tid}/keys/v1$`), new RegExp(`^${COL.tests}/${tid}/solutions/v1$`)];
+$("[data-mock-bundle]").addEventListener("change", async (e) => {
+  const info = $("[data-mock-info]");
+  mockBundle = null;
+  $("[data-mock-import]").disabled = true;
+  try {
+    const data = JSON.parse(await e.target.files[0].text());
+    if (data.format !== "oliyfizika-attestation-mock-import" || !Array.isArray(data.ops) || !/^att-fizika-mock-\d\d$/.test(data.testId)) throw new Error("format");
+    const rx = MOCK_PATHS(data.testId);
+    if (data.ops.length !== 4 || !rx.every((r, i) => r.test(data.ops[i].path))) throw new Error("yo‘llar mos emas");
+    const t = data.ops[0].data;
+    const key = data.ops[2].data;
+    if (t.kind !== "mock" || t.dayNumber < 101 || t.questionCount !== 50 || t.questionIds.length !== 50 || t.maxScore !== 100 || t.timeLimitSeconds !== 7200
+      || t.status !== "draft" || t.published !== false || Object.keys(key.answers).length !== 50 || key.scorableCount !== 50) throw new Error("mock hisobi mos emas");
+    const bad = preflightNestedArrays(data.ops);
+    if (bad.length) { info.textContent = nestedArrayError(bad).message; return; }
+    mockBundle = data;
+    info.textContent = `Tekshirildi: ${data.testId} · 50 savol (40 fizika + 10 pedagogika) · 100 ball · planHash ${data.planHash}. «Mock testni import qilish» ni bosing.`;
+    $("[data-mock-import]").disabled = false;
+  } catch (err) {
+    info.textContent = `Fayl yaroqsiz (${err.message}). _private/attestatsiya-fizika/mock-import-01.json ni tanlang.`;
+  }
+});
+$("[data-mock-import]").addEventListener("click", async (e) => {
+  const btn = e.currentTarget;
+  const info = $("[data-mock-info]");
+  if (!mockBundle) return;
+  if (tests.some((t) => t.id === mockBundle.testId)) {
+    info.textContent = `${mockBundle.testId} allaqachon mavjud — qayta yozilmaydi (draft yoki e’lon qilingan).`;
+    return;
+  }
+  const ok = await confirmAction({
+    title: "Mock test import qilinsinmi?",
+    text: `${mockBundle.testId}: test hujjati (draft) + savollar, kalit va yechimlar. Foydalanuvchilarga ko‘rinmaydi — alohida PUBLISH kerak. Hech narsa o‘chirilmaydi.`,
+    confirmLabel: "Import",
+  });
+  if (!ok) return;
+  btn.classList.add("is-loading");
+  try {
+    // Test hujjati birinchi, keyin sub-hujjatlar (Rules versions/keys/solutions uchun parent testni get() qiladi)
+    for (const o of mockBundle.ops) {
+      const batch = writeBatch(fb.db);
+      batch.set(doc(fb.db, ...o.path.split("/")), o.data);
+      await batch.commit();
+      info.textContent = `Yozilmoqda… ${o.path.split("/").slice(-2).join("/")}`;
+    }
+    info.textContent = `Tayyor: ${mockBundle.testId} draft sifatida yozildi. Jadvaldan PUBLISH qiling.`;
+    toast("Mock test import qilindi.");
+    await load();
+  } catch (err) {
+    info.textContent = errorText(err, "Mock import xatosi.");
   } finally {
     btn.classList.remove("is-loading");
   }

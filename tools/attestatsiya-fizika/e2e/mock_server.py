@@ -235,6 +235,10 @@ class H(SimpleHTTPRequestHandler):
     def log_message(self, *a):
         pass
 
+    def date_time_string(self, timestamp=None):
+        from email.utils import format_datetime
+        return format_datetime(now(), usegmt=True)
+
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")
         super().end_headers()

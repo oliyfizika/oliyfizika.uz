@@ -53,8 +53,13 @@
       return t.dayNumber is int && t.dayNumber <= 3;
     }
 
+    // MOCK TEST (kind == 'mock', dayNumber 101+): kurs kunlaridan alohida, hamma kirgan foydalanuvchi uchun bepul.
+    function attIsMock(t) {
+      return t.get('kind', 'daily') == 'mock';
+    }
+
     function attDayOpen(t) {
-      return signedIn() && (attFreeDay(t) || attCanAccess());
+      return signedIn() && (attFreeDay(t) || attIsMock(t) || attCanAccess());
     }
 
     // Tarix: shu testda o'z rasmiy urinishi bor foydalanuvchi o'z natijasi/ko'rib chiqishi uchun kontentni o'qishda
@@ -120,9 +125,12 @@
     // ---------------------------------------------------------------- daily tests
     function attValidTestShape(d, testId) {
       return d.id == testId
-        && d.dayNumber is int && d.dayNumber >= 1 && d.dayNumber <= 100
+        && d.dayNumber is int && d.dayNumber >= 1 && d.dayNumber <= 199
+        // kind: kurs kuni (1..100) yoki mock test (101..199) — ikkalasi bir-biriga aralashmaydi
+        && d.get('kind', 'daily') in ['daily', 'mock']
+        && ((d.get('kind', 'daily') == 'mock') == (d.dayNumber >= 101))
         && d.questionIds is list && d.questionCount == d.questionIds.size()
-        && d.questionCount >= 1 && d.questionCount <= 40
+        && d.questionCount >= 1 && d.questionCount <= 50
         // 3-bosqich: vaqt chegarasi yo'q — timeLimitSeconds null (maydon kelajak uchun saqlanadi)
         && (d.timeLimitSeconds == null || (d.timeLimitSeconds is int && d.timeLimitSeconds >= 60))
         && d.currentVersion is int && d.currentVersion >= 1
@@ -132,7 +140,7 @@
 
     function attContentUnchanged() {
       return !request.resource.data.diff(resource.data).affectedKeys()
-        .hasAny(['id', 'dayNumber', 'section', 'questionIds', 'questionCount', 'publishedAt', 'publishedBy']);
+        .hasAny(['id', 'dayNumber', 'section', 'kind', 'questionIds', 'questionCount', 'publishedAt', 'publishedBy']);
     }
 
     function attVersionReady(testId, n) {
@@ -243,6 +251,37 @@
     }
 
     // ---------------------------------------------------------------- attempts
+    // VAQT CHEGARASI (faqat test hujjatida timeLimitSeconds belgilangan bo'lsa — mock test: 7200 s = 2 soat; kunlik
+    // testlarda null — chegara yo'q). Hisob SERVER vaqtida: tugash = min(startedAt + limit, solutionAvailableAt).
+    //   • qo'lda saqlash/topshirish: tugashdan keyin 60 s «grace» (tarmoq kechikishi) ichida ruxsat;
+    //   • avtomatik yakunlash: limit bo'yicha — tugash + 60 s dan keyin (klientning o'z topshirishi bilan poygalashmaydi),
+    //     completedAt = startedAt + limit (sarflangan vaqt limitdan oshmaydi); yechim vaqti bo'yicha — avvalgidek.
+    function attHasLimit(t) {
+      return t.get('timeLimitSeconds', null) is int && t.get('timeLimitSeconds', 0) >= 60;
+    }
+
+    function attLimitEnd(o, t) {
+      return o.startedAt + duration.value(t.get('timeLimitSeconds', 0), 's');
+    }
+
+    function attLimited(o, t) {
+      return attHasLimit(t) && attLimitEnd(o, t) < t.solutionAvailableAt;
+    }
+
+    function attEndAt(o, t) {
+      return attLimited(o, t) ? attLimitEnd(o, t) : t.solutionAvailableAt;
+    }
+
+    function attAutoFrom(o, t) {
+      return attLimited(o, t) ? attLimitEnd(o, t) + duration.value(60, 's') : t.solutionAvailableAt;
+    }
+
+    function attInTime(o, t) {
+      return attLimited(o, t)
+        ? request.time < attLimitEnd(o, t) + duration.value(60, 's')
+        : request.time < t.solutionAvailableAt;
+    }
+
     // START: server vaqti, faqat published (archived emas) va yechim ochilmasdan oldin; 1 ta rasmiy urinish.
     function attValidStart(attemptId) {
       let d = request.resource.data;
@@ -283,7 +322,7 @@
         && o.status == 'in_progress' && n.status == 'in_progress'
         && n.diff(o).affectedKeys().hasOnly(['answers', 'savedAt'])
         && n.savedAt == request.time
-        && request.time < attTest(o.testId).solutionAvailableAt
+        && attInTime(o, attTest(o.testId))
         && attValidAnswers(o, n);
     }
 
@@ -298,7 +337,7 @@
         && n.status == 'submitted'
         && n.completedAt == request.time
         && (!('savedAt' in n.diff(o).affectedKeys()) || n.savedAt == request.time)
-        && request.time < attTest(o.testId).solutionAvailableAt
+        && attInTime(o, attTest(o.testId))
         && attValidAnswers(o, n);
     }
 
@@ -313,10 +352,10 @@
       let t = attTest(o.testId);
       return signedIn() && (o.userId == request.auth.uid || isAdmin())
         && o.status == 'in_progress' && o.kind == 'official' && o.testVersion is int
-        && t.solutionAvailableAt is timestamp && request.time >= t.solutionAvailableAt
+        && t.solutionAvailableAt is timestamp && request.time >= attAutoFrom(o, t)
         && n.diff(o).affectedKeys().hasOnly(['status', 'completedAt', 'answers', 'autoFinalized'])
         && n.status == 'submitted'
-        && n.completedAt == t.solutionAvailableAt
+        && n.completedAt == attEndAt(o, t)
         && n.autoFinalized == true
         && (('answers' in o && n.answers == o.answers)
             || (!('answers' in o) && n.answers is map && n.answers.size() == 0));

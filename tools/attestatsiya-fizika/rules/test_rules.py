@@ -782,6 +782,109 @@ def main():
     expect("open rejim: admin qaytaradi", db.write(ADMIN, CFG, {"accessMode": "open"}, t4), True)
     expect("open rejim: ruxsatsiz user Day 9 — kontent + start (avvalgidek hammasi ochiq)", vread(NOX, 9) and start(NOX, "nox", 9))
 
+    # ------------------------------------------------------------ 16. MOCK TEST (50 savol = 40 fizika + 10 pedagogika, 100 ball)
+    mock = json.load(open(os.path.join(os.path.dirname(bundle_path), "mock-import-01.json"), encoding="utf-8"))
+    MID = mock["testId"]
+    M = f"attestationPhysicsDailyTests/{MID}"
+    GUEST = auth_of(None)
+    expect("mock: format va hisoblar (50 = 40 + 10, 100 ball)", mock["format"] == "oliyfizika-attestation-mock-import"
+           and mock["counts"] == {"questions": 50, "physics": 40, "pedagogy": 10, "maxScore": 100})
+    mt = mock["ops"][0]["data"]
+    expect("mock: test hujjati kind=mock, dayNumber>=101, 50 savol, kunlik kalendardan tashqarida",
+           mt["kind"] == "mock" and mt["dayNumber"] >= 101 and mt["questionCount"] == 50 == len(mt["questionIds"]))
+    # admin import (draft)
+    ok_all = all(db.write(ADMIN, o["path"], o["data"], t4, merge=False, op=None if o["op"] == "set" else "create") for o in mock["ops"])
+    expect("mock: admin import (test + versions + keys + solutions) Rules orqali yoziladi", ok_all, True)
+    expect("mock: draft — oddiy foydalanuvchi ko'rmaydi (meta ham, kontent ham)", (db.read(NOX, M, t4), db.read(NOX, f"{M}/versions/v1", t4)) == (False, False))
+    # shakl qoidalari
+    bad = lambda **kw: db.write(ADMIN, "attestationPhysicsDailyTests/zz-mock", {**mt, "id": "zz-mock", **kw}, t4, op="create", apply=False)
+    expect("mock shakli: 51 savol — rad", bad(questionCount=51, questionIds=mt["questionIds"] + ["X"]), False)
+    expect("mock shakli: kind=mock lekin dayNumber=5 (kurs kuni) — rad", bad(dayNumber=5), False)
+    expect("mock shakli: kunlik (kind yo'q) lekin dayNumber=101 — rad", bad(kind="daily"), False)
+    expect("mock shakli: noma'lum kind — rad", bad(kind="exam"), False)
+    expect("mock shakli: dayNumber=200 — rad", bad(dayNumber=200), False)
+    pub_m = {"status": "published", "published": True, "publishedAt": SERVER, "publishedBy": "admin1",
+             "solutionAvailableAt": next_midnight_tashkent(t4)}
+    expect("mock: user publish qila olmaydi", db.write(NOX, M, pub_m, t4, apply=False), False)
+    expect("mock: ADMIN PUBLISH", db.write(ADMIN, M, pub_m, t4), True)
+    expect("mock: published — kind o'zgartirib bo'lmaydi", db.write(ADMIN, M, {"kind": "daily"}, t4, apply=False), False)
+    expect("mock: published — savollar ro'yxati o'zgartirib bo'lmaydi", db.write(ADMIN, M, {"questionIds": mt["questionIds"][:-1], "questionCount": 49}, t4, apply=False), False)
+    # PAID rejim: mock hamma uchun bepul (Day 4+ yopiq bo'lsa ham)
+    expect("mock: admin accessMode=paid", db.write(ADMIN, CFG, {"accessMode": "paid"}, t4), True)
+    mat = t4 + dt.timedelta(minutes=5)
+    mafter = db.docs[M]["solutionAvailableAt"] + dt.timedelta(minutes=1)
+    mA = lambda uid: f"attestationPhysicsAttempts/{uid}__{MID}"
+    mst = lambda uid: {"userId": uid, "testId": MID, "dayNumber": mt["dayNumber"], "testVersion": 1, "attemptNumber": 1, "kind": "official",
+                       "status": "in_progress", "startedAt": SERVER, "questionCount": 50}
+    expect("mock paid: ruxsatsiz user meta + kontent o'qiydi", db.read(NOX, M, mat) and db.read(NOX, f"{M}/versions/v1", mat), True)
+    expect("mock paid: ruxsatsiz user (attestationAccess yo'q) start qiladi — bepul", db.write(NOX, mA("nox"), mst("nox"), mat, op="create"), True)
+    expect("mock paid: mehmon (kirmagan) kontent o'qiy olmaydi", db.read(GUEST, f"{M}/versions/v1", mat), False)
+    expect("mock paid: mehmon start qila olmaydi", db.write(GUEST, mA("nox"), mst("nox"), mat, op="create", apply=False), False)
+    expect("mock paid: Day 4 baribir ruxsatsiz userga yopiq (regressiya)", start(NOX, "nox", 4), False)
+    expect("mock paid: boshqa userning urinishini yarata olmaydi", db.write(NOX, mA("acc"), mst("acc"), mat, op="create", apply=False), False)
+    expect("mock paid: noto'g'ri dayNumber bilan start rad", db.write(auth_of("acc"), mA("acc"), {**mst("acc"), "dayNumber": 33}, mat, op="create", apply=False), False)
+    mk = db.docs[f"{M}/keys/v1"]
+    expect("mock: kalit 50 ta, scorableCount=50", len(mk["answers"]) == 50 == mk["scorableCount"])
+    expect("mock: kalit topshirishdan oldin o'qilmaydi", db.read(NOX, f"{M}/keys/v1", mat), False)
+    expect("mock: yechim yechim vaqtidan oldin o'qilmaydi", db.read(NOX, f"{M}/solutions/v1", mat), False)
+    ans = dict(list(mk["answers"].items())[:37])                       # 37 ta to'g'ri javob
+    wrong_id = list(mk["answers"])[37]
+    ans[wrong_id] = next(l for l in "ABCD" if l != mk["answers"][wrong_id])    # 1 ta noto'g'ri; 12 ta javobsiz
+    expect("mock: javoblarni saqlash (qoralama)", db.write(NOX, mA("nox"), {"answers": ans, "savedAt": SERVER}, mat + dt.timedelta(minutes=10)), True)
+    expect("mock: begona savol ID'si javobda — rad", db.write(NOX, mA("nox"), {"answers": {**ans, "AF-9-999": "A"}, "savedAt": SERVER}, mat + dt.timedelta(minutes=11), apply=False), False)
+    expect("mock: SUBMIT", db.write(NOX, mA("nox"), {"status": "submitted", "completedAt": SERVER, "answers": ans}, mat + dt.timedelta(minutes=40)), True)
+    expect("mock: submitdan keyin kalit o'qiladi", db.read(NOX, f"{M}/keys/v1", mat + dt.timedelta(minutes=41)), True)
+    g = {**grade_of(ans, mk, 50), "timeSpentSeconds": 2400}      # startedAt = mat, completedAt = mat + 40 daqiqa
+    expect("mock: baho = 2 ball x to'g'ri javob (37 -> 74 ball)", g["correctAnswers"] == 37 and g["scorePercent"] == 74 == 2 * g["correctAnswers"], True)
+    expect("mock: soxta ball (100) — rad", db.write(NOX, mA("nox"), {**g, "scorePercent": 100}, mat + dt.timedelta(minutes=42), apply=False), False)
+    expect("mock: GRADE (to'g'ri ball)", db.write(NOX, mA("nox"), g, mat + dt.timedelta(minutes=42)), True)
+    expect("mock: yechim vaqtidan keyin yechimlar ochiq (bepul)", db.read(NOX, f"{M}/solutions/v1", mafter), True)
+    expect("mock: yechim vaqtidan keyin mehmon yecha olmaydi", db.read(GUEST, f"{M}/solutions/v1", mafter), False)
+    # avtomatik yakunlash mock uchun ham ishlaydi
+    db.docs[mA("acc")] = {**mst("acc"), "startedAt": mat, "answers": dict(list(ans.items())[:5])}
+    expect("mock: avtomatik yakunlash (yechim vaqtida, in_progress -> submitted)",
+           db.write(auth_of("acc"), mA("acc"), {"status": "submitted", "completedAt": mat + dt.timedelta(hours=2), "answers": db.docs[mA("acc")]["answers"], "autoFinalized": True}, mafter), True)
+    expect("mock: vaqtidan oldin avtomatik yakunlash — rad", db.write(auth_of("acc"), mA("acc"), {"status": "submitted"}, mat, apply=False), False)
+    # ---- 2 SOATLIK VAQT CHEGARASI (timeLimitSeconds = 7200; hisob SERVER vaqtida)
+    expect("limit: mock test timeLimitSeconds = 7200 (2 soat)", db.docs[M]["timeLimitSeconds"] == 7200)
+    LA = lambda uid: f"attestationPhysicsAttempts/{uid}__{MID}"
+    S0 = mat + dt.timedelta(minutes=1)                                   # boshlangan vaqt
+    db.docs[LA("lim")] = {**mst("lim"), "userId": "lim", "startedAt": S0, "answers": {}}
+    db.docs["users/lim"] = {"fullName": "lim", "email": "lim@example.com", "xp": 0, "level": 1, "fullAccess": False}
+    LIM = auth_of("lim")
+    one = {mids_[0]: mk["answers"][mids_[0]]} if (mids_ := list(mk["answers"])) else {}
+    sec = lambda n: dt.timedelta(seconds=n)
+    expect("limit: 1 soat 59 daqiqada saqlash — ruxsat", db.write(LIM, LA("lim"), {"answers": one, "savedAt": SERVER}, S0 + dt.timedelta(minutes=119), apply=False), True)
+    expect("limit: aynan 2 soatda saqlash — grace ichida ruxsat", db.write(LIM, LA("lim"), {"answers": one, "savedAt": SERVER}, S0 + dt.timedelta(hours=2), apply=False), True)
+    expect("limit: 2 soat + 59 s — hali grace ichida (topshirish ruxsat)",
+           db.write(LIM, LA("lim"), {"status": "submitted", "completedAt": SERVER, "answers": one}, S0 + dt.timedelta(hours=2) + sec(59), apply=False), True)
+    expect("limit: 2 soat + 61 s — saqlash RAD", db.write(LIM, LA("lim"), {"answers": one, "savedAt": SERVER}, S0 + dt.timedelta(hours=2) + sec(61), apply=False), False)
+    expect("limit: 2 soat + 61 s — qo'lda topshirish RAD (javob o'zgartirib bo'lmaydi)",
+           db.write(LIM, LA("lim"), {"status": "submitted", "completedAt": SERVER, "answers": one}, S0 + dt.timedelta(hours=2) + sec(61), apply=False), False)
+    ENDL = S0 + dt.timedelta(hours=2)
+    auto = lambda **kw: {"status": "submitted", "completedAt": ENDL, "answers": {}, "autoFinalized": True, **kw}
+    expect("limit: avto-yakunlash grace tugamasdan (2 soat + 30 s) — RAD (klient o'zi topshirishga ulguradi)", db.write(LIM, LA("lim"), auto(), ENDL + sec(30), apply=False), False)
+    expect("limit: avto-yakunlash 2 soat + 61 s — completedAt = startedAt + 2 soat — ruxsat", db.write(LIM, LA("lim"), auto(), ENDL + sec(61), apply=False), True)
+    expect("limit: avto-yakunlash — admin ham qila oladi", db.write(ADMIN, LA("lim"), auto(), ENDL + sec(61), apply=False), True)
+    expect("limit: avto-yakunlash — completedAt = yechim vaqti (limitdan keyingi) — RAD (vaqt oshirib yuborilmaydi)",
+           db.write(LIM, LA("lim"), auto(completedAt=db.docs[M]["solutionAvailableAt"]), mafter, apply=False), False)
+    expect("limit: avto-yakunlash — completedAt = startedAt + 1 soat (qisqartirish) — RAD", db.write(LIM, LA("lim"), auto(completedAt=S0 + dt.timedelta(hours=1)), ENDL + sec(61), apply=False), False)
+    expect("limit: avto-yakunlash — javoblar o'zgartirilgan — RAD", db.write(LIM, LA("lim"), auto(answers=one), ENDL + sec(61), apply=False), False)
+    expect("limit: boshqa foydalanuvchi avto-yakunlay olmaydi", db.write(auth_of("nox"), LA("lim"), auto(), ENDL + sec(61), apply=False), False)
+    # yechim vaqti limitdan OLDIN kelsa (kechqurun boshlagan) — tugash = yechim vaqti (avvalgidek)
+    SOL = db.docs[M]["solutionAvailableAt"]
+    LATE = SOL - dt.timedelta(minutes=30)
+    db.docs[LA("lim")] = {**mst("lim"), "userId": "lim", "startedAt": LATE, "answers": {}}
+    expect("limit: yechimdan 30 daqiqa oldin boshlagan — yechim vaqtigacha saqlaydi", db.write(LIM, LA("lim"), {"answers": one, "savedAt": SERVER}, SOL - sec(1), apply=False), True)
+    expect("limit: yechim vaqtidan keyin saqlash RAD (grace yo'q)", db.write(LIM, LA("lim"), {"answers": one, "savedAt": SERVER}, SOL + sec(1), apply=False), False)
+    expect("limit: yechim vaqtida avto-yakunlash — completedAt = yechim vaqti — ruxsat",
+           db.write(LIM, LA("lim"), {"status": "submitted", "completedAt": SOL, "answers": {}, "autoFinalized": True}, SOL, apply=False), True)
+    del db.docs[LA("lim")]
+    # kunlik test (limit yo'q) — avvalgidek: chegara yo'q, faqat yechim vaqti
+    d3 = db.docs[DX(3)]
+    expect("limit: kunlik testlarda timeLimitSeconds null (chegara yo'q)", d3["timeLimitSeconds"] is None)
+    expect("open rejimga qaytarish", db.write(ADMIN, CFG, {"accessMode": "open"}, t4), True)
+
     expect("Rules get() chegarasi (≤10) saqlangan", db.max_gets <= 10)
     report = {"status": "PASS" if all(c["pass"] for c in checks) else "FAIL",
               "passed": sum(c["pass"] for c in checks), "total": len(checks),

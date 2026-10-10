@@ -1,0 +1,220 @@
+{
+ "testId": "att-fizika-mock-01",
+ "dayNumber": 101,
+ "seed": "mock-1",
+ "planHash": "34656a5d6105025e",
+ "composition": {
+  "mexanika": 8,
+  "molekulyar": 8,
+  "elektromagnetizm": 8,
+  "optika": 8,
+  "atom-yadro": 8,
+  "pedagogika": 10
+ },
+ "pointsPerQuestion": 2,
+ "maxScore": 100,
+ "questionIds": [
+  "AF-1-175",
+  "AF-1-221",
+  "AF-1-188",
+  "AF-1-046",
+  "AF-1-157",
+  "AF-1-208",
+  "AF-1-113",
+  "AF-1-098",
+  "AF-2-020",
+  "AF-2-044",
+  "AF-2-088",
+  "AF-2-076",
+  "AF-2-050",
+  "AF-2-007",
+  "AF-2-037",
+  "AF-2-069",
+  "AF-3-248",
+  "AF-3-270",
+  "AF-3-132",
+  "AF-3-019",
+  "AF-3-275",
+  "AF-3-105",
+  "AF-3-221",
+  "AF-3-263",
+  "AF-4-046",
+  "AF-4-004",
+  "AF-4-099",
+  "AF-4-081",
+  "AF-4-024",
+  "AF-4-072",
+  "AF-4-014",
+  "AF-4-097",
+  "AF-5-101",
+  "AF-5-055",
+  "AF-5-062",
+  "AF-5-031",
+  "AF-5-039",
+  "AF-5-092",
+  "AF-5-003",
+  "AF-5-028",
+  "PED-01-06",
+  "PED-02-06",
+  "PED-03-17",
+  "PED-04-15",
+  "PED-06-10",
+  "PED-07-14",
+  "PED-08-09",
+  "PED-09-18",
+  "PED-11-11",
+  "PED-12-19"
+ ],
+ "physicsTopics": {
+  "Mexanika": [
+   [
+    "Dinamika",
+    1
+   ],
+   [
+    "Gravitatsiya",
+    1
+   ],
+   [
+    "Impuls",
+    1
+   ],
+   [
+    "Ish, energiya, quvvat",
+    1
+   ],
+   [
+    "Kinematika",
+    1
+   ],
+   [
+    "Statika",
+    1
+   ],
+   [
+    "Suyuqlik va gazlar mexanikasi",
+    1
+   ],
+   [
+    "Tebranish va to‘lqinlar",
+    1
+   ]
+  ],
+  "Molekulyar fizika va termodinamika": [
+   [
+    "Entropiya",
+    1
+   ],
+   [
+    "Ideal gaz va gaz qonunlari",
+    2
+   ],
+   [
+    "Issiqlik almashinuvi",
+    1
+   ],
+   [
+    "Issiqlik mashinalari",
+    1
+   ],
+   [
+    "Molekulyar-kinetik nazariya",
+    1
+   ],
+   [
+    "Termodinamika",
+    2
+   ]
+  ],
+  "Elektr va magnetizm": [
+   [
+    "Doimiy tok va elektr zanjirlari",
+    1
+   ],
+   [
+    "Elektromagnit induksiya",
+    1
+   ],
+   [
+    "Elektromagnit tebranishlar va to‘lqinlar",
+    2
+   ],
+   [
+    "Elektrostatika",
+    1
+   ],
+   [
+    "Magnit maydon",
+    1
+   ],
+   [
+    "O‘zgaruvchan tok",
+    2
+   ]
+  ],
+  "Optika": [
+   [
+    "Difraksiya",
+    1
+   ],
+   [
+    "Geometrik optika",
+    2
+   ],
+   [
+    "Interferensiya",
+    1
+   ],
+   [
+    "Ko‘zgular",
+    1
+   ],
+   [
+    "Linzalar",
+    1
+   ],
+   [
+    "Polarizatsiya",
+    1
+   ],
+   [
+    "Yorug‘likning qaytishi va sinishi",
+    1
+   ]
+  ],
+  "Atom va yadro fizikasi": [
+   [
+    "Atom fizikasi",
+    1
+   ],
+   [
+    "Bor modeli",
+    1
+   ],
+   [
+    "Fotoeffekt",
+    1
+   ],
+   [
+    "Kompton effekti",
+    1
+   ],
+   [
+    "Radioaktivlik",
+    1
+   ],
+   [
+    "Spektrlar",
+    1
+   ],
+   [
+    "Yadro fizikasi",
+    1
+   ],
+   [
+    "Yadro reaksiyalari",
+    1
+   ]
+  ]
+ }
+}

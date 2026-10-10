@@ -5,7 +5,7 @@
 // Performance: real-time subscription yo'q; bitta so'rov (published testlar) 5 daqiqaga sessionStorage'da keshlanadi.
 // ==========================================================================
 import { listVisibleTests } from "./api.js";
-import { toMs, solutionOpen, officialOpen } from "./core.js";
+import { toMs, solutionOpen, officialOpen, dayLabel } from "./core.js";
 
 const ROOT = new URL("../../../", import.meta.url);
 const KEY = "oliyfizika:att-notif:";
@@ -27,7 +27,7 @@ async function items(uid) {
       out.push({
         id: `att-fizika-published:${t.id}`,
         title: t.notification?.title || "Bugungi attestatsiya testi tayyor!",
-        body: t.notification?.body || `Day ${t.dayNumber} · ${t.questionCount} savol`,
+        body: t.notification?.body || `${dayLabel(t)} · ${t.questionCount} savol`,
         href: new URL(`attestatsiya/fizika-test.html?day=${t.dayNumber}`, ROOT).href,
         action: "Testni boshlash", icon: "clipboard", tone: "primary", time: pub,
       });
@@ -35,7 +35,7 @@ async function items(uid) {
     if (sol && solutionOpen(t, now) && now - sol < RECENT) {
       out.push({
         id: `att-fizika-solution:${t.id}`,
-        title: `Day ${t.dayNumber} yechimlari ochildi`,
+        title: `${dayLabel(t)} yechimlari ochildi`,
         body: "Bosqichma-bosqich yechimlar bilan tanishing.",
         href: new URL(`attestatsiya/fizika-yechimlar.html?day=${t.dayNumber}`, ROOT).href,
         action: "Yechimlar", icon: "book", tone: "success", time: sol,

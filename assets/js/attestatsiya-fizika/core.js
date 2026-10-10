@@ -14,6 +14,18 @@ export const TOTAL_DAYS_DEFAULT = 32;
 export const TZ_OFFSET_MIN = 300; // Asia/Tashkent (UTC+5, yozgi vaqt yo'q)
 export const STORAGE_ROOT = "attestation-physics";
 
+// ------------------------------------------------------------------ MOCK TEST (50 savol = 40 fizika + 10 pedagogika, 100 ball)
+// Mock — oddiy kunlik test hujjati (kind: "mock", dayNumber 101+): e'lon, urinish, kalit, yechim va natija oqimi bir xil.
+// Kurs kunlari (1..100) kalendari, "Bugungi test" va kunlik statistikaga ARALASHMAYDI.
+export const MOCK_FIRST_DAY = 101;
+export const isMockDay = (n) => Number.isInteger(n) && n >= MOCK_FIRST_DAY;
+export const isMock = (t) => t?.kind === "mock" || isMockDay(t?.dayNumber);
+export const dayLabel = (t) => (isMock(t) ? (t.mockNumber > 1 ? `Mock test ${t.mockNumber}` : "Mock test") : `Day ${t?.dayNumber}`);
+export const dayLabelOf = (n) => (isMockDay(n) ? "Mock test" : `Day ${n}`);
+/** Mock: har bir to'g'ri javob pointsPerQuestion (2) ball; jami maxScore (100). */
+export const mockPoints = (correct, test) => (Number(correct) || 0) * (test?.pointsPerQuestion || 2);
+export const mockMax = (test) => test?.maxScore || (test?.scorableCount || 50) * (test?.pointsPerQuestion || 2);
+
 export const SECTION_ICON = {
   mexanika: "trajectory",
   molekulyar: "thermometer",
@@ -104,6 +116,58 @@ export function solutionOpen(test, now = Date.now()) {
   const at = toMs(test?.solutionAvailableAt);
   return isVisible(test) && at != null && now >= at;
 }
+// ------------------------------------------------------------------ VAQT CHEGARASI (mock test: 2 soat)
+// Qaror serverda (Rules: attHasLimit / attEndAt / attInTime / attAutoFrom). Bu yerda — faqat ko'rsatish va «urinib ko'rish» ishorasi.
+export const LIMIT_GRACE_SECONDS = 60;     // Rules bilan bir xil: tugagandan keyin qo'lda topshirish uchun grace
+/** Test vaqt chegarasi (soniya) yoki null (kunlik testlarda — chegara yo'q). */
+export const timeLimitOf = (t) => (Number.isInteger(t?.timeLimitSeconds) && t.timeLimitSeconds >= 60 ? t.timeLimitSeconds : null);
+/** startedAt + limit (ms) yoki null */
+export function limitEndMs(attempt, test) {
+  const lim = timeLimitOf(test);
+  const st = toMs(attempt?.startedAt);
+  return lim && st != null ? st + lim * 1000 : null;
+}
+/** Chegara yechim vaqtidan oldin tugaydimi (Rules: attLimited) */
+export function isLimited(attempt, test) {
+  const e = limitEndMs(attempt, test);
+  const sol = toMs(test?.solutionAvailableAt);
+  return e != null && sol != null && e < sol;
+}
+/** Tugash (ms): min(startedAt + limit, solutionAvailableAt); limit yo'q → solutionAvailableAt (Rules: attEndAt) */
+export function attemptEndMs(attempt, test) {
+  return isLimited(attempt, test) ? limitEndMs(attempt, test) : toMs(test?.solutionAvailableAt);
+}
+/** Avtomatik yakunlash boshlanadigan vaqt (Rules: attAutoFrom): limit bo'yicha — tugash + grace */
+export function autoFromMs(attempt, test) {
+  const e = attemptEndMs(attempt, test);
+  return e != null && isLimited(attempt, test) ? e + LIMIT_GRACE_SECONDS * 1000 : e;
+}
+/** Qolgan soniyalar (>= 0) yoki null (tugash vaqti noma'lum) */
+export function remainingSeconds(attempt, test, now = Date.now()) {
+  const e = attemptEndMs(attempt, test);
+  return e == null ? null : Math.max(0, Math.ceil((e - now) / 1000));
+}
+/** "2 soat", "1 soat 30 daqiqa", "45 daqiqa" */
+export function formatLimit(sec) {
+  const h = Math.floor(sec / 3600);
+  const m = Math.round((sec % 3600) / 60);
+  return [h ? `${h} soat` : "", m ? `${m} daqiqa` : ""].filter(Boolean).join(" ") || `${sec} soniya`;
+}
+/**
+ * Server soati bilan farq (ms): brauzer soati noto'g'ri bo'lsa ham hisoblagich haqiqiy vaqtni ko'rsatsin.
+ * Statik sayt javobidagi `Date` sarlavhasidan (HEAD, keshsiz); xato bo'lsa — 0.
+ */
+export async function serverSkewMs(url = location.pathname) {
+  try {
+    const t0 = Date.now();
+    const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+    const t1 = Date.now();
+    const d = Date.parse(r.headers.get("date") || "");
+    if (!Number.isFinite(d)) return 0;
+    return d + (t1 - t0) / 2 - t1;      // server vaqti − klient vaqti (so'rov yarim yo'lga tuzatilgan)
+  } catch { return 0; }
+}
+
 /** Rasmiy urinish mumkinmi: published (archived emas) va yechim hali ochilmagan. */
 export function officialOpen(test, now = Date.now()) {
   const at = toMs(test?.solutionAvailableAt);
@@ -111,7 +175,7 @@ export function officialOpen(test, now = Date.now()) {
 }
 /** "Bugungi test": rasmiy urinish ochiq bo'lgan eng katta kun raqami. */
 export function pickToday(tests, now = Date.now()) {
-  return tests.filter((t) => officialOpen(t, now)).sort((a, b) => b.dayNumber - a.dayNumber)[0] || null;
+  return tests.filter((t) => !isMock(t) && officialOpen(t, now)).sort((a, b) => b.dayNumber - a.dayNumber)[0] || null;
 }
 export function attemptId(uid, testId) {
   return `${uid}__${testId}`;
@@ -178,6 +242,8 @@ export const sectionTitle = (key, fallback) => SECTION_TITLES[key] || fallback |
  * @param {Map<string,object>} testsById  test meta (questionIds, questionTopicIdx, questionEval, topics, section)
  */
 export function computeStats(attempts, testsById, totalDays = TOTAL_DAYS_DEFAULT) {
+  // Mock test kurs progressi va kunlik statistikaga kirmaydi (alohida ko'rsatiladi)
+  attempts = attempts.filter((a) => !isMockDay(a.dayNumber) && !isMock(testsById.get(a.testId)));
   const graded = attempts.filter((a) => a.status === "graded").sort((a, b) => a.dayNumber - b.dayNumber);
   const done = attempts.filter((a) => a.status === "graded" || a.status === "submitted");
   const scores = graded.map((a) => a.scorePercent);
