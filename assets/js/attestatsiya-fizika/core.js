@@ -116,6 +116,17 @@ export function solutionOpen(test, now = Date.now()) {
   const at = toMs(test?.solutionAvailableAt);
   return isVisible(test) && at != null && now >= at;
 }
+/** Foydalanuvchining o'z rasmiy urinishi yakunlangan (qo'lda topshirgan yoki avto-yakunlangan). Rules: attOwnFinished. */
+export function isFinished(attempt) {
+  return !!attempt && (attempt.status === "submitted" || attempt.status === "graded");
+}
+/**
+ * Yechimlar shu foydalanuvchi uchun ochiqmi: yechim vaqti kelgan YOKI o'z urinishi yakunlangan (darhol ochiladi).
+ * Yakunlamaganlar uchun avvalgi qoida (solutionAvailableAt) o'zgarmagan. Rules: attSolutionReadable.
+ */
+export function solutionOpenFor(test, attempt, now = Date.now()) {
+  return solutionOpen(test, now) || (isVisible(test) && isFinished(attempt) && attempt.testId === test.id);
+}
 // ------------------------------------------------------------------ VAQT CHEGARASI (mock test: 2 soat)
 // Qaror serverda (Rules: attHasLimit / attEndAt / attInTime / attAutoFrom). Bu yerda — faqat ko'rsatish va «urinib ko'rish» ishorasi.
 export const LIMIT_GRACE_SECONDS = 60;     // Rules bilan bir xil: tugagandan keyin qo'lda topshirish uchun grace

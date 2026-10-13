@@ -11,7 +11,7 @@ rules_version = '2';
 //     • o'qish: admin; yoki access bor foydalanuvchi + attestationPhysicsDailyTests/{testId} published.
 //       Draft kunning rasmi oddiy foydalanuvchiga YOPIQ.
 //   attestation-physics/solutions/{testId}/{fileHash}
-//     • o'qish: admin; yoki access + published + request.time >= solutionAvailableAt.
+//     • o'qish: admin; yoki access + published + request.time >= solutionAvailableAt; yoki o'z urinishi yakunlangan (submitted/graded).
 //   Yozish — faqat admin (import), faqat rasm, ≤ 2 MB. O'chirish — hech kim.
 //   Frontend rasmlarni getBlob() orqali oladi: har bir so'rov shu qoidalardan o'tadi
 //   (getDownloadURL token-URL'lari ishlatilmaydi — ular doimiy ommaviy havola bo'lib qoladi).
@@ -72,8 +72,17 @@ service firebase.storage {
       allow update, delete: if false;
     }
 
+    // O'z urinishi yakunlangan (submitted/graded) foydalanuvchi yechim rasmlarini yechim vaqtini kutmasdan ko'radi
+    // (firestore.rules attOwnFinished bilan bir xil). Yakunlamaganlar uchun — avvalgidek solutionAvailableAt.
+    function ownFinished(testId) {
+      return signedIn()
+        && firestore.exists(/databases/(default)/documents/attestationPhysicsAttempts/$(request.auth.uid + '__' + testId))
+        && firestore.get(/databases/(default)/documents/attestationPhysicsAttempts/$(request.auth.uid + '__' + testId)).data.status in ['submitted', 'graded'];
+    }
+
     match /attestation-physics/solutions/{testId}/{fileName} {
       allow read: if isAdmin()
+        || (visible(testId) && ownFinished(testId))
         || (dayAccess(testId) && visible(testId) && request.time >= test(testId).solutionAvailableAt);
       allow create: if isAdmin() && validImage();
       allow update, delete: if false;

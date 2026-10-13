@@ -219,8 +219,8 @@ await post("__mock/clock", { iso: tU2.toISOString() });
   ok("D/E: «Sizning javobingiz», «To‘g‘ri javob», «Siz javob bermadingiz» matnlari va variant belgilari", txtOk);
   const rec = cards.find((c) => c.qid === "AF-1-005");
   ok("tiklangan savol AF-1-005 review'da 4 variant bilan, ballga kiradi", rec && rec.opts === 4 && rec.st !== "unscored");
-  ok("G: to‘liq yechim qulf («… da ochiladi»), yechim so‘ralmadi",
-     cards.every((c) => /To‘liq yechim · .* da ochiladi/.test(c.foot)) && page.apiLog.filter((r) => /\/solutions\//.test(r.path)).length === 0);
+  ok("G: to‘liq yechim havolasi ochiq (topshirgan zahoti), qulf yo‘q; natija sahifasi yechim hujjatini so‘ramadi",
+     cards.every((c) => /To‘liq yechim/.test(c.foot) && !/da ochiladi/.test(c.foot)) && page.apiLog.filter((r) => /\/solutions\//.test(r.path)).length === 0);
   const figs = await page.$$eval(".att-rev .att-fig", (fs) => fs.map((f) => ({ s: f.dataset.state, w: f.querySelector("img").naturalWidth })));
   ok("I: review'dagi rasmlar (Firestore manba) yuklandi", figs.length >= 16 && figs.every((f) => f.s === "ready" && f.w > 0), `${figs.filter((f) => f.s === "ready").length}/${figs.length}`);
   const kx = await page.$$eval(".att-rev .katex", (x) => x.length);

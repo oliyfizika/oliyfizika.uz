@@ -4,14 +4,14 @@
 // Oqim: START (startedAt — server) → savollar (faqat shu kun snapshoti) → sekundomer (VAQT CHEGARASI YO'Q,
 // avto-submit yo'q) → TESTNI YAKUNLASH (tasdiq) → SUBMIT (javoblar qulflanadi) → kalit o'qiladi → GRADE
 // (Rules har bir qiymatni tekshiradi) → darhol natija + to'g'ri/noto'g'ri + to'g'ri javob.
-// To'liq yechim bu sahifada ko'rsatilmaydi — u ertasi kuni 00:00 (Toshkent) fizika-yechimlar.html da ochiladi.
+// To'liq yechim bu sahifada ko'rsatilmaydi — u fizika-yechimlar.html da: testni yakunlagan zahoti (yoki ertasi kuni 00:00, Toshkent) ochiladi.
 // Frozen Mock Test engine ishlatilmaydi.
 // ==========================================================================
 import { listVisibleTests, getMyAttempt, startAttempt, getSnapshot, saveDraft, submitAttempt, gradeAttempt, getKey } from "./api.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { bindCalculatorButton, CALC_ICON } from "./calculator-panel.js";
 import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
-import { esc, toMs, timeLimitOf, attemptEndMs, remainingSeconds, formatLimit, serverSkewMs, isMock, dayLabel, dayLabelOf, mockPoints, mockMax, officialOpen, solutionOpen, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
+import { esc, toMs, timeLimitOf, attemptEndMs, remainingSeconds, formatLimit, serverSkewMs, isMock, dayLabel, dayLabelOf, mockPoints, mockMax, officialOpen, solutionOpen, solutionOpenFor, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
 import { renderBlocks, loadKatex, plainText } from "./render.js";
 import { ic, fillIcons, whenUser, stateHtml, errorMessage } from "./ui.js";
 import { openModal } from "../ui/modal.js";
@@ -157,7 +157,7 @@ function renderIntro() {
         <li>${ic("list")}<span><b>${test.questionCount}</b>savol</span></li>
         <li>${ic("target")}<span><b>${isMock(test) ? `${mockMax(test)} ball` : test.scorableCount}</b>${isMock(test) ? `har savol ${test.pointsPerQuestion || 2} ball` : "ballga kiradi"}</span></li>
         <li>${ic("clock")}<span>${timeLimitOf(test) ? `<b>${esc(formatLimit(timeLimitOf(test)))}</b>${resumable ? "qolgan vaqt: " + esc(formatClock(remainingSeconds(attempt, test, nowMs()))) : "boshlagandan hisoblanadi"}` : "<b>Chegarasiz</b>faqat sekundomer"}</span></li>
-        <li>${ic("calendar")}<span><b>${esc(formatTashkent(test.solutionAvailableAt))}</b>yechimlar ochiladi</span></li>
+        <li>${ic("calendar")}<span><b>${esc(formatTashkent(test.solutionAvailableAt))}</b>yechimlar ochiladi (testni yakunlasangiz — darhol)</span></li>
       </ul>
       <p class="of-muted">Test faqat <b>bir marta rasmiy</b> topshiriladi. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.</p>
       ${timeLimitOf(test) ? `<p class="att-limit-note">${ic("clock")}<span>«${resumable ? "Davom ettirish" : "Testni boshlash"}» bosilgan zahoti <b>${esc(formatLimit(timeLimitOf(test)))}</b> hisoblanadi. Sahifani yangilasangiz yoki yopsangiz ham vaqt to‘xtamaydi — qolgan vaqtdan davom etasiz. Vaqt tugaganda javoblaringiz <b>avtomatik topshiriladi</b>.${limitedBySolution() ? ` Yechimlar ${esc(formatTashkent(test.solutionAvailableAt))} da ochilgani uchun bugun sizda atigi <b>${esc(formatLimit(Math.max(60, Math.floor((toMs(test.solutionAvailableAt) - nowMs()) / 1000))))}</b> qolgan.` : ""}</span></p>` : ""}
@@ -446,7 +446,7 @@ async function renderResult(key) {
   const ans = attemptAnswers(a);
   const g = a.status === "graded" ? a : { ...a, ...gradeAnswers(ans, key, a.questionCount) };
   const mock = isMock(test);
-  const solOpen = solutionOpen(test);
+  const solOpen = solutionOpenFor(test, a);
   const solAt = esc(formatTashkent(test.solutionAvailableAt));
   const unscored = snapshot.questions.filter((q) => q.evaluationType !== "auto").length;
   const statuses = snapshot.questions.map((q) => questionStatus(q.id, q.evaluationType, ans, g));
@@ -620,7 +620,7 @@ async function renderResult(key) {
       return;
     }
     if (!officialOpen(test)) {
-      const solLink = solutionOpen(test) ? `<a class="of-btn of-btn--primary" href="fizika-yechimlar.html?day=${day}">Yechimlarni ko‘rish</a>` : "";
+      const solLink = solutionOpenFor(test, attempt) ? `<a class="of-btn of-btn--primary" href="fizika-yechimlar.html?day=${day}">Yechimlarni ko‘rish</a>` : "";
       show(stateHtml("lock", `${dayLabelOf(day)}: rasmiy muddat tugagan`,
         attempt ? "Bu testni topshirmagansiz — rasmiy natija saqlanmadi." : "Bu kunning rasmiy testi yopilgan. To‘liq yechimlar bilan tanishishingiz mumkin.",
         `<div class="of-row" style="justify-content:center;flex-wrap:wrap">${solLink}<a class="of-btn" href="fizikaattestatsiya.html">Dashboard</a></div>`));

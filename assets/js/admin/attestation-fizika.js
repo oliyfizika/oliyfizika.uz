@@ -94,7 +94,7 @@ body.addEventListener("click", async (e) => {
     const order = !isMock(t) && nextDraft && nextDraft.id !== t.id ? ` Diqqat: navbatdagi kun Day ${nextDraft.dayNumber}, siz Day ${t.dayNumber} ni tanladingiz.` : "";
     const ok = await confirmAction({
       title: `${dayLabel(t)} testini foydalanuvchilarga e’lon qilishni xohlaysizmi?`,
-      text: `${isMock(t) ? "Mock test · 40 fizika + 10 pedagogika" : `${t.sectionTitle} · ${t.topics.join(", ")}`} · ${t.questionCount} savol. Test darhol ochiladi; yechimlar ${formatTashkent(solAt)} da (Toshkent) ochiladi. Bu amalni ortga qaytarib bo‘lmaydi (faqat arxivlash mumkin).${order}`,
+      text: `${isMock(t) ? "Mock test · 40 fizika + 10 pedagogika" : `${t.sectionTitle} · ${t.topics.join(", ")}`} · ${t.questionCount} savol. Test darhol ochiladi; yechimlar testni yakunlaganlarga darhol, qolganlarga ${formatTashkent(solAt)} da (Toshkent) ochiladi. Bu amalni ortga qaytarib bo‘lmaydi (faqat arxivlash mumkin).${order}`,
       confirmLabel: "PUBLISH",
     });
     if (!ok) return;

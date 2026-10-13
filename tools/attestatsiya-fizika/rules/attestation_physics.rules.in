@@ -10,7 +10,7 @@
     //   attestationPhysicsDailyTests/{testId}                  Day meta; draft — faqat admin
     //     /versions/v{N}   public snapshot (javobsiz)          — published bo'lsa
     //     /keys/v{N}       javob kaliti (ro'yxat)              — o'z urinishini TOPSHIRGANDAN keyin yoki yechim vaqtida
-    //     /solutions/v{N}  to'liq yechimlar                    — faqat request.time >= solutionAvailableAt
+    //     /solutions/v{N}  to'liq yechimlar                    — request.time >= solutionAvailableAt YOKI o'z urinishi yakunlangan
     //   attestationPhysicsAttempts/{uid}__{testId}             1 ta rasmiy urinish: start → submit → grade
     //
     // Baholash ishonchli: klient yozgan correctAnswers/wrongAnswers/unanswered/scorePercent/correctIds qiymatlari
@@ -178,14 +178,33 @@
       );
     }
 
+    // O'z urinishi YAKUNLANGAN (submitted/graded — qo'lda yoki avto-yakunlash): kalit va yechimlar yechim vaqtini kutmaydi.
+    function attOwnFinished(testId) {
+      let aid = request.auth.uid + '__' + testId;
+      return signedIn() && exists(attAttemptPath(aid))
+        && get(attAttemptPath(aid)).data.status in ['submitted', 'graded'];
+    }
+
+    // ... va aynan shu versiya bo'yicha (keys/v{N}, solutions/v{N}): boshqa versiya hujjati ochilmaydi.
+    function attOwnFinishedVersion(testId, v) {
+      let aid = request.auth.uid + '__' + testId;
+      return attOwnFinished(testId) && attVersionId(get(attAttemptPath(aid)).data.testVersion) == v;
+    }
+
     // Kalit: o'z rasmiy urinishi topshirilgan (submitted/graded) bo'lsa yoki yechim vaqti kelgan bo'lsa.
     function attKeyReadable(testId, v) {
-      let aid = request.auth.uid + '__' + testId;
       return signedIn() && (
-        (exists(attAttemptPath(aid))
-          && get(attAttemptPath(aid)).data.status in ['submitted', 'graded']
-          && attVersionId(get(attAttemptPath(aid)).data.testVersion) == v)
+        attOwnFinishedVersion(testId, v)
         || (attDayOpen(attTest(testId)) && attSolutionOpen(attTest(testId)))
+      );
+    }
+
+    // To'liq yechim (solutions/v{N}): yechim vaqti kelgan (kun ochiq) YOKI o'z urinishi yakunlangan (shu versiya).
+    // Yakunlanmagan foydalanuvchilar uchun avvalgi qoida — solutionAvailableAt — o'zgarmagan.
+    function attSolutionReadable(testId, v) {
+      return attVisible(attTest(testId)) && (
+        (attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)))
+        || attOwnFinishedVersion(testId, v)
       );
     }
 
@@ -233,14 +252,15 @@
       }
 
       match /solutionFigures/{figId} {
-        allow get: if isAdmin() || (attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)));
+        allow get: if isAdmin() || (attVisible(attTest(testId))
+          && ((attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId))) || attOwnFinished(testId)));
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutions/{v} {
-        allow get: if isAdmin() || (attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)));
+        allow get: if isAdmin() || attSolutionReadable(testId, v);
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;

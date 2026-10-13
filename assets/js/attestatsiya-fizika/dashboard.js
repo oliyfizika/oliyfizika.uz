@@ -3,7 +3,7 @@
 // Savollar, kalitlar va yechimlar bu sahifada YUKLANMAYDI.
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
 import { finalizeOverdueList } from "./finalize.js";
-import { esc, pickToday, officialOpen, solutionOpen, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT, isMock, mockPoints, mockMax, timeLimitOf, formatLimit, formatClock, remainingSeconds } from "./core.js";
+import { esc, pickToday, officialOpen, solutionOpenFor, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT, isMock, mockPoints, mockMax, timeLimitOf, formatLimit, formatClock, remainingSeconds } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 
@@ -29,8 +29,8 @@ function dayState(test, attempt, now) {
   return "closed";
 }
 
-function solutionChip(test, now) {
-  if (solutionOpen(test, now)) return `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`;
+function solutionChip(test, now, attempt) {
+  if (solutionOpenFor(test, attempt, now)) return `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`;
   return `<span class="of-badge of-badge--orange">${ic("lock")} Yechim: ${esc(formatTashkent(test.solutionAvailableAt))}</span>`;
 }
 
@@ -77,7 +77,7 @@ function renderToday(today, attempt, now) {
     progress: `<a class="of-btn of-btn--primary of-btn--lg" href="${testHref(today)}">${ic("play")}Davom ettirish</a>`,
     submitted: `<a class="of-btn of-btn--soft of-btn--lg" href="${testHref(today)}">Natijani ko‘rish</a>`,
     done: `<a class="of-btn of-btn--soft of-btn--lg" href="${testHref(today)}">Natijani ko‘rish</a>`,
-  }[st];
+  }[st] + (solutionOpenFor(today, attempt, now) ? `<a class="of-btn of-btn--ghost of-btn--lg" href="${solHref(today)}">${ic("book")}Yechimlar</a>` : "");
   todayEl.innerHTML = `
     <span class="att-daybadge" aria-hidden="true"><small>Day</small><b>${today.dayNumber}</b></span>
     <div class="att-today__body">
@@ -136,8 +136,8 @@ function renderDays(totalDays, tests, attemptsByTest, now) {
     } else {
       chips.push('<span class="of-badge">Rasmiy muddat tugagan</span>');
     }
-    chips.push(solutionChip(t, now));
-    if (solutionOpen(t, now)) foot += `<a class="of-btn of-btn--ghost of-btn--sm" href="${solHref(t)}">${ic("book")}Yechimlar</a>`;
+    chips.push(solutionChip(t, now, a));
+    if (solutionOpenFor(t, a, now)) foot += `<a class="of-btn of-btn--ghost of-btn--sm" href="${solHref(t)}">${ic("book")}Yechimlar</a>`;
     items.push(`<li><article class="of-card att-day" data-state="${st === "done" || st === "submitted" ? "done" : "open"}" aria-labelledby="attDay${day}">
       <div class="att-day__head">
         <span class="att-day__num">${day}</span>
@@ -184,8 +184,8 @@ function renderMock(tests, attemptsByTest, now) {
     } else {
       chips.push('<span class="of-badge">Rasmiy muddat tugagan</span>');
     }
-    chips.push(solutionChip(t, now));
-    if (solutionOpen(t, now)) foot += `<a class="of-btn of-btn--ghost of-btn--sm" href="${solHref(t)}">${ic("book")}Yechimlar</a>`;
+    chips.push(solutionChip(t, now, a));
+    if (solutionOpenFor(t, a, now)) foot += `<a class="of-btn of-btn--ghost of-btn--sm" href="${solHref(t)}">${ic("book")}Yechimlar</a>`;
     return `<li><article class="of-card att-day" data-state="${st === "done" || st === "submitted" ? "done" : "open"}" data-mock-card aria-labelledby="attMock${t.dayNumber}">
       <div class="att-day__head">
         <span class="att-day__num">M</span>

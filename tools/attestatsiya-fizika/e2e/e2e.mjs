@@ -271,7 +271,7 @@ const expU = key1.scorableCount - expC - expW;
   ok("savol bo'yicha: ✓/✕/○/baholanmaydi holatlari", rev.length === n && rev.filter((s) => s === "correct").length === expC && rev.filter((s) => s === "wrong").length === expW && rev.filter((s) => s === "unanswered").length === expU);
   const wrongRow = await page.$('.att-rev[data-status="wrong"] .att-rev__foot');
   ok("noto'g'ri savolda «Sizning javobingiz» va «To‘g‘ri javob»", wrongRow && /Sizning javobingiz: [A-E].*To‘g‘ri javob: [A-E]/.test((await wrongRow.textContent()).replace(/\s+/g, " ")));
-  ok("to'liq yechim hali YOPIQ (eslatma)", /To‘liq yechimlar .* da \(Toshkent vaqti\)/.test(await page.textContent(".att-lock-note")));
+  ok("to'liq yechim topshirgan zahoti OCHIQ (yechim vaqtini kutmaydi), havola bor", /yechimlar ochiq/i.test(await page.textContent(".att-lock-note")) && !!(await page.$('.att-lock-note a[href="fizika-yechimlar.html?day=1"]')));
   ok("natija sahifasi yechim so'ramadi", page.apiLog.filter((r) => /\/solutions\//.test(r.path)).length === 0);
   await page.locator('.att-rev[data-status="wrong"]').first().scrollIntoViewIfNeeded();
   await settle(page, 800);
@@ -290,13 +290,14 @@ const expU = key1.scorableCount - expC - expW;
   await deny("6. user2 → user1 natijalari (so'rov)", apiAs("user2", "query", { col: "attestationPhysicsAttempts", filters: [["userId", "==", "user1"]] }));
   await allow("user1 → o'z urinishi", apiAs("user1", "get", { path: `attestationPhysicsAttempts/user1__${D1}` }));
   await allow("user1 → kalit (submit'dan keyin)", apiAs("user1", "get", { path: `attestationPhysicsDailyTests/${D1}/keys/v1` }));
-  await deny("user1 → yechim (submit'dan keyin ham, vaqtidan oldin)", apiAs("user1", "get", { path: `attestationPhysicsDailyTests/${D1}/solutions/v1` }));
+  await allow("user1 → yechim (o'z urinishini topshirgan — yechim vaqtidan oldin ham)", apiAs("user1", "get", { path: `attestationPhysicsDailyTests/${D1}/solutions/v1` }));
+  await deny("user2 → yechim (urinishi yo'q, yechim vaqtidan oldin)", apiAs("user2", "get", { path: `attestationPhysicsDailyTests/${D1}/solutions/v1` }));
 
-  // Yechimlar sahifasi — hali yopiq
+  // Yechimlar sahifasi — topshirgan foydalanuvchiga yechim vaqtidan oldin ham ochiq
   await page.goto(B + "attestatsiya/fizika-yechimlar.html?day=1");
-  await settle(page);
-  ok("yechimlar sahifasi: Day 1 hali yopiq", /yechimlari hali yopiq/.test(await page.textContent("[data-view]")));
-  await shot(page, "user-07-solution-locked");
+  await page.waitForSelector(".att-solq", { timeout: 20000 });
+  ok("yechimlar sahifasi: topshirgan user uchun Day 1 yechimlari yechim vaqtidan oldin OCHIQ", (await page.$$(".att-solq")).length > 0 && !/hali yopiq/.test(await page.textContent("[data-view]")));
+  await shot(page, "user-07-solution-early");
   await ctx.close();
 }
 

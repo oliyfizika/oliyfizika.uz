@@ -182,17 +182,30 @@ plan[mids[37]] = wrongOf(mids[37]);
   const rev = await page.$$eval(".att-rev", (r) => r.map((x) => ({ s: x.dataset.status, t: x.querySelector(".of-badge")?.textContent.trim() })));
   ok("review: 50 karta; birinchi 40 fizika mavzulari, oxirgi 10 «Pedagogika»", rev.length === 50 && rev.slice(40).every((r) => r.t === "Pedagogika") && rev.slice(0, 40).every((r) => r.t !== "Pedagogika"));
   ok("review: to'g'ri/noto'g'ri/javobsiz soni natijadagidek", rev.filter((r) => r.s === "correct").length === 37 && rev.filter((r) => r.s === "wrong").length === 1 && rev.filter((r) => r.s === "unanswered").length === 12);
-  ok("natija: yechim ochilish vaqti ko'rsatiladi (7-oktabr 24:00 = 8-oktabr 00:00)", /yechimlar|Yechimlar|yechimlar/.test(await txt(page, ".att-lock-note")) && /00:00/.test(await txt(page, ".att-lock-note")), await txt(page, ".att-lock-note"));
+  ok("natija: topshirgan zahoti yechimlar OCHIQ (yechim vaqtini kutmaydi), «Yechimlarni ko'rish» havolasi bor",
+     /yechimlar ochiq/i.test(await txt(page, ".att-lock-note")) && !!(await page.$('.att-lock-note a[href="fizika-yechimlar.html?day=101"]')), await txt(page, ".att-lock-note"));
+  ok("review: har savolda «To'liq yechim» havolasi (qulf yo'q)", (await page.$$(".att-rev__sol:not(.att-rev__sol--locked)")).length === 50 && (await page.$$(".att-rev__sol--locked")).length === 0);
   await page.locator(".att-rev").nth(41).scrollIntoViewIfNeeded();
   await page.waitForTimeout(800);
   await page.screenshot({ path: path.join(OUT, "mock-result-1366.png") });
   ok("natija sahifasi yechim so'ramadi", true);
-  // yechimlar yopiq
+  // yechimlar: topshirgan foydalanuvchi uchun yechim vaqtidan OLDIN ham ochiq
   await page.goto(B + "attestatsiya/fizika-yechimlar.html?day=101");
-  await page.waitForSelector(".att-state");
-  ok("yechimlar (vaqtidan oldin): «Mock test yechimlari hali yopiq»", /Mock test yechimlari hali yopiq/.test(await txt(page, ".att-state")), await txt(page, ".att-state"));
+  await page.waitForSelector(".att-solq", { timeout: 20000 });
+  ok("yechimlar (yechim vaqtidan oldin, topshirgan user): 50 ta yechim ochiq, natija ko'rsatilgan",
+     (await page.$$(".att-solq")).length === 50 && /74 \/ 100 ball/.test(await txt(page, ".att-hero")), (await txt(page, ".att-hero")).slice(0, 160));
+  await page.goto(B + "attestatsiya/fizika-yechimlar.html");
+  await page.waitForSelector(".att-day");
+  const earlyList = await page.$$eval(".att-day", (c) => c.map((x) => ({ t: x.textContent.replace(/\s+/g, " "), link: !!x.querySelector('a[href*="day=101"]') })));
+  ok("yechimlar ro'yxati: topshirilgan mock uchun «Yechimlarni ochish» (yechim vaqtidan oldin)", earlyList.some((x) => x.link && /Mock test/.test(x.t) && /Yechimlar ochiq/.test(x.t)), J(earlyList.map((x) => x.t.slice(0, 60))));
+  await page.goto(B + "attestatsiya/fizikaattestatsiya.html");
+  await page.waitForSelector("[data-mock-card]");
+  const eCard = await page.$eval("[data-mock-card]", (c) => ({ t: c.textContent.replace(/\s+/g, " "), sol: !!c.querySelector('a[href="fizika-yechimlar.html?day=101"]') }));
+  ok("dashboard: topshirgan zahoti «Yechimlar ochiq» chip + «Yechimlar» tugmasi", eCard.sol && /Yechimlar ochiq/.test(eCard.t), eCard.t.slice(0, 200));
   const r5 = await apiAs("nox", "get", { path: `${TC}/${MID}/solutions/v1` });
-  ok("Firestore: yechimlar vaqtidan oldin to'g'ridan-to'g'ri o'qib bo'lmaydi", r5.ok === false, r5.code || "");
+  ok("Firestore: topshirgan user yechim hujjatini yechim vaqtidan oldin o'qiy oladi", r5.ok === true, r5.code || "");
+  const r5b = await apiAs("acc2", "get", { path: `${TC}/${MID}/solutions/v1` });
+  ok("Firestore: urinishsiz user yechimni yechim vaqtidan oldin o'qiy olmaydi", r5b.ok === false, r5b.code || "");
   const forge = await apiAs("nox", "commit", { writes: [{ type: "update", path: `${AC}/nox__${MID}`, data: { scorePercent: 100 } }] });
   ok("Firestore: soxta ball (100) yozib bo'lmaydi", forge.ok === false, forge.code || "");
   ok("foydalanuvchi: konsol xatolari yo'q", !page.errs.length, page.errs.join(" | "));
@@ -216,6 +229,13 @@ plan[mids[37]] = wrongOf(mids[37]);
   await page.waitForTimeout(7500);                                      // qoralama saqlanadi
   const saved = await attemptOf("late");
   ok("late: qoralama saqlandi (5 javob), hali in_progress", saved.status === "in_progress" && Object.keys(saved.answers || {}).length === 5);
+  // topshirmagan (in_progress) user uchun yechimlar yopiq — avvalgi qoida
+  await page.goto(B + "attestatsiya/fizika-yechimlar.html?day=101");
+  await page.waitForSelector(".att-state");
+  ok("yechimlar (in_progress user, yechim vaqtidan oldin): hali yopiq; matnda «yoki testni topshirganingiz zahoti»", /yechimlari hali yopiq/.test(await txt(page, ".att-state")) && /topshirganingiz zahoti/.test(await txt(page, ".att-state")), await txt(page, ".att-state"));
+  const rl = await apiAs("late", "get", { path: `${TC}/${MID}/solutions/v1` });
+  const rk = await apiAs("late", "get", { path: `${TC}/${MID}/keys/v1` });
+  ok("Firestore: in_progress user yechim va kalitni o'qiy olmaydi", rl.ok === false && rk.ok === false, `${rl.code} ${rk.code}`);
   await ctx.close();
 }
 
