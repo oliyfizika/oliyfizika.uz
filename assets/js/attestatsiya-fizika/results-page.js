@@ -5,7 +5,7 @@
 // ==========================================================================
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
 import { finalizeOverdueList } from "./finalize.js";
-import { esc, computeStats, solutionOpen, formatDuration, formatTashkent, TOTAL_DAYS_DEFAULT, isMock, isMockDay, dayLabelOf, mockPoints, mockMax } from "./core.js";
+import { esc, computeStats, solutionOpenFor, formatDuration, formatTashkent, TOTAL_DAYS_DEFAULT, isMock, isMockDay, dayLabelOf, mockPoints, mockMax } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 
 const root = document.getElementById("attRes");
@@ -60,7 +60,7 @@ function columns(days, field, max, cls, fmt) {
           <thead><tr><th scope="col">Kun</th><th scope="col">Natija</th><th scope="col">To‘g‘ri / Noto‘g‘ri / Javobsiz</th><th scope="col">Vaqt</th><th scope="col">Topshirilgan</th><th scope="col">Yechim</th></tr></thead>
           <tbody>${history.map((a) => {
             const t = testsById.get(a.testId);
-            const solLink = t && solutionOpen(t)
+            const solLink = t && solutionOpenFor(t, a)
               ? `<a href="fizika-yechimlar.html?day=${a.dayNumber}">Ochiq</a>`
               : t ? `<span class="of-subtle">${esc(formatTashkent(t.solutionAvailableAt))}</span>` : "—";
             const mock = isMock(t) || isMockDay(a.dayNumber);

@@ -9,7 +9,7 @@ Holat: **lokal, commit/push/deploy qilinmagan.** Production Firestore'ga hech na
 | Tarkib | 40 fizika (Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — **8 tadan**) + 10 pedagogika |
 | Ball | har savol 2 ball, jami 100. `scorePercent == ball` (50 savol × 2), shuning uchun Rules'dagi mavjud baholash tekshiruvi o'zgarmadi |
 | Kirish | **hamma kirgan foydalanuvchiga bepul** (paid rejimda ham, `attestationAccess`siz ham) |
-| E'lon / yechim / natija | kunlik testlar bilan **bir xil**: admin PUBLISH → ertasi 00:00 (Toshkent) yechim va kalit ochiladi; natija topshirgan zahoti; avto-yakunlash (`attValidAutoSubmit`) ham ishlaydi |
+| E'lon / yechim / natija | kunlik testlar bilan **bir xil**: admin PUBLISH → natija va kalit topshirgan zahoti; yechimlar **testni yakunlagan foydalanuvchiga darhol** (qolganlarga ertasi 00:00, Toshkent — `25_early_solutions.md`); avto-yakunlash (`attValidAutoSubmit`) ham ishlaydi |
 | Kalendar | kurs kunlari (1..100) kalendari, «Bugungi test», progress va kunlik statistikaga **aralashmaydi** |
 
 ## Arxitektura (yangi kolleksiya yo'q)

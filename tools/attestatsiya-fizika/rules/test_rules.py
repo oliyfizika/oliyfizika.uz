@@ -361,7 +361,8 @@ def main():
            db.write(U1, A1, {"answers": dict(key["answers"])}, t2 + dt.timedelta(seconds=10), apply=False), False)
     expect("kalit: submit'dan keyin — ruxsat (darhol natija va to'g'ri javob)", db.read(U1, D1 + "/keys/v1", t2), True)
     expect("kalit: boshqa user (urinishsiz) — rad", db.read(U2, D1 + "/keys/v1", t2), False)
-    expect("yechim: submit'dan keyin ham hali yopiq", db.read(U1, D1 + "/solutions/v1", t2), False)
+    expect("yechim: o'z urinishini topshirgach — darhol ochiq (yechim vaqtini kutmaydi)", db.read(U1, D1 + "/solutions/v1", t2), True)
+    expect("yechim: boshqa user (urinishsiz) — hali yopiq", db.read(U2, D1 + "/solutions/v1", t2), False)
 
     # ------------------------------------------------------------ 6. GRADE (Rules ichida tekshiriladi)
     t3 = t2 + dt.timedelta(seconds=2)
@@ -409,7 +410,7 @@ def main():
 
     # ------------------------------------------------------------ 7. ertasi kun: yechim ochiladi
     t4 = sol_at + dt.timedelta(minutes=1)
-    expect("yechim: solutionAvailableAt'dan oldin 1 daqiqa — rad", db.read(U1, D1 + "/solutions/v1", sol_at - dt.timedelta(minutes=1)), False)
+    expect("yechim: solutionAvailableAt'dan oldin 1 daqiqa — urinishsiz user uchun rad", db.read(U3, D1 + "/solutions/v1", sol_at - dt.timedelta(minutes=1)), False)
     expect("yechim: ertasi kuni — ruxsat", db.read(U1, D1 + "/solutions/v1", t4), True)
     expect("yechim: urinishsiz user ham ertasi kuni ko'radi", db.read(U3, D1 + "/solutions/v1", t4), True)
     expect("rasmiy urinish: yechim ochilgach start — rad",
@@ -433,6 +434,8 @@ def main():
     expect("eski urinish v1 bilan qoladi", db.docs[A1]["testVersion"] == 1)
     expect("user1 v1 kalitini o'qiydi, v2 ni emas (urinish v1)",
            (db.read(U1, D1 + "/keys/v1", t2), db.read(U1, D1 + "/keys/v2", t2)) == (True, False))
+    expect("user1 v1 yechimini (yakunlagani uchun) o'qiydi, v2 ni emas (t2 — yechim vaqtidan oldin)",
+           (db.read(U1, D1 + "/solutions/v1", t2), db.read(U1, D1 + "/solutions/v2", t2)) == (True, False))
 
     # ------------------------------------------------------------ 9. archive
     expect("archive — ruxsat", db.write(ADMIN, D1, {"status": "archived", "archivedAt": SERVER}, t4), True)
@@ -594,13 +597,17 @@ def main():
                 sim["gradesAccepted"] += 1
         if tid == sol_test:
             sp = sol_fig["path"]
-            expect("Storage: yechim rasmi solutionAvailableAt dan oldin yopiq", stor(au, sp, s1), False)
+            expect("Storage: yechim rasmi topshirgan user uchun darhol ochiq (yechim vaqtidan oldin)", stor(au, sp, s1), True)
             expect("Storage: yechim rasmi solutionAvailableAt dan keyin ochiq",
                    stor(au, sp, db.docs[p]["solutionAvailableAt"] + dt.timedelta(seconds=1)), True)
             fd = f"attestationPhysicsDailyTests/{tid}/solutionFigures/{sp.rsplit('/', 1)[1]}"
-            expect("Firestore yechim rasmi: vaqtidan oldin rad / keyin ruxsat",
+            expect("Firestore yechim rasmi: topshirgan user uchun vaqtidan oldin ham, keyin ham ruxsat",
                    (db.read(au, fd, s1), db.read(au, fd, db.docs[p]["solutionAvailableAt"] + dt.timedelta(seconds=1))),
-                   (False, True))
+                   (True, True))
+            nobody = auth_of("sim-nobody")
+            db.docs.setdefault("users/sim-nobody", {"fullName": "n", "email": "n@example.com", "xp": 0, "level": 1, "fullAccess": False})
+            expect("yechim rasmi: urinishsiz user uchun vaqtidan oldin yopiq (Storage va Firestore)",
+                   (stor(nobody, sp, s1), db.read(nobody, fd, s1)), (False, False))
         sim["days"] += 1
         tt = next_midnight_tashkent(tt) + dt.timedelta(hours=4)
     expect("simulyatsiya: Day 3–32 (30 kun) × 3 user baholash qabul qilindi",
@@ -834,6 +841,9 @@ def main():
     expect("mock: begona savol ID'si javobda — rad", db.write(NOX, mA("nox"), {"answers": {**ans, "AF-9-999": "A"}, "savedAt": SERVER}, mat + dt.timedelta(minutes=11), apply=False), False)
     expect("mock: SUBMIT", db.write(NOX, mA("nox"), {"status": "submitted", "completedAt": SERVER, "answers": ans}, mat + dt.timedelta(minutes=40)), True)
     expect("mock: submitdan keyin kalit o'qiladi", db.read(NOX, f"{M}/keys/v1", mat + dt.timedelta(minutes=41)), True)
+    expect("mock: submitdan keyin yechim ham darhol ochiladi (yechim vaqtidan oldin, paid rejimda ham)",
+           db.read(NOX, f"{M}/solutions/v1", mat + dt.timedelta(minutes=41)), True)
+    expect("mock: boshqa user (urinishsiz) — yechim yopiq", db.read(auth_of("acc"), f"{M}/solutions/v1", mat + dt.timedelta(minutes=41)), False)
     g = {**grade_of(ans, mk, 50), "timeSpentSeconds": 2400}      # startedAt = mat, completedAt = mat + 40 daqiqa
     expect("mock: baho = 2 ball x to'g'ri javob (37 -> 74 ball)", g["correctAnswers"] == 37 and g["scorePercent"] == 74 == 2 * g["correctAnswers"], True)
     expect("mock: soxta ball (100) — rad", db.write(NOX, mA("nox"), {**g, "scorePercent": 100}, mat + dt.timedelta(minutes=42), apply=False), False)
@@ -842,6 +852,8 @@ def main():
     expect("mock: yechim vaqtidan keyin mehmon yecha olmaydi", db.read(GUEST, f"{M}/solutions/v1", mafter), False)
     # avtomatik yakunlash mock uchun ham ishlaydi
     db.docs[mA("acc")] = {**mst("acc"), "startedAt": mat, "answers": dict(list(ans.items())[:5])}
+    expect("mock: in_progress (hali topshirmagan) user uchun yechim va kalit yopiq",
+           (db.read(auth_of("acc"), f"{M}/solutions/v1", mat + dt.timedelta(minutes=50)), db.read(auth_of("acc"), f"{M}/keys/v1", mat + dt.timedelta(minutes=50))) == (False, False))
     expect("mock: avtomatik yakunlash (yechim vaqtida, in_progress -> submitted)",
            db.write(auth_of("acc"), mA("acc"), {"status": "submitted", "completedAt": mat + dt.timedelta(hours=2), "answers": db.docs[mA("acc")]["answers"], "autoFinalized": True}, mafter), True)
     expect("mock: vaqtidan oldin avtomatik yakunlash — rad", db.write(auth_of("acc"), mA("acc"), {"status": "submitted"}, mat, apply=False), False)
