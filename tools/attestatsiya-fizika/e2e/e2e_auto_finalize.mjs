@@ -1,6 +1,6 @@
 // ==========================================================================
-// Attestatsiya → Fizika: E2E — yakunlanmagan rasmiy urinishni yechim ochilish vaqtida avtomatik yakunlash (lazy).
-// Mock server soati = server vaqti (request.time). Day 1: v2 (v1 dan farqli kalit), yechim S = T0 + 1 soat.
+// Attestatsiya → Fizika: E2E — yakunlanmagan rasmiy urinishni vaqt chegarasi (startedAt + 2 soat + 60 s) o'tgach avtomatik yakunlash (lazy).
+// Mock server soati = server vaqti (request.time). Day 1: v2 (v1 dan farqli kalit). completedAt = startedAt + 2 soat.
 //   python3 tools/attestatsiya-fizika/e2e/mock_server.py --port 8799 &
 //   E2E_PORT=8799 node tools/attestatsiya-fizika/e2e/e2e_auto_finalize.mjs
 // Natija: _private/attestatsiya-fizika/e2e/report-auto-finalize.json; exit 1 — biror tekshiruv FAIL.
@@ -37,6 +37,10 @@ const OPTS = ["A", "B", "C", "D"];
 const T0 = new Date("2026-10-04T18:00:00Z");           // 23:00 Toshkent
 const S = new Date(T0.getTime() + 3600000);            // 2026-10-05 00:00 Toshkent
 const plus = (d, s) => new Date(d.getTime() + s * 1000);
+const LIMIT = 7200;                                    // kunlik test: start + 2 soat
+const LE = (st) => plus(st, LIMIT);                    // chegara tugashi
+const AF = (st) => plus(st, LIMIT + 60);               // avto-yakunlash boshlanishi (grace dan keyin)
+const T_B = plus(T0, 60), T_E = plus(T0, 120), T_C = plus(T0, 180), T_R = plus(T0, 240);   // start vaqtlari
 
 // ---------------------------------------------------------------- seed
 const docs = { "attestationPhysicsSettings/config": { ...opData("attestationPhysicsSettings/config"), figureBackend: "firestore" } };
@@ -114,7 +118,7 @@ let ansB = null;
   await page.click(".of-modal__actions .of-btn--success");
   await page.waitForSelector(".att-review .att-rev");
   const e = await att("uE");
-  ok("A: qo‘lda yakunlash — graded, autoFinalized yo‘q, completedAt = bosilgan vaqt", e.status === "graded" && !("autoFinalized" in e) && sec(e.completedAt) < Math.floor(S / 1000));
+  ok("A: qo‘lda yakunlash — graded, autoFinalized yo‘q, completedAt = bosilgan vaqt", e.status === "graded" && !("autoFinalized" in e) && sec(e.completedAt) < Math.floor(LE(T_B) / 1000));
   await ctx.close();
 }
 await clock(plus(T0, 180));
@@ -122,46 +126,49 @@ ok("uC/uD/uH: start (server vaqti)", (await start("uC")).ok && (await start("uD"
 const ansD = Object.fromEntries(sc(k2).map((q) => [q, k2.answers[q]]));
 ok("D: uD barcha javoblarni saqladi", (await commit("uD", [{ type: "update", path: `${AC}/uD__${D1}`, data: { answers: ansD, savedAt: { __server: true } } }])).ok);
 
-// ---------------------------------------------------------------- 2. S dan oldin — hali in_progress
-await clock(plus(S, -60));
+
+// uR: UI orqali boshlaydi, 2 javob beradi — sahifa ochiq qoladi (keyin vaqt tugagach «Testni yakunlash» bosadi)
+await clock(T_R);
+const { ctx: rCtx, page: rPage } = await ctxFor("uR", T_R);
+await rPage.goto(B + "attestatsiya/fizika-test.html?day=1");
+await rPage.click("[data-start]");
+await rPage.waitForSelector(".att-q");
+await rPage.click('.att-opt[data-key="C"]');
+await rPage.click("[data-next]");
+await rPage.click('.att-opt[data-key="D"]');
+await rPage.waitForTimeout(7500);
+const ansR = (await att("uR")).answers;
+
+// ---------------------------------------------------------------- 2. chegara + grace dan oldin — hali in_progress
+await clock(plus(AF(T_B), -60));
 {
-  const { ctx, page } = await ctxFor("uB", plus(S, -60));
+  const { ctx, page } = await ctxFor("uB", plus(AF(T_B), -60));
   await page.goto(B + "attestatsiya/fizika-test.html?day=1");
   await page.waitForSelector("[data-start]");
-  ok("E: S dan oldin qaytdi — hali in_progress, «Davom ettirish»", (await att("uB")).status === "in_progress" && /Davom ettirish/.test(await page.textContent("[data-start]")));
+  ok("E: chegara + grace dan oldin qaytdi — hali in_progress, «Davom ettirish»", (await att("uB")).status === "in_progress" && /Davom ettirish/.test(await page.textContent("[data-start]")));
   await ctx.close();
 }
-const early = await commit("uB", [{ type: "update", path: `${AC}/uB__${D1}`, data: { status: "submitted", completedAt: ts(S), answers: ansB, autoFinalized: true } }]);
-ok("server vaqti: S dan oldin avtomatik yakunlash — Rules rad etadi (klient soati ahamiyatsiz)", early.ok === false);
+const early = await commit("uB", [{ type: "update", path: `${AC}/uB__${D1}`, data: { status: "submitted", completedAt: ts(LE(T_B)), answers: ansB, autoFinalized: true } }]);
+ok("server vaqti: chegara + grace dan oldin avtomatik yakunlash — Rules rad etadi (klient soati ahamiyatsiz)", early.ok === false);
 
-// ---------------------------------------------------------------- 3. poyga: qo'lda submit S − 1 s, keyin avtomatik S da
-await clock(plus(S, -1));
+// ---------------------------------------------------------------- 3. poyga: qo'lda submit (grace tugashidan 1 s oldin), keyin avtomatik
+await clock(plus(AF(T_C), -1));
 const man = await commit("uH", [{ type: "update", path: `${AC}/uH__${D1}`, data: { status: "submitted", completedAt: { __server: true }, answers: {} } }]);
-await clock(S);
-const auto = await commit("admin1", [{ type: "update", path: `${AC}/uH__${D1}`, data: { status: "submitted", completedAt: ts(S), answers: {}, autoFinalized: true } }]);
-ok("H: poyga — qo‘lda submit (S − 1 s) o‘tdi, avtomatik (S) rad — bitta yakun", man.ok === true && auto.ok === false && !("autoFinalized" in (await att("uH"))));
+await clock(AF(T_C));
+const auto = await commit("admin1", [{ type: "update", path: `${AC}/uH__${D1}`, data: { status: "submitted", completedAt: ts(LE(T_C)), answers: {}, autoFinalized: true } }]);
+ok("H: poyga — qo‘lda submit (grace − 1 s) o‘tdi, avtomatik rad — bitta yakun", man.ok === true && auto.ok === false && !("autoFinalized" in (await att("uH"))));
 
-// ---------------------------------------------------------------- 4. uR: test sahifasi ochiq, S o'tgach «Testni yakunlash» bosadi
-await clock(plus(S, -1800));
-let ansR = null;
+// ---------------------------------------------------------------- 4. uR: test sahifasi ochiq, vaqt tugagach «Testni yakunlash» bosadi
 {
-  const { ctx, page } = await ctxFor("uR", plus(S, -1800));
-  await page.goto(B + "attestatsiya/fizika-test.html?day=1");
-  await page.click("[data-start]");
-  await page.waitForSelector(".att-q");
-  await page.click('.att-opt[data-key="C"]');
-  await page.click("[data-next]");
-  await page.click('.att-opt[data-key="D"]');
-  await page.waitForTimeout(7500);
-  ansR = (await att("uR")).answers;
-  await clock(plus(S, 60));                                           // server vaqti S dan o'tdi
+  const { ctx, page } = { ctx: rCtx, page: rPage };
+  await clock(plus(AF(T_R), 60));                                     // server vaqti chegara + grace dan o'tdi
   await page.click('.att-opt[data-key="A"]');                         // saqlanmagan o'zgarish (S dan keyin — qabul qilinmaydi)
   await page.click("[data-finish]");
   await page.click(".of-modal__actions .of-btn--success");
   await page.waitForSelector(".att-review .att-rev", { timeout: 20000 });
   const toastR = await page.textContent(".of-toast-region").catch(() => "");
   const r = await att("uR");
-  ok("H2: yakunlash S dan keyin bosildi — qo‘lda submit rad, avtomatik yakunlandi (oxirgi saqlangan javoblar)",
+  ok("H2: yakunlash chegara + grace dan keyin bosildi — qo‘lda submit rad, avtomatik yakunlandi (oxirgi saqlangan javoblar)",
      r.status === "graded" && r.autoFinalized === true && J(r.answers) === J(ansR) && Object.keys(ansR).length === 2, J(r.answers));
   ok("H2: foydalanuvchiga natija va xabar ko‘rsatildi", /avtomatik yakunlandi/.test(toastR) && (await page.$$(".att-rev")).length === 32, toastR.trim());
   ok("H2: konsol xatolari yo‘q (kutilgan permission-denied dan tashqari)", !page.errs.filter((e) => !/permission|ruxsat|submit\/grade/i.test(e)).length, page.errs.join(" | "));
@@ -169,7 +176,7 @@ let ansR = null;
 }
 
 // ---------------------------------------------------------------- 5. uB ertalab qaytadi (S + 8 soat)
-const late = plus(S, 8 * 3600);
+const late = plus(AF(T_R), 8 * 3600);
 await clock(late);
 {
   const { ctx, page } = await ctxFor("uB", late);
@@ -180,9 +187,9 @@ await clock(late);
   const eb = expectGrade(k2, b.answers || {});
   ok("F/B: qaytganda (dashboard) — graded, autoFinalized", b.status === "graded" && b.autoFinalized === true);
   ok("B: javoblar o‘zgarmagan, 1 javob baholandi, qolgani javobsiz", J(b.answers) === J(ansB) && b.correctAnswers === eb.c && b.wrongAnswers === eb.w && b.unanswered === eb.u, J([b.correctAnswers, b.wrongAnswers, b.unanswered]));
-  ok("solutionAvailableAt: completedAt = S (2026-10-05 00:00 Toshkent)", sec(b.completedAt) === Math.floor(S / 1000) && new Date(S).toISOString() === "2026-10-04T19:00:00.000Z");
-  ok("vaqt: S bilan cheklangan (startedAt → S, Rules formulasi), 8 soat qo‘shilmagan",
-     b.timeSpentSeconds === Math.floor((tsMs(b.completedAt) - tsMs(b.startedAt)) / 1000) && b.timeSpentSeconds < 3600, String(b.timeSpentSeconds));
+  ok("completedAt = startedAt + 2 soat (yechim vaqti emas)", sec(b.completedAt) === sec(b.startedAt) + LIMIT && sec(b.completedAt) < Math.floor(S / 1000) + 3 * 3600);
+  ok("vaqt: 2 soat bilan cheklangan (startedAt → startedAt + 2 soat), 8 soat qo‘shilmagan",
+     b.timeSpentSeconds === LIMIT && b.timeSpentSeconds === Math.floor((tsMs(b.completedAt) - tsMs(b.startedAt)) / 1000), String(b.timeSpentSeconds));
   ok("o‘zgarmagan maydonlar: userId, testId, dayNumber, testVersion, attemptNumber, kind", b.userId === "uB" && b.testId === D1 && b.dayNumber === 1 && b.testVersion === 2 && b.attemptNumber === 1 && b.kind === "official");
   // natija sahifasi + Result Review
   await page.goto(B + "attestatsiya/fizika-test.html?day=1");
@@ -195,17 +202,19 @@ await clock(late);
   // yechimlar sahifasi (ochiq)
   await page.goto(B + "attestatsiya/fizika-yechimlar.html?day=1");
   await page.waitForSelector(".att-solq", { timeout: 15000 });
-  ok("Solution unlock: S dan keyin yechimlar ochiq", (await page.$$(".att-solq")).length > 0);
+  ok("Solution unlock: vaqt tugab avto-yakunlangach yechimlar ochiq", (await page.$$(".att-solq")).length > 0);
   ok("uB: konsol xatolari yo‘q", !page.errs.length, page.errs.join(" | "));
   await ctx.close();
 }
-const solEarly = await apiAs("uC", "get", { path: `${TC}/${D1}/solutions/v2` });
-ok("Solution unlock va avtomatik yakun bir xil chegara (S): S dan keyin yechim ochiq", solEarly.ok === true);
+const solUC = await apiAs("uC", "get", { path: `${TC}/${D1}/solutions/v2` });
+ok("uC hali yakunlanmagan (in_progress): vaqt tugagan bo‘lsa ham yechim yopiq (avto-yakunlashdan oldin)", solUC.ok === false, solUC.code || "");
+const solUB = await apiAs("uB", "get", { path: `${TC}/${D1}/solutions/v2` });
+ok("uB avto-yakunlangach — yechim ochiq", solUB.ok === true);
 
 // ---------------------------------------------------------------- 6. xavfsizlik
 const forge = await commit("uD", [{ type: "update", path: `${AC}/uD__${D1}`, data: { status: "graded", scorePercent: 100, correctAnswers: 31 } }]);
 ok("Security: user o‘zini graded + natija yoza olmaydi", forge.ok === false);
-const other = await commit("user1", [{ type: "update", path: `${AC}/uD__${D1}`, data: { status: "submitted", completedAt: ts(S), answers: ansD, autoFinalized: true } }]);
+const other = await commit("user1", [{ type: "update", path: `${AC}/uD__${D1}`, data: { status: "submitted", completedAt: ts(LE(T_C)), answers: ansD, autoFinalized: true } }]);
 ok("Security: boshqa user birovning urinishini yakunlay olmaydi", other.ok === false);
 const stretch = await commit("uD", [{ type: "update", path: `${AC}/uD__${D1}`, data: { status: "submitted", completedAt: { __server: true }, answers: ansD, autoFinalized: true } }]);
 ok("Security: completedAt = hozir (vaqtni cho‘zish) — rad", stretch.ok === false);
@@ -221,7 +230,7 @@ ok("Security: completedAt = hozir (vaqtni cho‘zish) — rad", stretch.ok === f
   ok("admin: 3 ta urinish avtomatik yakunlandi (uC, uD, uF), 1 ta topshirilgan (uH) baholandi",
      /3 ta yakunlanmagan urinish/.test(toastTxt) && /1 ta topshirilgan urinish baholandi/.test(toastTxt), toastTxt.trim());
   const h = await att("uH");
-  ok("H: uH — qo‘lda topshirilgan urinish baholandi, avtomatik belgisiz, completedAt S − 1 s", h.status === "graded" && !("autoFinalized" in h) && sec(h.completedAt) === Math.floor(S / 1000) - 1);
+  ok("H: uH — qo‘lda topshirilgan urinish baholandi, avtomatik belgisiz, completedAt = grace − 1 s", h.status === "graded" && !("autoFinalized" in h) && sec(h.completedAt) === Math.floor(AF(T_C) / 1000) - 1);
   const c = await att("uC"), d = await att("uD"), f = await att("uF"), g = await att("uG");
   ok("C: hech javob yo‘q — graded, hammasi javobsiz, 0 %", c.status === "graded" && c.unanswered === sc(k2).length && c.scorePercent === 0 && J(c.answers) === "{}");
   ok("D: barcha javob (yakunlanmagan) — graded 100 %", d.status === "graded" && d.scorePercent === 100 && d.correctAnswers === sc(k2).length);
@@ -255,7 +264,7 @@ ok("Security: completedAt = hozir (vaqtni cho‘zish) — rad", stretch.ok === f
   await page.waitForSelector("[data-admin-root]:not([hidden])");
   await page.waitForTimeout(2500);
   ok("G: qayta ochilganda — hech narsa o‘zgarmadi (graded → graded yo‘q)", J(await dump(AC)) === J(snap) && !/avtomatik yakunlandi/.test(await page.textContent("body")));
-  const again = await commit("admin1", [{ type: "update", path: `${AC}/uC__${D1}`, data: { status: "submitted", completedAt: ts(S), answers: {}, autoFinalized: true } }]);
+  const again = await commit("admin1", [{ type: "update", path: `${AC}/uC__${D1}`, data: { status: "submitted", completedAt: ts(LE(T_C)), answers: {}, autoFinalized: true } }]);
   ok("G: graded urinishni qayta yakunlash — rad", again.ok === false);
   await ctx.close();
   const { ctx: c2, page: p2 } = await ctxFor("uB", plus(late, 700));

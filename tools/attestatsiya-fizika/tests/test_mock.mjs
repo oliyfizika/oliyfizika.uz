@@ -102,19 +102,22 @@ expect("reja fayli (commit uchun) javobsiz: faqat ID/hisoblar", !leak.test(JSON.
   const st = Date.parse("2099-01-01T10:00:00Z");
   const lm = { ...mock, timeLimitSeconds: 7200, solutionAvailableAt: TS("2099-01-02T00:00:00Z") };
   const at = { testId: lm.id, kind: "official", status: "in_progress", testVersion: 1, startedAt: { seconds: st / 1000, nanoseconds: 5 }, answers: { Q1: "A" } };
-  expect("timeLimitOf: 7200 / yo'q / noto'g'ri", timeLimitOf(lm) === 7200 && timeLimitOf(day) === null && timeLimitOf({ timeLimitSeconds: 30 }) === null && timeLimitOf({ timeLimitSeconds: "7200" }) === null);
-  expect("limitEndMs/isLimited/attemptEndMs", limitEndMs(at, lm) === st + 7200000 && isLimited(at, lm) && attemptEndMs(at, lm) === st + 7200000 && !isLimited(at, day));
+  expect("timeLimitOf: mock 7200; kunlik test (maydon yo'q yoki noto'g'ri) — standart 2 soat; maydonsiz mock — null",
+  timeLimitOf(lm) === 7200 && timeLimitOf(day) === 7200 && timeLimitOf({ timeLimitSeconds: 30 }) === 7200 && timeLimitOf({ timeLimitSeconds: "7200" }) === 7200
+  && timeLimitOf({ ...mock, timeLimitSeconds: undefined }) === null && timeLimitOf(null) === null);
+  expect("limitEndMs/isLimited/attemptEndMs (mock va kunlik)", limitEndMs(at, lm) === st + 7200000 && isLimited(at, lm) && attemptEndMs(at, lm) === st + 7200000
+  && isLimited(at, day) && attemptEndMs(at, day) === st + 7200000);
   expect("limit yechim vaqtidan keyin tugasa — yechim vaqti hisobga olinadi", (() => {
     const late = { ...lm, solutionAvailableAt: TS("2099-01-01T11:00:00Z") };
     return !isLimited(at, late) && attemptEndMs(at, late) === Date.parse("2099-01-01T11:00:00Z");
   })());
   expect("remainingSeconds: boshida 7200, 1 soatdan keyin 3600, oxirida 0 (manfiy emas)", remainingSeconds(at, lm, st) === 7200 && remainingSeconds(at, lm, st + 3600000) === 3600 && remainingSeconds(at, lm, st + 9e6) === 0);
-  expect("remainingSeconds: chegarasiz kunlik testda yechim vaqtigacha", remainingSeconds(at, { ...day, solutionAvailableAt: TS("2099-01-01T11:00:00Z") }, st) === 3600);
-  expect("autoFromMs = limit + 60 s grace", autoFromMs(at, lm) === st + 7200000 + 60000 && autoFromMs(at, day) === Date.parse("2099-01-01T00:00:00Z"));
+  expect("remainingSeconds: kunlik test — yechim vaqtidan qat'i nazar start + 2 soat", remainingSeconds(at, { ...day, solutionAvailableAt: TS("2099-01-01T11:00:00Z") }, st) === 7200);
+  expect("autoFromMs = limit + 60 s grace (mock va kunlik)", autoFromMs(at, lm) === st + 7200000 + 60000 && autoFromMs(at, day) === st + 7200000 + 60000);
   expect("isOverdue: grace tugamaguncha yo'q, keyin ha", !isOverdue(at, lm, st + 7200000 + 59000) && isOverdue(at, lm, st + 7200000 + 60000) && !isOverdue(at, lm, st + 1000));
   const p = autoSubmitPatch(at, lm);
   expect("autoSubmitPatch: completedAt = startedAt + 7200 (nanosoniyalar bilan), javoblar o'zgarmaydi", p.completedAt.seconds === st / 1000 + 7200 && p.completedAt.nanoseconds === 5 && p.answers.Q1 === "A" && p.autoFinalized === true && p.status === "submitted");
-  expect("autoSubmitPatch: kunlik testda completedAt = solutionAvailableAt", autoSubmitPatch(at, day).completedAt === day.solutionAvailableAt);
+  expect("autoSubmitPatch: kunlik testda ham completedAt = startedAt + 2 soat", autoSubmitPatch(at, day).completedAt.seconds === st / 1000 + 7200);
   expect("formatLimit", formatLimit(7200) === "2 soat" && formatLimit(5400) === "1 soat 30 daqiqa" && formatLimit(2700) === "45 daqiqa");
 }
 

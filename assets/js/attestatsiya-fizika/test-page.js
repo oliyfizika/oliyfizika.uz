@@ -103,7 +103,7 @@ function startClock() {
 function limitedBySolution() {
   const lim = timeLimitOf(test);
   const sol = toMs(test.solutionAvailableAt);
-  return !!lim && sol != null && !attempt && nowMs() + lim * 1000 > sol;
+  return isMock(test) && !!lim && sol != null && !attempt && nowMs() + lim * 1000 > sol;
 }
 
 // ------------------------------------------------------------------ teskari hisoblagich (vaqt chegarasi: mock — 2 soat)
@@ -157,9 +157,11 @@ function renderIntro() {
         <li>${ic("list")}<span><b>${test.questionCount}</b>savol</span></li>
         <li>${ic("target")}<span><b>${isMock(test) ? `${mockMax(test)} ball` : test.scorableCount}</b>${isMock(test) ? `har savol ${test.pointsPerQuestion || 2} ball` : "ballga kiradi"}</span></li>
         <li>${ic("clock")}<span>${timeLimitOf(test) ? `<b>${esc(formatLimit(timeLimitOf(test)))}</b>${resumable ? "qolgan vaqt: " + esc(formatClock(remainingSeconds(attempt, test, nowMs()))) : "boshlagandan hisoblanadi"}` : "<b>Chegarasiz</b>faqat sekundomer"}</span></li>
-        <li>${ic("calendar")}<span><b>${esc(formatTashkent(test.solutionAvailableAt))}</b>yechimlar ochiladi (testni yakunlasangiz — darhol)</span></li>
+        <li>${ic("calendar")}<span>${isMock(test)
+          ? `<b>${esc(formatTashkent(test.solutionAvailableAt))}</b>yechimlar ochiladi (testni yakunlasangiz — darhol)`
+          : "<b>Yakunlaganda</b>yechimlar shu zahoti ochiladi"}</span></li>
       </ul>
-      <p class="of-muted">Test faqat <b>bir marta rasmiy</b> topshiriladi. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.</p>
+      <p class="of-muted">Test faqat <b>bir marta rasmiy</b> topshiriladi${isMock(test) ? "" : " — uni xohlagan kuningizda boshlashingiz mumkin"}. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.</p>
       ${timeLimitOf(test) ? `<p class="att-limit-note">${ic("clock")}<span>«${resumable ? "Davom ettirish" : "Testni boshlash"}» bosilgan zahoti <b>${esc(formatLimit(timeLimitOf(test)))}</b> hisoblanadi. Sahifani yangilasangiz yoki yopsangiz ham vaqt to‘xtamaydi — qolgan vaqtdan davom etasiz. Vaqt tugaganda javoblaringiz <b>avtomatik topshiriladi</b>.${limitedBySolution() ? ` Yechimlar ${esc(formatTashkent(test.solutionAvailableAt))} da ochilgani uchun bugun sizda atigi <b>${esc(formatLimit(Math.max(60, Math.floor((toMs(test.solutionAvailableAt) - nowMs()) / 1000))))}</b> qolgan.` : ""}</span></p>` : ""}
       ${isMock(test) ? `<p class="of-subtle">Fizika: Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — har bobdan 8 tadan; so‘ng Pedagogika bo‘limi.</p>` : ""}
       ${test.questionCount - test.scorableCount > 0 ? `<p class="of-subtle">${test.questionCount - test.scorableCount} ta savol (variantsiz yoki manbasida noaniqlik bor) testda qoladi, lekin ballga kirmaydi.</p>` : ""}

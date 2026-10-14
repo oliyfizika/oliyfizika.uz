@@ -4,14 +4,14 @@
 // Backend/scheduler yo'q (statik sayt + Firestore Rules), shuning uchun yakunlash ma'lumot o'qilganda bajariladi:
 //   • egasi qaytganda (dashboard, test, natijalar, yechimlar sahifasi);
 //   • admin «Attestatsiya — Fizika» sahifasini ochganda (barcha muddati o'tgan in_progress urinishlar).
-// Qaror Rules'da (attValidAutoSubmit): request.time (SERVER vaqti) >= solutionAvailableAt — yechim ochilishi bilan
+// Qaror Rules'da (attValidAutoSubmit): request.time (SERVER vaqti) >= startedAt + 2 soat + 60 s (kunlik testlar; mock — yechim vaqti bilan ham)
 // BIR XIL chegara. Klient soati faqat «urinib ko'rish kerakmi» degan ishora; erta urinish Rules tomonidan rad etiladi.
 //
 // Qadamlar (ikkalasi ham idempotent, Rules o.status bo'yicha ketma-ketlikni kafolatlaydi):
-//   1) in_progress → submitted: javoblar o'zgarmaydi (yo'q bo'lsa {}), completedAt = solutionAvailableAt
+//   1) in_progress → submitted: javoblar o'zgarmaydi (yo'q bo'lsa {}), completedAt = startedAt + 2 soat (mock: yechim vaqti chegarasi bo'lsa — solutionAvailableAt)
 //      (sarflangan vaqt shu chegara bilan cheklanadi), autoFinalized = true;
 //   2) submitted → graded: mavjud gradeAttempt() (gradeAnswers — Rules bilan bir xil algoritm, urinish versiyasining kaliti).
-// Poyga: qo'lda SUBMIT faqat request.time < solutionAvailableAt, avtomatik — faqat >= : ikkalasi bir vaqtda o'tolmaydi.
+// Poyga: qo'lda SUBMIT faqat chegara + grace dan oldin, avtomatik — faqat undan keyin: ikkalasi bir vaqtda o'tolmaydi.
 // ==========================================================================
 import { fb, gradeAttempt } from "./api.js";
 import { COL } from "./core.js";

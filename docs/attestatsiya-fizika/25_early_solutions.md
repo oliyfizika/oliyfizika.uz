@@ -1,4 +1,5 @@
 # 25 — Yechimlar: testni yakunlagan zahoti ochiladi
+> **Eslatma:** kunlik testlar uchun 26_anytime_attempt.md ustuvor (yechim faqat yakunlaganda; vaqt bo‘yicha ochilish yo‘q).
 
 Holat: **lokal, commit/push/deploy qilinmagan** (Firestore Rules va Storage Rules deploy kerak).
 

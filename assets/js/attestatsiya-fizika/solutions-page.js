@@ -27,7 +27,7 @@ const lockHtml = (d) => stateHtml("lock", `Day ${d}: ${ACCESS_TITLE.toLowerCase(
 
 function renderList(tests, mine = new Map()) {          // mine: testId → o'z urinishi (yakunlangan bo'lsa yechim darhol ochiq)
   if (!tests.length) {
-    show(stateHtml("book", "Hali yechimlar yo‘q", "Test e’lon qilinib, uni yakunlaganingiz zahoti (yoki ertasi kuni 00:00 da) yechimlar shu yerda paydo bo‘ladi."));
+    show(stateHtml("book", "Hali yechimlar yo‘q", "Testni yakunlaganingiz zahoti (kunlik testlar), mock testda esa yechim vaqtida ham yechimlar shu yerda paydo bo‘ladi."));
     return;
   }
   show(`<ul class="att-days">${tests.slice().sort((a, b) => isMock(a) - isMock(b) || a.dayNumber - b.dayNumber).map((t) => {
@@ -39,7 +39,8 @@ function renderList(tests, mine = new Map()) {          // mine: testId → o'z 
       <p class="att-day__topics">${isMock(t) ? "40 ta fizika (5 bob × 8) + 10 ta pedagogika" : esc(t.topics.join(", "))}</p>
       <div class="att-day__stats">${!allowed ? `<span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span>` : open
         ? `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`
-        : `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(formatTashkent(t.solutionAvailableAt))} da ochiladi</span>`}</div>
+        : isMock(t) ? `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(formatTashkent(t.solutionAvailableAt))} da ochiladi</span>`
+          : `<span class="of-badge of-badge--orange">${ic("lock")} Testni yakunlagach ochiladi</span>`}</div>
       <div class="att-day__foot">${open ? `<a class="of-btn of-btn--primary of-btn--sm" href="fizika-yechimlar.html?day=${t.dayNumber}">${ic("book")}Yechimlarni ochish</a>` : ""}</div>
     </article></li>`;
   }).join("")}</ul>`);
@@ -55,9 +56,12 @@ async function renderDay(tests, uid) {
   }
   const [firstAttempt, myList] = await Promise.all([getMyAttempt(uid, t.id).catch(() => null), listMyAttempts(uid).catch(() => [])]);
   const mine = new Map(myList.map((x) => [x.testId, x]));
+  if (!contentOpen(t, access, firstAttempt)) { show(lockHtml(day)); return; }   // Day 4+ ruxsatsiz: avval kirish xabari
   if (!solutionOpenFor(t, firstAttempt)) {
     show(stateHtml("lock", `${dayLabelOf(day)} yechimlari hali yopiq`,
-      `To‘liq yechimlar <b>${esc(formatTashkent(t.solutionAvailableAt))}</b> da (Toshkent vaqti) ochiladi${firstAttempt?.status === "in_progress" ? " yoki testni topshirganingiz zahoti" : ""}.`,
+      isMock(t)
+        ? `To‘liq yechimlar <b>${esc(formatTashkent(t.solutionAvailableAt))}</b> da (Toshkent vaqti) ochiladi${firstAttempt?.status === "in_progress" ? " yoki testni topshirganingiz zahoti" : ""}.`
+        : `Yechimlar testni yakunlaganingizda (topshirganda yoki 2 soatlik vaqt tugaganda) ochiladi.${firstAttempt?.status === "in_progress" ? " Testingiz davom etmoqda." : " Avval testni bajaring."}`,
       '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
     return;
   }

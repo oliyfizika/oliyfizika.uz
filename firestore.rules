@@ -247,8 +247,8 @@ service cloud.firestore {
     //   attestationPhysicsQuestions/{qid}/private/answer       javob + yechim — FAQAT admin
     //   attestationPhysicsDailyTests/{testId}                  Day meta; draft — faqat admin
     //     /versions/v{N}   public snapshot (javobsiz)          — published bo'lsa
-    //     /keys/v{N}       javob kaliti (ro'yxat)              — o'z urinishini TOPSHIRGANDAN keyin yoki yechim vaqtida
-    //     /solutions/v{N}  to'liq yechimlar                    — request.time >= solutionAvailableAt YOKI o'z urinishi yakunlangan
+    //     /keys/v{N}       javob kaliti (ro'yxat)              — o'z urinishini TOPSHIRGANDAN keyin (mock: yoki yechim vaqtida)
+    //     /solutions/v{N}  to'liq yechimlar                    — o'z urinishi yakunlangan (kunlik) | mock: yoki request.time >= solutionAvailableAt
     //   attestationPhysicsAttempts/{uid}__{testId}             1 ta rasmiy urinish: start → submit → grade
     //
     // Baholash ishonchli: klient yozgan correctAnswers/wrongAnswers/unanswered/scorePercent/correctIds qiymatlari
@@ -429,19 +429,19 @@ service cloud.firestore {
       return attOwnFinished(testId) && attVersionId(get(attAttemptPath(aid)).data.testVersion) == v;
     }
 
-    // Kalit: o'z rasmiy urinishi topshirilgan (submitted/graded) bo'lsa yoki yechim vaqti kelgan bo'lsa.
+    // Kalit: o'z rasmiy urinishi topshirilgan (submitted/graded) bo'lsa; MOCK uchun — yoki yechim vaqti kelgan bo'lsa.
+    // Kunlik testlarda kalit/yechim yechim vaqti bo'yicha OCHILMAYDI (faqat o'z urinishi yakunlangach).
     function attKeyReadable(testId, v) {
       return signedIn() && (
         attOwnFinishedVersion(testId, v)
-        || (attDayOpen(attTest(testId)) && attSolutionOpen(attTest(testId)))
+        || (attIsMock(attTest(testId)) && attDayOpen(attTest(testId)) && attSolutionOpen(attTest(testId)))
       );
     }
 
-    // To'liq yechim (solutions/v{N}): yechim vaqti kelgan (kun ochiq) YOKI o'z urinishi yakunlangan (shu versiya).
-    // Yakunlanmagan foydalanuvchilar uchun avvalgi qoida — solutionAvailableAt — o'zgarmagan.
+    // To'liq yechim (solutions/v{N}): o'z urinishi yakunlangan (shu versiya); MOCK uchun — yoki yechim vaqti kelgan (kun ochiq).
     function attSolutionReadable(testId, v) {
       return attVisible(attTest(testId)) && (
-        (attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)))
+        (attIsMock(attTest(testId)) && attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)))
         || attOwnFinishedVersion(testId, v)
       );
     }
@@ -491,7 +491,7 @@ service cloud.firestore {
 
       match /solutionFigures/{figId} {
         allow get: if isAdmin() || (attVisible(attTest(testId))
-          && ((attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId))) || attOwnFinished(testId)));
+          && ((attIsMock(attTest(testId)) && attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId))) || attOwnFinished(testId)));
         allow list: if isAdmin();
         allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
@@ -509,21 +509,31 @@ service cloud.firestore {
     }
 
     // ---------------------------------------------------------------- attempts
-    // VAQT CHEGARASI (faqat test hujjatida timeLimitSeconds belgilangan bo'lsa — mock test: 7200 s = 2 soat; kunlik
-    // testlarda null — chegara yo'q). Hisob SERVER vaqtida: tugash = min(startedAt + limit, solutionAvailableAt).
+    // VAQT CHEGARASI (hisob SERVER vaqtida: startedAt + limit).
+    //   • KUNLIK testlar (kind != 'mock'): har bir foydalanuvchi testni ISTALGAN kunda, BIR marta boshlaydi (yechim vaqti bilan
+    //     yopilmaydi); start'dan keyin 2 SOAT (7200 s; test hujjatida timeLimitSeconds bo'lsa — shu qiymat). Yechimlar faqat
+    //     o'z urinishi yakunlangach (qo'lda topshirish yoki vaqt tugab avto-yakunlash) ochiladi — attOwnFinished.
+    //   • MOCK test: avvalgidek — tugash = min(startedAt + limit, solutionAvailableAt); yechimlar solutionAvailableAt'da ham ochiladi.
     //   • qo'lda saqlash/topshirish: tugashdan keyin 60 s «grace» (tarmoq kechikishi) ichida ruxsat;
-    //   • avtomatik yakunlash: limit bo'yicha — tugash + 60 s dan keyin (klientning o'z topshirishi bilan poygalashmaydi),
-    //     completedAt = startedAt + limit (sarflangan vaqt limitdan oshmaydi); yechim vaqti bo'yicha — avvalgidek.
+    //   • avtomatik yakunlash: tugash + 60 s dan keyin (klientning o'z topshirishi bilan poygalashmaydi),
+    //     completedAt = startedAt + limit (sarflangan vaqt limitdan oshmaydi).
     function attHasLimit(t) {
       return t.get('timeLimitSeconds', null) is int && t.get('timeLimitSeconds', 0) >= 60;
     }
 
-    function attLimitEnd(o, t) {
-      return o.startedAt + duration.value(t.get('timeLimitSeconds', 0), 's');
+    // Kunlik testlarda (hujjatda maydon yo'q) — 2 soat; mock'da maydon bo'lsa shu qiymat.
+    function attLimitSec(t) {
+      return attHasLimit(t) ? t.get('timeLimitSeconds', 7200) : 7200;
     }
 
+    function attLimitEnd(o, t) {
+      return o.startedAt + duration.value(attLimitSec(t), 's');
+    }
+
+    // Chegara amal qiladimi: kunlik — doim; mock — maydon bo'lsa va yechim vaqtidan oldin tugasa.
     function attLimited(o, t) {
-      return attHasLimit(t) && attLimitEnd(o, t) < t.solutionAvailableAt;
+      return !attIsMock(t)
+        || (attHasLimit(t) && attLimitEnd(o, t) < t.solutionAvailableAt);
     }
 
     function attEndAt(o, t) {
@@ -540,7 +550,7 @@ service cloud.firestore {
         : request.time < t.solutionAvailableAt;
     }
 
-    // START: server vaqti, faqat published (archived emas) va yechim ochilmasdan oldin; 1 ta rasmiy urinish.
+    // START: server vaqti, faqat published (archived emas); mock — yechim ochilmasdan oldin, kunlik — istalgan kunda; 1 ta rasmiy urinish.
     function attValidStart(attemptId) {
       let d = request.resource.data;
       let t = attTest(d.testId);
@@ -552,7 +562,7 @@ service cloud.firestore {
         && d.userId == request.auth.uid
         && d.testId is string && attemptId == request.auth.uid + '__' + d.testId
         && t.published == true && t.status == 'published'
-        && request.time < t.solutionAvailableAt
+        && (!attIsMock(t) || request.time < t.solutionAvailableAt)
         && d.dayNumber == t.dayNumber
         && d.testVersion == t.currentVersion
         && d.attemptNumber == 1 && d.kind == 'official'

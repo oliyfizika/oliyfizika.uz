@@ -1,6 +1,6 @@
 // Attestatsiya → Fizika: «testni yakunlagan zahoti yechimlar ochiladi» — sof qism unit testlari (core.js).
 //   node tools/attestatsiya-fizika/tests/test_early_solutions.mjs
-import { isFinished, solutionOpen, solutionOpenFor } from "../../../assets/js/attestatsiya-fizika/core.js";
+import { isFinished, solutionOpen, solutionOpenFor, limitExpired } from "../../../assets/js/attestatsiya-fizika/core.js";
 
 const results = [];
 const expect = (name, cond, detail = "") => { results.push(Boolean(cond)); console.log(`${cond ? "PASS" : "FAIL"} ${name}${detail ? ` — ${detail}` : ""}`); };
@@ -16,7 +16,13 @@ expect("yakunlamagan (urinish yo'q): yechim vaqtigacha yopiq", !solutionOpenFor(
 expect("in_progress: yechim vaqtigacha yopiq", !solutionOpenFor(open(), att("in_progress"), NOW));
 expect("submitted: yechim vaqtidan OLDIN ochiq", solutionOpenFor(open(), att("submitted"), NOW));
 expect("graded: yechim vaqtidan oldin ochiq", solutionOpenFor(open(), att("graded"), NOW));
-expect("yechim vaqti kelgach: hamma uchun ochiq (urinishsiz ham)", solutionOpenFor(past, null, NOW) && solutionOpenFor(past, att("in_progress"), NOW));
+expect("KUNLIK test: yechim vaqti kelsa ham yakunlamaganlarga yopiq (vaqt bo'yicha ochilmaydi)", !solutionOpenFor(past, null, NOW) && !solutionOpenFor(past, att("in_progress"), NOW) && !solutionOpen(past, NOW));
+const mockPast = { ...past, id: "att-fizika-mock-01", kind: "mock", dayNumber: 101 };
+expect("MOCK test: yechim vaqti kelgach hamma uchun ochiq (urinishsiz ham)", solutionOpenFor(mockPast, null, NOW) && solutionOpen(mockPast, NOW));
+const lim = { ...att("in_progress"), startedAt: TS("2026-10-10T05:00:00Z") };      // start 05:00, +2 soat +60 s = 07:01 < NOW 08:00
+expect("KUNLIK: 2 soatlik vaqt tugagan (in_progress) — yechim ochiq (avto-yakunlash sahifa ochilganda)", solutionOpenFor(open(), lim, NOW) && limitExpired(lim, open(), NOW));
+expect("KUNLIK: vaqt tugamagan in_progress — yopiq", !solutionOpenFor(open(), { ...att("in_progress"), startedAt: TS("2026-10-10T07:00:00Z") }, NOW));
+expect("KUNLIK: vaqt tugashiga grace ichida (start+2 soat+30 s) — hali yopiq", !limitExpired({ ...att("in_progress"), startedAt: TS("2026-10-10T05:59:30Z") }, open(), NOW));
 expect("boshqa testning urinishi ochmaydi", !solutionOpenFor(open(), att("graded", { testId: "att-fizika-day-06" }), NOW));
 expect("draft (e'lon qilinmagan) test — urinish bo'lsa ham yopiq", !solutionOpenFor(open({ status: "draft", published: false }), att("graded"), NOW));
 expect("archived (ko'rinadigan) test — yakunlangan user uchun ochiq", solutionOpenFor(open({ status: "archived" }), att("graded"), NOW));
