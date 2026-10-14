@@ -31,7 +31,10 @@ function dayState(test, attempt, now) {
 
 function solutionChip(test, now, attempt) {
   if (solutionOpenFor(test, attempt, now)) return `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`;
-  return `<span class="of-badge of-badge--orange">${ic("lock")} Yechim: ${esc(formatTashkent(test.solutionAvailableAt))}</span>`;
+  // Kunlik testda yechim vaqt bilan ochilmaydi — faqat testni yakunlagach; mock'da — sana ham ko'rsatiladi
+  return isMock(test)
+    ? `<span class="of-badge of-badge--orange">${ic("lock")} Yechim: ${esc(formatTashkent(test.solutionAvailableAt))}</span>`
+    : `<span class="of-badge of-badge--orange">${ic("lock")} Yechim: testdan keyin</span>`;
 }
 
 function renderToday(today, attempt, now) {
@@ -86,7 +89,7 @@ function renderToday(today, attempt, now) {
       <div class="att-today__meta">
         <span>${ic(SECTION_ICON[today.section] || "atom")}${esc(today.topics.join(", "))}</span>
         <span>${ic("list")}${today.questionCount} savol</span>
-        <span>${ic("clock")}Vaqt chegarasi yo‘q</span>
+        <span>${ic("clock")}${esc(formatLimit(timeLimitOf(today) || 7200))}</span>
         ${status}
       </div>
     </div>
@@ -132,9 +135,11 @@ function renderDays(totalDays, tests, attemptsByTest, now) {
       foot = `<a class="of-btn of-btn--soft of-btn--sm" href="${testHref(t)}">Natijani ko‘rish</a>`;
     } else if (st === "open" || st === "progress") {
       chips.push(st === "open" ? '<span class="of-badge of-badge--blue">Ochiq</span>' : '<span class="of-badge of-badge--orange">Davom etmoqda</span>');
+      chips.push(`<span class="of-badge">${ic("clock")} ${esc(formatLimit(timeLimitOf(t)))}</span>`);
+      if (st === "progress") chips.push(`<span class="of-badge of-badge--orange">${ic("clock")} Qolgan vaqt: ${esc(formatClock(remainingSeconds(a, t, now)))}</span>`);
       foot = `<a class="of-btn of-btn--primary of-btn--sm" href="${testHref(t)}">${st === "open" ? "Boshlash" : "Davom ettirish"}</a>`;
     } else {
-      chips.push('<span class="of-badge">Rasmiy muddat tugagan</span>');
+      chips.push('<span class="of-badge">Test yopilgan (arxiv)</span>');
     }
     chips.push(solutionChip(t, now, a));
     if (solutionOpenFor(t, a, now)) foot += `<a class="of-btn of-btn--ghost of-btn--sm" href="${solHref(t)}">${ic("book")}Yechimlar</a>`;

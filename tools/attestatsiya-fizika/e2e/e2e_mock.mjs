@@ -139,7 +139,7 @@ plan[mids[37]] = wrongOf(mids[37]);
   const days = await page.$$eval("[data-days] .att-day__num", (n) => n.map((x) => x.textContent.trim()));
   ok("dashboard: kunlik jadvalda mock yo'q (Day 1..4 faqat), 'M' belgisi yo'q", !days.includes("M") && !days.includes("101") && days.length === 3, J(days));
   const today = await txt(page, "[data-today]");
-  ok("«Bugungi test» mock emas (Day 3)", /Day 3/.test(today) && !/Mock/.test(today), today.slice(0, 120));
+  ok("«Bugungi test» mock emas — e'lon qilingan eng oxirgi kunlik test (Day 4: bu user uchun qulf)", /Day 4/.test(today) && !/Mock/.test(today), today.slice(0, 120));
   ok("kurs progressi 0/32 (mock hisoblanmaydi)", (await txt(page, "[data-progress-num]")) === "0/32");
   await page.screenshot({ path: path.join(OUT, "mock-dashboard-1366.png"), fullPage: true });
   // Day 4 hali ham yopiq (regressiya)

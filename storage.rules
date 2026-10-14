@@ -73,7 +73,7 @@ service firebase.storage {
     }
 
     // O'z urinishi yakunlangan (submitted/graded) foydalanuvchi yechim rasmlarini yechim vaqtini kutmasdan ko'radi
-    // (firestore.rules attOwnFinished bilan bir xil). Yakunlamaganlar uchun — avvalgidek solutionAvailableAt.
+    // (firestore.rules attOwnFinished bilan bir xil). Yakunlamaganlar uchun: KUNLIK testlarda yechim rasmi ochilmaydi; MOCK testda — solutionAvailableAt'dan keyin.
     function ownFinished(testId) {
       return signedIn()
         && firestore.exists(/databases/(default)/documents/attestationPhysicsAttempts/$(request.auth.uid + '__' + testId))
@@ -83,7 +83,7 @@ service firebase.storage {
     match /attestation-physics/solutions/{testId}/{fileName} {
       allow read: if isAdmin()
         || (visible(testId) && ownFinished(testId))
-        || (dayAccess(testId) && visible(testId) && request.time >= test(testId).solutionAvailableAt);
+        || (test(testId).get('kind', 'daily') == 'mock' && dayAccess(testId) && visible(testId) && request.time >= test(testId).solutionAvailableAt);
       allow create: if isAdmin() && validImage();
       allow update, delete: if false;
     }

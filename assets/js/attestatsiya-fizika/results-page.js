@@ -62,7 +62,7 @@ function columns(days, field, max, cls, fmt) {
             const t = testsById.get(a.testId);
             const solLink = t && solutionOpenFor(t, a)
               ? `<a href="fizika-yechimlar.html?day=${a.dayNumber}">Ochiq</a>`
-              : t ? `<span class="of-subtle">${esc(formatTashkent(t.solutionAvailableAt))}</span>` : "—";
+              : t ? `<span class="of-subtle">${isMock(t) ? esc(formatTashkent(t.solutionAvailableAt)) : "testdan keyin"}</span>` : "—";
             const mock = isMock(t) || isMockDay(a.dayNumber);
             const res = a.status === "graded" ? `<b class="of-num">${mock ? `${mockPoints(a.correctAnswers, t)} / ${mockMax(t)} ball` : `${a.scorePercent}%`}</b>` : a.status === "submitted" ? '<a href="fizika-test.html?day=' + a.dayNumber + '">Natijani ko‘rish</a>' : '<span class="of-badge of-badge--orange">Davom etmoqda</span>';
             return `<tr><td><a href="fizika-test.html?day=${a.dayNumber}"><b>${esc(dayLabelOf(a.dayNumber))}</b></a>${t ? `<br><span class="of-subtle">${mock ? "50 savol · 100 ball" : esc(t.sectionTitle)}</span>` : ""}</td>

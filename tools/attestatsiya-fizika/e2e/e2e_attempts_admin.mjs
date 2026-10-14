@@ -62,7 +62,7 @@ const A = {
   [`${AC}/uid1__${D2}`]: att("uid1", D2, 2, 2, 95, 29, 1, 1, 5075),
   [`${AC}/uid2__${D2}`]: att("uid2", D2, 2, 2, 88, 27, 3, 1, 3600),
   [`${AC}/uid3__${D2}`]: att("uid3", D2, 2, 2, 70, 22, 6, 3, 2400),
-  [`${AC}/uid7__${D2}`]: { ...att("uid7", D2, 2, 2, 0, 0, 0, 0, 0), status: "in_progress", completedAt: null, timeSpentSeconds: null },
+  [`${AC}/uid7__${D2}`]: { ...att("uid7", D2, 2, 2, 0, 0, 0, 0, 0), status: "in_progress", startedAt: at(-1), completedAt: null, timeSpentSeconds: null },
   [`${AC}/uid5__${D2}`]: att("uid5", D2, 2, 1, 60, 18, 8, 5, 3000),         // Day 2 v1
   [`${AC}/uid6__${D1}`]: att("uid6", D1, 1, 2, 77, 24, 5, 2, 2800),         // Day 1 v2
 };

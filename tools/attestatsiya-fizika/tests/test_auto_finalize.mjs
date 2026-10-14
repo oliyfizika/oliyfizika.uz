@@ -1,6 +1,7 @@
 // Attestatsiya → Fizika: avtomatik yakunlash — sof qism unit testlari (sintetik ma'lumot).
 //   node tools/attestatsiya-fizika/tests/test_auto_finalize.mjs
 // Server tomondagi qaror (Rules) — test_rules.py «14. AUTO-FINALIZE» bo'limida.
+// KUNLIK test: vaqt chegarasi 2 soat (startedAt + 7200 s), avto-yakunlash — chegara + 60 s dan keyin; completedAt = startedAt + 2 soat.
 import { isOverdue, autoSubmitPatch } from "../../../assets/js/attestatsiya-fizika/finalize-core.js";
 import { gradeAnswers, durationSeconds, nextMidnightTashkent } from "../../../assets/js/attestatsiya-fizika/core.js";
 
@@ -16,26 +17,31 @@ const test = { id: "day-1", solutionAvailableAt: TS(S.toISOString()), currentVer
 const base = { id: "u1__day-1", userId: "u1", testId: "day-1", dayNumber: 1, testVersion: 2, attemptNumber: 1, kind: "official",
   status: "in_progress", startedAt: TS("2026-10-04T13:00:00Z"), questionCount: 32 };
 const ms = S.getTime();
+const start = Date.parse("2026-10-04T13:00:00Z");
+const LE = start + 7200e3;                 // start + 2 soat
+const AF = LE + 60e3;                      // avto-yakunlash boshlanadi (grace dan keyin)
 
-// E/F — vaqt chegarasi (yechim ochilishi bilan bir xil: now >= S)
-expect("E: S dan 1 s oldin — hali in_progress (nomzod emas)", !isOverdue(base, test, ms - 1000));
-expect("F: aynan S da — nomzod", isOverdue(base, test, ms));
-expect("F: S dan keyin — nomzod", isOverdue(base, test, ms + 8 * 3600e3));
-expect("A: submitted / graded — nomzod emas (qo'lda yakunlangan)", !isOverdue({ ...base, status: "submitted" }, test, ms + 1) && !isOverdue({ ...base, status: "graded" }, test, ms + 1));
-expect("K: testVersion yo'q / satr — taxmin qilinmaydi", !isOverdue({ ...base, testVersion: undefined }, test, ms + 1) && !isOverdue({ ...base, testVersion: "2" }, test, ms + 1));
-expect("practice / boshqa test / solutionAvailableAt yo'q — nomzod emas",
-       !isOverdue({ ...base, kind: "practice" }, test, ms + 1) && !isOverdue(base, { ...test, id: "day-2" }, ms + 1) && !isOverdue(base, { id: "day-1" }, ms + 1));
+// E/F — vaqt chegarasi (kunlik test: startedAt + 2 soat + 60 s grace; yechim vaqti hisobga olinmaydi)
+expect("E: chegara + grace dan 1 s oldin — hali in_progress (nomzod emas)", !isOverdue(base, test, AF - 1000));
+expect("E: start dan 1 soat keyin — nomzod emas", !isOverdue(base, test, start + 3600e3));
+expect("F: aynan chegara + 60 s da — nomzod", isOverdue(base, test, AF));
+expect("F: keyin (8 soat) — nomzod", isOverdue(base, test, AF + 8 * 3600e3));
+expect("kunlik test: yechim vaqti o'tgan bo'lsa ham start + 2 soat dan oldin nomzod emas (istalgan kunda boshlash)", !isOverdue({ ...base, startedAt: TS("2026-12-01T10:00:00Z") }, test, Date.parse("2026-12-01T11:00:00Z")));
+expect("A: submitted / graded — nomzod emas (qo'lda yakunlangan)", !isOverdue({ ...base, status: "submitted" }, test, AF + 1) && !isOverdue({ ...base, status: "graded" }, test, AF + 1));
+expect("K: testVersion yo'q / satr — taxmin qilinmaydi", !isOverdue({ ...base, testVersion: undefined }, test, AF + 1) && !isOverdue({ ...base, testVersion: "2" }, test, AF + 1));
+expect("practice / boshqa test — nomzod emas",
+       !isOverdue({ ...base, kind: "practice" }, test, AF + 1) && !isOverdue(base, { ...test, id: "day-2" }, AF + 1));
 
 // patch — javoblar o'zgarmaydi, natija maydonlari yo'q
 const answers = { Q1: "A", Q2: "C" };
 const p = autoSubmitPatch({ ...base, answers }, test);
-expect("patch: status submitted, completedAt = solutionAvailableAt, autoFinalized", p.status === "submitted" && p.completedAt === test.solutionAvailableAt && p.autoFinalized === true);
+expect("patch: status submitted, completedAt = startedAt + 2 soat, autoFinalized", p.status === "submitted" && p.completedAt.seconds === base.startedAt.seconds + 7200 && p.completedAt.nanoseconds === 0 && p.autoFinalized === true);
 expect("patch: javoblar o'zgarmagan (nusxa)", J(p.answers) === J(answers) && p.answers !== answers);
 expect("patch: faqat lifecycle maydonlari (natija/ID/versiya yo'q)", J(Object.keys(p).sort()) === J(["answers", "autoFinalized", "completedAt", "status"]));
 expect("C: javob yo'q → answers = {}", J(autoSubmitPatch(base, test).answers) === "{}" && J(autoSubmitPatch({ ...base, answers: null }, test).answers) === "{}");
 
-// vaqt: S bilan cheklanadi (18:00 → 00:00 = 6 soat; ertalab 08:00 qaytsa ham 14 soat emas)
-expect("vaqt: startedAt 18:00 → S 00:00 = 6 soat (21600 s)", durationSeconds(base.startedAt, p.completedAt) === 21600);
+// vaqt: 2 soat bilan cheklanadi (ertasi kuni qaytsa ham 14 soat emas)
+expect("vaqt: sarflangan vaqt = 2 soat (7200 s)", durationSeconds(base.startedAt, p.completedAt) === 7200);
 
 // Baholash: qo'lda va avtomatik yakun — bir xil mavjud gradeAnswers natijasi
 const qids = Array.from({ length: 32 }, (_, i) => `Q${i + 1}`);

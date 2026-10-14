@@ -129,7 +129,8 @@ const lockedSection = (page) => page.$eval("[data-locked]", (el) => ({ hidden: e
   await page.goto(B + "attestatsiya/fizika-yechimlar.html");
   await page.waitForSelector(".att-day");
   const solList = await page.$$eval(".att-day", (cs) => cs.map((c) => ({ d: Number(c.querySelector(".att-day__num").textContent), st: c.dataset.state, link: !!c.querySelector("a") })));
-  ok("yechimlar ro‘yxati: Day 1/2 ochiq, Day 4/5 qulf (havola yo‘q)", solList.find((x) => x.d === 1)?.link && solList.find((x) => x.d === 4)?.st === "restricted" && !solList.find((x) => x.d === 4)?.link, J(solList));
+  ok("yechimlar ro‘yxati: Day 1/2 kirish mumkin lekin testni yakunlamagan uchun yechim havolasi yo‘q (yopiq); Day 4/5 qulf (havola yo‘q)",
+     solList.find((x) => x.d === 1)?.st === "open" && !solList.find((x) => x.d === 1)?.link && solList.find((x) => x.d === 4)?.st === "restricted" && !solList.find((x) => x.d === 4)?.link, J(solList));
   // A–C: bepul kun — boshlash
   await page.goto(B + "attestatsiya/fizika-test.html?day=3");
   await page.click("[data-start]");
@@ -183,7 +184,7 @@ const lockedSection = (page) => page.$eval("[data-locked]", (el) => ({ hidden: e
   const figs = await page.$$eval(".att-rev .att-fig", (f) => f.length);
   if (figs) {
     for (const f of await page.$$(".att-rev .att-fig")) { await f.scrollIntoViewIfNeeded(); }
-    await page.waitForTimeout(1500);
+    await page.waitForFunction(() => [...document.querySelectorAll(".att-rev .att-fig")].every((x) => x.dataset.state === "ready"), null, { timeout: 15000 }).catch(() => {});
     ok("tarix: Day 4 review rasmlari yuklanadi", await page.$$eval(".att-rev .att-fig", (f) => f.every((x) => x.dataset.state === "ready")), String(figs));
   }
   await page.goto(B + "attestatsiya/fizika-yechimlar.html?day=4");

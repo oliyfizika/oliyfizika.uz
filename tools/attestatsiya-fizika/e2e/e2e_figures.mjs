@@ -127,6 +127,12 @@ for (const vp of [{ width: 1366, height: 900 }, { width: 390, height: 844 }]) {
   ok(`${vp.width}px: tiklangan savol AF-1-005 — 4 variant (A–D)`, rec && rec.length === 4 && rec.every((t, i) => t.startsWith("ABCD"[i])), `${rec?.length} variant`);
   ok(`${vp.width}px: konsol xatolari yo'q`, !page.errs.length, page.errs.join(" | "));
   await page.screenshot({ path: path.join(OUT, `figures-fs-${vp.width}.png`) });
+  if (vp.width === 390) {
+    // kunlik testda yechimlar faqat o'z urinishi yakunlangach ochiladi
+    await page.click("[data-finish]");
+    await page.click(".of-modal__actions .of-btn--success");
+    await page.waitForSelector(".att-result");
+  }
   await ctx.close();
 }
 
@@ -136,6 +142,11 @@ for (const vp of [{ width: 1366, height: 900 }, { width: 390, height: 844 }]) {
   const expected = t4.items.reduce((s, it) => s + figsIn(it.solution).length, 0);
   const later = new Date(T0.getTime() + 2 * 86400000);
   await post("__mock/clock", { iso: later.toISOString() });
+  // kunlik testda yechim faqat shu testning o'z yakunlangan urinishida ochiladi
+  await post("__mock/seed", { docs: { "attestationPhysicsAttempts/user1__att-fizika-day-04": {
+    userId: "user1", testId: "att-fizika-day-04", dayNumber: 4, testVersion: 1, attemptNumber: 1, kind: "official", status: "graded",
+    questionCount: 32, startedAt: ts(new Date(T0.getTime() + 86400000)), completedAt: ts(new Date(T0.getTime() + 86400000 + 600000)), timeSpentSeconds: 600,
+    answers: {}, scorableQuestions: 32, correctAnswers: 0, wrongAnswers: 0, unanswered: 32, scorePercent: 0, correctIds: [], wrongIds: [] } } });
   const { ctx, page } = await ctxFor("user1", { width: 1366, height: 900 }, later);
   await page.goto(B + "attestatsiya/fizika-yechimlar.html?day=4");
   await page.waitForSelector(".att-solq");

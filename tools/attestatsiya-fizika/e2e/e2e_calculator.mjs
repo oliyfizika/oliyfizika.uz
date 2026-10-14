@@ -172,17 +172,17 @@ async function startTest(page) {
   await page.click('.att-opt[data-key="A"]');
   await page.waitForTimeout(7000);
   const saved = (await att("u2")).answers;
-  await clock(plus(S, -30));
+  await clock(plus(S, 5970));                                        // limit tugashiga (start+2 soat) 30 s qoldi
   await page.click("[data-calc]");
   await press(page, ["9", ".", "8", "×", "2", "="]);
-  ok("H: S dan 30 s oldin kalkulyator ishlaydi (9.8×2 = 19.6), urinish in_progress", (await result(page)) === "19.6" && (await att("u2")).status === "in_progress");
-  await clock(plus(S, 60));                                          // server vaqti S dan o'tdi
+  ok("H: 2 soatlik limitga 30 s qolganda kalkulyator ishlaydi (9.8×2 = 19.6), urinish in_progress", (await result(page)) === "19.6" && (await att("u2")).status === "in_progress");
+  await clock(plus(S, 6120));                                        // server vaqti start+2 soat+grace dan o'tdi
   await page.keyboard.press("Escape");
   await page.click("[data-finish]");
   await page.click(".of-modal__actions .of-btn--success");
   await page.waitForSelector(".att-review .att-rev", { timeout: 20000 });
   const a2 = await att("u2");
-  ok("I: S dan keyin — avtomatik yakunlandi, javoblar o‘zgarmagan, kalkulyator ta’sirsiz", a2.status === "graded" && a2.autoFinalized === true && J(a2.answers) === J(saved));
+  ok("I: 2 soat o‘tgach — avtomatik yakunlandi, javoblar o‘zgarmagan, kalkulyator ta’sirsiz", a2.status === "graded" && a2.autoFinalized === true && J(a2.answers) === J(saved));
   await ctx.close();
   const { ctx: c2, page: p2 } = await ctxFor("u2", plus(S, 3600));
   await clock(plus(S, 3600));
