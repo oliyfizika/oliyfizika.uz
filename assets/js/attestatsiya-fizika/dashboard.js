@@ -3,9 +3,9 @@
 // Savollar, kalitlar va yechimlar bu sahifada YUKLANMAYDI.
 import { getSettings, listVisibleTests, listMyAttempts } from "./api.js";
 import { finalizeOverdueList } from "./finalize.js";
-import { esc, pickToday, officialOpen, solutionOpenFor, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT, isMock, mockPoints, mockMax, timeLimitOf, formatLimit, formatClock, remainingSeconds } from "./core.js";
+import { esc, pickToday, officialOpen, solutionOpenFor, formatTashkent, formatDuration, computeStats, SECTION_ICON, TOTAL_DAYS_DEFAULT, isMock, mockCompositionText, mockPoints, mockMax, timeLimitOf, formatLimit, formatClock, remainingSeconds } from "./core.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
-import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
+import { loadAccessContext, dayOpen, accessText, isPaidMock, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
 
 const root = document.getElementById("attDash");
 fillIcons(root);
@@ -162,7 +162,13 @@ function renderDays(totalDays, tests, attemptsByTest, now) {
   daysEl.removeAttribute("aria-busy");
 }
 
-// Mock test (50 savol, 100 ball): kurs kunlaridan alohida bo'lim. Hamma kirgan foydalanuvchi uchun bepul.
+// Karta tagidagi qisqa tavsif: tarkib (composition) bo'yicha — mock-01: 40 fizika + 10 pedagogika; mock-02: 35 fizika + 5 kasbiy standart + 10 pedagogik mahorat.
+function mockSubtitle(t) {
+  const text = mockCompositionText(t);
+  return `${text}${isPaidMock(t) ? " · pullik guruh" : ""}${t.status === "archived" ? " · arxiv" : ""}`;
+}
+
+// Mock test (50 savol, 100 ball): kurs kunlaridan alohida bo'lim. paidOnly bo'lmasa — hamma kirgan foydalanuvchi uchun bepul; paidOnly — faqat pullik guruh.
 function renderMock(tests, attemptsByTest, now) {
   const section = root.querySelector("[data-mock-section]");
   const list = tests.filter(isMock).sort((a, b) => b.dayNumber - a.dayNumber);
@@ -170,6 +176,21 @@ function renderMock(tests, attemptsByTest, now) {
   if (!list.length) return;
   root.querySelector("[data-mock]").innerHTML = list.map((t) => {
     const a = attemptsByTest.get(t.id);
+    const sub = mockSubtitle(t);
+    if (!a && !dayOpen(t, access)) {
+      // Pullik mock, ruxsatsiz: to'liq karta, lekin yopiq (start yo'q; Rules ham rad etadi)
+      return `<li><article class="of-card att-day" data-state="restricted" data-mock-card data-mock-restricted aria-labelledby="attMock${t.dayNumber}">
+      <div class="att-day__head">
+        <span class="att-day__num">M</span>
+        <div><p class="att-day__title" id="attMock${t.dayNumber}">Mock test${t.mockNumber > 1 ? ` ${t.mockNumber}` : ""}</p><p class="att-day__sub">${esc(sub)}</p></div>
+        <span class="att-day__lock" aria-hidden="true">${ic("lock")}</span>
+      </div>
+      <p class="att-day__topics">${esc((t.topics || []).join(", "))}</p>
+      <div class="att-day__stats"><span class="of-badge">${ic("list")} ${t.questionCount} savol</span><span class="of-badge">${mockMax(t)} ball</span><span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span></div>
+      <p class="att-access-note">${esc(accessText(t))}</p>
+      <div class="att-day__foot"><a class="of-btn of-btn--soft of-btn--sm" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer" data-access-cta>📲 Kursga yozilish</a></div>
+    </article></li>`;
+    }
     const st = a?.status === "graded" ? "done" : a?.status === "submitted" ? "submitted"
       : officialOpen(t, now) ? (a ? "progress" : "open") : "closed";
     const chips = [`<span class="of-badge">${ic("list")} ${t.questionCount} savol</span>`, `<span class="of-badge">${mockMax(t)} ball</span>`];
@@ -194,7 +215,7 @@ function renderMock(tests, attemptsByTest, now) {
     return `<li><article class="of-card att-day" data-state="${st === "done" || st === "submitted" ? "done" : "open"}" data-mock-card aria-labelledby="attMock${t.dayNumber}">
       <div class="att-day__head">
         <span class="att-day__num">M</span>
-        <div><p class="att-day__title" id="attMock${t.dayNumber}">Mock test${t.mockNumber > 1 ? ` ${t.mockNumber}` : ""}</p><p class="att-day__sub">40 fizika + 10 pedagogika${t.status === "archived" ? " · arxiv" : ""}</p></div>
+        <div><p class="att-day__title" id="attMock${t.dayNumber}">Mock test${t.mockNumber > 1 ? ` ${t.mockNumber}` : ""}</p><p class="att-day__sub">${esc(sub)}</p></div>
         ${st === "done" ? `<span class="att-score of-num" aria-label="Natija ${mockPoints(a.correctAnswers, t)} ball">${mockPoints(a.correctAnswers, t)}<small>/${mockMax(t)}</small></span>` : ""}
       </div>
       <p class="att-day__topics">${esc((t.topics || []).join(", "))}</p>

@@ -227,7 +227,8 @@ export async function figureUrl(testId, figId, scope = "question") {
   const p = (async () => {
     const settings = await getSettings();
     let blob;
-    if (settings.figureBackend === "firestore") {
+    // Mock testlarning rasmlari har doim Firestore'da (import faylida base64) — figureBackend sozlamasidan qat'i nazar
+    if (settings.figureBackend === "firestore" || /^att-fizika-mock-\d+$/.test(testId)) {
       const { db, fsSdk } = await fb();
       const col = scope === "solution" ? "solutionFigures" : "figures";
       const snap = await fsSdk.getDoc(fsSdk.doc(db, COL.tests, testId, col, figId));

@@ -86,7 +86,7 @@ const txt = async (page, sel) => (await page.textContent(sel)).replace(/\s+/g, "
   ok("admin: mock hali yo'q — jadvalda faqat kunlik testlar", !(await page.textContent("[data-body]")).includes("Mock"));
   await page.setInputFiles("[data-mock-bundle]", MOCKFILE);
   await page.waitForFunction(() => !document.querySelector("[data-mock-import]").disabled, null, { timeout: 15000 });
-  ok("admin: mock fayli tekshirildi (50 savol, 40 + 10, 100 ball)", /50 savol \(40 fizika \+ 10 pedagogika\) · 100 ball/.test(await page.textContent("[data-mock-info]")), await txt(page, "[data-mock-info]"));
+  ok("admin: mock fayli tekshirildi (50 savol, 40 + 10, 100 ball)", /50 savol · 100 ball/.test(await page.textContent("[data-mock-info]")), await txt(page, "[data-mock-info]"));
   await page.click("[data-mock-import]");
   await page.click(".of-admin-confirm .of-btn--primary");
   await page.waitForFunction(() => /Tayyor:/.test(document.querySelector("[data-mock-info]").textContent), null, { timeout: 60000 });
@@ -103,7 +103,8 @@ const txt = async (page, sel) => (await page.textContent(sel)).replace(/\s+/g, "
   await page.setInputFiles("[data-mock-bundle]", MOCKFILE);
   await page.waitForFunction(() => !document.querySelector("[data-mock-import]").disabled);
   await page.click("[data-mock-import]");
-  await page.waitForFunction(() => /allaqachon mavjud/.test(document.querySelector("[data-mock-info]").textContent), null, { timeout: 10000 });
+  await page.click(".of-admin-confirm .of-btn--primary");
+  await page.waitForFunction(() => /allaqachon mavjud|Tayyor/.test(document.querySelector("[data-mock-info]").textContent), null, { timeout: 10000 });
   ok("admin: ikkinchi import — mavjud mock qayta yozilmaydi", true);
   // PUBLISH
   await page.click(`[data-publish="${MID}"]`);

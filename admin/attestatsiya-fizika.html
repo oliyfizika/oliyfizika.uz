@@ -79,7 +79,7 @@
           <p class="of-subtle" data-bundle-info aria-live="polite"></p>
         </li>
         <li>
-          <p><b>Mock test (50 savol: 40 fizika + 10 pedagogika, 100 ball)</b> — <code>_private/attestatsiya-fizika/mock-import-01.json</code>. Rasmsiz: Storage rasmlari kerak emas. Draft sifatida yoziladi; foydalanuvchilarga faqat jadvaldagi PUBLISH dan keyin ko‘rinadi.</p>
+          <p><b>Mock test (50 savol, 100 ball)</b> — <code>_private/attestatsiya-fizika/mock-import-NN.json</code> (mock-01: 40 fizika + 10 pedagogika, rasmsiz; mock-02: 35 fizika + 5 kasbiy standart + 10 pedagogik mahorat, rasmlar bilan, faqat pullik guruh). Rasmlar fayl ichida (Firestore, base64): alohida Storage yuklash kerak emas — <code>figureBackend</code> ning qiymatidan qat’i nazar mock rasmlari Firestore’dan o‘qiladi. Draft sifatida yoziladi; foydalanuvchilarga faqat jadvaldagi PUBLISH dan keyin ko‘rinadi. Import uzilsa — shu faylni qayta tanlang: faqat yetishmayotgan hujjatlar yoziladi.</p>
           <div class="of-row" style="flex-wrap:wrap">
             <label class="of-btn"><input type="file" accept="application/json,.json" data-mock-bundle hidden>Faylni tanlash</label>
             <button type="button" class="of-btn of-btn--primary" data-mock-import disabled>Mock testni import qilish</button>

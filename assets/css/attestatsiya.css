@@ -229,6 +229,8 @@
   background: #fff; cursor: zoom-in; aspect-ratio: var(--att-fig-ratio, auto);
 }
 .att-fig__btn:disabled { cursor: default; }
+/* Rasmli variant ichida rasm tugmasi bosishni "yutmasin": bosish butun variantni tanlaydi */
+.att-opt .att-fig__btn { pointer-events: none; }
 .att-fig__btn img { width: 100%; height: 100%; object-fit: contain; }
 .att-fig[data-state="loading"] .att-fig__btn { background: linear-gradient(90deg, var(--of-surface-sunken), var(--of-surface-2), var(--of-surface-sunken)); background-size: 200% 100%; animation: att-shimmer 1.4s linear infinite; min-height: 80px; }
 .att-fig[data-state="loading"] img, .att-fig[data-state="error"] img { visibility: hidden; }
