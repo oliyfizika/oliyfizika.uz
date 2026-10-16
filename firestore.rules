@@ -291,13 +291,23 @@ service cloud.firestore {
       return t.dayNumber is int && t.dayNumber <= 3;
     }
 
-    // MOCK TEST (kind == 'mock', dayNumber 101+): kurs kunlaridan alohida, hamma kirgan foydalanuvchi uchun bepul.
+    // MOCK TEST (kind == 'mock', dayNumber 101+): kurs kunlaridan alohida; paidOnly bo'lmasa — hamma kirgan foydalanuvchi uchun bepul.
     function attIsMock(t) {
       return t.get('kind', 'daily') == 'mock';
     }
 
+    // PULLIK MOCK: test hujjatida paidOnly == true bo'lgan mock — faqat admin yoki users/{uid}.attestationAccess == true
+    // (accessMode 'open' bo'lsa ham ochilmaydi: pullik guruh uchun alohida). paidOnly yo'q mock — hamma uchun bepul (avvalgidek).
+    function attPaidOnlyMock(t) {
+      return attIsMock(t) && t.get('paidOnly', false) == true;
+    }
+
+    function attPaidAccess() {
+      return signedIn() && (isAdmin() || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true);
+    }
+
     function attDayOpen(t) {
-      return signedIn() && (attFreeDay(t) || attIsMock(t) || attCanAccess());
+      return signedIn() && (attPaidOnlyMock(t) ? attPaidAccess() : (attFreeDay(t) || attIsMock(t) || attCanAccess()));
     }
 
     // Tarix: shu testda o'z rasmiy urinishi bor foydalanuvchi o'z natijasi/ko'rib chiqishi uchun kontentni o'qishda

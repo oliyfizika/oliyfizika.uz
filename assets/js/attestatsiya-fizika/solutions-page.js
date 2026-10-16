@@ -4,9 +4,9 @@
 // Yopiq kun uchun hech qanday yechim ma'lumoti yuklanmaydi.
 // ==========================================================================
 import { listVisibleTests, getSnapshot, getSolutions, getMyAttempt, listMyAttempts } from "./api.js";
-import { loadAccessContext, contentOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
+import { loadAccessContext, contentOpen, accessText, ACCESS_TITLE, COURSE_URL } from "./access.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
-import { esc, solutionOpenFor, formatTashkent, isMock, dayLabel, dayLabelOf, mockPoints, mockMax } from "./core.js";
+import { esc, solutionOpenFor, formatTashkent, isMock, mockCompositionText, dayLabel, dayLabelOf, mockPoints, mockMax } from "./core.js";
 import { renderBlocks, loadKatex } from "./render.js";
 import { ic, fillIcons, whenUser, tabsHtml, stateHtml, errorMessage } from "./ui.js";
 
@@ -22,7 +22,7 @@ function show(html) {
 }
 
 let access = null;
-const lockHtml = (d) => stateHtml("lock", `Day ${d}: ${ACCESS_TITLE.toLowerCase()}`, esc(ACCESS_TEXT),
+const lockHtml = (d, t) => stateHtml("lock", `${dayLabelOf(d)}: ${ACCESS_TITLE.toLowerCase()}`, esc(accessText(t)),
   `<div class="of-row" style="justify-content:center;flex-wrap:wrap"><a class="of-btn of-btn--primary" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 Kursga yozilish</a><a class="of-btn" href="fizika-yechimlar.html">Barcha yechimlar</a></div>`);
 
 function renderList(tests, mine = new Map()) {          // mine: testId → o'z urinishi (yakunlangan bo'lsa yechim darhol ochiq)
@@ -36,7 +36,7 @@ function renderList(tests, mine = new Map()) {          // mine: testId → o'z 
     return `<li><article class="of-card att-day" data-state="${!allowed ? "restricted" : open ? "done" : "open"}" aria-labelledby="solD${t.dayNumber}">
       <div class="att-day__head"><span class="att-day__num">${isMock(t) ? "M" : t.dayNumber}</span>
         <div><p class="att-day__title" id="solD${t.dayNumber}">${isMock(t) ? esc(dayLabel(t)) : `Day ${t.dayNumber} · ${esc(t.sectionTitle)}`}</p><p class="att-day__sub">${t.questionCount} savol${isMock(t) ? ` · ${mockMax(t)} ball` : ""}</p></div></div>
-      <p class="att-day__topics">${isMock(t) ? "40 ta fizika (5 bob × 8) + 10 ta pedagogika" : esc(t.topics.join(", "))}</p>
+      <p class="att-day__topics">${isMock(t) ? esc(mockCompositionText(t, "ta ")) : esc(t.topics.join(", "))}</p>
       <div class="att-day__stats">${!allowed ? `<span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span>` : open
         ? `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`
         : isMock(t) ? `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(formatTashkent(t.solutionAvailableAt))} da ochiladi</span>`
@@ -56,7 +56,7 @@ async function renderDay(tests, uid) {
   }
   const [firstAttempt, myList] = await Promise.all([getMyAttempt(uid, t.id).catch(() => null), listMyAttempts(uid).catch(() => [])]);
   const mine = new Map(myList.map((x) => [x.testId, x]));
-  if (!contentOpen(t, access, firstAttempt)) { show(lockHtml(day)); return; }   // Day 4+ ruxsatsiz: avval kirish xabari
+  if (!contentOpen(t, access, firstAttempt)) { show(lockHtml(day, t)); return; }   // Day 4+ ruxsatsiz: avval kirish xabari
   if (!solutionOpenFor(t, firstAttempt)) {
     show(stateHtml("lock", `${dayLabelOf(day)} yechimlari hali yopiq`,
       isMock(t)
@@ -67,7 +67,7 @@ async function renderDay(tests, uid) {
   }
   let attempt = firstAttempt;
   await loadKatex().catch(() => {});
-  if (!contentOpen(t, access, attempt)) { show(lockHtml(day)); return; }   // Day 4+ ruxsatsiz (Rules ham rad etadi)
+  if (!contentOpen(t, access, attempt)) { show(lockHtml(day, t)); return; }   // Day 4+ ruxsatsiz (Rules ham rad etadi)
   if (isOverdue(attempt, t)) attempt = (await finalizeIfOverdue(attempt, t).catch(() => ({ attempt }))).attempt;
   const version = attempt?.testVersion || t.currentVersion;
   const [snap, sol] = await Promise.all([getSnapshot(t.id, version), getSolutions(t.id, version)]);
@@ -82,8 +82,8 @@ async function renderDay(tests, uid) {
     <section class="of-card att-hero" aria-labelledby="solTitle">
       <div class="att-hero__text">
         <p class="att-eyebrow">${ic("book")}Yechimlar · ${esc(label(t))}</p>
-        <h1 id="solTitle">${mock ? "Mock test: fizika va pedagogika" : esc(t.sectionTitle)}</h1>
-        <p>${mock ? `40 ta fizika + 10 ta pedagogika` : esc(t.topics.join(", "))} · ${t.questionCount} savol${attempt?.status === "graded"
+        <h1 id="solTitle">${mock ? "Mock test yechimlari" : esc(t.sectionTitle)}</h1>
+        <p>${mock ? esc(mockCompositionText(t, "ta ")) : esc(t.topics.join(", "))} · ${t.questionCount} savol${attempt?.status === "graded"
           ? ` · sizning natijangiz: <b>${mock ? `${mockPoints(attempt.correctAnswers, t)} / ${mockMax(t)} ball` : `${attempt.scorePercent}%`}</b>` : ""}</p>
       </div>
       <div class="att-hero__side">

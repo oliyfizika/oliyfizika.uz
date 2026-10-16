@@ -859,6 +859,56 @@ def main():
     expect("mock: GRADE (to'g'ri ball)", db.write(NOX, mA("nox"), g, mat + dt.timedelta(minutes=42)), True)
     expect("mock: yechim vaqtidan keyin yechimlar ochiq (bepul)", db.read(NOX, f"{M}/solutions/v1", mafter), True)
     expect("mock: yechim vaqtidan keyin mehmon yecha olmaydi", db.read(GUEST, f"{M}/solutions/v1", mafter), False)
+    # ---- PULLIK MOCK (paidOnly == true): faqat attestationAccess / admin; accessMode 'open' ham ochmaydi; rasmlar ham shunday
+    PID = "att-fizika-mock-02"
+    P = f"attestationPhysicsDailyTests/{PID}"
+    db.docs[P] = {**db.docs[M], "id": PID, "dayNumber": 102, "mockNumber": 2, "paidOnly": True}
+    db.docs[f"{P}/versions/v1"] = {**db.docs[f"{M}/versions/v1"], "testId": PID, "dayNumber": 102}
+    db.docs[f"{P}/figures/f1.webp"] = {"testId": PID, "id": "f1.webp", "mime": "image/webp", "bytes": 3, "data": "AAAA"}
+    db.docs[f"{P}/solutionFigures/s1.webp"] = {"testId": PID, "id": "s1.webp", "mime": "image/webp", "bytes": 3, "data": "AAAA"}
+    pA = lambda uid: f"attestationPhysicsAttempts/{uid}__{PID}"
+    pst = lambda uid: {**mst(uid), "testId": PID, "dayNumber": 102}
+    ACCU = auth_of("acc")
+    db.docs["users/acc"]["attestationAccess"] = True            # pullik guruh a'zosi (vaqtincha)
+    expect("paidOnly mock: meta (karta) ruxsatsiz userga ko'rinadi", db.read(NOX, P, mat), True)
+    expect("paidOnly mock: ruxsatsiz user kontentni o'qiy olmaydi", db.read(NOX, f"{P}/versions/v1", mat), False)
+    expect("paidOnly mock: ruxsatsiz user rasmni o'qiy olmaydi", db.read(NOX, f"{P}/figures/f1.webp", mat), False)
+    expect("paidOnly mock: ruxsatsiz user start qila olmaydi", db.write(NOX, pA("nox"), pst("nox"), mat, op="create", apply=False), False)
+    expect("paidOnly mock: mehmon kontentni o'qiy olmaydi", db.read(GUEST, f"{P}/versions/v1", mat), False)
+    expect("paidOnly mock: attestationAccess == true user kontent + rasmni o'qiydi",
+           (db.read(ACCU, f"{P}/versions/v1", mat), db.read(ACCU, f"{P}/figures/f1.webp", mat)) == (True, True))
+    expect("paidOnly mock: attestationAccess == true user start qiladi", db.write(ACCU, pA("acc"), pst("acc"), mat, op="create", apply=False), True)
+    expect("paidOnly mock: admin kontentni o'qiydi", db.read(ADMIN, f"{P}/versions/v1", mat), True)
+    expect("paidOnly mock: yechim rasmi — yechim vaqtidan keyin ham ruxsatsiz userga yopiq", db.read(NOX, f"{P}/solutionFigures/s1.webp", mafter), False)
+    expect("paidOnly mock: yechim rasmi — yechim vaqtidan keyin pullik userga ochiq", db.read(ACCU, f"{P}/solutionFigures/s1.webp", mafter), True)
+    expect("paidOnly mock: yechim rasmi — yechim vaqtidan oldin pullik userga yopiq (urinishsiz)", db.read(ACCU, f"{P}/solutionFigures/s1.webp", mat), False)
+    expect("paidOnly mock: admin figures yozadi (create)", db.write(ADMIN, f"{P}/figures/f2.webp", {"testId": PID, "id": "f2.webp", "mime": "image/webp", "bytes": 3, "data": "AAAA"}, mat, op="create", apply=False), True)
+    expect("paidOnly mock: oddiy user figures yoza olmaydi", db.write(NOX, f"{P}/figures/f3.webp", {"testId": PID, "id": "f3.webp", "mime": "image/webp", "bytes": 3, "data": "AAAA"}, mat, op="create", apply=False), False)
+    db.docs[CFG] = {**db.docs[CFG], "accessMode": "open"}
+    expect("paidOnly mock: accessMode=open bo'lsa ham ruxsatsiz user ocholmaydi", db.read(NOX, f"{P}/versions/v1", mat), False)
+    expect("mock (paidOnly yo'q): accessMode=open — hamma uchun bepul (avvalgidek)", db.read(NOX, f"{M}/versions/v1", mat), True)
+    db.docs[CFG] = {**db.docs[CFG], "accessMode": "paid"}
+    for _k in [k for k in list(db.docs) if k.startswith(P)] + [pA("acc"), pA("nox")]:
+        db.docs.pop(_k, None)
+    # Storage (rasmlar): paidOnly mock
+    db.docs[P] = {**db.docs[M], "id": PID, "dayNumber": 102, "mockNumber": 2, "paidOnly": True}
+    expect("Storage paidOnly mock: ruxsatsiz user savol rasmini o'qiy olmaydi", stor(NOX, f"attestation-physics/questions/{PID}/a.webp", mat), False)
+    expect("Storage paidOnly mock: pullik user savol rasmini o'qiydi", stor(ACCU, f"attestation-physics/questions/{PID}/a.webp", mat), True)
+    expect("Storage mock (paidOnly yo'q): ruxsatsiz user ham o'qiydi (Firestore bilan bir xil)", stor(NOX, f"attestation-physics/questions/{MID}/a.webp", mat), True)
+    db.docs.pop(P, None)
+    db.docs["users/acc"].pop("attestationAccess", None)
+    # ---- MOCK-02 (haqiqiy import fayli): test + versions + keys + solutions + rasmlar Rules orqali yoziladi
+    m2p = os.path.join(os.path.dirname(bundle_path), "mock-import-02.json")
+    if os.path.exists(m2p):
+        m2 = json.load(open(m2p, encoding="utf-8"))
+        m2t = m2["ops"][0]["data"]
+        expect("mock-02: format, paidOnly, 35 + 5 + 10, 100 ball", m2["format"] == "oliyfizika-attestation-mock-import" and m2t["paidOnly"] is True
+               and m2t["composition"] == {"fizika": 35, "kasbiyStandart": 5, "pedagogikMahorat": 10} and m2t["maxScore"] == 100 and m2t["dayNumber"] == 102)
+        ok2 = all(db.write(ADMIN, o["path"], o["data"], t4, merge=False, op=None if o["op"] == "set" else "create") for o in m2["ops"])
+        expect(f"mock-02: admin import ({len(m2['ops'])} hujjat: test + versions + keys + solutions + rasmlar) Rules orqali yoziladi", ok2, True)
+        expect("mock-02: draft — hech kim (ruxsatli ham) ko'rmaydi", db.read(auth_of("user3"), f"attestationPhysicsDailyTests/{m2['testId']}/versions/v1", t4), False)
+        for _k in [k for k in list(db.docs) if k.startswith(f"attestationPhysicsDailyTests/{m2['testId']}")]:
+            db.docs.pop(_k, None)
     # avtomatik yakunlash mock uchun ham ishlaydi
     db.docs[mA("acc")] = {**mst("acc"), "startedAt": mat, "answers": dict(list(ans.items())[:5])}
     expect("mock: in_progress (hali topshirmagan) user uchun yechim va kalit yopiq",

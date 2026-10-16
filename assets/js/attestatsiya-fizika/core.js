@@ -21,6 +21,15 @@ export const MOCK_FIRST_DAY = 101;
 export const isMockDay = (n) => Number.isInteger(n) && n >= MOCK_FIRST_DAY;
 export const isMock = (t) => t?.kind === "mock" || isMockDay(t?.dayNumber);
 export const dayLabel = (t) => (isMock(t) ? (t.mockNumber > 1 ? `Mock test ${t.mockNumber}` : "Mock test") : `Day ${t?.dayNumber}`);
+/** Mock tarkibi matni: composition (fizika / kasbiyStandart / pedagogikMahorat) bo'lsa — shu, bo'lmasa fizika + pedagogika (mock-01). */
+export const mockCompositionText = (t, unit = "") => {
+  const c = t?.composition || {};
+  const parts = [];
+  if (c.fizika != null) parts.push(`${c.fizika} ${unit}fizika`);
+  if (c.kasbiyStandart != null) parts.push(`${c.kasbiyStandart} ${unit}kasbiy standart`);
+  if (c.pedagogikMahorat != null) parts.push(`${c.pedagogikMahorat} ${unit}pedagogik mahorat`);
+  return parts.length ? parts.join(" + ") : `${t?.physicsCount || 40} ${unit}fizika + ${t?.pedagogyCount || 10} ${unit}pedagogika`;
+};
 export const dayLabelOf = (n) => (isMockDay(n) ? "Mock test" : `Day ${n}`);
 /** Mock: har bir to'g'ri javob pointsPerQuestion (2) ball; jami maxScore (100). */
 export const mockPoints = (correct, test) => (Number(correct) || 0) * (test?.pointsPerQuestion || 2);

@@ -10,8 +10,8 @@
 import { listVisibleTests, getMyAttempt, startAttempt, getSnapshot, saveDraft, submitAttempt, gradeAttempt, getKey } from "./api.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
 import { bindCalculatorButton, CALC_ICON } from "./calculator-panel.js";
-import { loadAccessContext, dayOpen, ACCESS_TITLE, ACCESS_TEXT, COURSE_URL } from "./access.js";
-import { esc, toMs, timeLimitOf, attemptEndMs, remainingSeconds, formatLimit, serverSkewMs, isMock, dayLabel, dayLabelOf, mockPoints, mockMax, officialOpen, solutionOpen, solutionOpenFor, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
+import { loadAccessContext, dayOpen, accessText, ACCESS_TITLE, COURSE_URL } from "./access.js";
+import { esc, toMs, timeLimitOf, attemptEndMs, remainingSeconds, formatLimit, serverSkewMs, isMock, mockCompositionText, dayLabel, dayLabelOf, mockPoints, mockMax, officialOpen, solutionOpen, solutionOpenFor, formatTashkent, formatClock, formatDuration, questionStatus, precisePercent, gradeAnswers } from "./core.js";
 import { renderBlocks, loadKatex, plainText } from "./render.js";
 import { ic, fillIcons, whenUser, stateHtml, errorMessage } from "./ui.js";
 import { openModal } from "../ui/modal.js";
@@ -151,7 +151,7 @@ function renderIntro() {
     <section class="of-card att-intro" aria-labelledby="attIntroTitle">
       <p class="att-eyebrow">${ic("atom")}Attestatsiya — Fizika · ${esc(dayLabel(test))}</p>
       <h1 id="attIntroTitle">${isMock(test)
-        ? `Mock test: ${test.physicsCount || 40} ta fizika + ${test.pedagogyCount || 10} ta pedagogika`
+        ? `Mock test: ${esc(mockCompositionText(test, "ta "))}`
         : `${esc(test.sectionTitle)}: ${esc(test.topics.join(", "))}`}</h1>
       <ul class="att-facts">
         <li>${ic("list")}<span><b>${test.questionCount}</b>savol</span></li>
@@ -163,7 +163,7 @@ function renderIntro() {
       </ul>
       <p class="of-muted">Test faqat <b>bir marta rasmiy</b> topshiriladi${isMock(test) ? "" : " — uni xohlagan kuningizda boshlashingiz mumkin"}. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.</p>
       ${timeLimitOf(test) ? `<p class="att-limit-note">${ic("clock")}<span>«${resumable ? "Davom ettirish" : "Testni boshlash"}» bosilgan zahoti <b>${esc(formatLimit(timeLimitOf(test)))}</b> hisoblanadi. Sahifani yangilasangiz yoki yopsangiz ham vaqt to‘xtamaydi — qolgan vaqtdan davom etasiz. Vaqt tugaganda javoblaringiz <b>avtomatik topshiriladi</b>.${limitedBySolution() ? ` Yechimlar ${esc(formatTashkent(test.solutionAvailableAt))} da ochilgani uchun bugun sizda atigi <b>${esc(formatLimit(Math.max(60, Math.floor((toMs(test.solutionAvailableAt) - nowMs()) / 1000))))}</b> qolgan.` : ""}</span></p>` : ""}
-      ${isMock(test) ? `<p class="of-subtle">Fizika: Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — har bobdan 8 tadan; so‘ng Pedagogika bo‘limi.</p>` : ""}
+      ${isMock(test) ? `<p class="of-subtle">${test.composition?.kasbiyStandart != null ? "Bo‘limlar tartibi: Fizika, Kasbiy standart, Pedagogik mahorat." : "Fizika: Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — har bobdan 8 tadan; so‘ng Pedagogika bo‘limi."}</p>` : ""}
       ${test.questionCount - test.scorableCount > 0 ? `<p class="of-subtle">${test.questionCount - test.scorableCount} ta savol (variantsiz yoki manbasida noaniqlik bor) testda qoladi, lekin ballga kirmaydi.</p>` : ""}
       <div class="of-row" style="flex-wrap:wrap">
         <button type="button" class="of-btn of-btn--primary of-btn--lg" data-start>${ic("play")}${resumable ? "Davom ettirish" : "Testni boshlash"}</button>
@@ -598,7 +598,7 @@ async function renderResult(key) {
     attempt = await getMyAttempt(uid, test.id);
     // Day 4+ ruxsatsiz: start ekrani ko'rsatilmaydi, urinish yaratilmaydi (Rules ham rad etadi). O'z urinishi bo'lsa — tarix.
     if (!attempt && !dayOpen(test, access)) {
-      show(stateHtml("lock", `Day ${day}: ${ACCESS_TITLE.toLowerCase()}`, esc(ACCESS_TEXT),
+      show(stateHtml("lock", `${dayLabelOf(day)}: ${ACCESS_TITLE.toLowerCase()}`, esc(accessText(test)),
         `<div class="of-row" style="justify-content:center;flex-wrap:wrap"><a class="of-btn of-btn--primary" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 Kursga yozilish</a><a class="of-btn" href="fizikaattestatsiya.html">Dashboard</a></div>`));
       return;
     }

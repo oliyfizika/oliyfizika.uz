@@ -269,12 +269,18 @@ $("[data-import]").addEventListener("click", async (e) => {
   }
 });
 
-// ------------------------------------------------------------------ Mock test importi (50 savol: 40 fizika + 10 pedagogika)
-// Fayl: _private/attestatsiya-fizika/mock-import-NN.json (build_mock_test.py). Faqat 4 ta hujjat yo'li ruxsat etiladi;
-// mavjud mock test (draft ham, published ham) QAYTA YOZILMAYDI. Hech narsa o'chirilmaydi.
+// ------------------------------------------------------------------ Mock test importi (50 savol, 100 ball)
+// Fayl: _private/attestatsiya-fizika/mock-import-NN.json (build_mock_test.py yoki build_mock_test_02.py).
+// Ruxsat etilgan yo'llar: test hujjati + versions/v1 + keys/v1 + solutions/v1 (aynan shu tartibda, birinchi 4 ta) va
+// ixtiyoriy RASMLAR: figures/{id} (savol rasmlari) va solutionFigures/{id} (yechim rasmlari, Firestore base64).
+// Mavjud mock test PUBLISHED/ARCHIVED bo'lsa QAYTA YOZILMAYDI; DRAFT bo'lsa — faqat yetishmayotgan hujjatlar to'ldiriladi
+// (mavjudlari tegilmaydi). Hech narsa o'chirilmaydi.
 let mockBundle = null;
+const MOCK_FIG_MAX_BYTES = 700 * 1024;            // base64 dan oldingi hajm; Firestore hujjati 1 MiB dan oshmasligi uchun
+const MOCK_FIG_MIME = ["image/webp", "image/png", "image/svg+xml"];
 const MOCK_PATHS = (tid) => [new RegExp(`^${COL.tests}/${tid}$`), new RegExp(`^${COL.tests}/${tid}/versions/v1$`),
   new RegExp(`^${COL.tests}/${tid}/keys/v1$`), new RegExp(`^${COL.tests}/${tid}/solutions/v1$`)];
+const mockFigRx = (tid) => new RegExp(`^${COL.tests}/${tid}/(figures|solutionFigures)/([A-Za-z0-9][A-Za-z0-9._-]{0,127})$`);
 $("[data-mock-bundle]").addEventListener("change", async (e) => {
   const info = $("[data-mock-info]");
   mockBundle = null;
@@ -283,48 +289,72 @@ $("[data-mock-bundle]").addEventListener("change", async (e) => {
     const data = JSON.parse(await e.target.files[0].text());
     if (data.format !== "oliyfizika-attestation-mock-import" || !Array.isArray(data.ops) || !/^att-fizika-mock-\d\d$/.test(data.testId)) throw new Error("format");
     const rx = MOCK_PATHS(data.testId);
-    if (data.ops.length !== 4 || !rx.every((r, i) => r.test(data.ops[i].path))) throw new Error("yo‘llar mos emas");
+    if (data.ops.length < 4 || !rx.every((r, i) => r.test(data.ops[i].path))) throw new Error("yo‘llar mos emas");
+    const figRx = mockFigRx(data.testId);
+    const figOps = data.ops.slice(4);
+    for (const o of figOps) {
+      const m = figRx.exec(o.path);
+      const d = o.data || {};
+      if (!m || d.testId !== data.testId || d.id !== m[2] || !MOCK_FIG_MIME.includes(d.mime) || typeof d.data !== "string"
+        || !(d.bytes > 0 && d.bytes <= MOCK_FIG_MAX_BYTES) || Object.keys(d).some((k) => !["testId", "id", "mime", "bytes", "data"].includes(k))) {
+        throw new Error(`rasm hujjati yaroqsiz: ${String(o.path).split("/").slice(-2).join("/")}`);
+      }
+    }
     const t = data.ops[0].data;
     const key = data.ops[2].data;
     if (t.kind !== "mock" || t.dayNumber < 101 || t.questionCount !== 50 || t.questionIds.length !== 50 || t.maxScore !== 100 || t.timeLimitSeconds !== 7200
-      || t.status !== "draft" || t.published !== false || Object.keys(key.answers).length !== 50 || key.scorableCount !== 50) throw new Error("mock hisobi mos emas");
+      || t.status !== "draft" || t.published !== false || Object.keys(key.answers).length !== 50 || key.scorableCount !== 50
+      || (t.paidOnly !== undefined && typeof t.paidOnly !== "boolean")) throw new Error("mock hisobi mos emas");
     const bad = preflightNestedArrays(data.ops);
     if (bad.length) { info.textContent = nestedArrayError(bad).message; return; }
     mockBundle = data;
-    info.textContent = `Tekshirildi: ${data.testId} · 50 savol (40 fizika + 10 pedagogika) · 100 ball · planHash ${data.planHash}. «Mock testni import qilish» ni bosing.`;
+    const nQ = figOps.filter((o) => o.path.includes("/figures/")).length;
+    const nS = figOps.length - nQ;
+    info.textContent = `Tekshirildi: ${data.testId} · 50 savol · 100 ball${t.paidOnly ? " · FAQAT PULLIK GURUH" : " · hamma uchun bepul"} · rasmlar: savol ${nQ}, yechim ${nS} · planHash ${data.planHash}. «Mock testni import qilish» ni bosing.`;
     $("[data-mock-import]").disabled = false;
   } catch (err) {
-    info.textContent = `Fayl yaroqsiz (${err.message}). _private/attestatsiya-fizika/mock-import-01.json ni tanlang.`;
+    info.textContent = `Fayl yaroqsiz (${err.message}). _private/attestatsiya-fizika/mock-import-NN.json ni tanlang.`;
   }
 });
 $("[data-mock-import]").addEventListener("click", async (e) => {
   const btn = e.currentTarget;
   const info = $("[data-mock-info]");
   if (!mockBundle) return;
-  if (tests.some((t) => t.id === mockBundle.testId)) {
-    info.textContent = `${mockBundle.testId} allaqachon mavjud — qayta yozilmaydi (draft yoki e’lon qilingan).`;
+  const existing = tests.find((t) => t.id === mockBundle.testId);
+  if (existing && !(existing.status === "draft" && existing.published !== true)) {
+    info.textContent = `${mockBundle.testId} allaqachon e’lon qilingan/arxivlangan — qayta yozilmaydi.`;
     return;
   }
+  const nFig = mockBundle.ops.length - 4;
   const ok = await confirmAction({
-    title: "Mock test import qilinsinmi?",
-    text: `${mockBundle.testId}: test hujjati (draft) + savollar, kalit va yechimlar. Foydalanuvchilarga ko‘rinmaydi — alohida PUBLISH kerak. Hech narsa o‘chirilmaydi.`,
-    confirmLabel: "Import",
+    title: existing ? "Mock test to‘ldirilsinmi?" : "Mock test import qilinsinmi?",
+    text: existing
+      ? `${mockBundle.testId} draft holatida mavjud: faqat yetishmayotgan hujjatlar yoziladi, mavjudlari o‘zgarmaydi. Hech narsa o‘chirilmaydi.`
+      : `${mockBundle.testId}: test hujjati (draft) + savollar, kalit, yechimlar${nFig ? ` + ${nFig} ta rasm` : ""}. Foydalanuvchilarga ko‘rinmaydi — alohida PUBLISH kerak. Hech narsa o‘chirilmaydi.`,
+    confirmLabel: existing ? "To‘ldirish" : "Import",
   });
   if (!ok) return;
   btn.classList.add("is-loading");
   try {
-    // Test hujjati birinchi, keyin sub-hujjatlar (Rules versions/keys/solutions uchun parent testni get() qiladi)
+    // Test hujjati birinchi, keyin sub-hujjatlar (Rules versions/keys/solutions/figures uchun parent testni get() qiladi).
+    // Mavjud hujjat qayta yozilmaydi (rasmlar o'zgarmas: Rules update'ni rad etadi) — shuning uchun qayta urinish xavfsiz.
+    let written = 0, skipped = 0;
     for (const o of mockBundle.ops) {
+      const ref = doc(fb.db, ...o.path.split("/"));
+      if (existing || o !== mockBundle.ops[0]) {
+        if ((await getDoc(ref)).exists()) { skipped++; continue; }
+      }
       const batch = writeBatch(fb.db);
-      batch.set(doc(fb.db, ...o.path.split("/")), o.data);
+      batch.set(ref, o.data);
       await batch.commit();
-      info.textContent = `Yozilmoqda… ${o.path.split("/").slice(-2).join("/")}`;
+      written++;
+      info.textContent = `Yozilmoqda… ${written + skipped}/${mockBundle.ops.length} · ${o.path.split("/").slice(-2).join("/")}`;
     }
-    info.textContent = `Tayyor: ${mockBundle.testId} draft sifatida yozildi. Jadvaldan PUBLISH qiling.`;
+    info.textContent = `Tayyor: ${mockBundle.testId} draft sifatida yozildi (${written} ta yozildi, ${skipped} ta mavjud). Jadvaldan PUBLISH qiling.`;
     toast("Mock test import qilindi.");
     await load();
   } catch (err) {
-    info.textContent = errorText(err, "Mock import xatosi.");
+    info.textContent = errorText(err, "Mock import xatosi.") + " Qayta urinsangiz — faqat yetishmayotgan hujjatlar yoziladi.";
   } finally {
     btn.classList.remove("is-loading");
   }

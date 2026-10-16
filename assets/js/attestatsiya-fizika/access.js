@@ -12,8 +12,11 @@ export const FREE_DAYS = 3;
 
 export const isFreeDay = (test) => Number.isInteger(test?.dayNumber) && test.dayNumber <= FREE_DAYS;
 
-/** Mock test (kind "mock", dayNumber 101+) — hamma kirgan foydalanuvchi uchun bepul (Rules: attIsMock). */
+/** Mock test (kind "mock", dayNumber 101+) — paidOnly bo'lmasa hamma kirgan foydalanuvchi uchun bepul (Rules: attIsMock). */
 export const isMockTest = (test) => test?.kind === "mock";
+
+/** Pullik mock (paidOnly === true): faqat admin | attestationAccess == true; accessMode "open" ham ochmaydi (Rules: attPaidOnlyMock). */
+export const isPaidMock = (test) => isMockTest(test) && test.paidOnly === true;
 
 /** @param {{accessMode?:string}} settings  @param {object|null} profile users/{uid} */
 export function accessContext(settings, profile) {
@@ -27,6 +30,7 @@ export function accessContext(settings, profile) {
 /** Yangi urinish boshlash / kontentni ko'rish mumkinmi (Rules: attDayOpen). */
 export function dayOpen(test, ctx) {
   if (!test) return false;
+  if (isPaidMock(test)) return !!(ctx && (ctx.admin || ctx.granted));
   return isFreeDay(test) || isMockTest(test) || !!(ctx && (ctx.open || ctx.admin || ctx.granted));
 }
 
@@ -37,6 +41,9 @@ export function contentOpen(test, ctx, attempt) {
 
 export const ACCESS_TITLE = "Kirish uchun ruxsat kerak";
 export const ACCESS_TEXT = "Bu kun «Attestatsiya — Fizika» kursi ishtirokchilari uchun. Day 1–3 hamma uchun bepul.";
+export const ACCESS_TEXT_MOCK = "Bu mock test «Attestatsiya — Fizika» kursining pullik guruhi ishtirokchilari uchun.";
+/** Yopiq kartada ko'rsatiladigan matn (pullik mock uchun alohida). */
+export const accessText = (test) => (isPaidMock(test) ? ACCESS_TEXT_MOCK : ACCESS_TEXT);
 export const COURSE_URL = "https://t.me/oliy_fizik";
 
 /**
