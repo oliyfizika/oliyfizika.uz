@@ -1,0 +1,286 @@
+{
+  "id": 56,
+  "title": "56-Mavzu | Kondensatorlarni parallel va ketma-ket ulash",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 57,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "100 nF, 200 nF va 500 nF sig‘imli uchta kondensatorni ketma-ket ulangandagi umumiy sig‘imini toping (nF).",
+      "answers": [
+        "800",
+        "500",
+        "100",
+        "58,8"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:1"
+    },
+    {
+      "text": "Elektr sig‘imlari bir xil bo‘lgan uchta kondensator 2 V kuchlanish manbaiga parallel ulandi. Bunda har bir kondensator 1 nC zaryadga ega bo‘ldi. Zanjirning umumiy sig‘imini toping (pF).",
+      "answers": [
+        "1400",
+        "1500",
+        "1600",
+        "800"
+      ],
+      "correct": 1,
+      "source": "56-mavzu.tex#0:2"
+    },
+    {
+      "text": "Elektr sig‘imi 6 $\\mu F$, 2 $\\mu F$ va 4 $\\mu F$ ga teng bo‘lgan kondensatorlar 24 V kuchlanish manbaiga ketma-ket ulangan. Ikkinchi kondensator qoplamalari orasidagi potensiallar farqini toping (V).",
+      "answers": [
+        "8",
+        "12",
+        "4",
+        "13,1"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:3"
+    },
+    {
+      "text": "O‘zgarmas tok manbaiga ulangan 8 $\\mu F$ sig‘imli kondensatorga parallel ulangan voltmetr 6 V kuchlanishni ko‘rsatdi. Agar bu kondensatorga 2 $\\mu F$ sig‘imli ikkinchi kondensator ketma-ket ulansa, voltmetr qanday kuchlanishni (V) ko‘rsatadi?",
+      "answers": [
+        "1,2",
+        "2",
+        "6",
+        "4,6"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:4"
+    },
+    {
+      "text": "$C_1 = 1 \\, \\mu F$ va $C_2 = 3 \\, \\mu F$ sig‘imli ikki kondensatorni ketma-ket ulab hosil qilingan elektr sxema $U = 220 \\, V$ li o‘zgarmas kuchlanish manbaiga ulangan. Har bir kondensatordagi kuchlanishni aniqlang (V).",
+      "answers": [
+        "115; 105",
+        "120; 100",
+        "145; 65",
+        "165; 55"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:5"
+    },
+    {
+      "text": "3 $\\mu F$ va 6 $\\mu F$ sig‘imli kondensatorlar o‘zaro ulangan va 120 V EYUK li batareyaga biriktirilgan. Agar kondensatorlar ketma-ket ulangan bo‘lsa, ularning qoplamalari orasidagi potensiallar farqi aniqlansin (V).",
+      "answers": [
+        "80; 40",
+        "80; 80",
+        "40; 40",
+        "80; 20"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:6"
+    },
+    {
+      "text": "Rasmda tasvirlangan kondensatorlar tizimining umumiy sig‘imini toping.",
+      "answers": [
+        "$47C/16$",
+        "$14C/15$",
+        "$15C/7$",
+        "$12C/7$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar56/r2a7114bd1e.png",
+      "source": "56-mavzu.tex#0:7"
+    },
+    {
+      "text": "Sxemadan umumiy sig‘imni toping.",
+      "answers": [
+        "$3C/2$",
+        "$3C$",
+        "$6C$",
+        "$2C$"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:8"
+    },
+    {
+      "text": "Rasmda har bir kondensatorning sig‘imi C ga teng. M va N nuqtalar orasidagi potensiallar farqi 120 V bo‘lsa, K va L nuqtalar orasidagi potensiallar farqini (V) toping.",
+      "answers": [
+        "60",
+        "40",
+        "20",
+        "30"
+      ],
+      "correct": 1,
+      "source": "56-mavzu.tex#0:9"
+    },
+    {
+      "text": "Sig‘imlari $C_1 = 3 \\, \\mu F, C_2 = 5 \\, \\mu F, C_3 = 6 \\, \\mu F$ va $C_4 = 5 \\, \\mu F$ bo‘lgan to‘rtta kondensator rasmda ko‘rsatilgan sxema bo‘yicha ulangan. Batareyaning umumiy sig‘imini aniqlang ($\\mu F$).",
+      "answers": [
+        "2",
+        "3,4",
+        "9",
+        "4,5"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:10"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan kondensatorlar batareyasining A va B nuqtalar orasidagi elektr sig‘imini aniqlang.",
+      "answers": [
+        "0,4C",
+        "0,2C",
+        "C",
+        "0,8C"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:11"
+    },
+    {
+      "text": "Rasmdagi kondensatorlar batareyasining sig‘imi 5,8 $\\mu F$ ga teng. Agar $C_2 = 1 \\, \\mu F, C_3 = 4 \\, \\mu F$ bo‘lsa, birinchi kondensatorning sig‘imi ($\\mu F$) va undagi zaryad qanday ($\\mu C$)?",
+      "answers": [
+        "5; 1,1",
+        "10; 1,1",
+        "5; 0,8",
+        "1,4; 3"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:12"
+    },
+    {
+      "text": "Rasmdagi zanjirda K va L uchlar orasidagi zaryad miqdori Q ga teng. MN uchlari orasiga ulangan C sig‘imli kondensatorning zaryadi nimaga teng?",
+      "answers": [
+        "$Q/5$",
+        "$Q/2$",
+        "$8Q/53$",
+        "$13Q/40$"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:13"
+    },
+    {
+      "text": "Rasmda tasvirlangan kondensatorlar tizimining umumiy sig‘imini toping.",
+      "answers": [
+        "3C",
+        "6C/11",
+        "5C/11",
+        "6C"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:14"
+    },
+    {
+      "text": "Ketma-ket ulangan ikkita bir xil kondensator modda bilan ikki xil usulda yarmigacha to‘ldirilgan. Bunda kondensator kuchlanishlarining farqi qanday bo‘ladi (V)?",
+      "answers": [
+        "0",
+        "24",
+        "28,5",
+        "12,6"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:15"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan kondensatorlar batareyasida a va b nuqtalar orasidagi kuchlanishini toping (V).",
+      "answers": [
+        "0",
+        "8,25",
+        "7,75",
+        "5,33"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:16"
+    },
+    {
+      "text": "Sig‘imi 3 $\\mu F$ zaryadi 5 $\\mu C$ va sig‘imi 8 $\\mu F$ zaryadi 3 $\\mu C$ bo‘lgan kondensatorlar mos qutblari bilan ulangandan keyin, birinchi kondensatordagi zaryadni toping ($\\mu C$).",
+      "answers": [
+        "24/11",
+        "64/11",
+        "6/11",
+        "16/11"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:17"
+    },
+    {
+      "text": "Sig‘imi 3 $\\mu F$ zaryadi 5 $\\mu C$ va sig‘imi 8 $\\mu F$ zaryadi 3 $\\mu C$ bo‘lgan kondensatorlar mos qutblari bilan ulangandan keyin, ikkinchi kondensatordagi zaryadni toping ($\\mu C$).",
+      "answers": [
+        "24/11",
+        "64/11",
+        "6/11",
+        "16/11"
+      ],
+      "correct": 1,
+      "source": "56-mavzu.tex#0:18"
+    },
+    {
+      "text": "$C$ sig‘imli ikki kondensator $2U$ va $U$ kuchlanish bilan zaryadlangan. Agar kondensator qutblari teskari holda ulansa, natijaviy kuchlanish qanday bo‘ladi?",
+      "answers": [
+        "4U",
+        "2,5U",
+        "2U",
+        "0,5U"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:19"
+    },
+    {
+      "text": "$10^4 \\, nF$ sig‘imli ikki kondensator 5 V va 10 V kuchlanish bilan zaryadlangan. Ularning qutblari mos ravishda ulansa, natijaviy kuchlanish qanday bo‘ladi?",
+      "answers": [
+        "5",
+        "12,5",
+        "7,5",
+        "50"
+      ],
+      "correct": 2,
+      "source": "56-mavzu.tex#0:20"
+    },
+    {
+      "text": "Bir xil zaryadlangan $C$ va $2C$ sig‘imli kondensatorlar o‘zaro parallel ulansa, birinchi kondensatordagi kuchlanish qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi",
+        "1,5 marta ortadi",
+        "1,5 marta kamayadi",
+        "3 marta ortadi"
+      ],
+      "correct": 2,
+      "source": "56-mavzu.tex#0:21"
+    },
+    {
+      "text": "800 V potensiallar farqigacha zaryadlangan havo kondensatori o‘lchamlari birday bo‘lgan dielektrikli zaryadlanmagan kondensator bilan parallel ulangan. Potensiallar farqi 100 V bo‘lsa, dielektrikning singdiruvchanligini toping.",
+      "answers": [
+        "7",
+        "2",
+        "16",
+        "3"
+      ],
+      "correct": 0,
+      "source": "56-mavzu.tex#0:22"
+    },
+    {
+      "text": "Yassi havo kondensatori 50 V gacha zaryadlangan va manbadan uzilgan. Qoplamalar orasiga 1 mm qalinlikdagi metall list kiritildi. Masofa 5 mm bo‘lsa, yangi potensiallar farqini aniqlang (V).",
+      "answers": [
+        "30",
+        "15",
+        "80",
+        "40"
+      ],
+      "correct": 3,
+      "source": "56-mavzu.tex#0:23"
+    },
+    {
+      "text": "Ikkita bir xil kondensator parallel ulangan va 6 V gacha zaryadlangan. Uzilgach, birining plastinkalari orasidagi masofa 2 marta kamaytirilsa, yangi potensiallar farqi qancha (V)?",
+      "answers": [
+        "6",
+        "2",
+        "4",
+        "12"
+      ],
+      "correct": 2,
+      "source": "56-mavzu.tex#0:24"
+    },
+    {
+      "text": "12 $\\mu F$ sig‘imli kondensatorga parallel voltmetr 3 V ni ko‘rsatmoqda. Unga 8 $\\mu F$ sig‘imli ikkinchi kondensator parallel ulansa, voltmetr necha V ni ko‘rsatadi?",
+      "answers": [
+        "1,5",
+        "3",
+        "1",
+        "2"
+      ],
+      "correct": 1,
+      "source": "56-mavzu.tex#0:25"
+    }
+  ]
+}

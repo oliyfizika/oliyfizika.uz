@@ -1,0 +1,208 @@
+{
+  "id": 80,
+  "title": "80-Mavzu | Yorug‘lik dispersiyasi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 81,
+  "source": "authored",
+  "questions": [
+    {
+      "text": "Yorug‘lik dispersiyasi nima?",
+      "answers": [
+        "Yorug‘likning to‘siq atrofida egilishi",
+        "Yorug‘lik to‘lqinlarining qo‘shilib kuchayishi",
+        "Yorug‘likning bir tekislikda tebranishi",
+        "Moddaning sindirish ko‘rsatkichining yorug‘lik to‘lqin uzunligiga (chastotasiga) bog‘liqligi"
+      ],
+      "correct": 3,
+      "source": "authored:80:1"
+    },
+    {
+      "text": "Nyuton tajribasida shisha prizmadan o‘tgan oq yorug‘lik nuri nimaga aylanadi?",
+      "answers": [
+        "Rangli spektrga",
+        "Faqat qizil nurga",
+        "Qora nurga",
+        "O‘zgarmaydi"
+      ],
+      "correct": 0,
+      "source": "authored:80:2"
+    },
+    {
+      "text": "Shisha prizmadan o‘tganda qaysi rangdagi nur eng kam og‘adi?",
+      "answers": [
+        "Qizil",
+        "Ko‘k",
+        "Yashil",
+        "Binafsha"
+      ],
+      "correct": 0,
+      "source": "authored:80:3"
+    },
+    {
+      "text": "Shisha prizmadan o‘tganda qaysi rangdagi nur eng ko‘p og‘adi?",
+      "answers": [
+        "Yashil",
+        "Binafsha",
+        "Qizil",
+        "Sariq"
+      ],
+      "correct": 1,
+      "source": "authored:80:4"
+    },
+    {
+      "text": "Shisha uchun sindirish ko‘rsatkichi qaysi rangdagi nurda eng katta?",
+      "answers": [
+        "Yashil",
+        "Sariq",
+        "Qizil",
+        "Binafsha"
+      ],
+      "correct": 3,
+      "source": "authored:80:5"
+    },
+    {
+      "text": "Shishada qaysi rangdagi nurning tezligi eng katta?",
+      "answers": [
+        "Yashil",
+        "Ko‘k",
+        "Binafsha",
+        "Qizil"
+      ],
+      "correct": 3,
+      "source": "authored:80:6"
+    },
+    {
+      "text": "Quyidagi rang tartiblaridan qaysi biri spektrdagi to‘g‘ri tartib (qizildan binafshagacha)?",
+      "answers": [
+        "Yashil, qizil, sariq, ko‘k, binafsha, to‘q sariq, havorang",
+        "Qizil, sariq, to‘q sariq, yashil, ko‘k, havorang, binafsha",
+        "Binafsha, qizil, sariq, yashil, ko‘k, to‘q sariq, havorang",
+        "Qizil, to‘q sariq, sariq, yashil, havorang, ko‘k, binafsha"
+      ],
+      "correct": 3,
+      "source": "authored:80:7"
+    },
+    {
+      "text": "Kamalakning hosil bo‘lishiga nima sabab bo‘ladi?",
+      "answers": [
+        "Yomg‘ir tomchilarida yorug‘likning sinishi, dispersiyasi va qaytishi",
+        "Yorug‘likning interferensiyasi",
+        "Yorug‘likning qutblanishi",
+        "Fotoeffekt"
+      ],
+      "correct": 0,
+      "source": "authored:80:8"
+    },
+    {
+      "text": "Monoxromatik (bir rangli) nur shisha prizmadan o‘tganda nima bo‘ladi?",
+      "answers": [
+        "Rangli spektrga yoyiladi",
+        "Rangi o‘zgaradi",
+        "Faqat og‘adi, rangli spektrga yoyilmaydi",
+        "Yo‘qolib ketadi"
+      ],
+      "correct": 2,
+      "source": "authored:80:9"
+    },
+    {
+      "text": "Yorug‘lik bir muhitdan ikkinchisiga o‘tganda quyidagilardan qaysi biri o‘zgarmaydi?",
+      "answers": [
+        "To‘lqin uzunligi",
+        "Sindirish ko‘rsatkichi",
+        "Chastota",
+        "Tarqalish tezligi"
+      ],
+      "correct": 2,
+      "source": "authored:80:10"
+    },
+    {
+      "text": "Oq yorug‘lik qanday yorug‘lik?",
+      "answers": [
+        "Faqat bitta to‘lqin uzunlikdagi nur",
+        "Turli rangdagi nurlarning aralashmasi",
+        "Qutblangan nur",
+        "Ko‘zga ko‘rinmas nur"
+      ],
+      "correct": 1,
+      "source": "authored:80:11"
+    },
+    {
+      "text": "Qizil atirgul oq yorug‘likda qizil ko‘rinadi, chunki u:",
+      "answers": [
+        "Barcha nurlarni qaytaradi",
+        "Qizil nurlarni qaytaradi, qolganlarini yutadi",
+        "O‘zi qizil yorug‘lik chiqaradi",
+        "Qizil nurlarni yutadi, qolganlarini qaytaradi"
+      ],
+      "correct": 1,
+      "source": "authored:80:12"
+    },
+    {
+      "text": "Qizil atirgulni sof ko‘k nur bilan yoritsak, u qanday ko‘rinadi?",
+      "answers": [
+        "Oq",
+        "Ko‘k",
+        "Qora",
+        "Qizil"
+      ],
+      "correct": 2,
+      "source": "authored:80:13"
+    },
+    {
+      "text": "Normal dispersiyada to‘lqin uzunligi ortishi bilan moddaning sindirish ko‘rsatkichi qanday o‘zgaradi?",
+      "answers": [
+        "Ortadi",
+        "Avval ortadi, keyin kamayadi",
+        "O‘zgarmaydi",
+        "Kamayadi"
+      ],
+      "correct": 3,
+      "source": "authored:80:14"
+    },
+    {
+      "text": "Vakuumda dispersiya kuzatilmaydi. Buning sababi nima?",
+      "answers": [
+        "Vakuumda nurlar yutiladi",
+        "Vakuumda yorug‘lik yo‘q",
+        "Vakuumda yorug‘lik to‘xtaydi",
+        "Vakuumda barcha to‘lqin uzunlikdagi nurlar bir xil tezlikda tarqaladi"
+      ],
+      "correct": 3,
+      "source": "authored:80:15"
+    },
+    {
+      "text": "Ko‘zga ko‘rinadigan yorug‘likning vakuumdagi to‘lqin uzunliklari taxminan qaysi oraliqda?",
+      "answers": [
+        "38 nm dan 76 nm gacha",
+        "380 nm dan 760 nm gacha",
+        "3,8 mm dan 7,6 mm gacha",
+        "0,38 m dan 0,76 m gacha"
+      ],
+      "correct": 1,
+      "source": "authored:80:16"
+    },
+    {
+      "text": "Muhitning sindirish ko‘rsatkichi 1,5 ga teng. Undagi yorug‘lik tezligi qancha (m/s)? (c = 3·10⁸ m/s)",
+      "answers": [
+        "4,5·10⁸",
+        "1,5·10⁸",
+        "2·10⁸",
+        "3·10⁸"
+      ],
+      "correct": 2,
+      "source": "authored:80:17"
+    },
+    {
+      "text": "To‘lqin uzunligi vakuumda 540 nm bo‘lgan yashil nur sindirish ko‘rsatkichi 1,5 bo‘lgan shishaga o‘tdi. Shishadagi to‘lqin uzunligi qancha (nm)?",
+      "answers": [
+        "810",
+        "540",
+        "360",
+        "270"
+      ],
+      "correct": 2,
+      "source": "authored:80:18"
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "id": 79,
+  "title": "79-Mavzu | Yorug‘lik difraksiyasi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 80,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Difraksiya deb qanday hodisaga aytiladi?",
+      "answers": [
+        "o‘lchamlari to‘lqin uzunliklari tartibida bo‘lgan to‘siq yoki tirqishga tushgan to‘lqinlarning to‘silgan sohaga og‘ib tarqalish hodisasi.",
+        "ikki kogerent to‘lqin qo‘shilganda hosil bo‘lgan to‘lqin amplitudasining kuchayishi yoki susayishi hodisasi.",
+        "to‘siqqa uchragan to‘lqinlarning to‘siqdan biror burchak ostida orqaga qaytib tarqalish hodisasi.",
+        "ikki to‘lqinning qo‘shilishi natijasida natijaviy tebranishlar amplitudasining keskin ortib yoki kamayib ketish hodisasi.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:1"
+    },
+    {
+      "text": "Yorug‘lik to‘lqinlarining tarqalishda to‘g‘ri chiziqdan og‘ishi va to‘siqni aylanib, soya sohasiga o‘tishi ... deb ataladi.",
+      "answers": [
+        "interferensiya.",
+        "yorug‘likning qutblanishi.",
+        "fotoeffekt.",
+        "dispersiya.",
+        "difraksiya."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:2"
+    },
+    {
+      "text": "Yorug‘lik qanday sharoitda to‘g‘ri chiziq bo‘ylab tarqalishdan chetlashadi?",
+      "answers": [
+        "bir jinsli bo‘lmagan muhitda.",
+        "o‘lchamlari yorug‘lik to‘lqin uzunligi bilan solishtirarli to‘siqlarga uchraganda.",
+        "o‘lchamlari yorug‘lik to‘lqin uzunligi bilan solishtirarli tirqish yoki teshiklardan o‘tganda.",
+        "TJY.",
+        "A, B va C javoblar to‘g‘ri."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:3"
+    },
+    {
+      "text": "Fazoning biror-bir nuqtasiga to‘lqin uzunligi 600 nm, optik yo‘llar farqi 1,2 $\\mu$m bo‘lgan kogerent nurlar kelib tushmoqda. Bu nuqtada qanday hodisa kuzatiladi?",
+      "answers": [
+        "difraksion maksimumlar.",
+        "interferension minimumlar.",
+        "interferension maksimumlar.",
+        "difraksion minimumlar.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:5"
+    },
+    {
+      "text": "Agar difraksion panjaraning bitta shtrixining kengligi $a=1{,}25$ $\\mu$m va shtrixlar orasidagi masofa $b=2{,}35$ $\\mu$m bo‘lsa, panjara davri (doimiysi) $d$ nimaga teng($\\mu$m)?",
+      "answers": [
+        "1,1.",
+        "1,88.",
+        "0,53.",
+        "3,6.",
+        "1,71."
+      ],
+      "correct": 3,
+      "images": "../rasmlar79/r5a7ee866a9.png",
+      "source": "79-mavzu.tex#0:6"
+    },
+    {
+      "text": "1 mm da 1000 ta shtrixi bor difraksion panjara davriysini ($\\mu$m) aniqlang.",
+      "answers": [
+        "100.",
+        "10.",
+        "2.",
+        "0,1.",
+        "1."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:7"
+    },
+    {
+      "text": "Zamonaviy difraksion panjarada 3/4 mm masofada 12500 ta shtrix chizilgan. Panjara doimiysi ($\\mu$m) qanday?",
+      "answers": [
+        "0,03.",
+        "0,24.",
+        "0,12.",
+        "0,06.",
+        "0,1."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:8"
+    },
+    {
+      "text": "Agar panjara davri 2 $\\mu$m bo‘lsa, u holda har bir millimetrda necha shtrix mavjud?",
+      "answers": [
+        "500.",
+        "400.",
+        "300.",
+        "200.",
+        "100."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:9"
+    },
+    {
+      "text": "Difraksion panjarada ikkita qo‘shni tirqishlarning chetlaridan difraksiyaga uchragan to‘lqinlar yo‘l farqi 2,5 $\\mu$m va difraksiya burchagi $30^\\circ$ bo‘lsa, shu panjaraning doimiysi nech $\\mu$m ga teng?",
+      "answers": [
+        "1,25.",
+        "2,5.",
+        "5.",
+        "10.",
+        "25."
+      ],
+      "correct": 2,
+      "images": "../rasmlar79/r55b9e53db1.png",
+      "source": "79-mavzu.tex#0:10"
+    },
+    {
+      "text": "Davri 1,5 $\\mu$m bo‘lgan difraksion panjara $30^\\circ$ burchakka og‘dirgan birinchi tartibli spektr chiqishga mos keladigan to‘lqin uzunligini toping (nm).",
+      "answers": [
+        "300.",
+        "450.",
+        "500.",
+        "600.",
+        "750."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:11"
+    },
+    {
+      "text": "To‘lqin uzunligi 600 nm bo‘lgan monoxromatik yorug‘lik to‘lqini davri 3,6 $\\mu$m bo‘lgan difraksion panjaraga tik tushmoqda. $30^\\circ$ burchak ostida ko‘ringan difraksion maksimumning tartibini aniqlang.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:12"
+    },
+    {
+      "text": "Davriysi $d$ bo‘lgan difraksion panjaraga to‘lqin uzunligi $\\lambda$ bo‘lgan monoxromatik parallel nurlar dastasi tik tushmoqda. Birinchi bosh maksimum burchagi $\\varphi$ uchun qaysi shart bajarilishi kerak?",
+      "answers": [
+        "$\\sin\\varphi=\\lambda/d$.",
+        "$\\sin\\varphi=d/\\lambda$.",
+        "$\\cos\\varphi=\\lambda/d$.",
+        "$\\cos\\varphi=d/\\lambda$.",
+        "$\\cos\\varphi=\\lambda d$."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:13"
+    },
+    {
+      "text": "Davri 0,001 mm bo‘lgan difraksion panjara yordamida hosil qilingan birinchi tartibli spektrda yashil $(\\lambda=0{,}5~\\mu\\text{m})$ chiziq qanday burchak ostida ko‘rinadi?",
+      "answers": [
+        "$0^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "$75^\\circ$."
+      ],
+      "correct": 1,
+      "source": "79-mavzu.tex#0:14"
+    },
+    {
+      "text": "Difraksion panjara doimiysi 1,4 $\\mu$m. Panjarada hosil qilingan difraksion manzaraning 1-tartibli maksimumi $30^\\circ$ burchak ostida kuzatilayotgan bo‘lsa, nurning to‘lqin uzunligi ($\\mu$m) ni toping.",
+      "answers": [
+        "0,5.",
+        "0,7.",
+        "0,6.",
+        "0,8.",
+        "1."
+      ],
+      "correct": 1,
+      "source": "79-mavzu.tex#0:15"
+    },
+    {
+      "text": "Davri $1\\cdot10^{-3}$ mm bo‘lgan difraksion panjarada kuzatilayotgan birinchi tartibli simmetrik maksimumlar orasida burchak $60^\\circ$ bo‘lsa, tushayotgan yorug‘likning to‘lqin uzunligi qanday (nm) bo‘ladi?",
+      "answers": [
+        "400.",
+        "500.",
+        "600.",
+        "700.",
+        "870."
+      ],
+      "correct": 1,
+      "source": "79-mavzu.tex#0:16"
+    },
+    {
+      "text": "Difraksion panjara ortidagi 6-tartibli maksimum $60^\\circ$ burchak ostida kuzatiladi. Panjara doimiysining nurning to‘lqin uzunligiga nisbatini toping.",
+      "answers": [
+        "9.",
+        "7,2.",
+        "5,2.",
+        "6,9.",
+        "3,6."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:17"
+    },
+    {
+      "text": "Davri 0,0025 mm bo‘lgan difraksion panjara yordamida hosil qilingan 3-tartibli spektrdagi zangori $(\\lambda=0{,}5~\\mu\\text{m})$ rangli nurlarning og‘ish burchagi qanday?",
+      "answers": [
+        "$37^\\circ$.",
+        "$45^\\circ$.",
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$30^\\circ$."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:18"
+    },
+    {
+      "text": "To‘lqin uzunligi 500 nm bo‘lgan monoxromatik yorug‘lik to‘lqini $\\sqrt3~\\mu$m bo‘lgan difraksion panjaraga tik tushmoqda. Uchinchi tartibli difraksion maksimum qanday burchak ostida ko‘rinadi?",
+      "answers": [
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$.",
+        "$20^\\circ$."
+      ],
+      "correct": 1,
+      "source": "79-mavzu.tex#0:19"
+    },
+    {
+      "text": "Difraksion panjaraning har 1 mm ida 250 ta shtrix bor. Difraksion panjaraga to‘lqin uzunligi 500 nm bo‘lgan monoxromatik yorug‘lik tushadi. To‘rtinchi difraksion maksimum qanday burchak ostida kuzatiladi?",
+      "answers": [
+        "$75^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$.",
+        "$15^\\circ$."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:20"
+    },
+    {
+      "text": "To‘lqin uzunligi $\\lambda$ bo‘lgan yorug‘likning davri $5\\lambda$ bo‘lgan difraksion panjarasida difraksiyalanishida 2-tartibli maksimum qanday burchak ostida kuzatiladi?",
+      "answers": [
+        "$\\arcsin(3/5)$.",
+        "$\\arcsin(0{,}45)$.",
+        "$\\arcsin(0{,}3)$.",
+        "$\\arcsin(0{,}15)$.",
+        "$\\arcsin(2/5)$."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:21"
+    },
+    {
+      "text": "Difraksion panjaraning 1 mm masofasida 500 ta shtrix bo‘lsa va ikkinchi tartibli maksimum $30^\\circ$ burchak ostida kuzatilayotgan bo‘lsa, yorug‘likning to‘lqin uzunligi qanday ($\\mu$m)?",
+      "answers": [
+        "0,5.",
+        "0,6.",
+        "0,7.",
+        "0,8.",
+        "0,9."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:22"
+    },
+    {
+      "text": "Monoxromatik yorug‘lik dastasi difraksion panjaraga tik tushadi. Uchinchi tartibli maksimum markazga nisbatan $30^\\circ$ burchak ostida kuzatiladi. Panjara davrini $d$ ni yorug‘likning to‘lqin uzunligi $\\lambda$ bilan ifodalang.",
+      "answers": [
+        "$d=\\lambda$.",
+        "$d=1{,}5\\lambda$.",
+        "$d=3\\lambda$.",
+        "$d=6\\lambda$.",
+        "$d=\\lambda/3$."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:23"
+    },
+    {
+      "text": "To‘lqin uzunligi $\\lambda$ bo‘lgan monoxromatik parallel yorug‘lik nurlari davri $d=6\\lambda$ bo‘lgan difraksion panjaraga normal ravishda tushadi. Ikkinchi tartibli maksimum kuzatiladigan difraksiya burchagi $\\alpha$ bo‘lsa, $\\sin\\alpha$ nimaga teng?",
+      "answers": [
+        "$1/4$.",
+        "$1/3$.",
+        "$2{,}3$.",
+        "$1/6$.",
+        "0."
+      ],
+      "correct": 1,
+      "images": "../rasmlar79/re02114137f.png",
+      "source": "79-mavzu.tex#0:24"
+    },
+    {
+      "text": "Bir 2,5 mm ida 4000 ta shtrixi bo‘lgan difraksion panjaraga to‘lqin uzunligi 500 nm bo‘lgan monoxromatik yorug‘lik tushmoqda. Birinchi tartibli ikki spektr orasidagi burchakni toping.",
+      "answers": [
+        "$60^\\circ$.",
+        "$90^\\circ$.",
+        "$30^\\circ$.",
+        "$106^\\circ$.",
+        "$45^\\circ$."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:25"
+    },
+    {
+      "text": "Natriy sariq chizig‘ining to‘lqin uzunligi 500 nm. Difraksion panjaraning davri 2,8 $\\mu$m bo‘lsa, spektrning eng katta tartibi qanday?",
+      "answers": [
+        "6.",
+        "4.",
+        "5.",
+        "3.",
+        "2."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:26"
+    },
+    {
+      "text": "Difraksiya panjarasining davri 2 $\\mu$m. Natriyning to‘lqin uzunligi 589 nm sariq chizig‘ining difraksiya manzarasidagi eng katta tartib nomerini toping.",
+      "answers": [
+        "6.",
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:27"
+    },
+    {
+      "text": "Har bir millimetrida 200 ta shtrixi bo‘lgan difraksion panjaraga to‘lqin uzunligi $5\\cdot10^{-5}$ cm bo‘lgan monoxromatik to‘lqin normal tushmoqda. Kuzatish mumkin bo‘lgan difraksion maksimumlarning eng katta tartibi qanday?",
+      "answers": [
+        "1.",
+        "5.",
+        "10.",
+        "20.",
+        "100."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:28"
+    },
+    {
+      "text": "1 mm ga 400 shtrix to‘g‘ri keladigan difraksion panjaraga to‘lqin uzunligi $5\\cdot10^{-5}$ cm bo‘lgan monoxromatik yorug‘lik to‘lqini tik tushmoqda. Spektrning eng katta tartibini aniqlang.",
+      "answers": [
+        "3.",
+        "7.",
+        "5.",
+        "6.",
+        "2."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:29"
+    },
+    {
+      "text": "To‘lqin uzunligi 0,5 $\\mu$m bo‘lgan monoxromatik yorug‘lik 2,9 $\\mu$m bo‘lgan difraksion panjaraga tik tushmoqda. Ekranda nechta bosh maksimum kuzatiladi?",
+      "answers": [
+        "5.",
+        "6.",
+        "10.",
+        "11.",
+        "12."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:30"
+    },
+    {
+      "text": "Doimiysi 1,1 $\\mu$m bo‘lgan yassi difraksion panjaraga to‘lqin uzunligi 0,5 $\\mu$m bo‘lgan monoxromatik to‘lqin normal tushmoqda. Kuzatish mumkin bo‘lgan maksimumlar sonini toping.",
+      "answers": [
+        "9.",
+        "7.",
+        "5.",
+        "4.",
+        "2."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:31"
+    },
+    {
+      "text": "Davri 3,4 $\\mu$m bo‘lgan difraksion panjaraga tik ravishda to‘lqin uzunligi 0,5 $\\mu$m bo‘lgan monoxromatik yorug‘lik tushmoqda. Ekranda nechta bosh maksimum kuzatiladi?",
+      "answers": [
+        "6.",
+        "7.",
+        "12.",
+        "14.",
+        "13."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:32"
+    },
+    {
+      "text": "Difraksion panjara davri $d=2\\lambda$ bo‘lsa, panjara ortida nechta difraksion maksimum kuzatiladi?",
+      "answers": [
+        "2.",
+        "1.",
+        "5.",
+        "3.",
+        "4."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:33"
+    },
+    {
+      "text": "Yashil $(\\lambda=0{,}5~\\mu\\text{m})$ nur bilan yoritilgan davriysi 100 $\\mu$m bo‘lgan difraksion panjara nechta difraksion maksimum hosil qiladi?",
+      "answers": [
+        "500.",
+        "401.",
+        "200.",
+        "50.",
+        "10."
+      ],
+      "correct": 1,
+      "source": "79-mavzu.tex#0:34"
+    },
+    {
+      "text": "To‘lqin uzunligi 0,5 $\\mu$m bo‘lgan yorug‘lik dastasi doimiysi 2,3 $\\mu$m bo‘lgan difraksion panjaraga perpendikulyar tushadi. Ekranda kuzatiladigan maksimumlarning maksimal soni ...",
+      "answers": [
+        "9.",
+        "5.",
+        "4.",
+        "2.",
+        "1."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:35"
+    },
+    {
+      "text": "Monoxromatik yorug‘lik dastasi difraksion panjaraga tik tushadi. To‘rtinchi tartibli maksimum $30^\\circ$ ostida kuzatiladi. Panjara tomonidan berilgan maksimumlarning umumiy soni ...",
+      "answers": [
+        "7.",
+        "8.",
+        "15.",
+        "17.",
+        "19."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:36"
+    },
+    {
+      "text": "Difraksion panjaradan ekrangacha bo‘lgan masofa 80 cm, nolinchi maksimumdan uchinchi maksimumgacha masofa 3,6 mm bo‘lsa, yorug‘likning to‘lqin uzunligi necha metrga teng? Panjara doimiysi 0,3 mm ga teng.",
+      "answers": [
+        "$4{,}5\\cdot10^{-7}$.",
+        "$8{,}7\\cdot10^{-7}$.",
+        "$6\\cdot10^{-7}$.",
+        "$0{,}65\\cdot10^{-7}$.",
+        "$8\\cdot10^{-7}$."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:37"
+    },
+    {
+      "text": "Davri 0,02 mm bo‘lgan difraksion panjara yordamida markaziy maksimumdan 3 cm masofada birinchi maksimum hosil qilindi. Panjaradan ekrangacha bo‘lgan masofa 1 m bo‘lsa, yorug‘likning to‘lqin uzunligi qanday ($\\mu$m)?",
+      "answers": [
+        "0,4.",
+        "0,8.",
+        "0,86.",
+        "0,2.",
+        "0,6."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:38"
+    },
+    {
+      "text": "1 mm da 100 ta shtrixi bo‘lgan difraksion panjaraga yorug‘lik tushmoqda. Ekrandagi birinchi maksimum nolinchi maksimumdan 12 cm uzoqlikda kuzatiladi. Ekran bilan difraksion panjara orasidagi masofa 2 m bo‘lsa, yorug‘likning to‘lqin uzunligi qanday ($\\mu$m)?",
+      "answers": [
+        "60.",
+        "6,5.",
+        "6,4.",
+        "0,7.",
+        "0,6."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:39"
+    },
+    {
+      "text": "Difraksion panjara vositasida 1,8 m masofada, markaziy maksimumdan 5,4 cm masofada birinchi tartibli maksimum hosil qilinmoqda. Nurning to‘lqin uzunligi 0,6 $\\mu$m bo‘lsa, panjara doimiysi ($\\mu$m) qanday?",
+      "answers": [
+        "15.",
+        "40.",
+        "20.",
+        "30.",
+        "10."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:40"
+    },
+    {
+      "text": "Ekrandan panjaragacha bo‘lgan $a$ masofa bilan nolinchi maksimumdan birinchi maksimumgacha bo‘lgan $b$ masofa orasida qanday bog‘lanish bor?",
+      "answers": [
+        "$a$ ortsa $b$ o‘zgarmaydi.",
+        "$a$ ortsa $b$ kamayadi.",
+        "$a$ ortsa $b$ ham ortadi.",
+        "$a$ va $b$ bir-biriga bog‘liq emas.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "79-mavzu.tex#0:41"
+    },
+    {
+      "text": "Difraksiya maksimumi bilan ekran markazi orasidagi $b$ masofaning panjara davri $d$ ga bog‘lanishi qanday?",
+      "answers": [
+        "$a$ ortsa, $b$ kamayadi.",
+        "$a$ ortsa, $b$ ortadi.",
+        "$a$ ortsa, $b$ o‘zgarmaydi.",
+        "$b$ $a$ ga bog‘liq emas.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:42"
+    },
+    {
+      "text": "Davri kichik bo‘lgan difraksion panjara o‘rniga davri kattaroq bo‘lgan panjara olinsa, ekrandagi maksimumlar orasidagi masofa qanday o‘zgaradi? Maksimumlar soni-chi?",
+      "answers": [
+        "qisqaradi, kamayadi.",
+        "uzayadi, ko‘payadi.",
+        "o‘zgarmaydi, kamayadi.",
+        "uzayadi, kamayadi.",
+        "qisqaradi, ko‘payadi."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:43"
+    },
+    {
+      "text": "Har 1 millimetrida $N=25$ ta shtrixi bo‘lgan difraksion panjaraga monoxromatik yorug‘lik tik tushmoqda. Ekrandagi $k=4$ tartibli ikkita bosh maksimum orasidagi masofa 5,4 cm, ekran bilan difraksion panjara oralig‘i 50 cm bo‘lsa, yorug‘likning to‘lqin uzunligi qanday ($\\mu$m)?",
+      "answers": [
+        "0,52.",
+        "0,54.",
+        "0,56.",
+        "0,58.",
+        "0,5."
+      ],
+      "correct": 1,
+      "source": "79-mavzu.tex#0:44"
+    },
+    {
+      "text": "Agar monoxromatik yorug‘lik davri $d$ bo‘lgan difraksiya panjarasida difraksiyalanganda 1- tartibli maksimum ekranda markaziy maksimumdan $x$ masofada joylashgan bo‘lsa, yorug‘likning to‘lqin uzunligi qanday? Ekran va panjara orasidagi masofa $L$.",
+      "answers": [
+        "$\\dfrac{dx}{\\sqrt{L^2+x^2}}$.",
+        "$\\dfrac{dL}{\\sqrt{L^2+x^2}}$.",
+        "$\\dfrac{dx}{L}$.",
+        "$\\dfrac{d\\sqrt{L^2+x^2}}{L}$.",
+        "$\\dfrac{d\\sqrt{L^2+x^2}}{x}$."
+      ],
+      "correct": 0,
+      "source": "79-mavzu.tex#0:45"
+    },
+    {
+      "text": "Difraksion panjarasi yordamida yorug‘lik difraksiyalanganda 3-tartibli spektrdagi $\\lambda_1=780$ nm to‘lqin uzunlikli chiziq bilan 4-tartibli spektrdagi qanday $\\lambda_2$ to‘lqin uzunlikli chiziq ustma-ust tushadi?",
+      "answers": [
+        "292.",
+        "347.",
+        "520.",
+        "585.",
+        "1040."
+      ],
+      "correct": 3,
+      "images": "../rasmlar79/r00d97f394a.png",
+      "source": "79-mavzu.tex#0:46"
+    },
+    {
+      "text": "Qizil va binafsha nurlar difraksion panjarasiga tushadi. Quyidagi mulohazalardan qaysi to‘g‘ri?\n1) qizil nurning 3-maksimumi binafsha nurning 3-maksimumiga qaraganda markaziy maksimumdan uzoqroqda joylashgan.\n2) qizil va binafsha ranglarning markaziy maksimumlari bir nuqtada joylashadi.\n3) qizil va binafsha ranglarning markaziy maksimumlari bir nuqtada joylashmaydi.\n4) binafsha nurning 3-maksimumi qizil nurning 3-maksimumiga qaraganda markaziy maksimumdan uzoqroqda joylashgan.\n5) qizil nurning jami maksimumlari soni binafsha nurning maksimumlari sonidan ko‘p bo‘ladi.",
+      "answers": [
+        "1 va 3.",
+        "3 va 4.",
+        "3 va 5.",
+        "1, 2 va 4.",
+        "1, 2 va 5."
+      ],
+      "correct": 4,
+      "source": "79-mavzu.tex#0:47"
+    },
+    {
+      "text": "Maktabda 1 mm da 50 va 100 ta shtrixi bo‘lgan difraksion panjara bor. Bir xil sharoitda nurlarning qaysi biri ekranda enlqroq spektr hosil qiladi?",
+      "answers": [
+        "spektrlari bir xil bo‘ladi.",
+        "spektrning eni shtrixlar soniga bog‘liq emas.",
+        "birinchisi.",
+        "ikkinchisi.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:48"
+    },
+    {
+      "text": "Nomlari quyida keltirilgan asboblarning qaysilari oq yorug‘likni tarkibiy qismlarga (spektrlarga) ajratish uchun xizmat qiladi?\n1) yassi ko‘zgu;\n2) yig‘uvchi yupqa linza;\n3) difraksion panjara;\n4) shaffof uch qoli prizma.",
+      "answers": [
+        "1, 2.",
+        "faqat 3.",
+        "faqat 4.",
+        "3, 4.",
+        "1, 4."
+      ],
+      "correct": 3,
+      "source": "79-mavzu.tex#0:49"
+    }
+  ]
+}

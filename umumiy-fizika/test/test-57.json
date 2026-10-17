@@ -1,0 +1,230 @@
+{
+  "id": 57,
+  "title": "57-Mavzu | O‘zgarmas tok",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 58,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "800 V potensiallar farqigacha zaryadlangan havo kondensatori o‘lchamlari jihatidan birday bo‘lgan, dielektrik to‘ldirilgan zaryadlanmagan kondensator bilan parallel ulangan. Agar kondensatorlar ulangandan keyin potensiallar farqi 100 V ga teng bo‘lgan bo‘lsa, dielektrikning singdiruvchanligini aniqlang.",
+      "answers": [
+        "7",
+        "2",
+        "16",
+        "3"
+      ],
+      "correct": 0,
+      "source": "57-mavzu.tex#0:1"
+    },
+    {
+      "text": "Yassi havo kondensatori 50 V potensiallar farqigacha zaryadlangan va manbadan uzib qo‘yilgan. So‘ngra kondensator qoplamalari orasiga, ularga parallel qilib, 1 mm qalinlikdagi metall listi kiritiladi. Agar qoplamalar orasidagi masofa 5 mm bo‘lsa, kondensator qoplamalari orasidagi potensiallar farqini aniqlang (V).",
+      "answers": [
+        "30",
+        "15",
+        "80",
+        "40"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:2"
+    },
+    {
+      "text": "Ikkita bir xil kondensator parallel ulangan va 6 V potensiallar farqigacha zaryadlangan. Agar kondensatorlar manbadan uzilgandan so‘ng ulardan birining plastinkalari orasidagi masofa ikki baravar kamaytirilgan bo‘lsa, kondensatorlar plastinkalari orasidagi potensiallar farqini aniqlang (V).",
+      "answers": [
+        "6",
+        "2",
+        "4",
+        "12"
+      ],
+      "correct": 2,
+      "source": "57-mavzu.tex#0:3"
+    },
+    {
+      "text": "O‘zgarmas tok manbaiga ulangan 12 $\\mu F$ sig‘imli kondensatorga parallel ulangan voltmetr 3 V kuchlanishni ko‘rsatdi. Agar bu kondensatorga 8 $\\mu F$ sig‘imli ikkinchi kondensator parallel ulansa, voltmetr qanday kuchlanishni (V) ko‘rsatadi?",
+      "answers": [
+        "1,5",
+        "3",
+        "1",
+        "2"
+      ],
+      "correct": 1,
+      "source": "57-mavzu.tex#0:4"
+    },
+    {
+      "text": "Zaryadli zarralarning tartibli harakatiga nima deyiladi?",
+      "answers": [
+        "tok kuchi",
+        "tok zichligi",
+        "elektr toki",
+        "elektr qarshilik"
+      ],
+      "correct": 2,
+      "source": "57-mavzu.tex#0:5"
+    },
+    {
+      "text": "Elektr tokining asosiy belgisi nima?",
+      "answers": [
+        "Uning atrofida magnit maydonning mavjudligidir.",
+        "Uning atrofida gravitatsion maydonning mavjudligidir.",
+        "Uning atrofida potensial maydonning mavjudligidir.",
+        "Uning atrofida uyurmaviy maydonning mavjudligidir."
+      ],
+      "correct": 0,
+      "source": "57-mavzu.tex#0:6"
+    },
+    {
+      "text": "To‘g‘ri tasdiqni ko‘rsating.",
+      "answers": [
+        "Tok kuchi vektor kattalikdir.",
+        "Tok kuchi skalyar va musbat kattalik.",
+        "Tok kuchining ishorasi zaryad tashuvchi zarralar ishorasi bilan aniqlanadi.",
+        "Tok kuchi skalyar, ammo ishorali kattalik."
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:7"
+    },
+    {
+      "text": "Tok zichligi deb nimaga aytiladi?",
+      "answers": [
+        "o‘tkazgich sirtidan vaqt birligi ichida o‘tuvchi...",
+        "o‘tkazgich bo‘ylab vaqt birligida 1 m ga siljigan...",
+        "o‘tkazgichning ko‘ndalang kesimidan vaqt birligi ichida o‘tuvchi...",
+        "o‘tkazgich ko‘ndalang kesimi yuza birligidan vaqt birligida o‘tuvchi zaryad miqdoriga teng vektor kattalik."
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:8"
+    },
+    {
+      "text": "O‘tkazgichdan 10 A tok oqmoqda. Xuddi shu o‘tkazgichning ko‘ndalang kesimidan 1 soat davomida oqib o‘tadigan elektronlarning umumiy massasini toping (mg). $e = 1,6 \\cdot 10^{-19} \\, C, m_e = 9,1 \\cdot 10^{-31} \\, kg$.",
+      "answers": [
+        "0,4",
+        "0,8",
+        "0,2",
+        "0,12"
+      ],
+      "correct": 2,
+      "source": "57-mavzu.tex#0:9"
+    },
+    {
+      "text": "Tok kuchi 32 $\\mu A$ bo‘lganda 1 ns vaqt ichida o‘tkazgichning ko‘ndalang kesimidan qancha elektron o‘tadi?",
+      "answers": [
+        "$1 \\cdot 10^5$",
+        "$2 \\cdot 10^3$",
+        "$4 \\cdot 10^5$",
+        "$2 \\cdot 10^5$"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:10"
+    },
+    {
+      "text": "Tok kuchi 16 mA bo‘lganda o‘tkazgich ko‘ndalang kesimidan 1 ms da o‘tadigan elektronlar sonini aniqlang. $e = 1,6 \\cdot 10^{-19} \\, C$.",
+      "answers": [
+        "$6 \\cdot 10^{14}$",
+        "$5,6 \\cdot 10^{14}$",
+        "$5 \\cdot 10^{14}$",
+        "$10^{14}$"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:11"
+    },
+    {
+      "text": "O‘tkazgichdan 24 soat davomida 1 A tok o‘tgan. Bu davrda o‘tkazgich kesimi orqali o‘tgan elektronlar massasi (mg) topilsin. $e/m_e = 1,76 \\cdot 10^{11} \\, C/kg$.",
+      "answers": [
+        "0,5",
+        "2",
+        "5",
+        "0,3"
+      ],
+      "correct": 0,
+      "source": "57-mavzu.tex#0:12"
+    },
+    {
+      "text": "Agar o‘tkazgichdan o‘tayotgan tok kuchi 10 s da 0 dan 5 A gacha chiziqli ortgan bo‘lsa, shu vaqt ichida o‘tkazgich ko‘ndalang kesimidan qancha zaryad oqib o‘tgan (C)?",
+      "answers": [
+        "0,5",
+        "2,5",
+        "2",
+        "25"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:13"
+    },
+    {
+      "text": "Rux sulfat solingan elektrolitik vannada tok kuchi chiziqli $I = (2 + 0,02t) \\, A$ qonun bo‘yicha o‘zgaradi. Elektrolit orqali 5 min ichida o‘tgan elektr zaryadni aniqlang (C)?",
+      "answers": [
+        "1400",
+        "1500",
+        "1600",
+        "1800"
+      ],
+      "correct": 1,
+      "source": "57-mavzu.tex#0:14"
+    },
+    {
+      "text": "Zanjirdagi tok kuchi $I = 10^{-6}t$ qonun bo‘yicha ortib bormoqda. Zanjirdan 1,5 minut davomida qancha elektron o‘tgan?",
+      "answers": [
+        "$2,5 \\cdot 10^{16}$",
+        "$2,6 \\cdot 10^{14}$",
+        "$3,9 \\cdot 10^{17}$",
+        "$2,53 \\cdot 10^{16}$"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:15"
+    },
+    {
+      "text": "Zanjirning bir qismidagi tok kuchi 6 s ichida 0 dan 1,5 A gacha bir tekis o‘sdi. Tok kuchining vaqtga bog‘lanish grafigini ko‘rsating (Source [3] dagi grafiklar asosida).",
+      "answers": [
+        "1-grafik (3 s da 1,5 A)",
+        "2-grafik (9 s da 1,5 A)",
+        "3-grafik (6 s da 3 A)",
+        "4-grafik (12 s da 3 A)"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:16"
+    },
+    {
+      "text": "Sig‘imi 200 $\\mu F$ bo‘lgan kondensator 5 s vaqt ichida 5000 V kuchlanishgacha zaryadlanadi. Zaryad tok kuchining o‘rtacha qiymatini (A) toping.",
+      "answers": [
+        "0,02",
+        "0,05",
+        "2",
+        "0,2"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:17"
+    },
+    {
+      "text": "8 s vaqt ichida o‘tkazgichning 5 $mm^2$ ko‘ndalang kesimidan 20 C zaryad o‘tgan bo‘lsa, tok zichligi qanday ($A/m^2$)?",
+      "answers": [
+        "$5 \\cdot 10^5$",
+        "$4 \\cdot 10^4$",
+        "$4 \\cdot 10^5$",
+        "$4 \\cdot 10^6$"
+      ],
+      "correct": 0,
+      "source": "57-mavzu.tex#0:18"
+    },
+    {
+      "text": "Ko‘ndalang kesimi 20 $mm^2$ bo‘lgan mis sim orqali 3 A tok o‘tayotgan bo‘lsa, undagi o‘tkazuvchanlik elektronlarining tezligi ($m/s$) topilsin. Birlik hajmdagi erkin elektronlarning soni $9 \\cdot 10^{28} \\, m^{-3}$ ga teng.",
+      "answers": [
+        "$3 \\cdot 10^{-5}$",
+        "$10^{-5}$",
+        "3",
+        "$2 \\cdot 10^{-5}$"
+      ],
+      "correct": 1,
+      "source": "57-mavzu.tex#0:19"
+    },
+    {
+      "text": "Ko‘ndalang kesim yuzi 0,5 $mm^2$ bo‘lgan metall o‘tkazgichdan 3 A tok o‘tadi. Agar metalldagi erkin elektronlarning konsentratsiyasi $4 \\cdot 10^{28} \\, m^{-3}$ bo‘lsa, elektronlar dreyfining o‘rtacha tezligi topilsin ($mkm/s$).",
+      "answers": [
+        "1,2",
+        "4,7",
+        "2,8",
+        "9,4"
+      ],
+      "correct": 3,
+      "source": "57-mavzu.tex#0:20"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "id": 65,
+  "title": "65-Mavzu | Magnit maydonining tokli o‘tkazgichga ta'siri. Amper qonuni",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 66,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Magnit maydonning tokli o‘tkazgichga ta’sir kuchi (Amper kuchi) ni ifodalaydigan formulani ko‘rsating.",
+      "answers": [
+        "$F = IBL\\cos\\alpha$.",
+        "$F = kq_1q_2/r^2$.",
+        "$F = Eq$.",
+        "$F = IBL\\sin\\alpha$."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#1:1"
+    },
+    {
+      "text": "Induksiyasi 20 T bo‘lgan bir jinsli magnit maydonda 3 A tok o‘tayotgan o‘tkazgich rasmdagidek joylashgan. Unga ta’sir qilayotgan Amper kuchining modulini toping (N). O‘tkazgichning aktiv qismining uzunligi 40 cm. $\\alpha=37^\\circ$.",
+      "answers": [
+        "14,4.",
+        "12,8.",
+        "10,2.",
+        "16,4."
+      ],
+      "correct": 0,
+      "images": "../rasmlar65/r7d9b584ae5.png",
+      "source": "67-mavzu.tex#1:2"
+    },
+    {
+      "text": "Induksiyasi 2 T bo‘lgan bir jinsli magnit maydonga kiritilgan 8 cm uzunlikdagi o‘tkazgichdan 4 A tok oqayotgan bo‘lsa, bu o‘tkazgichga maydon tomonidan qanday kuch ta’sir qiladi (N)? Tok va magnit induksiya vektori orasidagi burchak $30^\\circ$ ga teng.",
+      "answers": [
+        "0,4.",
+        "0,24.",
+        "0,32.",
+        "1,25."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#1:3"
+    },
+    {
+      "text": "Aktiv qismining uzunligi 0,4 m bo‘lgan o‘tkazgich induksiyasi 0,8 T bo‘lgan bir jinsli magnit maydoniga kiritilganda unga 1,6 N kuch ta’sir etdi. O‘tkazgich magnit induksiya chiziqlariga perpendikulyar joylashgan bo‘lsa, undagi tok kuchini aniqlang (A).",
+      "answers": [
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#1:4"
+    },
+    {
+      "text": "Induksiyasi 40 mT bo‘lgan magnit maydon aktiv qismining uzunligi 10 cm bo‘lgan to‘g‘ri o‘tkazgichga 60 mN kuch bilan ta’sir etmoqda. O‘tkazgichdagi tok kuchi 30 A. O‘tkazgich magnit maydon induksiyasi vektori bilan qanday burchak hosil qiladi?",
+      "answers": [
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#1:5"
+    },
+    {
+      "text": "Induksiyasi 2 T bo‘lgan bir jinsli magnit maydonda uzunligi 0,2 m bo‘lgan o‘tkazgich joylashgan. Agar o‘tkazgichdan o‘tayotgan o‘zgarmas tok kuchi 5 A bo‘lsa, magnit maydon tomonidan o‘tkazgichga ta’sir etuvchi maksimal va minimal kuchlar nimaga teng bo‘lishi mumkin (N)?",
+      "answers": [
+        "2; 0.",
+        "2; 1.",
+        "10; 2.",
+        "1; 0."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#1:6"
+    },
+    {
+      "text": "Vakuumda magnit kuchlanganligi $H=5000$ A/m bo‘lgan magnit maydon hosil qilindi. U yerga uzunligi 20 cm bo‘lgan va 10 A tok o‘tayotgan o‘tkazgich joylashtirildi. Tok va magnit induksiyasi yo‘nalishlari o‘zaro $53^\\circ$ burchak hosil qilsa, Amper kuchi qanday (mN) bo‘ladi? $\\sin 53^\\circ = 0,8$, $\\pi=3$.",
+      "answers": [
+        "9,6.",
+        "2.",
+        "2,3.",
+        "4,5."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#1:7"
+    },
+    {
+      "text": "Induksiyasi 5 T bo‘lgan magnit maydonda uzunligi 20 cm bo‘lgan o‘tkazgich bo‘lib, undan 10 A tok o‘tmoqda. Agar o‘tkazgich magnit induksiyasi yo‘nalishi bilan $30^\\circ$ burchak hosil qilsa, unga maydon tomonidan necha Nyuton kuch ta’sir qiladi?",
+      "answers": [
+        "10.",
+        "1,5.",
+        "5.",
+        "18."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#1:8"
+    },
+    {
+      "text": "Magnit induksiya chiziqlariga tik joylashgan tokli o‘tkazgichga 2,8 N kuch ta’sir etmoqda. O‘tkazgich bilan induksiya chiziqlari orasidagi burchak $30^\\circ$ bo‘lganda, ta’sir kuchi qanday bo‘ladi (N)?",
+      "answers": [
+        "0,7.",
+        "1,4.",
+        "1,96.",
+        "2,4."
+      ],
+      "correct": 1,
+      "source": "67-mavzu.tex#1:9"
+    },
+    {
+      "text": "Bir jinsli magnit maydon induksiyasi vektori va tokli to‘g‘ri o‘tkazgich orasidagi $30^\\circ$ burchak 2 marta orttirilsa, o‘tkazgichga ta’sir qiluvchi Amper kuchi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi.",
+        "2 marta kamayadi.",
+        "$\\sqrt{2}$ marta ortadi.",
+        "$\\sqrt{3}$ marta ortadi."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#1:10"
+    },
+    {
+      "text": "Aktiv qismining uzunligi 10 cm bo‘lgan o‘tkazgichdagi tok kuchi 2 A ga teng. U magnit induksiyasi 0,08 T bo‘lgan bir jinsli magnit maydonda turibdi. O‘tkazgich induksiya chiziqlariga perpendikulyar ravishda 10 cm siljiganda necha mJ ish bajariladi?",
+      "answers": [
+        "32.",
+        "0,8.",
+        "3,2.",
+        "1,6."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#1:11"
+    },
+    {
+      "text": "Induksiyasi 20 mT bo‘lgan bir jinsli magnit maydon chiziqlariga tik joylashgan 8 cm uzunlikdagi simdan 50 A tok oqmoqda. Bu sim o‘ziga tik yo‘nalishda induksiya chiziqlariga $45^\\circ$ burchak ostida ko‘chganida tok 8 mJ ish bajargan bo‘lsa, sim qanday (cm) masofaga ko‘chgan?",
+      "answers": [
+        "10,2.",
+        "13,2.",
+        "14,1.",
+        "15,2."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#1:12"
+    },
+    {
+      "text": "Uzunligi 0,1 m bo‘lgan 5 A tokli o‘tkazgichni bir jinsli magnit maydonda induksiya chiziqlariga va o‘ziga tik yo‘nalishda 20 mm masofaga siljitishda 0,01 J ish bajariladi. Magnit maydon induksiyasi necha Tesla?",
+      "answers": [
+        "0,1.",
+        "1.",
+        "2.",
+        "0,2."
+      ],
+      "correct": 1,
+      "source": "67-mavzu.tex#1:13"
+    },
+    {
+      "text": "Uzunligi 20 cm bo‘lgan 2 A tokli o‘tkazgich bir jinsli magnit maydon induksiya chiziqlariga perpendikulyar yo‘nalishda 10 cm siljiganda, 32 mJ ish bajarildi. Magnit maydon induksiyasini toping (T).",
+      "answers": [
+        "0,04.",
+        "0,08.",
+        "0,4.",
+        "0,8."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#1:14"
+    },
+    {
+      "text": "Uzunligi 80 cm bo‘lgan o‘tkazgich induksiyasi 0,4 T bo‘lgan bir jinsli magnit maydonda 0,15 m/s tezlik bilan induksiya chiziqlariga va o‘ziga tik yo‘nalishda tekis harakat qilmoqda. Agar 10 s ichida 0,96 J ish bajarilgan bo‘lsa, o‘tkazgichdagi tok kuchi qanday (A) bo‘ladi?",
+      "answers": [
+        "0,4.",
+        "1.",
+        "2.",
+        "1,8."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#1:15"
+    },
+    {
+      "text": "Yuzi $S=1,2$ m$^2$ bo‘lgan 2 A tokli ramka induksiyasi 30 T bo‘lgan bir jinsli magnit maydonda joylashgan. Ramka normali va induksiya chiziqlari orasidagi burchak $53^\\circ$ ga teng. Ramkaga ta’sir qiluvchi kuch momenti nimaga teng (N$\\cdot$m)?",
+      "answers": [
+        "16,8.",
+        "64,2.",
+        "57,6.",
+        "28,5."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#1:16"
+    }
+  ]
+}

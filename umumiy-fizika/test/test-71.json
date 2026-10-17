@@ -1,0 +1,537 @@
+{
+  "id": 71,
+  "title": "71-Mavzu | O‘zgaruvchan tok zanjirida tok kuchi, kuchlanish va qarshilik",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 72,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "O‘zgaruvchan tok manbaiga rezistor, kondensator va g‘altak ketma-ket ulandi. Kuchlanish tebranishlarining amplitudasi rezistorda $4$ V ga, kondensatorda $6$ V ga, g‘altakda esa $3$ V ga teng. Manba qisqichlaridagi kuchlanish tebranishlarining amplitudasi necha Volt?",
+      "answers": [
+        "6.",
+        "4.",
+        "5.",
+        "3.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "71-mavzu.tex#0:1"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga induktiv g‘altak, kondensator va rezistor ketma-ket ulangan. G‘altak, kondensator va rezistor uchlaridagi kuchlanishlar mos ravishda $30$ V, $24$ V va $8$ V. Zanjirdagi umumiy kuchlanish qanday (V)?",
+      "answers": [
+        "10.",
+        "14.",
+        "21.",
+        "46.",
+        "62."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:2"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga rezistor va kondensator ketma-ket ulangan. Rezistorga ulangan voltmetr $60$ V ni, kondensator uchlariga ulangan voltmetr $80$ V ni ko‘rsatsa, tarmoqdagi umumiy kuchlanish necha V?",
+      "answers": [
+        "20.",
+        "60.",
+        "80.",
+        "100.",
+        "140."
+      ],
+      "correct": 3,
+      "source": "71-mavzu.tex#0:3"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan zanjirdagi kuchlanishlar $U_L=80$ V, $U_C=60$ V bo‘lsa, $U$ necha Volt bo‘ladi?",
+      "answers": [
+        "100.",
+        "140.",
+        "$\\sqrt{140}$.",
+        "20.",
+        "10."
+      ],
+      "correct": 3,
+      "images": "../rasmlar71/r467f42818d.png",
+      "source": "71-mavzu.tex#0:4"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga induktiv g‘altak va kondensator ketma-ket ulangan. Induktiv g‘altakka ulangan voltmetr $400$ V ni, kondensatorga ulangan voltmetr $180$ V ni ko‘rsatib turibdi. Tarmoqdagi umumiy kuchlanish qanday (V)?",
+      "answers": [
+        "180.",
+        "220.",
+        "290.",
+        "400.",
+        "580."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:5"
+    },
+    {
+      "text": "Aktiv qarshilik va induktivlik g‘altagi o‘zgaruvchan tok manbaiga ketma-ket ulangan. AB nuqtalar orasidagi potensiallar farqi $40$ V, BC nuqtalar orasidagi potensiallar farqi $30$ V ga teng bo‘lsa, AC nuqtalar orasidagi potensiallar farqi necha V ga teng (V)?",
+      "answers": [
+        "70.",
+        "10.",
+        "50.",
+        "60.",
+        "5."
+      ],
+      "correct": 2,
+      "images": "../rasmlar71/rcf9df06082.png",
+      "source": "71-mavzu.tex#0:6"
+    },
+    {
+      "text": "Zanjir ketma-ket ulangan $24~\\Omega$ aktiv, $30~\\Omega$ sig‘im va $30~\\Omega$ induktiv qarshilikdan iborat. Zanjirning to‘la qarshiligini toping ($\\Omega$).",
+      "answers": [
+        "84.",
+        "65.",
+        "54.",
+        "30.",
+        "24."
+      ],
+      "correct": 4,
+      "source": "71-mavzu.tex#0:7"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga qarshiligi $70~\\Omega$ bo‘lgan rezistor, sig‘imi $6~\\Omega$ bo‘lgan kondensator, induktivligi $30~\\Omega$ bo‘lgan g‘altak ketma-ket ulangan. Zanjirning to‘la qarshiligini qanday ($\\Omega$)?",
+      "answers": [
+        "65.",
+        "53.",
+        "95.",
+        "74.",
+        "109."
+      ],
+      "correct": 3,
+      "source": "71-mavzu.tex#0:8"
+    },
+    {
+      "text": "Siklik (doiraviy) chastotasi $1000$ rad/s bo‘lgan o‘zgaruvchan tok zanjiriga induktivligi $2$ H bo‘lgan g‘altak va sig‘imi $1~\\mu$F bo‘lgan kondensator ketma-ket ulangan. Zanjirning to‘la qarshiligini toping (k$\\Omega$).",
+      "answers": [
+        "1.",
+        "3.",
+        "10.",
+        "30.",
+        "100."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:9"
+    },
+    {
+      "text": "Tok zanjiriga induktivligi $31,4$ H bo‘lgan g‘altak va $314$ nF sig‘imli kondensator ketma-ket ulangan. O‘zgaruvchan tok chastotasi $50$ Hz bo‘lsa, zanjirning to‘la qarshiligi ($\\Omega$) nimaga teng bo‘ladi? Tutashtiruvchi simlarning qarshiligini hisobga olmang. $\\pi^2\\approx10$.",
+      "answers": [
+        "0.",
+        "1.",
+        "3,14.",
+        "6,28.",
+        "10."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:10"
+    },
+    {
+      "text": "O‘zgaruvchan tok manbayiga qarshiligi $8~\\text{k}\\Omega$ bo‘lgan aktiv qarshilik va induktivligi $20$ H bo‘lgan induktiv g‘altak ketma-ket ulangan. Agar o‘zgaruvchan tokning chastotasi $50$ Hz bo‘lsa, zanjirning to‘la qarshiligini (k$\\Omega$) aniqlang. $\\pi=3$.",
+      "answers": [
+        "10.",
+        "6.",
+        "8.",
+        "12.",
+        "5."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:11"
+    },
+    {
+      "text": "Quyida keltirilgan o‘zgaruvchan tok zanjirining to‘la qarshiligi $Z=3\\sqrt5~\\Omega$ ga teng. $R_1=12~\\Omega$, $X_L=10~\\Omega$ va $X_C=4~\\Omega$ bo‘lsa, $R_2$ nimaga teng($\\Omega$)?",
+      "answers": [
+        "4.",
+        "8.",
+        "12.",
+        "16.",
+        "6."
+      ],
+      "correct": 0,
+      "images": "../rasmlar71/r002ff5f1ce.png",
+      "source": "71-mavzu.tex#0:12"
+    },
+    {
+      "text": "Sig‘imi $100~\\mu$F bo‘lgan kondensator, induktivligi $200$ mH bo‘lgan g‘altak va qarshiligi $60~\\Omega$ bo‘lgan reostat ketma-ket ulangan zanjirdagi tokning o‘zgarish qonuni $i=8\\sin100t$ ko‘rinishga ega. Zanjirning to‘la qarshiligi necha $\\Omega$?",
+      "answers": [
+        "640.",
+        "360.",
+        "6400.",
+        "80.",
+        "100."
+      ],
+      "correct": 4,
+      "source": "71-mavzu.tex#0:13"
+    },
+    {
+      "text": "Siklik (doiraviy) chastotasi $300$ rad/s bo‘lgan o‘zgaruvchan tok zanjiriga $4~\\Omega$ qarshilikka ega rezistor va induktivligi $10$ mH bo‘lgan g‘altak ketma-ket ulangan. Zanjirdan o‘tayotgan tok kuchi amplitudasi $50$ A ga teng bo‘lsa, zanjir uchlaridagi kuchlanish amplitudasi qanday (V)?",
+      "answers": [
+        "200.",
+        "250.",
+        "350.",
+        "400.",
+        "500."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:14"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjirining aktiv qarshiligi $16~\\Omega$, reaktiv qarshiligi $12~\\Omega$. Zanjir quvvat koeffitsiyenti nimaga teng?",
+      "answers": [
+        "0,6.",
+        "0,64.",
+        "0,92.",
+        "0,8.",
+        "0."
+      ],
+      "correct": 3,
+      "source": "71-mavzu.tex#0:15"
+    },
+    {
+      "text": "Zanjirning aktiv qarshiligi $7~\\Omega$, reaktiv qarshiligi $24~\\Omega$. Zanjir uchun quvvat koeffitsiyenti nimaga teng?",
+      "answers": [
+        "0,28.",
+        "0,6.",
+        "0,64.",
+        "0,92.",
+        "0,3."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:16"
+    },
+    {
+      "text": "Siklik (doiraviy) chastotasi $10^3$ rad/s bo‘lgan o‘zgaruvchan tok zanjiriga qarshiligi $15~\\Omega$ bo‘lgan rezistor va induktivligi $0,02$ H bo‘lgan g‘altak ketma-ket ulangan. Agar zanjirdagi to‘la kuchlanish amplituda qiymati $1$ kV bo‘lsa, tok kuchining amplitudasi qanday (A)?",
+      "answers": [
+        "5.",
+        "35.",
+        "40.",
+        "70.",
+        "80."
+      ],
+      "correct": 2,
+      "source": "71-mavzu.tex#0:17"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga sig‘im qarshiligi $10~\\Omega$ bo‘lgan kondensator va induktiv qarshiligi $20~\\Omega$ bo‘lgan g‘altak ketma-ket ulangan. Agar tokning samarador (effektiv) qiymati $2$ A bo‘lsa, zanjir uchlaridagi kuchlanishning samarali qiymati qanday (V)?",
+      "answers": [
+        "60.",
+        "43.",
+        "40.",
+        "30.",
+        "20."
+      ],
+      "correct": 4,
+      "source": "71-mavzu.tex#0:18"
+    },
+    {
+      "text": "Siklik (doiraviy) chastotasi $10^4$ rad/s bo‘lgan o‘zgaruvchan tok zanjiriga qarshiligi $100~\\Omega$ bo‘lgan rezistor va sig‘imi $1~\\mu$F bo‘lgan kondensator ketma-ket ulangan. Zanjirdagi tashqi kuchlanish amplitudasi $300$ V. Zanjirdan o‘tayotgan tok kuchi amplitudasi qanday (A)?",
+      "answers": [
+        "6.",
+        "4,2.",
+        "3.",
+        "2,1.",
+        "1,5."
+      ],
+      "correct": 3,
+      "source": "71-mavzu.tex#0:19"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga aktiv qarshiligi $10~\\Omega$ bo‘lgan rezistor, induktiv qarshiligi $20~\\Omega$ bo‘lgan g‘altak va sig‘im qarshiligi $30~\\Omega$ bo‘lgan kondensator ketma-ket ulangan. Agar o‘zgaruvchan tok kuchlanishining amplituda qiymati $200$ V bo‘lsa, tok kuchining amplitudasi qanday (A)?",
+      "answers": [
+        "1,4.",
+        "2.",
+        "3,3.",
+        "14.",
+        "20."
+      ],
+      "correct": 3,
+      "source": "71-mavzu.tex#0:20"
+    },
+    {
+      "text": "Zanjir ketma-ket ulangan $9~\\Omega$ aktiv va $12~\\Omega$ induktiv qarshilikdan tuzilgan. Tok bilan kuchlanish tebranishlari orasidagi faza siljishining kosinusi qanday?",
+      "answers": [
+        "0.",
+        "0,3.",
+        "0,6.",
+        "0,8.",
+        "1."
+      ],
+      "correct": 2,
+      "source": "71-mavzu.tex#0:21"
+    },
+    {
+      "text": "Zanjir ketma-ket ulangan $18~\\Omega$ aktiv qarshilik va $24~\\Omega$ sig‘im qarshilikdan tuzilgan. Tok bilan kuchlanish tebranishlari orasidagi faza siljishining kosinusini toping.",
+      "answers": [
+        "$1/2$.",
+        "0,6.",
+        "$\\sqrt2/2$.",
+        "$\\sqrt3/2$.",
+        "1."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:22"
+    },
+    {
+      "text": "Ushbu elektr zanjiridagi tok kuchining effektiv qiymatini toping(A).",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ],
+      "correct": 4,
+      "images": "../rasmlar71/r73f1674398.png",
+      "source": "71-mavzu.tex#0:23"
+    },
+    {
+      "text": "Ushbu elektr zanjiridagi quvvat koeffitsienti ($\\cos\\Delta\\varphi$) ni toping.",
+      "answers": [
+        "$1/2$.",
+        "$3/5$.",
+        "$2/3$.",
+        "$\\sqrt2/2$.",
+        "$4/5$."
+      ],
+      "correct": 3,
+      "images": "../rasmlar71/rda127790d1.png",
+      "source": "71-mavzu.tex#0:24"
+    },
+    {
+      "text": "Ushbu 2 ta rasmli elektr zanjirlarda quvvat koeffitsienti bir xil. Ikkala zanjirdagi tok kuchlarining effektiv qiymatlari nisbati $I_1/I_2$ ni toping.",
+      "answers": [
+        "$1/2$.",
+        "$1/3$.",
+        "$2/3$.",
+        "$1$.",
+        "$4/5$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar71/rf9ab87d764.png",
+      "source": "71-mavzu.tex#0:25"
+    },
+    {
+      "text": "Ushbu elektr zanjiridagi kuchlanish\n$u=U\\sin\\omega t$, tok kuchi esa\n$i=I\\sin\\left(\\omega t-\\dfrac{\\pi}{6}\\right)$\nqonun bo‘yicha o‘zgaradi. Zanjirdagi induktiv qarshilikni ($X_L$) toping($\\Omega$).",
+      "answers": [
+        "5.",
+        "15.",
+        "20.",
+        "25.",
+        "30."
+      ],
+      "correct": 4,
+      "images": "../rasmlar71/rcb16ec0fc5.png",
+      "source": "71-mavzu.tex#0:26"
+    },
+    {
+      "text": "Ushbu elektr zanjiridagi kuchlanish\n$u=U\\sin\\omega t$, tok kuchi esa\n$i=10\\sqrt2\\sin\\left(50t+\\dfrac{\\pi}{3}\\right)$\nqonun bo‘yicha o‘zgaradi. Zanjirdagi kuchlanishning effektiv qiymatini toping(V). $[u]=$Volt, $[i]=$Amper.",
+      "answers": [
+        "20.",
+        "$20\\sqrt3$.",
+        "40.",
+        "$40\\sqrt3$.",
+        "80."
+      ],
+      "correct": 2,
+      "images": "../rasmlar71/r5bc593e527.png",
+      "source": "71-mavzu.tex#0:27"
+    },
+    {
+      "text": "Ushbu elektr zanjiridagi tok kuchining effektiv qiymatini toping(A).",
+      "answers": [
+        "5.",
+        "$10\\sqrt2$.",
+        "10.",
+        "$20\\sqrt2$.",
+        "20."
+      ],
+      "correct": 2,
+      "images": "../rasmlar71/r1d8dbe1282.png",
+      "source": "71-mavzu.tex#0:28"
+    },
+    {
+      "text": "Quyidagi zanjirning to‘la qarshilik vektori 2-rasmda ko‘rsatilgandek. Kondensatordagi kuchlanish tushuvining effektiv qiymatini toping(V). $\\sin53^0=0,8$, $\\cos53^0=0,6$.",
+      "answers": [
+        "30.",
+        "40.",
+        "50.",
+        "60.",
+        "80."
+      ],
+      "correct": 2,
+      "images": "../rasmlar71/r975f9ae60e.png",
+      "source": "71-mavzu.tex#0:29"
+    },
+    {
+      "text": "Rezistor, induktiv g‘altak va sig‘im ketma-ket ulangan. Rezonans vaqtida zanjirning to‘la qarshiligi qanday bo‘ladi?",
+      "answers": [
+        "aktiv qarshilikdan katta bo‘ladi.",
+        "aktiv qarshilikka teng bo‘ladi.",
+        "aktiv qarshilikdan kichik bo‘ladi.",
+        "aktiv qarshilikdan ko‘p marta kichik bo‘ladi.",
+        "nolga teng bo‘ladi."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:30"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjirida g‘altak, kondensator va aktiv qarshilik bir-biri bilan ketma-ket ulangan. Rezonans ro‘y berganda, tok va kuchlanish orasidagi fazalar farqi nimaga teng?",
+      "answers": [
+        "nolga teng.",
+        "tok kuchlanishdan $\\pi/2$ ga qadar ilgarilab ketadi.",
+        "tok kuchlanishdan $\\pi/2$ ga qadar orqada qoladi.",
+        "tok kuchlanishdan $\\pi$ ga qadar ilgarilab ketadi.",
+        "tok kuchlanishdan $\\pi$ ga qadar orqada qoladi."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:31"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjirida induktivligi $50$ mH bo‘lgan g‘altak va $20~\\mu$F sig‘imli kondensator ketma-ket ulangan. Zanjirda rezonans ro‘y beradigan siklik chastotani (rad/s) toping.",
+      "answers": [
+        "$10^2$.",
+        "$10^3$.",
+        "$10^4$.",
+        "$10^5$.",
+        "$10^6$."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:32"
+    },
+    {
+      "text": "Chastotasi $100$ Hz bo‘lgan o‘zgaruvchan tok zanjiriga $25$ mH induktivlikli g‘altak ulangan. Zanjirda rezonans ro‘y berishi uchun unga parallel qanday bo‘lg‘an kondensatorning sig‘imi qanday bo‘lishi kerak ($\\mu$F)?",
+      "answers": [
+        "100.",
+        "40.",
+        "10.",
+        "4.",
+        "1."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:33"
+    },
+    {
+      "text": "Chastotasini o‘zgartirish mumkin bo‘lgan o‘zgaruvchan tok generatoriga qarshiligi $10~\\Omega$ bo‘lgan rezistor, sig‘imi $0,5~\\mu$F bo‘lgan kondensator va induktivligi $0,5$ H bo‘lgan g‘altak ketma-ket ulangan. Generator qisqichlaridagi kuchlanishning samarador qiymati $140$ V. Rezonans yuz berganda, tok kuchining samarador qiymati qanday bo‘ladi (A)?",
+      "answers": [
+        "3,5.",
+        "5.",
+        "7.",
+        "10.",
+        "14."
+      ],
+      "correct": 4,
+      "source": "71-mavzu.tex#0:34"
+    },
+    {
+      "text": "Induktiv qarshiligi $20~\\Omega$ bo‘lgan g‘altak, sig‘im qarshiligi $20~\\Omega$ bo‘lgan kondensator va aktiv qarshiligi $10~\\Omega$ bo‘lgan rezistor kuchlanishning amplituda qiymati $300$ V bo‘lgan o‘zgaruvchan tok zanjiriga ketma-ket ulangan. Rezonans paytida zanjirdagi tokning amplituda qiymati (A)?",
+      "answers": [
+        "6.",
+        "10.",
+        "12.",
+        "15.",
+        "30."
+      ],
+      "correct": 4,
+      "source": "71-mavzu.tex#0:35"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga qarshiligi $3~\\Omega$ bo‘lgan rezistor, induktivligi $2~\\Omega$ bo‘lgan g‘altak va sig‘im qarshiligi $6~\\Omega$ bo‘lgan kondensator ketma-ket ulangan. Tok kuchining samarador qiymati $2$ A bo‘lganda, bu zanjirda ajralgan quvvat qanday bo‘ladi (W)?",
+      "answers": [
+        "10.",
+        "12.",
+        "20.",
+        "24.",
+        "40."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:36"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjirida tok kuchi amplitudasi $5$ A, kuchlanish amplitudasi $200$ V, quvvat koeffitsienti $0,8$. Zanjirning aktiv quvvatini toping (W).",
+      "answers": [
+        "400.",
+        "570.",
+        "800.",
+        "1000.",
+        "1250."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:37"
+    },
+    {
+      "text": "O‘zgaruvchan tok dvigateli samarador qiymati $380$ V bo‘lgan kuchlanishda $912$ W quvvat bilan ishlamoqda. Agar quvvat koeffitsienti $0,8$ ga teng bo‘lsa, uning chulg‘amlaridan o‘tayotgan tok kuchini toping (A)?",
+      "answers": [
+        "0,3.",
+        "1,7.",
+        "2.",
+        "2,4.",
+        "3."
+      ],
+      "correct": 4,
+      "source": "71-mavzu.tex#0:38"
+    },
+    {
+      "text": "$8~\\Omega$ aktiv, $9~\\Omega$ sig‘im va $3~\\Omega$ induktiv qarshiliklarni ketma-ket holda tuzilgan zanjir uchlariga effektiv qiymati $140$ V bo‘lgan o‘zgaruvchan kuchlanish berilgan. Zanjirdagi faoliy quvvatni (W) toping.",
+      "answers": [
+        "1568.",
+        "1960.",
+        "1764.",
+        "588.",
+        "125."
+      ],
+      "correct": 0,
+      "source": "71-mavzu.tex#0:39"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiri $30~\\Omega$ qarshilikli rezistordan, $20~\\Omega$ induktiv qarshilikli g‘altakdan va $10~\\Omega$ sig‘im qarshilikli kondensatordan iborat. Agar zanjirdan effektiv qiymati $2,5$ A bo‘lgan tok o‘tayotgan bo‘lsa, $4$ s da undan ajralib chiqqan issiqlik miqdori necha Joul bo‘ladi?",
+      "answers": [
+        "500.",
+        "750.",
+        "1500.",
+        "780.",
+        "1000."
+      ],
+      "correct": 1,
+      "source": "71-mavzu.tex#0:40"
+    },
+    {
+      "text": "Ketma-ket ulangan o‘zgaruvchan tok zanjiridagi induktiv qarshilik $600~\\Omega$, aktiv qarshilik $400~\\Omega$, sig‘im qarshilik $300~\\Omega$. Zanjirdagi effektiv tok kuchi $2$ A bo‘lsa, tokning quvvati (W) qanday?",
+      "answers": [
+        "2000.",
+        "1800.",
+        "2400.",
+        "1600.",
+        "2200."
+      ],
+      "correct": 3,
+      "source": "71-mavzu.tex#0:41"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjirida reaktiv qarshilik $4~\\Omega$, aktiv qarshilik $5~\\Omega$, o‘zgaruvchan tok amplitudasi $2\\sqrt2$ A ga teng. Tokning o‘rtacha quvvatini (W) toping.",
+      "answers": [
+        "12,5.",
+        "39.",
+        "20.",
+        "16.",
+        "5."
+      ],
+      "correct": 2,
+      "source": "71-mavzu.tex#0:42"
+    },
+    {
+      "text": "O‘zgaruvchan tok zanjiriga aktiv qarshiligi $3~\\Omega$ bo‘lgan rezistor, induktiv qarshiligi $2~\\Omega$ bo‘lgan g‘altak va sig‘im qarshiligi $6~\\Omega$ bo‘lgan kondensator ketma-ket ulangan. Tok kuchining samarador qiymati $2$ A bo‘lganda, bu zanjirda $10$ s da ajralgan issiqlik miqdorini toping (J)?",
+      "answers": [
+        "144.",
+        "120.",
+        "60.",
+        "72.",
+        "12."
+      ],
+      "correct": 2,
+      "source": "71-mavzu.tex#0:43"
+    }
+  ]
+}

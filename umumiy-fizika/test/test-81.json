@@ -1,0 +1,198 @@
+{
+  "id": 81,
+  "title": "81-Mavzu | Fotometriya elementlari",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 82,
+  "source": "authored",
+  "questions": [
+    {
+      "text": "Yorug‘lik kuchining SI dagi birligi qaysi?",
+      "answers": [
+        "Lyuks (lk)",
+        "Kandela (cd)",
+        "Lyumen (lm)",
+        "Vatt (W)"
+      ],
+      "correct": 1,
+      "source": "authored:81:1"
+    },
+    {
+      "text": "Yorug‘lik oqimining birligi qaysi?",
+      "answers": [
+        "Kandela (cd)",
+        "Steradian (sr)",
+        "Lyuks (lk)",
+        "Lyumen (lm)"
+      ],
+      "correct": 3,
+      "source": "authored:81:2"
+    },
+    {
+      "text": "Yoritilganlikning birligi qaysi?",
+      "answers": [
+        "Joul (J)",
+        "Kandela (cd)",
+        "Lyuks (lk)",
+        "Lyumen (lm)"
+      ],
+      "correct": 2,
+      "source": "authored:81:3"
+    },
+    {
+      "text": "1 lyuks nimaga teng?",
+      "answers": [
+        "1 cd/m",
+        "1 lm/m²",
+        "1 lm·m²",
+        "1 cd·m²"
+      ],
+      "correct": 1,
+      "source": "authored:81:4"
+    },
+    {
+      "text": "Yorug‘lik kuchi 100 cd bo‘lgan nuqtaviy manba 2 m masofadagi yuzani tik yoritadi. Yoritilganlik necha lyuks?",
+      "answers": [
+        "12,5",
+        "25",
+        "200",
+        "400",
+        "50"
+      ],
+      "correct": 1,
+      "source": "authored:81:5"
+    },
+    {
+      "text": "Nuqtaviy manbadan yuzagacha masofa 2 marta orttirilsa (nur tik tushadi), yoritilganlik qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi",
+        "2 marta kamayadi",
+        "2 marta ortadi",
+        "O‘zgarmaydi"
+      ],
+      "correct": 0,
+      "source": "authored:81:6"
+    },
+    {
+      "text": "Yorug‘lik kuchi 50 cd bo‘lgan manba 2 sr qattiq burchak ichiga qancha yorug‘lik oqimi chiqaradi (lm)?",
+      "answers": [
+        "200",
+        "100",
+        "50",
+        "25"
+      ],
+      "correct": 1,
+      "source": "authored:81:7"
+    },
+    {
+      "text": "Barcha yo‘nalishda bir xil nurlatuvchi, yorug‘lik kuchi 10 cd bo‘lgan manbaning to‘liq yorug‘lik oqimi taxminan qancha (lm)?",
+      "answers": [
+        "31",
+        "63",
+        "126",
+        "10"
+      ],
+      "correct": 2,
+      "source": "authored:81:8"
+    },
+    {
+      "text": "Yorug‘lik kuchi 200 cd bo‘lgan manba 2 m masofadagi yuzani nur tushish burchagi 60° bo‘lganda yoritadi. Yoritilganlik necha lyuks? (cos60° = 0,5)",
+      "answers": [
+        "12,5",
+        "25",
+        "100",
+        "50"
+      ],
+      "correct": 1,
+      "source": "authored:81:9"
+    },
+    {
+      "text": "Yuzi 2 m² bo‘lgan sirtga 400 lm yorug‘lik oqimi tekis tushmoqda. Yoritilganlik qancha (lk)?",
+      "answers": [
+        "400",
+        "800",
+        "200",
+        "0,5"
+      ],
+      "correct": 2,
+      "source": "authored:81:10"
+    },
+    {
+      "text": "Nur tushish burchagi (sirtga o‘tkazilgan normalga nisbatan) ortsa, sirtning yoritilganligi qanday o‘zgaradi?",
+      "answers": [
+        "O‘zgarmaydi",
+        "Kamayadi",
+        "Ortadi",
+        "Avval ortadi, so‘ng o‘zgarmaydi"
+      ],
+      "correct": 1,
+      "source": "authored:81:11"
+    },
+    {
+      "text": "Lampa stol sirtidan 1 m balandlikda, uning yorug‘lik kuchi 80 cd. Lampa ostidagi nuqtaning yoritilganligi qancha (lk)?",
+      "answers": [
+        "20",
+        "160",
+        "80",
+        "40"
+      ],
+      "correct": 2,
+      "source": "authored:81:12"
+    },
+    {
+      "text": "Yoritilganligi 50 lk bo‘lgan 0,4 m² yuzaga tushayotgan yorug‘lik oqimi qancha (lm)?",
+      "answers": [
+        "20",
+        "50",
+        "125",
+        "200"
+      ],
+      "correct": 0,
+      "source": "authored:81:13"
+    },
+    {
+      "text": "Qattiq burchakning SI dagi birligi qaysi?",
+      "answers": [
+        "Radian (rad)",
+        "Steradian (sr)",
+        "Kandela (cd)",
+        "Lyumen (lm)"
+      ],
+      "correct": 1,
+      "source": "authored:81:14"
+    },
+    {
+      "text": "«Yoritilganlik manbadan masofa kvadratiga teskari proporsional» — bu qaysi qonun?",
+      "answers": [
+        "Arximed qonuni",
+        "Yoritilganlikning masofa kvadratiga teskari bog‘liqlik qonuni",
+        "Snellius qonuni",
+        "Kulon qonuni"
+      ],
+      "correct": 1,
+      "source": "authored:81:15"
+    },
+    {
+      "text": "Manbadan masofa 3 marta orttirilsa (boshqa shartlar o‘zgarmaydi), yoritilganlik qanday o‘zgaradi?",
+      "answers": [
+        "9 marta ortadi",
+        "3 marta ortadi",
+        "9 marta kamayadi",
+        "3 marta kamayadi"
+      ],
+      "correct": 2,
+      "source": "authored:81:16"
+    },
+    {
+      "text": "Nuqtaviy manbadan 2 m masofada yoritilganlik 40 lk. 4 m masofada u qancha bo‘ladi (lk)?",
+      "answers": [
+        "20",
+        "5",
+        "80",
+        "10"
+      ],
+      "correct": 3,
+      "source": "authored:81:17"
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "id": 58,
+  "title": "58-Mavzu | Zanjirning bir qismi uchun Om qonuni",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 59,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Zanjir qismidagi tok kuchi ...",
+      "answers": [
+        "o‘tkazgichdan o‘tgan zaryad miqdoriga teng.",
+        "kuchlanishga to‘g‘ri, qarshilikka teskari proporsional.",
+        "kuchlanish bilan qarshilik ko‘paytmasiga teng.",
+        "qarshilikka to‘g‘ri, kuchlanishga teskari proporsional.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:1"
+    },
+    {
+      "text": "Qarshiligi $10~\\Omega$ bo‘lgan rezistordagi kuchlanish $60$ V ga teng. Undan o‘tayotgan tok kuchini toping (A).",
+      "answers": [
+        "$1/6$",
+        "6",
+        "600",
+        "70",
+        "50"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:2"
+    },
+    {
+      "text": "Rezistordagi kuchlanish $60$ V va undan o‘tayotgan tok kuchi $2$ A ga teng. Uning qarshiligini toping ($\\Omega$).",
+      "answers": [
+        "$1/30$",
+        "120",
+        "62",
+        "30",
+        "58"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:3"
+    },
+    {
+      "text": "Qarshiligi $40~\\Omega$ bo‘lgan rezistordan $5$ A tok o‘tmoqda. Undagi kuchlanishni toping (V).",
+      "answers": [
+        "$1/8$",
+        "8",
+        "45",
+        "35",
+        "200"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:4"
+    },
+    {
+      "text": "Qarshiligi $12~\\Omega$ bo‘lgan rezistordagi kuchlanish $48$ V ga teng. Undan o‘tayotgan tok kuchini toping (A).",
+      "answers": [
+        "4",
+        "$1/4$",
+        "576",
+        "36",
+        "60"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:5"
+    },
+    {
+      "text": "Rezistordagi kuchlanish $100$ V va undan o‘tayotgan tok kuchi $5$ A ga teng. Uning qarshiligini toping ($\\Omega$).",
+      "answers": [
+        "500",
+        "$1/20$",
+        "20",
+        "105",
+        "95"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:6"
+    },
+    {
+      "text": "Qarshiligi $25~\\Omega$ bo‘lgan rezistordan $10$ A tok o‘tmoqda. Undagi kuchlanishni toping (V).",
+      "answers": [
+        "15",
+        "0,4",
+        "2,5",
+        "250",
+        "35"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:7"
+    },
+    {
+      "text": "Qarshiligi $34~\\Omega$ bo‘lgan o‘tkazgich orqali $2$ A tok o‘tkazish uchun o‘tkazgich uchlariga qanday kuchlanish (V) qo‘yish kerak?",
+      "answers": [
+        "34",
+        "17",
+        "68",
+        "51",
+        "10"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:8"
+    },
+    {
+      "text": "Agar rezistorning qarshiligi $R=6~\\Omega$ va undan o‘tayotgan tok kuchi $I=2$ A bo‘lsa, B va A nuqtadagi potensiallar farqi $\\varphi_B-\\varphi_A$ ni (V) toping.",
+      "answers": [
+        "$-12$",
+        "8",
+        "$-8$",
+        "12",
+        "3"
+      ],
+      "correct": 0,
+      "images": "../rasmlar58/r08fa0b0edd.png",
+      "source": "58-mavzu.tex#0:9"
+    },
+    {
+      "text": "Uchlaridagi kuchlanish $24$ V, qarshiligi $20~\\Omega$ bo‘lgan o‘tkazgichdan $60$ s vaqt ichida qancha (C) zaryad o‘tadi?",
+      "answers": [
+        "17",
+        "40",
+        "24",
+        "72",
+        "25"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:10"
+    },
+    {
+      "text": "Quyida qarshiligi $12~\\Omega$ bo‘lgan o‘tkazgichning uchlariga qo‘yilgan potensiallar farqining vaqtga bog‘liqligi ko‘rsatilgan. O‘tkazgichdan o‘tgan tok kuchini (A) aniqlang.",
+      "answers": [
+        "0",
+        "0,5",
+        "2",
+        "1",
+        "4"
+      ],
+      "correct": 2,
+      "images": "../rasmlar58/r50258b90e0.png",
+      "source": "58-mavzu.tex#0:11"
+    },
+    {
+      "text": "Qarshiligi $12~\\Omega$ bo‘lgan o‘tkazgichdan $3$ minutda $90$ C elektr miqdori o‘tgan. Bu o‘tkazgich uchlaridagi kuchlanishni toping (V).",
+      "answers": [
+        "12",
+        "6",
+        "10",
+        "9",
+        "15"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:12"
+    },
+    {
+      "text": "Qarshiligi $2~\\Omega$ bo‘lgan silindrsimon metall o‘tkazgich uchlariga $24$ V kuchlanish qo‘yilgan. Bu o‘tkazgich ko‘ndalang kesimidan $32$ s da nechta elektron o‘tadi?",
+      "answers": [
+        "$2,4\\cdot10^{21}$",
+        "$2,4\\cdot10^{20}$",
+        "$2,4\\cdot10^{22}$",
+        "$2,4\\cdot10^{19}$"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:13"
+    },
+    {
+      "text": "O‘zgarmas kuchlanish manbaiga ulangan reostatning surqichi surilib, qarshiligi $4$ marta kamaytirilsa, undagi tok kuchi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi.",
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "o‘zgarmaydi.",
+        "4 marta kamayadi."
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:14"
+    },
+    {
+      "text": "Reostatdagi kuchlanish $2$ marta orttirildi, uning qarshiligi esa $3$ marta kamaytirildi. Reostatdagi tok qanday o‘zgaridi?",
+      "answers": [
+        "1,5 marta kamaydi.",
+        "1,5 marta ortdi.",
+        "o‘zgarmadi.",
+        "6 marta kamaydi.",
+        "6 marta ortdi."
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:15"
+    },
+    {
+      "text": "Elektr zanjirining o‘zgarmas qarshilikka ega bo‘lgan qismidan o‘tayotgan tok kuchi $4$ marta oshirilsa, shu qismdagi kuchlanish qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "4 marta oshadi.",
+        "2 marta kamayadi.",
+        "2 marta oshadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:16"
+    },
+    {
+      "text": "O‘tkazgich uchlaridagi kuchlanish ...",
+      "answers": [
+        "o‘tkazgichdan o‘tayotgan tok kuchi bilan o‘tkazgich qarshiligi ko‘paytmasiga teng.",
+        "o‘tkazgich ichida zaryadni ko‘chirishda bajarilgan ishga teng.",
+        "o‘tkazgich qarshiligini tok kuchiga nisbatiga teng.",
+        "o‘tkazgichdan o‘tayotgan tok kuchining o‘tkazgich qarshiligiga nisbatiga teng.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:17"
+    },
+    {
+      "text": "C/s birlik javobda keltirilgan birliklarning qaysi biriga teng kuchli?",
+      "answers": [
+        "V/$\\Omega$",
+        "V/m",
+        "V",
+        "V$\\cdot$m",
+        "V$\\cdot\\Omega$"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:18"
+    },
+    {
+      "text": "Quyidagilardan qaysi biri Xalqaro Birliklar Sistemasi (SI) dagi asosiy birlik hisoblanadi?",
+      "answers": [
+        "Volt",
+        "Kulon",
+        "Amper",
+        "Om",
+        "Farad"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:19"
+    },
+    {
+      "text": "Quyida keltirilgan birliklarning qaysilari kuchlanishning birligi bo‘la olmaydi?\n1) A/s;\n2) J/C;\n3) A$\\cdot$s$\\Omega$;\n4) N/C;\n5) Nm/C;\n6) W/A;\n7) V.",
+      "answers": [
+        "1, 2, 4",
+        "1, 4",
+        "1, 2, 3, 4, 5, 6",
+        "1, 4, 6",
+        "2, 3, 5, 6"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:20"
+    },
+    {
+      "text": "O‘lchamligi V$^2\\cdot$s/J ko‘rinishida bo‘lgan fizik kattalikni ayting.",
+      "answers": [
+        "kuchlanish.",
+        "solishtirma qarshilik.",
+        "qarshilik.",
+        "zichlik.",
+        "tok kuchi."
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:21"
+    },
+    {
+      "text": "Rasmda to‘rtta har xil o‘tkazgichdagi tok kuchining kuchlanishga bog‘lanish grafiglari berilgan. O‘tkazgichlar qarshiliklari haqida nima deyish mumkin?",
+      "answers": [
+        "$R_1$ eng katta, $R_4$ eng kichik.",
+        "$R_4$ eng katta, $R_1$ eng kichik.",
+        "$R_1=R_2=R_3=R_4$.",
+        "$R_2>R_1>R_3>R_4$.",
+        "$R_1+R_2=R_3+R_4$."
+      ],
+      "correct": 1,
+      "images": "../rasmlar58/r349c6b2b72.png",
+      "source": "58-mavzu.tex#0:22"
+    },
+    {
+      "text": "Rasmda uchta turli o‘tkazgich uchun tok kuchining kuchlanishga bog‘lanish grafiglari berilgan. Grafiklardan foydalanib, qaysi o‘tkazgichning qarshiligi eng katta ekanligini aniqlang.",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "uchala o‘tkazgich qarshiligi bir xil.",
+        "TJY."
+      ],
+      "correct": 2,
+      "images": "../rasmlar58/r158b3038dd.png",
+      "source": "58-mavzu.tex#0:23"
+    },
+    {
+      "text": "O‘tkazgichdan o‘tayotgan tok kuchining kuchlanishga bog‘lanish grafigidan foydalanib, o‘tkazgichning qarshiligini hisoblang ($\\Omega$).",
+      "answers": [
+        "0,5",
+        "1",
+        "1,5",
+        "2",
+        "4,5"
+      ],
+      "correct": 3,
+      "images": "../rasmlar58/rc220d743c5.png",
+      "source": "58-mavzu.tex#0:24"
+    },
+    {
+      "text": "Grafikdan foydalanib, o‘tkazgichning qarshiligini toping ($\\Omega$).",
+      "answers": [
+        "0,2",
+        "1,8",
+        "5",
+        "0,8",
+        "3,6"
+      ],
+      "correct": 2,
+      "images": "../rasmlar58/r4671d05c86.png",
+      "source": "58-mavzu.tex#0:25"
+    },
+    {
+      "text": "O‘tkazgichlarning volt–amper xarakteristikasidan foydalanib, 1-o‘tkazgich qarshiligining 2-o‘tkazgich qarshiligiga nisbatini toping.",
+      "answers": [
+        "2",
+        "1,95",
+        "1,78",
+        "1,1",
+        "1,875"
+      ],
+      "correct": 4,
+      "images": "../rasmlar58/r09f624cded.png",
+      "source": "58-mavzu.tex#0:26"
+    },
+    {
+      "text": "Chizmadan foydalanib, qarshilik $2,5~\\Omega$ va $1~\\Omega$ bo‘lgandagi toklarning nisbatini toping.",
+      "answers": [
+        "2,5",
+        "0,3",
+        "2",
+        "0,4",
+        "0,1"
+      ],
+      "correct": 3,
+      "images": "../rasmlar58/rdcbc168065.png",
+      "source": "58-mavzu.tex#0:27"
+    }
+  ]
+}

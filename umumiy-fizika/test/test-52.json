@@ -1,0 +1,241 @@
+{
+  "id": 52,
+  "title": "52-Mavzu | Elektr maydon. Elektr maydon kuchlanganligi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 53,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Zaryadlangan zarracha vakuumning qandaydir nuqtasida 60 V/m kuchlanganlik hosil qiladi. Agar butun sistema dielektrik singdiruvchanligi 2 bo’lgan kerosin ichiga joylashtirilsa, shu nuqtaga o’rnatilgan 5 nC zaryadga qanday kuch (nN da) ta’sir qiladi?",
+      "answers": [
+        "300",
+        "150",
+        "75",
+        "60"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:1"
+    },
+    {
+      "text": "Kuchlanganlik vektori vertikal yuqoriga yo’nalgan bir jinsli elektr maydonda massasi 0,03 mkg bo’lgan 3 pC zaryadli chang zarrachasi muvozanat holatida turibdi. Maydon kuchlanganligini aniqlang ($g=10 \\, m/s^2$).",
+      "answers": [
+        "100",
+        "10",
+        "1000",
+        "1"
+      ],
+      "correct": 0,
+      "source": "52-mavzu.tex#0:2"
+    },
+    {
+      "text": "Miqdori 20 kV/m bo’lgan kuchlanganlik vektori vertikal pastga yo’nalgan bir jinsli elektr maydonda 0,1 kg massali va 0,2 mC zaryadli sharcha ipak ipga osilgan. Ipning taranglik kuchini toping ($g=10 \\, m/s^2$).",
+      "answers": [
+        "1",
+        "3",
+        "5",
+        "10"
+      ],
+      "correct": 2,
+      "source": "52-mavzu.tex#0:3"
+    },
+    {
+      "text": "Agar ipga osilgan 0,1 kg massadagi 10 mkC zaryadli sharcha 200 kV/m kuchlanganlikka ega bo’lgan bir jinsli elektr maydonda joylashtirilsa, ipning taranglik kuchi necha marta ortadi? Kuchlanganlik vektori vertikal pastga yo’nalgan ($g=10 \\, m/s^2$).",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "1,5"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:4"
+    },
+    {
+      "text": "Massasi 4,5 g bo’lgan 0,1 mkC zaryadli sharcha $800 \\, kg/m^3$ zichlikdagi moy ichiga joylashtirilgan. Sharcha materialining zichligi $1500 \\, kg/m^3$. Sharcha muvozanatda bo'lishi uchun elektr maydonning kuchlanganligi qanday (kV/m da) bo’lishi kerak? ($g=10 \\, m/s^2$).",
+      "answers": [
+        "210",
+        "150",
+        "180",
+        "240"
+      ],
+      "correct": 0,
+      "source": "52-mavzu.tex#0:5"
+    },
+    {
+      "text": "Ipak ipga osilgan kichik sharcha 49 nC zaryadga ega. 100 kV/m kuchlanganlikli gorizontal elektr maydon ta'sirida ip tangensi 0,125 bo’lgan burchakka og’di. Sharchaning massasini (g da) toping ($g=10 \\, m/s^2$).",
+      "answers": [
+        "8",
+        "2",
+        "5",
+        "4"
+      ],
+      "correct": 3,
+      "source": "52-mavzu.tex#0:6"
+    },
+    {
+      "text": "Kuchlanganligi 1000 V/m bo’lgan bir jinsli elektr maydon ta’siri ostida massasi 0,1 g bo’lgan 4 mkC zaryadli zarracha erishadigan tezlanishning miqdorini toping. Og’irlik kuchini hisobga olmang.",
+      "answers": [
+        "4",
+        "40",
+        "400",
+        "25"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:7"
+    },
+    {
+      "text": "Kuchlanganligi 20 kV/m bo’lgan bir jinsli elektr maydonida massasi 0,01 kg bo’lgan 1 mkC zaryadli sharcha qanday tezlanish bilan tushishini aniqlang. Kuchlanganlik vektori vertikal yuqoriga yo’nalgan. ($g=10 \\, m/s^2$).",
+      "answers": [
+        "8",
+        "10",
+        "2",
+        "12"
+      ],
+      "correct": 0,
+      "source": "52-mavzu.tex#0:8"
+    },
+    {
+      "text": "Jismga 70 nC zaryad berilganda u yer sirti yaqinida tushishning 10 sekundi ichida zaryadsiz bo’lgan paytidagidan 5 cm ga ko’proq yo’lni bosib o’tdi. Agar elektr maydon kuchlanganligi 100 V/m bo’lsa, jismning massasi (g da) qanchaga teng?",
+      "answers": [
+        "14",
+        "7",
+        "3,5",
+        "10"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:9"
+    },
+    {
+      "text": "1 mg massali chang zarrachasi havoda 0,2 m/s o’zgarmas tezlik bilan tushadi. Agar zarracha kuchlanganligi 10 kV/m bo’lgan elektr maydonda joylashtirilib, unga 1,2 nC zaryad berilsa, u qanday barqaror tezlik (cm/s da) bilan ko’tariladi? ($g=10 \\, m/s^2$).",
+      "answers": [
+        "2",
+        "8",
+        "4",
+        "12"
+      ],
+      "correct": 2,
+      "source": "52-mavzu.tex#0:10"
+    },
+    {
+      "text": "5 mg massali zaryadlanmagan chang zarrachasi havoda 15 cm/s o’zgarmas tezlik bilan tushadi. Agar zarracha kuchlanganligi 3 kV/m bo’lgan gorizontal elektr maydonda joylashtirilib, unga 40 nC zaryad berilsa, u qanday barqaror tezlik (cm/s da) bilan harakatlanadi?",
+      "answers": [
+        "39",
+        "25",
+        "45",
+        "15"
+      ],
+      "correct": 0,
+      "source": "52-mavzu.tex#0:11"
+    },
+    {
+      "text": "100 km/s tezlik bilan harakatlanayotgan proton kuchlanganligi 50 V/m bo’lgan elektr maydonga maydon kuch chiziqlari yo’nalishiga qarama-qarshi yo’nalishda uchib kiradi. Necha mikrosekunddan so’ng protonning tezligi nolga teng bo’ladi? Proton zaryadining massasiga nisbati $10^8 \\, C/kg$.",
+      "answers": [
+        "10",
+        "20",
+        "40",
+        "5"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:12"
+    },
+    {
+      "text": "Nuqtaviy zaryad vakuumning qandaydir nuqtasida 600 V/m kuchlanganlikdagi maydonni yuzaga keltiradi. Agar zaryad 5 marta ortib, uning atrofidagi bo’shliq dielektrik singdiruvchanligi 2 bo’lgan kerosin bilan to’ldirilsa, shu nuqtada maydon kuchlanganligi qanday bo’ladi?",
+      "answers": [
+        "3000",
+        "600",
+        "1500",
+        "1200"
+      ],
+      "correct": 2,
+      "source": "52-mavzu.tex#0:13"
+    },
+    {
+      "text": "Zaryad tomonidan hosil qilinayotgan maydon kuchlanganligi 10 cm masofada 800 V/m ga teng. Zaryaddan 20 cm masofada bo’lgan nuqtaning maydon kuchlanganligini toping.",
+      "answers": [
+        "400",
+        "200",
+        "100",
+        "800"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:14"
+    },
+    {
+      "text": "4 nC miqdordagi, turli ishorali ikkita bir xil nuqtaviy zaryad bir-biridan 60 sm masofada joylashgan. Zaryadlarni tutashtiruvchi kesmaning o’rtasida joylashgan nuqtaning maydon kuchlanganligini toping. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "400",
+        "1600",
+        "800",
+        "200"
+      ],
+      "correct": 2,
+      "source": "52-mavzu.tex#0:15"
+    },
+    {
+      "text": "Ikki musbat nuqtaviy zaryad orasidagi masofa 8 cm. Zaryadlarni birlashtiruvchi to’g’ri chiziqda, birinchi zaryaddan 6 cm masofada maydon kuchlanganligi nolga teng. Birinchi zaryad miqdorining ikkinchi zaryad miqdoriga nisbatini toping.",
+      "answers": [
+        "3",
+        "9",
+        "4",
+        "16"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:16"
+    },
+    {
+      "text": "Agar 2 nC va –4 nC nuqtaviy zaryadlarni birlashtiruvchi kesmaning o’rtasida yotuvchi nuqtada faqat birinchi zaryad hosil qiladigan maydon kuchlanganligi 2 V/m ga teng bo’lsa, shu nuqtada ikkala zaryad hosil qiladigan maydon kuchlanganligining miqdorini toping.",
+      "answers": [
+        "6",
+        "2",
+        "4",
+        "8"
+      ],
+      "correct": 0,
+      "source": "52-mavzu.tex#0:17"
+    },
+    {
+      "text": "Musbatining miqdori manfiysining miqdoridan 2,25 marta katta bo’lgan ikkita turli nomdagi nuqtaviy zaryadlar bor. Zaryadlar orasidagi masofa manfiy zaryaddan maydon kuchlanganligi nolga teng bo’lgan nuqtagacha bo’lgan masofadan necha marta kichik?",
+      "answers": [
+        "0,5",
+        "1",
+        "3",
+        "2"
+      ],
+      "correct": 3,
+      "source": "52-mavzu.tex#0:18"
+    },
+    {
+      "text": "64 nC va –48 nC nuqtaviy zaryadlar orasidagi masofa 10 cm ga teng. Birinchi zaryaddan 8 cm va ikkinchisidan 6 cm uzoqlikda bo’lgan nuqtadagi maydon kuchlanganligini (kV/m da) aniqlang. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "100",
+        "150",
+        "200",
+        "250"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:19"
+    },
+    {
+      "text": "Miqdori bir xil 36 nC, ishorasi esa turli xil bo’lgan nuqtaviy zaryadlar tomoni 2 m bo’lgan teng tomonli uchburchakning ikki uchida joylashgan. Uchburchakning uchinchi uchidagi elektr maydon kuchlanganligini aniqlang. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "162",
+        "81",
+        "40,5",
+        "27"
+      ],
+      "correct": 1,
+      "source": "52-mavzu.tex#0:20"
+    },
+    {
+      "text": "Miqdori bir xil 5 nC, ishorasi esa turli xil bo’lgan nuqtaviy zaryadlar bir-biridan 2,4 m masofada joylashgan. Har bir zaryaddan 3 m uzoqlikda bo’lgan nuqtadagi elektr maydon kuchlanganligini toping. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "2",
+        "8",
+        "4",
+        "10"
+      ],
+      "correct": 2,
+      "source": "52-mavzu.tex#0:21"
+    }
+  ]
+}

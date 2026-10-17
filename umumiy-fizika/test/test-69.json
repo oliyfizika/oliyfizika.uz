@@ -1,0 +1,188 @@
+{
+  "id": 69,
+  "title": "69-Mavzu | O‘zinduksiya hodisasi. Induktivlik",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 70,
+  "source": "authored",
+  "questions": [
+    {
+      "text": "O‘zinduksiya hodisasi nima?",
+      "answers": [
+        "Zaryadlarning kondensatorda to‘planishi",
+        "Tokning o‘tkazgichda issiqlik ajratishi",
+        "Konturga tashqi magnitning yaqinlashtirilishi",
+        "Kontur orqali o‘tayotgan tok o‘zgarganda shu konturning o‘zida induksiya EYK hosil bo‘lishi"
+      ],
+      "correct": 3,
+      "source": "authored:69:1"
+    },
+    {
+      "text": "Induktivlikning SI dagi birligi qaysi?",
+      "answers": [
+        "Tesla (T)",
+        "Farad (F)",
+        "Veber (Wb)",
+        "Genri (H)"
+      ],
+      "correct": 3,
+      "source": "authored:69:2"
+    },
+    {
+      "text": "Konturning magnit oqimi Φ, undagi tok I va induktivligi L orasidagi bog‘lanish qaysi?",
+      "answers": [
+        "Φ = L/I",
+        "Φ = I/L",
+        "Φ = LI",
+        "Φ = LI²"
+      ],
+      "correct": 2,
+      "source": "authored:69:3"
+    },
+    {
+      "text": "Induktivligi 0,5 H bo‘lgan g‘altakdagi tok 2 s da 4 A dan 0 gacha tekis kamaydi. O‘zinduksiya EYK ning moduli necha volt?",
+      "answers": [
+        "1",
+        "4",
+        "8",
+        "0,25",
+        "2"
+      ],
+      "correct": 0,
+      "source": "authored:69:4"
+    },
+    {
+      "text": "Induktivligi 2 mH bo‘lgan g‘altakdagi tok 0,01 s da 0 dan 5 A gacha tekis ortdi. O‘zinduksiya EYK (V) qancha?",
+      "answers": [
+        "1",
+        "0,01",
+        "10",
+        "0,1"
+      ],
+      "correct": 0,
+      "source": "authored:69:5"
+    },
+    {
+      "text": "Induktivligi 0,4 H bo‘lgan g‘altakdan 5 A tok o‘tmoqda. G‘altak magnit maydonining energiyasi necha joul?",
+      "answers": [
+        "50",
+        "2",
+        "10",
+        "5",
+        "20"
+      ],
+      "correct": 3,
+      "source": "authored:69:6"
+    },
+    {
+      "text": "G‘altakdagi tok 4 A bo‘lganda magnit maydon energiyasi 8 J. G‘altakning induktivligi necha genri?",
+      "answers": [
+        "4",
+        "2",
+        "0,5",
+        "1"
+      ],
+      "correct": 3,
+      "source": "authored:69:7"
+    },
+    {
+      "text": "G‘altakning magnit oqimi 0,06 Wb, undagi tok 3 A. G‘altakning induktivligi necha millihenri (mH)?",
+      "answers": [
+        "180",
+        "20",
+        "200",
+        "2"
+      ],
+      "correct": 1,
+      "source": "authored:69:8"
+    },
+    {
+      "text": "G‘altakdagi tok 2 marta orttirilsa, uning magnit maydon energiyasi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta ortadi",
+        "O‘zgarmaydi",
+        "2 marta kamayadi",
+        "2 marta ortadi"
+      ],
+      "correct": 0,
+      "source": "authored:69:9"
+    },
+    {
+      "text": "G‘altak o‘ramlari soni 2 marta orttirilsa (uzunligi va kesim yuzi o‘zgarmaydi), uning induktivligi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta kamayadi",
+        "2 marta ortadi",
+        "O‘zgarmaydi",
+        "4 marta ortadi"
+      ],
+      "correct": 3,
+      "source": "authored:69:10"
+    },
+    {
+      "text": "G‘altak ichiga temir o‘zak kiritilsa, uning induktivligi qanday o‘zgaradi?",
+      "answers": [
+        "Nolga teng bo‘ladi",
+        "O‘zgarmaydi",
+        "Ortadi",
+        "Kamayadi"
+      ],
+      "correct": 2,
+      "source": "authored:69:11"
+    },
+    {
+      "text": "G‘altakdagi tok 20 A/s tezlik bilan o‘zgarganda unda 12 V o‘zinduksiya EYK hosil bo‘ldi. G‘altakning induktivligi qancha (H)?",
+      "answers": [
+        "240",
+        "1,67",
+        "0,06",
+        "0,6"
+      ],
+      "correct": 3,
+      "source": "authored:69:12"
+    },
+    {
+      "text": "O‘zinduksiya EYK ning yo‘nalishi Lens qoidasiga ko‘ra qanday bo‘ladi?",
+      "answers": [
+        "Tok o‘zgarishiga bog‘liq emas",
+        "Tok o‘zgarishiga to‘sqinlik qiladigan yo‘nalishda",
+        "Har doim tok yo‘nalishida",
+        "Har doim tokka qarama-qarshi"
+      ],
+      "correct": 1,
+      "source": "authored:69:13"
+    },
+    {
+      "text": "Zanjir uzilganda lampochkaning bir lahza yorqinroq chaqnashiga sababi nima?",
+      "answers": [
+        "Manba kuchlanishining oshishi",
+        "Lampa qarshiligining kamayishi",
+        "Kondensatorning zaryadlanishi",
+        "G‘altakda hosil bo‘ladigan o‘zinduksiya EYK"
+      ],
+      "correct": 3,
+      "source": "authored:69:14"
+    },
+    {
+      "text": "G‘altakning induktivligi quyidagilardan qaysi biriga bog‘liq EMAS?",
+      "answers": [
+        "O‘ramlar soniga",
+        "G‘altak uzunligiga",
+        "G‘altakdan o‘tayotgan tok kuchiga",
+        "O‘zak materialining magnit singdiruvchanligiga"
+      ],
+      "correct": 2,
+      "source": "authored:69:15"
+    },
+    {
+      "text": "Havoli solenoidda N = 1000 o‘ram, kesim yuzi S = 10 cm², uzunligi l = 0,5 m. Uning induktivligi taxminan qancha? (μ₀ = 4π·10⁻⁷ H/m)",
+      "answers": [
+        "2,5 mH",
+        "0,25 mH",
+        "12,5 mH",
+        "25 mH"
+      ],
+      "correct": 0,
+      "source": "authored:69:16"
+    }
+  ]
+}

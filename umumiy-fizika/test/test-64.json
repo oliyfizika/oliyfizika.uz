@@ -1,0 +1,194 @@
+{
+  "id": 64,
+  "title": "64-Mavzu | Magnit maydon. Tokning magnit maydoni",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 65,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Quyida keltirilgan doimiy magnitlar haqidagi fikrlarning qaysi bir(lar)i to‘g‘ri yoki noto‘g‘ri ekanini aniqlang.\n1) bir xil nomli qutblari o‘zaro tortishadi;\n2) magnitlarni ikkiga bo‘lish orqali faqatgina bitta qutbli magnitni hosil qilish mumkin.",
+      "answers": [
+        "1 – to‘g‘ri, 2 – to‘g‘ri.",
+        "1 – to‘g‘ri, 2 – noto‘g‘ri.",
+        "1 – noto‘g‘ri, 2 – noto‘g‘ri.",
+        "1 – noto‘g‘ri, 2 – to‘g‘ri."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#0:1"
+    },
+    {
+      "text": "Yerning qaysi nuqtalarida magnit mili aniq gorizontal holatda bo‘ladi?",
+      "answers": [
+        "shimoliy magnit qutbida.",
+        "janubiy magnit qutbida.",
+        "magnit ekvatorida.",
+        "geografik ekvatorda."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#0:2"
+    },
+    {
+      "text": "O‘zgarmas tok o‘tayotgan o‘tkazgich atrofida qanday maydon bo‘ladi?",
+      "answers": [
+        "elektrostatik maydon.",
+        "hech qanday maydon bo‘lmaydi.",
+        "elektr va magnit maydon.",
+        "magnit maydon."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#0:3"
+    },
+    {
+      "text": "To‘g‘ri chiziqli tokli o‘tkazgich magnit maydonining A nuqtasida maydon induksiya chizig‘ining yo‘nalishini toping. (Rasmga qarang)",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4."
+      ],
+      "correct": 0,
+      "images": "../rasmlar64/r6c213d5b00.png",
+      "source": "67-mavzu.tex#0:4"
+    },
+    {
+      "text": "Quyidagi $I$ tokli o‘tkazgichning A nuqtadagi magnit maydon induksiya vektori rasmda ko‘rsatilgan qaysi yo‘nalish bilan mos tushadi? (Tok o‘tkazgichdan chizmaga kirmoqda)",
+      "answers": [
+        "3.",
+        "1.",
+        "4.",
+        "2."
+      ],
+      "correct": 0,
+      "images": "../rasmlar64/r73e3b5ff23.png",
+      "source": "67-mavzu.tex#0:5"
+    },
+    {
+      "text": "Quyidagi $I$ tokli o‘tkazgichning A nuqtadagi magnit maydon induksiya vektori rasmda ko‘rsatilgan qaysi yo‘nalish bilan mos tushadi? (Tok o‘tkazgichdan biz tomonga chiqmoqda)",
+      "answers": [
+        "3.",
+        "1.",
+        "4.",
+        "2."
+      ],
+      "correct": 1,
+      "images": "../rasmlar64/ra406ba1b7d.png",
+      "source": "67-mavzu.tex#0:6"
+    },
+    {
+      "text": "Quyidagi tokli o‘tkazgichning A nuqtadagi magnit maydon induksiya vektori rasmda ko‘rsatilgan qaysi yo‘nalish bilan mos tushadi?",
+      "answers": [
+        "4.",
+        "1.",
+        "2.",
+        "3."
+      ],
+      "correct": 1,
+      "images": "../rasmlar64/re13b89058d.png",
+      "source": "67-mavzu.tex#0:7"
+    },
+    {
+      "text": "Muhitdagi cheksiz to‘g‘ri $I$ tokning o‘zidan $r$ masofada hosil qiladigan magnit maydon induksiyasining ifodasini ko‘rsating.",
+      "answers": [
+        "$\\frac{\\mu\\mu_0 I}{2\\pi r}$",
+        "$\\frac{\\mu\\mu_0 I}{4\\pi r}$",
+        "$\\frac{\\mu\\mu_0 U}{4\\pi r}$",
+        "$\\frac{2\\mu\\mu_0 I}{\\pi r}$"
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#0:8"
+    },
+    {
+      "text": "Magnit maydon ikkita parallel va teng toklar tomonidan hosil qilingan (rasmga q.). A nuqtada magnit induksiya vektori qanday yo‘nalgan?",
+      "answers": [
+        "bizga.",
+        "pastga.",
+        "yuqoriga.",
+        "bizdan."
+      ],
+      "correct": 2,
+      "images": "../rasmlar64/r9e92745a6d.png",
+      "source": "67-mavzu.tex#0:9"
+    },
+    {
+      "text": "Ikkita bir xil kuchli, o‘zaro parallel va ”bizdan“ yo‘nalgan to‘g‘ri chiziqli toklarning hosil qilgan magnit maydon induksiyasi A nuqtada qanday yo‘nalgan?",
+      "answers": [
+        "yuqoriga.",
+        "chapga.",
+        "nolga teng.",
+        "pastga."
+      ],
+      "correct": 1,
+      "images": "../rasmlar64/r37f1558dfa.png",
+      "source": "67-mavzu.tex#0:10"
+    },
+    {
+      "text": "Ikkita bir xil kuchli, o‘zaro parallel va ”bizga“ yo‘nalgan to‘g‘ri chiziqli toklarning hosil qilgan magnit maydon induksiyasi A nuqtada qanday yo‘nalgan?",
+      "answers": [
+        "o‘ngga.",
+        "yuqoriga.",
+        "nolga teng.",
+        "chapga."
+      ],
+      "correct": 0,
+      "images": "../rasmlar64/r9d631ac820.png",
+      "source": "67-mavzu.tex#0:11"
+    },
+    {
+      "text": "Bir-biridan $d$ masofada joylashgan va har biridan bir xil yo‘nalishda $I$ tok o‘tayotgan ikki o‘zaro parallel to‘g‘ri o‘tkazgichlarning o‘rtasidagi nuqtada magnit maydon induksiyasi qanday bo‘ladi?",
+      "answers": [
+        "$\\mu_0 \\frac{2I}{\\pi d}$",
+        "$\\mu_0 \\frac{I}{\\pi d}$",
+        "0.",
+        "$\\mu_0 \\frac{I}{2\\pi d}$"
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#0:12"
+    },
+    {
+      "text": "Rasmda 4 juft tok unsurlari keltirilgan. Qaysi holda ular o‘zaro itarishadi?",
+      "answers": [
+        "$\\uparrow \\uparrow$.",
+        "$\\uparrow \\rightarrow$.",
+        "$\\rightarrow \\leftarrow$.",
+        "$\\downarrow \\uparrow$."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#0:13"
+    },
+    {
+      "text": "Ma’lumki, ikkita proton bir-biridan Kulon kuchi vositasida itarishishadi. Qanday holatda ular bir-biriga tortiladi?",
+      "answers": [
+        "o‘zaro teskari parallel yo‘nalishda o‘ta katta tezlikda harakatlanganda.",
+        "o‘zaro bir xil yo‘nalishda parallel o‘ta katta tezlikda harakatlanganda.",
+        "o‘zaro teskari yo‘nalishda bir-biridan uzoqlashsa.",
+        "hech qachon ular tortishmaydilar."
+      ],
+      "correct": 1,
+      "source": "67-mavzu.tex#0:14"
+    },
+    {
+      "text": "$I_1=10$ A tok o‘tayotgan birinchi o‘tkazgich o‘zidan 10 cm uzoqlikda unga parallel joylashgan ikkinchi o‘tkazgichning har 1 m uzunligini $4 \\cdot 10^{-4}$ N kuch bilan itarayotgan bo‘lsa, ikkinchi o‘tkazgichdan o‘tayotgan tok necha Amper va qaysi yo‘nalishda oqmoqda?",
+      "answers": [
+        "10 A; 1-yo‘nalishda.",
+        "20 A; 2-yo‘nalishda.",
+        "15 A; 1-yo‘nalishda.",
+        "15 A; 2-yo‘nalishda."
+      ],
+      "correct": 1,
+      "images": "../rasmlar64/rf94c459b2e.png",
+      "source": "67-mavzu.tex#0:15"
+    },
+    {
+      "text": "Keltirilgan ta’riflardan qaysi birida tok kuchi birligi (1 A) to‘g‘ri aniqlangan?",
+      "answers": [
+        "induktivligi 1 H bo‘lgan g‘altak hosil qilayotgan oqim 1 Wb bo‘lgandagi tok.",
+        "o‘tkazgich kesimidan 1 s da 1 C zaryad o‘tgandagi tok.",
+        "qarshiligi 1 $\\Omega$ bo‘lgan o‘tkazgichdan o‘tgan tok.",
+        "vakuumda 1 m masofada parallel o‘tkazgichlar orasidagi $2 \\cdot 10^{-7}$ N kuchni vujudga keltiruvchi tok."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#0:16"
+    }
+  ]
+}

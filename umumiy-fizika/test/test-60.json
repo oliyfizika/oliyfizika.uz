@@ -1,0 +1,599 @@
+{
+  "id": 60,
+  "title": "60-Mavzu | Elektr qarshiliklar",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 61,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "O‘tkazgichning qarshiligi nimaga bog‘liq?",
+      "answers": [
+        "tok kuchiga.",
+        "kuchlanishga.",
+        "o‘tkazgich materiali va geometrik o‘lchamlariga.",
+        "tok zichligiga.",
+        "o‘tkazgichdagi tok kuchi va kuchlanishga."
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:28"
+    },
+    {
+      "text": "O‘tkazgich uchlaridagi kuchlanishni orttirsak, uning qarshiligi...",
+      "answers": [
+        "ortadi.",
+        "o‘zgarmaydi.",
+        "kamayadi.",
+        "ortishi ham, kamayishi ham mumkin.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:29"
+    },
+    {
+      "text": "Berilgan formulalardan qaysi biri o‘tkazgich qarshiligining uning uzunligiga bog‘lanishini ifodalaydi?",
+      "answers": [
+        "$R=R_0(1+\\alpha t)$.",
+        "$R=\\dfrac{U}{I}$.",
+        "$R=\\rho\\dfrac{l}{S}$.",
+        "$R=\\dfrac{Q}{I^2t}$.",
+        "$R=\\dfrac{P}{I^2}$."
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:30"
+    },
+    {
+      "text": "Cho‘g‘lanma lampaning spiralini yasash uchun uzunligi $40$ cm va ko‘ndalang kesim yuzi $0,002$ mm$^2$ bo‘lgan volfram sim olingan. Volframning solishtirma qarshiligi $5,5\\cdot10^{-8}~\\Omega\\cdot$m. Spiralning qarshiligini toping ($\\Omega$)?",
+      "answers": [
+        "0,11",
+        "1,1",
+        "5,5",
+        "11",
+        "110"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:31"
+    },
+    {
+      "text": "Uzunligi $50$ m va ko‘ndalang kesim yuzi $34$ mm$^2$ bo‘lgan mis simning qarshiligini toping (m$\\Omega$). Misning solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "25",
+        "5",
+        "50",
+        "500",
+        "5000"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:32"
+    },
+    {
+      "text": "Uzunligi $210$ m bo‘lgan nikelin simning qarshiligi $14,7~\\Omega$ ga teng. Uning ko‘ndalang kesim yuzini toping (mm$^2$). $\\rho=4,2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "answers": [
+        "1",
+        "4",
+        "1,5",
+        "6",
+        "4,5"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:33"
+    },
+    {
+      "text": "Ko‘ndalang kesim yuzi $0,5$ cm$^2$ bo‘lgan aluminiy simning qarshiligi $2,8~\\Omega$ bo‘lsa. Simning uzunligini toping (m). $\\rho=2,8\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "1,4",
+        "5",
+        "50",
+        "500",
+        "5000"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:34"
+    },
+    {
+      "text": "Ko‘ndalang kesim yuzi $0,17$ mm$^2$ bo‘lgan mis simning qarshiligi $9~\\Omega$ bo‘lishi uchun uzunligi necha metr bo‘lishi kerak? Misning solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "900",
+        "90",
+        "170",
+        "200",
+        "270"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:35"
+    },
+    {
+      "text": "$12$ mV kuchlanish ulangan uzunligi $10$ m va kesimi $2$ mm$^2$ bo‘lgan po‘lat simdagi tok kuchini aniqlang (mA). $\\rho=12\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "20",
+        "17",
+        "10",
+        "0,2",
+        "0,1"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:37"
+    },
+    {
+      "text": "Ko‘ndalang kesimi $150$ mm$^2$, solishtirma qarshiligi $2,8\\cdot10^{-8}~\\Omega\\cdot$m bo‘lgan $150$ km uzunlikdagi simdan o‘zgarmas elektr toki uzatish liniyasi tortilgan. Agar tok kuchi $100$ A bo‘lsa, liniyadagi kuchlanish tushuvi necha Volt bo‘ladi?",
+      "answers": [
+        "280",
+        "5600",
+        "2800",
+        "560",
+        "1400"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:38"
+    },
+    {
+      "text": "Uzunligi $500$ km, ko‘ndalang kesimi yuzi $10$ mm$^2$ bo‘lgan alyuminiy simdan $10$ mA tok o‘tayotgan bo‘lsa, uning uchlaridagi kuchlanish necha Volt? Alyuminiyning solishtirma qarshiligi $2,8\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "56",
+        "50",
+        "35",
+        "28",
+        "14"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:39"
+    },
+    {
+      "text": "Ko‘ndalang kesimi $1$ mm$^2$ bo‘lgan nikelin simdan yasalgan reostatga ulangan ampermetr $20$ A ni, voltmetr esa $210$ V ni ko‘rsatadi ($\\rho=4,2\\cdot10^{-7}~\\Omega\\cdot$m). Reostat simining uzunligi necha metr?",
+      "answers": [
+        "150",
+        "180",
+        "200",
+        "250",
+        "300"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:40"
+    },
+    {
+      "text": "O‘tkazgichning kesim yuzi $2$ marta, uzunligi esa $3$ marta oshsa, uning qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "3 marta kamayadi.",
+        "1,5 marta ortadi.",
+        "3 marta ortadi.",
+        "1,5 marta kamayadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:41"
+    },
+    {
+      "text": "Mis simning qarshiligi $6~\\Omega$. Shu simdan ko‘ndalang kesimi yuzi $3$ marta, uzunligi esa $2$ marta katta bo‘lgan mis simning qarshiligi qanday ($\\Omega$)?",
+      "answers": [
+        "3",
+        "4",
+        "8",
+        "9",
+        "10"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:42"
+    },
+    {
+      "text": "Mis simning elektr qarshiligi $6~\\Omega$ ga teng. Uzunligi $3$ marta, diametri $2$ marta katta bo‘lgan mis simning qarshiligi qanday ($\\Omega$)?",
+      "answers": [
+        "72",
+        "9",
+        "8",
+        "4",
+        "4,5"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:43"
+    },
+    {
+      "text": "Mis simning elektr qarshiligi $6~\\Omega$ ga teng. Uzunligi $3$ marta, diametri $2$ marta kichik bo‘lgan mis simning qarshiligi qanday ($\\Omega$)?",
+      "answers": [
+        "72",
+        "9",
+        "8",
+        "4,5",
+        "4"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:44"
+    },
+    {
+      "text": "Uzunligi $l$, ko‘ndalang kesim yuzi $S$ bo‘lgan o‘tkazgich $4~\\Omega$ elektr qarshilikka ega. Xuddi moddadan yasalgan, uzunligi $2l$, ko‘ndalang kesimi $S/4$ bo‘lgan o‘tkazgich necha qarshilikka ega bo‘ladi?",
+      "answers": [
+        "32",
+        "16",
+        "8",
+        "24",
+        "4"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:45"
+    },
+    {
+      "text": "Birinchi o‘tkazgichning uzunligi $1$ m, ko‘ndalang kesim yuzi $1$ mm$^2$, ikkinchi o‘tkazgichning uzunligi $2$ m, ko‘ndalang kesim yuzi $0,5$ mm$^2$. Bu o‘tkazgichlarning qarshiliklari $R_1$ va $R_2$ qanday munosabatda bo‘ladi?",
+      "answers": [
+        "$R_1=R_2$.",
+        "$R_1=4R_2$",
+        "aniqlab bo‘lmaydi.",
+        "$R_2=2R_1$",
+        "$R_2=4R_1$"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:46"
+    },
+    {
+      "text": "Alyuminiydan yasalgan bir xil uzunlikdagi ikki simdan birining qarshiligi $2,7~\\Omega$, ikkinchisiniki $1,8~\\Omega$. Birinchi simning ko‘ndalang kesim yuzi $4$ mm$^2$. Ikkinchi simning ko‘ndalang kesim yuzi qanday (mm$^2$)?",
+      "answers": [
+        "9",
+        "18",
+        "12",
+        "6",
+        "3"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:47"
+    },
+    {
+      "text": "Uzunliklari bir xil, ko‘ndalang kesimlari $S_1=2S_2$ va solishtirma qarshiliklari $\\rho_2=2\\rho_1$ bo‘lgan ikkita o‘tkazgich qarshiliklarining nisbati $R_2/R_1$ ni aniqlang.",
+      "answers": [
+        "0,25",
+        "0,5",
+        "2",
+        "4",
+        "8"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:48"
+    },
+    {
+      "text": "Uzunligi $1$ m va ko‘ndalang kesim yuzi $0,5$ mm$^2$ bo‘lgan o‘tkazgichning qarshiligi teng qarshilik hosil qilish uchun, o‘sha materialdan yasalgan va ko‘ndalang kesim yuzi $10$ mm$^2$ bo‘lgan simdan necha metr olish kerak?",
+      "answers": [
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:49"
+    },
+    {
+      "text": "Ko‘ndalang kesim yuzi $1$ mm$^2$ va og‘irligi $105$ N bo‘lgan kumush simning qarshiligini toping ($\\Omega$)? Kumushning zichligi $10500$ kg/m$^3$, solishtirma qarshiligi $1,6\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "16",
+        "8",
+        "32",
+        "40",
+        "48"
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:50"
+    },
+    {
+      "text": "Bir simning uzunligi $20$ cm, ikkinchisiniki $1,6$ m. Simlarning ko‘ndalang kesimi va materiallari bir xil. Qaysi simning qarshiligi katta va necha marta katta?",
+      "answers": [
+        "birinchisiniki, 3,2 marta.",
+        "ikkinchisiniki, 3,2 marta.",
+        "bir xil.",
+        "birinchisiniki, 8 marta.",
+        "ikkinchisiniki, 8 marta."
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:52"
+    },
+    {
+      "text": "Agar metall simning uzunligi va radiusi $4$ marta orttirilsa, uning qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "2 marta ortadi.",
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "4 marta ortadi."
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:53"
+    },
+    {
+      "text": "Simni cho‘zib, $3$ marta uzaytirilsa, qarshiligi necha marta ortadi?",
+      "answers": [
+        "9",
+        "4",
+        "2",
+        "3",
+        "o‘zgarmaydi."
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:54"
+    },
+    {
+      "text": "Manbaning kuchlanishi $2$ marta orttirilsa, rezistor qarshiligi qanday o‘zgaridi?",
+      "answers": [
+        "2 marta ortadi.",
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "o‘zgarmaydi.",
+        "4 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:55"
+    },
+    {
+      "text": "Zanjirdagi tok kuchi $5$ marta orttirilsa, rezistorning qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "5 marta ortadi.",
+        "5 marta kamayadi.",
+        "25 marta ortadi.",
+        "o‘zgarmaydi.",
+        "25 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:56"
+    },
+    {
+      "text": "Massalari teng bo‘lgan sim teng ikkita metallikdan ikkita sim tayyorlandi. Ulardan biri ikkinchisidan $3$ marta uzun. Bu simlarning qarshiliklari $R_1$ va $R_2$ orasidagi munosabatni aniqlang.",
+      "answers": [
+        "$R_1=3R_2$",
+        "$R_2=9R_1$",
+        "$R_1=R_2$",
+        "$R_1=9R_2$",
+        "$R_2=3R_1$"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:57"
+    },
+    {
+      "text": "$8,9$ kg massali ko‘ndalang kesim yuzi $1$ mm$^2$ bo‘lgan mis simning qarshiligini necha $\\Omega$ bo‘ladi? Misning zichligi $8,9$ g/cm$^3$, solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "8,9",
+        "17",
+        "34",
+        "44,5",
+        "51"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:59"
+    },
+    {
+      "text": "Har bir metr uzunligining massasi $3,9$ kg bo‘lgan $1$ km uzunlikdagi po‘lat relsning qarshiligini aniqlang ($\\Omega$). Po‘latning zichligi $7800$ kg/m$^3$, solishtirma qarshiligi $1,2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "answers": [
+        "0,17",
+        "0,3",
+        "0,18",
+        "0,55",
+        "0,24"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:60"
+    },
+    {
+      "text": "Har $1$ metrining massasi $78$ kg bo‘lgan po‘lat relsning har bir metri $0,012~\\Omega$ qarshilikka ega bo‘ladi? Po‘latning zichligi $7,8$ g/cm$^3$, solishtirma qarshiligi $1,2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "answers": [
+        "1200",
+        "1000",
+        "100",
+        "780",
+        "10"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:61"
+    },
+    {
+      "text": "Uzunligi $l$, qarshiligi $R$, zichligi $d$ va solishtirma qarshiligi $\\rho$ bo‘lgan o‘tkazgich massasi qanday?",
+      "answers": [
+        "$\\dfrac{R}{\\rho d l^2}$",
+        "$\\dfrac{\\rho l^2}{dR}$",
+        "$\\dfrac{d\\rho l^2}{R}$",
+        "$\\dfrac{Rl^2}{\\rho d}$",
+        "$\\dfrac{d\\rho}{Rl^2}$"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:63"
+    },
+    {
+      "text": "Uzunligi $1$ km bo‘lgan mis simning qarshiligi $75,65~\\Omega$. Simning og‘irligi necha Nyuton? Misning zichligi $8900$ kg/m$^3$, solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "225",
+        "45",
+        "83",
+        "18",
+        "20"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:64"
+    },
+    {
+      "text": "Elektr spiralidan $6$ A tok o‘tmoqda. Agar spiralning chorak qismi kesib tashlansa, undan necha Amper tok o‘tadi? $U=\\text{const}$.",
+      "answers": [
+        "12",
+        "10",
+        "4,5",
+        "8",
+        "18"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:65"
+    },
+    {
+      "text": "Bir simni teng ikki bo‘lakka bo‘lib, ikkala bo‘lagi ustma-ust taxlansa, simning qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "4 marta oshadi.",
+        "2 marta kamayadi.",
+        "2 marta oshadi.",
+        "4 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:66"
+    },
+    {
+      "text": "Uzun o‘tkazgich teng ikki bo‘lakka bo‘lindi va bitta o‘tkazgich tarzida uzunligi bo‘yicha eshib qo‘yildi. Bunda o‘tkazgichning qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "4 marta ortadi.",
+        "2 marta ortadi.",
+        "4 marta kamayadi.",
+        "2 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:67"
+    },
+    {
+      "text": "Qarshiligi $R$ bo‘lgan sim teng uch qismga qirqildi va uchala qism uzunligi bo‘yicha birga eshib qo‘yildi. Bunda simning qarshiligi qanday bo‘ladi?",
+      "answers": [
+        "$9R$",
+        "$R$",
+        "$R/3$",
+        "$R/6$",
+        "$R/9$"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:68"
+    },
+    {
+      "text": "O‘tkazgich 5 ta bo‘lakka bo‘linib, zich qilib eshilganda, qarshiligi $1~\\Omega$ bo‘ldi. O‘tkazgichning dastlabki qarshiligini toping ($\\Omega$).",
+      "answers": [
+        "5",
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:69"
+    },
+    {
+      "text": "Qarshiligi $R$ bo‘lgan sim to‘rtta teng qismga qirqildi va to‘rttala qism uzunligi bo‘yicha birga eshib qo‘yildi. Bunday simning qarshiligi qanday bo‘ladi?",
+      "answers": [
+        "$R/32$",
+        "$R/12$",
+        "$R/16$",
+        "$R/4$",
+        "$R/2$"
+      ],
+      "correct": 2,
+      "source": "58-mavzu.tex#0:70"
+    },
+    {
+      "text": "Agar o‘tkazgichni (izolyatsiyasiz) ikki buksak va eshsak, qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi.",
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "4 marta kamayadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:71"
+    },
+    {
+      "text": "Metall simning solishtirma qarshiligi $\\rho$, uning ko‘ndalang kesim yuzi $S$ va undan o‘tayotgan tok kuchi $I$ bo‘lsa, sim ichidagi elektr maydon kuchlanganligi qanday bo‘ladi?",
+      "answers": [
+        "$E=\\dfrac{I\\rho S}{ }$",
+        "$E=\\dfrac{I}{\\rho S}$",
+        "$E=\\dfrac{I^2\\rho}{S}$",
+        "$E=\\dfrac{IS}{\\rho}$",
+        "$E=\\dfrac{I\\rho}{S}$"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:72"
+    },
+    {
+      "text": "$20$ A o‘zgarmas tok o‘tayotgan, ko‘ndalang kesim yuzi $1$ mm$^2$ bo‘lgan mis sim ichidagi elektr maydon kuchlanganligi qanday (V/m)? Misning solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "0,17",
+        "0,34",
+        "1,7",
+        "3,4",
+        "17"
+      ],
+      "correct": 1,
+      "source": "58-mavzu.tex#0:73"
+    },
+    {
+      "text": "Aluminiy o‘tkazgichdan o‘tayotgan tok zichligi $2\\cdot10^6$ A/m$^2$ bo‘lsa, o‘tkazgich ichidagi maydon kuchlanganligi necha V/m bo‘ladi? Aluminiyning solishtirma qarshiligi $2\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "$10^{-2}$",
+        "$4\\cdot10^{-3}$",
+        "0",
+        "$4\\cdot10^{-4}$",
+        "$4\\cdot10^{-2}$"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:74"
+    },
+    {
+      "text": "Uzunligi $10$ m, solishtirma qarshiligi $5\\cdot10^{-7}~\\Omega\\cdot$m bo‘lgan o‘tkazgichga $10$ V kuchlanish berilgan. O‘tkazgichdagi tokning zichligi nimaga teng (A/m$^2$)?",
+      "answers": [
+        "$10^3$",
+        "$10^4$",
+        "$2\\cdot10^4$",
+        "$2\\cdot10^6$",
+        "$2\\cdot10^7$"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:75"
+    },
+    {
+      "text": "Uzunligi $2$ m bo‘lgan nixrom simdagi kuchlanish tushishi $2,5$ V bo‘lsa, undagi tok zichligi necha A/m$^2$ ga teng? Nixromning solishtirma qarshiligi $1\\cdot10^{-6}~\\Omega\\cdot$m.",
+      "answers": [
+        "$2\\cdot10^3$",
+        "$2,4\\cdot10^4$",
+        "$10^5$",
+        "$1,25\\cdot10^6$",
+        "100"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:76"
+    },
+    {
+      "text": "Mis simdan o‘tayotgan tokning zichligi $1$ A/mm$^2$ ga teng. Simdagi elektr maydon kuchlanganligi qanday (V/m)? Misning solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "34",
+        "17",
+        "3,4",
+        "1,7",
+        "0,017"
+      ],
+      "correct": 4,
+      "source": "58-mavzu.tex#0:77"
+    },
+    {
+      "text": "Uzunliklarining nisbati $l_2/l_1=2$, ko‘ndalang kesimlarining nisbati $S_2/S_1=2$ bo‘lgan, bir xil materialdan tayyorlangan ikkita o‘tkazgichga bir xil kuchlanish berilsa, ulardagi tok zichliklari qanday munosabatda bo‘ladi?",
+      "answers": [
+        "$j_2=2j_1$",
+        "$j_1=4j_2$",
+        "$j_1=j_2$",
+        "$j_1=2j_2$",
+        "$j_2=4j_1$"
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:79"
+    },
+    {
+      "text": "O‘tkazgich uzunligini va unga qo‘yilgan potensial ayirmani o‘zgartirmagan holda ko‘ndalang kesim yuzini $2$ marta kamaytirsak, undagi tok zichligi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi.",
+        "2 marta kamayadi.",
+        "2 marta ortadi."
+      ],
+      "correct": 0,
+      "source": "58-mavzu.tex#0:80"
+    },
+    {
+      "text": "Metall simdagi elektr maydon kuchlanganligi $8$ marta kamaysa va simning kesim yuzi $10$ marta ortsa, undagi tok kuchi qanday o‘zgaradi?",
+      "answers": [
+        "$1,25$ marta kamayadi.",
+        "8 marta ortadi.",
+        "4 marta kamayadi.",
+        "$1,25$ marta ortadi.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "58-mavzu.tex#0:82"
+    }
+  ]
+}

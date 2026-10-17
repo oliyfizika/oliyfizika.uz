@@ -1,0 +1,252 @@
+{
+  "id": 53,
+  "title": "53-Mavzu | Elektr maydon potensiali",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 54,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Bir-biridan 0,03 m masofada joylashgan va bir jinsli elektr maydonning bitta kuch chizig’ida yotgan nuqtalar orasidagi potensiallar farqi 12 V ga teng. Xuddi o’sha kuch chizig’ida bir-biridan 15 cm masofada yotgan nuqtalar orasidagi potensiallar farqini toping.",
+      "answers": [
+        "30",
+        "120",
+        "60",
+        "15"
+      ],
+      "correct": 2,
+      "source": "53-mavzu.tex#0:1"
+    },
+    {
+      "text": "Yassi kondensatordagi elektr maydon kuchlanganligi 30 kV/m. Qoplamalar orasidagi potensiallar farqi 300 V. Kondensator qoplamalari orasidagi masofa (mm da) qanday?",
+      "answers": [
+        "10",
+        "1",
+        "100",
+        "30"
+      ],
+      "correct": 0,
+      "source": "53-mavzu.tex#0:2"
+    },
+    {
+      "text": "Vakuumda bir-biridan 0,1 m masofada joylashgan ikkita parallel metall plastina 1 kV potensiallar farqigacha zaryadlangan. Plastinalar orasiga joylashtirilgan 100 mkC zaryadga qanday kuch ta’sir qiladi?",
+      "answers": [
+        "0,1",
+        "1",
+        "10",
+        "5"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:3"
+    },
+    {
+      "text": "Yassi kondensatorning gorizontal plastinalari orasida $4,8 \\cdot 10^{-12}$ kg massali chang zarrachasi muvozanatda turibdi. Agar kondensatorda kuchlanish 3000 V, plastinalar orasidagi masofa esa 2 cm bo’lsa, chang zarrachasining zaryadi elektron zaryadidan necha marta katta? ($e=1,6 \\cdot 10^{-19}$ C, $g=10 \\, m/s^2$).",
+      "answers": [
+        "1000",
+        "4000",
+        "500",
+        "2000"
+      ],
+      "correct": 3,
+      "source": "53-mavzu.tex#0:4"
+    },
+    {
+      "text": "Yassi kondensatorning gorizontal plastinalari orasida plastmass prujinaga zaryadlangan sharcha osilgan. Kondensator 500 V kuchlanish manbaiga ulanganida, prujina yana 1 cm ga cho’ziladi. Agar prujinaning bikirligi 10 N/m, kondensator plastinalari orasidagi masofa 20 cm bo’lsa, sharchaning zaryadini (mkC da) toping.",
+      "answers": [
+        "40",
+        "20",
+        "80",
+        "10"
+      ],
+      "correct": 0,
+      "source": "53-mavzu.tex#0:5"
+    },
+    {
+      "text": "Manfiy zaryadlangan $10^{-9}$ g massali chang zarrachasi yassi kondensator ichida muvozanatda turibdi. Kondensatorga 500 V kuchlanish qo'yilgan. Zarrachadan 500 ta elektron chiqib ketgandan so’ng ham u muvozanatda qolishi uchun potensiallar farqini necha voltga o’zgartirish kerak? ($d=5$ mm).",
+      "answers": [
+        "1000",
+        "2000",
+        "500",
+        "2500"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:6"
+    },
+    {
+      "text": "Yassi kondensator plastinalari orasida, pastki plastinadan 10 cm masofada zaryadlangan sharcha muallaq turibdi ($U=400$ V). Agar potensiallar farqi oniy tarzda 200 V gacha kamaytirilsa, qancha vaqtdan so’ng (ms da) sharcha pastki plastinaga tushadi?",
+      "answers": [
+        "200",
+        "100",
+        "400",
+        "50"
+      ],
+      "correct": 0,
+      "source": "53-mavzu.tex#0:7"
+    },
+    {
+      "text": "Elektron yassi kondensator maydoniga kuch chiziqlari yo’nalishida kirib, 0,003 m yo’lda tezligini yo'qotdi. Agar elektronning boshlang’ich tezligi va kondensator kuchlanishi 3 marta kamaytirilsa, u qanday masofada (mm da) to'xtaydi?",
+      "answers": [
+        "0,5",
+        "3",
+        "1",
+        "0,3"
+      ],
+      "correct": 2,
+      "source": "53-mavzu.tex#0:8"
+    },
+    {
+      "text": "5 kV potensiallar farqini o’tib tezlik olgan elektronlar yassi kondensatorga o’rtadan (parallel) kiradi. Elektronlar kondensatordan chiqib ketmasligi uchun qanday eng kichik kuchlanish kerak? ($L=5$ cm, $d=1$ cm).",
+      "answers": [
+        "200",
+        "400",
+        "800",
+        "100"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:9"
+    },
+    {
+      "text": "Tomoni 30 cm bo’lgan teng tomonli uchburchakning ikki uchida har biri 50 nC dan bo’lgan zaryadlar bor. Uchinchi uchdagi potensialni (kV da) toping.",
+      "answers": [
+        "1,5",
+        "6",
+        "9",
+        "3"
+      ],
+      "correct": 3,
+      "source": "53-mavzu.tex#0:10"
+    },
+    {
+      "text": "Tomoni 30 cm bo’lgan kvadratning ikki qarama-qarshi uchlarida 200 nC dan zaryadlar bor. Kvadratning qolgan ikki uchidagi potensialni (kV da) toping.",
+      "answers": [
+        "12",
+        "6",
+        "18",
+        "24"
+      ],
+      "correct": 0,
+      "source": "53-mavzu.tex#0:11"
+    },
+    {
+      "text": "To’g’ri burchakli uchburchakning uchlarida 1, 2 va 3 nC zaryadlar bor. Agar gipotenuzaning uzunligi 20 cm bo’lsa, uning o’rtasida potensial qanchaga teng bo’ladi? ($k=9 \\cdot 10^9$).",
+      "answers": [
+        "270",
+        "540",
+        "1080",
+        "360"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:12"
+    },
+    {
+      "text": "Qirrasi 30 cm bo’lgan muntazam tetraedrning uchta uchida 3, 5 va –2 nC zaryadlar bor. To’rtinchi uchdagi potensialni toping.",
+      "answers": [
+        "90",
+        "360",
+        "180",
+        "120"
+      ],
+      "correct": 2,
+      "source": "53-mavzu.tex#0:13"
+    },
+    {
+      "text": "Tomoni 27 cm bo’lgan muntazam oltiburchakning uchta uchida 1 nC dan, qolgan uchtasida 2 nC dan zaryadlar bor. Oltiburchakning markazidagi potensialni toping.",
+      "answers": [
+        "150",
+        "300",
+        "600",
+        "100"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:14"
+    },
+    {
+      "text": "6 cm radiusli yupqa halqa bo’ylab 4 nC zaryad taqsimlangan. Halqa o’qida, markazidan 8 cm masofada yotgan nuqtada maydon potensialini toping.",
+      "answers": [
+        "360",
+        "180",
+        "720",
+        "450"
+      ],
+      "correct": 0,
+      "source": "53-mavzu.tex#0:15"
+    },
+    {
+      "text": "30 cm radiusli sferaning sirti bo’ylab 4 nC zaryad taqsimlangan. Sfera markazida potensial qanchaga teng?",
+      "answers": [
+        "60",
+        "240",
+        "180",
+        "120"
+      ],
+      "correct": 3,
+      "source": "53-mavzu.tex#0:16"
+    },
+    {
+      "text": "10 nC musbat zaryadli sferaning markazida –5 nC manfiy zaryadli sharcha bor. Sferadan tashqarida, markazidan 9 cm masofada bo’lgan nuqtadagi potensialni toping.",
+      "answers": [
+        "10",
+        "5",
+        "2,5",
+        "1"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:17"
+    },
+    {
+      "text": "Maydonning bir nuqtasidan ikkinchisiga 2 nC zaryadni ko’chirishda maydon qanday ish (mkJ da) bajaradi?\nNuqtalar orasidagi potesniallar farqi $\\Delta \\varphi = 500$ V.",
+      "answers": [
+        "2",
+        "0,5",
+        "1",
+        "10"
+      ],
+      "correct": 2,
+      "source": "53-mavzu.tex#0:18"
+    },
+    {
+      "text": "Maydonning 20 V potensialli nuqtasidan 12 V potensialli nuqtasiga 8 mkC zaryadni ko’chirishda qanday ish (mkJ da) bajariladi?",
+      "answers": [
+        "32",
+        "64",
+        "128",
+        "96"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:19"
+    },
+    {
+      "text": "130 nC zaryadni cheksizlikdan maydonning qandaydur nuqtasiga ko’chirishda bajarilgan ish 65 mkJ ga teng. Shu nuqtaning potensialini(V) toping.",
+      "answers": [
+        "250",
+        "1000",
+        "500",
+        "130"
+      ],
+      "correct": 2,
+      "source": "53-mavzu.tex#0:20"
+    },
+    {
+      "text": "10 nC zaryadni cheksizlikdan zaryadlangan shar yuzasidan 20 cm masofadagi nuqtaga ko’chirishda 0,5 mkJ ish bajarildi. ($R=4$ cm). Shar sirtidagi potensialni toping.",
+      "answers": [
+        "150",
+        "300",
+        "600",
+        "50"
+      ],
+      "correct": 1,
+      "source": "53-mavzu.tex#0:21"
+    },
+    {
+      "text": "Manfiy zaryadni qo’zg’almas musbat zaryad tomon ko'chirishda maydon 9 J ish bajardi va masofa yarmiga kamaydi. Shu yo’lning birinchi yarmida qanday ish (J) bajarilgan?",
+      "answers": [
+        "3",
+        "1",
+        "4,5",
+        "6"
+      ],
+      "correct": 0,
+      "source": "53-mavzu.tex#0:22"
+    }
+  ]
+}

@@ -1,0 +1,642 @@
+{
+  "id": 72,
+  "title": "72-Mavzu | Transformator",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 73,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Transformator qanday asbob?",
+      "answers": [
+        "O‘zgaruvchan kuchlanishni kuchaytirib yoki pasaytirib beruvchi.",
+        "Zarrachalarni tezlashtiruvchi.",
+        "Elektromagnit tebranishlarni hosil qiluvchi.",
+        "Radioaktiv nurlanishlarni aniqlovchi."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#0:1"
+    },
+    {
+      "text": "Transformatorning transformatsiya koeffitsienti ifodasini toping.",
+      "answers": [
+        "$k = \\frac{U_1}{U_2}$.",
+        "$k = \\frac{M}{q}$.",
+        "$k = \\frac{F}{x}$.",
+        "$k = \\frac{A}{zF}$."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#0:2"
+    },
+    {
+      "text": "Transformatorning birinchi o‘ramidagi o‘ramlar soni 800 ta, ikkinchisidagi o‘ramlar soni 3200 ta. Transformatsiya koeffitsentini aniqlang.",
+      "answers": [
+        "1/2.",
+        "1/4.",
+        "2.",
+        "4."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#0:3"
+    },
+    {
+      "text": "Transformatorning birinchi chulg‘amiga 220 V kuchlanish berildi. Agar transformatsiyalash koeffitsienti 0,8 bo‘lsa, ikkinchi chulg‘amdagi kuchlanish qanday bo‘ladi (V)?",
+      "answers": [
+        "364.",
+        "275.",
+        "220.",
+        "176."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#0:4"
+    },
+    {
+      "text": "Transformatorning birlamchi chulg‘amiga 220 V kuchlanish berilgan. Birlamchi chulg‘amdagi o‘ramlar soni 400. Ikkilamchi chulg‘amdagi o‘ramlar soni 200. Ikkilamchi chulg‘amdagi kuchlanish qanday (V)?",
+      "answers": [
+        "110.",
+        "100.",
+        "200.",
+        "220."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#0:5"
+    },
+    {
+      "text": "Transformatorning ikkilamchi chulg‘amidagi o‘ramlar soni 990 ta, kirishidagi kuchlanish 220 V, chiqishidagi kuchlanish 330 V bo‘lsa, birlamchi chulg‘amdagi o‘ramlar soni qanday?",
+      "answers": [
+        "110.",
+        "220.",
+        "330.",
+        "660."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#0:6"
+    },
+    {
+      "text": "Transformatorning birlamchi chulg‘ami 40 o‘ramdan iborat. Kuchlanishni 220 V dan 22000 V gacha orttirish uchun transformatorning ikkilamchi chulg‘amidagi o‘ramlar soni nechta bo‘lishi kerak?",
+      "answers": [
+        "22000.",
+        "4000.",
+        "2200.",
+        "400."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#0:7"
+    },
+    {
+      "text": "Quyidagi bir-biriga ulangan ideal transformatorlarda $N_1/N_2 = 8$ va $N_3/N_4 = 1/3$ bo‘lsa, chiqishdagi kuchlanish $U_2$ nimaga teng (V)?",
+      "answers": [
+        "15.",
+        "30.",
+        "45.",
+        "60."
+      ],
+      "correct": 2,
+      "images": "../rasmlar72/r7ad0061526.png",
+      "source": "72-mavzu.tex#0:8"
+    },
+    {
+      "text": "Pasaytiruvchi transformatorning ikkilamchi chulg‘ami zanjiridagi kuchlanish 80 V va tok kuchi 2 A. Kuchlanish 160 V bo‘lgan birlamchi chulg‘amdagi tok kuchi necha Amper? Isrofni hisobga olmang.",
+      "answers": [
+        "1.",
+        "0,5.",
+        "1,5.",
+        "2."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#0:9"
+    },
+    {
+      "text": "Ushbu transformatorda kirishdagi quvvat $P_1 = 100$ W, chiqishdagi quvvat $P_2 = 80$ W. $U_1/U_2 = 10$ bo‘lsa, $I_2/I_1$ nisbat nimaga teng?",
+      "answers": [
+        "1/8.",
+        "1/6.",
+        "4.",
+        "8."
+      ],
+      "correct": 3,
+      "images": "../rasmlar72/r3f95368ca9.png",
+      "source": "72-mavzu.tex#0:10"
+    },
+    {
+      "text": "FIK 90 % bo‘lgan pasaytiruvchi transformator tarmoqdan 2600 W quvvat iste’mol qiladi. Ikkinchi chulg‘amdagi tok quvvatini aniqlang (kW).",
+      "answers": [
+        "2,34.",
+        "1,2.",
+        "0,24.",
+        "3,36."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#0:11"
+    },
+    {
+      "text": "Transformatorning birlamchi chulg‘amidagi kuchlanish 200 V, tok kuchi 0,5 A, ikkinchi chulg‘amida 38 V va 2,5 A bo‘lsa, transformatorning FIK necha foiz?",
+      "answers": [
+        "70.",
+        "76.",
+        "80.",
+        "95."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#0:12"
+    },
+    {
+      "text": "FIK i 75 % bo‘lgan rasmdagi transformatorda birlamchi chulg‘amdagi tok kuchining effektiv qiymati $I_1 = 1$ A, kuchlanishning effektiv qiymati $U_1 = 200$ V. Ikkilamchi chulg‘amdagi $R = 6\\ \\Omega$ qarshilikdan o‘tayotgan tok kuchining effektiv qiymatini aniqlang (A).",
+      "answers": [
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ],
+      "correct": 0,
+      "images": "../rasmlar72/r73c255bcad.png",
+      "source": "72-mavzu.tex#0:13"
+    },
+    {
+      "text": "Pasaytiruvchi transformator chiqishidagi kuchlanish 30 V. Unga har biri 0,8 A tok iste’mol qiladigan 100 ta lampochka ulangan. Agar transformatorning FIK 96% bo‘lsa, uning kirishidagi quvvati qanday (kW)?",
+      "answers": [
+        "1,5.",
+        "2.",
+        "4.",
+        "2,5."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#0:14"
+    },
+    {
+      "text": "Quvvati 60 kW, kuchlanishi 2400 V bo‘lgan generatordan energiya uzatishda liniyadagi kuchlanishning tushuvi 10% dan oshmasligi uchun simlarning qarshiligi ko‘pi bilan necha $\\Omega$ bo‘lishi kerak?",
+      "answers": [
+        "60.",
+        "48.",
+        "24.",
+        "9,6."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#0:15"
+    },
+    {
+      "text": "100 kW quvvatli elektr energiyani 10 kV kuchlanish bilan $17\\text{ mm}^2$ ko‘ndalang kesimga ega bo‘lgan mis sim orqali uzatish kerak. Energiya sarfi 5% dan oshib ketmasligi uchun uni qanday maksimal masofagacha uzatish mumkin (km)? $\\rho = 1,7 \\cdot 10^{-8}\\ \\Omega\\cdot\\text{m}$.",
+      "answers": [
+        "5.",
+        "10.",
+        "25.",
+        "20."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#0:16"
+    },
+    {
+      "text": "Elektr uzatish tizimida kuchlanish 2 marta orttirilsa, uzatish simlarida ajralayotgan issiqlik miqdori qanday o‘zgaradi?",
+      "answers": [
+        "O‘zgarmaydi.",
+        "4 marta ortadi.",
+        "4 marta kamayadi.",
+        "2 marta ortadi."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#0:17"
+    },
+    {
+      "text": "Tok manbaining quvvatini o‘zgartirmagan holda kuchlanish oshirilganda, uzatish simlaridagi energiya isrofi 100 marta kamaygan. Kuchlanish necha marta oshirilgan?",
+      "answers": [
+        "5.",
+        "10.",
+        "20.",
+        "100."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#0:18"
+    },
+    {
+      "text": "Quyidagi to‘lqinlarning qaysi biri bo‘ylama to‘lqin?\n1) suv sirtidagi to‘lqinlar; 2) suyuqlik va gazlardagi tovush to‘lqinlari; 3) elektromagnit to‘lqinlar; 4) cholg‘u torlarida paydo bo‘luvchi to‘lqinlar.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "1 va 2."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:1"
+    },
+    {
+      "text": "Elektromagnit to‘lqinlar qanday sharoitda nurlanadi?",
+      "answers": [
+        "zaryad tebranganda.",
+        "elektron to‘g‘ri chiziqli tekis harakatlanganda.",
+        "o‘tkazgichda elektron to‘g‘ri chiziqli tekis harakatda.",
+        "neytral atom tezlanish bilan harakatlanganda."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#1:2"
+    },
+    {
+      "text": "1-zaryad tekis va to‘g‘ri chiziqli harakatlanadi; 2-zaryad to‘g‘ri chiziqli tezlanuvchan harakatlanadi; 3-zaryad garmonik tebranishlar bajaradi; 4-zaryad aylana bo‘ylab tekis harakatlanadi. Bu zaryadlarning qaysilari elektromagnit to‘lqin nurlaydi?",
+      "answers": [
+        "faqat 1.",
+        "faqat 2.",
+        "2, 3 va 4.",
+        "1 va 2."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#1:3"
+    },
+    {
+      "text": "Elektromagnit to‘lqinlar to‘lqinning qaysi turiga kiradi?",
+      "answers": [
+        "bo‘ylama.",
+        "bo‘ylama va ko‘ndalang.",
+        "ko‘ndalang.",
+        "bo‘ylama ham, ko‘ndalang ham emas."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#1:4"
+    },
+    {
+      "text": "Elektromagnit to‘lqinlarning tarqalish yo‘nalishi qanday aniqlanadi? (Parmaning harakat yo‘nalishi qanday bo‘lsa, elektromagnit to‘lqinning tarqalish yo‘nalishi ham shunday bo‘ladi)",
+      "answers": [
+        "parmaning dastasi $\\vec{E}$ dan $\\vec{B}$ ga tomon aylantirilganda.",
+        "parmaning dastasi $\\vec{B}$ dan $\\vec{E}$ ga tomon aylantirilganda.",
+        "parmaning dastasi $\\vec{E}$ dan soat mili yo‘nalishida aylantirilganda.",
+        "parmaning dastasi $\\vec{E}$ dan soat mili harakatiga qarshi aylanganda."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#1:5"
+    },
+    {
+      "text": "Manbadan tarqalayotgan elektromagnit to‘lqinning $\\vec{E}$ va $\\vec{B}$ vektorlari yo‘nalishi to‘lqin tarqalish yo‘nalishini ko‘rsatuvchi $\\vec{v}$ vektor bilan qanday bog‘langan?",
+      "answers": [
+        "$\\vec{E}\\perp\\vec{B}$; $\\vec{E}$ va $\\vec{v}$ parallel.",
+        "$\\vec{E}\\perp\\vec{B}\\perp\\vec{v}$.",
+        "$\\vec{E}\\perp\\vec{v}$; $\\vec{E}$ va $\\vec{B}$ parallel.",
+        "$\\vec{B}\\perp\\vec{v}$; $\\vec{E}$ va $\\vec{v}$ parallel."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:6"
+    },
+    {
+      "text": "Vakuumdagi $\\vec{E}$ va $\\vec{B}$ elektromagnit to‘lqin vektorlari X va Y o‘qlar bo‘ylab yo‘nalgan bo‘lsa, to‘lqinning tarqalish yo‘nalishi qanday?",
+      "answers": [
+        "X o‘qining musbat yo‘nalishida.",
+        "Y o‘qining musbat yo‘nalishida.",
+        "X o‘qining manfiy yo‘nalishida.",
+        "Z o‘qining musbat yo‘nalishida."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#1:7"
+    },
+    {
+      "text": "Vakuumda elektromagnit to‘lqinlarning tarqalish tezligi...",
+      "answers": [
+        "muhitda tarqalish tezligiga teng bo‘ladi.",
+        "muhitda tarqalish tezligidan kichik bo‘ladi.",
+        "muhitda tarqalish tezligidan katta bo‘ladi.",
+        "nolga teng, chunki vakuumda umuman tarqalmaydi."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#1:8"
+    },
+    {
+      "text": "Elektromagnit to‘lqinning 1- va 4- maksimumlari orasidagi masofa 30 m. Shu to‘lqinning uzunligi qanday (m)?",
+      "answers": [
+        "30.",
+        "15.",
+        "10.",
+        "7,5."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#1:9"
+    },
+    {
+      "text": "Elektromagnit to‘lqinning chastotasi $\\nu$, tezligi $v$ va to‘lqin uzunligi $\\lambda$ orasidagi bog‘lanishni toping.",
+      "answers": [
+        "$\\nu = \\lambda/v$.",
+        "$\\nu = v\\lambda$.",
+        "$v = \\lambda\\nu$.",
+        "$v = \\nu\\lambda/2\\pi$."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#1:10"
+    },
+    {
+      "text": "Chastotasi $8\\cdot 10^{14}$ Hz va to‘lqin uzunligi 200 nm bo‘lgan elektromagnit to‘lqinning tarqalish tezligi qanday (m/s)?",
+      "answers": [
+        "$4\\cdot 10^7$.",
+        "$1,6\\cdot 10^8$.",
+        "$2,5\\cdot 10^7$.",
+        "$2\\cdot 10^8$."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:11"
+    },
+    {
+      "text": "Kosmik kemadan tarqalayotgan, chastotasi 10 MHz bo‘lgan elektromagnit to‘lqinning uzunligi qanday (m)?",
+      "answers": [
+        "3.",
+        "5.",
+        "10.",
+        "30."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#1:12"
+    },
+    {
+      "text": "Vakuumda elektromagnit to‘lqin chastotasi $3\\cdot 10^{13}$ Hz bo‘lsa, to‘lqin uzunligi qanday (m)?",
+      "answers": [
+        "$10^{-8}$.",
+        "$9\\cdot 10^{13}$.",
+        "$0,01$.",
+        "$10^{-5}$."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#1:13"
+    },
+    {
+      "text": "Chastotasi $8\\cdot 10^{14}$ Hz va tarqalish tezligi $1,6\\cdot 10^8$ m/s bo‘lgan elektromagnit to‘lqindagi rasmda ko‘rsatilgan masofani toping (nm).",
+      "answers": [
+        "500.",
+        "400.",
+        "320.",
+        "200."
+      ],
+      "correct": 3,
+      "images": "../rasmlar72/r9f1e77cf0a.png",
+      "source": "72-mavzu.tex#1:14"
+    },
+    {
+      "text": "”Uyali“ telefon 100 MHz chastotada ishlaydi. Uning ishchi to‘lqin uzunligi qanday (m)?",
+      "answers": [
+        "1.",
+        "3.",
+        "10.",
+        "30."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:15"
+    },
+    {
+      "text": "Elektromagnit to‘lqin dielektrik singdiruvchanligi $\\varepsilon=2$ bo‘lgan muhitdan vakuumga o‘tdi. Bunda uning bir tebranish davriga teng vaqt davomidagi ko‘chish masofasi qanday o‘zgaradi?",
+      "answers": [
+        "avval ortadi, so‘ngra kamayadi.",
+        "ortadi.",
+        "o‘zgarmaydi.",
+        "kamayadi."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:16"
+    },
+    {
+      "text": "Dielektrik singdiruvchanligi $\\varepsilon$ va magnit singdiruvchanligi $\\mu$ bo‘lgan muhitda tarqalayotgan elektromagnit to‘lqin tezligini hisoblash ifodasini ko‘rsating. Vakuumdagi tezlik – c, $\\lambda_0$ va $\\lambda$ lar mos ravishda vakuum va muhitdagi to‘lqin uzunliklari.",
+      "answers": [
+        "$c/\\sqrt{\\varepsilon\\mu}$.",
+        "$c\\sqrt{\\varepsilon\\mu}$.",
+        "$\\sqrt{\\varepsilon\\mu}$.",
+        "$v/\\lambda_0$."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#1:17"
+    },
+    {
+      "text": "Elektromagnit to‘lqin intensivligi – bu ...",
+      "answers": [
+        "hajm birligidagi elektromagnit energiya W.",
+        "$\\Delta S$ yuzadan $\\Delta t$ vaqtda o‘tuvchi elektromagnit energiya W ning $\\Delta S \\Delta t$ ko‘paytmaga nisbati.",
+        "$\\Delta S$ yuzadan o‘tuvchi elektromagnit energiya W ning $\\Delta S$ kattalikka nisbati.",
+        "elektromagnit energiya W ning vaqt oralig‘i $\\Delta t$ ga nisbati."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:18"
+    },
+    {
+      "text": "Nuqtaviy manba elektromagnit nurlanishining intensivligi ...",
+      "answers": [
+        "manbadan bo‘lgan masofaga to‘g‘ri proporsional.",
+        "manbadan bo‘lgan masofaga teskari proporsional.",
+        "manbadan bo‘lgan masofa kvadratiga proporsional.",
+        "manbadan bo‘lgan masofa kvadratiga teskari proporsional."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#1:19"
+    },
+    {
+      "text": "Elektromagnit nurlanish yo‘nalishi bo‘ylab birinchi nuqtadan ikkinchi nuqtaga 6 m ko‘chilganda nurlanish intensivligi 4 marta kamaygan. Birinchi nuqta nurlanish manbaidan qancha masofada (m) joylashgan?",
+      "answers": [
+        "6.",
+        "18.",
+        "12.",
+        "24."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#1:20"
+    },
+    {
+      "text": "Ergacha bo‘lgan masofani $150\\cdot 10^6$ km deb olib, Quyoshning to‘la nurlanish quvvatini toping (kW).",
+      "answers": [
+        "$1,5\\cdot 10^{31}$.",
+        "$2\\cdot 10^{29}$.",
+        "$3\\cdot 10^{23}$.",
+        "$4\\cdot 10^{23}$."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#1:21"
+    },
+    {
+      "text": "Agar elektromagnit tebranishlar chastotasi 2 marta orttirilsa, ochiq tebranishlar konturidan nurlanadigan quvvat qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "2 marta ortadi.",
+        "16 marta ortadi."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#1:22"
+    },
+    {
+      "text": "Agar vibratordan nurlanayotgan elektromagnit to‘lqin chastotasi 3 marta ortsa, vaqt birligida undan nurlanayotgan to‘lqin energiyasi necha marta ortadi? To‘lqin amplitudasini o‘zgarmas deb hisoblang.",
+      "answers": [
+        "27.",
+        "81.",
+        "12.",
+        "3."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#1:23"
+    },
+    {
+      "text": "Radiopriyomnikning tebranish konturidagi tok kuchining o‘zgarish qonuni $i = 10^{-6}\\sin10^6\\pi t$ (A) ko‘rinishda bo‘lsa, u necha Hz chastotaga moslangan?",
+      "answers": [
+        "$10^5$.",
+        "$5\\cdot 10^5$.",
+        "$10^6$.",
+        "$5\\cdot 10^6$."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#2:1"
+    },
+    {
+      "text": "Agar priyomnik tebranishlar konturining kondensatoridagi zaryadning o‘zgarish qonuni $q = 2 \\cdot 10^{-9}\\sin5 \\cdot 10^5\\pi t$ (C) ko‘rinishda bo‘lsa, qabul qilinayotgan to‘lqinning uzunligi qanday (m)?",
+      "answers": [
+        "200.",
+        "500.",
+        "1000.",
+        "1200."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#2:2"
+    },
+    {
+      "text": "Agar radiopriyomnik konturining kondensatoridagi zaryad $q = 10^{-9}\\cos4 \\cdot 10^4\\pi t$ (C) qonun bo‘yicha o‘zgarayotgan bo‘lsa, priyomnik qanday chastotaga moslangan (Hz)?",
+      "answers": [
+        "$5\\cdot 10^5$.",
+        "$10^6\\pi$.",
+        "$10^6$.",
+        "$2\\cdot 10^4$."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#2:3"
+    },
+    {
+      "text": "Radiopriyomnikning qabul qilish chastotasini 2 marta oshirish uchun uning tebranish konturidagi kondensator sig‘imini qanday o‘zgartirish kerak?",
+      "answers": [
+        "2 marta oshirish.",
+        "4 marta kamaytirish.",
+        "4 marta oshirish.",
+        "2 marta kamaytirish."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#2:4"
+    },
+    {
+      "text": "Kosmik kemada o‘rnatilgan radiouzatgich 20 MHz chastotada ishlaydi. U nurlaydigan radioto‘lqinning uzunligi qanday (m)?",
+      "answers": [
+        "10.",
+        "15.",
+        "30.",
+        "100."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#2:5"
+    },
+    {
+      "text": "Antenna 6 MHz chastotali elektromagnit to‘lqin nurlamoqda. To‘lqin tarqalish yo‘nalishidagi 100 km masofada nechta to‘lqin joylashadi?",
+      "answers": [
+        "1000.",
+        "1500.",
+        "1800.",
+        "2000."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#2:6"
+    },
+    {
+      "text": "Konturda 5 MHz chastotali radioto‘lqin hosil bo‘lmoqda. To‘lqin tarqalish yo‘nalishidagi 150 km masofada nechta to‘lqin uzunligi joylashadi?",
+      "answers": [
+        "2500.",
+        "2000.",
+        "1800.",
+        "1500."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#2:7"
+    },
+    {
+      "text": "To‘lqin uzunligi 10 cm bo‘lgan radioto‘lqinning chastotasini aniqlang (Hz).",
+      "answers": [
+        "$3,3\\cdot 10^8$.",
+        "$3\\cdot 10^7$.",
+        "$3\\cdot 10^8$.",
+        "$3\\cdot 10^9$."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#2:8"
+    },
+    {
+      "text": "Radiopriyomnikning tebranish konturidagi kondensator sig‘imi 1000 pF, g‘altak induktivligi 1 mH bo‘lsa, u qanday (m) to‘lqin uzunlikka sozlangan bo‘ladi?",
+      "answers": [
+        "628.",
+        "942.",
+        "1884.",
+        "314."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#2:9"
+    },
+    {
+      "text": "Radiopriyomnikdagi 300 m to‘lqin uzunligiga mos keladigan tebranishlar konturining induktivligi 2,5 mH bo‘lsa, konturdagi kondensator sig‘imi qanday (pF)? $\\pi^2\\approx 10$.",
+      "answers": [
+        "5.",
+        "10.",
+        "25.",
+        "30."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#2:10"
+    },
+    {
+      "text": "Agar to‘lqin uzunligi 1884 m bo‘lgan radioto‘lqinga moslangan tebranish konturidagi induktivlik 2 mH bo‘lsa, undagi kondensator sig‘imi qanday (pF)?",
+      "answers": [
+        "500.",
+        "188,4.",
+        "314.",
+        "942."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#2:11"
+    },
+    {
+      "text": "1884 m to‘lqin uzunligiga moslangan tebranishlar konturidagi kondensator sig‘imi 500 pF bo‘lsa, undagi g‘altakning induktivligi qanday (mH)?",
+      "answers": [
+        "2.",
+        "20.",
+        "100.",
+        "200."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#2:12"
+    },
+    {
+      "text": "Nurlantirilayotgan elektromagnit to‘lqinlari uzunligi $1,2\\cdot 10^8$ m. Radio antennasidagi tokning o‘zgarish qonuni qanday?",
+      "answers": [
+        "$i = I\\sin 15,7t$.",
+        "$i = I\\sin 12t$.",
+        "$i = I\\sin 2\\pi t$.",
+        "$i = I\\sin 31,47t$."
+      ],
+      "correct": 0,
+      "source": "72-mavzu.tex#2:13"
+    },
+    {
+      "text": "Agar radiolokatordan yuborilgan signal 420 $\\mu$s da qaytgan bo‘lsa, obektgacha bo‘lgan masofa qanday (km)?",
+      "answers": [
+        "36,5.",
+        "63.",
+        "73.",
+        "126."
+      ],
+      "correct": 1,
+      "source": "72-mavzu.tex#2:14"
+    },
+    {
+      "text": "Agar radiolokator 1 s da 1000 ta impuls nurlasa, u ko‘pi bilan qanday masofadagi obektni kuzatishga mo‘ljallangan (km)?",
+      "answers": [
+        "1000.",
+        "500.",
+        "300.",
+        "150."
+      ],
+      "correct": 3,
+      "source": "72-mavzu.tex#2:15"
+    },
+    {
+      "text": "Radiolokator 1 s da 2000 impuls yuboradi. Radiolokator mo‘ljallangan o‘lchash uzoqligini toping (km).",
+      "answers": [
+        "30.",
+        "150.",
+        "75.",
+        "300."
+      ],
+      "correct": 2,
+      "source": "72-mavzu.tex#2:16"
+    }
+  ]
+}
