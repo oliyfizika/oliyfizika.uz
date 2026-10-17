@@ -1,0 +1,563 @@
+{
+  "id": 55,
+  "title": "55-Mavzu | Elektr sig‘imi. Kondensatorlar",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 56,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "O‘tkazgichning elektr sig‘imi deb ...",
+      "answers": [
+        "o‘tkazgich zaryadining potensialiga ko‘paytmasi bilan o‘lchanadigan kattalikka aytiladi.",
+        "o‘tkazgich zaryadiga to‘g‘ri proporsional va potensialiga teskari proporsional kattalikka aytiladi.",
+        "o‘tkazgich potensialining uning zaryadiga nisbatiga teng bo‘lgan kattalikka aytiladi.",
+        "o‘tkazgich zaryadining potensialiga nisbati bilan o‘lchanadigan kattalikka aytiladi.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:1"
+    },
+    {
+      "text": "Yakkalangan o‘tkazgichga $3\\cdot10^{-9}$ C zaryad berilganda, uning potensiali $120$ V ga teng bo‘ldi. O‘tkazgichning elektr sig‘imini toping (F).",
+      "answers": [
+        "$2,5\\cdot10^{-11}$",
+        "$4\\cdot10^{-11}$",
+        "$3,6\\cdot10^{-12}$",
+        "$3,6\\cdot10^{-7}$",
+        "$5\\cdot10^{-10}$"
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:2"
+    },
+    {
+      "text": "Kondensatorning bir qoplamasining zaryadi $100$ nC, ikkinchisiniki esa $-100$ nC. Kondensatorning zaryadi necha nC?",
+      "answers": [
+        "0",
+        "100",
+        "200",
+        "1000",
+        "$10^4$"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:3"
+    },
+    {
+      "text": "Elektr sig‘imi $15$ nF bo‘lgan kondensatorning qoplamalari orasidagi potensiallar farqi $20$ V ga teng. Kondensatorning qoplamalaridan biridagi zaryad miqdorini toping (C).",
+      "answers": [
+        "0,1",
+        "0,3",
+        "0,5",
+        "3",
+        "0,75"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:4"
+    },
+    {
+      "text": "$200$ V kuchlanishga ulangan, zaryadi $2\\cdot10^{-4}$ C bo‘lgan kondensatorning sig‘imini toping ($\\mu$F).",
+      "answers": [
+        "0,1",
+        "0,2",
+        "0,4",
+        "1",
+        "2"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:5"
+    },
+    {
+      "text": "$300$ V o‘zgarmas kuchlanishga ulangan kondensator zaryadi $12\\cdot10^{-4}$ C bo‘lsa, kondensatorning sig‘imi necha $\\mu$F?",
+      "answers": [
+        "0,1",
+        "1",
+        "2",
+        "4",
+        "7"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:6"
+    },
+    {
+      "text": "Sig‘imi $30$ pF bo‘lgan kondensator qoplamalariga berilgan zaryad miqdori $4,2\\cdot10^{-8}$ C. Kondensator qanday kuchlanishgacha zaryadlangan (kV)?",
+      "answers": [
+        "1,4",
+        "34,2",
+        "7",
+        "2,8",
+        "25,8"
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:7"
+    },
+    {
+      "text": "Kondensatorning sig‘imi $4$ pF, qoplamalari orasidagi potensiallar ayirmasi $200$ V bo‘lsa, har bir qoplamada necha Kulon zaryad bor?",
+      "answers": [
+        "$6\\cdot10^{-10}$",
+        "$2\\cdot10^{-10}$",
+        "$2\\cdot10^{-9}$",
+        "$8\\cdot10^{-10}$",
+        "$4\\cdot10^{-10}$"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:8"
+    },
+    {
+      "text": "Yassi kondensatorning bir plastinkasiga $+0,2$ C, ikkinchi plastinkasiga $-0,2$ C zaryad berilgan. Plastinkalar orasidagi kuchlanish $5$ kV. Kondensator sig‘imi qanday ($\\mu$F)?",
+      "answers": [
+        "80",
+        "40",
+        "25",
+        "10",
+        "0"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:9"
+    },
+    {
+      "text": "Kondensator qoplamalaridan biridagi potensial $300$ V, ikkinchisidagi esa $-300$ V va qoplamalardan biridagi zaryad $2,4$ $\\mu$C bo‘lsa, uning sig‘imini toping (nF).",
+      "answers": [
+        "8",
+        "4",
+        "5",
+        "3",
+        "10"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:10"
+    },
+    {
+      "text": "BXS dagi o‘lchamligi J/V$^2$ bo‘lgan fizik kattalik birligining nomi nima?",
+      "answers": [
+        "Kulon",
+        "Farad",
+        "Om",
+        "Amper",
+        "Nyuton"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:11"
+    },
+    {
+      "text": "Quyidagi birliklarning qaysilari elektr sig‘im birligi sifatida ishlatsa bo‘ladi:\n1) F, 2) C$^2$/J, 3) 3) J/V$^2$, 4) C/V.",
+      "answers": [
+        "1, 4",
+        "1, 2",
+        "hammasini",
+        "1, 2, 3",
+        "3, 4"
+      ],
+      "correct": 2,
+      "source": "55-mavzu.tex#0:12"
+    },
+    {
+      "text": "Yakkalangan shar elektr sig‘imi ifodasini ko‘rsating.",
+      "answers": [
+        "$C=\\dfrac{\\varphi_1-\\varphi_2}{q}$",
+        "$C=\\dfrac{\\varepsilon\\varepsilon_0S}{d}$",
+        "$C=2\\pi\\varepsilon\\varepsilon_0R$",
+        "$C=4\\pi\\varepsilon\\varepsilon_0R$",
+        "$C=4\\pi\\varepsilon R$"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:13"
+    },
+    {
+      "text": "Necha metr radiusli sharning elektr sig‘imi vakuumda $1$ F ga teng bo‘ladi?",
+      "answers": [
+        "$1\\cdot10^7$",
+        "$1\\cdot10^8$",
+        "$9\\cdot10^{10}$",
+        "$1\\cdot10^9$",
+        "$9\\cdot10^9$"
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:14"
+    },
+    {
+      "text": "O‘tkazgichga boshqa o‘tkazgich yaqinlashtirilganda, uning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "ortadi",
+        "o‘zgarmaydi",
+        "kamayadi",
+        "avval ortadi, so‘ngra kamayadi",
+        "avval kamayadi, so‘ngra ortadi"
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:15"
+    },
+    {
+      "text": "Zaryadlangan kondensator qoplamalari sim bilan tutashtirilib, zaryadsizlantirildi. Bunda qoplamalar massasi qanday o‘zgaradi?",
+      "answers": [
+        "har ikkala qoplamaning massasi ortadi.",
+        "musbat zaryadlangan qoplama massasi ortib, manfiy zaryadlangan qoplama massasi kamayadi.",
+        "har ikkala qoplamaning massasida o‘zgarish bo‘lmaydi.",
+        "manfiy zaryadlangan qoplama massasi ortib, musbat zaryadlangan qoplama massasi kamayadi.",
+        "har ikkala qoplamaning massasi kamayadi."
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:16"
+    },
+    {
+      "text": "Keltirilgan tenglamalardan qaysi biri yassi kondensator elektr sig‘imini ifodalaydi?",
+      "answers": [
+        "$C=C_1+C_2+\\ldots+C_n$",
+        "$C=4\\pi\\varepsilon_0R$",
+        "$C=\\dfrac{q}{U}$",
+        "$C=\\dfrac{Q}{m(t_2-t_1)}$",
+        "$C=\\dfrac{\\varepsilon\\varepsilon_0S}{d}$"
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:17"
+    },
+    {
+      "text": "Yassi kondensator qoplamalarining yuzasi $40$ cm$^2$ dan, qoplamalari orasidagi masofa esa $5$ mm ga teng. Qoplamalar orasidagi muhitning dielektrik singdiruvchanligi $5$ ga teng bo‘lsa, uning sig‘imini toping (pF).",
+      "answers": [
+        "12,46",
+        "23,77",
+        "15,1",
+        "26,9",
+        "35,4"
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:18"
+    },
+    {
+      "text": "Sig‘imi $20$ pF bo‘lgan yassi kondensator har bir qoplamasining yuzasi $20$ cm$^2$ dan, qoplamalari orasidagi masofa esa $8,85$ mm ga teng. Qoplamalar orasidagi muhitning dielektrik singdiruvchanligini toping.",
+      "answers": [
+        "8",
+        "4",
+        "5",
+        "3",
+        "10"
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:19"
+    },
+    {
+      "text": "Sig‘imi $8,85$ pF bo‘lgan yassi kondensator har bir qoplamasining yuzasi $10$ cm$^2$ dan va qoplamalari orasidagi muhitning dielektrik singdiruvchanligi $3$ ga teng bo‘lsa, qoplamalari orasidagi masofani toping (mm).",
+      "answers": [
+        "1",
+        "4",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:20"
+    },
+    {
+      "text": "Har bir qoplamasidagi zaryad miqdori $88,5$ $\\mu$C bo‘lgan yassi kondensator qoplamalarining yuzasi $50$ cm$^2$ dan, qoplamalari orasidagi masofa $5$ mm va qoplamalari orasidagi muhitning dielektrik singdiruvchanligi $2,5$ ga teng bo‘lsa, qoplamalar orasidagi potensiallar farqini toping (MV).",
+      "answers": [
+        "1",
+        "4",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:21"
+    },
+    {
+      "text": "Qoplamalari orasidagi kuchlanish $20$ kV bo‘lgan yassi kondensator qoplamalarining yuzasi $2$ cm$^2$ dan, qoplamalari orasidagi masofa $35,4$ mm va qoplamalari orasidagi muhitning dielektrik singdiruvchanligi $40$ ga teng bo‘lsa, har bir qoplamadagi zaryad miqdorini toping ($\\mu$C).",
+      "answers": [
+        "0,04",
+        "0,03",
+        "0,02",
+        "0,15",
+        "0,25"
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:22"
+    },
+    {
+      "text": "Yassi kondensator qoplamalari diametri $0,2$ m dan bo‘lgan ikkita doiraviy plastinadan iborat. Qoplamalar orasidagi havo qatlamining qalinligi $3\\cdot10^{-3}$ m, qoplamalar orasidagi kuchlanish $120$ V. Qoplamalardan har biridagi zaryad necha Kulon?",
+      "answers": [
+        "$1,55\\cdot10^{-8}$",
+        "$1,22\\cdot10^{-8}$",
+        "$0,82\\cdot10^{-8}$",
+        "$1,01\\cdot10^{-8}$",
+        "$1,06\\cdot10^{-8}$"
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:23"
+    },
+    {
+      "text": "Kondensator zaryadi 2 marta ortganda, uning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "2 marta oshadi.",
+        "2 marta kamayadi.",
+        "4 marta oshadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:24"
+    },
+    {
+      "text": "Kondensator qoplamalaridagi zaryad 4 marta orttirilsa, uning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "2 marta ortadi.",
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:25"
+    },
+    {
+      "text": "Kondensator qoplamalari orasidagi kuchlanish 2 marta ortganda, uning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta kamayadi.",
+        "2 marta ortadi.",
+        "o‘zgarmaydi.",
+        "4 marta ortadi.",
+        "4 marta kamayadi."
+      ],
+      "correct": 2,
+      "source": "55-mavzu.tex#0:26"
+    },
+    {
+      "text": "Yassi kondensator qoplamasining yuzi 2 marta ortganda, uning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "o‘zgarmaydi.",
+        "4 marta kamayadi.",
+        "2 marta ortadi."
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:27"
+    },
+    {
+      "text": "Uchta yassi kondensator qoplamalarining yuzlari bir xil, ular orasidagi masofalar $d_1<d_2<d_3$ munosabatda bo‘lsa, sig‘imlarining munosabati qanday bo‘ladi?",
+      "answers": [
+        "$C_2<C_3<C_1$.",
+        "$C_1<C_2<C_3$.",
+        "$C_1=C_2=C_3$.",
+        "$C_1>C_3>C_2$.",
+        "$C_3<C_1<C_2$."
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:28"
+    },
+    {
+      "text": "Yassi havo kondensatori plastinalari orasidagi fazoga uchinchi plastina kiritilsa, sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "plastinaning dielektrik singdiruvchanligiga bog‘liq.",
+        "ortadi.",
+        "kamayadi.",
+        "o‘zgarmaydi.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:29"
+    },
+    {
+      "text": "Kondensator qoplamalari orasiga qalinligi qoplamalar orasidagi masofaning yarmiga teng bo‘lgan o‘tkazuvchi plastina kiritildi. Bunda kondensatorning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta ortadi.",
+        "4 marta kamayadi.",
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "2 marta ortadi."
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:30"
+    },
+    {
+      "text": "Yassi kondensatorning har bir qoplamasi yuzi $S$, ular orasidagi masofa $d$. Qalinligi $l$ bo‘lgan metall plastina qoplamalarga tekkizilmagan holda kondensator ichiga kiritilgan. Kondensatorning sig‘imi qanday?",
+      "answers": [
+        "$\\dfrac{\\varepsilon_0 S}{2(d-l)}$",
+        "$\\dfrac{\\varepsilon_0 S}{d+l}$",
+        "$\\dfrac{2\\varepsilon_0 S}{d-l}$",
+        "$\\dfrac{\\varepsilon_0 S}{2(d+l)}$",
+        "$\\dfrac{\\varepsilon_0 S}{d-l}$"
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:31"
+    },
+    {
+      "text": "Havo kondensatori qoplamalari orasidagi fazo hajmi $2$ m$^3$, uning sig‘imi $5$ nF. Agar hajmi $4$ m$^3$ gacha oshirilsa, kondensatorning sig‘imi qanday (nF) bo‘ladi?",
+      "answers": [
+        "10",
+        "15",
+        "2,5",
+        "aniqlab bo‘lmaydi.",
+        "5"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:32"
+    },
+    {
+      "text": "Yassi kondensator plastinalari orasidagi masofa $6$ marta, har bir plastinaning yuzi $3$ marta kamaytirilsa, kondensator sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi.",
+        "6 marta kamayadi.",
+        "3 marta kamayadi.",
+        "6 marta ortadi.",
+        "3 marta ortadi."
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:33"
+    },
+    {
+      "text": "Yassi kondensator qoplamalari orasiga $\\varepsilon=2$ bo‘lgan dielektrik bilan to‘ldirilsa, uning sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "2 marta oshadi.",
+        "4 marta kamayadi.",
+        "4 marta oshadi."
+      ],
+      "correct": 2,
+      "source": "55-mavzu.tex#0:34"
+    },
+    {
+      "text": "Uchta bir xil yassi kondensator qoplamalari orasiga turli dielektriklar joylashtirilgan: $\\varepsilon_1<\\varepsilon_2<\\varepsilon_3$. Kondensatorlarning sig‘imlari qanday munosabatda bo‘ladi?",
+      "answers": [
+        "$C_3>C_2<C_1$.",
+        "$C_1>C_2>C_3$.",
+        "$C_1=C_2=C_3$.",
+        "$C_1<C_2<C_3$.",
+        "$C_1>C_2<C_3$."
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:35"
+    },
+    {
+      "text": "Yassi kondensator qoplamalari orasidagi masofa $4$ marta qisqartirilib, singdiruvchanligi $5$ ga teng bo‘lgan dielektrik o‘rniga, singdiruvchanligi $10$ ga teng bo‘lgan dielektrik joylashtirildi. Bunda kondensator sig‘imi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "8 marta ortadi.",
+        "2 marta kamayadi.",
+        "2 marta ortadi.",
+        "8 marta kamayadi."
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:36"
+    },
+    {
+      "text": "O‘zgarmas tok manbaiga ulangan yassi kondensator plastinalari orasidagi masofa 2 marta oshirilsa, plastinalardagi zaryad miqdori qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "2 marta oshadi.",
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "4 marta oshadi."
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:37"
+    },
+    {
+      "text": "Havo oraliqli yassi kondensator o‘zgarmas tok manbaidan zaryadlandi va undan uzildi. Plastinalar orasidagi masofa 2 marta kattalashtirilsa, kondensator zaryadi va kuchlanishi qanday o‘zgaradi?",
+      "answers": [
+        "zaryad va kuchlanish o‘zgarmaydi.",
+        "zaryad 2 marta ortadi, kuchlanish o‘zgarmaydi.",
+        "zaryad o‘zgarmaydi, kuchlanish 2 marta ortadi.",
+        "zaryad o‘zgarmaydi, kuchlanish 2 marta kamayadi.",
+        "zaryad 2 marta kamayadi, kuchlanish o‘zgarmaydi."
+      ],
+      "correct": 2,
+      "source": "55-mavzu.tex#0:38"
+    },
+    {
+      "text": "Zaryadlangan kondensatorni manbadan uzib, plastinalari orasidagi masofa 7 marta kamaytirilsa, kuchlanishi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "7 marta ortadi.",
+        "7 marta kamayadi.",
+        "49 marta ortadi.",
+        "49 marta kamayadi."
+      ],
+      "correct": 2,
+      "source": "55-mavzu.tex#0:39"
+    },
+    {
+      "text": "Kondensator zaryadlanib, manbadan uzildi, so‘ngra u $\\varepsilon=3$ bo‘lgan dielektrik bilan to‘ldirildi. Kondensatordagi kuchlanish qanday o‘zgaradi?",
+      "answers": [
+        "9 marta ortadi.",
+        "9 marta kamayadi.",
+        "o‘zgarmaydi.",
+        "3 marta ortadi.",
+        "3 marta kamayadi."
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:40"
+    },
+    {
+      "text": "Manbadan uzib qo‘yilgan zaryadlangan yassi kondensator plastinalari orasidagi masofa 2 marta oshirilsa, kondensatorning elektr maydon kuchlanganligi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "4 marta kamayadi.",
+        "2 marta ortadi."
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:41"
+    },
+    {
+      "text": "Agar zaryadlangan yassi havo kondensatorini manbadan uzib, qoplamalari orasidagi masofa 4 marta kamaytirilsa, undagi elektr maydon kuchlanganligi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "4 marta kamayadi.",
+        "4 marta oshadi.",
+        "16 marta kamayadi.",
+        "16 marta oshadi."
+      ],
+      "correct": 0,
+      "source": "55-mavzu.tex#0:42"
+    },
+    {
+      "text": "Yassi kondensator o‘zgarmas kuchlanish manbaiga ulandi. Qoplamalar orasidagi fazo dielektrik bilan to‘ldirilsa, kondensator ichidagi elektr maydon kuchlanganligi qanday o‘zgaradi?",
+      "answers": [
+        "kamayadi.",
+        "ortadi.",
+        "o‘zgarmaydi.",
+        "ortishi ham mumkin, kamayishi ham.",
+        "javob dielektrikning singdiruvchanligiga bog‘liq."
+      ],
+      "correct": 2,
+      "source": "55-mavzu.tex#0:43"
+    },
+    {
+      "text": "Zaryadlangan kondensator qoplamalari bir-biriga $F$ kuch bilan tortiladilar. Agar qoplamalar orasiga dielektrik singdiruvchanligi $\\varepsilon=2$ bo‘lgan yassi shisha plastina kiritilsa, bu kuch qanday o‘zgaradi? Plastina qalinligi qoplamalar orasidagi masofadan kichik bo‘lsin.",
+      "answers": [
+        "2 marta kamayadi.",
+        "2 marta ortadi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 4,
+      "source": "55-mavzu.tex#0:44"
+    },
+    {
+      "text": "Yassi havo kondensatori qoplamalari orasidagi masofa $8,85$ mm, zaryadining sirt zichligi $10^{-6}$ C/m$^2$ bo‘lsa, uning kuchlanishini necha Volt bo‘ladi?",
+      "answers": [
+        "100",
+        "500",
+        "885",
+        "1000",
+        "2000"
+      ],
+      "correct": 3,
+      "source": "55-mavzu.tex#0:45"
+    },
+    {
+      "text": "Yassi havo kondensatori $9$ kV kuchlanishga ega bo‘lgan tok manbaiga ulangan. Kondensator plastinkalari orasidagi maydon kuchlanganligi $3$ MV/m bo‘lganda, havoda ionizatsiya tufayli teshilish yuz bersa, kondensator ishdan chiqmasligi uchun uning qoplamalarini qanday minimal masofaga yaqinlashtirish mumkin (mm)?",
+      "answers": [
+        "1,5",
+        "3",
+        "15",
+        "30",
+        "60"
+      ],
+      "correct": 1,
+      "source": "55-mavzu.tex#0:46"
+    }
+  ]
+}

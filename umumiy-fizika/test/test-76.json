@@ -1,0 +1,188 @@
+{
+  "id": 76,
+  "title": "76-Mavzu | Linzalar",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 77,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Tasvirlangan linzalarning qaysilari yig‘uvchi?",
+      "answers": [
+        "4, 5, 6.",
+        "1, 2, 3.",
+        "3, 4, 5.",
+        "2, 3, 4.",
+        "3, 5, 6."
+      ],
+      "correct": 3,
+      "source": "76-mavzu.tex#0:2"
+    },
+    {
+      "text": "Nurning yo‘li qaysi rasmda to‘g‘ri ko‘rsatilgan?",
+      "answers": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "correct": 3,
+      "source": "76-mavzu.tex#0:3"
+    },
+    {
+      "text": "Uchta linzaning fokus masofalari $(F)$ teng bo‘lib, ular bir-biridan $F$ masofada joylashgan. A nur fokusdan o‘tib, birinchi linzaga tushadi. Nurning linzalar sistemasidan chiqqandan keyingi yo‘nalishini aniqlang.",
+      "answers": [
+        "4.",
+        "5.",
+        "3.",
+        "2.",
+        "1."
+      ],
+      "correct": 0,
+      "images": "../rasmlar76/r9bc8952c7c.png",
+      "source": "76-mavzu.tex#0:4"
+    },
+    {
+      "text": "Parallel nurlar 2 linzadan o‘tgach, parallelligicha qoldi. Agar bu linzalarning ikkalasi ham yig‘uvchi bo‘lsa, ular qanday joylashgan?",
+      "answers": [
+        "bir-biriga bevosita tegib turibdi.",
+        "linzalar orasidagi masofa fokus masofalari yig‘indisidan ancha katta.",
+        "birinchi linzaning orqa fokal tekisligi ikkinchi linzaning oldingi fokal tekisligi bilan mos tushadi.",
+        "javob fokus masofalari nisbatiga bog‘liq.",
+        "bunday bo‘lishi mumkin emas."
+      ],
+      "correct": 2,
+      "source": "76-mavzu.tex#0:6"
+    },
+    {
+      "text": "Fokus masofasi $F$ bo‘lgan yupqa sochuvchi linzaga bosh optik o‘qiga nisbatan $\\alpha$ burchak ostida nur tushmoqda. Bu nur linzaning orqasida joylashgan shaffof ekranni bosh optik o‘qdan qanday balandlikda (cm) kesib o‘tadi?",
+      "answers": [
+        "$0$.",
+        "$F\\cos\\alpha$.",
+        "$F\\sin\\alpha$.",
+        "$F\\cdot tg \\alpha$.",
+        "$F/2$."
+      ],
+      "correct": 3,
+      "images": "../rasmlar76/r10391f287a.png",
+      "source": "76-mavzu.tex#0:7"
+    },
+    {
+      "text": "Ushbu rasmda nurning ikkita qavariq linzalardan o‘tib ketish jarayoni keltirilgan. Rasmga foydalanib, linzalarning fokus masofalari nisbatini $F_1/F_2$ ni toping.",
+      "answers": [
+        "$1/2$",
+        "$2/3$",
+        "$1/3$",
+        "$1/6$",
+        "$3/4$"
+      ],
+      "correct": 2,
+      "images": "../rasmlar76/rf8d757f496.png",
+      "source": "76-mavzu.tex#0:8"
+    },
+    {
+      "text": "Ushbu rasmdagi 1 nur qavariq linzadan o‘tgach qaysi nuqtadan o‘tadi? $F$ — linzaning fokus masofasi.",
+      "answers": [
+        "F.",
+        "K.",
+        "L.",
+        "M.",
+        "N."
+      ],
+      "correct": 2,
+      "images": "../rasmlar76/r6e60b60804.png",
+      "source": "76-mavzu.tex#0:9"
+    },
+    {
+      "text": "Ushbu rasmdagi 1 nur qavariq linzadan o‘tgach qaysi nuqtadan o‘tadi? $F$ — linzaning fokus masofasi.",
+      "answers": [
+        "F.",
+        "K.",
+        "L.",
+        "M.",
+        "N."
+      ],
+      "correct": 3,
+      "images": "../rasmlar76/r05c9627217.png",
+      "source": "76-mavzu.tex#0:10"
+    },
+    {
+      "text": "Ushbu rasmdagi 1 nur qavariq linzadan o‘tgach qaysi nuqtadan o‘tadi? $F$ — linzaning fokus masofasi.",
+      "answers": [
+        "F.",
+        "K.",
+        "L.",
+        "M.",
+        "N."
+      ],
+      "correct": 3,
+      "images": "../rasmlar76/rca2a83333a.png",
+      "source": "76-mavzu.tex#0:11"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan qaysi biri linzaning fokusi, qaysi biri optik markazidir?",
+      "answers": [
+        "4, 5.",
+        "3, 5.",
+        "2, 3.",
+        "1, 4.",
+        "2, 4."
+      ],
+      "correct": 4,
+      "images": "../rasmlar76/r27d8d266f8.png",
+      "source": "76-mavzu.tex#0:12"
+    },
+    {
+      "text": "Quyidagi uchta holatdan qaysi birida nurning sochuvchi linzadan o‘tish jarayoni to‘g‘ri tasvirlangan?",
+      "answers": [
+        "I.",
+        "II.",
+        "III.",
+        "I va II.",
+        "II va III."
+      ],
+      "correct": 3,
+      "images": "../rasmlar76/r60db701829.png",
+      "source": "76-mavzu.tex#0:13"
+    },
+    {
+      "text": "Ushbu rasmda nurning linzadan o‘tish jarayoni keltirilgan. Qaysi nuqta linzaning fokusi hisoblanadi?",
+      "answers": [
+        "K.",
+        "T.",
+        "N.",
+        "P."
+      ],
+      "correct": 3,
+      "images": "../rasmlar76/r63d9219e6c.png",
+      "source": "76-mavzu.tex#0:14"
+    },
+    {
+      "text": "Ushbu rasmda nur botiq linzadan o‘tgach qaysi yo‘nalishda ketadi? $F$ — linzaning fokus masofasi.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ],
+      "correct": 1,
+      "images": "../rasmlar76/rd852646f21.png",
+      "source": "76-mavzu.tex#0:15"
+    },
+    {
+      "text": "Ushbu rasmda nurning ikkita botiq linzalardan o‘tib ketish jarayoni keltirilgan. Undan foydalanib, linzalarning fokus masofalari bir xil bo‘lsa, qo‘shni nuqtalar orasidagi masofalar nisbati $F_1/F_2$ ni toping.",
+      "answers": [
+        "$1/2$",
+        "$2/3$",
+        "$1/3$",
+        "$3/2$",
+        "$3/4$"
+      ],
+      "correct": 1,
+      "images": "../rasmlar76/r20a4b9c973.png",
+      "source": "76-mavzu.tex#0:16"
+    }
+  ]
+}

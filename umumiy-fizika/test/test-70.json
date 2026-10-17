@@ -1,0 +1,753 @@
+{
+  "id": 70,
+  "title": "70-Mavzu | Elektromagnit tebranishlar",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 71,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Ko‘rsatilgan konturlarning qaysi birida so‘nmas elektromagnit tebranishlar hosil bo‘lishi mumkin?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "hammasida."
+      ],
+      "correct": 3,
+      "images": "../rasmlar70/rf947feb36e.png",
+      "source": "70-mavzu.tex#0:1"
+    },
+    {
+      "text": "Tebranishlar konturidagi zaryadning o‘zgarish qonuni $q=\\sin 10t \\ (\\text{C})$ ko‘rinishiga ega. Tok kuchi tebranishlarining amplituda qiymatini toping (A).",
+      "answers": [
+        "0.",
+        "0,1.",
+        "1.",
+        "10.",
+        "100."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#0:2"
+    },
+    {
+      "text": "Tebranishlar konturidagi kondensator plastinalaridagi zaryad vaqt o‘tishi bilan $q=10^{-6}\\cos10\\pi t \\ (\\text{C})$ qonun bo‘yicha o‘zgaradi. Tok kuchining amplituda qiymati qanday (A)?",
+      "answers": [
+        "$\\cos10\\pi$.",
+        "$10\\pi$.",
+        "$10^{-5}\\pi$.",
+        "$10^{-6}\\pi$.",
+        "10."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#0:3"
+    },
+    {
+      "text": "Tebranishlar konturidagi tok kuchining o‘zgarish qonuni $i=0,5\\cos10^7 t$ ko‘rinishga ega. Kondensatordagi zaryadning maksimal qiymati qanday ($\\mu$C)?",
+      "answers": [
+        "0,5.",
+        "0,025.",
+        "5.",
+        "0,25.",
+        "0,05."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#0:4"
+    },
+    {
+      "text": "Tebranishlar konturidagi zaryadning maksimal qiymati $10^{-9}$ C, tebranish davri $3,14~\\mu$s. Konturdagi tok kuchining amplituda qiymati qanday (mA)?",
+      "answers": [
+        "0,32.",
+        "1.",
+        "2.",
+        "3,14.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#0:5"
+    },
+    {
+      "text": "Tebranishlar konturidagi tok kuchining maksimal qiymati $3,14$ mA, tebranishlar davri $4~\\mu$s bo‘lsa, kondensator zaryadining maksimal qiymati necha nC?",
+      "answers": [
+        "2.",
+        "4.",
+        "6,28.",
+        "12,6.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#0:6"
+    },
+    {
+      "text": "Kosinus qonuni bo‘yicha o‘zgarayotgan tokning $T/3$ vaqt momentidagi qiymati $2,5$ A bo‘lsa, tokning maksimal qiymati qanday (A)?",
+      "answers": [
+        "1,25.",
+        "2,5.",
+        "3.",
+        "5.",
+        "7,5."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#0:7"
+    },
+    {
+      "text": "$\\pi/6$ faza uchun $i=I_0\\sin10t$ qonun bilan o‘zgaruvchi tok kuchining oniy qiymati $6$ A ga teng. Tok kuchining amplituda qiymati necha Amper?",
+      "answers": [
+        "0,12.",
+        "12.",
+        "1,2.",
+        "120.",
+        "6."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#0:8"
+    },
+    {
+      "text": "Tebranishlar konturidagi zaryad tebranishlari qonuni $q=5,3\\cdot10^{-5}\\cos4\\pi t \\ (\\text{C})$ ko‘rinishga ega. Zaryad va tok kuchining amplitudalarini aniqlang.",
+      "answers": [
+        "$5,3\\cdot10^{-5}$ C; $21,2\\pi\\cdot10^{-5}$ A.",
+        "$5,3\\cdot10^{-5}$ C; $5,3\\cdot10^{-5}$ A.",
+        "$5,3\\cdot10^{-5}$ C; $4\\pi$ A.",
+        "$5,3$ C; $21,2\\pi\\cdot10^{-5}$ A.",
+        "aniqlab bo‘lmaydi."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#0:9"
+    },
+    {
+      "text": "Tok kuchining o‘zgarish qonuni $i=0,3\\cos(100\\pi t+\\pi/2)$ ko‘rinishga ega. Shu tokning o‘zgarish davrini (s) aniqlang.",
+      "answers": [
+        "1.",
+        "0,3.",
+        "0,03.",
+        "0,02.",
+        "0,01."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#0:10"
+    },
+    {
+      "text": "Tok kuchining o‘zgarish qonuni $i=5\\sin100\\pi t \\ (\\text{A})$ ko‘rinishga ega. Tokning o‘zgarish chastotasi qanday (Hz)?",
+      "answers": [
+        "50.",
+        "10.",
+        "100$\\pi$.",
+        "5.",
+        "200."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#0:11"
+    },
+    {
+      "text": "Tebranishlar konturidagi kondensator zaryadining o‘zgarish grafigidan foydalanib, unga mos matematik ifodani aniqlang.",
+      "answers": [
+        "$q=10^{-2}\\cos9\\pi t$.",
+        "$q=10^{-2}\\cos10\\pi t$.",
+        "$q=10^{-2}\\cos5\\pi t$.",
+        "$q=10^{-2}\\cos20\\pi t$.",
+        "TJY."
+      ],
+      "correct": 2,
+      "images": "../rasmlar70/rdbba9d983b.png",
+      "source": "70-mavzu.tex#0:12"
+    },
+    {
+      "text": "Tebranishlar konturidagi kondensatorning zaryadi $q=9\\cdot10^{-5}\\cos500t \\ [\\text{C}]$ qonun bo‘yicha o‘zgarmoqda. Agar kondensator sig‘imi $3~\\mu$F bo‘lsa, kondensatordagi kuchlanishning maksimal qiymatini toping (V).",
+      "answers": [
+        "15.",
+        "30.",
+        "90.",
+        "60.",
+        "10."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#0:13"
+    },
+    {
+      "text": "Tebranishlar konturidagi zaryadning o‘zgarish qonuni $q=10^{-7}\\cos10^6\\pi t \\ (\\text{C})$ ko‘rinishga ega. Konturdagi tokning o‘zgarish chastotasini aniqlang (Hz).",
+      "answers": [
+        "$5\\cdot10^5$.",
+        "$10^5$.",
+        "$10^{13}$.",
+        "$10^6$.",
+        "$2\\cdot10^6$."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#0:14"
+    },
+    {
+      "text": "Tebranishlar konturidagi zaryadning o‘zgarish qonuni $q=10^{-7}\\cos10^6 t \\ (\\text{C})$ ko‘rinishga ega. Konturdagi tokning maksimal qiymatini toping (mA).",
+      "answers": [
+        "1.",
+        "5.",
+        "10.",
+        "100.",
+        "1000."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#0:15"
+    },
+    {
+      "text": "Konturda zaryad $q=10^{-3}\\cos100\\pi t$ qonun bo‘yicha tebranadi. Tokning amplituda qiymati qanday (mA)?",
+      "answers": [
+        "0,1.",
+        "1.",
+        "3,14.",
+        "31,4.",
+        "314."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#0:16"
+    },
+    {
+      "text": "Tebranishlar konturi kondensatoridagi zaryad $q=10^{-6}\\sin(10^6t+\\pi/3)\\ (\\text{C})$ qonun bo‘yicha o‘zgaradi. Konturdagi tok kuchining amplituda qiymati qanday (A)?",
+      "answers": [
+        "0.",
+        "$10^{-6}$.",
+        "$10^{-2}$.",
+        "0,1.",
+        "1."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#0:17"
+    },
+    {
+      "text": "Konturdagi zaryadning o‘zgarish tenglamasi $q=10^{-6}\\cos10^6\\pi t \\ (\\text{C})$ ko‘rinishga ega. Konturdagi tokning o‘zgarish qonunini yozing.",
+      "answers": [
+        "$i=10^{-6}\\pi\\sin10^6\\pi t$.",
+        "$i=-\\pi\\sin10^6\\pi t$.",
+        "$i=\\cos10^6\\pi t$.",
+        "$i=-10^{-6}\\sin10^6\\pi t$.",
+        "$i=10^{-6}\\cos10^6\\pi t$."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#0:18"
+    },
+    {
+      "text": "Kuchlanish $u=220\\cos100\\pi t \\ (\\text{V})$ qonunga binoan o‘zgaradi. Kuchlanishning o‘zgarish davrini aniqlang(s).",
+      "answers": [
+        "0,01.",
+        "0,1.",
+        "1.",
+        "0,22.",
+        "0,02."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#0:19"
+    },
+    {
+      "text": "Elektr zanjiri qisqichlaridagi kuchlanish tebranishlari tenglamasi tuzilgan. Bunda kuchlanish tebranishlar amplitudasi $150$ V, davri $10^{-2}$ s, boshlang‘ich fazi nolga teng bo‘lib, $t=0$ momentda kuchlanish nolga teng deb hisoblang.",
+      "answers": [
+        "$u=150\\sin100\\pi t$.",
+        "$u=10^{-2}\\sin150\\pi t$.",
+        "$u=150\\sin200\\pi t$.",
+        "$u=10^{-2}\\cos150\\pi t$.",
+        "$u=150\\cos100\\pi t$."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#0:20"
+    },
+    {
+      "text": "Kuchlanish $u=U\\sin(\\omega t+\\pi/12)\\ (\\text{V})$ qonunga binoan o‘zgaradi. Agar $t=T/24$ vaqt momentidagi kuchlanish $50$ V bo‘lsa, kuchlanish amplitudasi qanday (V)?",
+      "answers": [
+        "100.",
+        "50.",
+        "48.",
+        "24.",
+        "12."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#0:21"
+    },
+    {
+      "text": "Tebranishlar konturidagi tokning tebranishlar tenglamasi $i=4\\pi\\cdot10^{-3}\\cos4\\pi t \\ (\\text{A})$ ko‘rinishga ega. Bu kontur kondensatoridagi zaryad tebranishlar tenglamasini ko‘rsating.",
+      "answers": [
+        "$q=4\\pi\\cdot10^{-3}\\sin4\\pi t$.",
+        "$q=4\\cdot10^{-3}\\sin4\\pi t$.",
+        "$q=4\\cdot10^{-3}\\cos4\\pi t$.",
+        "$q=10^{-3}\\sin4\\pi t$.",
+        "$q=4\\pi\\cdot10^{-3}\\cos4\\pi t$."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#0:23"
+    },
+    {
+      "text": "Tok kuchi vaqt bo‘yicha $i=5\\cos200\\pi t$ qonun bilan o‘zgaradi. Tok kuchi tebranishlarining chastotasi va davri qanday?",
+      "answers": [
+        "100 Hz, 10 ms.",
+        "$100\\pi$ Hz, 10 s.",
+        "$\\pi$ Hz, $1/\\pi$ s.",
+        "100 Hz, 10 s.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#0:24"
+    },
+    {
+      "text": "O‘zgaruvchan tokning siklik chastotasi $1000\\pi$ rad/s bo‘lsa, uning davri va chastotasi qanday?",
+      "answers": [
+        "0,005 s; 200 Hz.",
+        "0,002 s; 500 Hz.",
+        "0,02 s; 50 Hz.",
+        "0,001 s; 1000 Hz.",
+        "0,01 s; 100 Hz."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#0:25"
+    },
+    {
+      "text": "Tebranish konturidagi elektromagnit tebranishlar chastotasi $10^5$ Hz. Tebranishlar davri qanday ($\\mu$s)?",
+      "answers": [
+        "$10^4$.",
+        "1000.",
+        "100.",
+        "10.",
+        "1."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#0:26"
+    },
+    {
+      "text": "Tebranishlar konturi kondensatori zaryadining vaqtga bog‘lanish grafigi tasvirlangan. Zaryad tebranishlarining chastotasi necha Gers?",
+      "answers": [
+        "5.",
+        "2,5.",
+        "3,3.",
+        "10.",
+        "TJY."
+      ],
+      "correct": 1,
+      "images": "../rasmlar70/rdbba9d983b.png",
+      "source": "70-mavzu.tex#0:27"
+    },
+    {
+      "text": "Tebranishlar konturi kondensatori qoplamalaridagi zaryadning amplituda qiymati $2,5\\cdot10^{-6}$ C, tokning amplituda qiymati esa $3,14$ mA. Konturdagi elektromagnit tebranishlar chastotasi qanday?",
+      "answers": [
+        "200 kHz.",
+        "200 Hz.",
+        "314 kHz.",
+        "250 kHz.",
+        "314 Hz."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#0:28"
+    },
+    {
+      "text": "Ideal tebranishlar konturida hosil bo‘ladigan tebranishlarning siklik chastotasi formulasini ko‘rsating.",
+      "answers": [
+        "$\\omega=\\sqrt{LC}$.",
+        "$\\omega=\\sqrt{L/C}$.",
+        "$\\omega=\\sqrt{C/L}$.",
+        "$\\omega=LC$.",
+        "$\\omega=1/\\sqrt{LC}$."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#1:2"
+    },
+    {
+      "text": "Tebranishlar konturi induktivligi $20$ mH bo‘lgan g‘altak va sig‘imi $200~\\mu$F bo‘lgan kondensator tuzilgan bo‘lsa, unda hosil bo‘ladigan tebranishlar davri qanday bo‘ladi (ms).",
+      "answers": [
+        "$4\\pi$.",
+        "$2\\pi$.",
+        "$0,4$.",
+        "2.",
+        "1."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#1:3"
+    },
+    {
+      "text": "Tebranishlar konturi sig‘imi va induktivligi $C=6~\\mu$F va $L=5\\cdot10^{-5}$ H. Konturdagi tebranishlar davrini toping ($\\mu$s). $\\pi\\approx3$ deb hisoblansin.",
+      "answers": [
+        "104.",
+        "30.",
+        "25.",
+        "20.",
+        "5."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#1:4"
+    },
+    {
+      "text": "Tebranishlar konturi $2$ pF sig‘imli kondensator va induktivligi $0,5~\\mu$H bo‘lgan g‘altakdan iborat. Konturdagi tebranishlar chastotasi qanday (MHz)?",
+      "answers": [
+        "1,6.",
+        "16.",
+        "160.",
+        "0,16.",
+        "160 Hz."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#1:5"
+    },
+    {
+      "text": "Induktivligi $L=1,5$ mH bo‘lgan g‘altakdan va sig‘imi $C=450$ pF bo‘lgan kondensatordan iborat konturdagi tebranishlar chastotasini aniqlang.",
+      "answers": [
+        "$0,2\\cdot10^4$ Hz.",
+        "$2\\cdot10^4$ Hz.",
+        "20 kHz.",
+        "2 MHz.",
+        "0,2 MHz."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#1:6"
+    },
+    {
+      "text": "Tebranish konturi induktivligi $1$ mH bo‘lgan g‘altak va sig‘imi $100$ nF bo‘lgan kondensatordan iborat. Bu konturning xususiy tebranishlarining siklik chastotasi qanday (rad/s)?",
+      "answers": [
+        "100.",
+        "$10^3$.",
+        "$10^4$.",
+        "$10^5$.",
+        "50."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#1:7"
+    },
+    {
+      "text": "Tebranish konturi induktivligi $4$ marta oshirilsa, konturdagi tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi.",
+        "2 marta ortadi.",
+        "2 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#1:8"
+    },
+    {
+      "text": "Kondensatorning elektr sig‘imi $2$ marta ortganda, tebranishlar konturidagi erkin tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "$\\sqrt2$ marta ortadi.",
+        "$\\sqrt2$ marta kamayadi.",
+        "2 marta ortadi.",
+        "2 marta kamayadi.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#1:9"
+    },
+    {
+      "text": "Tebranishlar konturining induktivligini va sig‘imini $4$ marta oshirsak, konturdagi tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmay qoladi.",
+        "4 marta kamayadi.",
+        "16 marta oshadi.",
+        "16 marta kamayadi.",
+        "4 marta oshadi."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#1:10"
+    },
+    {
+      "text": "Tebranishlar konturidagi tebranishlar davri qanday hollarda oshadi?",
+      "answers": [
+        "1, 2, 3.",
+        "2, 4.",
+        "1, 4.",
+        "1, 3.",
+        "4."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#1:11"
+    },
+    {
+      "text": "$C=6~\\mu$F va $L=5\\cdot10^{-5}$ H bo‘lsa, konturdagi tebranishlar davri qanday ($\\mu$s)? $\\pi\\approx3$.",
+      "answers": [
+        "60.",
+        "30.",
+        "25.",
+        "20.",
+        "5."
+      ],
+      "correct": 0,
+      "images": "../rasmlar70/ree571891b9.png",
+      "source": "70-mavzu.tex#1:12"
+    },
+    {
+      "text": "$C=1~\\mu$F va $L=3\\cdot10^{-4}$ H bo‘lsa, konturdagi tebranishlar davri qanday ($\\mu$s)? $\\pi\\approx3$ deb hisoblansin.",
+      "answers": [
+        "18.",
+        "54.",
+        "60.",
+        "90.",
+        "180."
+      ],
+      "correct": 4,
+      "images": "../rasmlar70/r12d8f17d5e.png",
+      "source": "70-mavzu.tex#1:13"
+    },
+    {
+      "text": "Chizmada tasvirlangan konturdagi elektromagnit tebranishlar davrini toping.",
+      "answers": [
+        "$T=2\\pi\\sqrt{2(L_1+L_2)C}$.",
+        "$T=2\\pi\\sqrt{(L_1+L_2)C/2}$.",
+        "$T=2\\pi\\sqrt{(L_1+L_2)C}$.",
+        "$T=4\\pi\\sqrt{(L_1+L_2)C}$.",
+        "$T=2\\pi\\sqrt{|L_1-L_2|C}$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar70/rc013466c4a.png",
+      "source": "70-mavzu.tex#1:14"
+    },
+    {
+      "text": "Chizmada tasvirlangan konturdagi elektromagnit tebranishlar davrini toping.",
+      "answers": [
+        "$T=2\\pi\\sqrt{(L_1+L_2)C}$.",
+        "$T=2\\pi\\sqrt{|L_1-L_2|C}$.",
+        "$T=2\\pi\\sqrt{\\dfrac{L_1L_2}{L_1+L_2}C}$.",
+        "$T=2\\pi\\sqrt{\\dfrac{2L_1L_2}{L_1+L_2}C}$.",
+        "$T=4\\pi\\sqrt{(L_1+L_2)C}$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar70/rf4804ba2f7.png",
+      "source": "70-mavzu.tex#1:15"
+    },
+    {
+      "text": "a-sxemadan b-sxemaga o‘tganda tebranishlar konturidagi erkin elektromagnit tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "2 marta kamayadi.",
+        "4 marta ortadi.",
+        "2 marta ortadi.",
+        "4 marta kamayadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 0,
+      "images": "../rasmlar70/r7bbe5358c6.png",
+      "source": "70-mavzu.tex#1:16"
+    },
+    {
+      "text": "a-sxemadan b-sxemaga o‘tganda, tebranishlar konturidagi erkin elektromagnit tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "2 marta oshadi.",
+        "o‘zgarmaydi.",
+        "4 marta oshadi.",
+        "2 marta kamayadi."
+      ],
+      "correct": 4,
+      "images": "../rasmlar70/r4c10f820ae.png",
+      "source": "70-mavzu.tex#1:17"
+    },
+    {
+      "text": "Sig‘imi $100~\\mu$F bo‘lgan kondensator va induktivligi $10~\\mu$H bo‘lgan g‘altakdan tashkil topgan tebranish konturida 1 min da nechta elektr tebranishlari yuzaga keladi? $(\\pi^2=10)$.",
+      "answers": [
+        "$10^5$.",
+        "$3\\cdot10^5$.",
+        "$90\\cdot10^5$.",
+        "$60\\cdot10^5$.",
+        "$9\\cdot10^5$."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#1:18"
+    },
+    {
+      "text": "Agar ideal tebranish konturidagi $C$ sig‘imli kondensatorga $3C$ sig‘imli kondensator parallel ulansa, undagi erkin elektromagnit tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "2 marta kamayadi.",
+        "2 marta oshadi.",
+        "o‘zgarmaydi.",
+        "3 marta kamayadi.",
+        "3 marta oshadi."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#1:19"
+    },
+    {
+      "text": "Tebranishlar konturidagi $C$ sig‘imli kondensatorga $3C$ sig‘imli kondensator parallel ulansa, undagi erkin elektromagnit tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta oshadi.",
+        "4 marta kamayadi.",
+        "2 marta kamayadi.",
+        "4 marta oshadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#1:20"
+    },
+    {
+      "text": "Tebranishlar konturidagi $C$ sig‘imli kondensatorga $C/3$ sig‘imli kondensator ketma-ket ulansa, undagi erkin elektromagnit tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "2 marta oshadi.",
+        "2 marta kamayadi.",
+        "o‘zgarmaydi.",
+        "3 marta kamayadi.",
+        "3 marta oshadi."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#1:21"
+    },
+    {
+      "text": "Tebranishlar konturidagi $C$ sig‘imli kondensatorga $C/3$ sig‘imli kondensator ketma-ket ulansa, undagi erkin elektromagnit tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "3 marta kamayadi.",
+        "3 marta oshadi.",
+        "2 marta oshadi.",
+        "2 marta kamayadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#1:22"
+    },
+    {
+      "text": "Tebranishlar konturidagi yassi havo kondensatori plastinalari orasidagi masofa $25$ marta ortirilsa, konturdagi erkin elektromagnit tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "5 marta ortadi.",
+        "5 marta kamayadi.",
+        "25 marta ortadi.",
+        "25 marta kamayadi.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#1:23"
+    },
+    {
+      "text": "Tebranishlar konturidagi yassi havo kondensatori plastinalari orasidagi masofa $7$ marta ortirilsa, tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "7 marta ortadi.",
+        "7 marta kamayadi.",
+        "$\\sqrt7$ marta ortadi.",
+        "$\\sqrt7$ marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#1:24"
+    },
+    {
+      "text": "Konturdagi kondensator ichiga $\\varepsilon=6,25$ bo‘lgan dielektrik kiritilsa, undagi elektromagnit tebranishlar davri qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "6,25 marta oshadi.",
+        "6,25 marta kamayadi.",
+        "2,5 marta oshadi.",
+        "2,5 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#1:25"
+    },
+    {
+      "text": "Tebranishlar konturidagi havo kondensatorining qoplamalari orasiga dielektrik singdiruvchanligi $\\varepsilon=3,24$ bo‘lgan dielektrik modda kiritilsa, konturdagi tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "1,8 marta kamayadi.",
+        "3,24 marta ortadi.",
+        "3,24 marta kamayadi.",
+        "1,8 marta ortadi."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#1:26"
+    },
+    {
+      "text": "Tebranishlar konturidagi g‘altak ichiga ferromagnitdan yasalgan o‘zak kiritilsa, elektromagnit tebranishlar chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "ortadi.",
+        "avval ortib, keyin kamayadi.",
+        "kamayadi.",
+        "avval kamayib, keyin ortadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#1:27"
+    },
+    {
+      "text": "Induktivligi $12,5$ mH bo‘lgan tebranish konturiga qanday sig‘imli kondensator ulansa, uning chastotasi $10^3$ Hz bo‘ladi ($\\mu$F)?",
+      "answers": [
+        "2.",
+        "3.",
+        "5.",
+        "20.",
+        "30."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#1:28"
+    },
+    {
+      "text": "Tebranish konturida davri $1$ ms bo‘lgan tebranish hosil qilish uchun induktivligi $20$ mH bo‘lgan g‘altakka qanday sig‘imli ($\\mu$F) kondensator ulash kerak? $\\pi^2=10$.",
+      "answers": [
+        "125.",
+        "12,5.",
+        "5.",
+        "2,5.",
+        "1,25."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#1:29"
+    },
+    {
+      "text": "Ideal tebranishlar konturidagi kondensatorning sig‘imi $4~\\mu$F, tebranishlarning siklik chastotasi $500$ rad/s bo‘lsa, g‘altakning induktivligi necha Genri?",
+      "answers": [
+        "0,05.",
+        "0,1.",
+        "0,5.",
+        "0,8.",
+        "1."
+      ],
+      "correct": 4,
+      "source": "70-mavzu.tex#1:31"
+    },
+    {
+      "text": "Tebranishlar konturidagi induktivligi g‘altak ichiga temir o‘zak kiritilsa, kondensatordagi kuchlanish tebranishlari davri va amplitudasi qanday o‘zgaradi?",
+      "answers": [
+        "davri va amplitudasi ortadi.",
+        "davri ortadi, amplitudasi o‘zgarmaydi.",
+        "davri kamayadi, amplitudasi ortadi.",
+        "davri o‘zgarmaydi, amplitudasi ortadi.",
+        "davri kamayadi, amplitudasi kamayadi."
+      ],
+      "correct": 1,
+      "source": "70-mavzu.tex#1:32"
+    },
+    {
+      "text": "Tebranishlar konturi sig‘imi $2~\\mu$F bo‘lgan kondensator va induktivligi $2$ H bo‘lgan g‘altakdan tuzilgan bo‘lib, kondensatorga $200~\\mu$C zaryad berildi. Konturda hosil bo‘ladigan elektr tok tebranishlari tenglamasini yozing.",
+      "answers": [
+        "$i=-0,05\\sin250t$.",
+        "$i=200\\sin16t$.",
+        "$i=-0,1\\sin500t$.",
+        "$i=16\\sin200t$.",
+        "$i=-0,5\\sin200t$."
+      ],
+      "correct": 2,
+      "source": "70-mavzu.tex#1:33"
+    },
+    {
+      "text": "Tebranish konturidagi tok $i=0,01\\cos1000t$ qonun bo‘yicha o‘zgaradi. Undagi kondensatorning sig‘imi $2\\cdot10^{-5}$ F bo‘lsa, konturning induktivligi qanday (mH)?",
+      "answers": [
+        "5.",
+        "20.",
+        "25.",
+        "50.",
+        "70."
+      ],
+      "correct": 3,
+      "source": "70-mavzu.tex#1:34"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan zanjirdagi g‘altakning induktivligi $0,2$ H, kondensator sig‘imi $8\\cdot10^{-3}$ F va $0,01$ C gacha zaryadlangan. Agar K kalit ulansa, zanjirdagi tok kuchining o‘zgarish qonuni qanday ko‘rinishda bo‘ladi?",
+      "answers": [
+        "$i=-0,25\\sin25t$.",
+        "$i=-0,01\\sin25t$.",
+        "$i=-0,25\\sin40t$.",
+        "$i=-0,04\\sin40t$.",
+        "$i=-0,01\\sin1,6t$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar70/r004425f7e5.png",
+      "source": "70-mavzu.tex#1:35"
+    },
+    {
+      "text": "Erkin elektromagnit tebranishlar sodir bo‘layotgan tebranishlar konturidagi tok kuchi $i=0,2\\cos10^6 t$ (A) qonuniyat bo‘yicha o‘zgaradi. Agar konturdagi g‘altak induktivligi $2$ mH bo‘lsa, kondensator sig‘imi qanday (pF)?",
+      "answers": [
+        "500.",
+        "1000.",
+        "20.",
+        "200.",
+        "10000."
+      ],
+      "correct": 0,
+      "source": "70-mavzu.tex#1:36"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "id": 66,
+  "title": "66-Mavzu | Lorens kuchi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 67,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Quyidagilar ichidan Lorens kuchining ifodasini toping.",
+      "answers": [
+        "$qvB\\sin\\alpha$.",
+        "$qvB\\cos\\alpha$.",
+        "$vB/2$.",
+        "$vB\\sin\\alpha$."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#2:1"
+    },
+    {
+      "text": "Induksiyasi 20 T bo‘lgan magnit maydonga 0,2 C zaryadga ega zarra 25 m/s tezlik bilan induksiya chiziqlariga $53^\\circ$ burchak ostida uchib kirdi. Unga ta’sir qilayotgan Lorens kuchini toping (N).",
+      "answers": [
+        "100.",
+        "20.",
+        "30.",
+        "80."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:2"
+    },
+    {
+      "text": "Induksiyasi 4 T bo‘lgan bir jinsli magnit maydonga $10^7$ m/s tezlik bilan induksiya chiziqlariga perpendikulyar yo‘nalishda uchib kirgan elektronga ta’sir etuvchi kuchning moduli qanday (N)? $e = -1,6 \\cdot 10^{-19}$ C.",
+      "answers": [
+        "$6,4 \\cdot 10^{-12}$.",
+        "$0,4 \\cdot 10^{-7}$.",
+        "$0,14 \\cdot 10^{-12}$.",
+        "$3,2 \\cdot 10^{-12}$."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#2:3"
+    },
+    {
+      "text": "Induksiyasi 0,2 T bo‘lgan magnit maydonda induksiya chiziqlariga tik ravishda 10 Mm/s tezlik bilan harakatlanayotgan protonga qanday kuch ta’sir qiladi (pN). $e = 1,6 \\cdot 10^{-19}$ C.",
+      "answers": [
+        "0,5.",
+        "0,16.",
+        "0,32.",
+        "0,64."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#2:4"
+    },
+    {
+      "text": "Magnit kuch chiziqlariga tik yo‘nalishda 2 km/s tezlik bilan harakatlanayotgan 0,4 C zaryadga ta’sir qilayotgan Lorens kuchi 8 N ga teng bo‘lsa, magnit induksiyasi qanday?",
+      "answers": [
+        "10 mT.",
+        "10 T.",
+        "1,6 mT.",
+        "1,6 T."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#2:5"
+    },
+    {
+      "text": "Induksiyasi 0,2 T bo‘lgan magnit maydonga induksiya chiziqlariga tik ravishda elektron uchib kirdi. Unga ta’sir etuvchi kuch $0,32 \\cdot 10^{-12}$ N bo‘lsa, uning tezligi qanday (m/s)? $e = 1,6 \\cdot 10^{-19}$ C.",
+      "answers": [
+        "$1,6 \\cdot 10^5$.",
+        "$1 \\cdot 10^7$.",
+        "$32 \\cdot 10^5$.",
+        "$6,4 \\cdot 10^4$."
+      ],
+      "correct": 1,
+      "source": "67-mavzu.tex#2:6"
+    },
+    {
+      "text": "Protonning tezligi 24 marta kamayganda va magnit maydon induksiyasi 12 marta ortganda, magnit maydon tomonidan protonga ta’sir qiluvchi Lorens kuchi qanday o‘zgaradi?",
+      "answers": [
+        "2 marta ortadi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi.",
+        "2 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:7"
+    },
+    {
+      "text": "Magnit maydonda harakatlanayotgan manfiy zaryadlangan zarrachaga ta’sir etuvchi Lorens kuchi yo‘nalishi chizmada ko‘rsatilgan qaysi yo‘nalish bilan mos tushadi? Magnit maydon kuch chiziqlarari bizdan chizma tekisligiga tik yo‘nalgan.",
+      "answers": [
+        "1.",
+        "3.",
+        "4.",
+        "2."
+      ],
+      "correct": 1,
+      "images": "../rasmlar66/rfb62807d53.png",
+      "source": "67-mavzu.tex#2:8"
+    },
+    {
+      "text": "Harakatlanayotgan musbat zaryadli zarraga magnit maydon tomonidan ta’sir etadigan Lorens kuchining yo‘nalishini aniqlang. Maydonning magnit induksiyasi vektori chizma tekisligiga tik va bizdan chizmaga tomon yo‘nalgan ($\\otimes$).",
+      "answers": [
+        "o‘ngga.",
+        "pastga.",
+        "yuqoriga.",
+        "chapga."
+      ],
+      "correct": 2,
+      "images": "../rasmlar66/r32868e17f7.png",
+      "source": "67-mavzu.tex#2:9"
+    },
+    {
+      "text": "Elektron rasmda ko‘rsatilganidek, bir jinsli magnit maydoniga uchib kiradi. Unga magnit maydoni tomonidan ta’sir qiladigan kuch qaysi tomonga yo‘naladi?",
+      "answers": [
+        "o‘ngga.",
+        "pastga.",
+        "yuqoriga.",
+        "chapga."
+      ],
+      "correct": 1,
+      "images": "../rasmlar66/r5640911e50.png",
+      "source": "67-mavzu.tex#2:10"
+    },
+    {
+      "text": "Tezligi $v$ bo‘lgan $q$ zaryad induksiyasi $B$ bo‘lgan magnit maydonga kuch chiziqlariga tik ravishda uchib kirdi. Shu zaryad harakat traektoryasining egrilik radiusi qaysi ifoda asosida hisoblanishi mumkin?",
+      "answers": [
+        "$mv/qB$.",
+        "$qv/mB$.",
+        "$qB/mv$.",
+        "$vB/qm$."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#2:11"
+    },
+    {
+      "text": "Tezligi $v$ va zaryadi $q$ bo‘lgan ion induksiyasi $B$ bo‘lgan bir jinsli magnit maydonga kiradi va $R$ radiusli aylana chizadi. Ionning massasi qanday ifoda vositasida hisoblanadi?",
+      "answers": [
+        "$qvB/R$.",
+        "$qvR/B$.",
+        "$qBR/v$.",
+        "$B/qvR$."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#2:12"
+    },
+    {
+      "text": "Induksiyasi 20 T bo‘lgan magnit maydonga 0,08 g massali 0,002 C zaryadga ega zarra 25 m/s tezlik bilan induksiya chiziqlariga tik ravishda uchib kirdi. Uning aylanish radiusini (cm) va aylanish davrini (ms) toping.",
+      "answers": [
+        "5; 4,76.",
+        "8; 12,56.",
+        "4; 4,76.",
+        "5; 12,56."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:13"
+    },
+    {
+      "text": "Induksiyasi 9,1 mT bo‘lgan bir jinsli magnit maydonga induksiya chiziqlariga perpendikulyar ravishda 16 Mm/s tezlik bilan uchib kirgan elektron harakat traektoryasining egrilik radiusini toping (cm). $m = 9,1 \\cdot 10^{-31}$ kg, $e = 1,6 \\cdot 10^{-19}$ C.",
+      "answers": [
+        "100.",
+        "10.",
+        "0,1.",
+        "1."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:14"
+    },
+    {
+      "text": "Elektron induksiyasi 5 mT bo‘lgan magnit maydonga uchib kirib, 4 cm radiusli aylana bo‘ylab harakatlana boshlasa, uning tezligi qanday (m/s)?",
+      "answers": [
+        "$6 \\cdot 10^6$.",
+        "1000.",
+        "$3,5 \\cdot 10^7$.",
+        "$5 \\cdot 10^7$."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#2:15"
+    },
+    {
+      "text": "Proton induksiyasi 20 mT bo‘lgan bir jinsli magnit maydonda 5 cm radiusli aylana chizdi. Proton zaryadi $1,6 \\cdot 10^{-19}$ C bo‘lsa, uning impulsini aniqlang (kg$\\cdot$m/s).",
+      "answers": [
+        "$3,2 \\cdot 10^{-20}$.",
+        "$5 \\cdot 10^{-21}$.",
+        "$1,6 \\cdot 10^{-22}$.",
+        "$8 \\cdot 10^{-22}$."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#2:16"
+    },
+    {
+      "text": "Bir xil tezlikka ega bo‘lgan ikkita bir xil zaryadlangan zarralar magnit maydonga kuch chiziqlariga tik yo‘nalishda kirib, egrilik radiuslari $R_2 = 3R_1$ munosabatda bo‘lgan traektoriya bo‘yicha harakat qila boshladilar. 2-zarra massasi $m_2$ ning 1-zarra massasi $m_1$ ga nisbati $m_2/m_1$ qanday?",
+      "answers": [
+        "0,5.",
+        "1/3.",
+        "2.",
+        "3."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:17"
+    },
+    {
+      "text": "Massasi $m$, zaryadi $q$ bo‘lgan zarracha induksiyasi $B$ bo‘lgan bir jinsli magnit maydonda aylana bo‘ylab harakatlanmoqda. Aylanish davrini toping.",
+      "answers": [
+        "$\\pi m / 2qB$.",
+        "$\\pi m / qB$.",
+        "$2\\pi m / qB$.",
+        "$2\\pi r^2 / v$."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#2:18"
+    },
+    {
+      "text": "Agar bir jinsli magnit maydonda elektronning aylanish davri 9 ns bo‘lsa magnit maydon induksiyasi necha mT bo‘ladi? Elektronning zaryadi $1,6 \\cdot 10^{-19}$ C, massasi $9,1 \\cdot 10^{-31}$ kg.",
+      "answers": [
+        "4,5.",
+        "8.",
+        "9.",
+        "4."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:19"
+    },
+    {
+      "text": "Induksiyasi 16,7 mT bo‘lgan bir jinsli magnit maydonga induksiya chiziqlariga tik yo‘nalishda uchib kirgan proton aylana traektoriya bo‘ylab harakatlanadi. Protonning 3,14 s ichidagi aylanishlar sonini toping. $e = 1,6 \\cdot 10^{-19}$ C, $m_p = 1,67 \\cdot 10^{-27}$ kg.",
+      "answers": [
+        "$4 \\cdot 10^5$.",
+        "$8 \\cdot 10^5$.",
+        "$3 \\cdot 10^6$.",
+        "$6 \\cdot 10^6$."
+      ],
+      "correct": 1,
+      "source": "67-mavzu.tex#2:20"
+    },
+    {
+      "text": "Magnit induksiyasi 16,7 mT bo‘lgan bir jinsli magnit maydoniga induksiya chiziqlariga tik yo‘nalishda uchib kirgan proton aylana traektoriya bo‘ylab harakatlanadi. $6\\pi$ s ichida protonning aylanishlar soni qanchaga teng bo‘ladi?",
+      "answers": [
+        "$6,2 \\cdot 10^5$.",
+        "$4 \\cdot 10^5$.",
+        "$6,2 \\cdot 10^6$.",
+        "$4,8 \\cdot 10^6$."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#2:21"
+    }
+  ]
+}

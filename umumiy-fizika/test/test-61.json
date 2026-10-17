@@ -1,0 +1,252 @@
+{
+  "id": 61,
+  "title": "61-Mavzu | O‘tkazgichlarni ketma-ket va parallel ulash",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 62,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Qarshiliklari $3~\\Omega$ va $4~\\Omega$ bo‘lgan o‘tkazgichlar ketma-ket ulangan. Umumiy qarshilikni toping ($\\Omega$).",
+      "answers": [
+        "12/7",
+        "7",
+        "1",
+        "12"
+      ],
+      "correct": 1,
+      "source": "59-mavzu.tex#0:1"
+    },
+    {
+      "text": "Qarshiliklari $12~\\Omega, 5~\\Omega$ va $14~\\Omega$ bo‘lgan o‘tkazgichlar ketma-ket ulangan. Umumiy qarshilikni toping ($\\Omega$).",
+      "answers": [
+        "24",
+        "46",
+        "38",
+        "31"
+      ],
+      "correct": 3,
+      "source": "59-mavzu.tex#0:2"
+    },
+    {
+      "text": "Qarshiliklari $25~\\Omega, 40~\\Omega$ va $R_3$ bo‘lgan o‘tkazgichlar ketma-ket ulangan. Agar umumiy qarshilik $70~\\Omega$ ga teng bo‘lsa, $R_3$ qiymatini toping ($\\Omega$).",
+      "answers": [
+        "8",
+        "9",
+        "2",
+        "5"
+      ],
+      "correct": 3,
+      "source": "59-mavzu.tex#0:3"
+    },
+    {
+      "text": "Har birining qarshiligi $4~\\Omega$ dan bo‘lgan $13$ ta bir xil qarshilik ketma-ket ulangan. Umumiy qarshilikni toping ($\\Omega$).",
+      "answers": [
+        "4/13",
+        "17",
+        "9",
+        "52"
+      ],
+      "correct": 3,
+      "source": "59-mavzu.tex#0:4"
+    },
+    {
+      "text": "Qarshiliklari $1~\\Omega$ va $3~\\Omega$ bo‘lgan o‘tkazgichlar parallel ulangan. Umumiy qarshilikni toping ($\\Omega$).",
+      "answers": [
+        "2",
+        "4",
+        "0,75",
+        "4/3"
+      ],
+      "correct": 2,
+      "source": "59-mavzu.tex#0:5"
+    },
+    {
+      "text": "Qarshiliklari $R_1$ va $7~\\Omega$ bo‘lgan o‘tkazgichlar parallel ulangan. Agar umumiy qarshilik $4,55~\\Omega$ ga teng bo‘lsa, $R_1$ qiymatini toping ($\\Omega$).",
+      "answers": [
+        "13",
+        "2,45",
+        "11,55",
+        "5,89"
+      ],
+      "correct": 0,
+      "source": "59-mavzu.tex#0:6"
+    },
+    {
+      "text": "Elektr qarshiliklari $4~\\Omega, 6~\\Omega, 12~\\Omega$ bo‘lgan uchta rezistor bir-biriga parallel ulangan. Umumiy qarshilik necha $\\Omega$?",
+      "answers": [
+        "22",
+        "11",
+        "22/3",
+        "2"
+      ],
+      "correct": 3,
+      "source": "59-mavzu.tex#0:7"
+    },
+    {
+      "text": "Ketma-ket ulangan ikkita bir xil o‘tkazgich parallel ulansa, umumiy qarshilik qanday o‘zgaradi?",
+      "answers": [
+        "2 marta kamayadi",
+        "4 marta ortadi",
+        "4 marta kamayadi",
+        "2 marta ortadi"
+      ],
+      "correct": 2,
+      "source": "59-mavzu.tex#0:8"
+    },
+    {
+      "text": "Ikkita o‘tkazgich o‘zaro ketma-ket ulanganda, ularning umumiy qarshiligi $5~\\Omega$, parallel ulanganda esa $1,2~\\Omega$ bo‘ladi. O‘tkazgichlar qarshiliklarining nisbatini aniqlang.",
+      "answers": [
+        "2",
+        "1,5",
+        "1",
+        "0,75"
+      ],
+      "correct": 1,
+      "source": "59-mavzu.tex#0:9"
+    },
+    {
+      "text": "Zanjirga $n$ ta bir xil qarshiliklar parallel ulangan edi. Agar ular ketma-ket ulansa, zanjirning umumiy qarshiligi qanday o‘zgaradi?",
+      "answers": [
+        "$n$ marta ortadi",
+        "$n^2$ marta kamayadi",
+        "$n$ marta kamayadi",
+        "$n^2$ marta ortadi"
+      ],
+      "correct": 3,
+      "source": "59-mavzu.tex#0:10"
+    },
+    {
+      "text": "Agar rasmda tasvirlangan zanjirda $R_1=2~\\Omega, R_2=R_3=3~\\Omega$ bo‘lsa, zanjirning AB oraliqdagi qarshiligi qanday ($\\Omega$) bo‘ladi?",
+      "answers": [
+        "0,27",
+        "3,5",
+        "4",
+        "7"
+      ],
+      "correct": 1,
+      "images": "../rasmlar61/rb74a0d116e.png",
+      "source": "59-mavzu.tex#0:11"
+    },
+    {
+      "text": "Rasmda tasvirlangan zanjirning umumiy qarshiligi necha $\\Omega$? $R_1=3~\\Omega, R_2=R_3=R_4=12~\\Omega, R_5=5~\\Omega$.",
+      "answers": [
+        "20",
+        "15",
+        "5",
+        "12"
+      ],
+      "correct": 3,
+      "images": "../rasmlar61/r21ff2cbce2.png",
+      "source": "59-mavzu.tex#0:12"
+    },
+    {
+      "text": "Rasmda tasvirlangan zanjirning umumiy qarshiligi necha $\\Omega$? $R_1=1~\\Omega; R_2=R_3=2~\\Omega; R_4=R_5=3~\\Omega; R_6=4~\\Omega$.",
+      "answers": [
+        "5,6",
+        "15",
+        "10,5",
+        "6,5"
+      ],
+      "correct": 0,
+      "images": "../rasmlar61/r6045c24ebd.png",
+      "source": "59-mavzu.tex#0:13"
+    },
+    {
+      "text": "Rasmda tasvirlangan zanjirning A va B nuqtalari orasidagi qarshilikni toping ($\\Omega$). $R=2~\\Omega$.",
+      "answers": [
+        "1,6",
+        "2,75",
+        "2",
+        "1,25"
+      ],
+      "correct": 3,
+      "images": "../rasmlar61/r0dd87e3400.png",
+      "source": "59-mavzu.tex#0:14"
+    },
+    {
+      "text": "Sxemasi rasmda berilgan zanjirning 1- va 4- nuqtalari orasidagi qarshiligini hisoblang.",
+      "answers": [
+        "5R/3",
+        "6R",
+        "3R/2",
+        "2R/3"
+      ],
+      "correct": 3,
+      "images": "../rasmlar61/r44bbe5f52a.png",
+      "source": "59-mavzu.tex#0:15"
+    },
+    {
+      "text": "Rasmda tasvirlangan elektr zanjirning A va B nuqtalari orasidagi qarshilik necha $\\Omega$? Rezistorlardan har birining qarshiligi $30~\\Omega$ ga teng.",
+      "answers": [
+        "30",
+        "20",
+        "10",
+        "45"
+      ],
+      "correct": 2,
+      "images": "../rasmlar61/r903275651c.png",
+      "source": "59-mavzu.tex#0:17"
+    },
+    {
+      "text": "Har birining qarshiligi $3~\\Omega$ dan bo‘lgan qarshiliklar rasmda ko‘rsatilgandek ulangan bo‘lsa, A va B nuqtalar orasidagi umumiy qarshilik necha $\\Omega$?",
+      "answers": [
+        "0,5",
+        "1",
+        "3",
+        "6"
+      ],
+      "correct": 1,
+      "images": "../rasmlar61/rd35ad78f5e.png",
+      "source": "59-mavzu.tex#0:18"
+    },
+    {
+      "text": "$A_1$ ampermetr $2,5$ A, $A_2$ ampermetr $5$ A tokni ko‘rsatmoqda. Agar $R_1=4~\\Omega$ bo‘lsa, $R_2$ qarshilik necha $\\Omega$ bo‘ladi?",
+      "answers": [
+        "3,5",
+        "3",
+        "2,5",
+        "2"
+      ],
+      "correct": 3,
+      "images": "../rasmlar61/rba850ef4db.png",
+      "source": "59-mavzu.tex#0:20"
+    },
+    {
+      "text": "Quyida berilgan elektr zanjirdagi $4~\\Omega$ qarshilikdan o‘tayotgan tokni aniqlang (A).",
+      "answers": [
+        "12",
+        "36",
+        "30",
+        "20"
+      ],
+      "correct": 2,
+      "images": "../rasmlar61/r75a4ad586c.png",
+      "source": "59-mavzu.tex#0:21"
+    },
+    {
+      "text": "Quyida berilgan elektr zanjirdagi ampermetrning ko‘rsatishini aniqlang (A).",
+      "answers": [
+        "5",
+        "4",
+        "6",
+        "10"
+      ],
+      "correct": 2,
+      "images": "../rasmlar61/re5774ee643.png",
+      "source": "59-mavzu.tex#0:22"
+    },
+    {
+      "text": "K kalit ulansa, ampermetrning ko‘rsatishi necha marta ortadi?",
+      "answers": [
+        "3",
+        "2",
+        "1,5",
+        "4"
+      ],
+      "correct": 0,
+      "images": "../rasmlar61/r520e5082bd.png",
+      "source": "59-mavzu.tex#0:23"
+    }
+  ]
+}

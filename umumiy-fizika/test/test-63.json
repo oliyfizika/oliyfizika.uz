@@ -1,0 +1,831 @@
+{
+  "id": 63,
+  "title": "63-Mavzu | Tok manbaining ishi va quvvati",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 64,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Berilgan formulalardan qaysi biri Joul–Lens qonunini ifodalaydi?",
+      "answers": [
+        "$Q = I^2Rt$",
+        "$Q = \\lambda m$",
+        "$Q = cm(t_2 - t_1)$",
+        "$Q = A + \\Delta U$"
+      ],
+      "correct": 0,
+      "source": "65-mavzu.tex#0:1"
+    },
+    {
+      "text": "Qarshiligi $2~\\Omega$ bo‘lgan simdan $15$ A tok o‘tadi. $2$ minut ichida unda qancha energiya ajraladi (kJ)?",
+      "answers": [
+        "27",
+        "54",
+        "450",
+        "900"
+      ],
+      "correct": 3,
+      "source": "65-mavzu.tex#0:2"
+    },
+    {
+      "text": "$50~\\Omega$ qarshilikli o‘tkazgich orqali $10$ minut davomida qanday tok o‘tkazilganda, $120$ kJ issiqlik ajralib chiqadi (A)?",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct": 1,
+      "source": "65-mavzu.tex#0:3"
+    },
+    {
+      "text": "Qarshiligi $12~\\Omega$ bo‘lgan o‘tkazgich $120$ V kuchlanishli tarmoqqa ulandi. O‘tkazgichda $10$ min ichida qancha issiqlik ajraladi?",
+      "answers": [
+        "72 kJ",
+        "0,72 kJ",
+        "720 kJ",
+        "7,2 MJ"
+      ],
+      "correct": 0,
+      "source": "65-mavzu.tex#0:4"
+    },
+    {
+      "text": "Agar $R_1 = R_2 = R_3$ bo‘lsa, rasmda ko‘rsatilgan rezistorlardan bir xil vaqt davomida ajralib chiqayotgan issiqlik miqdorlarining nisbati $Q_1 : Q_2 : Q_3$ ni aniqlang.",
+      "answers": [
+        "4:1:1",
+        "1:1:1",
+        "4:4:1",
+        "1:4:4"
+      ],
+      "correct": 3,
+      "images": "../rasmlar63/r515aaaca74.png",
+      "source": "65-mavzu.tex#0:5"
+    },
+    {
+      "text": "$R$ va $2R$ qarshiliklar o‘zgarmas kuchlanish manbaiga parallel ulangan. $R$ qarshilikda $100$ J issiqlik miqdori ajralganda, $2R$ qarshilikda qancha issiqlik miqdori ajraladi (J)?",
+      "answers": [
+        "400",
+        "200",
+        "100",
+        "50"
+      ],
+      "correct": 2,
+      "source": "65-mavzu.tex#0:6"
+    },
+    {
+      "text": "Elektr choynakning ikki chulg‘ami bor. Ulardan biri manbaga ulanganda choynakdagi suv $30$ minutda, ikkinchisi ulanganda esa $20$ minutda qaynaydi. Agar ikkala chulg‘am manbaga ketma-ket ulansa, choynakdagi suv necha minutda qaynaydi?",
+      "answers": [
+        "25",
+        "30",
+        "40",
+        "50"
+      ],
+      "correct": 3,
+      "source": "65-mavzu.tex#0:7"
+    },
+    {
+      "text": "Chulg‘amning qarshiligi $50~\\Omega$ bo‘lgan elektr choynakda temperaturasi $0^\\circ$C bo‘lgan $600$ cm$^3$ suv bor. Agar tarmoqning kuchlanishi $200$ V, choynakning FIK $60\\%$ bo‘lsa, undagi hamma suvni qaynatib, bug‘ga aylantirish uchun necha minut vaqt kerak bo‘ladi? Suv uchun $c=4,2$ kJ/(kg$\\cdot$K), $r=2,3$ MJ/kg.",
+      "answers": [
+        "57",
+        "28",
+        "32",
+        "41"
+      ],
+      "correct": 0,
+      "source": "65-mavzu.tex#0:9"
+    },
+    {
+      "text": "Qaysi qarshilikda eng ko‘p issiqlik ajraladi? $R_1=1~\\Omega, R_2=R_3=2~\\Omega, R_4=4~\\Omega$. (Rasmga qarang)",
+      "answers": [
+        "$R_1$ da",
+        "$R_2$ da",
+        "$R_3$ da",
+        "$R_4$ da"
+      ],
+      "correct": 0,
+      "images": "../rasmlar63/r52ed61efd2.png",
+      "source": "65-mavzu.tex#0:10"
+    },
+    {
+      "text": "Qarshiligi $R_1$ bo‘lgan qaynatgich biror miqdor suvni $t_1$ vaqtda qaynatadi. Qarshiligi $R_2$ bo‘lgan qaynatgich esa shu sharoitda o‘sha suvni $t_2$ vaqtda qaynatadi. Ikkala qaynatgich parallel ulansa o‘sha suv qanday vaqtda qaynaydi?",
+      "answers": [
+        "$t_1+t_2$",
+        "$\\frac{t_1 t_2}{t_1+t_2}$",
+        "$\\sqrt{t_1 t_2}$",
+        "$\\frac{t_1+t_2}{2}$"
+      ],
+      "correct": 0,
+      "source": "65-mavzu.tex#0:11"
+    },
+    {
+      "text": "Elektr choynakda ikkita chulg‘am bor. Birinchi chulg‘am ulanganda, suv $t_1$ vaqtda, ikkinchisi ulanganda, $t_2$ vaqtda qaynaydi. Ikkala chulg‘am ketma-ket ulanganda qaynash vaqti, ular parallel ulangandagi qaynash vaqtidan necha marta katta bo‘ladi?",
+      "answers": [
+        "$\\frac{2t_1 t_2}{t_1+t_2}$",
+        "$\\frac{t_1+t_2}{t_1 t_2}$",
+        "$\\frac{(t_1+t_2)^2}{t_1 t_2}$",
+        "$\\frac{t_1-t_2}{t_1+t_2}$"
+      ],
+      "correct": 3,
+      "source": "65-mavzu.tex#0:12"
+    },
+    {
+      "text": "Ikkita bir xil elektr plita parallel ulansa, suv $t$ vaqtda qaynaydi. Shu plitalar ketma-ket ulansa, shu suv qancha vaqtda qaynaydi?",
+      "answers": [
+        "$2t$",
+        "$t/2$",
+        "$t/3$",
+        "$4t$"
+      ],
+      "correct": 1,
+      "source": "65-mavzu.tex#0:13"
+    },
+    {
+      "text": "Elektr choynakning ikkita chulg‘ami bor. Ulardan biri manbaga ulanganda choynakdagi suv $30$ minutda, ikkinchisi ulanganda esa $20$ minutda qaynaydi. Agar ikkala chulg‘am manbaga ketma-ket ulansa, choynakdagi suv necha minutda qaynaydi?",
+      "answers": [
+        "25",
+        "30",
+        "40",
+        "50"
+      ],
+      "correct": 0,
+      "source": "65-mavzu.tex#0:14"
+    },
+    {
+      "text": "Elektr isitkich bir xil $R$ qarshilikli uchta tarmoqqa ega. Agar har uchala tarmoq o‘zaro parallel ulansa, unga qo‘yilgan idishdagi suv $6$ min da qaynaydi. Tarmoqlar o‘zaro ketma-ket ulanganida shu suv necha minutda qaynar edi?",
+      "answers": [
+        "60",
+        "54",
+        "44",
+        "38"
+      ],
+      "correct": 1,
+      "source": "65-mavzu.tex#0:15"
+    },
+    {
+      "text": "Elektr plita suvni $10$ minutda qaynatadi. Spiralning bir qismi uzilgandan so‘ng, shu suvni $12$ min da qaynatdi. Spiral dastlabki uzunligining qanday qismiga kaltalashgan? Tok kuchini o‘zgarmas deb hisoblang.",
+      "answers": [
+        "$1/3$",
+        "$1/8$",
+        "$1/12$",
+        "$1/6$"
+      ],
+      "correct": 2,
+      "source": "65-mavzu.tex#0:17"
+    },
+    {
+      "text": "Suv ikkita bir xil spiral bilan isitiladi. Spirallar dastlab o‘zgarmas kuchlanish manbayiga $t$ vaqt davomida parallel, keyin xuddi shuncha vaqt ketma-ket ulandi. Agar dastlabki $t$ vaqtda suvning temperaturasi $10^\\circ$C ga ortgan bo‘lsa, $2t$ umumiy vaqtda qanchaga ($^\\circ$C) ortgan?",
+      "answers": [
+        "20",
+        "15",
+        "17,5",
+        "12,5"
+      ],
+      "correct": 3,
+      "source": "65-mavzu.tex#0:18"
+    },
+    {
+      "text": "Energiyaning $1$ kilovatt-soat degan birligi necha Joulga teng?",
+      "answers": [
+        "36 000.",
+        "3600.",
+        "3 600 000.",
+        "100 000.",
+        "1000."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:1"
+    },
+    {
+      "text": "Talabalar yotoqxonasidagi bitta xonada quvvati $100$ W bo‘lgan elektr lampochka har kuni $6$ soatdan yonib turadi. Agar $1$ kW$\\cdot$h elektr energiyasining narxi $450$ so‘m bo‘lsa, uning bir oylik ($30$ kun) harajati qancha bo‘ladi (so‘m)?",
+      "answers": [
+        "5000.",
+        "6500.",
+        "10200.",
+        "11700.",
+        "8100."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:2"
+    },
+    {
+      "text": "Tarmoqqa qanday (kW) quvvatli iste’molchi ulanganda, elektr hisoblagich diskining aylanish chastotasi $1,5$ Hz ga teng bo‘ladi? (Diskning $3000$ marta aylanishi $1$ kW$\\cdot$h energiyaga mos keladi.)",
+      "answers": [
+        "3.",
+        "3,5.",
+        "1,8.",
+        "2.",
+        "2,5."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:3"
+    },
+    {
+      "text": "Elektr asbob tarmoqqa ulanganda, elektr hisoblagich diski bir minutda $30$ marta aylandi. Shu asbobning quvvati necha kW? (Hisoblagichda $1$ kW$\\cdot$h diskning $1200$ aylanishiga teng deb yozilgan.)",
+      "answers": [
+        "1,2.",
+        "1,5.",
+        "0,5.",
+        "2.",
+        "3."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:4"
+    },
+    {
+      "text": "Xonaga o‘rnatilgan ventilyatorning quvvati $36$ W. Uning $20$ s da bajargan ishi qanday (J)?",
+      "answers": [
+        "1,8",
+        "18",
+        "72",
+        "360",
+        "720"
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:5"
+    },
+    {
+      "text": "$500$ kW quvvatga ega bo‘lgan elektrostansiya soatiga qancha ish bajarishi mumkin (MJ)?",
+      "answers": [
+        "1800.",
+        "3600.",
+        "4000.",
+        "5000.",
+        "7200."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:6"
+    },
+    {
+      "text": "Elektr quvvati $0,5$ kW bo‘lgan elektr choynak $5$ minutda qancha energiya (kJ) iste’mol qiladi?",
+      "answers": [
+        "25.",
+        "50.",
+        "75.",
+        "100.",
+        "150."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:7"
+    },
+    {
+      "text": "O‘zgarmas tokning ishi qanday formula yordamida hisoblanadi?",
+      "answers": [
+        "$A=IUt$.",
+        "$A=\\dfrac{U^2}{R}$.",
+        "$A=IU$.",
+        "$A=I^2U$.",
+        "$A=I^2R$."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:8"
+    },
+    {
+      "text": "Berilgan munosabatlardan qaysilari elektr toki ishini ifodalaydi?\n1) $A=Nt$;\n2) $A=Fscos\\alpha$;\n3) $A=q(\\varphi_1-\\varphi_2)$;\n4) $A=IUt$;\n5) $A=I^2Rt$.",
+      "answers": [
+        "3, 4, 5.",
+        "1, 3, 4.",
+        "1, 2, 3.",
+        "1, 4.",
+        "1, 3."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:9"
+    },
+    {
+      "text": "Birligini J/(A$^2\\cdot$s) ko‘rinishida yozish mumkin bo‘lgan fizik kattalik nomi nima?",
+      "answers": [
+        "kuchlanish.",
+        "o‘tkazuvchanlik.",
+        "tok kuchi.",
+        "qarshilik.",
+        "elektr sig‘im."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:10"
+    },
+    {
+      "text": "Zanjirning kuchlanish $200$ V bo‘lgan qismida tok $16$ kJ ish bajargan bo‘lsa, bu qismdan nechta elektron oqib o‘tgan bo‘ladi?",
+      "answers": [
+        "$8\\cdot10^{18}$.",
+        "$5\\cdot10^{19}$.",
+        "$6,02\\cdot10^{23}$.",
+        "$5\\cdot10^{20}$.",
+        "$1,6\\cdot10^{19}$."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:11"
+    },
+    {
+      "text": "Agar qarshiligi $20~\\Omega$ bo‘lgan o‘tkazgichning uchlariga $20$ V kuchlanish berilsa, $20$ sekundda tok necha Joul ish bajaradi?",
+      "answers": [
+        "578.",
+        "576.",
+        "570.",
+        "480.",
+        "400."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:12"
+    },
+    {
+      "text": "Zanjirning biror qismidagi kuchlanish $3$ V bo‘lganda $6$ A tok $10$ s da zanjirning shu qismida necha Joul ish bajaradi?",
+      "answers": [
+        "1,8.",
+        "5.",
+        "20.",
+        "180.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:13"
+    },
+    {
+      "text": "Zanjirning biror qismidagi kuchlanish necha Volt bo‘lganda $3$ A tok $4$ s da zanjirning shu qismida $24$ J ish bajaradi?",
+      "answers": [
+        "2.",
+        "0,5.",
+        "32.",
+        "18.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:14"
+    },
+    {
+      "text": "Elektr toki zanjirning biror qismida $3$ s da $6$ J ish bajaradi. Agar zanjir qismidagi kuchlanish $2$ V bo‘lsa, undan o‘tayotgan tokning kuchini toping (A)?",
+      "answers": [
+        "1.",
+        "4.",
+        "9.",
+        "36.",
+        "12."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:15"
+    },
+    {
+      "text": "$j^2\\rho lS$ ifoda bilan aniqlanuvchi kattalikning XBS dagi birligi qanday? ($j$ – tok zichligi, $\\rho$ – o‘tkazgichning solishtirma qarshiligi, $l$ va $S$ – o‘tkazgichning uzunligi va ko‘ndalang kesim yuzi).",
+      "answers": [
+        "$\\Omega$.",
+        "J.",
+        "W.",
+        "V.",
+        "A."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:16"
+    },
+    {
+      "text": "Quyidagi ifoda orqali qaysi fizik kattalik aniqlanadi?\n$\\frac{P}{j^2\\rho}$\n$P$ – quvvat, $j$ – tok zichligi, $\\rho$ – solishtirma qarshilik.",
+      "answers": [
+        "hajm.",
+        "massa.",
+        "ish.",
+        "kuchlanish.",
+        "tok kuchi."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:17"
+    },
+    {
+      "text": "Cho‘g‘lanma lampa balloniga $4$ V va $0,25$ A deb yozilgan. Ishlash jarayonida lampochkaning qarshiligi ($\\Omega$) va quvvati (W) qanday bo‘lishini toping.",
+      "answers": [
+        "12; 0,8",
+        "0,25; 4",
+        "16; 1",
+        "6,25; 4",
+        "1; 16"
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:18"
+    },
+    {
+      "text": "Cho‘g‘lanma lampa sokoliga $250$ V, $25$ W deb yozilgan. Shu lampaning qarshiligi qanday ($\\Omega$)?",
+      "answers": [
+        "0,1",
+        "10",
+        "625",
+        "2500",
+        "6250"
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:19"
+    },
+    {
+      "text": "Cho‘g‘lanma lampa balloniga $3,5$ V va $0,28$ A deb yozilgan. Lampaning ish rejimidagi qarshiligi va quvvatini topilsin.",
+      "answers": [
+        "12,5 $\\Omega$, 0,98 W.",
+        "12,5 $\\Omega$, 0,9 W.",
+        "13 $\\Omega$, 1 W.",
+        "12 $\\Omega$, 0,8 W.",
+        "11 $\\Omega$, 1,2 W."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:20"
+    },
+    {
+      "text": "$72$ W quvvatli elektr chiroq $12$ V kuchlanishga mo‘ljallangan. Chiroqning qarshiligini aniqlang ($\\Omega$).",
+      "answers": [
+        "0,2.",
+        "2.",
+        "2,4.",
+        "5.",
+        "10."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:21"
+    },
+    {
+      "text": "$12$ V kuchlanishga mo‘ljallangan elektr lampaning quvvati $60$ W. Lampaning qarshiligini aniqlang ($\\Omega$).",
+      "answers": [
+        "10.",
+        "5.",
+        "2,4.",
+        "0,4.",
+        "0,2."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:22"
+    },
+    {
+      "text": "Elektr plitaning quvvati $1$ kW. Agar plitaning spiralidan $5$ A tok o‘tayotgan bo‘lsa, spiralning qarshiligi necha $\\Omega$ ga teng?",
+      "answers": [
+        "20.",
+        "40.",
+        "50.",
+        "200.",
+        "500."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:23"
+    },
+    {
+      "text": "$1$ W quvvatga mo‘ljallangan $1~\\Omega$ li rezistorga ko‘pi bilan necha Volt kuchlanish ulash mumkin?",
+      "answers": [
+        "1.",
+        "10.",
+        "100.",
+        "1000.",
+        "0."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:24"
+    },
+    {
+      "text": "$36$ V kuchlanishga mo‘ljallangan va $180$ W quvvatga ega bo‘lgan isitgich yasash uchun ko‘ndalang kesim yuzi $0,6$ mm$^2$ bo‘lgan nixrom simdan necha metr olish kerak? Nixromning solishtirma qarshiligi $\\rho=1,2\\cdot10^{-6}~\\Omega\\cdot$m.",
+      "answers": [
+        "36.",
+        "7,2.",
+        "3,6.",
+        "2,4.",
+        "1,8."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:25"
+    },
+    {
+      "text": "Tok kuchining qo‘yilgan kuchlanishga bog‘lanish grafigidan foydalanib, kuchlanish $40$ V bo‘lganda zanjirning shu qismida ajraladigan quvvatni aniqlang (W).",
+      "answers": [
+        "80.",
+        "40.",
+        "20.",
+        "10.",
+        "$1/20$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar63/r95e84a5a71.png",
+      "source": "45-mavzu1.tex#0:26"
+    },
+    {
+      "text": "Elektr plita tuzatilayotganda, spirali dastlabki uzunligining $0,2$ ulushiga qisqartirildi. Bunda uning quvvati qanday o‘zgaradi? $U=\\text{const}$.",
+      "answers": [
+        "o‘zgarmaydi.",
+        "1,25 marta kamayadi.",
+        "1,2 marta kamayadi.",
+        "1,25 marta ortadi.",
+        "1,2 marta ortadi."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:27"
+    },
+    {
+      "text": "$U_1=6$ V va $U_2=12$ V kuchlanishga mo‘ljallangan, bir xil quvvatga ega bo‘lgan ikkita lampochka qarshiliklarining nisbati $(R_1/R_2)$ nimaga teng bo‘ladi?",
+      "answers": [
+        "$1/4$.",
+        "$1/2$.",
+        "1.",
+        "2.",
+        "4."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:28"
+    },
+    {
+      "text": "$U_1=24$ V va $U_2=8$ V kuchlanishga mo‘ljallangan, bir xil quvvatli elektr chiroqlar qarshiliklarining nisbatini $(R_1/R_2)$ toping.",
+      "answers": [
+        "$1/4$.",
+        "$1/2$.",
+        "2.",
+        "4.",
+        "9."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:29"
+    },
+    {
+      "text": "Ikkita lampaning har biri $220$ V kuchlanishga mo‘ljallangan. Lampalardan birining quvvati $P_1=50$ W, boshqasiniki $P_2=150$ W. Shu lampalar qarshiliklari nisbati $R_2/R_1$ ni toping.",
+      "answers": [
+        "3.",
+        "$1/3$.",
+        "1.",
+        "$2/3$.",
+        "$3/2$."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:30"
+    },
+    {
+      "text": "Bir xil kuchlanishga mo‘ljallangan, quvvatlari $P_1=2P_2$ bo‘lgan ikkita chiroqning qarshiliklari qanday munosabatda bo‘ladi?",
+      "answers": [
+        "$R_2=4R_1$.",
+        "$R_1=2R_2$.",
+        "$R_1=4R_2$.",
+        "$R_2=2R_1$.",
+        "$R_1=R_2$."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:31"
+    },
+    {
+      "text": "Ikkita elektr isitkich tarmoqqa parallel ulangan. Birinchi isitkichning qarshiligi $50~\\Omega$, ikkinchisiniki $20~\\Omega$. Isitkichlar quvvatlarining nisbati $P_1/P_2$ ni toping.",
+      "answers": [
+        "0,25.",
+        "4.",
+        "0,4.",
+        "1.",
+        "2."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:32"
+    },
+    {
+      "text": "Qarshiliklari $R_1=2~\\Omega$ va $R_2=8~\\Omega$ bo‘lgan ikkita rezistor tok manbaiga parallel ulangan. Bu rezistorlardagi tokning quvvatlari $P_1$ va $P_2$ ni taqqoslang.",
+      "answers": [
+        "$P_1=2P_2$.",
+        "$P_1=4P_2$.",
+        "$P_1=P_2$.",
+        "$P_2=2P_1$.",
+        "$P_2=4P_1$."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:33"
+    },
+    {
+      "text": "Zanjir uchlaridagi kuchlanish $1,5$ marta oshirilganda, ajralgan quvvat $6$ marta oshdi. Zanjirdan o‘tayotgan tok kuchi o‘zgardimi?",
+      "answers": [
+        "o‘zgarmadi.",
+        "2 marta ortdi.",
+        "4 marta kamaydi.",
+        "4 marta ortdi.",
+        "2 marta kamaydi."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:34"
+    },
+    {
+      "text": "O‘zgarmas qarshilikka ega bo‘lgan zanjir uchlaridagi kuchlanish $6$ marta ortsa, tokning quvvati qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "6 marta kamayadi.",
+        "6 marta ortadi.",
+        "36 marta ortadi.",
+        "36 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "45-mavzu1.tex#0:35"
+    },
+    {
+      "text": "O‘tkazgich uchlaridagi kuchlanish $4$ marta ortsa, undagi tokning quvvati qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi.",
+        "16 marta ortadi.",
+        "16 marta kamayadi.",
+        "4 marta ortadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:36"
+    },
+    {
+      "text": "Kuchlanish o‘zgarmagan holda elektr qarshilik $5$ marta kamaysa, tokning quvvati qanday o‘zgaradi?",
+      "answers": [
+        "25 marta ortadi.",
+        "o‘zgarmaydi.",
+        "5 marta kamayadi.",
+        "25 marta kamayadi.",
+        "5 marta ortadi."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:37"
+    },
+    {
+      "text": "Elektr tarmog‘ida qarshiliklari $100~\\Omega$ va $200~\\Omega$ bo‘lgan ikkita elektr lampa o‘zaro parallel ulangan. Lampalarning qaysi biri ko‘proq quvvat sarflaydi?",
+      "answers": [
+        "quvvat sarfi teng bo‘ladi.",
+        "ikkinchisi 2 marta.",
+        "birinchisi 2 marta.",
+        "ikkinchisi 4 marta.",
+        "birinchisi 4 marta."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:38"
+    },
+    {
+      "text": "Kuchlanish o‘zgarmagan holda elektr qarshilik $2$ marta kamaysa, tokning quvvati qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "2 marta ortadi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:39"
+    },
+    {
+      "text": "Tok kuchi o‘zgarmagan holda elektr qarshilik $2$ marta kamaysa, tokning quvvati qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "2 marta ortadi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi."
+      ],
+      "correct": 1,
+      "source": "45-mavzu1.tex#0:40"
+    },
+    {
+      "text": "Ikkita bir xil rezistor o‘zgarmas kuchlanish tarmog‘iga avval parallel, so‘ngra ketma-ket ulandi. Qaysi holda tokning quvvati katta va necha marta katta bo‘ladi?",
+      "answers": [
+        "ikkala holda bir xil.",
+        "ketma-ket, 2 marta.",
+        "parallel, 2 marta.",
+        "ketma-ket, 4 marta.",
+        "parallel, 4 marta."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:41"
+    },
+    {
+      "text": "$R_1$ rezistorda ajralayotgan quvvat $40$ W, undagi kuchlanish $10$ V, $R_2$ rezistordagi tok kuchi $2$ A, $R_3$ rezistor qarshiligi $4~\\Omega$ bo‘lsa, zanjirning umumiy qarshiligi qanday ($\\Omega$)?",
+      "answers": [
+        "$1/3$.",
+        "0,9.",
+        "2.",
+        "4.",
+        "4,5."
+      ],
+      "correct": 4,
+      "images": "../rasmlar63/r03bd8c4e9f.png",
+      "source": "45-mavzu1.tex#0:42"
+    },
+    {
+      "text": "$U$ kuchlanish manbaiga ulangan $R$ qarshilikka $2R$ qarshilik ketma-ket ulansa, $R$ qarshilikdagi quvvat qanday o‘zgaradi?",
+      "answers": [
+        "9 marta kamayadi.",
+        "o‘zgarmaydi.",
+        "3 marta kamayadi.",
+        "3 marta oshadi.",
+        "2 marta kamayadi."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:43"
+    },
+    {
+      "text": "O‘zgarmas kuchlanishga ulangan $R$ qarshilikka qanday qarshilik ketma-ket ulansa, undagi ($R$ qarshilikdagi) quvvat $2,25$ marta kamayadi?",
+      "answers": [
+        "$2,25R$.",
+        "$1,5R$.",
+        "$0,5R$.",
+        "$0,75R$.",
+        "$R$."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:44"
+    },
+    {
+      "text": "Elektrodvigatel bir soatda $1080$ kJ foydali ish bajaradi va $0,4$ kW$\\cdot$h energiya iste’mol qiladi. Uning FIK (",
+      "answers": [
+        "25.",
+        "50.",
+        "75.",
+        "80.",
+        "90."
+      ],
+      "correct": 2,
+      "source": "45-mavzu1.tex#0:45"
+    },
+    {
+      "text": "Quvvati $1$ kW bo‘lgan suv qaynatgich $5$ min da suvga $100$ kJ issiqlik miqdori uzatadi. Bu qaynatgichning FIK qanday?",
+      "answers": [
+        "$1/3$.",
+        "114.",
+        "$1/5$.",
+        "$1/10$.",
+        "$1/2$."
+      ],
+      "correct": 0,
+      "source": "45-mavzu1.tex#0:46"
+    },
+    {
+      "text": "Massasi $1000$ kg bo‘lgan lift $0,025$ soatda $81$ m balandlikka tekis ko‘tarildi. Agar liftning FIK $90\\%$ bo‘lsa, motor iste’mol qiladigan quvvat qanday (kW)?",
+      "answers": [
+        "15.",
+        "20.",
+        "5.",
+        "1.",
+        "10."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:47"
+    },
+    {
+      "text": "Tok kuchi $110$ A va kuchlanishi $600$ V bo‘lganda, tramvay vagoni $3$ kN tortish kuchi hosil qiladi. Agar FIK $60\\%$ bo‘lsa, tramvay gorizontal yo‘lda qanday (m/s) tezlik bilan harakatlanadi?",
+      "answers": [
+        "15.",
+        "14.",
+        "13.",
+        "13,5.",
+        "13,2."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:48"
+    },
+    {
+      "text": "Elektrovoz $1,5$ kV kuchlanishli elektr tarmoqdan foydalanib, $18$ m/s tezlikda $45$ kN tortish kuchini hosil qilmoqda. Agar elektrovoz dvigatellarining FIKi $90\\%$ bo‘lsa, ulardagi umumiy tok kuchi necha Amper?",
+      "answers": [
+        "250.",
+        "300.",
+        "400.",
+        "500.",
+        "600."
+      ],
+      "correct": 4,
+      "source": "45-mavzu1.tex#0:49"
+    },
+    {
+      "text": "Ushbu elektr zanjirdagi 2-dazmolning quvvatini toping (W).",
+      "answers": [
+        "150.",
+        "100.",
+        "220.",
+        "1200.",
+        "960."
+      ],
+      "correct": 4,
+      "images": "../rasmlar63/reb9e50ab24.png",
+      "source": "45-mavzu1.tex#0:50"
+    },
+    {
+      "text": "Agar sxemadagi $K$ kalit ulansa zanjirda ajralib chiqayotgan quvvat qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "2 marta kamayadi.",
+        "4 marta kamayadi.",
+        "4 marta ortadi.",
+        "2 marta ortadi."
+      ],
+      "correct": 4,
+      "images": "../rasmlar63/re356d3702f.png",
+      "source": "45-mavzu1.tex#0:51"
+    },
+    {
+      "text": "Rasmda kuchlanish manbaiga ulangan $4$ ta lampochka tasvirlangan. Qaysi lampochkada eng katta quvvat ajraladi? Agar $U=100$ V bo‘lsa, shu quvvatni toping.",
+      "answers": [
+        "1-lampochkada 160 W.",
+        "3-lampochkada 2500 W.",
+        "4-lampochkada 192 W.",
+        "2- va 4-lampochkada bir xil 250 W.",
+        "1- va 3-lampochkada bir xil 180 W."
+      ],
+      "correct": 2,
+      "images": "../rasmlar63/rdf76efa0a6.png",
+      "source": "45-mavzu1.tex#0:52"
+    },
+    {
+      "text": "Chizmada berilgan zanjirdagi elektr tokining quvvati qanday (W). $U=12$ V, $R_1=7~\\Omega$, $R_2=5~\\Omega$, $R_3=R_5=4~\\Omega$, $R_4=9~\\Omega$.",
+      "answers": [
+        "40.",
+        "36.",
+        "48.",
+        "42.",
+        "24."
+      ],
+      "correct": 2,
+      "images": "../rasmlar63/r0df1d76533.png",
+      "source": "45-mavzu1.tex#0:53"
+    }
+  ]
+}

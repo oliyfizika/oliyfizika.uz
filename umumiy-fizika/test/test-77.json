@@ -1,0 +1,1761 @@
+{
+  "id": 77,
+  "title": "77-Mavzu | Linzalarda tasvir yasash",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 78,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Yig‘uvchi linza yordamida mavhum tasvir hosil qilish uchun buyum … joylashgan bo‘lishi kerak. Nuqtalar o‘rniga to‘g‘risini tanlab qo‘ying.",
+      "answers": [
+        "linza fokusida.",
+        "linza va fokus orasida.",
+        "linza va ikkilangan fokus orasida.",
+        "ikkilangan fokusdan keyin."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#0:3"
+    },
+    {
+      "text": "Buyum yig‘uvchi linzadan qanday masofada joylashgan bo‘lsa, mavhum, to‘g‘ri bo‘ladi?",
+      "answers": [
+        "$d<F$",
+        "$d>F$",
+        "$d>2F$",
+        "$d=2F$"
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#0:4"
+    },
+    {
+      "text": "Quyidagi optik asboblarning qaysi birida buyumning kattalashgan haqiqiy tasvirini hosil qilish mumkin?",
+      "answers": [
+        "yig‘uvchi linza",
+        "shisha plastina",
+        "yassi ko‘zgu",
+        "sochuvchi linza"
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#0:5"
+    },
+    {
+      "text": "AB buyumning linzadagi tasviri qaysi sohada hosil bo‘ladi?",
+      "answers": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ],
+      "correct": 0,
+      "images": "../rasmlar77/ra652babd07.png",
+      "source": "77-mavzu.tex#0:6"
+    },
+    {
+      "text": "AB buyumning yig‘uvchi linzadagi tasviri qanday bo‘ladi?",
+      "answers": [
+        "mavhum, to‘g‘ri, kichraygan.",
+        "mavhum, teskari, kattalashgan.",
+        "haqiqiy, teskari, kattalashgan.",
+        "haqiqiy, to‘g‘ri, kichraygan."
+      ],
+      "correct": 3,
+      "images": "../rasmlar77/rf1abb35a0c.png",
+      "source": "77-mavzu.tex#0:7"
+    },
+    {
+      "text": "Rasmda OO$'$ — linzaning bosh optik o‘qi, $S$ — buyum, $S'$ — uning haqiqiy tasviri. Bu qanday linza va nima yaqinroq joylashgan: buyumgami yoki uning tasvirigami?",
+      "answers": [
+        "sochuvchi, $S'$ ga.",
+        "sochuvchi, $S$ ga.",
+        "yig‘uvchi, $S'$ ga.",
+        "yig‘uvchi, $S$ ga.",
+        "yig‘uvchi, $S$ va $S'$ dan bir xil masofada."
+      ],
+      "correct": 3,
+      "images": "../rasmlar77/rda327ab68b.png",
+      "source": "77-mavzu.tex#0:8"
+    },
+    {
+      "text": "Buyum yupqa yig‘uvchi linzadan $F<d<2F$ tengsizlikni qanoatlantiruvchi $d$ masofada joylashgan bo‘lsa, uning tasviri qanday bo‘ladi?",
+      "answers": [
+        "mavhum va kichiklashgan, to‘g‘ri.",
+        "mavhum va kattalashgan, to‘g‘ri.",
+        "mavhum va kichiklashgan, teskari.",
+        "haqiqiy va kichiklashgan, teskari.",
+        "haqiqiy va kattalashgan, teskari."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#0:9"
+    },
+    {
+      "text": "Jism yig‘uvchi linzadan ikkilangan fokus masofadan ortiqroq masofada joylashgan. Uning linzadagi tasviri",
+      "answers": [
+        "mavhum va kattalashgan.",
+        "mavhum va kichiklashgan.",
+        "mavhum va teskari.",
+        "haqiqiy va kichiklashgan.",
+        "haqiqiy va kattalashgan."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#0:10"
+    },
+    {
+      "text": "Buyum linzadan uning ikkilangan fokus masofasidan uzoqroqda joylashganida tasvir hosil bo‘ladi?",
+      "answers": [
+        "haqiqiy, kichraygan.",
+        "haqiqiy, kattalashgan.",
+        "haqiqiy, teng.",
+        "mavhum, kattalashgan.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#0:11"
+    },
+    {
+      "text": "Buyum yupqa yig‘uvchi linzadan $d>2F$ masofada joylashtirilgan bo‘lsa, uning tasviri qanday bo‘ladi?",
+      "answers": [
+        "mavhum va kattalashgan, to‘g‘ri.",
+        "mavhum va kichiklashgan, teskari.",
+        "haqiqiy va kichiklashgan, teskari.",
+        "haqiqiy va kattalashgan, teskari."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#0:12"
+    },
+    {
+      "text": "Yig‘uvchi linzadan buyumgacha qanday masofada tasvir haqiqiy, to‘nkarilgan va kichiklashgan bo‘ladi?",
+      "answers": [
+        "$d=2F$",
+        "$d>2F$",
+        "$d<2F$",
+        "$d<F$"
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#0:14"
+    },
+    {
+      "text": "Rasmda linza, buyum, linzaning bosh optik o‘qi va fokuslari tasvirlangan. Shu vaziyatdagi buyumning tasviri qanday bo‘ladi?",
+      "answers": [
+        "mavhum va kichiklashgan.",
+        "haqiqiy va kattalashgan.",
+        "haqiqiy va kichiklashgan.",
+        "mavhum va kattalashgan."
+      ],
+      "correct": 0,
+      "images": "../rasmlar77/rddadc282da.png",
+      "source": "77-mavzu.tex#0:16"
+    },
+    {
+      "text": "Rasmda OO$'$ — linzaning bosh optik o‘qi, $S$ — buyum, $S'$ — uning mavhum tasviri. Bu qanday linza va tasvir qaysi tomonda joylashgan?",
+      "answers": [
+        "yig‘uvchi, $S'$ dan chap tomonda.",
+        "sochuvchi, $S'$ dan chap tomonda.",
+        "yig‘uvchi, $S'$ dan o‘ng tomonda.",
+        "sochuvchi, $S'$ dan o‘ng tomonda.",
+        "sochuvchi, $S$ va $S'$ orasida."
+      ],
+      "correct": 2,
+      "images": "../rasmlar77/red8bb20b05.png",
+      "source": "77-mavzu.tex#0:18"
+    },
+    {
+      "text": "Agar buyum yupqa sochuvchi linzadan uning ikkilangan fokus masofasiga nisbatan uzoqroq joylashgan bo‘lsa, uning tasviri qanday bo‘ladi?",
+      "answers": [
+        "to‘nkarilgan, haqiqiy, natural kattalikda.",
+        "kichiklashgan, to‘g‘ri, mavhum.",
+        "kattalashgan, to‘nkarilgan, haqiqiy.",
+        "to‘g‘ri, haqiqiy, natural kattalikda.",
+        "kichiklashgan, to‘nkarilgan, haqiqiy."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#0:19"
+    },
+    {
+      "text": "Sochuvchi linza yordamida buyumning haqiqiy tasvirini olish mumkinmi? Agar mumkin bo‘lsa, buyumni qayerga joylashtirish kerak?",
+      "answers": [
+        "ha, $2F$ ga.",
+        "ha, $F$ va $2F$ orasiga.",
+        "yo‘q, mumkin emas.",
+        "ha, $2F$ dan uzoqqa.",
+        "ha, linza bilan uning fokusi orasiga."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#0:20"
+    },
+    {
+      "text": "Buyum yupqa yig‘uvchi linzadan $2F$ masofada joylashgan bo‘lsa, uning tasviri qanday bo‘ladi?",
+      "answers": [
+        "to‘g‘ri, mavhum, kichiklashgan.",
+        "teskari, haqiqiy, o‘zining kattaligida.",
+        "teskari, haqiqiy, kattalashgan.",
+        "to‘g‘ri, haqiqiy, o‘zining kattaligida.",
+        "teskari, haqiqiy, kichiklashgan."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#0:21"
+    },
+    {
+      "text": "Optik sistema fokus masofasi 30 cm bo‘lgan uchta yig‘uvchi linzadan iborat. Linzalar markazlari orasidagi masofa ham 30 cm ga teng. Buyum chap tomondagi linzadan 60 cm uzoqlikda joylashgan. Buyumning tasviri qayerda va qanday bo‘ladi?",
+      "answers": [
+        "chap tomondagi linza o‘rnida, haqiqiy.",
+        "o‘rtadagi linza o‘rnida, haqiqiy.",
+        "o‘ng tomondagi linzadan 60 cm uzoqlikda, haqiqiy.",
+        "o‘rtadagi linza o‘rnida, mavhum.",
+        "o‘ng tomondagi linzadan 60 cm uzoqlikda, mavhum."
+      ],
+      "correct": 3,
+      "images": "../rasmlar77/re86dd4a04e.png",
+      "source": "77-mavzu.tex#0:22"
+    },
+    {
+      "text": "Yig‘uvchi linzadan buyumgacha bo‘lgan masofa 1 m, tasvirdan linzagacha 25 cm. Linzaning fokus masofasi necha cm?",
+      "answers": [
+        "20.",
+        "15.",
+        "12,5.",
+        "33.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:1"
+    },
+    {
+      "text": "Buyum fokus masofasi 12 cm bo‘lgan linzadan 16 cm uzoqlikda qo‘yildi. Linzaning kattalashtirishi qanday?",
+      "answers": [
+        "6.",
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:2"
+    },
+    {
+      "text": "Yig‘uvchi linzaning fokus masofasi $F$ ga teng. Linzaning kattalashtirishi 2 ga teng bo‘lishi uchun buyum undan qanday masofada qo‘yilishi kerak?",
+      "answers": [
+        "$1{,}5F$.",
+        "$F$.",
+        "$2F$.",
+        "$3F$.",
+        "$4F$."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:3"
+    },
+    {
+      "text": "Buyum fokus masofasi 50 cm bo‘lgan yig‘uvchi linzadan necha cm masofaga joylashtirilganda, 4 marta kattalashgan tasvir hosil qilishi mumkin?",
+      "answers": [
+        "25.",
+        "31,2.",
+        "50.",
+        "62,5.",
+        "75."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:4"
+    },
+    {
+      "text": "Fokus masofasi $F$ bo‘lgan yig‘uvchi linza yordamida ekranda tasvir hosil qilish uchun buyum va ekran orasidagi masofa kamida qanday bo‘lishi kerak?",
+      "answers": [
+        "$5F$.",
+        "$4F$.",
+        "$3F$.",
+        "$2F$.",
+        "$F$."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:5"
+    },
+    {
+      "text": "Fokus masofasi 1 m bo‘lgan yig‘uvchi linzadan necha metr masofaga buyumni joylashtirsak, uning mavhum tasviri linzadan 3 masofada hosil bo‘ladi?",
+      "answers": [
+        "2.",
+        "1,5.",
+        "1,25.",
+        "1.",
+        "0,75."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:6"
+    },
+    {
+      "text": "Fokus masofasi 36 cm bo‘lgan linzadan 18 cm uzoqlikda joylashgan buyumning kattalashgan mavhum tasviri linzadan necha cm masofada hosil bo‘ladi?",
+      "answers": [
+        "36.",
+        "18.",
+        "12.",
+        "9.",
+        "6."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:7"
+    },
+    {
+      "text": "Buyumni linzadan 25 cm masofaga qo‘ysak, uning haqiqiy tasviri linzadan 50 cm narida hosil bo‘ladi. Buyum shu linzadan 0,2 m masofaga qo‘yilsa, tasvir linzadan necha cm masofada hosil bo‘ladi?",
+      "answers": [
+        "40.",
+        "20.",
+        "25.",
+        "100.",
+        "35."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:8"
+    },
+    {
+      "text": "Yig‘uvchi linzadan buyumgacha bo‘lgan masofa 0,5 m va tasvirdan linzagacha bo‘lgan masofa 1 m bo‘lsa, linzaning fokus masofasi qanday (m)?",
+      "answers": [
+        "1,5.",
+        "0,33.",
+        "5.",
+        "3.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:9"
+    },
+    {
+      "text": "Buyumni fokus masofasi $F$ bo‘lgan yig‘uvchi linzadan qanday masofaga qo‘yganda, uning tasviri o‘ziga teng bo‘ladi?",
+      "answers": [
+        "$F$.",
+        "$2F$.",
+        "$3F$.",
+        "$4F$.",
+        "$F/2$."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:10"
+    },
+    {
+      "text": "Buyum bilan haqiqiy tasvir orasidagi masofaning eng kichik qiymatini toping. Linzaning fokus masofasi $F$ ga teng.",
+      "answers": [
+        "$F$.",
+        "$3F$.",
+        "$2F$.",
+        "$4F$.",
+        "$5F$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:11"
+    },
+    {
+      "text": "Fokus masofasi 5 cm bo‘lgan linza yordamida buyumning mavhum tasviri linzadan 10 cm masofada hosil qilindi. Linzaning kattalashtirishini toping.",
+      "answers": [
+        "10.",
+        "6.",
+        "5.",
+        "3.",
+        "2."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:12"
+    },
+    {
+      "text": "Buyum va uning tasviri orasidagi masofa eng kichik bo‘lishi uchun buyumni yig‘uvchi linzadan qanday masofada qo‘yish kerak?",
+      "answers": [
+        "$0{,}5F$.",
+        "$F$.",
+        "$F<d<2F$.",
+        "$2F$.",
+        "$d>2F$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:13"
+    },
+    {
+      "text": "Buyumdan linzagacha bo‘lgan masofa $d$ ga va linzaning fokus masofasi $F$ ga teng bo‘lsa, uning kattalashtirishi qanday bo‘ladi?",
+      "answers": [
+        "$\\dfrac{d-F}{F}$.",
+        "$\\dfrac{d}{d-F}$.",
+        "$\\dfrac{F}{d-F}$.",
+        "$\\dfrac{F-d}{F+d}$.",
+        "$\\dfrac{F+d}{F-d}$."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:14"
+    },
+    {
+      "text": "Linzaning fokus masofasi $F$, linzadan buyumgacha masofa $d$ bo‘lsa, linzaning kattalashtirishi qanday? (Tasvir haqiqiy)",
+      "answers": [
+        "$\\dfrac{d-F}{Fd}$.",
+        "$\\dfrac{dF}{d-F}$.",
+        "$\\dfrac{d}{d-F}$.",
+        "$\\dfrac{F}{d-F}$.",
+        "$\\dfrac{d-F}{d+F}$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:15"
+    },
+    {
+      "text": "Fokus masofasi $F$ bo‘lgan yig‘uvchi linzada o‘lchami $a$ ga teng bo‘lgan buyumning haqiqiy tasviri hosil qilindi. Agar linzadan tasvirgacha bo‘lgan masofa $b$ bo‘lsa, tasvirning o‘lchami qanday?",
+      "answers": [
+        "$\\dfrac{F}{a(f-F)}$.",
+        "$\\dfrac{aF}{f-F}$.",
+        "$\\dfrac{a(f-F)}{F}$.",
+        "$\\dfrac{a(f+F)}{F}$.",
+        "$\\dfrac{f-F}{aF}$."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:16"
+    },
+    {
+      "text": "Yig‘uvchi linzada hosil bo‘lgan va $k$ marta kattalashgan tasvirda buyumgacha bo‘lgan masofa $L$ ga teng bo‘lsa, linzadan tasvirgacha bo‘lgan masofa nimaga teng bo‘ladi?",
+      "answers": [
+        "$k(k^2+1)L$.",
+        "$k(k+1)L$.",
+        "$\\dfrac{k^2}{k+1}L$.",
+        "$\\dfrac{k+1}{k}L$.",
+        "$\\dfrac{k}{k+1}L$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:17"
+    },
+    {
+      "text": "Fokus masofasi $F$ ga teng. Linzaning kattalashtirishi 2 dan, ammo 3 dan kichik bo‘lishi uchun buyumni undan qanday uzoqlikda qo‘yish kerak?",
+      "answers": [
+        "$5F/3>d>3F/2$.",
+        "$3F<d<2F$.",
+        "$3F>d>2F$.",
+        "$4F/3<d<3F/2$.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:18"
+    },
+    {
+      "text": "Buyum yig‘uvchi linzaning fokusigacha bo‘lgan masofa 2 cm, haqiqiy tasvirdan ikkinchi fokusgacha bo‘lgan masofa 8 cm. Linzaning fokus masofasini aniqlang (cm).",
+      "answers": [
+        "2,5.",
+        "5.",
+        "10.",
+        "20.",
+        "4."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:19"
+    },
+    {
+      "text": "Yupqa linza fokusidan buyumgacha bo‘lgan $a$ masofa bilan ikkinchi fokusdan haqiqiy tasvirgacha bo‘lgan $b$ masofa ko‘paytmasi $(ab)$ ni linzaning fokus masofasi $F$ orqali ifodalang.",
+      "answers": [
+        "$2F^2/3$.",
+        "$2F^2$.",
+        "$F^3/(F+1)$.",
+        "$F^2/2$.",
+        "$F^2$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:20"
+    },
+    {
+      "text": "Yig‘uvchi linza yordamida yorug‘ nuqtaning tasviri hosil qilindi. Bunda linzadan nuqtagacha bo‘lgan masofa 50 cm, linzadan tasvirgacha masofa 12,5 cm. Linzaning fokus masofasi qanday (cm)?",
+      "answers": [
+        "1.",
+        "62,5.",
+        "37,5.",
+        "25.",
+        "10."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:21"
+    },
+    {
+      "text": "Buyumdan linzagacha bo‘lgan masofa 15 cm bo‘lganda, linzaning kattalashtirishi 2 ga teng bo‘lsa, linzaning fokus masofasi qanday (cm).",
+      "answers": [
+        "7,5.",
+        "$2/3$.",
+        "30.",
+        "15.",
+        "10."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:22"
+    },
+    {
+      "text": "Linzadan 25 cm masofada joylashgan buyumning ekranda 4 marta kattalashgan tasviri hosil bo‘ladi. Linzaning fokus masofasini aniqlang (m).",
+      "answers": [
+        "0,15.",
+        "0,2.",
+        "0,25.",
+        "0,3.",
+        "0,4."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:23"
+    },
+    {
+      "text": "Buyum bilan tasvir orasidagi masofa 1,5 m va tasvir buyumdan 4 marta katta bo‘lsa, linzaning fokus masofasi qanday (cm)?",
+      "answers": [
+        "24.",
+        "18.",
+        "22.",
+        "6.",
+        "26."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:24"
+    },
+    {
+      "text": "Yig‘uvchi linza buyumning 8 marta kichiklashgan tasvirini hosil qilmoqda. Agar buyumdan linzagacha bo‘lgan masofa 10 cm ga qisqartirilsa, buyumning 4 marta kichiklashgan tasviri hosil bo‘ladi. Linzaning fokus masofasi necha cm?",
+      "answers": [
+        "8.",
+        "5.",
+        "2,5.",
+        "2.",
+        "1,25."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:25"
+    },
+    {
+      "text": "Buyumdan linzagacha masofa $d$ ga, kattalashtirish $k$ ga teng va tasvir mavhum bo‘lsa, linzaning fokus masofasi qanday?",
+      "answers": [
+        "$k^2(k+1)d$.",
+        "$\\dfrac{k}{k+1}d$.",
+        "$\\dfrac{k}{k-1}d$.",
+        "$\\dfrac{k-1}{k}d$.",
+        "$\\dfrac{k+1}{k}d$."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:26"
+    },
+    {
+      "text": "Fokus masofasi 0,5 m ga teng bo‘lgan linza yordamida 5 marta kattalashtirilgan haqiqiy tasvir hosil qilish uchun buyumni linzadan necha metr masofaga qo‘yish kerak?",
+      "answers": [
+        "0,4.",
+        "0,6.",
+        "1.",
+        "1,24.",
+        "1,6."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:27"
+    },
+    {
+      "text": "Buyum bilan uning yig‘uvchi linzadagi haqiqiy tasviri orasidagi masofa 2,5 m. Linzadan tasvirgacha bo‘lgan masofa esa 2 m bo‘lsa, linzaning kattalashtirish koeffitsienti qanday?",
+      "answers": [
+        "0,8.",
+        "1,25.",
+        "5.",
+        "4.",
+        "10."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:28"
+    },
+    {
+      "text": "Ushbu rasmdagi $h$ o‘lchamli buyumning tasviri qanday o‘lchamga ega? ($h'-?$).",
+      "answers": [
+        "$h/3$.",
+        "$h$.",
+        "$2h$.",
+        "$3h/2$.",
+        "$3h$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:29"
+    },
+    {
+      "text": "Fokus masofasi 15 cm bo‘lgan yupqa yig‘uvchi linza yordamida buyumning 3 marta kattalashgan mavhum tasviri hosil qilindi. Buyumdan tasvirgacha bo‘lgan masofani (cm) aniqlang.",
+      "answers": [
+        "20.",
+        "10.",
+        "30.",
+        "40.",
+        "15."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:30"
+    },
+    {
+      "text": "Buyum bilan yig‘uvchi linza oralig‘i $3F$. Linzaning fokus masofasi $F$ bo‘lsa, tasvirning o‘lchami buyum o‘lchamidan necha marta katta bo‘ladi?",
+      "answers": [
+        "3.",
+        "2.",
+        "4.",
+        "5.",
+        "2,5."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:31"
+    },
+    {
+      "text": "Fokus masofasi 1 m bo‘lgan qavariq linzadan 3 m masofada jism turibdi. Linzaning chiziqli kattalashtirishini aniqlang.",
+      "answers": [
+        "1.",
+        "1,5.",
+        "2.",
+        "3.",
+        "0,5."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:32"
+    },
+    {
+      "text": "Yig‘uvchi linzadan buyumgacha bo‘lgan masofa fokus masofadan uch marta katta bo‘lsa, kattalashtirish koeffitsienti qanday?",
+      "answers": [
+        "3.",
+        "2.",
+        "1,5.",
+        "0,75.",
+        "0,5."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:33"
+    },
+    {
+      "text": "Buyum linzadan $4F$ masofada joylashgan. Shu buyumning ekrandagi tasviri o‘zidan necha marta kichik bo‘ladi?",
+      "answers": [
+        "2.",
+        "3.",
+        "4.",
+        "5.",
+        "8."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:34"
+    },
+    {
+      "text": "Agar haqiqiy tasvir buyumdan 3 marta kichik bo‘lsa, buyum linzadan qanday masofada joylashgan? Linzaning fokus masofasi $F$.",
+      "answers": [
+        "$4/3F$.",
+        "$1{,}5F$.",
+        "$2F$.",
+        "$4F$.",
+        "$6F$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:35"
+    },
+    {
+      "text": "Uzunligi 1 cm bo‘lgan igna fokus masofasi 3 cm bo‘lgan linzaning bosh optik o‘qiga o‘q bo‘ylab joylashtirildi. Agar ignaning bir uchi linza fokusidan 1 cm masofada yotgan bo‘lsa, ignaning haqiqiy tasviridagi uzunligini aniqlang (cm).",
+      "answers": [
+        "1,5.",
+        "2,5.",
+        "3,5.",
+        "4,5.",
+        "5,5."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:36"
+    },
+    {
+      "text": "Yig‘uvchi linzadan buyumgacha bo‘lgan masofa $d$ va linzaning fokus masofasi $F$ qanday munosabatda bo‘lganda, linzaning kattalashtirishi 0,5 ga teng bo‘ladi?",
+      "answers": [
+        "$d=4F$.",
+        "$d=2F$.",
+        "$d=F$.",
+        "$d=3F$.",
+        "$d=F/2$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:37"
+    },
+    {
+      "text": "Buyum yig‘uvchi linzadan $d=nF$ masofada joylashgan bo‘lsa, linza bilan tasvir orasidagi masofa qanday bo‘ladi?",
+      "answers": [
+        "$\\dfrac{nF}{n-1}$.",
+        "$\\dfrac{F(n+1)}{n}$.",
+        "$\\dfrac{F}{n}$.",
+        "$\\dfrac{F}{n+1}$.",
+        "$\\dfrac{F(n-1)}{n}$."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:38"
+    },
+    {
+      "text": "Qo‘zg‘almas buyum va ekran orasida linza surilmoqda. Linzaning ikki holatida ekranda buyumning $h_1$ va $h_2$ o‘lchamlari aniqlangan. Buyumning o‘lchami qanday?",
+      "answers": [
+        "$\\sqrt{2h_1h_2}$.",
+        "$\\sqrt{h_1h_2}$.",
+        "$\\dfrac{h_1-h_2}{2}$.",
+        "$\\dfrac{2h_1h_2}{h_1+h_2}$.",
+        "$\\dfrac{h_1+h_2}{2}$."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:39"
+    },
+    {
+      "text": "Sochuvchi yupqa linza formulasi qaysi javobda berilgan?",
+      "answers": [
+        "$-\\dfrac1F=\\dfrac1d-\\dfrac1{f'}$.",
+        "$\\dfrac1F=\\dfrac1d-\\dfrac1{f'}$.",
+        "$\\dfrac1F=\\dfrac1d+\\dfrac1{f'}$.",
+        "$-\\dfrac1F=\\dfrac1d-\\dfrac1d'$.",
+        "$-\\dfrac1F=\\dfrac1d+\\dfrac1{f'}$."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:40"
+    },
+    {
+      "text": "Shu’lalanayotgan nuqta fokus masofasi 10 cm bo‘lgan sochuvchi linza fokusida turibdi. Uning tasviri linzadan qanday masofada hosil bo‘ladi?",
+      "answers": [
+        "10 cm.",
+        "20 cm.",
+        "5 cm.",
+        "cheksizlikda.",
+        "tasvir hosil bo‘lmaydi."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:41"
+    },
+    {
+      "text": "Nuqtaviy yorug‘lik manbai fokus masofasi $F$ bo‘lgan sochuvchi linzaning fokusida turibdi. Uning tasviri linzadan qanday masofada hosil bo‘ladi?",
+      "answers": [
+        "$F/4$.",
+        "$F/2$.",
+        "$F$.",
+        "$1{,}5F$.",
+        "$2F$."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:42"
+    },
+    {
+      "text": "Buyumning sochuvchi linza berayotgan haqiqiy tasviri o‘zidan 2 marta kichik bo‘lishi uchun, buyumni linzadan qanday masofada joylashtirish kerak? ($F$–linzaning fokus masofasi).",
+      "answers": [
+        "$F/2$.",
+        "bu mumkin emas.",
+        "$2F$.",
+        "$F$.",
+        "$3F/2$."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:43"
+    },
+    {
+      "text": "Fokus masofasi 24 cm bo‘lgan linzadan 12 cm masofada joylashgan buyumning kichiklashgan mavhum tasviri linzadan necha cm masofada hosil bo‘ladi?",
+      "answers": [
+        "4.",
+        "8.",
+        "12.",
+        "18.",
+        "24."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:44"
+    },
+    {
+      "text": "Fokus masofasi 15 cm bo‘lgan linzadan 10 cm masofada joylashgan buyumning kichiklashgan tasviri linzadan qanday masofada hosil bo‘ladi? (cm)",
+      "answers": [
+        "6.",
+        "7,5.",
+        "16.",
+        "25.",
+        "30."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:45"
+    },
+    {
+      "text": "Fokus masofasi 10 cm bo‘lgan linzadan 15 cm masofada joylashgan buyumning mavhum tasviri linzadan necha cm masofada hosil bo‘ladi?",
+      "answers": [
+        "6.",
+        "7,5.",
+        "16.",
+        "20.",
+        "30."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:46"
+    },
+    {
+      "text": "Fokus masofasi 20 cm bo‘lgan linzadan 15 cm uzoqlikda buyumning kichiklashgan mavhum tasviri hosil bo‘ldi. Buyum linzadan necha cm masofada joylashgan?",
+      "answers": [
+        "8,6.",
+        "17,2.",
+        "30.",
+        "60.",
+        "75."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:47"
+    },
+    {
+      "text": "Buyum sochuvchi linza oldida undan $2F$ masofada turibdi. Tasvir linzadan qanday masofada hosil bo‘ladi?",
+      "answers": [
+        "$0{,}5F$.",
+        "$F$.",
+        "$F/3$.",
+        "$4F/3$.",
+        "$2F/3$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:48"
+    },
+    {
+      "text": "Buyumdan sochuvchi linzagacha bo‘lgan masofa linzaning fokus masofasidan $n$ marta katta bo‘lsa, tasvir buyumdan necha marta kichik bo‘ladi?",
+      "answers": [
+        "$n+1$.",
+        "$n$.",
+        "$n-1$.",
+        "$\\dfrac1{n+1}$.",
+        "$\\dfrac1{n-1}$."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:49"
+    },
+    {
+      "text": "Agar buyumdan sochuvchi linzagacha bo‘lgan masofa linzaning fokus masofasidan $m$ marta katta bo‘lsa, tasvir buyumdan necha marta kichik bo‘ladi?",
+      "answers": [
+        "$m-1$.",
+        "$m+1$.",
+        "$\\dfrac{m}{m+1}$.",
+        "$\\dfrac{m}{m-1}$.",
+        "$\\dfrac{m-1}{m+1}$."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:50"
+    },
+    {
+      "text": "Linzaning optik kuchi birligi – dioptriyani boshqa birliklar orqali qanday ifodalash mumkin?",
+      "answers": [
+        "cm$^{-1}$.",
+        "m.",
+        "m$^{-1}$.",
+        "N$^{-1}$.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:51"
+    },
+    {
+      "text": "Linzaning fokus masofasi 4 cm. Uning optik kuchi necha dioptriya?",
+      "answers": [
+        "4.",
+        "0,4.",
+        "0,25.",
+        "25.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:52"
+    },
+    {
+      "text": "Fokus masofasi 12,5 cm bo‘lgan linzaning optik kuchi necha dioptriya?",
+      "answers": [
+        "4.",
+        "2.",
+        "8.",
+        "12,5.",
+        "0,8."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:53"
+    },
+    {
+      "text": "Fokus masofasi 5 cm bo‘lgan sochuvchi linzaning optik kuchini aniqlang (dioptriyalarda).",
+      "answers": [
+        "5.",
+        "$-0{,}2$.",
+        "0,05.",
+        "$-20$.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:54"
+    },
+    {
+      "text": "Linzaning optik kuchi 4 D. Shu linzaning fokus masofasi necha cm?",
+      "answers": [
+        "0,25.",
+        "25.",
+        "4.",
+        "40.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:55"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan linzalar sistemasining optik kuchini aniqlang (D).",
+      "answers": [
+        "$-1{,}5$.",
+        "7.",
+        "$-3$.",
+        "3,5.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:56"
+    },
+    {
+      "text": "Fokus masofalari 20 va 30 cm bo‘lgan ikkita yupqa linzani birlashtirsak, hosil bo‘lgan linzaning fokus masofasi qanday bo‘ladi? (cm)",
+      "answers": [
+        "56.",
+        "50.",
+        "34.",
+        "12.",
+        "10."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:57"
+    },
+    {
+      "text": "Ikkita linza umumiy bosh optik o‘qqa ega. 1-linzaning fokus masofasi $F_1=-0{,}125$ m, 2-linzaning optik kuchi $D_2=8$ D. Linzalar sistemasining optik kuchini toping (D).",
+      "answers": [
+        "0.",
+        "2.",
+        "4.",
+        "8.",
+        "$-2$."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:58"
+    },
+    {
+      "text": "Optik kuchi 12 D bo‘lgan yig‘uvchi linzadan 50 cm masofada joylashgan buyumning tasviri linzadan necha cm masofada hosil bo‘ladi?",
+      "answers": [
+        "60.",
+        "25.",
+        "12.",
+        "10.",
+        "6."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:59"
+    },
+    {
+      "text": "Optik kuchi 2 D bo‘lgan linzada buyumning 5 marta kattalashgan haqiqiy tasvirini hosil qilayotgan bo‘lsa, linzadan tasvirgacha bo‘lgan masofa necha metr?",
+      "answers": [
+        "2.",
+        "1,5.",
+        "3.",
+        "0,5.",
+        "1."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:60"
+    },
+    {
+      "text": "Optik kuchi 3 D bo‘lgan linzada buyumning 5 marta kattalashgan haqiqiy tasviri hosil bo‘ldi. Buyumdan linzagacha necha metr?",
+      "answers": [
+        "0,3.",
+        "0,8.",
+        "0,6.",
+        "0,5.",
+        "0,4."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:61"
+    },
+    {
+      "text": "Jism optik kuchi 10 D bo‘lgan qavariq linzadan 30 cm masofada turibdi. Linzaning kattalashtirishini toping.",
+      "answers": [
+        "1,5.",
+        "1.",
+        "0,8.",
+        "0,5.",
+        "2."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:62"
+    },
+    {
+      "text": "Buyumning 5 marta kattalashgan tasvirini hosil qilish uchun optik kuchi qanday linza kerak va uni buyumdan qanday masofaga qo‘yish kerak? Buyumdan ekrangacha masofa 3 m.",
+      "answers": [
+        "2,6 D; 2 m.",
+        "3 D; 1 m.",
+        "2,4 D; 0,5 m.",
+        "1 D; 1,5 m.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:63"
+    },
+    {
+      "text": "Buyumning to‘g‘ri tasviri hosil bo‘lishi uchun buyum optik kuchi 2 D bo‘lgan yig‘uvchi linzadan ko‘pi bilan necha metr masofada bo‘lishi kerak?",
+      "answers": [
+        "0,4.",
+        "0,5.",
+        "0,8.",
+        "2.",
+        "4."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:64"
+    },
+    {
+      "text": "Tasvir optik kuchi 3 D bo‘lgan linzadan 50 cm uzoqlikda, buyum turgan tomonda hosil bo‘ldi. Buyum linzadan necha metr masofada joylashgan?",
+      "answers": [
+        "1.",
+        "0,5.",
+        "0,4.",
+        "0,25.",
+        "0,2."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:65"
+    },
+    {
+      "text": "Optik kuchi $+7$ dptr bo‘lgan yig‘uvchi va $-2$ dptr bo‘lgan sochuvchi linzalar ketma-ket joylashgan bo‘lib, ularning optik o‘qlari to‘g‘ri chiziqda yotadi. Agar buyum linzalardan 22 cm uzoqlikda joylashgan bo‘lsa, linzalar sistemasining chiziqli kattalashtirishini toping.",
+      "answers": [
+        "10.",
+        "5.",
+        "0,5.",
+        "4.",
+        "2."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:66"
+    },
+    {
+      "text": "Buyum optik kuchi $-1$ D bo‘lgan sochuvchi linzadan 4 m uzoqlikda turibdi. Tasvir linzadan necha metr masofada hosil bo‘ladi?",
+      "answers": [
+        "3.",
+        "1,25.",
+        "1,33.",
+        "1.",
+        "0,8."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:67"
+    },
+    {
+      "text": "Optik kuchi $-4$ D bo‘lgan sochuvchi linzadan 1 m masofada joylashgan buyumning tasviri linzadan qanday masofada hosil bo‘ladi?",
+      "answers": [
+        "20 cm.",
+        "1 m.",
+        "0,4 m.",
+        "10 cm.",
+        "1 cm."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:68"
+    },
+    {
+      "text": "Tasvirning o‘lchamlari buyum o‘lchamidan 4 marta kichik bo‘lishi uchun buyum optik kuchi $-4$ D bo‘lgan sochuvchi linzadan necha metr masofaga joylashtirilishi kerak?",
+      "answers": [
+        "0,75.",
+        "0,25.",
+        "1.",
+        "0,5.",
+        "0,85."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:69"
+    },
+    {
+      "text": "Agar linzadan 10 cm uzoqlikda joylashtirilgan buyumning mavhum tasviri linzadan 20 cm uzoqlikda hosil bo‘lsa, linzaning optik kuchi qanday (D)?",
+      "answers": [
+        "$+10$.",
+        "$-20$.",
+        "$+20$.",
+        "$-5$.",
+        "$+5$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:70"
+    },
+    {
+      "text": "Buyumning mavhum tasviri linzadan 50 cm masofada hosil bo‘ldi. Agar buyumdan linzagacha bo‘lgan masofa 25 cm bo‘lsa, linzaning optik kuchi necha D ga teng?",
+      "answers": [
+        "4.",
+        "$-2$.",
+        "3.",
+        "2.",
+        "3,5."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:71"
+    },
+    {
+      "text": "Agar linzadan 12,5 cm masofada joylashgan buyumning 2 marta kattalashgan mavhum tasviri hosil bo‘lsa, linzaning optik kuchi necha dioptriya?",
+      "answers": [
+        "2.",
+        "$-2$.",
+        "4.",
+        "$-4$.",
+        "6."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:72"
+    },
+    {
+      "text": "Linzadan 20 cm masofada joylashgan buyumning to‘g‘ri, kattalashgan tasviri buyumdan 30 cm masofada hosil bo‘ldi. Linzaning optik kuchini aniqlang (D).",
+      "answers": [
+        "$-5$.",
+        "3.",
+        "$-3$.",
+        "15.",
+        "10."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:73"
+    },
+    {
+      "text": "Tasvir optik kuchi 3 D bo‘lgan linzadan 50 cm uzoqlikda, buyum turgan tomonda hosil bo‘ldi. Buyum linzadan necha metr masofada joylashgan?",
+      "answers": [
+        "1.",
+        "0,5.",
+        "0,4.",
+        "0,25.",
+        "0,2."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:74"
+    },
+    {
+      "text": "Ekranda yig‘uvchi linzadan 1 m masofada joylashgan buyumning 2 marta kattalashgan tasviri ko‘rinayotgan bo‘lsa, linzaning optik kuchi necha dioptriya?",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "0,5.",
+        "1,5."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:75"
+    },
+    {
+      "text": "Buyum bilan ekran orasidagi masofa 2 m. Agar linzaning kattalashtirishi 2 ga teng bo‘lsa, uning optik kuchi qanday (D)?",
+      "answers": [
+        "$+2{,}25$.",
+        "$+3{,}12$.",
+        "$+1{,}26$.",
+        "$-2{,}25$.",
+        "$-3{,}12$."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:76"
+    },
+    {
+      "text": "Linzadan 10 cm masofada joylashgan buyumning 2 marta kichiklashgan mavhum tasviri hosil bo‘ldi. Linzaning optik kuchini aniqlang (D).",
+      "answers": [
+        "5.",
+        "$-5$.",
+        "10.",
+        "$-10$.",
+        "30."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:77"
+    },
+    {
+      "text": "Sochuvchi linzadan 1 m masofadagi buyumning tasviri linzadan 20 cm masofada joylashgan. Linzaning optik kuchini aniqlang (D).",
+      "answers": [
+        "$-6$.",
+        "5.",
+        "6.",
+        "$-4$.",
+        "$-3$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:78"
+    },
+    {
+      "text": "Sochuvchi linzadan 40 cm uzoqlikda buyumning 5 marta kichraygan mavhum tasviri hosil bo‘ldi. Linzaning optik kuchini aniqlang (D).",
+      "answers": [
+        "$-9$.",
+        "$-5$.",
+        "$-8$.",
+        "$-2$.",
+        "$-12$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#1:79"
+    },
+    {
+      "text": "Sochuvchi linzadan 50 cm uzoqlikdagi jismning mavhum tasviri 5 marta kichiklashgan holda hosil bo‘ldi. Shu linzaning optik kuchi necha D?",
+      "answers": [
+        "$-7$.",
+        "$-8$.",
+        "$-9$.",
+        "$-10$.",
+        "8."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:80"
+    },
+    {
+      "text": "Ikki tomoni qavariq va sirtlarining egrilik radiuslari bir xil $R_1=R_2=0{,}5$ m va sindirish ko‘rsatkichi 1,5 bo‘lgan shishadan yasalgan yig‘uvchi linzaning optik kuchi qanday (D)?",
+      "answers": [
+        "2.",
+        "0,5.",
+        "1.",
+        "1,5.",
+        "2,5."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:81"
+    },
+    {
+      "text": "Radiuslari 5 cm va 10 cm bo‘lgan ikki tomoni qavariq linzaning vakuumdagi fokus masofasi 10 cm ga teng. Linza materialining absolyut sindirish ko‘rsatkichini toping.",
+      "answers": [
+        "2.",
+        "1,5.",
+        "$4/3$.",
+        "2,5.",
+        "1,25."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:82"
+    },
+    {
+      "text": "Radiuslari 10 cm va 15 cm bo‘lgan ikki tomonlama qavariq linzaning vakuumdagi fokus masofasini aniqlang (cm). Linza materialining absolyut sindirish ko‘rsatkichi 1,6 ga teng.",
+      "answers": [
+        "20.",
+        "15.",
+        "40.",
+        "25.",
+        "10."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:83"
+    },
+    {
+      "text": "Absolyut sindirish ko‘rsatkichi 1,5 bo‘lgan shishadan yasalgan botiq-qavariq linzaning bosh fokus masofasi 24 cm. Bu linzaning biri ikkinchisidan 2 marta kichik bo‘lgan egrilik radiusini toping (cm).",
+      "answers": [
+        "14.",
+        "16.",
+        "18.",
+        "15.",
+        "12."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:84"
+    },
+    {
+      "text": "Absolyut sindirish ko‘rsatkichi 1,6 bo‘lgan shishadan sirtining egrilik radiusi 18 cm ga teng bo‘lgan yassi-qavariq yupqa linza yasaldi. Linza yassi sirtiga tik ravishda tushayotgan parallel nurlar dastasi linzadan qanday masofada yig‘iladi? (cm)",
+      "answers": [
+        "30.",
+        "18.",
+        "9.",
+        "36.",
+        "3."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:85"
+    },
+    {
+      "text": "Optik kuchi 8 D bo‘lgan linza sindirish ko‘rsatkichi 1,5 bo‘lgan shishadan yasalgan. Linza suyuqlikka tushirilganda fokus masofasi 1 m bo‘lgan sochuvchi linzaga aylandi. Suyuqlikning sindirish ko‘rsatkichini aniqlang.",
+      "answers": [
+        "1,6.",
+        "2.",
+        "1,4.",
+        "1,7.",
+        "1,8."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#1:86"
+    },
+    {
+      "text": "Qavariq linzaning fokus masofasi va linza sirtlarining egrilik radiuslari bir-biriga teng bo‘lsa, linza materialining sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "1,5.",
+        "1,4.",
+        "1,45.",
+        "1,3.",
+        "1,55."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:87"
+    },
+    {
+      "text": "Sindirish ko‘rsatkichi $n_L=1,6$ bo‘lgan yig‘uvchi shisha linza, sindirish ko‘rsatkichi $n_s=1,25$ bo‘lgan suyuqlikka tushirildi. Bunda ...",
+      "answers": [
+        "linzaning fokus masofasi ortdi.",
+        "linzaning fokus masofasi kamaydi.",
+        "linzaning optik kuchi o‘zgarmadi.",
+        "linza yig‘uvchidan sochuvchiga aylandi.",
+        "linza yorug‘lik nurlarini sindirish xususiyatini yo‘qotdi."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#1:88"
+    },
+    {
+      "text": "Kvartsdan ($n=1,7$) yasalgan $F_1$ fokus masofali yig‘uvchi linza suvga ($n=1,3$) va so‘ngra anilinga ($n=1,59$) tushirildi va mos ravishda $F_2$ va $F_3$ fokus masofali ko‘rinish oldi. Fokus masofalari to‘g‘ri munosabatni ko‘rsating.",
+      "answers": [
+        "$F_1=F_2=F_3$.",
+        "$F_3<F_1<F_2$.",
+        "$F_1>F_2>F_3$.",
+        "$F_2<F_1<F_3$.",
+        "$F_1<F_2<F_3$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#1:89"
+    },
+    {
+      "text": "Fokus masofasi $F$ bo‘lgan ikki yoqlama botiq linza yordamida buyumning haqiqiy tasvirini olish mumkinmi?",
+      "answers": [
+        "mumkin emas.",
+        "mumkin, agar buyum $F$ dan kichik masofada joylashgan bo‘lsa.",
+        "mumkin, agar linza optik zichligi linzanikidan kattaroq bo‘lgan shaffof muhitda bo‘lsa.",
+        "mumkin, agar buyum $F$ va $2F$ masofalar orasida joylashgan bo‘lsa.",
+        "mumkin, agar buyum $2F$ dan kattaroq masofada joylashgan bo‘lsa."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:90"
+    },
+    {
+      "text": "Ikki yoqlama botiq shisha linza yordamida haqiqiy tasvir olish mumkinmi?",
+      "answers": [
+        "mumkin emas.",
+        "mumkin, agar linza sindirish ko‘rsatkichi shishanikidan kichik bo‘lgan muhitda turgan bo‘lsa.",
+        "mumkin, agar linza sindirish ko‘rsatkichi shishanikidan katta bo‘lgan muhitda turgan bo‘lsa.",
+        "mumkin, agar buyum linzadan $2F$ masofada bo‘lsa ($F$ – fokus masofa).",
+        "mumkin, agar buyum cheksiz uzoqda bo‘lsa."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#1:91"
+    },
+    {
+      "text": "Lupada qanday tasvir hosil bo‘ladi?",
+      "answers": [
+        "haqiqiy, teskari, kattalashgan.",
+        "mavhum, teskari, kattalashgan.",
+        "mavhum, to‘g‘ri, kattalashgan.",
+        "haqiqiy, to‘g‘ri, kattalashgan.",
+        "haqiqiy, to‘g‘ri, kichiklashgan."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:1"
+    },
+    {
+      "text": "Buyumni lupa sifatida ishlatilayotgan $F$ fokus masofali linzadan qanday $d$ masofaga joylashtirish kerak?",
+      "answers": [
+        "$d>2F$.",
+        "$F<d<2F$.",
+        "$d<F$.",
+        "$d=F$.",
+        "$d=2F$."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:2"
+    },
+    {
+      "text": "Fokus masofasi 2,5 cm bo‘lgan lupaning optimal kattalashishi qanday?",
+      "answers": [
+        "9.",
+        "9,5.",
+        "10.",
+        "10,5.",
+        "11."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#2:3"
+    },
+    {
+      "text": "Fokus masofasi 5 cm bo‘lgan lupaning optimal kattalashishi qanday?",
+      "answers": [
+        "5.",
+        "6.",
+        "8.",
+        "4.",
+        "10."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#2:4"
+    },
+    {
+      "text": "Fokus oralig‘i 2,5 cm bo‘lgan lupadan foydalanib, buyumni necha marta kattalashtirib ko‘rish mumkin?",
+      "answers": [
+        "2,5.",
+        "11.",
+        "7,5.",
+        "5.",
+        "100."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#2:5"
+    },
+    {
+      "text": "Besh marta kattalashtiradigan lupaning optik kuchi necha D? Eng yaxshi ko‘rish masofasi 25 cm.",
+      "answers": [
+        "15.",
+        "16.",
+        "20.",
+        "8.",
+        "10."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#2:6"
+    },
+    {
+      "text": "6 marta kattalashtiradigan lupaning optik kuchini (D) toping.",
+      "answers": [
+        "150.",
+        "15.",
+        "20.",
+        "24.",
+        "25."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:7"
+    },
+    {
+      "text": "12 km balandlikdan uchib ketayotgan samolyotdan 1:16000 masshtabda joyni fotografiyasini olish uchun obyektivning fokus masofasi qanday bo‘lishi kerak (m)?",
+      "answers": [
+        "0,4.",
+        "0,45.",
+        "0,6.",
+        "0,75.",
+        "0,9."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#2:8"
+    },
+    {
+      "text": "8 m uzunlikdagi binoning fokus masofasi 5 cm bo‘lgan fotoapparat yordamida olingan tasviri uzunligi 0,01 m bo‘lsa, bino necha metr masofadan rasmga olingan?",
+      "answers": [
+        "4.",
+        "40,05.",
+        "41.",
+        "13.",
+        "4,1."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#2:9"
+    },
+    {
+      "text": "Balandligi 3 m bo‘lgan vagonni suratga olishda uning fotoplyonkadagi balandligi 12 mm bo‘ladi. Agar fotoapparat obyektivining fokus masofasi 20 cm bo‘lsa, surat qanday masofadan olingan (m)?",
+      "answers": [
+        "50.",
+        "40.",
+        "30.",
+        "20.",
+        "60."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#2:10"
+    },
+    {
+      "text": "5 m uzoqlikdan rasmga olinganda, odam tasvirining negativdagi balandligi 17 mm ga teng bo‘ldi. Fotoapparat obyektivining fokus masofasi 50 mm ga teng bo‘lsa, odamning haqiqiy bo‘yi qanday (m)?",
+      "answers": [
+        "1,8.",
+        "1,6.",
+        "1,65.",
+        "1,5.",
+        "1,7."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#2:11"
+    },
+    {
+      "text": "Bitta buyumni 2 marta: 90 cm va 165 cm uzoqlikdan suratga olindi. Tasvirining o‘lchami 4 cm va 2 cm bo‘lsa, fotoapparat obyektivining fokus masofasi necha cm?",
+      "answers": [
+        "15.",
+        "25.",
+        "20.",
+        "30.",
+        "10."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:12"
+    },
+    {
+      "text": "Proyektor qurilmasiga taalluqli bo‘lmagan elementni tanlang.",
+      "answers": [
+        "diapozitiv.",
+        "ob’ektiv.",
+        "yassi ko‘zgu.",
+        "sferik ko‘zgu.",
+        "yassi-qavariq linzalar tizimi."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:13"
+    },
+    {
+      "text": "Linza proeksion apparat ob’ektivi vazifasini bajarishi uchun, buyumni fokus masofasi $F$ ga teng bo‘lgan linzaga nisbatan qanday $l$ masofada joylashtirish kerak?",
+      "answers": [
+        "$F<l<2F$.",
+        "$l>2F$.",
+        "$l\\approx F$.",
+        "$l\\ll F$.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:14"
+    },
+    {
+      "text": "Proeksion apparat ob’ektivining fokus masofasi 25 cm. Agar ekran linzadan 200 cm uzoqda joylashgan bo‘lsa, apparat diapozitivda rasmni necha marta kattalashtirib bera oladi?",
+      "answers": [
+        "5.",
+        "6.",
+        "7.",
+        "8.",
+        "9."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:15"
+    },
+    {
+      "text": "Kitobdagi chizmaning balandligi 5 cm, ekranda esa 0,95 m. Ob’ektivdan ekrangacha bo‘lgan masofa 4 m bo‘lsa, proeksion apparat ob’ektivining fokus masofasini aniqlang(cm)?",
+      "answers": [
+        "20.",
+        "25.",
+        "30.",
+        "40.",
+        "60."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:16"
+    },
+    {
+      "text": "Proeksion apparat ob’ektivining fokus masofasi 20 cm, ob’ektivdan ekrangacha bo‘lgan masofa esa 20 m ga teng. Diapozitivda rasmning balandligi 4 cm bo‘lsa, ekrandagi tasvirning balandligi necha m bo‘ladi?",
+      "answers": [
+        "1,5.",
+        "2,6.",
+        "2,8.",
+        "3.",
+        "4."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#2:17"
+    },
+    {
+      "text": "Agar ob’ektivdan ekrangacha bo‘lgan masofa 12,4 m bo‘lsa, fokus masofasi 0,4 m bo‘lgan proeksion apparat yordamida kattalashtirish hosil qilish mumkin?",
+      "answers": [
+        "25.",
+        "40.",
+        "30.",
+        "20.",
+        "24."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:18"
+    },
+    {
+      "text": "Proeksion fonar ob’ektivining optik kuchi 8 D ga teng. Ekran bilan oradagi masofa necha metr bo‘lganda 25 karrali kattalashtirish hosil bo‘ladi?",
+      "answers": [
+        "3,25.",
+        "3,5.",
+        "4.",
+        "5.",
+        "6,5."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:19"
+    },
+    {
+      "text": "Mikroskopda qanday tasvir hosil bo‘ladi?",
+      "answers": [
+        "haqiqiy, teskari, kattalashgan.",
+        "haqiqiy, to‘g‘ri, kichiklashgan.",
+        "haqiqiy, to‘g‘ri, kattalashgan.",
+        "mavhum, to‘g‘ri, kattalashgan.",
+        "mavhum, teskari, kattalashgan."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#2:20"
+    },
+    {
+      "text": "Ko‘zning to‘r pardasida qanday tasvir hosil bo‘ladi?",
+      "answers": [
+        "kattalashgan, to‘g‘ri, haqiqiy.",
+        "kichraygan, to‘g‘ri, mavhum.",
+        "kichraygan, to‘nkarilgan, haqiqiy.",
+        "kattalashgan, to‘nkarilgan, mavhum.",
+        "predmet o‘lchoviga teng bo‘lgan, to‘g‘ri, haqiqiy."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:21"
+    },
+    {
+      "text": "Buyumning tasviri ko‘zning qaysi qismida hosil bo‘ladi?",
+      "answers": [
+        "to‘r pardada.",
+        "ko‘z qorachig‘ida.",
+        "shox pardada.",
+        "gavharda.",
+        "kamalak pardada."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:22"
+    },
+    {
+      "text": "Ko‘rishda nuqsoni bo‘lmagan odam uchun eng yaxshi ko‘rish masofasi qancha?",
+      "answers": [
+        "10 cm.",
+        "5–7 cm.",
+        "25 cm.",
+        "15 cm.",
+        "10–15 cm."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:23"
+    },
+    {
+      "text": "Yaqindan ko‘rish nuqsonining sababi?",
+      "answers": [
+        "tasvir to‘r pardaga yetmasdan hosil bo‘ladi.",
+        "tasvir to‘r pardaning o‘zida hosil bo‘ladi.",
+        "tasvir to‘r pardadan uzoqroqda hosil bo‘ladi.",
+        "tasvir shox pardada hosil bo‘ladi.",
+        "tasvir kamalak pardada hosil bo‘ladi."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:24"
+    },
+    {
+      "text": "Uzoqdan ko‘rish nuqsonining sababi?",
+      "answers": [
+        "tasvir to‘r pardaga yetmasdan hosil bo‘ladi.",
+        "tasvir to‘r pardaning o‘zida hosil bo‘ladi.",
+        "tasvir to‘r pardadan uzoqroqda hosil bo‘ladi.",
+        "tasvir shox pardada hosil bo‘ladi.",
+        "tasvir kamalak pardada hosil bo‘ladi."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:25"
+    },
+    {
+      "text": "Ko‘z gavhari ko‘z to‘r pardasida buyumlarning qanday tasvirini hosil qiladi?",
+      "answers": [
+        "haqiqiy, kichiklashgan, to‘nkarilgan.",
+        "mavhum, kichiklashgan, to‘g‘ri.",
+        "haqiqiy, kichiklashgan, to‘g‘ri.",
+        "haqiqiy, kattalashgan, to‘g‘ri.",
+        "mavhum, kichiklashgan, to‘nkarilgan."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:26"
+    },
+    {
+      "text": "Berilgan sxemalardan qaysi biri ko‘zning yaqindan ko‘rish nuqsonini ifodalaydi? Shu nuqsonni yo‘qotish uchun qanday ko‘zoynak taqish kerak?",
+      "answers": [
+        "1), yig‘uvchi linzali.",
+        "2), sochuvchi linzali.",
+        "1), sochuvchi linzali.",
+        "2), yig‘uvchi linzali.",
+        "berilgan sxemadan birontasi ham to‘g‘ri emas."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:27"
+    },
+    {
+      "text": "Rasmda yorug‘lik nurining ko‘z ichida tarqalishining mumkin bo‘lgan ikki holi (a va b) tasvirlangan. Bu hollarning qaysi biri yaqindan ko‘ruvchi ko‘zlarga xos va bunday ko‘zli kishi uchun qanday linzali ko‘zoynak kerak bo‘ladi?",
+      "answers": [
+        "a), sochuvchi.",
+        "a), yig‘uvchi.",
+        "b), yig‘uvchi.",
+        "b), sochuvchi.",
+        "rasmda yaqindan ko‘ruvchi ko‘z ichidagi nurlarning yo‘li tasvirlanmagan."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#2:28"
+    },
+    {
+      "text": "O‘quvchi o‘zidan 36 m narida turgan daraxtni 2,5$^\\circ$ burchak ostida ko‘rmoqda. Bu daraxtning balandligi (m) qanday?\n$tg\\alpha \\approx \\sin\\alpha$.",
+      "answers": [
+        "1,57.",
+        "4,03.",
+        "3,21.",
+        "2,01.",
+        "1,25."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:29"
+    },
+    {
+      "text": "Nuqsonsiz ko‘zning eng yaxshi ko‘rish masofasi 25 cm. Uzoqdan ko‘rar odam ko‘zining yaxshi ko‘rish masofasi 1 m bo‘lsa, bu odam optik kuchi necha D bo‘lgan ko‘zoynak taqishi kerak?",
+      "answers": [
+        "aniqlab bo‘lmaydi.",
+        "$+1$.",
+        "$+4$.",
+        "$-3$.",
+        "$+3$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#2:30"
+    },
+    {
+      "text": "Kishi kitobni 0,5 m masofadan o‘qiyapti. 25 cm masofadan normal o‘qish uchun unga optik kuchi qanday ko‘zoynak kerak bo‘ladi (D)?",
+      "answers": [
+        "$-2,5$.",
+        "$-2$.",
+        "$+2$.",
+        "$+2,5$.",
+        "$+3$."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:31"
+    },
+    {
+      "text": "Uzoqdan ko‘ruvchi odamning eng yaxshi ko‘rish masofasi 40 cm. Bu odamga zarur bo‘lgan ko‘zoynakning optik kuchini toping(D).",
+      "answers": [
+        "1.",
+        "1,5.",
+        "2.",
+        "2,5.",
+        "4."
+      ],
+      "correct": 1,
+      "source": "77-mavzu.tex#2:32"
+    },
+    {
+      "text": "Agar yaqindan ko‘rar kishi 12,5 cm masofadan o‘qiy olsa, u optik kuchi necha D bo‘lgan ko‘zoynak taqishi kerak bo‘ladi?",
+      "answers": [
+        "$+4$.",
+        "$+2$.",
+        "$-2$.",
+        "$-4$.",
+        "$-6$."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#2:33"
+    },
+    {
+      "text": "Kishi ko‘zidan ko‘zoynagi olib, kitobni 20 cm uzoqda tutgan holda o‘qiydi. Ko‘zoynakning optik kuchi qanday (D)?",
+      "answers": [
+        "$-2,25$.",
+        "$+2,25$.",
+        "$-1$.",
+        "$+1$.",
+        "$-1,25$."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:34"
+    },
+    {
+      "text": "Ahmad ko‘zoynagini olib, kitobni ko‘zdan 16 cm uzoqlikda o‘qiydi. Ko‘zoynakning optik kuchini toping(D).",
+      "answers": [
+        "2.",
+        "$-2$.",
+        "$-2,25$.",
+        "2,25.",
+        "4."
+      ],
+      "correct": 2,
+      "source": "77-mavzu.tex#2:35"
+    },
+    {
+      "text": "Ko‘zoynakli bola ko‘zoynagini olib, kitobni 16 cm masofada o‘qiydi. Bola ko‘zoynagining optik kuchini aniqlang(D).",
+      "answers": [
+        "$+4,25$.",
+        "$+2,25$.",
+        "$-3,5$.",
+        "$-4,25$.",
+        "$-2,25$."
+      ],
+      "correct": 4,
+      "source": "77-mavzu.tex#2:36"
+    },
+    {
+      "text": "Kishi optik kuchi $-4$ D bo‘lgan ko‘zoynakda o‘qimoqda. Uning ko‘zoynaksiz eng yaxshi ko‘rish masofasini toping (cm).",
+      "answers": [
+        "12,5.",
+        "14.",
+        "15,5.",
+        "16.",
+        "10,5."
+      ],
+      "correct": 0,
+      "source": "77-mavzu.tex#2:37"
+    },
+    {
+      "text": "Yaqindan ko‘ruvchi odam optik kuchi $-6$ D bo‘lgan ko‘zoynak taqadi. Agar nuqsonsiz ko‘z uchun eng yaxshi ko‘rish masofasi 25 cm bo‘lsa, bu odamning ko‘zoynaksiz eng yaxshi ko‘rish masofasi qanday (cm).",
+      "answers": [
+        "50.",
+        "25.",
+        "6.",
+        "10.",
+        "19."
+      ],
+      "correct": 3,
+      "source": "77-mavzu.tex#2:38"
+    }
+  ]
+}

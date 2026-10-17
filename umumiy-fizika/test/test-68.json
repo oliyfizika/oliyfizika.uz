@@ -1,0 +1,903 @@
+{
+  "id": 68,
+  "title": "68-Mavzu | Elektromagnit induksiya qonuni. Lens qoidasi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 69,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Faradeyning elektromagnit induksiya qonunining matematik ifodasini toping.",
+      "answers": [
+        "$\\varepsilon=-kF/I$.",
+        "$\\varepsilon=\\dfrac{\\Delta \\Phi}{\\Delta t}$.",
+        "$\\varepsilon=-\\dfrac{\\Delta \\Phi}{\\Delta t}$.",
+        "$\\varepsilon=k\\dfrac{\\Delta I}{\\Delta \\Phi \\Delta t}$.",
+        "$\\varepsilon=\\dfrac{4\\pi\\varepsilon_0}{\\Delta t}$."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:1"
+    },
+    {
+      "text": "Induksiya EYK ning birligini ko‘rsating.",
+      "answers": [
+        "T/s.",
+        "B$\\cdot$s.",
+        "Wb/s.",
+        "T$\\cdot$m$^2$.",
+        "Wb$\\cdot$s."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:2"
+    },
+    {
+      "text": "Kuchlanish birligi Voltning o‘rniga yana qaysi birlikni ishlatsa bo‘ladi?",
+      "answers": [
+        "H/s.",
+        "Wb.",
+        "Wb/s.",
+        "H$\\cdot$s.",
+        "Wb$\\cdot$s."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:3"
+    },
+    {
+      "text": "Berk kontur bir jinsli magnit maydonda induksiya chiziqlari bo‘ylab tezlanish bilan ilgarilanma harakat qilsa, induksiya EYK hosil bo‘ladimi?",
+      "answers": [
+        "bo‘ladi.",
+        "bo‘lmaydi.",
+        "bo‘ladi va chiziqli ravishda kamayib boradi.",
+        "bo‘ladi va chiziqli ravishda ortib boradi.",
+        "bo‘ladi va eksponensial ravishda o‘zgaradi."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:4"
+    },
+    {
+      "text": "Konturda hosil bo‘luvchi induksiya EYK $50$ V bo‘lishi uchun konturni kesib o‘tuvchi magnit oqimning o‘zgarish tezligi qanday (Wb/s) bo‘lishi kerak?",
+      "answers": [
+        "5.",
+        "10.",
+        "50.",
+        "100.",
+        "500."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:5"
+    },
+    {
+      "text": "Kontur kesib o‘tuvchi magnit oqim $2$ s da $10$ Wb dan $2$ Wb gacha tekis kamaydi. Konturda hosil bo‘lgan induksiya EYK ni toping (V).",
+      "answers": [
+        "10.",
+        "8.",
+        "4.",
+        "2.",
+        "0."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:6"
+    },
+    {
+      "text": "Konturdan o‘tayotgan magnit oqim $0,3$ s davomida $9$ Wb dan $6$ Wb gacha tekis kamaygan bo‘lsa, konturda hosil bo‘lgan induksiya EYK necha Voltga teng?",
+      "answers": [
+        "0,01.",
+        "0,9.",
+        "4,5.",
+        "10.",
+        "50."
+      ],
+      "correct": 3,
+      "source": "68-mavzu.tex#0:7"
+    },
+    {
+      "text": "Berk kontur kesib o‘tuvchi magnit oqim $0,4$ s davomida $4\\cdot10^{-5}$ Wb ga o‘zgardi. Induksiya EYK ni (V) aniqlang.",
+      "answers": [
+        "$4\\cdot10^{-4}$.",
+        "$10^{-5}$.",
+        "$10^{-4}$.",
+        "$4\\cdot10^{-5}$.",
+        "$2\\cdot10^{-4}$."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:8"
+    },
+    {
+      "text": "Solenoiddagi o‘ramlar soni $2,5$ marta ortsa, undagi induksiya EYK qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "5 marta ortadi.",
+        "5 marta kamayadi.",
+        "2,5 marta ortadi.",
+        "2,5 marta kamayadi."
+      ],
+      "correct": 3,
+      "source": "68-mavzu.tex#0:9"
+    },
+    {
+      "text": "$200$ o‘ramga ega bo‘lgan g‘altak ichida magnit oqim $0,2$ s da $0,2$ Wb dan $1,1$ Wb gacha ortdi. G‘altakda induksiyalanadigan EYK ni aniqlang (V).",
+      "answers": [
+        "1000.",
+        "500.",
+        "900.",
+        "450.",
+        "700."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:10"
+    },
+    {
+      "text": "$100$ ta o‘ramdan iborat solenoiddagi magnit maydon oqimi $1$ ms davomida $5\\cdot10^{-5}$ Wb dan $15\\cdot10^{-5}$ Wb gacha o‘zgarsa, unda vujudga keluvchi induksion EYK necha Volt bo‘ladi?",
+      "answers": [
+        "100.",
+        "10.",
+        "1.",
+        "0,1.",
+        "0,01."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:11"
+    },
+    {
+      "text": "Magnit oqimning o‘zgarish tezligi $0,24$ Wb/s bo‘lganda, g‘altakda $48$ V elektr yurituvchi kuch hosil bo‘lsa, g‘altakdagi o‘ramlar soni qanday?",
+      "answers": [
+        "200.",
+        "250.",
+        "260.",
+        "300.",
+        "20."
+      ],
+      "correct": 0,
+      "source": "68-mavzu.tex#0:12"
+    },
+    {
+      "text": "Agar magnit oqimning o‘zgarish tezligi $60$ mWb/s bo‘lganda g‘altakda uyg‘onuvchi EYK $\\varepsilon=12$ V bo‘lsa, g‘altakdagi o‘ramlar soni qanday?",
+      "answers": [
+        "2000.",
+        "3000.",
+        "2500.",
+        "300.",
+        "200."
+      ],
+      "correct": 4,
+      "source": "68-mavzu.tex#0:13"
+    },
+    {
+      "text": "Solenoiddagi magnit oqim $2$ ms da $3$ mWb dan $9$ mWb gacha o‘zgargan. Agar solenoidda hosil bo‘lgan EYK $60$ V bo‘lsa, solenoiddagi o‘ramlar soni qanday?",
+      "answers": [
+        "5.",
+        "20.",
+        "180.",
+        "200.",
+        "300."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:14"
+    },
+    {
+      "text": "O‘ramlar soni $80$ ta bo‘lgan tokli g‘altakda induksiya EYK $60$ V bo‘lsa, magnit oqimining o‘zgarish tezligi qanday (Wb/s)?",
+      "answers": [
+        "1,33.",
+        "0,8.",
+        "0,75.",
+        "0,48.",
+        "0,7."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:15"
+    },
+    {
+      "text": "Yopiq konturni kesib o‘tuvchi magnit oqimi $0,1$ Wb dan $1$ Wb gacha tekis ortganda, konturda $2,5$ V induksiya EYK hosil bo‘lgan bo‘lsa, magnit oqimi o‘zgarish vaqtini aniqlang(s).",
+      "answers": [
+        "0,36.",
+        "0,27.",
+        "0,39.",
+        "0,48.",
+        "0,12."
+      ],
+      "correct": 0,
+      "source": "68-mavzu.tex#0:16"
+    },
+    {
+      "text": "Yuzasi $30$ cm$^2$ bo‘lgan qo‘zg‘almas o‘ram bir jinsli magnit maydonda induksiya chiziqlariga perpendikulyar joylashgan. Agar magnit induksiyasi $0,01$ s dan $0,2$ T dan $0,7$ T gacha tekis ortsa, o‘ramda qanday induksiya EYK paydo bo‘ladi?",
+      "answers": [
+        "500.",
+        "50.",
+        "15.",
+        "0,15.",
+        "0,045."
+      ],
+      "correct": 3,
+      "source": "68-mavzu.tex#0:17"
+    },
+    {
+      "text": "O‘tkazgich halqa orqali magnit oqim $3$ s davomida $0,144$ Wb ga o‘zgargan. O‘tkazgichning qarshiligi $0,24~\\Omega$ bo‘lsa, induksiya toki necha Amper?",
+      "answers": [
+        "1,25.",
+        "0,6.",
+        "0,24.",
+        "0,2.",
+        "2,2."
+      ],
+      "correct": 4,
+      "source": "68-mavzu.tex#0:18"
+    },
+    {
+      "text": "Qarshiligi $0,01~\\Omega$ bo‘lgan kontur orqali o‘tuvchi magnit oqimi $2$ s da $0,012$ Wb ga tekis o‘zgarganda konturda hosil bo‘ladigan tok kuchini toping (A).",
+      "answers": [
+        "2,4.",
+        "0,1.",
+        "0,6.",
+        "0,68.",
+        "1,6."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:19"
+    },
+    {
+      "text": "Qarshiligi $0,8~\\Omega$ bo‘lgan simdan ramka yasalgan. Ramka orqali o‘tuvchi magnit oqimi $4$ s ichida $6$ Wb dan $-10$ Wb gacha tekis kamaydi. Ramkada vujudga kelgan tok kuchini (A) toping.",
+      "answers": [
+        "0,5.",
+        "5.",
+        "20.",
+        "2.",
+        "1."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:20"
+    },
+    {
+      "text": "$N=8$ ta o‘ramli g‘altakka tushayotgan magnit maydon induksiyasi $\\Delta t=0,5$ s ichida $B_1=0,8$ T dan $B_2=0,2$ T ga qadar kamaydi. G‘altak o‘ramining radiusi $r=10$ cm ga teng. Shu oraliqda g‘altakka ulangan $R=10~\\Omega$ qarshilikdan oqib o‘tgan induksion tokni aniqlang. ($r$ g‘altak simining qarshiligini e’tiborga olmang.) $\\pi=3$.",
+      "answers": [
+        "12,5.",
+        "3,24.",
+        "9,87.",
+        "28,8.",
+        "22,3."
+      ],
+      "correct": 3,
+      "images": "../rasmlar68/r09c10b840c.png",
+      "source": "68-mavzu.tex#0:21"
+    },
+    {
+      "text": "Induksiyasi $B$ bo‘lgan bir jinsli magnit maydonga o‘ramlari soni $N$ va kesim yuzasi $S$ bo‘lgan g‘altak joylashtiriladi. $t$ vaqt ichida 1-holatdan 2-holatga o‘tdi. Shu oraliqda g‘altakda hosil bo‘lgan induksiya EYK nimaga teng bo‘ladi?",
+      "answers": [
+        "$-\\dfrac{NBS}{t}$.",
+        "$-\\dfrac{1}{2}\\cdot\\dfrac{NBS}{t}$.",
+        "$-\\dfrac{\\sqrt3}{2}\\cdot\\dfrac{NBS}{t}$.",
+        "$\\dfrac{1}{2}\\cdot\\dfrac{NBS}{t}$.",
+        "$\\dfrac{\\sqrt3}{2}\\cdot\\dfrac{NBS}{t}$."
+      ],
+      "correct": 3,
+      "images": "../rasmlar68/r36d778c7ca.png",
+      "source": "68-mavzu.tex#0:22"
+    },
+    {
+      "text": "Rasmda berk konturni kesib o‘tayotgan magnit oqimining vaqtga bog‘lanish grafigi keltirilgan. Qaysi oraliqda konturda hosil bo‘ladigan induksiya EYK nolga teng bo‘ladi(s)?",
+      "answers": [
+        "0$\\div$2.",
+        "2$\\div$6.",
+        "10$\\div$12.",
+        "8$\\div$10.",
+        "6$\\div$8."
+      ],
+      "correct": 4,
+      "images": "../rasmlar68/r077056b4ec.png",
+      "source": "68-mavzu.tex#0:23"
+    },
+    {
+      "text": "Berk konturni kesib o‘tayotgan magnit oqimi vaqt bo‘yicha rasmda ko‘rsatilgandek o‘zgarsa, qaysi oraliqda konturda hosil bo‘ladigan induksiya EYK nolga bo‘ladi(s)?",
+      "answers": [
+        "10$\\div$12.",
+        "5$\\div$6.",
+        "6$\\div$8.",
+        "8$\\div$10.",
+        "0$\\div$5."
+      ],
+      "correct": 4,
+      "images": "../rasmlar68/rad65974c4a.png",
+      "source": "68-mavzu.tex#0:24"
+    },
+    {
+      "text": "Rasmda o‘ramni kesib o‘tayotgan magnit oqimning vaqtga bog‘lanish grafigi keltirilgan. O‘ramning qarshiligi $0,2~\\Omega$ bo‘lsa, B–C oralig‘ida undagi tok kuchi qanday (mA)?",
+      "answers": [
+        "2.",
+        "4.",
+        "6.",
+        "8.",
+        "12."
+      ],
+      "correct": 1,
+      "images": "../rasmlar68/reeae6f5f07.png",
+      "source": "68-mavzu.tex#0:25"
+    },
+    {
+      "text": "Qarshiligi $5~\\Omega$ bo‘lgan o‘ramni kesib o‘tayotgan magnit oqim vaqt bo‘yicha rasmda ko‘rsatilgandek o‘zgarsa, o‘ramdagi tok kuchi $2$–$4$ s vaqt oralig‘ida necha Amper bo‘ladi?",
+      "answers": [
+        "2.",
+        "0,4.",
+        "0,2.",
+        "0,1.",
+        "0."
+      ],
+      "correct": 1,
+      "images": "../rasmlar68/r6b01364ff3.png",
+      "source": "68-mavzu.tex#0:26"
+    },
+    {
+      "text": "Rasmda g‘altakni kesib o‘tayotgan magnit oqimning vaqtga bog‘lanish grafigi tasvirlangan. Induksiya EYKining vaqtga bog‘lanish grafigi qaysi rasmda to‘g‘ri berilgan?",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "1.",
+        "TJY."
+      ],
+      "correct": 0,
+      "images": "../rasmlar68/rd0858d698a.png",
+      "source": "68-mavzu.tex#0:28"
+    },
+    {
+      "text": "1–5-rasmlarda kontur orqali magnit oqimning vaqtga bog‘lanish grafiklari tasvirlangan. Qaysi holda doimiy va musbat EYK hosil bo‘ladi?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ],
+      "correct": 2,
+      "images": "../rasmlar68/r5039af371b.png",
+      "source": "68-mavzu.tex#0:29"
+    },
+    {
+      "text": "Kontur orqali o‘tuvchi magnit oqimi $\\Phi=-13,5t+0,28$ qonun bo‘yicha o‘zgarmoqda. Kontur qarshiligi $2,5~\\Omega$ bo‘lsa, undagi induksion tokni aniqlang(A). [$\\Phi$]=Veber.",
+      "answers": [
+        "6,2.",
+        "2,14.",
+        "5,4.",
+        "4,06.",
+        "1,07."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:30"
+    },
+    {
+      "text": "Qarshiligi $R=3,1~\\Omega$ bo‘lgan kontur orqali o‘tuvchi magnit oqimi $\\Phi=-5t^2-2t+5$ qonun bo‘yicha o‘zgarmoqda. Unda hosil bo‘lgan induksiya EYK ning va induksion tokning $t=6$ s vaqt momentidagi oniy qiymatini toping.",
+      "answers": [
+        "$\\varepsilon_i=54$ V, $I_i=30$ A.",
+        "$\\varepsilon_i=85$ V, $I_i=10$ A.",
+        "$\\varepsilon_i=16$ V, $I_i=2$ A.",
+        "$\\varepsilon_i=68$ V, $I_i=14$ A.",
+        "$\\varepsilon_i=62$ V, $I_i=20$ A."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:31"
+    },
+    {
+      "text": "O‘tkazgichdan yasalgan halqaning yuzi $25$ cm$^2$. Unga tik yo‘nalgan holda kesib o‘tuvchi magnit maydon induksiyasi $B=1,2+0,46t$ qonun bo‘yicha o‘zgaradi. Bu yerda [B]=Tesla, [t]=sekund. Halqada hosil bo‘lgan EYK qancha (mV) bo‘ladi?",
+      "answers": [
+        "1,15.",
+        "2,1.",
+        "1.",
+        "0,21.",
+        "1,9."
+      ],
+      "correct": 0,
+      "source": "68-mavzu.tex#0:32"
+    },
+    {
+      "text": "Qarshiligi $R=0,2~\\Omega$, yuzasi $S=0,3$ m$^2$ bo‘lgan halqaga induksiyasi $B=2t-2,5t^2$ qonuni bo‘yicha o‘zgaruvchi magnit maydoni tushmoqda. Unda hosil bo‘lgan induksiya EYK ning va induksion tokning $t=4,4$ s vaqt momentidagi oniy qiymatini toping. [B]=Tesla.",
+      "answers": [
+        "$\\varepsilon_i=86$ V, $I_i=2$ A.",
+        "$\\varepsilon_i=67$ V, $I_i=1$ A.",
+        "$\\varepsilon_i=56$ V, $I_i=5$ A.",
+        "$\\varepsilon_i=6$ V, $I_i=30$ A.",
+        "$\\varepsilon_i=15$ V, $I_i=75$ A."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:33"
+    },
+    {
+      "text": "Qarshiligi $5~\\Omega$ bo‘lgan o‘tkazgich halqani kesib o‘tuvchi magnit oqimi vaqt bo‘yicha rasmda ko‘rsatilgandek o‘zgarmoqda. Har uchala qismda hosil bo‘ladigan induksion toklarni aniqlang.",
+      "answers": [
+        "0,01 A; 0; 0,5 A.",
+        "0,02 A; 0; 0,1 A.",
+        "0,05 A; 0; 0,5 A.",
+        "0,01 A; 0; 0,2 A.",
+        "0,05 A; 0; 0,1 A."
+      ],
+      "correct": 1,
+      "images": "../rasmlar68/ra277bba38a.png",
+      "source": "68-mavzu.tex#0:34"
+    },
+    {
+      "text": "Qarshiligi $2~\\Omega$ bo‘lgan konturni kesib o‘tuvchi magnit oqimi $0,1$ mWb dan $0,4$ mWb gacha tekis ortdi. O‘tkazgichning ko‘ndalang kesim yuzini vaqtda qancha o‘zgaradi (tadi)(mC)?",
+      "answers": [
+        "0,2.",
+        "0,4.",
+        "0,15.",
+        "0,12.",
+        "0."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:35"
+    },
+    {
+      "text": "Yuzi $200$ cm$^2$ bo‘lgan ramka induksiyasi $0,9$ T bo‘lgan bir jinsli magnit maydonda $50$ rad/s burchak tezlik bilan aylanmoqda. Ramkaning $40$ ta o‘ramida hosil bo‘ladigan EYK ning amplitudaviy qiymati necha Volt?",
+      "answers": [
+        "36.",
+        "40.",
+        "16.",
+        "25.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "68-mavzu.tex#0:36"
+    },
+    {
+      "text": "O‘ramlari soni $200$ ta va yuzi $150$ cm$^2$ bo‘lgan ramka induksiyasi $0,4$ T bo‘lgan bir jinsli magnit maydonda aylanmoqda. Ramkadagi EYK ning eng katta qiymati $6$ V bo‘lsa, ramka qanday burchak tezlik bilan aylanmoqda(rad/s)?",
+      "answers": [
+        "30.",
+        "3.",
+        "5.",
+        "23.",
+        "16."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:37"
+    },
+    {
+      "text": "Bir jinsli magnit maydonda aylantirilganda, ramkani kesib o‘tuvchi magnit oqim $\\Phi=0,1\\cos30t$ qonuni bo‘yicha o‘zgaradi. Ramkada hosil bo‘ladigan induksiya EYKning maksimal qiymati necha Voltga teng bo‘ladi? [$\\Phi$]=Veber.",
+      "answers": [
+        "30.",
+        "3.",
+        "1,5.",
+        "0,3.",
+        "0,1."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:38"
+    },
+    {
+      "text": "Qarshiligi $R=20~\\Omega$ bo‘lgan metall halqa bir jinsli magnit maydonda aylantirilganda, ramkani kesib o‘tuvchi magnit oqim $\\Phi=8\\cos1,5t$ qonuni bo‘yicha o‘zgaradi. Ramkada hosil bo‘ladigan induksiya EYK ning va induksion tokining $t=\\pi/9$ s vaqt momentidagi oniy qiymatini toping. [$\\Phi$]=Veber.",
+      "answers": [
+        "$\\varepsilon_i=65$ V, $I_i=6$ A.",
+        "$\\varepsilon_i=22$ V, $I_i=1,1$ A.",
+        "$\\varepsilon_i=6$ V, $I_i=0,3$ A.",
+        "$\\varepsilon_i=5$ V, $I_i=0,25$ A.",
+        "$\\varepsilon_i=2$ V, $I_i=0,1$ A."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:39"
+    },
+    {
+      "text": "O‘tkazgich rasmda ko‘rsatilgan magnit maydonda $v$ tezlik bilan harakatlanmoqda. Undagi induksion tok yo‘nalishini toping.",
+      "answers": [
+        "o‘quvchiga qarab yo‘nalgan.",
+        "o‘tkazgichning harakat yo‘nalishida yo‘nalgan.",
+        "o‘quvchidan pastga qarab yo‘nalgan.",
+        "o‘tkazgichning harakatiga qarshi yo‘nalgan.",
+        "bu yerda induksion tok yuzaga kelmaydi."
+      ],
+      "correct": 0,
+      "images": "../rasmlar68/r1b1e376a05.png",
+      "source": "68-mavzu.tex#0:40"
+    },
+    {
+      "text": "O‘tkazgich magnit qutblari orasida induksiya chiziqlariga tik bo‘lgan holda harakatlanmoqda. Undagi induksion tok o‘quvchi tomon yo‘nalgan bo‘lsa, o‘tkazgichning harakat yo‘nalishi qanday?",
+      "answers": [
+        "chapga.",
+        "pastga.",
+        "o‘ngga.",
+        "tepaga.",
+        "TJY."
+      ],
+      "correct": 4,
+      "images": "../rasmlar68/rb8433099b2.png",
+      "source": "68-mavzu.tex#0:41"
+    },
+    {
+      "text": "Quyidagi rasmda to‘g‘ri o‘tkazgich ikkita magnit qutblari orasida harakatlanmoqda. Agar o‘tkazgichda induksion tok hosil bo‘lsa, magnit qutblarini aniqlang.",
+      "answers": [
+        "yuqori-N; past-S.",
+        "yuqori-S; past-N.",
+        "yuqori-S; past-S.",
+        "yuqori-N; past-N.",
+        "ixtiyoriy bo‘lishi mumkin."
+      ],
+      "correct": 0,
+      "images": "../rasmlar68/rdfec4ecdda.png",
+      "source": "68-mavzu.tex#0:42"
+    },
+    {
+      "text": "Harakatlanayotgan o‘tkazgichda hosil bo‘ladigan induksiya EYK’i ifodasi qaysi javobda keltirilgan?",
+      "answers": [
+        "$\\varepsilon=qvB\\sin\\alpha$.",
+        "$\\varepsilon=vBl\\sin\\alpha$.",
+        "$\\varepsilon=nevS$.",
+        "$\\varepsilon=IBl\\sin\\alpha$.",
+        "$\\varepsilon=-L\\Delta I/\\Delta t$."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:43"
+    },
+    {
+      "text": "Uzunligi $0,7$ m bo‘lgan to‘g‘ri o‘tkazgich induksiyasi $5$ T bo‘lgan bir jinsli magnit maydonda $20$ m/s tezlik bilan harakatlanadi. Magnit induksiya vektori, tezlik vektori va o‘tkazgich o‘zaro perpendikular. O‘tkazgichda paydo bo‘ladigan induksiya EYK topilsin(V).",
+      "answers": [
+        "60.",
+        "70.",
+        "80.",
+        "90.",
+        "100."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:44"
+    },
+    {
+      "text": "$0,3$ m uzunlikka ega bo‘lgan o‘tkazgich $0,4$ T induksiyali bir jinsli magnit maydonda magnit induksiya vektoriga tik joylashgan. U o‘ziga tik yo‘nalishda magnit induksiya vektoriga $30^\\circ$ burchak ostida $5$ m/s tezlik bilan harakatlanganda hosil bo‘ladigan induksiya EYK’i necha Voltga teng?",
+      "answers": [
+        "0,1.",
+        "0,2.",
+        "0,3.",
+        "0,5.",
+        "0,8."
+      ],
+      "correct": 2,
+      "source": "68-mavzu.tex#0:45"
+    },
+    {
+      "text": "$60$ cm uzunlikdagi o‘tkazgichni bir jinsli magnit maydonda induksiya chiziqlariga tik yo‘nalishda $5$ m/s tezlik bilan harakatlantirish natijasida $0,3$ V induksiya EYK hosil bo‘ldi. Magnit maydon induksiyasi qanday (T)?",
+      "answers": [
+        "0,04.",
+        "0,1.",
+        "0,2.",
+        "0,4.",
+        "0,5."
+      ],
+      "correct": 0,
+      "source": "68-mavzu.tex#0:46"
+    },
+    {
+      "text": "Uzunligi $0,4$ m bo‘lgan o‘tkazgich bir jinsli magnit maydon induksiya chiziqlariga va o‘ziga tik ravishda $5$ m/s tezlik bilan harakatlanganda, $0,6$ V induksiya EYK hosil bo‘lsa, magnit maydon induksiyasi necha Teslaga teng?",
+      "answers": [
+        "0,3.",
+        "0,4.",
+        "0,5.",
+        "0,2.",
+        "0,6."
+      ],
+      "correct": 3,
+      "source": "68-mavzu.tex#0:47"
+    },
+    {
+      "text": "Uzunligi $0,3$ m bo‘lgan to‘g‘ri o‘tkazgich magnit maydonini induksiya chiziqlariga $30^\\circ$ burchak ostida $6$ m/s tezlik bilan kesib o‘tadi. Tezlik yo‘nalishi o‘tkazgichga tik. O‘tkazgichda induksiyalanuvchi EYK $3,6$ V ga teng bo‘lsa, maydonning magnit induksiyasi necha Tesla?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "6."
+      ],
+      "correct": 3,
+      "source": "68-mavzu.tex#0:48"
+    },
+    {
+      "text": "Induksiyasi $0,5$ T bo‘lgan magnit maydonda induksiya chiziqlariga tik yo‘nalishda $6$ m/s tezlik bilan harakatlanayotgan o‘tkazgichda $12$ V EYK hosil bo‘lishi uchun uning uzunligi qanday bo‘lishi kerak(m)?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "6."
+      ],
+      "correct": 3,
+      "source": "68-mavzu.tex#0:49"
+    },
+    {
+      "text": "Magnit induksiyasi $0,2$ T bo‘lgan maydonda aktiv qismining uzunligi $0,5$ m bo‘lgan o‘tkazgich induksiya chiziqlariga $30^\\circ$ burchak ostida qanday tezlik bilan harakatlanganda, unda $0,8$ V induksiya EYK hosil bo‘ladi (m/s)?",
+      "answers": [
+        "0,5.",
+        "2.",
+        "8.",
+        "10.",
+        "16."
+      ],
+      "correct": 4,
+      "source": "68-mavzu.tex#0:50"
+    },
+    {
+      "text": "Induksiyasi $0,2$ T bo‘lgan bir jinsli magnit maydonda $20$ cm uzunlikdagi o‘tkazgichni induksiya chiziqlariga tik yo‘nalishda necha m/s tezlik bilan harakatlantirganda, unda $0,2$ V induksiya EYK hosil bo‘ladi?",
+      "answers": [
+        "0,2.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ],
+      "correct": 4,
+      "source": "68-mavzu.tex#0:51"
+    },
+    {
+      "text": "Induksiyasi $1$ T bo‘lgan magnit maydonda induksiya chiziqlariga tik yo‘nalishda harakatlanayotgan mis o‘tkazgichning $1$ A induksion tok hosil bo‘lishi uchun o‘tkazgichning tezligi necha m/s bo‘lishi kerak? O‘tkazgichning ko‘ndalang kesimi $0,017$ mm$^2$, misning solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "0,5.",
+        "1.",
+        "1,5.",
+        "2.",
+        "3."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:52"
+    },
+    {
+      "text": "Yerning va bir-biridan izolyatsiyalangan temir yo‘l relslari millivoltmetr ulangan. Temir yo‘ldan $180$ km/h tezlik bilan poezd o‘tib ketayotganida, millivoltmetr nimani ko‘rsatadi (V)? Yer magnit maydonining induksiyasining vertikal tashkil etuvchisi $B=0,2\\cdot10^{-4}$ T, relslar orasidagi masofa $1$ m.",
+      "answers": [
+        "0.",
+        "$10^{-3}$.",
+        "$2\\cdot10^{-3}$.",
+        "20.",
+        "220."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:53"
+    },
+    {
+      "text": "Induksiyasi $15$ mT bo‘lgan magnit maydonda uzunligi $25$ cm, elektr qarshiligi $0,5~\\Omega$ bo‘lgan sim doimiy $36$ km/h tezlik bilan rasmda ko‘rsatilgandek harakatlanmoqda. Konturda hosil bo‘lgan induksion tokni (mA) toping.",
+      "answers": [
+        "20.",
+        "30.",
+        "15.",
+        "75.",
+        "50."
+      ],
+      "correct": 3,
+      "images": "../rasmlar68/r593b853fcb.png",
+      "source": "68-mavzu.tex#0:54"
+    },
+    {
+      "text": "Induksiyasi $4$ T bo‘lgan bir jinsli magnit maydonda induksiya chiziqlariga tik ravishda $5$ m/s tezlik bilan sim harakatlanmoqda. Bu sim uzunligi $20$ cm va qarshiligi $0,8~\\Omega$ bo‘lsa, unda hosil bo‘lgan induksion tokni o‘lchovchi ampermetr nimani ko‘rsatadi? Bu tokning yo‘nalishini toping.",
+      "answers": [
+        "4 A, “1” yo‘nalishda.",
+        "4 A, “2” yo‘nalishda.",
+        "5 A, “1” yo‘nalishda.",
+        "5 A, “2” yo‘nalishda.",
+        "2 A, “1” yo‘nalishda."
+      ],
+      "correct": 3,
+      "images": "../rasmlar68/r0076ee2379.png",
+      "source": "68-mavzu.tex#0:55"
+    },
+    {
+      "text": "O‘tkazgichdan yasalgan halqa ichiga magnit janubiy qutbi bilan kiritila boshlaganda halqa magnitga tortiladimi, itariladimi?",
+      "answers": [
+        "itariladi.",
+        "tortiladi.",
+        "tortilmaydi ham, itarilmaydi ham.",
+        "tortilishi ham mumkin, itarilishi ham.",
+        "javob halqaning moddasiga bog‘liq."
+      ],
+      "correct": 0,
+      "source": "68-mavzu.tex#0:56"
+    },
+    {
+      "text": "Magnit shimoliy qutbi bilan o‘tkazgich halqaga kiritilayotganda, halqa magnitga tortiladimi, itariladimi?",
+      "answers": [
+        "tortiladi.",
+        "itariladi.",
+        "tortilmaydi ham, itarilmaydi ham.",
+        "javob magnitning tezligiga bog‘liq.",
+        "javob halqaning diametriga bog‘liq."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:57"
+    },
+    {
+      "text": "O‘tkazgichdan yasalgan halqa ipga osib qo‘yilgan. Unga o‘ramlaridan o‘zgaruvchan tok o‘tayotgan elektromagnit yaqinlashtirilsa, halqa qanday harakatlanadi?",
+      "answers": [
+        "elektromagnitga tortiladi.",
+        "elektromagnitdan itariladi.",
+        "gorizontal tebranadi.",
+        "vertikal tebranadi.",
+        "harakatlanmaydi."
+      ],
+      "correct": 1,
+      "source": "68-mavzu.tex#0:58"
+    },
+    {
+      "text": "Doimiy magnit janubiy qutbi bilan metall halqadan uzoqlashtirilmoqda. Halqa magnitga tortiladimi yoki qochadimi? Halqaga magnit harakati yo‘nalishiga qaraganda induksion tok yo‘nalishi qanday bo‘ladi?",
+      "answers": [
+        "tortiladi, soat strelkasi bo‘ylab.",
+        "tortiladi, soat strelkasiga qarama-qarshi.",
+        "qochadi, soat strelkasiga qarama-qarshi.",
+        "qochadi, soat strelkasi bo‘ylab.",
+        "tortiladi va tortilmaydi, tok kuchi nolga teng."
+      ],
+      "correct": 0,
+      "images": "../rasmlar68/r68f24eca28.png",
+      "source": "68-mavzu.tex#0:59"
+    },
+    {
+      "text": "Doimiy magnit shimoliy qutbi bilan metall halqaga yaqinlashtirilmoqda. Halqa magnitga tortiladimi yoki qochadimi? Halqaga magnit harakati yo‘nalishiga qaraganda induksion tok yo‘nalishi qanday bo‘ladi?",
+      "answers": [
+        "tortiladi, soat strelkasiga qarama-qarshi.",
+        "qochadi, soat strelkasi bo‘ylab.",
+        "qochadi, soat strelkasiga qarama-qarshi.",
+        "tortiladi, soat strelkasi bo‘ylab.",
+        "qochmaydi va tortilmaydi, tok kuchi nolga teng."
+      ],
+      "correct": 2,
+      "images": "../rasmlar68/r9c6500509e.png",
+      "source": "68-mavzu.tex#0:60"
+    },
+    {
+      "text": "Induksiyasi $B=8000(1+t^2)$ (T) qonun bo‘yicha o‘zgaruvchi magnit maydonda yuzi $50$ cm$^2$ bo‘lgan kvadrat ramka joylashgan. $t=1$ s vaqt momentida ramkada hosil bo‘lgan induksiya EYK nimaga teng? $(0-1)$ s oralig‘ida ramkaning K nuqtasida induksion tok qaysi yo‘nalishda o‘tadi?",
+      "answers": [
+        "30 V; $(+)$ yo‘nalishda.",
+        "40 V; $(-)$ yo‘nalishda.",
+        "80 V; $(+)$ yo‘nalishda.",
+        "30 V; $(-)$ yo‘nalishda.",
+        "80 V; $(-)$ yo‘nalishda."
+      ],
+      "correct": 4,
+      "source": "68-mavzu.tex#0:61"
+    },
+    {
+      "text": "O‘lchov birliklarining xalqaro sistemasida magnit oqimining birligi qanday?",
+      "answers": [
+        "Kulon.",
+        "Tesla.",
+        "Veber.",
+        "Amper."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#3:1"
+    },
+    {
+      "text": "Radiusi $r=20$ cm bo‘lgan xalqa induksiyasi $B=0,3$ T bo‘lgan bir jinsli magnit maydonda joylashgan. Induksiya vektori xalqa normali bilan $\\alpha=37^\\circ$ burchak hosil qiladi. Xalqani kesib o‘tuvchi magnit oqimini toping (mWb). $\\pi=3$.",
+      "answers": [
+        "3,14.",
+        "10.",
+        "28,8.",
+        "15."
+      ],
+      "correct": 2,
+      "images": "../rasmlar68/r3ed7db324f.png",
+      "source": "67-mavzu.tex#3:2"
+    },
+    {
+      "text": "Yuzi 0,2 m$^2$ bo‘lgan kontur induksiyasi 5 T bo‘lgan bir jinsli magnit maydonda joylashgan. Agar kontur tekisligi induksiya chiziqlariga parallel joylashgan bo‘lsa, kontur yuzidan o‘tayotgan magnit oqimi necha Veber bo‘ladi?",
+      "answers": [
+        "0.",
+        "0,1.",
+        "0,5.",
+        "1."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#3:3"
+    },
+    {
+      "text": "To‘g‘ri to‘rtburchak shaklidagi ramkani induksiyasi 6,5 T bo‘lgan magnit maydon rasmdagi kabi kesib o‘tmoqda. Unga tushayotgan magnit oqimini toping (Wb).",
+      "answers": [
+        "0,52.",
+        "0,27.",
+        "0,39.",
+        "0,48."
+      ],
+      "correct": 0,
+      "images": "../rasmlar68/r78916d250f.png",
+      "source": "67-mavzu.tex#3:4"
+    },
+    {
+      "text": "Radiusi 5 cm bo‘lgan doirasimon yuza induksiyasi 2 T bo‘lgan bir jinsli magnit maydonda joylashgan. Induksiya vektori doira sirti normali bilan $0^\\circ$ burchak hosil qiladi. Sirtni kesib o‘tuvchi magnit oqimini toping (mWb).",
+      "answers": [
+        "3,14.",
+        "10.",
+        "30,5.",
+        "15,7."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#3:5"
+    },
+    {
+      "text": "Tomonlari 4 cm dan bo‘lgan teng tomonli uchburchak induksiyasi 2 T bo‘lgan bir jinsli magnit maydonda joylashgan. Induksiya vektori uchburchak sirti normali bilan $30^\\circ$ burchak hosil qiladi. Sirtni kesib o‘tuvchi magnit oqimini toping (mWb).",
+      "answers": [
+        "$0,8\\sqrt{3}$.",
+        "$0,4\\sqrt{3}$.",
+        "$0,4\\sqrt{6}$.",
+        "1,2."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#3:6"
+    },
+    {
+      "text": "Yuzi 2 m$^2$ bo‘lgan va magnit maydon induksiyasi vektoriga tik joylashgan yassi konturdan 10 Wb magnit oqim o‘tsa, magnit induksiyasi qanday (T)?",
+      "answers": [
+        "0,2.",
+        "0,4.",
+        "2,5.",
+        "5."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#3:7"
+    },
+    {
+      "text": "Magnit maydon induksiyasi vektoriga tik bo‘lgan yassi konturdan 6 Wb magnit oqim o‘tadi. Agar magnit induksiyasi 3 T bo‘lsa, konturning yuzi qanday (m$^2$)?",
+      "answers": [
+        "0,5.",
+        "2/3.",
+        "2.",
+        "12."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#3:8"
+    },
+    {
+      "text": "Magnit induksiyasi 4 T bo‘lgan maydonda joylashgan 1 cm radiusli xalqani kesib o‘tayotgan magnit oqim 0,628 mWb bo‘lishi uchun magnit induksiya vektori bilan halqa tekisligi orasidagi burchak qanday bo‘lishi kerak?",
+      "answers": [
+        "$0^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$."
+      ],
+      "correct": 1,
+      "source": "67-mavzu.tex#3:9"
+    },
+    {
+      "text": "Magnit maydon oqimi ortadi, agar ...\n1) magnit maydon induksiyasi ortsa;\n2) magnit maydon induksiyasi kamaysa;\n3) magnit maydon kesib o‘tuvchi yuza kamaysa;\n4) magnit maydon kesib o‘tuvchi yuza ortsa.",
+      "answers": [
+        "2, 3.",
+        "1, 3.",
+        "1, 4.",
+        "2, 4."
+      ],
+      "correct": 2,
+      "source": "67-mavzu.tex#3:10"
+    },
+    {
+      "text": "Quyidagi hollarning qaysi birida ramka yuzasidan o‘tuvchi magnit induksiya oqimi o‘zgarmaydi?",
+      "answers": [
+        "bir jinsli magnit maydonda o‘z tekisligidan o‘tuvchi o‘q atrofida aylanganida.",
+        "bir jinsli bo‘lmagan magnit maydonda ilgarilanma harakat qilganida.",
+        "bir jinsli bo‘lmagan magnit maydonda aylanganida.",
+        "bir jinsli magnit maydonda ilgarilanma harakat qilganida."
+      ],
+      "correct": 3,
+      "source": "67-mavzu.tex#3:11"
+    },
+    {
+      "text": "Yuzi 25 cm$^2$ bo‘lgan sim ramka bir jinsli magnit maydonda aylantirilganda, ramkani kesib o‘tuvchi magnit oqim $\\Phi=2,5 \\cdot 10^{-4}\\cos 6t$ (Wb) qonun bo‘yicha o‘zgaradi. Magnit maydon induksiyasi qanday (T)?",
+      "answers": [
+        "0,1.",
+        "0,6.",
+        "1.",
+        "0,2."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#3:12"
+    },
+    {
+      "text": "Magnit maydonda harakatlanayotgan 5 A tokli kontur bilan chegaralangan yuzadan o‘tuvchi magnit oqim 0,4 mWb dan 0,8 mWb ga o‘zgargan bo‘lsa, necha milliJoul ish bajarilgan?",
+      "answers": [
+        "2.",
+        "3.",
+        "1.",
+        "4."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#3:13"
+    },
+    {
+      "text": "Induksiyasi $4/\\pi$ T bo‘lgan bir jinsli magnit maydonda diametri 10 cm bo‘lgan va 1 A tok o‘tayotgan o‘ram bor. O‘ramning tekisligi magnit induksiya vektoriga parallel. O‘ramni uning tekisligi magnit induksiya vektoriga tik bo‘ladigan qilib $90^\\circ$ ga burish uchun necha Joul ish bajarish kerak?",
+      "answers": [
+        "$10^{-2}$.",
+        "$\\pi \\cdot 10^{-4}$.",
+        "$10^{-4}$.",
+        "$\\pi \\cdot 10^{-2}$."
+      ],
+      "correct": 0,
+      "source": "67-mavzu.tex#3:14"
+    }
+  ]
+}

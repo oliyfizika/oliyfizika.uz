@@ -3,40 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Test | OliyFizika.uz</title>
-
-<link rel="stylesheet" href="test.css">
+<title>Mavzu testi | OliyFizika.uz</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../../assets/css/umumiy-fizika.css">
+<link rel="stylesheet" href="../../assets/css/umumiy-test.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../../assets/js/umumiy-fizika/test-page.js"></script>
 </head>
-
-<body>
-
-<main class="quiz-container">
-
-  <div class="topbar">
-    <div>
-      <h1 id="pageTitle"></h1>
-      <p class="subtitle" id="pageSubtitle"></p>
-    </div>
-
-    <a id="backLink" class="back-link">
-      Orqaga
-    </a>
+<!--
+  Mavzu testi (Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom).
+  Savollar: umumiy-fizika/test/test-N.json (?id=N). Mavzular: umumiy-fizika/data/courses.js.
+  Ochilish/XP/natija mantiqi o'zgarmagan (js/mechanics-progress.js, js/services/*).
+-->
+<body class="of-ui" data-shell-title="Mavzu testi">
+<div class="of-page of-container ut" id="utPage">
+  <div data-view aria-live="polite">
+    <div class="of-card ut-bar"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text" style="width:50%"></span></div>
   </div>
-
-  <div id="questions"></div>
-
-  <button type="button"
-          class="submit-btn"
-          id="submitBtn">
-      Testni yakunlash
-  </button>
-
-  <div class="result" id="result"></div>
-
-</main>
-
-<script type="module" src="test.js"></script>
-
+</div>
+<div class="ut-wm" aria-hidden="true"></div>
+<noscript><p style="padding:16px">Testni ishlash uchun brauzeringizda JavaScript yoqilgan bo‘lishi kerak.</p></noscript>
 </body>
 </html>

@@ -1,0 +1,516 @@
+{
+  "id": 78,
+  "title": "78-Mavzu | Yorug‘lik interferensiyasi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 79,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "To‘lqinlar interferensiyasi deb qanday hodisaga aytiladi?",
+      "answers": [
+        "o‘lchamlari to‘lqin uzunliklari tartibida bo‘lgan to‘siq yoki tirqishga tushgan to‘lqinlarning to‘silgan sohaga og‘ib tarqalish hodisasi.",
+        "ikki kogerent to‘lqin qo‘shilganda hosil bo‘lgan to‘lqin amplitudasining kuchayishi yoki susayishi hodisasi.",
+        "to‘siqqa uchragan to‘lqinlarning to‘siqdan bir burchak ostida orqaga qaytib tarqalish hodisasi.",
+        "ikki to‘lqinning qo‘shilishi natijasida natijaviy tebranishlar amplitudasining keskin ortib yoki kamayib ketish hodisasi.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "78-mavzu.tex#0:1"
+    },
+    {
+      "text": "To‘lqinlar interferensiyasi qachon kuzatiladi?",
+      "answers": [
+        "chastotalari va fazalar farqi har xil bo‘lgan to‘lqinlar qo‘shilganda.",
+        "chastotalari bir xil va fazalar farqi o‘zgaruvchan bo‘lgan to‘lqinlar qo‘shilganda.",
+        "chastotalari har xil va fazalar farqi o‘zgarmas bo‘lgan to‘lqinlar qo‘shilganda.",
+        "chastotalari va fazalar farqi o‘zgarmas bo‘lgan to‘lqinlar qo‘shilganda.",
+        "chastotalari bir xil va fazalar farqi o‘zgarmas bo‘lgan to‘lqinlar qo‘shilganda."
+      ],
+      "correct": 4,
+      "source": "78-mavzu.tex#0:2"
+    },
+    {
+      "text": "To‘lqin uzunliklari har xil bo‘lgan to‘lqinlar qanday sharoitda interferensiyalashadi?",
+      "answers": [
+        "amplitudalari bir xil bo‘lganda.",
+        "interferensiyalashmaydi.",
+        "amplituda va boshlang‘ich fazalari bir xil bo‘lganda.",
+        "har qanday sharoitda.",
+        "boshlang‘ich fazalari bir xil bo‘lganda."
+      ],
+      "correct": 1,
+      "source": "78-mavzu.tex#0:3"
+    },
+    {
+      "text": "Ushbu interferensiyalanuvchi ikki to‘lqinning fazalar farqi qanday bo‘ladi?",
+      "answers": [
+        "$\\pi/2$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$.",
+        "$\\pi$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar78/re2a545de65.png",
+      "source": "78-mavzu.tex#0:4"
+    },
+    {
+      "text": "Ikkita o‘zaro interferensiyalanuvchi monoxromatik yorug‘lik nurlarining yo‘llar farqi $\\lambda/6$ ga teng. Tebranishlarning fazalar farqini aniqlang.",
+      "answers": [
+        "$\\pi/6$.",
+        "$\\pi/4$.",
+        "$\\pi/3$.",
+        "$\\pi/2$.",
+        "$\\pi$."
+      ],
+      "correct": 2,
+      "source": "78-mavzu.tex#0:5"
+    },
+    {
+      "text": "Ikkita monoxromatik yorug‘lik to‘lqinlarining bir nuqtadagi yo‘llar farqi $\\lambda/4$ ga teng. Tebranishlarning fazalar farqini aniqlang.",
+      "answers": [
+        "$\\pi$.",
+        "$\\pi/2$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$."
+      ],
+      "correct": 1,
+      "source": "78-mavzu.tex#0:6"
+    },
+    {
+      "text": "Tebranishlar chastotasi 3 Hz bo‘lgan to‘lqin 2,4 m/s tezlik bilan tarqalmoqda. Bir-biridan 20 cm masofada joylashgan nuqtalardagi tebranishlarning fazalar farqi ko‘pi bilan qanday?",
+      "answers": [
+        "$\\pi$.",
+        "$\\pi/2$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$."
+      ],
+      "correct": 1,
+      "source": "78-mavzu.tex#0:7"
+    },
+    {
+      "text": "Tebranishlarning fazodagi tarqalish tezligi 6 m/s va chastotasi 10 Hz bo‘lsa, bir-biridan 20 cm masofada turuvchi ikki nuqta orasidagi fazalar farqi ko‘pi bilan qanday bo‘ladi?",
+      "answers": [
+        "$2\\pi$.",
+        "$2\\pi/3$.",
+        "$\\pi/6$.",
+        "$\\pi/3$.",
+        "$4\\pi/3$."
+      ],
+      "correct": 1,
+      "source": "78-mavzu.tex#0:8"
+    },
+    {
+      "text": "To‘lqin uzunligi $\\lambda$ ga teng bo‘lgan ikkita interferensiyalanuvchi kogerent yorug‘lik to‘lqinlarining fazalar farqi $\\pi/4$ ga teng. Optik yo‘llar farqi nimaga teng?",
+      "answers": [
+        "$\\lambda$.",
+        "$\\lambda/2$.",
+        "$\\lambda/4$.",
+        "$\\lambda/8$.",
+        "$\\lambda/16$."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:9"
+    },
+    {
+      "text": "Koordinatalar boshida joylashgan tovush manbaidan to‘lqin uzunligi 2 m bo‘lgan tebranishlar tarqalmoqda. Koordinatalari $x_1=2$ m va $x_2=6$ m bo‘lgan nuqtalarning tebranishlar orasidagi fazalar farqi qanday?",
+      "answers": [
+        "0.",
+        "$\\pi$.",
+        "$3\\pi$.",
+        "$4\\pi$.",
+        "$8\\pi$."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:10"
+    },
+    {
+      "text": "Chastotasi 680 Hz bo‘lgan tovush to‘lqinining ikki nuqtasidan manbagacha bo‘lgan masofalar farqi 25 cm bo‘lsa, bu nuqtalar tebranishlarining fazalar farqi qanday? Tovushning havodagi tezligi 340 m/s.",
+      "answers": [
+        "$\\pi$.",
+        "$2\\pi$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:11"
+    },
+    {
+      "text": "Qanday to‘lqinlar kogerent to‘lqinlar deyiladi?",
+      "answers": [
+        "bir xil chastotali.",
+        "bir xil amplitudali.",
+        "tebranishlari garmonik bo‘lgan.",
+        "bir xil chastotali va fazalar farqi o‘zgarmas.",
+        "to‘lqin uzunliklari bir xil."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:12"
+    },
+    {
+      "text": "To‘g‘ri tasdiqni ko‘rsating.",
+      "answers": [
+        "bir xil chastotali va doimiy fazalar farqi hosil qiluvchi yorug‘lik to‘lqinlari o‘zaro kogerent to‘lqinlar deb ataladi.",
+        "bir xil chastotali yorug‘lik manbalari o‘zaro kogerent manbalar deb ataladi.",
+        "bir xil uzunlikka ega bo‘lgan va bir tekislik bo‘ylab qutblangan to‘lqinlar kogerent to‘lqinlar deb ataladi.",
+        "bir xil amplitudali va to‘lqin uzunlikli, o‘zaro tik tekisliklar bo‘ylab qutblangan to‘lqinlar o‘zaro kogerent to‘lqinlar deb ataladi.",
+        "tabiiy manbadan chiquvchi yorug‘lik to‘lqinlarining o‘zaro kogerentligini ta’minlash mumkin emas."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:13"
+    },
+    {
+      "text": "Ikkita kogerent manbadan chiqayotgan amplitudasi $A$ va to‘lqin uzunligi $\\lambda=300$ nm bo‘lgan nurlarning interferensiyasi natijasida fazoning ma’lum nuqtasida $\\sqrt{3}A$ amplitudaga ega tebranishlar hosil bo‘ldi. Nurlarning minimal yo‘llar farqi (nm) nimaga teng?",
+      "answers": [
+        "75.",
+        "150.",
+        "25.",
+        "50.",
+        "100."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:14"
+    },
+    {
+      "text": "Bir xil $a$ amplitudaga ega bo‘lgan ikkita kogerent to‘lqinlar orasidagi yo‘l farqi yarim to‘lqin uzunligiga teng bo‘lganda, ularning qo‘shilishidan hosil bo‘ladigan natijaviy tebranish amplitudasi qanday bo‘ladi?",
+      "answers": [
+        "0.",
+        "$a/2$.",
+        "$a$.",
+        "$2a$.",
+        "$a^2$."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:15"
+    },
+    {
+      "text": "Bir xil $a$ amplitudaga ega bo‘lgan ikkita kogerent to‘lqinlar orasidagi yo‘l farqi juft yarim to‘lqin uzunligiga teng bo‘lganda, ularning qo‘shilishidan hosil bo‘ladigan natijaviy tebranish amplitudasi qanday bo‘ladi?",
+      "answers": [
+        "0.",
+        "$a/2$.",
+        "$a$.",
+        "$2a$.",
+        "$a^2$."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:16"
+    },
+    {
+      "text": "O‘zaro kogerent ikki manbadan chiquvchi to‘lqinlar qo‘shilish nuqtasiga bir xil fazada yetib keladilar. Agar to‘lqin amplitudalari $a$ bo‘lsa, natijaviy to‘lqin amplitudasi $A$ qanday bo‘ladi?",
+      "answers": [
+        "$A=0$.",
+        "$A=a$.",
+        "$A=2a$.",
+        "$0<A<a$.",
+        "$a<A<2a$."
+      ],
+      "correct": 2,
+      "source": "78-mavzu.tex#0:17"
+    },
+    {
+      "text": "Ikkita kogerent tovush manbai bir xil fazada tebranadi. Birinchi manbadan 3 m va ikkinchi manbadan 4 m masofada joylashgan nuqtada tovush eshitilmaydi. Tovush tezligini 340 m/s deb olsa, tovush chastotasi qanday (Hz)?\n$(k=0,1,2...)$",
+      "answers": [
+        "$(2k+1)340$.",
+        "$340k$.",
+        "$680k$.",
+        "$(2k+1)170$.",
+        "$340/k$."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:18"
+    },
+    {
+      "text": "Elektromagnit tebranishlar generatori $G$ to‘lqin uzunligi 3 cm bo‘lgan monoxromatik to‘lqin tarqatmoqda. $M$ va $N$ nuqtalarda generatordan kelayotgan va $K$ ko‘zgudan qaytgan to‘lqinlar uchrashadi (shaklda masofalar santimetrlarda berilgan). Bu nuqtalarda interferensiya natijalari qanday bo‘ladi? Ko‘zg‘u qaytishida to‘lqin fazasi $\\pi$ ga siljiydi deb hisoblang.",
+      "answers": [
+        "$M$ va $N$ da maksimum.",
+        "$M$–minimum, $N$–maksimum.",
+        "$M$–maksimum, $N$–minimum.",
+        "$M$ va $N$ da minimum.",
+        "TJY."
+      ],
+      "correct": 1,
+      "images": "../rasmlar78/r85600ccec1.png",
+      "source": "78-mavzu.tex#0:19"
+    },
+    {
+      "text": "Ikkita yorug‘lik to‘lqinining ustma-ust tushishi natijasida fazoning ba’zi joylarida intensivlikning kuchayishi, ba’zi joylarida susayishi ... deb ataladi.",
+      "answers": [
+        "fotoeffekt.",
+        "yorug‘likning qutblanishi.",
+        "interferensiya.",
+        "dispersiya.",
+        "difraksiya."
+      ],
+      "correct": 2,
+      "source": "78-mavzu.tex#0:20"
+    },
+    {
+      "text": "To‘lqin uzunliklari har xil bo‘lgan ikkita yorug‘lik dastasi qo‘shilishi natijasida interferensiya kuzatiladimi, agar kuzatilsa, qanday shart bajarilgan bo‘ladi?",
+      "answers": [
+        "interferensiya kuzatilmaydi.",
+        "boshlang‘ich fazalari bir xil bo‘lishi.",
+        "tebranish amplitudalari va boshlang‘ich fazalari bir xil bo‘lishi.",
+        "yo‘llar farqi o‘zgarmas saqlanishi.",
+        "tebranish amplitudalari bir xil bo‘lishi."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:21"
+    },
+    {
+      "text": "Har xil to‘lqin uzunlikdagi ikkita nur dastasi uchun qanday sharoitda interferensiya kuzatilishi mumkin?",
+      "answers": [
+        "bir xil amplitudali tebranishda.",
+        "doimiy yo‘llar farqida.",
+        "bir xil boshlang‘ich fazali tebranishda.",
+        "bir xil boshlang‘ich faza va amplitudali tebranishda.",
+        "hech qanday sharoitda."
+      ],
+      "correct": 4,
+      "source": "78-mavzu.tex#0:22"
+    },
+    {
+      "text": "Ikkita kogerent manbadan chiqayotgan yorug‘lik to‘lqinlari berilgan nuqtaga qarama-qarshi fazada keladi. Agar har bir to‘lqinning tebranish amplitudasi $a$ ga teng bo‘lsa, shu nuqtadagi natijaviy tebranish amplitudasi $A$ nimaga teng?",
+      "answers": [
+        "$A=a$.",
+        "$0<A<a$.",
+        "$a<A<2a$.",
+        "$A=0$.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:23"
+    },
+    {
+      "text": "Ikkita tirqish bilan bog‘liq interferension tajribada tirqishlar orasidagi masofa $d=10\\lambda$ ga teng. Tirqishlarga tushayotgan yorug‘likning to‘lqin uzunligi $\\lambda$ bo‘lsa, ekrandagi $k$ nuqtada qaysi interferensiya natijasi joylashgan?",
+      "answers": [
+        "6-maksimum.",
+        "8-minimum.",
+        "5-maksimum.",
+        "7-maksimum.",
+        "4-minimum."
+      ],
+      "correct": 2,
+      "images": "../rasmlar78/rff9b2754ac.png",
+      "source": "78-mavzu.tex#0:24"
+    },
+    {
+      "text": "Ikkita tirqish bilan bog‘liq interferension tajribada tirqishlar orasidagi masofa $d=0{,}1$ mm, tirqishlardan ekrangacha masofa $H=2$ m ga teng. Tirqishlarga tushayotgan yorug‘likning to‘lqin uzunligi $\\lambda=6000$ Å bo‘lsa, rasmda ko‘rsatilgan masofa nimaga teng (cm)?",
+      "answers": [
+        "1,2.",
+        "1,8.",
+        "2,4.",
+        "3,6.",
+        "4,2."
+      ],
+      "correct": 3,
+      "images": "../rasmlar78/r7e6e15ba0e.png",
+      "source": "78-mavzu.tex#0:25"
+    },
+    {
+      "text": "Ikkita tirqish bilan bog‘liq interferension tajribada tirqishlar orasidagi masofa $d=0{,}1$ mm, tirqishlardan ekrangacha masofa $H=2$ m ga teng. Tirqishlarga tushayotgan yorug‘likning to‘lqin uzunligi $\\lambda=4000$ Å bo‘lsa, ekrandagi ikkita qo‘shni maksimum orasidagi masofa nimaga teng (m)?",
+      "answers": [
+        "$4\\cdot10^{-6}$.",
+        "$4\\cdot10^{-10}$.",
+        "$8\\cdot10^{-6}$.",
+        "$8\\cdot10^{-10}$.",
+        "$8\\cdot10^{-4}$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar78/r520ee5d76f.png",
+      "source": "78-mavzu.tex#0:26"
+    },
+    {
+      "text": "Agar yorug‘lik manbalari orasidagi masofani o‘zgartirmay, ular AB ekrandan uzoqlashtirilsa, ekranda hosil bo‘ladigan interferension yo‘llarning kengligi qanday o‘zgaradi?",
+      "answers": [
+        "avval ortadi, so‘ngra kamayadi.",
+        "avval kamayadi, so‘ngra ortadi.",
+        "o‘zgarmaydi.",
+        "ortadi.",
+        "kamayadi."
+      ],
+      "correct": 3,
+      "source": "78-mavzu.tex#0:27"
+    },
+    {
+      "text": "O‘lchamlari cheklanmagan ekranda bir-biridan $d$ masofada joylashgan ikkita yorug‘lik manbalari hosil qiluvchi interferensiya manzarasi kuzatiladi. Manbalardan nurlanuvchi monoxromatik yorug‘lik to‘lqin uzunligi $\\lambda$. Ekranda kuzatilishi mumkin bo‘lgan natijaviy maksimumlarning sonini aniqlansin.",
+      "answers": [
+        "$2\\lambda/d$.",
+        "$d/\\lambda$.",
+        "$\\lambda/2d$.",
+        "$\\lambda/d$.",
+        "$2d/\\lambda+1$."
+      ],
+      "correct": 4,
+      "images": "../rasmlar78/r8db90c5b41.png",
+      "source": "78-mavzu.tex#0:28"
+    },
+    {
+      "text": "Ikkita tirqish bilan bog‘liq interferension tajribada tirqishlar orasidagi masofa $d$ ga, tirqishlardan ekrangacha masofa $l$ ga teng. Tirqishlarga tushayotgan yorug‘likning to‘lqin uzunligi $\\lambda$ bo‘lsa, ekranda $L$ uzunlikdagi oraliqda nechta maksimum joylashadi?",
+      "answers": [
+        "$\\dfrac{dL}{2l\\lambda}$.",
+        "$\\dfrac{dL}{l\\lambda}+1$.",
+        "$\\dfrac{d}{\\lambda}$.",
+        "$\\dfrac{L\\lambda}{d}+1$.",
+        "$\\dfrac{d\\lambda}{l}$."
+      ],
+      "correct": 1,
+      "images": "../rasmlar78/rc82a934c61.png",
+      "source": "78-mavzu.tex#0:29"
+    },
+    {
+      "text": "Nima uchun bir-biriga bog‘liq bo‘lmagan ikkita yorug‘lik manbaidan (masalan, ikkita yulduzdan) yorug‘lik interferensiyasi kuzatilmaydi?",
+      "answers": [
+        "bir-biriga bog‘liq bo‘lmagan yorug‘lik manbalari kogerent bo‘lgani uchun.",
+        "bir-biriga bog‘liq bo‘lmagan yorug‘lik manbalari kogerent bo‘lmagani uchun.",
+        "yorug‘lik manbalari mustaqil bo‘lgani uchun.",
+        "ma’lumotlar yetarli emas.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "78-mavzu.tex#0:30"
+    },
+    {
+      "text": "Quyidagi hodisalarning qaysilari interferensiyasi yordamida tushuntiriladi:\n1) yupqa moy pardasining rangli tovlanishi;\n2) kichik buyum soyasi o‘rtasida yorug‘ dog‘ning hosil bo‘lishi;\n3) Nyuton halqalari;\n4) yorug‘lik nurlarining geometrik soya sohasiga og‘ishi?",
+      "answers": [
+        "faqat 1.",
+        "faqat 3.",
+        "1 va 3.",
+        "1 va 2.",
+        "hammasi."
+      ],
+      "correct": 2,
+      "source": "78-mavzu.tex#0:31"
+    },
+    {
+      "text": "Ko‘zgu ustida chastotalari $\\omega_1$ va $\\omega_2$ bo‘lgan monoxromatik to‘lqin tarqatayotgan $S_1$ va $S_2$ yorug‘lik manbalari joylashgan. Nurlarning uchrashuvi natijasida ekrandagi 1, 2 va 3-nuqtalarning qaysilarida interferensiya kuzatilishi mumkin?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "hammasida.",
+        "1 va 3."
+      ],
+      "correct": 4,
+      "images": "../rasmlar78/r53ba4c75ff.png",
+      "source": "78-mavzu.tex#0:32"
+    },
+    {
+      "text": "Bir-biriga nisbatan perpendikular qutblangan, o‘zaro kogerent, bir xil to‘lqin uzunlikda nurlanayotgan ikkita manbadan chiqayotgan qaysi nurlar ekranda interferension manzara hosil qiladi?",
+      "answers": [
+        "1-3, 2-4, 5-7, 6-8.",
+        "1-3, 5-7.",
+        "3-4, 2-6.",
+        "1-4, 2-5.",
+        "1-4-3, 2-5-6."
+      ],
+      "correct": 0,
+      "images": "../rasmlar78/rb46330de0a.png",
+      "source": "78-mavzu.tex#0:33"
+    },
+    {
+      "text": "Quyidagi hodisalarning qaysilari interferensiya hodisasi asosida tushuntiriladi?\n1) sovun pufagi yoki yog‘ pardasidagi kamalak ranglarning kuzatilishi;\n2) Nyuton halqalari;\n3) kichik doiraviy diskdan hosil bo‘lgan soyaning markazida yorug‘ dog‘ hosil bo‘lishi;\n4) yorug‘lik nurlarining to‘siq chegarasida geometrik soya sohasiga og‘ishi.",
+      "answers": [
+        "1, 2.",
+        "1.",
+        "1, 2, 3.",
+        "3, 4.",
+        "4."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:34"
+    },
+    {
+      "text": "Nyuton halqalarini kuzatish qurilmasi monoxromatik yorug‘lik bilan yoritiladi. Agar yorug‘lik nurining to‘lqin uzunligi 600 nm, linza egrilik radiusi 1,5 m bo‘lsa, rasmda ko‘rsatilgan halqaning radiusi qanday (mm)?",
+      "answers": [
+        "1,5.",
+        "3.",
+        "3,2.",
+        "4,6.",
+        "0,9."
+      ],
+      "correct": 0,
+      "images": "../rasmlar78/r7f9eb25976.png",
+      "source": "78-mavzu.tex#0:35"
+    },
+    {
+      "text": "Nyuton halqalarini kuzatish qurilmasi monoxromatik yorug‘lik bilan yoritiladi. Agar yorug‘lik nurining to‘lqin uzunligi 500 nm, linza egrilik radiusi 4 m bo‘lsa, sakkizinchi qora halqaning radiusi qanday (mm)?",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "5.",
+        "6."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:36"
+    },
+    {
+      "text": "Nyuton halqalarini kuzatish qurilmasi monoxromatik yorug‘lik bilan yoritiladi. Bunda ikkita qo‘shni qora halqalarning radiuslari mos ravishda 1,732 mm va 2 mm. Bular nechanchi qora halqalar?",
+      "answers": [
+        "1 va 2.",
+        "2 va 3.",
+        "3 va 4.",
+        "4 va 5.",
+        "5 va 6."
+      ],
+      "correct": 2,
+      "source": "78-mavzu.tex#0:37"
+    },
+    {
+      "text": "To‘lqin uzunligi $\\lambda=600$ nm bo‘lgan yorug‘lik yupqa pardaga rasmdagikabi tushmoqda. Pardadan qaytgan yorug‘lik ko‘zga yorqin ranglarda ko‘rindi. Pardaning qalinligi quyidagilardan qaysi biri bo‘lishi mumkin? Pardaning sindirish ko‘rsatkichi $n=1{,}5$ ga teng.",
+      "answers": [
+        "800 nm.",
+        "700 nm.",
+        "400 nm.",
+        "600 nm.",
+        "200 nm."
+      ],
+      "correct": 1,
+      "images": "../rasmlar78/re89f0b2ed4.png",
+      "source": "78-mavzu.tex#0:38"
+    },
+    {
+      "text": "To‘lqin uzunligi $\\lambda=640$ nm bo‘lgan yorug‘lik yupqa pardaga normal holda tushmoqda. Parda tepasidan qaralganda ko‘zga parda sirti qorong‘i ko‘rindi. Pardaning qalinligi quyidagilardan qaysi biri bo‘lishi mumkin? Pardaning sindirish ko‘rsatkichi $n=1{,}6$ ga teng.",
+      "answers": [
+        "500 nm.",
+        "700 nm.",
+        "800 nm.",
+        "100 nm.",
+        "300 nm."
+      ],
+      "correct": 2,
+      "images": "../rasmlar78/r6907560b0f.png",
+      "source": "78-mavzu.tex#0:39"
+    },
+    {
+      "text": "To‘lqin uzunligi $\\lambda=520$ nm bo‘lgan yorug‘lik yupqa pardaga rasmdagikabi tushmoqda. Pardadan qaytgan yorug‘lik ko‘zga yorqin ranglarda ko‘rinishi uchun pardaning qalinligi $d=100$ nm bo‘lishi kerak. Bunda pardaning sindirish ko‘rsatkichi nima bo‘lgan?",
+      "answers": [
+        "$n=1{,}2$.",
+        "$n=1{,}3$.",
+        "$n=1{,}5$.",
+        "$n=1{,}8$.",
+        "$n=2$."
+      ],
+      "correct": 1,
+      "images": "../rasmlar78/r7ff92b6edd.png",
+      "source": "78-mavzu.tex#0:40"
+    },
+    {
+      "text": "Moddaning sindirish ko‘rsatkichi $n=1{,}5$ bo‘lgan $d=210$ nm qalinlikdagi yupqa parda sirtiga tik yo‘nalgan oq nur dastasi bilan yoritilsa, qaytuvchi nurlarda parda qanday ko‘rinadi?",
+      "answers": [
+        "binafsha.",
+        "ko‘k.",
+        "yashil.",
+        "sariq.",
+        "qizil."
+      ],
+      "correct": 0,
+      "source": "78-mavzu.tex#0:41"
+    }
+  ]
+}

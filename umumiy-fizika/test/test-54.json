@@ -1,0 +1,274 @@
+{
+  "id": 54,
+  "title": "54-Mavzu | Ekvipotensial sirtlar",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 55,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Maydonning E nuqtasidagi potensiali -8 V ga teng. Bu nuqtaga cheksiz uzoqlikdan kiritilgan 5 mC zaryadli zarra olgan potensial energiyani toping (mJ).",
+      "answers": [
+        "40",
+        "-40",
+        "1,6",
+        "-1,6",
+        "0,625"
+      ],
+      "correct": 1,
+      "source": "54-mavzu.tex#0:2"
+    },
+    {
+      "text": "4 $\\mu$C zaryad kuchlanganligi bir jinsli elektrostatik maydonda rasmdagi kabi A nuqtadan B nuqtaga ko‘chirilganda 96 $\\mu$J ish bajarilgan bo‘lsa, maydon kuchlanganligi moduli qanday (V/m)?",
+      "answers": [
+        "900",
+        "600",
+        "450",
+        "300",
+        "200"
+      ],
+      "correct": 4,
+      "images": "../rasmlar54/re5971030ca.png",
+      "source": "54-mavzu.tex#0:3"
+    },
+    {
+      "text": "Elektrostatik maydonning potensiali 40 V bo‘lgan nuqtasidan potensiali –10 V bo‘lgan nuqtasiga $2 \\cdot 10^{-7}$ C musbat zaryadni ko‘chirishda necha Joul ish bajariladi?",
+      "answers": [
+        "$2 \\cdot 10^{-5}$",
+        "$6 \\cdot 10^{-6}$",
+        "$1 \\cdot 10^{-5}$",
+        "$6 \\cdot 10^{-7}$",
+        "$1 \\cdot 10^{-7}$"
+      ],
+      "correct": 2,
+      "source": "54-mavzu.tex#0:4"
+    },
+    {
+      "text": "Elektr maydon 1-nuqtadan 2-nuqtaga 1 C musbat zaryadni ko‘chirishda necha Joul ish bajaradi? Nuqtalar orasidagi potensiallar farqi 10 V.",
+      "answers": [
+        "0",
+        "10",
+        "8,7",
+        "5",
+        "17"
+      ],
+      "correct": 1,
+      "images": "../rasmlar54/ra5140238d9.png",
+      "source": "54-mavzu.tex#0:5"
+    },
+    {
+      "text": "$1,2 \\cdot 10^{-4}$ C zaryadni bir nuqtadan ikkinchi nuqtaga ko‘chirishda 0,6 mJ ish bajarildi. Nuqtalar orasidagi potensiallar farqini aniqlang (V).",
+      "answers": [
+        "10",
+        "5",
+        "3",
+        "0,7",
+        "0,5"
+      ],
+      "correct": 1,
+      "source": "54-mavzu.tex#0:6"
+    },
+    {
+      "text": "Elektronni elektr maydonda bir nuqtadan ikkinchi nuqtaga ko‘chirish natijasida uning kinetik energiyasi $8 \\cdot 10^{-19}$ J ga o‘zgardi. Shu ikki nuqta orasidagi potensiallar farqini qanday (V). $e=1,6 \\cdot 10^{-19}$ C.",
+      "answers": [
+        "32",
+        "16",
+        "8",
+        "6",
+        "5"
+      ],
+      "correct": 4,
+      "source": "54-mavzu.tex#0:7"
+    },
+    {
+      "text": "Elektr maydonda elektronning tezligi $1 \\cdot 10^7$ dan $5 \\cdot 10^7$ m/s gacha oshdi. Boshlang‘ich va oxirgi nuqtalar orasidagi potensiallar ayirmasi qanday (kV)? Elektron zaryadining massasiga nisbati $1,76 \\cdot 10^{11}$ C/kg.",
+      "answers": [
+        "3,4",
+        "4",
+        "6",
+        "1,76",
+        "6,8"
+      ],
+      "correct": 4,
+      "source": "54-mavzu.tex#0:8"
+    },
+    {
+      "text": "Chizmada keltirilgan bir jinsli elektr maydondagi 2- va 3-nuqtalar orasidagi potensiallar farqi 6 V bo‘lsa, 1- va 3- nuqtalar orasida 3,5 $\\mu$C zaryadni ko‘chirishda qanday ($\\mu$J) ish bajariladi?",
+      "answers": [
+        "4",
+        "$4\\sqrt{2}$",
+        "21",
+        "$8\\sqrt{2}$",
+        "16"
+      ],
+      "correct": 2,
+      "images": "../rasmlar54/r1a00d8d18f.png",
+      "source": "54-mavzu.tex#0:9"
+    },
+    {
+      "text": "Chizmada keltirilgan bir jinsli elektr maydondagi 1-, 2- va 3-nuqtalar teng tomonli uchburchakning uchlariga to‘g‘ri keladi. 1- va 3-nuqtalar orasidagi potensiallar farqi 16 V bo‘lsa, 2- va 3-nuqtalar orasida 2,5 $\\mu$C zaryadni ko‘chirishda qanday ($\\mu$J) ish bajariladi?",
+      "answers": [
+        "4",
+        "12",
+        "3",
+        "6",
+        "20"
+      ],
+      "correct": 4,
+      "images": "../rasmlar54/r1c26576bcf.png",
+      "source": "54-mavzu.tex#0:10"
+    },
+    {
+      "text": "Zaryadlangan ikkita tekislik (yassi kondensator) elektr maydonining turli nuqtalarida (1, 2, 3, 4) maydon kuchlanganliklari va potensiallari munosabati qanday?",
+      "answers": [
+        "$E_1>E_2>E_3>E_4, \\quad \\varphi_1=\\varphi_2=\\varphi_3=\\varphi_4$",
+        "$E_1<E_2<E_3<E_4, \\quad \\varphi_1<\\varphi_2<\\varphi_3<\\varphi_4$",
+        "$E_1=E_2=E_3=E_4, \\quad \\varphi_1>\\varphi_2>\\varphi_3>\\varphi_4$",
+        "$E_1=E_4>E_2=E_3, \\quad \\varphi_1=\\varphi_4>\\varphi_2=\\varphi_3$",
+        "$E_1<E_2=E_3<E_4, \\quad \\varphi_1<\\varphi_2=\\varphi_3<\\varphi_4$"
+      ],
+      "correct": 2,
+      "images": "../rasmlar54/rd3b7108c95.png",
+      "source": "54-mavzu.tex#0:11"
+    },
+    {
+      "text": "Nuqtaviy musbat zaryadni bir jinsli elektrostatik maydonda O nuqtadan navbat bilan 1-, 2-, 3-, 4- nuqtalarga ko‘chirishda bajarilgan ishlar uchun quyidagi munosabatlarning qaysi biri to‘g‘ri?",
+      "answers": [
+        "$A_4>A_1>A_2>A_3$",
+        "$A_1=A_4>A_2>A_3$",
+        "$A_1=A_2=A_3=A_4$",
+        "$A_1>A_4>A_2>A_3$",
+        "$A_3>A_1=A_2>A_4$"
+      ],
+      "correct": 1,
+      "images": "../rasmlar54/r29906af3ed.png",
+      "source": "54-mavzu.tex#0:12"
+    },
+    {
+      "text": "Biror nuqtaviy zaryaddan qaralayotgan nuqtagacha bo‘lgan masofa 4 marta ortganda zaryad potensiali qanday o‘zgaradi?",
+      "answers": [
+        "4 marta kamayadi",
+        "4 marta ortadi",
+        "2 marta kamayadi",
+        "2 marta ortadi",
+        "16 marta ortadi"
+      ],
+      "correct": 0,
+      "source": "54-mavzu.tex#0:13"
+    },
+    {
+      "text": "Nuqtaviy zaryad maydon kuchlanganligi zaryaddan 3,5 cm masofadagi nuqtada 150 V/m bo‘lib, zaryad tomonga yo‘nalgan. Shu nuqtadagi maydon potensiali (V) nimaga teng?",
+      "answers": [
+        "-5,25",
+        "-3,75",
+        "3,75",
+        "5,25",
+        "0"
+      ],
+      "correct": 0,
+      "source": "54-mavzu.tex#0:14"
+    },
+    {
+      "text": "$+q$ hamda $+2q$ nuqtaviy zaryadlar bir biridan $2r$ masofada turibdi. Ularning o‘rtasida joylashgan A nuqtadagi potensial 3 V ga teng. A nuqtadan $2r$ masofaga $Q$ nuqtaviy zaryad joylashtirilganda esa bu nuqtadagi potensial -3 V ni tashkil etdi. $Q$ zaryadni toping.",
+      "answers": [
+        "$Q = -12q$",
+        "$Q = -6q$",
+        "$Q = 6q$",
+        "$Q = 12q$",
+        "$Q = q$"
+      ],
+      "correct": 0,
+      "images": "../rasmlar54/r01685fd9df.png",
+      "source": "54-mavzu.tex#0:15"
+    },
+    {
+      "text": "$+2q$ va $-q$ zaryadlar rasmdagi kabi o‘rnatilgan. M va N nuqtalar orasidagi potensiallar farqi nimaga teng?",
+      "answers": [
+        "$2kq/a$",
+        "$2kq/3a$",
+        "$3kq/2a$",
+        "$7kq/6a$",
+        "0"
+      ],
+      "correct": 3,
+      "images": "../rasmlar54/r2607af3fec.png",
+      "source": "54-mavzu.tex#0:16"
+    },
+    {
+      "text": "$+3q$ va $+4q$ zaryadlar rasmdagi kabi o‘rnatilgan. M va N nuqtalar orasidagi potensiallar farqi nimaga teng?",
+      "answers": [
+        "$kq/15a$",
+        "$2kq/15a$",
+        "$kq/5a$",
+        "$4kq/15a$",
+        "$kq/3a$"
+      ],
+      "correct": 1,
+      "images": "../rasmlar54/r6ebe165f6a.png",
+      "source": "54-mavzu.tex#0:17"
+    },
+    {
+      "text": "Rasmdagi to‘rtta zaryadning O nuqtadagi natijaviy elektr maydon kuchlanganligi 25 V/m ga teng bo‘lsa, shu nuqtadagi natijaviy potensiali necha Volt?",
+      "answers": [
+        "25",
+        "30",
+        "35",
+        "40",
+        "50"
+      ],
+      "correct": 0,
+      "images": "../rasmlar54/ra8b3c8675d.png",
+      "source": "54-mavzu.tex#0:18"
+    },
+    {
+      "text": "Radiuslari $R_1=R$ va $R_2=2R$ bo‘lgan metall sharlardagi zaryadning sirt zichligi bir xil. Sharlar markazlari-dagi potensiallarni solishtiring.",
+      "answers": [
+        "$\\varphi_2=2\\varphi_1$",
+        "$\\varphi_1=2\\varphi_2$",
+        "$\\varphi_1=\\varphi_2$",
+        "$\\varphi_1=4\\varphi_2$",
+        "$\\varphi_2=4\\varphi_1$"
+      ],
+      "correct": 0,
+      "source": "54-mavzu.tex#0:19"
+    },
+    {
+      "text": "Radiusi 10 cm va potensiali 200 V bo‘lgan zaryadlangan o‘tkazuvchi sfera markazidagi kuchlanganlik va potensial nimaga teng?",
+      "answers": [
+        "0; 0",
+        "200 V/m; 200 V",
+        "200 V/m; 0",
+        "10 V/m; 100 V",
+        "0; 200 V"
+      ],
+      "correct": 4,
+      "source": "54-mavzu.tex#0:20"
+    },
+    {
+      "text": "Potensiali va radiusi rasmda ko‘rsatilgan x va y sharlar bir-biriga tekkizildi. Shundan so‘ng sharlarning potensiali nimaga teng bo‘lib qoladi?",
+      "answers": [
+        "0",
+        "$-2\\varphi/3$",
+        "$+\\varphi$",
+        "$+9\\varphi/5$",
+        "$+2\\varphi$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar54/rf8980f8aa1.png",
+      "source": "54-mavzu.tex#0:21"
+    },
+    {
+      "text": "Rasmdagi K shar avval L sharga, keyin M sharga tekkizib olindi. Shundan so‘ng sharlarning zaryadi nimaga teng bo‘lib qoladi?",
+      "answers": [
+        "$+q; +18q; +3q$",
+        "$+6q; +q; +18q$",
+        "$+4q; +6q; +12q$",
+        "$+10q; +4q; +8q$",
+        "$+2q; +12q; +6q$"
+      ],
+      "correct": 2,
+      "images": "../rasmlar54/r2becb99bf6.png",
+      "source": "54-mavzu.tex#0:22"
+    }
+  ]
+}

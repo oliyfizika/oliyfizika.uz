@@ -1,0 +1,504 @@
+{
+  "id": 75,
+  "title": "75-Mavzu | Yassi va sferik ko‘zgularda tasvir yasash",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 76,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Qaytgan nur bilan yassi ko‘zgu orasidagi burchak $22^\\circ$ bo‘lsa, tushish burchagi qanday?",
+      "answers": [
+        "$22^\\circ$.",
+        "$38^\\circ$.",
+        "$58^\\circ$.",
+        "$68^\\circ$.",
+        "$82^\\circ$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:6"
+    },
+    {
+      "text": "Gorizontal joylashgan yassi ko‘zgu sirti bilan unga tushayotgan nur orasidagi burchak $20^\\circ$ bo‘lsa, qaytish burchagi necha gradus bo‘ladi?",
+      "answers": [
+        "$20^\\circ$.",
+        "$35^\\circ$.",
+        "$40^\\circ$.",
+        "$55^\\circ$.",
+        "$70^\\circ$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:7"
+    },
+    {
+      "text": "Ko‘zgu bilan tushayotgan nur orasidagi burchak $35^\\circ$ ga teng. Yorug‘likning qaytish burchagini aniqlang.",
+      "answers": [
+        "$35^\\circ$.",
+        "$70^\\circ$.",
+        "$50^\\circ$.",
+        "$55^\\circ$.",
+        "$25^\\circ$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:8"
+    },
+    {
+      "text": "Yassi ko‘zguga tushayotgan nur bilan undan qaytgan nur orasidagi burchak $20^\\circ$ bo‘lsa, nurning tushish burchagi qanday?",
+      "answers": [
+        "$80^\\circ$.",
+        "$40^\\circ$.",
+        "$30^\\circ$.",
+        "$20^\\circ$.",
+        "$10^\\circ$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:9"
+    },
+    {
+      "text": "Agar ko‘zgu $15^\\circ$ burchakka burilsa, ko‘zgudan qaytgan nur necha gradusga buriladi?",
+      "answers": [
+        "15.",
+        "45.",
+        "30.",
+        "60.",
+        "0."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:14"
+    },
+    {
+      "text": "Yassi ko‘zgu $\\alpha=28^\\circ$ burchakka burilsa, ko‘zgudan qaytgan nur qanday burchakka buriladi?",
+      "answers": [
+        "$84^\\circ$.",
+        "$56^\\circ$.",
+        "$28^\\circ$.",
+        "$14^\\circ$.",
+        "$7^\\circ$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#0:15"
+    },
+    {
+      "text": "Yassi ko‘zgudan qaytayotgan nur ko‘zguning burilishi natijasida dastlabki yo‘nalishdan $\\alpha$ burchakka o‘tdi. Ko‘zgu qanday burchakka burilgan?",
+      "answers": [
+        "$2\\alpha$.",
+        "$\\alpha$.",
+        "0.",
+        "$0,25\\alpha$.",
+        "$0,5\\alpha$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:16"
+    },
+    {
+      "text": "Yassi ko‘zguga yorug‘lik nuri $22^\\circ$ burchak ostida tushmoqda. Agar tushgan nur holati o‘zgartirilmasdan ko‘zgu burilganda, nurning tushish burchagi $36^\\circ$ bo‘lib qolsa, qaytgan nur qanday burchakka burilgan?",
+      "answers": [
+        "$11^\\circ$.",
+        "$14^\\circ$.",
+        "$18^\\circ$.",
+        "$28^\\circ$.",
+        "$6^\\circ$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:17"
+    },
+    {
+      "text": "Quyoshning gorizontal balandligi $46^\\circ$ ni tashkil etadi. Yassi ko‘zgudan qaytgan quyosh nuri yuqoriga vertikal ravishda yo‘nalishi uchun uning ko‘zguga tushish burchagi qanday bo‘lishi kerak?",
+      "answers": [
+        "$22^\\circ$.",
+        "$26^\\circ$.",
+        "$28^\\circ$.",
+        "$60^\\circ$.",
+        "$68^\\circ$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#0:18"
+    },
+    {
+      "text": "Quyosh nuri yer sirti bilan $40^\\circ$ burchak hosil qiladi. Nurni yer sirtiga tik qo‘yilgan ingichka quvur ichiga yo‘naltirish uchun yassi ko‘zguni gorizontga nisbatan qanday burchak ostida joylashtirish kerak?",
+      "answers": [
+        "$60^\\circ$.",
+        "$65^\\circ$.",
+        "$70^\\circ$.",
+        "$80^\\circ$.",
+        "$40^\\circ$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#0:19"
+    },
+    {
+      "text": "Ikki yassi ko‘zgu o‘zaro $60^\\circ$ burchak hosil qiladi. Birinchi ko‘zgudan qaytgan nur ikkinchi ko‘zgu sirtiga perpendikular tushishi uchun, nurning birinchi ko‘zguga tushish burchagi qanday bo‘lishi kerak?",
+      "answers": [
+        "$15^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "$90^\\circ$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:20"
+    },
+    {
+      "text": "Ko‘zgular orasidagi burchak $\\alpha$ necha gradus?",
+      "answers": [
+        "35.",
+        "50.",
+        "40.",
+        "55.",
+        "140."
+      ],
+      "correct": 3,
+      "images": "../rasmlar75/r2901ed49f6.png",
+      "source": "73-mavzu.tex#0:21"
+    },
+    {
+      "text": "O‘zaro $20^\\circ$ burchak ostida joylashtirilgan ikkita ko‘zguga biriga yorug‘lik nuri tushmoqda. Bunda ikkala ko‘zgudan qaytgan nur bilan tushgan nur orasidagi burchak qanday bo‘ladi?",
+      "answers": [
+        "$80^\\circ$.",
+        "$60^\\circ$.",
+        "$40^\\circ$.",
+        "$30^\\circ$.",
+        "$10^\\circ$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:22"
+    },
+    {
+      "text": "Ko‘zgu suvga burchak ostida kiritilgan. Agar $\\alpha=20^\\circ$ bo‘lsa, $\\beta$ va $\\gamma$ burchaklarni toping.",
+      "answers": [
+        "$\\beta=70^\\circ$; $\\gamma=40^\\circ$.",
+        "$\\beta=20^\\circ$; $\\gamma=60^\\circ$.",
+        "$\\beta=50^\\circ$; $\\gamma=10^\\circ$.",
+        "$\\beta=80^\\circ$; $\\gamma=20^\\circ$.",
+        "$\\beta=20^\\circ$; $\\gamma=50^\\circ$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar75/r5f3491f675.png",
+      "source": "73-mavzu.tex#0:23"
+    },
+    {
+      "text": "Nurning $L$ ko‘zgudan qaytish burchagini toping.",
+      "answers": [
+        "$25^\\circ$",
+        "$35^\\circ$",
+        "$45^\\circ$",
+        "$55^\\circ$",
+        "$65^\\circ$"
+      ],
+      "correct": 0,
+      "images": "../rasmlar75/ra130b986b4.png",
+      "source": "73-mavzu.tex#0:24"
+    },
+    {
+      "text": "Yassi ko‘zguga tushayotgan nur $I$ va qaytgan nur $I'$ bo‘lsa, $\\alpha$ burchakni toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$40^\\circ$",
+        "$50^\\circ$",
+        "$75^\\circ$",
+        "$12,5^\\circ$"
+      ],
+      "correct": 1,
+      "images": "../rasmlar75/r1a9f2b3555.png",
+      "source": "73-mavzu.tex#0:25"
+    },
+    {
+      "text": "Quyosh nuri yer sirti bilan $36^\\circ$ burchak hosil qiladi. Nur yassi ko‘zgudan qaytgach gorizontal yo‘nalishi uchun ko‘zguga tushish burchagi qanday bo‘lishi kerak?",
+      "answers": [
+        "$90^\\circ$",
+        "$84^\\circ$",
+        "$72^\\circ$",
+        "$54^\\circ$",
+        "$36^\\circ$"
+      ],
+      "correct": 2,
+      "images": "../rasmlar75/r222269b8a9.png",
+      "source": "73-mavzu.tex#0:27"
+    },
+    {
+      "text": "Nur yassi ko‘zgudan qaytgach gorizontal yo‘nalishi uchun yer bilan qanday $\\alpha$ burchak ostida qo‘yish kerak?",
+      "answers": [
+        "$22^\\circ$",
+        "$56^\\circ$",
+        "$72^\\circ$",
+        "$68^\\circ$",
+        "$11^\\circ$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar75/r61c55b3025.png",
+      "source": "73-mavzu.tex#0:28"
+    },
+    {
+      "text": "O‘zaro $30^\\circ$ burchak ostida joylashtirilgan ikkita ko‘zgudan biriga yorug‘lik nuri tushmoqda. Bunda ikkala ko‘zgudan qaytgan nur bilan tushgan nur orasidagi burchak qanday bo‘ladi?",
+      "answers": [
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$.",
+        "$15^\\circ$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#0:29"
+    },
+    {
+      "text": "Rasmda o‘zaro $\\alpha$ burchak ostida joylashgan ko‘zgularga tushib ulardan qaytgan nur yo‘li tasvirlangan. Nur dastlabki yo‘nalishga nisbatan jami qanchaga burilgan?",
+      "answers": [
+        "$90-2\\alpha$.",
+        "$\\alpha$.",
+        "$2\\alpha$.",
+        "$90-\\alpha$.",
+        "$90+\\alpha$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar75/ra6f28e4507.png",
+      "source": "73-mavzu.tex#0:30"
+    },
+    {
+      "text": "Agar yassi ko‘zguda buyum tasviri ko‘zgudan $70$ cm masofada hosil bo‘lsa, buyum bilan uning tasviri orasidagi masofa necha cm bo‘ladi?",
+      "answers": [
+        "35.",
+        "70.",
+        "140.",
+        "105.",
+        "2."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:32"
+    },
+    {
+      "text": "Yassi ko‘zgu oldida odam turibdi. Agar u ko‘zguga $1$ m yaqinlashsa, odam va uning tasviri orasidagi masofa qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "1 m kamayadi.",
+        "0,5 m kamayadi.",
+        "2 m kamayadi.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:33"
+    },
+    {
+      "text": "Agar bola vertikal joylashgan ko‘zgu tekisligiga $4$ m yaqinlashsa, uning ko‘zgudagi tasviri unga necha metr yaqinlashadi?",
+      "answers": [
+        "2.",
+        "4.",
+        "8.",
+        "1.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:34"
+    },
+    {
+      "text": "Agar odamning eng yaxshi ko‘rish masofasi $30$ cm bo‘lsa, o‘zining ko‘zgudagi tasvirini yaxshiroq ko‘rish uchun u ko‘zgudan necha cm masofada turishi kerak?",
+      "answers": [
+        "15.",
+        "25.",
+        "30.",
+        "60.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#0:35"
+    },
+    {
+      "text": "Odam vertikal joylashgan yassi ko‘zgu tekisligiga $2,6$ m yaqinlashsa, u bilan uning tasviri orasidagi masofa qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "1,3 m kamayadi.",
+        "5,2 m kamayadi.",
+        "2,6 m kamayadi.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:36"
+    },
+    {
+      "text": "Odam vertikal joylashgan yassi ko‘zgu tekisligidan $3$ m uzoqlashsa, u bilan uning tasviri orasidagi masofa qanday o‘zgaradi?",
+      "answers": [
+        "3 m kattalashadi.",
+        "1,5 m kattalashadi.",
+        "o‘zgarmaydi.",
+        "6 m kattalashadi.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:37"
+    },
+    {
+      "text": "Bola yassi ko‘zguda o‘z aksini ko‘rmoqda. Agar u ko‘zguga $0,6$ m/s tezlik bilan yaqinlashsa, uning aksi unga necha m/s tezlik bilan yaqinlashadi?",
+      "answers": [
+        "1,2.",
+        "1,1.",
+        "1.",
+        "0,9.",
+        "0,6."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#0:38"
+    },
+    {
+      "text": "Yassi ko‘zgu o‘z tekisligiga tik ravishda $1,5$ cm/s tezlik bilan yorug‘lik manbai tomon harakatlanmoqda. Ko‘zgudagi tasviri o‘zgarmas bo‘lishi uchun yorug‘lik manbai necha cm/s tezlik bilan va qaysi tomonga harakatlanishi kerak?",
+      "answers": [
+        "1,5, ko‘zgudan.",
+        "3, ko‘zguga.",
+        "3, ko‘zgudan.",
+        "1,5, ko‘zguga.",
+        "0,75, ko‘zgudan."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:40"
+    },
+    {
+      "text": "Qizcha ko‘zguga tik yo‘nalishda $0,5$ m/s tezlik bilan yaqinlashmoqda. Qizchaning tasviri unga va ko‘zguga qanday tezliklar (m/s) bilan yaqinlashadi?",
+      "answers": [
+        "1; 0,5.",
+        "0,5; 0,5.",
+        "1; 1.",
+        "0,5; 1.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#0:41"
+    },
+    {
+      "text": "OA ko‘zgu chizma tekisligiga tik bo‘lgan va O nuqtadan o‘tuvchi o‘q atrofida $\\omega$ burchak tezlik bilan aylanadi. $OS=l$ bo‘lsa S nuqtaning tasviri rasmda ko‘rsatilgan paytda qanday tezlik bilan harakatlanadi?",
+      "answers": [
+        "$2\\omega l$.",
+        "$\\omega l$.",
+        "$\\omega l/2$.",
+        "$3\\omega l/2$.",
+        "$l/\\omega$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar75/r5e5f627c37.png",
+      "source": "73-mavzu.tex#0:43"
+    },
+    {
+      "text": "A nuqta gorizontal yo‘nalishda $v_1=3$ m/s, MN yassi ko‘zgu vertikal yo‘nalishda $v_2=4$ m/s tezlik bilan rasmda ko‘rsatilgandek harakatlanmoqda. A nuqtaning ko‘zgudagi tasvirining tezligini (m/s) toping.",
+      "answers": [
+        "5.",
+        "$\\sqrt{52}$.",
+        "8.",
+        "$\\sqrt{73}$.",
+        "10."
+      ],
+      "correct": 3,
+      "images": "../rasmlar75/r45012e49fa.png",
+      "source": "73-mavzu.tex#0:44"
+    },
+    {
+      "text": "A nuqta gorizontal yo‘nalishda $v_1=8$ m/s, MN yassi ko‘zgu vertikal yo‘nalishda $v_2=3$ m/s tezlik bilan rasmda ko‘rsatilgandek harakatlanmoqda. A nuqtaning ko‘zgudagi tasvirining tezligini (m/s) toping.",
+      "answers": [
+        "10.",
+        "$\\sqrt{52}$.",
+        "8.",
+        "$\\sqrt{73}$.",
+        "20."
+      ],
+      "correct": 0,
+      "images": "../rasmlar75/r45012e49fa.png",
+      "source": "73-mavzu.tex#0:45"
+    },
+    {
+      "text": "Bo‘yi $1,6$ m bo‘lgan qiz boshini holatini o‘zgartirmasdan o‘zining vertikal yassi ko‘zgudagi aksini to‘liqincha ko‘rish uchun ko‘zguning balandligi kamida necha metr bo‘lishi kerak?",
+      "answers": [
+        "1,6.",
+        "0,8.",
+        "0,4.",
+        "2,4.",
+        "javob qiz va ko‘zgu orasidagi masofaga bog‘liq."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#0:46"
+    },
+    {
+      "text": "Yassi ko‘zgu oldida turgan, bo‘yi $l$ bo‘lgan kishi o‘zining to‘liq tasvirini ko‘rishi uchun ko‘zguning o‘lchami (balandligi) kamida qancha bo‘lishi kerak?",
+      "answers": [
+        "$l/2$.",
+        "$2l/3$.",
+        "$l/4$.",
+        "$l$.",
+        "$l/3$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#0:47"
+    },
+    {
+      "text": "G nuqtadan ko‘zguga qarab devorning necha metr balandligini ko‘rish mumkin?",
+      "answers": [
+        "10.",
+        "15.",
+        "20.",
+        "8.",
+        "5."
+      ],
+      "correct": 1,
+      "images": "../rasmlar75/r6fc6897bef.png",
+      "source": "73-mavzu.tex#0:48"
+    },
+    {
+      "text": "$N_1O$ va $N_2O$ yassi ko‘zgular bir-biriga nisbatan $120^\\circ$ burchak ostida joylashgan. Yorug‘lik manbai ko‘zgular kesishgan chiziqdan $12$ cm masofada, ko‘zguga nisbatan simmetrik joylashgan. Yorug‘lik manbaining ko‘zgulardagi hosil bo‘lgan mavhum tasvirlari orasidagi masofa qanday (cm)?",
+      "answers": [
+        "12.",
+        "17.",
+        "20,8.",
+        "24.",
+        "TJY."
+      ],
+      "correct": 2,
+      "images": "../rasmlar75/rd59347a6c1.png",
+      "source": "73-mavzu.tex#0:50"
+    },
+    {
+      "text": "Ikki yassi ko‘zgular bir-biriga nisbatan $120^\\circ$ burchak ostida joylashgan. Yorug‘lik manbai har ikki ko‘zgudan $20$ cm uzoqlikda ular orasida joylashgan. Yorug‘lik manbaining ko‘zgularda hosil bo‘lgan tasvirlari orasidagi masofani qanday (cm)?",
+      "answers": [
+        "40.",
+        "34,6.",
+        "50.",
+        "69,2.",
+        "10."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#0:51"
+    },
+    {
+      "text": "Ikki yassi ko‘zgular bir-biriga nisbatan $90^\\circ$ burchak ostida joylashgan. Yorug‘lik manbai biridan $5$ cm, ikkinchisidan $12$ cm masofada joylashgan. Yorug‘lik manbaining ko‘zgularda hosil bo‘lgan tasvirlari orasidagi masofani qanday (cm)?",
+      "answers": [
+        "13.",
+        "20.",
+        "26.",
+        "24.",
+        "6."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#0:52"
+    },
+    {
+      "text": "$L$ nuqtadan taralgan nur ko‘zgulardan qaytgach qaysi nuqtaga tushadi?",
+      "answers": [
+        "L.",
+        "M.",
+        "N.",
+        "P.",
+        "K."
+      ],
+      "correct": 2,
+      "images": "../rasmlar75/rf80f28fa1a.png",
+      "source": "73-mavzu.tex#0:53"
+    },
+    {
+      "text": "Buyum o‘zaro tik joylashgan ikkita yassi ko‘zgular orasida joylashgan (rasmga q.). Ko‘zgularda buyumning nechta tasviri ko‘rinadi?",
+      "answers": [
+        "Cheksiz ko‘p.",
+        "2.",
+        "3.",
+        "4."
+      ],
+      "correct": 2,
+      "images": "../rasmlar75/r59e09ca4ac.png",
+      "source": "73-mavzu.tex#0:54"
+    }
+  ]
+}

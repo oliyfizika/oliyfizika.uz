@@ -1,0 +1,1210 @@
+{
+  "id": 73,
+  "title": "73-Mavzu | Optika. Geometrik optika. Yorug‘likning qaytishi va sinishi",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 74,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Yorug‘lik nuri nima?",
+      "answers": [
+        "yorug‘lik manbai bilan kuzatilayotgan nuqtani tutashtiruvchi to‘g‘ri chiziq.",
+        "$\\vec{B}$ tebranishlarining yo‘nalishini ko‘rsatuvchi chiziq.",
+        "$\\vec{E}$ tebranishlarining yo‘nalishini ko‘rsatuvchi chiziq.",
+        "yorug‘lik energiyasi tarqalayotgan chiziq.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:1"
+    },
+    {
+      "text": "Quyidagi hodisalarning qaysi biri yorug‘likning to‘g‘ri chiziq bo‘ylab tarqalish qonuni asosida tushuntiriladi?",
+      "answers": [
+        "qutbdan nurlanish.",
+        "qimmatbaho toshlarning chaqnashi.",
+        "chaqmoq.",
+        "kamalak.",
+        "daraxtning soyasi."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:2"
+    },
+    {
+      "text": "Velosipedchining o‘z soyasini quvib o‘tishi mumkinmi?",
+      "answers": [
+        "yo‘q.",
+        "ha, agar soya tushayotgan devorga parallel harakatlansa.",
+        "ha, agar soya tushayotgan devor velosipedchi harakatiga parallel bo‘lib, yorug‘lik manbai velosipedchiga qarshi yo‘nalishda harakatlansa.",
+        "ha, agar u soya tushayotgan devorga burchak ostida harakatlanib, yorug‘lik manbai harakatsiz bo‘lsa.",
+        "ha, agar soya tushayotgan devor velosipedchi harakati yo‘nalishiga parallel bo‘lib, yorug‘lik manbai velosipedchi harakati yo‘nalishida kattaroq tezlik bilan harakatlansa."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:3"
+    },
+    {
+      "text": "$30$ cm uzunlikdagi chizg‘ich stol ustida tik ushlab turilibdi. Uning soyasi uzunligi $20$ cm bo‘ldi. Agar chiroq turgan nuqtadan stolga tushirilgan perpendikular asosidan chizg‘ich asosigacha masofa $80$ cm bo‘lsa, chiroqning stol sirtidan balandligi necha metr?",
+      "answers": [
+        "3,4.",
+        "2,4.",
+        "1,3.",
+        "0,4.",
+        "1,5."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:4"
+    },
+    {
+      "text": "O‘quvchi lazer nurini shisha plastinkadan akslanishi va sinishi bo‘yicha tajriba o‘tkazdi. Tajribada nurning tushish burchagi qanday bo‘lgan?",
+      "answers": [
+        "$50^\\circ$",
+        "$70^\\circ$",
+        "$40^\\circ$",
+        "$20^\\circ$",
+        "$10^\\circ$"
+      ],
+      "correct": 1,
+      "images": "../rasmlar73/r8965ff4305.png",
+      "source": "73-mavzu.tex#0:5"
+    },
+    {
+      "text": "Tushayotgan va qaytgan nurlar orasidagi burchak $50^\\circ$ bo‘lsa, nur qanday burchak ostida tushmoqda?",
+      "answers": [
+        "$20^\\circ$.",
+        "$40^\\circ$.",
+        "$25^\\circ$.",
+        "$50^\\circ$.",
+        "$100^\\circ$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#0:10"
+    },
+    {
+      "text": "Tushuvchi va qaytuvchi yorug‘lik nurlari orasidagi burchak $\\alpha$ bo‘lsa, qaytish burchagi?",
+      "answers": [
+        "$2\\alpha$.",
+        "$90^\\circ-\\alpha$.",
+        "$90^\\circ-\\alpha/2$.",
+        "$\\alpha$.",
+        "$\\alpha/2$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#0:11"
+    },
+    {
+      "text": "Tushayotgan va qaytgan nurlar orasidagi burchak sinusi $0,5$ bo‘lsa, nur qanday burchak ostida tushmoqda?",
+      "answers": [
+        "$15^\\circ$.",
+        "$75^\\circ$.",
+        "$30^\\circ$ yoki $60^\\circ$.",
+        "$15^\\circ$ yoki $75^\\circ$.",
+        "$45^\\circ$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:12"
+    },
+    {
+      "text": "Agar ikki muhit chegarasiga tushayotgan nurning tushish burchagi $10^\\circ$ ga kamaytirsak, tushayotgan va qaytayotgan nurlar orasidagi burchak qanday o‘zgaradi?",
+      "answers": [
+        "$5^\\circ$ kamayadi.",
+        "$10^\\circ$ kamayadi.",
+        "o‘zgarmaydi.",
+        "$20^\\circ$ kamayadi.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#0:13"
+    },
+    {
+      "text": "Rasmlardagi ma’lumotlardan foydalanib, $\\alpha$ burchakni toping.",
+      "answers": [
+        "$11^\\circ$",
+        "$10,5^\\circ$",
+        "$21^\\circ$",
+        "$42^\\circ$",
+        "$32^\\circ$"
+      ],
+      "correct": 2,
+      "images": "../rasmlar73/ra96a12f228.png",
+      "source": "73-mavzu.tex#0:26"
+    },
+    {
+      "text": "Nur dastlabki yo‘nalishiga nisbatan jami qanchaga burilgan?",
+      "answers": [
+        "$30^\\circ$.",
+        "$300^\\circ$.",
+        "$60^\\circ$.",
+        "$90^\\circ$.",
+        "$75^\\circ$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar73/rd37cce13ef.png",
+      "source": "73-mavzu.tex#0:31"
+    },
+    {
+      "text": "Bola tasvirining yerga nisbatan tezligini toping.",
+      "answers": [
+        "$2v$.",
+        "$3v$.",
+        "$4v$.",
+        "$v$.",
+        "$v/2$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#0:42"
+    },
+    {
+      "text": "Ikki yassi shisha plastina bir-biridan $a$ masofada parallel qo‘yilgan. Rasmdan foydalanib, $A$ jismning plastinalardagi tasvirlari orasidagi masofani toping. $A$ jismdan birinchi plastinagacha bo‘lgan masofa $b$ ga teng.",
+      "answers": [
+        "$a+b$.",
+        "$2b$.",
+        "$2a$.",
+        "$b-a$.",
+        "$4b$."
+      ],
+      "correct": 2,
+      "images": "../rasmlar73/r33981a5b93.png",
+      "source": "73-mavzu.tex#0:49"
+    },
+    {
+      "text": "Chizmalarning qaysi birida tushish burchagi $\\alpha$, qaytish burchagi $\\beta$ va sinish burchagi $\\gamma$ to‘g‘ri ko‘rsatilgan?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ],
+      "correct": 1,
+      "images": "../rasmlar73/rdfe4f8b109.png",
+      "source": "73-mavzu.tex#1:1"
+    },
+    {
+      "text": "Yorug‘lik nuri havodan absolyut sindirish ko‘rsatkichi $\\sqrt{3}$ bo‘lgan muhitga o‘tdi. Bunda tushish burchagi $60^\\circ$ ga teng bo‘lsa, sinish burchagini toping.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$70^\\circ$",
+        "$30^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:2"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $\\sqrt{3}$ bo‘lgan birinchi muhitdan, absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ ga teng bo‘lgan muhitga sinib o‘tdi. Agar sinish burchagi $60^\\circ$ ga teng bo‘lsa, tushish burchagini toping.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:3"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ ga teng bo‘lgan birinchi muhitdan ikkinchi muhitga sinib o‘tdi. Bunda tushish burchagi $30^\\circ$ ga, sinish burchagi esa $45^\\circ$ ga teng. Ikkinchi muhitning absolyut sindirish ko‘rsatkichini toping.",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:4"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $2$ bo‘lgan birinchi muhitdan, absolyut sindirish ko‘rsatkichi $2\\sqrt{2}$ ga teng bo‘lgan muhitga sinib o‘tdi. Agar sinish burchagi $30^\\circ$ ga teng bo‘lsa, tushish burchagini toping.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:5"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $3$ ga teng bo‘lgan birinchi muhitdan ikkinchi muhitga sinib o‘tdi. Bunda tushish burchagi $30^\\circ$ ga, sinish burchagi esa $60^\\circ$ ga teng. Ikkinchi muhitning absolyut sindirish ko‘rsatkichini toping.",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:6"
+    },
+    {
+      "text": "Yorug‘lik nuri birinchi muhitdan absolyut sindirish ko‘rsatkichi $2\\sqrt{2}$ ga teng bo‘lgan ikkinchi muhitga sinib o‘tdi. Bunda tushish burchagi $45^\\circ$ ga, sinish burchagi esa $30^\\circ$ ga teng. Birinchi muhitning absolyut sindirish ko‘rsatkichini toping.",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:7"
+    },
+    {
+      "text": "Yorug‘lik nurining 1-muhitdan 2-muhitga o‘tishida tushish burchagi $30^\\circ$, sinish burchagi esa $60^\\circ$. 2-muhitning 1-muhitga nisbatan sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$0,5$",
+        "$2$",
+        "$\\sqrt{3}$",
+        "$\\sqrt{3}/3$",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:8"
+    },
+    {
+      "text": "Nur shishadan havoga o‘tmoqda. Tushish burchagi $30^\\circ$. Nur singanda, o‘z yo‘nalishini $30^\\circ$ ga o‘zgartirgan bo‘lsa, shishaning sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$2$",
+        "$\\sqrt{2}/2$",
+        "$1,5$"
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:9"
+    },
+    {
+      "text": "Yorug‘lik nuri havodan absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ bo‘lgan muhitga o‘tdi. Bunda tushish burchagi $45^\\circ$ ga teng bo‘lsa, sinish burchagini toping.",
+      "answers": [
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:10"
+    },
+    {
+      "text": "Yorug‘lik nuri havodan turli muhitlarning yassi sirtiga tushganda, qaytgan va singan nurlar orasidagi burchak tushish burchagidan $1,5$ marta katta bo‘ldi. Agar tushish burchagi $60^\\circ$ bo‘lsa, sinish burchagi qanday bo‘ladi?",
+      "answers": [
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:11"
+    },
+    {
+      "text": "Rasmdagi ma’lumotlardan $n_2$ ni toping. $\\sin53^\\circ=0,8$.",
+      "answers": [
+        "$5/3$",
+        "$25/9$",
+        "$1$",
+        "$16/9$",
+        "$25/16$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar73/r0ad54ce844.png",
+      "source": "73-mavzu.tex#1:12"
+    },
+    {
+      "text": "Nur havodan shisha sirtiga $45^\\circ$ burchak ostida tushsa, sinish burchagi necha gradus bo‘ladi? Shisha uchun $n=1,41$.",
+      "answers": [
+        "$25^\\circ$",
+        "$21^\\circ$",
+        "$30^\\circ$",
+        "$37^\\circ$",
+        "$42^\\circ$"
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:13"
+    },
+    {
+      "text": "Havodan shishaga $60^\\circ$ burchak ostida yorug‘lik tushmoqda. Agar qaytgan va singan nur orasidagi burchak tushish burchagidan $1,5$ marta katta bo‘lsa, shishaning sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:14"
+    },
+    {
+      "text": "Havodan shishaga tushuvchi va qaytgan nurlar orasidagi burchak $60^\\circ$. Sinish burchagining sinusini toping? $n=1,5$.",
+      "answers": [
+        "$2/3$",
+        "$3/5$",
+        "$1/2$",
+        "$1/3$",
+        "$1/4$"
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:15"
+    },
+    {
+      "text": "Sinish burchagi tushish burchagidan 2 marta kichik bo‘lishi uchun havodan shisha sirtiga yorug‘lik qanday burchak ostida tushishi kerak? $n_{\\text{sh}}=\\sqrt{3}$.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$70^\\circ$",
+        "$80^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:16"
+    },
+    {
+      "text": "Yorug‘lik nuri bir muhitdan optik zichligi kattaroq bo‘lgan ikkinchi muhitga sinib o‘tganda ...",
+      "answers": [
+        "sinish burchagi tushish burchagidan kichikroq bo‘ladi.",
+        "sinish burchagi tushish burchagidan kattaroq bo‘ladi.",
+        "sinish burchagi tushish burchagiga teng bo‘ladi.",
+        "javob tushish burchagiga bog‘liq.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#1:17"
+    },
+    {
+      "text": "Qaysi chizmada yorug‘lik nurining optik zichligi kattaroq bo‘lgan muhitdan optik zichligi kichikroq bo‘lgan muhitga o‘tishi tasvirlangan?",
+      "answers": [
+        "bunday chizma yo‘q.",
+        "1.",
+        "2.",
+        "3.",
+        "1, 2."
+      ],
+      "correct": 3,
+      "images": "../rasmlar73/r603db0f9e1.png",
+      "source": "73-mavzu.tex#1:18"
+    },
+    {
+      "text": "Nur bir muhitdan optik zichligi kichikroq bo‘lgan boshqa muhitga o‘tganda ...",
+      "answers": [
+        "sinish burchagi tushish burchagidan kichik.",
+        "sinish burchagi tushish burchagidan katta.",
+        "sinish burchagi tushish burchagiga teng.",
+        "nurning sinishi kuzatilmaydi.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:19"
+    },
+    {
+      "text": "Keltirilgan chizmalarning qaysilarida nurlarning yo‘li to‘g‘ri ko‘rsatilgan?\nI muhit – shisha, II muhit – havo.",
+      "answers": [
+        "a",
+        "a, b va c",
+        "c",
+        "a va b",
+        "b"
+      ],
+      "correct": 4,
+      "images": "../rasmlar73/r5f5d33dcb9.png",
+      "source": "73-mavzu.tex#1:20"
+    },
+    {
+      "text": "Sinish burchagi tushish burchagidan katta bo‘la oladimi?",
+      "answers": [
+        "hamma holda katta bo‘ladi.",
+        "nur optik zichligi kichikroq muhitdan optik zichligi kattaroq muhitga o‘tganda.",
+        "nur optik zichligi kattaroq muhitdan optik zichligi kichikroq muhitga o‘tganda.",
+        "nur vakuumdan muhitga o‘tganda.",
+        "bunday hol bo‘lmaydi."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:21"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgandek, yorug‘lik nuri ikki muhitning (1 va 2) ajralish chegarasidan o‘tadi. Quyidagilardan qaysi biri rasmdagi holatni to‘g‘ri ifodalaydi?",
+      "answers": [
+        "yorug‘lik qutblangan.",
+        "2-chi muhitda yorug‘lik tezligi 1-muhitdagidan katta.",
+        "2-chi muhitda yorug‘lik tezligi 1-muhitdagidan kichik.",
+        "1-muhitning absolyut sindirish ko‘rsatkichi birdan kichik.",
+        "TJY."
+      ],
+      "correct": 1,
+      "images": "../rasmlar73/r8d26615ccb.png",
+      "source": "73-mavzu.tex#1:22"
+    },
+    {
+      "text": "Yorug‘lik nuri sindirish ko‘rsatkichi $n_1$ bo‘lgan muhitdan, sindirish ko‘rsatkichi $n_2$ bo‘lgan muhitga o‘tmoqda ($n_2>n_1$). Yorug‘lik muhitlar chegarasiga tiklik bilan $0^\\circ$ burchak hosil qilib tushmoqda. Nurning sinish burchagi?",
+      "answers": [
+        "$\\arcsin(n_1/n_2)$.",
+        "$\\arcsin(n_2/n_1)$.",
+        "$0$.",
+        "$90^\\circ$.",
+        "$\\arcsin(1-n_2/n_1)$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#1:23"
+    },
+    {
+      "text": "Havoda sindirish ko‘rsatkichi $n=\\sqrt{3}$ bo‘lgan muhitga nur tushganda, qaytgan nur bilan singan nur orasidagi burchak $90^\\circ$ ga teng bo‘ldi. Nurning tushish burchagi qanday?",
+      "answers": [
+        "$0^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:24"
+    },
+    {
+      "text": "Singan nur qaytgan nurga tik bo‘lishi uchun nur sindirish ko‘rsatkichi $n=1{,}732$ bo‘lgan shishaga havodan qanday burchak ostida tushishi kerak?",
+      "answers": [
+        "$30^\\circ$.",
+        "$35^\\circ16'$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#1:25"
+    },
+    {
+      "text": "Singan nur qaytgan nurga tik bo‘lishi uchun nur yassi shishaga havodan qanday burchak ostida tushishi kerak? Shishaning sindirish ko‘rsatkichi $n$.",
+      "answers": [
+        "$\\arccos n$.",
+        "$\\arcsin n$.",
+        "$0$.",
+        "$\\operatorname{arcctg} n$.",
+        "$\\operatorname{arctg} n$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#1:26"
+    },
+    {
+      "text": "Yorug‘lik nuri suyuqlikdan vakuumga o‘tmoqda. Tushish burchagi $30^\\circ$. Qaytgan va singan nurlar bir-biriga tik. Bu suyuqlikning sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$1{,}3$.",
+        "$1{,}5$.",
+        "$1{,}73$.",
+        "$2$.",
+        "$2{,}5$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:27"
+    },
+    {
+      "text": "Sindirish ko‘rsatkichi $n$ ga teng muhitga yorug‘lik nuri havodan $\\alpha$ burchak ostida tushmoqda. Qaytgan va singan nurlar orasidagi burchak $90^\\circ$ ga teng bo‘lgan holat uchun $\\alpha$ va $n$ orasidagi bog‘lanish qanday ko‘rinishda?",
+      "answers": [
+        "$tg\\alpha=n$.",
+        "$\\dfrac{\\cos\\alpha}{\\sin\\beta}=n$.",
+        "$\\dfrac{\\cos\\alpha}{\\cos\\beta}=n$.",
+        "$\\dfrac{\\sin\\alpha}{\\cos\\beta}=n$.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#1:28"
+    },
+    {
+      "text": "Yorug‘lik nuri sindirish ko‘rsatkichi $\\sqrt{3}$ bo‘lgan shishadan havoga o‘tmoqda. Sinish burchagi tushish burchagidan 2 marta katta bo‘lishi uchun yorug‘lik havoga qanday burchak ostida tushishi kerak?",
+      "answers": [
+        "$25^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:29"
+    },
+    {
+      "text": "Yorug‘lik muhitdan havoga o‘tmoqda. Singan nur qaytgan nur bilan $90^\\circ$ burchak tashkil etadi. Agar tushish burchagi sinusining qiymati $0{,}6$ ga teng bo‘lsa, sinish ko‘rsatkichi qanday?",
+      "answers": [
+        "$1$.",
+        "$1{,}25$.",
+        "$1{,}33$.",
+        "$1{,}5$.",
+        "$1{,}8$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#1:30"
+    },
+    {
+      "text": "Tushish burchagi $\\alpha=0$ bo‘lganda, u sinish burchagi $\\beta$ bilan qanday munosabatda bo‘ladi?",
+      "answers": [
+        "$\\alpha=\\beta$.",
+        "$\\beta>\\alpha$.",
+        "$\\alpha>\\beta$.",
+        "$\\alpha=2\\beta$.",
+        "$\\beta=2\\alpha$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#1:31"
+    },
+    {
+      "text": "Yorug‘lik nuri havodan suvga o‘tadi. Tushish burchagi $\\alpha$ bo‘lsa, sinish burchagi $\\beta$ quyidagi shartlardan qaysi birini qanoatlantiradi?",
+      "answers": [
+        "$\\beta<\\alpha$.",
+        "$\\beta>\\alpha$.",
+        "$\\beta=\\alpha$.",
+        "$\\beta\\gg\\alpha$.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#1:32"
+    },
+    {
+      "text": "Yoqlari parallel bo‘lgan shaffof plastina orqali o‘tuvchi nurlarning qaysilarining yo‘li rasmda to‘g‘ri ko‘rsatilgan? Plastinani o‘rab turgan muhitning absolyut sindirish ko‘rsatkichi plastinkanikinidan katta.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "1 va 2.",
+        "1 va 3."
+      ],
+      "correct": 1,
+      "images": "../rasmlar73/ra4422c5392.png",
+      "source": "73-mavzu.tex#1:33"
+    },
+    {
+      "text": "O‘quvchi prizmaning sindirish ko‘rsatkichini aniqlash uchun optik tajriba o‘tkazdi (rasm). Bu tajribaga asosan sindirish ko‘rsatkichi qaysi formula bo‘yicha aniqlanadi?",
+      "answers": [
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{\\sin\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha-\\beta)}{\\sin\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{2\\sin\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{\\cos\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{2\\cos\\alpha}$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar73/r0ee2385b96.png",
+      "source": "73-mavzu.tex#1:34"
+    },
+    {
+      "text": "Agar yorug‘lik nuri yassi parallel shisha ($n=1{,}7$) plastinkaga $53^\\circ$ burchak ostida tushib, undan o‘tishda $2$ cm masofa siljigan bo‘lib, $\\sin53^\\circ=0{,}8$, (cm).",
+      "answers": [
+        "$1{,}8$.",
+        "$2{,}6$.",
+        "$3{,}4$.",
+        "$1{,}6$.",
+        "$4{,}2$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#1:35"
+    },
+    {
+      "text": "Muntazam uchburchakli prizmaning yon tomoniga $45^\\circ$ burchak ostida nur tushmoqda. Nur prizmadan chiqishda dastlabki yo‘nalishga nisbatan qanday burchakka og‘adi? $n=\\sqrt{2}$, $\\sin45^\\circ=\\sqrt{2}/2$.",
+      "answers": [
+        "$15^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "$90^\\circ$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#1:36"
+    },
+    {
+      "text": "Kerosinning dielektrik singdiruvchanligi $2$, magnit kirituvchanligi $1$ bo‘lsa, absolyut sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$1$.",
+        "$1,5$.",
+        "$2$.",
+        "$2\\sqrt{2}$.",
+        "$\\sqrt{2}$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:1"
+    },
+    {
+      "text": "Sindirish ko‘rsatkichi $n$ bo‘lgan shaffof jismga vakuumdan yorug‘lik tushayapti. Agar yorug‘likning vakuumdagi tezligi $c$ bo‘lsa, uning jism ichidagi tezligi qanday bo‘ladi?",
+      "answers": [
+        "$c/n$.",
+        "$nc$.",
+        "$c$.",
+        "$n/c$.",
+        "$\\sqrt{nc}$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:2"
+    },
+    {
+      "text": "Absolyut sindirish ko‘rsatkichi $1,5$ bo‘lgan muhitdagi yorug‘lik tezligi qanday (m/s)?",
+      "answers": [
+        "$1,5\\cdot10^7$.",
+        "$2\\cdot10^8$.",
+        "$2\\cdot10^7$.",
+        "$1,5\\cdot10^8$.",
+        "$1\\cdot10^7$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:3"
+    },
+    {
+      "text": "Absolyut sindirish ko‘rsatkichi $2,5$ bo‘lgan muhitda yorug‘lik qanday tezlik bilan tarqaladi?",
+      "answers": [
+        "$0,8c$.",
+        "$0,14c$.",
+        "$0,7c$.",
+        "$c$.",
+        "$0,4c$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:4"
+    },
+    {
+      "text": "Sindirish ko‘rsatkichi $n_1=1,4$ va sinish ko‘rsatkichi $n_2=1,75$ bo‘lgan muhitlarda tarqalayotgan nurlarning tezliklari nisbati qanday?",
+      "answers": [
+        "$1,1$.",
+        "$1,15$.",
+        "$1,25$.",
+        "$1,2$.",
+        "$1,3$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:5"
+    },
+    {
+      "text": "Nurning shaffof muhitdagi tezligi $0,25c$ ga teng. Muhitning absolyut sindirish ko‘rsatkichini aniqlang. $c$ — yorug‘likning vakuumdagi tezligi.",
+      "answers": [
+        "$1,33$.",
+        "$1,5$.",
+        "$4$.",
+        "$2$.",
+        "$2,3$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:6"
+    },
+    {
+      "text": "Yorug‘lik tezligi $0,625c$ ga teng bo‘lgan muhitning absolyut sindirish ko‘rsatkichini toping, $c$ — yorug‘likning vakuumdagi tezligi.",
+      "answers": [
+        "$2$.",
+        "$1,8$.",
+        "$1,7$.",
+        "$1,6$.",
+        "$1,5$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:7"
+    },
+    {
+      "text": "Yorug‘lik to‘lqinining havodagi uzunligi $0,6~\\mu$m. Uning suvdagi to‘lqin uzunligi necha $\\mu$m bo‘ladi? Suvning sindirish ko‘rsatkichi $n=4/3$.",
+      "answers": [
+        "$0,8$.",
+        "$0,64$.",
+        "$0,6$.",
+        "$0,5$.",
+        "$0,45$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:8"
+    },
+    {
+      "text": "Havodagi uzunligi $450$ nm bo‘lgan yorug‘lik to‘lqinining shishadagi uzunligi qanday (nm)? Shishaning sindirish ko‘rsatkichi $1,5$ ga teng.",
+      "answers": [
+        "$150$.",
+        "$675$.",
+        "$300$.",
+        "$250$.",
+        "$200$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:9"
+    },
+    {
+      "text": "To‘lqin uzunligi $5\\cdot10^{-7}$ m bo‘lgan yorug‘likning tebranish chastotasi necha Gersga teng? $c=3\\cdot10^8$ m/s.",
+      "answers": [
+        "$6\\cdot10^{15}$.",
+        "$0,6\\cdot10^{15}$.",
+        "$6\\cdot10^{12}$.",
+        "$6\\cdot10^{13}$.",
+        "$0,6\\cdot10^{14}$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:10"
+    },
+    {
+      "text": "Vakuumdagi to‘lqin uzunligi $0,75~\\mu$m bo‘lgan yorug‘likning chastotasini toping (Hz).",
+      "answers": [
+        "$5\\cdot10^{14}$.",
+        "$4\\cdot10^{15}$.",
+        "$7,5\\cdot10^{14}$.",
+        "$5\\cdot10^{15}$.",
+        "$4\\cdot10^{14}$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:11"
+    },
+    {
+      "text": "Vakuumdagi yorug‘likning to‘lqin uzunligi $\\lambda=6\\cdot10^{-7}$ m. Uning tebranishlar chastotasi necha Gers?",
+      "answers": [
+        "$6\\cdot10^{15}$.",
+        "$5\\cdot10^{15}$.",
+        "$1,8\\cdot10^{15}$.",
+        "$5\\cdot10^{14}$.",
+        "$6\\cdot10^7$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:12"
+    },
+    {
+      "text": "Agar muhitda tarqalayotgan yorug‘likning chastotasi $3\\cdot10^{14}$ Hz, to‘lqin uzunligi $500$ nm bo‘lsa, muhitning sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$2$.",
+        "$1,7$.",
+        "$1,6$.",
+        "$1,5$.",
+        "$1,33$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:13"
+    },
+    {
+      "text": "Chastotasi $3\\cdot10^{14}$ Hz bo‘lgan yorug‘likning sindirish ko‘rsatkichi $2$ ga teng bo‘lgan muhitdagi to‘lqin uzunligini aniqlang (nm).",
+      "answers": [
+        "$200$.",
+        "$400$.",
+        "$450$.",
+        "$500$.",
+        "$600$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:14"
+    },
+    {
+      "text": "Agar olmosda chastotasi $2,73\\cdot10^{14}$ Hz bo‘lgan yorug‘lik to‘lqinining uzunligi $450$ nm bo‘lsa, yorug‘likning olmosdagi tezligi qanday (m/s)?",
+      "answers": [
+        "$1,23\\cdot10^8$.",
+        "$2,23\\cdot10^8$.",
+        "$2,5\\cdot10^8$.",
+        "$1,5\\cdot10^8$.",
+        "$2,83\\cdot10^8$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:15"
+    },
+    {
+      "text": "Monoxromatik yorug‘lik bir muhitdan ikkinchi muhitga o‘tganda, to‘lqin uzunligi $2$ marta kamaygan bo‘lsa, uning tarqalish tezligi qanday o‘zgargan?",
+      "answers": [
+        "$2$ marta kamaygan.",
+        "$\\sqrt{2}$ marta kamaygan.",
+        "$\\sqrt{2}$ marta oshgan.",
+        "$2$ marta oshgan.",
+        "o‘zgarmagan."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:16"
+    },
+    {
+      "text": "Shaffof muhitdagi yorug‘lik chastotasi $4\\cdot10^{14}$ Hz, to‘lqin uzunligi $500$ nm bo‘lsa, muhitning sindirish ko‘rsatkichi qanday?",
+      "answers": [
+        "$1,33$.",
+        "$1,5$.",
+        "$1,7$.",
+        "$2$.",
+        "$2,25$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:17"
+    },
+    {
+      "text": "Muhitda yorug‘likning to‘lqin uzunligi $400$ nm, chastotasi $5\\cdot10^{14}$ Hz bo‘lsa, shu muhitning sindirish ko‘rsatkichi nimaga teng?",
+      "answers": [
+        "$1,7$.",
+        "$1,6$.",
+        "$7,3$.",
+        "$1,4$.",
+        "$1,5$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:18"
+    },
+    {
+      "text": "Yashil yorug‘lik muz sirtiga $45^\\circ$ burchak ostida tushib, $33^\\circ$ burchak ostida sindi. Yorug‘lik muzda necha m/s tezlik bilan tarqaladi? $\\sin45^\\circ=0,7$, $\\sin33^\\circ=0,54$ deb hisoblang.",
+      "answers": [
+        "$3\\cdot10^8$.",
+        "$2,3\\cdot10^8$.",
+        "$1,3\\cdot10^8$.",
+        "$2\\cdot10^8$.",
+        "$1,5\\cdot10^8$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:19"
+    },
+    {
+      "text": "Agar yorug‘lik qavariq suv tomchisi orqali bir vaqtda $45$ cm masofaga o‘tsa, biror suyuqlikda esa shunday vaqtda $30$ cm masofaga o‘tsa, bu suyuqlikning sindirish ko‘rsatkichi nimaga teng?",
+      "answers": [
+        "$1,2$.",
+        "$1,3$.",
+        "$1,4$.",
+        "$1,5$.",
+        "$1,7$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:20"
+    },
+    {
+      "text": "Sindirish ko‘rsatkichi $n_1=1,2$, skipidarniki $n_2=1,5$. Shu moddalardan yorug‘lik bir xil vaqtda o‘tadigan yo‘llar nisbati nimaga teng?",
+      "answers": [
+        "$1,22$.",
+        "$1,21$.",
+        "$1,2$.",
+        "$1,25$.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:21"
+    },
+    {
+      "text": "Nurning ikki muhit chegarasiga tushish burchagi $30^\\circ$ bo‘lganda, sinish burchagi $45^\\circ$ bo‘lsa, yorug‘lik birinchi muhitdan ikkinchi muhitga o‘tganda, tezlik qanday o‘zgaradi?",
+      "answers": [
+        "$1,5$ marta oshadi.",
+        "$\\sqrt{2}$ marta kamayadi.",
+        "$\\sqrt{2}$ marta oshadi.",
+        "$2$ marta kamayadi.",
+        "$2$ marta oshadi."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:22"
+    },
+    {
+      "text": "Elektromagnit tebranishlar chastotasi $10^{15}$ Hz bo‘lsa, sindirish ko‘rsatkichi $1,5$ ga teng bo‘lgan muhitda yorug‘lik to‘lqini uzunligi necha metr? Yorug‘likning bo‘shliqdagi tezligi $3\\cdot10^8$ m/s ga teng.",
+      "answers": [
+        "$2\\cdot10^{-7}$.",
+        "$3\\cdot10^{-7}$.",
+        "$0,5\\cdot10^{-7}$.",
+        "$0,3\\cdot10^{-7}$.",
+        "yorug‘lik to‘lqinining uzunligini berilgan kattaliklar asosida aniqlab bo‘lmaydi."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:23"
+    },
+    {
+      "text": "Havodagi uzunligi $720$ nm bo‘lgan yorug‘lik to‘lqinining olmosdagi uzunligi qanday (nm)? Yorug‘likning olmosdagi tezligi $1,25\\cdot10^8$ m/s.",
+      "answers": [
+        "$250$.",
+        "$300$.",
+        "$360$.",
+        "$576$.",
+        "$900$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:24"
+    },
+    {
+      "text": "Yorug‘lik vakuumda sindirish ko‘rsatkichi $n$ bo‘lgan muhitga o‘tayapti. Quyidagi fikrlardan qaysisi to‘g‘ri?",
+      "answers": [
+        "chastotasi va tezligi o‘zgarmaydi.",
+        "to‘lqin uzunligi va tezligi $n$ marta kamayadi.",
+        "chastotasi va to‘lqin uzunligi $n$ marta kamayadi.",
+        "to‘lqin uzunligi $n$ marta ortadi, chastotasi $n$ marta kamayadi.",
+        "chastotasi $n$ marta ortadi, to‘lqin uzunligi $n$ marta kamayadi."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:25"
+    },
+    {
+      "text": "Yorug‘lik vakuumdan sindirish ko‘rsatkichi $n=2$ bo‘lgan muhitga o‘tganda to‘lqin uzunligi qanday o‘zgaradi?",
+      "answers": [
+        "$2$ marta ortadi.",
+        "$2$ marta kamayadi.",
+        "o‘zgarmaydi.",
+        "o‘zgarish tushish burchagiga bog‘liq bo‘ladi.",
+        "TJY."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:26"
+    },
+    {
+      "text": "Havodan optik muhitga o‘tgan nurning to‘lqin uzunligi $30\\%$ kamaydi. Nurning bu muhitdagi tezligi nimaga teng?",
+      "answers": [
+        "$0,3c$.",
+        "$0,7c$.",
+        "$0,49c$.",
+        "$0,8c$.",
+        "$0,6c$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:27"
+    },
+    {
+      "text": "Absolyut sindirish ko‘rsatkichi $2$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $1,5$ bo‘lgan muhitga o‘tishda yorug‘likning to‘lqin uzunligi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "$3$ marta kamayadi.",
+        "$3$ marta ortadi.",
+        "$4/3$ marta kamayadi.",
+        "$4/3$ marta ortadi."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:28"
+    },
+    {
+      "text": "Monoxromatik yorug‘lik uch muhitdan ketma-ket o‘tganda shu muhitlardagi to‘lqin uzunligi $\\lambda_1=550$ nm; $\\lambda_2=550{,}1$ nm va $\\lambda_3=549{,}5$ nm bo‘ldi. Bu muhitlarning sindirish ko‘rsatkichlari uchun quyidagi munosabatlardan qaysi biri o‘rinli?",
+      "answers": [
+        "$n_1>n_2>n_3$.",
+        "$n_3>n_1>n_2$.",
+        "$n_1<n_2<n_3$.",
+        "$n_1=n_2=n_3$.",
+        "$n_2>n_3>n_1$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:29"
+    },
+    {
+      "text": "Yorug‘lik to‘lqini vakuumdan muhitga o‘tganda, to‘lqin uzunligi $1,5$ marta kamaydi. Yorug‘likning shu muhitdagi tezligini (m/s) aniqlang.",
+      "answers": [
+        "$1,5\\cdot10^8$.",
+        "$1\\cdot10^8$.",
+        "$0,5\\cdot10^8$.",
+        "$2\\cdot10^8$.",
+        "$2,5\\cdot10^8$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:30"
+    },
+    {
+      "text": "Yorug‘lik birinchi muhitdan ikkinchi muhitga $\\alpha_1$ burchak ostida tushadi. Sinish burchagi $\\alpha_2$. Birinchi muhitda yorug‘likning to‘lqin uzunligi $\\lambda_1$ bo‘lsa, ikkinchi muhitda to‘lqin uzunligi $\\lambda_2$ qanday bo‘ladi?",
+      "answers": [
+        "$\\lambda_2=\\lambda_1\\sin\\alpha_2/\\alpha_1$.",
+        "$\\lambda_2=\\lambda_1 tg\\alpha_1/\\alpha_2$.",
+        "$\\lambda_2=\\lambda_1\\sin\\alpha_2/\\sin\\alpha_1$.",
+        "$\\lambda_2=\\lambda_1\\sin\\alpha_1/\\sin\\alpha_2$.",
+        "$\\lambda_2=\\lambda_1 tg\\alpha_2/ tg\\alpha_1$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:31"
+    },
+    {
+      "text": "Agar to‘lqin uzunligi $4\\cdot10^{-7}$ m bo‘lgan yorug‘lik nuri bir muhitdan ikkinchi muhitga tushish burchagi $30^\\circ$, sinish burchagi $45^\\circ$ bo‘lsa, ikkinchi muhitdagi to‘lqin uzunligi necha nm?",
+      "answers": [
+        "$283$.",
+        "$320$.",
+        "$400$.",
+        "$566$.",
+        "$800$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:32"
+    },
+    {
+      "text": "Birinchi muhitdagi to‘lqin uzunligi $560$ nm bo‘lgan yorug‘lik nurining ikkinchi muhitga tushish burchagi $45^\\circ$, sinish burchagi $30^\\circ$ bo‘lsa, ikkinchi muhitdagi to‘lqin uzunligi necha nanometr? $\\sqrt{2}\\approx1{,}4$.",
+      "answers": [
+        "$840$.",
+        "$784$.",
+        "$560$.",
+        "$400$.",
+        "$373$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:33"
+    },
+    {
+      "text": "Chastotasi $5\\cdot10^{14}$ Hz bo‘lgan yorug‘likning sindirish ko‘rsatkichi $1,5$ bo‘lgan muhitdagi to‘lqin uzunligini aniqlang (nm).",
+      "answers": [
+        "$300$.",
+        "$400$.",
+        "$500$.",
+        "$600$.",
+        "$750$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:34"
+    },
+    {
+      "text": "Sindirish ko‘rsatkichi $1,5$ bo‘lgan shaffof muhitda tarqalayotgan, to‘lqin uzunligi $500$ nm bo‘lgan yorug‘likning chastotasini aniqlang (Hz)?",
+      "answers": [
+        "$5\\cdot10^{15}$.",
+        "$4\\cdot10^{14}$.",
+        "$1,5\\cdot10^{15}$.",
+        "$3\\cdot10^{14}$.",
+        "$4\\cdot10^{15}$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:35"
+    },
+    {
+      "text": "Agar $600$ nm to‘lqin uzunlikdagi yorug‘lik vakuumdan biror muhitga o‘tganda, tezligi $40\\%$ ga kamaygan bo‘lsa, yorug‘lik shu muhitdagi to‘lqin uzunligi qanday (nm)?",
+      "answers": [
+        "$240$.",
+        "$360$.",
+        "$750$.",
+        "$1000$.",
+        "$1500$."
+      ],
+      "correct": 1,
+      "source": "73-mavzu.tex#2:36"
+    },
+    {
+      "text": "Yorug‘lik to‘lqini bir muhitdan boshqasiga o‘tmoqda. Unga tegishli qaysi kattaliklar o‘zgaradi?\n1) to‘lqin uzunligi;\n2) chastota;\n3) tarqalish tezligi;\n4) amplituda.",
+      "answers": [
+        "faqat 2.",
+        "2, 4.",
+        "2, 3, 4.",
+        "1, 4.",
+        "4."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:37"
+    },
+    {
+      "text": "Elektromagnit to‘lqinlar bir muhitdan ikkinchi muhitga o‘tganda, quyidagi hodisalarning qaysi biri yuz beradi?",
+      "answers": [
+        "faqat chastota o‘zgaradi.",
+        "hech qanday o‘zgarish bo‘lmaydi.",
+        "to‘lqin uzunligi va chastota o‘zgaradi.",
+        "chastota va tezlik o‘zgaradi.",
+        "to‘lqin uzunligi va tezlik o‘zgaradi."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:38"
+    },
+    {
+      "text": "Yorug‘lik bir muhitdan ikkinchi muhitga o‘tganda, uning chastotasi, tezligi va to‘lqin uzunligidan qaysilari o‘zgarmaydi?",
+      "answers": [
+        "to‘lqin uzunligi.",
+        "tezligi va to‘lqin uzunligi.",
+        "tezligi.",
+        "chastotasi.",
+        "chastotasi va tezligi."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:39"
+    },
+    {
+      "text": "Monoxromatik yorug‘lik vakuumdan sindirish ko‘rsatkichi $n=2$ bo‘lgan muhitga o‘tganda, uning chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "$4$ marta ortadi.",
+        "$2$ marta kamayadi.",
+        "$2$ marta ortadi.",
+        "$4$ marta kamayadi.",
+        "o‘zgarmaydi."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:40"
+    },
+    {
+      "text": "Chastotasi $3\\cdot10^{15}$ Hz bo‘lgan elektromagnit to‘lqin vakuumdan sindirish ko‘rsatkichi $1,5$ ga teng bo‘lgan muhitga o‘tganda, uning chastotasi necha bo‘ladi?",
+      "answers": [
+        "$4,5\\cdot10^{15}$.",
+        "$5\\cdot10^{14}$.",
+        "$2\\cdot10^{15}$.",
+        "$1,5\\cdot10^{15}$.",
+        "$3\\cdot10^{15}$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:41"
+    },
+    {
+      "text": "Absolyut sindirish ko‘rsatkichi $2$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $1,33$ bo‘lgan muhitga o‘tganda yorug‘lik to‘lqinining chastotasi qanday o‘zgaradi?",
+      "answers": [
+        "o‘zgarmaydi.",
+        "$3$ marta kamayadi.",
+        "$1,5$ marta kamayadi.",
+        "$3$ marta ortadi.",
+        "$1,5$ marta ortadi."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:42"
+    },
+    {
+      "text": "Agar elektromagnit tebranishlar chastotasi vakuumda $1$ MHz bo‘lsa, sindirish ko‘rsatkichi $2$ ga teng bo‘lgan bir jinsli muhitda chasto ta necha MHz bo‘ladi?",
+      "answers": [
+        "$0,2$.",
+        "$0,5$.",
+        "$0,8$.",
+        "$1$.",
+        "$2$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:43"
+    },
+    {
+      "text": "$7{,}5\\cdot10^{14}$ Hz chastotali (vakuumda) yorug‘lik sindirish ko‘rsatkichlari $n_1=1$, $n_2=1,5$ va $n_3=1,6$ bo‘lgan muhitlardan ketma-ket o‘tmoqda. Bu muhitlardagi yorug‘lik chastotalari uchun qaysi munosabat o‘rinli?",
+      "answers": [
+        "$\\nu_1>\\nu_2<\\nu_3$.",
+        "$\\nu_3>\\nu_1>\\nu_2$.",
+        "$\\nu_1<\\nu_2<\\nu_3$.",
+        "$\\nu_2>\\nu_1>\\nu_3$.",
+        "$\\nu_1=\\nu_2=\\nu_3$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:44"
+    },
+    {
+      "text": "$480$ nm to‘lqin uzunlikdagi yorug‘lik vakuumdan biror muhitga o‘tganda, to‘lqin uzunligi $192$ nm ga qisqardi. Yorug‘likning shu muhitdagi tezligini toping (m/s).",
+      "answers": [
+        "$1\\cdot10^8$.",
+        "$1,2\\cdot10^8$.",
+        "$1,8\\cdot10^8$.",
+        "$2\\cdot10^8$.",
+        "$1,5\\cdot10^8$."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:45"
+    },
+    {
+      "text": "Nurlar suvdan vakuumga o‘tganda ularning to‘lqin uzunligi $0,165~\\mu$m ga ortdi. Nurlarning vakuumdagi to‘lqin uzunligini aniqlang ($\\mu$m). $n=1,33$.",
+      "answers": [
+        "$0,365$.",
+        "$0,41$.",
+        "$0,56$.",
+        "$0,605$.",
+        "$0,665$."
+      ],
+      "correct": 0,
+      "source": "73-mavzu.tex#2:46"
+    },
+    {
+      "text": "Yassi yorug‘lik ikki muhit chegarasiga $\\alpha$ burchak ostida tushib, $\\beta$ burchak ostida ikkinchi muhitga o‘tmoqda. Yorug‘likning shu muhitlardagi tarqalish tezliklari qanday munosabatda bo‘ladi? $\\alpha>\\beta$.",
+      "answers": [
+        "tezliklar munosabati ga bog‘liq o‘zgaradi.",
+        "$v_1<v_2$.",
+        "$v_1>v_2$.",
+        "$v_1=v_2$.",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "73-mavzu.tex#2:47"
+    },
+    {
+      "text": "Yorug‘lik 1-muhitdan 2-muhitga $45^\\circ$ burchak ostida tushib, 2-muhitda $30^\\circ$ burchak ostida sinib o‘tadi. 1-muhitning absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ ga teng bo‘lsa, yorug‘likning 2-muhitdagi tezligi necha km/s ga teng bo‘ladi? $\\sin45^\\circ=\\sqrt{2}/2$, $\\sin30^\\circ=1/2$.",
+      "answers": [
+        "$\\sqrt{2}\\cdot150000$.",
+        "$300000/\\sqrt{2}$.",
+        "$200000$.",
+        "$300000$.",
+        "$150000$."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:48"
+    },
+    {
+      "text": "Qanday muhitda yorug‘lik nurlari egri chiziq bo‘lib yurishi mumkin?",
+      "answers": [
+        "bir jinsli muhitda.",
+        "suyuq muhitda.",
+        "monokristalda.",
+        "amorf moddada.",
+        "sindirish ko‘rsatkichi nuqtadan nuqtaga o‘zgaruvchi muhitda."
+      ],
+      "correct": 4,
+      "source": "73-mavzu.tex#2:49"
+    },
+    {
+      "text": "Yorug‘likning qandaydir shaffof muhitdagi tezligi $1,5\\cdot10^8$ m/s bo‘lsa, shu muhitning dielektrik singdiruvchanligi qanday?",
+      "answers": [
+        "$1,5$.",
+        "$2$.",
+        "$3$.",
+        "$4$.",
+        "$8$."
+      ],
+      "correct": 3,
+      "source": "73-mavzu.tex#2:50"
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "id": 74,
+  "title": "74-Mavzu | To‘la ichki qaytish",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../optika.html",
+  "unlockLesson": 75,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Yorug‘lik nuri sindirish ko‘rsatkichi $n_1$ bo‘lgan muhitdan sindirish ko‘rsatkichi $n_2$ bo‘lgan muhitga o‘tganda, to‘la qaytishning chegaraviy burchagi qaysi ifoda yordamida aniqlanadi? $(n_1>n_2)$",
+      "answers": [
+        "$\\sin\\alpha_0=\\dfrac{n_1}{n_2}$",
+        "$\\sin\\alpha_0=\\dfrac{1}{n_1}$",
+        "$\\sin\\alpha_0=\\dfrac{n_2}{n_1}$",
+        "$\\sin\\alpha_0=\\dfrac{1}{n_2}$",
+        "TJY."
+      ],
+      "correct": 2,
+      "source": "74-mavzu.tex#0:1"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $2$ bo‘lgan muhitdan vakuumga o‘tmoqda. To‘la ichki qaytish sodir bo‘ladigan tushish burchagining eng kichik qiymatini toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "source": "74-mavzu.tex#0:2"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $2\\sqrt{2}$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ bo‘lgan muhitga o‘tdi. To‘la ichki qaytishning chegaraviy burchagini toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "source": "74-mavzu.tex#0:3"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $n_1$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ bo‘lgan muhitga o‘tdi. To‘la ichki qaytish sodir bo‘ladigan tushish burchagining eng kichik qiymati $45^\\circ$ ga teng bo‘lsa, $n_1$ ning qiymatini toping.",
+      "answers": [
+        "$3$",
+        "$2\\sqrt{2}$",
+        "$1,5$",
+        "$\\sqrt{3}$",
+        "$2$"
+      ],
+      "correct": 4,
+      "source": "74-mavzu.tex#0:4"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $2\\sqrt{3}$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $n_2$ bo‘lgan muhitga o‘tdi. To‘la ichki qaytishning chegaraviy burchagi $60^\\circ$ ga teng bo‘lsa, $n_2$ ni toping.",
+      "answers": [
+        "$3$",
+        "$2\\sqrt{2}$",
+        "$1,5$",
+        "$\\sqrt{3}$",
+        "$2$"
+      ],
+      "correct": 0,
+      "source": "74-mavzu.tex#0:5"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $2$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $3$ bo‘lgan muhitga o‘tdi. To‘la ichki qaytishning chegaraviy burchagini toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "to‘la ichki qaytish sodir bo‘lmaydi."
+      ],
+      "correct": 4,
+      "source": "74-mavzu.tex#0:6"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $\\sqrt{2}$ bo‘lgan muhitdan vakuumga o‘tmoqda. To‘la ichki qaytishning chegaraviy burchagini toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "to‘la ichki qaytish sodir bo‘lmaydi."
+      ],
+      "correct": 1,
+      "source": "74-mavzu.tex#0:7"
+    },
+    {
+      "text": "Yorug‘lik nuri absolyut sindirish ko‘rsatkichi $2$ bo‘lgan muhitdan absolyut sindirish ko‘rsatkichi $\\sqrt{3}$ bo‘lgan muhitga o‘tdi. To‘la ichki qaytish sodir bo‘ladigan tushish burchagining eng kichik qiymatini toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "to‘la ichki qaytish sodir bo‘lmaydi."
+      ],
+      "correct": 2,
+      "source": "74-mavzu.tex#0:8"
+    },
+    {
+      "text": "Yorug‘lik nuri vakuumdan absolyut sindirish ko‘rsatkichi $2$ bo‘lgan muhitga o‘tdi. To‘la ichki qaytishning chegaraviy burchagini toping.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "to‘la ichki qaytish sodir bo‘lmaydi."
+      ],
+      "correct": 4,
+      "source": "74-mavzu.tex#0:9"
+    },
+    {
+      "text": "Yorug‘lik sindirish ko‘rsatkichi $n_1$ bo‘lgan muhitdan $n_2$ bo‘lgan muhitga o‘tmoqda. Quyidagilardan qaysi shart bajarilganda to‘la ichki qaytish yuzaga keladi?",
+      "answers": [
+        "$n_1>n_2$.",
+        "$n_1<n_2$.",
+        "$n_1=n_2$.",
+        "sindirish ko‘rsatkichlarining to‘la ichki qaytishga ta’siri yo‘q.",
+        "TJY."
+      ],
+      "correct": 0,
+      "source": "74-mavzu.tex#0:10"
+    },
+    {
+      "text": "Nur sindirish ko‘rsatkichi $n$ bo‘lgan shisha plastinka ichida tarqalib, shisha–havo chegarasiga $\\alpha$ burchak ostida tushyapti (rasm). Agar bu burchak to‘la ichki qaytishning chegaraviy burchagi teng bo‘lsa, singan va qaytgan nurlar orasidagi burchak teng bo‘ladi?",
+      "answers": [
+        "$90^\\circ+\\alpha$",
+        "$\\alpha$",
+        "$2\\alpha$",
+        "$90^\\circ-\\alpha$",
+        "$0$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar74/r8d1a804442.png",
+      "source": "74-mavzu.tex#0:11"
+    },
+    {
+      "text": "Tushish burchagi $\\alpha$ qanday bo‘lganda yorug‘likning to‘la ichki qaytish hodisasi ro‘y beradi?",
+      "answers": [
+        "berilgan sharoitda to‘la ichki qaytish hodisasi bo‘lishi mumkin emas.",
+        "$\\sin\\alpha=n^2-1$.",
+        "$\\sin\\alpha=\\sqrt{n^2-1}$.",
+        "$\\sin\\alpha=\\dfrac{1}{n}$.",
+        "$\\sin\\alpha=\\dfrac{1}{n^2-1}$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar74/ra28909cc8a.png",
+      "source": "74-mavzu.tex#0:12"
+    },
+    {
+      "text": "Birinchi muhitning ikkinchi muhitga nisbatan sindirish ko‘rsatkichi $2$ ga teng bo‘lsa, to‘la ichki qaytishning chegaraviy burchagi qanday bo‘ladi?",
+      "answers": [
+        "$15^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$"
+      ],
+      "correct": 1,
+      "source": "74-mavzu.tex#0:13"
+    },
+    {
+      "text": "Yorug‘lik to‘lqini bir muhitdan ikkinchi muhitga o‘tganda, tezligi $2$ marta oshdi. Ushbu tizim uchun to‘la qaytishning chegaraviy burchagini aniqlang.",
+      "answers": [
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$15^\\circ$"
+      ],
+      "correct": 3,
+      "source": "74-mavzu.tex#0:14"
+    },
+    {
+      "text": "Nurning ikki muhit chegarasida tushish burchagi $30^\\circ$ bo‘lganda sinish burchagi $45^\\circ$ ekanligini bilgan holda to‘la qaytishning chegaraviy burchagini toping.",
+      "answers": [
+        "$15^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$"
+      ],
+      "correct": 2,
+      "source": "74-mavzu.tex#0:15"
+    },
+    {
+      "text": "To‘la qaytishning chegaraviy burchagi $45^\\circ$ bo‘lgan ikki muhit chegarasiga nur $30^\\circ$ burchak ostida tushsa, sinish burchagi qanday bo‘ladi?",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 1,
+      "source": "74-mavzu.tex#0:16"
+    },
+    {
+      "text": "Yorug‘likning biror qattiq shaffof muhitdan havoga o‘tishida to‘la ichki qaytish burchagi $\\alpha_0$ ga teng. Yorug‘likning shu muhitdagi tezligi qaysi ifoda bilan aniqlanadi?",
+      "answers": [
+        "$c\\cdot tg\\alpha_0$",
+        "$c\\cdot \\sin\\alpha_0$",
+        "$c\\cdot (1-\\sin\\alpha_0)$",
+        "$\\dfrac{c}{\\sin\\alpha_0}$",
+        "$\\dfrac{c}{tg\\alpha_0}$"
+      ],
+      "correct": 1,
+      "source": "74-mavzu.tex#0:17"
+    },
+    {
+      "text": "Shisha-havo chegarasida yorug‘likning to‘la ichki qaytish chegaraviy burchagi $37^\\circ$ ekanligini bilgan holda, yorug‘likning shishadagi tezligini aniqlang (m/s). $\\sin37^\\circ=0,6$ deb hisoblang.",
+      "answers": [
+        "$1,8\\cdot10^8$",
+        "$3\\cdot10^7$",
+        "$1,2\\cdot10^8$",
+        "$1,2\\cdot10^7$",
+        "$6\\cdot10^7$"
+      ],
+      "correct": 0,
+      "source": "74-mavzu.tex#0:18"
+    },
+    {
+      "text": "Nur shishadan vakuumga chiqmoqda. Agar bunda to‘la ichki qaytish chegaraviy burchagi $\\alpha_0$ bo‘lsa, yorug‘likning shishadagi tezligi qanday? $c$ — yorug‘likning vakuumdagi tezligi.",
+      "answers": [
+        "$\\dfrac{c}{\\sin\\alpha_0}$",
+        "$c\\cdot \\cos\\alpha_0$",
+        "$\\dfrac{c}{tg\\alpha_0}$",
+        "$c\\cdot tg\\alpha_0$",
+        "$c\\cdot \\sin\\alpha_0$"
+      ],
+      "correct": 4,
+      "source": "74-mavzu.tex#0:19"
+    },
+    {
+      "text": "Yorug‘lik vakuumdan to‘la ichki qaytish chegaraviy burchagi $30^\\circ$ bo‘lgan muhitga o‘tganda, to‘lqin uzunligi necha marta kamayadi?",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$1,5$",
+        "$2$",
+        "$3$",
+        "o‘zgarmaydi."
+      ],
+      "correct": 2,
+      "source": "74-mavzu.tex#0:20"
+    },
+    {
+      "text": "Yorug‘lik shishadan vakuumga o‘tishda to‘la ichki qaytishning chegaraviy burchagi $\\alpha_0$ ga teng. Yorug‘lik nuri vakuumdan shishaga $\\alpha_0$ burchak ostida tushsa, nurning sinish burchagi $\\beta$ qanday bo‘ladi? Shishaning sindirish ko‘rsatkichi $n$ ga teng.",
+      "answers": [
+        "$\\beta=\\arcsin\\dfrac{1}{n^2}$",
+        "$\\beta=\\arcsin\\dfrac{1}{n}$",
+        "$\\beta=\\alpha$",
+        "$\\beta=\\alpha/2$",
+        "$0$"
+      ],
+      "correct": 0,
+      "source": "74-mavzu.tex#0:21"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgandek havodan tushayotgan nur sindirish ko‘rsatkichi $2$ bo‘lgan prizmaning ichida $A$ tomonidan to‘la qaytish uchun $\\alpha$ burchakning eng kichik qiymati necha gradus bo‘lishi kerak?",
+      "answers": [
+        "$30^\\circ$",
+        "$15^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$"
+      ],
+      "correct": 0,
+      "images": "../rasmlar74/rdb11a1672d.png",
+      "source": "74-mavzu.tex#0:22"
+    },
+    {
+      "text": "Quyidagi shartlardan qaysi biri bajarilganda, yorug‘lik nurining yo‘li rasmdagidek ko‘rinishda bo‘lishi mumkin?",
+      "answers": [
+        "$n_1>n_2>n_3$",
+        "$n_2>n_1>n_3$",
+        "$n_2>n_1=n_3$",
+        "$n_3>n_2>n_1$",
+        "$n_2>n_3>n_1$"
+      ],
+      "correct": 1,
+      "images": "../rasmlar74/rd1c3c8ef30.png",
+      "source": "74-mavzu.tex#0:23"
+    },
+    {
+      "text": "Nurtola (svetovod) larning ish prinsipi nimaga asoslangan?",
+      "answers": [
+        "yorug‘lik difraksiyasiga.",
+        "yorug‘lik dispersiyasiga.",
+        "yorug‘likning sinishiga.",
+        "yorug‘lik interferensiyasiga.",
+        "to‘la ichki qaytish hodisasiga."
+      ],
+      "correct": 4,
+      "source": "74-mavzu.tex#0:24"
+    },
+    {
+      "text": "Nuqtaviy yorug‘lik manbai sindirish ko‘rsatkichi $2,24$ bo‘lgan suyuqlik sirtidan $1$ m chuqurlikda joylashgan. Nurlar suyuqlik sirtidan qanday diametrli doira orqali chiqadi (m)?",
+      "answers": [
+        "$0$",
+        "$\\infty$",
+        "$0,5$",
+        "$0,25$",
+        "$1$"
+      ],
+      "correct": 4,
+      "source": "74-mavzu.tex#0:25"
+    },
+    {
+      "text": "Yorug‘lik nuri kvadrat kesimli shisha plastinaga $\\alpha$ burchak ostida tushmoqda. Agar plastinaning vertikal joylashgan tomonida to‘la ichki qaytish sodir bo‘lsa, shishaning sindirish ko‘rsatkichi kamida qanday?",
+      "answers": [
+        "$1+\\sin^2\\alpha$",
+        "$\\sqrt{1+\\sin\\alpha}$",
+        "$\\sqrt{1-\\sin^2\\alpha}$",
+        "$\\sqrt{1+\\sin^2\\alpha}$",
+        "$\\sqrt{1+\\dfrac{1}{\\sin^2\\alpha}}$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar74/rf97cd23e42.png",
+      "source": "74-mavzu.tex#0:26"
+    }
+  ]
+}

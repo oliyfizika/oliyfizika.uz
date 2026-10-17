@@ -1,0 +1,188 @@
+{
+  "id": 62,
+  "title": "62-Mavzu | Shunt ulash",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 63,
+  "source": "amaliy-mashgulotlar (tex)",
+  "questions": [
+    {
+      "text": "Yuqori o‘lchash chegarasi $200$ mA bo‘lgan ampermetr yordamida $1000$ mA gacha bo‘lgan tok kuchini o‘lchash uchun qanday qarshilikli shuntdan foydalanish kerak ($\\Omega$)? Ampermetrning qarshiligi $12~\\Omega$.",
+      "answers": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "correct": 3,
+      "source": "62-mavzu.tex#0:1"
+    },
+    {
+      "text": "Ampermetrga parallel ulangan shuntning qarshiligi ampermetrning qarshiligidan $5$ marta kichik. Agar ampermetr $100$ mA tokni ko‘rsatayotgan bo‘lsa, magistraldagi tok kuchi $I$ qanday (mA) bo‘ladi?",
+      "answers": [
+        "400",
+        "500",
+        "600",
+        "800"
+      ],
+      "correct": 2,
+      "source": "62-mavzu.tex#0:2"
+    },
+    {
+      "text": "Shuntning qarshiligi $R$ ga, ampermetrning qarshiligi $4R$ ga teng. Agar magistraldagi tok kuchi $I=600$ mA bo‘lsa, ampermetr qanday tokni ko‘rsatadi (mA)?",
+      "answers": [
+        "500",
+        "120",
+        "300",
+        "200"
+      ],
+      "correct": 1,
+      "images": "../rasmlar62/rf767269cf0.png",
+      "source": "62-mavzu.tex#0:3"
+    },
+    {
+      "text": "Ichki qarshiligi $180~\\Omega$ bo‘lgan ampermetrning o‘lchash chegarasini $9$ marta oshirish uchun unga ulanadigan shuntning qarshiligi qanday bo‘lishi kerak ($\\Omega$)?",
+      "answers": [
+        "16,1",
+        "18",
+        "14",
+        "22,5"
+      ],
+      "correct": 3,
+      "source": "62-mavzu.tex#0:4"
+    },
+    {
+      "text": "Ampermetrning ichki qarshiligi $12~\\Omega$ bo‘lib, u $2,5$ A gacha tokni o‘lchashga mo‘ljallangan. Shu ampermetr bilan $15$ A gacha tokni o‘lchash uchun unga necha $\\Omega$ li shunt ulash kerak?",
+      "answers": [
+        "3,1",
+        "1,1",
+        "2,4",
+        "4,2"
+      ],
+      "correct": 2,
+      "source": "62-mavzu.tex#0:5"
+    },
+    {
+      "text": "Zanjirga ulangan ampermetrning ichki qarshiligi $11~\\Omega$ va shuntning qarshiligi $2,2~\\Omega$. Ampermetr $13$ A tokni ko‘rsatsa, zanjirdagi tok kuchi necha Amperga teng bo‘ladi?",
+      "answers": [
+        "78",
+        "66",
+        "20",
+        "82"
+      ],
+      "correct": 0,
+      "source": "62-mavzu.tex#0:6"
+    },
+    {
+      "text": "Ikkita bir xil shuntlardan iborat ampermetrga ulansa, uning bo‘lim qiymati $3$ marta ortadi. Agar ikkala shunt ampermetrga parallel ulansa, uning o‘lchash chegarasi necha marta ortadi?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "2,5"
+      ],
+      "correct": 2,
+      "source": "62-mavzu.tex#0:7"
+    },
+    {
+      "text": "Ikkita bir xil shunt o‘zaro ketma-ket ulanib, so‘ngra ampermetrga ulansa, uning o‘lchash chegarasi $4,5$ marta ortadi. Ikkala shunt ampermetrga parallel ulanganida ampermetrning o‘lchash chegarasi necha marta ortadi?",
+      "answers": [
+        "6,5",
+        "9",
+        "15",
+        "18"
+      ],
+      "correct": 2,
+      "source": "62-mavzu.tex#0:8"
+    },
+    {
+      "text": "Qarshiligi $0,04~\\Omega$ bo‘lgan ampermetrga uzunligi $15$ cm va ko‘ndalang kesim yuzi $3$ mm$^2$ bo‘lgan mis sim parallel ulangan. Ampermetr $0,17$ A tokni ko‘rsatadi. Simdagi tok kuchini toping (A). Misning solishtirma qarshiligi $1,7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "2,8",
+        "4",
+        "5",
+        "8"
+      ],
+      "correct": 3,
+      "source": "62-mavzu.tex#0:9"
+    },
+    {
+      "text": "Voltmetrning ichki qarshiligi $300~\\Omega$. Unga $1200~\\Omega$ qo‘shimcha qarshilik ulansa, shkala bo‘lim qiymati necha marta o‘zgaradi?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 2,
+      "source": "62-mavzu.tex#0:10"
+    },
+    {
+      "text": "Voltmetrning ichki qarshiligi $2$ k$\\Omega$ bo‘lib, u $8$ V ni o‘lchashga mo‘ljallangan. Shu voltmetrga qanday qo‘shimcha qarshilik (k$\\Omega$) ulanganda, u bilan $40$ V kuchlanishni o‘lchash mumkin bo‘ladi?",
+      "answers": [
+        "5",
+        "12",
+        "18",
+        "8"
+      ],
+      "correct": 3,
+      "source": "62-mavzu.tex#0:11"
+    },
+    {
+      "text": "Qarshiligi $1600~\\Omega$ bo‘lgan voltmetr $15$ V gacha kuchlanishni o‘lchashga mo‘ljallangan. Shu voltmetr bilan $210$ V gacha kuchlanishni o‘lchash uchun unga qanday qo‘shimcha qarshilik ulash kerak ($\\Omega$)?",
+      "answers": [
+        "150",
+        "20,8",
+        "30",
+        "27"
+      ],
+      "correct": 1,
+      "source": "62-mavzu.tex#0:12"
+    },
+    {
+      "text": "$15$ V kuchlanishni o‘lchashga mo‘ljallangan voltmetr bilan $270$ V kuchlanishni o‘lchash uchun unga qanday qarshilik ulash kerak ($\\Omega$)? Voltmetrning qarshiligi $300~\\Omega$ ga teng.",
+      "answers": [
+        "5400",
+        "5500",
+        "5600",
+        "5100"
+      ],
+      "correct": 3,
+      "source": "62-mavzu.tex#0:13"
+    },
+    {
+      "text": "$20$ V kuchlanishni o‘lchashga mo‘ljallangan voltmetr bilan $150$ V kuchlanishni o‘lchash uchun unga qanday qo‘shimcha qarshilik ($\\Omega$) ulash kerak? $R_v=200~\\Omega$.",
+      "answers": [
+        "1300",
+        "1500",
+        "1400",
+        "1600"
+      ],
+      "correct": 0,
+      "source": "62-mavzu.tex#0:14"
+    },
+    {
+      "text": "Ichki qarshiligi $2800~\\Omega$ bo‘lgan voltmetr elektr tarmog‘iga ulanganda, $120$ V kuchlanishni ko‘rsatdi. Voltmetrga necha $\\Omega$ qarshilik ketma-ket ulansa, u $80$ V ni ko‘rsatadi?",
+      "answers": [
+        "2700",
+        "1700",
+        "2100",
+        "1400"
+      ],
+      "correct": 3,
+      "source": "62-mavzu.tex#0:15"
+    },
+    {
+      "text": "Sxemada $R_1=800~\\Omega$, $R_2=1000~\\Omega$ va shu zanjirning umumiy qarshiligi $480~\\Omega$ bo‘lsa, voltmetrning o‘lchash chegarasi necha marta oshirilgan?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correct": 3,
+      "images": "../rasmlar62/rf5ae1b776d.png",
+      "source": "62-mavzu.tex#0:16"
+    }
+  ]
+}

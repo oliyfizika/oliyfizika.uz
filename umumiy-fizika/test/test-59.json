@@ -1,0 +1,422 @@
+{
+  "id": 59,
+  "title": "59-Mavzu | O‘zgarmas tok manbalari. Elektr yurituvchi kuch",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 60,
+  "source": "amaliy-mashgulotlar (tex)",
+  "pick": 25,
+  "questions": [
+    {
+      "text": "Har birining EYKi $6$ V va ichki qarshiligi $0,6~\\Omega$ bo‘lgan ikkita akkumulyator ketma-ket ulanganda, $2$ A tok bo‘lishi uchun tashqi zanjirdagi qarshilik qanday bo‘lishi kerak ($\\Omega$)?",
+      "answers": [
+        "48",
+        "18",
+        "4,8",
+        "2"
+      ],
+      "correct": 3,
+      "source": "64-mavzu.tex#0:1"
+    },
+    {
+      "text": "Tashqi zanjirdagi kuchlanish $100$ V va tok kuchi $5$ A bo‘lishi uchun EYKi $2,5$ V dan va ichki qarshiligi $0,1~\\Omega$ dan bo‘lgan manbalardan nechtasini ketma-ket ulab, batareya tuzish kerak bo‘ladi?",
+      "answers": [
+        "25",
+        "36",
+        "40",
+        "50"
+      ],
+      "correct": 3,
+      "source": "64-mavzu.tex#0:2"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan elektr zanjirda $\\varepsilon_1=6$ V, $\\varepsilon_2=18$ V, $R=3~\\Omega$. Manbalar ichki qarshilikka ega emas. Zanjirdagi tok kuchi necha Amper?",
+      "answers": [
+        "8",
+        "6",
+        "4",
+        "3"
+      ],
+      "correct": 3,
+      "images": "../rasmlar59/r33945b14b2.png",
+      "source": "64-mavzu.tex#0:3"
+    },
+    {
+      "text": "$\\varepsilon_1=5$ V, $\\varepsilon_2=3$ V, $\\varepsilon_3=4$ V, $r=1~\\Omega$ va $R=7~\\Omega$ bo‘lsa, $R$ qarshilikdagi kuchlanishning tushishi necha Volt bo‘ladi (rasmga q.)?",
+      "answers": [
+        "14",
+        "1,4",
+        "7",
+        "0,7"
+      ],
+      "correct": 1,
+      "images": "../rasmlar59/r8a3abc2a88.png",
+      "source": "64-mavzu.tex#0:4"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan elektr zanjirda $\\varepsilon_1=6$ V, $\\varepsilon_2=12$ V va $R=6~\\Omega$. Manbalarning ichki qarshiligi bo‘lmasa, zanjirdagi tok kuchi necha Amper bo‘ladi?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": 2,
+      "images": "../rasmlar59/rd5f13d85c1.png",
+      "source": "64-mavzu.tex#0:5"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan zanjirdagi tok kuchi necha Amperga teng? $\\varepsilon_1=\\varepsilon_2=\\varepsilon_3=6$ V, $r_1=r_2=r_3=0,5~\\Omega, R=1,5~\\Omega$.",
+      "answers": [
+        "1,5",
+        "2",
+        "3",
+        "6"
+      ],
+      "correct": 3,
+      "images": "../rasmlar59/r600686485a.png",
+      "source": "64-mavzu.tex#0:6"
+    },
+    {
+      "text": "Uchta tok manbai va bitta qarshilikdan rasmda ko‘rsatilgandek zanjir tuzilgan. Agar $\\varepsilon_1=3,5$ V, $\\varepsilon_2=1,5$ V, $\\varepsilon_3=2$ V, $r_1=r_2=r_3=0,2~\\Omega$, va $R=4,4~\\Omega$ bo‘lsa, $R$ qarshilikdan o‘tayotgan tok kuchi necha Amper?",
+      "answers": [
+        "0,6",
+        "0,9",
+        "1,6",
+        "0,8"
+      ],
+      "correct": 2,
+      "images": "../rasmlar59/rba362f93af.png",
+      "source": "64-mavzu.tex#0:7"
+    },
+    {
+      "text": "Sxemada $\\varepsilon_1=2$ V, $\\varepsilon_2=1$ V, $r_1=r_2=1~\\Omega, R=2~\\Omega$. Tashqi qarshilikdagi kuchlanishning tushishini toping (V).",
+      "answers": [
+        "0,5",
+        "1",
+        "1,5",
+        "2"
+      ],
+      "correct": 1,
+      "images": "../rasmlar59/rcc3a174cb4.png",
+      "source": "64-mavzu.tex#0:8"
+    },
+    {
+      "text": "Kondensatorlardagi kuchlanishlar qanday (V)? $\\varepsilon_1=12$ V; $\\varepsilon_2=13$ V; $C_1=3~\\mu$F; $C_2=7~\\mu$F.",
+      "answers": [
+        "6,5; 18,5",
+        "7; 18",
+        "18; 7",
+        "17,5; 7,5"
+      ],
+      "correct": 2,
+      "images": "../rasmlar59/r891500cb2b.png",
+      "source": "64-mavzu.tex#0:9"
+    },
+    {
+      "text": "Sxemada EYK lar $\\varepsilon_1=3$ V va $\\varepsilon_2=2$ V, ichki qarshiliklar $r=0,5~\\Omega$ bo‘lsa, voltmetr necha Voltni ko‘rsatadi? $R_V = \\infty$.",
+      "answers": [
+        "1",
+        "2,5",
+        "2",
+        "3"
+      ],
+      "correct": 0,
+      "images": "../rasmlar59/r845186530c.png",
+      "source": "64-mavzu.tex#0:10"
+    },
+    {
+      "text": "Sxemada EYK lar $\\varepsilon_1=3$ V va $\\varepsilon_2=2$ V, ichki qarshiliklar $r=0,5~\\Omega$ bo‘lsa, voltmetr necha Voltni ko‘rsatadi? $R_V = \\infty$.",
+      "answers": [
+        "0,5",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct": 1,
+      "images": "../rasmlar59/r3f72d98f5f.png",
+      "source": "64-mavzu.tex#0:11"
+    },
+    {
+      "text": "Elektr yurituvchi kuchlari teng, ichki qarshiliklari $2$ marta farq qiladigan tok manbalari rasmdagidek ulangan. Voltmetrning ko‘rsatishini toping. $R_V = \\infty$.",
+      "answers": [
+        "0",
+        "$\\varepsilon/2$",
+        "$\\varepsilon$",
+        "$\\varepsilon/3$"
+      ],
+      "correct": 3,
+      "images": "../rasmlar59/rcffedf04d2.png",
+      "source": "64-mavzu.tex#0:12"
+    },
+    {
+      "text": "EYUK $1,5$ V va $2$ V bo‘lgan elementlar bir xil ishorali qutblari bilan ulangan. Batareya klemmalariga ulangan voltmetr $1,7$ V kuchlanishni ko‘rsatdi. Elementlar ichki qarshiliklari nisbatini toping.",
+      "answers": [
+        "1",
+        "2/3",
+        "2",
+        "1/3"
+      ],
+      "correct": 2,
+      "source": "64-mavzu.tex#0:13"
+    },
+    {
+      "text": "EYK lari $\\varepsilon_1$ va $\\varepsilon_2$ bo‘lgan manbalar bir xil qutblari bilan o‘zaro parallel ulangan. Agar manbalarning ichki qarshiliklari teng bo‘lsa, manba qutblaridagi potensiallar farqi qanday?",
+      "answers": [
+        "$\\varepsilon_1 + \\varepsilon_2$",
+        "$(\\varepsilon_1 - \\varepsilon_2)/2$",
+        "0",
+        "$(\\varepsilon_1 + \\varepsilon_2)/2$"
+      ],
+      "correct": 3,
+      "source": "64-mavzu.tex#0:14"
+    },
+    {
+      "text": "EYK’i $6$ V, ichki qarshiligi $2~\\Omega$ bo‘lgan $10$ ta doimiy tok manbai ketma-ket ulangan. Zanjirning to‘la EYKini toping (V).",
+      "answers": [
+        "0,6.",
+        "6.",
+        "12.",
+        "120.",
+        "60."
+      ],
+      "correct": 4,
+      "source": "46-mavzu1.tex#0:1"
+    },
+    {
+      "text": "Har birining EYK $2$ V, ichki qarshiligi $0,3~\\Omega$ bo‘lgan $6$ ta element qarshiligi $1,2~\\Omega$ bo‘lgan tashqi zanjirga ketma-ket ulangan. Zanjirdagi tok kuchi qanday (A)?",
+      "answers": [
+        "3,2.",
+        "$4/3$.",
+        "3,6.",
+        "2.",
+        "4."
+      ],
+      "correct": 4,
+      "source": "46-mavzu1.tex#0:2"
+    },
+    {
+      "text": "EYK’i $3$ V va ichki qarshiligi $2~\\Omega$ dan bo‘lgan $6$ ta bir xil element ketma-ket ulanib, batareya hosil qilingan. Agar shu batareyaga $6~\\Omega$ tashqi qarshilik ulangan bo‘lsa, unda qanday tok kuchi hosil bo‘ladi (A)?",
+      "answers": [
+        "3.",
+        "2.",
+        "1,5.",
+        "1.",
+        "0,5."
+      ],
+      "correct": 3,
+      "source": "46-mavzu1.tex#0:3"
+    },
+    {
+      "text": "EYK’i $6$ V va ichki qarshiligi $1~\\Omega$ dan bo‘lgan $10$ ta tok manbai o‘zaro ketma-ket ulanib, batareya hosil qilingan. Agar bu batareyaga qarshiligi $5~\\Omega$ bo‘lgan rezistor ulansa, undagi tok kuchi qanday (A)?",
+      "answers": [
+        "6.",
+        "4.",
+        "3.",
+        "2.",
+        "1."
+      ],
+      "correct": 1,
+      "source": "46-mavzu1.tex#0:4"
+    },
+    {
+      "text": "Har birining EYK’i $6$ V va ichki qarshiligi $0,6~\\Omega$ bo‘lgan ikkita akkumulator ketma-ket ulanganda, $2$ A tok bo‘lishi uchun tashqi zanjirdagi qarshilik qanday bo‘lishi kerak ($\\Omega$)?",
+      "answers": [
+        "48.",
+        "18.",
+        "4,8.",
+        "2.",
+        "0,48."
+      ],
+      "correct": 2,
+      "source": "46-mavzu1.tex#0:5"
+    },
+    {
+      "text": "Tashqi zanjirdagi kuchlanish $100$ V va tok kuchi $5$ A bo‘lishi uchun EYK’i $2,5$ V va ichki qarshiligi $0,1~\\Omega$ dan bo‘lgan manbalardan nechtasini ketma-ket ulab, batareya tuzish kerak?",
+      "answers": [
+        "25.",
+        "36.",
+        "38.",
+        "40.",
+        "50."
+      ],
+      "correct": 4,
+      "source": "46-mavzu1.tex#0:6"
+    },
+    {
+      "text": "$\\varepsilon_1=5$ V, $\\varepsilon_2=3$ V, $\\varepsilon_3=4$ V, $r=1~\\Omega$ va $R=7~\\Omega$ bo‘lsa, $R$ qarshilikdagi kuchlanish tushishi necha Volt bo‘ladi (rasmga q.)?",
+      "answers": [
+        "14.",
+        "1,4.",
+        "7.",
+        "0,7.",
+        "8,4."
+      ],
+      "correct": 1,
+      "images": "../rasmlar59/r6a387964a6.png",
+      "source": "46-mavzu1.tex#0:8"
+    },
+    {
+      "text": "Sxemada $\\varepsilon_1=9$ V, $\\varepsilon_2=6$ V va $R_1/R_2=2$ bo‘lsa, $R_2$ qarshilikdagi kuchlanish tushishi necha Volt bo‘ladi? Manbalarning ichki qarshiliklari $r_1=r_2=0$.",
+      "answers": [
+        "3.",
+        "2.",
+        "1.",
+        "5.",
+        "7,5."
+      ],
+      "correct": 2,
+      "images": "../rasmlar59/r505efd8c8c.png",
+      "source": "46-mavzu1.tex#0:9"
+    },
+    {
+      "text": "Rasmda ko‘rsatilgan elektr zanjirdagi tok kuchi necha Amperga teng? $\\varepsilon_1=\\varepsilon_2=\\varepsilon_3=6$ V, $r_1=r_2=r_3=0,5~\\Omega$, $R=1,5~\\Omega$.",
+      "answers": [
+        "1,5.",
+        "2.",
+        "3.",
+        "12.",
+        "6."
+      ],
+      "correct": 1,
+      "images": "../rasmlar59/r6a2668ba3d.png",
+      "source": "46-mavzu1.tex#0:11"
+    },
+    {
+      "text": "Uchta tok manbai va bitta qarshilikdan rasmda ko‘rsatilgan elektr zanjir tuzilgan. Agar $\\varepsilon_1=3,5$ V, $\\varepsilon_2=1,5$ V, $\\varepsilon_3=2$ V, $r_1=r_2=r_3=0,2~\\Omega$, $R=4,4~\\Omega$ bo‘lsa, qarshilikdan o‘tayotgan tok kuchi necha Amper?",
+      "answers": [
+        "0,6.",
+        "1,4.",
+        "0,9.",
+        "1,6.",
+        "0,8."
+      ],
+      "correct": 4,
+      "images": "../rasmlar59/r6a2668ba3d.png",
+      "source": "46-mavzu1.tex#0:12"
+    },
+    {
+      "text": "Sxemada $\\varepsilon_1=2$ V, $\\varepsilon_2=1$ V, $r_1=r_2=1~\\Omega$, $R=2~\\Omega$. Tashqi qarshilikdagi kuchlanish tushishini toping (V).",
+      "answers": [
+        "0,5.",
+        "1.",
+        "1,5.",
+        "2.",
+        "3."
+      ],
+      "correct": 2,
+      "images": "../rasmlar59/r24afe49c27.png",
+      "source": "46-mavzu1.tex#0:13"
+    },
+    {
+      "text": "Zanjirga ulangan $C_1$ va $C_2$ sig‘imli kondensatorlarning $q_1$ va $q_2$ zaryadlarini topilsin.",
+      "answers": [
+        "$q_1=q_2=\\dfrac{C_1C_2}{C_1+C_2}(\\varepsilon_1+\\varepsilon_2)$.",
+        "$q_1=q_2=\\dfrac{C_1C_2}{C_1+C_2}(\\varepsilon_1-\\varepsilon_2)$.",
+        "$q_1=\\dfrac{C_1}{C_1+C_2}(\\varepsilon_1-\\varepsilon_2),\\quad q_2=\\dfrac{C_1}{C_1+C_2}(\\varepsilon_2-\\varepsilon_1)$.",
+        "$q_1=(C_1+C_2)(\\varepsilon_1+\\varepsilon_2),\\quad q_2=(C_1+C_2)(\\varepsilon_1+\\varepsilon_2)$.",
+        "$q_1=\\dfrac{C_1}{C_1+C_2}(\\varepsilon_1+\\varepsilon_2),\\quad q_2=\\dfrac{C_2}{C_1+C_2}(\\varepsilon_1+\\varepsilon_2)$."
+      ],
+      "correct": 0,
+      "images": "../rasmlar59/r72000870f8.png",
+      "source": "46-mavzu1.tex#0:15"
+    },
+    {
+      "text": "EYK’i $4,5$ V, ichki qarshiligi $1,5~\\Omega$ bo‘lgan $5$ ta tok manbai parallel ulangan. Zanjirning to‘la EYK’i necha Volt?",
+      "answers": [
+        "4,5.",
+        "9.",
+        "13,5.",
+        "18.",
+        "22,5."
+      ],
+      "correct": 0,
+      "source": "46-mavzu1.tex#0:16"
+    },
+    {
+      "text": "EYK’i $12$ V va ichki qarshiligi $3~\\Omega$ dan bo‘lgan $6$ ta bir xil element parallel ulab, batareya hosil qilindi. Agar shu batareyaga $5,5~\\Omega$ tashqi qarshilik ulansa, unda qanday tok kuchi hosil bo‘ladi (A)?",
+      "answers": [
+        "0,5.",
+        "1.",
+        "1,5.",
+        "2.",
+        "3."
+      ],
+      "correct": 3,
+      "source": "46-mavzu1.tex#0:17"
+    },
+    {
+      "text": "EYK’i $12$ V, ichki qarshiligi $1~\\Omega$ bo‘lgan $10$ ta tok manbai o‘zaro parallel ulab, batareya hosil qilindi. Shu batareyaga qarshiligi $5,9~\\Omega$ bo‘lgan rezistor ulansa, undagi tok kuchi qanday bo‘ladi (A)?",
+      "answers": [
+        "8.",
+        "6.",
+        "4.",
+        "3.",
+        "2."
+      ],
+      "correct": 4,
+      "source": "46-mavzu1.tex#0:18"
+    },
+    {
+      "text": "Uchta galvanik element va ikkita rezistordan rasmda ko‘rsatilgandek ulandi. Agar $R=12~\\Omega$, $r=1,5~\\Omega$ bo‘lsa, zanjirning umumiy qarshiligi necha $\\Omega$?",
+      "answers": [
+        "2,3.",
+        "6,5.",
+        "1,2.",
+        "7,5.",
+        "13,5."
+      ],
+      "correct": 1,
+      "images": "../rasmlar59/r1a7cd4552a.png",
+      "source": "46-mavzu1.tex#0:19"
+    },
+    {
+      "text": "EYK’lari $2,2$ V va ichki qarshiliklari $4~\\Omega$ bo‘lgan ikki doimiy tok manbai bir xil qutblari bilan ulangan. Bu manbalar batareyasini qanday teng kuchli bir manba bilan almashtirish mumkin?",
+      "answers": [
+        "$\\varepsilon=2,2$ V; $r=2,4~\\Omega$.",
+        "$\\varepsilon=4,4$ V; $r=2~\\Omega$.",
+        "$\\varepsilon=4,4$ V; $r=4~\\Omega$.",
+        "$\\varepsilon=2,2$ V; $r=2~\\Omega$.",
+        "$\\varepsilon=2,2$ V; $r=1~\\Omega$."
+      ],
+      "correct": 3,
+      "source": "46-mavzu1.tex#0:20"
+    },
+    {
+      "text": "Qanday sharoitda $n$ element ketma-ket va parallel ulanganda, tok kuchi o‘zaro teng bo‘ladi?",
+      "answers": [
+        "$R=2r$.",
+        "$R=1,5r$.",
+        "$r=1,5R$.",
+        "$r=R$.",
+        "TJY."
+      ],
+      "correct": 3,
+      "source": "46-mavzu1.tex#0:21"
+    },
+    {
+      "text": "EYK’lari bir xil va ichki qarshiliklari $r$ bo‘lgan $n$ ta o‘zgarmas tok manbalari tashqi $R$ qarshilikka oldin parallel, keyin ketma-ket ulandi. Bu ikki hol uchun tashqi zanjirdagi tok kuchlarining nisbatini topilsin.",
+      "answers": [
+        "$n$.",
+        "$\\dfrac{nR+r}{R+r}$.",
+        "$\\dfrac{R+nr}{nR+r}$.",
+        "$\\dfrac{nr}{R+r}$.",
+        "$\\dfrac{R+nr}{nR-r}$."
+      ],
+      "correct": 2,
+      "source": "46-mavzu1.tex#0:22"
+    },
+    {
+      "text": "EYuK’i $1,5$ V va $2$ V bo‘lgan elementlar bir xil ishorali qutblari bilan ulangan. Batareya klemmalariga ulangan voltmetr $1,7$ V kuchlanishni ko‘rsatdi. Elementlar ichki qarshiliklarining nisbatini toping.",
+      "answers": [
+        "1.",
+        "$2/3$.",
+        "2.",
+        "$1/3$.",
+        "3."
+      ],
+      "correct": 1,
+      "source": "46-mavzu1.tex#0:27"
+    }
+  ]
+}

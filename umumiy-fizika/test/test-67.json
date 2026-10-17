@@ -1,0 +1,201 @@
+{
+  "id": 67,
+  "title": "67-Mavzu | Muhitda magnit maydon. Magnitiklar",
+  "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
+  "backUrl": "../elektr.html",
+  "unlockLesson": 68,
+  "source": "authored",
+  "questions": [
+    {
+      "text": "Muhitning magnit singdiruvchanligi μ nimani ko‘rsatadi?",
+      "answers": [
+        "Muhitdagi magnit induksiya vakuumdagidan necha marta katta ekanini",
+        "Muhitning sindirish ko‘rsatkichini",
+        "Muhitning issiqlik sig‘imini",
+        "Muhitning zichligini",
+        "Muhitning elektr o‘tkazuvchanligini"
+      ],
+      "correct": 0,
+      "source": "authored:67:1"
+    },
+    {
+      "text": "Magnit singdiruvchanligi 1 dan biroz kichik (μ < 1) bo‘lgan moddalar qanday nomlanadi?",
+      "answers": [
+        "Paramagnetiklar",
+        "Dielektriklar",
+        "Ferromagnetiklar",
+        "Diamagnetiklar"
+      ],
+      "correct": 3,
+      "source": "authored:67:2"
+    },
+    {
+      "text": "Magnit singdiruvchanligi 1 dan biroz katta (μ > 1) bo‘lgan moddalar qanday nomlanadi?",
+      "answers": [
+        "Yarim o‘tkazgichlar",
+        "Paramagnetiklar",
+        "Diamagnetiklar",
+        "Ferromagnetiklar"
+      ],
+      "correct": 1,
+      "source": "authored:67:3"
+    },
+    {
+      "text": "Magnit singdiruvchanligi juda katta (μ ≫ 1) bo‘lgan moddalar qanday nomlanadi?",
+      "answers": [
+        "Diamagnetiklar",
+        "Paramagnetiklar",
+        "Izolyatorlar",
+        "Ferromagnetiklar"
+      ],
+      "correct": 3,
+      "source": "authored:67:4"
+    },
+    {
+      "text": "Quyidagilardan qaysi biri ferromagnetik?",
+      "answers": [
+        "Suv",
+        "Vismut",
+        "Alyuminiy",
+        "Temir",
+        "Mis"
+      ],
+      "correct": 3,
+      "source": "authored:67:5"
+    },
+    {
+      "text": "Quyidagilardan qaysi biri diamagnetik?",
+      "answers": [
+        "Temir",
+        "Kobalt",
+        "Vismut",
+        "Nikel"
+      ],
+      "correct": 2,
+      "source": "authored:67:6"
+    },
+    {
+      "text": "Quyidagilardan qaysi biri paramagnetik?",
+      "answers": [
+        "Vismut",
+        "Temir",
+        "Alyuminiy",
+        "Mis"
+      ],
+      "correct": 2,
+      "source": "authored:67:7"
+    },
+    {
+      "text": "Kyuri nuqtasi (temperaturasi) deb nimaga aytiladi?",
+      "answers": [
+        "Moddaning qaynash temperaturasiga",
+        "O‘ta o‘tkazuvchanlik boshlanadigan temperaturaga",
+        "Ferromagnetik o‘zining magnit xossalarini yo‘qotib, paramagnetikka aylanadigan temperaturaga",
+        "Moddaning erish temperaturasiga"
+      ],
+      "correct": 2,
+      "source": "authored:67:8"
+    },
+    {
+      "text": "Vakuumdagi magnit induksiya 2 mT. Magnit singdiruvchanligi 500 bo‘lgan muhitda u necha tesla bo‘ladi?",
+      "answers": [
+        "0,004",
+        "4",
+        "10",
+        "1",
+        "0,1"
+      ],
+      "correct": 3,
+      "source": "authored:67:9"
+    },
+    {
+      "text": "Muhitdagi magnit induksiya 0,6 T, vakuumda esa 2 mT. Muhitning magnit singdiruvchanligi qancha?",
+      "answers": [
+        "120",
+        "3000",
+        "30",
+        "300"
+      ],
+      "correct": 3,
+      "source": "authored:67:10"
+    },
+    {
+      "text": "Vakuumdagi solenoidda magnit induksiya 4 mT. Solenoid ichiga μ = 1000 bo‘lgan temir o‘zak kiritilsa (tok o‘zgarmaydi), magnit induksiya necha tesla bo‘ladi?",
+      "answers": [
+        "4000",
+        "0,4",
+        "40",
+        "4"
+      ],
+      "correct": 3,
+      "source": "authored:67:11"
+    },
+    {
+      "text": "Tokli g‘altak ichiga ferromagnit o‘zak kiritilganda uning magnit maydoni qanday o‘zgaradi?",
+      "answers": [
+        "Yo‘qoladi",
+        "Ko‘p marta kuchayadi",
+        "O‘zgarmaydi",
+        "Biroz susayadi"
+      ],
+      "correct": 1,
+      "source": "authored:67:12"
+    },
+    {
+      "text": "Elektromagnitlarda temir o‘zak nima uchun ishlatiladi?",
+      "answers": [
+        "Tok kuchini kamaytirish uchun",
+        "Magnit maydonni kuchaytirish uchun",
+        "G‘altakni sovitish uchun",
+        "Zaryadni to‘plash uchun"
+      ],
+      "correct": 1,
+      "source": "authored:67:13"
+    },
+    {
+      "text": "Ferromagnetiklarda doimiy magnit hosil bo‘lishining sababi nima?",
+      "answers": [
+        "Kichik magnitlangan sohalar (domenlar)ning bir xil yo‘nalishda tartiblanishi",
+        "Elektronlarning yo‘qolishi",
+        "Moddaning qizishi",
+        "Yadro massasining ortishi"
+      ],
+      "correct": 0,
+      "source": "authored:67:14"
+    },
+    {
+      "text": "Magnit induksiya B, magnit maydon kuchlanganligi H va muhit magnit singdiruvchanligi μ orasidagi bog‘lanish qaysi?",
+      "answers": [
+        "B = μ₀H/μ",
+        "B = μ/(μ₀H)",
+        "B = H/(μμ₀)",
+        "B = μμ₀H"
+      ],
+      "correct": 3,
+      "source": "authored:67:15"
+    },
+    {
+      "text": "Diamagnetik modda tashqi magnit maydonga kiritilsa nima sodir bo‘ladi?",
+      "answers": [
+        "Maydonni yo‘qotadi",
+        "Maydonni biroz susaytiradi",
+        "Maydonga ta’sir qilmaydi",
+        "Maydonni ko‘p marta kuchaytiradi"
+      ],
+      "correct": 1,
+      "source": "authored:67:16"
+    },
+    {
+      "text": "Solenoidning uzunlik birligiga to‘g‘ri keladigan o‘ramlar soni n = 1000 m⁻¹, undagi tok 2 A. Solenoid ichidagi magnit maydon kuchlanganligi H (A/m) qancha?",
+      "answers": [
+        "2",
+        "2000",
+        "8000",
+        "500",
+        "4000"
+      ],
+      "correct": 1,
+      "source": "authored:67:17"
+    }
+  ]
+}
