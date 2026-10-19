@@ -53,8 +53,7 @@ async function verify(raw) {
       ? banner("bad", "alert", "Sertifikat bekor qilingan", "Bu sertifikat administrator tomonidan bekor qilingan va haqiqiy hisoblanmaydi.")
       : banner("ok", "shield", "Sertifikat haqiqiy", "Ushbu sertifikat OliyFizika.uz tomonidan berilgan.")}
     <div class="of-card cert-detail"><dl>${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl></div>
-    <div class="cert-preview" data-preview><span class="of-skeleton" style="height:240px;width:100%"></span></div>
-    <p class="of-muted cert-disclaimer">Sertifikat o‘quv rag‘bati uchun beriladi va davlat hujjati hisoblanmaydi.</p>`;
+    <div class="cert-preview" data-preview><span class="of-skeleton" style="height:240px;width:100%"></span></div>`;
   const holder = out.querySelector("[data-preview]");
   const canvas = document.createElement("canvas");
   canvas.setAttribute("role", "img");

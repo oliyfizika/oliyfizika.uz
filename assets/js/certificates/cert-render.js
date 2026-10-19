@@ -102,11 +102,11 @@ export async function renderCertificate(cert, { canvas } = {}) {
     ctx.beginPath(); ctx.moveTo(x, y + sy * 70); ctx.lineTo(x, y); ctx.lineTo(x + sx * 70, y); ctx.stroke();
   });
 
-  // Yengil suv belgisi (ko'zga tashlanmaydigan)
+  // Yengil suv belgisi: kichik, zich joylashgan
   ctx.save();
   ctx.translate(cx, H / 2); ctx.rotate(-Math.PI / 9);
-  ctx.globalAlpha = 0.035; ctx.fillStyle = C.navy; ctx.font = `800 120px ${DISPLAY}`; ctx.textAlign = "center";
-  for (let row = -4; row <= 4; row++) ctx.fillText(SITE_NAME, (row % 2) * 220, row * 190);
+  ctx.globalAlpha = 0.04; ctx.fillStyle = C.navy; ctx.font = `800 44px ${DISPLAY}`; ctx.textAlign = "center";
+  for (let row = -12; row <= 12; row++) for (let col = -6; col <= 6; col++) ctx.fillText(SITE_NAME, col * 330 + (row % 2) * 165, row * 110);
   ctx.restore();
   ctx.globalAlpha = 1;
 
@@ -138,21 +138,9 @@ export async function renderCertificate(cert, { canvas } = {}) {
   ctx.fillStyle = C.ink; ctx.font = `500 32px ${SANS}`;
   wrap(ctx, text, 1280).forEach((line, i) => ctx.fillText(line, cx, 605 + i * 46));
 
-  // Ko'rsatkichlar
-  const stats = [
-    ["O‘RTACHA BALL", formatAvg(cert.avgX10)],
-    ["YAKUNLANGAN MAVZULAR", String(cert.lessonCount)],
-    ["BERILGAN SANA", formatDate(cert.issuedAt)],
-  ];
-  const bw = 400; const gap = 40; const x0 = cx - (bw * 3 + gap * 2) / 2; const by = 720;
-  stats.forEach(([label, value], i) => {
-    const x = x0 + i * (bw + gap);
-    ctx.fillStyle = "#eef3ff"; ctx.beginPath(); ctx.roundRect(x, by, bw, 150, 18); ctx.fill();
-    ctx.strokeStyle = C.soft; ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle = C.muted; ctx.font = `600 20px ${SANS}`; ctx.textAlign = "center";
-    spaced(ctx, label, x + bw / 2, by + 44, 2);
-    ctx.fillStyle = C.navy; ctx.font = `800 54px ${DISPLAY}`; ctx.fillText(value, x + bw / 2, by + 112);
-  });
+  // Sana (kichik)
+  ctx.fillStyle = C.muted; ctx.font = `500 26px ${SANS}`; ctx.textAlign = "center";
+  ctx.fillText(`Berilgan sana: ${formatDate(cert.issuedAt)}`, cx, 800);
 
   // Pastki qism: raqam + tekshirish + QR
   ctx.textAlign = "left";
@@ -164,8 +152,6 @@ export async function renderCertificate(cert, { canvas } = {}) {
   ctx.fillText("Haqiqiyligini tekshirish: skanerlang yoki quyidagi sahifada raqamni kiriting", 130, 1062);
   ctx.fillStyle = C.blue; ctx.font = `600 26px ${SANS}`;
   ctx.fillText(VERIFY_URL.replace("https://", ""), 130, 1100);
-  ctx.fillStyle = C.muted; ctx.font = `italic 500 21px ${SANS}`;
-  ctx.fillText("Sertifikat o‘quv rag‘bati uchun beriladi va davlat hujjati hisoblanmaydi.", 130, 1140);
 
   const qr = qrMatrix(verifyLink(cert.number));
   const qs = 250; const qx = W - 130 - qs; const qy = 910;
