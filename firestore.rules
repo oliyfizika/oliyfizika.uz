@@ -235,6 +235,237 @@ service cloud.firestore {
       allow delete: if isAdmin();
     }
 
+    // ---------------------------------------------------------------- Sertifikatlar (Umumiy fizika)
+    //
+    // Maqsad: bo'lim (mexanika, molekulyar, elektr, optika) va butun "Umumiy fizika" kursi yakuni uchun
+    // sertifikat. Sertifikat — RAG'BAT hujjati (davlat hujjati emas). Himoya tamoyillari:
+    //
+    //  1) Natijalar (results) o'zgarmas va server vaqti bilan yoziladi (yuqorida). Sertifikatga nomzodlik
+    //     FAQAT shu natijalardan hosil bo'lgan jamlanma bilan tasdiqlanadi:
+    //       users/{uid}/courseProgress/{courseId}.lessons["<mavzu>"] = { p: foiz, r: resultId, t: completedAt }  (+ lastLesson)
+    //     Har bir yozuv — bitta mavzu, bitta haqiqiy `results` hujjatiga bog'langan (uid, lessonId, passed, percent,
+    //     completedAt mos kelishi rules ichida get() bilan tekshiriladi). count/sum/firstAt/lastAt qiymatlari
+    //     faqat shu yozuvlardan kelib chiqadi — klient ularni "o'zi" belgilay olmaydi.
+    //  2) Bo'lim sertifikati: bo'limning BARCHA talab qilingan mavzulari (certRequired) bo'lishi shart va
+    //     birinchi hamda oxirgi natija orasida kamida mavzu soni × 60 soniya (server vaqti) o'tgan bo'lishi kerak —
+    //     bir zumda skript bilan to'ldirishga qarshi tezlik cheklovi (haqiqiy vaqtni "sotib olib" bo'lmaydi).
+    //  3) To'liq kurs sertifikati: to'rttala bo'lim sertifikat indeksi mavjud bo'lishi shart; ball va mavzu soni
+    //     bo'limlardan yig'iladi.
+    //  4) Bir foydalanuvchi — bir kurs uchun BITTA sertifikat: users/{uid}/certificateIndex/{courseId} sertifikat
+    //     bilan bir atomik yozuvda yaratiladi (o'zgarmas). Qayta berish faqat admin indeksni o'chirganda.
+    //  5) Sertifikat hujjati o'zgarmas; faqat admin bekor qilishi (revoked) yoki o'chirishi mumkin.
+    //     Raqam (hujjat ID) tasodifiy: OF-<KOD>-XXXX-XXXX-XXXX (31 belgili alifbo, 12 belgi ≈ 59 bit) —
+    //     ro'yxatni ko'rib chiqish YO'Q, faqat aniq raqam bo'yicha o'qish (ommaviy tekshirish sahifasi uchun).
+    //  6) Ism — profil (users/{uid}.fullName yoki firstName+lastName) bilan bir xil bo'lishi shart.
+    //
+    // Cheklov (hujjatlashtirilgan): test javoblari klient tomonida baholanadi va javob kalitlari ochiq JSON — texnik
+    // jihatdan malakali foydalanuvchi natijani soxtalashtirishi mumkin. Shu sababli sertifikat rag'bat uchun;
+    // rasmiy/pullik sertifikatga o'tishda server tomonida baholash (Cloud Functions yoki Attestatsiya'dagi kabi
+    // rules-gated kalitlar) kerak bo'ladi. Qarang: docs/sertifikatlar.md.
+    //
+    // Mavzular ro'yxati courses.js / manifest.json bilan mos bo'lishi shart (umumiy-fizika/data/certificates.js).
+    // 14-mavzu testi hozircha yo'q (talab qilinmaydi); Atom bo'limi testlari yo'q (sertifikat berilmaydi).
+
+    function certCourseOk(c) {
+      return c in ['mexanika', 'molekulyar', 'elektr', 'optika'];
+    }
+
+    function certLessonOk(c, n) {
+      return (c == 'mexanika' && n >= 1 && n <= 34 && n != 14)
+        || (c == 'molekulyar' && n >= 35 && n <= 50)
+        || (c == 'elektr' && n >= 51 && n <= 72)
+        || (c == 'optika' && n >= 73 && n <= 81);
+    }
+
+    function certRequired(c) {
+      return c == 'mexanika' ? 33 : c == 'molekulyar' ? 16 : c == 'elektr' ? 22 : c == 'optika' ? 9 : 0;
+    }
+
+    function certTitle(c) {
+      return c == 'mexanika' ? 'Mexanika'
+        : c == 'molekulyar' ? 'Molekulyar fizika'
+        : c == 'elektr' ? 'Elektr va magnetizm'
+        : c == 'optika' ? 'Optika'
+        : c == 'umumiy' ? 'Umumiy fizika' : '';
+    }
+
+    function certCode(c) {
+      return c == 'mexanika' ? 'MEX' : c == 'molekulyar' ? 'MOL' : c == 'elektr' ? 'ELE' : c == 'optika' ? 'OPT' : 'UMU';
+    }
+
+    function certProgressPath(uid, c) {
+      return /databases/$(database)/documents/users/$(uid)/courseProgress/$(c);
+    }
+
+    function certIndexPath(uid, c) {
+      return /databases/$(database)/documents/users/$(uid)/certificateIndex/$(c);
+    }
+
+    function certPath(id) {
+      return /databases/$(database)/documents/certificates/$(id);
+    }
+
+    // Jamlanmadagi bitta mavzu yozuvi: haqiqiy, o'tgan natijaga bog'langan bo'lishi shart.
+    function progEntryOk(uid, courseId, key, e) {
+      let r = get(resultPath(e.r)).data;
+      return e.keys().hasOnly(['p', 'r', 't'])
+        && e.keys().hasAll(['p', 'r', 't'])
+        && key.matches('[0-9]{1,3}')
+        && certLessonOk(courseId, int(key))
+        && e.p is int && e.p >= 80 && e.p <= 100
+        && e.r is string && e.r.size() > 0 && e.r.size() <= 64
+        && e.t is timestamp
+        && r.uid == uid
+        && r.lessonId == int(key)
+        && r.passed == true
+        && r.percent == e.p
+        && r.completedAt == e.t
+        && r.get('course', 'mechanics') == 'mechanics';
+    }
+
+    function progCreateOk(uid, courseId) {
+      let n = request.resource.data;
+      return n.keys().hasOnly(['courseId', 'lessons', 'lastLesson', 'count', 'sum', 'firstAt', 'lastAt', 'updatedAt'])
+        && n.keys().hasAll(['courseId', 'lessons', 'lastLesson', 'count', 'sum', 'firstAt', 'lastAt', 'updatedAt'])
+        && n.courseId == courseId
+        && n.lessons is map
+        && n.lastLesson is string
+        && n.lessons.keys().size() == 1
+        && n.lessons.keys().hasOnly([n.lastLesson])
+        && progEntryOk(uid, courseId, n.lastLesson, n.lessons[n.lastLesson])
+        && n.count == 1
+        && n.sum == n.lessons[n.lastLesson].p
+        && n.firstAt == n.lessons[n.lastLesson].t
+        && n.lastAt == n.firstAt
+        && n.updatedAt == request.time;
+    }
+
+    // Yangilash: aynan BITTA mavzu qo'shiladi yoki yaxshilanadi (foiz oshadi, yangi natija, kechroq vaqt).
+    // Yaxshilash firstAt/lastAt ni o'zgartirmaydi (tezlik cheklovi qayta ochilmasin).
+    function progUpdateOk(uid, courseId) {
+      let o = resource.data;
+      let n = request.resource.data;
+      let ch = n.lessons.diff(o.lessons).affectedKeys();
+      let k = n.lastLesson;
+      let e = n.lessons[k];
+      let had = k in o.lessons;
+      let oldP = had ? o.lessons[k].p : 0;
+      return n.keys().hasOnly(['courseId', 'lessons', 'lastLesson', 'count', 'sum', 'firstAt', 'lastAt', 'updatedAt'])
+        && n.keys().hasAll(['courseId', 'lessons', 'lastLesson', 'count', 'sum', 'firstAt', 'lastAt', 'updatedAt'])
+        && n.courseId == courseId && o.courseId == courseId
+        && n.lastLesson is string
+        && ch.size() == 1
+        && ch.hasOnly([k])
+        && progEntryOk(uid, courseId, k, e)
+        && (!had || (e.p > oldP && e.t > o.lessons[k].t))
+        && n.count == (had ? o.count : o.count + 1)
+        && n.count == n.lessons.keys().size()
+        && n.sum == o.sum + e.p - oldP
+        && n.firstAt == ((had || o.firstAt <= e.t) ? o.firstAt : e.t)
+        && n.lastAt == ((had || o.lastAt >= e.t) ? o.lastAt : e.t)
+        && n.updatedAt == request.time;
+    }
+
+    function certNameOk(uid, name) {
+      let p = get(userPath(uid)).data;
+      return name is string && name.size() >= 5 && name.size() <= 100
+        && name.matches('.*[^ ]+ +[^ ]+.*')
+        && (name == p.get('fullName', '') || name == (p.get('firstName', '') + ' ' + p.get('lastName', '')));
+    }
+
+    function certSectionOk(uid, c) {
+      let p = get(certProgressPath(uid, c.courseId)).data;
+      return certCourseOk(c.courseId)
+        && p.count == certRequired(c.courseId)
+        && c.lessonCount == p.count
+        && c.sumPercent == p.sum
+        && (p.lastAt.toMillis() - p.firstAt.toMillis()) >= p.count * 60000;
+    }
+
+    function certFullOk(uid, c) {
+      let a = get(certIndexPath(uid, 'mexanika')).data;
+      let b = get(certIndexPath(uid, 'molekulyar')).data;
+      let e = get(certIndexPath(uid, 'elektr')).data;
+      let o = get(certIndexPath(uid, 'optika')).data;
+      return a.count == certRequired('mexanika')
+        && b.count == certRequired('molekulyar')
+        && e.count == certRequired('elektr')
+        && o.count == certRequired('optika')
+        && c.lessonCount == a.count + b.count + e.count + o.count
+        && c.sumPercent == a.sum + b.sum + e.sum + o.sum;
+    }
+
+    function validCert(certId) {
+      let c = request.resource.data;
+      let uid = request.auth.uid;
+      return c.keys().hasOnly(['uid', 'number', 'kind', 'courseId', 'courseTitle', 'fullName', 'lessonCount',
+                               'sumPercent', 'avgX10', 'issuedAt', 'revoked', 'v'])
+        && c.keys().hasAll(['uid', 'number', 'kind', 'courseId', 'courseTitle', 'fullName', 'lessonCount',
+                            'sumPercent', 'avgX10', 'issuedAt', 'revoked', 'v'])
+        && c.uid == uid
+        && c.number == certId
+        && c.kind in ['section', 'full']
+        && certTitle(c.courseId) != ''
+        && c.courseTitle == certTitle(c.courseId)
+        && certId.matches('OF-' + certCode(c.courseId) + '-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}')
+        && c.lessonCount is int && c.sumPercent is int && c.avgX10 is int
+        && c.lessonCount > 0 && c.avgX10 >= 800 && c.avgX10 <= 1000
+        && (c.avgX10 * c.lessonCount - c.sumPercent * 10) * 2 <= c.lessonCount
+        && (c.avgX10 * c.lessonCount - c.sumPercent * 10) * 2 >= 0 - c.lessonCount
+        && c.issuedAt == request.time
+        && c.revoked == false
+        && c.v == 1
+        && certNameOk(uid, c.fullName)
+        && !exists(certIndexPath(uid, c.courseId))
+        && getAfter(certIndexPath(uid, c.courseId)).data.certId == certId
+        && (c.kind == 'section'
+              ? (c.courseId != 'umumiy' && certSectionOk(uid, c))
+              : (c.courseId == 'umumiy' && certFullOk(uid, c)));
+    }
+
+    function validCertIndex(uid, courseId) {
+      let d = request.resource.data;
+      let c = getAfter(certPath(d.certId)).data;
+      return d.keys().hasOnly(['certId', 'courseId', 'count', 'sum', 'createdAt'])
+        && d.keys().hasAll(['certId', 'courseId', 'count', 'sum', 'createdAt'])
+        && d.certId is string
+        && d.courseId == courseId
+        && c.uid == uid
+        && c.courseId == courseId
+        && c.number == d.certId
+        && d.count == c.lessonCount
+        && d.sum == c.sumPercent
+        && d.createdAt == request.time;
+    }
+
+    // `users/{userId}` ichidagi kichik kolleksiyalar (xpGrants kabi), lekin alohida to'liq yo'l bilan e'lon qilingan.
+    match /users/{userId}/courseProgress/{courseId} {
+      allow get, list: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId) && certCourseOk(courseId) && progCreateOk(userId, courseId);
+      allow update: if isOwner(userId) && certCourseOk(courseId) && progUpdateOk(userId, courseId);
+      allow delete: if isAdmin();
+    }
+
+    match /users/{userId}/certificateIndex/{courseId} {
+      allow get, list: if isOwner(userId) || isAdmin();
+      allow create: if isOwner(userId) && validCertIndex(userId, courseId);
+      allow update: if false;
+      allow delete: if isAdmin();
+    }
+
+    match /certificates/{certId} {
+      // Ommaviy tekshirish: faqat aniq raqam bo'yicha. Ro'yxat — faqat egasi (o'z sertifikatlari) va admin.
+      allow get: if true;
+      allow list: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow create: if signedIn() && validCert(certId);
+      // Admin: faqat bekor qilish belgisi.
+      allow update: if isAdmin()
+        && changedKeys().hasOnly(['revoked', 'revokedReason', 'revokedAt'])
+        && request.resource.data.revoked is bool
+        && (!('revokedReason' in request.resource.data) || (request.resource.data.revokedReason is string && request.resource.data.revokedReason.size() <= 300));
+      allow delete: if isAdmin();
+    }
+
     // >>> attestation-physics (generated — tools/attestatsiya-fizika/rules/build_rules.py)
 
     // ============================================================================

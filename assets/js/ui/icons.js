@@ -66,6 +66,8 @@ const PATHS = {
   slides: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="M7 12l3-3 2 2 4-4"/>',
   external: '<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
   shield: '<path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.1 7.5 9.5 4.4-1.4 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/>',
+  download: '<path d="M12 4v10M8 10.5l4 4 4-4"/><path d="M4.5 19.5h15"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3A4 4 0 0 0 11 18.7l1-1"/>',
   lecture: '<rect x="3" y="4" width="14" height="11" rx="1.5"/><path d="M6 8h8M6 11h5"/><circle cx="19" cy="15" r="2"/><path d="M16 21a3 3 0 0 1 6 0"/>',
 };
 

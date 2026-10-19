@@ -1,0 +1,83 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Sertifikatlar (certificates/index.html, verify.html)
+   Faqat dizayn tizimi tokenlari ustiga quriladi.
+   ========================================================================== */
+.cert { display: flex; flex-direction: column; gap: 22px; }
+.cert-head h1 { margin-bottom: 6px; }
+.cert-head p { max-width: 70ch; line-height: 1.6; }
+
+.cert-sync { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; }
+.cert-sync[hidden] { display: none; }
+.cert-sync p { font-size: var(--of-text-sm); color: var(--of-text-2); }
+
+.cert-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.cert-card { display: flex; flex-direction: column; gap: 12px; padding: 18px; }
+.cert-card__head { display: flex; align-items: center; gap: 12px; }
+.cert-card__head h3 { font: 750 var(--of-text-lg)/1.25 var(--of-font-display); flex: 1; min-width: 0; }
+.cert-card__icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--of-primary-soft); color: var(--of-primary); flex: none; }
+.cert-card__icon svg { width: 22px; height: 22px; }
+.cert-card__icon--lg { width: 54px; height: 54px; border-radius: 16px; }
+.cert-card__icon--lg svg { width: 28px; height: 28px; }
+.cert-card[data-state="issued"] .cert-card__icon, .cert-full[data-state="issued"] .cert-card__icon { background: var(--of-success-soft); color: var(--of-success); }
+.cert-card[data-state="soon"] { opacity: .8; }
+.cert-card[data-state="soon"] .cert-card__icon { background: var(--of-surface-sunken); color: var(--of-text-3); }
+.cert-card__meta { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.5; }
+.cert-card__meta b { color: var(--of-text); }
+.cert-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+.cert-card__note { display: flex; align-items: flex-start; gap: 8px; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.5; flex: 1 1 220px; }
+.cert-card__note svg { width: 16px; height: 16px; flex: none; margin-top: 2px; color: var(--of-text-3); }
+
+.cert-full { display: flex; flex-direction: column; gap: 16px; padding: 20px; }
+.cert-full__main { display: flex; gap: 16px; align-items: center; }
+.cert-full__main h3 { font: 750 var(--of-text-xl)/1.25 var(--of-font-display); margin-bottom: 4px; }
+.cert-full__checks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.cert-full__checks li { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface-2); font-size: var(--of-text-sm); font-weight: 600; color: var(--of-text-2); }
+.cert-full__checks li svg { width: 18px; height: 18px; flex: none; }
+.cert-full__checks li.is-done { color: var(--of-success-text); background: var(--of-success-soft); border-color: transparent; }
+
+.cert-note { padding: 18px 20px; }
+.cert-note h2 { font: 750 var(--of-text-lg)/1.3 var(--of-font-display); margin-bottom: 8px; }
+.cert-note ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+
+/* Modal: sertifikat ko'rinishi */
+.cert-modal .of-modal__dialog { width: min(96vw, 1000px); max-width: none; }
+.cert-preview { width: 100%; }
+.cert-preview canvas { display: block; width: 100%; height: auto; border-radius: var(--of-radius-md); border: 1px solid var(--of-border); box-shadow: var(--of-shadow-sm); background: #fbfaf6; }
+.cert-confirm { padding: 12px 14px; border-radius: var(--of-radius-md); background: var(--of-primary-soft); color: var(--of-primary-text); text-align: center; }
+.cert-confirm b { font-size: var(--of-text-lg); }
+
+/* Tekshirish sahifasi */
+.cert-verify-form { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.cert-verify-form label { font-weight: 600; font-size: var(--of-text-sm); }
+.cert-verify-form__row { display: flex; gap: 10px; }
+.cert-verify-form__row .of-input { flex: 1; min-width: 0; font-family: var(--of-font-mono); letter-spacing: .04em; text-transform: uppercase; }
+.cert-status { display: flex; align-items: center; gap: 14px; padding: 18px 20px; }
+.cert-status h2 { font: 750 var(--of-text-xl)/1.25 var(--of-font-display); }
+.cert-status p { color: var(--of-text-2); font-size: var(--of-text-sm); margin-top: 2px; }
+.cert-status__icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; flex: none; }
+.cert-status__icon svg { width: 24px; height: 24px; }
+.cert-status--ok { border-color: var(--of-success); }
+.cert-status--ok .cert-status__icon { background: var(--of-success-soft); color: var(--of-success); }
+.cert-status--bad { border-color: var(--of-danger); }
+.cert-status--bad .cert-status__icon { background: var(--of-danger-soft); color: var(--of-danger-text); }
+.cert-detail { padding: 6px 20px; }
+.cert-detail dl { margin: 0; }
+.cert-detail dl > div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--of-border); }
+.cert-detail dl > div:last-child { border-bottom: 0; }
+.cert-detail dt { color: var(--of-text-2); font-size: var(--of-text-sm); }
+.cert-detail dd { margin: 0; font-weight: 650; text-align: right; overflow-wrap: anywhere; }
+.cert-disclaimer { font-size: var(--of-text-xs); }
+
+/* Kurs sahifasidagi sertifikat havolasi */
+.cert-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: var(--of-primary-soft); color: var(--of-primary-text); font: 600 var(--of-text-sm)/1.2 var(--of-font-sans); text-decoration: none; }
+.cert-chip svg { width: 16px; height: 16px; }
+.cert-chip:hover { background: var(--of-primary-soft-2); }
+
+@media (max-width: 760px) {
+  .cert-grid { grid-template-columns: 1fr; }
+  .cert-full__checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cert-full__main { align-items: flex-start; }
+  .cert-verify-form__row { flex-direction: column; }
+  .cert-detail dl > div { flex-direction: column; gap: 2px; }
+  .cert-detail dd { text-align: left; }
+}

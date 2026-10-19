@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sertifikatlarim | OliyFizika.uz</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/certificates.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/certificates/certificates-page.js"></script>
+</head>
+<!--
+  Umumiy fizika sertifikatlari: bo'lim sertifikatlari + to'liq kurs sertifikati.
+  Nomzodlik firestore.rules ichida tekshiriladi (qarang: docs/sertifikatlar.md).
+-->
+<body class="of-ui" data-shell-title="Sertifikatlarim">
+<div class="of-page of-container cert" id="certPage">
+  <header class="cert-head">
+    <h1>Sertifikatlarim</h1>
+    <p class="of-muted">Umumiy fizika kursining har bir bo‘limini yakunlaganingizda, shuningdek butun kursni tugatganingizda bepul sertifikat olasiz. Har bir sertifikat noyob raqam va QR kodga ega — uni istalgan kishi tekshira oladi.</p>
+  </header>
+
+  <div class="of-alert of-alert--error" data-alert role="alert" hidden></div>
+
+  <section class="of-card cert-sync" data-sync hidden aria-live="polite">
+    <p data-sync-text>Natijalaringiz tekshirilmoqda…</p>
+    <div class="of-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--value:0" data-sync-bar><span></span></div>
+  </section>
+
+  <section aria-labelledby="certSectionsTitle">
+    <div class="of-section-title"><h2 id="certSectionsTitle">Bo‘lim sertifikatlari</h2></div>
+    <ul class="cert-grid" data-sections aria-busy="true">
+      <li class="of-card cert-card"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></li>
+      <li class="of-card cert-card"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="certFullTitle">
+    <div class="of-section-title"><h2 id="certFullTitle">To‘liq kurs sertifikati</h2></div>
+    <div data-full></div>
+  </section>
+
+  <section class="of-card cert-note" aria-labelledby="certRulesTitle">
+    <h2 id="certRulesTitle">Qoidalar</h2>
+    <ul>
+      <li>Bo‘lim sertifikati uchun bo‘limning barcha mavzu testlaridan kamida 80% natija bilan o‘tish kerak.</li>
+      <li>Sertifikatdagi o‘rtacha ball — bo‘lim mavzulari bo‘yicha eng yaxshi natijalarning o‘rtachasi.</li>
+      <li>Ism profilingizdan olinadi va berilgandan keyin o‘zgarmaydi. Xato bo‘lsa, administratorga murojaat qiling.</li>
+      <li>Sertifikat o‘quv rag‘bati uchun beriladi va davlat hujjati hisoblanmaydi.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

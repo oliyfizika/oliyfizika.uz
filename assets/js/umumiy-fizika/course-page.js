@@ -13,6 +13,7 @@ import { revealOnScroll } from "../ui/reveal.js";
 import { onSession } from "../core/session.js";
 import { getLearningSummary } from "../progress/progress-service.js";
 import { COURSES, getCourse } from "../../../umumiy-fizika/data/courses.js";
+import { sectionById } from "../../../umumiy-fizika/data/certificates.js";
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -66,7 +67,7 @@ function renderHero() {
       <strong class="of-num">${c.percent}%</strong>
       <div class="of-progress of-progress--lg" role="progressbar" aria-label="${esc(COURSE.title)} progressi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${c.percent}" style="--value:0" data-to="${c.percent}"><span></span></div>
     </div>
-    <div class="of-cp-hero__actions">${action}</div>` : `
+    <div class="of-cp-hero__actions">${action}${sectionById(courseId) ? `<a class="of-btn of-btn--ghost" href="../certificates/index.html">${icon("certificate")}Bo‘lim sertifikati</a>` : ""}</div>` : `
     <div class="of-cp-hero__progress" aria-hidden="true"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span></span><span class="of-skeleton" style="height:12px;grid-column:1/-1"></span></div>`}`;
   requestAnimationFrame(() => requestAnimationFrame(() => $$(".of-progress[data-to]", hero).forEach((b) => b.style.setProperty("--value", b.dataset.to))));
 }

@@ -25,6 +25,7 @@ export const NAV_GROUPS = [
     label: "Foydalanuvchi",
     items: [
       { id: "natijalar", label: "Mening natijalarim", icon: "chart", href: "dashboard/natijalar.html", match: ["dashboard/natijalar.html"], protected: true },
+      { id: "sertifikatlar", label: "Sertifikatlarim", icon: "certificate", href: "certificates/index.html", match: ["certificates/index.html"], protected: true },
     ],
   },
   {

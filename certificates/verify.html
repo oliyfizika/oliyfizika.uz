@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sertifikatni tekshirish | OliyFizika.uz</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/certificates.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/certificates/verify-page.js"></script>
+</head>
+<!--
+  Ommaviy sahifa (kirish talab qilinmaydi): sertifikat raqami bo'yicha haqiqiyligini tekshirish.
+  Firestore: certificates/{raqam} — faqat aniq raqam bo'yicha o'qiladi (ro'yxat yo'q).
+-->
+<body class="of-ui" data-shell-title="Sertifikatni tekshirish">
+<div class="of-page of-container cert" id="verifyPage">
+  <header class="cert-head">
+    <h1>Sertifikatni tekshirish</h1>
+    <p class="of-muted">Sertifikatdagi raqamni kiriting yoki QR kodni skanerlang.</p>
+  </header>
+
+  <form class="of-card cert-verify-form" data-form novalidate>
+    <label for="certNumber">Sertifikat raqami</label>
+    <div class="cert-verify-form__row">
+      <input class="of-input" id="certNumber" name="number" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="OF-MEX-XXXX-XXXX-XXXX" maxlength="32" required>
+      <button class="of-btn of-btn--primary" type="submit">Tekshirish</button>
+    </div>
+  </form>
+
+  <div data-result aria-live="polite"></div>
+</div>
+</body>
+</html>

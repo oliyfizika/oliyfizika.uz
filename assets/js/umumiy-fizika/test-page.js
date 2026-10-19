@@ -340,6 +340,13 @@ async function finish() {
     });
     xpAward = await awardXP({ lessonId, percent, resultId });
     if (!resultId) saved = false;
+    // Sertifikat jamlanmasi (jim; xato bo'lsa test natijasiga ta'sir qilmaydi)
+    if (passed && resultId) {
+      try {
+        const { recordPass } = await import("../certificates/cert-service.js");
+        await recordPass({ lessonId, resultId, percent });
+      } catch (e) { console.warn("[test] sertifikat jamlanmasi:", e); }
+    }
   } catch (e) {
     console.error("[test] natijani saqlashda xato:", e);
     saved = false;
