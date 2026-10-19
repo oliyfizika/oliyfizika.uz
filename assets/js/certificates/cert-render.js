@@ -133,8 +133,8 @@ export async function renderCertificate(cert, { canvas } = {}) {
   // Matn
   const isFull = cert.kind === "full";
   const text = isFull
-    ? "«Umumiy fizika» kursining barcha bo‘limlarini (Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika) muvaffaqiyatli yakunlagani uchun taqdirlanadi."
-    : `«Umumiy fizika» kursining «${cert.courseTitle}» bo‘limini muvaffaqiyatli yakunlagani uchun taqdirlanadi.`;
+    ? "«Umumiy fizika» kursini muvaffaqiyatli tamomlaganini tasdiqlaydi."
+    : `«Umumiy fizika» kursining «${cert.courseTitle}» bo‘limini muvaffaqiyatli tamomlaganini tasdiqlaydi.`;
   ctx.fillStyle = C.ink; ctx.font = `500 32px ${SANS}`;
   wrap(ctx, text, 1280).forEach((line, i) => ctx.fillText(line, cx, 605 + i * 46));
 
