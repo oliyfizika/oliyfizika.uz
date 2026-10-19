@@ -120,7 +120,7 @@ export async function renderCertificate(cert, { canvas } = {}) {
   ctx.textAlign = "center"; ctx.fillStyle = C.navy; ctx.font = `800 88px ${DISPLAY}`;
   spaced(ctx, "SERTIFIKAT", cx, 330, 16);
   ctx.fillStyle = C.muted; ctx.font = `500 28px ${SANS}`;
-  ctx.fillText("Ushbu sertifikat quyidagi shaxsga beriladi", cx, 400);
+  ctx.fillText("Ushbu sertifikat", cx, 400);
 
   // Ism
   ctx.fillStyle = C.ink;
