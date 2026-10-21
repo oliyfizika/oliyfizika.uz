@@ -1,171 +1,376 @@
 {
-  "_izoh": "Simulyatsiyalar katalogi (simulations/simulations.html). Nomlar va tavsiflar mavjud sahifalardan olingan; 'params' — sahifadagi haqiqiy boshqaruv elementlari. Simulyatsiya kodlari bu faylda yo'q va katalog sahifasida yuklanmaydi.",
-  "topics": [
-    {
-      "id": "mexanika",
-      "title": "Mexanika"
-    },
-    {
-      "id": "elektr",
-      "title": "Elektr va magnetizm"
-    },
-    {
-      "id": "optika",
-      "title": "Optika"
-    }
-  ],
-  "simulations": [
-    {
-      "id": "projectile",
-      "title": "Projectile Motion",
-      "href": "projectile.html",
-      "topic": "mexanika",
-      "description": "Jismning parabola bo‘ylab harakatini kuzating. Burchak, tezlik va gravitatsiyani boshqaring.",
-      "params": [
-        "Burchak",
-        "Tezlik",
-        "Gravitatsiya"
-      ],
-      "keywords": "gorizontga burchak ostida otilgan jism parabola trayektoriya uchish uzoqligi maksimal balandlik"
-    },
-    {
-      "id": "pendulum",
-      "title": "Matematik mayatnik",
-      "href": "pendulum.html",
-      "topic": "mexanika",
-      "description": "Mayatnik tebranishini real vaqt rejimida kuzating. Uzunlik, burchak va gravitatsiyani boshqaring.",
-      "params": [
-        "Uzunlik",
-        "Boshlang‘ich burchak",
-        "Gravitatsiya"
-      ],
-      "keywords": "pendulum tebranish davr mayatnik"
-    },
-    {
-      "id": "spring",
-      "title": "Spring Oscillator",
-      "href": "spring.html",
-      "topic": "mexanika",
-      "description": "Prujinali mayatnik tebranishini kuzating. Massa, amplituda va qattiqlikni boshqaring.",
-      "params": [
-        "Massa",
-        "Prujina qattiqligi k",
-        "Amplituda"
-      ],
-      "keywords": "prujinali mayatnik prujina tebranish garmonik"
-    },
-    {
-      "id": "circular-motion",
-      "title": "Circular Motion",
-      "href": "circular-motion.html",
-      "topic": "mexanika",
-      "description": "Aylana bo‘ylab harakatni kuzating. Radius va tezlikni boshqaring.",
-      "params": [
-        "Radius",
-        "Tezlik"
-      ],
-      "keywords": "aylana bo'ylab harakat markazga intilma tezlanish aylanma"
-    },
-    {
-      "id": "vertical-motion",
-      "title": "Vertical Motion",
-      "href": "vertical-motion.html",
-      "topic": "mexanika",
-      "description": "Vertikal otilgan jism harakatini kuzating. Tezlik va gravitatsiyani boshqaring.",
-      "params": [
-        "Boshlang‘ich tezlik",
-        "Gravitatsiya"
-      ],
-      "keywords": "vertikal otilgan jism erkin tushish yuqoriga otish"
-    },
-    {
-      "id": "gravity-law",
-      "title": "Gravity Law",
-      "href": "gravity-law.html",
-      "topic": "mexanika",
-      "description": "Nyutonning butun olam tortishish qonunini interaktiv tarzda kuzating.",
-      "params": [
-        "1-massa",
-        "2-massa",
-        "Masofa"
-      ],
-      "keywords": "butun olam tortishish qonuni gravitatsiya nyuton"
-    },
-    {
-      "id": "newton-second-law",
-      "title": "Newton Second Law",
-      "href": "newton-second-law.html",
-      "topic": "mexanika",
-      "description": "Nyutonning ikkinchi qonunini interaktiv tarzda kuzating va F = ma bog‘lanishini tahlil qiling.",
-      "params": [
-        "Kuch F",
-        "Massa m"
-      ],
-      "keywords": "nyutonning ikkinchi qonuni f=ma kuch tezlanish dinamika"
-    },
-    {
-      "id": "inclined-plane",
-      "title": "Inclined Plane",
-      "href": "inclined-plane.html",
-      "topic": "mexanika",
-      "description": "Qiya tekislikdagi jism harakatini va ishqalanish ta’sirini kuzating.",
-      "params": [
-        "Burchak",
-        "Massa",
-        "Ishqalanish μ"
-      ],
-      "keywords": "qiya tekislik ishqalanish koeffitsiyenti"
-    },
-    {
-      "id": "coulomb-law",
-      "title": "Coulomb Law",
-      "href": "coulomb-law.html",
-      "topic": "elektr",
-      "description": "Elektr zaryadlar orasidagi tortishish va itarilishni interaktiv tarzda kuzating.",
-      "params": [
-        "1-zaryad q₁",
-        "2-zaryad q₂",
-        "Masofa"
-      ],
-      "keywords": "kulon qonuni elektr zaryad tortishish itarilish elektrostatika"
-    },
-    {
-      "id": "ohm-law",
-      "title": "Ohm Law",
-      "href": "ohm-law.html",
-      "topic": "elektr",
-      "description": "Zanjirning bir qismi uchun Om qonunini interaktiv tarzda kuzating.",
-      "params": [
-        "Kuchlanish U",
-        "Qarshilik R"
-      ],
-      "keywords": "om qonuni tok kuchi kuchlanish qarshilik zanjir"
-    },
-    {
-      "id": "lorentz",
-      "title": "Lorentz kuchi",
-      "href": "lorentz/lorentz.html",
-      "topic": "elektr",
-      "description": "Magnit maydonida harakatlanayotgan zaryadli zarra trayektoriyasini kuzating.",
-      "params": [
-        "Magnit maydon B",
-        "Tezlik v",
-        "Zarra turi"
-      ],
-      "keywords": "lorens kuchi lorentz magnit maydon zaryadli zarra elektron ion elektromagnetizm"
-    },
-    {
-      "id": "refraction-law",
-      "title": "Refraction Law",
-      "href": "refraction-law.html",
-      "topic": "optika",
-      "description": "Yorug‘likning sinish qonunini interaktiv tarzda kuzating va burchaklarni boshqaring.",
-      "params": [
-        "Tushish burchagi",
-        "1-muhit n₁",
-        "2-muhit n₂"
-      ],
-      "keywords": "yorug'likning sinish qonuni snell sindirish ko'rsatkichi"
-    }
-  ]
+ "_izoh": "Simulyatsiyalar katalogi (simulations/simulations.html). Nomlar va tavsiflar mavjud sahifalardan olingan; 'params' — sahifadagi haqiqiy boshqaruv elementlari. Simulyatsiya kodlari bu faylda yo'q va katalog sahifasida yuklanmaydi.",
+ "topics": [
+  {
+   "id": "mexanika",
+   "title": "Mexanika"
+  },
+  {
+   "id": "issiqlik",
+   "title": "Molekulyar fizika va issiqlik"
+  },
+  {
+   "id": "elektr",
+   "title": "Elektr va magnetizm"
+  },
+  {
+   "id": "optika",
+   "title": "Optika"
+  }
+ ],
+ "simulations": [
+  {
+   "id": "projectile",
+   "title": "Og‘irlik kuchi ta’sirida jism harakati",
+   "href": "projectile.html",
+   "topic": "mexanika",
+   "description": "Burchak ostida otish (parabola), vertikal yuqoriga va pastga otish, erkin tushish. Balandlik, tezlik va energiya grafiklari; uchish uzoqligi va maksimal balandlik.",
+   "params": [
+    "Burchak α yoki vertikal rejim",
+    "Tezlik v₀",
+    "Balandlik h₀",
+    "g (sayyora)"
+   ],
+   "keywords": "og'irlik kuchi ta'sirida jism harakati gorizontga burchak ostida otilgan jism parabola trayektoriya uchish uzoqligi maksimal balandlik gorizontal otish vertikal otish yuqoriga otish pastga otish erkin tushish tezlanish g energiya projectile vertical motion free fall"
+  },
+  {
+   "id": "pendulum",
+   "title": "Matematik mayatnik",
+   "href": "pendulum.html",
+   "topic": "mexanika",
+   "description": "Mayatnik tebranishi: aniq davr (elliptik integral) va kichik burchak formulasi, energiya, faza portreti, ishqalanish, majburiy tebranish va rezonans.",
+   "params": [
+    "Uzunlik L",
+    "Burchak va tezlik",
+    "Massa",
+    "g (sayyora)",
+    "Ishqalanish va majburlovchi kuch"
+   ],
+   "keywords": "matematik mayatnik tebranish davr amplituda elliptik integral energiya faza portreti rezonans so'nish pendulum"
+  },
+  {
+   "id": "physical-pendulum",
+   "title": "Fizik mayatnik",
+   "href": "physical-pendulum.html",
+   "topic": "mexanika",
+   "description": "Qattiq jism (sterjen, disk, halqa, shar) mayatnigi: inersiya momenti, Shteyner teoremasi, keltirilgan uzunlik, eng kichik davr va Keyter qo‘shma nuqtalari.",
+   "params": [
+    "Jism shakli va o‘lchami",
+    "Osish nuqtasi masofasi d",
+    "Massa",
+    "g (sayyora)"
+   ],
+   "keywords": "fizik mayatnik murakkab qattiq jism inersiya momenti shteyner keltirilgan uzunlik keyter tebranish markazi zarba markazi sterjen disk halqa physical pendulum"
+  },
+  {
+   "id": "spring",
+   "title": "Prujinali mayatnik",
+   "href": "spring.html",
+   "topic": "mexanika",
+   "description": "Prujinali mayatnik: vertikal va gorizontal tebranish (bir tugma bilan almashtiriladi), Guk qonuni, davr T = 2π√(m/k), parallel va ketma-ket prujinalar, energiya, so'nish, majburiy tebranish va rezonans.",
+   "params": [
+    "Gorizontal / vertikal rejim",
+    "Qattiqlik k (parallel, ketma-ket)",
+    "Massa",
+    "Boshlang'ich siljish va tezlik",
+    "Qarshilik va g (sayyora)",
+    "Majburlovchi kuch"
+   ],
+   "keywords": "prujinali mayatnik prujina tebranish garmonik guk qonuni vertikal gorizontal parallel ketma-ket rezonans so'nish energiya davr spring"
+  },
+  {
+   "id": "waves",
+   "title": "Mexanik to‘lqinlar va tovush",
+   "href": "waves.html",
+   "topic": "mexanika",
+   "description": "Ipdagi ko‘ndalang va bo‘ylama to‘lqinlar: to‘lqin uzunligi, impulsning qaytishi, turg‘un to‘lqinlar, qo‘lda tebratish. Suv sirtida interferensiya va yo‘llar farqi. Tovush va Doppler effekti, Max konusi, ovozni eshitish.",
+   "params": [
+    "Ip: ν, A, v, uchi (mahkam/erkin/cheksiz)",
+    "Interferensiya: d, ν, Δφ (suriladi)",
+    "Doppler: u/c, ν, muhit",
+    "Ovoz (WebAudio)"
+   ],
+   "keywords": "mexanik to'lqin ko'ndalang bo'ylama to'lqin uzunligi chastota davr tezlik qaytish turg'un to'lqin garmonika tugun do'nglik interferensiya kogerent yo'llar farqi tovush doppler effekti max konusi zarb to'lqini wave standing interference sound doppler"
+  },
+  {
+   "id": "circular-motion",
+   "title": "Aylana bo‘ylab harakat",
+   "href": "circular-motion.html",
+   "topic": "mexanika",
+   "description": "Tekis va notekis aylanma harakat: chiziqli va burchak tezlik, davr, markazga intilma tezlanish, tezlik godografi va proyeksiyalar. Markazga intilma kuch: ipdagi sharcha (uzilish), burilishdagi avtomobil (ishqalanish, qiya yo‘l), vertikal halqa. Tasmali, tishli uzatma va velosiped.",
+   "params": [
+    "Kinematika: v, R (jism suriladi), a_τ",
+    "Ip: v, m, R, F_max; ipni kesish",
+    "Avtomobil: tezlik (spidometr), R, yo‘l, qiyalik",
+    "Halqa: h (sharcha suriladi), R",
+    "Uzatma: n₁, R₁, R₂ (g‘ildiraklar suriladi)"
+   ],
+   "keywords": "aylana bo'ylab harakat aylanma tekis notekis chiziqli tezlik burchak tezlik davr chastota markazga intilma tezlanish tangensial normal tezlanish godograf markazga intilma kuch ip taranglik burilish ishqalanish qiya yo'l vertikal halqa o'lik sirtmoq uzatma tasma tishli g'ildirak velosiped yulduzcha circular motion centripetal acceleration force banked curve loop gear"
+  },
+  {
+   "id": "gravity-law",
+   "title": "Butun olam tortishish qonuni",
+   "href": "gravity-law.html",
+   "topic": "mexanika",
+   "description": "Laboratoriyadagi sharlar va osmon jismlari (Yer–Oy, Quyosh–Yer, XKS) orasidagi tortishish kuchi, tezlanishlar va orbita davri.",
+   "params": [
+    "Massalar",
+    "Masofa r",
+    "Osmon jismlari"
+   ],
+   "keywords": "butun olam tortishish qonuni gravitatsiya nyuton orbita davri kepler yer oy quyosh gravitational"
+  },
+  {
+   "id": "newton-second-law",
+   "title": "Nyuton qonunlari",
+   "href": "newton-second-law.html",
+   "topic": "mexanika",
+   "description": "Ikkinchi qonun: aravacha dinamometr yoki blok orqali osilgan yuk bilan tortiladi, fotodarvoza bilan a = 2s/t² o‘lchanadi, a(F) va a(1/m). Uchinchi qonun: prujinali ikki aravacha — F₁₂ = −F₂₁. Liftda vazn: ortiqcha yuklama va vaznsizlik.",
+   "params": [
+    "Aravacha: F (o‘q suriladi), M va m («+»/«−»), μ, s",
+    "Ikki aravacha: m₁, m₂, prujina siqilishi",
+    "Lift: qavat pulti, odam massasi, tezlanish"
+   ],
+   "keywords": "nyuton qonunlari ikkinchi qonun uchinchi qonun f=ma kuch massa tezlanish ishqalanish ip tarangligi blok aravacha dinamometr ta'sir aks ta'sir impuls vazn og'irlik kuchi lift ortiqcha yuklama vaznsizlik erkin tushish newton laws weight elevator"
+  },
+  {
+   "id": "energy",
+   "title": "Ish, quvvat va mexanik energiya",
+   "href": "energy.html",
+   "topic": "mexanika",
+   "description": "Mexanik ish A = Fs·cos α va ishqalanish ishi (ΣA = ΔEₖ), quvvat — ikki lebyodka musobaqasi. Skeytparkda energiyaning saqlanishi va issiqlikka aylanishi, E(x) diagrammasi. Prujinali otgich: kx²/2 = mgH, k ni o‘lchash.",
+   "params": [
+    "Tortish: F va α (o‘q uchi suriladi), m, μ, s (bayroq)",
+    "Lebyodkalar: P₁, P₂ (dastaklar), m, h",
+    "Skeytpark: yo‘l shakli (nuqtalar suriladi), m, μ, g, Eₚ = 0 sathi",
+    "Otgich: k, m, siqilish x (sharcha suriladi)"
+   ],
+   "keywords": "mexanik ish quvvat energiya kinetik potensial energiya saqlanish qonuni ishqalanish issiqlik skeytpark prujina energiyasi bikrlik lebyodka vatt joul work power energy conservation skate park"
+  },
+  {
+   "id": "fluid",
+   "title": "Suyuqlik va gaz harakati",
+   "href": "fluid.html",
+   "topic": "mexanika",
+   "description": "Oqim uzluksizligi Q = Sv: kesimlari suriladigan quvur, hajmi saqlanadigan «bo‘lak». Bernulli qonuni: to‘rtta manometr, energiya chizig‘i, Venturi trubkasi, bosimning atmosferadan pasayishi. Qo‘llanishlar: Torichelli formulasi, qanotning ko‘tarish kuchi (bosim xaritasi), purkagich.",
+   "params": [
+    "Quvur: Q (dastak), d₁, d₂, d₃ (devor tutqichlari)",
+    "Bernulli: Q, tor joy d₂, kirish bosimi (1-manometr), ko‘tarilish Δy",
+    "Torichelli: suv sathi H, teshik balandligi, 1 yoki 3 teshik",
+    "Qanot: oqim tezligi V, hujum burchagi α (chiqish qirrasi suriladi)",
+    "Purkagich: havo tezligi v, naycha balandligi"
+   ],
+   "keywords": "suyuqlik gaz harakati gidrodinamika aerodinamika oqim uzluksizligi sarf kesim tezlik bernulli qonuni tenglamasi bosim manometr venturi trubkasi torichelli formulasi teshikdan oqish samolyot qanoti ko'tarish kuchi hujum burchagi jukovskiy purkagich atomayzer pulverizator fluid flow continuity bernoulli venturi torricelli airfoil lift"
+  },
+  {
+   "id": "inclined-plane",
+   "title": "Qiya tekislik va ishqalanish",
+   "href": "inclined-plane.html",
+   "topic": "mexanika",
+   "description": "Qiya tekislikdagi jismga ta’sir etuvchi kuchlar, tinch va sirpanish ishqalanishi. Jism qachon sirpanishini kuzating.",
+   "params": [
+    "Burchak θ",
+    "Ishqalanish μ",
+    "Massa",
+    "Boshlang‘ich tezlik"
+   ],
+   "keywords": "qiya tekislik ishqalanish koeffitsiyenti tinch ishqalanish sirpanish tayanch reaksiya kuchi og'irlik kuchi inclined plane"
+  },
+  {
+   "id": "gas",
+   "title": "Molekulyar harakat va ideal gaz",
+   "href": "gas.html",
+   "topic": "issiqlik",
+   "description": "Idishdagi gaz molekulalarining harakati va to‘qnashuvlari: bosim qayerdan keladi, Boyl–Mariott, Gey-Lyussak va Sharl qonunlari, Maksvell tezliklar taqsimoti. Diffuziya va Broun harakati tajribalari.",
+   "params": [
+    "Izotermik, izobarik, izoxorik jarayon",
+    "Gaz turi, N, T, V",
+    "Diffuziya: ikki gaz, to‘siq",
+    "Broun zarrasi massasi va o‘lchami"
+   ],
+   "keywords": "molekulyar kinetik nazariya mkn molekula harakati ideal gaz bosim hajm temperatura izotermik izobarik izoxorik boyl mariott gey lyussak sharl maksvell tezlik taqsimoti diffuziya broun harakati absolyut nol kinetik energiya gas law brownian diffusion"
+  },
+  {
+   "id": "heat",
+   "title": "Issiqlik almashinuvi — virtual laboratoriya",
+   "href": "heat.html",
+   "topic": "issiqlik",
+   "description": "Kalorimetrda issiq va sovuq suvni aralashtiring, qizdirilgan metallni, muz yoki bug‘ni suvga tushiring; moddani isitib erish va qaynashni kuzating. Isitish egri chizig‘i, issiqlik balansi, yoqilg‘ining yonish issiqligi va FIK, molekulalar harakati.",
+   "params": [
+    "Kalorimetr: 2–3 jism va idish",
+    "Muz, suv, bug‘, metallar, noma’lum metall",
+    "Isitish: elektr yoki yoqilg‘i",
+    "Erish, qaynash, qotish, amorf jism"
+   ],
+   "keywords": "issiqlik miqdori solishtirma issiqlik sig'imi kalorimetr issiqlik balansi muvozanat aralashtirish muz erishi qotish bug'lanish kondensatsiya qaynash solishtirma erish issiqligi bug'lanish issiqligi yoqilg'i yonish issiqligi fik amorf kristall isitish egri chizig'i heat calorimeter melting boiling"
+  },
+  {
+   "id": "coulomb-law",
+   "title": "Kulon qonuni",
+   "href": "coulomb-law.html",
+   "topic": "elektr",
+   "description": "Zaryadlar orasidagi tortishish va itarilish, elektr maydon chiziqlari, muhitning ta’siri va F(r) grafigi.",
+   "params": [
+    "1-zaryad q₁",
+    "2-zaryad q₂",
+    "Masofa r",
+    "Muhit ε"
+   ],
+   "keywords": "kulon qonuni elektr zaryad tortishish itarilish elektrostatika maydon chiziqlari dielektrik singdiruvchanlik coulomb"
+  },
+  {
+   "id": "potential",
+   "title": "Potensial, ish va kondensatorlar",
+   "href": "potential.html",
+   "topic": "elektr",
+   "description": "Zaryadlar maydonining potensiali va ekvipotensial chiziqlar, sinov zaryadini ko‘chirishda ish (yo‘lga bog‘liq emas). Yassi kondensator: sig‘im, dielektrik, batareyaga ulangan va uzilgan holatlar, energiya. Kondensatorlarni ulash va RC zaryadlanish.",
+   "params": [
+    "Zaryadlar va sinov zaryadi (suriladi)",
+    "Kondensator: d (suriladi), S, ε, U",
+    "Ulash: parallel, ketma-ket, aralash",
+    "RC: R, ε, kalit"
+   ],
+   "keywords": "potensial ekvipotensial sirt potensiallar farqi kuchlanish ish elektr maydon kondensator sig'im dielektrik singdiruvchanlik energiya parallel ketma-ket ulash rc zanjir zaryadlanish razryad potential equipotential capacitor capacitance"
+  },
+  {
+   "id": "circuit",
+   "title": "Elektr zanjiri — virtual laboratoriya",
+   "href": "circuit.html",
+   "topic": "elektr",
+   "description": "Virtual laboratoriya: asboblar qutisidan batareya, kalit, rezistor, reostat, o‘tkazgich, lampochka, diod, LED, ampermetr va voltmetrni olib, elektr zanjirini o‘zingiz yig‘ing. Om qonuni, ketma-ket va parallel ulash, EYuK, diod xarakteristikasi.",
+   "params": [
+    "Tayyor zanjir yoki o‘zingiz yig‘ish",
+    "EYuK ε va ichki qarshilik r",
+    "Qarshilik R, reostat, ρ·l/S",
+    "Ampermetr, voltmetr, kalit",
+    "Diod va LED (rangli)"
+   ],
+   "keywords": "elektr zanjiri konstruktor om qonuni tok kuchi kuchlanish qarshilik ketma-ket parallel aralash ulash eyuk ichki qarshilik reostat ampermetr voltmetr lampochka kalit quvvat kirxgof diod led yorug‘lik diodi virtual laboratoriya circuit ohm law diode"
+  },
+  {
+   "id": "magnetism",
+   "title": "Magnit maydon va Amper kuchi",
+   "href": "magnetism.html",
+   "topic": "elektr",
+   "description": "Doimiy magnit, tokli o‘tkazgich va g‘altak maydoni: kuch chiziqlari, temir qipiqlari, kompaslar. Ersted tajribasi, Yer magnit maydoni, parallel toklar, Amper kuchi, relsdagi o‘tkazgich ishi, tokli ramka va elektr dvigatel.",
+   "params": [
+    "Magnit, tok, g‘altak, kompas (suriladi)",
+    "Kuch chiziqlari / qipiqlar / kompaslar",
+    "Amper kuchi: I, B, l, α",
+    "Ramka: N, B, I, S, kollektor"
+   ],
+   "keywords": "magnit maydon doimiy magnit kuch chiziqlari kompas temir qipiqlari ersted tok maydoni o'ng parma qoidasi solenoid g'altak elektromagnit yer magnit maydoni magnit induksiya amper kuchi chap qo'l qoidasi parallel toklar tokli ramka aylantiruvchi moment elektr dvigatel kollektor magnetic field ampere force motor"
+  },
+  {
+   "id": "induction",
+   "title": "Elektromagnit induksiya",
+   "href": "induction.html",
+   "topic": "elektr",
+   "description": "Faradey tajribasi: magnit g‘altak ichidan o‘tadi, galvanometr va Lens qoidasi, magnit oqimi va EYuK grafiklari. O‘zgaruvchan va o‘zgarmas tok generatori. O‘zinduksiya: lampalar tajribasi, induktivlik va magnit maydon energiyasi.",
+   "params": [
+    "Magnit tezligi, o‘ramlar soni, R",
+    "Qo‘lda sudrash yoki avtomatik",
+    "Generator: n, B, N, S, kollektor",
+    "O‘zinduksiya: ε, L, R, temir o‘zak"
+   ],
+   "keywords": "elektromagnit induksiya faradey qonuni lens qoidasi magnit oqimi induksiya eyuk galvanometr generator o'zgaruvchan tok kollektor kontakt halqalar o'zinduksiya induktivlik magnit maydon energiyasi electromagnetic induction faraday lenz generator self-induction"
+  },
+  {
+   "id": "lc",
+   "title": "Elektromagnit tebranishlar va o‘zgaruvchan tok",
+   "href": "lc.html",
+   "topic": "elektr",
+   "description": "LC kontur: kalitni burib kondensatorni zaryadlash, erkin va so‘nuvchi tebranishlar, energiya almashinuvi, prujinali mayatnik bilan o‘xshashlik, Tomson formulasi. O‘zgaruvchan tok zanjirida R, C, L va vektor diagramma. RLC rezonans: radio sozlash, lab.",
+   "params": [
+    "LC: L, C, R, ε, kalit",
+    "AC: R, C, L, RLC, chastota",
+    "Rezonans: f, o‘zgaruvchan C, L, R",
+    "Lab: I(f) egri chizig‘i"
+   ],
+   "keywords": "elektromagnit tebranishlar lc kontur tebranish konturi tomson formulasi so'nuvchi tebranish aperiodik o'zgaruvchan tok aktiv qarshilik sig'im qarshiligi induktiv qarshilik impedans faza siljishi vektor diagramma rlc rezonans aslilik quvvat cos fi radio lc circuit ac resonance"
+  },
+  {
+   "id": "lorentz",
+   "title": "Magnit maydonda zaryadli zarra",
+   "href": "lorentz.html",
+   "topic": "elektr",
+   "description": "Lorens kuchi: zarra aylana va vint chiziq bo‘ylab harakatlanadi, davr tezlikka bog‘liq emas. Mass-spektrometr: izotoplarni ajratish, tezlik selektori, massani o‘lchash. Siklotron: rezonans va energiya.",
+   "params": [
+    "Zarra (e, p, α), v (vektor uchi suriladi), B, α",
+    "Mass-spektrometr: U, B, selektor E (dastaklar), o‘lchagich",
+    "Siklotron: B, U₀, generator chastotasi (dastak)"
+   ],
+   "keywords": "lorens kuchi lorentz force zaryadli zarra magnit maydon aylana radius davr chap qo'l qoidasi vint chiziq spiral mass-spektrometr izotop tezlik selektori siklotron tezlatgich rezonans elektron proton alfa"
+  },
+  {
+   "id": "light",
+   "title": "Yorug‘likning to‘g‘ri chiziqli tarqalishi",
+   "href": "light.html",
+   "topic": "optika",
+   "description": "Soya va yarim soya: nuqtaviy va katta manba, ikki lampa, ekrandagi yoritilganlik. Kamera-obskura: teskari tasvir, teshik o‘lchami va aniqlik. Quyosh va Oy tutilishlari: to‘liq, halqasimon, xususiy, tutilish mavsumlari.",
+   "params": [
+    "Manba, shar, ekran (suriladi)",
+    "Kamera-obskura: d, h, f, teshik",
+    "Oyning holati, tugunlar",
+    "Oygacha masofa"
+   ],
+   "keywords": "yorug'likning to'g'ri chiziqli tarqalishi soya yarim soya nuqtaviy manba kamera obskura tirqishli kamera quyosh tutilishi oy tutilishi to'liq halqasimon xususiy tugun oy fazalari shadow penumbra pinhole camera eclipse"
+  },
+  {
+   "id": "refraction-law",
+   "title": "Yorug‘likning qaytishi va sinishi",
+   "href": "refraction-law.html",
+   "topic": "optika",
+   "description": "Snell va qaytish qonunlari, Frenel formulalari, kritik burchak va to‘liq ichki qaytish. Shisha plastinka, yarim silindr, prizma va optik tola; lab: shishaning sindirish ko‘rsatkichini o‘lchash. Yassi, botiq va qavariq ko‘zgular, ikki ko‘zgudagi tasvirlar.",
+   "params": [
+    "Tushish burchagi, n₁, n₂",
+    "Plastinka, yarim silindr, prizma, tola",
+    "Lab: noma’lum shisha",
+    "Ko‘zgular: yassi, ikki, botiq, qavariq"
+   ],
+   "keywords": "yorug'likning sinish qonuni qaytish qonuni snell sindirish ko'rsatkichi to'liq ichki qaytish kritik burchak frenel bryuster plastinka yarim silindr prizma og'ish optik tola yassi ko'zgu botiq ko'zgu qavariq ko'zgu tasvirlar soni kaleydoskop refraction reflection mirror prism fiber"
+  },
+  {
+   "id": "lens",
+   "title": "Linzalar va optik asboblar",
+   "href": "lens.html",
+   "topic": "optika",
+   "description": "Yig‘uvchi va sochuvchi linzada tasvir yasash: xarakterli nurlar, linza formulasi, ekranda tasvirni ushlash va optik kuchni o‘lchash. Lupa, mikroskop, teleskop, fotoapparat, proyektor. Ko‘z: akkomodatsiya, yaqindan va uzoqdan ko‘rmaslik, ko‘zoynak tanlash.",
+   "params": [
+    "Linza turi, F, d, h",
+    "Ekran va o‘lchovlar",
+    "Asboblar: F₁, F₂, L",
+    "Ko‘z nuqsoni, ko‘zoynak D"
+   ],
+   "keywords": "linza yig'uvchi sochuvchi linza formulasi fokus masofasi optik kuch dioptriya tasvir yasash haqiqiy mavhum tasvir kattalashtirish lupa mikroskop teleskop fotoapparat proyektor ko'z akkomodatsiya miopiya gipermetropiya yaqindan ko'rmaslik uzoqdan ko'rmaslik ko'zoynak lens optics microscope telescope eye glasses"
+  },
+  {
+   "id": "diffraction",
+   "title": "Yorug‘lik interferensiyasi va difraksiyasi",
+   "href": "diffraction.html",
+   "topic": "optika",
+   "description": "Yung tajribasi: ikki tirqish, polosalar orasi Δy = λL/d, oq yorug‘likda rangli polosalar. Bitta tirqish va doira teshikdan difraksiya, Eyri halqalari. Difraksion panjara, spektr tartiblari; lab: lazer to‘lqin uzunligini o‘lchash.",
+   "params": [
+    "To‘lqin uzunligi yoki oq yorug‘lik",
+    "Tirqishlar, ekran (suriladi)",
+    "Panjara: chiziqlar soni",
+    "Lab: noma’lum lazer, marker"
+   ],
+   "keywords": "yorug'lik interferensiyasi difraksiya yung tajribasi ikki tirqish kogerent polosa to'lqin uzunligi tirqish doira teshik eyri difraksion panjara spektr tartib lazer interference diffraction double slit grating"
+  },
+  {
+   "id": "dispersion",
+   "title": "Dispersiya, kamalak va qutblanish",
+   "href": "dispersion.html",
+   "topic": "optika",
+   "description": "Prizmada oq yorug‘likning spektrga ajralishi (haqiqiy shishalar n(λ)), Nyuton tajribalari. Suv tomchisida kamalak: birlamchi va ikkilamchi kamalak. Qutblanish: Malyus qonuni (lab), uchinchi polyaroid, Bryuster burchagi.",
+   "params": [
+    "Prizma: material, A, α (suriladi)",
+    "Kamalak: nur balandligi, 1/2 qaytish",
+    "Polyaroidlar: o‘qlar (aylantiriladi)",
+    "Bryuster: α, n, analizator"
+   ],
+   "keywords": "dispersiya prizma spektr oq yorug'lik nyuton sindirish ko'rsatkichi to'lqin uzunligi kamalak tomchi qutblanish polyaroid polyarizator analizator malyus qonuni bryuster burchagi dispersion prism rainbow polarization malus brewster"
+  }
+ ]
 }

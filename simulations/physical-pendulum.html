@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fizik mayatnik | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: fizik (murakkab) mayatnik — sterjen, plastina, disk, halqa va shar; inersiya momenti, Shteyner teoremasi, keltirilgan uzunlik, tebranish markazi va Keyter qo‘shma nuqtalari, T(d) grafigi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/physical-pendulum.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Fizik mayatnik" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="physicalPendulumSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Fizik mayatnik</h1>
+    </div>
+    <div class="sim-formula" aria-label="T teng 2 pi ildiz ostida I bo'linsin m g d"><small>Kichik tebranishlar davri</small> T = 2π √(I / (m g d))</div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" data-draggable="true" role="img" aria-label="Fizik mayatnik simulyatsiyasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.25" aria-pressed="false">¼×</button>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title>Davrning osish nuqtasiga bog‘liqligi T(d)</h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs>
+            <button type="button" data-tab-value="td" aria-pressed="true">T(d)</button>
+            <button type="button" data-tab-value="time" aria-pressed="false">θ(t)</button>
+            <button type="button" data-tab-value="phase" aria-pressed="false">Faza portreti</button>
+            <button type="button" data-tab-value="energy" aria-pressed="false">Energiya</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Fizik mayatnik grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="th">
+          <span class="sim-readout__label"><span>Burchak <i>θ</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="I">
+          <span class="sim-readout__label"><span>Inersiya momenti <i>I</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="L">
+          <span class="sim-readout__label"><span>Keltirilgan uzunlik <i>L</i><sub>red</sub></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Tm">
+          <span class="sim-readout__label"><span>Davr (o‘lchangan)</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Tt">
+          <span class="sim-readout__label"><span>Davr (nazariy)</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="E">
+          <span class="sim-readout__label"><span>To‘liq energiya <i>E</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="M">
+          <span class="sim-readout__label"><span>Aylantiruvchi moment <i>M</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="a">
+          <span class="sim-readout__label"><span>Burchak tezlanishi <i>ε</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="R">
+          <span class="sim-readout__label"><span>O‘q reaksiyasi <i>R</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor holatlar</span>
+        <div class="sim-presets">
+          <button class="sim-preset" type="button" data-preset="ruler">Chizg‘ich (uchidan)</button>
+          <button class="sim-preset" type="button" data-preset="rodMin">Eng kichik davr</button>
+          <button class="sim-preset" type="button" data-preset="kater">Keyter nuqtalari</button>
+          <button class="sim-preset" type="button" data-preset="disk">Disk (chetidan)</button>
+          <button class="sim-preset" type="button" data-preset="ring">Halqa</button>
+          <button class="sim-preset" type="button" data-preset="ball">Shar ipda</button>
+        </div>
+      </div>
+
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Jism</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="shape">Shakl</label></div>
+          <select class="sim-select" id="shape">
+            <option value="rod" selected>Ingichka sterjen</option>
+            <option value="plate">To‘rtburchak plastina</option>
+            <option value="disk">Bir jinsli disk</option>
+            <option value="ring">Halqa</option>
+            <option value="ball">Shar (vaznsiz ipda)</option>
+          </select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="size" data-size-label>Uzunlik ℓ</label><output for="size" id="sizeOut"></output></div>
+          <input class="sim-range" type="range" id="size" min="0.1" max="2" step="0.05" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="dist">Osish nuqtasi masofasi d</label><output for="dist" id="distOut"></output></div>
+          <input class="sim-range" type="range" id="dist" min="0.02" max="0.5" step="0.005" value="0.5">
+        </div>
+        <div class="sim-btnrow">
+          <button class="of-btn of-btn--sm" type="button" data-set-dk>d = k</button>
+          <button class="of-btn of-btn--sm" type="button" data-swap>O ↔ O′ (Keyter)</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="m">Massa m</label><output for="m" id="mOut"></output></div>
+          <input class="sim-range" type="range" id="m" min="0.1" max="5" step="0.1" value="1">
+        </div>
+      </div>
+
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Boshlang‘ich shart va muhit</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="th0">Boshlang‘ich burchak θ(0)</label><output for="th0" id="th0Out"></output></div>
+          <input class="sim-range" type="range" id="th0" min="-175" max="175" step="1" value="30">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="planet">Erkin tushish tezlanishi g</label><output for="planet" id="gOut"></output></div>
+          <select class="sim-select" id="planet">
+            <option value="9.81" selected>Yer — 9,81 m/s²</option>
+            <option value="1.62">Oy — 1,62 m/s²</option>
+            <option value="3.71">Mars — 3,71 m/s²</option>
+            <option value="24.79">Yupiter — 24,79 m/s²</option>
+          </select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gamma">Ishqalanish (so‘nish) γ</label><output for="gamma" id="gammaOut"></output></div>
+          <input class="sim-range" type="range" id="gamma" min="0" max="1.5" step="0.01" value="0">
+        </div>
+      </div>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuchlar: mg va R</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="velocity"><span class="sim-switch__ui"></span>Massa markazi tezligi</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="center" checked><span class="sim-switch__ui"></span><span>Tebranish markazi O′ va L<sub>red</sub></span></label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="ghost"><span class="sim-switch__ui"></span>Taqqoslash: massa markazida to‘plangan nuqta (L = d)</label>
+        <p class="of-subtle">Maslahat: jismni sichqoncha bilan torting — qo‘yib yuborganingizda tebrana boshlaydi. Faza portretida bosib boshlang‘ich holatni tanlash mumkin.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px">Gorizontal o‘q atrofida erkin tebranadigan har qanday qattiq jism. Davr jismning shakli, o‘lchami va osish nuqtasining massa markazidan masofasi <b>d</b> ga bog‘liq. Jismni va d ni o‘zgartirib, eng kichik davr va Keyter qo‘shma nuqtalarini toping.</p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Aylanma harakat tenglamasi: <span class="sim-math">I θ″ = −m g d sin θ</span></li>
+        <li>Shteyner teoremasi: <span class="sim-math">I = I<sub>cm</sub> + m d²</span>, <span class="sim-math">I<sub>cm</sub> = m k²</span></li>
+        <li>Kichik tebranishlar davri: <span class="sim-math">T = 2π √(I / (m g d)) = 2π √((k² + d²)/(g d))</span></li>
+        <li>Keltirilgan uzunlik: <span class="sim-math">L<sub>red</sub> = I/(m d) = d + k²/d</span> — <span class="sim-math">T = 2π√(L<sub>red</sub>/g)</span></li>
+        <li>Eng kichik davr: <span class="sim-math">d = k</span> da, <span class="sim-math">T<sub>min</sub> = 2π √(2k/g)</span></li>
+        <li>Keyter teoremasi: osish nuqtasi <span class="sim-math">d′ = k²/d</span> (qarama-qarshi tomonda) bo‘lsa, davr o‘zgarmaydi</li>
+        <li>Energiya: <span class="sim-math">E = Iω²/2 + m g d (1 − cos θ)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Jismlar bir jinsli va qattiq; o‘q massa markazidan o‘tmaydi (d &gt; 0) va jism tekisligiga perpendikulyar. Integrallash: 4-tartibli Runge–Kutta, qadam 2 ms.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,717 +1,140 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Inclined Plane | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qiya tekislik va ishqalanish | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: qiya tekislikdagi jism harakati, tinch va sirpanish ishqalanishi, kuchlar diagrammasi. Burchak, massa, ishqalanish koeffitsiyenti va boshlang‘ich tezlikni boshqaring.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/inclined-plane.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Qiya tekislik" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Inclined Plane" data-shell-public="true">
+<div class="of-page of-container sim-page" id="inclineSim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Qiya tekislik va ishqalanish</h1>
+      <p>Jismga og‘irlik kuchi, tayanch reaksiya kuchi va ishqalanish kuchi ta’sir qiladi. Burchak va ishqalanish koeffitsiyentini o‘zgartirib, jism qachon tinch turishi, qachon sirpanishini kuzating.</p>
+    </div>
+    <div class="sim-formula" aria-label="a = g (sin theta minus mu cos theta)"><small>Sirpanish</small> a = g(sin θ − μ cos θ)</div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Qiya tekislik simulyatsiyasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset><span data-reset-icon></span>Qayta boshlash</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="sim-readouts" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="a">
+          <span class="sim-readout__label"><span>Tezlanish <i>a</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="v">
+          <span class="sim-readout__label"><span>Tezlik <i>v</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="t">
+          <span class="sim-readout__label"><span>Vaqt <i>t</i> va yo‘l <i>s</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="f">
+          <span class="sim-readout__label"><span>Ishqalanish kuchi <i>F</i><sub>ishq</sub></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="n">
+          <span class="sim-readout__label"><span>Tayanch reaksiyasi <i>N</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="crit">
+          <span class="sim-readout__label"><span>Chegaraviy burchak <i>θ</i><sub>0</sub></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
+    </div>
 
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
-<div class="main">
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor holatlar</span>
+        <div class="sim-presets">
+          <button class="sim-preset" type="button" data-preset="30,0,0">Ishqalanishsiz</button>
+          <button class="sim-preset" type="button" data-preset="15,0.4,0">Tinch turadi</button>
+          <button class="sim-preset" type="button" data-preset="35,0.3,0">Sirpanadi</button>
+          <button class="sim-preset" type="button" data-preset="20,0.3,5">Yuqoriga turtish</button>
+        </div>
+      </div>
 
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Jism va tekislik</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="theta">Qiyalik burchagi θ</label><output for="theta" id="thetaOut"></output></div>
+          <input class="sim-range" type="range" id="theta" min="0" max="60" step="1" value="30">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mu">Ishqalanish koeffitsiyenti μ</label><output for="mu" id="muOut"></output></div>
+          <input class="sim-range" type="range" id="mu" min="0" max="1" step="0.01" value="0.3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mass">Massa m</label><output for="mass" id="massOut"></output></div>
+          <input class="sim-range" type="range" id="mass" min="0.5" max="20" step="0.5" value="2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="v0">Yuqoriga turtish v₀</label><output for="v0" id="v0Out"></output></div>
+          <input class="sim-range" type="range" id="v0" min="0" max="8" step="0.1" value="0">
+        </div>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group">
+        <span class="sim-group__title">Kuchlar</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuch vektorlari</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="components"><span class="sim-switch__ui"></span>mg tashkil etuvchilari</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="net" checked><span class="sim-switch__ui"></span>Natijaviy kuch (ma)</label>
+        <p class="of-subtle">Vektor uzunliklari og‘irlik kuchi <i>mg</i> ga nisbatan bir xil masshtabda.</p>
+      </div>
+    </aside>
+  </div>
 
-<div class="controls">
-
-<h2>
-<span aria-hidden="true">⛰️</span> Inclined Plane
-</h2>
-
-
-
-<div class="control-group">
-
-<label for="angle">
-Burchak (°)
-</label>
-
-<input
-type="range"
-id="angle"
-min="5"
-max="60"
-value="30">
-
-<div
-class="value"
-id="angleValue">
-
-30°
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Og‘irlik tashkil etuvchilari: <span class="sim-math">mg sin θ</span> (tekislik bo‘ylab), <span class="sim-math">mg cos θ</span> (tekislikka tik)</li>
+        <li>Tayanch reaksiyasi: <span class="sim-math">N = mg cos θ</span></li>
+        <li>Tinch ishqalanish: <span class="sim-math">F<sub>t</sub> ≤ μN</span>; sirpanish: <span class="sim-math">F = μN</span></li>
+        <li>Jism tinch turadi, agar <span class="sim-math">tg θ ≤ μ</span></li>
+        <li>Pastga sirpanish: <span class="sim-math">a = g(sin θ − μ cos θ)</span>; yuqoriga harakat: <span class="sim-math">a = g(sin θ + μ cos θ)</span> (sekinlanish)</li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Soddalik uchun tinch va sirpanish ishqalanish koeffitsiyentlari teng deb olingan; <span class="sim-math">g = 9,8 m/s²</span>, tekislik uzunligi 5 m.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="mass">
-Massa (kg)
-</label>
-
-<input
-type="range"
-id="mass"
-min="1"
-max="50"
-value="10">
-
-<div
-class="value"
-id="massValue">
-
-10 kg
-
-</div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="friction">
-Ishqalanish μ
-</label>
-
-<input
-type="range"
-id="friction"
-min="0"
-max="1"
-step="0.01"
-value="0.2">
-
-<div
-class="value"
-id="frictionValue">
-
-0.20
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Boshlash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="forceInfo">
-Force: 0 N
-</p>
-
-<p id="frictionInfo">
-Friction: 0 N
-</p>
-
-<p id="accelerationInfo">
-Acceleration: 0 m/s²
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Inclined Plane simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const angleSlider =
-document.getElementById("angle");
-
-const massSlider =
-document.getElementById("mass");
-
-const frictionSlider =
-document.getElementById("friction");
-
-
-const angleValue =
-document.getElementById("angleValue");
-
-const massValue =
-document.getElementById("massValue");
-
-const frictionValue =
-document.getElementById("frictionValue");
-
-
-const forceInfo =
-document.getElementById("forceInfo");
-
-const frictionInfo =
-document.getElementById("frictionInfo");
-
-const accelerationInfo =
-document.getElementById("accelerationInfo");
-
-
-angleSlider.oninput = ()=>{
-
-  angleValue.innerHTML =
-  angleSlider.value + "°";
-
-};
-
-massSlider.oninput = ()=>{
-
-  massValue.innerHTML =
-  massSlider.value + " kg";
-
-};
-
-frictionSlider.oninput = ()=>{
-
-  frictionValue.innerHTML =
-  parseFloat(frictionSlider.value)
-  .toFixed(2);
-
-};
-
-
-
-let angle = 30;
-
-let mass = 10;
-
-let mu = 0.2;
-
-let position = 0;
-
-let velocity = 0;
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  angle =
-  parseFloat(angleSlider.value);
-
-  mass =
-  parseFloat(massSlider.value);
-
-  mu =
-  parseFloat(frictionSlider.value);
-
-  position = 0;
-
-  velocity = 0;
-
-});
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  const rad =
-  angle * Math.PI/180;
-
-
-  const startX = 250;
-
-  const startY = 180;
-
-
-  const length = 500;
-
-
-  const endX =
-
-  startX +
-
-  length*Math.cos(rad);
-
-
-  const endY =
-
-  startY +
-
-  length*Math.sin(rad);
-
-
-  /* PLANE */
-
-  ctx.beginPath();
-
-  ctx.moveTo(startX,startY);
-
-  ctx.lineTo(endX,endY);
-
-  ctx.strokeStyle =
-  "#cbd5e1";
-
-  ctx.lineWidth = 8;
-
-  ctx.stroke();
-
-
-  /* PHYSICS */
-
-  const g = 9.8;
-
-  const parallelForce =
-
-  mass * g * Math.sin(rad);
-
-
-  const normalForce =
-
-  mass * g * Math.cos(rad);
-
-
-  const frictionForce =
-
-  mu * normalForce;
-
-
-  const netForce =
-
-  parallelForce - frictionForce;
-
-
-  const acceleration =
-
-  netForce / mass;
-
-
-  velocity +=
-  acceleration * 0.02;
-
-
-  position +=
-  velocity * 0.5;
-
-
-  if(position > length-60){
-
-    position = length-60;
-
-    velocity = 0;
-  }
-
-
-  /* BLOCK POSITION */
-
-  const blockX =
-
-  startX +
-
-  position*Math.cos(rad);
-
-
-  const blockY =
-
-  startY +
-
-  position*Math.sin(rad);
-
-
-  ctx.save();
-
-  ctx.translate(blockX,blockY);
-
-  ctx.rotate(rad);
-
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.shadowBlur = 25;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.fillRect(
-    -30,
-    -30,
-    60,
-    60
-  );
-
-  ctx.restore();
-
-
-  /* FORCE ARROW */
-
-  ctx.beginPath();
-
-  ctx.moveTo(blockX,blockY);
-
-  ctx.lineTo(
-
-    blockX + 80*Math.cos(rad),
-
-    blockY + 80*Math.sin(rad)
-
-  );
-
-  ctx.strokeStyle =
-  "#f59e0b";
-
-  ctx.lineWidth = 5;
-
-  ctx.stroke();
-
-
-  /* INFO */
-
-  forceInfo.innerHTML =
-
-  "Force: " +
-
-  parallelForce.toFixed(2)
-
-  + " N";
-
-
-  frictionInfo.innerHTML =
-
-  "Friction: " +
-
-  frictionForce.toFixed(2)
-
-  + " N";
-
-
-  accelerationInfo.innerHTML =
-
-  "Acceleration: " +
-
-  acceleration.toFixed(2)
-
-  + " m/s²";
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>

@@ -1,679 +1,197 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Pendulum Simulator | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matematik mayatnik | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: matematik mayatnik — tebranish davri, katta amplitudada aniq davr (elliptik integral), energiya, faza portreti, ishqalanish, majburiy tebranish va rezonans.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-  .main{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/pendulum.js"></script>
 </head>
-
 <body class="of-ui of-sim-page" data-shell-title="Matematik mayatnik" data-shell-public="true">
 
-<div class="of-page of-sim-wrap">
+<div class="of-page of-container sim-page sim-page--compact" id="pendulumSim">
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<div class="container of-sim">
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Matematik mayatnik</h1>
+    </div>
+    <div class="sim-formula" aria-label="T teng 2 pi ildiz ostida L bo'linsin g"><small>Kichik tebranishlar davri</small> T = 2π √(L / g)</div>
+  </header>
 
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" data-draggable="true" role="img" aria-label="Matematik mayatnik simulyatsiyasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.25" aria-pressed="false">¼×</button>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title>Burchakning vaqtga bog‘liqligi θ(t)</h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs>
+            <button type="button" data-tab-value="time" aria-pressed="true">θ(t)</button>
+            <button type="button" data-tab-value="phase" aria-pressed="false">Faza portreti</button>
+            <button type="button" data-tab-value="energy" aria-pressed="false">Energiya</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Mayatnik grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
 
-<!-- MAIN -->
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="th">
+          <span class="sim-readout__label"><span>Burchak <i>θ</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="v">
+          <span class="sim-readout__label"><span>Chiziqli tezlik <i>v</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Tm">
+          <span class="sim-readout__label"><span>Davr (o‘lchangan)</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Tt">
+          <span class="sim-readout__label"><span>Davr (nazariy)</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="E">
+          <span class="sim-readout__label"><span>To‘liq energiya <i>E</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="N">
+          <span class="sim-readout__label"><span>Sterjen kuchi <i>N</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
+    </div>
 
-<div class="main">
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor holatlar</span>
+        <div class="sim-presets">
+          <button class="sim-preset" type="button" data-preset="small">Kichik tebranish</button>
+          <button class="sim-preset" type="button" data-preset="large">Katta amplituda</button>
+          <button class="sim-preset" type="button" data-preset="seconds">Sekundli mayatnik</button>
+          <button class="sim-preset" type="button" data-preset="moon">Oyda</button>
+          <button class="sim-preset" type="button" data-preset="spin">To‘liq aylanish</button>
+          <button class="sim-preset" type="button" data-preset="damped">So‘nuvchi</button>
+          <button class="sim-preset" type="button" data-preset="resonance">Rezonans</button>
+        </div>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Boshlang‘ich shart</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="th0">Boshlang‘ich burchak θ(0)</label><output for="th0" id="th0Out"></output></div>
+          <input class="sim-range" type="range" id="th0" min="-179" max="179" step="1" value="30">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="w0">Boshlang‘ich tezlik ω(0)</label><output for="w0" id="w0Out"></output></div>
+          <input class="sim-range" type="range" id="w0" min="-10" max="10" step="0.1" value="0">
+        </div>
+      </div>
 
-<div class="controls">
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Mayatnik va sayyora</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="L">Uzunlik L</label><output for="L" id="LOut"></output></div>
+          <input class="sim-range" type="range" id="L" min="0.1" max="10" step="0.05" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="m">Massa m</label><output for="m" id="mOut"></output></div>
+          <input class="sim-range" type="range" id="m" min="0.1" max="5" step="0.1" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="planet">Erkin tushish tezlanishi g</label><output for="planet" id="gOut"></output></div>
+          <select class="sim-select" id="planet">
+            <option value="9.81" selected>Yer — 9,81 m/s²</option>
+            <option value="1.62">Oy — 1,62 m/s²</option>
+            <option value="3.71">Mars — 3,71 m/s²</option>
+            <option value="8.87">Venera — 8,87 m/s²</option>
+            <option value="24.79">Yupiter — 24,79 m/s²</option>
+          </select>
+        </div>
+      </div>
 
-<h2>
-<span aria-hidden="true">⚙️</span> Pendulum Simulator
-</h2>
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Muhit va tashqi ta’sir</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gamma">Ishqalanish (so‘nish) γ</label><output for="gamma" id="gammaOut"></output></div>
+          <input class="sim-range" type="range" id="gamma" min="0" max="1.5" step="0.01" value="0">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-toggle="drive"><span class="sim-switch__ui"></span>Majburlovchi kuch</label>
+        <div class="sim-control" data-drive-panel hidden>
+          <div class="sim-control__row"><label for="driveF">Kuch amplitudasi f</label><output for="driveF" id="driveFOut"></output></div>
+          <input class="sim-range" type="range" id="driveF" min="0.02" max="1" step="0.01" value="0.1">
+        </div>
+        <div class="sim-control" data-drive-panel hidden>
+          <div class="sim-control__row"><label for="driveR">Chastota Ω / ω₀</label><output for="driveR" id="driveROut"></output></div>
+          <input class="sim-range" type="range" id="driveR" min="0.2" max="2" step="0.01" value="1">
+        </div>
+      </div>
 
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuchlar: mg va N</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="components"><span class="sim-switch__ui"></span>mg ning tashkil etuvchilari</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="velocity" checked><span class="sim-switch__ui"></span>Tezlik vektori v</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="trail" checked><span class="sim-switch__ui"></span>Harakat izi</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="lin"><span class="sim-switch__ui"></span>Kichik burchak modeli (sin θ ≈ θ)</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="energy" checked><span class="sim-switch__ui"></span>Energiya ustunlari</label>
+        <p class="of-subtle">Maslahat: sharni torting — qo‘yib yuborganingizda mayatnik tebrana boshlaydi. Faza portretida istalgan nuqtani bosib boshlang‘ich (θ, ω) ni tanlash mumkin.</p>
+      </div>
+    </aside>
+  </div>
 
-
-<div class="control-group">
-
-<label for="length">
-Uzunlik (m)
-</label>
-
-<input
-type="range"
-id="length"
-min="1"
-max="10"
-value="5">
-
-<div
-class="value"
-id="lengthValue">
-
-5 m
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px">Vaznsiz qattiq sterjenga osilgan nuqtaviy massa. Kichik burchaklarda tebranish davri massa va amplitudaga bog‘liq emas; katta amplitudada esa davr ortadi. Boshlang‘ich burchakni o‘zgartiring yoki mayatnik sharini sichqoncha bilan torting.</p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Harakat tenglamasi: <span class="sim-math">θ″ = −(g/L) sin θ</span></li>
+        <li>Kichik tebranishlar (<span class="sim-math">sin θ ≈ θ</span>): <span class="sim-math">T₀ = 2π √(L/g)</span></li>
+        <li>Aniq davr: <span class="sim-math">T = T₀ · 2K(sin θₘ/2)/π</span> ≈ <span class="sim-math">T₀(1 + θₘ²/16 + …)</span></li>
+        <li>Energiya: <span class="sim-math">E = mL²ω²/2 + mgL(1 − cos θ)</span></li>
+        <li>Sterjen (ip) kuchi: <span class="sim-math">N = m(g cos θ + Lω²)</span></li>
+        <li>Ishqalanish bilan: <span class="sim-math">θ″ + γθ′ + ω₀² sin θ = 0</span>, <span class="sim-math">ω₀ = √(g/L)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Sterjen vaznsiz va cho‘zilmaydi, osish nuqtasida ishqalanish yo‘q (γ = 0 da). Integrallash: 4-tartibli Runge–Kutta, qadam 2 ms.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="angle">
-Boshlang‘ich burchak (°)
-</label>
-
-<input
-type="range"
-id="angle"
-min="5"
-max="60"
-value="30">
-
-<div
-class="value"
-id="angleValue">
-
-30°
-
-</div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="gravity">
-Gravitatsiya (m/s²)
-</label>
-
-<input
-type="range"
-id="gravity"
-min="1"
-max="20"
-step="0.1"
-value="9.8">
-
-<div
-class="value"
-id="gravityValue">
-
-9.8 m/s²
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Boshlash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="periodInfo">
-Period: 0 s
-</p>
-
-<p id="angleInfo">
-Angle: 0°
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Matematik mayatnik simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const lengthSlider =
-document.getElementById("length");
-
-const angleSlider =
-document.getElementById("angle");
-
-const gravitySlider =
-document.getElementById("gravity");
-
-
-const lengthValue =
-document.getElementById("lengthValue");
-
-const angleValue =
-document.getElementById("angleValue");
-
-const gravityValue =
-document.getElementById("gravityValue");
-
-
-const periodInfo =
-document.getElementById("periodInfo");
-
-const angleInfo =
-document.getElementById("angleInfo");
-
-
-lengthSlider.oninput = ()=>{
-
-  lengthValue.innerHTML =
-  lengthSlider.value + " m";
-
-};
-
-angleSlider.oninput = ()=>{
-
-  angleValue.innerHTML =
-  angleSlider.value + "°";
-
-};
-
-gravitySlider.oninput = ()=>{
-
-  gravityValue.innerHTML =
-  gravitySlider.value + " m/s²";
-
-};
-
-
-
-let pendulum = {
-
-  length:5,
-  angle:30 * Math.PI/180,
-  velocity:0,
-  gravity:9.8
-
-};
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  pendulum.length =
-  parseFloat(lengthSlider.value);
-
-  pendulum.angle =
-  parseFloat(angleSlider.value)
-  * Math.PI/180;
-
-  pendulum.gravity =
-  parseFloat(gravitySlider.value);
-
-});
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  const originX = 500;
-
-  const originY = 120;
-
-
-  const lengthPx =
-  pendulum.length * 55;
-
-
-  const acceleration =
-
-  -(pendulum.gravity /
-  pendulum.length)
-
-  * Math.sin(pendulum.angle);
-
-
-  pendulum.velocity +=
-  acceleration * 0.02;
-
-
-  pendulum.angle +=
-  pendulum.velocity * 0.02;
-
-
-  const bobX =
-
-  originX +
-
-  lengthPx *
-  Math.sin(pendulum.angle);
-
-
-  const bobY =
-
-  originY +
-
-  lengthPx *
-  Math.cos(pendulum.angle);
-
-
-  /* STRING */
-
-  ctx.beginPath();
-
-  ctx.moveTo(originX,originY);
-
-  ctx.lineTo(bobX,bobY);
-
-  ctx.lineWidth = 4;
-
-  ctx.strokeStyle = "#cbd5e1";
-
-  ctx.stroke();
-
-
-  /* PIVOT */
-
-  ctx.beginPath();
-
-  ctx.arc(
-
-    originX,
-    originY,
-
-    10,
-
-    0,
-    Math.PI*2
-
-  );
-
-  ctx.fillStyle =
-  "#ffffff";
-
-  ctx.fill();
-
-
-  /* BOB */
-
-  ctx.beginPath();
-
-  ctx.arc(
-
-    bobX,
-    bobY,
-
-    28,
-
-    0,
-    Math.PI*2
-
-  );
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.shadowBlur = 30;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.fill();
-
-
-  /* INFO */
-
-  const period =
-
-  2*Math.PI*
-
-  Math.sqrt(
-    pendulum.length /
-    pendulum.gravity
-  );
-
-
-  periodInfo.innerHTML =
-
-  "Period: " +
-
-  period.toFixed(2)
-
-  + " s";
-
-
-  angleInfo.innerHTML =
-
-  "Angle: " +
-
-  (pendulum.angle*180/Math.PI)
-  .toFixed(1)
-
-  + "°";
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>
-

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elektr zanjiri — virtual laboratoriya | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: elektr zanjirini o‘zingiz yig‘ing — batareya, kalit, rezistor, reostat, o‘tkazgich, lampochka, diod, LED, ampermetr va voltmetr. Om qonuni, ketma-ket va parallel ulash, EYuK, diod xarakteristikasi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/circuit.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Elektr zanjiri — virtual laboratoriya" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="circuitSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
+      <h1>Elektr zanjiri — virtual laboratoriya</h1>
+    </div>
+    <div class="sim-formula" aria-label="I teng U bo'linsin R"><small>Om qonuni</small> I = U / R</div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Laboratoriya stoli">
+        <div class="sim-bin" role="toolbar" aria-label="Asboblar qutisi" data-tools></div>
+        <p class="sim-bin__hint" data-hint aria-live="polite"></p>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Laboratoriya stoli: asbobni qutidan sudrab olib keling yoki tanlab ikki nuqta orasiga bosing"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Tok yo‘nalishini ko‘rsatish" data-dir>
+            <button type="button" data-dir-value="conv" aria-pressed="true" title="Tok musbat qutbdan manfiy qutbga oqadi (+ → −)">Shartli tok</button>
+            <button type="button" data-dir-value="elec" aria-pressed="false" title="Elektronlar manfiy qutbdan musbat qutbga harakatlanadi">Elektronlar</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title>Elementlardagi kuchlanish va tok</h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs>
+            <button type="button" data-tab-value="bars" aria-pressed="true">U va I</button>
+            <button type="button" data-tab-value="iu" aria-pressed="false">I(U) xarakteristika</button>
+            <button type="button" data-tab-value="src" aria-pressed="false">Manba U(I)</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Zanjir grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+        <div class="sim-btnrow" data-iu-tools hidden style="padding:0 16px 12px">
+          <button class="of-btn of-btn--sm" type="button" data-iu-add>Nuqta qo‘shish</button>
+          <button class="of-btn of-btn--sm" type="button" data-iu-scan>Avto-o‘lchash</button>
+          <button class="of-btn of-btn--sm" type="button" data-iu-clear>Tozalash</button>
+        </div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="I">
+          <span class="sim-readout__label"><span data-label>Tok kuchi <i>I</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="U">
+          <span class="sim-readout__label"><span data-label>Kuchlanish <i>U</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="P">
+          <span class="sim-readout__label"><span data-label>Quvvat <i>P</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="R">
+          <span class="sim-readout__label"><span data-label>Qarshilik <i>R</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Ut">
+          <span class="sim-readout__label"><span>Manba qisqichlarida <i>U</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Is">
+          <span class="sim-readout__label"><span>Manba toki <i>I</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Req">
+          <span class="sim-readout__label"><span>Tashqi zanjir <i>R</i><sub>ekv</sub></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Ps">
+          <span class="sim-readout__label"><span>Manba quvvati <i>P</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Uv">
+          <span class="sim-readout__label"><span>Voltmetr ko‘rsatishi <i>U</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor zanjirlar</span>
+        <div class="sim-presets" data-presets></div>
+        <button class="of-btn of-btn--sm" type="button" data-clear>Maydonni tozalash</button>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-props hidden>
+        <span class="sim-group__title" data-props-title>Tanlangan element</span>
+        <div class="sim-control" data-prop="emf">
+          <div class="sim-control__row"><label for="emf">EYuK ε</label><output for="emf" id="emfOut"></output></div>
+          <input class="sim-range" type="range" id="emf" min="0.5" max="24" step="0.5" value="9">
+        </div>
+        <div class="sim-control" data-prop="rint">
+          <div class="sim-control__row"><label for="rint">Ichki qarshilik r</label><output for="rint" id="rintOut"></output></div>
+          <input class="sim-range" type="range" id="rint" min="0" max="5" step="0.1" value="0">
+        </div>
+        <div class="sim-control" data-prop="res">
+          <div class="sim-control__row"><label for="res" data-res-label>Qarshilik R</label><output for="res" id="resOut"></output></div>
+          <input class="sim-range" type="range" id="res" min="1" max="100" step="1" value="10">
+        </div>
+        <div class="sim-control" data-prop="pos">
+          <div class="sim-control__row"><label for="pos">Reostat siljitgichi</label><output for="pos" id="posOut"></output></div>
+          <input class="sim-range" type="range" id="pos" min="0" max="1" step="0.01" value="0.4">
+        </div>
+        <div class="sim-control" data-prop="mat">
+          <div class="sim-control__row"><label for="mat">Material (ρ)</label></div>
+          <select class="sim-select" id="mat"></select>
+        </div>
+        <div class="sim-control" data-prop="len">
+          <div class="sim-control__row"><label for="len">Uzunlik l</label><output for="len" id="lenOut"></output></div>
+          <input class="sim-range" type="range" id="len" min="0.5" max="50" step="0.5" value="3">
+        </div>
+        <div class="sim-control" data-prop="sec">
+          <div class="sim-control__row"><label for="sec">Ko‘ndalang kesim S</label><output for="sec" id="secOut"></output></div>
+          <input class="sim-range" type="range" id="sec" min="0.1" max="5" step="0.1" value="0.5">
+        </div>
+        <div class="sim-control" data-prop="led">
+          <div class="sim-control__row"><label for="ledColor">LED rangi</label></div>
+          <select class="sim-select" id="ledColor"></select>
+        </div>
+        <p class="of-subtle" data-props-note></p>
+        <div class="sim-btnrow">
+          <button class="of-btn of-btn--sm" type="button" data-switch hidden>Kalitni almashtirish</button>
+          <button class="of-btn of-btn--sm" type="button" data-flip hidden>Qutblarni almashtirish</button>
+          <button class="of-btn of-btn--sm" type="button" data-delete>Elementni o‘chirish</button>
+        </div>
+      </div>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="potential" checked><span class="sim-switch__ui"></span>Potensialni ranglash (ko‘k — past, qizil — yuqori)</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="values"><span class="sim-switch__ui"></span>Hamma element uchun I va U</label>
+        <p class="of-subtle">Qanday ishlash kerak: qutidan asbobni stolga sudrab olib keling (yoki tanlab, ikki nuqta orasiga bosing), so‘ng uchlarini sim bilan tutashtiring. Elementni sudrab ko‘chirish, Delete bilan o‘chirish mumkin. Ampermetr — ketma-ket, voltmetr — parallel ulanadi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Zanjir qismi uchun Om qonuni: <span class="sim-math">I = U / R</span></li>
+        <li>Ketma-ket: <span class="sim-math">I = I₁ = I₂</span>, <span class="sim-math">U = U₁ + U₂</span>, <span class="sim-math">R = R₁ + R₂</span></li>
+        <li>Parallel: <span class="sim-math">U = U₁ = U₂</span>, <span class="sim-math">I = I₁ + I₂</span>, <span class="sim-math">1/R = 1/R₁ + 1/R₂</span></li>
+        <li>To‘liq zanjir: <span class="sim-math">I = ε / (R + r)</span>, <span class="sim-math">U = ε − I r</span></li>
+        <li>O‘tkazgich qarshiligi: <span class="sim-math">R = ρ l / S</span></li>
+        <li>Quvvat: <span class="sim-math">P = U I = I² R = U² / R</span></li>
+        <li>Kirxgof: tugunda <span class="sim-math">Σ I = 0</span>, konturda <span class="sim-math">Σ ε = Σ I R</span></li>
+        <li>Diod (Shokli): <span class="sim-math">I = I<sub>s</sub>(e<sup>U/nU<sub>T</sub></sup> − 1)</span> — faqat bir yo‘nalishda o‘tkazadi</li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Statsionar (o‘zgarmas) tok. Sim qarshiligi hisobga olinmaydi (ideal), ampermetr — ideal (nol qarshilik), voltmetr qarshiligi 1 MΩ. Diod — kremniy (≈ 0,7 V), LED ochilish kuchlanishi rangga bog‘liq. Yechish: tugun potensiallari usuli, diodlar uchun Nyuton iteratsiyasi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

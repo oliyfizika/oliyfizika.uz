@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potensial, ish va kondensatorlar | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: zaryadlar maydonining potensiali, ekvipotensial sirtlar, sinov zaryadini ko‘chirishda bajarilgan ish (yo‘lga bog‘liq emas); yassi kondensator sig‘imi, dielektrik, batareyaga ulangan va uzilgan holatlar, energiya; kondensatorlarni ketma-ket va parallel ulash, RC zanjirda zaryadlanish.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/potential.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Potensial, ish va kondensatorlar" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="potSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
+      <h1>Potensial, ish va kondensatorlar</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="field" aria-pressed="true">Potensial va ish</button>
+            <button type="button" data-mode-value="cap" aria-pressed="false">Yassi kondensator</button>
+            <button type="button" data-mode-value="net" aria-pressed="false">Ulash va zaryadlash</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Elektr maydon va kondensator"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play data-ctl="net"><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-switch data-ctl="net">Kalitni burish</button>
+          <label class="sim-switch" data-ctl="field"><input type="checkbox" data-toggle="map" checked><span class="sim-switch__ui"></span>Potensial xaritasi</label>
+          <label class="sim-switch" data-ctl="field"><input type="checkbox" data-toggle="eq" checked><span class="sim-switch__ui"></span>Ekvipotensiallar</label>
+          <label class="sim-switch" data-ctl="field"><input type="checkbox" data-toggle="lines"><span class="sim-switch__ui"></span>Kuch chiziqlari</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="field">
+        <span class="sim-group__title">Zaryadlar</span>
+        <div class="sim-btnrow">
+          <button class="of-btn of-btn--sm" type="button" data-add="1">+ musbat</button>
+          <button class="of-btn of-btn--sm" type="button" data-add="-1">− manfiy</button>
+          <button class="of-btn of-btn--sm" type="button" data-clear-q>Tozalash</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fQ">Tanlangan zaryad q</label><output for="fQ" id="fQOut"></output></div>
+          <input class="sim-range" type="range" id="fQ" min="-5" max="5" step="0.5" value="2">
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-setA>Sinov zaryadi joyini A nuqta qilish</button>
+        <p class="of-subtle">Zaryadlarni va sinov zaryadini (+1 nC, sariq) suring. Ish A nuqtadan hisoblanadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="cap">
+        <span class="sim-group__title">Yassi kondensator</span>
+        <label class="sim-switch"><input type="checkbox" data-conn checked><span class="sim-switch__ui"></span>Batareyaga ulangan</label>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cU">Batareya kuchlanishi U</label><output for="cU" id="cUOut"></output></div>
+          <input class="sim-range" type="range" id="cU" min="10" max="300" step="5" value="100">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cD">Plastinkalar orasi d</label><output for="cD" id="cDOut"></output></div>
+          <input class="sim-range" type="range" id="cD" min="1" max="10" step="0.1" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cS">Plastinka yuzi S</label><output for="cS" id="cSOut"></output></div>
+          <input class="sim-range" type="range" id="cS" min="50" max="400" step="10" value="200">
+        </div>
+        <div class="of-segment" role="group" aria-label="Dielektrik" data-diel style="display:grid;grid-template-columns:1fr 1fr">
+          <button type="button" data-diel-value="1" aria-pressed="true">Havo (1)</button>
+          <button type="button" data-diel-value="2.1" aria-pressed="false">Parafin (2,1)</button>
+          <button type="button" data-diel-value="6" aria-pressed="false">Slyuda (6)</button>
+          <button type="button" data-diel-value="7" aria-pressed="false">Shisha (7)</button>
+        </div>
+        <p class="of-subtle">O‘ng plastinkani chapga-o‘ngga suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="net">
+        <span class="sim-group__title">Kondensatorlar batareyasi</span>
+        <div class="of-segment" role="group" aria-label="Ulash" data-kind>
+          <button type="button" data-kind-value="par" aria-pressed="true">Parallel</button>
+          <button type="button" data-kind-value="ser" aria-pressed="false">Ketma-ket</button>
+          <button type="button" data-kind-value="mix" aria-pressed="false">Aralash</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="n1">C₁</label><output for="n1" id="n1Out"></output></div>
+          <input class="sim-range" type="range" id="n1" min="1" max="50" step="1" value="10">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="n2">C₂</label><output for="n2" id="n2Out"></output></div>
+          <input class="sim-range" type="range" id="n2" min="1" max="50" step="1" value="20">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="n3">C₃</label><output for="n3" id="n3Out"></output></div>
+          <input class="sim-range" type="range" id="n3" min="1" max="50" step="1" value="30">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="nR">Qarshilik R</label><output for="nR" id="nROut"></output></div>
+          <input class="sim-range" type="range" id="nR" min="5" max="200" step="5" value="50">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="nE">Batareya EYuK ε</label><output for="nE" id="nEOut"></output></div>
+          <input class="sim-range" type="range" id="nE" min="2" max="24" step="1" value="12">
+        </div>
+        <p class="of-subtle">Kalitni sxemada bosing: zaryadlash ↔ razryad.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Nuqtaviy zaryad potensiali: <span class="sim-math">φ = kq/r</span>; bir nechta zaryad: <span class="sim-math">φ = Σφᵢ</span></li>
+        <li>Ish: <span class="sim-math">A = q(φ₁ − φ₂)</span> — yo‘l shakliga bog‘liq emas; <span class="sim-math">E = −Δφ/Δx</span></li>
+        <li>Yassi kondensator: <span class="sim-math">C = ε₀εS/d</span>, <span class="sim-math">q = CU</span>, <span class="sim-math">E = U/d</span></li>
+        <li>Energiya: <span class="sim-math">W = CU²/2 = qU/2 = q²/(2C)</span></li>
+        <li>Parallel: <span class="sim-math">C = C₁ + C₂ + …</span>; ketma-ket: <span class="sim-math">1/C = 1/C₁ + 1/C₂ + …</span></li>
+        <li>Zaryadlanish: <span class="sim-math">q = Cε(1 − e<sup>−t/RC</sup>)</span>, <span class="sim-math">τ = RC</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Potensial va maydon zaryadlar ustidan aniq yig‘indi bilan hisoblanadi (zaryad 4 mm radiusli sharcha deb olinadi). Kondensatorda chet effektlari hisobga olinmaydi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,690 +1,191 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Refraction Law | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yorug‘likning qaytishi va sinishi | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: Snell qonuni, qaytish qonuni, Frenel formulalari, kritik burchak va to‘liq ichki qaytish; shisha plastinka, yarim silindr, prizma va optik tola; shishaning sindirish ko‘rsatkichini o‘lchash; yassi, botiq va qavariq ko‘zgular, ikki ko‘zgudagi tasvirlar.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-  .main{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/refraction.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Yorug‘likning qaytishi va sinishi" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Refraction Law" data-shell-public="true">
+<div class="of-page of-container sim-page sim-page--compact" id="refrSim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge">Optika</span>
+      <h1>Yorug‘likning qaytishi va sinishi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"><small>Snell qonuni</small> n₁ sin α = n₂ sin β</div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="refr" aria-pressed="true">Ikki muhit chegarasi</button>
+            <button type="button" data-mode-value="body" aria-pressed="false">Plastinka va prizma</button>
+            <button type="button" data-mode-value="mirror" aria-pressed="false">Ko‘zgular</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Yorug‘lik nurining yo‘li"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play data-ctl="refr"><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <label class="sim-switch" data-ctl="refr"><input type="checkbox" data-toggle="reflect" checked><span class="sim-switch__ui"></span>Qaytgan nur</label>
+          <label class="sim-switch" data-ctl="refr"><input type="checkbox" data-toggle="waves" checked><span class="sim-switch__ui"></span>To‘lqin frontlari</label>
+          <label class="sim-switch" data-ctl="body"><input type="checkbox" data-toggle="partial" checked><span class="sim-switch__ui"></span>Qisman qaytgan nurlar</label>
+          <label class="sim-switch" data-ctl="refr body mirror"><input type="checkbox" data-toggle="angles" checked><span class="sim-switch__ui"></span>Burchaklar</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+        <div class="sim-btnrow" data-meas-tools hidden style="padding:0 16px 12px">
+          <button class="of-btn of-btn--sm" type="button" data-meas-add>O‘lchovni yozish</button>
+          <button class="of-btn of-btn--sm" type="button" data-meas-clear>Tozalash</button>
+        </div>
+      </section>
 
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
 
-<!-- MAIN -->
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
-<div class="main">
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
 
+      <!-- 1) Ikki muhit chegarasi -->
+      <div class="sim-group sim-group--grid" data-ctl="refr">
+        <span class="sim-group__title">Nur va muhitlar</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="alpha">Tushish burchagi α</label><output for="alpha" id="alphaOut"></output></div>
+          <input class="sim-range" type="range" id="alpha" min="0" max="89" step="0.5" value="40">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="n1">1-muhit (yuqori) n₁</label><output for="n1" id="n1Out"></output></div>
+          <select class="sim-select" id="m1" aria-label="1-muhit materiali"></select>
+          <input class="sim-range" type="range" id="n1" min="1" max="2.5" step="0.01" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="n2">2-muhit (pastki) n₂</label><output for="n2" id="n2Out"></output></div>
+          <select class="sim-select" id="m2" aria-label="2-muhit materiali"></select>
+          <input class="sim-range" type="range" id="n2" min="1" max="2.5" step="0.01" value="1.5">
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-swap>Muhitlarni almashtirish</button>
+        <p class="of-subtle">Nur manbasini (sariq doira) sichqoncha yoki barmoq bilan suring.</p>
+      </div>
 
-<!-- CONTROLS -->
+      <!-- 2) Plastinka, yarim silindr, prizma, optik tola -->
+      <div class="sim-group sim-group--grid" data-ctl="body">
+        <span class="sim-group__title">Shisha jism</span>
+        <div class="of-segment" role="group" aria-label="Jism" data-obj style="display:grid;grid-template-columns:1fr 1fr">
+          <button type="button" data-obj-value="slab" aria-pressed="true">Plastinka</button>
+          <button type="button" data-obj-value="semi" aria-pressed="false">Yarim silindr</button>
+          <button type="button" data-obj-value="prism" aria-pressed="false">Prizma</button>
+          <button type="button" data-obj-value="fiber" aria-pressed="false">Optik tola</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="Nur kirishi" data-entry data-octl="semi">
+          <button type="button" data-entry-value="flat" aria-pressed="true">Yassi tomondan</button>
+          <button type="button" data-entry-value="arc" aria-pressed="false">Yoy tomondan</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gA" data-ga-label>Tushish burchagi α</label><output for="gA" id="gAOut"></output></div>
+          <input class="sim-range" type="range" id="gA" min="0" max="89" step="0.5" value="40">
+        </div>
+        <div class="sim-control" data-nctl>
+          <div class="sim-control__row"><label for="gN">Sindirish ko‘rsatkichi n</label><output for="gN" id="gNOut"></output></div>
+          <input class="sim-range" type="range" id="gN" min="1.2" max="2.5" step="0.01" value="1.5">
+        </div>
+        <div class="sim-control" data-octl="slab">
+          <div class="sim-control__row"><label for="gT">Plastinka qalinligi t</label><output for="gT" id="gTOut"></output></div>
+          <input class="sim-range" type="range" id="gT" min="2" max="8" step="0.5" value="5">
+        </div>
+        <div class="sim-control" data-octl="prism">
+          <div class="sim-control__row"><label for="gP">Sindiruvchi burchak A</label><output for="gP" id="gPOut"></output></div>
+          <input class="sim-range" type="range" id="gP" min="20" max="80" step="1" value="60">
+        </div>
+        <div class="sim-control" data-octl="fiber">
+          <div class="sim-control__row"><label for="gB">Tolaning egilishi</label><output for="gB" id="gBOut"></output></div>
+          <input class="sim-range" type="range" id="gB" min="0" max="90" step="1" value="45">
+        </div>
+        <label class="sim-switch" data-octl="slab semi"><input type="checkbox" data-unknown><span class="sim-switch__ui"></span>Noma’lum shisha (lab)</label>
+        <button class="of-btn of-btn--sm" type="button" data-reveal hidden>Javobni ko‘rsatish</button>
+      </div>
 
-<div class="controls">
+      <!-- 3) Ko'zgular -->
+      <div class="sim-group sim-group--grid" data-ctl="mirror">
+        <span class="sim-group__title">Ko‘zgu</span>
+        <div class="of-segment" role="group" aria-label="Ko‘zgu turi" data-mkind style="display:grid;grid-template-columns:1fr 1fr">
+          <button type="button" data-mkind-value="plane" aria-pressed="true">Yassi</button>
+          <button type="button" data-mkind-value="two" aria-pressed="false">Ikki ko‘zgu</button>
+          <button type="button" data-mkind-value="concave" aria-pressed="false">Botiq</button>
+          <button type="button" data-mkind-value="convex" aria-pressed="false">Qavariq</button>
+        </div>
+        <div class="sim-control" data-mctl="plane">
+          <div class="sim-control__row"><label for="mD">Buyumdan ko‘zgugacha d</label><output for="mD" id="mDOut"></output></div>
+          <input class="sim-range" type="range" id="mD" min="1" max="14" step="0.5" value="6">
+        </div>
+        <div class="sim-control" data-mctl="two">
+          <div class="sim-control__row"><label for="mPhi">Ko‘zgular orasidagi burchak φ</label><output for="mPhi" id="mPhiOut"></output></div>
+          <input class="sim-range" type="range" id="mPhi" min="20" max="180" step="1" value="60">
+        </div>
+        <div class="sim-control" data-mctl="two">
+          <div class="sim-control__row"><label for="mPos">Buyum holati</label><output for="mPos" id="mPosOut"></output></div>
+          <input class="sim-range" type="range" id="mPos" min="5" max="95" step="1" value="50">
+        </div>
+        <div class="sim-control" data-mctl="concave convex">
+          <div class="sim-control__row"><label for="mR">Egrilik radiusi R</label><output for="mR" id="mROut"></output></div>
+          <input class="sim-range" type="range" id="mR" min="8" max="40" step="1" value="20">
+        </div>
+        <div class="sim-control" data-mctl="concave convex">
+          <div class="sim-control__row"><label for="mSd">Buyumgacha masofa d</label><output for="mSd" id="mSdOut"></output></div>
+          <input class="sim-range" type="range" id="mSd" min="1" max="38" step="0.5" value="30">
+        </div>
+        <p class="of-subtle" data-mhint></p>
+      </div>
+    </aside>
+  </div>
 
-<h2>
-<span aria-hidden="true">🌈</span> Refraction Law
-</h2>
-
-
-
-<div class="control-group">
-
-<label for="angle">
-Tushish burchagi
-</label>
-
-<input
-type="range"
-id="angle"
-min="0"
-max="80"
-value="45">
-
-<div
-class="value"
-id="angleValue">
-
-45°
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Qaytish qonuni: <span class="sim-math">γ = α</span>; tushuvchi, qaytgan nur va normal bir tekislikda</li>
+        <li>Sinish qonuni: <span class="sim-math">n₁ sin α = n₂ sin β</span>, nisbiy ko‘rsatkich <span class="sim-math">n₂₁ = n₂/n₁ = v₁/v₂</span></li>
+        <li>Kritik burchak (<span class="sim-math">n₁ &gt; n₂</span>): <span class="sim-math">sin α₀ = n₂/n₁</span></li>
+        <li>Muhitda: <span class="sim-math">v = c/n</span>, <span class="sim-math">λ = λ₀/n</span></li>
+        <li>Plastinkada siljish: <span class="sim-math">Δ = t·sin(α − β)/cos β</span>; prizmada og‘ish: <span class="sim-math">δ = α₁ + α₂ − A</span></li>
+        <li>Ikki yassi ko‘zgu: <span class="sim-math">N = 360°/φ − 1</span>; sferik ko‘zgu: <span class="sim-math">1/F = 1/d + 1/f</span>, <span class="sim-math">F = R/2</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Qaytgan va o‘tgan yorug‘lik ulushi Frenel formulalari bilan (qutblanmagan nur) hisoblanadi. Shisha jismlarda nur har bir chegarada ikkiga ajraladi — xira chiziqlar qisman qaytgan nurlar. Sferik ko‘zgu — paraksial yaqinlashish.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="n1">
-1-muhit sindirish ko‘rsatkichi
-</label>
-
-<input
-type="range"
-id="n1"
-min="1"
-max="2"
-step="0.01"
-value="1">
-
-<div
-class="value"
-id="n1Value">
-
-1.00
-
-</div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="n2">
-2-muhit sindirish ko‘rsatkichi
-</label>
-
-<input
-type="range"
-id="n2"
-min="1"
-max="2.5"
-step="0.01"
-value="1.5">
-
-<div
-class="value"
-id="n2Value">
-
-1.50
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Yangilash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="incidentInfo">
-Incident Angle: 0°
-</p>
-
-<p id="refractedInfo">
-Refracted Angle: 0°
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Refraction Law simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const angleSlider =
-document.getElementById("angle");
-
-const n1Slider =
-document.getElementById("n1");
-
-const n2Slider =
-document.getElementById("n2");
-
-
-const angleValue =
-document.getElementById("angleValue");
-
-const n1Value =
-document.getElementById("n1Value");
-
-const n2Value =
-document.getElementById("n2Value");
-
-
-const incidentInfo =
-document.getElementById("incidentInfo");
-
-const refractedInfo =
-document.getElementById("refractedInfo");
-
-
-angleSlider.oninput = ()=>{
-
-  angleValue.innerHTML =
-  angleSlider.value + "°";
-
-};
-
-n1Slider.oninput = ()=>{
-
-  n1Value.innerHTML =
-  parseFloat(n1Slider.value).toFixed(2);
-
-};
-
-n2Slider.oninput = ()=>{
-
-  n2Value.innerHTML =
-  parseFloat(n2Slider.value).toFixed(2);
-
-};
-
-
-
-let angle = 45;
-
-let n1 = 1;
-
-let n2 = 1.5;
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  angle =
-  parseFloat(angleSlider.value);
-
-  n1 =
-  parseFloat(n1Slider.value);
-
-  n2 =
-  parseFloat(n2Slider.value);
-
-});
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  /* MEDIA */
-
-  ctx.fillStyle =
-  "rgba(56,189,248,.08)";
-
-  ctx.fillRect(
-    0,
-    325,
-    canvas.width,
-    325
-  );
-
-
-  /* NORMAL */
-
-  ctx.beginPath();
-
-  ctx.moveTo(500,50);
-
-  ctx.lineTo(500,600);
-
-  ctx.strokeStyle =
-  "rgba(255,255,255,.3)";
-
-  ctx.lineWidth = 2;
-
-  ctx.stroke();
-
-
-  /* SURFACE */
-
-  ctx.beginPath();
-
-  ctx.moveTo(0,325);
-
-  ctx.lineTo(1000,325);
-
-  ctx.strokeStyle =
-  "white";
-
-  ctx.lineWidth = 3;
-
-  ctx.stroke();
-
-
-  const theta1 =
-  angle * Math.PI/180;
-
-
-  const sinTheta2 =
-
-  (n1/n2) *
-  Math.sin(theta1);
-
-
-  let theta2 = 0;
-
-
-  if(Math.abs(sinTheta2) <= 1){
-
-    theta2 =
-    Math.asin(sinTheta2);
-  }
-
-
-  /* INCIDENT RAY */
-
-  const x1 =
-
-  500 -
-  250*Math.sin(theta1);
-
-  const y1 =
-
-  325 -
-  250*Math.cos(theta1);
-
-
-  ctx.beginPath();
-
-  ctx.moveTo(x1,y1);
-
-  ctx.lineTo(500,325);
-
-  ctx.strokeStyle =
-  "#38bdf8";
-
-  ctx.lineWidth = 4;
-
-  ctx.shadowBlur = 20;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.stroke();
-
-
-  /* REFRACTED RAY */
-
-  const x2 =
-
-  500 +
-  250*Math.sin(theta2);
-
-  const y2 =
-
-  325 +
-  250*Math.cos(theta2);
-
-
-  ctx.beginPath();
-
-  ctx.moveTo(500,325);
-
-  ctx.lineTo(x2,y2);
-
-  ctx.strokeStyle =
-  "#fde047";
-
-  ctx.lineWidth = 4;
-
-  ctx.shadowBlur = 20;
-
-  ctx.shadowColor =
-  "#fde047";
-
-  ctx.stroke();
-
-
-  /* INFO */
-
-  incidentInfo.innerHTML =
-
-  "Incident Angle: " +
-
-  angle.toFixed(1)
-
-  + "°";
-
-
-  refractedInfo.innerHTML =
-
-  "Refracted Angle: " +
-
-  (theta2*180/Math.PI)
-  .toFixed(1)
-
-  + "°";
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>
-

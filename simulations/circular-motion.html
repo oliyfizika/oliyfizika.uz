@@ -1,665 +1,187 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Circular Motion | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aylana bo‘ylab harakat | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: aylana bo‘ylab tekis va notekis harakat — chiziqli va burchak tezlik, davr, chastota, markazga intilma tezlanish; ipdagi sharcha, burilishdagi avtomobil, vertikal halqa (markazga intilma kuch); tasmali va tishli uzatmalar.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-  .main{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/circular.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Aylana bo‘ylab harakat" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Circular Motion" data-shell-public="true">
+<div class="of-page of-container sim-page sim-page--compact" id="circSim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Aylana bo‘ylab harakat</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="kin" aria-pressed="true">Kinematika</button>
+            <button type="button" data-mode-value="dyn" aria-pressed="false">Markazga intilma kuch</button>
+            <button type="button" data-mode-value="belt" aria-pressed="false">Uzatmalar</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Aylana bo‘ylab harakat"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-action hidden></button>
+          <label class="sim-switch" data-ctl="kin dyn"><input type="checkbox" data-toggle="vec" checked><span class="sim-switch__ui"></span>Vektorlar</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
 
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
 
-<!-- MAIN -->
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
-<div class="main">
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
 
+      <div class="sim-group sim-group--grid" data-ctl="kin">
+        <span class="sim-group__title">Harakat</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="kV">Chiziqli tezlik v</label><output for="kV" id="kVOut"></output></div>
+          <input class="sim-range" type="range" id="kV" min="0.2" max="4" step="0.05" value="1.5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="kR">Radius R</label><output for="kR" id="kROut"></output></div>
+          <input class="sim-range" type="range" id="kR" min="20" max="100" step="1" value="60">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="kA">Tangensial tezlanish a_τ</label><output for="kA" id="kAOut"></output></div>
+          <input class="sim-range" type="range" id="kA" min="-1" max="1" step="0.05" value="0">
+        </div>
+        <p class="of-subtle">Jismni markazga yaqinlashtirib-uzoqlashtirib radiusni, v vektori uchini surib tezlikni o‘zgartiring.</p>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group sim-group--grid" data-ctl="dyn">
+        <span class="sim-group__title">Tajriba</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-sub>
+          <button type="button" data-sub-value="string" aria-pressed="true">Sharcha</button>
+          <button type="button" data-sub-value="car" aria-pressed="false">Avtomobil</button>
+          <button type="button" data-sub-value="loop" aria-pressed="false">Halqa</button>
+        </div>
+        <div class="sim-control" data-dctl="string">
+          <div class="sim-control__row"><label for="sV">Tezlik v</label><output for="sV" id="sVOut"></output></div>
+          <input class="sim-range" type="range" id="sV" min="0.5" max="8" step="0.1" value="3">
+        </div>
+        <div class="sim-control" data-dctl="string">
+          <div class="sim-control__row"><label for="sM">Sharcha massasi m</label><output for="sM" id="sMOut"></output></div>
+          <input class="sim-range" type="range" id="sM" min="0.05" max="1" step="0.05" value="0.2">
+        </div>
+        <div class="sim-control" data-dctl="string">
+          <div class="sim-control__row"><label for="sR">Ip uzunligi R</label><output for="sR" id="sROut"></output></div>
+          <input class="sim-range" type="range" id="sR" min="20" max="100" step="1" value="60">
+        </div>
+        <div class="sim-control" data-dctl="string">
+          <div class="sim-control__row"><label for="sT">Ip chidaydigan kuch T_max</label><output for="sT" id="sTOut"></output></div>
+          <input class="sim-range" type="range" id="sT" min="1" max="20" step="0.5" value="5">
+        </div>
+        <div class="sim-control" data-dctl="car">
+          <div class="sim-control__row"><label for="cV">Avtomobil tezligi</label><output for="cV" id="cVOut"></output></div>
+          <input class="sim-range" type="range" id="cV" min="10" max="160" step="1" value="60">
+        </div>
+        <div class="sim-control" data-dctl="car">
+          <div class="sim-control__row"><label for="cR">Burilish radiusi R</label><output for="cR" id="cROut"></output></div>
+          <input class="sim-range" type="range" id="cR" min="20" max="200" step="5" value="60">
+        </div>
+        <div class="of-segment" role="group" aria-label="Yo‘l" data-road data-dctl="car" style="display:grid;grid-template-columns:1fr 1fr">
+          <button type="button" data-road-value="0.7" aria-pressed="true">Quruq asfalt</button>
+          <button type="button" data-road-value="0.4" aria-pressed="false">Ho‘l asfalt</button>
+          <button type="button" data-road-value="0.2" aria-pressed="false">Qor</button>
+          <button type="button" data-road-value="0.08" aria-pressed="false">Muz</button>
+        </div>
+        <div class="sim-control" data-dctl="car">
+          <div class="sim-control__row"><label for="cA">Yo‘l qiyaligi α</label><output for="cA" id="cAOut"></output></div>
+          <input class="sim-range" type="range" id="cA" min="0" max="30" step="1" value="0">
+        </div>
+        <div class="sim-control" data-dctl="loop">
+          <div class="sim-control__row"><label for="lH">Balandlik h</label><output for="lH" id="lHOut"></output></div>
+          <input class="sim-range" type="range" id="lH" min="0.5" max="3.5" step="0.05" value="3">
+        </div>
+        <div class="sim-control" data-dctl="loop">
+          <div class="sim-control__row"><label for="lR">Halqa radiusi R</label><output for="lR" id="lROut"></output></div>
+          <input class="sim-range" type="range" id="lR" min="0.2" max="1" step="0.05" value="0.5">
+        </div>
+        <p class="of-subtle" data-dhint></p>
+      </div>
 
-<div class="controls">
+      <div class="sim-group sim-group--grid" data-ctl="belt">
+        <span class="sim-group__title">Uzatma</span>
+        <div class="of-segment" role="group" aria-label="Turi" data-btype>
+          <button type="button" data-btype-value="belt" aria-pressed="true">Tasmali</button>
+          <button type="button" data-btype-value="gear" aria-pressed="false">Tishli</button>
+          <button type="button" data-btype-value="bike" aria-pressed="false">Velosiped</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="bN">Yetaklovchi g‘ildirak n₁</label><output for="bN" id="bNOut"></output></div>
+          <input class="sim-range" type="range" id="bN" min="0.1" max="2" step="0.05" value="0.5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="b1">Radius R₁</label><output for="b1" id="b1Out"></output></div>
+          <input class="sim-range" type="range" id="b1" min="3" max="18" step="0.5" value="12">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="b2">Radius R₂</label><output for="b2" id="b2Out"></output></div>
+          <input class="sim-range" type="range" id="b2" min="3" max="18" step="0.5" value="6">
+        </div>
+        <p class="of-subtle">G‘ildiraklar chetini surib radiusini o‘zgartiring.</p>
+      </div>
+    </aside>
+  </div>
 
-<h2>
-<span aria-hidden="true">🌀</span> Circular Motion
-</h2>
-
-
-
-<div class="control-group">
-
-<label for="radius">
-Radius
-</label>
-
-<input
-type="range"
-id="radius"
-min="50"
-max="250"
-value="150">
-
-<div
-class="value"
-id="radiusValue">
-
-150
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Davr va chastota: <span class="sim-math">T = 2πR/v</span>, <span class="sim-math">ν = 1/T</span></li>
+        <li>Burchak tezlik: <span class="sim-math">ω = 2π/T = v/R</span></li>
+        <li>Markazga intilma tezlanish: <span class="sim-math">a = v²/R = ω²R</span></li>
+        <li>Markazga intilma kuch: <span class="sim-math">F = mv²/R</span> (ip tarangligi, ishqalanish, og‘irlik va tayanch reaksiyasi)</li>
+        <li>Burilish: <span class="sim-math">v<sub>max</sub> = √(μgR)</span>; halqa tepasida: <span class="sim-math">v ≥ √(gR)</span>, <span class="sim-math">h ≥ 2,5R</span></li>
+        <li>Uzatma: <span class="sim-math">v₁ = v₂</span>, <span class="sim-math">ω₁R₁ = ω₂R₂</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Halqada sharcha ishqalanishsiz sirpanadi deb olinadi; harakat tenglamasi RK4 bilan yechiladi va tayanch reaksiyasi nolga tushgach, sharcha parabola bo‘ylab uchadi.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="speed">
-Tezlik
-</label>
-
-<input
-type="range"
-id="speed"
-min="1"
-max="10"
-value="4">
-
-<div
-class="value"
-id="speedValue">
-
-4
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Boshlash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="velocityInfo">
-Velocity: 0 m/s
-</p>
-
-<p id="accelerationInfo">
-Acceleration: 0 m/s²
-</p>
-
-<p id="omegaInfo">
-Angular Velocity: 0
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Circular Motion simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const radiusSlider =
-document.getElementById("radius");
-
-const speedSlider =
-document.getElementById("speed");
-
-
-const radiusValue =
-document.getElementById("radiusValue");
-
-const speedValue =
-document.getElementById("speedValue");
-
-
-const velocityInfo =
-document.getElementById("velocityInfo");
-
-const accelerationInfo =
-document.getElementById("accelerationInfo");
-
-const omegaInfo =
-document.getElementById("omegaInfo");
-
-
-radiusSlider.oninput = ()=>{
-
-  radiusValue.innerHTML =
-  radiusSlider.value;
-
-};
-
-speedSlider.oninput = ()=>{
-
-  speedValue.innerHTML =
-  speedSlider.value;
-
-};
-
-
-
-let radius = 150;
-
-let speed = 4;
-
-let angle = 0;
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  radius =
-  parseFloat(radiusSlider.value);
-
-  speed =
-  parseFloat(speedSlider.value);
-
-});
-
-
-
-function drawAxes(){
-
-  ctx.strokeStyle =
-  "rgba(255,255,255,.2)";
-
-  ctx.lineWidth = 1;
-
-
-  ctx.beginPath();
-
-  ctx.moveTo(500,0);
-
-  ctx.lineTo(500,650);
-
-  ctx.stroke();
-
-
-  ctx.beginPath();
-
-  ctx.moveTo(0,325);
-
-  ctx.lineTo(1000,325);
-
-  ctx.stroke();
-
-}
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  drawAxes();
-
-
-  const centerX = 500;
-
-  const centerY = 325;
-
-
-  /* CIRCLE */
-
-  ctx.beginPath();
-
-  ctx.arc(
-
-    centerX,
-    centerY,
-
-    radius,
-
-    0,
-    Math.PI*2
-
-  );
-
-  ctx.strokeStyle =
-  "rgba(255,255,255,.3)";
-
-  ctx.lineWidth = 2;
-
-  ctx.stroke();
-
-
-  angle += speed * 0.01;
-
-
-  const x =
-
-  centerX +
-
-  radius *
-  Math.cos(angle);
-
-
-  const y =
-
-  centerY +
-
-  radius *
-  Math.sin(angle);
-
-
-  /* RADIUS */
-
-  ctx.beginPath();
-
-  ctx.moveTo(centerX,centerY);
-
-  ctx.lineTo(x,y);
-
-  ctx.strokeStyle =
-  "#38bdf8";
-
-  ctx.lineWidth = 3;
-
-  ctx.stroke();
-
-
-  /* OBJECT */
-
-  ctx.beginPath();
-
-  ctx.arc(
-
-    x,
-    y,
-
-    18,
-
-    0,
-    Math.PI*2
-
-  );
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.shadowBlur = 30;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.fill();
-
-
-  /* INFO */
-
-  const velocity = speed * 10;
-
-  const acceleration =
-
-  (velocity*velocity)/(radius/50);
-
-  const omega =
-
-  velocity/(radius/50);
-
-
-  velocityInfo.innerHTML =
-
-  "Velocity: " +
-
-  velocity.toFixed(1)
-
-  + " m/s";
-
-
-  accelerationInfo.innerHTML =
-
-  "Acceleration: " +
-
-  acceleration.toFixed(1)
-
-  + " m/s²";
-
-
-  omegaInfo.innerHTML =
-
-  "Angular Velocity: " +
-
-  omega.toFixed(2);
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>
-

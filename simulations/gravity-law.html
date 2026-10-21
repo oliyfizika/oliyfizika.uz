@@ -1,667 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Gravity Law | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Butun olam tortishish qonuni | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: Nyutonning butun olam tortishish qonuni — laboratoriyadagi jismlar va osmon jismlari orasidagi tortishish kuchi, tezlanishlar, orbita davri va F(r) grafigi.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-  .main{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/gravity.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Tortishish qonuni" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Gravity Law" data-shell-public="true">
+<div class="of-page of-container sim-page" id="gravitySim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Butun olam tortishish qonuni</h1>
+      <p>Har qanday ikki jism bir-birini massalar ko‘paytmasiga to‘g‘ri, masofa kvadratiga teskari proporsional kuch bilan tortadi. Laboratoriyadagi jismlar va osmon jismlari uchun kuchni solishtiring.</p>
+    </div>
+    <div class="sim-formula" aria-label="F = G m1 m2 bo'linsin r kvadrat"><small>Nyuton qonuni</small> F = G·m₁m₂ / r²</div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" data-draggable="true" role="img" aria-label="Butun olam tortishish qonuni simulyatsiyasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <span class="sim-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v5"/><path d="M13 10V4a2 2 0 0 1 4 0v7"/><path d="M17 8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L4 14.5a2 2 0 0 1 3.2-2.4L9 14"/></svg>Jismlarni sudrab masofani o‘zgartiring</span>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="sim-readouts sim-readouts--4" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="F">
+          <span class="sim-readout__label"><span>Tortishish kuchi <i>F</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="a1">
+          <span class="sim-readout__label"><span>1-jism tezlanishi <i>a</i>₁</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="a2">
+          <span class="sim-readout__label"><span>2-jism tezlanishi <i>a</i>₂</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="x">
+          <span class="sim-readout__label"><span data-x-label>Taqqoslash</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph" aria-label="F(r) grafigi">
+        <div class="sim-graph__head"><h2>Kuchning masofaga bog‘liqligi F(r)</h2><p>Massalar o‘zgarmaganda</p></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="F(r) grafigi"></canvas></div>
+      </section>
+    </div>
 
-<!-- MAIN -->
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
-<div class="main">
+      <div class="sim-group">
+        <span class="sim-group__title">Rejim</span>
+        <div class="of-segment sim-segment-full" role="group" aria-label="Rejim" data-mode>
+          <button type="button" data-mode-value="lab" aria-pressed="true">Laboratoriya</button>
+          <button type="button" data-mode-value="space" aria-pressed="false">Osmon jismlari</button>
+        </div>
+      </div>
 
+      <div class="sim-group sim-group--grid" data-panel="lab">
+        <span class="sim-group__title">Jismlar va masofa</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="m1">1-massa m₁</label><output for="m1" id="m1Out"></output></div>
+          <input class="sim-range" type="range" id="m1" min="1" max="1000" step="1" value="500">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="m2">2-massa m₂</label><output for="m2" id="m2Out"></output></div>
+          <input class="sim-range" type="range" id="m2" min="1" max="1000" step="1" value="100">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="r">Markazlar orasidagi masofa r</label><output for="r" id="rOut"></output></div>
+          <input class="sim-range" type="range" id="r" min="0.2" max="5" step="0.05" value="1">
+        </div>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group sim-group--grid" data-panel="space" hidden>
+        <span class="sim-group__title">Osmon jismlari</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="pair">Juftlik</label></div>
+          <select class="sim-select" id="pair">
+            <option value="earth-moon" selected>Yer — Oy</option>
+            <option value="sun-earth">Quyosh — Yer</option>
+            <option value="earth-iss">Yer — Xalqaro kosmik stansiya</option>
+            <option value="jupiter-io">Yupiter — Io</option>
+          </select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="k">Masofa (haqiqiyga nisbatan)</label><output for="k" id="kOut"></output></div>
+          <input class="sim-range" type="range" id="k" min="0.5" max="3" step="0.05" value="1">
+        </div>
+      </div>
 
-<div class="controls">
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuch vektorlari</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="field" checked><span class="sim-switch__ui"></span>Gravitatsion maydon</label>
+        <p class="of-subtle">Kuch qiymati juda keng oraliqda o‘zgargani uchun o‘q uzunligi logarifmik masshtabda. Osmon jismlarining o‘lchamlari masshtabda emas.</p>
+      </div>
+    </aside>
+  </div>
 
-<h2>
-<span aria-hidden="true">🌍</span> Gravity Law
-</h2>
-
-
-
-<div class="control-group">
-
-<label for="mass1">
-1-massa
-</label>
-
-<input
-type="range"
-id="mass1"
-min="10"
-max="200"
-value="80">
-
-<div
-class="value"
-id="mass1Value">
-
-80
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Butun olam tortishish qonuni: <span class="sim-math">F = G m₁ m₂ / r²</span></li>
+        <li>Gravitatsiya doimiysi: <span class="sim-math">G = 6,674·10<sup>−11</sup> N·m²/kg²</span></li>
+        <li>Nyutonning 3-qonuni: kuchlar teng, tezlanishlar har xil — <span class="sim-math">a₁ = F/m₁</span>, <span class="sim-math">a₂ = F/m₂</span></li>
+        <li>Doiraviy orbita davri: <span class="sim-math">T = 2π √(r³ / (G(m₁ + m₂)))</span></li>
+      </ul>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="mass2">
-2-massa
-</label>
-
-<input
-type="range"
-id="mass2"
-min="10"
-max="200"
-value="120">
-
-<div
-class="value"
-id="mass2Value">
-
-120
-
-</div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="distance">
-Masofa
-</label>
-
-<input
-type="range"
-id="distance"
-min="100"
-max="500"
-value="250">
-
-<div
-class="value"
-id="distanceValue">
-
-250
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Boshlash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="forceInfo">
-Force: 0 N
-</p>
-
-<p id="distanceInfo">
-Distance: 0
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Gravity Law simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const mass1Slider =
-document.getElementById("mass1");
-
-const mass2Slider =
-document.getElementById("mass2");
-
-const distanceSlider =
-document.getElementById("distance");
-
-
-const mass1Value =
-document.getElementById("mass1Value");
-
-const mass2Value =
-document.getElementById("mass2Value");
-
-const distanceValue =
-document.getElementById("distanceValue");
-
-
-const forceInfo =
-document.getElementById("forceInfo");
-
-const distanceInfo =
-document.getElementById("distanceInfo");
-
-
-mass1Slider.oninput = ()=>{
-
-  mass1Value.innerHTML =
-  mass1Slider.value;
-
-};
-
-mass2Slider.oninput = ()=>{
-
-  mass2Value.innerHTML =
-  mass2Slider.value;
-
-};
-
-distanceSlider.oninput = ()=>{
-
-  distanceValue.innerHTML =
-  distanceSlider.value;
-
-};
-
-
-
-let mass1 = 80;
-
-let mass2 = 120;
-
-let distance = 250;
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  mass1 =
-  parseFloat(mass1Slider.value);
-
-  mass2 =
-  parseFloat(mass2Slider.value);
-
-  distance =
-  parseFloat(distanceSlider.value);
-
-});
-
-
-
-function drawArrow(x1,y1,x2,y2){
-
-  ctx.beginPath();
-
-  ctx.moveTo(x1,y1);
-
-  ctx.lineTo(x2,y2);
-
-  ctx.strokeStyle =
-  "#38bdf8";
-
-  ctx.lineWidth = 4;
-
-  ctx.stroke();
-
-}
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  const y = 325;
-
-
-  const x1 =
-  500 - distance/2;
-
-  const x2 =
-  500 + distance/2;
-
-
-  /* FORCE LINES */
-
-  drawArrow(
-    x1+40,
-    y,
-    x1+110,
-    y
-  );
-
-  drawArrow(
-    x2-40,
-    y,
-    x2-110,
-    y
-  );
-
-
-  /* MASS 1 */
-
-  ctx.beginPath();
-
-  ctx.arc(
-
-    x1,
-    y,
-
-    mass1/4,
-
-    0,
-    Math.PI*2
-
-  );
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.shadowBlur = 30;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.fill();
-
-
-  /* MASS 2 */
-
-  ctx.beginPath();
-
-  ctx.arc(
-
-    x2,
-    y,
-
-    mass2/4,
-
-    0,
-    Math.PI*2
-
-  );
-
-  ctx.fillStyle =
-  "#60a5fa";
-
-  ctx.shadowBlur = 30;
-
-  ctx.shadowColor =
-  "#60a5fa";
-
-  ctx.fill();
-
-
-  /* FORCE */
-
-  const G = 6.67;
-
-  const force =
-
-  G *
-
-  (mass1*mass2) /
-
-  ((distance/100)*(distance/100));
-
-
-  forceInfo.innerHTML =
-
-  "Force: " +
-
-  force.toFixed(2)
-
-  + " N";
-
-
-  distanceInfo.innerHTML =
-
-  "Distance: " +
-
-  distance.toFixed(0);
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>
-

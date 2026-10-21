@@ -1,671 +1,234 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Spring Oscillator | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prujinali mayatnik | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: prujinali mayatnik — vertikal va gorizontal tebranish, Guk qonuni, davr T = 2π√(m/k), parallel va ketma-ket prujinalar, energiya, so‘nish, majburiy tebranish va rezonans.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-  .main{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/spring.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Prujinali mayatnik" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Spring Oscillator" data-shell-public="true">
+<div class="of-page of-container sim-page sim-page--compact" id="springSim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Prujinali mayatnik</h1>
+    </div>
+    <div class="sim-formula" aria-label="T teng 2 pi ildiz ostida m bo'linsin k"><small>Tebranish davri</small> T = 2π √(m / k)</div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" data-draggable="true" role="img" aria-label="Prujinali mayatnik simulyatsiyasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Tebranish yo‘nalishi" data-mode>
+            <button type="button" data-mode-value="horizontal" aria-pressed="true">Gorizontal</button>
+            <button type="button" data-mode-value="vertical" aria-pressed="false">Vertikal</button>
+          </div>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.25" aria-pressed="false">¼×</button>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title>Siljishning vaqtga bog‘liqligi x(t)</h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs>
+            <button type="button" data-tab-value="x" aria-pressed="true">x(t)</button>
+            <button type="button" data-tab-value="phase" aria-pressed="false">Faza portreti</button>
+            <button type="button" data-tab-value="energy" aria-pressed="false">Energiya</button>
+            <button type="button" data-tab-value="hooke" aria-pressed="false">F(x)</button>
+            <button type="button" data-tab-value="period" aria-pressed="false">T(m)</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Prujinali mayatnik grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
 
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="x">
+          <span class="sim-readout__label"><span>Siljish <i>x</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="a">
+          <span class="sim-readout__label"><span>Tezlanish <i>a</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="F">
+          <span class="sim-readout__label"><span>Prujina kuchi <i>F</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Tm">
+          <span class="sim-readout__label"><span>Davr (o‘lchangan)</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Tt">
+          <span class="sim-readout__label"><span>Davr (nazariy)</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="E">
+          <span class="sim-readout__label"><span>Tebranish energiyasi <i>E</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="dl">
+          <span class="sim-readout__label"><span>Statik cho‘zilish <i>Δl</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="A">
+          <span class="sim-readout__label"><span>Amplituda <i>A</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="Q">
+          <span class="sim-readout__label"><span>So‘nish</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
+    </div>
 
-<!-- MAIN -->
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
-<div class="main">
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor holatlar</span>
+        <div class="sim-presets">
+          <button class="sim-preset" type="button" data-preset="free">Erkin tebranish</button>
+          <button class="sim-preset" type="button" data-preset="hang">Osilgan yuk</button>
+          <button class="sim-preset" type="button" data-preset="moon">Oyda (vertikal)</button>
+          <button class="sim-preset" type="button" data-preset="parallel">Parallel</button>
+          <button class="sim-preset" type="button" data-preset="series">Ketma-ket</button>
+          <button class="sim-preset" type="button" data-preset="damped">So‘nuvchi</button>
+          <button class="sim-preset" type="button" data-preset="critical">Kritik so‘nish</button>
+          <button class="sim-preset" type="button" data-preset="resonance">Rezonans</button>
+        </div>
+      </div>
 
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Prujina va yuk</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="link">Prujinalar ulanishi</label></div>
+          <select class="sim-select" id="link">
+            <option value="single" selected>Bitta prujina</option>
+            <option value="parallel">Parallel (k = k₁ + k₂)</option>
+            <option value="series">Ketma-ket (1/k = 1/k₁ + 1/k₂)</option>
+          </select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="k1" data-k1-label>Qattiqlik k</label><output for="k1" id="k1Out"></output></div>
+          <input class="sim-range" type="range" id="k1" min="10" max="300" step="1" value="25">
+        </div>
+        <div class="sim-control" data-k2-panel hidden>
+          <div class="sim-control__row"><label for="k2">2-prujina qattiqligi k₂</label><output for="k2" id="k2Out"></output></div>
+          <input class="sim-range" type="range" id="k2" min="10" max="300" step="1" value="60">
+        </div>
+        <p class="of-subtle" data-keff hidden></p>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="m">Massa m</label><output for="m" id="mOut"></output></div>
+          <input class="sim-range" type="range" id="m" min="0.1" max="3" step="0.05" value="1">
+        </div>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Boshlang‘ich shart</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="x0">Boshlang‘ich siljish x(0)</label><output for="x0" id="x0Out"></output></div>
+          <input class="sim-range" type="range" id="x0" min="-25" max="25" step="0.5" value="12">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="v0">Boshlang‘ich tezlik v(0)</label><output for="v0" id="v0Out"></output></div>
+          <input class="sim-range" type="range" id="v0" min="-1" max="1" step="0.05" value="0">
+        </div>
+      </div>
 
-<div class="controls">
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Muhit va tashqi ta’sir</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="b">Qarshilik koeffitsiyenti b</label><output for="b" id="bOut"></output></div>
+          <input class="sim-range" type="range" id="b" min="0" max="15" step="0.1" value="0">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="planet">Erkin tushish tezlanishi g</label><output for="planet" id="gOut"></output></div>
+          <select class="sim-select" id="planet">
+            <option value="9.81" selected>Yer — 9,81 m/s²</option>
+            <option value="1.62">Oy — 1,62 m/s²</option>
+            <option value="3.71">Mars — 3,71 m/s²</option>
+            <option value="24.79">Yupiter — 24,79 m/s²</option>
+          </select>
+          <p class="of-subtle" data-g-note>g faqat vertikal tebranishda muvozanat nuqtasini siljitadi; davrga ta’sir qilmaydi.</p>
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-toggle="drive"><span class="sim-switch__ui"></span>Majburlovchi kuch</label>
+        <div class="sim-control" data-drive-panel hidden>
+          <div class="sim-control__row"><label for="driveF">Kuch amplitudasi F₀</label><output for="driveF" id="driveFOut"></output></div>
+          <input class="sim-range" type="range" id="driveF" min="0.1" max="10" step="0.1" value="1">
+        </div>
+        <div class="sim-control" data-drive-panel hidden>
+          <div class="sim-control__row"><label for="driveR">Chastota Ω / ω₀</label><output for="driveR" id="driveROut"></output></div>
+          <input class="sim-range" type="range" id="driveR" min="0.2" max="2" step="0.01" value="1">
+        </div>
+      </div>
 
-<h2>
-<span aria-hidden="true">🌀</span> Spring Oscillator
-</h2>
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuchlar</label>
+        <label class="sim-switch" data-net-switch><input type="checkbox" data-toggle="net"><span class="sim-switch__ui"></span>Teng ta’sir etuvchi kuch (−kx)</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="velocity" checked><span class="sim-switch__ui"></span>Tezlik vektori v</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="marks" checked><span class="sim-switch__ui"></span>Chizg‘ich va belgilar</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="energy" checked><span class="sim-switch__ui"></span>Energiya ustunlari</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="vcurve" checked><span class="sim-switch__ui"></span>x(t) grafikda tezlikni ham ko‘rsat</label>
+        <p class="of-subtle">Maslahat: yukni sudrab siljiting va qo‘yib yuboring. Faza portreti, F(x) va T(m) grafiklarini bosib ham parametrni tanlash mumkin.</p>
+      </div>
+    </aside>
+  </div>
 
-
-
-<div class="control-group">
-
-<label for="mass">
-Massa (kg)
-</label>
-
-<input
-type="range"
-id="mass"
-min="1"
-max="20"
-value="5">
-
-<div
-class="value"
-id="massValue">
-
-5 kg
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px">Yuk prujinaga mahkamlangan: siljiganda prujina uni muvozanat nuqtasi tomon tortadi (Guk qonuni). Gorizontal yoki vertikal tebranishni tanlab, massa, qattiqlik, so‘nish va tashqi kuch ta’sirini kuzating.</p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Guk qonuni: <span class="sim-math">F = −k x</span></li>
+        <li>Harakat tenglamasi: <span class="sim-math">m x″ = −k x − b x′ + F₀ cos Ωt</span></li>
+        <li>Tebranish davri: <span class="sim-math">T = 2π √(m/k)</span>, <span class="sim-math">ω₀ = √(k/m)</span>, <span class="sim-math">f = 1/T</span></li>
+        <li>Vertikal: <span class="sim-math">Δl = mg/k</span> — muvozanat siljiydi, davr o‘zgarmaydi</li>
+        <li>Energiya: <span class="sim-math">E = mv²/2 + kx²/2 = kA²/2</span></li>
+        <li>Parallel: <span class="sim-math">k = k₁ + k₂</span>; ketma-ket: <span class="sim-math">k = k₁k₂/(k₁ + k₂)</span></li>
+        <li>So‘nish: <span class="sim-math">γ = b/m</span>, <span class="sim-math">ω<sub>d</sub> = √(ω₀² − γ²/4)</span>, <span class="sim-math">b<sub>kr</sub> = 2√(km)</span></li>
+        <li>Rezonans: <span class="sim-math">A = (F₀/m) / √((ω₀² − Ω²)² + γ²Ω²)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Prujina vaznsiz va Guk qonuniga bo‘ysunadi; silliq sirt (gorizontalda). Integrallash: 4-tartibli Runge–Kutta.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="k">
-Prujina qattiqligi (k)
-</label>
-
-<input
-type="range"
-id="k"
-min="1"
-max="50"
-value="10">
-
-<div
-class="value"
-id="kValue">
-
-10 N/m
-
-</div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="amplitude">
-Amplitude
-</label>
-
-<input
-type="range"
-id="amplitude"
-min="20"
-max="200"
-value="100">
-
-<div
-class="value"
-id="amplitudeValue">
-
-100
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Boshlash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="periodInfo">
-Period: 0 s
-</p>
-
-<p id="forceInfo">
-Force: 0 N
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Spring Oscillator simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const massSlider =
-document.getElementById("mass");
-
-const kSlider =
-document.getElementById("k");
-
-const amplitudeSlider =
-document.getElementById("amplitude");
-
-
-const massValue =
-document.getElementById("massValue");
-
-const kValue =
-document.getElementById("kValue");
-
-const amplitudeValue =
-document.getElementById("amplitudeValue");
-
-
-const periodInfo =
-document.getElementById("periodInfo");
-
-const forceInfo =
-document.getElementById("forceInfo");
-
-
-massSlider.oninput = ()=>{
-
-  massValue.innerHTML =
-  massSlider.value + " kg";
-
-};
-
-kSlider.oninput = ()=>{
-
-  kValue.innerHTML =
-  kSlider.value + " N/m";
-
-};
-
-amplitudeSlider.oninput = ()=>{
-
-  amplitudeValue.innerHTML =
-  amplitudeSlider.value;
-
-};
-
-
-
-let time = 0;
-
-let mass = 5;
-
-let k = 10;
-
-let amplitude = 100;
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  mass =
-  parseFloat(massSlider.value);
-
-  k =
-  parseFloat(kSlider.value);
-
-  amplitude =
-  parseFloat(amplitudeSlider.value);
-
-});
-
-
-
-function drawSpring(x,y,length,coils){
-
-  ctx.beginPath();
-
-  ctx.moveTo(x,y);
-
-
-  for(let i=0;i<coils;i++){
-
-    const dx =
-    x + (i+1)*(length/coils);
-
-    const dy =
-    y + (i%2===0 ? -20 : 20);
-
-    ctx.lineTo(dx,dy);
-
-  }
-
-
-  ctx.lineTo(x+length,y);
-
-  ctx.strokeStyle =
-  "#cbd5e1";
-
-  ctx.lineWidth = 4;
-
-  ctx.stroke();
-
-}
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  time += 0.03;
-
-
-  const omega =
-  Math.sqrt(k/mass);
-
-
-  const x =
-
-  amplitude *
-
-  Math.cos(omega*time);
-
-
-  const centerX = 500;
-
-  const centerY = 320;
-
-
-  /* WALL */
-
-  ctx.fillStyle =
-  "#475569";
-
-  ctx.fillRect(
-    120,
-    250,
-    30,
-    140
-  );
-
-
-  /* SPRING */
-
-  drawSpring(
-
-    150,
-    centerY,
-
-    300 + x,
-
-    18
-
-  );
-
-
-  /* MASS */
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.shadowBlur = 30;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.fillRect(
-
-    450 + x,
-    centerY - 40,
-
-    80,
-    80
-
-  );
-
-
-  /* INFO */
-
-  const period =
-
-  2*Math.PI*
-
-  Math.sqrt(mass/k);
-
-
-  periodInfo.innerHTML =
-
-  "Period: " +
-
-  period.toFixed(2)
-
-  + " s";
-
-
-  const force =
-  -k * (x/100);
-
-
-  forceInfo.innerHTML =
-
-  "Force: " +
-
-  force.toFixed(2)
-
-  + " N";
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>
-

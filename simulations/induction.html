@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elektromagnit induksiya | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: Faradey tajribasi — magnit va g‘altak, galvanometr, Lens qoidasi, magnit oqimi va induksiya EYuK; o‘zgaruvchan tok generatori; o‘zinduksiya — lampalar tajribasi, induktivlik va magnit maydon energiyasi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/induction.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Elektromagnit induksiya" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="indSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
+      <h1>Elektromagnit induksiya</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"><small>Faradey qonuni</small> ε = −ΔΦ / Δt</div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="faraday" aria-pressed="true">Faradey tajribasi</button>
+            <button type="button" data-mode-value="gen" aria-pressed="false">Generator</button>
+            <button type="button" data-mode-value="self" aria-pressed="false">O‘zinduksiya</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Elektromagnit induksiya tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Vaqt" data-speed>
+            <button type="button" data-speed-value="0.1" aria-pressed="true" title="10 marta sekinlashtirilgan">Sekin ×0,1</button>
+            <button type="button" data-speed-value="0.3" aria-pressed="false">×0,3</button>
+            <button type="button" data-speed-value="1" aria-pressed="false">Real</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Tajriba grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="faraday">
+        <span class="sim-group__title">Magnit harakati</span>
+        <div class="of-segment" role="group" aria-label="Harakat" data-motion>
+          <button type="button" data-motion-value="hand" aria-pressed="false">Qo‘lda</button>
+          <button type="button" data-motion-value="pass" aria-pressed="true">Bir tekis</button>
+          <button type="button" data-motion-value="osc" aria-pressed="false">Tebranish</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fV">Tezlik v</label><output for="fV" id="fVOut"></output></div>
+          <input class="sim-range" type="range" id="fV" min="0.1" max="3" step="0.1" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fM">Magnit momenti</label><output for="fM" id="fMOut"></output></div>
+          <input class="sim-range" type="range" id="fM" min="0.2" max="3" step="0.1" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fN">O‘ramlar soni N</label><output for="fN" id="fNOut"></output></div>
+          <input class="sim-range" type="range" id="fN" min="20" max="1000" step="10" value="200">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fR">Zanjir qarshiligi R</label><output for="fR" id="fROut"></output></div>
+          <input class="sim-range" type="range" id="fR" min="2" max="100" step="1" value="10">
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-flip>Magnitni aylantirish (N ↔ S)</button>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="gen">
+        <span class="sim-group__title">Generator</span>
+        <div class="of-segment" role="group" aria-label="Tok olish" data-collector>
+          <button type="button" data-collector-value="rings" aria-pressed="true">Kontakt halqalar</button>
+          <button type="button" data-collector-value="comm" aria-pressed="false">Kollektor</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gN">Aylanish chastotasi n</label><output for="gN" id="gNOut"></output></div>
+          <input class="sim-range" type="range" id="gN" min="0.2" max="10" step="0.1" value="2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gB">Magnit induksiya B</label><output for="gB" id="gBOut"></output></div>
+          <input class="sim-range" type="range" id="gB" min="0.05" max="1" step="0.05" value="0.2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gW">O‘ramlar soni N</label><output for="gW" id="gWOut"></output></div>
+          <input class="sim-range" type="range" id="gW" min="10" max="500" step="10" value="100">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gS">Ramka yuzi S</label><output for="gS" id="gSOut"></output></div>
+          <input class="sim-range" type="range" id="gS" min="10" max="200" step="10" value="50">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="gR">Yuklama (lampa) R</label><output for="gR" id="gROut"></output></div>
+          <input class="sim-range" type="range" id="gR" min="5" max="200" step="5" value="20">
+        </div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="self">
+        <span class="sim-group__title">O‘zinduksiya zanjiri</span>
+        <button class="of-btn of-btn--primary of-btn--sm" type="button" data-switch>Kalitni ulash</button>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sE">Manba EYuK ε</label><output for="sE" id="sEOut"></output></div>
+          <input class="sim-range" type="range" id="sE" min="1" max="12" step="0.5" value="6">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sL">Induktivlik L</label><output for="sL" id="sLOut"></output></div>
+          <input class="sim-range" type="range" id="sL" min="0.1" max="10" step="0.1" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sR">Shoxcha qarshiligi R</label><output for="sR" id="sROut"></output></div>
+          <input class="sim-range" type="range" id="sR" min="5" max="100" step="5" value="20">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-core checked><span class="sim-switch__ui"></span>G‘altakda temir o‘zak</label>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Magnit oqimi: <span class="sim-math">Φ = BS cosα</span>, g‘altakda <span class="sim-math">Ψ = NΦ</span></li>
+        <li>Faradey qonuni: <span class="sim-math">ε = −N·ΔΦ/Δt</span></li>
+        <li>Lens qoidasi: induksion tok uni hosil qilgan oqim o‘zgarishiga qarshilik qiladi</li>
+        <li>Generator: <span class="sim-math">ε = NBSω·sinωt</span>, <span class="sim-math">ε<sub>max</sub> = NBSω</span>, <span class="sim-math">ε<sub>ef</sub> = ε<sub>max</sub>/√2</span></li>
+        <li>O‘zinduksiya: <span class="sim-math">ε<sub>o‘z</sub> = −L·ΔI/Δt</span>, <span class="sim-math">τ = L/R</span></li>
+        <li>Magnit maydon energiyasi: <span class="sim-math">W = LI²/2</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Faradey tajribasida magnit — nuqtaviy dipol, g‘altak oqimi o‘ramlar bo‘yicha aniq formula bilan hisoblanadi. «Sekin» rejimda vaqt sekinlashtiriladi, lekin EYuK va tok real tezlik bo‘yicha hisoblanadi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

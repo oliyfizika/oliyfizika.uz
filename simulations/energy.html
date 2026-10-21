@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ish, quvvat va mexanik energiya | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: mexanik ish A = Fs·cos α (ip bilan tortish, ishqalanish ishi), quvvat (ikki lebyodka musobaqasi), mexanik energiyaning saqlanishi (skeytpark, ishqalanishda issiqlik), prujina energiyasi (prujinali otgich, k ni o‘lchash).">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/energy.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Ish, quvvat va energiya" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="energySim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Ish, quvvat va mexanik energiya</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="work" aria-pressed="true">Ish va quvvat</button>
+            <button type="button" data-mode-value="park" aria-pressed="false">Energiya saqlanishi</button>
+            <button type="button" data-mode-value="spring" aria-pressed="false">Prujina energiyasi</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Ish va energiya tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <label class="sim-switch"><input type="checkbox" data-toggle="vec" checked><span class="sim-switch__ui"></span>Kuchlar / tezlik</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card hidden>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <button class="of-btn of-btn--sm" type="button" data-meas-clear>O‘lchovlarni tozalash</button>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="work">
+        <span class="sim-group__title">Ish va quvvat</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-sub>
+          <button type="button" data-sub-value="pull" aria-pressed="true">Qutini tortish</button>
+          <button type="button" data-sub-value="lift" aria-pressed="false">Yuk ko‘tarish</button>
+        </div>
+        <div class="sim-control" data-dctl="pull">
+          <div class="sim-control__row"><label for="wF">Tortish kuchi F</label><output for="wF" id="wFOut"></output></div>
+          <input class="sim-range" type="range" id="wF" min="0" max="150" step="1" value="60">
+        </div>
+        <div class="sim-control" data-dctl="pull">
+          <div class="sim-control__row"><label for="wA">Ip burchagi α</label><output for="wA" id="wAOut"></output></div>
+          <input class="sim-range" type="range" id="wA" min="0" max="70" step="1" value="30">
+        </div>
+        <div class="sim-control" data-dctl="pull">
+          <div class="sim-control__row"><label for="wM">Quti massasi m</label><output for="wM" id="wMOut"></output></div>
+          <input class="sim-range" type="range" id="wM" min="5" max="40" step="1" value="20">
+        </div>
+        <div class="sim-control" data-dctl="pull">
+          <div class="sim-control__row"><label for="wMu">Ishqalanish koeffitsiyenti μ</label><output for="wMu" id="wMuOut"></output></div>
+          <input class="sim-range" type="range" id="wMu" min="0" max="0.5" step="0.01" value="0.2">
+        </div>
+        <div class="sim-control" data-dctl="pull">
+          <div class="sim-control__row"><label for="wS">Ko‘chish s</label><output for="wS" id="wSOut"></output></div>
+          <input class="sim-range" type="range" id="wS" min="1" max="6" step="0.1" value="4">
+        </div>
+        <div class="sim-control" data-dctl="lift">
+          <div class="sim-control__row"><label for="pP1">1-dvigatel quvvati P₁</label><output for="pP1" id="pP1Out"></output></div>
+          <input class="sim-range" type="range" id="pP1" min="100" max="3000" step="50" value="500">
+        </div>
+        <div class="sim-control" data-dctl="lift">
+          <div class="sim-control__row"><label for="pP2">2-dvigatel quvvati P₂</label><output for="pP2" id="pP2Out"></output></div>
+          <input class="sim-range" type="range" id="pP2" min="100" max="3000" step="50" value="1000">
+        </div>
+        <div class="sim-control" data-dctl="lift">
+          <div class="sim-control__row"><label for="pM">Yuk massasi m</label><output for="pM" id="pMOut"></output></div>
+          <input class="sim-range" type="range" id="pM" min="20" max="200" step="5" value="50">
+        </div>
+        <div class="sim-control" data-dctl="lift">
+          <div class="sim-control__row"><label for="pH">Ko‘tarish balandligi h</label><output for="pH" id="pHOut"></output></div>
+          <input class="sim-range" type="range" id="pH" min="2" max="12" step="0.5" value="10">
+        </div>
+        <p class="of-subtle" data-dhint></p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="park">
+        <span class="sim-group__title">Skeytpark</span>
+        <div class="of-segment" role="group" aria-label="Yo‘l shakli" data-track>
+          <button type="button" data-track-value="pipe" aria-pressed="true">Yarim quvur</button>
+          <button type="button" data-track-value="hills" aria-pressed="false">Tepaliklar</button>
+          <button type="button" data-track-value="ramp" aria-pressed="false">Tramplin</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="Sayyora" data-planet>
+          <button type="button" data-planet-value="9.81" aria-pressed="true">Yer</button>
+          <button type="button" data-planet-value="1.62" aria-pressed="false">Oy</button>
+          <button type="button" data-planet-value="24.8" aria-pressed="false">Yupiter</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="kM">Skeytchi massasi m</label><output for="kM" id="kMOut"></output></div>
+          <input class="sim-range" type="range" id="kM" min="20" max="90" step="1" value="50">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="kMu">Ishqalanish μ</label><output for="kMu" id="kMuOut"></output></div>
+          <input class="sim-range" type="range" id="kMu" min="0" max="0.3" step="0.01" value="0">
+        </div>
+        <p class="of-subtle">Skeytchini yo‘l bo‘ylab surib qo‘yib yuboring; yo‘lning nuqtalarini va «Ep = 0» sathini suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="spring">
+        <span class="sim-group__title">Prujinali otgich</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sK">Prujina bikrligi k</label><output for="sK" id="sKOut"></output></div>
+          <input class="sim-range" type="range" id="sK" min="50" max="500" step="10" value="200">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sM">Sharcha massasi m</label><output for="sM" id="sMOut"></output></div>
+          <input class="sim-range" type="range" id="sM" min="0.1" max="0.5" step="0.05" value="0.2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sX">Prujina siqilishi x</label><output for="sX" id="sXOut"></output></div>
+          <input class="sim-range" type="range" id="sX" min="1" max="15" step="0.5" value="8">
+        </div>
+        <p class="of-subtle">Chap tomondagi kattalashtirilgan otgichda sharchani pastga surib prujinani siqing.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Mexanik ish: <span class="sim-math">A = F·s·cos α</span>; ishqalanish ishi <span class="sim-math">A<sub>f</sub> = −f·s</span></li>
+        <li>Kinetik energiya teoremasi: <span class="sim-math">ΣA = mv²/2 − mv₀²/2</span></li>
+        <li>Quvvat: <span class="sim-math">P = A/t = F·v</span>; yuk ko‘tarishda <span class="sim-math">A = mgh</span></li>
+        <li>Energiyalar: <span class="sim-math">E<sub>k</sub> = mv²/2</span>, <span class="sim-math">E<sub>p</sub> = mgh</span>, <span class="sim-math">E<sub>pr</sub> = kx²/2</span></li>
+        <li>Saqlanish: <span class="sim-math">E<sub>k</sub> + E<sub>p</sub> = const</span>; ishqalanish bo‘lsa <span class="sim-math">E<sub>k</sub> + E<sub>p</sub> + Q = const</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Skeytchi yo‘ldan ajralmaydi va moddiy nuqta deb olinadi; havo qarshiligi hisobga olinmaydi. Dvigatellar yukni o‘zgarmas tezlik bilan ko‘taradi (tezlanish bosqichi qisqa deb olinadi).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
