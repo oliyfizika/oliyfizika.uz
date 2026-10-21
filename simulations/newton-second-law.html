@@ -1,651 +1,156 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Newton Second Law | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nyuton qonunlari | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: Nyutonning ikkinchi qonuni (aravacha, dinamometr yoki osilgan yuk, fotodarvoza bilan tezlanishni o‘lchash, a(F) va a(1/m)), uchinchi qonuni (ikki aravacha va prujina), liftda vazn, ortiqcha yuklama va vaznsizlik.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  margin-bottom:35px;
-
-  font-size:30px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:10px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.start-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.start-btn:hover{
-
-  transform:translateY(-3px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/newton.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Nyuton qonunlari" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Newton Second Law" data-shell-public="true">
+<div class="of-page of-container sim-page sim-page--compact" id="newtonSim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Nyuton qonunlari</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="law2" aria-pressed="true">Ikkinchi qonun</button>
+            <button type="button" data-mode-value="law3" aria-pressed="false">Uchinchi qonun</button>
+            <button type="button" data-mode-value="lift" aria-pressed="false">Liftda vazn</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Nyuton qonunlari tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <label class="sim-switch"><input type="checkbox" data-toggle="vec" checked><span class="sim-switch__ui"></span>Kuchlar</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar" data-graph-card>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+          <button class="of-btn of-btn--sm" type="button" data-meas-clear>O‘lchovlarni tozalash</button>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
 
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
 
-<div class="main">
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group sim-group--grid" data-ctl="law2">
+        <span class="sim-group__title">Aravacha</span>
+        <div class="of-segment" role="group" aria-label="Tortuvchi kuch" data-drive>
+          <button type="button" data-drive-value="force" aria-pressed="true">Dinamometr</button>
+          <button type="button" data-drive-value="hang" aria-pressed="false">Osilgan yuk</button>
+        </div>
+        <div class="sim-control" data-dctl="force">
+          <div class="sim-control__row"><label for="aF">Tortish kuchi F</label><output for="aF" id="aFOut"></output></div>
+          <input class="sim-range" type="range" id="aF" min="0" max="4" step="0.1" value="1">
+        </div>
+        <div class="sim-control" data-dctl="hang">
+          <div class="sim-control__row"><label for="aMh">Osilgan yuk m</label><output for="aMh" id="aMhOut"></output></div>
+          <input class="sim-range" type="range" id="aMh" min="0.05" max="0.3" step="0.05" value="0.1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aM">Aravacha massasi M</label><output for="aM" id="aMOut"></output></div>
+          <input class="sim-range" type="range" id="aM" min="0.5" max="1" step="0.1" value="0.5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aMu">Ishqalanish koeffitsiyenti μ</label><output for="aMu" id="aMuOut"></output></div>
+          <input class="sim-range" type="range" id="aMu" min="0" max="0.3" step="0.01" value="0">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aS">Fotodarvozagacha masofa s</label><output for="aS" id="aSOut"></output></div>
+          <input class="sim-range" type="range" id="aS" min="0.1" max="0.9" step="0.05" value="0.6">
+        </div>
+        <p class="of-subtle">Yuk qo‘shish uchun aravacha ustidagi «+»/«−» ni bosing; kuch o‘qini va fotodarvozani suring.</p>
+      </div>
 
-<div class="controls">
+      <div class="sim-group sim-group--grid" data-ctl="law3">
+        <span class="sim-group__title">Ikki aravacha</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rM1">1-aravacha m₁</label><output for="rM1" id="rM1Out"></output></div>
+          <input class="sim-range" type="range" id="rM1" min="0.5" max="2.5" step="0.5" value="0.5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rM2">2-aravacha m₂</label><output for="rM2" id="rM2Out"></output></div>
+          <input class="sim-range" type="range" id="rM2" min="0.5" max="2.5" step="0.5" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rX">Prujina siqilishi Δx</label><output for="rX" id="rXOut"></output></div>
+          <input class="sim-range" type="range" id="rX" min="0.5" max="4" step="0.5" value="3">
+        </div>
+        <p class="of-subtle">Prujina ip bilan siqib bog‘langan. Ipni bosing — aravachalar bir-birini itaradi. Aravachani surib prujinani siqing.</p>
+      </div>
 
-<h2>
-<span aria-hidden="true">⚙️</span> Newton Second Law
-</h2>
+      <div class="sim-group sim-group--grid" data-ctl="lift">
+        <span class="sim-group__title">Lift</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="lM">Odam massasi m</label><output for="lM" id="lMOut"></output></div>
+          <input class="sim-range" type="range" id="lM" min="20" max="120" step="1" value="60">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="lA">Lift tezlanishi a</label><output for="lA" id="lAOut"></output></div>
+          <input class="sim-range" type="range" id="lA" min="0.5" max="4" step="0.1" value="2">
+        </div>
+        <p class="of-subtle">Kabina ichidagi pultda qavat tugmasini bosing. «Arqon uzildi» — erkin tushish, keyin xavfsizlik tormozi.</p>
+      </div>
+    </aside>
+  </div>
 
-
-
-<div class="control-group">
-
-<label for="force">
-Kuch F (N)
-</label>
-
-<input
-type="range"
-id="force"
-min="1"
-max="100"
-value="20">
-
-<div
-class="value"
-id="forceValue">
-
-20 N
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Ikkinchi qonun: <span class="sim-math">a = F/m</span>, <span class="sim-math">F = ma</span> (F — natijaviy kuch)</li>
+        <li>Ishqalanish: <span class="sim-math">f = μN = μMg</span></li>
+        <li>Osilgan yuk: <span class="sim-math">a = (mg − μMg)/(M + m)</span>, <span class="sim-math">T = m(g − a)</span></li>
+        <li>Tinch holatdan: <span class="sim-math">s = at²/2</span> ⇒ <span class="sim-math">a = 2s/t²</span></li>
+        <li>Uchinchi qonun: <span class="sim-math">F₁₂ = −F₂₁</span>, <span class="sim-math">m₁a₁ = m₂a₂</span>, <span class="sim-math">m₁v₁ = m₂v₂</span></li>
+        <li>Vazn: <span class="sim-math">P = m(g + a)</span> — a yuqoriga musbat; erkin tushishda <span class="sim-math">P = 0</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Aravacha g‘ildiraklari va blok yengil, ip cho‘zilmaydi deb olinadi. Aravacha ustida faqat gorizontal kuchlar ko‘rsatiladi: og‘irlik va tayanch reaksiyasi o‘zaro muvozanatlashadi.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="mass">
-Massa m (kg)
-</label>
-
-<input
-type="range"
-id="mass"
-min="1"
-max="50"
-value="10">
-
-<div
-class="value"
-id="massValue">
-
-10 kg
-
-</div>
-
-</div>
-
-
-
-<button
-class="start-btn"
-id="startBtn">
-
-<span aria-hidden="true">🚀</span> Boshlash
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="forceInfo">
-Force: 0 N
-</p>
-
-<p id="massInfo">
-Mass: 0 kg
-</p>
-
-<p id="accelerationInfo">
-Acceleration: 0 m/s²
-</p>
-
-<p id="velocityInfo">
-Velocity: 0 m/s
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Newton Second Law simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const forceSlider =
-document.getElementById("force");
-
-const massSlider =
-document.getElementById("mass");
-
-
-const forceValue =
-document.getElementById("forceValue");
-
-const massValue =
-document.getElementById("massValue");
-
-
-const forceInfo =
-document.getElementById("forceInfo");
-
-const massInfo =
-document.getElementById("massInfo");
-
-const accelerationInfo =
-document.getElementById("accelerationInfo");
-
-const velocityInfo =
-document.getElementById("velocityInfo");
-
-
-forceSlider.oninput = ()=>{
-
-  forceValue.innerHTML =
-  forceSlider.value + " N";
-
-};
-
-massSlider.oninput = ()=>{
-
-  massValue.innerHTML =
-  massSlider.value + " kg";
-
-};
-
-
-
-let force = 20;
-let mass = 10;
-
-let acceleration = 2;
-
-let velocity = 0;
-
-let blockX = 120;
-
-
-
-document
-.getElementById("startBtn")
-.addEventListener("click", ()=>{
-
-  force =
-  parseFloat(forceSlider.value);
-
-  mass =
-  parseFloat(massSlider.value);
-
-  acceleration =
-  force / mass;
-
-});
-
-
-
-function drawArrow(x,y,length){
-
-  ctx.beginPath();
-
-  ctx.moveTo(x,y);
-
-  ctx.lineTo(x+length,y);
-
-  ctx.strokeStyle =
-  "#38bdf8";
-
-  ctx.lineWidth = 5;
-
-  ctx.stroke();
-
-
-  ctx.beginPath();
-
-  ctx.moveTo(x+length,y);
-
-  ctx.lineTo(x+length-18,y-10);
-
-  ctx.lineTo(x+length-18,y+10);
-
-  ctx.closePath();
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.fill();
-
-}
-
-
-
-function animate(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-
-  /* GROUND */
-
-  ctx.fillStyle =
-  "#1e293b";
-
-  ctx.fillRect(
-    0,
-    480,
-    canvas.width,
-    170
-  );
-
-
-  /* MOTION */
-
-  velocity +=
-  acceleration * 0.02;
-
-  blockX +=
-  velocity * 0.5;
-
-
-  if(blockX > 920){
-
-    blockX = 120;
-
-    velocity = 0;
-  }
-
-
-  /* FORCE ARROW */
-
-  drawArrow(
-    blockX - 80,
-    360,
-    60 + force
-  );
-
-
-  /* BLOCK */
-
-  ctx.fillStyle =
-  "#38bdf8";
-
-  ctx.shadowBlur = 30;
-
-  ctx.shadowColor =
-  "#38bdf8";
-
-  ctx.fillRect(
-
-    blockX,
-    320,
-
-    120,
-    120
-
-  );
-
-
-  /* LABEL */
-
-  ctx.fillStyle =
-  "white";
-
-  ctx.font =
-  "24px Poppins";
-
-  ctx.fillText(
-
-    mass + " kg",
-
-    blockX + 22,
-    390
-
-  );
-
-
-  /* INFO */
-
-  forceInfo.innerHTML =
-
-  "Force: " +
-
-  force.toFixed(1)
-
-  + " N";
-
-
-  massInfo.innerHTML =
-
-  "Mass: " +
-
-  mass.toFixed(1)
-
-  + " kg";
-
-
-  accelerationInfo.innerHTML =
-
-  "Acceleration: " +
-
-  acceleration.toFixed(2)
-
-  + " m/s²";
-
-
-  velocityInfo.innerHTML =
-
-  "Velocity: " +
-
-  velocity.toFixed(2)
-
-  + " m/s";
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>

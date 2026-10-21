@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yorug‘likning to‘g‘ri chiziqli tarqalishi | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: nuqtaviy va katta manbadan soya va yarim soya, ikki lampa; kamera-obskura — tasvir o‘lchami va aniqligi, eng yaxshi teshik; Quyosh va Oy tutilishlari — to‘liq, halqasimon, xususiy, nega har oy tutilish bo‘lmaydi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/light.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Yorug‘likning to‘g‘ri chiziqli tarqalishi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="lightSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge">Optika</span>
+      <h1>Yorug‘likning to‘g‘ri chiziqli tarqalishi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="shadow" aria-pressed="true">Soya va yarim soya</button>
+            <button type="button" data-mode-value="camera" aria-pressed="false">Kamera-obskura</button>
+            <button type="button" data-mode-value="eclipse" aria-pressed="false">Tutilishlar</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Yorug‘lik nurlari va soya"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play data-ctl="eclipse"><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <div class="of-segment" role="group" aria-label="Tezlik" data-speed data-ctl="eclipse">
+            <button type="button" data-speed-value="2" aria-pressed="false">2 sutka/s</button>
+            <button type="button" data-speed-value="10" aria-pressed="true">10 sutka/s</button>
+            <button type="button" data-speed-value="40" aria-pressed="false">40 sutka/s</button>
+          </div>
+          <label class="sim-switch" data-ctl="shadow camera"><input type="checkbox" data-toggle="rays" checked><span class="sim-switch__ui"></span>Nurlar</label>
+          <label class="sim-switch" data-ctl="shadow"><input type="checkbox" data-toggle="front" checked><span class="sim-switch__ui"></span>Ekranning old ko‘rinishi</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="shadow">
+        <span class="sim-group__title">Manba, buyum, ekran</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sA">Manba diametri a</label><output for="sA" id="sAOut"></output></div>
+          <input class="sim-range" type="range" id="sA" min="0" max="20" step="0.5" value="6">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sB">Buyum (shar) diametri b</label><output for="sB" id="sBOut"></output></div>
+          <input class="sim-range" type="range" id="sB" min="2" max="20" step="0.5" value="10">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sD">Manbadan buyumgacha</label><output for="sD" id="sDOut"></output></div>
+          <input class="sim-range" type="range" id="sD" min="10" max="80" step="1" value="35">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sL">Manbadan ekrangacha L</label><output for="sL" id="sLOut"></output></div>
+          <input class="sim-range" type="range" id="sL" min="20" max="130" step="1" value="100">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-two><span class="sim-switch__ui"></span>Ikkita lampa</label>
+        <div class="sim-control" data-two-ctl hidden>
+          <div class="sim-control__row"><label for="sS">Lampalar orasidagi masofa</label><output for="sS" id="sSOut"></output></div>
+          <input class="sim-range" type="range" id="sS" min="4" max="40" step="1" value="20">
+        </div>
+        <p class="of-subtle">Shar va ekranni sichqoncha yoki barmoq bilan suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="camera">
+        <span class="sim-group__title">Kamera-obskura</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cD">Buyumgacha masofa d</label><output for="cD" id="cDOut"></output></div>
+          <input class="sim-range" type="range" id="cD" min="20" max="200" step="1" value="100">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cH">Buyum (daraxt) balandligi h</label><output for="cH" id="cHOut"></output></div>
+          <input class="sim-range" type="range" id="cH" min="10" max="60" step="1" value="40">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cF">Kamera chuqurligi f</label><output for="cF" id="cFOut"></output></div>
+          <input class="sim-range" type="range" id="cF" min="5" max="40" step="1" value="20">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cP">Teshik diametri p</label><output for="cP" id="cPOut"></output></div>
+          <input class="sim-range" type="range" id="cP" min="0.05" max="5" step="0.05" value="1">
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-popt>Eng aniq teshikni tanlash</button>
+        <p class="of-subtle">Daraxtni sichqoncha bilan suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="eclipse">
+        <span class="sim-group__title">Quyosh — Yer — Oy</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="eE">Oyning holati (elongatsiya)</label><output for="eE" id="eEOut"></output></div>
+          <input class="sim-range" type="range" id="eE" min="0" max="360" step="0.5" value="0">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="eN">Tugunlar chizig‘i burchagi</label><output for="eN" id="eNOut"></output></div>
+          <input class="sim-range" type="range" id="eN" min="-180" max="180" step="0.5" value="0">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="eM">Oygacha masofa</label><output for="eM" id="eMOut"></output></div>
+          <input class="sim-range" type="range" id="eM" min="356500" max="406700" step="100" value="384400">
+        </div>
+        <p class="of-subtle">Oyni orbita bo‘ylab suring. Tugunlar — Oy orbitasi ekliptika tekisligini kesib o‘tadigan nuqtalar.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Bir jinsli muhitda yorug‘lik to‘g‘ri chiziq bo‘ylab tarqaladi — soya chegarasini nurlar chizadi</li>
+        <li>To‘la soya diametri: <span class="sim-math">D<sub>u</sub> = b + (b − a)(L − d)/d</span></li>
+        <li>Yarim soya tashqi diametri: <span class="sim-math">D<sub>p</sub> = b + (b + a)(L − d)/d</span></li>
+        <li>Kamera-obskura: <span class="sim-math">H/h = f/d</span> (tasvir teskari)</li>
+        <li>Teshikdan dog‘: geometrik <span class="sim-math">p(1 + f/d)</span>, difraksion <span class="sim-math">2,44·λf/p</span></li>
+        <li>Tutilish sharti: Quyosh, Yer va Oy bir to‘g‘ri chiziqda — Oy tugunga yaqin bo‘lishi kerak</li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Soya rejimida shar disk sifatida, manba yorituvchi disk sifatida hisoblanadi; yoritilganlik — ekran nuqtasidan ko‘rinadigan manba qismi. Tutilishlar haqiqiy burchak o‘lchamlari bilan hisoblanadi (Quyosh 0,533°, Oy 0,49°–0,56°, orbita og‘ishi 5,145°); chizmadagi masofalar masshtabsiz.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

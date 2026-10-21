@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorens kuchi: zaryadli zarra magnit maydonda | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: magnit maydonda zaryadli zarra harakati — Lorens kuchi, aylana va vint chiziq bo‘ylab harakat, davr tezlikka bog‘liq emasligi; mass-spektrometr (tezlik selektori, izotoplar, massani o‘lchash) va siklotron (rezonans, energiya).">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/lorentz.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Lorens kuchi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="lorSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
+      <h1>Magnit maydonda zaryadli zarra</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="lor" aria-pressed="true">Lorens kuchi</button>
+            <button type="button" data-mode-value="ms" aria-pressed="false">Mass-spektrometr</button>
+            <button type="button" data-mode-value="cyc" aria-pressed="false">Siklotron</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Magnit maydonda zaryadli zarra"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-action></button>
+          <label class="sim-switch"><input type="checkbox" data-toggle="vec" checked><span class="sim-switch__ui"></span>Vektorlar</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card hidden>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="lor">
+        <span class="sim-group__title">Zarra va maydon</span>
+        <div class="of-segment" role="group" aria-label="Zarra" data-part>
+          <button type="button" data-part-value="e" aria-pressed="false">Elektron</button>
+          <button type="button" data-part-value="p" aria-pressed="true">Proton</button>
+          <button type="button" data-part-value="a" aria-pressed="false">Alfa</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="Ko‘rinish" data-view>
+          <button type="button" data-view-value="plane" aria-pressed="true">v ⊥ B</button>
+          <button type="button" data-view-value="helix" aria-pressed="false">Vint chiziq</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="lV">Tezlik v</label><output for="lV" id="lVOut"></output></div>
+          <input class="sim-range" type="range" id="lV" min="0.2" max="2" step="0.05" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="lB">Magnit induksiya B</label><output for="lB" id="lBOut"></output></div>
+          <input class="sim-range" type="range" id="lB" min="0.25" max="2" step="0.05" value="1">
+        </div>
+        <div class="sim-control" data-vctl="helix">
+          <div class="sim-control__row"><label for="lA">v va B orasidagi burchak α</label><output for="lA" id="lAOut"></output></div>
+          <input class="sim-range" type="range" id="lA" min="10" max="90" step="1" value="60">
+        </div>
+        <p class="of-subtle">Manbani, v vektori uchini va maydon chegarasini suring; B yo‘nalishini maydondagi belgini bosib almashtiring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="ms">
+        <span class="sim-group__title">Mass-spektrometr</span>
+        <div class="of-segment" role="group" aria-label="Namuna" data-iso style="display:grid;grid-template-columns:1fr 1fr">
+          <button type="button" data-iso-value="H" aria-pressed="false">H, D, T</button>
+          <button type="button" data-iso-value="C" aria-pressed="false">¹²C, ¹³C</button>
+          <button type="button" data-iso-value="Ne" aria-pressed="true">²⁰Ne, ²²Ne</button>
+          <button type="button" data-iso-value="Cl" aria-pressed="false">³⁵Cl, ³⁷Cl</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mU">Tezlatuvchi kuchlanish U</label><output for="mU" id="mUOut"></output></div>
+          <input class="sim-range" type="range" id="mU" min="200" max="3000" step="50" value="1000">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mB">Magnit induksiya B</label><output for="mB" id="mBOut"></output></div>
+          <input class="sim-range" type="range" id="mB" min="0.05" max="0.5" step="0.01" value="0.2">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-sel><span class="sim-switch__ui"></span>Tezlik selektori (E ⊥ B₁)</label>
+        <div class="sim-control" data-selctl>
+          <div class="sim-control__row"><label for="mE">Selektordagi maydon E</label><output for="mE" id="mEOut"></output></div>
+          <input class="sim-range" type="range" id="mE" min="1" max="60" step="0.1" value="9.8">
+        </div>
+        <p class="of-subtle">Plastinkadagi o‘lchagichni dog‘ ustiga surib, ion massasini aniqlang.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="cyc">
+        <span class="sim-group__title">Siklotron</span>
+        <div class="of-segment" role="group" aria-label="Zarra" data-cpart>
+          <button type="button" data-cpart-value="p" aria-pressed="true">Proton</button>
+          <button type="button" data-cpart-value="a" aria-pressed="false">Alfa-zarra</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cB">Magnit induksiya B</label><output for="cB" id="cBOut"></output></div>
+          <input class="sim-range" type="range" id="cB" min="0.3" max="1.5" step="0.05" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cU">Generator kuchlanishi U₀</label><output for="cU" id="cUOut"></output></div>
+          <input class="sim-range" type="range" id="cU" min="20" max="200" step="5" value="100">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cF">Generator chastotasi f</label><output for="cF" id="cFOut"></output></div>
+          <input class="sim-range" type="range" id="cF" min="0.8" max="1.2" step="0.005" value="1">
+        </div>
+        <p class="of-subtle">Generator dastagini burab chastotani o‘zgartiring; «Rezonansga sozlash» — f = qB/2πm.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Lorens kuchi: <span class="sim-math">F = |q|vB·sin α</span>, yo‘nalishi — chap qo‘l qoidasi (manfiy zaryadda teskari)</li>
+        <li>Aylana: <span class="sim-math">r = mv/(|q|B)</span>, <span class="sim-math">T = 2πm/(|q|B)</span> — tezlikka bog‘liq emas</li>
+        <li>Vint chiziq: <span class="sim-math">r = mv·sin α/(|q|B)</span>, qadam <span class="sim-math">h = v·cos α·T</span></li>
+        <li>Mass-spektrometr: <span class="sim-math">qU = mv²/2</span>, <span class="sim-math">r = √(2mU/q)/B</span>, <span class="sim-math">m = qB²r²/(2U)</span>; selektor: <span class="sim-math">v = E/B₁</span></li>
+        <li>Siklotron: <span class="sim-math">f = qB/(2πm)</span>, <span class="sim-math">W<sub>max</sub> = (qBR)²/(2m)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Tezliklar yorug‘lik tezligidan ancha kichik (nisbiylik hisobga olinmaydi), og‘irlik kuchi va zarralarning o‘zaro ta’siri sezilarsiz. Harakat sekinlashtirib ko‘rsatiladi: haqiqiy davrlar nanosekundlar.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dispersiya, kamalak va qutblanish | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: prizmada oq yorug‘likning spektrga ajralishi, n(λ), Nyuton tajribalari; tomchida kamalak hosil bo‘lishi — birlamchi va ikkilamchi kamalak; yorug‘likning qutblanishi, Malyus qonuni, uch polyaroid, qaytishda qutblanish va Bryuster burchagi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/dispersion.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Dispersiya, kamalak va qutblanish" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="dispSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge">Optika</span>
+      <h1>Dispersiya, kamalak va qutblanish</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="prism" aria-pressed="true">Prizmada dispersiya</button>
+            <button type="button" data-mode-value="rainbow" aria-pressed="false">Kamalak</button>
+            <button type="button" data-mode-value="pol" aria-pressed="false">Qutblanish</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Yorug‘lik tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play data-ctl="pol"><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <label class="sim-switch" data-ctl="prism"><input type="checkbox" data-toggle="newton"><span class="sim-switch__ui"></span>Ikkinchi prizma (Nyuton)</label>
+          <label class="sim-switch" data-ctl="prism"><input type="checkbox" data-toggle="mono"><span class="sim-switch__ui"></span>Bitta rangni ajratish</label>
+          <label class="sim-switch" data-ctl="rainbow"><input type="checkbox" data-toggle="fan" checked><span class="sim-switch__ui"></span>Ko‘p nurlar</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+        <div class="sim-btnrow" data-meas-tools hidden style="padding:0 16px 12px">
+          <button class="of-btn of-btn--sm" type="button" data-meas-add>O‘lchovni yozish</button>
+          <button class="of-btn of-btn--sm" type="button" data-meas-clear>Tozalash</button>
+        </div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="prism">
+        <span class="sim-group__title">Prizma</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="pG">Material</label></div>
+          <select class="sim-select" id="pG" aria-label="Prizma materiali"></select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="pA">Sindiruvchi burchak A</label><output for="pA" id="pAOut"></output></div>
+          <input class="sim-range" type="range" id="pA" min="30" max="75" step="1" value="60">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="pI">Tushish burchagi α</label><output for="pI" id="pIOut"></output></div>
+          <input class="sim-range" type="range" id="pI" min="20" max="85" step="0.5" value="50">
+        </div>
+        <div class="sim-control" data-mono-ctl hidden>
+          <div class="sim-control__row"><label for="pL">Ajratilgan rang λ</label><output for="pL" id="pLOut"></output></div>
+          <input class="sim-range" type="range" id="pL" min="400" max="700" step="5" value="580">
+        </div>
+        <p class="of-subtle">Nur manbasini (sariq doira) suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="rainbow">
+        <span class="sim-group__title">Suv tomchisi</span>
+        <div class="of-segment" role="group" aria-label="Kamalak" data-bow>
+          <button type="button" data-bow-value="1" aria-pressed="true">Birlamchi</button>
+          <button type="button" data-bow-value="2" aria-pressed="false">Ikkilamchi</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rB">Nurning tushish balandligi b/R</label><output for="rB" id="rBOut"></output></div>
+          <input class="sim-range" type="range" id="rB" min="0" max="0.99" step="0.01" value="0.86">
+        </div>
+        <p class="of-subtle">Ajratilgan oq nurni yuqori-pastga suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="pol">
+        <span class="sim-group__title">Qutblanish</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-psub>
+          <button type="button" data-psub-value="malus" aria-pressed="true">Polyaroidlar</button>
+          <button type="button" data-psub-value="brew" aria-pressed="false">Qaytishda</button>
+        </div>
+        <div class="sim-control" data-pctl="malus">
+          <div class="sim-control__row"><label for="q1">Polyarizator o‘qi</label><output for="q1" id="q1Out"></output></div>
+          <input class="sim-range" type="range" id="q1" min="0" max="180" step="1" value="0">
+        </div>
+        <label class="sim-switch" data-pctl="malus"><input type="checkbox" data-mid><span class="sim-switch__ui"></span>O‘rtaga uchinchi polyaroid</label>
+        <div class="sim-control" data-pctl="malus" data-mid-ctl hidden>
+          <div class="sim-control__row"><label for="q2">O‘rtadagi polyaroid o‘qi</label><output for="q2" id="q2Out"></output></div>
+          <input class="sim-range" type="range" id="q2" min="0" max="180" step="1" value="45">
+        </div>
+        <div class="sim-control" data-pctl="malus">
+          <div class="sim-control__row"><label for="q3">Analizator o‘qi</label><output for="q3" id="q3Out"></output></div>
+          <input class="sim-range" type="range" id="q3" min="0" max="180" step="1" value="30">
+        </div>
+        <div class="sim-control" data-pctl="brew">
+          <div class="sim-control__row"><label for="bA">Tushish burchagi α</label><output for="bA" id="bAOut"></output></div>
+          <input class="sim-range" type="range" id="bA" min="0" max="89" step="0.5" value="40">
+        </div>
+        <div class="sim-control" data-pctl="brew">
+          <div class="sim-control__row"><label for="bN">Shisha sindirish ko‘rsatkichi n</label><output for="bN" id="bNOut"></output></div>
+          <input class="sim-range" type="range" id="bN" min="1.2" max="2.4" step="0.01" value="1.5">
+        </div>
+        <div class="sim-control" data-pctl="brew">
+          <div class="sim-control__row"><label for="bF">Analizator o‘qi (s-yo‘nalishdan)</label><output for="bF" id="bFOut"></output></div>
+          <input class="sim-range" type="range" id="bF" min="0" max="180" step="1" value="90">
+        </div>
+        <p class="of-subtle">Polyaroid disklarini sichqoncha bilan aylantiring (chapga-o‘ngga suring).</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Dispersiya: <span class="sim-math">n = n(λ)</span>, Koshi formulasi <span class="sim-math">n ≈ A + B/λ²</span> — binafsha nur kuchliroq sinadi</li>
+        <li>Prizmada og‘ish: <span class="sim-math">δ = α₁ + α₂ − A</span>, rangga qarab turlicha</li>
+        <li>Kamalak: tomchida og‘ish <span class="sim-math">D = k·180° + 2i − 2(k+1)r</span>; birlamchi ≈ 42°, ikkilamchi ≈ 51°</li>
+        <li>Malyus qonuni: <span class="sim-math">I = I₀·cos²θ</span>; qutblanmagan nur polyaroiddan keyin <span class="sim-math">I₀/2</span></li>
+        <li>Bryuster qonuni: <span class="sim-math">tg α<sub>B</sub> = n</span> — qaytgan nur to‘liq qutblangan</li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Shishalarning n(λ) qiymatlari haqiqiy kataloglardagi F va C chiziqlari bo‘yicha Koshi formulasiga moslangan. Prizmadagi nurlar 2D nur kuzatuvchi bilan aniq hisoblanadi; burchaklar yaqqol bo‘lishi uchun spektr yoyilishi chizmada kattalashtirilmagan.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
