@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bor postulatlari — virtual laboratoriya | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya ishi: Bor postulatlarini tekshirish. Frank–Gers tajribasi (simob, neon) — anod toki maksimumlari va birinchi uyg‘otish energiyasi; vodorod spektrining Balmer seriyasi — difraksion panjarali spektrometr, Ridberg doimiysi. Natijalarni daftarga kiritib, LaTeX uslubidagi hisobotni PDF va .tex ko‘rinishida yuklab oling.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<link rel="stylesheet" href="../assets/css/lab-notebook.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/bohr.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Bor postulatlari" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="bohrSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--purple">Atom fizikasi</span>
+      <h1>Bor postulatlarini tekshirish</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba">
+            <button type="button" data-mode-value="fh" aria-pressed="true">1. Frank–Gers tajribasi</button>
+            <button type="button" data-mode-value="spec" aria-pressed="false">2. Vodorod spektri</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Laboratoriya qurilmasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset></button>
+          <button class="of-btn of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card hidden>
+        <div class="sim-graph__bar"><h2>Yozib oluvchi: anod toki I(U)</h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Anod tokining kuchlanishga bog‘liqligi"></canvas></div>
+        <p class="sim-graph__caption">Kuchlanishni o‘zgartirganingizda har bir nuqta yozib olinadi. Sichqonchani grafik ustida yurgizing — eng yaqin nuqtaning U va I qiymati ko‘rsatiladi. Maksimumlarni aniqlab, 1-jadvalga yozing.</p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="fh">
+        <span class="sim-group__title">Frank–Gers trubkasi</span>
+        <div class="of-segment" role="group" aria-label="Gaz" data-gas>
+          <button type="button" data-gas-value="Hg" aria-pressed="true">Simob (Hg)</button>
+          <button type="button" data-gas-value="Ne" aria-pressed="false">Neon (Ne)</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="fU">Tezlatuvchi kuchlanish U</label><output for="fU" id="fUOut"></output></div><input class="sim-range" type="range" id="fU" min="0" max="30" step="0.05" value="0"></div>
+        <div class="sim-control" data-hg-only><div class="sim-control__row"><label for="fT">Pech harorati T</label><output for="fT" id="fTOut"></output></div><input class="sim-range" type="range" id="fT" min="140" max="200" step="5" value="170"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="fUr">Tormozlovchi kuchlanish U<sub>r</sub></label><output for="fUr" id="fUrOut"></output></div><input class="sim-range" type="range" id="fUr" min="0.5" max="3" step="0.1" value="1.5"></div>
+        <p class="of-subtle">Kuchlanishni sahnadagi dastak yoki «±» tugmalari bilan o‘zgartiring; «Avtomatik skanerlash» butun egri chiziqni yozib oladi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="spec">
+        <span class="sim-group__title">Spektrometr</span>
+        <div class="of-segment" role="group" aria-label="Difraksion panjara" data-gr>
+          <button type="button" data-gr-value="300" aria-pressed="false">300 chiziq/mm</button>
+          <button type="button" data-gr-value="600" aria-pressed="true">600 chiziq/mm</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="sPhi">Teleskop burchagi (shkala)</label><output for="sPhi" id="sPhiOut"></output></div><input class="sim-range" type="range" id="sPhi" min="-70" max="70" step="0.01" value="0"></div>
+        <p class="of-subtle">Teleskopni sahnada surib qo‘pol, okulyar ostidagi tugmalar bilan aniq (0,01°) burang. Chiziqni vizir chizig‘iga keltirib «Yozib olish» ni bosing.</p>
+      </div>
+
+      <div class="sim-group" data-ctl="spec">
+        <span class="sim-group__title">Goniometr jurnali</span>
+        <ol class="lab-journal" data-journal></ol>
+        <button class="of-btn of-btn--sm" type="button" data-journal-clear>Jurnalni tozalash</button>
+      </div>
+    </aside>
+  </div>
+
+  <section class="of-card lab-nb" id="labNotebook" aria-labelledby="nbTitle">
+    <header class="lab-nb__head">
+      <div>
+        <span class="of-badge of-badge--green">Laboratoriya ishi</span>
+        <h2 id="nbTitle">Laboratoriya daftari</h2>
+        <p class="of-subtle">Ikkala tajribani bajaring, natijalarni jadvallarga kiriting — hisoblashlar avtomatik bajariladi. Oxirida LaTeX uslubidagi hisobotni PDF yoki .tex ko‘rinishida yuklab olasiz.</p>
+      </div>
+      <div class="lab-nb__progress" data-nb-progress></div>
+    </header>
+
+    <ol class="lab-steps">
+      <li class="lab-step">
+        <h3><span class="lab-step__n">1</span>Bajaruvchi</h3>
+        <div class="lab-grid">
+          <label class="of-field"><span class="of-label">F.I.Sh. <b class="lab-req">*</b></span><input class="of-input" data-f="name" autocomplete="name" placeholder="Familiya Ism"></label>
+          <label class="of-field"><span class="of-label">Guruh / sinf</span><input class="of-input" data-f="group" placeholder="masalan, 11-A yoki FZ-21"></label>
+          <label class="of-field"><span class="of-label">O‘quv muassasasi</span><input class="of-input" data-f="school" placeholder="maktab, litsey yoki OTM"></label>
+          <label class="of-field"><span class="of-label">O‘qituvchi</span><input class="of-input" data-f="teacher" placeholder="F.I.Sh."></label>
+          <label class="of-field"><span class="of-label">Sana</span><input class="of-input" type="date" data-f="date"></label>
+        </div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">2</span>1-topshiriq. Frank–Gers tajribasi: tok maksimumlari</h3>
+        <p class="of-subtle">I(U) egri chizig‘idagi har bir maksimumning tartib raqami k va kuchlanishi U<sub>k</sub> ni yozing (kamida 3 ta). Birinchi maksimum k = 1.</p>
+        <div class="lab-cond">
+          <label class="of-field"><span class="of-label">Gaz</span><select class="of-input" data-c="gas"><option value="Hg">Simob (Hg)</option><option value="Ne">Neon (Ne)</option></select></label>
+          <label class="of-field" data-c-hg><span class="of-label">Pech harorati, °C</span><select class="of-input" data-c="T"></select></label>
+          <label class="of-field"><span class="of-label">U<sub>r</sub>, V</span><select class="of-input" data-c="Ur"></select></label>
+          <button class="of-btn of-btn--sm" type="button" data-cond-sync>Qurilmadagi sozlamani olish</button>
+        </div>
+        <div class="lab-table-wrap">
+          <table class="lab-table lab-table--narrow" data-t1>
+            <thead><tr><th>№</th><th>Maksimum k</th><th>U<sub>k</sub>, V</th><th>ΔU<sub>k</sub> = U<sub>k</sub> − U<sub>k−1</sub>, V</th><th title="Qurilmadagi haqiqiy maksimumga mosligi">Tekshiruv</th><th><span class="of-sr-only">O‘chirish</span></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="lab-actions"><button class="of-btn of-btn--sm" type="button" data-add="t1">+ Qator qo‘shish</button><span class="lab-msg" data-t1-msg></span></div>
+        <div class="lab-summary" data-t1-sum></div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">3</span>2-topshiriq. Vodorodning Balmer seriyasi</h3>
+        <p class="of-subtle">Har bir chiziq uchun chap va o‘ng tomondagi teleskop burchaklarini yozing (kamida 3 ta turli chiziq). φ = (φ<sub>o‘ng</sub> − φ<sub>chap</sub>)/2 — shkala nol nuqtasining siljishini yo‘qotadi.</p>
+        <div class="lab-cond">
+          <label class="of-field"><span class="of-label">Difraksion panjara</span><select class="of-input" data-c="gr"><option value="300">300 chiziq/mm</option><option value="600">600 chiziq/mm</option></select></label>
+          <button class="of-btn of-btn--sm" type="button" data-cond-sync2>Qurilmadagi sozlamani olish</button>
+        </div>
+        <div class="lab-table-wrap">
+          <table class="lab-table" data-t2>
+            <thead><tr><th>№</th><th>Chiziq</th><th>Tartib k</th><th>φ<sub>chap</sub>, °</th><th>φ<sub>o‘ng</sub>, °</th><th>φ, °</th><th>λ, nm</th><th>R, m⁻¹</th><th>Jurnal</th><th><span class="of-sr-only">O‘chirish</span></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="lab-actions"><button class="of-btn of-btn--sm" type="button" data-add="t2">+ Qator qo‘shish</button><span class="lab-msg" data-t2-msg></span></div>
+        <div class="lab-summary" data-t2-sum></div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">4</span>Xulosa</h3>
+        <label class="of-field"><span class="of-label">O‘z xulosangizni yozing <b class="lab-req">*</b></span><textarea class="of-input lab-textarea" data-f="conclusion" rows="5" placeholder="Frank–Gers tajribasi atom energiyasining diskretligini tasdiqlaydimi? Balmer chiziqlari Bor formulasiga mosmi? Topilgan R va ionlanish energiyasi qanday?"></textarea></label>
+        <div class="lab-actions"><button class="of-btn of-btn--sm" type="button" data-conclusion-hint>Yordamchi savollar</button><span class="lab-msg" data-hint-msg></span></div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">5</span>Lab varaq (hisobot)</h3>
+        <p class="of-subtle">Hisobot LaTeX uslubida teriladi: Bor postulatlari, nazariya, ish tartibi, ikkala tajriba jadvallari, grafiklar (yozib olingan I(U) egri chizig‘i bilan), raqamlar qo‘yilgan hisoblashlar, chastotalar qoidasini tekshirish jadvali, xulosa, sayt havolasi va QR kod.</p>
+        <div class="lab-actions">
+          <button class="of-btn" type="button" data-build>Ko‘rib chiqish</button>
+          <button class="of-btn of-btn--primary" type="button" data-pdf>PDF yuklab olish</button>
+          <button class="of-btn" type="button" data-tex>LaTeX (.tex)</button>
+          <span class="lab-msg" data-build-msg role="status" aria-live="polite"></span>
+        </div>
+        <p class="of-subtle lab-hint">PDF: yangi oynada chop etish oynasi ochiladi — «Saqlash: PDF» (Save as PDF) ni tanlang. LaTeX: manba fayl — Overleaf yoki boshqa TeX tizimida pdfLaTeX bilan kompilyatsiya qilinadi.</p>
+        <div class="lab-preview" data-preview hidden></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Bor postulatlari</h2>
+      <ul>
+        <li><b>1-postulat:</b> atom faqat statsionar holatlarda bo‘ladi, ularning energiyasi diskret: <span class="sim-math">E<sub>n</sub> = −13,6 eV / n²</span>; <span class="sim-math">m v r<sub>n</sub> = nħ</span></li>
+        <li><b>2-postulat:</b> o‘tishda bitta foton chiqadi: <span class="sim-math">hν = E<sub>n</sub> − E<sub>m</sub></span></li>
+        <li>Balmer seriyasi: <span class="sim-math">1/λ = R(1/2² − 1/n²)</span>, n = 3, 4, 5, 6</li>
+        <li>Difraksion panjara: <span class="sim-math">d·sin φ = kλ</span></li>
+        <li>Frank–Gers: <span class="sim-math">E<sub>1</sub> = eΔU</span>, <span class="sim-math">λ = hc/(eΔU)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Frank–Gers modeli: elektron energiyasi uyg‘otish energiyasiga yetgach, qisqa masofada atomni uyg‘otadi; tok maksimumlari orasidagi masofa uyg‘otish energiyasiga teng. Spektrometrda to‘lqin uzunliklari vakuum uchun (R<sub>H</sub> = 1,09678·10⁷ m⁻¹).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

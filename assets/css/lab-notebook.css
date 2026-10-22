@@ -1,0 +1,78 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — virtual laboratoriya daftari (natijalarni kiritish, jadval, lab varaq ko‘rinishi)
+   Tuzilma: .lab-nb → .lab-steps → .lab-step (.lab-grid | .lab-cond | .lab-table | .lab-summary | .lab-preview)
+   ========================================================================== */
+
+.of-segment--wrap { display: flex; flex-wrap: wrap; }
+.of-segment--wrap button { padding: 0 10px; }
+
+/* Qurilma pasporti va jurnal (o‘ng panel) */
+.lab-passport { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; font-size: var(--of-text-sm); }
+.lab-passport dt { color: var(--of-text-3); }
+.lab-passport dd { margin: 0; color: var(--of-text); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.lab-journal { list-style: none; margin: 0 0 var(--of-space-2); padding: 0; display: flex; flex-direction: column; gap: 4px; max-height: 260px; overflow: auto; font-size: var(--of-text-xs); }
+.lab-journal li { display: grid; grid-template-columns: 26px 1fr auto; gap: 8px; align-items: baseline; padding: 6px 8px; border-radius: var(--of-radius-sm); background: var(--of-surface-2); font-variant-numeric: tabular-nums; }
+.lab-journal li.is-new { background: var(--of-success-soft); }
+.lab-journal__n { color: var(--of-text-3); font-weight: 700; }
+.lab-journal__m { color: var(--of-text-2); }
+.lab-journal__v { color: var(--of-text); font-weight: 700; }
+.lab-journal:empty::before { content: "Hali o‘lchov yo‘q"; color: var(--of-text-3); padding: 6px 2px; }
+
+/* Daftar */
+.lab-nb, .lab-steps, .lab-step, .lab-table-wrap, .lab-preview { min-width: 0; max-width: 100%; }
+.lab-nb { padding: var(--of-space-6); display: flex; flex-direction: column; gap: var(--of-space-5); }
+.lab-nb__head { display: flex; justify-content: space-between; gap: var(--of-space-4); flex-wrap: wrap; align-items: flex-start; }
+.lab-nb__head h2 { font-size: var(--of-text-xl, 1.35rem); margin: 8px 0 4px; }
+.lab-nb__progress { display: flex; gap: 6px; flex-wrap: wrap; }
+.lab-nb__progress span { font-size: var(--of-text-xs); font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--of-surface-sunken); color: var(--of-text-3); }
+.lab-nb__progress span.is-done { background: var(--of-success-soft); color: var(--of-success-text); }
+
+.lab-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--of-space-6); }
+.lab-step { display: flex; flex-direction: column; gap: var(--of-space-3); padding-top: var(--of-space-5); border-top: 1px solid var(--of-border); }
+.lab-step:first-child { border-top: 0; padding-top: 0; }
+.lab-step h3 { display: flex; align-items: center; gap: 10px; font-size: var(--of-text-md); margin: 0; }
+.lab-step__n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--of-primary); color: #fff; font-size: var(--of-text-sm); font-weight: 700; }
+.lab-req { color: var(--of-danger); font-weight: 700; }
+
+.lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--of-space-3) var(--of-space-4); }
+.lab-cond { display: flex; flex-wrap: wrap; gap: var(--of-space-3); align-items: flex-end; }
+.lab-cond .of-field { min-width: 160px; }
+.lab-textarea { min-height: 120px; resize: vertical; line-height: 1.55; padding-top: 10px; height: auto; }
+select.of-input { padding-right: 28px; }
+
+.lab-table-wrap { position: relative; overflow-x: auto; border: 1px solid var(--of-border); border-radius: var(--of-radius-md); }
+.lab-table { width: 100%; border-collapse: collapse; font-size: var(--of-text-sm); font-variant-numeric: tabular-nums; min-width: 720px; }
+.lab-table th { background: var(--of-surface-2); color: var(--of-text-2); font-weight: 700; text-align: center; padding: 8px 6px; border-bottom: 1px solid var(--of-border); white-space: nowrap; font-size: var(--of-text-xs); }
+.lab-table td { padding: 4px 6px; border-bottom: 1px solid var(--of-border); text-align: center; color: var(--of-text); }
+.lab-table tr:last-child td { border-bottom: 0; }
+.lab-table td.lab-calc { color: var(--of-text-2); }
+.lab-table td.lab-idx { color: var(--of-text-3); font-weight: 700; width: 34px; }
+.lab-table input, .lab-table select { width: 100%; min-width: 64px; height: 34px; padding: 0 8px; border: 1px solid var(--of-border); border-radius: var(--of-radius-sm); background: var(--of-surface); color: var(--of-text); font: inherit; text-align: center; }
+.lab-table select { min-width: 90px; text-align: left; }
+.lab-table input:focus, .lab-table select:focus { outline: none; border-color: var(--of-primary); box-shadow: var(--of-focus-ring); }
+.lab-table input[aria-invalid="true"] { border-color: var(--of-danger); }
+.lab-table tr.is-bad td { background: var(--of-danger-soft, rgba(220, 38, 38, 0.06)); }
+.lab-del { width: 30px; height: 30px; border: 0; border-radius: var(--of-radius-sm); background: transparent; color: var(--of-text-3); cursor: pointer; font-size: 18px; line-height: 1; }
+.lab-del:hover { background: var(--of-surface-sunken); color: var(--of-danger); }
+.lab-ok { color: var(--of-success-text); font-weight: 700; }
+.lab-no { color: var(--of-warning-text, #b45309); font-weight: 700; }
+
+.lab-actions { display: flex; flex-wrap: wrap; gap: var(--of-space-3); align-items: center; }
+.lab-msg { font-size: var(--of-text-sm); color: var(--of-text-2); }
+.lab-msg[data-tone="red"] { color: var(--of-danger-text); }
+.lab-msg[data-tone="green"] { color: var(--of-success-text); }
+
+.lab-summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--of-space-3); }
+.lab-summary:empty { display: none; }
+.lab-summary div { padding: 10px 12px; border-radius: var(--of-radius-md); background: var(--of-surface-2); display: flex; flex-direction: column; gap: 2px; }
+.lab-summary span { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.lab-summary b { font-size: var(--of-text-md); color: var(--of-text); font-variant-numeric: tabular-nums; }
+.lab-summary small { font-size: var(--of-text-xs); color: var(--of-text-2); }
+
+.lab-preview { display: flex; gap: var(--of-space-4); overflow-x: auto; padding: var(--of-space-4); border-radius: var(--of-radius-md); background: var(--of-surface-sunken); }
+.lab-preview canvas { flex: none; width: min(420px, 82vw); height: auto; background: #fff; border-radius: 4px; box-shadow: var(--of-shadow-md, 0 6px 18px rgba(15, 23, 42, 0.18)); }
+@container (max-width: 560px) { .lab-nb { padding: var(--of-space-4); } }
+.lab-frame { display: block; width: 100%; height: min(80vh, 900px); border: 0; border-radius: var(--of-radius-md); background: #e8ebf0; }
+.lab-preview:has(.lab-frame) { padding: 0; overflow: hidden; }
+.lab-hint { font-size: var(--of-text-xs); }
+.lab-table--narrow { min-width: 480px; }
