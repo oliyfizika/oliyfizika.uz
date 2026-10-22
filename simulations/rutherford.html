@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rezerford tajribasi — virtual laboratoriya | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya ishi: α-zarralarning yupqa oltin folgada sochilishi (Rezerford tajribasi). Detektor bilan N(θ) ni o‘lchang, natijalarni daftarga kiriting, Rezerford formulasini tekshiring, yadro zaryadi Z ni toping va lab varaqni PDF ko‘rinishida yuklab oling.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<link rel="stylesheet" href="../assets/css/lab-notebook.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/rutherford.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Rezerford tajribasi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="rutherfordSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--purple">Atom fizikasi</span>
+      <h1>Rezerford tajribasi: α-zarralarning sochilishi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Ko‘rinish">
+            <button type="button" data-mode-value="lab" aria-pressed="true">Qurilma</button>
+            <button type="button" data-mode-value="micro" aria-pressed="false">Yadro yaqinida</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Rezerford tajribasi qurilmasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action>Sanashni boshlash</button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card hidden>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Folga va manba</span>
+        <div class="of-segment" role="group" aria-label="Folga moddasi" data-mat>
+          <button type="button" data-mat-value="Au" aria-pressed="true">Au</button>
+          <button type="button" data-mat-value="Ag" aria-pressed="false">Ag</button>
+          <button type="button" data-mat-value="Cu" aria-pressed="false">Cu</button>
+          <button type="button" data-mat-value="Al" aria-pressed="false">Al</button>
+        </div>
+        <div class="sim-control" data-ctl="lab"><div class="sim-control__row"><label for="rT">Folga qalinligi t</label><output for="rT" id="rTOut"></output></div><input class="sim-range" type="range" id="rT" min="0.5" max="4" step="0.5" value="2"></div>
+        <div class="of-segment" role="group" aria-label="α-manba" data-src>
+          <button type="button" data-src-value="am" aria-pressed="true">Am-241</button>
+          <button type="button" data-src-value="po" aria-pressed="false">Po-210</button>
+          <button type="button" data-src-value="rac" aria-pressed="false">Ra-C′</button>
+        </div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="lab">
+        <span class="sim-group__title">Detektor va sanagich</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="rTh">Detektor burchagi θ</label><output for="rTh" id="rThOut"></output></div><input class="sim-range" type="range" id="rTh" min="-160" max="160" step="1" value="30"></div>
+        <div class="sim-control"><div class="sim-control__row"><label>Sanash vaqti t</label></div>
+          <div class="of-segment of-segment--wrap" role="group" aria-label="Sanash vaqti" data-time>
+            <button type="button" data-time-value="10">10 s</button><button type="button" data-time-value="30">30 s</button><button type="button" data-time-value="60">60 s</button><button type="button" data-time-value="100">100 s</button><button type="button" data-time-value="300">300 s</button><button type="button" data-time-value="600">600 s</button><button type="button" data-time-value="1200">1200 s</button>
+          </div>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label>Vaqtni tezlashtirish</label></div>
+          <div class="of-segment" role="group" aria-label="Tezlashtirish" data-speed>
+            <button type="button" data-speed-value="1">×1</button><button type="button" data-speed-value="10">×10</button><button type="button" data-speed-value="100">×100</button><button type="button" data-speed-value="1000">×1000</button>
+          </div>
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-vacuum checked><span class="sim-switch__ui"></span>Vakuum nasosi ishlayapti</label>
+        <p class="of-subtle">Detektorni sahnada surib burchakni tanlang. Tezlashtirish faqat kutish vaqtini qisqartiradi — sanoq natijasi o‘zgarmaydi.</p>
+      </div>
+
+      <div class="sim-group" data-ctl="lab">
+        <span class="sim-group__title">Qurilma pasporti</span>
+        <dl class="lab-passport" data-passport></dl>
+      </div>
+
+      <div class="sim-group" data-ctl="lab">
+        <span class="sim-group__title">O‘lchovlar jurnali</span>
+        <p class="of-subtle">Har bir tugallangan sanoq bu yerga yoziladi. Natijalarni pastdagi laboratoriya daftariga o‘zingiz kiriting.</p>
+        <ol class="lab-journal" data-journal></ol>
+        <button class="of-btn of-btn--sm" type="button" data-journal-clear>Jurnalni tozalash</button>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="micro">
+        <span class="sim-group__title">Yadro yaqinida</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="rB">Nishon masofasi b</label><output for="rB" id="rBOut"></output></div><input class="sim-range" type="range" id="rB" min="0" max="150" step="1" value="25"></div>
+        <label class="sim-switch"><input type="checkbox" data-fan checked><span class="sim-switch__ui"></span>Boshqa traektoriyalar</label>
+        <p class="of-subtle">Chap tomondagi α-zarrani yuqoriga-pastga surib nishon masofasini o‘zgartiring.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="of-card lab-nb" id="labNotebook" aria-labelledby="nbTitle">
+    <header class="lab-nb__head">
+      <div>
+        <span class="of-badge of-badge--green">Laboratoriya ishi</span>
+        <h2 id="nbTitle">Laboratoriya daftari</h2>
+        <p class="of-subtle">Qurilmada o‘lchang, natijalarni jadvalga kiriting — hisoblashlar avtomatik bajariladi. Oxirida lab varaqni PDF ko‘rinishida yuklab olasiz.</p>
+      </div>
+      <div class="lab-nb__progress" data-nb-progress></div>
+    </header>
+
+    <ol class="lab-steps">
+      <li class="lab-step">
+        <h3><span class="lab-step__n">1</span>Bajaruvchi</h3>
+        <div class="lab-grid">
+          <label class="of-field"><span class="of-label">F.I.Sh. <b class="lab-req">*</b></span><input class="of-input" data-f="name" autocomplete="name" placeholder="Familiya Ism"></label>
+          <label class="of-field"><span class="of-label">Guruh / sinf</span><input class="of-input" data-f="group" placeholder="masalan, 11-A yoki FZ-21"></label>
+          <label class="of-field"><span class="of-label">O‘quv muassasasi</span><input class="of-input" data-f="school" placeholder="maktab, litsey yoki OTM"></label>
+          <label class="of-field"><span class="of-label">O‘qituvchi</span><input class="of-input" data-f="teacher" placeholder="F.I.Sh."></label>
+          <label class="of-field"><span class="of-label">Sana</span><input class="of-input" type="date" data-f="date"></label>
+        </div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">2</span>1-jadval. Sanoq sonining sochilish burchagiga bog‘liqligi</h3>
+        <p class="of-subtle">Kamida 5 ta turli burchakda (masalan 15°…150°) o‘lchang. Kichik burchaklarda sanoq katta — qisqa vaqt yetarli; katta burchaklarda vaqtni oshiring (N ≥ 20 bo‘lsa, nisbiy xatolik ≤ 22%).</p>
+        <div class="lab-cond">
+          <label class="of-field"><span class="of-label">Folga</span><select class="of-input" data-c="mat"><option value="Au">Oltin (Au)</option><option value="Ag">Kumush (Ag)</option><option value="Cu">Mis (Cu)</option><option value="Al">Alyuminiy (Al)</option></select></label>
+          <label class="of-field"><span class="of-label">Qalinlik t, µm</span><select class="of-input" data-c="tUm"></select></label>
+          <label class="of-field"><span class="of-label">Manba</span><select class="of-input" data-c="src"><option value="am">Am-241 (5,49 MeV)</option><option value="po">Po-210 (5,30 MeV)</option><option value="rac">Ra-C′ (7,69 MeV)</option></select></label>
+          <button class="of-btn of-btn--sm" type="button" data-cond-sync>Qurilmadagi sozlamani olish</button>
+        </div>
+        <div class="lab-table-wrap">
+          <table class="lab-table" data-t1>
+            <thead><tr><th>№</th><th>θ, °</th><th>t, s</th><th>N</th><th>n = N/t, s⁻¹</th><th>sin⁴(θ/2)</th><th>K = n·sin⁴(θ/2), s⁻¹</th><th title="O‘lchovlar jurnali bilan mosligi">Jurnal</th><th><span class="of-sr-only">O‘chirish</span></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="lab-actions"><button class="of-btn of-btn--sm" type="button" data-add="t1">+ Qator qo‘shish</button><span class="lab-msg" data-t1-msg></span></div>
+        <div class="lab-summary" data-t1-sum></div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">3</span>2-jadval. Boshqa folgalar (ixtiyoriy)</h3>
+        <p class="of-subtle">Folga moddasini almashtirib, istalgan bitta burchakda o‘lchang: har bir modda uchun yadro zaryadi Z hisoblanadi va Mendeleyev jadvalidagi tartib raqami bilan solishtiriladi.</p>
+        <div class="lab-table-wrap">
+          <table class="lab-table" data-t2>
+            <thead><tr><th>№</th><th>Folga</th><th>t, µm</th><th>Manba</th><th>θ, °</th><th>t, s</th><th>N</th><th>Z (tajriba)</th><th>Jurnal</th><th><span class="of-sr-only">O‘chirish</span></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="lab-actions"><button class="of-btn of-btn--sm" type="button" data-add="t2">+ Qator qo‘shish</button></div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">4</span>Xulosa</h3>
+        <label class="of-field"><span class="of-label">O‘z xulosangizni yozing <b class="lab-req">*</b></span><textarea class="of-input lab-textarea" data-f="conclusion" rows="5" placeholder="Tajriba natijalari Rezerford formulasini tasdiqlaydimi? K = n·sin⁴(θ/2) qanchalik o‘zgarmas? Topilgan Z qanday? Yadro o‘lchami haqida nima deyish mumkin?"></textarea></label>
+        <div class="lab-actions"><button class="of-btn of-btn--sm" type="button" data-conclusion-hint>Yordamchi savollar</button><span class="lab-msg" data-hint-msg></span></div>
+      </li>
+
+      <li class="lab-step">
+        <h3><span class="lab-step__n">5</span>Lab varaq (hisobot)</h3>
+        <p class="of-subtle">Hisobot LaTeX uslubida teriladi: formulalar, jadvallar va grafiklar vektor ko‘rinishda. Ichida: maqsad, jihozlar, nazariya, ish tartibi, o‘lchash natijalari, grafiklar, raqamlar qo‘yilgan hisoblashlar, xulosa, sayt havolasi va QR kod.</p>
+        <div class="lab-actions">
+          <button class="of-btn" type="button" data-build>Ko‘rib chiqish</button>
+          <button class="of-btn of-btn--primary" type="button" data-pdf>PDF yuklab olish</button>
+          <button class="of-btn" type="button" data-tex>LaTeX (.tex)</button>
+          <span class="lab-msg" data-build-msg role="status" aria-live="polite"></span>
+        </div>
+        <p class="of-subtle lab-hint">PDF: yangi oynada chop etish oynasi ochiladi — «Saqlash: PDF» (Save as PDF) ni tanlang. LaTeX: manba fayl — Overleaf yoki boshqa TeX tizimida pdfLaTeX bilan kompilyatsiya qilinadi.</p>
+        <div class="lab-preview" data-preview hidden></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Rezerford formulasi: <span class="sim-math">dσ/dΩ = (zZe²/(4πε₀·4E))² / sin⁴(θ/2)</span></li>
+        <li>Sanoq tezligi: <span class="sim-math">n(θ) = I₀ · n<sub>a</sub>t · ΔΩ · dσ/dΩ</span>, demak <span class="sim-math">n·sin⁴(θ/2) = K = const</span></li>
+        <li>Yadro zaryadi: <span class="sim-math">Z = (4E / ze²k) · √(K / (I₀ n<sub>a</sub>t ΔΩ))</span>, <span class="sim-math">ke² = 1,44 MeV·fm</span></li>
+        <li>Nishon masofasi: <span class="sim-math">tg(θ/2) = d/(2b)</span>, <span class="sim-math">d = zZke²/E</span></li>
+        <li>Eng yaqin masofa: <span class="sim-math">r<sub>min</sub> = (d/2)(1 + 1/sin(θ/2))</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Yadro qo‘zg‘almas va nuqtaviy deb olinadi, α-zarra folgada bir marta sochiladi (folga yupqa). Elektronlarning ekranlashi va yadro kuchlari hisobga olinmaydi. Sanoq — Puasson statistikasiga bo‘ysunadigan tasodifiy son, xatoligi ΔN = √N.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
