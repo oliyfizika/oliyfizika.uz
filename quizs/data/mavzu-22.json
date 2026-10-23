@@ -83,10 +83,12 @@
     },
     {
       "q": "Garmonik tebranayotgan moddiy nuqta tezligining o'zgarishi siljish o'zgarishidan faza jihatdan qanday farq qiladi?",
-      "a": "Farq qilmaydi",
-      "b": "\u03c0/2 ga orqada",
-      "c": "\u03c0/2 ga oldinda",
-      "d": "\u03c0 ga oldinda",
+      "a": [
+        "Farq qilmaydi",
+        "\u03c0/2 ga orqada",
+        "\u03c0/2 ga oldinda",
+        "\u03c0 ga oldinda"
+      ],
       "c": 2
     },
     {
