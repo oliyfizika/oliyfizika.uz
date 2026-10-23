@@ -1,0 +1,262 @@
+\section{Prujinali mayatnik}
+
+\begin{enumerate}
+    \item Bikrligi 10 N/m bo‘lgan prujinaga qanday massali (kg) yuk osilsa, tebranish davri 1 s bo‘lgan mayatnik hosil bo‘ladi? $\pi^2=10$.
+    \begin{itemize}
+        \item[A)] 10.
+        \item[B)] 0,25.
+        \item[C)] 2,5.
+        \item[D)] 0,025.
+        
+    \end{itemize}
+
+    \item Prujinaga osilgan 200 g massali yuk bir minutda 30 marta tebranadi. Prujinaning bikrligi necha N/m? $\pi^2=10$. [1]
+    \begin{itemize}
+        \item[A)] 0,2.
+        \item[B)] 0,05.
+        \item[C)] 0,3.
+        \item[D)] 0,63.
+        
+    \end{itemize}
+
+    \item Bikrligi 200 N/m bo‘lgan prujinaga osilgan yuk 8 s da 10 marta tebrandi. Yukning massasi qanday (kg)? $\pi^2=10$.
+    \begin{itemize}
+        \item[A)] 3,6.
+        \item[B)] 3,2.
+        \item[C)] 2,5.
+        \item[D)] 1,6.
+        
+    \end{itemize}
+
+    \item Prujinali mayatnik, og‘irlik kuchi tezlanishi Yernikidan 4 marta katta bo‘lgan planetaga Yerdan olib o‘tildi. Bunda uning tebranish davri qanday o‘zgaradi?
+    \begin{itemize}
+        \item[A)] o‘zgarmaydi.
+        \item[B)] 2 marta ortadi.
+        \item[C)] 4 marta ortadi.
+        \item[D)] 2 marta kamayadi.
+        
+    \end{itemize}
+
+    \item Agar tebranishlar davri $T$ bo‘lgan prujinali mayatnikka osilgan yukning massasi $n$ marta oshirilsa, tebranishlar davri qanday bo‘ladi?
+    \begin{itemize}
+        \item[A)] $nT$
+        \item[B)] $n^2T$
+        \item[C)] $\frac{T}{\sqrt{n}}$
+        \item[D)] $\sqrt{n}T$
+        
+    \end{itemize}
+
+    \item Prujinali tebrangich (mayatnik) dagi yukning massasi 9 marta ortsa, bo‘ylama tebranishlar davri qanday o‘zgaradi?
+    \begin{itemize}
+        \item[A)] 3 marta kamayadi.
+        \item[B)] 3 marta ortadi.
+        \item[C)] o‘zgarmaydi.
+        \item[D)] 9 marta ortadi.
+        
+    \end{itemize}
+
+    \item Agar prujina 2 marta qisqartirilib, yukning massasi 2 marta orttirilsa, prujinali mayatnikning tebranish davri qanday o‘zgaradi? [3]
+    \begin{itemize}
+        \item[A)] o‘zgarmaydi.
+        \item[B)] 2 marta kamayadi.
+        \item[C)] 2 marta ortadi.
+        \item[D)] 4 marta kamayadi.
+        
+    \end{itemize}
+
+    \item 1-rasmdagi sistemaning tebranish davri 10 s, 2-rasmda esa 8 s. 3-rasmdagi yukning tebranish davrini toping (s). Barcha prujinalarning bikirligi bir xil.
+
+\begin{tikzpicture}
+    % Umumiy uslublar
+    \tikzset{
+        wall/.style={fill, pattern=north east lines, draw=none},
+        spring/.style={thick, decoration={coil, aspect=0.4, segment length=5pt, amplitude=3pt}, decorate},
+        mass/.style={thick, fill=gray!30}
+    }
+
+    % --- 1-RASM (m1 va m2 vertikal) ---
+    % Shift
+    \draw[wall] (-0.8,0) rectangle (0.8, 0.2);
+    \draw[thick] (-0.8,0) -- (0.8,0);
+    % Prujina
+    \draw[spring] (0, 0) -- (0, -2);
+    % m1 yuk
+    \draw[mass] (-0.3, -2) rectangle (0.3, -2.6);
+    \node at (0.6, -2.3) {$m_1$};
+    % Bog'lovchi ip
+    \draw[thick] (0, -2.6) -- (0, -2.8);
+    % m2 yuk
+    \draw[mass] (-0.3, -2.8) rectangle (0.3, -3.4);
+    \node at (0.6, -3.1) {$m_2$};
+    \node[below] at (0, -3.5) {1-rasm};
+
+    % --- 2-RASM (faqat m1) ---
+    \begin{scope}[xshift=3cm]
+        % Shift
+        \draw[wall] (-0.8,0) rectangle (0.8, 0.2);
+        \draw[thick] (-0.8,0) -- (0.8,0);
+        % Prujina
+        \draw[spring] (0, 0) -- (0, -2);
+        % m1 yuk
+        \draw[mass] (-0.3, -2) rectangle (0.3, -2.6);
+        \node at (0.6, -2.3) {$m_1$};
+        \node[below] at (0, -2.7) {2-rasm};
+    \end{scope}
+
+    % --- 3-RASM (m2 gorizontal) ---
+    \begin{scope}[xshift=6cm, yshift=-1.5cm]
+        % Devor (chapda)
+        \draw[wall] (-0.2,-0.2) rectangle (0, 0.8);
+        \draw[thick] (0,-0.2) -- (0,0.8);
+        % Sirt (pastda)
+        \draw[thick] (0,-0.2) -- (2.5,-0.2);
+        % Prujina
+        \draw[spring] (0, 0.15) -- (1.5, 0.15);
+        % m2 yuk
+        \draw[mass] (1.5, -0.2) rectangle (2.1, 0.4);
+        \node at (1.8, 0.6) {$m_2$};
+        \node[below] at (1.1, -0.3) {3-rasm};
+    \end{scope}
+
+\end{tikzpicture}
+    
+    \begin{itemize}
+        \item[A)] 4.
+        \item[B)] 5.
+        \item[C)] 6.
+        \item[D)] 9.
+        
+    \end{itemize}
+
+    \item Rasmda tasvirlangan prujinali mayatniklarning tebranish davrlari nisbati $T_1/T_2$ ni toping?
+
+\begin{tikzpicture}
+    % Umumiy uslublar
+    \tikzset{
+        wall/.style={fill, pattern=north east lines, draw=none},
+        spring/.style={thick, decoration={coil, aspect=0.4, segment length=4pt, amplitude=3pt}, decorate},
+        mass/.style={thick, fill=gray!30}
+    }
+
+    % --- 1-SISTEMA (Parallel ulangan) ---
+    \node at (0, 0.5) {\textbf{1)}};
+    % Shift (shiftok)
+    \draw[wall] (-1,0) rectangle (1, 0.2);
+    \draw[thick] (-1,0) -- (1,0);
+
+    % Prujinalar
+    \draw[spring] (-0.6, 0) -- (-0.6, -2);
+    \node[left] at (-0.7, -1) {$k$};
+    
+    \draw[spring] (0.6, 0) -- (0.6, -2);
+    \node[right] at (0.7, -1) {$3k$};
+
+    % Bog'lovchi gorizontal chiziq va yuk
+    \draw[thick] (-0.6, -2) -- (0.6, -2);
+    \draw[thick] (0, -2) -- (0, -2.3);
+    \draw[mass] (-0.3, -2.3) rectangle (0.3, -2.9);
+    \node at (0, -2.6) {$m$};
+
+    % --- 2-SISTEMA (Ketma-ket ulangan) ---
+    \begin{scope}[xshift=4cm]
+        \node at (0, 0.5) {\textbf{2)}};
+        % Shift (shiftok)
+        \draw[wall] (-1,0) rectangle (1, 0.2);
+        \draw[thick] (-1,0) -- (1,0);
+
+        % Birinchi prujina
+        \draw[spring] (0, 0) -- (0, -1.2);
+        \node[right] at (0.1, -0.6) {$2k$};
+
+        % Ikkinchi prujina
+        \draw[spring] (0, -1.2) -- (0, -2.4);
+        \node[right] at (0.1, -1.8) {$2k$};
+
+        % Yuk
+        \draw[mass] (-0.4, -2.4) rectangle (0.4, -3.1);
+        \node at (0, -2.75) {$4m$};
+    \end{scope}
+
+\end{tikzpicture}
+    
+    % [Bu yerda rasm: 1) k va 3k parallel m bilan; 2) 2k va 2k ketma-ket 4m bilan]
+    \begin{itemize}
+        \item[A)] 4.
+        \item[B)] 1/4.
+        \item[C)] 2.
+        \item[D)] 1/2.
+        
+    \end{itemize}
+
+    \item Prujina o‘ziga osilgan yuk ta’sirida 2,5 cm ga cho‘zildi. Shu prujinali mayatnikning tebranish chastotasini aniqlang (Hz).
+    \begin{itemize}
+        \item[A)] 1,6.
+        \item[B)] 25.
+        \item[C)] 3,2.
+        \item[D)] 5.
+        
+    \end{itemize}
+
+    \item Quyidagi $m$ massali yukning tebranish davrini aniqlang. 
+
+    \begin{tikzpicture}
+    % Chap va o'ng devorlar uchun uslub
+    \tikzset{wall/.style={fill, pattern=north east lines, draw=none}}
+    
+    % Prujina uslubi
+    \tikzset{spring/.style={thick, decoration={coil, aspect=0.4, segment length=4pt, amplitude=3pt}, decorate}}
+
+    % Chap devor
+    \draw[wall] (0,-1) rectangle (-0.3, 1);
+    \draw[thick] (0,-1) -- (0,1);
+
+    % O'ng devor
+    \draw[wall] (6,-1) rectangle (6.3, 1);
+    \draw[thick] (6,-1) -- (6,1);
+    \draw[thick] (0,-0.5) -- (6,-0.5);
+    % Massali yuk (m)
+    \draw[thick, fill=gray!20] (2.5,-0.5) rectangle (3.5, 0.5);
+    \node at (3,0) {\large m};
+
+    % Chap tarafdagi ikkita parallel prujina (k)
+    \draw[spring] (0, 0.25) -- (2.5, 0.25);
+    \node[above] at (1.25, 0.4) {$k$};
+    
+    \draw[spring] (0, -0.25) -- (2.5, -0.25);
+    \node[above] at (1.25, -0.1) {$k$};
+
+    % O'ng tarafdagi bitta prujina (k)
+    \draw[spring] (3.5, 0) -- (6, 0);
+    \node[above] at (4.75, 0.15) {$k$};
+
+\end{tikzpicture}
+    % [Bu yerda rasm: chapda ikkita k parallel, o'ngda bitta k]
+    \begin{itemize}
+        \item[A)] $T = 2\pi \sqrt{\frac{3m}{2k}}$
+        \item[B)] $T = 2\pi \sqrt{\frac{2m}{3k}}$
+        \item[C)] $T = 2\pi \sqrt{\frac{3m}{k}}$
+        \item[D)] $T = 2\pi \sqrt{\frac{m}{3k}}$
+        
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+1 & 2 & 3 & 4 & 5 \\
+\hline
+B & A & C & A & D \\
+\hline
+6 & 7 & 8 & 9 & 10 \\
+\hline
+B & A & B & D & B \\
+\hline
+11 & & & & \\
+\hline
+D & & & & \\
+\hline
+\end{tabular}
+\end{center}

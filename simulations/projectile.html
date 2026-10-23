@@ -1,811 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Projectile Motion | OliyFizika.uz</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Og‘irlik kuchi ta’sirida jism harakati | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: og‘irlik kuchi ta’sirida jism harakati — gorizontga burchak ostida otish (parabola), vertikal yuqoriga va pastga otish, erkin tushish. Balandlik, tezlik va energiya grafiklari.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/sim-page.js"></script>
-<style>
-
-.of-sim,
-.of-sim *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-.of-sim{
-
-  background:
-  linear-gradient(135deg,#020817,#07122f,#020817);
-
-  color:white;
-
-  min-height:100vh;
-
-  overflow:hidden;
-}
-
-.of-sim::before{
-
-  content:"";
-
-  position:fixed;
-
-  inset:0;
-
-  background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%);
-
-  z-index:-1;
-}
-
-.container{
-
-  width:92%;
-
-  max-width:1450px;
-
-  margin:auto;
-}
-
-
-/* NAVBAR */
-
-.navbar{
-
-  margin-top:20px;
-
-  padding:18px 28px;
-
-  border-radius:24px;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(18px);
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-}
-
-.logo{
-
-  font-size:38px;
-
-  font-weight:800;
-}
-
-.logo span{
-
-  color:#38bdf8;
-}
-
-.back-btn{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:14px 24px;
-
-  border-radius:16px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  font-weight:600;
-}
-
-
-/* MAIN */
-
-.main{
-
-  display:grid;
-
-  grid-template-columns:360px 1fr;
-
-  gap:30px;
-
-  margin-top:35px;
-}
-
-
-/* CONTROLS */
-
-.controls{
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(20px);
-
-  border-radius:30px;
-
-  padding:30px;
-}
-
-.controls h2{
-
-  font-size:32px;
-
-  margin-bottom:35px;
-}
-
-.control-group{
-
-  margin-bottom:30px;
-}
-
-.control-group label{
-
-  display:block;
-
-  margin-bottom:12px;
-
-  color:#cbd5e1;
-
-  font-size:17px;
-}
-
-.control-group input{
-
-  width:100%;
-}
-
-.value{
-
-  margin-top:12px;
-
-  color:#38bdf8;
-
-  font-weight:700;
-
-  font-size:18px;
-}
-
-.launch-btn{
-
-  width:100%;
-
-  padding:18px;
-
-  border:none;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(135deg,#2563eb,#38bdf8);
-
-  color:white;
-
-  font-size:18px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.launch-btn:hover{
-
-  transform:translateY(-4px);
-}
-
-
-/* CANVAS */
-
-.canvas-box{
-
-  position:relative;
-
-  background:rgba(255,255,255,.05);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  border-radius:30px;
-
-  overflow:hidden;
-}
-
-canvas{
-
-  width:100%;
-
-  height:100%;
-
-  display:block;
-}
-
-.info{
-
-  position:absolute;
-
-  top:20px;
-
-  left:20px;
-
-  background:rgba(0,0,0,.35);
-
-  padding:18px 22px;
-
-  border-radius:20px;
-
-  backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info p{
-
-  margin-bottom:10px;
-
-  font-size:16px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-  .main{
-
-    grid-template-columns:1fr;
-  }
-
-}
-
-</style>
-
+<script type="module" src="../assets/js/simulations/projectile.js"></script>
 </head>
+<body class="of-ui of-sim-page" data-shell-title="Og‘irlik kuchi ta’sirida harakat" data-shell-public="true">
 
-<body class="of-ui of-sim-page" data-shell-title="Projectile Motion" data-shell-public="true">
+<div class="of-page of-container sim-page sim-page--compact" id="projectileSim">
 
-<div class="of-page of-sim-wrap">
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-<a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Og‘irlik kuchi ta’sirida jism harakati</h1>
+    </div>
+    <div class="sim-formula" aria-label="y teng h nol plyus v nol sin alfa t minus g t kvadrat bo'linsin ikki"><small>Harakat qonuni</small> y = h₀ + v₀ sin α · t − g t² / 2</div>
+  </header>
 
-<div class="container of-sim">
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" data-draggable="true" role="img" aria-label="Og‘irlik kuchi ta’sirida jism harakati simulyatsiyasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Otish</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--ghost of-btn--sm" type="button" data-clear data-angle-only title="Oldingi otishlar izlarini tozalash">Tozalash</button>
+          <div class="of-segment" role="group" aria-label="Harakat turi" data-kind>
+            <button type="button" data-kind-value="angle" aria-pressed="true">Burchakli</button>
+            <button type="button" data-kind-value="vertical" aria-pressed="false">Vertikal</button>
+          </div>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.25" aria-pressed="false">¼×</button>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
 
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title>Balandlikning vaqtga bog‘liqligi y(t)</h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs>
+            <button type="button" data-tab-value="y" aria-pressed="true">y(t)</button>
+            <button type="button" data-tab-value="v" aria-pressed="false">v(t)</button>
+            <button type="button" data-tab-value="e" aria-pressed="false">Energiya</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" data-clickable="true" role="img" aria-label="Harakat grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
 
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar">
+        <div class="of-card sim-readout" data-readout="t">
+          <span class="sim-readout__label"><span>Vaqt <i>t</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="xy">
+          <span class="sim-readout__label"><span>Koordinatalar <i>x</i>, <i>y</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="v">
+          <span class="sim-readout__label"><span>Tezlik <i>v</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="a">
+          <span class="sim-readout__label"><span>Tezlanish <i>a</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="e">
+          <span class="sim-readout__label"><span>Energiya (1 kg ga) <i>e</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="H">
+          <span class="sim-readout__label"><span>Maksimal balandlik <i>H</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="T">
+          <span class="sim-readout__label"><span>Uchish vaqti <i>T</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="L">
+          <span class="sim-readout__label"><span>Uchish uzoqligi <i>L</i></span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+        <div class="of-card sim-readout" data-readout="vL">
+          <span class="sim-readout__label"><span>Yerga urilish tezligi</span></span>
+          <span class="sim-readout__value" data-value></span>
+          <span class="sim-readout__sub" data-sub></span>
+        </div>
+      </section>
+    </div>
 
-<!-- MAIN -->
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
-<div class="main">
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor holatlar</span>
+        <div class="sim-presets">
+          <button class="sim-preset" type="button" data-preset="angle,45,20,0,9.8">45° — eng uzoq</button>
+          <button class="sim-preset" type="button" data-preset="angle,30,20,0,9.8">30°</button>
+          <button class="sim-preset" type="button" data-preset="angle,60,20,0,9.8">60°</button>
+          <button class="sim-preset" type="button" data-preset="angle,0,15,20,9.8">Gorizontal otish</button>
+          <button class="sim-preset" type="button" data-preset="angle,45,20,0,1.62">Oyda (burchak)</button>
+          <button class="sim-preset" type="button" data-preset="vertical,90,20,0,9.8">Vertikal yuqoriga</button>
+          <button class="sim-preset" type="button" data-preset="vertical,-90,0,45,9.8">Erkin tushish</button>
+          <button class="sim-preset" type="button" data-preset="vertical,-90,10,40,9.8">Vertikal pastga</button>
+          <button class="sim-preset" type="button" data-preset="vertical,90,20,0,1.62">Oyda (vertikal)</button>
+        </div>
+      </div>
 
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Otish sharoiti</span>
+        <div class="sim-control" data-angle-only>
+          <div class="sim-control__row"><label for="alpha">Otish burchagi α</label><output for="alpha" id="alphaOut"></output></div>
+          <input class="sim-range" type="range" id="alpha" min="0" max="90" step="1" value="45">
+        </div>
+        <div class="sim-control" data-vertical-only hidden>
+          <div class="sim-control__row"><label id="dirLabel">Otish yo‘nalishi</label></div>
+          <div class="of-segment" role="group" aria-label="Otish yo‘nalishi" data-dir>
+            <button type="button" data-dir-value="1" aria-pressed="true">Yuqoriga</button>
+            <button type="button" data-dir-value="-1" aria-pressed="false">Pastga</button>
+          </div>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="v0">Boshlang‘ich tezlik v₀</label><output for="v0" id="v0Out"></output></div>
+          <input class="sim-range" type="range" id="v0" min="0" max="50" step="0.5" value="20">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="h0">Otish balandligi h₀</label><output for="h0" id="h0Out"></output></div>
+          <input class="sim-range" type="range" id="h0" min="0" max="50" step="1" value="0">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="planet">Erkin tushish tezlanishi g</label><output for="planet" id="gOut"></output></div>
+          <select class="sim-select" id="planet">
+            <option value="9.8" selected>Yer — 9,8 m/s²</option>
+            <option value="1.62">Oy — 1,62 m/s²</option>
+            <option value="3.71">Mars — 3,71 m/s²</option>
+            <option value="24.79">Yupiter — 24,79 m/s²</option>
+          </select>
+        </div>
+      </div>
 
-<!-- CONTROLS -->
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="preview" checked><span class="sim-switch__ui"></span>Bashorat trayektoriyasi</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="velocity" checked><span class="sim-switch__ui"></span>Tezlik vektori v</label>
+        <label class="sim-switch" data-angle-only><input type="checkbox" data-toggle="components" checked><span class="sim-switch__ui"></span><span>Tashkil etuvchilar vₓ, v<sub>y</sub></span></label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="gravity" checked><span class="sim-switch__ui"></span>Tezlanish g (og‘irlik kuchi)</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="markers" checked><span class="sim-switch__ui"></span>Belgilar (H, L)</label>
+        <p class="of-subtle">Maslahat: otishdan oldin to‘pdan sichqoncha bilan torting. Grafikni bosib, harakatning istalgan paytini ko‘ring.</p>
+      </div>
+    </aside>
+  </div>
 
-<div class="controls">
-
-<h2>
-<span aria-hidden="true">🧪</span> Projectile Motion
-</h2>
-
-
-
-<div class="control-group">
-
-<label for="angle">
-Burchak (°)
-</label>
-
-<input
-type="range"
-id="angle"
-min="10"
-max="80"
-value="45">
-
-<div
-class="value"
-id="angleValue">
-
-45°
-
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Tezlanish doim pastga: <span class="sim-math">a = g</span> (massaga va tezlikka bog‘liq emas)</li>
+        <li>Tezlik: <span class="sim-math">vₓ = v₀ cos α</span> (o‘zgarmas), <span class="sim-math">v<sub>y</sub> = v₀ sin α − g t</span></li>
+        <li>Koordinatalar: <span class="sim-math">x = v₀ cos α · t</span>, <span class="sim-math">y = h₀ + v₀ sin α · t − g t²/2</span></li>
+        <li>Maksimal balandlik: <span class="sim-math">H = h₀ + v₀² sin² α / (2g)</span></li>
+        <li><span class="sim-math">h₀ = 0</span> da: <span class="sim-math">T = 2 v₀ sin α / g</span>, <span class="sim-math">L = v₀² sin 2α / g</span></li>
+        <li>Vertikal otish (α = 90°): <span class="sim-math">v = v₀ − g t</span>, <span class="sim-math">H = v₀²/(2g)</span>, <span class="sim-math">T = 2 v₀/g</span></li>
+        <li>Erkin tushish (v₀ = 0): <span class="sim-math">t = √(2h/g)</span>, <span class="sim-math">v = √(2gh)</span></li>
+        <li>Energiya: <span class="sim-math">v²/2 + g y = const</span>; yerga urilish: <span class="sim-math">v² = v₀² + 2 g h₀</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Havo qarshiligi hisobga olinmagan; jism moddiy nuqta deb qaraladi.</p>
+    </div>
+  </section>
 </div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="speed">
-Tezlik (m/s)
-</label>
-
-<input
-type="range"
-id="speed"
-min="1"
-max="50"
-value="25">
-
-<div
-class="value"
-id="speedValue">
-
-25 m/s
-
-</div>
-
-</div>
-
-
-
-<div class="control-group">
-
-<label for="gravity">
-Gravitatsiya (m/s²)
-</label>
-
-<input
-type="range"
-id="gravity"
-min="1"
-max="20"
-step="0.1"
-value="9.8">
-
-<div
-class="value"
-id="gravityValue">
-
-9.8 m/s²
-
-</div>
-
-</div>
-
-
-
-<button
-class="launch-btn"
-id="launchBtn">
-
-<span aria-hidden="true">🚀</span> Launch
-
-</button>
-
-</div>
-
-
-
-<!-- CANVAS -->
-
-<div class="canvas-box">
-
-<div class="info">
-
-<p id="timeInfo">
-Time: 0 s
-</p>
-
-<p id="distanceInfo">
-Distance: 0 m
-</p>
-
-<p id="heightInfo">
-Height: 0 m
-</p>
-
-<p id="maxHeightInfo">
-Max Height: 0 m
-</p>
-
-</div>
-
-<canvas id="canvas" role="img" aria-label="Projectile Motion simulyatsiyasi">
-
-</canvas>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script>
-
-const canvas =
-document.getElementById("canvas");
-
-const ctx =
-canvas.getContext("2d");
-
-
-canvas.width = 1000;
-canvas.height = 650;
-
-
-const angleSlider =
-document.getElementById("angle");
-
-const speedSlider =
-document.getElementById("speed");
-
-const gravitySlider =
-document.getElementById("gravity");
-
-
-const angleValue =
-document.getElementById("angleValue");
-
-const speedValue =
-document.getElementById("speedValue");
-
-const gravityValue =
-document.getElementById("gravityValue");
-
-
-const launchBtn =
-document.getElementById("launchBtn");
-
-
-const timeInfo =
-document.getElementById("timeInfo");
-
-const distanceInfo =
-document.getElementById("distanceInfo");
-
-const heightInfo =
-document.getElementById("heightInfo");
-
-const maxHeightInfo =
-document.getElementById("maxHeightInfo");
-
-angleSlider.oninput = ()=>{
-
-  angleValue.innerHTML =
-  angleSlider.value + "°";
-
-};
-
-speedSlider.oninput = ()=>{
-
-  speedValue.innerHTML =
-  speedSlider.value + " m/s";
-
-};
-
-gravitySlider.oninput = ()=>{
-
-  gravityValue.innerHTML =
-  gravitySlider.value + " m/s²";
-
-};
-
-
-
-let projectile = null;
-
-let trajectory = [];
-
-let maxHeight = 0;
-
-function launchProjectile(){
-
-  trajectory = [];
-
-  maxHeight = 0;
-
-  const angle =
-  angleSlider.value * Math.PI / 180;
-
-  const speed =
-  parseFloat(speedSlider.value);
-
-  const gravity =
-  parseFloat(gravitySlider.value);
-
-
-  projectile = {
-
-    x:60,
-    y:560,
-
-    vx:speed * Math.cos(angle),
-
-    vy:-speed * Math.sin(angle),
-
-    gravity:gravity,
-
-    time:0
-
-  };
-
-}
-
-
-
-launchBtn.addEventListener(
-  "click",
-  launchProjectile
-);
-
-
-
-function drawAxes(){
-
-  ctx.strokeStyle =
-  "rgba(255,255,255,.35)";
-
-  ctx.lineWidth = 2;
-
-
-  /* X AXIS */
-
-  ctx.beginPath();
-
-  ctx.moveTo(50,580);
-
-  ctx.lineTo(960,580);
-
-  ctx.stroke();
-
-
-  /* Y AXIS */
-
-  ctx.beginPath();
-
-  ctx.moveTo(50,580);
-
-  ctx.lineTo(50,40);
-
-  ctx.stroke();
-
-
-  /* LABELS */
-
-  ctx.fillStyle = "white";
-
-  ctx.font = "18px Poppins";
-
-  ctx.fillText("X",930,565);
-
-  ctx.fillText("Y",65,60);
-
-}
-
-
-
-function drawGround(){
-
-  ctx.fillStyle =
-  "#1e293b";
-
-  ctx.fillRect(
-
-    0,
-    580,
-
-    canvas.width,
-    70
-
-  );
-
-}
-
-
-
-function drawTrajectory(){
-
-  ctx.beginPath();
-
-  for(let i=0;i<trajectory.length;i++){
-
-    const point =
-    trajectory[i];
-
-
-    if(i===0){
-
-      ctx.moveTo(
-        point.x,
-        point.y
-      );
-
-    }
-
-    else{
-
-      ctx.lineTo(
-        point.x,
-        point.y
-      );
-
-    }
-
-  }
-
-  ctx.strokeStyle =
-  "#38bdf8";
-
-  ctx.lineWidth = 3;
-
-  ctx.stroke();
-
-}
-
-
-
-function animate(){
-
-  ctx.clearRect(
-
-    0,
-    0,
-
-    canvas.width,
-    canvas.height
-
-  );
-
-
-  drawAxes();
-
-  drawGround();
-
-
-  if(projectile){
-
-    projectile.time += 0.05;
-
-
-    projectile.x +=
-    projectile.vx * 0.5;
-
-
-    projectile.vy +=
-    projectile.gravity * 0.05;
-
-
-    projectile.y +=
-    projectile.vy * 0.5;
-
-
-    trajectory.push({
-
-      x:projectile.x,
-
-      y:projectile.y
-
-    });
-
-
-    drawTrajectory();
-
-
-    /* PROJECTILE */
-
-    ctx.beginPath();
-
-    ctx.arc(
-
-      projectile.x,
-      projectile.y,
-
-      12,
-
-      0,
-      Math.PI * 2
-
-    );
-
-    ctx.fillStyle =
-    "#38bdf8";
-
-    ctx.shadowBlur = 20;
-
-    ctx.shadowColor =
-    "#38bdf8";
-
-    ctx.fill();
-
-
-    /* INFO */
-
-    timeInfo.innerHTML =
-
-    "Time: " +
-
-    projectile.time.toFixed(2)
-
-    + " s";
-
-
-    distanceInfo.innerHTML =
-
-    "Distance: " +
-
-    (projectile.x / 10)
-    .toFixed(1)
-
-    + " m";
-
-
-    const currentHeight =
-
-    ((580 - projectile.y)/10);
-
-
-    heightInfo.innerHTML =
-
-    "Height: " +
-
-    currentHeight.toFixed(1)
-
-    + " m";
-
-
-
-    if(currentHeight > maxHeight){
-
-     maxHeight = currentHeight;
-
-    }
-
-
-    maxHeightInfo.innerHTML =
-
-    "Max Height: " +
-
-    maxHeight.toFixed(1)
-
-    + " m";
-
-
-
-    if(projectile.y > 570){
-
-      projectile = null;
-
-    }
-
-  }
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-animate();
-
-</script>
 
 </body>
 </html>
-

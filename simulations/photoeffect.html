@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotoeffekt — virtual laboratoriya | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya ishi: tashqi fotoeffekt. Simob lampasi va filtrlar, fotoelement, tormozlovchi kuchlanish, volt-amper xarakteristikasi. Eynshteyn tenglamasini tekshiring, Plank doimiysi, chiqish ishi va qizil chegarani toping; LaTeX uslubidagi hisobotni PDF va .tex ko‘rinishida yuklab oling.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<link rel="stylesheet" href="../assets/css/lab-notebook.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/photo.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Fotoeffekt" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--purple">Kvant fizikasi</span>
+      <h1>Fotoeffekt: Plank doimiysini aniqlash</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba">
+            <button type="button" data-mode-value="vax" aria-pressed="true">Fotoelement va VAX</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Laboratoriya qurilmasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset></button>
+          <button class="of-btn of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card hidden>
+        <div class="sim-graph__bar"><h2>Volt-amper xarakteristikasi I(U)</h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Volt-amper xarakteristikasi I(U)"></canvas></div>
+        <p class="sim-graph__caption">Kuchlanishni o‘zgartirganingizda nuqtalar joriy filtr va yorug‘lik oqimi uchun yozib olinadi. «×20», «×200» tugmalari nol atrofini kattalashtiradi — tormozlovchi kuchlanishni aniq topish uchun. Kursor bilan U va I ni o‘qing.</p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Yorug‘lik</span>
+        <div class="of-segment of-segment--wrap" role="group" aria-label="Filtr" data-lineset></div>
+        <div class="of-segment" style="display:grid;grid-template-columns:repeat(5,1fr)" role="group" aria-label="Yorug‘lik oqimi (diafragma), %" data-intset></div>
+      </div>
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Fotoelement</span>
+        <div class="of-segment" style="display:grid;grid-template-columns:repeat(3,1fr)" role="group" aria-label="Katod" data-cathset></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="pU">Anod kuchlanishi U</label><output for="pU" id="pUOut"></output></div><input class="sim-range" type="range" id="pU" min="-3" max="12" step="0.01" value="0"></div>
+        <p class="of-subtle">Manfiy U — tormozlovchi maydon. Kuchlanishni sahnadagi dastak va ±1 / ±0,1 / ±0,01 V tugmalari bilan o‘zgartiring; filtrni va diafragmani sahnada bosib tanlang.</p>
+      </div>
+
+    </aside>
+  </div>
+
+  <section class="of-card lab-nb" id="labNotebook" data-notebook aria-label="Laboratoriya daftari"></section>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Eynshteyn: <span class="sim-math">hν = A + mv²/2</span></li>
+        <li>Tormozlovchi kuchlanish: <span class="sim-math">eU<sub>t</sub> = mv²<sub>max</sub>/2</span> → <span class="sim-math">U<sub>t</sub> = (h/e)ν − A/e</span></li>
+        <li>Qizil chegara: <span class="sim-math">ν<sub>0</sub> = A/h</span>, <span class="sim-math">λ<sub>0</sub> = hc/A</span></li>
+        <li>Stoletov qonuni: <span class="sim-math">I<sub>to‘y</sub> ~ Φ</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Fotoelektronlarning kinetik energiyalari 0 dan maksimal qiymatgacha taqsimlangan, shuning uchun tok tormozlovchi kuchlanishga silliq yaqinlashadi; anoddan juda kichik teskari tok ham bor. Kontakt potensiallar farqi hisobga olinmagan.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

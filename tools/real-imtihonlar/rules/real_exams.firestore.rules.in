@@ -1,0 +1,32 @@
+    // >>> real-exams (Real imtihonlar — PHASE 4 DIZAYN; DEPLOY QILINMAGAN)
+    // Ruxsat: FAQAT mavjud users/{uid}.mockTestsAccess === true (Mock testlar video/PDF va frontend bilan bir xil).
+    // Admin uchun alohida istisno YO'Q: admin + mockTestsAccess=false -> rad (PHASE 4.5 qarori).
+    // Yozish: client tomonidan HECH KIM (ma'lumot keyingi bosqichda alohida tasdiq bilan import qilinadi).
+    function rxAccess() {
+      return signedIn()
+        && exists(userPath(request.auth.uid))
+        && get(userPath(request.auth.uid)).data.get('mockTestsAccess', false) == true;
+    }
+
+    function rxPublished(examId) {
+      return exists(/databases/$(database)/documents/realExams/$(examId))
+        && get(/databases/$(database)/documents/realExams/$(examId)).data.get('published', false) == true;
+    }
+
+    match /realExams/{examId} {
+      allow get, list: if rxAccess() && resource.data.get('published', false) == true;
+      allow create, update, delete: if false;
+
+      // savollar (manba matni, variantlar, figures havolalari) — javobsiz
+      match /content/{docId} {
+        allow get: if rxAccess() && docId == 'questions' && rxPublished(examId);
+        allow list, create, update, delete: if false;
+      }
+
+      // yechimlar va javoblar
+      match /private/{docId} {
+        allow get: if rxAccess() && docId == 'solutions' && rxPublished(examId);
+        allow list, create, update, delete: if false;
+      }
+    }
+    // <<< real-exams

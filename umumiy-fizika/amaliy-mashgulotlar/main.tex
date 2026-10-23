@@ -1,0 +1,326 @@
+\documentclass[12pt,a4paper]{article}
+
+% ==================================================
+%                    SAHIFA SOZLAMALARI
+% ==================================================
+
+\usepackage[
+    left=2cm,
+    right=2cm,
+    top=2cm,
+    bottom=2cm
+]{geometry}
+
+% ==================================================
+%                    TIL VA KODLASH
+% ==================================================
+
+\usepackage[utf8]{inputenc}
+
+% ==================================================
+%                    MATEMATIKA
+% ==================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ==================================================
+%                    RO'YXATLAR
+% ==================================================
+
+\usepackage{enumitem}
+\usepackage{pifont}
+
+% ==================================================
+%                    RASMLAR
+% ==================================================
+
+\usepackage{graphicx}
+
+% ==================================================
+%                    TIKZ VA CHIZMALAR
+% ==================================================
+
+\usepackage{tikz}
+\usepackage{circuitikz}
+
+\usetikzlibrary{
+    arrows.meta,
+    decorations.markings,
+    patterns,
+    calc,
+    angles,
+    quotes
+}
+
+% ==================================================
+%                    GRAFIKLAR
+% ==================================================
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ==================================================
+%                    SAHIFA FONI
+% ==================================================
+
+\usepackage{eso-pic}
+
+% ==================================================
+%                    JADVALLAR
+% ==================================================
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% ==================================================
+%                    BOB SOZLAMASI
+% ==================================================
+
+\renewcommand{\partname}{BOB}
+
+% ==================================================
+%                    MUNDARIJA
+% ==================================================
+
+\usepackage{titletoc}
+
+\setcounter{tocdepth}{2}
+
+\titlecontents{section}
+    [0pt]
+    {\vspace{0.6em}\bfseries}
+    {\contentslabel{2.5em}}
+    {}
+    {\titlerule\*[0.7pc]{.}\contentspage}
+
+% ==================================================
+%                    LINKLAR
+% ==================================================
+
+\usepackage[
+    unicode,
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    bookmarks=true,
+    bookmarksopen=true,
+    bookmarksnumbered=true
+]{hyperref}
+
+% ==================================================
+%                    TIKZ SOZLAMALARI
+% ==================================================
+
+\tikzset{
+    ray/.style={
+        thin,
+        postaction={
+            decorate,
+            decoration={
+                markings,
+                mark=at position .55 with {\arrow{Stealth}}
+            }
+        }
+    }
+}
+
+% ==================================================
+%                    HUJJAT MA'LUMOTLARI
+% ==================================================
+
+\title{\textbf{Amaliy mashg'ulot}}
+\author{Sarvar Amirov}
+\date{2026}
+
+
+\begin{document}
+
+% ==================================================
+%                    SAHIFA FONI
+% ==================================================
+
+%\AddToShipoutPictureBG{
+%    \begin{tikzpicture}[remember picture,overlay]
+
+%        \foreach \x in {0.2,0.5,0.8}
+  %      {
+    %        \foreach \y in {0.1,0.3,0.5,0.7,0.9}
+ %           {
+%
+ %               \node at
+ %               (
+  %                  $(current page.south west)!{\x}!
+  %                  (current page.south east)
+  %                  +(0,\y*\paperheight)$
+   %             )
+   %             {
+%
+ %                  \begin{tikzpicture}[scale=0.4]
+%
+%                        \draw[
+  %                          <-,
+ %                           thick,
+%                            color=yellow!30
+ %                       ]
+%                        (3,1) -- (6,4);
+%
+%                        \draw[
+%                            <-,
+%                            thick,
+%                            color=yellow!30
+%                        ]
+%                        (-3,-1) -- (-6,-4);
+
+%                        \draw[
+%                            <-,
+%                            thick,
+%                            color=yellow!30
+%                        ]
+%                        (-3,1) -- (-6,4);
+%
+%                        \draw[
+%                            <-,
+%                            thick,
+%                            color=yellow!30
+%                        ]
+%                        (3,-1) -- (6,-4);
+%
+%                        \node[
+%                            text=blue!30
+%                        ] at (0,0)
+%                        {\text{Amirov Sarvar}};
+%
+%                    \end{tikzpicture}
+%
+%                };
+%            }
+%        }
+%
+%    \end{tikzpicture}
+%}
+
+% ==================================================
+%                    TITUL SAHIFA
+% ==================================================
+
+\maketitle
+
+\newpage
+
+
+% ==================================================
+%                    MUNDARIJA
+% ==================================================
+
+ \begin{center}
+     \renewcommand{\contentsname}{MUNDARIJA:}
+     \tableofcontents
+ \end{center}
+
+\newpage
+
+
+% ==================================================
+%                    MEXANIKA
+% ==================================================
+
+% \part{MEXANIKA}
+
+% \input{1.1-mavzu}
+% \input{1-mavzu}
+% \input{2-mavzu}
+% ...
+% \input{23-mavzu}
+
+
+% ==================================================
+%                    MOLEKULYAR FIZIKA
+% ==================================================
+
+% \newpage
+% \part{MOLEKULYAR FIZIKA}
+
+% \input{24-mavzu}
+% ...
+% \input{50-mavzu}
+
+
+% ==================================================
+%                    ELEKTR VA MAGNITIZM
+% ==================================================
+
+% \newpage
+% \part{ELEKTR VA MAGNITIZM}
+
+% \input{51-mavzu}
+
+\input{52-mavzu}
+\input{53-mavzu}
+\input{54-mavzu}
+\input{55-mavzu}
+\input{56-mavzu}
+\input{57-mavzu}
+\input{58-mavzu}
+\input{59-mavzu}
+\input{62-mavzu}
+\input{64-mavzu}
+\input{65-mavzu}
+\input{66-mavzu}
+\input{67-mavzu}
+\input{68-mavzu}
+\input{70-mavzu}
+\input{71-mavzu}
+\input{72-mavzu}
+
+
+% ==================================================
+%                    OPTIKA
+% ==================================================
+
+% \newpage
+% \part{OPTIKA}
+
+\input{73-mavzu}
+\input{74-mavzu}
+\input{76-mavzu}
+\input{77-mavzu}
+\input{78-mavzu}
+\input{79-mavzu}
+\input{80-mavzu}
+\input{81-mavzu}
+
+
+% ==================================================
+%                    ATOM VA YADRO FIZIKASI
+% ==================================================
+
+% \newpage
+% \part{ATOM VA YADRO FIZIKASI}
+
+\input{82-mavzu}
+\input{83-mavzu}
+\input{84-mavzu}
+\input{85-mavzu}
+\input{86-mavzu}
+\input{87-mavzu}
+\input{88-mavzu}
+\input{89-mavzu}
+
+
+% ==================================================
+%                    ILOVALAR
+% ==================================================
+
+% \newpage
+% \part{ILOVALAR}
+
+% \input{ilovalar}
+
+% \input{chernovik}
+
+% \input{Mavzular}
+
+
+\end{document}

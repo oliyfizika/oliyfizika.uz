@@ -1,0 +1,23 @@
+    // >>> real-exams (Real imtihonlar — PHASE 4 DIZAYN; DEPLOY QILINMAGAN)
+    // real-exams/{examId}.pdf va real-exams/{examId}/figures/{figureId}.png — faqat getBlob() orqali.
+    // O'qish: FAQAT users/{uid}.mockTestsAccess === true + realExams/{examId}.published == true (admin istisnosi yo'q). Yozish: hech kim.
+    function rxAccess() {
+      return signedIn() && userDoc().get('mockTestsAccess', false) == true;
+    }
+
+    function rxPublished(examId) {
+      return firestore.exists(/databases/(default)/documents/realExams/$(examId))
+        && firestore.get(/databases/(default)/documents/realExams/$(examId)).data.get('published', false) == true;
+    }
+
+    match /real-exams/{fileName} {
+      allow get: if fileName.matches('REAL-[0-9A-Za-z-]+[.]pdf')
+        && rxAccess() && rxPublished(fileName.split('[.]')[0]);
+      allow list, create, update, delete: if false;
+    }
+
+    match /real-exams/{examId}/figures/{fileName} {
+      allow get: if rxAccess() && rxPublished(examId);
+      allow list, create, update, delete: if false;
+    }
+    // <<< real-exams

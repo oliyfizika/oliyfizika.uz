@@ -1,0 +1,436 @@
+\section{Qarshiliklarni hisoblash}
+
+
+\begin{enumerate}
+
+\item Qarshiliklari $3~\Omega$ va $4~\Omega$ bo‘lgan o‘tkazgichlar ketma-ket ulangan. Umumiy qarshilikni toping ($\Omega$). 
+\begin{enumerate}[label=\Alph*)]
+\item 12/7
+\item 7
+\item 1
+\item 12
+\end{enumerate}
+
+\item Qarshiliklari $12~\Omega, 5~\Omega$ va $14~\Omega$ bo‘lgan o‘tkazgichlar ketma-ket ulangan. Umumiy qarshilikni toping ($\Omega$).
+\begin{enumerate}[label=\Alph*)]
+\item 24
+\item 46
+\item 38
+\item 31
+\end{enumerate}
+
+\item Qarshiliklari $25~\Omega, 40~\Omega$ va $R_3$ bo‘lgan o‘tkazgichlar ketma-ket ulangan. Agar umumiy qarshilik $70~\Omega$ ga teng bo‘lsa, $R_3$ qiymatini toping ($\Omega$).
+\begin{enumerate}[label=\Alph*)]
+\item 8
+\item 9
+\item 2
+\item 5
+\end{enumerate}
+
+\item Har birining qarshiligi $4~\Omega$ dan bo‘lgan $13$ ta bir xil qarshilik ketma-ket ulangan. Umumiy qarshilikni toping ($\Omega$). 
+\begin{enumerate}[label=\Alph*)]
+\item 4/13
+\item 17
+\item 9
+\item 52
+\end{enumerate}
+
+\item Qarshiliklari $1~\Omega$ va $3~\Omega$ bo‘lgan o‘tkazgichlar parallel ulangan. Umumiy qarshilikni toping ($\Omega$). 
+\begin{enumerate}[label=\Alph*)]
+\item 2
+\item 4
+\item 0,75
+\item 4/3
+\end{enumerate}
+
+\item Qarshiliklari $R_1$ va $7~\Omega$ bo‘lgan o‘tkazgichlar parallel ulangan. Agar umumiy qarshilik $4,55~\Omega$ ga teng bo‘lsa, $R_1$ qiymatini toping ($\Omega$). 
+\begin{enumerate}[label=\Alph*)]
+\item 13
+\item 2,45
+\item 11,55
+\item 5,89
+\end{enumerate}
+
+\item Elektr qarshiliklari $4~\Omega, 6~\Omega, 12~\Omega$ bo‘lgan uchta rezistor bir-biriga parallel ulangan. Umumiy qarshilik necha $\Omega$? 
+\begin{enumerate}[label=\Alph*)]
+\item 22
+\item 11
+\item 22/3
+\item 2
+\end{enumerate}
+
+\item Ketma-ket ulangan ikkita bir xil o‘tkazgich parallel ulansa, umumiy qarshilik qanday o‘zgaradi? 
+\begin{enumerate}[label=\Alph*)]
+\item 2 marta kamayadi
+\item 4 marta ortadi
+\item 4 marta kamayadi
+\item 2 marta ortadi
+\end{enumerate}
+
+\item Ikkita o‘tkazgich o‘zaro ketma-ket ulanganda, ularning umumiy qarshiligi $5~\Omega$, parallel ulanganda esa $1,2~\Omega$ bo‘ladi. O‘tkazgichlar qarshiliklarining nisbatini aniqlang.
+\begin{enumerate}[label=\Alph*)]
+\item 2
+\item 1,5
+\item 1
+\item 0,75
+\end{enumerate}
+
+\item Zanjirga $n$ ta bir xil qarshiliklar parallel ulangan edi. Agar ular ketma-ket ulansa, zanjirning umumiy qarshiligi qanday o‘zgaradi? 
+\begin{enumerate}[label=\Alph*)]
+\item $n$ marta ortadi
+\item $n^2$ marta kamayadi
+\item $n$ marta kamayadi
+\item $n^2$ marta ortadi
+\end{enumerate}
+
+\item Agar rasmda tasvirlangan zanjirda $R_1=2~\Omega, R_2=R_3=3~\Omega$ bo‘lsa, zanjirning AB oraliqdagi qarshiligi qanday ($\Omega$) bo‘ladi?
+
+\begin{circuitikz} 
+\draw
+  (0,0) node[left] {A} to[short, o-] (0.5,0)
+  to[R=$R_1$] (2.5,0) -- (3,0)
+  (3,0.7) -- (3,-0.7)
+  (3,0.7) to[R=$R_2$] (5,0.7) -- (5,0)
+  (3,-0.7) to[R=$R_3$] (5,-0.7) -- (5,0)
+  (5,0) to[short, -o] (5.5,0) node[right] {B};
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 0,27
+\item 3,5
+\item 4
+\item 7
+\end{enumerate}
+
+\item Rasmda tasvirlangan zanjirning umumiy qarshiligi necha $\Omega$? $R_1=3~\Omega, R_2=R_3=R_4=12~\Omega, R_5=5~\Omega$.
+
+\begin{circuitikz}
+\draw
+  (0,0) to[R=$R_1$] (2,0) -- (2.5,0)
+  (2.5,1) -- (2.5,-1)
+  (2.5,1) to[R=$R_2$] (4.5,1) -- (4.5,0)
+  (2.5,0) to[R=$R_3$] (4.5,0)
+  (2.5,-1) to[R=$R_4$] (4.5,-1) -- (4.5,0)
+  (4.5,0) -- (5,0) to[R=$R_5$] (7,0);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 20
+\item 15
+\item 5
+\item 12
+\end{enumerate}
+
+\item Rasmda tasvirlangan zanjirning umumiy qarshiligi necha $\Omega$? $R_1=1~\Omega; R_2=R_3=2~\Omega; R_4=R_5=3~\Omega; R_6=4~\Omega$.
+
+\begin{circuitikz}[european]
+\draw
+  % Chap tomondagi kirish va R1 rezistori
+  (0,0) to[short, o-] (0.5,0)
+  to[R=$R_1$] (2.5,0) -- (3,0)
+  
+  % Parallel blokning chap tomonidagi vertikal chiziq
+  (3,1.5) -- (3,-1.5)
+  
+  % To'rtta parallel rezistor (R2, R3, R4, R5)
+  (3,1.5) to[R=$R_2$] (5,1.5) -- (5,0)
+  (3,0.5) to[R=$R_3$] (5,0.5) -- (5,0)
+  (3,-0.5) to[R=$R_4$] (5,-0.5) -- (5,0)
+  (3,-1.5) to[R=$R_5$] (5,-1.5) -- (5,0)
+  
+  % O'ng tomondagi R6 rezistori va chiqish
+  (5,0) to[R=$R_6$] (7,0)
+  to[short, -o] (7.5,0);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 5,6
+\item 15
+\item 10,5
+\item 6,5
+\end{enumerate}
+
+\item Rasmda tasvirlangan zanjirning A va B nuqtalari orasidagi qarshilikni toping ($\Omega$). $R=2~\Omega$. 
+
+\begin{circuitikz}[european]
+\draw
+  % Kvadratning asosi va rezistorlari
+  (0,0) node[anchor=north] {A} 
+  to[R=$R$, *-] (0,3)           % Chap tomon
+  to[R=$R$] (3,3)                % Yuqori tomon
+  to[R=$R$] (3,0)                % O'ng tomon
+  node[anchor=north] {B}
+  to[R=$R$, -*] (0,0);           % Pastki tomon (A va B orasida)
+
+  % Diagonal rezistor (A nuqtasidan yuqori-o'ng burchakka)
+\draw
+  (0,0) to[R=$R$, *-] (3,3);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 1,6
+\item 2,75
+\item 2
+\item 1,25
+\end{enumerate}
+
+\item Sxemasi rasmda berilgan zanjirning 1- va 4- nuqtalari orasidagi qarshiligini hisoblang.
+
+\begin{circuitikz}[european]
+\draw
+  % Kvadratning burchaklari va yon tomonlaridagi rezistorlar
+  (0,0) node[below left] {1} 
+  to[R=$R$, *-*] (0,3) node[above left] {2}    % 1 va 2 orasida
+  to[R=$R$, *-*] (3,3) node[above right] {3}   % 2 va 3 orasida
+  to[R=$R$, *-*] (3,0) node[below right] {4}   % 3 va 4 orasida
+  to[R=$R$, *-*] (0,0);                         % 4 va 1 orasida
+
+  % Diagonal rezistor (1- va 3-nuqtalar orasida)
+\draw
+  (0,0) to[R=$2R$, *-*] (3,3);
+\end{circuitikz}
+
+
+\begin{enumerate}[label=\Alph*)]
+\item 5R/3
+\item 6R
+\item 3R/2
+\item 2R/3
+\end{enumerate}
+
+\item Rasmda tasvirlangan elektr zanjirning umumiy qarshiligini toping. 
+
+\begin{circuitikz}[european]
+\draw
+  % Pastki asosiy sim va terminallar
+  (0,0) to[short, o-o] (6,0)
+  
+  % Birinchi uchta parallel rezistorlar bloki
+  (1,0) to[R=R, *-*] (1,2)
+  (2,0) to[R=R, *-*] (2,2)
+  (3,0) to[R=R, *-*] (3,2)
+  
+  % Yuqori tutashtiruvchi sim va gorizontal rezistor
+  (1,2) -- (3,2)
+  (3,2) to[R=R, -*] (5,2)
+  
+  % To'rtinchi (o'ng tarafdagi) vertikal rezistor
+  (5,2) to[R=R, -*] (5,0);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 2R/3
+\item R
+\item 3R/4
+\item 4R/3
+\end{enumerate}
+
+\item Rasmda tasvirlangan elektr zanjirning A va B nuqtalari orasidagi qarshilik necha $\Omega$? Rezistorlardan har birining qarshiligi $30~\Omega$ ga teng.
+
+\begin{circuitikz}[european]
+\draw
+  (0,2) node[left] {A} to[short, o-*] (0.5,2)
+  (0.5,2) -- (0.5,0) 
+  (0.5,2) to[R=30$\Omega$] (3,2) 
+  (3,2) to[R=30$\Omega$, *-*] (3,0)
+  (0.5,0) -- (3,0)
+  (3,2) -- (5.5,2) -- (5.5,0)
+  (3,0) to[R=30$\Omega$] (5.5,0)
+  (5.5,0) to[short, *-o] (6,0) node[right] {B};
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 30
+\item 20
+\item 10
+\item 45
+\end{enumerate}
+
+\item Har birining qarshiligi $3~\Omega$ dan bo‘lgan qarshiliklar rasmda ko‘rsatilgandek ulangan bo‘lsa, A va B nuqtalar orasidagi umumiy qarshilik necha $\Omega$?
+
+\begin{circuitikz}[european]
+\draw
+  % Asosiy gorizontal chiziq va rezistorlar
+  (0,0) node[left] {A} to[short, o-*] (0.5,0)
+  (0.5,0) to[R] (2.5,0) coordinate (n1) % 1-rezistor
+  to[R] (4.5,0) coordinate (n2)         % 2-rezistor
+  to[R] (6.5,0)                         % 3-rezistor
+  to[short, *-o] (7,0) node[right] {B};
+
+  % Yuqoridagi sakrash simi: A nuqtasidan 2- va 3-rezistor orasiga
+  \draw (0.5,0) -- (0.5,1) -- (4.5,1) to[short, -*] (n2);
+
+  % Pastdagi sakrash simi: 1- va 2-rezistor orasidan B nuqtasiga
+  \draw (2.5,0) to[short, *-] (2.5,-1) -- (6.5,-1) -- (6.5,0);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 0,5
+\item 1
+\item 3
+\item 6
+\end{enumerate}
+
+\item B va C nuqtalari orasidagi umumiy qarshilikni ($\Omega$) toping. $R=2~\Omega$.
+
+\begin{circuitikz}[european]
+\draw
+  % Asosiy aylana konturi (simlarni ifodalash uchun)
+  (0,0) circle (2)
+  
+  % Markaziy vertikal qarshilik (R)
+  % Bu rezistor aylananing yuqori va pastki nuqtalarini tutashtiradi
+  (0,2) to[R=R, *-*] (0,-2)
+  
+  % Chap tarafdagi rezistorlar (B terminali tomonda)
+  % Yuqori-chap va pastki-chap choraklardagi rezistorlar
+  (0,2) to[R=R] (-2,0) 
+  (-2,0) to[R=R] (0,-2)
+  
+  % O'ng tarafdagi rezistorlar (C terminali tomonda)
+  % Yuqori-o'ng va pastki-o'ng choraklardagi rezistorlar
+  (0,2) to[R=R] (2,0) 
+  (2,0) to[R=R] (0,-2)
+  
+  % Terminal B (chapda) ulanishi
+  (-2,0) to[short, *-o] (-2.8,0) node[left] {B}
+  
+  % Terminal C (o'ngda) ulanishi
+  (2,0) to[short, *-o] (2.8,0) node[right] {C};
+\end{circuitikz} chizmada xato bor
+
+\begin{enumerate}[label=\Alph*)]
+\item 0,6
+\item 1,2
+\item 0,8
+\item 1
+\end{enumerate}
+
+\item $A_1$ ampermetr $2,5$ A, $A_2$ ampermetr $5$ A tokni ko‘rsatmoqda. Agar $R_1=4~\Omega$ bo‘lsa, $R_2$ qarshilik necha $\Omega$ bo‘ladi?
+
+\begin{circuitikz}[european]
+\draw
+  % Kirish toki I
+  (0,0) to[short, i=I, o-] (1,0) -- (1,0.8)
+  
+  % Yuqori tarmoq: A1 ampermetr va R1 rezistor
+  (1,0.8) to[ammeter, l=$A_1$] (3,0.8) 
+  to[R=$R_1$] (5,0.8) -- (5,0)
+  
+  % Pastki tarmoq: A2 ampermetr va R2 rezistor
+  (1,0) -- (1,-0.8)
+  (1,-0.8) to[ammeter, l=$A_2$] (3,-0.8) 
+  to[R=$R_2$] (5,-0.8) -- (5,0)
+  
+  % Chiqish simi
+  (5,0) to[short, -o] (6,0);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 3,5
+\item 3
+\item 2,5
+\item 2
+\end{enumerate}
+
+\item Quyida berilgan elektr zanjirdagi $4~\Omega$ qarshilikdan o‘tayotgan tokni aniqlang (A).
+
+\begin{circuitikz}[european]
+\draw
+  % Kirish toki 65 A
+  (0,0) to[short, i=65~A, o-] (1,0)
+  
+  % Yuqori tarmoqqa bo'linish
+  (1,0) -- (1,1.2)
+  to[R=2~$\Omega$] (3,1.2) -- (3.5,1.2)
+  
+  % Yuqori tarmoq ichidagi parallel blok (4 va 12 ohm)
+  (3.5,1.2) -- (3.5,1.8) to[R=4~$\Omega$] (5.5,1.8) -- (5.5,1.2)
+  (3.5,1.2) to[R=12~$\Omega$] (5.5,1.2)
+  (5.5,1.2) -- (6,1.2) -- (6,0)
+  
+  % Pastki parallel tarmoq (8 ohm)
+  (1,0) -- (1,-1.2)
+  to[R=8~$\Omega$] (6,-1.2) -- (6,0)
+  
+  % Chiqish simi
+  (6,0) to[short, -o] (7,0);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 12
+\item 36
+\item 30
+\item 20
+\end{enumerate}
+
+\item Quyida berilgan elektr zanjirdagi ampermetrning ko‘rsatishini aniqlang (A).
+
+\begin{circuitikz}[european]
+\draw
+  % Chap vertikal tarmoq: Ampermetr (A)
+  (0,2) to[ammeter] (0,0)
+  
+  % Pastki horizontal sim va tok manbai (U=60V)
+  % Sim burchakdan boshlanadi, o'rtada terminallar (o) joylashgan
+  (0,0) -- (1.6,0) 
+  (1.6,0) to[short, -o] (1.8,0) 
+  (2.2,0) to[short, o-] (2.4,0)
+  (2.4,0) -- (4,0)
+  (2,-0.1) node[below] {$U=60$ V}
+  
+  % O'ng vertikal tarmoq: 8 ohm rezistor
+  (4,0) to[R=8~$\Omega$] (4,2)
+  
+  % Yuqori qism: parallel ulangan rezistorlar bloki (6 va 3 ohm)
+  (4,2) -- (3,2)
+  (3,2.5) -- (3,1.5)
+  (3,2.5) to[R=6~$\Omega$] (1,2.5) -- (1,2)
+  (3,1.5) to[R=3~$\Omega$] (1,1.5) -- (1,2)
+  (1,2) -- (0,2);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 5
+\item 4
+\item 6
+\item 10
+\end{enumerate}
+
+\item K kalit ulansa, ampermetrning ko‘rsatishi necha marta ortadi?
+
+\begin{circuitikz}[european]
+\draw
+  % Pastki qism: Kuchlanish manbai terminallari va Ampermetr
+  (0,0) -- (1.6,0) 
+  (1.6,0) to[short, -o] (1.8,0) 
+  (2.2,0) to[short, o-] (2.4,0)
+  (2.4,0) to[ammeter, l=A] (4,0)
+  (2,-0.1) node[below] {$U$}
+  
+  % Chap vertical sim
+  (0,0) -- (0,4)
+  
+  % Yuqori horizontal qism: ikkita ketma-ket R rezistor
+  (0,4) to[R=R] (2,4) 
+  (2,4) to[R=R] (4,4)
+  
+  % O'ng vertical sim
+  (4,4) -- (4,0)
+  
+  % O'rta horizontal qism: Rezistor R va Kalit K
+  (0,2) to[R=R] (2,2)
+  (2,2) to[switch, l=K, *-] (4,2)
+  
+  % Markaziy vertical tutashtiruvchi sim
+  (2,4) to[short, *-*] (2,2);
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item 3
+\item 2
+\item 1,5
+\item 4
+\end{enumerate}
+
+\end{enumerate}

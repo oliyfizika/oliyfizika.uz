@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real imtihonlar | OliyFizika.uz</title>
+<meta name="description" content="Milliy sertifikat fizika real imtihon variantlari: PDF va to‘liq yozma yechimlar.">
+<meta name="robots" content="noindex">
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../../assets/css/catalog.css">
+<link rel="stylesheet" href="../../assets/css/real-imtihonlar.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../../assets/js/milliy-sertifikat/real-exams/list-page.js"></script>
+</head>
+<!--
+  Real imtihonlar — ro'yxat (PHASE 4, lokal arxitektura). Kartochkalar katalog metadata'sidan quriladi.
+  Ruxsat: mavjud users/{uid}.mockTestsAccess === true (frontend darvoza — UX; haqiqiy himoya — Rules).
+  Ma'lumot manbai: assets/js/milliy-sertifikat/real-exams/config.js (localhost -> lokal adapter).
+-->
+<body class="of-ui" data-shell-title="Real imtihonlar" data-shell-public="true">
+<div class="of-page of-container of-cat rx">
+  <header class="of-cat-head">
+    <div>
+      <a class="rx-back" href="../milliy-sertifikat.html"><span data-icon="chevronLeft"></span>Milliy sertifikat</a>
+      <h1>Real imtihonlar</h1>
+      <p>Milliy sertifikat fizika imtihonlarining variantlari: PDF va har bir savolning yozma yechimi.</p>
+    </div>
+    <p class="of-cat-count" data-count aria-live="polite"></p>
+  </header>
+  <div class="of-card rx-gate" data-gate aria-live="polite"><p class="rx-gate__text">Ruxsat tekshirilmoqda…</p></div>
+  <div data-protected hidden>
+    <div data-list></div>
+  </div>
+</div>
+</body>
+</html>

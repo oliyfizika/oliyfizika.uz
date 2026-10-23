@@ -138,6 +138,18 @@
 .of-sim-card[data-topic="elektr"] .of-sim-card__art .a.f { fill: var(--of-success); }
 .of-sim-card[data-topic="elektr"] .of-sim-card__art .b { stroke: var(--of-primary); }
 .of-sim-card[data-topic="elektr"] .of-sim-card__art .b.f { fill: var(--of-primary); }
+.of-sim-card[data-topic="issiqlik"] .of-sim-card__art .a { stroke: var(--of-warning); }
+.of-sim-card[data-topic="issiqlik"] .of-sim-card__art .a.f { fill: var(--of-warning); }
+.of-sim-card[data-topic="issiqlik"] .of-sim-card__art .b { stroke: var(--of-danger); }
+.of-sim-card[data-topic="issiqlik"] .of-sim-card__art .b.f { fill: var(--of-danger); }
+.of-sim-card[data-topic="atom"] .of-sim-card__art .a { stroke: var(--of-special); }
+.of-sim-card[data-topic="atom"] .of-sim-card__art .a.f { fill: var(--of-special); }
+.of-sim-card[data-topic="atom"] .of-sim-card__art .b { stroke: var(--of-warning); }
+.of-sim-card[data-topic="atom"] .of-sim-card__art .b.f { fill: var(--of-warning); }
+.of-sim-card[data-topic="kvant"] .of-sim-card__art .a { stroke: var(--of-warning); }
+.of-sim-card[data-topic="kvant"] .of-sim-card__art .a.f { fill: var(--of-warning); }
+.of-sim-card[data-topic="kvant"] .of-sim-card__art .b { stroke: var(--of-special); }
+.of-sim-card[data-topic="kvant"] .of-sim-card__art .b.f { fill: var(--of-special); }
 .of-sim-card__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 16px 16px; }
 .of-sim-card__title { font: 700 var(--of-text-md)/1.3 var(--of-font-sans) !important; letter-spacing: normal !important; overflow-wrap: anywhere; }
 .of-sim-card__desc { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }

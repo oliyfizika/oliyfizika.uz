@@ -1,0 +1,293 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — Simulyatsiya laboratoriyasi (yangi simulyatsiya sahifalari)
+   Faqat tokenlar (tokens.css) ishlatiladi → light/dark avtomatik.
+   Tuzilma: .sim-head → .sim-layout (.sim-stage + .sim-panel) → .sim-readouts → .sim-explain
+   ========================================================================== */
+
+.sim-page { display: flex; flex-direction: column; gap: var(--of-space-5); container-type: inline-size; }
+
+/* ---------- Sarlavha ---------- */
+.sim-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: var(--of-space-4) var(--of-space-6);
+  flex-wrap: wrap;
+}
+.sim-head__text { display: flex; flex-direction: column; gap: 8px; max-width: 70ch; }
+.sim-head__text .of-badge { align-self: flex-start; }
+.sim-head p { color: var(--of-text-2); }
+.sim-formula {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-md);
+  background: var(--of-surface);
+  font: italic 600 var(--of-text-lg)/1.2 "Cambria Math", "Times New Roman", serif;
+  color: var(--of-text); white-space: nowrap;
+}
+.sim-formula small { font: 600 var(--of-text-xs)/1 var(--of-font-sans); color: var(--of-text-3); font-style: normal; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ---------- Asosiy to'r ---------- */
+.sim-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--of-space-5); align-items: start; }
+@container (max-width: 980px) {
+  .sim-layout { grid-template-columns: minmax(0, 1fr); }
+  /* Tor ekranda: maydon → boshqaruv → natijalar */
+  .sim-layout > .sim-main { display: contents; }
+  .sim-stage { order: 1; }
+  .sim-panel { order: 2; }
+  .sim-readouts { order: 3; }
+  .sim-graph { order: 4; }
+  /* Grafik asosiy qism bo'lsa: maydon → grafik → boshqaruv → natijalar */
+  .sim-layout--graph-top .sim-graph { order: 2; }
+  .sim-layout--graph-top .sim-panel { order: 3; }
+  .sim-layout--graph-top .sim-readouts { order: 4; }
+}
+
+.sim-main { display: flex; flex-direction: column; gap: var(--of-space-4); min-width: 0; }
+.sim-stage { overflow: hidden; }
+.sim-canvas-wrap { position: relative; }
+.sim-canvas-wrap canvas { display: block; width: 100%; touch-action: none; }
+.sim-canvas-wrap canvas[data-draggable="true"] { cursor: grab; }
+.sim-canvas-wrap canvas[data-dragging="true"] { cursor: grabbing; }
+
+.sim-toolbar {
+  display: flex; align-items: center; gap: var(--of-space-2); flex-wrap: wrap;
+  padding: var(--of-space-3) var(--of-space-4);
+  border-top: 1px solid var(--of-border);
+  background: var(--of-surface-2);
+}
+.sim-toolbar .sim-status { margin-left: auto; }
+.sim-hint { font-size: var(--of-text-xs); color: var(--of-text-3); display: inline-flex; align-items: center; gap: 6px; }
+.sim-hint svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.sim-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 30px; padding: 0 12px; border-radius: var(--of-radius-pill);
+  font: 600 var(--of-text-xs)/1.2 var(--of-font-sans);
+  background: var(--of-surface-sunken); color: var(--of-text-2);
+}
+.sim-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; flex: none; }
+.sim-status[data-tone="blue"]   { background: var(--of-primary-soft); color: var(--of-primary-text); }
+.sim-status[data-tone="green"]  { background: var(--of-success-soft); color: var(--of-success-text); }
+.sim-status[data-tone="orange"] { background: var(--of-warning-soft); color: var(--of-warning-text); }
+.sim-status[data-tone="purple"] { background: var(--of-special-soft); color: var(--of-special); }
+
+/* ---------- Boshqaruv paneli ---------- */
+.sim-panel { padding: var(--of-space-5); display: flex; flex-direction: column; gap: var(--of-space-5); }
+.sim-panel h2 { font-size: var(--of-text-md); display: flex; align-items: center; gap: 8px; }
+.sim-panel h2 svg { width: 18px; height: 18px; fill: none; stroke: var(--of-primary); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sim-group { display: flex; flex-direction: column; gap: var(--of-space-4); }
+.sim-group + .sim-group { padding-top: var(--of-space-5); border-top: 1px solid var(--of-border); }
+.sim-group__title { font: 700 var(--of-text-xs)/1 var(--of-font-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--of-text-3); }
+
+@container (min-width: 600px) and (max-width: 980px) {
+  .sim-panel .sim-group--grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--of-space-4) var(--of-space-6); }
+  .sim-panel .sim-group--grid > .sim-group__title { grid-column: 1 / -1; }
+}
+
+.sim-control { display: flex; flex-direction: column; gap: 10px; }
+.sim-control__row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.sim-control label, .sim-control .sim-label { font: 600 var(--of-text-sm)/1.3 var(--of-font-sans); color: var(--of-text); }
+.sim-control output {
+  font: 700 var(--of-text-sm)/1 var(--of-font-sans); font-variant-numeric: tabular-nums;
+  color: var(--of-primary-text); background: var(--of-primary-soft);
+  padding: 5px 8px; border-radius: var(--of-radius-sm); white-space: nowrap;
+}
+.sim-control__scale { display: flex; justify-content: space-between; font-size: var(--of-text-xs); color: var(--of-text-3); font-variant-numeric: tabular-nums; margin-top: -4px; }
+
+/* Slayder */
+.sim-range {
+  --fill: 50%;
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 24px; margin: 0; background: transparent; cursor: pointer;
+}
+.sim-range::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 999px;
+  background: linear-gradient(90deg, var(--of-primary) 0 var(--fill), var(--of-surface-sunken) var(--fill) 100%);
+  box-shadow: inset 0 0 0 1px var(--of-border);
+}
+.sim-range::-moz-range-track { height: 6px; border-radius: 999px; background: var(--of-surface-sunken); box-shadow: inset 0 0 0 1px var(--of-border); }
+.sim-range::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--of-primary); }
+.sim-range::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 20px; height: 20px; margin-top: -7px; border-radius: 50%;
+  background: var(--of-surface); border: 2px solid var(--of-primary);
+  box-shadow: var(--of-shadow-sm);
+  transition: transform var(--of-dur-fast);
+}
+.sim-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--of-surface); border: 2px solid var(--of-primary); box-shadow: var(--of-shadow-sm); }
+.sim-range:hover::-webkit-slider-thumb, .sim-range:active::-webkit-slider-thumb { transform: scale(1.12); }
+.sim-range:focus-visible { outline: none; }
+.sim-range:focus-visible::-webkit-slider-thumb { box-shadow: var(--of-focus-ring); }
+.sim-range:focus-visible::-moz-range-thumb { box-shadow: var(--of-focus-ring); }
+
+/* Select */
+.sim-select {
+  width: 100%; min-height: 40px; padding: 0 36px 0 12px;
+  border: 1px solid var(--of-border-strong); border-radius: var(--of-radius-sm);
+  background: var(--of-surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2369768d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center / 16px;
+  -webkit-appearance: none; appearance: none;
+  font: 500 var(--of-text-sm)/1 var(--of-font-sans); color: var(--of-text); cursor: pointer;
+}
+.sim-select:hover { border-color: var(--of-slate-400); }
+.sim-select:focus-visible { outline: none; border-color: var(--of-primary); box-shadow: var(--of-focus-ring); }
+
+/* Tayyor holatlar (preset chiplari) */
+.sim-presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.sim-preset {
+  min-height: 32px; padding: 0 12px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-pill);
+  background: var(--of-surface); color: var(--of-text-2);
+  font: 600 var(--of-text-xs)/1 var(--of-font-sans); cursor: pointer;
+  transition: background var(--of-dur-fast), border-color var(--of-dur-fast), color var(--of-dur-fast);
+}
+.sim-preset:hover { border-color: var(--of-border-strong); color: var(--of-text); }
+.sim-preset[aria-pressed="true"] { background: var(--of-primary-soft); border-color: color-mix(in srgb, var(--of-primary) 40%, var(--of-border)); color: var(--of-primary-text); }
+
+/* Kalit (checkbox) */
+.sim-switch { display: flex; align-items: center; gap: 10px; cursor: pointer; font: 500 var(--of-text-sm)/1.3 var(--of-font-sans); color: var(--of-text); }
+.sim-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.sim-switch__ui {
+  position: relative; flex: none; width: 36px; height: 20px; border-radius: 999px;
+  background: var(--of-border-strong); transition: background var(--of-dur-fast);
+}
+.sim-switch__ui::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; box-shadow: var(--of-shadow-sm); transition: transform var(--of-dur-base) var(--of-ease-out);
+}
+.sim-switch input:checked + .sim-switch__ui { background: var(--of-primary-solid); }
+.sim-switch input:checked + .sim-switch__ui::after { transform: translateX(16px); }
+.sim-switch input:focus-visible + .sim-switch__ui { box-shadow: var(--of-focus-ring); }
+.sim-swatch { width: 12px; height: 3px; border-radius: 2px; flex: none; margin-left: auto; }
+
+/* ---------- Natijalar (stat kartalar) ---------- */
+.sim-readouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--of-space-3); }
+.sim-readouts--4 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.sim-readouts--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sim-readout { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sim-readout__label { font: 600 var(--of-text-xs)/1.3 var(--of-font-sans); color: var(--of-text-3); display: flex; align-items: center; gap: 6px; }
+.sim-readout__label sub { font-size: 10px; }
+.sim-readout__label i { font-family: "Cambria Math", "Times New Roman", serif; font-size: 14px; color: var(--of-text-2); }
+.sim-readout__value { font: 700 var(--of-text-xl)/1.15 var(--of-font-display); color: var(--of-text); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.sim-readout__value small { font: 600 var(--of-text-sm)/1 var(--of-font-sans); color: var(--of-text-2); margin-left: 3px; }
+.sim-readout__value .deg { font: inherit; color: inherit; margin: 0; }
+.sim-readout__sub { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.sim-readout[data-tone="orange"] { border-color: color-mix(in srgb, var(--of-warning) 45%, var(--of-border)); background: var(--of-warning-soft); }
+.sim-readout[data-tone="orange"] .sim-readout__value { color: var(--of-warning-text); }
+
+/* ---------- Tushuntirish ---------- */
+.sim-explain { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--of-space-5); }
+@container (max-width: 820px) { .sim-explain { grid-template-columns: minmax(0, 1fr); } }
+.sim-explain .of-card { padding: var(--of-space-5) var(--of-space-6); }
+.sim-explain h2 { font-size: var(--of-text-md); margin-bottom: var(--of-space-3); }
+.sim-explain p, .sim-explain li { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.7; }
+.sim-explain p + p { margin-top: var(--of-space-2); }
+.sim-explain ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.sim-explain b { color: var(--of-text); }
+.sim-live { min-height: 3.4em; }
+.sim-math { font-family: "Cambria Math", "Times New Roman", serif; font-style: italic; font-size: 1.05em; color: var(--of-text); white-space: nowrap; }
+
+/* ---------- Mobil ---------- */
+@container (max-width: 560px) {
+  .sim-panel { padding: var(--of-space-4); }
+  .sim-toolbar { padding: var(--of-space-3); }
+  .sim-toolbar .sim-status { margin-left: 0; }
+  .sim-readouts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--of-space-2); }
+  .sim-readout { padding: 12px; }
+  .sim-readout__value { font-size: var(--of-text-lg); }
+  .sim-formula { font-size: var(--of-text-md); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sim-range::-webkit-slider-thumb, .sim-switch__ui::after { transition: none; }
+}
+
+/* ---------- Qo'shimcha grafik kartasi ---------- */
+.sim-graph { overflow: hidden; }
+.sim-graph__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 18px 4px; }
+.sim-graph__head h2 { font-size: var(--of-text-sm); }
+.sim-graph__head p { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.sim-graph canvas { display: block; width: 100%; }
+.sim-btnrow { display: flex; flex-wrap: wrap; gap: 8px; }
+.sim-graph__tabs { padding: 6px 18px 12px; }
+.sim-graph__tabs .of-segment { max-width: 100%; }
+.sim-graph canvas[data-clickable="true"] { cursor: crosshair; }
+.sim-segment-full { display: flex; width: 100%; }
+.sim-segment-full button { flex: 1; justify-content: center; }
+
+/* ---------- Ixcham (kompakt) sahifa: maydon va grafik bir ekranga sig'sin ---------- */
+.sim-page--compact { gap: var(--of-space-3); }
+.sim-page--compact .sim-layout { gap: var(--of-space-4); }
+.sim-page--compact .sim-main { gap: var(--of-space-3); }
+.sim-head--compact { align-items: center; }
+.sim-head--compact .sim-head__text { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 6px 12px; max-width: none; }
+.sim-head--compact h1 { font-size: clamp(1.35rem, 2.3vw, 1.75rem); line-height: 1.15; }
+.sim-head--compact .sim-formula { padding: 6px 12px; }
+.sim-page--compact .sim-toolbar { padding: var(--of-space-2) var(--of-space-3); }
+.sim-graph__bar { display: flex; align-items: center; justify-content: space-between; gap: 8px 14px; flex-wrap: wrap; padding: 10px 14px 6px 16px; }
+.sim-graph__bar h2 { font-size: var(--of-text-sm); }
+.sim-graph__caption { margin: 0; padding: 2px 16px 10px; font-size: var(--of-text-xs); color: var(--of-text-3); }
+
+/* ---------- Asboblar qatori (konstruktor) va qizil holat ---------- */
+.sim-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: var(--of-space-2) var(--of-space-3); border-top: 1px solid var(--of-border); background: var(--of-surface); }
+.sim-tools__title { font: 700 var(--of-text-xs)/1 var(--of-font-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--of-text-3); margin-right: 4px; }
+.sim-tools .sim-preset { min-height: 30px; }
+.sim-status[data-tone="red"] { background: var(--of-danger-soft); color: var(--of-danger-text); }
+.sim-readout[data-tone="muted"] { opacity: .62; }
+@container (max-width: 560px) {
+  .sim-tools { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+  .sim-tools > * { flex: none; }
+}
+
+/* ---------- Virtual laboratoriya: asboblar qutisi ---------- */
+.sim-bin { display: flex; flex-wrap: wrap; gap: 8px 10px; padding: 10px 12px 6px; background: var(--of-surface-2); border-bottom: 1px solid var(--of-border); }
+.sim-bin__group { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.sim-bin__title { font: 700 10px/1 var(--of-font-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--of-text-3); padding-left: 2px; }
+.sim-bin__items { display: flex; gap: 3px; }
+.sim-bin__item {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  width: 56px; min-height: 52px; padding: 5px 1px 4px;
+  border: 1px solid var(--of-border); border-radius: 10px; background: var(--of-surface);
+  color: var(--of-text-2); font: 600 10px/1.1 var(--of-font-sans); letter-spacing: -.01em; cursor: pointer;
+  user-select: none; -webkit-user-select: none; touch-action: manipulation;
+  transition: border-color .15s, background-color .15s, color .15s, transform .15s;
+}
+.sim-bin__item[data-drag] { cursor: grab; }
+.sim-bin__item svg { width: 40px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.sim-bin__item:hover { border-color: var(--of-border-strong); color: var(--of-text); transform: translateY(-1px); }
+.sim-bin__item:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.sim-bin__item[aria-pressed="true"] { border-color: var(--of-primary); background: var(--of-primary-soft); color: var(--of-primary-text); }
+.sim-bin__hint { margin: 0; padding: 6px 14px; font-size: var(--of-text-xs); color: var(--of-text-3); border-bottom: 1px solid var(--of-border); background: var(--of-surface); min-height: 1.6em; }
+.sim-bin__ghost { position: fixed; z-index: 1000; pointer-events: none; transform: translate(-50%, -50%); padding: 6px 8px; border-radius: 10px; background: var(--of-surface); border: 1px solid var(--of-primary); color: var(--of-primary-text); box-shadow: 0 8px 24px rgb(0 0 0 / .18); }
+.sim-bin__ghost svg { display: block; width: 48px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-select: none; }
+@container (max-width: 760px) {
+  .sim-bin { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+  .sim-bin__group { flex: none; }
+  .sim-bin__item { width: 58px; min-height: 48px; font-size: 10.5px; }
+}
+
+/* ---------- Issiqlik laboratoriyasi: rejim qatori, jism guruhlari ---------- */
+.sim-modebar { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; padding: 10px 12px; background: var(--of-surface-2); border-bottom: 1px solid var(--of-border); }
+.sim-modebar__hint { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.sim-subgroup { display: flex; flex-direction: column; gap: 8px; padding: 10px 0 12px; border-bottom: 1px dashed var(--of-border); }
+.sim-subgroup:last-child { border-bottom: 0; }
+.sim-subgroup__head { display: flex; align-items: center; gap: 8px; font-size: var(--of-text-sm); color: var(--of-text); }
+.sim-subgroup__head b { font-weight: 700; }
+.sim-subgroup__head .sim-switch--inline { margin-left: auto; font-size: var(--of-text-xs); }
+.sim-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.sim-presets__label { flex-basis: 100%; font: 700 10px/1 var(--of-font-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--of-text-3); margin: 6px 0 0; }
+.sim-presets__label:first-child { margin-top: 0; }
+
+/* ---------- Parametrlar ustuni: alohida aylantirish (keng ekranda) ----------
+   Pastdagi parametrni o'zgartirganda tajriba maydoni ko'rinishda qolsin: panel yopishqoq (sticky)
+   va o'z ichida aylanadi. */
+@container (min-width: 981px) {
+  .sim-panel {
+    position: sticky; top: calc(var(--of-header-h, 64px) + 12px);
+    max-height: calc(100vh - var(--of-header-h, 64px) - 24px);
+    max-height: calc(100dvh - var(--of-header-h, 64px) - 24px);
+    overflow-y: auto; overscroll-behavior: contain;
+    scrollbar-width: thin; scrollbar-color: var(--of-border-strong) transparent;
+  }
+  .sim-panel::-webkit-scrollbar { width: 8px; }
+  .sim-panel::-webkit-scrollbar-thumb { background: var(--of-border-strong); border-radius: 8px; border: 2px solid var(--of-surface); }
+  .sim-panel > h2 { position: sticky; top: calc(-1 * var(--of-space-5)); z-index: 2; margin: calc(-1 * var(--of-space-5)) calc(-1 * var(--of-space-5)) 0; padding: var(--of-space-5) var(--of-space-5) var(--of-space-3); background: var(--of-surface); border-bottom: 1px solid var(--of-border); }
+}

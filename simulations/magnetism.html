@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnit maydon va Amper kuchi | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: doimiy magnit, tokli o‘tkazgich va g‘altak maydoni, kuch chiziqlari, kompas va temir qipiqlari, Ersted tajribasi, Yer magnit maydoni, Amper kuchi, parallel toklarning o‘zaro ta’siri, tokli ramka va o‘zgarmas tok elektr dvigateli.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/magnetism.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Magnit maydon va Amper kuchi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="magSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
+      <h1>Magnit maydon va Amper kuchi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"><small>To‘g‘ri tok</small> B = μ₀I / 2πr</div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="field" aria-pressed="true">Magnit maydon</button>
+            <button type="button" data-mode-value="ampere" aria-pressed="false">Amper kuchi</button>
+            <button type="button" data-mode-value="frame" aria-pressed="false">Tokli ramka (dvigatel)</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Magnit maydon tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Maydon ko‘rinishi" data-view>
+            <button type="button" data-view-value="lines" aria-pressed="true">Kuch chiziqlari</button>
+            <button type="button" data-view-value="filings" aria-pressed="false">Temir qipiqlari</button>
+            <button type="button" data-view-value="grid" aria-pressed="false">Kompaslar</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Tajriba grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+        <div class="sim-btnrow" data-meas-tools hidden style="padding:0 16px 12px">
+          <button class="of-btn of-btn--sm" type="button" data-meas-add>Nuqta qo‘shish</button>
+          <button class="of-btn of-btn--sm" type="button" data-meas-scan>Avto-o‘lchash</button>
+          <button class="of-btn of-btn--sm" type="button" data-meas-clear>Tozalash</button>
+        </div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <!-- Magnit maydon -->
+      <div class="sim-group" data-ctl="field">
+        <span class="sim-group__title">Stolga qo‘shish</span>
+        <div class="sim-btnrow">
+          <button class="of-btn of-btn--sm" type="button" data-add="magnet">+ Magnit</button>
+          <button class="of-btn of-btn--sm" type="button" data-add="wire">+ Tokli o‘tkazgich</button>
+          <button class="of-btn of-btn--sm" type="button" data-add="coil">+ G‘altak</button>
+          <button class="of-btn of-btn--sm" type="button" data-add="compass">+ Kompas</button>
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-clear-all>Stolni tozalash</button>
+      </div>
+      <div class="sim-group sim-group--grid" data-ctl="field" data-props hidden>
+        <span class="sim-group__title" data-props-title>Tanlangan</span>
+        <div class="sim-control" data-prop="q">
+          <div class="sim-control__row"><label for="pQ">Magnit kuchi</label><output for="pQ" id="pQOut"></output></div>
+          <input class="sim-range" type="range" id="pQ" min="5" max="60" step="1" value="20">
+        </div>
+        <div class="sim-control" data-prop="I">
+          <div class="sim-control__row"><label for="pI">Tok kuchi I</label><output for="pI" id="pIOut"></output></div>
+          <input class="sim-range" type="range" id="pI" min="-20" max="20" step="0.5" value="5">
+        </div>
+        <div class="sim-control" data-prop="N">
+          <div class="sim-control__row"><label for="pN">O‘ramlar soni N</label><output for="pN" id="pNOut"></output></div>
+          <input class="sim-range" type="range" id="pN" min="20" max="500" step="10" value="200">
+        </div>
+        <div class="sim-control" data-prop="len">
+          <div class="sim-control__row"><label for="pL">G‘altak uzunligi l</label><output for="pL" id="pLOut"></output></div>
+          <input class="sim-range" type="range" id="pL" min="0.04" max="0.2" step="0.01" value="0.12">
+        </div>
+        <div class="sim-control" data-prop="angle">
+          <div class="sim-control__row"><label for="pA">Burchak</label><output for="pA" id="pAOut"></output></div>
+          <input class="sim-range" type="range" id="pA" min="0" max="345" step="15" value="0">
+        </div>
+        <label class="sim-switch" data-prop="core"><input type="checkbox" id="pCore"><span class="sim-switch__ui"></span>Temir o‘zak (elektromagnit)</label>
+        <div class="sim-btnrow">
+          <button class="of-btn of-btn--sm" type="button" data-flip>Qutblarni almashtirish</button>
+          <button class="of-btn of-btn--sm" type="button" data-delete>O‘chirish</button>
+        </div>
+      </div>
+      <div class="sim-group" data-ctl="field">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-earth><span class="sim-switch__ui"></span>Yerning magnit maydoni (shimol — yuqorida)</label>
+        <label class="sim-switch"><input type="checkbox" data-forces checked><span class="sim-switch__ui"></span>Toklarga ta’sir kuchlari</label>
+        <label class="sim-switch"><input type="checkbox" data-heat><span class="sim-switch__ui"></span>Maydon kuchi (fon rangi)</label>
+        <p class="of-subtle">Obyektni sichqoncha yoki barmoq bilan suring. ⊙ — tok bizga qarab, ⊗ — bizdan.</p>
+      </div>
+
+      <!-- Amper kuchi -->
+      <div class="sim-group sim-group--grid" data-ctl="ampere">
+        <span class="sim-group__title">Qurilma</span>
+        <div class="of-segment" role="group" aria-label="Qurilma" data-setup>
+          <button type="button" data-setup-value="swing" aria-pressed="true">Osma o‘tkazgich</button>
+          <button type="button" data-setup-value="rail" aria-pressed="false">Relsdagi o‘tkazgich</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aI">Tok kuchi I</label><output for="aI" id="aIOut"></output></div>
+          <input class="sim-range" type="range" id="aI" min="-10" max="10" step="0.5" value="5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aB">Magnit induksiya B</label><output for="aB" id="aBOut"></output></div>
+          <input class="sim-range" type="range" id="aB" min="0" max="0.5" step="0.01" value="0.2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aL">Maydondagi uzunlik l</label><output for="aL" id="aLOut"></output></div>
+          <input class="sim-range" type="range" id="aL" min="0.02" max="0.2" step="0.01" value="0.1">
+        </div>
+        <div class="sim-control" data-setup-only="swing">
+          <div class="sim-control__row"><label for="aAl">Burchak α (l va B orasida)</label><output for="aAl" id="aAlOut"></output></div>
+          <input class="sim-range" type="range" id="aAl" min="0" max="90" step="5" value="90">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aM">O‘tkazgich massasi m</label><output for="aM" id="aMOut"></output></div>
+          <input class="sim-range" type="range" id="aM" min="5" max="100" step="5" value="20">
+        </div>
+        <div class="sim-control" data-setup-only="rail">
+          <div class="sim-control__row"><label for="aMu">Ishqalanish koeffitsiyenti μ</label><output for="aMu" id="aMuOut"></output></div>
+          <input class="sim-range" type="range" id="aMu" min="0" max="0.5" step="0.02" value="0.1">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-hand checked><span class="sim-switch__ui"></span>Chap qo‘l qoidasini ko‘rsatish</label>
+      </div>
+
+      <!-- Ramka -->
+      <div class="sim-group sim-group--grid" data-ctl="frame">
+        <span class="sim-group__title">Tokli ramka</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fI">Tok kuchi I</label><output for="fI" id="fIOut"></output></div>
+          <input class="sim-range" type="range" id="fI" min="0" max="5" step="0.1" value="2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fB">Magnit induksiya B</label><output for="fB" id="fBOut"></output></div>
+          <input class="sim-range" type="range" id="fB" min="0" max="0.5" step="0.01" value="0.2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fN">O‘ramlar soni N</label><output for="fN" id="fNOut"></output></div>
+          <input class="sim-range" type="range" id="fN" min="1" max="200" step="1" value="50">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fS">Ramka yuzi S</label><output for="fS" id="fSOut"></output></div>
+          <input class="sim-range" type="range" id="fS" min="10" max="100" step="5" value="40">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fK">Ishqalanish (yuk)</label><output for="fK" id="fKOut"></output></div>
+          <input class="sim-range" type="range" id="fK" min="1" max="20" step="1" value="5">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-commutator checked><span class="sim-switch__ui"></span>Kollektor (yarim halqalar) — elektr dvigatel</label>
+        <button class="of-btn of-btn--sm" type="button" data-kick>Turtki berish</button>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>To‘g‘ri tok maydoni: <span class="sim-math">B = μ₀I / (2πr)</span>, μ₀ = 4π·10⁻⁷ H/m</li>
+        <li>G‘altak ichida: <span class="sim-math">B = μ₀μNI / l</span></li>
+        <li>Amper kuchi: <span class="sim-math">F = BIl·sinα</span> (chap qo‘l qoidasi)</li>
+        <li>Parallel toklar: <span class="sim-math">F / l = μ₀I₁I₂ / (2πd)</span> — bir yo‘nalishda tortishadi</li>
+        <li>Tokli ramka: <span class="sim-math">M = NBIS·sinφ</span>, <span class="sim-math">M<sub>max</sub> = NBIS</span></li>
+        <li>O‘tkazgichni ko‘chirishda ish: <span class="sim-math">A = F·s = I·ΔΦ</span>, <span class="sim-math">ΔΦ = B·l·s</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Maydon tekislikda hisoblanadi: o‘tkazgichlar tekislikka tik, g‘altak — bo‘ylama kesimda (ikki tokli qatlam), magnit qutblari — «magnit zaryadlar». Yerning gorizontal maydoni ≈ 20 μT.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

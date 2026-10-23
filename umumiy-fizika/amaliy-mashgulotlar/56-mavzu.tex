@@ -1,0 +1,251 @@
+\section{Kondensatorlarni parallel v aketma ket ulash}
+
+
+\begin{enumerate}
+
+\item 100 nF, 200 nF va 500 nF sig‘imli uchta kondensatorni ketma-ket ulangandagi umumiy sig‘imini toping (nF).
+\begin{enumerate}[label=\Alph*)]
+\item 800
+\item 500
+\item 100
+\item 58,8
+\end{enumerate}
+
+\item Elektr sig‘imlari bir xil bo‘lgan uchta kondensator 2 V kuchlanish manbaiga parallel ulandi. Bunda har bir kondensator 1 nC zaryadga ega bo‘ldi. Zanjirning umumiy sig‘imini toping (pF).
+\begin{enumerate}[label=\Alph*)]
+\item 1400
+\item 1500
+\item 1600
+\item 800
+\end{enumerate}
+
+\item Elektr sig‘imi 6 $\mu F$, 2 $\mu F$ va 4 $\mu F$ ga teng bo‘lgan kondensatorlar 24 V kuchlanish manbaiga ketma-ket ulangan. Ikkinchi kondensator qoplamalari orasidagi potensiallar farqini toping (V).
+\begin{enumerate}[label=\Alph*)]
+\item 8
+\item 12
+\item 4
+\item 13,1
+\end{enumerate}
+
+\item O‘zgarmas tok manbaiga ulangan 8 $\mu F$ sig‘imli kondensatorga parallel ulangan voltmetr 6 V kuchlanishni ko‘rsatdi. Agar bu kondensatorga 2 $\mu F$ sig‘imli ikkinchi kondensator ketma-ket ulansa, voltmetr qanday kuchlanishni (V) ko‘rsatadi?
+\begin{enumerate}[label=\Alph*)]
+\item 1,2
+\item 2
+\item 6
+\item 4,6
+\end{enumerate}
+
+\item $C_1 = 1 \, \mu F$ va $C_2 = 3 \, \mu F$ sig‘imli ikki kondensatorni ketma-ket ulab hosil qilingan elektr sxema $U = 220 \, V$ li o‘zgarmas kuchlanish manbaiga ulangan. Har bir kondensatordagi kuchlanishni aniqlang (V).
+\begin{enumerate}[label=\Alph*)]
+\item 115; 105
+\item 120; 100
+\item 145; 65
+\item 165; 55
+\end{enumerate}
+
+\item 3 $\mu F$ va 6 $\mu F$ sig‘imli kondensatorlar o‘zaro ulangan va 120 V EYUK li batareyaga biriktirilgan. Agar kondensatorlar ketma-ket ulangan bo‘lsa, ularning qoplamalari orasidagi potensiallar farqi aniqlansin (V).
+\begin{enumerate}[label=\Alph*)]
+\item 80; 40
+\item 80; 80
+\item 40; 40
+\item 80; 20
+\end{enumerate}
+
+\item  Rasmda tasvirlangan kondensatorlar tizimining umumiy sig‘imini toping.
+
+\begin{circuitikz}[scale=0.8, transform shape]
+  % Kirish terminali va 4C kondensator
+  \draw (0,0) to [short, o-] (0.5,0)
+        to [C, l=$4C$] (2,0);
+  
+  % Birinchi tugun va 3C kondensatorlar (Parallel)
+  \draw (2,0) -- (2,1)
+        to [C, l=$3C$] (4,1);
+  \draw (2,0) -- (2,-1)
+        to [C, l=$3C$] (4,-1);
+        
+  % 3C larning chiqishini bitta nuqtaga birlashtirish
+  \draw (4,1) -- (4,-1);
+  
+  % Ikkinchi tugun va uchta 2C kondensatorlar (Parallel)
+  \draw (4,1) to [C, l=$2C$] (6,1);
+  \draw (4,0) to [C, l=$2C$] (6,0);
+  \draw (4,-1) to [C, l=$2C$] (6,-1);
+  
+  % Barcha 2C larning chiqishini birlashtirish va chiqish terminali
+  \draw (6,1) -- (6,-1);
+  \draw (6,0) to [short, -o] (7,0);
+
+  % Nuqtalarni belgilash (ixtiyoriy)
+  \node[circle, fill, inner sep=1pt] at (2,0) {};
+  \node[circle, fill, inner sep=1pt] at (4,0) {};
+  \node[circle, fill, inner sep=1pt] at (6,0) {};
+\end{circuitikz}
+
+\begin{enumerate}[label=\Alph*)]
+\item $47C/16$
+\item $14C/15$
+\item $15C/7$
+\item $12C/7$
+\end{enumerate}
+
+\item  Sxemadan umumiy sig‘imni toping.
+\begin{enumerate}[label=\Alph*)]
+\item $3C/2$
+\item $3C$
+\item $6C$
+\item $2C$
+\end{enumerate}
+
+\item  Rasmda har bir kondensatorning sig‘imi C ga teng. M va N nuqtalar orasidagi potensiallar farqi 120 V bo‘lsa, K va L nuqtalar orasidagi potensiallar farqini (V) toping.
+\begin{enumerate}[label=\Alph*)]
+\item 60
+\item 40
+\item 20
+\item 30
+\end{enumerate}
+
+\item  Sig‘imlari $C_1 = 3 \, \mu F, C_2 = 5 \, \mu F, C_3 = 6 \, \mu F$ va $C_4 = 5 \, \mu F$ bo‘lgan to‘rtta kondensator rasmda ko‘rsatilgan sxema bo‘yicha ulangan. Batareyaning umumiy sig‘imini aniqlang ($\mu F$).
+\begin{enumerate}[label=\Alph*)]
+\item 2
+\item 3,4
+\item 9
+\item 4,5
+\end{enumerate}
+
+\item  Rasmda ko‘rsatilgan kondensatorlar batareyasining A va B nuqtalar orasidagi elektr sig‘imini aniqlang.
+\begin{enumerate}[label=\Alph*)]
+\item 0,4C
+\item 0,2C
+\item C
+\item 0,8C
+\end{enumerate}
+
+\item  Rasmdagi kondensatorlar batareyasining sig‘imi 5,8 $\mu F$ ga teng. Agar $C_2 = 1 \, \mu F, C_3 = 4 \, \mu F$ bo‘lsa, birinchi kondensatorning sig‘imi ($\mu F$) va undagi zaryad qanday ($\mu C$)?
+\begin{enumerate}[label=\Alph*)]
+\item 5; 1,1
+\item 10; 1,1
+\item 5; 0,8
+\item 1,4; 3
+\end{enumerate}
+
+\item  Rasmdagi zanjirda K va L uchlar orasidagi zaryad miqdori Q ga teng. MN uchlari orasiga ulangan C sig‘imli kondensatorning zaryadi nimaga teng?
+\begin{enumerate}[label=\Alph*)]
+\item $Q/5$
+\item $Q/2$
+\item $8Q/53$
+\item $13Q/40$
+\end{enumerate}
+
+\item Rasmda tasvirlangan kondensatorlar tizimining umumiy sig‘imini toping.
+\begin{enumerate}[label=\Alph*)]
+\item 3C
+\item 6C/11
+\item 5C/11
+\item 6C
+\end{enumerate}
+
+\item  Ketma-ket ulangan ikkita bir xil kondensator modda bilan ikki xil usulda yarmigacha to‘ldirilgan. Bunda kondensator kuchlanishlarining farqi qanday bo‘ladi (V)?
+\begin{enumerate}[label=\Alph*)]
+\item 0
+\item 24
+\item 28,5
+\item 12,6
+\end{enumerate}
+
+\item  Rasmda ko‘rsatilgan kondensatorlar batareyasida a va b nuqtalar orasidagi kuchlanishini toping (V).
+\begin{enumerate}[label=\Alph*)]
+\item 0
+\item 8,25
+\item 7,75
+\item 5,33
+\end{enumerate}
+
+\item Sig‘imi 3 $\mu F$ zaryadi 5 $\mu C$ va sig‘imi 8 $\mu F$ zaryadi 3 $\mu C$ bo‘lgan kondensatorlar mos qutblari bilan ulangandan keyin, birinchi kondensatordagi zaryadni toping ($\mu C$).
+\begin{enumerate}[label=\Alph*)]
+\item 24/11
+\item 64/11
+\item 6/11
+\item 16/11
+\end{enumerate}
+
+\item Sig‘imi 3 $\mu F$ zaryadi 5 $\mu C$ va sig‘imi 8 $\mu F$ zaryadi 3 $\mu C$ bo‘lgan kondensatorlar mos qutblari bilan ulangandan keyin, ikkinchi kondensatordagi zaryadni toping ($\mu C$).
+\begin{enumerate}[label=\Alph*)]
+\item 24/11
+\item 64/11
+\item 6/11
+\item 16/11
+\end{enumerate}
+
+\item $C$ sig‘imli ikki kondensator $2U$ va $U$ kuchlanish bilan zaryadlangan. Agar kondensator qutblari teskari holda ulansa, natijaviy kuchlanish qanday bo‘ladi?
+\begin{enumerate}[label=\Alph*)]
+\item 4U
+\item 2,5U
+\item 2U
+\item 0,5U
+\end{enumerate}
+
+\item $10^4 \, nF$ sig‘imli ikki kondensator 5 V va 10 V kuchlanish bilan zaryadlangan. Ularning qutblari mos ravishda ulansa, natijaviy kuchlanish qanday bo‘ladi?
+\begin{enumerate}[label=\Alph*)]
+\item 5
+\item 12,5
+\item 7,5
+\item 50
+\end{enumerate}
+
+\item Bir xil zaryadlangan $C$ va $2C$ sig‘imli kondensatorlar o‘zaro parallel ulansa, birinchi kondensatordagi kuchlanish qanday o‘zgaradi?
+\begin{enumerate}[label=\Alph*)]
+\item o‘zgarmaydi
+\item 1,5 marta ortadi
+\item 1,5 marta kamayadi
+\item 3 marta ortadi
+\end{enumerate}
+
+\item 800 V potensiallar farqigacha zaryadlangan havo kondensatori o‘lchamlari birday bo‘lgan dielektrikli zaryadlanmagan kondensator bilan parallel ulangan. Potensiallar farqi 100 V bo‘lsa, dielektrikning singdiruvchanligini toping.
+\begin{enumerate}[label=\Alph*)]
+\item 7
+\item 2
+\item 16
+\item 3
+\end{enumerate}
+
+\item Yassi havo kondensatori 50 V gacha zaryadlangan va manbadan uzilgan. Qoplamalar orasiga 1 mm qalinlikdagi metall list kiritildi. Masofa 5 mm bo‘lsa, yangi potensiallar farqini aniqlang (V).
+\begin{enumerate}[label=\Alph*)]
+\item 30
+\item 15
+\item 80
+\item 40
+\end{enumerate}
+
+\item Ikkita bir xil kondensator parallel ulangan va 6 V gacha zaryadlangan. Uzilgach, birining plastinkalari orasidagi masofa 2 marta kamaytirilsa, yangi potensiallar farqi qancha (V)?
+\begin{enumerate}[label=\Alph*)]
+\item 6
+\item 2
+\item 4
+\item 12
+\end{enumerate}
+
+\item 12 $\mu F$ sig‘imli kondensatorga parallel voltmetr 3 V ni ko‘rsatmoqda. Unga 8 $\mu F$ sig‘imli ikkinchi kondensator parallel ulansa, voltmetr necha V ni ko‘rsatadi?
+\begin{enumerate}[label=\Alph*)]
+\item 1,5
+\item 3
+\item 1
+\item 2
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+№ & J. & № & J. & № & J. & № & J. & № & J. \\ \hline
+1 & D & 6 & A & 11 & A & 16 & D & 21 & C \\ \hline
+2 & B & 7 & D & 12 & A & 17 & A & 22 & A \\ \hline
+3 & D & 8 & A & 13 & D & 18 & B & 23 & D \\ \hline
+4 & A & 9 & B & 14 & D & 19 & D & 24 & C \\ \hline
+5 & D & 10 & D & 15 & D & 20 & C & 25 & B \\ \hline
+\end{tabular}
+\end{table}

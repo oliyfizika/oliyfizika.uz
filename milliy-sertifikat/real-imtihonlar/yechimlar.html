@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yechimlar — Real imtihonlar | OliyFizika.uz</title>
+<meta name="robots" content="noindex">
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../../assets/css/real-imtihonlar.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../../assets/js/milliy-sertifikat/real-exams/solutions-page.js"></script>
+</head>
+<!-- Real imtihonlar — yechimlar (yechimlar.html?id=EXAM_ID&q=N). Navigatsiyada faqat included=true savollar. -->
+<body class="of-ui" data-shell-title="Real imtihonlar" data-shell-public="true">
+<div class="of-page of-container rx">
+  <div class="of-card rx-gate" data-gate aria-live="polite"><p class="rx-gate__text">Ruxsat tekshirilmoqda…</p></div>
+  <div data-protected hidden>
+    <div data-view>
+      <header class="rx-head">
+        <a class="rx-back" href="./"><span data-icon="chevronLeft"></span>Real imtihonlar</a>
+        <h1 data-title>Yechimlar</h1>
+        <p class="rx-sub" data-sub></p>
+        <div class="rx-head__actions"><a class="of-btn of-btn--soft of-btn--sm" data-pdf-link href="#"><span data-icon="file"></span>PDF ko‘rish</a></div>
+      </header>
+      <div class="rx-sol">
+        <nav class="of-card rx-nav" aria-label="Savollar bo‘yicha navigatsiya">
+          <div class="rx-nav__bar">
+            <button type="button" class="of-btn of-btn--sm" data-first aria-label="Birinchi savol">«</button>
+            <button type="button" class="of-btn of-btn--sm" data-prev aria-label="Oldingi savol"><span data-icon="chevronLeft"></span></button>
+            <span class="rx-nav__pos" data-pos aria-live="polite"></span>
+            <button type="button" class="of-btn of-btn--sm" data-next aria-label="Keyingi savol"><span data-icon="chevronRight"></span></button>
+            <button type="button" class="of-btn of-btn--sm" data-last aria-label="Oxirgi savol">»</button>
+          </div>
+          <details class="rx-nav__more" data-nav-more open>
+          <summary>Savollar ro‘yxati</summary>
+          <form class="rx-jump" data-jump>
+            <label>Savol raqami <input class="of-input" name="n" type="number" min="1" max="99" inputmode="numeric" required></label>
+            <button type="submit" class="of-btn of-btn--sm">O‘tish</button>
+            <span class="rx-jump__msg" data-jump-msg role="status"></span>
+          </form>
+          <ol class="rx-grid-nums" data-grid aria-label="Savollar"></ol>
+          <label class="rx-org"><input type="checkbox" data-show-org> ORG savollarni ko‘rsatish (ballga kirmaydi)</label>
+          </details>
+        </nav>
+        <article class="of-card rx-qcard" data-question aria-labelledby="rxQTitle"></article>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mexanik to‘lqinlar va tovush | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: ipdagi ko‘ndalang va bo‘ylama to‘lqinlar, to‘lqin uzunligi, impulsning qaytishi, turg‘un to‘lqinlar va garmonikalar; suv sirtida interferensiya, yo‘llar farqi; tovush va Doppler effekti, Max konusi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/waves.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Mexanik to‘lqinlar va tovush" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="wavesSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Mexanik to‘lqinlar va tovush</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="string" aria-pressed="true">Ipdagi to‘lqin</button>
+            <button type="button" data-mode-value="ripple" aria-pressed="false">Interferensiya</button>
+            <button type="button" data-mode-value="doppler" aria-pressed="false">Tovush va Doppler</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="To‘lqin tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-pulse data-ctl="string">Impuls yuborish</button>
+          <div class="of-segment" role="group" aria-label="Vaqt" data-speed data-ctl="string ripple">
+            <button type="button" data-speed-value="0.25" aria-pressed="false">×0,25</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">Real</button>
+          </div>
+          <label class="sim-switch" data-ctl="ripple"><input type="checkbox" data-toggle="lines" checked><span class="sim-switch__ui"></span>Interferensiya chiziqlari</label>
+          <button class="of-btn of-btn--sm" type="button" data-sound data-ctl="doppler" aria-pressed="false">Ovozni eshitish (A)</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="string">
+        <span class="sim-group__title">Ip va manba</span>
+        <div class="of-segment" role="group" aria-label="To‘lqin turi" data-wtype>
+          <button type="button" data-wtype-value="trans" aria-pressed="true">Ko‘ndalang</button>
+          <button type="button" data-wtype-value="long" aria-pressed="false">Bo‘ylama</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="Manba" data-src>
+          <button type="button" data-src-value="harm" aria-pressed="true">Garmonik</button>
+          <button type="button" data-src-value="pulse" aria-pressed="false">Impuls</button>
+          <button type="button" data-src-value="hand" aria-pressed="false">Qo‘lda</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="O‘ng uchi" data-end>
+          <button type="button" data-end-value="fixed" aria-pressed="true">Mahkam</button>
+          <button type="button" data-end-value="free" aria-pressed="false">Erkin</button>
+          <button type="button" data-end-value="open" aria-pressed="false">Cheksiz</button>
+        </div>
+        <div class="sim-control" data-sctl="harm">
+          <div class="sim-control__row"><label for="wF">Chastota ν</label><output for="wF" id="wFOut"></output></div>
+          <input class="sim-range" type="range" id="wF" min="0.2" max="4" step="0.05" value="1">
+        </div>
+        <div class="sim-control" data-sctl="harm pulse">
+          <div class="sim-control__row"><label for="wA">Amplituda A</label><output for="wA" id="wAOut"></output></div>
+          <input class="sim-range" type="range" id="wA" min="1" max="10" step="0.5" value="4">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="wV">To‘lqin tezligi v (ip tarangligi)</label><output for="wV" id="wVOut"></output></div>
+          <input class="sim-range" type="range" id="wV" min="0.5" max="6" step="0.1" value="2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="wG">So‘nish</label><output for="wG" id="wGOut"></output></div>
+          <input class="sim-range" type="range" id="wG" min="0" max="1" step="0.02" value="0.06">
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-harm data-sctl="harm">Turg‘un to‘lqin chastotasini tanlash</button>
+        <p class="of-subtle" data-shint></p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="ripple">
+        <span class="sim-group__title">Suv sirtidagi manbalar</span>
+        <div class="of-segment" role="group" aria-label="Manbalar soni" data-nsrc>
+          <button type="button" data-nsrc-value="1" aria-pressed="false">Bitta</button>
+          <button type="button" data-nsrc-value="2" aria-pressed="true">Ikkita</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rF">Chastota ν</label><output for="rF" id="rFOut"></output></div>
+          <input class="sim-range" type="range" id="rF" min="1" max="8" step="0.1" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rV">To‘lqin tezligi v</label><output for="rV" id="rVOut"></output></div>
+          <input class="sim-range" type="range" id="rV" min="6" max="30" step="0.5" value="15">
+        </div>
+        <div class="sim-control" data-rctl="2">
+          <div class="sim-control__row"><label for="rD">Manbalar orasi d</label><output for="rD" id="rDOut"></output></div>
+          <input class="sim-range" type="range" id="rD" min="2" max="30" step="0.5" value="14">
+        </div>
+        <div class="sim-control" data-rctl="2">
+          <div class="sim-control__row"><label for="rP">Fazalar farqi Δφ</label><output for="rP" id="rPOut"></output></div>
+          <input class="sim-range" type="range" id="rP" min="0" max="360" step="15" value="0">
+        </div>
+        <p class="of-subtle">Manbalarni va qizil belgini (kuzatish nuqtasi) suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="doppler">
+        <span class="sim-group__title">Tovush manbai</span>
+        <div class="of-segment" role="group" aria-label="Muhit" data-medium>
+          <button type="button" data-medium-value="air" aria-pressed="true">Havo</button>
+          <button type="button" data-medium-value="water" aria-pressed="false">Suv</button>
+          <button type="button" data-medium-value="steel" aria-pressed="false">Po‘lat</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="dF">Chastota ν</label><output for="dF" id="dFOut"></output></div>
+          <input class="sim-range" type="range" id="dF" min="100" max="1000" step="10" value="440">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="dM">Manba tezligi u / c</label><output for="dM" id="dMOut"></output></div>
+          <input class="sim-range" type="range" id="dM" min="0" max="1.8" step="0.05" value="0.5">
+        </div>
+        <p class="of-subtle">A va B kuzatuvchilarni suring. Vaqt sekinlashtirilgan.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>To‘lqin uzunligi: <span class="sim-math">λ = v·T = v/ν</span></li>
+        <li>Ipdagi to‘lqin tezligi: <span class="sim-math">v = √(F/μ)</span> (F — taranglik, μ — chiziqli zichlik)</li>
+        <li>Turg‘un to‘lqin (ikki uchi mahkam): <span class="sim-math">ν<sub>n</sub> = n·v/(2L)</span>, tugunlar orasi <span class="sim-math">λ/2</span></li>
+        <li>Interferensiya: maksimum <span class="sim-math">Δr = kλ</span>, minimum <span class="sim-math">Δr = (2k+1)λ/2</span></li>
+        <li>Doppler (manba harakatlanadi): <span class="sim-math">ν′ = ν·c/(c ∓ u)</span>; Max konusi <span class="sim-math">sin α = c/u</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Ip — to‘lqin tenglamasining sonli yechimi (chekli ayirmalar); mahkam uchda to‘lqin teskari, erkin uchda to‘g‘ri qaytadi, «cheksiz» uch to‘lqinni yutadi. Suv sirtida to‘lqinlar aylanma, amplitudasi masofa bilan 1/√r kamayadi. Doppler rejimida vaqt sekinlashtirilgan, chastotalar esa haqiqiy.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

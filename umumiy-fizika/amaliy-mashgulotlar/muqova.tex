@@ -1,0 +1,132 @@
+
+
+\begin{tikzpicture}[remember picture,overlay]
+
+% Background
+\fill[darkblue] 
+(current page.south west)
+rectangle
+(current page.north east);
+
+% White curved area
+\fill[light]
+(7,-2)
+.. controls (12,5) and (11,20) ..
+(8,29)
+--
+(21,29)
+--
+(21,-2)
+-- cycle;
+
+% Golden borders
+\draw[line width=3pt,gold]
+(7,-2)
+.. controls (12,5) and (11,20) ..
+(8,29);
+
+% Decorative circles
+\fill[darkblue] (6,8) circle (5cm);
+\draw[line width=2pt,gold] (6,8) circle (5cm);
+
+% Prism
+\draw[white,line width=1.5pt]
+(4,6)--(6,10)--(8,6)--cycle;
+
+% Rainbow
+\draw[red,line width=3pt] (6.1,8.2)--(9,7.5);
+\draw[orange,line width=3pt] (6.1,8)--(9,7.2);
+\draw[yellow,line width=3pt] (6.1,7.8)--(9,6.9);
+\draw[green,line width=3pt] (6.1,7.6)--(9,6.6);
+\draw[blue,line width=3pt] (6.1,7.4)--(9,6.3);
+\draw[violet,line width=3pt] (6.1,7.2)--(9,6);
+
+% Atom symbol
+\draw[gold,line width=1pt] (3,24) circle (0.8);
+\draw[gold,line width=1pt] (3,24) ellipse (1.2 and 0.4);
+\draw[gold,line width=1pt,rotate=60] (3,24) ellipse (1.2 and 0.4);
+\draw[gold,line width=1pt,rotate=-60] (3,24) ellipse (1.2 and 0.4);
+
+% Main title
+\node[
+text=darkblue,
+font=\bfseries\fontsize{38}{40}\selectfont
+]
+at (12,22)
+{FIZIKA};
+
+\node[
+text=gold,
+font=\bfseries\fontsize{26}{30}\selectfont
+]
+at (12,18)
+{MASALALAR};
+
+\node[
+text=darkblue,
+font=\bfseries\fontsize{26}{30}\selectfont
+]
+at (12,15.5)
+{TO‘PLAMI};
+
+% Subtitle
+\node[
+align=center,
+text=black,
+font=\fontsize{14}{16}\selectfont
+]
+at (13,11)
+{
+Nazariya, formulalar\\
+va yechimli masalalar
+};
+
+% Decorative formulas
+\node[text=gray!50,font=\fontsize{20}{22}\selectfont]
+at (15,26)
+{$E=mc^2$};
+
+\node[text=gray!50,font=\fontsize{20}{22}\selectfont]
+at (5,4)
+{$E=\frac12 mv^2$};
+
+\node[text=gray!40,font=\fontsize{20}{22}\selectfont]
+at (16,4)
+{$p=mv$};
+
+% Bottom labels
+\node[text=gold,font=\bfseries\fontsize{12}{14}\selectfont]
+at (4,1.5)
+{Mexanika};
+
+\node[text=gold,font=\bfseries\fontsize{12}{14}\selectfont]
+at (8,1.5)
+{Optika};
+
+\node[text=gold,font=\bfseries\fontsize{12}{14}\selectfont]
+at (12,1.5)
+{Elektr};
+
+\node[text=gold,font=\bfseries\fontsize{12}{14}\selectfont]
+at (16,1.5)
+{To‘lqinlar};
+
+% Author
+\node[
+text=white,
+font=\bfseries\fontsize{16}{18}\selectfont
+]
+at (4,27)
+{Sardor Berdiyev};
+
+% Side text
+\node[
+rotate=90,
+text=gold,
+font=\bfseries\fontsize{24}{26}\selectfont
+]
+at (1.5,14)
+{FIZIKA};
+
+\end{tikzpicture}
+
