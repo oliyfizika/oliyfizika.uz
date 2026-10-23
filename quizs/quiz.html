@@ -3,137 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Quiz | OliyFizika.uz</title>
-
-<link rel="stylesheet" href="css/quiz.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/quiz.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/quizzes/quiz-page.js"></script>
 </head>
-
-<body>
-
-<div id="background-texts"></div>
-
-<div class="container">
-
-<div class="quiz-box">
-
-<h1 class="quiz-title" id="quizTitle">
-Yuklanmoqda...
-</h1>
-
-<div class="progress">
-
-<div
-class="progress-bar"
-id="progressBar">
-
+<!--
+  Quiz o'yini: quiz.html?id=N (N=0 — aralash quiz). Savollar: data/mavzu-N.json, ro'yxat: data/manifest.json.
+  Kod: assets/js/quizzes/quiz-page.js, uslub: assets/css/quiz.css, timer: assets/js/quizzes/quiz-config.js.
+-->
+<body class="of-ui" data-shell-title="Quiz">
+<div class="of-page of-container qz" id="quizPage">
+  <div data-view>
+    <div class="of-card qz-bar"><span class="of-skeleton of-skeleton--title"></span></div>
+    <div class="of-card qz-skeleton">
+      <span class="of-skeleton of-skeleton--title"></span>
+      <span class="of-skeleton of-skeleton--text"></span>
+      <span class="of-skeleton of-skeleton--text" style="width:70%"></span>
+    </div>
+  </div>
 </div>
-
-</div>
-
-<div
-class="timer"
-id="timer">
-
-15
-
-</div>
-
-<div id="quizArea">
-
-<div
-class="question"
-id="question">
-
-</div>
-
-<div
-class="answers"
-id="answers">
-
-</div>
-
-<button
-class="next-btn"
-id="nextBtn">
-
-Keyingi savol
-
-</button>
-
-</div>
-
-<div
-class="result"
-id="result">
-
-<h2>
-🎉 Quiz yakunlandi
-</h2>
-
-<p id="resultText"></p>
-
-<button
-class="restart"
-onclick="location.reload()">
-
-🔄 Qayta ishlash
-
-</button>
-
-<a
-href="quizs.html"
-class="back-to-quizs">
-
-📚 Quizlarga qaytish
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-const params =
-new URLSearchParams(
-window.location.search
-);
-
-const topicId =
-params.get("id");
-
-if(topicId === "0"){
-
-    window.isMixedQuiz = true;
-
-}else{
-
-    if(!topicId){
-
-        document.body.innerHTML = `
-        <h1 style="text-align:center;margin-top:50px;">
-        Mavzu topilmadi
-        </h1>
-        `;
-
-        throw new Error("id mavjud emas");
-
-    }
-
-    window.quizDataFile =
-    `data/mavzu-${topicId}.json`;
-
-}
-
-</script>
-
-<script src="js/background.js"></script>
-<script src="js/quiz-engine.js"></script>
-
+<div class="qz-wm" aria-hidden="true"></div>
+<noscript><p style="padding:16px">Quizni ishlash uchun brauzeringizda JavaScript yoqilgan bo‘lishi kerak.</p></noscript>
 </body>
 </html>

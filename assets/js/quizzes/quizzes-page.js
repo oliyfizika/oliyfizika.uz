@@ -1,7 +1,7 @@
 // ==========================================================================
 // Quizlar — katalog sahifasi (quizs/quizs.html)
 // Ma'lumot: quizs/data/manifest.json (bitta kichik fayl; savollar fayllari bu sahifada YUKLANMAYDI).
-// Quiz o'yini o'zgarmagan: quiz.html?id=N + js/quiz-engine.js.
+// Quiz o'yini: quiz.html?id=N + assets/js/quizzes/quiz-page.js (timer — quiz-config.js).
 // Mehmon quizni boshlamoqchi bo'lsa — mavjud kirish oynasi (auth-gate), keyin aynan shu quizga qaytish.
 // ==========================================================================
 
@@ -9,6 +9,7 @@ import { icon } from "../ui/icons.js";
 import { revealOnScroll } from "../ui/reveal.js";
 import { onSession } from "../core/session.js";
 import { bindProtectedLinks } from "../auth/auth-gate.js";
+import { QUIZ_CONFIG } from "./quiz-config.js";
 
 const root = document.getElementById("quizzesPage");
 const $ = (s, r = document) => r.querySelector(s);
@@ -101,6 +102,7 @@ function setupSearch() {
 
 async function init() {
   hydrateIcons();
+  $$("[data-quiz-seconds]").forEach((el) => { el.textContent = String(QUIZ_CONFIG.secondsPerQuestion); });
   setupSearch();
   bindProtectedLinks(root, "a[data-quiz-start]");
   try {

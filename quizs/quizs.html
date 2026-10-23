@@ -13,13 +13,13 @@
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
 <script type="module" src="../assets/js/quizzes/quizzes-page.js"></script>
 </head>
-<!-- Quiz o'yini o'zgarmagan: quiz.html?id=N (N=0 — aralash quiz), js/quiz-engine.js, data/mavzu-N.json -->
+<!-- Quiz o'yini: quiz.html?id=N (N=0 — aralash quiz), assets/js/quizzes/quiz-page.js, data/mavzu-N.json. Timer: assets/js/quizzes/quiz-config.js -->
 <body class="of-ui" data-shell-title="Quizlar" data-shell-public="true">
 <div class="of-page of-container of-cat" id="quizzesPage">
   <header class="of-cat-head">
     <div>
       <h1>Quizlar</h1>
-      <p>Mavzuni tanlang va bilimingizni tezkor savollar bilan sinab ko‘ring. Har bir savolga 15 soniya beriladi.</p>
+      <p>Mavzuni tanlang va bilimingizni tezkor savollar bilan sinab ko‘ring. Har bir savolga <span data-quiz-seconds>20</span> soniya beriladi.</p>
     </div>
     <p class="of-cat-count" data-quiz-count aria-live="polite"></p>
   </header>
