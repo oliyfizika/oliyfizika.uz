@@ -8,3 +8,8 @@ milliy-sertifikat/Real imtihonlar/
 .DS_Store
 .DS_Store
 _to_delete/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
