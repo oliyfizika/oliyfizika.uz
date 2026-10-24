@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harakat grafiklari | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: to‘g‘ri chiziqli tekis va notekis harakat, x(t), v(t) va a(t) grafiklari, ko‘chish va yo‘l, o‘rtacha tezlik, ikki jismning uchrashishi, v(t) grafigini chizib harakatni kuzatish.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/motion.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Harakat grafiklari" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="motionSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Harakat grafiklari</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Harakat turi">
+            <button type="button" data-mode-value="uni" aria-pressed="true">Tekis harakat</button>
+            <button type="button" data-mode-value="acc" aria-pressed="false">Notekis harakat</button>
+            <button type="button" data-mode-value="pw" aria-pressed="false">Grafikdan harakat</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="To‘g‘ri yo‘lda harakatlanayotgan jismlar"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <label class="sim-switch"><input type="checkbox" data-toggle="dots" checked><span class="sim-switch__ui"></span>Har 1 s dagi o‘rni</label>
+          <label class="sim-switch"><input type="checkbox" data-toggle="ghost" checked><span class="sim-switch__ui"></span>To‘liq grafik</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafiklar">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title>Koordinata grafigi x(t)</h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs>
+            <button type="button" data-tab-value="x" aria-pressed="true">x(t)</button>
+            <button type="button" data-tab-value="v" aria-pressed="false">v(t)</button>
+            <button type="button" data-tab-value="a" aria-pressed="false">a(t)</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Harakat grafigi"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="uni acc">
+        <span class="sim-group__title">Avtomobil (A)</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="aX">Boshlang‘ich koordinata x₀</label><output for="aX" id="aXOut"></output></div><input class="sim-range" type="range" id="aX" min="0" max="150" step="1" value="10"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="aV">Tezlik v₀</label><output for="aV" id="aVOut"></output></div><input class="sim-range" type="range" id="aV" min="-15" max="20" step="0.5" value="5"></div>
+        <div class="sim-control" data-ctl="acc"><div class="sim-control__row"><label for="aA">Tezlanish a</label><output for="aA" id="aAOut"></output></div><input class="sim-range" type="range" id="aA" min="-4" max="4" step="0.25" value="2"></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="uni acc">
+        <span class="sim-group__title">Ikkinchi jism (B)</span>
+        <label class="sim-switch"><input type="checkbox" id="bOn"><span class="sim-switch__ui"></span>Velosipedchini qo‘shish</label>
+        <div class="sim-control" data-b><div class="sim-control__row"><label for="bX">Boshlang‘ich koordinata x₀</label><output for="bX" id="bXOut"></output></div><input class="sim-range" type="range" id="bX" min="0" max="150" step="1" value="120"></div>
+        <div class="sim-control" data-b><div class="sim-control__row"><label for="bV">Tezlik v₀</label><output for="bV" id="bVOut"></output></div><input class="sim-range" type="range" id="bV" min="-15" max="20" step="0.5" value="-5"></div>
+        <div class="sim-control" data-b data-ctl="acc"><div class="sim-control__row"><label for="bA">Tezlanish a</label><output for="bA" id="bAOut"></output></div><input class="sim-range" type="range" id="bA" min="-4" max="4" step="0.25" value="0"></div>
+        <label class="sim-switch" data-ctl="acc"><input type="checkbox" id="stop" checked><span class="sim-switch__ui"></span>Tormozlanganda v = 0 da to‘xtaydi</label>
+        <p class="of-subtle">Yo‘lda jismni surib x₀ ni, ko‘k o‘q uchini surib v₀ ni, to‘q sariq o‘q uchini surib a ni o‘zgartiring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="pw">
+        <span class="sim-group__title">Tezlik grafigi v(t)</span>
+        <div class="of-segment" role="group" aria-label="Grafik shakli" data-shape>
+          <button type="button" data-shape-value="step" aria-pressed="false">Zinapoya (tekis bo‘laklar)</button>
+          <button type="button" data-shape-value="lin" aria-pressed="true">Siniq chiziq</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="pX">Boshlang‘ich koordinata x₀</label><output for="pX" id="pXOut"></output></div><input class="sim-range" type="range" id="pX" min="0" max="100" step="1" value="0"></div>
+        <p class="of-subtle">v(t) grafigidagi nuqtalarni yuqoriga-pastga surib tezlikni chizing (har bo‘lak 2 s). Avtomobil shu grafik bo‘yicha harakatlanadi; x(t) grafigi avtomatik quriladi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Tezlik: <span class="sim-math">v = Δx/Δt</span>; x(t) grafigining qiyaligi</li>
+        <li>Tekis harakat: <span class="sim-math">x = x₀ + vt</span>, <span class="sim-math">s = |v|·t</span></li>
+        <li>Tekis o‘zgaruvchan: <span class="sim-math">v = v₀ + at</span>, <span class="sim-math">x = x₀ + v₀t + at²/2</span></li>
+        <li>Ko‘chish — v(t) grafigi ostidagi yuza (o‘qdan pastdagisi manfiy): <span class="sim-math">Δx = x − x₀</span></li>
+        <li>O‘rtacha tezlik: <span class="sim-math">v<sub>o‘rt</sub> = s/t</span> (umumiy yo‘l / umumiy vaqt)</li>
+        <li>Birliklar: <span class="sim-math">1 m/s = 3,6 km/soat</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Jismlar moddiy nuqta deb olinadi; rasmdagi avtomobil va velosiped o‘lchami masshtabda emas. Yo‘l −10 m dan 160 m gacha; jism chetga yetsa tajriba to‘xtaydi. Grafikda kursor bilan qiymat o‘qiladi: x(t) da urinma (tezlik), v(t) da yuza (ko‘chish).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

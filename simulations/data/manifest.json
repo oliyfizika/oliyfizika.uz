@@ -28,6 +28,21 @@
  ],
  "simulations": [
   {
+   "id": "motion",
+   "title": "Harakat grafiklari",
+   "href": "motion.html",
+   "topic": "mexanika",
+   "description": "To‘g‘ri chiziqli tekis va tekis o‘zgaruvchan harakat: x(t), v(t), a(t) grafiklari, har 1 s dagi o‘rni, ko‘chish va yo‘l (v(t) ostidagi yuza), x(t) ga urinma. Ikki jismning uchrashishi va quvib yetish, tormozlash. v(t) grafigini chizib harakat va o‘rtacha tezlik.",
+   "params": [
+    "Avtomobil: x₀, v₀, a (yo‘lda suriladi)",
+    "Velosipedchi (ikkinchi jism): x₀, v₀, a",
+    "Tormozlash: v = 0 da to‘xtash",
+    "v(t) tugunlari: zinapoya yoki siniq chiziq",
+    "Grafik: x(t), v(t), a(t), kursor bilan o‘qish"
+   ],
+   "keywords": "harakat grafiklari koordinata vaqt grafigi x(t) v(t) a(t) tezlik grafigi tekis harakat notekis harakat tekis o'zgaruvchan harakat tezlanish o'rtacha tezlik oniy tezlik ko'chish yo'l uchrashish quvib yetish tormozlash to'xtash yo'li grafik ostidagi yuza urinma kinematika motion graphs position velocity acceleration uniform motion average speed"
+  },
+  {
    "id": "projectile",
    "title": "Og‘irlik kuchi ta’sirida jism harakati",
    "href": "projectile.html",

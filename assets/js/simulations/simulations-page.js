@@ -18,6 +18,7 @@ const state = { data: null, topic: "", query: "" };
 // Sxematik chizmalar (bezak; ekran o'quvchilardan yashirilgan). viewBox 160×90.
 // .a — asosiy (ko'k), .b — ikkinchi (yashil), .m — yordamchi chiziq.
 const ART = {
+  motion: '<path class="m" d="M16 76h134M20 80V10"/><path class="a" d="M20 70 70 46 140 12"/><path class="b" d="M20 74c40 0 80-10 120-52"/><circle class="a f" cx="70" cy="46" r="3.5"/><circle class="b f" cx="104" cy="56" r="3.5"/>',
   projectile: '<path class="m" d="M14 76h134M14 76V12"/><path class="a" d="M16 76C44 8 96 8 124 76" stroke-dasharray="4 5"/><circle class="b f" cx="98" cy="30" r="5"/>',
   pendulum: '<path class="m" d="M52 12h56"/><path class="a" d="M80 12 104 66"/><circle class="b f" cx="104" cy="66" r="8"/><path class="m" d="M80 12v58" stroke-dasharray="3 4"/><path class="m" d="M56 64a30 30 0 0 0 48 2"/>',
   "physical-pendulum": '<path class="m" d="M60 10h40"/><path class="a" d="M80 12 100 80" stroke-width="7"/><circle class="m f" cx="80" cy="12" r="3"/><circle class="b f" cx="90" cy="46" r="5"/><circle class="m" cx="96" cy="66" r="4.5"/><path class="m" d="M80 12v68" stroke-dasharray="3 4"/>',
