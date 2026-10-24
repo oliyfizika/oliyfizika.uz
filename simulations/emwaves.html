@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elektromagnit to‘lqinlar | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: elektromagnit to‘lqin — E va B maydonlar, tezligi c = 1/√(ε₀μ₀), to‘lqin uzunligi, EM spektr (radio, mikroto‘lqin, IQ, yorug‘lik, UB, rentgen, gamma); EM to‘lqinlarning qaytishi, sinishi va qutblanishi (Gers tajribalari); radioaloqa: AM va FM modulyatsiya, qabul qiluvchi kontur va detektor, televideniye.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/emwaves.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Elektromagnit to‘lqinlar" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="emwavesSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
+      <h1>Elektromagnit to‘lqinlar va radioaloqa</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="wave" aria-pressed="true">EM to‘lqin</button>
+            <button type="button" data-mode-value="props" aria-pressed="false">Xossalari</button>
+            <button type="button" data-mode-value="radio" aria-pressed="false">Radioaloqa</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Elektromagnit to‘lqin"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.25" aria-pressed="false">¼×</button>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="wave">
+        <span class="sim-group__title">To‘lqin</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="wNu">Chastota ν</label><output for="wNu" id="wNuOut"></output></div>
+          <input class="sim-range" type="range" id="wNu" min="4" max="21" step="0.05" value="8">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="wE">Amplituda E₀</label><output for="wE" id="wEOut"></output></div>
+          <input class="sim-range" type="range" id="wE" min="1" max="100" step="1" value="50">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="wMed">Muhit</label></div>
+          <select class="sim-select" id="wMed"></select>
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-show-b checked><span class="sim-switch__ui"></span>Magnit maydon B ni ko‘rsatish</label>
+        <p class="of-subtle">Chastota shkalasi logarifmik (10⁴ … 10²¹ Hz). Sahnada sariq o‘lchov nuqtasini surib, shu joydagi E(t) ni grafikda kuzating.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="props">
+        <span class="sim-group__title">Gers tajribalari</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-pview>
+          <button type="button" data-pview-value="reflect" aria-pressed="true">Qaytish</button>
+          <button type="button" data-pview-value="refract" aria-pressed="false">Sinish</button>
+          <button type="button" data-pview-value="polar" aria-pressed="false">Qutblanish</button>
+        </div>
+        <div class="sim-control" data-pv="reflect refract">
+          <div class="sim-control__row"><label for="pA">Tushish burchagi α</label><output for="pA" id="pAOut"></output></div>
+          <input class="sim-range" type="range" id="pA" min="0" max="80" step="1" value="40">
+        </div>
+        <div class="sim-control" data-pv="refract">
+          <div class="sim-control__row"><label for="pN">Dielektrik sindirish ko‘rsatkichi n</label><output for="pN" id="pNOut"></output></div>
+          <input class="sim-range" type="range" id="pN" min="1.1" max="3" step="0.05" value="1.5">
+        </div>
+        <div class="sim-control" data-pv="polar">
+          <div class="sim-control__row"><label for="pPhi">Qabul qiluvchi burchagi φ</label><output for="pPhi" id="pPhiOut"></output></div>
+          <input class="sim-range" type="range" id="pPhi" min="0" max="180" step="1" value="30">
+        </div>
+        <p class="of-subtle" data-pv="reflect refract">Sahnada nurlatgich (karnay antenna) ni surib tushish burchagini o‘zgartiring.</p>
+        <p class="of-subtle" data-pv="polar">Sahnada qabul qiluvchi vibratorning uchini aylantiring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="radio">
+        <span class="sim-group__title">Radiouzatgich (1-stansiya)</span>
+        <div class="of-segment" role="group" aria-label="Modulyatsiya turi" data-mod>
+          <button type="button" data-mod-value="am" aria-pressed="true">AM</button>
+          <button type="button" data-mod-value="fm" aria-pressed="false">FM</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rF">Tovush chastotasi F</label><output for="rF" id="rFOut"></output></div>
+          <input class="sim-range" type="range" id="rF" min="0.3" max="3" step="0.1" value="1">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rM" data-m-label>Modulyatsiya chuqurligi m</label><output for="rM" id="rMOut"></output></div>
+          <input class="sim-range" type="range" id="rM" min="0" max="1" step="0.05" value="0.6">
+        </div>
+        <span class="sim-group__title">Radiopriyomnik</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rC">Kondensator sig‘imi C</label><output for="rC" id="rCOut"></output></div>
+          <input class="sim-range" type="range" id="rC" min="40" max="550" step="1" value="260">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rQ">Kontur aslligi Q</label><output for="rQ" id="rQOut"></output></div>
+          <input class="sim-range" type="range" id="rQ" min="5" max="100" step="1" value="40">
+        </div>
+        <p class="of-subtle">Sahnadagi priyomnik sozlash shkalasini chapga/o‘ngga surib stansiyani toping. Ossillogrammalarda tashuvchi chastota kamaytirib ko‘rsatilgan.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>EM to‘lqin tezligi: <span class="sim-math">c = 1/√(ε₀μ₀) ≈ 3·10⁸ m/s</span>, muhitda <span class="sim-math">v = c/n</span></li>
+        <li>To‘lqin uzunligi: <span class="sim-math">λ = c/ν = cT</span></li>
+        <li>Maydonlar: <span class="sim-math">E = E₀cos(ωt − kx)</span>, <span class="sim-math">B = E/c</span>, E ⊥ B ⊥ v</li>
+        <li>Qaytish: <span class="sim-math">α = β</span>; sinish: <span class="sim-math">sinα/sinβ = n</span>; qutblanish: <span class="sim-math">P = P₀cos²φ</span></li>
+        <li>AM: <span class="sim-math">u = U₀(1 + m cosΩt)cosωt</span>; qabul qiluvchi kontur: <span class="sim-math">ν₀ = 1/(2π√(LC))</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Sahnada to‘lqin animatsiyasi har qanday chastotada bir xil sekinlashtirilgan (2,5 to‘lqin uzunligi ko‘rinadi) — haqiqiy λ va T natijalarda. Gers tajribalari santimetrli to‘lqinlar uchun sxematik ko‘rsatilgan. Radioaloqa ossillogrammalarida tashuvchi va tovush chastotalari nisbati kamaytirilgan (haqiqatda ≈ 1000 marta).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
