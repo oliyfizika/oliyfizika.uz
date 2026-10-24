@@ -411,6 +411,20 @@
    "keywords": "dispersiya prizma spektr oq yorug'lik nyuton sindirish ko'rsatkichi to'lqin uzunligi kamalak tomchi qutblanish polyaroid polyarizator analizator malyus qonuni bryuster burchagi dispersion prism rainbow polarization malus brewster"
   },
   {
+   "id": "nuclear",
+   "title": "Yadro fizikasi: yemirilish, bog‘lanish energiyasi, zanjir reaksiya",
+   "href": "nuclear.html",
+   "topic": "atom",
+   "description": "Radioaktiv yemirilish: 100–1600 yadroli namuna, N(t) va faollik grafiklari, yarim yemirilish davrini o‘lchash, radiouglerod usuli. Proton va neytronlardan yadro yasash: bog‘lanish energiyasi, massa defekti, barqarorlik, E_b/A egri chizig‘i, sintez va bo‘linish energiyasi. Zanjir reaksiya: boyitish, kritik massa, boshqaruv sterjenlari, k koeffitsiyenti.",
+   "params": [
+    "Izotop (¹⁴C, ²²²Rn, ¹³¹I, ⁶⁰Co, ²²⁶Ra, ²³⁸U, ³H, ²¹⁰Po, ⁹⁹ᵐTc) va yadrolar soni",
+    "Yadro: Z va N (nuklonlar sudraladi)",
+    "Reaksiya: D + T, D + D, ²³⁵U bo‘linishi",
+    "Zanjir reaksiya: boyitish, zona o‘lchami, sterjenlar (suriladi)"
+   ],
+   "keywords": "yadro fizikasi radioaktivlik radioaktiv yemirilish qonuni yarim yemirilish davri alfa beta gamma yemirilish faollik radiouglerod uglerod-14 izotop bog'lanish energiyasi massa defekti solishtirma bog'lanish energiyasi yadro kuchlari nuklon proton neytron termoyadro sintezi bo'linish uran zanjir reaksiya kritik massa reaktor boshqaruv sterjenlari ko'payish koeffitsiyenti atom bombasi nuclear decay half-life binding energy mass defect fission fusion chain reaction"
+  },
+  {
    "id": "rutherford",
    "title": "Rezerford tajribasi (laboratoriya ishi)",
    "href": "rutherford.html",

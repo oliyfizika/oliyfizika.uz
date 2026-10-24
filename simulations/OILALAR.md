@@ -21,7 +21,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F28 | Elektroliz va Faradey qonunlari | 5 | 8, 10 | ○ | massa m = kIt |
 | F35 | O‘zinduksiya va induktivlik (RL zanjir), magnit maydon energiyasi | 5 | 10, 11 | ✅ | induction.html |
 | F40 | Yorug‘likning qaytishi, sinishi, to‘la ichki qaytish; yassi ko‘zgu | 5 | 7, 9 | ✅ | refraction-law.html |
-| F48 | Yadro fizikasi: bog‘lanish energiyasi, radioaktiv yemirilish N(t), zanjir reaksiya | 5 | 11 | ◐ | rutherford.html, wilson.html qisman; N(t), bog‘lanish energiyasi yo‘q |
+| F48 | Yadro fizikasi: bog‘lanish energiyasi, radioaktiv yemirilish N(t), zanjir reaksiya | 5 | 11 | ✅ | nuclear.html (2026-10-24): yemirilish N(t), bog‘lanish energiyasi va reaksiyalar, zanjir reaksiya; rutherford.html, wilson.html |
 | F7 | Ish, energiya, quvvat, energiyaning saqlanishi (skeytpark) | 4 | 7, 10 | ✅ | energy.html |
 | F29 | Gazlarda/vakuumda elektr toki, katod nurlari | 4 | 8, 10 | ◐ | thomson-em.html (katod nurlari) qisman |
 | F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ○ | zona/animatsiya + VAX |
