@@ -43,6 +43,21 @@
    "keywords": "harakat grafiklari koordinata vaqt grafigi x(t) v(t) a(t) tezlik grafigi tekis harakat notekis harakat tekis o'zgaruvchan harakat tezlanish o'rtacha tezlik oniy tezlik ko'chish yo'l uchrashish quvib yetish tormozlash to'xtash yo'li grafik ostidagi yuza urinma kinematika motion graphs position velocity acceleration uniform motion average speed"
   },
   {
+   "id": "density",
+   "title": "Massa, zichlik va suzish",
+   "href": "density.html",
+   "topic": "mexanika",
+   "description": "Pallali tarozida toshlar bilan massani o‘lchash; menzurkada hajm va zichlikni aniqlash, moddani jadvaldan topish; dinamometrga osilgan jismni suyuqlikka botirish — Arximed kuchi va suzish sharti.",
+   "params": [
+    "Jism: mis, alyuminiy, po‘lat, granit, yog‘och…",
+    "Toshlar (gira) — sahnada suriladi",
+    "Menzurka: V₁, lupa bilan o‘qish",
+    "Jism moddasi va suyuqlik",
+    "Dinamometr (sahnada suriladi), ipni kesish"
+   ],
+   "keywords": "massa zichlik tarozi pallali tarozi richagli tarozi gira toshlar menzurka hajm o'lchash zichlikni aniqlash moddani aniqlash zichlik jadvali kg/m3 g/cm3 arximed kuchi itaruvchi kuch suzish cho'kish dinamometr suyuqlik muz aysberg tuxum sho'r suv kerosin simob mass density buoyancy archimedes"
+  },
+  {
    "id": "projectile",
    "title": "Og‘irlik kuchi ta’sirida jism harakati",
    "href": "projectile.html",
