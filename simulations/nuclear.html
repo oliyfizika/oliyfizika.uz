@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yadro fizikasi | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: radioaktiv yemirilish qonuni N(t) va yarim yemirilish davri, radiouglerod usuli; yadro bog‘lanish energiyasi, massa defekti, sintez va bo‘linish energiyasi; zanjir reaksiya, kritik massa, boshqaruv sterjenlari.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/nuclear.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Yadro fizikasi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="nuclearSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Atom va yadro fizikasi</span>
+      <h1>Yadro fizikasi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="decay" aria-pressed="true">Radioaktiv yemirilish</button>
+            <button type="button" data-mode-value="bind" aria-pressed="false">Bog‘lanish energiyasi</button>
+            <button type="button" data-mode-value="chain" aria-pressed="false">Zanjir reaksiya</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Yadro fizikasi tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-fire data-tool="chain">Neytron yuborish</button>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed data-tool="decay chain">
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="decay">
+        <span class="sim-group__title">Namuna</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="iso">Izotop</label></div>
+          <select class="sim-select" id="iso"></select>
+        </div>
+        <div class="of-segment" role="group" aria-label="Yadrolar soni" data-n0>
+          <button type="button" data-n0-value="100" aria-pressed="false">100 ta</button>
+          <button type="button" data-n0-value="400" aria-pressed="true">400 ta</button>
+          <button type="button" data-n0-value="1600" aria-pressed="false">1600 ta</button>
+        </div>
+        <p class="of-subtle">Har bir yadro qachon yemirilishini oldindan aytib bo‘lmaydi — faqat ehtimolligi ma’lum. Namunadagi yadroni bosib, uning holatini ko‘ring. Grafikda kursor bilan qiymat o‘qing.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="bind">
+        <span class="sim-group__title">Yadro</span>
+        <div class="of-segment" role="group" aria-label="Ko‘rinish" data-bview>
+          <button type="button" data-bview-value="build" aria-pressed="true">Yadro yasash</button>
+          <button type="button" data-bview-value="react" aria-pressed="false">Reaksiya energiyasi</button>
+        </div>
+        <div class="sim-control" data-bv="build"><div class="sim-control__row"><label for="bZ">Protonlar soni Z</label><output for="bZ" id="bZOut"></output></div><input class="sim-range" type="range" id="bZ" min="1" max="30" step="1" value="6"></div>
+        <div class="sim-control" data-bv="build"><div class="sim-control__row"><label for="bN">Neytronlar soni N</label><output for="bN" id="bNOut"></output></div><input class="sim-range" type="range" id="bN" min="0" max="40" step="1" value="6"></div>
+        <div class="sim-control" data-bv="react">
+          <div class="sim-control__row"><label for="rx">Reaksiya</label></div>
+          <select class="sim-select" id="rx"></select>
+        </div>
+        <p class="of-subtle" data-bv="build">Chapdagi qizil (proton) yoki kulrang (neytron) to‘pdan zarrani yadroga suring; yadrodan tashqariga sursangiz — olib tashlanadi. To‘pni bosish ham bitta zarra qo‘shadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="chain">
+        <span class="sim-group__title">Faol zona</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="cE">²³⁵U ulushi (boyitish)</label><output for="cE" id="cEOut"></output></div><input class="sim-range" type="range" id="cE" min="0" max="100" step="5" value="60"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="cS">Zona o‘lchami</label><output for="cS" id="cSOut"></output></div><input class="sim-range" type="range" id="cS" min="6" max="24" step="2" value="24"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="cR">Boshqaruv sterjenlari</label><output for="cR" id="cROut"></output></div><input class="sim-range" type="range" id="cR" min="0" max="100" step="5" value="0"></div>
+        <p class="of-subtle">Sterjenlarni sahnada yuqoridagi tutqichdan surib tushiring. Zonani bosgan joyda neytron paydo bo‘ladi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Yemirilish qonuni: <span class="sim-math">N = N₀·2<sup>−t/T½</sup> = N₀e<sup>−λt</sup></span>, <span class="sim-math">λ = ln2/T½</span></li>
+        <li>Faollik: <span class="sim-math">A = λN</span> (1 Bk = 1 yemirilish/s)</li>
+        <li>Massa defekti: <span class="sim-math">Δm = Zm<sub>p</sub> + Nm<sub>n</sub> − M<sub>ya</sub></span></li>
+        <li>Bog‘lanish energiyasi: <span class="sim-math">E<sub>b</sub> = Δm·c²</span>, <span class="sim-math">1 u·c² = 931,5 MeV</span></li>
+        <li>Reaksiya energiyasi: <span class="sim-math">Q = ΣE<sub>b</sub>(mahsulot) − ΣE<sub>b</sub>(boshlang‘ich)</span></li>
+        <li>Zanjir reaksiya: <span class="sim-math">k = N<sub>i+1</sub>/N<sub>i</sub></span>; k &gt; 1 — o‘ta kritik, k = 1 — kritik, k &lt; 1 — so‘nadi</li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Bog‘lanish energiyalari — AME2020 jadvali bo‘yicha (yaxlitlangan); jadvalda yo‘q yadrolar uchun Bete–Vaytszekker (tomchi) formulasi, xatosi odatda 1–2 %. Z ≤ 20 da barqarorlik jadvaldan, og‘irroq yadrolar uchun barqarorlik chizig‘i bo‘yicha taxminiy. Zanjir reaksiya modeli sxematik: haqiqiy reaktorda neytronlar moderatorda sekinlashtiriladi va boyitish 3–5 % atrofida; bu yerda o‘lcham va ehtimolliklar hodisa ko‘rinadigan qilib tanlangan.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

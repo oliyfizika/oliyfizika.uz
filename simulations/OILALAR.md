@@ -14,14 +14,14 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F37 | O‘zgaruvchan tok: fazor, RLC, rezonans, quvvat koeffitsiyenti | 7 | 11 | ✅ | lc.html |
 | F21 | Elektrlanish va elektroskop (zaryad ko‘chishi, induksiya) | 6 | 7, 8 | ✅ | electroscope.html (2026-10-24): ishqalash, tegizish, induksiya, yerga ulash, ikki elektroskop |
 | F41 | Linzalar, tasvir yasash, linza formulasi, optik asboblar, ko‘z | 6 | 7, 9 | ✅ | lens.html |
-| F1 | Harakat grafiklari (x–t, v–t, o‘rtacha tezlik, tekis va notekis harakat) | 5 | 7 | ○ | 7-sinf asosi; projectile-plots, sim-kit |
+| F1 | Harakat grafiklari (x–t, v–t, o‘rtacha tezlik, tekis va notekis harakat) | 5 | 7 | ✅ | motion.html (2026-10-24): tekis, tekis o‘zgaruvchan, uchrashish, v(t) chizish, o‘rtacha tezlik |
 | F17 | Termodinamika: p–V diagramma, 1-qonun, Karno sikli, issiqlik dvigatellari (4 taktli) | 5 | 9 | ○ | 15-oila bilan p–V umumiy |
 | F23 | Potensial, ekvipotensial chiziqlar, ish, kondensator va sig‘im | 5 | 8, 10 | ✅ | potential.html |
 | F25 | Tok ishi, quvvati, Joul–Lens qonuni | 5 | 8 | ◐ | circuit.html da lampochkalar; alohida Joul–Lens yo‘q |
 | F28 | Elektroliz va Faradey qonunlari | 5 | 8, 10 | ○ | massa m = kIt |
 | F35 | O‘zinduksiya va induktivlik (RL zanjir), magnit maydon energiyasi | 5 | 10, 11 | ✅ | induction.html |
 | F40 | Yorug‘likning qaytishi, sinishi, to‘la ichki qaytish; yassi ko‘zgu | 5 | 7, 9 | ✅ | refraction-law.html |
-| F48 | Yadro fizikasi: bog‘lanish energiyasi, radioaktiv yemirilish N(t), zanjir reaksiya | 5 | 11 | ◐ | rutherford.html, wilson.html qisman; N(t), bog‘lanish energiyasi yo‘q |
+| F48 | Yadro fizikasi: bog‘lanish energiyasi, radioaktiv yemirilish N(t), zanjir reaksiya | 5 | 11 | ✅ | nuclear.html (2026-10-24): yemirilish N(t), bog‘lanish energiyasi va reaksiyalar, zanjir reaksiya; rutherford.html, wilson.html |
 | F7 | Ish, energiya, quvvat, energiyaning saqlanishi (skeytpark) | 4 | 7, 10 | ✅ | energy.html |
 | F29 | Gazlarda/vakuumda elektr toki, katod nurlari | 4 | 8, 10 | ◐ | thomson-em.html (katod nurlari) qisman |
 | F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ○ | zona/animatsiya + VAX |

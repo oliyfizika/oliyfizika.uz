@@ -28,6 +28,21 @@
  ],
  "simulations": [
   {
+   "id": "motion",
+   "title": "Harakat grafiklari",
+   "href": "motion.html",
+   "topic": "mexanika",
+   "description": "To‘g‘ri chiziqli tekis va tekis o‘zgaruvchan harakat: x(t), v(t), a(t) grafiklari, har 1 s dagi o‘rni, ko‘chish va yo‘l (v(t) ostidagi yuza), x(t) ga urinma. Ikki jismning uchrashishi va quvib yetish, tormozlash. v(t) grafigini chizib harakat va o‘rtacha tezlik.",
+   "params": [
+    "Avtomobil: x₀, v₀, a (yo‘lda suriladi)",
+    "Velosipedchi (ikkinchi jism): x₀, v₀, a",
+    "Tormozlash: v = 0 da to‘xtash",
+    "v(t) tugunlari: zinapoya yoki siniq chiziq",
+    "Grafik: x(t), v(t), a(t), kursor bilan o‘qish"
+   ],
+   "keywords": "harakat grafiklari koordinata vaqt grafigi x(t) v(t) a(t) tezlik grafigi tekis harakat notekis harakat tekis o'zgaruvchan harakat tezlanish o'rtacha tezlik oniy tezlik ko'chish yo'l uchrashish quvib yetish tormozlash to'xtash yo'li grafik ostidagi yuza urinma kinematika motion graphs position velocity acceleration uniform motion average speed"
+  },
+  {
    "id": "projectile",
    "title": "Og‘irlik kuchi ta’sirida jism harakati",
    "href": "projectile.html",
@@ -394,6 +409,20 @@
     "Bryuster: α, n, analizator"
    ],
    "keywords": "dispersiya prizma spektr oq yorug'lik nyuton sindirish ko'rsatkichi to'lqin uzunligi kamalak tomchi qutblanish polyaroid polyarizator analizator malyus qonuni bryuster burchagi dispersion prism rainbow polarization malus brewster"
+  },
+  {
+   "id": "nuclear",
+   "title": "Yadro fizikasi: yemirilish, bog‘lanish energiyasi, zanjir reaksiya",
+   "href": "nuclear.html",
+   "topic": "atom",
+   "description": "Radioaktiv yemirilish: 100–1600 yadroli namuna, N(t) va faollik grafiklari, yarim yemirilish davrini o‘lchash, radiouglerod usuli. Proton va neytronlardan yadro yasash: bog‘lanish energiyasi, massa defekti, barqarorlik, E_b/A egri chizig‘i, sintez va bo‘linish energiyasi. Zanjir reaksiya: boyitish, kritik massa, boshqaruv sterjenlari, k koeffitsiyenti.",
+   "params": [
+    "Izotop (¹⁴C, ²²²Rn, ¹³¹I, ⁶⁰Co, ²²⁶Ra, ²³⁸U, ³H, ²¹⁰Po, ⁹⁹ᵐTc) va yadrolar soni",
+    "Yadro: Z va N (nuklonlar sudraladi)",
+    "Reaksiya: D + T, D + D, ²³⁵U bo‘linishi",
+    "Zanjir reaksiya: boyitish, zona o‘lchami, sterjenlar (suriladi)"
+   ],
+   "keywords": "yadro fizikasi radioaktivlik radioaktiv yemirilish qonuni yarim yemirilish davri alfa beta gamma yemirilish faollik radiouglerod uglerod-14 izotop bog'lanish energiyasi massa defekti solishtirma bog'lanish energiyasi yadro kuchlari nuklon proton neytron termoyadro sintezi bo'linish uran zanjir reaksiya kritik massa reaktor boshqaruv sterjenlari ko'payish koeffitsiyenti atom bombasi nuclear decay half-life binding energy mass defect fission fusion chain reaction"
   },
   {
    "id": "rutherford",
