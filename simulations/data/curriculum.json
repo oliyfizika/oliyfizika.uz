@@ -1124,14 +1124,16 @@
        "nom": "Ichki energiya",
        "tur": "sim",
        "oila": "F17",
-       "sim": null
+       "sim": "thermo",
+       "preset": "internal"
       },
       {
        "raqam": 16,
        "nom": "Termodinamik ish",
        "tur": "sim",
        "oila": "F17",
-       "sim": null
+       "sim": "thermo",
+       "preset": "isobar"
       },
       {
        "raqam": 17,
@@ -1178,14 +1180,15 @@
        "nom": "Termodinamikaning 1-qonuni",
        "tur": "sim",
        "oila": "F17",
-       "sim": null
+       "sim": "thermo",
+       "preset": "adiabC"
       },
       {
        "raqam": 23,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": "heat",
-       "preset": "heatFuel"
+       "sim": "thermo",
+       "preset": "adiabC"
       },
       {
        "raqam": 24,
@@ -1209,21 +1212,23 @@
        "nom": "Ichki yonuv dvigatellari",
        "tur": "sim",
        "oila": "F17",
-       "sim": null
+       "sim": "thermo",
+       "preset": "otto4"
       },
       {
        "raqam": 27,
        "nom": "Issiqlik dvigatellari ishlash prinsipi",
        "tur": "sim",
        "oila": "F17",
-       "sim": null
+       "sim": "thermo",
+       "preset": "karno"
       },
       {
        "raqam": 28,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": "heat",
-       "preset": "mixCompare"
+       "sim": "thermo",
+       "preset": "karno"
       },
       {
        "raqam": 29,
@@ -1234,8 +1239,8 @@
        "raqam": 30,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": "heat",
-       "preset": "mixCompare"
+       "sim": "thermo",
+       "preset": "karno"
       }
      ]
     },
