@@ -14,29 +14,31 @@
 <script type="module" src="../assets/js/simulations/simulations-page.js"></script>
 </head>
 <!--
-  Simulyatsiyalar katalogi. Ma'lumot: data/manifest.json. Simulyatsiya kodlari bu sahifada YUKLANMAYDI —
+  Simulyatsiyalar katalogi. Ma'lumot: data/manifest.json, sinflar bo'yicha mundarija — data/curriculum.json (?sinf=7…11). Simulyatsiya kodlari bu sahifada YUKLANMAYDI —
   "Boshlash" bosilgandagina simulyatsiya sahifasi ochiladi (URL'lar o'zgarmagan).
   Kirish talabi avvalgidek: bo'limga kirish havolalari (sidebar, Bosh sahifa) himoyalangan,
   sahifaning o'zi va simulyatsiyalar to'g'ridan-to'g'ri havola bilan ochiladi.
 -->
 <body class="of-ui" data-shell-title="Simulyatsiyalar" data-shell-public="true">
-<div class="of-page of-container of-cat" id="simulationsPage">
+<div class="of-page of-container of-cat of-cat--wide" id="simulationsPage">
   <header class="of-cat-head">
     <div>
       <h1>Simulyatsiyalar</h1>
-      <p>Fizik jarayonlarni interaktiv tarzda kuzating: parametrlarni o‘zgartiring va natijani real vaqt rejimida tahlil qiling.</p>
+      <p>Fizik jarayonlarni interaktiv tarzda kuzating: parametrlarni o‘zgartiring va natijani real vaqt rejimida tahlil qiling. Sinfni tanlasangiz — darslik mundarijasi bo‘yicha kerakli simulyatsiya bir bosishda ochiladi.</p>
     </div>
     <p class="of-cat-count" data-sim-count aria-live="polite"></p>
   </header>
 
   <section aria-labelledby="simListTitle">
     <h2 class="of-sr-only" id="simListTitle">Simulyatsiyalar ro‘yxati</h2>
-    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash"></ul>
+    <div class="of-segment of-grades" data-grades role="group" aria-label="Sinf bo‘yicha: darslik mundarijasi"></div>
+    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash" style="margin-top:12px"></ul>
     <ul class="of-sims" data-sims aria-busy="true" style="margin-top:12px">
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
     </ul>
+    <div class="of-toc" data-toc hidden></div>
   </section>
 </div>
 </body>

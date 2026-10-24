@@ -1,0 +1,2362 @@
+{
+ "_izoh": "7–11-sinf fizika darsliklari mundarijasi → simulyatsiyalar. Raqam va nomlar darslikdagidek (manba: docs/simulations/darsliklar-mavzular.md). Boblar darslikdagi bob nomlari emas — mavzular bo‘lim bo‘yicha guruhlangan (bobManba: taxminiy). tur: sim | lab | masala | matn. sim — manifest.json dagi id, preset — ?preset= qiymati. lab turida: lab — laboratoriya id (tayyor bo‘lmasa null), sim/preset — lab tayyor bo‘lguncha ochiladigan oddiy simulyatsiya. taxminiy: true — nomi OCR da o‘qilmagan, PDF dan tekshirilishi kerak.",
+ "bobManba": "taxminiy",
+ "sinflar": [
+  {
+   "sinf": 7,
+   "nashr": 2022,
+   "fan": "Mexanika, issiqlik, elektr, optika asoslari",
+   "boblar": [
+    {
+     "nom": "Kirish",
+     "mavzular": [
+      {
+       "raqam": 1,
+       "nom": "Fizika taraqqiyotida O‘rta Osiyo olimlari",
+       "tur": "matn"
+      },
+      {
+       "raqam": 2,
+       "nom": "O‘zbekistonda ilmiy maktab yaratgan fiziklar",
+       "tur": "matn"
+      },
+      {
+       "raqam": 3,
+       "nom": "Fizik kattaliklar. SI birliklari",
+       "tur": "matn"
+      },
+      {
+       "raqam": 4,
+       "nom": "Fizikada tadqiqot metodlari",
+       "tur": "matn"
+      },
+      {
+       "raqam": 5,
+       "nom": "Skalyar va vektor kattaliklar",
+       "tur": "sim",
+       "oila": "F2",
+       "sim": null
+      },
+      {
+       "raqam": 6,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "Mexanik harakat",
+     "mavzular": [
+      {
+       "raqam": 7,
+       "nom": "Mexanik harakat",
+       "tur": "sim",
+       "oila": "F1",
+       "sim": "motion",
+       "preset": "uniform"
+      },
+      {
+       "raqam": 8,
+       "nom": "Kinematikaning asosiy tushunchalari",
+       "tur": "sim",
+       "oila": "F1",
+       "sim": "motion",
+       "preset": "round"
+      },
+      {
+       "raqam": 9,
+       "nom": "To‘g‘ri chiziqli tekis harakat: tezlik va yo‘l",
+       "tur": "sim",
+       "oila": "F1",
+       "sim": "motion",
+       "preset": "uniform"
+      },
+      {
+       "raqam": 10,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "motion",
+       "preset": "uniform"
+      },
+      {
+       "raqam": 11,
+       "nom": "Notekis harakat",
+       "tur": "sim",
+       "oila": "F1",
+       "sim": "motion",
+       "preset": "city"
+      },
+      {
+       "raqam": 12,
+       "nom": "Laboratoriya ishi. Notekis harakat o‘rtacha tezligi",
+       "tur": "lab",
+       "oila": "F1",
+       "sim": "motion",
+       "preset": "average",
+       "lab": null
+      },
+      {
+       "raqam": 13,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "motion",
+       "preset": "average"
+      },
+      {
+       "raqam": 14,
+       "nom": "Aylana bo‘ylab harakat",
+       "tur": "sim",
+       "oila": "F3",
+       "sim": "circular-motion",
+       "preset": "uniform"
+      },
+      {
+       "raqam": 15,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circular-motion",
+       "preset": "uniform"
+      }
+     ]
+    },
+    {
+     "nom": "Massa, zichlik, kuch va bosim",
+     "mavzular": [
+      {
+       "raqam": 16,
+       "nom": "Massa va uning birliklari",
+       "tur": "sim",
+       "oila": "F4",
+       "sim": null
+      },
+      {
+       "raqam": 17,
+       "nom": "Zichlik va uning birliklari",
+       "tur": "sim",
+       "oila": "F4",
+       "sim": null
+      },
+      {
+       "raqam": 18,
+       "nom": "Laboratoriya ishi. Jismlar zichligini aniqlash",
+       "tur": "lab",
+       "oila": "F4",
+       "sim": null,
+       "lab": null
+      },
+      {
+       "raqam": 19,
+       "nom": "Jismlarning o‘zaro ta’siri. Kuch",
+       "tur": "sim",
+       "oila": "F8",
+       "sim": "newton-second-law",
+       "preset": "fric"
+      },
+      {
+       "raqam": 20,
+       "nom": "Bosim va uning birliklari",
+       "tur": "sim",
+       "oila": "F5",
+       "sim": null
+      },
+      {
+       "raqam": 21,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "newton-second-law",
+       "preset": "fric"
+      },
+      {
+       "raqam": 22,
+       "nom": "Suyuqlik va gazlarda bosim uzatilishi (Paskal)",
+       "tur": "sim",
+       "oila": "F5",
+       "sim": null
+      },
+      {
+       "raqam": 23,
+       "nom": "Tinch suyuqlik bosimi",
+       "tur": "sim",
+       "oila": "F5",
+       "sim": null
+      },
+      {
+       "raqam": 24,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "newton-second-law",
+       "preset": "fric"
+      },
+      {
+       "raqam": 25,
+       "nom": "Atmosfera bosimi",
+       "tur": "sim",
+       "oila": "F6",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "Ish, energiya va quvvat",
+     "mavzular": [
+      {
+       "raqam": 26,
+       "nom": "Mexanik ish",
+       "tur": "sim",
+       "oila": "F7",
+       "sim": "energy",
+       "preset": "pull"
+      },
+      {
+       "raqam": 27,
+       "nom": "Mexanik energiya turlari",
+       "tur": "sim",
+       "oila": "F7",
+       "sim": "energy",
+       "preset": "pipe"
+      },
+      {
+       "raqam": 28,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "energy",
+       "preset": "pipe"
+      },
+      {
+       "raqam": 29,
+       "nom": "Mexanik quvvat",
+       "tur": "sim",
+       "oila": "F7",
+       "sim": "energy",
+       "preset": "power"
+      },
+      {
+       "raqam": 30,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "energy",
+       "preset": "power"
+      }
+     ]
+    },
+    {
+     "nom": "Issiqlik hodisalari",
+     "mavzular": [
+      {
+       "raqam": 31,
+       "nom": "Ichki energiya",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "diffT"
+      },
+      {
+       "raqam": 32,
+       "nom": "Issiqlik miqdori",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixMetal"
+      },
+      {
+       "raqam": 33,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "mixMetal"
+      },
+      {
+       "raqam": 34,
+       "nom": "Amaliy ish. Turli temperaturali suvlarni aralashtirish",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixWater"
+      },
+      {
+       "raqam": 35,
+       "nom": "Yoqilg‘ining solishtirma yonish issiqligi",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatFuel"
+      },
+      {
+       "raqam": 36,
+       "nom": "Bug‘lanish, kondensatsiya, qaynash",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatIce"
+      },
+      {
+       "raqam": 37,
+       "nom": "Qattiq jismning erishi va qotishi",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatTin"
+      },
+      {
+       "raqam": 38,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "heatTin"
+      }
+     ]
+    },
+    {
+     "nom": "Elektrlanish va elektr zaryad",
+     "mavzular": [
+      {
+       "raqam": 39,
+       "nom": "Jismlarning elektrlanishi",
+       "tur": "sim",
+       "oila": "F21",
+       "sim": "electroscope",
+       "preset": "ebonite"
+      },
+      {
+       "raqam": 40,
+       "nom": "Elektr zaryad",
+       "tur": "sim",
+       "oila": "F21",
+       "sim": "electroscope",
+       "preset": "sign"
+      },
+      {
+       "raqam": 41,
+       "nom": "Elektroskop va elektrometr",
+       "tur": "sim",
+       "oila": "F21",
+       "sim": "electroscope",
+       "preset": "contact"
+      },
+      {
+       "raqam": 42,
+       "nom": "O‘tkazgichlar va dielektriklar",
+       "tur": "sim",
+       "oila": "F21",
+       "sim": "electroscope",
+       "preset": "metal"
+      },
+      {
+       "raqam": 43,
+       "nom": "Zaryadlangan jismlarning o‘zaro ta’siri",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": "coulomb-law"
+      },
+      {
+       "raqam": 44,
+       "nom": "O‘tkazgichlarda zaryadlar taqsimlanishi",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": "electroscope",
+       "preset": "induce"
+      },
+      {
+       "raqam": 45,
+       "nom": "Tabiatdagi elektr hodisalar (chaqmoq)",
+       "tur": "matn"
+      }
+     ]
+    },
+    {
+     "nom": "Elektr toki",
+     "mavzular": [
+      {
+       "raqam": 46,
+       "nom": "Elektr toki",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 47,
+       "nom": "Tok manbalari",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "cells"
+      },
+      {
+       "raqam": 48,
+       "nom": "Elektr kuchlanish va uni o‘lchash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 49,
+       "nom": "Tok kuchi",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 50,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 51,
+       "nom": "Laboratoriya ishi. Tok kuchi va kuchlanishni o‘lchash",
+       "tur": "lab",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm",
+       "lab": null
+      },
+      {
+       "raqam": 52,
+       "nom": "Elektr qarshilik",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "conductor"
+      },
+      {
+       "raqam": 53,
+       "nom": "Rezistorlar. Reostatlar",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "rheostat"
+      },
+      {
+       "raqam": 54,
+       "nom": "Zanjir qismi uchun Om qonuni",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 55,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 56,
+       "nom": "Amaliy ish. Reostat bilan tok rostlash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "rheostat"
+      },
+      {
+       "raqam": 57,
+       "nom": "Laboratoriya ishi. Om qonunini o‘rganish",
+       "tur": "lab",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm",
+       "lab": null
+      }
+     ]
+    },
+    {
+     "nom": "Yorug‘lik hodisalari",
+     "mavzular": [
+      {
+       "raqam": 58,
+       "nom": "Yorug‘likning to‘g‘ri chiziqli tarqalishi",
+       "tur": "sim",
+       "oila": "F39",
+       "sim": "light",
+       "preset": "big"
+      },
+      {
+       "raqam": 59,
+       "nom": "Quyosh va Oy tutilishi",
+       "tur": "sim",
+       "oila": "F39",
+       "sim": "light",
+       "preset": "solarTotal"
+      },
+      {
+       "raqam": 60,
+       "nom": "Yorug‘likning qaytishi va sinishi",
+       "tur": "sim",
+       "oila": "F40",
+       "sim": "refraction-law",
+       "preset": "airGlass"
+      },
+      {
+       "raqam": 61,
+       "nom": "Linza",
+       "tur": "sim",
+       "oila": "F41",
+       "sim": "lens",
+       "preset": "far"
+      },
+      {
+       "raqam": 62,
+       "nom": "Amaliy ish. Yassi ko‘zgudan qaytish",
+       "tur": "sim",
+       "oila": "F40",
+       "sim": "refraction-law",
+       "preset": "plane"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sinf": 8,
+   "nashr": 2019,
+   "fan": "Elektr va magnetizm",
+   "boblar": [
+    {
+     "nom": "Elektrostatika",
+     "mavzular": [
+      {
+       "raqam": 1,
+       "nom": "Jismlarning zaryadlanishi",
+       "tur": "sim",
+       "oila": "F21",
+       "sim": "electroscope",
+       "preset": "glass"
+      },
+      {
+       "raqam": 2,
+       "nom": "Elektr zaryad",
+       "tur": "sim",
+       "oila": "F21",
+       "sim": "electroscope",
+       "preset": "sign"
+      },
+      {
+       "raqam": 3,
+       "nom": "Zaryadlarning o‘zaro ta’siri. Kulon qonuni",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": "coulomb-law"
+      },
+      {
+       "raqam": 4,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "coulomb-law"
+      },
+      {
+       "raqam": 5,
+       "nom": "Elektr maydon",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": "potential",
+       "preset": "single",
+       "taxminiy": true
+      },
+      {
+       "raqam": 6,
+       "nom": "O‘tkazgichlarda zaryadlar taqsimlanishi",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": "electroscope",
+       "preset": "induce"
+      },
+      {
+       "raqam": 7,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "electroscope",
+       "preset": "induce"
+      },
+      {
+       "raqam": 8,
+       "nom": "Tabiatdagi elektr hodisalar",
+       "tur": "matn"
+      }
+     ]
+    },
+    {
+     "nom": "O‘zgarmas elektr toki",
+     "mavzular": [
+      {
+       "raqam": 9,
+       "nom": "Elektr toki haqida tushuncha",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 10,
+       "nom": "Tok manbalari",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "cells"
+      },
+      {
+       "raqam": 11,
+       "nom": "Elektr kuchlanish va uni o‘lchash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 12,
+       "nom": "Tok kuchi va uni o‘lchash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 13,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 14,
+       "nom": "Laboratoriya ishi. Zanjir yig‘ish, tok va kuchlanishni o‘lchash",
+       "tur": "lab",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm",
+       "lab": null
+      },
+      {
+       "raqam": 15,
+       "nom": "Elektr qarshilik",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "conductor"
+      },
+      {
+       "raqam": 16,
+       "nom": "Rezistorlar, reostatlar, potensiometrlar",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "rheostat"
+      },
+      {
+       "raqam": 17,
+       "nom": "Zanjir qismi uchun Om qonuni",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 18,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "ohm"
+      },
+      {
+       "raqam": 19,
+       "nom": "Laboratoriya ishi. Om qonunini o‘rganish",
+       "tur": "lab",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "ohm",
+       "lab": null
+      },
+      {
+       "raqam": 20,
+       "nom": "Amaliy ish. Reostat bilan tok rostlash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "rheostat"
+      },
+      {
+       "raqam": 21,
+       "nom": "Iste’molchilarni ketma-ket ulash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "series"
+      },
+      {
+       "raqam": 22,
+       "nom": "Iste’molchilarni parallel ulash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "parallel"
+      },
+      {
+       "raqam": 23,
+       "nom": "Amaliy ish. Tok manbalarini ulash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "cells"
+      },
+      {
+       "raqam": 24,
+       "nom": "Laboratoriya ishi. Ketma-ket/parallel ulashni o‘rganish",
+       "tur": "lab",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "series",
+       "lab": null
+      },
+      {
+       "raqam": 25,
+       "nom": "Iste’molchilarni aralash ulash",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "mixed"
+      },
+      {
+       "raqam": 26,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "mixed"
+      }
+     ]
+    },
+    {
+     "nom": "Elektr sig‘imi",
+     "mavzular": [
+      {
+       "raqam": 27,
+       "nom": "Elektr sig‘imi. Kondensatorlar",
+       "tur": "sim",
+       "oila": "F23",
+       "sim": "potential",
+       "preset": "capConn"
+      },
+      {
+       "raqam": 28,
+       "nom": "Kondensatorlarni parallel va ketma-ket ulash",
+       "tur": "sim",
+       "oila": "F23",
+       "sim": "potential",
+       "preset": "par"
+      },
+      {
+       "raqam": 29,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "potential",
+       "preset": "par"
+      }
+     ]
+    },
+    {
+     "nom": "Elektr tokining ishi va quvvati",
+     "mavzular": [
+      {
+       "raqam": 30,
+       "nom": "Elektr tokining ishi",
+       "tur": "sim",
+       "oila": "F25",
+       "sim": "circuit",
+       "preset": "lamps"
+      },
+      {
+       "raqam": 31,
+       "nom": "Elektr tokining quvvati",
+       "tur": "sim",
+       "oila": "F25",
+       "sim": "circuit",
+       "preset": "lamps"
+      },
+      {
+       "raqam": 32,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "lamps"
+      },
+      {
+       "raqam": 33,
+       "nom": "Laboratoriya ishi. Lampochka quvvatini aniqlash",
+       "tur": "lab",
+       "oila": "F25",
+       "sim": "circuit",
+       "preset": "rheostat",
+       "lab": null
+      },
+      {
+       "raqam": 34,
+       "nom": "Tok ta’sirida o‘tkazgichlarning qizishi (Joul–Lens)",
+       "tur": "sim",
+       "oila": "F25",
+       "sim": null
+      },
+      {
+       "raqam": 35,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "rheostat"
+      },
+      {
+       "raqam": 36,
+       "nom": "Joul–Lens qonunining amaliy tatbiqlari",
+       "tur": "sim",
+       "oila": "F25",
+       "sim": null
+      },
+      {
+       "raqam": 37,
+       "nom": "Xonadonlardagi elektr zanjirlar",
+       "tur": "sim",
+       "oila": "F24",
+       "sim": "circuit",
+       "preset": "lamps"
+      },
+      {
+       "raqam": 38,
+       "nom": "Elektr xavfsizlik choralari",
+       "tur": "matn"
+      },
+      {
+       "raqam": 39,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "lamps"
+      }
+     ]
+    },
+    {
+     "nom": "Turli muhitlarda elektr toki",
+     "mavzular": [
+      {
+       "raqam": 40,
+       "nom": "Metallarda elektr toki",
+       "tur": "sim",
+       "oila": "F26",
+       "sim": null
+      },
+      {
+       "raqam": 41,
+       "nom": "Suyuqliklarda elektr toki",
+       "tur": "sim",
+       "oila": "F28",
+       "sim": null
+      },
+      {
+       "raqam": 42,
+       "nom": "Elektroliz. Faradeyning 1-qonuni",
+       "tur": "sim",
+       "oila": "F28",
+       "sim": null
+      },
+      {
+       "raqam": 43,
+       "nom": "Faradeyning 2-qonuni",
+       "tur": "sim",
+       "oila": "F28",
+       "sim": null
+      },
+      {
+       "raqam": 44,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": null
+      },
+      {
+       "raqam": 45,
+       "nom": "Elektrolizdan turmushda foydalanish",
+       "tur": "matn"
+      },
+      {
+       "raqam": 46,
+       "nom": "Vakuumda elektr toki",
+       "tur": "sim",
+       "oila": "F29",
+       "sim": "thomson-em",
+       "preset": "base"
+      },
+      {
+       "raqam": 47,
+       "nom": "Gazlarda elektr toki",
+       "tur": "sim",
+       "oila": "F29",
+       "sim": null
+      },
+      {
+       "raqam": 48,
+       "nom": "Elektr razryadlar turlari",
+       "tur": "sim",
+       "oila": "F29",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "Magnit maydon",
+     "mavzular": [
+      {
+       "raqam": 49,
+       "nom": "Magnit maydon. Doimiy magnit",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "bar"
+      },
+      {
+       "raqam": 50,
+       "nom": "Magnit maydonni xarakterlovchi parametrlar",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "attract"
+      },
+      {
+       "raqam": 51,
+       "nom": "Yerning magnit maydoni",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "earth"
+      },
+      {
+       "raqam": 52,
+       "nom": "Tokning magnit maydoni",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "oersted"
+      },
+      {
+       "raqam": 53,
+       "nom": "Magnit maydonning tokli o‘tkazgichga ta’siri",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "amp"
+      },
+      {
+       "raqam": 54,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "magnetism",
+       "preset": "amp"
+      },
+      {
+       "raqam": 55,
+       "nom": "Tokli ramkaning aylanishi",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "frame"
+      },
+      {
+       "raqam": 56,
+       "nom": "Magnit maydonda zaryadli zarra harakati",
+       "tur": "sim",
+       "oila": "F33",
+       "sim": "lorentz",
+       "preset": "proton"
+      },
+      {
+       "raqam": 57,
+       "nom": "Elektromagnitlar. Elektromagnit rele",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "electromagnet"
+      },
+      {
+       "raqam": 58,
+       "nom": "Laboratoriya ishi. Elektromagnit yig‘ish",
+       "tur": "lab",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "electromagnet",
+       "lab": null
+      },
+      {
+       "raqam": 59,
+       "nom": "O‘zgarmas tok elektr dvigateli",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "motor"
+      },
+      {
+       "raqam": 60,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "magnetism",
+       "preset": "motor"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sinf": 9,
+   "nashr": 2019,
+   "fan": "Molekulyar fizika, termodinamika, optika",
+   "boblar": [
+    {
+     "nom": "Molekulyar-kinetik nazariya",
+     "mavzular": [
+      {
+       "raqam": 1,
+       "nom": "Modda tuzilishining MKN",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "brown"
+      },
+      {
+       "raqam": 2,
+       "nom": "Molekula massasi va o‘lchami",
+       "tur": "matn"
+      },
+      {
+       "raqam": 3,
+       "nom": "Modda miqdori",
+       "tur": "matn"
+      },
+      {
+       "raqam": 4,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "gas",
+       "preset": "brown"
+      },
+      {
+       "raqam": 5,
+       "nom": "Ideal gaz",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "pressure"
+      },
+      {
+       "raqam": 6,
+       "nom": "Temperatura",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "diffT"
+      },
+      {
+       "raqam": 7,
+       "nom": "Gaz molekulalari tezligi",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "maxwell"
+      },
+      {
+       "raqam": 8,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "gas",
+       "preset": "maxwell"
+      },
+      {
+       "raqam": 9,
+       "nom": "Ideal gaz holat tenglamalari",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "boyle"
+      },
+      {
+       "raqam": 10,
+       "nom": "Izotermik jarayon",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "boyle"
+      },
+      {
+       "raqam": 11,
+       "nom": "Izobarik jarayon",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "gaylussac",
+       "taxminiy": true
+      },
+      {
+       "raqam": 12,
+       "nom": "Izoxorik jarayon",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "charles"
+      },
+      {
+       "raqam": 13,
+       "nom": "Amaliy ish. Molekula o‘lchamini baholash",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": null
+      },
+      {
+       "raqam": 14,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "gas",
+       "preset": "charles"
+      }
+     ]
+    },
+    {
+     "nom": "Termodinamika asoslari",
+     "mavzular": [
+      {
+       "raqam": 15,
+       "nom": "Ichki energiya",
+       "tur": "sim",
+       "oila": "F17",
+       "sim": null
+      },
+      {
+       "raqam": 16,
+       "nom": "Termodinamik ish",
+       "tur": "sim",
+       "oila": "F17",
+       "sim": null
+      },
+      {
+       "raqam": 17,
+       "nom": "Issiqlik miqdori",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixMetal"
+      },
+      {
+       "raqam": 18,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "mixMetal"
+      },
+      {
+       "raqam": 19,
+       "nom": "Amaliy ish. Issiqlik muvozanati",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixWater"
+      },
+      {
+       "raqam": 20,
+       "nom": "Laboratoriya ishi. Solishtirma issiqlik sig‘imi",
+       "tur": "lab",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixLab",
+       "lab": null
+      },
+      {
+       "raqam": 21,
+       "nom": "Yoqilg‘ining solishtirma yonish issiqligi",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatFuel"
+      },
+      {
+       "raqam": 22,
+       "nom": "Termodinamikaning 1-qonuni",
+       "tur": "sim",
+       "oila": "F17",
+       "sim": null
+      },
+      {
+       "raqam": 23,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "heatFuel"
+      },
+      {
+       "raqam": 24,
+       "nom": "Issiqlik jarayonlari qaytmasligi. 2-qonun",
+       "tur": "sim",
+       "oila": "F15",
+       "sim": "gas",
+       "preset": "diffusion"
+      },
+      {
+       "raqam": 25,
+       "nom": "Laboratoriya ishi. Issiqlik miqdorlarini taqqoslash",
+       "tur": "lab",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixCompare",
+       "lab": null
+      },
+      {
+       "raqam": 26,
+       "nom": "Ichki yonuv dvigatellari",
+       "tur": "sim",
+       "oila": "F17",
+       "sim": null
+      },
+      {
+       "raqam": 27,
+       "nom": "Issiqlik dvigatellari ishlash prinsipi",
+       "tur": "sim",
+       "oila": "F17",
+       "sim": null
+      },
+      {
+       "raqam": 28,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "mixCompare"
+      },
+      {
+       "raqam": 29,
+       "nom": "Issiqlik mashinalari va tabiatni muhofaza qilish",
+       "tur": "matn"
+      },
+      {
+       "raqam": 30,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "mixCompare"
+      }
+     ]
+    },
+    {
+     "nom": "Suyuqlik va qattiq jismlar xossalari",
+     "mavzular": [
+      {
+       "raqam": 31,
+       "nom": "Suyuqliklarning xossalari",
+       "tur": "sim",
+       "oila": "F18",
+       "sim": null
+      },
+      {
+       "raqam": 32,
+       "nom": "Ho‘llash. Kapillyar hodisalar",
+       "tur": "sim",
+       "oila": "F18",
+       "sim": null
+      },
+      {
+       "raqam": 33,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": null
+      },
+      {
+       "raqam": 34,
+       "nom": "Laboratoriya ishi. Sirt taranglik koeffitsiyenti",
+       "tur": "lab",
+       "oila": "F18",
+       "sim": null,
+       "lab": null
+      },
+      {
+       "raqam": 35,
+       "nom": "Kristall va amorf jismlar",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatWax"
+      },
+      {
+       "raqam": 36,
+       "nom": "Qattiq jismlarning mexanik xossalari",
+       "tur": "sim",
+       "oila": "F19",
+       "sim": null
+      },
+      {
+       "raqam": 37,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "heatWax"
+      }
+     ]
+    },
+    {
+     "nom": "Agregat holatlarning o‘zgarishi",
+     "mavzular": [
+      {
+       "raqam": 38,
+       "nom": "Qattiq jismning erishi va qotishi",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatTin"
+      },
+      {
+       "raqam": 39,
+       "nom": "Solishtirma erish issiqligi. Amorf jismlar",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "mixIce"
+      },
+      {
+       "raqam": 40,
+       "nom": "Bug‘lanish va kondensatsiya",
+       "tur": "sim",
+       "oila": "F16",
+       "sim": "heat",
+       "preset": "heatAlcohol"
+      },
+      {
+       "raqam": 41,
+       "nom": "Atmosferadagi hodisalar",
+       "tur": "sim",
+       "oila": "F20",
+       "sim": null
+      },
+      {
+       "raqam": 42,
+       "nom": "Laboratoriya ishi. Havoning nisbiy namligi",
+       "tur": "lab",
+       "oila": "F20",
+       "sim": null,
+       "lab": null
+      },
+      {
+       "raqam": 43,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "heat",
+       "preset": "heatAlcohol"
+      }
+     ]
+    },
+    {
+     "nom": "Optika",
+     "mavzular": [
+      {
+       "raqam": 44,
+       "nom": "Yorug‘lik tezligini aniqlash",
+       "tur": "matn"
+      },
+      {
+       "raqam": 45,
+       "nom": "Yorug‘likning qaytish va sinish qonunlari",
+       "tur": "sim",
+       "oila": "F40",
+       "sim": "refraction-law",
+       "preset": "airGlass"
+      },
+      {
+       "raqam": 46,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "refraction-law",
+       "preset": "airGlass"
+      },
+      {
+       "raqam": 47,
+       "nom": "To‘la ichki qaytish",
+       "tur": "sim",
+       "oila": "F40",
+       "sim": "refraction-law",
+       "preset": "tir"
+      },
+      {
+       "raqam": 48,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "refraction-law",
+       "preset": "tir"
+      },
+      {
+       "raqam": 49,
+       "nom": "Laboratoriya ishi. Shishaning sindirish ko‘rsatkichi",
+       "tur": "lab",
+       "oila": "F40",
+       "sim": "refraction-law",
+       "preset": "slabLab",
+       "lab": null
+      },
+      {
+       "raqam": 50,
+       "nom": "Linzalar. Linza formulasi",
+       "tur": "sim",
+       "oila": "F41",
+       "sim": "lens",
+       "preset": "far",
+       "taxminiy": true
+      },
+      {
+       "raqam": 51,
+       "nom": "Yupqa linza yordamida tasvir yasash",
+       "tur": "sim",
+       "oila": "F41",
+       "sim": "lens",
+       "preset": "between"
+      },
+      {
+       "raqam": 52,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "lens",
+       "preset": "between"
+      },
+      {
+       "raqam": 53,
+       "nom": "Laboratoriya ishi. Linzaning optik kuchi",
+       "tur": "lab",
+       "oila": "F41",
+       "sim": "lens",
+       "preset": "lab",
+       "lab": null
+      },
+      {
+       "raqam": 54,
+       "nom": "Optik asboblar",
+       "tur": "sim",
+       "oila": "F41",
+       "sim": "lens",
+       "preset": "micro"
+      },
+      {
+       "raqam": 55,
+       "nom": "Ko‘z va ko‘rish",
+       "tur": "sim",
+       "oila": "F41",
+       "sim": "lens",
+       "preset": "eyeNormal"
+      },
+      {
+       "raqam": 56,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "lens",
+       "preset": "eyeNormal"
+      }
+     ]
+    },
+    {
+     "nom": "Yakuniy mavzular",
+     "mavzular": [
+      {
+       "raqam": 57,
+       "nom": "Geliotexnika. Quyosh energiyasi",
+       "tur": "matn"
+      },
+      {
+       "raqam": 58,
+       "nom": "Olamning yagona fizik manzarasi",
+       "tur": "matn"
+      },
+      {
+       "raqam": 59,
+       "nom": "Fizika va texnika taraqqiyoti",
+       "tur": "matn"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sinf": 10,
+   "nashr": 2022,
+   "fan": "Mexanika, tebranishlar, elektr, magnetizm",
+   "boblar": [
+    {
+     "nom": "Dinamika",
+     "mavzular": [
+      {
+       "raqam": 1,
+       "nom": "Kuchlarni qo‘shish",
+       "tur": "sim",
+       "oila": "F2",
+       "sim": null
+      },
+      {
+       "raqam": 2,
+       "nom": "Markazga intilma kuch",
+       "tur": "sim",
+       "oila": "F3",
+       "sim": "circular-motion",
+       "preset": "string"
+      },
+      {
+       "raqam": 3,
+       "nom": "Gravitatsiya maydonidagi harakat",
+       "tur": "sim",
+       "oila": "F9",
+       "sim": "projectile"
+      },
+      {
+       "raqam": 4,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "projectile"
+      },
+      {
+       "raqam": 5,
+       "nom": "Jism og‘irligining harakat turiga bog‘liqligi",
+       "tur": "sim",
+       "oila": "F8",
+       "sim": "newton-second-law",
+       "preset": "up"
+      },
+      {
+       "raqam": 6,
+       "nom": "Jismning bir nechta kuch ta’siridagi harakati",
+       "tur": "sim",
+       "oila": "F8",
+       "sim": "newton-second-law",
+       "preset": "hang"
+      },
+      {
+       "raqam": 7,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "newton-second-law",
+       "preset": "hang"
+      },
+      {
+       "raqam": 8,
+       "nom": "Jismning qiya tekislikdagi harakati",
+       "tur": "sim",
+       "oila": "F10",
+       "sim": "inclined-plane"
+      },
+      {
+       "raqam": 9,
+       "nom": "Qiya tekislik bo‘ylab ish. FIK",
+       "tur": "sim",
+       "oila": "F10",
+       "sim": null
+      },
+      {
+       "raqam": 10,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "inclined-plane"
+      },
+      {
+       "raqam": 11,
+       "nom": "Laboratoriya ishi. Qiya tekislik FIKi",
+       "tur": "lab",
+       "oila": "F10",
+       "sim": "inclined-plane",
+       "lab": null
+      }
+     ]
+    },
+    {
+     "nom": "Statika",
+     "mavzular": [
+      {
+       "raqam": 12,
+       "nom": "Massa markazi. Muvozanat. Kuch momenti",
+       "tur": "sim",
+       "oila": "F11",
+       "sim": null
+      },
+      {
+       "raqam": 13,
+       "nom": "Moment qoidasiga asoslangan oddiy mexanizmlar",
+       "tur": "sim",
+       "oila": "F11",
+       "sim": null
+      },
+      {
+       "raqam": 14,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "Mexanik tebranishlar va to‘lqinlar",
+     "mavzular": [
+      {
+       "raqam": 15,
+       "nom": "Mexanik tebranishlar",
+       "tur": "sim",
+       "oila": "F12",
+       "sim": "pendulum",
+       "preset": "small"
+      },
+      {
+       "raqam": 16,
+       "nom": "Prujinali va matematik mayatniklar",
+       "tur": "sim",
+       "oila": "F12",
+       "sim": "spring",
+       "preset": "free"
+      },
+      {
+       "raqam": 17,
+       "nom": "Laboratoriya ishi. Mayatnik bilan g ni aniqlash",
+       "tur": "lab",
+       "oila": "F12",
+       "sim": "pendulum",
+       "preset": "seconds",
+       "lab": null
+      },
+      {
+       "raqam": 18,
+       "nom": "Mexanik to‘lqinlar",
+       "tur": "sim",
+       "oila": "F13",
+       "sim": "waves",
+       "preset": "travel"
+      },
+      {
+       "raqam": 19,
+       "nom": "Tovush to‘lqinlari",
+       "tur": "sim",
+       "oila": "F13",
+       "sim": "waves",
+       "preset": "longw"
+      },
+      {
+       "raqam": 20,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "waves",
+       "preset": "longw"
+      }
+     ]
+    },
+    {
+     "nom": "Suyuqlik va gazlar harakati",
+     "mavzular": [
+      {
+       "raqam": 21,
+       "nom": "Suyuqlik va gazlar harakati",
+       "tur": "sim",
+       "oila": "F14",
+       "sim": "fluid",
+       "preset": "flow"
+      },
+      {
+       "raqam": 22,
+       "nom": "Gaz/suyuqlik bosimining tezlikka bog‘liqligi (texnika)",
+       "tur": "sim",
+       "oila": "F14",
+       "sim": "fluid",
+       "preset": "venturi"
+      },
+      {
+       "raqam": 23,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "fluid",
+       "preset": "venturi"
+      }
+     ]
+    },
+    {
+     "nom": "Elektrostatika",
+     "mavzular": [
+      {
+       "raqam": 24,
+       "nom": "Maydon kuchlanganligi superpozitsiyasi",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": null
+      },
+      {
+       "raqam": 25,
+       "nom": "Zaryadlangan sharning maydoni",
+       "tur": "sim",
+       "oila": "F22",
+       "sim": null
+      },
+      {
+       "raqam": 26,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": null
+      },
+      {
+       "raqam": 27,
+       "nom": "Nuqtaviy zaryadni ko‘chirishda ish",
+       "tur": "sim",
+       "oila": "F23",
+       "sim": "potential",
+       "preset": "work"
+      },
+      {
+       "raqam": 28,
+       "nom": "Zaryadning potensial energiyasi",
+       "tur": "sim",
+       "oila": "F23",
+       "sim": "potential",
+       "preset": "single"
+      },
+      {
+       "raqam": 29,
+       "nom": "Elektr maydon energiyasi",
+       "tur": "sim",
+       "oila": "F23",
+       "sim": "potential",
+       "preset": "capConn"
+      },
+      {
+       "raqam": 30,
+       "nom": "Amaliy ish. Energiya aylanishi",
+       "tur": "sim",
+       "oila": "F7",
+       "sim": "energy",
+       "preset": "pipe"
+      },
+      {
+       "raqam": 31,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "energy",
+       "preset": "pipe"
+      }
+     ]
+    },
+    {
+     "nom": "O‘zgarmas tok qonunlari",
+     "mavzular": [
+      {
+       "raqam": 32,
+       "nom": "Tok kuchi va tok zichligi",
+       "tur": "sim",
+       "oila": "F26",
+       "sim": null
+      },
+      {
+       "raqam": 33,
+       "nom": "To‘liq zanjir uchun Om qonuni",
+       "tur": "sim",
+       "oila": "F27",
+       "sim": "circuit",
+       "preset": "emf"
+      },
+      {
+       "raqam": 34,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "emf"
+      },
+      {
+       "raqam": 35,
+       "nom": "Laboratoriya ishi. EYuK va ichki qarshilik",
+       "tur": "lab",
+       "oila": "F27",
+       "sim": "circuit",
+       "preset": "emf",
+       "lab": null
+      },
+      {
+       "raqam": 36,
+       "nom": "Metall qarshiligining temperaturaga bog‘liqligi",
+       "tur": "sim",
+       "oila": "F26",
+       "sim": null
+      },
+      {
+       "raqam": 37,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "circuit",
+       "preset": "emf"
+      }
+     ]
+    },
+    {
+     "nom": "Turli muhitlarda elektr toki",
+     "mavzular": [
+      {
+       "raqam": 38,
+       "nom": "Suyuqliklarda elektr toki",
+       "tur": "sim",
+       "oila": "F28",
+       "sim": null
+      },
+      {
+       "raqam": 39,
+       "nom": "Faradey qonunlari",
+       "tur": "sim",
+       "oila": "F28",
+       "sim": null
+      },
+      {
+       "raqam": 40,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": null
+      },
+      {
+       "raqam": 41,
+       "nom": "Elektrolizdan texnikada foydalanish",
+       "tur": "matn"
+      },
+      {
+       "raqam": 42,
+       "nom": "Gazlarda va vakuumda elektr toki",
+       "tur": "sim",
+       "oila": "F29",
+       "sim": "thomson-em",
+       "preset": "base"
+      },
+      {
+       "raqam": 43,
+       "nom": "Yarimo‘tkazgichlar va metallardan farqi",
+       "tur": "sim",
+       "oila": "F30",
+       "sim": null
+      },
+      {
+       "raqam": 44,
+       "nom": "Yarimo‘tkazgichlarning o‘tkazuvchanligi",
+       "tur": "sim",
+       "oila": "F30",
+       "sim": null
+      },
+      {
+       "raqam": 45,
+       "nom": "Yarimo‘tkazgichli asboblar",
+       "tur": "sim",
+       "oila": "F30",
+       "sim": "circuit",
+       "preset": "diode"
+      },
+      {
+       "raqam": 46,
+       "nom": "Laboratoriya ishi. Diod VAXini o‘rganish",
+       "tur": "lab",
+       "oila": "F30",
+       "sim": "circuit",
+       "preset": "diode",
+       "lab": null
+      }
+     ]
+    },
+    {
+     "nom": "Magnit maydon",
+     "mavzular": [
+      {
+       "raqam": 47,
+       "nom": "Magnit maydon induksiyasi, tokli o‘tkazgich maydoni",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "wire"
+      },
+      {
+       "raqam": 48,
+       "nom": "Magnit maydonning tokli o‘tkazgichga ta’siri",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "amp"
+      },
+      {
+       "raqam": 49,
+       "nom": "Tokli o‘tkazgichlarning o‘zaro ta’siri",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "parallel"
+      },
+      {
+       "raqam": 50,
+       "nom": "Tokli o‘tkazgichni ko‘chirishda ish",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "rail"
+      },
+      {
+       "raqam": 51,
+       "nom": "Magnit maydonda zaryadli zarra harakati",
+       "tur": "sim",
+       "oila": "F33",
+       "sim": "lorentz",
+       "preset": "proton"
+      },
+      {
+       "raqam": 52,
+       "nom": "O‘zgarmas tok elektr dvigateli",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "motor"
+      },
+      {
+       "raqam": 53,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "magnetism",
+       "preset": "motor"
+      }
+     ]
+    },
+    {
+     "nom": "Elektromagnit induksiya",
+     "mavzular": [
+      {
+       "raqam": 54,
+       "nom": "Elektromagnit induksiya",
+       "tur": "sim",
+       "oila": "F34",
+       "sim": "induction",
+       "preset": "faraday"
+      },
+      {
+       "raqam": 55,
+       "nom": "Amaliy ish. Elektromagnit induksiya",
+       "tur": "sim",
+       "oila": "F34",
+       "sim": "induction",
+       "preset": "hand"
+      },
+      {
+       "raqam": 56,
+       "nom": "O‘zinduksiya. Induktivlik",
+       "tur": "sim",
+       "oila": "F35",
+       "sim": "induction",
+       "preset": "selfOn"
+      },
+      {
+       "raqam": 57,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "induction",
+       "preset": "selfOn"
+      },
+      {
+       "raqam": 58,
+       "nom": "Magnit maydon energiyasi. Moddalarning magnit xossalari",
+       "tur": "sim",
+       "oila": "F35",
+       "sim": "induction",
+       "preset": "selfCore"
+      },
+      {
+       "raqam": 59,
+       "nom": "Masalalar yechish",
+       "tur": "masala",
+       "sim": "induction",
+       "preset": "selfCore"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sinf": 11,
+   "nashr": 2017,
+   "fan": "Elektromagnetizm, optika, nisbiylik, kvant va yadro fizikasi",
+   "boblar": [
+    {
+     "nom": "Magnit maydon",
+     "mavzular": [
+      {
+       "raqam": 1,
+       "nom": "Magnit maydon. Tavsiflovchi kattaliklar",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "wire"
+      },
+      {
+       "raqam": 2,
+       "nom": "Tokli ramkani aylantiruvchi moment",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "frame"
+      },
+      {
+       "raqam": 3,
+       "nom": "Tokli o‘tkazgich, halqa va g‘altak maydoni",
+       "tur": "sim",
+       "oila": "F31",
+       "sim": "magnetism",
+       "preset": "coil"
+      },
+      {
+       "raqam": 4,
+       "nom": "Tokli o‘tkazgichni ko‘chirishda ish",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "rail"
+      },
+      {
+       "raqam": 5,
+       "nom": "Tokli o‘tkazgichlarning o‘zaro ta’siri",
+       "tur": "sim",
+       "oila": "F32",
+       "sim": "magnetism",
+       "preset": "parallel"
+      },
+      {
+       "raqam": 6,
+       "nom": "Zaryadli zarra harakati. Lorens kuchi",
+       "tur": "sim",
+       "oila": "F33",
+       "sim": "lorentz",
+       "preset": "proton"
+      }
+     ]
+    },
+    {
+     "nom": "Elektromagnit induksiya",
+     "mavzular": [
+      {
+       "raqam": 7,
+       "nom": "EMI hodisasi. Faradey qonuni",
+       "tur": "sim",
+       "oila": "F34",
+       "sim": "induction",
+       "preset": "faraday"
+      },
+      {
+       "raqam": 8,
+       "nom": "O‘zinduksiya. Induktivlik",
+       "tur": "sim",
+       "oila": "F35",
+       "sim": "induction",
+       "preset": "selfOn"
+      },
+      {
+       "raqam": 9,
+       "nom": "Moddalarning magnit xossalari",
+       "tur": "sim",
+       "oila": "F35",
+       "sim": "magnetism",
+       "preset": "electromagnet"
+      },
+      {
+       "raqam": 10,
+       "nom": "Magnit maydon energiyasi",
+       "tur": "sim",
+       "oila": "F35",
+       "sim": "induction",
+       "preset": "selfCore"
+      }
+     ]
+    },
+    {
+     "nom": "Elektromagnit tebranishlar",
+     "mavzular": [
+      {
+       "raqam": 11,
+       "nom": "Erkin elektromagnit tebranishlar (LC kontur)",
+       "tur": "sim",
+       "oila": "F36",
+       "sim": "lc",
+       "preset": "free"
+      },
+      {
+       "raqam": 12,
+       "nom": "Tebranishlarni grafik tasvirlash. So‘nuvchi tebranishlar",
+       "tur": "sim",
+       "oila": "F36",
+       "sim": "lc",
+       "preset": "damped"
+      },
+      {
+       "raqam": 13,
+       "nom": "Tranzistorli tebranishlar generatori",
+       "tur": "sim",
+       "oila": "F36",
+       "sim": "lc",
+       "preset": "charge"
+      }
+     ]
+    },
+    {
+     "nom": "O‘zgaruvchan tok",
+     "mavzular": [
+      {
+       "raqam": 14,
+       "nom": "AC zanjirda aktiv qarshilik",
+       "tur": "sim",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "acR"
+      },
+      {
+       "raqam": 15,
+       "nom": "AC zanjirda kondensator",
+       "tur": "sim",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "acC"
+      },
+      {
+       "raqam": 16,
+       "nom": "AC zanjirda induktiv g‘altak",
+       "tur": "sim",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "acL"
+      },
+      {
+       "raqam": 17,
+       "nom": "RLC ketma-ket zanjir uchun Om qonuni",
+       "tur": "sim",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "acRLC"
+      },
+      {
+       "raqam": 18,
+       "nom": "Rezonans",
+       "tur": "sim",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "res"
+      },
+      {
+       "raqam": 19,
+       "nom": "Laboratoriya ishi. AC zanjirda rezonans",
+       "tur": "lab",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "res",
+       "lab": null
+      },
+      {
+       "raqam": 20,
+       "nom": "AC ish va quvvat. cosφ",
+       "tur": "sim",
+       "oila": "F37",
+       "sim": "lc",
+       "preset": "acRLC"
+      }
+     ]
+    },
+    {
+     "nom": "Elektromagnit to‘lqinlar",
+     "mavzular": [
+      {
+       "raqam": 21,
+       "nom": "EM tebranishlar tarqalishi. EM to‘lqin tezligi",
+       "tur": "sim",
+       "oila": "F38",
+       "sim": null
+      },
+      {
+       "raqam": 22,
+       "nom": "EM to‘lqinlar xossalari (qaytish, sinish)",
+       "tur": "sim",
+       "oila": "F38",
+       "sim": null
+      },
+      {
+       "raqam": 23,
+       "nom": "Radioaloqa asoslari",
+       "tur": "sim",
+       "oila": "F38",
+       "sim": null
+      },
+      {
+       "raqam": 24,
+       "nom": "Televideniye asoslari",
+       "tur": "sim",
+       "oila": "F38",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "To‘lqin optikasi va fotometriya",
+     "mavzular": [
+      {
+       "raqam": 25,
+       "nom": "Yorug‘lik interferensiyasi va difraksiyasi",
+       "tur": "sim",
+       "oila": "F42",
+       "sim": "diffraction",
+       "preset": "youngG"
+      },
+      {
+       "raqam": 26,
+       "nom": "Laboratoriya ishi. Difraksion panjara",
+       "tur": "lab",
+       "oila": "F42",
+       "sim": "diffraction",
+       "preset": "gratLab",
+       "lab": null
+      },
+      {
+       "raqam": 27,
+       "nom": "Dispersiya. Spektral analiz",
+       "tur": "sim",
+       "oila": "F43",
+       "sim": "dispersion",
+       "preset": "white"
+      },
+      {
+       "raqam": 28,
+       "nom": "Yorug‘likning qutblanishi",
+       "tur": "sim",
+       "oila": "F44",
+       "sim": "dispersion",
+       "preset": "malus"
+      },
+      {
+       "raqam": 29,
+       "nom": "IQ, UB va rentgen nurlanish",
+       "tur": "matn"
+      },
+      {
+       "raqam": 30,
+       "nom": "Yorug‘lik oqimi, kuchi, yoritilganlik",
+       "tur": "sim",
+       "sim": null
+      },
+      {
+       "raqam": 31,
+       "nom": "Laboratoriya ishi. Yoritilganlik",
+       "tur": "lab",
+       "sim": null,
+       "lab": null
+      }
+     ]
+    },
+    {
+     "nom": "Maxsus nisbiylik nazariyasi",
+     "mavzular": [
+      {
+       "raqam": 32,
+       "nom": "Maxsus nisbiylik. Tezliklarni qo‘shish",
+       "tur": "sim",
+       "oila": "F45",
+       "sim": null
+      },
+      {
+       "raqam": 33,
+       "nom": "Massaning tezlikka bog‘liqligi. E = mc²",
+       "tur": "sim",
+       "oila": "F45",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "Kvant fizikasi va atom",
+     "mavzular": [
+      {
+       "raqam": 34,
+       "nom": "Kvant fizikasining paydo bo‘lishi",
+       "tur": "sim",
+       "oila": "F46",
+       "sim": "blackbody",
+       "preset": "s2000"
+      },
+      {
+       "raqam": 35,
+       "nom": "Fotoeffekt. Fotonlar",
+       "tur": "sim",
+       "oila": "F46",
+       "sim": "photoeffect",
+       "preset": "blue"
+      },
+      {
+       "raqam": 36,
+       "nom": "Foton impulsi. Yorug‘lik bosimi",
+       "tur": "sim",
+       "oila": "F46",
+       "sim": "compton",
+       "preset": "s60"
+      },
+      {
+       "raqam": 37,
+       "nom": "Atomning Bor modeli",
+       "tur": "sim",
+       "oila": "F47",
+       "sim": "bohr",
+       "preset": "balmer"
+      },
+      {
+       "raqam": 38,
+       "nom": "Lazer",
+       "tur": "sim",
+       "oila": "F47",
+       "sim": null
+      }
+     ]
+    },
+    {
+     "nom": "Atom yadrosi",
+     "mavzular": [
+      {
+       "raqam": 39,
+       "nom": "Yadro tarkibi, bog‘lanish energiyasi",
+       "tur": "sim",
+       "oila": "F48",
+       "sim": "nuclear",
+       "preset": "fe56"
+      },
+      {
+       "raqam": 40,
+       "nom": "Radioaktiv nurlanishni qayd qilish usullari",
+       "tur": "sim",
+       "oila": "F48",
+       "sim": "wilson",
+       "preset": "po"
+      },
+      {
+       "raqam": 41,
+       "nom": "Radioaktiv yemirilish qonuni",
+       "tur": "sim",
+       "oila": "F48",
+       "sim": "nuclear",
+       "preset": "c14"
+      },
+      {
+       "raqam": 42,
+       "nom": "Yadro reaksiyalari. Siljish qonuni",
+       "tur": "sim",
+       "oila": "F48",
+       "sim": "nuclear",
+       "preset": "rn222"
+      },
+      {
+       "raqam": 43,
+       "nom": "Elementar zarralar",
+       "tur": "matn"
+      },
+      {
+       "raqam": 44,
+       "nom": "Atom energetikasi",
+       "tur": "sim",
+       "oila": "F48",
+       "sim": "nuclear",
+       "preset": "reactor"
+      },
+      {
+       "raqam": 45,
+       "nom": "O‘zbekistonda yadro fizikasi",
+       "tur": "matn"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
