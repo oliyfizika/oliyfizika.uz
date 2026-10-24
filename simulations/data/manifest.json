@@ -213,6 +213,21 @@
    "keywords": "issiqlik miqdori solishtirma issiqlik sig'imi kalorimetr issiqlik balansi muvozanat aralashtirish muz erishi qotish bug'lanish kondensatsiya qaynash solishtirma erish issiqligi bug'lanish issiqligi yoqilg'i yonish issiqligi fik amorf kristall isitish egri chizig'i heat calorimeter melting boiling"
   },
   {
+   "id": "electroscope",
+   "title": "Elektrlanish va elektroskop",
+   "href": "electroscope.html",
+   "topic": "elektr",
+   "description": "Ishqalanish orqali elektrlanish: shisha–ipak, ebonit–jun, qahrabo, qo‘ldagi metall; elektronlar ko‘chishi va zaryadning saqlanishi. Elektroskopni tegizib va induksiya orqali zaryadlash, yerga ulash, zaryad ishorasini aniqlash. Ikki elektroskopni metall va shisha bilan ulash.",
+   "params": [
+    "Juftlik: shisha–ipak, ebonit–jun, qahrabo–jun, metall–jun",
+    "Matoni ishqalash, tayoqchani surish va tegizish",
+    "Induksiya: q, masofa d, yerga ulash kaliti",
+    "Ikki elektroskop: A va B zaryadlari, ulagich (metall/shisha)",
+    "Yaproqcha massasi m"
+   ],
+   "keywords": "elektrlanish elektroskop elektrometr zaryad ishqalanish shisha ipak ebonit jun qahrabo elektron ko'chishi zaryadning saqlanish qonuni musbat manfiy zaryad induksiya elektrostatik induksiya yerga ulash tegizib zaryadlash o'tkazgich dielektrik izolyator yaproqcha electroscope electrification charging by induction conduction friction"
+  },
+  {
    "id": "coulomb-law",
    "title": "Kulon qonuni",
    "href": "coulomb-law.html",

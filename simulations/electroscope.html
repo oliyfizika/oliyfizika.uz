@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elektrlanish va elektroskop | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: ishqalanish orqali elektrlanish (shisha–ipak, ebonit–jun), zaryadning saqlanishi va elektronlar ko‘chishi, elektroskopni tegizib va induksiya orqali zaryadlash, yerga ulash, ikki elektroskopni o‘tkazgich va dielektrik bilan ulash.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/electroscope.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Elektrlanish va elektroskop" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="electroscopeSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Elektr va magnetizm</span>
+      <h1>Elektrlanish va elektroskop</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="rub" aria-pressed="true">Elektrlanish</button>
+            <button type="button" data-mode-value="ind" aria-pressed="false">Induksiya</button>
+            <button type="button" data-mode-value="two" aria-pressed="false">Ikki elektroskop</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Elektroskop va zaryadlangan jismlar"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-rub data-tool="rub">Ishqalash</button>
+          <button class="of-btn of-btn--sm" type="button" data-touch data-tool="rub">Tegizish</button>
+          <label class="sim-switch"><input type="checkbox" data-toggle="charges" checked><span class="sim-switch__ui"></span>Zaryadlar</label>
+          <label class="sim-switch"><input type="checkbox" data-toggle="names"><span class="sim-switch__ui"></span>Qism nomlari</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="rub">
+        <span class="sim-group__title">Ishqalanadigan jismlar</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="pair">Tayoqcha va mato</label></div>
+          <select class="sim-select" id="pair">
+            <option value="glass">Shisha tayoqcha + ipak</option>
+            <option value="ebonite">Ebonit tayoqcha + jun</option>
+            <option value="amber">Qahrabo + jun</option>
+            <option value="metal">Metall tayoqcha (qo‘lda) + jun</option>
+          </select>
+        </div>
+        <p class="of-subtle">Matoni tayoqcha ustida u yoqqa-bu yoqqa surib ishqalang («Ishqalash» tugmasi ham bor). So‘ng tayoqchani yoki matoni sharchaga yaqinlashtiring yoki tegizing. O‘ngdagi kalit — yerga ulash.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="ind">
+        <span class="sim-group__title">Induksiya</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="iQ">Tayoqcha zaryadi q</label><output for="iQ" id="iQOut"></output></div><input class="sim-range" type="range" id="iQ" min="-40" max="40" step="1" value="30"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="iD">Sharchagacha masofa d</label><output for="iD" id="iDOut"></output></div><input class="sim-range" type="range" id="iD" min="0.5" max="25" step="0.5" value="18"></div>
+        <label class="sim-switch"><input type="checkbox" id="iG"><span class="sim-switch__ui"></span>Yerga ulash (qo‘l tegizish)</label>
+        <p class="of-subtle">Tayoqchani gorizontal suring; o‘ngdagi kalitni bosib elektroskopni yerga ulang yoki uzing. Tayoqcha sharchaga tegmaydi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="two">
+        <span class="sim-group__title">Ikki elektroskop</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="tA">A elektroskop zaryadi Q<sub>A</sub></label><output for="tA" id="tAOut"></output></div><input class="sim-range" type="range" id="tA" min="-24" max="24" step="1" value="16"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="tB">B elektroskop zaryadi Q<sub>B</sub></label><output for="tB" id="tBOut"></output></div><input class="sim-range" type="range" id="tB" min="-24" max="24" step="1" value="0"></div>
+        <div class="of-segment" role="group" aria-label="Ulagich materiali" data-bar>
+          <button type="button" data-bar-value="metal" aria-pressed="true">Metall sterjen</button>
+          <button type="button" data-bar-value="glass" aria-pressed="false">Shisha tayoqcha</button>
+        </div>
+        <label class="sim-switch"><input type="checkbox" id="tC"><span class="sim-switch__ui"></span>Ulagich sharchalarga tegib turibdi</label>
+        <p class="of-subtle">Ulagichni dastasidan ushlab sharchalarga tushiring. B dan o‘ngdagi kalit — yerga ulash.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Elektroskop</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="lm">Yaproqcha massasi m</label><output for="lm" id="lmOut"></output></div><input class="sim-range" type="range" id="lm" min="3" max="20" step="1" value="8"></div>
+        <p class="of-subtle">Yengil yaproqcha sezgirroq: bir xil zaryadda kattaroq burchakka ochiladi. Yaproqcha uzunligi 6 cm, sharcha radiusi 1,6 cm.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Zaryad elektronlar soniga karrali: <span class="sim-math">q = N·e</span>, <span class="sim-math">e = 1,6·10⁻¹⁹ C</span></li>
+        <li>Zaryadning saqlanishi: <span class="sim-math">q₁ + q₂ + … = const</span>; ishqalashda <span class="sim-math">q<sub>tayoqcha</sub> = −q<sub>mato</sub></span></li>
+        <li>Kulon qonuni: <span class="sim-math">F = k|q₁q₂|/r²</span>, <span class="sim-math">k = 9·10⁹ N·m²/C²</span></li>
+        <li>Yaproqcha muvozanati: <span class="sim-math">tg θ = F/(mg)</span>, <span class="sim-math">F = k(q/2)²/(2L·sin θ)²</span></li>
+        <li>Bir xil elektroskoplar ulansa: <span class="sim-math">Q′<sub>A</sub> = Q′<sub>B</sub> = (Q<sub>A</sub> + Q<sub>B</sub>)/2</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Model: elektroskop (sharcha, sterjen, yaproqchalar) — bitta o‘tkazgich. Yaproqchalardagi zaryad o‘tkazgich potensialiga proporsional (yarmi yaproqchalarda), tashqi zaryad q ning ta’siri q·R/D (R — sharcha radiusi, D — masofa); uzoqdagi zaryadni atrofdagi yerga ulangan jismlar ekranlaydi (λ = 10 cm). Yaproqchalar zaryadi ularning uchida deb olinadi. Shisha, ebonit va mato — dielektrik: tekkanda zaryadning faqat bir qismi o‘tadi. Zaryad nC da (1 nC ≈ 6,2 mlrd elektron); sahnadagi «+» va «−» belgilari soni zaryadga proporsional, lekin elektronlar sonini emas, ortiqcha zaryadni ko‘rsatadi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
