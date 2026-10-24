@@ -587,10 +587,15 @@ function applyPreset(key) {
   syncLinkUI(); syncG(); setDrive(q.drive);
   syncV0Range();
   setMode(q.mode);
+  markPreset(key);
   resetSim();
   renderAll(); updateUI();
   loop.start();
 }
+// Tanlangan preset tugmasi belgilanadi; parametr qo'lda o'zgartirilsa belgi olinadi
+const markPreset = (key) => document.querySelectorAll("[data-preset]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.preset === key)));
+markPreset(null);
+document.querySelector(".sim-panel")?.addEventListener("input", () => markPreset(null));
 document.querySelectorAll("[data-preset]").forEach((b) => b.addEventListener("click", () => applyPreset(b.dataset.preset)));
 
 document.querySelectorAll("[data-toggle]").forEach((cb) => cb.addEventListener("change", () => {
@@ -693,4 +698,6 @@ resetSim();
 setTab("x");
 updateUI();
 renderAll();
+const q = new URLSearchParams(location.search).get("preset"); // katalogdagi darslik havolalari
+if (PRESETS[q]) applyPreset(q);
 document.fonts?.ready.then(renderAll);

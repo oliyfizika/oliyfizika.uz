@@ -69,8 +69,10 @@ Umumiy yadro:
 3. Yangi mavzu bo‘lsa — `manifest.topics` va `assets/css/catalog.css` rang qoidalari.
 4. Eski manzil o‘zgarsa — eski HTML yo‘naltiruvchi sahifa bo‘lib qoladi (masalan, `ohm-law.html` → `circuit.html?preset=ohm`).
 
-Kelajakdagi reja: barcha oilalar tayyor bo‘lgach katalog sinflar bo‘yicha (7–11-sinf tugmalari, ostida 6 ustunli to‘r).
-Bir oila ikki sinf darsligida bo‘lsa — bitta simulyatsiya, sinfga qarab turli preset/sahifa.
+5. Darslik mavzulariga bog‘lash — `simulations/data/curriculum.json` (katalogdagi 7–11-sinf tugmalari, `?sinf=8`).
+   Bir oila bir nechta sinf darsligida bo‘lsa — bitta simulyatsiya, sinfga qarab turli `preset`; sahifa nusxalanmaydi.
+   Kerakli preset yo‘q bo‘lsa simulyatsiyaning o‘ziga qo‘shiladi va `?preset=<id>` URL orqali ochilishi, tanlangan tugmada
+   `aria-pressed="true"` bo‘lishi shart. Tekshiruv: `t_curriculum.mjs` (Node) va `t_curriculum_presets.mjs` (Playwright).
 
 ## Tekshiruv (har ish oxirida)
 - **Fizika:** `<nom>-physics.js` Node’da analitik qiymatlarga solishtiriladi (davr, energiya saqlanishi, chegaraviy

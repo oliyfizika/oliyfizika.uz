@@ -148,6 +148,15 @@ export const PRESETS = {
     ),
     select: vEdge(1, 2), tab: "src",
   },
+  cells: {
+    title: "Tok manbalarini ulash",
+    lesson: "Ikki batareya ketma-ket ulangan: EYuK lar va ichki qarshiliklar qo‘shiladi, ε = ε₁ + ε₂, r = r₁ + r₂. Chapdagi voltmetr ikkala manbaning umumiy kuchlanishini ko‘rsatadi. Batareyalardan birini tanlab «Qutblarni almashtirish» ni bosing — qarama-qarshi ulanganda EYuK lar ayiriladi va lampochka o‘chadi.",
+    build: () => make(
+      { wires: rectEdges(1, 1, 7, 3), put: [[vEdge(1, 1), bat(4.5, 0.5)], [vEdge(1, 2), bat(4.5, 0.5)], [hEdge(3, 1), { type: "ammeter" }], [vEdge(7, 2), { type: "lamp", R: 18, pNom: 4.5 }]] },
+      { wires: [hEdge(0, 1), hEdge(0, 3), vEdge(0, 2)], put: [[vEdge(0, 1), { type: "voltmeter", plus: "a" }]] },
+    ),
+    select: vEdge(1, 1), tab: "bars",
+  },
   rheostat: {
     title: "Reostat bilan tokni rostlash",
     lesson: "Reostat siljitgichini surib zanjirdagi tok kuchini va lampochka yorqinligini rostlang. Kalitni bosib zanjirni uzing yoki ulang.",
@@ -205,5 +214,5 @@ export const PRESETS = {
   },
 };
 
-export const PRESET_ORDER = ["ohm", "series", "parallel", "mixed", "emf", "rheostat", "conductor", "lamps", "diode", "led", "antiled"];
+export const PRESET_ORDER = ["ohm", "series", "parallel", "mixed", "emf", "cells", "rheostat", "conductor", "lamps", "diode", "led", "antiled"];
 export { MATERIALS };

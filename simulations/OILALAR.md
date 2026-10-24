@@ -5,7 +5,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 
 | # | Oila | Mavzu | Sinflar | Holat | Fayl / izoh |
 |---|---|---|---|---|---|
-| F24 | Elektr zanjiri konstruktori: tok, kuchlanish, qarshilik, Om, ketma-ket/parallel/aralash, ampermetr/voltmetr, reostat | 26 | 7, 8 | ✅ | circuit.html |
+| F24 | Elektr zanjiri konstruktori: tok, kuchlanish, qarshilik, Om, ketma-ket/parallel/aralash, ampermetr/voltmetr, reostat | 26 | 7, 8 | ✅ | circuit.html (+ `cells` preseti: tok manbalarini ulash, 2026-10-24) |
 | F16 | Issiqlik almashinuvi: kalorimetr, isitish egri chizig‘i, erish, qaynash | 13 | 7, 9 | ✅ | heat.html |
 | F15 | Molekulyar harakat va ideal gaz (zarrachalar idishda; p, V, T, Maksvell taqsimoti, izojarayonlar) | 11 | 7, 9 | ✅ | gas.html |
 | F32 | Amper kuchi, tokli ramka momenti, tok-tok ta’siri, elektrdvigatel | 10 | 8, 10, 11 | ✅ | magnetism.html |
@@ -30,7 +30,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ○ | canvas + hajm/bosim hisobi |
 | F8 | Newton qonunlari, ishqalanish, og‘irlik (lift, vaznsizlik) | 3 | 7, 10 | ✅ | newton-second-law.html |
 | F10 | Qiya tekislik, ishqalanish va FIK | 3 | 10 | ◐ | inclined-plane.html bor; FIK yo‘q |
-| F12 | Mexanik tebranishlar (matematik, fizik, prujinali mayatnik, g ni aniqlash) | 3 | 10 | ✅ | pendulum.html, physical-pendulum.html, spring.html |
+| F12 | Mexanik tebranishlar (matematik, fizik, prujinali mayatnik, g ni aniqlash) | 3 | 10 | ✅ | pendulum.html, physical-pendulum.html, spring.html (`?preset=` URL orqali ham, 2026-10-24) |
 | F18 | Sirt tarangligi, ho‘llash, kapillyar hodisa | 3 | 9 | ○ | h = 2σcosθ/ρgr |
 | F26 | Metallarda tok: drift tezlik, tok zichligi, R(T) | 3 | 8, 10 | ○ | elektron animatsiya (♻ ohm-law elektronlari) |
 | F33 | Lorens kuchi: zarra harakati (sikl, spiral, massa-spektrometr) | 3 | 8, 10, 11 | ✅ | lorentz.html |
@@ -57,3 +57,79 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 ## Oilaga kirmagan qo‘shimcha laboratoriyalar
 - Atom va yadro: `rutherford.html`, `bohr.html`, `davisson-germer.html`.
 - Kvant fizikasi: `photoeffect.html`, `led-planck.html`, `thomson-em.html`, `millikan.html`, `blackbody.html`, `compton.html`, `wilson.html`.
+
+## Darsliklar bo‘yicha qamrov (`data/curriculum.json`)
+
+Katalogdagi «7-sinf»…«11-sinf» tugmalari shu fayldan quriladi (`simulations.html?sinf=8`). Har mavzu: raqam, nom
+(darslikdagidek), tur (`sim` / `lab` / `masala` / `matn`), oila, `sim` + `preset`, lab uchun `lab` id.
+Yangi oila yoki lab tayyor bo‘lganda: `curriculum.json` da tegishli mavzularning `sim`/`preset` (yoki `lab`) maydonini to‘ldiring,
+so‘ng `node tools/simulations/tests/t_curriculum.mjs`, `node tools/simulations/tests/t_curriculum_presets.mjs` va
+`python3 tools/simulations/curriculum-coverage.py` (jadvalni shu yerga ko‘chiring).
+
+Boblar darslikdagi bob nomlari emas — manbada saqlanmagan, mavzular bo‘lim bo‘yicha guruhlangan. Uch mavzu nomi
+OCR da o‘qilmagan va taxminiy (`taxminiy: true`): 8-sinf §5, 9-sinf §11, 9-sinf §50 — PDF dan tekshirilishi kerak.
+
+Holat: 2026-10-24.
+
+| Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
+|---|---|---|---|---|---|---|---|
+| 7 | 62 | 45 | **37** (82 %) | 8 | 4 (3 / 1) | 12 (11) | 5 |
+| 8 | 60 | 45 | **37** (82 %) | 8 | 5 (5 / 0) | 12 (11) | 3 |
+| 9 | 59 | 38 | **26** (68 %) | 12 | 6 (4 / 2) | 14 (13) | 7 |
+| 10 | 59 | 44 | **32** (73 %) | 12 | 4 (4 / 0) | 14 (11) | 1 |
+| 11 | 45 | 42 | **33** (79 %) | 9 | 3 (2 / 1) | 0 (0) | 3 |
+| **Jami** | **285** | **214** | **165** (77 %) | **49** | **22** (18 / 4) | **52** (46) | **19** |
+
+| Oila | Bo‘sh mavzular | Soni |
+|---|---|---|
+| F17 | 9§15, 9§16, 9§22, 9§26, 9§27 | 5 |
+| F28 | 8§41, 8§42, 8§43, 10§38, 10§39 | 5 |
+| F38 | 11§21, 11§22, 11§23, 11§24 | 4 |
+| F18 | 9§31, 9§32, 9§34 | 3 |
+| F26 | 8§40, 10§32, 10§36 | 3 |
+| F4 | 7§16, 7§17, 7§18 | 3 |
+| F5 | 7§20, 7§22, 7§23 | 3 |
+| F11 | 10§12, 10§13 | 2 |
+| F2 | 7§5, 10§1 | 2 |
+| F20 | 9§41, 9§42 | 2 |
+| F22 | 10§24, 10§25 | 2 |
+| F25 | 8§34, 8§36 | 2 |
+| F29 | 8§47, 8§48 | 2 |
+| F30 | 10§43, 10§44 | 2 |
+| F45 | 11§32, 11§33 | 2 |
+| yangi | 11§30, 11§31 | 2 |
+| F10 | 10§9 | 1 |
+| F15 | 9§13 | 1 |
+| F19 | 9§36 | 1 |
+| F47 | 11§38 | 1 |
+| F6 | 7§25 | 1 |
+
+«Bog‘langan» — «Ochish» tugmasi ishlaydi (lab mavzularida vaqtincha oddiy simulyatsiya ham hisoblanadi).
+«Bo‘sh» mavzular katalogda «Tayyorlanmoqda» deb ko‘rinadi. `masala` — sim bo‘lsa ko‘rsatiladi; `matn` ko‘rsatilmaydi.
+
+### Darslikdagi laboratoriya ishlari (22 ta) — 2-qism rejasi
+
+| Mavzu | Ish | Oila | Hozir ochiladi | Lab |
+|---|---|---|---|---|
+| 7§12 | Notekis harakat o‘rtacha tezligi | F1 | `motion.html?preset=average` | ○ |
+| 7§18 | Jismlar zichligini aniqlash | F4 | — (tayyorlanmoqda) | ○ |
+| 7§51 | Tok kuchi va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |
+| 7§57 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` | ○ |
+| 8§14 | Zanjir yig‘ish, tok va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |
+| 8§19 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` | ○ |
+| 8§24 | Ketma-ket/parallel ulashni o‘rganish | F24 | `circuit.html?preset=series` | ○ |
+| 8§33 | Lampochka quvvatini aniqlash | F25 | `circuit.html?preset=rheostat` | ○ |
+| 8§58 | Elektromagnit yig‘ish | F31 | `magnetism.html?preset=electromagnet` | ○ |
+| 9§20 | Solishtirma issiqlik sig‘imi | F16 | `heat.html?preset=mixLab` | ○ |
+| 9§25 | Issiqlik miqdorlarini taqqoslash | F16 | `heat.html?preset=mixCompare` | ○ |
+| 9§34 | Sirt taranglik koeffitsiyenti | F18 | — (tayyorlanmoqda) | ○ |
+| 9§42 | Havoning nisbiy namligi | F20 | — (tayyorlanmoqda) | ○ |
+| 9§49 | Shishaning sindirish ko‘rsatkichi | F40 | `refraction-law.html?preset=slabLab` | ○ |
+| 9§53 | Linzaning optik kuchi | F41 | `lens.html?preset=lab` | ○ |
+| 10§11 | Qiya tekislik FIKi | F10 | `inclined-plane.html` | ○ |
+| 10§17 | Mayatnik bilan g ni aniqlash | F12 | `pendulum.html?preset=seconds` | ○ |
+| 10§35 | EYuK va ichki qarshilik | F27 | `circuit.html?preset=emf` | ○ |
+| 10§46 | Diod VAXini o‘rganish | F30 | `circuit.html?preset=diode` | ○ |
+| 11§19 | AC zanjirda rezonans | F37 | `lc.html?preset=res` | ○ |
+| 11§26 | Difraksion panjara | F42 | `diffraction.html?preset=gratLab` | ○ |
+| 11§31 | Yoritilganlik | — | — (tayyorlanmoqda) | ○ |
