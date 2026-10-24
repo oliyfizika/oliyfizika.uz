@@ -301,6 +301,21 @@
    "keywords": "elektr zanjiri konstruktor om qonuni tok kuchi kuchlanish qarshilik ketma-ket parallel aralash ulash eyuk ichki qarshilik reostat ampermetr voltmetr lampochka kalit quvvat kirxgof diod led yorug‘lik diodi virtual laboratoriya circuit ohm law diode"
   },
   {
+   "id": "electrolysis",
+   "title": "Elektroliz va Faradey qonunlari",
+   "href": "electrolysis.html",
+   "topic": "elektr",
+   "description": "Suyuqliklarda elektr toki: elektrolitik dissotsiatsiya, ionlar harakati, parchalanish kuchlanishi, lampa bilan tajriba; qizdirilganda qarshilik kamayadi. Faradeyning 1-qonuni (m = kIt, tarozi va sekundomer) va 2-qonuni (ketma-ket vannalar, suv elektrolizi, Faradey sonini aniqlash).",
+   "params": [
+    "Suyuqlik: suv, shakar, NaCl, CuSO₄, H₂SO₄",
+    "Manba U va elektrodlar orasi d (sahnada suriladi)",
+    "Konsentratsiya c, temperatura t",
+    "Tok kuchi I va vaqt t",
+    "Ketma-ket vannalar: Ag, Cu, Ni, Zn, suv"
+   ],
+   "keywords": "elektroliz suyuqliklarda elektr toki elektrolit elektrolitik dissotsiatsiya ion ionlar kation anion katod anod faradey qonunlari faradeyning birinchi qonuni ikkinchi qonuni elektrokimyoviy ekvivalent m=kIt faradey soni mis kuporosi CuSO4 kumush nitrat osh tuzi NaCl distillangan suv suv elektrolizi vodorod kislorod galvanostegiya galvanoplastika nikellash kumushlash parchalanish kuchlanishi electrolysis faraday law electrolyte ions"
+  },
+  {
    "id": "magnetism",
    "title": "Magnit maydon va Amper kuchi",
    "href": "magnetism.html",
