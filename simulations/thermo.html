@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termodinamika | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: termodinamikaning birinchi qonuni Q = ΔU + A (izobarik, izoxorik, izotermik, adiabatik jarayonlar), p–V va T–S diagrammalar, Karno sikli va FIK, sovitgich, 4 taktli benzinli va dizel dvigatel.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/thermo.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Termodinamika" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="thermoSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Molekulyar fizika va issiqlik</span>
+      <h1>Termodinamika</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="law" aria-pressed="true">1-qonun</button>
+            <button type="button" data-mode-value="cyc" aria-pressed="false">Sikllar va FIK</button>
+            <button type="button" data-mode-value="eng" aria-pressed="false">Dvigatel</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Porshenli silindrdagi gaz"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
+            <button type="button" data-speed-value="0.5" aria-pressed="false">½×</button>
+            <button type="button" data-speed-value="1" aria-pressed="true">1×</button>
+            <button type="button" data-speed-value="2" aria-pressed="false">2×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="law cyc">
+        <span class="sim-group__title">Gaz (ν = 0,04 mol)</span>
+        <div class="of-segment" role="group" aria-label="Gaz turi" data-gas>
+          <button type="button" data-gas-value="3" aria-pressed="true">Bir atomli (He, Ar)</button>
+          <button type="button" data-gas-value="5" aria-pressed="false">Ikki atomli (havo)</button>
+        </div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="law">
+        <span class="sim-group__title">Jarayon</span>
+        <div class="of-segment" role="group" aria-label="Jarayon turi" data-proc style="display:grid;grid-template-columns:1fr 1fr">
+          <button type="button" data-proc-value="p" aria-pressed="true">Izobarik</button>
+          <button type="button" data-proc-value="V" aria-pressed="false">Izoxorik</button>
+          <button type="button" data-proc-value="T" aria-pressed="false">Izotermik</button>
+          <button type="button" data-proc-value="Q0" aria-pressed="false">Adiabatik</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lP">Boshlang‘ich bosim p₁</label><output for="lP" id="lPOut"></output></div><input class="sim-range" type="range" id="lP" min="50" max="200" step="5" value="100"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lV">Boshlang‘ich hajm V₁</label><output for="lV" id="lVOut"></output></div><input class="sim-range" type="range" id="lV" min="0.5" max="3" step="0.1" value="1"></div>
+        <div class="sim-control" data-lt="vol"><div class="sim-control__row"><label for="lV2">Oxirgi hajm V₂</label><output for="lV2" id="lV2Out"></output></div><input class="sim-range" type="range" id="lV2" min="0.3" max="4" step="0.05" value="2"></div>
+        <div class="sim-control" data-lt="heat"><div class="sim-control__row"><label for="lQ">Berilgan issiqlik Q</label><output for="lQ" id="lQOut"></output></div><input class="sim-range" type="range" id="lQ" min="-100" max="300" step="5" value="150"></div>
+        <p class="of-subtle">Porshen tutqichini surib hajmni o‘zgartiring; izoxorik jarayonda gorelka dastagini burang (Q). «Boshlash» jarayonni boshidan ko‘rsatadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="cyc">
+        <span class="sim-group__title">Sikl</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cK">Sikl turi</label></div>
+          <select class="sim-select" id="cK">
+            <option value="carnot">Karno sikli</option>
+            <option value="fridge">Sovitgich (teskari Karno)</option>
+            <option value="rect">To‘g‘ri to‘rtburchak sikl</option>
+            <option value="custom">Ixtiyoriy to‘rtburchak</option>
+            <option value="otto">Otto sikli</option>
+          </select>
+        </div>
+        <div class="sim-control" data-ck="carnot fridge"><div class="sim-control__row"><label for="cT1">Isitgich harorati T₁</label><output for="cT1" id="cT1Out"></output></div><input class="sim-range" type="range" id="cT1" min="300" max="700" step="10" value="500"></div>
+        <div class="sim-control" data-ck="carnot fridge"><div class="sim-control__row"><label for="cT2">Sovitgich harorati T₂</label><output for="cT2" id="cT2Out"></output></div><input class="sim-range" type="range" id="cT2" min="230" max="450" step="10" value="300"></div>
+        <div class="sim-control" data-ck="carnot fridge"><div class="sim-control__row"><label for="cR">Izotermik kengayish V₂/V₁</label><output for="cR" id="cROut"></output></div><input class="sim-range" type="range" id="cR" min="1.2" max="3" step="0.1" value="2"></div>
+        <div class="sim-control" data-ck="otto"><div class="sim-control__row"><label for="cE">Siqish darajasi ε</label><output for="cE" id="cEOut"></output></div><input class="sim-range" type="range" id="cE" min="2" max="12" step="0.5" value="6"></div>
+        <div class="sim-control" data-ck="otto"><div class="sim-control__row"><label for="cQ">Berilgan issiqlik Q₁</label><output for="cQ" id="cQOut"></output></div><input class="sim-range" type="range" id="cQ" min="50" max="400" step="10" value="200"></div>
+        <p class="of-subtle" data-ck-hint></p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="eng">
+        <span class="sim-group__title">Dvigatel (1 silindr, V<sub>d</sub> = 0,5 L)</span>
+        <div class="of-segment" role="group" aria-label="Yoqilg‘i" data-fuel>
+          <button type="button" data-fuel-value="benzin" aria-pressed="true">Benzinli (Otto)</button>
+          <button type="button" data-fuel-value="dizel" aria-pressed="false">Dizel</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="eE">Siqish darajasi ε</label><output for="eE" id="eEOut"></output></div><input class="sim-range" type="range" id="eE" min="5" max="22" step="0.5" value="10"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="eQ">Yoqilg‘i issiqligi Q₁ (bir siklda)</label><output for="eQ" id="eQOut"></output></div><input class="sim-range" type="range" id="eQ" min="400" max="1200" step="50" value="900"></div>
+        <p class="of-subtle">Tirsakli valni sichqoncha bilan aylantirib taktlarni qadamma-qadam ko‘ring. Animatsiya juda sekinlashtirilgan: haqiqiy dvigatel minutiga 1000–6000 marta aylanadi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>1-qonun: <span class="sim-math">Q = ΔU + A</span>; <span class="sim-math">ΔU = (i/2)·νRΔT</span>, <span class="sim-math">A = ∫p dV</span> (p–V grafigi ostidagi yuza)</li>
+        <li>Izobarik: <span class="sim-math">A = pΔV</span>; izotermik: <span class="sim-math">A = Q = νRT·ln(V₂/V₁)</span></li>
+        <li>Adiabatik: <span class="sim-math">Q = 0</span>, <span class="sim-math">pV<sup>γ</sup> = const</span>, <span class="sim-math">A = −ΔU</span></li>
+        <li>FIK: <span class="sim-math">η = A/Q₁ = (Q₁ − Q₂)/Q₁</span>; Karno: <span class="sim-math">η = 1 − T₂/T₁</span></li>
+        <li>Otto: <span class="sim-math">η = 1 − ε<sup>1−γ</sup></span>; sovitgich: <span class="sim-math">k = Q₂/A = T₂/(T₁ − T₂)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Gaz ideal, jarayonlar kvazistatik (muvozanatli) deb olinadi; ishqalanish va issiqlik yo‘qotishlari yo‘q. Shu sababli dvigatellarning hisoblangan FIKi ideal sikl FIKi: haqiqiy benzinli dvigatelda 25–35 %, dizelda 35–45 %. p·V ning birligi: 1 kPa·L = 1 J.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -228,6 +228,20 @@
    "keywords": "issiqlik miqdori solishtirma issiqlik sig'imi kalorimetr issiqlik balansi muvozanat aralashtirish muz erishi qotish bug'lanish kondensatsiya qaynash solishtirma erish issiqligi bug'lanish issiqligi yoqilg'i yonish issiqligi fik amorf kristall isitish egri chizig'i heat calorimeter melting boiling"
   },
   {
+   "id": "thermo",
+   "title": "Termodinamika: 1-qonun, sikllar va dvigatellar",
+   "href": "thermo.html",
+   "topic": "issiqlik",
+   "description": "Termodinamikaning birinchi qonuni Q = ΔU + A: porshenli silindrda izobarik, izoxorik, izotermik va adiabatik jarayonlar, p–V va T–S diagrammalar. Karno sikli va FIK, o‘z siklingizni chizish, sovitgich. 4 taktli benzinli va dizel dvigatel: klapanlar, uchqun, indikator diagramma.",
+   "params": [
+    "Gaz: bir atomli yoki ikki atomli",
+    "Jarayon: p₁, V₁, V₂ (porshen suriladi) yoki Q (gorelka dastagi)",
+    "Sikl: Karno (T₁, T₂ — termometrlar suriladi), sovitgich, to‘rtburchak va ixtiyoriy sikl (tugunlar suriladi), Otto",
+    "Dvigatel: benzin/dizel, siqish darajasi ε, yoqilg‘i issiqligi; tirsakli val aylantiriladi"
+   ],
+   "keywords": "termodinamika birinchi qonuni issiqlik miqdori ichki energiya ish izobarik izoxorik izotermik adiabatik jarayon p-V diagramma entropiya T-S diagramma Karno sikli foydali ish koeffitsiyenti FIK issiqlik mashinasi isitgich sovitgich issiqlik nasosi ichki yonuv dvigateli to'rt taktli dvigatel dizel benzin siqish darajasi Otto sikli thermodynamics first law carnot cycle heat engine efficiency refrigerator otto diesel"
+  },
+  {
    "id": "electroscope",
    "title": "Elektrlanish va elektroskop",
    "href": "electroscope.html",
