@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bosim va Paskal qonuni | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: qattiq jism bosimi p = F/S (g‘isht qirralari, chang‘i va etik, igna); Paskal qonuni, gidravlik press va Paskal shari; suyuqlikning chuqurlikdagi bosimi p = ρgh, tutash idishlar, U-naydagi suv va moy.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/pressure.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Bosim va Paskal qonuni" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="pressureSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Bosim, Paskal qonuni va tutash idishlar</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="solid" aria-pressed="true">Qattiq jism bosimi</button>
+            <button type="button" data-mode-value="pascal" aria-pressed="false">Paskal qonuni</button>
+            <button type="button" data-mode-value="fluid" aria-pressed="false">Suyuqlik bosimi</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Bosim tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="solid">
+        <span class="sim-group__title">Jism va tayanch</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="sObj">Jism</label></div>
+          <select class="sim-select" id="sObj"></select>
+        </div>
+        <div class="of-segment" role="group" aria-label="G‘isht qirrasi" data-face data-sv="brick">
+          <button type="button" data-face-value="flat" aria-pressed="true">Yassi</button>
+          <button type="button" data-face-value="edge" aria-pressed="false">Yoni bilan</button>
+          <button type="button" data-face-value="end" aria-pressed="false">Tik</button>
+        </div>
+        <div class="sim-control" data-sv="brick">
+          <div class="sim-control__row"><label for="sLoad">Ustidagi yuk</label><output for="sLoad" id="sLoadOut"></output></div>
+          <input class="sim-range" type="range" id="sLoad" min="0" max="12" step="1" value="0">
+        </div>
+        <p class="of-subtle" data-sv="brick">G‘ishtni sahnada bosing — boshqa qirrasi bilan qo‘yiladi. Ustidagi yuk tutqichini yuqoriga/pastga surib yukni o‘zgartiring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="pascal">
+        <span class="sim-group__title">Paskal qonuni</span>
+        <div class="of-segment" role="group" aria-label="Qurilma" data-pview>
+          <button type="button" data-pview-value="press" aria-pressed="true">Gidravlik press</button>
+          <button type="button" data-pview-value="ball" aria-pressed="false">Paskal shari</button>
+        </div>
+        <div class="sim-control" data-pv="press">
+          <div class="sim-control__row"><label for="pS1">Kichik porshen yuzasi S₁</label><output for="pS1" id="pS1Out"></output></div>
+          <input class="sim-range" type="range" id="pS1" min="1" max="20" step="1" value="2">
+        </div>
+        <div class="sim-control" data-pv="press">
+          <div class="sim-control__row"><label for="pS2">Katta porshen yuzasi S₂</label><output for="pS2" id="pS2Out"></output></div>
+          <input class="sim-range" type="range" id="pS2" min="20" max="500" step="10" value="100">
+        </div>
+        <div class="sim-control" data-pv="press">
+          <div class="sim-control__row"><label for="pM">Yuk massasi M</label><output for="pM" id="pMOut"></output></div>
+          <input class="sim-range" type="range" id="pM" min="10" max="2000" step="10" value="200">
+        </div>
+        <div class="sim-control" data-pv="ball">
+          <div class="sim-control__row"><label for="pF">Porshenga kuch F</label><output for="pF" id="pFOut"></output></div>
+          <input class="sim-range" type="range" id="pF" min="0" max="100" step="1" value="50">
+        </div>
+        <p class="of-subtle">Sahnada kichik porshen dastasini pastga suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="fluid">
+        <span class="sim-group__title">Suyuqlik</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-fview>
+          <button type="button" data-fview-value="depth" aria-pressed="true">Chuqurlik</button>
+          <button type="button" data-fview-value="vessels" aria-pressed="false">Tutash idishlar</button>
+        </div>
+        <div class="sim-control" data-fv="depth">
+          <div class="sim-control__row"><label for="fLiq">Suyuqlik</label></div>
+          <select class="sim-select" id="fLiq"></select>
+        </div>
+        <div class="sim-control" data-fv="depth">
+          <div class="sim-control__row"><label for="fH">Datchik chuqurligi h</label><output for="fH" id="fHOut"></output></div>
+          <input class="sim-range" type="range" id="fH" min="0" max="80" step="1" value="30">
+        </div>
+        <label class="sim-switch" data-fv="depth"><input type="checkbox" data-atm><span class="sim-switch__ui"></span>Atmosfera bosimini qo‘shish (p₀ = 101,3 kPa)</label>
+        <button class="of-btn of-btn--sm" type="button" data-rotate data-fv="depth">Membranani burish</button>
+        <div class="sim-control" data-fv="vessels">
+          <div class="sim-control__row"><label for="fLevel">Idishlardagi suv sathi</label><output for="fLevel" id="fLevelOut"></output></div>
+          <input class="sim-range" type="range" id="fLevel" min="5" max="30" step="1" value="18">
+        </div>
+        <div class="sim-control" data-fv="vessels">
+          <div class="sim-control__row"><label for="fOil">U-nayga quyilgan moy ustuni</label><output for="fOil" id="fOilOut"></output></div>
+          <input class="sim-range" type="range" id="fOil" min="0" max="20" step="0.5" value="10">
+        </div>
+        <p class="of-subtle" data-fv="depth">Datchikni idish ichida sahnada suring — chuqurlik va bosim o‘zgaradi.</p>
+        <p class="of-subtle" data-fv="vessels">Istalgan idishdagi suv sathini, U-naydagi moy sathini sahnada suring.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Bosim: <span class="sim-math">p = F/S</span>; <span class="sim-math">1 Pa = 1 N/m²</span>, <span class="sim-math">1 kPa = 1000 Pa</span></li>
+        <li>Paskal qonuni: suyuqlik yoki gazga berilgan bosim har tomonga o‘zgarishsiz uzatiladi</li>
+        <li>Gidravlik press: <span class="sim-math">F₂/F₁ = S₂/S₁</span>, <span class="sim-math">s₂/s₁ = S₁/S₂</span>, <span class="sim-math">F₁s₁ = F₂s₂</span></li>
+        <li>Suyuqlik bosimi: <span class="sim-math">p = ρgh</span> (atmosfera bilan <span class="sim-math">p = p₀ + ρgh</span>)</li>
+        <li>Tutash idishlar: bir xil suyuqlik sathlari teng; ikki suyuqlikda <span class="sim-math">ρ₁h₁ = ρ₂h₂</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Qumdagi iz chuqurligi bosimga proporsional qilib chizilgan (sxematik). Gidravlik press ideal: ishqalanish va suyuqlik siqilishi hisobga olinmagan. Paskal sharida suv oqimlari bir xil uzunlikda ko‘rsatilgan — og‘irlik kuchi ta’siri hisobga olinmagan.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

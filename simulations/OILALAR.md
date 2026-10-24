@@ -27,7 +27,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ○ | zona/animatsiya + VAX |
 | F38 | Elektromagnit to‘lqinlar, radioaloqa (AM/FM modulyatsiya) | 4 | 11 | ✅ | emwaves.html (2026-10-24): E va B to‘lqin, EM spektr, Gers tajribalari (qaytish, sinish, qutblanish), AM/FM radioaloqa, priyomnik konturi va detektor; 11§29 ham shu yerda |
 | F4 | Zichlik, massa va suzish | 3 | 7 | ✅ | density.html (2026-10-24): pallali tarozi va toshlar, menzurka (lupa) bilan zichlik, Arximed kuchi va suzish (dinamometr, ipni kesish) |
-| F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ○ | canvas + hajm/bosim hisobi |
+| F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ✅ | pressure.html (2026-10-24): qattiq jism bosimi (g‘isht, chang‘i, igna), gidravlik press va Paskal shari, p = ρgh (datchik + manometr), tutash idishlar, suv-moy U-nay |
 | F8 | Newton qonunlari, ishqalanish, og‘irlik (lift, vaznsizlik) | 3 | 7, 10 | ✅ | newton-second-law.html |
 | F10 | Qiya tekislik, ishqalanish va FIK | 3 | 10 | ◐ | inclined-plane.html bor; FIK yo‘q |
 | F12 | Mexanik tebranishlar (matematik, fizik, prujinali mayatnik, g ni aniqlash) | 3 | 10 | ✅ | pendulum.html, physical-pendulum.html, spring.html (`?preset=` URL orqali ham, 2026-10-24) |
@@ -73,18 +73,17 @@ Holat: 2026-10-24.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
-| 7 | 62 | 45 | **40** (89 %) | 5 | 4 (4 / 0) | 12 (11) | 5 |
+| 7 | 62 | 45 | **43** (96 %) | 2 | 4 (4 / 0) | 12 (11) | 5 |
 | 8 | 60 | 45 | **40** (89 %) | 5 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **31** (82 %) | 7 | 6 (4 / 2) | 14 (13) | 7 |
 | 10 | 59 | 44 | **34** (77 %) | 10 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **183** (85 %) | **32** | **22** (19 / 3) | **52** (48) | **18** |
+| **Jami** | **285** | **215** | **186** (87 %) | **29** | **22** (19 / 3) | **52** (48) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
 | F18 | 9§31, 9§32, 9§34 | 3 |
 | F26 | 8§40, 10§32, 10§36 | 3 |
-| F5 | 7§20, 7§22, 7§23 | 3 |
 | F11 | 10§12, 10§13 | 2 |
 | F2 | 7§5, 10§1 | 2 |
 | F20 | 9§41, 9§42 | 2 |
