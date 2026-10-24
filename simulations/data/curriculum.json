@@ -161,35 +161,38 @@
        "nom": "Bosim va uning birliklari",
        "tur": "sim",
        "oila": "F5",
-       "sim": null
+       "sim": "pressure",
+       "preset": "brickFlat"
       },
       {
        "raqam": 21,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": "newton-second-law",
-       "preset": "fric"
+       "sim": "pressure",
+       "preset": "brickFlat"
       },
       {
        "raqam": 22,
        "nom": "Suyuqlik va gazlarda bosim uzatilishi (Paskal)",
        "tur": "sim",
        "oila": "F5",
-       "sim": null
+       "sim": "pressure",
+       "preset": "press"
       },
       {
        "raqam": 23,
        "nom": "Tinch suyuqlik bosimi",
        "tur": "sim",
        "oila": "F5",
-       "sim": null
+       "sim": "pressure",
+       "preset": "depth"
       },
       {
        "raqam": 24,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": "newton-second-law",
-       "preset": "fric"
+       "sim": "pressure",
+       "preset": "depth"
       },
       {
        "raqam": 25,

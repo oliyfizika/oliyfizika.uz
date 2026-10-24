@@ -58,6 +58,21 @@
    "keywords": "massa zichlik tarozi pallali tarozi richagli tarozi gira toshlar menzurka hajm o'lchash zichlikni aniqlash moddani aniqlash zichlik jadvali kg/m3 g/cm3 arximed kuchi itaruvchi kuch suzish cho'kish dinamometr suyuqlik muz aysberg tuxum sho'r suv kerosin simob mass density buoyancy archimedes"
   },
   {
+   "id": "pressure",
+   "title": "Bosim, Paskal qonuni va tutash idishlar",
+   "href": "pressure.html",
+   "topic": "mexanika",
+   "description": "Qattiq jism bosimi p = F/S: g‘isht qirralari, chang‘i va etik, igna, traktor. Paskal qonuni: gidravlik press va Paskal shari. Suyuqlik bosimi p = ρgh bosim datchigi va manometr bilan; tutash idishlar, U-naydagi suv va moy.",
+   "params": [
+    "G‘isht qirrasi va yuk (sahnada)",
+    "Jism: odam, chang‘i, igna, traktor",
+    "Press: S₁, S₂, yuk M, porshen (sahnada)",
+    "Suyuqlik, datchik chuqurligi (sahnada), p₀",
+    "Tutash idishlar sathi, U-naydagi moy"
+   ],
+   "keywords": "bosim paskal bosim birligi kPa p=F/S tayanch yuzasi g'isht chang'i igna paskal qonuni gidravlik press domkrat porshen kuchda yutuq paskal shari suyuqlik bosimi gidrostatik bosim p=rho g h chuqurlik manometr tutash idishlar u-nay suv va moy atmosfera bosimi pressure pascal hydraulic press communicating vessels"
+  },
+  {
    "id": "projectile",
    "title": "Og‘irlik kuchi ta’sirida jism harakati",
    "href": "projectile.html",
