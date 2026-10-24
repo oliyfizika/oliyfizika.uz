@@ -2169,28 +2169,32 @@
        "nom": "EM tebranishlar tarqalishi. EM to‘lqin tezligi",
        "tur": "sim",
        "oila": "F38",
-       "sim": null
+       "sim": "emwaves",
+       "preset": "fm100"
       },
       {
        "raqam": 22,
        "nom": "EM to‘lqinlar xossalari (qaytish, sinish)",
        "tur": "sim",
        "oila": "F38",
-       "sim": null
+       "sim": "emwaves",
+       "preset": "reflect"
       },
       {
        "raqam": 23,
        "nom": "Radioaloqa asoslari",
        "tur": "sim",
        "oila": "F38",
-       "sim": null
+       "sim": "emwaves",
+       "preset": "am"
       },
       {
        "raqam": 24,
        "nom": "Televideniye asoslari",
        "tur": "sim",
        "oila": "F38",
-       "sim": null
+       "sim": "emwaves",
+       "preset": "tv"
       }
      ]
     },
@@ -2233,7 +2237,10 @@
       {
        "raqam": 29,
        "nom": "IQ, UB va rentgen nurlanish",
-       "tur": "matn"
+       "tur": "sim",
+       "oila": "F38",
+       "sim": "emwaves",
+       "preset": "xray"
       },
       {
        "raqam": 30,

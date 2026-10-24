@@ -358,6 +358,21 @@
    "keywords": "elektromagnit tebranishlar lc kontur tebranish konturi tomson formulasi so'nuvchi tebranish aperiodik o'zgaruvchan tok aktiv qarshilik sig'im qarshiligi induktiv qarshilik impedans faza siljishi vektor diagramma rlc rezonans aslilik quvvat cos fi radio lc circuit ac resonance"
   },
   {
+   "id": "emwaves",
+   "title": "Elektromagnit to‘lqinlar va radioaloqa",
+   "href": "emwaves.html",
+   "topic": "elektr",
+   "description": "Vibrator nurlatayotgan EM to‘lqin: E va B maydonlar, λ = c/ν, muhitda v = c/n; EM spektr — radioto‘lqindan gamma-nurlanishgacha. Gers tajribalari: qaytish, sinish, qutblanish. Radioaloqa: AM va FM modulyatsiya, qabul qiluvchi kontur, detektor, stansiyani sozlash.",
+   "params": [
+    "Chastota ν (10⁴–10²¹ Hz) va muhit",
+    "O‘lchov nuqtasi (sahnada suriladi)",
+    "Tushish burchagi α, sindirish ko‘rsatkichi n",
+    "Qabul qiluvchi vibrator burchagi φ",
+    "AM/FM, tovush chastotasi, priyomnik C va Q"
+   ],
+   "keywords": "elektromagnit to'lqin elektromagnit to'lqinlar EM to'lqin maksvell gers vibrator antenna elektr maydon magnit maydon yorug'lik tezligi to'lqin uzunligi chastota spektr radioto'lqin mikroto'lqin infraqizil ultrabinafsha rentgen gamma qaytish sinish qutblanish radioaloqa radio modulyatsiya amplituda modulyatsiyasi chastota modulyatsiyasi AM FM tashuvchi detektor priyomnik tebranish konturi sozlash televideniye radiolokatsiya electromagnetic waves spectrum radio"
+  },
+  {
    "id": "lorentz",
    "title": "Magnit maydonda zaryadli zarra",
    "href": "lorentz.html",

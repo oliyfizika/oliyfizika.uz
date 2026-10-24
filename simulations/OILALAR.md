@@ -25,7 +25,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F7 | Ish, energiya, quvvat, energiyaning saqlanishi (skeytpark) | 4 | 7, 10 | ✅ | energy.html |
 | F29 | Gazlarda/vakuumda elektr toki, katod nurlari | 4 | 8, 10 | ◐ | thomson-em.html (katod nurlari) qisman |
 | F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ○ | zona/animatsiya + VAX |
-| F38 | Elektromagnit to‘lqinlar, radioaloqa (AM/FM modulyatsiya) | 4 | 11 | ○ | to‘lqin kernel (13 bilan umumiy) |
+| F38 | Elektromagnit to‘lqinlar, radioaloqa (AM/FM modulyatsiya) | 4 | 11 | ✅ | emwaves.html (2026-10-24): E va B to‘lqin, EM spektr, Gers tajribalari (qaytish, sinish, qutblanish), AM/FM radioaloqa, priyomnik konturi va detektor; 11§29 ham shu yerda |
 | F4 | Zichlik, massa va suzish | 3 | 7 | ○ | oddiy model |
 | F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ○ | canvas + hajm/bosim hisobi |
 | F8 | Newton qonunlari, ishqalanish, og‘irlik (lift, vaznsizlik) | 3 | 7, 10 | ✅ | newton-second-law.html |
@@ -77,12 +77,11 @@ Holat: 2026-10-24.
 | 8 | 60 | 45 | **40** (89 %) | 5 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **31** (82 %) | 7 | 6 (4 / 2) | 14 (13) | 7 |
 | 10 | 59 | 44 | **34** (77 %) | 10 | 4 (4 / 0) | 14 (12) | 1 |
-| 11 | 45 | 42 | **33** (79 %) | 9 | 3 (2 / 1) | 0 (0) | 3 |
-| **Jami** | **285** | **214** | **175** (82 %) | **39** | **22** (18 / 4) | **52** (48) | **19** |
+| 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
+| **Jami** | **285** | **215** | **180** (84 %) | **35** | **22** (18 / 4) | **52** (48) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
-| F38 | 11§21, 11§22, 11§23, 11§24 | 4 |
 | F18 | 9§31, 9§32, 9§34 | 3 |
 | F26 | 8§40, 10§32, 10§36 | 3 |
 | F4 | 7§16, 7§17, 7§18 | 3 |
