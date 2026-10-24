@@ -26,7 +26,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F29 | Gazlarda/vakuumda elektr toki, katod nurlari | 4 | 8, 10 | ◐ | thomson-em.html (katod nurlari) qisman |
 | F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ○ | zona/animatsiya + VAX |
 | F38 | Elektromagnit to‘lqinlar, radioaloqa (AM/FM modulyatsiya) | 4 | 11 | ✅ | emwaves.html (2026-10-24): E va B to‘lqin, EM spektr, Gers tajribalari (qaytish, sinish, qutblanish), AM/FM radioaloqa, priyomnik konturi va detektor; 11§29 ham shu yerda |
-| F4 | Zichlik, massa va suzish | 3 | 7 | ○ | oddiy model |
+| F4 | Zichlik, massa va suzish | 3 | 7 | ✅ | density.html (2026-10-24): pallali tarozi va toshlar, menzurka (lupa) bilan zichlik, Arximed kuchi va suzish (dinamometr, ipni kesish) |
 | F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ○ | canvas + hajm/bosim hisobi |
 | F8 | Newton qonunlari, ishqalanish, og‘irlik (lift, vaznsizlik) | 3 | 7, 10 | ✅ | newton-second-law.html |
 | F10 | Qiya tekislik, ishqalanish va FIK | 3 | 10 | ◐ | inclined-plane.html bor; FIK yo‘q |
@@ -73,18 +73,17 @@ Holat: 2026-10-24.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
-| 7 | 62 | 45 | **37** (82 %) | 8 | 4 (3 / 1) | 12 (11) | 5 |
+| 7 | 62 | 45 | **40** (89 %) | 5 | 4 (4 / 0) | 12 (11) | 5 |
 | 8 | 60 | 45 | **40** (89 %) | 5 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **31** (82 %) | 7 | 6 (4 / 2) | 14 (13) | 7 |
 | 10 | 59 | 44 | **34** (77 %) | 10 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **180** (84 %) | **35** | **22** (18 / 4) | **52** (48) | **18** |
+| **Jami** | **285** | **215** | **183** (85 %) | **32** | **22** (19 / 3) | **52** (48) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
 | F18 | 9§31, 9§32, 9§34 | 3 |
 | F26 | 8§40, 10§32, 10§36 | 3 |
-| F4 | 7§16, 7§17, 7§18 | 3 |
 | F5 | 7§20, 7§22, 7§23 | 3 |
 | F11 | 10§12, 10§13 | 2 |
 | F2 | 7§5, 10§1 | 2 |
@@ -109,7 +108,7 @@ Holat: 2026-10-24.
 | Mavzu | Ish | Oila | Hozir ochiladi | Lab |
 |---|---|---|---|---|
 | 7§12 | Notekis harakat o‘rtacha tezligi | F1 | `motion.html?preset=average` | ○ |
-| 7§18 | Jismlar zichligini aniqlash | F4 | — (tayyorlanmoqda) | ○ |
+| 7§18 | Jismlar zichligini aniqlash | F4 | `density.html?preset=unknown` | ○ |
 | 7§51 | Tok kuchi va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |
 | 7§57 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` | ○ |
 | 8§14 | Zanjir yig‘ish, tok va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massa, zichlik va suzish | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: pallali tarozida massani o‘lchash (toshlar bilan), menzurka yordamida hajm va zichlikni aniqlash, moddani jadvaldan topish; Arximed kuchi, dinamometr bilan tajriba, jismlarning suzish sharti.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/density.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Massa, zichlik va suzish" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="densitySim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Massa, zichlik va suzish</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="mass" aria-pressed="true">Massa: tarozi</button>
+            <button type="button" data-mode-value="dens" aria-pressed="false">Zichlik: menzurka</button>
+            <button type="button" data-mode-value="float" aria-pressed="false">Suzish: Arximed kuchi</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Tarozi, menzurka yoki dinamometr bilan tajriba"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="mass dens">
+        <span class="sim-group__title">Jism</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="body">O‘lchanadigan jism</label></div>
+          <select class="sim-select" id="body"></select>
+        </div>
+      </div>
+
+      <div class="sim-group" data-ctl="mass">
+        <span class="sim-group__title">Toshlar (gira)</span>
+        <div class="sim-presets" data-weights></div>
+        <button class="of-btn of-btn--sm" type="button" data-clear-weights>Hamma toshlarni olish</button>
+        <p class="of-subtle">Toshni qutidan o‘ng pallaga suring yoki shu yerda bosing. Pallaga qo‘yilgan toshni bosib olib tashlang. Tarozi muvozanatga kelganda jism massasi toshlar massasiga teng.</p>
+      </div>
+
+      <div class="sim-group" data-ctl="dens">
+        <span class="sim-group__title">Menzurka</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="v1">Boshlang‘ich suv hajmi V₁</label><output for="v1" id="v1Out"></output></div>
+          <input class="sim-range" type="range" id="v1" min="40" max="140" step="2" value="100">
+        </div>
+        <p class="of-subtle">Jismni stoldan menzurkaga suring. Suv sathi jism hajmicha ko‘tariladi. Jismni qaytarib chiqarish uchun uni menzurkadan tashqariga suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="float">
+        <span class="sim-group__title">Jism va suyuqlik</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fMat">Jism moddasi</label></div>
+          <select class="sim-select" id="fMat"></select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fLiq">Suyuqlik</label></div>
+          <select class="sim-select" id="fLiq"></select>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fD">Botish chuqurligi h</label><output for="fD" id="fDOut"></output></div>
+          <input class="sim-range" type="range" id="fD" min="0" max="8" step="0.1" value="0">
+        </div>
+        <button class="of-btn of-btn--sm" type="button" data-cut>Ipni kesish</button>
+        <p class="of-subtle">Dinamometrni sahnada yuqoriga/pastga surib jismni suyuqlikka botiring. Jism — 4 × 4 × 5 cm brusok.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Zichlik: <span class="sim-math">ρ = m/V</span>; <span class="sim-math">1 g/cm³ = 1000 kg/m³</span></li>
+        <li>Massa birliklari: <span class="sim-math">1 kg = 1000 g</span>, <span class="sim-math">1 g = 1000 mg</span>, <span class="sim-math">1 t = 1000 kg</span></li>
+        <li>Hajm (menzurka): <span class="sim-math">V = V₂ − V₁</span>; <span class="sim-math">1 mL = 1 cm³</span></li>
+        <li>Og‘irlik: <span class="sim-math">P = mg</span>; Arximed kuchi: <span class="sim-math">F<sub>A</sub> = ρ<sub>s</sub>gV<sub>bot</sub></span></li>
+        <li>Suzish sharti: <span class="sim-math">ρ<sub>jism</sub> &lt; ρ<sub>s</sub></span>; suzayotgan jism uchun <span class="sim-math">F<sub>A</sub> = mg</span>, <span class="sim-math">V<sub>bot</sub>/V = ρ<sub>jism</sub>/ρ<sub>s</sub></span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Zichliklar — darslik jadvali qiymatlari. Jismlar massasi 0,1 g aniqlikda; tarozi 50 mg dan kichik farqni sezmaydi. Menzurka shkalasining bo‘limi 2 mL. Suyuqlik sathining jism botganda ko‘tarilishi suzish rejimida hisobga olinmagan (idish keng).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

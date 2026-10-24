@@ -128,22 +128,25 @@
        "nom": "Massa va uning birliklari",
        "tur": "sim",
        "oila": "F4",
-       "sim": null
+       "sim": "density",
+       "preset": "weigh"
       },
       {
        "raqam": 17,
        "nom": "Zichlik va uning birliklari",
        "tur": "sim",
        "oila": "F4",
-       "sim": null
+       "sim": "density",
+       "preset": "copper"
       },
       {
        "raqam": 18,
        "nom": "Laboratoriya ishi. Jismlar zichligini aniqlash",
        "tur": "lab",
        "oila": "F4",
-       "sim": null,
-       "lab": null
+       "sim": "density",
+       "lab": null,
+       "preset": "unknown"
       },
       {
        "raqam": 19,
