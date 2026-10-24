@@ -850,27 +850,31 @@
        "nom": "Suyuqliklarda elektr toki",
        "tur": "sim",
        "oila": "F28",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "salt"
       },
       {
        "raqam": 42,
        "nom": "Elektroliz. Faradeyning 1-qonuni",
        "tur": "sim",
        "oila": "F28",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "cu1"
       },
       {
        "raqam": 43,
        "nom": "Faradeyning 2-qonuni",
        "tur": "sim",
        "oila": "F28",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "series"
       },
       {
        "raqam": 44,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "series"
       },
       {
        "raqam": 45,
@@ -1794,20 +1798,23 @@
        "nom": "Suyuqliklarda elektr toki",
        "tur": "sim",
        "oila": "F28",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "heat"
       },
       {
        "raqam": 39,
        "nom": "Faradey qonunlari",
        "tur": "sim",
        "oila": "F28",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "faraday"
       },
       {
        "raqam": 40,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": null
+       "sim": "electrolysis",
+       "preset": "faraday"
       },
       {
        "raqam": 41,

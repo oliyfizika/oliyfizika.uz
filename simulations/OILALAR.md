@@ -18,7 +18,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F17 | Termodinamika: p–V diagramma, 1-qonun, Karno sikli, issiqlik dvigatellari (4 taktli) | 5 | 9 | ✅ | thermo.html (2026-10-24): 1-qonun va 4 izojarayon (o‘z siklingizni yasash), Karno/Otto/to‘rtburchak sikl, sovutgich, 4 taktli dvigatel |
 | F23 | Potensial, ekvipotensial chiziqlar, ish, kondensator va sig‘im | 5 | 8, 10 | ✅ | potential.html |
 | F25 | Tok ishi, quvvati, Joul–Lens qonuni | 5 | 8 | ◐ | circuit.html da lampochkalar; alohida Joul–Lens yo‘q |
-| F28 | Elektroliz va Faradey qonunlari | 5 | 8, 10 | ○ | massa m = kIt |
+| F28 | Elektroliz va Faradey qonunlari | 5 | 8, 10 | ✅ | electrolysis.html (2026-10-24): suyuqliklarda tok (ionlar, lampa, E_p, R(t)), Faradeyning 1-qonuni (tarozi, m(t), m(q)), 2-qonuni (ketma-ket vannalar, suv elektrolizi, F ni aniqlash) |
 | F35 | O‘zinduksiya va induktivlik (RL zanjir), magnit maydon energiyasi | 5 | 10, 11 | ✅ | induction.html |
 | F40 | Yorug‘likning qaytishi, sinishi, to‘la ichki qaytish; yassi ko‘zgu | 5 | 7, 9 | ✅ | refraction-law.html |
 | F48 | Yadro fizikasi: bog‘lanish energiyasi, radioaktiv yemirilish N(t), zanjir reaksiya | 5 | 11 | ✅ | nuclear.html (2026-10-24): yemirilish N(t), bog‘lanish energiyasi va reaksiyalar, zanjir reaksiya; rutherford.html, wilson.html |
@@ -74,15 +74,14 @@ Holat: 2026-10-24.
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
 | 7 | 62 | 45 | **37** (82 %) | 8 | 4 (3 / 1) | 12 (11) | 5 |
-| 8 | 60 | 45 | **37** (82 %) | 8 | 5 (5 / 0) | 12 (11) | 3 |
+| 8 | 60 | 45 | **40** (89 %) | 5 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **31** (82 %) | 7 | 6 (4 / 2) | 14 (13) | 7 |
-| 10 | 59 | 44 | **32** (73 %) | 12 | 4 (4 / 0) | 14 (11) | 1 |
+| 10 | 59 | 44 | **34** (77 %) | 10 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 42 | **33** (79 %) | 9 | 3 (2 / 1) | 0 (0) | 3 |
-| **Jami** | **285** | **214** | **170** (79 %) | **44** | **22** (18 / 4) | **52** (46) | **19** |
+| **Jami** | **285** | **214** | **175** (82 %) | **39** | **22** (18 / 4) | **52** (48) | **19** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
-| F28 | 8§41, 8§42, 8§43, 10§38, 10§39 | 5 |
 | F38 | 11§21, 11§22, 11§23, 11§24 | 4 |
 | F18 | 9§31, 9§32, 9§34 | 3 |
 | F26 | 8§40, 10§32, 10§36 | 3 |
