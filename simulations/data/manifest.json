@@ -273,6 +273,21 @@
    "keywords": "termodinamika ichki energiya termodinamik ish birinchi qonun 1-qonun issiqlik miqdori izoxorik izobarik izotermik adiabatik adiabata p-V diagramma pV diagramma karno sikli issiqlik dvigateli FIK foydali ish koeffitsiyenti isitkich sovitkich sovutgich muzlatgich otto sikli ichki yonuv dvigateli to'rt taktli dvigatel takt so'rish siqish ish yo'li chiqarish siqish darajasi porshen tirsakli val indikator diagramma thermodynamics first law carnot heat engine efficiency"
   },
   {
+   "id": "surface",
+   "title": "Sirt tarangligi va kapillyarlik",
+   "href": "surface.html",
+   "topic": "issiqlik",
+   "description": "Suyuqliklarning sirt tarangligi: sovun pardasi ramka to‘sinini F = 2σL kuch bilan tortadi, pardani cho‘zishdagi ish A = σΔS. Ho‘llash va ho‘llamaslik, chegaraviy burchak, kapillyar naylarda ko‘tarilish va pasayish (h = 2σcosθ/(ρgr)). Tomchilar usuli bilan sirt taranglik koeffitsiyentini aniqlash.",
+   "params": [
+    "Suyuqlik: suv, sovunli suv, spirt, glitserin, kerosin, simob",
+    "Temperatura t",
+    "Ramka to‘sini uzunligi L va siljishi Δx (sahnada suriladi)",
+    "Kapillyar nay radiusi r (sahnada suriladi)",
+    "Byuretka uchi diametri d, tomchilar soni N"
+   ],
+   "keywords": "sirt tarangligi sirt taranglik koeffitsiyenti sirt energiyasi sovun pardasi ramka ho'llash ho'llamaslik chegaraviy burchak kapillyar kapillyarlik kapillyar hodisalar jyuren formulasi menisk simob suv spirt glitserin tomchi tomchilar usuli byuretka laboratoriya ishi suyuqliklarning xossalari surface tension capillary wetting contact angle drop method"
+  },
+  {
    "id": "electroscope",
    "title": "Elektrlanish va elektroskop",
    "href": "electroscope.html",

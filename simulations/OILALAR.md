@@ -31,7 +31,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F8 | Newton qonunlari, ishqalanish, og‘irlik (lift, vaznsizlik) | 3 | 7, 10 | ✅ | newton-second-law.html |
 | F10 | Qiya tekislik, ishqalanish va FIK | 3 | 10 | ◐ | inclined-plane.html bor; FIK yo‘q |
 | F12 | Mexanik tebranishlar (matematik, fizik, prujinali mayatnik, g ni aniqlash) | 3 | 10 | ✅ | pendulum.html, physical-pendulum.html, spring.html (`?preset=` URL orqali ham, 2026-10-24) |
-| F18 | Sirt tarangligi, ho‘llash, kapillyar hodisa | 3 | 9 | ○ | h = 2σcosθ/ρgr |
+| F18 | Sirt tarangligi, ho‘llash, kapillyar hodisa | 3 | 9 | ✅ | surface.html (2026-10-25): sovun pardasi va ramka (F = 2σL, A = σΔS, dinamometr), ho‘llash va chegaraviy burchak, kapillyar naylar (h = 2σcosθ/(ρgr), simobda pasayish), tomchilar usuli (byuretka + tarozi) |
 | F26 | Metallarda tok: drift tezlik, tok zichligi, R(T) | 3 | 8, 10 | ○ | elektron animatsiya (♻ ohm-law elektronlari) |
 | F33 | Lorens kuchi: zarra harakati (sikl, spiral, massa-spektrometr) | 3 | 8, 10, 11 | ✅ | lorentz.html |
 | F34 | Elektromagnit induksiya (Faradey, Lens, generator) | 3 | 10, 11 | ✅ | induction.html |
@@ -69,20 +69,19 @@ so‘ng `node tools/simulations/tests/t_curriculum.mjs`, `node tools/simulations
 Boblar darslikdagi bob nomlari emas — manbada saqlanmagan, mavzular bo‘lim bo‘yicha guruhlangan. Uch mavzu nomi
 OCR da o‘qilmagan va taxminiy (`taxminiy: true`): 8-sinf §5, 9-sinf §11, 9-sinf §50 — PDF dan tekshirilishi kerak.
 
-Holat: 2026-10-24.
+Holat: 2026-10-25.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
 | 7 | 62 | 45 | **43** (96 %) | 2 | 4 (4 / 0) | 12 (11) | 5 |
 | 8 | 60 | 45 | **40** (89 %) | 5 | 5 (5 / 0) | 12 (12) | 3 |
-| 9 | 59 | 38 | **31** (82 %) | 7 | 6 (4 / 2) | 14 (13) | 7 |
+| 9 | 59 | 38 | **34** (89 %) | 4 | 6 (5 / 1) | 14 (14) | 7 |
 | 10 | 59 | 44 | **34** (77 %) | 10 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **186** (87 %) | **29** | **22** (19 / 3) | **52** (48) | **18** |
+| **Jami** | **285** | **215** | **189** (88 %) | **26** | **22** (20 / 2) | **52** (49) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
-| F18 | 9§31, 9§32, 9§34 | 3 |
 | F26 | 8§40, 10§32, 10§36 | 3 |
 | F11 | 10§12, 10§13 | 2 |
 | F2 | 7§5, 10§1 | 2 |
@@ -117,7 +116,7 @@ Holat: 2026-10-24.
 | 8§58 | Elektromagnit yig‘ish | F31 | `magnetism.html?preset=electromagnet` | ○ |
 | 9§20 | Solishtirma issiqlik sig‘imi | F16 | `heat.html?preset=mixLab` | ○ |
 | 9§25 | Issiqlik miqdorlarini taqqoslash | F16 | `heat.html?preset=mixCompare` | ○ |
-| 9§34 | Sirt taranglik koeffitsiyenti | F18 | — (tayyorlanmoqda) | ○ |
+| 9§34 | Sirt taranglik koeffitsiyenti | F18 | `surface.html?preset=drops` | ○ |
 | 9§42 | Havoning nisbiy namligi | F20 | — (tayyorlanmoqda) | ○ |
 | 9§49 | Shishaning sindirish ko‘rsatkichi | F40 | `refraction-law.html?preset=slabLab` | ○ |
 | 9§53 | Linzaning optik kuchi | F41 | `lens.html?preset=lab` | ○ |
