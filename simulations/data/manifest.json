@@ -346,6 +346,21 @@
    "keywords": "elektr zanjiri konstruktor om qonuni tok kuchi kuchlanish qarshilik ketma-ket parallel aralash ulash eyuk ichki qarshilik reostat ampermetr voltmetr lampochka kalit quvvat kirxgof diod led yorug‘lik diodi virtual laboratoriya circuit ohm law diode"
   },
   {
+   "id": "metals",
+   "title": "Metallarda elektr toki",
+   "href": "metals.html",
+   "topic": "elektr",
+   "description": "Erkin elektronlarning tartibsiz va tartibli (dreyf) harakati: ionlar panjarasi, kalit va reostat, v = I/(enS). Tok zichligi j = I/S kesimi har xil simda, kesimdan o‘tgan zaryadni sanash. Qarshilikning temperaturaga bog‘liqligi R = R₀(1 + αt), lampa tolasi, konstantan va simobning o‘ta o‘tkazuvchanligi.",
+   "params": [
+    "Metall: kumush, mis, alyuminiy, temir, volfram, nixrom, konstantan, simob",
+    "Tok kuchi I (sahnada reostat)",
+    "Sim kesimi S, S₁ va S₂",
+    "Hisoblagich tekisligi (sahnada suriladi)",
+    "Temperatura t (sahnada pech regulyatori)"
+   ],
+   "keywords": "metallarda elektr toki erkin elektronlar elektron gazi tartibsiz harakat tartibli harakat dreyf tezligi elektronlar tezligi ionlar kristall panjara tolmen styuart tok kuchi tok zichligi I=enSv j=I/S kesim yuzasi saqlagich qarshilik solishtirma qarshilik temperatura koeffitsiyenti R=R0(1+at) qarshilik termometri cho'g'lanma lampa volfram konstantan nixrom o'ta o'tkazuvchanlik kamerling-onnes simob kritik temperatura metal conduction drift velocity current density resistance temperature superconductivity"
+  },
+  {
    "id": "electrolysis",
    "title": "Elektroliz va Faradey qonunlari",
    "href": "electrolysis.html",

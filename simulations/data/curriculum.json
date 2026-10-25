@@ -849,7 +849,8 @@
        "nom": "Metallarda elektr toki",
        "tur": "sim",
        "oila": "F26",
-       "sim": null
+       "sim": "metals",
+       "preset": "driftCu"
       },
       {
        "raqam": 41,
@@ -1758,7 +1759,8 @@
        "nom": "Tok kuchi va tok zichligi",
        "tur": "sim",
        "oila": "F26",
-       "sim": null
+       "sim": "metals",
+       "preset": "densStep"
       },
       {
        "raqam": 33,
@@ -1789,7 +1791,8 @@
        "nom": "Metall qarshiligining temperaturaga bog‘liqligi",
        "tur": "sim",
        "oila": "F26",
-       "sim": null
+       "sim": "metals",
+       "preset": "rtCopper"
       },
       {
        "raqam": 37,
