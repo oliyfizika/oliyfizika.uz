@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vektorlar va kuchlarni qo‘shish | OliyFizika.uz</title>
+<meta name="description" content="Interaktiv simulyatsiya: skalyar va vektor kattaliklar, vektorning moduli, yo‘nalishi va koordinata o‘qlaridagi proyeksiyalari; vektorlarni qo‘shish (uchburchak va parallelogramm usullari) va ayirish; kuchlarni qo‘shish, teng ta’sir etuvchi va muvozanatlovchi kuch, kuchlar ko‘pburchagi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/vectors.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Vektorlar va kuchlarni qo‘shish" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="vectorsSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Vektorlar va kuchlarni qo‘shish</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="vec" aria-pressed="true">Vektor va proyeksiyalar</button>
+            <button type="button" data-mode-value="add" aria-pressed="false">Vektorlarni qo‘shish</button>
+            <button type="button" data-mode-value="forces" aria-pressed="false">Kuchlarni qo‘shish</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Vektorlar"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="vec">
+        <span class="sim-group__title">Vektor a</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="vR">Moduli |a|</label><output for="vR" id="vROut"></output></div>
+          <input class="sim-range" type="range" id="vR" min="0" max="5.5" step="0.1" value="5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="vA">Yo‘nalishi α</label><output for="vA" id="vAOut"></output></div>
+          <input class="sim-range" type="range" id="vA" min="0" max="359" step="1" value="37">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="vK">Son k (k·a vektor)</label><output for="vK" id="vKOut"></output></div>
+          <input class="sim-range" type="range" id="vK" min="-3" max="3" step="0.5" value="1">
+        </div>
+        <label class="sim-switch"><input type="checkbox" id="vProj" checked><span class="sim-switch__ui"></span>Proyeksiyalarni ko‘rsatish</label>
+        <p class="of-subtle">Vektor uchidagi doirachani sahnada suring — modul, yo‘nalish va proyeksiyalar o‘zgaradi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="add">
+        <span class="sim-group__title">Qo‘shish</span>
+        <div class="of-segment" role="group" aria-label="Qo‘shish usuli" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+          <button type="button" style="justify-content:center" data-meth-value="tri" aria-pressed="true">Uchburchak</button>
+          <button type="button" style="justify-content:center" data-meth-value="par" aria-pressed="false">Parallelogramm</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="bR">Moduli |b|</label><output for="bR" id="bROut"></output></div>
+          <input class="sim-range" type="range" id="bR" min="0" max="5.5" step="0.1" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aTh">a va b orasidagi burchak θ</label><output for="aTh" id="aThOut"></output></div>
+          <input class="sim-range" type="range" id="aTh" min="0" max="180" step="1" value="60">
+        </div>
+        <label class="sim-switch"><input type="checkbox" id="aDiff"><span class="sim-switch__ui"></span>Ayirma a − b</label>
+        <p class="of-subtle">a (ko‘k) va b (yashil) vektorlar uchlarini sahnada suring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="forces">
+        <span class="sim-group__title">Kuchlar</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="f1">F₁</label><output for="f1" id="f1Out"></output></div>
+          <input class="sim-range" type="range" id="f1" min="0" max="5.5" step="0.1" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="f2">F₂</label><output for="f2" id="f2Out"></output></div>
+          <input class="sim-range" type="range" id="f2" min="0" max="5.5" step="0.1" value="4">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fTh">F₁ va F₂ orasidagi burchak θ</label><output for="fTh" id="fThOut"></output></div>
+          <input class="sim-range" type="range" id="fTh" min="0" max="359" step="1" value="90">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fm">Jism massasi m</label><output for="fm" id="fmOut"></output></div>
+          <input class="sim-range" type="range" id="fm" min="0.5" max="10" step="0.1" value="2">
+        </div>
+        <label class="sim-switch"><input type="checkbox" id="f3"><span class="sim-switch__ui"></span>Uchinchi kuch F₃</label>
+        <label class="sim-switch"><input type="checkbox" id="fPoly" checked><span class="sim-switch__ui"></span>Kuchlar ko‘pburchagi</label>
+        <label class="sim-switch"><input type="checkbox" id="fBal"><span class="sim-switch__ui"></span>Muvozanatlovchi kuch −R</label>
+        <p class="of-subtle">Kuchlar uchidagi doirachalarni sahnada suring. 1 katak = 1 N.</p>
+      </div>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Panjara</span>
+        <label class="sim-switch"><input type="checkbox" id="snap" checked><span class="sim-switch__ui"></span>Yarim katakka yopishtirish</label>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Proyeksiyalar: <span class="sim-math">a<sub>x</sub> = a·cosα</span>, <span class="sim-math">a<sub>y</sub> = a·sinα</span></li>
+        <li>Modul: <span class="sim-math">a = √(a<sub>x</sub>² + a<sub>y</sub>²)</span>, yo‘nalish: <span class="sim-math">tgα = a<sub>y</sub>/a<sub>x</sub></span></li>
+        <li>Qo‘shish: <span class="sim-math">(a + b)<sub>x</sub> = a<sub>x</sub> + b<sub>x</sub></span>, <span class="sim-math">(a + b)<sub>y</sub> = a<sub>y</sub> + b<sub>y</sub></span></li>
+        <li>Kosinuslar teoremasi: <span class="sim-math">|a + b| = √(a² + b² + 2ab·cosθ)</span></li>
+        <li>Teng ta’sir etuvchi kuch: <span class="sim-math">R = F₁ + F₂ + … + F<sub>n</sub></span>; muvozanat: <span class="sim-math">R = 0</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Vektorlar tekislikda (ikki o‘lchovli). Burchak α — x o‘qidan soat strelkasiga teskari hisoblanadi. Kuchlar bitta nuqtaga (jismga) qo‘yilgan deb olinadi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

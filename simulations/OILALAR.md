@@ -37,7 +37,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F34 | Elektromagnit induksiya (Faradey, Lens, generator) | 3 | 10, 11 | ✅ | induction.html |
 | F36 | Elektromagnit tebranishlar: LC kontur, so‘nuvchi tebranish | 3 | 11 | ✅ | lc.html |
 | F46 | Qora jism nurlanishi, fotoeffekt, foton | 3 | 11 | ✅ | photoeffect.html, led-planck.html, blackbody.html (lab) |
-| F2 | Vektorlar va kuchlarni qo‘shish (parallelogramm, proyeksiyalar) | 2 | 7, 10 | ○ | DOM'siz vektor moduli; sim-kit arrow |
+| F2 | Vektorlar va kuchlarni qo‘shish (parallelogramm, proyeksiyalar) | 2 | 7, 10 | ✅ | vectors.html (2026-10-25): vektor uchi sahnada suriladi — modul, yo‘nalish, proyeksiyalar, k·a; uchburchak va parallelogramm usullari, a − b, yig‘indi modulining θ ga bog‘liqligi; kuchlarni qo‘shish, teng ta’sir etuvchi va muvozanatlovchi kuch, kuchlar ko‘pburchagi, ikki simdagi chiroq |
 | F3 | Aylana bo‘ylab harakat va markazga intilma kuch | 2 | 7, 10 | ✅ | circular-motion.html |
 | F11 | Muvozanat, kuch momenti, richag va oddiy mexanizmlar (blok, vorot) | 2 | 10 | ○ | statika moduli |
 | F13 | Mexanik to‘lqinlar va tovush (interferensiya, Doppler, tebranish yig‘indisi) | 2 | 10 | ✅ | waves.html |
@@ -73,17 +73,16 @@ Holat: 2026-10-25.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
-| 7 | 62 | 45 | **43** (96 %) | 2 | 4 (4 / 0) | 12 (11) | 5 |
+| 7 | 62 | 45 | **44** (98 %) | 1 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **41** (91 %) | 4 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **34** (89 %) | 4 | 6 (5 / 1) | 14 (14) | 7 |
-| 10 | 59 | 44 | **36** (82 %) | 8 | 4 (4 / 0) | 14 (12) | 1 |
+| 10 | 59 | 44 | **37** (84 %) | 7 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **192** (89 %) | **23** | **22** (20 / 2) | **52** (49) | **18** |
+| **Jami** | **285** | **215** | **194** (90 %) | **21** | **22** (20 / 2) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
 | F11 | 10§12, 10§13 | 2 |
-| F2 | 7§5, 10§1 | 2 |
 | F20 | 9§41, 9§42 | 2 |
 | F22 | 10§24, 10§25 | 2 |
 | F25 | 8§34, 8§36 | 2 |

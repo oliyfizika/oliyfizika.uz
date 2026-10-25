@@ -43,6 +43,21 @@
    "keywords": "harakat grafiklari koordinata vaqt grafigi x(t) v(t) a(t) tezlik grafigi tekis harakat notekis harakat tekis o'zgaruvchan harakat tezlanish o'rtacha tezlik oniy tezlik ko'chish yo'l uchrashish quvib yetish tormozlash to'xtash yo'li grafik ostidagi yuza urinma kinematika motion graphs position velocity acceleration uniform motion average speed"
   },
   {
+   "id": "vectors",
+   "title": "Vektorlar va kuchlarni qo‘shish",
+   "href": "vectors.html",
+   "topic": "mexanika",
+   "description": "Skalyar va vektor kattaliklar: vektorning moduli, yo‘nalishi va koordinata o‘qlaridagi proyeksiyalari, vektorni songa ko‘paytirish. Vektorlarni uchburchak va parallelogramm usulida qo‘shish, ayirish, |a + b| ning burchakka bog‘liqligi. Kuchlarni qo‘shish: teng ta’sir etuvchi va muvozanatlovchi kuch, kuchlar ko‘pburchagi, muvozanat.",
+   "params": [
+    "Vektor uchi (sahnada suriladi)",
+    "Modul va yo‘nalish α, son k",
+    "Qo‘shish usuli: uchburchak yoki parallelogramm",
+    "Kuchlar F₁, F₂, F₃ va ular orasidagi burchak",
+    "Jism massasi m"
+   ],
+   "keywords": "vektor skalyar vektor kattalik skalyar kattalik modul yo'nalish proyeksiya vektor proyeksiyasi koordinata o'qlari vektorlarni qo'shish uchburchak usuli parallelogramm usuli vektorlar ayirmasi vektorni songa ko'paytirish kosinuslar teoremasi pifagor kuchlarni qo'shish teng ta'sir etuvchi kuch natijaviy kuch muvozanatlovchi kuch kuchlar ko'pburchagi muvozanat taranglik vector scalar projection vector addition parallelogram resultant force equilibrium"
+  },
+  {
    "id": "density",
    "title": "Massa, zichlik va suzish",
    "href": "density.html",
