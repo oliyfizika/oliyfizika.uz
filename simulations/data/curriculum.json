@@ -907,14 +907,16 @@
        "nom": "Gazlarda elektr toki",
        "tur": "sim",
        "oila": "F29",
-       "sim": null
+       "sim": "discharge",
+       "preset": "sat"
       },
       {
        "raqam": 48,
        "nom": "Elektr razryadlar turlari",
        "tur": "sim",
        "oila": "F29",
-       "sim": null
+       "sim": "discharge",
+       "preset": "spark1"
       }
      ]
     },
@@ -1848,8 +1850,8 @@
        "nom": "Gazlarda va vakuumda elektr toki",
        "tur": "sim",
        "oila": "F29",
-       "sim": "thomson-em",
-       "preset": "base"
+       "sim": "discharge",
+       "preset": "pumpdown"
       },
       {
        "raqam": 43,

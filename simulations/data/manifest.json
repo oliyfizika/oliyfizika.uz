@@ -405,6 +405,20 @@
    "keywords": "elektroliz suyuqliklarda elektr toki elektrolit elektrolitik dissotsiatsiya ion ionlar kation anion katod anod faradey qonunlari faradeyning birinchi qonuni ikkinchi qonuni elektrokimyoviy ekvivalent m=kIt faradey soni mis kuporosi CuSO4 kumush nitrat osh tuzi NaCl distillangan suv suv elektrolizi vodorod kislorod galvanostegiya galvanoplastika nikellash kumushlash parchalanish kuchlanishi electrolysis faraday law electrolyte ions"
   },
   {
+   "id": "discharge",
+   "title": "Gazlarda elektr toki va razryad turlari",
+   "href": "discharge.html",
+   "topic": "elektr",
+   "description": "Ionlash kamerasi: alanga, ultrabinafsha va rentgen nurlari, galvanometr — Om sohasi, to‘yinish toki, zarbli ionlanish va teshilish. Vakuum nasosli razryad trubkasi: Pashen qonuni, shnur, tlejli razryad, qatlamlar, katod nurlari; havo, neon, argon, geliy. Elektrofor mashinasida uchqun, elektr yoyi va liniya simida toj razryad.",
+   "params": [
+    "Ionlagich, kuchlanish U (dasta sahnada), plastinkalar oralig‘i d",
+    "Trubka: gaz, bosim p (nasos, klapan), kuchlanish U",
+    "Uchqun: sharlar oralig‘i (sahnada), disklar tezligi, Leyden bankalari",
+    "Yoy: reostat R, ko‘mirlar oralig‘i; toj: U, sim radiusi, ob-havo"
+   ],
+   "keywords": "gazlarda elektr toki gaz razryadi ionlanish ionlagich rekombinatsiya mustaqil bo'lmagan razryad mustaqil razryad to'yinish toki zarbli ionlanish elektron ko'chkisi taunsend pashen qonuni teshilish kuchlanishi razryad trubkasi vakuum nasosi tlejli razryad katod qorong'i sohasi musbat ustun qatlamlar katod nurlari neon argon geliy reklama lampalari uchqun razryad elektrofor mashinasi uimshurst leyden bankasi chaqmoq elektr yoyi petrov payvandlash ayrton toj razryad korona yuqori kuchlanishli liniya pik qonuni plazma gas discharge glow discharge paschen law spark arc corona"
+  },
+  {
    "id": "magnetism",
    "title": "Magnit maydon va Amper kuchi",
    "href": "magnetism.html",
