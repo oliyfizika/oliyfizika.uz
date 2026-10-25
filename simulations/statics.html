@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muvozanat, kuch momenti va oddiy mexanizmlar | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: shtativga osilgan fanera plastinka va shovun bilan massa markazini topish, qutining ag‘darilishi, muvozanat turlari, laboratoriya richagi (yuklar, dinamometr, moment qoidasi), qo‘zg‘almas va qo‘zg‘aluvchan blok, polispast, chig‘ir; ishning oltin qoidasi va FIK.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/statics.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Muvozanat va oddiy mexanizmlar" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="staticsSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Muvozanat, kuch momenti va oddiy mexanizmlar</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="cm" aria-pressed="true">Massa markazi va muvozanat</button>
+            <button type="button" data-mode-value="lever" aria-pressed="false">Richag</button>
+            <button type="button" data-mode-value="mech" aria-pressed="false">Bloklar va chig‘ir</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Statika tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-line data-tool="plate">Shovun bo‘ylab chiziq chizish</button>
+          <button class="of-btn of-btn--sm" type="button" data-clearl data-tool="plate">Chiziqlarni o‘chirish</button>
+          <button class="of-btn of-btn--sm" type="button" data-showcm data-tool="plate" aria-pressed="false">Massa markazini ko‘rsatish</button>
+          <button class="of-btn of-btn--sm" type="button" data-release data-tool="tip ball">Qo‘yib yuborish</button>
+          <button class="of-btn of-btn--sm" type="button" data-rec data-tool="lever">Nuqtani yozish</button>
+          <button class="of-btn of-btn--sm" type="button" data-clear data-tool="lever">Grafikni tozalash</button>
+          <button class="of-btn of-btn--sm" type="button" data-lift data-tool="fixed movable tackle axle">Yukni ko‘tarish</button>
+          <button class="of-btn of-btn--sm" type="button" data-lower data-tool="fixed movable tackle axle">Tushirish</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="cm">
+        <span class="sim-group__title">Tajriba</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-kind="cm">
+          <button type="button" data-kind-value="plate" aria-pressed="true">Plastinka</button>
+          <button type="button" data-kind-value="tip" aria-pressed="false">Quti</button>
+          <button type="button" data-kind-value="ball" aria-pressed="false">Sharcha</button>
+        </div>
+        <div class="sim-control" data-kctl="plate"><div class="sim-control__row"><label for="plShape">Plastinka shakli</label></div><select class="sim-select" id="plShape"></select></div>
+        <div class="of-segment" role="group" aria-label="Osish teshigi" data-hole data-kctl="plate">
+          <button type="button" data-hole-value="0" aria-pressed="true">A teshik</button>
+          <button type="button" data-hole-value="1" aria-pressed="false">B teshik</button>
+          <button type="button" data-hole-value="2" aria-pressed="false">C teshik</button>
+        </div>
+        <p class="of-subtle" data-kctl="plate">Fanera plastinka (4 mm) shtativ shtiftiga osilgan, shtiftdan shovun (ipga osilgan yuk) tushirilgan. Plastinkani sahnada surib tebrating; to‘xtagach shovun bo‘ylab chiziq chizing. Boshqa teshikni bosing — plastinka o‘sha teshikdan osiladi. Ikki chiziq kesishgan nuqta — massa markazi.</p>
+        <div class="sim-control" data-kctl="tip"><div class="sim-control__row"><label for="tpSize">Quti o‘lchami (eni × balandligi)</label></div><select class="sim-select" id="tpSize"><option value="tall">10 × 30 cm (baland)</option><option value="mid">16 × 24 cm</option><option value="cube">20 × 20 cm (kub)</option></select></div>
+        <div class="sim-control" data-kctl="tip"><div class="sim-control__row"><label for="tpF">Massa markazi balandligi</label><output for="tpF" id="tpFOut"></output></div><input class="sim-range" type="range" id="tpF" min="0.2" max="0.8" step="0.05" value="0.5"></div>
+        <div class="sim-control" data-kctl="tip"><div class="sim-control__row"><label for="tpA">Og‘dirish burchagi α</label><output for="tpA" id="tpAOut"></output></div><input class="sim-range" type="range" id="tpA" min="0" max="60" step="0.5" value="0"></div>
+        <p class="of-subtle" data-kctl="tip">Qutini sahnada o‘ngga suring (qirrasi atrofida og‘adi) va qo‘yib yuboring. Qutining ichida po‘lat yuk bo‘lsa, massa markazi pastga (yoki yuqoriga) siljiydi. Qizil shtrix — massa markazidan tushirilgan vertikal.</p>
+        <div class="of-segment" role="group" aria-label="Sirt" data-surf data-kctl="ball">
+          <button type="button" data-surf-value="bowl" aria-pressed="true">Botiq</button>
+          <button type="button" data-surf-value="dome" aria-pressed="false">Qavariq</button>
+          <button type="button" data-surf-value="flat" aria-pressed="false">Tekis</button>
+        </div>
+        <p class="of-subtle" data-kctl="ball">Po‘lat sharcha (50 g) sirtda dumalaydi. Sharchani sahnada surib muvozanat holatidan chiqaring va qo‘yib yuboring. Sirt egriligi radiusi 20 cm.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="lever">
+        <span class="sim-group__title">Laboratoriya richagi</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="lvAn">Chap guruh: yuklar soni (100 g)</label><output for="lvAn" id="lvAnOut"></output></div><input class="sim-range" type="range" id="lvAn" min="0" max="6" step="1" value="2"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lvAh">Chap guruh: teshik</label><output for="lvAh" id="lvAhOut"></output></div><input class="sim-range" type="range" id="lvAh" min="-6" max="6" step="1" value="-3"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lvBn">O‘ng guruh: yuklar soni (100 g)</label><output for="lvBn" id="lvBnOut"></output></div><input class="sim-range" type="range" id="lvBn" min="0" max="6" step="1" value="3"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lvBh">O‘ng guruh: teshik</label><output for="lvBh" id="lvBhOut"></output></div><input class="sim-range" type="range" id="lvBh" min="-6" max="6" step="1" value="2"></div>
+        <div class="of-segment" role="group" aria-label="Dinamometr" data-dyn>
+          <button type="button" data-dyn-value="0" aria-pressed="true">Dinamometrsiz</button>
+          <button type="button" data-dyn-value="1" aria-pressed="false">Dinamometr bilan</button>
+        </div>
+        <div class="sim-control" data-dynctl><div class="sim-control__row"><label for="lvDh">Dinamometr: teshik</label><output for="lvDh" id="lvDhOut"></output></div><input class="sim-range" type="range" id="lvDh" min="-6" max="6" step="1" value="5"></div>
+        <div class="sim-control" data-dynctl><div class="sim-control__row"><label for="lvPhi">Dinamometr og‘ishi φ (vertikaldan)</label><output for="lvPhi" id="lvPhiOut"></output></div><input class="sim-range" type="range" id="lvPhi" min="0" max="60" step="1" value="0"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lvPo">Tayanch nuqtasi</label></div><select class="sim-select" id="lvPo"><option value="0">richag o‘rtasida</option><option value="0.05">o‘rtadan 5 cm o‘ngda</option><option value="0.1">o‘rtadan 10 cm o‘ngda</option></select></div>
+        <p class="of-subtle">Richag 60 cm, massasi 100 g, teshiklar har 5 cm da (chapda −1…−6, o‘ngda 1…6). Yuk guruhlarini sahnada boshqa teshikka suring; dinamometr halqasini surib, uni qiya torting. Dinamometr ulanganda richag gorizontal ushlab turiladi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="mech">
+        <span class="sim-group__title">Oddiy mexanizm</span>
+        <div class="of-segment" role="group" aria-label="Mexanizm" data-kind="mech" style="flex-wrap:wrap">
+          <button type="button" data-kind-value="fixed" aria-pressed="true">Qo‘zg‘almas</button>
+          <button type="button" data-kind-value="movable" aria-pressed="false">Qo‘zg‘aluvchan</button>
+          <button type="button" data-kind-value="tackle" aria-pressed="false">Polispast</button>
+          <button type="button" data-kind-value="axle" aria-pressed="false">Chig‘ir</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="mM">Yuk massasi m</label><output for="mM" id="mMOut"></output></div><input class="sim-range" type="range" id="mM" min="0.1" max="10" step="0.1" value="1"></div>
+        <div class="sim-control" data-kctl="tackle"><div class="sim-control__row"><label for="mN">Yukni ushlab turgan iplar soni n</label></div><select class="sim-select" id="mN"><option value="2">2 (1 + 1 g‘ildirak)</option><option value="4" selected>4 (2 + 2 g‘ildirak)</option><option value="6">6 (3 + 3 g‘ildirak)</option></select></div>
+        <div class="sim-control" data-kctl="axle"><div class="sim-control__row"><label for="mR">Dasta uzunligi R (baraban r = 5 cm)</label></div><select class="sim-select" id="mR"><option value="0.2">20 cm</option><option value="0.3" selected>30 cm</option><option value="0.4">40 cm</option></select></div>
+        <div class="of-segment" role="group" aria-label="Model" data-ideal>
+          <button type="button" data-ideal-value="0" aria-pressed="true">Real</button>
+          <button type="button" data-ideal-value="1" aria-pressed="false">Ideal (ishqalanishsiz, yengil)</button>
+        </div>
+        <p class="of-subtle" data-kctl="fixed movable tackle">Dinamometrni (qo‘lni) sahnada surib, ipni torting — yuk tekis ko‘tariladi. Real modelda har g‘ildirakda ip ishqalanishi (η = 0,95) va qo‘zg‘aluvchan blok massasi (100 g) hisobga olingan.</p>
+        <p class="of-subtle" data-kctl="axle">Quduq chig‘iri: dastani sahnada aylantiring. Baraban r = 5 cm, podshipniklarda ishqalanish (η = 0,92).</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Massa markazi: <span class="sim-math">x<sub>C</sub> = (m₁x₁ + m₂x₂ + …)/(m₁ + m₂ + …)</span></li>
+        <li>Kuch momenti: <span class="sim-math">M = F·l</span>, yelka <span class="sim-math">l</span> — aylanish o‘qidan kuch chizig‘igacha masofa; qiya kuchda <span class="sim-math">l = d·cos φ</span></li>
+        <li>Muvozanat shartlari: <span class="sim-math">ΣF = 0</span> va <span class="sim-math">ΣM = 0</span>; richag: <span class="sim-math">F₁l₁ = F₂l₂</span></li>
+        <li>Ag‘darilish: <span class="sim-math">tg α<sub>kr</sub> = (b/2)/h<sub>C</sub></span> — massa markazidan tushirilgan vertikal tayanch yuzasidan chiqsa, jism ag‘dariladi</li>
+        <li>Bloklar: qo‘zg‘almas <span class="sim-math">F = mg</span>, qo‘zg‘aluvchan <span class="sim-math">F = mg/2</span>, polispast <span class="sim-math">F = mg/n</span>; chig‘ir <span class="sim-math">F = mg·r/R</span></li>
+        <li>Oltin qoida: <span class="sim-math">F·s = mg·h</span> (ideal); FIK <span class="sim-math">η = mgh/(F·s)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Model: plastinka — bir jinsli fanera (σ = 0,24 g/cm²), shtiftdagi ishqalanish so‘ndiradi. Quti va sharcha — qattiq jism dinamikasi (sharcha sirpanmasdan dumalaydi, a = (5/7)g·sin θ). Richag tayanch o‘qi richag o‘rta chizig‘idan 8 mm yuqorida (shuning uchun muvozanatda gorizontal holatga qaytadi), tirgak ±14°. Blok va chig‘ir: yuk sekin, tekis ko‘tariladi (inersiya hisobga olinmaydi); g = 9,8 m/s².</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

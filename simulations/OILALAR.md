@@ -39,7 +39,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F46 | Qora jism nurlanishi, fotoeffekt, foton | 3 | 11 | ✅ | photoeffect.html, led-planck.html, blackbody.html (lab) |
 | F2 | Vektorlar va kuchlarni qo‘shish (parallelogramm, proyeksiyalar) | 2 | 7, 10 | ✅ | vectors.html (2026-10-25): vektor uchi sahnada suriladi — modul, yo‘nalish, proyeksiyalar, k·a; uchburchak va parallelogramm usullari, a − b, yig‘indi modulining θ ga bog‘liqligi; kuchlarni qo‘shish, teng ta’sir etuvchi va muvozanatlovchi kuch, kuchlar ko‘pburchagi, ikki simdagi chiroq |
 | F3 | Aylana bo‘ylab harakat va markazga intilma kuch | 2 | 7, 10 | ✅ | circular-motion.html |
-| F11 | Muvozanat, kuch momenti, richag va oddiy mexanizmlar (blok, vorot) | 2 | 10 | ○ | statika moduli |
+| F11 | Muvozanat, kuch momenti, richag va oddiy mexanizmlar (blok, vorot) | 2 | 10 | ✅ | statics.html (2026-10-25): shtativga osilgan plastinka va shovun (massa markazini topish; L shakl, uchburchak, teshikli disk, taqa), qutining ag‘darilishi (αₖᵣ, h(α)), sharcha — muvozanat turlari (Eₚ(x)), laboratoriya richagi (yuklar, dinamometr, qiya tortish, tayanchni siljitish, F₂(l₂)), qo‘zg‘almas/qo‘zg‘aluvchan blok, polispast, chig‘ir (F(m), oltin qoida, FIK) |
 | F13 | Mexanik to‘lqinlar va tovush (interferensiya, Doppler, tebranish yig‘indisi) | 2 | 10 | ✅ | waves.html |
 | F14 | Suyuqlik/gaz oqimi: uzluksizlik, Bernulli, Venturi | 2 | 10 | ✅ | fluid.html |
 | F20 | Havo namligi va atmosfera hodisalari (shudring nuqtasi, psixrometr) | 2 | 9 | ○ | jadval + formulalar |
@@ -76,13 +76,12 @@ Holat: 2026-10-25.
 | 7 | 62 | 45 | **44** (98 %) | 1 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **34** (89 %) | 4 | 6 (5 / 1) | 14 (14) | 7 |
-| 10 | 59 | 44 | **41** (93 %) | 3 | 4 (4 / 0) | 14 (12) | 1 |
+| 10 | 59 | 44 | **43** (98 %) | 1 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **202** (94 %) | **13** | **22** (20 / 2) | **52** (50) | **18** |
+| **Jami** | **285** | **215** | **204** (95 %) | **11** | **22** (20 / 2) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
-| F11 | 10§12, 10§13 | 2 |
 | F20 | 9§41, 9§42 | 2 |
 | F45 | 11§32, 11§33 | 2 |
 | yangi | 11§30, 11§31 | 2 |

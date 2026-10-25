@@ -1598,14 +1598,16 @@
        "nom": "Massa markazi. Muvozanat. Kuch momenti",
        "tur": "sim",
        "oila": "F11",
-       "sim": null
+       "sim": "statics",
+       "preset": "plateL"
       },
       {
        "raqam": 13,
        "nom": "Moment qoidasiga asoslangan oddiy mexanizmlar",
        "tur": "sim",
        "oila": "F11",
-       "sim": null
+       "sim": "statics",
+       "preset": "balance"
       },
       {
        "raqam": 14,
