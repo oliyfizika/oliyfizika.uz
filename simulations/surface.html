@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sirt tarangligi va kapillyarlik | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: suyuqlik sirt tarangligi, sovun pardasi va ramka (F = 2σL), sirt energiyasi; ho‘llash va ho‘llamaslik, kapillyar naylarda ko‘tarilish va pasayish (h = 2σcosθ/ρgr); tomchilar usuli bilan sirt taranglik koeffitsiyentini aniqlash.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/surface.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Sirt tarangligi va kapillyarlik" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="surfaceSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--orange">Molekulyar fizika</span>
+      <h1>Sirt tarangligi, ho‘llash va kapillyarlik</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="film" aria-pressed="true">Sirt tarangligi</button>
+            <button type="button" data-mode-value="cap" aria-pressed="false">Ho‘llash va kapillyarlik</button>
+            <button type="button" data-mode-value="drops" aria-pressed="false">Tomchilar usuli</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Sirt tarangligi tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Tomizish tezligi" data-speed data-tool="drops"><button type="button" data-speed-value="1" aria-pressed="true">1×</button><button type="button" data-speed-value="4" aria-pressed="false">4×</button></div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik">
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Suyuqlik</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="liq">Suyuqlik</label></div>
+          <select class="sim-select" id="liq"></select>
+        </div>
+        <div class="sim-control" data-ctl="film cap">
+          <div class="sim-control__row"><label for="temp">Temperatura t</label><output for="temp" id="tempOut"></output></div>
+          <input class="sim-range" type="range" id="temp" min="0" max="90" step="1" value="20">
+        </div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="film">
+        <span class="sim-group__title">Ramka</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fL">To‘sin uzunligi L</label><output for="fL" id="fLOut"></output></div>
+          <input class="sim-range" type="range" id="fL" min="2" max="8" step="0.5" value="5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="fX">To‘sin holati x</label><output for="fX" id="fXOut"></output></div>
+          <input class="sim-range" type="range" id="fX" min="1" max="9" step="0.1" value="5">
+        </div>
+        <p class="of-subtle">Ramkaning qo‘zg‘aluvchan to‘sinini sahnada chapga/o‘ngga suring — dinamometr ko‘rsatishi o‘zgarmaydi, ish esa ortadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="cap">
+        <span class="sim-group__title">Kapillyar nay</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cR">O‘zgaruvchan nay radiusi r</label><output for="cR" id="cROut"></output></div>
+          <input class="sim-range" type="range" id="cR" min="0.1" max="2" step="0.05" value="0.5">
+        </div>
+        <p class="of-subtle">O‘ngdagi nay tutqichini sahnada chapga/o‘ngga surib, uning radiusini o‘zgartiring.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="drops">
+        <span class="sim-group__title">Byuretka</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="dD">Naycha uchi diametri d</label><output for="dD" id="dDOut"></output></div>
+          <input class="sim-range" type="range" id="dD" min="1" max="4" step="0.1" value="2">
+        </div>
+        <p class="of-subtle">Sahnada byuretka jo‘mragini bosib oching yoki yoping. Tomchilar sanaladi, idishdagi suyuqlik tarozida tortiladi (1 mg aniqlikda).</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Sirt taranglik kuchi: <span class="sim-math">F = σl</span>; parda (ikki sirt): <span class="sim-math">F = 2σL</span></li>
+        <li>Sirt energiyasi va ish: <span class="sim-math">E = σS</span>, <span class="sim-math">A = σΔS</span></li>
+        <li>Kapillyar ko‘tarilish: <span class="sim-math">h = 2σcosθ/(ρgr)</span></li>
+        <li>Tomchilar usuli: <span class="sim-math">mg = πdσ</span> → <span class="sim-math">σ = Mg/(πdN)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">σ qiymatlari 20 °C da; temperatura bilan chiziqli kamayadi (taxminiy). Nay va tomchilar rasmda kattalashtirilgan. Tomchi uzilish sharti soddalashtirilgan (Teyt qonuni): haqiqiy tomchida bo‘yin ingichkalashadi va massa biroz kichik bo‘ladi, shuning uchun amalda tomchilar usuli σ ni biroz kichik beradi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

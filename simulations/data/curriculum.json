@@ -1262,28 +1262,32 @@
        "nom": "Suyuqliklarning xossalari",
        "tur": "sim",
        "oila": "F18",
-       "sim": null
+       "sim": "surface",
+       "preset": "soapFrame"
       },
       {
        "raqam": 32,
        "nom": "Ho‘llash. Kapillyar hodisalar",
        "tur": "sim",
        "oila": "F18",
-       "sim": null
+       "sim": "surface",
+       "preset": "capWater"
       },
       {
        "raqam": 33,
        "nom": "Masalalar yechish",
        "tur": "masala",
-       "sim": null
+       "sim": "surface",
+       "preset": "capWater"
       },
       {
        "raqam": 34,
        "nom": "Laboratoriya ishi. Sirt taranglik koeffitsiyenti",
        "tur": "lab",
        "oila": "F18",
-       "sim": null,
-       "lab": null
+       "sim": "surface",
+       "lab": null,
+       "preset": "drops"
       },
       {
        "raqam": 35,
