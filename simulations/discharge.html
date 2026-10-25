@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gazlarda elektr toki va razryad turlari | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: ionlash kamerasi (alanga, ultrabinafsha va rentgen nurlari, galvanometr, mustaqil bo‘lmagan razryad, to‘yinish toki, zarbli ionlanish), vakuum nasosli razryad trubkasi (Pashen qonuni, tlejli razryad, qatlamlar, katod nurlari, neon, argon, geliy), elektrofor mashinasidagi uchqun, elektr yoyi va toj razryad.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/discharge.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Gazlarda elektr toki va razryad turlari" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="dischargeSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Elektr va magnetizm</span>
+      <h1>Gazlarda elektr toki va razryad turlari</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="ion" aria-pressed="true">Ionlash kamerasi</button>
+            <button type="button" data-mode-value="tube" aria-pressed="false">Razryad trubkasi</button>
+            <button type="button" data-mode-value="types" aria-pressed="false">Razryad turlari</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Gazlarda elektr toki tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-pump data-tool="tube">Nasosni yoqish</button>
+          <button class="of-btn of-btn--sm" type="button" data-vent data-tool="tube">Gaz kiritish</button>
+          <button class="of-btn of-btn--sm" type="button" data-touch data-tool="types">Elektrodlarni tutashtirish</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="ion">
+        <span class="sim-group__title">Ionlash kamerasi (havo, 760 mm sim. ust.)</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="iSrc">Ionlagich</label></div><select class="sim-select" id="iSrc"></select></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="iU">Kuchlanish U</label><output for="iU" id="iUOut"></output></div><input class="sim-range" type="range" id="iU" min="0" max="1000" step="1" value="500"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="iD">Plastinkalar oralig‘i d</label><output for="iD" id="iDOut"></output></div><input class="sim-range" type="range" id="iD" min="0.5" max="3" step="0.1" value="1"></div>
+        <p class="of-subtle">Plastinkalar 10 × 10 cm. Kuchlanish shkalasi logarifmik: 1 V dan 40 kV gacha. Manba dastasini sahnada ham aylantirish mumkin. Galvanometr pikoampergacha sezadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="tube">
+        <span class="sim-group__title">Razryad trubkasi (uzunligi 40 cm)</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="tGas">Gaz</label></div><select class="sim-select" id="tGas"></select></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="tP">Bosim p</label><output for="tP" id="tPOut"></output></div><input class="sim-range" type="range" id="tP" min="0" max="1000" step="1" value="1000"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="tU">Manba kuchlanishi U</label><output for="tU" id="tUOut"></output></div><input class="sim-range" type="range" id="tU" min="0" max="15" step="0.1" value="10"></div>
+        <p class="of-subtle">Nasosni yoqing va bosim kamayishini kuzating (aylanma moyli nasos, ~40 s da 10⁻³ mm sim. ust.). Bosim shkalasi logarifmik. Zanjirda 1 MΩ cheklovchi qarshilik bor.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="types">
+        <span class="sim-group__title">Mustaqil razryad turlari</span>
+        <div class="of-segment" role="group" aria-label="Razryad turi" data-kind>
+          <button type="button" data-kind-value="spark" aria-pressed="true">Uchqun</button>
+          <button type="button" data-kind-value="arc" aria-pressed="false">Yoy</button>
+          <button type="button" data-kind-value="corona" aria-pressed="false">Toj</button>
+        </div>
+        <div class="sim-control" data-kctl="spark"><div class="sim-control__row"><label for="sD">Sharlar oralig‘i d</label><output for="sD" id="sDOut"></output></div><input class="sim-range" type="range" id="sD" min="0.2" max="4" step="0.1" value="1.5"></div>
+        <div class="sim-control" data-kctl="spark"><div class="sim-control__row"><label for="sW">Disklarning aylanish tezligi</label><output for="sW" id="sWOut"></output></div><input class="sim-range" type="range" id="sW" min="0" max="3" step="0.1" value="1.5"></div>
+        <div class="sim-control" data-kctl="spark"><div class="sim-control__row"><label for="sC">Leyden bankalari</label></div><select class="sim-select" id="sC"><option value="on">ulangan (C = 2 × 200 pF)</option><option value="off">ajratilgan (C ≈ 20 pF)</option></select></div>
+        <div class="sim-control" data-kctl="arc"><div class="sim-control__row"><label for="aR">Ballast reostat R</label><output for="aR" id="aROut"></output></div><input class="sim-range" type="range" id="aR" min="1" max="20" step="0.5" value="5"></div>
+        <div class="sim-control" data-kctl="arc"><div class="sim-control__row"><label for="aD">Ko‘mirlar oralig‘i d</label><output for="aD" id="aDOut"></output></div><input class="sim-range" type="range" id="aD" min="0" max="12" step="0.1" value="3"></div>
+        <div class="sim-control" data-kctl="corona"><div class="sim-control__row"><label for="cU">Simning kuchlanishi U (yerga nisbatan)</label><output for="cU" id="cUOut"></output></div><input class="sim-range" type="range" id="cU" min="0" max="300" step="1" value="150"></div>
+        <div class="sim-control" data-kctl="corona"><div class="sim-control__row"><label for="cR">Sim radiusi r</label><output for="cR" id="cROut"></output></div><input class="sim-range" type="range" id="cR" min="0.2" max="2" step="0.05" value="0.5"></div>
+        <div class="sim-control" data-kctl="corona"><div class="sim-control__row"><label for="cM">Sim sirti va ob-havo</label></div><select class="sim-select" id="cM"><option value="1">silliq sim, quruq havo</option><option value="0.85">o‘ralgan (ko‘p tolali) sim</option><option value="0.68">o‘ralgan sim, yomg‘ir</option></select></div>
+        <p class="of-subtle" data-kctl="spark">Elektrofor (Uimshurst) mashinasi: disklar aylanganda Leyden bankalari zaryadlanadi. O‘ng sharni sahnada surib, oraliqni o‘zgartiring.</p>
+        <p class="of-subtle" data-kctl="arc">Ko‘mir elektrodlar 110 V o‘zgarmas tok manbaiga reostat orqali ulangan. Yoyni yoqish uchun avval elektrodlarni tutashtiring, so‘ng sekin uzoqlashtiring (o‘ng ko‘mirni sahnada suring).</p>
+        <p class="of-subtle" data-kctl="corona">Yerdan 15 m balandlikdagi elektr uzatish liniyasi simi. Kuchlanish — fazaning yerga nisbatan qiymati.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>To‘yinish toki: <span class="sim-math">I<sub>s</sub> = eqSd</span> (q — 1 s da 1 m³ da hosil bo‘ladigan ion juftlari)</li>
+        <li>Zarbli ionlanish (Taunsend): <span class="sim-math">α = Ap·e<sup>−Bp/E</sup></span>, tok <span class="sim-math">I = I<sub>0</sub>e<sup>αd</sup>/(1 − γ(e<sup>αd</sup> − 1))</span></li>
+        <li>Pashen qonuni: <span class="sim-math">U<sub>t</sub> = Bpd / ln(Apd / ln(1 + 1/γ))</span> — teshilish kuchlanishi faqat <span class="sim-math">pd</span> ga bog‘liq</li>
+        <li>Elektr yoyi (Ayrton): <span class="sim-math">U = a + bd + (c + ed)/I</span>; ish nuqtasi <span class="sim-math">U = E − IR</span></li>
+        <li>Toj (Pik): <span class="sim-math">E<sub>k</sub> = 30m(1 + 0,301/√r)</span> kV/cm, sim sirtida <span class="sim-math">E = U/(r·ln(2h/r))</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Model: havo uchun A = 15 1/(cm·mm sim. ust.), B = 365 V/(cm·mm sim. ust.), γ = 0,01; boshqa gazlar uchun adabiyotdagi taxminiy A va B. Ionlarning rekombinatsiya koeffitsiyenti 1,6·10⁻¹² m³/s, harakatchanligi μ₊ + μ₋ = 3,3·10⁻⁴ m²/(V·s). Juda past bosimda (Pashen minimumidan chapda) teshilish kuchlanishi taxminiy. Trubkadagi tlejli razryad tuzilishi: katod qorong‘i sohasi d<sub>k</sub>·p ≈ 0,3 mm sim. ust.·cm. Yoy uchun ko‘mir elektrodlarning Ayrton koeffitsiyentlari (a = 38,9 V, b = 2,07 V/mm, c = 11,7 W, e = 10,5 W/mm).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

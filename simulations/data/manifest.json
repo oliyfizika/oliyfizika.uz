@@ -361,6 +361,20 @@
    "keywords": "elektr zanjiri konstruktor om qonuni tok kuchi kuchlanish qarshilik ketma-ket parallel aralash ulash eyuk ichki qarshilik reostat ampermetr voltmetr lampochka kalit quvvat kirxgof diod led yorug‘lik diodi virtual laboratoriya circuit ohm law diode"
   },
   {
+   "id": "joule",
+   "title": "Tok ishi, quvvati va Joul–Lens qonuni",
+   "href": "joule.html",
+   "topic": "elektr",
+   "description": "Kalorimetrdagi nixrom spiral bilan Joul–Lens qonunini tekshirish: ampermetr, voltmetr, termometr va sekundomer, ketma-ket va parallel spirallar, FIK. LATR bilan cho‘g‘lanma lampa quvvati va tola qarshiligi, 40 W va 100 W ketma-ket. Uy tarmog‘i: hisoblagich, kVt·soat, avtomat va ortiqcha yuklanish.",
+   "params": [
+    "Manba kuchlanishi E (dasta sahnada), kalit",
+    "Spirallar R₁, R₂: bitta, ketma-ket, parallel; suv massasi m",
+    "Lampalar (25–100 W, 6,3 V), ulash, LATR kuchlanishi U",
+    "Uy tarmog‘i: iste’molchilar (sahnada), avtomat Iₙ, tarif"
+   ],
+   "keywords": "tok ishi tok quvvati joul lens qonuni issiqlik miqdori o'tkazgichning qizishi nixrom spiral kalorimetr termometr sekundomer ampermetr voltmetr ketma-ket parallel ulash foydali ish koeffitsiyenti fik cho'g'lanma lampa volfram tola lampochka quvvatini aniqlash latr avtotransformator qarshilikning temperaturaga bog'liqligi elektr hisoblagich kilovatt soat kvt soat elektr energiya narxi saqlagich avtomat ortiqcha yuklanish qisqa tutashuv maishiy asboblar elektr choynak dazmol isitgich joule heating electric power energy meter fuse"
+  },
+  {
    "id": "metals",
    "title": "Metallarda elektr toki",
    "href": "metals.html",
@@ -389,6 +403,20 @@
     "Ketma-ket vannalar: Ag, Cu, Ni, Zn, suv"
    ],
    "keywords": "elektroliz suyuqliklarda elektr toki elektrolit elektrolitik dissotsiatsiya ion ionlar kation anion katod anod faradey qonunlari faradeyning birinchi qonuni ikkinchi qonuni elektrokimyoviy ekvivalent m=kIt faradey soni mis kuporosi CuSO4 kumush nitrat osh tuzi NaCl distillangan suv suv elektrolizi vodorod kislorod galvanostegiya galvanoplastika nikellash kumushlash parchalanish kuchlanishi electrolysis faraday law electrolyte ions"
+  },
+  {
+   "id": "discharge",
+   "title": "Gazlarda elektr toki va razryad turlari",
+   "href": "discharge.html",
+   "topic": "elektr",
+   "description": "Ionlash kamerasi: alanga, ultrabinafsha va rentgen nurlari, galvanometr — Om sohasi, to‘yinish toki, zarbli ionlanish va teshilish. Vakuum nasosli razryad trubkasi: Pashen qonuni, shnur, tlejli razryad, qatlamlar, katod nurlari; havo, neon, argon, geliy. Elektrofor mashinasida uchqun, elektr yoyi va liniya simida toj razryad.",
+   "params": [
+    "Ionlagich, kuchlanish U (dasta sahnada), plastinkalar oralig‘i d",
+    "Trubka: gaz, bosim p (nasos, klapan), kuchlanish U",
+    "Uchqun: sharlar oralig‘i (sahnada), disklar tezligi, Leyden bankalari",
+    "Yoy: reostat R, ko‘mirlar oralig‘i; toj: U, sim radiusi, ob-havo"
+   ],
+   "keywords": "gazlarda elektr toki gaz razryadi ionlanish ionlagich rekombinatsiya mustaqil bo'lmagan razryad mustaqil razryad to'yinish toki zarbli ionlanish elektron ko'chkisi taunsend pashen qonuni teshilish kuchlanishi razryad trubkasi vakuum nasosi tlejli razryad katod qorong'i sohasi musbat ustun qatlamlar katod nurlari neon argon geliy reklama lampalari uchqun razryad elektrofor mashinasi uimshurst leyden bankasi chaqmoq elektr yoyi petrov payvandlash ayrton toj razryad korona yuqori kuchlanishli liniya pik qonuni plazma gas discharge glow discharge paschen law spark arc corona"
   },
   {
    "id": "magnetism",
