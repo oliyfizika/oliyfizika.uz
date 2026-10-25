@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yarimo‘tkazgichlar va p–n o‘tish | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: metall va termorezistor qarshiligining temperaturaga bog‘liqligi (plitka, multimetr), fotorezistor, kremniy panjarasida elektron va kovak o‘tkazuvchanlik (n va p tip), diodning volt-amper xarakteristikasini o‘lchash, yarim va to‘liq davrli to‘g‘rilagich (ossillograf), tranzistor kalit va kuchaytirgich sifatida.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/semi.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Yarimo‘tkazgichlar va p–n o‘tish" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="semiSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Elektr va magnetizm</span>
+      <h1>Yarimo‘tkazgichlar va p–n o‘tish</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="rt" aria-pressed="true">Metall va yarimo‘tkazgich</button>
+            <button type="button" data-mode-value="lat" aria-pressed="false">O‘tkazuvchanlik</button>
+            <button type="button" data-mode-value="pn" aria-pressed="false">Diod va tranzistor</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Yarimo‘tkazgichlar tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-heat data-tool="thermo">Plitkani o‘chirish</button>
+          <button class="of-btn of-btn--sm" type="button" data-lamp data-tool="photo">Lampani o‘chirish</button>
+          <button class="of-btn of-btn--sm" type="button" data-field data-tool="lat">Batareyani ulash</button>
+          <button class="of-btn of-btn--sm" type="button" data-rec data-tool="vax">Nuqtani yozish</button>
+          <button class="of-btn of-btn--sm" type="button" data-clear data-tool="vax">Jadvalni tozalash</button>
+          <div class="of-segment" role="group" aria-label="Vaqt tezligi" data-speed data-tool="thermo">
+            <button type="button" data-speed-value="1" aria-pressed="false">1×</button>
+            <button type="button" data-speed-value="5" aria-pressed="true">5×</button>
+            <button type="button" data-speed-value="20" aria-pressed="false">20×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="rt">
+        <span class="sim-group__title">Qarshilikni o‘lchash</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-kind="rt">
+          <button type="button" data-kind-value="thermo" aria-pressed="true">Qizdirish</button>
+          <button type="button" data-kind-value="photo" aria-pressed="false">Yoritish</button>
+        </div>
+        <div class="sim-control" data-kctl="thermo"><div class="sim-control__row"><label for="hL">Plitka quvvati</label><output for="hL" id="hLOut"></output></div><input class="sim-range" type="range" id="hL" min="0" max="100" step="1" value="100"></div>
+        <div class="sim-control" data-kctl="photo"><div class="sim-control__row"><label for="pD">Lampagacha masofa r</label><output for="pD" id="pDOut"></output></div><input class="sim-range" type="range" id="pD" min="10" max="80" step="1" value="30"></div>
+        <div class="sim-control" data-kctl="photo"><div class="sim-control__row"><label for="pRoom">Xonadagi yorug‘lik</label></div><select class="sim-select" id="pRoom"><option value="150">xona yorug‘ (150 lk)</option><option value="5">xira (5 lk)</option><option value="0.3">qorong‘i (0,3 lk)</option></select></div>
+        <p class="of-subtle" data-kctl="thermo">Stakandagi suvga mis simli g‘altak (R₂₀ = 10 Ω) va termorezistor (25 °C da 10 kΩ) botirilgan; ikkalasining qarshiligini multimetrlar o‘lchaydi. Plitka dastasini sahnada aylantiring. Temperatura har 5 °C da grafikka yoziladi.</p>
+        <p class="of-subtle" data-kctl="photo">Kadmiy sulfidli fotorezistor va 60 W cho‘g‘lanma lampa (yorug‘lik kuchi ~80 kd) optik skamyada. Lampani sahnada suring; luksmetr yoritilganlikni ko‘rsatadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="lat">
+        <span class="sim-group__title">Kristall va aralashma</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="lM">Yarimo‘tkazgich</label></div><select class="sim-select" id="lM"><option value="si">kremniy (Si): taqiqlangan zona 1,12 eV</option><option value="ge">germaniy (Ge): taqiqlangan zona 0,66 eV</option></select></div>
+        <div class="of-segment" role="group" aria-label="O‘tkazuvchanlik turi" data-dope>
+          <button type="button" data-dope-value="i" aria-pressed="true">Sof</button>
+          <button type="button" data-dope-value="n" aria-pressed="false">n-tip (fosfor)</button>
+          <button type="button" data-dope-value="p" aria-pressed="false">p-tip (bor)</button>
+        </div>
+        <div class="sim-control" data-dopectl><div class="sim-control__row"><label for="lN">Aralashma konsentratsiyasi</label><output for="lN" id="lNOut"></output></div><input class="sim-range" type="range" id="lN" min="18" max="24" step="0.1" value="21"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lT">Temperatura T</label><output for="lT" id="lTOut"></output></div><input class="sim-range" type="range" id="lT" min="200" max="600" step="1" value="300"></div>
+        <p class="of-subtle">Sahnadagi atomni bosing — u aralashma atomiga (yoki qaytib Si ga) almashadi. Sxemada zaryad tashuvchilar soni logarifmik masshtabda: haqiqatda 1 cm³ kremniyda 5·10²² ta atom bor, xona temperaturasida erkin elektronlar ~10¹⁰ ta. Namuna: 10 mm × 1 mm², batareya 4,5 V.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="pn">
+        <span class="sim-group__title">Yarimo‘tkazgichli asboblar</span>
+        <div class="of-segment" role="group" aria-label="Asbob" data-kind="pn">
+          <button type="button" data-kind-value="vax" aria-pressed="true">Diod VAX</button>
+          <button type="button" data-kind-value="rect" aria-pressed="false">To‘g‘rilagich</button>
+          <button type="button" data-kind-value="tr" aria-pressed="false">Tranzistor</button>
+        </div>
+        <div class="sim-control" data-kctl="vax"><div class="sim-control__row"><label for="dType">Diod</label></div><select class="sim-select" id="dType"></select></div>
+        <div class="of-segment" role="group" aria-label="Ulanish yo‘nalishi" data-pol data-kctl="vax">
+          <button type="button" data-pol-value="1" aria-pressed="true">To‘g‘ri yo‘nalish</button>
+          <button type="button" data-pol-value="-1" aria-pressed="false">Teskari yo‘nalish</button>
+        </div>
+        <div class="sim-control" data-kctl="vax"><div class="sim-control__row"><label for="dE">Manba kuchlanishi E</label><output for="dE" id="dEOut"></output></div><input class="sim-range" type="range" id="dE" min="0" max="5" step="0.01" value="2"></div>
+        <div class="sim-control" data-kctl="vax"><div class="sim-control__row"><label for="dT">Diod temperaturasi</label><output for="dT" id="dTOut"></output></div><input class="sim-range" type="range" id="dT" min="20" max="80" step="1" value="20"></div>
+        <div class="of-segment" role="group" aria-label="To‘g‘rilagich" data-rk data-kctl="rect">
+          <button type="button" data-rk-value="half" aria-pressed="true">Bitta diod</button>
+          <button type="button" data-rk-value="bridge" aria-pressed="false">Diod ko‘prigi</button>
+        </div>
+        <div class="sim-control" data-kctl="rect"><div class="sim-control__row"><label for="rC">Filtr kondensatori C</label></div><select class="sim-select" id="rC"><option value="0">ulanmagan</option><option value="100">100 μF</option><option value="470">470 μF</option><option value="1000">1000 μF</option><option value="2200">2200 μF</option></select></div>
+        <div class="sim-control" data-kctl="rect"><div class="sim-control__row"><label for="rR">Yuklama qarshiligi R</label><output for="rR" id="rROut"></output></div><input class="sim-range" type="range" id="rR" min="20" max="1000" step="10" value="100"></div>
+        <div class="sim-control" data-kctl="tr"><div class="sim-control__row"><label for="tU">Potensiometr (baza kuchlanishi)</label><output for="tU" id="tUOut"></output></div><input class="sim-range" type="range" id="tU" min="0" max="6" step="0.01" value="1.5"></div>
+        <div class="sim-control" data-kctl="tr"><div class="sim-control__row"><label for="tRb">Baza rezistori R<sub>B</sub></label></div><select class="sim-select" id="tRb"><option value="1000">1 kΩ</option><option value="2000" selected>2 kΩ</option><option value="4700">4,7 kΩ</option><option value="10000">10 kΩ</option></select></div>
+        <p class="of-subtle" data-kctl="vax">Zanjir: manba → 100 Ω cheklovchi rezistor → ampermetr → diod; voltmetr diodga parallel. Manba dastasini sahnada aylantiring, «Nuqtani yozish» bilan jadval to‘ldiring. Teskari yo‘nalishda mikroampermetr va 0–30 V voltmetr ulanadi.</p>
+        <p class="of-subtle" data-kctl="rect">Pasaytiruvchi transformator 220 V → 12 V (amplituda 17 V, 50 Hz). Ossillografning sariq nuri — kirish, ko‘k nuri — yuklamadagi kuchlanish. Sahnadagi tok yo‘li 50 marta sekinlashtirilgan.</p>
+        <p class="of-subtle" data-kctl="tr">n-p-n tranzistor BC337, umumiy emitterli sxema. Batareya 6 V, kollektor zanjirida 6,3 V lampa (~40 Ω). Potensiometr dastasini sahnada aylantiring.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Metall: <span class="sim-math">R = R₀(1 + αΔt)</span>; yarimo‘tkazgich: <span class="sim-math">R ∝ e<sup>E/(2kT)</sup></span> — qizdirilsa kamayadi</li>
+        <li>Xususiy o‘tkazuvchanlik: <span class="sim-math">n = p = nᵢ ∝ T<sup>3/2</sup>e<sup>−E<sub>g</sub>/(2kT)</sup></span>; <span class="sim-math">n·p = nᵢ²</span></li>
+        <li>O‘tkazuvchanlik: <span class="sim-math">σ = e(nμₙ + pμₚ)</span>, <span class="sim-math">ρ = 1/σ</span>; dreyf tezligi <span class="sim-math">v = μE</span></li>
+        <li>Diod: <span class="sim-math">I = Iₛ(e<sup>eU/(nkT)</sup> − 1)</span>; teskari yo‘nalishda <span class="sim-math">I ≈ −Iₛ</span></li>
+        <li>To‘g‘rilagich: yarim davr <span class="sim-math">U<sub>o‘rt</sub> = U<sub>m</sub>/π</span>, to‘liq davr <span class="sim-math">2U<sub>m</sub>/π</span></li>
+        <li>Tranzistor: <span class="sim-math">I<sub>K</sub> = βI<sub>B</sub></span>, <span class="sim-math">I<sub>E</sub> = I<sub>B</sub> + I<sub>K</sub></span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Model: termorezistor qarshiligi R = R₂₅·e^(B(1/T − 1/T₂₅)), B = 3950 K. Panjara rasmi tekis (ikki o‘lchamli) sxema: har bir atom to‘rtta qo‘shnisi bilan juft elektronli kovalent bog‘ hosil qiladi. Aralashma atomlari to‘liq ionlashgan deb olingan; harakatchanlik μ ∝ T^(−3/2). Diod modelida ketma-ket qarshilik, teskari sizish toki va temperatura (to‘g‘ri kuchlanish −2 mV/K) hisobga olingan, teshilish yo‘q.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

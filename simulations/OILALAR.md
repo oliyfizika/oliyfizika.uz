@@ -24,7 +24,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F48 | Yadro fizikasi: bog‘lanish energiyasi, radioaktiv yemirilish N(t), zanjir reaksiya | 5 | 11 | ✅ | nuclear.html (2026-10-24): yemirilish N(t), bog‘lanish energiyasi va reaksiyalar, zanjir reaksiya; rutherford.html, wilson.html |
 | F7 | Ish, energiya, quvvat, energiyaning saqlanishi (skeytpark) | 4 | 7, 10 | ✅ | energy.html |
 | F29 | Gazlarda/vakuumda elektr toki, katod nurlari | 4 | 8, 10 | ✅ | discharge.html (2026-10-25): ionlash kamerasi (alanga, UB, rentgen; galvanometr; Om sohasi, to‘yinish, zarbli ionlanish, uchqun), vakuum nasosli razryad trubkasi (Pashen, shnur → tlejli → qatlamlar → katod nurlari; 6 gaz), uchqun (Uimshurst mashinasi, Leyden bankalari), elektr yoyi (Ayrton, ballast), toj (Pik); vakuumdagi tok — thomson-em.html |
-| F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ○ | zona/animatsiya + VAX |
+| F30 | Yarimo‘tkazgichlar: p–n o‘tish, diod VAX, tranzistor | 4 | 10 | ✅ | semiconductor.html (2026-10-25): metall va termorezistor R(t) (plitka, stakan, ikki multimetr, ln R(1/T)), fotorezistor (optik skamya, lyuksmetr), kristall panjara (Si/Ge, xususiy, n- va p-tip, elektron va kovaklar, n(T), σ(T)), diod VAX (Si, Ge, LED; to‘g‘ri/teskari, temperatura), to‘g‘rilagich (yarim davr, ko‘prik, kondensator, ossillograf), n-p-n tranzistor (kuchaytirish, kalit) |
 | F38 | Elektromagnit to‘lqinlar, radioaloqa (AM/FM modulyatsiya) | 4 | 11 | ✅ | emwaves.html (2026-10-24): E va B to‘lqin, EM spektr, Gers tajribalari (qaytish, sinish, qutblanish), AM/FM radioaloqa, priyomnik konturi va detektor; 11§29 ham shu yerda |
 | F4 | Zichlik, massa va suzish | 3 | 7 | ✅ | density.html (2026-10-24): pallali tarozi va toshlar, menzurka (lupa) bilan zichlik, Arximed kuchi va suzish (dinamometr, ipni kesish) |
 | F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ✅ | pressure.html (2026-10-24): qattiq jism bosimi (g‘isht, chang‘i, igna), gidravlik press va Paskal shari, p = ρgh (datchik + manometr), tutash idishlar, suv-moy U-nay |
@@ -76,15 +76,14 @@ Holat: 2026-10-25.
 | 7 | 62 | 45 | **44** (98 %) | 1 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **34** (89 %) | 4 | 6 (5 / 1) | 14 (14) | 7 |
-| 10 | 59 | 44 | **39** (89 %) | 5 | 4 (4 / 0) | 14 (12) | 1 |
+| 10 | 59 | 44 | **41** (93 %) | 3 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **200** (93 %) | **15** | **22** (20 / 2) | **52** (50) | **18** |
+| **Jami** | **285** | **215** | **202** (94 %) | **13** | **22** (20 / 2) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
 | F11 | 10§12, 10§13 | 2 |
 | F20 | 9§41, 9§42 | 2 |
-| F30 | 10§43, 10§44 | 2 |
 | F45 | 11§32, 11§33 | 2 |
 | yangi | 11§30, 11§31 | 2 |
 | F10 | 10§9 | 1 |
@@ -118,7 +117,7 @@ Holat: 2026-10-25.
 | 10§11 | Qiya tekislik FIKi | F10 | `inclined-plane.html` | ○ |
 | 10§17 | Mayatnik bilan g ni aniqlash | F12 | `pendulum.html?preset=seconds` | ○ |
 | 10§35 | EYuK va ichki qarshilik | F27 | `circuit.html?preset=emf` | ○ |
-| 10§46 | Diod VAXini o‘rganish | F30 | `circuit.html?preset=diode` | ○ |
+| 10§46 | Diod VAXini o‘rganish | F30 | `semiconductor.html?preset=vaxSi` | ○ |
 | 11§19 | AC zanjirda rezonans | F37 | `lc.html?preset=res` | ○ |
 | 11§26 | Difraksion panjara | F42 | `diffraction.html?preset=gratLab` | ○ |
 | 11§31 | Yoritilganlik | — | — (tayyorlanmoqda) | ○ |

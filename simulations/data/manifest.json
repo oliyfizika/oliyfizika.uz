@@ -419,6 +419,21 @@
    "keywords": "gazlarda elektr toki gaz razryadi ionlanish ionlagich rekombinatsiya mustaqil bo'lmagan razryad mustaqil razryad to'yinish toki zarbli ionlanish elektron ko'chkisi taunsend pashen qonuni teshilish kuchlanishi razryad trubkasi vakuum nasosi tlejli razryad katod qorong'i sohasi musbat ustun qatlamlar katod nurlari neon argon geliy reklama lampalari uchqun razryad elektrofor mashinasi uimshurst leyden bankasi chaqmoq elektr yoyi petrov payvandlash ayrton toj razryad korona yuqori kuchlanishli liniya pik qonuni plazma gas discharge glow discharge paschen law spark arc corona"
   },
   {
+   "id": "semiconductor",
+   "title": "Yarimo‘tkazgichlar va p–n o‘tish",
+   "href": "semiconductor.html",
+   "topic": "elektr",
+   "description": "Metall va yarimo‘tkazgich qarshiligining temperaturaga bog‘liqligi: plitkadagi stakanda mis g‘altak va termorezistor, ikkita multimetr; fotorezistor va luksmetr. Kremniy panjarasida elektron-kovak juftlari, fosfor (n-tip) va bor (p-tip). Diod VAX ni o‘lchash, p–n o‘tish kesimi, yorug‘lik diodlari, diod ko‘prigi va ossillograf, tranzistor kalit va kuchaytirgich.",
+   "params": [
+    "Plitka quvvati (dasta sahnada), lampagacha masofa (sahnada), xona yorug‘ligi",
+    "Si yoki Ge, sof / n-tip / p-tip, aralashma konsentratsiyasi, temperatura T; atomni bosib aralashma qo‘shish",
+    "Diod: Si, Ge, qizil/yashil/ko‘k LED; qutb (sahnada), manba E (dasta sahnada), temperatura",
+    "To‘g‘rilagich: bitta diod yoki ko‘prik, kondensator C, yuklama R",
+    "Tranzistor: potensiometr (sahnada), baza rezistori"
+   ],
+   "keywords": "yarimo'tkazgich yarimo'tkazgichlar metall va yarimo'tkazgich farqi qarshilik temperatura termorezistor termistor fotorezistor ichki fotoeffekt kremniy germaniy kovalent bog' elektron kovak elektron-kovak jufti generatsiya rekombinatsiya xususiy o'tkazuvchanlik aralashmali o'tkazuvchanlik donor akseptor fosfor bor n-tip p-tip asosiy tashuvchilar taqiqlangan zona p-n o'tish kambag'allashgan qatlam diod volt-amper xarakteristikasi vax to'g'ri yo'nalish teskari yo'nalish teskari tok yorug'lik diodi led to'g'rilagich yarim davr to'liq davr diod ko'prigi kondensator filtr ossillograf tranzistor baza kollektor emitter kuchaytirish kalit semiconductor diode transistor rectifier thermistor photoresistor doping"
+  },
+  {
    "id": "magnetism",
    "title": "Magnit maydon va Amper kuchi",
    "href": "magnetism.html",

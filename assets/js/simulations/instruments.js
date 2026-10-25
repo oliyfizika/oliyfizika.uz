@@ -1,7 +1,7 @@
 // ==========================================================================
 // Laboratoriya asboblarini realistik chizish (ekran koordinatasida, o'lcham px):
 // strelkali ampermetr/voltmetr/galvanometr, klemmalar, simlar, laboratoriya manbai, pichoqli kalit.
-// Ishlatiladi: joule.js, discharge.js. Ranglar readColors() tokenlaridan + asbob korpusining o'z ranglari.
+// Ishlatiladi: joule.js, discharge.js, semi.js. Ranglar readColors() tokenlaridan + asbob korpusining o'z ranglari.
 // ==========================================================================
 
 import { clamp, fmt } from "./sim-kit.js";
@@ -131,5 +131,51 @@ export function stopwatch(ctx, c, x, y, w, t, running) {
   ctx.fillStyle = "#1a2e05"; ctx.font = `700 ${Math.round(h * 0.3)}px "SFMono-Regular", Menlo, Consolas, ui-monospace, monospace`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
   ctx.fillText(`${String(m).padStart(2, "0")}:${sec.toFixed(1).padStart(4, "0").replace(".", ",")}`, x + w / 2, y + h * 0.47);
   ctx.fillStyle = running ? "#ef4444" : "#64748b"; ctx.beginPath(); ctx.arc(x + w * 0.88, y + h * 0.88, h * 0.06, 0, TAU); ctx.fill();
+  ctx.restore();
+}
+
+/**
+ * Raqamli multimetr (sariq rezina g'ilofda): LCD, rejim tanlagich, uyachalar.
+ * o: { text, unit, mode: "Ω" | "V" | "A" | "mA" | "μA", jack: "V" | "A" (qizil sim qaysi uyachada) }
+ * Balandligi w·1,62. Qaytaradi: { com: [x, y], red: [x, y], dial: { x, y, r }, box }
+ */
+export function multimeter(ctx, c, x, y, w, o) {
+  const h = w * 1.62;
+  ctx.save();
+  ctx.fillStyle = "#eab308"; ctx.beginPath(); ctx.roundRect(x, y, w, h, w * 0.12); ctx.fill();
+  ctx.strokeStyle = "#a16207"; ctx.lineWidth = 1; ctx.stroke();
+  ctx.fillStyle = "#27272a"; ctx.beginPath(); ctx.roundRect(x + w * 0.07, y + w * 0.07, w * 0.86, h - w * 0.14, w * 0.07); ctx.fill();
+  // LCD
+  const lx = x + w * 0.14, ly = y + w * 0.14, lw = w * 0.72, lh = w * 0.34;
+  ctx.fillStyle = "#b5c4a1"; ctx.beginPath(); ctx.roundRect(lx, ly, lw, lh, 3); ctx.fill();
+  ctx.fillStyle = "#1a2e05"; ctx.textAlign = "right"; ctx.textBaseline = "middle";
+  ctx.font = `700 ${Math.round(lh * 0.46)}px "SFMono-Regular", Menlo, Consolas, ui-monospace, monospace`;
+  ctx.fillText(o.text, lx + lw * 0.76, ly + lh * 0.52);
+  ctx.font = font(800, lh * 0.3); ctx.textAlign = "left"; ctx.fillText(o.unit, lx + lw * 0.8, ly + lh * 0.55);
+  // rejim tanlagich
+  const dx = x + w / 2, dy = y + w * 0.82, dr = w * 0.2, MODES = ["V", "Ω", "μA", "mA", "A"], k = Math.max(0, MODES.indexOf(o.mode));
+  ctx.fillStyle = "#3f3f46"; ctx.beginPath(); ctx.arc(dx, dy, dr * 1.55, 0, TAU); ctx.fill();
+  ctx.fillStyle = "#e4e4e7"; ctx.font = font(700, Math.max(6, w * 0.08)); ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  MODES.forEach((m, i) => { const a = (-150 + i * 75) * DEG; ctx.fillStyle = i === k ? "#facc15" : "#a1a1aa"; ctx.fillText(m, dx + Math.cos(a - Math.PI / 2) * dr * 1.3, dy + Math.sin(a - Math.PI / 2) * dr * 1.3); });
+  const g = ctx.createRadialGradient(dx - dr * 0.3, dy - dr * 0.3, dr * 0.1, dx, dy, dr);
+  g.addColorStop(0, "#52525b"); g.addColorStop(1, "#18181b"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(dx, dy, dr, 0, TAU); ctx.fill();
+  const a = (-150 + k * 75) * DEG - Math.PI / 2; ctx.strokeStyle = "#f4f4f5"; ctx.lineWidth = Math.max(1.5, w * 0.03); ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(dx + Math.cos(a) * dr * 0.2, dy + Math.sin(a) * dr * 0.2); ctx.lineTo(dx + Math.cos(a) * dr * 0.9, dy + Math.sin(a) * dr * 0.9); ctx.stroke();
+  // uyachalar
+  const jy = y + h - w * 0.2, com = [x + w * 0.5, jy], vj = [x + w * 0.78, jy], aj = [x + w * 0.22, jy], red = o.jack === "A" ? aj : vj;
+  [[aj, "A"], [com, "COM"], [vj, "VΩ"]].forEach(([p, t]) => {
+    ctx.fillStyle = "#09090b"; ctx.beginPath(); ctx.arc(p[0], p[1], w * 0.06, 0, TAU); ctx.fill();
+    ctx.strokeStyle = t === "COM" ? "#52525b" : "#dc2626"; ctx.lineWidth = Math.max(1, w * 0.02); ctx.stroke();
+    ctx.fillStyle = "#d4d4d8"; ctx.font = font(700, Math.max(5.5, w * 0.065)); ctx.fillText(t, p[0], p[1] - w * 0.11);
+  });
+  ctx.restore();
+  return { com, red, dial: { x: dx, y: dy, r: dr * 1.55 }, box: { x, y, w, h } };
+}
+
+/** Sim uchidagi shtekerlar (banan-vilka) uyachaga kirgan holda */
+export function plug(ctx, x, y, r, color) {
+  ctx.save();
+  ctx.fillStyle = color; ctx.beginPath(); ctx.roundRect(x - r, y - r * 2.6, r * 2, r * 2.4, r * 0.5); ctx.fill();
+  ctx.fillStyle = "rgba(255,255,255,0.25)"; ctx.fillRect(x - r * 0.6, y - r * 2.4, r * 0.4, r * 2);
   ctx.restore();
 }
