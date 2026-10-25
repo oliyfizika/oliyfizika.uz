@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kulon qonuni | OliyFizika.uz</title>
-<meta name="description" content="Interaktiv simulyatsiya: nuqtaviy zaryadlar orasidagi o‘zaro ta’sir kuchi, elektr maydon chiziqlari, muhitning dielektrik singdiruvchanligi va F(r) grafigi.">
+<title>Kulon qonuni va elektr maydon | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: ipga osilgan sharcha bilan Kulon qonunini o‘lchash (transportir va chizg‘ich, zaryadni teng bo‘lish usuli), nuqtaviy zaryadlar maydonining superpozitsiyasi (kuch chiziqlari, moydagi yorma donalari, sinov zaryadi), zaryadlangan o‘tkazgich va dielektrik shar maydoni, Van de Graaf generatori va havoning teshilishi.">
 <script src="../assets/js/core/theme-boot.js"></script>
 <link rel="stylesheet" href="../assets/css/app.css">
 <link rel="stylesheet" href="../assets/css/simulation.css">
@@ -12,101 +12,105 @@
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
 <script type="module" src="../assets/js/simulations/coulomb.js"></script>
 </head>
-<body class="of-ui of-sim-page" data-shell-title="Kulon qonuni" data-shell-public="true">
+<body class="of-ui of-sim-page" data-shell-title="Kulon qonuni va elektr maydon" data-shell-public="true">
 
-<div class="of-page of-container sim-page" id="coulombSim">
+<div class="of-page of-container sim-page sim-page--compact" id="coulombSim">
 
   <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
 
-  <header class="sim-head">
+  <header class="sim-head sim-head--compact">
     <div class="sim-head__text">
-      <span class="of-badge of-badge--green">Elektr va magnetizm</span>
-      <h1>Kulon qonuni</h1>
-      <p>Ikki nuqtaviy zaryad bir-biriga zaryadlar ko‘paytmasiga to‘g‘ri, masofa kvadratiga teskari proporsional kuch bilan ta’sir qiladi. Bir xil ishorali zaryadlar itariladi, har xil ishoralilar tortishadi.</p>
+      <span class="of-badge of-badge--blue">Elektr va magnetizm</span>
+      <h1>Kulon qonuni va elektr maydon</h1>
     </div>
-    <div class="sim-formula" aria-label="F = k modul q1 q2 bo'linsin epsilon r kvadrat"><small>Kulon qonuni</small> F = k·|q₁q₂| / (ε r²)</div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
   </header>
 
-  <div class="sim-layout">
+  <div class="sim-layout sim-layout--graph-top">
     <div class="sim-main">
-      <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="law" aria-pressed="true">Kulon qonuni</button>
+            <button type="button" data-mode-value="sup" aria-pressed="false">Superpozitsiya</button>
+            <button type="button" data-mode-value="sph" aria-pressed="false">Zaryadlangan shar</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" data-draggable="true" role="img" aria-label="Kulon qonuni simulyatsiyasi"></canvas>
+          <canvas id="stage" role="img" aria-label="Kulon qonuni va elektr maydon tajribasi"></canvas>
         </div>
         <div class="sim-toolbar">
-          <span class="sim-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v5"/><path d="M13 10V4a2 2 0 0 1 4 0v7"/><path d="M17 8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L4 14.5a2 2 0 0 1 3.2-2.4L9 14"/></svg>Zaryadlarni sudrab masofani o‘zgartiring</span>
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-record data-tool="law">Nuqta yozish</button>
+          <button class="of-btn of-btn--sm" type="button" data-halve data-tool="law">Neytral sharcha tegizish</button>
+          <button class="of-btn of-btn--sm" type="button" data-add data-tool="sup">Zaryad qo‘shish</button>
+          <button class="of-btn of-btn--sm" type="button" data-remove data-tool="sup">Olib tashlash</button>
+          <button class="of-btn of-btn--sm" type="button" data-charge data-tool="sph">Zaryadlash</button>
+          <button class="of-btn of-btn--sm" type="button" data-ground data-tool="sph">Yerga ulash</button>
           <span class="sim-status" data-status role="status" aria-live="polite"></span>
         </div>
       </section>
 
-      <section class="sim-readouts" aria-label="Natijalar">
-        <div class="of-card sim-readout" data-readout="F">
-          <span class="sim-readout__label"><span>Kuch moduli <i>F</i></span></span>
-          <span class="sim-readout__value" data-value></span>
-          <span class="sim-readout__sub" data-sub></span>
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
         </div>
-        <div class="of-card sim-readout" data-readout="E">
-          <span class="sim-readout__label"><span>q₁ maydoni q₂ joyida <i>E</i></span></span>
-          <span class="sim-readout__value" data-value></span>
-          <span class="sim-readout__sub" data-sub></span>
-        </div>
-        <div class="of-card sim-readout" data-readout="W">
-          <span class="sim-readout__label"><span>Potensial energiya <i>W</i></span></span>
-          <span class="sim-readout__value" data-value></span>
-          <span class="sim-readout__sub" data-sub></span>
-        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
       </section>
 
-      <section class="of-card sim-graph" aria-label="F(r) grafigi">
-        <div class="sim-graph__head"><h2>Kuchning masofaga bog‘liqligi F(r)</h2><p>Zaryadlar va muhit o‘zgarmaganda</p></div>
-        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="F(r) grafigi"></canvas></div>
-      </section>
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
     </div>
 
     <aside class="of-card sim-panel" aria-label="Boshqaruv">
       <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
 
       <div class="sim-group">
-        <span class="sim-group__title">Tayyor holatlar</span>
-        <div class="sim-presets">
-          <button class="sim-preset" type="button" data-preset="4,-4,0.4,1">Tortishish (+ −)</button>
-          <button class="sim-preset" type="button" data-preset="4,4,0.4,1">Itarilish (+ +)</button>
-          <button class="sim-preset" type="button" data-preset="-3,-6,0.4,1">Itarilish (− −)</button>
-          <button class="sim-preset" type="button" data-preset="4,-4,0.4,81">Suvda</button>
-        </div>
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
       </div>
 
-      <div class="sim-group sim-group--grid">
-        <span class="sim-group__title">Zaryadlar va masofa</span>
+      <div class="sim-group sim-group--grid" data-ctl="law">
+        <span class="sim-group__title">Sharchalar</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="lq1">Osma sharcha zaryadi q₁</label><output for="lq1" id="lq1Out"></output></div><input class="sim-range" type="range" id="lq1" min="-8" max="8" step="0.5" value="7"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lq2">Stenddagi sharcha zaryadi q₂</label><output for="lq2" id="lq2Out"></output></div><input class="sim-range" type="range" id="lq2" min="-8" max="8" step="0.5" value="7"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lD">Stend joyi (ipdan) D</label><output for="lD" id="lDOut"></output></div><input class="sim-range" type="range" id="lD" min="2" max="14" step="0.1" value="4"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lm">Osma sharcha massasi m</label><output for="lm" id="lmOut"></output></div><input class="sim-range" type="range" id="lm" min="0.02" max="0.3" step="0.01" value="0.05"></div>
+        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuchlar (mg, T, F)</label>
+        <p class="of-subtle">Stenddagi sharchani asosidan ushlab chizg‘ich bo‘ylab suring. Burchakni transportirdan, masofani chizg‘ichdan o‘qing va «Nuqta yozish» bilan grafikka qo‘ying. Sharchalar folga qoplangan po‘kak, radiusi 5 mm, ip uzunligi 15 cm. Bunday sharchada 8 nC dan ortiq zaryad turmaydi — havo teshiladi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="sup">
+        <span class="sim-group__title">Tanlangan zaryad</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="sq">Zaryad q</label><output for="sq" id="sqOut"></output></div><input class="sim-range" type="range" id="sq" min="-20" max="20" step="1" value="10"></div>
         <div class="sim-control">
-          <div class="sim-control__row"><label for="q1">1-zaryad q₁</label><output for="q1" id="q1Out"></output></div>
-          <input class="sim-range" type="range" id="q1" min="-10" max="10" step="0.5" value="4">
-        </div>
-        <div class="sim-control">
-          <div class="sim-control__row"><label for="q2">2-zaryad q₂</label><output for="q2" id="q2Out"></output></div>
-          <input class="sim-range" type="range" id="q2" min="-10" max="10" step="0.5" value="-4">
-        </div>
-        <div class="sim-control">
-          <div class="sim-control__row"><label for="r">Masofa r</label><output for="r" id="rOut"></output></div>
-          <input class="sim-range" type="range" id="r" min="0.1" max="1" step="0.01" value="0.4">
-        </div>
-        <div class="sim-control">
-          <div class="sim-control__row"><label for="eps">Muhit</label><output for="eps" id="epsOut"></output></div>
-          <select class="sim-select" id="eps">
-            <option value="1" selected>Vakuum / havo</option>
-            <option value="2.1">Kerosin</option>
-            <option value="2.2">Transformator moyi</option>
-            <option value="7">Shisha</option>
-            <option value="81">Suv</option>
+          <div class="sim-control__row"><label for="smed">Kyuveta ichidagi muhit</label></div>
+          <select class="sim-select" id="smed">
+            <option value="air">Havo (ε = 1)</option>
+            <option value="trafo">Transformator moyi (ε = 2,2)</option>
+            <option value="castor">Kastor moyi (ε = 4,7)</option>
+            <option value="glycerin">Glitserin (ε = 43)</option>
           </select>
         </div>
+        <label class="sim-switch"><input type="checkbox" data-toggle="lines" checked><span class="sim-switch__ui"></span>Kuch chiziqlari</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="grains"><span class="sim-switch__ui"></span>Yorma donalari (moyda)</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="parts" checked><span class="sim-switch__ui"></span>Har bir zaryad maydoni E₁, E₂, …</label>
+        <p class="of-subtle">Zaryadli sharchalarni va sariq sinov zaryadi q₀ ni sahnada suring; sharchani bosib tanlang. Vektorlar bitta chiziqli masshtabda — natijaviy E aynan qismlarning geometrik yig‘indisi.</p>
       </div>
 
-      <div class="sim-group">
-        <span class="sim-group__title">Ko‘rinish</span>
-        <label class="sim-switch"><input type="checkbox" data-toggle="field" checked><span class="sim-switch__ui"></span>Maydon chiziqlari</label>
-        <label class="sim-switch"><input type="checkbox" data-toggle="forces" checked><span class="sim-switch__ui"></span>Kuch vektorlari</label>
-        <p class="of-subtle">Kuch qiymati juda keng oraliqda o‘zgargani uchun o‘q uzunligi logarifmik masshtabda. Aniq qiymat — natijalarda.</p>
+      <div class="sim-group sim-group--grid" data-ctl="sph">
+        <span class="sim-group__title">Shar</span>
+        <div class="of-segment" role="group" aria-label="Shar turi" data-type>
+          <button type="button" data-type-value="shell" aria-pressed="true">Metall (o‘tkazgich)</button>
+          <button type="button" data-type-value="solid" aria-pressed="false">Dielektrik (hajmda)</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="pQ">Shar zaryadi Q</label><output for="pQ" id="pQOut"></output></div><input class="sim-range" type="range" id="pQ" min="-5000" max="5000" step="10" value="400"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="pR">Shar radiusi R</label><output for="pR" id="pROut"></output></div><input class="sim-range" type="range" id="pR" min="3" max="12" step="0.5" value="8"></div>
+        <label class="sim-switch"><input type="checkbox" data-toggle="cut" checked><span class="sim-switch__ui"></span>Kesim (ichini ko‘rsatish)</label>
+        <p class="of-subtle">Zond sharchani izolyator dastasidan ushlab istalgan joyga — shar ichiga ham — olib boring. Havo 3 MV/m da teshiladi: zaryad oshib ketsa, o‘ngdagi yerga ulangan sharchaga uchqun sakraydi.</p>
       </div>
     </aside>
   </div>
@@ -114,17 +118,20 @@
   <section class="sim-explain">
     <div class="of-card">
       <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
       <div class="sim-live" data-explain aria-live="polite"></div>
     </div>
     <div class="of-card">
       <h2>Formulalar</h2>
       <ul>
-        <li>Kulon qonuni: <span class="sim-math">F = k |q₁| |q₂| / (ε r²)</span>, <span class="sim-math">k = 9·10⁹ N·m²/C²</span></li>
-        <li>Nyutonning 3-qonuni: <span class="sim-math">F₁₂ = −F₂₁</span> — kuchlar teng va qarama-qarshi</li>
-        <li>Maydon kuchlanganligi: <span class="sim-math">E = k |q| / (ε r²)</span>, <span class="sim-math">F = |q| E</span></li>
-        <li>Potensial energiya: <span class="sim-math">W = k q₁ q₂ / (ε r)</span></li>
-        <li><span class="sim-math">1 μC = 10<sup>−6</sup> C</span></li>
+        <li>Kulon qonuni: <span class="sim-math">F = k|q₁||q₂|/(εr²)</span>, <span class="sim-math">k = 1/(4πε₀) = 9·10⁹ N·m²/C²</span></li>
+        <li>Osma sharcha muvozanati: <span class="sim-math">tg α = F/(mg)</span>, <span class="sim-math">T = mg/cos α</span></li>
+        <li>Maydon kuchlanganligi: <span class="sim-math">E = F/q₀</span>; nuqtaviy zaryad: <span class="sim-math">E = k|q|/(εr²)</span></li>
+        <li>Superpozitsiya: <span class="sim-math">E = E₁ + E₂ + … </span> (vektorlar), <span class="sim-math">φ = φ₁ + φ₂ + …</span> (sonlar)</li>
+        <li>Zaryadlangan shar: <span class="sim-math">r ≥ R</span> da <span class="sim-math">E = kQ/r²</span>, <span class="sim-math">φ = kQ/r</span>; o‘tkazgich ichida <span class="sim-math">E = 0</span>, <span class="sim-math">φ = kQ/R</span>; dielektrik shar ichida <span class="sim-math">E = kQr/R³</span></li>
+        <li>Sirt zichligi: <span class="sim-math">σ = Q/(4πR²)</span>, sirt yonida <span class="sim-math">E = σ/ε₀</span>; havo teshilishi: <span class="sim-math">E ≈ 3 MV/m</span></li>
       </ul>
+      <p class="of-subtle" style="margin-top:10px">Model: sharchalar nuqtaviy zaryad deb olinadi (radiusi masofadan ancha kichik bo‘lganda to‘g‘ri; juda yaqin kelganda o‘tkazgich sharchalarda zaryad qayta taqsimlanadi va kuch biroz farq qiladi). Osma sharcha muvozanati to‘liq energiyaning minimumidan topiladi; mg·tg α kuchni kuch gorizontal deb hisoblaydi, shuning uchun Kulon formulasidan bir necha foizgacha farq qilishi mumkin. Superpozitsiya rejimida kyuveta tubidagi masofalar ko‘rsatilgan; moy yorma donalari maydon bo‘ylab tizilishini ko‘rsatadi, kuch chiziqlarining zichligi esa maydon kuchlanganligiga proporsional.</p>
     </div>
   </section>
 </div>

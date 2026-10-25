@@ -10,7 +10,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F15 | Molekulyar harakat va ideal gaz (zarrachalar idishda; p, V, T, Maksvell taqsimoti, izojarayonlar) | 11 | 7, 9 | ✅ | gas.html |
 | F32 | Amper kuchi, tokli ramka momenti, tok-tok ta’siri, elektrdvigatel | 10 | 8, 10, 11 | ✅ | magnetism.html |
 | F31 | Magnit maydon: doimiy magnit, Ersted, solenoid, Yer magniti | 9 | 8, 10, 11 | ✅ | magnetism.html |
-| F22 | Kulon qonuni va elektr maydon (chiziqlar, superpozitsiya, sfera) | 7 | 7, 8, 10 | ◐ | coulomb-law.html bor; superpozitsiya/sfera yo‘q |
+| F22 | Kulon qonuni va elektr maydon (chiziqlar, superpozitsiya, sfera) | 7 | 7, 8, 10 | ✅ | coulomb-law.html (2026-10-25, qayta yasaldi): osma sharcha (transportir, chizg‘ich, F = mg·tg α, F(1/r²), Kulon usuli bilan zaryadni bo‘lish, tegishda tenglashish), superpozitsiya (1–5 zaryad, sinov zaryadi, E₁ + E₂ + …, kuch chiziqlari, kastor moyidagi yorma), zaryadlangan metall/dielektrik shar, Van de Graaf va havo teshilishi; 7§44, 8§6 — electroscope.html |
 | F37 | O‘zgaruvchan tok: fazor, RLC, rezonans, quvvat koeffitsiyenti | 7 | 11 | ✅ | lc.html |
 | F21 | Elektrlanish va elektroskop (zaryad ko‘chishi, induksiya) | 6 | 7, 8 | ✅ | electroscope.html (2026-10-24): ishqalash, tegizish, induksiya, yerga ulash, ikki elektroskop |
 | F41 | Linzalar, tasvir yasash, linza formulasi, optik asboblar, ko‘z | 6 | 7, 9 | ✅ | lens.html |
@@ -76,15 +76,14 @@ Holat: 2026-10-25.
 | 7 | 62 | 45 | **44** (98 %) | 1 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **41** (91 %) | 4 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **34** (89 %) | 4 | 6 (5 / 1) | 14 (14) | 7 |
-| 10 | 59 | 44 | **37** (84 %) | 7 | 4 (4 / 0) | 14 (12) | 1 |
+| 10 | 59 | 44 | **39** (89 %) | 5 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **194** (90 %) | **21** | **22** (20 / 2) | **52** (50) | **18** |
+| **Jami** | **285** | **215** | **196** (91 %) | **19** | **22** (20 / 2) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
 | F11 | 10§12, 10§13 | 2 |
 | F20 | 9§41, 9§42 | 2 |
-| F22 | 10§24, 10§25 | 2 |
 | F25 | 8§34, 8§36 | 2 |
 | F29 | 8§47, 8§48 | 2 |
 | F30 | 10§43, 10§44 | 2 |
