@@ -1,0 +1,135 @@
+// ==========================================================================
+// Laboratoriya asboblarini realistik chizish (ekran koordinatasida, o'lcham px):
+// strelkali ampermetr/voltmetr/galvanometr, klemmalar, simlar, laboratoriya manbai, pichoqli kalit.
+// Ishlatiladi: joule.js, discharge.js. Ranglar readColors() tokenlaridan + asbob korpusining o'z ranglari.
+// ==========================================================================
+
+import { clamp, fmt } from "./sim-kit.js";
+
+const TAU = Math.PI * 2, DEG = Math.PI / 180;
+const font = (w, px) => `${w} ${Math.round(px)}px Inter, system-ui, sans-serif`;
+
+/** Klemma (vint): rang — qizil "+" yoki qora "−" */
+export function terminal(ctx, x, y, r, color) {
+  const g = ctx.createRadialGradient(x - r * 0.3, y - r * 0.3, r * 0.1, x, y, r);
+  g.addColorStop(0, "#fff"); g.addColorStop(0.35, color); g.addColorStop(1, "#111827");
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+  ctx.strokeStyle = "rgba(0,0,0,0.45)"; ctx.lineWidth = 1; ctx.stroke();
+}
+
+/** Sim: nuqtalar ro'yxati bo'ylab yumaloq burchakli chiziq; on — tok o'tayotgani (biroz yorqinroq) */
+export function wire(ctx, c, pts, { color, width = 2.4, on = false } = {}) {
+  if (pts.length < 2) return;
+  ctx.save(); ctx.lineJoin = "round"; ctx.lineCap = "round";
+  ctx.strokeStyle = color || (c.dark ? "#f87171" : "#b91c1c"); ctx.lineWidth = width + 1.6; ctx.globalAlpha = 0.25;
+  ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke();
+  ctx.globalAlpha = on ? 1 : 0.85; ctx.lineWidth = width; ctx.stroke();
+  ctx.restore();
+}
+
+/**
+ * Strelkali o'lchov asbobi (laboratoriya ampermetri/voltmetri).
+ * o: { value, max, min = 0, sym: "A" | "V" | "mA" | "μA" | "kV", label, digits, zeroCenter, plusLeft, ac (o‘zgaruvchan tok: ishorasiz klemmalar), ticks }
+ * Qaytaradi: { plus: [x, y], minus: [x, y], box }
+ */
+export function analogMeter(ctx, c, x, y, w, o) {
+  const h = w * 0.82, r = w * 0.44, cx = x + w / 2, cy = y + h * 0.78;
+  const min = o.min ?? (o.zeroCenter ? -o.max : 0), max = o.max, span = 96 * DEG, a0 = -Math.PI / 2 - span / 2;
+  ctx.save();
+  // korpus (qora plastik)
+  ctx.fillStyle = c.dark ? "#1f2937" : "#27272a"; ctx.beginPath(); ctx.roundRect(x, y, w, h, w * 0.06); ctx.fill();
+  ctx.strokeStyle = c.dark ? "#475569" : "#18181b"; ctx.lineWidth = 1; ctx.stroke();
+  // shkala oynasi
+  const fx = x + w * 0.07, fy = y + w * 0.06, fw = w * 0.86, fh = h * 0.66;
+  ctx.fillStyle = c.dark ? "#e7e5e4" : "#fafaf9"; ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, w * 0.03); ctx.fill();
+  ctx.save(); ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, w * 0.03); ctx.clip();
+  // oyna (paralaksga qarshi ko'zgu yoyi)
+  ctx.strokeStyle = "rgba(148,163,184,0.6)"; ctx.lineWidth = w * 0.025; ctx.beginPath(); ctx.arc(cx, cy, r * 0.78, a0, a0 + span); ctx.stroke();
+  // bo'linmalar
+  const n = o.ticks || 10;
+  ctx.strokeStyle = "#1c1917"; ctx.fillStyle = "#1c1917"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.font = font(600, Math.max(7, w * 0.075));
+  ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(cx, cy, r * 0.9, a0, a0 + span); ctx.stroke();
+  for (let k = 0; k <= n * 5; k++) {
+    const a = a0 + (span * k) / (n * 5), big = k % 5 === 0, L = big ? r * 0.12 : r * 0.06;
+    ctx.lineWidth = big ? 1.2 : 0.7;
+    ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * r * 0.9, cy + Math.sin(a) * r * 0.9); ctx.lineTo(cx + Math.cos(a) * (r * 0.9 + L), cy + Math.sin(a) * (r * 0.9 + L)); ctx.stroke();
+    if (big && (k / 5) % (n > 5 ? 2 : 1) === 0) {
+      const v = min + ((max - min) * k) / (n * 5);
+      ctx.fillText(fmt(v, o.digits ?? (Math.abs(max - min) < 5 ? 1 : 0)), cx + Math.cos(a) * r * 1.13, cy + Math.sin(a) * r * 1.13);
+    }
+  }
+  ctx.font = font(800, w * 0.13); ctx.fillText(o.sym, cx, cy - r * 0.42);
+  if (o.label) { ctx.font = font(600, Math.max(6.5, w * 0.06)); ctx.fillStyle = "#57534e"; ctx.fillText(o.label, cx, cy - r * 0.2); }
+  // strelka
+  const f = clamp((o.value - min) / (max - min), -0.03, 1.03), a = a0 + span * f;
+  ctx.strokeStyle = "#dc2626"; ctx.lineWidth = Math.max(1.2, w * 0.014); ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(a) * r * 1.02, cy + Math.sin(a) * r * 1.02); ctx.stroke();
+  ctx.restore();
+  ctx.fillStyle = "#44403c"; ctx.beginPath(); ctx.arc(cx, cy, w * 0.045, 0, TAU); ctx.fill();
+  // klemmalar
+  const ty = y + h * 0.9, R = [x + w * 0.78, ty], L = [x + w * 0.22, ty], plus = o.plusLeft ? L : R, minus = o.plusLeft ? R : L;
+  terminal(ctx, plus[0], plus[1], w * 0.055, o.ac ? "#334155" : "#dc2626"); terminal(ctx, minus[0], minus[1], w * 0.055, "#334155");
+  ctx.fillStyle = "#e5e7eb"; ctx.font = font(800, w * 0.08); ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  const sg = o.plusLeft ? -1 : 1;
+  if (o.ac) ctx.fillText("~", cx, ty); else { ctx.fillText("+", plus[0] - sg * w * 0.12, ty); ctx.fillText("−", minus[0] + sg * w * 0.12, ty); }
+  ctx.restore();
+  return { plus, minus, box: { x, y, w, h } };
+}
+
+/**
+ * Laboratoriya manbai: raqamli displey, aylanadigan dasta (knob), klemmalar.
+ * o: { value, unit, frac (dasta holati 0…1), title, on }
+ */
+export function powerSupply(ctx, c, x, y, w, h, o) {
+  ctx.save();
+  const g = ctx.createLinearGradient(0, y, 0, y + h); g.addColorStop(0, c.dark ? "#475569" : "#e2e8f0"); g.addColorStop(1, c.dark ? "#334155" : "#cbd5e1");
+  ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(x, y, w, h, Math.min(8, w * 0.05)); ctx.fill();
+  ctx.strokeStyle = c.dark ? "#64748b" : "#94a3b8"; ctx.lineWidth = 1; ctx.stroke();
+  // displey
+  const dx = x + w * 0.08, dy = y + h * 0.12, dw = w * 0.84, dh = h * 0.34;
+  ctx.fillStyle = "#0b1220"; ctx.beginPath(); ctx.roundRect(dx, dy, dw, dh, 4); ctx.fill();
+  ctx.fillStyle = o.on === false ? "#334155" : "#4ade80"; ctx.font = `700 ${Math.round(dh * 0.62)}px "SFMono-Regular", Menlo, Consolas, ui-monospace, monospace`;
+  ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText(o.text ?? fmt(o.value, 1), dx + dw - dh * 0.9, dy + dh / 2 + 1);
+  ctx.fillStyle = "#94a3b8"; ctx.font = font(700, dh * 0.36); ctx.textAlign = "left"; ctx.fillText(o.unit, dx + dw - dh * 0.8, dy + dh / 2 + 1);
+  ctx.fillStyle = c.dark ? "#cbd5e1" : "#334155"; ctx.font = font(700, Math.max(8, h * 0.085)); ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText(o.title || "", x + w * 0.08, y + h * 0.52);
+  // dasta
+  const kx = x + w * 0.3, ky = y + h * 0.77, kr = Math.min(w, h) * 0.13;
+  ctx.fillStyle = c.dark ? "#1e293b" : "#334155"; ctx.beginPath(); ctx.arc(kx, ky, kr, 0, TAU); ctx.fill();
+  ctx.strokeStyle = c.primary; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(kx, ky, kr + 4, 135 * DEG, (135 + 270 * clamp(o.frac, 0, 1)) * DEG); ctx.stroke();
+  const ka = (135 + 270 * clamp(o.frac, 0, 1)) * DEG; ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(kx + Math.cos(ka) * kr * 0.25, ky + Math.sin(ka) * kr * 0.25); ctx.lineTo(kx + Math.cos(ka) * kr * 0.85, ky + Math.sin(ka) * kr * 0.85); ctx.stroke();
+  // klemmalar
+  const plus = [x + w * 0.82, ky], minus = [x + w * 0.62, ky];
+  terminal(ctx, plus[0], plus[1], Math.max(4, h * 0.06), "#dc2626"); terminal(ctx, minus[0], minus[1], Math.max(4, h * 0.06), "#334155");
+  ctx.restore();
+  return { plus, minus, knob: { x: kx, y: ky, r: kr + 6 }, box: { x, y, w, h } };
+}
+
+/** Pichoqli kalit: a, b — klemmalar (ekranda), closed */
+export function knifeSwitch(ctx, c, a, b, closed, s = 1) {
+  ctx.save();
+  const [ax, ay] = a, [bx, by] = b, L = Math.hypot(bx - ax, by - ay);
+  ctx.fillStyle = c.dark ? "#334155" : "#e7e5e4"; ctx.strokeStyle = c.dark ? "#64748b" : "#a8a29e"; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.roundRect(ax - 8 * s, ay - 7 * s, L + 16 * s, 14 * s, 3 * s); ctx.fill(); ctx.stroke();
+  terminal(ctx, ax, ay, 4 * s, "#a1a1aa"); terminal(ctx, bx, by, 4 * s, "#a1a1aa");
+  const ang = Math.atan2(by - ay, bx - ax) - (closed ? 0 : 32 * DEG);
+  ctx.strokeStyle = c.dark ? "#cbd5e1" : "#78716c"; ctx.lineWidth = 3.4 * s; ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(ax + Math.cos(ang) * L, ay + Math.sin(ang) * L); ctx.stroke();
+  ctx.fillStyle = "#111827"; ctx.beginPath(); ctx.arc(ax + Math.cos(ang) * (L + 4 * s), ay + Math.sin(ang) * (L + 4 * s), 4 * s, 0, TAU); ctx.fill();
+  ctx.restore();
+  return { x: (ax + bx) / 2, y: ay - 10 * s, r: Math.max(18, L * 0.7) };
+}
+
+/** Raqamli sekundomer (LCD) */
+export function stopwatch(ctx, c, x, y, w, t, running) {
+  const h = w * 0.62;
+  ctx.save();
+  ctx.fillStyle = c.dark ? "#475569" : "#94a3b8"; ctx.beginPath(); ctx.roundRect(x + w * 0.42, y - h * 0.14, w * 0.16, h * 0.16, 2); ctx.fill();
+  ctx.fillStyle = c.dark ? "#1e293b" : "#334155"; ctx.beginPath(); ctx.roundRect(x, y, w, h, h * 0.25); ctx.fill();
+  ctx.fillStyle = "#a3b18a"; ctx.beginPath(); ctx.roundRect(x + w * 0.08, y + h * 0.18, w * 0.84, h * 0.56, 3); ctx.fill();
+  const m = Math.floor(t / 60), sec = t % 60;
+  ctx.fillStyle = "#1a2e05"; ctx.font = `700 ${Math.round(h * 0.3)}px "SFMono-Regular", Menlo, Consolas, ui-monospace, monospace`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+  ctx.fillText(`${String(m).padStart(2, "0")}:${sec.toFixed(1).padStart(4, "0").replace(".", ",")}`, x + w / 2, y + h * 0.47);
+  ctx.fillStyle = running ? "#ef4444" : "#64748b"; ctx.beginPath(); ctx.arc(x + w * 0.88, y + h * 0.88, h * 0.06, 0, TAU); ctx.fill();
+  ctx.restore();
+}

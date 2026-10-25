@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tok ishi, quvvati va Joul–Lens qonuni | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: kalorimetrdagi nixrom spiral bilan Joul–Lens qonunini tekshirish (ampermetr, voltmetr, termometr, sekundomer, ketma-ket va parallel spirallar), cho‘g‘lanma lampa quvvati va qarshiligining kuchlanishga bog‘liqligi (LATR, 40 W va 100 W ketma-ket), uy tarmog‘i: elektr hisoblagich, kVt·soat, saqlagich va ortiqcha yuklanish.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/joule.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Tok ishi, quvvati va Joul–Lens qonuni" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="jouleSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Elektr va magnetizm</span>
+      <h1>Tok ishi, quvvati va Joul–Lens qonuni</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="kal" aria-pressed="true">Joul–Lens</button>
+            <button type="button" data-mode-value="lamp" aria-pressed="false">Lampa quvvati</button>
+            <button type="button" data-mode-value="home" aria-pressed="false">Uy tarmog‘i</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Tok ishi va quvvati tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <button class="of-btn of-btn--sm" type="button" data-key data-tool="kal">Kalitni ulash</button>
+          <button class="of-btn of-btn--sm" type="button" data-fuse data-tool="home">Avtomatni o‘chirish</button>
+          <div class="of-segment" role="group" aria-label="Vaqt tezligi" data-speed>
+            <button type="button" data-speed-value="1" aria-pressed="false">1×</button>
+            <button type="button" data-speed-value="10" aria-pressed="true">10×</button>
+            <button type="button" data-speed-value="60" aria-pressed="false">60×</button>
+          </div>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar">
+          <h2 data-graph-title></h2>
+          <div class="of-segment" role="group" aria-label="Grafik turi" data-tabs></div>
+        </div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="kal">
+        <span class="sim-group__title">Kalorimetr va spirallar</span>
+        <div class="of-segment" role="group" aria-label="Spirallarni ulash" data-conn>
+          <button type="button" data-conn-value="single" aria-pressed="true">Bitta</button>
+          <button type="button" data-conn-value="series" aria-pressed="false">Ketma-ket</button>
+          <button type="button" data-conn-value="parallel" aria-pressed="false">Parallel</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="kE">Manba kuchlanishi E</label><output for="kE" id="kEOut"></output></div><input class="sim-range" type="range" id="kE" min="0" max="12" step="0.1" value="8"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="kR1">1-spiral qarshiligi R₁</label><output for="kR1" id="kR1Out"></output></div><input class="sim-range" type="range" id="kR1" min="1" max="12" step="0.5" value="2"></div>
+        <div class="sim-control" data-r2><div class="sim-control__row"><label for="kR2">2-spiral qarshiligi R₂</label><output for="kR2" id="kR2Out"></output></div><input class="sim-range" type="range" id="kR2" min="1" max="12" step="0.5" value="4"></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="km">Suv massasi m</label><output for="km" id="kmOut"></output></div><input class="sim-range" type="range" id="km" min="50" max="300" step="10" value="150"></div>
+        <p class="of-subtle">Manba dastasini sahnada aylantiring, kalitni bosing. Kalorimetr — alyuminiy stakan (50 g) issiqlik izolyatsiyali g‘ilofda; spiral nixrom simdan. Ampermetr ketma-ket, voltmetr spirallarga parallel ulangan. Manba ichki qarshiligi 0,3 Ω.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="lamp">
+        <span class="sim-group__title">Lampalar</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="lA">1-lampa</label></div><select class="sim-select" id="lA"></select></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lB">2-lampa</label></div><select class="sim-select" id="lB"></select></div>
+        <div class="of-segment" role="group" aria-label="Lampalarni ulash" data-lconn>
+          <button type="button" data-lconn-value="series" aria-pressed="true">Ketma-ket</button>
+          <button type="button" data-lconn-value="parallel" aria-pressed="false">Parallel</button>
+        </div>
+        <div class="sim-control"><div class="sim-control__row"><label for="lU">LATR kuchlanishi U</label><output for="lU" id="lUOut"></output></div><input class="sim-range" type="range" id="lU" min="0" max="250" step="1" value="220"></div>
+        <p class="of-subtle">LATR (laboratoriya avtotransformatori) dastasini sahnada aylantiring. Lampalar 220 V ga mo‘ljallangan; 6,3 V lampa uchun kuchlanish 0–8 V oralig‘ida. Volfram tola qizigan sari qarshiligi ortadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="home">
+        <span class="sim-group__title">Uy tarmog‘i (220 V)</span>
+        <div class="sim-control"><div class="sim-control__row"><label for="hF">Saqlagich (avtomat) toki Iₙ</label></div>
+          <select class="sim-select" id="hF"><option value="6">6 A</option><option value="10">10 A</option><option value="16" selected>16 A</option><option value="25">25 A</option></select></div>
+        <div class="sim-control"><div class="sim-control__row"><label for="hT">Tarif (so‘m / kVt·soat)</label><output for="hT" id="hTOut"></output></div><input class="sim-range" type="range" id="hT" min="100" max="2000" step="50" value="1000"></div>
+        <p class="of-subtle">Iste’molchini sahnada bosib yoqing yoki o‘chiring. Hisoblagich impulsli: 3200 imp/(kVt·soat) — chiroqcha har 1/3200 kVt·soatda bir marta yonadi. Tarif taxminiy, amaldagi qiymatni kiriting.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Tok ishi: <span class="sim-math">A = UIt = I²Rt = U²t/R</span>; quvvati: <span class="sim-math">P = A/t = UI</span></li>
+        <li>Joul–Lens qonuni: <span class="sim-math">Q = I²Rt</span></li>
+        <li>Ketma-ket: tok bir xil — <span class="sim-math">Q₁/Q₂ = R₁/R₂</span>; parallel: kuchlanish bir xil — <span class="sim-math">Q₁/Q₂ = R₂/R₁</span></li>
+        <li>Kalorimetr: <span class="sim-math">Q = (c<sub>s</sub>m<sub>s</sub> + c<sub>i</sub>m<sub>i</sub>)ΔT</span>, FIK <span class="sim-math">η = Q<sub>foydali</sub>/(I²Rt)</span></li>
+        <li>Energiya: <span class="sim-math">1 kVt·soat = 3,6·10⁶ J</span>; uy tarmog‘ida <span class="sim-math">I = ΣP/U</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Model: kalorimetr suvi aralashtirib turiladi (temperatura bir xil); atrofga issiqlik yo‘qotish ΔT ga proporsional (0,15 W/K), suv 100 °C da qaynaydi va temperaturasi ortmaydi. Cho‘g‘lanma lampa toki tajribadagi I ∝ U<sup>0,58</sup> bog‘lanishdan, tola temperaturasi nurlanish balansidan (P ∝ T⁴) topiladi. Uy tarmog‘ida iste’molchilar faol qarshilik deb olingan. Saqlagich 1,45·Iₙ dan katta tokda qiziydi va tok qancha katta bo‘lsa, shuncha tez eriydi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

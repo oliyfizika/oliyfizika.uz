@@ -17,7 +17,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F1 | Harakat grafiklari (x–t, v–t, o‘rtacha tezlik, tekis va notekis harakat) | 5 | 7 | ✅ | motion.html (2026-10-24): tekis, tekis o‘zgaruvchan, uchrashish, v(t) chizish, o‘rtacha tezlik |
 | F17 | Termodinamika: p–V diagramma, 1-qonun, Karno sikli, issiqlik dvigatellari (4 taktli) | 5 | 9 | ✅ | thermo.html (2026-10-24): 1-qonun va 4 izojarayon (o‘z siklingizni yasash), Karno/Otto/to‘rtburchak sikl, sovutgich, 4 taktli dvigatel |
 | F23 | Potensial, ekvipotensial chiziqlar, ish, kondensator va sig‘im | 5 | 8, 10 | ✅ | potential.html |
-| F25 | Tok ishi, quvvati, Joul–Lens qonuni | 5 | 8 | ◐ | circuit.html da lampochkalar; alohida Joul–Lens yo‘q |
+| F25 | Tok ishi, quvvati, Joul–Lens qonuni | 5 | 8 | ✅ | joule.html (2026-10-25): kalorimetrdagi nixrom spiral (manba, pichoqli kalit, strelkali A/V, termometr, sekundomer; bitta/ketma-ket/parallel, T(t), Q(t), FIK), LATR va cho‘g‘lanma lampalar (I(U), P(U), tola temperaturasi va rangi, 40 W + 100 W), uy tarmog‘i (impulsli hisoblagich, kVt·soat, avtomat: bimetall va elektromagnit uzgich) |
 | F28 | Elektroliz va Faradey qonunlari | 5 | 8, 10 | ✅ | electrolysis.html (2026-10-24): suyuqliklarda tok (ionlar, lampa, E_p, R(t)), Faradeyning 1-qonuni (tarozi, m(t), m(q)), 2-qonuni (ketma-ket vannalar, suv elektrolizi, F ni aniqlash) |
 | F35 | O‘zinduksiya va induktivlik (RL zanjir), magnit maydon energiyasi | 5 | 10, 11 | ✅ | induction.html |
 | F40 | Yorug‘likning qaytishi, sinishi, to‘la ichki qaytish; yassi ko‘zgu | 5 | 7, 9 | ✅ | refraction-law.html |
@@ -109,7 +109,7 @@ Holat: 2026-10-25.
 | 8§14 | Zanjir yig‘ish, tok va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |
 | 8§19 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` | ○ |
 | 8§24 | Ketma-ket/parallel ulashni o‘rganish | F24 | `circuit.html?preset=series` | ○ |
-| 8§33 | Lampochka quvvatini aniqlash | F25 | `circuit.html?preset=rheostat` | ○ |
+| 8§33 | Lampochka quvvatini aniqlash | F25 | `joule.html?preset=rated` | ○ |
 | 8§58 | Elektromagnit yig‘ish | F31 | `magnetism.html?preset=electromagnet` | ○ |
 | 9§20 | Solishtirma issiqlik sig‘imi | F16 | `heat.html?preset=mixLab` | ○ |
 | 9§25 | Issiqlik miqdorlarini taqqoslash | F16 | `heat.html?preset=mixCompare` | ○ |

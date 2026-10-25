@@ -798,8 +798,8 @@
        "nom": "Laboratoriya ishi. Lampochka quvvatini aniqlash",
        "tur": "lab",
        "oila": "F25",
-       "sim": "circuit",
-       "preset": "rheostat",
+       "sim": "joule",
+       "preset": "rated",
        "lab": null
       },
       {
@@ -807,7 +807,8 @@
        "nom": "Tok ta’sirida o‘tkazgichlarning qizishi (Joul–Lens)",
        "tur": "sim",
        "oila": "F25",
-       "sim": null
+       "sim": "joule",
+       "preset": "single"
       },
       {
        "raqam": 35,
@@ -821,7 +822,8 @@
        "nom": "Joul–Lens qonunining amaliy tatbiqlari",
        "tur": "sim",
        "oila": "F25",
-       "sim": null
+       "sim": "joule",
+       "preset": "overload"
       },
       {
        "raqam": 37,
