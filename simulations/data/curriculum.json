@@ -355,7 +355,8 @@
        "nom": "Zaryadlangan jismlarning o‘zaro ta’siri",
        "tur": "sim",
        "oila": "F22",
-       "sim": "coulomb-law"
+       "sim": "coulomb-law",
+       "preset": "repel"
       },
       {
        "raqam": 44,
@@ -549,7 +550,8 @@
        "nom": "Zaryadlarning o‘zaro ta’siri. Kulon qonuni",
        "tur": "sim",
        "oila": "F22",
-       "sim": "coulomb-law"
+       "sim": "coulomb-law",
+       "preset": "rlaw"
       },
       {
        "raqam": 4,
@@ -562,7 +564,7 @@
        "nom": "Elektr maydon",
        "tur": "sim",
        "oila": "F22",
-       "sim": "potential",
+       "sim": "coulomb-law",
        "preset": "single",
        "taxminiy": true
       },
@@ -1698,14 +1700,16 @@
        "nom": "Maydon kuchlanganligi superpozitsiyasi",
        "tur": "sim",
        "oila": "F22",
-       "sim": null
+       "sim": "coulomb-law",
+       "preset": "dipole"
       },
       {
        "raqam": 25,
        "nom": "Zaryadlangan sharning maydoni",
        "tur": "sim",
        "oila": "F22",
-       "sim": null
+       "sim": "coulomb-law",
+       "preset": "shell"
       },
       {
        "raqam": 26,

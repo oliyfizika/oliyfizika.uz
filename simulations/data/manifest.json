@@ -319,17 +319,17 @@
   },
   {
    "id": "coulomb-law",
-   "title": "Kulon qonuni",
+   "title": "Kulon qonuni va elektr maydon",
    "href": "coulomb-law.html",
    "topic": "elektr",
-   "description": "Zaryadlar orasidagi tortishish va itarilish, elektr maydon chiziqlari, muhitning ta’siri va F(r) grafigi.",
+   "description": "Ipga osilgan sharcha bilan Kulon qonunini o‘lchash (F = mg·tg α, F(1/r²), Kulon usuli). Zaryadlar maydonining superpozitsiyasi: kuch chiziqlari, moydagi yorma, E₁ + E₂. Zaryadlangan shar maydoni va Van de Graaf uchquni.",
    "params": [
-    "1-zaryad q₁",
-    "2-zaryad q₂",
-    "Masofa r",
-    "Muhit ε"
+    "Zaryadlar q₁, q₂ va stend joyi (suriladi)",
+    "Sharcha massasi m",
+    "Superpozitsiya: 1–5 zaryad va q₀ (suriladi), muhit ε",
+    "Shar: Q, R, metall / dielektrik, zond (suriladi)"
    ],
-   "keywords": "kulon qonuni elektr zaryad tortishish itarilish elektrostatika maydon chiziqlari dielektrik singdiruvchanlik coulomb"
+   "keywords": "kulon qonuni elektr zaryad tortishish itarilish elektrostatika osma sharcha burilma tarozi kulon usuli elektr maydon kuchlanganlik maydon kuchlanganligi superpozitsiya prinsipi kuch chiziqlari sinov zaryadi dipol kvadrupol manna yormasi kastor moyi dielektrik singdiruvchanlik zaryadlangan shar sfera o'tkazgich ichida maydon yo'q faradey to'ri van de graaf generatori havo teshilishi uchqun sirt zichligi coulomb law electric field superposition charged sphere"
   },
   {
    "id": "potential",
