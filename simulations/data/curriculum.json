@@ -201,7 +201,8 @@
        "nom": "Atmosfera bosimi",
        "tur": "sim",
        "oila": "F6",
-       "sim": null
+       "sim": "atmosphere",
+       "preset": "torr"
       }
      ]
     },

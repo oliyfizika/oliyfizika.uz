@@ -48,7 +48,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F42 | Interferensiya va difraksiya (Yung, tirqish, difraksion panjara) | 2 | 11 | ✅ | diffraction.html |
 | F45 | Maxsus nisbiylik: vaqt sekinlashishi, uzunlik qisqarishi, m(v), E=mc² | 2 | 11 | ✅ | relativity.html (2026-10-26): yorug‘lik soati (tinch va uchayotgan raketa, qiya yorug‘lik yo‘li, L = L₀/γ, γ(v) grafigi), myuonlar (Frisch–Smith, klassik va haqiqiy oqim, hisoblagichlar, N/N₀(h)), tezliklarni qo‘shish (poyezd, snaryad/yorug‘lik, Galiley «sharpasi», u(u′)), massa va energiya (Bertozzi: tezlatkich, 8,4 m, ossillograf, o‘lchash jadvali, v/c (K)) |
 | F47 | Bor atomi: energiya sathlari, spektr chiziqlari, lazer (majburiy nurlanish) | 2 | 11 | ✅ | bohr.html (lab; lazer qismi yo‘q) |
-| F6 | Atmosfera bosimi (Torichelli, Magdeburg yarim sharlari) | 1 | 7 | ○ | bitta stage |
+| F6 | Atmosfera bosimi (Torichelli, Magdeburg yarim sharlari) | 1 | 7 | ✅ | atmosphere.html (2026-10-26): Torichelli tajribasi (simob/suv, nayni qiyalatish, teshish, tog‘da), Magdeburg yarim sharlari (nasos dastagi, vakuummetr, otlar/daraxt, jo‘mrak, F(n) grafigi), balandlik va barometr (havo shari, aneroid, germetik paket, qaynash temperaturasi, p(h)) |
 | F9 | Gravitatsiya maydonidagi harakat, orbita, kosmik tezliklar | 1 | 10 | ◐ | gravity-law.html + projectile.html; orbita/kosmik tezliklar yo‘q |
 | F19 | Qattiq jism deformatsiyasi, Guk qonuni, σ–ε diagramma | 1 | 9 | ○ | spring-physics bilan o‘xshash |
 | F43 | Dispersiya va spektral analiz (prizma) | 1 | 11 | ✅ | dispersion.html |
@@ -73,12 +73,12 @@ Holat: 2026-10-26.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
-| 7 | 62 | 45 | **44** (98 %) | 1 | 4 (4 / 0) | 12 (12) | 5 |
+| 7 | 62 | 45 | **45** (100 %) | 0 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **36** (95 %) | 2 | 6 (6 / 0) | 14 (14) | 7 |
 | 10 | 59 | 44 | **43** (98 %) | 1 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **40** (93 %) | 3 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **208** (97 %) | **7** | **22** (21 / 1) | **52** (50) | **18** |
+| **Jami** | **285** | **215** | **209** (97 %) | **6** | **22** (21 / 1) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
@@ -87,7 +87,6 @@ Holat: 2026-10-26.
 | F15 | 9§13 | 1 |
 | F19 | 9§36 | 1 |
 | F47 | 11§38 | 1 |
-| F6 | 7§25 | 1 |
 
 «Bog‘langan» — «Ochish» tugmasi ishlaydi (lab mavzularida vaqtincha oddiy simulyatsiya ham hisoblanadi).
 «Bo‘sh» mavzular katalogda «Tayyorlanmoqda» deb ko‘rinadi. `masala` — sim bo‘lsa ko‘rsatiladi; `matn` ko‘rsatilmaydi.

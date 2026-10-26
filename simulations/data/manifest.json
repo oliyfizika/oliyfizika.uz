@@ -88,6 +88,19 @@
    "keywords": "bosim paskal bosim birligi kPa p=F/S tayanch yuzasi g'isht chang'i igna paskal qonuni gidravlik press domkrat porshen kuchda yutuq paskal shari suyuqlik bosimi gidrostatik bosim p=rho g h chuqurlik manometr tutash idishlar u-nay suv va moy atmosfera bosimi pressure pascal hydraulic press communicating vessels"
   },
   {
+   "id": "atmosphere",
+   "title": "Atmosfera bosimi",
+   "href": "atmosphere.html",
+   "topic": "mexanika",
+   "description": "Torichelli tajribasi: simobli barometr (760 mm), nayni qiyalatish, nay tepasini teshish, Paskalning 10,3 m li suvli barometri, tog‘da ustunning pasayishi. Magdeburg yarim sharlari: nasos bilan havoni so‘rish, vakuummetr, otlar yoki daraxt, kerakli kuch F = (p₀ − p)πR². Atmosfera bosimining balandlik bilan kamayishi: aneroid barometr, germetik paket, suvning qaynash temperaturasi.",
+   "params": [
+    "Suyuqlik (simob/suv), nay qiyaligi (nay uchi sahnada suriladi), joy balandligi",
+    "Yarim sharlar o‘lchami, nasos yurishlari (dastak sahnada suriladi), otlar soni, daraxt, jo‘mrak",
+    "Havo shari balandligi (sahnada suriladi)"
+   ],
+   "keywords": "atmosfera bosimi Torichelli tajribasi simob barometr simob ustuni 760 mm sim ust Paskal suvli barometr Torichelli bo'shlig'i vakuum Magdeburg yarim sharlari Gerike nasos aneroid barometr altimetr balandlik bilan bosim kamayishi qaynash temperaturasi gektopaskal atmospheric pressure barometer Torricelli Magdeburg hemispheres"
+  },
+  {
    "id": "projectile",
    "title": "Og‘irlik kuchi ta’sirida jism harakati",
    "href": "projectile.html",
