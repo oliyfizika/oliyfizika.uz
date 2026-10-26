@@ -1598,14 +1598,16 @@
        "nom": "Massa markazi. Muvozanat. Kuch momenti",
        "tur": "sim",
        "oila": "F11",
-       "sim": null
+       "sim": "statics",
+       "preset": "plateL"
       },
       {
        "raqam": 13,
        "nom": "Moment qoidasiga asoslangan oddiy mexanizmlar",
        "tur": "sim",
        "oila": "F11",
-       "sim": null
+       "sim": "statics",
+       "preset": "balance"
       },
       {
        "raqam": 14,
@@ -1858,30 +1860,32 @@
        "nom": "Yarimo‘tkazgichlar va metallardan farqi",
        "tur": "sim",
        "oila": "F30",
-       "sim": null
+       "sim": "semiconductor",
+       "preset": "heat"
       },
       {
        "raqam": 44,
        "nom": "Yarimo‘tkazgichlarning o‘tkazuvchanligi",
        "tur": "sim",
        "oila": "F30",
-       "sim": null
+       "sim": "semiconductor",
+       "preset": "ntype"
       },
       {
        "raqam": 45,
        "nom": "Yarimo‘tkazgichli asboblar",
        "tur": "sim",
        "oila": "F30",
-       "sim": "circuit",
-       "preset": "diode"
+       "sim": "semiconductor",
+       "preset": "rhalf"
       },
       {
        "raqam": 46,
        "nom": "Laboratoriya ishi. Diod VAXini o‘rganish",
        "tur": "lab",
        "oila": "F30",
-       "sim": "circuit",
-       "preset": "diode",
+       "sim": "semiconductor",
+       "preset": "vaxSi",
        "lab": null
       }
      ]

@@ -245,6 +245,21 @@
    "keywords": "qiya tekislik ishqalanish koeffitsiyenti tinch ishqalanish sirpanish tayanch reaksiya kuchi og'irlik kuchi inclined plane"
   },
   {
+   "id": "statics",
+   "title": "Muvozanat, kuch momenti va oddiy mexanizmlar",
+   "href": "statics.html",
+   "topic": "mexanika",
+   "description": "Shtativga osilgan fanera plastinka va shovun bilan massa markazini topish (L shakl, uchburchak, teshikli disk, taqa), qutining qirrasi atrofida ag‘darilishi va kritik burchak, sharcha botiq, qavariq va tekis sirtda — muvozanat turlari. Laboratoriya richagi: 100 g li yuklar, dinamometr, qiya tortish, tayanchni siljitish. Qo‘zg‘almas va qo‘zg‘aluvchan blok, polispast, quduq chig‘iri; oltin qoida va FIK.",
+   "params": [
+    "Plastinka shakli, osish teshigi (sahnada bosiladi), shovun bo‘ylab chiziq",
+    "Quti o‘lchami, massa markazi balandligi, og‘ish burchagi (sahnada suriladi)",
+    "Sirt: botiq / qavariq / tekis; sharcha sahnada suriladi",
+    "Richag: ikki guruh yuk (soni va teshigi, sahnada suriladi), dinamometr teshigi va burchagi, tayanch nuqtasi",
+    "Mexanizm, yuk massasi, iplar soni, dasta uzunligi, real yoki ideal; ip va dasta sahnada tortiladi"
+   ],
+   "keywords": "muvozanat statika massa markazi og'irlik markazi shovun plastinka osish turg'un muvozanat turg'unmas befarq muvozanat ag'darilish tayanch yuzasi kritik burchak kuch momenti moment yelka moment qoidasi richag richagning muvozanat sharti dinamometr yuk tayanch reaksiyasi oddiy mexanizmlar blok qo'zg'almas blok qo'zg'aluvchan blok polispast chig'ir vorot darvoza quduq baraban dasta oltin qoida mexanikaning oltin qoidasi fik foydali ish kuchdan yutuq yo'ldan yutqazish lever pulley torque centre of mass equilibrium"
+  },
+  {
    "id": "gas",
    "title": "Molekulyar harakat va ideal gaz",
    "href": "gas.html",
@@ -417,6 +432,21 @@
     "Yoy: reostat R, ko‘mirlar oralig‘i; toj: U, sim radiusi, ob-havo"
    ],
    "keywords": "gazlarda elektr toki gaz razryadi ionlanish ionlagich rekombinatsiya mustaqil bo'lmagan razryad mustaqil razryad to'yinish toki zarbli ionlanish elektron ko'chkisi taunsend pashen qonuni teshilish kuchlanishi razryad trubkasi vakuum nasosi tlejli razryad katod qorong'i sohasi musbat ustun qatlamlar katod nurlari neon argon geliy reklama lampalari uchqun razryad elektrofor mashinasi uimshurst leyden bankasi chaqmoq elektr yoyi petrov payvandlash ayrton toj razryad korona yuqori kuchlanishli liniya pik qonuni plazma gas discharge glow discharge paschen law spark arc corona"
+  },
+  {
+   "id": "semiconductor",
+   "title": "Yarimo‘tkazgichlar va p–n o‘tish",
+   "href": "semiconductor.html",
+   "topic": "elektr",
+   "description": "Metall va yarimo‘tkazgich qarshiligining temperaturaga bog‘liqligi: plitkadagi stakanda mis g‘altak va termorezistor, ikkita multimetr; fotorezistor va luksmetr. Kremniy panjarasida elektron-kovak juftlari, fosfor (n-tip) va bor (p-tip). Diod VAX ni o‘lchash, p–n o‘tish kesimi, yorug‘lik diodlari, diod ko‘prigi va ossillograf, tranzistor kalit va kuchaytirgich.",
+   "params": [
+    "Plitka quvvati (dasta sahnada), lampagacha masofa (sahnada), xona yorug‘ligi",
+    "Si yoki Ge, sof / n-tip / p-tip, aralashma konsentratsiyasi, temperatura T; atomni bosib aralashma qo‘shish",
+    "Diod: Si, Ge, qizil/yashil/ko‘k LED; qutb (sahnada), manba E (dasta sahnada), temperatura",
+    "To‘g‘rilagich: bitta diod yoki ko‘prik, kondensator C, yuklama R",
+    "Tranzistor: potensiometr (sahnada), baza rezistori"
+   ],
+   "keywords": "yarimo'tkazgich yarimo'tkazgichlar metall va yarimo'tkazgich farqi qarshilik temperatura termorezistor termistor fotorezistor ichki fotoeffekt kremniy germaniy kovalent bog' elektron kovak elektron-kovak jufti generatsiya rekombinatsiya xususiy o'tkazuvchanlik aralashmali o'tkazuvchanlik donor akseptor fosfor bor n-tip p-tip asosiy tashuvchilar taqiqlangan zona p-n o'tish kambag'allashgan qatlam diod volt-amper xarakteristikasi vax to'g'ri yo'nalish teskari yo'nalish teskari tok yorug'lik diodi led to'g'rilagich yarim davr to'liq davr diod ko'prigi kondensator filtr ossillograf tranzistor baza kollektor emitter kuchaytirish kalit semiconductor diode transistor rectifier thermistor photoresistor doping"
   },
   {
    "id": "magnetism",
