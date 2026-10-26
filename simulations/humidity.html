@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havo namligi va atmosfera hodisalari | OliyFizika.uz</title>
+<meta name="description" content="Virtual laboratoriya: to‘yingan va to‘yinmagan bug‘, absolyut va nisbiy namlik, shudring nuqtasi; psixrometr va psixrometrik jadval, kondensatsion gigrometr bilan havoning nisbiy namligini aniqlash; shudring, qirov, tuman va bulutlarning hosil bo‘lishi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/humidity.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Havo namligi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="humiditySim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--orange">Molekulyar fizika</span>
+      <h1>Havo namligi va atmosfera hodisalari</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="air" aria-pressed="true">Namlik va shudring nuqtasi</button>
+            <button type="button" data-mode-value="psy" aria-pressed="false">Psixrometr va gigrometr</button>
+            <button type="button" data-mode-value="atm" aria-pressed="false">Atmosfera hodisalari</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Havo namligi tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <div class="of-segment" role="group" aria-label="Vaqt tezligi" data-speed data-tool="psy atm"><button type="button" data-speed-value="1" aria-pressed="true">1×</button><button type="button" data-speed-value="10" aria-pressed="false">10×</button></div>
+          <button class="of-btn of-btn--sm" type="button" data-reveal hidden>Javobni ko‘rsatish</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2 data-graph-title></h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="of-card sim-psy" aria-label="Psixrometrik jadval" data-psytable hidden>
+        <div class="sim-graph__bar"><h2>Psixrometrik jadval: nisbiy namlik φ, %</h2></div>
+        <p class="of-subtle sim-psy__hint">Qator — quruq termometr ko‘rsatishi t, ustun — termometrlar farqi Δt = t − t<sub>h</sub>. Katakni bosib belgilang.</p>
+        <div class="sim-psy__wrap"><table class="sim-psy__table" data-psy-grid></table></div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="air">
+        <span class="sim-group__title">Yopiq idishdagi havo</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aT">Temperatura t</label><output for="aT" id="aTOut"></output></div>
+          <input class="sim-range" type="range" id="aT" min="-10" max="40" step="0.5" value="22">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aW">Suv miqdori (bug‘ + tomchilar)</label><output for="aW" id="aWOut"></output></div>
+          <input class="sim-range" type="range" id="aW" min="0.5" max="30" step="0.1" value="9.7">
+        </div>
+        <p class="of-subtle">Termometr ustunini sahnada yuqoriga/pastga surib havoni isiting yoki soviting; «+ bug‘» va «− bug‘» tugmalari namlatgich va quritgichni yoqadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="psy">
+        <span class="sim-group__title">Xona va asbob</span>
+        <div class="of-segment" role="group" aria-label="Asbob" data-tool-sel>
+          <button type="button" data-tool-value="psy" aria-pressed="true">Psixrometr</button>
+          <button type="button" data-tool-value="cond" aria-pressed="false">Kondensatsion gigrometr</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="room">Xona</label></div>
+          <select class="sim-select" id="room"></select>
+        </div>
+        <p class="of-subtle" data-psy-hint></p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="atm">
+        <span class="sim-group__title">Ob-havo</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mTau">Sutka vaqti</label><output for="mTau" id="mTauOut"></output></div>
+          <input class="sim-range" type="range" id="mTau" min="0" max="24" step="0.25" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mMax">Kunduzgi eng yuqori t<sub>max</sub></label><output for="mMax" id="mMaxOut"></output></div>
+          <input class="sim-range" type="range" id="mMax" min="-5" max="42" step="0.5" value="24">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mAmp">Sutkalik farq t<sub>max</sub> − t<sub>min</sub></label><output for="mAmp" id="mAmpOut"></output></div>
+          <input class="sim-range" type="range" id="mAmp" min="2" max="20" step="0.5" value="14">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mPhi">Soat 15:00 dagi nisbiy namlik</label><output for="mPhi" id="mPhiOut"></output></div>
+          <input class="sim-range" type="range" id="mPhi" min="10" max="95" step="1" value="45">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-wind><span class="sim-switch__ui"></span>Shamol</label>
+        <p class="of-subtle">Quyosh yoki Oyni osmon yoyi bo‘ylab surib sutka vaqtini o‘zgartiring. Havodagi suv miqdori kun davomida o‘zgarmaydi deb olingan.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Absolyut namlik: <span class="sim-math">ρ = m/V = pM/(RT)</span></li>
+        <li>Nisbiy namlik: <span class="sim-math">φ = ρ/ρ<sub>s</sub> · 100 % = p/p<sub>s</sub> · 100 %</span></li>
+        <li>Shudring nuqtasi t<sub>d</sub>: <span class="sim-math">p<sub>s</sub>(t<sub>d</sub>) = p</span></li>
+        <li>Psixrometr: <span class="sim-math">p = p<sub>s</sub>(t<sub>h</sub>) − A·p<sub>atm</sub>(t − t<sub>h</sub>)</span>, A ≈ 6,6·10⁻⁴ K⁻¹</li>
+        <li>Bulut asosi: <span class="sim-math">h ≈ 122 m/°C · (t − t<sub>d</sub>)</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">p<sub>s</sub>(t) — Bak formulasi (0 °C dan past — muz ustida). Psixrometrik jadval shu model bo‘yicha hisoblangan va darslik jadvaliga ±1 % aniqlikda mos. Atmosfera rejimida havodagi suv miqdori sutka davomida o‘zgarmas, temperatura soddalashtirilgan sutkalik egri chiziq bo‘yicha o‘zgaradi; molekulalar soni va tomchilar rasmda shartli.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

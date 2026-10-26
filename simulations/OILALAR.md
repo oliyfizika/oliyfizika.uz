@@ -42,7 +42,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F11 | Muvozanat, kuch momenti, richag va oddiy mexanizmlar (blok, vorot) | 2 | 10 | ✅ | statics.html (2026-10-25): shtativga osilgan plastinka va shovun (massa markazini topish; L shakl, uchburchak, teshikli disk, taqa), qutining ag‘darilishi (αₖᵣ, h(α)), sharcha — muvozanat turlari (Eₚ(x)), laboratoriya richagi (yuklar, dinamometr, qiya tortish, tayanchni siljitish, F₂(l₂)), qo‘zg‘almas/qo‘zg‘aluvchan blok, polispast, chig‘ir (F(m), oltin qoida, FIK) |
 | F13 | Mexanik to‘lqinlar va tovush (interferensiya, Doppler, tebranish yig‘indisi) | 2 | 10 | ✅ | waves.html |
 | F14 | Suyuqlik/gaz oqimi: uzluksizlik, Bernulli, Venturi | 2 | 10 | ✅ | fluid.html |
-| F20 | Havo namligi va atmosfera hodisalari (shudring nuqtasi, psixrometr) | 2 | 9 | ○ | jadval + formulalar |
+| F20 | Havo namligi va atmosfera hodisalari (shudring nuqtasi, psixrometr) | 2 | 9 | ✅ | humidity.html (2026-10-26): yopiq idishda havo va bug‘ (termometr ustunini surish, namlatgich, soch gigrometri, pₛ(t) grafigi, tuman), psixrometr (ho‘l termometr asta soviydi, lupa, psixrometrik jadval, noma’lum xona) va kondensatsion gigrometr (nok, efir, sayqallangan sirtda shudring), atmosfera hodisalari (sutka, shudring, qirov, tuman, bulut asosi, t(τ) va t_d(τ)) |
 | F27 | To‘liq zanjir uchun Om qonuni (EYuK, ichki qarshilik) | 2 | 10 | ✅ | circuit.html (EYuK + r preset) |
 | F39 | Yorug‘likning to‘g‘ri tarqalishi, soya/yarim soya, Quyosh va Oy tutilishi | 2 | 7 | ✅ | light.html |
 | F42 | Interferensiya va difraksiya (Yung, tirqish, difraksion panjara) | 2 | 11 | ✅ | diffraction.html |
@@ -69,20 +69,19 @@ so‘ng `node tools/simulations/tests/t_curriculum.mjs`, `node tools/simulations
 Boblar darslikdagi bob nomlari emas — manbada saqlanmagan, mavzular bo‘lim bo‘yicha guruhlangan. Uch mavzu nomi
 OCR da o‘qilmagan va taxminiy (`taxminiy: true`): 8-sinf §5, 9-sinf §11, 9-sinf §50 — PDF dan tekshirilishi kerak.
 
-Holat: 2026-10-25.
+Holat: 2026-10-26.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
 | 7 | 62 | 45 | **44** (98 %) | 1 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
-| 9 | 59 | 38 | **34** (89 %) | 4 | 6 (5 / 1) | 14 (14) | 7 |
+| 9 | 59 | 38 | **36** (95 %) | 2 | 6 (6 / 0) | 14 (14) | 7 |
 | 10 | 59 | 44 | **43** (98 %) | 1 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **204** (95 %) | **11** | **22** (20 / 2) | **52** (50) | **18** |
+| **Jami** | **285** | **215** | **206** (96 %) | **9** | **22** (21 / 1) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
-| F20 | 9§41, 9§42 | 2 |
 | F45 | 11§32, 11§33 | 2 |
 | yangi | 11§30, 11§31 | 2 |
 | F10 | 10§9 | 1 |
@@ -110,7 +109,7 @@ Holat: 2026-10-25.
 | 9§20 | Solishtirma issiqlik sig‘imi | F16 | `heat.html?preset=mixLab` | ○ |
 | 9§25 | Issiqlik miqdorlarini taqqoslash | F16 | `heat.html?preset=mixCompare` | ○ |
 | 9§34 | Sirt taranglik koeffitsiyenti | F18 | `surface.html?preset=drops` | ○ |
-| 9§42 | Havoning nisbiy namligi | F20 | — (tayyorlanmoqda) | ○ |
+| 9§42 | Havoning nisbiy namligi | F20 | `humidity.html?preset=psyLab` | ○ |
 | 9§49 | Shishaning sindirish ko‘rsatkichi | F40 | `refraction-law.html?preset=slabLab` | ○ |
 | 9§53 | Linzaning optik kuchi | F41 | `lens.html?preset=lab` | ○ |
 | 10§11 | Qiya tekislik FIKi | F10 | `inclined-plane.html` | ○ |

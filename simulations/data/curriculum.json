@@ -1354,15 +1354,17 @@
        "nom": "Atmosferadagi hodisalar",
        "tur": "sim",
        "oila": "F20",
-       "sim": null
+       "sim": "humidity",
+       "preset": "atmDew"
       },
       {
        "raqam": 42,
        "nom": "Laboratoriya ishi. Havoning nisbiy namligi",
        "tur": "lab",
        "oila": "F20",
-       "sim": null,
-       "lab": null
+       "sim": "humidity",
+       "lab": null,
+       "preset": "psyLab"
       },
       {
        "raqam": 43,

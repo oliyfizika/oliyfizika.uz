@@ -291,3 +291,15 @@ body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-selec
   .sim-panel::-webkit-scrollbar-thumb { background: var(--of-border-strong); border-radius: 8px; border: 2px solid var(--of-surface); }
   .sim-panel > h2 { position: sticky; top: calc(-1 * var(--of-space-5)); z-index: 2; margin: calc(-1 * var(--of-space-5)) calc(-1 * var(--of-space-5)) 0; padding: var(--of-space-5) var(--of-space-5) var(--of-space-3); background: var(--of-surface); border-bottom: 1px solid var(--of-border); }
 }
+
+/* Psixrometrik jadval (humidity.html) */
+.sim-psy__hint { padding: 0 18px 8px; }
+.sim-psy__wrap { overflow: auto; max-height: 300px; margin: 0 18px 16px; }
+.sim-psy__table thead th { position: sticky; top: 0; z-index: 1; }
+.sim-psy__table { border-collapse: collapse; font-size: var(--of-text-xs); font-variant-numeric: tabular-nums; width: 100%; min-width: 520px; }
+.sim-psy__table th, .sim-psy__table td { border: 1px solid var(--of-border); padding: 4px 6px; text-align: center; }
+.sim-psy__table th { background: var(--of-surface-2); color: var(--of-text-2); font-weight: 700; }
+.sim-psy__table td { cursor: pointer; }
+.sim-psy__table td:hover { background: var(--of-surface-sunken); }
+.sim-psy__table td[data-sel="row"], .sim-psy__table td[data-sel="col"] { background: color-mix(in srgb, var(--of-primary) 10%, transparent); }
+.sim-psy__table td[data-sel="cell"] { background: var(--of-primary); color: #fff; font-weight: 700; }
