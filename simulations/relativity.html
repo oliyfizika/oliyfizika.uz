@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxsus nisbiylik nazariyasi | OliyFizika.uz</title>
+<meta name="description" content="Simulyatsiya: yorug‘lik soati va vaqtning sekinlashishi, uzunlikning qisqarishi, myuonlar tajribasi, tezliklarni relyativistik qo‘shish, massaning tezlikka bog‘liqligi va E = mc², Bertozzi tajribasi — elektron yorug‘lik tezligidan oshmaydi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/relativity.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Maxsus nisbiylik" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="relativitySim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--purple">Nisbiylik nazariyasi</span>
+      <h1>Maxsus nisbiylik nazariyasi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="time" aria-pressed="true">Vaqt va uzunlik</button>
+            <button type="button" data-mode-value="add" aria-pressed="false">Tezliklarni qo‘shish</button>
+            <button type="button" data-mode-value="energy" aria-pressed="false">Massa va energiya</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Maxsus nisbiylik tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2 data-graph-title></h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="of-card sim-psy" aria-label="O‘lchash natijalari" data-bert hidden>
+        <div class="sim-graph__bar"><h2>O‘lchash jadvali (uchish masofasi 8,4 m)</h2></div>
+        <p class="of-subtle sim-psy__hint" data-bert-hint>Sahnadagi «O‘lchash» tugmasini bosing — ossillografdagi uchish vaqti jadvalga yoziladi. O‘lchangan tezlik v = 8,4 m/Δt; vaqt o‘lchash xatosi ≈ 0,1 ns.</p>
+        <div class="sim-psy__wrap"><table class="sim-psy__table sim-rel__table" data-bert-grid></table></div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="time">
+        <span class="sim-group__title">Raketa va myuonlar</span>
+        <div class="of-segment" role="group" aria-label="Tajriba" data-tool-sel>
+          <button type="button" data-tool-value="clock" aria-pressed="true">Yorug‘lik soati</button>
+          <button type="button" data-tool-value="muon" aria-pressed="false">Myuonlar</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="tB">Tezlik v</label><output for="tB" id="tBOut"></output></div>
+          <input class="sim-range" type="range" id="tB" min="0" max="0.995" step="0.005" value="0.8">
+        </div>
+        <p class="of-subtle" data-time-hint></p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="add">
+        <span class="sim-group__title">Poyezd va snaryad</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aV">Poyezd tezligi v (Yerga nisbatan)</label><output for="aV" id="aVOut"></output></div>
+          <input class="sim-range" type="range" id="aV" min="0" max="0.99" step="0.01" value="0.5">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aU">Snaryad tezligi u′ (poyezdga nisbatan)</label><output for="aU" id="aUOut"></output></div>
+          <input class="sim-range" type="range" id="aU" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <p class="of-subtle">Sahnadagi «v» va «u′» spidometrlari strelkasini surib tezliklarni o‘zgartiring. u′ = c bo‘lsa, poyezddan yorug‘lik chaqnashi yuboriladi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="energy">
+        <span class="sim-group__title">Tezlatkich</span>
+        <div class="of-segment" role="group" aria-label="Zarra" data-part-sel>
+          <button type="button" data-part-value="e" aria-pressed="true">Elektron</button>
+          <button type="button" data-part-value="p" aria-pressed="false">Proton</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="eK">Kinetik energiya K = eU</label><output for="eK" id="eKOut"></output></div>
+          <input class="sim-range" type="range" id="eK" min="-2" max="1.3" step="0.01" value="0">
+        </div>
+        <p class="of-subtle">Tezlatkich dastagini (kuchlanish) sahnada burang. «O‘lchash» tugmasi ossillografdagi uchish vaqtini jadvalga yozadi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Lorens omili: <span class="sim-math">γ = 1/√(1 − v²/c²)</span></li>
+        <li>Vaqtning sekinlashishi: <span class="sim-math">Δt = γ·Δt₀</span></li>
+        <li>Uzunlikning qisqarishi: <span class="sim-math">L = L₀/γ</span></li>
+        <li>Tezliklarni qo‘shish: <span class="sim-math">u = (v + u′)/(1 + vu′/c²)</span></li>
+        <li>Massa: <span class="sim-math">m = γ·m₀</span>, energiya: <span class="sim-math">E = mc² = m₀c² + K</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">c = 299 792 458 m/s. Sahnada harakat sekinlashtirib ko‘rsatilgan, yorug‘lik soati va poyezd o‘lchamlari shartli. Raketa va poyezd Yer sanoq tizimida chizilgan — ular harakat yo‘nalishida qisqargan, ko‘ndalang o‘lchamlari o‘zgarmaydi. Myuonlar: Frisch–Smith tajribasi (1963), Bertozzi tajribasi (1964) ma’lumotlari asosida.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -38,6 +38,8 @@
   .sim-layout--graph-top .sim-graph { order: 2; }
   .sim-layout--graph-top .sim-panel { order: 3; }
   .sim-layout--graph-top .sim-readouts { order: 4; }
+  /* Grafik ostidagi jadval kartochkasi (psixrometrik jadval, o'lchash jadvali) grafikdan keyin turadi */
+  .sim-psy { order: 2; }
 }
 
 .sim-main { display: flex; flex-direction: column; gap: var(--of-space-4); min-width: 0; }
@@ -303,3 +305,5 @@ body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-selec
 .sim-psy__table td:hover { background: var(--of-surface-sunken); }
 .sim-psy__table td[data-sel="row"], .sim-psy__table td[data-sel="col"] { background: color-mix(in srgb, var(--of-primary) 10%, transparent); }
 .sim-psy__table td[data-sel="cell"] { background: var(--of-primary); color: #fff; font-weight: 700; }
+.sim-rel__table td { cursor: default; }
+.sim-rel__table td:hover { background: none; }

@@ -46,7 +46,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F27 | To‘liq zanjir uchun Om qonuni (EYuK, ichki qarshilik) | 2 | 10 | ✅ | circuit.html (EYuK + r preset) |
 | F39 | Yorug‘likning to‘g‘ri tarqalishi, soya/yarim soya, Quyosh va Oy tutilishi | 2 | 7 | ✅ | light.html |
 | F42 | Interferensiya va difraksiya (Yung, tirqish, difraksion panjara) | 2 | 11 | ✅ | diffraction.html |
-| F45 | Maxsus nisbiylik: vaqt sekinlashishi, uzunlik qisqarishi, m(v), E=mc² | 2 | 11 | ○ | γ-omil grafiklari |
+| F45 | Maxsus nisbiylik: vaqt sekinlashishi, uzunlik qisqarishi, m(v), E=mc² | 2 | 11 | ✅ | relativity.html (2026-10-26): yorug‘lik soati (tinch va uchayotgan raketa, qiya yorug‘lik yo‘li, L = L₀/γ, γ(v) grafigi), myuonlar (Frisch–Smith, klassik va haqiqiy oqim, hisoblagichlar, N/N₀(h)), tezliklarni qo‘shish (poyezd, snaryad/yorug‘lik, Galiley «sharpasi», u(u′)), massa va energiya (Bertozzi: tezlatkich, 8,4 m, ossillograf, o‘lchash jadvali, v/c (K)) |
 | F47 | Bor atomi: energiya sathlari, spektr chiziqlari, lazer (majburiy nurlanish) | 2 | 11 | ✅ | bohr.html (lab; lazer qismi yo‘q) |
 | F6 | Atmosfera bosimi (Torichelli, Magdeburg yarim sharlari) | 1 | 7 | ○ | bitta stage |
 | F9 | Gravitatsiya maydonidagi harakat, orbita, kosmik tezliklar | 1 | 10 | ◐ | gravity-law.html + projectile.html; orbita/kosmik tezliklar yo‘q |
@@ -77,12 +77,11 @@ Holat: 2026-10-26.
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
 | 9 | 59 | 38 | **36** (95 %) | 2 | 6 (6 / 0) | 14 (14) | 7 |
 | 10 | 59 | 44 | **43** (98 %) | 1 | 4 (4 / 0) | 14 (12) | 1 |
-| 11 | 45 | 43 | **38** (88 %) | 5 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **206** (96 %) | **9** | **22** (21 / 1) | **52** (50) | **18** |
+| 11 | 45 | 43 | **40** (93 %) | 3 | 3 (2 / 1) | 0 (0) | 2 |
+| **Jami** | **285** | **215** | **208** (97 %) | **7** | **22** (21 / 1) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
-| F45 | 11§32, 11§33 | 2 |
 | yangi | 11§30, 11§31 | 2 |
 | F10 | 10§9 | 1 |
 | F15 | 9§13 | 1 |
