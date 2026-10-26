@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atmosfera bosimi | OliyFizika.uz</title>
+<meta name="description" content="Simulyatsiya: Torichelli tajribasi (simobli va suvli barometr, nayni qiyalatish, nay tepasini teshish), Magdeburg yarim sharlari (nasos, otlar, kerakli kuch), atmosfera bosimining balandlik bilan kamayishi, aneroid barometr va suvning qaynash temperaturasi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/atmosphere.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Atmosfera bosimi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="atmosphereSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Atmosfera bosimi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="torr" aria-pressed="true">Torichelli tajribasi</button>
+            <button type="button" data-mode-value="mag" aria-pressed="false">Magdeburg yarim sharlari</button>
+            <button type="button" data-mode-value="alt" aria-pressed="false">Balandlik va barometr</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Atmosfera bosimi tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2 data-graph-title></h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="torr">
+        <span class="sim-group__title">Barometr nayi</span>
+        <div class="of-segment" role="group" aria-label="Suyuqlik" data-liq-sel>
+          <button type="button" data-liq-value="hg" aria-pressed="true">Simob (1 m nay)</button>
+          <button type="button" data-liq-value="water" aria-pressed="false">Suv (12 m nay)</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="tA">Nayning qiyaligi</label><output for="tA" id="tAOut"></output></div>
+          <input class="sim-range" type="range" id="tA" min="0" max="70" step="1" value="0">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="tH">Joyning dengiz sathidan balandligi</label><output for="tH" id="tHOut"></output></div>
+          <input class="sim-range" type="range" id="tH" min="0" max="5000" step="50" value="0">
+        </div>
+        <p class="of-subtle">Nayning yuqori uchini sahnada surib qiyalating. «Teshish» tugmasi nay tepasini teshadi — ichkariga havo kiradi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="mag">
+        <span class="sim-group__title">Yarim sharlar</span>
+        <div class="of-segment" role="group" aria-label="Yarim sharlar" data-size-sel>
+          <button type="button" data-size-value="big" aria-pressed="true">Gerike (d = 51 cm)</button>
+          <button type="button" data-size-value="small" aria-pressed="false">Maktab (d = 10 cm)</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="mN" data-team-label>Har tomonda otlar soni</label><output for="mN" id="mNOut"></output></div>
+          <input class="sim-range" type="range" id="mN" min="1" max="16" step="1" value="8">
+        </div>
+        <label class="sim-switch"><input type="checkbox" data-tree><span class="sim-switch__ui"></span>Bir tomoni daraxtga bog‘langan</label>
+        <p class="of-subtle">Nasos dastagini sahnada yuqoriga-pastga suring: har bir yurishda shar ichidan havo so‘riladi. Keyin «Tortish» tugmasini bosing.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="alt">
+        <span class="sim-group__title">Balandlik</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="aH">Havo shari balandligi h</label><output for="aH" id="aHOut"></output></div>
+          <input class="sim-range" type="range" id="aH" min="0" max="12000" step="10" value="455">
+        </div>
+        <p class="of-subtle">Havo sharini sahnada yuqoriga-pastga suring. Paket dengiz sathida germetik yopilgan.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Suyuqlik ustuni bosimi: <span class="sim-math">p = ρgh</span></li>
+        <li>Normal atmosfera bosimi: <span class="sim-math">p₀ = 760 mm sim. ust. = 101 325 Pa</span></li>
+        <li>1 mm sim. ust. = 133,3 Pa; Yer yaqinida har ≈ 12 m ko‘tarilganda bosim 1 mm sim. ust. ga kamayadi</li>
+        <li>Yarim sharlarni ajratish kuchi: <span class="sim-math">F = (p₀ − p)·πR²</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">ρ<sub>simob</sub> = 13 595 kg/m³, g = 9,81 m/s². Balandlik bo‘yicha bosim — standart atmosfera modeli (11 km gacha har km da 6,5 °C soviydi). Otning tortish kuchi ≈ 1,8 kN, o‘quvchiniki ≈ 0,4 kN deb olingan; nasos shar ichidagi bosimni 8 % dan pastga tushira olmaydi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

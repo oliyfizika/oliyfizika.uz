@@ -201,7 +201,8 @@
        "nom": "Atmosfera bosimi",
        "tur": "sim",
        "oila": "F6",
-       "sim": null
+       "sim": "atmosphere",
+       "preset": "torr"
       }
      ]
     },
@@ -2295,14 +2296,16 @@
        "nom": "Maxsus nisbiylik. Tezliklarni qo‘shish",
        "tur": "sim",
        "oila": "F45",
-       "sim": null
+       "sim": "relativity",
+       "preset": "addLight"
       },
       {
        "raqam": 33,
        "nom": "Massaning tezlikka bog‘liqligi. E = mc²",
        "tur": "sim",
        "oila": "F45",
-       "sim": null
+       "sim": "relativity",
+       "preset": "eMass"
       }
      ]
     },

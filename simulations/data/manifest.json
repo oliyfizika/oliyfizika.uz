@@ -88,6 +88,19 @@
    "keywords": "bosim paskal bosim birligi kPa p=F/S tayanch yuzasi g'isht chang'i igna paskal qonuni gidravlik press domkrat porshen kuchda yutuq paskal shari suyuqlik bosimi gidrostatik bosim p=rho g h chuqurlik manometr tutash idishlar u-nay suv va moy atmosfera bosimi pressure pascal hydraulic press communicating vessels"
   },
   {
+   "id": "atmosphere",
+   "title": "Atmosfera bosimi",
+   "href": "atmosphere.html",
+   "topic": "mexanika",
+   "description": "Torichelli tajribasi: simobli barometr (760 mm), nayni qiyalatish, nay tepasini teshish, Paskalning 10,3 m li suvli barometri, tog‘da ustunning pasayishi. Magdeburg yarim sharlari: nasos bilan havoni so‘rish, vakuummetr, otlar yoki daraxt, kerakli kuch F = (p₀ − p)πR². Atmosfera bosimining balandlik bilan kamayishi: aneroid barometr, germetik paket, suvning qaynash temperaturasi.",
+   "params": [
+    "Suyuqlik (simob/suv), nay qiyaligi (nay uchi sahnada suriladi), joy balandligi",
+    "Yarim sharlar o‘lchami, nasos yurishlari (dastak sahnada suriladi), otlar soni, daraxt, jo‘mrak",
+    "Havo shari balandligi (sahnada suriladi)"
+   ],
+   "keywords": "atmosfera bosimi Torichelli tajribasi simob barometr simob ustuni 760 mm sim ust Paskal suvli barometr Torichelli bo'shlig'i vakuum Magdeburg yarim sharlari Gerike nasos aneroid barometr altimetr balandlik bilan bosim kamayishi qaynash temperaturasi gektopaskal atmospheric pressure barometer Torricelli Magdeburg hemispheres"
+  },
+  {
    "id": "projectile",
    "title": "Og‘irlik kuchi ta’sirida jism harakati",
    "href": "projectile.html",
@@ -720,6 +733,19 @@
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
    "keywords": "milliken tajribasi moy tomchisi elementar zaryad zaryad kvantlanishi stoks qonuni kanningem tuzatmasi broun harakati kondensator laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+  },
+  {
+   "id": "relativity",
+   "title": "Maxsus nisbiylik nazariyasi",
+   "href": "relativity.html",
+   "topic": "kvant",
+   "description": "Yorug‘lik soati: harakatdagi soat sekin yuradi (Δt = γΔt₀), raketa harakat yo‘nalishida qisqaradi (L = L₀/γ). Myuonlar tajribasi (Frisch–Smith): klassik kutilgan va haqiqiy oqim, hisoblagichlar. Tezliklarni relyativistik qo‘shish — poyezddan otilgan snaryad va yorug‘lik. Massaning tezlikka bog‘liqligi, E = mc², Bertozzi tajribasi: tezlatkich, 8,4 m uchish vaqti, ossillograf va o‘lchash jadvali.",
+   "params": [
+    "Raketa yoki myuonlar tezligi v (spidometr strelkasi sahnada suriladi)",
+    "Poyezd tezligi v va snaryad tezligi u′ (ikki spidometr, u′ = c — yorug‘lik)",
+    "Zarra (elektron/proton) va kinetik energiya K = eU (tezlatkich dastagi), «O‘lchash»"
+   ],
+   "keywords": "maxsus nisbiylik nazariyasi Eynshteyn postulatlari yorug'lik tezligi Lorens omili gamma vaqtning sekinlashishi uzunlikning qisqarishi yorug'lik soati egizaklar paradoksi myuon myuonlar Frisch Smith tezliklarni qo'shish relyativistik massa massaning tezlikka bog'liqligi E=mc2 E = mc² tinchlikdagi energiya kinetik energiya Bertozzi tezlatkich relativity time dilation length contraction velocity addition"
   },
   {
    "id": "blackbody",
