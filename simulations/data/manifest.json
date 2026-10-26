@@ -318,6 +318,20 @@
    "keywords": "sirt tarangligi sirt taranglik koeffitsiyenti sirt energiyasi sovun pardasi ramka ho'llash ho'llamaslik chegaraviy burchak kapillyar kapillyarlik kapillyar hodisalar jyuren formulasi menisk simob suv spirt glitserin tomchi tomchilar usuli byuretka laboratoriya ishi suyuqliklarning xossalari surface tension capillary wetting contact angle drop method"
   },
   {
+   "id": "humidity",
+   "title": "Havo namligi va atmosfera hodisalari",
+   "href": "humidity.html",
+   "topic": "issiqlik",
+   "description": "To‘yingan va to‘yinmagan bug‘, absolyut va nisbiy namlik, shudring nuqtasi (yopiq idishda havoni sovitish, namlatgich, soch gigrometri, pₛ(t) grafigi). Psixrometr va psixrometrik jadval, kondensatsion gigrometr bilan havoning nisbiy namligini aniqlash (laboratoriya ishi). Shudring, qirov, tuman va to‘p-to‘p bulutlarning hosil bo‘lishi, sutkalik t(τ) va t_d(τ).",
+   "params": [
+    "Havo temperaturasi t (termometr ustuni sahnada suriladi)",
+    "Suv bug‘i miqdori ρ («+ bug‘» / «− bug‘»)",
+    "Xona va asbob: psixrometr yoki kondensatsion gigrometr (nok sahnada bosiladi)",
+    "Sutka vaqti (Quyosh/Oy sahnada suriladi), t_max, sutkalik farq, nisbiy namlik, shamol"
+   ],
+   "keywords": "havo namligi absolyut namlik nisbiy namlik to'yingan bug' to'yinmagan bug' shudring nuqtasi shudring qirov tuman bulut psixrometr psixrometrik jadval gigrometr soch gigrometri kondensatsion gigrometr ho'l termometr quruq termometr bug'lanish kondensatsiya atmosferadagi hodisalar laboratoriya ishi havoning nisbiy namligini aniqlash humidity dew point psychrometer hygrometer fog frost clouds"
+  },
+  {
    "id": "electroscope",
    "title": "Elektrlanish va elektroskop",
    "href": "electroscope.html",
