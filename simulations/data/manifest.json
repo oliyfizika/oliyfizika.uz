@@ -258,6 +258,19 @@
    "keywords": "qiya tekislik ishqalanish koeffitsiyenti tinch ishqalanish sirpanish tayanch reaksiya kuchi og'irlik kuchi inclined plane"
   },
   {
+   "id": "incline-efficiency",
+   "title": "Qiya tekislik: ish va FIK",
+   "href": "incline-efficiency.html",
+   "topic": "mexanika",
+   "description": "Mexanikaning oltin qoidasi: yukni pandus bo‘ylab supaga ko‘tarishda kuchdan yutib, yo‘ldan yutqazish (F·l = P·h). Ishqalanishli pandusda sarflangan, foydali va ishqalanishga ketgan ish, FIK η(α), o‘z-o‘zidan tormozlanish. Laboratoriya ishi: taxta, shtativ, brusok va dinamometr bilan qiya tekislik FIKini o‘lchash, natijalar jadvali.",
+   "params": [
+    "Supa balandligi, pandus uzunligi (pandus uchi sahnada suriladi), yuk massasi, ishqalanish koeffitsiyenti",
+    "Yukni tortish (yuk sahnada suriladi yoki «Tortish»)",
+    "Lab: taxta sirti, taxta uchining balandligi (shtativ muftasi sahnada suriladi), qo‘shimcha yuklar, dinamometr halqasini tortish, «Yozish»"
+   ],
+   "keywords": "qiya tekislik FIK foydali ish koeffitsiyenti foydali ish to'liq ish sarflangan ish mexanikaning oltin qoidasi kuchdan yutuq yo'ldan yutqazish pandus ishqalanish o'z-o'zidan tormozlanish dinamometr brusok laboratoriya ishi qiya tekislik FIKi efficiency inclined plane golden rule of mechanics"
+  },
+  {
    "id": "statics",
    "title": "Muvozanat, kuch momenti va oddiy mexanizmlar",
    "href": "statics.html",
@@ -329,6 +342,19 @@
     "Byuretka uchi diametri d, tomchilar soni N"
    ],
    "keywords": "sirt tarangligi sirt taranglik koeffitsiyenti sirt energiyasi sovun pardasi ramka ho'llash ho'llamaslik chegaraviy burchak kapillyar kapillyarlik kapillyar hodisalar jyuren formulasi menisk simob suv spirt glitserin tomchi tomchilar usuli byuretka laboratoriya ishi suyuqliklarning xossalari surface tension capillary wetting contact angle drop method"
+  },
+  {
+   "id": "deformation",
+   "title": "Qattiq jism deformatsiyasi",
+   "href": "deformation.html",
+   "topic": "issiqlik",
+   "description": "Cho‘zish mashinasi: po‘lat, mis, alyuminiy va cho‘yan namunalarini uzilguncha cho‘zish, σ–ε diagrammasi (proporsionallik, oquvchanlik va mustahkamlik chegaralari), yuksizlantirish va qoldiq deformatsiya, naklyop, bo‘yin hosil bo‘lishi, mo‘rt uzilish. Simga yuk osib indikator soati bilan uzayishni o‘lchash: Guk qonuni, bikrlik k = ES/l₀, Yung moduli. Deformatsiya turlari: cho‘zilish, siqilish, siljish, egilish, buralish; elastik va plastik jismlar.",
+   "params": [
+    "Namuna materiali, cho‘zish Δl (pultdagi dastak sahnada suriladi), avto-yuklash, yukni olish",
+    "Sim materiali, diametri, uzunligi, yuk massasi (yuklar sahnada qo‘shiladi/olinadi)",
+    "Deformatsiya turi, material (rezina/plastilin/po‘lat), tashqi kuch (tutqich sahnada suriladi)"
+   ],
+   "keywords": "deformatsiya elastik plastik qoldiq deformatsiya Guk qonuni mexanik kuchlanish sigma=F/S nisbiy uzayish epsilon Yung moduli elastiklik moduli bikrlik k=ES/l cho'zilish diagrammasi proporsionallik chegarasi elastiklik chegarasi oquvchanlik chegarasi mustahkamlik chegarasi mustahkamlik zaxirasi bo'yin naklyop mo'rt material cho'yan po'lat mis siqilish siljish egilish buralish indikator soati cho'zish mashinasi stress strain Young modulus Hooke's law"
   },
   {
    "id": "humidity",

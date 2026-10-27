@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qiya tekislik: ish va FIK | OliyFizika.uz</title>
+<meta name="description" content="Simulyatsiya va virtual laboratoriya: qiya tekislik bo‘ylab yukni ko‘tarishda bajarilgan ish, mexanikaning oltin qoidasi, ishqalanish va foydali ish koeffitsiyenti (FIK). Dinamometr, taxta, brusok va shtativ bilan qiya tekislik FIKini o‘lchash, natijalar jadvali va η(α) grafigi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/incline-efficiency.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Qiya tekislik: ish va FIK" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="inclineEffSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Qiya tekislik: ish va FIK</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="rule" aria-pressed="true">Oltin qoida</button>
+            <button type="button" data-mode-value="work" aria-pressed="false">Ishqalanish va FIK</button>
+            <button type="button" data-mode-value="lab" aria-pressed="false">Lab: FIK ni o‘lchash</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Qiya tekislik"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2 data-graph-title></h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="of-card sim-psy" aria-label="O‘lchash natijalari" data-lab-card hidden>
+        <div class="sim-graph__bar"><h2>O‘lchash jadvali (taxta uzunligi l = 0,8 m)</h2></div>
+        <p class="of-subtle sim-psy__hint">Brusokni dinamometr bilan taxta bo‘ylab tekis torting, harakat paytidagi ko‘rsatishni o‘qing va sahnadagi «Yozish» tugmasini bosing. Dinamometrning bo‘linma qiymati 0,1 N.</p>
+        <div class="sim-psy__wrap"><table class="sim-psy__table sim-rel__table" data-lab-grid></table></div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="rule work">
+        <span class="sim-group__title">Pandus va yuk</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rH">Supa balandligi h</label><output for="rH" id="rHOut"></output></div>
+          <input class="sim-range" type="range" id="rH" min="0.5" max="2" step="0.1" value="1.2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rL">Pandus uzunligi l</label><output for="rL" id="rLOut"></output></div>
+          <input class="sim-range" type="range" id="rL" min="0.5" max="6" step="0.1" value="3">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="rM">Yuk massasi m</label><output for="rM" id="rMOut"></output></div>
+          <input class="sim-range" type="range" id="rM" min="10" max="100" step="5" value="50">
+        </div>
+        <div class="sim-control" data-ctl="work">
+          <div class="sim-control__row"><label for="rMu">Ishqalanish koeffitsiyenti μ</label><output for="rMu" id="rMuOut"></output></div>
+          <input class="sim-range" type="range" id="rMu" min="0" max="0.8" step="0.01" value="0.3">
+        </div>
+        <p class="of-subtle">Pandusning pastki uchini sahnada surib uzunligini o‘zgartiring. Yukni pandus bo‘ylab yuqoriga suring yoki «Tortish» ni bosing.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="lab">
+        <span class="sim-group__title">Qurilma</span>
+        <div class="of-segment of-segment--wrap" role="group" aria-label="Taxta sirti" data-surf-sel>
+          <button type="button" data-surf-value="wood" aria-pressed="true">Yog‘och</button>
+          <button type="button" data-surf-value="paper" aria-pressed="false">Qog‘oz</button>
+          <button type="button" data-surf-value="glass" aria-pressed="false">Shisha</button>
+          <button type="button" data-surf-value="cloth" aria-pressed="false">Mato</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="lH">Taxta uchining balandligi h</label><output for="lH" id="lHOut"></output></div>
+          <input class="sim-range" type="range" id="lH" min="0.05" max="0.5" step="0.01" value="0.2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="lN">Brusokdagi qo‘shimcha yuklar (100 g)</label><output for="lN" id="lNOut"></output></div>
+          <input class="sim-range" type="range" id="lN" min="0" max="3" step="1" value="1">
+        </div>
+        <p class="of-subtle">Shtativ muftasini sahnada yuqoriga-pastga suring. Dinamometr halqasini taxta bo‘ylab tortib brusokni tekis ko‘taring.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Foydali ish (yukni h ga ko‘tarish): <span class="sim-math">A<sub>f</sub> = Ph = mgh</span></li>
+        <li>To‘liq (sarflangan) ish: <span class="sim-math">A<sub>t</sub> = Fl</span></li>
+        <li>Tekis tortish kuchi: <span class="sim-math">F = P(sin α + μ cos α)</span>, bunda <span class="sim-math">sin α = h/l</span></li>
+        <li>FIK: <span class="sim-math">η = A<sub>f</sub>/A<sub>t</sub> · 100 % = Ph/(Fl) · 100 %</span></li>
+        <li>Ishqalanishsiz: <span class="sim-math">Fl = Ph</span> — kuchdan necha marta yutilsa, yo‘ldan shuncha marta yutqaziladi</li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">g = 9,81 m/s². Yuk tekis (tezlanishsiz) tortiladi. Ishqalanish koeffitsiyentlari: yog‘och–yog‘och ≈ 0,3, silliq qog‘oz ≈ 0,2, shisha ≈ 0,12, mato ≈ 0,45 (taqribiy).</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

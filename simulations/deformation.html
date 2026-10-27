@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qattiq jism deformatsiyasi | OliyFizika.uz</title>
+<meta name="description" content="Simulyatsiya: cho‘zish mashinasida po‘lat, mis, alyuminiy va cho‘yan namunalarini uzilguncha cho‘zish, σ–ε diagrammasi (proporsionallik, oquvchanlik va mustahkamlik chegaralari, qoldiq deformatsiya, bo‘yin), simni yuk bilan cho‘zib Guk qonuni va Yung modulini o‘lchash, deformatsiya turlari (cho‘zilish, siqilish, siljish, egilish, buralish).">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/deformation.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Qattiq jism deformatsiyasi" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="deformationSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--orange">Molekulyar fizika</span>
+      <h1>Qattiq jism deformatsiyasi</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="tension" aria-pressed="true">Cho‘zish mashinasi</button>
+            <button type="button" data-mode-value="hooke" aria-pressed="false">Guk qonuni (sim)</button>
+            <button type="button" data-mode-value="types" aria-pressed="false">Deformatsiya turlari</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Deformatsiya tajribasi"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2 data-graph-title></h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="tension">
+        <span class="sim-group__title">Namuna (d = 10 mm, l₀ = 100 mm)</span>
+        <div class="of-segment of-segment--wrap" role="group" aria-label="Material" data-mat-sel>
+          <button type="button" data-mat-value="steel" aria-pressed="true">Po‘lat</button>
+          <button type="button" data-mat-value="copper" aria-pressed="false">Mis</button>
+          <button type="button" data-mat-value="alu" aria-pressed="false">Alyuminiy</button>
+          <button type="button" data-mat-value="iron" aria-pressed="false">Cho‘yan</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="tS">Cho‘zish Δl</label><output for="tS" id="tSOut"></output></div>
+          <input class="sim-range" type="range" id="tS" min="0" max="1000" step="1" value="0">
+        </div>
+        <p class="of-subtle">Pultdagi dastakni pastga torting — mashina namunani cho‘zadi, yuqoriga — yukni kamaytiradi. Shkala boshida sekin (elastik qism ko‘rinsin), oxirida tez o‘zgaradi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="hooke">
+        <span class="sim-group__title">Sim</span>
+        <div class="of-segment" role="group" aria-label="Sim materiali" data-hmat-sel>
+          <button type="button" data-hmat-value="steel" aria-pressed="true">Po‘lat</button>
+          <button type="button" data-hmat-value="copper" aria-pressed="false">Mis</button>
+          <button type="button" data-hmat-value="alu" aria-pressed="false">Alyuminiy</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="Sim diametri" data-d-sel>
+          <button type="button" data-d-value="0.4" aria-pressed="false">0,4 mm</button>
+          <button type="button" data-d-value="0.6" aria-pressed="false">0,6 mm</button>
+          <button type="button" data-d-value="0.8" aria-pressed="true">0,8 mm</button>
+          <button type="button" data-d-value="1" aria-pressed="false">1 mm</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="hL">Sim uzunligi l₀</label><output for="hL" id="hLOut"></output></div>
+          <input class="sim-range" type="range" id="hL" min="1" max="3" step="0.5" value="2">
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="hM">Yuk massasi m</label><output for="hM" id="hMOut"></output></div>
+          <input class="sim-range" type="range" id="hM" min="0" max="10" step="0.5" value="0">
+        </div>
+        <p class="of-subtle">Yuk to‘plamini bossangiz osmaga 1 kg qo‘shiladi, osmadagi yukni bossangiz olinadi. Uzayishni indikator soati ko‘rsatadi (1 bo‘linma = 0,01 mm).</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="types">
+        <span class="sim-group__title">Deformatsiya</span>
+        <div class="of-segment of-segment--wrap" role="group" aria-label="Deformatsiya turi" data-kind-sel>
+          <button type="button" data-kind-value="stretch" aria-pressed="true">Cho‘zilish</button>
+          <button type="button" data-kind-value="compress" aria-pressed="false">Siqilish</button>
+          <button type="button" data-kind-value="shear" aria-pressed="false">Siljish</button>
+          <button type="button" data-kind-value="bend" aria-pressed="false">Egilish</button>
+          <button type="button" data-kind-value="twist" aria-pressed="false">Buralish</button>
+        </div>
+        <div class="of-segment" role="group" aria-label="Material" data-tmat-sel>
+          <button type="button" data-tmat-value="rubber" aria-pressed="true">Rezina</button>
+          <button type="button" data-tmat-value="clay" aria-pressed="false">Plastilin</button>
+          <button type="button" data-tmat-value="steel" aria-pressed="false">Po‘lat</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="tD">Tashqi kuch (deformatsiya)</label><output for="tD" id="tDOut"></output></div>
+          <input class="sim-range" type="range" id="tD" min="0" max="100" step="1" value="0">
+        </div>
+        <p class="of-subtle">Jismning qizil tutqichini sahnada suring va qo‘yib yuboring: elastik jism avvalgi shakliga qaytadi, plastik jism esa deformatsiyalangan holicha qoladi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Mexanik kuchlanish: <span class="sim-math">σ = F/S</span> (Pa)</li>
+        <li>Nisbiy uzayish: <span class="sim-math">ε = Δl/l₀</span></li>
+        <li>Guk qonuni: <span class="sim-math">σ = Eε</span>, ya’ni <span class="sim-math">F = (ES/l₀)·Δl = kΔl</span></li>
+        <li>Mustahkamlik zaxirasi: <span class="sim-math">n = σₘ/σ<sub>ruxsat</sub></span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">E — Yung (elastiklik) moduli: po‘lat 200 GPa, mis 110 GPa, alyuminiy 70 GPa, cho‘yan ≈ 110 GPa. Chegaraviy kuchlanishlar o‘quv maqsadida odatiy qiymatlarda olingan (po‘lat St3: σₜ = 240 MPa, σₘ = 400 MPa). Elastik uzayish juda kichik (0,1 % atrofida), shuning uchun sahnada ko‘rinmaydi — uni asboblar ko‘rsatadi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

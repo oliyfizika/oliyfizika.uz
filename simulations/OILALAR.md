@@ -29,7 +29,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F4 | Zichlik, massa va suzish | 3 | 7 | ✅ | density.html (2026-10-24): pallali tarozi va toshlar, menzurka (lupa) bilan zichlik, Arximed kuchi va suzish (dinamometr, ipni kesish) |
 | F5 | Bosim: Paskal, gidravlik press, suyuqlik bosimi, tutash idishlar | 3 | 7 | ✅ | pressure.html (2026-10-24): qattiq jism bosimi (g‘isht, chang‘i, igna), gidravlik press va Paskal shari, p = ρgh (datchik + manometr), tutash idishlar, suv-moy U-nay |
 | F8 | Newton qonunlari, ishqalanish, og‘irlik (lift, vaznsizlik) | 3 | 7, 10 | ✅ | newton-second-law.html |
-| F10 | Qiya tekislik, ishqalanish va FIK | 3 | 10 | ◐ | inclined-plane.html bor; FIK yo‘q |
+| F10 | Qiya tekislik, ishqalanish va FIK | 3 | 10 | ✅ | inclined-plane.html (harakat, ishqalanish) + incline-efficiency.html (2026-10-27): oltin qoida (pandus uchi suriladi, F(l), F·l = P·h), ishqalanish va FIK (ishlar balansi, η(α), o‘z-o‘zidan tormozlanish), lab (taxta, shtativ muftasi, brusok + yuklar, prujinali dinamometr, P ni o‘lchash, jadval) |
 | F12 | Mexanik tebranishlar (matematik, fizik, prujinali mayatnik, g ni aniqlash) | 3 | 10 | ✅ | pendulum.html, physical-pendulum.html, spring.html (`?preset=` URL orqali ham, 2026-10-24) |
 | F18 | Sirt tarangligi, ho‘llash, kapillyar hodisa | 3 | 9 | ✅ | surface.html (2026-10-25): sovun pardasi va ramka (F = 2σL, A = σΔS, dinamometr), ho‘llash va chegaraviy burchak, kapillyar naylar (h = 2σcosθ/(ρgr), simobda pasayish), tomchilar usuli (byuretka + tarozi) |
 | F26 | Metallarda tok: drift tezlik, tok zichligi, R(T) | 3 | 8, 10 | ✅ | metals.html (2026-10-25): ionlar panjarasi va elektronlarning tartibsiz/dreyf harakati (kalit, reostat, v = I/(enS)), tok zichligi kesimi har xil simda (hisoblagich Δq/Δt), R = R₀(1 + αt) pechda (lampa tolasi, konstantan), simobning o‘ta o‘tkazuvchanligi |
@@ -50,7 +50,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F47 | Bor atomi: energiya sathlari, spektr chiziqlari, lazer (majburiy nurlanish) | 2 | 11 | ✅ | bohr.html (lab; lazer qismi yo‘q) |
 | F6 | Atmosfera bosimi (Torichelli, Magdeburg yarim sharlari) | 1 | 7 | ✅ | atmosphere.html (2026-10-26): Torichelli tajribasi (simob/suv, nayni qiyalatish, teshish, tog‘da), Magdeburg yarim sharlari (nasos dastagi, vakuummetr, otlar/daraxt, jo‘mrak, F(n) grafigi), balandlik va barometr (havo shari, aneroid, germetik paket, qaynash temperaturasi, p(h)) |
 | F9 | Gravitatsiya maydonidagi harakat, orbita, kosmik tezliklar | 1 | 10 | ◐ | gravity-law.html + projectile.html; orbita/kosmik tezliklar yo‘q |
-| F19 | Qattiq jism deformatsiyasi, Guk qonuni, σ–ε diagramma | 1 | 9 | ○ | spring-physics bilan o‘xshash |
+| F19 | Qattiq jism deformatsiyasi, Guk qonuni, σ–ε diagramma | 1 | 9 | ✅ | deformation.html (2026-10-27): cho‘zish mashinasi (po‘lat/mis/alyuminiy/cho‘yan, pult dastagi, kuch datchigi va LCD, yuksizlantirish, qoldiq deformatsiya, naklyop, bo‘yin, uzilish, σ(ε)), Guk qonuni (shiftga osilgan sim, 1 kg li yuklar, indikator soati 0,01 mm, F(Δl), k va E), deformatsiya turlari (cho‘zilish, siqilish, siljish, egilish, buralish; rezina/plastilin/po‘lat) |
 | F43 | Dispersiya va spektral analiz (prizma) | 1 | 11 | ✅ | dispersion.html |
 | F44 | Yorug‘likning qutblanishi (Malyus qonuni) | 1 | 11 | ✅ | dispersion.html |
 
@@ -69,23 +69,21 @@ so‘ng `node tools/simulations/tests/t_curriculum.mjs`, `node tools/simulations
 Boblar darslikdagi bob nomlari emas — manbada saqlanmagan, mavzular bo‘lim bo‘yicha guruhlangan. Uch mavzu nomi
 OCR da o‘qilmagan va taxminiy (`taxminiy: true`): 8-sinf §5, 9-sinf §11, 9-sinf §50 — PDF dan tekshirilishi kerak.
 
-Holat: 2026-10-26.
+Holat: 2026-10-27.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
 | 7 | 62 | 45 | **45** (100 %) | 0 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
-| 9 | 59 | 38 | **36** (95 %) | 2 | 6 (6 / 0) | 14 (14) | 7 |
-| 10 | 59 | 44 | **43** (98 %) | 1 | 4 (4 / 0) | 14 (12) | 1 |
+| 9 | 59 | 38 | **37** (97 %) | 1 | 6 (6 / 0) | 14 (14) | 7 |
+| 10 | 59 | 44 | **44** (100 %) | 0 | 4 (4 / 0) | 14 (12) | 1 |
 | 11 | 45 | 43 | **40** (93 %) | 3 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **209** (97 %) | **6** | **22** (21 / 1) | **52** (50) | **18** |
+| **Jami** | **285** | **215** | **211** (98 %) | **4** | **22** (21 / 1) | **52** (50) | **18** |
 
 | Oila | Bo‘sh mavzular | Soni |
 |---|---|---|
 | yangi | 11§30, 11§31 | 2 |
-| F10 | 10§9 | 1 |
 | F15 | 9§13 | 1 |
-| F19 | 9§36 | 1 |
 | F47 | 11§38 | 1 |
 
 «Bog‘langan» — «Ochish» tugmasi ishlaydi (lab mavzularida vaqtincha oddiy simulyatsiya ham hisoblanadi).
@@ -110,7 +108,7 @@ Holat: 2026-10-26.
 | 9§42 | Havoning nisbiy namligi | F20 | `humidity.html?preset=psyLab` | ○ |
 | 9§49 | Shishaning sindirish ko‘rsatkichi | F40 | `refraction-law.html?preset=slabLab` | ○ |
 | 9§53 | Linzaning optik kuchi | F41 | `lens.html?preset=lab` | ○ |
-| 10§11 | Qiya tekislik FIKi | F10 | `inclined-plane.html` | ○ |
+| 10§11 | Qiya tekislik FIKi | F10 | `incline-efficiency.html?preset=labStart` (jadval bor, daftar/PDF yo‘q) | ○ |
 | 10§17 | Mayatnik bilan g ni aniqlash | F12 | `pendulum.html?preset=seconds` | ○ |
 | 10§35 | EYuK va ichki qarshilik | F27 | `circuit.html?preset=emf` | ○ |
 | 10§46 | Diod VAXini o‘rganish | F30 | `semiconductor.html?preset=vaxSi` | ○ |

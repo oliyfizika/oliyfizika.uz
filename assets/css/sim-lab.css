@@ -307,3 +307,7 @@ body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-selec
 .sim-psy__table td[data-sel="cell"] { background: var(--of-primary); color: #fff; font-weight: 700; }
 .sim-rel__table td { cursor: default; }
 .sim-rel__table td:hover { background: none; }
+
+/* Ko‘p tugmali segment (panelda qatorga sig‘masa o‘raladi) */
+.sim-panel .of-segment--wrap { display: flex; flex-wrap: wrap; height: auto; }
+.sim-panel .of-segment--wrap button { padding: 0 10px; }

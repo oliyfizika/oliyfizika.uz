@@ -1312,7 +1312,8 @@
        "nom": "Qattiq jismlarning mexanik xossalari",
        "tur": "sim",
        "oila": "F19",
-       "sim": null
+       "sim": "deformation",
+       "preset": "tSteel"
       },
       {
        "raqam": 37,
@@ -1575,7 +1576,8 @@
        "nom": "Qiya tekislik bo‘ylab ish. FIK",
        "tur": "sim",
        "oila": "F10",
-       "sim": null
+       "sim": "incline-efficiency",
+       "preset": "workWood"
       },
       {
        "raqam": 10,
@@ -1588,8 +1590,9 @@
        "nom": "Laboratoriya ishi. Qiya tekislik FIKi",
        "tur": "lab",
        "oila": "F10",
-       "sim": "inclined-plane",
-       "lab": null
+       "sim": "incline-efficiency",
+       "lab": null,
+       "preset": "labStart"
       }
      ]
     },
