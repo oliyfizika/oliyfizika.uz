@@ -51,7 +51,7 @@ function findActiveItem(rel) {
   let bestLen = -1;
   for (const item of ITEMS) {
     for (const m of item.match) {
-      const hit = m.endsWith("/") ? rel.startsWith(m) : rel === m;
+      const hit = m.endsWith("*") ? rel.startsWith(m.slice(0, -1)) : m.endsWith("/") ? rel.startsWith(m) : rel === m;
       if (hit && m.length > bestLen) {
         best = item;
         bestLen = m.length;

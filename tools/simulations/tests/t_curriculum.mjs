@@ -20,6 +20,7 @@ for (const g of cur.sinflar) {
   for (const m of all) {
     if (!TYPES.has(m.tur)) bad.push(`${g.sinf}§${m.raqam}: tur «${m.tur}»`);
     if (m.sim && !ids.has(m.sim)) bad.push(`${g.sinf}§${m.raqam}: sim «${m.sim}» manifestda yo‘q`);
+    if (m.lab && !ids.has(m.lab)) bad.push(`${g.sinf}§${m.raqam}: lab «${m.lab}» manifestda yo‘q`);
     if (m.preset && !m.sim) bad.push(`${g.sinf}§${m.raqam}: preset bor, sim yo‘q`);
     if (m.tur === "lab") { labs++; if (!("lab" in m)) bad.push(`${g.sinf}§${m.raqam}: lab maydoni yo‘q`); }
     if (m.tur === "lab" && !/^Laboratoriya ishi\./.test(m.nom)) bad.push(`${g.sinf}§${m.raqam}: lab nomi`);

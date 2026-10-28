@@ -162,6 +162,9 @@
 }
 .of-sim-card__foot { margin-top: auto; padding-top: 6px; width: 100%; }
 .of-sim-card__foot .of-btn { min-height: 40px; }
+/* Virtual laboratoriyalar katalogi (labs.html): bo'lim + sinf belgilari, asosiy formula */
+.of-sim-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.of-sim-card__formula { color: var(--of-text-2); font-size: var(--of-text-sm); font-weight: 600; }
 
 /* Sinf tugmalari (segment) */
 .of-grades { display: flex; flex-wrap: wrap; width: fit-content; max-width: 100%; }

@@ -96,7 +96,7 @@
        "oila": "F1",
        "sim": "motion",
        "preset": "average",
-       "lab": null
+       "lab": "lab-ortacha-tezlik"
       },
       {
        "raqam": 13,
@@ -147,7 +147,7 @@
        "tur": "lab",
        "oila": "F4",
        "sim": "density",
-       "lab": null,
+       "lab": "lab-zichlik",
        "preset": "unknown"
       },
       {
@@ -423,7 +423,7 @@
        "oila": "F24",
        "sim": "circuit",
        "preset": "ohm",
-       "lab": null
+       "lab": "lab-om-qonuni"
       },
       {
        "raqam": 52,
@@ -471,7 +471,7 @@
        "oila": "F24",
        "sim": "circuit",
        "preset": "ohm",
-       "lab": null
+       "lab": "lab-om-qonuni"
       }
      ]
     },
@@ -640,7 +640,7 @@
        "oila": "F24",
        "sim": "circuit",
        "preset": "ohm",
-       "lab": null
+       "lab": "lab-om-qonuni"
       },
       {
        "raqam": 15,
@@ -680,7 +680,7 @@
        "oila": "F24",
        "sim": "circuit",
        "preset": "ohm",
-       "lab": null
+       "lab": "lab-om-qonuni"
       },
       {
        "raqam": 20,
@@ -721,7 +721,7 @@
        "oila": "F24",
        "sim": "circuit",
        "preset": "series",
-       "lab": null
+       "lab": "lab-ketma-ket-parallel"
       },
       {
        "raqam": 25,
@@ -801,7 +801,7 @@
        "oila": "F25",
        "sim": "joule",
        "preset": "rated",
-       "lab": null
+       "lab": "lab-lampochka-quvvati"
       },
       {
        "raqam": 34,
@@ -1186,7 +1186,7 @@
        "oila": "F16",
        "sim": "heat",
        "preset": "mixLab",
-       "lab": null
+       "lab": "lab-issiqlik-sigimi"
       },
       {
        "raqam": 21,
@@ -1226,7 +1226,7 @@
        "oila": "F16",
        "sim": "heat",
        "preset": "mixCompare",
-       "lab": null
+       "lab": "lab-issiqlik-sigimi"
       },
       {
        "raqam": 26,
@@ -1297,7 +1297,7 @@
        "tur": "lab",
        "oila": "F18",
        "sim": "surface",
-       "lab": null,
+       "lab": "lab-sirt-taranglik",
        "preset": "drops"
       },
       {
@@ -1366,7 +1366,7 @@
        "tur": "lab",
        "oila": "F20",
        "sim": "humidity",
-       "lab": null,
+       "lab": "lab-namlik",
        "preset": "psyLab"
       },
       {
@@ -1423,7 +1423,7 @@
        "oila": "F40",
        "sim": "refraction-law",
        "preset": "slabLab",
-       "lab": null
+       "lab": "lab-sindirish"
       },
       {
        "raqam": 50,
@@ -1456,7 +1456,7 @@
        "oila": "F41",
        "sim": "lens",
        "preset": "lab",
-       "lab": null
+       "lab": "lab-linza"
       },
       {
        "raqam": 54,
@@ -1593,7 +1593,7 @@
        "tur": "lab",
        "oila": "F10",
        "sim": "incline-efficiency",
-       "lab": null,
+       "lab": "lab-qiya-tekislik",
        "preset": "labStart"
       }
      ]
@@ -1651,7 +1651,7 @@
        "oila": "F12",
        "sim": "pendulum",
        "preset": "seconds",
-       "lab": null
+       "lab": "lab-mayatnik"
       },
       {
        "raqam": 18,
@@ -1805,7 +1805,7 @@
        "oila": "F27",
        "sim": "circuit",
        "preset": "emf",
-       "lab": null
+       "lab": "lab-eyuk"
       },
       {
        "raqam": 36,
@@ -1894,7 +1894,7 @@
        "oila": "F30",
        "sim": "semiconductor",
        "preset": "vaxSi",
-       "lab": null
+       "lab": "lab-diod"
       }
      ]
     },
@@ -2185,7 +2185,7 @@
        "oila": "F37",
        "sim": "lc",
        "preset": "res",
-       "lab": null
+       "lab": "lab-rezonans"
       },
       {
        "raqam": 20,
@@ -2252,7 +2252,7 @@
        "oila": "F42",
        "sim": "diffraction",
        "preset": "gratLab",
-       "lab": null
+       "lab": "lab-difraksion-panjara"
       },
       {
        "raqam": 27,
@@ -2293,7 +2293,7 @@
        "oila": "F49",
        "sim": "photometry",
        "preset": "lStart",
-       "lab": null
+       "lab": "lab-yoritilganlik"
       }
      ]
     },

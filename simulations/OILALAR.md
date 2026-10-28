@@ -86,29 +86,31 @@ Bo‘sh mavzu qolmadi — simulyatsiya qilinadigan barcha 215 mavzu bog‘langan
 «Bog‘langan» — «Ochish» tugmasi ishlaydi (lab mavzularida vaqtincha oddiy simulyatsiya ham hisoblanadi).
 «Bo‘sh» mavzular katalogda «Tayyorlanmoqda» deb ko‘rinadi. `masala` — sim bo‘lsa ko‘rsatiladi; `matn` ko‘rsatilmaydi.
 
-### Darslikdagi laboratoriya ishlari (22 ta) — 2-qism rejasi
+### Darslikdagi laboratoriya ishlari (22 ta)
+
+2026-10-28: 21 tasi alohida lab sahifasi sifatida tayyor (`lab-core.js`, «Virtual laboratoriyalar» katalogi `labs.html`); 8§58 «Elektromagnit yig‘ish» hozircha simulyatsiya presetida.
 
 | Mavzu | Ish | Oila | Hozir ochiladi | Lab |
 |---|---|---|---|---|
-| 7§12 | Notekis harakat o‘rtacha tezligi | F1 | `motion.html?preset=average` | ○ |
-| 7§18 | Jismlar zichligini aniqlash | F4 | `density.html?preset=unknown` | ○ |
-| 7§51 | Tok kuchi va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |
-| 7§57 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` | ○ |
-| 8§14 | Zanjir yig‘ish, tok va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` | ○ |
-| 8§19 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` | ○ |
-| 8§24 | Ketma-ket/parallel ulashni o‘rganish | F24 | `circuit.html?preset=series` | ○ |
-| 8§33 | Lampochka quvvatini aniqlash | F25 | `joule.html?preset=rated` | ○ |
+| 7§12 | Notekis harakat o‘rtacha tezligi | F1 | `motion.html?preset=average` || ✅ `lab-ortacha-tezlik.html` |
+| 7§18 | Jismlar zichligini aniqlash | F4 | `density.html?preset=unknown` || ✅ `lab-zichlik.html` |
+| 7§51 | Tok kuchi va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` || ✅ `lab-om-qonuni.html` |
+| 7§57 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` || ✅ `lab-om-qonuni.html` |
+| 8§14 | Zanjir yig‘ish, tok va kuchlanishni o‘lchash | F24 | `circuit.html?preset=ohm` || ✅ `lab-om-qonuni.html` |
+| 8§19 | Om qonunini o‘rganish | F24 | `circuit.html?preset=ohm` || ✅ `lab-om-qonuni.html` |
+| 8§24 | Ketma-ket/parallel ulashni o‘rganish | F24 | `circuit.html?preset=series` || ✅ `lab-ketma-ket-parallel.html` |
+| 8§33 | Lampochka quvvatini aniqlash | F25 | `joule.html?preset=rated` || ✅ `lab-lampochka-quvvati.html` |
 | 8§58 | Elektromagnit yig‘ish | F31 | `magnetism.html?preset=electromagnet` | ○ |
-| 9§20 | Solishtirma issiqlik sig‘imi | F16 | `heat.html?preset=mixLab` | ○ |
-| 9§25 | Issiqlik miqdorlarini taqqoslash | F16 | `heat.html?preset=mixCompare` | ○ |
-| 9§34 | Sirt taranglik koeffitsiyenti | F18 | `surface.html?preset=drops` | ○ |
-| 9§42 | Havoning nisbiy namligi | F20 | `humidity.html?preset=psyLab` | ○ |
-| 9§49 | Shishaning sindirish ko‘rsatkichi | F40 | `refraction-law.html?preset=slabLab` | ○ |
-| 9§53 | Linzaning optik kuchi | F41 | `lens.html?preset=lab` | ○ |
-| 10§11 | Qiya tekislik FIKi | F10 | `incline-efficiency.html?preset=labStart` (jadval bor, daftar/PDF yo‘q) | ○ |
-| 10§17 | Mayatnik bilan g ni aniqlash | F12 | `pendulum.html?preset=seconds` | ○ |
-| 10§35 | EYuK va ichki qarshilik | F27 | `circuit.html?preset=emf` | ○ |
-| 10§46 | Diod VAXini o‘rganish | F30 | `semiconductor.html?preset=vaxSi` | ○ |
-| 11§19 | AC zanjirda rezonans | F37 | `lc.html?preset=res` | ○ |
-| 11§26 | Difraksion panjara | F42 | `diffraction.html?preset=gratLab` | ○ |
-| 11§31 | Yoritilganlik | F49 | `photometry.html?preset=lStart` (jadval bor, daftar/PDF yo‘q) | ○ |
+| 9§20 | Solishtirma issiqlik sig‘imi | F16 | `heat.html?preset=mixLab` || ✅ `lab-issiqlik-sigimi.html` |
+| 9§25 | Issiqlik miqdorlarini taqqoslash | F16 | `heat.html?preset=mixCompare` || ✅ `lab-issiqlik-sigimi.html` |
+| 9§34 | Sirt taranglik koeffitsiyenti | F18 | `surface.html?preset=drops` || ✅ `lab-sirt-taranglik.html` |
+| 9§42 | Havoning nisbiy namligi | F20 | `humidity.html?preset=psyLab` || ✅ `lab-namlik.html` |
+| 9§49 | Shishaning sindirish ko‘rsatkichi | F40 | `refraction-law.html?preset=slabLab` || ✅ `lab-sindirish.html` |
+| 9§53 | Linzaning optik kuchi | F41 | `lens.html?preset=lab` || ✅ `lab-linza.html` |
+| 10§11 | Qiya tekislik FIKi | F10 | `incline-efficiency.html?preset=labStart` (jadval bor, daftar/PDF yo‘q) || ✅ `lab-qiya-tekislik.html` |
+| 10§17 | Mayatnik bilan g ni aniqlash | F12 | `pendulum.html?preset=seconds` || ✅ `lab-mayatnik.html` |
+| 10§35 | EYuK va ichki qarshilik | F27 | `circuit.html?preset=emf` || ✅ `lab-eyuk.html` |
+| 10§46 | Diod VAXini o‘rganish | F30 | `semiconductor.html?preset=vaxSi` || ✅ `lab-diod.html` |
+| 11§19 | AC zanjirda rezonans | F37 | `lc.html?preset=res` || ✅ `lab-rezonans.html` |
+| 11§26 | Difraksion panjara | F42 | `diffraction.html?preset=gratLab` || ✅ `lab-difraksion-panjara.html` |
+| 11§31 | Yoritilganlik | F49 | `photometry.html?preset=lStart` (jadval bor, daftar/PDF yo‘q) || ✅ `lab-yoritilganlik.html` |

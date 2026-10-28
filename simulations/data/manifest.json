@@ -1,5 +1,5 @@
 {
- "_izoh": "Simulyatsiyalar katalogi (simulations/simulations.html). Nomlar va tavsiflar mavjud sahifalardan olingan; 'params' — sahifadagi haqiqiy boshqaruv elementlari. Simulyatsiya kodlari bu faylda yo'q va katalog sahifasida yuklanmaydi.",
+ "_izoh": "Simulyatsiyalar katalogi (simulations/simulations.html). Nomlar va tavsiflar mavjud sahifalardan olingan; 'params' — sahifadagi haqiqiy boshqaruv elementlari. Simulyatsiya kodlari bu faylda yo'q va katalog sahifasida yuklanmaydi. 'lab': 'maktab' — maktab laboratoriya ishlari (faqat labs.html da, 'grades' — sinflar), 'otm' — oliy ta’lim laboratoriyalari (ikkala katalogda). 'art' — kartochka chizmasi kaliti (sim-art.js).",
  "topics": [
   {
    "id": "mexanika",
@@ -706,7 +706,8 @@
     "Yadro yaqinida: nishon masofasi b",
     "Laboratoriya daftari va PDF lab varaq"
    ],
-   "keywords": "rezerford rutherford tajribasi alfa zarra sochilish oltin folga atom yadrosi yadro modeli planetar model tomson geyger marsden kulon sochilish kesimi nishon masofasi yadro zaryadi laboratoriya ishi lab varaq pdf atom fizikasi"
+   "keywords": "rezerford rutherford tajribasi alfa zarra sochilish oltin folga atom yadrosi yadro modeli planetar model tomson geyger marsden kulon sochilish kesimi nishon masofasi yadro zaryadi laboratoriya ishi lab varaq pdf atom fizikasi",
+   "lab": "otm"
   },
   {
    "id": "bohr",
@@ -721,7 +722,8 @@
     "Energiya sathlari diagrammasi: hν = Eₙ − E₂",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "bor postulatlari bor modeli statsionar holatlar chastotalar qoidasi frank gers franck hertz simob neon uyg‘otish energiyasi vodorod spektri balmer seriyasi ridberg doimiysi difraksion panjara spektrometr goniometr energiya sathlari ionlanish energiyasi laboratoriya ishi lab varaq pdf latex atom fizikasi"
+   "keywords": "bor postulatlari bor modeli statsionar holatlar chastotalar qoidasi frank gers franck hertz simob neon uyg‘otish energiyasi vodorod spektri balmer seriyasi ridberg doimiysi difraksion panjara spektrometr goniometr energiya sathlari ionlanish energiyasi laboratoriya ishi lab varaq pdf latex atom fizikasi",
+   "lab": "otm"
   },
   {
    "id": "laser",
@@ -747,7 +749,8 @@
     "Grafit trubka: U = 2,5…5 kV, halqalar, shtangensirkul (0,1 mm)",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "devisson jermer davisson germer elektron difraksiyasi de broyl to‘lqin uzunligi zarra to‘lqin dualizmi nikel kristali grafit halqalar debay sherrer bragg plank doimiysi laboratoriya ishi lab varaq pdf latex atom fizikasi kvant"
+   "keywords": "devisson jermer davisson germer elektron difraksiyasi de broyl to‘lqin uzunligi zarra to‘lqin dualizmi nikel kristali grafit halqalar debay sherrer bragg plank doimiysi laboratoriya ishi lab varaq pdf latex atom fizikasi kvant",
+   "lab": "otm"
   },
   {
    "id": "photoeffect",
@@ -762,7 +765,8 @@
     "I(U) grafigi, nol atrofini ×20/×200 kattalashtirish, kursor",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "fotoeffekt tashqi fotoeffekt eynshteyn tenglamasi plank doimiysi tormozlovchi kuchlanish chiqish ishi qizil chegara stoletov qonuni fotoelement volt-amper xarakteristikasi simob lampasi milliken h/e laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "fotoeffekt tashqi fotoeffekt eynshteyn tenglamasi plank doimiysi tormozlovchi kuchlanish chiqish ishi qizil chegara stoletov qonuni fotoelement volt-amper xarakteristikasi simob lampasi milliken h/e laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
   },
   {
    "id": "led-planck",
@@ -777,7 +781,8 @@
     "Spektrometr: 600 chiziq/mm, okulyar va vizir, φ (0,05°)",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "led yorug‘lik diodi plank doimiysi bo‘sag‘a kuchlanishi p-n o‘tish taqiqlangan zona volt-amper xarakteristikasi difraksion panjara spektrometr to‘lqin uzunligi laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "led yorug‘lik diodi plank doimiysi bo‘sag‘a kuchlanishi p-n o‘tish taqiqlangan zona volt-amper xarakteristikasi difraksion panjara spektrometr to‘lqin uzunligi laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
   },
   {
    "id": "thomson-em",
@@ -792,7 +797,8 @@
     "Belgilar d = 4, 6, 8, 10 sm, lupa",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "tomson e/m elektronning solishtirma zaryadi helmgols g‘altaklari ingichka dastali naycha lorens kuchi magnit maydon elektron massasi yer magnit maydoni laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "tomson e/m elektronning solishtirma zaryadi helmgols g‘altaklari ingichka dastali naycha lorens kuchi magnit maydon elektron massasi yer magnit maydoni laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
   },
   {
    "id": "millikan",
@@ -807,7 +813,8 @@
     "Dinamik va muvozanat usullari",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "milliken tajribasi moy tomchisi elementar zaryad zaryad kvantlanishi stoks qonuni kanningem tuzatmasi broun harakati kondensator laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "milliken tajribasi moy tomchisi elementar zaryad zaryad kvantlanishi stoks qonuni kanningem tuzatmasi broun harakati kondensator laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
   },
   {
    "id": "relativity",
@@ -835,7 +842,8 @@
     "Radiometr E, ln E — ln T grafigi",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "qora jism nurlanishi absolyut qora jism plank formulasi vin siljish qonuni stefan bolsman qonuni spektr monoxromator radiometr bolometr pirometr plank doimiysi bolsman doimiysi laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "qora jism nurlanishi absolyut qora jism plank formulasi vin siljish qonuni stefan bolsman qonuni spektr monoxromator radiometr bolometr pirometr plank doimiysi bolsman doimiysi laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
   },
   {
    "id": "compton",
@@ -850,7 +858,8 @@
     "MCA spektri lin/log, ROI: sentroid, net hisob, FWHM",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "kompton effekti kompton sochilishi gamma nurlanish foton elektron sochilish burchagi nai ssintillyatsion detektor ko‘p kanalli analizator spektr kalibrlash sezyi 137 kompton to‘lqin uzunligi elektron massasi klein nishina laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "kompton effekti kompton sochilishi gamma nurlanish foton elektron sochilish burchagi nai ssintillyatsion detektor ko‘p kanalli analizator spektr kalibrlash sezyi 137 kompton to‘lqin uzunligi elektron massasi klein nishina laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
   },
   {
    "id": "wilson",
@@ -865,7 +874,329 @@
     "O‘lchash: chizg‘ich, 3 nuqta orqali aylana, lupa ×4",
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
-   "keywords": "vilson kamerasi tumanli kamera zarralar izlari alfa zarra beta zarra pozitron myuon yugurish yo‘li geyger qonuni magnit maydon lorens kuchi egrilik radiusi impuls zaryad ishorasi radioaktivlik laboratoriya ishi lab varaq pdf latex kvant fizikasi"
+   "keywords": "vilson kamerasi tumanli kamera zarralar izlari alfa zarra beta zarra pozitron myuon yugurish yo‘li geyger qonuni magnit maydon lorens kuchi egrilik radiusi impuls zaryad ishorasi radioaktivlik laboratoriya ishi lab varaq pdf latex kvant fizikasi",
+   "lab": "otm"
+  },
+  {
+   "id": "lab-ortacha-tezlik",
+   "title": "Notekis harakatning o‘rtacha tezligi",
+   "href": "lab-ortacha-tezlik.html",
+   "topic": "mexanika",
+   "description": "Qiya novdan dumalayotgan sharcha, fotodatchiklar va elektron sekundomer. Yo‘l va vaqtni o‘lchab, yo‘l bo‘laklaridagi va butun yo‘ldagi o‘rtacha tezlikni hisoblang.",
+   "params": [
+    "Novning qiyaligi h = 10/15/20 cm",
+    "Fotodatchiklar holati (suriladi)",
+    "Elektron sekundomer"
+   ],
+   "keywords": "o‘rtacha tezlik notekis harakat yo‘l vaqt sharcha qiya nov fotodatchik sekundomer tezlanish laboratoriya ishi virtual laboratoriya 7-sinf",
+   "lab": "maktab",
+   "grades": [
+    "7"
+   ],
+   "art": "motion",
+   "formula": "v = s / t"
+  },
+  {
+   "id": "lab-zichlik",
+   "title": "Jismlarning zichligini aniqlash",
+   "href": "lab-zichlik.html",
+   "topic": "mexanika",
+   "description": "Richagli tarozi va toshlar bilan massani, menzurka bilan hajmni o‘lchab, jism zichligini va moddasini aniqlang.",
+   "params": [
+    "Beshta jism (moddasi noma’lum)",
+    "Richagli tarozi va toshlar",
+    "Menzurka (suv bilan)"
+   ],
+   "keywords": "zichlik massa hajm tarozi toshlar menzurka modda jadval laboratoriya ishi virtual laboratoriya 7-sinf",
+   "lab": "maktab",
+   "grades": [
+    "7"
+   ],
+   "art": "density",
+   "formula": "ρ = m / V"
+  },
+  {
+   "id": "lab-om-qonuni",
+   "title": "Tok kuchi va kuchlanishni o‘lchash. Om qonuni",
+   "href": "lab-om-qonuni.html",
+   "topic": "elektr",
+   "description": "Zanjir yig‘ish, ampermetr va voltmetr bilan tok kuchi va kuchlanishni o‘lchash, I(U) grafigi, qarshilikni aniqlash va Om qonunini tekshirish.",
+   "params": [
+    "Rezistor, reostat, manba",
+    "Ampermetr va voltmetr",
+    "I(U) grafigi"
+   ],
+   "keywords": "om qonuni tok kuchi kuchlanish qarshilik ampermetr voltmetr zanjir yig‘ish reostat laboratoriya ishi virtual laboratoriya 7-sinf 8-sinf",
+   "lab": "maktab",
+   "grades": [
+    "7",
+    "8"
+   ],
+   "art": "circuit",
+   "formula": "I = U / R"
+  },
+  {
+   "id": "lab-ketma-ket-parallel",
+   "title": "O‘tkazgichlarni ketma-ket va parallel ulash",
+   "href": "lab-ketma-ket-parallel.html",
+   "topic": "elektr",
+   "description": "Ikki rezistorni ketma-ket va parallel ulab, tok kuchi va kuchlanishlarni o‘lchang, umumiy qarshilik formulalarini tekshiring.",
+   "params": [
+    "Ikki rezistor: ketma-ket / parallel",
+    "Ampermetr va voltmetrlar"
+   ],
+   "keywords": "ketma-ket parallel ulash umumiy qarshilik rezistor tok kuchlanish laboratoriya ishi virtual laboratoriya 8-sinf",
+   "lab": "maktab",
+   "grades": [
+    "8"
+   ],
+   "art": "circuit",
+   "formula": "R = R₁ + R₂"
+  },
+  {
+   "id": "lab-lampochka-quvvati",
+   "title": "Lampochka quvvatini aniqlash",
+   "href": "lab-lampochka-quvvati.html",
+   "topic": "elektr",
+   "description": "Cho‘g‘lanma lampochkadagi kuchlanish va tok kuchini o‘lchab, quvvat va qarshilikni hisoblang, nominal quvvat bilan solishtiring.",
+   "params": [
+    "Cho‘g‘lanma lampochka, reostat",
+    "Ampermetr va voltmetr"
+   ],
+   "keywords": "lampochka quvvat elektr quvvati kuchlanish tok nominal quvvat qarshilik laboratoriya ishi virtual laboratoriya 8-sinf",
+   "lab": "maktab",
+   "grades": [
+    "8"
+   ],
+   "art": "joule",
+   "formula": "P = U·I"
+  },
+  {
+   "id": "lab-issiqlik-sigimi",
+   "title": "Issiqlik miqdorlarini taqqoslash. Solishtirma issiqlik sig‘imi",
+   "href": "lab-issiqlik-sigimi.html",
+   "topic": "issiqlik",
+   "description": "Kalorimetrda issiq va sovuq suvni aralashtirib issiqlik balansini tekshiring, qizdirilgan metall silindr bilan moddaning solishtirma issiqlik sig‘imini aniqlang.",
+   "params": [
+    "Issiq va sovuq suv massalari",
+    "Metall silindrlar: Al, Fe, latun, Cu",
+    "Kalorimetr va termometr"
+   ],
+   "keywords": "solishtirma issiqlik sig‘imi issiqlik miqdori issiqlik balansi kalorimetr aralashtirish metall silindr laboratoriya ishi virtual laboratoriya 9-sinf",
+   "lab": "maktab",
+   "grades": [
+    "9"
+   ],
+   "art": "heat",
+   "formula": "Q = cmΔt"
+  },
+  {
+   "id": "lab-sirt-taranglik",
+   "title": "Suyuqlikning sirt taranglik koeffitsiyentini aniqlash",
+   "href": "lab-sirt-taranglik.html",
+   "topic": "issiqlik",
+   "description": "Tomchilar usuli — byuretkadan tomgan tomchilarni sanab, massasini tarozida o‘lchab, sirt taranglik koeffitsiyentini toping.",
+   "params": [
+    "Byuretka uchi diametri",
+    "Tomchilar soni N = 50/100",
+    "Elektron tarozi"
+   ],
+   "keywords": "sirt taranglik koeffitsiyenti tomchilar usuli byuretka tomchi massa laboratoriya ishi virtual laboratoriya 9-sinf",
+   "lab": "maktab",
+   "grades": [
+    "9"
+   ],
+   "art": "surface",
+   "formula": "σ = mg / (πdN)"
+  },
+  {
+   "id": "lab-namlik",
+   "title": "Havoning nisbiy namligini aniqlash",
+   "href": "lab-namlik.html",
+   "topic": "issiqlik",
+   "description": "Psixrometr (quruq va ho‘l termometr) va psixrometrik jadval bilan, shudring nuqtasi usulida havoning nisbiy namligini aniqlang.",
+   "params": [
+    "Psixrometr: quruq va ho‘l termometr",
+    "Shudring nuqtasi usuli",
+    "Psixrometrik jadval"
+   ],
+   "keywords": "nisbiy namlik psixrometr ho‘l termometr shudring nuqtasi to‘yingan bug‘ bosimi laboratoriya ishi virtual laboratoriya 9-sinf",
+   "lab": "maktab",
+   "grades": [
+    "9"
+   ],
+   "art": "humidity",
+   "formula": "φ = p / p₀ · 100 %"
+  },
+  {
+   "id": "lab-sindirish",
+   "title": "Shishaning sindirish ko‘rsatkichini aniqlash",
+   "href": "lab-sindirish.html",
+   "topic": "optika",
+   "description": "Shisha plastinkaga tushgan nur, transportir bilan tushish va sinish burchaklarini o‘lchab, shishaning sindirish ko‘rsatkichini aniqlang.",
+   "params": [
+    "Plastinka: shisha, organik shisha, suv",
+    "Tushish burchagi α",
+    "Transportir va lupa"
+   ],
+   "keywords": "sindirish ko‘rsatkichi sinish qonuni shisha plastinka tushish burchagi sinish burchagi laboratoriya ishi virtual laboratoriya 9-sinf",
+   "lab": "maktab",
+   "grades": [
+    "9"
+   ],
+   "art": "refraction-law",
+   "formula": "n = sin α / sin β"
+  },
+  {
+   "id": "lab-linza",
+   "title": "Yig‘uvchi linzaning fokus masofasi va optik kuchi",
+   "href": "lab-linza.html",
+   "topic": "optika",
+   "description": "Optik skamyada buyum, linza va ekran — aniq tasvir hosil qilib d va f ni o‘lchang, fokus masofasi va optik kuchni hisoblang.",
+   "params": [
+    "Linza: F ≈ 10/15/20 cm",
+    "Optik skamya: buyum, linza, ekran"
+   ],
+   "keywords": "linza fokus masofasi optik kuch dioptriya tasvir optik skamya laboratoriya ishi virtual laboratoriya 9-sinf",
+   "lab": "maktab",
+   "grades": [
+    "9"
+   ],
+   "art": "lens",
+   "formula": "1/F = 1/d + 1/f"
+  },
+  {
+   "id": "lab-qiya-tekislik",
+   "title": "Qiya tekislikning foydali ish koeffitsiyenti",
+   "href": "lab-qiya-tekislik.html",
+   "topic": "mexanika",
+   "description": "Dinamometr bilan brusokni qiya tekislik bo‘ylab tekis tortib, foydali va to‘liq ishni hisoblang, FIKning qiyalikka bog‘liqligini o‘rganing.",
+   "params": [
+    "Qiya tekislik balandligi h",
+    "Dinamometr",
+    "Brusok"
+   ],
+   "keywords": "qiya tekislik fik foydali ish koeffitsiyenti dinamometr foydali ish to‘liq ish laboratoriya ishi virtual laboratoriya 10-sinf",
+   "lab": "maktab",
+   "grades": [
+    "10"
+   ],
+   "art": "incline-efficiency",
+   "formula": "η = Ph / (Fl)"
+  },
+  {
+   "id": "lab-mayatnik",
+   "title": "Matematik mayatnik yordamida erkin tushish tezlanishini aniqlash",
+   "href": "lab-mayatnik.html",
+   "topic": "mexanika",
+   "description": "Ip uzunligini o‘zgartirib, sekundomer bilan N ta tebranish vaqtini o‘lchang; T²(l) grafigidan erkin tushish tezlanishi g ni toping.",
+   "params": [
+    "Ip uzunligi l",
+    "Sekundomer (qo‘lda yoki N = 10/20)",
+    "Vaqt tezligi 1×/5×"
+   ],
+   "keywords": "matematik mayatnik erkin tushish tezlanishi g tebranish davri sekundomer laboratoriya ishi virtual laboratoriya 10-sinf",
+   "lab": "maktab",
+   "grades": [
+    "10"
+   ],
+   "art": "pendulum",
+   "formula": "T = 2π√(l/g)"
+  },
+  {
+   "id": "lab-eyuk",
+   "title": "Tok manbaining EYuK va ichki qarshiligini aniqlash",
+   "href": "lab-eyuk.html",
+   "topic": "elektr",
+   "description": "Reostat bilan tok kuchini o‘zgartirib, manba qisqichlaridagi kuchlanishni o‘lchang; U(I) grafigidan EYuK va ichki qarshilikni toping.",
+   "params": [
+    "Reostat",
+    "Ampermetr va voltmetr",
+    "U(I) grafigi"
+   ],
+   "keywords": "eyuk elektr yurituvchi kuch ichki qarshilik tok manbai reostat qisqa tutashuv laboratoriya ishi virtual laboratoriya 10-sinf",
+   "lab": "maktab",
+   "grades": [
+    "10"
+   ],
+   "art": "circuit",
+   "formula": "U = ε − Ir"
+  },
+  {
+   "id": "lab-diod",
+   "title": "Yarimo‘tkazgichli diodning volt-amper xarakteristikasi",
+   "href": "lab-diod.html",
+   "topic": "elektr",
+   "description": "Diodni to‘g‘ri va teskari yo‘nalishda ulab, volt-amper xarakteristikasini o‘lchang, ochilish kuchlanishi va dinamik qarshilikni toping.",
+   "params": [
+    "Diod: kremniy, germaniy, LED",
+    "To‘g‘ri / teskari ulash",
+    "I(U) grafigi"
+   ],
+   "keywords": "diod volt-amper xarakteristikasi vax yarimo‘tkazgich p-n o‘tish ochilish kuchlanishi laboratoriya ishi virtual laboratoriya 10-sinf",
+   "lab": "maktab",
+   "grades": [
+    "10"
+   ],
+   "art": "semiconductor",
+   "formula": "I = f(U)"
+  },
+  {
+   "id": "lab-rezonans",
+   "title": "O‘zgaruvchan tok zanjirida rezonans",
+   "href": "lab-rezonans.html",
+   "topic": "elektr",
+   "description": "Ketma-ket RLC zanjirda generator chastotasini o‘zgartirib tok kuchini o‘lchang, rezonans chastotasini toping va g‘altak induktivligini hisoblang.",
+   "params": [
+    "Kondensator: 0,47/1/2,2 μF",
+    "Generator chastotasi f",
+    "Ampermetr"
+   ],
+   "keywords": "rezonans o‘zgaruvchan tok rlc zanjir induktivlik sig‘im chastota asllik laboratoriya ishi virtual laboratoriya 11-sinf",
+   "lab": "maktab",
+   "grades": [
+    "11"
+   ],
+   "art": "lc",
+   "formula": "f₀ = 1 / (2π√(LC))"
+  },
+  {
+   "id": "lab-difraksion-panjara",
+   "title": "Difraksion panjara yordamida yorug‘lik to‘lqin uzunligini aniqlash",
+   "href": "lab-difraksion-panjara.html",
+   "topic": "optika",
+   "description": "Lazer va difraksion panjara, ekrandagi maksimumlar orasidagi masofani o‘lchab, yorug‘lik to‘lqin uzunligini aniqlang.",
+   "params": [
+    "Lazer: qizil, yashil, sariq",
+    "Panjara: 50/100/200 chiziq/mm",
+    "Ekran masofasi L"
+   ],
+   "keywords": "difraksion panjara to‘lqin uzunligi lazer maksimum davr difraksiya laboratoriya ishi virtual laboratoriya 11-sinf",
+   "lab": "maktab",
+   "grades": [
+    "11"
+   ],
+   "art": "diffraction",
+   "formula": "d sin φ = kλ"
+  },
+  {
+   "id": "lab-yoritilganlik",
+   "title": "Yoritilganlikning masofaga va tushish burchagiga bog‘liqligi",
+   "href": "lab-yoritilganlik.html",
+   "topic": "optika",
+   "description": "Optik skamyada lampa va lyuksmetr — yoritilganlikni masofa va burchakka qarab o‘lchang, lampaning yorug‘lik kuchini toping.",
+   "params": [
+    "Lampa turi",
+    "Masofa r va burchak α",
+    "Lyuksmetr"
+   ],
+   "keywords": "yoritilganlik yorug‘lik kuchi lyuksmetr masofa kvadrati tushish burchagi kosinus laboratoriya ishi virtual laboratoriya 11-sinf",
+   "lab": "maktab",
+   "grades": [
+    "11"
+   ],
+   "art": "photometry",
+   "formula": "E = I cos α / r²"
   }
  ]
 }
