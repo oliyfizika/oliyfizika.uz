@@ -2,8 +2,9 @@
 // Laboratoriya daftari — umumiy modul (virtual laboratoriya ishlari uchun).
 // Sahifadagi <section data-notebook> ichini konfiguratsiya bo‘yicha quradi:
 //   1) Bajaruvchi;  2…) jadvallar (kiritish → hisoblangan ustunlar, tekshiruv ✓/?, jonli xulosa kartochkalari);
-//   xulosa;  hisobot: «Ko‘rib chiqish» (iframe), «PDF yuklab olish» (chop etish oynasi), «LaTeX (.tex)».
-// Ma’lumotlar brauzerda (localStorage) saqlanadi. Hisobot labreport.js orqali (KaTeX HTML va LaTeX).
+//   xulosa;  hisobot: «Ko‘rib chiqish» (iframe), «PDF yuklab olish» (chop etish oynasi).
+// Ma’lumotlar brauzerda (localStorage) saqlanadi. Hisobot labreport.js orqali (KaTeX bilan terilgan HTML).
+// fill(key, values) — jadvalning birinchi bo‘sh qatorini to‘ldiradi («Qaydlar» dan o‘tkazish uchun).
 //
 // cfg = {
 //   key, intro, conclusionPh, hint, docLabel, site: {url, label}, fileBase: (nb) => "…",
@@ -16,7 +17,7 @@
 // }
 // ==========================================================================
 
-import { renderHTML, renderTeX } from "./labreport.js";
+import { renderHTML } from "./labreport.js";
 
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
@@ -77,10 +78,9 @@ export function createNotebook(root, cfg) {
         <div class="lab-actions">
           <button class="of-btn" type="button" data-build>Ko‘rib chiqish</button>
           <button class="of-btn of-btn--primary" type="button" data-pdf>PDF yuklab olish</button>
-          <button class="of-btn" type="button" data-tex>LaTeX (.tex)</button>
           <span class="lab-msg" data-build-msg role="status" aria-live="polite"></span>
         </div>
-        <p class="of-subtle lab-hint">PDF: yangi oynada chop etish oynasi ochiladi — «Saqlash: PDF» (Save as PDF) ni tanlang. LaTeX: manba fayl — Overleaf yoki boshqa TeX tizimida pdfLaTeX bilan kompilyatsiya qilinadi.</p>
+        <p class="of-subtle lab-hint">PDF: yangi oynada chop etish oynasi ochiladi — «Saqlash: PDF» (Save as PDF) ni tanlang.</p>
         <div class="lab-preview" data-preview hidden></div>
       </li>
     </ol>`;
@@ -166,7 +166,7 @@ export function createNotebook(root, cfg) {
     let html = null; try { html = await makeHTML(false); } catch { say("Formulalar kutubxonasini yuklab bo‘lmadi. Qayta urinib ko‘ring.", "red"); }
     if (!html) { built = false; preview.hidden = true; progress(); return; }
     preview.innerHTML = ""; const fr = document.createElement("iframe"); fr.title = "Lab varaq ko‘rinishi"; fr.className = "lab-frame"; fr.srcdoc = html; preview.append(fr);
-    preview.hidden = false; built = true; say("Tayyor. Pastda ko‘rib chiqing, so‘ng PDF yoki LaTeX faylni yuklab oling.", "green"); progress();
+    preview.hidden = false; built = true; say("Tayyor. Pastda ko‘rib chiqing, so‘ng PDF ni yuklab oling.", "green"); progress();
   });
   $("[data-pdf]").addEventListener("click", async () => {
     if (errors().length) { makeDoc(); return; }
@@ -178,17 +178,26 @@ export function createNotebook(root, cfg) {
       say("Yangi oynada chop etish oynasi ochildi: «Saqlash: PDF» (Save as PDF) ni tanlang.", "green"); built = true; progress();
     } catch { w?.close(); say("Formulalar kutubxonasini yuklab bo‘lmadi. Qayta urinib ko‘ring.", "red"); }
   });
-  $("[data-tex]").addEventListener("click", () => {
-    const doc = makeDoc(); if (!doc) return;
-    const tex = renderTeX(doc, { docLabel: cfg.docLabel, url: cfg.site.url, label: cfg.site.label });
-    const url = URL.createObjectURL(new Blob([tex], { type: "application/x-tex;charset=utf-8" })), a = document.createElement("a");
-    a.href = url; a.download = `${fileBase()}.tex`; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000);
-    say("LaTeX fayl yuklab olindi. Overleaf (pdfLaTeX) yoki istalgan TeX tizimida kompilyatsiya qilinadi.", "green");
-  });
   root.addEventListener("input", () => { if (built) { built = false; say("Ma’lumotlar o‘zgardi — hisobot yangi ma’lumotlar bilan tuziladi."); progress(); } });
 
+  /** values: {k: matn} — kiritish ustunlari; shu ustunlari bo‘sh birinchi qatorga yoziladi (bo‘lmasa — yangi qator). */
+  function fill(key, values) {
+    const tc = T[key]?.tc; if (!tc) return -1;
+    // qatorda shu qaydning (tanlovdan tashqari) ustunlari bo‘sh bo‘lsa — yoziladi (qayd qisman bo‘lsa, qator bosqichma-bosqich to‘ladi)
+    const keys = tc.cols.filter((c) => c.kind !== "sel" && values[c.k] != null).map((c) => c.k);
+    const blank = (r, k) => String(r[k] ?? "").trim() === "", same = (r, k) => num(r[k]) === num(values[k]) || String(r[k]).trim() === String(values[k]).trim();
+    const rows = nb.t[key], empty = (r) => keys.some((k) => blank(r, k)) && keys.every((k) => blank(r, k) || same(r, k));
+    let i = rows.findIndex(empty);
+    if (i < 0) { if (rows.length >= (tc.max || 12)) return -1; rows.push(tc.blank(rows.length)); i = rows.length - 1; }
+    tc.cols.forEach((c) => { if (values[c.k] != null) rows[i][c.k] = String(values[c.k]); });
+    save(); T[key].render(); recalc();
+    const tr = T[key].body.rows[i]; tr?.classList.add("is-filled"); setTimeout(() => tr?.classList.remove("is-filled"), 1600);
+    if (built) { built = false; say("Ma’lumotlar o‘zgardi — hisobot yangi ma’lumotlar bilan tuziladi."); progress(); }
+    return i;
+  }
+
   recalc();
-  return { nb, res, recalc };
+  return { nb, res, recalc, fill };
 }
 
 /** Umumiy: hujjat sarlavhasi uchun meta (bajaruvchi va sana). */

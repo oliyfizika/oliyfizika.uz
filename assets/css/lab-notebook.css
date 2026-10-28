@@ -76,3 +76,20 @@ select.of-input { padding-right: 28px; }
 .lab-preview:has(.lab-frame) { padding: 0; overflow: hidden; }
 .lab-hint { font-size: var(--of-text-xs); }
 .lab-table--narrow { min-width: 480px; }
+
+/* Qaydlar (maktab laboratoriyalari: o‘ng panel) — o‘lchovlar jurnali, jadvalga o‘tkazish */
+.lab-notes__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lab-notes__count { font-size: var(--of-text-xs); font-weight: 700; color: var(--of-text-3); }
+.lab-notes__hint { font-size: var(--of-text-xs); margin: -6px 0 0; }
+.lab-notes__list { max-height: 300px; }
+.lab-notes__list li { grid-template-columns: 26px 1fr auto; align-items: center; }
+.lab-notes__list .lab-journal__m { color: var(--of-text); font-weight: 600; line-height: 1.35; }
+.lab-notes__btns { display: inline-flex; gap: 2px; align-items: center; }
+.lab-notes__to { height: 26px; padding: 0 8px; border: 1px solid var(--of-border); border-radius: var(--of-radius-sm); background: var(--of-surface); color: var(--of-primary-text); font: 700 var(--of-text-xs)/1 var(--of-font-sans); cursor: pointer; white-space: nowrap; }
+.lab-notes__to:hover { border-color: var(--of-primary); background: var(--of-primary-soft); }
+.lab-notes__list .lab-del { width: 26px; height: 26px; font-size: 16px; }
+.lab-notes__list:empty::before { content: "Hali qayd yo‘q — o‘lchab, «Qaydga yozish» ni bosing"; }
+.lab-table tr.is-filled td { background: var(--of-success-soft); transition: background .6s; }
+.lab-howto { margin: 0 0 10px; padding-left: 1.3em; display: flex; flex-direction: column; gap: 6px; color: var(--of-text-2); }
+.sim-readouts--4 .sim-readout[hidden] { display: none; }
+.sim-status:empty { display: none; }
