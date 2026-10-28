@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual laboratoriyalar | OliyFizika.uz</title>
+<meta name="description" content="Fizikadan virtual laboratoriya ishlari: 7–11-sinf darsliklaridagi laboratoriya ishlari va oliy ta’lim laboratoriyalari. O‘lchang, qaydlarni jadvalga kiriting, hisoblang va PDF hisobot yuklab oling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/catalog.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/labs-page.js"></script>
+</head>
+<!--
+  Virtual laboratoriyalar katalogi. Ma'lumot: data/manifest.json dagi `lab` maydoni bor yozuvlar
+  ('maktab' — darslik laboratoriya ishlari, `grades` bo'yicha; 'otm' — oliy ta'lim laboratoriyalari).
+  Sinf filtri URL da saqlanadi: ?sinf=7…11 yoki ?sinf=otm. Laboratoriya kodlari bu sahifada yuklanmaydi.
+-->
+<body class="of-ui" data-shell-title="Virtual laboratoriyalar" data-shell-public="true">
+<div class="of-page of-container of-cat of-cat--wide" id="labsPage">
+  <header class="of-cat-head">
+    <div>
+      <h1>Virtual laboratoriyalar</h1>
+      <p>Darslikdagi laboratoriya ishlarini virtual asboblar bilan bajaring: o‘lchang, natijani «Qaydlar»ga belgilang, jadvalni to‘ldiring va hisoblash natijasi bilan PDF hisobotni yuklab oling.</p>
+    </div>
+    <p class="of-cat-count" data-sim-count aria-live="polite"></p>
+  </header>
+
+  <section aria-labelledby="labListTitle">
+    <h2 class="of-sr-only" id="labListTitle">Laboratoriya ishlari ro‘yxati</h2>
+    <div class="of-segment of-grades" data-grades role="group" aria-label="Sinf bo‘yicha saralash"></div>
+    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash" style="margin-top:12px"></ul>
+    <ul class="of-sims" data-sims aria-busy="true" style="margin-top:12px">
+      <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
+      <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
+      <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

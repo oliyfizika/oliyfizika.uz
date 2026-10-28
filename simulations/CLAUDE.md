@@ -47,7 +47,9 @@ Umumiy yadro:
 | `sim-kit.js` | `createStage` (DPR, ResizeObserver, tema), `createLoop` (real vaqt dt ≤ 1/30, yashirilsa to‘xtaydi), `arrow`, `angleArc`, `tag`, `bindRange`, `fmt`, `sci`, `drawGraph` |
 | `labkit.js` | Asbob chizish: `lcd`, `knob`, `chipBtn`, `chipGrid`, `tagIn`, `readouts`, `noise` (deterministik shovqin) |
 | `labnotebook.js` | `createNotebook(root, cfg)` — laboratoriya daftari (cfg sxemasi faylning boshida) |
-| `labreport.js` | Bitta hujjat modeli → KaTeX’li A4 HTML (brauzerda PDF) va to‘liq `.tex` (pdfLaTeX) ; `fx`, `sx`, `svgPlot`, `svgQr` |
+| `labreport.js` | Bitta hujjat modeli → KaTeX’li A4 HTML (brauzerda PDF) va to‘liq `.tex` (pdfLaTeX; faqat OTM lablarida) ; `fx`, `sx`, `svgPlot`, `svgQr` |
+| `lab-core.js` | `createLab(cfg)` — maktab lab sahifasi: sahna, boshqaruv (`only` — rejimga bog‘lash), asbob tugmalari, «Qaydlar», daftar, tushuntirish, formulalar (`extra` — qo‘shimcha HTML). cfg sxemasi faylning boshida |
+| `labgear.js` | Maktab lab asboblari chizmasi: multimetr, reostat, g‘altak, kondensator, elektron tarozi va h.k. |
 | `lab-qr.js` | Hisobot uchun QR kod |
 | `sim-lab.css` | 2.0 maket: `.sim-head`, `.sim-layout`, `.sim-stage`, `.sim-panel`, `.sim-readouts`, `.sim-explain`, `.sim-bin` |
 
@@ -57,19 +59,26 @@ Umumiy yadro:
 - **Natija jadval qiymatidan biroz farq qilishi kerak** — real tajribadagidek tizimli xato (kontakt potensiali, fon,
   apertura, issiqlik yoyilishi…) va statistik xato (Puasson, Broun). Odatda 1–3 % farq; sababi hisobotda tushuntiriladi.
 - Daftar: bajaruvchi → jadvallar (kamida bittasi `req: true`) → jonli xulosa kartochkalari → xulosa matni →
-  «Ko‘rib chiqish», «PDF», «LaTeX (.tex)». Ma’lumot `localStorage` da (`of-nb-<key>-v1`).
+  «Ko‘rib chiqish», «PDF» (OTM lablarida yana «LaTeX (.tex)»). Ma’lumot `localStorage` da (`of-nb-<key>-v1`).
+- **Maktab lablari** (`lab-*.html`, 7–11-sinf darslik ishlari): sahifa `tools/simulations/make-lab-pages.py` bilan yaratiladi,
+  mantiq `assets/js/simulations/lab-<nom>.js` → `createLab(cfg)`. Har o‘lchash «Qaydga yozish» bilan **«Qaydlar»**ga
+  tushadi (qisman qayd ham bo‘ladi — masalan avval m, keyin V), so‘ng «→ jadval» yoki «Hammasini jadvalga» bilan
+  asosiy jadvalga o‘tkaziladi. `.tex` yuklab olish yo‘q (foydalanuvchi talabi) — faqat ko‘rib chiqish va PDF.
 - Hisobot (LaTeX sifatida): maqsad, qisqacha nazariya (raqamlangan formulalar), jihozlar, ish tartibi, jadvallar,
   grafiklar (o‘lchangan nuqtalar + EKK chizig‘i), raqamli hisoblashlar, xulosa, imzolar, sayt havolasi va QR.
-  `.tex` pdfLaTeX’da xatosiz kompilyatsiya bo‘lishi shart (yangi Unicode belgisi bo‘lsa `labreport.js` preambulasiga qo‘shing).
+  OTM lablarida `.tex` pdfLaTeX’da xatosiz kompilyatsiya bo‘lishi shart (yangi Unicode belgisi bo‘lsa `labreport.js` preambulasiga qo‘shing).
 
 ## Katalogga qo‘shish
 1. `simulations/data/manifest.json` → `simulations[]`: `id`, `title`, `href`, `topic` (`mexanika`, `issiqlik`, `elektr`,
    `optika`, `atom`, `kvant`), `description`, `params`, `keywords`.
-2. `assets/js/simulations/simulations-page.js` → `ART` ga 160×90 sxematik SVG (`.a` asosiy, `.b` ikkinchi, `.m` yordamchi, `.f` to‘ldirilgan).
+2. `assets/js/simulations/sim-art.js` → `ART` ga 160×90 sxematik SVG (`.a` asosiy, `.b` ikkinchi, `.m` yordamchi, `.f` to‘ldirilgan).
 3. Yangi mavzu bo‘lsa — `manifest.topics` va `assets/css/catalog.css` rang qoidalari.
-4. Eski manzil o‘zgarsa — eski HTML yo‘naltiruvchi sahifa bo‘lib qoladi (masalan, `ohm-law.html` → `circuit.html?preset=ohm`).
+4. Laboratoriya bo‘lsa `lab` maydoni: `"maktab"` (+ `grades`, `formula`, `art` — mavjud ART kaliti) — faqat
+   «Virtual laboratoriyalar» katalogida (`labs.html`, sidebar bandi); `"otm"` — ikkala katalogda ham.
+   Darslik mavzusiga `curriculum.json` dagi `lab` maydoni orqali bog‘lanadi.
+5. Eski manzil o‘zgarsa — eski HTML yo‘naltiruvchi sahifa bo‘lib qoladi (masalan, `ohm-law.html` → `circuit.html?preset=ohm`).
 
-5. Darslik mavzulariga bog‘lash — `simulations/data/curriculum.json` (katalogdagi 7–11-sinf tugmalari, `?sinf=8`).
+6. Darslik mavzulariga bog‘lash — `simulations/data/curriculum.json` (katalogdagi 7–11-sinf tugmalari, `?sinf=8`).
    Bir oila bir nechta sinf darsligida bo‘lsa — bitta simulyatsiya, sinfga qarab turli `preset`; sahifa nusxalanmaydi.
    Kerakli preset yo‘q bo‘lsa simulyatsiyaning o‘ziga qo‘shiladi va `?preset=<id>` URL orqali ochilishi, tanlangan tugmada
    `aria-pressed="true"` bo‘lishi shart. Tekshiruv: `t_curriculum.mjs` (Node) va `t_curriculum_presets.mjs` (Playwright).
@@ -78,5 +87,5 @@ Umumiy yadro:
 - **Fizika:** `<nom>-physics.js` Node’da analitik qiymatlarga solishtiriladi (davr, energiya saqlanishi, chegaraviy
   holatlar, formulalar). Test skriptlarini `tools/simulations/tests/t_<nom>.mjs` ga qo‘ying.
 - **Brauzer:** Playwright (o‘rnatilgan): sahifa xatosiz yuklanadi, konsolda xato yo‘q, yorug‘/qorong‘i, 390 px.
-  Lab uchun to‘liq zanjir: o‘lchash → daftar → ko‘rib chiqish → PDF/.tex; `.tex` ni pdfLaTeX’da kompilyatsiya qilish.
+  Lab uchun to‘liq zanjir: o‘lchash → qaydlar → daftar → ko‘rib chiqish → PDF (OTM lablarida yana `.tex` ni pdfLaTeX’da kompilyatsiya qilish).
 - Lokal server: repo ildizida `python3 -m http.server 8000` → `http://localhost:8000/simulations/<nom>.html`.

@@ -3,7 +3,7 @@
 // 1) Qurilma: vakuum kamera (tepadan), α-manba + kollimator, folga, aylanuvchi detektor (sudraladi), goniometr,
 //    sanagich (vaqt, tezlashtirish), nasos va bosim, O‘lchovlar jurnali. Sanoq — Puasson jarayoni.
 // 2) Yadro yaqinida: Kulon maydonidagi giperbolik traektoriyalar, nishon masofasi b (sudraladi), θ, r_min.
-// 3) Laboratoriya daftari: 1-jadval (θ, t, N), 2-jadval (boshqa folgalar), hisoblashlar, xulosa, hisobot → PDF va .tex.
+// 3) Laboratoriya daftari: 1-jadval (θ, t, N), 2-jadval (boshqa folgalar), hisoblashlar, xulosa, hisobot → PDF.
 // Fizika: rutherford-physics.js, hisob: rutherford-lab.js (Node’da tekshirilgan); hisobot: rutherford-report.js + labreport.js (KaTeX → PDF, LaTeX manba).
 // ==========================================================================
 
@@ -12,7 +12,7 @@ import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMoti
 import * as P from "./rutherford-physics.js";
 import * as L from "./rutherford-lab.js";
 import { buildRutherfordDoc, SITE_URL, SITE_LABEL, DOC_LABEL } from "./rutherford-report.js";
-import { renderHTML, renderTeX } from "./labreport.js";
+import { renderHTML } from "./labreport.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -579,7 +579,7 @@ $("[data-conclusion-hint]").addEventListener("click", () => {
 });
 
 let built = false;
-const buildMsg = $("[data-build-msg]"), pdfBtn = $("[data-pdf]"), texBtn = $("[data-tex]"), preview = $("[data-preview]");
+const buildMsg = $("[data-build-msg]"), pdfBtn = $("[data-pdf]"), preview = $("[data-preview]");
 const KATEX_JS = new URL("../../vendor/katex/katex.min.js", import.meta.url).href, KATEX_CSS = new URL("../../vendor/katex/katex.min.css", import.meta.url).href;
 let katexP = null;
 function loadKatex() {
@@ -606,7 +606,7 @@ $("[data-build]").addEventListener("click", async () => {
   if (!html) { built = false; preview.hidden = true; nbProgress(); return; }
   preview.innerHTML = ""; const fr = document.createElement("iframe"); fr.title = "Lab varaq ko‘rinishi"; fr.className = "lab-frame"; fr.srcdoc = html; preview.append(fr);
   preview.hidden = false; built = true;
-  buildMsg.textContent = "Tayyor. Pastda ko‘rib chiqing, so‘ng PDF yoki LaTeX faylni yuklab oling."; buildMsg.dataset.tone = "green"; nbProgress();
+  buildMsg.textContent = "Tayyor. Pastda ko‘rib chiqing, so‘ng PDF ni yuklab oling."; buildMsg.dataset.tone = "green"; nbProgress();
 });
 pdfBtn.addEventListener("click", async () => {
   if (nbValid().length) { makeDoc(); return; }
@@ -620,15 +620,8 @@ pdfBtn.addEventListener("click", async () => {
     built = true; nbProgress();
   } catch { w?.close(); buildMsg.textContent = "Formulalar kutubxonasini yuklab bo‘lmadi. Qayta urinib ko‘ring."; buildMsg.dataset.tone = "red"; }
 });
-texBtn.addEventListener("click", () => {
-  const doc = makeDoc(); if (!doc) return;
-  const tex = renderTeX(doc, { docLabel: DOC_LABEL, url: SITE_URL, label: SITE_LABEL });
-  const url = URL.createObjectURL(new Blob([tex], { type: "application/x-tex;charset=utf-8" })), a = document.createElement("a");
-  a.href = url; a.download = `${fileBase()}.tex`; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000);
-  buildMsg.textContent = "LaTeX fayl yuklab olindi. Overleaf (pdfLaTeX) yoki istalgan TeX tizimida kompilyatsiya qilinadi."; buildMsg.dataset.tone = "green";
-});
 // daftar o‘zgarsa — ko‘rinish eskiradi
-document.querySelector("#labNotebook").addEventListener("input", () => { if (built) { built = false; buildMsg.textContent = "Ma’lumotlar o‘zgardi — PDF va LaTeX yangi ma’lumotlar bilan tuziladi; ko‘rinishni yangilash uchun qayta shakllantiring."; buildMsg.dataset.tone = ""; nbProgress(); } });
+document.querySelector("#labNotebook").addEventListener("input", () => { if (built) { built = false; buildMsg.textContent = "Ma’lumotlar o‘zgardi — PDF yangi ma’lumotlar bilan tuziladi; ko‘rinishni yangilash uchun qayta shakllantiring."; buildMsg.dataset.tone = ""; nbProgress(); } });
 
 /* ------------------------------------------------------------------ Ishga tushirish */
 

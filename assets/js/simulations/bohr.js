@@ -4,7 +4,7 @@
 //    dastagi va ±tugmalar, nanoampermetr, avtomatik skanerlash; yozib oluvchi I(U) grafigi (kursor bilan o‘qish).
 // 2) Vodorod spektri: goniometrli spektrometr (teleskop suriladi), okulyar ko‘rinishi (vizir), aniq burash
 //    tugmalari, energiya sathlari diagrammasi (hν = E_n − E₂), goniometr jurnali.
-// 3) Laboratoriya daftari → LaTeX uslubidagi hisobot (KaTeX HTML → PDF, .tex manba).
+// 3) Laboratoriya daftari → LaTeX uslubidagi hisobot (KaTeX HTML → PDF).
 // Fizika: bohr-physics.js, hisob: bohr-lab.js (Node’da tekshirilgan); hisobot: bohr-report.js + labreport.js.
 // ==========================================================================
 
@@ -14,7 +14,7 @@ import * as P from "./bohr-physics.js";
 import * as L from "./bohr-lab.js";
 import { frame, ticks } from "./pendulum-plots.js";
 import { buildBohrDoc, SITE_URL, SITE_LABEL, DOC_LABEL } from "./bohr-report.js";
-import { renderHTML, renderTeX } from "./labreport.js";
+import { renderHTML } from "./labreport.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -552,7 +552,7 @@ $("[data-build]").addEventListener("click", async () => {
   let html = null; try { html = await makeHTML(false); } catch { buildMsg.textContent = "Formulalar kutubxonasini yuklab bo‘lmadi. Qayta urinib ko‘ring."; buildMsg.dataset.tone = "red"; }
   if (!html) { built = false; preview.hidden = true; nbProgress(); return; }
   preview.innerHTML = ""; const fr = document.createElement("iframe"); fr.title = "Lab varaq ko‘rinishi"; fr.className = "lab-frame"; fr.srcdoc = html; preview.append(fr);
-  preview.hidden = false; built = true; buildMsg.textContent = "Tayyor. Pastda ko‘rib chiqing, so‘ng PDF yoki LaTeX faylni yuklab oling."; buildMsg.dataset.tone = "green"; nbProgress();
+  preview.hidden = false; built = true; buildMsg.textContent = "Tayyor. Pastda ko‘rib chiqing, so‘ng PDF ni yuklab oling."; buildMsg.dataset.tone = "green"; nbProgress();
 });
 $("[data-pdf]").addEventListener("click", async () => {
   if (nbValid().length) { makeDoc(); return; }
@@ -563,13 +563,6 @@ $("[data-pdf]").addEventListener("click", async () => {
     w.document.open(); w.document.write(html); w.document.close();
     buildMsg.textContent = "Yangi oynada chop etish oynasi ochildi: «Saqlash: PDF» (Save as PDF) ni tanlang."; buildMsg.dataset.tone = "green"; built = true; nbProgress();
   } catch { w?.close(); buildMsg.textContent = "Formulalar kutubxonasini yuklab bo‘lmadi. Qayta urinib ko‘ring."; buildMsg.dataset.tone = "red"; }
-});
-$("[data-tex]").addEventListener("click", () => {
-  const doc = makeDoc(); if (!doc) return;
-  const tex = renderTeX(doc, { docLabel: DOC_LABEL, url: SITE_URL, label: SITE_LABEL });
-  const url = URL.createObjectURL(new Blob([tex], { type: "application/x-tex;charset=utf-8" })), a = document.createElement("a");
-  a.href = url; a.download = `${fileBase()}.tex`; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000);
-  buildMsg.textContent = "LaTeX fayl yuklab olindi. Overleaf (pdfLaTeX) yoki istalgan TeX tizimida kompilyatsiya qilinadi."; buildMsg.dataset.tone = "green";
 });
 document.querySelector("#labNotebook").addEventListener("input", () => { if (built) { built = false; buildMsg.textContent = "Ma’lumotlar o‘zgardi — hisobot yangi ma’lumotlar bilan tuziladi."; buildMsg.dataset.tone = ""; nbProgress(); } });
 

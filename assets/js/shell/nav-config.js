@@ -1,5 +1,5 @@
 // Sidebar navigatsiyasi — yagona manba.
-// `match` — joriy URL shu yo'l bilan boshlansa, element faol ko'rsatiladi.
+// `match` — joriy URL shu yo'l bilan boshlansa ("/" yoki "*" bilan tugasa) yoki unga teng bo'lsa, element faol ko'rsatiladi; eng uzun mos kelgani tanlanadi.
 // `protected: true` — mehmon foydalanuvchidan kirish talab qilinadi.
 // `publicLanding: true` — bo'limning bosh sahifasi mehmonlarga ochiq (tuzilmani ko'rish uchun),
 //   ichki sahifalari esa himoyalangan qoladi (sahifada data-shell-public="true").
@@ -17,6 +17,7 @@ export const NAV_GROUPS = [
       { id: "quizzes", label: "Quizlar", icon: "quiz", href: "quizs/quizs.html", match: ["quizs/"], protected: true, publicLanding: true },
       { id: "oyinlar", label: "Interaktiv o‘yinlar", icon: "gamepad", href: "interaktiv-oyinlar/interaktiv-oyinlar.html", match: ["interaktiv-oyinlar/"], protected: false }, // o‘yinlar avvaldan ochiq
       { id: "simulyatsiyalar", label: "Simulyatsiyalar", icon: "flask", href: "simulations/simulations.html", match: ["simulations/"], protected: true },
+      { id: "laboratoriyalar", label: "Virtual laboratoriyalar", icon: "beaker", href: "simulations/labs.html", match: ["simulations/labs.html", "simulations/lab-*"], protected: true },
       { id: "kutubxona", label: "Kutubxona", icon: "book", href: "kutubxona/kutubxona.html", match: ["kutubxona/"], protected: true },
     ],
   },

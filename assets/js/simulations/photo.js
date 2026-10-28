@@ -274,7 +274,7 @@ const lineOpts = [["", "— tanlang —"], ...P.LINES.map((l) => [l.id, `${fmt(l
 const cathOpts = Object.values(P.CATHODES).map((q) => [q.id, q.name]);
 createNotebook($("[data-notebook]"), {
   key: "photo", docLabel: DOC_LABEL, site: SITE,
-  intro: "Tajribalarni bajaring, natijalarni jadvallarga kiriting — hisoblashlar avtomatik bajariladi. Oxirida LaTeX uslubidagi hisobotni PDF yoki .tex ko‘rinishida yuklab olasiz.",
+  intro: "Tajribalarni bajaring, natijalarni jadvallarga kiriting — hisoblashlar avtomatik bajariladi. Oxirida LaTeX uslubidagi hisobotni PDF ko‘rinishida yuklab olasiz.",
   conclusionPh: "U_t chastotaga qanday bog‘liq? Topilgan h jadvaldagi qiymatga mosmi? Intensivlik U_t ga ta’sir qiladimi? Qizil chegara qanday?",
   hint: "Javob bering: 1) U_t(ν) to‘g‘ri chiziqmi? 2) Uning qiyaligidan topilgan h ning jadvaldagi qiymatdan farqi qancha va nima sababdan? 3) Chiqish ishi va qizil chegara qanday? 4) To‘yinish toki Φ ga proporsionalmi? 5) Nima uchun U_t intensivlikka bog‘liq emas?",
   fileBase: (nb) => `Fotoeffekt-lab-${translit(nb.f.name)}`,
