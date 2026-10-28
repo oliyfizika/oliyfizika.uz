@@ -14,7 +14,8 @@
 //   height?: (w) => px, vw?/vh?: (narrow) => virtual kenglik/balandlik (680×340 / 400×400), draw(ctx, S = {w, h, k, narrow, colors}, lab) — virtual koordinatalarda, step?(dt, lab) → bool (qayta chizish kerakmi),
 //   down?(x, y, lab) → dastak | null, move?(h, x, y, lab), up?(h, lab), cursor?(x, y, lab) → css,
 //   controls: [{type: "range"|"seg"|"note", label, only?, min, max, step, get(), set(v), fmt(v)} | {type: "seg", opts: [[v, t]]}],
-//   tools?: [{label, run(lab), primary?}],                   — sahna ostidagi qo‘shimcha tugmalar
+//   tools?: [{label, run(lab), only?}],                   — sahna ostidagi qo‘shimcha tugmalar
+//   note?, extra? — «Formulalar» kartochkasi ostidagi izoh (matn) va qo‘shimcha HTML (masalan, jadval),
 //   readouts(lab) → [[label, value, sub, tone]] (3–4 ta),
 //   record(lab) → {t, v, text} | {err},                       — «Qaydga yozish»
 //   steps: [html], formulas: [html], note?: html,              — «Ish tartibi» va «Formulalar»
@@ -61,7 +62,7 @@ export function createLab(cfg) {
         <div class="sim-canvas-wrap"><canvas id="stage" role="img" aria-label="${esc(cfg.stageLabel || "Laboratoriya qurilmasi")}"></canvas></div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-record>Qaydga yozish</button>
-          ${(cfg.tools || []).map((t, i) => `<button class="of-btn of-btn--sm" type="button" data-tool="${i}">${t.label}</button>`).join("")}
+          ${(cfg.tools || []).map((t, i) => `<button class="of-btn of-btn--sm" type="button" data-tool="${i}"${t.only ? ` data-only="${t.only}"` : ""}>${t.label}</button>`).join("")}
           <span class="sim-status" data-status role="status" aria-live="polite"></span>
         </div>
       </section>
@@ -81,7 +82,7 @@ export function createLab(cfg) {
   <section class="of-card lab-nb" id="labNotebook" data-notebook aria-label="Laboratoriya daftari"></section>
   <section class="sim-explain">
     <div class="of-card"><h2>Ish tartibi</h2><ol class="lab-howto">${cfg.steps.map((s) => `<li>${s}</li>`).join("")}</ol><div class="sim-live" data-explain aria-live="polite"></div></div>
-    <div class="of-card"><h2>Formulalar</h2><ul>${cfg.formulas.map((f) => `<li>${f}</li>`).join("")}</ul>${cfg.note ? `<p class="of-subtle" style="margin-top:10px">${cfg.note}</p>` : ""}</div>
+    <div class="of-card"><h2>Formulalar</h2><ul>${cfg.formulas.map((f) => `<li>${f}</li>`).join("")}</ul>${cfg.note ? `<p class="of-subtle" style="margin-top:10px">${cfg.note}</p>` : ""}${cfg.extra || ""}</div>
   </section>`;
 
   /* ---------------- holat xabari */
@@ -112,7 +113,7 @@ export function createLab(cfg) {
   });
   const syncControls = () => {
     syncers.forEach((f) => f());
-    ctlBox.querySelectorAll("[data-only]").forEach((el) => { el.hidden = !el.dataset.only.split(" ").includes(lab.mode); });
+    body.querySelectorAll("[data-controls] [data-only], [data-tool][data-only]").forEach((el) => { el.hidden = !el.dataset.only.split(" ").includes(lab.mode); });
   };
   lab.sync = syncControls;
 
