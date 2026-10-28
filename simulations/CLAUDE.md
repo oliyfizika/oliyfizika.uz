@@ -1,7 +1,7 @@
 # Simulyatsiyalar va virtual laboratoriyalar — ish qoidalari
 
 Bu fayl `simulations/` ustida ishlashda Claude Code uchun asosiy qo‘llanma. Yangi simulyatsiya yoki laboratoriya
-yasashdan oldin shu faylni va [`OILALAR.md`](OILALAR.md) (48 oila rejasi va holati) ni o‘qing, so‘ng eng yaqin
+yasashdan oldin shu faylni va [`OILALAR.md`](OILALAR.md) (49 oila rejasi va holati) ni o‘qing, so‘ng eng yaqin
 mavjud namunani oching va uning tuzilmasidan nusxa oling.
 
 ## Ish tartibi (muallif talabi)

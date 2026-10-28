@@ -202,6 +202,18 @@
    "keywords": "butun olam tortishish qonuni gravitatsiya nyuton orbita davri kepler yer oy quyosh gravitational"
   },
   {
+   "id": "orbits",
+   "title": "Orbitalar va kosmik tezliklar",
+   "href": "orbits.html",
+   "topic": "mexanika",
+   "description": "Nyuton to‘pi: tog‘ tepasidan turli tezlikda otilgan jism yerga tushadi, doiraviy yoki elliptik orbitaga chiqadi yoki uzoqlashib ketadi. Birinchi va ikkinchi kosmik tezliklar Yer, Oy, Mars va Yupiter uchun. Sun’iy yo‘ldoshlar: orbita balandligi, tezligi va davri, XKS, GPS, geostatsionar orbita, Oy.",
+   "params": [
+    "Osmon jismi, otish tezligi v (strelka sahnada suriladi)",
+    "Orbita balandligi h (yo‘ldosh sahnada suriladi)"
+   ],
+   "keywords": "gravitatsiya maydonidagi harakat orbita birinchi kosmik tezlik ikkinchi kosmik tezlik v1 v2 7,9 km/s 11,2 km/s nyuton to'pi sun'iy yo'ldosh geostatsionar orbita xks gps aylanish davri ellips kepler orbit escape velocity satellite"
+  },
+  {
    "id": "newton-second-law",
    "title": "Nyuton qonunlari",
    "href": "newton-second-law.html",
@@ -298,6 +310,19 @@
     "Broun zarrasi massasi va o‘lchami"
    ],
    "keywords": "molekulyar kinetik nazariya mkn molekula harakati ideal gaz bosim hajm temperatura izotermik izobarik izoxorik boyl mariott gey lyussak sharl maksvell tezlik taqsimoti diffuziya broun harakati absolyut nol kinetik energiya gas law brownian diffusion"
+  },
+  {
+   "id": "molecule-size",
+   "title": "Molekula o‘lchamini baholash",
+   "href": "molecule-size.html",
+   "topic": "issiqlik",
+   "description": "Amaliy ish: olein kislotasining spirtdagi eritmasi suv sirtida bir molekula qalinlikdagi parda hosil qiladi. Menzurkada tomchilarni sanab bir tomchi hajmi topiladi, likopodiy kukuni sepilgan vannadagi dog‘ yuzi katakli qog‘ozda sanaladi, d = V/S. Natijalar jadvali va S(V) grafigi.",
+   "params": [
+    "Eritma konsentratsiyasi 1 : k",
+    "Menzurkaga tomchilar soni",
+    "Vannaga tomizilgan tomchilar"
+   ],
+   "keywords": "molekula o'lchami molekula diametri moy pardasi monoqatlam olein kislotasi likopodiy d=V/S amaliy ish laboratoriya tomchi hajmi menzurka molecule size oil film experiment"
   },
   {
    "id": "heat",
@@ -642,6 +667,18 @@
    "keywords": "dispersiya prizma spektr oq yorug'lik nyuton sindirish ko'rsatkichi to'lqin uzunligi kamalak tomchi qutblanish polyaroid polyarizator analizator malyus qonuni bryuster burchagi dispersion prism rainbow polarization malus brewster"
   },
   {
+   "id": "photometry",
+   "title": "Yorug‘lik oqimi, kuchi va yoritilganlik",
+   "href": "photometry.html",
+   "topic": "optika",
+   "description": "Fotometrik kattaliklar: yorug‘lik oqimi (lm), yorug‘lik kuchi (cd), yoritilganlik (lx); E = I cos α / r² qonuni, sirtni surish va burish. Laboratoriya ishi: optik skamya, lampa va lyuksmetr, fonni ayirish, natijalar jadvali va grafikdan lampaning yorug‘lik kuchi.",
+   "params": [
+    "Yorug‘lik kuchi I, masofa r, burchak α, sirt yuzi S",
+    "Lampa turi, masofa (aravacha), fotoelement burchagi"
+   ],
+   "keywords": "fotometriya yorug'lik oqimi yorug'lik kuchi yoritilganlik lyumen kandela lyuks lyuksmetr E=I cos a/r2 masofa kvadratiga teskari kosinus qonuni cho'g'lanma lampa led laboratoriya photometry illuminance luminous flux"
+  },
+  {
    "id": "nuclear",
    "title": "Yadro fizikasi: yemirilish, bog‘lanish energiyasi, zanjir reaksiya",
    "href": "nuclear.html",
@@ -685,6 +722,18 @@
     "Laboratoriya daftari, PDF va LaTeX hisobot"
    ],
    "keywords": "bor postulatlari bor modeli statsionar holatlar chastotalar qoidasi frank gers franck hertz simob neon uyg‘otish energiyasi vodorod spektri balmer seriyasi ridberg doimiysi difraksion panjara spektrometr goniometr energiya sathlari ionlanish energiyasi laboratoriya ishi lab varaq pdf latex atom fizikasi"
+  },
+  {
+   "id": "laser",
+   "title": "Lazer",
+   "href": "laser.html",
+   "topic": "atom",
+   "description": "Yutilish, o‘z-o‘zidan va majburiy nurlanish: rubin atomining energiya sathlari, rezonans sharti hν = E₂ − E₁, metastabil sath va nasos. Lazer qurilmasi: rubin va geliy–neon lazerlari, populyatsiya inversiyasi, rezonator ko‘zgulari, generatsiya bo‘sag‘asi va lazer nuri.",
+   "params": [
+    "Foton to‘lqin uzunligi λ",
+    "Lazer turi, nasos quvvati, chiqish ko‘zgusining qaytarishi"
+   ],
+   "keywords": "lazer majburiy nurlanish indutsirlangan nurlanish spontan nurlanish yutilish populyatsiya inversiyasi metastabil sath nasos rezonator rubin lazeri geliy neon kogerent monoxromatik laser stimulated emission"
   },
   {
    "id": "davisson-germer",
