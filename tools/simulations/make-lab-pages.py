@@ -38,7 +38,7 @@ LABS = [
      "Virtual laboratoriya ishi (10-sinf): reostat bilan tok kuchini o‘zgartirib, manba qisqichlaridagi kuchlanishni o‘lchang; U(I) grafigidan EYuK va ichki qarshilikni toping."),
     ("lab-diod", "lab-diode", "10-sinf", "green", "Yarimo‘tkazgichli diodning volt-amper xarakteristikasi", "Diod VAXi", "I = f(U)",
      "Virtual laboratoriya ishi (10-sinf): diodni to‘g‘ri va teskari yo‘nalishda ulab, volt-amper xarakteristikasini o‘lchang, ochilish kuchlanishi va dinamik qarshilikni toping."),
-    ("lab-rezonans", "lab-resonance", "11-sinf", "green", "O‘zgaruvchan tok zanjirida rezonans", "AC zanjirda rezonans", "ν₀ = 1 / (2π√(LC))",
+    ("lab-rezonans", "lab-resonance", "11-sinf", "green", "O‘zgaruvchan tok zanjirida rezonans", "AC zanjirda rezonans", "f₀ = 1 / (2π√(LC))",
      "Virtual laboratoriya ishi (11-sinf): ketma-ket RLC zanjirda generator chastotasini o‘zgartirib tok kuchini o‘lchang, rezonans chastotasini toping va g‘altak induktivligini hisoblang."),
     ("lab-difraksion-panjara", "lab-grating", "11-sinf", "purple", "Difraksion panjara yordamida yorug‘lik to‘lqin uzunligini aniqlash", "Difraksion panjara", "d sin φ = kλ",
      "Virtual laboratoriya ishi (11-sinf): lazer va difraksion panjara, ekrandagi maksimumlar orasidagi masofani o‘lchab, yorug‘lik to‘lqin uzunligini aniqlang."),

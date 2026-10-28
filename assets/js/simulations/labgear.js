@@ -211,6 +211,29 @@ export function resistor(ctx, c, x, y, w, text, col = "#a16207") {
   if (text) label(ctx, text, x + w / 2, y + 24, c.text2, F(10, 700));
   return { a, b };
 }
+/** G‘altak (karkasga o‘ralgan mis sim), gorizontal. Qaytaradi {a, b}. */
+export function coil(ctx, c, x, y, w, text) {
+  ctx.fillStyle = c.dark ? "#334155" : "#e2e8f0"; rr(ctx, x - 10, y - 22, w + 20, 44, 6); ctx.fill(); ctx.strokeStyle = c.dark ? "#64748b" : "#94a3b8"; ctx.lineWidth = 1; ctx.stroke();
+  ctx.fillStyle = "#57534e"; rr(ctx, x + 4, y - 17, 6, 34, 2); ctx.fill(); rr(ctx, x + w - 10, y - 17, 6, 34, 2); ctx.fill();
+  const g = ctx.createLinearGradient(0, y - 13, 0, y + 13); g.addColorStop(0, "#fdba74"); g.addColorStop(0.5, "#c2410c"); g.addColorStop(1, "#7c2d12");
+  ctx.fillStyle = g; ctx.fillRect(x + 10, y - 13, w - 20, 26);
+  ctx.strokeStyle = "rgba(67,20,7,0.55)"; ctx.lineWidth = 1; for (let xx = x + 12; xx < x + w - 10; xx += 3) { ctx.beginPath(); ctx.moveTo(xx, y - 13); ctx.lineTo(xx + 1.5, y + 13); ctx.stroke(); }
+  const a = [x - 2, y], b = [x + w + 2, y];
+  terminal(ctx, a[0], a[1]); terminal(ctx, b[0], b[1]);
+  if (text) label(ctx, text, x + w / 2, y + 32, c.text2, F(10, 700));
+  return { a, b };
+}
+/** Kondensator (qutichada), gorizontal. Qaytaradi {a, b, box}. */
+export function capacitor(ctx, c, x, y, w, text, sub) {
+  ctx.fillStyle = c.dark ? "#1e3a8a" : "#dbeafe"; rr(ctx, x - 10, y - 20, w + 20, 40, 6); ctx.fill(); ctx.strokeStyle = c.dark ? "#3b82f6" : "#93c5fd"; ctx.lineWidth = 1; ctx.stroke();
+  const cx = x + w / 2; ctx.strokeStyle = c.dark ? "#e2e8f0" : "#1e3a8a"; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(x + 6, y); ctx.lineTo(cx - 4, y); ctx.moveTo(cx + 4, y); ctx.lineTo(x + w - 6, y); ctx.moveTo(cx - 4, y - 11); ctx.lineTo(cx - 4, y + 11); ctx.moveTo(cx + 4, y - 11); ctx.lineTo(cx + 4, y + 11); ctx.stroke();
+  const a = [x - 2, y], b = [x + w + 2, y];
+  terminal(ctx, a[0], a[1]); terminal(ctx, b[0], b[1]);
+  if (text) label(ctx, text, cx, y + 30, c.text2, F(10, 700));
+  if (sub) label(ctx, sub, cx, y + 43, c.text3, F(9));
+  return { a, b, box: { x0: x - 10, x1: x + w + 10, y0: y - 20, y1: y + 20 } };
+}
 /** Cho‘g‘lanma lampa patronda. glow 0…1. Qaytaradi {a, b}. */
 export function lamp(ctx, c, x, y, s, glow, text) {
   if (glow > 0.02) { const g = ctx.createRadialGradient(x, y - 14 * s, 2, x, y - 14 * s, 50 * s * (0.4 + glow)); g.addColorStop(0, `rgba(253,224,71,${0.75 * glow})`); g.addColorStop(1, "rgba(253,224,71,0)"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y - 14 * s, 50 * s * (0.4 + glow), 0, TAU); ctx.fill(); }
