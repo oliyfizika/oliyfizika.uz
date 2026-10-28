@@ -212,8 +212,10 @@ export function createLab(cfg) {
     }
   });
   $("[data-notes-all]").addEventListener("click", () => {
-    const used = (n) => (nbApi.nb.t[n.t] || []).some((row) => Object.keys(n.v).every((k) => String(row[k] ?? "") === String(n.v[k])));
-    let k = 0; lab.notes.forEach((n) => { if (!used(n) && nbApi.fill(n.t, n.v) >= 0) k++; });
+    // bir xil qaydlar (masalan, ikki tajribada bir xil natija) alohida qatorlarga: n-chi nusxa jadvalda n ta mos qator bo‘lmasa yoziladi
+    const seen = new Map(), have = (n) => (nbApi.nb.t[n.t] || []).filter((row) => Object.keys(n.v).every((k) => String(row[k] ?? "") === String(n.v[k]))).length;
+    let k = 0;
+    lab.notes.forEach((n) => { const s = `${n.t}|${JSON.stringify(n.v)}`, occ = (seen.get(s) || 0) + 1; seen.set(s, occ); if (have(n) < occ && nbApi.fill(n.t, n.v) >= 0) k++; });
     lab.say(k ? `${k} ta qayd jadvallarga o‘tkazildi.` : "Yangi qayd yo‘q — hammasi jadvalda.", k ? "green" : "");
   });
   $("[data-notes-clear]").addEventListener("click", () => {
