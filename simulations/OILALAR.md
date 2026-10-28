@@ -1,4 +1,4 @@
-# 48 simulyatsiya oilasi — reja va holat
+# 49 simulyatsiya oilasi — reja va holat
 
 Manba: 7–11-sinf fizika darsliklari tahlili. «Mavzu» — oila nechta darslik mavzusini yopadi (ustuvorlik).
 Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu jadvalni yangilang.
@@ -7,7 +7,7 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 |---|---|---|---|---|---|
 | F24 | Elektr zanjiri konstruktori: tok, kuchlanish, qarshilik, Om, ketma-ket/parallel/aralash, ampermetr/voltmetr, reostat | 26 | 7, 8 | ✅ | circuit.html (+ `cells` preseti: tok manbalarini ulash, 2026-10-24) |
 | F16 | Issiqlik almashinuvi: kalorimetr, isitish egri chizig‘i, erish, qaynash | 13 | 7, 9 | ✅ | heat.html |
-| F15 | Molekulyar harakat va ideal gaz (zarrachalar idishda; p, V, T, Maksvell taqsimoti, izojarayonlar) | 11 | 7, 9 | ✅ | gas.html |
+| F15 | Molekulyar harakat va ideal gaz (zarrachalar idishda; p, V, T, Maksvell taqsimoti, izojarayonlar) | 11 | 7, 9 | ✅ | gas.html; molecule-size.html (2026-10-28): amaliy ish — menzurkada tomchilarni sanash, likopodiy sepilgan vannada olein kislotasi monoqatlami, katakli qog‘ozda yuzni sanash, d = V/S, jadval va S(V) grafigi |
 | F32 | Amper kuchi, tokli ramka momenti, tok-tok ta’siri, elektrdvigatel | 10 | 8, 10, 11 | ✅ | magnetism.html |
 | F31 | Magnit maydon: doimiy magnit, Ersted, solenoid, Yer magniti | 9 | 8, 10, 11 | ✅ | magnetism.html |
 | F22 | Kulon qonuni va elektr maydon (chiziqlar, superpozitsiya, sfera) | 7 | 7, 8, 10 | ✅ | coulomb-law.html (2026-10-25, qayta yasaldi): osma sharcha (transportir, chizg‘ich, F = mg·tg α, F(1/r²), Kulon usuli bilan zaryadni bo‘lish, tegishda tenglashish), superpozitsiya (1–5 zaryad, sinov zaryadi, E₁ + E₂ + …, kuch chiziqlari, kastor moyidagi yorma), zaryadlangan metall/dielektrik shar, Van de Graaf va havo teshilishi; 7§44, 8§6 — electroscope.html |
@@ -47,12 +47,13 @@ Holat: ✅ tayyor · ◐ qisman · ○ hali yo‘q. Oila tayyor bo‘lganda shu 
 | F39 | Yorug‘likning to‘g‘ri tarqalishi, soya/yarim soya, Quyosh va Oy tutilishi | 2 | 7 | ✅ | light.html |
 | F42 | Interferensiya va difraksiya (Yung, tirqish, difraksion panjara) | 2 | 11 | ✅ | diffraction.html |
 | F45 | Maxsus nisbiylik: vaqt sekinlashishi, uzunlik qisqarishi, m(v), E=mc² | 2 | 11 | ✅ | relativity.html (2026-10-26): yorug‘lik soati (tinch va uchayotgan raketa, qiya yorug‘lik yo‘li, L = L₀/γ, γ(v) grafigi), myuonlar (Frisch–Smith, klassik va haqiqiy oqim, hisoblagichlar, N/N₀(h)), tezliklarni qo‘shish (poyezd, snaryad/yorug‘lik, Galiley «sharpasi», u(u′)), massa va energiya (Bertozzi: tezlatkich, 8,4 m, ossillograf, o‘lchash jadvali, v/c (K)) |
-| F47 | Bor atomi: energiya sathlari, spektr chiziqlari, lazer (majburiy nurlanish) | 2 | 11 | ✅ | bohr.html (lab; lazer qismi yo‘q) |
+| F47 | Bor atomi: energiya sathlari, spektr chiziqlari, lazer (majburiy nurlanish) | 2 | 11 | ✅ | bohr.html (lab); laser.html (2026-10-28): bitta rubin atomi (yutilish, nasos E₁→E₃→E₂, o‘z-o‘zidan va majburiy nurlanish, rezonans hν = E₂ − E₁), lazer qurilmasi (rubin 3 sathli / He–Ne 4 sathli, nasos Wτ, chiqish ko‘zgusi R, Monte-Karlo atomlar va fotonlar, inversiya, N₂, N₁ va nur quvvati grafigi) |
 | F6 | Atmosfera bosimi (Torichelli, Magdeburg yarim sharlari) | 1 | 7 | ✅ | atmosphere.html (2026-10-26): Torichelli tajribasi (simob/suv, nayni qiyalatish, teshish, tog‘da), Magdeburg yarim sharlari (nasos dastagi, vakuummetr, otlar/daraxt, jo‘mrak, F(n) grafigi), balandlik va barometr (havo shari, aneroid, germetik paket, qaynash temperaturasi, p(h)) |
-| F9 | Gravitatsiya maydonidagi harakat, orbita, kosmik tezliklar | 1 | 10 | ◐ | gravity-law.html + projectile.html; orbita/kosmik tezliklar yo‘q |
+| F9 | Gravitatsiya maydonidagi harakat, orbita, kosmik tezliklar | 1 | 10 | ✅ | orbits.html (2026-10-28): Nyuton to‘pi (Yer/Oy/Mars/Yupiter, tezlik strelkasi, tushish/aylana/ellips/parabola, izlar, h(t)), sun’iy yo‘ldoshlar (XKS, GPS, geostatsionar, Oy; aylanayotgan Yer va Toshkent, v(h)); gravity-law.html, projectile.html |
 | F19 | Qattiq jism deformatsiyasi, Guk qonuni, σ–ε diagramma | 1 | 9 | ✅ | deformation.html (2026-10-27): cho‘zish mashinasi (po‘lat/mis/alyuminiy/cho‘yan, pult dastagi, kuch datchigi va LCD, yuksizlantirish, qoldiq deformatsiya, naklyop, bo‘yin, uzilish, σ(ε)), Guk qonuni (shiftga osilgan sim, 1 kg li yuklar, indikator soati 0,01 mm, F(Δl), k va E), deformatsiya turlari (cho‘zilish, siqilish, siljish, egilish, buralish; rezina/plastilin/po‘lat) |
 | F43 | Dispersiya va spektral analiz (prizma) | 1 | 11 | ✅ | dispersion.html |
 | F44 | Yorug‘likning qutblanishi (Malyus qonuni) | 1 | 11 | ✅ | dispersion.html |
+| F49 | Fotometriya: yorug‘lik oqimi, kuchi, yoritilganlik (+ lab) | 2 | 11 | ✅ | photometry.html (2026-10-28): fotometrik kattaliklar (I, r, α, S; Φ = IΩ, E = I cos α/r², E(r)), laboratoriya ishi (optik skamya, 60/100 W va LED lampa, lyuksmetr, fon, jadval, E(cos α/r²) dan I) |
 
 ## Oilaga kirmagan qo‘shimcha laboratoriyalar
 - Atom va yadro: `rutherford.html`, `bohr.html`, `davisson-germer.html`.
@@ -69,22 +70,18 @@ so‘ng `node tools/simulations/tests/t_curriculum.mjs`, `node tools/simulations
 Boblar darslikdagi bob nomlari emas — manbada saqlanmagan, mavzular bo‘lim bo‘yicha guruhlangan. Uch mavzu nomi
 OCR da o‘qilmagan va taxminiy (`taxminiy: true`): 8-sinf §5, 9-sinf §11, 9-sinf §50 — PDF dan tekshirilishi kerak.
 
-Holat: 2026-10-27.
+Holat: 2026-10-28.
 
 | Sinf | Mavzular | Simulyatsiya qilinadigan (sim + lab) | Bog‘langan | Bo‘sh | Lab. ishlari (vaqtincha sim / bo‘sh) | Masala (sim bilan) | Matn |
 |---|---|---|---|---|---|---|---|
 | 7 | 62 | 45 | **45** (100 %) | 0 | 4 (4 / 0) | 12 (12) | 5 |
 | 8 | 60 | 45 | **45** (100 %) | 0 | 5 (5 / 0) | 12 (12) | 3 |
-| 9 | 59 | 38 | **37** (97 %) | 1 | 6 (6 / 0) | 14 (14) | 7 |
+| 9 | 59 | 38 | **38** (100 %) | 0 | 6 (6 / 0) | 14 (14) | 7 |
 | 10 | 59 | 44 | **44** (100 %) | 0 | 4 (4 / 0) | 14 (12) | 1 |
-| 11 | 45 | 43 | **40** (93 %) | 3 | 3 (2 / 1) | 0 (0) | 2 |
-| **Jami** | **285** | **215** | **211** (98 %) | **4** | **22** (21 / 1) | **52** (50) | **18** |
+| 11 | 45 | 43 | **43** (100 %) | 0 | 3 (3 / 0) | 0 (0) | 2 |
+| **Jami** | **285** | **215** | **215** (100 %) | **0** | **22** (22 / 0) | **52** (50) | **18** |
 
-| Oila | Bo‘sh mavzular | Soni |
-|---|---|---|
-| yangi | 11§30, 11§31 | 2 |
-| F15 | 9§13 | 1 |
-| F47 | 11§38 | 1 |
+Bo‘sh mavzu qolmadi — simulyatsiya qilinadigan barcha 215 mavzu bog‘langan.
 
 «Bog‘langan» — «Ochish» tugmasi ishlaydi (lab mavzularida vaqtincha oddiy simulyatsiya ham hisoblanadi).
 «Bo‘sh» mavzular katalogda «Tayyorlanmoqda» deb ko‘rinadi. `masala` — sim bo‘lsa ko‘rsatiladi; `matn` ko‘rsatilmaydi.
@@ -114,4 +111,4 @@ Holat: 2026-10-27.
 | 10§46 | Diod VAXini o‘rganish | F30 | `semiconductor.html?preset=vaxSi` | ○ |
 | 11§19 | AC zanjirda rezonans | F37 | `lc.html?preset=res` | ○ |
 | 11§26 | Difraksion panjara | F42 | `diffraction.html?preset=gratLab` | ○ |
-| 11§31 | Yoritilganlik | — | — (tayyorlanmoqda) | ○ |
+| 11§31 | Yoritilganlik | F49 | `photometry.html?preset=lStart` (jadval bor, daftar/PDF yo‘q) | ○ |

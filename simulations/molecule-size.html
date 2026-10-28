@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Molekula o‘lchamini baholash | OliyFizika.uz</title>
+<meta name="description" content="Virtual amaliy ish: olein kislotasining spirtdagi eritmasi suv sirtida bir molekula qalinlikdagi parda hosil qiladi. Tomchi hajmini menzurkada sanab topish, likopodiy kukuni sepilgan vannadagi dog‘ yuzini katakli qog‘ozda o‘lchash, d = V/S, natijalar jadvali va S(V) grafigi.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/molecule-size.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Molekula o‘lchamini baholash" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="moleculeSizeSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--orange">Molekulyar fizika</span>
+      <h1>Molekula o‘lchamini baholash</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Menzurka, pipetka va likopodiy kukuni sepilgan suvli vanna"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2>Dog‘ yuzi va kislota hajmi S(V)</h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Dog‘ yuzining kislota hajmiga bog‘liqligi"></canvas></div>
+        <p class="sim-graph__caption">Parda doim bir molekula qalinlikda bo‘lgani uchun dog‘ yuzi kislota hajmiga proporsional: S = V/d. Nuqtalardan o‘tgan to‘g‘ri chiziqning qiyaligi 1/d ga teng.</p>
+      </section>
+
+      <section class="of-card sim-psy" aria-label="O‘lchash natijalari">
+        <div class="sim-graph__bar"><h2>O‘lchash jadvali</h2></div>
+        <p class="of-subtle sim-psy__hint">Har bir o‘lchashdan keyin «Yangi vanna» ni bosing: suv almashtiriladi va kukun qayta sepiladi. Eritmani yoki tomchilar sonini o‘zgartirib, bir necha o‘lchash bajaring.</p>
+        <div class="sim-psy__wrap"><table class="sim-psy__table sim-rel__table" data-lab-grid></table></div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid">
+        <span class="sim-group__title">Eritma (olein kislotasi : spirt)</span>
+        <div class="of-segment of-segment--wrap" role="group" aria-label="Eritma konsentratsiyasi">
+          <button type="button" data-conc-value="500" aria-pressed="false">1 : 500</button>
+          <button type="button" data-conc-value="1000" aria-pressed="true">1 : 1000</button>
+          <button type="button" data-conc-value="2000" aria-pressed="false">1 : 2000</button>
+        </div>
+        <p class="of-subtle"><b>Ish tartibi.</b> 1) Pipetkadan menzurkaga tomchilarni sanab tomizing va bir tomchi hajmini toping. 2) Kukun sepilgan vannaga 1–3 tomchi tomizing. 3) Vanna ustiga shisha va katakli qog‘oz qo‘yib, dog‘ yuzini kataklar bilan sanang. 4) «Yozish» — natija jadvalga tushadi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Bir tomchi hajmi: <span class="sim-math">V₀ = V<sub>m</sub>/N</span></li>
+        <li>n tomchidagi sof kislota (eritma 1 : k): <span class="sim-math">V = nV₀/k</span></li>
+        <li>Dog‘ yuzi (1 sm² li kataklar): <span class="sim-math">S ≈ N₁ + N₂/2</span>, N₁ — to‘liq, N₂ — chala kataklar</li>
+        <li>Molekula o‘lchami (parda qalinligi): <span class="sim-math">d = V/S</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">1 ml = 1 sm³ = 1000 mm³; 1 nm = 10⁻⁹ m. Olein kislotasi molekulasi pardasining qalinligi ≈ 1–2 nm. Tomchilar hajmi bir-biridan biroz farq qiladi.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1125,7 +1125,8 @@
        "nom": "Amaliy ish. Molekula o‘lchamini baholash",
        "tur": "sim",
        "oila": "F15",
-       "sim": null
+       "sim": "molecule-size",
+       "preset": "mStart"
       },
       {
        "raqam": 14,
@@ -1533,7 +1534,8 @@
        "nom": "Gravitatsiya maydonidagi harakat",
        "tur": "sim",
        "oila": "F9",
-       "sim": "projectile"
+       "sim": "orbits",
+       "preset": "cNewton"
       },
       {
        "raqam": 4,
@@ -2280,13 +2282,17 @@
        "raqam": 30,
        "nom": "Yorug‘lik oqimi, kuchi, yoritilganlik",
        "tur": "sim",
-       "sim": null
+       "oila": "F49",
+       "sim": "photometry",
+       "preset": "cBase"
       },
       {
        "raqam": 31,
        "nom": "Laboratoriya ishi. Yoritilganlik",
        "tur": "lab",
-       "sim": null,
+       "oila": "F49",
+       "sim": "photometry",
+       "preset": "lStart",
        "lab": null
       }
      ]
@@ -2352,7 +2358,8 @@
        "nom": "Lazer",
        "tur": "sim",
        "oila": "F47",
-       "sim": null
+       "sim": "laser",
+       "preset": "aStim"
       }
      ]
     },

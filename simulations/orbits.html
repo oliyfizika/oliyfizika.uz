@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbitalar va kosmik tezliklar | OliyFizika.uz</title>
+<meta name="description" content="Simulyatsiya: Nyuton to‘pi — tog‘ tepasidan turli tezlikda otilgan jism Yerga tushadi, doiraviy yoki elliptik orbitaga chiqadi yoki uzoqlashib ketadi. Birinchi va ikkinchi kosmik tezliklar (Yer, Oy, Mars, Yupiter). Sun’iy yo‘ldoshlar: orbita balandligi, tezligi va davri, XKS, GPS, geostatsionar orbita.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/orbits.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Orbitalar va kosmik tezliklar" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact" id="orbitsSim">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--blue">Mexanika</span>
+      <h1>Orbitalar va kosmik tezliklar</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout sim-layout--graph-top">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="Tajriba turi">
+            <button type="button" data-mode-value="cannon" aria-pressed="true">Nyuton to‘pi</button>
+            <button type="button" data-mode-value="orbit" aria-pressed="false">Sun’iy yo‘ldoshlar</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="stage" role="img" aria-label="Orbitalar"></canvas>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Pauza</span></button>
+          <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card>
+        <div class="sim-graph__bar"><h2 data-graph-title></h2></div>
+        <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Grafik"></canvas></div>
+        <p class="sim-graph__caption" data-graph-sub></p>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="cannon">
+        <span class="sim-group__title">Otish</span>
+        <div class="of-segment of-segment--wrap" role="group" aria-label="Osmon jismi" data-planet-sel>
+          <button type="button" data-planet-value="earth" aria-pressed="true">Yer</button>
+          <button type="button" data-planet-value="moon" aria-pressed="false">Oy</button>
+          <button type="button" data-planet-value="mars" aria-pressed="false">Mars</button>
+          <button type="button" data-planet-value="jupiter" aria-pressed="false">Yupiter</button>
+        </div>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="cV">Otish tezligi v</label><output for="cV" id="cVOut"></output></div>
+          <input class="sim-range" type="range" id="cV" min="0" max="14" step="0.01" value="7">
+        </div>
+        <p class="of-subtle">To‘p tog‘ tepasida (100 km, havo qarshiligi yo‘q). Tezlik strelkasining uchini sahnada suring, so‘ng «Otish!» ni bosing — avvalgi otishlar izi saqlanadi.</p>
+      </div>
+
+      <div class="sim-group sim-group--grid" data-ctl="orbit">
+        <span class="sim-group__title">Sun’iy yo‘ldosh</span>
+        <div class="sim-control">
+          <div class="sim-control__row"><label for="oH">Orbita balandligi h</label><output for="oH" id="oHOut"></output></div>
+          <input class="sim-range" type="range" id="oH" min="0" max="1000" step="1" value="200">
+        </div>
+        <p class="of-subtle">Yo‘ldoshni sahnada Yerdan uzoqlashtiring yoki yaqinlashtiring. Yer o‘z o‘qi atrofida aylanmoqda; qizil nuqta — Toshkent meridiani.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>Doiraviy orbitada markazga intilma tezlanishni tortishish beradi: <span class="sim-math">v²/r = GM/r²</span></li>
+        <li>Birinchi kosmik tezlik: <span class="sim-math">v₁ = √(GM/R) = √(gR) ≈ 7,9 km/s</span></li>
+        <li>Ikkinchi kosmik tezlik: <span class="sim-math">v₂ = √(2GM/R) = √2·v₁ ≈ 11,2 km/s</span></li>
+        <li>Orbitadagi tezlik va davr: <span class="sim-math">v = √(GM/r)</span>, <span class="sim-math">T = 2πr/v</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">GM<sub>Yer</sub> = 398 600 km³/s², R<sub>Yer</sub> = 6371 km. Havo qarshiligi hisobga olinmagan; sayyoralar aylanmaydi deb olinib, otish tezligi sayyoraga nisbatan berilgan. Orbitalar rasmda haqiqiy masshtabda.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
