@@ -186,7 +186,9 @@ export function createNotebook(root, cfg) {
     // qatorda shu qaydning (tanlovdan tashqari) ustunlari bo‘sh bo‘lsa — yoziladi (qayd qisman bo‘lsa, qator bosqichma-bosqich to‘ladi)
     const keys = tc.cols.filter((c) => c.kind !== "sel" && values[c.k] != null).map((c) => c.k);
     const blank = (r, k) => String(r[k] ?? "").trim() === "", same = (r, k) => num(r[k]) === num(values[k]) || String(r[k]).trim() === String(values[k]).trim();
-    const rows = nb.t[key], empty = (r) => keys.some((k) => blank(r, k)) && keys.every((k) => blank(r, k) || same(r, k));
+    // tanlov ustuni (masalan, qaysi jism) qaydda bo‘lsa — shu tanlovli yoki butunlay bo‘sh qator olinadi
+    const sels = tc.cols.filter((c) => c.kind === "sel" && values[c.k] != null).map((c) => c.k), allBlank = (r) => tc.cols.every((c) => c.kind === "sel" || blank(r, c.k));
+    const rows = nb.t[key], empty = (r) => (allBlank(r) || sels.every((k) => String(r[k]) === String(values[k]))) && keys.some((k) => blank(r, k)) && keys.every((k) => blank(r, k) || same(r, k));
     let i = rows.findIndex(empty);
     if (i < 0) { if (rows.length >= (tc.max || 12)) return -1; rows.push(tc.blank(rows.length)); i = rows.length - 1; }
     tc.cols.forEach((c) => { if (values[c.k] != null) rows[i][c.k] = String(values[c.k]); });
