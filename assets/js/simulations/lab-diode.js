@@ -18,6 +18,7 @@ const R_LIM = 100, R_MA = 1.2, E_F = 5, E_R = 20;
 const st = { d: "si", rev: false, f: 0.3 };
 const geo = {};
 const E = () => st.f * (st.rev ? E_R : E_F);
+const dI = (v) => (st.rev && v < 1 ? 3 : 2); // mikroampermetr: 1 μA dan kichikda 0,001 μA aniqlik
 
 function meas() {
   const d = KINDS[st.d], e = E();
@@ -25,7 +26,7 @@ function meas() {
   const U = Math.abs(s.U), I = Math.abs(s.I);
   // raqamli asboblar: oxirgi xonada ±1 birlik
   const Ud = Math.round(U * (st.rev ? 100 : 1000) + noise(e * 37, st.rev ? 1 : 2)) / (st.rev ? 100 : 1000);
-  const Iunit = st.rev ? 1e6 : 1e3, Id = Math.max(0, Math.round(I * Iunit * 100 + noise(e * 53, 3)) / 100);
+  const q = st.rev ? 1e9 : 1e5, Id = Math.max(0, Math.round(I * q + noise(e * 53, st.rev ? 1 : 3)) / (st.rev ? 1e3 : 100)); // mA: 0,01; μA: 0,001
   return { U, I, Ud, Id, over: !st.rev && I * 1e3 > 60, ledBreak: st.rev && d.led && e > 5 };
 }
 
@@ -53,15 +54,18 @@ function probe(ctx, a, b, col) { ctx.strokeStyle = col; ctx.lineWidth = 2.2; ctx
 
 function draw(ctx, S) {
   const { w, h, colors: c, narrow } = S, m = meas(), d = KINDS[st.d];
-  const P = supply(ctx, c, 12, 12, narrow ? 116 : 130, 160, { value: fmt(E(), 2).padStart(5, " "), title: st.rev ? "MANBA 0…20 V" : "MANBA 0…5 V", frac: st.f });
+  // joylashuv: keng — bir qatorda; tor — manba va voltmetr tepada, milliampermetr chapda, diod platasi o‘ngda
+  const L = narrow
+    ? { P: [8, 8, 112, 150], R: [160, 340, 64], A: [8, 190, 116, 122], V: [250, 8, 142, 124], B: [252, 388, 250], hk: [124, 96] }
+    : { P: [12, 12, 130, 160], R: [180, 230, 76], A: [290, 190, 140, 134], V: [470, 12, 150, 134], B: [470, 600, 252], hk: [12, 190] };
+  const P = supply(ctx, c, ...L.P, { value: fmt(E(), 2).padStart(5, " "), title: st.rev ? "MANBA 0…20 V" : "MANBA 0…5 V", frac: st.f });
   geo.knob = P.knob;
-  const ry = narrow ? 228 : 230, R = resistor(ctx, c, narrow ? 150 : 180, ry, narrow ? 60 : 76, "100 Ω");
-  const mx = narrow ? 230 : 290, my = narrow ? 200 : 190, mwid = narrow ? 120 : 140;
-  const mA = multimeter(ctx, c, mx, my, mwid, 134, { value: m.over ? "OL" : fmt(m.Id, 2), unit: st.rev ? "μA" : "mA", mode: st.rev ? "DC μA" : "DC mA", title: st.rev ? "MIKROAMPERMETR" : "MILLIAMPERMETR", inLabel: "mA" });
-  const vx = narrow ? 158 : 470, vy = narrow ? 12 : 12;
-  const V = multimeter(ctx, c, vx, vy, narrow ? 120 : 150, 134, { value: fmt(m.Ud, st.rev ? 2 : 3), unit: "V", mode: "DC V", title: "VOLTMETR", inLabel: "V" });
+  const R = resistor(ctx, c, ...L.R, "100 Ω");
+  const [mx, my, mwid, mh] = L.A;
+  const mA = multimeter(ctx, c, mx, my, mwid, mh, { value: m.over ? "OL" : fmt(m.Id, dI(m.Id)), unit: st.rev ? "μA" : "mA", mode: st.rev ? "DC μA" : "DC mA", title: st.rev ? "MIKROAMPERMETR" : "MILLIAMPERMETR", inLabel: "mA" });
+  const V = multimeter(ctx, c, ...L.V, { value: fmt(m.Ud, st.rev ? 2 : 3), unit: "V", mode: "DC V", title: "VOLTMETR", inLabel: "V" });
   // diod platasi
-  const bx0 = narrow ? 268 : 470, bx1 = narrow ? 392 : 600, by = narrow ? 160 : 252;
+  const [bx0, bx1, by] = L.B;
   ctx.fillStyle = c.dark ? "#14532d" : "#166534"; rr(ctx, bx0 - 6, by - 52, bx1 - bx0 + 12, 72, 8); ctx.fill();
   const glow = d.led && !st.rev ? Math.min(1, (m.I * 1e3) / 15) : 0;
   diodeBody(ctx, c, bx0, bx1, by, st.rev, d, glow);
@@ -70,16 +74,24 @@ function draw(ctx, S) {
   label(ctx, d.short, (bx0 + bx1) / 2, by + 14, "#dcfce7", F(9, 700));
   geo.board = { x0: bx0 - 6, x1: bx1 + 6, y0: by - 52, y1: by + 20 };
   const cu = "#b45309", B = h - 6;
-  wire(ctx, [P.plus, [P.plus[0], P.plus[1] + 22], [R.a[0] - 14, P.plus[1] + 22], [R.a[0] - 14, R.a[1]], R.a], cu);
-  wire(ctx, [R.b, [R.b[0] + 8, R.b[1]], [R.b[0] + 8, my - 12], [mx + mwid + 14, my - 12], [mx + mwid + 14, B - 14], [mA.inp[0], B - 14], mA.inp], cu);
-  wire(ctx, [mA.com, [mA.com[0], B - 6], [mx + mwid + 26, B - 6], [mx + mwid + 26, dl[1]], dl], cu);
-  wire(ctx, [dr, [Math.min(w - 10, dr[0] + 22), dr[1]], [Math.min(w - 10, dr[0] + 22), B], [6, B], [6, P.minus[1] + 22], [P.minus[0], P.minus[1] + 22], P.minus], cu);
+  if (narrow) {
+    // manba «+» → mA → cheklovchi rezistor → diod → manba «−»
+    wire(ctx, [P.plus, [P.plus[0], 170], [136, 170], [136, my + mh + 12], [mA.inp[0], my + mh + 12], mA.inp], cu);
+    wire(ctx, [mA.com, [mA.com[0], R.a[1]], R.a], cu);
+    wire(ctx, [R.b, [dl[0], R.b[1]], dl], cu);
+    wire(ctx, [dr, [w - 4, dr[1]], [w - 4, B], [4, B], [4, 172], [P.minus[0], 172], P.minus], cu);
+  } else {
+    wire(ctx, [P.plus, [P.plus[0], P.plus[1] + 22], [R.a[0] - 14, P.plus[1] + 22], [R.a[0] - 14, R.a[1]], R.a], cu);
+    wire(ctx, [R.b, [R.b[0] + 8, R.b[1]], [R.b[0] + 8, my - 12], [mx + mwid + 14, my - 12], [mx + mwid + 14, B - 14], [mA.inp[0], B - 14], mA.inp], cu);
+    wire(ctx, [mA.com, [mA.com[0], B - 6], [mx + mwid + 26, B - 6], [mx + mwid + 26, dl[1]], dl], cu);
+    wire(ctx, [dr, [Math.min(w - 10, dr[0] + 22), dr[1]], [Math.min(w - 10, dr[0] + 22), B], [6, B], [6, P.minus[1] + 22], [P.minus[0], P.minus[1] + 22], P.minus], cu);
+  }
   // voltmetr shuplari: qizil — chap uchga (manbaning «+» tomoni), qora — o‘ng uchga
   probe(ctx, V.inp, [dl[0] + 10, dl[1] - 4], "#dc2626"); probe(ctx, V.com, [dr[0] - 10, dr[1] - 4], "#111827");
-  hint(ctx, c, "dastakni aylantiring", 12, 190);
+  hint(ctx, c, narrow ? "← dastakni buring" : "dastakni aylantiring", ...L.hk);
   hint(ctx, c, narrow ? "platani bosing: burish" : "platani bosing — diodni teskari ulash", (bx0 + bx1) / 2, by + 34, "center");
-  if (m.over) hint(ctx, c, "Tok juda katta! Kuchlanishni kamaytiring", mx, my - 26);
-  if (m.ledBreak) hint(ctx, c, "LED ga 5 V dan katta teskari kuchlanish berilmaydi", bx0 - 60, by - 64);
+  if (m.over) hint(ctx, c, "Tok juda katta! Kuchlanishni kamaytiring", narrow ? 130 : mx, narrow ? 150 : my - 26);
+  if (m.ledBreak) hint(ctx, c, narrow ? "LED: teskari U ≤ 5 V" : "LED ga 5 V dan katta teskari kuchlanish berilmaydi", narrow ? 200 : bx0 - 60, by - 64);
 }
 
 /* ------------------------------------------------------------------ Hisob */
@@ -121,12 +133,12 @@ function build(nb, res) {
   if (B) {
     D.S("Teskari yo‘nalish");
     D.table(`Teskari yo‘nalishdagi tok (${d.short})`, ["№", "$U_{\\text{tesk}}$, V", "$I_{\\text{tesk}}$, μA", "$R = U/I$, MΩ", "Tekshiruv"],
-      B.rows.map((r, i) => [String(i + 1), `$${fx(r.U, 2)}$`, `$${fx(r.I, 2)}$`, Number.isFinite(r.R) ? `$${sx(r.R, 3)}$` : "$\\infty$", res.t2.flags[i] ? "$\\checkmark$" : "--"]));
+      B.rows.map((r, i) => [String(i + 1), `$${fx(r.U, 2)}$`, `$${fx(r.I, 3)}$`, Number.isFinite(r.R) ? `$${sx(r.R, 3)}$` : "$\\infty$", res.t2.flags[i] ? "$\\checkmark$" : "--"]));
     const Ir = Math.max(...B.rows.map((r) => r.I));
-    D.fig("vaxr", "Teskari yo‘nalishdagi tok (mikroamperlarda).", { xmin: 0, xmax: Math.max(...B.rows.map((r) => r.U)) * 1.1, ymin: 0, ymax: Math.max(Ir * 1.3, 0.05), legendPos: "north west", xlab: "U_tesk, V", ylab: "I_tesk, μA",
+    D.fig("vaxr", "Teskari yo‘nalishdagi tok (mikroamperlarda).", { xmin: 0, xmax: Math.max(...B.rows.map((r) => r.U)) * 1.1, ymin: 0, ymax: Math.max(Ir * 1.3, 0.005), legendPos: "north west", xlab: "U_tesk, V", ylab: "I_tesk, μA",
       series: [{ kind: "line", data: B.rows.map((r) => [r.U, r.I]), color: "#94a3b8" }, { kind: "pts", data: B.rows.map((r) => [r.U, r.I]), color: "#7c3aed", label: "tajriba" }] });
     const Rmin = Math.min(...B.rows.filter((r) => Number.isFinite(r.R)).map((r) => r.R));
-    box.push(`• Teskari tok $\\le ${fx(Ir, 2)}$ μA — to‘g‘ri tokdan ${Ir > 0 ? `$${sx((A.Imax * 1000) / Ir, 2)}$ marta` : "minglab marta"} kichik; teskari qarshilik ${Number.isFinite(Rmin) ? `$\\ge ${sx(Rmin, 2)}$ MΩ` : "juda katta"}.`);
+    box.push(`• Teskari tok $\\le ${fx(Ir, 3)}$ μA — to‘g‘ri tokdan ${Ir > 0 ? `$${sx((A.Imax * 1000) / Ir, 2)}$ marta` : "minglab marta"} kichik; teskari qarshilik ${Number.isFinite(Rmin) ? `$\\ge ${sx(Rmin, 2)}$ MΩ` : "juda katta"}.`);
   }
   box.push("• Diod tokni asosan bir yo‘nalishda o‘tkazadi — bir tomonlama o‘tkazuvchanlik.");
   D.S("Xulosa");
@@ -139,7 +151,7 @@ createLab({
   key: "diode", fileBase: "Diod-VAX-lab", docLabel: "Virtual laboratoriya ishi · 10-sinf", site: SITE,
   modes: [{ id: "f", label: "1. To‘g‘ri ulash", hint: "Kuchlanishni 0 dan asta oshiring — tok qachon keskin o‘sadi?" }, { id: "r", label: "2. Teskari ulash", hint: "Teskari tok mikroamperlarda o‘lchanadi" }],
   onMode(m) { st.rev = m === "r"; st.f = 0; },
-  vh: (n) => (n ? 360 : 350),
+  vh: (n) => (n ? 384 : 350),
   draw,
   down(x, y, lab) {
     if (near(x, y, geo.knob, geo.knob[2] + 6)) { drag0 = { y, f: st.f }; return "knob"; }
@@ -156,20 +168,20 @@ createLab({
   readouts() {
     const m = meas(), d = KINDS[st.d];
     return [["Voltmetr (diodda)", `${fmt(m.Ud, st.rev ? 2 : 3)}<small>V</small>`, st.rev ? "teskari kuchlanish" : "to‘g‘ri kuchlanish", "blue"],
-      [st.rev ? "Mikroampermetr" : "Milliampermetr", m.over ? "OL" : `${fmt(m.Id, 2)}<small>${st.rev ? "μA" : "mA"}</small>`, st.rev ? "teskari tok" : "to‘g‘ri tok", "orange"],
+      [st.rev ? "Mikroampermetr" : "Milliampermetr", m.over ? "OL" : `${fmt(m.Id, dI(m.Id))}<small>${st.rev ? "μA" : "mA"}</small>`, st.rev ? "teskari tok" : "to‘g‘ri tok", "orange"],
       ["Diod", d.short, st.rev ? "teskari ulangan" : "to‘g‘ri ulangan"], ["Manba", `${fmt(E(), 2)}<small>V</small>`, `cheklovchi rezistor ${R_LIM} Ω`]];
   },
   record(lab) {
     const m = meas();
     if (m.over) return { err: "Milliampermetr shkalasidan chiqdi — kuchlanishni kamaytiring." };
     if (m.ledBreak) return { err: "LED uchun teskari kuchlanish 5 V dan oshmasin." };
-    const v = { U: fmt(m.Ud, st.rev ? 2 : 3), I: fmt(m.Id, 2) };
+    const v = { U: fmt(m.Ud, st.rev ? 2 : 3), I: fmt(m.Id, dI(m.Id)) };
     return { t: lab.mode === "r" ? "t2" : "t1", v, text: `${KINDS[st.d].short}, ${st.rev ? "teskari" : "to‘g‘ri"}: U = ${v.U} V, I = ${v.I} ${st.rev ? "μA" : "mA"}` };
   },
-  explain() { const m = meas(); return st.rev ? `Teskari ulashda p–n o‘tishdagi to‘siq kattalashadi: ${fmt(m.Ud, 2)} V da tok bor-yo‘g‘i ${fmt(m.Id, 2)} μA.` : m.I * 1e3 < 0.5 ? "Kuchlanish hali ochilish kuchlanishidan kichik — tok deyarli yo‘q." : `Diod ochiq: kuchlanish ozgina ortsa ham tok keskin o‘sadi (${fmt(m.Id, 2)} mA). Ortiqcha kuchlanish cheklovchi rezistorda tushadi.`; },
+  explain() { const m = meas(); return st.rev ? `Teskari ulashda p–n o‘tishdagi to‘siq kattalashadi: ${fmt(m.Ud, 2)} V da tok bor-yo‘g‘i ${fmt(m.Id, 3)} μA.` : m.I * 1e3 < 0.5 ? "Kuchlanish hali ochilish kuchlanishidan kichik — tok deyarli yo‘q." : `Diod ochiq: kuchlanish ozgina ortsa ham tok keskin o‘sadi (${fmt(m.Id, 2)} mA). Ortiqcha kuchlanish cheklovchi rezistorda tushadi.`; },
   steps: ["1-topshiriq: diodni tanlang. Manba dastagini asta burab, diod kuchlanishini 0 dan oshiring; har 0,05–0,1 V da (tok tez o‘sa boshlagach — tez-tez) U va I ni <b>Qaydga yozing</b>. Tok 50 mA dan oshmasin.", "2-topshiriq: platani bosib diodni teskari ulang. Kuchlanishni 0…20 V oralig‘ida o‘zgartirib, teskari tokni (μA) yozing.", "Qaydlarni jadvallarga o‘tkazing: VAX grafigi, ochilish kuchlanishi va qarshiliklar avtomatik.", "Ge va Si diodlarni (yoki LED ni) solishtirish uchun jadval shartini o‘zgartirib takrorlang. Xulosa va PDF."],
-  formulas: ["Diod tenglamasi: <span class=\"sim-math\">I = I₀(e<sup>eU/nkT</sup> − 1)</span>", "Statik qarshilik: <span class=\"sim-math\">R = U / I</span>", "Dinamik qarshilik: <span class=\"sim-math\">r<sub>d</sub> = ΔU / ΔI</span>", "Kremniy diod ochilishi ≈ 0,6–0,7 V, germaniy ≈ 0,2–0,3 V"],
-  note: "Germaniy diodning teskari toki kremniyникidan minglab marta katta — u temperaturaga ham juda sezgir.",
+  formulas: ["Diod tenglamasi: <span class=\"sim-math\">I = I₀(e<sup>eU/nkT</sup> − 1)</span>", "Statik qarshilik: <span class=\"sim-math\">R = U / I</span>", "Dinamik qarshilik: <span class=\"sim-math\">r<sub>d</sub> = ΔU / ΔI</span>", "Ochilish kuchlanishi: kremniy ≈ 0,6–0,8 V, germaniy ≈ 0,2–0,4 V, qizil LED ≈ 1,8 V"],
+  note: "Germaniy diodning teskari toki kremniynikidan minglab marta katta — u temperaturaga ham juda sezgir.",
   notebook: {
     intro: "Jadval sharti — qaysi diod. 1-jadval majburiy (kamida 5 nuqta, tok kamida 5 mA gacha), 2-jadval — teskari tok.",
     conclusionPh: "Diod qaysi yo‘nalishda tok o‘tkazadi? Ochilish kuchlanishi, dinamik qarshilik, teskari tok qancha chiqdi?",
@@ -189,7 +201,7 @@ createLab({
         blank: () => ({ U: "", I: "" }), rows: 3, max: 10, narrow: true,
         parse: (r) => ({ U: num(r.U), I: num(r.I) }), check: (r) => (!(r.U >= 0) || !(r.I >= 0) ? { ok: false, err: "U, I ≥ 0" } : { ok: true }),
         analyze: anR, out: (A, j, r) => ({ R: r.I > 0 ? fmt(r.U / r.I, 2) : "∞" }),
-        summary: (A) => (A.rows.length ? [["Eng katta teskari tok", `${fmt(Math.max(...A.rows.map((r) => r.I)), 2)} μA`, ""]] : null),
+        summary: (A) => (A.rows.length ? [["Eng katta teskari tok", `${fmt(Math.max(...A.rows.map((r) => r.I)), 3)} μA`, ""]] : null),
         ok: (A) => A.ok },
     ],
     build,

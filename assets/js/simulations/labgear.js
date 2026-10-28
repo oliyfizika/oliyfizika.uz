@@ -282,7 +282,7 @@ export function multimeter(ctx, c, x, y, w, h, o) {
   ctx.fillStyle = "#1f2937"; rr(ctx, x + 6, y + 6, w - 12, h - 12, 9); ctx.fill();
   ctx.fillStyle = "#c7d2bf"; rr(ctx, x + 12, y + 12, w - 24, Math.min(46, h * 0.42), 5); ctx.fill();
   const lh = Math.min(46, h * 0.42);
-  label(ctx, o.value, x + w - 20 - (o.unit.length > 1 ? 22 : 14), y + 12 + lh / 2 + 2, "#111827", `700 ${Math.round(Math.min(26, lh * 0.62))}px "SFMono-Regular", Menlo, Consolas, monospace`, "right");
+  label(ctx, o.value, x + w - 20 - (o.unit.length > 1 ? 22 : 14), y + 12 + lh / 2 + 2, "#111827", `700 ${Math.round(Math.min(26, lh * 0.62, (w - 46 - (o.unit.length > 1 ? 22 : 14)) / (0.62 * String(o.value).length)))}px "SFMono-Regular", Menlo, Consolas, monospace`, "right");
   label(ctx, o.unit, x + w - 18, y + 12 + lh / 2 + 4, "#374151", F(11, 700), "right");
   if (o.mode) label(ctx, o.mode, x + 16, y + 20, "#374151", F(8, 700), "left");
   label(ctx, o.title, x + w / 2, y + 12 + lh + 14, "#e5e7eb", F(9, 700));
