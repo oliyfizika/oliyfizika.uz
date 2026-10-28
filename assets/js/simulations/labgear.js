@@ -144,6 +144,15 @@ export function cylinder(ctx, c, x, yBottom, w, o) {
   return { Y, top, lv };
 }
 
+/** Elektron tarozi: tarelka (x..x+w, y), displey. Qaytaradi tarelka yuzasi y. */
+export function eScale(ctx, c, x, y, w, value, unit = "g") {
+  ctx.fillStyle = c.dark ? "#475569" : "#cbd5e1"; rr(ctx, x, y + 8, w, 40, 8); ctx.fill(); ctx.strokeStyle = c.dark ? "#64748b" : "#94a3b8"; ctx.lineWidth = 1; ctx.stroke();
+  ctx.fillStyle = c.dark ? "#94a3b8" : "#e2e8f0"; rr(ctx, x + 6, y, w - 12, 9, 4); ctx.fill(); ctx.stroke();
+  ctx.fillStyle = "#0b1220"; rr(ctx, x + w / 2 - 44, y + 18, 88, 22, 4); ctx.fill();
+  label(ctx, value, x + w / 2 + 22, y + 29, "#4ade80", `700 14px "SFMono-Regular", Menlo, Consolas, monospace`, "right");
+  label(ctx, unit, x + w / 2 + 38, y + 30, "#cbd5e1", F(10, 700), "right");
+  return y;
+}
 /** Raqamli sekundomer. */
 export function stopwatch(ctx, c, x, y, w, t, running) {
   const h = 44;
