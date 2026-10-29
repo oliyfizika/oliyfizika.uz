@@ -3,7 +3,7 @@
 // 1) Oqim uzluksizligi: uch kesimli quvur (devor tutqichlari bilan diametrlar), jo'mrak dastagi (Q), zarralar
 //    v = Q/S tezlik bilan oqadi, rangli «bo'lak» — uzunligi o'zgaradi, hajmi saqlanadi.
 // 2) Bernulli qonuni: tor joyli va ko'tariluvchi quvur, to'rtta manometr (ustun balandligi p/ρg), energiya chizig'i,
-//    Venturi trubkasi; yagona grafik — napor hadlari quvur bo'ylab.
+//    Venturi trubkasi (grafiksiz — napor hadlari sahnadagi manometrlarda ko'rinadi).
 // 3) Qo'llanishlar: Torichelli (sath va teshikni surish, uchish masofasi), qanot (Jukovskiy profili atrofidagi
 //    potensial oqim, bosim xaritasi, chiqish qirrasini surib hujum burchagi), purkagich (naychani surish).
 // Fizika: fluid-physics.js (Node'da tekshirilgan).
@@ -12,7 +12,6 @@
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow, angleArc } from "./sim-kit.js";
 import * as P from "./fluid-physics.js";
-import { frame, ticks, legend } from "./pendulum-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -240,23 +239,6 @@ function drawBern(ctx, st) {
   geo.bern.knob = { x: kx, y: ky, r: kr + 8 };
   knob(ctx, c, kx, ky, kr, (bern.Q - 0.5) / 3.5, "Q", `${fmt(bern.Q, 1)} L/s`);
 }
-function drawBernGraph(ctx, gst) {
-  const c = gst.colors, xs = []; for (let x = 0; x <= 136; x += 1) xs.push(x);
-  const pts = xs.map((x) => bernAt(x)), E = pts[0].E, lo = Math.min(0, ...pts.map((p) => p.lvl)), hi = E * 1.12;
-  const yt = ticks(lo, hi, 4);
-  const f = frame(ctx, gst, { xMin: 0, xMax: 136, yMin: lo, yMax: hi, xTicks: [0, 20, 40, 60, 80, 100, 120], yTicks: yt.values, fmtX: (v) => fmt(v, 0), fmtY: (v) => fmt(v, 0), xUnit: "x, cm", yLabel: "napor, cm" });
-  ctx.save(); ctx.beginPath(); ctx.rect(f.rect.x, f.rect.y, f.rect.w, f.rect.h); ctx.clip();
-  const band = (ya, yb, col) => { ctx.fillStyle = col; ctx.beginPath(); pts.forEach((p, i) => { const X = f.X(xs[i]), Y = f.Y(ya(p)); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); }); for (let i = pts.length - 1; i >= 0; i--) ctx.lineTo(f.X(xs[i]), f.Y(yb(pts[i]))); ctx.closePath(); ctx.fill(); };
-  band(() => 0, (p) => p.y, "rgba(100,116,139,0.35)");
-  band((p) => p.y, (p) => p.lvl, "rgba(37,99,235,0.35)");
-  band((p) => p.lvl, () => E, "rgba(22,163,74,0.40)");
-  ctx.strokeStyle = COL.e; ctx.lineWidth = 2; ctx.setLineDash([6, 4]); ctx.beginPath(); ctx.moveTo(f.X(0), f.Y(E)); ctx.lineTo(f.X(136), f.Y(E)); ctx.stroke(); ctx.setLineDash([]);
-  ctx.strokeStyle = COL.p; ctx.lineWidth = 2; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(f.X(xs[i]), f.Y(p.lvl)) : ctx.moveTo(f.X(xs[i]), f.Y(p.lvl)))); ctx.stroke();
-  BX.forEach((x) => { ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.moveTo(f.X(x), f.rect.y); ctx.lineTo(f.X(x), f.rect.y + f.rect.h); ctx.stroke(); ctx.setLineDash([]); });
-  ctx.restore();
-  legend(ctx, [{ color: COL.y, label: "y" }, { color: COL.p, label: "p/ρg" }, { color: COL.v, label: "v²/2g" }, { color: COL.e, label: "yig‘indi", dash: [6, 4] }], f.padL + 80, 9, c);
-}
-
 /* ================================================================== 3a) Torichelli */
 
 const TANK = 0.5, TANK_H = 1.6;
@@ -465,11 +447,9 @@ function draw(ctx, st) {
 }
 const heights = (cw) => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.44), 280, 370)), graph: Math.round(clamp(vh * 0.24, 160, 220)) };
+  return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.44), 280, 370)) };
 };
 const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
-function drawGraphCanvas(ctx, gst) { if (ui.mode === "bern") return drawBernGraph(ctx, gst); ctx.fillStyle = gst.colors.bg; ctx.fillRect(0, 0, gst.w, gst.h); }
-const graph = createStage($("#graph"), drawGraphCanvas, { height: (cw) => heights(cw).graph });
 
 /* ------------------------------------------------------------------ Natijalar */
 
@@ -564,7 +544,7 @@ function updateFormula() {
   const html = ui.mode === "flow" ? "<small>Uzluksizlik</small> S₁v₁ = S₂v₂" : ui.mode === "bern" ? "<small>Bernulli</small> p + ρv²/2 + ρgh = const" : ui.sub === "tor" ? "<small>Torichelli</small> v = √(2gh)" : ui.sub === "wing" ? "<small>Ko‘tarish kuchi</small> F = ½·C·ρV²S" : "<small>Purkagich</small> pₐₜₘ − p = ρv²/2";
   const f = $("[data-formula]"); if (f.innerHTML !== html) f.innerHTML = html;
 }
-function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); graph.render(); }
+function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); }
 
 /* ------------------------------------------------------------------ Vaqt */
 
@@ -683,7 +663,6 @@ function setModeUI() {
   document.querySelectorAll("[data-dctl]").forEach((el) => { el.hidden = el.dataset.dctl !== ui.sub; });
   $("[data-mode-hint]").textContent = MODE_HINT[ui.mode === "app" ? ui.sub : ui.mode];
   $("[data-dhint]").textContent = DHINT[ui.sub] || "";
-  $("[data-graph-card]").hidden = ui.mode !== "bern";
   window.dispatchEvent(new Event("resize"));
 }
 const MODE_DEFAULT = { flow: "flow", bern: "venturi", app: "tor" };
@@ -702,4 +681,4 @@ function loadPreset(id) {
 setPlayUI(false);
 const q = new URLSearchParams(location.search).get("preset");
 loadPreset(PRESETS[q] ? q : "flow");
-document.fonts?.ready.then(() => { stage.render(); graph.render(); });
+document.fonts?.ready.then(() => stage.render());
