@@ -154,17 +154,10 @@
 .of-sim-card[data-topic="kvant"] .of-sim-card__art .b.f { fill: var(--of-special); }
 .of-sim-card__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 16px 16px; }
 .of-sim-card__title { font: 700 var(--of-text-md)/1.3 var(--of-font-sans) !important; letter-spacing: normal !important; overflow-wrap: anywhere; }
-.of-sim-card__desc { color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
-.of-sim-card__params { display: flex; flex-wrap: wrap; gap: 4px 6px; }
-.of-sim-card__params span:not(.of-sr-only) {
-  padding: 3px 8px; border-radius: var(--of-radius-pill); background: var(--of-surface-sunken);
-  color: var(--of-text-3); font-size: var(--of-text-xs); font-weight: 600;
-}
 .of-sim-card__foot { margin-top: auto; padding-top: 6px; width: 100%; }
 .of-sim-card__foot .of-btn { min-height: 40px; }
-/* Virtual laboratoriyalar katalogi (labs.html): bo'lim + sinf belgilari, asosiy formula */
+/* Virtual laboratoriyalar katalogi (labs.html): bo'lim + sinf belgilari */
 .of-sim-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.of-sim-card__formula { color: var(--of-text-2); font-size: var(--of-text-sm); font-weight: 600; }
 
 /* Sinf tugmalari (segment) */
 .of-grades { display: flex; flex-wrap: wrap; width: fit-content; max-width: 100%; }

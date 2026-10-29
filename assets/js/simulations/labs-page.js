@@ -31,9 +31,6 @@ function card(s, topics) {
         <div class="of-sim-card__body">
           <p class="of-sim-card__tags"><span class="of-badge${BADGE[s.topic] || ""}">${esc(topic?.title || "")}</span><span class="of-badge">${esc(gradeLabel(s))}</span></p>
           <h3 class="of-sim-card__title">${esc(s.title.replace(/ \(laboratoriya ishi\)$/, ""))}</h3>
-          ${s.formula ? `<p class="of-sim-card__formula">${esc(s.formula)}</p>` : ""}
-          <p class="of-sim-card__desc">${esc(s.description)}</p>
-          ${s.params?.length ? `<p class="of-sim-card__params"><span class="of-sr-only">Asboblar: </span>${s.params.map((p) => `<span>${esc(p)}</span>`).join("")}</p>` : ""}
           <div class="of-sim-card__foot">
             <a class="of-btn of-btn--soft" href="${esc(s.href)}" aria-label="Boshlash: ${esc(s.title)}">Boshlash ${icon("arrowRight")}</a>
           </div>
