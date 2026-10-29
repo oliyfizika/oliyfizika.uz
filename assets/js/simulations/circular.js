@@ -29,7 +29,7 @@ const str = { v0: 3, v: 3, m: 0.2, R: 0.6, Fmax: 5, th: 0, t: 0, on: true, why: 
 const car = { v: 60 / 3.6, R: 60, mu: 0.7, alpha: 0, th: -Math.PI / 2, M: 1200, skid: null, trail: [], off: "", wait: 0 };
 const TR = P.makeTrack();
 const lp = { k: 3, R: 0.5, s: 0, w: 0, phase: "run", fly: null, det: null, t: 0, hist: [], wait: 0, top: 0, done: "" };
-const blt = { type: "belt", n1: 0.5, R1: 12, R2: 6, th1: 0, th2: 0, s: 0, xb: 0, N1: 0, N2: 0, t: 0, hist: [] };
+const blt = { type: "belt", n1: 0.5, R1: 12, R2: 6, th1: 0, th2: 0, s: 0, xb: 0, N1: 0, N2: 0, t: 0 };
 const ROADS = {
   0.7: { name: "quruq asfalt", col: "#4b5563", line: "#f8fafc", edge: "rgba(255,255,255,0.7)" },
   0.4: { name: "ho‘l asfalt", col: "#334155", line: "#cbd5e1", edge: "rgba(186,230,253,0.75)" },
@@ -594,7 +594,6 @@ function stepBelt(dt) {
   if (blt.type === "gear") blt.th2 = gearPhase(); else blt.th2 += w1 * r * dt;
   blt.s += w1 * blt.R1 * dt; blt.t += dt; blt.N1 += blt.n1 * dt; blt.N2 += blt.n1 * r * dt;
   if (blt.type === "bike") blt.xb += w1 * r * (RW / 100) * dt;
-  blt.hist.push({ t: blt.t, a1: blt.N1, a2: blt.N2 }); trim(blt.hist, blt.t - 12);
 }
 
 /* ------------------------------------------------------------------ Asosiy chizish */
@@ -616,20 +615,23 @@ const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage
 /* ------------------------------------------------------------------ Grafiklar */
 
 const TABS = {
-  kin: [["xy", "x(t), y(t)", "Jism proyeksiyalari vaqt bo‘yicha", "Aylana bo‘ylab tekis harakatda har bir proyeksiya garmonik tebranadi: x = R·cos φ, y = R·sin φ, φ = ωt; tebranish davri aylanish davriga teng."], ["va", "v(t), a(t)", "Tezlik va tezlanish", "Tekis harakatda v va aₙ o‘zgarmaydi. Tangensial tezlanish bo‘lsa, tezlik chiziqli ortadi, aₙ = v²/R esa kvadratik ortadi."], ["aR", "a(R)", "Markazga intilma tezlanish radiusga bog‘liq", "v o‘zgarmas bo‘lsa a = v²/R — radius kichrayganda tezlanish ortadi; ω o‘zgarmas bo‘lsa (karusel, disk) a = ω²R — radius bilan ortadi. Sariq nuqta — hozirgi jism."]],
+  kin: [["xy", "x(t), y(t)", "Jism proyeksiyalari vaqt bo‘yicha", "Aylana bo‘ylab tekis harakatda har bir proyeksiya garmonik tebranadi: x = R·cos φ, y = R·sin φ, φ = ωt; tebranish davri aylanish davriga teng."]],
   string: [["fv", "F(v)", "Ip tarangligi tezlikka bog‘liq", "F = mv²/R — parabola: tezlik 2 marta ortsa, kerakli kuch 4 marta ortadi. Qizil soha — ip uziladigan tezliklar."], ["ft", "F(t)", "Ip tarangligi vaqt bo‘yicha", "Sharcha tezlashtirilganda taranglik ortib boradi; F_max ga yetganda ip uziladi va kuch birdan nolga tushadi."]],
   car: [["vmax", "v_max(R)", "Xavfsiz burilish tezligi", "v_max = √(μgR) — radius 4 marta katta burilishda 2 marta tezroq yurish mumkin. Yashil soha — xavfsiz tezliklar, nuqta — hozirgi avtomobil."], ["fric", "f(v)", "Kerakli va mavjud ishqalanish kuchi", "Ko‘k chiziq — burilish uchun kerakli ishqalanish kuchi (m = 1200 kg), qizil punktir — tinchlikdagi ishqalanishning eng katta qiymati μN. Ko‘k chiziq yashil yo‘lakdan chiqsa, avtomobil sirpanadi."]],
   loop: [["n", "N(θ)", "Tayanch reaksiyasi halqa bo‘ylab", "θ = 0° — halqaning pastki, 180° — yuqori nuqtasi. Pastda N eng katta (ortiqcha yuklama), tepada eng kichik. N < 0 bo‘ladigan joyda sharcha yo‘ldan ajraladi."], ["en", "Energiya", "Energiyaning aylanishi", "Ishqalanish yo‘q: kinetik va potensial energiyalar yig‘indisi o‘zgarmaydi — yo‘ldan ajralgandan keyin ham."]],
-  belt: [["n2", "n₂(R₂)", "Yetaklanuvchi g‘ildirak chastotasi", "n₂ = n₁R₁/R₂ — giperbola: kichik g‘ildirak tezroq aylanadi. Sariq nuqta — hozirgi g‘ildirak."], ["turn", "N(t)", "Aylanishlar soni vaqt bo‘yicha", "To‘g‘ri chiziqlar qiyaligi aylanish chastotasiga teng, ularning nisbati — uzatish nisbati."]],
+  belt: [],  // uzatmalarda grafik yo'q
 };
 const tabKey = () => (ui.mode === "dyn" ? ui.sub : ui.mode);
 function setupTabs() {
   const box = $("[data-tabs]");
+  $(".sim-graph").hidden = !TABS[tabKey()].length;  // uzatmalarda grafik oynasi yo'q
+  box.hidden = TABS[tabKey()].length < 2;  // bitta grafik bo'lsa tugmalar kerak emas
   box.innerHTML = TABS[tabKey()].map(([id, l]) => `<button type="button" data-tab-value="${id}">${l}</button>`).join("");
   box.querySelectorAll("[data-tab-value]").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tabValue)));
 }
 function setTab(tab) {
   const list = TABS[tabKey()], t = list.find((x) => x[0] === tab) || list[0];
+  if (!t) return;
   ui.tab = t[0];
   document.querySelectorAll("[data-tab-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tabValue === ui.tab)));
   $("[data-graph-title]").textContent = t[2]; $("[data-graph-sub]").textContent = t[3];
@@ -638,14 +640,11 @@ function setTab(tab) {
 function drawGraphCanvas(ctx, gst) {
   const k = tabKey();
   if (k === "kin") {
-    if (ui.tab === "va") return G.drawVA(ctx, gst, { hist: kin.hist, span: 10 });
-    if (ui.tab === "aR") return G.drawAR(ctx, gst, { v: Math.max(kin.v, 0.05), R: kin.R });
     return G.drawXY(ctx, gst, { hist: kin.hist, R: kin.R, span: clamp(2.2 * kinPeriod(), 3, 10) });
   }
   if (k === "string") return ui.tab === "ft" ? G.drawFT(ctx, gst, { hist: str.hist, Fmax: str.Fmax, span: 8 }) : G.drawFV(ctx, gst, { m: str.m, R: str.R, Fmax: str.Fmax, v: str.v });
   if (k === "car") return ui.tab === "fric" ? G.drawFric(ctx, gst, { m: car.M, R: car.R, mu: car.mu, alpha: car.alpha, v: car.v }) : G.drawVmax(ctx, gst, { mu: car.mu, alpha: car.alpha, R: car.R, v: car.v });
   if (k === "loop") return ui.tab === "en" ? G.drawEnergy(ctx, gst, { hist: lp.hist, span: 6 }) : G.drawLoop(ctx, gst, { h: lp.k * lp.R, R: lp.R, th: lp.phase === "run" && lp.s > 0 && lp.s < TAU ? lp.s : null });
-  return ui.tab === "turn" ? G.drawTurns(ctx, gst, { hist: blt.hist, span: 8, n1: blt.n1, n2: n2() }) : G.drawBelt(ctx, gst, { R1: blt.R1, R2: blt.R2, n1: blt.n1 });
 }
 const graph = createStage($("#graph"), drawGraphCanvas, { height: (cw) => heights(cw).graph });
 
@@ -778,7 +777,7 @@ playBtn.addEventListener("click", () => loop.toggle());
 
 function resetMode() {
   if (ui.mode === "kin") Object.assign(kin, { v: kin.v0, th: 0, th0: 0, t: 0, hist: [], hold: false });
-  else if (ui.mode === "belt") Object.assign(blt, { th1: 0, th2: 0, s: 0, xb: 0, N1: 0, N2: 0, t: 0, hist: [] });
+  else if (ui.mode === "belt") Object.assign(blt, { th1: 0, th2: 0, s: 0, xb: 0, N1: 0, N2: 0, t: 0 });
   else if (ui.sub === "string") Object.assign(str, { on: true, fly: null, why: "", wait: 0, v: str.v0, th: 0, t: 0, hist: [], hold: false, rate: 1 });
   else if (ui.sub === "car") Object.assign(car, { th: -Math.PI / 2, skid: null, trail: [], off: "", wait: 0 });
   else restartLoop();
@@ -897,8 +896,8 @@ canvas.addEventListener("pointercancel", endDrag);
 
 const PRESETS = {
   uniform: { mode: "kin", title: "Tekis aylanma harakat", lesson: "Tezlik moduli o‘zgarmaydi, yo‘nalishi esa uzluksiz o‘zgaradi: ko‘k v vektori aylanaga urinma, qizil aₙ — markazga yo‘nalgan. Jismni yoki v vektori uchini surib ko‘ring.", set: () => Object.assign(kin, { v0: 1.5, R: 0.6, at: 0 }), tab: "xy" },
-  radius: { mode: "kin", title: "Tezlanish radiusga bog‘liq", lesson: "v = 2 m/s o‘zgarmas. Jismni markazga yaqinlashtiring: radius 2 marta kamaysa, a = v²/R 2 marta ortadi. Grafikda ω o‘zgarmas hol bilan solishtiring.", set: () => Object.assign(kin, { v0: 2, R: 0.8, at: 0 }), tab: "aR" },
-  accel: { mode: "kin", title: "Notekis harakat (a_τ ≠ 0)", lesson: "Tezlik har soniyada 0,5 m/s ga ortadi: sariq a_τ tezlik modulini, qizil aₙ yo‘nalishini o‘zgartiradi. To‘liq tezlanish a (binafsha) markazdan og‘gan; tezlik ortgan sari aₙ ustun keladi.", set: () => Object.assign(kin, { v0: 0.4, R: 0.6, at: 0.5 }), tab: "va" },
+  radius: { mode: "kin", title: "Tezlanish radiusga bog‘liq", lesson: "v = 2 m/s o‘zgarmas. Jismni markazga yaqinlashtiring: radius 2 marta kamaysa, a = v²/R 2 marta ortadi.", set: () => Object.assign(kin, { v0: 2, R: 0.8, at: 0 }), tab: "xy" },
+  accel: { mode: "kin", title: "Notekis harakat (a_τ ≠ 0)", lesson: "Tezlik har soniyada 0,5 m/s ga ortadi: sariq a_τ tezlik modulini, qizil aₙ yo‘nalishini o‘zgartiradi. To‘liq tezlanish a (binafsha) markazdan og‘gan; tezlik ortgan sari aₙ ustun keladi.", set: () => Object.assign(kin, { v0: 0.4, R: 0.6, at: 0.5 }), tab: "xy" },
   string: { mode: "dyn", sub: "string", title: "Ipdagi sharcha", lesson: "Silliq stolda ipga bog‘langan sharcha aylanmoqda. Ipni bosing yoki «Ipni kesish» tugmasini bosing — sharcha urinma bo‘ylab ketadi. Sharchani surib, ipni qisqartirib ko‘ring.", set: () => Object.assign(str, { v0: 3, m: 0.2, R: 0.6, Fmax: 5, spin: false }), tab: "fv" },
   snap: { mode: "dyn", sub: "string", title: "Ip uziladi", lesson: "Sharcha asta tezlashtiriladi: taranglik F = mv²/R ortib, 4 N ga yetganda ip uziladi. Sharcha markazdan emas, urinma bo‘ylab uchib ketadi.", set: () => Object.assign(str, { v0: 2.4, m: 0.2, R: 0.5, Fmax: 4, spin: true }), tab: "ft" },
   carDry: { mode: "dyn", sub: "car", title: "Quruq yo‘lda burilish", lesson: "Quruq asfaltda (μ = 0,7) R = 60 m burilishni 73 km/soatgacha xavfsiz o‘tish mumkin. Spidometr milini surib tezlikni oshiring — qizil sohada avtomobil sirpanadi.", set: () => Object.assign(car, { v: 60 / 3.6, R: 60, mu: 0.7, alpha: 0 }), tab: "vmax" },
@@ -908,9 +907,9 @@ const PRESETS = {
   loopMin: { mode: "dyn", sub: "loop", title: "Eng kichik balandlik 2,5R", lesson: "h = 2,5R — eng kichik balandlik: tepada N = 0, markazga intilma kuchni faqat og‘irlik kuchi beradi va v = √(gR).", set: () => Object.assign(lp, { k: 2.5, R: 0.5 }), tab: "n" },
   loopFall: { mode: "dyn", sub: "loop", title: "Halqadan ajralish (h = 2R)", lesson: "h = 2R: sharcha tepaga yetmasdan (θ ≈ 132°) N = 0 bo‘ladi va yo‘ldan ajralib, parabola bo‘ylab tushadi.", set: () => Object.assign(lp, { k: 2, R: 0.5 }), tab: "n" },
   loopSwing: { mode: "dyn", sub: "loop", title: "Tebranish (h < R)", lesson: "h = 0,8R < R: sharcha halqaning chorak qismidan yuqoriga chiqmaydi va oldinga-orqaga tebranadi. Energiya grafigida kinetik va potensial energiya almashinuvini kuzating.", set: () => Object.assign(lp, { k: 0.8, R: 0.5 }), tab: "en" },
-  belt: { mode: "belt", title: "Tasmali uzatma", lesson: "Tasma ikkala g‘ildirak gardishini bir xil v tezlik bilan harakatlantiradi, shuning uchun kichik g‘ildirak 2 marta tezroq aylanadi. G‘ildirak chetini surib radiusni o‘zgartiring.", set: () => Object.assign(blt, { type: "belt", n1: 0.5, R1: 12, R2: 6 }), tab: "n2" },
-  gear: { mode: "belt", title: "Tishli uzatma (sekinlatish)", lesson: "Kichik tishli g‘ildirak (12 tish) kattasini (30 tish) aylantiradi: g‘ildiraklar qarama-qarshi aylanadi, katta g‘ildirak 2,5 marta sekinroq.", set: () => Object.assign(blt, { type: "gear", n1: 1.2, R1: 6, R2: 15 }), tab: "turn" },
-  bike: { mode: "belt", title: "Velosiped", lesson: "Pedal 1 ayl/s (60 ayl/min) aylantiriladi. Yulduzchalar nisbati 10 : 4 — orqa g‘ildirak 2,5 ayl/s aylanadi va velosiped ≈ 20 km/soat tezlikda yuradi. Orqa yulduzchani kattalashtirib ko‘ring.", set: () => Object.assign(blt, { type: "bike", n1: 1, R1: 10, R2: 4 }), tab: "n2" },
+  belt: { mode: "belt", title: "Tasmali uzatma", lesson: "Tasma ikkala g‘ildirak gardishini bir xil v tezlik bilan harakatlantiradi, shuning uchun kichik g‘ildirak 2 marta tezroq aylanadi. G‘ildirak chetini surib radiusni o‘zgartiring.", set: () => Object.assign(blt, { type: "belt", n1: 0.5, R1: 12, R2: 6 }) },
+  gear: { mode: "belt", title: "Tishli uzatma (sekinlatish)", lesson: "Kichik tishli g‘ildirak (12 tish) kattasini (30 tish) aylantiradi: g‘ildiraklar qarama-qarshi aylanadi, katta g‘ildirak 2,5 marta sekinroq.", set: () => Object.assign(blt, { type: "gear", n1: 1.2, R1: 6, R2: 15 }) },
+  bike: { mode: "belt", title: "Velosiped", lesson: "Pedal 1 ayl/s (60 ayl/min) aylantiriladi. Yulduzchalar nisbati 10 : 4 — orqa g‘ildirak 2,5 ayl/s aylanadi va velosiped ≈ 20 km/soat tezlikda yuradi. Orqa yulduzchani kattalashtirib ko‘ring.", set: () => Object.assign(blt, { type: "bike", n1: 1, R1: 10, R2: 4 }) },
 };
 const GROUPS = [["Kinematika", ["uniform", "radius", "accel"]], ["Ip va sharcha", ["string", "snap"]], ["Burilish", ["carDry", "carIce", "carBank"]], ["Vertikal halqa", ["loopOk", "loopMin", "loopFall", "loopSwing"]], ["Uzatmalar", ["belt", "gear", "bike"]]];
 const presetBox = $("[data-presets]");
@@ -952,7 +951,7 @@ function loadPreset(id) {
   resetMode(); setModeUI();
   presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;
-  syncAll(); setTab(p.tab || TABS[tabKey()][0][0]);
+  syncAll(); setTab(p.tab || TABS[tabKey()][0]?.[0]);
   refresh();
   if (!prefersReducedMotion()) loop.start(); else loop.stop();
   try { history.replaceState(null, "", `?preset=${id}`); } catch { /* fayl:// */ }

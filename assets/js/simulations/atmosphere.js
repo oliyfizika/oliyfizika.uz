@@ -131,17 +131,65 @@ function drawTorr(ctx, c, w, h) {
 
 /* ------------------------------------------------------------------ 2. Magdeburg yarim sharlari */
 
-function horse(ctx, x, y, s, dir, phase, pulling) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(dir * s, s);
-  ctx.fillStyle = "#7c4a1e"; ctx.strokeStyle = "#4a2c10"; ctx.lineWidth = 1;
-  const k = pulling ? Math.sin(phase) * 4 : 0;
-  ctx.lineWidth = 3; ctx.strokeStyle = "#5b3514";
-  for (const [lx, d] of [[-9, k], [-5, -k], [7, -k], [11, k]]) { ctx.beginPath(); ctx.moveTo(lx, 2); ctx.lineTo(lx + d + (pulling ? 3 : 0), 16); ctx.stroke(); }
-  ctx.beginPath(); ctx.ellipse(1, -2, 15, 8, pulling ? -0.12 : 0, 0, TAU); ctx.fill();
-  ctx.beginPath(); ctx.moveTo(12, -6); ctx.lineTo(20, -18); ctx.lineTo(26, -16); ctx.lineTo(18, -3); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = "#3f2410"; ctx.fillRect(13, -18, 6, 3); ctx.beginPath(); ctx.moveTo(-14, -4); ctx.quadraticCurveTo(-22, 0, -20, 8); ctx.lineTo(-16, 0); ctx.fill();
+// Og'ir yuk oti (yon ko'rinish). Mahalliy birlik: H — yag'rin balandligi, tuyoqlar y = 0 da, oldinga +x.
+// Tortganda bosh pastga egiladi, oldingi oyoqlar oldinga, keyingilari orqaga tiraladi.
+const COATS = [
+  { hi: "#a8693a", lo: "#5c3417", mane: "#22150b", leg: "#2a1a0e", far: "#3d2412" },  // to'riq
+  { hi: "#bd7339", lo: "#743d17", mane: "#8a4a1c", leg: "#5a3214", far: "#4a2810" },  // jiyron
+  { hi: "#71472a", lo: "#3a2314", mane: "#1a110a", leg: "#1a110a", far: "#24170d" },  // qora to'riq
+  { hi: "#d6d1c8", lo: "#8f897f", mane: "#5f5a52", leg: "#6f6a62", far: "#5e5951" },  // kulrang
+];
+const HARNESS = "#33241a";
+function horse(ctx, x, ground, H, dir, phase, pulling, coat) {
+  const k = COATS[coat % COATS.length], sw = pulling ? Math.sin(phase) : 0, hp = pulling ? 0.12 : 0;
+  ctx.save(); ctx.translate(x, ground); ctx.scale(dir * H, H); ctx.lineCap = "round"; ctx.lineJoin = "round";
+  ctx.fillStyle = "rgba(0,0,0,0.18)"; ctx.beginPath(); ctx.ellipse(-0.02, 0.01, 0.62, 0.05, 0, 0, TAU); ctx.fill();
+  const leg = (pts, top, col) => {
+    for (let n = 0; n < pts.length - 1; n++) { ctx.strokeStyle = n ? col : top; ctx.lineWidth = [0.12, 0.06, 0.055][n]; ctx.beginPath(); ctx.moveTo(...pts[n]); ctx.lineTo(...pts[n + 1]); ctx.stroke(); }
+    const [hx, hy] = pts[pts.length - 1]; ctx.fillStyle = "#24201c"; ctx.beginPath(); ctx.moveTo(hx - 0.05, hy); ctx.lineTo(hx + 0.06, hy); ctx.lineTo(hx + 0.04, hy - 0.055); ctx.lineTo(hx - 0.04, hy - 0.055); ctx.closePath(); ctx.fill();
+  };
+  // oyoqlar: [yelka/son, tizza/tirsak, bo'g'im, tuyoq]
+  const front = (dx, a) => { const r = pulling ? 0.1 + 0.05 * a : 0, lift = pulling ? Math.max(0, a) * 0.05 : 0; return [[0.3 + dx, -0.62], [0.33 + dx + r * 0.5, -0.31 - lift], [0.33 + dx + r, -0.07 - lift], [0.36 + dx + r, -lift]]; };
+  const hind = (dx, a) => { const r = pulling ? -0.12 - 0.04 * a : 0; return [[-0.36 + dx, -0.66], [-0.52 + dx + r * 0.4, -0.32], [-0.45 + dx + r, -0.07], [-0.43 + dx + r, 0]]; };
+  leg(front(-0.07, -sw), k.far, k.far); leg(hind(0.07, sw), k.far, k.far);
+  // dum
+  ctx.strokeStyle = k.mane; ctx.lineWidth = 0.07; ctx.beginPath(); ctx.moveTo(-0.55, -0.92); ctx.quadraticCurveTo(pulling ? -0.74 : -0.68, -0.78, pulling ? -0.7 : -0.66, -0.42); ctx.stroke();
+  ctx.lineWidth = 0.035; ctx.beginPath(); ctx.moveTo(-0.57, -0.9); ctx.quadraticCurveTo(-0.62, -0.7, -0.6, -0.45); ctx.stroke();
+  // gavda, bo'yin va bosh
+  const g = ctx.createLinearGradient(0, -1.1, 0, -0.5); g.addColorStop(0, k.hi); g.addColorStop(1, k.lo);
+  ctx.fillStyle = g; ctx.beginPath();
+  ctx.moveTo(-0.56, -0.86);
+  ctx.bezierCurveTo(-0.6, -1.0, -0.47, -1.07, -0.35, -1.03);
+  ctx.bezierCurveTo(-0.12, -0.96, 0.12, -0.97, 0.27, -1.02);
+  ctx.bezierCurveTo(0.38, -1.12 + hp * 0.5, 0.5, -1.3 + hp, 0.6, -1.42 + hp * 1.4);
+  ctx.lineTo(0.6, -1.53 + hp * 1.4); ctx.lineTo(0.66, -1.44 + hp * 1.4);
+  ctx.bezierCurveTo(0.73, -1.42 + hp * 1.4, 0.8, -1.3 + hp * 1.5, 0.87, -1.2 + hp * 1.6);
+  ctx.bezierCurveTo(0.91, -1.15 + hp * 1.6, 0.89, -1.08 + hp * 1.6, 0.82, -1.08 + hp * 1.6);
+  ctx.bezierCurveTo(0.74, -1.1 + hp * 1.5, 0.66, -1.16 + hp * 1.4, 0.6, -1.17 + hp * 1.2);
+  ctx.bezierCurveTo(0.56, -1.04 + hp * 0.6, 0.54, -0.88, 0.5, -0.76);
+  ctx.bezierCurveTo(0.5, -0.66, 0.42, -0.58, 0.34, -0.56);
+  ctx.bezierCurveTo(0.1, -0.52, -0.2, -0.52, -0.36, -0.58);
+  ctx.bezierCurveTo(-0.5, -0.62, -0.58, -0.72, -0.56, -0.86);
+  ctx.closePath(); ctx.fill();
+  // yol
+  ctx.strokeStyle = k.mane; ctx.lineWidth = 0.06; ctx.beginPath(); ctx.moveTo(0.27, -1.03); ctx.bezierCurveTo(0.38, -1.13 + hp * 0.5, 0.5, -1.31 + hp, 0.6, -1.43 + hp * 1.4); ctx.stroke();
+  // yaqin oyoqlar
+  leg(front(0, sw), k.lo, k.leg); leg(hind(0, -sw), k.lo, k.leg);
+  // ko'z va burun
+  ctx.fillStyle = "#120c08"; ctx.beginPath(); ctx.arc(0.71, -1.33 + hp * 1.45, 0.02, 0, TAU); ctx.fill();
+  ctx.beginPath(); ctx.arc(0.85, -1.14 + hp * 1.6, 0.012, 0, TAU); ctx.fill();
+  // jabduq: bo'yinturuq (xomut), yugan, ayil, tortqi va valek
+  ctx.strokeStyle = HARNESS; ctx.lineWidth = 0.025;
+  ctx.beginPath(); ctx.moveTo(0.63, -1.4 + hp * 1.4); ctx.lineTo(0.68, -1.16 + hp * 1.4); ctx.moveTo(0.66, -1.24 + hp * 1.45); ctx.lineTo(0.86, -1.16 + hp * 1.6); ctx.stroke();
+  ctx.lineWidth = 0.08; ctx.beginPath(); ctx.ellipse(0.45, -0.9 + hp * 0.3, 0.07, 0.18, -0.45, 0, TAU); ctx.stroke();
+  ctx.strokeStyle = "#b8862e"; ctx.lineWidth = 0.02; ctx.beginPath(); ctx.ellipse(0.45, -0.9 + hp * 0.3, 0.07, 0.18, -0.45, Math.PI * 0.6, Math.PI * 1.4); ctx.stroke();
+  ctx.strokeStyle = HARNESS; ctx.lineWidth = 0.07; ctx.beginPath(); ctx.moveTo(0.1, -0.99); ctx.lineTo(0.12, -0.54); ctx.stroke();
+  ctx.lineWidth = 0.03; ctx.beginPath(); ctx.moveTo(0.43, -0.76); ctx.lineTo(-0.74, -0.62); ctx.stroke();
+  ctx.strokeStyle = "#7c5a3a"; ctx.lineWidth = 0.04; ctx.beginPath(); ctx.moveTo(-0.74, -0.72); ctx.lineTo(-0.74, -0.52); ctx.stroke();
   ctx.restore();
 }
+// Ot jabdug'idagi nuqtalar (dunyo koordinatasida): valek (orqada) va bo'yinturuq (oldinda)
+const HORSE_TAIL = { x: -0.74, y: 0.62 }, HORSE_COLLAR = { x: 0.43, y: 0.76 };
 function person(ctx, c, x, y, dir, pulling) {
   ctx.save(); ctx.strokeStyle = c.text; ctx.lineWidth = 2; const lean = pulling ? 7 * dir : 0;
   ctx.beginPath(); ctx.arc(x + lean * 1.3, y - 30, 5, 0, TAU); ctx.moveTo(x + lean, y - 25); ctx.lineTo(x, y - 10); ctx.lineTo(x - 5 * dir, y); ctx.moveTo(x, y - 10); ctx.lineTo(x + 6 * dir, y); ctx.moveTo(x + lean * 0.8, y - 20); ctx.lineTo(x - 8 * dir, y - 18); ctx.stroke(); ctx.restore();
@@ -156,32 +204,47 @@ function hemisphere(ctx, c, cx, cy, R, dir) {
 }
 function drawMag(ctx, c, w, h) {
   const narrow = w < 560, s = sz(), big = mg.size === "big";
-  const cx = w / 2, cy = h * 0.42, R = big ? (narrow ? 40 : 54) : (narrow ? 22 : 28), gap = mg.sep * (narrow ? 50 : 80);
-  const ground = h - 22;
+  const ground = h - 22, Hh = narrow ? 44 : 62;  // otning yag'rin balandligi, px
+  // Arqon gorizontal: shar markazi ot valegi (yoki o'quvchi qo'li) balandligida — hammasi bitta yerda turadi
+  const R = big ? (narrow ? 20 : 30) : (narrow ? 11 : 12), cy = big ? ground - HORSE_TAIL.y * Hh : ground - 20;
+  const cx = w / 2, gap = mg.sep * (narrow ? 50 : 80);
   ctx.fillStyle = c.dark ? "#14532d" : "#bbf7d0"; ctx.fillRect(0, ground, w, h - ground);
   // arqonlar va tortuvchilar
   const pulling = mg.pull > 0, ph = performance.now() / 90;
-  const nDraw = Math.min(mg.team, narrow ? 3 : 6), pmx = narrow ? 34 : 70;
-  const hookL = cx - gap / 2 - R - 10, hookR = cx + gap / 2 + R + 10;
-  const sp = Math.min(big ? (narrow ? 34 : 44) : (narrow ? 20 : 26), (cx - gap / 2 - R - 10 - 30 - (pmx + 50)) / Math.max(1, nDraw));
+  const nDraw = big ? (narrow ? 1 : 3) : Math.min(mg.team, narrow ? 3 : 6), pmx = narrow ? 34 : 70;
+  const hookL = cx - gap / 2 - R - 10, hookR = cx + gap / 2 + R + 10, lead = narrow ? 16 : 30;
+  const sp = big ? Hh * 1.58 : Math.min(narrow ? 20 : 26, (cx - gap / 2 - R - 10 - 30 - (pmx + 50)) / Math.max(1, nDraw));
   for (const dir of [-1, 1]) {
-    const hook = dir < 0 ? hookL : hookR, x0 = hook + dir * 30, tree = dir > 0 && mg.tree;
-    const endX = tree ? (narrow ? w - 30 : w - 50) : hook + dir * (30 + nDraw * sp);
+    const hook = dir < 0 ? hookL : hookR, tree = dir > 0 && mg.tree, shift = pulling ? 6 : 0;
+    // birinchi otning valegi (yoki birinchi o'quvchi) arqon uchida
+    const x0 = big ? hook + dir * (lead + shift - HORSE_TAIL.x * Hh) : hook + dir * 30;
+    const endX = tree ? (narrow ? w - 30 : w - 50) : big ? hook + dir * (lead + shift) : hook + dir * (30 + nDraw * sp);
+    const endY = big ? cy : ground - 18;  // o'quvchining qo'li
     ctx.strokeStyle = pulling ? "#a16207" : "#ca8a04"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(hook + dir * 8, cy);
-    if (pulling) ctx.lineTo(endX, ground - (big ? 22 : 24)); else ctx.quadraticCurveTo((hook + endX) / 2, ground - 4, endX, ground - (big ? 22 : 24)); ctx.stroke();
+    if (pulling || big) ctx.lineTo(endX, endY); else ctx.quadraticCurveTo((hook + endX) / 2, ground - 4, endX, endY); ctx.stroke();
     if (tree) {
       ctx.fillStyle = "#78350f"; ctx.fillRect(endX - 6, ground - 90, 14, 90);
       ctx.fillStyle = c.dark ? "#166534" : "#22c55e"; for (const [dx, dy, r] of [[0, -100, 30], [-22, -84, 22], [22, -84, 22]]) { ctx.beginPath(); ctx.arc(endX + dx, ground + dy, r, 0, TAU); ctx.fill(); }
       continue;
     }
-    for (let i = 0; i < nDraw; i++) { const x = x0 + dir * i * sp + dir * (pulling ? 6 : 0); if (big) horse(ctx, x, ground - 16, narrow ? 0.8 : 1, dir, ph + i, pulling); else person(ctx, c, x, ground, dir, pulling); }
-    if (mg.team > nDraw) tag(ctx, `× ${mg.team}`, x0 + dir * (nDraw * sp + 8), ground - 46, { color: c.text, bg: c.bg2, font: BOLD, align: dir > 0 ? "left" : "right" });
+    if (big) {
+      // tandem: har bir otning valegi oldingi otning bo'yinturug'iga tortqi bilan ulangan
+      ctx.strokeStyle = HARNESS; ctx.lineWidth = Math.max(1.5, Hh * 0.03);
+      for (let i = 0; i + 1 < nDraw; i++) { const a = x0 + dir * i * sp, b = x0 + dir * (i + 1) * sp; ctx.beginPath(); ctx.moveTo(a + dir * HORSE_COLLAR.x * Hh, ground - HORSE_COLLAR.y * Hh); ctx.lineTo(b + dir * HORSE_TAIL.x * Hh, ground - HORSE_TAIL.y * Hh); ctx.stroke(); }
+      for (let i = 0; i < nDraw; i++) horse(ctx, x0 + dir * i * sp, ground, Hh, dir, ph + i * 1.7, pulling, i + (dir > 0 ? 1 : 0));
+      if (mg.team > nDraw) { const xm = x0 + dir * ((nDraw - 1) * sp) / 2; tag(ctx, `${mg.team} ta ot`, xm, ground - Hh * 1.6 - 14, { color: c.text, bg: c.bg2, font: BOLD, align: "center" }); }
+    } else {
+      for (let i = 0; i < nDraw; i++) person(ctx, c, x0 + dir * i * sp + dir * shift, ground, dir, pulling);
+      if (mg.team > nDraw) tag(ctx, `× ${mg.team}`, x0 + dir * (nDraw * sp + 8), ground - 46, { color: c.text, bg: c.bg2, font: BOLD, align: dir > 0 ? "left" : "right" });
+    }
   }
+  // sharlarning yerdagi soyasi
+  ctx.fillStyle = "rgba(0,0,0,0.16)"; ctx.beginPath(); ctx.ellipse(cx, ground + 1, R + gap / 2 + 4, 3, 0, 0, TAU); ctx.fill();
   // havo bosimi strelkalari (Δp ga proporsional)
   const dp = (P.P0 - mg.p) / P.P0;
   if (dp > 0.02 && mg.sep < 0.05) {
     const L = 6 + 18 * dp;
-    for (let k = 0; k < 12; k++) { const an = (k / 12) * TAU + 0.26, x = cx + Math.cos(an) * (R + 10 + L), y = cy + Math.sin(an) * (R + 10 + L); arrow(ctx, x, y, -Math.cos(an) * L, -Math.sin(an) * L, c.primary, { width: 1.8, head: 6 }); }
+    for (let k = 0; k < 12; k++) { const an = (k / 12) * TAU + 0.26, x = cx + Math.cos(an) * (R + 10 + L), y = cy + Math.sin(an) * (R + 10 + L); if (y > ground - 4) continue; arrow(ctx, x, y, -Math.cos(an) * L, -Math.sin(an) * L, c.primary, { width: 1.8, head: 6 }); }
   }
   hemisphere(ctx, c, cx - gap / 2, cy, R, -1);
   hemisphere(ctx, c, cx + gap / 2, cy, R, 1);

@@ -25,7 +25,6 @@ function series(ctx, f, pts, get, color, dash = null, w = 2.4) {
 const dot = (ctx, f, x, y, color, r = 6) => { ctx.fillStyle = color; ctx.beginPath(); ctx.arc(f.X(x), f.Y(y), r, 0, TAU); ctx.fill(); };
 /** 0 dan m gacha "chiroyli" shkala; top ≥ m (ma'lumot kesilmaydi). */
 const nice = (m, n = 4) => { const step = ticks(0, m, n).step, top = Math.ceil(m / step - 1e-9) * step, vals = []; for (let i = 0; i * step <= top + step * 1e-9; i++) vals.push(+(i * step).toFixed(10)); return { top, vals, step }; };
-function niceStep(x) { const p = 10 ** Math.floor(Math.log10(x)), r = x / p; return (r <= 1 ? 1 : r <= 2 ? 2 : r <= 2.5 ? 2.5 : r <= 5 ? 5 : 10) * p; }
 function hline(ctx, f, y, color, dash = [5, 4]) { ctx.strokeStyle = color; ctx.lineWidth = 1.3; ctx.setLineDash(dash); ctx.beginPath(); ctx.moveTo(f.rect.x, f.Y(y)); ctx.lineTo(f.rect.x + f.rect.w, f.Y(y)); ctx.stroke(); ctx.setLineDash([]); }
 const windowOf = (hist, span) => { const t1 = hist.length ? hist[hist.length - 1].t : 0, t0 = Math.max(0, t1 - span); return { t0, pts: hist.filter((p) => p.t >= t0) }; };
 const timeAxis = (t0, span) => ({ xMin: t0, xMax: t0 + span, xTicks: ticks(t0, t0 + span, 6).values, fmtX: (v) => fmt(v, 1), xUnit: "s" });
@@ -41,34 +40,6 @@ export function drawXY(ctx, st, { hist, R, span }) {
   ctx.restore();
   const narrow = st.w < 520;
   legend(ctx, [{ color: c.primary, label: narrow ? "x(t)" : "x(t) = R·cos φ" }, { color: c.danger, label: narrow ? "y(t)" : "y(t) = R·sin φ", dash: [6, 4] }], f.padL + 56, 9, c);
-}
-
-export function drawVA(ctx, st, { hist, span }) {
-  const c = st.colors, { t0, pts } = windowOf(hist, span);
-  const vm = Math.max(0.5, ...pts.map((p) => p.v)) * 1.1, am = Math.max(0.5, ...pts.map((p) => p.a)) * 1.1;
-  const lv = nice(vm, 4), n = lv.vals.length - 1, as = niceStep(am / n), k = lv.top / (as * n);
-  const f = frame(ctx, st, { ...timeAxis(t0, span), yMin: 0, yMax: lv.top, yTicks: lv.vals, fmtY: (v) => fmt(v, dec(lv.step)), yLabel: "v, m/s" });
-  const nonuni = pts.some((p) => Math.abs(p.a - p.an) > 1e-3);
-  ctx.save(); clipTo(ctx, f.rect);
-  series(ctx, f, pts, (p) => p.v, c.primary);
-  series(ctx, f, pts, (p) => p.an * k, c.danger, [6, 4]);
-  if (nonuni) series(ctx, f, pts, (p) => p.a * k, c.special, [2, 3], 2);
-  ctx.restore();
-  ctx.save(); ctx.font = small; ctx.fillStyle = c.danger; ctx.textAlign = "right"; ctx.textBaseline = "middle";
-  for (let i = 1; i <= n; i++) ctx.fillText(fmt(i * as, dec(as)), f.rect.x + f.rect.w - 4, f.Y(lv.vals[i]) + (i === n ? 9 : -7));
-  ctx.restore();
-  const items = [{ color: c.primary, label: "v" }, { color: c.danger, label: "aₙ, m/s² (o‘ng shkala)", dash: [6, 4] }];
-  if (nonuni) items.push({ color: c.special, label: "a", dash: [2, 3] });
-  legend(ctx, items, f.padL + 56, 9, c);
-}
-
-export function drawAR(ctx, st, { v, R }) {
-  const c = st.colors, w = v / R, x1 = 1.2, fv = (r) => (v * v) / r, fw = (r) => w * w * r;
-  const yt = nice(Math.max(fv(R), fw(x1), fv(0.3)) * 1.1);
-  const f = frame(ctx, st, { xMin: 0, xMax: x1, yMin: 0, yMax: yt.top, xTicks: [0, 0.2, 0.4, 0.6, 0.8, 1, 1.2], yTicks: yt.vals, fmtX: (x) => fmt(x * 100, 0), fmtY: (x) => fmt(x, dec(yt.step)), xUnit: "cm", yLabel: "a, m/s²" });
-  ctx.save(); clipTo(ctx, f.rect); curve(ctx, f, fv, 0.02, x1, c.primary); curve(ctx, f, fw, 0, x1, c.danger, 2, 2, [6, 4]); dot(ctx, f, R, fv(R), c.warning); ctx.restore();
-  const narrow = st.w < 560;
-  legend(ctx, [{ color: c.primary, label: narrow ? "v = const: a = v²/R" : `v = ${fmt(v, 2)} m/s = const: a = v²/R` }, { color: c.danger, label: narrow ? "ω = const: a = ω²R" : `ω = ${fmt(w, 2)} rad/s = const: a = ω²R`, dash: [6, 4] }], f.padL + 56, 9, c);
 }
 
 /* ------------------------------------------------------------------ Ipdagi sharcha */
@@ -163,24 +134,4 @@ export function drawEnergy(ctx, st, { hist, span }) {
   series(ctx, f, pts, (p) => p.K * 100, c.primary); series(ctx, f, pts, (p) => p.U * 100, c.warning, [6, 4]); series(ctx, f, pts, (p) => (p.K + p.U) * 100, c.success, null, 1.8);
   ctx.restore();
   legend(ctx, [{ color: c.primary, label: "kinetik" }, { color: c.warning, label: "potensial", dash: [6, 4] }, { color: c.success, label: "to‘liq" }], f.padL + 56, 9, c);
-}
-
-/* ------------------------------------------------------------------ Uzatmalar */
-
-export function drawBelt(ctx, st, { R1, R2, n1 }) {
-  const c = st.colors, x0 = 2, x1 = 20, fn = (r) => (n1 * R1) / r;
-  const yt = nice(fn(x0) * 1.05);
-  const f = frame(ctx, st, { xMin: 0, xMax: x1, yMin: 0, yMax: yt.top, xTicks: [0, 5, 10, 15, 20], yTicks: yt.vals, fmtX: (x) => fmt(x, 0), fmtY: (x) => fmt(x, dec(yt.step)), xUnit: "cm", yLabel: "n₂, ayl/s" });
-  ctx.save(); clipTo(ctx, f.rect); curve(ctx, f, fn, x0, x1, c.primary); hline(ctx, f, n1, c.text3); dot(ctx, f, R2, fn(R2), c.warning); ctx.restore();
-  tag(ctx, `n₁ = ${fmt(n1, 2)} ayl/s`, f.rect.x + f.rect.w - 4, f.Y(n1) - 12, { color: c.text2, bg: c.bg, align: "right", font: small });
-  legend(ctx, [{ color: c.primary, label: st.w < 520 ? "n₂ = n₁R₁/R₂" : `n₂ = n₁·R₁/R₂ (R₁ = ${fmt(R1, 1)} cm)` }], f.padL + 56, 9, c);
-}
-
-export function drawTurns(ctx, st, { hist, span, n1, n2 }) {
-  const c = st.colors, { t0, pts } = windowOf(hist, span);
-  const b1 = pts.length ? pts[0].a1 : 0, b2 = pts.length ? pts[0].a2 : 0;
-  const yt = nice(Math.max(1, Math.max(n1, n2) * span) * 1.02);
-  const f = frame(ctx, st, { ...timeAxis(t0, span), yMin: 0, yMax: yt.top, yTicks: yt.vals, fmtY: (v) => fmt(v, dec(yt.step)), yLabel: "aylanishlar" });
-  ctx.save(); clipTo(ctx, f.rect); series(ctx, f, pts, (p) => p.a1 - b1, c.primary); series(ctx, f, pts, (p) => p.a2 - b2, c.warning, [6, 4]); ctx.restore();
-  legend(ctx, [{ color: c.primary, label: `1: n₁ = ${fmt(n1, 2)} ayl/s` }, { color: c.warning, label: `2: n₂ = ${fmt(n2, 2)} ayl/s`, dash: [6, 4] }], f.padL + 74, 9, c);
 }

@@ -11,7 +11,6 @@ import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, tag, bindRange, arrow, prefersReducedMotion } from "./sim-kit.js";
 import { springScale } from "./instruments.js";
 import * as P from "./statics-physics.js";
-import { drawTip, drawBall, drawLever, drawMechF, drawWork, lastFrame } from "./statics-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -20,11 +19,11 @@ const SMALL = "600 10px Inter, system-ui, sans-serif";
 /* ------------------------------------------------------------------ Holat */
 
 const WORLD = [520, 300];
-const ui = { mode: "cm", kind: { cm: "plate", mech: "fixed" }, view: { tip: "h", ball: "E", lever: "F", fixed: "F", movable: "F", tackle: "F", axle: "F" }, hover: null };
+const ui = { mode: "cm", kind: { cm: "plate", mech: "fixed" } };
 const pl = { shape: "L", hole: 0, th: 0, w: 0, lines: [], showCm: false, held: false };
 const tp = { size: "tall", f: 0.5, a: 0, w: 0, rest: "up", held: true };
 const bl = { kind: "bowl", x: 0, v: 0, held: false };
-const lv = { A: { n: 2, h: -3 }, B: { n: 3, h: 2 }, dyn: false, dh: 5, phi: 0, po: 0, b: 0, w: 0, pts: [] };
+const lv = { A: { n: 2, h: -3 }, B: { n: 3, h: 2 }, dyn: false, dh: 5, phi: 0, po: 0, b: 0, w: 0 };
 const mc = { m: 1, n: 4, R: 0.3, ideal: false, s: 0, auto: 0, psi: 0 };
 let presetId = null;
 let CW = 800, anim = 0;
@@ -491,49 +490,7 @@ function draw(ctx, stg) {
   else if (k === "lever") drawLeverStage(ctx, c);
   else drawMechStage(ctx, c);
 }
-const heights = () => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { graph: Math.round(clamp(vh * 0.28, 190, 250)) }; };
-const stage = createStage($("#stage"), draw, { height: (cw) => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return Math.round(clamp(Math.min(cw * 0.62, vh * 0.46), 240, 340)); } });
-
-/* ------------------------------------------------------------------ Grafik */
-
-function lvGraph() {
-  const po = lv.po, A = lv.A, Mg = Math.abs(A.n * P.LEVER.mW * P.G * (A.h * P.LEVER.step - po) + P.LEVER.mBar * P.G * -po);
-  let l = 0, Fv = NaN;
-  if (lv.dyn) { l = Math.abs(lv.dh * P.LEVER.step - po) * 100; Fv = lvF(); }
-  else if (lv.B.n && lv.B.h) { l = Math.abs(lv.B.h * P.LEVER.step - po) * 100; Fv = lv.B.n * P.LEVER.mW * P.G; }
-  return { M: Mg, l, F: Fv };
-}
-function drawGraphCanvas(ctx, gs) {
-  const k = kind(), v = ui.view[k];
-  if (k === "tip") { const o = tBox(); return drawTip(ctx, gs, { b: o.b, h: o.h, f: o.f, a: tp.a, hover: ui.hover }); }
-  if (k === "ball") return drawBall(ctx, gs, { kind: bl.kind, x: bl.x, v: bl.v, m: BALL_M, hover: ui.hover });
-  if (k === "lever") { const g = lvGraph(); return drawLever(ctx, gs, { M: g.M, F: g.F, l: g.l, phi: lv.dyn ? lv.phi * DEG : 0, pts: lv.pts, hover: ui.hover }); }
-  if (isMech(k)) { if (v === "A") { const r = mRes(), sw = mc.s > 1e-6 ? mc.s : sMax(); return drawWork(ctx, gs, { W: r.W, F: r.F, h: sw / r.k, s: sw }); } return drawMechF(ctx, gs, { kind: k, n: mc.n, R: mc.R, m: mc.m, hover: ui.hover }); }
-}
-const graph = createStage($("#graph"), drawGraphCanvas, { height: () => heights().graph });
-const MECH_TABS = [["F", "F(m)", "Kerakli kuchning yuk massasiga bog‘liqligi", "Ko‘k — real mexanizm (ishqalanish, blok massasi), yashil shtrix — ideal, kulrang — yukni to‘g‘ridan-to‘g‘ri ko‘tarish (F = mg). Kursor bilan qiymat o‘qing."],
-  ["A", "Ish", "Foydali va to‘liq ish", "Yukni h balandlikka ko‘targanda foydali ish mgh, qo‘l bajargan ish F·s (yuk hali ko‘tarilmagan bo‘lsa — eng yuqoriga ko‘tarish uchun). Mexanizm kuchdan yutuq bersa, yo‘ldan shuncha yutqazadi: ishdan yutuq yo‘q (oltin qoida). Ishqalanish tufayli F·s > mgh."]];
-const TABS = {
-  tip: [["h", "h(α)", "Massa markazi balandligining og‘ish burchagiga bog‘liqligi", "Quti og‘dirilganda massa markazi avval ko‘tariladi: αₖᵣ da eng yuqori, keyin pasayadi. Yashil sohada qo‘yib yuborilsa — qaytadi (turg‘un), qizil sohada — ag‘dariladi. Massa markazi past bo‘lsa, αₖᵣ katta."]],
-  ball: [["E", "Eₚ(x)", "Sharchaning potensial energiyasi", "Turg‘un muvozanat — potensial energiya minimumi, turg‘unmas — maksimumi, befarq — o‘zgarmas. Yashil shtrix — to‘liq energiya: sharcha Eₚ = E bo‘lgan nuqtalar orasida tebranadi (ishqalanish uni asta-sekin kamaytiradi)."]],
-  lever: [["F", "F₂(l₂)", "Richag muvozanati: muvozanatlovchi kuch va yelka", "Ko‘k chiziq — chap yuklar momentini muvozanatlovchi kuch F₂ = M₁/l₂ (giperbola). To‘q sariq doira — hozirgi o‘ng yuklar yoki dinamometr; yashil nuqtalar — siz yozgan o‘lchashlar. Nuqta chiziqda yotsa, richag muvozanatda."]],
-  fixed: MECH_TABS, movable: MECH_TABS, tackle: MECH_TABS, axle: MECH_TABS,
-};
-function setTabs() {
-  const k = kind(), tabs = TABS[k], card = $("[data-graph-card]");
-  card.hidden = !tabs; if (!tabs) return;
-  const box = $("[data-tabs]"), cur = ui.view[k], t = tabs.find((x) => x[0] === cur) || tabs[0];
-  box.innerHTML = tabs.map(([v, name]) => `<button type="button" data-tab-value="${v}" aria-pressed="${v === t[0]}">${name}</button>`).join("");
-  box.hidden = tabs.length < 2;
-  $("[data-graph-title]").textContent = t[2]; $("[data-graph-sub]").textContent = t[3];
-  graph.canvas.setAttribute("aria-label", t[2]); ui.hover = null; graph.render();
-}
-$("[data-tabs]").addEventListener("click", (e) => { const b = e.target.closest("[data-tab-value]"); if (!b) return; ui.view[kind()] = b.dataset.tabValue; setTabs(); });
-const gcv = graph.canvas;
-const ptrIn = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-gcv.addEventListener("pointermove", (e) => { const f = lastFrame(); if (!f) return; const p = ptrIn(gcv, e), r = f.rect, inside = p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.h; ui.hover = inside ? f.inv(p.x) : null; gcv.style.cursor = inside ? "crosshair" : ""; graph.render(); });
-gcv.addEventListener("pointerleave", () => { ui.hover = null; graph.render(); });
-const graphOn = () => !$("[data-graph-card]").hidden;
+const stage = createStage($("#stage"), draw, { height: (cw) => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return Math.round(clamp(Math.min(cw * 0.62, vh * 0.52), 260, 400)); } });
 
 /* ------------------------------------------------------------------ Natijalar */
 
@@ -634,7 +591,7 @@ function updateExplain() {
 }
 const FORMULA = { plate: "<small>Massa markazi</small> x<sub>C</sub> = Σmᵢxᵢ/Σmᵢ", tip: "<small>Ag‘darilish</small> tg α<sub>kr</sub> = (b/2)/h<sub>C</sub>", ball: "<small>Muvozanat</small> ΣF = 0", lever: "<small>Moment qoidasi</small> F₁l₁ = F₂l₂", fixed: "<small>Qo‘zg‘almas blok</small> F = mg", movable: "<small>Qo‘zg‘aluvchan blok</small> F = mg/2", tackle: "<small>Polispast</small> F = mg/n", axle: "<small>Chig‘ir</small> F = mg·r/R" };
 function updateFormula() { const html = FORMULA[kind()]; const f = $("[data-formula]"); if (f.innerHTML !== html) f.innerHTML = html; }
-function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); if (graphOn()) graph.render(); syncTools(); }
+function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); syncTools(); }
 
 /* ------------------------------------------------------------------ Vaqt */
 
@@ -645,7 +602,7 @@ const loop = createLoop((dt) => {
   const k = kind();
   if (k === "plate") stepPlate(dt); else if (k === "tip") stepTip(dt); else if (k === "ball") stepBall(dt); else if (k === "lever") stepLever(dt); else stepMech(dt);
   stage.render();
-  uiTimer += dt; if (uiTimer > 0.12) { uiTimer = 0; updateReadouts(); updateStatus(); if (graphOn() && k !== "lever" && !(isMech(k) && ui.view[k] === "F")) graph.render(); if (k === "plate") updateExplain(); }
+  uiTimer += dt; if (uiTimer > 0.12) { uiTimer = 0; updateReadouts(); updateStatus(); if (k === "plate") updateExplain(); }
 }, { onStateChange: setPlayUI });
 const playBtn = $("[data-play]");
 function setPlayUI(on) {
@@ -699,8 +656,6 @@ function syncLever() {
   document.querySelectorAll("[data-dyn-value]").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.dynValue === "1") === lv.dyn)));
   document.querySelectorAll("[data-dynctl]").forEach((el) => { el.hidden = !lv.dyn; });
 }
-$("[data-rec]").addEventListener("click", () => { const g = lvGraph(); if (!(g.l > 0) || !Number.isFinite(g.F)) { flashStatus("O‘ng yuklar yoki dinamometr ulanmagan"); return; } lv.pts.push({ l: g.l, F: Math.abs(g.F) }); refresh(); });
-$("[data-clear]").addEventListener("click", () => { lv.pts = []; refresh(); });
 
 // 3) Mexanizmlar
 const MM = bindRange($("#mM"), $("#mMOut"), (v) => `${fmt(v, 1)} kg`, (v) => { mc.m = v; mc.s = Math.min(mc.s, sMax()); customized(); refresh(); });
@@ -778,7 +733,7 @@ canvas.addEventListener("pointercancel", endDrag);
 const setPlate = (shapeId, showCm = false, lines = []) => () => { ui.kind.cm = "plate"; pl.shape = shapeId; pl.hole = 0; pl.showCm = showCm; resetPlate(); for (const i of lines) { pl.hole = i; pl.th = plEq(); drawPlumbLine(); } pl.hole = lines.length ? (lines.at(-1) + 1) % 3 : 0; if (lines.length) { pl.th = plEq() + 0.5; } };
 const setTip = (size, f, aDeg, held = true) => () => { ui.kind.cm = "tip"; Object.assign(tp, { size, f, a: aDeg * DEG, w: 0, rest: aDeg ? null : "up", held }); };
 const setBall = (k, x, held = false) => () => { ui.kind.cm = "ball"; Object.assign(bl, { kind: k, x, v: 0, held }); };
-const setLever = (A, B, o = {}) => () => { lv.A = { n: A[0], h: A[1] }; lv.B = { n: B[0], h: B[1] }; Object.assign(lv, { dyn: false, dh: 5, phi: 0, po: 0, b: 0, w: 0, pts: [] }, o); };
+const setLever = (A, B, o = {}) => () => { lv.A = { n: A[0], h: A[1] }; lv.B = { n: B[0], h: B[1] }; Object.assign(lv, { dyn: false, dh: 5, phi: 0, po: 0, b: 0, w: 0 }, o); };
 const setMech = (k, m, o = {}) => () => { ui.kind.mech = k; Object.assign(mc, { m, n: 4, R: 0.3, ideal: false, s: 0, auto: 0, psi: 0 }, o); };
 const PRESETS = {
   plateL: { mode: "cm", title: "Massa markazini topish (L shakl)", lesson: "Plastinka A teshikdan osilgan va tebranmoqda. To‘xtagach «Shovun bo‘ylab chiziq chizish» ni bosing. So‘ng B teshikni bosing (yoki sahnada B harfini), yana chiziq chizing. Kesishish nuqtasi — massa markazi. C teshik bilan tekshiring.", set: setPlate("L") },
@@ -790,15 +745,15 @@ const PRESETS = {
   ballBowl: { mode: "cm", title: "Turg‘un muvozanat", lesson: "Botiq sirtdagi sharcha chetga surib qo‘yib yuborilgan: u muvozanat holati atrofida tebranib, pastki nuqtada to‘xtaydi.", set: setBall("bowl", 8) },
   ballDome: { mode: "cm", title: "Turg‘unmas muvozanat", lesson: "Sharcha qavariq sirt cho‘qqisidan 2 mm siljigan holda qo‘yib yuborildi — dumalab tushib ketadi. Uni sahnada aynan cho‘qqiga qo‘yib ko‘ring.", set: setBall("dome", 0.2) },
   ballFlat: { mode: "cm", title: "Befarq muvozanat", lesson: "Tekis gorizontal taxta: sharchani istalgan joyga qo‘ying — u o‘sha yerda qoladi.", set: setBall("flat", 6) },
-  balance: { mode: "lever", title: "Moment qoidasi: 2 × 15 = 3 × 10", lesson: "Chapda 2 ta yuk 15 cm da (M₁ = 1,96·0,15 = 0,294 N·m), o‘ngda 3 ta yuk 10 cm da (M₂ = 2,94·0,10 = 0,294 N·m): richag muvozanatda. Yuklarni boshqa teshikka surib ko‘ring va «Nuqtani yozish» bilan grafikni to‘ldiring.", set: setLever([2, -3], [3, 2]) },
+  balance: { mode: "lever", title: "Moment qoidasi: 2 × 15 = 3 × 10", lesson: "Chapda 2 ta yuk 15 cm da (M₁ = 1,96·0,15 = 0,294 N·m), o‘ngda 3 ta yuk 10 cm da (M₂ = 2,94·0,10 = 0,294 N·m): richag muvozanatda. Yuklarni boshqa teshikka surib ko‘ring.", set: setLever([2, -3], [3, 2]) },
   unbal: { mode: "lever", title: "Momentlar teng emas", lesson: "Kuchlar teng (3 ta va 3 ta yuk), lekin yelkalar har xil: o‘ng tomon og‘ir. Momentlar tenglashishi uchun o‘ng yuklarni qaysi teshikka surish kerak?", set: setLever([3, -2], [3, 4]) },
   dynUp: { mode: "lever", title: "Dinamometr bilan o‘lchash", lesson: "Chapda 4 ta yuk 10 cm da, o‘ngda dinamometr 25 cm da pastga tortadi: F = 3,92·10/25 = 1,57 N. Dinamometrni boshqa teshikka o‘tkazing — kuch yelkaga teskari proporsional.", set: setLever([4, -2], [0, 3], { dyn: true, dh: 5 }) },
   dynAngle: { mode: "lever", title: "Qiya tortish: yelka kamayadi", lesson: "Dinamometr vertikaldan 50° og‘gan: kuch yelkasi d·cos 50° = 0,64d. Ko‘rsatish vertikal tortgandagidan 1,56 marta katta. Dinamometr halqasini sahnada surib ko‘ring.", set: setLever([4, -2], [0, 3], { dyn: true, dh: 5, phi: 50 }) },
   offset: { mode: "lever", title: "Tayanch siljigan: richag og‘irligi", lesson: "Tayanch richag o‘rtasidan 10 cm o‘ngda. Yuklarsiz ham richag chapga og‘adi: uning og‘irligi (0,98 N, massa markazi o‘rtada, yelkasi 10 cm) moment beradi. O‘ngdagi 4-teshikka (tayanchdan 10 cm) bitta yuk osing — richag muvozanatlashadi.", set: setLever([0, -3], [0, 4], { po: 0.1 }) },
   fixed: { mode: "mech", title: "Qo‘zg‘almas blok", lesson: "1 kg yuk. Dinamometrni pastga torting: yuk xuddi shuncha masofaga ko‘tariladi, kuch ~mg (ishqalanish tufayli biroz ko‘p).", set: setMech("fixed", 1) },
   movable: { mode: "mech", title: "Qo‘zg‘aluvchan blok", lesson: "2 kg yuk qo‘zg‘aluvchan blokda: dinamometr ~10 N ko‘rsatadi — mg/2 dan biroz ko‘p (blok massasi, ishqalanish). Ipni yuqoriga torting: yuk ip yo‘lining yarmicha ko‘tariladi.", set: setMech("movable", 2) },
-  tackle: { mode: "mech", title: "Polispast (4 ip)", lesson: "5 kg yukni 4 ta ip ushlab turibdi: dinamometr ~14,5 N (ideal holda 12,25 N). Ipni 40 cm tortsangiz, yuk 10 cm ko‘tariladi. «Ish» grafigini oching.", set: setMech("tackle", 5, { n: 4, auto: 1 }) },
-  golden: { mode: "mech", title: "Oltin qoida (ideal)", lesson: "Ideal (ishqalanishsiz, yengil) qo‘zg‘aluvchan blok: F = mg/2 aniq, s = 2h, F·s = mgh — ishdan yutuq yo‘q. «Ish» grafigida ikkala ustun teng.", set: setMech("movable", 2, { ideal: true, auto: 1 }) },
+  tackle: { mode: "mech", title: "Polispast (4 ip)", lesson: "5 kg yukni 4 ta ip ushlab turibdi: dinamometr ~14,5 N (ideal holda 12,25 N). Ipni 40 cm tortsangiz, yuk 10 cm ko‘tariladi. Natijalardagi «Ish» va «FIK η» ni solishtiring.", set: setMech("tackle", 5, { n: 4, auto: 1 }) },
+  golden: { mode: "mech", title: "Oltin qoida (ideal)", lesson: "Ideal (ishqalanishsiz, yengil) qo‘zg‘aluvchan blok: F = mg/2 aniq, s = 2h, F·s = mgh — ishdan yutuq yo‘q. Natijalarda to‘liq va foydali ish teng, η = 100 %.", set: setMech("movable", 2, { ideal: true, auto: 1 }) },
   axle: { mode: "mech", title: "Chig‘ir: quduqdan suv", lesson: "10 kg suvli chelak. Dasta 30 cm, baraban 5 cm: kerakli kuch ~6 marta kichik (~18 N). Dastani sahnada aylantiring: bir aylanishda chelak 31 cm ko‘tariladi, qo‘l esa 1,9 m yo‘l bosadi.", set: setMech("axle", 10) },
 };
 const GROUPS = [["Massa markazi va muvozanat", ["plateL", "plateTri", "plateDisk", "plateArch", "tipTall", "tipHeavy", "ballBowl", "ballDome", "ballFlat"]], ["Richag", ["balance", "unbal", "dynUp", "dynAngle", "offset"]], ["Bloklar va chig‘ir", ["fixed", "movable", "tackle", "golden", "axle"]]];
@@ -820,15 +775,13 @@ function setModeUI() {
   document.querySelectorAll("[data-kctl]").forEach((el) => { el.hidden = !el.dataset.kctl.split(" ").includes(k); });
   $("[data-mode-hint]").textContent = MODE_HINT[k];
   stage.canvas.setAttribute("aria-label", { plate: "Shtativga osilgan fanera plastinka va shovun", tip: "Stol ustidagi yog‘och quti", ball: "Sirtdagi po‘lat sharcha", lever: "Laboratoriya richagi, yuklar va dinamometr", fixed: "Qo‘zg‘almas blok, yuk va dinamometr", movable: "Qo‘zg‘aluvchan blok, yuk va dinamometr", tackle: "Polispast, yuk va dinamometr", axle: "Quduq chig‘iri va chelak" }[k]);
-  setTabs();
 }
 document.querySelectorAll("[data-kind-value]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.kindValue !== kind()) loadPreset(KIND_DEFAULT[b.dataset.kindValue]); }));
 document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener("click", () => { const m = b.dataset.modeValue; if (m !== ui.mode) loadPreset(m === "lever" ? MODE_DEFAULT.lever : KIND_DEFAULT[ui.kind[m]] || MODE_DEFAULT[m]); }));
 function loadPreset(id, mark = true) {
   const p = PRESETS[id];
-  drag = null; ui.mode = p.mode; ui.hover = null; flashUntil = 0;
+  drag = null; ui.mode = p.mode; flashUntil = 0;
   p.set();
-  if (id === "tackle" || id === "golden") ui.view[ui.kind.mech] = id === "golden" ? "A" : ui.view[ui.kind.mech];
   setModeUI();
   presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;
@@ -840,7 +793,7 @@ function loadPreset(id, mark = true) {
 setPlayUI(false);
 const q0 = new URLSearchParams(location.search).get("preset");
 loadPreset(PRESETS[q0] ? q0 : "plateL");
-document.fonts?.ready.then(() => { stage.render(); if (graphOn()) graph.render(); });
+document.fonts?.ready.then(() => stage.render());
 
 // Node/Playwright tekshiruvi uchun
 window.__statics = { pl, tp, bl, lv, mc, ui, loadPreset, refresh, stepPlate, stepTip, stepBall, stepLever, stepMech, kind, pp, plEstimate, lvMom, lvF, mRes, get drag() { return drag; } };

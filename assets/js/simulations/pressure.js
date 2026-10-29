@@ -8,7 +8,6 @@
 
 import { clamp, fmt, sci, createStage, tag, bindRange, arrow } from "./sim-kit.js";
 import * as P from "./pressure-physics.js";
-import { drawCompare, drawPress, drawDepth, drawProfiles, lastFrame } from "./pressure-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
@@ -24,7 +23,7 @@ const PRESS_S1MAX = 20; // kichik porshen yo'li, cm
 
 /* ------------------------------------------------------------------ Holat */
 
-const ui = { mode: "solid", tab: "cmp", hover: null };
+const ui = { mode: "solid" };
 const solid = { obj: "brick", face: "flat", extra: 0 };
 const pas = { view: "press", S1: 2, S2: 100, M: 200, s1: 6, F: 50, t: 0 };
 const flu = { view: "depth", liq: "water", h: 0.3, x: 0.5, atm: false, rot: 0, level: 0.18, oil: 0.1 };
@@ -242,7 +241,7 @@ function drawVessels(ctx, c, w, h) {
   ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("U-nay: suv va moy", ux + uw / 2, 6);
 }
 
-/* ------------------------------------------------------------------ Asosiy chizish va grafik */
+/* ------------------------------------------------------------------ Asosiy chizish */
 
 function draw(ctx, st) {
   const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h);
@@ -250,41 +249,11 @@ function draw(ctx, st) {
   else if (ui.mode === "pascal") drawPascalStage(ctx, c, st.w, st.h);
   else drawFluidStage(ctx, c, st.w, st.h);
 }
-const heights = () => {
+const stageHeight = () => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(vh * 0.42, 300, 350)), graph: Math.round(clamp(vh * 0.28, 210, 260)) };
+  return Math.round(clamp(vh * 0.5, 320, 420));
 };
-const stage = createStage($("#stage"), draw, { height: () => heights().stage });
-
-function compareRows() {
-  const cur = solidNow(), pc = P.pressure(cur.F, cur.S), rows = [];
-  for (const [k, f] of Object.entries(P.FACES)) rows.push({ label: `G‘isht: ${f.name.toLowerCase()}`, p: P.pressure(P.weightN(P.BRICK.m), f.S), cur: solid.obj === "brick" && solid.face === k && !solid.extra });
-  if (solid.obj === "brick" && solid.extra) rows.push({ label: `G‘isht + ${solid.extra} kg`, p: pc, cur: true });
-  for (const [k, o] of Object.entries(P.OBJECTS)) rows.push({ label: o.name.replace(/ \(.*\)/, ""), p: P.pressure(o.F ?? P.weightN(o.m), o.S), cur: solid.obj === k });
-  return rows.sort((a, b) => a.p - b.p);
-}
-function drawGraphCanvas(ctx, gst) {
-  const c = gst.colors;
-  if (ui.mode === "solid") return drawCompare(ctx, gst, { rows: compareRows(), hover: ui.hover });
-  if (ui.mode === "pascal") return drawPress(ctx, gst, { S1: pas.S1, S2: pas.S2, F1: pressF1(), F1max: Math.max(pressF1() * 1.6, 50), hover: ui.hover });
-  if (flu.view === "depth") return drawDepth(ctx, gst, { liq: flu.liq, h: flu.h, hMax: TANK_H, atm: flu.atm, hover: ui.hover });
-  const u = uNow(), wl = UT_W0 - u.x, wr = UT_W0 + u.x;
-  return drawProfiles(ctx, gst, { yMax: UT_H, hover: ui.hover, arms: [{ label: "chap tirsak (moy + suv)", color: c.warning, layers: [{ top: wl + flu.oil, bottom: wl, rho: P.LIQUIDS.oil.rho }, { top: wl, bottom: 0, rho: 1000 }] }, { label: "o‘ng tirsak (suv)", color: c.primary, dash: [6, 4], layers: [{ top: wr, bottom: 0, rho: 1000 }] }] });
-}
-const graph = createStage($("#graph"), drawGraphCanvas, { height: () => heights().graph });
-
-function tabInfo() {
-  if (ui.mode === "solid") return ["Bosimlarni taqqoslash", "Logarifmik shkala: igna uchi bosimi 10⁸ Pa, chang‘ida esa atigi 10³ Pa atrofida. Bosim kuch va tayanch yuzasiga bog‘liq: p = F/S."];
-  if (ui.mode === "pascal") return pas.view === "ball" ? null : ["Kuchda yutuq: F₂(F₁)", `Gidravlik press kuchni S₂/S₁ = ${fmt(pas.S2 / pas.S1, 0)} marta oshiradi. Shtrix — pressiz (F₂ = F₁). Lekin katta porshen shuncha marta kam yo‘l bosadi.`];
-  return flu.view === "depth" ? ["Suyuqlik bosimi chuqurlikka bog‘liq: p(h)", "Bosim chuqurlikka chiziqli bog‘liq va suyuqlik zichligiga proporsional (shtrix — boshqa suyuqliklar). Idish shakliga bog‘liq emas."] : ["U-naydagi bosim balandlik bo‘yicha", "Ikkala tirsakda tubdagi bosim bir xil — shuning uchun moy ustuni suvdan baland turadi: ρ_moy·h_moy = ρ_suv·h_suv."];
-}
-function setTab() {
-  const t = tabInfo(), card = $(".sim-graph");
-  card.hidden = !t; if (!t) return;
-  $("[data-tabs]").innerHTML = "";
-  $("[data-graph-title]").textContent = t[0]; $("[data-graph-sub]").textContent = t[1];
-  graph.canvas.setAttribute("aria-label", t[0]); ui.hover = null; graph.render();
-}
+const stage = createStage($("#stage"), draw, { height: stageHeight });
 
 /* ------------------------------------------------------------------ Natijalar */
 
@@ -383,7 +352,7 @@ function updateFormula() {
   const html = ui.mode === "solid" ? "<small>Bosim</small> p = F/S" : ui.mode === "pascal" ? (pas.view === "ball" ? "<small>Paskal qonuni</small> p = F/S hamma tomonga" : "<small>Gidravlik press</small> F₂/F₁ = S₂/S₁") : flu.view === "depth" ? "<small>Suyuqlik bosimi</small> p = ρgh" : "<small>Tutash idishlar</small> ρ₁h₁ = ρ₂h₂";
   const f = $("[data-formula]"); if (f.innerHTML !== html) f.innerHTML = html;
 }
-function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); if (!$(".sim-graph").hidden) graph.render(); }
+function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); }
 
 /* ------------------------------------------------------------------ Asboblar paneli (sahna statik: holat surish bilan o'zgaradi, animatsiya yo'q) */
 
@@ -399,7 +368,7 @@ $("[data-reset]").addEventListener("click", () => {
 
 const sObj = $("#sObj");
 sObj.innerHTML = Object.entries(OBJ_NAMES).map(([k, v]) => `<option value="${k}">${v}</option>`).join("");
-sObj.addEventListener("change", () => { solid.obj = sObj.value; customized(); syncSolid(); setTab(); refresh(); });
+sObj.addEventListener("change", () => { solid.obj = sObj.value; customized(); syncSolid(); refresh(); });
 document.querySelectorAll("[data-face-value]").forEach((b) => b.addEventListener("click", () => { solid.face = b.dataset.faceValue; customized(); syncSolid(); refresh(); }));
 const sLoadC = bindRange($("#sLoad"), $("#sLoadOut"), (v) => `${fmt(v, 0)} kg`, (v) => { solid.extra = v; customized(); refresh(); });
 function syncSolid() {
@@ -407,9 +376,9 @@ function syncSolid() {
   document.querySelectorAll("[data-face-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.faceValue === solid.face)));
   document.querySelectorAll("[data-sv]").forEach((el) => { el.hidden = solid.obj !== "brick"; });
 }
-document.querySelectorAll("[data-pview-value]").forEach((b) => b.addEventListener("click", () => { pas.view = b.dataset.pviewValue; customized(); syncPascal(); setTab(); refresh(); }));
-const pS1C = bindRange($("#pS1"), $("#pS1Out"), (v) => `${fmt(v, 0)} cm²`, (v) => { pas.S1 = v; customized(); setTab(); refresh(); });
-const pS2C = bindRange($("#pS2"), $("#pS2Out"), (v) => `${fmt(v, 0)} cm²`, (v) => { pas.S2 = v; customized(); setTab(); refresh(); });
+document.querySelectorAll("[data-pview-value]").forEach((b) => b.addEventListener("click", () => { pas.view = b.dataset.pviewValue; customized(); syncPascal(); refresh(); }));
+const pS1C = bindRange($("#pS1"), $("#pS1Out"), (v) => `${fmt(v, 0)} cm²`, (v) => { pas.S1 = v; customized(); refresh(); });
+const pS2C = bindRange($("#pS2"), $("#pS2Out"), (v) => `${fmt(v, 0)} cm²`, (v) => { pas.S2 = v; customized(); refresh(); });
 const pMC = bindRange($("#pM"), $("#pMOut"), (v) => `${fmt(v, 0)} kg`, (v) => { pas.M = v; customized(); refresh(); });
 const pFC = bindRange($("#pF"), $("#pFOut"), (v) => `${fmt(v, 0)} N`, (v) => { pas.F = v; customized(); refresh(); });
 function syncPascal() {
@@ -417,7 +386,7 @@ function syncPascal() {
   document.querySelectorAll("[data-pv]").forEach((el) => { el.hidden = el.dataset.pv !== pas.view; });
   pS1C.set(pas.S1); pS2C.set(pas.S2); pMC.set(pas.M); pFC.set(pas.F);
 }
-document.querySelectorAll("[data-fview-value]").forEach((b) => b.addEventListener("click", () => { flu.view = b.dataset.fviewValue; customized(); syncFluid(); setTab(); refresh(); }));
+document.querySelectorAll("[data-fview-value]").forEach((b) => b.addEventListener("click", () => { flu.view = b.dataset.fviewValue; customized(); syncFluid(); refresh(); }));
 const fLiq = $("#fLiq");
 fLiq.innerHTML = Object.entries(P.LIQUIDS).map(([k, v]) => `<option value="${k}">${v.name} (${fmt(v.rho, 0)} kg/m³)</option>`).join("");
 fLiq.addEventListener("change", () => { flu.liq = fLiq.value; customized(); refresh(); });
@@ -471,16 +440,6 @@ const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
 canvas.addEventListener("pointerup", endDrag);
 canvas.addEventListener("pointercancel", endDrag);
 
-/* Grafikda kursor */
-const gcv = graph.canvas;
-gcv.addEventListener("pointermove", (e) => {
-  const f = lastFrame(); if (!f) return;
-  const p = ptr(gcv, e), r = f.rect, inside = p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y - 10 && p.y <= r.y + r.h + 10;
-  ui.hover = inside ? (ui.mode === "solid" ? (p.x - r.x) / r.w : ((p.x - r.x) / r.w) * f.xMax) : null;
-  gcv.style.cursor = inside ? "crosshair" : ""; graph.render();
-});
-gcv.addEventListener("pointerleave", () => { ui.hover = null; graph.render(); });
-
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 
 const PRESETS = {
@@ -518,14 +477,14 @@ const MODE_DEFAULT = { solid: "brickFlat", pascal: "press", fluid: "depth" };
 document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.modeValue !== ui.mode) loadPreset(MODE_DEFAULT[b.dataset.modeValue]); }));
 function loadPreset(id) {
   const p = PRESETS[id];
-  drag = null; ui.hover = null;
+  drag = null;
   ui.mode = p.mode; p.set();
   setModeUI(); presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;
-  syncSolid(); syncPascal(); syncFluid(); setTab(); refresh();
+  syncSolid(); syncPascal(); syncFluid(); refresh();
   try { history.replaceState(null, "", `?preset=${id}`); } catch { /* fayl:// */ }
 }
 
 const q0 = new URLSearchParams(location.search).get("preset");
 loadPreset(PRESETS[q0] ? q0 : "brickFlat");
-document.fonts?.ready.then(() => { stage.render(); graph.render(); });
+document.fonts?.ready.then(() => stage.render());

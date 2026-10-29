@@ -12,7 +12,7 @@ import {
   kinetic, elastic, dynParams, advance, createPeriodMeter,
 } from "./spring-physics.js";
 import { createHistory, createEnergyPlot, splitHeights } from "./pendulum-plots.js";
-import { createXPlot, createSpringPhasePlot, drawHooke, drawPeriodVsMass, periodMassFromPointer } from "./spring-plots.js";
+import { createXPlot, drawHooke, drawPeriodVsMass, periodMassFromPointer } from "./spring-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const L0 = 0.5;            // prujinaning cho'zilmagan uzunligi (m) — faqat tasvir uchun, dinamikaga kirmaydi
@@ -29,7 +29,7 @@ const ui = { speed: 1, tab: "x", show: { forces: true, net: false, velocity: tru
 let s = { x: init.x, v: init.v, t: 0 };
 const meter = createPeriodMeter();
 const hist = createHistory(3500);
-const xPlot = createXPlot(), phasePlot = createSpringPhasePlot(), energyPlot = createEnergyPlot();
+const xPlot = createXPlot(), energyPlot = createEnergyPlot();
 let lastSample = -1;
 let eRef = 0;                  // energiya ustunlari masshtabi (J)
 let Aview = 0.2;               // ko'rinadigan amplituda (m) — masshtab shundan olinadi
@@ -358,7 +358,6 @@ function draw(ctx, stage) {
 
 const TABS = {
   x: ["Siljishning vaqtga bog‘liqligi x(t)", "Yuk muvozanat atrofida garmonik tebranadi; uzuq chiziq — tezlik v/ω₀ (x bilan 90° farq)"],
-  phase: ["Faza portreti (x, v)", "Bosib boshlang‘ich holatni tanlang · ishqalanishsiz — ellips, so‘nishda — spiral"],
   energy: ["Energiyaning vaqtga bog‘liqligi E(t)", "Kinetik va elastik potensial energiya almashinuvi; to‘liq energiya ishqalanishsiz o‘zgarmaydi"],
   hooke: ["Guk qonuni F(x)", "F = −kx: qiyalik qattiqlik k; yuza — saqlangan potensial energiya ½kx²"],
   period: ["Davrning massaga bog‘liqligi T(m)", "Bosib massani tanlang · T ∝ √m, qattiqroq prujinada davr qisqa"],
@@ -373,7 +372,6 @@ function envelope() {
 
 function drawGraphCanvas(ctx, st) {
   if (ui.tab === "x") xPlot.draw(ctx, st, hist, { win: windowSeconds(), tNow: s.t, w0: w0(), envelope: envelope(), showV: ui.show.vcurve });
-  else if (ui.tab === "phase") phasePlot.draw(ctx, st, hist, { xView: Aview, vView: Aview * w0(), trail: 900 });
   else if (ui.tab === "energy") energyPlot.draw(ctx, st, hist, { win: windowSeconds(), tNow: s.t, scale: 1, ref: eRef * 0.9 });
   else if (ui.tab === "hooke") drawHooke(ctx, st, { k: k(), xView: Aview, x: s.x, F: -k() * s.x });
   else drawPeriodVsMass(ctx, st, { k: k(), m: P.m, mMin: 0.1, mMax: 3 });
@@ -615,25 +613,16 @@ function setTab(tab) {
   document.querySelectorAll("[data-tab-value]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.tabValue === tab)));
   $("[data-graph-title]").textContent = TABS[tab][0];
   $("[data-graph-sub]").textContent = TABS[tab][1];
-  graph.canvas.dataset.clickable = String(tab === "phase" || tab === "period");
+  graph.canvas.dataset.clickable = String(tab === "period");
   graph.canvas.setAttribute("aria-label", TABS[tab][0]);
   graph.render();
 }
 document.querySelectorAll("[data-tab-value]").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tabValue)));
 
-/* Grafikda bosib parametr tanlash: faza portreti -> (x, v); T(m) -> m */
+/* Grafikda bosib parametr tanlash: T(m) -> m */
 graph.canvas.addEventListener("pointerdown", (e) => {
   const r = graph.canvas.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top;
-  if (ui.tab === "phase") {
-    const q = phasePlot.toState(px, py);
-    if (!q) return;
-    init.x = clamp(Math.round(q.x * 200) / 200, -0.25, 0.25);
-    syncV0Range();
-    const vMax = Number(v0El.max);
-    init.v = clamp(Math.round(q.v * 20) / 20, -vMax, vMax);
-    x0Ctl.set(Math.round(init.x * 1000) / 10); v0Ctl.set(init.v);
-    resetSim(); renderAll(); updateUI(); loop.start();
-  } else if (ui.tab === "period") {
+  if (ui.tab === "period") {
     const m = periodMassFromPointer(px, py);
     if (m === null) return;
     P.m = clamp(Math.round(m * 20) / 20, 0.1, 3);
