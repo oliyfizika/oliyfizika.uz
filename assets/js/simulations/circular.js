@@ -616,7 +616,7 @@ const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage
 /* ------------------------------------------------------------------ Grafiklar */
 
 const TABS = {
-  kin: [["xy", "x(t), y(t)", "Jism proyeksiyalari vaqt bo‘yicha", "Aylana bo‘ylab tekis harakatda har bir proyeksiya garmonik tebranadi: x = R·cos φ, y = R·sin φ, φ = ωt; tebranish davri aylanish davriga teng."], ["va", "v(t), a(t)", "Tezlik va tezlanish", "Tekis harakatda v va aₙ o‘zgarmaydi. Tangensial tezlanish bo‘lsa, tezlik chiziqli ortadi, aₙ = v²/R esa kvadratik ortadi."], ["aR", "a(R)", "Markazga intilma tezlanish radiusga bog‘liq", "v o‘zgarmas bo‘lsa a = v²/R — radius kichrayganda tezlanish ortadi; ω o‘zgarmas bo‘lsa (karusel, disk) a = ω²R — radius bilan ortadi. Sariq nuqta — hozirgi jism."]],
+  kin: [["xy", "x(t), y(t)", "Jism proyeksiyalari vaqt bo‘yicha", "Aylana bo‘ylab tekis harakatda har bir proyeksiya garmonik tebranadi: x = R·cos φ, y = R·sin φ, φ = ωt; tebranish davri aylanish davriga teng."]],
   string: [["fv", "F(v)", "Ip tarangligi tezlikka bog‘liq", "F = mv²/R — parabola: tezlik 2 marta ortsa, kerakli kuch 4 marta ortadi. Qizil soha — ip uziladigan tezliklar."], ["ft", "F(t)", "Ip tarangligi vaqt bo‘yicha", "Sharcha tezlashtirilganda taranglik ortib boradi; F_max ga yetganda ip uziladi va kuch birdan nolga tushadi."]],
   car: [["vmax", "v_max(R)", "Xavfsiz burilish tezligi", "v_max = √(μgR) — radius 4 marta katta burilishda 2 marta tezroq yurish mumkin. Yashil soha — xavfsiz tezliklar, nuqta — hozirgi avtomobil."], ["fric", "f(v)", "Kerakli va mavjud ishqalanish kuchi", "Ko‘k chiziq — burilish uchun kerakli ishqalanish kuchi (m = 1200 kg), qizil punktir — tinchlikdagi ishqalanishning eng katta qiymati μN. Ko‘k chiziq yashil yo‘lakdan chiqsa, avtomobil sirpanadi."]],
   loop: [["n", "N(θ)", "Tayanch reaksiyasi halqa bo‘ylab", "θ = 0° — halqaning pastki, 180° — yuqori nuqtasi. Pastda N eng katta (ortiqcha yuklama), tepada eng kichik. N < 0 bo‘ladigan joyda sharcha yo‘ldan ajraladi."], ["en", "Energiya", "Energiyaning aylanishi", "Ishqalanish yo‘q: kinetik va potensial energiyalar yig‘indisi o‘zgarmaydi — yo‘ldan ajralgandan keyin ham."]],
@@ -625,6 +625,7 @@ const TABS = {
 const tabKey = () => (ui.mode === "dyn" ? ui.sub : ui.mode);
 function setupTabs() {
   const box = $("[data-tabs]");
+  box.hidden = TABS[tabKey()].length < 2;  // bitta grafik bo'lsa tugmalar kerak emas
   box.innerHTML = TABS[tabKey()].map(([id, l]) => `<button type="button" data-tab-value="${id}">${l}</button>`).join("");
   box.querySelectorAll("[data-tab-value]").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tabValue)));
 }
@@ -638,8 +639,6 @@ function setTab(tab) {
 function drawGraphCanvas(ctx, gst) {
   const k = tabKey();
   if (k === "kin") {
-    if (ui.tab === "va") return G.drawVA(ctx, gst, { hist: kin.hist, span: 10 });
-    if (ui.tab === "aR") return G.drawAR(ctx, gst, { v: Math.max(kin.v, 0.05), R: kin.R });
     return G.drawXY(ctx, gst, { hist: kin.hist, R: kin.R, span: clamp(2.2 * kinPeriod(), 3, 10) });
   }
   if (k === "string") return ui.tab === "ft" ? G.drawFT(ctx, gst, { hist: str.hist, Fmax: str.Fmax, span: 8 }) : G.drawFV(ctx, gst, { m: str.m, R: str.R, Fmax: str.Fmax, v: str.v });
@@ -897,8 +896,8 @@ canvas.addEventListener("pointercancel", endDrag);
 
 const PRESETS = {
   uniform: { mode: "kin", title: "Tekis aylanma harakat", lesson: "Tezlik moduli o‘zgarmaydi, yo‘nalishi esa uzluksiz o‘zgaradi: ko‘k v vektori aylanaga urinma, qizil aₙ — markazga yo‘nalgan. Jismni yoki v vektori uchini surib ko‘ring.", set: () => Object.assign(kin, { v0: 1.5, R: 0.6, at: 0 }), tab: "xy" },
-  radius: { mode: "kin", title: "Tezlanish radiusga bog‘liq", lesson: "v = 2 m/s o‘zgarmas. Jismni markazga yaqinlashtiring: radius 2 marta kamaysa, a = v²/R 2 marta ortadi. Grafikda ω o‘zgarmas hol bilan solishtiring.", set: () => Object.assign(kin, { v0: 2, R: 0.8, at: 0 }), tab: "aR" },
-  accel: { mode: "kin", title: "Notekis harakat (a_τ ≠ 0)", lesson: "Tezlik har soniyada 0,5 m/s ga ortadi: sariq a_τ tezlik modulini, qizil aₙ yo‘nalishini o‘zgartiradi. To‘liq tezlanish a (binafsha) markazdan og‘gan; tezlik ortgan sari aₙ ustun keladi.", set: () => Object.assign(kin, { v0: 0.4, R: 0.6, at: 0.5 }), tab: "va" },
+  radius: { mode: "kin", title: "Tezlanish radiusga bog‘liq", lesson: "v = 2 m/s o‘zgarmas. Jismni markazga yaqinlashtiring: radius 2 marta kamaysa, a = v²/R 2 marta ortadi.", set: () => Object.assign(kin, { v0: 2, R: 0.8, at: 0 }), tab: "xy" },
+  accel: { mode: "kin", title: "Notekis harakat (a_τ ≠ 0)", lesson: "Tezlik har soniyada 0,5 m/s ga ortadi: sariq a_τ tezlik modulini, qizil aₙ yo‘nalishini o‘zgartiradi. To‘liq tezlanish a (binafsha) markazdan og‘gan; tezlik ortgan sari aₙ ustun keladi.", set: () => Object.assign(kin, { v0: 0.4, R: 0.6, at: 0.5 }), tab: "xy" },
   string: { mode: "dyn", sub: "string", title: "Ipdagi sharcha", lesson: "Silliq stolda ipga bog‘langan sharcha aylanmoqda. Ipni bosing yoki «Ipni kesish» tugmasini bosing — sharcha urinma bo‘ylab ketadi. Sharchani surib, ipni qisqartirib ko‘ring.", set: () => Object.assign(str, { v0: 3, m: 0.2, R: 0.6, Fmax: 5, spin: false }), tab: "fv" },
   snap: { mode: "dyn", sub: "string", title: "Ip uziladi", lesson: "Sharcha asta tezlashtiriladi: taranglik F = mv²/R ortib, 4 N ga yetganda ip uziladi. Sharcha markazdan emas, urinma bo‘ylab uchib ketadi.", set: () => Object.assign(str, { v0: 2.4, m: 0.2, R: 0.5, Fmax: 4, spin: true }), tab: "ft" },
   carDry: { mode: "dyn", sub: "car", title: "Quruq yo‘lda burilish", lesson: "Quruq asfaltda (μ = 0,7) R = 60 m burilishni 73 km/soatgacha xavfsiz o‘tish mumkin. Spidometr milini surib tezlikni oshiring — qizil sohada avtomobil sirpanadi.", set: () => Object.assign(car, { v: 60 / 3.6, R: 60, mu: 0.7, alpha: 0 }), tab: "vmax" },

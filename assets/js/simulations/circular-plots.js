@@ -43,34 +43,6 @@ export function drawXY(ctx, st, { hist, R, span }) {
   legend(ctx, [{ color: c.primary, label: narrow ? "x(t)" : "x(t) = R·cos φ" }, { color: c.danger, label: narrow ? "y(t)" : "y(t) = R·sin φ", dash: [6, 4] }], f.padL + 56, 9, c);
 }
 
-export function drawVA(ctx, st, { hist, span }) {
-  const c = st.colors, { t0, pts } = windowOf(hist, span);
-  const vm = Math.max(0.5, ...pts.map((p) => p.v)) * 1.1, am = Math.max(0.5, ...pts.map((p) => p.a)) * 1.1;
-  const lv = nice(vm, 4), n = lv.vals.length - 1, as = niceStep(am / n), k = lv.top / (as * n);
-  const f = frame(ctx, st, { ...timeAxis(t0, span), yMin: 0, yMax: lv.top, yTicks: lv.vals, fmtY: (v) => fmt(v, dec(lv.step)), yLabel: "v, m/s" });
-  const nonuni = pts.some((p) => Math.abs(p.a - p.an) > 1e-3);
-  ctx.save(); clipTo(ctx, f.rect);
-  series(ctx, f, pts, (p) => p.v, c.primary);
-  series(ctx, f, pts, (p) => p.an * k, c.danger, [6, 4]);
-  if (nonuni) series(ctx, f, pts, (p) => p.a * k, c.special, [2, 3], 2);
-  ctx.restore();
-  ctx.save(); ctx.font = small; ctx.fillStyle = c.danger; ctx.textAlign = "right"; ctx.textBaseline = "middle";
-  for (let i = 1; i <= n; i++) ctx.fillText(fmt(i * as, dec(as)), f.rect.x + f.rect.w - 4, f.Y(lv.vals[i]) + (i === n ? 9 : -7));
-  ctx.restore();
-  const items = [{ color: c.primary, label: "v" }, { color: c.danger, label: "aₙ, m/s² (o‘ng shkala)", dash: [6, 4] }];
-  if (nonuni) items.push({ color: c.special, label: "a", dash: [2, 3] });
-  legend(ctx, items, f.padL + 56, 9, c);
-}
-
-export function drawAR(ctx, st, { v, R }) {
-  const c = st.colors, w = v / R, x1 = 1.2, fv = (r) => (v * v) / r, fw = (r) => w * w * r;
-  const yt = nice(Math.max(fv(R), fw(x1), fv(0.3)) * 1.1);
-  const f = frame(ctx, st, { xMin: 0, xMax: x1, yMin: 0, yMax: yt.top, xTicks: [0, 0.2, 0.4, 0.6, 0.8, 1, 1.2], yTicks: yt.vals, fmtX: (x) => fmt(x * 100, 0), fmtY: (x) => fmt(x, dec(yt.step)), xUnit: "cm", yLabel: "a, m/s²" });
-  ctx.save(); clipTo(ctx, f.rect); curve(ctx, f, fv, 0.02, x1, c.primary); curve(ctx, f, fw, 0, x1, c.danger, 2, 2, [6, 4]); dot(ctx, f, R, fv(R), c.warning); ctx.restore();
-  const narrow = st.w < 560;
-  legend(ctx, [{ color: c.primary, label: narrow ? "v = const: a = v²/R" : `v = ${fmt(v, 2)} m/s = const: a = v²/R` }, { color: c.danger, label: narrow ? "ω = const: a = ω²R" : `ω = ${fmt(w, 2)} rad/s = const: a = ω²R`, dash: [6, 4] }], f.padL + 56, 9, c);
-}
-
 /* ------------------------------------------------------------------ Ipdagi sharcha */
 
 export function drawFV(ctx, st, { m, R, Fmax, v }) {
