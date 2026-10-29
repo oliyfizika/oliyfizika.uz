@@ -34,8 +34,6 @@ function card(sim, topics) {
         <div class="of-sim-card__body">
           <span class="of-badge${sim.topic === "mexanika" ? " of-badge--blue" : sim.topic === "elektr" ? " of-badge--green" : sim.topic === "issiqlik" ? " of-badge--orange" : sim.topic === "atom" || sim.topic === "kvant" ? " of-badge--purple" : ""}">${esc(topic?.title || "")}</span>
           <h3 class="of-sim-card__title">${esc(sim.title)}</h3>
-          <p class="of-sim-card__desc">${esc(sim.description)}</p>
-          ${sim.params?.length ? `<p class="of-sim-card__params"><span class="of-sr-only">Parametrlar: </span>${sim.params.map((p) => `<span>${esc(p)}</span>`).join("")}</p>` : ""}
           <div class="of-sim-card__foot">
             <a class="of-btn of-btn--soft" href="${esc(sim.href)}" aria-label="Boshlash: ${esc(sim.title)}">Boshlash ${icon("arrowRight")}</a>
           </div>
