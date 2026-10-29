@@ -15,11 +15,15 @@ export class StringWave {
   constructor({ L = 4, n = 400, v = 2, gamma = 0.05, right = "fixed" } = {}) {
     this.L = L; this.n = n; this.dx = L / n; this.v = v; this.gamma = gamma; this.right = right;
     this.u = new Float64Array(n + 1); this.uo = new Float64Array(n + 1); this.un = new Float64Array(n + 1);
-    this.t = 0;
+    this.t = 0; this.acc = 0; this.dtLast = 0;
   }
-  reset() { this.u.fill(0); this.uo.fill(0); this.un.fill(0); this.t = 0; }
+  reset() { this.u.fill(0); this.uo.fill(0); this.un.fill(0); this.t = 0; this.acc = 0; this.dtLast = 0; }
   /** Bitta qadam; drive(t) — chap uchning siljishi (null bo'lsa erkin uch). */
   stepOnce(dt, drive) {
+    // Leapfrog qadami doimiy dt ni talab qiladi: dt o'zgarsa, oldingi qatlamni yangi qadamga moslaymiz
+    // (tezlik saqlanadi), aks holda ip bo'ylab katak o'lchamidagi «tishli» shovqin paydo bo'ladi.
+    if (this.dtLast && Math.abs(dt - this.dtLast) > 1e-12 * dt) { const r = dt / this.dtLast; for (let i = 0; i <= this.n; i++) this.uo[i] = this.u[i] - (this.u[i] - this.uo[i]) * r; }
+    this.dtLast = dt;
     const { u, uo, un, n } = this, C = (this.v * dt) / this.dx, C2 = C * C, g = (this.gamma * dt) / 2;
     for (let i = 1; i < n; i++) un[i] = (2 * u[i] - (1 - g) * uo[i] + C2 * (u[i + 1] - 2 * u[i] + u[i - 1])) / (1 + g);
     const tn = this.t + dt;
@@ -29,10 +33,11 @@ export class StringWave {
     else un[n] = u[n - 1] + ((C - 1) / (C + 1)) * (un[n - 1] - u[n]); // Mur yutuvchi sharti
     this.uo.set(u); this.u.set(un); this.t = tn;
   }
-  /** T vaqt oralig'ini barqaror qadamlarga bo'lib o'tish (Kurant soni ≤ 0,9). */
+  /** T vaqt oralig'ini o'tish: doimiy qadam (Kurant soni 0,9), kadrdan ortgan qoldiq keyingi kadrga o'tadi. */
   advance(T, drive) {
-    const dtMax = (0.9 * this.dx) / this.v, k = Math.max(1, Math.ceil(T / dtMax)), dt = T / k;
-    for (let i = 0; i < k; i++) this.stepOnce(dt, drive);
+    const dt = (0.9 * this.dx) / this.v;
+    this.acc = Math.min(this.acc + T, 50 * dt);
+    while (this.acc >= dt) { this.stepOnce(dt, drive); this.acc -= dt; }
   }
   /** Energiya (birlik chiziqli zichlik va tarangliklar bilan, ρ = 1, T = v²): kinetik + potensial. */
   energy(dt) {
