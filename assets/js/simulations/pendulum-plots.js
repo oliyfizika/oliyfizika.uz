@@ -1,5 +1,5 @@
 // ==========================================================================
-// Mayatnik simulyatsiyalari uchun umumiy grafiklar: θ(t), faza portreti (θ, ω), energiya E(t).
+// Mayatnik simulyatsiyalari uchun umumiy grafiklar: θ(t), energiya E(t).
 // Matematik va fizik mayatnik sahifalari bir xil grafiklardan foydalanadi.
 // ==========================================================================
 
@@ -185,88 +185,6 @@ export function createTimePlot() {
   };
 }
 
-/* ------------------------------------------------------------------ Faza portreti */
-
-export function createPhasePlot() {
-  let yMax = 2.5;
-  let last = null; // { f, w0 }
-  return {
-    reset() { yMax = 2.5; },
-    /** o: { w0 (rad/s), separatrix (bool), trail (nuqtalar soni) } */
-    draw(ctx, stage, hist, o) {
-      const c = stage.colors;
-      const n = hist.length;
-      const trailN = Math.min(n, o.trail ?? 700);
-      for (let i = n - trailN; i < n; i++) yMax = Math.max(yMax, (Math.abs(hist.w[i]) / o.w0) * 1.12);
-      yMax = Math.min(Math.ceil(yMax * 2) / 2, 60);
-      const xt = { values: [-Math.PI, -Math.PI / 2, 0, Math.PI / 2, Math.PI] };
-      const yt = ticks(-yMax, yMax, stage.h < 260 ? 3 : 4);
-      const f = frame(ctx, stage, {
-        xMin: -Math.PI, xMax: Math.PI, yMin: -yMax, yMax, xTicks: xt.values, yTicks: yt.values,
-        fmtX: (v) => `${fmt((v * 180) / Math.PI, 0)}°`, fmtY: (v) => fmt(v, v % 1 ? 1 : 0), yLabel: "ω / ω₀",
-        padL: stage.w < 480 ? 44 : 54,
-      });
-      last = { f, w0: o.w0, yMax };
-      ctx.save();
-      clipTo(ctx, f.rect);
-      if (o.separatrix) {
-        ctx.strokeStyle = c.text3; ctx.lineWidth = 1.75; ctx.setLineDash([6, 5]);
-        for (const sgn of [1, -1]) {
-          ctx.beginPath();
-          for (let k = 0; k <= 120; k++) {
-            const th = -Math.PI + (TAU * k) / 120;
-            const y = sgn * 2 * Math.cos(th / 2);
-            if (k === 0) ctx.moveTo(f.X(th), f.Y(y)); else ctx.lineTo(f.X(th), f.Y(y));
-          }
-          ctx.stroke();
-        }
-        ctx.setLineDash([]);
-      }
-      // Iz (so'nuvchi)
-      const chunks = 8;
-      const per = Math.max(1, Math.floor(trailN / chunks));
-      for (let ch = 0; ch < chunks; ch++) {
-        const a = n - trailN + ch * per, b = ch === chunks - 1 ? n : a + per + 1;
-        ctx.strokeStyle = c.primary;
-        ctx.globalAlpha = 0.18 + 0.82 * ((ch + 1) / chunks);
-        ctx.lineWidth = 2.5; ctx.lineJoin = "round";
-        ctx.beginPath();
-        let prev = null;
-        for (let i = Math.max(a, 0); i < b && i < n; i++) {
-          const wv = wrapAngle(hist.th[i]);
-          const px = f.X(wv), py = f.Y(hist.w[i] / o.w0);
-          if (prev === null || Math.abs(wv - prev) > Math.PI) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-          prev = wv;
-        }
-        ctx.stroke();
-      }
-      ctx.globalAlpha = 1;
-      ctx.restore();
-      if (n) {
-        ctx.fillStyle = c.warning;
-        ctx.beginPath(); ctx.arc(f.X(wrapAngle(hist.th[n - 1])), f.Y(hist.w[n - 1] / o.w0), 5, 0, TAU); ctx.fill();
-      }
-      if (o.separatrix && stage.w >= 420) {
-        ctx.save();
-        ctx.font = "600 11px Inter, system-ui, sans-serif";
-        ctx.fillStyle = c.text3;
-        ctx.textAlign = "center"; ctx.textBaseline = "middle";
-        if (yMax >= 3) { ctx.fillText("aylanish", f.X(0), f.Y(yMax * 0.82)); ctx.fillText("aylanish", f.X(0), f.Y(-yMax * 0.82)); }
-        ctx.restore();
-      }
-    },
-    /** Piksel (canvas CSS koordinatasi) → {th, w}; chizma tashqarisida null */
-    toState(px, py) {
-      if (!last) return null;
-      const { f, w0, yMax: ym } = last;
-      const r = f.rect;
-      if (px < r.x || px > r.x + r.w || py < r.y || py > r.y + r.h) return null;
-      const th = -Math.PI + ((px - r.x) / r.w) * TAU;
-      const y = ym - ((py - r.y) / r.h) * 2 * ym;
-      return { th, w: y * w0 };
-    },
-  };
-}
 
 /* ------------------------------------------------------------------ E(t) */
 
