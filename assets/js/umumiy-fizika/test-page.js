@@ -18,6 +18,7 @@ import { unlockMechanicsLesson } from "../../../js/mechanics-progress.js";
 import { saveResult } from "../../../js/services/result-service.js";
 import { awardXP } from "../../../js/services/xp-service.js";
 import { COURSES } from "../../../umumiy-fizika/data/courses.js";
+import { t, currentLang, applyI18n, topicLabel } from "../core/i18n.js";
 
 const PASS_PERCENT = 80;
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
@@ -128,40 +129,40 @@ function stateHtml(iconName, title, text = "", action = "") {
 }
 
 function crumbs() {
-  const items = [`<li><a href="../umumiy-fizika.html">Umumiy fizika</a></li>`];
+  const items = [`<li><a href="../umumiy-fizika.html">${t("uf.generalPhysics", "Umumiy fizika")}</a></li>`];
   if (course) items.push(`<li><a href="../${esc(course.id)}.html">${esc(course.title)}</a></li>`);
-  items.push(`<li aria-current="page">${esc(lesson?.numberLabel || "Test")}</li>`);
-  return `<ol class="ut-crumbs" aria-label="Sahifa yo‘li">${items.join("")}</ol>`;
+  items.push(`<li aria-current="page">${esc(lesson?.numberLabel || t("ut.test", "Test"))}</li>`);
+  return `<ol class="ut-crumbs" aria-label="${t("ut.breadcrumb", "Sahifa yo‘li")}">${items.join("")}</ol>`;
 }
 
 // ------------------------------------------------------------------ test ishlash
 function renderRunner() {
   const n = questions.length;
-  const label = lesson?.numberLabel || `${data.unlockLesson - 1}-mavzu`;
+  const label = lesson?.numberLabel || topicLabel(data.unlockLesson - 1);
   const title = lesson?.title || data.title;
   view.innerHTML = `
     ${crumbs()}
     <div class="ut-layout">
       <div class="ut-main">
         <div class="of-card ut-bar">
-          <div class="ut-bar__title"><small>${esc(label)} testi</small><b>${esc(title)}</b></div>
+          <div class="ut-bar__title"><small>${esc(t("uf.lessonTest", "{label} testi", { label }))}</small><b>${esc(title)}</b></div>
           <span class="ut-bar__count of-num" data-count aria-live="polite"></span>
-          <div class="of-progress" role="progressbar" aria-label="Javob berilgan savollar" aria-valuemin="0" aria-valuemax="${n}" data-bar><span></span></div>
-          <button type="button" class="of-btn of-btn--sm ut-calc-btn" data-calc title="Kalkulyator" aria-label="Kalkulyator">${CALC_ICON}<span class="ut-calc-btn__label">Kalkulyator</span></button>
+          <div class="of-progress" role="progressbar" aria-label="${t("ut.answeredQuestions", "Javob berilgan savollar")}" aria-valuemin="0" aria-valuemax="${n}" data-bar><span></span></div>
+          <button type="button" class="of-btn of-btn--sm ut-calc-btn" data-calc title="${t("ut.calc", "Kalkulyator")}" aria-label="${t("ut.calc", "Kalkulyator")}">${CALC_ICON}<span class="ut-calc-btn__label">${t("ut.calc", "Kalkulyator")}</span></button>
         </div>
         <article class="of-card ut-q" data-q tabindex="-1" aria-labelledby="utQNum"></article>
       </div>
       <aside class="of-card ut-side" aria-labelledby="utNavTitle">
-        <h2 id="utNavTitle">Savollar</h2>
+        <h2 id="utNavTitle">${t("ut.questions", "Savollar")}</h2>
         <ol class="ut-grid" data-grid></ol>
-        <ul class="ut-legend"><li><i data-k="answered"></i>Javob berilgan</li><li><i></i>Javobsiz</li></ul>
+        <ul class="ut-legend"><li><i data-k="answered"></i>${t("ut.answered", "Javob berilgan")}</li><li><i></i>${t("ut.unanswered", "Javobsiz")}</li></ul>
         <div class="ut-side__summary"><span data-sum-answered></span><span data-sum-left></span></div>
-        <button type="button" class="of-btn of-btn--success of-btn--lg of-btn--block" data-finish>${icon("check")}Testni yakunlash</button>
-        <p class="ut-pass-note">Kamida <b>${PASS_PERCENT}%</b> natija keyingi mavzuni ochadi va XP beradi.</p>
+        <button type="button" class="of-btn of-btn--success of-btn--lg of-btn--block" data-finish>${icon("check")}${t("ut.finishTest", "Testni yakunlash")}</button>
+        <p class="ut-pass-note">${t("ut.passNote", "Kamida <b>{pct}%</b> natija keyingi mavzuni ochadi va XP beradi.", { pct: PASS_PERCENT })}</p>
       </aside>
     </div>`;
   const grid = view.querySelector("[data-grid]");
-  grid.innerHTML = questions.map((_, i) => `<li><button type="button" data-go="${i}" aria-label="${i + 1}-savol">${i + 1}</button></li>`).join("");
+  grid.innerHTML = questions.map((_, i) => `<li><button type="button" data-go="${i}" aria-label="${t("ut.questionN", "{n}-savol", { n: i + 1 })}">${i + 1}</button></li>`).join("");
   grid.addEventListener("click", (e) => {
     const b = e.target.closest("[data-go]");
     if (b) go(Number(b.dataset.go), true);
@@ -187,11 +188,11 @@ function renderQuestion() {
     <div data-figs></div>
     <ul class="ut-opts" role="radiogroup" aria-labelledby="utQNum" data-opts></ul>
     <div class="ut-q__nav">
-      <button type="button" class="of-btn" data-prev ${current === 0 ? "disabled" : ""}>${icon("chevronLeft")}Oldingi</button>
-      ${answers[current] != null ? '<button type="button" class="of-btn of-btn--ghost" data-clear>Javobni bekor qilish</button>' : ""}
+      <button type="button" class="of-btn" data-prev ${current === 0 ? "disabled" : ""}>${icon("chevronLeft")}${t("uf.prev", "Oldingi")}</button>
+      ${answers[current] != null ? `<button type="button" class="of-btn of-btn--ghost" data-clear>${t("ut.clearAnswer", "Javobni bekor qilish")}</button>` : ""}
       ${current < n - 1
-        ? `<button type="button" class="of-btn of-btn--primary" data-next>Keyingi${icon("chevronRight")}</button>`
-        : `<button type="button" class="of-btn of-btn--success" data-finish2>${icon("check")}Yakunlash</button>`}
+        ? `<button type="button" class="of-btn of-btn--primary" data-next>${t("uf.nextWord", "Keyingi")}${icon("chevronRight")}</button>`
+        : `<button type="button" class="of-btn of-btn--success" data-finish2>${icon("check")}${t("ut.finish", "Yakunlash")}</button>`}
     </div>`;
   card.querySelector("[data-body]").append(richText(q.text));
   const figs = card.querySelector("[data-figs]");
@@ -200,7 +201,7 @@ function renderQuestion() {
     box.className = "ut-q__fig";
     const img = document.createElement("img");
     img.src = new URL(src, location.href).href;
-    img.alt = "Savolga chizma";
+    img.alt = t("ut.figure", "Savolga chizma");
     img.loading = "lazy";
     box.append(img);
     figs.append(box);
@@ -287,28 +288,28 @@ function updateProgress() {
   const bar = view.querySelector("[data-bar]");
   bar.style.setProperty("--value", Math.round((answered * 100) / n));
   bar.setAttribute("aria-valuenow", answered);
-  bar.setAttribute("aria-valuetext", `${answered} / ${n} savolga javob berilgan`);
+  bar.setAttribute("aria-valuetext", t("ut.answeredOf", "{a} / {n} savolga javob berilgan", { a: answered, n }));
   view.querySelectorAll("[data-go]").forEach((b) => {
     const i = Number(b.dataset.go);
     b.dataset.answered = String(answers[i] != null);
     if (i === current) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
-    b.setAttribute("aria-label", `${i + 1}-savol: ${answers[i] != null ? `javob ${LETTERS[answers[i]]}` : "javobsiz"}`);
+    b.setAttribute("aria-label", `${t("ut.questionN", "{n}-savol", { n: i + 1 })}: ${answers[i] != null ? t("ut.answerLetter", "javob {l}", { l: LETTERS[answers[i]] }) : t("ut.unansweredLc", "javobsiz")}`);
   });
-  view.querySelector("[data-sum-answered]").textContent = `Javob berilgan: ${answered}`;
-  view.querySelector("[data-sum-left]").textContent = `Javobsiz: ${n - answered}`;
+  view.querySelector("[data-sum-answered]").textContent = `${t("ut.answered", "Javob berilgan")}: ${answered}`;
+  view.querySelector("[data-sum-left]").textContent = `${t("ut.unanswered", "Javobsiz")}: ${n - answered}`;
 }
 
 function confirmFinish() {
   const left = questions.filter((_, i) => answers[i] == null).length;
   openModal({
-    title: "Testni yakunlashni xohlaysizmi?",
+    title: t("ut.confirmTitle", "Testni yakunlashni xohlaysizmi?"),
     text: left
-      ? `Siz ${left} ta savolni javobsiz qoldirdingiz. Baribir testni yakunlamoqchimisiz?`
-      : "Haqiqatan ham testni yakunlamoqchimisiz?",
+      ? t("ut.confirmLeft", "Siz {n} ta savolni javobsiz qoldirdingiz. Baribir testni yakunlamoqchimisiz?", { n: left })
+      : t("ut.confirmText", "Haqiqatan ham testni yakunlamoqchimisiz?"),
     iconName: "check",
     actions: [
-      { label: "Ha, yakunlash", variant: "success", onClick: (_e, m) => { m.close(); finish(); } },
-      { label: "Davom etish", onClick: (_e, m) => m.close() },
+      { label: t("ut.yesFinish", "Ha, yakunlash"), variant: "success", onClick: (_e, m) => { m.close(); finish(); } },
+      { label: t("home.continue", "Davom etish"), onClick: (_e, m) => m.close() },
     ],
   });
 }
@@ -325,13 +326,13 @@ async function finish() {
   const unlockLesson = Number(data.unlockLesson);
   const lessonId = unlockLesson - 1;
 
-  view.innerHTML = stateHtml("check", "Natija saqlanmoqda…", "Iltimos, kuting.");
+  view.innerHTML = stateHtml("check", t("ut.saving", "Natija saqlanmoqda…"), t("ut.wait", "Iltimos, kuting."));
   let xpAward = null;
   let saved = true;
   try {
     const resultId = await saveResult({
       lessonId,
-      lessonTitle: document.title,
+      lessonTitle: currentLang === "uz" ? document.title : `${lessonId}-mavzu testi | OliyFizika.uz`, // saqlanadigan qiymat til-neytral
       course: "mechanics",
       score,
       totalQuestions: total,
@@ -350,9 +351,9 @@ async function finish() {
 }
 
 const VERDICT = {
-  correct: ["checkCircle", "To‘g‘ri"],
-  wrong: ["alert", "Noto‘g‘ri"],
-  unanswered: ["info", "Javob berilmagan"],
+  correct: ["checkCircle", t("ut.correct", "To‘g‘ri")],
+  wrong: ["alert", t("ut.wrong", "Noto‘g‘ri")],
+  unanswered: ["info", t("ut.notAnswered", "Javob berilmagan")],
 };
 
 function renderResult({ score, total, percent, passed, unlockLesson, xpAward, saved }) {
@@ -360,37 +361,37 @@ function renderResult({ score, total, percent, passed, unlockLesson, xpAward, sa
   const skipped = questions.filter((_, i) => answers[i] == null).length;
   const backUrl = data.backUrl || "../umumiy-fizika.html";
   const xpLine = xpAward?.status === "awarded"
-    ? `<p><b>+${xpAward.xp} XP</b> qo‘shildi.</p>`
-    : xpAward?.status === "already-awarded" ? "<p>Bu mavzu uchun XP avval berilgan.</p>" : "";
+    ? `<p>${t("ut.xpAdded", "<b>+{xp} XP</b> qo‘shildi.", { xp: xpAward.xp })}</p>`
+    : xpAward?.status === "already-awarded" ? `<p>${t("ut.xpAlready", "Bu mavzu uchun XP avval berilgan.")}</p>` : "";
   view.innerHTML = `
     ${crumbs()}
     <section class="of-card ut-result" aria-labelledby="utResTitle">
-      <div class="ut-ring" data-pass="${passed}" style="--p:0" data-p="${percent}" role="img" aria-label="Natija ${percent} foiz">
+      <div class="ut-ring" data-pass="${passed}" style="--p:0" data-p="${percent}" role="img" aria-label="${t("ut.resultPct", "Natija {p} foiz", { p: percent })}">
         <div class="ut-ring__inner"><div><b>${percent}%</b><br><span>${score}/${total}</span></div></div>
       </div>
       <div class="ut-result__text">
-        <h1 id="utResTitle">${passed ? "Test muvaffaqiyatli yakunlandi" : "Test yakunlandi"}</h1>
+        <h1 id="utResTitle">${passed ? t("ut.passedTitle", "Test muvaffaqiyatli yakunlandi") : t("ut.doneTitle", "Test yakunlandi")}</h1>
         <p class="ut-result__msg" data-ok="${passed}">${icon(passed ? "checkCircle" : "alert")}<span>${passed
-          ? `${unlockLesson}-mavzu ochildi.`
-          : `Keyingi mavzuni ochish uchun kamida ${PASS_PERCENT}% talab qilinadi.`}</span></p>
+          ? t("ut.unlocked", "{label} ochildi.", { label: topicLabel(unlockLesson) })
+          : t("ut.needPct", "Keyingi mavzuni ochish uchun kamida {pct}% talab qilinadi.", { pct: PASS_PERCENT })}</span></p>
         ${xpLine}
-        ${saved ? "" : '<p class="of-subtle">Natijani serverga saqlab bo‘lmadi (tizimga kirmagan bo‘lishingiz yoki internet uzilgan bo‘lishi mumkin).</p>'}
+        ${saved ? "" : `<p class="of-subtle">${t("ut.notSaved", "Natijani serverga saqlab bo‘lmadi (tizimga kirmagan bo‘lishingiz yoki internet uzilgan bo‘lishi mumkin).")}</p>`}
         <div class="ut-counts">
-          <div class="ut-count ut-count--ok"><span>To‘g‘ri</span><b>${score}</b></div>
-          <div class="ut-count ut-count--bad"><span>Noto‘g‘ri</span><b>${wrong}</b></div>
-          <div class="ut-count ut-count--skip"><span>Javobsiz</span><b>${skipped}</b></div>
+          <div class="ut-count ut-count--ok"><span>${t("ut.correct", "To‘g‘ri")}</span><b>${score}</b></div>
+          <div class="ut-count ut-count--bad"><span>${t("ut.wrong", "Noto‘g‘ri")}</span><b>${wrong}</b></div>
+          <div class="ut-count ut-count--skip"><span>${t("ut.unanswered", "Javobsiz")}</span><b>${skipped}</b></div>
         </div>
         <div class="ut-actions">
-          <a class="of-btn of-btn--primary" href="${esc(backUrl)}">Mavzularga qaytish</a>
-          <button type="button" class="of-btn" data-retry>Qayta ishlash</button>
+          <a class="of-btn of-btn--primary" href="${esc(backUrl)}">${t("ut.backToTopics", "Mavzularga qaytish")}</a>
+          <button type="button" class="of-btn" data-retry>${t("uf.retakeTest", "Testni qayta ishlash")}</button>
         </div>
       </div>
     </section>
     <div class="ut-review-title">
-      <h2>Javoblarni ko‘rib chiqish</h2>
-      <div class="ut-filters" role="group" aria-label="Filtr">
-        ${[["all", "Hammasi"], ["wrong", "Noto‘g‘ri"], ["unanswered", "Javobsiz"], ["correct", "To‘g‘ri"]]
-          .map(([k, t]) => `<button type="button" data-filter="${k}" aria-pressed="${k === "all"}">${t}</button>`).join("")}
+      <h2>${t("ut.reviewTitle", "Javoblarni ko‘rib chiqish")}</h2>
+      <div class="ut-filters" role="group" aria-label="${t("ut.filter", "Filtr")}">
+        ${[["all", t("ut.all", "Hammasi")], ["wrong", t("ut.wrong", "Noto‘g‘ri")], ["unanswered", t("ut.unanswered", "Javobsiz")], ["correct", t("ut.correct", "To‘g‘ri")]]
+          .map(([k, label]) => `<button type="button" data-filter="${k}" aria-pressed="${k === "all"}">${label}</button>`).join("")}
       </div>
     </div>
     <ol class="ut-review" data-review></ol>`;
@@ -412,7 +413,7 @@ function renderResult({ score, total, percent, passed, unlockLesson, xpAward, sa
       box.className = "ut-q__fig";
       const img = document.createElement("img");
       img.src = new URL(src, location.href).href;
-      img.alt = "Savolga chizma";
+      img.alt = t("ut.figure", "Savolga chizma");
       img.loading = "lazy";
       box.append(img);
       li.querySelector("[data-figs]").append(box);
@@ -444,25 +445,46 @@ function renderResult({ score, total, percent, passed, unlockLesson, xpAward, sa
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
+// ------------------------------------------------------------------ tarjima (rus / ingliz)
+// test/i18n/<til>/test-N.json: { title?, questions: [{ text, answers[] }] } — savollar tartib bo'yicha qo'shiladi.
+// To'g'ri javob indeksi, rasmlar va `pick` asl (o'zbekcha) faylda qoladi; fayl yo'q yoki mos kelmasa — o'zbekcha.
+async function applyTestTranslation() {
+  if (currentLang === "uz") return;
+  let tr = null;
+  try {
+    const res = await fetch(`i18n/${currentLang}/test-${testId}.json`, { cache: "no-cache" });
+    tr = res.ok ? await res.json() : null;
+  } catch { /* tarjima yo'q */ }
+  if (!tr || !Array.isArray(tr.questions)) return;
+  data.questions = (data.questions || []).map((q, i) => {
+    const x = tr.questions[i];
+    const sameShape = x && Array.isArray(x.answers) && x.answers.length === q.answers.length;
+    return sameShape ? { ...q, text: x.text ?? q.text, answers: x.answers } : q;
+  });
+  if (tr.title) data.title = tr.title;
+}
+
 // ------------------------------------------------------------------ ishga tushirish
 async function init() {
+  applyI18n();
   if (!/^\d+$/.test(String(testId || ""))) {
-    view.innerHTML = stateHtml("alert", "Test topilmadi", "Havola noto‘g‘ri. Mavzular ro‘yxatidan testni qayta oching.",
-      '<a class="of-btn of-btn--primary" href="../umumiy-fizika.html">Mavzularga qaytish</a>');
+    view.innerHTML = stateHtml("alert", t("ut.notFound", "Test topilmadi"), t("ut.badLink", "Havola noto‘g‘ri. Mavzular ro‘yxatidan testni qayta oching."),
+      `<a class="of-btn of-btn--primary" href="../umumiy-fizika.html">${t("ut.backToTopics", "Mavzularga qaytish")}</a>`);
     return;
   }
   try {
     const [res] = await Promise.all([fetch(`test-${testId}.json`, { cache: "no-cache" }), loadKatex().catch(() => null)]);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
+    await applyTestTranslation();
   } catch (e) {
     console.error("[test] yuklanmadi:", e);
-    view.innerHTML = stateHtml("alert", "Test yuklanmadi", "Bu mavzu testi hali tayyor emas yoki internet aloqasi yo‘q.",
-      '<a class="of-btn of-btn--primary" href="../umumiy-fizika.html">Mavzularga qaytish</a>');
+    view.innerHTML = stateHtml("alert", t("ut.loadFail", "Test yuklanmadi"), t("ut.loadFailText", "Bu mavzu testi hali tayyor emas yoki internet aloqasi yo‘q."),
+      `<a class="of-btn of-btn--primary" href="../umumiy-fizika.html">${t("ut.backToTopics", "Mavzularga qaytish")}</a>`);
     return;
   }
   ({ course, lesson } = findLesson(data.unlockLesson));
-  setShellTitle(lesson ? `${lesson.numberLabel} testi` : "Mavzu testi");
+  setShellTitle(lesson ? t("uf.lessonTest", "{label} testi", { label: lesson.numberLabel }) : t("ut.pageTitle", "Mavzu testi"));
 
   const all = data.questions || [];
   const draft = readDraft();
@@ -477,7 +499,7 @@ async function init() {
   }
   questions = order.map((i) => ({ ...all[i], _i: i }));
   if (!questions.length) {
-    view.innerHTML = stateHtml("info", "Savollar topilmadi", "Bu testda hali savollar yo‘q.");
+    view.innerHTML = stateHtml("info", t("ut.noQuestions", "Savollar topilmadi"), t("ut.noQuestionsText", "Bu testda hali savollar yo‘q."));
     return;
   }
   writeDraft();

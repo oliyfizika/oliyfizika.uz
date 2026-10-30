@@ -12,6 +12,8 @@
 // kurs sahifasi mavzularni boblarga ajratib ko'rsatadi. Hozircha tasdiqlangan bob ma'lumoti yo'q.
 // ==========================================================================
 
+import { currentLang, topicLabel } from "../../assets/js/core/i18n.js";
+
 export const COURSES = [
   {
     id: "mexanika",
@@ -404,6 +406,26 @@ export const COURSES = [
 ],
   }
 ];
+
+// Rus / ingliz tillari: nomlar va tavsiflar `i18n/<til>.js` dan olinadi (o'zbekcha manba o'zgarmaydi).
+// Fayl topilmasa yoki kalit yo'q bo'lsa — o'zbekcha matn qoladi.
+if (currentLang !== "uz") {
+  try {
+    const { default: tr } = await import(`./i18n/${currentLang}.js`);
+    for (const course of COURSES) {
+      const c = tr.courses?.[course.id];
+      if (c?.title) course.title = c.title;
+      if (c?.description) course.description = c.description;
+      for (const lesson of course.lessons) {
+        const key = String(lesson.numberLabel || "").replace(/-mavzu$/, "");
+        if (tr.lessons?.[key]) lesson.title = tr.lessons[key];
+        if (key) lesson.numberLabel = topicLabel(key);
+      }
+    }
+  } catch (error) {
+    console.warn("[courses] tarjima yuklanmadi:", error);
+  }
+}
 
 export function getCourse(id) {
   return COURSES.find((course) => course.id === id);

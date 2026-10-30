@@ -1,0 +1,518 @@
+{
+  "title": "Topic 72 | Transformer",
+  "questions": [
+    {
+      "text": "What kind of device is a transformer?",
+      "answers": [
+        "A device that increases or decreases an alternating voltage.",
+        "A device that accelerates particles.",
+        "A device that produces electromagnetic oscillations.",
+        "A device that detects radioactive radiation."
+      ]
+    },
+    {
+      "text": "Find the expression for the transformation ratio of a transformer.",
+      "answers": [
+        "$k = \\frac{U_1}{U_2}$.",
+        "$k = \\frac{M}{q}$.",
+        "$k = \\frac{F}{x}$.",
+        "$k = \\frac{A}{zF}$."
+      ]
+    },
+    {
+      "text": "The primary coil of a transformer has 800 turns and the secondary coil has 3200 turns. Determine the transformation ratio.",
+      "answers": [
+        "1/2.",
+        "1/4.",
+        "2.",
+        "4."
+      ]
+    },
+    {
+      "text": "A voltage of 220 V is applied to the primary coil of a transformer. If the transformation ratio is 0.8, what is the voltage across the secondary coil (V)?",
+      "answers": [
+        "364.",
+        "275.",
+        "220.",
+        "176."
+      ]
+    },
+    {
+      "text": "A voltage of 220 V is applied to the primary coil of a transformer. The primary coil has 400 turns and the secondary coil has 200 turns. What is the voltage across the secondary coil (V)?",
+      "answers": [
+        "110.",
+        "100.",
+        "200.",
+        "220."
+      ]
+    },
+    {
+      "text": "The secondary coil of a transformer has 990 turns, the input voltage is 220 V and the output voltage is 330 V. How many turns does the primary coil have?",
+      "answers": [
+        "110.",
+        "220.",
+        "330.",
+        "660."
+      ]
+    },
+    {
+      "text": "The primary coil of a transformer has 40 turns. How many turns must the secondary coil have in order to raise the voltage from 220 V to 22000 V?",
+      "answers": [
+        "22000.",
+        "4000.",
+        "2200.",
+        "400."
+      ]
+    },
+    {
+      "text": "In the interconnected ideal transformers shown below, $N_1/N_2 = 8$ and $N_3/N_4 = 1/3$. What is the output voltage $U_2$ (V)?",
+      "answers": [
+        "15.",
+        "30.",
+        "45.",
+        "60."
+      ]
+    },
+    {
+      "text": "In the secondary circuit of a step-down transformer the voltage is 80 V and the current is 2 A. What is the current in the primary coil (in amperes) if the voltage across it is 160 V? Neglect losses.",
+      "answers": [
+        "1.",
+        "0.5.",
+        "1.5.",
+        "2."
+      ]
+    },
+    {
+      "text": "In this transformer the input power is $P_1 = 100$ W and the output power is $P_2 = 80$ W. If $U_1/U_2 = 10$, what is the ratio $I_2/I_1$?",
+      "answers": [
+        "1/8.",
+        "1/6.",
+        "4.",
+        "8."
+      ]
+    },
+    {
+      "text": "A step-down transformer with an efficiency of 90 % draws 2600 W of power from the mains. Determine the power of the current in the secondary coil (kW).",
+      "answers": [
+        "2.34.",
+        "1.2.",
+        "0.24.",
+        "3.36."
+      ]
+    },
+    {
+      "text": "The voltage across the primary coil of a transformer is 200 V and the current is 0.5 A; in the secondary coil they are 38 V and 2.5 A. What is the efficiency of the transformer (in percent)?",
+      "answers": [
+        "70.",
+        "76.",
+        "80.",
+        "95."
+      ]
+    },
+    {
+      "text": "In the transformer shown in the figure the efficiency is 75 %, the rms current in the primary coil is $I_1 = 1$ A and the rms voltage is $U_1 = 200$ V. Determine the rms current through the resistance $R = 6\\ \\Omega$ in the secondary coil (A).",
+      "answers": [
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ]
+    },
+    {
+      "text": "The output voltage of a step-down transformer is 30 V. 100 light bulbs, each drawing a current of 0.8 A, are connected to it. If the efficiency of the transformer is 96 %, what is its input power (kW)?",
+      "answers": [
+        "1.5.",
+        "2.",
+        "4.",
+        "2.5."
+      ]
+    },
+    {
+      "text": "When power is transmitted from a generator of 60 kW at a voltage of 2400 V, the voltage drop in the line must not exceed 10 %. What is the maximum allowed resistance of the wires ($\\Omega$)?",
+      "answers": [
+        "60.",
+        "48.",
+        "24.",
+        "9.6."
+      ]
+    },
+    {
+      "text": "Electric power of 100 kW is to be transmitted at a voltage of 10 kV through a copper wire with a cross-sectional area of $17\\text{ mm}^2$. What is the maximum distance over which it can be transmitted so that the energy loss does not exceed 5 % (km)? $\\rho = 1.7 \\cdot 10^{-8}\\ \\Omega\\cdot\\text{m}$.",
+      "answers": [
+        "5.",
+        "10.",
+        "25.",
+        "20."
+      ]
+    },
+    {
+      "text": "How does the amount of heat released in the transmission wires change if the voltage in the power transmission system is increased by a factor of 2?",
+      "answers": [
+        "It does not change.",
+        "It increases by a factor of 4.",
+        "It decreases by a factor of 4.",
+        "It increases by a factor of 2."
+      ]
+    },
+    {
+      "text": "When the voltage was raised without changing the power of the current source, the energy loss in the transmission wires decreased by a factor of 100. By what factor was the voltage increased?",
+      "answers": [
+        "5.",
+        "10.",
+        "20.",
+        "100."
+      ]
+    },
+    {
+      "text": "Which of the following waves is longitudinal?\n1) waves on the surface of water; 2) sound waves in liquids and gases; 3) electromagnetic waves; 4) waves arising in the strings of musical instruments.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "1 and 2."
+      ]
+    },
+    {
+      "text": "Under what conditions are electromagnetic waves radiated?",
+      "answers": [
+        "when a charge oscillates.",
+        "when an electron moves uniformly in a straight line.",
+        "when an electron moves uniformly in a straight line in a conductor.",
+        "when a neutral atom moves with acceleration."
+      ]
+    },
+    {
+      "text": "Charge 1 moves uniformly in a straight line; charge 2 moves in a straight line with acceleration; charge 3 performs harmonic oscillations; charge 4 moves uniformly along a circle. Which of these charges radiate electromagnetic waves?",
+      "answers": [
+        "only 1.",
+        "only 2.",
+        "2, 3 and 4.",
+        "1 and 2."
+      ]
+    },
+    {
+      "text": "What type of wave are electromagnetic waves?",
+      "answers": [
+        "longitudinal.",
+        "longitudinal and transverse.",
+        "transverse.",
+        "neither longitudinal nor transverse."
+      ]
+    },
+    {
+      "text": "How is the direction of propagation of an electromagnetic wave determined? (The direction of propagation of the electromagnetic wave is the same as the direction of motion of a corkscrew)",
+      "answers": [
+        "when the handle of the corkscrew is turned from $\\vec{E}$ to $\\vec{B}$.",
+        "when the handle of the corkscrew is turned from $\\vec{B}$ to $\\vec{E}$.",
+        "when the handle of the corkscrew is turned clockwise from $\\vec{E}$.",
+        "when the handle of the corkscrew is turned counterclockwise from $\\vec{E}$."
+      ]
+    },
+    {
+      "text": "How are the directions of the vectors $\\vec{E}$ and $\\vec{B}$ of an electromagnetic wave propagating from a source related to the vector $\\vec{v}$ indicating the direction of propagation?",
+      "answers": [
+        "$\\vec{E}\\perp\\vec{B}$; $\\vec{E}$ and $\\vec{v}$ are parallel.",
+        "$\\vec{E}\\perp\\vec{B}\\perp\\vec{v}$.",
+        "$\\vec{E}\\perp\\vec{v}$; $\\vec{E}$ and $\\vec{B}$ are parallel.",
+        "$\\vec{B}\\perp\\vec{v}$; $\\vec{E}$ and $\\vec{v}$ are parallel."
+      ]
+    },
+    {
+      "text": "The vectors $\\vec{E}$ and $\\vec{B}$ of an electromagnetic wave in vacuum point along the X and Y axes. What is the direction of propagation of the wave?",
+      "answers": [
+        "In the positive direction of the X axis.",
+        "In the positive direction of the Y axis.",
+        "In the negative direction of the X axis.",
+        "In the positive direction of the Z axis."
+      ]
+    },
+    {
+      "text": "The speed of propagation of electromagnetic waves in vacuum...",
+      "answers": [
+        "is equal to their speed in a medium.",
+        "is less than their speed in a medium.",
+        "is greater than their speed in a medium.",
+        "is zero, because they do not propagate in vacuum at all."
+      ]
+    },
+    {
+      "text": "The distance between the 1st and 4th maxima of an electromagnetic wave is 30 m. What is the wavelength of this wave (m)?",
+      "answers": [
+        "30.",
+        "15.",
+        "10.",
+        "7.5."
+      ]
+    },
+    {
+      "text": "Find the relation between the frequency $\\nu$, the speed $v$ and the wavelength $\\lambda$ of an electromagnetic wave.",
+      "answers": [
+        "$\\nu = \\lambda/v$.",
+        "$\\nu = v\\lambda$.",
+        "$v = \\lambda\\nu$.",
+        "$v = \\nu\\lambda/2\\pi$."
+      ]
+    },
+    {
+      "text": "What is the propagation speed of an electromagnetic wave with a frequency of $8\\cdot 10^{14}$ Hz and a wavelength of 200 nm (m/s)?",
+      "answers": [
+        "$4\\cdot 10^7$.",
+        "$1.6\\cdot 10^8$.",
+        "$2.5\\cdot 10^7$.",
+        "$2\\cdot 10^8$."
+      ]
+    },
+    {
+      "text": "What is the wavelength of an electromagnetic wave with a frequency of 10 MHz emitted from a spacecraft (m)?",
+      "answers": [
+        "3.",
+        "5.",
+        "10.",
+        "30."
+      ]
+    },
+    {
+      "text": "If the frequency of an electromagnetic wave in vacuum is $3\\cdot 10^{13}$ Hz, what is its wavelength (m)?",
+      "answers": [
+        "$10^{-8}$.",
+        "$9\\cdot 10^{13}$.",
+        "$0.01$.",
+        "$10^{-5}$."
+      ]
+    },
+    {
+      "text": "Find the distance shown in the figure for an electromagnetic wave with a frequency of $8\\cdot 10^{14}$ Hz and a propagation speed of $1.6\\cdot 10^8$ m/s (nm).",
+      "answers": [
+        "500.",
+        "400.",
+        "320.",
+        "200."
+      ]
+    },
+    {
+      "text": "A \"cell\" phone operates at a frequency of 100 MHz. What is its operating wavelength (m)?",
+      "answers": [
+        "1.",
+        "3.",
+        "10.",
+        "30."
+      ]
+    },
+    {
+      "text": "An electromagnetic wave passed from a medium with a dielectric constant $\\varepsilon=2$ into vacuum. How does the distance it travels during a time equal to one oscillation period change?",
+      "answers": [
+        "first increases, then decreases.",
+        "increases.",
+        "does not change.",
+        "decreases."
+      ]
+    },
+    {
+      "text": "Give the expression for the speed of an electromagnetic wave propagating in a medium with dielectric constant $\\varepsilon$ and magnetic permeability $\\mu$. The speed in vacuum is c; $\\lambda_0$ and $\\lambda$ are the wavelengths in vacuum and in the medium, respectively.",
+      "answers": [
+        "$c/\\sqrt{\\varepsilon\\mu}$.",
+        "$c\\sqrt{\\varepsilon\\mu}$.",
+        "$\\sqrt{\\varepsilon\\mu}$.",
+        "$v/\\lambda_0$."
+      ]
+    },
+    {
+      "text": "The intensity of an electromagnetic wave is...",
+      "answers": [
+        "the electromagnetic energy W per unit volume.",
+        "the ratio of the electromagnetic energy W passing through an area $\\Delta S$ in a time $\\Delta t$ to the product $\\Delta S \\Delta t$.",
+        "the ratio of the electromagnetic energy W passing through an area $\\Delta S$ to the quantity $\\Delta S$.",
+        "the ratio of the electromagnetic energy W to the time interval $\\Delta t$."
+      ]
+    },
+    {
+      "text": "The intensity of the electromagnetic radiation of a point source is...",
+      "answers": [
+        "directly proportional to the distance from the source.",
+        "inversely proportional to the distance from the source.",
+        "proportional to the square of the distance from the source.",
+        "inversely proportional to the square of the distance from the source."
+      ]
+    },
+    {
+      "text": "When moving along the direction of radiation from the first point to the second by 6 m, the radiation intensity decreased by a factor of 4. How far from the radiation source is the first point (m)?",
+      "answers": [
+        "6.",
+        "18.",
+        "12.",
+        "24."
+      ]
+    },
+    {
+      "text": "Taking the distance to the Earth as $150\\cdot 10^6$ km, find the total radiation power of the Sun (kW).",
+      "answers": [
+        "$1.5\\cdot 10^{31}$.",
+        "$2\\cdot 10^{29}$.",
+        "$3\\cdot 10^{23}$.",
+        "$4\\cdot 10^{23}$."
+      ]
+    },
+    {
+      "text": "How does the power radiated by an open oscillating circuit change if the frequency of the electromagnetic oscillations is increased by a factor of 2?",
+      "answers": [
+        "does not change.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 2.",
+        "increases by a factor of 16."
+      ]
+    },
+    {
+      "text": "If the frequency of the electromagnetic wave radiated by a vibrator increases by a factor of 3, by what factor does the wave energy radiated per unit time increase? Assume the wave amplitude is constant.",
+      "answers": [
+        "27.",
+        "81.",
+        "12.",
+        "3."
+      ]
+    },
+    {
+      "text": "The current in the oscillating circuit of a radio receiver varies as $i = 10^{-6}\\sin10^6\\pi t$ (A). To what frequency (Hz) is it tuned?",
+      "answers": [
+        "$10^5$.",
+        "$5\\cdot 10^5$.",
+        "$10^6$.",
+        "$5\\cdot 10^6$."
+      ]
+    },
+    {
+      "text": "The charge on the capacitor of a receiver's oscillating circuit varies as $q = 2 \\cdot 10^{-9}\\sin5 \\cdot 10^5\\pi t$ (C). What is the wavelength of the received wave (m)?",
+      "answers": [
+        "200.",
+        "500.",
+        "1000.",
+        "1200."
+      ]
+    },
+    {
+      "text": "The charge on the capacitor of a radio receiver circuit varies as $q = 10^{-9}\\cos4 \\cdot 10^4\\pi t$ (C). To what frequency (Hz) is the receiver tuned?",
+      "answers": [
+        "$5\\cdot 10^5$.",
+        "$10^6\\pi$.",
+        "$10^6$.",
+        "$2\\cdot 10^4$."
+      ]
+    },
+    {
+      "text": "How must the capacitance of the capacitor in the oscillating circuit of a radio receiver be changed to increase its receiving frequency by a factor of 2?",
+      "answers": [
+        "increased by a factor of 2.",
+        "decreased by a factor of 4.",
+        "increased by a factor of 4.",
+        "decreased by a factor of 2."
+      ]
+    },
+    {
+      "text": "A radio transmitter installed on a spacecraft operates at a frequency of 20 MHz. What is the wavelength of the radio wave it emits (m)?",
+      "answers": [
+        "10.",
+        "15.",
+        "30.",
+        "100."
+      ]
+    },
+    {
+      "text": "An antenna radiates an electromagnetic wave with a frequency of 6 MHz. How many waves fit over a distance of 100 km in the direction of propagation?",
+      "answers": [
+        "1000.",
+        "1500.",
+        "1800.",
+        "2000."
+      ]
+    },
+    {
+      "text": "A radio wave with a frequency of 5 MHz is generated in a circuit. How many wavelengths fit over a distance of 150 km in the direction of propagation?",
+      "answers": [
+        "2500.",
+        "2000.",
+        "1800.",
+        "1500."
+      ]
+    },
+    {
+      "text": "Determine the frequency of a radio wave with a wavelength of 10 cm (Hz).",
+      "answers": [
+        "$3.3\\cdot 10^8$.",
+        "$3\\cdot 10^7$.",
+        "$3\\cdot 10^8$.",
+        "$3\\cdot 10^9$."
+      ]
+    },
+    {
+      "text": "The capacitance of the capacitor in the oscillating circuit of a radio receiver is 1000 pF and the inductance of the coil is 1 mH. To what wavelength (m) is it tuned?",
+      "answers": [
+        "628.",
+        "942.",
+        "1884.",
+        "314."
+      ]
+    },
+    {
+      "text": "The inductance of the oscillating circuit of a radio receiver corresponding to a wavelength of 300 m is 2.5 mH. What is the capacitance of the capacitor in the circuit (pF)? $\\pi^2\\approx 10$.",
+      "answers": [
+        "5.",
+        "10.",
+        "25.",
+        "30."
+      ]
+    },
+    {
+      "text": "The inductance of an oscillating circuit tuned to a radio wave of wavelength 1884 m is 2 mH. What is the capacitance of the capacitor in it (pF)?",
+      "answers": [
+        "500.",
+        "188.4.",
+        "314.",
+        "942."
+      ]
+    },
+    {
+      "text": "The capacitance of the capacitor in an oscillating circuit tuned to a wavelength of 1884 m is 500 pF. What is the inductance of the coil in it (mH)?",
+      "answers": [
+        "2.",
+        "20.",
+        "100.",
+        "200."
+      ]
+    },
+    {
+      "text": "The wavelength of the radiated electromagnetic waves is $1.2\\cdot 10^8$ m. What is the law of variation of the current in the radio antenna?",
+      "answers": [
+        "$i = I\\sin 15.7t$.",
+        "$i = I\\sin 12t$.",
+        "$i = I\\sin 2\\pi t$.",
+        "$i = I\\sin 31.47t$."
+      ]
+    },
+    {
+      "text": "If a signal sent by a radar returned after 420 $\\mu$s, what is the distance to the object (km)?",
+      "answers": [
+        "36.5.",
+        "63.",
+        "73.",
+        "126."
+      ]
+    },
+    {
+      "text": "A radar emits 1000 pulses per second. What is the maximum distance at which it can observe an object (km)?",
+      "answers": [
+        "1000.",
+        "500.",
+        "300.",
+        "150."
+      ]
+    },
+    {
+      "text": "A radar sends 2000 pulses per second. Find the maximum range of the radar (km).",
+      "answers": [
+        "30.",
+        "150.",
+        "75.",
+        "300."
+      ]
+    }
+  ]
+}

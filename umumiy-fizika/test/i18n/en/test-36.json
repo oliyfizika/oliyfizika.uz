@@ -1,0 +1,212 @@
+{
+  "title": "Topic 36 | Mass of molecules. Amount of substance",
+  "questions": [
+    {
+      "text": "Determine the amount of substance (mol) in 16 g of oxygen. M = 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "0.5",
+        "1",
+        "2",
+        "16"
+      ]
+    },
+    {
+      "text": "Determine the mass of 450 mol of oxygen (kg).",
+      "answers": [
+        "4.5",
+        "7.2",
+        "9",
+        "14.4"
+      ]
+    },
+    {
+      "text": "What is the unit of the amount of substance?",
+      "answers": [
+        "kg",
+        "N",
+        "mol",
+        "kg/mol"
+      ]
+    },
+    {
+      "text": "Compare the masses and volumes of bodies made of tin and lead containing equal amounts of substance. MSn = 116.7 g/mol, ρSn = 7300 kg/m³, MPb = 207.2 g/mol, ρPb = 11300 kg/m³.",
+      "answers": [
+        "The lead body has 1.7 times greater mass and 1.1 times greater volume",
+        "The tin body has 1.7 times greater mass and 1.1 times greater volume",
+        "The lead body has 1.7 times greater mass and 1.1 times smaller volume",
+        "The tin body has 1.7 times greater mass and 1.1 times smaller volume"
+      ]
+    },
+    {
+      "text": "How many molecules are in 1 g of carbon dioxide (CO2)?",
+      "answers": [
+        "1.4 · 10²²",
+        "1.4 · 10¹⁹",
+        "2.8 · 10²²",
+        "1.2 · 10²²"
+      ]
+    },
+    {
+      "text": "How many molecules are in a water drop 1 mm in diameter? NA = 6.02 · 10²³ mol⁻¹.",
+      "answers": [
+        "1.75 · 10¹⁸",
+        "2 · 10¹⁷",
+        "1.75 · 10²⁹",
+        "1.75 · 10¹⁹"
+      ]
+    },
+    {
+      "text": "Calculate the mass of nitrogen (g) if the number of molecules is 3 · 10²³. M = 28 g/mol.",
+      "answers": [
+        "14",
+        "28",
+        "56",
+        "84"
+      ]
+    },
+    {
+      "text": "Find how many atoms are in an aluminum object of mass 135 g. MAl = 27 g/mol.",
+      "answers": [
+        "2 · 10²⁴",
+        "6 · 10²⁴",
+        "1.5 · 10²⁴",
+        "3 · 10²⁴"
+      ]
+    },
+    {
+      "text": "How many molecules are in 36 cm³ of water? M = 18 g/mol; NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "3.6 · 10²⁴",
+        "2.4 · 10²⁴",
+        "1.2 · 10²⁴",
+        "6 · 10²⁴"
+      ]
+    },
+    {
+      "text": "How many electrons are in a water drop of mass 3 g? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "10²⁶",
+        "10²⁵",
+        "10²⁴",
+        "10²³"
+      ]
+    },
+    {
+      "text": "The number of gas molecules in a sealed vessel was reduced 68 times. How does the mass of the gas change?",
+      "answers": [
+        "decreases 68 times",
+        "increases 68 times",
+        "decreases 34 times",
+        "increases 34 times"
+      ]
+    },
+    {
+      "text": "How many gold atoms are in a pure gold ring of mass 20 g? The molar mass of gold is 197 g/mol. NA = 6 · 10²³ 1/mol.",
+      "answers": [
+        "6.1 · 10²²",
+        "5.1 · 10²²",
+        "6.7 · 10²²",
+        "3.1 · 10²³"
+      ]
+    },
+    {
+      "text": "Determine the number of molecules in 3 L of water. Avogadro's number is 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "1 · 10²⁵",
+        "3.3 · 10²⁵",
+        "3.3 · 10²⁶",
+        "1 · 10²⁶"
+      ]
+    },
+    {
+      "text": "What is the SI unit of the molar mass of a substance?",
+      "answers": [
+        "kg · m⁻³ · mol",
+        "kg · mol",
+        "kg · m⁻³",
+        "kg · mol⁻¹"
+      ]
+    },
+    {
+      "text": "Which answer states the basic postulates of the molecular kinetic theory most completely?",
+      "answers": [
+        "Any body is made of molecules, they are in random motion, and interaction forces act between them.",
+        "Matter consists of tiny particles, and interaction forces act between them.",
+        "Matter consists of tiny pieces that fill space continuously.",
+        "Matter consists of elementary particles that continuously transform into one another."
+      ]
+    },
+    {
+      "text": "The relative atomic mass of gold is 197 g/mol. How many gold atoms are in a ring of mass 3.94 g? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "2.4 · 10²²",
+        "6 · 10²¹",
+        "1.1 · 10²¹",
+        "1.2 · 10²²"
+      ]
+    },
+    {
+      "text": "How many molecules are in m = 49 g of sulfuric acid (H2SO4)? Relative atomic masses: Ar(H) = 1, Ar(S) = 32 and Ar(O) = 16, NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "10²³",
+        "3 · 10²³",
+        "4 · 10²³",
+        "5 · 10²³"
+      ]
+    },
+    {
+      "text": "Determine how many molecules are in m = 96 g of methane (CH4). NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "10²³",
+        "3.6 · 10²⁴",
+        "3.6 · 10²³",
+        "5 · 10²³"
+      ]
+    },
+    {
+      "text": "How many molecules are in 1 m³ of carbon dioxide with a density of 4.4 kg/m³? M = 44 · 10⁻³ kg/mol; NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "1 · 10²⁵",
+        "1.1 · 10²⁴",
+        "4 · 10²⁵",
+        "6 · 10²⁵"
+      ]
+    },
+    {
+      "text": "Determine the number of molecules in 1 g of fully dissociated nitrogen. MN = 28 g/mol.",
+      "answers": [
+        "26 · 10²²",
+        "43 · 10²²",
+        "2.6 · 10²²",
+        "4.3 · 10²²"
+      ]
+    },
+    {
+      "text": "What physical quantity is called Avogadro's number?",
+      "answers": [
+        "the number of atoms in 12 g of carbon",
+        "the number of particles in 1 mole of a substance",
+        "the number of molecules in 32 g of oxygen",
+        "the number of molecules in 2 g of hydrogen"
+      ]
+    },
+    {
+      "text": "What is called the molar mass?",
+      "answers": [
+        "the mass of a substance in a volume of 1 m³ at 0°C",
+        "the mass of 1 mole of a substance",
+        "the ratio to 1/12 of the mass of a carbon atom",
+        "the mass of a substance consisting of NA = 6 · 10²³ particles"
+      ]
+    },
+    {
+      "text": "The relative atomic mass of uranium is 238 amu. Determine the mass of one uranium atom (g). 1 amu = 1.66 · 10⁻²⁷ kg.",
+      "answers": [
+        "3.95 · 10⁻²³",
+        "3.95 · 10⁻²²",
+        "238 · 10⁻⁴",
+        "3.95 · 10⁻²⁶"
+      ]
+    }
+  ]
+}

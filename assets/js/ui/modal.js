@@ -1,4 +1,5 @@
 // Qulay (accessible) modal: role="dialog", fokus tuzog'i, Esc, fokusni qaytarish.
+import { t } from "../core/i18n.js";
 import { icon } from "./icons.js";
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -24,7 +25,7 @@ export function openModal({ title, text = "", iconName, content, actions = [], d
   root.innerHTML = `
     <div class="of-modal__backdrop" data-close></div>
     <div class="of-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="${id}-title" ${text ? `aria-describedby="${id}-text"` : ""}>
-      ${dismissible ? `<button type="button" class="of-icon-btn of-modal__close" data-close aria-label="Yopish">${icon("close")}</button>` : ""}
+      ${dismissible ? `<button type="button" class="of-icon-btn of-modal__close" data-close aria-label="${t("shell.close", "Yopish")}">${icon("close")}</button>` : ""}
       ${iconName ? `<div class="of-modal__icon">${icon(iconName)}</div>` : ""}
       <h2 class="of-modal__title" id="${id}-title"></h2>
       ${text ? `<p class="of-modal__text" id="${id}-text"></p>` : ""}

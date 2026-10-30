@@ -1,0 +1,274 @@
+{
+  "title": "Topic 58 | Ohm's law for a section of a circuit",
+  "questions": [
+    {
+      "text": "The current in a section of a circuit ...",
+      "answers": [
+        "equals the charge that has passed through the conductor.",
+        "is directly proportional to the voltage and inversely proportional to the resistance.",
+        "equals the product of the voltage and the resistance.",
+        "is directly proportional to the resistance and inversely proportional to the voltage.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "The voltage across a resistor of resistance $10~\\Omega$ is $60$ V. Find the current flowing through it (A).",
+      "answers": [
+        "$1/6$",
+        "6",
+        "600",
+        "70",
+        "50"
+      ]
+    },
+    {
+      "text": "The voltage across a resistor is $60$ V and the current through it is $2$ A. Find its resistance ($\\Omega$).",
+      "answers": [
+        "$1/30$",
+        "120",
+        "62",
+        "30",
+        "58"
+      ]
+    },
+    {
+      "text": "Through a resistor of resistance $40~\\Omega$ flows a current of $5$ A. Find the voltage across it (V).",
+      "answers": [
+        "$1/8$",
+        "8",
+        "45",
+        "35",
+        "200"
+      ]
+    },
+    {
+      "text": "The voltage across a resistor of resistance $12~\\Omega$ is $48$ V. Find the current flowing through it (A).",
+      "answers": [
+        "4",
+        "$1/4$",
+        "576",
+        "36",
+        "60"
+      ]
+    },
+    {
+      "text": "The voltage across a resistor is $100$ V and the current through it is $5$ A. Find its resistance ($\\Omega$).",
+      "answers": [
+        "500",
+        "$1/20$",
+        "20",
+        "105",
+        "95"
+      ]
+    },
+    {
+      "text": "Through a resistor of resistance $25~\\Omega$ flows a current of $10$ A. Find the voltage across it (V).",
+      "answers": [
+        "15",
+        "0.4",
+        "2.5",
+        "250",
+        "35"
+      ]
+    },
+    {
+      "text": "What voltage (V) must be applied to the ends of a conductor of resistance $34~\\Omega$ for a current of $2$ A to flow through it?",
+      "answers": [
+        "34",
+        "17",
+        "68",
+        "51",
+        "10"
+      ]
+    },
+    {
+      "text": "If the resistance of a resistor is $R=6~\\Omega$ and the current through it is $I=2$ A, find the potential difference $\\varphi_B-\\varphi_A$ between points B and A (V).",
+      "answers": [
+        "$-12$",
+        "8",
+        "$-8$",
+        "12",
+        "3"
+      ]
+    },
+    {
+      "text": "How much charge (C) passes through a conductor whose end voltage is $24$ V and whose resistance is $20~\\Omega$ in $60$ s?",
+      "answers": [
+        "17",
+        "40",
+        "24",
+        "72",
+        "25"
+      ]
+    },
+    {
+      "text": "The graph below shows the time dependence of the potential difference applied to the ends of a conductor of resistance $12~\\Omega$. Determine the current (A) flowing through the conductor.",
+      "answers": [
+        "0",
+        "0.5",
+        "2",
+        "1",
+        "4"
+      ]
+    },
+    {
+      "text": "Through a conductor of resistance $12~\\Omega$, in $3$ minutes, an electric charge of $90$ C passed. Find the voltage across the ends of this conductor (V).",
+      "answers": [
+        "12",
+        "6",
+        "10",
+        "9",
+        "15"
+      ]
+    },
+    {
+      "text": "A cylindrical metal conductor of resistance $2~\\Omega$ has a voltage of $24$ V applied to its ends. How many electrons pass through the cross-section of this conductor in $32$ s?",
+      "answers": [
+        "$2,4\\cdot10^{21}$",
+        "$2,4\\cdot10^{20}$",
+        "$2,4\\cdot10^{22}$",
+        "$2,4\\cdot10^{19}$"
+      ]
+    },
+    {
+      "text": "How does the current in a rheostat connected to a constant-voltage source change if its resistance is reduced $4$ times by moving the slider?",
+      "answers": [
+        "increases by a factor of 2.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 4.",
+        "does not change.",
+        "decreases by a factor of 4."
+      ]
+    },
+    {
+      "text": "The voltage across a rheostat was increased $2$ times, and its resistance was decreased $3$ times. How did the current in the rheostat change?",
+      "answers": [
+        "decreased by a factor of 1.5.",
+        "increased by a factor of 1.5.",
+        "did not change.",
+        "decreased by a factor of 6.",
+        "increased by a factor of 6."
+      ]
+    },
+    {
+      "text": "How does the voltage across a part of an electric circuit with constant resistance change if the current through it is increased $4$ times?",
+      "answers": [
+        "decreases by a factor of 4.",
+        "increases by a factor of 4.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 2.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "The voltage across the ends of a conductor ...",
+      "answers": [
+        "equals the product of the current through the conductor and the resistance of the conductor.",
+        "equals the work done in moving a charge inside the conductor.",
+        "equals the ratio of the conductor's resistance to the current.",
+        "equals the ratio of the current through the conductor to the resistance of the conductor.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Which of the units given in the answers is equivalent to C/s?",
+      "answers": [
+        "V/$\\Omega$",
+        "V/m",
+        "V",
+        "V$\\cdot$m",
+        "V$\\cdot\\Omega$"
+      ]
+    },
+    {
+      "text": "Which of the following is a base unit of the International System of Units (SI)?",
+      "answers": [
+        "Volt",
+        "Coulomb",
+        "Ampere",
+        "Ohm",
+        "Farad"
+      ]
+    },
+    {
+      "text": "Which of the units listed below cannot be a unit of voltage? 1) A/s; 2) J/C; 3) A$\\cdot$s$\\Omega$; 4) N/C; 5) Nm/C; 6) W/A; 7) V.",
+      "answers": [
+        "1, 2, 4",
+        "1, 4",
+        "1, 2, 3, 4, 5, 6",
+        "1, 4, 6",
+        "2, 3, 5, 6"
+      ]
+    },
+    {
+      "text": "Name the physical quantity whose dimension has the form V$^2\\cdot$s/J.",
+      "answers": [
+        "voltage.",
+        "resistivity.",
+        "resistance.",
+        "density.",
+        "current."
+      ]
+    },
+    {
+      "text": "The figure shows graphs of current versus voltage for four different conductors. What can be said about the resistances of the conductors?",
+      "answers": [
+        "$R_1$ is the largest, $R_4$ is the smallest.",
+        "$R_4$ is the largest, $R_1$ is the smallest.",
+        "$R_1=R_2=R_3=R_4$.",
+        "$R_2>R_1>R_3>R_4$.",
+        "$R_1+R_2=R_3+R_4$."
+      ]
+    },
+    {
+      "text": "The figure shows graphs of current versus voltage for three different conductors. Using the graphs, determine which conductor has the greatest resistance.",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "all three conductors have the same resistance.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Using the graph of current versus voltage for a conductor, calculate the resistance of the conductor ($\\Omega$).",
+      "answers": [
+        "0.5",
+        "1",
+        "1.5",
+        "2",
+        "4.5"
+      ]
+    },
+    {
+      "text": "Using the graph, find the resistance of the conductor ($\\Omega$).",
+      "answers": [
+        "0.2",
+        "1.8",
+        "5",
+        "0.8",
+        "3.6"
+      ]
+    },
+    {
+      "text": "Using the current-voltage characteristics of the conductors, find the ratio of the resistance of conductor 1 to the resistance of conductor 2.",
+      "answers": [
+        "2",
+        "1.95",
+        "1.78",
+        "1.1",
+        "1.875"
+      ]
+    },
+    {
+      "text": "Using the diagram, find the ratio of the currents for resistances of $2.5~\\Omega$ and $1~\\Omega$.",
+      "answers": [
+        "2.5",
+        "0.3",
+        "2",
+        "0.4",
+        "0.1"
+      ]
+    }
+  ]
+}

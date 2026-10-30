@@ -1,0 +1,185 @@
+{
+  "title": "Topic 39 | Equation of state of an ideal gas",
+  "questions": [
+    {
+      "text": "Calculate the number of gas molecules in a volume of 1 cm³ at standard conditions (cm⁻³).",
+      "answers": [
+        "2.1 · 10¹⁸",
+        "4.6 · 10¹⁸",
+        "1.5 · 10¹⁹",
+        "2.7 · 10¹⁹"
+      ]
+    },
+    {
+      "text": "Determine the number of molecules in 1 m³ of oxygen at standard conditions.",
+      "answers": [
+        "8.1 · 10²⁵",
+        "2.7 · 10²⁵",
+        "1.8 · 10²³",
+        "3.8 · 10²⁵"
+      ]
+    },
+    {
+      "text": "The number of molecules in 1 m³ of a gas at standard conditions is determined by...",
+      "answers": [
+        "the Boltzmann constant",
+        "the molar gas constant",
+        "Avogadro's number",
+        "Loschmidt's number"
+      ]
+    },
+    {
+      "text": "With modern technology a vacuum of 1 pPa can be achieved. How many gas molecules remain in 1 cm³ of such a vacuum at a temperature of 300 K?",
+      "answers": [
+        "22",
+        "242",
+        "424",
+        "214"
+      ]
+    },
+    {
+      "text": "The gas pressure in a vessel of size 2.5 × 4 × 3 m³ is 831 mmHg and the temperature is 27°C. How many molecules are in it?",
+      "answers": [
+        "1.8 · 10²⁵",
+        "6 · 10²⁶",
+        "2.4 · 10²³",
+        "8 · 10²⁶"
+      ]
+    },
+    {
+      "text": "Determine the number of air molecules in a volume of 1 L at standard conditions.",
+      "answers": [
+        "2.7 · 10²²",
+        "6 · 10²³",
+        "2 · 10²⁰",
+        "2.7 · 10¹⁵"
+      ]
+    },
+    {
+      "text": "If a vessel of volume 15 L contains 1.8 · 10²⁴ molecules, what is the temperature (K) of this gas at a pressure of 0.5 MPa?",
+      "answers": [
+        "123",
+        "504",
+        "234",
+        "301"
+      ]
+    },
+    {
+      "text": "A gas of volume 0.8 m³ at a temperature of 300 K has a pressure of 2.8 · 10⁵ Pa. What will its temperature be (K) if at a pressure of 3.2 · 10⁵ Pa it occupies a volume of 1.4 m³?",
+      "answers": [
+        "150",
+        "165",
+        "330",
+        "600"
+      ]
+    },
+    {
+      "text": "The volume of a gas at a pressure of 7.2 · 10⁵ Pa and a temperature of 288 K is 0.6 m³. At what temperature (K) will the same mass of gas occupy a volume of 1.6 m³ if the pressure is 2.25 · 10⁵ Pa?",
+      "answers": [
+        "330",
+        "120",
+        "240",
+        "480"
+      ]
+    },
+    {
+      "text": "At a pressure of 6 atm and a temperature of 293 K, a gas occupies a volume of 586 L. Find the volume (L) that the same mass of gas will occupy at a temperature of 248 K and a pressure of 4 atm.",
+      "answers": [
+        "729",
+        "428",
+        "676",
+        "744"
+      ]
+    },
+    {
+      "text": "An ideal gas of volume 8 liters at a temperature of 900 K exerts a pressure of 1.5 atm. What must the temperature (°C) of this gas be for its pressure to be 1 atm in a volume of 4 liters?",
+      "answers": [
+        "30",
+        "27",
+        "127",
+        "237"
+      ]
+    },
+    {
+      "text": "The diameter of an air bubble rising from the bottom of a body of water to the surface increased 1.5 times. The temperature at the bottom is 5°C and at the surface 27°C. How deep is the body of water, in meters?",
+      "answers": [
+        "36",
+        "25",
+        "21.3",
+        "60"
+      ]
+    },
+    {
+      "text": "How does the pressure of an ideal gas change if its volume and absolute temperature are both increased 2 times?",
+      "answers": [
+        "does not change",
+        "increases 2 times",
+        "decreases 4 times",
+        "increases 4 times"
+      ]
+    },
+    {
+      "text": "If, when the gas temperature was raised by 300 K, the pressure and volume each increased 2 times, what is the final temperature of the gas (in kelvins)?",
+      "answers": [
+        "350",
+        "400",
+        "600",
+        "900"
+      ]
+    },
+    {
+      "text": "A sounding balloon is filled with gas at a temperature of 27°C to a pressure of 105 kPa. After the balloon rises to an altitude where the pressure is 80 kPa, its volume has increased by 5%. Find the temperature at that altitude (K).",
+      "answers": [
+        "125",
+        "445",
+        "500",
+        "255"
+      ]
+    },
+    {
+      "text": "When the absolute temperature of an ideal gas increased 2 times, its pressure increased by 25%. How many times does the volume change?",
+      "answers": [
+        "increases 1.6 times",
+        "decreases 1.6 times",
+        "increases 0.25 times",
+        "decreases 0.25 times"
+      ]
+    },
+    {
+      "text": "A rubber boat was inflated at a temperature of 7°C to a working pressure of 108 kPa. Is there a danger of the boat bursting when the temperature reaches 37°C?",
+      "answers": [
+        "Yes",
+        "No",
+        "Depends on the mass of the boat",
+        "Not enough data"
+      ]
+    },
+    {
+      "text": "A thin-walled rubber ball of radius 2 cm contains air at a pressure of 0.1 MPa and a temperature of 20°C. What will the radius of the ball be (cm) if it is lowered to a depth of 20 m in a lake at a temperature of 4°C?",
+      "answers": [
+        "0.75",
+        "2.12",
+        "1.37",
+        "1.78"
+      ]
+    },
+    {
+      "text": "How does the pressure of an ideal gas change if its temperature increases 4 times and its volume increases 2 times?",
+      "answers": [
+        "increases 4 times",
+        "does not change",
+        "decreases 2 times",
+        "increases 2 times"
+      ]
+    },
+    {
+      "text": "How did the density of an ideal gas change if its pressure increased 1.5 times when its absolute temperature increased 3 times?",
+      "answers": [
+        "increased 1.5 times",
+        "decreased 1.5 times",
+        "did not change",
+        "decreased 2 times"
+      ]
+    }
+  ]
+}

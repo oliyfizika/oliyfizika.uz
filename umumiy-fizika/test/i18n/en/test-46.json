@@ -1,0 +1,545 @@
+{
+  "title": "Topic 46 | Internal energy",
+  "questions": [
+    {
+      "text": "What is meant by the internal energy of a body (substance):\n(a) the amount of heat required to raise the temperature of 1 kg of a substance by 1 degree;\n(b) the amount of heat received or transferred by a body in heat exchange;\n(c) the amount of heat required to raise the temperature of a substance by 1 degree;\n(d) the sum of the kinetic energies and the interaction potential energies of all the molecules that make up the body.",
+      "answers": [
+        "4",
+        "3",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "text": "Find the internal energy (kJ) of 4 mol of a monatomic gas at a temperature of 361 K.",
+      "answers": [
+        "20",
+        "18",
+        "30",
+        "38"
+      ]
+    },
+    {
+      "text": "Find the temperature (K) of 6 mol of a monatomic gas whose internal energy is 20 kJ.",
+      "answers": [
+        "267.4",
+        "607.5",
+        "165.9",
+        "982.8"
+      ]
+    },
+    {
+      "text": "The internal energy of a monatomic gas at a temperature of 127°C is 74.79 kJ. Find the amount of substance of the gas (mol).",
+      "answers": [
+        "28",
+        "18",
+        "30",
+        "15"
+      ]
+    },
+    {
+      "text": "Find the expression that determines the internal energy of 1 mol of a monatomic ideal gas:\n(a) 3kT/2\n(b) 3RT/2\n(c) 3NAkT/2\n(d) kT/2",
+      "answers": [
+        "1",
+        "1 and 2",
+        "2 and 3",
+        "4"
+      ]
+    },
+    {
+      "text": "Which expression correctly gives the sum of the average kinetic energies of the molecules of 1 mol of a monatomic ideal gas?",
+      "answers": [
+        "Ek = 3kT",
+        "Ek = 3RT/2",
+        "Ek = 3kT/2",
+        "Ek = 3RT"
+      ]
+    },
+    {
+      "text": "Find the internal energy (J) of one mole of a monatomic ideal gas at a temperature of -73°C.",
+      "answers": [
+        "1246",
+        "1662",
+        "2077",
+        "2493"
+      ]
+    },
+    {
+      "text": "The figure shows the graph of the internal energy of a monatomic ideal gas versus absolute temperature. Using the graph, determine the amount of substance of the gas (mol). R = 8.31 J/(mol·K).",
+      "answers": [
+        "0.5",
+        "1.6",
+        "10",
+        "16"
+      ]
+    },
+    {
+      "text": "A monatomic gas is at a temperature of 225 K. If the number of molecules in it is 7 · 10²⁴, find the internal energy of the gas (kJ).",
+      "answers": [
+        "25.8",
+        "21.8",
+        "32.6",
+        "28.1"
+      ]
+    },
+    {
+      "text": "The mass of helium gas is 200 g and its temperature is 500 K. Find its internal energy (kJ). µ = 4 g/mol.",
+      "answers": [
+        "564.45",
+        "345.52",
+        "876.065",
+        "311.625"
+      ]
+    },
+    {
+      "text": "Determine the mass (g) of helium gas at a temperature of -73°C and an internal energy of 2493 J.",
+      "answers": [
+        "3",
+        "4",
+        "6",
+        "17"
+      ]
+    },
+    {
+      "text": "The internal energy of neon gas is 50 kJ and its mass is 1.2 kg. Find its temperature (K). µ = 20 g/mol.",
+      "answers": [
+        "64.45",
+        "35.26",
+        "66.85",
+        "11.15"
+      ]
+    },
+    {
+      "text": "A monatomic gas has an internal energy of 100 kJ, a mass of 334.27 g and a temperature of 327°C. Find its molar mass (g/mol).",
+      "answers": [
+        "25",
+        "21",
+        "32",
+        "28"
+      ]
+    },
+    {
+      "text": "The pressure of a monatomic gas of volume 10 liters is 40 kPa. Find its internal energy (J).",
+      "answers": [
+        "250",
+        "420",
+        "130",
+        "600"
+      ]
+    },
+    {
+      "text": "The internal energy of a monatomic gas at a pressure of 24 Pa is 36 J. Find its volume (m³).",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "The volume of a vessel is 2 liters, and the pressure of the helium in it is 10 kPa. What is the internal energy of the gas (J)?",
+      "answers": [
+        "20",
+        "60",
+        "30",
+        "45"
+      ]
+    },
+    {
+      "text": "If the volume of a monatomic ideal gas is 2 m³ and its internal energy is 1500 J, what is its pressure (Pa)?",
+      "answers": [
+        "500",
+        "1500",
+        "1000",
+        "300"
+      ]
+    },
+    {
+      "text": "Find the sum of the kinetic energies of the molecules of 1 m³ of a monatomic ideal gas at a pressure of 4 · 10⁵ Pa (J).",
+      "answers": [
+        "2 · 10⁵",
+        "6 · 10⁵",
+        "8 · 10⁵",
+        "12 · 10⁵"
+      ]
+    },
+    {
+      "text": "What is the internal energy (in joules) of a monatomic gas of mass 20 g if the root-mean-square speed of its molecules is 500 m/s?",
+      "answers": [
+        "50",
+        "250",
+        "200",
+        "2500"
+      ]
+    },
+    {
+      "text": "Compare the internal energies U₁ and U₂ of oxygen and hydrogen at equal pressures and volumes.",
+      "answers": [
+        "U1 = 32U2",
+        "U1 = 16U2",
+        "U1 = U2",
+        "U2 = 16U1"
+      ]
+    },
+    {
+      "text": "Compare the internal energies of monatomic ideal gases whose pressures are p₁ = 2p₂ and volumes are V₂ = 2V₁.",
+      "answers": [
+        "U1 = 4U2",
+        "U1 = 2U2",
+        "U1 = U2",
+        "U2 = 2U1"
+      ]
+    },
+    {
+      "text": "Argon and helium have the same mass and are under the same conditions. Compare their internal energies. (µAr = 40 g/mol, µHe = 4 g/mol)",
+      "answers": [
+        "helium's is 10 times greater.",
+        "argon's is 10 times greater.",
+        "they are equal.",
+        "argon's is 4 times smaller."
+      ]
+    },
+    {
+      "text": "What is the ratio of the internal energies of helium and argon of equal mass at the same temperature? The molar mass of helium is 4 g/mol, that of argon is 40 g/mol.",
+      "answers": [
+        "1",
+        "2",
+        "10",
+        "1/4"
+      ]
+    },
+    {
+      "text": "If the concentration of molecules of a monatomic gas is n, what is the internal energy of the gas occupying volume V at temperature T?",
+      "answers": [
+        "3mV / (2µ) RT",
+        "3nV / 2 RT",
+        "3m / 2µ RT",
+        "1.5 n V k T"
+      ]
+    },
+    {
+      "text": "At the state corresponding to which point on the pV diagram does the ideal gas have the greatest internal energy?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "The graph in p–V coordinates shows the change of state of an ideal gas. At the state corresponding to which point does the internal energy of the gas reach its greatest value?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "Which point on the diagram of the change of state of an ideal gas corresponds to the greatest value of internal energy?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "Which point on the diagram of the change of state of an ideal gas corresponds to the smallest value of internal energy?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "Points representing the state of a gas are given in p–ρ coordinates (p is pressure, ρ is density). At which of these points is the internal energy of the gas the greatest?",
+      "answers": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "text": "Find the change in internal energy (J) of 12 g of helium with an initial temperature of 250 K and a final temperature of 400 K.",
+      "answers": [
+        "5421.05",
+        "1894.04",
+        "2345.54",
+        "5609.25"
+      ]
+    },
+    {
+      "text": "Heat was supplied to 3 mol of argon gas at a temperature of 400 K, raising its temperature to 460 K. Find the change in its internal energy (J).",
+      "answers": [
+        "5645.5",
+        "2243.7",
+        "9804.3",
+        "5670.1"
+      ]
+    },
+    {
+      "text": "By how many kJ does the internal energy of 2 mol of helium decrease when it is cooled from 20°C to -80°C?",
+      "answers": [
+        "8.31",
+        "25",
+        "2.5",
+        "16.62"
+      ]
+    },
+    {
+      "text": "By how many J does the internal energy of a monatomic ideal gas containing 4 · 10²³ molecules change when its temperature increases by 100 K? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "8.31",
+        "38.1",
+        "415",
+        "831"
+      ]
+    },
+    {
+      "text": "A cylinder of volume 80 L contains a monatomic ideal gas. By how much (kJ) does its internal energy increase if the pressure rises from 150 kPa to 220 kPa?",
+      "answers": [
+        "8.4",
+        "3.8",
+        "6.6",
+        "9.7"
+      ]
+    },
+    {
+      "text": "The volume of a monatomic ideal gas at a pressure of 200 kPa increased isobarically from 75 L to 195 L. Find the change in its internal energy (kJ).",
+      "answers": [
+        "45",
+        "93",
+        "84",
+        "36"
+      ]
+    },
+    {
+      "text": "A monatomic ideal gas expanded isobarically by 0.05 m³. If the gas pressure is 10⁵ Pa, by how many kJ did the internal energy of the gas increase?",
+      "answers": [
+        "5.5",
+        "8",
+        "7.5",
+        "9"
+      ]
+    },
+    {
+      "text": "How does the internal energy of a gas change during its isothermal expansion?",
+      "answers": [
+        "it increases",
+        "it does not change",
+        "it decreases",
+        "the internal energy can be arbitrary"
+      ]
+    },
+    {
+      "text": "When a gas in a metal cylinder is compressed isothermally by a piston, its volume decreases by a factor of 5. How does the internal energy of the gas change?",
+      "answers": [
+        "increases 5 times",
+        "does not change",
+        "decreases 5 times",
+        "increases 2.5 times"
+      ]
+    },
+    {
+      "text": "How will the internal energy of an ideal gas change if its pressure and absolute temperature both increase by a factor of 2?",
+      "answers": [
+        "will not change",
+        "will decrease 2 times",
+        "will increase 2 times",
+        "will decrease 4 times"
+      ]
+    },
+    {
+      "text": "An ideal gas is taken from one state to another in 3 different ways: 1 → a → 2, 1 → b → 2, 1 → c → 2. Compare the changes in the internal energy of the gas in these processes.",
+      "answers": [
+        "ΔUa > ΔUb > ΔUc",
+        "ΔUa < ΔUb < ΔUc",
+        "ΔUa = ΔUb = ΔUc",
+        "ΔUa = ΔUb = ΔUc = 0"
+      ]
+    },
+    {
+      "text": "The graph shows the dependence of the internal energy of a gas on its volume. How did the density and pressure of the gas change in process 2-3?",
+      "answers": [
+        "did not change, increased",
+        "increased, decreased",
+        "decreased, increased",
+        "increased, increased"
+      ]
+    },
+    {
+      "text": "Two isothermal processes were carried out on an ideal gas as shown in the graph. In the first case the internal energy of the gas was 111 kJ. In the second case it differed from the first by 37 kJ. If the temperature difference between the two processes was 125 K, determine the temperature in the second case (K).",
+      "answers": [
+        "227",
+        "375",
+        "250",
+        "500"
+      ]
+    },
+    {
+      "text": "If equal amounts of H₂, O₂ and N₂ gases are heated by the same temperature increase, the internal energy of which gas changes the most?",
+      "answers": [
+        "H2",
+        "O2",
+        "N2",
+        "it changes equally for all of them"
+      ]
+    },
+    {
+      "text": "Which of the following relations for gas pressure is incorrect?",
+      "answers": [
+        "p = nkT",
+        "p = 2/3 nEk",
+        "p = 1/2 ρ v²",
+        "p = 2U / (3V)"
+      ]
+    },
+    {
+      "text": "How does the internal energy of a monatomic gas change when it is heated isobarically?",
+      "answers": [
+        "does not change",
+        "decreases",
+        "increases",
+        "can change arbitrarily"
+      ]
+    },
+    {
+      "text": "How does the internal energy of an ideal gas change during isobaric expansion?",
+      "answers": [
+        "does not change",
+        "decreases",
+        "increases",
+        "the answer depends on the pressure"
+      ]
+    },
+    {
+      "text": "How does the internal energy of an ideal gas change during isobaric compression?",
+      "answers": [
+        "does not change",
+        "decreases",
+        "increases",
+        "the internal energy of an ideal gas is always zero"
+      ]
+    },
+    {
+      "text": "In the process shown in the graph, the internal energy of an ideal gas ...",
+      "answers": [
+        "first increases, then decreases",
+        "increases",
+        "decreases",
+        "does not change"
+      ]
+    },
+    {
+      "text": "How will the internal energy of an ideal gas change if its pressure and volume both increase by a factor of 2?",
+      "answers": [
+        "will increase 2 times",
+        "will increase 8 times",
+        "will decrease 2 times",
+        "will increase 4 times"
+      ]
+    },
+    {
+      "text": "How will the internal energy of an ideal gas change if its pressure increases by a factor of 2 and its volume decreases by a factor of 2?",
+      "answers": [
+        "will not change",
+        "will decrease 4 times",
+        "will increase 4 times",
+        "will decrease 2 times"
+      ]
+    },
+    {
+      "text": "How will the internal energy of an ideal gas change if its pressure decreases by a factor of 2 and its volume increases by a factor of 3?",
+      "answers": [
+        "will decrease 6 times",
+        "will increase 6 times",
+        "will decrease 1.5 times",
+        "will increase 1.5 times"
+      ]
+    },
+    {
+      "text": "How will the internal energy of a monatomic ideal gas change if its pressure decreases by 50% and its volume increases by a factor of 2?",
+      "answers": [
+        "will not change",
+        "will decrease 4 times",
+        "will increase 4 times",
+        "will decrease 2 times"
+      ]
+    },
+    {
+      "text": "When an ideal gas is cooled isochorically, its internal energy decreased by a factor of 1.5. How did its volume change?",
+      "answers": [
+        "did not change",
+        "decreased 1.5 times",
+        "decreased 2.25 times",
+        "increased 2.25 times"
+      ]
+    },
+    {
+      "text": "How did the internal energy of a monatomic gas change if its volume decreased by a factor of 3 while its pressure increased by 50%?",
+      "answers": [
+        "increased 3 times",
+        "decreased 2 times",
+        "decreased 3 times",
+        "did not change"
+      ]
+    },
+    {
+      "text": "How will the internal energy of a monatomic ideal gas change if its pressure increases by a factor of 3 and its volume decreases by a factor of 2? (m = const)",
+      "answers": [
+        "will increase 6 times",
+        "will increase 3 times",
+        "will decrease 3 times",
+        "will increase 1.5 times"
+      ]
+    },
+    {
+      "text": "An open vessel was heated. How does the internal energy of the air inside the vessel change?",
+      "answers": [
+        "increases",
+        "does not change",
+        "first decreases, then increases",
+        "decreases"
+      ]
+    },
+    {
+      "text": "How does the internal energy of the air in a room change when a stove is lit?",
+      "answers": [
+        "decreases",
+        "increases",
+        "does not change",
+        "depends on the temperature of the outside environment"
+      ]
+    },
+    {
+      "text": "When the temperature of the gas in a cylinder rose by 100 K, its pressure increased by a factor of 2. By what factor did the internal energy increase?",
+      "answers": [
+        "1.5",
+        "2",
+        "4",
+        "25"
+      ]
+    },
+    {
+      "text": "If, as a result of 25% of the gas escaping from a cylinder, the temperature drops by a factor of 1.2, by what factor does the internal energy decrease?",
+      "answers": [
+        "4.8",
+        "3.2",
+        "1.6",
+        "2.4"
+      ]
+    },
+    {
+      "text": "When half of the gas escaped from a cylinder, the pressure decreased by a factor of 3. How did the internal energy of the gas change?",
+      "answers": [
+        "decreased 1.5 times",
+        "increased 3 times",
+        "decreased 3 times",
+        "increased 1.5 times"
+      ]
+    }
+  ]
+}

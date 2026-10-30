@@ -1,0 +1,95 @@
+{
+  "title": "Topic 1 | Mechanical motion test",
+  "questions": [
+    {
+      "text": "What is mechanical motion?",
+      "answers": [
+        "A change in the mass of a body",
+        "A change in the position of a body relative to other bodies over time",
+        "A change in the color of a body",
+        "A change in the volume of a body"
+      ]
+    },
+    {
+      "text": "What is a trajectory?",
+      "answers": [
+        "The mass of a body",
+        "The speed of a body",
+        "The path a body traces while moving",
+        "The volume of a body"
+      ]
+    },
+    {
+      "text": "In which answer is the formula for speed given correctly?",
+      "answers": [
+        "v = s · t",
+        "v = t/s",
+        "v = s/t",
+        "v = s + t"
+      ]
+    },
+    {
+      "text": "What is the unit of speed in the International System of Units?",
+      "answers": [
+        "m",
+        "s",
+        "m/s",
+        "N"
+      ]
+    },
+    {
+      "text": "A body covered 120 m in 20 s. Find its speed.",
+      "answers": [
+        "4 m/s",
+        "5 m/s",
+        "6 m/s",
+        "8 m/s"
+      ]
+    },
+    {
+      "text": "What kind of motion is called uniform motion?",
+      "answers": [
+        "Motion in which the speed changes",
+        "Motion along a curved path",
+        "Motion in which equal distances are covered in equal intervals of time",
+        "Only vertical motion"
+      ]
+    },
+    {
+      "text": "Which letter denotes the distance traveled by a body?",
+      "answers": [
+        "t",
+        "m",
+        "s",
+        "v"
+      ]
+    },
+    {
+      "text": "What is the SI unit of time?",
+      "answers": [
+        "minute",
+        "hour",
+        "second",
+        "day"
+      ]
+    },
+    {
+      "text": "If the speed of a body keeps increasing, what is this motion called?",
+      "answers": [
+        "Uniform motion",
+        "Non-uniform motion",
+        "Rest",
+        "Circular motion"
+      ]
+    },
+    {
+      "text": "In which answer is the formula for distance given correctly?",
+      "answers": [
+        "s = vt",
+        "s = v/t",
+        "s = t/v",
+        "s = v + t"
+      ]
+    }
+  ]
+}

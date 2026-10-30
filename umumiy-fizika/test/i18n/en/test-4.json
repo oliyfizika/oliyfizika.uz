@@ -1,0 +1,140 @@
+{
+  "title": "Topic 4 | Uniformly accelerated motion. Acceleration",
+  "questions": [
+    {
+      "text": "A body moving with uniform acceleration increased its speed from 0.1 m/s to 0.4 m/s in 6 s. What was the body's acceleration (in m/s²)?",
+      "answers": [
+        "5",
+        "0.5",
+        "0.05",
+        "0.005"
+      ]
+    },
+    {
+      "text": "In rectilinear uniformly decelerated motion, the acceleration vector ...",
+      "answers": [
+        "is constant in magnitude, and its direction keeps changing",
+        "changes in both magnitude and direction",
+        "for a > 0, does not change in magnitude or direction",
+        "for a < 0, does not change in magnitude or direction"
+      ]
+    },
+    {
+      "text": "What must be given in order to calculate the instantaneous velocity in uniformly variable motion?",
+      "answers": [
+        "the initial velocity and the acceleration of the motion",
+        "the acceleration and the time of motion",
+        "the initial velocity and the magnitude of the acceleration",
+        "the acceleration, the time of motion and the initial velocity"
+      ]
+    },
+    {
+      "text": "If a car's initial speed is 36 km/h and it stops after 1 minute, what is the equation of speed versus time during braking?",
+      "answers": [
+        "v = 10 − 20t",
+        "v = 10 − 0.17t",
+        "v = 36 − 36t",
+        "v = 36 + 36t"
+      ]
+    },
+    {
+      "text": "A body moves with uniform deceleration with initial speed v₀ and acceleration a. After how much time will the speed of the body decrease by a factor of 2?",
+      "answers": [
+        "v₀/a",
+        "2v₀/a",
+        "v₀/3a",
+        "v₀/2a"
+      ]
+    },
+    {
+      "text": "A body starting from rest moved with acceleration 2a for a time t, then moved uniformly for a time 4t. Finally it moved with acceleration a for a further time 2t. Find the final speed of the body.",
+      "answers": [
+        "−at",
+        "at",
+        "4at",
+        "0"
+      ]
+    },
+    {
+      "text": "A car travelling at 20 m/s stopped in 2 s as a result of braking. Determine the braking distance of the car (m).",
+      "answers": [
+        "20",
+        "150",
+        "100",
+        "50"
+      ]
+    },
+    {
+      "text": "If the initial speed and the acceleration of a body in rectilinear uniformly accelerated motion with an initial speed are both increased by a factor of 3, by what factor does its displacement per unit time increase?",
+      "answers": [
+        "1.5",
+        "4.5",
+        "3",
+        "6"
+      ]
+    },
+    {
+      "text": "Which of the following equations refer to uniform motion? 1) s = 2t; 2) s = at²; 3) x = 3t + 2; 4) v = 4 + t; 5) v = 5",
+      "answers": [
+        "2,3,4",
+        "1,2,3",
+        "1,3,5",
+        "3,4,5"
+      ]
+    },
+    {
+      "text": "The law of variation of a material point's speed with time is v = 4t. What distance does it travel in 5 seconds (m)?",
+      "answers": [
+        "32",
+        "16",
+        "18",
+        "50"
+      ]
+    },
+    {
+      "text": "A body moving with uniform acceleration from rest travelled 27 m during the 5th second of motion. What is its acceleration (m/s²)?",
+      "answers": [
+        "3.5",
+        "5.4",
+        "6",
+        "9"
+      ]
+    },
+    {
+      "text": "A jet aircraft needs a 640 m long runway on the ground to take off. Its engines can give it an acceleration of 5 m/s². What must be the minimum length of the deck of an aircraft carrier moving at a speed of 72 km/h so that the aircraft can take off from it using only its own engines?",
+      "answers": [
+        "64",
+        "360",
+        "400",
+        "480"
+      ]
+    },
+    {
+      "text": "A body started moving, moved with uniform acceleration during the first 1/3 of the motion time, then uniformly, and during the last 1/4 of the time moved with uniform deceleration and stopped. If the average speed of the body in this motion is 17 m/s, what is the maximum speed of the body (m/s)?",
+      "answers": [
+        "24",
+        "20",
+        "34",
+        "51"
+      ]
+    },
+    {
+      "text": "The equation of motion of a body is x = 3 + 8t − t². What distance does the body travel until its speed becomes zero (m)?",
+      "answers": [
+        "3",
+        "8",
+        "16",
+        "19"
+      ]
+    },
+    {
+      "text": "The equation of motion of a material point is x = 12t − 2t². What distance does it travel from t = 0 until it stops (m)?",
+      "answers": [
+        "12",
+        "18",
+        "16",
+        "32"
+      ]
+    }
+  ]
+}

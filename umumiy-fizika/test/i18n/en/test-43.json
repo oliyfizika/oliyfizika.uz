@@ -1,0 +1,311 @@
+{
+  "title": "Topic 43 | Saturated vapor. Air humidity. Relative humidity",
+  "questions": [
+    {
+      "text": "What is the state called in which the number of molecules leaving a liquid in a given time equals the number of vapor molecules returning to the liquid in the same time?",
+      "answers": [
+        "Thermodynamic equilibrium",
+        "Curie state",
+        "Dynamic equilibrium",
+        "Critical state"
+      ]
+    },
+    {
+      "text": "How does the pressure of saturated vapor depend on volume?",
+      "answers": [
+        "directly proportional to the volume",
+        "does not depend on the volume",
+        "inversely proportional to the volume",
+        "proportional to the square of the volume"
+      ]
+    },
+    {
+      "text": "A sealed vessel contains only saturated water vapor (no water). How does the concentration of vapor molecules change when the vessel is heated?",
+      "answers": [
+        "does not change",
+        "decreases",
+        "increases",
+        "may either increase or decrease"
+      ]
+    },
+    {
+      "text": "The first closed vessel contains water and water vapor, and the second contains only saturated water vapor. How does the pressure in these vessels change when the temperature rises?",
+      "answers": [
+        "Increases equally in both",
+        "Increases more in the 1st",
+        "Increases more in the 2nd",
+        "Does not change in the 1st, increases in the 2nd"
+      ]
+    },
+    {
+      "text": "In what state of matter is a substance at a temperature above its critical temperature?",
+      "answers": [
+        "gas",
+        "liquid",
+        "solid",
+        "saturated vapor"
+      ]
+    },
+    {
+      "text": "In which case can gases be liquefied?",
+      "answers": [
+        "at any temperature",
+        "at a temperature above the critical temperature",
+        "only at a temperature of 0°C",
+        "at a temperature below the critical temperature"
+      ]
+    },
+    {
+      "text": "Which of the given statements is incorrect?",
+      "answers": [
+        "saturated vapor obeys the Mendeleev–Clapeyron law.",
+        "at the critical temperature the difference between the physical properties of the liquid and the saturated vapor disappears.",
+        "the higher the temperature, the greater the pressure of saturated vapor.",
+        "the pressure of saturated vapor at constant temperature depends on the volume occupied by the vapor."
+      ]
+    },
+    {
+      "text": "How does the pressure of saturated vapor change if its volume is decreased 4 times at constant temperature?",
+      "answers": [
+        "increases 2 times",
+        "decreases 2 times",
+        "does not change",
+        "decreases 4 times"
+      ]
+    },
+    {
+      "text": "A closed vessel contains water and its saturated vapor. How does the density of the saturated vapor change when the temperature decreases?",
+      "answers": [
+        "decreases",
+        "increases",
+        "does not change",
+        "may either increase or decrease"
+      ]
+    },
+    {
+      "text": "The temperature of saturated water vapor is 100°C and it occupies a certain volume. How does its pressure change if the volume of the vapor is halved while keeping the initial temperature?",
+      "answers": [
+        "does not change",
+        "increases",
+        "decreases",
+        "increases 2 times"
+      ]
+    },
+    {
+      "text": "A vessel contains water and its saturated vapor. How does the pressure of the saturated vapor change if its volume is halved without changing the temperature?",
+      "answers": [
+        "decreases 1.4 times",
+        "increases 1.4 times",
+        "does not change",
+        "increases 2 times"
+      ]
+    },
+    {
+      "text": "At the critical temperature the density of a liquid is 925 kg/m³. Find the density of its vapor at this temperature (kg/m³).",
+      "answers": [
+        "1",
+        "9.25",
+        "92.5",
+        "925"
+      ]
+    },
+    {
+      "text": "What is the density of saturated water vapor at 100°C (kg/m³)?",
+      "answers": [
+        "0.59",
+        "0.28",
+        "0.16",
+        "0.75"
+      ]
+    },
+    {
+      "text": "At the critical temperature the density of a liquid is 850 kg/m³. Find the density of its vapor at this temperature (kg/m³).",
+      "answers": [
+        "1",
+        "0.825",
+        "8.25",
+        "850"
+      ]
+    },
+    {
+      "text": "The pressure of saturated vapor is 29.5 kPa. What will its pressure be after 2 hours if its volume is doubled (kPa)? T = const.",
+      "answers": [
+        "1",
+        "100",
+        "14.75",
+        "29.5"
+      ]
+    },
+    {
+      "text": "Complete the definition: \"The partial pressure of water vapor in air is.........\"",
+      "answers": [
+        "the pressure at which the vapor condenses",
+        "the pressure that water vapor produces when saturated",
+        "the pressure that water vapor would produce in the absence of other gases",
+        "the air pressure shown by a barometer"
+      ]
+    },
+    {
+      "text": "Complete the sentence. Absolute humidity is: 1) the pressure of saturated vapor at a given temperature. 2) the partial pressure of water vapor in the air at a given temperature. 3) the mass of saturated vapor in the air. 4) the amount of water vapor in 1 m³ of air. 5) a quantity measured by the amount of water vapor contained in the air.",
+      "answers": [
+        "1, 5",
+        "2, 4, 5",
+        "2, 3",
+        "3, 4"
+      ]
+    },
+    {
+      "text": "With which instrument is the dew point determined?",
+      "answers": [
+        "areometer",
+        "manometer",
+        "tachometer",
+        "hygrometer"
+      ]
+    },
+    {
+      "text": "Which of the statements below is incorrect? 1) at the dew point the relative humidity of the air rises to 100%, 2) the temperature at which water vapor becomes saturated is called the dew point 3) if air is cooled to the dew point, the vapor begins to condense: fog forms and dew falls. 4) at the dew point the pressure of water vapor in the air equals the pressure of saturated vapor. 5) at the dew point the density of water vapor in the air equals the density of saturated vapor.",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "20 L of air was passed through a tube containing a moisture absorber. The mass of the tube increased by 400 mg. What is the absolute humidity of the air (g/m³)?",
+      "answers": [
+        "40",
+        "30",
+        "20",
+        "50"
+      ]
+    },
+    {
+      "text": "When 2 L of air was passed through a tube containing a moisture absorber, the absolute humidity of the air was found to be 60 g/m³. By how much did the mass of the tube increase?",
+      "answers": [
+        "30 g",
+        "12 g",
+        "12 mg",
+        "120 mg"
+      ]
+    },
+    {
+      "text": "If 5 m³ of air at 20°C contains 50 g of water vapor, what is the relative humidity of the air? (The density of saturated water vapor at 20°C is 17.3 g/m³.)",
+      "answers": [
+        "65%",
+        "62%",
+        "58%",
+        "76%"
+      ]
+    },
+    {
+      "text": "1 m³ of air with a humidity of 15% was mixed with 2 m³ of air with a humidity of 30%. At the same temperature the mixture occupies a volume of 3 m³. Find the humidity of the mixture.",
+      "answers": [
+        "25%",
+        "21.5%",
+        "26.7%",
+        "28%"
+      ]
+    },
+    {
+      "text": "A closed vessel with a capacity of 2 liters contains saturated water vapor at 20°C. How much water forms in the vessel when the temperature drops to 5°C? (The density of saturated vapor is 17.3 g/m³ at 20°C and 6.8 g/m³ at 5°C.)",
+      "answers": [
+        "13.6 mg",
+        "21 mg",
+        "10.6 mg",
+        "5.33 mg"
+      ]
+    },
+    {
+      "text": "The humidity of the room air is 90%. If T1 is the reading of the dry-bulb thermometer of a psychrometer and T2 is the reading of the wet-bulb thermometer, which of the following relations is correct?",
+      "answers": [
+        "T1 > T2",
+        "T1 < T2",
+        "T1 = T2",
+        "T1 = T2 + 90K"
+      ]
+    },
+    {
+      "text": "How does the relative humidity of air change if the difference between the readings of the dry-bulb and wet-bulb thermometers of a psychrometer increases?",
+      "answers": [
+        "decreases",
+        "increases",
+        "does not change",
+        "may either increase or decrease"
+      ]
+    },
+    {
+      "text": "How does the relative humidity of air change if the difference between the readings of the dry-bulb and wet-bulb thermometers of a psychrometer decreases?",
+      "answers": [
+        "decreases",
+        "increases",
+        "does not change",
+        "may either increase or decrease"
+      ]
+    },
+    {
+      "text": "How does the relative humidity of air change if the temperature of the dry-bulb thermometer of a psychrometer is kept constant while the temperature of the wet-bulb thermometer is lowered?",
+      "answers": [
+        "decreases",
+        "increases",
+        "does not change",
+        "may either increase or decrease"
+      ]
+    },
+    {
+      "text": "Determine the absolute humidity of the air (kg/m³). The partial pressure of the vapor in the air is 14 kPa, the temperature is 60°C (T = 333 K). The molar mass of water is 0.018 kg/mol.",
+      "answers": [
+        "0.065",
+        "0.091",
+        "0.65",
+        "0.340"
+      ]
+    },
+    {
+      "text": "The air temperature in a room is 19°C and the partial pressure of water vapor is 1.1 kPa. If the pressure of saturated water vapor at this temperature is 2.2 kPa, what is the relative humidity in this room (%)?",
+      "answers": [
+        "40",
+        "50",
+        "55",
+        "60"
+      ]
+    },
+    {
+      "text": "A closed vessel with a capacity of 2 L contains saturated water vapor at 20°C. How much water forms in the vessel when the temperature drops to 5°C (mg)? The densities of saturated vapor at 278 K, 291 K, 293 K are 6.8 g/m³, 15.4 g/m³, 17.3 g/m³ respectively.",
+      "answers": [
+        "12",
+        "21",
+        "42",
+        "82"
+      ]
+    },
+    {
+      "text": "By what factor is the molecule concentration of saturated water vapor at 20°C greater than at 10°C? The densities of saturated vapor at 283 K, 291 K, 293 K are 9.4 g/m³, 15.4 g/m³, 17.3 g/m³ respectively.",
+      "answers": [
+        "2.83 times",
+        "1.83 times",
+        "1.21 times",
+        "1.12 times"
+      ]
+    },
+    {
+      "text": "During the day at 20°C the relative humidity of the air was 60%. If the temperature drops to 8°C at night, how much water separates out as dew from each cubic meter of air (g)? The densities of saturated vapor at 281 K, 284 K, 293 K are 8.3 g/m³, 10 g/m³, 17.3 g/m³ respectively.",
+      "answers": [
+        "0.4",
+        "21",
+        "3.4",
+        "2.1"
+      ]
+    },
+    {
+      "text": "In the evening at 16°C the relative humidity of the air is 55%. Will dew fall if the temperature drops to 8°C at night? The densities of saturated vapor at 281 K, 284 K, 289 K are 8.3 g/m³, 10 g/m³, 13.6 g/m³ respectively.",
+      "answers": [
+        "Dew will not fall",
+        "Yes, it will",
+        "It may or may not fall",
+        "Unknown"
+      ]
+    }
+  ]
+}

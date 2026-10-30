@@ -1,0 +1,495 @@
+{
+  "title": "Topic 60 | Electrical resistances",
+  "questions": [
+    {
+      "text": "What does the resistance of a conductor depend on?",
+      "answers": [
+        "on the current.",
+        "on the voltage.",
+        "on the material of the conductor and its geometric dimensions.",
+        "on the current density.",
+        "on the current in the conductor and the voltage."
+      ]
+    },
+    {
+      "text": "If the voltage across the ends of a conductor is increased, its resistance...",
+      "answers": [
+        "increases.",
+        "does not change.",
+        "decreases.",
+        "may either increase or decrease.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Which of the given formulas expresses the dependence of a conductor's resistance on its length?",
+      "answers": [
+        "$R=R_0(1+\\alpha t)$.",
+        "$R=\\dfrac{U}{I}$.",
+        "$R=\\rho\\dfrac{l}{S}$.",
+        "$R=\\dfrac{Q}{I^2t}$.",
+        "$R=\\dfrac{P}{I^2}$."
+      ]
+    },
+    {
+      "text": "A tungsten wire $40$ cm long with a cross-sectional area of $0,002$ mm$^2$ is taken to make the filament of an incandescent lamp. The resistivity of tungsten is $5.5\\cdot10^{-8}~\\Omega\\cdot$m. Find the resistance of the filament ($\\Omega$).",
+      "answers": [
+        "0.11",
+        "1.1",
+        "5.5",
+        "11",
+        "110"
+      ]
+    },
+    {
+      "text": "Find the resistance of a copper wire $50$ m long with a cross-sectional area of $34$ mm$^2$ (m$\\Omega$). The resistivity of copper is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "25",
+        "5",
+        "50",
+        "500",
+        "5000"
+      ]
+    },
+    {
+      "text": "The resistance of a nickelin wire $210$ m long is $14.7~\\Omega$. Find its cross-sectional area (mm$^2$). $\\rho=4.2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "answers": [
+        "1",
+        "4",
+        "1.5",
+        "6",
+        "4.5"
+      ]
+    },
+    {
+      "text": "The cross-sectional area of an aluminum wire is $0.5$ cm$^2$ and its resistance is $2.8~\\Omega$. Find the length of the wire (m). $\\rho=2.8\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "1.4",
+        "5",
+        "50",
+        "500",
+        "5000"
+      ]
+    },
+    {
+      "text": "How many meters long must a copper wire with a cross-sectional area of $0.17$ mm$^2$ be for its resistance to be $9~\\Omega$? The resistivity of copper is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "900",
+        "90",
+        "170",
+        "200",
+        "270"
+      ]
+    },
+    {
+      "text": "For a voltage of $12$ mV, determine the current (mA) in a steel wire $10$ m long with a cross-section of $2$ mm$^2$. $\\rho=12\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "20",
+        "17",
+        "10",
+        "0.2",
+        "0.1"
+      ]
+    },
+    {
+      "text": "A DC power transmission line is made of wire with a cross-sectional area of $150$ mm$^2$, a resistivity of $2.8\\cdot10^{-8}~\\Omega\\cdot$m and a length of $150$ km. What is the voltage drop along the line (in volts) if the current is $100$ A?",
+      "answers": [
+        "280",
+        "5600",
+        "2800",
+        "560",
+        "1400"
+      ]
+    },
+    {
+      "text": "In an aluminum wire $500$ km long with a cross-sectional area of $10$ mm$^2$, a current of $10$ mA flows. What is the voltage across its ends (in volts)? The resistivity of aluminum is $2.8\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "56",
+        "50",
+        "35",
+        "28",
+        "14"
+      ]
+    },
+    {
+      "text": "A rheostat made of nickelin wire with a cross-section of $1$ mm$^2$ is connected to an ammeter reading $20$ A and a voltmeter reading $210$ V ($\\rho=4.2\\cdot10^{-7}~\\Omega\\cdot$m). How many meters long is the rheostat wire?",
+      "answers": [
+        "150",
+        "180",
+        "200",
+        "250",
+        "300"
+      ]
+    },
+    {
+      "text": "How does the resistance of a conductor change if its cross-sectional area is increased $2$ times and its length $3$ times?",
+      "answers": [
+        "decreases by a factor of 3.",
+        "increases by a factor of 1.5.",
+        "increases by a factor of 3.",
+        "decreases by a factor of 1.5.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "The resistance of a copper wire is $6~\\Omega$. What is the resistance of a copper wire whose cross-sectional area is $3$ times larger and whose length is $2$ times larger ($\\Omega$)?",
+      "answers": [
+        "3",
+        "4",
+        "8",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "text": "The electrical resistance of a copper wire is $6~\\Omega$. What is the resistance of a copper wire whose length is $3$ times larger and whose diameter is $2$ times larger ($\\Omega$)?",
+      "answers": [
+        "72",
+        "9",
+        "8",
+        "4",
+        "4.5"
+      ]
+    },
+    {
+      "text": "The electrical resistance of a copper wire is $6~\\Omega$. What is the resistance of a copper wire whose length is $3$ times larger and whose diameter is $2$ times smaller ($\\Omega$)?",
+      "answers": [
+        "72",
+        "9",
+        "8",
+        "4.5",
+        "4"
+      ]
+    },
+    {
+      "text": "A conductor of length $l$ and cross-sectional area $S$ has an electrical resistance of $4~\\Omega$. What resistance will a conductor made of the same material, of length $2l$ and cross-sectional area $S/4$, have?",
+      "answers": [
+        "32",
+        "16",
+        "8",
+        "24",
+        "4"
+      ]
+    },
+    {
+      "text": "The first conductor has a length of $1$ m and a cross-sectional area of $1$ mm$^2$; the second has a length of $2$ m and a cross-sectional area of $0.5$ mm$^2$. How are the resistances $R_1$ and $R_2$ of these conductors related?",
+      "answers": [
+        "$R_1=R_2$.",
+        "$R_1=4R_2$",
+        "cannot be determined.",
+        "$R_2=2R_1$",
+        "$R_2=4R_1$"
+      ]
+    },
+    {
+      "text": "Of two aluminum wires of equal length, one has a resistance of $2.7~\\Omega$ and the other $1.8~\\Omega$. The cross-sectional area of the first wire is $4$ mm$^2$. What is the cross-sectional area of the second wire (mm$^2$)?",
+      "answers": [
+        "9",
+        "18",
+        "12",
+        "6",
+        "3"
+      ]
+    },
+    {
+      "text": "For two conductors of equal length with cross-sectional areas $S_1=2S_2$ and resistivities $\\rho_2=2\\rho_1$, determine the ratio of their resistances $R_2/R_1$.",
+      "answers": [
+        "0.25",
+        "0.5",
+        "2",
+        "4",
+        "8"
+      ]
+    },
+    {
+      "text": "The resistance of a conductor $1$ m long with a cross-sectional area of $0.5$ mm$^2$ equals the resistance of a wire of the same material with a cross-sectional area of $10$ mm$^2$. How many meters of such wire must be taken?",
+      "answers": [
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ]
+    },
+    {
+      "text": "Find the resistance of a silver wire with a cross-sectional area of $1$ mm$^2$ and a weight of $105$ N ($\\Omega$). The density of silver is $10500$ kg/m$^3$ and its resistivity is $1.6\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "16",
+        "8",
+        "32",
+        "40",
+        "48"
+      ]
+    },
+    {
+      "text": "One wire is $20$ cm long and another is $1.6$ m long. The wires have the same cross-section and are made of the same material. Which wire has the greater resistance, and by what factor?",
+      "answers": [
+        "the first, by a factor of 3.2.",
+        "the second, by a factor of 3.2.",
+        "the same.",
+        "the first, by a factor of 8.",
+        "the second, by a factor of 8."
+      ]
+    },
+    {
+      "text": "How does the resistance of a metal wire change if its length and radius are increased $4$ times?",
+      "answers": [
+        "decreases by a factor of 4.",
+        "increases by a factor of 2.",
+        "does not change.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 4."
+      ]
+    },
+    {
+      "text": "By what factor does the resistance of a wire increase if it is stretched so that its length becomes $3$ times greater?",
+      "answers": [
+        "9",
+        "4",
+        "2",
+        "3",
+        "does not change."
+      ]
+    },
+    {
+      "text": "How does the resistance of a resistor change if the source voltage is increased $2$ times?",
+      "answers": [
+        "increases by a factor of 2.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 4.",
+        "does not change.",
+        "decreases by a factor of 4."
+      ]
+    },
+    {
+      "text": "How does the resistance of a resistor change if the current in the circuit is increased $5$ times?",
+      "answers": [
+        "increases by a factor of 5.",
+        "decreases by a factor of 5.",
+        "increases by a factor of 25.",
+        "does not change.",
+        "decreases by a factor of 25."
+      ]
+    },
+    {
+      "text": "Two wires are made from equal masses of metal. One of them is $3$ times longer than the other. Determine the relation between the resistances $R_1$ and $R_2$ of these wires.",
+      "answers": [
+        "$R_1=3R_2$",
+        "$R_2=9R_1$",
+        "$R_1=R_2$",
+        "$R_1=9R_2$",
+        "$R_2=3R_1$"
+      ]
+    },
+    {
+      "text": "What is the resistance of a copper wire of mass $8.9$ kg with a cross-sectional area of $1$ mm$^2$ ($\\Omega$)? The density of copper is $8.9$ g/cm$^3$ and its resistivity is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "8.9",
+        "17",
+        "34",
+        "44.5",
+        "51"
+      ]
+    },
+    {
+      "text": "Determine the resistance of a steel rail whose mass per meter is $3.9$ kg and whose length is $1$ km ($\\Omega$). The density of steel is $7800$ kg/m$^3$ and its resistivity is $1.2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "answers": [
+        "0.17",
+        "0.3",
+        "0.18",
+        "0.55",
+        "0.24"
+      ]
+    },
+    {
+      "text": "A steel rail with a mass of $1$ m equal to $78$ kg has a resistance of $0,012~\\Omega$ per meter? The density of steel is $7.8$ g/cm$^3$ and its resistivity is $1.2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "answers": [
+        "1200",
+        "1000",
+        "100",
+        "780",
+        "10"
+      ]
+    },
+    {
+      "text": "What is the mass of a conductor of length $l$, resistance $R$, density $d$ and resistivity $\\rho$?",
+      "answers": [
+        "$\\dfrac{R}{\\rho d l^2}$",
+        "$\\dfrac{\\rho l^2}{dR}$",
+        "$\\dfrac{d\\rho l^2}{R}$",
+        "$\\dfrac{Rl^2}{\\rho d}$",
+        "$\\dfrac{d\\rho}{Rl^2}$"
+      ]
+    },
+    {
+      "text": "The resistance of a copper wire $1$ km long is $75.65~\\Omega$. How many newtons does the wire weigh? The density of copper is $8900$ kg/m$^3$ and its resistivity is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "225",
+        "45",
+        "83",
+        "18",
+        "20"
+      ]
+    },
+    {
+      "text": "A current of $6$ A flows through an electric coil. What current (in amperes) will flow through it if a quarter of the coil is cut off? $U=\\text{const}$.",
+      "answers": [
+        "12",
+        "10",
+        "4.5",
+        "8",
+        "18"
+      ]
+    },
+    {
+      "text": "How does the resistance of a wire change if it is cut into two equal pieces and both pieces are laid side by side (in parallel)?",
+      "answers": [
+        "does not change.",
+        "increases by a factor of 4.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 2.",
+        "decreases by a factor of 4."
+      ]
+    },
+    {
+      "text": "A long conductor was cut into two equal pieces and twisted together along its length into a single conductor. How does the resistance of the conductor change?",
+      "answers": [
+        "does not change.",
+        "increases by a factor of 4.",
+        "increases by a factor of 2.",
+        "decreases by a factor of 4.",
+        "decreases by a factor of 2."
+      ]
+    },
+    {
+      "text": "A wire of resistance $R$ was cut into three equal pieces and all three pieces were twisted together along their length. What will the resistance of the wire be?",
+      "answers": [
+        "$9R$",
+        "$R$",
+        "$R/3$",
+        "$R/6$",
+        "$R/9$"
+      ]
+    },
+    {
+      "text": "A conductor was cut into 5 pieces and twisted tightly together; its resistance became $1~\\Omega$. Find the initial resistance of the conductor ($\\Omega$).",
+      "answers": [
+        "5",
+        "10",
+        "15",
+        "20",
+        "25"
+      ]
+    },
+    {
+      "text": "A wire of resistance $R$ was cut into four equal pieces and all four pieces were twisted together along their length. What will the resistance of such a wire be?",
+      "answers": [
+        "$R/32$",
+        "$R/12$",
+        "$R/16$",
+        "$R/4$",
+        "$R/2$"
+      ]
+    },
+    {
+      "text": "How does the resistance of a conductor (without insulation) change if it is folded in two and twisted?",
+      "answers": [
+        "increases by a factor of 2.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 4.",
+        "decreases by a factor of 4.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "What is the electric field strength inside a metal wire if its resistivity is $\\rho$, its cross-sectional area is $S$ and the current in it is $I$?",
+      "answers": [
+        "$E=\\dfrac{I\\rho S}{ }$",
+        "$E=\\dfrac{I}{\\rho S}$",
+        "$E=\\dfrac{I^2\\rho}{S}$",
+        "$E=\\dfrac{IS}{\\rho}$",
+        "$E=\\dfrac{I\\rho}{S}$"
+      ]
+    },
+    {
+      "text": "What is the electric field strength (V/m) inside a copper wire through which a steady current of $20$ A flows, if its cross-sectional area is $1$ mm$^2$? The resistivity of copper is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "0.17",
+        "0.34",
+        "1.7",
+        "3.4",
+        "17"
+      ]
+    },
+    {
+      "text": "What is the field strength inside an aluminum conductor (V/m) if the current density in it is $2\\cdot10^6$ A/m$^2$? The resistivity of aluminum is $2\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "$10^{-2}$",
+        "$4\\cdot10^{-3}$",
+        "0",
+        "$4\\cdot10^{-4}$",
+        "$4\\cdot10^{-2}$"
+      ]
+    },
+    {
+      "text": "To a conductor $10$ m long with a resistivity of $5\\cdot10^{-7}~\\Omega\\cdot$m a voltage of $10$ V is applied. What is the current density in the conductor (A/m$^2$)?",
+      "answers": [
+        "$10^3$",
+        "$10^4$",
+        "$2\\cdot10^4$",
+        "$2\\cdot10^6$",
+        "$2\\cdot10^7$"
+      ]
+    },
+    {
+      "text": "The voltage drop across a nichrome wire $2$ m long is $2.5$ V. What is the current density in it (A/m$^2$)? The resistivity of nichrome is $1\\cdot10^{-6}~\\Omega\\cdot$m.",
+      "answers": [
+        "$2\\cdot10^3$",
+        "$2,4\\cdot10^4$",
+        "$10^5$",
+        "$1,25\\cdot10^6$",
+        "100"
+      ]
+    },
+    {
+      "text": "The current density in a copper wire is $1$ A/mm$^2$. What is the electric field strength in the wire (V/m)? The resistivity of copper is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "34",
+        "17",
+        "3.4",
+        "1.7",
+        "0.017"
+      ]
+    },
+    {
+      "text": "The same voltage is applied to two conductors made of the same material, with length ratio $l_2/l_1=2$ and cross-sectional area ratio $S_2/S_1=2$. How are the current densities in them related?",
+      "answers": [
+        "$j_2=2j_1$",
+        "$j_1=4j_2$",
+        "$j_1=j_2$",
+        "$j_1=2j_2$",
+        "$j_2=4j_1$"
+      ]
+    },
+    {
+      "text": "How does the current density in a conductor change if, without changing its length or the potential difference applied to it, its cross-sectional area is reduced $2$ times?",
+      "answers": [
+        "does not change.",
+        "decreases by a factor of 4.",
+        "increases by a factor of 4.",
+        "decreases by a factor of 2.",
+        "increases by a factor of 2."
+      ]
+    },
+    {
+      "text": "How does the current in a metal wire change if the electric field strength in it decreases $8$ times and the cross-sectional area of the wire increases $10$ times?",
+      "answers": [
+        "decreases by a factor of $1,25$.",
+        "increases by a factor of 8.",
+        "decreases by a factor of 4.",
+        "increases by a factor of $1,25$.",
+        "No correct answer."
+      ]
+    }
+  ]
+}

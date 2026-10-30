@@ -1,0 +1,158 @@
+{
+  "title": "Topic 41 | Isobaric process",
+  "questions": [
+    {
+      "text": "What process is called isobaric?",
+      "answers": [
+        "one occurring at constant pressure",
+        "one occurring at constant temperature",
+        "one occurring without heat exchange",
+        "one occurring at constant volume"
+      ]
+    },
+    {
+      "text": "In an isobaric process ...",
+      "answers": [
+        "p and V change, T does not change.",
+        "p and T change, V does not change.",
+        "V and T change, p does not change.",
+        "p, V and T change, and there is no heat exchange with the surroundings."
+      ]
+    },
+    {
+      "text": "If the volume of an ideal gas decreased 4 times when it was cooled isobarically by 270 K, what was its initial temperature (°C)?",
+      "answers": [
+        "60",
+        "81",
+        "87",
+        "807"
+      ]
+    },
+    {
+      "text": "Gases entering the chimney from the furnace cool from 1320°C to 200°C. By what factor does their volume decrease?",
+      "answers": [
+        "1.5",
+        "3.4",
+        "2.1",
+        "4"
+      ]
+    },
+    {
+      "text": "If a gas has a volume of 6 L at 27°C, what volume (L) will it occupy at 77°C?",
+      "answers": [
+        "2",
+        "14",
+        "5",
+        "7"
+      ]
+    },
+    {
+      "text": "A gas occupied a volume of 12.32 L. It was cooled by 45 K at constant pressure, and its volume became 10.52 L. What was the initial temperature of the gas (K)?",
+      "answers": [
+        "300",
+        "265",
+        "308",
+        "900"
+      ]
+    },
+    {
+      "text": "A gas is heated from 27°C to 39°C. By what percentage did the gas volume increase if the pressure did not change?",
+      "answers": [
+        "4",
+        "30.7",
+        "44.4",
+        "50"
+      ]
+    },
+    {
+      "text": "To what temperature (°C) must a gas be heated from 0°C at constant pressure for its volume to double?",
+      "answers": [
+        "100",
+        "173",
+        "120",
+        "273"
+      ]
+    },
+    {
+      "text": "At what temperature (°C) will a gas double its volume when heated by 1°C? (p = const)",
+      "answers": [
+        "0",
+        "1",
+        "-272.15",
+        "272"
+      ]
+    },
+    {
+      "text": "A gas is heated from 27°C to 57°C. By what percentage did the gas volume increase if the pressure did not change?",
+      "answers": [
+        "4",
+        "8",
+        "10",
+        "20"
+      ]
+    },
+    {
+      "text": "By what percentage does the volume of a gas increase when it is heated from 27°C to 51°C at constant pressure?",
+      "answers": [
+        "7",
+        "9",
+        "10",
+        "8"
+      ]
+    },
+    {
+      "text": "When the temperature of a gas rose by 60 K, its volume increased by 1 L. By how much (L) will the volume increase relative to the initial volume if the temperature rises by another 30 K? (p = const)",
+      "answers": [
+        "2.5",
+        "1.5",
+        "3.8",
+        "0.15"
+      ]
+    },
+    {
+      "text": "When a gas was heated by 1°C at constant pressure, its volume doubled. In what temperature interval (K) did the heating occur?",
+      "answers": [
+        "(4;6)",
+        "(2;4)",
+        "(-2;0)",
+        "(0.5;2)"
+      ]
+    },
+    {
+      "text": "What is the thermal coefficient of volume expansion of an ideal gas equal to?",
+      "answers": [
+        "Δp / p₀",
+        "Δp / (p₀ · T)",
+        "ΔV / (V₀ · ΔT)",
+        "ΔV / V₀"
+      ]
+    },
+    {
+      "text": "An open glass flask of volume 250 cm³ was heated to 127°C and lowered with its open end into water. As a result the flask cooled to a temperature of 7°C. How many grams of water entered the flask?",
+      "answers": [
+        "125",
+        "75",
+        "50",
+        "25"
+      ]
+    },
+    {
+      "text": "How does the molecule concentration of an ideal gas in an open vessel change if its absolute temperature increases 1.1 times?",
+      "answers": [
+        "increases 1.1 times",
+        "decreases 1.1 times",
+        "decreases 1.21 times",
+        "does not change"
+      ]
+    },
+    {
+      "text": "A cylindrical vessel of volume 0.1 m³ is closed by a piston of area 0.01 m². At what height (m) above the bottom of the vessel will the piston be if the absolute temperature of the gas is lowered isobarically 4 times?",
+      "answers": [
+        "1.52",
+        "2",
+        "2.5",
+        "3"
+      ]
+    }
+  ]
+}

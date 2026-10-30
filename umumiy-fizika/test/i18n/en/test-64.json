@@ -1,0 +1,149 @@
+{
+  "title": "Topic 64 | Magnetic field. Magnetic field of a current",
+  "questions": [
+    {
+      "text": "Determine which of the following statements about permanent magnets are true and which are false.\\n1) like poles attract each other;\\n2) by cutting a magnet in two, one can obtain a magnet with only one pole.",
+      "answers": [
+        "1 – true, 2 – true.",
+        "1 – true, 2 – false.",
+        "1 – false, 2 – false.",
+        "1 – false, 2 – true."
+      ]
+    },
+    {
+      "text": "At which points on Earth is a magnetic needle exactly horizontal?",
+      "answers": [
+        "at the north magnetic pole.",
+        "at the south magnetic pole.",
+        "at the magnetic equator.",
+        "at the geographic equator."
+      ]
+    },
+    {
+      "text": "What kind of field exists around a conductor carrying a direct current?",
+      "answers": [
+        "an electrostatic field.",
+        "no field at all.",
+        "an electric and a magnetic field.",
+        "a magnetic field."
+      ]
+    },
+    {
+      "text": "Find the direction of the magnetic field line at point A of a straight current-carrying conductor. (See the figure)",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4."
+      ]
+    },
+    {
+      "text": "Which of the directions shown in the figure coincides with the magnetic induction vector of the conductor carrying current $I$ at point A? (The current in the conductor flows into the page, away from us)",
+      "answers": [
+        "3.",
+        "1.",
+        "4.",
+        "2."
+      ]
+    },
+    {
+      "text": "Which of the directions shown in the figure coincides with the magnetic induction vector of the conductor carrying current $I$ at point A? (The current in the conductor flows out of the page, toward us)",
+      "answers": [
+        "3.",
+        "1.",
+        "4.",
+        "2."
+      ]
+    },
+    {
+      "text": "Which of the directions shown in the figure coincides with the magnetic induction vector of the current-carrying conductor at point A?",
+      "answers": [
+        "4.",
+        "1.",
+        "2.",
+        "3."
+      ]
+    },
+    {
+      "text": "Give the expression for the magnetic induction produced in a medium by an infinitely long straight current $I$ at a distance $r$ from it.",
+      "answers": [
+        "$\\frac{\\mu\\mu_0 I}{2\\pi r}$",
+        "$\\frac{\\mu\\mu_0 I}{4\\pi r}$",
+        "$\\frac{\\mu\\mu_0 U}{4\\pi r}$",
+        "$\\frac{2\\mu\\mu_0 I}{\\pi r}$"
+      ]
+    },
+    {
+      "text": "A magnetic field is created by two parallel equal currents (see the figure). How is the magnetic induction vector directed at point A?",
+      "answers": [
+        "toward us.",
+        "downward.",
+        "upward.",
+        "away from us."
+      ]
+    },
+    {
+      "text": "How is the magnetic induction at point A directed if it is produced by two equal parallel straight currents directed \"away from us\"?",
+      "answers": [
+        "upward.",
+        "to the left.",
+        "zero.",
+        "downward."
+      ]
+    },
+    {
+      "text": "How is the magnetic induction at point A directed if it is produced by two equal parallel straight currents directed \"toward us\"?",
+      "answers": [
+        "to the right.",
+        "upward.",
+        "zero.",
+        "to the left."
+      ]
+    },
+    {
+      "text": "What is the magnetic induction at the midpoint between two parallel straight conductors a distance $d$ apart, if each carries a current $I$ in the same direction?",
+      "answers": [
+        "$\\mu_0 \\frac{2I}{\\pi d}$",
+        "$\\mu_0 \\frac{I}{\\pi d}$",
+        "0.",
+        "$\\mu_0 \\frac{I}{2\\pi d}$"
+      ]
+    },
+    {
+      "text": "The figure shows 4 pairs of current elements. In which case do they repel each other?",
+      "answers": [
+        "$\\uparrow \\uparrow$.",
+        "$\\uparrow \\rightarrow$.",
+        "$\\rightarrow \\leftarrow$.",
+        "$\\downarrow \\uparrow$."
+      ]
+    },
+    {
+      "text": "It is known that two protons repel each other by the Coulomb force. In what case will they attract each other?",
+      "answers": [
+        "when moving in opposite parallel directions at very high speeds.",
+        "when moving parallel in the same direction at very high speeds.",
+        "when they move away from each other in opposite directions.",
+        "they never attract each other."
+      ]
+    },
+    {
+      "text": "A first conductor carrying current $I_1=10$ A repels each 1 m length of a second conductor, parallel to it at a distance of 10 cm, with a force of $4 \\cdot 10^{-4}$ N. What is the current in the second conductor (in amperes) and in which direction does it flow?",
+      "answers": [
+        "10 A; in direction 1.",
+        "20 A; in direction 2.",
+        "15 A; in direction 1.",
+        "15 A; in direction 2."
+      ]
+    },
+    {
+      "text": "In which of the following definitions is the unit of current (1 A) defined correctly?",
+      "answers": [
+        "the current at which a coil of inductance 1 H produces a flux of 1 Wb.",
+        "the current at which a charge of 1 C passes through the conductor cross-section in 1 s.",
+        "the current flowing through a conductor of resistance 1 $\\Omega$.",
+        "the current that produces a force of $2 \\cdot 10^{-7}$ N between parallel conductors 1 m apart in vacuum."
+      ]
+    }
+  ]
+}

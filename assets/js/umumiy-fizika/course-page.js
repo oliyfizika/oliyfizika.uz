@@ -11,13 +11,14 @@
 import { icon } from "../ui/icons.js";
 import { revealOnScroll } from "../ui/reveal.js";
 import { onSession } from "../core/session.js";
+import { t, applyI18n } from "../core/i18n.js";
 import { getLearningSummary } from "../progress/progress-service.js";
 import { COURSES, getCourse } from "../../../umumiy-fizika/data/courses.js";
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const shortLabel = (label) => String(label).replace(/-?mavzu$/i, "");
+const shortLabel = (label) => String(label).replace(/-?mavzu$/i, "").replace(/^(Тема|Topic)\s+/i, "");
 
 const courseId = document.body.dataset.course;
 const COURSE = getCourse(courseId);
@@ -31,11 +32,11 @@ function renderSwitch() {
   const next = COURSES[i + 1];
   const nav = $("[data-course-switch]");
   nav.innerHTML = `
-    <a class="of-btn of-btn--ghost of-btn--sm of-cp-switch__arrow" ${prev ? `href="${prev.id}.html"` : 'aria-disabled="true" tabindex="-1"'} aria-label="${prev ? `Oldingi kurs: ${esc(prev.title)}` : "Oldingi kurs yo‘q"}">${icon("chevronLeft")}<span class="of-sr-only">Oldingi</span></a>
+    <a class="of-btn of-btn--ghost of-btn--sm of-cp-switch__arrow" ${prev ? `href="${prev.id}.html"` : 'aria-disabled="true" tabindex="-1"'} aria-label="${prev ? esc(t("uf.prevCourse", "Oldingi kurs: {title}", { title: prev.title })) : t("uf.noPrevCourse", "Oldingi kurs yo‘q")}">${icon("chevronLeft")}<span class="of-sr-only">${t("uf.prev", "Oldingi")}</span></a>
     <ul class="of-cp-switch__list">
       ${COURSES.map((c) => `<li><a href="${c.id}.html" ${c.id === courseId ? 'aria-current="page"' : ""}>${icon(c.icon)}${esc(c.title)}</a></li>`).join("")}
     </ul>
-    <a class="of-btn of-btn--ghost of-btn--sm of-cp-switch__arrow" ${next ? `href="${next.id}.html"` : 'aria-disabled="true" tabindex="-1"'} aria-label="${next ? `Keyingi kurs: ${esc(next.title)}` : "Keyingi kurs yo‘q"}"><span class="of-sr-only">Keyingi</span>${icon("chevronRight")}</a>`;
+    <a class="of-btn of-btn--ghost of-btn--sm of-cp-switch__arrow" ${next ? `href="${next.id}.html"` : 'aria-disabled="true" tabindex="-1"'} aria-label="${next ? esc(t("uf.nextCourse", "Keyingi kurs: {title}", { title: next.title })) : t("uf.noNextCourse", "Keyingi kurs yo‘q")}"><span class="of-sr-only">${t("uf.nextWord", "Keyingi")}</span>${icon("chevronRight")}</a>`;
   // Faol kursni ko'rinadigan joyga surish (mobil)
   requestAnimationFrame(() => $("[aria-current='page']", nav)?.scrollIntoView({ block: "nearest", inline: "center" }));
 }
@@ -47,24 +48,24 @@ function renderHero() {
   const action = !c
     ? ""
     : c.status === "done"
-      ? `<a class="of-btn of-btn--soft" href="#${c.lessons[0].anchor}" data-open-lesson="${c.lessons[0].anchor}">Takrorlash</a><p>Barcha mavzular yakunlangan.</p>`
+      ? `<a class="of-btn of-btn--soft" href="#${c.lessons[0].anchor}" data-open-lesson="${c.lessons[0].anchor}">${t("uf.repeat", "Takrorlash")}</a><p>${t("uf.allDone", "Barcha mavzular yakunlangan.")}</p>`
       : c.status === "locked"
-        ? `<p class="of-uf-locknote">${icon("lock")}<span>Kurs qulflangan — avval «${esc(c.blockedBy?.title || "oldingi kurs")}» kursini yakunlang.</span></p>`
-        : `<a class="of-btn of-btn--primary" href="#${lessonAnchor(c.next)}" data-open-lesson="${lessonAnchor(c.next)}">${c.done === 0 ? "Boshlash" : "Davom etish"} ${icon("arrowRight")}</a><p>Keyingi: <b>${esc(c.next.label)}</b> · ${esc(c.next.title)}</p>`;
+        ? `<p class="of-uf-locknote">${icon("lock")}<span>${t("uf.courseLocked", "Kurs qulflangan — avval «{title}» kursini yakunlang.", { title: esc(c.blockedBy?.title || t("uf.prevCourseName", "oldingi kurs")) })}</span></p>`
+        : `<a class="of-btn of-btn--primary" href="#${lessonAnchor(c.next)}" data-open-lesson="${lessonAnchor(c.next)}">${c.done === 0 ? t("home.start", "Boshlash") : t("home.continue", "Davom etish")} ${icon("arrowRight")}</a><p>${t("home.next", "Keyingi:")} <b>${esc(c.next.label)}</b> · ${esc(c.next.title)}</p>`;
 
   hero.innerHTML = `
     <div class="of-cp-hero__top">
       <span class="of-cp-hero__icon">${icon(COURSE.icon)}</span>
       <div class="of-cp-hero__text">
         <h1>${esc(COURSE.title)}</h1>
-        <p>${esc(COURSE.description)} Video darslar, testlar va bosqichma-bosqich ochiladigan mavzular.</p>
+        <p>${esc(COURSE.description)} ${t("uf.courseHeroTail", "Video darslar, testlar va bosqichma-bosqich ochiladigan mavzular.")}</p>
       </div>
     </div>
     ${c ? `
     <div class="of-cp-hero__progress">
-      <p><b>${c.done}</b> / ${c.total} mavzu yakunlangan</p>
+      <p>${t("uf.topicsDoneB", "<b>{done}</b> / {total} mavzu yakunlangan", { done: c.done, total: c.total })}</p>
       <strong class="of-num">${c.percent}%</strong>
-      <div class="of-progress of-progress--lg" role="progressbar" aria-label="${esc(COURSE.title)} progressi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${c.percent}" style="--value:0" data-to="${c.percent}"><span></span></div>
+      <div class="of-progress of-progress--lg" role="progressbar" aria-label="${esc(t("uf.progressOf", "{title} progressi", { title: COURSE.title }))}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${c.percent}" style="--value:0" data-to="${c.percent}"><span></span></div>
     </div>
     <div class="of-cp-hero__actions">${action}</div>` : `
     <div class="of-cp-hero__progress" aria-hidden="true"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span></span><span class="of-skeleton" style="height:12px;grid-column:1/-1"></span></div>`}`;
@@ -75,12 +76,12 @@ const lessonAnchor = (next) => courseData.lessons.find((l) => l.number === next.
 
 // ------------------------------------------------------------ Mavzular
 const STATE_TEXT = {
-  done: ["checkCircle", "Yakunlangan"],
-  current: ["play", "Joriy mavzu"],
-  available: ["info", "Ochiq"],
-  locked: ["lock", "Qulflangan"],
+  done: ["checkCircle", t("uf.statusDone", "Yakunlangan")],
+  current: ["play", t("uf.statusCurrent", "Joriy mavzu")],
+  available: ["info", t("uf.statusOpen", "Ochiq")],
+  locked: ["lock", t("uf.statusLocked", "Qulflangan")],
 };
-const ACTION = { done: "Takrorlash", current: "Davom etish", available: "Boshlash" };
+const ACTION = { done: t("uf.repeat", "Takrorlash"), current: t("home.continue", "Davom etish"), available: t("home.start", "Boshlash") };
 
 function lessonItem(l) {
   const [ic, text] = STATE_TEXT[l.state];
@@ -120,7 +121,7 @@ function renderLessons() {
   } else {
     html = `<ol class="of-lesson-list">${lessons.map(lessonItem).join("")}</ol>`;
   }
-  box.innerHTML = `<div class="of-section-title"><h2>Mavzular <span class="of-subtle">(${lessons.length})</span></h2></div>${html}`;
+  box.innerHTML = `<div class="of-section-title"><h2>${t("uf.topics", "Mavzular")} <span class="of-subtle">(${lessons.length})</span></h2></div>${html}`;
   box.removeAttribute("aria-busy");
   revealOnScroll($$(".of-lesson", box), { maxIndex: 6 });
 }
@@ -156,15 +157,15 @@ async function fillPanel(li, lesson) {
   panel.dataset.ready = "1";
   panel.innerHTML = `
     <div class="of-video" data-video>
-      <button type="button" class="of-video__poster" aria-label="Videoni ko‘rish: ${esc(lesson.label)} — ${esc(lesson.title)}">
+      <button type="button" class="of-video__poster" aria-label="${esc(t("uf.watchVideo", "Videoni ko‘rish: {label} — {title}", { label: lesson.label, title: lesson.title }))}">
         <img src="https://i.ytimg.com/vi/${encodeURIComponent(lesson.youtubeId)}/hqdefault.jpg" alt="" loading="lazy" decoding="async">
         <span class="of-video__play">${icon("play")}</span>
       </button>
     </div>
     <div class="of-lesson__side">
-      <h4>${esc(lesson.label)} testi</h4>
+      <h4>${esc(t("uf.lessonTest", "{label} testi", { label: lesson.label }))}</h4>
       <div data-test-slot><span class="of-skeleton" style="height:42px;width:180px"></span></div>
-      <p>Kamida 80% natija keyingi mavzuni ochadi va XP beradi.</p>
+      <p>${t("uf.passNote", "Kamida 80% natija keyingi mavzuni ochadi va XP beradi.")}</p>
     </div>`;
 
   $(".of-video__poster", panel).addEventListener("click", () => {
@@ -180,12 +181,12 @@ async function fillPanel(li, lesson) {
   });
 
   const slot = $("[data-test-slot]", panel);
-  const missing = `<p class="of-lesson__note">${icon("info")}<span>Bu mavzu testi tayyorlanmoqda. Test qo‘shilgach, shu yerda paydo bo‘ladi.</span></p>`;
+  const missing = `<p class="of-lesson__note">${icon("info")}<span>${t("uf.testPreparing", "Bu mavzu testi tayyorlanmoqda. Test qo‘shilgach, shu yerda paydo bo‘ladi.")}</span></p>`;
   if (!lesson.testUrl) { slot.innerHTML = missing; return; }
   const exists = await testExists(lesson.testUrl);
   slot.innerHTML = exists === false
     ? missing
-    : `<a class="of-btn of-btn--primary" href="${esc(lesson.testUrl)}">${lesson.state === "done" ? "Testni qayta ishlash" : "Testni boshlash"} ${icon("arrowRight")}</a>`;
+    : `<a class="of-btn of-btn--primary" href="${esc(lesson.testUrl)}">${lesson.state === "done" ? t("uf.retakeTest", "Testni qayta ishlash") : t("uf.startTest", "Testni boshlash")} ${icon("arrowRight")}</a>`;
 }
 
 function toggleLesson(li, open, { focus = false } = {}) {
@@ -243,8 +244,8 @@ function handleInitialHash() {
 // ------------------------------------------------------------ Qidiruv (faqat shu kurs mavzulari)
 function setupSearch() {
   const apply = () => window.OFShell?.setSearch({
-    placeholder: `${COURSE.title} mavzularini qidirish…`,
-    label: `${COURSE.title} mavzulari bo‘yicha qidirish`,
+    placeholder: t("uf.searchCourse", "{title} mavzularini qidirish…", { title: COURSE.title }),
+    label: t("uf.searchCourseLabel", "{title} mavzulari bo‘yicha qidirish", { title: COURSE.title }),
     target: "[data-lessons]",
   });
   if (window.OFShell) apply();
@@ -257,6 +258,7 @@ function init() {
     console.error("[kurs] noma'lum kurs:", courseId);
     return;
   }
+  applyI18n();
   document.title = `${COURSE.title} | OliyFizika.uz`;
   window.OFShell?.setTitle?.(COURSE.title);
   renderSwitch();
@@ -276,7 +278,7 @@ function init() {
       handleInitialHash();
     } catch (error) {
       console.error("[kurs] progress yuklanmadi:", error);
-      $("[data-lessons]").innerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>Mavzularni yuklab bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.</span></div>`;
+      $("[data-lessons]").innerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>${t("uf.loadError", "Mavzularni yuklab bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.")}</span></div>`;
     }
   });
 }

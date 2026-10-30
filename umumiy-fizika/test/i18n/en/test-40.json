@@ -1,0 +1,266 @@
+{
+  "title": "Topic 40 | Isothermal process",
+  "questions": [
+    {
+      "text": "Which relationship for an ideal gas did Boyle–Mariotte study?",
+      "answers": [
+        "p → V",
+        "p → T",
+        "V → T",
+        "p → 1/V"
+      ]
+    },
+    {
+      "text": "In which process does the average kinetic energy of molecules not change?",
+      "answers": [
+        "isochoric",
+        "isothermal",
+        "adiabatic",
+        "isobaric"
+      ]
+    },
+    {
+      "text": "In an isothermal process ...",
+      "answers": [
+        "p, V and T change, and there is no heat exchange with the surroundings.",
+        "V and T change, p does not change.",
+        "p and T change, V does not change.",
+        "p and V change, T does not change."
+      ]
+    },
+    {
+      "text": "What process is called isothermal?",
+      "answers": [
+        "one occurring at constant heat capacity ...",
+        "one occurring at constant pressure ...",
+        "one occurring at constant temperature ...",
+        "one occurring without heat exchange ..."
+      ]
+    },
+    {
+      "text": "How can Boyle's law be explained on the basis of the molecular kinetic theory?",
+      "answers": [
+        "When the gas volume decreases, its density increases and the number of collisions increases",
+        "When the gas volume increases, its density increases and the number of collisions increases",
+        "When the gas volume decreases, its density increases and the number of collisions decreases",
+        "When the gas volume decreases, its density does not change and the number of collisions increases"
+      ]
+    },
+    {
+      "text": "Air is trapped in a rubber chamber at a pressure of 780 mmHg. The chamber was compressed so that its volume decreased by 2/5 compared with the initial state. What is the pressure then (Pa)?",
+      "answers": [
+        "1.16 · 10⁵",
+        "2.35 · 10⁵",
+        "0.75 · 10⁵",
+        "1.74 · 10⁵"
+      ]
+    },
+    {
+      "text": "A vessel of volume 1 L at a temperature of 183°C contains 1.6 · 10²² gas molecules. What will the gas pressure p be (kPa) if the volume of the vessel is expanded isothermally 5 times?",
+      "answers": [
+        "15",
+        "65",
+        "20",
+        "40"
+      ]
+    },
+    {
+      "text": "At standard conditions a gas occupies a volume of 1 m³. What volume (m³) will this gas occupy at a pressure of 4.9 · 10⁶ N/m²?",
+      "answers": [
+        "0.4",
+        "0.02",
+        "0.08",
+        "0.1"
+      ]
+    },
+    {
+      "text": "By what factor does the pressure of a gas change when its volume decreases 3 times? The average speed of the molecules remained unchanged.",
+      "answers": [
+        "increases 3 times",
+        "increases √3 times",
+        "decreases 3 times",
+        "does not change"
+      ]
+    },
+    {
+      "text": "A gas was compressed from a volume of 8 L to 6 L. The pressure increased by 4 kPa. What was the initial pressure (kPa)?",
+      "answers": [
+        "42",
+        "24",
+        "34",
+        "12"
+      ]
+    },
+    {
+      "text": "The figure shows different states of an ideal gas of constant mass (points 1, 2, 3, 4, 5 on one vertical line on a p-T graph). In which of these states is the gas volume the greatest?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "text": "The graph shows three isotherms. Which of them corresponds to the highest temperature?",
+      "answers": [
+        "1",
+        "3",
+        "2",
+        "all are the same"
+      ]
+    },
+    {
+      "text": "A cylinder of volume V₁ = 10 L contains air at a pressure of 100 kPa. At what pressure (kPa) must air be pumped into a cylinder of volume V₂ so that, when it is connected to a 30 L cylinder, the total pressure is 200 kPa?",
+      "answers": [
+        "250",
+        "275",
+        "200",
+        "233.3"
+      ]
+    },
+    {
+      "text": "Two vessels of volumes 3 L and 2 L, connected by a tube with a valve, are filled with different gases at pressures of 20 kPa and 40 kPa respectively. What pressure (kPa) will be established in the vessels after the valve is opened, if the temperature does not change?",
+      "answers": [
+        "28",
+        "12",
+        "16",
+        "14"
+      ]
+    },
+    {
+      "text": "Two vessels of volumes 40 L and 20 L contain gas at the same temperature but at different pressures. After the vessels are connected, a pressure of 1 MPa is established in them. If the initial pressure in the smaller vessel was 600 kPa, what was the initial pressure in the larger vessel (MPa)?",
+      "answers": [
+        "2.6",
+        "1.2",
+        "1.8",
+        "3.6"
+      ]
+    },
+    {
+      "text": "A horizontal cylinder closed at both ends is divided into three sections by pistons. The pressure and volume of each section are 2 · 10⁴ Pa and 36 cm³, 6 · 10⁴ Pa and 60 cm³, 5 · 10⁴ Pa and 104 cm³ respectively. Determine the pressure (Pa) and the volume (cm³) of the gas in the second section after the pistons are released.",
+      "answers": [
+        "8 · 10⁴; 45",
+        "4 · 10⁴; 45",
+        "4 · 10⁴; 4.5",
+        "2 · 10⁴; 25"
+      ]
+    },
+    {
+      "text": "A sealed cylinder 1 meter long is divided into two equal halves by a piston that can move without friction. The pressure on one side is twice that on the other. By what distance (m) will the piston move when released?",
+      "answers": [
+        "0.4",
+        "0.2",
+        "0.33",
+        "1/6"
+      ]
+    },
+    {
+      "text": "An air bubble at the bottom of a lake grows 4 times in volume by the time it reaches the surface. What is the depth of the lake (m)? T = const.",
+      "answers": [
+        "25",
+        "30",
+        "15",
+        "10"
+      ]
+    },
+    {
+      "text": "By what factor does the volume of an air bubble increase as it rises from the bottom of a lake 20 m deep to the water surface?",
+      "answers": [
+        "2",
+        "3",
+        "7",
+        "10"
+      ]
+    },
+    {
+      "text": "The diameter of a gas bubble formed at the bottom of a pond increased 1.1 times by the time it reached the water surface. Find the depth of the pond (m).",
+      "answers": [
+        "1",
+        "2",
+        "3.3",
+        "4"
+      ]
+    },
+    {
+      "text": "The volume of an air bubble floating in water at a depth of 5 m is 5 mm³. What will be the volume of the air bubble after it rises to the water surface (mm³)?",
+      "answers": [
+        "5.3",
+        "6",
+        "6.5",
+        "7.1"
+      ]
+    },
+    {
+      "text": "The diameter of a bubble formed at the bottom of a pond increased 1.2 times by the time it reached the water surface. Find the depth of the pond (m).",
+      "answers": [
+        "6.68",
+        "5.48",
+        "6.24",
+        "7.28"
+      ]
+    },
+    {
+      "text": "The pressure in a car tire tube of volume 12 L must be 35 atm. How many strokes are needed with a pump that takes in 500 cm³ of air at normal pressure on each stroke?",
+      "answers": [
+        "120",
+        "168",
+        "840",
+        "420"
+      ]
+    },
+    {
+      "text": "A tube intended for verifying Boyle's law contains a mercury column 75 mm long. When the tube is placed vertically with the closed end down, the length of the air column is 120 mm, and when it is placed horizontally, it is 132 mm. Determine the atmospheric pressure (Pa).",
+      "answers": [
+        "2.0 · 10⁵",
+        "1.0 · 10²",
+        "1.0 · 10⁵",
+        "1.0 · 10⁴"
+      ]
+    },
+    {
+      "text": "The pressure in a car tire tube of volume 12 L must be 35 atm. If the tube is initially empty (1 atm), how many strokes are needed with a pump that takes in 500 cm³ of air on each stroke?",
+      "answers": [
+        "816",
+        "470",
+        "340",
+        "940"
+      ]
+    },
+    {
+      "text": "Air is being pumped out of a 2 L cylinder with a piston pump. With each stroke of the piston the pressure in the cylinder decreases 1.2 times. Determine the volume of the pump's suction chamber (L).",
+      "answers": [
+        "0.16",
+        "1.2",
+        "0.2",
+        "0.4"
+      ]
+    },
+    {
+      "text": "If the pressure decreases 1.2 times with each stroke of a piston pump, what must the volume of the pump chamber be (L) to pump air out of a 4 L cylinder?",
+      "answers": [
+        "8",
+        "0.8",
+        "0.2",
+        "2"
+      ]
+    },
+    {
+      "text": "Inside a vertically placed glass tube sealed at the bottom end there is helium gas, and above the gas there is a mercury column 6 cm thick. When the tube is turned upside down with the open end down, the thickness of the mercury column becomes 5 cm. Find the length of the tube (cm). T = const.",
+      "answers": [
+        "14.4",
+        "17.4",
+        "8.7",
+        "6.45"
+      ]
+    },
+    {
+      "text": "Inside a vertically placed glass tube sealed at the bottom end there is helium gas, and above it there is a mercury column 2 cm thick. When the tube is turned upside down with the open end down, the thickness of the mercury column becomes 1 cm. Find the length of the tube (cm).",
+      "answers": [
+        "39.5",
+        "32",
+        "36.8",
+        "27"
+      ]
+    }
+  ]
+}

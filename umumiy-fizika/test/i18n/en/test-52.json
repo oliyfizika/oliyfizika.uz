@@ -1,0 +1,194 @@
+{
+  "title": "Topic 52 | Electric field. Electric field strength",
+  "questions": [
+    {
+      "text": "A charged particle creates a field strength of 60 V/m at some point in vacuum. What force (in nN) acts on a 5 nC charge placed at that point if the whole system is immersed in kerosene with a dielectric constant of 2?",
+      "answers": [
+        "300",
+        "150",
+        "75",
+        "60"
+      ]
+    },
+    {
+      "text": "A dust particle of mass 0.03 µg carrying a charge of 3 pC is in equilibrium in a uniform electric field whose field strength vector points vertically upward. Determine the field strength ($g=10 \\, m/s^2$).",
+      "answers": [
+        "100",
+        "10",
+        "1000",
+        "1"
+      ]
+    },
+    {
+      "text": "A ball of mass 0.1 kg and charge 0.2 mC hangs on a silk thread in a uniform electric field whose field strength vector points vertically downward and has a magnitude of 20 kV/m. Find the tension in the thread ($g=10 \\, m/s^2$).",
+      "answers": [
+        "1",
+        "3",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "text": "If a ball of mass 0.1 kg and charge 10 µC hanging on a thread is placed in a uniform electric field of strength 200 kV/m, by what factor does the tension in the thread increase? The field strength vector points vertically downward ($g=10 \\, m/s^2$).",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "1.5"
+      ]
+    },
+    {
+      "text": "A ball of mass 4.5 g and charge 0.1 µC is placed in oil of density $800 \\, kg/m^3$. The density of the ball's material is $1500 \\, kg/m^3$. What must the electric field strength (in kV/m) be for the ball to be in equilibrium? ($g=10 \\, m/s^2$).",
+      "answers": [
+        "210",
+        "150",
+        "180",
+        "240"
+      ]
+    },
+    {
+      "text": "A small ball hanging on a silk thread has a charge of 49 nC. Under the action of a horizontal electric field of strength 100 kV/m the thread deflects through an angle whose tangent is 0.125. Find the mass of the ball (in g) ($g=10 \\, m/s^2$).",
+      "answers": [
+        "8",
+        "2",
+        "5",
+        "4"
+      ]
+    },
+    {
+      "text": "Find the acceleration of a particle of mass 0.1 g and charge 4 µC under the action of a uniform electric field of strength 1000 V/m. Neglect gravity.",
+      "answers": [
+        "4",
+        "40",
+        "400",
+        "25"
+      ]
+    },
+    {
+      "text": "Determine the acceleration with which a ball of mass 0.01 kg and charge 1 µC falls in a uniform electric field of strength 20 kV/m. The field strength vector points vertically upward. ($g=10 \\, m/s^2$).",
+      "answers": [
+        "8",
+        "10",
+        "2",
+        "12"
+      ]
+    },
+    {
+      "text": "When a body was given a charge of 70 nC, in 10 seconds of falling near the Earth's surface it traveled 5 cm farther than when it was uncharged. If the electric field strength is 100 V/m, what is the mass of the body (in g)?",
+      "answers": [
+        "14",
+        "7",
+        "3.5",
+        "10"
+      ]
+    },
+    {
+      "text": "A dust particle of mass 1 mg falls in air at a constant speed of 0.2 m/s. At what steady speed (in cm/s) will it rise if it is placed in an electric field of strength 10 kV/m and given a charge of 1.2 nC? ($g=10 \\, m/s^2$).",
+      "answers": [
+        "2",
+        "8",
+        "4",
+        "12"
+      ]
+    },
+    {
+      "text": "An uncharged dust particle of mass 5 mg falls in air at a constant speed of 15 cm/s. At what steady speed (in cm/s) will it move if it is placed in a horizontal electric field of strength 3 kV/m and given a charge of 40 nC?",
+      "answers": [
+        "39",
+        "25",
+        "45",
+        "15"
+      ]
+    },
+    {
+      "text": "A proton moving at 100 km/s enters an electric field of strength 50 V/m in the direction opposite to the field lines. After how many microseconds will the speed of the proton become zero? The charge-to-mass ratio of the proton is $10^8 \\, C/kg$.",
+      "answers": [
+        "10",
+        "20",
+        "40",
+        "5"
+      ]
+    },
+    {
+      "text": "A point charge creates a field of strength 600 V/m at some point in vacuum. What will the field strength at that point be if the charge is increased by a factor of 5 and the space around it is filled with kerosene with a dielectric constant of 2?",
+      "answers": [
+        "3000",
+        "600",
+        "1500",
+        "1200"
+      ]
+    },
+    {
+      "text": "The strength of the field created by a charge is 800 V/m at a distance of 10 cm. Find the field strength at a point 20 cm from the charge.",
+      "answers": [
+        "400",
+        "200",
+        "100",
+        "800"
+      ]
+    },
+    {
+      "text": "Two identical point charges of 4 nC with opposite signs are located 60 cm apart. Find the field strength at the midpoint of the segment joining the charges. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "400",
+        "1600",
+        "800",
+        "200"
+      ]
+    },
+    {
+      "text": "The distance between two positive point charges is 8 cm. On the straight line joining the charges, at a distance of 6 cm from the first charge, the field strength is zero. Find the ratio of the magnitude of the first charge to that of the second.",
+      "answers": [
+        "3",
+        "9",
+        "4",
+        "16"
+      ]
+    },
+    {
+      "text": "If at the midpoint of the segment joining point charges of 2 nC and –4 nC the field strength created by the first charge alone is 2 V/m, find the magnitude of the field strength created by both charges at that point.",
+      "answers": [
+        "6",
+        "2",
+        "4",
+        "8"
+      ]
+    },
+    {
+      "text": "There are two point charges of opposite sign, the positive one being 2.25 times larger in magnitude than the negative one. By what factor is the distance between the charges smaller than the distance from the negative charge to the point where the field strength is zero?",
+      "answers": [
+        "0.5",
+        "1",
+        "3",
+        "2"
+      ]
+    },
+    {
+      "text": "The distance between point charges of 64 nC and –48 nC is 10 cm. Determine the field strength (in kV/m) at a point 8 cm from the first charge and 6 cm from the second. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "100",
+        "150",
+        "200",
+        "250"
+      ]
+    },
+    {
+      "text": "Point charges of equal magnitude, 36 nC, and opposite sign are located at two vertices of an equilateral triangle with side 2 m. Determine the electric field strength at the third vertex of the triangle. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "162",
+        "81",
+        "40.5",
+        "27"
+      ]
+    },
+    {
+      "text": "Point charges of equal magnitude, 5 nC, and opposite sign are located 2.4 m apart. Find the electric field strength at a point 3 m from each charge. $k=9 \\cdot 10^9 \\, m/F$.",
+      "answers": [
+        "2",
+        "8",
+        "4",
+        "10"
+      ]
+    }
+  ]
+}

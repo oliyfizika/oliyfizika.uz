@@ -1,0 +1,311 @@
+{
+  "title": "Topic 31 | Harmonic oscillations",
+  "questions": [
+    {
+      "text": "If the equation of harmonic oscillation of a material point is x = 0.04 sin(4πt + π) (m), find its frequency (Hz).",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "3"
+      ]
+    },
+    {
+      "text": "Using the equation of harmonic oscillations x = 0.01 cos 10t ([x] = m, [t] = s), determine the frequency of these oscillations (Hz).",
+      "answers": [
+        "5/π",
+        "10/π",
+        "5",
+        "10"
+      ]
+    },
+    {
+      "text": "The equation of motion has the form x = 0.06 cos 100πt (m). What is the frequency of oscillation (Hz)?",
+      "answers": [
+        "50",
+        "4",
+        "25",
+        "20"
+      ]
+    },
+    {
+      "text": "The equation of motion of a harmonically oscillating body is x = 0.5 cos 10πt. What is the frequency of the body's oscillations in hertz?",
+      "answers": [
+        "10",
+        "50",
+        "0.5",
+        "5"
+      ]
+    },
+    {
+      "text": "The law of oscillation of a spring pendulum of mass 0.1 kg has the form x = 0.5 sin 10t (m). What is the stiffness of the spring (N/m)?",
+      "answers": [
+        "2",
+        "10",
+        "5",
+        "6.4"
+      ]
+    },
+    {
+      "text": "A point oscillates harmonically according to the cosine law. If its displacement at phase π/3 is 1 cm, what will its displacement be at phase 5π/3 (cm)?",
+      "answers": [
+        "0.5",
+        "1",
+        "1.25",
+        "2.5"
+      ]
+    },
+    {
+      "text": "Write the equation of a harmonic oscillation with an amplitude of 1 mm, a frequency of 1000 Hz and an initial phase of π/3 (m).",
+      "answers": [
+        "x = 0.001 sin(2000πt)",
+        "x = sin(1000πt + π/3)",
+        "x = cos(1000πt + π/3)",
+        "x = 0.001 cos(2000πt + π/3)"
+      ]
+    },
+    {
+      "text": "Write the equation of a harmonic oscillation with an amplitude of 5 cm and a period of 0.05 s (m).",
+      "answers": [
+        "x = 0.5 cos 40πt",
+        "x = 0.05 sin 20πt",
+        "x = 0.05 cos 20πt",
+        "x = 0.05 sin 40πt"
+      ]
+    },
+    {
+      "text": "Indicate the expression for the phase of a harmonic oscillation.",
+      "answers": [
+        "cos(ωt + α)",
+        "ωt + α",
+        "sin(ωt + α)",
+        "ωt"
+      ]
+    },
+    {
+      "text": "Find, among those given, the expressions that characterize harmonic oscillation: 1) x = A sin(ωt + α); 2) x = x0 + v0t + at^2/2; 3) x = A cos(ωt + α); 4) x = F/k.",
+      "answers": [
+        "1, 2",
+        "1, 3",
+        "2, 3",
+        "3, 4"
+      ]
+    },
+    {
+      "text": "The oscillation of a load along the OX axis is described by the equation x = 3 cos(2t + π/2). Determine the phase of the oscillation at the moment t = 3 s.",
+      "answers": [
+        "6",
+        "3",
+        "6 + π/2",
+        "π/2"
+      ]
+    },
+    {
+      "text": "The equation of harmonic oscillation has the form x = 0.02 cos πt. Find the difference between the displacement after 1.25 s and the displacement after 0.25 s (cm).",
+      "answers": [
+        "4.2",
+        "1.4",
+        "28",
+        "2.8"
+      ]
+    },
+    {
+      "text": "Using the given graph, determine the phase of the oscillation at time t = 0.6 s.",
+      "answers": [
+        "0.6π",
+        "1.2π",
+        "0.3π",
+        "0.4π"
+      ]
+    },
+    {
+      "text": "The amplitude of harmonic oscillations is 5 cm and the initial phase is 3π/2. The body makes 120 oscillations per minute. Indicate the equation of the oscillations (m).",
+      "answers": [
+        "x = 0.05 cos(4πt + 3π/2)",
+        "x = 5 cos(2πt + 3π/2)",
+        "x = 0.05 sin 4πt",
+        "x = 5 sin(4πt + π/2)"
+      ]
+    },
+    {
+      "text": "A body oscillates along the OX axis according to the law x(t) = 6π cos(π/2 t + π/4) (m). Indicate the angular frequency of the oscillations (rad/s).",
+      "answers": [
+        "π/2",
+        "π/4",
+        "6π",
+        "π"
+      ]
+    },
+    {
+      "text": "If the oscillations follow the sine law, at what phases is the magnitude of the displacement approximately 0.87 of the amplitude?",
+      "answers": [
+        "π/3; 2π/3; 4π/3; 5π/3",
+        "π/4; π/2; 3π/4; 7π/4",
+        "π/6; π/3; π/2; 2π/3",
+        "π/2; π; 3π/2"
+      ]
+    },
+    {
+      "text": "Two harmonic oscillations with amplitudes of 5 cm and 2 cm occur in the same direction with the same period (1.2 s). Determine the resultant displacement 0.1 s after the start when the phases are the same (m).",
+      "answers": [
+        "0.2 · 10^-2",
+        "1.5 · 10^-3",
+        "7 · 10^-2",
+        "3.5 · 10^-2"
+      ]
+    },
+    {
+      "text": "The amplitude of oscillation is 10 cm and the frequency is 0.5 Hz. After what time will the displacement be 7.1 cm? (The oscillation obeys the sine law.)",
+      "answers": [
+        "0.5 and 1.5 s",
+        "0.25 and 2.4 s",
+        "0.4 and 1.75 s",
+        "0.25 and 1.75 s"
+      ]
+    },
+    {
+      "text": "In how much time (s) does a material point with an oscillation period of 36 s move from the equilibrium position to half the amplitude?",
+      "answers": [
+        "9",
+        "8",
+        "4.5",
+        "3"
+      ]
+    },
+    {
+      "text": "If a pendulum oscillates harmonically with a period of 12 s, in how many seconds does it travel from its extreme position to half the amplitude?",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "3"
+      ]
+    },
+    {
+      "text": "What fraction of the period does an oscillating body take to move from half the amplitude to the extreme point?",
+      "answers": [
+        "T/12",
+        "T/3",
+        "T/4",
+        "T/6"
+      ]
+    },
+    {
+      "text": "How long does an oscillating body take to travel from the equilibrium position to the amplitude position?",
+      "answers": [
+        "T/12",
+        "T/3",
+        "T/4",
+        "T/8"
+      ]
+    },
+    {
+      "text": "How much time does it take an oscillating body to go from the equilibrium position to the amplitude position and return to the equilibrium position? The oscillation period is 6 s.",
+      "answers": [
+        "3",
+        "6",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "text": "What fraction of the period does a harmonically oscillating body take to cover the first half of the distance from the equilibrium position to the extreme position?",
+      "answers": [
+        "1/6",
+        "1/4",
+        "1/12",
+        "1/8"
+      ]
+    },
+    {
+      "text": "If the equation of the velocity of an oscillating body is ϑ = 5 sin(3t + π/3) m/s, what is the initial phase of the body's displacement?",
+      "answers": [
+        "3t + π/3",
+        "3t",
+        "5",
+        "-π/6"
+      ]
+    },
+    {
+      "text": "The speed of a point at a distance of 4 cm from the equilibrium position is 6 cm/s, and at a distance of 3 cm it is 8 cm/s. Find the amplitude of oscillation (cm).",
+      "answers": [
+        "4",
+        "5",
+        "6.7",
+        "8"
+      ]
+    },
+    {
+      "text": "How does the velocity of a harmonically oscillating point change with time?",
+      "answers": [
+        "remains constant",
+        "directly proportional to time",
+        "according to a sine or cosine law",
+        "inversely proportional to time"
+      ]
+    },
+    {
+      "text": "The law of oscillation of a pendulum has the form x = 0.1 sin(πt + π) [m]. Find the amplitude value of the velocity (m/s).",
+      "answers": [
+        "0.1",
+        "0.1π",
+        "1",
+        "π"
+      ]
+    },
+    {
+      "text": "The coordinate of a material point changes according to the law x = 2 + 3 sin(4πt + π/2). What was the velocity of the point at time t = 0?",
+      "answers": [
+        "5.3",
+        "37.7",
+        "12.0",
+        "0"
+      ]
+    },
+    {
+      "text": "If the speed of a particle at the equilibrium position is 50 cm/s and the amplitude is 10 mm, what is its speed (cm/s) when the displacement is 6 mm?",
+      "answers": [
+        "300",
+        "500",
+        "400",
+        "600"
+      ]
+    },
+    {
+      "text": "What is the velocity of a harmonically oscillating body at the moment when the magnitude of its displacement reaches its greatest value?",
+      "answers": [
+        "greatest",
+        "equal to 0",
+        "an average value",
+        "cannot be determined"
+      ]
+    },
+    {
+      "text": "A load of mass 5 kg hanging on a spring oscillates with a period of 0.25 s and travels 30 cm in one period. Find the maximum acceleration of the load (m/s^2).",
+      "answers": [
+        "37.5",
+        "47.3",
+        "60",
+        "9.6"
+      ]
+    },
+    {
+      "text": "The law of oscillation of a mathematical pendulum has the form x = 0.1 sin(10πt + π) (m). Find the amplitude value of the acceleration (m/s^2).",
+      "answers": [
+        "10π^2",
+        "100",
+        "10",
+        "π^2"
+      ]
+    },
+    {
+      "text": "A pendulum oscillates according to the law x = A sin 100πt. Which expression describes its law of acceleration?",
+      "answers": [
+        "ax = 10A cos 100πt",
+        "ay = -10^4Aπ^2t",
+        "ax = 500Ax",
+        "ax = -10^4π^2x"
+      ]
+    }
+  ]
+}

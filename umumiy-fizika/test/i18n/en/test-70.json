@@ -1,0 +1,615 @@
+{
+  "title": "Topic 70 | Electromagnetic oscillations",
+  "questions": [
+    {
+      "text": "In which of the circuits shown can undamped electromagnetic oscillations occur?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "in all of them."
+      ]
+    },
+    {
+      "text": "The charge in an oscillating circuit varies according to $q=\\sin 10t \\ (\\text{C})$. Find the amplitude of the current oscillations (A).",
+      "answers": [
+        "0.",
+        "0.1.",
+        "1.",
+        "10.",
+        "100."
+      ]
+    },
+    {
+      "text": "The charge on the capacitor plates of an oscillating circuit varies with time as $q=10^{-6}\\cos10\\pi t \\ (\\text{C})$. What is the amplitude of the current (A)?",
+      "answers": [
+        "$\\cos10\\pi$.",
+        "$10\\pi$.",
+        "$10^{-5}\\pi$.",
+        "$10^{-6}\\pi$.",
+        "10."
+      ]
+    },
+    {
+      "text": "The current in an oscillating circuit varies according to $i=0.5\\cos10^7 t$. What is the maximum charge on the capacitor ($\\mu$C)?",
+      "answers": [
+        "0.5.",
+        "0.025.",
+        "5.",
+        "0.25.",
+        "0.05."
+      ]
+    },
+    {
+      "text": "The maximum charge in an oscillating circuit is $10^{-9}$ C and the oscillation period is $3.14~\\mu$s. What is the amplitude of the current in the circuit (mA)?",
+      "answers": [
+        "0.32.",
+        "1.",
+        "2.",
+        "3.14.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "The maximum current in an oscillating circuit is $3.14$ mA and the oscillation period is $4~\\mu$s. What is the maximum charge on the capacitor (nC)?",
+      "answers": [
+        "2.",
+        "4.",
+        "6.28.",
+        "12.6.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "At time $T/3$, a current varying according to a cosine law has a value of $2.5$ A. What is the maximum value of the current (A)?",
+      "answers": [
+        "1.25.",
+        "2.5.",
+        "3.",
+        "5.",
+        "7.5."
+      ]
+    },
+    {
+      "text": "For phase $\\pi/6$, the instantaneous value of a current varying as $i=I_0\\sin10t$ is $6$ A. What is the amplitude of the current, in amperes?",
+      "answers": [
+        "0.12.",
+        "12.",
+        "1.2.",
+        "120.",
+        "6."
+      ]
+    },
+    {
+      "text": "The charge oscillations in an oscillating circuit follow $q=5.3\\cdot10^{-5}\\cos4\\pi t \\ (\\text{C})$. Determine the amplitudes of the charge and of the current.",
+      "answers": [
+        "$5.3\\cdot10^{-5}$ C; $21.2\\pi\\cdot10^{-5}$ A.",
+        "$5.3\\cdot10^{-5}$ C; $5.3\\cdot10^{-5}$ A.",
+        "$5.3\\cdot10^{-5}$ C; $4\\pi$ A.",
+        "$5.3$ C; $21.2\\pi\\cdot10^{-5}$ A.",
+        "cannot be determined."
+      ]
+    },
+    {
+      "text": "The current varies according to $i=0.3\\cos(100\\pi t+\\pi/2)$. Determine the period of variation of this current (s).",
+      "answers": [
+        "1.",
+        "0.3.",
+        "0.03.",
+        "0.02.",
+        "0.01."
+      ]
+    },
+    {
+      "text": "The current varies according to $i=5\\sin100\\pi t \\ (\\text{A})$. What is the frequency of the current (Hz)?",
+      "answers": [
+        "50.",
+        "10.",
+        "100$\\pi$.",
+        "5.",
+        "200."
+      ]
+    },
+    {
+      "text": "Using the graph of the capacitor charge in an oscillating circuit, determine the corresponding mathematical expression.",
+      "answers": [
+        "$q=10^{-2}\\cos9\\pi t$.",
+        "$q=10^{-2}\\cos10\\pi t$.",
+        "$q=10^{-2}\\cos5\\pi t$.",
+        "$q=10^{-2}\\cos20\\pi t$.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "The charge of the capacitor in an oscillating circuit varies according to $q=9\\cdot10^{-5}\\cos500t \\ [\\text{C}]$. If the capacitance of the capacitor is $3~\\mu$F, find the maximum voltage across the capacitor (V).",
+      "answers": [
+        "15.",
+        "30.",
+        "90.",
+        "60.",
+        "10."
+      ]
+    },
+    {
+      "text": "The charge in an oscillating circuit varies according to $q=10^{-7}\\cos10^6\\pi t \\ (\\text{C})$. Determine the frequency of the current in the circuit (Hz).",
+      "answers": [
+        "$5\\cdot10^5$.",
+        "$10^5$.",
+        "$10^{13}$.",
+        "$10^6$.",
+        "$2\\cdot10^6$."
+      ]
+    },
+    {
+      "text": "The charge in an oscillating circuit varies according to $q=10^{-7}\\cos10^6 t \\ (\\text{C})$. Find the maximum current in the circuit (mA).",
+      "answers": [
+        "1.",
+        "5.",
+        "10.",
+        "100.",
+        "1000."
+      ]
+    },
+    {
+      "text": "The charge in a circuit oscillates according to $q=10^{-3}\\cos100\\pi t$. What is the amplitude of the current (mA)?",
+      "answers": [
+        "0.1.",
+        "1.",
+        "3.14.",
+        "31.4.",
+        "314."
+      ]
+    },
+    {
+      "text": "The charge on the capacitor of an oscillating circuit varies according to $q=10^{-6}\\sin(10^6t+\\pi/3)\\ (\\text{C})$. What is the amplitude of the current in the circuit (A)?",
+      "answers": [
+        "0.",
+        "$10^{-6}$.",
+        "$10^{-2}$.",
+        "0.1.",
+        "1."
+      ]
+    },
+    {
+      "text": "The equation for the charge in a circuit is $q=10^{-6}\\cos10^6\\pi t \\ (\\text{C})$. Write the law of variation of the current in the circuit.",
+      "answers": [
+        "$i=10^{-6}\\pi\\sin10^6\\pi t$.",
+        "$i=-\\pi\\sin10^6\\pi t$.",
+        "$i=\\cos10^6\\pi t$.",
+        "$i=-10^{-6}\\sin10^6\\pi t$.",
+        "$i=10^{-6}\\cos10^6\\pi t$."
+      ]
+    },
+    {
+      "text": "The voltage varies according to $u=220\\cos100\\pi t \\ (\\text{V})$. Determine the period of the voltage (s).",
+      "answers": [
+        "0.01.",
+        "0.1.",
+        "1.",
+        "0.22.",
+        "0.02."
+      ]
+    },
+    {
+      "text": "An equation is written for the voltage oscillations across the terminals of an electric circuit. The amplitude of the voltage oscillations is $150$ V, the period is $10^{-2}$ s and the initial phase is zero; assume that the voltage is zero at the instant $t=0$.",
+      "answers": [
+        "$u=150\\sin100\\pi t$.",
+        "$u=10^{-2}\\sin150\\pi t$.",
+        "$u=150\\sin200\\pi t$.",
+        "$u=10^{-2}\\cos150\\pi t$.",
+        "$u=150\\cos100\\pi t$."
+      ]
+    },
+    {
+      "text": "The voltage varies according to $u=U\\sin(\\omega t+\\pi/12)\\ (\\text{V})$. If the voltage at the instant $t=T/24$ is $50$ V, what is the voltage amplitude (V)?",
+      "answers": [
+        "100.",
+        "50.",
+        "48.",
+        "24.",
+        "12."
+      ]
+    },
+    {
+      "text": "The equation of the current oscillations in an oscillating circuit is $i=4\\pi\\cdot10^{-3}\\cos4\\pi t \\ (\\text{A})$. Give the equation of the charge oscillations on the capacitor of this circuit.",
+      "answers": [
+        "$q=4\\pi\\cdot10^{-3}\\sin4\\pi t$.",
+        "$q=4\\cdot10^{-3}\\sin4\\pi t$.",
+        "$q=4\\cdot10^{-3}\\cos4\\pi t$.",
+        "$q=10^{-3}\\sin4\\pi t$.",
+        "$q=4\\pi\\cdot10^{-3}\\cos4\\pi t$."
+      ]
+    },
+    {
+      "text": "The current varies with time as $i=5\\cos200\\pi t$. What are the frequency and the period of the current oscillations?",
+      "answers": [
+        "100 Hz, 10 ms.",
+        "$100\\pi$ Hz, 10 s.",
+        "$\\pi$ Hz, $1/\\pi$ s.",
+        "100 Hz, 10 s.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "The angular frequency of an alternating current is $1000\\pi$ rad/s. What are its period and frequency?",
+      "answers": [
+        "0.005 s; 200 Hz.",
+        "0.002 s; 500 Hz.",
+        "0.02 s; 50 Hz.",
+        "0.001 s; 1000 Hz.",
+        "0.01 s; 100 Hz."
+      ]
+    },
+    {
+      "text": "The frequency of electromagnetic oscillations in an oscillating circuit is $10^5$ Hz. What is the period of the oscillations ($\\mu$s)?",
+      "answers": [
+        "$10^4$.",
+        "1000.",
+        "100.",
+        "10.",
+        "1."
+      ]
+    },
+    {
+      "text": "The graph of the charge on the capacitor of an oscillating circuit versus time is shown. What is the frequency of the charge oscillations, in hertz?",
+      "answers": [
+        "5.",
+        "2.5.",
+        "3.3.",
+        "10.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "The amplitude of the charge on the plates of the capacitor of an oscillating circuit is $2.5\\cdot10^{-6}$ C and the amplitude of the current is $3.14$ mA. What is the frequency of the electromagnetic oscillations in the circuit?",
+      "answers": [
+        "200 kHz.",
+        "200 Hz.",
+        "314 kHz.",
+        "250 kHz.",
+        "314 Hz."
+      ]
+    },
+    {
+      "text": "Give the formula for the angular frequency of the oscillations in an ideal oscillating circuit.",
+      "answers": [
+        "$\\omega=\\sqrt{LC}$.",
+        "$\\omega=\\sqrt{L/C}$.",
+        "$\\omega=\\sqrt{C/L}$.",
+        "$\\omega=LC$.",
+        "$\\omega=1/\\sqrt{LC}$."
+      ]
+    },
+    {
+      "text": "An oscillating circuit is made of a coil of inductance $20$ mH and a capacitor of capacitance $200~\\mu$F. What is the period of the oscillations in it (ms)?",
+      "answers": [
+        "$4\\pi$.",
+        "$2\\pi$.",
+        "$0.4$.",
+        "2.",
+        "1."
+      ]
+    },
+    {
+      "text": "The capacitance and inductance of an oscillating circuit are $C=6~\\mu$F and $L=5\\cdot10^{-5}$ H. Find the oscillation period in the circuit ($\\mu$s). Take $\\pi\\approx3$.",
+      "answers": [
+        "104.",
+        "30.",
+        "25.",
+        "20.",
+        "5."
+      ]
+    },
+    {
+      "text": "An oscillating circuit consists of a capacitor of capacitance $2$ pF and a coil of inductance $0.5~\\mu$H. What is the oscillation frequency in the circuit (MHz)?",
+      "answers": [
+        "1.6.",
+        "16.",
+        "160.",
+        "0.16.",
+        "160 Hz."
+      ]
+    },
+    {
+      "text": "Determine the oscillation frequency in a circuit consisting of a coil of inductance $L=1.5$ mH and a capacitor of capacitance $C=450$ pF.",
+      "answers": [
+        "$0.2\\cdot10^4$ Hz.",
+        "$2\\cdot10^4$ Hz.",
+        "20 kHz.",
+        "2 MHz.",
+        "0.2 MHz."
+      ]
+    },
+    {
+      "text": "An oscillating circuit consists of a coil of inductance $1$ mH and a capacitor of capacitance $100$ nF. What is the angular frequency of the natural oscillations of this circuit (rad/s)?",
+      "answers": [
+        "100.",
+        "$10^3$.",
+        "$10^4$.",
+        "$10^5$.",
+        "50."
+      ]
+    },
+    {
+      "text": "How does the oscillation frequency in an oscillating circuit change if its inductance is increased by a factor of $4$?",
+      "answers": [
+        "does not change.",
+        "decreases 4 times.",
+        "increases 4 times.",
+        "increases 2 times.",
+        "decreases 2 times."
+      ]
+    },
+    {
+      "text": "How does the period of free oscillations in an oscillating circuit change when the capacitance of the capacitor is increased by a factor of $2$?",
+      "answers": [
+        "increases $\\sqrt2$ times.",
+        "decreases $\\sqrt2$ times.",
+        "increases 2 times.",
+        "decreases 2 times.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "How does the oscillation period in a circuit change if the inductance and the capacitance of the oscillating circuit are both increased by a factor of $4$?",
+      "answers": [
+        "remains unchanged.",
+        "decreases 4 times.",
+        "increases 16 times.",
+        "decreases 16 times.",
+        "increases 4 times."
+      ]
+    },
+    {
+      "text": "In which cases does the oscillation period in an oscillating circuit increase?",
+      "answers": [
+        "1, 2, 3.",
+        "2, 4.",
+        "1, 4.",
+        "1, 3.",
+        "4."
+      ]
+    },
+    {
+      "text": "If $C=6~\\mu$F and $L=5\\cdot10^{-5}$ H, what is the oscillation period in the circuit ($\\mu$s)? $\\pi\\approx3$.",
+      "answers": [
+        "60.",
+        "30.",
+        "25.",
+        "20.",
+        "5."
+      ]
+    },
+    {
+      "text": "If $C=1~\\mu$F and $L=3\\cdot10^{-4}$ H, what is the oscillation period in the circuit ($\\mu$s)? Take $\\pi\\approx3$.",
+      "answers": [
+        "18.",
+        "54.",
+        "60.",
+        "90.",
+        "180."
+      ]
+    },
+    {
+      "text": "Find the period of the electromagnetic oscillations in the circuit shown in the diagram.",
+      "answers": [
+        "$T=2\\pi\\sqrt{2(L_1+L_2)C}$.",
+        "$T=2\\pi\\sqrt{(L_1+L_2)C/2}$.",
+        "$T=2\\pi\\sqrt{(L_1+L_2)C}$.",
+        "$T=4\\pi\\sqrt{(L_1+L_2)C}$.",
+        "$T=2\\pi\\sqrt{|L_1-L_2|C}$."
+      ]
+    },
+    {
+      "text": "Find the period of the electromagnetic oscillations in the circuit shown in the diagram.",
+      "answers": [
+        "$T=2\\pi\\sqrt{(L_1+L_2)C}$.",
+        "$T=2\\pi\\sqrt{|L_1-L_2|C}$.",
+        "$T=2\\pi\\sqrt{\\dfrac{L_1L_2}{L_1+L_2}C}$.",
+        "$T=2\\pi\\sqrt{\\dfrac{2L_1L_2}{L_1+L_2}C}$.",
+        "$T=4\\pi\\sqrt{(L_1+L_2)C}$."
+      ]
+    },
+    {
+      "text": "How does the period of free electromagnetic oscillations in an oscillating circuit change when going from circuit a to circuit b?",
+      "answers": [
+        "decreases 2 times.",
+        "increases 4 times.",
+        "increases 2 times.",
+        "decreases 4 times.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "How does the frequency of free electromagnetic oscillations in an oscillating circuit change when going from circuit a to circuit b?",
+      "answers": [
+        "decreases 4 times.",
+        "increases 2 times.",
+        "does not change.",
+        "increases 4 times.",
+        "decreases 2 times."
+      ]
+    },
+    {
+      "text": "How many electrical oscillations occur in 1 min in an oscillating circuit made of a capacitor of capacitance $100~\\mu$F and a coil of inductance $10~\\mu$H? $(\\pi^2=10)$.",
+      "answers": [
+        "$10^5$.",
+        "$3\\cdot10^5$.",
+        "$90\\cdot10^5$.",
+        "$60\\cdot10^5$.",
+        "$9\\cdot10^5$."
+      ]
+    },
+    {
+      "text": "How does the period of free electromagnetic oscillations in an ideal oscillating circuit change if the capacitor of capacitance $C$ is connected in parallel with a capacitor of capacitance $3C$?",
+      "answers": [
+        "decreases 2 times.",
+        "increases 2 times.",
+        "does not change.",
+        "decreases 3 times.",
+        "increases 3 times."
+      ]
+    },
+    {
+      "text": "How does the frequency of free electromagnetic oscillations in an oscillating circuit change if the capacitor of capacitance $C$ is connected in parallel with a capacitor of capacitance $3C$?",
+      "answers": [
+        "increases 2 times.",
+        "decreases 4 times.",
+        "decreases 2 times.",
+        "increases 4 times.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "How does the period of free electromagnetic oscillations in an oscillating circuit change if the capacitor of capacitance $C$ is connected in series with a capacitor of capacitance $C/3$?",
+      "answers": [
+        "increases 2 times.",
+        "decreases 2 times.",
+        "does not change.",
+        "decreases 3 times.",
+        "increases 3 times."
+      ]
+    },
+    {
+      "text": "How does the frequency of free electromagnetic oscillations in an oscillating circuit change if the capacitor of capacitance $C$ is connected in series with a capacitor of capacitance $C/3$?",
+      "answers": [
+        "decreases 3 times.",
+        "increases 3 times.",
+        "increases 2 times.",
+        "decreases 2 times.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "How does the period of free electromagnetic oscillations in a circuit change if the distance between the plates of a flat air capacitor is increased by a factor of $25$?",
+      "answers": [
+        "increases 5 times.",
+        "decreases 5 times.",
+        "increases 25 times.",
+        "decreases 25 times.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "How does the oscillation frequency change if the distance between the plates of a flat air capacitor in an oscillating circuit is increased by a factor of $7$?",
+      "answers": [
+        "does not change.",
+        "increases 7 times.",
+        "decreases 7 times.",
+        "increases $\\sqrt7$ times.",
+        "decreases $\\sqrt7$ times."
+      ]
+    },
+    {
+      "text": "How does the period of electromagnetic oscillations in a circuit change if a dielectric with $\\varepsilon=6.25$ is inserted into the capacitor?",
+      "answers": [
+        "does not change.",
+        "increases 6.25 times.",
+        "decreases 6.25 times.",
+        "increases 2.5 times.",
+        "decreases 2.5 times."
+      ]
+    },
+    {
+      "text": "How does the oscillation frequency in an oscillating circuit change if a dielectric with permittivity $\\varepsilon=3.24$ is inserted between the plates of an air capacitor?",
+      "answers": [
+        "does not change.",
+        "decreases 1.8 times.",
+        "increases 3.24 times.",
+        "decreases 3.24 times.",
+        "increases 1.8 times."
+      ]
+    },
+    {
+      "text": "How does the frequency of electromagnetic oscillations change if a ferromagnetic core is inserted into the coil of an oscillating circuit?",
+      "answers": [
+        "increases.",
+        "first increases, then decreases.",
+        "decreases.",
+        "first decreases, then increases.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "An oscillating circuit of inductance $12.5$ mH must have a frequency of $10^3$ Hz. A capacitor of what capacitance ($\\mu$F) must be connected to it?",
+      "answers": [
+        "2.",
+        "3.",
+        "5.",
+        "20.",
+        "30."
+      ]
+    },
+    {
+      "text": "To obtain oscillations with a period of $1$ ms in an oscillating circuit, a capacitor must be connected to a coil of inductance $20$ mH. What capacitance ($\\mu$F) must it have? $\\pi^2=10$.",
+      "answers": [
+        "125.",
+        "12.5.",
+        "5.",
+        "2.5.",
+        "1.25."
+      ]
+    },
+    {
+      "text": "The capacitance of the capacitor in an ideal oscillating circuit is $4~\\mu$F and the angular frequency of the oscillations is $500$ rad/s. What is the inductance of the coil, in henries?",
+      "answers": [
+        "0.05.",
+        "0.1.",
+        "0.5.",
+        "0.8.",
+        "1."
+      ]
+    },
+    {
+      "text": "How do the period and the amplitude of the voltage oscillations across the capacitor change if an iron core is inserted into the inductor coil of an oscillating circuit?",
+      "answers": [
+        "the period and the amplitude increase.",
+        "the period increases, the amplitude does not change.",
+        "the period decreases, the amplitude increases.",
+        "the period does not change, the amplitude increases.",
+        "the period decreases, the amplitude decreases."
+      ]
+    },
+    {
+      "text": "An oscillating circuit is made of a capacitor of capacitance $2~\\mu$F and a coil of inductance $2$ H, and the capacitor is given a charge of $200~\\mu$C. Write the equation of the electric current oscillations in the circuit.",
+      "answers": [
+        "$i=-0.05\\sin250t$.",
+        "$i=200\\sin16t$.",
+        "$i=-0.1\\sin500t$.",
+        "$i=16\\sin200t$.",
+        "$i=-0.5\\sin200t$."
+      ]
+    },
+    {
+      "text": "The current in an oscillating circuit varies according to $i=0.01\\cos1000t$. If the capacitance of its capacitor is $2\\cdot10^{-5}$ F, what is the inductance of the circuit (mH)?",
+      "answers": [
+        "5.",
+        "20.",
+        "25.",
+        "50.",
+        "70."
+      ]
+    },
+    {
+      "text": "The inductance of the coil in the circuit shown in the figure is $0.2$ H, the capacitance of the capacitor is $8\\cdot10^{-3}$ F, and it is charged to $0.01$ C. If the switch K is closed, what is the law of variation of the current in the circuit?",
+      "answers": [
+        "$i=-0.25\\sin25t$.",
+        "$i=-0.01\\sin25t$.",
+        "$i=-0.25\\sin40t$.",
+        "$i=-0.04\\sin40t$.",
+        "$i=-0.01\\sin1.6t$."
+      ]
+    },
+    {
+      "text": "In an oscillating circuit undergoing free electromagnetic oscillations, the current varies according to $i=0.2\\cos10^6 t$ (A). If the inductance of the coil in the circuit is $2$ mH, what is the capacitance of the capacitor (pF)?",
+      "answers": [
+        "500.",
+        "1000.",
+        "20.",
+        "200.",
+        "10000."
+      ]
+    }
+  ]
+}

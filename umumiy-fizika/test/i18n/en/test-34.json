@@ -1,0 +1,140 @@
+{
+  "title": "Topic 34 | Wavelength",
+  "questions": [
+    {
+      "text": "Which letter denotes the wavelength?",
+      "answers": [
+        "ν",
+        "λ",
+        "T",
+        "v"
+      ]
+    },
+    {
+      "text": "What is called the wavelength?",
+      "answers": [
+        "The number of oscillations per second",
+        "The speed of wave propagation",
+        "The distance between the nearest points oscillating in phase",
+        "The amplitude of oscillation"
+      ]
+    },
+    {
+      "text": "What is the SI unit of wavelength?",
+      "answers": [
+        "Hz",
+        "m",
+        "s",
+        "m/s"
+      ]
+    },
+    {
+      "text": "The wave speed is 24 m/s and the frequency is 6 Hz. Find the wavelength (m).",
+      "answers": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ]
+    },
+    {
+      "text": "The wavelength is 5 m and the frequency is 4 Hz. Find the wave speed (m/s).",
+      "answers": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ]
+    },
+    {
+      "text": "The wavelength is 8 m and the speed is 40 m/s. Find the frequency (Hz).",
+      "answers": [
+        "2",
+        "4",
+        "5",
+        "8"
+      ]
+    },
+    {
+      "text": "Which formula is used to calculate the wavelength?",
+      "answers": [
+        "λ = ν/v",
+        "λ = v·ν",
+        "λ = v/ν",
+        "λ = T/v"
+      ]
+    },
+    {
+      "text": "How does the wavelength change if the wave frequency increases 2 times while the propagation speed stays the same?",
+      "answers": [
+        "increases 2 times",
+        "increases 4 times",
+        "decreases 2 times",
+        "does not change"
+      ]
+    },
+    {
+      "text": "The wavelength is 12 m and the period is 3 s. Find the wave speed (m/s).",
+      "answers": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ]
+    },
+    {
+      "text": "The wave speed is 18 m/s and the period is 2 s. What is the wavelength (m)?",
+      "answers": [
+        "9",
+        "18",
+        "20",
+        "36"
+      ]
+    },
+    {
+      "text": "The distance between two adjacent crests oscillating in phase is 7 m. Find the wavelength (m).",
+      "answers": [
+        "3.5",
+        "7",
+        "14",
+        "21"
+      ]
+    },
+    {
+      "text": "The wavelength is 0.4 m and the frequency is 850 Hz. Find the speed of sound (m/s).",
+      "answers": [
+        "170",
+        "340",
+        "680",
+        "850"
+      ]
+    },
+    {
+      "text": "The frequency of an electromagnetic wave is 150 MHz. Find its wavelength (m). c = 3·10⁸ m/s.",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "The wavelength of a water wave is 3 m and its propagation speed is 12 m/s. Find the oscillation period (s).",
+      "answers": [
+        "0.25",
+        "0.5",
+        "1",
+        "4"
+      ]
+    },
+    {
+      "text": "A wave with a wavelength of 6 m travelled a distance of 180 m in 15 seconds. Find the frequency (Hz).",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  ]
+}

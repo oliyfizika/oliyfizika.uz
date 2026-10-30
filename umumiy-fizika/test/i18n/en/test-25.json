@@ -1,0 +1,131 @@
+{
+  "title": "Topic 25 | Hydrostatic pressure",
+  "questions": [
+    {
+      "text": "In which answer is the formula for liquid pressure given correctly?",
+      "answers": [
+        "p = mgh",
+        "p = mg",
+        "p = ρVg",
+        "p = ρgh"
+      ]
+    },
+    {
+      "text": "Compare the liquid pressures at points 1, 2, 3, 4 shown in the figure.",
+      "answers": [
+        "4 greater, 2 smaller",
+        "1 smaller, 4 greater",
+        "all the same",
+        "1 greater, 2 smaller"
+      ]
+    },
+    {
+      "text": "What does the hydrostatic pressure on the bottom of a vessel depend on? 1) the shape of the vessel; 2) the area of the bottom of the vessel; 3) the density of the liquid in the vessel; 4) the height of the liquid column.",
+      "answers": [
+        "1 and 2",
+        "2 and 3",
+        "3 and 4",
+        "1 and 4"
+      ]
+    },
+    {
+      "text": "How does the pressure of a liquid on the bottom of a vessel depend on other quantities?",
+      "answers": [
+        "directly proportional to the density of the liquid, inversely proportional to the height of the column",
+        "directly proportional to the height of the liquid column and inversely proportional to the density of the liquid",
+        "directly proportional to the height of the liquid column and independent of the density of the liquid",
+        "directly proportional to both the density of the liquid and the height of the column"
+      ]
+    },
+    {
+      "text": "What pressure does a layer of gasoline 0.5 m thick exert on the bottom of a vessel (kPa)? The density of gasoline is 800 kg/m³.",
+      "answers": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "text": "Find the pressure of a liquid of density 900 kg/m³ at a depth of 30 cm (Pa).",
+      "answers": [
+        "2700",
+        "27000",
+        "270000",
+        "3000"
+      ]
+    },
+    {
+      "text": "Determine the pressure of a water column 40 m high (kPa). The density of water is 1000 kg/m³, g = 10 N/kg.",
+      "answers": [
+        "4",
+        "4.5",
+        "40",
+        "400"
+      ]
+    },
+    {
+      "text": "What must the depth of a lake be (m) for the water pressure on the lake bottom to be 200 kPa?",
+      "answers": [
+        "2",
+        "10",
+        "20",
+        "100"
+      ]
+    },
+    {
+      "text": "Water is poured into one vessel and kerosene into the other, and they are separated by an elastic membrane. On the bottom of which vessel is the pressure greater, and in which direction does the membrane bulge?",
+      "answers": [
+        "pwater = pker, it does not bulge",
+        "pwater > pker, toward the water",
+        "pwater > pker, toward the kerosene",
+        "pker > pwater, toward the kerosene"
+      ]
+    },
+    {
+      "text": "The same liquid is poured to the same height into 3 vessels of different shapes. What is the relation between the pressures on the bottoms of the vessels?",
+      "answers": [
+        "p1 = p2 = p3",
+        "p2 > p1 > p3",
+        "p1 = p3 < p2",
+        "p2 > p1 < p3"
+      ]
+    },
+    {
+      "text": "What must the height of a cylindrical vessel of radius 5 cm filled with water be for the pressure force of the water on the bottom to equal the pressure force on its lateral surface (m)?",
+      "answers": [
+        "0.5",
+        "0.1",
+        "0.05",
+        "0.8"
+      ]
+    },
+    {
+      "text": "Under what condition is the pressure force of a liquid on the bottom of a cylindrical vessel equal to the pressure force on its lateral surface? (r is the radius, h is the height)",
+      "answers": [
+        "h = 2r",
+        "h = r",
+        "h = πr",
+        "h = r/π"
+      ]
+    },
+    {
+      "text": "Water in a cylindrical vessel with a base area of 1 cm² exerts a pressure of 10 kPa. If the water is poured into a vessel with a base 10 times larger, how many liters of water must be added to produce the same pressure as before?",
+      "answers": [
+        "9",
+        "1.8",
+        "0.45",
+        "0.9"
+      ]
+    },
+    {
+      "text": "If the pressure of water on the bottom of a vessel is 2 times the pressure of kerosene, what is the ratio of the height of the water column to the height of the kerosene column? (ρwater = 1000, ρker = 800)",
+      "answers": [
+        "1.6",
+        "2",
+        "1",
+        "0.8"
+      ]
+    }
+  ]
+}

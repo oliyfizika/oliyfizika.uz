@@ -1,0 +1,131 @@
+{
+  "title": "Topic 47 | First law of thermodynamics",
+  "questions": [
+    {
+      "text": "What does the first law of thermodynamics describe?",
+      "answers": [
+        "the law of conservation of energy.",
+        "the energy of elastic deformation.",
+        "thermal equilibrium.",
+        "the process of heat transfer."
+      ]
+    },
+    {
+      "text": "External forces did 300 J of work on a gas. If the internal energy of the gas increased by 400 J, how much heat (J) was transferred to it?",
+      "answers": [
+        "-100",
+        "500",
+        "100",
+        "700"
+      ]
+    },
+    {
+      "text": "Work of 250 J was done against external forces, and the internal energy of the gas increased by 550 J. How much heat was transferred to the gas (J)?",
+      "answers": [
+        "-300",
+        "500",
+        "800",
+        "300"
+      ]
+    },
+    {
+      "text": "External forces did 400 J of work on a gas, and the internal energy of the gas increased by 550 J. How much heat was transferred to the gas (J)?",
+      "answers": [
+        "-800",
+        "500",
+        "800",
+        "150"
+      ]
+    },
+    {
+      "text": "As a result of supplying 900 J of heat to a gas, its internal energy increased by 725 J. Find the work done against external forces (J).",
+      "answers": [
+        "-175",
+        "500",
+        "800",
+        "175"
+      ]
+    },
+    {
+      "text": "900 J of heat was supplied to a gas, and 175 J of work was done on it. Find the change in its internal energy (J).",
+      "answers": [
+        "-725",
+        "1075",
+        "-1075",
+        "725"
+      ]
+    },
+    {
+      "text": "In a thermodynamic process the internal energy of an ideal gas increased by 300 J, while 200 J of heat was released to the surroundings. How much work did the gas do in this process?",
+      "answers": [
+        "500",
+        "-500",
+        "100",
+        "-100"
+      ]
+    },
+    {
+      "text": "A system consists of three vessels with equal internal energies, filled with the same gas and separated from one another by evacuated gaps. The masses and temperatures of the gases in the vessels are m1 = 4 kg, m2 = 3 kg, m3 = 0.5 kg and T1 = 300 K, T2 = 400 K, T3 = 600 K, respectively. How will the temperatures in the vessels change over time?",
+      "answers": [
+        "it will rise in the first and second vessels and fall in the third",
+        "it will fall in the second and third vessels and rise in the first",
+        "the temperatures in the vessels will not change",
+        "it will rise in the first vessel, stay the same in the second, and fall in the third"
+      ]
+    },
+    {
+      "text": "Which law indicates the direction of processes in nature?",
+      "answers": [
+        "the law of conservation of energy",
+        "the first law of thermodynamics",
+        "the second law of thermodynamics",
+        "the law of conservation of electric charge"
+      ]
+    },
+    {
+      "text": "When oxygen expands isothermally, it does work A. How much heat does the gas receive?",
+      "answers": [
+        "Q = A + ΔU",
+        "Q = A",
+        "Q = -A",
+        "Q = A - ΔU"
+      ]
+    },
+    {
+      "text": "In which process is all the heat supplied to a gas spent on doing work?",
+      "answers": [
+        "adiabatic",
+        "isobaric",
+        "isochoric",
+        "isothermal"
+      ]
+    },
+    {
+      "text": "A gas expanding isothermally did 10 kJ of work. Find the change in the internal energy of the gas (kJ).",
+      "answers": [
+        "0",
+        "10",
+        "-10",
+        "30"
+      ]
+    },
+    {
+      "text": "A gas expanding isothermally did 10 kJ of work. Find the amount of heat supplied to the gas (kJ).",
+      "answers": [
+        "0",
+        "10",
+        "-10",
+        "15"
+      ]
+    },
+    {
+      "text": "A gas expanding isothermally did 30 kJ of work. Find the amount of heat supplied to the gas (kJ).",
+      "answers": [
+        "0",
+        "30",
+        "-10",
+        "15"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Topic 67 | Magnetic field in matter. Magnetic materials",
+  "questions": [
+    {
+      "text": "What does the magnetic permeability μ of a medium show?",
+      "answers": [
+        "How many times the magnetic induction in the medium is greater than in vacuum",
+        "The refractive index of the medium",
+        "The heat capacity of the medium",
+        "The density of the medium",
+        "The electrical conductivity of the medium"
+      ]
+    },
+    {
+      "text": "What are substances with a magnetic permeability slightly less than 1 (μ < 1) called?",
+      "answers": [
+        "Paramagnets",
+        "Dielectrics",
+        "Ferromagnets",
+        "Diamagnets"
+      ]
+    },
+    {
+      "text": "What are substances with a magnetic permeability slightly greater than 1 (μ > 1) called?",
+      "answers": [
+        "Semiconductors",
+        "Paramagnets",
+        "Diamagnets",
+        "Ferromagnets"
+      ]
+    },
+    {
+      "text": "What are substances with a very large magnetic permeability (μ ≫ 1) called?",
+      "answers": [
+        "Diamagnets",
+        "Paramagnets",
+        "Insulators",
+        "Ferromagnets"
+      ]
+    },
+    {
+      "text": "Which of the following is a ferromagnet?",
+      "answers": [
+        "Water",
+        "Bismuth",
+        "Aluminum",
+        "Iron",
+        "Copper"
+      ]
+    },
+    {
+      "text": "Which of the following is a diamagnet?",
+      "answers": [
+        "Iron",
+        "Cobalt",
+        "Bismuth",
+        "Nickel"
+      ]
+    },
+    {
+      "text": "Which of the following is a paramagnet?",
+      "answers": [
+        "Bismuth",
+        "Iron",
+        "Aluminum",
+        "Copper"
+      ]
+    },
+    {
+      "text": "What is called the Curie point (temperature)?",
+      "answers": [
+        "The boiling point of a substance",
+        "The temperature at which superconductivity begins",
+        "The temperature at which a ferromagnet loses its magnetic properties and becomes a paramagnet",
+        "The melting point of a substance"
+      ]
+    },
+    {
+      "text": "The magnetic induction in vacuum is 2 mT. What is it (in teslas) in a medium with a magnetic permeability of 500?",
+      "answers": [
+        "0.004",
+        "4",
+        "10",
+        "1",
+        "0.1"
+      ]
+    },
+    {
+      "text": "The magnetic induction in a medium is 0.6 T, and in vacuum it is 2 mT. What is the magnetic permeability of the medium?",
+      "answers": [
+        "120",
+        "3000",
+        "30",
+        "300"
+      ]
+    },
+    {
+      "text": "The magnetic induction in a solenoid in vacuum is 4 mT. What will the magnetic induction be (in teslas) if an iron core with μ = 1000 is inserted into the solenoid (the current remains constant)?",
+      "answers": [
+        "4000",
+        "0.4",
+        "40",
+        "4"
+      ]
+    },
+    {
+      "text": "How does the magnetic field of a current-carrying coil change when a ferromagnetic core is inserted into it?",
+      "answers": [
+        "It disappears",
+        "It is strengthened many times",
+        "It does not change",
+        "It weakens slightly"
+      ]
+    },
+    {
+      "text": "Why is an iron core used in electromagnets?",
+      "answers": [
+        "To reduce the current",
+        "To strengthen the magnetic field",
+        "To cool the coil",
+        "To accumulate charge"
+      ]
+    },
+    {
+      "text": "What causes permanent magnets to form in ferromagnets?",
+      "answers": [
+        "Alignment of small magnetized regions (domains) in the same direction",
+        "Disappearance of electrons",
+        "Heating of the substance",
+        "Increase in the mass of the nucleus"
+      ]
+    },
+    {
+      "text": "What is the relationship between magnetic induction B, magnetic field strength H and the magnetic permeability of the medium μ?",
+      "answers": [
+        "B = μ₀H/μ",
+        "B = μ/(μ₀H)",
+        "B = H/(μμ₀)",
+        "B = μμ₀H"
+      ]
+    },
+    {
+      "text": "What happens when a diamagnetic substance is placed in an external magnetic field?",
+      "answers": [
+        "It eliminates the field",
+        "It weakens the field slightly",
+        "It has no effect on the field",
+        "It strengthens the field many times"
+      ]
+    },
+    {
+      "text": "The number of turns per unit length of a solenoid is n = 1000 m⁻¹, and the current in it is 2 A. What is the magnetic field strength H (A/m) inside the solenoid?",
+      "answers": [
+        "2",
+        "2000",
+        "8000",
+        "500",
+        "4000"
+      ]
+    }
+  ]
+}

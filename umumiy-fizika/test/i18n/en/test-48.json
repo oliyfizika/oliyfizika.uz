@@ -1,0 +1,95 @@
+{
+  "title": "Topic 48 | Degrees of freedom",
+  "questions": [
+    {
+      "text": "How many degrees of freedom does a monatomic ideal gas have?",
+      "answers": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "text": "How many degrees of freedom does a diatomic gas have (neglecting vibrational motion)?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "text": "How many degrees of freedom does a triatomic ideal gas have?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "text": "2 mol of a monatomic gas are at a temperature of 300 K. Find the internal energy (kJ).",
+      "answers": [
+        "5.0",
+        "7.5",
+        "10.0",
+        "12.5"
+      ]
+    },
+    {
+      "text": "The temperature of 1 mol of a diatomic gas is raised by 200 K. By how much does its internal energy increase (kJ)?",
+      "answers": [
+        "2.08",
+        "4.16",
+        "6.24",
+        "8.32"
+      ]
+    },
+    {
+      "text": "The internal energy of a gas is determined by the formula U = (i/2) * νRT. What does (i) denote here?",
+      "answers": [
+        "Pressure",
+        "Volume",
+        "Number of degrees of freedom",
+        "Density"
+      ]
+    },
+    {
+      "text": "3 mol of a triatomic gas are at a temperature of 400 K. Find the internal energy (kJ).",
+      "answers": [
+        "14.9",
+        "29.9",
+        "44.9",
+        "59.9"
+      ]
+    },
+    {
+      "text": "The numbers of moles and the temperatures of a monatomic gas and a diatomic gas are the same. What is the ratio of their internal energies?",
+      "answers": [
+        "3:5",
+        "5:3",
+        "2:1",
+        "1:2"
+      ]
+    },
+    {
+      "text": "By how much does the internal energy of 2 mol of a monatomic gas increase when its temperature is raised by 150 K (kJ)?",
+      "answers": [
+        "1.87",
+        "3.74",
+        "5.61",
+        "7.48"
+      ]
+    },
+    {
+      "text": "The internal energy of an ideal gas is 18.7 kJ, the amount of substance is 2.5 mol and the temperature is 300 K. Determine the number of degrees of freedom of the gas.",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "title": "Topic 71 | Current, voltage and resistance in an AC circuit",
+  "questions": [
+    {
+      "text": "A resistor, a capacitor and a coil are connected in series to an AC source. The amplitude of the voltage oscillations is $4$ V across the resistor, $6$ V across the capacitor and $3$ V across the coil. What is the amplitude of the voltage oscillations across the source terminals (in volts)?",
+      "answers": [
+        "6.",
+        "4.",
+        "5.",
+        "3.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "An inductor, a capacitor and a resistor are connected in series to an AC circuit. The voltages across the inductor, the capacitor and the resistor are $30$ V, $24$ V and $8$ V, respectively. What is the total voltage in the circuit (V)?",
+      "answers": [
+        "10.",
+        "14.",
+        "21.",
+        "46.",
+        "62."
+      ]
+    },
+    {
+      "text": "A resistor and a capacitor are connected in series to an AC circuit. A voltmeter connected across the resistor reads $60$ V, and a voltmeter connected across the capacitor reads $80$ V. What is the total voltage in the mains (V)?",
+      "answers": [
+        "20.",
+        "60.",
+        "80.",
+        "100.",
+        "140."
+      ]
+    },
+    {
+      "text": "In the circuit shown in the figure, the voltages are $U_L=80$ V and $U_C=60$ V. What is $U$ (in volts)?",
+      "answers": [
+        "100.",
+        "140.",
+        "$\\sqrt{140}$.",
+        "20.",
+        "10."
+      ]
+    },
+    {
+      "text": "An inductor and a capacitor are connected in series to an AC circuit. A voltmeter connected across the inductor reads $400$ V, and a voltmeter connected across the capacitor reads $180$ V. What is the total voltage in the mains (V)?",
+      "answers": [
+        "180.",
+        "220.",
+        "290.",
+        "400.",
+        "580."
+      ]
+    },
+    {
+      "text": "A resistance and an inductor are connected in series to an AC source. The potential difference between points AB is $40$ V and between points BC is $30$ V. What is the potential difference between points AC (V)?",
+      "answers": [
+        "70.",
+        "10.",
+        "50.",
+        "60.",
+        "5."
+      ]
+    },
+    {
+      "text": "A circuit consists of a $24~\\Omega$ resistance, a $30~\\Omega$ capacitive reactance and a $30~\\Omega$ inductive reactance connected in series. Find the impedance of the circuit ($\\Omega$).",
+      "answers": [
+        "84.",
+        "65.",
+        "54.",
+        "30.",
+        "24."
+      ]
+    },
+    {
+      "text": "A resistor of resistance $70~\\Omega$, a capacitor of reactance $6~\\Omega$ and an inductor of reactance $30~\\Omega$ are connected in series to an AC circuit. What is the impedance of the circuit ($\\Omega$)?",
+      "answers": [
+        "65.",
+        "53.",
+        "95.",
+        "74.",
+        "109."
+      ]
+    },
+    {
+      "text": "In an AC circuit with an angular frequency of $1000$ rad/s, an inductor of inductance $2$ H and a capacitor of capacitance $1~\\mu$F are connected in series. Find the impedance of the circuit (k$\\Omega$).",
+      "answers": [
+        "1.",
+        "3.",
+        "10.",
+        "30.",
+        "100."
+      ]
+    },
+    {
+      "text": "An inductor of inductance $31.4$ H and a capacitor of capacitance $314$ nF are connected in series to a circuit. If the AC frequency is $50$ Hz, what is the impedance of the circuit ($\\Omega$)? Neglect the resistance of the connecting wires. $\\pi^2\\approx10$.",
+      "answers": [
+        "0.",
+        "1.",
+        "3.14.",
+        "6.28.",
+        "10."
+      ]
+    },
+    {
+      "text": "A resistance of $8~\\text{k}\\Omega$ and an inductor of inductance $20$ H are connected in series to an AC source. If the frequency of the alternating current is $50$ Hz, find the impedance of the circuit (k$\\Omega$). $\\pi=3$.",
+      "answers": [
+        "10.",
+        "6.",
+        "8.",
+        "12.",
+        "5."
+      ]
+    },
+    {
+      "text": "The impedance of the AC circuit shown below is $Z=3\\sqrt5~\\Omega$. If $R_1=12~\\Omega$, $X_L=10~\\Omega$ and $X_C=4~\\Omega$, what is $R_2$ ($\\Omega$)?",
+      "answers": [
+        "4.",
+        "8.",
+        "12.",
+        "16.",
+        "6."
+      ]
+    },
+    {
+      "text": "A capacitor of capacitance $100~\\mu$F, an inductor of inductance $200$ mH and a rheostat of resistance $60~\\Omega$ are connected in series. The current in the circuit varies as $i=8\\sin100t$. What is the impedance of the circuit ($\\Omega$)?",
+      "answers": [
+        "640.",
+        "360.",
+        "6400.",
+        "80.",
+        "100."
+      ]
+    },
+    {
+      "text": "In an AC circuit with an angular frequency of $300$ rad/s, a resistor of resistance $4~\\Omega$ and an inductor of inductance $10$ mH are connected in series. If the current amplitude in the circuit is $50$ A, what is the amplitude of the voltage across the circuit (V)?",
+      "answers": [
+        "200.",
+        "250.",
+        "350.",
+        "400.",
+        "500."
+      ]
+    },
+    {
+      "text": "The resistance of an AC circuit is $16~\\Omega$ and its reactance is $12~\\Omega$. What is the power factor of the circuit?",
+      "answers": [
+        "0.6.",
+        "0.64.",
+        "0.92.",
+        "0.8.",
+        "0."
+      ]
+    },
+    {
+      "text": "The resistance of a circuit is $7~\\Omega$ and its reactance is $24~\\Omega$. What is the power factor of the circuit?",
+      "answers": [
+        "0.28.",
+        "0.6.",
+        "0.64.",
+        "0.92.",
+        "0.3."
+      ]
+    },
+    {
+      "text": "In an AC circuit with an angular frequency of $10^3$ rad/s, a resistor of resistance $15~\\Omega$ and an inductor of inductance $0.02$ H are connected in series. If the amplitude of the total voltage in the circuit is $1$ kV, what is the current amplitude (A)?",
+      "answers": [
+        "5.",
+        "35.",
+        "40.",
+        "70.",
+        "80."
+      ]
+    },
+    {
+      "text": "A capacitor of reactance $10~\\Omega$ and an inductor of reactance $20~\\Omega$ are connected in series to an AC circuit. If the rms (effective) value of the current is $2$ A, what is the rms value of the voltage across the circuit (V)?",
+      "answers": [
+        "60.",
+        "43.",
+        "40.",
+        "30.",
+        "20."
+      ]
+    },
+    {
+      "text": "In an AC circuit with an angular frequency of $10^4$ rad/s, a resistor of resistance $100~\\Omega$ and a capacitor of capacitance $1~\\mu$F are connected in series. The amplitude of the applied voltage is $300$ V. What is the amplitude of the current in the circuit (A)?",
+      "answers": [
+        "6.",
+        "4.2.",
+        "3.",
+        "2.1.",
+        "1.5."
+      ]
+    },
+    {
+      "text": "A resistor of resistance $10~\\Omega$, an inductor of reactance $20~\\Omega$ and a capacitor of reactance $30~\\Omega$ are connected in series to an AC circuit. If the amplitude of the AC voltage is $200$ V, what is the current amplitude (A)?",
+      "answers": [
+        "1.4.",
+        "2.",
+        "3.3.",
+        "14.",
+        "20."
+      ]
+    },
+    {
+      "text": "A circuit consists of a $9~\\Omega$ resistance and a $12~\\Omega$ inductive reactance connected in series. What is the cosine of the phase shift between the current and voltage oscillations?",
+      "answers": [
+        "0.",
+        "0.3.",
+        "0.6.",
+        "0.8.",
+        "1."
+      ]
+    },
+    {
+      "text": "A circuit consists of an $18~\\Omega$ resistance and a $24~\\Omega$ capacitive reactance connected in series. Find the cosine of the phase shift between the current and voltage oscillations.",
+      "answers": [
+        "$1/2$.",
+        "0.6.",
+        "$\\sqrt2/2$.",
+        "$\\sqrt3/2$.",
+        "1."
+      ]
+    },
+    {
+      "text": "Find the rms value of the current in this electric circuit (A).",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ]
+    },
+    {
+      "text": "Find the power factor ($\\cos\\Delta\\varphi$) of this electric circuit.",
+      "answers": [
+        "$1/2$.",
+        "$3/5$.",
+        "$2/3$.",
+        "$\\sqrt2/2$.",
+        "$4/5$."
+      ]
+    },
+    {
+      "text": "The two electric circuits shown in the figures have the same power factor. Find the ratio of the rms currents in the two circuits, $I_1/I_2$.",
+      "answers": [
+        "$1/2$.",
+        "$1/3$.",
+        "$2/3$.",
+        "$1$.",
+        "$4/5$."
+      ]
+    },
+    {
+      "text": "The voltage in this electric circuit varies as\n$u=U\\sin\\omega t$,\nand the current varies as\n$i=I\\sin\\left(\\omega t-\\dfrac{\\pi}{6}\\right)$.\nFind the inductive reactance ($X_L$) in the circuit ($\\Omega$).",
+      "answers": [
+        "5.",
+        "15.",
+        "20.",
+        "25.",
+        "30."
+      ]
+    },
+    {
+      "text": "The voltage in this electric circuit varies as\n$u=U\\sin\\omega t$,\nand the current varies as\n$i=10\\sqrt2\\sin\\left(50t+\\dfrac{\\pi}{3}\\right)$.\nFind the rms value of the voltage in the circuit (V). $[u]=$volt, $[i]=$ampere.",
+      "answers": [
+        "20.",
+        "$20\\sqrt3$.",
+        "40.",
+        "$40\\sqrt3$.",
+        "80."
+      ]
+    },
+    {
+      "text": "Find the rms value of the current in this electric circuit (A).",
+      "answers": [
+        "5.",
+        "$10\\sqrt2$.",
+        "10.",
+        "$20\\sqrt2$.",
+        "20."
+      ]
+    },
+    {
+      "text": "The impedance vector of the circuit below is shown in Figure 2. Find the rms value of the voltage drop across the capacitor (V). $\\sin53^0=0.8$, $\\cos53^0=0.6$.",
+      "answers": [
+        "30.",
+        "40.",
+        "50.",
+        "60.",
+        "80."
+      ]
+    },
+    {
+      "text": "A resistor, an inductor and a capacitor are connected in series. What is the impedance of the circuit at resonance?",
+      "answers": [
+        "greater than the resistance.",
+        "equal to the resistance.",
+        "less than the resistance.",
+        "many times less than the resistance.",
+        "equal to zero."
+      ]
+    },
+    {
+      "text": "In an AC circuit, an inductor, a capacitor and a resistance are connected in series. At resonance, what is the phase difference between the current and the voltage?",
+      "answers": [
+        "equal to zero.",
+        "the current leads the voltage by $\\pi/2$.",
+        "the current lags behind the voltage by $\\pi/2$.",
+        "the current leads the voltage by $\\pi$.",
+        "the current lags behind the voltage by $\\pi$."
+      ]
+    },
+    {
+      "text": "In an AC circuit, an inductor of inductance $50$ mH and a capacitor of capacitance $20~\\mu$F are connected in series. Find the angular frequency (rad/s) at which resonance occurs in the circuit.",
+      "answers": [
+        "$10^2$.",
+        "$10^3$.",
+        "$10^4$.",
+        "$10^5$.",
+        "$10^6$."
+      ]
+    },
+    {
+      "text": "An AC circuit of frequency $100$ Hz contains an inductor of inductance $25$ mH. What must be the capacitance of a capacitor connected in parallel with it for resonance to occur in the circuit ($\\mu$F)?",
+      "answers": [
+        "100.",
+        "40.",
+        "10.",
+        "4.",
+        "1."
+      ]
+    },
+    {
+      "text": "A resistor of resistance $10~\\Omega$, a capacitor of capacitance $0.5~\\mu$F and an inductor of inductance $0.5$ H are connected in series to an AC generator of variable frequency. The rms voltage across the generator terminals is $140$ V. What is the rms current at resonance (A)?",
+      "answers": [
+        "3.5.",
+        "5.",
+        "7.",
+        "10.",
+        "14."
+      ]
+    },
+    {
+      "text": "An inductor of reactance $20~\\Omega$, a capacitor of reactance $20~\\Omega$ and a resistor of resistance $10~\\Omega$ are connected in series to an AC circuit with a voltage amplitude of $300$ V. What is the current amplitude in the circuit at resonance (A)?",
+      "answers": [
+        "6.",
+        "10.",
+        "12.",
+        "15.",
+        "30."
+      ]
+    },
+    {
+      "text": "A resistor of resistance $3~\\Omega$, an inductor of reactance $2~\\Omega$ and a capacitor of reactance $6~\\Omega$ are connected in series to an AC circuit. What power is dissipated in this circuit when the rms current is $2$ A (W)?",
+      "answers": [
+        "10.",
+        "12.",
+        "20.",
+        "24.",
+        "40."
+      ]
+    },
+    {
+      "text": "In an AC circuit, the current amplitude is $5$ A, the voltage amplitude is $200$ V and the power factor is $0.8$. Find the active power of the circuit (W).",
+      "answers": [
+        "400.",
+        "570.",
+        "800.",
+        "1000.",
+        "1250."
+      ]
+    },
+    {
+      "text": "An AC motor operates at an rms voltage of $380$ V with a power of $912$ W. If the power factor is $0.8$, find the current in its windings (A).",
+      "answers": [
+        "0.3.",
+        "1.7.",
+        "2.",
+        "2.4.",
+        "3."
+      ]
+    },
+    {
+      "text": "A circuit is made up of a resistance of $8~\\Omega$, a capacitive reactance of $9~\\Omega$ and an inductive reactance of $3~\\Omega$ connected in series, and an AC voltage with an rms value of $140$ V is applied across it. Find the active power in the circuit (W).",
+      "answers": [
+        "1568.",
+        "1960.",
+        "1764.",
+        "588.",
+        "125."
+      ]
+    },
+    {
+      "text": "An AC circuit consists of a resistor of resistance $30~\\Omega$, an inductor of reactance $20~\\Omega$ and a capacitor of reactance $10~\\Omega$. If a current with an rms value of $2.5$ A flows through the circuit, how many joules of heat are released in it in $4$ s?",
+      "answers": [
+        "500.",
+        "750.",
+        "1500.",
+        "780.",
+        "1000."
+      ]
+    },
+    {
+      "text": "In a series AC circuit, the inductive reactance is $600~\\Omega$, the resistance is $400~\\Omega$ and the capacitive reactance is $300~\\Omega$. If the rms current in the circuit is $2$ A, what is the power of the current (W)?",
+      "answers": [
+        "2000.",
+        "1800.",
+        "2400.",
+        "1600.",
+        "2200."
+      ]
+    },
+    {
+      "text": "In an AC circuit, the reactance is $4~\\Omega$, the resistance is $5~\\Omega$, and the amplitude of the alternating current is $2\\sqrt2$ A. Find the average power of the current (W).",
+      "answers": [
+        "12.5.",
+        "39.",
+        "20.",
+        "16.",
+        "5."
+      ]
+    },
+    {
+      "text": "A resistor of resistance $3~\\Omega$, an inductor of reactance $2~\\Omega$ and a capacitor of reactance $6~\\Omega$ are connected in series to an AC circuit. If the rms current is $2$ A, find the amount of heat released in this circuit in $10$ s (J).",
+      "answers": [
+        "144.",
+        "120.",
+        "60.",
+        "72.",
+        "12."
+      ]
+    }
+  ]
+}

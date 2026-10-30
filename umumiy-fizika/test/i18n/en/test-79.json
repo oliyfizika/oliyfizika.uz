@@ -1,0 +1,485 @@
+{
+  "title": "Topic 79 | Diffraction of light",
+  "questions": [
+    {
+      "text": "What is diffraction?",
+      "answers": [
+        "the bending of waves incident on an obstacle or slit whose size is of the order of the wavelength into the region behind the obstacle.",
+        "the strengthening or weakening of the amplitude of the resultant wave when two coherent waves are superposed.",
+        "the reflection of waves from an obstacle at some angle, so that they propagate backwards.",
+        "the sharp increase or decrease of the amplitude of the resultant oscillations when two waves are superposed.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "The deviation of light waves from rectilinear propagation and their bending around an obstacle into the region of shadow is called ...",
+      "answers": [
+        "interference.",
+        "polarization of light.",
+        "the photoelectric effect.",
+        "dispersion.",
+        "diffraction."
+      ]
+    },
+    {
+      "text": "Under what conditions does light deviate from rectilinear propagation?",
+      "answers": [
+        "in an inhomogeneous medium.",
+        "when it meets obstacles whose size is comparable to the wavelength of light.",
+        "when it passes through slits or holes whose size is comparable to the wavelength of light.",
+        "No correct answer.",
+        "Answers A, B and C are correct."
+      ]
+    },
+    {
+      "text": "Coherent rays with a wavelength of 600 nm and an optical path difference of 1.2 $\\mu$m arrive at a point in space. What phenomenon is observed at this point?",
+      "answers": [
+        "diffraction maxima.",
+        "interference minima.",
+        "interference maxima.",
+        "diffraction minima.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "If the width of one line of a diffraction grating is $a=1.25$ $\\mu$m and the distance between the lines is $b=2.35$ $\\mu$m, what is the grating period (constant) $d$ ($\\mu$m)?",
+      "answers": [
+        "1.1.",
+        "1.88.",
+        "0.53.",
+        "3.6.",
+        "1.71."
+      ]
+    },
+    {
+      "text": "Determine the period ($\\mu$m) of a diffraction grating that has 1000 lines per 1 mm.",
+      "answers": [
+        "100.",
+        "10.",
+        "2.",
+        "0.1.",
+        "1."
+      ]
+    },
+    {
+      "text": "A modern diffraction grating has 12500 lines ruled over a distance of 3/4 mm. What is the grating constant ($\\mu$m)?",
+      "answers": [
+        "0.03.",
+        "0.24.",
+        "0.12.",
+        "0.06.",
+        "0.1."
+      ]
+    },
+    {
+      "text": "If the grating period is 2 $\\mu$m, how many lines are there per millimeter?",
+      "answers": [
+        "500.",
+        "400.",
+        "300.",
+        "200.",
+        "100."
+      ]
+    },
+    {
+      "text": "In a diffraction grating, the path difference of waves diffracted from the edges of two adjacent slits is 2.5 $\\mu$m and the diffraction angle is $30^\\circ$. What is the constant of this grating ($\\mu$m)?",
+      "answers": [
+        "1.25.",
+        "2.5.",
+        "5.",
+        "10.",
+        "25."
+      ]
+    },
+    {
+      "text": "A diffraction grating with a period of 1.5 $\\mu$m deflects the first-order spectrum through an angle of $30^\\circ$. Find the corresponding wavelength (nm).",
+      "answers": [
+        "300.",
+        "450.",
+        "500.",
+        "600.",
+        "750."
+      ]
+    },
+    {
+      "text": "A monochromatic light wave with a wavelength of 600 nm is incident normally on a diffraction grating with a period of 3.6 $\\mu$m. Determine the order of the diffraction maximum seen at an angle of $30^\\circ$.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ]
+    },
+    {
+      "text": "A parallel beam of monochromatic rays is incident normally on a diffraction grating with period $d$; the wavelength of the rays is $\\lambda$. Which condition must the angle $\\varphi$ of the first principal maximum satisfy?",
+      "answers": [
+        "$\\sin\\varphi=\\lambda/d$.",
+        "$\\sin\\varphi=d/\\lambda$.",
+        "$\\cos\\varphi=\\lambda/d$.",
+        "$\\cos\\varphi=d/\\lambda$.",
+        "$\\cos\\varphi=\\lambda d$."
+      ]
+    },
+    {
+      "text": "At what angle is the green $(\\lambda=0.5~\\mu\\text{m})$ line seen in the first-order spectrum produced by a diffraction grating with a period of 0.001 mm?",
+      "answers": [
+        "$0^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "$75^\\circ$."
+      ]
+    },
+    {
+      "text": "The constant of a diffraction grating is 1.4 $\\mu$m. The 1st-order maximum of the diffraction pattern produced by the grating is observed at an angle of $30^\\circ$. Find the wavelength of the light ($\\mu$m).",
+      "answers": [
+        "0.5.",
+        "0.7.",
+        "0.6.",
+        "0.8.",
+        "1."
+      ]
+    },
+    {
+      "text": "The period of a diffraction grating is $1\\cdot10^{-3}$ mm. The angle between the symmetric first-order maxima is $60^\\circ$. What is the wavelength of the incident light (nm)?",
+      "answers": [
+        "400.",
+        "500.",
+        "600.",
+        "700.",
+        "870."
+      ]
+    },
+    {
+      "text": "Behind a diffraction grating, the 6th-order maximum is observed at an angle of $60^\\circ$. Find the ratio of the grating constant to the wavelength of the light.",
+      "answers": [
+        "9.",
+        "7.2.",
+        "5.2.",
+        "6.9.",
+        "3.6."
+      ]
+    },
+    {
+      "text": "What is the deflection angle of sky-blue $(\\lambda=0.5~\\mu\\text{m})$ light in the 3rd-order spectrum produced by a diffraction grating with a period of 0.0025 mm?",
+      "answers": [
+        "$37^\\circ$.",
+        "$45^\\circ$.",
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$30^\\circ$."
+      ]
+    },
+    {
+      "text": "A monochromatic light wave with a wavelength of 500 nm is incident normally on a diffraction grating with a period of $\\sqrt3~\\mu$m. At what angle is the third-order diffraction maximum seen?",
+      "answers": [
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$.",
+        "$20^\\circ$."
+      ]
+    },
+    {
+      "text": "A diffraction grating has 250 lines per 1 mm. Monochromatic light with a wavelength of 500 nm is incident on it. At what angle is the fourth diffraction maximum observed?",
+      "answers": [
+        "$75^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$.",
+        "$15^\\circ$."
+      ]
+    },
+    {
+      "text": "Light of wavelength $\\lambda$ is diffracted by a diffraction grating with a period of $5\\lambda$. At what angle is the 2nd-order maximum observed?",
+      "answers": [
+        "$\\arcsin(3/5)$.",
+        "$\\arcsin(0{,}45)$.",
+        "$\\arcsin(0{,}3)$.",
+        "$\\arcsin(0{,}15)$.",
+        "$\\arcsin(2/5)$."
+      ]
+    },
+    {
+      "text": "A diffraction grating has 500 lines per 1 mm, and the second-order maximum is observed at an angle of $30^\\circ$. What is the wavelength of the light ($\\mu$m)?",
+      "answers": [
+        "0.5.",
+        "0.6.",
+        "0.7.",
+        "0.8.",
+        "0.9."
+      ]
+    },
+    {
+      "text": "A beam of monochromatic light is incident normally on a diffraction grating. The third-order maximum is observed at an angle of $30^\\circ$ relative to the center. Express the grating period $d$ in terms of the wavelength $\\lambda$ of the light.",
+      "answers": [
+        "$d=\\lambda$.",
+        "$d=1{,}5\\lambda$.",
+        "$d=3\\lambda$.",
+        "$d=6\\lambda$.",
+        "$d=\\lambda/3$."
+      ]
+    },
+    {
+      "text": "Monochromatic parallel light rays of wavelength $\\lambda$ are incident normally on a diffraction grating with period $d=6\\lambda$. The diffraction angle at which the second-order maximum is observed is $\\alpha$. What is $\\sin\\alpha$ equal to?",
+      "answers": [
+        "$1/4$.",
+        "$1/3$.",
+        "$2{,}3$.",
+        "$1/6$.",
+        "0."
+      ]
+    },
+    {
+      "text": "Monochromatic light with a wavelength of 500 nm is incident on a diffraction grating that has 4000 lines per 2.5 mm. Find the angle between the two first-order spectra.",
+      "answers": [
+        "$60^\\circ$.",
+        "$90^\\circ$.",
+        "$30^\\circ$.",
+        "$106^\\circ$.",
+        "$45^\\circ$."
+      ]
+    },
+    {
+      "text": "The wavelength of the yellow sodium line is 500 nm. If the period of the diffraction grating is 2.8 $\\mu$m, what is the highest order of the spectrum?",
+      "answers": [
+        "6.",
+        "4.",
+        "5.",
+        "3.",
+        "2."
+      ]
+    },
+    {
+      "text": "The period of a diffraction grating is 2 $\\mu$m. Find the highest order number of the yellow sodium line with a wavelength of 589 nm in the diffraction pattern.",
+      "answers": [
+        "6.",
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ]
+    },
+    {
+      "text": "A monochromatic wave with a wavelength of $5\\cdot10^{-5}$ cm is incident normally on a diffraction grating that has 200 lines per millimeter. What is the highest order of the observable diffraction maxima?",
+      "answers": [
+        "1.",
+        "5.",
+        "10.",
+        "20.",
+        "100."
+      ]
+    },
+    {
+      "text": "A monochromatic light wave with a wavelength of $5\\cdot10^{-5}$ cm is incident normally on a diffraction grating with 400 lines per 1 mm. Determine the highest order of the spectrum.",
+      "answers": [
+        "3.",
+        "7.",
+        "5.",
+        "6.",
+        "2."
+      ]
+    },
+    {
+      "text": "Monochromatic light with a wavelength of 0.5 $\\mu$m is incident normally on a diffraction grating with a period of 2.9 $\\mu$m. How many principal maxima are observed on the screen?",
+      "answers": [
+        "5.",
+        "6.",
+        "10.",
+        "11.",
+        "12."
+      ]
+    },
+    {
+      "text": "A monochromatic wave with a wavelength of 0.5 $\\mu$m is incident normally on a plane diffraction grating with a constant of 1.1 $\\mu$m. Find the number of observable maxima.",
+      "answers": [
+        "9.",
+        "7.",
+        "5.",
+        "4.",
+        "2."
+      ]
+    },
+    {
+      "text": "Monochromatic light with a wavelength of 0.5 $\\mu$m is incident normally on a diffraction grating with a period of 3.4 $\\mu$m. How many principal maxima are observed on the screen?",
+      "answers": [
+        "6.",
+        "7.",
+        "12.",
+        "14.",
+        "13."
+      ]
+    },
+    {
+      "text": "If the period of a diffraction grating is $d=2\\lambda$, how many diffraction maxima are observed behind the grating?",
+      "answers": [
+        "2.",
+        "1.",
+        "5.",
+        "3.",
+        "4."
+      ]
+    },
+    {
+      "text": "A diffraction grating illuminated with green $(\\lambda=0.5~\\mu\\text{m})$ light has a constant of 100 $\\mu$m. How many diffraction maxima does it produce?",
+      "answers": [
+        "500.",
+        "401.",
+        "200.",
+        "50.",
+        "10."
+      ]
+    },
+    {
+      "text": "A beam of light with a wavelength of 0.5 $\\mu$m is incident perpendicularly on a diffraction grating with a constant of 2.3 $\\mu$m. The maximum number of maxima observed on the screen is ...",
+      "answers": [
+        "9.",
+        "5.",
+        "4.",
+        "2.",
+        "1."
+      ]
+    },
+    {
+      "text": "A beam of monochromatic light is incident normally on a diffraction grating. The fourth-order maximum is observed at $30^\\circ$. The total number of maxima produced by the grating is ...",
+      "answers": [
+        "7.",
+        "8.",
+        "15.",
+        "17.",
+        "19."
+      ]
+    },
+    {
+      "text": "The distance from the diffraction grating to the screen is 80 cm, and the distance from the zeroth maximum to the third maximum is 3.6 mm. What is the wavelength of the light in meters? The grating constant is 0.3 mm.",
+      "answers": [
+        "$4{,}5\\cdot10^{-7}$.",
+        "$8{,}7\\cdot10^{-7}$.",
+        "$6\\cdot10^{-7}$.",
+        "$0{,}65\\cdot10^{-7}$.",
+        "$8\\cdot10^{-7}$."
+      ]
+    },
+    {
+      "text": "Using a diffraction grating with a period of 0.02 mm, the first maximum is obtained at a distance of 3 cm from the central maximum. The distance from the grating to the screen is 1 m. What is the wavelength of the light ($\\mu$m)?",
+      "answers": [
+        "0.4.",
+        "0.8.",
+        "0.86.",
+        "0.2.",
+        "0.6."
+      ]
+    },
+    {
+      "text": "Light is incident on a diffraction grating that has 100 lines per 1 mm. The first maximum on the screen is observed 12 cm from the zeroth maximum. The distance between the screen and the grating is 2 m. What is the wavelength of the light ($\\mu$m)?",
+      "answers": [
+        "60.",
+        "6.5.",
+        "6.4.",
+        "0.7.",
+        "0.6."
+      ]
+    },
+    {
+      "text": "Using a diffraction grating, a first-order maximum is formed at a distance of 1.8 m, 5.4 cm from the central maximum. The wavelength of the light is 0.6 $\\mu$m. What is the grating constant ($\\mu$m)?",
+      "answers": [
+        "15.",
+        "40.",
+        "20.",
+        "30.",
+        "10."
+      ]
+    },
+    {
+      "text": "What is the relation between the distance $a$ from the screen to the grating and the distance $b$ from the zeroth maximum to the first maximum?",
+      "answers": [
+        "if $a$ increases, $b$ remains unchanged.",
+        "if $a$ increases, $b$ decreases.",
+        "if $a$ increases, $b$ also increases.",
+        "$a$ and $b$ are independent of each other.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "How does the distance $b$ between a diffraction maximum and the center of the screen depend on the grating period $d$?",
+      "answers": [
+        "if $a$ increases, $b$ decreases.",
+        "if $a$ increases, $b$ increases.",
+        "if $a$ increases, $b$ remains unchanged.",
+        "$b$ does not depend on $a$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "If a diffraction grating with a small period is replaced by one with a larger period, how does the distance between the maxima on the screen change? And the number of maxima?",
+      "answers": [
+        "decreases, decreases.",
+        "increases, increases.",
+        "remains unchanged, decreases.",
+        "increases, decreases.",
+        "decreases, increases."
+      ]
+    },
+    {
+      "text": "Monochromatic light is incident normally on a diffraction grating that has $N=25$ lines per millimeter. The distance between the two principal maxima of order $k=4$ on the screen is 5.4 cm, and the distance between the screen and the grating is 50 cm. What is the wavelength of the light ($\\mu$m)?",
+      "answers": [
+        "0.52.",
+        "0.54.",
+        "0.56.",
+        "0.58.",
+        "0.5."
+      ]
+    },
+    {
+      "text": "When monochromatic light is diffracted by a grating with period $d$, the 1st-order maximum on the screen is at a distance $x$ from the central maximum. What is the wavelength of the light? The distance between the screen and the grating is $L$.",
+      "answers": [
+        "$\\dfrac{dx}{\\sqrt{L^2+x^2}}$.",
+        "$\\dfrac{dL}{\\sqrt{L^2+x^2}}$.",
+        "$\\dfrac{dx}{L}$.",
+        "$\\dfrac{d\\sqrt{L^2+x^2}}{L}$.",
+        "$\\dfrac{d\\sqrt{L^2+x^2}}{x}$."
+      ]
+    },
+    {
+      "text": "When light is diffracted by a diffraction grating, the line of wavelength $\\lambda_1=780$ nm in the 3rd-order spectrum overlaps with the line of what wavelength $\\lambda_2$ in the 4th-order spectrum?",
+      "answers": [
+        "292.",
+        "347.",
+        "520.",
+        "585.",
+        "1040."
+      ]
+    },
+    {
+      "text": "Red and violet rays are incident on a diffraction grating. Which of the following statements is true?\n1) The 3rd maximum of the red ray is farther from the central maximum than the 3rd maximum of the violet ray.\n2) The central maxima of red and violet are located at the same point.\n3) The central maxima of red and violet are not located at the same point.\n4) The 3rd maximum of the violet ray is farther from the central maximum than the 3rd maximum of the red ray.\n5) The total number of maxima of the red ray is greater than the number of maxima of the violet ray.",
+      "answers": [
+        "1 and 3.",
+        "3 and 4.",
+        "3 and 5.",
+        "1, 2 and 4.",
+        "1, 2 and 5."
+      ]
+    },
+    {
+      "text": "A school has diffraction gratings with 50 and 100 lines per 1 mm. Under the same conditions, which of them produces a wider spectrum on the screen?",
+      "answers": [
+        "the spectra will be the same.",
+        "the width of the spectrum does not depend on the number of lines.",
+        "the first.",
+        "the second.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Which of the instruments named below serve to separate white light into its components (spectra)?\n1) plane mirror;\n2) thin converging lens;\n3) diffraction grating;\n4) transparent triangular prism.",
+      "answers": [
+        "1, 2.",
+        "only 3.",
+        "only 4.",
+        "3, 4.",
+        "1, 4."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "title": "Topic 54 | Equipotential surfaces",
+  "questions": [
+    {
+      "text": "The potential of the field at point E is -8 V. Find the potential energy (mJ) acquired by a particle with a charge of 5 mC brought to this point from infinity.",
+      "answers": [
+        "40",
+        "-40",
+        "1.6",
+        "-1.6",
+        "0.625"
+      ]
+    },
+    {
+      "text": "When a charge of 4 $\\mu$C is moved from point A to point B in a uniform electrostatic field (as in the figure), 96 $\\mu$J of work is done. What is the magnitude of the field strength (V/m)?",
+      "answers": [
+        "900",
+        "600",
+        "450",
+        "300",
+        "200"
+      ]
+    },
+    {
+      "text": "How much work (in joules) is done in moving a positive charge of $2 \\cdot 10^{-7}$ C from a point of an electrostatic field with a potential of 40 V to a point with a potential of –10 V?",
+      "answers": [
+        "$2 \\cdot 10^{-5}$",
+        "$6 \\cdot 10^{-6}$",
+        "$1 \\cdot 10^{-5}$",
+        "$6 \\cdot 10^{-7}$",
+        "$1 \\cdot 10^{-7}$"
+      ]
+    },
+    {
+      "text": "How much work (in joules) does the electric field do in moving a positive charge of 1 C from point 1 to point 2? The potential difference between the points is 10 V.",
+      "answers": [
+        "0",
+        "10",
+        "8.7",
+        "5",
+        "17"
+      ]
+    },
+    {
+      "text": "Moving a charge of $1.2 \\cdot 10^{-4}$ C from one point to another required 0.6 mJ of work. Determine the potential difference between the points (V).",
+      "answers": [
+        "10",
+        "5",
+        "3",
+        "0.7",
+        "0.5"
+      ]
+    },
+    {
+      "text": "As a result of moving an electron from one point to another in an electric field, its kinetic energy changed by $8 \\cdot 10^{-19}$ J. What is the potential difference between these two points (V)? $e=1.6 \\cdot 10^{-19}$ C.",
+      "answers": [
+        "32",
+        "16",
+        "8",
+        "6",
+        "5"
+      ]
+    },
+    {
+      "text": "The speed of an electron in an electric field increased from $1 \\cdot 10^7$ to $5 \\cdot 10^7$ m/s. What is the potential difference between the initial and final points (kV)? The charge-to-mass ratio of the electron is $1.76 \\cdot 10^{11}$ C/kg.",
+      "answers": [
+        "3.4",
+        "4",
+        "6",
+        "1.76",
+        "6.8"
+      ]
+    },
+    {
+      "text": "If the potential difference between points 2 and 3 in the uniform electric field shown in the diagram is 6 V, what work ($\\mu$J) is done in moving a charge of 3.5 $\\mu$C between points 1 and 3?",
+      "answers": [
+        "4",
+        "$4\\sqrt{2}$",
+        "21",
+        "$8\\sqrt{2}$",
+        "16"
+      ]
+    },
+    {
+      "text": "Points 1, 2 and 3 in the uniform electric field shown in the diagram correspond to the vertices of an equilateral triangle. If the potential difference between points 1 and 3 is 16 V, what work ($\\mu$J) is done in moving a charge of 2.5 $\\mu$C between points 2 and 3?",
+      "answers": [
+        "4",
+        "12",
+        "3",
+        "6",
+        "20"
+      ]
+    },
+    {
+      "text": "What is the relationship between the field strengths and potentials at different points (1, 2, 3, 4) of the electric field of two charged planes (a parallel-plate capacitor)?",
+      "answers": [
+        "$E_1>E_2>E_3>E_4, \\quad \\varphi_1=\\varphi_2=\\varphi_3=\\varphi_4$",
+        "$E_1<E_2<E_3<E_4, \\quad \\varphi_1<\\varphi_2<\\varphi_3<\\varphi_4$",
+        "$E_1=E_2=E_3=E_4, \\quad \\varphi_1>\\varphi_2>\\varphi_3>\\varphi_4$",
+        "$E_1=E_4>E_2=E_3, \\quad \\varphi_1=\\varphi_4>\\varphi_2=\\varphi_3$",
+        "$E_1<E_2=E_3<E_4, \\quad \\varphi_1<\\varphi_2=\\varphi_3<\\varphi_4$"
+      ]
+    },
+    {
+      "text": "Which of the following relations is correct for the works done in moving a positive point charge in a uniform electrostatic field from point O to points 1, 2, 3, 4 in turn?",
+      "answers": [
+        "$A_4>A_1>A_2>A_3$",
+        "$A_1=A_4>A_2>A_3$",
+        "$A_1=A_2=A_3=A_4$",
+        "$A_1>A_4>A_2>A_3$",
+        "$A_3>A_1=A_2>A_4$"
+      ]
+    },
+    {
+      "text": "How does the potential of a point charge change when the distance from the charge to the point under consideration increases by a factor of 4?",
+      "answers": [
+        "decreases 4 times",
+        "increases 4 times",
+        "decreases 2 times",
+        "increases 2 times",
+        "increases 16 times"
+      ]
+    },
+    {
+      "text": "The field strength of a point charge at a point 3.5 cm from the charge is 150 V/m and is directed toward the charge. What is the potential of the field at that point (V)?",
+      "answers": [
+        "-5.25",
+        "-3.75",
+        "3.75",
+        "5.25",
+        "0"
+      ]
+    },
+    {
+      "text": "Point charges $+q$ and $+2q$ are located at a distance of $2r$ from each other. The potential at point A, located midway between them, is 3 V. When, at a distance of $2r$ from point A, a point charge $Q$ was placed, the potential at that point became -3 V. Find the charge $Q$.",
+      "answers": [
+        "$Q = -12q$",
+        "$Q = -6q$",
+        "$Q = 6q$",
+        "$Q = 12q$",
+        "$Q = q$"
+      ]
+    },
+    {
+      "text": "Charges $+2q$ and $-q$ are placed as shown in the figure. What is the potential difference between points M and N?",
+      "answers": [
+        "$2kq/a$",
+        "$2kq/3a$",
+        "$3kq/2a$",
+        "$7kq/6a$",
+        "0"
+      ]
+    },
+    {
+      "text": "Charges $+3q$ and $+4q$ are placed as shown in the figure. What is the potential difference between points M and N?",
+      "answers": [
+        "$kq/15a$",
+        "$2kq/15a$",
+        "$kq/5a$",
+        "$4kq/15a$",
+        "$kq/3a$"
+      ]
+    },
+    {
+      "text": "If the resultant electric field strength of the four charges in the figure at point O is 25 V/m, what is the resultant potential at that point (in volts)?",
+      "answers": [
+        "25",
+        "30",
+        "35",
+        "40",
+        "50"
+      ]
+    },
+    {
+      "text": "The surface charge density is the same on metal spheres of radii $R_1=R$ and $R_2=2R$. Compare the potentials at the centers of the spheres.",
+      "answers": [
+        "$\\varphi_2=2\\varphi_1$",
+        "$\\varphi_1=2\\varphi_2$",
+        "$\\varphi_1=\\varphi_2$",
+        "$\\varphi_1=4\\varphi_2$",
+        "$\\varphi_2=4\\varphi_1$"
+      ]
+    },
+    {
+      "text": "What are the field strength and the potential at the center of a charged conducting sphere of radius 10 cm and potential 200 V?",
+      "answers": [
+        "0; 0",
+        "200 V/m; 200 V",
+        "200 V/m; 0",
+        "10 V/m; 100 V",
+        "0; 200 V"
+      ]
+    },
+    {
+      "text": "Spheres x and y, whose potentials and radii are shown in the figure, were brought into contact. What will the potential of the spheres be afterward?",
+      "answers": [
+        "0",
+        "$-2\\varphi/3$",
+        "$+\\varphi$",
+        "$+9\\varphi/5$",
+        "$+2\\varphi$"
+      ]
+    },
+    {
+      "text": "Sphere K in the figure was touched first to sphere L and then to sphere M. What will the charges of the spheres be afterward?",
+      "answers": [
+        "$+q; +18q; +3q$",
+        "$+6q; +q; +18q$",
+        "$+4q; +6q; +12q$",
+        "$+10q; +4q; +8q$",
+        "$+2q; +12q; +6q$"
+      ]
+    }
+  ]
+}

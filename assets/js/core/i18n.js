@@ -8,6 +8,7 @@
 
 import { readPref, writePref } from "./prefs.js";
 import { STRINGS } from "./i18n-strings.js";
+import { STRINGS_UF } from "./i18n-uf.js";
 
 export const LANGS = [
   { code: "uz", short: "O‘z", label: "O‘zbekcha" },
@@ -27,7 +28,7 @@ export function setLang(code) {
 }
 
 const lang = getLang();
-const dict = STRINGS[lang] || {};
+const dict = { ...(STRINGS[lang] || {}), ...(STRINGS_UF[lang] || {}) };
 
 /** Tarjima. `{name}` ko'rinishidagi o'rinlar `vars` dan to'ldiriladi. */
 export function t(key, fallback = "", vars) {
@@ -44,6 +45,11 @@ export function applyI18n(root = document) {
     const text = dict[el.dataset.i18n];
     if (text != null) el.textContent = text;
   });
+  // Ishonchli (o'zimizning lug'at) HTML kerak bo'lgan joylar: <b> kabi belgilar bilan
+  root.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const text = dict[el.dataset.i18nHtml];
+    if (text != null) el.innerHTML = text;
+  });
   root.querySelectorAll("[data-i18n-attr]").forEach((el) => {
     el.dataset.i18nAttr.split(",").forEach((pair) => {
       const [attr, key] = pair.split(":").map((s) => s.trim());
@@ -53,3 +59,8 @@ export function applyI18n(root = document) {
 }
 
 export const currentLang = lang;
+
+/** Mavzu belgisi: «5-mavzu» / «Тема 5» / «Topic 5». */
+export function topicLabel(number) {
+  return lang === "ru" ? `Тема ${number}` : lang === "en" ? `Topic ${number}` : `${number}-mavzu`;
+}

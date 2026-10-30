@@ -1,0 +1,230 @@
+{
+  "title": "Topic 56 | Parallel and series connection of capacitors",
+  "questions": [
+    {
+      "text": "Find the total capacitance of three capacitors of 100 nF, 200 nF and 500 nF connected in series (nF).",
+      "answers": [
+        "800",
+        "500",
+        "100",
+        "58.8"
+      ]
+    },
+    {
+      "text": "Three identical capacitors are connected in parallel to a 2 V voltage source. Each capacitor acquired a charge of 1 nC. Find the total capacitance of the circuit (pF).",
+      "answers": [
+        "1400",
+        "1500",
+        "1600",
+        "800"
+      ]
+    },
+    {
+      "text": "Capacitors with capacitances of 6 $\\mu F$, 2 $\\mu F$ and 4 $\\mu F$ are connected in series to a 24 V voltage source. Find the potential difference between the plates of the second capacitor (V).",
+      "answers": [
+        "8",
+        "12",
+        "4",
+        "13.1"
+      ]
+    },
+    {
+      "text": "A voltmeter connected in parallel with an 8 $\\mu F$ capacitor attached to a DC source reads 6 V. What voltage (V) will the voltmeter read if a second capacitor of 2 $\\mu F$ is connected in series with this capacitor?",
+      "answers": [
+        "1.2",
+        "2",
+        "6",
+        "4.6"
+      ]
+    },
+    {
+      "text": "A circuit made of two capacitors in series, $C_1 = 1 \\, \\mu F$ and $C_2 = 3 \\, \\mu F$, is connected to a DC voltage source $U = 220 \\, V$. Determine the voltage across each capacitor (V).",
+      "answers": [
+        "115; 105",
+        "120; 100",
+        "145; 65",
+        "165; 55"
+      ]
+    },
+    {
+      "text": "Capacitors of 3 $\\mu F$ and 6 $\\mu F$ are connected to each other and attached to a battery with an emf of 120 V. If the capacitors are connected in series, determine the potential difference across their plates (V).",
+      "answers": [
+        "80; 40",
+        "80; 80",
+        "40; 40",
+        "80; 20"
+      ]
+    },
+    {
+      "text": "Find the total capacitance of the system of capacitors shown in the figure.",
+      "answers": [
+        "$47C/16$",
+        "$14C/15$",
+        "$15C/7$",
+        "$12C/7$"
+      ]
+    },
+    {
+      "text": "Find the total capacitance from the circuit diagram.",
+      "answers": [
+        "$3C/2$",
+        "$3C$",
+        "$6C$",
+        "$2C$"
+      ]
+    },
+    {
+      "text": "In the figure, the capacitance of each capacitor equals C. If the potential difference between points M and N is 120 V, find the potential difference between points K and L (V).",
+      "answers": [
+        "60",
+        "40",
+        "20",
+        "30"
+      ]
+    },
+    {
+      "text": "Four capacitors with capacitances $C_1 = 3 \\, \\mu F, C_2 = 5 \\, \\mu F, C_3 = 6 \\, \\mu F$ and $C_4 = 5 \\, \\mu F$ are connected as shown in the diagram. Determine the total capacitance of the battery ($\\mu F$).",
+      "answers": [
+        "2",
+        "3.4",
+        "9",
+        "4.5"
+      ]
+    },
+    {
+      "text": "Determine the capacitance between points A and B of the capacitor battery shown in the figure.",
+      "answers": [
+        "0.4C",
+        "0.2C",
+        "C",
+        "0.8C"
+      ]
+    },
+    {
+      "text": "The capacitance of the capacitor battery in the figure is 5.8 $\\mu F$. If $C_2 = 1 \\, \\mu F, C_3 = 4 \\, \\mu F$, what are the capacitance of the first capacitor ($\\mu F$) and the charge on it ($\\mu C$)?",
+      "answers": [
+        "5; 1.1",
+        "10; 1.1",
+        "5; 0.8",
+        "1.4; 3"
+      ]
+    },
+    {
+      "text": "In the circuit in the figure, the charge between terminals K and L equals Q. What is the charge of the capacitor of capacitance C connected between terminals MN?",
+      "answers": [
+        "$Q/5$",
+        "$Q/2$",
+        "$8Q/53$",
+        "$13Q/40$"
+      ]
+    },
+    {
+      "text": "Find the total capacitance of the system of capacitors shown in the figure.",
+      "answers": [
+        "3C",
+        "6C/11",
+        "5C/11",
+        "6C"
+      ]
+    },
+    {
+      "text": "Two identical capacitors connected in series are half-filled with a substance in two different ways. What is the difference between the voltages across the capacitors (V)?",
+      "answers": [
+        "0",
+        "24",
+        "28.5",
+        "12.6"
+      ]
+    },
+    {
+      "text": "Find the voltage between points a and b in the capacitor battery shown in the figure (V).",
+      "answers": [
+        "0",
+        "8.25",
+        "7.75",
+        "5.33"
+      ]
+    },
+    {
+      "text": "A 3 $\\mu F$ capacitor with a charge of 5 $\\mu C$ and an 8 $\\mu F$ capacitor with a charge of 3 $\\mu C$ are connected with like poles together. Find the charge on the first capacitor afterwards ($\\mu C$).",
+      "answers": [
+        "24/11",
+        "64/11",
+        "6/11",
+        "16/11"
+      ]
+    },
+    {
+      "text": "A 3 $\\mu F$ capacitor with a charge of 5 $\\mu C$ and an 8 $\\mu F$ capacitor with a charge of 3 $\\mu C$ are connected with like poles together. Find the charge on the second capacitor afterwards ($\\mu C$).",
+      "answers": [
+        "24/11",
+        "64/11",
+        "6/11",
+        "16/11"
+      ]
+    },
+    {
+      "text": "Two capacitors of capacitance $C$ are charged to voltages $2U$ and $U$. What is the resulting voltage if the capacitors are connected with opposite poles together?",
+      "answers": [
+        "4U",
+        "2.5U",
+        "2U",
+        "0.5U"
+      ]
+    },
+    {
+      "text": "Two capacitors of capacitance $10^4 \\, nF$ are charged to voltages of 5 V and 10 V. What is the resulting voltage if they are connected with like poles together?",
+      "answers": [
+        "5",
+        "12.5",
+        "7.5",
+        "50"
+      ]
+    },
+    {
+      "text": "If capacitors of capacitance $C$ and $2C$, charged to the same extent, are connected in parallel, how does the voltage across the first capacitor change?",
+      "answers": [
+        "it does not change",
+        "increases by a factor of 1.5",
+        "decreases by a factor of 1.5",
+        "increases by a factor of 3"
+      ]
+    },
+    {
+      "text": "An air capacitor charged to a potential difference of 800 V is connected in parallel with an uncharged capacitor of the same dimensions containing a dielectric. The potential difference becomes 100 V. Find the dielectric constant of the dielectric.",
+      "answers": [
+        "7",
+        "2",
+        "16",
+        "3"
+      ]
+    },
+    {
+      "text": "A parallel-plate air capacitor is charged to 50 V and disconnected from the source. A metal sheet 1 mm thick is inserted between the plates. The distance between the plates is 5 mm. Determine the new potential difference (V).",
+      "answers": [
+        "30",
+        "15",
+        "80",
+        "40"
+      ]
+    },
+    {
+      "text": "Two identical capacitors are connected in parallel and charged to 6 V. After disconnecting them from the source, the distance between the plates of one of them is halved. What is the new potential difference (V)?",
+      "answers": [
+        "6",
+        "2",
+        "4",
+        "12"
+      ]
+    },
+    {
+      "text": "A voltmeter connected in parallel with a 12 $\\mu F$ capacitor reads 3 V. How many volts will the voltmeter read if a second capacitor of 8 $\\mu F$ is connected to it in parallel?",
+      "answers": [
+        "1.5",
+        "3",
+        "1",
+        "2"
+      ]
+    }
+  ]
+}

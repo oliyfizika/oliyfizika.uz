@@ -14,6 +14,7 @@
 
 import { loadFirebase } from "../core/session.js";
 import { COURSES } from "../../../umumiy-fizika/data/courses.js";
+import { t, topicLabel } from "../core/i18n.js";
 import { getMechanicsUnlockedLesson, unlockMechanicsLesson, replaceMechanicsUnlockedLesson, lessonAnchorId } from "../../../js/mechanics-progress.js";
 
 // "mechanicsUnlockedLesson" qurilma darajasida saqlanadi (foydalanuvchi bo'yicha emas).
@@ -57,7 +58,7 @@ export function loadResults(uid) {
 function prerequisiteLabel(courses, number) {
   for (const c of courses) {
     const l = c.lessons.find((x) => x.number === number - 1);
-    if (l) return l.numberLabel || `${l.number}-mavzu`;
+    if (l) return l.numberLabel || topicLabel(l.number);
   }
   return null;
 }
@@ -106,14 +107,14 @@ export function computeProgress({ unlocked, passedNumbers, fullAccess = false, c
       const prereq = state === "locked" ? prerequisiteLabel(courses, l.number) : null;
       return {
         number: l.number,
-        label: l.numberLabel || `${l.number}-mavzu`,
+        label: l.numberLabel || topicLabel(l.number),
         title: l.title,
         youtubeId: l.youtubeId,
         testUrl: l.testUrl || null,
         anchor: lessonAnchorId(l),
         href: new URL(`${course.page}#${lessonAnchorId(l)}`, ROOT).href,
         state,
-        lockedReason: prereq ? `Avval ${prereq} testidan kamida 80% natija oling.` : null,
+        lockedReason: prereq ? t("uf.lockedReason", "Avval {prereq} testidan kamida 80% natija oling.", { prereq }) : null,
       };
     });
 
@@ -134,7 +135,7 @@ export function computeProgress({ unlocked, passedNumbers, fullAccess = false, c
       next: nextLesson
         ? {
             number: nextLesson.number,
-            label: nextLesson.numberLabel || `${nextLesson.number}-mavzu`,
+            label: nextLesson.numberLabel || topicLabel(nextLesson.number),
             title: nextLesson.title,
             href: new URL(`${course.page}#${lessonAnchorId(nextLesson)}`, ROOT).href,
           }
@@ -160,7 +161,7 @@ export function courseStructure(courses = COURSES) {
     description: c.description,
     page: new URL(c.page, ROOT).href,
     total: c.lessons.length,
-    lessons: c.lessons.map((l) => ({ label: l.numberLabel || `${l.number}-mavzu`, title: l.title, anchor: lessonAnchorId(l), href: new URL(`${c.page}#${lessonAnchorId(l)}`, ROOT).href })),
+    lessons: c.lessons.map((l) => ({ label: l.numberLabel || topicLabel(l.number), title: l.title, anchor: lessonAnchorId(l), href: new URL(`${c.page}#${lessonAnchorId(l)}`, ROOT).href })),
   }));
 }
 

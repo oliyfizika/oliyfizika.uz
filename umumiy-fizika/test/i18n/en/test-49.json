@@ -1,0 +1,149 @@
+{
+  "title": "Topic 49 | Adiabatic process",
+  "questions": [
+    {
+      "text": "Which law indicates the direction of processes in nature?",
+      "answers": [
+        "the law of conservation of mass",
+        "the first law of thermodynamics",
+        "the second law of thermodynamics",
+        "the law of conservation of energy"
+      ]
+    },
+    {
+      "text": "How does the temperature of a gas in a thermally insulated system change when it is compressed?",
+      "answers": [
+        "increases",
+        "decreases",
+        "does not change",
+        "first increases, then decreases"
+      ]
+    },
+    {
+      "text": "How does the internal energy of a gas change during adiabatic expansion?",
+      "answers": [
+        "ΔU < 0",
+        "ΔU = 0",
+        "ΔU > 0",
+        "does not change"
+      ]
+    },
+    {
+      "text": "How is the first law of thermodynamics written for an adiabatic process?",
+      "answers": [
+        "Q = ΔU + A",
+        "Q = ΔU",
+        "A = Q",
+        "ΔU + A = 0"
+      ]
+    },
+    {
+      "text": "Work was done to compress an ideal gas adiabatically. How do the kinetic and potential energies of the gas molecules change?",
+      "answers": [
+        "the kinetic energy increases, the potential energy decreases.",
+        "the kinetic energy decreases, the potential energy does not change.",
+        "the kinetic and potential energies both increase.",
+        "the kinetic energy increases, the potential energy does not change."
+      ]
+    },
+    {
+      "text": "How does the temperature of a gas in a thermally insulated system change when it is compressed?",
+      "answers": [
+        "it can either increase or decrease",
+        "decreases",
+        "increases",
+        "does not change"
+      ]
+    },
+    {
+      "text": "A gas is being compressed adiabatically. How do the temperature T and the pressure P of the gas change?",
+      "answers": [
+        "T increases, P decreases",
+        "T decreases, P increases",
+        "T and P increase",
+        "T and P decrease"
+      ]
+    },
+    {
+      "text": "In an adiabatic process the internal energy of a gas decreased by 5 kJ. How much work (kJ) did the gas do?",
+      "answers": [
+        "5",
+        "2.5",
+        "10",
+        "0.5"
+      ]
+    },
+    {
+      "text": "There are 10 mol of oxygen under a piston. It expanded adiabatically and cooled by 10°C. How much work (J) does it do against external forces?",
+      "answers": [
+        "2820.5",
+        "2659.5",
+        "1246.5",
+        "3112.5"
+      ]
+    },
+    {
+      "text": "How does the density of a gas change if external forces do negative work on it?",
+      "answers": [
+        "decreases",
+        "increases",
+        "does not change",
+        "can either decrease or increase"
+      ]
+    },
+    {
+      "text": "How does the density of a gas change when external forces do positive work on it?",
+      "answers": [
+        "can either increase or decrease",
+        "increases",
+        "does not change",
+        "decreases"
+      ]
+    },
+    {
+      "text": "How does the density of a gas change if the gas does positive work in an adiabatic process?",
+      "answers": [
+        "does not change",
+        "decreases",
+        "increases",
+        "can either increase or decrease"
+      ]
+    },
+    {
+      "text": "An ideal gas was compressed, with an adiabatic process taking place. How does the temperature of the gas change?",
+      "answers": [
+        "decreases",
+        "increases",
+        "can either increase or decrease",
+        "does not change"
+      ]
+    },
+    {
+      "text": "An ideal gas expanded, with an adiabatic process taking place. How does the temperature of the gas change?",
+      "answers": [
+        "decreases",
+        "increases",
+        "can either increase or decrease",
+        "does not change"
+      ]
+    },
+    {
+      "text": "A certain amount of ideal gas was compressed by a factor of three from volume V1 to volume V2. Which curve in the given graph corresponds to the slowest compression?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "no correct answer"
+      ]
+    },
+    {
+      "text": "A certain amount of ideal gas was compressed by a factor of three from volume V1 to volume V2. Which curve in the given graph corresponds to compression lasting 1 second?",
+      "answers": [
+        "2",
+        "1",
+        "3",
+        "no correct answer"
+      ]
+    }
+  ]
+}

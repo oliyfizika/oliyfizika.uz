@@ -1,0 +1,104 @@
+{
+  "title": "Topic 33 | Spring pendulum",
+  "questions": [
+    {
+      "text": "1. What mass (kg) must be hung from a spring of stiffness 10 N/m to obtain a pendulum with an oscillation period of 1 s? π2 = 10.",
+      "answers": [
+        "10.",
+        "0.25.",
+        "2.5.",
+        "0.025."
+      ]
+    },
+    {
+      "text": "2. A 200 g weight hanging from a spring makes 30 oscillations per minute. What is the spring constant (N/m)? π2 = 10.",
+      "answers": [
+        "0.2.",
+        "0.05.",
+        "0.3.",
+        "0.63."
+      ]
+    },
+    {
+      "text": "3. A weight hanging from a spring of stiffness 200 N/m made 10 oscillations in 8 s. What is the mass of the weight (kg)? π2 = 10.",
+      "answers": [
+        "3.6.",
+        "3.2.",
+        "2.5.",
+        "1.6."
+      ]
+    },
+    {
+      "text": "4. A spring pendulum was moved from the Earth to a planet where the acceleration due to gravity is 4 times that on Earth. How does its oscillation period change?",
+      "answers": [
+        "does not change.",
+        "increases 2 times.",
+        "increases 4 times.",
+        "decreases 2 times."
+      ]
+    },
+    {
+      "text": "5. How will the period change for a spring pendulum with period T if the mass of the hanging weight is increased n times?",
+      "answers": [
+        "nT",
+        "n2T",
+        "T√ n",
+        "√ nT"
+      ]
+    },
+    {
+      "text": "6. How does the period of longitudinal oscillations of a weight on a spring (spring pendulum) change if the mass of the weight increases 9 times?",
+      "answers": [
+        "decreases 3 times.",
+        "increases 3 times.",
+        "does not change.",
+        "increases 9 times."
+      ]
+    },
+    {
+      "text": "7. How will the period of a spring pendulum change if the spring is shortened by half and the mass of the weight is doubled?",
+      "answers": [
+        "does not change.",
+        "decreases 2 times.",
+        "increases 2 times.",
+        "decreases 4 times."
+      ]
+    },
+    {
+      "text": "8. The oscillation period of the system in Figure 1 is 10 s, and in Figure 2 it is 8 s. Find the oscillation period of the weight in Figure 3 (s). All springs have the same stiffness.",
+      "answers": [
+        "4.",
+        "5.",
+        "6.",
+        "9."
+      ]
+    },
+    {
+      "text": "9. Find the ratio of the periods T1/T2 of the spring pendulums shown in the figure: 1) k, 3k (in parallel); 2) 2k, 2k (in series), mass 4m.",
+      "answers": [
+        "4.",
+        "1/4.",
+        "2.",
+        "1/2."
+      ]
+    },
+    {
+      "text": "10. Under the action of a hanging weight, a spring stretched by 2.5 cm. Determine the oscillation frequency of this spring pendulum (Hz).",
+      "answers": [
+        "1.6.",
+        "25.",
+        "3.2.",
+        "5."
+      ]
+    },
+    {
+      "text": "11. Determine the oscillation period of the weight of mass m below (springs connected as k, k, k).",
+      "answers": [
+        "T = 2π √ (3m / 2k)",
+        "T = 2π √ (2m / 3k)",
+        "T = 2π √ (3m / k)",
+        "T = 2π √ (m / 3k)"
+      ]
+    }
+  ]
+}

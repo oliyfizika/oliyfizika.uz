@@ -1,0 +1,149 @@
+{
+  "title": "Topic 9 | Transmission of rotational motion",
+  "questions": [
+    {
+      "text": "Motion is transmitted from wheel I by a belt drive. If wheel I makes 2400 revolutions per minute and the radii of the wheels are 3 and 6 cm respectively, what is the angular velocity of the second wheel (rad/s)?",
+      "answers": [
+        "2π",
+        "40π",
+        "20π",
+        "10π"
+      ]
+    },
+    {
+      "text": "Two gear wheels are connected by a chain drive, and the number of teeth N₁ of one is 4 times the number of teeth N₂ of the other. What is the relation between the angular velocities of the wheels?",
+      "answers": [
+        "ω₂ = 2ω₁",
+        "ω₂ = 4ω₁",
+        "ω₁ = 2ω₂",
+        "ω₁ = 4ω₂"
+      ]
+    },
+    {
+      "text": "The radii of two pulleys connected by a belt are 10 cm and 15 cm. If the linear speed of the first pulley is 2 m/s, find the linear speed of the second pulley (m/s).",
+      "answers": [
+        "1.3",
+        "2",
+        "3",
+        "4.3"
+      ]
+    },
+    {
+      "text": "Gears with numbers of teeth N₁ = 150 and N₂ are meshed together. When the first gear makes 20 revolutions per second, the second makes 250 revolutions per minute. Find N₂.",
+      "answers": [
+        "720",
+        "250",
+        "150",
+        "750"
+      ]
+    },
+    {
+      "text": "The wheel of a \"Penza\" bicycle has a diameter of 70 cm, the driving sprocket has 48 teeth and the driven sprocket has 18 teeth. If the pedals rotate at 1 rev/s, at what speed is the cyclist moving (m/s)?",
+      "answers": [
+        "3.7",
+        "4.3",
+        "6.6",
+        "5.9"
+      ]
+    },
+    {
+      "text": "The wheel of a folding \"Kama\" bicycle has a diameter of 50 cm, the sprockets have 48 and 15 teeth, and the pedals rotate at 1 rev/s. At what speed does the cyclist move (m/s)?",
+      "answers": [
+        "20",
+        "10",
+        "5",
+        "0.2"
+      ]
+    },
+    {
+      "text": "The radii of two pulleys connected by a belt are 10 cm and 15 cm. If the angular velocity of the first pulley is 2 rad/s, find the angular velocity of the second pulley (rad/s).",
+      "answers": [
+        "1.3",
+        "2",
+        "3",
+        "4.3"
+      ]
+    },
+    {
+      "text": "The radius of the working wheel of a hydraulic turbine is 8 times greater, and its rotation frequency is 40 times smaller, than those of a steam turbine. Compare the speeds of points on the rims of the turbine wheels.",
+      "answers": [
+        "1:4",
+        "1:5",
+        "1:2",
+        "2:5"
+      ]
+    },
+    {
+      "text": "A large pulley of radius 32 cm rotates at 180 rev/min and is connected by a belt to a small pulley of radius 24 cm. Find the angular velocity of the small pulley (rad/s).",
+      "answers": [
+        "11/3",
+        "8π",
+        "3π",
+        "6π"
+      ]
+    },
+    {
+      "text": "In the figure, the instantaneous speed of point A on the large wheel of a tractor relative to the ground is 4√2 m/s. Find the instantaneous speed of point B relative to the ground (m/s).",
+      "answers": [
+        "12",
+        "10",
+        "8",
+        "24"
+      ]
+    },
+    {
+      "text": "The radii of two pulleys mounted on the same axle are 20 cm and 25 cm respectively. If the rotation period of the second pulley is 4 s, find the rotation frequency of the first pulley (1/s).",
+      "answers": [
+        "4",
+        "0.25",
+        "5",
+        "0.2"
+      ]
+    },
+    {
+      "text": "Two pulleys of radii 10 cm and 25 cm are fixed at one point. If the rotation period of the first pulley is 10 s, find the rotation period of the second (s).",
+      "answers": [
+        "15",
+        "4",
+        "25",
+        "10"
+      ]
+    },
+    {
+      "text": "Two pulleys of radii 15 cm and 25 cm are mounted on the same axle. The linear speed of the outermost points of the smaller pulley is 2.25 m/s. Find the linear speed of the outermost points of the larger pulley (m/s).",
+      "answers": [
+        "6.25",
+        "2.5",
+        "1.5",
+        "3.75"
+      ]
+    },
+    {
+      "text": "Two pulleys of radii 20 cm and 35 cm are mounted on the same axle. The centripetal acceleration of the outermost points of the larger pulley is 1.4 m/s². Find the centripetal acceleration of the outermost points of the smaller pulley (m/s²).",
+      "answers": [
+        "25",
+        "3.5",
+        "2",
+        "0.8"
+      ]
+    },
+    {
+      "text": "Two pulleys of radii 15 cm and 25 cm are mounted on the same axle. The period of revolution of the outermost points of the smaller pulley is 2.25 s. Find the period of revolution of the outermost points of the larger pulley (s).",
+      "answers": [
+        "6.25",
+        "2.5",
+        "1.5",
+        "2.25"
+      ]
+    },
+    {
+      "text": "A disc rotates about an axis at a constant rate. What is the relation between the centripetal accelerations of points 1, 2 and 3 located at different distances from the axis of rotation?",
+      "answers": [
+        "a₁ > a₂ > a₃",
+        "a₁ = a₂ = a₃",
+        "a₁ = a₂ > a₃",
+        "a₁ < a₂ < a₃"
+      ]
+    }
+  ]
+}

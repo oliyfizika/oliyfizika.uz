@@ -1,0 +1,203 @@
+{
+  "title": "Topic 53 | Electric potential",
+  "questions": [
+    {
+      "text": "The potential difference between points lying on the same field line of a uniform electric field, 0.03 m apart, is 12 V. Find the potential difference between points on the same field line that are 15 cm apart.",
+      "answers": [
+        "30",
+        "120",
+        "60",
+        "15"
+      ]
+    },
+    {
+      "text": "The electric field strength in a parallel-plate capacitor is 30 kV/m. The potential difference between the plates is 300 V. What is the distance between the capacitor plates (in mm)?",
+      "answers": [
+        "10",
+        "1",
+        "100",
+        "30"
+      ]
+    },
+    {
+      "text": "Two parallel metal plates in vacuum, 0.1 m apart, are charged to a potential difference of 1 kV. What force acts on a 100 µC charge placed between the plates?",
+      "answers": [
+        "0.1",
+        "1",
+        "10",
+        "5"
+      ]
+    },
+    {
+      "text": "A dust particle of mass $4.8 \\cdot 10^{-12}$ kg is in equilibrium between the horizontal plates of a parallel-plate capacitor. If the voltage across the capacitor is 3000 V and the distance between the plates is 2 cm, how many times greater is the charge of the dust particle than the charge of an electron? ($e=1.6 \\cdot 10^{-19}$ C, $g=10 \\, m/s^2$).",
+      "answers": [
+        "1000",
+        "4000",
+        "500",
+        "2000"
+      ]
+    },
+    {
+      "text": "A charged ball is suspended on a plastic spring between the horizontal plates of a parallel-plate capacitor. When the capacitor is connected to a 500 V voltage source, the spring stretches by an additional 1 cm. Find the charge of the ball (in µC) if the spring constant is 10 N/m and the distance between the capacitor plates is 20 cm.",
+      "answers": [
+        "40",
+        "20",
+        "80",
+        "10"
+      ]
+    },
+    {
+      "text": "A negatively charged dust particle of mass $10^{-9}$ g is in equilibrium inside a parallel-plate capacitor. A voltage of 500 V is applied to the capacitor. By how many volts must the potential difference be changed so that the particle stays in equilibrium after 500 electrons have left it? ($d=5$ mm).",
+      "answers": [
+        "1000",
+        "2000",
+        "500",
+        "2500"
+      ]
+    },
+    {
+      "text": "A charged ball hangs between the plates of a parallel-plate capacitor at a distance of 10 cm from the lower plate ($U=400$ V). If the potential difference is instantly reduced to 200 V, after what time (in ms) will the ball fall onto the lower plate?",
+      "answers": [
+        "200",
+        "100",
+        "400",
+        "50"
+      ]
+    },
+    {
+      "text": "An electron entered the field of a parallel-plate capacitor along the field lines and lost its speed over a distance of 0.003 m. At what distance (in mm) will it stop if the initial speed of the electron and the voltage across the capacitor are both reduced by a factor of 3?",
+      "answers": [
+        "0.5",
+        "3",
+        "1",
+        "0.3"
+      ]
+    },
+    {
+      "text": "Electrons that gained speed by passing through a potential difference of 5 kV enter a parallel-plate capacitor at the midpoint (parallel to the plates). What is the smallest voltage needed to keep the electrons from leaving the capacitor? ($L=5$ cm, $d=1$ cm).",
+      "answers": [
+        "200",
+        "400",
+        "800",
+        "100"
+      ]
+    },
+    {
+      "text": "At two vertices of an equilateral triangle with side 30 cm there are charges of 50 nC each. Find the potential at the third vertex (in kV).",
+      "answers": [
+        "1.5",
+        "6",
+        "9",
+        "3"
+      ]
+    },
+    {
+      "text": "At two opposite vertices of a square with side 30 cm there are charges of 200 nC each. Find the potential at the other two vertices of the square (in kV).",
+      "answers": [
+        "12",
+        "6",
+        "18",
+        "24"
+      ]
+    },
+    {
+      "text": "Charges of 1, 2 and 3 nC are located at the vertices of a right triangle. If the length of the hypotenuse is 20 cm, what is the potential at its midpoint? ($k=9 \\cdot 10^9$).",
+      "answers": [
+        "270",
+        "540",
+        "1080",
+        "360"
+      ]
+    },
+    {
+      "text": "Charges of 3, 5 and –2 nC are located at three vertices of a regular tetrahedron with edge 30 cm. Find the potential at the fourth vertex.",
+      "answers": [
+        "90",
+        "360",
+        "180",
+        "120"
+      ]
+    },
+    {
+      "text": "Charges of 1 nC each are located at three vertices of a regular hexagon with side 27 cm, and charges of 2 nC each at the other three. Find the potential at the center of the hexagon.",
+      "answers": [
+        "150",
+        "300",
+        "600",
+        "100"
+      ]
+    },
+    {
+      "text": "A charge of 4 nC is distributed along a thin ring of radius 6 cm. Find the potential of the field at a point on the axis of the ring, 8 cm from its center.",
+      "answers": [
+        "360",
+        "180",
+        "720",
+        "450"
+      ]
+    },
+    {
+      "text": "A charge of 4 nC is distributed over the surface of a sphere of radius 30 cm. What is the potential at the center of the sphere?",
+      "answers": [
+        "60",
+        "240",
+        "180",
+        "120"
+      ]
+    },
+    {
+      "text": "A small ball with a negative charge of –5 nC is located at the center of a sphere with a positive charge of 10 nC. Find the potential at a point outside the sphere, 9 cm from its center.",
+      "answers": [
+        "10",
+        "5",
+        "2.5",
+        "1"
+      ]
+    },
+    {
+      "text": "What work (in µJ) does the field do in moving a charge of 2 nC from one point of the field to another?⏎The potential difference between the points is $\\Delta \\varphi = 500$ V.",
+      "answers": [
+        "2",
+        "0.5",
+        "1",
+        "10"
+      ]
+    },
+    {
+      "text": "What work (in µJ) is done in moving a charge of 8 µC from a point of the field with a potential of 20 V to a point with a potential of 12 V?",
+      "answers": [
+        "32",
+        "64",
+        "128",
+        "96"
+      ]
+    },
+    {
+      "text": "The work done in moving a charge of 130 nC from infinity to some point of the field is 65 µJ. Find the potential (V) of that point.",
+      "answers": [
+        "250",
+        "1000",
+        "500",
+        "130"
+      ]
+    },
+    {
+      "text": "Moving a charge of 10 nC from infinity to a point 20 cm from the surface of a charged ball required 0.5 µJ of work. ($R=4$ cm). Find the potential at the surface of the ball.",
+      "answers": [
+        "150",
+        "300",
+        "600",
+        "50"
+      ]
+    },
+    {
+      "text": "When a negative charge was moved toward a fixed positive charge, the field did 9 J of work and the distance was halved. What work (J) was done over the first half of this path?",
+      "answers": [
+        "3",
+        "1",
+        "4.5",
+        "6"
+      ]
+    }
+  ]
+}
