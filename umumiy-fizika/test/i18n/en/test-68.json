@@ -1,0 +1,731 @@
+{
+  "title": "Topic 68 | Law of electromagnetic induction. Lenz's rule",
+  "questions": [
+    {
+      "text": "Find the mathematical expression of Faraday's law of electromagnetic induction.",
+      "answers": [
+        "$\\varepsilon=-kF/I$.",
+        "$\\varepsilon=\\dfrac{\\Delta \\Phi}{\\Delta t}$.",
+        "$\\varepsilon=-\\dfrac{\\Delta \\Phi}{\\Delta t}$.",
+        "$\\varepsilon=k\\dfrac{\\Delta I}{\\Delta \\Phi \\Delta t}$.",
+        "$\\varepsilon=\\dfrac{4\\pi\\varepsilon_0}{\\Delta t}$."
+      ]
+    },
+    {
+      "text": "Give the unit of induced emf.",
+      "answers": [
+        "T/s.",
+        "V$\\cdot$s.",
+        "Wb/s.",
+        "T$\\cdot$m$^2$.",
+        "Wb$\\cdot$s."
+      ]
+    },
+    {
+      "text": "Which other unit can be used instead of the volt (the unit of voltage)?",
+      "answers": [
+        "H/s.",
+        "Wb.",
+        "Wb/s.",
+        "H$\\cdot$s.",
+        "Wb$\\cdot$s."
+      ]
+    },
+    {
+      "text": "If a closed loop moves in translation with acceleration along the induction lines in a uniform magnetic field, is an induced emf produced?",
+      "answers": [
+        "yes.",
+        "no.",
+        "yes, and it decreases linearly.",
+        "yes, and it increases linearly.",
+        "yes, and it varies exponentially."
+      ]
+    },
+    {
+      "text": "At what rate (Wb/s) must the magnetic flux through a loop change for the induced emf in the loop to be $50$ V?",
+      "answers": [
+        "5.",
+        "10.",
+        "50.",
+        "100.",
+        "500."
+      ]
+    },
+    {
+      "text": "In $2$ s the magnetic flux through a loop decreased uniformly from $10$ Wb to $2$ Wb. Find the induced emf produced in the loop (V).",
+      "answers": [
+        "10.",
+        "8.",
+        "4.",
+        "2.",
+        "0."
+      ]
+    },
+    {
+      "text": "During $0.3$ s the magnetic flux through a loop decreased uniformly from $9$ Wb to $6$ Wb. How many volts is the induced emf produced in the loop?",
+      "answers": [
+        "0.01.",
+        "0.9.",
+        "4.5.",
+        "10.",
+        "50."
+      ]
+    },
+    {
+      "text": "In $0.4$ s the magnetic flux through a closed loop changed by $4\\cdot10^{-5}$ Wb. Determine the induced emf (V).",
+      "answers": [
+        "$4\\cdot10^{-4}$.",
+        "$10^{-5}$.",
+        "$10^{-4}$.",
+        "$4\\cdot10^{-5}$.",
+        "$2\\cdot10^{-4}$."
+      ]
+    },
+    {
+      "text": "How does the induced emf in a solenoid change if the number of turns is increased by a factor of $2.5$?",
+      "answers": [
+        "it does not change.",
+        "it increases 5 times.",
+        "it decreases 5 times.",
+        "it increases 2.5 times.",
+        "it decreases 2.5 times."
+      ]
+    },
+    {
+      "text": "The magnetic flux inside a coil with $200$ turns increased in $0.2$ s from $0.2$ Wb to $1.1$ Wb. Determine the emf induced in the coil (V).",
+      "answers": [
+        "1000.",
+        "500.",
+        "900.",
+        "450.",
+        "700."
+      ]
+    },
+    {
+      "text": "The magnetic flux in a solenoid of $100$ turns changed during $1$ ms from $5\\cdot10^{-5}$ Wb to $15\\cdot10^{-5}$ Wb. What is the induced emf produced in it (in volts)?",
+      "answers": [
+        "100.",
+        "10.",
+        "1.",
+        "0.1.",
+        "0.01."
+      ]
+    },
+    {
+      "text": "When the magnetic flux changes at a rate of $0.24$ Wb/s, an electromotive force of $48$ V is produced in a coil. How many turns does the coil have?",
+      "answers": [
+        "200.",
+        "250.",
+        "260.",
+        "300.",
+        "20."
+      ]
+    },
+    {
+      "text": "If the rate of change of magnetic flux is $60$ mWb/s and the emf induced in the coil is $\\varepsilon=12$ V, how many turns does the coil have?",
+      "answers": [
+        "2000.",
+        "3000.",
+        "2500.",
+        "300.",
+        "200."
+      ]
+    },
+    {
+      "text": "The magnetic flux in a solenoid changed in $2$ ms from $3$ mWb to $9$ mWb. If the emf produced in the solenoid is $60$ V, how many turns does the solenoid have?",
+      "answers": [
+        "5.",
+        "20.",
+        "180.",
+        "200.",
+        "300."
+      ]
+    },
+    {
+      "text": "The induced emf in a current-carrying coil with $80$ turns is $60$ V. What is the rate of change of the magnetic flux (Wb/s)?",
+      "answers": [
+        "1.33.",
+        "0.8.",
+        "0.75.",
+        "0.48.",
+        "0.7."
+      ]
+    },
+    {
+      "text": "When the magnetic flux through a closed loop increased uniformly from $0.1$ Wb to $1$ Wb, an induced emf of $2.5$ V was produced in the loop. Determine the time over which the flux changed (s).",
+      "answers": [
+        "0.36.",
+        "0.27.",
+        "0.39.",
+        "0.48.",
+        "0.12."
+      ]
+    },
+    {
+      "text": "A stationary loop of area $30$ cm$^2$ is placed in a uniform magnetic field perpendicular to the induction lines. What induced emf appears in the loop if in $0.01$ s the magnetic induction increases uniformly from $0.2$ T to $0.7$ T?",
+      "answers": [
+        "500.",
+        "50.",
+        "15.",
+        "0.15.",
+        "0.045."
+      ]
+    },
+    {
+      "text": "In $3$ s the magnetic flux through a conducting ring changed by $0,144$ Wb. How many amperes is the induced current if the resistance of the conductor is $0.24~\\Omega$?",
+      "answers": [
+        "1.25.",
+        "0.6.",
+        "0.24.",
+        "0.2.",
+        "2.2."
+      ]
+    },
+    {
+      "text": "Find the current (A) produced in a loop of resistance $0.01~\\Omega$ when the magnetic flux through it changes uniformly in $2$ s by $0,012$ Wb.",
+      "answers": [
+        "2.4.",
+        "0.1.",
+        "0.6.",
+        "0.68.",
+        "1.6."
+      ]
+    },
+    {
+      "text": "A frame is made of wire of resistance $0.8~\\Omega$. In $4$ s the magnetic flux through the frame decreased uniformly from $6$ Wb to $-10$ Wb. Find the current (A) produced in the frame.",
+      "answers": [
+        "0.5.",
+        "5.",
+        "20.",
+        "2.",
+        "1."
+      ]
+    },
+    {
+      "text": "A coil of $N=8$ turns is in a magnetic field whose induction decreased during $\\Delta t=0.5$ s from $B_1=0.8$ T to $B_2=0.2$ T. The radius of a turn of the coil is $r=10$ cm. Determine the induced current that flowed during this time through the resistor $R=10~\\Omega$ connected to the coil. (Neglect the resistance of the coil wire $r$.) $\\pi=3$.",
+      "answers": [
+        "12.5.",
+        "3.24.",
+        "9.87.",
+        "28.8.",
+        "22.3."
+      ]
+    },
+    {
+      "text": "A coil is placed in a uniform magnetic field of induction $B$; it has $N$ turns and cross-sectional area $S$. During time $t$ it moved from position 1 to position 2. What is the induced emf produced in the coil during this time?",
+      "answers": [
+        "$-\\dfrac{NBS}{t}$.",
+        "$-\\dfrac{1}{2}\\cdot\\dfrac{NBS}{t}$.",
+        "$-\\dfrac{\\sqrt3}{2}\\cdot\\dfrac{NBS}{t}$.",
+        "$\\dfrac{1}{2}\\cdot\\dfrac{NBS}{t}$.",
+        "$\\dfrac{\\sqrt3}{2}\\cdot\\dfrac{NBS}{t}$."
+      ]
+    },
+    {
+      "text": "The figure shows a graph of the magnetic flux through a closed loop versus time. During which interval (s) is the induced emf in the loop equal to zero?",
+      "answers": [
+        "0$\\div$2.",
+        "2$\\div$6.",
+        "10$\\div$12.",
+        "8$\\div$10.",
+        "6$\\div$8."
+      ]
+    },
+    {
+      "text": "The magnetic flux through a closed loop changes with time as shown in the figure. During which interval (s) is the induced emf in the loop equal to zero?",
+      "answers": [
+        "10$\\div$12.",
+        "5$\\div$6.",
+        "6$\\div$8.",
+        "8$\\div$10.",
+        "0$\\div$5."
+      ]
+    },
+    {
+      "text": "The figure shows a graph of the magnetic flux through a turn versus time. If the resistance of the turn is $0.2~\\Omega$, what is the current in it (mA) on the interval B–C?",
+      "answers": [
+        "2.",
+        "4.",
+        "6.",
+        "8.",
+        "12."
+      ]
+    },
+    {
+      "text": "The magnetic flux through a turn of resistance $5~\\Omega$ changes with time as shown in the figure. How many amperes is the current in the turn during the time interval from $2$ to $4$ s?",
+      "answers": [
+        "2.",
+        "0.4.",
+        "0.2.",
+        "0.1.",
+        "0."
+      ]
+    },
+    {
+      "text": "The figure shows a graph of the magnetic flux through a coil versus time. In which figure is the graph of induced emf versus time shown correctly?",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "1.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "Figures 1–5 show graphs of the magnetic flux through a loop versus time. In which case is a constant positive emf produced?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ]
+    },
+    {
+      "text": "The magnetic flux through a loop changes according to the law $\\Phi=-13.5t+0.28$. Determine the induced current in the loop (A) if its resistance is $2.5~\\Omega$. [$\\Phi$] = weber.",
+      "answers": [
+        "6.2.",
+        "2.14.",
+        "5.4.",
+        "4.06.",
+        "1.07."
+      ]
+    },
+    {
+      "text": "The magnetic flux through a loop of resistance $R=3.1~\\Omega$ changes according to the law $\\Phi=-5t^2-2t+5$. Find the instantaneous values of the induced emf and the induced current in it at the instant $t=6$ s.",
+      "answers": [
+        "$\\varepsilon_i=54$ V, $I_i=30$ A.",
+        "$\\varepsilon_i=85$ V, $I_i=10$ A.",
+        "$\\varepsilon_i=16$ V, $I_i=2$ A.",
+        "$\\varepsilon_i=68$ V, $I_i=14$ A.",
+        "$\\varepsilon_i=62$ V, $I_i=20$ A."
+      ]
+    },
+    {
+      "text": "The area of a wire ring is $25$ cm$^2$. The induction of the magnetic field passing perpendicularly through it changes according to the law $B=1.2+0.46t$, where [B] = tesla, [t] = second. What is the emf (mV) produced in the ring?",
+      "answers": [
+        "1.15.",
+        "2.1.",
+        "1.",
+        "0.21.",
+        "1.9."
+      ]
+    },
+    {
+      "text": "A ring of resistance $R=0.2~\\Omega$ and area $S=0.3$ m$^2$ is in a magnetic field whose induction changes according to the law $B=2t-2.5t^2$. Find the instantaneous values of the induced emf and the induced current in it at the instant $t=4.4$ s. [B] = tesla.",
+      "answers": [
+        "$\\varepsilon_i=86$ V, $I_i=2$ A.",
+        "$\\varepsilon_i=67$ V, $I_i=1$ A.",
+        "$\\varepsilon_i=56$ V, $I_i=5$ A.",
+        "$\\varepsilon_i=6$ V, $I_i=30$ A.",
+        "$\\varepsilon_i=15$ V, $I_i=75$ A."
+      ]
+    },
+    {
+      "text": "The magnetic flux through a conducting ring of resistance $5~\\Omega$ changes with time as shown in the figure. Determine the induced currents in all three sections.",
+      "answers": [
+        "0.01 A; 0; 0.5 A.",
+        "0.02 A; 0; 0.1 A.",
+        "0.05 A; 0; 0.5 A.",
+        "0.01 A; 0; 0.2 A.",
+        "0.05 A; 0; 0.1 A."
+      ]
+    },
+    {
+      "text": "The magnetic flux through a loop of resistance $2~\\Omega$ increased uniformly from $0.1$ mWb to $0.4$ mWb. How much charge (mC) passed through the cross-section of the conductor during this time?",
+      "answers": [
+        "0.2.",
+        "0.4.",
+        "0.15.",
+        "0.12.",
+        "0."
+      ]
+    },
+    {
+      "text": "A frame of area $200$ cm$^2$ rotates in a uniform magnetic field of induction $0.9$ T with an angular velocity of $50$ rad/s. What is the amplitude of the emf (in volts) produced in the $40$ turns of the frame?",
+      "answers": [
+        "36.",
+        "40.",
+        "16.",
+        "25.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "A frame with $200$ turns and an area of $150$ cm$^2$ rotates in a uniform magnetic field of induction $0.4$ T. At what angular velocity (rad/s) is the frame rotating if the maximum emf in it is $6$ V?",
+      "answers": [
+        "30.",
+        "3.",
+        "5.",
+        "23.",
+        "16."
+      ]
+    },
+    {
+      "text": "When a frame is rotated in a uniform magnetic field, the magnetic flux through it changes according to the law $\\Phi=0.1\\cos30t$. What is the maximum induced emf produced in the frame (in volts)? [$\\Phi$] = weber.",
+      "answers": [
+        "30.",
+        "3.",
+        "1.5.",
+        "0.3.",
+        "0.1."
+      ]
+    },
+    {
+      "text": "When a metal ring of resistance $R=20~\\Omega$ is rotated in a uniform magnetic field, the magnetic flux through the frame changes according to the law $\\Phi=8\\cos1.5t$. Find the instantaneous values of the induced emf and the induced current in the frame at the instant $t=\\pi/9$ s. [$\\Phi$] = weber.",
+      "answers": [
+        "$\\varepsilon_i=65$ V, $I_i=6$ A.",
+        "$\\varepsilon_i=22$ V, $I_i=1.1$ A.",
+        "$\\varepsilon_i=6$ V, $I_i=0.3$ A.",
+        "$\\varepsilon_i=5$ V, $I_i=0.25$ A.",
+        "$\\varepsilon_i=2$ V, $I_i=0.1$ A."
+      ]
+    },
+    {
+      "text": "A conductor moves with velocity $v$ in the magnetic field shown in the figure. Find the direction of the induced current in it.",
+      "answers": [
+        "directed toward the reader.",
+        "directed along the direction of motion of the conductor.",
+        "directed downward away from the reader.",
+        "directed against the motion of the conductor.",
+        "no induced current appears here."
+      ]
+    },
+    {
+      "text": "A conductor moves between the poles of a magnet perpendicular to the induction lines. If the induced current in it is directed toward the reader, what is the direction of motion of the conductor?",
+      "answers": [
+        "to the left.",
+        "downward.",
+        "to the right.",
+        "upward.",
+        "None of the above."
+      ]
+    },
+    {
+      "text": "In the figure, a straight conductor moves between two magnetic poles. If an induced current appears in the conductor, determine the magnetic poles.",
+      "answers": [
+        "top – N; bottom – S.",
+        "top – S; bottom – N.",
+        "top – S; bottom – S.",
+        "top – N; bottom – N.",
+        "can be arbitrary."
+      ]
+    },
+    {
+      "text": "Which answer gives the expression for the induced emf produced in a moving conductor?",
+      "answers": [
+        "$\\varepsilon=qvB\\sin\\alpha$.",
+        "$\\varepsilon=vBl\\sin\\alpha$.",
+        "$\\varepsilon=nevS$.",
+        "$\\varepsilon=IBl\\sin\\alpha$.",
+        "$\\varepsilon=-L\\Delta I/\\Delta t$."
+      ]
+    },
+    {
+      "text": "A straight conductor of length $0.7$ m moves in a uniform magnetic field of induction $5$ T at a speed of $20$ m/s. The magnetic induction vector, the velocity vector and the conductor are mutually perpendicular. Find the induced emf produced in the conductor (V).",
+      "answers": [
+        "60.",
+        "70.",
+        "80.",
+        "90.",
+        "100."
+      ]
+    },
+    {
+      "text": "A conductor of length $0.3$ m is placed perpendicular to the magnetic induction vector in a uniform magnetic field of induction $0.4$ T. How many volts is the induced emf produced when it moves perpendicular to itself, at an angle of $30^\\circ$ to the magnetic induction vector, at a speed of $5$ m/s?",
+      "answers": [
+        "0.1.",
+        "0.2.",
+        "0.3.",
+        "0.5.",
+        "0.8."
+      ]
+    },
+    {
+      "text": "When a conductor $60$ cm long was moved at a speed of $5$ m/s in a uniform magnetic field perpendicular to the induction lines, an induced emf of $0.3$ V was produced. What is the magnetic induction (T)?",
+      "answers": [
+        "0.04.",
+        "0.1.",
+        "0.2.",
+        "0.4.",
+        "0.5."
+      ]
+    },
+    {
+      "text": "When a conductor of length $0.4$ m moves at a speed of $5$ m/s perpendicular to the induction lines of a uniform magnetic field and to itself, an induced emf of $0.6$ V is produced. How many teslas is the magnetic induction?",
+      "answers": [
+        "0.3.",
+        "0.4.",
+        "0.5.",
+        "0.2.",
+        "0.6."
+      ]
+    },
+    {
+      "text": "A straight conductor of length $0.3$ m crosses the magnetic field induction lines at an angle of $30^\\circ$ at a speed of $6$ m/s. The velocity is perpendicular to the conductor. If the emf induced in the conductor is $3.6$ V, how many teslas is the magnetic induction of the field?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "6."
+      ]
+    },
+    {
+      "text": "In a magnetic field of induction $0.5$ T, a conductor moves perpendicular to the induction lines at a speed of $6$ m/s. What must its length be (m) for an emf of $12$ V to be produced in it?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "6."
+      ]
+    },
+    {
+      "text": "In a field of magnetic induction $0.2$ T, a conductor with an active length of $0.5$ m moves at an angle of $30^\\circ$ to the induction lines. At what speed (m/s) must it move for an induced emf of $0.8$ V to be produced in it?",
+      "answers": [
+        "0.5.",
+        "2.",
+        "8.",
+        "10.",
+        "16."
+      ]
+    },
+    {
+      "text": "In a uniform magnetic field of induction $0.2$ T, a conductor $20$ cm long is moved perpendicular to the induction lines. At what speed (m/s) must it be moved for an induced emf of $0.2$ V to be produced in it?",
+      "answers": [
+        "0.2.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ]
+    },
+    {
+      "text": "At what speed (m/s) must a copper conductor move perpendicular to the induction lines in a magnetic field of induction $1$ T for an induced current of $1$ A to be produced in it? The cross-sectional area of the conductor is $0,017$ mm$^2$, the resistivity of copper is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "0.5.",
+        "1.",
+        "1.5.",
+        "2.",
+        "3."
+      ]
+    },
+    {
+      "text": "A millivoltmeter is connected between the railway rails, which are insulated from each other. What will the millivoltmeter show (V) when a train passes along the track at $180$ km/h? The vertical component of the Earth's magnetic field induction is $B=0.2\\cdot10^{-4}$ T, and the distance between the rails is $1$ m.",
+      "answers": [
+        "0.",
+        "$10^{-3}$.",
+        "$2\\cdot10^{-3}$.",
+        "20.",
+        "220."
+      ]
+    },
+    {
+      "text": "In a magnetic field of induction $15$ mT, a wire of length $25$ cm and electrical resistance $0.5~\\Omega$ moves at a constant speed of $36$ km/h as shown in the figure. Find the induced current in the circuit (mA).",
+      "answers": [
+        "20.",
+        "30.",
+        "15.",
+        "75.",
+        "50."
+      ]
+    },
+    {
+      "text": "In a uniform magnetic field of induction $4$ T, a wire moves perpendicular to the induction lines at a speed of $5$ m/s. The wire is $20$ cm long and has a resistance of $0.8~\\Omega$. What does the ammeter measuring the induced current in it show? Find the direction of this current.",
+      "answers": [
+        "4 A, in direction \"1\".",
+        "4 A, in direction \"2\".",
+        "5 A, in direction \"1\".",
+        "5 A, in direction \"2\".",
+        "2 A, in direction \"1\"."
+      ]
+    },
+    {
+      "text": "When a magnet begins to be inserted south pole first into a conducting ring, is the ring attracted to the magnet or repelled?",
+      "answers": [
+        "it is repelled.",
+        "it is attracted.",
+        "it is neither attracted nor repelled.",
+        "it can be both attracted and repelled.",
+        "the answer depends on the material of the ring."
+      ]
+    },
+    {
+      "text": "When a magnet is inserted north pole first into a conducting ring, is the ring attracted to the magnet or repelled?",
+      "answers": [
+        "it is attracted.",
+        "it is repelled.",
+        "it is neither attracted nor repelled.",
+        "the answer depends on the speed of the magnet.",
+        "the answer depends on the diameter of the ring."
+      ]
+    },
+    {
+      "text": "A conducting ring is suspended from a thread. How will the ring move if an electromagnet whose winding carries an alternating current is brought near it?",
+      "answers": [
+        "it is attracted to the electromagnet.",
+        "it is repelled from the electromagnet.",
+        "it oscillates horizontally.",
+        "it oscillates vertically.",
+        "it does not move."
+      ]
+    },
+    {
+      "text": "A permanent magnet is being moved away from a metal ring south pole first. Is the ring attracted to the magnet or repelled? What is the direction of the induced current in the ring, viewed along the direction of motion of the magnet?",
+      "answers": [
+        "attracted, clockwise.",
+        "attracted, counterclockwise.",
+        "repelled, counterclockwise.",
+        "repelled, clockwise.",
+        "both attracted and not attracted, the current is zero."
+      ]
+    },
+    {
+      "text": "A permanent magnet is being brought toward a metal ring north pole first. Is the ring attracted to the magnet or repelled? What is the direction of the induced current in the ring, viewed along the direction of motion of the magnet?",
+      "answers": [
+        "attracted, counterclockwise.",
+        "repelled, clockwise.",
+        "repelled, counterclockwise.",
+        "attracted, clockwise.",
+        "neither repelled nor attracted, the current is zero."
+      ]
+    },
+    {
+      "text": "In a magnetic field whose induction changes according to the law $B=8000(1+t^2)$ (T), a square frame of area $50$ cm$^2$ is placed. What is the induced emf in the frame at the instant $t=1$ s? In which direction does the induced current pass at point K of the frame during the interval $(0-1)$ s?",
+      "answers": [
+        "30 V; in the $(+)$ direction.",
+        "40 V; in the $(-)$ direction.",
+        "80 V; in the $(+)$ direction.",
+        "30 V; in the $(-)$ direction.",
+        "80 V; in the $(-)$ direction."
+      ]
+    },
+    {
+      "text": "What is the unit of magnetic flux in the International System of Units?",
+      "answers": [
+        "Coulomb.",
+        "Tesla.",
+        "Weber.",
+        "Ampere."
+      ]
+    },
+    {
+      "text": "A ring of radius $r=20$ cm is placed in a uniform magnetic field of induction $B=0.3$ T. The induction vector makes an angle $\\alpha=37^\\circ$ with the normal to the ring. Find the magnetic flux through the ring (mWb). $\\pi=3$.",
+      "answers": [
+        "3.14.",
+        "10.",
+        "28.8.",
+        "15."
+      ]
+    },
+    {
+      "text": "A loop of area 0.2 m$^2$ is placed in a uniform magnetic field of induction 5 T. If the plane of the loop is parallel to the induction lines, how many webers is the magnetic flux through the area of the loop?",
+      "answers": [
+        "0.",
+        "0.1.",
+        "0.5.",
+        "1."
+      ]
+    },
+    {
+      "text": "A magnetic field of induction 6.5 T passes through a rectangular frame as shown in the figure. Find the magnetic flux through it (Wb).",
+      "answers": [
+        "0.52.",
+        "0.27.",
+        "0.39.",
+        "0.48."
+      ]
+    },
+    {
+      "text": "A circular surface of radius 5 cm is placed in a uniform magnetic field of induction 2 T. The induction vector makes an angle of $0^\\circ$ with the normal to the surface of the circle. Find the magnetic flux through the surface (mWb).",
+      "answers": [
+        "3.14.",
+        "10.",
+        "30.5.",
+        "15.7."
+      ]
+    },
+    {
+      "text": "An equilateral triangle with sides of 4 cm is placed in a uniform magnetic field of induction 2 T. The induction vector makes an angle of $30^\\circ$ with the normal to the surface of the triangle. Find the magnetic flux through the surface (mWb).",
+      "answers": [
+        "$0.8\\sqrt{3}$.",
+        "$0.4\\sqrt{3}$.",
+        "$0.4\\sqrt{6}$.",
+        "1.2."
+      ]
+    },
+    {
+      "text": "A magnetic flux of 10 Wb passes through a flat loop of area 2 m$^2$ perpendicular to the magnetic induction vector. What is the magnetic induction (T)?",
+      "answers": [
+        "0.2.",
+        "0.4.",
+        "2.5.",
+        "5."
+      ]
+    },
+    {
+      "text": "A magnetic flux of 6 Wb passes through a flat loop perpendicular to the magnetic induction vector. If the magnetic induction is 3 T, what is the area of the loop (m$^2$)?",
+      "answers": [
+        "0.5.",
+        "2/3.",
+        "2.",
+        "12."
+      ]
+    },
+    {
+      "text": "What must the angle between the magnetic induction vector and the plane of a ring of radius 1 cm, placed in a field of magnetic induction 4 T, be for the magnetic flux through it to be 0.628 mWb?",
+      "answers": [
+        "$0^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$."
+      ]
+    },
+    {
+      "text": "Magnetic flux increases if ...\\n1) the magnetic field induction increases;\\n2) the magnetic field induction decreases;\\n3) the area penetrated by the magnetic field decreases;\\n4) the area penetrated by the magnetic field increases.",
+      "answers": [
+        "2, 3.",
+        "1, 3.",
+        "1, 4.",
+        "2, 4."
+      ]
+    },
+    {
+      "text": "In which of the following cases does the magnetic induction flux through the surface of a frame remain unchanged?",
+      "answers": [
+        "when rotating in a uniform magnetic field about an axis lying in its plane.",
+        "when moving in translation in a non-uniform magnetic field.",
+        "when rotating in a non-uniform magnetic field.",
+        "when moving in translation in a uniform magnetic field."
+      ]
+    },
+    {
+      "text": "When a wire frame of area 25 cm$^2$ is rotated in a uniform magnetic field, the magnetic flux through the frame changes according to the law $\\Phi=2.5 \\cdot 10^{-4}\\cos 6t$ (Wb). What is the magnetic induction (T)?",
+      "answers": [
+        "0.1.",
+        "0.6.",
+        "1.",
+        "0.2."
+      ]
+    },
+    {
+      "text": "The magnetic flux through the area bounded by a loop carrying a current of 5 A, moving in a magnetic field, changed from 0.4 mWb to 0.8 mWb. How many millijoules of work were done?",
+      "answers": [
+        "2.",
+        "3.",
+        "1.",
+        "4."
+      ]
+    },
+    {
+      "text": "In a uniform magnetic field of induction $4/\\pi$ T there is a turn of diameter 10 cm carrying a current of 1 A. The plane of the turn is parallel to the magnetic induction vector. How many joules of work must be done to rotate the turn by $90^\\circ$ so that its plane is perpendicular to the magnetic induction vector?",
+      "answers": [
+        "$10^{-2}$.",
+        "$\\pi \\cdot 10^{-4}$.",
+        "$10^{-4}$.",
+        "$\\pi \\cdot 10^{-2}$."
+      ]
+    }
+  ]
+}

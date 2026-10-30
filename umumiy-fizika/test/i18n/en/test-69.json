@@ -1,0 +1,151 @@
+{
+  "title": "Topic 69 | Self-induction. Inductance",
+  "questions": [
+    {
+      "text": "What is the phenomenon of self-induction?",
+      "answers": [
+        "Accumulation of charges in a capacitor",
+        "Release of heat when current flows through a conductor",
+        "Bringing an external magnet close to a loop",
+        "Production of an induced emf in a circuit itself when the current through it changes"
+      ]
+    },
+    {
+      "text": "What is the SI unit of inductance?",
+      "answers": [
+        "Tesla (T)",
+        "Farad (F)",
+        "Weber (Wb)",
+        "Henry (H)"
+      ]
+    },
+    {
+      "text": "What is the relationship between the magnetic flux Φ of a circuit, the current I in it and its inductance L?",
+      "answers": [
+        "Φ = L/I",
+        "Φ = I/L",
+        "Φ = LI",
+        "Φ = LI²"
+      ]
+    },
+    {
+      "text": "The current in a coil of inductance 0.5 H decreased uniformly from 4 A to 0 in 2 s. What is the magnitude of the self-induced emf (in volts)?",
+      "answers": [
+        "1",
+        "4",
+        "8",
+        "0.25",
+        "2"
+      ]
+    },
+    {
+      "text": "The current in a coil of inductance 2 mH increased uniformly from 0 to 5 A in 0.01 s. What is the self-induced emf (V)?",
+      "answers": [
+        "1",
+        "0.01",
+        "10",
+        "0.1"
+      ]
+    },
+    {
+      "text": "A current of 5 A flows through a coil of inductance 0.4 H. What is the energy of the coil's magnetic field (in joules)?",
+      "answers": [
+        "50",
+        "2",
+        "10",
+        "5",
+        "20"
+      ]
+    },
+    {
+      "text": "When the current in a coil is 4 A, the energy of the magnetic field is 8 J. What is the inductance of the coil (in henries)?",
+      "answers": [
+        "4",
+        "2",
+        "0.5",
+        "1"
+      ]
+    },
+    {
+      "text": "The magnetic flux of a coil is 0.06 Wb and the current in it is 3 A. What is the inductance of the coil (in millihenries, mH)?",
+      "answers": [
+        "180",
+        "20",
+        "200",
+        "2"
+      ]
+    },
+    {
+      "text": "How does the energy of a coil's magnetic field change if the current in it is doubled?",
+      "answers": [
+        "Increases 4 times",
+        "Does not change",
+        "Decreases 2 times",
+        "Increases 2 times"
+      ]
+    },
+    {
+      "text": "How does the inductance of a coil change if its number of turns is doubled (length and cross-sectional area unchanged)?",
+      "answers": [
+        "Decreases 2 times",
+        "Increases 2 times",
+        "Does not change",
+        "Increases 4 times"
+      ]
+    },
+    {
+      "text": "How does the inductance of a coil change if an iron core is inserted into it?",
+      "answers": [
+        "Becomes zero",
+        "Does not change",
+        "Increases",
+        "Decreases"
+      ]
+    },
+    {
+      "text": "When the current in a coil changes at a rate of 20 A/s, a self-induced emf of 12 V appears in it. What is the inductance of the coil (H)?",
+      "answers": [
+        "240",
+        "1.67",
+        "0.06",
+        "0.6"
+      ]
+    },
+    {
+      "text": "According to Lenz's rule, how is the self-induced emf directed?",
+      "answers": [
+        "Independent of the change in current",
+        "In the direction that opposes the change in current",
+        "Always in the direction of the current",
+        "Always opposite to the current"
+      ]
+    },
+    {
+      "text": "Why does a light bulb flash brighter for a moment when the circuit is opened?",
+      "answers": [
+        "An increase in the source voltage",
+        "A decrease in the resistance of the lamp",
+        "Charging of a capacitor",
+        "The self-induced emf produced in the coil"
+      ]
+    },
+    {
+      "text": "On which of the following does the inductance of a coil NOT depend?",
+      "answers": [
+        "The number of turns",
+        "The length of the coil",
+        "The current flowing through the coil",
+        "The magnetic permeability of the core material"
+      ]
+    },
+    {
+      "text": "An air-core solenoid has N = 1000 turns, a cross-sectional area S = 10 cm² and a length l = 0.5 m. What is its approximate inductance? (μ₀ = 4π·10⁻⁷ H/m)",
+      "answers": [
+        "2.5 mH",
+        "0.25 mH",
+        "12.5 mH",
+        "25 mH"
+      ]
+    }
+  ]
+}

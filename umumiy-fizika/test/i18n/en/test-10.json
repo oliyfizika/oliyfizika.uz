@@ -1,0 +1,185 @@
+{
+  "title": "Topic 10 | Non-uniform motion along a circle",
+  "questions": [
+    {
+      "text": "A material point moves uniformly along a circle. What is the angle between its velocity and acceleration vectors?",
+      "answers": [
+        "180°",
+        "90°",
+        "60°",
+        "30°"
+      ]
+    },
+    {
+      "text": "A car travelled around a circle of radius 50 m, covering the arc corresponding to 40° at 4 m/s, the arc of 60° at 6 m/s, the arc of 70° at 7 m/s, and the remaining part at 8 m/s. Find the average speed of the car over the whole circle (km/h).",
+      "answers": [
+        "2.15",
+        "24.1",
+        "36",
+        "42.1"
+      ]
+    },
+    {
+      "text": "A body moving along a circle has an initial angular velocity of 3 rad/s and an angular acceleration of 0.1 rad/s². Through what arc angle does it move in 0.5 s?",
+      "answers": [
+        "86.7°",
+        "80.7°",
+        "60.7°",
+        "90°"
+      ]
+    },
+    {
+      "text": "A material point moving along a circle with uniform angular acceleration has an initial angular velocity of 3 rad/s and an angular acceleration of 0.1 rad/s². Find its angular velocity after 5 s (rad/s).",
+      "answers": [
+        "2.5",
+        "4",
+        "3.5",
+        "2"
+      ]
+    },
+    {
+      "text": "A material point moving along a circle with uniform angular acceleration has an initial angular velocity of 4 rad/s and an angular acceleration of 0.2 rad/s². Find its angle of rotation after 4 s (rad).",
+      "answers": [
+        "17.6",
+        "16",
+        "1.6",
+        "1.75"
+      ]
+    },
+    {
+      "text": "A body moves along a circle with an angular velocity given by the equation ω = 2 + 0.5t. How many revolutions does it make in 20 s?",
+      "answers": [
+        "62",
+        "22",
+        "42",
+        "32"
+      ]
+    },
+    {
+      "text": "A body with an initial angular velocity of 3 rad/s and an angular acceleration of 0.5 rad/s² moves along a circle with uniform angular acceleration. If the radius of the circle is 5 dm, find the linear speed after 6 s (m/s).",
+      "answers": [
+        "3",
+        "2",
+        "6",
+        "8"
+      ]
+    },
+    {
+      "text": "Find the linear speed after 20 s of a material point that started from rest and moves along a circle with an angular acceleration of 0.4 rad/s² (m/s). The radius of the circle is 5 m.",
+      "answers": [
+        "40",
+        "20",
+        "10",
+        "5"
+      ]
+    },
+    {
+      "text": "How is the instantaneous velocity vector directed in curvilinear motion?",
+      "answers": [
+        "The direction of the instantaneous velocity cannot be determined in such motion",
+        "Along the tangent to the trajectory",
+        "Along the tangent to the radius of the curve",
+        "Along the radius of the curve, away from the centre"
+      ]
+    },
+    {
+      "text": "As a body moves along the trajectory AB, its velocity changes from v₁ to v₂. How is the average acceleration vector directed?",
+      "answers": [
+        "Along the direction of vector v₁",
+        "Along the direction of vector v₂",
+        "From the tip of vector v₂ to the tip of vector v₁",
+        "From the tip of vector v₁ to the tip of vector v₂"
+      ]
+    },
+    {
+      "text": "The tangential acceleration of a body is 5 m/s² and its total acceleration is 10 m/s². Find its centripetal acceleration (m/s²).",
+      "answers": [
+        "5√3",
+        "5√5",
+        "5",
+        "15"
+      ]
+    },
+    {
+      "text": "A material point moves uniformly along a circle of radius 3 m with an angular velocity of 4 rad/s. Find its tangential acceleration (m/s²).",
+      "answers": [
+        "48",
+        "0",
+        "24",
+        "1.33"
+      ]
+    },
+    {
+      "text": "A material point moves along a circle of radius 20 cm with uniform angular acceleration and a tangential acceleration of 5 cm/s². How long after the start of motion will its normal acceleration be 2 times its tangential acceleration?",
+      "answers": [
+        "2.78",
+        "2.20",
+        "1.07",
+        "3.48"
+      ]
+    },
+    {
+      "text": "If the tangential acceleration of a body is 6 m/s² and its centripetal acceleration is 8 m/s², what is its total acceleration (m/s²)?",
+      "answers": [
+        "6",
+        "8",
+        "10",
+        "2"
+      ]
+    },
+    {
+      "text": "The angle between the velocity and acceleration of a material point moving on a horizontal surface is π/3. What is the nature of the point's motion?",
+      "answers": [
+        "Rectilinear, non-uniform",
+        "Rectilinear, uniform",
+        "Curvilinear, non-uniform",
+        "Curvilinear, uniform"
+      ]
+    },
+    {
+      "text": "A material point moves along a circle of radius 4 m with uniform angular acceleration, with an initial angular velocity of 2 rad/s and an angular acceleration of 2 rad/s². Find the ratio of its normal acceleration to its tangential acceleration after 5 s.",
+      "answers": [
+        "72",
+        "48",
+        "12",
+        "24"
+      ]
+    },
+    {
+      "text": "Point A on the rim of a wheel of diameter 100 cm was rotating uniformly at a speed of 6 m/s. What is the angle (in degrees) between the velocity vector and the acceleration vector of point A 2.5 s after braking began?",
+      "answers": [
+        "90°",
+        "45°",
+        "135°",
+        "120°"
+      ]
+    },
+    {
+      "text": "Point A on the rim of a wheel of radius √3 m was rotating uniformly at a speed of 4.2 m/s. What is the angle (in degrees) between the velocity vector and the acceleration vector of point A 0.4 s after braking began?",
+      "answers": [
+        "90°",
+        "45°",
+        "135°",
+        "120°"
+      ]
+    },
+    {
+      "text": "The speed of point A of a wheel relative to the ground is 3 m/s. The speed of point C relative to the ground is −2 m/s. The diameter of the circle is 1 m. Find the centripetal acceleration of the points on the wheel rim (m/s²).",
+      "answers": [
+        "12.5",
+        "50",
+        "8",
+        "18"
+      ]
+    },
+    {
+      "text": "Point A on the rim of a wheel of diameter 100 cm was rotating uniformly at a speed of 4.8 m/s. What is the angle (in degrees) between the velocity vector and the acceleration vector of point A 0.6 s after braking began?",
+      "answers": [
+        "90°",
+        "90° + arccot 6",
+        "45°",
+        "120°"
+      ]
+    }
+  ]
+}

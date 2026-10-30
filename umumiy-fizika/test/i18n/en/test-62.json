@@ -1,0 +1,149 @@
+{
+  "title": "Topic 62 | Shunt connection",
+  "questions": [
+    {
+      "text": "An ammeter has an upper measurement limit of $200$ mA. What shunt resistance must be used to measure currents up to $1000$ mA with it ($\\Omega$)? The resistance of the ammeter is $12~\\Omega$.",
+      "answers": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ]
+    },
+    {
+      "text": "The resistance of a shunt connected in parallel with an ammeter is $5$ times smaller than the resistance of the ammeter. If the ammeter reads $100$ mA, what is the current $I$ in the main line (mA)?",
+      "answers": [
+        "400",
+        "500",
+        "600",
+        "800"
+      ]
+    },
+    {
+      "text": "The resistance of the shunt is $R$ and the resistance of the ammeter is $4R$. If the current in the main line is $I=600$ mA, what current does the ammeter read (mA)?",
+      "answers": [
+        "500",
+        "120",
+        "300",
+        "200"
+      ]
+    },
+    {
+      "text": "What must the resistance of a shunt connected to an ammeter with an internal resistance of $180~\\Omega$ be in order to increase its measurement range $9$ times ($\\Omega$)?",
+      "answers": [
+        "16.1",
+        "18",
+        "14",
+        "22.5"
+      ]
+    },
+    {
+      "text": "The internal resistance of an ammeter is $12~\\Omega$ and it is designed to measure currents up to $2.5$ A. To measure currents up to $15$ A with this ammeter, what shunt (in $\\Omega$) must be connected to it?",
+      "answers": [
+        "3.1",
+        "1.1",
+        "2.4",
+        "4.2"
+      ]
+    },
+    {
+      "text": "The internal resistance of an ammeter connected in a circuit is $11~\\Omega$ and the resistance of the shunt is $2.2~\\Omega$. If the ammeter reads a current of $13$ A, what is the current in the circuit (in amperes)?",
+      "answers": [
+        "78",
+        "66",
+        "20",
+        "82"
+      ]
+    },
+    {
+      "text": "If one of two identical shunts is connected to an ammeter, its scale division value increases $3$ times. By what factor does the measurement range of the ammeter increase if both shunts are connected to it in parallel?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "2.5"
+      ]
+    },
+    {
+      "text": "Two identical shunts are connected to each other in series and then to an ammeter; its measurement range increases $4.5$ times. By what factor does the measurement range of the ammeter increase if both shunts are connected to it in parallel?",
+      "answers": [
+        "6.5",
+        "9",
+        "15",
+        "18"
+      ]
+    },
+    {
+      "text": "An ammeter of resistance $0.04~\\Omega$ has a copper wire $15$ cm long with a cross-sectional area of $3$ mm$^2$ connected in parallel with it. The ammeter reads a current of $0.17$ A. Find the current in the wire (A). The resistivity of copper is $1.7\\cdot10^{-8}~\\Omega\\cdot$m.",
+      "answers": [
+        "2.8",
+        "4",
+        "5",
+        "8"
+      ]
+    },
+    {
+      "text": "The internal resistance of a voltmeter is $300~\\Omega$. By what factor does the scale division value change if a series (multiplier) resistance of $1200~\\Omega$ is connected to it?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "text": "The internal resistance of a voltmeter is $2$ k$\\Omega$ and it is designed to measure $8$ V. What series (multiplier) resistance (k$\\Omega$) must be connected to this voltmeter so that it can measure a voltage of $40$ V?",
+      "answers": [
+        "5",
+        "12",
+        "18",
+        "8"
+      ]
+    },
+    {
+      "text": "A voltmeter of resistance $1600~\\Omega$ is designed to measure voltages up to $15$ V. What series (multiplier) resistance must be connected to it so that this voltmeter can measure voltages up to $210$ V ($\\Omega$)?",
+      "answers": [
+        "150",
+        "20.8",
+        "30",
+        "27"
+      ]
+    },
+    {
+      "text": "What resistance must be connected to a voltmeter designed to measure $15$ V so that it can measure a voltage of $270$ V ($\\Omega$)? The resistance of the voltmeter is $300~\\Omega$.",
+      "answers": [
+        "5400",
+        "5500",
+        "5600",
+        "5100"
+      ]
+    },
+    {
+      "text": "A voltmeter is designed to measure $20$ V. To measure a voltage of $150$ V with it, what series (multiplier) resistance ($\\Omega$) must be connected to it? $R_v=200~\\Omega$.",
+      "answers": [
+        "1300",
+        "1500",
+        "1400",
+        "1600"
+      ]
+    },
+    {
+      "text": "A voltmeter with an internal resistance of $2800~\\Omega$, connected to the mains, reads $120$ V. What resistance (in $\\Omega$) must be connected in series with the voltmeter so that it reads $80$ V?",
+      "answers": [
+        "2700",
+        "1700",
+        "2100",
+        "1400"
+      ]
+    },
+    {
+      "text": "In the circuit, $R_1=800~\\Omega$, $R_2=1000~\\Omega$, and the total resistance of this circuit is $480~\\Omega$. By what factor has the measurement range of the voltmeter been increased?",
+      "answers": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    }
+  ]
+}

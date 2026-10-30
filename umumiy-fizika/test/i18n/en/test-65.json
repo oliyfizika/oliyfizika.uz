@@ -1,0 +1,149 @@
+{
+  "title": "Topic 65 | Action of a magnetic field on a current-carrying conductor. Ampère's law",
+  "questions": [
+    {
+      "text": "Give the formula for the force exerted by a magnetic field on a current-carrying conductor (the Ampère force).",
+      "answers": [
+        "$F = IBL\\cos\\alpha$.",
+        "$F = kq_1q_2/r^2$.",
+        "$F = Eq$.",
+        "$F = IBL\\sin\\alpha$."
+      ]
+    },
+    {
+      "text": "A conductor carrying a current of 3 A is placed as shown in the figure in a uniform magnetic field of induction 20 T. Find the magnitude of the Ampère force acting on it (N). The length of the active part of the conductor is 40 cm. $\\alpha=37^\\circ$.",
+      "answers": [
+        "14.4.",
+        "12.8.",
+        "10.2.",
+        "16.4."
+      ]
+    },
+    {
+      "text": "What force does the field exert (in N) on an 8 cm conductor placed in a uniform magnetic field of induction 2 T if it carries a current of 4 A? The angle between the current and the magnetic induction vector is $30^\\circ$.",
+      "answers": [
+        "0.4.",
+        "0.24.",
+        "0.32.",
+        "1.25."
+      ]
+    },
+    {
+      "text": "A force of 1.6 N acts on a conductor with an active length of 0.4 m placed in a uniform magnetic field of induction 0.8 T. Determine the current in the conductor (A) if it is perpendicular to the magnetic field lines.",
+      "answers": [
+        "5.",
+        "4.",
+        "3.",
+        "2."
+      ]
+    },
+    {
+      "text": "A magnetic field of induction 40 mT acts on a straight conductor with an active length of 10 cm with a force of 60 mN. The current in the conductor is 30 A. What angle does the conductor make with the magnetic induction vector?",
+      "answers": [
+        "$90^\\circ$.",
+        "$60^\\circ$.",
+        "$45^\\circ$.",
+        "$30^\\circ$."
+      ]
+    },
+    {
+      "text": "A conductor of length 0.2 m is placed in a uniform magnetic field of induction 2 T. If the steady current in the conductor is 5 A, what can the maximum and minimum forces exerted on the conductor by the magnetic field be (N)?",
+      "answers": [
+        "2; 0.",
+        "2; 1.",
+        "10; 2.",
+        "1; 0."
+      ]
+    },
+    {
+      "text": "A magnetic field with field strength $H=5000$ A/m is created in vacuum. A conductor 20 cm long carrying a current of 10 A is placed in it. If the directions of the current and the magnetic induction form an angle of $53^\\circ$, what is the Ampère force (mN)? $\\sin 53^\\circ = 0.8$, $\\pi=3$.",
+      "answers": [
+        "9.6.",
+        "2.",
+        "2.3.",
+        "4.5."
+      ]
+    },
+    {
+      "text": "A conductor 20 cm long carrying a current of 10 A is in a magnetic field of induction 5 T. If the conductor makes an angle of $30^\\circ$ with the direction of the magnetic induction, what force (in newtons) does the field exert on it?",
+      "answers": [
+        "10.",
+        "1.5.",
+        "5.",
+        "18."
+      ]
+    },
+    {
+      "text": "A force of 2.8 N acts on a current-carrying conductor placed perpendicular to the magnetic induction lines. What will the force be (N) when the angle between the conductor and the induction lines is $30^\\circ$?",
+      "answers": [
+        "0.7.",
+        "1.4.",
+        "1.96.",
+        "2.4."
+      ]
+    },
+    {
+      "text": "How will the Ampère force acting on a straight current-carrying conductor change if the angle of $30^\\circ$ between the induction vector of a uniform magnetic field and the conductor is doubled?",
+      "answers": [
+        "it increases 2 times.",
+        "it decreases 2 times.",
+        "it increases $\\sqrt{2}$ times.",
+        "it increases $\\sqrt{3}$ times."
+      ]
+    },
+    {
+      "text": "The current in a conductor with an active length of 10 cm is 2 A. It is in a uniform magnetic field of induction 0.08 T. How much work (in mJ) is done when the conductor is displaced by 10 cm perpendicular to the induction lines?",
+      "answers": [
+        "32.",
+        "0.8.",
+        "3.2.",
+        "1.6."
+      ]
+    },
+    {
+      "text": "A current of 50 A flows through a wire 8 cm long, placed perpendicular to the lines of a uniform magnetic field of induction 20 mT. When the wire moved perpendicular to itself at an angle of $45^\\circ$ to the induction lines, the current did 8 mJ of work. Through what distance (cm) did the wire move?",
+      "answers": [
+        "10.2.",
+        "13.2.",
+        "14.1.",
+        "15.2."
+      ]
+    },
+    {
+      "text": "Moving a conductor of length 0.1 m carrying 5 A in a uniform magnetic field through a distance of 20 mm, perpendicular to the induction lines and to the conductor itself, requires 0.01 J of work. What is the magnetic induction (in teslas)?",
+      "answers": [
+        "0.1.",
+        "1.",
+        "2.",
+        "0.2."
+      ]
+    },
+    {
+      "text": "When a conductor of length 20 cm carrying 2 A was displaced by 10 cm perpendicular to the induction lines of a uniform magnetic field, 32 mJ of work was done. Find the magnetic induction (T).",
+      "answers": [
+        "0.04.",
+        "0.08.",
+        "0.4.",
+        "0.8."
+      ]
+    },
+    {
+      "text": "A conductor 80 cm long moves uniformly in a uniform magnetic field of induction 0.4 T at a speed of 0.15 m/s, perpendicular to the induction lines and to itself. If 0.96 J of work is done in 10 s, what is the current in the conductor (A)?",
+      "answers": [
+        "0.4.",
+        "1.",
+        "2.",
+        "1.8."
+      ]
+    },
+    {
+      "text": "A frame with a current of 2 A and area $S=1.2$ m$^2$ is placed in a uniform magnetic field of induction 30 T. The angle between the normal to the frame and the induction lines is $53^\\circ$. What is the torque acting on the frame (N$\\cdot$m)?",
+      "answers": [
+        "16.8.",
+        "64.2.",
+        "57.6.",
+        "28.5."
+      ]
+    }
+  ]
+}

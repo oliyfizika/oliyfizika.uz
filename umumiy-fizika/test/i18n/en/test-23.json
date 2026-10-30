@@ -1,0 +1,194 @@
+{
+  "title": "Topic 23 | Power and efficiency",
+  "questions": [
+    {
+      "text": "The Il-62 aircraft has four engines, each with a thrust of 100 kN. What is the total useful power of the engines (in kW) at an aircraft speed of 240 m/s?",
+      "answers": [
+        "84000",
+        "96000",
+        "102000",
+        "72000"
+      ]
+    },
+    {
+      "text": "A car of mass 2000 kg moves along a horizontal road at 72 km/h. The resistance force is 1/20 of the car's weight. Determine the useful power of the car (in kW). g = 10 m/s^2.",
+      "answers": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ]
+    },
+    {
+      "text": "A boat with a rower moves at 0.6 m/s. If the power developed by the rower is 18 W, determine the resistance force of the water.",
+      "answers": [
+        "30",
+        "40",
+        "20",
+        "10"
+      ]
+    },
+    {
+      "text": "What useful power (in kW) does a caterpillar tractor develop when climbing at 9 km/h along a road with a slope of 1 m for every 10 m of road? The mass of the tractor is 6 t. g = 10 m/s^2.",
+      "answers": [
+        "10",
+        "20",
+        "30",
+        "15"
+      ]
+    },
+    {
+      "text": "When moving at 36 km/h, an electric locomotive consumes 60 kW of power. If the efficiency of the locomotive is 80%, determine its traction force.",
+      "answers": [
+        "4800",
+        "3600",
+        "5400",
+        "6000"
+      ]
+    },
+    {
+      "text": "Oil is pumped out of a well 500 m deep using a pump that consumes 10 kW of power. If 96 kg of oil is delivered to the surface in one minute of pump operation, what is the efficiency of the pump (in percent)? g = 10 m/s^2.",
+      "answers": [
+        "60",
+        "80",
+        "90",
+        "70"
+      ]
+    },
+    {
+      "text": "A water pump uniformly delivers 300 kg of water per minute to a height of 80 m. If the efficiency of the pump is 80%, determine the power of the motor driving the pump (in kW). g = 10 m/s^2.",
+      "answers": [
+        "4",
+        "8",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "text": "A hoisting crane is driven by an engine of power 10 kW. If the efficiency of the engine is 80%, how many seconds are needed to lift a load of mass 2 t uniformly to a height of 50 m? g = 10 m/s^2.",
+      "answers": [
+        "100",
+        "150",
+        "125",
+        "200"
+      ]
+    },
+    {
+      "text": "If a tram reached a speed of 18 km/h at the end of the 5th second after starting, determine its power at that moment (in kW). The mass of the tram is 10 t. Neglect resistance to motion.",
+      "answers": [
+        "50",
+        "40",
+        "60",
+        "80"
+      ]
+    },
+    {
+      "text": "A car of mass 1 t starts from rest and, moving with uniform acceleration, covers 50 m in 5 s. What power (in kW) does the car develop at the end of the fifth second of its motion? Neglect resistance to motion.",
+      "answers": [
+        "60",
+        "40",
+        "80",
+        "100"
+      ]
+    },
+    {
+      "text": "Find the average power developed by gravity during the first second of free fall from rest of a body of mass 6 kg. g = 10 m/s^2.",
+      "answers": [
+        "300",
+        "150",
+        "450",
+        "600"
+      ]
+    },
+    {
+      "text": "A body of mass 3 kg is lifted vertically upward from the ground by applying a force of 36 N to it. What power does this force develop 2 s after the start of motion? g = 10 m/s^2.",
+      "answers": [
+        "120",
+        "144",
+        "160",
+        "180"
+      ]
+    },
+    {
+      "text": "A body of mass 3 kg is lifted vertically upward from the ground by applying a force of 42 N to it. What power does this force develop at the moment the body is at a height of 2 m? g = 10 m/s^2.",
+      "answers": [
+        "140",
+        "150",
+        "168",
+        "180"
+      ]
+    },
+    {
+      "text": "A constant force of 250 N was applied to the rope while a bucket of sand of mass 24.5 kg was lifted uniformly to a height of 10 m using a fixed pulley. Calculate the efficiency.",
+      "answers": [
+        "95%",
+        "96%",
+        "92%",
+        "98%"
+      ]
+    },
+    {
+      "text": "A load of mass 50 kg was lifted to a height of 3 m using a fixed pulley. If the efficiency is 96%, find the work done.",
+      "answers": [
+        "1.56 kJ",
+        "2.1 kJ",
+        "0.9 kJ",
+        "1.2 kJ"
+      ]
+    },
+    {
+      "text": "A load was lifted to a height of 13 m using a fixed pulley. 20.7 kJ of work was done during the lifting. If the efficiency of the mechanism is 94.2%, find the mass of the lifted load.",
+      "answers": [
+        "100 kg",
+        "150 kg",
+        "200 kg",
+        "120 kg"
+      ]
+    },
+    {
+      "text": "A load weighing 600 N was lifted to a height of 1 m using a lever. In the process, the long arm, to which a force of 350 N was applied, went down by 1.8 m. Determine the efficiency of the lever.",
+      "answers": [
+        "90%",
+        "92%",
+        "95%",
+        "98%"
+      ]
+    },
+    {
+      "text": "A load of mass 245 kg was lifted to a height of 6 cm using a lever. During the lifting, the long arm, to which a force of 500 N was applied, went down by 0.3 m. Determine the efficiency of the lever.",
+      "answers": [
+        "98%",
+        "95%",
+        "94%",
+        "96%"
+      ]
+    },
+    {
+      "text": "A load of mass 6 t was lifted to a height of 8 m using a hoisting crane with an engine power of 6 kW. If the efficiency is 80%, how long did the lifting take?",
+      "answers": [
+        "80 s",
+        "100 s",
+        "120 s",
+        "150 s"
+      ]
+    },
+    {
+      "text": "A crate weighing 300 N was pulled up an inclined board 4.5 m long and 1.5 m high with a force of 120 N. Determine the efficiency.",
+      "answers": [
+        "80%",
+        "75%",
+        "83.3%",
+        "90%"
+      ]
+    },
+    {
+      "text": "A load of mass 15 kg tied to a dynamometer is pulled uniformly up an inclined plane, and the dynamometer reads 40 N. If the length of the plane is 1.8 m and its height is 30 cm, determine the efficiency.",
+      "answers": [
+        "60%",
+        "62.5%",
+        "65%",
+        "50%"
+      ]
+    }
+  ]
+}

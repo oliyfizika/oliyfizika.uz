@@ -1,0 +1,185 @@
+{
+  "title": "Topic 57 | Direct current",
+  "questions": [
+    {
+      "text": "An air capacitor charged to a potential difference of 800 V is connected in parallel with an uncharged capacitor of the same dimensions filled with a dielectric. If the potential difference after connecting the capacitors is 100 V, determine the dielectric constant of the dielectric.",
+      "answers": [
+        "7",
+        "2",
+        "16",
+        "3"
+      ]
+    },
+    {
+      "text": "A parallel-plate air capacitor is charged to a potential difference of 50 V and disconnected from the source. A metal sheet 1 mm thick is then inserted between the capacitor plates, parallel to them. If the distance between the plates is 5 mm, determine the potential difference between the capacitor plates (V).",
+      "answers": [
+        "30",
+        "15",
+        "80",
+        "40"
+      ]
+    },
+    {
+      "text": "Two identical capacitors are connected in parallel and charged to a potential difference of 6 V. After the capacitors are disconnected from the source, the distance between the plates of one of them is halved. Determine the potential difference between the capacitor plates (V).",
+      "answers": [
+        "6",
+        "2",
+        "4",
+        "12"
+      ]
+    },
+    {
+      "text": "A voltmeter connected in parallel with a 12 $\\mu F$ capacitor attached to a DC source reads 3 V. What voltage (V) will the voltmeter read if a second capacitor of 8 $\\mu F$ is connected in parallel with this capacitor?",
+      "answers": [
+        "1.5",
+        "3",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "text": "What is the ordered motion of charged particles called?",
+      "answers": [
+        "current (amperage)",
+        "current density",
+        "electric current",
+        "electrical resistance"
+      ]
+    },
+    {
+      "text": "What is the main sign of an electric current?",
+      "answers": [
+        "The presence of a magnetic field around it.",
+        "The presence of a gravitational field around it.",
+        "The presence of a potential field around it.",
+        "The presence of a vortex field around it."
+      ]
+    },
+    {
+      "text": "Indicate the correct statement.",
+      "answers": [
+        "Current is a vector quantity.",
+        "Current is a positive scalar quantity.",
+        "The sign of the current is determined by the sign of the charge carriers.",
+        "Current is a scalar but signed (algebraic) quantity."
+      ]
+    },
+    {
+      "text": "What is called current density?",
+      "answers": [
+        "the charge passing through the surface of a conductor per unit time...",
+        "the charge displaced by 1 m along a conductor per unit time...",
+        "the charge passing through the cross-section of a conductor per unit time...",
+        "a vector quantity equal to the charge passing per unit time through a unit area of the conductor's cross-section."
+      ]
+    },
+    {
+      "text": "A current of 10 A flows through a conductor. Find the total mass of electrons passing through the cross-section of this conductor in 1 hour (mg). $e = 1.6 \\cdot 10^{-19} \\, C, m_e = 9.1 \\cdot 10^{-31} \\, kg$.",
+      "answers": [
+        "0.4",
+        "0.8",
+        "0.2",
+        "0.12"
+      ]
+    },
+    {
+      "text": "How many electrons pass through the cross-section of a conductor in 1 ns when the current is 32 $\\mu A$?",
+      "answers": [
+        "$1 \\cdot 10^5$",
+        "$2 \\cdot 10^3$",
+        "$4 \\cdot 10^5$",
+        "$2 \\cdot 10^5$"
+      ]
+    },
+    {
+      "text": "Determine the number of electrons passing through the cross-section of a conductor in 1 ms when the current is 16 mA. $e = 1.6 \\cdot 10^{-19} \\, C$.",
+      "answers": [
+        "$6 \\cdot 10^{14}$",
+        "$5,6 \\cdot 10^{14}$",
+        "$5 \\cdot 10^{14}$",
+        "$10^{14}$"
+      ]
+    },
+    {
+      "text": "A current of 1 A flowed through a conductor for 24 hours. Find the mass of electrons (mg) that passed through the conductor's cross-section during this time. $e/m_e = 1.76 \\cdot 10^{11} \\, C/kg$.",
+      "answers": [
+        "0.5",
+        "2",
+        "5",
+        "0.3"
+      ]
+    },
+    {
+      "text": "If the current in a conductor increased linearly from 0 to 5 A in 10 s, how much charge (C) flowed through the conductor's cross-section during this time?",
+      "answers": [
+        "0.5",
+        "2.5",
+        "2",
+        "25"
+      ]
+    },
+    {
+      "text": "In an electrolytic bath containing zinc sulfate, the current varies linearly as $I = (2 + 0.02t) \\, A$. Determine the electric charge that passed through the electrolyte in 5 min (C).",
+      "answers": [
+        "1400",
+        "1500",
+        "1600",
+        "1800"
+      ]
+    },
+    {
+      "text": "The current in a circuit increases according to the law $I = 10^{-6}t$. How many electrons passed through the circuit in 1.5 minutes?",
+      "answers": [
+        "$2,5 \\cdot 10^{16}$",
+        "$2.6 \\cdot 10^{14}$",
+        "$3.9 \\cdot 10^{17}$",
+        "$2,53 \\cdot 10^{16}$"
+      ]
+    },
+    {
+      "text": "The current in a section of a circuit increased uniformly from 0 to 1.5 A in 6 s. Indicate the graph of current versus time (based on the graphs in Source [3]).",
+      "answers": [
+        "graph 1 (1.5 A at 3 s)",
+        "graph 2 (1.5 A at 9 s)",
+        "graph 3 (3 A at 6 s)",
+        "graph 4 (3 A at 12 s)"
+      ]
+    },
+    {
+      "text": "A capacitor of 200 $\\mu F$ is charged to a voltage of 5000 V in 5 s. Find the average charging current (A).",
+      "answers": [
+        "0.02",
+        "0.05",
+        "2",
+        "0.2"
+      ]
+    },
+    {
+      "text": "If a charge of 20 C passed through a conductor's cross-section of 5 $mm^2$ in 8 s, what is the current density ($A/m^2$)?",
+      "answers": [
+        "$5 \\cdot 10^5$",
+        "$4 \\cdot 10^4$",
+        "$4 \\cdot 10^5$",
+        "$4 \\cdot 10^6$"
+      ]
+    },
+    {
+      "text": "A current of 3 A flows through a copper wire with a cross-sectional area of 20 $mm^2$. Find the speed of the conduction electrons in it ($m/s$). The number of free electrons per unit volume is $9 \\cdot 10^{28} \\, m^{-3}$.",
+      "answers": [
+        "$3 \\cdot 10^{-5}$",
+        "$10^{-5}$",
+        "3",
+        "$2 \\cdot 10^{-5}$"
+      ]
+    },
+    {
+      "text": "A current of 3 A flows through a metal conductor with a cross-sectional area of 0.5 $mm^2$. If the concentration of free electrons in the metal is $4 \\cdot 10^{28} \\, m^{-3}$, find the average drift speed of the electrons ($mkm/s$).",
+      "answers": [
+        "1.2",
+        "4.7",
+        "2.8",
+        "9.4"
+      ]
+    }
+  ]
+}

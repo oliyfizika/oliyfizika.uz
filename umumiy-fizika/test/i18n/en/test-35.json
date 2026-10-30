@@ -1,0 +1,266 @@
+{
+  "title": "Topic 35 | Basic concepts of the molecular kinetic theory (MKT)",
+  "questions": [
+    {
+      "text": "Which answer states the basic postulates of the molecular kinetic theory most completely?",
+      "answers": [
+        "any body is made of molecules, they are in random motion, and interaction forces act between them.",
+        "matter consists of tiny particles, and interaction forces act between them.",
+        "matter consists of tiny pieces that fill space continuously.",
+        "matter consists of elementary particles that continuously transform into one another."
+      ]
+    },
+    {
+      "text": "1 mol is the unit of which quantity in the SI?",
+      "answers": [
+        "mass.",
+        "amount of substance.",
+        "molar mass.",
+        "volume."
+      ]
+    },
+    {
+      "text": "What is the unit of the amount of substance?",
+      "answers": [
+        "mol.",
+        "kg.",
+        "kg/mol.",
+        "amu."
+      ]
+    },
+    {
+      "text": "What physical quantity is called Avogadro's number?",
+      "answers": [
+        "the number of atoms in 12 g of carbon.",
+        "1/12 of the mass of one carbon atom.",
+        "the mass of 1 mole of a substance.",
+        "the ratio of the mass of one atom to 1/12 of the mass of a carbon atom."
+      ]
+    },
+    {
+      "text": "The relative atomic mass of copper is 64 amu. Find the mass of one copper atom (kg). 1 amu = 1.67 · 10⁻²⁷ kg.",
+      "answers": [
+        "1.2 · 10⁻²⁶.",
+        "1.5 · 10⁻²⁶.",
+        "2.03 · 10⁻²⁵.",
+        "1.07 · 10⁻²⁵."
+      ]
+    },
+    {
+      "text": "The mass of one gold atom is 3.29 · 10⁻²⁵ kg. Find its relative atomic mass (amu).",
+      "answers": [
+        "32.",
+        "108.",
+        "197.",
+        "29."
+      ]
+    },
+    {
+      "text": "Find the amount of substance (mol) if the number of molecules is 1.806 · 10²³. Avogadro's number NA = 6.02 · 10²³ mol⁻¹.",
+      "answers": [
+        "0.8.",
+        "0.3.",
+        "0.2.",
+        "0.5."
+      ]
+    },
+    {
+      "text": "Find the amount of substance (mol) if the number of molecules is 15.05 · 10²⁴. NA = 6.02 · 10²³ mol⁻¹.",
+      "answers": [
+        "15.",
+        "18.",
+        "25.",
+        "20."
+      ]
+    },
+    {
+      "text": "Determine the amount of substance in 39.4 kg of gold (mol). µ = 197 g/mol.",
+      "answers": [
+        "400.",
+        "200.",
+        "100.",
+        "150."
+      ]
+    },
+    {
+      "text": "How many moles of substance are in 9 g of water? µ = 18 g/mol.",
+      "answers": [
+        "0.45.",
+        "0.5.",
+        "0.9.",
+        "4.5."
+      ]
+    },
+    {
+      "text": "Determine the amount of substance (mol) in 28.8 g of oxygen. µ = 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "0.5.",
+        "1.",
+        "2.",
+        "0.9."
+      ]
+    },
+    {
+      "text": "What is the mass of 5 mol of helium? µ = 4 g/mol.",
+      "answers": [
+        "0.1 kg.",
+        "0.2 kg.",
+        "10 g.",
+        "20 g."
+      ]
+    },
+    {
+      "text": "What is the mass of 450 mol of oxygen (kg)? µ = 32 g/mol.",
+      "answers": [
+        "14.4.",
+        "4.5.",
+        "7.2.",
+        "9."
+      ]
+    },
+    {
+      "text": "Find the mass of 5 mol of oxygen. The molar mass of oxygen is 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "320 g.",
+        "32 g.",
+        "1.6 kg.",
+        "160 g."
+      ]
+    },
+    {
+      "text": "Compare the masses of tin and nickel ingots containing equal amounts of substance. The molar mass of tin is µt = 118.7 g/mol and that of nickel is µn = 58.7 g/mol.",
+      "answers": [
+        "mt = 4mn.",
+        "mn = 2mt.",
+        "mt = 2mn.",
+        "mn = 4mt."
+      ]
+    },
+    {
+      "text": "Find the molar mass of butane (C4H10) (kg/mol). Ar(H) = 1 u, Ar(C) = 12 u, 1 u = 1.66 · 10⁻²⁷ kg.",
+      "answers": [
+        "17 · 10⁻³.",
+        "41 · 10⁻³.",
+        "80 · 10⁻³.",
+        "58 · 10⁻³."
+      ]
+    },
+    {
+      "text": "Find the molar mass of nitric acid (HNO3) (kg/mol). Ar(H) = 1 u, Ar(N) = 14 u, Ar(O) = 16 u, 1 u = 1.66 · 10⁻²⁷ kg.",
+      "answers": [
+        "56 · 10⁻³.",
+        "63 · 10⁻³.",
+        "31 · 10⁻³.",
+        "15 · 10⁻³."
+      ]
+    },
+    {
+      "text": "Determine the mass of three moles of copper sulfate (CuSO4) (g). Ar(O) = 16 u, Ar(Cu) = 64 u, Ar(S) = 32 u, 1 u = 1.66 · 10⁻²⁷ kg, NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "160.",
+        "540.",
+        "480.",
+        "240."
+      ]
+    },
+    {
+      "text": "The mass of one gas molecule is 4.8 · 10⁻²⁶ kg. What is the molar mass of this gas (g/mol)? NA = 6.02 · 10²³ mol⁻¹.",
+      "answers": [
+        "8.",
+        "32.",
+        "12.",
+        "2."
+      ]
+    },
+    {
+      "text": "The molar mass of a substance is 36 g/mol. What is the mass of one molecule in kilograms? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "6 · 10⁻²³.",
+        "6 · 10⁻²⁶.",
+        "216 · 10⁻²⁰.",
+        "36 · 10⁻²³."
+      ]
+    },
+    {
+      "text": "The molar mass of nitrogen is 0.028 kg/mol. What is the mass of a nitrogen molecule (kg)? NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "5.3 · 10⁻²³.",
+        "4.7 · 10⁻²⁶.",
+        "5.3 · 10⁻²⁷.",
+        "8.6 · 10⁻²²."
+      ]
+    },
+    {
+      "text": "180 g of water in a cup evaporates completely in one week. Estimate how many molecules on average evaporate from the cup each second. NA = 6 · 10²³ mol⁻¹, µ = 18 g/mol.",
+      "answers": [
+        "10²².",
+        "10¹⁹.",
+        "10¹⁵.",
+        "10⁹."
+      ]
+    },
+    {
+      "text": "By mass, 84% of the gas in a vessel is nitrogen and 16% is oxygen. How many nitrogen molecules are there per oxygen molecule? MN = 28 g/mol, MO = 32 g/mol.",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "6."
+      ]
+    },
+    {
+      "text": "A layer of gold 1 μm thick was deposited on the surface of a device with a surface area of 20 cm². How many gold atoms are in the coating? NA = 6 · 10²³ mol⁻¹, the atomic mass of gold is 197 amu, and its density is 19.3 g/cm³.",
+      "answers": [
+        "1.18 · 10²⁰.",
+        "1.5 · 10²⁰.",
+        "2 · 10²⁰.",
+        "1.13 · 10²⁰."
+      ]
+    },
+    {
+      "text": "Find the density of a metal (kg/m³) if the mass of one molecule is 6 · 10⁻²⁶ kg and the molecule concentration is 2.5 · 10²⁹ m⁻³.",
+      "answers": [
+        "1200.",
+        "6000.",
+        "15000.",
+        "2000."
+      ]
+    },
+    {
+      "text": "In which substances is diffusion observed?",
+      "answers": [
+        "Only in gases.",
+        "In gases, liquids and solids.",
+        "Only in liquids and solids.",
+        "Only in gases and liquids."
+      ]
+    },
+    {
+      "text": "What is meant by Brownian motion?",
+      "answers": [
+        "thermal motion of liquid molecules.",
+        "motion of solid particles placed in a liquid under the action of the liquid molecules.",
+        "motion of liquid molecules under the action of small particles placed in it.",
+        "motion of solid particles placed in a liquid resulting from their mutual interactions."
+      ]
+    },
+    {
+      "text": "The concentration of oxygen molecules in a vessel is n = 6 · 10²⁵ m⁻³. What is the density of the gas (kg/m³)? NA = 6 · 10²³ mol⁻¹, µ = 32 · 10⁻³ kg/mol.",
+      "answers": [
+        "0.6.",
+        "1.2.",
+        "1.6.",
+        "3.2."
+      ]
+    },
+    {
+      "text": "320 g of oxygen occupies a volume of 0.02 m³. Find the molecule concentration (m⁻³). µ = 32 g/mol, NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "3.01 · 10²⁷.",
+        "3.01 · 10²⁶.",
+        "6.02 · 10²¹.",
+        "6.02 · 10²⁷."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "title": "Topic 55 | Capacitance. Capacitors",
+  "questions": [
+    {
+      "text": "The capacitance of a conductor is ...",
+      "answers": [
+        "a quantity measured by the product of the conductor's charge and its potential.",
+        "a quantity directly proportional to the conductor's charge and inversely proportional to its potential.",
+        "a quantity equal to the ratio of the conductor's potential to its charge.",
+        "a quantity measured by the ratio of the conductor's charge to its potential.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "When an isolated conductor was given a charge of $3\\cdot10^{-9}$ C, its potential became $120$ V. Find the capacitance of the conductor (F).",
+      "answers": [
+        "$2.5\\cdot10^{-11}$",
+        "$4\\cdot10^{-11}$",
+        "$3.6\\cdot10^{-12}$",
+        "$3.6\\cdot10^{-7}$",
+        "$5\\cdot10^{-10}$"
+      ]
+    },
+    {
+      "text": "The charge on one plate of a capacitor is $100$ nC and on the other is $-100$ nC. What is the charge of the capacitor (nC)?",
+      "answers": [
+        "0",
+        "100",
+        "200",
+        "1000",
+        "$10^4$"
+      ]
+    },
+    {
+      "text": "The potential difference between the plates of a capacitor of capacitance $15$ nF is $20$ V. Find the magnitude of the charge on one of the plates of the capacitor (C).",
+      "answers": [
+        "0.1",
+        "0.3",
+        "0.5",
+        "3",
+        "0.75"
+      ]
+    },
+    {
+      "text": "Find the capacitance of a capacitor connected to a voltage of $200$ V and carrying a charge of $2\\cdot10^{-4}$ C ($\\mu$F).",
+      "answers": [
+        "0.1",
+        "0.2",
+        "0.4",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "text": "A capacitor is connected to a constant voltage of $300$ V. If its charge is $12\\cdot10^{-4}$ C, what is the capacitance of the capacitor ($\\mu$F)?",
+      "answers": [
+        "0.1",
+        "1",
+        "2",
+        "4",
+        "7"
+      ]
+    },
+    {
+      "text": "The charge given to the plates of a capacitor of capacitance $30$ pF is $4.2\\cdot10^{-8}$ C. To what voltage is the capacitor charged (kV)?",
+      "answers": [
+        "1.4",
+        "34.2",
+        "7",
+        "2.8",
+        "25.8"
+      ]
+    },
+    {
+      "text": "The capacitance of a capacitor is $4$ pF and the potential difference between its plates is $200$ V. How many coulombs of charge are on each plate?",
+      "answers": [
+        "$6\\cdot10^{-10}$",
+        "$2\\cdot10^{-10}$",
+        "$2\\cdot10^{-9}$",
+        "$8\\cdot10^{-10}$",
+        "$4\\cdot10^{-10}$"
+      ]
+    },
+    {
+      "text": "One plate of a parallel-plate capacitor is given a charge of $+0.2$ C and the other $-0.2$ C. The voltage between the plates is $5$ kV. What is the capacitance of the capacitor ($\\mu$F)?",
+      "answers": [
+        "80",
+        "40",
+        "25",
+        "10",
+        "0"
+      ]
+    },
+    {
+      "text": "The potential of one plate of a capacitor is $300$ V and of the other is $-300$ V, and the charge on one of the plates is $2.4$ $\\mu$C. Find its capacitance (nF).",
+      "answers": [
+        "8",
+        "4",
+        "5",
+        "3",
+        "10"
+      ]
+    },
+    {
+      "text": "What is the name of the unit of the physical quantity whose dimension in SI is J/V$^2$?",
+      "answers": [
+        "Coulomb",
+        "Farad",
+        "Ohm",
+        "Ampere",
+        "Newton"
+      ]
+    },
+    {
+      "text": "Which of the following units can be used as a unit of capacitance:⏎1) F, 2) C$^2$/J, 3) 3) J/V$^2$, 4) C/V.",
+      "answers": [
+        "1, 4",
+        "1, 2",
+        "all of them",
+        "1, 2, 3",
+        "3, 4"
+      ]
+    },
+    {
+      "text": "State the expression for the capacitance of an isolated sphere.",
+      "answers": [
+        "$C=\\dfrac{\\varphi_1-\\varphi_2}{q}$",
+        "$C=\\dfrac{\\varepsilon\\varepsilon_0S}{d}$",
+        "$C=2\\pi\\varepsilon\\varepsilon_0R$",
+        "$C=4\\pi\\varepsilon\\varepsilon_0R$",
+        "$C=4\\pi\\varepsilon R$"
+      ]
+    },
+    {
+      "text": "What is the radius (in meters) of a sphere whose capacitance in vacuum is $1$ F?",
+      "answers": [
+        "$1\\cdot10^7$",
+        "$1\\cdot10^8$",
+        "$9\\cdot10^{10}$",
+        "$1\\cdot10^9$",
+        "$9\\cdot10^9$"
+      ]
+    },
+    {
+      "text": "How does the capacitance of a conductor change when another conductor is brought close to it?",
+      "answers": [
+        "increases",
+        "does not change",
+        "decreases",
+        "first increases, then decreases",
+        "first decreases, then increases"
+      ]
+    },
+    {
+      "text": "The plates of a charged capacitor were connected by a wire and it discharged. How does the mass of the plates change in this process?",
+      "answers": [
+        "the mass of both plates increases.",
+        "the mass of the positively charged plate increases and that of the negatively charged plate decreases.",
+        "the mass of both plates does not change.",
+        "the mass of the negatively charged plate increases and that of the positively charged plate decreases.",
+        "the mass of both plates decreases."
+      ]
+    },
+    {
+      "text": "Which of the given equations expresses the capacitance of a parallel-plate capacitor?",
+      "answers": [
+        "$C=C_1+C_2+\\ldots+C_n$",
+        "$C=4\\pi\\varepsilon_0R$",
+        "$C=\\dfrac{q}{U}$",
+        "$C=\\dfrac{Q}{m(t_2-t_1)}$",
+        "$C=\\dfrac{\\varepsilon\\varepsilon_0S}{d}$"
+      ]
+    },
+    {
+      "text": "The plates of a parallel-plate capacitor each have an area of $40$ cm$^2$ and the distance between the plates is $5$ mm. Find its capacitance (pF) if the dielectric constant of the medium between the plates is $5$.",
+      "answers": [
+        "12.46",
+        "23.77",
+        "15.1",
+        "26.9",
+        "35.4"
+      ]
+    },
+    {
+      "text": "A parallel-plate capacitor of capacitance $20$ pF has plates of area $20$ cm$^2$ each, and the distance between the plates is $8.85$ mm. Find the dielectric constant of the medium between the plates.",
+      "answers": [
+        "8",
+        "4",
+        "5",
+        "3",
+        "10"
+      ]
+    },
+    {
+      "text": "The capacitance of a parallel-plate capacitor is $8.85$ pF, the area of each plate is $10$ cm$^2$, and the dielectric constant of the medium between the plates is $3$. Find the distance between the plates (mm).",
+      "answers": [
+        "1",
+        "4",
+        "2",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "text": "The charge on each plate of a parallel-plate capacitor is $88.5$ $\\mu$C, the plates have an area of $50$ cm$^2$ each, the distance between the plates is $5$ mm, and the dielectric constant of the medium between the plates is $2.5$. Find the potential difference between the plates (MV).",
+      "answers": [
+        "1",
+        "4",
+        "2",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "text": "The voltage between the plates of a parallel-plate capacitor is $20$ kV, the plates have an area of $2$ cm$^2$ each, the distance between the plates is $35.4$ mm, and the dielectric constant of the medium between the plates is $40$. Find the charge on each plate ($\\mu$C).",
+      "answers": [
+        "0.04",
+        "0.03",
+        "0.02",
+        "0.15",
+        "0.25"
+      ]
+    },
+    {
+      "text": "The plates of a parallel-plate capacitor are two circular plates of diameter $0.2$ m. The thickness of the air layer between the plates is $3\\cdot10^{-3}$ m and the voltage between the plates is $120$ V. What is the charge on each plate (C)?",
+      "answers": [
+        "$1.55\\cdot10^{-8}$",
+        "$1.22\\cdot10^{-8}$",
+        "$0.82\\cdot10^{-8}$",
+        "$1.01\\cdot10^{-8}$",
+        "$1.06\\cdot10^{-8}$"
+      ]
+    },
+    {
+      "text": "How does the capacitance of a capacitor change when its charge is doubled?",
+      "answers": [
+        "decreases 4 times.",
+        "increases 2 times.",
+        "decreases 2 times.",
+        "increases 4 times.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "How does the capacitance of a capacitor change if the charge on its plates is increased by a factor of 4?",
+      "answers": [
+        "decreases 4 times.",
+        "increases 2 times.",
+        "decreases 2 times.",
+        "increases 4 times.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "How does the capacitance of a capacitor change when the voltage between its plates is doubled?",
+      "answers": [
+        "decreases 2 times.",
+        "increases 2 times.",
+        "does not change.",
+        "increases 4 times.",
+        "decreases 4 times."
+      ]
+    },
+    {
+      "text": "How does the capacitance of a parallel-plate capacitor change when the area of its plates is doubled?",
+      "answers": [
+        "decreases 2 times.",
+        "increases 4 times.",
+        "does not change.",
+        "decreases 4 times.",
+        "increases 2 times."
+      ]
+    },
+    {
+      "text": "Three parallel-plate capacitors have plates of the same area, and the distances between the plates satisfy $d_1<d_2<d_3$. What is the relation between their capacitances?",
+      "answers": [
+        "$C_2<C_3<C_1$.",
+        "$C_1<C_2<C_3$.",
+        "$C_1=C_2=C_3$.",
+        "$C_1>C_3>C_2$.",
+        "$C_3<C_1<C_2$."
+      ]
+    },
+    {
+      "text": "How does the capacitance of a parallel-plate air capacitor change if a third plate is inserted into the space between its plates?",
+      "answers": [
+        "depends on the dielectric constant of the plate.",
+        "increases.",
+        "decreases.",
+        "does not change.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "A conducting plate whose thickness is half the distance between the plates was inserted between the plates of a capacitor. How does the capacitance of the capacitor change?",
+      "answers": [
+        "increases 4 times.",
+        "decreases 4 times.",
+        "does not change.",
+        "decreases 2 times.",
+        "increases 2 times."
+      ]
+    },
+    {
+      "text": "Each plate of a parallel-plate capacitor has area $S$, and the distance between them is $d$. A metal plate of thickness $l$ is inserted into the capacitor without touching the plates. What is the capacitance of the capacitor?",
+      "answers": [
+        "$\\dfrac{\\varepsilon_0 S}{2(d-l)}$",
+        "$\\dfrac{\\varepsilon_0 S}{d+l}$",
+        "$\\dfrac{2\\varepsilon_0 S}{d-l}$",
+        "$\\dfrac{\\varepsilon_0 S}{2(d+l)}$",
+        "$\\dfrac{\\varepsilon_0 S}{d-l}$"
+      ]
+    },
+    {
+      "text": "The volume of the space between the plates of an air capacitor is $2$ m$^3$ and its capacitance is $5$ nF. What will the capacitance of the capacitor be (nF) if the volume is increased to $4$ m$^3$?",
+      "answers": [
+        "10",
+        "15",
+        "2.5",
+        "cannot be determined.",
+        "5"
+      ]
+    },
+    {
+      "text": "How does the capacitance of a parallel-plate capacitor change if the distance between the plates is decreased by a factor of $6$ and the area of each plate is decreased by a factor of $3$?",
+      "answers": [
+        "increases 2 times.",
+        "decreases 6 times.",
+        "decreases 3 times.",
+        "increases 6 times.",
+        "increases 3 times."
+      ]
+    },
+    {
+      "text": "How does the capacitance of a parallel-plate capacitor change if the space between its plates is filled with a dielectric with $\\varepsilon=2$?",
+      "answers": [
+        "does not change.",
+        "decreases 2 times.",
+        "increases 2 times.",
+        "decreases 4 times.",
+        "increases 4 times."
+      ]
+    },
+    {
+      "text": "Different dielectrics are placed between the plates of three identical parallel-plate capacitors: $\\varepsilon_1<\\varepsilon_2<\\varepsilon_3$. What is the relation between the capacitances of the capacitors?",
+      "answers": [
+        "$C_3>C_2<C_1$.",
+        "$C_1>C_2>C_3$.",
+        "$C_1=C_2=C_3$.",
+        "$C_1<C_2<C_3$.",
+        "$C_1>C_2<C_3$."
+      ]
+    },
+    {
+      "text": "The distance between the plates of a parallel-plate capacitor was reduced by a factor of $4$, and a dielectric with a constant of $5$ was replaced by one with a constant of $10$. How does the capacitance of the capacitor change?",
+      "answers": [
+        "decreases 4 times.",
+        "increases 8 times.",
+        "decreases 2 times.",
+        "increases 2 times.",
+        "decreases 8 times."
+      ]
+    },
+    {
+      "text": "A parallel-plate capacitor is connected to a DC source. How does the charge on the plates change if the distance between them is doubled?",
+      "answers": [
+        "decreases 4 times.",
+        "increases 2 times.",
+        "does not change.",
+        "decreases 2 times.",
+        "increases 4 times."
+      ]
+    },
+    {
+      "text": "A parallel-plate air capacitor was charged from a DC source and then disconnected from it. How do the charge and voltage of the capacitor change if the distance between the plates is doubled?",
+      "answers": [
+        "the charge and voltage do not change.",
+        "the charge increases 2 times, the voltage does not change.",
+        "the charge does not change, the voltage increases 2 times.",
+        "the charge does not change, the voltage decreases 2 times.",
+        "the charge decreases 2 times, the voltage does not change."
+      ]
+    },
+    {
+      "text": "A charged capacitor was disconnected from the source and the distance between its plates was reduced by a factor of 7. How does the voltage change?",
+      "answers": [
+        "does not change.",
+        "increases 7 times.",
+        "decreases 7 times.",
+        "increases 49 times.",
+        "decreases 49 times."
+      ]
+    },
+    {
+      "text": "A capacitor was charged and disconnected from the source, then filled with a dielectric with $\\varepsilon=3$. How does the voltage across the capacitor change?",
+      "answers": [
+        "increases 9 times.",
+        "decreases 9 times.",
+        "does not change.",
+        "increases 3 times.",
+        "decreases 3 times."
+      ]
+    },
+    {
+      "text": "How does the electric field strength of a charged parallel-plate capacitor disconnected from the source change if the distance between the plates is doubled?",
+      "answers": [
+        "does not change.",
+        "decreases 2 times.",
+        "increases 4 times.",
+        "decreases 4 times.",
+        "increases 2 times."
+      ]
+    },
+    {
+      "text": "If a charged parallel-plate air capacitor is disconnected from the source and the distance between its plates is reduced by a factor of 4, how does the electric field strength in it change?",
+      "answers": [
+        "does not change.",
+        "decreases 4 times.",
+        "increases 4 times.",
+        "decreases 16 times.",
+        "increases 16 times."
+      ]
+    },
+    {
+      "text": "A parallel-plate capacitor is connected to a constant voltage source. How does the electric field strength inside the capacitor change if the space between the plates is filled with a dielectric?",
+      "answers": [
+        "decreases.",
+        "increases.",
+        "does not change.",
+        "can either increase or decrease.",
+        "the answer depends on the dielectric constant."
+      ]
+    },
+    {
+      "text": "The plates of a charged capacitor attract each other with a force $F$. How does this force change if a flat glass plate with dielectric constant $\\varepsilon=2$ is inserted between the plates? The thickness of the plate is less than the distance between the plates.",
+      "answers": [
+        "decreases 2 times.",
+        "increases 2 times.",
+        "decreases 4 times.",
+        "increases 4 times.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "The distance between the plates of a parallel-plate air capacitor is $8.85$ mm and the surface charge density is $10^{-6}$ C/m$^2$. What is its voltage (in volts)?",
+      "answers": [
+        "100",
+        "500",
+        "885",
+        "1000",
+        "2000"
+      ]
+    },
+    {
+      "text": "A parallel-plate air capacitor is connected to a power source with a voltage of $9$ kV. If breakdown due to ionization occurs in air at a field strength of $3$ MV/m between the capacitor plates, what is the minimum distance (mm) to which the plates can be brought together without the capacitor failing?",
+      "answers": [
+        "1.5",
+        "3",
+        "15",
+        "30",
+        "60"
+      ]
+    }
+  ]
+}

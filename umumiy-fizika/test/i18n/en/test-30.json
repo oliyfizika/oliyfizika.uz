@@ -1,0 +1,230 @@
+{
+  "title": "Topic 30 | Bernoulli's law",
+  "questions": [
+    {
+      "text": "The speed of water flowing in the narrow part of a horizontal pipe is 2 m/s. Find the speed of water flow in the wide part of the pipe (m/s). The cross-sectional areas of the narrow and wide parts of the pipe are 200 cm² and 800 cm², respectively.",
+      "answers": [
+        "0.1",
+        "5",
+        "0.5",
+        "0.2"
+      ]
+    },
+    {
+      "text": "In the wide part of a pipe the water speed is 10 cm/s. What will the water speed (m/s) be in the part whose diameter is 4 times smaller than that of the wide part?",
+      "answers": [
+        "1.8",
+        "1.6",
+        "1.5",
+        "1.7"
+      ]
+    },
+    {
+      "text": "A liquid flows through the pipes shown in the figure, completely filling them. In which part will the speed of the liquid be greatest?",
+      "answers": [
+        "4",
+        "3",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "text": "The figure shows water flowing through a horizontally placed pipe, completely filling it. What is the speed ϑ1 equal to?",
+      "answers": [
+        "4",
+        "3",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "text": "In the wide part of a pipe, water flows at 20 m/s. What will the flow speed be in the part of the pipe whose diameter is 1.5 times smaller (m/s)?",
+      "answers": [
+        "30",
+        "45",
+        "15",
+        "12.6"
+      ]
+    },
+    {
+      "text": "A liquid flows through a pipe of variable cross-section (see the figure). At which cross-section is the pressure of this liquid the smallest?",
+      "answers": [
+        "3",
+        "1",
+        "2",
+        "a flowing liquid does not create additional pressure"
+      ]
+    },
+    {
+      "text": "In which answer is the relation between the pressures of water flowing through pipes with different cross-sections (S1; S2; S3) given correctly?",
+      "answers": [
+        "P1 = P2 = P3",
+        "P1 = P2 < P3",
+        "P1 > P2 > P3",
+        "P1 < P2 < P3"
+      ]
+    },
+    {
+      "text": "A liquid flows along a pipe of variable cross-section. At which cross-section is the pressure produced by the liquid minimal?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "If oil flows through an oil pipeline of diameter 0.5 m at a speed of 1 m/s, what amount of oil (kg) is obtained in 1 hour? ρ = 890 kg/m³.",
+      "answers": [
+        "54.6 · 10^5",
+        "4.5 · 10^4",
+        "5.9 · 10^5",
+        "5.1 · 10^7"
+      ]
+    },
+    {
+      "text": "The speed of water in a pipe is 3.6 km/h. If 7.2 tonnes of water flows through the cross-section of the pipe every hour, what is the cross-sectional area of the pipe (cm²)?",
+      "answers": [
+        "2",
+        "20",
+        "1",
+        "10"
+      ]
+    },
+    {
+      "text": "Water is spraying out of a large hose. The water flow rate is 60 L per minute. What is the cross-sectional area of the stream (cm²) at a height of 2 meters? The cross-sectional area inside the hose is 1.5 cm².",
+      "answers": [
+        "3.32",
+        "4.88",
+        "4.37",
+        "4.1"
+      ]
+    },
+    {
+      "text": "Oil is raised from a well through a pipe of diameter 60 mm. If 9.12 t of oil is raised every hour, find the speed of the oil flow (m/s). The density of oil is 800 kg/m³.",
+      "answers": [
+        "2.4",
+        "1.2",
+        "1.12",
+        "6.2"
+      ]
+    },
+    {
+      "text": "A hole of diameter 2 cm was made in the bottom of a cylindrical vessel containing water, and 360 g of water per second began to be poured into the vessel. At what initial height of the water in the vessel (cm) does its level remain constant while water continues to be poured in?",
+      "answers": [
+        "7.2",
+        "3.6",
+        "6.7",
+        "2.8"
+      ]
+    },
+    {
+      "text": "If a jet of water shooting vertically upward from the opening of a water pipe rises 1.25 m, at what speed (m/s) does the water leave the opening?",
+      "answers": [
+        "1.25",
+        "2.5",
+        "5.5",
+        "5"
+      ]
+    },
+    {
+      "text": "To measure the speed of river water, a pipe bent at 90° was lowered into the flowing water. The water in the pipe rose 30 cm above the free surface of the river water. Find the speed of the river water (m/s).",
+      "answers": [
+        "2",
+        "√5",
+        "√3",
+        "√6"
+      ]
+    },
+    {
+      "text": "If the water at the bow of a motorboat rises vertically to a height of 1 m, what is an approximate estimate of the speed of the boat (m/s)?",
+      "answers": [
+        "8.2",
+        "4.4",
+        "1.6",
+        "3.8"
+      ]
+    },
+    {
+      "text": "If the piston of a syringe with an area of 0.5 cm² is pressed with a force of 40 N, at what speed (m/s) does water flow out of the syringe opening?",
+      "answers": [
+        "20",
+        "10",
+        "40",
+        "15"
+      ]
+    },
+    {
+      "text": "If the flow speed of a liquid increases by a factor of 2, by what factor does the pressure it exerts on a perpendicular obstacle increase?",
+      "answers": [
+        "2 times",
+        "4 times",
+        "8 times",
+        "does not change"
+      ]
+    },
+    {
+      "text": "If liquid paint flows out of a spray gun at 25 m/s, what pressure (Pa) does the compressor create in the spray gun? The density of the paint is 800 kg/m³.",
+      "answers": [
+        "2 · 10^5",
+        "1.5 · 10^5",
+        "2.5 · 10^5",
+        "10^5"
+      ]
+    },
+    {
+      "text": "A pipe is connected to a water tap. If the tap creates a pressure of 2 kPa, find the flow speed of the water leaving the pipe (m/s).",
+      "answers": [
+        "3",
+        "1.2",
+        "4.2",
+        "2"
+      ]
+    },
+    {
+      "text": "Liquid is ejected from a sprayer at 25 m/s, and the density of the liquid is 1 g/cm³. What pressure (atm) does the compressor create in the volume of the sprayer container?",
+      "answers": [
+        "6.5",
+        "3.1",
+        "2.5",
+        "3.9"
+      ]
+    },
+    {
+      "text": "Oil of density 0.9 g/cm³ flows through a pipe with a cross-sectional radius of 4 cm. The flow speed is 4 m/s. Find the hydrodynamic pressure of the oil in the direction of motion (kPa).",
+      "answers": [
+        "7.2",
+        "4",
+        "8.1",
+        "1.2"
+      ]
+    },
+    {
+      "text": "In a pipe of diameter 12 cm, water moves at 12 m/s. Find the power of the water flow (W).",
+      "answers": [
+        "880",
+        "8000",
+        "3110",
+        "9767"
+      ]
+    },
+    {
+      "text": "At what speed (m/s) must oil of density 800 kg/m³ move in a pipe of diameter 25 cm for the power of the flow to be 2453.25 W?",
+      "answers": [
+        "3",
+        "12",
+        "6",
+        "5"
+      ]
+    },
+    {
+      "text": "Find the power of a water jet leaving an opening of diameter 20 cm at a speed of 4 m/s (kW).",
+      "answers": [
+        "10",
+        "1",
+        "50",
+        "1000"
+      ]
+    }
+  ]
+}

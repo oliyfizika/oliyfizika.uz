@@ -1,0 +1,284 @@
+{
+  "title": "Topic 29 | Archimedes' force",
+  "questions": [
+    {
+      "text": "Determine the buoyant force (in kN) acting on a stone of volume 0.5 m³ completely submerged in water. g = 10 m/s².",
+      "answers": [
+        "10",
+        "5",
+        "15",
+        "2.5"
+      ]
+    },
+    {
+      "text": "What is the Archimedes force (in mN) acting on a body of volume 50 dm³ in air? The density of air is 1.29 kg/m³. g = 10 m/s².",
+      "answers": [
+        "645",
+        "500",
+        "129",
+        "322"
+      ]
+    },
+    {
+      "text": "What force must be applied to hold underwater a stone whose weight in air is 350 N? The density of the stone's material is 2500 kg/m³.",
+      "answers": [
+        "140",
+        "280",
+        "210",
+        "175"
+      ]
+    },
+    {
+      "text": "A body of mass 2 kg and volume 0.001 m³ is located at a depth of 5 m in a lake. How much work must be done to slowly lift it to a height of 5 m above the water surface? g = 10 m/s².",
+      "answers": [
+        "100",
+        "200",
+        "75",
+        "150"
+      ]
+    },
+    {
+      "text": "The weight of a piece of aluminum in air is 270 N, and in glycerin it is 144 N. If the density of aluminum is 2700 kg/m³, determine the density of glycerin.",
+      "answers": [
+        "1260",
+        "1000",
+        "800",
+        "1150"
+      ]
+    },
+    {
+      "text": "The weight of a body in water is 2 times less than its weight in air. What is the density of the body's material (in g/cm³)?",
+      "answers": [
+        "1.5",
+        "2.5",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "text": "If the weight of a body in a liquid of density 800 kg/m³ is 3 times less than its weight in air, by how much is the density of the body greater than the density of this liquid?",
+      "answers": [
+        "400",
+        "800",
+        "1200",
+        "600"
+      ]
+    },
+    {
+      "text": "The density of a body is 1.25 times greater than the density of water. How many times smaller is the weight of this body in water than its weight in air?",
+      "answers": [
+        "4",
+        "5",
+        "1.25",
+        "2.5"
+      ]
+    },
+    {
+      "text": "The weight of a piece of metal in water is 6800 N, and in gasoline it is 7100 N. Determine the density of gasoline. The density of the metal is 7800 kg/m³.",
+      "answers": [
+        "800",
+        "900",
+        "700",
+        "750"
+      ]
+    },
+    {
+      "text": "A body has a weight of 3 N in air, 1.8 N in water and 2.04 N in a liquid of unknown density. What is the density of this unknown liquid?",
+      "answers": [
+        "600",
+        "800",
+        "1000",
+        "900"
+      ]
+    },
+    {
+      "text": "A piece of cork weighs 1 N in air and a piece of metal weighs 10 N. If these pieces are tied together with a thread and fully submerged in kerosene, their total weight is 5 N. Find the density of the cork. The density of kerosene is 800 kg/m³ and that of the metal is 4000 kg/m³.",
+      "answers": [
+        "200",
+        "400",
+        "150",
+        "300"
+      ]
+    },
+    {
+      "text": "Pure gold embedded in quartz stretches a dynamometer spring together with it with a force of 2.26 N. When the gold is immersed in water, a buoyant force of 0.2 N acts on it. Find the mass of the gold (in g). The density of gold is 19.3 g/cm³ and the density of quartz is 3.3 g/cm³. g = 10 m/s².",
+      "answers": [
+        "100",
+        "193",
+        "226",
+        "150"
+      ]
+    },
+    {
+      "text": "Find the mass of gold (in g) in a crown made of an alloy of gold and silver. The weight of the crown in air is 25.4 N and in water it is 23.4 N. The density of gold is 19.3 g/cm³ and that of silver is 10.5 g/cm³. g = 10 m/s².",
+      "answers": [
+        "500",
+        "800",
+        "965",
+        "1200"
+      ]
+    },
+    {
+      "text": "A glass ball of volume 1 cm³ sinks at constant speed in water. When the ball moves 10 m, 0.17 J of heat is released. Find the density of the glass. g = 10 m/s².",
+      "answers": [
+        "2500",
+        "2700",
+        "2000",
+        "3000"
+      ]
+    },
+    {
+      "text": "A ball lies in a vessel of water so that half of it is in the water and it touches the bottom of the vessel. If the weight of the ball in air is 8 N, with what force does it press on the bottom of the vessel? The density of the ball's material is 800 kg/m³.",
+      "answers": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ]
+    },
+    {
+      "text": "A uniform ball of mass 60 g lies on the bottom of an empty glass. A liquid is poured into the glass so that the part of the ball's volume submerged in the liquid is 6 times smaller than its total volume. The density of the liquid is 3 times greater than the density of the ball's material. Find the force of pressure of the ball on the bottom of the glass (in mN). g = 10 m/s².",
+      "answers": [
+        "300",
+        "600",
+        "150",
+        "450"
+      ]
+    },
+    {
+      "text": "An aluminum cylinder 2 m long with a cross-sectional area of 100 cm² is slowly pulled out of a body of water at constant speed. At the moment when a part of the cylinder equal to 0.25 of its length had come out of the water, the rope broke. Determine the maximum tension of the rope. The density of aluminum is 2700 kg/m³, g = 10 m/s².",
+      "answers": [
+        "540",
+        "390",
+        "450",
+        "300"
+      ]
+    },
+    {
+      "text": "One end of a thread is fixed to the bottom and the other to a cork float. 75% of the whole volume of the float is submerged in water. If the mass of the float is 2 kg, determine the tension force of the thread. The density of cork is 300 kg/m³, g = 10 m/s².",
+      "answers": [
+        "20",
+        "40",
+        "30",
+        "50"
+      ]
+    },
+    {
+      "text": "A piece of ice floats in a cylindrical vessel with water, tied by a thread to the bottom of the vessel. After the ice melted, the water level dropped by 1 cm. What was the tension force of the thread? The area of the bottom of the vessel is 100 cm². g = 10 m/s².",
+      "answers": [
+        "1",
+        "10",
+        "0.1",
+        "5"
+      ]
+    },
+    {
+      "text": "At the bottom of a cylindrical vessel with water, with an area of 300 cm², stands a cylinder made of a material of density 3000 kg/m³, with a base area of 100 cm² and a height of 40 cm. If the initial thickness of the water layer is 30 cm, what work must be done to take the cylinder out of the water? g = 10 m/s².",
+      "answers": [
+        "21",
+        "42",
+        "10",
+        "30"
+      ]
+    },
+    {
+      "text": "At the bottom of a cylindrical vessel with water, with an area of 400 cm², stands a cylinder made of a material of density 2500 kg/m³, with a base area of 100 cm² and a height of 40 cm. If the initial thickness of the water layer is 60 cm, what work must be done to take the cylinder out of the water? g = 10 m/s².",
+      "answers": [
+        "20",
+        "40",
+        "36",
+        "54"
+      ]
+    },
+    {
+      "text": "A thin uniform rod is hinged at its upper end. The lower part of the rod is immersed in water. The equilibrium position occurs when the rod is inclined to the water surface and half of it is in the water. What is the density of the material the rod is made of?",
+      "answers": [
+        "500",
+        "750",
+        "800",
+        "600"
+      ]
+    },
+    {
+      "text": "A uniform rod 12 cm long with a mass of 100 g was placed in a smooth glass of height 8 cm and radius 3 cm. The glass was filled with a liquid whose density is half the density of the rod's material. With what force (in mN) does the rod press on the rim of the glass? g = 10 m/s².",
+      "answers": [
+        "235",
+        "470",
+        "117",
+        "300"
+      ]
+    },
+    {
+      "text": "A rod 10 cm long with a mass of 60 g was placed in a smooth tall glass of radius 4 cm, then a liquid whose density is one and a half times the density of the rod's material was poured into the glass to a height of 3 cm. With what force (in mN) does the upper end of the rod press on the wall of the glass? g = 10 m/s².",
+      "answers": [
+        "125",
+        "500",
+        "250",
+        "375"
+      ]
+    },
+    {
+      "text": "A solid body floats in water with 3/4 of its volume submerged. The volume of the body is 0.1 m³. Determine the force of gravity acting on the body. g = 10 m/s².",
+      "answers": [
+        "1000",
+        "500",
+        "750",
+        "250"
+      ]
+    },
+    {
+      "text": "A piece of wood floats in water with 3/4 of its volume submerged. What is the density of the wood?",
+      "answers": [
+        "750",
+        "800",
+        "600",
+        "500"
+      ]
+    },
+    {
+      "text": "A uniform body of volume 0.0002 m³ floats in a liquid whose density is 4 times the density of the body's material. What volume of the body (in cm³) sticks out above the surface of the liquid?",
+      "answers": [
+        "50",
+        "100",
+        "150",
+        "200"
+      ]
+    },
+    {
+      "text": "A body of density 800 kg/m³ floats in a liquid of density 1000 kg/m³. What fraction of the body's volume (in percent) is submerged in the liquid?",
+      "answers": [
+        "20",
+        "80",
+        "50",
+        "75"
+      ]
+    },
+    {
+      "text": "A swimmer lies motionless on his back in the water. Except for a small part of his face, his whole body is submerged. The mass of the swimmer is 75 kg. Find the volume of his body (in dm³).",
+      "answers": [
+        "75",
+        "80",
+        "70",
+        "100"
+      ]
+    },
+    {
+      "text": "The force of gravity acting on a ship is 10^3 kN. What volume of water does this ship displace?",
+      "answers": [
+        "10",
+        "1000",
+        "100",
+        "50"
+      ]
+    },
+    {
+      "text": "A rectangular tin box with a bottom area of 38 cm² and a height of 6 cm floats in water so that the height of its part above the water is 4 cm. Determine the mass of the box (in g).",
+      "answers": [
+        "38",
+        "76",
+        "152",
+        "114"
+      ]
+    }
+  ]
+}

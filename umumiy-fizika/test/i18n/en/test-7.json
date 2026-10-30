@@ -1,0 +1,140 @@
+{
+  "title": "Topic 7 | Relative motion",
+  "questions": [
+    {
+      "text": "What shape is the trajectory of the outermost points of a car engine's fan (propeller) relative to the reference frame attached to the car; relative to the reference frame attached to the ground?",
+      "answers": [
+        "circle; helix",
+        "helix; circle",
+        "parabola; curved line",
+        "circle; circle"
+      ]
+    },
+    {
+      "text": "The speed of a boy swimming against the current relative to the water is 1.5 m/s, and the speed of the water relative to the shore is 0.5 m/s. What is the boy's speed relative to the shore (m/s)?",
+      "answers": [
+        "2.5",
+        "2",
+        "1.5",
+        "1"
+      ]
+    },
+    {
+      "text": "A crane moving horizontally on rails at 0.4 m/s lifts a load vertically upward at 0.3 m/s. What is the speed of the load in the reference frame attached to the ground (m/s)?",
+      "answers": [
+        "0.1",
+        "0.25",
+        "0.35",
+        "0.5"
+      ]
+    },
+    {
+      "text": "The speed of a swimmer relative to the water is 0.9 m/s and is directed perpendicular to the shore, and the speed of the water current is 1.2 m/s. What is the swimmer's speed relative to the shore (m/s)?",
+      "answers": [
+        "0.3",
+        "0.9",
+        "1.2",
+        "1.5"
+      ]
+    },
+    {
+      "text": "Two components of a body's velocity are directed at an angle of 60° to each other, and their magnitudes are 4 and 6 m/s respectively. What is the resultant velocity (m/s)?",
+      "answers": [
+        "5",
+        "7.7",
+        "8.7",
+        "10"
+      ]
+    },
+    {
+      "text": "A subway escalator carries a person standing still to the top in 45 s. If the person walks on the moving escalator, he rises in 15 s. In how many seconds would the person climb up a stationary escalator?",
+      "answers": [
+        "30",
+        "22.5",
+        "60",
+        "15.5"
+      ]
+    },
+    {
+      "text": "What is the speed, relative to the wind, of a car moving at 90 km/h against a wind blowing at 5 m/s (m/s)?",
+      "answers": [
+        "10",
+        "5",
+        "30",
+        "25"
+      ]
+    },
+    {
+      "text": "A column of buses is moving along a highway at 30 km/h. A motorcyclist travelling at 70 km/h is overtaking the column. What is the speed of the motorcycle relative to the column (km/h)?",
+      "answers": [
+        "30",
+        "40",
+        "50",
+        "70"
+      ]
+    },
+    {
+      "text": "A cyclist is moving uniformly in a straight line along an asphalt road. He covers the distance between two consecutive telegraph poles by the roadside in 10 s. The distance between the poles is 50 m. The speedometer of an oncoming car reads 36 km/h. At what speed is the cyclist moving relative to the car (m/s)?",
+      "answers": [
+        "20",
+        "25",
+        "15",
+        "5"
+      ]
+    },
+    {
+      "text": "Two cars are moving along two roads that intersect at a right angle. One of them approaches the intersection at 16 m/s, and the other moves away from it at 12 m/s. What is the magnitude of the velocity of car 1 relative to car 2 (m/s)?",
+      "answers": [
+        "28",
+        "20",
+        "16",
+        "12"
+      ]
+    },
+    {
+      "text": "What is the magnitude of the velocity relative to each other of two bodies moving relative to the ground with speed v each, at an angle of 60° to each other?",
+      "answers": [
+        "v/2",
+        "√3v/2",
+        "√3v",
+        "v"
+      ]
+    },
+    {
+      "text": "Bodies with speeds v₁ = 10 m/s and v₂ = 12 m/s move according to the given diagram. Find their relative speed (m/s). α = 30°, β = 30°.",
+      "answers": [
+        "2√31",
+        "√31",
+        "√244",
+        "2√91"
+      ]
+    },
+    {
+      "text": "A freight train 360 m long travelling at 54 km/h and a passenger train 140 m long travelling at 90 km/h move in the same direction on two parallel tracks. For how many seconds does the second train overtake the first?",
+      "answers": [
+        "50",
+        "22",
+        "15",
+        "12.5"
+      ]
+    },
+    {
+      "text": "A freight train left a station at 36 km/h. After 15 min an express train left in the same direction at 90 km/h. How long after the freight train's departure (h), and at what distance from the station (km), will the express train catch up with the freight train?",
+      "answers": [
+        "1.2; 72",
+        "2; 18",
+        "1; 36",
+        "1/6; 15"
+      ]
+    },
+    {
+      "text": "Villages P and Q lie along a straight road 4000 m apart. A car set off from village P towards Q at a constant speed of 8 m/s. 30 s later another car set off from Q towards P at a constant speed of 12 m/s. At what distance from village P will they meet (m)?",
+      "answers": [
+        "1744",
+        "1920",
+        "2080",
+        "2280"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "title": "Topic 11 | Force. Newton's first law",
+  "questions": [
+    {
+      "text": "Forces of 6 N and 8 N are applied to one point of a body at an angle of 180° to each other. Find the resultant force acting on the body (N).",
+      "answers": [
+        "8",
+        "6",
+        "2",
+        "10"
+      ]
+    },
+    {
+      "text": "Four people take part in a tug-of-war. Two of them pull the rope to the right with forces of 250 N and 200 N, and the other two pull to the left with forces of 350 N and 50 N. What is the resultant force? In which direction does the rope move?",
+      "answers": [
+        "50 N, to the right",
+        "450 N, to the right",
+        "350 N, to the left",
+        "850 N, to the right"
+      ]
+    },
+    {
+      "text": "Two forces F1 and F2 act on point O as shown in the figure. In which direction is their resultant directed?",
+      "answers": [
+        "N",
+        "L",
+        "M",
+        "K"
+      ]
+    },
+    {
+      "text": "What is the resultant of the forces applied to point O in the figure (N)?",
+      "answers": [
+        "2√26",
+        "2√13",
+        "0",
+        "√13"
+      ]
+    },
+    {
+      "text": "Find the resultant of these three forces.",
+      "answers": [
+        "F",
+        "2F",
+        "√2F",
+        "3F",
+        "2√2F"
+      ]
+    },
+    {
+      "text": "Find the resultant of these three forces.",
+      "answers": [
+        "F",
+        "√3F",
+        "√2F",
+        "2√3F",
+        "2√2F"
+      ]
+    },
+    {
+      "text": "Forces F1, F2, F3 and F4 act on the material point M as shown in the figure. In which direction and under the action of what force does the material point move?",
+      "answers": [
+        "In the direction of F2, 10 N",
+        "In the direction of F1, 20 N",
+        "In the direction of F3, 30 N",
+        "In the direction of F4, 40 N"
+      ]
+    },
+    {
+      "text": "Find the resultant of these four forces (N).",
+      "answers": [
+        "34",
+        "89",
+        "26",
+        "18"
+      ]
+    },
+    {
+      "text": "Find the resultant of the forces applied to point O below (N).",
+      "answers": [
+        "√22",
+        "2√10",
+        "15",
+        "40"
+      ]
+    },
+    {
+      "text": "In which graphs is the motion of a material point shown when the forces acting on it are balanced?",
+      "answers": [
+        "1,2",
+        "3,4",
+        "2,4",
+        "2,3,4"
+      ]
+    },
+    {
+      "text": "Indicate the expression describing Newton's first law.",
+      "answers": [
+        "v = const, F = 0",
+        "v = const, v = at",
+        "F = const, v = v₀ + at",
+        "F = 0, s = const"
+      ]
+    },
+    {
+      "text": "A car is moving along a straight horizontal road at a constant speed. What can be said about the resultant of the forces acting on it?",
+      "answers": [
+        "equal to the sum of the weight and friction forces",
+        "equal to the weight and directed upward",
+        "equal to the resistance force and directed against the motion",
+        "none of the above is correct"
+      ]
+    },
+    {
+      "text": "A stone of mass 20 kg has a volume of 5 L. Find its density (kg/m³).",
+      "answers": [
+        "4000",
+        "2000",
+        "3000",
+        "5000"
+      ]
+    },
+    {
+      "text": "A body of length 30 cm, width 5 cm and thickness 2 cm has a mass of 1.2 kg. Find the density of this body (g/cm³).",
+      "answers": [
+        "1",
+        "2",
+        "4",
+        "0.8"
+      ]
+    },
+    {
+      "text": "Find the volume of 18 kg of ice and its volume after melting (L). ρ_ice = 900 kg/m³, ρ_water = 1000 kg/m³.",
+      "answers": [
+        "12; 18",
+        "18; 18",
+        "20; 20",
+        "20; 18"
+      ]
+    },
+    {
+      "text": "The steel Eiffel Tower in Paris, 300 m tall, has a mass of 7200 t. What would be the mass of a 30 cm tall model of it made of a material whose density is 2 times smaller than that of steel?",
+      "answers": [
+        "3.6 t",
+        "3.6 kg",
+        "360 g",
+        "3.6 g"
+      ]
+    },
+    {
+      "text": "The figure shows three vessels containing different liquids of equal mass. Determine in which vessels the water, alcohol and mercury are.",
+      "answers": [
+        "1 - water; 2 - alcohol; 3 - mercury",
+        "2 - water; 3 - alcohol; 1 - mercury",
+        "1 - alcohol; 2 - mercury; 3 - water",
+        "1 - alcohol; 2 - water; 3 - mercury"
+      ]
+    },
+    {
+      "text": "Four bodies of equal volume have densities related by ρ₁ < ρ₂ < ρ₃ < ρ₄. Which of them has the greatest inertia?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "There are 2 identical spherical gold ingots. One of them was melted and poured into a thin-walled cubic vessel with an edge length of 30 cm. If 2/5 of the vessel remained empty, what volume (cm³) of the second sphere must be melted to fill the vessel?",
+      "answers": [
+        "5400",
+        "8100",
+        "10800",
+        "4050"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "title": "Topic 81 | Elements of photometry",
+  "questions": [
+    {
+      "text": "What is the SI unit of luminous intensity?",
+      "answers": [
+        "Lux (lx)",
+        "Candela (cd)",
+        "Lumen (lm)",
+        "Watt (W)"
+      ]
+    },
+    {
+      "text": "What is the unit of luminous flux?",
+      "answers": [
+        "Candela (cd)",
+        "Steradian (sr)",
+        "Lux (lx)",
+        "Lumen (lm)"
+      ]
+    },
+    {
+      "text": "What is the unit of illuminance?",
+      "answers": [
+        "Joule (J)",
+        "Candela (cd)",
+        "Lux (lx)",
+        "Lumen (lm)"
+      ]
+    },
+    {
+      "text": "What is 1 lux equal to?",
+      "answers": [
+        "1 cd/m",
+        "1 lm/m²",
+        "1 lm·m²",
+        "1 cd·m²"
+      ]
+    },
+    {
+      "text": "A point source with a luminous intensity of 100 cd illuminates a surface 2 m away, with light incident perpendicularly. How many lux is the illuminance?",
+      "answers": [
+        "12.5",
+        "25",
+        "200",
+        "400",
+        "50"
+      ]
+    },
+    {
+      "text": "How does the illuminance change if the distance from a point source to the surface is doubled (light incident perpendicularly)?",
+      "answers": [
+        "Decreases 4 times",
+        "Decreases 2 times",
+        "Increases 2 times",
+        "Does not change"
+      ]
+    },
+    {
+      "text": "What luminous flux (lm) does a source with a luminous intensity of 50 cd emit into a solid angle of 2 sr?",
+      "answers": [
+        "200",
+        "100",
+        "50",
+        "25"
+      ]
+    },
+    {
+      "text": "Approximately what is the total luminous flux (lm) of a source with a luminous intensity of 10 cd that emits uniformly in all directions?",
+      "answers": [
+        "31",
+        "63",
+        "126",
+        "10"
+      ]
+    },
+    {
+      "text": "A source with a luminous intensity of 200 cd illuminates a surface 2 m away, with the angle of incidence of the light equal to 60°. How many lux is the illuminance? (cos60° = 0.5)",
+      "answers": [
+        "12.5",
+        "25",
+        "100",
+        "50"
+      ]
+    },
+    {
+      "text": "A luminous flux of 400 lm falls uniformly on a surface of area 2 m². What is the illuminance (lx)?",
+      "answers": [
+        "400",
+        "800",
+        "200",
+        "0.5"
+      ]
+    },
+    {
+      "text": "How does the illuminance of a surface change as the angle of incidence (relative to the normal to the surface) increases?",
+      "answers": [
+        "Does not change",
+        "Decreases",
+        "Increases",
+        "First increases, then remains constant"
+      ]
+    },
+    {
+      "text": "A lamp is 1 m above the surface of a table, and its luminous intensity is 80 cd. What is the illuminance at the point directly below the lamp (lx)?",
+      "answers": [
+        "20",
+        "160",
+        "80",
+        "40"
+      ]
+    },
+    {
+      "text": "What is the luminous flux falling on an area of 0.4 m² with an illuminance of 50 lx (lm)?",
+      "answers": [
+        "20",
+        "50",
+        "125",
+        "200"
+      ]
+    },
+    {
+      "text": "What is the SI unit of solid angle?",
+      "answers": [
+        "Radian (rad)",
+        "Steradian (sr)",
+        "Candela (cd)",
+        "Lumen (lm)"
+      ]
+    },
+    {
+      "text": "\"Illuminance is inversely proportional to the square of the distance from the source\" — which law is this?",
+      "answers": [
+        "Archimedes' principle",
+        "The inverse-square law of illuminance",
+        "Snell's law",
+        "Coulomb's law"
+      ]
+    },
+    {
+      "text": "How does the illuminance change if the distance from the source is tripled (all other conditions unchanged)?",
+      "answers": [
+        "Increases 9 times",
+        "Increases 3 times",
+        "Decreases 9 times",
+        "Decreases 3 times"
+      ]
+    },
+    {
+      "text": "At a distance of 2 m from a point source, the illuminance is 40 lx. What will it be at a distance of 4 m (lx)?",
+      "answers": [
+        "20",
+        "5",
+        "80",
+        "10"
+      ]
+    }
+  ]
+}

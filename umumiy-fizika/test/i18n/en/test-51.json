@@ -1,0 +1,185 @@
+{
+  "title": "Topic 51 | Electric charges. Coulomb's law",
+  "questions": [
+    {
+      "text": "What is the SI unit of electric charge?",
+      "answers": [
+        "Newton",
+        "Joule",
+        "Coulomb",
+        "Volt"
+      ]
+    },
+    {
+      "text": "What is the charge of an electron?",
+      "answers": [
+        "+1.6·10⁻¹⁹ C",
+        "-1.6·10⁻¹⁹ C",
+        "+9·10⁹ C",
+        "-9·10⁹ C"
+      ]
+    },
+    {
+      "text": "What is the electric charge of a proton?",
+      "answers": [
+        "−1.6·10⁻¹⁹ C",
+        "-9·10⁹ C",
+        "+9·10⁹ C",
+        "+1.6·10⁻¹⁹ C"
+      ]
+    },
+    {
+      "text": "How do two electric charges of the same sign interact?",
+      "answers": [
+        "They attract each other",
+        "They repel each other",
+        "They do not interact",
+        "They first attract, then repel"
+      ]
+    },
+    {
+      "text": "How do two electric charges of opposite sign interact?",
+      "answers": [
+        "They repel each other",
+        "They do not interact",
+        "They attract each other",
+        "Only the positive charge moves"
+      ]
+    },
+    {
+      "text": "Which formula expresses Coulomb's law?",
+      "answers": [
+        "F = ma",
+        "F = k|q₁q₂|/r²",
+        "F = Gm₁m₂/r²",
+        "F = mg"
+      ]
+    },
+    {
+      "text": "What does r denote in Coulomb's law?",
+      "answers": [
+        "The magnitude of the charge",
+        "The mass of the electron",
+        "The distance between the charges",
+        "The density of the medium"
+      ]
+    },
+    {
+      "text": "How does the Coulomb force change if the distance between the charges is increased by a factor of 2?",
+      "answers": [
+        "increases 2 times",
+        "decreases 2 times",
+        "increases 4 times",
+        "decreases 4 times"
+      ]
+    },
+    {
+      "text": "How does the Coulomb force change if the magnitude of one of the charges is increased by a factor of 2, with the other conditions unchanged?",
+      "answers": [
+        "increases 4 times",
+        "increases 2 times",
+        "decreases 2 times",
+        "Does not change"
+      ]
+    },
+    {
+      "text": "What is the approximate value of the Coulomb constant k in vacuum?",
+      "answers": [
+        "9·10⁻⁹ N·m²/C²",
+        "9·10⁹ N·m²/C²",
+        "8.85·10⁻¹² N·m²/C²",
+        "3·10⁸ N·m²/C²"
+      ]
+    },
+    {
+      "text": "What is the approximate value of the permittivity of free space ε₀ (the electric constant)?",
+      "answers": [
+        "8.85·10⁻¹² C²/(N·m²)",
+        "9·10⁹ C²/(N·m²)",
+        "1.6·10⁻¹⁹ C",
+        "3·10⁸ m/s"
+      ]
+    },
+    {
+      "text": "What is the relation between the Coulomb constant k and ε₀?",
+      "answers": [
+        "k = 4πε₀",
+        "k = 1/(4πε₀)",
+        "k = ε₀/(4π)",
+        "k = 4π/ε₀"
+      ]
+    },
+    {
+      "text": "The force between two point charges is 9 N. What will the force be if the distance between the charges is increased by a factor of 3?",
+      "answers": [
+        "3 N",
+        "1 N",
+        "9 N",
+        "81 N"
+      ]
+    },
+    {
+      "text": "Charges q₁ = 1 μC and q₂ = 1 μC are placed in vacuum 1 m apart. What is the force between them in millinewtons? (mN)",
+      "answers": [
+        "9",
+        "90",
+        "900",
+        "0.9"
+      ]
+    },
+    {
+      "text": "The force between two charges is F. What will the force be if both charges are increased by a factor of 2?",
+      "answers": [
+        "F",
+        "F/4",
+        "F/2",
+        "4F"
+      ]
+    },
+    {
+      "text": "According to the law of conservation of electric charge, in a closed system...",
+      "answers": [
+        "Charges are constantly lost",
+        "The total electric charge does not change",
+        "Only positive charge is conserved",
+        "Only electrons are conserved"
+      ]
+    },
+    {
+      "text": "For three charges in a closed system, which expression represents the law of conservation of charge?",
+      "answers": [
+        "q₁ + q₂ + q₃ = const",
+        "q₁q₂q₃ = const",
+        "q₁ − q₂ − q₃ = 0",
+        "q₁/q₂ = const"
+      ]
+    },
+    {
+      "text": "How is the resultant force determined when several charges act on one charge?",
+      "answers": [
+        "Only the largest force is taken",
+        "The forces are added as vectors",
+        "The forces are multiplied",
+        "Only the magnitudes of the forces are subtracted"
+      ]
+    },
+    {
+      "text": "How is the direction of the Coulomb force determined?",
+      "answers": [
+        "Always along a circle",
+        "It is directed only downward",
+        "Along the straight line joining the charges",
+        "It is directed only upward"
+      ]
+    },
+    {
+      "text": "How does the Coulomb force change if the distance between two charges stays the same and the magnitude of one of the charges is decreased by a factor of 3?",
+      "answers": [
+        "decreases 3 times",
+        "increases 3 times",
+        "increases 9 times",
+        "Does not change"
+      ]
+    }
+  ]
+}

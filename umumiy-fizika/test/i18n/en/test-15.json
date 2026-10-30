@@ -1,0 +1,239 @@
+{
+  "title": "Topic 15 | Vertical motion",
+  "questions": [
+    {
+      "text": "A body falls from rest from a height of 12 m above the ground. At what height will the body be 1 s after the start of the fall? g = 10 m/s².",
+      "answers": [
+        "5",
+        "7",
+        "10",
+        "12"
+      ]
+    },
+    {
+      "text": "By how many metres is the distance travelled by a freely falling body in the tenth second greater than the distance travelled in the previous second? g = 10 m/s².",
+      "answers": [
+        "20",
+        "5",
+        "10",
+        "15"
+      ]
+    },
+    {
+      "text": "At what speed must a body be thrown vertically upward from the ground surface so that the time from the moment of throwing to landing is 3 s? g = 10 m/s².",
+      "answers": [
+        "15",
+        "25",
+        "10",
+        "20"
+      ]
+    },
+    {
+      "text": "A body is thrown vertically upward from the ground surface at 20 m/s. What maximum height does it reach? g = 10 m/s².",
+      "answers": [
+        "10",
+        "15",
+        "25",
+        "20"
+      ]
+    },
+    {
+      "text": "A small ball thrown vertically upward returned to the point of release after 2.4 s. To what height did the ball rise? (cm)",
+      "answers": [
+        "360",
+        "720",
+        "144",
+        "72"
+      ]
+    },
+    {
+      "text": "Two bodies are thrown vertically upward from the ground. The initial speed of the first body is 4 times that of the second. How many times higher does the first body rise?",
+      "answers": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ]
+    },
+    {
+      "text": "At some moment the speed of a freely falling body is 6 m/s. What will the speed of the body be after 2 s? g = 10 m/s².",
+      "answers": [
+        "26",
+        "16",
+        "36",
+        "6"
+      ]
+    },
+    {
+      "text": "A ball is thrown vertically downward from some height at 4 m/s. Find the average speed during the first two seconds of motion.",
+      "answers": [
+        "12",
+        "14",
+        "16",
+        "10"
+      ]
+    },
+    {
+      "text": "A stone is thrown vertically downward at 2 m/s. By what factor does its speed increase 1 s after the throw?",
+      "answers": [
+        "2",
+        "10",
+        "6",
+        "5"
+      ]
+    },
+    {
+      "text": "The speed of a body thrown vertically downward increased by a factor of 6 after one second. By what factor does its speed increase relative to the initial speed two seconds after the throw?",
+      "answers": [
+        "11",
+        "6",
+        "22",
+        "15"
+      ]
+    },
+    {
+      "text": "If, during the ascent, the speed of a body decreased by half 0.8 s after the throw, at what speed was it thrown vertically upward?",
+      "answers": [
+        "8",
+        "20",
+        "12",
+        "16"
+      ]
+    },
+    {
+      "text": "A metal ball that fell onto a board from a height of 20 m bounces off it, losing 25% of its speed. How many seconds after the impact does the ball hit the board for the second time?",
+      "answers": [
+        "2",
+        "3",
+        "5",
+        "1"
+      ]
+    },
+    {
+      "text": "A stone is thrown vertically upward at 50 m/s. After how many seconds will its speed be 30 m/s directed downward?",
+      "answers": [
+        "10",
+        "5",
+        "8",
+        "12"
+      ]
+    },
+    {
+      "text": "A body is thrown vertically upward from a height of 40 m with an initial speed of 5 m/s. At what height will the body be after 2 s?",
+      "answers": [
+        "30",
+        "40",
+        "20",
+        "10"
+      ]
+    },
+    {
+      "text": "A body is thrown vertically upward at 20 m/s. Find the distance travelled in 3 s from the start of the motion.",
+      "answers": [
+        "15",
+        "20",
+        "30",
+        "25"
+      ]
+    },
+    {
+      "text": "A body thrown vertically upward from a point 8 m above the ground falls to the ground 2 s after the throw. At what speed was the body thrown?",
+      "answers": [
+        "12",
+        "6",
+        "8",
+        "10"
+      ]
+    },
+    {
+      "text": "A body is thrown vertically upward from a height of 15 m with an initial speed of 10 m/s. After how many seconds will it hit the ground?",
+      "answers": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ]
+    },
+    {
+      "text": "A ball is thrown vertically downward from a height of 2.4 m at 1 m/s. Find its speed when it hits the ground.",
+      "answers": [
+        "7",
+        "1",
+        "14",
+        "10"
+      ]
+    },
+    {
+      "text": "A ball is thrown vertically downward from a height of 2.4 m at 1 m/s. After how much time does it reach the ground surface? (ms)",
+      "answers": [
+        "240",
+        "100",
+        "400",
+        "600"
+      ]
+    },
+    {
+      "text": "A body falls freely from a height of 80 m. What distance does it travel in the last second of its fall?",
+      "answers": [
+        "15",
+        "35",
+        "25",
+        "45"
+      ]
+    },
+    {
+      "text": "If a body travelled 45 m in the last second of its fall, from what height did it fall?",
+      "answers": [
+        "100",
+        "150",
+        "125",
+        "175"
+      ]
+    },
+    {
+      "text": "If a body is at a height equal to 8/9 of the maximum height of ascent, by what factor is its speed smaller than the initial speed?",
+      "answers": [
+        "3",
+        "9",
+        "6",
+        "2"
+      ]
+    },
+    {
+      "text": "A body was at a point at a height of 75 m twice, with an interval of 2 s. Find the initial speed.",
+      "answers": [
+        "30",
+        "50",
+        "40",
+        "60"
+      ]
+    },
+    {
+      "text": "A stone thrown vertically upward was at the same height at 0.8 s and 1.5 s. What is this height?",
+      "answers": [
+        "1",
+        "2",
+        "4",
+        "6"
+      ]
+    },
+    {
+      "text": "From what height did a body fall if the distance travelled in the last second is 5 times the distance travelled in the first second?",
+      "answers": [
+        "45",
+        "15",
+        "30",
+        "90"
+      ]
+    },
+    {
+      "text": "A freely falling body covers 3/4 of its whole path in the last 10 seconds. From what height did the body fall?",
+      "answers": [
+        "10",
+        "50",
+        "200",
+        "100"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "title": "Topic 74 | Total internal reflection",
+  "questions": [
+    {
+      "text": "When a light ray passes from a medium with refractive index $n_1$ into a medium with refractive index $n_2$, which expression determines the critical angle of total reflection? $(n_1>n_2)$",
+      "answers": [
+        "$\\sin\\alpha_0=\\dfrac{n_1}{n_2}$",
+        "$\\sin\\alpha_0=\\dfrac{1}{n_1}$",
+        "$\\sin\\alpha_0=\\dfrac{n_2}{n_1}$",
+        "$\\sin\\alpha_0=\\dfrac{1}{n_2}$",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "A light ray passes from a medium with an absolute refractive index of $2$ into vacuum. Find the smallest angle of incidence at which total internal reflection occurs.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "A light ray passed from a medium with an absolute refractive index of $2\\sqrt{2}$ into a medium with an absolute refractive index of $\\sqrt{2}$. Find the critical angle of total internal reflection.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "A light ray passed from a medium with an absolute refractive index $n_1$ into a medium with an absolute refractive index of $\\sqrt{2}$. If the smallest angle of incidence at which total internal reflection occurs is $45^\\circ$, find the value of $n_1$.",
+      "answers": [
+        "$3$",
+        "$2\\sqrt{2}$",
+        "$1.5$",
+        "$\\sqrt{3}$",
+        "$2$"
+      ]
+    },
+    {
+      "text": "A light ray passed from a medium with an absolute refractive index of $2\\sqrt{3}$ into a medium with an absolute refractive index $n_2$. If the critical angle of total internal reflection is $60^\\circ$, find $n_2$.",
+      "answers": [
+        "$3$",
+        "$2\\sqrt{2}$",
+        "$1.5$",
+        "$\\sqrt{3}$",
+        "$2$"
+      ]
+    },
+    {
+      "text": "A light ray passed from a medium with an absolute refractive index of $2$ into a medium with an absolute refractive index of $3$. Find the critical angle of total internal reflection.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "total internal reflection does not occur."
+      ]
+    },
+    {
+      "text": "A light ray passes from a medium with an absolute refractive index of $\\sqrt{2}$ into vacuum. Find the critical angle of total internal reflection.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "total internal reflection does not occur."
+      ]
+    },
+    {
+      "text": "A light ray passed from a medium with an absolute refractive index of $2$ into a medium with an absolute refractive index of $\\sqrt{3}$. Find the smallest angle of incidence at which total internal reflection occurs.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "total internal reflection does not occur."
+      ]
+    },
+    {
+      "text": "A light ray passed from vacuum into a medium with an absolute refractive index of $2$. Find the critical angle of total internal reflection.",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$",
+        "total internal reflection does not occur."
+      ]
+    },
+    {
+      "text": "Light passes from a medium with refractive index $n_1$ into a medium with refractive index $n_2$. Under which of the following conditions does total internal reflection occur?",
+      "answers": [
+        "$n_1>n_2$.",
+        "$n_1<n_2$.",
+        "$n_1=n_2$.",
+        "the refractive indices have no effect on total internal reflection.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "A ray propagates inside a glass plate of refractive index $n$ and strikes the glass-air boundary at an angle $\\alpha$ (figure). If this angle is equal to the critical angle of total internal reflection, what is the angle between the refracted and reflected rays?",
+      "answers": [
+        "$90^\\circ+\\alpha$",
+        "$\\alpha$",
+        "$2\\alpha$",
+        "$90^\\circ-\\alpha$",
+        "$0$"
+      ]
+    },
+    {
+      "text": "At what angle of incidence $\\alpha$ does the phenomenon of total internal reflection of light occur?",
+      "answers": [
+        "total internal reflection cannot occur under the given conditions.",
+        "$\\sin\\alpha=n^2-1$.",
+        "$\\sin\\alpha=\\sqrt{n^2-1}$.",
+        "$\\sin\\alpha=\\dfrac{1}{n}$.",
+        "$\\sin\\alpha=\\dfrac{1}{n^2-1}$."
+      ]
+    },
+    {
+      "text": "If the refractive index of the first medium relative to the second is $2$, what is the critical angle of total internal reflection?",
+      "answers": [
+        "$15^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$"
+      ]
+    },
+    {
+      "text": "When a light wave passes from one medium into another, its speed increases by a factor of $2$. Determine the critical angle of total reflection for this system.",
+      "answers": [
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$15^\\circ$"
+      ]
+    },
+    {
+      "text": "Knowing that the angle of incidence at the boundary of two media is $30^\\circ$ and the angle of refraction is $45^\\circ$, find the critical angle of total reflection.",
+      "answers": [
+        "$15^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$"
+      ]
+    },
+    {
+      "text": "The critical angle of total reflection at the boundary of two media is $45^\\circ$. If a ray strikes this boundary at an angle of $30^\\circ$, what is the angle of refraction?",
+      "answers": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$",
+        "$0^\\circ$"
+      ]
+    },
+    {
+      "text": "When light passes from a solid transparent medium into air, the critical angle of total internal reflection is $\\alpha_0$. Which expression gives the speed of light in this medium?",
+      "answers": [
+        "$c\\cdot tg\\alpha_0$",
+        "$c\\cdot \\sin\\alpha_0$",
+        "$c\\cdot (1-\\sin\\alpha_0)$",
+        "$\\dfrac{c}{\\sin\\alpha_0}$",
+        "$\\dfrac{c}{tg\\alpha_0}$"
+      ]
+    },
+    {
+      "text": "Knowing that the critical angle of total internal reflection of light at a glass-air boundary is $37^\\circ$, determine the speed of light in glass (m/s). Take $\\sin37^\\circ=0.6$.",
+      "answers": [
+        "$1.8\\cdot10^8$",
+        "$3\\cdot10^7$",
+        "$1.2\\cdot10^8$",
+        "$1.2\\cdot10^7$",
+        "$6\\cdot10^7$"
+      ]
+    },
+    {
+      "text": "A ray leaves glass into vacuum. If the critical angle of total internal reflection is $\\alpha_0$, what is the speed of light in the glass? $c$ is the speed of light in vacuum.",
+      "answers": [
+        "$\\dfrac{c}{\\sin\\alpha_0}$",
+        "$c\\cdot \\cos\\alpha_0$",
+        "$\\dfrac{c}{tg\\alpha_0}$",
+        "$c\\cdot tg\\alpha_0$",
+        "$c\\cdot \\sin\\alpha_0$"
+      ]
+    },
+    {
+      "text": "By what factor does the wavelength of light decrease when it passes from vacuum into a medium whose critical angle of total internal reflection is $30^\\circ$?",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$1.5$",
+        "$2$",
+        "$3$",
+        "does not change."
+      ]
+    },
+    {
+      "text": "When light passes from glass into vacuum, the critical angle of total internal reflection is $\\alpha_0$. If a light ray strikes glass from vacuum at an angle $\\alpha_0$, what is the angle of refraction $\\beta$? The refractive index of the glass is $n$.",
+      "answers": [
+        "$\\beta=\\arcsin\\dfrac{1}{n^2}$",
+        "$\\beta=\\arcsin\\dfrac{1}{n}$",
+        "$\\beta=\\alpha$",
+        "$\\beta=\\alpha/2$",
+        "$0$"
+      ]
+    },
+    {
+      "text": "A ray incident from air, as shown in the figure, enters a prism of refractive index $2$. For total reflection to occur inside the prism at face $A$, what must be the smallest value of the angle $\\alpha$ (in degrees)?",
+      "answers": [
+        "$30^\\circ$",
+        "$15^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$75^\\circ$"
+      ]
+    },
+    {
+      "text": "Under which of the following conditions can the path of the light ray look as shown in the figure?",
+      "answers": [
+        "$n_1>n_2>n_3$",
+        "$n_2>n_1>n_3$",
+        "$n_2>n_1=n_3$",
+        "$n_3>n_2>n_1$",
+        "$n_2>n_3>n_1$"
+      ]
+    },
+    {
+      "text": "On what is the operating principle of optical fibers based?",
+      "answers": [
+        "light diffraction.",
+        "light dispersion.",
+        "refraction of light.",
+        "light interference.",
+        "the phenomenon of total internal reflection."
+      ]
+    },
+    {
+      "text": "In a liquid with a refractive index of $2.24$, a point light source is located at a depth of $1$ m below the surface. Through a circle of what diameter do the rays leave the liquid surface (m)?",
+      "answers": [
+        "$0$",
+        "$\\infty$",
+        "$0.5$",
+        "$0.25$",
+        "$1$"
+      ]
+    },
+    {
+      "text": "A light ray strikes a glass plate of square cross-section at an angle $\\alpha$. If total internal reflection occurs at the vertical face of the plate, what is the minimum refractive index of the glass?",
+      "answers": [
+        "$1+\\sin^2\\alpha$",
+        "$\\sqrt{1+\\sin\\alpha}$",
+        "$\\sqrt{1-\\sin^2\\alpha}$",
+        "$\\sqrt{1+\\sin^2\\alpha}$",
+        "$\\sqrt{1+\\dfrac{1}{\\sin^2\\alpha}}$"
+      ]
+    }
+  ]
+}

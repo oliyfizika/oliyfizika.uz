@@ -1,0 +1,122 @@
+{
+  "title": "Topic 32 | Simple pendulum",
+  "questions": [
+    {
+      "text": "Find the length of a simple pendulum with an oscillation period of 0.5 s (cm). g = 10 m/s^2, π^2 ≈ 10.",
+      "answers": [
+        "4.15",
+        "25",
+        "6.25",
+        "12.5"
+      ]
+    },
+    {
+      "text": "The length of a simple pendulum is 2.5 m, and the mass of the bob attached to it is 100 g. What is the period of oscillation (s)?",
+      "answers": [
+        "3.14",
+        "1.57",
+        "2.5",
+        "3"
+      ]
+    },
+    {
+      "text": "What does the period of a simple pendulum depend on? 1) the mass of the pendulum; 2) the amplitude of oscillation; 3) the acceleration due to gravity; 4) the length of the pendulum.",
+      "answers": [
+        "1, 4",
+        "2, 4",
+        "2, 3",
+        "3, 4"
+      ]
+    },
+    {
+      "text": "If the length of a simple pendulum with oscillation period T is increased by a factor of n, what will the period become?",
+      "answers": [
+        "nT",
+        "2nT",
+        "T√n",
+        "√nT"
+      ]
+    },
+    {
+      "text": "The period of a simple pendulum with string length l is T. If 1/2 of the string is cut off and the same weight is hung from the remaining part, what will the period be?",
+      "answers": [
+        "T/4",
+        "√2T",
+        "T/√2",
+        "T/2"
+      ]
+    },
+    {
+      "text": "How will the oscillation frequency of a simple pendulum change if its length and amplitude are both increased 16 times?",
+      "answers": [
+        "decreases 4 times",
+        "increases 2 times",
+        "decreases 2 times",
+        "increases 4 times"
+      ]
+    },
+    {
+      "text": "An elevator is descending with an acceleration of 6 m/s^2. Find the period of a simple pendulum 1 m long suspended in the elevator (s). g = 10 m/s^2.",
+      "answers": [
+        "6.28",
+        "2.1",
+        "1",
+        "1.57"
+      ]
+    },
+    {
+      "text": "When the length of a simple pendulum is increased by 8 cm, the period increases by 0.1 s. What is the initial period of oscillation (s)? (π^2 ≈ g).",
+      "answers": [
+        "1.4",
+        "1.6",
+        "1.7",
+        "2"
+      ]
+    },
+    {
+      "text": "Find the angular frequency of a 126 cm simple pendulum rising upward with a uniform acceleration of 4 m/s^2 (rad/s).",
+      "answers": [
+        "20/9",
+        "12/5",
+        "10/3",
+        "14/3"
+      ]
+    },
+    {
+      "text": "A pendulum with a steel ball of mass 50 g has an oscillation period of 2 s. When a magnet is placed under the ball, the period decreases to 1 s. What is the force of attraction between the ball and the magnet (N)?",
+      "answers": [
+        "0.5",
+        "1",
+        "5",
+        "3"
+      ]
+    },
+    {
+      "text": "The period of the first pendulum is 8 s and that of the second is 6 s. What is the period (in seconds) of a simple pendulum whose length equals the sum of their lengths?",
+      "answers": [
+        "8",
+        "12",
+        "14",
+        "10"
+      ]
+    },
+    {
+      "text": "In the same time interval, one of two simple pendulums made 20 oscillations and the other made 30. The difference of their lengths is 10 cm. What is the sum of their lengths (cm)?",
+      "answers": [
+        "26",
+        "20",
+        "30",
+        "32"
+      ]
+    },
+    {
+      "text": "What is the restoring force acting on a 50 g pendulum displaced by an angle of 60° from the equilibrium position (N)?",
+      "answers": [
+        "0.25√3",
+        "0.5√3",
+        "2",
+        "3"
+      ]
+    }
+  ]
+}

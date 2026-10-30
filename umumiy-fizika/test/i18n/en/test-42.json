@@ -1,0 +1,212 @@
+{
+  "title": "Topic 42 | Isochoric process",
+  "questions": [
+    {
+      "text": "What process is called isochoric?",
+      "answers": [
+        "one occurring at constant pressure...",
+        "one occurring at constant volume...",
+        "one occurring at constant temperature...",
+        "one occurring without heat exchange..."
+      ]
+    },
+    {
+      "text": "The temperature of a gas in a cylinder is 288 K and the pressure is 18 atm. At what temperature (K) will the gas pressure be 15.5 atm? Assume the volume of the cylinder is constant.",
+      "answers": [
+        "326",
+        "562",
+        "124",
+        "248"
+      ]
+    },
+    {
+      "text": "At a temperature of -13°C the air pressure in a car tire tube was 160 kPa. After the car had been driven for a long time, the air heated up to 37°C. What is the pressure then (kPa)?",
+      "answers": [
+        "190",
+        "220",
+        "420",
+        "18"
+      ]
+    },
+    {
+      "text": "A closed vessel contains an ideal gas at a temperature of 27°C and a pressure of 75 kPa. Find the pressure of this gas at a temperature of -13°C (kPa).",
+      "answers": [
+        "37.5",
+        "40",
+        "50",
+        "65"
+      ]
+    },
+    {
+      "text": "When the temperature of an ideal gas was raised isochorically by 6°C, the gas pressure increased by 1/50 of its initial value. Find the initial temperature of the gas (°C).",
+      "answers": [
+        "27",
+        "50",
+        "127",
+        "300"
+      ]
+    },
+    {
+      "text": "To what temperature (°C) must a gas at 0°C be heated at constant volume for its pressure to increase n times?",
+      "answers": [
+        "273(n-1)",
+        "273n",
+        "373(n-1)",
+        "373n"
+      ]
+    },
+    {
+      "text": "If the pressure increased 3 times when the temperature of an ideal gas in a cylinder was raised by 300 K, what was its initial temperature (in kelvins)?",
+      "answers": [
+        "300",
+        "250",
+        "100",
+        "150"
+      ]
+    },
+    {
+      "text": "When a gas in a cylinder was heated by 150 K, its pressure doubled. What was the initial temperature of the gas?",
+      "answers": [
+        "300",
+        "400",
+        "200",
+        "150"
+      ]
+    },
+    {
+      "text": "A pressure gauge mounted on a cylinder read 2.8 atm; when the temperature dropped by 85°C, its reading decreased by 1 atm. Determine the temperatures in both cases (°C). The process is isochoric.",
+      "answers": [
+        "80; -35",
+        "50; -26",
+        "50; 35",
+        "-120; -35"
+      ]
+    },
+    {
+      "text": "By how many degrees must the temperature of a gas in a closed vessel at 27°C be raised for its pressure to double?",
+      "answers": [
+        "27",
+        "54",
+        "300",
+        "600"
+      ]
+    },
+    {
+      "text": "When a gas was heated by 1 K at constant volume, its pressure increased by 0.5%. What was the initial temperature of the gas (°C)?",
+      "answers": [
+        "72",
+        "-73",
+        "-23",
+        "47"
+      ]
+    },
+    {
+      "text": "While argon was being used from a cylinder, the mass of the gas decreased by 20% and the pressure decreased 2 times. By what factor did its temperature decrease relative to the initial temperature?",
+      "answers": [
+        "1.25",
+        "1.6",
+        "2.5",
+        "5"
+      ]
+    },
+    {
+      "text": "Which of the isochores shown on the p-T graph corresponds to the greatest gas volume?",
+      "answers": [
+        "V3",
+        "V2",
+        "V1",
+        "All volumes are equal"
+      ]
+    },
+    {
+      "text": "The figure shows three isochores for an ideal gas of the same mass. Which of them corresponds to the smallest volume?",
+      "answers": [
+        "2",
+        "1",
+        "the volume is the same in all three cases",
+        "3"
+      ]
+    },
+    {
+      "text": "Which equation describes an isochoric process?",
+      "answers": [
+        "p = nkT",
+        "p/T = const.",
+        "pV = const.",
+        "V/T = const."
+      ]
+    },
+    {
+      "text": "The pressure of an ideal gas was increased 2 times isochorically, then the gas was compressed isothermally until the pressure doubled again. How did the gas volume change in these two processes?",
+      "answers": [
+        "increased 2 times",
+        "decreased 2 times",
+        "increased 4 times",
+        "decreased 4 times"
+      ]
+    },
+    {
+      "text": "What is the thermal coefficient of pressure of an ideal gas?",
+      "answers": [
+        "V / (V₀ · T)",
+        "ΔV / V₀",
+        "Δp / (p₀ · ΔT)",
+        "p / (p₀ · T)"
+      ]
+    },
+    {
+      "text": "How does the gas pressure change as the temperature increases in a process in which the gas density ρ ~ T⁻¹?",
+      "answers": [
+        "does not change",
+        "first decreases, then increases",
+        "increases",
+        "decreases"
+      ]
+    },
+    {
+      "text": "A pressure gauge on a gas cylinder in a room at 17°C reads 240 kPa. Outdoors the gauge reading decreased by 40 kPa. If the atmospheric pressure is 100 kPa, find the outdoor air temperature (°C).",
+      "answers": [
+        "-52",
+        "-29",
+        "256",
+        "-33"
+      ]
+    },
+    {
+      "text": "The gas pressure at 293 K is 1.07·10⁵ Pa. Find the sum of the gas pressures after heating the gas at constant volume to 423 K and after cooling it at constant pressure to 250 K (Pa).",
+      "answers": [
+        "2.61 · 10⁵",
+        "1.65 · 10⁴",
+        "2.45 · 10²",
+        "2.46 · 10⁵"
+      ]
+    },
+    {
+      "text": "The absolute temperature of a gas in a non-sealed vessel was raised by 25%. By what percentage does the gas concentration decrease?",
+      "answers": [
+        "20",
+        "15",
+        "30",
+        "25"
+      ]
+    },
+    {
+      "text": "An ideal gas is under a piston in a cylindrical vessel. When the absolute temperature of the gas was raised 1.5 times, a weight of mass 8 kg had to be placed on the piston to keep it in its original position. Determine the initial gas pressure (kPa) if the piston area is 10 cm². g = 10 m/s².",
+      "answers": [
+        "100",
+        "160",
+        "132",
+        "80"
+      ]
+    },
+    {
+      "text": "An ideal gas is under a piston in a cylindrical vessel. When the absolute temperature of the gas is raised 1.8 times, a weight of mass 12 kg must be placed on the piston to keep it in its original position. Determine the initial gas pressure (kPa) if the piston area is 10 cm². g = 10 m/s².",
+      "answers": [
+        "150",
+        "109",
+        "132",
+        "160"
+      ]
+    }
+  ]
+}

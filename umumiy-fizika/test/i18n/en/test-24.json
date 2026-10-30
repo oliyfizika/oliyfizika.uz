@@ -1,0 +1,131 @@
+{
+  "title": "Topic 24 | Pressure. Pascal's law",
+  "questions": [
+    {
+      "text": "The atmosphere acts on a roof with a force of 20 MN. If the atmospheric pressure is 100 kPa, find the area of the roof (m²).",
+      "answers": [
+        "20",
+        "50",
+        "200",
+        "30"
+      ]
+    },
+    {
+      "text": "What pressure does a carpet of mass 4 kg and area 8 m² exert on the floor (Pa)?",
+      "answers": [
+        "0.2",
+        "0.5",
+        "2",
+        "5"
+      ]
+    },
+    {
+      "text": "A pump delivers oil to a hydraulic press at a pressure of 300 N/cm². If the cross-sectional area of the large piston is 900 cm², with what force does it act (kN)?",
+      "answers": [
+        "250",
+        "90",
+        "270",
+        "300"
+      ]
+    },
+    {
+      "text": "In the figure, three bricks are placed on a table in four positions. In which position do the bricks press on the table with the greater force?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "in all positions with the same force."
+      ]
+    },
+    {
+      "text": "A brick is placed on a table in 3 different positions as shown in the figure. In which position of the brick is its pressure on the table the greatest?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "the pressure is the same in all positions."
+      ]
+    },
+    {
+      "text": "How does the pressure of a given force on a circular surface change when the diameter increases by a factor of 2?",
+      "answers": [
+        "It increases 2 times.",
+        "It decreases 2 times.",
+        "It increases 4 times.",
+        "It decreases 4 times."
+      ]
+    },
+    {
+      "text": "A building has several granite columns, each with a volume of 9 m³ and a base area of 1.4 m². The density of granite is 2800 kg/m³. What pressure (kPa) does one column exert on the foundation under its own weight?",
+      "answers": [
+        "160",
+        "200",
+        "180",
+        "220"
+      ]
+    },
+    {
+      "text": "Bodies hanging on a pulley are in equilibrium as shown in the figure. If the area of the part of the large load in contact with the table surface is 0.4 m², what pressure in Pa does it exert on the table? (M_large = 5 kg, m_small = 1 kg)",
+      "answers": [
+        "100",
+        "400",
+        "200",
+        "500"
+      ]
+    },
+    {
+      "text": "A force F = 120 N acts on an area S = 0.6 m² at an angle α = 37° to the vertical. Determine the pressure of this force (Pa).",
+      "answers": [
+        "120",
+        "300",
+        "240",
+        "160"
+      ]
+    },
+    {
+      "text": "A cube with an edge length of 2 m and a weight of 20 N rests on an inclined plane. Determine the pressure the body exerts on the surface of the inclined plane (Pa). (α = 53°)",
+      "answers": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ]
+    },
+    {
+      "text": "Choose the correct statement of Pascal's law.",
+      "answers": [
+        "External pressure exerted on liquids or gases is transmitted undiminished to all their points.",
+        "External pressure applied to all bodies in equilibrium is transmitted equally in all directions.",
+        "A body immersed in a liquid partially loses its weight.",
+        "The atmosphere presses on the earth because of its weight."
+      ]
+    },
+    {
+      "text": "Liquids and gases in a closed vessel transmit the external pressure applied to them ...",
+      "answers": [
+        "in the direction of that pressure.",
+        "equally in all directions.",
+        "in the direction perpendicular to that pressure.",
+        "in the direction opposite to the acting force."
+      ]
+    },
+    {
+      "text": "... external pressure is transmitted equally in all directions.",
+      "answers": [
+        "only in liquids.",
+        "only in gases.",
+        "in gases and liquids.",
+        "in solids."
+      ]
+    },
+    {
+      "text": "If we squeeze a ball with air trapped inside, where does the pressure increase more?",
+      "answers": [
+        "in the direction of the force.",
+        "at all points.",
+        "in the lower part.",
+        "in the upper part."
+      ]
+    }
+  ]
+}

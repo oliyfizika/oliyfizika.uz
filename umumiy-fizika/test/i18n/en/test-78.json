@@ -1,0 +1,415 @@
+{
+  "title": "Topic 78 | Interference of light",
+  "questions": [
+    {
+      "text": "What is meant by wave interference?",
+      "answers": [
+        "the bending of waves incident on an obstacle or a slit whose dimensions are of the order of the wavelength into the region behind the obstacle.",
+        "the increase or decrease of the amplitude of the resulting wave when two coherent waves are superposed.",
+        "the reflection of waves from an obstacle at some angle and their propagation back.",
+        "the sharp increase or decrease of the amplitude of the resulting oscillations as a result of the superposition of two waves.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "When is wave interference observed?",
+      "answers": [
+        "when waves with different frequencies and phase difference are superposed.",
+        "when waves with the same frequency and a varying phase difference are superposed.",
+        "when waves with different frequencies and a constant phase difference are superposed.",
+        "when waves with constant frequencies and phase difference are superposed.",
+        "when waves with the same frequency and a constant phase difference are superposed."
+      ]
+    },
+    {
+      "text": "Under what condition do waves of different wavelengths interfere?",
+      "answers": [
+        "when their amplitudes are the same.",
+        "they do not interfere.",
+        "when their amplitudes and initial phases are the same.",
+        "under any conditions.",
+        "when their initial phases are the same."
+      ]
+    },
+    {
+      "text": "What is the phase difference of these two interfering waves?",
+      "answers": [
+        "$\\pi/2$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$.",
+        "$\\pi$."
+      ]
+    },
+    {
+      "text": "The path difference of two interfering monochromatic light rays is $\\lambda/6$. Determine the phase difference of the oscillations.",
+      "answers": [
+        "$\\pi/6$.",
+        "$\\pi/4$.",
+        "$\\pi/3$.",
+        "$\\pi/2$.",
+        "$\\pi$."
+      ]
+    },
+    {
+      "text": "The path difference of two monochromatic light waves at a certain point is $\\lambda/4$. Determine the phase difference of the oscillations.",
+      "answers": [
+        "$\\pi$.",
+        "$\\pi/2$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$."
+      ]
+    },
+    {
+      "text": "A wave with an oscillation frequency of 3 Hz propagates at a speed of 2.4 m/s. What is the maximum possible phase difference of the oscillations at points located 20 cm apart?",
+      "answers": [
+        "$\\pi$.",
+        "$\\pi/2$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$."
+      ]
+    },
+    {
+      "text": "If the speed of propagation of oscillations in space is 6 m/s and the frequency is 10 Hz, what is the maximum possible phase difference between two points located 20 cm apart?",
+      "answers": [
+        "$2\\pi$.",
+        "$2\\pi/3$.",
+        "$\\pi/6$.",
+        "$\\pi/3$.",
+        "$4\\pi/3$."
+      ]
+    },
+    {
+      "text": "The phase difference of two interfering coherent light waves of wavelength $\\lambda$ is $\\pi/4$. What is the optical path difference?",
+      "answers": [
+        "$\\lambda$.",
+        "$\\lambda/2$.",
+        "$\\lambda/4$.",
+        "$\\lambda/8$.",
+        "$\\lambda/16$."
+      ]
+    },
+    {
+      "text": "Oscillations with a wavelength of 2 m propagate from a sound source located at the origin. What is the phase difference between the oscillations at the points with coordinates $x_1=2$ m and $x_2=6$ m?",
+      "answers": [
+        "0.",
+        "$\\pi$.",
+        "$3\\pi$.",
+        "$4\\pi$.",
+        "$8\\pi$."
+      ]
+    },
+    {
+      "text": "The difference between the distances from the source to two points of a sound wave of frequency 680 Hz is 25 cm. What is the phase difference of the oscillations at these points? The speed of sound in air is 340 m/s.",
+      "answers": [
+        "$\\pi$.",
+        "$2\\pi$.",
+        "$\\pi/3$.",
+        "$\\pi/4$.",
+        "$\\pi/6$."
+      ]
+    },
+    {
+      "text": "Which waves are called coherent?",
+      "answers": [
+        "with the same frequency.",
+        "with the same amplitude.",
+        "with harmonic oscillations.",
+        "with the same frequency and a constant phase difference.",
+        "with the same wavelength."
+      ]
+    },
+    {
+      "text": "Choose the correct statement.",
+      "answers": [
+        "light waves with the same frequency and a constant phase difference are called mutually coherent waves.",
+        "light sources with the same frequency are called mutually coherent sources.",
+        "waves with the same wavelength polarized in the same plane are called coherent waves.",
+        "waves with the same amplitude and wavelength polarized in mutually perpendicular planes are called mutually coherent waves.",
+        "it is impossible to ensure mutual coherence of light waves from a natural source."
+      ]
+    },
+    {
+      "text": "As a result of the interference of rays from two coherent sources with amplitude $A$ and wavelength $\\lambda=300$ nm, oscillations with amplitude $\\sqrt{3}A$ arise at a certain point in space. What is the minimum path difference of the rays (in nm)?",
+      "answers": [
+        "75.",
+        "150.",
+        "25.",
+        "50.",
+        "100."
+      ]
+    },
+    {
+      "text": "What is the amplitude of the resulting oscillation produced by the superposition of two coherent waves of the same amplitude $a$ if the path difference between them is equal to half a wavelength?",
+      "answers": [
+        "0.",
+        "$a/2$.",
+        "$a$.",
+        "$2a$.",
+        "$a^2$."
+      ]
+    },
+    {
+      "text": "What is the amplitude of the resulting oscillation produced by the superposition of two coherent waves of the same amplitude $a$ if the path difference between them is equal to an even number of half-wavelengths?",
+      "answers": [
+        "0.",
+        "$a/2$.",
+        "$a$.",
+        "$2a$.",
+        "$a^2$."
+      ]
+    },
+    {
+      "text": "Waves from two mutually coherent sources arrive at the point of superposition in phase. If the amplitudes of the waves are $a$, what is the amplitude $A$ of the resulting wave?",
+      "answers": [
+        "$A=0$.",
+        "$A=a$.",
+        "$A=2a$.",
+        "$0<A<a$.",
+        "$a<A<2a$."
+      ]
+    },
+    {
+      "text": "Two coherent sound sources oscillate in phase. At a point 3 m from the first source and 4 m from the second, no sound is heard. Taking the speed of sound as 340 m/s, find the frequency of the sound (in Hz).\n$(k=0,1,2...)$",
+      "answers": [
+        "$(2k+1)340$.",
+        "$340k$.",
+        "$680k$.",
+        "$(2k+1)170$.",
+        "$340/k$."
+      ]
+    },
+    {
+      "text": "An electromagnetic oscillation generator $G$ emits a monochromatic wave of wavelength 3 cm. At points $M$ and $N$, the waves coming from the generator and those reflected from mirror $K$ meet (distances in the figure are given in centimeters). What are the results of interference at these points? Assume that the wave phase shifts by $\\pi$ on reflection from the mirror.",
+      "answers": [
+        "maximum at $M$ and $N$.",
+        "$M$ is a minimum, $N$ is a maximum.",
+        "$M$ is a maximum, $N$ is a minimum.",
+        "minimum at $M$ and $N$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "The increase of intensity in some places and its decrease in others as a result of the superposition of two light waves is called ... .",
+      "answers": [
+        "photoelectric effect.",
+        "polarization of light.",
+        "interference.",
+        "dispersion.",
+        "diffraction."
+      ]
+    },
+    {
+      "text": "Is interference observed when two light beams with different wavelengths are superposed, and if so, what condition must be satisfied?",
+      "answers": [
+        "interference is not observed.",
+        "the initial phases must be the same.",
+        "the oscillation amplitudes and initial phases must be the same.",
+        "the path difference must remain constant.",
+        "the oscillation amplitudes must be the same."
+      ]
+    },
+    {
+      "text": "Under what condition can interference be observed for two light beams of different wavelengths?",
+      "answers": [
+        "with oscillations of the same amplitude.",
+        "with a constant path difference.",
+        "with oscillations of the same initial phase.",
+        "with oscillations of the same initial phase and amplitude.",
+        "under no conditions."
+      ]
+    },
+    {
+      "text": "Light waves from two coherent sources arrive at a given point in antiphase. If the oscillation amplitude of each wave is $a$, what is the amplitude $A$ of the resulting oscillation at this point?",
+      "answers": [
+        "$A=a$.",
+        "$0<A<a$.",
+        "$a<A<2a$.",
+        "$A=0$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "In a two-slit interference experiment, the distance between the slits is $d=10\\lambda$. If the wavelength of the light incident on the slits is $\\lambda$, which interference result is located at point $k$ on the screen?",
+      "answers": [
+        "6th maximum.",
+        "8th minimum.",
+        "5th maximum.",
+        "7th maximum.",
+        "4th minimum."
+      ]
+    },
+    {
+      "text": "In a two-slit interference experiment, the distance between the slits is $d=0.1$ mm and the distance from the slits to the screen is $H=2$ m. If the wavelength of the light incident on the slits is $\\lambda=6000$ Å, what is the distance shown in the figure (in cm)?",
+      "answers": [
+        "1.2.",
+        "1.8.",
+        "2.4.",
+        "3.6.",
+        "4.2."
+      ]
+    },
+    {
+      "text": "In a two-slit interference experiment, the distance between the slits is $d=0.1$ mm and the distance from the slits to the screen is $H=2$ m. If the wavelength of the light incident on the slits is $\\lambda=4000$ Å, what is the distance between two adjacent maxima on the screen (in m)?",
+      "answers": [
+        "$4\\cdot10^{-6}$.",
+        "$4\\cdot10^{-10}$.",
+        "$8\\cdot10^{-6}$.",
+        "$8\\cdot10^{-10}$.",
+        "$8\\cdot10^{-4}$."
+      ]
+    },
+    {
+      "text": "How does the width of the interference fringes on the screen change if the light sources are moved farther from screen AB without changing the distance between them?",
+      "answers": [
+        "first increases, then decreases.",
+        "first decreases, then increases.",
+        "does not change.",
+        "increases.",
+        "decreases."
+      ]
+    },
+    {
+      "text": "An interference pattern is observed on a screen of unlimited size from two light sources located a distance $d$ apart. The wavelength of the monochromatic light emitted by the sources is $\\lambda$. Determine the number of resulting maxima that can be observed on the screen.",
+      "answers": [
+        "$2\\lambda/d$.",
+        "$d/\\lambda$.",
+        "$\\lambda/2d$.",
+        "$\\lambda/d$.",
+        "$2d/\\lambda+1$."
+      ]
+    },
+    {
+      "text": "In a two-slit interference experiment, the distance between the slits is $d$ and the distance from the slits to the screen is $l$. If the wavelength of the light incident on the slits is $\\lambda$, how many maxima lie within a segment of length $L$ on the screen?",
+      "answers": [
+        "$\\dfrac{dL}{2l\\lambda}$.",
+        "$\\dfrac{dL}{l\\lambda}+1$.",
+        "$\\dfrac{d}{\\lambda}$.",
+        "$\\dfrac{L\\lambda}{d}+1$.",
+        "$\\dfrac{d\\lambda}{l}$."
+      ]
+    },
+    {
+      "text": "Why is no interference of light observed from two independent light sources (for example, two stars)?",
+      "answers": [
+        "because independent light sources are coherent.",
+        "because independent light sources are not coherent.",
+        "because the light sources are independent.",
+        "there is insufficient data.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Which of the following phenomena are explained by interference:\n1) the iridescent colors of a thin oil film;\n2) the formation of a bright spot at the center of the shadow of a small object;\n3) Newton's rings;\n4) the bending of light rays into the region of geometric shadow?",
+      "answers": [
+        "only 1.",
+        "only 3.",
+        "1 and 3.",
+        "1 and 2.",
+        "all."
+      ]
+    },
+    {
+      "text": "Above a mirror there are light sources emitting monochromatic waves of frequencies $\\omega_1$ and $\\omega_2$, respectively: $S_1$ and $S_2$. As a result of the meeting of the rays, at which of the points 1, 2 and 3 on the screen can interference be observed?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "at all of them.",
+        "1 and 3."
+      ]
+    },
+    {
+      "text": "Which rays coming from two mutually coherent sources of the same wavelength, polarized perpendicular to each other, form an interference pattern on the screen?",
+      "answers": [
+        "1-3, 2-4, 5-7, 6-8.",
+        "1-3, 5-7.",
+        "3-4, 2-6.",
+        "1-4, 2-5.",
+        "1-4-3, 2-5-6."
+      ]
+    },
+    {
+      "text": "Which of the following phenomena are explained by the interference of light:\n1) the iridescent colors seen in a soap bubble or an oil film;\n2) Newton's rings;\n3) the formation of a bright spot at the center of the shadow of a small circular disk;\n4) the bending of light rays at the edge of an obstacle into the region of geometric shadow.",
+      "answers": [
+        "1, 2.",
+        "1.",
+        "1, 2, 3.",
+        "3, 4.",
+        "4."
+      ]
+    },
+    {
+      "text": "A setup for observing Newton's rings is illuminated with monochromatic light. If the wavelength of the light is 600 nm and the radius of curvature of the lens is 1.5 m, what is the radius of the ring shown in the figure (in mm)?",
+      "answers": [
+        "1.5.",
+        "3.",
+        "3.2.",
+        "4.6.",
+        "0.9."
+      ]
+    },
+    {
+      "text": "A setup for observing Newton's rings is illuminated with monochromatic light. If the wavelength of the light is 500 nm and the radius of curvature of the lens is 4 m, what is the radius of the eighth dark ring (in mm)?",
+      "answers": [
+        "4.",
+        "3.",
+        "2.",
+        "5.",
+        "6."
+      ]
+    },
+    {
+      "text": "A setup for observing Newton's rings is illuminated with monochromatic light. The radii of two adjacent dark rings are 1.732 mm and 2 mm, respectively. What are the numbers of these dark rings?",
+      "answers": [
+        "1 and 2.",
+        "2 and 3.",
+        "3 and 4.",
+        "4 and 5.",
+        "5 and 6."
+      ]
+    },
+    {
+      "text": "Light of wavelength $\\lambda=600$ nm is incident on a thin film as shown in the figure. The light reflected from the film appears to the eye in bright colors. Which of the following could be the thickness of the film? The refractive index of the film is $n=1.5$.",
+      "answers": [
+        "800 nm.",
+        "700 nm.",
+        "400 nm.",
+        "600 nm.",
+        "200 nm."
+      ]
+    },
+    {
+      "text": "Light of wavelength $\\lambda=640$ nm is incident normally on a thin film. Viewed from above, the surface of the film appears dark. Which of the following could be the thickness of the film? The refractive index of the film is $n=1.6$.",
+      "answers": [
+        "500 nm.",
+        "700 nm.",
+        "800 nm.",
+        "100 nm.",
+        "300 nm."
+      ]
+    },
+    {
+      "text": "Light of wavelength $\\lambda=520$ nm is incident on a thin film as shown in the figure. For the light reflected from the film to appear to the eye in bright colors, the film thickness must be $d=100$ nm. What was the refractive index of the film?",
+      "answers": [
+        "$n=1{,}2$.",
+        "$n=1{,}3$.",
+        "$n=1{,}5$.",
+        "$n=1{,}8$.",
+        "$n=2$."
+      ]
+    },
+    {
+      "text": "A beam of white light is directed perpendicularly onto the surface of a thin film made of a substance with refractive index $n=1.5$ and of thickness $d=210$ nm. What color does the film appear in the reflected light?",
+      "answers": [
+        "violet.",
+        "blue.",
+        "green.",
+        "yellow.",
+        "red."
+      ]
+    }
+  ]
+}

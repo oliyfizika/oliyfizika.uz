@@ -1,0 +1,185 @@
+{
+  "title": "Topic 12 | Newton's second law",
+  "questions": [
+    {
+      "text": "The acceleration acquired by a body as a result of interaction with another body is directly proportional to the force acting on it and inversely proportional to its mass. This is ... .",
+      "answers": [
+        "Newton's third law",
+        "The law of conservation of momentum",
+        "Newton's first law",
+        "Newton's second law"
+      ]
+    },
+    {
+      "text": "Which of the units given in the answers can be used in place of the unit m/s²?",
+      "answers": [
+        "kg·m/s",
+        "kg/m",
+        "N/kg",
+        "kg·m/s²"
+      ]
+    },
+    {
+      "text": "Which of the following statements express Galileo's principle of relativity?",
+      "answers": [
+        "2 and 3",
+        "1 and 2",
+        "2 and 4",
+        "1 and 3"
+      ]
+    },
+    {
+      "text": "By what factor must the force be increased to give a body at rest twice the speed over the same distance?",
+      "answers": [
+        "2",
+        "√2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "A passenger train of mass 500 t, braking with uniform deceleration, reduced its speed from 39.6 km/h to 27 km/h in 60 s. Find the braking force (kN).",
+      "answers": [
+        "32.4",
+        "56.4",
+        "14.2",
+        "29.2"
+      ]
+    },
+    {
+      "text": "A force of 6 N acted for 8 s on a body of mass 12 kg at rest. Find the acceleration acquired by the body, the speed reached in that time, and the distance travelled.",
+      "answers": [
+        "0.5; 2; 4",
+        "4; 0.5; 2",
+        "0.5; 4; 16",
+        "25; 4; 2"
+      ]
+    },
+    {
+      "text": "As a result of braking a train of mass 200 t travelling at 72 km/h, its speed became 54 km/h after 10 s. Find the braking force (N).",
+      "answers": [
+        "10³",
+        "10⁵",
+        "10⁴",
+        "10⁸"
+      ]
+    },
+    {
+      "text": "A cart of mass 180 kg travelled 15 cm in the first second of motion. Find the force producing the acceleration (N).",
+      "answers": [
+        "12",
+        "48",
+        "27",
+        "54"
+      ]
+    },
+    {
+      "text": "A force of 20 N increased the speed of a body from 1 m/s to 2 m/s in 5 s. What is the mass of the body (kg)?",
+      "answers": [
+        "100",
+        "20",
+        "50",
+        "200"
+      ]
+    },
+    {
+      "text": "A car is moving with an acceleration of 1 m/s². With what force does a person of mass 70 kg press on the seat back (N)?",
+      "answers": [
+        "140",
+        "35",
+        "70",
+        "700"
+      ]
+    },
+    {
+      "text": "A train of mass 1500 t is moving at 57.6 km/h and travels 200 m while braking to a stop. How must the braking force change for the train to stop after travelling half the distance?",
+      "answers": [
+        "6.2·10⁵ N; it must double",
+        "3.3·10⁴ N; it must double",
+        "9.6·10⁵ N; it must halve",
+        "9.6·10⁵ N; it must double"
+      ]
+    },
+    {
+      "text": "The equation of motion of a body of mass 1 kg is x = 2t + 15t². Determine the force acting on the body (N).",
+      "answers": [
+        "2",
+        "7.5",
+        "15",
+        "30"
+      ]
+    },
+    {
+      "text": "The mass of a car is 2 t and that of a truck is 8 t. Compare the accelerations of the vehicles if the traction force of the truck is 2 times that of the car.",
+      "answers": [
+        "the car's acceleration is 2 times greater",
+        "the car's acceleration is 4 times greater",
+        "the car's acceleration is 2 times smaller",
+        "the car's acceleration is 4 times smaller"
+      ]
+    },
+    {
+      "text": "A tractor of mass 2 t gives an empty trailer an acceleration of 0.6 m/s², and the same trailer carrying a 2.5 t load an acceleration of 0.3 m/s². Determine the mass of the empty trailer (kg).",
+      "answers": [
+        "300",
+        "500",
+        "900",
+        "1200"
+      ]
+    },
+    {
+      "text": "An empty truck of mass 4 t started to move with an acceleration of 0.3 m/s². If, with the same traction force, the truck starts from rest with an acceleration of 0.2 m/s², what is the mass of the load placed on the truck (t)?",
+      "answers": [
+        "1",
+        "4",
+        "5",
+        "2"
+      ]
+    },
+    {
+      "text": "A body thrown vertically downward from a height of 250 m at a speed of 20 m/s penetrates the ground to a depth of 20 cm. If the mass of the body is 2 kg, determine the average resistance force of the soil (N).",
+      "answers": [
+        "14200",
+        "1800",
+        "47500",
+        "27000"
+      ]
+    },
+    {
+      "text": "Using the graph of the speed of a body of mass 2 kg versus time, find the projection Fₓ of the force acting on the body at each stage of the motion (N).",
+      "answers": [
+        "1; 0; -2",
+        "4; 0; -2",
+        "5; 0; -2",
+        "2; 0; -4"
+      ]
+    },
+    {
+      "text": "Two forces act on a body in an inertial reference frame. Which of the following vectors correctly shows the direction of the body's acceleration?",
+      "answers": [
+        "3",
+        "4",
+        "2",
+        "1"
+      ]
+    },
+    {
+      "text": "A railcar pulling two platforms with uniform acceleration develops a traction force of 1.8 kN. The masses of the platforms are 12 and 8 t. With what force is the coupling between these two platforms stretched (kN)?",
+      "answers": [
+        "0.8",
+        "0.48",
+        "0.32",
+        "0.72"
+      ]
+    },
+    {
+      "text": "The figure shows four force vectors. Removal of which force makes the resultant of the remaining forces equal to zero?",
+      "answers": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ]
+    }
+  ]
+}

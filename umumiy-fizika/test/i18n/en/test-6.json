@@ -1,0 +1,113 @@
+{
+  "title": "Topic 6 | Graphical representation of uniformly accelerated motion",
+  "questions": [
+    {
+      "text": "The figure shows graphs of the speeds of 5 bodies versus time. Which bodies move uniformly?",
+      "answers": [
+        "1,4",
+        "2",
+        "1,2,4",
+        "3,5"
+      ]
+    },
+    {
+      "text": "The figure shows the acceleration of a body versus time. During which time interval did the body move with uniform acceleration?",
+      "answers": [
+        "2–3",
+        "1–2",
+        "0–1",
+        "0–1, 2–3"
+      ]
+    },
+    {
+      "text": "What physical meaning does the tangent of the angle α in the graph below have?",
+      "answers": [
+        "change in acceleration",
+        "acceleration",
+        "change in speed",
+        "speed"
+      ]
+    },
+    {
+      "text": "Using the given graph, find the acceleration of the body (m/s²).",
+      "answers": [
+        "3",
+        "6",
+        "2",
+        "4"
+      ]
+    },
+    {
+      "text": "The figure shows a graph of a body's speed versus time. Compare the accelerations corresponding to points 1, 2 and 3.",
+      "answers": [
+        "a₁ < a₂ < a₃",
+        "a₂ > a₁ > a₃",
+        "a₁ > a₂ > a₃",
+        "a₂ < a₁ < a₃"
+      ]
+    },
+    {
+      "text": "The figure shows the velocity graph of a body moving in a straight line. What is the velocity equation of this motion?",
+      "answers": [
+        "v = 1 + 2t",
+        "v = 1 + t",
+        "v = 2 + 2t",
+        "v = 2 + t"
+      ]
+    },
+    {
+      "text": "A body moves with uniformly variable motion as shown in the figure. The direction of the acceleration did not change. Determine the distance travelled (m) and the displacement (m) of the body in 8 s.",
+      "answers": [
+        "10; 10",
+        "6; 10",
+        "8; 4",
+        "10; 1"
+      ]
+    },
+    {
+      "text": "Speed graphs of various bodies are shown below. Which of them could describe the motion of a bus that, while travelling on an intercity road, pulled over to the roadside for some reason and stopped?",
+      "answers": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "text": "Using the graph shown in the figure, find the difference between the displacements of the first and second bodies over 4 s (m).",
+      "answers": [
+        "20",
+        "30",
+        "40",
+        "60"
+      ]
+    },
+    {
+      "text": "The figure shows a graph of a body's speed versus time. Find the distance travelled by the body in the time interval (3 s; 8 s) (m).",
+      "answers": [
+        "1.3",
+        "1.75",
+        "1.45",
+        "3.25"
+      ]
+    },
+    {
+      "text": "Below is a graph of a body's speed versus time; it is known that its average speed over the interval 0–8 s is 17 m/s. Using this, find the average speed of the body over the interval 0–4 s (m/s).",
+      "answers": [
+        "13",
+        "15",
+        "14",
+        "12"
+      ]
+    },
+    {
+      "text": "Below is a graph of acceleration versus time for a body with an initial speed of 10 m/s. If the body travelled 500 m in 20 s, what is a (m/s²)?",
+      "answers": [
+        "1.5",
+        "2",
+        "2.5",
+        "3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "title": "Topic 50 | Second law of thermodynamics. Heat engines",
+  "questions": [
+    {
+      "text": "Find the change in the internal energy of the gas, the working substance of a heat engine, over one cycle. During the cycle the gas receives an amount of heat Q1 from the heat source, gives an amount of heat Q2 to the cold reservoir and does work A.",
+      "answers": [
+        "Q1 - Q2 + A",
+        "Q1 - Q2",
+        "A - Q1 - Q2",
+        "0"
+      ]
+    },
+    {
+      "text": "State the expression for the efficiency of a real heat engine.",
+      "answers": [
+        "((Q1 - Q2) / Q2) · 100%",
+        "((Q1 - Q2) / Q1) · 100%",
+        "((Q2 - Q1) / Q1) · 100%",
+        "((T1 - T2) / T1) · 100%"
+      ]
+    },
+    {
+      "text": "The working substance of a real heat engine received 2 kJ of heat from the heat source and gave 600 J of heat to the cold reservoir. Find the useful work it performed (J).",
+      "answers": [
+        "2600",
+        "2000",
+        "1400",
+        "600"
+      ]
+    },
+    {
+      "text": "The working substance of a real heat engine received 600 J of heat from the heat source and performed 400 J of useful work. How much heat (J) did it give to the cold reservoir?",
+      "answers": [
+        "1000",
+        "200",
+        "0",
+        "600"
+      ]
+    },
+    {
+      "text": "A real heat engine performed 520 J of useful work. In the process, 180 J of heat was given to the cold reservoir. How much heat (J) did the working substance receive from the heat source?",
+      "answers": [
+        "700",
+        "0",
+        "180",
+        "520"
+      ]
+    },
+    {
+      "text": "During a cycle a heat engine received 100 J of heat from the heat source and gave 60 J to the cold reservoir. Find the efficiency of the engine.",
+      "answers": [
+        "67%",
+        "60%",
+        "40%",
+        "25%"
+      ]
+    },
+    {
+      "text": "How much work does a heat engine with efficiency η perform when it receives an amount of heat Q from the heat source?",
+      "answers": [
+        "ηQ",
+        "(1 + η)Q",
+        "(1 - η)Q",
+        "Q/η"
+      ]
+    },
+    {
+      "text": "A heat engine receives 7200 kJ of heat from the heat source every second and gives 6400 kJ to the cold reservoir. What is the efficiency of the engine?",
+      "answers": [
+        "62%",
+        "41%",
+        "24%",
+        "11%"
+      ]
+    },
+    {
+      "text": "A heat engine receives 0.8 MJ of heat from the heat source and transfers 0.3 MJ of heat to the cold reservoir. Find the efficiency of this heat engine (%).",
+      "answers": [
+        "30",
+        "48",
+        "50",
+        "62.5"
+      ]
+    },
+    {
+      "text": "A heat engine receives 0.4 MJ of heat from the heat source and transfers 0.26 MJ of heat to the cold reservoir. Calculate the efficiency of the engine (%).",
+      "answers": [
+        "30",
+        "35",
+        "40",
+        "45"
+      ]
+    },
+    {
+      "text": "In one cycle a heat engine does 28 kJ of work and gives 42 kJ of heat to the cold reservoir. Determine the efficiency of the engine (%).",
+      "answers": [
+        "30",
+        "42",
+        "40",
+        "50"
+      ]
+    },
+    {
+      "text": "A heat engine with an efficiency of 25% gives 600 J of heat to the cold reservoir. How much useful work (J) does it perform?",
+      "answers": [
+        "200",
+        "300",
+        "400",
+        "500"
+      ]
+    },
+    {
+      "text": "A heat engine with an efficiency of 40% gives 42 kJ of heat to the cold reservoir in one cycle. How many kJ of work does the engine do in one cycle?",
+      "answers": [
+        "21",
+        "28",
+        "168",
+        "56"
+      ]
+    },
+    {
+      "text": "The efficiency of a heat engine is 25%. If the amount of heat it receives from the heat source is 800 J, how many joules is the useful work?",
+      "answers": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ]
+    },
+    {
+      "text": "An ideal heat engine with an efficiency of 30% receives 10 kJ of heat from the heat source. What amount of heat (kJ) is given to the cold reservoir?",
+      "answers": [
+        "6",
+        "7",
+        "3",
+        "2.4"
+      ]
+    },
+    {
+      "text": "The temperature of the heat source is 150°C and that of the cold reservoir is 20°C. What is the efficiency of an ideal heat engine, in percent?",
+      "answers": [
+        "20",
+        "23",
+        "25",
+        "30.7"
+      ]
+    },
+    {
+      "text": "The temperature of the heat source of an ideal heat engine is 117°C and that of the cold reservoir is 27°C. Find the efficiency of the engine (%).",
+      "answers": [
+        "23",
+        "33",
+        "70",
+        "30"
+      ]
+    },
+    {
+      "text": "Steam enters a heat engine operating on a Carnot cycle at a temperature of 480°C and leaves it at 30°C. What is the efficiency of the engine (%)?",
+      "answers": [
+        "30",
+        "40",
+        "50",
+        "60"
+      ]
+    },
+    {
+      "text": "Steam enters a steam turbine at a temperature of 500°C and leaves it at 30°C. Treating the steam turbine as an ideal heat engine, find its efficiency (%).",
+      "answers": [
+        "30",
+        "47",
+        "61",
+        "77"
+      ]
+    },
+    {
+      "text": "What is the maximum efficiency, in percent, of a heat engine whose heat source is at 227°C and cold reservoir at 27°C?",
+      "answers": [
+        "20",
+        "30",
+        "40",
+        "45"
+      ]
+    },
+    {
+      "text": "What must the temperature (°C) of the cold reservoir of a heat engine with a heat source temperature of 527°C be for the maximum efficiency to be 50%?",
+      "answers": [
+        "400",
+        "351",
+        "263.5",
+        "127"
+      ]
+    },
+    {
+      "text": "The efficiency of a heat engine whose heat source is at 500 K is 50%. What is the temperature of the cold reservoir (K)?",
+      "answers": [
+        "190",
+        "200",
+        "230",
+        "250"
+      ]
+    },
+    {
+      "text": "What must the temperature (°C) of the cold reservoir of a heat engine with a heat source temperature of 727°C be for the maximum efficiency to be 70%?",
+      "answers": [
+        "27",
+        "218",
+        "300",
+        "315"
+      ]
+    },
+    {
+      "text": "The temperature of the heat source is 427°C and that of the cold reservoir is 127°C. In one cycle a heat engine receives 600 J of heat and gives 400 J to the cold reservoir. What fraction of the efficiency of the ideal engine is the efficiency of the real engine?",
+      "answers": [
+        "1/2",
+        "6/7",
+        "7/8",
+        "7/9"
+      ]
+    },
+    {
+      "text": "How must the amount of heat received from the heat source be changed to increase the work done by the gas in a heat engine of efficiency η by a factor of 13? η = const.",
+      "answers": [
+        "increase by a factor of 13/η",
+        "increase by a factor of 13",
+        "decrease by a factor of 13",
+        "increase by a factor of 13η"
+      ]
+    },
+    {
+      "text": "In a machine operating on a Carnot cycle, the ratio of the absolute temperatures of the heat source and the cold reservoir is 5. If 36 kJ of heat is given to the cold reservoir in one cycle, what amount of heat (kJ) was received from the heat source?",
+      "answers": [
+        "900",
+        "180",
+        "72",
+        "7.2"
+      ]
+    },
+    {
+      "text": "An ideal heat engine did 5.36 · 10⁴ J of work during one cycle. If the temperature of the heat source is 100°C and that of the cold reservoir is 0°C, what amount of heat (kJ) does the engine receive from the heat source in one cycle?",
+      "answers": [
+        "150",
+        "170",
+        "200",
+        "210"
+      ]
+    },
+    {
+      "text": "There is a heat engine with a heat source temperature T1 and a cold reservoir temperature T2. Find the ratio of the efficiencies in the case where T1 is increased by ΔT with T2 unchanged, and in the case where T2 is decreased by ΔT with T1 unchanged.",
+      "answers": [
+        "(T1 - ΔT) / T1",
+        "(T1 + ΔT) / (T2 + ΔT)",
+        "T1 / (T1 + ΔT)",
+        "(T1 - T2) / T1"
+      ]
+    },
+    {
+      "text": "In which part of the cycle shown in the figure does the gas do negative work?",
+      "answers": [
+        "the gas does no negative work in this cycle",
+        "2-3",
+        "1-2",
+        "3-1"
+      ]
+    },
+    {
+      "text": "Find the work done by the gas over the cycle shown in the figure.",
+      "answers": [
+        "(p1 - p2)(V2 - V1)",
+        "p2(V2 - V1)",
+        "(p1 - p2)V1",
+        "(p1 - p2)V2"
+      ]
+    },
+    {
+      "text": "Which of the following expressions can be used to find the work done in the cycle shown in the figure?",
+      "answers": [
+        "(p1 + p2)(V2 - V1)",
+        "p2(V2 - V1)",
+        "(p1 - p4)(V2 - V1)",
+        "p1(V2 - V1)"
+      ]
+    },
+    {
+      "text": "How much work (kJ) does a heat engine operating on the cycle shown in the diagram do in one cycle?",
+      "answers": [
+        "3",
+        "6",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "text": "How much work (kJ) does a heat engine operating on the cycle shown in the diagram do in one cycle?",
+      "answers": [
+        "3",
+        "4",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}

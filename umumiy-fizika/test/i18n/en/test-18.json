@@ -1,0 +1,155 @@
+{
+  "title": "Topic 18 | Motion under several forces",
+  "questions": [
+    {
+      "text": "A body of mass 6 kg is at rest on a horizontal plane. Under what force will it reach a speed of 2 m/s in 1 s? The friction force is 4 N.",
+      "answers": [
+        "18",
+        "16",
+        "12",
+        "8",
+        "4"
+      ]
+    },
+    {
+      "text": "A car is moving with an acceleration of 10 m/s². What is the traction coefficient? The resistance coefficient is 0.5.",
+      "answers": [
+        "1.5",
+        "1",
+        "0.75",
+        "0.5",
+        "2"
+      ]
+    },
+    {
+      "text": "How will a body moving by inertia move after friction forces begin to act on it?",
+      "answers": [
+        "its motion does not change",
+        "uniformly decelerated",
+        "uniform",
+        "uniformly accelerated",
+        "it will stay at rest"
+      ]
+    },
+    {
+      "text": "The coefficient of friction between a puck sliding on horizontal ice and the ice is 0.02. What is the acceleration of the puck?",
+      "answers": [
+        "-0.3",
+        "-0.2",
+        "-0.03",
+        "-0.02",
+        "0"
+      ]
+    },
+    {
+      "text": "The braking distance is given by the formula L = v₀² / 2μg. What must be done to reduce the braking distance?",
+      "answers": [
+        "increase v₀ and decrease μ",
+        "decrease v₀ and increase μ",
+        "decrease v₀ and μ proportionally",
+        "increase v₀ and μ proportionally",
+        "increase v₀ keeping μ unchanged"
+      ]
+    },
+    {
+      "text": "A body of mass 4 kg falls through the air with an acceleration of 8.5 m/s². Find the air resistance force.",
+      "answers": [
+        "34",
+        "24",
+        "17",
+        "12",
+        "6"
+      ]
+    },
+    {
+      "text": "A body of mass 80 g is thrown upward. The air resistance force is 0.8 N. What is the magnitude of the acceleration?",
+      "answers": [
+        "25",
+        "20",
+        "15",
+        "10",
+        "5"
+      ]
+    },
+    {
+      "text": "A body of mass 300 g is pulled up an inclined plane at constant speed. α = 30°, g = 10 N/kg. Find the coefficient of friction.",
+      "answers": [
+        "0.6",
+        "0.4",
+        "0.65",
+        "0.58",
+        "0.1"
+      ]
+    },
+    {
+      "text": "A load of mass 50 kg rests on an inclined plane of length 5 m and height 3 m. What force is needed to hold the load?",
+      "answers": [
+        "430",
+        "380",
+        "250",
+        "220",
+        "22"
+      ]
+    },
+    {
+      "text": "Forces F₁ and F₂ act on two bodies on a frictionless surface. Find the ratio of the tension forces T₁/T₂.",
+      "answers": [
+        "1/2",
+        "2/3",
+        "1",
+        "3/2",
+        "2"
+      ]
+    },
+    {
+      "text": "A chain of 5 blocks of 10 kg each is pulled with a force F = 100 N. Find the tension in the string between blocks 1 and 2.",
+      "answers": [
+        "60",
+        "70",
+        "80",
+        "85",
+        "90"
+      ]
+    },
+    {
+      "text": "Determine the acceleration of the system, the tension T₁ in the upper string and the force F. T₂ = 24 N.",
+      "answers": [
+        "2; 6; 49",
+        "2; 60; 108",
+        "3; 10; 66",
+        "1; 96; 29",
+        "6; 96; 54"
+      ]
+    },
+    {
+      "text": "Find the tension in the string in an Atwood machine (masses 2m and m).",
+      "answers": [
+        "mg/2",
+        "2mg/3",
+        "mg",
+        "mg/3",
+        "4mg/3"
+      ]
+    },
+    {
+      "text": "Loads m₁ = 10 kg and m₂ = 15 kg are connected over a pulley. Find the acceleration of the system.",
+      "answers": [
+        "1",
+        "2",
+        "4",
+        "5",
+        "8"
+      ]
+    },
+    {
+      "text": "Bodies of 3 kg and 2 kg on a frictionless surface are pushed with a force F = 15 N. Find the interaction force between the bodies.",
+      "answers": [
+        "2",
+        "6",
+        "4.5",
+        "3.6",
+        "8"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Topic 13 | Law of universal gravitation",
+  "questions": [
+    {
+      "text": "Express the unit of the gravitational constant in terms of the base SI units.",
+      "answers": [
+        "kg·s²/m³",
+        "N·m²/kg²",
+        "m³/(kg·s²)",
+        "m³/(kg·s)",
+        "m³/(kg³·s²)"
+      ]
+    },
+    {
+      "text": "Point bodies of masses 2 kg and 1 kg attract each other with a force of 1.334·10⁻¹⁰ N. Find the distance between them (m).",
+      "answers": [
+        "2.5",
+        "1.5",
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "text": "The gravitational force between two bodies decreased by a factor of 64. How did the distance between them change?",
+      "answers": [
+        "decreased by a factor of 8",
+        "increased by a factor of 8",
+        "increased by a factor of 64",
+        "did not change",
+        "none of the above is correct"
+      ]
+    },
+    {
+      "text": "Three bodies lie in the same plane. Find the net gravitational force acting on the middle body.",
+      "answers": [
+        "2Gm²/7r²",
+        "3Gm²/r²",
+        "0",
+        "Gm²/r²",
+        "5Gm²/2r²"
+      ]
+    },
+    {
+      "text": "Artificial satellites of masses m₀ and m move around a planet of mass M in orbits of radii 3R and 5R respectively. Determine the force of their mutual gravitational attraction.",
+      "answers": [
+        "γm₀m/16R²",
+        "γMm₀/16R²",
+        "γm₀m/9R²",
+        "γm₀m/25R²",
+        "γm₀m/5R²"
+      ]
+    },
+    {
+      "text": "What is the weight (gravitational force) acting on a body of mass 50 kg (N)? g = 10 m/s².",
+      "answers": [
+        "500",
+        "50",
+        "10",
+        "5",
+        "0.2"
+      ]
+    },
+    {
+      "text": "A body of mass 10 kg hanging from a vertical string is lying on the ground. If the tension in the string is 30 N, with what force (in newtons) is the body pressing on the ground?",
+      "answers": [
+        "70",
+        "50",
+        "40",
+        "20",
+        "100"
+      ]
+    },
+    {
+      "text": "What will be the weight of a body on the surface of a planet whose mass and radius are 3 times smaller than those of the Earth?",
+      "answers": [
+        "no different",
+        "3 times less",
+        "3 times more",
+        "9 times less",
+        "9 times more"
+      ]
+    },
+    {
+      "text": "The radius of the Moon is 3.6 times smaller and its mass is 81 times smaller than those of the Earth. Determine the acceleration due to gravity on the Moon (m/s²).",
+      "answers": [
+        "1.6",
+        "1.7",
+        "1.8",
+        "1.9",
+        "2.25"
+      ]
+    },
+    {
+      "text": "At what height is the weight of a body n times smaller than on the Earth's surface?",
+      "answers": [
+        "R(n−1)",
+        "R(n+1)",
+        "R/(n−1)",
+        "R−n",
+        "R/n"
+      ]
+    },
+    {
+      "text": "How does the acceleration due to gravity at a height equal to three Earth radii compare with that at the Earth's surface?",
+      "answers": [
+        "16 times greater",
+        "4 times greater",
+        "16 times smaller",
+        "4 times smaller",
+        "3 times smaller"
+      ]
+    },
+    {
+      "text": "At a height R above the Earth's surface the weight of a body is F. At what height will the weight be equal to 2F?",
+      "answers": [
+        "2R",
+        "2√2R",
+        "(√2−1)R",
+        "R/2",
+        "(√2+1)R"
+      ]
+    },
+    {
+      "text": "At what height above the Earth's surface is the weight 64% of the weight at the Earth's surface?",
+      "answers": [
+        "1600",
+        "1400",
+        "1700",
+        "1650",
+        "1500"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "title": "Topic 8 | Curvilinear motion",
+  "questions": [
+    {
+      "text": "A disc makes 1200 revolutions per minute. Find its rotation frequency (1/s).",
+      "answers": [
+        "20",
+        "1200",
+        "60",
+        "30"
+      ]
+    },
+    {
+      "text": "How many revolutions does a disc with a rotation frequency of 30 Hz make in 5 s?",
+      "answers": [
+        "20",
+        "150",
+        "6",
+        "30"
+      ]
+    },
+    {
+      "text": "How much time is needed for a disc with a rotation frequency of 20 s⁻¹ to make 1000 revolutions?",
+      "answers": [
+        "20",
+        "0.02",
+        "50",
+        "1000"
+      ]
+    },
+    {
+      "text": "A cat ran around a circle 4 times in 20 s. Find the cat's period of revolution (s).",
+      "answers": [
+        "20",
+        "80",
+        "50",
+        "5"
+      ]
+    },
+    {
+      "text": "How much time does an athlete need to run 10 laps around a track (min)? His period of revolution is 42 s.",
+      "answers": [
+        "10",
+        "7",
+        "42",
+        "420"
+      ]
+    },
+    {
+      "text": "Find the angular velocity of a body with a rotation period of 0.785 s (rad/s).",
+      "answers": [
+        "1.57",
+        "8",
+        "3.14",
+        "6.28"
+      ]
+    },
+    {
+      "text": "Find the maximum angular velocity of a flywheel with a rotation frequency of 0.0796 s⁻¹ (rad/s).",
+      "answers": [
+        "10",
+        "0.5",
+        "4",
+        "20"
+      ]
+    },
+    {
+      "text": "Through how many degrees does a body with a rotation period of 3 s turn in 4 s?",
+      "answers": [
+        "270°",
+        "480°",
+        "300°",
+        "360°"
+      ]
+    },
+    {
+      "text": "Which of the following expresses a time interval of 12·10³ seconds?",
+      "answers": [
+        "2 h 40 min",
+        "3 h 20 min",
+        "4 h 15 min",
+        "4 h 40 min"
+      ]
+    },
+    {
+      "text": "What is the rotation frequency of a winch drum of diameter 16 cm when lifting a load at 0.4 m/s (s⁻¹)?",
+      "answers": [
+        "0.8",
+        "16",
+        "0.4",
+        "0.2"
+      ]
+    },
+    {
+      "text": "A wheel of radius 0.25 m rolls at 12 m/s. Find the angular velocity of the wheel (rad/s).",
+      "answers": [
+        "12",
+        "24",
+        "36",
+        "12π"
+      ]
+    },
+    {
+      "text": "A small ball moves along a circle of radius 1 m at a constant speed of 4 m/s. What is its period of revolution (s)?",
+      "answers": [
+        "1.57",
+        "3.14",
+        "4.71",
+        "6.28"
+      ]
+    },
+    {
+      "text": "The speed of a car is 72 km/h, and the diameter of its wheel is 62 cm. Find the angular velocity of the wheel (rad/s).",
+      "answers": [
+        "64.5",
+        "62.5",
+        "62",
+        "32"
+      ]
+    },
+    {
+      "text": "The wheel of an electric locomotive has a diameter of 1 m. If it makes 300 revolutions per minute, what is the speed of the train (m/s)? (Take π = 3).",
+      "answers": [
+        "10",
+        "12",
+        "15",
+        "20"
+      ]
+    },
+    {
+      "text": "The linear speed of a material point moving uniformly along a circle is 2 m/s and its angular velocity is 5 rad/s. What is its centripetal acceleration (m/s²)?",
+      "answers": [
+        "0.4",
+        "2",
+        "2.5",
+        "5"
+      ]
+    },
+    {
+      "text": "What is the centripetal acceleration of a train moving at 20 m/s around a bend with a radius of curvature of 800 m (m/s²)?",
+      "answers": [
+        "10",
+        "1",
+        "0.2",
+        "0.5"
+      ]
+    },
+    {
+      "text": "A cyclist is moving at 12 m/s around a bend with a radius of curvature of 48 m. Find the centripetal acceleration (m/s²).",
+      "answers": [
+        "4",
+        "3",
+        "0.25",
+        "0.5"
+      ]
+    },
+    {
+      "text": "A locomotive passes a bend of the track with a radius of 750 m at 54 km/h. How will the centripetal acceleration of the locomotive change if its speed decreases by a factor of 2?",
+      "answers": [
+        "decreases by a factor of 3",
+        "decreases by a factor of 4",
+        "decreases by a factor of 2",
+        "increases by a factor of 4"
+      ]
+    },
+    {
+      "text": "The centripetal acceleration of a point on the rim of a disc is 49.3 m/s², and the radius of the disc is 5 cm. Find the rotation frequency of the disc (Hz).",
+      "answers": [
+        "5",
+        "10",
+        "3",
+        "6"
+      ]
+    },
+    {
+      "text": "A material point moving uniformly along a circle of radius 10 cm has a period of revolution of 2 s. Find its centripetal acceleration (m/s²).",
+      "answers": [
+        "1.57",
+        "0.57",
+        "1.1",
+        "1.05"
+      ]
+    },
+    {
+      "text": "How does the centripetal acceleration of a body moving uniformly along a circle change if its angular velocity increases by a factor of 5.5, while its linear speed does not decrease by the same factor?",
+      "answers": [
+        "increases by a factor of 8.5",
+        "decreases by a factor of 8.5",
+        "does not change",
+        "decreases by a factor of 17"
+      ]
+    },
+    {
+      "text": "If the wheels of a car rotate with a frequency of 8 s⁻¹ when its speed is 72 km/h, find the centripetal acceleration of the points of the car's wheels touching the road (m/s²).",
+      "answers": [
+        "10",
+        "2",
+        "15",
+        "1"
+      ]
+    },
+    {
+      "text": "Find the centripetal acceleration of a point on the rim of a disc with a rotation period of 0.2 s and a radius of 5 cm (m/s²).",
+      "answers": [
+        "9.9",
+        "12.3",
+        "15.7",
+        "49.3"
+      ]
+    },
+    {
+      "text": "A bicycle moves at a constant speed of 10 m/s. Its wheel has a diameter of 80 cm. With what acceleration relative to the ground (in m/s²) does the lowest point of the wheel move?",
+      "answers": [
+        "0",
+        "1.25",
+        "250",
+        "125"
+      ]
+    },
+    {
+      "text": "A body moves uniformly along a circle. How does the centripetal acceleration change if, with the radius of the circle unchanged, the speed of the body decreases by a factor of 3?",
+      "answers": [
+        "decreases by a factor of 9",
+        "increases by a factor of 3",
+        "decreases by a factor of 3",
+        "increases by a factor of 9"
+      ]
+    },
+    {
+      "text": "The periods of revolution of material points moving along circles of radii R₁ and R₂ = 4R₁ are equal. Which relation holds for their centripetal accelerations?",
+      "answers": [
+        "a₁ = a₂",
+        "a₁ = 2a₂",
+        "a₂ = 4a₁",
+        "a₂ = 2a₁"
+      ]
+    },
+    {
+      "text": "The radius of the working wheel of a hydraulic turbine is 8 times greater, and its rotation frequency is 40 times smaller, than those of a steam turbine. Compare the accelerations of points on the rims of the turbine wheels.",
+      "answers": [
+        "1:2",
+        "1:20",
+        "1:200",
+        "1:400"
+      ]
+    },
+    {
+      "text": "A material point moves uniformly along a circle at 25 m/s. What is the magnitude of the change in the point's velocity in a quarter of a period (m/s)?",
+      "answers": [
+        "0",
+        "5",
+        "25",
+        "25√2"
+      ]
+    },
+    {
+      "text": "A material point moves uniformly along a circle at 6 m/s. What is the magnitude of the change in the point's velocity in a quarter of a period (m/s)?",
+      "answers": [
+        "0",
+        "3",
+        "12",
+        "6√2"
+      ]
+    },
+    {
+      "text": "If the difference between the linear speeds of two points on a rotating disc whose radii differ by 1 cm is 0.314 m/s, find the rotation frequency of the disc (Hz).",
+      "answers": [
+        "6.28",
+        "5",
+        "3.14",
+        "1"
+      ]
+    }
+  ]
+}

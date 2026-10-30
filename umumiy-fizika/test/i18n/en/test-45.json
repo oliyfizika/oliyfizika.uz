@@ -1,0 +1,203 @@
+{
+  "title": "Topic 45 | Surface tension coefficient",
+  "questions": [
+    {
+      "text": "State the unit of the surface tension coefficient.",
+      "answers": [
+        "N",
+        "J",
+        "J/m",
+        "J/m²"
+      ]
+    },
+    {
+      "text": "In what unit is the surface tension coefficient expressed?",
+      "answers": [
+        "J · s",
+        "J/m³",
+        "J/m²",
+        "N/m"
+      ]
+    },
+    {
+      "text": "The movable wire of a wire frame is 5 cm long, and the soap film is stretched by 10 cm. Find the magnitude of the stretching force (mN). The surface tension coefficient of the soap solution is 40 mN/m.",
+      "answers": [
+        "20",
+        "2",
+        "4",
+        "8"
+      ]
+    },
+    {
+      "text": "Find the mass (mg) of a water drop falling from a capillary tube 4 mm in diameter. σ = 73 mN/m.",
+      "answers": [
+        "94",
+        "187",
+        "24",
+        "31.4"
+      ]
+    },
+    {
+      "text": "A water drop detached from a vertical glass tube 1 mm in diameter. What is the weight of the drop (mN)? The surface tension coefficient of water is σ = 73 mN/m.",
+      "answers": [
+        "0.11",
+        "0.23",
+        "0.32",
+        "0.41"
+      ]
+    },
+    {
+      "text": "Water drips from a tube 1.8 mm in diameter. How many drops are there in 1 cm³ of water? The surface tension coefficient of water is σ = 72 mN/m.",
+      "answers": [
+        "30",
+        "25",
+        "12",
+        "49"
+      ]
+    },
+    {
+      "text": "Kerosene drops fall one per second from a dropper with an orifice 2.0 mm in diameter. How long (min) does it take for 25 cm³ of kerosene to flow out? ρ = 800 kg/m³, σ = 24 mN/m.",
+      "answers": [
+        "28",
+        "16",
+        "22",
+        "48"
+      ]
+    },
+    {
+      "text": "A liquid of mass 100 g with a surface tension coefficient of 50 mN/m drips from a dropper of radius half a millimeter. How many drops does it form?",
+      "answers": [
+        "6248",
+        "7459",
+        "3456",
+        "4560"
+      ]
+    },
+    {
+      "text": "Find the mass (mg) of a water drop detached from a dropper 1 mm in diameter moving downward with an acceleration of 4.5 m/s². σ = 73 mN/m.",
+      "answers": [
+        "18",
+        "43.24",
+        "24",
+        "22.94"
+      ]
+    },
+    {
+      "text": "Water drips from a tube into a small bath of volume 6 cm³. The inner diameter of the tube is 1.0 mm. How many drops of water must fall from the tube to fill the bath with water at 20°C? ρ = 1000 kg/m³, σ = 72 mN/m.",
+      "answers": [
+        "242",
+        "196",
+        "225",
+        "265"
+      ]
+    },
+    {
+      "text": "A dropper with an orifice 2 mm in diameter contains 219 cm³ of water. How many drops will fall from the dropper in total? Take π = 3, g = 10 m/s².",
+      "answers": [
+        "2180",
+        "4000",
+        "5000",
+        "6000"
+      ]
+    },
+    {
+      "text": "The diameter of a dropper orifice is 1.2 mm. What is the mass (mg) of a water drop flowing out of the dropper at the moment of detachment?",
+      "answers": [
+        "56",
+        "28",
+        "2.8",
+        "5.6"
+      ]
+    },
+    {
+      "text": "Determine the excess pressure (Pa) produced by the surface of an air bubble 18 mm in diameter under water. σ = 72 mN/m.",
+      "answers": [
+        "32",
+        "16",
+        "48",
+        "34"
+      ]
+    },
+    {
+      "text": "Determine the excess pressure (Pa) produced by the surface of a soap bubble 20 mm in diameter. σ = 0.04 N/m.",
+      "answers": [
+        "12",
+        "16",
+        "28",
+        "40"
+      ]
+    },
+    {
+      "text": "Calculate the excess potential energy (J) of the surface of a soap bubble 50 mm in diameter. σ = 0.04 N/m.",
+      "answers": [
+        "2.4 · 10⁻²",
+        "24 · 10⁻⁵",
+        "8.3 · 10⁻⁴",
+        "6.3 · 10⁻⁴"
+      ]
+    },
+    {
+      "text": "What is the surface energy (mJ) of a soap bubble of radius 4 cm? σ = 40 mN/m, π = 3.",
+      "answers": [
+        "0.77",
+        "2.24",
+        "1.54",
+        "2.3"
+      ]
+    },
+    {
+      "text": "By what factor must the radius of a soap bubble be increased for its surface energy to increase 64 times?",
+      "answers": [
+        "16 times",
+        "64 times",
+        "8 times",
+        "4 times"
+      ]
+    },
+    {
+      "text": "How much work (mJ) must be done to blow up a soap bubble from a radius of 1 cm to 6 cm? σ = 45 mN/m.",
+      "answers": [
+        "4.5",
+        "4",
+        "3.6",
+        "2"
+      ]
+    },
+    {
+      "text": "How many microjoules of work must be done to increase the surface area of a soap bubble from 1 cm² to 3 cm²? σ = 5 · 10⁻² N/m.",
+      "answers": [
+        "1",
+        "5",
+        "20",
+        "50"
+      ]
+    },
+    {
+      "text": "A water drop of radius 0.6 mm hits a smooth surface and breaks into 8 identical small droplets. What is the minimum height (cm) from which the drop fell? σ = 72 mN/m.",
+      "answers": [
+        "2.8",
+        "2.6",
+        "3.6",
+        "4.3"
+      ]
+    },
+    {
+      "text": "A water drop of radius 0.3 mm hits a smooth surface and breaks into 8 identical small droplets. What is the minimum height (cm) from which the drop fell? σ = 72 mN/m.",
+      "answers": [
+        "4.3",
+        "5.2",
+        "7.2",
+        "8.6"
+      ]
+    },
+    {
+      "text": "Eight spherical mercury droplets at the same temperature merge into a single drop. How does the temperature change in this process, and why?",
+      "answers": [
+        "It increases, because the surface energy increases.",
+        "It decreases, because the surface energy decreases.",
+        "It rises, because the surface energy decreases.",
+        "It does not change, because the surface energy does not change."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "title": "Topic 37 | Ideal gas. Basic equation of the gas MKT. Dalton's law",
+  "questions": [
+    {
+      "text": "What must be neglected for a gas to be considered ideal?",
+      "answers": [
+        "collisions of its molecules",
+        "interaction of its molecules during collisions",
+        "motion of its molecules",
+        "interaction of its molecules at a distance"
+      ]
+    },
+    {
+      "text": "On which of the following statements is the expression v_x² = 1/3 v² based?",
+      "answers": [
+        "the number of molecules is small",
+        "molecules collide elastically with each other",
+        "molecules are spherical",
+        "molecules move randomly"
+      ]
+    },
+    {
+      "text": "The pressure of an ideal gas is 166 kPa, the molecule concentration is 1.14·10²⁶ m⁻³, and the mass of one molecule is 2.8·10⁻²⁶ kg. Find the root-mean-square speed of the molecules (m/s).",
+      "answers": [
+        "845",
+        "220",
+        "395",
+        "350"
+      ]
+    },
+    {
+      "text": "The pressure of an ideal gas is 266 kPa, the molecule concentration is 1.14·10²⁶ m⁻³, and the mass of one molecule is 2.8·10⁻²⁶ kg. Find the root-mean-square speed of the molecules (m/s).",
+      "answers": [
+        "845",
+        "220",
+        "400",
+        "500"
+      ]
+    },
+    {
+      "text": "Find the pressure (kPa) of a gas whose molecules have an average kinetic energy of 7.5·10⁻²¹ J each and a molecule concentration of 1.14·10²⁴ m⁻³.",
+      "answers": [
+        "84.5",
+        "22",
+        "40",
+        "5.7"
+      ]
+    },
+    {
+      "text": "Find the pressure (kPa) of a gas whose molecules have an average kinetic energy of 8.5·10⁻²¹ J each and a molecule concentration of 1.14·10²⁴ m⁻³.",
+      "answers": [
+        "84.55",
+        "22.11",
+        "40",
+        "6.46"
+      ]
+    },
+    {
+      "text": "What pressure (Pa) does an ideal gas with a concentration of 100 billion per 1 mm³ exert on the walls of a vessel if the root-mean-square speed of the molecules is 1 km/s and the mass of a molecule is 3·10⁻²⁷ kg?",
+      "answers": [
+        "0.1",
+        "0.8",
+        "3",
+        "0.5"
+      ]
+    },
+    {
+      "text": "If the mass of the molecules of gas 1 is 4 times greater than that of gas 2, and the molecule concentration of gas 1 is 2 times smaller than that of gas 2, what is the ratio of the gas densities ρ₁/ρ₂?",
+      "answers": [
+        "2",
+        "4",
+        "1/8",
+        "1/4"
+      ]
+    },
+    {
+      "text": "The root-mean-square speed of gas molecules is 500 m/s and the gas pressure is 121 kPa. Find the density of the gas (kg/m³).",
+      "answers": [
+        "4.55",
+        "2.11",
+        "4",
+        "1.45"
+      ]
+    },
+    {
+      "text": "Indicate the vector quantities: 1) amount of substance; 2) velocity of molecules; 3) molecule concentration; 4) pressure of molecules.",
+      "answers": [
+        "2, 4",
+        "1, 3",
+        "2",
+        "3, 4"
+      ]
+    },
+    {
+      "text": "If the pressure of oxygen is 0.2 MPa and the root-mean-square speed of its molecules is 700 m/s, find the molecule concentration (m⁻³).",
+      "answers": [
+        "2.3 · 10²⁴",
+        "2.3 · 10²⁵",
+        "2.3 · 10²⁷",
+        "2.8 · 10²⁵"
+      ]
+    },
+    {
+      "text": "A gas has a mass of 6 kg. It occupies a volume of 5 m³ at a pressure of 200 kPa. What is the root-mean-square speed of the molecules of this gas (m/s)?",
+      "answers": [
+        "707",
+        "70",
+        "210",
+        "240"
+      ]
+    },
+    {
+      "text": "The root-mean-square speed of gas molecules is 370 m/s and the gas pressure is 66.2 kPa. Find the density of the gas (kg/m³).",
+      "answers": [
+        "4.55",
+        "2.11",
+        "4",
+        "1.45"
+      ]
+    },
+    {
+      "text": "Which of the following relations is the basic equation of the molecular kinetic theory: 1) p = 1/3 n k T ; 2) p V = m R T/µ; 3) p = (1/3) n m₀ v²; 4) E_k = 3 k T/2?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "text": "How does the pressure of a monatomic gas change if its volume is doubled and the average kinetic energy of its molecules is also doubled?",
+      "answers": [
+        "increases 4 times",
+        "decreases 4 times",
+        "increases 2 times",
+        "does not change"
+      ]
+    },
+    {
+      "text": "How does the pressure of a gas change if its volume increases 2 times and the root-mean-square speed of its molecules decreases by the same factor?",
+      "answers": [
+        "decreases 8 times",
+        "increases 4 times",
+        "decreases 4 times",
+        "increases 8 times"
+      ]
+    },
+    {
+      "text": "How does the root-mean-square speed of gas molecules change if the gas pressure is increased 6 times and the volume is decreased 1.5 times?",
+      "answers": [
+        "increases 2 times",
+        "decreases 2 times",
+        "increases 4 times",
+        "decreases 4 times"
+      ]
+    },
+    {
+      "text": "The pressure of a monatomic ideal gas is 250 kPa and the average kinetic energy of its molecules is 7.5·10⁻²¹ J. What is the molecule concentration of the gas?",
+      "answers": [
+        "5 · 10²⁵",
+        "5 · 10²⁴",
+        "5 · 10²³",
+        "5 · 10²²"
+      ]
+    },
+    {
+      "text": "The root-mean-square speed of the molecules of an ideal gas in a closed vessel is increased by 20%. By what percentage does the gas pressure change?",
+      "answers": [
+        "decreases by 22%",
+        "increases by 22%",
+        "increases by 44%",
+        "decreases by 44%"
+      ]
+    },
+    {
+      "text": "Find the impulse of force received by the vessel wall as a result of a perfectly elastic collision of an oxygen molecule moving at 1200 m/s with the wall at an angle of 60° (N · s). NA = 6 · 10²³ mol⁻¹.",
+      "answers": [
+        "3.2 · 10⁻²³",
+        "0",
+        "3.2 · 10⁻²⁵",
+        "6.4 · 10⁻²³"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "title": "Topic 3 | Graphical representation of rectilinear motion",
+  "questions": [
+    {
+      "text": "The figure shows a graph of the distance travelled by a boy versus time. Determine the distance travelled by the boy in the time interval from t₁ = 1 s to t₂ = 5 s.",
+      "answers": [
+        "10 m",
+        "20 m",
+        "5 m",
+        "15 m"
+      ]
+    },
+    {
+      "text": "The figure shows a graph of the distance travelled by a cyclist versus time. What is his speed at the instant t = 4.28 s (m/s)?",
+      "answers": [
+        "5",
+        "12",
+        "10",
+        "6"
+      ]
+    },
+    {
+      "text": "The figure shows graphs of the distance travelled by three material points versus time. Which material point has the greatest speed?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "All have the same speed"
+      ]
+    },
+    {
+      "text": "Using the graph below, determine the speed of the body (m/s).",
+      "answers": [
+        "√3",
+        "√3/3",
+        "3",
+        "1"
+      ]
+    },
+    {
+      "text": "Which graph represents the distance travelled by a body as a function of time?",
+      "answers": [
+        "II, III",
+        "I, II, III",
+        "III",
+        "I, IV"
+      ]
+    },
+    {
+      "text": "The diagram shows motion graphs of three material points. What can be said about their speeds?",
+      "answers": [
+        "v₁ = v₂ < v₃",
+        "v₁ > v₂ > v₃",
+        "v₁ < v₂ < v₃",
+        "v₁ = v₂ > v₃"
+      ]
+    },
+    {
+      "text": "Using the graph, determine the distance travelled in 5 s by a material point moving along the OX axis (m).",
+      "answers": [
+        "50",
+        "32.5",
+        "0",
+        "10"
+      ]
+    },
+    {
+      "text": "The figure shows a graph of a body's coordinate versus time. Write the equation of motion of the body.",
+      "answers": [
+        "x = −2 + 4t",
+        "x = 6 + 3t",
+        "x = −6 + 3t",
+        "x = 6 − 2t"
+      ]
+    },
+    {
+      "text": "The figure shows the motion graph of a body. Determine the coordinate of the body at t = 3 s (m).",
+      "answers": [
+        "1.8",
+        "1.6",
+        "2.8",
+        "1.2"
+      ]
+    },
+    {
+      "text": "The figure shows a graph of a body's coordinate versus time. Determine the displacement and the distance travelled by the body during the time interval (1−4) s (m).",
+      "answers": [
+        "1; 4",
+        "2; 4",
+        "1; 3",
+        "2; 3"
+      ]
+    },
+    {
+      "text": "The figure shows the motion graph of a body. In which part of the graph is the speed of the body greatest?",
+      "answers": [
+        "III",
+        "II",
+        "I",
+        "IV"
+      ]
+    },
+    {
+      "text": "Using the velocity graph in the diagram, write the equation of motion of a body moving along the X axis. The initial coordinate is −10 m.",
+      "answers": [
+        "x = −10 + 4t",
+        "x = −10 + 2t²",
+        "x = −10t + 4t²",
+        "x = −10 + 2t"
+      ]
+    }
+  ]
+}

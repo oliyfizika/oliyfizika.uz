@@ -1,0 +1,995 @@
+{
+  "title": "Topic 73 | Optics. Geometrical optics. Reflection and refraction of light",
+  "questions": [
+    {
+      "text": "What is a light ray?",
+      "answers": [
+        "a straight line connecting the light source with the observed point.",
+        "a line indicating the direction of the oscillations of $\\vec{B}$.",
+        "a line indicating the direction of the oscillations of $\\vec{E}$.",
+        "a line along which light energy propagates.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Which of the following phenomena is explained by the law of rectilinear propagation of light?",
+      "answers": [
+        "radiation from the pole.",
+        "the sparkle of precious stones.",
+        "lightning.",
+        "a rainbow.",
+        "the shadow of a tree."
+      ]
+    },
+    {
+      "text": "Can a cyclist overtake his own shadow?",
+      "answers": [
+        "no.",
+        "yes, if he moves parallel to the wall on which the shadow falls.",
+        "yes, if the wall on which the shadow falls is parallel to the cyclist's motion and the light source moves toward the cyclist.",
+        "yes, if he moves at an angle to the wall on which the shadow falls and the light source is stationary.",
+        "yes, if the wall on which the shadow falls is parallel to the direction of the cyclist's motion and the light source moves in the same direction as the cyclist with a greater speed."
+      ]
+    },
+    {
+      "text": "A ruler $30$ cm long is held vertically on a table. Its shadow is $20$ cm long. If the distance from the foot of the perpendicular dropped from the lamp to the table to the base of the ruler is $80$ cm, what is the height of the lamp above the table surface (in meters)?",
+      "answers": [
+        "3.4.",
+        "2.4.",
+        "1.3.",
+        "0.4.",
+        "1.5."
+      ]
+    },
+    {
+      "text": "A student performed an experiment on the reflection and refraction of a laser beam on a glass plate. What was the angle of incidence of the beam in the experiment?",
+      "answers": [
+        "$50^\\circ$",
+        "$70^\\circ$",
+        "$40^\\circ$",
+        "$20^\\circ$",
+        "$10^\\circ$"
+      ]
+    },
+    {
+      "text": "The angle between the incident and reflected rays is $50^\\circ$. At what angle does the ray strike the surface?",
+      "answers": [
+        "$20^\\circ$.",
+        "$40^\\circ$.",
+        "$25^\\circ$.",
+        "$50^\\circ$.",
+        "$100^\\circ$."
+      ]
+    },
+    {
+      "text": "The angle between the incident and reflected light rays is $\\alpha$. What is the angle of reflection?",
+      "answers": [
+        "$2\\alpha$.",
+        "$90^\\circ-\\alpha$.",
+        "$90^\\circ-\\alpha/2$.",
+        "$\\alpha$.",
+        "$\\alpha/2$."
+      ]
+    },
+    {
+      "text": "The sine of the angle between the incident and reflected rays is $0.5$. At what angle does the ray strike the surface?",
+      "answers": [
+        "$15^\\circ$.",
+        "$75^\\circ$.",
+        "$30^\\circ$ or $60^\\circ$.",
+        "$15^\\circ$ or $75^\\circ$.",
+        "$45^\\circ$."
+      ]
+    },
+    {
+      "text": "How does the angle between the incident and reflected rays change if the angle of incidence of the ray on the boundary between two media is decreased by $10^\\circ$?",
+      "answers": [
+        "decreases by $5^\\circ$.",
+        "decreases by $10^\\circ$.",
+        "does not change.",
+        "decreases by $20^\\circ$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Using the information in the figures, find the angle $\\alpha$.",
+      "answers": [
+        "$11^\\circ$",
+        "$10.5^\\circ$",
+        "$21^\\circ$",
+        "$42^\\circ$",
+        "$32^\\circ$"
+      ]
+    },
+    {
+      "text": "Through what total angle has the ray been deflected relative to its initial direction?",
+      "answers": [
+        "$30^\\circ$.",
+        "$300^\\circ$.",
+        "$60^\\circ$.",
+        "$90^\\circ$.",
+        "$75^\\circ$."
+      ]
+    },
+    {
+      "text": "Find the velocity of the boy's image relative to the ground.",
+      "answers": [
+        "$2v$.",
+        "$3v$.",
+        "$4v$.",
+        "$v$.",
+        "$v/2$."
+      ]
+    },
+    {
+      "text": "Two flat glass plates are placed parallel to each other at a distance $a$. Using the figure, find the distance between the images of object $A$ in the plates. The distance from object $A$ to the first plate is $b$.",
+      "answers": [
+        "$a+b$.",
+        "$2b$.",
+        "$2a$.",
+        "$b-a$.",
+        "$4b$."
+      ]
+    },
+    {
+      "text": "In which of the diagrams are the angle of incidence $\\alpha$, the angle of reflection $\\beta$ and the angle of refraction $\\gamma$ shown correctly?",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "4.",
+        "5."
+      ]
+    },
+    {
+      "text": "A light ray passes from air into a medium with an absolute refractive index of $\\sqrt{3}$. If the angle of incidence is $60^\\circ$, find the angle of refraction.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$70^\\circ$",
+        "$30^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "A light ray passes from a first medium with an absolute refractive index of $\\sqrt{3}$ into a medium with an absolute refractive index of $\\sqrt{2}$. If the angle of refraction is $60^\\circ$, find the angle of incidence.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "A light ray passes from a first medium with an absolute refractive index of $\\sqrt{2}$ into a second medium. The angle of incidence is $30^\\circ$ and the angle of refraction is $45^\\circ$. Find the absolute refractive index of the second medium.",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ]
+    },
+    {
+      "text": "A light ray passes from a first medium with an absolute refractive index of $2$ into a medium with an absolute refractive index of $2\\sqrt{2}$. If the angle of refraction is $30^\\circ$, find the angle of incidence.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "A light ray passes from a first medium with an absolute refractive index of $3$ into a second medium. The angle of incidence is $30^\\circ$ and the angle of refraction is $60^\\circ$. Find the absolute refractive index of the second medium.",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ]
+    },
+    {
+      "text": "A light ray passes from a first medium into a second medium with an absolute refractive index of $2\\sqrt{2}$. The angle of incidence is $45^\\circ$ and the angle of refraction is $30^\\circ$. Find the absolute refractive index of the first medium.",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ]
+    },
+    {
+      "text": "When a light ray passes from medium 1 into medium 2, the angle of incidence is $30^\\circ$ and the angle of refraction is $60^\\circ$. What is the refractive index of medium 2 relative to medium 1?",
+      "answers": [
+        "$0.5$",
+        "$2$",
+        "$\\sqrt{3}$",
+        "$\\sqrt{3}/3$",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "A ray passes from glass into air. The angle of incidence is $30^\\circ$. If the ray changes its direction by $30^\\circ$ on refraction, what is the refractive index of the glass?",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$2$",
+        "$\\sqrt{2}/2$",
+        "$1.5$"
+      ]
+    },
+    {
+      "text": "A light ray passes from air into a medium with an absolute refractive index of $\\sqrt{2}$. If the angle of incidence is $45^\\circ$, find the angle of refraction.",
+      "answers": [
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$0^\\circ$"
+      ]
+    },
+    {
+      "text": "When a light ray from air struck the flat surfaces of various media, the angle between the reflected and refracted rays was $1.5$ times the angle of incidence. If the angle of incidence is $60^\\circ$, what is the angle of refraction?",
+      "answers": [
+        "$90^\\circ$",
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$30^\\circ$",
+        "$0^\\circ$"
+      ]
+    },
+    {
+      "text": "Using the information in the figure, find $n_2$. $\\sin53^\\circ=0.8$.",
+      "answers": [
+        "$5/3$",
+        "$25/9$",
+        "$1$",
+        "$16/9$",
+        "$25/16$"
+      ]
+    },
+    {
+      "text": "If a ray strikes a glass surface from air at an angle of $45^\\circ$, what is the angle of refraction in degrees? For the glass, $n=1.41$.",
+      "answers": [
+        "$25^\\circ$",
+        "$21^\\circ$",
+        "$30^\\circ$",
+        "$37^\\circ$",
+        "$42^\\circ$"
+      ]
+    },
+    {
+      "text": "Light strikes glass from air at an angle of $60^\\circ$. If the angle between the reflected and refracted rays is $1.5$ times the angle of incidence, what is the refractive index of the glass?",
+      "answers": [
+        "$\\sqrt{2}$",
+        "$\\sqrt{3}$",
+        "$1$",
+        "$2$",
+        "$3$"
+      ]
+    },
+    {
+      "text": "The angle between the incident and reflected rays going from air to glass is $60^\\circ$. Find the sine of the angle of refraction. $n=1.5$.",
+      "answers": [
+        "$2/3$",
+        "$3/5$",
+        "$1/2$",
+        "$1/3$",
+        "$1/4$"
+      ]
+    },
+    {
+      "text": "At what angle must light strike a glass surface from air so that the angle of refraction is half the angle of incidence? $n_{\\text{sh}}=\\sqrt{3}$.",
+      "answers": [
+        "$50^\\circ$",
+        "$60^\\circ$",
+        "$70^\\circ$",
+        "$80^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "When a light ray passes from one medium into a second, optically denser medium...",
+      "answers": [
+        "the angle of refraction is smaller than the angle of incidence.",
+        "the angle of refraction is greater than the angle of incidence.",
+        "the angle of refraction is equal to the angle of incidence.",
+        "the answer depends on the angle of incidence.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "In which diagram is the passage of a light ray from an optically denser medium into an optically less dense medium shown?",
+      "answers": [
+        "there is no such diagram.",
+        "1.",
+        "2.",
+        "3.",
+        "1, 2."
+      ]
+    },
+    {
+      "text": "When a ray passes from one medium into another, optically less dense medium...",
+      "answers": [
+        "the angle of refraction is smaller than the angle of incidence.",
+        "the angle of refraction is greater than the angle of incidence.",
+        "the angle of refraction is equal to the angle of incidence.",
+        "no refraction of the ray is observed.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "In which of the given diagrams is the path of the rays shown correctly?\nMedium I is glass, medium II is air.",
+      "answers": [
+        "a",
+        "a, b and c",
+        "c",
+        "a and b",
+        "b"
+      ]
+    },
+    {
+      "text": "Can the angle of refraction be greater than the angle of incidence?",
+      "answers": [
+        "in all cases it is greater.",
+        "when the ray passes from an optically less dense medium into an optically denser medium.",
+        "when the ray passes from an optically denser medium into an optically less dense medium.",
+        "when the ray passes from vacuum into a medium.",
+        "such a case is impossible."
+      ]
+    },
+    {
+      "text": "As shown in the figure, a light ray passes through the boundary between two media (1 and 2). Which of the following correctly describes the situation in the figure?",
+      "answers": [
+        "the light is polarized.",
+        "the speed of light in medium 2 is greater than in medium 1.",
+        "the speed of light in medium 2 is less than in medium 1.",
+        "the absolute refractive index of medium 1 is less than one.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "A light ray passes from a medium with refractive index $n_1$ into a medium with refractive index $n_2$ ($n_2>n_1$). The light strikes the boundary between the media at an angle of $0^\\circ$ to the normal. What is the angle of refraction of the ray?",
+      "answers": [
+        "$\\arcsin(n_1/n_2)$.",
+        "$\\arcsin(n_2/n_1)$.",
+        "$0$.",
+        "$90^\\circ$.",
+        "$\\arcsin(1-n_2/n_1)$."
+      ]
+    },
+    {
+      "text": "A ray in air strikes a medium with refractive index $n=\\sqrt{3}$, and the angle between the reflected and refracted rays is $90^\\circ$. What is the angle of incidence of the ray?",
+      "answers": [
+        "$0^\\circ$",
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$"
+      ]
+    },
+    {
+      "text": "At what angle must a ray strike glass with refractive index $n=1.732$ from air so that the refracted ray is perpendicular to the reflected ray?",
+      "answers": [
+        "$30^\\circ$.",
+        "$35^\\circ16'$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "At what angle must a ray strike flat glass from air so that the refracted ray is perpendicular to the reflected ray? The refractive index of the glass is $n$.",
+      "answers": [
+        "$\\arccos n$.",
+        "$\\arcsin n$.",
+        "$0$.",
+        "$\\operatorname{arcctg} n$.",
+        "$\\operatorname{arctg} n$."
+      ]
+    },
+    {
+      "text": "A light ray passes from a liquid into vacuum. The angle of incidence is $30^\\circ$. The reflected and refracted rays are perpendicular to each other. What is the refractive index of this liquid?",
+      "answers": [
+        "$1.3$.",
+        "$1.5$.",
+        "$1.73$.",
+        "$2$.",
+        "$2.5$."
+      ]
+    },
+    {
+      "text": "A light ray strikes a medium with refractive index $n$ from air at an angle $\\alpha$. When the angle between the reflected and refracted rays is $90^\\circ$, what is the relation between $\\alpha$ and $n$?",
+      "answers": [
+        "$tg\\alpha=n$.",
+        "$\\dfrac{\\cos\\alpha}{\\sin\\beta}=n$.",
+        "$\\dfrac{\\cos\\alpha}{\\cos\\beta}=n$.",
+        "$\\dfrac{\\sin\\alpha}{\\cos\\beta}=n$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "A light ray passes from glass with refractive index $\\sqrt{3}$ into air. At what angle must the light strike the boundary with air so that the angle of refraction is twice the angle of incidence?",
+      "answers": [
+        "$25^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Light passes from a medium into air. The refracted ray makes an angle of $90^\\circ$ with the reflected ray. If the sine of the angle of incidence is $0.6$, what is the refractive index?",
+      "answers": [
+        "$1$.",
+        "$1.25$.",
+        "$1.33$.",
+        "$1.5$.",
+        "$1.8$."
+      ]
+    },
+    {
+      "text": "When the angle of incidence is $\\alpha=0$, how is it related to the angle of refraction $\\beta$?",
+      "answers": [
+        "$\\alpha=\\beta$.",
+        "$\\beta>\\alpha$.",
+        "$\\alpha>\\beta$.",
+        "$\\alpha=2\\beta$.",
+        "$\\beta=2\\alpha$."
+      ]
+    },
+    {
+      "text": "A light ray passes from air into water. If the angle of incidence is $\\alpha$, which of the following conditions does the angle of refraction $\\beta$ satisfy?",
+      "answers": [
+        "$\\beta<\\alpha$.",
+        "$\\beta>\\alpha$.",
+        "$\\beta=\\alpha$.",
+        "$\\beta\\gg\\alpha$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Which of the rays passing through a transparent plate with parallel faces are shown correctly in the figure? The absolute refractive index of the medium surrounding the plate is greater than that of the plate.",
+      "answers": [
+        "1.",
+        "2.",
+        "3.",
+        "1 and 2.",
+        "1 and 3."
+      ]
+    },
+    {
+      "text": "A student performed an optical experiment to determine the refractive index of a prism (figure). According to this experiment, by which formula is the refractive index determined?",
+      "answers": [
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{\\sin\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha-\\beta)}{\\sin\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{2\\sin\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{\\cos\\alpha}$.",
+        "$\\dfrac{\\sin(\\alpha+\\beta)}{2\\cos\\alpha}$."
+      ]
+    },
+    {
+      "text": "A light ray strikes a plane-parallel glass plate ($n=1.7$) at an angle of $53^\\circ$ and is displaced by $2$ cm as it passes through it. $\\sin53^\\circ=0.8$. Find (cm).",
+      "answers": [
+        "$1.8$.",
+        "$2.6$.",
+        "$3.4$.",
+        "$1.6$.",
+        "$4.2$."
+      ]
+    },
+    {
+      "text": "A ray strikes the side face of a regular triangular prism at an angle of $45^\\circ$. Through what angle is the ray deviated from its initial direction on leaving the prism? $n=\\sqrt{2}$, $\\sin45^\\circ=\\sqrt{2}/2$.",
+      "answers": [
+        "$15^\\circ$.",
+        "$30^\\circ$.",
+        "$45^\\circ$.",
+        "$60^\\circ$.",
+        "$90^\\circ$."
+      ]
+    },
+    {
+      "text": "The dielectric constant of kerosene is $2$ and its magnetic permeability is $1$. What is its absolute refractive index?",
+      "answers": [
+        "$1$.",
+        "$1.5$.",
+        "$2$.",
+        "$2\\sqrt{2}$.",
+        "$\\sqrt{2}$."
+      ]
+    },
+    {
+      "text": "Light from vacuum strikes a transparent body with refractive index $n$. If the speed of light in vacuum is $c$, what is its speed inside the body?",
+      "answers": [
+        "$c/n$.",
+        "$nc$.",
+        "$c$.",
+        "$n/c$.",
+        "$\\sqrt{nc}$."
+      ]
+    },
+    {
+      "text": "What is the speed of light in a medium with an absolute refractive index of $1.5$ (m/s)?",
+      "answers": [
+        "$1.5\\cdot10^7$.",
+        "$2\\cdot10^8$.",
+        "$2\\cdot10^7$.",
+        "$1.5\\cdot10^8$.",
+        "$1\\cdot10^7$."
+      ]
+    },
+    {
+      "text": "At what speed does light propagate in a medium with an absolute refractive index of $2.5$?",
+      "answers": [
+        "$0.8c$.",
+        "$0.14c$.",
+        "$0.7c$.",
+        "$c$.",
+        "$0.4c$."
+      ]
+    },
+    {
+      "text": "What is the ratio of the speeds of rays propagating in media with refractive indices $n_1=1.4$ and $n_2=1.75$?",
+      "answers": [
+        "$1.1$.",
+        "$1.15$.",
+        "$1.25$.",
+        "$1.2$.",
+        "$1.3$."
+      ]
+    },
+    {
+      "text": "The speed of a ray in a transparent medium is $0.25c$. Determine the absolute refractive index of the medium. $c$ is the speed of light in vacuum.",
+      "answers": [
+        "$1.33$.",
+        "$1.5$.",
+        "$4$.",
+        "$2$.",
+        "$2.3$."
+      ]
+    },
+    {
+      "text": "Find the absolute refractive index of a medium in which the speed of light is $0.625c$, where $c$ is the speed of light in vacuum.",
+      "answers": [
+        "$2$.",
+        "$1.8$.",
+        "$1.7$.",
+        "$1.6$.",
+        "$1.5$."
+      ]
+    },
+    {
+      "text": "The wavelength of a light wave in air is $0.6~\\mu$m. What is its wavelength in water (in $\\mu$m)? The refractive index of water is $n=4/3$.",
+      "answers": [
+        "$0.8$.",
+        "$0.64$.",
+        "$0.6$.",
+        "$0.5$.",
+        "$0.45$."
+      ]
+    },
+    {
+      "text": "The wavelength of a light wave in air is $450$ nm. What is its wavelength in glass (nm)? The refractive index of the glass is $1.5$.",
+      "answers": [
+        "$150$.",
+        "$675$.",
+        "$300$.",
+        "$250$.",
+        "$200$."
+      ]
+    },
+    {
+      "text": "What is the oscillation frequency of light with a wavelength of $5\\cdot10^{-7}$ m (in hertz)? $c=3\\cdot10^8$ m/s.",
+      "answers": [
+        "$6\\cdot10^{15}$.",
+        "$0.6\\cdot10^{15}$.",
+        "$6\\cdot10^{12}$.",
+        "$6\\cdot10^{13}$.",
+        "$0.6\\cdot10^{14}$."
+      ]
+    },
+    {
+      "text": "Find the frequency of light with a wavelength in vacuum of $0.75~\\mu$m (Hz).",
+      "answers": [
+        "$5\\cdot10^{14}$.",
+        "$4\\cdot10^{15}$.",
+        "$7.5\\cdot10^{14}$.",
+        "$5\\cdot10^{15}$.",
+        "$4\\cdot10^{14}$."
+      ]
+    },
+    {
+      "text": "The wavelength of light in vacuum is $\\lambda=6\\cdot10^{-7}$ m. What is its oscillation frequency (in hertz)?",
+      "answers": [
+        "$6\\cdot10^{15}$.",
+        "$5\\cdot10^{15}$.",
+        "$1.8\\cdot10^{15}$.",
+        "$5\\cdot10^{14}$.",
+        "$6\\cdot10^7$."
+      ]
+    },
+    {
+      "text": "If the frequency of light propagating in a medium is $3\\cdot10^{14}$ Hz and its wavelength is $500$ nm, what is the refractive index of the medium?",
+      "answers": [
+        "$2$.",
+        "$1.7$.",
+        "$1.6$.",
+        "$1.5$.",
+        "$1.33$."
+      ]
+    },
+    {
+      "text": "Determine the wavelength of light of frequency $3\\cdot10^{14}$ Hz in a medium with a refractive index of $2$ (nm).",
+      "answers": [
+        "$200$.",
+        "$400$.",
+        "$450$.",
+        "$500$.",
+        "$600$."
+      ]
+    },
+    {
+      "text": "If the wavelength of a light wave in diamond at a frequency of $2.73\\cdot10^{14}$ Hz is $450$ nm, what is the speed of light in diamond (m/s)?",
+      "answers": [
+        "$1.23\\cdot10^8$.",
+        "$2.23\\cdot10^8$.",
+        "$2.5\\cdot10^8$.",
+        "$1.5\\cdot10^8$.",
+        "$2.83\\cdot10^8$."
+      ]
+    },
+    {
+      "text": "When monochromatic light passes from one medium into another, its wavelength decreases by a factor of $2$. How does its propagation speed change?",
+      "answers": [
+        "decreases by a factor of $2$.",
+        "decreases by a factor of $\\sqrt{2}$.",
+        "increases by a factor of $\\sqrt{2}$.",
+        "increases by a factor of $2$.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "The frequency of light in a transparent medium is $4\\cdot10^{14}$ Hz and its wavelength is $500$ nm. What is the refractive index of the medium?",
+      "answers": [
+        "$1.33$.",
+        "$1.5$.",
+        "$1.7$.",
+        "$2$.",
+        "$2.25$."
+      ]
+    },
+    {
+      "text": "The wavelength of light in a medium is $400$ nm and its frequency is $5\\cdot10^{14}$ Hz. What is the refractive index of this medium?",
+      "answers": [
+        "$1.7$.",
+        "$1.6$.",
+        "$7.3$.",
+        "$1.4$.",
+        "$1.5$."
+      ]
+    },
+    {
+      "text": "Green light strikes an ice surface at an angle of $45^\\circ$ and is refracted at an angle of $33^\\circ$. At what speed (in m/s) does light propagate in ice? Take $\\sin45^\\circ=0.7$ and $\\sin33^\\circ=0.54$.",
+      "answers": [
+        "$3\\cdot10^8$.",
+        "$2.3\\cdot10^8$.",
+        "$1.3\\cdot10^8$.",
+        "$2\\cdot10^8$.",
+        "$1.5\\cdot10^8$."
+      ]
+    },
+    {
+      "text": "If light travels a distance of $45$ cm through a convex water drop in some time, and $30$ cm in a certain liquid in the same time, what is the refractive index of this liquid?",
+      "answers": [
+        "$1.2$.",
+        "$1.3$.",
+        "$1.4$.",
+        "$1.5$.",
+        "$1.7$."
+      ]
+    },
+    {
+      "text": "The refractive index of one substance is $n_1=1.2$ and that of turpentine is $n_2=1.5$. What is the ratio of the distances traveled by light in these substances in the same time?",
+      "answers": [
+        "$1.22$.",
+        "$1.21$.",
+        "$1.2$.",
+        "$1.25$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "The angle of incidence of a ray on the boundary between two media is $30^\\circ$ and the angle of refraction is $45^\\circ$. How does the speed of light change when it passes from the first medium into the second?",
+      "answers": [
+        "increases by a factor of $1.5$.",
+        "decreases by a factor of $\\sqrt{2}$.",
+        "increases by a factor of $\\sqrt{2}$.",
+        "decreases by a factor of $2$.",
+        "increases by a factor of $2$."
+      ]
+    },
+    {
+      "text": "The frequency of electromagnetic oscillations is $10^{15}$ Hz. What is the wavelength of light (in meters) in a medium with a refractive index of $1.5$? The speed of light in vacuum is $3\\cdot10^8$ m/s.",
+      "answers": [
+        "$2\\cdot10^{-7}$.",
+        "$3\\cdot10^{-7}$.",
+        "$0.5\\cdot10^{-7}$.",
+        "$0.3\\cdot10^{-7}$.",
+        "the wavelength of light cannot be determined from the given quantities."
+      ]
+    },
+    {
+      "text": "The wavelength of a light wave in air is $720$ nm. What is its wavelength in diamond (nm)? The speed of light in diamond is $1.25\\cdot10^8$ m/s.",
+      "answers": [
+        "$250$.",
+        "$300$.",
+        "$360$.",
+        "$576$.",
+        "$900$."
+      ]
+    },
+    {
+      "text": "Light passes from vacuum into a medium with refractive index $n$. Which of the following statements is correct?",
+      "answers": [
+        "the frequency and speed do not change.",
+        "the wavelength and speed decrease by a factor of $n$.",
+        "the frequency and wavelength decrease by a factor of $n$.",
+        "the wavelength increases by a factor of $n$ and the frequency decreases by a factor of $n$.",
+        "the frequency increases by a factor of $n$ and the wavelength decreases by a factor of $n$."
+      ]
+    },
+    {
+      "text": "How does the wavelength of light change when it passes from vacuum into a medium with refractive index $n=2$?",
+      "answers": [
+        "increases by a factor of $2$.",
+        "decreases by a factor of $2$.",
+        "does not change.",
+        "the change depends on the angle of incidence.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "The wavelength of a ray that passed from air into an optical medium decreased by $30\\%$. What is the speed of the ray in this medium?",
+      "answers": [
+        "$0.3c$.",
+        "$0.7c$.",
+        "$0.49c$.",
+        "$0.8c$.",
+        "$0.6c$."
+      ]
+    },
+    {
+      "text": "How does the wavelength of light change when it passes from a medium with an absolute refractive index of $2$ into a medium with an absolute refractive index of $1.5$?",
+      "answers": [
+        "does not change.",
+        "decreases by a factor of $3$.",
+        "increases by a factor of $3$.",
+        "decreases by a factor of $4/3$.",
+        "increases by a factor of $4/3$."
+      ]
+    },
+    {
+      "text": "When monochromatic light passes successively through three media, the wavelengths in these media are $\\lambda_1=550$ nm, $\\lambda_2=550.1$ nm and $\\lambda_3=549.5$ nm. Which of the following relations holds for the refractive indices of these media?",
+      "answers": [
+        "$n_1>n_2>n_3$.",
+        "$n_3>n_1>n_2$.",
+        "$n_1<n_2<n_3$.",
+        "$n_1=n_2=n_3$.",
+        "$n_2>n_3>n_1$."
+      ]
+    },
+    {
+      "text": "When a light wave passes from vacuum into a medium, its wavelength decreases by a factor of $1.5$. Determine the speed of light in this medium (m/s).",
+      "answers": [
+        "$1.5\\cdot10^8$.",
+        "$1\\cdot10^8$.",
+        "$0.5\\cdot10^8$.",
+        "$2\\cdot10^8$.",
+        "$2.5\\cdot10^8$."
+      ]
+    },
+    {
+      "text": "Light strikes the second medium from the first at an angle $\\alpha_1$. The angle of refraction is $\\alpha_2$. If the wavelength of light in the first medium is $\\lambda_1$, what is the wavelength $\\lambda_2$ in the second medium?",
+      "answers": [
+        "$\\lambda_2=\\lambda_1\\sin\\alpha_2/\\alpha_1$.",
+        "$\\lambda_2=\\lambda_1 tg\\alpha_1/\\alpha_2$.",
+        "$\\lambda_2=\\lambda_1\\sin\\alpha_2/\\sin\\alpha_1$.",
+        "$\\lambda_2=\\lambda_1\\sin\\alpha_1/\\sin\\alpha_2$.",
+        "$\\lambda_2=\\lambda_1 tg\\alpha_2/ tg\\alpha_1$."
+      ]
+    },
+    {
+      "text": "If a light ray with a wavelength of $4\\cdot10^{-7}$ m passes from one medium into another with an angle of incidence of $30^\\circ$ and an angle of refraction of $45^\\circ$, what is the wavelength in the second medium, in nm?",
+      "answers": [
+        "$283$.",
+        "$320$.",
+        "$400$.",
+        "$566$.",
+        "$800$."
+      ]
+    },
+    {
+      "text": "A light ray with a wavelength of $560$ nm in the first medium strikes a second medium at an angle of incidence of $45^\\circ$, and the angle of refraction is $30^\\circ$. What is the wavelength in the second medium, in nanometers? $\\sqrt{2}\\approx1.4$.",
+      "answers": [
+        "$840$.",
+        "$784$.",
+        "$560$.",
+        "$400$.",
+        "$373$."
+      ]
+    },
+    {
+      "text": "Determine the wavelength of light of frequency $5\\cdot10^{14}$ Hz in a medium with a refractive index of $1.5$ (nm).",
+      "answers": [
+        "$300$.",
+        "$400$.",
+        "$500$.",
+        "$600$.",
+        "$750$."
+      ]
+    },
+    {
+      "text": "Determine the frequency of light propagating in a transparent medium with a refractive index of $1.5$ if its wavelength is $500$ nm (Hz).",
+      "answers": [
+        "$5\\cdot10^{15}$.",
+        "$4\\cdot10^{14}$.",
+        "$1.5\\cdot10^{15}$.",
+        "$3\\cdot10^{14}$.",
+        "$4\\cdot10^{15}$."
+      ]
+    },
+    {
+      "text": "When light with a wavelength of $600$ nm passes from vacuum into a medium, its speed decreases by $40\\%$. What is the wavelength of the light in this medium (nm)?",
+      "answers": [
+        "$240$.",
+        "$360$.",
+        "$750$.",
+        "$1000$.",
+        "$1500$."
+      ]
+    },
+    {
+      "text": "A light wave passes from one medium into another. Which of its quantities change?\n1) wavelength;\n2) frequency;\n3) propagation speed;\n4) amplitude.",
+      "answers": [
+        "only 2.",
+        "2, 4.",
+        "2, 3, 4.",
+        "1, 4.",
+        "4."
+      ]
+    },
+    {
+      "text": "Which of the following occurs when electromagnetic waves pass from one medium into another?",
+      "answers": [
+        "only the frequency changes.",
+        "no change occurs.",
+        "the wavelength and frequency change.",
+        "the frequency and speed change.",
+        "the wavelength and speed change."
+      ]
+    },
+    {
+      "text": "When light passes from one medium into another, which of its frequency, speed and wavelength do not change?",
+      "answers": [
+        "wavelength.",
+        "speed and wavelength.",
+        "speed.",
+        "frequency.",
+        "frequency and speed."
+      ]
+    },
+    {
+      "text": "How does the frequency of monochromatic light change when it passes from vacuum into a medium with refractive index $n=2$?",
+      "answers": [
+        "increases by a factor of $4$.",
+        "decreases by a factor of $2$.",
+        "increases by a factor of $2$.",
+        "decreases by a factor of $4$.",
+        "does not change."
+      ]
+    },
+    {
+      "text": "What will be the frequency of an electromagnetic wave of frequency $3\\cdot10^{15}$ Hz when it passes from vacuum into a medium with a refractive index of $1.5$?",
+      "answers": [
+        "$4.5\\cdot10^{15}$.",
+        "$5\\cdot10^{14}$.",
+        "$2\\cdot10^{15}$.",
+        "$1.5\\cdot10^{15}$.",
+        "$3\\cdot10^{15}$."
+      ]
+    },
+    {
+      "text": "How does the frequency of a light wave change when it passes from a medium with an absolute refractive index of $2$ into a medium with an absolute refractive index of $1.33$?",
+      "answers": [
+        "does not change.",
+        "decreases by a factor of $3$.",
+        "decreases by a factor of $1.5$.",
+        "increases by a factor of $3$.",
+        "increases by a factor of $1.5$."
+      ]
+    },
+    {
+      "text": "If the frequency of electromagnetic oscillations in vacuum is $1$ MHz, what is it (in MHz) in a homogeneous medium with a refractive index of $2$?",
+      "answers": [
+        "$0.2$.",
+        "$0.5$.",
+        "$0.8$.",
+        "$1$.",
+        "$2$."
+      ]
+    },
+    {
+      "text": "Light of frequency (in vacuum) $7.5\\cdot10^{14}$ Hz passes successively through media with refractive indices $n_1=1$, $n_2=1.5$ and $n_3=1.6$. Which relation holds for the frequencies of light in these media?",
+      "answers": [
+        "$\\nu_1>\\nu_2<\\nu_3$.",
+        "$\\nu_3>\\nu_1>\\nu_2$.",
+        "$\\nu_1<\\nu_2<\\nu_3$.",
+        "$\\nu_2>\\nu_1>\\nu_3$.",
+        "$\\nu_1=\\nu_2=\\nu_3$."
+      ]
+    },
+    {
+      "text": "When light with a wavelength of $480$ nm passes from vacuum into a medium, its wavelength is reduced by $192$ nm. Find the speed of light in this medium (m/s).",
+      "answers": [
+        "$1\\cdot10^8$.",
+        "$1.2\\cdot10^8$.",
+        "$1.8\\cdot10^8$.",
+        "$2\\cdot10^8$.",
+        "$1.5\\cdot10^8$."
+      ]
+    },
+    {
+      "text": "When rays pass from water into vacuum, their wavelength increases by $0,165~\\mu$m. Determine the wavelength of the rays in vacuum ($\\mu$m). $n=1.33$.",
+      "answers": [
+        "$0.365$.",
+        "$0.41$.",
+        "$0.56$.",
+        "$0.605$.",
+        "$0.665$."
+      ]
+    },
+    {
+      "text": "A plane light wave strikes the boundary between two media at an angle $\\alpha$ and passes into the second medium at an angle $\\beta$. How are the speeds of light in these media related? $\\alpha>\\beta$.",
+      "answers": [
+        "the ratio of the speeds varies depending on the angle.",
+        "$v_1<v_2$.",
+        "$v_1>v_2$.",
+        "$v_1=v_2$.",
+        "No correct answer."
+      ]
+    },
+    {
+      "text": "Light strikes medium 2 from medium 1 at an angle of $45^\\circ$ and is refracted in medium 2 at an angle of $30^\\circ$. If the absolute refractive index of medium 1 is $\\sqrt{2}$, what is the speed of light in medium 2, in km/s? $\\sin45^\\circ=\\sqrt{2}/2$, $\\sin30^\\circ=1/2$.",
+      "answers": [
+        "$\\sqrt{2}\\cdot150000$.",
+        "$300000/\\sqrt{2}$.",
+        "$200000$.",
+        "$300000$.",
+        "$150000$."
+      ]
+    },
+    {
+      "text": "In what kind of medium can light rays travel along a curved line?",
+      "answers": [
+        "in a homogeneous medium.",
+        "in a liquid medium.",
+        "in a single crystal.",
+        "in an amorphous substance.",
+        "in a medium whose refractive index varies from point to point."
+      ]
+    },
+    {
+      "text": "The speed of light in a certain transparent medium is $1.5\\cdot10^8$ m/s. What is the dielectric constant of this medium?",
+      "answers": [
+        "$1.5$.",
+        "$2$.",
+        "$3$.",
+        "$4$.",
+        "$8$."
+      ]
+    }
+  ]
+}

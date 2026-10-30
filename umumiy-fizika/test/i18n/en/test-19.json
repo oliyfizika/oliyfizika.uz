@@ -1,0 +1,185 @@
+{
+  "title": "Topic 19 | Conditions of equilibrium",
+  "questions": [
+    {
+      "text": "The distance from the axis of rotation to the point of application of the force is 2.5 m, and the distance from the axis of rotation to the line of action of the force is 1.5 m. If the magnitude of the force is 50 N, find the moment of the force (N·m).",
+      "answers": [
+        "75",
+        "50",
+        "100",
+        "125"
+      ]
+    },
+    {
+      "text": "How does the moment of a force change if the force is increased three times and the lever arm is decreased 2 times?",
+      "answers": [
+        "increases 1.5 times",
+        "decreases 1.5 times",
+        "increases 3 times",
+        "decreases 3 times"
+      ]
+    },
+    {
+      "text": "Under what condition is a body with a fixed axis of rotation in equilibrium?",
+      "answers": [
+        "if the vector sum of the forces is zero",
+        "if the moments turning the body clockwise and counterclockwise are nonzero",
+        "if the sum of the positive and negative moments of forces is equal",
+        "if the algebraic sum of the forces is nonzero"
+      ]
+    },
+    {
+      "text": "If the distance from the axis of rotation to the point of application of the force is d, find the formula for the moment of the force.",
+      "answers": [
+        "M = Fd·tanα",
+        "M = Fd",
+        "M = Fd·cosα",
+        "M = Fd·sinα"
+      ]
+    },
+    {
+      "text": "A force of 300 N acts on the short arm of a lever and 20 N on the long arm. The short arm is 5 cm. Find the long arm (cm).",
+      "answers": [
+        "75",
+        "40",
+        "150",
+        "35"
+      ]
+    },
+    {
+      "text": "Forces of 40 N and 240 N act on the ends of a lever. The distance from the fulcrum to the smaller force is 60 cm. Find the length of the lever (cm).",
+      "answers": [
+        "9",
+        "14",
+        "70",
+        "7"
+      ]
+    },
+    {
+      "text": "Masses of 5 kg each hang from the ends of a weightless lever 1 m long. The fulcrum is 20 cm from one of the masses. If a 30 kg mass is added on that side, at what distance from the fulcrum must it be placed? (cm)",
+      "answers": [
+        "8",
+        "12",
+        "10",
+        "15"
+      ]
+    },
+    {
+      "text": "The length of a lever is 200 cm. A 10 kg mass is on one end and a 40 kg mass on the other. At what distance from the heavy mass must the fulcrum be for equilibrium? (cm)",
+      "answers": [
+        "40",
+        "10",
+        "50",
+        "20"
+      ]
+    },
+    {
+      "text": "Parallel opposite forces of 10 N and 25 N act at a distance of 1.5 m from each other. Determine the force that balances them.",
+      "answers": [
+        "15; 2.5",
+        "30; 2.5",
+        "25; 5",
+        "No correct answer"
+      ]
+    },
+    {
+      "text": "With which device can one gain in force when lifting a load?",
+      "answers": [
+        "fixed pulley",
+        "lever",
+        "inclined plane",
+        "all three do the same amount of work"
+      ]
+    },
+    {
+      "text": "Masses of 3 kg and 2 kg are in equilibrium on a weightless lever. If AB = 30 cm, find BC (cm).",
+      "answers": [
+        "24",
+        "18",
+        "15",
+        "20"
+      ]
+    },
+    {
+      "text": "If the net moment about point A is 0, find x.",
+      "answers": [
+        "30F/11",
+        "4F",
+        "28F/7",
+        "24F/7"
+      ]
+    },
+    {
+      "text": "A force of 200 N acts on the end of rod OA at an angle of 30°. What mass must be placed at its midpoint for equilibrium? (kg)",
+      "answers": [
+        "25",
+        "30",
+        "20",
+        "43"
+      ]
+    },
+    {
+      "text": "A uniform beam is in equilibrium. Find the correct relation between the forces.",
+      "answers": [
+        "F₁ = F₂",
+        "F₁ = sinα·F₂",
+        "F₂ = 2tanα·F₁",
+        "F₁ = 2cotα·F₂"
+      ]
+    },
+    {
+      "text": "What horizontal force is needed to lift one edge of a cube of mass 20 kg? (N)",
+      "answers": [
+        "10",
+        "20",
+        "50",
+        "100"
+      ]
+    },
+    {
+      "text": "One quarter of a rod sticks out over the edge of a table. Find the minimum force needed to lift the other end by pressing down on the protruding end.",
+      "answers": [
+        "2mg",
+        "mg/2",
+        "mg",
+        "mg/3"
+      ]
+    },
+    {
+      "text": "A car weighing 24 kN has its center of gravity dividing the distance between the axles in the ratio 1:3. Find the support reactions (kN).",
+      "answers": [
+        "6; 6",
+        "9; 6",
+        "18; 6",
+        "18; 12"
+      ]
+    },
+    {
+      "text": "Half of a cylindrical rod is made of metal of density ρ and the other half of metal of density 3ρ. By how much is the center of gravity displaced from the center?",
+      "answers": [
+        "L/16",
+        "L/20",
+        "L/8",
+        "L/4"
+      ]
+    },
+    {
+      "text": "Two children of masses 70 kg and 90 kg stand at the two ends of a cart. By how much does the center of gravity shift when the first child walks to the center?",
+      "answers": [
+        "0.27",
+        "0.13",
+        "0.42",
+        "0"
+      ]
+    },
+    {
+      "text": "At what distance from the third ball is the center of gravity of a system of balls of masses 1 kg, 5 kg, 7 kg and 3 kg?",
+      "answers": [
+        "-1.5",
+        "-0.5",
+        "-0.2",
+        "-0.05"
+      ]
+    }
+  ]
+}
