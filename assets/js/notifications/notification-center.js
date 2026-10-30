@@ -12,6 +12,7 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
+import { t } from "../core/i18n.js";
 import { getLearningSummary, loadResults, hasLoadedResults } from "../progress/progress-service.js";
 import { prepareResults, deriveAchievements } from "../results/results-data.js";
 import { buildNotifications, sortNotifications, relativeDate, MAX_ITEMS } from "./notification-service.js";
@@ -37,15 +38,15 @@ let lastState = null;
 export function notificationMarkup() {
   return `
     <div class="of-notify" data-notify>
-      <button type="button" class="of-icon-btn of-notify__bell" data-popover aria-controls="of-notify-panel" aria-expanded="false" aria-haspopup="dialog" aria-label="Bildirishnomalar" data-notify-bell>
+      <button type="button" class="of-icon-btn of-notify__bell" data-popover aria-controls="of-notify-panel" aria-expanded="false" aria-haspopup="dialog" aria-label="${t("notify.title", "Bildirishnomalar")}" data-notify-bell>
         ${icon("bell")}<span class="of-notify-dot" data-notify-dot hidden aria-hidden="true"></span>
       </button>
       <div class="of-popover of-notify__panel" id="of-notify-panel" role="dialog" aria-modal="false" aria-labelledby="of-notify-title" hidden>
         <div class="of-notify__head">
-          <h2 id="of-notify-title" tabindex="-1">Bildirishnomalar</h2>
+          <h2 id="of-notify-title" tabindex="-1">${t("notify.title", "Bildirishnomalar")}</h2>
           <div class="of-row" style="gap:4px">
-            <button type="button" class="of-link-btn of-notify__all" data-notify-all hidden>Barchasini o‘qilgan deb belgilash</button>
-            <button type="button" class="of-icon-btn of-notify__close" data-notify-close aria-label="Bildirishnomalarni yopish">${icon("close")}</button>
+            <button type="button" class="of-link-btn of-notify__all" data-notify-all hidden>${t("notify.markAll", "Barchasini o‘qilgan deb belgilash")}</button>
+            <button type="button" class="of-icon-btn of-notify__close" data-notify-close aria-label="${t("notify.close", "Bildirishnomalarni yopish")}">${icon("close")}</button>
           </div>
         </div>
         <p class="of-sr-only" aria-live="polite" data-notify-live></p>
@@ -131,8 +132,8 @@ function render() {
 
   els.dot.hidden = !(status === "ready" && unread > 0);
   els.bell.setAttribute("aria-label", status === "ready" && unread
-    ? `Bildirishnomalar — ${unread} ta o‘qilmagan`
-    : "Bildirishnomalar");
+    ? t("notify.unread", "Bildirishnomalar — {n} ta o‘qilmagan", { n: unread })
+    : t("notify.title", "Bildirishnomalar"));
   els.all.hidden = !(status === "ready" && unread > 0);
 
   if (status === "loading" || status === "idle") {

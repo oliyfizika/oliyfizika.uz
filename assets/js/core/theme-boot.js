@@ -1,4 +1,4 @@
-/* OliyFizika.uz — tema va sidebar holatini sahifa chizilishidan OLDIN qo'llaydi (miltillashsiz).
+/* OliyFizika.uz — tema, til va sidebar holatini sahifa chizilishidan OLDIN qo'llaydi (miltillashsiz).
    <head> ichida oddiy (module emas) skript sifatida ulanadi. */
 (function () {
   var root = document.documentElement;
@@ -13,6 +13,8 @@
   var pref = read("theme", "light");
   var dark = pref === "dark" || (pref === "system" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
   root.setAttribute("data-theme", dark ? "dark" : "light");
+  var lang = read("lang", "uz");
+  root.setAttribute("lang", lang === "ru" || lang === "en" ? lang : "uz");
   if (read("sidebarCollapsed", false) === true) root.setAttribute("data-sidebar", "collapsed");
   root.classList.add("of-shell");
 })();

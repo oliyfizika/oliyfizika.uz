@@ -6,6 +6,8 @@
 // • prefers-reduced-motion: animatsiyasiz almashadi (CSS) va sekinroq.
 // • Ekran o'quvchi uchun barcha xabarlar sr-only ro'yxatda; aylanayotgan matn aria-hidden (har 4 s e'lon qilinmaydi).
 // ==========================================================================
+import { t } from "../core/i18n.js";
+
 const root = document.querySelector("[data-promo]");
 
 function mount(el) {
@@ -57,7 +59,7 @@ function mount(el) {
   pauseBtn?.addEventListener("click", () => {
     userPaused = !userPaused;
     pauseBtn.setAttribute("aria-pressed", String(userPaused));
-    pauseBtn.setAttribute("aria-label", userPaused ? "Xabarlar almashinuvini davom ettirish" : "Xabarlar almashinuvini to‘xtatish");
+    pauseBtn.setAttribute("aria-label", userPaused ? t("home.promoResume", "Xabarlar almashinuvini davom ettirish") : t("home.promoPause", "Xabarlar almashinuvini to‘xtatish"));
     sync();
   });
   const enter = () => { hover = true; sync(); };

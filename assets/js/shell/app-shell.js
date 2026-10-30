@@ -20,7 +20,8 @@
 import { icon } from "../ui/icons.js";
 import { toast, friendlyError } from "../ui/feedback.js";
 import { NAV_GROUPS, BOTTOM_NAV, ALL_ITEMS, ADMIN_NAV_GROUPS, ADMIN_BOTTOM_NAV, ADMIN_ENTRY } from "./nav-config.js";
-import { applyTheme, writePref } from "../core/prefs.js";
+import { applyTheme, writePref, resolveTheme, setThemePref } from "../core/prefs.js";
+import { t, applyI18n, LANGS, getLang, setLang } from "../core/i18n.js";
 import { onSession, displayName, initials, signOutUser } from "../core/session.js";
 import { showAuthGate } from "../auth/auth-gate.js";
 import { notificationMarkup, mountNotifications, clearNotificationCache } from "../notifications/notification-center.js";
@@ -34,7 +35,12 @@ const html = document.documentElement;
 // Admin System 1.0: <body data-shell-mode="admin"> — alohida admin menyusi (talaba menyusi bilan aralashmaydi).
 const ADMIN_MODE = body.dataset.shellMode === "admin";
 const GROUPS = ADMIN_MODE ? ADMIN_NAV_GROUPS : NAV_GROUPS;
-const ITEMS = GROUPS.flatMap((group) => group.items);
+// Menyu matnlari tanlangan tilga o'tkaziladi (nav-config o'zbekcha manba bo'lib qoladi)
+const trItem = (item) => ({ ...item, label: t(`nav.${item.id}`, item.label) });
+const TR_GROUPS = GROUPS.map((group) => ({ ...group, label: t(`navgroup.${group.id}`, group.label), items: group.items.map(trItem) }));
+const ITEMS = TR_GROUPS.flatMap((group) => group.items);
+const TR_ALL_ITEMS = ALL_ITEMS.map(trItem);
+const TR_ADMIN_ENTRY = trItem(ADMIN_ENTRY);
 const BOTTOM = ADMIN_MODE ? ADMIN_BOTTOM_NAV : BOTTOM_NAV;
 const isAdminProfile = (state) => state.status === "authenticated" && state.profile?.role === "admin";
 
@@ -62,7 +68,7 @@ function findActiveItem(rel) {
 }
 
 function pageTitle(active, rel) {
-  if (body.dataset.shellTitle) return body.dataset.shellTitle;
+  if (body.dataset.shellTitle) return t(body.dataset.i18nTitle, body.dataset.shellTitle);
   if (active && rel === active.href) return active.label;
   const h1 = document.querySelector(".of-page-host h1");
   const fromH1 = h1?.textContent.replace(/\s+/g, " ").trim();
@@ -74,6 +80,7 @@ function pageTitle(active, rel) {
 // ---------------------------------------------------------------------------
 function mount() {
   applyTheme();
+  applyI18n();
   const rel = currentRelPath();
   const active = findActiveItem(rel);
   const isProtectedPage = Boolean(active?.protected) && body.dataset.shellPublic !== "true";
@@ -94,7 +101,7 @@ function mount() {
   const skip = document.createElement("a");
   skip.className = "of-skip-link";
   skip.href = "#of-main";
-  skip.textContent = "Asosiy kontentga o‘tish";
+  skip.textContent = t("shell.skip", "Asosiy kontentga o‘tish");
 
   const sidebar = buildSidebar(active);
   const backdrop = document.createElement("div");
@@ -118,6 +125,7 @@ function mount() {
 
   bindSidebar(sidebar, backdrop);
   bindHeader(header);
+  bindThemeAndLang(header);
   bindSearch(header);
   bindTooltips(sidebar);
 
@@ -175,7 +183,7 @@ function logoMarkup() {
       <span class="of-admin-badge">Admin</span>
     </a>`;
   }
-  return `<a class="of-logo" href="${url("index.html")}" aria-label="OliyFizika.uz — bosh sahifa">
+  return `<a class="of-logo" href="${url("index.html")}" aria-label="${t("shell.home", "OliyFizika.uz — bosh sahifa")}">
       <span class="of-logo__mark">${icon("atom")}</span>
       <span class="of-logo__text"><b>Oliy</b>Fizika<i>.uz</i></span>
     </a>`;
@@ -184,10 +192,10 @@ function logoMarkup() {
 function adminEntryMarkup() {
   return `
     <div class="of-nav-group" role="group" aria-labelledby="of-nav-admin-entry" data-admin-entry hidden>
-      <p class="of-nav-group__label" id="of-nav-admin-entry">Administrator</p>
+      <p class="of-nav-group__label" id="of-nav-admin-entry">${t("shell.admin", "Administrator")}</p>
       <ul><li>
-        <a class="of-nav-link" href="${url(ADMIN_ENTRY.href)}" data-nav-id="${ADMIN_ENTRY.id}" data-label="${ADMIN_ENTRY.label}">
-          ${icon(ADMIN_ENTRY.icon)}<span class="of-nav-link__label">${ADMIN_ENTRY.label}</span>
+        <a class="of-nav-link" href="${url(TR_ADMIN_ENTRY.href)}" data-nav-id="${TR_ADMIN_ENTRY.id}" data-label="${TR_ADMIN_ENTRY.label}">
+          ${icon(TR_ADMIN_ENTRY.icon)}<span class="of-nav-link__label">${TR_ADMIN_ENTRY.label}</span>
         </a>
       </li></ul>
     </div>`;
@@ -197,9 +205,9 @@ function buildSidebar(active) {
   const aside = document.createElement("aside");
   aside.className = "of-sidebar of-chrome";
   aside.id = "of-sidebar";
-  aside.setAttribute("aria-label", "Asosiy navigatsiya");
+  aside.setAttribute("aria-label", t("shell.navMain", "Asosiy navigatsiya"));
 
-  const groups = GROUPS.map((group) => `
+  const groups = TR_GROUPS.map((group) => `
     <div class="of-nav-group" role="group" aria-labelledby="of-nav-${group.id}">
       <p class="of-nav-group__label" id="of-nav-${group.id}">${group.label}</p>
       <ul>
@@ -219,12 +227,12 @@ function buildSidebar(active) {
   aside.innerHTML = `
     <div class="of-sidebar__brand">
       ${logoMarkup()}
-      <button type="button" class="of-icon-btn of-drawer-close" data-drawer-close aria-label="Menyuni yopish">${icon("close")}</button>
+      <button type="button" class="of-icon-btn of-drawer-close" data-drawer-close aria-label="${t("shell.closeMenu", "Menyuni yopish")}">${icon("close")}</button>
     </div>
-    <nav class="of-sidebar__scroll" aria-label="Bo‘limlar">${groups}${ADMIN_MODE ? "" : adminEntryMarkup()}</nav>
+    <nav class="of-sidebar__scroll" aria-label="${t("shell.navSections", "Bo‘limlar")}">${groups}${ADMIN_MODE ? "" : adminEntryMarkup()}</nav>
     <div class="of-sidebar__footer">
       <button type="button" class="of-btn of-btn--ghost of-collapse-btn" data-sidebar-toggle aria-controls="of-sidebar">
-        ${icon("chevronLeft")}<span>Yig‘ish</span>
+        ${icon("chevronLeft")}<span>${t("shell.collapse", "Yig‘ish")}</span>
       </button>
     </div>`;
   return aside;
@@ -236,7 +244,7 @@ function bindSidebar(sidebar, backdrop) {
   const syncToggle = () => {
     const collapsed = html.dataset.sidebar === "collapsed";
     toggle.setAttribute("aria-expanded", String(!collapsed));
-    toggle.setAttribute("aria-label", collapsed ? "Menyuni yoyish" : "Menyuni yig‘ish");
+    toggle.setAttribute("aria-label", collapsed ? t("shell.expandMenu", "Menyuni yoyish") : t("shell.collapseMenu", "Menyuni yig‘ish"));
   };
   syncToggle();
   toggle.addEventListener("click", () => {
@@ -318,13 +326,13 @@ function buildHeader(active, rel) {
   header.className = "of-header of-chrome";
 
   // Ixtiyoriy: <body data-shell-parent="home"> — bo'lim ildiz sahifasida ham "Ota bo'lim › Sahifa" ko'rsatiladi
-  const parent = body.dataset.shellParent ? [...ITEMS, ...ALL_ITEMS].find((item) => item.id === body.dataset.shellParent) : null;
+  const parent = body.dataset.shellParent ? [...ITEMS, ...TR_ALL_ITEMS].find((item) => item.id === body.dataset.shellParent) : null;
   const crumbItem = parent || active;
   const showCrumb = Boolean(parent) || (active && active.id !== "home" && rel !== active.href);
   header.innerHTML = `
-    <button type="button" class="of-icon-btn of-header__menu" data-drawer-open aria-controls="of-sidebar" aria-expanded="false" aria-label="Menyuni ochish">${icon("menu")}</button>
+    <button type="button" class="of-icon-btn of-header__menu" data-drawer-open aria-controls="of-sidebar" aria-expanded="false" aria-label="${t("shell.openMenu", "Menyuni ochish")}">${icon("menu")}</button>
     <div class="of-header__context">
-      ${showCrumb ? `<nav class="of-breadcrumb" aria-label="Joylashuv">
+      ${showCrumb ? `<nav class="of-breadcrumb" aria-label="${t("shell.breadcrumb", "Joylashuv")}">
           <a href="${url(crumbItem.href)}">${crumbItem.label}</a>${icon("chevronRight")}<span aria-current="page" data-crumb-current></span>
         </nav>` : ""}
       <p class="of-header__title" data-of-title></p>
@@ -332,13 +340,15 @@ function buildHeader(active, rel) {
     <div class="of-header__search" data-of-search hidden>
       <label class="of-search">
         ${icon("search")}
-        <span class="of-sr-only" data-search-label>Qidirish</span>
+        <span class="of-sr-only" data-search-label>${t("shell.search", "Qidirish")}</span>
         <input type="search" autocomplete="off" spellcheck="false" enterkeyhint="search">
       </label>
       <p class="of-sr-only" aria-live="polite" data-search-status></p>
     </div>
     <div class="of-header__actions">
-      <button type="button" class="of-icon-btn of-header__search-toggle" data-search-toggle aria-label="Qidiruvni ochish" hidden>${icon("search")}</button>
+      <button type="button" class="of-icon-btn of-header__search-toggle" data-search-toggle aria-label="${t("shell.openSearch", "Qidiruvni ochish")}" hidden>${icon("search")}</button>
+      ${langMarkup()}
+      <button type="button" class="of-icon-btn of-theme-toggle" data-theme-toggle></button>
       <div class="of-row" data-account>
         <span class="of-skeleton of-header__skeleton" aria-hidden="true"></span>
       </div>
@@ -375,6 +385,55 @@ function bindHeader(header) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Tun/kun rejimi tugmasi va til tanlagich (har doim — mehmon uchun ham — ko'rinadi)
+// ---------------------------------------------------------------------------
+function langMarkup() {
+  const cur = getLang();
+  const short = LANGS.find((l) => l.code === cur).short;
+  return `
+    <div class="of-lang">
+      <button type="button" class="of-icon-btn of-lang__btn" data-popover data-lang-btn aria-controls="of-lang-menu" aria-expanded="false" aria-haspopup="menu" aria-label="${t("shell.language", "Sayt tili")}: ${short}">
+        ${icon("globe")}<span class="of-lang__code" aria-hidden="true">${short}</span>
+      </button>
+      <div class="of-popover of-lang__menu" id="of-lang-menu" role="menu" hidden>
+        ${LANGS.map((l) => `<button type="button" class="of-menu-item" role="menuitemradio" aria-checked="${l.code === cur}" lang="${l.code}" data-lang="${l.code}">
+          <span class="of-lang__short" aria-hidden="true">${l.short}</span>${l.label}${l.code === cur ? icon("check", { className: "of-lang__check" }) : ""}</button>`).join("")}
+      </div>
+    </div>`;
+}
+
+function syncThemeToggle() {
+  const btn = document.querySelector("[data-theme-toggle]");
+  if (!btn) return;
+  const dark = resolveTheme() === "dark";
+  // Hozirgi rejimga qarama-qarshi rejim belgisi: kunduzi — oy, tunda — quyosh
+  btn.innerHTML = icon(dark ? "sun" : "moon");
+  const label = dark ? t("shell.themeToLight", "Kunduzgi rejimga o‘tish") : t("shell.themeToDark", "Tungi rejimga o‘tish");
+  btn.setAttribute("aria-label", label);
+  btn.title = label;
+  btn.setAttribute("aria-pressed", String(dark));
+}
+
+function bindThemeAndLang(header) {
+  syncThemeToggle();
+  header.querySelector("[data-theme-toggle]").addEventListener("click", () => {
+    setThemePref(resolveTheme() === "dark" ? "light" : "dark");
+  });
+  document.addEventListener("of:themechange", syncThemeToggle);
+
+  const langBtn = header.querySelector("[data-lang-btn]");
+  langBtn.addEventListener("click", () => {
+    const open = langBtn.getAttribute("aria-expanded") !== "true";
+    header.querySelectorAll("[data-popover]").forEach((other) => other !== langBtn && setPopover(other, false));
+    setPopover(langBtn, open);
+  });
+  header.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => {
+    setPopover(langBtn, false);
+    setLang(b.dataset.lang);
+  }));
+}
+
 function setPopover(button, open) {
   const pop = document.getElementById(button.getAttribute("aria-controls"));
   if (!pop) return;
@@ -390,8 +449,8 @@ function renderAccount(header, state) {
   if (state.status !== "authenticated") {
     box.innerHTML = `
       <div class="of-guest-actions">
-        <button type="button" class="of-btn of-btn--ghost" data-auth="login">${icon("login")}Kirish</button>
-        <button type="button" class="of-btn of-btn--primary" data-auth="register">Ro‘yxatdan o‘tish</button>
+        <button type="button" class="of-btn of-btn--ghost" data-auth="login">${icon("login")}${t("shell.login", "Kirish")}</button>
+        <button type="button" class="of-btn of-btn--primary" data-auth="register">${t("shell.register", "Ro‘yxatdan o‘tish")}</button>
       </div>`;
     box.querySelectorAll("[data-auth]").forEach((b) => b.addEventListener("click", () => openAuth(b.dataset.auth)));
     return;
@@ -404,7 +463,7 @@ function renderAccount(header, state) {
   box.innerHTML = `
     ${notificationMarkup()}
     <div class="of-user">
-      <button type="button" class="of-user__btn" data-popover aria-controls="of-user-menu" aria-expanded="false" aria-haspopup="menu" aria-label="Profil menyusi: ${escapeAttr(name)}">
+      <button type="button" class="of-user__btn" data-popover aria-controls="of-user-menu" aria-expanded="false" aria-haspopup="menu" aria-label="${escapeAttr(t("shell.profileMenu", "Profil menyusi: {name}", { name }))}">
         <span class="of-avatar" aria-hidden="true">${escapeHtml(initials(state))}</span>
         <span class="of-user__name">${escapeHtml(name)}</span>
         ${icon("chevronDown")}
@@ -415,21 +474,21 @@ function renderAccount(header, state) {
           <div><p class="of-user-card__name">${escapeHtml(name)}</p><p class="of-user-card__email">${escapeHtml(email)}</p></div>
         </div>
         <div class="of-menu-sep"></div>
-        <a class="of-menu-item" role="menuitem" href="${url("dashboard/profile.html")}">${icon("user")}Profil</a>
-        <a class="of-menu-item" role="menuitem" href="${url("dashboard/natijalar.html")}">${icon("chart")}Mening natijalarim</a>
-        ${hasPassword ? `<a class="of-menu-item" role="menuitem" href="${url("dashboard/settings.html#security")}">${icon("key")}Parolni o‘zgartirish</a>` : ""}
-        <a class="of-menu-item" role="menuitem" href="${url("dashboard/settings.html")}">${icon("settings")}Sozlamalar</a>
-        ${ADMIN_MODE ? `<a class="of-menu-item" role="menuitem" href="${url("index.html")}">${icon("home")}Saytga qaytish</a>`
-          : isAdminProfile(state) ? `<a class="of-menu-item" role="menuitem" href="${url(ADMIN_ENTRY.href)}" data-admin-menu>${icon(ADMIN_ENTRY.icon)}${ADMIN_ENTRY.label}</a>` : ""}
+        <a class="of-menu-item" role="menuitem" href="${url("dashboard/profile.html")}">${icon("user")}${t("shell.profile", "Profil")}</a>
+        <a class="of-menu-item" role="menuitem" href="${url("dashboard/natijalar.html")}">${icon("chart")}${t("shell.results", "Mening natijalarim")}</a>
+        ${hasPassword ? `<a class="of-menu-item" role="menuitem" href="${url("dashboard/settings.html#security")}">${icon("key")}${t("shell.changePassword", "Parolni o‘zgartirish")}</a>` : ""}
+        <a class="of-menu-item" role="menuitem" href="${url("dashboard/settings.html")}">${icon("settings")}${t("shell.settings", "Sozlamalar")}</a>
+        ${ADMIN_MODE ? `<a class="of-menu-item" role="menuitem" href="${url("index.html")}">${icon("home")}${t("shell.backToSite", "Saytga qaytish")}</a>`
+          : isAdminProfile(state) ? `<a class="of-menu-item" role="menuitem" href="${url(TR_ADMIN_ENTRY.href)}" data-admin-menu>${icon(TR_ADMIN_ENTRY.icon)}${TR_ADMIN_ENTRY.label}</a>` : ""}
         <div class="of-menu-sep"></div>
-        <button type="button" class="of-menu-item of-menu-item--danger" role="menuitem" data-logout>${icon("logout")}Chiqish</button>
+        <button type="button" class="of-menu-item of-menu-item--danger" role="menuitem" data-logout>${icon("logout")}${t("shell.logout", "Chiqish")}</button>
       </div>
     </div>`;
 
   box.querySelectorAll("[data-popover]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const open = btn.getAttribute("aria-expanded") !== "true";
-      box.querySelectorAll("[data-popover]").forEach((other) => other !== btn && setPopover(other, false));
+      header.querySelectorAll("[data-popover]").forEach((other) => other !== btn && setPopover(other, false));
       setPopover(btn, open);
     });
   });
@@ -449,7 +508,7 @@ function renderAccount(header, state) {
     try {
       await signOutUser();
       clearNotificationCache();
-      toast("Hisobdan chiqdingiz.");
+      toast(t("shell.loggedOut", "Hisobdan chiqdingiz."));
       const active = findActiveItem(currentRelPath());
       if (active?.protected) location.assign(url("index.html"));
     } catch (error) {
@@ -483,7 +542,7 @@ function bindSearch(header) {
   // Deklarativ sozlama: <body data-shell-search="..." data-search-target="#list">
   if (body.dataset.shellSearch) {
     setSearch({
-      placeholder: body.dataset.shellSearch,
+      placeholder: t(body.dataset.i18nSearch, body.dataset.shellSearch),
       target: body.dataset.searchTarget || null,
     });
   }
@@ -502,7 +561,7 @@ function runSearch(query) {
   const status = document.querySelector("[data-search-status]");
   if (typeof searchHandler === "function") {
     const count = searchHandler(q, query);
-    if (status && typeof count === "number") status.textContent = q ? `${count} ta natija topildi` : "";
+    if (status && typeof count === "number") status.textContent = q ? t("shell.searchCount", "{n} ta natija topildi", { n: count }) : "";
     return;
   }
 }
@@ -512,7 +571,7 @@ function runSearch(query) {
  * @param {{ placeholder?: string, label?: string, target?: string|HTMLElement, onQuery?: (q:string, raw:string)=>number|void }} opts
  *   `target` berilsa: shu konteyner ichidagi [data-search-item] elementlar matn bo'yicha filtrlanadi.
  */
-export function setSearch({ placeholder = "Qidirish…", label, target, onQuery } = {}) {
+export function setSearch({ placeholder = t("shell.searchPlaceholder", "Qidirish…"), label, target, onQuery } = {}) {
   const box = document.querySelector(".of-header [data-of-search]");
   if (!box) return;
   box.hidden = false;
@@ -533,7 +592,8 @@ function filterItems(target, q) {
   if (!container) return 0;
   let visible = 0;
   container.querySelectorAll("[data-search-item]").forEach((el) => {
-    const text = normalize(el.dataset.searchText || el.textContent);
+    // data-search-text (o'zbekcha kalit so'zlar) + ko'rinib turgan matn — boshqa tillarda ham topiladi
+    const text = normalize(`${el.dataset.searchText || ""} ${el.textContent}`);
     const match = !q || text.includes(q);
     el.hidden = !match;
     if (match) visible++;
@@ -545,7 +605,7 @@ function filterItems(target, q) {
       note.className = "of-search-empty of-subtle";
       container.append(note);
     }
-    note.textContent = "Hech narsa topilmadi. Boshqa so‘z bilan urinib ko‘ring.";
+    note.textContent = t("shell.searchEmpty", "Hech narsa topilmadi. Boshqa so‘z bilan urinib ko‘ring.");
   } else {
     note?.remove();
   }
@@ -565,14 +625,14 @@ export function setTitle(title) {
 function buildBottomNav(active) {
   const nav = document.createElement("nav");
   nav.className = "of-bottom-nav of-chrome";
-  nav.setAttribute("aria-label", "Tezkor navigatsiya");
+  nav.setAttribute("aria-label", t("shell.quickNav", "Tezkor navigatsiya"));
   const short = { home: "Bosh sahifa", "umumiy-fizika": "Fizika", "milliy-sertifikat": "Sertifikat", natijalar: "Natijalar",
     "admin-dashboard": "Dashboard", "admin-users": "Userlar", "admin-results": "Natijalar", "admin-access": "Access" };
   nav.innerHTML = BOTTOM.map((id) => {
     const item = ITEMS.find((i) => i.id === id);
     return `<a href="${url(item.href)}" ${item.protected && !item.publicLanding ? 'data-of-protected="true"' : ""} ${active?.id === id ? 'aria-current="page"' : ""}>
-        ${icon(item.icon)}<span>${short[id] || item.label}</span></a>`;
-  }).join("") + `<button type="button" data-drawer-open aria-controls="of-sidebar" aria-expanded="false">${icon("menu")}<span>Menyu</span></button>`;
+        ${icon(item.icon)}<span>${short[id] ? t(`navshort.${id}`, short[id]) : item.label}</span></a>`;
+  }).join("") + `<button type="button" data-drawer-open aria-controls="of-sidebar" aria-expanded="false">${icon("menu")}<span>${t("shell.menu", "Menyu")}</span></button>`;
 
   nav.addEventListener("click", (event) => {
     const link = event.target.closest("a[data-of-protected='true']");
@@ -634,8 +694,8 @@ function escapeHtml(value) {
 function escapeAttr(value) { return escapeHtml(value); }
 
 // Tema o'zgarsa (boshqa tabda) — sinxronlash
-window.addEventListener("storage", (event) => {
-  if (event.key === "oliyfizika:theme") applyTheme();
+  window.addEventListener("storage", (event) => {
+  if (event.key === "oliyfizika:theme") { applyTheme(); syncThemeToggle(); }
 });
 
 // Ishga tushirish (barcha modul o'zgaruvchilari e'lon qilingandan keyin)
