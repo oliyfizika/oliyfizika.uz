@@ -199,6 +199,19 @@ html[data-sidebar="collapsed"] .of-collapse-btn svg { transform: rotate(180deg);
 .of-header__actions { display: flex; align-items: center; gap: 6px; flex: none; }
 .of-header__search-toggle { display: none; }
 
+/* Til tanlagich va tun/kun rejimi tugmasi */
+.of-lang { position: relative; }
+.of-lang__btn { width: auto; min-width: 40px; padding: 0 8px; grid-auto-flow: column; gap: 5px; }
+.of-lang__btn svg { width: 18px; height: 18px; }
+.of-lang__code { font: 700 0.75rem/1 var(--of-font-sans) !important; letter-spacing: 0.02em; }
+.of-lang__menu { min-width: 180px; }
+.of-lang__short { display: inline-grid; place-items: center; width: 28px; height: 22px; border-radius: var(--of-radius-sm); background: var(--of-surface-sunken); color: var(--of-text-2); font: 700 0.72rem/1 var(--of-font-sans) !important; }
+.of-lang__menu [aria-checked="true"] { color: var(--of-primary) !important; font-weight: 650; }
+.of-lang__menu [aria-checked="true"] .of-lang__short { background: var(--of-primary-soft); color: var(--of-primary); }
+.of-lang__menu .of-lang__check { margin-left: auto; color: var(--of-primary); }
+.of-theme-toggle svg { transition: transform var(--of-dur-base) var(--of-ease-out); }
+.of-theme-toggle:hover svg { transform: rotate(-18deg); }
+
 .of-count-badge {
   position: absolute; top: 4px; right: 4px;
   min-width: 18px; height: 18px; padding: 0 5px;
@@ -348,6 +361,8 @@ html[data-sidebar="collapsed"] .of-collapse-btn svg { transform: rotate(180deg);
   .of-user__name, .of-user__btn > svg { display: none; }
   .of-user__btn { padding: 0 4px; }
   .of-guest-actions .of-btn--ghost { display: none; }
+  .of-lang__btn svg { display: none; }
+  .of-header__actions { gap: 2px; }
   .of-page { padding: 18px 16px 32px; }
 
   .of-bottom-nav {

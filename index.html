@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oliy Fizika – Fizika darslari, testlar, attestatsiya va milliy sertifikat</title>
+<title data-i18n="home.docTitle">Oliy Fizika – Fizika darslari, testlar, attestatsiya va milliy sertifikat</title>
 <meta name="description" content="OliyFizika.uz - fizika darslari, attestatsiya testlari, milliy sertifikat tayyorgarligi, olimpiada masalalari, interaktiv simulyatorlar va quizlar platformasi.">
 <meta name="keywords" content="oliy fizika, fizika, fizika testlari, attestatsiya, milliy sertifikat, fizika olimpiadasi, fizika darslari, fizika quiz">
 <meta name="robots" content="index, follow">
@@ -25,63 +25,63 @@
 <script type="module" src="assets/js/home/attestation-promo.js"></script>
 </head>
 
-<body class="of-ui" data-shell-title="Bosh sahifa" data-shell-search="Bo‘lim yoki kursni qidirish…" data-search-target="#home">
+<body class="of-ui" data-shell-title="Bosh sahifa" data-i18n-title="nav.home" data-i18n-search="home.search" data-shell-search="Bo‘lim yoki kursni qidirish…" data-search-target="#home">
 
 <div class="of-page of-container of-home" id="home" data-auth-state="loading">
 
   <!-- ============================ HERO ============================ -->
   <section class="of-hero of-card" aria-labelledby="heroTitle">
     <div class="of-hero__text">
-      <p class="of-hero__eyebrow"><span data-icon="atom"></span>OliyFizika.uz · fizika platformasi</p>
-      <h1 class="of-hero__title" id="heroTitle" data-hero-title>Fizikani o‘rganing, sinang va tajriba qiling.</h1>
-      <p class="of-hero__lead" data-hero-lead>Video darslar, testlar, interaktiv simulyatsiyalar va milliy sertifikatga tayyorgarlik — barchasi bir joyda.</p>
+      <p class="of-hero__eyebrow"><span data-icon="atom"></span><span data-i18n="home.eyebrow">OliyFizika.uz · fizika platformasi</span></p>
+      <h1 class="of-hero__title" id="heroTitle" data-hero-title data-i18n="home.heroTitle">Fizikani o‘rganing, sinang va tajriba qiling.</h1>
+      <p class="of-hero__lead" data-hero-lead data-i18n="home.heroLead">Video darslar, testlar, interaktiv simulyatsiyalar va milliy sertifikatga tayyorgarlik — barchasi bir joyda.</p>
       <div class="of-hero__actions" data-guest-only>
-        <button type="button" class="of-btn of-btn--primary of-btn--lg" data-auth-open="register">Ro‘yxatdan o‘tish</button>
-        <a class="of-btn of-btn--lg" href="#sections">Bo‘limlarni ko‘rish</a>
+        <button type="button" class="of-btn of-btn--primary of-btn--lg" data-auth-open="register" data-i18n="home.register">Ro‘yxatdan o‘tish</button>
+        <a class="of-btn of-btn--lg" href="#sections" data-i18n="home.viewSections">Bo‘limlarni ko‘rish</a>
       </div>
     </div>
 
     <!-- Attestatsiya — Fizika kursi (oldingi simulyatsiya promo bloki o'rnida; simulyatsiyalar bo'limi o'zgarmagan) -->
     <aside class="of-promo of-physics-grid" data-promo aria-labelledby="promoTitle">
       <div class="of-promo__top">
-        <span class="of-promo__badge"><span data-icon="certificate"></span>Kurs</span>
-        <button type="button" class="of-icon-btn of-promo__pause" data-promo-pause aria-pressed="false" aria-label="Xabarlar almashinuvini to‘xtatish">
+        <span class="of-promo__badge"><span data-icon="certificate"></span><span data-i18n="home.promoBadge">Kurs</span></span>
+        <button type="button" class="of-icon-btn of-promo__pause" data-promo-pause aria-pressed="false" aria-label="Xabarlar almashinuvini to‘xtatish" data-i18n-attr="aria-label:home.promoPause">
           <span class="of-promo__icon-pause" data-icon="pause"></span><span class="of-promo__icon-play" data-icon="play"></span>
         </button>
       </div>
-      <h2 class="of-promo__title" id="promoTitle">ATTESTATSIYA — FIZIKA</h2>
+      <h2 class="of-promo__title" id="promoTitle" data-i18n="home.promoTitle">ATTESTATSIYA — FIZIKA</h2>
       <div class="of-promo__stage">
-        <p class="of-promo__msg" data-promo-msg aria-hidden="true">32 kunlik tayyorgarlik challenge</p>
+        <p class="of-promo__msg" data-promo-msg aria-hidden="true" data-i18n="home.promo1">32 kunlik tayyorgarlik challenge</p>
       </div>
-      <ul class="of-sr-only" data-promo-list aria-label="Kurs haqida">
-        <li>32 kunlik tayyorgarlik challenge</li>
-        <li>1000+ test savollari</li>
-        <li>Har kuni yangi attestatsiya testi</li>
-        <li>Natijalar va shaxsiy statistika</li>
-        <li>Test jarayonida kalkulyator</li>
-        <li>Fizika attestatsiyasiga tizimli tayyorgarlik</li>
+      <ul class="of-sr-only" data-promo-list aria-label="Kurs haqida" data-i18n-attr="aria-label:home.promoAbout">
+        <li data-i18n="home.promo1">32 kunlik tayyorgarlik challenge</li>
+        <li data-i18n="home.promo2">1000+ test savollari</li>
+        <li data-i18n="home.promo3">Har kuni yangi attestatsiya testi</li>
+        <li data-i18n="home.promo4">Natijalar va shaxsiy statistika</li>
+        <li data-i18n="home.promo5">Test jarayonida kalkulyator</li>
+        <li data-i18n="home.promo6">Fizika attestatsiyasiga tizimli tayyorgarlik</li>
       </ul>
       <ol class="of-promo__dots" data-promo-dots aria-hidden="true"></ol>
-      <a class="of-btn of-btn--primary of-btn--lg of-promo__cta" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" data-promo-cta>📲 Kursga yozilish</a>
+      <a class="of-btn of-btn--primary of-btn--lg of-promo__cta" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" data-promo-cta data-i18n="home.promoCta">📲 Kursga yozilish</a>
     </aside>
   </section>
 
   <!-- ====================== STATISTIKA (kirgan) ====================== -->
   <section class="of-home-section" data-auth-only hidden aria-labelledby="statsTitle">
-    <h2 class="of-sr-only" id="statsTitle">Mening statistikam</h2>
+    <h2 class="of-sr-only" id="statsTitle" data-i18n="home.myStats">Mening statistikam</h2>
     <ul class="of-stats" data-stats aria-busy="true">
-      <li class="of-stat"><span class="of-stat__icon of-stat__icon--blue" data-icon="book"></span><span class="of-stat__value of-num" data-stat="topics"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Yakunlangan mavzular</span></li>
-      <li class="of-stat"><span class="of-stat__icon of-stat__icon--green" data-icon="clipboard"></span><span class="of-stat__value of-num" data-stat="tests"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Topshirilgan testlar</span></li>
-      <li class="of-stat"><span class="of-stat__icon of-stat__icon--orange" data-icon="bolt"></span><span class="of-stat__value of-num" data-stat="xp"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">XP ball</span></li>
-      <li class="of-stat"><span class="of-stat__icon of-stat__icon--purple" data-icon="medal"></span><span class="of-stat__value of-num" data-stat="level"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label">Daraja</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--blue" data-icon="book"></span><span class="of-stat__value of-num" data-stat="topics"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label" data-i18n="home.statTopics">Yakunlangan mavzular</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--green" data-icon="clipboard"></span><span class="of-stat__value of-num" data-stat="tests"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label" data-i18n="home.statTests">Topshirilgan testlar</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--orange" data-icon="bolt"></span><span class="of-stat__value of-num" data-stat="xp"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label" data-i18n="home.statXp">XP ball</span></li>
+      <li class="of-stat"><span class="of-stat__icon of-stat__icon--purple" data-icon="medal"></span><span class="of-stat__value of-num" data-stat="level"><span class="of-skeleton of-skeleton--title"></span></span><span class="of-stat__label" data-i18n="home.statLevel">Daraja</span></li>
     </ul>
   </section>
 
   <!-- ====================== MENING PROGRESSIM (kirgan) ====================== -->
   <section class="of-home-section" data-auth-only hidden aria-labelledby="progressTitle">
     <div class="of-section-title">
-      <h2 id="progressTitle">Mening progressim</h2>
-      <a class="of-link-more" href="dashboard/natijalar.html">Barcha natijalar <span data-icon="arrowRight"></span></a>
+      <h2 id="progressTitle" data-i18n="home.myProgress">Mening progressim</h2>
+      <a class="of-link-more" href="dashboard/natijalar.html"><span data-i18n="home.allResults">Barcha natijalar</span> <span data-icon="arrowRight"></span></a>
     </div>
     <div class="of-progress-board" data-progress aria-busy="true">
       <div class="of-card of-card--pad of-course-total">
@@ -101,12 +101,12 @@
     <div class="of-guest-cta of-card">
       <span class="of-guest-cta__icon" data-icon="chart"></span>
       <div class="of-guest-cta__text">
-        <h2 id="guestCtaTitle">Progressingizni kuzatish uchun ro‘yxatdan o‘ting.</h2>
-        <p class="of-muted">Har bir mavzu, test natijasi va XP ballaringiz saqlanadi — istalgan qurilmadan davom ettirasiz.</p>
+        <h2 id="guestCtaTitle" data-i18n="home.guestCtaTitle">Progressingizni kuzatish uchun ro‘yxatdan o‘ting.</h2>
+        <p class="of-muted" data-i18n="home.guestCtaText">Har bir mavzu, test natijasi va XP ballaringiz saqlanadi — istalgan qurilmadan davom ettirasiz.</p>
       </div>
       <div class="of-guest-cta__actions">
-        <button type="button" class="of-btn of-btn--primary" data-auth-open="register">Ro‘yxatdan o‘tish</button>
-        <button type="button" class="of-btn" data-auth-open="login">Kirish</button>
+        <button type="button" class="of-btn of-btn--primary" data-auth-open="register" data-i18n="home.register">Ro‘yxatdan o‘tish</button>
+        <button type="button" class="of-btn" data-auth-open="login" data-i18n="home.login">Kirish</button>
       </div>
     </div>
   </section>
@@ -114,88 +114,88 @@
   <!-- ====================== BO'LIMLAR ====================== -->
   <section class="of-home-section" id="sections" aria-labelledby="sectionsTitle">
     <div class="of-section-title">
-      <h2 id="sectionsTitle">Bo‘limlar</h2>
+      <h2 id="sectionsTitle" data-i18n="home.sections">Bo‘limlar</h2>
     </div>
     <ul class="of-feature-grid" data-feature-grid>
       <li class="of-feature-item of-feature-item--wide" data-search-item data-search-text="umumiy fizika mexanika molekulyar fizika elektr magnetizm optika atom yadro video darslar testlar">
         <a class="of-feature of-card of-card--link" href="umumiy-fizika/umumiy-fizika.html">
           <span class="of-feature__icon of-feature__icon--blue" data-icon="atom"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Umumiy fizika</span>
-            <span class="of-feature__desc">Mexanika, molekulyar fizika, elektr, optika va atom-yadro fizikasi — video darslar va mavzu testlari.</span>
-            <span class="of-feature__chips" aria-hidden="true"><span>Mexanika</span><span>Molekulyar</span><span>Elektr</span><span>Optika</span><span>Atom</span></span>
+            <span class="of-feature__title" data-i18n="home.f1Title">Umumiy fizika</span>
+            <span class="of-feature__desc" data-i18n="home.f1Desc">Mexanika, molekulyar fizika, elektr, optika va atom-yadro fizikasi — video darslar va mavzu testlari.</span>
+            <span class="of-feature__chips" aria-hidden="true"><span data-i18n="home.f1Chip1">Mexanika</span><span data-i18n="home.f1Chip2">Molekulyar</span><span data-i18n="home.f1Chip3">Elektr</span><span data-i18n="home.f1Chip4">Optika</span><span data-i18n="home.f1Chip5">Atom</span></span>
           </span>
-          <span class="of-feature__action">Darslarni ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.f1Action">Darslarni ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item of-feature-item--wide" data-search-item data-search-text="milliy sertifikat mock test video yechim dtm imtihon">
         <a class="of-feature of-card of-card--link" href="milliy-sertifikat/milliy-sertifikat.html" data-protected>
           <span class="of-feature__icon of-feature__icon--green" data-icon="certificate"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Milliy sertifikat</span>
-            <span class="of-feature__desc">Interaktiv mock testlar, taymer bilan imtihon rejimi hamda video va PDF yechimlar.</span>
+            <span class="of-feature__title" data-i18n="home.f2Title">Milliy sertifikat</span>
+            <span class="of-feature__desc" data-i18n="home.f2Desc">Interaktiv mock testlar, taymer bilan imtihon rejimi hamda video va PDF yechimlar.</span>
           </span>
-          <span class="of-feature__action">Tayyorlanish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.f2Action">Tayyorlanish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item" data-search-item data-search-text="attestatsiya pedagogika testlari o'qituvchi">
         <a class="of-feature of-card of-card--link" href="attestatsiya/index.html" data-protected>
           <span class="of-feature__icon of-feature__icon--blue" data-icon="clipboard"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Attestatsiya</span>
-            <span class="of-feature__desc">O‘qituvchilar attestatsiyasi uchun fizika va pedagogika testlari.</span>
+            <span class="of-feature__title" data-i18n="home.f3Title">Attestatsiya</span>
+            <span class="of-feature__desc" data-i18n="home.f3Desc">O‘qituvchilar attestatsiyasi uchun fizika va pedagogika testlari.</span>
           </span>
-          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.open">Ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item" data-search-item data-search-text="olimpiada masalalar tayyorgarlik">
         <a class="of-feature of-card of-card--link" href="olimpiada/olimpiada.html" data-protected>
           <span class="of-feature__icon of-feature__icon--purple" data-icon="trophy"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Olimpiada</span>
-            <span class="of-feature__desc">Olimpiadaga tayyorgarlik uchun darslar va murakkab masalalar.</span>
+            <span class="of-feature__title" data-i18n="home.f4Title">Olimpiada</span>
+            <span class="of-feature__desc" data-i18n="home.f4Desc">Olimpiadaga tayyorgarlik uchun darslar va murakkab masalalar.</span>
           </span>
-          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.open">Ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item" data-search-item data-search-text="quizlar quiz test savollar tezkor">
         <a class="of-feature of-card of-card--link" href="quizs/quizs.html">
           <span class="of-feature__icon of-feature__icon--blue" data-icon="quiz"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Quizlar</span>
-            <span class="of-feature__desc">Har bir mavzu bo‘yicha qisqa quizlar bilan bilimingizni tekshiring.</span>
+            <span class="of-feature__title" data-i18n="home.f5Title">Quizlar</span>
+            <span class="of-feature__desc" data-i18n="home.f5Desc">Har bir mavzu bo‘yicha qisqa quizlar bilan bilimingizni tekshiring.</span>
           </span>
-          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.open">Ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item" data-search-item data-search-text="interaktiv o'yinlar o‘yin baraban arqon tortish formula so'z qidirish magnit">
         <a class="of-feature of-card of-card--link" href="interaktiv-oyinlar/interaktiv-oyinlar.html">
           <span class="of-feature__icon of-feature__icon--green" data-icon="gamepad"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Interaktiv o‘yinlar</span>
-            <span class="of-feature__desc">Formulalar, atamalar va qonunlarni o‘yin orqali mustahkamlang.</span>
+            <span class="of-feature__title" data-i18n="home.f6Title">Interaktiv o‘yinlar</span>
+            <span class="of-feature__desc" data-i18n="home.f6Desc">Formulalar, atamalar va qonunlarni o‘yin orqali mustahkamlang.</span>
           </span>
-          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.open">Ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item" data-search-item data-search-text="simulyatsiyalar simulyator tajriba mayatnik prujina nyuton kulon om lorens sinish">
         <a class="of-feature of-card of-card--link" href="simulations/simulations.html" data-protected>
           <span class="of-feature__icon of-feature__icon--blue" data-icon="flask"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Simulyatsiyalar</span>
-            <span class="of-feature__desc">Fizik hodisalarni interaktiv tajribalar orqali o‘rganing.</span>
+            <span class="of-feature__title" data-i18n="home.f7Title">Simulyatsiyalar</span>
+            <span class="of-feature__desc" data-i18n="home.f7Desc">Fizik hodisalarni interaktiv tajribalar orqali o‘rganing.</span>
           </span>
-          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.open">Ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
       <li class="of-feature-item" data-search-item data-search-text="kutubxona darsliklar ma'ruzalar masalalar to'plami laboratoriya prezentatsiyalar kitob">
         <a class="of-feature of-card of-card--link" href="kutubxona/kutubxona.html" data-protected>
           <span class="of-feature__icon of-feature__icon--green" data-icon="book"></span>
           <span class="of-feature__body">
-            <span class="of-feature__title">Kutubxona</span>
-            <span class="of-feature__desc">Darsliklar, ma’ruzalar, masalalar to‘plami, laboratoriya ishlari va prezentatsiyalar.</span>
+            <span class="of-feature__title" data-i18n="home.f8Title">Kutubxona</span>
+            <span class="of-feature__desc" data-i18n="home.f8Desc">Darsliklar, ma’ruzalar, masalalar to‘plami, laboratoriya ishlari va prezentatsiyalar.</span>
           </span>
-          <span class="of-feature__action">Ochish <span data-icon="arrowRight"></span></span>
+          <span class="of-feature__action"><span data-i18n="home.open">Ochish</span> <span data-icon="arrowRight"></span></span>
         </a>
       </li>
     </ul>
@@ -204,24 +204,24 @@
   <!-- ====================== PLATFORMA HAQIDA ====================== -->
   <section class="of-home-section of-about" aria-labelledby="aboutTitle">
     <div class="of-about__text">
-      <h2 id="aboutTitle">OliyFizika.uz haqida</h2>
-      <p class="of-muted">Fizika fanidan attestatsiya, milliy sertifikat va olimpiadaga tayyorlanish uchun zamonaviy ta’lim platformasi. Mavzular ketma-ket ochiladi: har bir mavzu testidan kamida 80% olsangiz, keyingisi ochiladi.</p>
-      <p class="of-subtle">Platforma asoschisi va muallif: Amirov Sarvar</p>
+      <h2 id="aboutTitle" data-i18n="home.aboutTitle">OliyFizika.uz haqida</h2>
+      <p class="of-muted" data-i18n="home.aboutText">Fizika fanidan attestatsiya, milliy sertifikat va olimpiadaga tayyorlanish uchun zamonaviy ta’lim platformasi. Mavzular ketma-ket ochiladi: har bir mavzu testidan kamida 80% olsangiz, keyingisi ochiladi.</p>
+      <p class="of-subtle" data-i18n="home.aboutAuthor">Platforma asoschisi va muallif: Amirov Sarvar</p>
     </div>
     <ul class="of-about__facts">
-      <li><span class="of-num" data-fact="lessons">—</span><span>video dars va mavzu</span></li>
-      <li><span class="of-num" data-fact="courses">—</span><span>umumiy fizika kursi</span></li>
-      <li data-fact-wrap="mock" hidden><span class="of-num" data-fact="mock">—</span><span>interaktiv mock test</span></li>
+      <li><span class="of-num" data-fact="lessons">—</span><span data-i18n="home.factLessons">video dars va mavzu</span></li>
+      <li><span class="of-num" data-fact="courses">—</span><span data-i18n="home.factCourses">umumiy fizika kursi</span></li>
+      <li data-fact-wrap="mock" hidden><span class="of-num" data-fact="mock">—</span><span data-i18n="home.factMock">interaktiv mock test</span></li>
     </ul>
   </section>
 
   <footer class="of-home-footer">
     <div class="of-home-footer__links">
-      <a href="https://t.me/oliyfizika_uz" target="_blank" rel="noopener noreferrer"><span data-icon="telegram"></span>Telegram kanal</a>
-      <a href="https://www.youtube.com/@OliyfizikaUz" target="_blank" rel="noopener noreferrer"><span data-icon="play"></span>YouTube kanal</a>
+      <a href="https://t.me/oliyfizika_uz" target="_blank" rel="noopener noreferrer"><span data-icon="telegram"></span><span data-i18n="home.telegram">Telegram kanal</span></a>
+      <a href="https://www.youtube.com/@OliyfizikaUz" target="_blank" rel="noopener noreferrer"><span data-icon="play"></span><span data-i18n="home.youtube">YouTube kanal</span></a>
       <a href="mailto:oliyfizika@gmail.com"><span data-icon="mail"></span>oliyfizika@gmail.com</a>
     </div>
-    <p class="of-subtle">© 2026 OliyFizika.uz · Barcha huquqlar himoyalangan</p>
+    <p class="of-subtle" data-i18n="home.rights">© 2026 OliyFizika.uz · Barcha huquqlar himoyalangan</p>
   </footer>
 </div>
 

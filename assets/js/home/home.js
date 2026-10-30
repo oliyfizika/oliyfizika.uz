@@ -11,6 +11,7 @@ import { getLearningSummary, totalLessons } from "../progress/progress-service.j
 import { COURSES } from "../../../umumiy-fizika/data/courses.js";
 import { mountProjectileSim } from "./projectile-sim.js";
 import { progressBar, courseItem, fillBars } from "../progress/progress-ui.js";
+import { t } from "../core/i18n.js";
 
 const home = document.getElementById("home");
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -73,8 +74,9 @@ function setMode(mode) {
     if (mode !== "authenticated" && !lock) {
       lock = document.createElement("span");
       lock.className = "of-feature__lock";
-      lock.innerHTML = `${icon("lock")}<span class="of-sr-only">Kirish talab qilinadi</span>`;
-      lock.title = "Kirish talab qilinadi";
+      const required = t("home.loginRequired", "Kirish talab qilinadi");
+      lock.innerHTML = `${icon("lock")}<span class="of-sr-only">${required}</span>`;
+      lock.title = required;
       action.before(lock);
     } else if (mode === "authenticated" && lock) {
       lock.remove();
@@ -86,23 +88,24 @@ function renderHero(state, summary) {
   const title = $("[data-hero-title]");
   const lead = $("[data-hero-lead]");
   if (state.status !== "authenticated") {
-    title.textContent = "Fizikani o‘rganing, sinang va tajriba qiling.";
-    lead.textContent = "Video darslar, testlar, interaktiv simulyatsiyalar va milliy sertifikatga tayyorgarlik — barchasi bir joyda.";
+    title.textContent = t("home.heroTitle", "Fizikani o‘rganing, sinang va tajriba qiling.");
+    lead.textContent = t("home.heroLead", "Video darslar, testlar, interaktiv simulyatsiyalar va milliy sertifikatga tayyorgarlik — barchasi bir joyda.");
     return;
   }
-  title.textContent = `Xush kelibsiz, ${firstName(state)}!`;
+  title.textContent = t("home.welcome", "Xush kelibsiz, {name}!", { name: firstName(state) });
   if (!summary) {
-    lead.textContent = "Bugun fizikaning qaysi sirini ochamiz?";
+    lead.textContent = t("home.leadNoSummary", "Bugun fizikaning qaysi sirini ochamiz?");
     return;
   }
   const { progress } = summary;
   const cur = progress.current;
   if (progress.overall.done === 0) {
-    lead.textContent = "Birinchi mavzudan boshlang — har bir test natijangiz shu yerda ko‘rinadi.";
+    lead.textContent = t("home.leadStart", "Birinchi mavzudan boshlang — har bir test natijangiz shu yerda ko‘rinadi.");
   } else if (!cur) {
-    lead.textContent = "Ajoyib! Umumiy fizikaning barcha ochiq mavzularini yakunladingiz.";
+    lead.textContent = t("home.leadAllDone", "Ajoyib! Umumiy fizikaning barcha ochiq mavzularini yakunladingiz.");
   } else {
-    lead.textContent = `${cur.title} kursining ${cur.percent}% qismini yakunladingiz. Keyingi: ${cur.next.label} — ${cur.next.title}.`;
+    lead.textContent = t("home.leadProgress", "{course} kursining {pct}% qismini yakunladingiz. Keyingi: {label} — {title}.",
+      { course: cur.title, pct: cur.percent, label: cur.next.label, title: cur.next.title });
   }
 }
 
@@ -115,7 +118,7 @@ function renderStats(summary) {
     el.innerHTML = `${esc(value)}${hint ? `<small>${esc(hint)}</small>` : ""}`;
   };
   set("topics", fmt(s.topicsDone), `/ ${fmt(s.topicsTotal)}`);
-  set("tests", fmt(s.testsTaken), s.testsTaken ? `${fmt(s.testsPassed)} tasi ≥80%` : "");
+  set("tests", fmt(s.testsTaken), s.testsTaken ? t("home.testsPassed", "{n} tasi ≥80%", { n: fmt(s.testsPassed) }) : "");
   set("xp", fmt(s.xp));
   set("level", fmt(s.level), "/ 10");
   box.removeAttribute("aria-busy");
@@ -132,23 +135,25 @@ function renderProgress(summary) {
   const { progress } = summary;
   const box = $("[data-progress]");
   const cur = progress.current;
+  const general = t("home.generalPhysics", "Umumiy fizika");
+  const verb = progress.overall.done === 0 ? t("home.start", "Boshlash") : t("home.continue", "Davom etish");
   const totalAction = cur
-    ? `<a class="of-btn of-btn--primary" href="${esc(cur.next.href)}" aria-label="Umumiy fizika: ${cur.done === 0 && progress.overall.done === 0 ? "Boshlash" : "Davom etish"} — ${esc(cur.title)}, ${esc(cur.next.label)}">${progress.overall.done === 0 ? "Boshlash" : "Davom etish"} ${icon("arrowRight")}</a>`
-    : `<a class="of-btn of-btn--soft" href="umumiy-fizika/umumiy-fizika.html">Kurslarni ko‘rish</a>`;
+    ? `<a class="of-btn of-btn--primary" href="${esc(cur.next.href)}" aria-label="${general}: ${verb} — ${esc(cur.title)}, ${esc(cur.next.label)}">${verb} ${icon("arrowRight")}</a>`
+    : `<a class="of-btn of-btn--soft" href="umumiy-fizika/umumiy-fizika.html">${t("home.viewCourses", "Kurslarni ko‘rish")}</a>`;
 
   box.innerHTML = `
     <article class="of-card of-card--pad of-course-total" data-search-item data-search-text="umumiy fizika progress">
       <div class="of-course-total__head">
         <span class="of-course-total__icon">${icon("atom")}</span>
         <div>
-          <h3>Umumiy fizika</h3>
-          <p class="of-subtle">${fmt(progress.overall.done)} / ${fmt(progress.overall.total)} mavzu yakunlangan</p>
+          <h3>${general}</h3>
+          <p class="of-subtle">${t("home.topicsDone", "{done} / {total} mavzu yakunlangan", { done: fmt(progress.overall.done), total: fmt(progress.overall.total) })}</p>
         </div>
         <strong class="of-course-total__pct of-num">${progress.overall.percent}%</strong>
       </div>
-      ${progressBar(progress.overall.percent, "Umumiy fizika progressi")}
+      ${progressBar(progress.overall.percent, t("home.progressLabel", "Umumiy fizika progressi"))}
       <div class="of-course-total__foot">
-        <p class="of-subtle">${cur ? `Keyingi: <b>${esc(cur.next.label)}</b> · ${esc(cur.next.title)}` : "Barcha ochiq mavzular yakunlangan."}</p>
+        <p class="of-subtle">${cur ? `${t("home.next", "Keyingi:")} <b>${esc(cur.next.label)}</b> · ${esc(cur.next.title)}` : t("home.allOpenDone", "Barcha ochiq mavzular yakunlangan.")}</p>
         ${totalAction}
       </div>
     </article>
@@ -162,7 +167,7 @@ function renderProgress(summary) {
 
 function renderProgressError() {
   const box = $("[data-progress]");
-  box.innerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>Progressni yuklab bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.</span></div>`;
+  box.innerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>${t("home.progressError", "Progressni yuklab bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.")}</span></div>`;
   box.removeAttribute("aria-busy");
 }
 
