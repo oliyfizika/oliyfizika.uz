@@ -1,0 +1,615 @@
+{
+ "title": "Physics Mock Test No. 3",
+ "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Rotation and energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and nuclear physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A, Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "What is the weight of an “air balloon” of mass m hanging motionless in the air?",
+   "options": [
+    "mg",
+    "mg/2",
+    "2mg",
+    "0"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "Using the motion graph of the body, determine the ratio of the distance travelled to the displacement.",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "The figure shows the dependence of the magnitude of the friction force F_fr on the magnitude of the normal force N. If the coefficient of friction in case 1 is μ₁ and in case 2 is μ₂, how are they related?",
+   "options": [
+    "μ₁ = 2μ₂",
+    "μ₁ = 4μ₂",
+    "μ₂ = 2μ₁",
+    "μ₂ = 4μ₁"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "Helium is placed in one of two vessels and hydrogen in the other. The temperatures of the gases are equal. By what factor do the root-mean-square speeds of the molecules of these gases differ?",
+   "options": [
+    "Hydrogen's is 2 times greater",
+    "Helium's is 2 times greater",
+    "Hydrogen's is √2 times greater",
+    "Helium's is √2 times greater"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "Water rises 15 mm in a capillary on the surface of the Earth. To what height (mm) will water rise in the same capillary on the surface of the Moon? The acceleration due to gravity on the Moon's surface is 6 times smaller than on the Earth's surface.",
+   "options": [
+    "15",
+    "90",
+    "45",
+    "2.5"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "If in the circuit ε₁ = 3ε₂ = 6 V, r₁ = r₂ = 0.5 Ω and R = 3 Ω, determine the current (A).",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "Find the potential of the field at the centre of the circle. The radius of the circle is R.",
+   "options": [
+    "−2kq/R",
+    "2kq/R",
+    "kq/R",
+    "−kq/R"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "What must the density of a uniform rod (g/cm³) be for it to float in equilibrium with one fifth of it submerged in water? ρ_w = 1 g/cm³.",
+   "options": [
+    "0.25",
+    "0.36",
+    "0.64",
+    "0.96"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "Determine the energy of a capacitor of capacitance 10 μF (μJ). The emf of the current source is 10 V, its internal resistance is r = 1 Ω and the resistance of the resistor is R = 3 Ω.",
+   "options": [
+    "5",
+    "25",
+    "35",
+    "45"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "What minimum force must be applied horizontally through the centre of a cylindrical roller of mass m and radius 30 cm to roll it up onto a step 20 cm high?",
+   "options": [
+    "2mg",
+    "2√2·mg",
+    "2√6·mg",
+    "2√3·mg"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "Find the angular acceleration (rad/s²) of a rigid body rotating about a fixed axis according to the law φ = 20t + 2t².",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "The graph below shows a ray approaching a lens. In which direction will this ray travel after passing through the lens?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "Cannot be determined"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "A charged particle moves without acceleration. What fields arise around the charge in this case?",
+   "options": [
+    "Electric field",
+    "Magnetic field",
+    "Electric and magnetic field",
+    "No field at all"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "Using the graph given, determine the phase of oscillation at the moment t = 0.7 s.",
+   "options": [
+    "0.7π",
+    "1.4π",
+    "2π",
+    "π"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "Which of the following is not an ion?",
+   "options": [
+    "Proton",
+    "Neutron",
+    "α particle",
+    "β particle"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "What are nuclei with the same mass number called?",
+   "options": [
+    "Isotopes",
+    "Isotones",
+    "Isobars",
+    "No special name is given to such atoms"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "Newton's rings are produced using a thin glass plate and a lens. How many times larger is the radius of the fifth-order bright ring than the radius of the first-order bright ring?",
+   "options": [
+    "2",
+    "3",
+    "√5",
+    "√11"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "One mole of a monatomic gas does 160 J of work in isobaric expansion, and its temperature rises by 10 K. How much heat (J) is supplied to the gas?",
+   "options": [
+    "160",
+    "240",
+    "316",
+    "284"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "By what factor does the volume of an air bubble increase when it rises from a point at a depth of 30 m to a point at a depth of 10 m? Atmospheric pressure is 10⁵ Pa.",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "The absolute refractive indices of diamond and glass are 2.42 and 1.5, respectively. What must the ratio of the thicknesses of plates made of these materials be so that light takes the same time to pass through them?",
+   "options": [
+    "1.6",
+    "2.1",
+    "3",
+    "2.8"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "Determine the melting point (K) of an alloy of lead and tin. The melting point of lead is 600 K and that of tin is 505 K.",
+   "options": [
+    "442",
+    "505",
+    "600",
+    "1105"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "A copper wire 15 cm long with a cross-sectional area of 3 mm² is connected in parallel to an ammeter of resistance 0.04 Ω. If the ammeter reads 0.1 A, determine the current in the circuit (A). The resistivity of copper is ρ = 1.7·10⁻⁸ Ω·m.",
+   "options": [
+    "1.6",
+    "3.2",
+    "4.8",
+    "6.4"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "Identify the particle produced in the following reaction.",
+   "reaction": "²⁷₁₃Al + ⁴₂He → ³⁰₁₅P + X",
+   "options": [
+    "p",
+    "n",
+    "α",
+    "β"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "Two π⁰ mesons are produced as a result of the annihilation of a proton and an antiproton. Determine the energy (J) of each π⁰ meson produced.",
+   "options": [
+    "8.2·10⁻¹⁰",
+    "1·10⁻¹⁰",
+    "2·10⁻¹⁰",
+    "1.5·10⁻¹⁰"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "A light ray falls on a plate with refractive index 1.73. The angle between the reflected and refracted rays is 90°. Find the angle of incidence of the light on the plate.",
+   "options": [
+    "30°",
+    "45°",
+    "60°",
+    "90°"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "A short-sighted person reads wearing glasses with optical power D = −4 D. Determine the distance of best vision without glasses (cm).",
+   "options": [
+    "−12.5",
+    "−25",
+    "12.5",
+    "25"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "A ball of mass 3 kg moves east with a speed of 5 m/s. A ball of mass 10 kg moves south with a speed of 2 m/s. Determine the total momentum of the system (kg·m/s).",
+   "options": [
+    "20",
+    "25",
+    "35",
+    "5"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "Three resistances in the ratio R₁ = 2R₂ = 3R₃ are connected in series to a DC source with emf 22 V. Determine the voltage drop (V) across the resistance R₂.",
+   "options": [
+    "4",
+    "6",
+    "12",
+    "22"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "A virtual image magnified two times is formed by a converging lens with a focal length of 20 cm. Determine the distance between the object and the lens (cm).",
+   "options": [
+    "5",
+    "7.5",
+    "10",
+    "15"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "Determine the “red limit” of the photoelectric effect (nm) for nickel. The work function of nickel is 5 eV.",
+   "options": [
+    "247.5",
+    "445.5",
+    "600",
+    "650"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "Find the number of molecules in a water drop of volume 3 mm³.",
+   "options": [
+    "10²³",
+    "2·10²³",
+    "3·10²³",
+    "4·10²³"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "What must the current (A) in a conductor placed perpendicular to the field lines of a uniform magnetic field of induction 20 T be for a force of 5 N to act on it? The length of the conductor is 0.5 m.",
+   "options": [
+    "2",
+    "1.5",
+    "1",
+    "0.5"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "Determine the current (A) in the second ammeter.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. The figure shows a circuit made of an ideal voltmeter, 3 ammeters, a current source and resistors. R = 4 Ω.",
+   "options": [
+    "20",
+    "5",
+    "7.5",
+    "10",
+    "2.5",
+    "8"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Determine the reading of the third ammeter (A).",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. The figure shows a circuit made of an ideal voltmeter, 3 ammeters, a current source and resistors. R = 4 Ω.",
+   "options": [
+    "20",
+    "5",
+    "7.5",
+    "10",
+    "2.5",
+    "8"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "Determine the reading of the voltmeter (V).",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. The figure shows a circuit made of an ideal voltmeter, 3 ammeters, a current source and resistors. R = 4 Ω.",
+   "options": [
+    "20",
+    "5",
+    "7.5",
+    "10",
+    "2.5",
+    "8"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A concave spherical mirror forms a real image of an object magnified 3 times. The distance between the object and the image is 28 cm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the distance from the object to the mirror.",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the radius of curvature of the mirror.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A body of mass 3 kg strikes a vertical wall elastically at an angle of 60° with a speed of 5 m/s and bounces back.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the change in the momentum of the body.",
+     "unit": "kg·m/s"
+    },
+    {
+     "key": "b",
+     "text": "If the duration of the impact is 0.1 s, determine the force exerted on the body by the wall.",
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "In an isobaric process, 140 kJ of heat is supplied to a diatomic ideal gas.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the change in the internal energy of the gas.",
+     "unit": "kJ"
+    },
+    {
+     "key": "b",
+     "text": "How much work was done on the gas by external forces?",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "Resistors R₁ = 15 Ω and R₂ = 5 Ω are connected in series to a current source with emf 60 V. The internal resistance of the source is zero.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What percentage of the total heat is the heat released in the second resistor?",
+     "unit": "%"
+    },
+    {
+     "key": "b",
+     "text": "By what factor does the power released change if these resistors are connected in parallel?",
+     "unit": "",
+     "hint": "For example: increases by a factor of 2"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "A diffraction grating has 500 slits per 1 mm of length. The grating is illuminated with light of wavelength 500 nm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "At what angle (in degrees) is the second maximum produced by this diffraction grating seen?",
+     "unit": "°"
+    },
+    {
+     "key": "b",
+     "text": "Determine the number of maxima that can be obtained with this diffraction grating.",
+     "unit": "pcs"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "Particles, each of mass m, with charges q, 2q, q and 2q, respectively, are placed at the vertices of a square ABCD with side a.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the force acting on the charge at point B. Write the answer in the form kq²/a²: enter the numerical coefficient in front of kq²/a².",
+     "unit": "·kq²/a²"
+    },
+    {
+     "key": "b",
+     "text": "If the charge at point D is released, determine the maximum speed it will reach. Write the answer in the form √(kq²/(ma)): enter the numerical coefficient in front of √(kq²/(ma)).",
+     "unit": "·√(kq²/(ma))"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "In a hydrogen atom the electron moves in the second orbit.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What is the energy of the photon emitted when this electron drops to the ground orbit?",
+     "unit": "eV"
+    },
+    {
+     "key": "b",
+     "text": "What photon energy is needed to irradiate this electron so that its angular momentum increases by 2ħ?",
+     "unit": "eV"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "A body of mass 2 kg slides down from the top of an inclined plane of height 4 m and inclination angle 30°. The coefficient of friction is μ = 0.1.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What speed does the body reach at the foot of the inclined plane?",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "What further distance will this body travel after descending?",
+     "unit": "m"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "The temperature of 10 kg of gas varies according to the law T = αV². The molar mass of the gas is 12 g/mol, α = 2 K/m⁶.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "By what factor does the gas pressure change when its temperature increases four times?",
+     "unit": "",
+     "hint": "For example: decreases by a factor of 3"
+    },
+    {
+     "key": "b",
+     "text": "Determine the work done when the volume of the gas increases from 2 L to 4 L.",
+     "unit": "mJ"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "The half-life of radioactive sodium ²⁴₁₁Na is 14.8 hours.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "How many atoms out of 1 g of this preparation decay in 29.6 hours?",
+     "unit": "pcs",
+     "hint": "For example: 1.5e22"
+    },
+    {
+     "key": "b",
+     "text": "By what factor does its activity decrease during this time?",
+     "unit": "",
+     "hint": "For example: increases by a factor of 3"
+    }
+   ]
+  }
+ ]
+}

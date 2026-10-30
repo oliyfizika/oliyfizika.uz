@@ -1,0 +1,613 @@
+{
+ "title": "Physics Mock Test №4",
+ "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Work and energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and nuclear physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A, Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "Using the graphs given below, determine the correct statements.\nm) if the dependence of the body's velocity on time is graph 1, then the dependence of its coordinate on time is graph 3.\nn) if the dependence of the body's velocity on time is graph 4, then the dependence of its coordinate on time is graph 5.\nk) if the dependence of the body's velocity on time is graph 2, then the dependence of its coordinate on time is not shown in the figure.\np) if the dependence of the body's acceleration on time is graph 2, then the dependence of its coordinate on time is graph 6.\nq) if the dependence of the body's acceleration on time is graph 1, then the dependence of its coordinate on time is graph 4.",
+   "options": [
+    "m; k; q",
+    "n; k; q",
+    "m; n; p",
+    "n; k; p"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "A body moving on a horizontal surface at a speed of 144 km/h has an acceleration of −4 m/s². Determine the distance (m) it travels in 20 s.",
+   "options": [
+    "0",
+    "450",
+    "400",
+    "200"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "The flight time of a body thrown at an angle of 53° to the horizontal with speed υ₀ equals the time of free fall of a body from a height of 20 m. Find υ₀ (m/s). sin 53° = 0.8",
+   "options": [
+    "19.2",
+    "13.4",
+    "16.3",
+    "12.5"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "By what factor is the weight of a body moving upward with an acceleration of 2 m/s² greater than its weight when moving downward with the same acceleration?",
+   "options": [
+    "1.5",
+    "0.5",
+    "2.5",
+    "2"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "Determine the acceleration due to gravity (m/s²) at the surface of a planet whose mass is 4 times greater and whose radius is 2 times smaller than those of the Earth. g_Earth = 10 m/s²",
+   "options": [
+    "16",
+    "160",
+    "150",
+    "80"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "Two mutually perpendicular forces of 15 N and 20 N act on a body at rest with a mass of 2.5 kg. Find the speed of the body after 3 s (m/s).",
+   "options": [
+    "21",
+    "30",
+    "39",
+    "40"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "Does the buoyant force (Archimedes' force) acting on a block change when it is moved in a liquid from position 1 to positions 2, 3 and 4? In which position is the buoyant force greater?",
+   "options": [
+    "In position 1",
+    "In position 2",
+    "The buoyant force is the same in all positions",
+    "In position 4"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "A rod of mass 12 kg is balanced by a hanging load of mass m, as shown in the figure. Determine the mass m of the hanging load (kg).",
+   "options": [
+    "3",
+    "4",
+    "6",
+    "8"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "A small ball of mass 250 g is suspended from a light spring with a stiffness of 100 N/m. What is the angular frequency (rad/s) of its harmonic oscillations?",
+   "options": [
+    "20",
+    "16",
+    "25",
+    "12"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "What pressure (kPa) is exerted by 9 mol of nitrogen at a temperature of 400 K in a vessel in which 6 mol of oxygen at a temperature of 300 K exert a pressure of 120 kPa?",
+   "options": [
+    "240",
+    "160",
+    "120",
+    "180"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "When an ideal gas passes from the first state to the second, its volume changes by 6 m³. If T₁ = 300 K and T₂ = 900 K, what was the initial volume of the gas (m³)?",
+   "options": [
+    "9",
+    "6",
+    "2",
+    "3"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "Weightless pistons that can move without friction are in equilibrium with the help of bodies X and Y, as shown in figures 1, 2 and 3. Based on this, how many h is the vertical distance h₁ between the pistons shown in figure 3?",
+   "options": [
+    "2",
+    "2.5",
+    "3",
+    "3.5"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "How much heat (kJ) must be supplied to a piece of ice of mass 2 kg at a temperature of −100 °C for it to evaporate completely? c_ice = 2100 J/(kg·K), c_water = 4200 J/(kg·K), λ = 330 kJ/kg, r = 2.3 MJ/kg.",
+   "options": [
+    "5420",
+    "6520",
+    "7250",
+    "4220"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "A heat engine gave 80 J of heat to the cold reservoir. If the efficiency of the engine is 80 %, how much energy (J) did the engine receive from the hot reservoir?",
+   "options": [
+    "64",
+    "400",
+    "640",
+    "100"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "Determine the capacitance (nF) of a parallel-plate capacitor, each plate of which has an area of 1 m² and the distance between the plates is 1.5 mm. The dielectric constant of the medium between the plates is 6.",
+   "options": [
+    "22",
+    "18",
+    "27",
+    "35"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "The same current flows through two copper conductors with diameters of 2 mm and 3 mm. By what factor is the drift speed of the electrons in the first conductor greater than in the second?",
+   "options": [
+    "1.45",
+    "2.25",
+    "3.75",
+    "4.25"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "A conductor of length 20 m and diameter 1.5 mm has a resistance of 2.5 Ω. Determine the resistance of a conductor made of the same material with a length of 35 m and a diameter of 3 mm.",
+   "options": [
+    "2.4 Ω",
+    "1.8 Ω",
+    "1.1 Ω",
+    "4.6 Ω"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "Copper and nichrome conductors, each 1 mm in diameter and 1 m in length, are connected in series. Determine the voltage drops across them if a current of 2 A flows through them. The resistivity of copper is 1.7·10⁻⁸ Ω·m, and that of nichrome is 1.1·10⁻⁶ Ω·m.",
+   "options": [
+    "4.2 V",
+    "1.5 V",
+    "3.4 V",
+    "2.8 V"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "How does the force of interaction between two point charges change if the magnitude of each charge is increased by a factor of 2 and the distance between them is also increased by a factor of 2?",
+   "options": [
+    "increases 2 times",
+    "decreases 2 times",
+    "increases 4 times",
+    "does not change"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "The work done in moving a charge of 130 nC from infinity to a certain point of an electric field is 65 μJ. Find the potential of this point (V).",
+   "options": [
+    "200",
+    "400",
+    "500",
+    "110"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "If R = 5.5 Ω (see the figure), find the total resistance of the circuit (Ω).",
+   "options": [
+    "4.2",
+    "5.5",
+    "3.4",
+    "1.9"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "By what factor does the inductive reactance of a coil decrease if it is disconnected from an AC circuit with a frequency of 10 kHz and connected to a circuit with a current frequency of 50 Hz?",
+   "options": [
+    "300",
+    "500",
+    "100",
+    "200"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "A straight conductor of length 0.8 m carrying a current of 2 A is in a magnetic field. The field lines are perpendicular to the direction of the current. If the magnetic induction is 0.3 T, determine the magnitude of the force exerted on the current by the magnetic field.",
+   "options": [
+    "13.2 N",
+    "0.48 N",
+    "0.52 N",
+    "5.8 N"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "The secondary winding of a transformer has 990 turns, the input voltage is 220 V and the output voltage is 330 V. How many turns does the primary winding have?",
+   "options": [
+    "500",
+    "490",
+    "660",
+    "720"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "How must the capacitance of an oscillating circuit be changed so that, when the inductance is increased 4 times, the oscillation period increases 2 times?",
+   "options": [
+    "no change is needed",
+    "increase 2 times",
+    "decrease 4 times",
+    "increase 4 times"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "An inductor, a capacitor and a resistor are connected in series in an AC circuit. The voltages across the inductor, capacitor and resistor are 15, 12 and 4 V, respectively. What is the total voltage in the circuit (V)?",
+   "options": [
+    "13",
+    "16",
+    "5",
+    "7"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "A converging lens with a focal length of 10 cm forms a virtual image at a distance of 15 cm from itself. At what distance (cm) from this image is the object located?",
+   "options": [
+    "6",
+    "3",
+    "9",
+    "5"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "Ahmad takes off his glasses and reads a book holding it 16 cm from his eyes. What is the optical power (D) of his glasses?",
+   "options": [
+    "1.15",
+    "−2.25",
+    "3.25",
+    "−5.75"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "If the velocity of a harmonically oscillating body obeys the law υ = 6 cos 3t, what is the amplitude of its acceleration (m/s²)?",
+   "options": [
+    "2",
+    "51",
+    "6",
+    "18"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "The figure shows the deflection of radioactive radiation in a magnetic field. Based on it, identify the names of the particles.",
+   "options": [
+    "1 — electron; 2 — alpha particle; 3 — neutron",
+    "1 — neutron; 2 — alpha particle; 3 — proton",
+    "1 — neutron; 2 — electron; 3 — alpha particle",
+    "1 — neutron; 2 — alpha particle; 3 — electron"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "The pressure of light on a flat mirror is 0.2 Pa. Find the intensity of the light (MJ/(m²·s)) incident on the surface of a mirror with a reflection coefficient of 0.6. The light beam is incident normally on the surface.",
+   "options": [
+    "32.2",
+    "37.5",
+    "27.5",
+    "49.4"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "Determine the charge (nC) of the unknown particle X formed in the following nuclear reaction.",
+   "reaction": "⁹₄Be + ¹₁H → X + ⁴₂He",
+   "options": [
+    "9.6·10⁻¹⁰",
+    "4.8·10⁻¹⁹",
+    "4.8·10⁻¹⁰",
+    "9.6·10⁻²⁰"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "Find the work (kJ) done by the gas during the full cycle.",
+   "note": "Match tasks (33–35) with answer options (A–F) correctly. A closed cycle is performed on an ideal monatomic gas as shown in the graph.",
+   "options": [
+    "20",
+    "19",
+    "105",
+    "90",
+    "18",
+    "32"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "If the graph refers to a heat engine, find the amount of heat (kJ) received from the hot reservoir.",
+   "note": "Match tasks (33–35) with answer options (A–F) correctly. A closed cycle is performed on an ideal monatomic gas as shown in the graph.",
+   "options": [
+    "20",
+    "19",
+    "105",
+    "90",
+    "18",
+    "32"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "If the graph refers to a heat engine, determine the efficiency (%) of the heat engine.",
+   "note": "Match tasks (33–35) with answer options (A–F) correctly. A closed cycle is performed on an ideal monatomic gas as shown in the graph.",
+   "options": [
+    "20",
+    "19",
+    "105",
+    "90",
+    "18",
+    "32"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A body is thrown at an angle of 30° to the horizontal with a speed of 20 m/s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the flight time of the body.",
+     "unit": "s"
+    },
+    {
+     "key": "b",
+     "text": "Determine the maximum height of the ascent.",
+     "unit": "m"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A body is pulled along a horizontal surface as shown in the figure. The coefficient of friction between the body and the surface is 0.5.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the friction force acting on the body.",
+     "unit": "N"
+    },
+    {
+     "key": "b",
+     "text": "Determine the acceleration with which the system moves.",
+     "unit": "m/s²"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "Two bodies connected by a light string move on a smooth surface under the action of a 10 N force applied to the first body and directed at an angle of 60° to the horizontal. The mass of the first body is 1.5 times the mass of the second body. The mass of the first body is 1 kg.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the acceleration of the system.",
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "Determine the tension in the string connecting the bodies.",
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "It is known that in an isobaric process the internal energy of an ideal (monatomic) gas increased by 180 kJ.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the work done by the gas in this process.",
+     "unit": "kJ"
+    },
+    {
+     "key": "b",
+     "text": "Determine the amount of heat supplied to the gas.",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "A person runs toward a cart. The person's speed is 2 m/s and the cart's speed is 1 m/s. The person jumps onto the cart and stays on it. The mass of the person is 2 times the mass of the cart. The mass of the person is 30 kg.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the speed of the system after the collision.",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "Determine the kinetic energy of the system of bodies after the collision.",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "An external resistance of 7 Ω is connected to a current source with an emf of 120 V and an internal resistance of 5 Ω.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the current in the circuit.",
+     "unit": "A"
+    },
+    {
+     "key": "b",
+     "text": "Determine the short-circuit current of the source.",
+     "unit": "A"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "In an AC circuit the reactance is 5 Ω, the resistance is 12 Ω, and the amplitude of the alternating current is 2√2 A.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the total impedance of the circuit.",
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "Find the average power of the current.",
+     "unit": "W"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "The inductive reactance of a coil is X_L = 500 Ω, the rms voltage of the network to which it is connected is 100 V, and the frequency of the current is 1000 Hz. Neglect the resistance of the coil and the connecting wires.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the amplitude of the current in the circuit.",
+     "unit": "A"
+    },
+    {
+     "key": "b",
+     "text": "Determine the inductance of the coil.",
+     "unit": "H"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "The photoelectric threshold frequency for the cathode material is 3·10¹⁴ Hz. Radiation with a frequency of 6·10¹⁴ Hz is incident on the cathode.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the work function of the electrons.",
+     "unit": "J",
+     "hint": "For example: 1.98e-19"
+    },
+    {
+     "key": "b",
+     "text": "Determine the stopping voltage for the electrons emitted from the cathode.",
+     "unit": "V"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "Photons of light with an energy of 3.3·10⁻¹⁹ J are incident on a metal surface.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the wavelength of the light photons.",
+     "unit": "nm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the momentum of the light photons.",
+     "unit": "kg·m/s",
+     "hint": "For example: 1.1e-27"
+    }
+   ]
+  }
+ ]
+}

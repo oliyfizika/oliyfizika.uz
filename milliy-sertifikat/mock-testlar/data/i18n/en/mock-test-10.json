@@ -1,0 +1,613 @@
+{
+ "title": "Physics Mock Test №10",
+ "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Work and energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and nuclear physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A, Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "The figure shows a graph of the velocity of a body versus time. Find the distance (m) travelled by the body in 12 s.",
+   "options": [
+    "30",
+    "42",
+    "56",
+    "64"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "A boat is moving upstream against a current flowing at 6 m/s. If it is at rest relative to a cyclist riding along the bank against the current at 9 m/s, find the speed of the boat relative to the water (m/s).",
+   "options": [
+    "9",
+    "6",
+    "18",
+    "15"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "Find the acceleration due to gravity (m/s²) at the surface of a planet whose mass is 4 times greater and whose radius is 2 times smaller than those of the Earth. g_Earth = 10 m/s².",
+   "options": [
+    "16",
+    "160",
+    "150",
+    "80"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "Two bodies were thrown upward on the Moon with an initial speed of 25 m/s, 6 s apart. How many seconds after the first body was thrown will they meet? g_Moon = 5/3 m/s²",
+   "options": [
+    "15",
+    "20",
+    "18",
+    "16"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "A gas passed from state A to state B as shown in the diagram. Determine the work (kJ) done by the gas against external forces.",
+   "options": [
+    "48",
+    "20",
+    "35",
+    "40"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "Using the data in the diagram, determine the tension forces (N) in the strings. m₁ = 2 kg, m₂ = 5 kg, m₃ = 3 kg. T_I = ?, T_II = ?",
+   "options": [
+    "T_I = 32 N; T_II = 35 N",
+    "T_I = 20 N; T_II = 42 N",
+    "T_I = 26 N; T_II = 35 N",
+    "T_I = 16 N; T_II = 25 N"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "A body sinks in kerosene with an acceleration of 4 m/s². With what acceleration (m/s²) will it sink in water? ρ_water = 1 g/cm³, ρ_kerosene = 0.8 g/cm³.",
+   "options": [
+    "4",
+    "1.5",
+    "3",
+    "2.5"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "Loads of masses m₁ = 4 kg and m₂ = 6 kg are attached to the ends of a spring of stiffness 2 kN/m, as shown in the figure. The coefficient of friction for each load is 0.1. Find by how many centimetres the spring stretches.",
+   "options": [
+    "14",
+    "1.4",
+    "1.6",
+    "1.8"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "By what percentage does the period of oscillation of a simple pendulum increase when it is placed in the cabin of a high-speed elevator descending with an acceleration of 0.36g?",
+   "options": [
+    "25",
+    "20",
+    "15",
+    "40"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "When an ideal gas passes from the first state to the second, its temperature changes by 330 °C. If V₁ = 3.2 m³ and V₂ = 6.4 m³, what was the initial temperature of the gas (K)?",
+   "options": [
+    "660",
+    "250",
+    "580",
+    "330"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "The density of an ideal gas is 1.2 kg/m³ and its pressure is 16 kPa. What is the root-mean-square speed of the gas molecules (m/s)?",
+   "options": [
+    "500",
+    "400",
+    "300",
+    "200"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "The base area of a load placed on a plane is 10 cm². If the system is moved upward at a speed of 2 m/s, what is the pressure (Pa) exerted by the load on the plane? The mass of the load is 4 kg.",
+   "options": [
+    "6·10⁴",
+    "8·10⁴",
+    "4·10⁴",
+    "3·10⁴"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "Using the given graph and electric circuit, find the total charge of the circuit.",
+   "options": [
+    "q = 12.5 μC",
+    "q = 1.25 mC",
+    "q = 15 μC",
+    "q = 125 C"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "Bodies K and L are hung from a weightless rod with equal divisions, suspended at point O, and the rod remains in horizontal equilibrium. If the volume of body L is 10 cm³ and its density is 4 g/cm³, what is the mass of body K (g)? (ρ_water = 1 g/cm³)",
+   "options": [
+    "30",
+    "40",
+    "45",
+    "50"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "In a magnetic field of induction 15 mT, a wire of length 25 cm and electrical resistance 0.5 Ω moves at a constant speed of 36 km/h, as shown in the figure. Find the induced current (mA) in the circuit.",
+   "options": [
+    "10",
+    "30",
+    "15",
+    "75"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "An electric circuit is made of capacitors with capacitances C₁ = 6 nF, C₂ = 2 nF and C₃ = 4 nF. Capacitors C₁ and C₂ are connected in parallel, and C₃ is connected in series with them; the circuit is charged from a DC voltage source. If the charge on the first capacitor is 12 nC, find the charge on the third capacitor (nC).",
+   "options": [
+    "2",
+    "4",
+    "8",
+    "16"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "After the external circuit is connected, the potential difference across the battery terminals is U = 18 V. The resistance of the external circuit is R = 6 Ω. If the emf of the battery is 30 V, find the internal resistance of the battery (Ω).",
+   "options": [
+    "8",
+    "4",
+    "10",
+    "6"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "A circuit of three identical conductors connected in parallel to the mains releases a certain amount of heat in t₁ = 40 s. In what time t₂ will the same amount of heat be released if these conductors are connected in series?",
+   "options": [
+    "6 min",
+    "9 min",
+    "3 min",
+    "8 min"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "A ball of mass m attached to a spring performs simple harmonic motion; 3 is the equilibrium point. At which point(s) is its energy greatest?",
+   "options": [
+    "4",
+    "1, 5",
+    "2, 4",
+    "3"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "Find the kinetic energy (mJ) of a 2 μC charge that has passed through a potential difference of 500 V starting from rest.",
+   "options": [
+    "2 mJ",
+    "4 mJ",
+    "9 mJ",
+    "1 mJ"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "While charging a bank of 20 capacitors connected in parallel, 10 J of heat was released. If the capacitance of each capacitor is 4 μF, determine the voltage across the capacitors (V).",
+   "options": [
+    "450",
+    "500",
+    "240",
+    "650"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "A capacitor of capacitance 1 μF is connected to an AC circuit of frequency 50 Hz. Determine the capacitive reactance of the capacitor.",
+   "options": [
+    "3.2 kΩ",
+    "4.5 Ω",
+    "1.5 kΩ",
+    "2.2 Ω"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "A force F = 0.15 N acts on a straight conductor of length l = 0.5 m placed perpendicular to a magnetic field of induction B = 2·10⁻² T. Find the current (A) through the conductor.",
+   "options": [
+    "15",
+    "10",
+    "5",
+    "25"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "A parallel-plate capacitor is charged and disconnected from the voltage source. How does the electric field energy density in the capacitor change if the plates are moved farther apart?",
+   "options": [
+    "decreases",
+    "becomes zero",
+    "increases",
+    "does not change"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "If the frequency of a simple pendulum increases by a factor of 1.5 when the length of its string is shortened by 5 cm, find the initial length of the string (cm).",
+   "options": [
+    "3",
+    "7",
+    "11",
+    "9"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "The primary winding of a step-down transformer with a transformation ratio of 8 is connected to a 220 V mains. The resistance of the secondary winding is 2 Ω and the current in it is 3 A. Determine the voltage (V) across the terminals of the secondary winding.",
+   "options": [
+    "15.5",
+    "19.5",
+    "27.5",
+    "11.5"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "Using a converging lens, a real image of an object magnified 4 times was first obtained. Then the object was moved, and a virtual image magnified by the same factor was obtained. If the optical power of the lens is 6 D, determine the distance (m) by which the object was moved.",
+   "options": [
+    "1/6",
+    "2/3",
+    "1/12",
+    "1/3"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "Two first-order maxima produced by a diffraction grating are observed at an angle of 60° to each other. How many maxima are obtained in total?",
+   "options": [
+    "3",
+    "4",
+    "9",
+    "5"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "The energy of photons falling on a metal surface is 7.8·10⁻¹⁹ J, and the work function of an electron for this metal is 3·10⁻¹⁹ J. Determine the stopping voltage for the electrons (V).",
+   "options": [
+    "5",
+    "3",
+    "2",
+    "1"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "Find the unknown particle in the following nuclear reaction.",
+   "reaction": "²⁷₁₃Al + ⁴₂He → ³⁰₁₅P + X",
+   "options": [
+    "electron",
+    "neutron",
+    "proton",
+    "positron"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "What maximum kinetic energy (eV) do electrons ejected from a metal by ultraviolet radiation of wavelength 0.33 μm have? The work function of the electron is 2.8·10⁻¹⁹ J. Planck constant 6.6·10⁻³⁴ J·s. (1 eV = 1.6·10⁻¹⁹ J)",
+   "options": [
+    "200",
+    "300",
+    "600",
+    "500"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "When a photon whose energy is 8/9 of the ionization energy of the hydrogen atom is absorbed, to which excited state (which level number) does the hydrogen atom go from the ground state?",
+   "options": [
+    "4",
+    "7",
+    "6",
+    "3"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "Determine by how much (kJ) the internal energy of the gas changes in the transition 2 → 3 shown in the graph, if 40 kJ of heat is given to the gas.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. The figure shows transitions 1 → 2 → 3 of a monatomic ideal gas.",
+   "options": [
+    "24",
+    "400",
+    "10",
+    "36",
+    "16",
+    "800"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Given that 10 kJ of heat is given to the gas in the transition 1 → 2, determine the change in internal energy (kJ).",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. The figure shows transitions 1 → 2 → 3 of a monatomic ideal gas.",
+   "options": [
+    "24",
+    "400",
+    "10",
+    "36",
+    "16",
+    "800"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "If the temperature at point 1 is T₁ = 400 K and P₂ = 2P₁ = 20 kPa, determine the temperature at point 2 (K).",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. The figure shows transitions 1 → 2 → 3 of a monatomic ideal gas.",
+   "options": [
+    "24",
+    "400",
+    "10",
+    "36",
+    "16",
+    "800"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A body is released from rest at a height of 180 m.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the time of fall.",
+     "unit": "s"
+    },
+    {
+     "key": "b",
+     "text": "Determine the speed of the body 5 s after it is released.",
+     "unit": "m/s"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A spring of stiffness 1 kN/m is attached to the ceiling of an elevator, and a body of mass 10 kg is hung from it.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "By how much does the spring stretch if the system moves upward with an acceleration of 5 m/s²?",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "By how much is the spring deformed if the system moves downward at a speed of 5 m/s?",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "Two bodies lying on a horizontal surface are connected as shown in the figure. The coefficient of friction between the bodies and the surface is the same and equals 0.5.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the acceleration of the system.",
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "Determine the tension in the string connecting the bodies.",
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "In an isobaric process, 40 kJ of heat is given to a monatomic ideal gas.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the change in internal energy.",
+     "unit": "kJ"
+    },
+    {
+     "key": "b",
+     "text": "Determine the work done on the gas by external forces.",
+     "unit": "kJ",
+     "hint": "Number only"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "Two bodies of 5 kg each are moving in the same direction at speeds of 3 m/s and 5 m/s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the speed of the system after the collision.",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "Determine the kinetic energy of the system of bodies after the collision.",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "The figure shows a diagram of charged capacitors between points A and B.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Using the diagram, determine the total capacitance. Write the answer in the form C: enter the numerical coefficient in front of C.",
+     "unit": "·C"
+    },
+    {
+     "key": "b",
+     "text": "If the above system is connected to a DC voltage source U, determine its energy. Write the answer in the form CU²: enter the numerical coefficient in front of CU².",
+     "unit": "·CU²"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "A circuit is made of resistances connected in series: active resistance 5 Ω, inductive reactance 20 Ω and capacitive reactance 8 Ω.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the total impedance of the circuit.",
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "Determine what the total impedance would be if the active resistance were 0.",
+     "unit": "Ω"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "A point light source is located at a distance d = 4 cm from the principal optical axis of a converging lens with focal length F = 6 cm. On the other side of the lens, a real image of the source is formed at a distance f = 12 cm from the lens.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the magnification of the lens.",
+     "unit": ""
+    },
+    {
+     "key": "b",
+     "text": "Determine the distance between the light source and the lens.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "The distance between an object and its real image, magnified 3 times, is 80 cm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the focal length of the lens.",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the distance from the lens to the object.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "The red limit of the photoelectric effect for the cathode material is 3·10¹⁴ Hz. Rays of frequency 6.2·10¹⁴ Hz fall on the cathode. Planck constant h = 6·10⁻³⁴ J·s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the stopping voltage for the electrons emitted from the cathode.",
+     "unit": "V"
+    },
+    {
+     "key": "b",
+     "text": "Determine the momentum of the rays.",
+     "unit": "kg·m/s",
+     "hint": "For example: 1.2e-27"
+    }
+   ]
+  }
+ ]
+}

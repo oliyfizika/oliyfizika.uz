@@ -1,5 +1,6 @@
 // Qat'iy tugash vaqtiga (endTs) asoslangan taymer: sahifa yangilansa ham vaqt to'xtamaydi.
 import { fmtDuration } from "./dom.js";
+import { t } from "../../../assets/js/core/i18n.js";
 
 export function createTimer({ element, getEndTs, onWarn, onExpire, warnSeconds = 600 }) {
   let handle = null;
@@ -9,7 +10,7 @@ export function createTimer({ element, getEndTs, onWarn, onExpire, warnSeconds =
     const left = Math.max(0, Math.floor((getEndTs() - Date.now()) / 1000));
     element.textContent = fmtDuration(left);
     element.classList.toggle("danger", left <= warnSeconds);
-    element.setAttribute("aria-label", `Qolgan vaqt: ${fmtDuration(left)}`);
+    element.setAttribute("aria-label", t("ms.t.timerLeft", `Qolgan vaqt: ${fmtDuration(left)}`, { t: fmtDuration(left) }));
     if (!warned && left <= warnSeconds && left > 0) {
       warned = true;
       onWarn?.(left);

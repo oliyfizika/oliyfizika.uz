@@ -1,0 +1,622 @@
+{
+  "title": "Physics Mock Test №9",
+  "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+  "formulaSheet": {
+    "cards": [
+      {
+        "title": "Mechanics",
+        "formulas": [
+          "v=s/t",
+          "a=Δv/Δt",
+          "v²=v₀²+2as",
+          "F=ma",
+          "p=mv"
+        ]
+      },
+      {
+        "title": "Rotation and energy",
+        "formulas": [
+          "A=Fs cosα",
+          "Eₖ=mv²/2",
+          "Eₚ=mgh",
+          "P=W/t"
+        ]
+      },
+      {
+        "title": "Molecular physics",
+        "formulas": [
+          "p=ρv²ᵣms/3",
+          "vᵣms=√(3p/ρ)",
+          "pV=nRT",
+          "Q=ΔU+W"
+        ]
+      },
+      {
+        "title": "Heat",
+        "formulas": [
+          "Q=cmΔT",
+          "Q=λm",
+          "Q=Lm",
+          "η=A/Q₁"
+        ]
+      },
+      {
+        "title": "Electric current",
+        "formulas": [
+          "U=IR",
+          "P=UI=I²R=U²/R",
+          "Q=I²Rt",
+          "ε=U+Ir"
+        ]
+      },
+      {
+        "title": "Capacitor and AC",
+        "formulas": [
+          "C=q/U",
+          "W=CU²/2",
+          "X_C=1/(2πfC)",
+          "Z=√(R²+(X_L-X_C)²)"
+        ]
+      },
+      {
+        "title": "Magnetic field",
+        "formulas": [
+          "F=BIl sinα",
+          "ε_ind=−ΔΦ/Δt",
+          "Φ=BS cosα"
+        ]
+      },
+      {
+        "title": "Optics",
+        "formulas": [
+          "1/f=1/a+1/b",
+          "M=b/a",
+          "n=c/v",
+          "hᵢ=Mh₀"
+        ]
+      },
+      {
+        "title": "Quantum and nuclear physics",
+        "formulas": [
+          "E=hf=hc/λ",
+          "p=h/λ",
+          "Eₖ,max=hf−A_work",
+          "Conservation laws for A and Z"
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "n": 1,
+      "text": "After what time (s) does a body thrown vertically upward at 20 m/s return to the point of launch?",
+      "options": [
+        "1.5",
+        "4",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "n": 2,
+      "text": "A rod is stretched under a mechanical stress σ = 0.7E, where E is the Young's modulus of the material. Assuming the stretching is perfectly elastic, determine by what factor the length of the rod changed.",
+      "options": [
+        "4.69",
+        "2.89",
+        "1.4",
+        "1.7"
+      ]
+    },
+    {
+      "n": 3,
+      "text": "According to the analogy between mechanical and electromagnetic oscillations, which physical quantity in electromagnetic oscillations corresponds to the mass of the load of a spring pendulum?",
+      "options": [
+        "charge",
+        "current",
+        "inductance",
+        "the reciprocal of capacitance"
+      ]
+    },
+    {
+      "n": 4,
+      "text": "Find the angular velocity of a rigid body rotating about a fixed axis according to φ = 20t − t².",
+      "options": [
+        "ω = 2(5 − t)",
+        "ω = 2(10 − t)",
+        "ω = 10(2 − t)",
+        "ω = 2(10 − 2t)"
+      ]
+    },
+    {
+      "n": 5,
+      "text": "The magnetic flux through an inductor at a current of 2 A is 0.05 Wb. What is the energy of the magnetic field (mJ)?",
+      "options": [
+        "100",
+        "200",
+        "50",
+        "400"
+      ]
+    },
+    {
+      "n": 6,
+      "text": "What minimum force must be applied to a cylindrical roller of mass m and radius 30 cm in the horizontal direction through its center in order to move it over a step 20 cm high?",
+      "options": [
+        "2mg",
+        "2√2·mg",
+        "2√6·mg",
+        "2√3·mg"
+      ]
+    },
+    {
+      "n": 7,
+      "text": "A voltmeter was connected to a 10 Ω resistor attached to a battery: in the first case in parallel, in the second in series. If the voltages in both cases are the same, determine the internal resistance of the battery (Ω). The resistance of the voltmeter is 500 Ω.",
+      "options": [
+        "0.2",
+        "0.5",
+        "1",
+        "1.5"
+      ]
+    },
+    {
+      "n": 8,
+      "text": "How many diffraction maxima are observed behind a diffraction grating if its period is d = 2λ?",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "5"
+      ]
+    },
+    {
+      "n": 9,
+      "text": "How much heat (kJ) must be supplied to 2 mol of a monatomic ideal gas to increase its volume 3 times isobarically, if the initial temperature of the gas is 300 K?",
+      "options": [
+        "12",
+        "20",
+        "25",
+        "34"
+      ]
+    },
+    {
+      "n": 10,
+      "text": "A puddle of water with a surface area of 2.0 m² at 273 K was covered with ice 2 mm thick. How much heat (MJ) was released to the surroundings? λ = 3.3·10⁵ J/kg; ρ = 0.9·10³ kg/m³.",
+      "options": [
+        "≈0.8",
+        "≈1.2",
+        "≈1.8",
+        "≈2.6"
+      ]
+    },
+    {
+      "n": 11,
+      "text": "Determine the charge (C) that passed through a conductor of resistance R = 3 Ω if the voltage across its ends increased uniformly from U₀ = 2 V to U = 4 V in a time t = 20 s.",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "84"
+      ]
+    },
+    {
+      "n": 12,
+      "text": "Determine the pressure (kPa) of 4 kg of oxygen enclosed in a vessel of volume 2 m³ at a temperature of 47 °C. R = 8.3 J/(mol·K).",
+      "options": [
+        "1.2",
+        "1.66",
+        "1.84",
+        "2.08"
+      ]
+    },
+    {
+      "n": 13,
+      "text": "Moving with an acceleration of 0.5 m/s², a body increased its speed 4 times over a distance of 60 m. Find the initial speed of the body (m/s).",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "n": 14,
+      "text": "As a result of an impact with a wall, the speed of a ball decreased by half. 15 J of heat was released. Find the initial kinetic energy of the ball (J).",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "30"
+      ]
+    },
+    {
+      "n": 15,
+      "text": "What must be the density of a uniform rod (g/cm³) for it to be in equilibrium when one fifth of it is submerged in water? ρ_w = 1 g/cm³.",
+      "options": [
+        "0.25",
+        "0.36",
+        "0.64",
+        "0.96"
+      ]
+    },
+    {
+      "n": 16,
+      "text": "From what height must a ball made of a substance whose density is n times smaller than that of water fall in order to sink into the water to a depth h? Neglect air resistance.",
+      "options": [
+        "H = h(n − 1)",
+        "H = h(2n − 1)",
+        "H = h(n + 1)",
+        "H = h(2n + 1)"
+      ]
+    },
+    {
+      "n": 17,
+      "text": "The density of diamond is 3500 kg/m³. What volume (m³) is occupied by 10²² atoms of this substance? μ = 12 g/mol.",
+      "options": [
+        "5.7·10⁻⁵",
+        "5.7·10⁻⁶",
+        "5.7·10⁻⁷",
+        "5.7·10⁻⁸"
+      ]
+    },
+    {
+      "n": 18,
+      "text": "If the magnetic induction created by the currents at point X is Bₓ and at point Y is B_y, find Bₓ/B_y.",
+      "options": [
+        "1/3",
+        "3",
+        "3/4",
+        "7/5"
+      ]
+    },
+    {
+      "n": 19,
+      "text": "By what percentage does the root-mean-square speed of water molecules in our blood increase when the temperature rises from 37 °C to 40 °C?",
+      "options": [
+        "0.34",
+        "0.48",
+        "0.71",
+        "0.89"
+      ]
+    },
+    {
+      "n": 20,
+      "text": "Give the expression of the unit of potential in terms of SI base units.",
+      "options": [
+        "kg·m·s⁻²·A⁻¹",
+        "kg·m²·s⁻³·A⁻¹",
+        "kg·m²·s⁻²·A⁻¹",
+        "kg·m²·s⁻²·A⁻³"
+      ]
+    },
+    {
+      "n": 21,
+      "text": "Mark the answer that correctly gives the graph of the electric field energy of a capacitor versus the charge on its plates.",
+      "options": [
+        {
+          "text": "graph A"
+        },
+        {
+          "text": "graph B"
+        },
+        {
+          "text": "graph C"
+        },
+        {
+          "text": "graph D"
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "text": "Determine the energy of a capacitor of capacitance 10 μF (μJ). The emf of the current source is 10 V, its internal resistance is 1 Ω and the resistance of the resistor is 10 Ω.",
+      "options": [
+        "5",
+        "7.2",
+        "8.3",
+        "16"
+      ]
+    },
+    {
+      "n": 23,
+      "text": "A material point of mass 10 g moves under the action of a force F = 2·cos(ωt) (mN). Find the maximum kinetic energy of the material point (μJ). ω = 2π rad/s.",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "8"
+      ]
+    },
+    {
+      "n": 24,
+      "text": "What fraction of a radioactive isotope decays during a time equal to its mean lifetime? ln 2 = 0.7.",
+      "options": [
+        "0.27",
+        "0.42",
+        "0.63",
+        "0.71"
+      ]
+    },
+    {
+      "n": 25,
+      "text": "Determine the de Broglie wavelength (pm) for an electron with a kinetic energy of 60 eV.",
+      "options": [
+        "96",
+        "124",
+        "146",
+        "158"
+      ]
+    },
+    {
+      "n": 26,
+      "text": "Determine the wavelength (nm) of the possible spectral line in the hydrogen atom spectrum for a transition from the 4th energy level to the 2nd. R = 3.27·10¹⁵ s⁻¹.",
+      "options": [
+        "368",
+        "485",
+        "616",
+        "864"
+      ]
+    },
+    {
+      "n": 27,
+      "text": "How will a neutron move if it enters a uniform electric field with speed υ at an angle of 60° to the direction of the field strength?",
+      "options": [
+        "uniformly in a straight line",
+        "with uniform acceleration along a parabola",
+        "uniformly along a parabola",
+        "with uniform acceleration along a curved path"
+      ]
+    },
+    {
+      "n": 28,
+      "text": "Which of the points marked in the figure is the image of point S formed by a thin converging lens of focal length F?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "n": 29,
+      "text": "How many oscillations does a pendulum with a frequency of 2 Hz make in 2 minutes?",
+      "options": [
+        "60",
+        "240",
+        "120",
+        "480"
+      ]
+    },
+    {
+      "n": 30,
+      "text": "Two bodies of masses m₁ = 0.2 kg and m₂ = 0.8 kg are connected by a string that can withstand a tension T = 2 N. A horizontal force F = 0.5t, where t is time, begins to act on the body of mass m₁. At what time (s) will the string break?",
+      "options": [
+        "0.5",
+        "1",
+        "5",
+        "20"
+      ]
+    },
+    {
+      "n": 31,
+      "text": "A load of mass m = 40 kg is hung from the bracket shown in the figure. The length of rod CB is l₁ = 0.6 m and the length of rod AB is l₂ = 1 m. Find the force (N) compressing rod AB. g = 9.8 m/s².",
+      "options": [
+        "360",
+        "420",
+        "490",
+        "600"
+      ]
+    },
+    {
+      "n": 32,
+      "text": "What is the total capacitance between points K and L in the circuit shown in the figure (in C)?",
+      "options": [
+        "15",
+        "12",
+        "6",
+        "3"
+      ]
+    },
+    {
+      "n": 33,
+      "text": "Calculate the rms value of the current at a frequency of 100 Hz (A).",
+      "note": "Correctly match the tasks (33–35) with the answer options (A–F). A 50 μF capacitor and a coil with inductance 200 mH and resistance 5 Ω are connected in series to form an AC circuit. A current source with an rms voltage of 220 V and adjustable frequency is connected to this circuit.",
+      "options": [
+        "2.8",
+        "36",
+        "44",
+        "1.96",
+        "4.65",
+        "2.34"
+      ]
+    },
+    {
+      "n": 34,
+      "text": "Find the rms value of the current at resonance (A).",
+      "note": "Correctly match the tasks (33–35) with the answer options (A–F). A 50 μF capacitor and a coil with inductance 200 mH and resistance 5 Ω are connected in series to form an AC circuit. A current source with an rms voltage of 220 V and adjustable frequency is connected to this circuit.",
+      "options": [
+        "2.8",
+        "36",
+        "44",
+        "1.96",
+        "4.65",
+        "2.34"
+      ]
+    },
+    {
+      "n": 35,
+      "text": "Find the rms voltage across the coil at resonance (kV).",
+      "note": "Correctly match the tasks (33–35) with the answer options (A–F). A 50 μF capacitor and a coil with inductance 200 mH and resistance 5 Ω are connected in series to form an AC circuit. A current source with an rms voltage of 220 V and adjustable frequency is connected to this circuit.",
+      "options": [
+        "2.8",
+        "36",
+        "44",
+        "1.96",
+        "4.65",
+        "2.34"
+      ]
+    },
+    {
+      "n": 36,
+      "text": "A train traveling at 72 km/h travelled 1 km from the start of braking until it stopped.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "What is the braking time?",
+          "unit": "s"
+        },
+        {
+          "key": "b",
+          "text": "At what speed will the train pass a traffic light located in the middle of the braking distance?",
+          "unit": "km/h"
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "text": "Of hydrogen molecules at a temperature of 27 °C:",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Calculate approximately the root-mean-square speed.",
+          "unit": "km/s"
+        },
+        {
+          "key": "b",
+          "text": "Find the momentum of one molecule moving at this speed.",
+          "unit": "kg·m/s",
+          "hint": "For example: 6.4e-24"
+        }
+      ]
+    },
+    {
+      "n": 38,
+      "text": "A wooden log floating in water displaces 0.72 m³ of water, and when fully submerged in water it displaces 0.9 m³.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the mass of the log.",
+          "unit": "kg"
+        },
+        {
+          "key": "b",
+          "text": "Find the density of the log.",
+          "unit": "kg/m³"
+        }
+      ]
+    },
+    {
+      "n": 39,
+      "text": "Of an electron moving in a hydrogen atom along the first Bohr orbit (r₁ = 0.53·10⁻¹⁰ m):",
+      "parts": [
+        {
+          "key": "a",
+          "text": "What is the orbital period in seconds?",
+          "unit": "s",
+          "hint": "For example: 1.5e-16"
+        },
+        {
+          "key": "b",
+          "text": "Find the angular velocity.",
+          "unit": "rad/s",
+          "hint": "For example: 4.2e16"
+        }
+      ]
+    },
+    {
+      "n": 40,
+      "text": "A gas at a pressure of 8 MPa expanded isobarically and its volume increased by 0.5 m³. During this process the gas received 6 MJ of heat.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the work done by the gas.",
+          "unit": "MJ"
+        },
+        {
+          "key": "b",
+          "text": "Find the change in the internal energy of the gas.",
+          "unit": "MJ"
+        }
+      ]
+    },
+    {
+      "n": 41,
+      "text": "An object is located at a distance 4F from a lens.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "At what distance from the lens is the virtual image formed? Write the answer in the form F: enter the numerical coefficient in front of F.",
+          "unit": "·F"
+        },
+        {
+          "key": "b",
+          "text": "By what factor is the image smaller than the object?",
+          "unit": "times"
+        }
+      ]
+    },
+    {
+      "n": 42,
+      "text": "A force raised a load to a height of 8 cm using a lever. The force acting on the long arm did 184 J of work.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the weight of the lifted load (neglect friction).",
+          "unit": "kN"
+        },
+        {
+          "key": "b",
+          "text": "If the point of application of this force goes down by 2 m, find the force acting on the long arm.",
+          "unit": "N"
+        }
+      ]
+    },
+    {
+      "n": 43,
+      "text": "A charge of 24 C passed through a conductor in 10 s. The voltage across the conductor is 12 V.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the power of the current.",
+          "unit": "W"
+        },
+        {
+          "key": "b",
+          "text": "Determine the resistance of the conductor.",
+          "unit": "Ω"
+        }
+      ]
+    },
+    {
+      "n": 44,
+      "text": "The half-life of the radioactive potassium isotope ⁴²₁₉K is 12.4 h.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the mean lifetime of the isotope.",
+          "unit": "h"
+        },
+        {
+          "key": "b",
+          "text": "Find the radioactive decay constant.",
+          "unit": "1/h"
+        }
+      ]
+    },
+    {
+      "n": 45,
+      "text": "When one uranium ²³⁸₉₂U nucleus splits into two fragments, 200 MeV of energy is released.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "How much energy is released when 1 kg of this isotope is burned in a nuclear reactor?",
+          "unit": "MeV",
+          "hint": "For example: 5e26"
+        },
+        {
+          "key": "b",
+          "text": "How much gasoline must be burned to obtain the same amount of energy? q = 46 MJ/kg",
+          "unit": "t"
+        }
+      ]
+    }
+  ]
+}

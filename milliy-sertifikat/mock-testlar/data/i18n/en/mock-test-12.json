@@ -1,0 +1,526 @@
+{
+ "title": "Physics Mock Test №12",
+ "subtitle": "Variant of 02.04.2023 • 45 tasks • 3 hours • with formula sheet and calculator",
+ "questions": [
+  {
+   "n": 1,
+   "text": "Using the given graph, find the acceleration of the body (m/s²). α = 58°, sin 58° = 0.85, cos 58° = 0.53.",
+   "options": [
+    "0.53",
+    "0.62",
+    "0.85",
+    "0"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "A skier moving with an acceleration of 0.4 m/s² covered 100 m in 20 s. What are his speeds at the beginning and at the end of the path (m/s)?",
+   "options": [
+    "0; 8",
+    "1; 9",
+    "1; 10",
+    "2; 8"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "A body is thrown at an angle of 45° to the horizontal. After 0.8 s it is still rising, and the vertical component of its velocity is 12 m/s. Determine the distance (m) between the points where the body is thrown and where it lands. g = 10 m/s².",
+   "options": [
+    "32",
+    "40",
+    "65",
+    "80"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "A body thrown vertically upward returned to its initial position after 12 seconds. Find the maximum height reached by the body (m).",
+   "options": [
+    "720",
+    "360",
+    "180",
+    "120"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "Forces of 15 N and 20 N act perpendicular to each other on a body of mass 2.5 kg initially at rest. Find the speed of the body after 3 s (m/s).",
+   "options": [
+    "21",
+    "30",
+    "39",
+    "40"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "Loads are hung over pulleys as shown in the figure. If the masses of the loads are m₁ = 3 kg and m₂ = 6 kg, determine the acceleration of the load of smaller mass (m/s²). Neglect friction and the masses of the pulleys.",
+   "options": [
+    "5.3",
+    "1.5",
+    "3.3",
+    "4.5"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "How many times greater is the weight of a body moving upward with an acceleration of 2 m/s² than its weight when moving downward with the same acceleration?",
+   "options": [
+    "1.5",
+    "0.5",
+    "2.5",
+    "2"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "A puck of mass 150 g flying horizontally at 20 m/s hits the side wall at an angle of 60° to the normal to the wall surface and bounces back from it. If the duration of the impact is 0.01 s, find the average force exerted by the puck on the wall. Assume the collision is perfectly elastic.",
+   "options": [
+    "100",
+    "400",
+    "300",
+    "500"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "A bullet of mass m = 10 g moving at speed v = 100 m/s embeds itself inelastically in a block attached to a spring. By how many centimetres is the spring compressed? M = 1.99 kg, k = 200 N/m.",
+   "options": [
+    "5",
+    "4",
+    "10",
+    "6"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "The density of one gas at a pressure of 400 kPa is 1.6 kg/m³. A second gas of mass 2 kg in a volume of 10 m³ has a pressure of 200 kPa. How many times greater is the root-mean-square speed of the molecules of the second gas than that of the molecules of the first gas?",
+   "options": [
+    "5",
+    "2",
+    "4",
+    "3"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "A 2 L cylinder is filled with helium at a pressure of 12·10⁵ Pa, and another cylinder of volume 5 L is filled with argon at a pressure of 2.2·10⁵ Pa. What pressure is established if the cylinders are connected by a thin tube? The temperature is constant.",
+   "options": [
+    "300 Pa",
+    "250 kPa",
+    "800 Pa",
+    "500 kPa"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "To heat the gas in an engine cylinder, 2 kg of oil was burned, and the gas did 36 MJ of work. The specific heat of combustion of oil is 4.3·10⁷ J/kg. Determine the efficiency of the engine.",
+   "options": [
+    "24 %",
+    "36 %",
+    "54 %",
+    "42 %"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "A monatomic ideal gas is compressed isobarically at a pressure of 2·10⁵ Pa from a volume of 2.5 L to 1.6 L. By how much does its internal energy decrease?",
+   "options": [
+    "270 J",
+    "180 J",
+    "150 J",
+    "320 J"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "A vessel of volume 100 L contains air at a temperature of 25 °C and a relative humidity of 30 %. What will the relative humidity be if 1 g of water is introduced into the vessel? The density of saturated water vapour at 25 °C is 23 g/m³.",
+   "options": [
+    "73.5 %",
+    "65.5 %",
+    "48.5 %",
+    "83.5 %"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "The same current flows through two copper conductors of diameters 2 mm and 3 mm. How many times greater is the drift speed of the electrons in the first conductor than in the second?",
+   "options": [
+    "3.75",
+    "7.2",
+    "2.25",
+    "1.55"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "The amplitude values of the current and voltage across a resistor are 2.5 A and 120 V. Determine the power of the current.",
+   "options": [
+    "180 W",
+    "150 W",
+    "120 W",
+    "220 W"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "A parallel-plate air capacitor is connected to a DC voltage source. The energy of the capacitor is 5 μJ. What will the final energy of the capacitor be if the space between the plates is filled with kerosene of dielectric constant 2?",
+   "options": [
+    "10 μJ",
+    "15 μJ",
+    "9 μJ",
+    "18 μJ"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "Two resistors, one of resistance 18 kΩ and the other of unknown resistance, are connected in series to a 24 V DC voltage source. If the voltage drop across the unknown resistance is 20 V, determine this resistance.",
+   "options": [
+    "40 kΩ",
+    "65 Ω",
+    "14 mΩ",
+    "90 kΩ"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "The primary winding of a step-down transformer with a transformation ratio of 8 is connected to a 220 V mains. The resistance of the secondary winding is 2 Ω and the current in it is 3 A. Determine the voltage across the terminals of the secondary winding.",
+   "options": [
+    "14.2 V",
+    "21.5 V",
+    "17.5 V",
+    "27.5 V"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "When an external resistance of 6 Ω is connected to a current source, the current in the circuit is 0.3 A, and when an external resistance of 14 Ω is connected, it is 0.15 A. Determine the short-circuit current.",
+   "options": [
+    "1.8 A",
+    "0.5 A",
+    "2.2 A",
+    "1.2 A"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "When a coil is disconnected from an AC circuit of frequency 10 kHz and connected to a circuit of frequency 50 Hz, by what factor does its inductive reactance decrease?",
+   "options": [
+    "200",
+    "180",
+    "420",
+    "350"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "What is the inductance of a coil (H) if a current of 2.5 A through it produces a flux linkage of 25 Wb?",
+   "options": [
+    "25",
+    "10",
+    "5",
+    "2.5"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "If the Lorentz force acting on a charge of 0.4 C moving at 1 km/s perpendicular to the field lines is 8 N, what is the magnetic induction (mT)?",
+   "options": [
+    "20",
+    "40",
+    "16",
+    "10"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "What is the energy of the magnetic field of a coil of inductance 4 H carrying a steady electric current of 3 A (J)?",
+   "options": [
+    "9",
+    "18",
+    "3",
+    "6"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "In an ideal oscillating circuit, the capacitance of the capacitor is 4 μF, and the charge on it varies according to q = 2·10⁻⁵ cos(10⁵πt) (C). Find the maximum value of the magnetic field energy in the circuit.",
+   "options": [
+    "50 μJ",
+    "20 μJ",
+    "200 μJ",
+    "40 μJ"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "A circuit is made of an inductor and 3 identical capacitors connected in series. The oscillation period of the circuit is 10 μs. What will the oscillation period of the circuit be if the capacitors are connected in parallel?",
+   "options": [
+    "30 μs",
+    "45 μs",
+    "20 μs",
+    "54 μs"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "An object is placed 25 cm in front of the focus of a converging lens. The image is formed 35 cm from the double focus. Determine the focal length of the lens.",
+   "options": [
+    "32.4 cm",
+    "18.8 cm",
+    "29.6 cm",
+    "42.5 cm"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "If the distance from the object to the lens is 15 cm and the magnification of the lens is 4, find the focal length of the lens (cm).",
+   "options": [
+    "10",
+    "30",
+    "12",
+    "7.5"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "If the longest wavelength of light that can cause the photoelectric effect in caesium is 620 nm, find the work function of an electron for caesium (eV).",
+   "options": [
+    "2.5",
+    "5",
+    "1.5",
+    "2"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "The maximum speed of photoelectrons emitted from cadmium, for which the electron work function is 6.56·10⁻¹⁹ J, is 4·10⁵ m/s. Find the wavelength of the light falling on the cadmium. c = 3·10⁸ m/s, h = 6.625·10⁻³⁴ J·s, mₑ = 9.1·10⁻³¹ kg.",
+   "options": [
+    "325 nm",
+    "648 mm",
+    "273 nm",
+    "154 mm"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "When an electron in a hydrogen atom drops from a higher stationary orbit to a lower one, its energy decreases by 1.8 eV. Find the wavelength of the radiation. c = 3·10⁸ m/s, h = 6.625·10⁻³⁴ J·s.",
+   "options": [
+    "687 nm",
+    "484 nm",
+    "872 nm",
+    "345 nm"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "Determine the missing particle in this nuclear reaction: ⁷₃Li + ? → ¹⁰₅B + ¹₀n.",
+   "options": [
+    "electron",
+    "positron",
+    "α particle",
+    "proton"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "Given that the temperature of the gas in the first state is 150 K, determine the final temperature (K).",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. A monatomic ideal gas passed isobarically from state 1 to state 2, as shown in the graph.",
+   "options": [
+    "600",
+    "900",
+    "225",
+    "725",
+    "675",
+    "450"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Determine the work (J) done in the transition from state 1 to state 2. The initial pressure is P₁ = 15 kPa.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. A monatomic ideal gas passed isobarically from state 1 to state 2, as shown in the graph.",
+   "options": [
+    "600",
+    "900",
+    "225",
+    "725",
+    "675",
+    "450"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "Find the change in internal energy (J) in the transition from state 1 to state 2.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. A monatomic ideal gas passed isobarically from state 1 to state 2, as shown in the graph.",
+   "options": [
+    "600",
+    "900",
+    "225",
+    "725",
+    "675",
+    "450"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "Two bodies were thrown upward on the Moon with an initial speed of 25 m/s, 6 s apart. g_Moon = 5/3 m/s².",
+   "parts": [
+    {
+     "key": "a",
+     "text": "How many seconds after the first body was thrown will they meet?",
+     "unit": "s"
+    },
+    {
+     "key": "b",
+     "text": "Determine their speeds at the moment they meet.",
+     "unit": "m/s"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A cart moves in the horizontal direction with an acceleration of 2√11 m/s². m = 2 kg, g = 10 m/s².",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the relative acceleration.",
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "What is the tension in the string (N)?",
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "See the diagram. The figure shows 3 bricks stacked on top of one another. Take the coefficient of friction between all surfaces to be μ.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What is the minimum force needed to pull out the lowest load of mass m without moving the others? In the online answer, enter the numerical coefficient in front of μmg.",
+     "unit": "·μmg"
+    },
+    {
+     "key": "b",
+     "text": "What minimum force must be applied to set all of them in uniform motion together? In the online answer, enter the numerical coefficient in front of μmg.",
+     "unit": "·μmg"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "Two balls of 12 kg each move in the same direction at speeds of 4 m/s and 2 m/s, respectively, and collide inelastically.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine their speed after the collision (m/s).",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "Determine their kinetic energy after the collision (J).",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "Use the data given in the graph.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine by how much the internal energy of the ideal gas (monatomic) changed between A and C.",
+     "unit": "kJ"
+    },
+    {
+     "key": "b",
+     "text": "Determine the work done by the ideal gas (monatomic) between A and C.",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "Capacitors of 100 pF and 2400 pF are connected in series.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the total capacitance of the resulting system.",
+     "unit": "pF"
+    },
+    {
+     "key": "b",
+     "text": "If the voltage across the system of capacitors is 150 V, determine the energy of the system.",
+     "unit": "μJ"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "An electric circuit is made of a current source with an emf of 18 V and internal resistance of 1 Ω, to which conductors with resistances of 40 Ω and 10 Ω are connected in parallel.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the short-circuit current of the system.",
+     "unit": "A"
+    },
+    {
+     "key": "b",
+     "text": "What is the current in the circuit?",
+     "unit": "A"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "A diverging lens with a focal length of 30 cm forms an image of an object reduced 3 times.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "At what distance from the lens is the object located?",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the distance between the object and the image.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "The first particle, with speed 0.9c, is catching up with the second particle. Their relative speed is 0.4c.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the speed of the second particle. In the online answer, enter the coefficient in front of c.",
+     "unit": "c"
+    },
+    {
+     "key": "b",
+     "text": "If these particles move in opposite directions, determine their relative speed. In the online answer, enter the coefficient in front of c.",
+     "unit": "c"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "The maximum speed of electrons emitted from a caesium surface is 2·10⁶ m/s. The work function of an electron for caesium is 2.9·10⁻¹⁹ J.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the wavelength of the incident light rays.",
+     "unit": "nm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the momentum of the incident light rays.",
+     "unit": "kg·m/s",
+     "hint": "For example: 7e-27"
+    }
+   ]
+  }
+ ]
+}

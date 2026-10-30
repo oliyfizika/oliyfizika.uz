@@ -14,6 +14,8 @@ import { renderResult, renderPending } from "./result.js";
 import { checkMockAccess } from "./access-gate.js";
 import { goToLogin } from "./session.js";
 import { initTheme } from "./theme.js";
+import { fetchOverlay, applyOverlay } from "./i18n-content.js";
+import { t } from "../../../assets/js/core/i18n.js";
 
 const BASE_URL = new URL("../", import.meta.url); // mock-testlar/ papkasi
 const resolveUrl = (path) => new URL(path, BASE_URL).href;
@@ -52,7 +54,7 @@ async function loadTest(id) {
   if (!res.ok) throw new Error(`Test fayli yuklanmadi (${res.status})`);
   const data = await res.json();
   validateTest(data);
-  return data;
+  return applyOverlay(data, await fetchOverlay(entry.file));
 }
 
 function validateTest(t) {
@@ -78,41 +80,41 @@ function renderStart(saved) {
   const buttons = [];
   if (saved && !saved.submitted) {
     buttons.push(
-      h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => resume() }, "▶ Saqlangan testni davom ettirish"),
+      h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => resume() }, t("ms.e.resume", "▶ Saqlangan testni davom ettirish")),
       h("button", { type: "button", class: "btn btn-danger-ghost btn-big", onclick: async () => {
-        if (await confirmDialog({ title: "Saqlangan test o‘chirilsinmi?", message: "Kiritilgan barcha javoblar va vaqt o‘chiriladi.", confirmText: "O‘chirish", danger: true })) {
+        if (await confirmDialog({ title: t("ms.e.deleteTitle", "Saqlangan test o‘chirilsinmi?"), message: t("ms.e.deleteMsg", "Kiritilgan barcha javoblar va vaqt o‘chiriladi."), confirmText: t("ms.e.deleteOk", "O‘chirish"), danger: true })) {
           clearState(test.id, session.uid);
           renderStart(null);
         }
-      } }, "Saqlangan testni o‘chirish"));
+      } }, t("ms.e.deleteSaved", "Saqlangan testni o‘chirish")));
   } else {
-    buttons.push(h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => startNew() }, "TESTNI BOSHLASH"));
+    buttons.push(h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => startNew() }, t("ms.e.begin", "TESTNI BOSHLASH")));
   }
 
   clear($("#startScreen")).append(
     h("section", { class: "start-card glass" },
       h("div", { class: "hero" },
-        h("span", { class: "eyebrow" }, "OLIYFIZIKA.UZ • MILLIY SERTIFIKAT"),
+        h("span", { class: "eyebrow" }, t("ms.e.eyebrow", "OLIYFIZIKA.UZ • MILLIY SERTIFIKAT")),
         h("h1", {}, test.title),
         h("p", {}, test.subtitle || "")),
       h("div", { class: "start-body" },
         h("div", { class: "info-grid" },
-          chip(String(total), "topshiriq"),
-          chip(String(bands), "baholanadigan band"),
-          chip(`${test.durationMinutes} min`, "umumiy vaqt"),
-          chip(`${mcq} + ${total - mcq}`, "test + ochiq savol")),
+          chip(String(total), t("ms.e.tasks", "topshiriq")),
+          chip(String(bands), t("ms.e.bands", "baholanadigan band")),
+          chip(t("ms.e.min", `${test.durationMinutes} min`, { n: test.durationMinutes }), t("ms.e.totalTime", "umumiy vaqt")),
+          chip(`${mcq} + ${total - mcq}`, t("ms.e.kinds", "test + ochiq savol"))),
         h("div", { class: "participant" },
           h("span", { class: "participant__avatar", "aria-hidden": "true" }, (session.name || "?").trim().charAt(0).toUpperCase()),
           h("div", {},
-            h("span", { class: "participant__label" }, "Ishtirokchi"),
+            h("span", { class: "participant__label" }, t("ms.e.participant", "Ishtirokchi")),
             h("b", { class: "participant__name", id: "participantName" }, session.name),
             session.email && session.email !== session.name ? h("span", { class: "participant__email" }, session.email) : null)),
         h("div", { class: "rules" },
-          h("b", {}, "Eslatma: "),
-          "test boshlanganidan keyin vaqt to‘xtamaydi. Javoblar qurilmada avtomatik saqlanadi. Ochiq savollarning ",
-          h("b", {}, "a"), " va ", h("b", {}, "b"),
-          " qismlari alohida baholanadi. 33–35-topshiriqlarda A–F javoblar orasidan moslashtirish amalga oshiriladi. Yakunda Rasch balli hisoblanmaydi — tahlil uchun natija kodi beriladi."),
-        saved && !saved.submitted ? h("p", { class: "notice" }, `Saqlangan urinish. Javob berilgan: ${countFilledItems(test.questions, saved.answers || {})} / ${bands} band.`) : null,
+          h("b", {}, t("ms.e.noteLabel", "Eslatma: ")),
+          t("ms.e.note1", "test boshlanganidan keyin vaqt to‘xtamaydi. Javoblar qurilmada avtomatik saqlanadi. Ochiq savollarning "),
+          h("b", {}, "a"), t("ms.e.note2", " va "), h("b", {}, "b"),
+          t("ms.e.note3", " qismlari alohida baholanadi. 33–35-topshiriqlarda A–F javoblar orasidan moslashtirish amalga oshiriladi. Yakunda Rasch balli hisoblanmaydi — tahlil uchun natija kodi beriladi.")),
+        saved && !saved.submitted ? h("p", { class: "notice" }, t("ms.e.savedNotice", `Saqlangan urinish. Javob berilgan: ${countFilledItems(test.questions, saved.answers || {})} / ${bands} band.`, { a: countFilledItems(test.questions, saved.answers || {}), b: bands })) : null,
         h("div", { class: "start-actions" }, buttons))));
   show("#startScreen");
 }
@@ -145,7 +147,7 @@ function enterExam() {
   timer = createTimer({
     element: $("#timer"),
     getEndTs: () => state.deadlineTs,
-    onWarn: () => toast("Diqqat: 10 daqiqadan kam vaqt qoldi"),
+    onWarn: () => toast(t("ms.e.warn", "Diqqat: 10 daqiqadan kam vaqt qoldi")),
     onExpire: () => submit(true),
   });
   timer.start();
@@ -154,7 +156,7 @@ function enterExam() {
 function buildNav() {
   const grid = clear($("#navgrid"));
   navButtons = test.questions.map((q, i) => {
-    const b = h("button", { type: "button", class: "navbtn", "aria-label": `${q.n}-savol`, onclick: () => { goTo(i); closeSide(); } }, String(q.n));
+    const b = h("button", { type: "button", class: "navbtn", "aria-label": t("ms.t.qAria", `${q.n}-savol`, { n: q.n }), onclick: () => { goTo(i); closeSide(); } }, String(q.n));
     grid.append(b);
     return b;
   });
@@ -193,30 +195,30 @@ function renderQuestion() {
   const i = state.current;
   const q = test.questions[i];
   $("#qNumber").textContent = String(q.n);
-  $("#qMeta").textContent = `${i + 1} / ${test.questions.length} • ${q.type === "mcq" ? "Test savoli" : "Ochiq savol"}`;
+  $("#qMeta").textContent = `${i + 1} / ${test.questions.length} • ${q.type === "mcq" ? t("ms.e.mcq", "Test savoli") : t("ms.e.open", "Ochiq savol")}`;
   $("#qTitle").textContent = test.title.toUpperCase();
 
   const box = clear($("#qContent"));
   if (q.note) box.append(h("div", { class: "shared-note" }, q.note));
   box.append(h("div", { class: "qtext" }, q.text));
   if (q.reaction) box.append(h("div", { class: "reaction" }, q.reaction));
-  if (q.image) box.append(h("div", { class: "diagram-wrap" }, h("img", { src: resolveUrl(q.image), alt: `${q.n}-savol rasmi`, decoding: "async" })));
+  if (q.image) box.append(h("div", { class: "diagram-wrap" }, h("img", { src: resolveUrl(q.image), alt: t("ms.e.imgAlt", `${q.n}-savol rasmi`, { n: q.n }), decoding: "async" })));
 
   if (q.type === "mcq") renderOptions(box, q, i);
   else renderOpen(box, q, i);
 
   const markBtn = $("#markBtn");
   markBtn.classList.toggle("active", !!state.marked[i]);
-  markBtn.textContent = state.marked[i] ? "★ Belgilangan" : "☆ Belgilash";
+  markBtn.textContent = state.marked[i] ? t("ms.t.marked", "★ Belgilangan") : t("ms.t.mark", "☆ Belgilash");
   markBtn.setAttribute("aria-pressed", String(!!state.marked[i]));
   $("#prevBtn").disabled = i === 0;
-  $("#nextBtn").textContent = i === test.questions.length - 1 ? "Yakunlash →" : "Keyingi →";
+  $("#nextBtn").textContent = i === test.questions.length - 1 ? t("ms.t.finishArrow", "Yakunlash →") : t("ms.t.next", "Keyingi →");
   updateNav();
   $("#questionCard").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function renderOptions(box, q, i) {
-  const list = h("div", { class: "options", role: "radiogroup", "aria-label": "Javob variantlari" });
+  const list = h("div", { class: "options", role: "radiogroup", "aria-label": t("ms.e.options", "Javob variantlari") });
   const current = state.answers[i] || "";
   q.options.forEach((opt, k) => {
     const L = LETTERS[k];
@@ -228,7 +230,7 @@ function renderOptions(box, q, i) {
   });
   box.append(list);
   if (current) {
-    box.append(h("button", { type: "button", class: "link-btn", onclick: () => { delete state.answers[i]; persist(); renderQuestion(); } }, "Tanlovni bekor qilish"));
+    box.append(h("button", { type: "button", class: "link-btn", onclick: () => { delete state.answers[i]; persist(); renderQuestion(); } }, t("ms.e.clear", "Tanlovni bekor qilish")));
   }
 }
 
@@ -236,20 +238,20 @@ function renderOptions(box, q, i) {
 function optionBody(opt) {
   if (typeof opt === "string") return h("span", { class: "optext" }, opt);
   return h("span", { class: "optext" },
-    opt.image ? h("img", { class: "option-img", src: resolveUrl(opt.image), alt: opt.text || "Variant rasmi", decoding: "async" }) : null,
+    opt.image ? h("img", { class: "option-img", src: resolveUrl(opt.image), alt: opt.text || t("ms.e.optImgAlt", "Variant rasmi"), decoding: "async" }) : null,
     opt.image ? null : opt.text || "");
 }
 
 function renderOpen(box, q, i) {
   const hasNumeric = q.parts.some((p) => p.kind !== "text");
   const wrap = h("div", { class: "open-parts" },
-    hasNumeric ? h("div", { class: "number-note" }, "⚠️ Son so‘ralgan joyga faqat son kiriting. Birlik avtomatik ko‘rsatiladi. O‘nli kasr: 1,5 yoki 1.5; juda kichik/katta son: 7e-27 yoki 7*10^-27.") : null);
+    hasNumeric ? h("div", { class: "number-note" }, t("ms.e.numberNote", "⚠️ Son so‘ralgan joyga faqat son kiriting. Birlik avtomatik ko‘rsatiladi. O‘nli kasr: 1,5 yoki 1.5; juda kichik/katta son: 7e-27 yoki 7*10^-27.")) : null);
   q.parts.forEach((p) => {
     const id = `open-${p.key}`;
     const isText = p.kind === "text";
     const input = h("input", {
       id, type: "text", inputmode: isText || p.scientific ? "text" : "decimal", autocomplete: "off", spellcheck: "false",
-      placeholder: p.hint || (isText ? "Javobni yozing" : "Faqat son"), "aria-label": `${p.key}) qism javobi`, value: state.answers[i]?.[p.key] ?? "",
+      placeholder: p.hint || (isText ? t("ms.e.answerText", "Javobni yozing") : t("ms.e.answerNum", "Faqat son")), "aria-label": t("ms.e.partAria", `${p.key}) qism javobi`, { k: p.key }), value: state.answers[i]?.[p.key] ?? "",
       maxlength: "60",
     });
     input.addEventListener("input", () => {
@@ -261,7 +263,7 @@ function renderOpen(box, q, i) {
       updateNav();
     });
     wrap.append(h("div", { class: "part" },
-      h("div", { class: "part-title" }, `${p.key}) qism`),
+      h("div", { class: "part-title" }, t("ms.e.part", `${p.key}) qism`, { k: p.key })),
       h("p", {}, p.text),
       h("div", { class: "answerbox" }, input, p.unit ? h("span", { class: "unit" }, p.unit) : null)));
   });
@@ -274,10 +276,10 @@ async function confirmFinish() {
   const total = itemCount(test.questions);
   const miss = total - countFilledItems(test.questions, state.answers);
   const marked = Object.values(state.marked).filter(Boolean).length;
-  let message = miss ? `${miss} ta baholanadigan band javobsiz qolgan.` : "Barcha bandlarga javob berilgan.";
-  if (marked) message += ` ${marked} ta savol belgilangan.`;
-  message += " Yakunlangandan so‘ng javoblarni o‘zgartirib bo‘lmaydi.";
-  const ok = await confirmDialog({ title: "Testni yakunlaysizmi?", message, confirmText: "Ha, yakunlash", danger: true });
+  let message = miss ? t("ms.e.missing", `${miss} ta baholanadigan band javobsiz qolgan.`, { n: miss }) : t("ms.e.allDone", "Barcha bandlarga javob berilgan.");
+  if (marked) message += t("ms.e.markedN", ` ${marked} ta savol belgilangan.`, { n: marked });
+  message += t("ms.e.noChange", " Yakunlangandan so‘ng javoblarni o‘zgartirib bo‘lmaydi.");
+  const ok = await confirmDialog({ title: t("ms.e.finishTitle", "Testni yakunlaysizmi?"), message, confirmText: t("ms.e.finishYes", "Ha, yakunlash"), danger: true });
   if (ok) submit(false);
 }
 
@@ -295,21 +297,21 @@ async function submit(auto) {
     state.status = res.status;
     persist();
     showFinal(res.grade);
-    if (auto) toast("Vaqt tugadi — test avtomatik yakunlandi");
+    if (auto) toast(t("ms.e.autoDone", "Vaqt tugadi — test avtomatik yakunlandi"));
   } catch (error) {
     console.error("Urinishni topshirishda xato:", error);
     state.submitted = false;
     state.status = ATTEMPT_STATUS.IN_PROGRESS;
     persist();
-    showMessage("Javoblarni yuborib bo‘lmadi", "Internet aloqasini tekshirib, qayta urinib ko‘ring. Javoblaringiz qurilmada saqlangan.", [
-      h("button", { type: "button", class: "btn btn-primary", onclick: () => submit(auto) }, "Qayta yuborish"),
+    showMessage(t("ms.e.sendFailTitle", "Javoblarni yuborib bo‘lmadi"), t("ms.e.sendFailText", "Internet aloqasini tekshirib, qayta urinib ko‘ring. Javoblaringiz qurilmada saqlangan."), [
+      h("button", { type: "button", class: "btn btn-primary", onclick: () => submit(auto) }, t("ms.e.retry", "Qayta yuborish")),
     ]);
   }
 }
 
 function showFinal(grade) {
   const onNewAttempt = async () => {
-    if (await confirmDialog({ title: "Yangi urinish", message: "Joriy natija yopiladi va test boshidan boshlanadi.", confirmText: "Yangi urinish" })) {
+    if (await confirmDialog({ title: t("ms.e.newTitle", "Yangi urinish"), message: t("ms.e.newMsg", "Joriy natija yopiladi va test boshidan boshlanadi."), confirmText: t("ms.e.newOk", "Yangi urinish") })) {
       clearState(test.id, session.uid);
       state = null;
       renderStart(null);
@@ -376,17 +378,17 @@ async function init() {
   show("#loadingScreen");
 
   const id = new URLSearchParams(location.search).get("id") || "";
-  const back = h("a", { class: "btn btn-primary", href: "./" }, "← Testlar ro‘yxati");
+  const back = h("a", { class: "btn btn-primary", href: "./" }, t("ms.e.backList", "← Testlar ro‘yxati"));
 
   const access = await checkMockAccess();
   if (!access.allowed) {
     if (access.reason === "login") {
-      showMessage("Saytga kiring", "Mock testni boshlash uchun OliyFizika.uz saytidagi akkauntingiz bilan kiring. Natijalar shu akkauntdagi ism bilan saqlanadi. Bosh sahifada “Kirish” tugmasini bosing — kirgandan so‘ng shu testga avtomatik qaytasiz.", [
-        h("button", { type: "button", class: "btn btn-primary", onclick: () => goToLogin() }, "Kirish / Ro‘yxatdan o‘tish"), back]);
+      showMessage(t("ms.e.loginTitle", "Saytga kiring"), t("ms.e.loginText", "Mock testni boshlash uchun OliyFizika.uz saytidagi akkauntingiz bilan kiring. Natijalar shu akkauntdagi ism bilan saqlanadi. Bosh sahifada “Kirish” tugmasini bosing — kirgandan so‘ng shu testga avtomatik qaytasiz."), [
+        h("button", { type: "button", class: "btn btn-primary", onclick: () => goToLogin() }, t("ms.e.loginBtn", "Kirish / Ro‘yxatdan o‘tish")), back]);
       return;
     }
-    const text = access.reason === "access" ? "Bu bo‘lim uchun sizda ruxsat mavjud emas." : "Ruxsatni tekshirib bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.";
-    showMessage("Ruxsat talab qilinadi", text, [back]);
+    const text = access.reason === "access" ? t("ms.e.accessDenied", "Bu bo‘lim uchun sizda ruxsat mavjud emas.") : t("ms.e.accessFail", "Ruxsatni tekshirib bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.");
+    showMessage(t("ms.e.accessTitle", "Ruxsat talab qilinadi"), text, [back]);
     return;
   }
   session = access.session;
@@ -395,11 +397,11 @@ async function init() {
     test = await loadTest(id);
   } catch (error) {
     console.error("Testni yuklab bo‘lmadi:", error);
-    showMessage("Testni yuklab bo‘lmadi", "Sahifani yangilab ko‘ring. Muammo takrorlansa, muallifga Telegram orqali xabar bering.", [back]);
+    showMessage(t("ms.e.loadFailTitle", "Testni yuklab bo‘lmadi"), t("ms.e.loadFailText", "Sahifani yangilab ko‘ring. Muammo takrorlansa, muallifga Telegram orqali xabar bering."), [back]);
     return;
   }
   if (!test) {
-    showMessage("Test topilmadi", "Bunday mock test mavjud emas.", [back]);
+    showMessage(t("ms.e.notFoundTitle", "Test topilmadi"), t("ms.e.notFoundText", "Bunday mock test mavjud emas."), [back]);
     return;
   }
 

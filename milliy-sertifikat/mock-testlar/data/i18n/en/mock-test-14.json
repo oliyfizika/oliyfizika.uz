@@ -1,0 +1,614 @@
+{
+ "title": "Physics Mock Test №14",
+ "subtitle": "National Certificate: September 30, 2026, Shift 1 • 45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Rotation and Energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular Physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric Current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic Field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and Nuclear Physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A and Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "A body moves in a straight line at a constant speed of 4 m/s. What distance does it travel in 10 s?",
+   "options": [
+    "2.5 m",
+    "14 m",
+    "40 m",
+    "400 m"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "The distance covered by a body starting from rest with uniform acceleration in the first 3 s equals the distance it covers in the last second of motion. How long did the motion last?",
+   "options": [
+    "5 s",
+    "4 s",
+    "6 s",
+    "9 s"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "By what factor must the force acting on a body be increased in order to increase its acceleration by a factor of 4?",
+   "options": [
+    "2 times",
+    "4 times",
+    "8 times",
+    "16 times"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "A block of mass 2 kg lies on a board of mass 6 kg resting on a smooth horizontal surface. The coefficient of friction between the block and the board is 0.3. A horizontal force of 4 N begins to act on the block (see the figure). Find the acceleration of the board.",
+   "options": [
+    "2 m/s²",
+    "1 m/s²",
+    "2/3 m/s²",
+    "0.5 m/s²"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "An artificial satellite of mass 4 kg moves in a circular orbit close to the Earth's surface. Find the kinetic energy of the satellite. The radius of the Earth is 6400 km.",
+   "options": [
+    "1.28·10⁸ J",
+    "2.56·10⁸ J",
+    "6.4·10⁷ J",
+    "1.28·10⁵ J"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "The upper end of a uniform rope of length 40 cm and mass 4 kg is fixed to the ceiling, and a load of mass 6 kg is hung from its lower end (see the figure). Find the elastic force (tension) at point A, located 10 cm below the upper end of the rope.",
+   "options": [
+    "60 N",
+    "70 N",
+    "90 N",
+    "100 N"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "A uniform beam of length 140 cm and mass 1200 kg rests on two supports. One support is 20 cm from the left end of the beam and the other is 60 cm from the right end (see the figure). Find the smallest upward vertical force that must be applied to the left end of the beam to lift it.",
+   "options": [
+    "3 kN",
+    "1.5 kN",
+    "6 kN",
+    "0.75 kN"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "A closed cubic vessel with an edge of 4 m is completely filled with water. The vessel moves horizontally with an acceleration of 1.5 m/s². With what net horizontal force do the walls of the vessel act on the water?",
+   "options": [
+    "9.6 kN",
+    "640 kN",
+    "24 kN",
+    "96 kN"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "A load of mass 0.16 kg is hung from a spring of stiffness 400 N/m. Find the period of oscillation of the spring pendulum (π = 3.14).",
+   "options": [
+    "0.0628 s",
+    "0.02 s",
+    "0.1256 s",
+    "1.256 s"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "The graph shows the coordinate of a harmonically oscillating body as a function of time. Find the speed of the body at t = 1 s.",
+   "options": [
+    "π/4 m/s",
+    "π/2 m/s",
+    "π/8 m/s",
+    "0"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "The concentration of helium molecules is 2.5·10²⁵ m⁻³ and their root-mean-square speed is 600 m/s. Find the gas pressure (M = 4 g/mol, N_A = 6×10²³ mol⁻¹).",
+   "options": [
+    "60 kPa",
+    "10 kPa",
+    "40 kPa",
+    "20 kPa"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "The density of a gas is 0.9 kg/m³ and its pressure is 108 kPa. Find the root-mean-square speed of the gas molecules.",
+   "options": [
+    "346 m/s",
+    "600 m/s",
+    "1200 m/s",
+    "200 m/s"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "8 g of helium received 831 J of heat at constant pressure, and its temperature reached 44 °C. Find the initial temperature of the gas (R = 8.31 J/(mol·K)).",
+   "options": [
+    "24 °C",
+    "10.7 °C",
+    "−6 °C",
+    "64 °C"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "How much heat is needed to convert 12 g of ice at −8 °C into water at 20 °C? c_ice = 2100 J/(kg·K), λ = 330 kJ/kg, c_water = 4200 J/(kg·K).",
+   "options": [
+    "4.97 kJ",
+    "1.21 kJ",
+    "5.17 kJ",
+    "3.96 kJ"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "The graph shows the temperature of a crystalline substance as a function of heating time. How long did the melting of the substance last?",
+   "options": [
+    "8 min",
+    "12 min",
+    "5 min",
+    "7 min"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "The figure shows the electric field lines. At which point is the field strength the greatest?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "The charges of metal spheres with radii 2 cm and 3 cm are −5q and +20q, respectively. These spheres, located far from each other, are connected by a thin wire. What charge flows through the wire?",
+   "options": [
+    "11q",
+    "6q",
+    "9q",
+    "15q"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "The surface charge density of a metal sphere of radius R is 54.6 nC/m². Find the electric field strength at a point at a distance R from the surface of the sphere (ε₀ = 8.85×10⁻¹² F/m).",
+   "options": [
+    "6.17 kV/m",
+    "3.08 kV/m",
+    "1.54 kV/m",
+    "0.77 kV/m"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "The table gives a set of resistors. Find the smallest resistance that can be obtained using all of the resistors.",
+   "options": [
+    "2 Ω",
+    "0.8 Ω",
+    "1.5 Ω",
+    "1.25 Ω"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "In an atom, an electron moves around the nucleus along a circle of radius R (nuclear charge +e). Find the current created by the motion of the electron along the orbit (k is the coefficient in Coulomb's law, mₑ is the mass of the electron).",
+   "options": [
+    "e/(2πR)·√(k/(mₑR))",
+    "e²/(2πR)·√(k/(mₑR))",
+    "e²/(2R)·√(k/(mₑR))",
+    "e²/(πR)·√(k/(mₑR))"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "A charge of 5·96500 C passed through a solution containing Al³⁺ ions. What amount of aluminium is deposited on the cathode? F = 96 500 C/mol.",
+   "options": [
+    "5 mol",
+    "15 mol",
+    "1.67 mol",
+    "0.6 mol"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "Two long straight conductors are perpendicular to the plane of the drawing and carry the same current (see the figure). The magnetic induction created by the first conductor at point O is 120 mT. Find the resultant magnetic induction at point O.",
+   "options": [
+    "150 mT",
+    "210 mT",
+    "30 mT",
+    "90 mT"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "The current in a coil of inductance 5 mH changes according to I = 2.4 + 1.6t (in SI units). Find the magnitude of the self-induced EMF in the coil.",
+   "options": [
+    "12 mV",
+    "20 mV",
+    "3.2 mV",
+    "8 mV"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "At a current of 5 A, the magnetic flux through a coil is 0.4 Wb. Find the energy of the magnetic field of the coil.",
+   "options": [
+    "2 J",
+    "1 J",
+    "0.5 J",
+    "0.08 J"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "The capacitance of the capacitor in an oscillating circuit is 25 nF and the inductance of the coil is 1 mH. Find the wavelength of the electromagnetic wave emitted by the circuit (π ≈ 3, c = 3×10⁸ m/s).",
+   "options": [
+    "9 km",
+    "1.5 km",
+    "4.5 km",
+    "18 km"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "A ray of light is reflected from a plane mirror. The angle between the incident and reflected rays is γ (see the figure). What is the angle of incidence?",
+   "options": [
+    "γ",
+    "2γ",
+    "90° − γ/2",
+    "γ/2"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "Two converging lenses with focal lengths of 15 cm and 20 cm are placed on a common principal optical axis 11 cm apart. Find the optical power of the lens system (D).",
+   "options": [
+    "4",
+    "5",
+    "8",
+    "12"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "The total energy of a body is 4 times its rest energy. Find the speed of the body (c is the speed of light in vacuum).",
+   "options": [
+    "(√3/2)·c",
+    "(√15/4)·c",
+    "0.75c",
+    "c/4"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "Determine the number of neutrons in the nucleus ¹⁰⁸₄₇X.",
+   "options": [
+    "47",
+    "108",
+    "155",
+    "61"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "The half-life of a radioactive isotope is T. By what factor does the mass of undecayed nuclei decrease compared with the initial mass after a time 4T?",
+   "options": [
+    "16 times",
+    "4 times",
+    "8 times",
+    "32 times"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "Two identical γ-quanta are produced as a result of the annihilation of an electron and a positron at rest. Find the energy of each γ-quantum (mₑ = 9.1×10⁻³¹ kg, c = 3×10⁸ m/s).",
+   "options": [
+    "1.64·10⁻¹³ J",
+    "4.1·10⁻¹⁴ J",
+    "8.19·10⁻¹⁴ J",
+    "2.73·10⁻²² J"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "An air conditioner with a power of 2 kW is used for 5 hours every day. How much must be paid for the air conditioner over 30 days if 1 kW·h of electricity costs 600 soums?",
+   "options": [
+    "60,000 soums",
+    "180,000 soums",
+    "18,000 soums",
+    "360,000 soums"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "The point with the lowest potential.",
+   "note": "The figure shows the electric field lines and points 1–6. Match tasks (33–35) with the answer options (A–F) correctly.",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "The point with the greatest electric field strength.",
+   "note": "The figure shows the electric field lines and points 1–6. Match tasks (33–35) with the answer options (A–F) correctly.",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "The point with the highest potential.",
+   "note": "The figure shows the electric field lines and points 1–6. Match tasks (33–35) with the answer options (A–F) correctly.",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A body is thrown at an angle of 45° to the horizontal with an initial speed of 20 m/s (see the figure).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "At what horizontal distance x from the launch point is the point where the descending body is at a height h = 7.5 m above the ground?",
+     "unit": "m"
+    },
+    {
+     "key": "b",
+     "text": "Find the maximum height reached by the body.",
+     "unit": "m"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "Loads of masses m₁ = 600 g and m₂ = 400 g are hung from the ends of a weightless inextensible string passed over a weightless pulley. Neglect friction in the pulley.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the acceleration of the loads.",
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "Find the tension in the string.",
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "When a load of mass 6 kg is hung from a spring, its length becomes 35 cm. When 1/5 of the load is removed, the spring shortens by 3 cm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the spring constant.",
+     "unit": "N/m"
+    },
+    {
+     "key": "b",
+     "text": "Find the length of the spring in its undeformed state.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "An ideal gas of volume 4 m³ at a temperature of 27 °C is heated at a constant pressure of 100 kPa, raising its temperature by 120 K.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the final volume of the gas.",
+     "unit": "m³"
+    },
+    {
+     "key": "b",
+     "text": "Find the work done by the gas.",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "A monatomic ideal gas underwent the process 1 → 2 → 3 shown in the graph.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the total work done by the gas.",
+     "unit": "J"
+    },
+    {
+     "key": "b",
+     "text": "Find the amount of heat transferred to the gas.",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "An isolated metal sphere of diameter 2.2 m is given (k = 9×10⁹ N·m²/C²).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the capacitance of the sphere.",
+     "unit": "F",
+     "hint": "For example: 1.2e-10"
+    },
+    {
+     "key": "b",
+     "text": "What charge must be given to the sphere for its potential to be 2700 V?",
+     "unit": "C",
+     "hint": "For example: 3.3e-7"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "The resistance of a metal conductor is 12 Ω at −20 °C and 12.6 Ω at 20 °C.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the temperature coefficient of resistance.",
+     "unit": "K⁻¹",
+     "hint": "For example: 1.2e-3"
+    },
+    {
+     "key": "b",
+     "text": "What is the resistance of the conductor at 1000 °C?",
+     "unit": "Ω"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "A converging lens produces an upright (virtual) image of an object magnified 4 times. The distance between the object and its image is 30 cm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the distance from the object to the lens.",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Find the optical power of the lens.",
+     "unit": "D"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "A rod with a rest mass of 6 kg and a length of 12 m moves along its length. Its mass increases by 4 kg (c = 3×10⁸ m/s).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the length of the moving rod.",
+     "unit": "m"
+    },
+    {
+     "key": "b",
+     "text": "Find the kinetic energy of the rod.",
+     "unit": "J",
+     "hint": "For example: 3.6e17"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "The ionization energy of a hydrogen atom is 13.6 eV. As a result of absorbing a photon by an atom in the ground state, the angular momentum of the electron increased by a factor of 2.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the ratio of the electron's orbital periods T₂/T₁.",
+     "unit": ""
+    },
+    {
+     "key": "b",
+     "text": "What is the energy of the photon absorbed by the atom?",
+     "unit": "eV"
+    }
+   ]
+  }
+ ]
+}

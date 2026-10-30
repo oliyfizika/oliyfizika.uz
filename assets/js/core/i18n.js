@@ -9,6 +9,7 @@
 import { readPref, writePref } from "./prefs.js";
 import { STRINGS } from "./i18n-strings.js";
 import { STRINGS_UF } from "./i18n-uf.js";
+import { STRINGS_MS } from "./i18n-ms.js";
 
 export const LANGS = [
   { code: "uz", short: "O‘z", label: "O‘zbekcha" },
@@ -28,7 +29,7 @@ export function setLang(code) {
 }
 
 const lang = getLang();
-const dict = { ...(STRINGS[lang] || {}), ...(STRINGS_UF[lang] || {}) };
+const dict = { ...(STRINGS[lang] || {}), ...(STRINGS_UF[lang] || {}), ...(STRINGS_MS[lang] || {}) };
 
 /** Tarjima. `{name}` ko'rinishidagi o'rinlar `vars` dan to'ldiriladi. */
 export function t(key, fallback = "", vars) {

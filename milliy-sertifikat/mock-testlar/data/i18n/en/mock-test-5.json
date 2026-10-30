@@ -1,0 +1,612 @@
+{
+ "title": "Physics Mock Test №5",
+ "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Work and energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and nuclear physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A, Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "Using the data given in the figure, determine the distance (m) traveled by the body.",
+   "options": [
+    "200",
+    "150",
+    "300",
+    "100"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "A body moving in a straight line with uniform deceleration travels 5 m in the fifth second and stops. What distance (m) does the body travel in the second second of motion?",
+   "options": [
+    "35",
+    "14",
+    "25",
+    "75"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "A discus thrown at an angle of 45° to the horizontal rose to a maximum height of 15 m. Determine the range of the discus (m).",
+   "options": [
+    "30",
+    "60",
+    "45",
+    "90"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "Two mutually perpendicular forces are applied to a body, one of which is 30 N. If this body of mass 25 kg moves with an acceleration of 2 m/s², what is the magnitude of the second force (N)?",
+   "options": [
+    "50",
+    "20",
+    "30",
+    "40"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "A ball of mass 4 kg moves at a speed of 2 m/s, and a ball of mass 3 kg moves at a speed of 1 m/s. If the angle between the velocities of these two balls is 120°, find the total momentum of the balls (kg·m/s).",
+   "options": [
+    "4",
+    "3",
+    "5",
+    "7"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "The weight of a body in a liquid is 7 times less than its weight in a vacuum. If the density of the liquid is 600 kg/m³, by how much (kg/m³) does the density of the liquid differ from the density of the body?",
+   "options": [
+    "300",
+    "150",
+    "200",
+    "100"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "What must be the area (m²) of an ice floe 40 cm thick for it to keep a person of mass 80 kg afloat on water? ρ_water = 1000 kg/m³, ρ_ice = 900 kg/m³.",
+   "options": [
+    "2",
+    "1.5",
+    "0.4",
+    "1"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "A boy of mass 28 kg stands on a weightless board and pulls a rope with a force F. If the board is in a horizontal position, what is F (in newtons)?",
+   "options": [
+    "50",
+    "120",
+    "160",
+    "240"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "While one of two simple pendulums makes 40 oscillations, the other makes 20 oscillations. By what factor is the length of the second pendulum greater than the length of the first?",
+   "options": [
+    "2",
+    "6",
+    "5",
+    "4"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "When a hydrogen bomb explodes, the temperature rises to 10⁷ K. Find the root-mean-square speed of hydrogen ions (m/s). μ = 1 kg/kmol. Universal gas constant R = 8.31·10³ J/(kmol·K).",
+   "options": [
+    "10⁵",
+    "3·10⁷",
+    "5·10⁵",
+    "1.5·10⁷"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "A closed vessel contains gas at a pressure of 500 kPa. What will be the pressure (kPa) of the gas remaining in the vessel if 4/5 of the mass of the gas escapes after the valve is opened? (T = const)",
+   "options": [
+    "100",
+    "450",
+    "720",
+    "960"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "An ideal monatomic gas changed its state as shown in the figure. In the process, the gas did 2 kJ of work. By what factor does the change in the internal energy of the gas in going from the first state to the second differ from the amount of heat it gave to the cold reservoir?",
+   "options": [
+    "3",
+    "1.5",
+    "1.67",
+    "Does not differ"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "A non-wetting glass capillary tube with a diameter of 1 mm is immersed in mercury. How does the level of mercury in the capillary differ from the level of mercury in the vessel? σ = 470 mN/m, ρ = 13600 kg/m³.",
+   "options": [
+    "7 mm higher",
+    "14 mm higher",
+    "7 mm lower",
+    "14 mm lower"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "The efficiency of a heat engine is 50 %. How much work (J) does the engine do if 700 J of heat is transferred to the cold reservoir per cycle?",
+   "options": [
+    "700",
+    "1000",
+    "800",
+    "400"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "The electric field strength in a parallel-plate capacitor is 30 kV/m. The potential difference between the plates is 300 V. What is the distance (mm) between the capacitor plates?",
+   "options": [
+    "18",
+    "8",
+    "12",
+    "10"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "Three capacitors with capacitances of 1, 2 and 3 μF are connected in series and connected to a voltage source with an emf of 220 V. Determine the charge (μC) of each capacitor.",
+   "options": [
+    "200",
+    "140",
+    "180",
+    "120"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "Three identical resistors are connected to a 120 V DC network. Two of them are connected in parallel, and the third is connected in series with them. Find the voltage (V) across the resistors connected in parallel.",
+   "options": [
+    "80",
+    "40",
+    "10",
+    "60"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "When a battery is connected to a resistance of 10 Ω, the current in the circuit is 2 A. If the same battery is connected to a resistance of 20 Ω, the current is 1.5 A. Find the internal resistance of the battery (Ω).",
+   "options": [
+    "20",
+    "15",
+    "30",
+    "10"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "In a conductor with a resistance of 10 Ω connected to a DC network, 450 J of energy is released in 5 s. What is the voltage (V) in the network?",
+   "options": [
+    "50",
+    "30",
+    "60",
+    "20"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "What is the current density (MA/m²) in an aluminum conductor of length 5 m if a voltage of 14 V is applied to its ends? The resistivity of aluminum is 2.8·10⁻⁸ Ω·m.",
+   "options": [
+    "75",
+    "70",
+    "28",
+    "100"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "A parallel-plate air capacitor is connected to a DC voltage source. The energy of the capacitor is 5 μJ. What will the final energy of the capacitor (μJ) be if the space between its plates is filled with kerosene with a dielectric constant of 2?",
+   "options": [
+    "40",
+    "50",
+    "10",
+    "5"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "Find the total capacitance between points K and L.",
+   "options": [
+    "3C",
+    "6C",
+    "12C",
+    "16C"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "A conductor carrying a current of 6 A is placed in a magnetic field with an induction of 1.2 T and is directed at an angle of 60° to the induction vector. If a force of 0.9 N acts on the conductor, determine the length of its active part (cm).",
+   "options": [
+    "14.4",
+    "10.5",
+    "5.4",
+    "25.2"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "The natural oscillation frequency of an oscillating circuit is 16 kHz. What will the oscillation frequency (kHz) become if the distance between the plates of the parallel-plate capacitor in the circuit is increased 4 times?",
+   "options": [
+    "25",
+    "32",
+    "28",
+    "64"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "Determine the reading of the ideal ammeter (A) in the circuit shown in the figure.",
+   "options": [
+    "6",
+    "8",
+    "12",
+    "3"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "The maximum energy of the electric field in an ideal oscillating circuit is 160 mJ, and the amplitude of the current in the coil is 10 A. Find the inductance of the coil in the oscillating circuit (mH).",
+   "options": [
+    "1.6",
+    "3.2",
+    "8",
+    "0.8"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "The brightness of one of the stars called pulsars varies with a frequency of 1820 Hz. Since this star was identified as a pulsar, its frequency has not changed. If this star served as a clock, what would the time measurement error (ms) be?",
+   "options": [
+    "0.28",
+    "0.36",
+    "0.55",
+    "0.41"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "With a converging lens, a real image of an object magnified 4 times was first obtained. Then the object was moved and a virtual image magnified by the same factor was obtained. If the optical power of the lens is 6 D, determine the distance (m) by which the object was moved.",
+   "options": [
+    "1/6",
+    "2/3",
+    "1/12",
+    "1/3"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "Light with a quantum (photon) energy of 13.5 eV knocks electrons out of a metal plate. If the maximum kinetic energy of these electrons is 6.5 eV, find the work function (eV) of this metal.",
+   "options": [
+    "9",
+    "20",
+    "7",
+    "12"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "When zinc is illuminated by electromagnetic waves of a certain frequency, the maximum momentum of the electrons emitted from it is 74·10⁻²⁵ kg·m/s. Determine the frequency (Hz) of the incident waves.",
+   "options": [
+    "0.4·10¹²",
+    "3.4·10¹⁸",
+    "1.8·10¹⁶",
+    "2.4·10¹⁴"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "An alternating current varies according to the law i = i₀·cos(2πt/T). If at some instant the current is −i₀/3, what will the current be after a time 2T?",
+   "options": [
+    "−i₀/3",
+    "i₀/3",
+    "i₀/6",
+    "−i₀/6"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "The figure shows a graph of the activity of a radioactive preparation versus time. How many radioactive nuclei decay in 15 s?",
+   "options": [
+    "9 million",
+    "13.5 million",
+    "18 million",
+    "4.5 million"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "It is known that at point 1 shown in the graph the temperature of the gas is T₀. Determine the temperature at point 3.",
+   "note": "Match tasks (33–35) with answer options (A–F) correctly. The figure shows the cycle 1 → 2 → 3 → 4 performed on an ideal monatomic gas.",
+   "options": [
+    "12T₀",
+    "4",
+    "24.5 P₀V₀",
+    "3",
+    "16T₀",
+    "20 P₀V₀"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Determine the amount of heat supplied to the gas in going from point 1 to point 3.",
+   "note": "Match tasks (33–35) with answer options (A–F) correctly. The figure shows the cycle 1 → 2 → 3 → 4 performed on an ideal monatomic gas.",
+   "options": [
+    "12T₀",
+    "4",
+    "24.5 P₀V₀",
+    "3",
+    "16T₀",
+    "20 P₀V₀"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "By what factor does the internal energy of the gas change in going from point 1 to point 4?",
+   "note": "Match tasks (33–35) with answer options (A–F) correctly. The figure shows the cycle 1 → 2 → 3 → 4 performed on an ideal monatomic gas.",
+   "options": [
+    "12T₀",
+    "4",
+    "24.5 P₀V₀",
+    "3",
+    "16T₀",
+    "20 P₀V₀"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A body is thrown vertically upward with a speed of 60 m/s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the speed the body reaches 3 seconds after being thrown.",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "At what height above the ground will the body be 4 s after being thrown?",
+     "unit": "m"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A spring with a stiffness of 2 kN/m is attached to the ceiling of an elevator, and a body of mass 5 kg is suspended from it.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "By how much is the spring deformed if the system moves upward at a speed of 5 m/s?",
+     "unit": "mm"
+    },
+    {
+     "key": "b",
+     "text": "By how much is the spring deformed if the system moves upward with an acceleration of 2 m/s²?",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "A force F begins to act through a spring of stiffness 100 N/m on a body of mass 2 kg whose coefficient of friction with the plane is 0.5.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "By how much is the spring deformed by the time the body starts to move?",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "How much work does the force F do before the body starts to move?",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "In an adiabatic process, a gas did 85 kJ of work against external forces.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the change in internal energy in this process.",
+     "unit": "kJ",
+     "hint": "Number only"
+    },
+    {
+     "key": "b",
+     "text": "Determine the amount of heat supplied to the gas.",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "A cart stands on smooth horizontal rails. A person of mass 60 kg walked from one end of the cart to the other. The mass of the cart is 120 kg and its length is 6 m.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What speed will the cart acquire if the person moves at a speed of 6 m/s?",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "By what distance will the cart be displaced?",
+     "unit": "m"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "When a resistance R₁ = 5 Ω is connected to an electric current source, a current I₁ = 5 A flows in the circuit. When a resistance R₂ = 2 Ω is connected, a current I₂ = 8 A flows.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the internal resistance of the source.",
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "Determine the emf of the source.",
+     "unit": "V"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "An ammeter connected in the circuit shows I_ef = 2 A, and a voltmeter shows U_ef = 220 V.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the amplitude value of the current in the circuit.",
+     "unit": "A"
+    },
+    {
+     "key": "b",
+     "text": "Determine the amplitude value of the voltage in the circuit.",
+     "unit": "V"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "The distance between an object and its real image, magnified 3 times, is 80 cm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the focal length of the lens.",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the distance from the lens at which the object is located.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "The photoelectric threshold frequency for the cathode material is 3·10¹⁴ Hz. Radiation with a frequency of 6·10¹⁴ Hz is incident on the cathode.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the work function of the electrons.",
+     "unit": "J",
+     "hint": "For example: 1.98e-19"
+    },
+    {
+     "key": "b",
+     "text": "Determine the stopping voltage for the electrons emitted from the cathode.",
+     "unit": "V"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "An electric furnace with a resistance of 200 Ω is connected to an AC generator.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "If 270 kJ of heat is released in the furnace during 5 minutes of operation, determine the amplitude of the current through the furnace.",
+     "unit": "A"
+    },
+    {
+     "key": "b",
+     "text": "Determine the work done by the furnace in 5 minutes when connected to a 200 V network.",
+     "unit": "kJ"
+    }
+   ]
+  }
+ ]
+}
