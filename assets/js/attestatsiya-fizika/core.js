@@ -2,6 +2,7 @@
 // Attestatsiya → Fizika: umumiy konstantalar va sof yordamchi funksiyalar (Firebase yo'q, DOM yo'q).
 // Ma'lumot modeli: docs/attestatsiya-fizika/09_firestore_import_report.md
 // ==========================================================================
+import { t as tr, getLang } from "../core/i18n.js";
 
 export const COL = {
   settings: "attestationPhysicsSettings",
@@ -20,17 +21,17 @@ export const STORAGE_ROOT = "attestation-physics";
 export const MOCK_FIRST_DAY = 101;
 export const isMockDay = (n) => Number.isInteger(n) && n >= MOCK_FIRST_DAY;
 export const isMock = (t) => t?.kind === "mock" || isMockDay(t?.dayNumber);
-export const dayLabel = (t) => (isMock(t) ? (t.mockNumber > 1 ? `Mock test ${t.mockNumber}` : "Mock test") : `Day ${t?.dayNumber}`);
+export const dayLabel = (t) => (isMock(t) ? (t.mockNumber > 1 ? tr("att.c.mockN", "Mock test {n}", { n: t.mockNumber }) : tr("att.c.mock", "Mock test")) : tr("att.c.day", "Day {n}", { n: t?.dayNumber }));
 /** Mock tarkibi matni: composition (fizika / kasbiyStandart / pedagogikMahorat) bo'lsa — shu, bo'lmasa fizika + pedagogika (mock-01). */
 export const mockCompositionText = (t, unit = "") => {
   const c = t?.composition || {};
   const parts = [];
-  if (c.fizika != null) parts.push(`${c.fizika} ${unit}fizika`);
-  if (c.kasbiyStandart != null) parts.push(`${c.kasbiyStandart} ${unit}kasbiy standart`);
-  if (c.pedagogikMahorat != null) parts.push(`${c.pedagogikMahorat} ${unit}pedagogik mahorat`);
-  return parts.length ? parts.join(" + ") : `${t?.physicsCount || 40} ${unit}fizika + ${t?.pedagogyCount || 10} ${unit}pedagogika`;
+  if (c.fizika != null) parts.push(tr("att.c.comp.phys", "{n} {u}fizika", { n: c.fizika, u: unit }));
+  if (c.kasbiyStandart != null) parts.push(tr("att.c.comp.std", "{n} {u}kasbiy standart", { n: c.kasbiyStandart, u: unit }));
+  if (c.pedagogikMahorat != null) parts.push(tr("att.c.comp.skill", "{n} {u}pedagogik mahorat", { n: c.pedagogikMahorat, u: unit }));
+  return parts.length ? parts.join(" + ") : tr("att.c.comp.default", "{p} {u}fizika + {g} {u}pedagogika", { p: t?.physicsCount || 40, g: t?.pedagogyCount || 10, u: unit });
 };
-export const dayLabelOf = (n) => (isMockDay(n) ? "Mock test" : `Day ${n}`);
+export const dayLabelOf = (n) => (isMockDay(n) ? tr("att.c.mock", "Mock test") : tr("att.c.day", "Day {n}", { n }));
 /** Mock: har bir to'g'ri javob pointsPerQuestion (2) ball; jami maxScore (100). */
 export const mockPoints = (correct, test) => (Number(correct) || 0) * (test?.pointsPerQuestion || 2);
 export const mockMax = (test) => test?.maxScore || (test?.scorableCount || 50) * (test?.pointsPerQuestion || 2);
@@ -79,7 +80,11 @@ export function nextMidnightTashkent(from = new Date()) {
   return new Date(midnightLocalUtcMs - TZ_OFFSET_MIN * 60000);
 }
 
-const MONTHS = ["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"];
+const MONTHS = [
+  tr("att.c.mo1", "yanvar"), tr("att.c.mo2", "fevral"), tr("att.c.mo3", "mart"), tr("att.c.mo4", "aprel"),
+  tr("att.c.mo5", "may"), tr("att.c.mo6", "iyun"), tr("att.c.mo7", "iyul"), tr("att.c.mo8", "avgust"),
+  tr("att.c.mo9", "sentabr"), tr("att.c.mo10", "oktabr"), tr("att.c.mo11", "noyabr"), tr("att.c.mo12", "dekabr"),
+];
 
 /** "3-oktabr, 00:00" — Toshkent vaqtida (brauzer qaysi zonada bo'lishidan qat'i nazar). */
 export function formatTashkent(v, { time = true, year = false } = {}) {
@@ -87,7 +92,7 @@ export function formatTashkent(v, { time = true, year = false } = {}) {
   if (ms == null) return "—";
   const d = new Date(ms + TZ_OFFSET_MIN * 60000);
   const pad = (n) => String(n).padStart(2, "0");
-  let s = `${d.getUTCDate()}-${MONTHS[d.getUTCMonth()]}`;
+  let s = tr("att.c.dm", "{d}-{m}", { d: d.getUTCDate(), m: MONTHS[d.getUTCMonth()] });
   if (year) s += ` ${d.getUTCFullYear()}`;
   if (time) s += `, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`;
   return s;
@@ -111,9 +116,9 @@ export function formatDuration(sec) {
   const m = Math.floor((s % 3600) / 60);
   const r = s % 60;
   const parts = [];
-  if (h) parts.push(`${h} soat`);
-  if (m || h) parts.push(`${m} daqiqa`);
-  parts.push(`${r} soniya`);
+  if (h) parts.push(tr("att.c.nh", "{n} soat", { n: h }));
+  if (m || h) parts.push(tr("att.c.nm", "{n} daqiqa", { n: m }));
+  parts.push(tr("att.c.ns", "{n} soniya", { n: r }));
   return parts.join(" ");
 }
 
@@ -192,7 +197,7 @@ export function remainingSeconds(attempt, test, now = Date.now()) {
 export function formatLimit(sec) {
   const h = Math.floor(sec / 3600);
   const m = Math.round((sec % 3600) / 60);
-  return [h ? `${h} soat` : "", m ? `${m} daqiqa` : ""].filter(Boolean).join(" ") || `${sec} soniya`;
+  return [h ? tr("att.c.nh", "{n} soat", { n: h }) : "", m ? tr("att.c.nm", "{n} daqiqa", { n: m }) : ""].filter(Boolean).join(" ") || tr("att.c.ns", "{n} soniya", { n: sec });
 }
 /**
  * Server soati bilan farq (ms): brauzer soati noto'g'ri bo'lsa ham hisoblagich haqiqiy vaqtni ko'rsatsin.
@@ -271,14 +276,16 @@ export function precisePercent(correct, scorable) {
 
 // ------------------------------------------------------------------ statistika
 const SECTION_TITLES = {
-  mexanika: "Mexanika",
-  molekulyar: "Molekulyar fizika",
-  elektromagnetizm: "Elektromagnetizm",
-  optika: "Optika",
-  "atom-yadro": "Atom va yadro",
-  maxsus: "Maxsus mavzular",
+  mexanika: tr("att.c.sec.mexanika", "Mexanika"),
+  molekulyar: tr("att.c.sec.molekulyar", "Molekulyar fizika"),
+  elektromagnetizm: tr("att.c.sec.elektromagnetizm", "Elektromagnetizm"),
+  optika: tr("att.c.sec.optika", "Optika"),
+  "atom-yadro": tr("att.c.sec.atom", "Atom va yadro"),
+  maxsus: tr("att.c.sec.maxsus", "Maxsus mavzular"),
 };
 export const sectionTitle = (key, fallback) => SECTION_TITLES[key] || fallback || key;
+/** Bo'lim nomi ko'rsatish uchun: o'zbekchada test hujjatidagi sectionTitle (avvalgidek), boshqa tillarda tarjima. */
+export const sectionLabel = (test) => (getLang() === "uz" ? test?.sectionTitle : sectionTitle(test?.section, test?.sectionTitle));
 
 /**
  * Faqat foydalanuvchining REAL ishlagan (graded) rasmiy testlaridan.

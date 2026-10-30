@@ -7,6 +7,7 @@
 // XAVFSIZLIK: ma'lumotdan kelgan matn hech qachon innerHTML ga berilmaydi — faqat textContent va KaTeX
 // (trust: false). Rasmlar Blob URL orqali (Rules tekshiruvidan keyin).
 // ==========================================================================
+import { t } from "../core/i18n.js";
 import { figureUrl } from "./api.js";
 import { openModal } from "../ui/modal.js";
 
@@ -102,8 +103,16 @@ export function inline(text) {
   return frag;
 }
 
-const BOX_LABEL = { given: "Berilgan", answer: "Javob", check: "Tekshiruv" };
-const STATUS_LABEL = { undetermined: "Yechim holati: aniqlanmagan", source_error: "Manba xatosi", critical: "Muhim xato" };
+const boxLabel = (kind) => ({
+  given: t("att.r.given", "Berilgan"),
+  answer: t("att.r.answer", "Javob"),
+  check: t("att.r.check", "Tekshiruv"),
+}[kind]);
+const statusLabel = (kind) => ({
+  undetermined: t("att.r.st.undetermined", "Yechim holati: aniqlanmagan"),
+  source_error: t("att.r.st.source", "Manba xatosi"),
+  critical: t("att.r.st.critical", "Muhim xato"),
+}[kind]);
 
 /**
  * @param {Array} blocks
@@ -143,7 +152,7 @@ function renderBlock(b, ctx) {
       wrap.className = "att-table-wrap";
       wrap.tabIndex = 0;
       wrap.setAttribute("role", "region");
-      wrap.setAttribute("aria-label", "Jadval (gorizontal aylantirish mumkin)");
+      wrap.setAttribute("aria-label", t("att.r.table", "Jadval (gorizontal aylantirish mumkin)"));
       const table = document.createElement("table");
       table.className = "att-table";
       for (const row of b.rows || []) {
@@ -175,7 +184,7 @@ function renderBlock(b, ctx) {
       box.className = `att-box att-box--${b.t}${b.kind ? ` att-box--${b.kind}` : ""}`;
       const label = document.createElement("p");
       label.className = "att-box__label";
-      label.textContent = b.t === "status" ? STATUS_LABEL[b.kind] || "Izoh" : BOX_LABEL[b.t];
+      label.textContent = b.t === "status" ? statusLabel(b.kind) || t("att.r.note", "Izoh") : boxLabel(b.t);
       box.append(label, renderBlocks(b.blocks, ctx));
       return box;
     }
@@ -215,14 +224,14 @@ function figureNode(b, ctx) {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "att-fig__btn";
-  btn.setAttribute("aria-label", "Rasmni kattalashtirish");
+  btn.setAttribute("aria-label", t("att.r.zoom", "Rasmni kattalashtirish"));
   btn.disabled = true;
   const img = document.createElement("img");
-  img.alt = "Savolga oid rasm";
+  img.alt = t("att.r.alt", "Savolga oid rasm");
   img.decoding = "async";
   const status = document.createElement("span");
   status.className = "att-fig__status";
-  status.textContent = "Rasm yuklanmoqda…";
+  status.textContent = t("att.r.loading", "Rasm yuklanmoqda…");
   btn.append(img);
   fig.append(btn, status);
   lazy(fig, async () => {
@@ -235,7 +244,7 @@ function figureNode(b, ctx) {
     } catch (e) {
       console.warn("[att] rasm:", b.id, e?.code || e);
       fig.dataset.state = "error";
-      status.textContent = "Rasmni yuklab bo‘lmadi. Sahifani yangilang.";
+      status.textContent = t("att.r.error", "Rasmni yuklab bo‘lmadi. Sahifani yangilang.");
     }
   });
   btn.addEventListener("click", () => {
@@ -243,7 +252,7 @@ function figureNode(b, ctx) {
     big.src = img.src;
     big.alt = img.alt;
     big.className = "att-zoom__img";
-    openModal({ title: "Rasm", content: big, className: "att-zoom" });
+    openModal({ title: t("att.r.image", "Rasm"), content: big, className: "att-zoom" });
   });
   return fig;
 }
@@ -266,7 +275,7 @@ export function plainText(blocks) {
   const walk = (bs) => (bs || []).forEach((b) => {
     if (b.text) out.push(b.text.replace(/\$([^$]*)\$/g, "$1").replace(/[*\\]/g, ""));
     if (b.t === "math") out.push(b.tex);
-    if (b.t === "figure") out.push("[rasm]");
+    if (b.t === "figure") out.push(t("att.r.imgTag", "[rasm]"));
     if (b.blocks) walk(b.blocks);
     if (b.t === "list" && b.items) b.items.forEach((it) => walk(itemBlocks(it)));
   });

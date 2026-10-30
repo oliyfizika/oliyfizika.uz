@@ -3,6 +3,7 @@
 // Yechim hujjati faqat solutionAvailableAt'dan keyin YOKI o'z urinishi yakunlangach so'raladi (Rules: attSolutionReadable).
 // Yopiq kun uchun hech qanday yechim ma'lumoti yuklanmaydi.
 // ==========================================================================
+import { t as tr } from "../core/i18n.js";
 import { listVisibleTests, getSnapshot, getSolutions, getMyAttempt, listMyAttempts } from "./api.js";
 import { loadAccessContext, contentOpen, accessText, ACCESS_TITLE, COURSE_URL } from "./access.js";
 import { isOverdue, finalizeIfOverdue } from "./finalize.js";
@@ -22,12 +23,12 @@ function show(html) {
 }
 
 let access = null;
-const lockHtml = (d, t) => stateHtml("lock", `${dayLabelOf(d)}: ${ACCESS_TITLE.toLowerCase()}`, esc(accessText(t)),
-  `<div class="of-row" style="justify-content:center;flex-wrap:wrap"><a class="of-btn of-btn--primary" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 Kursga yozilish</a><a class="of-btn" href="fizika-yechimlar.html">Barcha yechimlar</a></div>`);
+const lockHtml = (d, t) => stateHtml("lock", tr("att.sol.lockTitle", "{day}: {title}", { day: dayLabelOf(d), title: ACCESS_TITLE.toLowerCase() }), esc(accessText(t)),
+  `<div class="of-row" style="justify-content:center;flex-wrap:wrap"><a class="of-btn of-btn--primary" href="${COURSE_URL}" target="_blank" rel="noopener noreferrer">📲 ${tr("att.sol.enroll", "Kursga yozilish")}</a><a class="of-btn" href="fizika-yechimlar.html">${tr("att.sol.allSolutions", "Barcha yechimlar")}</a></div>`);
 
 function renderList(tests, mine = new Map()) {          // mine: testId → o'z urinishi (yakunlangan bo'lsa yechim darhol ochiq)
   if (!tests.length) {
-    show(stateHtml("book", "Hali yechimlar yo‘q", "Testni yakunlaganingiz zahoti (kunlik testlar), mock testda esa yechim vaqtida ham yechimlar shu yerda paydo bo‘ladi."));
+    show(stateHtml("book", tr("att.sol.emptyTitle", "Hali yechimlar yo‘q"), tr("att.sol.emptyText", "Testni yakunlaganingiz zahoti (kunlik testlar), mock testda esa yechim vaqtida ham yechimlar shu yerda paydo bo‘ladi.")));
     return;
   }
   show(`<ul class="att-days">${tests.slice().sort((a, b) => isMock(a) - isMock(b) || a.dayNumber - b.dayNumber).map((t) => {
@@ -35,34 +36,39 @@ function renderList(tests, mine = new Map()) {          // mine: testId → o'z 
     const open = solutionOpenFor(t, mine.get(t.id)) && allowed;
     return `<li><article class="of-card att-day" data-state="${!allowed ? "restricted" : open ? "done" : "open"}" aria-labelledby="solD${t.dayNumber}">
       <div class="att-day__head"><span class="att-day__num">${isMock(t) ? "M" : t.dayNumber}</span>
-        <div><p class="att-day__title" id="solD${t.dayNumber}">${isMock(t) ? esc(dayLabel(t)) : `Day ${t.dayNumber} · ${esc(t.sectionTitle)}`}</p><p class="att-day__sub">${t.questionCount} savol${isMock(t) ? ` · ${mockMax(t)} ball` : ""}</p></div></div>
+        <div><p class="att-day__title" id="solD${t.dayNumber}">${isMock(t) ? esc(dayLabel(t)) : `${esc(dayLabel(t))} · ${esc(t.sectionTitle)}`}</p><p class="att-day__sub">${tr("att.sol.qCount", "{n} savol", { n: t.questionCount })}${isMock(t) ? ` · ${tr("att.sol.ballCount", "{n} ball", { n: mockMax(t) })}` : ""}</p></div></div>
       <p class="att-day__topics">${isMock(t) ? esc(mockCompositionText(t, "ta ")) : esc(t.topics.join(", "))}</p>
       <div class="att-day__stats">${!allowed ? `<span class="of-badge att-badge-lock">${ic("lock")} ${ACCESS_TITLE}</span>` : open
-        ? `<span class="of-badge of-badge--green">${ic("unlock")} Yechimlar ochiq</span>`
-        : isMock(t) ? `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(formatTashkent(t.solutionAvailableAt))} da ochiladi</span>`
-          : `<span class="of-badge of-badge--orange">${ic("lock")} Testni yakunlagach ochiladi</span>`}</div>
-      <div class="att-day__foot">${open ? `<a class="of-btn of-btn--primary of-btn--sm" href="fizika-yechimlar.html?day=${t.dayNumber}">${ic("book")}Yechimlarni ochish</a>` : ""}</div>
+        ? `<span class="of-badge of-badge--green">${ic("unlock")} ${tr("att.sol.open", "Yechimlar ochiq")}</span>`
+        : isMock(t) ? `<span class="of-badge of-badge--orange">${ic("lock")} ${tr("att.sol.opensAt", "{date} da ochiladi", { date: esc(formatTashkent(t.solutionAvailableAt)) })}</span>`
+          : `<span class="of-badge of-badge--orange">${ic("lock")} ${tr("att.sol.opensAfter", "Testni yakunlagach ochiladi")}</span>`}</div>
+      <div class="att-day__foot">${open ? `<a class="of-btn of-btn--primary of-btn--sm" href="fizika-yechimlar.html?day=${t.dayNumber}">${ic("book")}${tr("att.sol.openBtn", "Yechimlarni ochish")}</a>` : ""}</div>
     </article></li>`;
   }).join("")}</ul>`);
 }
 
 async function renderDay(tests, uid) {
   const t = tests.find((x) => x.dayNumber === day);
-  window.OFShell?.setTitle?.(`${dayLabelOf(day)} — yechimlar`);
-  document.title = `${dayLabelOf(day)} — Yechimlar — Attestatsiya — Fizika | OliyFizika.uz`;
+  window.OFShell?.setTitle?.(tr("att.sol.shellTitle", "{day} — yechimlar", { day: dayLabelOf(day) }));
+  document.title = tr("att.sol.docTitle", "{day} — Yechimlar — Attestatsiya — Fizika | OliyFizika.uz", { day: dayLabelOf(day) });
   if (!t) {
-    show(stateHtml("lock", `${dayLabelOf(day)} hali e’lon qilinmagan`, "", '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
+    show(stateHtml("lock", tr("att.sol.notPublished", "{day} hali e’lon qilinmagan", { day: dayLabelOf(day) }), "", `<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">${tr("att.sol.allSolutions", "Barcha yechimlar")}</a>`));
     return;
   }
   const [firstAttempt, myList] = await Promise.all([getMyAttempt(uid, t.id).catch(() => null), listMyAttempts(uid).catch(() => [])]);
   const mine = new Map(myList.map((x) => [x.testId, x]));
   if (!contentOpen(t, access, firstAttempt)) { show(lockHtml(day, t)); return; }   // Day 4+ ruxsatsiz: avval kirish xabari
   if (!solutionOpenFor(t, firstAttempt)) {
-    show(stateHtml("lock", `${dayLabelOf(day)} yechimlari hali yopiq`,
+    show(stateHtml("lock", tr("att.sol.closedTitle", "{day} yechimlari hali yopiq", { day: dayLabelOf(day) }),
       isMock(t)
-        ? `To‘liq yechimlar <b>${esc(formatTashkent(t.solutionAvailableAt))}</b> da (Toshkent vaqti) ochiladi${firstAttempt?.status === "in_progress" ? " yoki testni topshirganingiz zahoti" : ""}.`
-        : `Yechimlar testni yakunlaganingizda (topshirganda yoki 2 soatlik vaqt tugaganda) ochiladi.${firstAttempt?.status === "in_progress" ? " Testingiz davom etmoqda." : " Avval testni bajaring."}`,
-      '<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">Barcha yechimlar</a>'));
+        ? tr("att.sol.closedMock", "To‘liq yechimlar <b>{date}</b> da (Toshkent vaqti) ochiladi{extra}.", {
+          date: esc(formatTashkent(t.solutionAvailableAt)),
+          extra: firstAttempt?.status === "in_progress" ? tr("att.sol.orOnSubmit", " yoki testni topshirganingiz zahoti") : "",
+        })
+        : tr("att.sol.closedDaily", "Yechimlar testni yakunlaganingizda (topshirganda yoki 2 soatlik vaqt tugaganda) ochiladi.{extra}", {
+          extra: firstAttempt?.status === "in_progress" ? tr("att.sol.inProgress", " Testingiz davom etmoqda.") : tr("att.sol.doTestFirst", " Avval testni bajaring."),
+        }),
+      `<a class="of-btn of-btn--primary" href="fizika-yechimlar.html">${tr("att.sol.allSolutions", "Barcha yechimlar")}</a>`));
     return;
   }
   let attempt = firstAttempt;
@@ -81,16 +87,16 @@ async function renderDay(tests, uid) {
   show(`
     <section class="of-card att-hero" aria-labelledby="solTitle">
       <div class="att-hero__text">
-        <p class="att-eyebrow">${ic("book")}Yechimlar · ${esc(label(t))}</p>
-        <h1 id="solTitle">${mock ? "Mock test yechimlari" : esc(t.sectionTitle)}</h1>
-        <p>${mock ? esc(mockCompositionText(t, "ta ")) : esc(t.topics.join(", "))} · ${t.questionCount} savol${attempt?.status === "graded"
-          ? ` · sizning natijangiz: <b>${mock ? `${mockPoints(attempt.correctAnswers, t)} / ${mockMax(t)} ball` : `${attempt.scorePercent}%`}</b>` : ""}</p>
+        <p class="att-eyebrow">${ic("book")}${tr("att.sol.eyebrow", "Yechimlar · {label}", { label: esc(label(t)) })}</p>
+        <h1 id="solTitle">${mock ? tr("att.sol.mockSolutions", "Mock test yechimlari") : esc(t.sectionTitle)}</h1>
+        <p>${mock ? esc(mockCompositionText(t, "ta ")) : esc(t.topics.join(", "))} · ${tr("att.sol.qCount", "{n} savol", { n: t.questionCount })}${attempt?.status === "graded"
+          ? tr("att.sol.yourResult", " · sizning natijangiz: <b>{v}</b>", { v: mock ? tr("att.sol.points", "{n} / {max} ball", { n: mockPoints(attempt.correctAnswers, t), max: mockMax(t) }) : `${attempt.scorePercent}%` }) : ""}</p>
       </div>
       <div class="att-hero__side">
         <div class="of-row" style="flex-wrap:wrap">
           ${prev ? `<a class="of-btn" href="fizika-yechimlar.html?day=${prev.dayNumber}">${ic("chevronLeft")}${esc(label(prev))}</a>` : ""}
           ${next ? `<a class="of-btn" href="fizika-yechimlar.html?day=${next.dayNumber}">${esc(label(next))}${ic("chevronRight")}</a>` : ""}
-          <a class="of-btn of-btn--ghost" href="fizika-yechimlar.html">${mock ? "Barcha yechimlar" : "Barcha kunlar"}</a>
+          <a class="of-btn of-btn--ghost" href="fizika-yechimlar.html">${mock ? tr("att.sol.allSolutions", "Barcha yechimlar") : tr("att.sol.allDays", "Barcha kunlar")}</a>
         </div>
       </div>
     </section>
@@ -105,8 +111,8 @@ async function renderDay(tests, uid) {
     card.setAttribute("aria-labelledby", `sq${i}`);
     const head = document.createElement("div");
     head.className = "att-q__head";
-    head.innerHTML = `<span class="att-q__num" id="sq${i}">${i + 1}-savol</span><span class="of-badge of-badge--blue">${esc(q.topic)}</span>${
-      q.evaluationType !== "auto" ? '<span class="of-badge of-badge--orange">Ballga kirmagan</span>' : ""}`;
+    head.innerHTML = `<span class="att-q__num" id="sq${i}">${tr("att.sol.qNum", "{n}-savol", { n: i + 1 })}</span><span class="of-badge of-badge--blue">${esc(q.topic)}</span>${
+      q.evaluationType !== "auto" ? `<span class="of-badge of-badge--orange">${tr("att.sol.unscored", "Ballga kirmagan")}</span>` : ""}`;
     const qb = document.createElement("div");
     qb.className = "att-q__body";
     qb.append(renderBlocks(q.question, { testId: t.id, scope: "question" }));
@@ -134,9 +140,9 @@ async function renderDay(tests, uid) {
     }
     const ans = document.createElement("div");
     ans.className = "att-solq__answer";
-    ans.innerHTML = `${s.correctAnswer ? `<span class="of-badge of-badge--green">${ic("check")} To‘g‘ri javob: ${esc(s.correctAnswer)}</span>` : ""}${
-      !s.correctAnswer && s.solutionResult && s.solutionResult !== "none" ? `<span class="of-badge of-badge--green">Javob: ${esc(s.solutionResult)}</span>` : ""}${
-      my[q.id] ? `<span class="of-badge">Sizning javobingiz: ${esc(my[q.id])}</span>` : ""}`;
+    ans.innerHTML = `${s.correctAnswer ? `<span class="of-badge of-badge--green">${ic("check")} ${tr("att.sol.correctAnswer", "To‘g‘ri javob: {a}", { a: esc(s.correctAnswer) })}</span>` : ""}${
+      !s.correctAnswer && s.solutionResult && s.solutionResult !== "none" ? `<span class="of-badge of-badge--green">${tr("att.sol.answer", "Javob: {a}", { a: esc(s.solutionResult) })}</span>` : ""}${
+      my[q.id] ? `<span class="of-badge">${tr("att.sol.yourAnswer", "Sizning javobingiz: {a}", { a: esc(my[q.id]) })}</span>` : ""}`;
     const sep = document.createElement("div");
     sep.className = "att-solq__sep";
     const solBox = document.createElement("div");
@@ -158,6 +164,6 @@ async function renderDay(tests, uid) {
     else renderList(tests, new Map((await listMyAttempts(s.user.uid).catch(() => [])).map((a) => [a.testId, a])));
   } catch (e) {
     console.error("[att] yechimlar:", e);
-    show(stateHtml("alert", "Yechimlarni yuklab bo‘lmadi", errorMessage(e)));
+    show(stateHtml("alert", tr("att.sol.loadError", "Yechimlarni yuklab bo‘lmadi"), errorMessage(e)));
   }
 })();

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attestatsiya — Fizika | OliyFizika.uz</title>
-<meta name="description" content="Attestatsiya — Fizika: 32 kunlik kurs, bugungi test, kunlik topshiriqlar, yechimlar, natijalar va statistika.">
+<title data-i18n="att.p.dash.title">Attestatsiya — Fizika | OliyFizika.uz</title>
+<meta name="description" content="Attestatsiya — Fizika: 32 kunlik kurs, bugungi test, kunlik topshiriqlar, yechimlar, natijalar va statistika." data-i18n-attr="content:att.p.dash.desc">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="../assets/js/core/theme-boot.js"></script>
@@ -13,21 +13,21 @@
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
 <script type="module" src="../assets/js/attestatsiya-fizika/dashboard.js"></script>
 </head>
-<body class="of-ui" data-shell-title="Attestatsiya — Fizika">
+<body class="of-ui" data-i18n-title="att.p.name" data-shell-title="Attestatsiya — Fizika">
 <div class="of-page of-container att" id="attDash">
 
   <section class="of-card att-hero" aria-labelledby="attDashTitle">
     <div class="att-hero__text">
-      <p class="att-eyebrow"><span data-icon="atom"></span>Attestatsiya — Fizika</p>
-      <h1 id="attDashTitle">Fizika attestatsiyasi: 32 kunlik kurs</h1>
-      <p>Har kuni administrator yangi testni e’lon qiladi. Har bir testni xohlagan kuningizda, bir marta bajarasiz — boshlaganingizdan keyin 2 soat vaqt beriladi. Topshirgan (yoki vaqt tugagan) zahoti natija, to‘g‘ri javoblar va to‘liq yechimlar ochiladi.</p>
+      <p class="att-eyebrow"><span data-icon="atom"></span><span data-i18n="att.p.name">Attestatsiya — Fizika</span></p>
+      <h1 id="attDashTitle" data-i18n="att.p.dash.h1">Fizika attestatsiyasi: 32 kunlik kurs</h1>
+      <p data-i18n="att.p.dash.lead">Har kuni administrator yangi testni e’lon qiladi. Har bir testni xohlagan kuningizda, bir marta bajarasiz — boshlaganingizdan keyin 2 soat vaqt beriladi. Topshirgan (yoki vaqt tugagan) zahoti natija, to‘g‘ri javoblar va to‘liq yechimlar ochiladi.</p>
     </div>
     <div class="att-hero__side" aria-live="polite" data-hero-side>
-      <div class="att-metric"><span>Kurs progressi</span><strong class="of-num" data-progress-num><span class="of-skeleton" style="display:inline-block;width:64px;height:24px"></span></strong></div>
-      <div class="of-progress of-progress--lg" role="progressbar" aria-label="Kurs progressi (bajarilgan kunlar)" aria-valuemin="0" aria-valuemax="32" aria-valuenow="0" style="--value:0" data-progress-bar><span></span></div>
+      <div class="att-metric"><span data-i18n="att.p.dash.progress">Kurs progressi</span><strong class="of-num" data-progress-num><span class="of-skeleton" style="display:inline-block;width:64px;height:24px"></span></strong></div>
+      <div class="of-progress of-progress--lg" role="progressbar" aria-label="Kurs progressi (bajarilgan kunlar)" data-i18n-attr="aria-label:att.p.dash.progressAria" aria-valuemin="0" aria-valuemax="32" aria-valuenow="0" style="--value:0" data-progress-bar><span></span></div>
       <div class="att-metrics-row">
-        <div class="att-mini"><span>O‘rtacha natija</span><b class="of-num" data-avg>—</b></div>
-        <div class="att-mini"><span>Eng yuqori</span><b class="of-num" data-best>—</b></div>
+        <div class="att-mini"><span data-i18n="att.p.dash.avg">O‘rtacha natija</span><b class="of-num" data-avg>—</b></div>
+        <div class="att-mini"><span data-i18n="att.p.dash.best">Eng yuqori</span><b class="of-num" data-best>—</b></div>
       </div>
     </div>
   </section>
@@ -35,29 +35,29 @@
   <div data-tabs></div>
 
   <section aria-labelledby="attTodayTitle">
-    <h2 class="of-sr-only" id="attTodayTitle">Bugungi test</h2>
+    <h2 class="of-sr-only" id="attTodayTitle" data-i18n="att.p.dash.today">Bugungi test</h2>
     <div class="of-card att-today" data-today data-state="none" aria-busy="true">
-      <span class="att-daybadge"><small>Day</small><b>…</b></span>
+      <span class="att-daybadge"><small data-i18n="att.d.dayWord">Day</small><b>…</b></span>
       <div class="att-today__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div>
     </div>
   </section>
 
   <section aria-labelledby="attMockTitle" id="mock" data-mock-section hidden>
-    <div class="of-section-title"><h2 id="attMockTitle">Mock test</h2></div>
-    <p class="of-subtle" style="margin-bottom:12px">Har bir mock test 50 ta savol: Mock test 1 — 40 ta fizika (5 bobdan 8 tadan) va 10 ta pedagogika; Mock test 2 — 35 ta fizika, 5 ta kasbiy standart va 10 ta pedagogik mahorat. Har bir savol 2 ball, jami 100 ball. Vaqt: boshlagandan 2 soat (sahifani yangilasangiz ham davom etadi). Mock test 1 hamma uchun bepul; Mock test 2 — faqat pullik guruh uchun.</p>
+    <div class="of-section-title"><h2 id="attMockTitle" data-i18n="att.d.mock">Mock test</h2></div>
+    <p class="of-subtle" style="margin-bottom:12px" data-i18n="att.p.dash.mockText">Har bir mock test 50 ta savol: Mock test 1 — 40 ta fizika (5 bobdan 8 tadan) va 10 ta pedagogika; Mock test 2 — 35 ta fizika, 5 ta kasbiy standart va 10 ta pedagogik mahorat. Har bir savol 2 ball, jami 100 ball. Vaqt: boshlagandan 2 soat (sahifani yangilasangiz ham davom etadi). Mock test 1 hamma uchun bepul; Mock test 2 — faqat pullik guruh uchun.</p>
     <ul class="att-days" data-mock></ul>
   </section>
 
   <section aria-labelledby="attDaysTitle" id="kunlik" tabindex="-1">
-    <div class="of-section-title"><h2 id="attDaysTitle">Kunlik topshiriqlar</h2></div>
-    <p class="of-subtle" style="margin-bottom:12px">E’lon qilingan kunlar shu yerda. Day 1–3 hamma uchun bepul. Hali e’lon qilinmagan kunlarning mazmuni ko‘rsatilmaydi.</p>
+    <div class="of-section-title"><h2 id="attDaysTitle" data-i18n="att.p.dash.days">Kunlik topshiriqlar</h2></div>
+    <p class="of-subtle" style="margin-bottom:12px" data-i18n="att.p.dash.daysText">E’lon qilingan kunlar shu yerda. Day 1–3 hamma uchun bepul. Hali e’lon qilinmagan kunlarning mazmuni ko‘rsatilmaydi.</p>
     <ul class="att-days" data-days aria-busy="true">
       <li><div class="of-card att-day"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
       <li><div class="of-card att-day"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
       <li><div class="of-card att-day"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
     </ul>
     <div data-locked hidden>
-      <p class="att-locked-title" data-locked-title>Hali e’lon qilinmagan kunlar</p>
+      <p class="att-locked-title" data-locked-title data-i18n="att.p.dash.locked">Hali e’lon qilinmagan kunlar</p>
       <ul class="att-locked"></ul>
     </div>
   </section>
