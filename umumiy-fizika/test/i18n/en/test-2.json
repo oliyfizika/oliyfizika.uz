@@ -1,0 +1,142 @@
+{
+  "title": "Topic 2 | Uniform rectilinear motion",
+  "questions": [
+    {
+      "text": "What kind of motion is uniform rectilinear motion?",
+      "answers": [
+        "Motion in which a body covers equal distances in equal time intervals and its trajectory is a straight line",
+        "Motion whose trajectory is a straight line",
+        "Motion with no acceleration whatsoever",
+        "Any motion in which equal distances are covered in equal time intervals"
+      ]
+    },
+    {
+      "text": "Which quantities of the velocity vector remain unchanged in uniform rectilinear motion?",
+      "answers": [
+        "The magnitude increases uniformly, the direction does not change",
+        "Both the magnitude and the direction stay constant",
+        "Both the magnitude and the direction keep changing",
+        "The magnitude is constant while the direction changes continuously"
+      ]
+    },
+    {
+      "text": "How many m/s is a speed of 918 km/h?",
+      "answers": [
+        "260",
+        "240",
+        "250",
+        "255"
+      ]
+    },
+    {
+      "text": "An ant that set off from the start of a string 9 m long reached its end in 5 minutes. Find the speed of the ant.",
+      "answers": [
+        "1.8 cm/s",
+        "3 cm/s",
+        "3.5 cm/s",
+        "4.5 cm/s"
+      ]
+    },
+    {
+      "text": "A train 200 m long enters a 300 m tunnel at a speed of 10 m/s. After how many seconds will the train have completely left the tunnel?",
+      "answers": [
+        "50",
+        "30",
+        "25",
+        "20",
+        "10"
+      ]
+    },
+    {
+      "text": "The first car covered a distance 4S in time 2t at speed 2v. Find the speed of the second car if it covered a distance 3S in time 2t.",
+      "answers": [
+        "2.25v",
+        "2.5v",
+        "1.5v",
+        "0.5v",
+        "v"
+      ]
+    },
+    {
+      "text": "A column of vehicles 300 m long moves at 36 km/h. In how many seconds will it cross a 600 m bridge?",
+      "answers": [
+        "30",
+        "60",
+        "90",
+        "120"
+      ]
+    },
+    {
+      "text": "The equations of motion of two bodies are x₁ = 25 + t and x₂ = 85 - 0.5t. Find the time and place of their meeting.",
+      "answers": [
+        "After 40 s, 65 m from the origin",
+        "After 18 s, 114 m from the origin",
+        "After 10 s, 5 m from the origin",
+        "After 30 s, 60 m from the origin"
+      ]
+    },
+    {
+      "text": "Using the graph, determine the distance covered by the boy between t₁ = 1 s and t₂ = 5 s.",
+      "answers": [
+        "10 m",
+        "20 m",
+        "5 m",
+        "15 m"
+      ]
+    },
+    {
+      "text": "What is the speed at the moment t = 4.28 s according to the graph?",
+      "answers": [
+        "5 m/s",
+        "12 m/s",
+        "10 m/s",
+        "6 m/s"
+      ]
+    },
+    {
+      "text": "Which of the three material points has the greatest speed?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "All have the same"
+      ]
+    },
+    {
+      "text": "Which graph cannot represent the dependence of the distance traveled by a body on time?",
+      "answers": [
+        "II, III",
+        "I, II, III",
+        "III",
+        "I, IV"
+      ]
+    },
+    {
+      "text": "Using the graph, determine the distance covered in 5 s by a material point moving along the OX axis.",
+      "answers": [
+        "50 m",
+        "32.5 m",
+        "0 m",
+        "10 m"
+      ]
+    },
+    {
+      "text": "Write the equation of motion for the graph of the body's coordinate versus time.",
+      "answers": [
+        "x = -2 + 4t",
+        "x = 6 + 3t",
+        "x = -6 + 3t",
+        "x = 6 - 2t"
+      ]
+    },
+    {
+      "text": "In which part of the graph was the speed of the body the greatest?",
+      "answers": [
+        "III",
+        "II",
+        "I",
+        "IV"
+      ]
+    }
+  ]
+}
