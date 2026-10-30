@@ -5,6 +5,7 @@
 // ==========================================================================
 
 import { COURSES } from "../../../umumiy-fizika/data/courses.js";
+import { t, topicLabel } from "../core/i18n.js";
 import { lessonAnchorId } from "../../../js/mechanics-progress.js";
 
 const ROOT = new URL("../../../", import.meta.url);
@@ -47,7 +48,7 @@ export function normalizeResult(raw, index) {
     key: `r${index}`,
     ref: raw._ref || null, // ichki; UI'da ko'rsatilmaydi
     number: Number.isFinite(number) ? number : null,
-    label: Number.isFinite(number) ? `${number}-mavzu` : "Mavzu",
+    label: Number.isFinite(number) ? topicLabel(number) : t("results.topic", "Mavzu"),
     title: known?.lesson.title || cleanTitle || "Mavzu testi",
     courseId: known?.course.id || null,
     courseTitle: known?.course.title || "",

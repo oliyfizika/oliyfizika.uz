@@ -9,6 +9,7 @@ import { revealOnScroll } from "../ui/reveal.js";
 import { onSession } from "../core/session.js";
 import { showAuthGate, openAuth } from "../auth/auth-gate.js";
 import { getLearningSummary, courseStructure } from "../progress/progress-service.js";
+import { t } from "../core/i18n.js";
 import { esc, progressBar, fillBars, statusBadge, courseAction as sharedCourseAction } from "../progress/progress-ui.js";
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -27,7 +28,7 @@ function courseAction(c) {
   // Umumiy tugma (Home va Natijalar bilan bir xil) + qulflangan kurs uchun ko'rish havolasi
   const main = sharedCourseAction(c, { size: "" });
   return c.status === "locked"
-    ? `${main}<a class="of-btn of-btn--ghost of-btn--sm" href="${esc(c.page)}">Mavzularni ko‘rish</a>`
+    ? `${main}<a class="of-btn of-btn--ghost of-btn--sm" href="${esc(c.page)}">${t("uf.viewTopics", "Mavzularni ko‘rish")}</a>`
     : main;
 }
 
@@ -44,9 +45,9 @@ function renderCourses() {
           <div class="of-uf-course__head"><span class="of-uf-course__icon">${icon(s.icon)}</span>
             <h3 class="of-uf-course__title"><a href="${esc(s.page)}" data-protected>${esc(s.title)}</a></h3></div>
           <p class="of-uf-course__desc">${esc(s.description)}</p>
-          <p class="of-uf-course__stats"><span><b>${s.total}</b> ta mavzu · video dars va test</span></p>
-          <div class="of-uf-course__foot"><a class="of-btn of-btn--soft" href="${esc(s.page)}" data-protected>Mavzularni ko‘rish ${icon("arrowRight")}</a>
-            ${signedIn ? "" : `<span class="of-uf-locknote">${icon("lock")}<span>Kirish talab qilinadi</span></span>`}</div>
+          <p class="of-uf-course__stats"><span>${t("uf.guestStats", "<b>{n}</b> ta mavzu · video dars va test", { n: s.total })}</span></p>
+          <div class="of-uf-course__foot"><a class="of-btn of-btn--soft" href="${esc(s.page)}" data-protected>${t("uf.viewTopics", "Mavzularni ko‘rish")} ${icon("arrowRight")}</a>
+            ${signedIn ? "" : `<span class="of-uf-locknote">${icon("lock")}<span>${t("home.loginRequired", "Kirish talab qilinadi")}</span></span>`}</div>
         </article></li>`;
     }
     return `<li data-course-id="${c.id}" data-search-text="${esc(searchText)}">
@@ -55,8 +56,8 @@ function renderCourses() {
           <h3 class="of-uf-course__title"><a href="${esc(c.page)}">${esc(c.title)}</a></h3>
           ${statusBadge(c)}</div>
         <p class="of-uf-course__desc">${esc(c.description)}</p>
-        <p class="of-uf-course__stats"><span><b>${c.done}</b> / ${c.total} mavzu yakunlangan</span>${c.next && c.status !== "locked" ? `<span>Keyingi: ${esc(c.next.label)}</span>` : ""}</p>
-        <div class="of-uf-course__bar">${progressBar(c.percent, `${c.title} progressi`)}<span class="of-num">${c.percent}%</span></div>
+        <p class="of-uf-course__stats"><span>${t("uf.topicsDoneB", "<b>{done}</b> / {total} mavzu yakunlangan", { done: c.done, total: c.total })}</span>${c.next && c.status !== "locked" ? `<span>${t("home.next", "Keyingi:")} ${esc(c.next.label)}</span>` : ""}</p>
+        <div class="of-uf-course__bar">${progressBar(c.percent, t("uf.progressOf", "{title} progressi", { title: c.title }))}<span class="of-num">${c.percent}%</span></div>
         <div class="of-uf-course__foot">${courseAction(c)}</div>
       </article></li>`;
   }).join("");
@@ -71,10 +72,10 @@ function renderOverall() {
   const b = $("[data-overall-bar]");
   b.setAttribute("aria-valuenow", p.overall.percent);
   b.dataset.to = p.overall.percent;
-  $("[data-overall-text]").innerHTML = `<b>${p.overall.done}</b> / ${p.overall.total} mavzu yakunlangan${p.current ? ` · Keyingi: ${esc(p.current.next.label)} — ${esc(p.current.next.title)}` : ""}`;
+  $("[data-overall-text]").innerHTML = `${t("uf.topicsDoneB", "<b>{done}</b> / {total} mavzu yakunlangan", { done: p.overall.done, total: p.overall.total })}${p.current ? ` · ${t("home.next", "Keyingi:")} ${esc(p.current.next.label)} — ${esc(p.current.next.title)}` : ""}`;
   const cur = p.current;
   $("[data-overall-action]").innerHTML = cur
-    ? `<a class="of-btn of-btn--primary" href="${esc(cur.next.href)}">${p.overall.done === 0 ? "Boshlash" : "Davom etish"} ${icon("arrowRight")}</a>`
+    ? `<a class="of-btn of-btn--primary" href="${esc(cur.next.href)}">${p.overall.done === 0 ? t("home.start", "Boshlash") : t("home.continue", "Davom etish")} ${icon("arrowRight")}</a>`
     : "";
   fillBars($(".of-uf-hero"));
 }
@@ -82,8 +83,8 @@ function renderOverall() {
 // ------------------------------------------------------------ Qidiruv: kurslar + mavzular
 function setupSearch() {
   const apply = () => window.OFShell?.setSearch({
-    placeholder: "Kurs yoki mavzuni qidirish…",
-    label: "Umumiy fizika bo‘yicha qidirish",
+    placeholder: t("uf.searchHub", "Kurs yoki mavzuni qidirish…"),
+    label: t("uf.searchHubLabel", "Umumiy fizika bo‘yicha qidirish"),
     onQuery: (q) => {
       const results = $("[data-results]");
       const list = $("[data-results-list]");
@@ -101,7 +102,7 @@ function setupSearch() {
       results.hidden = false;
       list.innerHTML = hits.length
         ? hits.slice(0, 30).map(({ c, l }) => `<li><a href="${esc(l.href)}" ${signedIn ? "" : "data-protected"}><b>${esc(l.label)}</b><span>${esc(l.title)}</span><small>${esc(c.title)}</small></a></li>`).join("")
-        : `<li class="of-subtle">Hech narsa topilmadi. Boshqa so‘z bilan urinib ko‘ring.</li>`;
+        : `<li class="of-subtle">${t("shell.searchEmpty", "Hech narsa topilmadi. Boshqa so‘z bilan urinib ko‘ring.")}</li>`;
       return visible + hits.length;
     },
   });
@@ -145,7 +146,7 @@ function init() {
       renderCourses();
     } catch (error) {
       console.error("[umumiy-fizika] progress yuklanmadi:", error);
-      $("[data-overall-text]").textContent = "Progressni yuklab bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.";
+      $("[data-overall-text]").textContent = t("home.progressError", "Progressni yuklab bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.");
       $("[data-overall-pct]").textContent = "—";
       renderCourses();
     }

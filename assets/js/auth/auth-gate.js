@@ -4,8 +4,9 @@
 import { openModal } from "../ui/modal.js";
 import { getSessionState, whenReady } from "../core/session.js";
 import { setPendingDestination } from "./auth-service.js";
+import { t } from "../core/i18n.js";
 
-export const AUTH_REQUIRED_TEXT = "Ushbu bo‘limdan foydalanish uchun hisobingizga kiring yoki ro‘yxatdan o‘ting.";
+export const AUTH_REQUIRED_TEXT = t("auth.required", "Ushbu bo‘limdan foydalanish uchun hisobingizga kiring yoki ro‘yxatdan o‘ting.");
 
 export async function openAuth(view = "login", opts = {}) {
   const mod = await import("./auth-ui.js");
@@ -22,12 +23,12 @@ export function showAuthGate(destination, { onDismiss } = {}) {
     if (reason !== "success" && getSessionState().status !== "authenticated") onDismiss?.();
   };
   return openModal({
-    title: "Hisobingizga kiring",
+    title: t("auth.gateTitle", "Hisobingizga kiring"),
     text: AUTH_REQUIRED_TEXT,
     iconName: "lock",
     actions: [
-      { label: "Ro‘yxatdan o‘tish", variant: "primary", onClick: (_, m) => { m.close("action"); openAuth("register", { onClose: afterAuth }); } },
-      { label: "Kirish", onClick: (_, m) => { m.close("action"); openAuth("login", { onClose: afterAuth }); } },
+      { label: t("shell.register", "Ro‘yxatdan o‘tish"), variant: "primary", onClick: (_, m) => { m.close("action"); openAuth("register", { onClose: afterAuth }); } },
+      { label: t("shell.login", "Kirish"), onClick: (_, m) => { m.close("action"); openAuth("login", { onClose: afterAuth }); } },
     ],
     onClose: (reason) => { if (reason !== "action" && reason !== "auth") onDismiss?.(); },
   });
