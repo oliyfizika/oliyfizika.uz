@@ -1,7 +1,7 @@
 // ==========================================================================
 // Interaktiv o'yinlar — katalog sahifasi. O'yin kodlari bu yerda YUKLANMAYDI.
 // Faqat ikonlar, kirish animatsiyasi va o'yinlarning o'zi shu brauzerda saqlagan rekordlari
-// (mavjud localStorage kalitlari: "formulaHuntRecord", "oliyfizika_magnetic_rush_best").
+// (localStorage kaliti: "oliyfizika:formulani-top:best" — Formulani top o‘yinidagi eng yaxshi foiz).
 // Qidiruv — qobiqning deklarativ qidiruvi (data-shell-search, [data-search-item]).
 // ==========================================================================
 

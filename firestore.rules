@@ -25,6 +25,8 @@ rules_version = '2';
 //     • faqat egasi yaratadi, users.xp/level/lastXpGrant yangilanishi bilan BIRGA (batch/tranzaksiya);
 //       natija (results/{resultId}) shu foydalanuvchiniki, shu mavzu, passed va foizi XP'ga mos bo'lishi shart.
 //     • egasi va admin o'qiydi; update/delete — hech kim (immutable).
+//   users/{uid}/gameSets/{setId}   (interaktiv o'yinlar — foydalanuvchi to'plamlari)
+//     • faqat egasi o'qiydi/yozadi/o'chiradi; maydonlar va hajm tekshiriladi.
 //   Qolgan barcha yo'llar — yopiq (default deny).
 // ============================================================================
 
@@ -197,6 +199,24 @@ service cloud.firestore {
         allow create: if isOwner(userId) && validGrant(userId, grantId);
         allow update, delete: if false;
       }
+
+      // Interaktiv o'yinlar: foydalanuvchining o'z savollar to'plamlari (Formulani top, Arqon tortish,
+      // Baraban). Faqat egasi o'qiydi/yozadi; hajm cheklangan. Kod: interaktiv-oyinlar/shared/game-sets.js
+      match /gameSets/{setId} {
+        allow read, delete: if isOwner(userId);
+        allow create, update: if isOwner(userId) && validGameSet(request.resource.data, setId);
+      }
+    }
+
+    function validGameSet(d, setId) {
+      return d.keys().hasOnly(['id', 'kind', 'title', 'topics', 'items', 'createdAt', 'updatedAt'])
+        && d.id == setId
+        && setId.matches('[A-Za-z0-9_-]{4,40}')
+        && d.kind in ['formula', 'question']
+        && d.title is string && d.title.size() <= 80
+        && d.topics is list && d.topics.size() <= 6
+        && d.items is list && d.items.size() <= 150
+        && d.createdAt is number && d.updatedAt is number;
     }
 
     // ---------------------------------------------------------------- results
