@@ -1,1544 +1,276 @@
-/* =========================================================
-   BARABAN O'YINI
-   OliyFizika.uz
-========================================================= */
+// ==========================================================================
+// Baraban — jamoaviy viktorina (OliyFizika 2.0).
+//
+//   • savollar manbai: foydalanuvchining o‘z to‘plami yoki namunalar (../shared/);
+//   • jamoalar soni 2–6, nomlarini o‘zgartirish mumkin;
+//   • baraban aylanadi → tushgan savol ko‘rsatiladi → boshlovchi “To‘g‘ri / Noto‘g‘ri” ni bosadi;
+//   • savol barabandan chiqadi, navbat keyingi jamoaga o‘tadi; savollar tugaganda — reyting.
+// ==========================================================================
 
+import { shuffle } from "../shared/game-sets.js";
+import { mountSetPicker } from "../shared/set-library.js";
 
-"use strict";
+const $ = (id) => document.getElementById(id);
+const views = document.querySelectorAll("[data-view]");
+const show = (name) => views.forEach((v) => { v.hidden = v.dataset.view !== name; });
 
+const TEAM_COLORS = ["var(--of-blue-600)", "var(--of-green-600)", "var(--of-orange-500)", "var(--of-purple-500)", "var(--of-red-500)", "var(--of-blue-400)"];
+const DEFAULT_NAMES = ["1-jamoa", "2-jamoa", "3-jamoa", "4-jamoa", "5-jamoa", "6-jamoa"];
+const SECTOR_COLORS = ["var(--of-blue-500)", "var(--of-green-500)", "var(--of-orange-500)", "var(--of-purple-500)", "var(--of-blue-700)", "var(--of-green-700)"];
+const SPIN_MS = 5000;
+const NAMES_KEY = "oliyfizika:baraban:names";
 
-/* =========================================================
-   O'YIN HOLATI
-========================================================= */
-
-const gameData = {
-
-    name: "",
-
-    topic: "",
-
-    teams: [],
-
-    questions: []
-
+const st = {
+  set: null, teams: [], queue: [], turn: 0, rotation: 0, spinning: false, current: null, over: true, muted: false,
 };
 
+// ------------------------------------------------------------------ sozlash
+let savedNames = [];
+try { savedNames = JSON.parse(localStorage.getItem(NAMES_KEY) || "[]") || []; } catch { /* ignore */ }
 
-let remainingQuestions = [];
+function renderTeamInputs() {
+  const n = Number($("teamCount").value);
+  const box = $("teams");
+  const current = [...box.querySelectorAll("input")].map((i) => i.value);
+  box.innerHTML = '<span class="of-label">Jamoalar nomi</span>';
+  for (let i = 0; i < n; i += 1) {
+    const label = document.createElement("label");
+    label.className = "gm-team-input";
+    label.style.setProperty("--_c", TEAM_COLORS[i]);
+    label.innerHTML = `<i></i><input class="of-input" maxlength="24" aria-label="${i + 1}-jamoa nomi">`;
+    label.querySelector("input").value = current[i] || savedNames[i] || DEFAULT_NAMES[i];
+    box.append(label);
+  }
+}
+$("teamCount").addEventListener("change", renderTeamInputs);
+if (savedNames.length >= 2 && savedNames.length <= 6) $("teamCount").value = String(savedNames.length);
+renderTeamInputs();
 
-let currentTeamIndex = 0;
-
-let selectedQuestion = null;
-
-let wheelRotation = 0;
-
-let isSpinning = false;
-
-
-/* =========================================================
-   DOM
-========================================================= */
-
-const gameNameInput =
-    document.getElementById("gameName");
-
-const topicInput =
-    document.getElementById("topic");
-
-const teamCountSelect =
-    document.getElementById("teamCount");
-
-const teamsList =
-    document.getElementById("teamsList");
-
-const questionsList =
-    document.getElementById("questionsList");
-
-const questionCount =
-    document.getElementById("questionCount");
-
-const addQuestionBtn =
-    document.getElementById("addQuestionBtn");
-
-const startGameBtn =
-    document.getElementById("startGameBtn");
-
-const gameSection =
-    document.getElementById("gameSection");
-
-const gameTitle =
-    document.getElementById("gameTitle");
-
-const gameTopic =
-    document.getElementById("gameTopic");
-
-const scoreBoard =
-    document.getElementById("scoreBoard");
-
-const currentTeamEl =
-    document.getElementById("currentTeam");
-
-const drum =
-    document.getElementById("drum");
-
-const spinBtn =
-    document.getElementById("spinBtn");
-
-const questionArea =
-    document.getElementById("questionArea");
-
-const selectedQuestionNumber =
-    document.getElementById(
-        "selectedQuestionNumber"
-    );
-
-const selectedQuestionPoints =
-    document.getElementById(
-        "selectedQuestionPoints"
-    );
-
-const selectedQuestionText =
-    document.getElementById(
-        "selectedQuestionText"
-    );
-
-const correctBtn =
-    document.getElementById("correctBtn");
-
-const wrongBtn =
-    document.getElementById("wrongBtn");
-
-const winnerArea =
-    document.getElementById("winnerArea");
-
-const winnerText =
-    document.getElementById("winnerText");
-
-const finalScores =
-    document.getElementById("finalScores");
-
-
-/* =========================================================
-   SAVOL RAQAMI
-========================================================= */
-
-let nextQuestionId = 1;
-
-
-/* =========================================================
-   JAMOALAR
-========================================================= */
-
-function updateTeamsPreview() {
-
-    const count =
-        Number(teamCountSelect.value);
-
-    teamsList.innerHTML = "";
-
-    for (
-        let i = 0;
-        i < count;
-        i++
-    ) {
-
-        const team =
-            document.createElement("div");
-
-        team.className =
-            "team-preview";
-
-        team.textContent =
-            `${getTeamName(i)}`;
-
-        teamsList.appendChild(team);
-
-    }
-
+function describe(s) {
+  $("chosen").innerHTML = "";
+  const b = document.createElement("b");
+  b.textContent = s.title;
+  const span = document.createElement("span");
+  const withOpts = s.items.filter((it) => it.a && (it.w?.length || 0) > 0).length;
+  span.textContent = `${s.topics.join(", ")} · ${s.items.length} ta savol`;
+  $("chosen").append(b, span);
+  $("showOptions").disabled = !withOpts;
+  if (!withOpts) $("showOptions").checked = false;
+  $("start").disabled = !s.items.length;
 }
 
+const picker = mountSetPicker($("picker"), {
+  game: "baraban",
+  mode: "open",
+  onSelect: (s) => { st.set = s; describe(s); },
+});
+st.set = picker.selected;
+if (st.set) describe(st.set);
 
-function getTeamName(index) {
-
-    const names = [
-        "Birinchi jamoa",
-        "Ikkinchi jamoa",
-        "Uchinchi jamoa",
-        "To'rtinchi jamoa",
-        "Beshinchi jamoa",
-        "Oltinchi jamoa"
-    ];
-
-    return (
-        names[index] ||
-        `${index + 1}-jamoa`
-    );
-
+// ------------------------------------------------------------------ baraban (SVG)
+function sectorPath(i, n) {
+  if (n === 1) return "M0,-96 A96,96 0 1,1 -0.01,-96 Z";
+  const a0 = ((i / n) * 360 - 90) * (Math.PI / 180);
+  const a1 = (((i + 1) / n) * 360 - 90) * (Math.PI / 180);
+  const large = 360 / n > 180 ? 1 : 0;
+  const p = (a) => `${(96 * Math.cos(a)).toFixed(3)},${(96 * Math.sin(a)).toFixed(3)}`;
+  return `M0,0 L${p(a0)} A96,96 0 ${large},1 ${p(a1)} Z`;
 }
 
-
-teamCountSelect.addEventListener(
-    "change",
-    updateTeamsPreview
-);
-
-
-/* =========================================================
-   SAVOL QO'SHISH
-========================================================= */
-
-function addQuestion() {
-
-    const id =
-        nextQuestionId++;
-
-    gameData.questions.push({
-
-        id: id,
-
-        text: "",
-
-        points: 1
-
-    });
-
-    renderQuestions();
-
+function renderWheel() {
+  const svg = $("wheelSvg");
+  const n = st.queue.length;
+  $("wheel").toggleAttribute("data-many", n > 16);
+  if (!n) { svg.innerHTML = '<circle r="96" fill="var(--of-surface-sunken)"/>'; return; }
+  let html = "";
+  st.queue.forEach((q, i) => {
+    let color = SECTOR_COLORS[i % SECTOR_COLORS.length];
+    if (i === n - 1 && n > 1 && n % SECTOR_COLORS.length === 1) color = SECTOR_COLORS[2]; // qo‘shni sektorlar bir xil bo‘lmasin
+    const mid = (((i + 0.5) / n) * 360);
+    html += `<path d="${sectorPath(i, n)}" fill="${color}" stroke="var(--of-surface)" stroke-width="1.2"/>`;
+    html += `<text transform="rotate(${mid.toFixed(2)}) translate(0,-72) rotate(${(-mid).toFixed(2)})" text-anchor="middle" dominant-baseline="central">${q.no}</text>`;
+  });
+  html += '<circle r="96" fill="none" stroke="rgb(255 255 255 / .5)" stroke-width="1"/>';
+  svg.innerHTML = html;
 }
 
-
-addQuestionBtn.addEventListener(
-    "click",
-    addQuestion
-);
-
-
-/* =========================================================
-   SAVOLLARNI CHIZISH
-========================================================= */
-
-function renderQuestions() {
-
-    questionsList.innerHTML = "";
-
-    questionCount.textContent =
-        `${gameData.questions.length} ta`;
-
-
-    gameData.questions.forEach(
-        question => {
-
-            const card =
-                document.createElement("div");
-
-            card.className =
-                "question-card";
-
-
-            /* -------------------------
-               SARLAVHA
-            -------------------------- */
-
-            const title =
-                document.createElement("div");
-
-            title.className =
-                "question-title";
-
-            title.textContent =
-                `Savol ${question.id}`;
-
-
-            /* -------------------------
-               MATN
-            -------------------------- */
-
-            const textarea =
-                document.createElement(
-                    "textarea"
-                );
-
-            textarea.className =
-                "question-text";
-
-            textarea.placeholder =
-                "Savol matnini kiriting...";
-
-            textarea.value =
-                question.text;
-
-
-            textarea.addEventListener(
-                "input",
-                () => {
-
-                    question.text =
-                        textarea.value;
-
-                }
-            );
-
-
-            /* -------------------------
-               PASTKI QISM
-            -------------------------- */
-
-            const bottom =
-                document.createElement("div");
-
-            bottom.className =
-                "question-bottom";
-
-
-            const pointsLabel =
-                document.createElement("label");
-
-            pointsLabel.textContent =
-                "Ball:";
-
-
-            const pointsInput =
-                document.createElement(
-                    "input"
-                );
-
-            pointsInput.type =
-                "number";
-
-            pointsInput.min =
-                "1";
-
-            pointsInput.value =
-                question.points;
-
-            pointsInput.className =
-                "question-points";
-
-
-            pointsInput.addEventListener(
-                "input",
-                () => {
-
-                    let value =
-                        Number(
-                            pointsInput.value
-                        );
-
-                    if (
-                        !Number.isFinite(value) ||
-                        value < 1
-                    ) {
-
-                        value = 1;
-
-                    }
-
-                    question.points =
-                        value;
-
-                    pointsInput.value =
-                        value;
-
-                }
-            );
-
-
-            /* -------------------------
-               O'CHIRISH
-            -------------------------- */
-
-            const deleteBtn =
-                document.createElement(
-                    "button"
-                );
-
-            deleteBtn.type =
-                "button";
-
-            deleteBtn.className =
-                "delete-question";
-
-            deleteBtn.textContent =
-                "🗑 O'chirish";
-
-
-            deleteBtn.addEventListener(
-                "click",
-                () => {
-
-                    const index =
-                        gameData.questions
-                            .findIndex(
-                                q =>
-                                    q.id ===
-                                    question.id
-                            );
-
-                    if (index !== -1) {
-
-                        gameData.questions
-                            .splice(index, 1);
-
-                    }
-
-                    renderQuestions();
-
-                }
-            );
-
-
-            bottom.appendChild(
-                pointsLabel
-            );
-
-            bottom.appendChild(
-                pointsInput
-            );
-
-            bottom.appendChild(
-                deleteBtn
-            );
-
-
-            card.appendChild(title);
-
-            card.appendChild(
-                textarea
-            );
-
-            card.appendChild(
-                bottom
-            );
-
-
-            questionsList.appendChild(
-                card
-            );
-
-        }
-    );
-
+// ------------------------------------------------------------------ ovoz
+let audio = null;
+function tickSound() {
+  if (st.muted) return;
+  try {
+    audio ||= new (window.AudioContext || window.webkitAudioContext)();
+    if (audio.state === "suspended") audio.resume();
+    const t0 = audio.currentTime;
+    // Sekinlashib boruvchi «tiq-tiq»: oraliqlar asta-sekin uzayadi
+    let t = 0;
+    let gap = 0.05;
+    while (t < SPIN_MS / 1000 - 0.3) {
+      const osc = audio.createOscillator();
+      const gain = audio.createGain();
+      osc.type = "triangle";
+      osc.frequency.value = 900 + Math.random() * 200;
+      gain.gain.setValueAtTime(0.0001, t0 + t);
+      gain.gain.exponentialRampToValueAtTime(0.05, t0 + t + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + t + 0.04);
+      osc.connect(gain).connect(audio.destination);
+      osc.start(t0 + t);
+      osc.stop(t0 + t + 0.05);
+      t += gap;
+      gap *= 1.07;
+    }
+  } catch { /* ovozsiz davom etamiz */ }
 }
 
-
-/* =========================================================
-   BARABAN RANGLARI
-========================================================= */
-
-const wheelColors = [
-
-    "#38bdf8",
-    "#facc15",
-    "#4ade80",
-    "#fb7185",
-    "#a78bfa",
-    "#2dd4bf",
-    "#f97316",
-    "#60a5fa",
-    "#f472b6",
-    "#34d399",
-    "#818cf8",
-    "#fb923c"
-
-];
-
-
-/* =========================================================
-   BARABANNI QURISH
-========================================================= */
-
-function renderDrum() {
-
-    const total =
-        remainingQuestions.length;
-
-
-    drum.innerHTML = "";
-
-
-    if (total === 0) {
-
-        drum.style.background =
-            "#e2e8f0";
-
-        return;
-
-    }
-
-
-    /* =====================================================
-       HAR BIR SEKTOR UCHUN BURCHAK
-    ===================================================== */
-
-    const sectorAngle =
-        360 / total;
-
-
-    /* =====================================================
-       CONIC GRADIENT
-    ===================================================== */
-
-    const gradients = [];
-
-
-    for (
-        let i = 0;
-        i < total;
-        i++
-    ) {
-
-        const start =
-            i * sectorAngle;
-
-        const end =
-            (i + 1) *
-            sectorAngle;
-
-        const color =
-            wheelColors[
-                i %
-                wheelColors.length
-            ];
-
-
-        gradients.push(
-            `${color} ${start}deg ${end}deg`
-        );
-
-    }
-
-
-    drum.style.background =
-        `conic-gradient(
-            ${gradients.join(",")}
-        )`;
-
-
-    /* =====================================================
-       SAVOL RAQAMLARI
-    ===================================================== */
-
-    remainingQuestions.forEach(
-        (question, index) => {
-
-            const label =
-                document.createElement(
-                    "div"
-                );
-
-            label.className =
-                "drum-label";
-
-
-            /* ---------------------------------------------
-               SEKTOR MARKAZI
-            ---------------------------------------------- */
-
-            const centerAngle =
-                index *
-                sectorAngle +
-                sectorAngle / 2;
-
-
-            /* ---------------------------------------------
-               RADIUS
-            ---------------------------------------------- */
-
-            let radius;
-
-
-            if (total <= 6) {
-
-                radius = 210;
-
-            }
-            else if (total <= 10) {
-
-                radius = 215;
-
-            }
-            else if (total <= 20) {
-
-                radius = 220;
-
-            }
-            else {
-
-                radius = 225;
-
-            }
-
-
-            /* ---------------------------------------------
-               MATNNI SEKTOR MARKAZIGA JOYLASHTIRISH
-            ---------------------------------------------- */
-
-            label.style.transform =
-                `
-                translate(-50%, -50%)
-                rotate(${centerAngle}deg)
-                translateY(-${radius}px)
-                rotate(${-centerAngle}deg)
-                `;
-
-
-            label.textContent =
-                `${question.id}-SAVOL`;
-
-
-            drum.appendChild(label);
-
-        }
-    );
-
-
-    /* =====================================================
-       MARKAZ
-    ===================================================== */
-
-    const center =
-        document.createElement(
-            "div"
-        );
-
-    center.className =
-        "drum-center";
-
-    center.textContent =
-        "🎡";
-
-    drum.appendChild(center);
-
+// ------------------------------------------------------------------ o‘yin
+function start() {
+  st.set = picker.selected;
+  if (!st.set?.items.length) return;
+  const names = [...$("teams").querySelectorAll("input")].map((inp, i) => inp.value.trim() || DEFAULT_NAMES[i]);
+  try { localStorage.setItem(NAMES_KEY, JSON.stringify(names)); } catch { /* ignore */ }
+  st.teams = names.map((name, i) => ({ name, score: 0, color: TEAM_COLORS[i] }));
+  const count = Number($("count").value) || Infinity;
+  const showOpts = $("showOptions").checked;
+  st.queue = shuffle(st.set.items).slice(0, count).map((it, i) => ({
+    no: i + 1,
+    q: it.q,
+    a: it.a || "",
+    pts: it.pts || 1,
+    options: showOpts && it.a && it.w?.length ? shuffle([it.a, ...it.w.slice(0, 3)]) : null,
+  }));
+  st.turn = 0;
+  st.current = null;
+  st.over = false;
+  st.spinning = false;
+  $("playTitle").textContent = st.set.title;
+  $("playTopic").textContent = st.set.topics.join(" · ") || "Baraban";
+  $("qCard").hidden = true;
+  $("winBox").hidden = true;
+  renderWheel();
+  renderScores();
+  show("play");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-
-/* =========================================================
-   SAVOLNI TEKSHIRISH
-========================================================= */
-
-function validateQuestions() {
-
-    if (
-        gameData.questions.length === 0
-    ) {
-
-        alert(
-            "Kamida bitta savol kiriting."
-        );
-
-        return false;
-
-    }
-
-
-    for (
-        const question
-        of gameData.questions
-    ) {
-
-        if (
-            !question.text.trim()
-        ) {
-
-            alert(
-                `${question.id}-savol matni kiritilmagan.`
-            );
-
-            return false;
-
-        }
-
-
-        if (
-            !Number.isFinite(
-                Number(question.points)
-            ) ||
-            Number(question.points) < 1
-        ) {
-
-            alert(
-                `${question.id}-savol uchun ball noto'g'ri.`
-            );
-
-            return false;
-
-        }
-
-    }
-
-
-    return true;
-
+function renderScores() {
+  const list = $("scores");
+  list.innerHTML = "";
+  st.teams.forEach((team, i) => {
+    const li = document.createElement("li");
+    li.className = "bb-score";
+    li.style.setProperty("--_c", team.color);
+    li.toggleAttribute("data-active", i === st.turn && !st.over);
+    li.innerHTML = "<span></span><b></b>";
+    li.querySelector("span").textContent = team.name;
+    li.querySelector("b").textContent = String(team.score);
+    list.append(li);
+  });
+  const team = st.teams[st.turn];
+  $("turn").textContent = team?.name || "—";
+  $("turnCard").style.setProperty("--_c", team?.color || "");
+  $("left").textContent = String(st.queue.length);
+  const busy = st.spinning || Boolean(st.current) || st.over || !st.queue.length;
+  $("spin").disabled = busy;
+  $("spinBtn").disabled = busy;
 }
 
-
-/* =========================================================
-   O'YINNI BOSHLASH
-========================================================= */
-
-function startGame() {
-
-    if (
-        !validateQuestions()
-    ) {
-
-        return;
-
-    }
-
-
-    const teamCount =
-        Number(
-            teamCountSelect.value
-        );
-
-
-    gameData.name =
-        gameNameInput.value.trim() ||
-        "Baraban o'yini";
-
-
-    gameData.topic =
-        topicInput.value.trim() ||
-        "Fizika";
-
-
-    gameData.teams = [];
-
-
-    for (
-        let i = 0;
-        i < teamCount;
-        i++
-    ) {
-
-        gameData.teams.push({
-
-            name:
-                getTeamName(i),
-
-            score:
-                0
-
-        });
-
-    }
-
-
-    /* ---------------------------------------------
-       BARCHA SAVOLLARDAN NUSXA
-    ---------------------------------------------- */
-
-    remainingQuestions =
-        gameData.questions.map(
-            question => ({
-                ...question
-            })
-        );
-
-
-    currentTeamIndex = 0;
-
-    selectedQuestion = null;
-
-    wheelRotation = 0;
-
-    isSpinning = false;
-
-
-    /* ---------------------------------------------
-       UI
-    ---------------------------------------------- */
-
-    gameTitle.textContent =
-        gameData.name;
-
-    gameTopic.textContent =
-        gameData.topic;
-
-
-    gameSection.classList.remove(
-        "hidden"
-    );
-
-
-    questionArea.classList.add(
-        "hidden"
-    );
-
-
-    winnerArea.classList.add(
-        "hidden"
-    );
-
-
-    updateScoreBoard();
-
-    updateCurrentTeam();
-
-    renderDrum();
-
-
-    spinBtn.disabled =
-        false;
-
-
-    gameSection.scrollIntoView({
-        behavior: "smooth"
-    });
-
+function spin() {
+  if (st.spinning || st.current || st.over || !st.queue.length) return;
+  st.spinning = true;
+  renderScores();
+  const n = st.queue.length;
+  const pick = Math.floor(Math.random() * n);
+  const sector = 360 / n;
+  // Sektor ichida tasodifiy nuqta (chegaraga tushmasin) — ko‘rsatkich tepada (0°)
+  const target = pick * sector + sector * (0.2 + Math.random() * 0.6);
+  const current = ((st.rotation % 360) + 360) % 360;
+  let delta = (360 - target) - current;
+  delta = ((delta % 360) + 360) % 360;
+  st.rotation += 360 * (4 + Math.floor(Math.random() * 2)) + delta;
+  $("wheel").style.transform = `rotate(${st.rotation}deg)`;
+  tickSound();
+  setTimeout(() => {
+    st.spinning = false;
+    st.current = st.queue[pick];
+    showQuestion();
+  }, SPIN_MS + 150);
 }
 
-
-startGameBtn.addEventListener(
-    "click",
-    startGame
-);
-
-
-/* =========================================================
-   BALLAR PANELI
-========================================================= */
-
-function updateScoreBoard() {
-
-    scoreBoard.innerHTML = "";
-
-
-    gameData.teams.forEach(
-        (team, index) => {
-
-            const box =
-                document.createElement(
-                    "div"
-                );
-
-            box.className =
-                "team-score";
-
-
-            if (
-                index ===
-                currentTeamIndex
-            ) {
-
-                box.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            const name =
-                document.createElement(
-                    "span"
-                );
-
-            name.textContent =
-                team.name;
-
-
-            const score =
-                document.createElement(
-                    "strong"
-                );
-
-            score.textContent =
-                team.score;
-
-
-            box.appendChild(name);
-
-            box.appendChild(score);
-
-
-            scoreBoard.appendChild(
-                box
-            );
-
-        }
-    );
-
+function showQuestion() {
+  const q = st.current;
+  $("qNum").textContent = `${q.no}-savol`;
+  $("qPts").textContent = `${q.pts} ball`;
+  $("qText").textContent = q.q;
+  const opts = $("qOpts");
+  opts.innerHTML = "";
+  opts.hidden = !q.options;
+  (q.options || []).forEach((o) => {
+    const li = document.createElement("li");
+    li.textContent = o;
+    if (o === q.a) li.dataset.answer = "1";
+    opts.append(li);
+  });
+  $("qAnswer").hidden = true;
+  $("qAnswer").textContent = q.a ? `Javob: ${q.a}` : "";
+  $("reveal").hidden = !q.a;
+  $("qCard").hidden = false;
+  renderScores();
+  $("qCard").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
-
-/* =========================================================
-   NAVBAT
-========================================================= */
-
-function updateCurrentTeam() {
-
-    const team =
-        gameData.teams[
-            currentTeamIndex
-        ];
-
-
-    if (!team) {
-        return;
-    }
-
-
-    currentTeamEl.textContent =
-        team.name;
-
-
-    updateScoreBoard();
-
+function reveal() {
+  const q = st.current;
+  if (!q?.a) return;
+  $("qAnswer").hidden = false;
+  $("qOpts").querySelectorAll("[data-answer]").forEach((li) => li.setAttribute("data-correct", ""));
+  $("reveal").hidden = true;
 }
 
-
-/* =========================================================
-   BARABANNI AYLANtirish
-========================================================= */
-
-function spinDrum() {
-
-    if (
-        isSpinning
-    ) {
-
-        return;
-
-    }
-
-
-    if (
-        remainingQuestions.length === 0
-    ) {
-
-        finishGame();
-
-        return;
-
-    }
-
-
-    isSpinning = true;
-
-    spinBtn.disabled = true;
-
-    questionArea.classList.add(
-        "hidden"
-    );
-
-
-    /* =====================================================
-       TASODIFIY SAVOL
-    ===================================================== */
-
-    const selectedIndex =
-        Math.floor(
-            Math.random() *
-            remainingQuestions.length
-        );
-
-
-    selectedQuestion =
-        remainingQuestions[
-            selectedIndex
-        ];
-
-
-    /* =====================================================
-       SEKTOR BURCHAGI
-    ===================================================== */
-
-    const total =
-        remainingQuestions.length;
-
-
-    const sectorAngle =
-        360 / total;
-
-
-    /*
-       Sektor markazi.
-
-       CSS conic-gradient:
-       0° — yuqori qismdan boshlanadi.
-
-       Pointer:
-       yuqorida turibdi.
-
-       Shuning uchun tanlangan
-       sektor markazini 0° ga
-       olib kelamiz.
-    */
-
-    const sectorCenter =
-        selectedIndex *
-        sectorAngle +
-        sectorAngle / 2;
-
-
-    /* =====================================================
-       HOZIRGI BURCHAK
-    ===================================================== */
-
-    const current =
-        (
-            wheelRotation % 360 +
-            360
-        ) % 360;
-
-
-    /* =====================================================
-       KORREKSIYA
-    ===================================================== */
-
-    let correction =
-        -sectorCenter -
-        current;
-
-
-    while (
-        correction > 180
-    ) {
-
-        correction -= 360;
-
-    }
-
-
-    while (
-        correction < -180
-    ) {
-
-        correction += 360;
-
-    }
-
-
-    /* =====================================================
-       KAMIDA 3 MARTA TO'LIQ AYLANISH
-    ===================================================== */
-
-    const fullTurns =
-        3 * 360;
-
-
-    wheelRotation +=
-        fullTurns +
-        correction;
-
-
-    /* =====================================================
-       OVOZ
-    ===================================================== */
-
-    playSpinSound();
-
-
-    /* =====================================================
-       ANIMATSIYA
-    ===================================================== */
-
-    drum.style.transform =
-        `rotate(${wheelRotation}deg)`;
-
-
-    /*
-       CSS transition:
-       4.8 sekund
-    */
-
-    setTimeout(
-        () => {
-
-            isSpinning = false;
-
-            spinBtn.disabled =
-                false;
-
-            showSelectedQuestion();
-
-        },
-        5000
-    );
-
+function judge(ok) {
+  const q = st.current;
+  if (!q) return;
+  if (ok) st.teams[st.turn].score += q.pts;
+  st.queue = st.queue.filter((x) => x !== q);
+  st.current = null;
+  $("qCard").hidden = true;
+  if (!st.queue.length) { finish(); return; }
+  st.turn = (st.turn + 1) % st.teams.length;
+  renderWheel();
+  renderScores();
 }
 
-
-spinBtn.addEventListener(
-    "click",
-    spinDrum
-);
-
-
-/* =========================================================
-   TANLANGAN SAVOLNI KO'RSATISH
-========================================================= */
-
-function showSelectedQuestion() {
-
-    if (
-        !selectedQuestion
-    ) {
-
-        return;
-
-    }
-
-
-    selectedQuestionNumber.textContent =
-        `${selectedQuestion.id}-SAVOL`;
-
-
-    selectedQuestionPoints.textContent =
-        `${selectedQuestion.points} BALL`;
-
-
-    selectedQuestionText.textContent =
-        selectedQuestion.text;
-
-
-    questionArea.classList.remove(
-        "hidden"
-    );
-
-
-    questionArea.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
+function finish() {
+  st.over = true;
+  st.current = null;
+  renderWheel();
+  renderScores();
+  const ranking = [...st.teams].sort((a, b) => b.score - a.score);
+  const top = ranking.filter((t) => t.score === ranking[0].score);
+  $("winTitle").textContent = top.length > 1 ? "Durang!" : `${ranking[0].name} g‘olib!`;
+  const list = $("final");
+  list.innerHTML = "";
+  ranking.forEach((t, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = "<span></span><b></b>";
+    li.querySelector("span").textContent = `${i + 1}. ${t.name}`;
+    li.querySelector("b").textContent = `${t.score} ball`;
+    list.append(li);
+  });
+  $("winBox").hidden = false;
+  $("again").focus();
 }
 
-
-/* =========================================================
-   TO'G'RI JAVOB
-========================================================= */
-
-function handleCorrectAnswer() {
-
-    if (
-        !selectedQuestion
-    ) {
-
-        return;
-
-    }
-
-
-    const team =
-        gameData.teams[
-            currentTeamIndex
-        ];
-
-
-    if (!team) {
-        return;
-    }
-
-
-    /* ---------------------------------------------
-       BALL BERISH
-    ---------------------------------------------- */
-
-    team.score +=
-        Number(
-            selectedQuestion.points
-        );
-
-
-    removeSelectedQuestion();
-
-}
-
-
-/* =========================================================
-   NOTO'G'RI JAVOB
-========================================================= */
-
-function handleWrongAnswer() {
-
-    if (
-        !selectedQuestion
-    ) {
-
-        return;
-
-    }
-
-
-    /*
-       Ball berilmaydi.
-       Lekin savol barabandan chiqadi.
-    */
-
-    removeSelectedQuestion();
-
-}
-
-
-/* =========================================================
-   SAVOLNI BARABANDAN O'CHIRISH
-========================================================= */
-
-function removeSelectedQuestion() {
-
-    if (
-        !selectedQuestion
-    ) {
-
-        return;
-
-    }
-
-
-    const selectedId =
-        selectedQuestion.id;
-
-
-    /* ---------------------------------------------
-       SAVOLNI QOLGANLARDAN O'CHIRISH
-    ---------------------------------------------- */
-
-    remainingQuestions =
-        remainingQuestions.filter(
-            question =>
-                question.id !==
-                selectedId
-        );
-
-
-    /* ---------------------------------------------
-       TANLANGAN SAVOLNI TOZALASH
-    ---------------------------------------------- */
-
-    selectedQuestion =
-        null;
-
-
-    questionArea.classList.add(
-        "hidden"
-    );
-
-
-    /* ---------------------------------------------
-       BALLARNI YANGILASH
-    ---------------------------------------------- */
-
-    updateScoreBoard();
-
-
-    /* ---------------------------------------------
-       BARCHA SAVOLLAR TUGADIMI?
-    ---------------------------------------------- */
-
-    if (
-        remainingQuestions.length === 0
-    ) {
-
-        finishGame();
-
-        return;
-
-    }
-
-
-    /* ---------------------------------------------
-       KEYINGI JAMOA
-    ---------------------------------------------- */
-
-    currentTeamIndex++;
-
-    if (
-        currentTeamIndex >=
-        gameData.teams.length
-    ) {
-
-        currentTeamIndex = 0;
-
-    }
-
-
-    updateCurrentTeam();
-
-
-    /* ---------------------------------------------
-       ENG MUHIM:
-       BARABANNI QAYTA QURISH
-    ---------------------------------------------- */
-
-    renderDrum();
-
-
-    /*
-       Endi masalan:
-
-       6 savol
-       ↓
-       5 savol
-       ↓
-       4 savol
-       ↓
-       3 savol
-
-       va har safar sektor
-       360 / qolgan savollar soni
-       bo'yicha qayta hisoblanadi.
-    */
-
-}
-
-
-/* =========================================================
-   G'OLIBNI ANIQLASH
-========================================================= */
-
-function finishGame() {
-
-    spinBtn.disabled =
-        true;
-
-
-    questionArea.classList.add(
-        "hidden"
-    );
-
-
-    winnerArea.classList.remove(
-        "hidden"
-    );
-
-
-    /* ---------------------------------------------
-       BALL BO'YICHA SARALASH
-    ---------------------------------------------- */
-
-    const ranking =
-        [...gameData.teams].sort(
-            (a, b) =>
-                b.score -
-                a.score
-        );
-
-
-    const winner =
-        ranking[0];
-
-
-    /* ---------------------------------------------
-       DURANG
-    ---------------------------------------------- */
-
-    const winners =
-        ranking.filter(
-            team =>
-                team.score ===
-                winner.score
-        );
-
-
-    if (
-        winners.length === 1
-    ) {
-
-        winnerText.textContent =
-            `🏆 ${winner.name} g'olib!`;
-
-    }
-    else {
-
-        winnerText.textContent =
-            `🤝 O'yin durang bilan yakunlandi!`;
-
-    }
-
-
-    /* ---------------------------------------------
-       YAKUNIY BALLAR
-    ---------------------------------------------- */
-
-    finalScores.innerHTML = "";
-
-
-    ranking.forEach(
-        (team, index) => {
-
-            const row =
-                document.createElement(
-                    "div"
-                );
-
-            row.className =
-                "final-score";
-
-
-            row.innerHTML =
-                `
-                <span>
-                    ${index + 1}.
-                    ${team.name}
-                </span>
-
-                <strong>
-                    ${team.score} ball
-                </strong>
-                `;
-
-
-            finalScores.appendChild(
-                row
-            );
-
-        }
-    );
-
-
-    winnerArea.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-}
-
-
-/* =========================================================
-   OVOZ
-========================================================= */
-
-let audioContext = null;
-
-
-function playSpinSound() {
-
-    try {
-
-        if (!audioContext) {
-
-            audioContext =
-                new (
-                    window.AudioContext ||
-                    window.webkitAudioContext
-                )();
-
-        }
-
-
-        if (
-            audioContext.state ===
-            "suspended"
-        ) {
-
-            audioContext.resume();
-
-        }
-
-
-        const startTime =
-            audioContext.currentTime;
-
-
-        const duration =
-            4.7;
-
-
-        /*
-           Baraban aylanishiga
-           o'xshash ketma-ket
-           qisqa tovushlar.
-        */
-
-        for (
-            let i = 0;
-            i < 28;
-            i++
-        ) {
-
-            const oscillator =
-                audioContext.createOscillator();
-
-            const gain =
-                audioContext.createGain();
-
-
-            oscillator.type =
-                "triangle";
-
-
-            oscillator.frequency.value =
-                120 +
-                Math.random() *
-                80;
-
-
-            const t =
-                startTime +
-                (i / 28) *
-                duration;
-
-
-            gain.gain.setValueAtTime(
-                0,
-                t
-            );
-
-
-            gain.gain.linearRampToValueAtTime(
-                0.035,
-                t + 0.005
-            );
-
-
-            gain.gain.exponentialRampToValueAtTime(
-                0.001,
-                t + 0.045
-            );
-
-
-            oscillator.connect(
-                gain
-            );
-
-            gain.connect(
-                audioContext.destination
-            );
-
-
-            oscillator.start(t);
-
-            oscillator.stop(
-                t + 0.05
-            );
-
-        }
-
-    }
-    catch (error) {
-
-        console.warn(
-            "Audio ishlamadi:",
-            error
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   TUGMALAR
-========================================================= */
-
-correctBtn.addEventListener(
-    "click",
-    handleCorrectAnswer
-);
-
-
-wrongBtn.addEventListener(
-    "click",
-    handleWrongAnswer
-);
-
-
-/* =========================================================
-   BOSHLANG'ICH HOLAT
-========================================================= */
-
-updateTeamsPreview();
-
-addQuestion();
+$("start").addEventListener("click", start);
+$("spin").addEventListener("click", spin);
+$("spinBtn").addEventListener("click", spin);
+$("reveal").addEventListener("click", reveal);
+$("correct").addEventListener("click", () => judge(true));
+$("wrong").addEventListener("click", () => judge(false));
+$("again").addEventListener("click", start);
+$("toSetup").addEventListener("click", () => { st.over = true; show("setup"); });
+$("stop").addEventListener("click", () => { if (!st.over && confirm("O‘yinni hozir yakunlab, natijani ko‘rasizmi?")) finish(); });
+$("mute").addEventListener("click", () => {
+  st.muted = !st.muted;
+  $("mute").setAttribute("aria-pressed", String(st.muted));
+  $("mute").textContent = st.muted ? "Ovoz: o‘chirilgan" : "Ovoz: yoqilgan";
+});

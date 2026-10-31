@@ -2822,6 +2822,22 @@
         setupExistingWordInputs();
 
 
+        /*
+         * HTML'da dastlabki qatorlar yo‘q bo‘lsa (avval sahifa
+         * so‘z maydonlarisiz ochilardi), 5 ta bo‘sh maydon qo‘shamiz.
+         */
+
+        if (!$("word-inputs").children.length) {
+
+            for (let i = 0; i < 5; i += 1) {
+
+                addWordInput();
+
+            }
+
+        }
+
+
         bindEvents();
 
 

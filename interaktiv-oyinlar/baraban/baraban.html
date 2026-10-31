@@ -1,312 +1,123 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Baraban | OliyFizika.uz</title>
-
-    <link rel="stylesheet" href="baraban.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baraban | OliyFizika.uz</title>
+<meta name="description" content="Sinf uchun jamoaviy viktorina: jamoalar sonini tanlang, o‘z savollaringizni yozing yoki tayyor to‘plamdan foydalaning va barabanni aylantiring.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../shared/games.css">
+<link rel="stylesheet" href="baraban.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="baraban.js"></script>
 </head>
+<!--
+  Baraban — jamoaviy viktorina. Savollar: ../shared/ (o‘z to‘plamlari + namunalar).
+  Javobni boshlovchi (o‘qituvchi) tekshiradi: “To‘g‘ri” / “Noto‘g‘ri”.
+-->
+<body class="of-ui" data-shell-title="Baraban">
+<div class="of-page of-container">
+<main class="gm" id="game">
+  <header data-hide-on-play>
+    <ol class="gm-crumbs"><li><a href="../interaktiv-oyinlar.html">Interaktiv o‘yinlar</a></li><li aria-current="page">Baraban</li></ol>
+    <div class="gm-head">
+      <div>
+        <h1>Baraban</h1>
+        <p>Jamoalar navbat bilan barabanni aylantiradi va tushgan savolga javob beradi. Savollarni o‘zingiz yozing yoki tayyor to‘plamlardan birini tanlang.</p>
+      </div>
+    </div>
+  </header>
 
-<body>
+  <!-- 1. Sozlash -->
+  <section class="gm-setup" data-view="setup">
+    <div class="of-card gm-panel">
+      <h2 class="gm-step"><b>1</b> Savollarni tanlang yoki yarating</h2>
+      <div id="picker"></div>
+    </div>
+    <aside class="of-card gm-panel gm-panel--sticky">
+      <h2 class="gm-step"><b>2</b> Jamoalar va sozlamalar</h2>
+      <div class="gm-chosen" id="chosen"></div>
+      <label class="of-field">
+        <span class="of-label">Jamoalar soni</span>
+        <select class="of-input" id="teamCount">
+          <option value="2">2 ta jamoa</option>
+          <option value="3" selected>3 ta jamoa</option>
+          <option value="4">4 ta jamoa</option>
+          <option value="5">5 ta jamoa</option>
+          <option value="6">6 ta jamoa</option>
+        </select>
+      </label>
+      <div class="gm-teams" id="teams" aria-label="Jamoalar nomi"></div>
+      <label class="of-field">
+        <span class="of-label">Barabandagi savollar soni</span>
+        <select class="of-input" id="count">
+          <option value="8">8 ta</option>
+          <option value="12" selected>12 ta</option>
+          <option value="16">16 ta</option>
+          <option value="24">24 ta</option>
+          <option value="0">Hammasi</option>
+        </select>
+      </label>
+      <label class="bb-check"><input type="checkbox" id="showOptions"> <span>Javob variantlarini ko‘rsatish</span></label>
+      <p class="of-hint">Savollar barabanga tasodifiy tartibda joylanadi. To‘g‘ri javob — savol balli jamoaga qo‘shiladi.</p>
+      <button type="button" class="of-btn of-btn--primary of-btn--lg of-btn--block" id="start">O‘yinni boshlash</button>
+    </aside>
+  </section>
 
-<div class="page">
+  <!-- 2. O‘yin -->
+  <section class="bb" data-view="play" hidden>
+    <div class="of-card gm-bar">
+      <div class="gm-bar__title"><small id="playTopic">Baraban</small><b id="playTitle"></b></div>
+      <span class="gm-bar__stat">Qoldi: <b id="left">0</b></span>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="mute" aria-pressed="false">Ovoz: yoqilgan</button>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="stop">Yakunlash</button>
+    </div>
 
-    <!-- =========================
-         O'YIN SOZLAMALARI
-    ========================== -->
+    <ol class="bb-scores" id="scores" aria-label="Jamoalar ballari"></ol>
 
-    <section class="setup-card">
-
-        <h1>🎡 Baraban</h1>
-
-        <p class="subtitle">
-            Savollarni kiriting va jamoalar bilan bilim bellashuvini boshlang.
-        </p>
-
-        <div class="form-grid">
-
-            <div class="field">
-                <label for="gameName">
-                    O'yin nomi
-                </label>
-
-                <input
-                    id="gameName"
-                    type="text"
-                    placeholder="Masalan: Mexanika bilimlar bellashuvi"
-                >
-            </div>
-
-            <div class="field">
-                <label for="topic">
-                    Mavzu
-                </label>
-
-                <input
-                    id="topic"
-                    type="text"
-                    placeholder="Masalan: Tekis harakat"
-                >
-            </div>
-
-            <div class="field">
-                <label for="teamCount">
-                    Jamoalar soni
-                </label>
-
-                <select id="teamCount">
-
-                    <option value="2">
-                        2 ta jamoa
-                    </option>
-
-                    <option value="3" selected>
-                        3 ta jamoa
-                    </option>
-
-                    <option value="4">
-                        4 ta jamoa
-                    </option>
-
-                    <option value="5">
-                        5 ta jamoa
-                    </option>
-
-                    <option value="6">
-                        6 ta jamoa
-                    </option>
-
-                </select>
-            </div>
-
+    <div class="bb-stage">
+      <div class="bb-wheel-wrap">
+        <div class="bb-pointer" aria-hidden="true"></div>
+        <div class="bb-wheel" id="wheel"><svg viewBox="-100 -100 200 200" id="wheelSvg" aria-hidden="true"></svg></div>
+        <button type="button" class="bb-hub" id="spin" aria-label="Barabanni aylantirish">AYLANTIRISH</button>
+      </div>
+      <div class="bb-side">
+        <div class="of-card bb-turn" id="turnCard">
+          <span class="of-hint">Navbat</span>
+          <b id="turn">—</b>
+          <button type="button" class="of-btn of-btn--primary of-btn--lg of-btn--block" id="spinBtn">Barabanni aylantirish</button>
         </div>
 
+        <article class="of-card bb-q" id="qCard" hidden aria-live="polite">
+          <div class="bb-q__badges"><span class="of-badge of-badge--blue" id="qNum">1-savol</span><span class="of-badge of-badge--green" id="qPts">1 ball</span></div>
+          <h2 class="bb-q__text" id="qText"></h2>
+          <ol class="bb-q__opts" id="qOpts" hidden></ol>
+          <p class="bb-q__answer" id="qAnswer" hidden></p>
+          <button type="button" class="of-btn of-btn--soft of-btn--sm" id="reveal">Javobni ko‘rsatish</button>
+          <div class="bb-q__actions">
+            <button type="button" class="of-btn of-btn--success" id="correct">To‘g‘ri javob</button>
+            <button type="button" class="of-btn of-btn--danger" id="wrong">Noto‘g‘ri javob</button>
+          </div>
+        </article>
+      </div>
+    </div>
 
-        <!-- JAMOALAR -->
-
-        <div class="teams-preview">
-
-            <h2>Jamoalar</h2>
-
-            <div
-                id="teamsList"
-                class="teams-list">
-            </div>
-
+    <div class="at-win bb-win" id="winBox" hidden>
+      <div class="of-card at-win__card" role="dialog" aria-labelledby="winTitle">
+        <div class="at-win__cup">🏆</div>
+        <h2 id="winTitle">O‘yin yakunlandi!</h2>
+        <ol class="bb-final" id="final"></ol>
+        <div class="gm-actions">
+          <button type="button" class="of-btn of-btn--primary" id="again">Qayta o‘ynash</button>
+          <button type="button" class="of-btn" id="toSetup">Sozlamalarga qaytish</button>
         </div>
-
-    </section>
-
-
-    <!-- =========================
-         SAVOLLAR
-    ========================== -->
-
-    <section class="questions-card">
-
-        <div class="section-header">
-
-            <div>
-                <h2>📝 Savollar</h2>
-
-                <span
-                    id="questionCount"
-                    class="count">
-                    0 ta
-                </span>
-            </div>
-
-        </div>
-
-
-        <div
-            id="questionsList"
-            class="questions-list">
-        </div>
-
-
-        <!-- MUHIM:
-             TUGMA SAVOLLARDAN KEYIN -->
-
-        <button
-            id="addQuestionBtn"
-            class="add-question-btn"
-            type="button">
-
-            ＋ Savol qo'shish
-
-        </button>
-
-
-        <button
-            id="startGameBtn"
-            class="start-game-btn"
-            type="button">
-
-            ▶ O'yinni boshlash
-
-        </button>
-
-    </section>
-
-
-    <!-- =========================
-         O'YIN MAYDONI
-    ========================== -->
-
-    <section
-        id="gameSection"
-        class="game-section hidden">
-
-        <div class="game-header">
-
-            <div>
-                <h1 id="gameTitle">
-                    Baraban
-                </h1>
-
-                <p id="gameTopic">
-                    Fizika
-                </p>
-            </div>
-
-            <div class="turn-box">
-
-                Navbat:
-
-                <strong id="currentTeam">
-                    Birinchi jamoa
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <!-- BALLAR -->
-
-        <div
-            id="scoreBoard"
-            class="score-board">
-        </div>
-
-
-        <!-- BARABAN -->
-
-        <div class="wheel-area">
-
-            <div class="pointer">
-                ▼
-            </div>
-
-            <div
-                id="drum"
-                class="drum">
-
-            </div>
-
-        </div>
-
-
-        <button
-            id="spinBtn"
-            class="spin-btn"
-            type="button">
-
-            🎡 BARABANNI AYlANTIRISH
-
-        </button>
-
-
-        <!-- TANLANGAN SAVOL -->
-
-        <section
-            id="questionArea"
-            class="question-area hidden">
-
-            <div class="selected-question">
-
-                <div class="question-badge">
-
-                    <span id="selectedQuestionNumber">
-                        1-SAVOL
-                    </span>
-
-                    <span id="selectedQuestionPoints">
-                        1 BALL
-                    </span>
-
-                </div>
-
-
-                <h2 id="selectedQuestionText">
-                    Savol
-                </h2>
-
-
-                <div class="answer-controls">
-
-                    <button
-                        id="correctBtn"
-                        class="correct-btn"
-                        type="button">
-
-                        ✓ TO'G'RI JAVOB
-
-                    </button>
-
-
-                    <button
-                        id="wrongBtn"
-                        class="wrong-btn"
-                        type="button">
-
-                        ✕ NOTO'G'RI JAVOB
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- G'OLIB -->
-
-        <section
-            id="winnerArea"
-            class="winner-area hidden">
-
-            <div class="winner-icon">
-                🏆
-            </div>
-
-            <h2>
-                O'yin yakunlandi!
-            </h2>
-
-            <div
-                id="winnerText"
-                class="winner-text">
-            </div>
-
-
-            <div
-                id="finalScores"
-                class="final-scores">
-            </div>
-
-        </section>
-
-    </section>
-
+      </div>
+    </div>
+  </section>
+</main>
 </div>
-
-
-<script src="baraban.js"></script>
-
 </body>
 </html>

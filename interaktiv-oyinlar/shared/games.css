@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Interaktiv o‘yinlar — umumiy uslub (OliyFizika 2.0 tokenlari, yorug‘/qorong‘i).
+   Prefiks: gm-
+   ========================================================================== */
+
+.gm { display: flex; flex-direction: column; gap: 20px; max-width: 1120px; }
+.gm [hidden] { display: none !important; }
+
+/* ---- Sarlavha ------------------------------------------------------------------------------- */
+.gm-crumbs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; padding: 0; list-style: none; font-size: var(--of-text-sm); color: var(--of-text-3); }
+.gm-crumbs li + li::before { content: "/"; margin-right: 6px; color: var(--of-border-strong); }
+.gm-crumbs a { color: var(--of-text-2); }
+.gm-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.gm-head h1 { margin: 0 0 6px; font: 800 var(--of-text-3xl)/1.15 var(--of-font-display); }
+.gm-head p { margin: 0; color: var(--of-text-2); max-width: 64ch; line-height: 1.55; }
+
+/* ---- Sozlash ekrani ------------------------------------------------------------------------- */
+.gm-setup { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+.gm-panel { display: flex; flex-direction: column; gap: 14px; padding: 20px; }
+.gm-panel > h2 { margin: 0; font: 750 var(--of-text-lg)/1.3 var(--of-font-display); }
+.gm-panel--sticky { position: sticky; top: calc(var(--of-header-h) + 16px); }
+.gm-step { display: flex; align-items: center; gap: 10px; }
+.gm-step b {
+  display: grid; place-items: center; width: 28px; height: 28px; flex: none; border-radius: 9px;
+  background: var(--of-primary-soft); color: var(--of-primary-text); font: 800 var(--of-text-sm)/1 var(--of-font-display);
+}
+.gm-chosen { padding: 12px 14px; border-radius: var(--of-radius-md); background: var(--of-surface-sunken); font-size: var(--of-text-sm); line-height: 1.5; }
+.gm-chosen b { display: block; font-size: var(--of-text-md); color: var(--of-text); }
+.gm-chosen span { color: var(--of-text-2); }
+.gm-teams { display: grid; gap: 8px; }
+.gm-team-input { display: flex; align-items: center; gap: 8px; }
+.gm-team-input i { width: 14px; height: 14px; flex: none; border-radius: 50%; background: var(--_c, var(--of-primary)); }
+.gm-team-input .of-input { min-height: 38px; }
+select.of-input { cursor: pointer; }
+
+@media (max-width: 960px) {
+  .gm-setup { grid-template-columns: minmax(0, 1fr); }
+  .gm-panel--sticky { position: static; }
+}
+
+/* ---- To‘plam tanlash paneli ----------------------------------------------------------------- */
+.gm-picker { display: flex; flex-direction: column; gap: 12px; }
+.gm-picker__bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.gm-picker__actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.gm-picker__cloud { margin: 0; }
+.gm-picker__cloud[data-status="on"] { color: var(--of-success-text); }
+.gm-picker__cloud[data-status="error"] { color: var(--of-warning-text); }
+.gm-count:not(:empty) {
+  display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 99px;
+  background: var(--of-primary-soft-2); color: var(--of-primary-text); font-size: .7rem;
+}
+.gm-file { position: relative; cursor: pointer; }
+.gm-sets { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.gm-set {
+  display: flex; flex-direction: column; min-width: 0;
+  border: 1.5px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface);
+  transition: border-color var(--of-dur-fast), box-shadow var(--of-dur-fast), background var(--of-dur-fast);
+}
+.gm-set:hover { border-color: var(--of-primary-soft-2); }
+.gm-set[aria-selected="true"] { border-color: var(--of-primary); background: var(--of-primary-soft); box-shadow: var(--of-focus-ring); }
+.gm-set[data-unusable] { opacity: .75; }
+.gm-set__main {
+  display: flex; gap: 12px; align-items: flex-start; flex: 1; width: 100%; padding: 14px 14px 8px;
+  border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; border-radius: inherit;
+}
+.gm-set__main:focus-visible { outline: 2px solid var(--of-primary); outline-offset: -2px; }
+.gm-set__radio {
+  display: grid; place-items: center; width: 22px; height: 22px; flex: none; margin-top: 1px; border-radius: 50%;
+  border: 2px solid var(--of-border-strong); color: transparent;
+}
+.gm-set__radio svg { width: 14px; height: 14px; }
+.gm-set[aria-selected="true"] .gm-set__radio { border-color: var(--of-primary); background: var(--of-primary-solid); color: #fff; }
+.gm-set__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.gm-set__title { font: 700 var(--of-text-md)/1.3 var(--of-font-display); overflow-wrap: anywhere; }
+.gm-set__topics { display: flex; flex-wrap: wrap; gap: 4px; }
+.gm-set__topics .of-badge { font-size: .7rem; }
+.gm-set__meta { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.gm-set__meta b { color: var(--of-warning-text); font-weight: 600; }
+.gm-set__tools { display: flex; justify-content: flex-end; align-items: center; gap: 2px; padding: 0 8px 8px; }
+.gm-set__tools .of-btn { min-height: 32px; padding: 0 10px; }
+.gm-set__tools .of-icon-btn { width: 32px; height: 32px; }
+.gm-set__tools svg { width: 16px; height: 16px; }
+.gm-empty {
+  grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px;
+  border: 1.5px dashed var(--of-border-strong); border-radius: var(--of-radius-lg); color: var(--of-text-2); line-height: 1.55;
+}
+
+/* ---- To‘plam muharriri (dialog) ------------------------------------------------------------- */
+.gm-editor {
+  width: min(860px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-xl);
+  background: var(--of-surface); color: var(--of-text); box-shadow: var(--of-shadow-lg);
+}
+.gm-editor::backdrop { background: var(--of-overlay); }
+.gm-editor[open] { animation: of-slide-up var(--of-dur-slow) var(--of-ease-out); }
+.gm-editor__form { display: flex; flex-direction: column; max-height: calc(100dvh - 26px); }
+.gm-editor__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 18px 20px 12px; border-bottom: 1px solid var(--of-border); }
+.gm-editor__head h2 { margin: 0 0 4px; font: 750 var(--of-text-xl)/1.2 var(--of-font-display); }
+.gm-editor__scroll { display: flex; flex-direction: column; gap: 12px; padding: 16px 20px; overflow: auto; }
+.gm-editor__meta { display: grid; grid-template-columns: auto 1fr 1fr; gap: 12px; align-items: end; }
+.gm-editor__help { margin: 0; line-height: 1.5; }
+.gm-editor__foot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; padding: 12px 20px; border-top: 1px solid var(--of-border); background: var(--of-surface-2); border-radius: 0 0 var(--of-radius-xl) var(--of-radius-xl); }
+.gm-editor__foot .of-hint { margin-right: auto; }
+.gm-symbols {
+  position: sticky; top: -16px; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 8px;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface-2);
+}
+.gm-sym {
+  min-width: 30px; height: 30px; padding: 0 6px; border: 1px solid var(--of-border); border-radius: 7px;
+  background: var(--of-surface); color: var(--of-text); font: 600 .95rem/1 var(--of-font-sans); cursor: pointer;
+}
+.gm-sym:hover { border-color: var(--of-primary); color: var(--of-primary-text); }
+.gm-rows { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.gm-row { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 12px; border: 1px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface); }
+.gm-row__num { display: grid; place-items: center; height: 28px; margin-top: 22px; border-radius: 8px; background: var(--of-surface-sunken); color: var(--of-text-2); font: 700 var(--of-text-xs)/1 var(--of-font-sans); }
+.gm-row__fields { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto; gap: 8px 10px; align-items: end; }
+.gm-row__fields label { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.gm-row__lbl { font: 600 var(--of-text-xs)/1.2 var(--of-font-sans); color: var(--of-text-2); }
+.gm-row__fields .of-input { min-height: 40px; }
+.gm-row__pts .of-input { width: 72px; }
+.gm-row__wrong { grid-column: 1 / -1; }
+.gm-row__wrong summary { cursor: pointer; font-size: var(--of-text-sm); font-weight: 600; color: var(--of-primary-text); }
+.gm-row__wgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+.gm-row__del { margin-top: 20px; }
+.gm-formula { font-family: var(--of-font-sans); letter-spacing: .01em; }
+.gm-add-row { align-self: flex-start; }
+
+@media (max-width: 720px) {
+  .gm-editor__meta { grid-template-columns: 1fr; }
+  .gm-row__fields { grid-template-columns: minmax(0, 1fr); }
+  .gm-row__wgrid { grid-template-columns: minmax(0, 1fr); }
+  .gm-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .gm-row__num { display: none; }
+  .gm-editor__foot { flex-wrap: wrap; }
+}
+
+/* ---- Test variantlari (Formulani top) ------------------------------------------------------- */
+.gm-play { display: flex; flex-direction: column; gap: 16px; max-width: 820px; width: 100%; }
+.gm-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 12px 16px; }
+.gm-bar__title { display: flex; flex-direction: column; min-width: 0; margin-right: auto; }
+.gm-bar__title small { color: var(--of-primary-text); font: 700 .7rem/1.2 var(--of-font-sans); letter-spacing: .06em; text-transform: uppercase; }
+.gm-bar__title b { font: 750 var(--of-text-md)/1.3 var(--of-font-display); overflow-wrap: anywhere; }
+.gm-bar__stat { font: 700 var(--of-text-sm)/1 var(--of-font-sans); color: var(--of-text-2); white-space: nowrap; }
+.gm-bar__stat b { color: var(--of-text); font-size: var(--of-text-md); }
+.gm-bar .of-progress { flex: 1 1 140px; min-width: 120px; max-width: 240px; }
+
+.gm-q { display: flex; flex-direction: column; gap: 16px; padding: 22px 24px; animation: of-slide-up var(--of-dur-slow) var(--of-ease-out); }
+.gm-q__label { font: 700 var(--of-text-xs)/1 var(--of-font-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--of-primary-text); }
+.gm-q__text { margin: 0; font: 700 var(--of-text-xl)/1.4 var(--of-font-display); color: var(--of-text); overflow-wrap: anywhere; }
+.gm-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.gm-opt {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 60px; padding: 12px 14px;
+  border: 1.5px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface); color: var(--of-text);
+  font: 600 1.08rem/1.4 var(--of-font-sans); text-align: left; cursor: pointer;
+  transition: border-color var(--of-dur-fast), background-color var(--of-dur-fast), transform var(--of-dur-fast);
+}
+.gm-opt:hover:not(:disabled) { border-color: var(--of-primary-soft-2); background: var(--of-primary-soft); }
+.gm-opt:active:not(:disabled) { transform: translateY(1px); }
+.gm-opt:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.gm-opt:disabled { cursor: default; }
+.gm-opt:disabled:not([data-state]) { opacity: .55; }
+.gm-opt__key {
+  display: grid; place-items: center; width: 30px; height: 30px; flex: none; border-radius: 9px;
+  background: var(--of-surface-sunken); color: var(--of-text-2); font: 750 var(--of-text-sm)/1 var(--of-font-display);
+}
+.gm-opt__text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.gm-opt[data-state="correct"] { border-color: var(--of-success); background: var(--of-success-soft); }
+.gm-opt[data-state="correct"] .gm-opt__key { background: var(--of-success-solid); color: #fff; }
+.gm-opt[data-state="wrong"] { border-color: var(--of-danger); background: var(--of-danger-soft); animation: gm-shake 320ms var(--of-ease-out); }
+.gm-opt[data-state="wrong"] .gm-opt__key { background: var(--of-danger); color: #fff; }
+@keyframes gm-shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+.gm-feedback { display: flex; align-items: center; gap: 8px; min-height: 1.5em; margin: 0; font-weight: 650; }
+.gm-feedback:empty { display: none; }
+.gm-feedback svg { width: 20px; height: 20px; flex: none; }
+.gm-feedback[data-ok="true"] { color: var(--of-success-text); }
+.gm-feedback[data-ok="false"] { color: var(--of-danger-text); }
+.gm-q__nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.gm-q__nav .of-btn--primary { margin-left: auto; }
+.gm-kbd { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.gm-kbd kbd {
+  display: inline-block; min-width: 1.6em; padding: 1px 5px; border: 1px solid var(--of-border); border-bottom-width: 2px;
+  border-radius: 5px; background: var(--of-surface-2); font: 600 .7rem/1.4 var(--of-font-sans); text-align: center;
+}
+@media (max-width: 640px) {
+  .gm-opts { grid-template-columns: minmax(0, 1fr); }
+  .gm-q { padding: 18px 16px; }
+  .gm-q__text { font-size: var(--of-text-lg); }
+}
+
+/* ---- Natija --------------------------------------------------------------------------------- */
+.gm-result { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: center; padding: 24px; }
+.gm-ring {
+  --p: 0; --c: var(--of-primary);
+  display: grid; place-items: center; width: 136px; height: 136px; border-radius: 50%;
+  background: conic-gradient(var(--c) calc(var(--p) * 1%), var(--of-surface-sunken) 0);
+}
+.gm-ring[data-level="high"] { --c: var(--of-success); }
+.gm-ring[data-level="low"] { --c: var(--of-danger); }
+.gm-ring__inner { display: grid; place-items: center; align-content: center; gap: 4px; width: 104px; height: 104px; border-radius: 50%; background: var(--of-surface); text-align: center; }
+.gm-ring__inner b { font: 800 1.7rem/1 var(--of-font-display); }
+.gm-ring__inner span { font-size: var(--of-text-xs); color: var(--of-text-3); }
+.gm-result__text { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.gm-result__text h2 { margin: 0; font: 800 var(--of-text-2xl)/1.2 var(--of-font-display); }
+.gm-result__text p { margin: 0; color: var(--of-text-2); }
+.gm-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.gm-review { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.gm-review li { display: grid; gap: 4px; padding: 12px 14px; border-radius: var(--of-radius-md); border: 1px solid var(--of-border); background: var(--of-surface); }
+.gm-review b { font-weight: 650; }
+.gm-review span { font-size: var(--of-text-sm); color: var(--of-text-2); }
+.gm-review .ok { color: var(--of-success-text); font-weight: 650; }
+.gm-review .bad { color: var(--of-danger-text); text-decoration: line-through; }
+@media (max-width: 560px) {
+  .gm-result { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
+  .gm-actions { justify-content: center; }
+}
+
+/* ---- Telefon: ixcham to‘plam kartalari (boshlash tugmasi tezroq ko‘rinsin) --------------------- */
+@media (max-width: 640px) {
+  .gm-panel { padding: 16px; }
+  .gm-sets { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .gm-set { flex-direction: row; align-items: center; }
+  .gm-set__main { padding: 10px 4px 10px 12px; gap: 10px; }
+  .gm-set__topics { display: none; }
+  .gm-set__title { font-size: var(--of-text-sm); }
+  .gm-set__tools { padding: 0 6px 0 0; }
+  .gm-set__tools .of-btn { padding: 0 8px; }
+}

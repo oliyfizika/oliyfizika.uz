@@ -1,103 +1,122 @@
 <!DOCTYPE html>
-
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arqon Tortish | OliyFizika.uz</title>
-
+<title>Arqon tortish | OliyFizika.uz</title>
+<meta name="description" content="Ikki jamoa fizika savollarida bellashadi: birinchi bo‘lib to‘g‘ri javob bergan jamoa arqonni o‘z tomoniga tortadi. Namunaviy to‘plamlar yoki o‘z savollaringiz bilan o‘ynang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../shared/games.css">
 <link rel="stylesheet" href="arqon-tortish.css">
-
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="arqon-tortish.js"></script>
 </head>
-<body>
+<!--
+  Arqon tortish — ikki jamoali o‘yin. Savollar: ../shared/ (namunalar + foydalanuvchi to‘plamlari).
+  Rasm: assets/tug-war.webp (shaffof fon, yorug‘ va qorong‘i rejimda ishlaydi).
+-->
+<body class="of-ui" data-shell-title="Arqon tortish">
+<div class="of-page of-container">
+<main class="gm" id="game">
+  <header data-hide-on-play>
+    <ol class="gm-crumbs"><li><a href="../interaktiv-oyinlar.html">Interaktiv o‘yinlar</a></li><li aria-current="page">Arqon tortish</li></ol>
+    <div class="gm-head">
+      <div>
+        <h1>Arqon tortish</h1>
+        <p>Ikki jamoa bir xil savolga javob beradi. Birinchi bo‘lib to‘g‘ri javob bergan jamoa arqonni bir qadam o‘z tomoniga tortadi. Noto‘g‘ri javob bergan jamoa shu savolda boshqa javob bera olmaydi.</p>
+      </div>
+    </div>
+  </header>
 
-<h1 class="title">
-ARQON TORTISH: FIZIKA
-</h1>
+  <!-- 1. Sozlash -->
+  <section class="gm-setup" data-view="setup">
+    <div class="of-card gm-panel">
+      <h2 class="gm-step"><b>1</b> Savollar to‘plamini tanlang</h2>
+      <div id="picker"></div>
+    </div>
+    <aside class="of-card gm-panel gm-panel--sticky">
+      <h2 class="gm-step"><b>2</b> Jamoalar va qoidalar</h2>
+      <div class="gm-chosen" id="chosen"></div>
+      <div class="gm-teams">
+        <span class="of-label">Jamoalar nomi</span>
+        <label class="gm-team-input" style="--_c: var(--at-blue)"><i></i><input class="of-input" id="name1" maxlength="24" value="Ko‘klar" aria-label="Chap jamoa nomi"></label>
+        <label class="gm-team-input" style="--_c: var(--at-green)"><i></i><input class="of-input" id="name2" maxlength="24" value="Yashillar" aria-label="O‘ng jamoa nomi"></label>
+      </div>
+      <label class="of-field">
+        <span class="of-label">G‘alaba uchun tortish</span>
+        <select class="of-input" id="steps">
+          <option value="3">3 qadam (tez o‘yin)</option>
+          <option value="5" selected>5 qadam</option>
+          <option value="7">7 qadam</option>
+        </select>
+      </label>
+      <label class="of-field">
+        <span class="of-label">Har bir savolga vaqt</span>
+        <select class="of-input" id="time">
+          <option value="10">10 soniya</option>
+          <option value="15">15 soniya</option>
+          <option value="20" selected>20 soniya</option>
+          <option value="30">30 soniya</option>
+        </select>
+      </label>
+      <p class="of-hint">Savollar va variantlar har o‘yinda aralashadi; har jamoada variantlar o‘rni har xil bo‘ladi. Klaviatura: chap jamoa <kbd>1</kbd>–<kbd>4</kbd>, o‘ng jamoa <kbd>7</kbd>–<kbd>0</kbd>.</p>
+      <button type="button" class="of-btn of-btn--primary of-btn--lg of-btn--block" id="start">O‘yinni boshlash</button>
+    </aside>
+  </section>
 
-<div class="game-container">
-
-
-<!-- CHAP PANEL -->
-
-<div class="player-panel">
-
-    <div class="panel-header blue">
-        Birinchi jamoa
-        <span id="score1" class="score-circle">0</span>
+  <!-- 2. O‘yin -->
+  <section class="at" data-view="play" hidden>
+    <div class="of-card at-board">
+      <div class="at-team at-team--1"><span class="at-team__name" id="tname1">Ko‘klar</span><b class="at-team__score" id="score1">0</b></div>
+      <div class="at-center">
+        <div class="at-timer" id="timerBox"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19" class="at-timer__bg"/><circle cx="22" cy="22" r="19" class="at-timer__fg" id="timerArc"/></svg><b id="timer">20</b></div>
+        <span class="at-round" id="roundText">1-savol</span>
+      </div>
+      <div class="at-team at-team--2"><b class="at-team__score" id="score2">0</b><span class="at-team__name" id="tname2">Yashillar</span></div>
     </div>
 
-    <div id="question" class="question-box blue-question">
-    Savol yuklanmoqda...
+    <div class="at-arena" id="arena" aria-hidden="true">
+      <div class="at-zone at-zone--1"></div><div class="at-zone at-zone--2"></div>
+      <div class="at-line at-line--win1"></div><div class="at-line at-line--mid"></div><div class="at-line at-line--win2"></div>
+      <div class="at-ticks" id="ticks"></div>
+      <img class="at-scene" id="scene" src="assets/tug-war.webp" alt="" width="1200" height="364">
+    </div>
+    <p class="at-status" id="status" role="status" aria-live="polite"></p>
+
+    <div class="at-sides">
+      <section class="of-card at-side at-side--1" aria-labelledby="sideTitle1">
+        <header><span id="sideTitle1">Ko‘klar</span><span class="at-lock" id="lock1" hidden>Javob berdi</span></header>
+        <p class="at-q" id="q1"></p>
+        <div class="at-opts" id="opts1"></div>
+      </section>
+      <section class="of-card at-side at-side--2" aria-labelledby="sideTitle2">
+        <header><span id="sideTitle2">Yashillar</span><span class="at-lock" id="lock2" hidden>Javob berdi</span></header>
+        <p class="at-q" id="q2"></p>
+        <div class="at-opts" id="opts2"></div>
+      </section>
+    </div>
+    <div class="at-foot">
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="stop">O‘yinni to‘xtatish</button>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="skip">Savolni o‘tkazib yuborish</button>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="fullscreen">To‘liq ekran</button>
     </div>
 
-    <div id="player1-options" class="answers">
-    </div>
-
-</div>
-
-<!-- ARENA -->
-
-<div class="arena">
-
-    <div class="scoreboard">
-
-        <div>
-            Birinchi jamoa
-            <div class="score-number">0</div>
+    <div class="at-win" id="winBox" hidden>
+      <div class="of-card at-win__card" role="dialog" aria-labelledby="winTitle">
+        <div class="at-win__cup">🏆</div>
+        <h2 id="winTitle">G‘olib!</h2>
+        <p id="winText"></p>
+        <div class="gm-actions">
+          <button type="button" class="of-btn of-btn--primary" id="again">Qayta o‘ynash</button>
+          <button type="button" class="of-btn" id="toSetup">Sozlamalarga qaytish</button>
         </div>
-
-        <div class="timer" id="timer">
-            ⏱ 10
-        </div>
-
-        <div>
-            Ikkinchi jamoa
-            <div class="score-number">0</div>
-        </div>
-
+      </div>
     </div>
-
-    <div class="battlefield">
-
-        <div class="center-line"></div>
-        <div id="tugContainer">
-
-            <img
-            src="assets/tug-war.png"
-            alt="Arqon tortish"
-            class="tug-image">
-
-        </div>
-
-    </div>
-
-    <div id="winner"></div>
-
+  </section>
+</main>
 </div>
-
-<!-- O'NG PANEL -->
-
-<div class="player-panel">
-
-    <div class="panel-header red">
-        Ikkinchi jamoa
-        <span id="score2" class="score-circle">0</span>
-    </div>
-
-    <div id="question2" class="question-box red-question">
-        Savol yuklanmoqda...
-    </div>
-
-    <div id="player2-options" class="answers">
-    </div>
-
-</div>
-
-
-</div>
-
-<script src="arqon-tortish.js"></script>
-
 </body>
 </html>
