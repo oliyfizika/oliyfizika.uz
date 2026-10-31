@@ -8,6 +8,7 @@
 //  • Real-time subscription yo'q: oddiy get/getDocs (32 ta kichik test meta hujjati).
 //  • Rasmlar getBlob() (Storage) yoki figures/* (Firestore) orqali, faqat ko'rinadigan bo'lganda.
 // ==========================================================================
+import { t } from "../core/i18n.js";
 import { loadFirebase } from "../core/session.js";
 import { COL, SETTINGS_DOC, STORAGE_ROOT, attemptId, gradeAnswers, durationSeconds } from "./core.js";
 
@@ -136,7 +137,7 @@ export async function submitAttempt(uid, testId, answers) {
 export async function gradeAttempt(attempt) {
   const { db, fsSdk } = await fb();
   const key = await getKey(attempt.testId, attempt.testVersion);
-  if (!key) throw new Error("Javob kalitini o‘qib bo‘lmadi.");
+  if (!key) throw new Error(t("att.api.keyUnreadable", "Javob kalitini o‘qib bo‘lmadi."));
   if (attempt.status === "graded") return { attempt, key };
   const g = gradeAnswers(attempt.answers || {}, key, attempt.questionCount);
   const ref = fsSdk.doc(db, COL.attempts, attempt.id);
@@ -169,7 +170,7 @@ export async function archiveTest(test) {
 /** UNARCHIVE (faqat admin): archived → draft. Faqat status va published o'zgaradi (Rules boshqasini rad etadi);
  *  versiya, savollar, publishedAt, solutionAvailableAt va urinishlar o'zgarmaydi. */
 export async function unarchiveTest(test) {
-  if (test.status !== "archived") throw new Error("Faqat arxivlangan kunni arxivdan chiqarish mumkin.");
+  if (test.status !== "archived") throw new Error(t("att.api.onlyArchived", "Faqat arxivlangan kunni arxivdan chiqarish mumkin."));
   const { db, fsSdk } = await fb();
   await fsSdk.updateDoc(fsSdk.doc(db, COL.tests, test.id), { status: "draft", published: false });
 }

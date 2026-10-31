@@ -4,11 +4,12 @@
 // bo'ladi; shu modul ularni o'qib, mavjud "of:notifications" ulanish nuqtasiga yuboradi.
 // Performance: real-time subscription yo'q; bitta so'rov (published testlar) 5 daqiqaga sessionStorage'da keshlanadi.
 // ==========================================================================
+import { t as tr, currentLang } from "../core/i18n.js";
 import { listVisibleTests } from "./api.js";
 import { toMs, solutionOpen, officialOpen, dayLabel } from "./core.js";
 
 const ROOT = new URL("../../../", import.meta.url);
-const KEY = "oliyfizika:att-notif:";
+const KEY = "oliyfizika:att-notif:" + (currentLang === "uz" ? "" : currentLang + ":");
 const TTL = 5 * 60 * 1000;
 const RECENT = 3 * 24 * 60 * 60 * 1000;
 
@@ -26,19 +27,19 @@ async function items(uid) {
     if (pub && now - pub < RECENT && officialOpen(t, now)) {
       out.push({
         id: `att-fizika-published:${t.id}`,
-        title: t.notification?.title || "Bugungi attestatsiya testi tayyor!",
-        body: t.notification?.body || `${dayLabel(t)} · ${t.questionCount} savol`,
+        title: t.notification?.title || tr("att.n.readyTitle", "Bugungi attestatsiya testi tayyor!"),
+        body: t.notification?.body || tr("att.n.readyBody", "{day} · {n} savol", { day: dayLabel(t), n: t.questionCount }),
         href: new URL(`attestatsiya/fizika-test.html?day=${t.dayNumber}`, ROOT).href,
-        action: "Testni boshlash", icon: "clipboard", tone: "primary", time: pub,
+        action: tr("att.n.start", "Testni boshlash"), icon: "clipboard", tone: "primary", time: pub,
       });
     }
     if (sol && solutionOpen(t, now) && now - sol < RECENT) {
       out.push({
         id: `att-fizika-solution:${t.id}`,
-        title: `${dayLabel(t)} yechimlari ochildi`,
-        body: "Bosqichma-bosqich yechimlar bilan tanishing.",
+        title: tr("att.n.solTitle", "{day} yechimlari ochildi", { day: dayLabel(t) }),
+        body: tr("att.n.solBody", "Bosqichma-bosqich yechimlar bilan tanishing."),
         href: new URL(`attestatsiya/fizika-yechimlar.html?day=${t.dayNumber}`, ROOT).href,
-        action: "Yechimlar", icon: "book", tone: "success", time: sol,
+        action: tr("att.n.solutions", "Yechimlar"), icon: "book", tone: "success", time: sol,
       });
     }
   }

@@ -24,17 +24,17 @@
 -->
 <body class="of-ui of-exam-page" data-shell-title="Mock test" data-shell-public="true">
   <div class="of-page of-exam">
-    <div class="of-exam-bar" role="toolbar" aria-label="Test asboblari">
-      <a class="of-exam-bar__back" href="./" aria-label="Mock testlar ro‘yxatiga qaytish">
+    <div class="of-exam-bar" role="toolbar" aria-label="Test asboblari" data-i18n-attr="aria-label:ms.t.tools">
+      <a class="of-exam-bar__back" href="./" aria-label="Mock testlar ro‘yxatiga qaytish" data-i18n-attr="aria-label:ms.t.backAria">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
-        <span class="of-exam-bar__text"><span class="of-exam-bar__eyebrow">Mock testlar</span><strong id="brandTitle">Mock test</strong></span>
+        <span class="of-exam-bar__text"><span class="of-exam-bar__eyebrow" data-i18n="ms.t.eyebrow">Mock testlar</span><strong id="brandTitle">Mock test</strong></span>
       </a>
       <div class="of-exam-bar__spacer"></div>
       <div class="header-actions of-exam-bar__actions">
         <div class="header-actions" id="tools" hidden>
-          <button class="iconbtn" id="formulaBtn" type="button" title="Formula jadvali" aria-label="Formula jadvali"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 5V4H6l6.5 8L6 20h12v-1"/></svg> <span class="label">Formulalar</span></button>
-          <button class="iconbtn" id="calcBtn" type="button" title="Kalkulyator" aria-label="Kalkulyator"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> <span class="label">Kalkulyator</span></button>
-          <button class="iconbtn mobile-nav-toggle" id="mobileNavBtn" type="button" title="Savollar" aria-label="Savollar ro‘yxati" aria-controls="side"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></button>
+          <button class="iconbtn" id="formulaBtn" type="button" title="Formula jadvali" aria-label="Formula jadvali" data-i18n-attr="title:ms.t.formulas,aria-label:ms.t.formulas"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 5V4H6l6.5 8L6 20h12v-1"/></svg> <span class="label" data-i18n="ms.t.formulasShort">Formulalar</span></button>
+          <button class="iconbtn" id="calcBtn" type="button" title="Kalkulyator" aria-label="Kalkulyator" data-i18n-attr="title:ms.t.calc,aria-label:ms.t.calc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> <span class="label" data-i18n="ms.t.calc">Kalkulyator</span></button>
+          <button class="iconbtn mobile-nav-toggle" id="mobileNavBtn" type="button" title="Savollar" aria-label="Savollar ro‘yxati" aria-controls="side" data-i18n-attr="title:ms.t.questionsTitle,aria-label:ms.t.questionsAria"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></button>
           <div class="timer" id="timer" role="timer">03:00:00</div>
         </div>
         <!-- Engine mavzu tugmasi (theme.js) — sayt mavzusi qobiq orqali boshqariladi, shuning uchun yashirin -->
@@ -44,7 +44,7 @@
     <p class="of-sr-only" id="timerAnnounce" aria-live="polite"></p>
 
     <main class="shell">
-      <section id="loadingScreen" class="loading" aria-live="polite"><div class="spinner"></div>Test yuklanmoqda…</section>
+      <section id="loadingScreen" class="loading" aria-live="polite"><div class="spinner"></div><span data-i18n="ms.t.loading">Test yuklanmoqda…</span></section>
       <section id="messageScreen" hidden></section>
       <section id="startScreen" hidden></section>
 
@@ -58,24 +58,24 @@
             <div id="qContent" aria-live="polite"></div>
             <div class="q-actions">
               <div class="group">
-                <button class="btn btn-ghost" id="prevBtn" type="button" aria-label="Oldingi savol">← Oldingi</button>
+                <button class="btn btn-ghost" id="prevBtn" type="button" aria-label="Oldingi savol" data-i18n-attr="aria-label:ms.t.prevAria" data-i18n="ms.t.prev">← Oldingi</button>
                 <button class="btn btn-ghost markbtn" id="markBtn" type="button" aria-pressed="false">☆ Belgilash</button>
               </div>
               <div class="group"><button class="btn btn-primary" id="nextBtn" type="button">Keyingi →</button></div>
             </div>
           </article>
           <div class="side-backdrop" id="sideBackdrop" hidden></div>
-          <aside class="side glass" id="side" aria-label="Savollar navigatsiyasi">
-            <div class="side-title"><strong>Savollar</strong><span id="answerCount">0 / 45</span></div>
+          <aside class="side glass" id="side" aria-label="Savollar navigatsiyasi" data-i18n-attr="aria-label:ms.t.nav">
+            <div class="side-title"><strong data-i18n="ms.t.questionsTitle">Savollar</strong><span id="answerCount">0 / 45</span></div>
             <div class="progressbar"><i id="progress"></i></div>
             <div class="navgrid" id="navgrid"></div>
-            <div class="legend"><span class="la">Javob berilgan</span><span class="lp">Qisman</span><span class="lm">Belgilangan</span><span>Javobsiz</span></div>
-            <button class="btn btn-danger finish" id="finishBtn" type="button">TESTNI YAKUNLASH</button>
+            <div class="legend"><span class="la" data-i18n="ms.t.lAnswered">Javob berilgan</span><span class="lp" data-i18n="ms.t.lPartial">Qisman</span><span class="lm" data-i18n="ms.t.lMarked">Belgilangan</span><span data-i18n="ms.t.lBlank">Javobsiz</span></div>
+            <button class="btn btn-danger finish" id="finishBtn" type="button" data-i18n="ms.t.finish">TESTNI YAKUNLASH</button>
           </aside>
         </div>
       </section>
 
-      <section id="resultScreen" class="result-wrap" hidden tabindex="-1" aria-label="Test natijasi"></section>
+      <section id="resultScreen" class="result-wrap" hidden tabindex="-1" aria-label="Test natijasi" data-i18n-attr="aria-label:ms.t.resultAria"></section>
     </main>
 
     <div id="footerSlot"></div>
@@ -83,13 +83,13 @@
 
   <div class="modal" id="formulaModal" data-static hidden role="dialog" aria-modal="true" aria-labelledby="formulaTitle">
     <div class="modal-card">
-      <div class="modal-head"><strong id="formulaTitle">Fizika fanidan formula jadvali</strong><button class="closebtn" type="button" data-close="formulaModal" aria-label="Yopish">✕</button></div>
+      <div class="modal-head"><strong id="formulaTitle" data-i18n="ms.t.formulaTitle">Fizika fanidan formula jadvali</strong><button class="closebtn" type="button" data-close="formulaModal" aria-label="Yopish" data-i18n-attr="aria-label:ms.t.close">✕</button></div>
       <div class="modal-body" id="formulaBody"></div>
     </div>
   </div>
   <div class="modal" id="calcModal" data-static hidden role="dialog" aria-modal="true" aria-labelledby="calcTitle">
     <div class="modal-card modal-card--calc">
-      <div class="modal-head"><strong id="calcTitle">Ilmiy kalkulyator</strong><button class="closebtn" type="button" data-close="calcModal" aria-label="Yopish">✕</button></div>
+      <div class="modal-head"><strong id="calcTitle" data-i18n="ms.t.calcTitle">Ilmiy kalkulyator</strong><button class="closebtn" type="button" data-close="calcModal" aria-label="Yopish" data-i18n-attr="aria-label:ms.t.close">✕</button></div>
       <div class="modal-body"><div id="calcBody"></div></div>
     </div>
   </div>

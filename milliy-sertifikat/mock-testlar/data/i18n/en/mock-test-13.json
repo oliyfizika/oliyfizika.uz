@@ -1,0 +1,610 @@
+{
+ "title": "Physics Mock Test №13",
+ "subtitle": "Variant 11 • 45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Rotation and Energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular Physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric Current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic Field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and Nuclear Physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A and Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "Using the graph, determine the distance travelled by the body in the time interval from 2 s to 5 s. (m)",
+   "options": [
+    "20",
+    "40",
+    "60",
+    "90"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "The body moves with uniform acceleration. Its initial speed is 10 m/s and its speed at the end of the path is 30 m/s. Determine the speed of the body when it has covered half of the path. (m/s)  √5 ≈ 2.24",
+   "options": [
+    "22.4",
+    "20",
+    "18",
+    "30"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "Two mutually perpendicular forces F₁ = 15 N and F₂ = 20 N act on a body of mass 5 kg. Determine the acceleration of the body. (m/s²)",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "As shown in the figure, a body slides down an inclined plane with an angle of 37°. The coefficient of friction is μ = 0.25, g = 10 m/s². Determine the acceleration of the body along the plane. (m/s²)",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "The three bodies shown in the figure move along a surface. The coefficient of friction is the same for all bodies, μ = 0.2. If the system moves under a force F = 60 N, determine the tensions T₁ and T₂ in the strings. (N)",
+   "options": [
+    "48; 30",
+    "40; 20",
+    "36; 24",
+    "52; 28"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "A body is thrown vertically upward and returns to the launch point after 6 s. Determine the maximum height reached by the body. (m)",
+   "options": [
+    "30",
+    "45",
+    "60",
+    "90"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "A body sinks in kerosene with an acceleration of 4 m/s². With what acceleration will this body sink in water? ρ_water = 1 g/cm³, ρ_kerosene = 0.8 g/cm³, g = 10 m/s².",
+   "options": [
+    "1.5",
+    "2.0",
+    "2.5",
+    "4.0"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "In the system shown in the figure, a force F = 20 N directed to the right acts on block m₂. The coefficient of friction on all surfaces is μ = 0.2, and the spring constant is k = 200 N/m. If the system moves at constant velocity, what is the extension of the spring? (cm)",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "A simple pendulum is placed in an elevator cabin moving downward with an acceleration of 0.36g. By what percentage does its period of oscillation increase?",
+   "options": [
+    "15%",
+    "20%",
+    "25%",
+    "40%"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "When an ideal gas passes from state 1 to state 2, its pressure does not change while its volume increases by a factor of 2. If the temperature changed by 300 K, find the initial temperature of the gas. (K)",
+   "options": [
+    "150",
+    "250",
+    "300",
+    "600"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "The density of an ideal gas is 1.2 kg/m³ and its pressure is 16 kPa. Determine the root-mean-square speed of the gas molecules. (m/s)",
+   "options": [
+    "100",
+    "200",
+    "300",
+    "400"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "A load of mass 4 kg with a base area of 20 cm² stands on the floor of an elevator accelerating upward at 2 m/s². Find the pressure exerted by the load on the floor. (Pa)",
+   "options": [
+    "1.2·10⁴",
+    "2.4·10⁴",
+    "4.0·10⁴",
+    "6.0·10⁴"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "How much heat is released when 3 liters of water at 0 °C freeze completely? λ = 334 kJ/kg. (kJ)",
+   "options": [
+    "334",
+    "668",
+    "1002",
+    "1336"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "To what height will water rise in a capillary tube of diameter 0.2 mm? The water wets the tube completely. σ = 73 mN/m, ρ = 1000 kg/m³, g = 10 m/s². (cm)",
+   "options": [
+    "7.3",
+    "10.0",
+    "14.6",
+    "20.0"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "In the circuit segment shown in the figure, the current flows from point A to point B. If R = 4 Ω and I = 3 A, determine φA − φB. (V)",
+   "options": [
+    "−12",
+    "−8",
+    "8",
+    "12"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "Capacitors C₁ = 4 nF and C₂ = 2 nF are connected in parallel, and a capacitor C₃ = 3 nF is connected in series with this combination. If the charge of the first capacitor is 8 nC, find the charge of the third capacitor. (nC)",
+   "options": [
+    "6",
+    "8",
+    "10",
+    "12"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "After the external circuit is connected, the voltage across the battery terminals is 18 V. The external resistance is R = 6 Ω and the battery EMF is ε = 24 V. Find the internal resistance of the battery. (Ω)",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "In three identical conductors connected in parallel to a power supply, a certain amount of heat is released in t₁ = 40 s. How much time is needed to release the same amount of heat if these conductors are connected in series?",
+   "options": [
+    "3 minutes",
+    "4 minutes",
+    "6 minutes",
+    "9 minutes"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "In the circuit shown in the figure, the 40 Ω and 10 Ω resistors are connected in parallel. The EMF of the source is 10 V and the current in the main circuit is 1 A. Determine the short-circuit current of the source. (A)",
+   "options": [
+    "2",
+    "5",
+    "8",
+    "10"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "What kinetic energy does a charge of 2 μC acquire after passing, from rest, through a potential difference of 500 V? (mJ)",
+   "options": [
+    "0.5",
+    "1",
+    "2",
+    "4"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "20 identical capacitors are connected in parallel. The capacitance of each capacitor is 4 μF. If 10 J of heat was released while charging the battery, determine the voltage across the capacitors. (V)",
+   "options": [
+    "240",
+    "360",
+    "500",
+    "650"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "A capacitor of capacitance 1 μF is connected to an alternating-current circuit of frequency 50 Hz. Determine its capacitive reactance.",
+   "options": [
+    "3.2 kΩ",
+    "1.5 kΩ",
+    "320 Ω",
+    "2.2 Ω"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "A force F = 0.15 N acts on a conductor of length l = 0.5 m placed perpendicular to a magnetic field of induction B = 2·10⁻² T. Find the current in the conductor. (A)",
+   "options": [
+    "5",
+    "10",
+    "15",
+    "25"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "A resistance of 40 Ω is connected to an alternating-current circuit. The RMS value of the current is 5 A. Determine the maximum value of the voltage. (V)",
+   "options": [
+    "200",
+    "220",
+    "283",
+    "400"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "When the string of a simple pendulum is shortened by 5 cm, its frequency increases by a factor of 1.5. Find the initial length of the pendulum string. (cm)",
+   "options": [
+    "7",
+    "8",
+    "9",
+    "11"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "The primary winding of a step-down transformer with a transformation ratio of 8 is connected to a 220 V supply. The resistance of the secondary winding is 2 Ω and the current in it is 3 A. Find the voltage across the terminals of the secondary winding. (V)",
+   "options": [
+    "15.5",
+    "21.5",
+    "27.5",
+    "33.5"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "A lens with a focal length of 10 cm produces a real image of an object reduced by a factor of 2. Another lens, with the object in the same position, produced a real image magnified by a factor of 2. Find the focal length of the second lens. (cm)",
+   "options": [
+    "15",
+    "20",
+    "25",
+    "30"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "An object is at a distance of 5F from a converging lens. By what factor is the resulting image smaller than the object?",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "The energy of photons incident on a metal is 7.8·10⁻¹⁹ J and the work function of the metal is 3.0·10⁻¹⁹ J. Determine the stopping voltage for the photoelectrons. (V)",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "The work function of the metal is 6·10⁻¹⁹ J and the maximum kinetic energy of the photoelectrons is 6·10⁻²⁰ J. Find the wavelength of the incident light. h = 6.6·10⁻³⁴ J·s, c = 3·10⁸ m/s. (nm)",
+   "options": [
+    "200",
+    "300",
+    "400",
+    "600"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "If the momentum of a photon is 1.1·10⁻²⁷ kg·m/s, determine the wavelength of this light. h = 6.6·10⁻³⁴ J·s. (nm)",
+   "options": [
+    "200",
+    "300",
+    "500",
+    "600"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "Identify the unknown particle X in the following nuclear reaction: X + ¹²₆C → ⁴₂He + ¹₀n + ¹⁶₈O",
+   "options": [
+    "⁹₄Be",
+    "¹²₆C",
+    "¹⁶₈O",
+    "²⁷₁₃Al"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "During the 2 → 3 transition, 60 kJ of heat is supplied to the gas. By how much did the internal energy of the gas change? (kJ)",
+   "note": "The figure shows the 1 → 2 → 3 transitions of a monatomic ideal gas. Use this graph for tasks 33–35.",
+   "options": [
+    "20",
+    "40",
+    "10",
+    "30",
+    "600",
+    "300"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Determine the work done by the gas during the 2 → 3 transition. (kJ)",
+   "note": "The figure shows the 1 → 2 → 3 transitions of a monatomic ideal gas. Use this graph for tasks 33–35.",
+   "options": [
+    "20",
+    "40",
+    "10",
+    "30",
+    "600",
+    "300"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "If T₁ = 300 K and P₂ = 2P₁, determine the temperature in state 2. (K)",
+   "note": "The figure shows the 1 → 2 → 3 transitions of a monatomic ideal gas. Use this graph for tasks 33–35.",
+   "options": [
+    "20",
+    "40",
+    "10",
+    "30",
+    "600",
+    "300"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A body falls freely from a height of 180 m. g = 10 m/s².",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the time it takes the body to reach the ground.",
+     "unit": "s"
+    },
+    {
+     "key": "b",
+     "text": "Determine the speed of the body 3 s after it is released.",
+     "unit": "m/s"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A body of mass 2 kg is suspended from a spring with a spring constant of 400 N/m.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the extension of the spring if the elevator moves upward with an acceleration of 5 m/s².",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Find the extension of the spring if the elevator moves downward at a constant speed of 5 m/s.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "The two bodies shown in the figure rest on a horizontal surface. For all surfaces μ = 0.2, g = 10 m/s².",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the acceleration of the system.",
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "Find the tension in the string connecting the bodies.",
+     "unit": "N"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "Two bodies of mass 5 kg each move in the same direction with speeds of 3 m/s and 5 m/s, respectively. The bodies collide inelastically and move together.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the common speed after the collision.",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "Find the kinetic energy of the system after the collision.",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "A monatomic ideal gas receives 10 kJ of heat in an isobaric process.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the change in the internal energy of the gas.",
+     "unit": "kJ"
+    },
+    {
+     "key": "b",
+     "text": "Determine the work done on the gas by external forces.",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "In the figure, a resistor of resistance 11 Ω is connected to a source with an EMF of 26 V. A current of 2 A flows through the resistor.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the internal resistance of the source.",
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "Determine the short-circuit current of the source.",
+     "unit": "A"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "In a series circuit, R = 5 Ω, Xₗ = 20 Ω, X꜀ = 8 Ω.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the total impedance.",
+     "unit": "Ω"
+    },
+    {
+     "key": "b",
+     "text": "What is the total impedance if the resistance is zero?",
+     "unit": "Ω"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "In a converging lens with a focal length F = 6 cm, a real image of the source is formed at a distance of 12 cm from the lens.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the magnification of the lens.",
+     "unit": ""
+    },
+    {
+     "key": "b",
+     "text": "Find the distance between the object and the lens.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "A converging lens with a focal length F = 10 cm and an object of height h = 2 cm are given.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the height of the real image when the object is 5 cm beyond the focal point.",
+     "unit": "cm"
+    },
+    {
+     "key": "b",
+     "text": "Determine the height of the virtual image when the object is 5 cm inside the focal point.",
+     "unit": "cm"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "The intensity of light incident on a surface is 9 kW/m².",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Determine the light pressure when the surface reflects the light completely.",
+     "unit": "μPa"
+    },
+    {
+     "key": "b",
+     "text": "Determine the light pressure when the surface absorbs the light completely.",
+     "unit": "μPa"
+    }
+   ]
+  }
+ ]
+}

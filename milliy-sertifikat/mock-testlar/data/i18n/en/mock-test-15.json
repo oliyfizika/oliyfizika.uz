@@ -1,0 +1,620 @@
+{
+ "title": "Physics Mock Test №15",
+ "subtitle": "National Certificate: September 29, 2026, Shift 2 • tasks 29–32 newly composed • 45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "notice": "Tasks 29–32 are not given in the original source; they were newly composed (AI-generated). The remaining tasks are based on the exam questions of September 29, 2026, Shift 2.",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Rotation and Energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular Physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric Current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic Field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and Nuclear Physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A and Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "Express a speed of 1.8 km/min in m/s.",
+   "options": [
+    "1800 m/s",
+    "30 m/s",
+    "108 m/s",
+    "3 m/s"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "Forces F₁ = 60 N and F₂ = 80 N act on a body. Find the difference between the maximum and minimum values of the resultant force.",
+   "options": [
+    "20 N",
+    "140 N",
+    "120 N",
+    "100 N"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "The wavelength of an SOS signal (radio wave) is 600 nm. Find its frequency.",
+   "options": [
+    "5·10¹⁴ Hz",
+    "5·10⁵ Hz",
+    "1.8·10¹⁷ Hz",
+    "2·10⁻¹⁵ Hz"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "A charged particle is suspended in equilibrium between the horizontal plates of a capacitor when the voltage is 20 V. What acceleration will the particle acquire if the voltage is increased to 24 V?",
+   "options": [
+    "2 m/s²",
+    "12 m/s²",
+    "1.2 m/s²",
+    "4 m/s²"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "A cork is frozen inside a piece of ice floating on water. How will the water level in the vessel change when the ice melts?",
+   "options": [
+    "it will rise",
+    "it will fall",
+    "it will not change",
+    "it depends on the mass of the cork"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "A small ball is suspended on a 90 cm string of a simple pendulum. When passing through the equilibrium position, the speed of the ball is 0.15 m/s. Find the amplitude of oscillation.",
+   "options": [
+    "4.5 cm",
+    "13.5 cm",
+    "9 cm",
+    "0.45 cm"
+   ]
+  },
+  {
+   "n": 7,
+   "text": "A charge of 240 C passes through the cross-section of a conductor in 2 min. Find the current.",
+   "options": [
+    "2 A",
+    "120 A",
+    "4 A",
+    "0.5 A"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "A piece of ice of mass 500 g at −20 °C is given 120 kJ of heat. What percentage of the ice will melt? c_ice = 2100 J/(kg·K), λ = 330 kJ/kg.",
+   "options": [
+    "30 %",
+    "60 %",
+    "73 %",
+    "100 %"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "A vessel of volume 3 L contains 1.2 mol of gas. Find the concentration of the gas molecules. N_A = 6×10²³ mol⁻¹.",
+   "options": [
+    "2.4·10²³ m⁻³",
+    "7.2·10²³ m⁻³",
+    "2.4·10²⁶ m⁻³",
+    "1.5·10²⁶ m⁻³"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "Two electrolytic baths are connected in series: one contains a solution with Al³⁺ ions and the other with Cu²⁺ ions. During a certain time, 48 mg of copper is deposited in the second bath. How much aluminium is deposited in the first bath during this time? M(Al) = 27 g/mol, M(Cu) = 64 g/mol.",
+   "options": [
+    "13.5 mg",
+    "20.25 mg",
+    "32 mg",
+    "170.7 mg"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "In a circuit, three identical sources (each with EMF ℰ and internal resistance r) are connected in series in a closed loop. According to the figure, the polarities of all three sources are oriented in the same direction around the loop. What is the voltage between the terminals of source 2?",
+   "options": [
+    "ℰ",
+    "0",
+    "ℰ/3",
+    "3ℰ"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "How much heat (in kW·h) is released when 3.6 kg of dry firewood burns completely? The specific heat of combustion of the firewood is q = 1×10⁷ J/kg.",
+   "options": [
+    "36 kW·h",
+    "10 kW·h",
+    "1 kW·h",
+    "3.6 kW·h"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "The equations of motion of two bodies are x₁ = 2t and x₂ = 30 − 3t − 4t² (in SI units). Find the speed of the bodies relative to each other 3 s after the start of motion.",
+   "options": [
+    "25 m/s",
+    "29 m/s",
+    "17 m/s",
+    "14 m/s"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "Using a camera whose lens has a focal length of 5 cm, an image of a building 200 m away was obtained with a height of 5 mm. Find the height of the building.",
+   "options": [
+    "2 m",
+    "200 m",
+    "20 m",
+    "50 m"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "A hydrogen atom emitted three photons. According to the figure: photon 1 was emitted in the transition n = 4 → n = 1, photon 2 in the transition n = 3 → n = 2, and photon 3 in the transition n = 3 → n = 1. The energies of the levels are E₁ = −13.6, E₂ = −3.4, E₃ = −1.51, E₄ = −0.85 eV. Compare the momenta of the emitted photons.",
+   "options": [
+    "p₂ > p₃ > p₁",
+    "p₃ > p₁ > p₂",
+    "p₁ > p₂ > p₃",
+    "p₁ > p₃ > p₂"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "Determine the number of neutrons in the lead nucleus ²⁰⁷₈₂Pb.",
+   "options": [
+    "207",
+    "125",
+    "82",
+    "289"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "Forces of 3 N and 5 N act on a body of mass 1.75 kg. The body acquires an acceleration of 4 m/s². What is the angle between the forces?",
+   "options": [
+    "30°",
+    "90°",
+    "60°",
+    "120°"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "A dynamometer mounted in an elevator reads 8 N. The mass of the load hung from it is 500 g. With what acceleration is the elevator moving?",
+   "options": [
+    "16 m/s²",
+    "6 m/s²",
+    "4 m/s²",
+    "2 m/s²"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "A body of mass 2 kg and volume 4 dm³ is held under water at a depth of 6 m. What will the kinetic energy of the body be at a height of 4 m above the water surface after it is released? Neglect resistance forces.",
+   "options": [
+    "120 J",
+    "80 J",
+    "200 J",
+    "40 J"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "A body of mass 2 kg is thrown vertically upward from a height h with an initial speed of 10 m/s. The maximum potential energy it reaches is 160 J. Find h.",
+   "options": [
+    "3 m",
+    "8 m",
+    "5 m",
+    "13 m"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "A uniform beam of length 16 m and mass 12 kg rests on a support O (the beam is divided into 8 equal segments). According to the figure, the support is 2 segments (4 m) from the left end, a downward force F is applied to the left end of the beam, and a dynamometer attached to the right end reads 25 N (pulling upward). The beam is in equilibrium. Determine the moment of the force F about point O.",
+   "options": [
+    "300 N·m",
+    "180 N·m",
+    "780 N·m",
+    "45 N·m"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "When the temperature of a gas in a closed vessel decreased by a factor of 4, its pressure decreased by 60 kPa. Find the final pressure of the gas.",
+   "options": [
+    "80 kPa",
+    "20 kPa",
+    "15 kPa",
+    "240 kPa"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "How will the capacitance of a parallel-plate capacitor change if the charge on one of its plates is increased by a factor of 3?",
+   "options": [
+    "it will increase 3 times",
+    "it will decrease 3 times",
+    "it will increase 9 times",
+    "it will not change"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "Two springs made of the same material have diameters d₂ = 2d₁ and volumes V₂ = 2V₁. If the same load is hung from each, what is the ratio of their absolute extensions x₁/x₂? (Treat the springs as cylindrical elastic bodies obeying Hooke's law.)",
+   "options": [
+    "1/8",
+    "4",
+    "8",
+    "2"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "A hole of area 30 cm² in the bottom of a vessel filled with water to a height of 4 m is closed with a stopper. Determine the hydrostatic pressure force acting on the stopper.",
+   "options": [
+    "120 N",
+    "12 N",
+    "1200 N",
+    "80 N"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "When the current in a coil of inductance 12 mH increases by 2 A, the energy of its magnetic field increases by 48 mJ. Find the final magnetic flux in the coil.",
+   "options": [
+    "24 mWb",
+    "36 mWb",
+    "12 mWb",
+    "48 mWb"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "Monochromatic light is incident perpendicularly on a diffraction grating with a period d = 3 μm. The wavelength of the light is 600 nm. What is the highest order of maximum that can be observed?",
+   "options": [
+    "5",
+    "4",
+    "3",
+    "10"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "The momentum of an electron equals the momentum of a photon with a wavelength of 490 nm. Find the speed of the electron (h = 6.63×10⁻³⁴ J·s, mₑ = 9.1×10⁻³¹ kg).",
+   "options": [
+    "3.6 km/s",
+    "1.5 km/s",
+    "0.74 km/s",
+    "1.5 m/s"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "A ball of mass 2 kg moving at 6 m/s collides with a stationary ball of mass 4 kg. After the collision the balls move together. How much mechanical energy is converted into heat in the collision?",
+   "note": "Note: tasks 29–32 are not given in the original source. They were newly composed (AI-generated) to complete the test format.",
+   "origin": "ai-generated",
+   "options": [
+    "12 J",
+    "24 J",
+    "36 J",
+    "18 J"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "A ²³⁸₉₂U nucleus successively undergoes two α-decays and two β⁻-decays. Find the atomic number Z and the mass number A of the resulting nucleus.",
+   "note": "Note: tasks 29–32 are not given in the original source. They were newly composed (AI-generated) to complete the test format.",
+   "origin": "ai-generated",
+   "options": [
+    "Z = 88, A = 230",
+    "Z = 90, A = 234",
+    "Z = 92, A = 230",
+    "Z = 90, A = 230"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "A light ray passes from glass with a refractive index n = √2 into air. Find the critical angle of incidence at which total internal reflection begins to occur.",
+   "note": "Note: tasks 29–32 are not given in the original source. They were newly composed (AI-generated) to complete the test format.",
+   "origin": "ai-generated",
+   "options": [
+    "30°",
+    "60°",
+    "45°",
+    "90°"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "The primary winding of an ideal transformer has 1100 turns and the secondary has 50 turns. The primary winding is connected to a 220 V supply. What current flows through a load of resistance 5 Ω connected to the secondary winding?",
+   "note": "Note: tasks 29–32 are not given in the original source. They were newly composed (AI-generated) to complete the test format.",
+   "origin": "ai-generated",
+   "options": [
+    "2 A",
+    "44 A",
+    "0.5 A",
+    "10 A"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "Ammeter reading (A).",
+   "note": "The circuit consists of a single closed loop: sources ℰ₂ (r₂) and ℰ₁ (r₁) in series, resistor R₃, an ideal ammeter, and resistors R₁ and R₂ connected in parallel (an ideal voltmeter is connected in parallel with them). According to the figure, the positive terminals of both sources are at the top. R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8.5 Ω, r₁ = 3.5 Ω, r₂ = 1.5 Ω, ℰ₁ = 80 V, ℰ₂ = 20 V. Match tasks (33–35) with the answer options (A–F) correctly.",
+   "options": [
+    "4",
+    "1.5",
+    "8",
+    "6",
+    "12",
+    "2"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Voltmeter reading (V).",
+   "note": "The circuit consists of a single closed loop: sources ℰ₂ (r₂) and ℰ₁ (r₁) in series, resistor R₃, an ideal ammeter, and resistors R₁ and R₂ connected in parallel (an ideal voltmeter is connected in parallel with them). According to the figure, the positive terminals of both sources are at the top. R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8.5 Ω, r₁ = 3.5 Ω, r₂ = 1.5 Ω, ℰ₁ = 80 V, ℰ₂ = 20 V. Match tasks (33–35) with the answer options (A–F) correctly.",
+   "options": [
+    "4",
+    "1.5",
+    "8",
+    "6",
+    "12",
+    "2"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "Change in the energy of the second source in 0.1 s (J).",
+   "note": "The circuit consists of a single closed loop: sources ℰ₂ (r₂) and ℰ₁ (r₁) in series, resistor R₃, an ideal ammeter, and resistors R₁ and R₂ connected in parallel (an ideal voltmeter is connected in parallel with them). According to the figure, the positive terminals of both sources are at the top. R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8.5 Ω, r₁ = 3.5 Ω, r₂ = 1.5 Ω, ℰ₁ = 80 V, ℰ₂ = 20 V. Match tasks (33–35) with the answer options (A–F) correctly.",
+   "options": [
+    "4",
+    "1.5",
+    "8",
+    "6",
+    "12",
+    "2"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "Loads of mass 10 kg and 5 kg are hung from the ends of a string passed over a weightless pulley. The pulley is lifted vertically upward by a force of 200 N.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the translational acceleration of the pulley.",
+     "unit": "m/s²"
+    },
+    {
+     "key": "b",
+     "text": "Find the acceleration of the 10 kg load relative to the Earth.",
+     "unit": "m/s²"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "A substance with a dielectric constant of 2 is placed in a capacitor with a plate separation of 4 mm, and the capacitor is connected to a voltage of 80 V (ε₀ = 8.85×10⁻¹² F/m).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the electric field strength (kV/m).",
+     "unit": "kV/m"
+    },
+    {
+     "key": "b",
+     "text": "Find the energy density of the electric field.",
+     "unit": "J/m³",
+     "hint": "For example: 3.5e-3"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "The momentum of a body moving at a speed of 0.8c is 4×10⁻²⁰ kg·m/s (c = 3×10⁸ m/s).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What is the total energy of the body (pJ)?",
+     "unit": "pJ"
+    },
+    {
+     "key": "b",
+     "text": "What is the kinetic energy of the body (pJ)?",
+     "unit": "pJ"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "The temperature of the heater of a machine operating on a Carnot cycle is 4 times higher than that of the cooler. The machine does 30 kJ of work in one cycle.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What is the efficiency of the machine (in percent)?",
+     "unit": "%"
+    },
+    {
+     "key": "b",
+     "text": "How much heat is transferred to the cooler in 2 cycles?",
+     "unit": "kJ"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "The distance from the object to the screen is 2.4 m. A real image of the object magnified 5 times is obtained on the screen.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What is the distance from the object to the lens?",
+     "unit": "m"
+    },
+    {
+     "key": "b",
+     "text": "What is the optical power of the lens?",
+     "unit": "D"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "At an oil station, a pump lifts 2.4 m³ of oil every minute through a pipe with a cross-sectional area of 0.8 dm² to a height of 48 m. The density of the oil is 800 kg/m³.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What is the speed of the oil in the pipe?",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "What is the minimum power of the pump?",
+     "unit": "kW"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "The volume energy density of the magnetic field inside a solenoid is 2.4×10⁻⁴ J/m³, the cross-sectional area is 4 cm², the length is 50 cm, and the inductance is 3×10⁻⁷ H. Take π ≈ 3 (μ₀ = 4π·10⁻⁷ ≈ 1.2·10⁻⁶ H/m).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the current in the solenoid.",
+     "unit": "A"
+    },
+    {
+     "key": "b",
+     "text": "Find the magnetic field strength.",
+     "unit": "A/m"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "The Young's modulus of a rod is 180 GPa, its initial length is 4 m, and its cross-sectional area is 12 mm². Under an external force the rod is elongated by 80 cm.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the relative elongation (%).",
+     "unit": "%"
+    },
+    {
+     "key": "b",
+     "text": "Find the external force (kN).",
+     "unit": "kN"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "A body moving with uniform acceleration of 3 m/s² covers 70 m in 5 s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the initial speed of the body.",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "What distance did the body cover in the 2 s preceding these 5 s? (The acceleration did not change.)",
+     "unit": "m"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "A stream of photons of frequency 4×10¹⁵ Hz is incident on a photocell. When the frequency is increased by a factor of 3, the stopping voltage increases by a factor of 4. h = 6.63×10⁻³⁴ J·s, c = 3×10⁸ m/s, e = 1.6×10⁻¹⁹ C.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the threshold wavelength of the photoelectric effect for this material (nm).",
+     "unit": "nm"
+    },
+    {
+     "key": "b",
+     "text": "Find the kinetic energy of the photoelectrons in the latter case (eV).",
+     "unit": "eV"
+    }
+   ]
+  }
+ ]
+}

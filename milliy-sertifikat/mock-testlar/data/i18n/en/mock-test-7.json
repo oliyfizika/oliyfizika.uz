@@ -1,0 +1,611 @@
+{
+  "title": "Physics Mock Test №7",
+  "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+  "formulaSheet": {
+    "cards": [
+      {
+        "title": "Mechanics",
+        "formulas": [
+          "v=s/t",
+          "a=Δv/Δt",
+          "v²=v₀²+2as",
+          "F=ma",
+          "p=mv"
+        ]
+      },
+      {
+        "title": "Rotation and energy",
+        "formulas": [
+          "A=Fs cosα",
+          "Eₖ=mv²/2",
+          "Eₚ=mgh",
+          "P=W/t"
+        ]
+      },
+      {
+        "title": "Molecular physics",
+        "formulas": [
+          "p=ρv²ᵣms/3",
+          "vᵣms=√(3p/ρ)",
+          "pV=nRT",
+          "Q=ΔU+W"
+        ]
+      },
+      {
+        "title": "Heat",
+        "formulas": [
+          "Q=cmΔT",
+          "Q=λm",
+          "Q=Lm",
+          "η=A/Q₁"
+        ]
+      },
+      {
+        "title": "Electric current",
+        "formulas": [
+          "U=IR",
+          "P=UI=I²R=U²/R",
+          "Q=I²Rt",
+          "ε=U+Ir"
+        ]
+      },
+      {
+        "title": "Capacitor and AC",
+        "formulas": [
+          "C=q/U",
+          "W=CU²/2",
+          "X_C=1/(2πfC)",
+          "Z=√(R²+(X_L-X_C)²)"
+        ]
+      },
+      {
+        "title": "Magnetic field",
+        "formulas": [
+          "F=BIl sinα",
+          "ε_ind=−ΔΦ/Δt",
+          "Φ=BS cosα"
+        ]
+      },
+      {
+        "title": "Optics",
+        "formulas": [
+          "1/f=1/a+1/b",
+          "M=b/a",
+          "n=c/v",
+          "hᵢ=Mh₀"
+        ]
+      },
+      {
+        "title": "Quantum and nuclear physics",
+        "formulas": [
+          "E=hf=hc/λ",
+          "p=h/λ",
+          "Eₖ,max=hf−A_work",
+          "Conservation laws for A and Z"
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "n": 1,
+      "text": "The initial speed of a car is 10 m/s and its acceleration is −2 m/s². Determine the distance (m) it travels before stopping.",
+      "options": [
+        "25",
+        "100",
+        "20",
+        "50"
+      ]
+    },
+    {
+      "n": 2,
+      "text": "Forces of 20 N and 55 N act on a 5 kg body resting on a smooth horizontal surface. Find the minimum acceleration of the body (m/s²).",
+      "options": [
+        "4",
+        "7",
+        "11",
+        "15"
+      ]
+    },
+    {
+      "n": 3,
+      "text": "An airplane flies at an altitude of 7200 m at a constant speed of 216 km/h. How many times is its potential energy greater than its kinetic energy?",
+      "options": [
+        "30",
+        "20",
+        "10",
+        "40"
+      ]
+    },
+    {
+      "n": 4,
+      "text": "The graph shows how the speed of a body moving in a straight line changes. Find the distance (m) travelled by the body on section BC of the graph.",
+      "options": [
+        "475",
+        "337.5",
+        "425.5",
+        "400"
+      ]
+    },
+    {
+      "n": 5,
+      "text": "Find the initial speed of the car (m/s) if the coefficient of friction between the wheels and the asphalt is 0.45.",
+      "options": [
+        "18",
+        "17",
+        "16",
+        "15"
+      ]
+    },
+    {
+      "n": 6,
+      "text": "A ball of mass 0.9 kg tied to a 1.2 m string is swung in a vertical plane. If the speed of the ball at the lowest point is 4 m/s, find the tension in the string (N) at that moment.",
+      "options": [
+        "3",
+        "9",
+        "21",
+        "19"
+      ]
+    },
+    {
+      "n": 7,
+      "text": "Balls of masses m and 2m are hung from the weightless pulleys shown in the figure. Ball A is moved with acceleration g/2 vertically upward, and ball B with acceleration g/2 vertically downward. Find the ratio F₁/F₂.",
+      "options": [
+        "1",
+        "1/3",
+        "3",
+        "3/2"
+      ]
+    },
+    {
+      "n": 8,
+      "text": "A building has several granite columns, each of volume 9 m³ and base area 1.4 m². The density of granite is 2800 kg/m³. Determine the pressure (kPa) that one column exerts on the foundation due to its own weight.",
+      "options": [
+        "160",
+        "200",
+        "180",
+        "220"
+      ]
+    },
+    {
+      "n": 9,
+      "text": "A powerful suction pump is installed 5 m above the surface of water. The pump is connected to the water surface by a pipe. Determine the maximum speed of the water (m/s) in this pipe while the pump is operating.",
+      "options": [
+        "8",
+        "6",
+        "10",
+        "9"
+      ]
+    },
+    {
+      "n": 10,
+      "text": "The distance between the 1st and 3rd crests of a wave on the water surface is 20 cm and its propagation speed is 0.1 m/s. Find the period of oscillation of the wave (s).",
+      "options": [
+        "1.2",
+        "0.2",
+        "0.5",
+        "1"
+      ]
+    },
+    {
+      "n": 11,
+      "text": "The pressure of an ideal gas is 2.5·10⁵ Pa and its density is 12 kg/m³. Find the root-mean-square speed of the gas molecules (m/s).",
+      "options": [
+        "160",
+        "250",
+        "300",
+        "200"
+      ]
+    },
+    {
+      "n": 12,
+      "text": "An aluminum object of mass 0.4 kg is given. Determine its heat capacity (J/K).",
+      "options": [
+        "900",
+        "360",
+        "640",
+        "420"
+      ]
+    },
+    {
+      "n": 13,
+      "text": "Ozone (O₃) in a closed vessel is at a temperature of 727 °C. After some time all the ozone turned into oxygen (O₂) and the temperature in the vessel dropped to 600 °C. By what percentage did the pressure in the vessel decrease after these changes?",
+      "options": [
+        "60",
+        "50",
+        "30",
+        "40"
+      ]
+    },
+    {
+      "n": 14,
+      "text": "Helium is enclosed under a 20 kg piston in a vertical cylinder with a base area of 1 dm². When the helium is heated isobarically, the piston rises by 30 cm. Determine the work (J) done by the gas during expansion.",
+      "options": [
+        "540",
+        "360",
+        "480",
+        "240"
+      ]
+    },
+    {
+      "n": 15,
+      "text": "5 m³ of air at 19 °C contains 34.5 g of water vapor. Saturated vapor density ρ₀ (g/m³): 15 °C — 12.8; 16 °C — 13.6; 17 °C — 14.5; 18 °C — 15.4; 19 °C — 16.3; 20 °C — 17.3. Determine what mass of water (g) must evaporate for this air to become saturated.",
+      "options": [
+        "43",
+        "47",
+        "41",
+        "45"
+      ]
+    },
+    {
+      "n": 16,
+      "text": "The resultant of two forces acting on a charged body is 32 mN and is directed horizontally. If the force of gravity is 24 mN, determine the magnitude of the force exerted by the electric field (mN).",
+      "options": [
+        "56",
+        "12",
+        "64",
+        "40"
+      ]
+    },
+    {
+      "n": 17,
+      "text": "Determine how the ammeter reading changes if the slider of the rheostat is moved to the left.",
+      "options": [
+        "will not change",
+        "will decrease",
+        "will increase",
+        "will become zero"
+      ]
+    },
+    {
+      "n": 18,
+      "text": "How should the capacitance in the circuit of a radio receiver tuned to a frequency of 6 MHz be changed in order to receive a radio station operating at a wavelength of 200 m?",
+      "options": [
+        "decrease 4 times",
+        "increase 16 times",
+        "decrease 16 times",
+        "increase 4 times"
+      ]
+    },
+    {
+      "n": 19,
+      "text": "A substance with dielectric constant ε was inserted into a parallel-plate air capacitor of capacitance C. When this capacitor was connected in series with a capacitor of capacitance Cₓ, the total capacitance of the combination became C/2. Determine the capacitance Cₓ.",
+      "options": [
+        "εC/(2ε − 1)",
+        "εC/(ε − 2)",
+        "εC/(ε − 1)",
+        "2εC/(ε − 1)"
+      ]
+    },
+    {
+      "n": 20,
+      "text": "Two point charges of 3·10⁻⁸ C each are in air at a distance of 50 cm from each other. They are brought closer to a distance of 10 cm. Find the work (μJ) done in this process.",
+      "options": [
+        "32.4",
+        "8",
+        "4",
+        "64.8"
+      ]
+    },
+    {
+      "n": 21,
+      "text": "The emf of a chemical current source is 6 V and its internal resistance is 1/4 Ω. If the source delivers a current of 2 A to the circuit, find the voltage at its terminals (V).",
+      "options": [
+        "6.5",
+        "7",
+        "5.5",
+        "5"
+      ]
+    },
+    {
+      "n": 22,
+      "text": "The resistance of an aluminum wire at 0 °C is 3.5 Ω. Determine by how much (Ω) its resistance increases at 200 °C. α = 0.0028 K⁻¹",
+      "options": [
+        "1.87",
+        "1.96",
+        "2.12",
+        "3.14"
+      ]
+    },
+    {
+      "n": 23,
+      "text": "A rectangular frame measuring 2 cm by 3 cm is in a magnetic field of induction 10 T. Find the maximum torque (mN·m) acting on the frame when a current of 2 A flows through it.",
+      "options": [
+        "96",
+        "12",
+        "48",
+        "24"
+      ]
+    },
+    {
+      "n": 24,
+      "text": "An electron moves along the y axis in a magnetic field. The Lorentz force is directed opposite to the x axis. Determine the direction of the magnetic field.",
+      "options": [
+        "along the x axis",
+        "along the z axis",
+        "opposite to the y axis",
+        "opposite to the z axis"
+      ]
+    },
+    {
+      "n": 25,
+      "text": "An alternating voltage with an rms value of 140 V is applied to a circuit made of an 8 Ω resistance, a 9 Ω capacitive reactance and a 3 Ω inductive reactance connected in series. Find the useful power in the circuit (W).",
+      "options": [
+        "1568",
+        "1960",
+        "1764",
+        "588"
+      ]
+    },
+    {
+      "n": 26,
+      "text": "A light ray of wavelength λ is incident on a liquid with refractive index 4/3 and is refracted. Determine how the frequency of the light changes.",
+      "options": [
+        "increases by 25%",
+        "decreases by 25%",
+        "does not change",
+        "increases by 33%"
+      ]
+    },
+    {
+      "n": 27,
+      "text": "A lens forms a virtual image of an object located 40 cm from it, reduced 2 times. Determine the optical power of this lens (D).",
+      "options": [
+        "2.5",
+        "−2.5",
+        "−7.5",
+        "7.5"
+      ]
+    },
+    {
+      "n": 28,
+      "text": "The mass of a moving body is m = (5/3)m₀, where m₀ is the rest mass of the body. Find the speed of the body.",
+      "options": [
+        "0.4c",
+        "0.5c",
+        "0.6c",
+        "0.8c"
+      ]
+    },
+    {
+      "n": 29,
+      "text": "Determine the composition of the ²⁰⁹₈₄Po nucleus.",
+      "options": [
+        "84 electrons, 209 neutrons",
+        "84 electrons, 125 neutrons",
+        "125 neutrons, 84 protons",
+        "209 nucleons, 84 neutrons"
+      ]
+    },
+    {
+      "n": 30,
+      "text": "Photons of frequency 5ν fall on the surface of a metal with a photoelectric threshold frequency ν, and photons of frequency 4ν fall on the surface of a metal with a threshold frequency 2ν. If the maximum kinetic energies of the emitted photoelectrons are E₁ and E₂ respectively, find the value of E₁/E₂.",
+      "options": [
+        "5/4",
+        "2",
+        "5/2",
+        "1/2"
+      ]
+    },
+    {
+      "n": 31,
+      "text": "An electron in a hydrogen atom made a transition from the 4th quantum state to the 2nd. Find the energy of the emitted photon (eV).",
+      "options": [
+        "2.55",
+        "4.15",
+        "6.82",
+        "12.38"
+      ]
+    },
+    {
+      "n": 32,
+      "text": "A student who measured the length of a rope wrote the result as l = (17.2 ± 0.005) m. Find the relative error of the measurement (%).",
+      "options": [
+        "0.06",
+        "0.05",
+        "0.04",
+        "0.03"
+      ]
+    },
+    {
+      "n": 33,
+      "text": "Find the work done by the gas (over the cycle).",
+      "note": "Correctly match the tasks (33–35) with the answer options (A–F). The graph shows the 1 → 2 → 3 → 1 process of a monatomic ideal gas.",
+      "options": [
+        "11.5 P₀V₀",
+        "8.5 P₀V₀",
+        "12 P₀V₀",
+        "6 P₀V₀",
+        "10 P₀V₀",
+        "2 P₀V₀"
+      ]
+    },
+    {
+      "n": 34,
+      "text": "How much heat did the gas release in the 1 → 2 process?",
+      "note": "Correctly match the tasks (33–35) with the answer options (A–F). The graph shows the 1 → 2 → 3 → 1 process of a monatomic ideal gas.",
+      "options": [
+        "11.5 P₀V₀",
+        "8.5 P₀V₀",
+        "12 P₀V₀",
+        "6 P₀V₀",
+        "10 P₀V₀",
+        "2 P₀V₀"
+      ]
+    },
+    {
+      "n": 35,
+      "text": "How much heat did the gas receive in the 3 → 1 process?",
+      "note": "Correctly match the tasks (33–35) with the answer options (A–F). The graph shows the 1 → 2 → 3 → 1 process of a monatomic ideal gas.",
+      "options": [
+        "11.5 P₀V₀",
+        "8.5 P₀V₀",
+        "12 P₀V₀",
+        "6 P₀V₀",
+        "10 P₀V₀",
+        "2 P₀V₀"
+      ]
+    },
+    {
+      "n": 36,
+      "text": "A body is thrown with an initial velocity from a height of 175 m and falls freely; during the 2nd second it covers 25 m.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the initial speed of the body.",
+          "unit": "m/s"
+        },
+        {
+          "key": "b",
+          "text": "Determine the distance the body travels in the first 4 s.",
+          "unit": "m"
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "text": "The length of the string of a simple pendulum at the Earth's surface is 0.5 m. This pendulum was moved to planet Y, whose mass and radius are 2 times those of the Earth.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Determine the acceleration of free fall near the surface of planet Y.",
+          "unit": "N/kg"
+        },
+        {
+          "key": "b",
+          "text": "Find the ratio of the pendulum's oscillation period on planet Y when moving upward with an acceleration of 5 m/s² to its period when rising uniformly at the Earth's surface.",
+          "unit": ""
+        }
+      ]
+    },
+    {
+      "n": 38,
+      "text": "Weights of P and 20 N are hung from the ends of a thin string passed over a weightless fixed pulley. 2.5 s after starting from rest, the 20 N weight has descended 6.25 m.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the acceleration of the weights.",
+          "unit": "m/s²"
+        },
+        {
+          "key": "b",
+          "text": "Determine the force acting on the axle of the pulley during the motion.",
+          "unit": "N"
+        }
+      ]
+    },
+    {
+      "n": 39,
+      "text": "A closed vessel of volume 400 L contains unsaturated air at 27 °C. If 2 g of water is evaporated in the vessel, the water vapor in it becomes saturated. The partial pressure of saturated water vapor is 3.6 kPa.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the absolute humidity of the initial air.",
+          "unit": "g/m³"
+        },
+        {
+          "key": "b",
+          "text": "Find the relative humidity of the initial air.",
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "n": 40,
+      "text": "A monatomic ideal gas was given 6 kJ of heat. In this process the volume and absolute temperature of the gas are related by V = k√T, where k is a constant.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the work done by the gas in this process.",
+          "unit": "J"
+        },
+        {
+          "key": "b",
+          "text": "Find by how much the internal energy of the gas increased in this process.",
+          "unit": "kJ"
+        }
+      ]
+    },
+    {
+      "n": 41,
+      "text": "The emf of the battery of an electric car of mass 1200 kg is 400 V. The electric car reduced its speed from 30 m/s to 5 m/s.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Determine how much energy is stored in the electric car's battery in this process.",
+          "unit": "kJ"
+        },
+        {
+          "key": "b",
+          "text": "Determine how much charge is stored in the electric car's battery in this process.",
+          "unit": "kC"
+        }
+      ]
+    },
+    {
+      "n": 42,
+      "text": "In the circuit R = 60 Ω, L = 0.2 H and u = 160·sin(400t) [V].",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the ammeter reading when the switch is in position a.",
+          "unit": "A"
+        },
+        {
+          "key": "b",
+          "text": "Determine the ammeter reading when the switch is in position b.",
+          "unit": "A"
+        }
+      ]
+    },
+    {
+      "n": 43,
+      "text": "A lens produces an image b of an object a magnified 5/4 times. The distance between the object and the image is 2 cm.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the optical power of the lens.",
+          "unit": "D"
+        },
+        {
+          "key": "b",
+          "text": "Determine the magnification of the lens if the object is moved 3 cm closer to the lens.",
+          "unit": "",
+          "hint": "For example: 1.25"
+        }
+      ]
+    },
+    {
+      "n": 44,
+      "text": "The mass of a particle moving at a speed of 0.5c is m/√3.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Find the rest mass of the particle. Write the answer in the form m: enter the numerical coefficient in front of m.",
+          "unit": "·m"
+        },
+        {
+          "key": "b",
+          "text": "Find the kinetic energy of the particle moving at a speed of 0.6c. Write the answer in the form mc²: enter the numerical coefficient in front of mc².",
+          "unit": "·mc²"
+        }
+      ]
+    },
+    {
+      "n": 45,
+      "text": "The ionization energy of an excited hydrogen atom is 3.4 eV.",
+      "parts": [
+        {
+          "key": "a",
+          "text": "Determine the ionization energy of the atom if, by absorbing a photon, it increased its angular momentum by ħ.",
+          "unit": "eV"
+        },
+        {
+          "key": "b",
+          "text": "Determine the ionization energy if the initial atom, by emitting a photon, decreased its angular momentum by ħ.",
+          "unit": "eV"
+        }
+      ]
+    }
+  ]
+}

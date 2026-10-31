@@ -8,6 +8,8 @@
 // O'z urinishi bor kun (tarix) — natija/ko'rib chiqish/yechim ochiq qoladi (yangi start emas).
 // Mavjud arxitektura: attestationPhysicsSettings/config.accessMode (open|paid) + users/{uid}.attestationAccess.
 // ==========================================================================
+import { t } from "../core/i18n.js";
+
 export const FREE_DAYS = 3;
 
 export const isFreeDay = (test) => Number.isInteger(test?.dayNumber) && test.dayNumber <= FREE_DAYS;
@@ -39,9 +41,9 @@ export function contentOpen(test, ctx, attempt) {
   return dayOpen(test, ctx) || !!attempt;
 }
 
-export const ACCESS_TITLE = "Kirish uchun ruxsat kerak";
-export const ACCESS_TEXT = "Bu kun «Attestatsiya — Fizika» kursi ishtirokchilari uchun. Day 1–3 hamma uchun bepul.";
-export const ACCESS_TEXT_MOCK = "Bu mock test «Attestatsiya — Fizika» kursining pullik guruhi ishtirokchilari uchun.";
+export const ACCESS_TITLE = t("att.a.title", "Kirish uchun ruxsat kerak");
+export const ACCESS_TEXT = t("att.a.text", "Bu kun «Attestatsiya — Fizika» kursi ishtirokchilari uchun. Day 1–3 hamma uchun bepul.");
+export const ACCESS_TEXT_MOCK = t("att.a.textMock", "Bu mock test «Attestatsiya — Fizika» kursining pullik guruhi ishtirokchilari uchun.");
 /** Yopiq kartada ko'rsatiladigan matn (pullik mock uchun alohida). */
 export const accessText = (test) => (isPaidMock(test) ? ACCESS_TEXT_MOCK : ACCESS_TEXT);
 export const COURSE_URL = "https://t.me/oliy_fizik";

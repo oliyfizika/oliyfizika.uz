@@ -1,0 +1,624 @@
+{
+ "title": "Physics Mock Test No. 1",
+ "subtitle": "45 tasks • 55 scored items • 3 hours • with formula sheet and calculator",
+ "formulaSheet": {
+  "cards": [
+   {
+    "title": "Mechanics",
+    "formulas": [
+     "v=s/t",
+     "a=Δv/Δt",
+     "v²=v₀²+2as",
+     "F=ma",
+     "p=mv"
+    ]
+   },
+   {
+    "title": "Rotation and energy",
+    "formulas": [
+     "A=Fs cosα",
+     "Eₖ=mv²/2",
+     "Eₚ=mgh",
+     "P=W/t"
+    ]
+   },
+   {
+    "title": "Molecular physics",
+    "formulas": [
+     "p=ρv²ᵣms/3",
+     "vᵣms=√(3p/ρ)",
+     "pV=nRT",
+     "Q=ΔU+W"
+    ]
+   },
+   {
+    "title": "Heat",
+    "formulas": [
+     "Q=cmΔT",
+     "Q=λm",
+     "Q=Lm",
+     "η=A/Q₁"
+    ]
+   },
+   {
+    "title": "Electric current",
+    "formulas": [
+     "U=IR",
+     "P=UI=I²R=U²/R",
+     "Q=I²Rt",
+     "ε=U+Ir"
+    ]
+   },
+   {
+    "title": "Capacitor and AC",
+    "formulas": [
+     "C=q/U",
+     "W=CU²/2",
+     "X_C=1/(2πfC)",
+     "Z=√(R²+(X_L-X_C)²)"
+    ]
+   },
+   {
+    "title": "Magnetic field",
+    "formulas": [
+     "F=BIl sinα",
+     "ε_ind=−ΔΦ/Δt",
+     "Φ=BS cosα"
+    ]
+   },
+   {
+    "title": "Optics",
+    "formulas": [
+     "1/f=1/a+1/b",
+     "M=b/a",
+     "n=c/v",
+     "hᵢ=Mh₀"
+    ]
+   },
+   {
+    "title": "Quantum and nuclear physics",
+    "formulas": [
+     "E=hf=hc/λ",
+     "p=h/λ",
+     "Eₖ,max=hf−A_work",
+     "Conservation laws for A, Z"
+    ]
+   }
+  ]
+ },
+ "questions": [
+  {
+   "n": 1,
+   "text": "A uniform rod of mass m and length l floats vertically in water; its submerged part is 0.8l. Calculate the minimum energy required to lift the rod out of the water while keeping it vertical.",
+   "options": [
+    "0.4mgl",
+    "0.8mgl",
+    "0.35mgl",
+    "0.25mgl"
+   ]
+  },
+  {
+   "n": 2,
+   "text": "If R₁ = R, R₂ = R, R₃ = 2R, find the ratio of the currents I₁ : I₂ : I₃ through the corresponding resistors.",
+   "options": [
+    "1 : 2 : 3",
+    "3 : 2 : 1",
+    "1 : 3 : 2",
+    "3 : 1 : 2"
+   ]
+  },
+  {
+   "n": 3,
+   "text": "The figure shows the path of a ray that strikes two mirrors inclined at an angle α to each other and is reflected from them. Through what total angle is the ray deflected relative to its original direction?",
+   "options": [
+    "90° − 2α",
+    "90° − α",
+    "α",
+    "2α"
+   ]
+  },
+  {
+   "n": 4,
+   "text": "A particle oscillates according to the law x = A·cos(πt/6 + π/2). If time is measured from t = 0, at what time t (s) will the distance travelled by the particle reach 0.5A?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 5,
+   "text": "Using the data given in the graph, calculate the difference P_C − P_A (kPa). P_C and P_A are the pressures of the ideal gas at points C and A, respectively. The pressure in the initial state is P_A = 120 kPa.",
+   "options": [
+    "60",
+    "120",
+    "240",
+    "180"
+   ]
+  },
+  {
+   "n": 6,
+   "text": "A body is thrown vertically upward with a speed of 10 m/s and after some time falls back to the ground. Choose the graph of the distance travelled by the body. Neglect air resistance. g = 10 m/s²",
+   "options": [
+    {
+     "text": "Graph A"
+    },
+    {
+     "text": "Graph B"
+    },
+    {
+     "text": "Graph C"
+    },
+    {
+     "text": "Graph D"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "text": "In what units is the half-life of a radioactive sample measured?",
+   "options": [
+    "1/m",
+    "m",
+    "1/s",
+    "s"
+   ]
+  },
+  {
+   "n": 8,
+   "text": "The figure shows two identical positive point charges and their equipotential surfaces. The potentials of adjacent surfaces created by each charge separately differ by 3 V. Compare the magnitudes of the work done (A_B and A_C) in moving a unit charge from point A to points B and C.",
+   "options": [
+    "A_B = A_C",
+    "A_B < A_C",
+    "A_B > A_C",
+    "A_B = 2A_C"
+   ]
+  },
+  {
+   "n": 9,
+   "text": "A body of mass 1 kg attached to a spring of stiffness 100 N/m oscillates on a smooth surface. A plane mirror MN is placed vertically in front of it. If the maximum speed of the body relative to its image in the mirror is 2 m/s, find the amplitude of the body's oscillations (m).",
+   "options": [
+    "0.2",
+    "0.1",
+    "0.3",
+    "0.4"
+   ]
+  },
+  {
+   "n": 10,
+   "text": "Identify the unknown particle X in the fission reaction below.",
+   "reaction": "²³⁶₉₂U → ¹⁴²₅₆Ba + ⁹¹₃₆Kr + 3X",
+   "options": [
+    "¹₀n",
+    "⁴₂He",
+    "²₁H",
+    "¹₁H"
+   ]
+  },
+  {
+   "n": 11,
+   "text": "The field lines of a uniform magnetic field with induction 2 mT are perpendicular to a rectangular frame with sides a = 2 m and b = 3 m. If the frame is rotated with angular velocity π/12 rad/s about the axis AA′ passing through the midpoints of the sides b, by how much (mWb) does the magnetic flux through the frame at t = 30 s differ from the initial flux?",
+   "options": [
+    "3.6",
+    "12",
+    "2.4",
+    "0"
+   ]
+  },
+  {
+   "n": 12,
+   "text": "The velocity of an electron in a magnetic field is directed along the x-axis. How must the magnetic field induction be directed so that the Lorentz force points against the z-axis?",
+   "options": [
+    "against the z-axis",
+    "along the x-axis",
+    "against the y-axis",
+    "along the y-axis"
+   ]
+  },
+  {
+   "n": 13,
+   "text": "If a body of mass m = 3 kg that does not sink in water is placed in vessel A, how much water (kg) will spill onto the scale B?",
+   "options": [
+    "2.5",
+    "1.5",
+    "3",
+    "2"
+   ]
+  },
+  {
+   "n": 14,
+   "text": "The orbital period of a satellite revolving near the surface of a neutron star is T. Find the density of the star. π = 3, G is the gravitational constant.",
+   "options": [
+    "1/(GT²)",
+    "3/(GT²)",
+    "9/(GT²)",
+    "1/(3GT²)"
+   ]
+  },
+  {
+   "n": 15,
+   "text": "A glass capillary tube is immersed in a liquid. It is known that the liquid wets glass. Choose from the figure the correct arrangement of the capillary and the liquid.",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  {
+   "n": 16,
+   "text": "When heat is supplied isobarically to an ideal (monatomic) gas, the gas does 180 kJ of work. How does its internal energy change?",
+   "options": [
+    "increased by 270 kJ",
+    "increased by 120 kJ",
+    "decreased by 120 kJ",
+    "decreased by 270 kJ"
+   ]
+  },
+  {
+   "n": 17,
+   "text": "The rest energy of a particle is 1.2 TJ. What is the total energy (TJ) of this particle if it moves with speed 0.6c? c is the speed of light in vacuum.",
+   "options": [
+    "1.4",
+    "1.5",
+    "1.8",
+    "1.6"
+   ]
+  },
+  {
+   "n": 18,
+   "text": "During electrolysis a current of 3 A passed through the solution for 2 hours. How much silver (g) was deposited on the cathode? The electrochemical equivalent of silver is 1.118 mg/C.",
+   "options": [
+    "96",
+    "12",
+    "24",
+    "48"
+   ]
+  },
+  {
+   "n": 19,
+   "text": "Two railway cars move toward each other. The first has speed 0.2 m/s and mass 20 t, the second has speed 0.1 m/s and mass 30 t. If the collision is perfectly inelastic, what percentage (%) of its mechanical energy does the system lose in the collision?",
+   "options": [
+    "71",
+    "79",
+    "98",
+    "88"
+   ]
+  },
+  {
+   "n": 20,
+   "text": "A huge ship moves in a straight line at 10 m/s relative to the shore. A person on the ship starts moving in the direction of the ship's motion with an acceleration of 2 m/s² relative to the ship. Find the equation of motion of the person relative to the shore (m). Take the direction of the ship's motion as the positive direction of the Ox axis.",
+   "options": [
+    "x = 10t + t²",
+    "x = 10 + t²",
+    "x = t²",
+    "x = 10 − t²"
+   ]
+  },
+  {
+   "n": 21,
+   "text": "A uniform rod of mass M = 16 kg is balanced by means of fixed pulleys as shown in the figure. Determine the mass m (kg).",
+   "options": [
+    "24",
+    "8",
+    "4",
+    "12"
+   ]
+  },
+  {
+   "n": 22,
+   "text": "Capacitors with capacitances C₁ = 2C₂ = 3C₃ are connected in series to a DC voltage source. Compare the charges stored on them.",
+   "options": [
+    "q₁ = 2q₂ = 3q₃",
+    "q₁ = q₂ = q₃",
+    "3q₁ = 2q₂ = q₃",
+    "q₁ = 4q₂ = 9q₃"
+   ]
+  },
+  {
+   "n": 23,
+   "text": "Two photons are compared; the period of the second is twice that of the first. If the wavelength of the first is 10 m, what is the energy of the second (eV)? h = 4.1·10⁻¹⁵ eV·s",
+   "options": [
+    "4.1·10⁻⁷",
+    "6.1·10⁻³",
+    "4.1·10⁻⁵",
+    "6.1·10⁻⁸"
+   ]
+  },
+  {
+   "n": 24,
+   "text": "The initial speed of a car is 10 m/s and the final speed is 2 m/s. If the acceleration is −2 m/s², over what distance (m) did this change in speed occur?",
+   "options": [
+    "26",
+    "32",
+    "18",
+    "24"
+   ]
+  },
+  {
+   "n": 25,
+   "text": "A rectangular wire frame is dipped into soap solution and withdrawn. With what force (N) does the soap film (σ = 0.04 N/m) formed on the frame act on the side of the frame that is 20 cm long?",
+   "options": [
+    "0.008",
+    "0.016",
+    "0.04",
+    "0.004"
+   ]
+  },
+  {
+   "n": 26,
+   "text": "Two identical capillary tubes are immersed, one in water (ρ_water = 1000 kg/m³) and the other in gasoline (ρ_gas = 700 kg/m³). Water rises 24 cm in its capillary. Determine how far (cm) the gasoline rises. σ_water = 0.073 N/m, σ_gas = 0.021 N/m",
+   "options": [
+    "25.2",
+    "15.4",
+    "58",
+    "9.9"
+   ]
+  },
+  {
+   "n": 27,
+   "text": "The emf of a battery is 12 V and its stored charge is 30 A·h. How much energy (kJ) can the battery deliver? Assume the battery efficiency is 100 %.",
+   "options": [
+    "1944",
+    "1728",
+    "1296",
+    "2376"
+   ]
+  },
+  {
+   "n": 28,
+   "text": "A body of mass 3 kg tied to a rope is moved in a vertical plane along a circle of radius 0.2 m about point O. If its speed at point B is 2 m/s, what is its weight (N)? g = 10 m/s²",
+   "options": [
+    "15",
+    "20",
+    "45",
+    "30"
+   ]
+  },
+  {
+   "n": 29,
+   "text": "If the ammeter reading is 2 A and R = 0.5 Ω, determine ε (V). The internal resistance of the current sources is zero.",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ]
+  },
+  {
+   "n": 30,
+   "text": "The coefficient of friction between a sled and the icy ground is 0.04. If the sled slides down a hill of height 1.8 m and base 10 m, how much farther (m) will it slide along the horizontal road?",
+   "options": [
+    "42.5",
+    "40",
+    "35",
+    "32.5"
+   ]
+  },
+  {
+   "n": 31,
+   "text": "Find the total capacitance between points K and L.",
+   "options": [
+    "3C",
+    "6C",
+    "12C",
+    "16C"
+   ]
+  },
+  {
+   "n": 32,
+   "text": "Find the total resistance (Ω) of the section B–C.",
+   "options": [
+    "4",
+    "3",
+    "2",
+    "1"
+   ]
+  },
+  {
+   "n": 33,
+   "text": "Find the net force (N) acting on the block.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. In a laboratory experiment, the motion of a 400 g block on a horizontal surface under a force of 1.6 N was studied. Use the table of the block's speed versus time.",
+   "options": [
+    "0.1",
+    "0.45",
+    "0.2",
+    "0.5",
+    "1",
+    "0.35"
+   ]
+  },
+  {
+   "n": 34,
+   "text": "Find the coefficient of friction between the block and the surface.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. In a laboratory experiment, the motion of a 400 g block on a horizontal surface under a force of 1.6 N was studied. Use the table of the block's speed versus time.",
+   "options": [
+    "0.1",
+    "0.45",
+    "0.2",
+    "0.5",
+    "1",
+    "0.35"
+   ]
+  },
+  {
+   "n": 35,
+   "text": "Find the kinetic energy (J) of the block at the 3rd second.",
+   "note": "Match tasks (33–35) with the answer options (A–F) correctly. In a laboratory experiment, the motion of a 400 g block on a horizontal surface under a force of 1.6 N was studied. Use the table of the block's speed versus time.",
+   "options": [
+    "0.1",
+    "0.45",
+    "0.2",
+    "0.5",
+    "1",
+    "0.35"
+   ]
+  },
+  {
+   "n": 36,
+   "text": "A body moves along a straight line in an inertial reference frame at constant speed, and its momentum is 20 kg·m/s. An external force acted on it for 4 s, and its momentum reached 70 kg·m/s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the force that acted on the body.",
+     "unit": "N"
+    },
+    {
+     "key": "b",
+     "text": "Find the change in the momentum of the body.",
+     "unit": "kg·m/s"
+    }
+   ]
+  },
+  {
+   "n": 37,
+   "text": "The balls collided elastically and off-centre, and after the collision the first ball moved with a speed of 12 m/s (see the figure).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the speed of the second ball after the collision.",
+     "unit": "m/s"
+    },
+    {
+     "key": "b",
+     "text": "Find the energy released in the collision.",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 38,
+   "text": "An ideal gas in a closed vessel passes from state 1 to state 2 as shown in the figure.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "How does the volume of the gas change in this transition?",
+     "unit": "",
+     "hint": "For example: increases by a factor of 2"
+    },
+    {
+     "key": "b",
+     "text": "How does its internal energy change in this transition?",
+     "unit": "",
+     "hint": "For example: increases by a factor of 2"
+    }
+   ]
+  },
+  {
+   "n": 39,
+   "text": "A body of mass 2 kg is thrown from the ground at an angle of 30° with a speed of 6 m/s.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find its minimum kinetic energy.",
+     "unit": "J"
+    },
+    {
+     "key": "b",
+     "text": "Find its minimum speed.",
+     "unit": "m/s",
+     "hint": "For example: 5.2"
+    }
+   ]
+  },
+  {
+   "n": 40,
+   "text": "The figure shows a graph for an ideal gas. Here p₀ = 10⁵ Pa, V₀ = 1 L.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Using the graph, find the work done on the monatomic ideal gas.",
+     "unit": "J"
+    },
+    {
+     "key": "b",
+     "text": "Find the change in the internal energy of the gas. The ideal gas is monatomic.",
+     "unit": "J"
+    }
+   ]
+  },
+  {
+   "n": 41,
+   "text": "Charges q, 3q and 2q are placed at vertices A, B and C, respectively, of a square ABCD with side a.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "What work does the electric field do in moving the charge from vertex A of the square to vertex D? Write the answer in the form kq²/a: enter the numerical coefficient in front of kq²/a.",
+     "unit": "·kq²/a"
+    },
+    {
+     "key": "b",
+     "text": "What is the net Coulomb force acting on the charge at vertex B in the initial state? Write the answer in the form kq²/a²: enter the numerical coefficient in front of kq²/a².",
+     "unit": "·kq²/a²"
+    }
+   ]
+  },
+  {
+   "n": 42,
+   "text": "The current in a circuit varies according to the law I = 10 − 6t (A).",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Write the equation for the charge flowing through the circuit as a function of time (q(t) = …).",
+     "unit": "C",
+     "hint": "For example: 5t-2t^2"
+    },
+    {
+     "key": "b",
+     "text": "How many electrons passed through the circuit in 4 s?",
+     "unit": "pcs",
+     "hint": "For example: 5e19"
+    }
+   ]
+  },
+  {
+   "n": 43,
+   "text": "A candle burns between two vertical parallel plane mirrors a distance a apart, at a distance 0.1a from the first mirror.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "At what distance from the candle is the second image of the candle in the first mirror formed? Write the answer in the form a: enter the numerical coefficient in front of a.",
+     "unit": "·a"
+    },
+    {
+     "key": "b",
+     "text": "At what distance from the 2nd mirror is the second image of the candle in the second mirror formed? Write the answer in the form a: enter the numerical coefficient in front of a.",
+     "unit": "·a"
+    }
+   ]
+  },
+  {
+   "n": 44,
+   "text": "There are two electrons with speeds 0.9c and 0.8c.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find their speed relative to each other when they move toward each other. Write the answer in the form c: enter the numerical coefficient in front of c.",
+     "unit": "·c"
+    },
+    {
+     "key": "b",
+     "text": "Find their speed relative to each other when they move in the same direction. Write the answer in the form c: enter the numerical coefficient in front of c.",
+     "unit": "·c"
+    }
+   ]
+  },
+  {
+   "n": 45,
+   "text": "The activity of a substance, initially 1600 Bq, becomes 25 Bq after 12 hours.",
+   "parts": [
+    {
+     "key": "a",
+     "text": "Find the half-life.",
+     "unit": "h"
+    },
+    {
+     "key": "b",
+     "text": "Find the mean lifetime.",
+     "unit": "h"
+    }
+   ]
+  }
+ ]
+}

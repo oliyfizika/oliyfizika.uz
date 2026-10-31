@@ -18,12 +18,12 @@
   Katalog avvalgidek data/tests.json va data/mock-test-N.json dan quriladi — yangi test qo'shish tartibi (README) o'zgarmagan.
   Ruxsat: js/access-gate.js (checkMockAccess) — engine bilan bir xil tekshiruv. Eski katalog kodi js/catalog.js saqlangan.
 -->
-<body class="of-ui" data-shell-title="Mock test yechish" data-shell-public="true">
+<body class="of-ui" data-i18n-title="ms.cat.title" data-shell-title="Mock test yechish" data-shell-public="true">
 <div class="of-page of-container of-cat of-ms" id="mockCatalog">
   <header class="of-cat-head">
     <div>
-      <h1>Mock test yechish</h1>
-      <p>Haqiqiy imtihon formatidagi interaktiv testlar: 35 ta test va 10 ta ikki qismli ochiq savol, 180 daqiqalik taymer, ilmiy kalkulyator va formula jadvali. Javoblaringiz qurilmada avtomatik saqlanadi.</p>
+      <h1 data-i18n="ms.cat.title">Mock test yechish</h1>
+      <p data-i18n="ms.cat.lead">Haqiqiy imtihon formatidagi interaktiv testlar: 35 ta test va 10 ta ikki qismli ochiq savol, 180 daqiqalik taymer, ilmiy kalkulyator va formula jadvali. Javoblaringiz qurilmada avtomatik saqlanadi.</p>
     </div>
     <p class="of-cat-count" data-mock-count aria-live="polite"></p>
   </header>
@@ -31,7 +31,7 @@
   <p class="of-ms-user" data-user-hint role="status" hidden></p>
 
   <section aria-labelledby="mockListTitle">
-    <h2 class="of-sr-only" id="mockListTitle">Mock testlar ro‘yxati</h2>
+    <h2 class="of-sr-only" id="mockListTitle" data-i18n="ms.cat.listTitle">Mock testlar ro‘yxati</h2>
     <ul class="of-mock-grid" data-mock-list aria-busy="true">
       <li><div class="of-card of-mock"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
       <li><div class="of-card of-mock"><span class="of-skeleton of-skeleton--text" style="width:40%"></span><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
@@ -41,7 +41,7 @@
 
   <aside class="of-card of-ms-note">
     <span data-icon="video" aria-hidden="true"></span>
-    <p>Video va PDF yechimlar alohida bo‘limda: <a href="../mock-tests.html">Mock test video yechimlari</a></p>
+    <p><span data-i18n="ms.cat.videoNote">Video va PDF yechimlar alohida bo‘limda:</span> <a href="../mock-tests.html" data-i18n="ms.cat.videoLink">Mock test video yechimlari</a></p>
   </aside>
 </div>
 </body>

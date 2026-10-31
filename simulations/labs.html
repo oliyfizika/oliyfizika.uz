@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Virtual laboratoriyalar | OliyFizika.uz</title>
+<title data-i18n="sim.labsDocTitle">Virtual laboratoriyalar | OliyFizika.uz</title>
 <meta name="description" content="Fizikadan virtual laboratoriya ishlari: 7–11-sinf darsliklaridagi laboratoriya ishlari va oliy ta’lim laboratoriyalari. O‘lchang, qaydlarni jadvalga kiriting, hisoblang va PDF hisobot yuklab oling.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,20 +18,20 @@
   ('maktab' — darslik laboratoriya ishlari, `grades` bo'yicha; 'otm' — oliy ta'lim laboratoriyalari).
   Sinf filtri URL da saqlanadi: ?sinf=7…11 yoki ?sinf=otm. Laboratoriya kodlari bu sahifada yuklanmaydi.
 -->
-<body class="of-ui" data-shell-title="Virtual laboratoriyalar" data-shell-public="true">
+<body class="of-ui" data-i18n-title="sim.labsTitle" data-shell-title="Virtual laboratoriyalar" data-shell-public="true">
 <div class="of-page of-container of-cat of-cat--wide" id="labsPage">
   <header class="of-cat-head">
     <div>
-      <h1>Virtual laboratoriyalar</h1>
-      <p>Darslikdagi laboratoriya ishlarini virtual asboblar bilan bajaring: o‘lchang, natijani «Qaydlar»ga belgilang, jadvalni to‘ldiring va hisoblash natijasi bilan PDF hisobotni yuklab oling.</p>
+      <h1 data-i18n="sim.labsTitle">Virtual laboratoriyalar</h1>
+      <p data-i18n="sim.labsLead">Darslikdagi laboratoriya ishlarini virtual asboblar bilan bajaring: o‘lchang, natijani «Qaydlar»ga belgilang, jadvalni to‘ldiring va hisoblash natijasi bilan PDF hisobotni yuklab oling.</p>
     </div>
     <p class="of-cat-count" data-sim-count aria-live="polite"></p>
   </header>
 
   <section aria-labelledby="labListTitle">
-    <h2 class="of-sr-only" id="labListTitle">Laboratoriya ishlari ro‘yxati</h2>
-    <div class="of-segment of-grades" data-grades role="group" aria-label="Sinf bo‘yicha saralash"></div>
-    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash" style="margin-top:12px"></ul>
+    <h2 class="of-sr-only" id="labListTitle" data-i18n="sim.labsListTitle">Laboratoriya ishlari ro‘yxati</h2>
+    <div class="of-segment of-grades" data-grades role="group" aria-label="Sinf bo‘yicha saralash" data-i18n-attr="aria-label:sim.gradesAria2"></div>
+    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash" data-i18n-attr="aria-label:sim.topicsAria" style="margin-top:12px"></ul>
     <ul class="of-sims" data-sims aria-busy="true" style="margin-top:12px">
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>

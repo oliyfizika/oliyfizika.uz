@@ -7,6 +7,8 @@
 //   4) natija ekrani ochilganda fokusni unga o'tkazadi.
 // ==========================================================================
 
+import { t } from "../core/i18n.js";
+
 const $ = (s) => document.querySelector(s);
 
 function whenShell(fn) {
@@ -38,7 +40,7 @@ if (timerEl && live) {
     const bucket = bucketOf(left / 60);
     if (lastBucket === null) { lastBucket = bucket; return; } // birinchi o'qish — e'lon qilinmaydi
     if (bucket !== lastBucket && bucket !== null) {
-      live.textContent = `Diqqat: ${bucket} daqiqadan kam vaqt qoldi.`;
+      live.textContent = t("ms.t.announce", `Diqqat: ${bucket} daqiqadan kam vaqt qoldi.`, { n: bucket });
     }
     lastBucket = bucket;
   }).observe(timerEl, { childList: true, characterData: true, subtree: true });
@@ -49,11 +51,11 @@ const grid = $("#navgrid");
 if (grid) {
   const label = (b) => {
     const n = b.textContent.trim();
-    const parts = [`${n}-savol`];
-    if (b.classList.contains("answered")) parts.push("javob berilgan");
-    else if (b.classList.contains("partial")) parts.push("qisman javob berilgan");
-    else parts.push("javobsiz");
-    if (b.classList.contains("marked")) parts.push("belgilangan");
+    const parts = [t("ms.t.qAriaFull", `${n}-savol`, { n })];
+    if (b.classList.contains("answered")) parts.push(t("ms.t.aAnswered", "javob berilgan"));
+    else if (b.classList.contains("partial")) parts.push(t("ms.t.aPartial", "qisman javob berilgan"));
+    else parts.push(t("ms.t.aBlank", "javobsiz"));
+    if (b.classList.contains("marked")) parts.push(t("ms.t.aMarked", "belgilangan"));
     const next = parts.join(", ");
     if (b.getAttribute("aria-label") !== next) b.setAttribute("aria-label", next);
   };

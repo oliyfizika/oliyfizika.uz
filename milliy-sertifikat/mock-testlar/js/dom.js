@@ -1,4 +1,5 @@
 // Xavfsiz DOM yordamchilari: matn har doim textContent orqali qo'yiladi (innerHTML ishlatilmaydi).
+import { t } from "../../../assets/js/core/i18n.js";
 
 export const $ = (sel, root = document) => root.querySelector(sel);
 export const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -47,7 +48,7 @@ export function toast(message) {
 }
 
 /** Tasdiqlash oynasi (window.confirm o'rniga). Promise<boolean> qaytaradi. */
-export function confirmDialog({ title, message, confirmText = "Ha", cancelText = "Bekor qilish", danger = false }) {
+export function confirmDialog({ title, message, confirmText = t("ms.e.yes", "Ha"), cancelText = t("ms.e.cancel", "Bekor qilish"), danger = false }) {
   return new Promise((resolve) => {
     const previous = document.activeElement;
     const close = (value) => {

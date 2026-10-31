@@ -1,0 +1,859 @@
+{
+  "topics": {
+    "mexanika": "Mechanics",
+    "issiqlik": "Molecular physics and heat",
+    "elektr": "Electricity and magnetism",
+    "optika": "Optics",
+    "atom": "Atomic and nuclear physics",
+    "kvant": "Quantum physics"
+  },
+  "simulations": {
+    "motion": {
+      "title": "Motion graphs",
+      "description": "Uniform and uniformly accelerated rectilinear motion: x(t), v(t), a(t) graphs, position at every 1 s, displacement and distance (area under v(t)), tangent to x(t). Meeting and overtaking of two bodies, braking. Draw a v(t) graph to get the motion and average speed.",
+      "params": [
+        "Car: x₀, v₀, a (drag on the road)",
+        "Cyclist (second body): x₀, v₀, a",
+        "Braking: stop at v = 0",
+        "v(t) nodes: step or broken line",
+        "Graph: x(t), v(t), a(t), read with the cursor"
+      ],
+      "keywords": "motion graphs coordinate time graph x(t) v(t) a(t) velocity graph uniform motion non-uniform motion uniformly accelerated motion acceleration average speed instantaneous speed displacement distance meeting overtaking braking stopping distance area under graph tangent kinematics position velocity uniform"
+    },
+    "vectors": {
+      "title": "Vectors and addition of forces",
+      "description": "Scalar and vector quantities: magnitude, direction and components of a vector along the coordinate axes, multiplying a vector by a number. Adding and subtracting vectors by the triangle and parallelogram methods, dependence of |a + b| on the angle. Adding forces: resultant and equilibrant force, force polygon, equilibrium.",
+      "params": [
+        "Vector tip (drag in the scene)",
+        "Magnitude and direction α, number k",
+        "Addition method: triangle or parallelogram",
+        "Forces F₁, F₂, F₃ and the angles between them",
+        "Body mass m"
+      ],
+      "keywords": "vector scalar vector quantity scalar quantity magnitude direction component vector projection coordinate axes vector addition triangle method parallelogram method vector difference multiplying vector by number cosine rule pythagoras adding forces resultant force net force equilibrant force force polygon equilibrium tension parallelogram"
+    },
+    "density": {
+      "title": "Mass, density and floating",
+      "description": "Measuring mass with weights on a balance; finding volume and density in a measuring cylinder and identifying the substance from a table; lowering a body hung from a force meter into a liquid: buoyant force (Archimedes) and the condition for floating.",
+      "params": [
+        "Body: copper, aluminium, steel, granite, wood…",
+        "Weights (drag in the scene)",
+        "Measuring cylinder: V₁, read with a magnifier",
+        "Body material and liquid",
+        "Force meter (drag in the scene), cut the string"
+      ],
+      "keywords": "mass density balance pan balance beam balance weights measuring cylinder volume measurement determining density identifying substance density table kg/m3 g/cm3 archimedes buoyant force upthrust floating sinking force meter liquid ice iceberg egg salt water kerosene mercury buoyancy"
+    },
+    "pressure": {
+      "title": "Pressure, Pascal's law and communicating vessels",
+      "description": "Pressure of a solid p = F/S: brick faces, ski and boot, needle, tractor. Pascal's law: hydraulic press and Pascal's ball. Liquid pressure p = ρgh with a pressure sensor and manometer; communicating vessels, water and oil in a U-tube.",
+      "params": [
+        "Brick face and load (in the scene)",
+        "Body: person, ski, needle, tractor",
+        "Press: S₁, S₂, load M, piston (in the scene)",
+        "Liquid, sensor depth (in the scene), p₀",
+        "Level in communicating vessels, oil in the U-tube"
+      ],
+      "keywords": "pressure pascal unit of pressure kPa p=F/S contact area brick ski needle pascal's law hydraulic press jack piston force gain pascal's ball liquid pressure hydrostatic pressure p=rho g h depth manometer communicating vessels u-tube water and oil atmospheric pressure hydraulic"
+    },
+    "atmosphere": {
+      "title": "Atmospheric pressure",
+      "description": "Torricelli's experiment: mercury barometer (760 mm), tilting the tube, puncturing the top of the tube, Pascal's 10.3 m water barometer, column dropping on a mountain. Magdeburg hemispheres: pumping out air, vacuum gauge, horses or a tree, required force F = (p₀ − p)πR². Decrease of atmospheric pressure with height: aneroid barometer, sealed bag, boiling point of water.",
+      "params": [
+        "Liquid (mercury/water), tube tilt (drag the tube end in the scene), site altitude",
+        "Hemisphere size, pump strokes (drag the handle in the scene), number of horses, tree, tap",
+        "Balloon height (drag in the scene)"
+      ],
+      "keywords": "atmospheric pressure Torricelli experiment mercury barometer mercury column 760 mmHg Pascal water barometer Torricellian vacuum vacuum Magdeburg hemispheres Guericke pump aneroid barometer altimeter pressure decrease with altitude boiling point hectopascal barometer"
+    },
+    "projectile": {
+      "title": "Motion of a body under gravity",
+      "description": "Oblique projection (parabola), vertical throw up and down, free fall. Height, velocity and energy graphs; range and maximum height.",
+      "params": [
+        "Angle α or vertical mode",
+        "Speed v₀",
+        "Height h₀",
+        "g (planet)"
+      ],
+      "keywords": "motion of a body under gravity body thrown at an angle to the horizontal parabola trajectory range maximum height horizontal projection vertical throw upward throw downward throw free fall acceleration g energy projectile vertical motion"
+    },
+    "pendulum": {
+      "title": "Simple pendulum",
+      "description": "Pendulum oscillation: exact period (elliptic integral) and small-angle formula, energy, phase portrait, friction, forced oscillation and resonance.",
+      "params": [
+        "Length L",
+        "Angle and velocity",
+        "Mass",
+        "g (planet)",
+        "Friction and driving force"
+      ],
+      "keywords": "simple pendulum oscillation period amplitude elliptic integral energy phase portrait resonance damping pendulum"
+    },
+    "physical-pendulum": {
+      "title": "Physical pendulum",
+      "description": "Pendulum of a rigid body (rod, disc, ring, sphere): moment of inertia, parallel-axis (Steiner) theorem, reduced length, minimum period and Kater's conjugate points.",
+      "params": [
+        "Body shape and size",
+        "Pivot distance d",
+        "Mass",
+        "g (planet)"
+      ],
+      "keywords": "physical pendulum compound pendulum rigid body moment of inertia steiner parallel axis theorem reduced length kater centre of oscillation centre of percussion rod disc ring"
+    },
+    "spring": {
+      "title": "Spring pendulum",
+      "description": "Spring pendulum: vertical and horizontal oscillation (switched with one button), Hooke's law, period T = 2π√(m/k), springs in parallel and in series, energy, damping, forced oscillation and resonance.",
+      "params": [
+        "Horizontal / vertical mode",
+        "Stiffness k (parallel, series)",
+        "Mass",
+        "Initial displacement and velocity",
+        "Resistance and g (planet)",
+        "Driving force"
+      ],
+      "keywords": "spring pendulum spring oscillation harmonic hooke's law vertical horizontal parallel series resonance damping energy period spring"
+    },
+    "waves": {
+      "title": "Mechanical waves and sound",
+      "description": "Transverse and longitudinal waves on a string: wavelength, pulse reflection, standing waves, shaking by hand. Interference and path difference on a water surface. Sound and the Doppler effect, Mach cone, listening to the sound.",
+      "params": [
+        "String: ν, A, v, end (fixed/free/infinite)",
+        "Interference: d, ν, Δφ (drag)",
+        "Doppler: u/c, ν, medium",
+        "Sound (WebAudio)"
+      ],
+      "keywords": "mechanical wave transverse longitudinal wavelength frequency period speed reflection standing wave harmonic node antinode interference coherent path difference sound doppler effect mach cone shock wave wave"
+    },
+    "circular-motion": {
+      "title": "Circular motion",
+      "description": "Uniform and non-uniform circular motion: linear and angular velocity, period, centripetal acceleration, velocity hodograph and components. Centripetal force: ball on a string (breaking), car on a bend (friction, banked road), vertical loop. Belt drive, gear drive and bicycle.",
+      "params": [
+        "Kinematics: v, R (drag the body), a_τ",
+        "String: v, m, R, F_max; cut the string",
+        "Car: speed (speedometer), R, road, banking",
+        "Loop: h (drag the ball), R",
+        "Transmission: n₁, R₁, R₂ (drag the wheels)"
+      ],
+      "keywords": "circular motion rotational uniform non-uniform linear velocity angular velocity period frequency centripetal acceleration tangential normal acceleration hodograph centripetal force string tension bend friction banked road vertical loop loop-the-loop transmission belt gear wheel bicycle sprocket"
+    },
+    "gravity-law": {
+      "title": "Law of universal gravitation",
+      "description": "Gravitational force between spheres in a laboratory and celestial bodies (Earth–Moon, Sun–Earth, ISS), accelerations and orbital period.",
+      "params": [
+        "Masses",
+        "Distance r",
+        "Celestial bodies"
+      ],
+      "keywords": "law of universal gravitation gravity newton orbital period kepler earth moon sun gravitational"
+    },
+    "orbits": {
+      "title": "Orbits and cosmic velocities",
+      "description": "Newton's cannon: a body fired from a mountain top at different speeds falls to the ground, enters a circular or elliptical orbit, or escapes. First and second cosmic velocities for Earth, Moon, Mars and Jupiter. Artificial satellites: orbital height, speed and period, ISS, GPS, geostationary orbit, Moon.",
+      "params": [
+        "Celestial body, launch speed v (drag the arrow in the scene)",
+        "Orbital height h (drag the satellite in the scene)"
+      ],
+      "keywords": "motion in a gravitational field orbit first cosmic velocity second cosmic velocity v1 v2 7.9 km/s 11.2 km/s newton's cannon artificial satellite geostationary orbit iss gps orbital period ellipse kepler orbit escape velocity satellite"
+    },
+    "newton-second-law": {
+      "title": "Newton's laws",
+      "description": "Second law: a cart is pulled by a force meter or a hanging weight over a pulley, a = 2s/t² is measured with a photogate, a(F) and a(1/m). Third law: two carts with a spring, F₁₂ = −F₂₁. Weight in a lift: overload and weightlessness.",
+      "params": [
+        "Cart: F (drag the arrow), M and m (\"+\"/\"−\"), μ, s",
+        "Two carts: m₁, m₂, spring compression",
+        "Lift: floor panel, person's mass, acceleration"
+      ],
+      "keywords": "newton's laws second law third law f=ma force mass acceleration friction string tension pulley cart force meter action reaction momentum weight gravitational force lift elevator overload weightlessness free fall newton laws weight elevator"
+    },
+    "energy": {
+      "title": "Work, power and mechanical energy",
+      "description": "Mechanical work A = Fs·cos α and work against friction (ΣA = ΔEₖ), power: a race between two winches. Conservation of energy and its conversion to heat in a skate park, E(x) diagram. Spring launcher: kx²/2 = mgH, measuring k.",
+      "params": [
+        "Pulling: F and α (drag the arrow tip), m, μ, s (flag)",
+        "Winches: P₁, P₂ (handles), m, h",
+        "Skate park: track shape (drag the points), m, μ, g, Eₚ = 0 level",
+        "Launcher: k, m, compression x (drag the ball)"
+      ],
+      "keywords": "mechanical work power energy kinetic potential energy conservation law friction heat skate park spring energy stiffness winch watt joule work power energy conservation skate park"
+    },
+    "fluid": {
+      "title": "Fluid and gas flow",
+      "description": "Flow continuity Q = Sv: a pipe with movable cross-sections, a \"parcel\" of constant volume. Bernoulli's law: four manometers, energy line, Venturi tube, pressure drop below atmospheric. Applications: Torricelli's formula, wing lift (pressure map), atomiser.",
+      "params": [
+        "Pipe: Q (handle), d₁, d₂, d₃ (wall handles)",
+        "Bernoulli: Q, narrow section d₂, inlet pressure (manometer 1), rise Δy",
+        "Torricelli: water level H, hole height, 1 or 3 holes",
+        "Wing: flow speed V, angle of attack α (drag the trailing edge)",
+        "Atomiser: air speed v, tube height"
+      ],
+      "keywords": "fluid gas flow hydrodynamics aerodynamics flow continuity flow rate cross-section speed bernoulli's law equation pressure manometer venturi tube torricelli's formula outflow through a hole aeroplane wing lift angle of attack zhukovsky atomiser sprayer fluid flow continuity bernoulli venturi torricelli airfoil lift"
+    },
+    "inclined-plane": {
+      "title": "Inclined plane and friction",
+      "description": "Forces acting on a body on an inclined plane, static and sliding friction. Watch when the body starts to slide.",
+      "params": [
+        "Angle θ",
+        "Friction μ",
+        "Mass",
+        "Initial velocity"
+      ],
+      "keywords": "inclined plane friction coefficient static friction sliding normal reaction force gravitational force inclined plane"
+    },
+    "incline-efficiency": {
+      "title": "Inclined plane: work and efficiency",
+      "description": "The golden rule of mechanics: when a load is raised along a ramp onto a platform, force is gained and distance is lost (F·l = P·h). With a ramp with friction: total, useful and friction work, efficiency η(α), self-locking. Lab work: measuring the efficiency of an inclined plane with a board, stand, block and force meter, results table.",
+      "params": [
+        "Platform height, ramp length (drag the ramp end in the scene), load mass, friction coefficient",
+        "Pulling the load (drag the load in the scene or \"Pull\")",
+        "Lab: board surface, height of the board end (drag the stand clamp in the scene), extra weights, pull the force meter ring, \"Record\""
+      ],
+      "keywords": "inclined plane efficiency useful work total work expended work golden rule of mechanics force gain distance loss ramp friction self-locking force meter block lab work inclined plane efficiency golden rule of mechanics"
+    },
+    "statics": {
+      "title": "Equilibrium, moment of force and simple machines",
+      "description": "Finding the centre of mass with a plywood plate hung from a stand and a plumb line (L-shape, triangle, disc with a hole, horseshoe), tipping of a box about its edge and the critical angle, a ball on a concave, convex and flat surface: types of equilibrium. Laboratory lever: 100 g weights, force meter, oblique pull, moving the fulcrum. Fixed and movable pulley, block and tackle, well windlass; golden rule and efficiency.",
+      "params": [
+        "Plate shape, hanging hole (click in the scene), line along the plumb line",
+        "Box size, height of the centre of mass, tilt angle (drag in the scene)",
+        "Surface: concave / convex / flat; ball is dragged in the scene",
+        "Lever: two groups of weights (number and hole, drag in the scene), force meter hole and angle, fulcrum",
+        "Mechanism, load mass, number of ropes, handle length, real or ideal; rope and handle are pulled in the scene"
+      ],
+      "keywords": "equilibrium statics centre of mass centre of gravity plumb line plate suspension stable equilibrium unstable neutral equilibrium tipping base area critical angle moment of force torque moment arm principle of moments lever lever equilibrium condition force meter load fulcrum reaction simple machines pulley fixed pulley movable pulley block and tackle windlass winch well drum handle golden rule golden rule of mechanics efficiency force gain distance loss lever pulley torque centre of mass equilibrium"
+    },
+    "gas": {
+      "title": "Molecular motion and the ideal gas",
+      "description": "Motion and collisions of gas molecules in a vessel: where pressure comes from, Boyle–Mariotte, Gay-Lussac and Charles laws, Maxwell speed distribution. Experiments on diffusion and Brownian motion.",
+      "params": [
+        "Isothermal, isobaric, isochoric process",
+        "Gas type, N, T, V",
+        "Diffusion: two gases, barrier",
+        "Brownian particle mass and size"
+      ],
+      "keywords": "molecular kinetic theory kinetic theory molecule motion ideal gas pressure volume temperature isothermal isobaric isochoric boyle mariotte gay-lussac charles maxwell speed distribution diffusion brownian motion absolute zero kinetic energy gas law brownian diffusion"
+    },
+    "molecule-size": {
+      "title": "Estimating the size of a molecule",
+      "description": "Practical work: a solution of oleic acid in alcohol forms a film one molecule thick on the water surface. The volume of one drop is found by counting drops in a measuring cylinder, the area of the spot in a tray sprinkled with lycopodium powder is counted on squared paper, d = V/S. Results table and S(V) graph.",
+      "params": [
+        "Solution concentration 1 : k",
+        "Number of drops into the cylinder",
+        "Drops dropped into the tray"
+      ],
+      "keywords": "molecule size molecule diameter oil film monolayer oleic acid lycopodium d=V/S practical work lab work drop volume measuring cylinder molecule size oil film experiment"
+    },
+    "heat": {
+      "title": "Heat exchange: virtual laboratory",
+      "description": "Mix hot and cold water in a calorimeter, drop heated metal, ice or steam into water; heat a substance and watch melting and boiling. Heating curve, heat balance, heat of combustion of fuel and efficiency, molecular motion.",
+      "params": [
+        "Calorimeter: 2–3 bodies and a vessel",
+        "Ice, water, steam, metals, unknown metal",
+        "Heating: electric or fuel",
+        "Melting, boiling, solidification, amorphous body"
+      ],
+      "keywords": "quantity of heat specific heat capacity calorimeter heat balance equilibrium mixing ice melting solidification vaporisation condensation boiling specific latent heat of fusion latent heat of vaporisation fuel heat of combustion efficiency amorphous crystalline heating curve heat calorimeter melting boiling"
+    },
+    "thermo": {
+      "title": "Thermodynamics",
+      "description": "Internal energy, thermodynamic work and the first law: isochoric, isobaric, isothermal and adiabatic processes and the p–V diagram. Carnot, Otto and rectangular cycles, efficiency and the Carnot limit, refrigerator. Four-stroke internal combustion engine and indicator diagram.",
+      "params": [
+        "Process: V, p, T = const or Q = 0",
+        "Piston and thermometer (drag in the scene)",
+        "Gas: helium or air",
+        "Cycle: T₁, T₂, V₂/V₁",
+        "Engine: compression ratio ε, T_max, n"
+      ],
+      "keywords": "thermodynamics internal energy thermodynamic work first law quantity of heat isochoric isobaric isothermal adiabatic adiabat p-V diagram pV diagram carnot cycle heat engine efficiency heater cooler refrigerator freezer otto cycle internal combustion engine four-stroke engine stroke intake compression power stroke exhaust compression ratio piston crankshaft indicator diagram thermodynamics first law carnot heat engine efficiency"
+    },
+    "surface": {
+      "title": "Surface tension and capillarity",
+      "description": "Surface tension of liquids: a soap film pulls the frame bar with force F = 2σL, work of stretching the film A = σΔS. Wetting and non-wetting, contact angle, rise and fall in capillary tubes (h = 2σcosθ/(ρgr)). Determining the surface tension coefficient by the drop method.",
+      "params": [
+        "Liquid: water, soapy water, alcohol, glycerine, kerosene, mercury",
+        "Temperature t",
+        "Frame bar length L and displacement Δx (drag in the scene)",
+        "Capillary tube radius r (drag in the scene)",
+        "Burette tip diameter d, number of drops N"
+      ],
+      "keywords": "surface tension surface tension coefficient surface energy soap film frame wetting non-wetting contact angle capillary capillarity capillary phenomena jurin's law meniscus mercury water alcohol glycerine drop drop method burette lab work properties of liquids surface tension capillary wetting contact angle drop method"
+    },
+    "deformation": {
+      "title": "Deformation of solids",
+      "description": "Tensile testing machine: stretching steel, copper, aluminium and cast-iron specimens until they break, σ–ε diagram (proportionality, yield and strength limits), unloading and permanent deformation, work hardening, neck formation, brittle fracture. Hanging a load on a wire and measuring the elongation with a dial indicator: Hooke's law, stiffness k = ES/l₀, Young's modulus. Types of deformation: tension, compression, shear, bending, torsion; elastic and plastic bodies.",
+      "params": [
+        "Specimen material, extension Δl (drag the control handle in the scene), auto-loading, remove load",
+        "Wire material, diameter, length, load mass (weights are added/removed in the scene)",
+        "Type of deformation, material (rubber/plasticine/steel), external force (drag the handle in the scene)"
+      ],
+      "keywords": "deformation elastic plastic permanent deformation hooke's law mechanical stress sigma=F/S relative elongation strain epsilon young's modulus modulus of elasticity stiffness k=ES/l stress-strain diagram proportionality limit elastic limit yield point ultimate strength safety factor neck work hardening brittle material cast iron steel copper compression shear bending torsion dial indicator tensile testing machine stress strain Young modulus Hooke's law"
+    },
+    "humidity": {
+      "title": "Air humidity and atmospheric phenomena",
+      "description": "Saturated and unsaturated vapour, absolute and relative humidity, dew point (cooling air in a closed vessel, humidifier, hair hygrometer, pₛ(t) graph). Psychrometer and psychrometric table, finding the relative humidity of air with a condensation hygrometer (lab work). Formation of dew, frost, fog and cumulus clouds, daily t(τ) and t_d(τ).",
+      "params": [
+        "Air temperature t (drag the thermometer column in the scene)",
+        "Water vapour amount ρ (\"+ vapour\" / \"− vapour\")",
+        "Room and instrument: psychrometer or condensation hygrometer (click the bulb in the scene)",
+        "Time of day (drag the Sun/Moon in the scene), t_max, daily range, relative humidity, wind"
+      ],
+      "keywords": "air humidity absolute humidity relative humidity saturated vapour unsaturated vapour dew point dew frost fog cloud psychrometer psychrometric table hygrometer hair hygrometer condensation hygrometer wet bulb dry bulb evaporation condensation atmospheric phenomena lab work determining relative humidity of air humidity dew point psychrometer hygrometer fog frost clouds"
+    },
+    "electroscope": {
+      "title": "Electrification and the electroscope",
+      "description": "Electrification by friction: glass–silk, ebonite–wool, amber, metal in the hand; transfer of electrons and conservation of charge. Charging an electroscope by contact and by induction, earthing, determining the sign of charge. Connecting two electroscopes with metal and glass.",
+      "params": [
+        "Pair: glass–silk, ebonite–wool, amber–wool, metal–wool",
+        "Rub the cloth, move and touch the rod",
+        "Induction: q, distance d, earthing switch",
+        "Two electroscopes: charges A and B, connector (metal/glass)",
+        "Leaf mass m"
+      ],
+      "keywords": "electrification electroscope electrometer charge friction glass silk ebonite wool amber electron transfer law of conservation of charge positive negative charge induction electrostatic induction earthing charging by contact conductor dielectric insulator leaf electroscope electrification charging by induction conduction friction"
+    },
+    "coulomb-law": {
+      "title": "Coulomb's law and the electric field",
+      "description": "Measuring Coulomb's law with a ball on a string (F = mg·tan α, F(1/r²), Coulomb's method). Superposition of fields of charges: field lines, semolina in oil, E₁ + E₂. Field of a charged sphere and a Van de Graaff spark.",
+      "params": [
+        "Charges q₁, q₂ and stand position (drag)",
+        "Ball mass m",
+        "Superposition: 1–5 charges and q₀ (drag), medium ε",
+        "Sphere: Q, R, metal / dielectric, probe (drag)"
+      ],
+      "keywords": "coulomb's law electric charge attraction repulsion electrostatics suspended ball torsion balance coulomb's method electric field field strength superposition principle field lines test charge dipole quadrupole semolina castor oil dielectric permittivity charged sphere conductor no field inside faraday cage van de graaff generator air breakdown spark surface density coulomb law electric field superposition charged sphere"
+    },
+    "potential": {
+      "title": "Potential, work and capacitors",
+      "description": "Potential of a field of charges and equipotential lines, work done moving a test charge (independent of path). Parallel-plate capacitor: capacitance, dielectric, connected and disconnected from the battery, energy. Connecting capacitors and RC charging.",
+      "params": [
+        "Charges and test charge (drag)",
+        "Capacitor: d (drag), S, ε, U",
+        "Connection: parallel, series, mixed",
+        "RC: R, ε, switch"
+      ],
+      "keywords": "potential equipotential surface potential difference voltage work electric field capacitor capacitance dielectric permittivity energy parallel series connection rc circuit charging discharge potential equipotential capacitor capacitance"
+    },
+    "circuit": {
+      "title": "Electric circuit: virtual laboratory",
+      "description": "Virtual laboratory: take a battery, switch, resistor, rheostat, conductor, lamp, diode, LED, ammeter and voltmeter from the toolbox and build an electric circuit yourself. Ohm's law, series and parallel connection, EMF, diode characteristic.",
+      "params": [
+        "Ready-made circuit or build your own",
+        "EMF ε and internal resistance r",
+        "Resistance R, rheostat, ρ·l/S",
+        "Ammeter, voltmeter, switch",
+        "Diode and LED (coloured)"
+      ],
+      "keywords": "electric circuit builder ohm's law current voltage resistance series parallel mixed connection emf internal resistance rheostat ammeter voltmeter lamp switch power kirchhoff diode led light-emitting diode virtual laboratory circuit ohm law diode"
+    },
+    "joule": {
+      "title": "Work and power of current, and the Joule–Lenz law",
+      "description": "Checking the Joule–Lenz law with a nichrome coil in a calorimeter: ammeter, voltmeter, thermometer and stopwatch, coils in series and in parallel, efficiency. Power of an incandescent lamp and filament resistance with a variac, 40 W and 100 W in series. Household mains: meter, kWh, circuit breaker and overload.",
+      "params": [
+        "Source voltage E (handle in the scene), switch",
+        "Coils R₁, R₂: single, series, parallel; water mass m",
+        "Lamps (25–100 W, 6.3 V), connection, variac voltage U",
+        "Household mains: consumers (in the scene), breaker Iₙ, tariff"
+      ],
+      "keywords": "work of current power of current joule lenz law quantity of heat heating of a conductor nichrome coil calorimeter thermometer stopwatch ammeter voltmeter series parallel connection efficiency incandescent lamp tungsten filament lamp power determination variac autotransformer dependence of resistance on temperature electricity meter kilowatt hour kwh electricity cost fuse circuit breaker overload short circuit household appliances electric kettle iron heater joule heating electric power energy meter fuse"
+    },
+    "metals": {
+      "title": "Electric current in metals",
+      "description": "Random and ordered (drift) motion of free electrons: ion lattice, switch and rheostat, v = I/(enS). Current density j = I/S in a wire of varying cross-section, counting the charge passing through a cross-section. Temperature dependence of resistance R = R₀(1 + αt), lamp filament, constantan and superconductivity of mercury.",
+      "params": [
+        "Metal: silver, copper, aluminium, iron, tungsten, nichrome, constantan, mercury",
+        "Current I (rheostat in the scene)",
+        "Wire cross-section S, S₁ and S₂",
+        "Counter plane (drag in the scene)",
+        "Temperature t (furnace regulator in the scene)"
+      ],
+      "keywords": "electric current in metals free electrons electron gas random motion ordered motion drift velocity electron speed ions crystal lattice tolman stewart current current density I=enSv j=I/S cross-section fuse resistance resistivity temperature coefficient R=R0(1+at) resistance thermometer incandescent lamp tungsten constantan nichrome superconductivity kamerlingh onnes mercury critical temperature metal conduction drift velocity current density resistance temperature superconductivity"
+    },
+    "electrolysis": {
+      "title": "Electrolysis and Faraday's laws",
+      "description": "Electric current in liquids: electrolytic dissociation, motion of ions, decomposition voltage, experiment with a lamp; resistance falls on heating. Faraday's 1st law (m = kIt, balance and stopwatch) and 2nd law (baths in series, electrolysis of water, determining the Faraday constant).",
+      "params": [
+        "Liquid: water, sugar, NaCl, CuSO₄, H₂SO₄",
+        "Source U and electrode spacing d (drag in the scene)",
+        "Concentration c, temperature t",
+        "Current I and time t",
+        "Baths in series: Ag, Cu, Ni, Zn, water"
+      ],
+      "keywords": "electrolysis electric current in liquids electrolyte electrolytic dissociation ion ions cation anion cathode anode faraday's laws faraday's first law second law electrochemical equivalent m=kIt faraday constant copper sulphate CuSO4 silver nitrate table salt NaCl distilled water electrolysis of water hydrogen oxygen electroplating electrotyping nickel plating silver plating decomposition voltage electrolysis faraday law electrolyte ions"
+    },
+    "discharge": {
+      "title": "Electric current in gases and types of discharge",
+      "description": "Ionisation chamber: flame, ultraviolet and X-rays, galvanometer: Ohm's region, saturation current, impact ionisation and breakdown. Discharge tube with a vacuum pump: Paschen's law, filament, glow discharge, striations, cathode rays; air, neon, argon, helium. Spark on an electrostatic machine, electric arc and corona discharge on a power line.",
+      "params": [
+        "Ioniser, voltage U (handle in the scene), plate spacing d",
+        "Tube: gas, pressure p (pump, valve), voltage U",
+        "Spark: gap between spheres (in the scene), disc speed, Leyden jars",
+        "Arc: rheostat R, carbon gap; corona: U, wire radius, weather"
+      ],
+      "keywords": "electric current in gases gas discharge ionisation ioniser recombination non-self-sustained discharge self-sustained discharge saturation current impact ionisation electron avalanche townsend paschen's law breakdown voltage discharge tube vacuum pump glow discharge cathode dark space positive column striations cathode rays neon argon helium neon signs spark discharge electrostatic machine wimshurst leyden jar lightning electric arc petrov welding ayrton corona discharge corona high-voltage line peek's law plasma gas discharge glow discharge paschen law spark arc corona"
+    },
+    "semiconductor": {
+      "title": "Semiconductors and the p–n junction",
+      "description": "Temperature dependence of the resistance of a metal and a semiconductor: a copper coil and a thermistor in a beaker on a hot plate, two multimeters; photoresistor and lux meter. Electron-hole pairs in a silicon lattice, phosphorus (n-type) and boron (p-type). Measuring the diode I–V characteristic, p–n junction cross-section, light-emitting diodes, diode bridge and oscilloscope, transistor as a switch and amplifier.",
+      "params": [
+        "Hot plate power (handle in the scene), distance to the lamp (in the scene), room light",
+        "Si or Ge, pure / n-type / p-type, impurity concentration, temperature T; click an atom to add an impurity",
+        "Diode: Si, Ge, red/green/blue LED; polarity (in the scene), source E (handle in the scene), temperature",
+        "Rectifier: single diode or bridge, capacitor C, load R",
+        "Transistor: potentiometer (in the scene), base resistor"
+      ],
+      "keywords": "semiconductor semiconductors difference between metal and semiconductor resistance temperature thermistor photoresistor internal photoelectric effect silicon germanium covalent bond electron hole electron-hole pair generation recombination intrinsic conductivity extrinsic conductivity donor acceptor phosphorus boron n-type p-type majority carriers band gap p-n junction depletion layer diode current-voltage characteristic I-V characteristic forward bias reverse bias reverse current light-emitting diode led rectifier half-wave full-wave diode bridge capacitor filter oscilloscope transistor base collector emitter amplification switch semiconductor diode transistor rectifier thermistor photoresistor doping"
+    },
+    "magnetism": {
+      "title": "Magnetic field and the Ampère force",
+      "description": "Field of a permanent magnet, a current-carrying conductor and a coil: field lines, iron filings, compasses. Oersted's experiment, Earth's magnetic field, parallel currents, Ampère force, a conductor on rails, a current-carrying loop and the electric motor.",
+      "params": [
+        "Magnet, current, coil, compass (drag)",
+        "Field lines / filings / compasses",
+        "Ampère force: I, B, l, α",
+        "Loop: N, B, I, S, commutator"
+      ],
+      "keywords": "magnetic field permanent magnet field lines compass iron filings oersted current field right-hand screw rule solenoid coil electromagnet earth's magnetic field magnetic induction ampere force left-hand rule parallel currents current-carrying loop torque electric motor commutator magnetic field ampere force motor"
+    },
+    "induction": {
+      "title": "Electromagnetic induction",
+      "description": "Faraday's experiment: a magnet passes through a coil, galvanometer and Lenz's law, graphs of magnetic flux and EMF. AC and DC generators. Self-induction: lamp experiment, inductance and energy of the magnetic field.",
+      "params": [
+        "Magnet speed, number of turns, R",
+        "Drag by hand or automatic",
+        "Generator: n, B, N, S, commutator",
+        "Self-induction: ε, L, R, iron core"
+      ],
+      "keywords": "electromagnetic induction faraday's law lenz's law magnetic flux induced emf galvanometer generator alternating current commutator slip rings self-induction inductance energy of magnetic field electromagnetic induction faraday lenz generator self-induction"
+    },
+    "lc": {
+      "title": "Electromagnetic oscillations and alternating current",
+      "description": "LC circuit: turn the switch to charge the capacitor, free and damped oscillations, energy exchange, analogy with a spring pendulum, Thomson's formula. R, C, L and the phasor diagram in an AC circuit. RLC resonance: radio tuning, lab.",
+      "params": [
+        "LC: L, C, R, ε, switch",
+        "AC: R, C, L, RLC, frequency",
+        "Resonance: f, variable C, L, R",
+        "Lab: I(f) curve"
+      ],
+      "keywords": "electromagnetic oscillations lc circuit oscillating circuit thomson's formula damped oscillation aperiodic alternating current resistance capacitive reactance inductive reactance impedance phase shift phasor diagram rlc resonance quality factor power cos phi radio lc circuit ac resonance"
+    },
+    "emwaves": {
+      "title": "Electromagnetic waves and radio communication",
+      "description": "An EM wave radiated by a vibrator: E and B fields, λ = c/ν, v = c/n in a medium; the EM spectrum from radio waves to gamma radiation. Hertz's experiments: reflection, refraction, polarisation. Radio communication: AM and FM modulation, receiving circuit, detector, tuning to a station.",
+      "params": [
+        "Frequency ν (10⁴–10²¹ Hz) and medium",
+        "Measurement point (drag in the scene)",
+        "Angle of incidence α, refractive index n",
+        "Receiving vibrator angle φ",
+        "AM/FM, audio frequency, receiver C and Q"
+      ],
+      "keywords": "electromagnetic wave electromagnetic waves EM wave maxwell hertz vibrator antenna electric field magnetic field speed of light wavelength frequency spectrum radio wave microwave infrared ultraviolet x-ray gamma reflection refraction polarisation radio communication radio modulation amplitude modulation frequency modulation AM FM carrier detector receiver oscillating circuit tuning television radar electromagnetic waves spectrum radio"
+    },
+    "lorentz": {
+      "title": "Charged particle in a magnetic field",
+      "description": "Lorentz force: a particle moves along a circle and a helix, the period does not depend on speed. Mass spectrometer: separating isotopes, velocity selector, measuring mass. Cyclotron: resonance and energy.",
+      "params": [
+        "Particle (e, p, α), v (drag the vector tip), B, α",
+        "Mass spectrometer: U, B, selector E (handles), ruler",
+        "Cyclotron: B, U₀, generator frequency (handle)"
+      ],
+      "keywords": "lorentz force lorentz force charged particle magnetic field circle radius period left-hand rule helix spiral mass spectrometer isotope velocity selector cyclotron accelerator resonance electron proton alpha"
+    },
+    "light": {
+      "title": "Rectilinear propagation of light",
+      "description": "Shadow and penumbra: point and extended source, two lamps, illuminance on a screen. Camera obscura: inverted image, aperture size and sharpness. Solar and lunar eclipses: total, annular, partial, eclipse seasons.",
+      "params": [
+        "Source, sphere, screen (drag)",
+        "Camera obscura: d, h, f, aperture",
+        "Moon's position, nodes",
+        "Distance to the Moon"
+      ],
+      "keywords": "rectilinear propagation of light shadow penumbra point source camera obscura pinhole camera solar eclipse lunar eclipse total annular partial node moon phases shadow penumbra pinhole camera eclipse"
+    },
+    "refraction-law": {
+      "title": "Reflection and refraction of light",
+      "description": "Snell's law and the law of reflection, Fresnel formulae, critical angle and total internal reflection. Glass slab, semicircular block, prism and optical fibre; lab: measuring the refractive index of glass. Plane, concave and convex mirrors, images in two mirrors.",
+      "params": [
+        "Angle of incidence, n₁, n₂",
+        "Slab, semicircular block, prism, fibre",
+        "Lab: unknown glass",
+        "Mirrors: plane, two, concave, convex"
+      ],
+      "keywords": "law of refraction of light law of reflection snell refractive index total internal reflection critical angle fresnel brewster slab semicircular block prism deviation optical fibre plane mirror concave mirror convex mirror number of images kaleidoscope refraction reflection mirror prism fiber"
+    },
+    "lens": {
+      "title": "Lenses and optical instruments",
+      "description": "Image construction with converging and diverging lenses: characteristic rays, the lens formula, catching an image on a screen and measuring optical power. Magnifier, microscope, telescope, camera, projector. The eye: accommodation, short- and long-sightedness, choosing spectacles.",
+      "params": [
+        "Lens type, F, d, h",
+        "Screen and measurements",
+        "Instruments: F₁, F₂, L",
+        "Eye defect, spectacles D"
+      ],
+      "keywords": "lens converging diverging lens formula focal length optical power dioptre image construction real virtual image magnification magnifier microscope telescope camera projector eye accommodation myopia hypermetropia short-sightedness long-sightedness spectacles lens optics microscope telescope eye glasses"
+    },
+    "diffraction": {
+      "title": "Interference and diffraction of light",
+      "description": "Young's experiment: two slits, fringe spacing Δy = λL/d, coloured fringes in white light. Diffraction by a single slit and a circular aperture, Airy rings. Diffraction grating, spectral orders; lab: measuring the wavelength of a laser.",
+      "params": [
+        "Wavelength or white light",
+        "Slits, screen (drag)",
+        "Grating: number of lines",
+        "Lab: unknown laser, marker"
+      ],
+      "keywords": "light interference diffraction young's experiment double slit coherent fringe wavelength slit circular aperture airy diffraction grating spectrum order laser interference diffraction double slit grating"
+    },
+    "dispersion": {
+      "title": "Dispersion, rainbow and polarisation",
+      "description": "Splitting of white light into a spectrum in a prism (real glasses n(λ)), Newton's experiments. Rainbow in a water droplet: primary and secondary rainbows. Polarisation: Malus's law (lab), the third polariser, Brewster's angle.",
+      "params": [
+        "Prism: material, A, α (drag)",
+        "Rainbow: ray height, 1/2 reflections",
+        "Polarisers: axes (rotate)",
+        "Brewster: α, n, analyser"
+      ],
+      "keywords": "dispersion prism spectrum white light newton refractive index wavelength rainbow droplet polarisation polaroid polariser analyser malus's law brewster's angle dispersion prism rainbow polarization malus brewster"
+    },
+    "photometry": {
+      "title": "Luminous flux, intensity and illuminance",
+      "description": "Photometric quantities: luminous flux (lm), luminous intensity (cd), illuminance (lx); the law E = I cos α / r², moving and tilting a surface. Lab work: optical bench, lamp and lux meter, subtracting the background, results table and the lamp's luminous intensity from a graph.",
+      "params": [
+        "Luminous intensity I, distance r, angle α, surface area S",
+        "Lamp type, distance (cart), photocell angle"
+      ],
+      "keywords": "photometry luminous flux luminous intensity illuminance lumen candela lux lux meter E=I cos a/r2 inverse square law cosine law incandescent lamp led lab work photometry illuminance luminous flux"
+    },
+    "nuclear": {
+      "title": "Nuclear physics: decay, binding energy, chain reaction",
+      "description": "Radioactive decay: a sample of 100–1600 nuclei, N(t) and activity graphs, measuring the half-life, radiocarbon dating. Building a nucleus from protons and neutrons: binding energy, mass defect, stability, the E_b/A curve, fusion and fission energy. Chain reaction: enrichment, critical mass, control rods, the k factor.",
+      "params": [
+        "Isotope (¹⁴C, ²²²Rn, ¹³¹I, ⁶⁰Co, ²²⁶Ra, ²³⁸U, ³H, ²¹⁰Po, ⁹⁹ᵐTc) and number of nuclei",
+        "Nucleus: Z and N (drag nucleons)",
+        "Reaction: D + T, D + D, ²³⁵U fission",
+        "Chain reaction: enrichment, zone size, rods (drag)"
+      ],
+      "keywords": "nuclear physics radioactivity radioactive decay law half-life alpha beta gamma decay activity radiocarbon carbon-14 isotope binding energy mass defect binding energy per nucleon nuclear forces nucleon proton neutron thermonuclear fusion fission uranium chain reaction critical mass reactor control rods multiplication factor atomic bomb nuclear decay half-life binding energy mass defect fission fusion chain reaction"
+    },
+    "rutherford": {
+      "title": "Rutherford experiment (lab work)",
+      "description": "Virtual lab work: scattering of α-particles by a thin foil. Rotate the detector and measure N(θ) (Poisson statistics), enter the results in the notebook: K = n·sin⁴(θ/2), the slope of the linear fit, the nuclear charge Z and the nuclear size are calculated. The lab sheet can be downloaded as a PDF.",
+      "params": [
+        "Foil: Au, Ag, Cu, Al and thickness",
+        "Source: Am-241, Po-210, Ra-C′",
+        "Detector angle θ (drag), counting time, speed-up",
+        "Vacuum pump and pressure",
+        "Near the nucleus: impact parameter b",
+        "Lab notebook and PDF lab sheet"
+      ],
+      "keywords": "rutherford rutherford experiment alpha particle scattering gold foil atomic nucleus nuclear model planetary model thomson geiger marsden coulomb scattering cross-section impact parameter nuclear charge lab work lab sheet pdf atomic physics"
+    },
+    "bohr": {
+      "title": "Testing Bohr's postulates (lab work)",
+      "description": "Virtual lab work: the Franck–Hertz experiment (mercury, neon), the first excitation energy from the anode current maxima; the Balmer series of hydrogen, wavelengths and the Rydberg constant in a spectrometer with a diffraction grating. Results are entered in the notebook, and a LaTeX-style report is downloaded as a PDF.",
+      "params": [
+        "Franck–Hertz: gas (Hg/Ne), accelerating U (handle, ±buttons, scan), furnace temperature, retarding Uᵣ",
+        "Recorder I(U) graph and cursor",
+        "Spectrometer: grating 300/600 lines/mm, telescope angle (0.01°), eyepiece",
+        "Energy level diagram: hν = Eₙ − E₂",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "bohr postulates bohr model stationary states frequency rule frank hertz franck hertz mercury neon excitation energy hydrogen spectrum balmer series rydberg constant diffraction grating spectrometer goniometer energy levels ionisation energy lab work lab sheet pdf latex atomic physics"
+    },
+    "laser": {
+      "title": "Laser",
+      "description": "Absorption, spontaneous and stimulated emission: energy levels of the ruby atom, the resonance condition hν = E₂ − E₁, the metastable level and pumping. Laser design: ruby and helium–neon lasers, population inversion, resonator mirrors, lasing threshold and the laser beam.",
+      "params": [
+        "Photon wavelength λ",
+        "Laser type, pump power, reflectivity of the output mirror"
+      ],
+      "keywords": "laser stimulated emission induced emission spontaneous emission absorption population inversion metastable level pump resonator ruby laser helium neon coherent monochromatic laser stimulated emission"
+    },
+    "davisson-germer": {
+      "title": "Electron diffraction: the Davisson–Germer experiment (lab work)",
+      "description": "Virtual lab work: testing the de Broglie hypothesis. The Davisson–Germer apparatus: nickel crystal, rotating collector, polar diagram and I(φ); diffraction rings in a graphite film and vernier callipers. λ = d·sinφ and λ = h/√(2meU) are compared, Planck's constant is found; a LaTeX-style report as a PDF.",
+      "params": [
+        "Davisson–Germer: accelerating U (handle), collector angle φ (drag, 0.1°), auto-rotate",
+        "Polar diagram and I(φ), a separate curve for each U",
+        "Graphite tube: U = 2.5…5 kV, rings, vernier callipers (0.1 mm)",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "davisson germer electron diffraction de broglie wavelength wave-particle duality nickel crystal graphite rings debye scherrer bragg planck constant lab work lab sheet pdf latex atomic physics quantum"
+    },
+    "photoeffect": {
+      "title": "Photoelectric effect: determining Planck's constant (lab work)",
+      "description": "Virtual lab work: the external photoelectric effect. A mercury lamp and a filter wheel, diaphragm, vacuum photocell and nanoammeter. Record the current–voltage characteristic, find the stopping voltage: from Einstein's equation, Planck's constant, work function and red limit; Stoletov's law. A LaTeX-style report as a PDF.",
+      "params": [
+        "Filter: 365, 405, 436, 546, 577 nm (click in the scene)",
+        "Diaphragm Φ = 20…100 %, cathode: Cs, K, Na",
+        "Anode voltage U (handle, ±1/±0.1/±0.01 V), auto scan",
+        "I(U) graph, ×20/×200 zoom near zero, cursor",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "photoelectric effect external photoelectric effect einstein's equation planck constant stopping voltage work function red limit threshold frequency stoletov's law photocell current-voltage characteristic mercury lamp millikan h/e lab work lab sheet pdf latex quantum physics"
+    },
+    "led-planck": {
+      "title": "Determining Planck's constant with LEDs (lab work)",
+      "description": "Virtual lab work: the current–voltage characteristic and threshold voltage of 7 different light-emitting diodes, measuring the emission wavelength in a spectrometer with a diffraction grating. Planck's constant from eU₀ ≈ hc/λ; a LaTeX-style report as a PDF.",
+      "params": [
+        "Diodes: IR 940, 630, 610, 590, 525, 470, 405 nm",
+        "Source E (0…6 V), R = 150 Ω, voltmeter 0.001 V, milliammeter",
+        "I(U) graph, auto scan",
+        "Spectrometer: 600 lines/mm, eyepiece and sight, φ (0.05°)",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "led light-emitting diode planck constant threshold voltage p-n junction band gap current-voltage characteristic diffraction grating spectrometer wavelength lab work lab sheet pdf latex quantum physics"
+    },
+    "thomson-em": {
+      "title": "Specific charge of the electron e/m (lab work)",
+      "description": "Virtual lab work: a fine-beam tube and Helmholtz coils. Bring the beam circle to the dot marks and find e/m from U and I; compensate the Earth's magnetic field by turning the apparatus through 180° and calculate the electron mass. A LaTeX-style report as a PDF.",
+      "params": [
+        "Accelerating voltage U = 100…300 V",
+        "Coil current I (0.001 A), current direction",
+        "Apparatus position 0° / 180° (Earth's field)",
+        "Marks d = 4, 6, 8, 10 cm, magnifier",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "thomson e/m specific charge of the electron helmholtz coils fine beam tube lorentz force magnetic field electron mass earth's magnetic field lab work lab sheet pdf latex quantum physics"
+    },
+    "millikan": {
+      "title": "Millikan experiment: elementary charge (lab work)",
+      "description": "Virtual lab work: oil droplets in a microscope with Brownian motion, capacitor voltage and field switch, stopwatch. From the fall and rise times (or the balancing voltage): droplet charge, quantisation of charge and the elementary charge e. A LaTeX-style report as a PDF.",
+      "params": [
+        "Voltage U = 0…600 V, field ↑ / off / ↓",
+        "Choosing a droplet, atomiser, ionisation",
+        "Stopwatch (Space), time speed ×1/×2/×4",
+        "Dynamic and balance methods",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "millikan experiment oil droplet elementary charge charge quantisation stokes' law cunningham correction brownian motion capacitor lab work lab sheet pdf latex quantum physics"
+    },
+    "relativity": {
+      "title": "Special relativity",
+      "description": "Light clock: a moving clock runs slow (Δt = γΔt₀), a rocket contracts along its direction of motion (L = L₀/γ). Muon experiment (Frisch–Smith): classically expected and actual flux, counters. Relativistic addition of velocities: a projectile fired from a train, and light. Dependence of mass on speed, E = mc², the Bertozzi experiment: accelerator, 8.4 m flight time, oscilloscope and measurement table.",
+      "params": [
+        "Rocket or muon speed v (drag the speedometer needle in the scene)",
+        "Train speed v and projectile speed u′ (two speedometers, u′ = c is light)",
+        "Particle (electron/proton) and kinetic energy K = eU (accelerator handle), \"Measure\""
+      ],
+      "keywords": "special relativity einstein postulates speed of light lorentz factor gamma time dilation length contraction light clock twin paradox muon muons frisch smith velocity addition relativistic mass dependence of mass on speed E=mc2 E = mc² rest energy kinetic energy bertozzi accelerator relativity time dilation length contraction velocity addition"
+    },
+    "blackbody": {
+      "title": "Blackbody radiation: Wien and Stefan–Boltzmann (lab work)",
+      "description": "Virtual lab work: a blackbody model (furnace) at 800…3000 K, a prism monochromator and bolometer: record the spectra and find the Wien constant; check the Stefan–Boltzmann law with a radiometer. Planck and Boltzmann constants from b and σ. A LaTeX-style report as a PDF.",
+      "params": [
+        "Heater temperature T (thermal inertia), optical pyrometer",
+        "Monochromator λ = 0.3…6 μm, auto scan",
+        "Spectra graph (absolute / normalised), cursor",
+        "Radiometer E, ln E – ln T graph",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "blackbody radiation black body planck's formula wien displacement law stefan boltzmann law spectrum monochromator radiometer bolometer pyrometer planck constant boltzmann constant lab work lab sheet pdf latex quantum physics"
+    },
+    "compton": {
+      "title": "Compton effect (lab work)",
+      "description": "Virtual lab work: a ¹³⁷Cs source, an aluminium scatterer, a rotating NaI(Tl) detector and a 1024-channel analyser. First calibrate with Am-241, Ba-133, Na-22, Cs-137, then measure the energy of scattered γ-quanta against angle: mₑc², E₀ and the Compton wavelength. A LaTeX-style report as a PDF.",
+      "params": [
+        "Calibration sources: Am-241, Ba-133, Na-22, Cs-137",
+        "Detector angle θ = 0…150° (drag, 0.5°), scatterer in/out",
+        "Spectrum acquisition (Poisson statistics), time ×1/×10/×100",
+        "MCA spectrum lin/log, ROI: centroid, net counts, FWHM",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "compton effect compton scattering gamma radiation photon electron scattering angle nai scintillation detector multichannel analyser spectrum calibration caesium 137 compton wavelength electron mass klein nishina lab work lab sheet pdf latex quantum physics"
+    },
+    "wilson": {
+      "title": "Cloud chamber: particle tracks (lab work)",
+      "description": "Virtual lab work: expand a Wilson cloud chamber and photograph the tracks of α- and β-particles and cosmic muons. Energy from the length of α-tracks by Geiger's law (discrete groups), momentum, energy and charge sign from the radius of curvature of β-tracks in a magnetic field. A LaTeX-style report as a PDF.",
+      "params": [
+        "Sources: Po-210, Am-241, Th-228 (α), Sr-90 (β⁻), Na-22 (β⁺)",
+        "Magnetic field B = 0…0.3 T, ⊙/⊗",
+        "Expansion and photographing",
+        "Measuring: ruler, circle through 3 points, magnifier ×4",
+        "Lab notebook, PDF and LaTeX report"
+      ],
+      "keywords": "wilson cloud chamber fog chamber particle tracks alpha particle beta particle positron muon range geiger's law magnetic field lorentz force radius of curvature momentum sign of charge radioactivity lab work lab sheet pdf latex quantum physics"
+    },
+    "lab-ortacha-tezlik": {
+      "title": "Average speed of non-uniform motion",
+      "description": "A ball rolling down an inclined chute, photosensors and an electronic stopwatch. Measure distance and time, and calculate the average speed over sections of the path and over the whole path.",
+      "params": [
+        "Chute slope h = 10/15/20 cm",
+        "Photosensor positions (drag)",
+        "Electronic stopwatch"
+      ],
+      "keywords": "average speed non-uniform motion distance time ball inclined chute photosensor stopwatch acceleration lab work virtual laboratory grade 7",
+      "formula": "v = s / t"
+    },
+    "lab-zichlik": {
+      "title": "Determining the density of bodies",
+      "description": "Measure mass with a beam balance and weights and volume with a measuring cylinder, then determine the density and the material of the body.",
+      "params": [
+        "Five bodies (material unknown)",
+        "Beam balance and weights",
+        "Measuring cylinder (with water)"
+      ],
+      "keywords": "density mass volume balance weights measuring cylinder substance table lab work virtual laboratory grade 7",
+      "formula": "ρ = m / V"
+    },
+    "lab-om-qonuni": {
+      "title": "Measuring current and voltage. Ohm's law",
+      "description": "Assemble a circuit, measure current and voltage with an ammeter and voltmeter, plot I(U), determine the resistance and verify Ohm's law.",
+      "params": [
+        "Resistor, rheostat, source",
+        "Ammeter and voltmeter",
+        "I(U) graph"
+      ],
+      "keywords": "ohm's law current voltage resistance ammeter voltmeter circuit assembly rheostat lab work virtual laboratory grade 7 grade 8",
+      "formula": "I = U / R"
+    },
+    "lab-ketma-ket-parallel": {
+      "title": "Connecting conductors in series and in parallel",
+      "description": "Connect two resistors in series and in parallel, measure the currents and voltages, and verify the formulae for total resistance.",
+      "params": [
+        "Two resistors: series / parallel",
+        "Ammeter and voltmeters"
+      ],
+      "keywords": "series parallel connection total resistance resistor current voltage lab work virtual laboratory grade 8",
+      "formula": "R = R₁ + R₂"
+    },
+    "lab-lampochka-quvvati": {
+      "title": "Determining the power of a lamp",
+      "description": "Measure the voltage and current in an incandescent lamp, calculate its power and resistance, and compare with the rated power.",
+      "params": [
+        "Incandescent lamp, rheostat",
+        "Ammeter and voltmeter"
+      ],
+      "keywords": "lamp power electric power voltage current rated power resistance lab work virtual laboratory grade 8",
+      "formula": "P = U·I"
+    },
+    "lab-issiqlik-sigimi": {
+      "title": "Comparing quantities of heat. Specific heat capacity",
+      "description": "Mix hot and cold water in a calorimeter to check the heat balance, and determine the specific heat capacity of a substance with a heated metal cylinder.",
+      "params": [
+        "Masses of hot and cold water",
+        "Metal cylinders: Al, Fe, brass, Cu",
+        "Calorimeter and thermometer"
+      ],
+      "keywords": "specific heat capacity quantity of heat heat balance calorimeter mixing metal cylinder lab work virtual laboratory grade 9",
+      "formula": "Q = cmΔt"
+    },
+    "lab-sirt-taranglik": {
+      "title": "Determining the surface tension coefficient of a liquid",
+      "description": "Drop method: count the drops falling from a burette, measure their mass on a balance and find the surface tension coefficient.",
+      "params": [
+        "Burette tip diameter",
+        "Number of drops N = 50/100",
+        "Electronic balance"
+      ],
+      "keywords": "surface tension coefficient drop method burette drop mass lab work virtual laboratory grade 9",
+      "formula": "σ = mg / (πdN)"
+    },
+    "lab-namlik": {
+      "title": "Determining the relative humidity of air",
+      "description": "Determine the relative humidity of air with a psychrometer (dry and wet bulb thermometers) and psychrometric table, and by the dew point method.",
+      "params": [
+        "Psychrometer: dry and wet bulb thermometers",
+        "Dew point method",
+        "Psychrometric table"
+      ],
+      "keywords": "relative humidity psychrometer wet bulb dew point saturated vapour pressure lab work virtual laboratory grade 9",
+      "formula": "φ = p / p₀ · 100 %"
+    },
+    "lab-sindirish": {
+      "title": "Determining the refractive index of glass",
+      "description": "A ray strikes a glass slab; measure the angles of incidence and refraction with a protractor and determine the refractive index of the glass.",
+      "params": [
+        "Slab: glass, acrylic, water",
+        "Angle of incidence α",
+        "Protractor and magnifier"
+      ],
+      "keywords": "refractive index law of refraction glass slab angle of incidence angle of refraction lab work virtual laboratory grade 9",
+      "formula": "n = sin α / sin β"
+    },
+    "lab-linza": {
+      "title": "Focal length and optical power of a converging lens",
+      "description": "An object, lens and screen on an optical bench: form a sharp image, measure d and f, and calculate the focal length and optical power.",
+      "params": [
+        "Lens: F ≈ 10/15/20 cm",
+        "Optical bench: object, lens, screen"
+      ],
+      "keywords": "lens focal length optical power dioptre image optical bench lab work virtual laboratory grade 9",
+      "formula": "1/F = 1/d + 1/f"
+    },
+    "lab-qiya-tekislik": {
+      "title": "Efficiency of an inclined plane",
+      "description": "Pull a block up an inclined plane at constant speed with a force meter, calculate the useful and total work, and study how efficiency depends on the slope.",
+      "params": [
+        "Inclined plane height h",
+        "Force meter",
+        "Block"
+      ],
+      "keywords": "inclined plane efficiency force meter useful work total work lab work virtual laboratory grade 10",
+      "formula": "η = Ph / (Fl)"
+    },
+    "lab-mayatnik": {
+      "title": "Determining free-fall acceleration with a simple pendulum",
+      "description": "Vary the string length and time N oscillations with a stopwatch; find the free-fall acceleration g from the T²(l) graph.",
+      "params": [
+        "String length l",
+        "Stopwatch (manual or N = 10/20)",
+        "Time speed 1×/5×"
+      ],
+      "keywords": "simple pendulum free-fall acceleration g period of oscillation stopwatch lab work virtual laboratory grade 10",
+      "formula": "T = 2π√(l/g)"
+    },
+    "lab-eyuk": {
+      "title": "Determining the EMF and internal resistance of a current source",
+      "description": "Vary the current with a rheostat and measure the voltage across the source terminals; find the EMF and internal resistance from the U(I) graph.",
+      "params": [
+        "Rheostat",
+        "Ammeter and voltmeter",
+        "U(I) graph"
+      ],
+      "keywords": "emf electromotive force internal resistance current source rheostat short circuit lab work virtual laboratory grade 10",
+      "formula": "U = ε − Ir"
+    },
+    "lab-diod": {
+      "title": "Current–voltage characteristic of a semiconductor diode",
+      "description": "Connect the diode in forward and reverse directions, measure its current–voltage characteristic, and find the turn-on voltage and dynamic resistance.",
+      "params": [
+        "Diode: silicon, germanium, LED",
+        "Forward / reverse connection",
+        "I(U) graph"
+      ],
+      "keywords": "diode current-voltage characteristic I-V characteristic semiconductor p-n junction turn-on voltage lab work virtual laboratory grade 10",
+      "formula": "I = f(U)"
+    },
+    "lab-rezonans": {
+      "title": "Resonance in an AC circuit",
+      "description": "In a series RLC circuit, vary the generator frequency and measure the current, find the resonant frequency and calculate the inductance of the coil.",
+      "params": [
+        "Capacitor: 0.47/1/2.2 μF",
+        "Generator frequency f",
+        "Ammeter"
+      ],
+      "keywords": "resonance alternating current rlc circuit inductance capacitance frequency quality factor lab work virtual laboratory grade 11",
+      "formula": "f₀ = 1 / (2π√(LC))"
+    },
+    "lab-difraksion-panjara": {
+      "title": "Determining the wavelength of light with a diffraction grating",
+      "description": "A laser and a diffraction grating: measure the distance between the maxima on the screen and determine the wavelength of light.",
+      "params": [
+        "Laser: red, green, yellow",
+        "Grating: 50/100/200 lines/mm",
+        "Screen distance L"
+      ],
+      "keywords": "diffraction grating wavelength laser maximum period diffraction lab work virtual laboratory grade 11",
+      "formula": "d sin φ = kλ"
+    },
+    "lab-yoritilganlik": {
+      "title": "Dependence of illuminance on distance and angle of incidence",
+      "description": "A lamp and lux meter on an optical bench: measure illuminance against distance and angle, and find the luminous intensity of the lamp.",
+      "params": [
+        "Lamp type",
+        "Distance r and angle α",
+        "Lux meter"
+      ],
+      "keywords": "illuminance luminous intensity lux meter inverse square law angle of incidence cosine lab work virtual laboratory grade 11",
+      "formula": "E = I cos α / r²"
+    }
+  }
+}

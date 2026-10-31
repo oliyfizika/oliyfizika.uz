@@ -1,17 +1,18 @@
 // Formula jadvali: rasm sahifalar (kattalashtirish bilan) va/yoki matnli formula kartalari.
 import { h, clear } from "./dom.js";
+import { t } from "../../../assets/js/core/i18n.js";
 
 export function initFormulaSheet(root, sheet, resolveUrl) {
   const pages = sheet?.pages || [];
   const cards = sheet?.cards || [];
   clear(root);
   if (!pages.length && !cards.length) {
-    root.append(h("p", { class: "muted" }, "Bu test uchun formula jadvali mavjud emas."));
+    root.append(h("p", { class: "muted" }, t("ms.f.none", "Bu test uchun formula jadvali mavjud emas.")));
     return;
   }
 
   const pagesView = h("div", { class: "formula-pages" },
-    pages.map((src, i) => h("img", { class: "formula-img", src: resolveUrl(src), alt: `Formula jadvali — ${i + 1}-sahifa`, loading: "lazy", decoding: "async" })));
+    pages.map((src, i) => h("img", { class: "formula-img", src: resolveUrl(src), alt: t("ms.f.page", `Formula jadvali — ${i + 1}-sahifa`, { n: i + 1 }), loading: "lazy", decoding: "async" })));
 
   const cardsView = h("div", { class: "formula-grid" },
     cards.map((group) => h("div", { class: "formula-card" },
@@ -22,13 +23,13 @@ export function initFormulaSheet(root, sheet, resolveUrl) {
   const zoomBtn = h("button", { type: "button", class: "btn btn-ghost btn-sm", onclick: () => {
     zoomed = !zoomed;
     pagesView.classList.toggle("zoomed", zoomed);
-    zoomBtn.textContent = zoomed ? "↙ Moslashtirish" : "🔎 Kattalashtirish";
-  } }, "🔎 Kattalashtirish");
+    zoomBtn.textContent = zoomed ? t("ms.f.zoomOut", "↙ Moslashtirish") : t("ms.f.zoomIn", "🔎 Kattalashtirish");
+  } }, t("ms.f.zoomIn", "🔎 Kattalashtirish"));
 
   const toolbar = h("div", { class: "formula-toolbar" });
   const views = [];
-  if (pages.length) views.push({ label: "📄 Formula jadvali", el: pagesView, tools: [zoomBtn] });
-  if (cards.length) views.push({ label: "🧾 Qisqa formulalar", el: cardsView, tools: [] });
+  if (pages.length) views.push({ label: t("ms.f.tabPages", "📄 Formula jadvali"), el: pagesView, tools: [zoomBtn] });
+  if (cards.length) views.push({ label: t("ms.f.tabCards", "🧾 Qisqa formulalar"), el: cardsView, tools: [] });
 
   const tabs = views.map((v, i) => h("button", { type: "button", class: "tab", role: "tab", "aria-selected": String(i === 0), onclick: () => select(i) }, v.label));
   const toolSlot = h("div", { class: "formula-tools" });

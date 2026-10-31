@@ -1,6 +1,7 @@
 // Attestatsiya → Fizika: kichik UI yordamchilari (umumiy 2.0 ikonlari + bo'limga xos bir nechta ikon).
 import { icon } from "../ui/icons.js";
 import { onSession } from "../core/session.js";
+import { t } from "../core/i18n.js";
 
 // Umumiy icons.js o'zgartirilmaydi — qo'shimcha ikonlar shu yerda, bir xil uslubda (24px, stroke 1.8).
 const EXTRA = {
@@ -43,20 +44,20 @@ export function stateHtml(iconName, title, text = "", actionHtml = "") {
 
 export function errorMessage(e) {
   const code = e?.code || "";
-  if (code.includes("permission-denied")) return "Bu ma’lumotga ruxsat yo‘q (test hali e’lon qilinmagan yoki muddati o‘tgan bo‘lishi mumkin).";
-  if (code.includes("unavailable") || code.includes("network")) return "Internet aloqasini tekshirib, sahifani yangilang.";
-  return "Ma’lumotni yuklab bo‘lmadi. Iltimos, qayta urinib ko‘ring.";
+  if (code.includes("permission-denied")) return t("att.ui.errDenied", "Bu ma’lumotga ruxsat yo‘q (test hali e’lon qilinmagan yoki muddati o‘tgan bo‘lishi mumkin).");
+  if (code.includes("unavailable") || code.includes("network")) return t("att.ui.errNetwork", "Internet aloqasini tekshirib, sahifani yangilang.");
+  return t("att.ui.errLoad", "Ma’lumotni yuklab bo‘lmadi. Iltimos, qayta urinib ko‘ring.");
 }
 
 /** Fizika bo'limi ichki navigatsiyasi (tablar) */
 export function tabsHtml(active) {
   const tabs = [
-    ["fizikaattestatsiya.html", "home", "Bosh sahifa", "home"],
-    ["fizikaattestatsiya.html#kunlik", "calendar", "Kunlik topshiriqlar", "days"],
-    ["fizika-yechimlar.html", "book", "Yechimlar", "solutions"],
-    ["fizika-natijalar.html", "chart", "Natijalar va statistika", "results"],
+    ["fizikaattestatsiya.html", "home", t("att.ui.tabHome", "Bosh sahifa"), "home"],
+    ["fizikaattestatsiya.html#kunlik", "calendar", t("att.ui.tabDays", "Kunlik topshiriqlar"), "days"],
+    ["fizika-yechimlar.html", "book", t("att.ui.tabSolutions", "Yechimlar"), "solutions"],
+    ["fizika-natijalar.html", "chart", t("att.ui.tabResults", "Natijalar va statistika"), "results"],
   ];
-  return `<nav class="att-tabs" aria-label="Attestatsiya — Fizika bo‘limlari">${tabs
+  return `<nav class="att-tabs" aria-label="${t("att.ui.tabsAria", "Attestatsiya — Fizika bo‘limlari")}">${tabs
     .map(([href, i, label, id]) => `<a href="${href}"${id === active ? ' aria-current="page"' : ""}>${ic(i)}<span>${label}</span></a>`)
     .join("")}</nav>`;
 }

@@ -17,6 +17,8 @@ import { CATALOG_URL } from "../../../milliy-sertifikat/mock-testlar/js/config.j
 import { checkMockAccess } from "../../../milliy-sertifikat/mock-testlar/js/access-gate.js";
 import { loadState } from "../../../milliy-sertifikat/mock-testlar/js/storage.js";
 import { itemCount, countFilledItems } from "../../../milliy-sertifikat/mock-testlar/js/scoring.js";
+import { fetchOverlay, applyOverlay } from "../../../milliy-sertifikat/mock-testlar/js/i18n-content.js";
+import { t } from "../core/i18n.js";
 
 const BASE = new URL("../../../milliy-sertifikat/mock-testlar/", import.meta.url);
 const resolve = (p) => new URL(p, BASE).href;
@@ -32,12 +34,12 @@ function attemptStatus(test) {
   if (!state.uid) return null;
   const saved = loadState(test.id, state.uid);
   if (!saved || !saved.attemptId) return null;
-  if (saved.submitted) return { kind: "done", label: "Yakunlangan" };
+  if (saved.submitted) return { kind: "done", label: t("ms.card.done", "Yakunlangan") };
   if (Date.now() < saved.deadlineTs) {
     const n = countFilledItems(test.questions, saved.answers || {});
-    return { kind: "progress", label: `Davom etmoqda • ${n}/${itemCount(test.questions)}` };
+    return { kind: "progress", label: t("ms.card.progress", `Davom etmoqda • ${n}/${itemCount(test.questions)}`, { a: n, b: itemCount(test.questions) }) };
   }
-  return { kind: "expired", label: "Vaqti tugagan" };
+  return { kind: "expired", label: t("ms.card.expired", "Vaqti tugagan") };
 }
 
 function card(test) {
@@ -47,25 +49,25 @@ function card(test) {
   const st = attemptStatus(test);
   const href = `test.html?id=${encodeURIComponent(test.id)}`;
   const saved = state.uid ? loadState(test.id, state.uid) : null;
-  const label = !state.uid ? "Kirish va boshlash"
-    : saved && saved.attemptId && !saved.submitted ? "Davom ettirish"
-      : saved?.submitted ? "Natijani ko‘rish" : "Testni boshlash";
+  const label = !state.uid ? t("ms.card.login", "Kirish va boshlash")
+    : saved && saved.attemptId && !saved.submitted ? t("ms.card.resume", "Davom ettirish")
+      : saved?.submitted ? t("ms.card.result", "Natijani ko‘rish") : t("ms.card.start", "Testni boshlash");
   const tone = st?.kind === "done" ? "green" : st?.kind === "progress" ? "blue" : "orange";
   const search = [test.title, `mock test ${test.number}`, test.number, test.sourceVariant, test.subtitle].join(" ");
   return `
     <li data-search-text="${esc(search)}">
       <article class="of-card of-mock" aria-labelledby="mock-${esc(test.id)}">
         <div class="of-mock__top">
-          <span class="of-mock__num">Mock test №${esc(test.number)}</span>
+          <span class="of-mock__num">${esc(t("ms.card.num", `Mock test №${test.number}`, { n: test.number }))}</span>
           ${st ? `<span class="of-badge of-badge--${tone}">${esc(st.label)}</span>` : ""}
         </div>
         <h3 class="of-mock__title" id="mock-${esc(test.id)}">${esc(test.title)}</h3>
         ${test.sourceVariant ? `<p class="of-mock__variant">${esc(test.sourceVariant)}</p>` : ""}
-        <ul class="of-mock__meta" aria-label="Test tarkibi">
-          <li><b>${total}</b> ta savol</li>
-          <li><b>${esc(test.durationMinutes)}</b> daqiqa</li>
-          <li><b>${mcq} + ${total - mcq}</b> test / ochiq</li>
-          <li><b>${bands}</b> ta band</li>
+        <ul class="of-mock__meta" aria-label="${esc(t("ms.card.meta", "Test tarkibi"))}">
+          <li>${t("ms.card.questions", `<b>${total}</b> ta savol`, { n: total })}</li>
+          <li>${t("ms.card.minutes", `<b>${esc(test.durationMinutes)}</b> daqiqa`, { n: esc(test.durationMinutes) })}</li>
+          <li>${t("ms.card.kinds", `<b>${mcq} + ${total - mcq}</b> test / ochiq`, { a: mcq, b: total - mcq })}</li>
+          <li>${t("ms.card.bands", `<b>${bands}</b> ta band`, { n: bands })}</li>
         </ul>
         <a class="of-btn ${st?.kind === "done" ? "of-btn--soft" : "of-btn--primary"} of-mock__cta" href="${esc(href)}" data-mock-start
            aria-label="${esc(`${label}: ${test.title}`)}">${esc(label)} ${icon("arrowRight")}</a>
@@ -81,7 +83,7 @@ function applyFilter() {
     if (ok) visible++;
   });
   const total = state.tests.length;
-  $("[data-mock-count]").textContent = visible === total ? `${total} ta test` : `${visible} / ${total} ta test`;
+  $("[data-mock-count]").textContent = visible === total ? t("ms.cat.count", `${total} ta test`, { n: total }) : t("ms.cat.countOf", `${visible} / ${total} ta test`, { a: visible, b: total });
   let note = $("[data-mock-list] + .of-search-empty");
   if (!visible) {
     if (!note) {
@@ -90,15 +92,15 @@ function applyFilter() {
       note.setAttribute("role", "status");
       $("[data-mock-list]").after(note);
     }
-    note.textContent = "Qidiruv bo‘yicha mock test topilmadi.";
+    note.textContent = t("ms.cat.empty", "Qidiruv bo‘yicha mock test topilmadi.");
   } else note?.remove();
   return visible;
 }
 
 function setupSearch() {
   const apply = () => window.OFShell?.setSearch({
-    placeholder: "Mock testni qidirish…",
-    label: "Mock testlar bo‘yicha qidirish",
+    placeholder: t("ms.cat.placeholder", "Mock testni qidirish…"),
+    label: t("ms.cat.searchLabel", "Mock testlar bo‘yicha qidirish"),
     onQuery: (q) => { state.query = norm(q); return state.tests.length ? applyFilter() : 0; },
   });
   if (window.OFShell) apply();
@@ -118,13 +120,13 @@ async function init() {
   const hint = $("[data-user-hint]");
   if (access.allowed) {
     state.uid = access.session.uid;
-    hint.textContent = `Siz ${access.session.name} sifatida kirgansiz. Natijalar shu nom bilan saqlanadi.`;
+    hint.textContent = t("ms.cat.hintIn", `Siz ${access.session.name} sifatida kirgansiz. Natijalar shu nom bilan saqlanadi.`, { name: access.session.name });
     hint.hidden = false;
   } else if (access.reason === "login") {
-    hint.textContent = "Testni boshlash uchun saytdagi akkauntingiz bilan kiring — ism va familiya profilingizdan olinadi.";
+    hint.textContent = t("ms.cat.hintLogin", "Testni boshlash uchun saytdagi akkauntingiz bilan kiring — ism va familiya profilingizdan olinadi.");
     hint.hidden = false;
   } else {
-    showError(access.reason === "access" ? "Bu bo‘lim uchun sizda ruxsat mavjud emas." : "Ruxsatni tekshirib bo‘lmadi. Sahifani yangilang.");
+    showError(access.reason === "access" ? t("ms.cat.noAccess", "Bu bo‘lim uchun sizda ruxsat mavjud emas.") : t("ms.cat.accessFail", "Ruxsatni tekshirib bo‘lmadi. Sahifani yangilang."));
     return;
   }
 
@@ -133,16 +135,21 @@ async function init() {
       if (!r.ok) throw new Error(`Katalog yuklanmadi (${r.status})`);
       return r.json();
     });
-    const results = await Promise.allSettled(catalog.tests.map((entry) =>
-      fetch(resolve(entry.file), { cache: "no-cache" }).then((r) => {
-        if (!r.ok) throw new Error(`${entry.file}: ${r.status}`);
-        return r.json();
-      })));
+    const results = await Promise.allSettled(catalog.tests.map(async (entry) => {
+      const [test, overlay] = await Promise.all([
+        fetch(resolve(entry.file), { cache: "no-cache" }).then((r) => {
+          if (!r.ok) throw new Error(`${entry.file}: ${r.status}`);
+          return r.json();
+        }),
+        fetchOverlay(entry.file),
+      ]);
+      return applyOverlay(test, overlay);
+    }));
     results.filter((r) => r.status === "rejected").forEach((r) => console.error("Test yuklanmadi:", r.reason));
     state.tests = results.filter((r) => r.status === "fulfilled").map((r) => r.value).sort((a, b) => (a.number || 0) - (b.number || 0));
   } catch (error) {
     console.error("Mock testlar katalogini yuklab bo‘lmadi:", error);
-    showError("Testlarni yuklab bo‘lmadi. Sahifani yangilab ko‘ring.");
+    showError(t("ms.cat.loadFail", "Testlarni yuklab bo‘lmadi. Sahifani yangilab ko‘ring."));
     return;
   }
 

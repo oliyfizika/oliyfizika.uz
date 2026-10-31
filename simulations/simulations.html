@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simulyatsiyalar | OliyFizika.uz</title>
+<title data-i18n="sim.docTitle">Simulyatsiyalar | OliyFizika.uz</title>
 <meta name="description" content="Interaktiv fizik simulyatsiyalar: mexanika, molekulyar fizika va issiqlik, elektr va magnetizm, optika. Parametrlarni o‘zgartiring va jarayonni real vaqtda kuzating.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,20 +19,20 @@
   Kirish talabi avvalgidek: bo'limga kirish havolalari (sidebar, Bosh sahifa) himoyalangan,
   sahifaning o'zi va simulyatsiyalar to'g'ridan-to'g'ri havola bilan ochiladi.
 -->
-<body class="of-ui" data-shell-title="Simulyatsiyalar" data-shell-public="true">
+<body class="of-ui" data-i18n-title="sim.title" data-shell-title="Simulyatsiyalar" data-shell-public="true">
 <div class="of-page of-container of-cat of-cat--wide" id="simulationsPage">
   <header class="of-cat-head">
     <div>
-      <h1>Simulyatsiyalar</h1>
-      <p>Fizik jarayonlarni interaktiv tarzda kuzating: parametrlarni o‘zgartiring va natijani real vaqt rejimida tahlil qiling. Sinfni tanlasangiz — darslik mundarijasi bo‘yicha kerakli simulyatsiya bir bosishda ochiladi.</p>
+      <h1 data-i18n="sim.title">Simulyatsiyalar</h1>
+      <p data-i18n="sim.lead">Fizik jarayonlarni interaktiv tarzda kuzating: parametrlarni o‘zgartiring va natijani real vaqt rejimida tahlil qiling. Sinfni tanlasangiz — darslik mundarijasi bo‘yicha kerakli simulyatsiya bir bosishda ochiladi.</p>
     </div>
     <p class="of-cat-count" data-sim-count aria-live="polite"></p>
   </header>
 
   <section aria-labelledby="simListTitle">
-    <h2 class="of-sr-only" id="simListTitle">Simulyatsiyalar ro‘yxati</h2>
-    <div class="of-segment of-grades" data-grades role="group" aria-label="Sinf bo‘yicha: darslik mundarijasi"></div>
-    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash" style="margin-top:12px"></ul>
+    <h2 class="of-sr-only" id="simListTitle" data-i18n="sim.listTitle">Simulyatsiyalar ro‘yxati</h2>
+    <div class="of-segment of-grades" data-grades role="group" aria-label="Sinf bo‘yicha: darslik mundarijasi" data-i18n-attr="aria-label:sim.gradesAria"></div>
+    <ul class="of-chips" data-chips role="group" aria-label="Bo‘lim bo‘yicha saralash" data-i18n-attr="aria-label:sim.topicsAria" style="margin-top:12px"></ul>
     <ul class="of-sims" data-sims aria-busy="true" style="margin-top:12px">
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
       <li><div class="of-card of-sim-card"><span class="of-skeleton" style="height:112px;border-radius:0"></span><div class="of-sim-card__body"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></div></li>
