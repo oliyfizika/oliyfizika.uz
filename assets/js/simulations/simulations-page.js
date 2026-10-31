@@ -10,6 +10,8 @@
 import { icon } from "../ui/icons.js";
 import { revealOnScroll } from "../ui/reveal.js";
 import { ART } from "./sim-art.js";
+import { t, topicLabel } from "../core/i18n.js";
+import { localizeManifest, localizeCurriculum } from "./sim-i18n.js";
 
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -35,7 +37,7 @@ function card(sim, topics) {
           <span class="of-badge${sim.topic === "mexanika" ? " of-badge--blue" : sim.topic === "elektr" ? " of-badge--green" : sim.topic === "issiqlik" ? " of-badge--orange" : sim.topic === "atom" || sim.topic === "kvant" ? " of-badge--purple" : ""}">${esc(topic?.title || "")}</span>
           <h3 class="of-sim-card__title">${esc(sim.title)}</h3>
           <div class="of-sim-card__foot">
-            <a class="of-btn of-btn--soft" href="${esc(sim.href)}" aria-label="Boshlash: ${esc(sim.title)}">Boshlash ${icon("arrowRight")}</a>
+            <a class="of-btn of-btn--soft" href="${esc(sim.href)}" aria-label="${esc(t("sim.start", "Boshlash"))}: ${esc(sim.title)}">${esc(t("sim.start", "Boshlash"))} ${icon("arrowRight")}</a>
           </div>
         </div>
       </article>
@@ -46,7 +48,7 @@ function renderChips() {
   const counts = new Map();
   state.data.simulations.forEach((s) => counts.set(s.topic, (counts.get(s.topic) || 0) + 1));
   // Faqat simulyatsiyasi bor mavzular ko'rsatiladi
-  const chips = [{ id: "", title: "Barcha bo‘limlar", n: state.data.simulations.length }, ...state.data.topics.map((t) => ({ ...t, n: counts.get(t.id) || 0 }))]
+  const chips = [{ id: "", title: t("sim.allTopics", "Barcha bo‘limlar"), n: state.data.simulations.length }, ...state.data.topics.map((t) => ({ ...t, n: counts.get(t.id) || 0 }))]
     .filter((c) => c.n > 0);
   const box = $("[data-chips]");
   box.innerHTML = chips
@@ -73,14 +75,14 @@ function renderList() {
 
 function announce(n) {
   const status = document.querySelector("[data-search-status]");
-  if (status) status.textContent = state.grade ? `${n} ta mavzu ko‘rsatilmoqda` : `${n} ta simulyatsiya ko‘rsatilmoqda`;
+  if (status) status.textContent = state.grade ? t("sim.shownTopics", `${n} ta mavzu ko‘rsatilmoqda`, { n }) : t("sim.shownSims", `${n} ta simulyatsiya ko‘rsatilmoqda`, { n });
 }
 
 /* ------------------------------------------------------------------ Sinflar (darslik mundarijasi) */
 
 function renderGrades() {
   const box = $("[data-grades]");
-  box.innerHTML = [["", "Barchasi"], ...GRADES.map((g) => [g, `${g}-sinf`])]
+  box.innerHTML = [["", t("sim.all", "Barchasi")], ...GRADES.map((g) => [g, t("sim.grade", `${g}-sinf`, { n: g })])]
     .map(([g, t]) => `<button type="button" data-grade="${g}" aria-pressed="${g === state.grade}">${t}</button>`)
     .join("");
   box.addEventListener("click", (e) => {
@@ -128,17 +130,17 @@ function rowOf(m, sims) {
   if (m.tur === "lab") {
     const lab = m.lab ? sims.get(m.lab) : null;
     if (lab) return { kind: "lab", href: lab.href, target: lab };
-    if (sim) return { kind: "lab", href: simHref(sim, m.preset), target: sim, note: "Laboratoriya varianti tayyorlanmoqda — hozircha oddiy simulyatsiya ochiladi" };
-    return { kind: "lab", href: null, note: "Laboratoriya ishi tayyorlanmoqda" };
+    if (sim) return { kind: "lab", href: simHref(sim, m.preset), target: sim, note: t("sim.labSoonSim", "Laboratoriya varianti tayyorlanmoqda — hozircha oddiy simulyatsiya ochiladi") };
+    return { kind: "lab", href: null, note: t("sim.labSoon", "Laboratoriya ishi tayyorlanmoqda") };
   }
   if (sim) return { kind: "sim", href: simHref(sim, m.preset), target: sim };
-  return { kind: "sim", href: null, note: "Simulyatsiya tayyorlanmoqda" };
+  return { kind: "sim", href: null, note: t("sim.simSoon", "Simulyatsiya tayyorlanmoqda") };
 }
 
 function renderToc() {
   const toc = $("[data-toc]");
   if (!state.curriculum) {
-    toc.innerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>Darsliklar mundarijasini yuklab bo‘lmadi. Sahifani yangilang.</span></div>`;
+    toc.innerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>${esc(t("sim.tocFail", "Darsliklar mundarijasini yuklab bo‘lmadi. Sahifani yangilang."))}</span></div>`;
     return;
   }
   const g = state.curriculum.sinflar.find((x) => String(x.sinf) === state.grade);
@@ -151,16 +153,16 @@ function renderToc() {
       shown++;
       if (r.href) linked++;
       const label = `${m.raqam}. ${m.nom}`;
-      const text = [m.raqam, `${m.raqam}-mavzu`, m.nom, r.target?.title, r.kind === "lab" ? "laboratoriya ishi" : "simulyatsiya"].join(" ");
-      const badge = r.kind === "lab" ? `<span class="of-badge of-badge--green">Laboratoriya ishi</span>` : `<span class="of-badge of-badge--blue">Simulyatsiya</span>`;
+      const text = [m.raqam, `${m.raqam}-mavzu`, topicLabel(m.raqam), m.nom, r.target?.title, r.kind === "lab" ? "laboratoriya ishi" : "simulyatsiya", r.kind === "lab" ? t("sim.lab", "Laboratoriya ishi") : t("sim.sim", "Simulyatsiya")].join(" ");
+      const badge = r.kind === "lab" ? `<span class="of-badge of-badge--green">${esc(t("sim.lab", "Laboratoriya ishi"))}</span>` : `<span class="of-badge of-badge--blue">${esc(t("sim.sim", "Simulyatsiya"))}</span>`;
       const action = r.href
-        ? `<a class="of-btn of-btn--soft of-btn--sm" href="${esc(r.href)}" aria-label="Ochish: ${esc(label)} — ${esc(r.target.title)}">Ochish ${icon("arrowRight")}</a>`
-        : `<span class="of-btn of-btn--sm of-toc__wait" aria-disabled="true">Tayyorlanmoqda</span>`;
+        ? `<a class="of-btn of-btn--soft of-btn--sm" href="${esc(r.href)}" aria-label="${esc(t("sim.open", "Ochish"))}: ${esc(label)} — ${esc(r.target.title)}">${esc(t("sim.open", "Ochish"))} ${icon("arrowRight")}</a>`
+        : `<span class="of-btn of-btn--sm of-toc__wait" aria-disabled="true">${esc(t("sim.soon", "Tayyorlanmoqda"))}</span>`;
       return `
         <li class="of-toc__row${r.href ? "" : " is-wait"}" data-search-text="${esc(text)}">
           <span class="of-toc__num" aria-hidden="true">${m.raqam}</span>
           <div class="of-toc__main">
-            <span class="of-toc__name"><span class="of-sr-only">${m.raqam}-mavzu. </span>${esc(m.nom)}${m.taxminiy ? ` <small class="of-toc__guess" title="Nomi darslik PDF idan tekshirilmoqda">taxminiy nom</small>` : ""}</span>
+            <span class="of-toc__name"><span class="of-sr-only">${esc(topicLabel(m.raqam))}. </span>${esc(m.nom)}${m.taxminiy ? ` <small class="of-toc__guess" title="${esc(t("sim.guessTitle", "Nomi darslik PDF idan tekshirilmoqda"))}">${esc(t("sim.guess", "taxminiy nom"))}</small>` : ""}</span>
             ${r.target ? `<span class="of-toc__sim">${esc(r.target.title)}</span>` : ""}
             ${r.note ? `<span class="of-toc__note">${esc(r.note)}</span>` : ""}
           </div>
@@ -177,9 +179,9 @@ function renderToc() {
   }).join("");
   toc.innerHTML = `
     <div class="of-toc__head">
-      <h2 class="of-toc__title">${g.sinf}-sinf fizika darsligi</h2>
-      <p class="of-toc__meta">${g.nashr}-yil nashri · ${esc(g.fan)} · ${shown} ta mavzudan ${linked} tasi ochiladi</p>
-      <p class="of-toc__hint of-subtle">Mavzu raqami va nomi darslikdagidek; boblar mavzular bo‘yicha guruhlangan. «Ochish» simulyatsiyani shu mavzuga mos tayyor tajriba bilan ochadi.</p>
+      <h2 class="of-toc__title">${esc(t("sim.textbook", `${g.sinf}-sinf fizika darsligi`, { n: g.sinf }))}</h2>
+      <p class="of-toc__meta">${esc(t("sim.tocMeta", `${g.nashr}-yil nashri`, { y: g.nashr }))} · ${esc(g.fan)} · ${esc(t("sim.tocOpen", `${shown} ta mavzudan ${linked} tasi ochiladi`, { a: shown, b: linked }))}</p>
+      <p class="of-toc__hint of-subtle">${esc(t("sim.tocHint", "Mavzu raqami va nomi darslikdagidek; boblar mavzular bo‘yicha guruhlangan. «Ochish» simulyatsiyani shu mavzuga mos tayyor tajriba bilan ochadi."))}</p>
     </div>
     ${bobs}`;
   hydrateIcons(toc);
@@ -198,7 +200,7 @@ function applyTocFilter() {
     visible += n;
   });
   const total = $$("[data-toc] .of-toc__row").length;
-  $("[data-sim-count]").textContent = state.query && visible !== total ? `${visible} / ${total} ta mavzu` : `${total} ta mavzu`;
+  $("[data-sim-count]").textContent = state.query && visible !== total ? t("sim.topicsOf", `${visible} / ${total} ta mavzu`, { a: visible, b: total }) : t("sim.topicsN", `${total} ta mavzu`, { n: total });
   let note = $("[data-toc] .of-search-empty");
   if (!visible && total) {
     if (!note) {
@@ -207,7 +209,7 @@ function applyTocFilter() {
       note.setAttribute("role", "status");
       $("[data-toc]").append(note);
     }
-    note.textContent = "Bu sinf darsligida bunday mavzu topilmadi. Boshqa so‘z bilan urinib ko‘ring yoki «Barchasi» ni tanlang.";
+    note.textContent = t("sim.noTopic", "Bu sinf darsligida bunday mavzu topilmadi. Boshqa so‘z bilan urinib ko‘ring yoki «Barchasi» ni tanlang.");
   } else note?.remove();
   return visible;
 }
@@ -221,7 +223,7 @@ function applyFilters() {
     if (match) visible++;
   });
   const total = state.data.simulations.length;
-  $("[data-sim-count]").textContent = visible === total ? `${total} ta simulyatsiya` : `${visible} / ${total} ta simulyatsiya`;
+  $("[data-sim-count]").textContent = visible === total ? t("sim.simsN", `${total} ta simulyatsiya`, { n: total }) : t("sim.simsOf", `${visible} / ${total} ta simulyatsiya`, { a: visible, b: total });
   let note = $("[data-sims] + .of-search-empty");
   if (!visible) {
     if (!note) {
@@ -230,15 +232,15 @@ function applyFilters() {
       note.setAttribute("role", "status");
       $("[data-sims]").after(note);
     }
-    note.textContent = "Bu so‘rov bo‘yicha simulyatsiya topilmadi. Boshqa so‘z bilan urinib ko‘ring.";
+    note.textContent = t("sim.noSim", "Bu so‘rov bo‘yicha simulyatsiya topilmadi. Boshqa so‘z bilan urinib ko‘ring.");
   } else note?.remove();
   return visible;
 }
 
 function setupSearch() {
   const apply = () => window.OFShell?.setSearch({
-    placeholder: state.grade ? `${state.grade}-sinf mavzularidan qidirish…` : "Simulyatsiyani qidirish…",
-    label: state.grade ? `${state.grade}-sinf darsligi mavzulari bo‘yicha qidirish` : "Simulyatsiyalar bo‘yicha qidirish",
+    placeholder: state.grade ? t("sim.phGrade", `${state.grade}-sinf mavzularidan qidirish…`, { n: state.grade }) : t("sim.ph", "Simulyatsiyani qidirish…"),
+    label: state.grade ? t("sim.lblGrade", `${state.grade}-sinf darsligi mavzulari bo‘yicha qidirish`, { n: state.grade }) : t("sim.lbl", "Simulyatsiyalar bo‘yicha qidirish"),
     onQuery: (q) => { state.query = q; return state.data ? applyFilters() : 0; },
   });
   if (window.OFShell) apply();
@@ -253,12 +255,12 @@ async function init() {
     if (!res.ok) throw new Error(`${name} ${res.status}`);
     return res.json();
   };
-  const curriculum = load("curriculum.json").catch((error) => { console.error("[simulyatsiyalar] mundarija yuklanmadi:", error); return null; });
+  const curriculum = load("curriculum.json").then(localizeCurriculum).catch((error) => { console.error("[simulyatsiyalar] mundarija yuklanmadi:", error); return null; });
   try {
-    state.data = await load("manifest.json");
+    state.data = await localizeManifest(await load("manifest.json"));
   } catch (error) {
     console.error("[simulyatsiyalar] ro'yxat yuklanmadi:", error);
-    $("[data-sims]").outerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>Simulyatsiyalar ro‘yxatini yuklab bo‘lmadi. Sahifani yangilang.</span></div>`;
+    $("[data-sims]").outerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>${esc(t("sim.listFail", "Simulyatsiyalar ro‘yxatini yuklab bo‘lmadi. Sahifani yangilang."))}</span></div>`;
     return;
   }
   state.all = state.data.simulations;

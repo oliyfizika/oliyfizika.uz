@@ -1,0 +1,1364 @@
+{
+  "sinflar": [
+    {
+      "sinf": 7,
+      "fan": "Mechanics, heat, electricity, fundamentals of optics",
+      "boblar": [
+        {
+          "nom": "Introduction",
+          "mavzular": [
+            {
+              "raqam": 1,
+              "nom": "Central Asian scientists in the development of physics"
+            },
+            {
+              "raqam": 2,
+              "nom": "Physicists who founded scientific schools in Uzbekistan"
+            },
+            {
+              "raqam": 3,
+              "nom": "Physical quantities. SI units"
+            },
+            {
+              "raqam": 4,
+              "nom": "Research methods in physics"
+            },
+            {
+              "raqam": 5,
+              "nom": "Scalar and vector quantities"
+            },
+            {
+              "raqam": 6,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Mechanical motion",
+          "mavzular": [
+            {
+              "raqam": 7,
+              "nom": "Mechanical motion"
+            },
+            {
+              "raqam": 8,
+              "nom": "Basic concepts of kinematics"
+            },
+            {
+              "raqam": 9,
+              "nom": "Uniform rectilinear motion: speed and distance"
+            },
+            {
+              "raqam": 10,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 11,
+              "nom": "Non-uniform motion"
+            },
+            {
+              "raqam": 12,
+              "nom": "Laboratory work. Average speed of non-uniform motion"
+            },
+            {
+              "raqam": 13,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 14,
+              "nom": "Circular motion"
+            },
+            {
+              "raqam": 15,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Mass, density, force and pressure",
+          "mavzular": [
+            {
+              "raqam": 16,
+              "nom": "Mass and its units"
+            },
+            {
+              "raqam": 17,
+              "nom": "Density and its units"
+            },
+            {
+              "raqam": 18,
+              "nom": "Laboratory work. Determining the density of bodies"
+            },
+            {
+              "raqam": 19,
+              "nom": "Interaction of bodies. Force"
+            },
+            {
+              "raqam": 20,
+              "nom": "Pressure and its units"
+            },
+            {
+              "raqam": 21,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 22,
+              "nom": "Transmission of pressure in liquids and gases (Pascal)"
+            },
+            {
+              "raqam": 23,
+              "nom": "Pressure of a liquid at rest"
+            },
+            {
+              "raqam": 24,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 25,
+              "nom": "Atmospheric pressure"
+            }
+          ]
+        },
+        {
+          "nom": "Work, energy and power",
+          "mavzular": [
+            {
+              "raqam": 26,
+              "nom": "Mechanical work"
+            },
+            {
+              "raqam": 27,
+              "nom": "Types of mechanical energy"
+            },
+            {
+              "raqam": 28,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 29,
+              "nom": "Mechanical power"
+            },
+            {
+              "raqam": 30,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Thermal phenomena",
+          "mavzular": [
+            {
+              "raqam": 31,
+              "nom": "Internal energy"
+            },
+            {
+              "raqam": 32,
+              "nom": "Quantity of heat"
+            },
+            {
+              "raqam": 33,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 34,
+              "nom": "Practical work. Mixing water at different temperatures"
+            },
+            {
+              "raqam": 35,
+              "nom": "Specific heat of combustion of fuel"
+            },
+            {
+              "raqam": 36,
+              "nom": "Evaporation, condensation, boiling"
+            },
+            {
+              "raqam": 37,
+              "nom": "Melting and solidification of a solid"
+            },
+            {
+              "raqam": 38,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Electrification and electric charge",
+          "mavzular": [
+            {
+              "raqam": 39,
+              "nom": "Electrification of bodies"
+            },
+            {
+              "raqam": 40,
+              "nom": "Electric charge"
+            },
+            {
+              "raqam": 41,
+              "nom": "Electroscope and electrometer"
+            },
+            {
+              "raqam": 42,
+              "nom": "Conductors and dielectrics"
+            },
+            {
+              "raqam": 43,
+              "nom": "Interaction of charged bodies"
+            },
+            {
+              "raqam": 44,
+              "nom": "Distribution of charges in conductors"
+            },
+            {
+              "raqam": 45,
+              "nom": "Electrical phenomena in nature (lightning)"
+            }
+          ]
+        },
+        {
+          "nom": "Electric current",
+          "mavzular": [
+            {
+              "raqam": 46,
+              "nom": "Electric current"
+            },
+            {
+              "raqam": 47,
+              "nom": "Current sources"
+            },
+            {
+              "raqam": 48,
+              "nom": "Electric voltage and its measurement"
+            },
+            {
+              "raqam": 49,
+              "nom": "Current strength"
+            },
+            {
+              "raqam": 50,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 51,
+              "nom": "Laboratory work. Measuring current and voltage"
+            },
+            {
+              "raqam": 52,
+              "nom": "Electrical resistance"
+            },
+            {
+              "raqam": 53,
+              "nom": "Resistors. Rheostats"
+            },
+            {
+              "raqam": 54,
+              "nom": "Ohm's law for a circuit section"
+            },
+            {
+              "raqam": 55,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 56,
+              "nom": "Practical work. Regulating current with a rheostat"
+            },
+            {
+              "raqam": 57,
+              "nom": "Laboratory work. Studying Ohm's law"
+            }
+          ]
+        },
+        {
+          "nom": "Light phenomena",
+          "mavzular": [
+            {
+              "raqam": 58,
+              "nom": "Rectilinear propagation of light"
+            },
+            {
+              "raqam": 59,
+              "nom": "Solar and lunar eclipses"
+            },
+            {
+              "raqam": 60,
+              "nom": "Reflection and refraction of light"
+            },
+            {
+              "raqam": 61,
+              "nom": "Lens"
+            },
+            {
+              "raqam": 62,
+              "nom": "Practical work. Reflection from a plane mirror"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sinf": 8,
+      "fan": "Electricity and magnetism",
+      "boblar": [
+        {
+          "nom": "Electrostatics",
+          "mavzular": [
+            {
+              "raqam": 1,
+              "nom": "Charging of bodies"
+            },
+            {
+              "raqam": 2,
+              "nom": "Electric charge"
+            },
+            {
+              "raqam": 3,
+              "nom": "Interaction of charges. Coulomb's law"
+            },
+            {
+              "raqam": 4,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 5,
+              "nom": "Electric field"
+            },
+            {
+              "raqam": 6,
+              "nom": "Distribution of charges in conductors"
+            },
+            {
+              "raqam": 7,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 8,
+              "nom": "Electrical phenomena in nature"
+            }
+          ]
+        },
+        {
+          "nom": "Direct electric current",
+          "mavzular": [
+            {
+              "raqam": 9,
+              "nom": "The concept of electric current"
+            },
+            {
+              "raqam": 10,
+              "nom": "Current sources"
+            },
+            {
+              "raqam": 11,
+              "nom": "Electric voltage and its measurement"
+            },
+            {
+              "raqam": 12,
+              "nom": "Current and its measurement"
+            },
+            {
+              "raqam": 13,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 14,
+              "nom": "Laboratory work. Assembling a circuit, measuring current and voltage"
+            },
+            {
+              "raqam": 15,
+              "nom": "Electrical resistance"
+            },
+            {
+              "raqam": 16,
+              "nom": "Resistors, rheostats, potentiometers"
+            },
+            {
+              "raqam": 17,
+              "nom": "Ohm's law for a circuit section"
+            },
+            {
+              "raqam": 18,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 19,
+              "nom": "Laboratory work. Studying Ohm's law"
+            },
+            {
+              "raqam": 20,
+              "nom": "Practical work. Regulating current with a rheostat"
+            },
+            {
+              "raqam": 21,
+              "nom": "Series connection of consumers"
+            },
+            {
+              "raqam": 22,
+              "nom": "Parallel connection of consumers"
+            },
+            {
+              "raqam": 23,
+              "nom": "Practical work. Connecting current sources"
+            },
+            {
+              "raqam": 24,
+              "nom": "Laboratory work. Studying series and parallel connection"
+            },
+            {
+              "raqam": 25,
+              "nom": "Mixed connection of consumers"
+            },
+            {
+              "raqam": 26,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Electric capacitance",
+          "mavzular": [
+            {
+              "raqam": 27,
+              "nom": "Electric capacitance. Capacitors"
+            },
+            {
+              "raqam": 28,
+              "nom": "Parallel and series connection of capacitors"
+            },
+            {
+              "raqam": 29,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Work and power of electric current",
+          "mavzular": [
+            {
+              "raqam": 30,
+              "nom": "Work of electric current"
+            },
+            {
+              "raqam": 31,
+              "nom": "Power of electric current"
+            },
+            {
+              "raqam": 32,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 33,
+              "nom": "Laboratory work. Determining the power of a lamp"
+            },
+            {
+              "raqam": 34,
+              "nom": "Heating of conductors by current (Joule–Lenz)"
+            },
+            {
+              "raqam": 35,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 36,
+              "nom": "Practical applications of the Joule–Lenz law"
+            },
+            {
+              "raqam": 37,
+              "nom": "Electric circuits in homes"
+            },
+            {
+              "raqam": 38,
+              "nom": "Electrical safety measures"
+            },
+            {
+              "raqam": 39,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Electric current in various media",
+          "mavzular": [
+            {
+              "raqam": 40,
+              "nom": "Electric current in metals"
+            },
+            {
+              "raqam": 41,
+              "nom": "Electric current in liquids"
+            },
+            {
+              "raqam": 42,
+              "nom": "Electrolysis. Faraday's first law"
+            },
+            {
+              "raqam": 43,
+              "nom": "Faraday's second law"
+            },
+            {
+              "raqam": 44,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 45,
+              "nom": "Everyday uses of electrolysis"
+            },
+            {
+              "raqam": 46,
+              "nom": "Electric current in a vacuum"
+            },
+            {
+              "raqam": 47,
+              "nom": "Electric current in gases"
+            },
+            {
+              "raqam": 48,
+              "nom": "Types of electric discharge"
+            }
+          ]
+        },
+        {
+          "nom": "Magnetic field",
+          "mavzular": [
+            {
+              "raqam": 49,
+              "nom": "Magnetic field. Permanent magnet"
+            },
+            {
+              "raqam": 50,
+              "nom": "Quantities characterizing the magnetic field"
+            },
+            {
+              "raqam": 51,
+              "nom": "Earth's magnetic field"
+            },
+            {
+              "raqam": 52,
+              "nom": "Magnetic field of a current"
+            },
+            {
+              "raqam": 53,
+              "nom": "Action of a magnetic field on a current-carrying conductor"
+            },
+            {
+              "raqam": 54,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 55,
+              "nom": "Rotation of a current-carrying loop"
+            },
+            {
+              "raqam": 56,
+              "nom": "Motion of a charged particle in a magnetic field"
+            },
+            {
+              "raqam": 57,
+              "nom": "Electromagnets. Electromagnetic relay"
+            },
+            {
+              "raqam": 58,
+              "nom": "Laboratory work. Assembling an electromagnet"
+            },
+            {
+              "raqam": 59,
+              "nom": "DC electric motor"
+            },
+            {
+              "raqam": 60,
+              "nom": "Problem solving"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sinf": 9,
+      "fan": "Molecular physics, thermodynamics, optics",
+      "boblar": [
+        {
+          "nom": "Molecular kinetic theory",
+          "mavzular": [
+            {
+              "raqam": 1,
+              "nom": "Molecular kinetic theory of matter"
+            },
+            {
+              "raqam": 2,
+              "nom": "Mass and size of molecules"
+            },
+            {
+              "raqam": 3,
+              "nom": "Amount of substance"
+            },
+            {
+              "raqam": 4,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 5,
+              "nom": "Ideal gas"
+            },
+            {
+              "raqam": 6,
+              "nom": "Temperature"
+            },
+            {
+              "raqam": 7,
+              "nom": "Speed of gas molecules"
+            },
+            {
+              "raqam": 8,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 9,
+              "nom": "Equations of state of an ideal gas"
+            },
+            {
+              "raqam": 10,
+              "nom": "Isothermal process"
+            },
+            {
+              "raqam": 11,
+              "nom": "Isobaric process"
+            },
+            {
+              "raqam": 12,
+              "nom": "Isochoric process"
+            },
+            {
+              "raqam": 13,
+              "nom": "Practical work. Estimating the size of a molecule"
+            },
+            {
+              "raqam": 14,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Fundamentals of thermodynamics",
+          "mavzular": [
+            {
+              "raqam": 15,
+              "nom": "Internal energy"
+            },
+            {
+              "raqam": 16,
+              "nom": "Thermodynamic work"
+            },
+            {
+              "raqam": 17,
+              "nom": "Quantity of heat"
+            },
+            {
+              "raqam": 18,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 19,
+              "nom": "Practical work. Thermal equilibrium"
+            },
+            {
+              "raqam": 20,
+              "nom": "Laboratory work. Specific heat capacity"
+            },
+            {
+              "raqam": 21,
+              "nom": "Specific heat of combustion of fuel"
+            },
+            {
+              "raqam": 22,
+              "nom": "First law of thermodynamics"
+            },
+            {
+              "raqam": 23,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 24,
+              "nom": "Irreversibility of thermal processes. Second law"
+            },
+            {
+              "raqam": 25,
+              "nom": "Laboratory work. Comparing quantities of heat"
+            },
+            {
+              "raqam": 26,
+              "nom": "Internal combustion engines"
+            },
+            {
+              "raqam": 27,
+              "nom": "Operating principle of heat engines"
+            },
+            {
+              "raqam": 28,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 29,
+              "nom": "Heat engines and environmental protection"
+            },
+            {
+              "raqam": 30,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Properties of liquids and solids",
+          "mavzular": [
+            {
+              "raqam": 31,
+              "nom": "Properties of liquids"
+            },
+            {
+              "raqam": 32,
+              "nom": "Wetting. Capillary phenomena"
+            },
+            {
+              "raqam": 33,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 34,
+              "nom": "Laboratory work. Surface tension coefficient"
+            },
+            {
+              "raqam": 35,
+              "nom": "Crystalline and amorphous solids"
+            },
+            {
+              "raqam": 36,
+              "nom": "Mechanical properties of solids"
+            },
+            {
+              "raqam": 37,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Changes of state of matter",
+          "mavzular": [
+            {
+              "raqam": 38,
+              "nom": "Melting and solidification of a solid"
+            },
+            {
+              "raqam": 39,
+              "nom": "Specific heat of fusion. Amorphous solids"
+            },
+            {
+              "raqam": 40,
+              "nom": "Evaporation and condensation"
+            },
+            {
+              "raqam": 41,
+              "nom": "Atmospheric phenomena"
+            },
+            {
+              "raqam": 42,
+              "nom": "Laboratory work. Relative humidity of air"
+            },
+            {
+              "raqam": 43,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Optics",
+          "mavzular": [
+            {
+              "raqam": 44,
+              "nom": "Determining the speed of light"
+            },
+            {
+              "raqam": 45,
+              "nom": "Laws of reflection and refraction of light"
+            },
+            {
+              "raqam": 46,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 47,
+              "nom": "Total internal reflection"
+            },
+            {
+              "raqam": 48,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 49,
+              "nom": "Laboratory work. Refractive index of glass"
+            },
+            {
+              "raqam": 50,
+              "nom": "Lenses. The lens formula"
+            },
+            {
+              "raqam": 51,
+              "nom": "Image construction with a thin lens"
+            },
+            {
+              "raqam": 52,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 53,
+              "nom": "Laboratory work. Optical power of a lens"
+            },
+            {
+              "raqam": 54,
+              "nom": "Optical instruments"
+            },
+            {
+              "raqam": 55,
+              "nom": "The eye and vision"
+            },
+            {
+              "raqam": 56,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Final topics",
+          "mavzular": [
+            {
+              "raqam": 57,
+              "nom": "Solar engineering. Solar energy"
+            },
+            {
+              "raqam": 58,
+              "nom": "The unified physical picture of the world"
+            },
+            {
+              "raqam": 59,
+              "nom": "Progress of physics and technology"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sinf": 10,
+      "fan": "Mechanics, oscillations, electricity, magnetism",
+      "boblar": [
+        {
+          "nom": "Dynamics",
+          "mavzular": [
+            {
+              "raqam": 1,
+              "nom": "Addition of forces"
+            },
+            {
+              "raqam": 2,
+              "nom": "Centripetal force"
+            },
+            {
+              "raqam": 3,
+              "nom": "Motion in a gravitational field"
+            },
+            {
+              "raqam": 4,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 5,
+              "nom": "Dependence of a body's weight on the type of motion"
+            },
+            {
+              "raqam": 6,
+              "nom": "Motion of a body under several forces"
+            },
+            {
+              "raqam": 7,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 8,
+              "nom": "Motion of a body on an inclined plane"
+            },
+            {
+              "raqam": 9,
+              "nom": "Work on an inclined plane. Efficiency"
+            },
+            {
+              "raqam": 10,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 11,
+              "nom": "Laboratory work. Efficiency of an inclined plane"
+            }
+          ]
+        },
+        {
+          "nom": "Statics",
+          "mavzular": [
+            {
+              "raqam": 12,
+              "nom": "Center of mass. Equilibrium. Moment of force"
+            },
+            {
+              "raqam": 13,
+              "nom": "Simple machines based on the principle of moments"
+            },
+            {
+              "raqam": 14,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Mechanical oscillations and waves",
+          "mavzular": [
+            {
+              "raqam": 15,
+              "nom": "Mechanical oscillations"
+            },
+            {
+              "raqam": 16,
+              "nom": "Spring and simple pendulums"
+            },
+            {
+              "raqam": 17,
+              "nom": "Laboratory work. Determining g with a pendulum"
+            },
+            {
+              "raqam": 18,
+              "nom": "Mechanical waves"
+            },
+            {
+              "raqam": 19,
+              "nom": "Sound waves"
+            },
+            {
+              "raqam": 20,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Motion of liquids and gases",
+          "mavzular": [
+            {
+              "raqam": 21,
+              "nom": "Motion of liquids and gases"
+            },
+            {
+              "raqam": 22,
+              "nom": "Dependence of gas/liquid pressure on speed (engineering)"
+            },
+            {
+              "raqam": 23,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Electrostatics",
+          "mavzular": [
+            {
+              "raqam": 24,
+              "nom": "Superposition of field strength"
+            },
+            {
+              "raqam": 25,
+              "nom": "Field of a charged sphere"
+            },
+            {
+              "raqam": 26,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 27,
+              "nom": "Work in moving a point charge"
+            },
+            {
+              "raqam": 28,
+              "nom": "Potential energy of a charge"
+            },
+            {
+              "raqam": 29,
+              "nom": "Energy of the electric field"
+            },
+            {
+              "raqam": 30,
+              "nom": "Practical work. Energy transformations"
+            },
+            {
+              "raqam": 31,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Laws of direct current",
+          "mavzular": [
+            {
+              "raqam": 32,
+              "nom": "Current and current density"
+            },
+            {
+              "raqam": 33,
+              "nom": "Ohm's law for a complete circuit"
+            },
+            {
+              "raqam": 34,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 35,
+              "nom": "Laboratory work. EMF and internal resistance"
+            },
+            {
+              "raqam": 36,
+              "nom": "Dependence of metal resistance on temperature"
+            },
+            {
+              "raqam": 37,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Electric current in various media",
+          "mavzular": [
+            {
+              "raqam": 38,
+              "nom": "Electric current in liquids"
+            },
+            {
+              "raqam": 39,
+              "nom": "Faraday's laws"
+            },
+            {
+              "raqam": 40,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 41,
+              "nom": "Technical applications of electrolysis"
+            },
+            {
+              "raqam": 42,
+              "nom": "Electric current in gases and vacuum"
+            },
+            {
+              "raqam": 43,
+              "nom": "Semiconductors and how they differ from metals"
+            },
+            {
+              "raqam": 44,
+              "nom": "Conductivity of semiconductors"
+            },
+            {
+              "raqam": 45,
+              "nom": "Semiconductor devices"
+            },
+            {
+              "raqam": 46,
+              "nom": "Laboratory work. Studying the I–V characteristic of a diode"
+            }
+          ]
+        },
+        {
+          "nom": "Magnetic field",
+          "mavzular": [
+            {
+              "raqam": 47,
+              "nom": "Magnetic field induction, field of a current-carrying conductor"
+            },
+            {
+              "raqam": 48,
+              "nom": "Action of a magnetic field on a current-carrying conductor"
+            },
+            {
+              "raqam": 49,
+              "nom": "Interaction of current-carrying conductors"
+            },
+            {
+              "raqam": 50,
+              "nom": "Work in moving a current-carrying conductor"
+            },
+            {
+              "raqam": 51,
+              "nom": "Motion of a charged particle in a magnetic field"
+            },
+            {
+              "raqam": 52,
+              "nom": "DC electric motor"
+            },
+            {
+              "raqam": 53,
+              "nom": "Problem solving"
+            }
+          ]
+        },
+        {
+          "nom": "Electromagnetic induction",
+          "mavzular": [
+            {
+              "raqam": 54,
+              "nom": "Electromagnetic induction"
+            },
+            {
+              "raqam": 55,
+              "nom": "Practical work. Electromagnetic induction"
+            },
+            {
+              "raqam": 56,
+              "nom": "Self-induction. Inductance"
+            },
+            {
+              "raqam": 57,
+              "nom": "Problem solving"
+            },
+            {
+              "raqam": 58,
+              "nom": "Energy of the magnetic field. Magnetic properties of substances"
+            },
+            {
+              "raqam": 59,
+              "nom": "Problem solving"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sinf": 11,
+      "fan": "Electromagnetism, optics, relativity, quantum and nuclear physics",
+      "boblar": [
+        {
+          "nom": "Magnetic field",
+          "mavzular": [
+            {
+              "raqam": 1,
+              "nom": "Magnetic field. Characterizing quantities"
+            },
+            {
+              "raqam": 2,
+              "nom": "Torque on a current-carrying loop"
+            },
+            {
+              "raqam": 3,
+              "nom": "Field of a current-carrying wire, loop and coil"
+            },
+            {
+              "raqam": 4,
+              "nom": "Work in moving a current-carrying conductor"
+            },
+            {
+              "raqam": 5,
+              "nom": "Interaction of current-carrying conductors"
+            },
+            {
+              "raqam": 6,
+              "nom": "Motion of a charged particle. Lorentz force"
+            }
+          ]
+        },
+        {
+          "nom": "Electromagnetic induction",
+          "mavzular": [
+            {
+              "raqam": 7,
+              "nom": "Electromagnetic induction. Faraday's law"
+            },
+            {
+              "raqam": 8,
+              "nom": "Self-induction. Inductance"
+            },
+            {
+              "raqam": 9,
+              "nom": "Magnetic properties of substances"
+            },
+            {
+              "raqam": 10,
+              "nom": "Energy of the magnetic field"
+            }
+          ]
+        },
+        {
+          "nom": "Electromagnetic oscillations",
+          "mavzular": [
+            {
+              "raqam": 11,
+              "nom": "Free electromagnetic oscillations (LC circuit)"
+            },
+            {
+              "raqam": 12,
+              "nom": "Graphical representation of oscillations. Damped oscillations"
+            },
+            {
+              "raqam": 13,
+              "nom": "Transistor oscillator"
+            }
+          ]
+        },
+        {
+          "nom": "Alternating current",
+          "mavzular": [
+            {
+              "raqam": 14,
+              "nom": "Resistance in an AC circuit"
+            },
+            {
+              "raqam": 15,
+              "nom": "Capacitor in an AC circuit"
+            },
+            {
+              "raqam": 16,
+              "nom": "Inductor in an AC circuit"
+            },
+            {
+              "raqam": 17,
+              "nom": "Ohm's law for a series RLC circuit"
+            },
+            {
+              "raqam": 18,
+              "nom": "Resonance"
+            },
+            {
+              "raqam": 19,
+              "nom": "Laboratory work. Resonance in an AC circuit"
+            },
+            {
+              "raqam": 20,
+              "nom": "AC work and power. cosφ"
+            }
+          ]
+        },
+        {
+          "nom": "Electromagnetic waves",
+          "mavzular": [
+            {
+              "raqam": 21,
+              "nom": "Propagation of EM oscillations. Speed of an EM wave"
+            },
+            {
+              "raqam": 22,
+              "nom": "Properties of EM waves (reflection, refraction)"
+            },
+            {
+              "raqam": 23,
+              "nom": "Fundamentals of radio communication"
+            },
+            {
+              "raqam": 24,
+              "nom": "Fundamentals of television"
+            }
+          ]
+        },
+        {
+          "nom": "Wave optics and photometry",
+          "mavzular": [
+            {
+              "raqam": 25,
+              "nom": "Interference and diffraction of light"
+            },
+            {
+              "raqam": 26,
+              "nom": "Laboratory work. Diffraction grating"
+            },
+            {
+              "raqam": 27,
+              "nom": "Dispersion. Spectral analysis"
+            },
+            {
+              "raqam": 28,
+              "nom": "Polarization of light"
+            },
+            {
+              "raqam": 29,
+              "nom": "Infrared, ultraviolet and X-ray radiation"
+            },
+            {
+              "raqam": 30,
+              "nom": "Luminous flux, luminous intensity, illuminance"
+            },
+            {
+              "raqam": 31,
+              "nom": "Laboratory work. Illuminance"
+            }
+          ]
+        },
+        {
+          "nom": "Special theory of relativity",
+          "mavzular": [
+            {
+              "raqam": 32,
+              "nom": "Special relativity. Addition of velocities"
+            },
+            {
+              "raqam": 33,
+              "nom": "Dependence of mass on speed. E = mc²"
+            }
+          ]
+        },
+        {
+          "nom": "Quantum physics and the atom",
+          "mavzular": [
+            {
+              "raqam": 34,
+              "nom": "The emergence of quantum physics"
+            },
+            {
+              "raqam": 35,
+              "nom": "Photoelectric effect. Photons"
+            },
+            {
+              "raqam": 36,
+              "nom": "Photon momentum. Light pressure"
+            },
+            {
+              "raqam": 37,
+              "nom": "Bohr model of the atom"
+            },
+            {
+              "raqam": 38,
+              "nom": "Laser"
+            }
+          ]
+        },
+        {
+          "nom": "Atomic nucleus",
+          "mavzular": [
+            {
+              "raqam": 39,
+              "nom": "Nuclear composition, binding energy"
+            },
+            {
+              "raqam": 40,
+              "nom": "Methods of detecting radioactive radiation"
+            },
+            {
+              "raqam": 41,
+              "nom": "Law of radioactive decay"
+            },
+            {
+              "raqam": 42,
+              "nom": "Nuclear reactions. Displacement law"
+            },
+            {
+              "raqam": 43,
+              "nom": "Elementary particles"
+            },
+            {
+              "raqam": 44,
+              "nom": "Nuclear power"
+            },
+            {
+              "raqam": 45,
+              "nom": "Nuclear physics in Uzbekistan"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

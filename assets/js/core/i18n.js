@@ -13,6 +13,7 @@ import { STRINGS_MS } from "./i18n-ms.js";
 import { STRINGS_ATT_A } from "./i18n-att-a.js";
 import { STRINGS_ATT_B } from "./i18n-att-b.js";
 import { STRINGS_ATT_C } from "./i18n-att-c.js";
+import { STRINGS_SIM } from "./i18n-sim.js";
 
 export const LANGS = [
   { code: "uz", short: "O‘z", label: "O‘zbekcha" },
@@ -33,7 +34,7 @@ export function setLang(code) {
 
 const lang = getLang();
 const dict = { ...(STRINGS[lang] || {}), ...(STRINGS_UF[lang] || {}), ...(STRINGS_MS[lang] || {}),
-  ...(STRINGS_ATT_A[lang] || {}), ...(STRINGS_ATT_B[lang] || {}), ...(STRINGS_ATT_C[lang] || {}) };
+  ...(STRINGS_ATT_A[lang] || {}), ...(STRINGS_ATT_B[lang] || {}), ...(STRINGS_ATT_C[lang] || {}), ...(STRINGS_SIM[lang] || {}) };
 
 /** Tarjima. `{name}` ko'rinishidagi o'rinlar `vars` dan to'ldiriladi. */
 export function t(key, fallback = "", vars) {
@@ -64,6 +65,59 @@ export function applyI18n(root = document) {
 }
 
 export const currentLang = lang;
+
+/**
+ * Katta sahifalar (simulyatsiyalar) uchun: kalit — o'zbekcha matnning o'zi.
+ *   tr("Gidravlik press")  /  tr("Kuch {F} N", { F: 12 })  — tarjima topilmasa, o'zbekcha matn.
+ * Lug'at: assets/i18n/<til>/<nom>.json ({ "o'zbekcha matn": "tarjima" }), `loadNs(nom)` bilan yuklanadi.
+ */
+export function tr(uz, vars) {
+  let text = lang === "uz" ? uz : (dict[uz] ?? uz);
+  if (vars) text = text.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+  return text;
+}
+
+const DOM_ATTRS = ["aria-label", "title", "placeholder", "alt"];
+const norm = (v) => v.replace(/\s+/g, " ").trim();
+
+/** Sahifadagi statik matn va atributlarni (kalit — o'zbekcha matn) tarjima lug'ati bo'yicha almashtiradi. */
+export function translateDom(root = document.body) {
+  if (lang === "uz" || !root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => (n.parentElement && !/^(SCRIPT|STYLE|CANVAS)$/.test(n.parentElement.tagName) && n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT),
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const n of nodes) {
+    const hit = dict[norm(n.nodeValue)];
+    if (hit != null) n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), hit);
+  }
+  root.querySelectorAll(DOM_ATTRS.map((a) => `[${a}]`).join(",")).forEach((el) => {
+    for (const a of DOM_ATTRS) {
+      const v = el.getAttribute(a);
+      if (v && dict[norm(v)] != null) el.setAttribute(a, dict[norm(v)]);
+    }
+  });
+  const title = dict[norm(document.title)];
+  if (title != null) document.title = title;
+}
+
+/**
+ * Sahifaga xos tarjima lug'atini yuklaydi: assets/i18n/<til>/<nom>.json (kalit -> matn).
+ * Katta simulyatsiya sahifalari uchun: modul boshida `await loadNs("sim-fluid")`.
+ * O'zbek tilida yoki fayl bo'lmasa — hech narsa qilmaydi (t() o'zbekcha fallback qaytaradi).
+ */
+export async function loadNs(...names) {
+  if (lang === "uz") return;
+  await Promise.all(names.map(async (name) => {
+    try {
+      const res = await fetch(new URL(`../../i18n/${lang}/${name}.json`, import.meta.url).href, { cache: "no-cache" });
+      if (res.ok) Object.assign(dict, await res.json());
+    } catch { /* tarjima yo'q — o'zbekcha */ }
+  }));
+  applyI18n();
+  translateDom();
+}
 
 /** Mavzu belgisi: «5-mavzu» / «Тема 5» / «Topic 5». */
 export function topicLabel(number) {
