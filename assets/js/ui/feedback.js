@@ -1,3 +1,5 @@
+import { tr } from "../core/i18n.js";
+
 // Toast xabarlar va foydalanuvchiga tushunarli xato matnlari.
 
 let region = null;
@@ -42,5 +44,5 @@ const FRIENDLY = {
 export function friendlyError(error, fallback = "Kutilmagan xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.") {
   if (error) console.error("[OliyFizika]", error);
   const code = error?.code || "";
-  return FRIENDLY[code] || (navigator.onLine === false ? FRIENDLY["auth/network-request-failed"] : fallback);
+  return tr(FRIENDLY[code] || (navigator.onLine === false ? FRIENDLY["auth/network-request-failed"] : fallback));
 }
