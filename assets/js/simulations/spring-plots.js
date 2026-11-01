@@ -1,5 +1,5 @@
 // ==========================================================================
-// Prujinali mayatnik grafiklari: x(t) (+ v/ω₀), faza portreti (x, v), Guk qonuni F(x), davr T(m).
+// Prujinali mayatnik grafiklari: x(t) (+ v/ω₀), Guk qonuni F(x), davr T(m).
 // Energiya E(t) grafigi pendulum-plots.js dagi createEnergyPlot orqali chiziladi.
 // Tarix (createHistory): th ← x (m), w ← v (m/s), kin, pot — energiyalar (J).
 // ==========================================================================
@@ -76,50 +76,6 @@ export function createXPlot() {
       if (o.showV) items.push({ color: c.success, label: "Tezlik v/ω₀", dash: [5, 4] });
       if (o.envelope && o.envelope.gamma > 0) items.push({ color: c.text3, label: "So‘nish chizig‘i", dash: [5, 4] });
       legend(ctx, items, f.padL + 10, f.padT + 14, c);
-    },
-  };
-}
-
-/* ------------------------------------------------------------------ Faza portreti (x, v) */
-
-export function createSpringPhasePlot() {
-  let last = null;
-  return {
-    /** o: { xView (m), vView (m/s), trail } */
-    draw(ctx, stage, hist, o) {
-      const c = stage.colors;
-      const xs = o.xView * CM;
-      const xt = ticks(-xs, xs, stage.w < 480 ? 3 : 4), yt = ticks(-o.vView, o.vView, stage.h < 260 ? 3 : 4);
-      const f = frame(ctx, stage, {
-        xMin: -xs, xMax: xs, yMin: -o.vView, yMax: o.vView, xTicks: xt.values, yTicks: yt.values,
-        fmtX: (v) => fmt(v, dec(xt.step)), fmtY: (v) => fmt(v, dec(yt.step)), yLabel: "v, m/s", xUnit: "sm", padL: stage.w < 480 ? 44 : 54,
-      });
-      last = { f, xs, vView: o.vView };
-      const n = hist.length, trailN = Math.min(n, o.trail ?? 900);
-      ctx.save();
-      clipTo(ctx, f.rect);
-      const chunks = 8, per = Math.max(1, Math.floor(trailN / chunks));
-      for (let ch = 0; ch < chunks; ch++) {
-        const a = n - trailN + ch * per, b = ch === chunks - 1 ? n : a + per + 1;
-        ctx.strokeStyle = c.primary; ctx.globalAlpha = 0.18 + 0.82 * ((ch + 1) / chunks); ctx.lineWidth = 2.5; ctx.lineJoin = "round";
-        ctx.beginPath();
-        for (let i = Math.max(a, 0); i < b && i < n; i++) {
-          const px = f.X(hist.th[i] * CM), py = f.Y(hist.w[i]);
-          if (i === Math.max(a, 0)) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-        }
-        ctx.stroke();
-      }
-      ctx.restore();
-      if (n) {
-        ctx.fillStyle = c.warning;
-        ctx.beginPath(); ctx.arc(f.X(hist.th[n - 1] * CM), f.Y(hist.w[n - 1]), 5.5, 0, TAU); ctx.fill();
-      }
-    },
-    toState(px, py) {
-      if (!last) return null;
-      const { f, xs, vView } = last, r = f.rect;
-      if (px < r.x || px > r.x + r.w || py < r.y || py > r.y + r.h) return null;
-      return { x: (-xs + ((px - r.x) / r.w) * 2 * xs) / CM, v: vView - ((py - r.y) / r.h) * 2 * vView };
     },
   };
 }

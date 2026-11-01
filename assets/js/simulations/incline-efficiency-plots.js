@@ -1,7 +1,6 @@
 // ==========================================================================
 // Qiya tekislik: ish va FIK — grafiklar (simulations/incline-efficiency.html):
-// F(l) — oltin qoida: F = Ph/l giperbolasi, to'rtburchak yuzasi = bajarilgan ish;
-// η(α) — turli μ uchun FIK, joriy nuqta va laboratoriyada o'lchangan nuqtalar. Kursor bilan qiymat o'qish.
+// η(α) — turli μ uchun FIK, joriy nuqta va laboratoriyada o'lchangan nuqtalar (faqat «Lab» rejimi). Kursor bilan qiymat o'qish.
 // ==========================================================================
 
 import { fmt, tag } from "./sim-kit.js";
@@ -24,25 +23,6 @@ function curve(ctx, f, x0, x1, fn, color, w, dash, n = 240) {
   ctx.stroke(); ctx.setLineDash([]);
 }
 const dot = (ctx, x, y, r, col) => { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); };
-
-/** F(l): o: { Pw (N), h (m), l (m), mu, hover } */
-export function drawRule(ctx, st, o) {
-  const c = st.colors, xMax = 6, yMax = Math.ceil((o.Pw * 1.1) / 100) * 100;
-  const f = frame(ctx, st, { xMin: 0, xMax, yMin: 0, yMax, xTicks: ticks(0, xMax, 6).values, yTicks: ticks(0, yMax, 4).values, fmtX: (v) => fmt(v, 0), fmtY: (v) => fmt(v, 0), yLabel: "F, N", xUnit: "l, m" });
-  last = { ...f, xMin: 0, xMax };
-  const r = f.rect, F = (l) => (l < o.h ? NaN : P.pullForce(o.Pw, Math.asin(o.h / l), o.mu));
-  ctx.save(); ctx.beginPath(); ctx.rect(r.x, r.y, r.w, r.h); ctx.clip();
-  const Fl = F(o.l);
-  ctx.fillStyle = c.primary; ctx.globalAlpha = 0.14; ctx.fillRect(f.X(0), f.Y(Fl), f.X(o.l) - f.X(0), f.Y(0) - f.Y(Fl)); ctx.globalAlpha = 1;
-  if (o.mu > 0) curve(ctx, f, o.h, xMax, (l) => (o.Pw * o.h) / l, c.text3, 1.6, [6, 4]);
-  curve(ctx, f, o.h, xMax, F, c.primary, 2.6);
-  ctx.strokeStyle = c.warning; ctx.lineWidth = 1.2; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(f.X(o.h), r.y); ctx.lineTo(f.X(o.h), r.y + r.h); ctx.stroke(); ctx.setLineDash([]);
-  ctx.restore();
-  dot(ctx, f.X(o.l), f.Y(Fl), 6, c.warning);
-  tag(ctx, `A = F·l = ${fmt(Fl * o.l, 0)} J`, f.X(o.l / 2), f.Y(Fl / 2), { color: c.primary, bg: c.bg2, align: "center", font: FONT });
-  legend(ctx, [{ color: c.primary, label: st.w < 480 ? "F(l)" : o.mu > 0 ? `F = P(sin α + μ cos α), μ = ${fmt(o.mu, 2)}` : "F = Ph/l (ishqalanishsiz)" }, ...(o.mu > 0 ? [{ color: c.text3, label: st.w < 480 ? "μ = 0" : "ishqalanishsiz: Ph/l", dash: [6, 4] }] : []), { color: c.warning, label: st.w < 480 ? "l = h" : "l = h (tik ko‘tarish, F = P)", dash: [3, 4] }], f.padL + 10, r.y + 12, c);
-  if (o.hover != null) { const l = Math.max(o.h, Math.min(xMax, o.hover)), Fh = F(l); hoverLine(ctx, f, f.X(l), [`l = ${fmt(l, 2)} m, α = ${fmt(Math.asin(o.h / l) / DEG, 1)}°`, `F = ${fmt(Fh, 0)} N`, `A = F·l = ${fmt(Fh * l, 0)} J`], c); }
-}
 
 /** η(α): o: { mu, a (rad), pts: [[α°, η]], hover (°) } */
 export function drawEta(ctx, st, o) {

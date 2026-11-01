@@ -13,7 +13,7 @@ import { clamp, fmt, createStage, createLoop, tag, arrow, bindRange, prefersRedu
 import { chipBtn, noise } from "./labkit.js";
 import { springScale } from "./instruments.js";
 import * as P from "./incline-efficiency-physics.js";
-import { drawRule, drawEta, lastFrame } from "./incline-efficiency-plots.js";
+import { drawEta, lastFrame } from "./incline-efficiency-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -101,11 +101,28 @@ function drawRamp(ctx, c, w, h) {
   crate(ctx, bx, by, b, -a);
   geo.box = { x: bx + nx * -b / 2, y: by - ny * b / 2, k, fx, ground, a };
   // arqon va dinamometr
-  const fpx = [bx + ux * (b / 2) - nx * b * 0.45, by + uy * (b / 2) - ny * b * 0.45], top2 = [px0 + 6, top - 6];
-  const dEnd = [fpx[0] + ux * 64, fpx[1] + uy * 64];
+  // Supaning chap burchagidagi blok: arqon yukdan pandusga parallel keladi, blokni aylanib o'tib,
+  // gorizontal holda lebyodkaga boradi (tortish kuchi pandus bo'ylab yo'nalgan).
+  const d = b * 0.45, rr = narrow ? 6 : 8, ry = wy - 6;  // arqonning pandusdan balandligi, blok radiusi, lebyodka arqoni sathi
+  const tC = (ry + rr - ground + ny * (d - rr)) / uy, C = [fx + ux * tC - nx * (d - rr), ry + rr];
+  const T1 = [C[0] - nx * rr, C[1] - ny * rr], a1 = Math.atan2(-ny, -nx);
+  const fpx = [bx + ux * (b / 2) - nx * d, by + uy * (b / 2) - ny * d];
+  const toT1 = Math.hypot(T1[0] - fpx[0], T1[1] - fpx[1]), gl = Math.min(64, toT1 - 4), dEnd = [fpx[0] + ux * gl, fpx[1] + uy * gl];
   const Fshow = rp.s >= rp.l - 1e-6 ? 0 : Fpull();
-  if (rp.s < rp.l - 0.05) { digitalGauge(ctx, c, fpx, dEnd, Fshow); ctx.strokeStyle = "#a16207"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(dEnd[0], dEnd[1]); ctx.lineTo(top2[0], top2[1]); ctx.lineTo(wx, wy - 6); ctx.stroke(); }
-  else { ctx.strokeStyle = "#a16207"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(fpx[0], fpx[1]); ctx.lineTo(wx, wy - 6); ctx.stroke(); }
+  // blok kronshteyni (supaga mahkamlangan) va blok
+  const bxk = Math.max(C[0], px0 + 5);  // kronshteyn supa ustida turadi (tik pandusda blok biroz chetga chiqadi)
+  ctx.strokeStyle = "#475569"; ctx.lineWidth = 4; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(bxk, top - 2); ctx.lineTo(C[0], C[1]); ctx.stroke(); ctx.lineCap = "butt";
+  ctx.fillStyle = "#475569"; ctx.fillRect(bxk - 7, top - 3, 14, 3);
+  const pg = ctx.createRadialGradient(C[0] - rr * 0.3, C[1] - rr * 0.3, 1, C[0], C[1], rr);
+  pg.addColorStop(0, "#cbd5e1"); pg.addColorStop(1, "#64748b");
+  ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(C[0], C[1], rr, 0, TAU); ctx.fill();
+  ctx.strokeStyle = "#334155"; ctx.lineWidth = 1.2; ctx.stroke();
+  ctx.fillStyle = "#1e293b"; ctx.beginPath(); ctx.arc(C[0], C[1], 2, 0, TAU); ctx.fill();
+  const showGauge = rp.s < rp.l - 0.05 && gl > 56;
+  if (showGauge) digitalGauge(ctx, c, fpx, dEnd, Fshow);
+  const r0 = showGauge ? dEnd : fpx;
+  ctx.strokeStyle = "#a16207"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(r0[0], r0[1]); ctx.lineTo(T1[0], T1[1]);
+  ctx.arc(C[0], C[1], rr, a1, -Math.PI / 2); ctx.lineTo(wx, ry); ctx.stroke();
   // kuch strelkalari
   if (Fshow > 0 && !narrow) {
     const sc = 46 / Pw();
@@ -206,20 +223,19 @@ const heights = () => { const vh = (typeof window !== "undefined" && window.inne
 const stage = createStage($("#stage"), draw, { height: () => heights().stage });
 const labPts = () => lab.rows.map((r) => [P.angleOf(r.h, LB) / DEG, 100 * r.eta]);
 function drawGraphCanvas(ctx, gs) {
-  if (ui.mode === "rule") return drawRule(ctx, gs, { Pw: Pw(), h: rp.h, l: rp.l, mu: 0, hover: ui.hover });
-  if (ui.mode === "work") return drawEta(ctx, gs, { mu: rp.muWork, a: alpha(), pts: [], hover: ui.hover });
+  // grafik faqat «Lab» rejimida (o'lchangan nuqtalar va nazariy egri chiziq)
   return drawEta(ctx, gs, { mu: lMu(), a: lAlpha(), pts: labPts(), hover: ui.hover });
 }
 const graph = createStage($("#graph"), drawGraphCanvas, { height: () => heights().graph });
 const TABS = {
-  rule: ["Kuch va yo‘l: F(l)", "Pandus qancha uzun bo‘lsa, yukni shuncha kichik kuch bilan tortish mumkin: F = Ph/l. Lekin to‘rtburchak yuzasi — bajarilgan ish F·l — har doim bir xil, Ph ga teng. Kuchdan yutsak, yo‘ldan shuncha yutqazamiz."],
-  work: ["FIK ning qiyalik burchagiga bog‘liqligi η(α)", "Qiyalik qancha katta bo‘lsa, FIK shuncha katta, chunki ishqalanish kuchi μP cos α kamayadi, yo‘l esa qisqaradi. Qizil soha — o‘z-o‘zidan tormozlanish (tg α ≤ μ): qo‘yib yuborilgan yuk sirpanmaydi, bunday tekislikning FIKi 50 % dan kichik."],
   lab: ["O‘lchangan FIK va nazariy egri chiziq η(α)", "Yashil nuqtalar — jadvaldagi o‘lchashlar, ko‘k chiziq — tanlangan sirt uchun η = 1/(1 + μ ctg α). Taxta uchini turli balandlikka qo‘yib, bir nechta o‘lchash bajaring."],
 };
 function setTab() {
   const t = TABS[ui.mode]; ui.hover = null;
-  $("[data-graph-title]").textContent = t[0]; $("[data-graph-sub]").textContent = t[1]; graph.canvas.setAttribute("aria-label", t[0]); graph.render();
+  $("[data-graph-card]").hidden = !t;  // «Oltin qoida» va «Ishqalanish va FIK» da grafik yo'q
   $("[data-lab-card]").hidden = ui.mode !== "lab";
+  if (!t) return;
+  $("[data-graph-title]").textContent = t[0]; $("[data-graph-sub]").textContent = t[1]; graph.canvas.setAttribute("aria-label", t[0]); graph.render();
 }
 
 /* ------------------------------------------------------------------ Jadval */

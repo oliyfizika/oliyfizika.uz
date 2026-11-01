@@ -7,7 +7,7 @@
 import { icon } from "../ui/icons.js";
 import { DEG, clamp, fmt, sci, createStage, createLoop, arrow, angleArc, tag, bindRange } from "./sim-kit.js";
 import { TAU, H_MAX, rk4, createPeriodMeter, motionInfo, specificEnergy, specificKinetic, specificPotential, periodRatio, smallPeriod, wrapAngle } from "./pendulum-physics.js";
-import { createHistory, createTimePlot, createPhasePlot, createEnergyPlot, splitHeights } from "./pendulum-plots.js";
+import { createHistory, createTimePlot, createEnergyPlot, splitHeights } from "./pendulum-plots.js";
 
 const $ = (s) => document.querySelector(s);
 
@@ -21,7 +21,7 @@ let s = { th: init.th, w: init.w, t: 0 };
 let lin = { ...s };
 const meter = createPeriodMeter();
 const hist = createHistory(3500);
-const timePlot = createTimePlot(), phasePlot = createPhasePlot(), energyPlot = createEnergyPlot();
+const timePlot = createTimePlot(), energyPlot = createEnergyPlot();
 let lastSample = -1;
 let eRef = 0;                                   // energiya ustunlari masshtabi (J) — o'sib boradi
 
@@ -44,7 +44,6 @@ function resetSim({ keepRunning = false } = {}) {
   lin = { ...s };
   meter.reset();
   hist.clear();
-  phasePlot.reset();
   lastSample = -1;
   eRef = Math.max(scaleE() * specificEnergy(s, w2()) * 1.15, 0.12 * P.m * P.g * P.L);
   sample(s, lin);
@@ -270,13 +269,11 @@ function draw(ctx, stage) {
 
 const TABS = {
   time: ["Burchakning vaqtga bog‘liqligi θ(t)", "Oxirgi tebranishlar; uzuq chiziq — kichik burchak modeli"],
-  phase: ["Faza portreti (θ, ω/ω₀)", "Bosib boshlang‘ich holatni tanlang · uzuq chiziq — separatrisa"],
   energy: ["Energiyaning vaqtga bog‘liqligi E(t)", "Kinetik va potensial energiya almashinuvi"],
 };
 
 function drawGraphCanvas(ctx, st) {
   if (ui.tab === "time") timePlot.draw(ctx, st, hist, { win: windowSeconds(), tNow: s.t, showLin: ui.show.lin });
-  else if (ui.tab === "phase") phasePlot.draw(ctx, st, hist, { w0: w0(), separatrix: true, trail: 900 });
   else energyPlot.draw(ctx, st, hist, { win: windowSeconds(), tNow: s.t, scale: scaleE(), ref: eRef * 0.9 });
 }
 
@@ -342,7 +339,7 @@ function updateUI() {
     parts.push(`<p>Mayatnikka davriy tashqi kuch ta’sir qilmoqda: <span class="sim-math">Ω = ${fmt(r, 2)} ω₀ = ${fmt(r * w0(), 2)} rad/s</span>. Tabiiy chastota <span class="sim-math">ω₀ = ${fmt(w0(), 2)} rad/s</span>. ${Math.abs(r - 1) < 0.08 ? "<b>Rezonans!</b> Chastotalar mos kelganda amplituda eng tez o‘sadi, so‘nish esa uni cheklaydi." : r < 1 ? "Kuch chastotasi tabiiy chastotadan past — mayatnik kuchga deyarli “ergashadi”." : "Kuch chastotasi tabiiy chastotadan yuqori — mayatnik kuchga ulgurmaydi, amplituda kichik bo‘ladi."}</p>`);
     if (P.gamma > 0 && pred < 0.3) parts.push(`<p>Kichik burchaklar nazariyasi bo‘yicha turg‘un amplituda ≈ <b>${fmt((pred * 180) / Math.PI, 1)}°</b> (<span class="sim-math">f / √((ω₀² − Ω²)² + γ²Ω²)</span>). Qiymatni o‘lchangan grafik bilan solishtiring.</p>`);
   } else if (info.mode === "rotation") {
-    parts.push(`<p>Boshlang‘ich energiya <span class="sim-math">2mgL</span> dan katta (<span class="sim-math">E = ${sci(E, 3)} J &gt; ${sci(2 * mg * P.L, 3)} J</span>) — mayatnik yuqori nuqtadan ham o‘tib, <b>to‘liq aylanadi</b>. Sterjen tutib turgani uchun bu mumkin; ip bo‘lganda yuqorida bo‘shashib qolishi mumkin edi. Faza portretida bu holat separatrisadan tashqaridagi to‘lqinsimon chiziq.</p>`);
+    parts.push(`<p>Boshlang‘ich energiya <span class="sim-math">2mgL</span> dan katta (<span class="sim-math">E = ${sci(E, 3)} J &gt; ${sci(2 * mg * P.L, 3)} J</span>) — mayatnik yuqori nuqtadan ham o‘tib, <b>to‘liq aylanadi</b>. Sterjen tutib turgani uchun bu mumkin; ip bo‘lganda yuqorida bo‘shashib qolishi mumkin edi.</p>`);
   } else if (info.mode === "separatrix") {
     parts.push(`<p>Energiya aynan <span class="sim-math">2mgL</span>: mayatnik yuqori nuqtaga cheksiz uzoq vaqt davomida yaqinlashadi — bu tebranish va aylanish chegarasi (separatrisa).</p>`);
   } else if (info.mode === "rest") {
@@ -481,25 +478,10 @@ function setTab(tab) {
   document.querySelectorAll("[data-tab-value]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.tabValue === tab)));
   $("[data-graph-title]").textContent = TABS[tab][0];
   $("[data-graph-sub]").textContent = TABS[tab][1];
-  graph.canvas.dataset.clickable = String(tab === "phase");
   graph.canvas.setAttribute("aria-label", TABS[tab][0]);
   graph.render();
 }
 document.querySelectorAll("[data-tab-value]").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tabValue)));
-
-/* Faza portretida bosib boshlang'ich holat tanlash */
-function setStateFromPhase(e) {
-  const r = graph.canvas.getBoundingClientRect();
-  const q = phasePlot.toState(e.clientX - r.left, e.clientY - r.top);
-  if (!q) return;
-  init.th = clamp(q.th, -179 * DEG, 179 * DEG);
-  init.w = clamp(Math.round(q.w * 10) / 10, -10, 10);
-  th0Ctl.set(Math.round(init.th / DEG)); w0Ctl.set(init.w);
-  resetSim();
-  renderAll(); updateUI();
-  loop.start();
-}
-graph.canvas.addEventListener("pointerdown", (e) => { if (ui.tab === "phase") setStateFromPhase(e); });
 
 /* Sharni sudrash */
 let drag = null;

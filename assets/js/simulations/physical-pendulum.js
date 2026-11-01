@@ -8,7 +8,7 @@ import { icon } from "../ui/icons.js";
 import { DEG, clamp, fmt, sci, createStage, createLoop, arrow, angleArc, tag, bindRange } from "./sim-kit.js";
 import { TAU, H_MAX, rk4, createPeriodMeter, motionInfo, specificEnergy, specificKinetic, specificPotential, periodRatio, wrapAngle } from "./pendulum-physics.js";
 import { SHAPES, gyr2, omega2, periodSmall, reducedLength, conjugateDistance, minPeriod, pivotReaction } from "./physical-pendulum-physics.js";
-import { createHistory, createTimePlot, createPhasePlot, createEnergyPlot, frame, ticks, splitHeights } from "./pendulum-plots.js";
+import { createHistory, createTimePlot, createEnergyPlot, frame, ticks, splitHeights } from "./pendulum-plots.js";
 
 const $ = (s) => document.querySelector(s);
 
@@ -24,7 +24,7 @@ let s = { th: init.th, w: init.w, t: 0 };
 let ghost = { ...s };
 const meter = createPeriodMeter();
 const hist = createHistory(3500);
-const timePlot = createTimePlot(), phasePlot = createPhasePlot(), energyPlot = createEnergyPlot();
+const timePlot = createTimePlot(), energyPlot = createEnergyPlot();
 let lastSample = -1;
 
 const shapeInfo = () => SHAPES[P.shape];
@@ -50,7 +50,6 @@ function resetSim({ keepRunning = false } = {}) {
   ghost = { ...s };
   meter.reset();
   hist.clear();
-  phasePlot.reset();
   lastSample = -1;
   sample(s, ghost);
   if (!keepRunning) loop.stop();
@@ -344,7 +343,6 @@ function drawTd(ctx, st) {
 const TABS = {
   td: ["Davrning osish nuqtasiga bog‘liqligi T(d)", "Grafikni bosib d ni tanlang · ko‘k nuqta — hozirgi, binafsha — Keyter nuqtasi"],
   time: ["Burchakning vaqtga bog‘liqligi θ(t)", "Oxirgi tebranishlar; uzuq chiziq — massa markazida to‘plangan nuqta (L = d)"],
-  phase: ["Faza portreti (θ, ω/ω₀)", "Bosib boshlang‘ich holatni tanlang · uzuq chiziq — separatrisa"],
   energy: ["Energiyaning vaqtga bog‘liqligi E(t)", "Kinetik va potensial energiya almashinuvi"],
 };
 
@@ -352,7 +350,6 @@ function drawGraphCanvas(ctx, st) {
   const win = windowSeconds();
   if (ui.tab === "td") drawTd(ctx, Object.assign(st, { ctx }));
   else if (ui.tab === "time") timePlot.draw(ctx, st, hist, { win, tNow: s.t, showLin: ui.show.ghost, linLabel: "Nuqtaviy massa (L = d)", mainLabel: "Fizik mayatnik" });
-  else if (ui.tab === "phase") phasePlot.draw(ctx, st, hist, { w0: W0(), separatrix: true, trail: 900 });
   else energyPlot.draw(ctx, st, hist, { win, tNow: s.t, scale: Ic(), ref: Math.max(Ic() * specificEnergy(init, W2()) * 1.2, 0.1 * P.m * P.g * P.d) });
 }
 
@@ -578,7 +575,7 @@ function setTab(tab) {
   document.querySelectorAll("[data-tab-value]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.tabValue === tab)));
   $("[data-graph-title]").textContent = TABS[tab][0];
   $("[data-graph-sub]").textContent = TABS[tab][1];
-  graph.canvas.dataset.clickable = String(tab === "phase" || tab === "td");
+  graph.canvas.dataset.clickable = String(tab === "td");
   graph.canvas.setAttribute("aria-label", TABS[tab][0]);
   graph.render();
 }
@@ -592,14 +589,6 @@ graph.canvas.addEventListener("pointerdown", (e) => {
     if (px < f.rect.x || px > f.rect.x + f.rect.w) return;
     P.d = clamp(Math.round((dMin + ((px - f.rect.x) / f.rect.w) * (dMax - dMin)) * 200) / 200, dMin, dMax);
     syncDistRange(); afterChange();
-  } else if (ui.tab === "phase") {
-    const q = phasePlot.toState(px, py);
-    if (!q) return;
-    init.th = clamp(q.th, -175 * DEG, 175 * DEG);
-    init.w = Math.round(q.w * 10) / 10;
-    th0Ctl.set(Math.round(init.th / DEG));
-    resetSim(); renderAll(); updateUI();
-    loop.start();
   }
 });
 
