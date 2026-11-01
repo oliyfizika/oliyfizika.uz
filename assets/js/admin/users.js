@@ -29,9 +29,10 @@ function row(id, u) {
   const cells = [
     ["Ism", esc(n.first)], ["Familiya", esc(n.last)], ["Email", `<span class="of-admin-break">${esc(u.email || "—")}</span>`],
     ["Role", roleBadge(u.role)], ["Full Access", yesNo(u.fullAccess)], ["Mock Access", yesNo(u.mockTestsAccess)],
+    ["Attestatsiya — Fizika", yesNo(u.attestationAccess)],
     ["XP", num(u.xp)], ["Daraja", num(u.level)], ["Ro‘yxat sanasi", esc(fmtDate(u.createdAt))], ["Oxirgi faollik", esc(formatDateTime(u.lastActiveAt))],
   ];
-  return `<tr>${cells.map(([l, v], i) => `<td data-label="${l}"${i === 6 || i === 7 ? ' class="of-num"' : ""}>${v}</td>`).join("")}
+  return `<tr>${cells.map(([l, v], i) => `<td data-label="${l}"${i === 7 || i === 8 ? ' class="of-num"' : ""}>${v}</td>`).join("")}
     <td class="of-admin-cell-action"><a class="of-btn of-btn--soft of-btn--sm" href="user.html?id=${encodeURIComponent(id)}" aria-label="${esc(`${n.first} ${n.last} — batafsil`)}">Ochish${icon("chevronRight")}</a></td></tr>`;
 }
 
@@ -41,6 +42,7 @@ function buildQuery() {
   if (f === "admin") cons.push(where("role", "==", "admin"), orderBy(documentId()));
   else if (f === "fullAccess") cons.push(where("fullAccess", "==", true), orderBy(documentId()));
   else if (f === "mock") cons.push(where("mockTestsAccess", "==", true), orderBy(documentId()));
+  else if (f === "attestation") cons.push(where("attestationAccess", "==", true), orderBy(documentId()));
   else {
     const s = sortSel.value;
     if (s === "__id") cons.push(orderBy(documentId()));
