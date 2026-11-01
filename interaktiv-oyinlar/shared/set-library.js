@@ -25,10 +25,18 @@ const CLOUD_TEXT = {
 };
 
 // ========================================================================== picker
-export function mountSetPicker(container, { game, mode = "mcq", onSelect }) {
+/**
+ * Qo‘shimcha (ixtiyoriy) sozlamalar yangi o‘yinlar uchun:
+ *   sampleFilter(set)  — qaysi namunalar ko‘rsatiladi (masalan, faqat formulalar);
+ *   countPlayable(set) — o‘yinga yaraydigan elementlar soni; minPlayable — eng kam soni;
+ *   unusableText       — yetarli bo‘lmaganda kartada chiqadigan izoh.
+ */
+export function mountSetPicker(container, { game, mode = "mcq", onSelect, sampleFilter, countPlayable, minPlayable, unusableText }) {
+  const samples = sampleFilter ? SAMPLE_SETS.filter(sampleFilter) : SAMPLE_SETS;
+  const fallbackId = samples[0]?.id || SAMPLE_SETS[0].id;
   let tab = "samples";
   let selectedId = lastUsed(game);
-  if (!findSet(selectedId)) selectedId = SAMPLE_SETS[0].id;
+  if (!findSet(selectedId) || (findSet(selectedId).sample && !samples.some((x) => x.id === selectedId))) selectedId = fallbackId;
   if (getUserSets().some((s) => s.id === selectedId)) tab = "mine";
 
   container.classList.add("gm-picker");
@@ -66,8 +74,8 @@ export function mountSetPicker(container, { game, mode = "mcq", onSelect }) {
   });
 
   function card(set) {
-    const playable = mode === "mcq" ? playableCount(set) : set.items.length;
-    const unusable = mode === "mcq" ? playable < 2 : playable < 1;
+    const playable = countPlayable ? countPlayable(set) : mode === "mcq" ? playableCount(set) : set.items.length;
+    const unusable = playable < (minPlayable ?? (mode === "mcq" ? 2 : 1));
     const li = document.createElement("li");
     li.className = "gm-set";
     li.dataset.id = set.id;
@@ -80,7 +88,7 @@ export function mountSetPicker(container, { game, mode = "mcq", onSelect }) {
         <span class="gm-set__body">
           <span class="gm-set__title">${esc(set.title)}</span>
           <span class="gm-set__topics">${set.topics.map((t) => `<span class="of-badge">${esc(t)}</span>`).join("")}</span>
-          <span class="gm-set__meta">${kindLabel(set)} · ${set.items.length} ta${unusable ? ` · <b>${mode === "mcq" ? "kamida 2 ta javobli savol kerak" : "savol yo‘q"}</b>` : ""}</span>
+          <span class="gm-set__meta">${kindLabel(set)} · ${set.items.length} ta${unusable ? ` · <b>${unusableText || (mode === "mcq" ? "kamida 2 ta javobli savol kerak" : "savol yo‘q")}</b>` : ""}</span>
         </span>
       </button>
       <span class="gm-set__tools">
@@ -100,7 +108,7 @@ export function mountSetPicker(container, { game, mode = "mcq", onSelect }) {
     li.querySelector("[data-delete]")?.addEventListener("click", async () => {
       if (!confirm(`“${set.title}” to‘plami o‘chirilsinmi?`)) return;
       await deleteUserSet(set.id);
-      if (selectedId === set.id) select(SAMPLE_SETS[0].id);
+      if (selectedId === set.id) select(fallbackId);
       toast("To‘plam o‘chirildi.");
     });
     return li;
@@ -114,7 +122,7 @@ export function mountSetPicker(container, { game, mode = "mcq", onSelect }) {
       b.setAttribute("aria-selected", String(b.dataset.tab === tab));
     });
     list.innerHTML = "";
-    const sets = tab === "samples" ? SAMPLE_SETS : mine;
+    const sets = tab === "samples" ? samples : mine;
     if (!sets.length) {
       list.innerHTML = `<li class="gm-empty">
         <p>Hali o‘z to‘plamingiz yo‘q. Mavzu nomini yozing va unga mos ${mode === "open" ? "savollarni" : "formulalar yoki savollarni"} kiriting — to‘plam saqlanadi va uni barcha o‘yinlarda ishlatish mumkin.</p>
@@ -147,7 +155,7 @@ export function mountSetPicker(container, { game, mode = "mcq", onSelect }) {
     cloudEl.textContent = CLOUD_TEXT[status] || CLOUD_TEXT.off;
     cloudEl.dataset.status = status;
     render();
-    if (!findSet(selectedId)) select(SAMPLE_SETS[0].id);
+    if (!findSet(selectedId)) select(fallbackId);
   });
   select(selectedId);
 

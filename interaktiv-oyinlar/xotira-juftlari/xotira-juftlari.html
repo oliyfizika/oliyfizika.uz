@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xotira juftlari | OliyFizika.uz</title>
+<meta name="description" content="Yopiq kartalarni ochib, mos juftlarni toping: kattalik va birlik, olim va kashfiyot yoki formula nomi va formula. Yakka yoki ikki kishi bo‘lib o‘ynang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../shared/games.css">
+<link rel="stylesheet" href="xotira-juftlari.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="xotira-juftlari.js"></script>
+</head>
+<!--
+  Xotira juftlari. Ma’lumot: ../shared/units-data.js (QUANTITIES, SCIENTISTS) va umumiy to‘plamlar (../shared/game-sets.js).
+-->
+<body class="of-ui" data-shell-title="Xotira juftlari">
+<div class="of-page of-container">
+<main class="gm" id="game">
+  <header data-hide-on-play>
+    <ol class="gm-crumbs"><li><a href="../interaktiv-oyinlar.html">Interaktiv o‘yinlar</a></li><li aria-current="page">Xotira juftlari</li></ol>
+    <div class="gm-head"><div><h1>Xotira juftlari</h1><p>Yopiq kartalarni ochib, mos juftlarni toping: kattalik va birlik, olim va kashfiyot yoki formula nomi va formula. Yakka yoki ikki kishi bo‘lib o‘ynang.</p></div></div>
+  </header>
+  <!-- 1. Sozlash -->
+  <section class="gm-setup" data-view="setup">
+    <div class="gm-col">
+      <div class="of-card gm-panel">
+        <h2 class="gm-step"><b>1</b> Kartalar to‘plamini tanlang</h2>
+        <div class="gm-modes" id="decks">
+          <button type="button" class="gm-mode" data-deck="units" aria-pressed="true">
+            <b>Kattalik va birlik</b><span>Kuch ↔ N (nyuton), bosim ↔ Pa (paskal) va boshqalar.</span>
+          </button>
+          <button type="button" class="gm-mode" data-deck="scientists" aria-pressed="false">
+            <b>Olim va kashfiyot</b><span>Faradey ↔ elektromagnit induksiya, Beruniy ↔ Yer radiusi…</span>
+          </button>
+          <button type="button" class="gm-mode" data-deck="set" aria-pressed="false">
+            <b>Formulalar to‘plamidan</b><span>Formula nomi ↔ formula. Namunalar yoki o‘zingiz yaratgan to‘plam.</span>
+          </button>
+        </div>
+      </div>
+      <div class="of-card gm-panel" id="pickerBox" hidden>
+        <h2 class="gm-step"><b>2</b> To‘plamni tanlang</h2>
+        <div id="picker"></div>
+      </div>
+    </div>
+    <aside class="of-card gm-panel gm-panel--sticky">
+      <h2 class="gm-step"><b id="startStep">2</b> O‘yinni boshlash</h2>
+      <div class="gm-chosen" id="chosen"></div>
+      <div class="of-field">
+        <span class="of-label">Juftlar soni</span>
+        <div class="of-segment gm-seg-wrap" id="sizes">
+          <button type="button" data-n="6" aria-pressed="true">6 juft</button>
+          <button type="button" data-n="8" aria-pressed="false">8 juft</button>
+          <button type="button" data-n="10" aria-pressed="false">10 juft</button>
+        </div>
+      </div>
+      <div class="of-field">
+        <span class="of-label">O‘yinchilar</span>
+        <div class="of-segment gm-seg-wrap" id="players">
+          <button type="button" data-p="1" aria-pressed="true">Yakka</button>
+          <button type="button" data-p="2" aria-pressed="false">Ikki kishi</button>
+        </div>
+      </div>
+      <div class="gm-teams" id="names" hidden>
+        <label class="gm-team-input" style="--_c: var(--of-primary)"><i></i><input class="of-input" id="name1" maxlength="20" value="1-o‘yinchi" aria-label="1-o‘yinchi nomi"></label>
+        <label class="gm-team-input" style="--_c: var(--of-success)"><i></i><input class="of-input" id="name2" maxlength="20" value="2-o‘yinchi" aria-label="2-o‘yinchi nomi"></label>
+      </div>
+      <p class="of-hint" id="rule">Ikkita kartani oching. Ular bir-biriga mos kelsa (masalan, kattalik va uning birligi), ochiq qoladi. Barcha juftlarni eng kam yurishda toping.</p>
+      <button type="button" class="of-btn of-btn--primary of-btn--lg of-btn--block" id="start">O‘yinni boshlash</button>
+      <p class="of-hint" id="best" hidden></p>
+    </aside>
+  </section>
+
+  <!-- 2. O‘yin -->
+  <section class="xj-play" data-view="play" hidden>
+    <div class="of-card gm-bar">
+      <div class="gm-bar__title"><small>Xotira juftlari</small><b id="playTitle"></b></div>
+      <span class="gm-bar__stat">Juftlar: <b id="found">0</b> / <span id="total">6</span></span>
+      <span class="gm-bar__stat" id="movesBox">Yurishlar: <b id="moves">0</b></span>
+      <span class="gm-bar__stat" id="clock">0:00</span>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="quit">Yakunlash</button>
+    </div>
+    <div class="xj-score" id="score" hidden></div>
+    <ul class="xj-grid" id="grid" aria-label="Kartalar"></ul>
+    <p class="xj-status of-hint" id="status" aria-live="polite"></p>
+  </section>
+
+  <!-- 3. Natija -->
+  <section class="gm-play" data-view="result" hidden>
+    <div class="of-card gm-result">
+      <div class="gm-ring" id="ring" data-level="high"><div class="gm-ring__inner"><b id="resultBig">0</b><span id="resultSmall">yurish</span></div></div>
+      <div class="gm-result__text">
+        <h2 id="resultTitle">Barcha juftlar topildi!</h2>
+        <p id="resultText"></p>
+        <div class="gm-actions">
+          <button type="button" class="of-btn of-btn--primary" id="again">Qayta o‘ynash</button>
+          <button type="button" class="of-btn" id="change">Sozlamalarni o‘zgartirish</button>
+          <a class="of-btn of-btn--ghost" href="../interaktiv-oyinlar.html">O‘yinlarga qaytish</a>
+        </div>
+      </div>
+    </div>
+    <div class="of-card gm-panel">
+      <h2>Shu o‘yindagi juftlar</h2>
+      <ul class="gm-review" id="review"></ul>
+    </div>
+  </section>
+
+</main>
+</div>
+</body>
+</html>

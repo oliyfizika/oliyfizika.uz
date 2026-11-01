@@ -1,7 +1,8 @@
 // ==========================================================================
 // Interaktiv o'yinlar — katalog sahifasi. O'yin kodlari bu yerda YUKLANMAYDI.
 // Faqat ikonlar, kirish animatsiyasi va o'yinlarning o'zi shu brauzerda saqlagan rekordlari
-// (localStorage kaliti: "oliyfizika:formulani-top:best" — Formulani top o‘yinidagi eng yaxshi foiz).
+// (kartadagi data-record kaliti: Formulani top, Birlikni top, Formula qur — eng yaxshi foiz;
+//  Nishonga ur va Muvozanat — bosqichlarda yig‘ilgan jami yulduzlar).
 // Qidiruv — qobiqning deklarativ qidiruvi (data-shell-search, [data-search-item]).
 // ==========================================================================
 
