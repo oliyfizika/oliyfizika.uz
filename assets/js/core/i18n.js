@@ -14,6 +14,7 @@ import { STRINGS_ATT_A } from "./i18n-att-a.js";
 import { STRINGS_ATT_B } from "./i18n-att-b.js";
 import { STRINGS_ATT_C } from "./i18n-att-c.js";
 import { STRINGS_SIM } from "./i18n-sim.js";
+import { STRINGS_AUTH } from "./i18n-auth.js";
 
 export const LANGS = [
   { code: "uz", short: "O‘z", label: "O‘zbekcha" },
@@ -33,7 +34,7 @@ export function setLang(code) {
 }
 
 const lang = getLang();
-const dict = { ...(STRINGS[lang] || {}), ...(STRINGS_UF[lang] || {}), ...(STRINGS_MS[lang] || {}),
+const dict = { ...(STRINGS_AUTH[lang] || {}), ...(STRINGS[lang] || {}), ...(STRINGS_UF[lang] || {}), ...(STRINGS_MS[lang] || {}),
   ...(STRINGS_ATT_A[lang] || {}), ...(STRINGS_ATT_B[lang] || {}), ...(STRINGS_ATT_C[lang] || {}), ...(STRINGS_SIM[lang] || {}) };
 
 /** Tarjima. `{name}` ko'rinishidagi o'rinlar `vars` dan to'ldiriladi. */

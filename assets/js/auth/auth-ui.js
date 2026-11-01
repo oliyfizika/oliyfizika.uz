@@ -5,6 +5,7 @@
 // Ko'rinishlar: login · reset · register (1) · verify (2) · password (3)
 // ==========================================================================
 
+import { tr } from "../core/i18n.js";
 import { icon } from "../ui/icons.js";
 import { openModal } from "../ui/modal.js";
 import { toast } from "../ui/feedback.js";
@@ -51,7 +52,7 @@ function passwordField({ id, label, autocomplete = "new-password", describedBy =
         <input class="of-input" id="${id}" name="${id}" type="password" autocomplete="${autocomplete}"
           aria-describedby="${described}" spellcheck="false" autocapitalize="off">
         <button type="button" class="of-icon-btn of-input-action" data-toggle-pw="${id}" aria-controls="${id}"
-          aria-pressed="false" aria-label="Parolni ko‘rsatish">${icon("eye")}</button>
+          aria-pressed="false" aria-label="${tr("Parolni ko‘rsatish")}">${icon("eye")}</button>
       </div>
       <p class="of-field-error" id="${id}-err" role="alert"></p>
     </div>`;
@@ -64,7 +65,7 @@ function bindPasswordToggles(root) {
       const show = input.type === "password";
       input.type = show ? "text" : "password";
       btn.setAttribute("aria-pressed", String(show));
-      btn.setAttribute("aria-label", show ? "Parolni yashirish" : "Parolni ko‘rsatish");
+      btn.setAttribute("aria-label", show ? tr("Parolni yashirish") : tr("Parolni ko‘rsatish"));
       btn.innerHTML = icon(show ? "eyeOff" : "eye");
       input.focus({ preventScroll: true });
       const len = input.value.length;
@@ -99,8 +100,8 @@ function setLoading(button, loading) {
 }
 
 function steps(current) {
-  const names = ["Ma’lumotlar", "Tasdiqlash", "Parol"];
-  return `<ol class="of-steps" aria-label="Ro‘yxatdan o‘tish bosqichlari">${names
+  const names = [tr("Ma’lumotlar"), tr("Tasdiqlash"), tr("Parol")];
+  return `<ol class="of-steps" aria-label="${tr("Ro‘yxatdan o‘tish bosqichlari")}">${names
     .map((n, i) => {
       const state = i + 1 < current ? "done" : i + 1 === current ? "current" : "todo";
       return `<li data-state="${state}" ${state === "current" ? 'aria-current="step"' : ""}>${i + 1}. ${n}</li>`;
@@ -142,20 +143,20 @@ export function renderPasswordStep(container, { reg, onDone, showSteps = true })
 
   container.innerHTML = `
     ${showSteps ? steps(3) : ""}
-    <p class="of-auth__subtitle">Email tasdiqlandi. Endi hisobingiz uchun xavfsiz parol yarating.</p>
+    <p class="of-auth__subtitle">${tr("Email tasdiqlandi. Endi hisobingiz uchun xavfsiz parol yarating.")}</p>
     <form class="of-auth__form" novalidate>
       ${needNames ? `<div class="of-auth__row">
-          ${field({ id: fn, label: "Ism", autocomplete: "given-name", value: reg?.firstName || "" })}
-          ${field({ id: ln, label: "Familiya", autocomplete: "family-name", value: reg?.lastName || "" })}
+          ${field({ id: fn, label: tr("Ism"), autocomplete: "given-name", value: reg?.firstName || "" })}
+          ${field({ id: ln, label: tr("Familiya"), autocomplete: "family-name", value: reg?.lastName || "" })}
         </div>` : ""}
-      ${passwordField({ id: pw, label: "Parol", describedBy: rulesId })}
-      <ul class="of-pw-rules" id="${rulesId}" aria-label="Parol talablari">
-        ${PASSWORD_RULES.map((r) => `<li data-rule="${r.id}" data-ok="false">${icon("close")}<span>${r.label}</span><span class="of-sr-only" data-sr>— bajarilmagan</span></li>`).join("")}
+      ${passwordField({ id: pw, label: tr("Parol"), describedBy: rulesId })}
+      <ul class="of-pw-rules" id="${rulesId}" aria-label="${tr("Parol talablari")}">
+        ${PASSWORD_RULES.map((r) => `<li data-rule="${r.id}" data-ok="false">${icon("close")}<span>${r.label}</span><span class="of-sr-only" data-sr>— ${tr("bajarilmagan")}</span></li>`).join("")}
       </ul>
-      ${passwordField({ id: pw2, label: "Parolni takrorlang" })}
+      ${passwordField({ id: pw2, label: tr("Parolni takrorlang") })}
       <p class="of-pw-match" data-match aria-live="polite"></p>
       <div class="of-alert of-alert--error" data-alert role="alert" hidden></div>
-      <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block" disabled>Hisobni yaratish</button>
+      <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block" disabled>${tr("Hisobni yaratish")}</button>
     </form>`;
 
   const form = container.querySelector("form");
@@ -172,11 +173,11 @@ export function renderPasswordStep(container, { reg, onDone, showSteps = true })
       if (li.dataset.ok === String(r.ok)) return;
       li.dataset.ok = String(r.ok);
       li.firstElementChild.outerHTML = icon(r.ok ? "checkCircle" : "close");
-      li.querySelector("[data-sr]").textContent = r.ok ? "— bajarildi" : "— bajarilmagan";
+      li.querySelector("[data-sr]").textContent = r.ok ? `— ${tr("bajarildi")}` : `— ${tr("bajarilmagan")}`;
     });
     const matches = p2.value.length > 0 && p1.value === p2.value;
     if (!p2.value) { matchEl.textContent = ""; delete matchEl.dataset.ok; }
-    else { matchEl.dataset.ok = String(matches); matchEl.textContent = matches ? "✓ Parollar mos keladi" : "✗ Parollar mos emas"; }
+    else { matchEl.dataset.ok = String(matches); matchEl.textContent = matches ? `✓ ${tr("Parollar mos keladi")}` : `✗ ${tr("Parollar mos emas")}`; }
     submit.disabled = !(status.valid && matches);
     return status.valid && matches;
   };
@@ -208,15 +209,15 @@ export function renderPasswordStep(container, { reg, onDone, showSteps = true })
         relink.type = "button";
         relink.className = "of-btn of-btn--soft of-btn--block";
         relink.dataset.relink = "";
-        relink.textContent = "Yangi tasdiqlash havolasini yuborish";
+        relink.textContent = tr("Yangi tasdiqlash havolasini yuborish");
         relink.addEventListener("click", async () => {
           setLoading(relink, true);
           try {
             await resendRegistrationLink();
-            showAlert(form, "Yangi havola yuborildi. Uni bosing — parol yaratish shu yerdan davom etadi.", "success");
+            showAlert(form, tr("Yangi havola yuborildi. Uni bosing — parol yaratish shu yerdan davom etadi."), "success");
             relink.remove();
           } catch (e) {
-            showAlert(form, e?.code === "of/cooldown" ? `Qayta yuborish uchun ${formatWait(e.wait)} kuting.` : authErrorMessage(e));
+            showAlert(form, e?.code === "of/cooldown" ? tr("Qayta yuborish uchun {t} kuting.", { t: formatWait(e.wait) }) : authErrorMessage(e));
             setLoading(relink, false);
           }
         });
@@ -288,21 +289,21 @@ export function openAuthDialog(view = "login", opts = {}) {
 
   // ---------------- login ----------------
   function login() {
-    titleEl.textContent = "Kirish";
+    titleEl.textContent = tr("Kirish");
     const email = nextId("email");
     const pw = nextId("pw");
     body.innerHTML = `
-      <p class="of-auth__subtitle">Hisobingizga email va parol orqali kiring.</p>
+      <p class="of-auth__subtitle">${tr("Hisobingizga email va parol orqali kiring.")}</p>
       <form class="of-auth__form" novalidate>
-        ${field({ id: email, label: "Email", type: "email", autocomplete: "email", inputmode: "email", placeholder: "siz@example.com" })}
-        ${passwordField({ id: pw, label: "Parol", autocomplete: "current-password" })}
-        <div class="of-auth__between"><span></span><button type="button" class="of-link-btn" data-go="reset">Parolni unutdingizmi?</button></div>
+        ${field({ id: email, label: tr("Email"), type: "email", autocomplete: "email", inputmode: "email", placeholder: tr("siz@example.com") })}
+        ${passwordField({ id: pw, label: tr("Parol"), autocomplete: "current-password" })}
+        <div class="of-auth__between"><span></span><button type="button" class="of-link-btn" data-go="reset">${tr("Parolni unutdingizmi?")}</button></div>
         <div class="of-alert of-alert--error" data-alert role="alert" hidden></div>
-        <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block">Kirish</button>
-        <div class="of-auth__divider">yoki</div>
-        <button type="button" class="of-btn of-btn--lg of-btn--block of-google-btn" data-google>${GOOGLE_LOGO}Google bilan davom etish</button>
+        <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block">${tr("Kirish")}</button>
+        <div class="of-auth__divider">${tr("yoki")}</div>
+        <button type="button" class="of-btn of-btn--lg of-btn--block of-google-btn" data-google>${GOOGLE_LOGO}${tr("Google bilan davom etish")}</button>
       </form>
-      <p class="of-auth__foot">Hisobingiz yo‘qmi? <button type="button" data-go="register">Ro‘yxatdan o‘tish</button></p>`;
+      <p class="of-auth__foot">${tr("Hisobingiz yo‘qmi?")} <button type="button" data-go="register">${tr("Ro‘yxatdan o‘tish")}</button></p>`;
     const form = body.querySelector("form");
     bindPasswordToggles(form);
     bindCommon();
@@ -312,13 +313,13 @@ export function openAuthDialog(view = "login", opts = {}) {
       const e = form.querySelector(`#${email}`).value;
       const p = form.querySelector(`#${pw}`).value;
       const okE = setFieldError(form, email, validateEmail(e));
-      const okP = setFieldError(form, pw, p ? "" : "Parolni kiriting.");
+      const okP = setFieldError(form, pw, p ? "" : tr("Parolni kiriting."));
       if (!okE || !okP) return;
       const btn = form.querySelector("[type=submit]");
       setLoading(btn, true);
       try {
         await loginWithPassword(e, p);
-        finish("Xush kelibsiz!");
+        finish(tr("Xush kelibsiz!"));
       } catch (error) {
         showAlert(form, authErrorMessage(error));
         setLoading(btn, false);
@@ -329,16 +330,16 @@ export function openAuthDialog(view = "login", opts = {}) {
 
   // ---------------- reset ----------------
   function reset() {
-    titleEl.textContent = "Parolni tiklash";
+    titleEl.textContent = tr("Parolni tiklash");
     const email = nextId("email");
     body.innerHTML = `
-      <p class="of-auth__subtitle">Email manzilingizni kiriting — parolni tiklash havolasini yuboramiz.</p>
+      <p class="of-auth__subtitle">${tr("Email manzilingizni kiriting — parolni tiklash havolasini yuboramiz.")}</p>
       <form class="of-auth__form" novalidate>
-        ${field({ id: email, label: "Email", type: "email", autocomplete: "email", inputmode: "email" })}
+        ${field({ id: email, label: tr("Email"), type: "email", autocomplete: "email", inputmode: "email" })}
         <div class="of-alert of-alert--error" data-alert role="alert" hidden></div>
-        <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block">Havolani yuborish</button>
+        <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block">${tr("Havolani yuborish")}</button>
       </form>
-      <p class="of-auth__foot"><button type="button" data-go="login">← Kirishga qaytish</button></p>`;
+      <p class="of-auth__foot"><button type="button" data-go="login">← ${tr("Kirishga qaytish")}</button></p>`;
     const form = body.querySelector("form");
     bindCommon();
     form.addEventListener("submit", async (event) => {
@@ -350,10 +351,10 @@ export function openAuthDialog(view = "login", opts = {}) {
       try {
         await sendPasswordReset(e);
         // Email mavjudligini oshkor qilmaslik uchun har doim bir xil javob
-        showAlert(form, "Agar bu email bilan hisob mavjud bo‘lsa, parolni tiklash havolasi yuborildi. Pochtangizni tekshiring.", "success");
+        showAlert(form, tr("Agar bu email bilan hisob mavjud bo‘lsa, parolni tiklash havolasi yuborildi. Pochtangizni tekshiring."), "success");
       } catch (error) {
         if (error?.code === "auth/user-not-found") {
-          showAlert(form, "Agar bu email bilan hisob mavjud bo‘lsa, parolni tiklash havolasi yuborildi. Pochtangizni tekshiring.", "success");
+          showAlert(form, tr("Agar bu email bilan hisob mavjud bo‘lsa, parolni tiklash havolasi yuborildi. Pochtangizni tekshiring."), "success");
         } else {
           showAlert(form, authErrorMessage(error));
         }
@@ -366,25 +367,25 @@ export function openAuthDialog(view = "login", opts = {}) {
 
   // ---------------- register (1) ----------------
   function register(prefill = getPendingRegistration() || {}) {
-    titleEl.textContent = "Ro‘yxatdan o‘tish";
+    titleEl.textContent = tr("Ro‘yxatdan o‘tish");
     const fn = nextId("fn");
     const ln = nextId("ln");
     const email = nextId("email");
     body.innerHTML = `
       ${steps(1)}
-      <p class="of-auth__subtitle">Ma’lumotlaringizni kiriting. Emailingizga tasdiqlash havolasini yuboramiz.</p>
+      <p class="of-auth__subtitle">${tr("Ma’lumotlaringizni kiriting. Emailingizga tasdiqlash havolasini yuboramiz.")}</p>
       <form class="of-auth__form" novalidate>
         <div class="of-auth__row">
-          ${field({ id: fn, label: "Ism", autocomplete: "given-name", value: prefill.firstName || "" })}
-          ${field({ id: ln, label: "Familiya", autocomplete: "family-name", value: prefill.lastName || "" })}
+          ${field({ id: fn, label: tr("Ism"), autocomplete: "given-name", value: prefill.firstName || "" })}
+          ${field({ id: ln, label: tr("Familiya"), autocomplete: "family-name", value: prefill.lastName || "" })}
         </div>
-        ${field({ id: email, label: "Email", type: "email", autocomplete: "email", inputmode: "email", placeholder: "siz@example.com", value: prefill.email || "" })}
+        ${field({ id: email, label: tr("Email"), type: "email", autocomplete: "email", inputmode: "email", placeholder: tr("siz@example.com"), value: prefill.email || "" })}
         <div class="of-alert of-alert--error" data-alert role="alert" hidden></div>
-        <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block">Davom etish</button>
-        <div class="of-auth__divider">yoki</div>
-        <button type="button" class="of-btn of-btn--lg of-btn--block of-google-btn" data-google>${GOOGLE_LOGO}Google bilan davom etish</button>
+        <button type="submit" class="of-btn of-btn--primary of-btn--lg of-btn--block">${tr("Davom etish")}</button>
+        <div class="of-auth__divider">${tr("yoki")}</div>
+        <button type="button" class="of-btn of-btn--lg of-btn--block of-google-btn" data-google>${GOOGLE_LOGO}${tr("Google bilan davom etish")}</button>
       </form>
-      <p class="of-auth__foot">Hisobingiz bormi? <button type="button" data-go="login">Kirish</button></p>`;
+      <p class="of-auth__foot">${tr("Hisobingiz bormi?")} <button type="button" data-go="login">${tr("Kirish")}</button></p>`;
     const form = body.querySelector("form");
     bindCommon();
     form.addEventListener("submit", async (event) => {
@@ -421,20 +422,20 @@ export function openAuthDialog(view = "login", opts = {}) {
   function verify() {
     const reg = getPendingRegistration();
     if (!reg) return register({});
-    titleEl.textContent = "Emailingizni tasdiqlang";
+    titleEl.textContent = tr("Emailingizni tasdiqlang");
     body.innerHTML = `
       ${steps(2)}
       <div class="of-verify">
         <div class="of-verify__icon">${icon("mail")}</div>
         <p class="of-verify__email">${esc(reg.email)}</p>
-        <p class="of-verify__text">Email manzilingizga tasdiqlash havolasi yuborildi. Emailingizni oching va tasdiqlash havolasini bosing.</p>
+        <p class="of-verify__text">${tr("Email manzilingizga tasdiqlash havolasi yuborildi. Emailingizni oching va tasdiqlash havolasini bosing.")}</p>
         <div class="of-alert" data-alert role="status" hidden></div>
         <div class="of-verify__actions">
-          <button type="button" class="of-btn of-btn--soft of-btn--lg of-btn--block" data-resend>Emailni qayta yuborish</button>
-          <button type="button" class="of-btn of-btn--ghost of-btn--block" data-change>Emailni o‘zgartirish</button>
+          <button type="button" class="of-btn of-btn--soft of-btn--lg of-btn--block" data-resend>${tr("Emailni qayta yuborish")}</button>
+          <button type="button" class="of-btn of-btn--ghost of-btn--block" data-change>${tr("Emailni o‘zgartirish")}</button>
         </div>
-        <p class="of-verify__waiting" aria-live="polite">Tasdiqlash kutilmoqda — havolani bosganingizdan so‘ng davom etamiz</p>
-        <p class="of-verify__hint">Xat kelmadimi? “Spam” yoki “Reklama” papkasini tekshiring.</p>
+        <p class="of-verify__waiting" aria-live="polite">${tr("Tasdiqlash kutilmoqda — havolani bosganingizdan so‘ng davom etamiz")}</p>
+        <p class="of-verify__hint">${tr("Xat kelmadimi? “Spam” yoki “Reklama” papkasini tekshiring.")}</p>
       </div>`;
 
     const resendBtn = body.querySelector("[data-resend]");
@@ -442,7 +443,7 @@ export function openAuthDialog(view = "login", opts = {}) {
     const tick = () => {
       const wait = resendAvailableIn();
       resendBtn.disabled = wait > 0;
-      resendBtn.textContent = wait > 0 ? `Emailni qayta yuborish (${formatWait(wait)})` : "Emailni qayta yuborish";
+      resendBtn.textContent = wait > 0 ? `${tr("Emailni qayta yuborish")} (${formatWait(wait)})` : tr("Emailni qayta yuborish");
       if (wait <= 0) { clearInterval(timer); timer = null; }
     };
     const startTimer = () => { tick(); if (!timer) timer = setInterval(tick, 1000); };
@@ -454,9 +455,9 @@ export function openAuthDialog(view = "login", opts = {}) {
       setLoading(resendBtn, true);
       try {
         await resendRegistrationLink();
-        showAlert(body, "Yangi tasdiqlash havolasi yuborildi. Eng so‘nggi xatdagi havoladan foydalaning.", "success");
+        showAlert(body, tr("Yangi tasdiqlash havolasi yuborildi. Eng so‘nggi xatdagi havoladan foydalaning."), "success");
       } catch (error) {
-        showAlert(body, error?.code === "of/cooldown" ? `Qayta yuborish uchun ${formatWait(error.wait)} kuting.` : authErrorMessage(error));
+        showAlert(body, error?.code === "of/cooldown" ? tr("Qayta yuborish uchun {t} kuting.", { t: formatWait(error.wait) }) : authErrorMessage(error));
       } finally {
         setLoading(resendBtn, false);
         startTimer();
@@ -477,7 +478,7 @@ export function openAuthDialog(view = "login", opts = {}) {
       if (!s.profileLoaded) return; // profil hali o'qilmoqda
       if (isProfileComplete(s.profile)) {
         clearPendingRegistration();
-        finish("Bu email bilan hisobingiz allaqachon mavjud edi — tizimga kirdingiz.");
+        finish(tr("Bu email bilan hisobingiz allaqachon mavjud edi — tizimga kirdingiz."));
       } else {
         password();
       }
@@ -488,10 +489,10 @@ export function openAuthDialog(view = "login", opts = {}) {
 
   // ---------------- password (3) ----------------
   function password() {
-    titleEl.textContent = "Parol yarating";
+    titleEl.textContent = tr("Parol yarating");
     renderPasswordStep(body, {
       reg: getPendingRegistration(),
-      onDone: () => finish("Hisobingiz yaratildi. Xush kelibsiz!"),
+      onDone: () => finish(tr("Hisobingiz yaratildi. Xush kelibsiz!")),
     });
   }
 
@@ -506,7 +507,7 @@ export function openAuthDialog(view = "login", opts = {}) {
           const res = await loginWithGoogle();
           if (res?.redirected) return; // sahifa Google'ga o'tadi
           clearPendingRegistration();
-          finish("Xush kelibsiz!");
+          finish(tr("Xush kelibsiz!"));
         } catch (error) {
           if (!["auth/popup-closed-by-user", "auth/cancelled-popup-request"].includes(error?.code)) {
             showAlert(form, authErrorMessage(error));
@@ -519,7 +520,7 @@ export function openAuthDialog(view = "login", opts = {}) {
 
   // Boshqa tabda (tasdiqlash sahifasida) ro'yxatdan o'tish yakunlansa
   offElsewhere = onRegistrationCompleteElsewhere(() => {
-    if (current) finish("Hisobingiz yaratildi. Xush kelibsiz!");
+    if (current) finish(tr("Hisobingiz yaratildi. Xush kelibsiz!"));
   });
 
   current = { show, close: modal.close };

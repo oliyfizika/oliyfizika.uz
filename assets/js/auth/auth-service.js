@@ -11,6 +11,7 @@
 //   3) faqat shundan keyin parol yaratiladi -> updatePassword + users/{uid} profili
 // ==========================================================================
 
+import { tr } from "../core/i18n.js";
 import { loadFirebase, refreshProfile, isProfileComplete } from "../core/session.js";
 
 const ROOT = new URL("../../../", import.meta.url);
@@ -34,9 +35,9 @@ export function normalizeName(value) {
 
 export function validateName(value, label) {
   const v = normalizeName(value);
-  if (!v) return `${label}ni kiriting.`;
-  if (v.length < 2) return `${label} kamida 2 ta harfdan iborat bo‘lishi kerak.`;
-  if (!NAME_RE.test(v)) return `${label} faqat harflardan iborat bo‘lishi kerak.`;
+  if (!v) return tr(`${label}ni kiriting.`);
+  if (v.length < 2) return tr(`${label} kamida 2 ta harfdan iborat bo‘lishi kerak.`);
+  if (!NAME_RE.test(v)) return tr(`${label} faqat harflardan iborat bo‘lishi kerak.`);
   return "";
 }
 
@@ -46,16 +47,16 @@ export function normalizeEmail(value) {
 
 export function validateEmail(value) {
   const v = normalizeEmail(value);
-  if (!v) return "Email manzilni kiriting.";
-  if (!EMAIL_RE.test(v) || v.length > 254) return "Email manzil noto‘g‘ri kiritilgan.";
+  if (!v) return tr("Email manzilni kiriting.");
+  if (!EMAIL_RE.test(v) || v.length > 254) return tr("Email manzil noto‘g‘ri kiritilgan.");
   return "";
 }
 
 export const PASSWORD_RULES = [
-  { id: "length", label: "Kamida 8 ta belgi", test: (p) => p.length >= 8 },
-  { id: "upper", label: "Kamida 1 ta katta harf", test: (p) => /\p{Lu}/u.test(p) },
-  { id: "digit", label: "Kamida 1 ta raqam", test: (p) => /\d/.test(p) },
-  { id: "special", label: "Kamida 1 ta maxsus belgi", test: (p) => /[^\p{L}\d\s]/u.test(p) },
+  { id: "length", label: tr("Kamida 8 ta belgi"), test: (p) => p.length >= 8 },
+  { id: "upper", label: tr("Kamida 1 ta katta harf"), test: (p) => /\p{Lu}/u.test(p) },
+  { id: "digit", label: tr("Kamida 1 ta raqam"), test: (p) => /\d/.test(p) },
+  { id: "special", label: tr("Kamida 1 ta maxsus belgi"), test: (p) => /[^\p{L}\d\s]/u.test(p) },
 ];
 
 export function passwordStatus(password) {
@@ -352,6 +353,6 @@ const AUTH_ERRORS = {
 
 export function authErrorMessage(error, fallback = "Amalni bajarib bo‘lmadi. Iltimos, qayta urinib ko‘ring.") {
   if (error) console.error("[auth]", error?.code || "", error);
-  if (navigator.onLine === false) return AUTH_ERRORS["auth/network-request-failed"];
-  return AUTH_ERRORS[error?.code] || fallback;
+  if (navigator.onLine === false) return tr(AUTH_ERRORS["auth/network-request-failed"]);
+  return tr(AUTH_ERRORS[error?.code] || fallback);
 }
