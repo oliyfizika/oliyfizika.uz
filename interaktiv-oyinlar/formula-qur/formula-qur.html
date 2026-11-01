@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formula qur | OliyFizika.uz</title>
+<meta name="description" content="Aralashtirilgan bo‘laklardan fizik formulani to‘g‘ri tartibda yig‘ing. Tayyor namunalar yoki o‘zingiz yaratgan formulalar to‘plami bilan o‘ynang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../shared/games.css">
+<link rel="stylesheet" href="formula-qur.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="formula-qur.js"></script>
+</head>
+<!--
+  Formula qur. Formulalar ../shared/ dagi umumiy to‘plamlardan olinadi; javob bo‘laklarga ajratiladi (tokenize), ko‘paytuvchilar tartibi farq qilsa ham to‘g‘ri hisoblanadi.
+-->
+<body class="of-ui" data-shell-title="Formula qur">
+<div class="of-page of-container">
+<main class="gm" id="game">
+  <header data-hide-on-play>
+    <ol class="gm-crumbs"><li><a href="../interaktiv-oyinlar.html">Interaktiv o‘yinlar</a></li><li aria-current="page">Formula qur</li></ol>
+    <div class="gm-head"><div><h1>Formula qur</h1><p>Aralashtirilgan bo‘laklardan fizik formulani to‘g‘ri tartibda yig‘ing. Tayyor namunalar yoki o‘zingiz yaratgan formulalar to‘plami bilan o‘ynang.</p></div></div>
+  </header>
+  <!-- 1. Sozlash -->
+  <section class="gm-setup" data-view="setup">
+    <div class="of-card gm-panel">
+      <h2 class="gm-step"><b>1</b> Formulalar to‘plamini tanlang</h2>
+      <div id="picker"></div>
+    </div>
+    <aside class="of-card gm-panel gm-panel--sticky">
+      <h2 class="gm-step"><b>2</b> O‘yinni boshlash</h2>
+      <div class="gm-chosen" id="chosen"></div>
+      <label class="of-field">
+        <span class="of-label">Formulalar soni</span>
+        <select class="of-input" id="count">
+          <option value="8" selected>8 ta</option>
+          <option value="12">12 ta</option>
+          <option value="0">Hammasi</option>
+        </select>
+      </label>
+      <label class="of-field">
+        <span class="of-label">Ortiqcha bo‘laklar</span>
+        <select class="of-input" id="extra">
+          <option value="0">Yo‘q (oson)</option>
+          <option value="2" selected>2 ta (o‘rtacha)</option>
+          <option value="4">4 ta (qiyin)</option>
+        </select>
+      </label>
+      <p class="of-hint">Formula bo‘laklarga ajratiladi va aralashtiriladi. Bo‘laklarni to‘g‘ri tartibda bosib, formulani yig‘ing. Birinchi urinishda topsangiz 10 ball, ikkinchisida 5 ball.</p>
+      <button type="button" class="of-btn of-btn--primary of-btn--lg of-btn--block" id="start">O‘yinni boshlash</button>
+      <p class="of-hint" id="best" hidden></p>
+    </aside>
+  </section>
+
+  <!-- 2. O‘yin -->
+  <section class="gm-play" data-view="play" hidden>
+    <div class="of-card gm-bar">
+      <div class="gm-bar__title"><small id="playTopic">Formula qur</small><b id="playTitle"></b></div>
+      <div class="of-progress" aria-hidden="true"><span id="progressBar"></span></div>
+      <span class="gm-bar__stat" id="progressText">1 / 8</span>
+      <span class="gm-bar__stat">Ball: <b id="score">0</b></span>
+    </div>
+    <article class="of-card gm-q" id="card" tabindex="-1">
+      <span class="gm-q__label">Formulani yig‘ing</span>
+      <h2 class="gm-q__text" id="qText"></h2>
+
+      <div class="fq-line" id="line" aria-live="polite">
+        <span class="fq-left" id="left"></span>
+        <ol class="fq-answer" id="answer" aria-label="Siz yig‘gan formula"></ol>
+      </div>
+      <div>
+        <p class="fq-bank__label of-hint">Bo‘laklar — bosing, formula oxiriga qo‘shiladi. Joylangan bo‘lakni bossangiz, u qaytib chiqadi.</p>
+        <ul class="fq-bank" id="bank" aria-label="Formula bo‘laklari"></ul>
+      </div>
+      <div class="fq-tools" id="tools">
+        <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="undo">Orqaga</button>
+        <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="clear">Tozalash</button>
+        <button type="button" class="of-btn of-btn--primary" id="check">Tekshirish</button>
+      </div>
+
+      <p class="gm-feedback" id="feedback" aria-live="polite"></p>
+      <div class="gm-q__nav">
+        <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="quit">Yakunlash</button>
+        <span class="gm-kbd"><kbd>Backspace</kbd> orqaga, <kbd>Enter</kbd> tekshirish</span>
+        <button type="button" class="of-btn of-btn--primary" id="next" hidden>Keyingi formula</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- 3. Natija -->
+  <section class="gm-play" data-view="result" hidden>
+    <div class="of-card gm-result">
+      <div class="gm-ring" id="ring"><div class="gm-ring__inner"><b id="percent">0 %</b><span>to‘g‘ri</span></div></div>
+      <div class="gm-result__text">
+        <h2 id="resultTitle">O‘yin tugadi!</h2>
+        <p id="resultText"></p>
+        <div class="gm-actions">
+          <button type="button" class="of-btn of-btn--primary" id="again">Qayta o‘ynash</button>
+          <button type="button" class="of-btn" id="change">Boshqa to‘plam</button>
+          <a class="of-btn of-btn--ghost" href="../interaktiv-oyinlar.html">O‘yinlarga qaytish</a>
+        </div>
+      </div>
+    </div>
+    <div class="of-card gm-panel" id="reviewBox" hidden>
+      <h2>Takrorlash uchun formulalar</h2>
+      <ul class="gm-review" id="review"></ul>
+    </div>
+  </section>
+
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* Nishonga ur — maydon (canvas) va parametrlar ustuni. */
+.nu-levels-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.nu-theory h2 { font-size: var(--of-text-md); }
+.nu-formulas { display: flex; flex-wrap: wrap; gap: 8px; }
+.nu-formulas span { padding: 8px 12px; border-radius: var(--of-radius-md); background: var(--of-surface-sunken); font: 600 var(--of-text-md)/1.3 var(--of-font-sans); }
+.nu-formulas small { font-weight: 500; color: var(--of-text-3); }
+
+.nu-play { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 1180px; }
+.nu-layout { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 14px; align-items: start; }
+.nu-stage { position: relative; padding: 0; overflow: hidden; }
+.nu-stage canvas { display: block; width: 100%; aspect-ratio: 16 / 9; touch-action: none; cursor: crosshair; }
+.nu-goal { margin: 0; padding: 10px 14px; border-top: 1px solid var(--of-border); font: 600 var(--of-text-sm)/1.4 var(--of-font-sans); color: var(--of-text-2); }
+.nu-params { gap: 16px; }
+.nu-param { display: flex; flex-direction: column; gap: 8px; }
+.nu-param__head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-weight: 600; font-size: var(--of-text-sm); color: var(--of-text-2); }
+.nu-param__head b { font: 750 var(--of-text-lg)/1 var(--of-font-display); color: var(--of-text); }
+.nu-param input[type="range"] { width: 100%; accent-color: var(--of-primary); }
+.nu-param[data-locked="true"] .nu-param__head b { color: var(--of-text-3); }
+.nu-lock { font-size: var(--of-text-xs); color: var(--of-warning-text); }
+.nu-drag { margin: 0; }
+.nu-last { margin: 0; min-height: 1.4em; font-weight: 600; font-size: var(--of-text-sm); color: var(--of-text-2); }
+.nu-last:empty { display: none; }
+.nu-hint summary { cursor: pointer; font-weight: 650; color: var(--of-primary-text); }
+.nu-hint p { margin: 8px 0 0; font-size: var(--of-text-sm); line-height: 1.55; color: var(--of-text-2); }
+
+@media (max-width: 960px) {
+  .nu-layout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .nu-stage canvas { aspect-ratio: 4 / 3; }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muvozanat | OliyFizika.uz</title>
+<meta name="description" content="Richagni muvozanatga keltiring: yuklarni to‘g‘ri bo‘limlarga joylashtiring, richag qaysi tomonga og‘ishini bashorat qiling va noma’lum yukning massasini toping. 14 bosqich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../shared/games.css">
+<link rel="stylesheet" href="muvozanat.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="muvozanat.js"></script>
+</head>
+<!--
+  Muvozanat — kuch momenti (richag) haqidagi bosqichli o‘yin. Bosqichlar muvozanat.js dagi LEVELS ro‘yxatida; bo‘lim 0,5 m, g = 9,8 m/s².
+-->
+<body class="of-ui" data-shell-title="Muvozanat">
+<div class="of-page of-container">
+<main class="gm" id="game">
+  <header data-hide-on-play>
+    <ol class="gm-crumbs"><li><a href="../interaktiv-oyinlar.html">Interaktiv o‘yinlar</a></li><li aria-current="page">Muvozanat</li></ol>
+    <div class="gm-head"><div><h1>Muvozanat</h1><p>Richagni muvozanatga keltiring: yuklarni to‘g‘ri bo‘limlarga joylashtiring, richag qaysi tomonga og‘ishini bashorat qiling va noma’lum yukning massasini toping. 14 bosqich.</p></div></div>
+  </header>
+  <!-- 1. Bosqichlar -->
+  <section class="gm-col" data-view="setup">
+    <div class="of-card gm-panel">
+      <div class="mv-levels-head">
+        <h2 class="gm-step"><b>1</b> Bosqichni tanlang</h2>
+        <span class="of-badge of-badge--orange" id="totalStars">0 / 42 ★</span>
+      </div>
+      <ul class="gm-levels" id="levels"></ul>
+      <p class="of-hint">Uch xil topshiriq bor: <b>muvozanatlash</b> (yuklarni joylashtiring), <b>bashorat</b> (richag qaysi tomonga og‘ishini ayting) va <b>massani top</b> (noma’lum yukni tortib ko‘ring). Natijalar shu brauzerda saqlanadi.</p>
+    </div>
+    <div class="of-card gm-panel">
+      <h2>Eslatma: richagning muvozanat sharti</h2>
+      <div class="mv-formulas">
+        <span>M = F · l = m g l</span>
+        <span>M<sub>chap</sub> = M<sub>o‘ng</sub></span>
+        <span>m₁ l₁ = m₂ l₂</span>
+      </div>
+      <p class="of-hint">Kuch momenti — kuchning yelkaga ko‘paytmasi. Richag tayanch nuqtasiga nisbatan soat mili bo‘yicha va unga qarshi aylantiruvchi momentlar teng bo‘lsa, muvozanatda turadi. Richagning har bir bo‘limi 0,5 m, g = 9,8 m/s².</p>
+    </div>
+  </section>
+
+  <!-- 2. O‘yin -->
+  <section class="mv-play" data-view="play" hidden>
+    <div class="of-card gm-bar">
+      <div class="gm-bar__title"><small id="lvlNum">1-bosqich</small><b id="lvlTitle"></b></div>
+      <span class="gm-bar__stat">Urinishlar: <b id="tries">0</b></span>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="toLevels">Bosqichlar</button>
+    </div>
+    <div class="of-card mv-stage">
+      <p class="mv-task" id="task"></p>
+      <svg class="mv-svg" id="svg" viewBox="0 0 720 300" role="img" aria-label="Richag: tayanch nuqtasi, yuklar va bo‘limlar">
+        <g id="supports"></g>
+        <path class="mv-fulcrum" d="M360 206 L334 262 L386 262 Z"></path>
+        <rect class="mv-ground" x="20" y="262" width="680" height="6" rx="3"></rect>
+        <g id="beam"></g>
+      </svg>
+      <div class="mv-torques" id="torques" hidden></div>
+      <div class="mv-tray-wrap" id="trayWrap">
+        <span class="of-hint" id="trayHint">Yukni bosing, so‘ng richagdagi bo‘limni tanlang (yoki sudrab olib boring). Joylangan yukni bossangiz, u qaytadi.</span>
+        <ul class="mv-tray" id="tray" aria-label="Yuklar"></ul>
+      </div>
+      <div class="mv-predict" id="predict" hidden>
+        <button type="button" class="of-btn" data-guess="-1">Chapga og‘adi</button>
+        <button type="button" class="of-btn" data-guess="0">Muvozanatda qoladi</button>
+        <button type="button" class="of-btn" data-guess="1">O‘ngga og‘adi</button>
+      </div>
+      <form class="mv-find" id="find" hidden>
+        <label class="of-field">
+          <span class="of-label">Qutining massasi, kg</span>
+          <input class="of-input" id="massInput" inputmode="decimal" autocomplete="off" placeholder="masalan, 4">
+        </label>
+        <button type="submit" class="of-btn of-btn--primary">Javob berish</button>
+      </form>
+      <p class="gm-feedback" id="feedback" aria-live="polite"></p>
+      <div class="mv-actions">
+        <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="reset">Yuklarni qaytarish</button>
+        <button type="button" class="of-btn of-btn--primary" id="release">Qo‘yib yuborish</button>
+        <button type="button" class="of-btn" id="again" hidden>Tayanchlarni qaytarish</button>
+      </div>
+    </div>
+    <div class="gm-win" id="win" hidden>
+      <div class="gm-win__box">
+        <div class="gm-stars gm-stars--lg" id="winStars"></div>
+        <h3 id="winTitle">Muvozanat!</h3>
+        <p id="winText"></p>
+        <div class="gm-actions">
+          <button type="button" class="of-btn" id="retry">Qayta o‘ynash</button>
+          <button type="button" class="of-btn of-btn--primary" id="nextLvl">Keyingi bosqich</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+</body>
+</html>

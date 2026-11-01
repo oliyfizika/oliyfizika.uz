@@ -1,0 +1,24 @@
+/* Birlikni top — savol kartasi va qiyin darajadagi darajalar paneli. */
+.bt-sym { margin-left: 4px; padding: 2px 10px; border-radius: 8px; background: var(--of-primary-soft); color: var(--of-primary-text); font-style: italic; white-space: nowrap; }
+.bt-hint { margin: -6px 0 0; color: var(--of-text-2); font-size: var(--of-text-md); }
+.bt-build { display: flex; flex-direction: column; gap: 14px; }
+.bt-live {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; padding: 14px 16px;
+  border: 1.5px dashed var(--of-border-strong); border-radius: var(--of-radius-md); background: var(--of-surface-sunken);
+}
+.bt-live b { font: 750 1.5rem/1.2 var(--of-font-sans); letter-spacing: .02em; overflow-wrap: anywhere; }
+.bt-steppers { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.bt-step {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px 6px;
+  border: 1.5px solid var(--of-border); border-radius: var(--of-radius-md); background: var(--of-surface);
+}
+.bt-step[data-on="true"] { border-color: var(--of-primary); background: var(--of-primary-soft); }
+.bt-step__unit { font: 750 1.15rem/1 var(--of-font-sans); }
+.bt-step__ctl { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.bt-step__ctl .of-icon-btn { width: 36px; height: 32px; border-color: var(--of-border); background: var(--of-surface-2); color: var(--of-text); font: 700 1.1rem/1 var(--of-font-sans); }
+.bt-step__ctl .of-icon-btn:disabled { opacity: .4; cursor: default; }
+.bt-step__ctl output { min-width: 2ch; font: 750 var(--of-text-lg)/1 var(--of-font-display); text-align: center; }
+.bt-build__actions { display: flex; justify-content: flex-end; gap: 8px; }
+@media (max-width: 640px) {
+  .bt-steppers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

@@ -1,0 +1,31 @@
+/* Formula qur — yig‘ish satri va bo‘laklar banki. */
+.fq-line {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 76px; padding: 14px 16px;
+  border: 2px dashed var(--of-border-strong); border-radius: var(--of-radius-lg); background: var(--of-surface-sunken);
+  transition: border-color var(--of-dur-fast), background var(--of-dur-fast);
+}
+.fq-line[data-state="correct"] { border-style: solid; border-color: var(--of-success); background: var(--of-success-soft); }
+.fq-line[data-state="wrong"] { border-color: var(--of-danger); background: var(--of-danger-soft); animation: gm-shake 320ms var(--of-ease-out); }
+.fq-left { font: 750 1.35rem/1 var(--of-font-sans); color: var(--of-text); white-space: nowrap; }
+.fq-answer, .fq-bank { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.fq-answer { flex: 1; min-width: 0; }
+.fq-placeholder { color: var(--of-text-3); font-size: var(--of-text-sm); }
+.fq-bank__label { margin: 0 0 8px; }
+.fq-bank { padding: 12px; border: 1px solid var(--of-border); border-radius: var(--of-radius-lg); background: var(--of-surface); min-height: 64px; }
+.fq-chip {
+  min-width: 44px; height: 44px; padding: 0 12px; border: 1.5px solid var(--of-border); border-bottom-width: 3px;
+  border-radius: 10px; background: var(--of-surface); color: var(--of-text); cursor: pointer;
+  font: 650 1.2rem/1 var(--of-font-sans); white-space: nowrap;
+  transition: transform var(--of-dur-fast), border-color var(--of-dur-fast), background var(--of-dur-fast);
+}
+.fq-chip:hover:not(:disabled) { border-color: var(--of-primary); background: var(--of-primary-soft); transform: translateY(-1px); }
+.fq-chip:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.fq-answer .fq-chip { border-color: var(--of-primary); background: var(--of-primary-soft); color: var(--of-primary-text); }
+.fq-line[data-state="correct"] .fq-chip { border-color: var(--of-success); background: var(--of-surface); color: var(--of-success-text); }
+.fq-chip:disabled { cursor: default; }
+.fq-chip[data-used="true"] { visibility: hidden; }
+.fq-tools { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 640px) {
+  .fq-chip { min-width: 40px; height: 42px; padding: 0 10px; font-size: 1.1rem; }
+  .fq-left { font-size: 1.2rem; }
+}

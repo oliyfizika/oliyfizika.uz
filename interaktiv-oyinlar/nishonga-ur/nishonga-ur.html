@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishonga ur | OliyFizika.uz</title>
+<meta name="description" content="Otish burchagi va boshlang‘ich tezlikni tanlab, to‘pni nishonga tekkizing. 12 bosqich: to‘siqlar, baland nishonlar, jarlik, Oy, Mars va Yupiterdagi tortishish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<link rel="stylesheet" href="../shared/games.css">
+<link rel="stylesheet" href="nishonga-ur.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="nishonga-ur.js"></script>
+</head>
+<!--
+  Nishonga ur — bosqichli ballistika o‘yini. Fizika: havo qarshiligisiz gorizontga burchak ostida otilgan jism, dt = 1/240 s. Bosqichlar nishonga-ur.js dagi LEVELS ro‘yxatida.
+-->
+<body class="of-ui" data-shell-title="Nishonga ur">
+<div class="of-page of-container">
+<main class="gm" id="game">
+  <header data-hide-on-play>
+    <ol class="gm-crumbs"><li><a href="../interaktiv-oyinlar.html">Interaktiv o‘yinlar</a></li><li aria-current="page">Nishonga ur</li></ol>
+    <div class="gm-head"><div><h1>Nishonga ur</h1><p>Otish burchagi va boshlang‘ich tezlikni tanlab, to‘pni nishonga tekkizing. 12 bosqich: to‘siqlar, baland nishonlar, jarlik, Oy, Mars va Yupiterdagi tortishish.</p></div></div>
+  </header>
+  <!-- 1. Bosqichlar -->
+  <section class="gm-col" data-view="setup">
+    <div class="of-card gm-panel">
+      <div class="nu-levels-head">
+        <h2 class="gm-step"><b>1</b> Bosqichni tanlang</h2>
+        <span class="of-badge of-badge--orange" id="totalStars">0 / 36 ★</span>
+      </div>
+      <ul class="gm-levels" id="levels"></ul>
+      <p class="of-hint">Har bir bosqich oldingisidan keyin ochiladi. Birinchi otishda tegsangiz 3 yulduz, 2–3 otishda 2 yulduz, undan ko‘pida 1 yulduz. Natijalar shu brauzerda saqlanadi.</p>
+    </div>
+    <div class="of-card gm-panel nu-theory">
+      <h2>Eslatma: gorizontga burchak ostida otilgan jism</h2>
+      <div class="nu-formulas">
+        <span>x = v₀ cosα · t</span>
+        <span>y = h₀ + v₀ sinα · t − gt²/2</span>
+        <span>L = v₀² sin2α / g <small>(h₀ = 0 bo‘lganda)</small></span>
+        <span>H = v₀² sin²α / (2g)</span>
+      </div>
+      <p class="of-hint">Havo qarshiligi hisobga olinmaydi. Yerda g = 9,8 m/s², Oyda 1,62 m/s², Marsda 3,71 m/s², Yupiterda 24,8 m/s².</p>
+    </div>
+  </section>
+
+  <!-- 2. O‘yin -->
+  <section class="nu-play" data-view="play" hidden>
+    <div class="of-card gm-bar">
+      <div class="gm-bar__title"><small id="lvlNum">1-bosqich</small><b id="lvlTitle"></b></div>
+      <span class="gm-bar__stat" id="lvlPlanet"></span>
+      <span class="gm-bar__stat">Otishlar: <b id="shots">0</b></span>
+      <button type="button" class="of-btn of-btn--ghost of-btn--sm" id="toLevels">Bosqichlar</button>
+    </div>
+    <div class="nu-layout">
+      <div class="of-card nu-stage">
+        <canvas id="canvas" aria-label="Otish maydoni: to‘p, to‘siqlar va nishon" role="img"></canvas>
+        <p class="nu-goal" id="goal"></p>
+        <div class="gm-win" id="win" hidden>
+          <div class="gm-win__box">
+            <div class="gm-stars gm-stars--lg" id="winStars"></div>
+            <h3 id="winTitle">Nishonga tegdi!</h3>
+            <p id="winText"></p>
+            <div class="gm-actions">
+              <button type="button" class="of-btn" id="retry">Qayta o‘ynash</button>
+              <button type="button" class="of-btn of-btn--primary" id="nextLvl">Keyingi bosqich</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="of-card gm-panel nu-params">
+        <label class="nu-param" id="angleBox">
+          <span class="nu-param__head"><span>Otish burchagi α</span><b id="angleOut">45°</b></span>
+          <input type="range" id="angle" min="0" max="85" step="1" value="45">
+          <span class="nu-lock" id="angleLock" hidden>Bu bosqichda burchak o‘zgarmaydi</span>
+        </label>
+        <label class="nu-param" id="speedBox">
+          <span class="nu-param__head"><span>Boshlang‘ich tezlik v₀</span><b id="speedOut">15 m/s</b></span>
+          <input type="range" id="speed" min="5" max="40" step="0.5" value="15">
+          <span class="nu-lock" id="speedLock" hidden>Bu bosqichda tezlik o‘zgarmaydi</span>
+        </label>
+        <p class="of-hint nu-drag">Maydonda to‘pdan boshlab sichqoncha yoki barmoq bilan tortib ham nishonga olishingiz mumkin.</p>
+        <button type="button" class="of-btn of-btn--primary of-btn--lg of-btn--block" id="fire">Otish</button>
+        <p class="nu-last" id="last" aria-live="polite"></p>
+        <details class="nu-hint">
+          <summary>Maslahat</summary>
+          <p id="hint"></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+</div>
+</body>
+</html>
