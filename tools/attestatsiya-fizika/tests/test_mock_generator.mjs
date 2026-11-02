@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { generateMocks, parsePedagogyFile, pedagogyPool, tokens, similarity, SIMILAR, MOCK_GEN } from "../../../assets/js/attestatsiya-fizika/mock-generator.js";
+import { generateMocks, parsePedagogyFile, pedagogyPool, tokens, similarity, SIMILAR, MOCK_GEN, attachFigures, validateMockBundle } from "../../../assets/js/attestatsiya-fizika/mock-generator.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 let pass = 0, fail = 0;
@@ -16,7 +16,7 @@ for (let f = 1; f <= 13; f++) pedagogy.push(...parsePedagogyFile(fs.readFileSync
 const pedPool = pedagogyPool(pedagogy);
 ok("pedagogika fayllari o'qildi", pedagogy.length > 200, `${pedagogy.length} savol, takrorsiz ${pedPool.length}`);
 
-// ---- sun'iy fizika banki: 5 bob × 4 mavzu × 12 savol (+ har mavzuda bitta deyarli takror, rasmli, review.check, kalitsiz)
+// ---- sun'iy fizika banki: 5 bob × 4 mavzu × 12 savol (+ har mavzuda bitta deyarli takror, rasmli (…-10), review.check, kalitsiz)
 const W = "jism tezlik kuch massa energiya impuls zaryad maydon tok kuchlanish linza nur yadro foton gaz bosim harorat issiqlik tebranish to'lqin".split(" ");
 const days = [];
 const privates = new Map();
@@ -56,7 +56,20 @@ ok("150 ta savol, hammasi noyob", all.length === 150 && new Set(all).size === 15
 ok("avvalgi mock savollari kirmagan", !all.includes("AF-mexanika-0-0") && !all.includes("PED-01-01") && !all.includes("PED-10-12"));
 ok("deyarli takror (…-13) va AF-…-0 bir mockda/mocklarda birga emas", !MOCK_GEN.physicsSections.some(([s]) => [0, 1, 2, 3].some((t) => all.includes(`AF-${s}-${t}-0`) && all.includes(`AF-${s}-${t}-13`))));
 ok("avvalgi mockdagi savolning deyarli takrori ham kirmagan", !all.includes("AF-mexanika-0-13"));
-ok("rasmli / kalitsiz / review.check savollar kirmagan", !all.some((id) => /^AF-.*-(10|11|12)$/.test(id)));
+ok("kalitsiz / review.check savollar kirmagan", !all.some((id) => /^AF-.*-(11|12)$/.test(id)));
+// rasmli savollar (…-10) kiradi; rasm mock ichiga nusxalanadi
+const withFig = res.bundles.filter((b) => b.figureRefs.length);
+ok("rasmli savollar ham tanlanadi (havola manba kun bilan)", withFig.length > 0 && withFig.every((b) => b.figureRefs.every((r) => r.scope === "figures" && r.id === "x.webp" && /^d\d+$/.test(r.srcTestId) && b.ops[0].data.questionIds.includes(r.qid))));
+{
+  const b = withFig[0];
+  const att = attachFigures(b, new Map([["figures/x.webp", { mime: "image/webp", bytes: 3, data: "AAAA" }]]));
+  ok("attachFigures: figures/{id} hujjati + tekshiruv o'tadi", att.ops.length === 5 && att.ops[4].path === `attestationPhysicsDailyTests/${b.testId}/figures/x.webp`
+    && att.ops[4].data.testId === b.testId && att.ops[0].data.figureCount === 1 && !validateMockBundle(att).length, validateMockBundle(att).join("; "));
+  let e = ""; try { attachFigures(b, new Map()); } catch (x) { e = x.message; }
+  ok("attachFigures: rasm yetishmasa xato", /rasm yo'q/.test(e));
+  const res3 = generateMocks({ numbers: [3, 4, 5], days, privates, pedagogy, existingMocks, exclude: new Set(b.figureRefs.map((r) => r.qid)) });
+  ok("exclude: rasmi olinmagan savol o'rniga boshqasi tanlanadi", !res3.errors.length && !res3.bundles.some((x) => b.figureRefs.some((r) => x.ops[0].data.questionIds.includes(r.qid))));
+}
 for (const b of res.bundles) {
   const [t, ver, key, sol] = b.ops.map((o) => o.data);
   ok(`${b.testId}: tarkib 35 + 15, paidOnly, 100 ball, 2 soat`, t.physicsCount === 35 && t.pedagogyCount === 15 && t.paidOnly === true && t.maxScore === 100

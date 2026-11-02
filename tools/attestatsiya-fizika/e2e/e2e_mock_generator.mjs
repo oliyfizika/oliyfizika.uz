@@ -21,7 +21,11 @@ const dump = async (prefix) => (await post("__mock/dump", { prefix })).docs;
 const T0 = new Date("2026-11-02T06:00:00Z");
 const ts = (d) => ({ __ts: [Math.floor(d.getTime() / 1000), 0] });
 
-// ---- sun'iy bank: 5 bob × 3 kun, har kunda 3 mavzu × 6 savol
+// ---- sun'iy bank: 5 bob × 3 kun, har kunda 3 mavzu × 6 savol; i=1 — savol rasmi, i=2 — yechim rasmi (Firestore figure hujjatlari);
+//      Day 2 dagi bitta rasm hujjati ATAYIN yo'q — generator o'sha savolni almashtirishi kerak
+const PNG = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==";
+const PNG_BYTES = Buffer.from(PNG, "base64").length;
+const MISSING = "q2-0-1.png";
 const SECS = [["mexanika", "Mexanika"], ["molekulyar", "Molekulyar fizika va termodinamika"], ["elektromagnetizm", "Elektromagnetizm"], ["optika", "Optika"], ["atom-yadro", "Atom va yadro fizikasi"]];
 const docs = { "attestationPhysicsSettings/config": { accessMode: "paid", figureBackend: "firestore", totalDays: 15 } };
 let day = 0;
@@ -40,9 +44,15 @@ for (const [sec, title] of SECS) {
                   question: [{ t: "p", text: `${title}: ${words} — $v = ${day},${i}\\,\\text{m/s}$ bo‘lsa, toping.` }],
                   options: "ABCD".split("").map((k, j) => ({ key: k, blocks: [{ t: "p", text: `$${day * 10 + ti * 6 + i + j}\\,\\text{J}$` }] })),
                   optionCount: 4, position: qs.length + 1, bookNumber: `${day}.${ti}${i}`, contentVersion: 1 });
+        const qf = `q${day}-${ti}-${i}.png`;
+        if (i === 1) {
+          qs[qs.length - 1].question.push({ t: "figure", id: qf, w: 1, h: 1 });
+          if (qf !== MISSING) docs[`${TC}/${tid}/figures/${qf}`] = { testId: tid, id: qf, mime: "image/png", bytes: PNG_BYTES, data: PNG };
+        }
         answers[id] = letter;
         items.push({ id, evaluationType: "auto", correctAnswer: letter, solutionResult: letter, solutionStatus: "full",
-                     solution: [{ t: "heading", text: "Yechim" }, { t: "p", text: `Hisob: ${words}` }, { t: "answer", blocks: [{ t: "p", text: `${letter})` }] }] });
+                     solution: [{ t: "heading", text: "Yechim" }, { t: "p", text: `Hisob: ${words}` }, ...(i === 2 ? [{ t: "figure", id: `s${day}-${ti}.png`, w: 1, h: 1 }] : []), { t: "answer", blocks: [{ t: "p", text: `${letter})` }] }] });
+        if (i === 2) docs[`${TC}/${tid}/solutionFigures/s${day}-${ti}.png`] = { testId: tid, id: `s${day}-${ti}.png`, mime: "image/png", bytes: PNG_BYTES, data: PNG };
         docs[`${QC}/${id}/private/answer`] = { id, keyStatus: "valid", correctAnswer: letter, review: { check: null } };
       }
     });
@@ -102,12 +112,22 @@ const MIDS = ["att-fizika-mock-03", "att-fizika-mock-04", "att-fizika-mock-05"];
   await page.click(".of-admin-confirm .of-btn--primary");
   await page.waitForFunction(() => /^Tayyor:/.test(document.querySelector("[data-gen-info]").textContent.trim()), null, { timeout: 120000 });
   const all = [];
+  let nFig = 0;
   for (const id of MIDS) {
     const w = await dump(`${TC}/${id}`);
     const t = w[`${TC}/${id}`];
-    ok(`${id}: 4 hujjat (Rules'dan o'tdi), draft, paidOnly, 35+15`, Object.keys(w).length === 4 && t.status === "draft" && t.paidOnly === true && t.physicsCount === 35 && t.pedagogyCount === 15, `${Object.keys(w).length}`);
+    const figs = Object.keys(w).filter((k) => /\/(figures|solutionFigures)\//.test(k));
+    const ver = w[`${TC}/${id}/versions/v1`];
+    const sol = w[`${TC}/${id}/solutions/v1`];
+    const refs = (x) => (JSON.stringify(x).match(/"t":"figure","id":"([^"]+)"/g) || []).map((m) => m.split('"')[7]);
+    const qRefs = refs(ver.questions), sRefs = refs(sol.items);
+    ok(`${id}: 4 hujjat + rasmlar (Rules'dan o'tdi), draft, paidOnly, 35+15`, Object.keys(w).length === 4 + figs.length && t.status === "draft" && t.paidOnly === true && t.physicsCount === 35 && t.pedagogyCount === 15, `${Object.keys(w).length}`);
+    ok(`${id}: har rasm havolasi uchun mockning o'z figure hujjati bor`, qRefs.every((f) => w[`${TC}/${id}/figures/${f}`]) && sRefs.every((f) => w[`${TC}/${id}/solutionFigures/${f}`]) && figs.length === new Set(qRefs).size + new Set(sRefs).size, `savol ${qRefs.length}, yechim ${sRefs.length}`);
+    ok(`${id}: rasmi yo'q savol (${MISSING}) kirmagan`, !qRefs.includes(MISSING));
+    nFig += figs.length;
     all.push(...t.questionIds);
   }
+  ok("rasmli savollar ham tanlangan", nFig > 0, `${nFig} ta rasm hujjati`);
   ok("150 savol noyob, mock-01/02 savollari yo'q", new Set(all).size === 150 && !all.includes(prevQ[0].id) && !all.includes(prevQ[1].id));
   const rows = await txt(page, "[data-body]");
   ok("jadval: tarkib «35 fizika + 15 pedagogika · pullik»", /35 fizika \+ 15 pedagogika · pullik/.test(rows), rows.slice(0, 200));
@@ -130,6 +150,21 @@ for (const [uid, open] of [["pay", true], ["nox", false]]) {
     await page.waitForSelector("[data-start]", { timeout: 20000 });
     const intro = await txt(page, ".att-intro");
     ok("pay: test sahifasi — «har bobdan 7 tadan; so‘ng Pedagogika bo‘limi (15 ta)»", /7 tadan/.test(intro) && /15 ta/.test(intro), intro.slice(0, 300));
+    await page.click("[data-start]");
+    await page.waitForSelector(".att-q", { timeout: 20000 });
+    let figQ = 0, bad = 0;
+    for (let i = 0; i < 50; i++) {
+      await page.waitForTimeout(80);
+      const all = await page.$$eval(".att-q img", (a) => a.length);
+      if (all) {
+        await page.waitForFunction(() => [...document.querySelectorAll(".att-q img")].every((x) => x.complete && x.src.startsWith("blob:")), null, { timeout: 8000 }).catch(() => {});
+        figQ++;
+        if (await page.$$eval(".att-q img", (a) => a.filter((x) => !(x.complete && x.naturalWidth > 0)).length)) bad++;
+      }
+      if (i < 49) await page.click("[data-next]");
+    }
+    const imgs = figQ, imgs2 = bad ? 0 : figQ;
+    ok("pay: mock testdagi rasmlar yuklanadi (mockning o'z Firestore hujjatidan)", imgs > 0 && imgs2 === imgs, `rasmli ${imgs}, yuklanmagan ${imgs - imgs2}`);
   }
   ok(`${uid}: konsol xatolari yo'q`, !page.errs.length, page.errs.join(" | "));
   await ctx.close();

@@ -10,9 +10,9 @@
 // ==========================================================================
 import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } from "./admin-common.js";
 import { toast } from "../ui/feedback.js";
-import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
+import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure, figureUrl } from "../attestatsiya-fizika/api.js";
 import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, isMock, dayLabel, mockCompositionText } from "../attestatsiya-fizika/core.js";
-import { generateMocks, parsePedagogyFile } from "../attestatsiya-fizika/mock-generator.js";
+import { generateMocks, parsePedagogyFile, attachFigures, validateMockBundle, MAX_FIG_BYTES } from "../attestatsiya-fizika/mock-generator.js";
 import { showQuestionStats } from "./attestation-question-stats.js";
 import { toggleAttempts, changeVersion, exportExcel, resetAttempts, detailsRow } from "./attestation-attempts.js";
 import { finalizeOverdueList } from "../attestatsiya-fizika/finalize.js";
@@ -413,6 +413,63 @@ async function loadGeneratorInput(progress) {
   return { days, privates, existingMocks, pedagogy, numbers };
 }
 
+// Kunlik test rasmini (Storage yoki Firestore — figureBackend bo'yicha) mock uchun base64 ga o'giradi.
+// Ruxsat etilgan format (webp/png/svg) va ≤ 700 KB bo'lsa — o'zi; aks holda canvas orqali WebP ga qayta siqiladi.
+const FIG_OK = ["image/webp", "image/png", "image/svg+xml"];
+const b64 = async (blob) => {
+  const bytes = new Uint8Array(await blob.arrayBuffer());
+  let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+};
+async function toWebp(blob) {
+  const bmp = await createImageBitmap(blob);
+  const scale = Math.min(1, 1100 / bmp.width);
+  const c = document.createElement("canvas");
+  c.width = Math.round(bmp.width * scale); c.height = Math.round(bmp.height * scale);
+  const g = c.getContext("2d");
+  g.fillStyle = "#fff"; g.fillRect(0, 0, c.width, c.height);
+  g.drawImage(bmp, 0, 0, c.width, c.height);
+  for (const q of [0.9, 0.8, 0.7, 0.6]) {
+    const out = await new Promise((r) => c.toBlob(r, "image/webp", q));
+    if (out && out.type === "image/webp" && out.size <= MAX_FIG_BYTES) return out;
+  }
+  throw new Error("rasm juda katta");
+}
+async function fetchFigure(ref) {
+  const url = await figureUrl(ref.srcTestId, ref.id, ref.scope === "figures" ? "question" : "solution");
+  let blob = await (await fetch(url)).blob();
+  if (!FIG_OK.includes(blob.type) || blob.size > MAX_FIG_BYTES) blob = await toWebp(blob);
+  return { mime: blob.type, bytes: blob.size, data: await b64(blob) };
+}
+
+/** Mocklarni tuzadi va rasmlarini yuklaydi; rasmi olinmagan savol chiqarib tashlanib, tanlov qayta tuziladi (≤ 4 marta). */
+async function buildWithFigures(input, progress) {
+  const exclude = new Set();
+  const cache = new Map();
+  for (let round = 0; round < 4; round++) {
+    const res = generateMocks({ ...input, exclude });
+    if (res.errors.length) return res;
+    const refs = res.bundles.flatMap((b) => b.figureRefs);
+    const bad = new Set();
+    let done = 0;
+    for (const r of refs) {
+      const k = `${r.srcTestId}|${r.scope}|${r.id}`;
+      if (!cache.has(k)) {
+        try { cache.set(k, await fetchFigure(r)); } catch (err) { console.warn("[admin] mock rasm:", k, err); cache.set(k, null); }
+      }
+      if (!cache.get(k)) bad.add(r.qid);
+      progress(`Rasmlar nusxalanmoqda… ${++done}/${refs.length}`);
+    }
+    if (!bad.size) {
+      const bundles = res.bundles.map((b) => attachFigures(b, new Map(b.figureRefs.map((r) => [`${r.scope}/${r.id}`, cache.get(`${r.srcTestId}|${r.scope}|${r.id}`)]))));
+      return { ...res, bundles, skipped: exclude.size };
+    }
+    bad.forEach((q) => exclude.add(q));
+  }
+  throw new Error(`${exclude.size} ta savolning rasmi yuklanmadi — qayta urinib ko‘ring`);
+}
+
 $("[data-gen-build]").addEventListener("click", async (e) => {
   const btn = e.currentTarget;
   const info = $("[data-gen-info]");
@@ -422,7 +479,11 @@ $("[data-gen-build]").addEventListener("click", async (e) => {
   try {
     const input = await loadGeneratorInput((m) => { info.textContent = m; });
     if (Math.max(...input.numbers) + 100 > 199) throw new Error("mock raqami chegaradan oshdi");
-    const { bundles, errors, pool } = generateMocks(input);
+    const { bundles: raw, errors, pool, skipped } = await buildWithFigures(input, (m) => { info.textContent = m; });
+    const bundles = raw;
+    if (!errors.length) {
+      for (const b of bundles) errors.push(...validateMockBundle(b).map((x) => `${b.testId}: ${x}`));
+    }
     if (errors.length) {
       console.error("[admin] mock generator:", errors);
       info.textContent = `Tekshiruvdan o‘tmadi (${errors.length}): ${errors.slice(0, 3).join("; ")}. Hech narsa yozilmadi.`;
@@ -431,7 +492,8 @@ $("[data-gen-build]").addEventListener("click", async (e) => {
     genBundles = bundles;
     const prevN = input.existingMocks.reduce((s, m) => s + m.questions.length, 0);
     info.innerHTML = `<b>Tayyor (hali yozilmadi):</b> ${bundles.map((b) => `${esc(b.testId)} (Mock test ${b.dayNumber - 100})`).join(", ")}.
-      Har biri: 50 savol = 35 fizika (5 bob × 7) + 15 pedagogika, 100 ball, 2 soat, <b>faqat pullik guruh</b>, rasmsiz.
+      Har biri: 50 savol = 35 fizika (5 bob × 7) + 15 pedagogika, 100 ball, 2 soat, <b>faqat pullik guruh</b>.
+      Rasmlar (mock ichiga nusxalandi): ${bundles.map((b) => `${b.dayNumber - 100}-mock — savol ${b.counts.figures}, yechim ${b.counts.solutionFigures}`).join("; ")}${skipped ? ` (rasmi olinmagan ${skipped} ta savol almashtirildi)` : ""}.
       Takror tekshiruvi: mock ichida, yangi mocklar orasida va avvalgi ${input.existingMocks.length} ta mockdagi ${prevN} savol bilan — <b>takror yo‘q</b>
       (bir xil ID ham, matni o‘xshash savol ham). Nomzodlar: fizika ${pool.physics}, pedagogika ${pool.pedagogy}.
       «Draft sifatida yozish» ni bosing.`;
