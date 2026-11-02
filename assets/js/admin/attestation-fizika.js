@@ -11,7 +11,8 @@
 import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } from "./admin-common.js";
 import { toast } from "../ui/feedback.js";
 import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure } from "../attestatsiya-fizika/api.js";
-import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, isMock, dayLabel } from "../attestatsiya-fizika/core.js";
+import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, isMock, dayLabel, mockCompositionText } from "../attestatsiya-fizika/core.js";
+import { generateMocks, parsePedagogyFile } from "../attestatsiya-fizika/mock-generator.js";
 import { showQuestionStats } from "./attestation-question-stats.js";
 import { toggleAttempts, changeVersion, exportExcel, resetAttempts, detailsRow } from "./attestation-attempts.js";
 import { finalizeOverdueList } from "../attestatsiya-fizika/finalize.js";
@@ -70,7 +71,7 @@ async function load() {
     return `<tr>
       <td data-label="Day" class="of-num"><b>${isMock(t) ? "Mock" : t.dayNumber}</b></td>
       <td data-label="Section">${esc(t.sectionTitle)}</td>
-      <td data-label="Topics"><span class="of-admin-sub">${isMock(t) ? "40 fizika (5 bob × 8) + 10 pedagogika" : esc(t.topics.join(", "))}</span></td>
+      <td data-label="Topics"><span class="of-admin-sub">${isMock(t) ? esc(mockCompositionText(t) + (t.paidOnly ? " · pullik" : "")) : esc(t.topics.join(", "))}</span></td>
       <td data-label="Savollar" class="of-num">${t.questionCount}<br><span class="of-admin-sub">${isMock(t) ? `${t.maxScore || 100} ball` : `${t.scorableCount} ballga`}</span></td>
       <td data-label="Status">${STATUS[t.status] || esc(t.status)}</td>
       <td data-label="Publish date">${t.publishedAt ? esc(formatTashkent(t.publishedAt)) : "—"}</td>
@@ -94,7 +95,7 @@ body.addEventListener("click", async (e) => {
     const order = !isMock(t) && nextDraft && nextDraft.id !== t.id ? ` Diqqat: navbatdagi kun Day ${nextDraft.dayNumber}, siz Day ${t.dayNumber} ni tanladingiz.` : "";
     const ok = await confirmAction({
       title: `${dayLabel(t)} testini foydalanuvchilarga e’lon qilishni xohlaysizmi?`,
-      text: `${isMock(t) ? "Mock test · 40 fizika + 10 pedagogika" : `${t.sectionTitle} · ${t.topics.join(", ")}`} · ${t.questionCount} savol. ${isMock(t) ? `Test darhol ochiladi; yechimlar testni yakunlaganlarga darhol, qolganlarga ${formatTashkent(solAt)} da (Toshkent) ochiladi.` : "Test darhol ochiladi va yopilmaydi: har bir foydalanuvchi uni xohlagan kunda 1 marta, 2 soat ichida bajaradi; yechimlar testni yakunlagach ochiladi."} Bu amalni ortga qaytarib bo‘lmaydi (faqat arxivlash mumkin).${order}`,
+      text: `${isMock(t) ? `Mock test · ${mockCompositionText(t)}` : `${t.sectionTitle} · ${t.topics.join(", ")}`} · ${t.questionCount} savol. ${isMock(t) ? `Test darhol ochiladi; yechimlar testni yakunlaganlarga darhol, qolganlarga ${formatTashkent(solAt)} da (Toshkent) ochiladi.` : "Test darhol ochiladi va yopilmaydi: har bir foydalanuvchi uni xohlagan kunda 1 marta, 2 soat ichida bajaradi; yechimlar testni yakunlagach ochiladi."} Bu amalni ortga qaytarib bo‘lmaydi (faqat arxivlash mumkin).${order}`,
       confirmLabel: "PUBLISH",
     });
     if (!ok) return;
@@ -316,6 +317,25 @@ $("[data-mock-bundle]").addEventListener("change", async (e) => {
     info.textContent = `Fayl yaroqsiz (${err.message}). _private/attestatsiya-fizika/mock-import-NN.json ni tanlang.`;
   }
 });
+/** Mock bundle'ni yozadi: test hujjati birinchi, keyin sub-hujjatlar; mavjud hujjat qayta yozilmaydi (qayta urinish xavfsiz). */
+async function writeMockBundle(bundle, existing, progress) {
+  // Test hujjati birinchi, keyin sub-hujjatlar (Rules versions/keys/solutions/figures uchun parent testni get() qiladi).
+  // Mavjud hujjat qayta yozilmaydi (rasmlar o'zgarmas: Rules update'ni rad etadi) — shuning uchun qayta urinish xavfsiz.
+  let written = 0, skipped = 0;
+  for (const o of bundle.ops) {
+    const ref = doc(fb.db, ...o.path.split("/"));
+    if (existing || o !== bundle.ops[0]) {
+      if ((await getDoc(ref)).exists()) { skipped++; continue; }
+    }
+    const batch = writeBatch(fb.db);
+    batch.set(ref, o.data);
+    await batch.commit();
+    written++;
+    progress(`Yozilmoqda… ${bundle.testId}: ${written + skipped}/${bundle.ops.length} · ${o.path.split("/").slice(-2).join("/")}`);
+  }
+  return { written, skipped };
+}
+
 $("[data-mock-import]").addEventListener("click", async (e) => {
   const btn = e.currentTarget;
   const info = $("[data-mock-info]");
@@ -336,25 +356,115 @@ $("[data-mock-import]").addEventListener("click", async (e) => {
   if (!ok) return;
   btn.classList.add("is-loading");
   try {
-    // Test hujjati birinchi, keyin sub-hujjatlar (Rules versions/keys/solutions/figures uchun parent testni get() qiladi).
-    // Mavjud hujjat qayta yozilmaydi (rasmlar o'zgarmas: Rules update'ni rad etadi) — shuning uchun qayta urinish xavfsiz.
-    let written = 0, skipped = 0;
-    for (const o of mockBundle.ops) {
-      const ref = doc(fb.db, ...o.path.split("/"));
-      if (existing || o !== mockBundle.ops[0]) {
-        if ((await getDoc(ref)).exists()) { skipped++; continue; }
-      }
-      const batch = writeBatch(fb.db);
-      batch.set(ref, o.data);
-      await batch.commit();
-      written++;
-      info.textContent = `Yozilmoqda… ${written + skipped}/${mockBundle.ops.length} · ${o.path.split("/").slice(-2).join("/")}`;
-    }
+    const { written, skipped } = await writeMockBundle(mockBundle, existing, (m) => { info.textContent = m; });
     info.textContent = `Tayyor: ${mockBundle.testId} draft sifatida yozildi (${written} ta yozildi, ${skipped} ta mavjud). Jadvaldan PUBLISH qiling.`;
     toast("Mock test import qilindi.");
     await load();
   } catch (err) {
     info.textContent = errorText(err, "Mock import xatosi.") + " Qayta urinsangiz — faqat yetishmayotgan hujjatlar yoziladi.";
+  } finally {
+    btn.classList.remove("is-loading");
+  }
+});
+
+// ------------------------------------------------------------------ Yangi PULLIK mocklar generatori (mock-03, 04, 05, …)
+// Savollar banki Firestore'dan o'qiladi (kunlik testlarning joriy versiyasi + private/answer — faqat admin), pedagogika
+// savollari attestatsiya/pedagogika-testlari/data/test*.js dan (faqat o'qiladi). Tanlov qoidalari: mock-generator.js.
+// Avval «Tayyorlash» (hech narsa yozilmaydi, faqat tekshiruv), keyin «Draft sifatida yozish» (mavjud import yo'li bilan).
+const GEN_COUNT = 3;
+const PED_FILES = 13;
+let genBundles = null;
+
+async function loadGeneratorInput(progress) {
+  const { collection, getDocs } = fb.fsSdk;
+  const vdoc = async (tid, sub, v) => { const s = await getDoc(doc(fb.db, COL.tests, tid, sub, `v${v}`)); return s.exists() ? s.data() : null; };
+  const all = (await getDocs(collection(fb.db, COL.tests))).docs.map((d) => ({ id: d.id, ...d.data() }));
+  const daily = all.filter((t) => !isMock(t)).sort((a, b) => a.dayNumber - b.dayNumber);
+  const mocks = all.filter(isMock).sort((a, b) => a.dayNumber - b.dayNumber);
+  const days = [];
+  for (const t of daily) {
+    const v = t.currentVersion || 1;
+    const [version, key, solutions] = await Promise.all([vdoc(t.id, "versions", v), vdoc(t.id, "keys", v), vdoc(t.id, "solutions", v)]);
+    days.push({ test: t, version, key, solutions });
+    progress(`Savollar banki o‘qilmoqda… Day ${t.dayNumber} (${days.length}/${daily.length})`);
+  }
+  const qids = [...new Set(days.flatMap((d) => (d.version?.questions || []).filter((q) => q.evaluationType === "auto").map((q) => q.id)))];
+  const privates = new Map();
+  for (let i = 0; i < qids.length; i += 40) {
+    const part = qids.slice(i, i + 40);
+    const snaps = await Promise.all(part.map((q) => getDoc(doc(fb.db, COL.questions, q, "private", "answer"))));
+    snaps.forEach((s, k) => { if (s.exists()) privates.set(part[k], s.data()); });
+    progress(`Javoblar holati tekshirilmoqda… ${Math.min(i + 40, qids.length)}/${qids.length}`);
+  }
+  const existingMocks = [];
+  for (const m of mocks) {
+    const ver = await vdoc(m.id, "versions", m.currentVersion || 1);
+    existingMocks.push({ testId: m.id, questions: ver?.questions || [] });
+  }
+  const pedagogy = [];
+  for (let f = 1; f <= PED_FILES; f++) {
+    const url = new URL(`../../../attestatsiya/pedagogika-testlari/data/test${f}.js`, import.meta.url);
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`pedagogika fayli o‘qilmadi: test${f}.js`);
+    pedagogy.push(...parsePedagogyFile(await res.text(), f));
+  }
+  const maxNo = Math.max(0, ...mocks.map((m) => m.mockNumber || (m.dayNumber - 100)));
+  const numbers = Array.from({ length: GEN_COUNT }, (_, i) => maxNo + 1 + i);
+  return { days, privates, existingMocks, pedagogy, numbers };
+}
+
+$("[data-gen-build]").addEventListener("click", async (e) => {
+  const btn = e.currentTarget;
+  const info = $("[data-gen-info]");
+  genBundles = null;
+  $("[data-gen-write]").disabled = true;
+  btn.classList.add("is-loading");
+  try {
+    const input = await loadGeneratorInput((m) => { info.textContent = m; });
+    if (Math.max(...input.numbers) + 100 > 199) throw new Error("mock raqami chegaradan oshdi");
+    const { bundles, errors, pool } = generateMocks(input);
+    if (errors.length) {
+      console.error("[admin] mock generator:", errors);
+      info.textContent = `Tekshiruvdan o‘tmadi (${errors.length}): ${errors.slice(0, 3).join("; ")}. Hech narsa yozilmadi.`;
+      return;
+    }
+    genBundles = bundles;
+    const prevN = input.existingMocks.reduce((s, m) => s + m.questions.length, 0);
+    info.innerHTML = `<b>Tayyor (hali yozilmadi):</b> ${bundles.map((b) => `${esc(b.testId)} (Mock test ${b.dayNumber - 100})`).join(", ")}.
+      Har biri: 50 savol = 35 fizika (5 bob × 7) + 15 pedagogika, 100 ball, 2 soat, <b>faqat pullik guruh</b>, rasmsiz.
+      Takror tekshiruvi: mock ichida, yangi mocklar orasida va avvalgi ${input.existingMocks.length} ta mockdagi ${prevN} savol bilan — <b>takror yo‘q</b>
+      (bir xil ID ham, matni o‘xshash savol ham). Nomzodlar: fizika ${pool.physics}, pedagogika ${pool.pedagogy}.
+      «Draft sifatida yozish» ni bosing.`;
+    $("[data-gen-write]").disabled = false;
+  } catch (err) {
+    info.textContent = `${errorText(err, "Generator xatosi.")} Hech narsa yozilmadi.`;
+  } finally {
+    btn.classList.remove("is-loading");
+  }
+});
+
+$("[data-gen-write]").addEventListener("click", async (e) => {
+  if (!genBundles) return;
+  const btn = e.currentTarget;
+  const info = $("[data-gen-info]");
+  const busy = genBundles.filter((b) => { const t = tests.find((x) => x.id === b.testId); return t && !(t.status === "draft" && t.published !== true); });
+  if (busy.length) { info.textContent = `${busy.map((b) => b.testId).join(", ")} allaqachon e’lon qilingan — qayta yozilmaydi. «Tayyorlash» ni qayta bosing.`; return; }
+  const ok = await confirmAction({
+    title: `${genBundles.length} ta pullik mock test yozilsinmi?`,
+    text: `${genBundles.map((b) => b.testId).join(", ")}: draft holatida (foydalanuvchilarga ko‘rinmaydi — har birini jadvaldan alohida PUBLISH qilasiz). Hech narsa o‘chirilmaydi.`,
+    confirmLabel: "Yozish",
+  });
+  if (!ok) return;
+  btn.classList.add("is-loading");
+  try {
+    for (const b of genBundles) await writeMockBundle(b, tests.find((x) => x.id === b.testId), (m) => { info.textContent = m; });
+    info.textContent = `Tayyor: ${genBundles.map((b) => b.testId).join(", ")} draft sifatida yozildi. Tekshirib, jadvaldan PUBLISH qiling.`;
+    toast("Mock testlar yozildi.");
+    genBundles = null;
+    btn.disabled = true;
+    await load();
+  } catch (err) {
+    info.textContent = `${errorText(err, "Yozish xatosi.")} Qayta bossangiz — faqat yetishmayotgan hujjatlar yoziladi.`;
   } finally {
     btn.classList.remove("is-loading");
   }
