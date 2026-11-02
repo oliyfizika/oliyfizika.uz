@@ -549,6 +549,8 @@ class Engine:
         if isinstance(obj, Duration):
             if name == "seconds":
                 return int(obj.s // 1)
+        if isinstance(obj, _dt.datetime) and name == "toMillis":
+            return int(obj.timestamp() * 1000)
         raise RulesError(f"metod {name} {type(obj)}")
 
     def fn(self, name, argn, c):

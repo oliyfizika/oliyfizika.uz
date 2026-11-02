@@ -10,6 +10,7 @@ import { initFormulaSheet } from "./formula.js";
 import { sanitizeNumInput, isAnswered, isPartial, itemCount, countFilledItems } from "./scoring.js";
 import { submitAttempt, isLocalMode, ATTEMPT_STATUS } from "./attempt-service.js";
 import { gradeLocal } from "./scoring.js";
+import { recordAttempt } from "./attempt-record.js";
 import { renderResult, renderPending } from "./result.js";
 import { checkMockAccess } from "./access-gate.js";
 import { goToLogin } from "./session.js";
@@ -297,6 +298,7 @@ async function submit(auto) {
     state.status = res.status;
     persist();
     showFinal(res.grade);
+    syncRecord(res.grade);
     if (auto) toast(t("ms.e.autoDone", "Vaqt tugadi — test avtomatik yakunlandi"));
   } catch (error) {
     console.error("Urinishni topshirishda xato:", error);
@@ -307,6 +309,15 @@ async function submit(auto) {
       h("button", { type: "button", class: "btn btn-primary", onclick: () => submit(auto) }, t("ms.e.retry", "Qayta yuborish")),
     ]);
   }
+}
+
+/** Admin statistikasi uchun yozuv (fon rejimida; natija ekranini kutmaydi). Muvaffaqiyatsiz bo'lsa keyingi ochilishda qayta. */
+function syncRecord(grade) {
+  if (!state || !state.submitted || state.recorded || !isLocalMode()) return;
+  const id = state.attemptId;
+  recordAttempt(test, state, grade || gradeLocal(test, state.answers)).then((ok) => {
+    if (ok && state && state.attemptId === id) { state.recorded = true; persist(); }
+  });
 }
 
 function showFinal(grade) {
@@ -414,7 +425,7 @@ async function init() {
   const saved = loadState(test.id, session.uid);
   if (saved && saved.testId === test.id && saved.attemptId) {
     state = saved;
-    if (saved.submitted) { showFinal(null); return; }
+    if (saved.submitted) { showFinal(null); syncRecord(null); return; }
     if (Date.now() >= saved.deadlineTs) { submit(true); return; }
     renderStart(saved);
     return;

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: Milliy sertifikat mock test natijalari">
+<title>Mock natijalari | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/mock-results.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Mock natijalari">
+<!-- Admin System 1.0. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isAdmin) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Mock test natijalari</h1><p class="of-muted">Milliy sertifikat interaktiv mock testlari: kim yechgan va qanday natija olgan (Firestore “mockTestAttempts”).</p></div>
+    </header>
+    <form class="of-card of-admin-toolbar of-admin-toolbar--results" data-mock-form novalidate>
+      <div class="of-field of-admin-toolbar__search">
+        <label class="of-label" for="mrUser">Foydalanuvchi</label>
+        <input class="of-input" id="mrUser" type="search" autocomplete="off" spellcheck="false" placeholder="Ism, email yoki UID" aria-describedby="mrUserHint">
+        <p class="of-hint" id="mrUserHint">Matnning bir qismi yetarli.</p>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="mrTest">Mock test</label>
+        <select class="of-input of-admin-select" id="mrTest"><option value="">Barchasi</option></select>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="mrView">Ko‘rinish</label>
+        <select class="of-input of-admin-select" id="mrView">
+          <option value="all">Barcha urinishlar</option>
+          <option value="best">Har kimning eng yaxshi natijasi</option>
+          <option value="first">Har kimning birinchi urinishi</option>
+        </select>
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="mrFrom">Sanadan</label>
+        <input class="of-input" id="mrFrom" type="date">
+      </div>
+      <div class="of-field">
+        <label class="of-label" for="mrTo">Sanagacha</label>
+        <input class="of-input" id="mrTo" type="date">
+      </div>
+      <div class="of-admin-toolbar__actions">
+        <button type="submit" class="of-btn of-btn--primary">Qo‘llash</button>
+        <button type="button" class="of-btn of-btn--ghost" data-mock-reset>Tozalash</button>
+        <button type="button" class="of-btn of-btn--ghost" data-mock-export="xlsx" disabled>Excel yuklash</button>
+        <button type="button" class="of-btn of-btn--ghost" data-mock-export="csv" disabled>CSV yuklash</button>
+      </div>
+    </form>
+    <p class="of-admin-note" data-mock-hint aria-live="polite">Statistika shu sahifa ishga tushgan kundan keyin topshirilgan urinishlardan yig‘iladi. Ball o‘quvchi brauzerida hisoblanadi.</p>
+
+    <section aria-labelledby="mrStatsTitle">
+      <h2 class="of-sr-only" id="mrStatsTitle">Umumiy ko‘rsatkichlar</h2>
+      <ul class="of-admin-stats" data-mock-stats aria-busy="true">
+        <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--blue" data-icon="clipboard"></span>
+          <span class="of-admin-stat__value" data-mstat="attempts">—</span><span class="of-admin-stat__label">Urinishlar</span></li>
+        <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--green" data-icon="users"></span>
+          <span class="of-admin-stat__value" data-mstat="users">—</span><span class="of-admin-stat__label">Yechgan foydalanuvchilar</span></li>
+        <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--orange" data-icon="chart"></span>
+          <span class="of-admin-stat__value" data-mstat="avg">—</span><span class="of-admin-stat__label">O‘rtacha natija</span></li>
+        <li class="of-card of-admin-stat"><span class="of-admin-stat__icon of-admin-stat__icon--purple" data-icon="certificate"></span>
+          <span class="of-admin-stat__value" data-mstat="best">—</span><span class="of-admin-stat__label">Eng yuqori natija</span></li>
+      </ul>
+    </section>
+
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="mrSummaryTitle">
+      <div class="of-admin-panel__head of-admin-panel__head--pad"><h2 id="mrSummaryTitle">Mock testlar bo‘yicha xulosa</h2></div>
+      <div class="of-admin-table-wrap">
+        <table class="of-admin-table">
+          <caption class="of-sr-only">Har bir mock test bo‘yicha urinishlar, foydalanuvchilar va natijalar</caption>
+          <thead><tr>
+            <th scope="col">Mock test</th><th scope="col" class="of-num">Urinishlar</th><th scope="col" class="of-num">Foydalanuvchilar</th>
+            <th scope="col" class="of-num">O‘rtacha</th><th scope="col" class="of-num">Mediana</th><th scope="col" class="of-num">Eng yuqori</th>
+            <th scope="col" class="of-num">O‘rtacha vaqt</th>
+          </tr></thead>
+          <tbody data-mock-summary></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="mrTableTitle">
+      <div class="of-admin-panel__head of-admin-panel__head--pad"><h2 id="mrTableTitle">Urinishlar</h2><span class="of-admin-sub" data-mock-count></span></div>
+      <div class="of-admin-table-wrap">
+        <table class="of-admin-table">
+          <caption class="of-sr-only">Mock test urinishlari: foydalanuvchi, test, ball, foiz, bandlar, vaqt va sana</caption>
+          <thead><tr>
+            <th scope="col" class="of-num">№</th><th scope="col">Foydalanuvchi</th><th scope="col">Mock test</th><th scope="col" class="of-num">Ball</th>
+            <th scope="col" class="of-num">Foiz</th><th scope="col" class="of-num">To‘liq / qisman / bo‘sh</th><th scope="col" class="of-num">Vaqt</th>
+            <th scope="col">Sana</th><th scope="col">Izoh</th>
+          </tr></thead>
+          <tbody data-mock-body aria-busy="true"></tbody>
+        </table>
+      </div>
+      <div data-mock-state></div>
+      <div class="of-admin-more"><button type="button" class="of-btn of-btn--ghost" data-mock-more hidden>Ko‘proq ko‘rsatish</button></div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
