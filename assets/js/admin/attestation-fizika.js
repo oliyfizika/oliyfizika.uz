@@ -367,11 +367,11 @@ $("[data-mock-import]").addEventListener("click", async (e) => {
   }
 });
 
-// ------------------------------------------------------------------ Yangi PULLIK mocklar generatori (mock-03, 04, 05, …)
+// ------------------------------------------------------------------ Yangi PULLIK mock generatori (har safar keyingi raqam: mock-03, 04, …)
 // Savollar banki Firestore'dan o'qiladi (kunlik testlarning joriy versiyasi + private/answer — faqat admin), pedagogika
 // savollari attestatsiya/pedagogika-testlari/data/test*.js dan (faqat o'qiladi). Tanlov qoidalari: mock-generator.js.
 // Avval «Tayyorlash» (hech narsa yozilmaydi, faqat tekshiruv), keyin «Draft sifatida yozish» (mavjud import yo'li bilan).
-const GEN_COUNT = 3;
+const GEN_COUNT = 1;                                   // bir bosishda nechta mock (foydalanuvchi talabi: 1 ta)
 const PED_FILES = 13;
 let genBundles = null;
 
@@ -492,9 +492,9 @@ $("[data-gen-build]").addEventListener("click", async (e) => {
     genBundles = bundles;
     const prevN = input.existingMocks.reduce((s, m) => s + m.questions.length, 0);
     info.innerHTML = `<b>Tayyor (hali yozilmadi):</b> ${bundles.map((b) => `${esc(b.testId)} (Mock test ${b.dayNumber - 100})`).join(", ")}.
-      Har biri: 50 savol = 35 fizika (5 bob × 7) + 15 pedagogika, 100 ball, 2 soat, <b>faqat pullik guruh</b>.
+      50 savol = 35 fizika (5 bob × 7) + 15 pedagogika, 100 ball, 2 soat, <b>faqat pullik guruh</b>.
       Rasmlar (mock ichiga nusxalandi): ${bundles.map((b) => `${b.dayNumber - 100}-mock — savol ${b.counts.figures}, yechim ${b.counts.solutionFigures}`).join("; ")}${skipped ? ` (rasmi olinmagan ${skipped} ta savol almashtirildi)` : ""}.
-      Takror tekshiruvi: mock ichida, yangi mocklar orasida va avvalgi ${input.existingMocks.length} ta mockdagi ${prevN} savol bilan — <b>takror yo‘q</b>
+      Takror tekshiruvi: mock ichida va avvalgi ${input.existingMocks.length} ta mockdagi ${prevN} savol bilan — <b>takror yo‘q</b>
       (bir xil ID ham, matni o‘xshash savol ham). Nomzodlar: fizika ${pool.physics}, pedagogika ${pool.pedagogy}.
       «Draft sifatida yozish» ni bosing.`;
     $("[data-gen-write]").disabled = false;
@@ -512,7 +512,7 @@ $("[data-gen-write]").addEventListener("click", async (e) => {
   const busy = genBundles.filter((b) => { const t = tests.find((x) => x.id === b.testId); return t && !(t.status === "draft" && t.published !== true); });
   if (busy.length) { info.textContent = `${busy.map((b) => b.testId).join(", ")} allaqachon e’lon qilingan — qayta yozilmaydi. «Tayyorlash» ni qayta bosing.`; return; }
   const ok = await confirmAction({
-    title: `${genBundles.length} ta pullik mock test yozilsinmi?`,
+    title: genBundles.length === 1 ? `Mock test ${genBundles[0].dayNumber - 100} (pullik) yozilsinmi?` : `${genBundles.length} ta pullik mock test yozilsinmi?`,
     text: `${genBundles.map((b) => b.testId).join(", ")}: draft holatida (foydalanuvchilarga ko‘rinmaydi — har birini jadvaldan alohida PUBLISH qilasiz). Hech narsa o‘chirilmaydi.`,
     confirmLabel: "Yozish",
   });
