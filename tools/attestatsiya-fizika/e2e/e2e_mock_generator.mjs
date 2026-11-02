@@ -103,14 +103,18 @@ const MIDS = ["att-fizika-mock-03", "att-fizika-mock-04", "att-fizika-mock-05"];
   const { ctx, page } = await ctxFor("admin1");
   await page.goto(B + "admin/attestatsiya-fizika.html");
   await page.waitForSelector("[data-body] tr");
-  await page.click("[data-gen-build]");
-  await page.waitForFunction(() => /Tayyor|o‘tmadi|xato|yetmadi/i.test(document.querySelector("[data-gen-info]").textContent), null, { timeout: 60000 });
-  const info = await txt(page, "[data-gen-info]");
-  ok("generator: 3 ta mock tayyor, takror yo'q", /att-fizika-mock-03/.test(info) && /att-fizika-mock-05/.test(info) && /takror yo‘q/.test(info), info.slice(0, 260));
-  ok("generator: «Tayyorlash» hech narsa yozmagan", !Object.keys(await dump(`${TC}/att-fizika-mock-03`)).length);
-  await page.click("[data-gen-write]");
-  await page.click(".of-admin-confirm .of-btn--primary");
-  await page.waitForFunction(() => /^Tayyor:/.test(document.querySelector("[data-gen-info]").textContent.trim()), null, { timeout: 120000 });
+  // har bosishda 1 ta mock: 3 marta — raqam o'zi davom etadi (03 → 04 → 05), avvalgilar bilan takror yo'q
+  for (const [k, id] of MIDS.entries()) {
+    await page.click("[data-gen-build]");
+    await page.waitForFunction((n) => new RegExp(`Tayyor \\(hali yozilmadi\\): ${n}|o‘tmadi|xato|yetmadi`, "i").test(document.querySelector("[data-gen-info]").textContent), id, { timeout: 60000 });
+    const info = await txt(page, "[data-gen-info]");
+    ok(`generator: faqat 1 ta mock (${id}) tayyor, takror yo'q`, info.includes(id) && !MIDS.filter((x) => x !== id).some((x) => info.includes(x)) && /takror yo‘q/.test(info), info.slice(0, 200));
+    ok(`generator: «Tayyorlash» hech narsa yozmagan (${id})`, !Object.keys(await dump(`${TC}/${id}`)).length);
+    await page.click("[data-gen-write]");
+    await page.click(".of-admin-confirm .of-btn--primary");
+    await page.waitForFunction((n) => document.querySelector("[data-gen-info]").textContent.trim().startsWith(`Tayyor: ${n}`), id, { timeout: 120000 });
+    ok(`${id}: yozildi (${k + 1}/3)`, Object.keys(await dump(`${TC}/${id}`)).length >= 4);
+  }
   const all = [];
   let nFig = 0;
   for (const id of MIDS) {

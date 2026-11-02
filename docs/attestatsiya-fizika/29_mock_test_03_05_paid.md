@@ -22,8 +22,8 @@ Bitta mock ichida, mock 3–5 orasida va avvalgi mocklar (1, 2) bilan: bir xil I
 Pedagogika bazasining o‘zidagi takrorlar (260 dan 6 tasi) ham chiqarib tashlanadi. Tanlov deterministik (seed `mock-N`).
 
 ## Admin
-`admin/attestatsiya-fizika.html` → Import → **«Yangi pullik mock testlar (3 ta, avtomatik)»**:
-1. «Mocklarni tayyorlash» — bank o‘qiladi, 3 ta mock tuziladi va tekshiriladi (hech narsa yozilmaydi).
+`admin/attestatsiya-fizika.html` → Import → **«Yangi pullik mock test (har bosishda 1 ta, avtomatik)»**:
+1. «Mockni tayyorlash» — bank o‘qiladi, keyingi raqamli 1 ta mock tuziladi va tekshiriladi (hech narsa yozilmaydi).
 2. «Draft sifatida yozish» — mavjud mock importi yo‘li bilan yoziladi (qayta bosish xavfsiz: faqat yetishmagan hujjatlar).
 3. Har birini jadvaldan alohida PUBLISH qilasiz. Fayl (`_private`) kerak emas.
 
@@ -32,5 +32,5 @@ Rules o‘zgarmadi (mock-02 dagi `paidOnly` himoyasi ishlatiladi).
 
 ## Tekshiruvlar
 - `node tools/attestatsiya-fizika/tests/test_mock_generator.mjs` — 30/30 (sun’iy fizika banki + haqiqiy pedagogika fayllari).
-- `E2E_PORT=8811 node tools/attestatsiya-fizika/e2e/e2e_mock_generator.mjs` (mock_server, repo Rules bilan) — 22/22 (rasmlar bilan): tayyorlash yozmaydi,
+- `E2E_PORT=8811 node tools/attestatsiya-fizika/e2e/e2e_mock_generator.mjs` (mock_server, repo Rules bilan) — 29/29 (rasmlar bilan; 3 marta ketma-ket 1 tadan): tayyorlash yozmaydi,
   3 mock Rules’dan o‘tib yoziladi, 150 savol noyob, mock-01/02 savollari yo‘q, PUBLISH, pullik user — ochiq, ruxsatsiz — qulf, test sahifasi matni.
