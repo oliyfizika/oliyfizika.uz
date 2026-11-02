@@ -104,9 +104,11 @@ export function loadSolutions(testId, resolveUrl) {
 
 /**
  * Natija sahifasidagi savol kartalariga (article.review-q#reviewQ<n>) yechimlarni qo'shadi.
- * Yechim fayli bo'lmasa — hech narsa qilmaydi.
+ * Yechim fayli bo'lmasa — hech narsa qilmaydi. To'g'ri javoblar yashirilgan testda
+ * (review.showCorrectAnswers: false) yechimlar ham ko'rsatilmaydi, chunki ular javobni ochib qo'yadi.
  */
 export async function attachSolutions(container, test, resolveUrl) {
+  if (!test.review?.showCorrectAnswers) return 0;
   const data = await loadSolutions(test.id, resolveUrl);
   if (!data?.items || !container.isConnected) return 0;
   await loadKatex().catch(() => {});
