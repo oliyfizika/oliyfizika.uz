@@ -22,13 +22,14 @@ export const MOCK_FIRST_DAY = 101;
 export const isMockDay = (n) => Number.isInteger(n) && n >= MOCK_FIRST_DAY;
 export const isMock = (t) => t?.kind === "mock" || isMockDay(t?.dayNumber);
 export const dayLabel = (t) => (isMock(t) ? (t.mockNumber > 1 ? tr("att.c.mockN", "Mock test {n}", { n: t.mockNumber }) : tr("att.c.mock", "Mock test")) : tr("att.c.day", "Day {n}", { n: t?.dayNumber }));
-/** Mock tarkibi matni: composition (fizika / kasbiyStandart / pedagogikMahorat) bo'lsa — shu, bo'lmasa fizika + pedagogika (mock-01). */
+/** Mock tarkibi matni: composition (fizika / kasbiyStandart / pedagogikMahorat / pedagogika) bo'lsa — shu, bo'lmasa fizika + pedagogika (mock-01). */
 export const mockCompositionText = (t, unit = "") => {
   const c = t?.composition || {};
   const parts = [];
   if (c.fizika != null) parts.push(tr("att.c.comp.phys", "{n} {u}fizika", { n: c.fizika, u: unit }));
   if (c.kasbiyStandart != null) parts.push(tr("att.c.comp.std", "{n} {u}kasbiy standart", { n: c.kasbiyStandart, u: unit }));
   if (c.pedagogikMahorat != null) parts.push(tr("att.c.comp.skill", "{n} {u}pedagogik mahorat", { n: c.pedagogikMahorat, u: unit }));
+  if (c.fizika != null && c.pedagogika != null) parts.push(tr("att.c.comp.ped", "{n} {u}pedagogika", { n: c.pedagogika, u: unit }));
   return parts.length ? parts.join(" + ") : tr("att.c.comp.default", "{p} {u}fizika + {g} {u}pedagogika", { p: t?.physicsCount || 40, g: t?.pedagogyCount || 10, u: unit });
 };
 export const dayLabelOf = (n) => (isMockDay(n) ? tr("att.c.mock", "Mock test") : tr("att.c.day", "Day {n}", { n }));
