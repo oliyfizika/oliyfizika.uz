@@ -1,0 +1,244 @@
+# Mock test №4 — yozma yechimlar
+@1
+P: Tezlik koordinatadan olingan hosila, tezlanish esa tezlikdan olingan hosila. Har bir mulohazani tekshiramiz:
+P: **m)** $v$ = const > 0 (1-grafik) bo'lsa, $x=x_0+vt$ — o'suvchi to'g'ri chiziq, $x_0<0$ da 3-grafik. To'g'ri.
+P: **n)** $v=at$ (4-grafik) bo'lsa, $x=at^2/2$ — o'suvchi va tobora tiklashuvchi parabola, 5-grafik. To'g'ri.
+P: **k)** $v$ = const < 0 (2-grafik) bo'lsa, $x$ kamayuvchi to'g'ri chiziq bo'ladi. Bunday grafik rasmda yo'q, shuning uchun mulohaza to'g'ri.
+P: **p)** $a$ = const < 0 (2-grafik), $v_0>0$ bo'lsa, $x=v_0t-|a|t^2/2$ — qiyaligi kamayib boruvchi egri, 6-grafik. To'g'ri.
+P: **q)** $a$ = const > 0 bo'lsa, $x(t)$ parabola bo'ladi, to'g'ri chiziq (4-grafik) emas. Noto'g'ri.
+S: Tahlilga ko'ra **k** mulohaza ham to'g'ri, shuning uchun C (m; n; p) va D (n; k; p) variantlarining ikkalasi ham faqat to'g'ri mulohazalardan iborat. Javoblar kaliti C ni belgilagan.
+A: **C)** m; n; p (javoblar kaliti bo'yicha)
+
+@2
+G: $v_0=144$ km/h $=40$ m/s, $a=-4$ m/s² (o'zgarmas), $t=20$ s
+P: Jism $t_1=v_0/|a|=10$ s da to'xtaydi. Tezlanish o'zgarmas bo'lgani uchun keyingi 10 s da u teskari yo'nalishda tezlanadi:
+M: s_1=\frac{v_0^2}{2|a|}=\frac{1600}{8}=200\ \text{m},\qquad s_2=\frac{|a|t_2^2}{2}=\frac{4\cdot100}{2}=200\ \text{m}
+M: s=s_1+s_2=400\ \text{m}
+P: (Ko'chish nolga teng, yo'l esa 400 m.)
+A: **C)** 400 m
+
+@3
+P: 20 m dan erkin tushish vaqti $t=\sqrt{2h/g}=2$ s. Qiya otilgan jismning uchish vaqti:
+M: t=\frac{2v_0\sin53^\circ}{g}=2\;\Rightarrow\;v_0=\frac{10}{0{,}8}=12{,}5\ \text{m/s}
+A: **D)** 12,5 m/s
+
+@4
+M: \frac{P_\uparrow}{P_\downarrow}=\frac{m(g+a)}{m(g-a)}=\frac{12}{8}=1{,}5
+A: **A)** 1,5
+
+@5
+M: g=\frac{GM}{R^2}\;\Rightarrow\;\frac{g'}{g}=\frac{M'}{M}\cdot\frac{R^2}{R'^2}=4\cdot4=16,\qquad g'=160\ \text{m/s}^2
+A: **B)** 160 m/s²
+
+@6
+M: F=\sqrt{15^2+20^2}=25\ \text{N},\quad a=\frac{F}{m}=10\ \text{m/s}^2,\quad v=at=30\ \text{m/s}
+A: **B)** 30 m/s
+
+@7
+P: Arximed kuchi $F_A=\rho_s gV$ faqat suyuqlik zichligi va botgan qism hajmiga bog'liq. Barcha holatlarda brusok to'liq botgan, chuqurlik va qiyalik ahamiyatsiz.
+A: **C)** Arximed kuchi hamma holatlarda bir xil bo'ladi
+
+@8
+G: $M=12$ kg, sterjen 8 ta teng bo'lakdan iborat (bo'lak uzunligi $l$), tayanch chapdan $l$ masofada, $T=80$ N o'ng uchda, yuk chapdan $6l$ da
+P: Tayanchga nisbatan yelkalar: $T$ uchun $7l$, sterjen og'irligi (o'rtasida, $4l$) uchun $3l$, yuk uchun $5l$.
+M: T\cdot7l=Mg\cdot3l+mg\cdot5l\;\Rightarrow\;560=360+50m\;\Rightarrow\;m=4\ \text{kg}
+A: **B)** 4 kg
+
+@9
+M: \omega=\sqrt{\frac km}=\sqrt{\frac{100}{0{,}25}}=20\ \text{rad/s}
+A: **A)** 20 rad/s
+
+@10
+P: Hajm bir xil, $pV=\nu RT$, ya'ni $p\propto\nu T$:
+M: p_2=p_1\frac{\nu_2T_2}{\nu_1T_1}=120\cdot\frac{9\cdot400}{6\cdot300}=240\ \text{kPa}
+A: **A)** 240 kPa
+
+@11
+P: Grafikda $p$ = const (izobarik), $V\propto T$:
+M: \frac{V_2}{V_1}=\frac{900}{300}=3,\quad V_2-V_1=2V_1=6\;\Rightarrow\;V_1=3\ \text{m}^3
+A: **D)** 3 m³
+
+@12
+P: Porshenlar vaznsiz, muvozanatda tutash idishlarda bir sathdagi bosimlar teng.
+P: **1-rasm:** X yuki bor porshen $h$ ga past, demak $\dfrac{X}{S}=\rho gh$.
+P: **2-rasm:** porshenlar bir sathda, demak $\dfrac XS=\dfrac{Y}{2S}$, bundan $Y=2X$.
+P: **3-rasm:** X va Y ikkalasi $S$ porshenda:
+M: \frac{X+Y}{S}=\rho gh_1\;\Rightarrow\;\frac{3X}{S}=\rho gh_1\;\Rightarrow\;h_1=3h
+A: **C)** 3
+
+@13
+G: $m=2$ kg, $t_0=-100\ ^\circ$C
+M: Q=m\left[c_m\cdot100+\lambda+c_s\cdot100+r\right]
+M: Q=2\left[210\,000+330\,000+420\,000+2\,300\,000\right]=6\,520\,000\ \text{J}=6520\ \text{kJ}
+A: **B)** 6520 kJ
+
+@14
+M: \eta=1-\frac{Q_2}{Q_1}\;\Rightarrow\;Q_1=\frac{Q_2}{1-\eta}=\frac{80}{0{,}2}=400\ \text{J}
+A: **B)** 400 J
+
+@15
+M: C=\frac{\varepsilon\varepsilon_0S}{d}=\frac{6\cdot8{,}85\cdot10^{-12}\cdot1}{1{,}5\cdot10^{-3}}\approx3{,}5\cdot10^{-8}\ \text{F}=35\ \text{nF}
+A: **D)** 35 nF
+
+@16
+M: I=nevS\;\Rightarrow\;\frac{v_1}{v_2}=\frac{S_2}{S_1}=\left(\frac{d_2}{d_1}\right)^2=\left(\frac32\right)^2=2{,}25
+A: **B)** 2,25
+
+@17
+M: R=\rho\frac{l}{\pi d^2/4}\;\Rightarrow\;R_2=R_1\cdot\frac{l_2}{l_1}\cdot\left(\frac{d_1}{d_2}\right)^2=2{,}5\cdot\frac{35}{20}\cdot\frac14\approx1{,}1\ \Omega
+A: **C)** 1,1 Ω
+
+@18
+G: $d=1$ mm, $l=1$ m, $I=2$ A
+M: S=\frac{\pi d^2}{4}\approx7{,}85\cdot10^{-7}\ \text{m}^2
+M: R_{\text{mis}}=\frac{1{,}7\cdot10^{-8}}{7{,}85\cdot10^{-7}}\approx0{,}022\ \Omega,\qquad R_{\text{nix}}=\frac{1{,}1\cdot10^{-6}}{7{,}85\cdot10^{-7}}\approx1{,}40\ \Omega
+M: U_{\text{mis}}\approx0{,}04\ \text{V},\qquad U_{\text{nix}}\approx2{,}8\ \text{V},\qquad U=I(R_{\text{mis}}+R_{\text{nix}})\approx2{,}8\ \text{V}
+P: Kuchlanish asosan nixromda tushadi. Variantlardagi 2,8 V umumiy kuchlanish (amalda nixromdagisi).
+A: **D)** 2,8 V
+
+@19
+M: F=\frac{kq_1q_2}{r^2}\;\Rightarrow\;F'=\frac{k\cdot2q_1\cdot2q_2}{(2r)^2}=F
+A: **D)** o'zgarmaydi
+
+@20
+M: \varphi=\frac Aq=\frac{65\cdot10^{-6}}{130\cdot10^{-9}}=500\ \text{V}
+A: **C)** 500 V
+
+@21
+P: Tugunlarni belgilaymiz: kirish A (yuqori chap) va B (pastki chap), yuqori o'rta C, yuqori o'ng D, pastki o'rta E, pastki o'ng F. Barcha rezistorlar $R$: AB, AC, CD, CE, AE, ED, DF, BE, EF.
+P: Sxemani o'ng tomondan soddalashtiramiz:
+M: D\!-\!F\!-\!E:\ 2R\parallel R_{ED}=\tfrac23R;\qquad C\!-\!D\!-\!E:\ \left(R+\tfrac23R\right)\parallel R_{CE}=\tfrac58R
+M: A\!-\!C\!-\!E:\ \left(R+\tfrac58R\right)\parallel R_{AE}=\tfrac{13}{21}R;\qquad A\!-\!E\!-\!B:\ \left(\tfrac{13}{21}R+R\right)\parallel R_{AB}=\tfrac{34}{55}R
+M: R_{\text{um}}=\frac{34}{55}\cdot5{,}5=3{,}4\ \Omega
+A: **C)** 3,4 Ω
+
+@22
+M: X_L=2\pi\nu L\;\Rightarrow\;\frac{X_{L1}}{X_{L2}}=\frac{10\,000}{50}=200
+A: **D)** 200
+
+@23
+M: F=IBl=2\cdot0{,}3\cdot0{,}8=0{,}48\ \text{N}
+A: **B)** 0,48 N
+
+@24
+M: \frac{U_1}{U_2}=\frac{N_1}{N_2}\;\Rightarrow\;N_1=990\cdot\frac{220}{330}=660
+A: **C)** 660
+
+@25
+M: T=2\pi\sqrt{LC}:\quad L\to4L\;\Rightarrow\;T\to2T
+P: Induktivlik 4 marta ortishining o'zi davrni 2 marta oshiradi, sig'imni o'zgartirish shart emas.
+A: **A)** o'zgartirish kerak emas
+
+@26
+M: U=\sqrt{U_R^2+(U_L-U_C)^2}=\sqrt{16+9}=5\ \text{V}
+A: **C)** 5 V
+
+@27
+P: Mavhum tasvir uchun $f=-15$ cm:
+M: \frac1d=\frac1F-\frac1f=\frac1{10}+\frac1{15}=\frac16\;\Rightarrow\;d=6\ \text{cm}
+P: Buyum va mavhum tasvir linzaning bir tomonida: $15-6=9$ cm.
+A: **C)** 9 cm
+
+@28
+P: Ahmad ko'zoynaksiz 16 cm dan o'qiydi, ya'ni yaqindan ko'radi. Ko'zoynak normal masofadagi ($d_0=25$ cm) kitobning mavhum tasvirini 16 cm da hosil qilishi kerak:
+M: D=\frac1{0{,}25}-\frac1{0{,}16}=4-6{,}25=-2{,}25\ \text{dptr}
+A: **B)** −2,25 dptr
+
+@29
+M: v=6\cos3t\;\Rightarrow\;a=\dot v=-18\sin3t,\qquad a_{\max}=v_{\max}\omega=6\cdot3=18\ \text{m/s}^2
+A: **D)** 18 m/s²
+
+@30
+P: Magnit maydon chizma tekisligidan bizdan nariga yo'nalgan (×). Zarralar yuqoriga uchadi. $\vec F=q\vec v\times\vec B$: musbat zarra chapga, manfiy zarra o'ngga og'adi.
+P: 1 — og'maydi, zaryadsiz (neytron); 2 — chapga og'adi, musbat (α zarra); 3 — o'ngga og'adi, manfiy (elektron).
+A: **D)** 1 — neytron; 2 — alfa zarra; 3 — elektron
+
+@31
+G: $p=0{,}2$ Pa, qaytarish koeffitsiyenti $\rho=0{,}6$
+M: p=\frac{I}{c}(1+\rho)\;\Rightarrow\;I=\frac{pc}{1+\rho}=\frac{0{,}2\cdot3\cdot10^8}{1{,}6}=3{,}75\cdot10^7\ \text{W/m}^2=37{,}5\ \text{MJ/(m}^2\text{s)}
+A: **B)** 37,5
+
+@32
+M: 9+1=A+4\;\Rightarrow\;A=6,\qquad 4+1=Z+2\;\Rightarrow\;Z=3
+P: X — $^6_3$Li yadrosi, zaryadi $3e$:
+M: q=3\cdot1{,}6\cdot10^{-19}=4{,}8\cdot10^{-19}\ \text{C}=4{,}8\cdot10^{-10}\ \text{nC}
+A: **C)** $4{,}8\cdot10^{-10}$ nC
+
+@33
+G: Sikl 1(5 L; 2 MPa) → 2(5 L; 6 MPa) → 3(10 L; 6 MPa) → 4(10 L; 2 MPa)
+P: To'la sikl ishi — to'rtburchak yuzi:
+M: A=\Delta p\,\Delta V=4\cdot10^6\cdot5\cdot10^{-3}=2\cdot10^4\ \text{J}=20\ \text{kJ}
+A: **A)** 20 kJ
+
+@34
+P: Issiqlik 1→2 (izoxorik isish) va 2→3 (izobarik kengayish) bosqichlarida olinadi:
+M: Q_{12}=\frac32V\Delta p=1{,}5\cdot5\cdot10^{-3}\cdot4\cdot10^6=30\ \text{kJ}
+M: Q_{23}=\frac52p\Delta V=2{,}5\cdot6\cdot10^6\cdot5\cdot10^{-3}=75\ \text{kJ},\qquad Q_1=105\ \text{kJ}
+A: **C)** 105 kJ
+
+@35
+M: \eta=\frac{A}{Q_1}=\frac{20}{105}\approx0{,}19=19\,\%
+A: **B)** 19 %
+
+@36
+G: $v_0=20$ m/s, $\alpha=30^\circ$
+M: \text{a)}\ \ t=\frac{2v_0\sin\alpha}{g}=\frac{2\cdot20\cdot0{,}5}{10}=2\ \text{s}
+M: \text{b)}\ \ H=\frac{(v_0\sin\alpha)^2}{2g}=\frac{100}{20}=5\ \text{m}
+A: a) 2 s; b) 5 m
+
+@37
+G: $m=20$ kg, $F=200$ N, $53^\circ$ yuqoriga, $\mu=0{,}5$; $\sin53^\circ=0{,}8$, $\cos53^\circ=0{,}6$
+P: **a)** Kuchning vertikal tashkil etuvchisi bosim kuchini kamaytiradi:
+M: N=mg-F\sin53^\circ=200-160=40\ \text{N},\qquad F_{\text{ish}}=\mu N=20\ \text{N}
+M: \text{b)}\ \ a=\frac{F\cos53^\circ-F_{\text{ish}}}{m}=\frac{120-20}{20}=5\ \text{m/s}^2
+A: a) 20 N; b) 5 m/s²
+
+@38
+G: $m_1=1$ kg, $m_2=m_1/1{,}5=\frac23$ kg, $F=10$ N, $60^\circ$, sirt silliq
+M: \text{a)}\ \ a=\frac{F\cos60^\circ}{m_1+m_2}=\frac{5}{5/3}=3\ \text{m/s}^2
+P: **b)** Ip ikkinchi jismni tortadi:
+M: T=m_2a=\frac23\cdot3=2\ \text{N}
+A: a) 3 m/s²; b) 2 N
+
+@39
+G: Izobarik, bir atomli gaz, $\Delta U=180$ kJ
+M: \Delta U=\frac32\nu R\Delta T,\quad A=\nu R\Delta T=\frac23\Delta U=120\ \text{kJ}
+M: Q=\Delta U+A=300\ \text{kJ}
+A: a) 120 kJ; b) 300 kJ
+
+@40
+G: Odam $m_1=30$ kg, $v_1=2$ m/s; aravacha $m_2=15$ kg, $v_2=1$ m/s (qarama-qarshi)
+M: \text{a)}\ \ u=\frac{m_1v_1-m_2v_2}{m_1+m_2}=\frac{60-15}{45}=1\ \text{m/s}
+M: \text{b)}\ \ E_k=\frac{(m_1+m_2)u^2}{2}=\frac{45\cdot1}{2}=22{,}5\ \text{J}
+P: (Sistema odam yugurgan yo'nalishda harakatlanadi.)
+A: a) 1 m/s; b) 22,5 J
+
+@41
+M: \text{a)}\ \ I=\frac{\varepsilon}{R+r}=\frac{120}{12}=10\ \text{A}
+M: \text{b)}\ \ I_{\text{q.t.}}=\frac{\varepsilon}{r}=\frac{120}{5}=24\ \text{A}
+A: a) 10 A; b) 24 A
+
+@42
+G: $X=5$ Ω, $R=12$ Ω, $I_m=2\sqrt2$ A
+M: \text{a)}\ \ Z=\sqrt{R^2+X^2}=\sqrt{144+25}=13\ \Omega
+P: **b)** O'rtacha quvvat faqat aktiv qarshilikda ajraladi, $I=I_m/\sqrt2=2$ A:
+M: P=I^2R=4\cdot12=48\ \text{W}
+A: a) 13 Ω; b) 48 W
+
+@43
+G: $X_L=500$ Ω, $U=100$ V (effektiv), $\nu=1000$ Hz
+M: \text{a)}\ \ I=\frac{U}{X_L}=0{,}2\ \text{A},\qquad I_m=I\sqrt2\approx0{,}28\ \text{A}
+M: \text{b)}\ \ L=\frac{X_L}{2\pi\nu}=\frac{500}{2\cdot3{,}14\cdot1000}\approx0{,}08\ \text{H}
+A: a) $\approx0{,}28$ A; b) $\approx0{,}08$ H
+
+@44
+G: $\nu_0=3\cdot10^{14}$ Hz, $\nu=6\cdot10^{14}$ Hz
+M: \text{a)}\ \ A=h\nu_0=6{,}6\cdot10^{-34}\cdot3\cdot10^{14}\approx1{,}98\cdot10^{-19}\ \text{J}
+M: \text{b)}\ \ eU=h(\nu-\nu_0)=1{,}98\cdot10^{-19}\ \text{J}\;\Rightarrow\;U=\frac{1{,}98\cdot10^{-19}}{1{,}6\cdot10^{-19}}\approx1{,}2\ \text{V}
+A: a) $\approx1{,}98\cdot10^{-19}$ J; b) $\approx1{,}2$ V
+
+@45
+G: $E=3{,}3\cdot10^{-19}$ J
+M: \text{a)}\ \ \lambda=\frac{hc}{E}=\frac{6{,}6\cdot10^{-34}\cdot3\cdot10^8}{3{,}3\cdot10^{-19}}=6\cdot10^{-7}\ \text{m}=600\ \text{nm}
+M: \text{b)}\ \ p=\frac Ec=\frac{3{,}3\cdot10^{-19}}{3\cdot10^8}=1{,}1\cdot10^{-27}\ \text{kg·m/s}
+A: a) 600 nm; b) $1{,}1\cdot10^{-27}$ kg·m/s

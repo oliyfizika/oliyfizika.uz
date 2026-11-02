@@ -61,3 +61,15 @@ JS kodiga tegish shart emas. Savollar soni, bandlar va vaqt kartochkada avtomati
 maydonlarini olib tashlash mumkin (va kerak) — ular serverda saqlanadi.
 
 Eslatma: sahifalar `fetch()` ishlatadi, shuning uchun ularni `file://` orqali emas, veb-server orqali oching.
+
+## Yozma yechimlar
+
+Natija sahifasida har bir savol ostida «Yechimni ko‘rish» bo‘limi chiqadi (KaTeX formulalar bilan), agar
+`data/solutions/mock-test-N.json` mavjud bo‘lsa (`js/solutions.js`). To‘g‘ri javoblar yashirilgan testda
+(`review.showCorrectAnswers: false`, hozir Mock №11–12) yechimlar ham ko‘rsatilmaydi; javoblar ochilsa, yechimlar
+ham avtomatik chiqadi. Fayl qo‘lda yozilmaydi:
+
+1. Manba: `tools/milliy-sertifikat/solutions/mock-test-N.txt` (`@N` — savol, `G:` berilgan, `P:` matn,
+   `M:` formula, `A:` javob, `S:` kalitdagi xato izohi, `U:` shart noaniq izohi).
+2. `python3 tools/milliy-sertifikat/build_solutions.py` — JSON yaratadi va har bir test savolidagi javob
+   harfi kalit bilan mosligini tekshiradi.

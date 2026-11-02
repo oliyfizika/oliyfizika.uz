@@ -1,0 +1,295 @@
+# Mock test №1 — yozma yechimlar
+@1
+G: $m$, $l$, suvdagi qism $h_0=0{,}8l$
+P: Muvozanatda Arximed kuchi og'irlikka teng: $\rho_s S\cdot 0{,}8l\cdot g=mg$. Sterjen $x$ ga ko'tarilganda suvdagi qismi $0{,}8l-x$ bo'ladi, Arximed kuchi chiziqli kamayadi: $F_A=mg\,\dfrac{0{,}8l-x}{0{,}8l}$.
+P: Sekin (tezlanishsiz) ko'tarish uchun kerakli kuch:
+M: F(x)=mg-F_A=mg\,\frac{x}{0{,}8l},\qquad 0\le x\le 0{,}8l
+P: Minimal energiya shu kuchning ishiga teng (grafik ostidagi uchburchak yuzi):
+M: E=\int_0^{0{,}8l}\frac{mg\,x}{0{,}8l}\,dx=\frac{mg\cdot 0{,}8l}{2}=0{,}4\,mgl
+A: **A)** $0{,}4\,mgl$
+
+@2
+G: $R_1=R,\;R_2=R,\;R_3=2R$; $R_2$ va $R_3$ parallel, $R_1$ ular bilan ketma-ket.
+P: Butun tok $R_1$ dan o'tadi: $I_1=I$. Parallel tarmoqlarda kuchlanish bir xil, tok qarshilikka teskari proporsional:
+M: \frac{I_2}{I_3}=\frac{R_3}{R_2}=2,\qquad I_2+I_3=I\;\Rightarrow\;I_2=\frac{2}{3}I,\;I_3=\frac{1}{3}I
+M: I_1:I_2:I_3=1:\tfrac{2}{3}:\tfrac{1}{3}=3:2:1
+A: **B)** $3:2:1$
+
+@3
+P: Har bir qaytishda nur yo'nalishi $180^\circ-2\varphi$ ga buriladi ($\varphi$ — nur bilan ko'zgu orasidagi burchak). $\alpha$ burchak ostidagi ikki ko'zgudan ketma-ket qaytgan nur uchun burilish burchaklari yig'indisi faqat ko'zgular orasidagi burchakka bog'liq:
+M: \delta=360^\circ-2(180^\circ-\alpha)=2\alpha
+P: Ya'ni chiqqan nur dastlabki yo'nalishiga nisbatan $2\alpha$ ga buriladi.
+A: **D)** $2\alpha$
+
+@4
+G: $x=A\cos\left(\dfrac{\pi t}{6}+\dfrac{\pi}{2}\right)=-A\sin\dfrac{\pi t}{6}$
+P: $t=0$ da $x=0$, ya'ni nuqta muvozanat holatidan harakatni boshlaydi. Birinchi chorak davr ichida bosib o'tilgan yo'l $s=|x|$:
+M: A\sin\frac{\pi t}{6}=0{,}5A\;\Rightarrow\;\frac{\pi t}{6}=\frac{\pi}{6}\;\Rightarrow\;t=1\ \text{s}
+P: (Davr $T=12$ s, chorak davr 3 s, demak $t=1$ s birinchi chorakda yotadi.)
+A: **B)** 1 s
+
+@5
+G: $T_A=300$ K, $V_A=0{,}3$ m³; $T_B=600$ K, $V_B=0{,}4$ m³; $T_C=1200$ K; $p_A=120$ kPa
+P: A, B, C nuqtalar bitta to'g'ri chiziqda yotadi. Chiziqning qiyaligi $\dfrac{0{,}4-0{,}3}{600-300}=\dfrac{1}{3000}$ m³/K, shuning uchun:
+M: V_C=0{,}3+\frac{1200-300}{3000}=0{,}6\ \text{m}^3
+P: Mendeleyev–Klapeyron tenglamasidan $p\propto T/V$:
+M: \frac{p_C}{p_A}=\frac{T_C}{T_A}\cdot\frac{V_A}{V_C}=4\cdot\frac{0{,}3}{0{,}6}=2\;\Rightarrow\;p_C=240\ \text{kPa}
+M: p_C-p_A=240-120=120\ \text{kPa}
+A: **B)** 120 kPa
+
+@6
+G: $v_0=10$ m/s, $g=10$ m/s²
+P: Ko'tarilish vaqti $t_1=v_0/g=1$ s, maksimal balandlik $H=v_0^2/(2g)=5$ m. Jism 2 s da yerga qaytadi.
+P: Yo'l faqat ortadi (kamaymaydi): 0–1 s da $s$ 0 dan 5 m gacha sekinlashib o'sadi (grafik qavariq), 1–2 s da 5 dan 10 m gacha tezlashib o'sadi. $t=1$ s da tezlik nolga teng, grafik gorizontal urinmaga ega.
+P: Boshqa grafiklar ko'chishni yoki balandlikni ko'rsatadi (yo'l kamayishi mumkin emas).
+A: **A)** — yo'l 0 → 5 m → 10 m
+
+@7
+P: Yarim yemirilish davri — radioaktiv yadrolarning yarmi yemiriladigan **vaqt**. SI da vaqt sekundda o'lchanadi.
+A: **D)** s
+
+@8
+P: Har bir zaryad atrofida uchta ekvipotensial sirt bor: kichik ($1$), o'rta ($2$) va katta ($3$) sirt; qo'shni sirtlar potensiali 3 V ga farq qiladi. Nuqtadagi potensial ikki zaryad potensiallari yig'indisi, shuning uchun uni sirt raqamlari yig'indisi $s$ belgilaydi: $\varphi=\varphi_0-3(s-2)$ V.
+P: Rasmdan: A — chap zaryadning 1-sirti va o'ng zaryadning 3-sirtida ($s_A=4$); B — chapning 3-, o'ngning 2-sirtida ($s_B=5$); C — chapning 1-, o'ngning 2-sirtida ($s_C=3$).
+M: \varphi_A-\varphi_B=3\ \text{V},\qquad \varphi_A-\varphi_C=-3\ \text{V}
+P: Birlik zaryadni ko'chirishda bajarilgan ish $A=q(\varphi_1-\varphi_2)$, modullari: $|A_B|=|A_C|=3$ J.
+A: **A)** $A_B=A_C$
+
+@9
+G: $k=100$ N/m, $m=1$ kg, $v_{\text{nisbiy,max}}=2$ m/s
+P: Jism ko'zguga tik harakat qiladi. Tasvir ko'zguga nisbatan simmetrik, uning tezligi jism tezligiga teng va qarama-qarshi. Shuning uchun jismning tasvirga nisbatan tezligi $2v$:
+M: 2v_{\max}=2\ \text{m/s}\;\Rightarrow\;v_{\max}=1\ \text{m/s}
+M: \omega=\sqrt{\frac{k}{m}}=10\ \text{rad/s},\qquad A=\frac{v_{\max}}{\omega}=0{,}1\ \text{m}
+A: **B)** 0,1 m
+
+@10
+P: Zaryad va massa sonlari saqlanadi:
+M: 92=56+36+3Z\;\Rightarrow\;Z=0,\qquad 236=142+91+3A\;\Rightarrow\;A=1
+P: $Z=0$, $A=1$ — bu neytron.
+A: **A)** $^1_0n$
+
+@11
+G: $B=2$ mT, $a=2$ m, $b=3$ m, $\omega=\pi/12$ rad/s, $t=30$ s
+P: Dastlab maydon ramka tekisligiga tik, oqim maksimal:
+M: \Phi_0=BS=2\cdot10^{-3}\cdot 6=12\ \text{mWb}
+P: $t$ vaqtda burilish burchagi $\varphi=\omega t=\dfrac{\pi}{12}\cdot 30=2{,}5\pi$, $\Phi=\Phi_0\cos\varphi=\Phi_0\cos 2{,}5\pi=0$.
+M: |\Delta\Phi|=12-0=12\ \text{mWb}
+A: **B)** 12 mWb
+
+@12
+P: Lorens kuchi $\vec F=q\,\vec v\times\vec B$, elektron uchun $q=-e$. $\vec F$ ning $-z$ yo'nalishda bo'lishi uchun $\vec v\times\vec B$ ko'paytma $+z$ yo'nalishda bo'lishi kerak.
+M: \hat x\times\hat y=\hat z\;\Rightarrow\;\vec B\parallel +y
+A: **D)** $y$ o'qi bo'ylab
+
+@13
+P: Idish suv bilan quyilish teshigi sathigacha to'la. Jism suvda cho'kmaydi, ya'ni suzadi. Suzish shartiga ko'ra jism siqib chiqargan suvning og'irligi jism og'irligiga teng:
+M: m_{\text{suv}}=m=3\ \text{kg}
+P: Siqib chiqarilgan suvning hammasi B taroziga oqib tushadi.
+A: **C)** 3 kg
+
+@14
+P: Yo'ldosh sirtga yaqin aylanadi ($r\approx R$), markazga intilma tezlanishni tortishish kuchi beradi:
+M: \frac{GM}{R^2}=\frac{4\pi^2R}{T^2}\;\Rightarrow\;M=\frac{4\pi^2R^3}{GT^2}
+M: \rho=\frac{M}{\frac43\pi R^3}=\frac{3\pi}{GT^2}=\frac{9}{GT^2}\quad(\pi=3)
+A: **C)** $\dfrac{9}{GT^2}$
+
+@15
+P: Suyuqlik shishani ho'llasa, kapillarda suyuqlik idishdagi sathdan **yuqoriga ko'tariladi**, menisk esa **botiq** bo'ladi (chetlari devorga ko'tarilgan).
+P: Bu holat 2-chizmada tasvirlangan. Ho'llamaydigan suyuqlikda esa sath pasayadi va menisk qavariq bo'ladi.
+A: **B)** 2
+
+@16
+G: Bir atomli ideal gaz, izobarik jarayon, $A=180$ kJ
+M: A=p\Delta V=\nu R\Delta T,\qquad \Delta U=\frac32\nu R\Delta T=\frac32A=270\ \text{kJ}
+P: $\Delta U>0$ — ichki energiya ortgan.
+A: **A)** 270 kJ ga ortgan
+
+@17
+G: $E_0=1{,}2$ TJ, $v=0{,}6c$
+M: \gamma=\frac{1}{\sqrt{1-0{,}36}}=\frac{1}{0{,}8}=1{,}25,\qquad E=\gamma E_0=1{,}25\cdot1{,}2=1{,}5\ \text{TJ}
+A: **B)** 1,5 TJ
+
+@18
+G: $I=3$ A, $t=2$ soat $=7200$ s, $k=1{,}118$ mg/C
+P: Faradeyning birinchi qonuni:
+M: m=kIt=1{,}118\cdot 3\cdot 7200\ \text{mg}\approx 24\,149\ \text{mg}\approx 24\ \text{g}
+A: **C)** 24 g
+
+@19
+G: $m_1=20$ t, $v_1=0{,}2$ m/s; $m_2=30$ t, $v_2=0{,}1$ m/s (qarama-qarshi)
+M: u=\frac{m_1v_1-m_2v_2}{m_1+m_2}=\frac{4000-3000}{50\,000}=0{,}02\ \text{m/s}
+M: E_1=\frac{20\,000\cdot0{,}04}{2}+\frac{30\,000\cdot0{,}01}{2}=550\ \text{J},\qquad E_2=\frac{50\,000\cdot0{,}02^2}{2}=10\ \text{J}
+M: \frac{E_1-E_2}{E_1}=\frac{540}{550}\approx 0{,}98=98\,\%
+A: **C)** 98 %
+
+@20
+P: Qirg'oqqa nisbatan odamning boshlang'ich tezligi kema tezligiga teng: $v_0=10$ m/s. Kema to'g'ri chiziqli tekis harakatlanadi, shuning uchun odamning qirg'oqqa nisbatan tezlanishi ham $a=2$ m/s².
+M: x=v_0t+\frac{at^2}{2}=10t+t^2
+A: **A)** $x=10t+t^2$
+
+@21
+U: Rasmda arqonning sterjenga qayerda mahkamlangani ko'rinmaydi, shuning uchun muvozanat shartini rasm bo'yicha to'liq yozib bo'lmaydi.
+P: Umumiy yondashuv: sterjen tayanch nuqtasiga nisbatan momentlar qoidasi bilan yechiladi. Bir jinsli sterjenning og'irligi uning o'rtasiga qo'yilgan, arqon taranglik kuchi esa ko'chmas bloklar orqali o'zgarmay $T=mg$ ga teng uzatiladi:
+M: \sum M_O=0:\quad Mg\,d_M=mg\,d_T
+P: Javoblar kalitiga ko'ra $m=M/4=4$ kg.
+A: **C)** 4 kg
+
+@22
+P: Ketma-ket ulangan kondensatorlarda zaryad bir xil: tashqi plastinkalarga manbadan kelgan zaryad ichki plastinkalarda induksiya orqali bir xil miqdorda takrorlanadi.
+M: q_1=q_2=q_3
+A: **B)** $q_1=q_2=q_3$
+
+@23
+G: $T_2=2T_1$, $\lambda_1=10$ m, $h=4{,}1\cdot10^{-15}$ eV·s
+M: \lambda=cT\;\Rightarrow\;\lambda_2=2\lambda_1=20\ \text{m}
+M: E_2=\frac{hc}{\lambda_2}=\frac{4{,}1\cdot10^{-15}\cdot3\cdot10^8}{20}\approx 6{,}1\cdot10^{-8}\ \text{eV}
+A: **D)** $6{,}1\cdot10^{-8}$ eV
+
+@24
+G: $v_0=10$ m/s, $v=2$ m/s, $a=-2$ m/s²
+M: s=\frac{v^2-v_0^2}{2a}=\frac{4-100}{-4}=24\ \text{m}
+A: **D)** 24 m
+
+@25
+G: $\sigma=0{,}04$ N/m, $l=20$ cm $=0{,}2$ m
+P: Sovun pardasining ikkita sirti bor, har biri tomonga $\sigma l$ kuch bilan ta'sir qiladi:
+M: F=2\sigma l=2\cdot0{,}04\cdot0{,}2=0{,}016\ \text{N}
+A: **B)** 0,016 N
+
+@26
+G: $h_s=24$ cm, $\sigma_s=0{,}073$ N/m, $\sigma_b=0{,}021$ N/m, $\rho_s=1000$ kg/m³, $\rho_b=700$ kg/m³
+P: Naylar bir xil, ikkala suyuqlik ham shishani to'liq ho'llaydi: $h=\dfrac{2\sigma}{\rho g r}$.
+M: \frac{h_b}{h_s}=\frac{\sigma_b}{\sigma_s}\cdot\frac{\rho_s}{\rho_b}=\frac{0{,}021}{0{,}073}\cdot\frac{1000}{700}\approx0{,}411
+M: h_b\approx0{,}411\cdot24\approx9{,}9\ \text{cm}
+A: **D)** 9,9 cm
+
+@27
+G: $\varepsilon=12$ V, $q=30$ A·soat $=30\cdot3600=108\,000$ C
+M: W=\varepsilon q=12\cdot108\,000=1\,296\,000\ \text{J}=1296\ \text{kJ}
+A: **C)** 1296 kJ
+
+@28
+G: $m=3$ kg, $r=0{,}2$ m, $v_B=2$ m/s, B — aylananing yuqori nuqtasi
+P: Yuqori nuqtada og'irlik kuchi va arqon taranglik kuchi pastga, markazga yo'nalgan:
+M: T+mg=\frac{mv^2}{r}\;\Rightarrow\;T=\frac{3\cdot4}{0{,}2}-30=30\ \text{N}
+P: Jismning og'irligi u arqonga ta'sir qiladigan kuch, Nyutonning 3-qonuniga ko'ra $P=T=30$ N.
+A: **D)** 30 N
+
+@29
+G: $I=2$ A, $R=0{,}5$ Ω, manbalar ichki qarshiligi nolga teng
+P: Zanjir bitta berk kontur. Manbalar bir yo'nalishda ulangan, ularning EYuK lari qo'shiladi. Umumiy qarshilik $R+2R=3R$:
+M: I=\frac{\varepsilon+2\varepsilon}{3R}=\frac{\varepsilon}{R}\;\Rightarrow\;\varepsilon=IR=2\cdot0{,}5=1\ \text{V}
+A: **C)** 1 V
+
+@30
+G: $\mu=0{,}04$, $h=1{,}8$ m, tepalik asosi $L=10$ m
+P: Qiyalikda ishqalanish ishi $\mu mg\cos\alpha\cdot\dfrac{L}{\cos\alpha}=\mu mgL$, ya'ni u faqat gorizontal proyeksiyaga bog'liq. Energiya saqlanishi:
+M: mgh=\mu mgL+\mu mgs\;\Rightarrow\;s=\frac{h}{\mu}-L=\frac{1{,}8}{0{,}04}-10=35\ \text{m}
+A: **C)** 35 m
+
+@31
+P: K tugunidan chap yuqori tugungacha: $3C$ kondensatorga ($4C$ va $12C$ ketma-ket) parallel ulangan:
+M: C_{\text{chap}}=3C+\frac{4C\cdot12C}{4C+12C}=3C+3C=6C
+P: L tugunidan o'ng yuqori tugungacha: $8C$ kondensatorga ($20C$ va $5C$ ketma-ket) parallel:
+M: C_{\text{o'ng}}=8C+\frac{20C\cdot5C}{25C}=8C+4C=12C
+P: Bu ikki bo'lak yuqoridagi $12C$ bilan ketma-ket:
+M: \frac{1}{C_{KL}}=\frac{1}{6C}+\frac{1}{12C}+\frac{1}{12C}=\frac{1}{3C}\;\Rightarrow\;C_{KL}=3C
+A: **A)** $3C$
+
+@32
+U: Rasmda o'tkazgichlarning qaysi nuqtalarda tutashgani (ayniqsa, yurak ichidagi o'q bo'ylab) aniq ko'rinmaydi, shuning uchun sxemani bir qiymatli tiklab bo'lmaydi.
+P: Umumiy yondashuv: avval B va C ga ulangan tugunlarni aniqlab, sxemani oddiy ko'rinishga keltiring. Keyin ketma-ket ($R=R_1+R_2$) va parallel ($R=\frac{R_1R_2}{R_1+R_2}$) bo'laklarni bosqichma-bosqich almashtiring.
+A: **A)** 4 Ω (javoblar kaliti bo'yicha)
+
+@33
+G: $m=0{,}4$ kg, $F=1{,}6$ N; jadvaldan $v$ har sekundda $0{,}5$ m/s ga ortadi
+M: a=\frac{\Delta v}{\Delta t}=0{,}5\ \text{m/s}^2,\qquad F_{\text{nat}}=ma=0{,}4\cdot0{,}5=0{,}2\ \text{N}
+A: **C)** 0,2 N
+
+@34
+P: Natijalovchi kuch $F-F_{\text{ishq}}=ma$:
+M: F_{\text{ishq}}=1{,}6-0{,}2=1{,}4\ \text{N},\qquad \mu=\frac{F_{\text{ishq}}}{mg}=\frac{1{,}4}{0{,}4\cdot10}=0{,}35
+A: **F)** 0,35
+
+@35
+P: Jadvalga ko'ra $t=3$ s da $v=1{,}5$ m/s:
+M: E_k=\frac{mv^2}{2}=\frac{0{,}4\cdot1{,}5^2}{2}=0{,}45\ \text{J}
+A: **B)** 0,45 J
+
+@36
+G: $p_1=20$ kg·m/s, $p_2=70$ kg·m/s, $\Delta t=4$ s; kuch harakat yo'nalishida
+P: **b)** Impuls o'zgarishi: $\Delta p=p_2-p_1=70-20=50$ kg·m/s.
+P: **a)** Nyutonning 2-qonuni impuls ko'rinishida:
+M: F=\frac{\Delta p}{\Delta t}=\frac{50}{4}=12{,}5\ \text{N}
+A: a) 12,5 N; b) 50 kg·m/s
+
+@37
+G: 1-shar: $m$, $2v$ (o'ngga); 2-shar: $2m$, $v$ (chapga); to'qnashuvdan keyin $u_1=12$ m/s
+P: **a)** To'qnashuvgacha umumiy impuls: $m\cdot2v-2m\cdot v=0$. Keyin ham impuls nolga teng, ya'ni sharlar impulslari teng va qarama-qarshi:
+M: m u_1=2m u_2\;\Rightarrow\;u_2=\frac{u_1}{2}=6\ \text{m/s}
+P: (Elastik to'qnashuvda energiya saqlanadi: $3mv^2=\frac{m\cdot144}{2}+\frac{2m\cdot36}{2}=108m$, bundan $v=6$ m/s. Natijalar bir-biriga mos keladi.)
+P: **b)** To'qnashuv elastik, mexanik energiya saqlanadi, ajralgan energiya nolga teng.
+A: a) 6 m/s; b) 0 J
+
+@38
+G: $p$–$T$ diagrammada 1→2: $T$ kamayadi, $p$ ortadi; to'g'ri chiziq koordinata boshidan o'tmaydi
+P: **a)** Izoxora $p$–$T$ diagrammada koordinata boshidan o'tuvchi chiziq bo'ladi. Bu yerda chiziq teskari qiyalikda, demak hajm o'zgaradi. $V=\dfrac{\nu RT}{p}$: $T$ kamayadi, $p$ ortadi, demak **hajm kamayadi**.
+P: **b)** Ideal gazning ichki energiyasi $U=\frac{i}{2}\nu RT$, faqat temperaturaga bog'liq. Grafik bo'yicha $T_2\approx T_1/3$, demak ichki energiya taxminan **3 marta kamayadi**.
+S: Javoblar kalitida a) qism uchun «o'zgarmaydi» berilgan edi. Grafikdagi chiziq koordinata boshidan o'tmaydi, $p$ ortib, $T$ kamayadi, shuning uchun hajm o'zgarmasligi mumkin emas, u kamayadi. Kalit tuzatildi.
+A: a) kamayadi; b) taxminan 3 marta kamayadi
+
+@39
+G: $m=2$ kg, $v_0=6$ m/s, $\alpha=30^\circ$
+P: **b)** Tezlik trayektoriyaning eng yuqori nuqtasida minimal bo'ladi: u yerda faqat gorizontal tashkil etuvchi qoladi.
+M: v_{\min}=v_0\cos30^\circ=6\cdot\frac{\sqrt3}{2}=3\sqrt3\approx5{,}2\ \text{m/s}
+P: **a)**
+M: E_{k,\min}=\frac{mv_{\min}^2}{2}=\frac{2\cdot27}{2}=27\ \text{J}
+S: Javoblar kalitida a) qism uchun 23 J berilgan edi. $v_{\min}=3\sqrt3$ m/s bo'lganda $E_{k,\min}=27$ J chiqadi, b) qismdagi kalit javobi ham shunga mos. Kalit tuzatildi.
+A: a) 27 J; b) $3\sqrt3\approx5{,}2$ m/s
+
+@40
+G: 1: $(4V_0;\,3p_0)$ → 2: $(V_0;\,p_0)$, $p_0=10^5$ Pa, $V_0=1$ L $=10^{-3}$ m³; $p_0V_0=100$ J
+P: **a)** Gaz siqiladi. Tashqi kuchlar gaz ustida bajargan ish grafik ostidagi trapetsiya yuziga teng:
+M: A'=\frac{3p_0+p_0}{2}\cdot(4V_0-V_0)=6p_0V_0=600\ \text{J}
+P: **b)** Bir atomli gaz: $U=\frac32 pV$.
+M: \Delta U=\frac32(p_0V_0-12p_0V_0)=-16{,}5\,p_0V_0=-1650\ \text{J}
+A: a) 600 J; b) −1650 J
+
+@41
+G: Kvadrat ABCD, tomoni $a$; A da $q$, B da $3q$, C da $2q$. AC va BD — diagonallar ($a\sqrt2$)
+P: **a)** Maydon bajargan ish $A=q(\varphi_A-\varphi_D)$; potensialni B va C dagi zaryadlar hosil qiladi.
+M: \varphi_A=\frac{k\cdot3q}{a}+\frac{k\cdot2q}{a\sqrt2},\qquad \varphi_D=\frac{k\cdot3q}{a\sqrt2}+\frac{k\cdot2q}{a}
+M: A=q(\varphi_A-\varphi_D)=\frac{kq^2}{a}\left(1-\frac{1}{\sqrt2}\right)\approx0{,}29\,\frac{kq^2}{a}
+P: **b)** B dagi $3q$ ga A dagi $q$ va C dagi $2q$ ta'sir qiladi (har biri $a$ masofada), kuchlar o'zaro tik:
+M: F_{AB}=\frac{3kq^2}{a^2},\quad F_{CB}=\frac{6kq^2}{a^2},\quad F=\sqrt{9+36}\,\frac{kq^2}{a^2}=3\sqrt5\,\frac{kq^2}{a^2}\approx6{,}71\,\frac{kq^2}{a^2}
+S: Javoblar kalitida a) qism uchun $-1{,}548\,kq^2/a$ berilgan edi. Shartdagi joylashuv bo'yicha $\varphi_A>\varphi_D$, maydon ishi musbat va $\left(1-\frac{1}{\sqrt2}\right)\frac{kq^2}{a}\approx0{,}293\,\frac{kq^2}{a}$ ga teng. Kalit tuzatildi.
+A: a) $\approx0{,}29\,kq^2/a$; b) $3\sqrt5\approx6{,}71\,kq^2/a^2$
+
+@42
+G: $I=10-6t$ (A)
+P: **a)** Tok — zaryadning vaqt bo'yicha hosilasi, $q(0)=0$ deb olamiz:
+M: q(t)=\int_0^t(10-6t)\,dt=10t-3t^2\ \text{(C)}
+P: **b)** $t=4$ s da $q(4)=40-48=-8$ C, ya'ni zanjirdan natijada $|q|=8$ C zaryad o'tgan.
+M: N=\frac{|q|}{e}=\frac{8}{1{,}6\cdot10^{-19}}=5\cdot10^{19}
+A: a) $q=10t-3t^2$; b) $5\cdot10^{19}$ ta
+
+@43
+G: Ko'zgular orasi $a$; sham 1-ko'zgudan $0{,}1a$, 2-ko'zgudan $0{,}9a$ masofada
+P: 1-ko'zgu $x=0$ da, 2-ko'zgu $x=a$ da, sham $x=0{,}1a$ da bo'lsin.
+P: **a)** 1-ko'zgudagi ikkinchi tasvir — shamning 2-ko'zgudagi tasvirining ($x=1{,}9a$) 1-ko'zgudagi aksi: $x=-1{,}9a$. Shamdan masofa $1{,}9a+0{,}1a=2a$.
+P: **b)** 2-ko'zgudagi ikkinchi tasvir — shamning 1-ko'zgudagi tasvirining ($x=-0{,}1a$) 2-ko'zgudagi aksi: $x=2a+0{,}1a=2{,}1a$. 2-ko'zgudan masofa $2{,}1a-a=1{,}1a$.
+A: a) $2a$; b) $1{,}1a$
+
+@44
+P: Relyativistik tezliklarni qo'shish:
+M: \text{a)}\ \ u=\frac{0{,}9c+0{,}8c}{1+0{,}9\cdot0{,}8}=\frac{1{,}7}{1{,}72}c\approx0{,}988c
+M: \text{b)}\ \ u=\frac{0{,}9c-0{,}8c}{1-0{,}9\cdot0{,}8}=\frac{0{,}1}{0{,}28}c\approx0{,}357c
+A: a) $0{,}988c$; b) $0{,}357c$
+
+@45
+G: $A_0=1600$ Bq, $A=25$ Bq, $t=12$ soat
+P: **a)**
+M: \frac{A_0}{A}=64=2^6\;\Rightarrow\;\frac{t}{T}=6,\qquad T=\frac{12}{6}=2\ \text{soat}
+P: **b)** O'rtacha yashash vaqti:
+M: \tau=\frac{T}{\ln2}=\frac{2}{0{,}693}\approx2{,}88\ \text{soat}
+A: a) 2 soat; b) 2,88 soat

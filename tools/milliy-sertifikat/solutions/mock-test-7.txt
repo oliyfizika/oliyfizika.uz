@@ -1,0 +1,271 @@
+# Mock test №7 — yozma yechimlar
+@1
+G: $v_0=10$ m/s, $a=-2$ m/s², $v=0$
+M: s=\frac{v^2-v_0^2}{2a}=\frac{0-100}{-4}=25\ \text{m}
+A: **A)** 25
+
+@2
+P: Tezlanish eng kichik bo'lishi uchun kuchlar qarama-qarshi yo'nalgan bo'lishi kerak:
+M: a_{\min}=\frac{F_2-F_1}{m}=\frac{55-20}{5}=7\ \text{m/s}^2
+A: **B)** 7
+
+@3
+G: $h=7200$ m, $v=216$ km/h $=60$ m/s
+M: \frac{E_p}{E_k}=\frac{mgh}{mv^2/2}=\frac{2gh}{v^2}=\frac{2\cdot10\cdot7200}{3600}=40
+A: **D)** 40
+
+@4
+P: Grafikdan: $B$ nuqtada $t=40$ s, $v=25$ m/s; $C$ nuqtada $t=55$ s, $v=20$ m/s. Yo'l tezlik grafigi ostidagi yuzaga (trapetsiya) teng:
+M: s_{BC}=\frac{v_B+v_C}{2}(t_C-t_B)=\frac{25+20}{2}\cdot15=337{,}5\ \text{m}
+A: **B)** 337,5
+
+@5
+P: Tormozlanishda faqat ishqalanish kuchi ta'sir qiladi: $a=\mu g=4{,}5$ m/s². Tormoz yo'li $s$ bo'lsa:
+M: v_0=\sqrt{2\mu gs}
+P: Kalitdagi $v_0=15$ m/s javobga $s=\frac{v_0^2}{2\mu g}=\frac{225}{9}=25$ m tormoz yo'li mos keladi.
+U: Shartda tormoz yo'li (to'xtash masofasi) berilmagan, usiz tezlikni topib bo'lmaydi. Kalitdagi javob tormoz yo'li 25 m bo'lganda to'g'ri.
+A: **D)** 15
+
+@6
+G: $l=1{,}2$ m, $m=0{,}9$ kg, pastki nuqtada $v=4$ m/s
+P: Pastki nuqtada taranglik kuchi og'irlik kuchini va markazga intilma kuchni ta'minlaydi:
+M: T-mg=\frac{mv^2}{l}\;\Rightarrow\;T=0{,}9\cdot10+\frac{0{,}9\cdot16}{1{,}2}=9+12=21\ \text{N}
+A: **C)** 21
+
+@7
+P: Bloklar qo'zg'almas va vaznsiz, shuning uchun har bir ipning taranglik kuchi uning uchiga qo'yilgan kuchga teng.
+P: $A$ sharcha ($m$) $g/2$ tezlanish bilan yuqoriga harakatlanadi:
+M: F_1-mg=m\frac g2\;\Rightarrow\;F_1=\frac32mg
+P: $B$ sharcha ($2m$) $g/2$ tezlanish bilan pastga harakatlanadi:
+M: 2mg-F_2=2m\frac g2\;\Rightarrow\;F_2=mg
+M: \frac{F_1}{F_2}=\frac32
+S: Javoblar kalitida C) 3 berilgan edi. Bu javob $B$ sharcha massasini $m$ deb olinganda chiqadi ($F_2=mg/2$). Rasmda $B$ ning massasi $2m$, to'g'ri javob 3/2 (D), kalit tuzatildi.
+A: **D)** 3/2
+
+@8
+G: $V=9$ m³, $S=1{,}4$ m², $\rho=2800$ kg/m³
+M: p=\frac{mg}{S}=\frac{\rho Vg}{S}=\frac{2800\cdot9\cdot10}{1{,}4}=180\,000\ \text{Pa}=180\ \text{kPa}
+A: **C)** 180
+
+@9
+P: Suvni atmosfera bosimi quvur bo'ylab yuqoriga itaradi. Nasos yonida bosim eng kamida nolga tushishi mumkin. Bernulli tenglamasi (suv sirti va nasos joyi uchun, $p_0=10^5$ Pa):
+M: p_0=\rho gh+\frac{\rho v_{\max}^2}{2}\;\Rightarrow\;v_{\max}=\sqrt{2\left(\frac{p_0}{\rho}-gh\right)}=\sqrt{2(100-50)}=10\ \text{m/s}
+A: **C)** 10
+
+@10
+P: 1- va 3-do'ngliklar orasida ikki to'lqin uzunligi bor: $2\lambda=20$ cm, $\lambda=0{,}1$ m.
+M: T=\frac{\lambda}{v}=\frac{0{,}1}{0{,}1}=1\ \text{s}
+A: **D)** 1
+
+@11
+M: v=\sqrt{\frac{3p}{\rho}}=\sqrt{\frac{3\cdot2{,}5\cdot10^5}{12}}=\sqrt{62\,500}=250\ \text{m/s}
+A: **B)** 250
+
+@12
+P: Alyuminiyning solishtirma issiqlik sig'imi $c=900$ J/(kg·K):
+M: C=cm=900\cdot0{,}4=360\ \text{J/K}
+A: **B)** 360
+
+@13
+P: $2\text{O}_3\to3\text{O}_2$ reaksiyasida massa saqlanadi, mollar soni esa ortadi: $\nu_{\text{O}_2}=\frac{m}{32}$, $\nu_{\text{O}_3}=\frac{m}{48}$, ya'ni $\nu_2=1{,}5\,\nu_1$. Hajm o'zgarmas, $p\propto\nu T$:
+M: \frac{p_2}{p_1}=\frac{\nu_2T_2}{\nu_1T_1}=1{,}5\cdot\frac{873}{1000}\approx1{,}31
+P: Demak, bosim taxminan 31 % ga **ortadi**.
+S: Javoblar kalitida D) 40 % (kamayadi) berilgan. Bu javob mollar nisbati teskari olinganda chiqadi: $\frac23\cdot\frac{873}{1000}\approx0{,}58$. Aslida ozon kislorodga aylanganda molekulalar soni 1,5 marta ortadi va bosim taxminan 31 % ga ortadi, variantlar orasida bunday javob yo'q.
+A: **D)** 40 (javoblar kaliti bo'yicha)
+
+@14
+G: $S=1$ dm² $=10^{-2}$ m², $m=20$ kg, $\Delta h=0{,}3$ m, $p_0=10^5$ Pa
+P: Gaz bosimi atmosfera bosimi va porshen bosimi yig'indisiga teng:
+M: p=p_0+\frac{mg}{S}=10^5+\frac{200}{10^{-2}}=1{,}2\cdot10^5\ \text{Pa}
+M: A=pS\Delta h=1{,}2\cdot10^5\cdot10^{-2}\cdot0{,}3=360\ \text{J}
+A: **B)** 360
+
+@15
+P: 19 °C da to'yingan bug' zichligi $\rho_0=16{,}3$ g/m³ (jadvaldan):
+M: m_{\text{t}}=\rho_0V=16{,}3\cdot5=81{,}5\ \text{g},\qquad \Delta m=81{,}5-34{,}5=47\ \text{g}
+A: **B)** 47
+
+@16
+P: Natijaviy kuch gorizontal, og'irlik kuchi vertikal, demak elektr kuchi ularning ayirmasi bo'lib, to'g'ri burchakli uchburchak gipotenuzasi:
+M: F_e=\sqrt{F^2+(mg)^2}=\sqrt{32^2+24^2}=40\ \text{mN}
+A: **D)** 40
+
+@17
+P: Sxemada reostatning chap uchi zanjirga ulangan, surgich esa lampaga boradi. Surgich chapga surilganda zanjirga ulangan qism qisqaradi, reostat qarshiligi kamayadi. Zanjirning umumiy qarshiligi kamayadi, tok kuchi ortadi.
+A: **C)** ortadi
+
+@18
+M: \nu_{\text{st}}=\frac{c}{\lambda}=\frac{3\cdot10^8}{200}=1{,}5\ \text{MHz}
+P: Priyomnik chastotasini 6 MHz dan 1,5 MHz gacha, ya'ni 4 marta kamaytirish kerak. $\nu=\frac{1}{2\pi\sqrt{LC}}$, demak $C\propto1/\nu^2$:
+M: \frac{C_2}{C_1}=\left(\frac{\nu_1}{\nu_2}\right)^2=4^2=16
+A: **B)** 16 marta oshirish kerak
+
+@19
+P: Dielektrik kiritilgandan keyin sig'im $\varepsilon C$. Ketma-ket ulanganda:
+M: \frac{\varepsilon C\cdot C_x}{\varepsilon C+C_x}=\frac C2\;\Rightarrow\;2\varepsilon C_x=\varepsilon C+C_x\;\Rightarrow\;C_x=\frac{\varepsilon C}{2\varepsilon-1}
+A: **A)** εC/(2ε − 1)
+
+@20
+G: $q=3\cdot10^{-8}$ C, $r_1=0{,}5$ m, $r_2=0{,}1$ m
+P: Zaryadlarni yaqinlashtirish uchun tashqi kuch bajargan ish o'zaro ta'sir energiyasining o'zgarishiga teng:
+M: A=kq^2\left(\frac1{r_2}-\frac1{r_1}\right)=9\cdot10^9\cdot9\cdot10^{-16}\cdot(10-2)=6{,}48\cdot10^{-5}\ \text{J}=64{,}8\ \mu\text{J}
+A: **D)** 64,8
+
+@21
+M: U=\varepsilon-Ir=6-2\cdot\frac14=5{,}5\ \text{V}
+A: **C)** 5,5
+
+@22
+M: \Delta R=R_0\alpha\Delta t=3{,}5\cdot0{,}0028\cdot200=1{,}96\ \Omega
+A: **B)** 1,96
+
+@23
+G: $S=2\cdot3=6$ cm² $=6\cdot10^{-4}$ m², $B=10$ T, $I=2$ A
+M: M_{\max}=BIS=10\cdot2\cdot6\cdot10^{-4}=1{,}2\cdot10^{-2}\ \text{N·m}=12\ \text{mN·m}
+A: **B)** 12
+
+@24
+P: Lorens kuchi $\vec F=q\,\vec v\times\vec B$, elektron uchun $q<0$. $\vec F$ $x$ o'qiga qarshi bo'lsa, $\vec v\times\vec B$ $x$ o'qi bo'ylab yo'nalgan bo'lishi kerak. $\vec v\parallel y$ bo'lganda:
+M: \hat y\times\hat z=\hat x
+P: Demak, $\vec B$ $z$ o'qi bo'ylab yo'nalgan (chap qo'l qoidasini elektron uchun teskari qo'llash bilan ham shu chiqadi).
+A: **B)** z o'qi bo'ylab
+
+@25
+G: $R=8$ Ω, $X_C=9$ Ω, $X_L=3$ Ω, $U=140$ V
+M: Z=\sqrt{R^2+(X_L-X_C)^2}=\sqrt{64+36}=10\ \Omega,\qquad I=\frac UZ=14\ \text{A}
+M: P=I^2R=196\cdot8=1568\ \text{W}
+A: **A)** 1568
+
+@26
+P: Bir muhitdan ikkinchisiga o'tganda yorug'likning chastotasi o'zgarmaydi, faqat tezligi va to'lqin uzunligi $n$ marta kamayadi.
+A: **C)** o'zgarmaydi
+
+@27
+P: Kichiklashgan mavhum tasvirni faqat sochuvchi linza beradi. $d=0{,}4$ m, $f=-0{,}2$ m:
+M: D=\frac1d+\frac1f=\frac1{0{,}4}-\frac1{0{,}2}=2{,}5-5=-2{,}5\ \text{dptr}
+A: **B)** −2,5
+
+@28
+M: m=\frac{m_0}{\sqrt{1-v^2/c^2}}\;\Rightarrow\;\sqrt{1-\frac{v^2}{c^2}}=\frac35\;\Rightarrow\;v=0{,}8c
+A: **D)** 0,8c
+
+@29
+P: Yadroda $Z=84$ ta proton va $N=A-Z=209-84=125$ ta neytron bor (elektronlar yadro tarkibiga kirmaydi).
+A: **C)** 125 ta neytron, 84 ta proton
+
+@30
+P: Eynshteyn tenglamasi: $E=h\nu_{\text{tush}}-h\nu_{\text{qizil}}$.
+M: E_1=h(5\nu-\nu)=4h\nu,\qquad E_2=h(4\nu-2\nu)=2h\nu,\qquad \frac{E_1}{E_2}=2
+A: **B)** 2
+
+@31
+M: E=13{,}6\left(\frac1{2^2}-\frac1{4^2}\right)=13{,}6\cdot\frac{3}{16}=2{,}55\ \text{eV}
+A: **A)** 2,55
+
+@32
+M: \varepsilon=\frac{\Delta l}{l}=\frac{0{,}005}{17{,}2}\approx2{,}9\cdot10^{-4}\approx0{,}03\ \%
+A: **D)** 0,03
+
+@33
+P: Grafikda o'qlar: vertikal — $V$, gorizontal — $P$. Holatlar: 1 $(P_0;\,5V_0)$, 2 $(P_0;\,V_0)$, 3 $(4P_0;\,V_0)$. Sikl ishi uchburchak yuziga teng:
+M: A=\frac12(4P_0-P_0)(5V_0-V_0)=6P_0V_0
+P: 3→1 da gaz yuqori bosimda kengayadi, 1→2 da past bosimda siqiladi, shuning uchun ish musbat.
+A: **D)** 6 P₀V₀
+
+@34
+P: 1→2 — izobarik siqilish ($P=P_0$, hajm $5V_0$ dan $V_0$ gacha). Bir atomli gaz uchun $Q=\frac52p\Delta V$:
+M: Q_{12}=\frac52P_0(V_0-5V_0)=-10P_0V_0
+P: Gaz $10P_0V_0$ issiqlik chiqargan.
+A: **E)** 10 P₀V₀
+
+@35
+M: \Delta U_{31}=\frac32(P_1V_1-P_3V_3)=\frac32(5P_0V_0-4P_0V_0)=1{,}5P_0V_0
+M: A_{31}=\frac{4P_0+P_0}{2}(5V_0-V_0)=10P_0V_0,\qquad Q_{31}=\Delta U+A=11{,}5P_0V_0
+A: **A)** 11,5 P₀V₀
+
+@36
+G: $H=175$ m, ikkinchi sekundda $s_2=25$ m, $g=10$ m/s²
+P: **a)** $n$-sekundda o'tilgan yo'l: $s_n=v_0+\frac g2(2n-1)$:
+M: 25=v_0+5\cdot3\;\Rightarrow\;v_0=10\ \text{m/s}
+P: **b)** Dastlabki 4 s da (jism hali yerga tushmagan, chunki 120 m < 175 m):
+M: s=v_0t+\frac{gt^2}{2}=40+80=120\ \text{m}
+A: a) 10 m/s; b) 120 m
+
+@37
+G: $l=0{,}5$ m, $M_Y=2M_{\text{Yer}}$, $R_Y=2R_{\text{Yer}}$, $g=10$ N/kg
+P: **a)**
+M: g_Y=\frac{G\cdot2M}{(2R)^2}=\frac12\cdot\frac{GM}{R^2}=5\ \text{N/kg}
+P: **b)** Y sayyorada yuqoriga $a=5$ m/s² tezlanish bilan harakatda effektiv tezlanish $g_Y+a=10$ m/s². Yerda tekis harakatda effektiv tezlanish $g=10$ m/s². $T=2\pi\sqrt{l/g_{\text{ef}}}$:
+M: \frac{T_Y}{T_{\text{Yer}}}=\sqrt{\frac{10}{10}}=1
+A: a) 5 N/kg; b) 1
+
+@38
+G: $P_2=20$ N ($m_2=2$ kg), $t=2{,}5$ s, $s=6{,}25$ m, $v_0=0$
+P: **a)**
+M: s=\frac{at^2}{2}\;\Rightarrow\;a=\frac{2s}{t^2}=\frac{12{,}5}{6{,}25}=2\ \text{m/s}^2
+P: **b)** Og'ir yuk uchun: $m_2g-T=m_2a$:
+M: T=2\cdot(10-2)=16\ \text{N},\qquad F_{\text{o'q}}=2T=32\ \text{N}
+A: a) 2 m/s²; b) 32 N
+
+@39
+G: $V=400$ l $=0{,}4$ m³, $T=300$ K, $\Delta m=2$ g, $p_{\text{t}}=3{,}6$ kPa
+P: To'yingan bug' zichligi (Mendeleyev–Klapeyron tenglamasidan):
+M: \rho_{\text{t}}=\frac{p_{\text{t}}M}{RT}=\frac{3600\cdot0{,}018}{8{,}31\cdot300}\approx0{,}026\ \text{kg/m}^3=26\ \text{g/m}^3
+P: **a)** To'yingan holatda idishda $26\cdot0{,}4=10{,}4$ g bug' bor, ulardan 2 g keyin bug'latilgan:
+M: m_1=10{,}4-2=8{,}4\ \text{g},\qquad \rho_1=\frac{8{,}4}{0{,}4}=21\ \text{g/m}^3
+P: **b)**
+M: \varphi=\frac{\rho_1}{\rho_{\text{t}}}=\frac{21}{26}\approx0{,}808=80{,}8\ \%
+S: Javoblar kalitida a) 26 g/m³ va b) 83,9 % berilgan edi. 26 g/m³ — bu 27 °C dagi **to'yingan** bug' zichligi, dastlabki havoniki emas (83,9 % esa $\frac{26}{26+5}$ dan chiqqan). Shartdagi 3,6 kPa to'yingan bug' bosimi bo'yicha to'g'ri javoblar: 21 g/m³ va ≈80,8 %. Kalit tuzatildi.
+A: a) 21 g/m³; b) ≈80,8 %
+
+@40
+G: $Q=6$ kJ, $V=k\sqrt T$, bir atomli gaz
+P: $V=k\sqrt T$ dan $T\propto V^2$. $pV=\nu RT$ ga qo'ysak, $p\propto V$: grafik $p$–$V$ da koordinata boshidan o'tuvchi to'g'ri chiziq. Bunday jarayonda:
+M: A=\frac{p_1+p_2}{2}(V_2-V_1)=\frac12(p_2V_2-p_1V_1)=\frac12\nu R\Delta T,\qquad \Delta U=\frac32\nu R\Delta T
+M: Q=A+\Delta U=2\nu R\Delta T\;\Rightarrow\;\nu R\Delta T=3\ \text{kJ}
+M: \text{a)}\ \ A=1{,}5\ \text{kJ}=1500\ \text{J},\qquad \text{b)}\ \ \Delta U=4{,}5\ \text{kJ}
+A: a) 1500 J; b) 4,5 kJ
+
+@41
+G: $m=1200$ kg, $\varepsilon=400$ V, $v_1=30$ m/s, $v_2=5$ m/s
+P: **a)** Rekuperativ tormozlanishda kinetik energiya kamayishi akkumulyatorga to'planadi (yo'qotishlarsiz):
+M: W=\frac{m(v_1^2-v_2^2)}{2}=\frac{1200(900-25)}{2}=525\,000\ \text{J}=525\ \text{kJ}
+P: **b)**
+M: q=\frac{W}{\varepsilon}=\frac{525\,000}{400}=1312{,}5\ \text{C}\approx1{,}3\ \text{kC}
+A: a) 525 kJ; b) ≈1,3 kC
+
+@42
+G: $R=60$ Ω, $L=0{,}2$ H, $U_m=160$ V, $\omega=400$ rad/s
+P: Ampermetr effektiv qiymatni ko'rsatadi: $U=\frac{160}{\sqrt2}\approx113$ V.
+P: **a)** Kalit $a$ holatda g'altak zanjirdan chiqarilgan, faqat $R$ qoladi:
+M: I=\frac{U}{R}=\frac{113}{60}\approx1{,}9\ \text{A}
+P: **b)** Kalit $b$ holatda $R$ va $L$ ketma-ket ulangan:
+M: X_L=\omega L=80\ \Omega,\qquad Z=\sqrt{60^2+80^2}=100\ \Omega,\qquad I=\frac{113}{100}\approx1{,}13\ \text{A}
+A: a) ≈1,9 A; b) ≈1,13 A
+
+@43
+G: $\Gamma=5/4$, buyum va tasvir orasidagi masofa 2 cm
+P: Rasmda tasvir to'g'ri va buyum bilan bir tomonda, demak tasvir mavhum, linza yig'uvchi (lupa). Mavhum tasvir buyumdan uzoqroqda: $f=\frac54d$, $f-d=2$ cm:
+M: \frac d4=2\;\Rightarrow\;d=8\ \text{cm},\qquad f=10\ \text{cm}
+P: **a)**
+M: D=\frac1d-\frac1f=\frac1{0{,}08}-\frac1{0{,}1}=12{,}5-10=2{,}5\ \text{dptr}\quad(F=40\ \text{cm})
+P: **b)** Buyum 3 cm yaqinlashtirilsa, $d'=5$ cm:
+M: \Gamma'=\frac{F}{F-d'}=\frac{40}{35}=\frac87\approx1{,}14
+A: a) 2,5 dptr; b) ≈1,14
+
+@44
+G: $v_1=0{,}5c$ da massa $m/\sqrt3$
+P: **a)**
+M: m_0=\frac{m}{\sqrt3}\sqrt{1-0{,}25}=\frac{m}{\sqrt3}\cdot\frac{\sqrt3}{2}=\frac m2=0{,}5m
+P: **b)** $v=0{,}6c$ da $\gamma=\frac{1}{\sqrt{1-0{,}36}}=1{,}25$:
+M: E_k=(\gamma-1)m_0c^2=0{,}25\cdot0{,}5\,mc^2=0{,}125\,mc^2
+S: Javoblar kalitida b) qism uchun $0{,}5\,mc^2$ berilgan edi, bu zarraning tinchlikdagi energiyasi $m_0c^2$. Kinetik energiya $(\gamma-1)m_0c^2=0{,}125\,mc^2$, kalit tuzatildi.
+A: a) 0,5m; b) 0,125mc²
+
+@45
+P: Vodorod atomida $E_n=-\frac{13{,}6}{n^2}$ eV, impuls momenti $L=n\hbar$. Ionlashish energiyasi 3,4 eV bo'lsa, $n=2$.
+P: **a)** Impuls momenti $\hbar$ ga ortdi, $n=3$:
+M: E_{\text{ion}}=\frac{13{,}6}{9}\approx1{,}51\ \text{eV}
+P: **b)** Impuls momenti $\hbar$ ga kamaydi, $n=1$:
+M: E_{\text{ion}}=13{,}6\ \text{eV}
+A: a) 1,51 eV; b) 13,6 eV

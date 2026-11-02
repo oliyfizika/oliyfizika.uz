@@ -625,14 +625,11 @@
      "key": "a",
      "text": "Bu o‘tishda gazning hajmi qanday o‘zgaradi?",
      "kind": "text",
-     "answer": "o‘zgarmaydi",
+     "answer": "kamayadi",
      "accept": [
-      "o‘zgarmaydi",
-      "o'zgarmaydi",
-      "ozgarmaydi",
-      "o‘zgarmas",
-      "o'zgarmas",
-      "ozgarmas"
+      "kamayadi",
+      "kamaydi",
+      "hajmi kamayadi"
      ],
      "unit": "",
      "hint": "Masalan: 2 marta ortadi"
@@ -660,7 +657,7 @@
     {
      "key": "a",
      "text": "Uning minimal kinetik energiyasini toping.",
-     "answer": 23,
+     "answer": 27,
      "unit": "J",
      "tolerance": 0.1
     },
@@ -704,7 +701,7 @@
     {
      "key": "a",
      "text": "Kvadratning A uchidagi zaryadni D uchiga ko‘chirish uchun elektr maydon qanday ish bajaradi? Javobni kq²/a ko‘rinishida yozing: kq²/a oldidagi sonli koeffitsiyentni kiriting.",
-     "answer": -1.5481881585886565,
+     "answer": 0.29289321881345254,
      "unit": "·kq²/a",
      "tolerance": 0.01
     },

@@ -1,0 +1,1148 @@
+{
+ "schemaVersion": 1,
+ "testId": "mock-test-9",
+ "items": {
+  "1": [
+   {
+    "t": "p",
+    "text": "Ko‘tarilish va tushish vaqtlari teng:"
+   },
+   {
+    "t": "math",
+    "tex": "t=\\frac{2v_0}{g}=\\frac{2\\cdot20}{10}=4\\ \\text{s}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 4"
+     }
+    ]
+   }
+  ],
+  "2": [
+   {
+    "t": "p",
+    "text": "Guk qonuni: $\\sigma=E\\varepsilon$, demak nisbiy uzayish $\\varepsilon=\\frac{\\Delta l}{l_0}=0{,}7$:"
+   },
+   {
+    "t": "math",
+    "tex": "l=l_0(1+\\varepsilon)=1{,}7\\,l_0"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**D)** 1,7"
+     }
+    ]
+   }
+  ],
+  "3": [
+   {
+    "t": "p",
+    "text": "Mexanik va elektromagnit tebranishlar analogiyasi: koordinata ↔ zaryad, tezlik ↔ tok kuchi, massa ↔ induktivlik, bikrlik ↔ $1/C$. Kinetik energiya $\\frac{mv^2}{2}$ magnit energiya $\\frac{LI^2}{2}$ ga mos keladi."
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** induktivlik"
+     }
+    ]
+   }
+  ],
+  "4": [
+   {
+    "t": "math",
+    "tex": "\\omega=\\frac{d\\varphi}{dt}=20-2t=2(10-t)"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** ω = 2(10 − t)"
+     }
+    ]
+   }
+  ],
+  "5": [
+   {
+    "t": "p",
+    "text": "$\\Phi=LI$ bo‘lgani uchun:"
+   },
+   {
+    "t": "math",
+    "tex": "W=\\frac{LI^2}{2}=\\frac{\\Phi I}{2}=\\frac{0{,}05\\cdot2}{2}=0{,}05\\ \\text{J}=50\\ \\text{mJ}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 50"
+     }
+    ]
+   }
+  ],
+  "6": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$R=30$ cm, $h=20$ cm, kuch markazga gorizontal qo‘yilgan"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "G‘o‘la zinapoya qirrasi atrofida aylanib ko‘tariladi. Qirraga nisbatan kuchlar yelkalari: gorizontal kuch uchun vertikal masofa $R-h=10$ cm, og‘irlik kuchi uchun gorizontal masofa:"
+   },
+   {
+    "t": "math",
+    "tex": "x=\\sqrt{R^2-(R-h)^2}=\\sqrt{900-100}=20\\sqrt2\\ \\text{cm}"
+   },
+   {
+    "t": "p",
+    "text": "Momentlar qoidasi:"
+   },
+   {
+    "t": "math",
+    "tex": "F(R-h)=mg\\,x\\;\\Rightarrow\\;F=mg\\frac{20\\sqrt2}{10}=2\\sqrt2\\,mg"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 2√2·mg"
+     }
+    ]
+   }
+  ],
+  "7": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$R=10$ Ω, $R_V=500$ Ω"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Parallel ulanganda rezistor va voltmetrning umumiy qarshiligi $R_{\\parallel}=\\frac{10\\cdot500}{510}\\approx9{,}80$ Ω. Voltmetr ko‘rsatishlari:"
+   },
+   {
+    "t": "math",
+    "tex": "U_1=\\frac{\\varepsilon R_{\\parallel}}{R_{\\parallel}+r},\\qquad U_2=\\frac{\\varepsilon R_V}{R+R_V+r}"
+   },
+   {
+    "t": "math",
+    "tex": "U_1=U_2\\;\\Rightarrow\\;R_{\\parallel}(510+r)=500(R_{\\parallel}+r)\\;\\Rightarrow\\;r=\\frac{10R_{\\parallel}}{500-R_{\\parallel}}=\\frac{98{,}04}{490{,}2}=0{,}2\\ \\Omega"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**A)** 0,2"
+     }
+    ]
+   }
+  ],
+  "8": [
+   {
+    "t": "p",
+    "text": "Panjara formulasi $d\\sin\\varphi=k\\lambda$, $\\sin\\varphi\\le1$ dan:"
+   },
+   {
+    "t": "math",
+    "tex": "k\\le\\frac d\\lambda=2\\;\\Rightarrow\\;k=0,\\ \\pm1,\\ \\pm2"
+   },
+   {
+    "t": "p",
+    "text": "Jami $2\\cdot2+1=5$ ta maksimum."
+   },
+   {
+    "t": "status",
+    "kind": "undetermined",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$k=\\pm2$ maksimumlar $\\varphi=90^\\circ$ ga to‘g‘ri keladi, ya’ni panjara tekisligi bo‘ylab yo‘nalgan va amalda ekranda kuzatilmaydi. Qat’iy hisoblaganda 3 ta maksimum ko‘rinadi; kalit $k_{\\max}=d/\\lambda$ ni ham sanaydigan maktab yondashuviga asoslangan."
+     }
+    ]
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**D)** 5"
+     }
+    ]
+   }
+  ],
+  "9": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$\\nu=2$ mol, $T_1=300$ K, $V_2=3V_1$, $p$ = const"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "T_2=3T_1=900\\ \\text{K},\\qquad Q=\\frac52\\nu R\\Delta T=\\frac52\\cdot2\\cdot8{,}31\\cdot600\\approx24\\,900\\ \\text{J}\\approx25\\ \\text{kJ}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 25"
+     }
+    ]
+   }
+  ],
+  "10": [
+   {
+    "t": "math",
+    "tex": "m=\\rho Sd=0{,}9\\cdot10^3\\cdot2\\cdot0{,}002=3{,}6\\ \\text{kg}"
+   },
+   {
+    "t": "math",
+    "tex": "Q=\\lambda m=3{,}3\\cdot10^5\\cdot3{,}6\\approx1{,}19\\cdot10^6\\ \\text{J}\\approx1{,}2\\ \\text{MJ}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** ≈1,2"
+     }
+    ]
+   }
+  ],
+  "11": [
+   {
+    "t": "p",
+    "text": "Kuchlanish bir tekis o‘sadi, tok ham chiziqli o‘zgaradi: $I_0=\\frac23$ A, $I=\\frac43$ A. O‘rtacha tok 1 A:"
+   },
+   {
+    "t": "math",
+    "tex": "q=I_{\\text{o'r}}t=\\frac{I_0+I}{2}t=1\\cdot20=20\\ \\text{C}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 20"
+     }
+    ]
+   }
+  ],
+  "12": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$V=2$ m³, $T=320$ K, $m=4$ kg, $M=0{,}032$ kg/mol"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "p=\\frac{mRT}{MV}=\\frac{4\\cdot8{,}3\\cdot320}{0{,}032\\cdot2}=166\\,000\\ \\text{Pa}=1{,}66\\cdot10^5\\ \\text{Pa}"
+   },
+   {
+    "t": "status",
+    "kind": "source_error",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Hisob 166 kPa ni beradi. Variantlar $10^5$ Pa birligida yozilgan ko‘rinadi: «kPa» o‘rniga «$\\cdot10^5$ Pa» bo‘lishi kerak edi. Kalitdagi B) 1,66 shu ma’noda to‘g‘ri."
+     }
+    ]
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 1,66 (ya’ni $1{,}66\\cdot10^5$ Pa)"
+     }
+    ]
+   }
+  ],
+  "13": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$a=0{,}5$ m/s², $s=60$ m, $v=4v_0$"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "v^2-v_0^2=2as\\;\\Rightarrow\\;15v_0^2=60\\;\\Rightarrow\\;v_0=2\\ \\text{m/s}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 2"
+     }
+    ]
+   }
+  ],
+  "14": [
+   {
+    "t": "p",
+    "text": "Tezlik 2 marta kamaysa, kinetik energiya 4 marta kamayadi. Yo‘qolgan energiya issiqlikka aylanadi:"
+   },
+   {
+    "t": "math",
+    "tex": "E-\\frac E4=\\frac34E=15\\ \\text{J}\\;\\Rightarrow\\;E=20\\ \\text{J}"
+   },
+   {
+    "t": "status",
+    "kind": "undetermined",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Shartda «absolyut elastik urilish» deyilgan, ammo bunday urilishda energiya yo‘qolmaydi va tezlik o‘zgarmaydi. Mazmunan urilish noelastik."
+     }
+    ]
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 20"
+     }
+    ]
+   }
+  ],
+  "15": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Sterjen yuqori uchidan sharnirga mahkamlangan, uzunligining $1/5$ qismi suvda"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Sharnirga nisbatan momentlar qoidasi. Og‘irlik kuchi sterjen o‘rtasiga ($L/2$), Arximed kuchi suvdagi qism o‘rtasiga qo‘yilgan, u sharnirdan $0{,}9L$ uzoqlikda. Ikkala kuch ham vertikal, yelkalardagi $\\sin\\alpha$ qisqaradi:"
+   },
+   {
+    "t": "math",
+    "tex": "\\rho SLg\\cdot\\frac L2=\\rho_sS\\frac L5g\\cdot0{,}9L\\;\\Rightarrow\\;\\rho=2\\cdot0{,}2\\cdot0{,}9\\,\\rho_s=0{,}36\\ \\text{g/cm}^3"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 0,36"
+     }
+    ]
+   }
+  ],
+  "16": [
+   {
+    "t": "p",
+    "text": "Sharcha $H$ balandlikdan tushadi va suvda $h$ chuqurlikda to‘xtaydi. Arximed kuchi $F_A=\\rho_sVg=n\\,mg$. Ish–energiya teoremasi (boshlang‘ich va oxirgi tezlik nol):"
+   },
+   {
+    "t": "math",
+    "tex": "mg(H+h)-nmg\\,h=0\\;\\Rightarrow\\;H=h(n-1)"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**A)** H = h(n − 1)"
+     }
+    ]
+   }
+  ],
+  "17": [
+   {
+    "t": "math",
+    "tex": "V=\\frac{m}{\\rho}=\\frac{N\\mu}{N_A\\rho}=\\frac{10^{22}\\cdot0{,}012}{6{,}02\\cdot10^{23}\\cdot3500}\\approx5{,}7\\cdot10^{-8}\\ \\text{m}^3"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**D)** 5,7·10⁻⁸"
+     }
+    ]
+   }
+  ],
+  "18": [
+   {
+    "t": "p",
+    "text": "Katak tomoni $d$ bo‘lsin. Rasmdan: $X$ va $Y$ gorizontal $4I$ tokdan $2d$ yuqorida, vertikal $I$ tokdan esa $X$ chapda, $Y$ o‘ngda $d$ masofada. To‘g‘ri tok maydoni $B=\\frac{\\mu_0I}{2\\pi r}$."
+   },
+   {
+    "t": "p",
+    "text": "$4I$ tok (o‘ngga) har ikkala nuqtada bir xil maydon beradi: $B'\\propto\\frac{4I}{2d}=\\frac{2I}{d}$, chizma tekisligidan bizga qarab. $I$ tok (yuqoriga) $X$ da bizga qarab, $Y$ da chizma ichiga $\\frac Id$ maydon beradi:"
+   },
+   {
+    "t": "math",
+    "tex": "B_X\\propto\\frac{2I}{d}+\\frac{I}{d}=\\frac{3I}{d},\\qquad B_Y\\propto\\frac{2I}{d}-\\frac{I}{d}=\\frac{I}{d},\\qquad \\frac{B_X}{B_Y}=3"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 3"
+     }
+    ]
+   }
+  ],
+  "19": [
+   {
+    "t": "math",
+    "tex": "\\frac{v_2}{v_1}=\\sqrt{\\frac{T_2}{T_1}}=\\sqrt{\\frac{313}{310}}\\approx1{,}0048"
+   },
+   {
+    "t": "p",
+    "text": "Tezlik taxminan 0,48 % ga ortadi."
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 0,48"
+     }
+    ]
+   }
+  ],
+  "20": [
+   {
+    "t": "math",
+    "tex": "[\\varphi]=\\frac{\\text{J}}{\\text{C}}=\\frac{\\text{kg·m}^2\\text{·s}^{-2}}{\\text{A·s}}=\\text{kg·m}^2\\text{·s}^{-3}\\text{·A}^{-1}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** kg·m²·s⁻³·A⁻¹"
+     }
+    ]
+   }
+  ],
+  "21": [
+   {
+    "t": "p",
+    "text": "$W=\\frac{q^2}{2C}$ — zaryadning kvadratik funksiyasi, grafigi koordinata boshidan chiquvchi parabola."
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** C grafik"
+     }
+    ]
+   }
+  ],
+  "22": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$C=10$ μF, $\\varepsilon=10$ V, $r=1$ Ω, $R=10$ Ω (uchta ketma-ket), kondensator uchinchi rezistorga parallel"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Statsionar holatda kondensator orqali tok o‘tmaydi:"
+   },
+   {
+    "t": "math",
+    "tex": "I=\\frac{\\varepsilon}{3R+r}=\\frac{10}{31}\\ \\text{A},\\qquad U_C=IR=\\frac{100}{31}\\approx3{,}23\\ \\text{V}"
+   },
+   {
+    "t": "math",
+    "tex": "W=\\frac{CU_C^2}{2}=\\frac{10\\cdot10^{-6}\\cdot10{,}4}{2}\\approx52\\ \\mu\\text{J}"
+   },
+   {
+    "t": "status",
+    "kind": "source_error",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Sxema va shart bo‘yicha $W\\approx52$ μJ chiqadi, variantlarda bunday javob yo‘q. Kalitdagi 16 μJ ni berilgan ma’lumotlardan hosil qilib bo‘lmaydi."
+     }
+    ]
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**D)** 16 (javoblar kaliti bo‘yicha)"
+     }
+    ]
+   }
+  ],
+  "23": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$m=0{,}01$ kg, $F=2\\cdot10^{-3}\\cos\\omega t$ N, $\\omega=2\\pi$ rad/s, boshlang‘ich tezlik nol"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "a=\\frac{F_0}{m}\\cos\\omega t\\;\\Rightarrow\\;v=\\frac{F_0}{m\\omega}\\sin\\omega t,\\qquad v_{\\max}=\\frac{2\\cdot10^{-3}}{0{,}01\\cdot2\\pi}\\approx0{,}0318\\ \\text{m/s}"
+   },
+   {
+    "t": "math",
+    "tex": "E_{k,\\max}=\\frac{mv_{\\max}^2}{2}=\\frac{0{,}01\\cdot1{,}01\\cdot10^{-3}}{2}\\approx5\\cdot10^{-6}\\ \\text{J}=5\\ \\mu\\text{J}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 5"
+     }
+    ]
+   }
+  ],
+  "24": [
+   {
+    "t": "p",
+    "text": "O‘rtacha yashash vaqti $\\tau=1/\\lambda$. Bu vaqtda qolgan yadrolar ulushi $e^{-1}$:"
+   },
+   {
+    "t": "math",
+    "tex": "\\frac{\\Delta N}{N_0}=1-e^{-1}\\approx1-0{,}37=0{,}63"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 0,63"
+     }
+    ]
+   }
+  ],
+  "25": [
+   {
+    "t": "math",
+    "tex": "\\lambda=\\frac{h}{\\sqrt{2mE_k}}=\\frac{6{,}63\\cdot10^{-34}}{\\sqrt{2\\cdot9{,}1\\cdot10^{-31}\\cdot60\\cdot1{,}6\\cdot10^{-19}}}\\approx\\frac{6{,}63\\cdot10^{-34}}{4{,}18\\cdot10^{-24}}\\approx1{,}58\\cdot10^{-10}\\ \\text{m}=158\\ \\text{pm}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**D)** 158"
+     }
+    ]
+   }
+  ],
+  "26": [
+   {
+    "t": "p",
+    "text": "Balmer formulasi (chastota orqali):"
+   },
+   {
+    "t": "math",
+    "tex": "\\nu=R\\left(\\frac1{2^2}-\\frac1{4^2}\\right)=3{,}27\\cdot10^{15}\\cdot\\frac{3}{16}\\approx6{,}13\\cdot10^{14}\\ \\text{Hz}"
+   },
+   {
+    "t": "math",
+    "tex": "\\lambda=\\frac c\\nu=\\frac{3\\cdot10^8}{6{,}13\\cdot10^{14}}\\approx4{,}89\\cdot10^{-7}\\ \\text{m}"
+   },
+   {
+    "t": "p",
+    "text": "Eng yaqin variant — 485 nm (bu $H_\\beta$ chizig‘i, $\\approx486$ nm)."
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 485"
+     }
+    ]
+   }
+  ],
+  "27": [
+   {
+    "t": "p",
+    "text": "Neytron zaryadsiz, elektr maydon unga ta’sir qilmaydi. U to‘g‘ri chiziqli tekis harakatini davom ettiradi."
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**A)** to‘g‘ri chiziqli tekis"
+     }
+    ]
+   }
+  ],
+  "28": [
+   {
+    "t": "p",
+    "text": "Rasmda $S$ nuqta linzadan $2F$ dan biroz uzoqda va optik o‘qdan yuqorida. Yig‘uvchi linza bunday buyumning haqiqiy, teskari, kichraygan tasvirini $F$ va $2F$ oralig‘ida, optik o‘qdan pastda beradi. Bunday nuqta — 3."
+   },
+   {
+    "t": "p",
+    "text": "(1 va 2 linzaning buyum tomonida, 4 esa optik o‘qdan yuqorida — ular mos kelmaydi.)"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 3"
+     }
+    ]
+   }
+  ],
+  "29": [
+   {
+    "t": "math",
+    "tex": "N=\\nu t=2\\cdot120=240"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**B)** 240"
+     }
+    ]
+   }
+  ],
+  "30": [
+   {
+    "t": "p",
+    "text": "Ishqalanish yo‘q. Sistema tezlanishi $a=\\frac{F}{m_1+m_2}$, ip $m_2$ ni tortadi:"
+   },
+   {
+    "t": "math",
+    "tex": "T=m_2a=\\frac{m_2F}{m_1+m_2}=\\frac{0{,}8\\cdot0{,}5t}{1}=0{,}4t"
+   },
+   {
+    "t": "math",
+    "tex": "0{,}4t=2\\;\\Rightarrow\\;t=5\\ \\text{s}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 5"
+     }
+    ]
+   }
+  ],
+  "31": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$m=40$ kg, $CB=0{,}6$ m, $AB=1$ m, $g=9{,}8$ m/s²"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "$AC=\\sqrt{1-0{,}36}=0{,}8$ m, $\\cos\\alpha=\\frac{AC}{AB}=0{,}8$. $B$ nuqta muvozanati: $AB$ sterjen kuchining vertikal tashkil etuvchisi yuk og‘irligini muvozanatlaydi:"
+   },
+   {
+    "t": "math",
+    "tex": "F_{AB}\\cos\\alpha=mg\\;\\Rightarrow\\;F_{AB}=\\frac{40\\cdot9{,}8}{0{,}8}=490\\ \\text{N}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 490"
+     }
+    ]
+   }
+  ],
+  "32": [
+   {
+    "t": "p",
+    "text": "Chap qism: $12C$ va $4C$ ketma-ket ($3C$) hamda unga parallel $3C$ — jami $6C$. O‘ng qism: $5C$ va $20C$ ketma-ket ($4C$) hamda unga parallel $8C$ — jami $12C$. $K$ dan $L$ gacha: $6C$, yuqoridagi $12C$ va $12C$ ketma-ket:"
+   },
+   {
+    "t": "math",
+    "tex": "\\frac1{C_{KL}}=\\frac1{6C}+\\frac1{12C}+\\frac1{12C}=\\frac{1}{3C}\\;\\Rightarrow\\;C_{KL}=3C"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**D)** 3"
+     }
+    ]
+   }
+  ],
+  "33": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$C=50$ μF, $L=0{,}2$ H, $R=5$ Ω, $U=220$ V, $\\nu=100$ Hz"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "X_L=2\\pi\\nu L\\approx125{,}7\\ \\Omega,\\qquad X_C=\\frac{1}{2\\pi\\nu C}\\approx31{,}8\\ \\Omega"
+   },
+   {
+    "t": "math",
+    "tex": "Z=\\sqrt{R^2+(X_L-X_C)^2}=\\sqrt{25+93{,}9^2}\\approx94\\ \\Omega,\\qquad I=\\frac{220}{94}\\approx2{,}34\\ \\text{A}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**F)** 2,34"
+     }
+    ]
+   }
+  ],
+  "34": [
+   {
+    "t": "p",
+    "text": "Rezonansda $X_L=X_C$, $Z=R$:"
+   },
+   {
+    "t": "math",
+    "tex": "I_0=\\frac UR=\\frac{220}{5}=44\\ \\text{A}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**C)** 44"
+     }
+    ]
+   }
+  ],
+  "35": [
+   {
+    "t": "math",
+    "tex": "\\omega_0=\\frac{1}{\\sqrt{LC}}=\\frac{1}{\\sqrt{0{,}2\\cdot50\\cdot10^{-6}}}\\approx316\\ \\text{rad/s},\\qquad X_L=\\omega_0L\\approx63{,}2\\ \\Omega"
+   },
+   {
+    "t": "p",
+    "text": "G‘altakning o‘zi aktiv qarshilikka ham ega, uning to‘liq qarshiligi $\\sqrt{R^2+X_L^2}\\approx63{,}4$ Ω:"
+   },
+   {
+    "t": "math",
+    "tex": "U_{\\text{g'}}=I_0\\sqrt{R^2+X_L^2}=44\\cdot63{,}4\\approx2790\\ \\text{V}\\approx2{,}8\\ \\text{kV}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "**A)** 2,8"
+     }
+    ]
+   }
+  ],
+  "36": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$v_0=72$ km/h $=20$ m/s, $s=1000$ m, $v=0$"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "**a)** Tekis sekinlanuvchan harakatda o‘rtacha tezlik $v_0/2$:"
+   },
+   {
+    "t": "math",
+    "tex": "t=\\frac{2s}{v_0}=\\frac{2000}{20}=100\\ \\text{s}"
+   },
+   {
+    "t": "p",
+    "text": "**b)** $a=\\frac{v_0^2}{2s}$. Yo‘lning o‘rtasida:"
+   },
+   {
+    "t": "math",
+    "tex": "v^2=v_0^2-2a\\frac s2=\\frac{v_0^2}{2}\\;\\Rightarrow\\;v=\\frac{v_0}{\\sqrt2}=\\frac{72}{\\sqrt2}\\approx50{,}9\\ \\text{km/h}"
+   },
+   {
+    "t": "status",
+    "kind": "source_error",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Javoblar kalitida b) qism uchun 88,2 km/h berilgan edi, bu boshlang‘ich tezlikdan (72 km/h) ham katta, sekinlanayotgan poyezd uchun bo‘lishi mumkin emas. To‘g‘ri javob $72/\\sqrt2\\approx50{,}9$ km/h, kalit tuzatildi."
+     }
+    ]
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) 100 s; b) ≈50,9 km/h"
+     }
+    ]
+   }
+  ],
+  "37": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$T=300$ K, $M=0{,}002$ kg/mol"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "\\text{a)}\\ \\ v=\\sqrt{\\frac{3RT}{M}}=\\sqrt{\\frac{3\\cdot8{,}31\\cdot300}{0{,}002}}\\approx1930\\ \\text{m/s}\\approx1{,}9\\ \\text{km/s}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{b)}\\ \\ m_0=\\frac{M}{N_A}=\\frac{0{,}002}{6{,}02\\cdot10^{23}}\\approx3{,}32\\cdot10^{-27}\\ \\text{kg},\\qquad p=m_0v\\approx6{,}4\\cdot10^{-24}\\ \\text{kg·m/s}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) ≈1,9 km/s; b) $\\approx6{,}45\\cdot10^{-24}$ kg·m/s"
+     }
+    ]
+   }
+  ],
+  "38": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Suzganda $V_1=0{,}72$ m³ suvni, to‘liq botganda $V=0{,}9$ m³ suvni siqib chiqaradi"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "**a)** Suzish sharti: og‘irlik kuchi Arximed kuchiga teng:"
+   },
+   {
+    "t": "math",
+    "tex": "m=\\rho_sV_1=1000\\cdot0{,}72=720\\ \\text{kg}"
+   },
+   {
+    "t": "p",
+    "text": "**b)** G‘o‘la hajmi 0,9 m³:"
+   },
+   {
+    "t": "math",
+    "tex": "\\rho=\\frac mV=\\frac{720}{0{,}9}=800\\ \\text{kg/m}^3"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) 720 kg; b) 800 kg/m³"
+     }
+    ]
+   }
+  ],
+  "39": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$r_1=0{,}53\\cdot10^{-10}$ m"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Kulon kuchi markazga intilma kuchni beradi:"
+   },
+   {
+    "t": "math",
+    "tex": "\\frac{ke^2}{r^2}=\\frac{mv^2}{r}\\;\\Rightarrow\\;v=\\sqrt{\\frac{ke^2}{mr}}=\\sqrt{\\frac{9\\cdot10^9\\cdot2{,}56\\cdot10^{-38}}{9{,}1\\cdot10^{-31}\\cdot0{,}53\\cdot10^{-10}}}\\approx2{,}19\\cdot10^6\\ \\text{m/s}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{a)}\\ \\ T=\\frac{2\\pi r}{v}=\\frac{2\\cdot3{,}14\\cdot0{,}53\\cdot10^{-10}}{2{,}19\\cdot10^6}\\approx1{,}5\\cdot10^{-16}\\ \\text{s}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{b)}\\ \\ \\omega=\\frac{2\\pi}{T}=\\frac{v}{r}\\approx4{,}1\\cdot10^{16}\\ \\text{rad/s}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) $\\approx1{,}5\\cdot10^{-16}$ s; b) $\\approx4{,}2\\cdot10^{16}$ rad/s"
+     }
+    ]
+   }
+  ],
+  "40": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$p=8$ MPa, $\\Delta V=0{,}5$ m³, $Q=6$ MJ"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "\\text{a)}\\ \\ A=p\\Delta V=8\\cdot10^6\\cdot0{,}5=4\\cdot10^6\\ \\text{J}=4\\ \\text{MJ}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{b)}\\ \\ \\Delta U=Q-A=6-4=2\\ \\text{MJ}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) 4 MJ; b) 2 MJ"
+     }
+    ]
+   }
+  ],
+  "41": [
+   {
+    "t": "p",
+    "text": "Buyum $2F$ dan uzoqda turganda mavhum tasvirni faqat sochuvchi linza beradi. $d=4F$, fokus masofasi $-F$:"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{a)}\\ \\ \\frac1f=-\\frac1F-\\frac1{4F}=-\\frac{5}{4F}\\;\\Rightarrow\\;|f|=0{,}8F"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{b)}\\ \\ \\Gamma=\\frac{|f|}{d}=\\frac{0{,}8F}{4F}=0{,}2"
+   },
+   {
+    "t": "p",
+    "text": "Tasvir buyumdan 5 marta kichik."
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) 0,8F; b) 5 marta"
+     }
+    ]
+   }
+  ],
+  "42": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Yuk $h=8$ cm ko‘tarildi, $A=184$ J"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "**a)** Ishqalanish bo‘lmasa, kuch bajargan ish yukning potensial energiyasiga aylanadi:"
+   },
+   {
+    "t": "math",
+    "tex": "P=\\frac{A}{h}=\\frac{184}{0{,}08}=2300\\ \\text{N}=2{,}3\\ \\text{kN}"
+   },
+   {
+    "t": "p",
+    "text": "**b)** Kuch qo‘yilgan nuqta 2 m siljigan:"
+   },
+   {
+    "t": "math",
+    "tex": "F=\\frac{A}{s}=\\frac{184}{2}=92\\ \\text{N}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) 2,3 kN; b) 92 N"
+     }
+    ]
+   }
+  ],
+  "43": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$t=10$ s, $q=24$ C, $U=12$ V"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "I=\\frac qt=2{,}4\\ \\text{A}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{a)}\\ \\ P=UI=12\\cdot2{,}4=28{,}8\\ \\text{W}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{b)}\\ \\ R=\\frac UI=\\frac{12}{2{,}4}=5\\ \\Omega"
+   },
+   {
+    "t": "status",
+    "kind": "source_error",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "Javoblar kalitida a) qism uchun 28,2 W berilgan edi. $P=UI=12\\cdot2{,}4=28{,}8$ W, kalit tuzatildi."
+     }
+    ]
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) 28,8 W; b) 5 Ω"
+     }
+    ]
+   }
+  ],
+  "44": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$T_{1/2}=12{,}4$ soat"
+     }
+    ]
+   },
+   {
+    "t": "math",
+    "tex": "\\text{a)}\\ \\ \\tau=\\frac{T_{1/2}}{\\ln2}=\\frac{12{,}4}{0{,}693}\\approx17{,}9\\ \\text{soat}"
+   },
+   {
+    "t": "math",
+    "tex": "\\text{b)}\\ \\ \\lambda=\\frac1\\tau=\\frac{0{,}693}{12{,}4}\\approx0{,}056\\ \\text{soat}^{-1}"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) ≈17,9 soat; b) ≈0,056 1/soat"
+     }
+    ]
+   }
+  ],
+  "45": [
+   {
+    "t": "given",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "$E_1=200$ MeV (bitta bo‘linishda), $m=1$ kg, $M=0{,}238$ kg/mol, $q=46$ MJ/kg"
+     }
+    ]
+   },
+   {
+    "t": "p",
+    "text": "**a)** Yadrolar soni:"
+   },
+   {
+    "t": "math",
+    "tex": "N=\\frac{m}{M}N_A=\\frac{1}{0{,}238}\\cdot6{,}02\\cdot10^{23}\\approx2{,}53\\cdot10^{24}"
+   },
+   {
+    "t": "math",
+    "tex": "E=NE_1\\approx2{,}53\\cdot10^{24}\\cdot200\\approx5\\cdot10^{26}\\ \\text{MeV}"
+   },
+   {
+    "t": "p",
+    "text": "**b)** $E\\approx5\\cdot10^{26}\\cdot1{,}6\\cdot10^{-13}=8\\cdot10^{13}$ J:"
+   },
+   {
+    "t": "math",
+    "tex": "m_b=\\frac{E}{q}=\\frac{8\\cdot10^{13}}{4{,}6\\cdot10^7}\\approx1{,}74\\cdot10^6\\ \\text{kg}\\approx1740\\ \\text{t}"
+   },
+   {
+    "t": "p",
+    "text": "(Yaxlitlanmagan $E=5{,}06\\cdot10^{26}$ MeV bilan $\\approx1760$ t chiqadi, u ham to‘g‘ri hisoblanadi.)"
+   },
+   {
+    "t": "answer",
+    "blocks": [
+     {
+      "t": "p",
+      "text": "a) $\\approx5\\cdot10^{26}$ MeV; b) ≈1740 t"
+     }
+    ]
+   }
+  ]
+ }
+}

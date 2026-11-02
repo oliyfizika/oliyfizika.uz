@@ -3,6 +3,7 @@ import { h, clear, toast, fmtDuration } from "./dom.js";
 import { STATUS, optionText } from "./scoring.js";
 import { makeResultCode } from "./attempt-service.js";
 import { t } from "../../../assets/js/core/i18n.js";
+import { attachSolutions } from "./solutions.js";
 
 /** To'g'ri javobni ko'rsatish: uzun kasrlarni yaxlitlash (3√3 → 5,196), vergul bilan. */
 function fmtAnswer(v) {
@@ -85,7 +86,11 @@ export function renderResult(root, { test, state, grade, resolveUrl, onNewAttemp
     h("p", { class: "notice" }, t("ms.r.codeNote", `Ushbu kodda Rasch balli yo‘q. Kod keyinchalik barcha ishtirokchilar natijalarini birgalikda Rasch modeli asosida tahlil qilish uchun mo‘ljallangan. Ochiq savollarning a/b qismlari alohida band sifatida kodlangan (${grade.maxScore} ta band).`, { n: grade.maxScore })));
 
   clear(root).append(hero, actions, table, codeCard);
-  if (test.review?.enabled) root.append(renderReview(test, state, grade, resolveUrl));
+  if (test.review?.enabled) {
+    const review = renderReview(test, state, grade, resolveUrl);
+    root.append(review);
+    attachSolutions(review, test, resolveUrl).catch((error) => console.warn("Yechimlarni yuklab bo‘lmadi:", error));
+  }
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -131,6 +136,14 @@ function renderReview(test, state, grade, resolveUrl) {
     h("p", { class: "notice" }, showCorrect
       ? t("ms.r.reviewNoteCorrect", "Savollar, siz kiritgan javoblar va to‘g‘ri javoblar. Javoblarni bu bosqichda o‘zgartirib bo‘lmaydi.")
       : t("ms.r.reviewNote", "Savollar va siz kiritgan javoblar test yakunlangandan keyin ham ko‘rinadi. Javoblarni bu bosqichda o‘zgartirib bo‘lmaydi.")),
+    h("div", { class: "sol-note", "data-sol-note": "", hidden: "" },
+      h("span", {}, t("ms.sol.note", "Har bir savol uchun yozma yechim tayyorlangan.")),
+      h("button", { type: "button", class: "btn btn-ghost", onclick: (e) => {
+        const list = e.currentTarget.closest(".card").querySelectorAll(".review-solution");
+        const open = [...list].some((d) => !d.open);
+        list.forEach((d) => { d.open = open; });
+        e.currentTarget.textContent = open ? t("ms.sol.closeAll", "Barcha yechimlarni yopish") : t("ms.sol.openAll", "Barcha yechimlarni ochish");
+      } }, t("ms.sol.openAll", "Barcha yechimlarni ochish"))),
     nav,
     h("div", { class: "review-list" }, cards));
 }

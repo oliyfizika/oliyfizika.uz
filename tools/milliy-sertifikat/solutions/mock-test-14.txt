@@ -1,0 +1,235 @@
+# Mock test №14 — yozma yechimlar
+@1
+M: s=vt=4\cdot10=40\ \text{m}
+A: **C)** 40 m
+
+@2
+P: Tinch holatdan tekis tezlanuvchan harakatda $n$-sekundda o'tilgan yo'l $s_n=\frac a2(2n-1)$, dastlabki 3 s dagi yo'l $\frac{a\cdot9}{2}$. Harakat $t$ s davom etgan bo'lsa:
+M: \frac a2(2t-1)=\frac{9a}{2}\;\Rightarrow\;2t-1=9\;\Rightarrow\;t=5\ \text{s}
+A: **A)** 5 s
+
+@3
+P: Nyutonning ikkinchi qonuni $a=F/m$: massa o'zgarmasa, tezlanish kuchga to'g'ri proporsional.
+A: **B)** 4 marta
+
+@4
+G: $M=6$ kg (taxta), $m=2$ kg (brusok), $\mu=0{,}3$, $F=4$ N (brusokka), pastki sirt silliq
+P: Avval jismlar birga harakatlanadi deb faraz qilamiz:
+M: a=\frac{F}{M+m}=\frac{4}{8}=0{,}5\ \text{m/s}^2
+P: Taxtani faqat ishqalanish kuchi tezlantiradi: $F_{\text{ishq}}=Ma=3$ N. Bu tinchlikdagi ishqalanishning maksimal qiymatidan kichik ($\mu mg=6$ N), demak faraz to'g'ri.
+A: **D)** 0,5 m/s²
+
+@5
+P: Yer sirti yaqinidagi orbitada $\frac{mv^2}{R}=mg$, ya'ni $v^2=gR$:
+M: E_k=\frac{mv^2}{2}=\frac{mgR}{2}=\frac{4\cdot10\cdot6{,}4\cdot10^6}{2}=1{,}28\cdot10^8\ \text{J}
+A: **A)** 1,28·10⁸ J
+
+@6
+P: $A$ nuqtadagi elastiklik kuchi undan pastdagi hamma narsaning og'irligini ushlab turadi: arqonning pastki 30 cm qismi ($\frac{30}{40}\cdot4=3$ kg) va yuk (6 kg):
+M: T_A=(3+6)\cdot10=90\ \text{N}
+A: **C)** 90 N
+
+@7
+G: $L=140$ cm, $m=1200$ kg; tayanchlar chap uchdan 20 cm va 80 cm da (o'ng uchdan 60 cm)
+P: Chap uch ko'tarila boshlaganda balka o'ng tayanch atrofida aylanadi, chap tayanch bosimi nolga tushadi. Og'irlik markazi chap uchdan 70 cm da, ya'ni o'ng tayanchdan 10 cm chapda. O'ng tayanchga nisbatan momentlar:
+M: F\cdot80=mg\cdot10\;\Rightarrow\;F=\frac{12\,000\cdot10}{80}=1500\ \text{N}=1{,}5\ \text{kN}
+A: **B)** 1,5 kN
+
+@8
+P: Idish suv bilan to'la, suv idish bilan birga tezlanish bilan harakatlanadi. Devorlarning suvga natijaviy gorizontal ta'siri suvga shu tezlanishni beradi:
+M: m=\rho a^3=1000\cdot64=64\,000\ \text{kg},\qquad F=ma=64\,000\cdot1{,}5=96\,000\ \text{N}=96\ \text{kN}
+A: **D)** 96 kN
+
+@9
+M: T=2\pi\sqrt{\frac mk}=2\cdot3{,}14\cdot\sqrt{\frac{0{,}16}{400}}=6{,}28\cdot0{,}02=0{,}1256\ \text{s}
+A: **C)** 0,1256 s
+
+@10
+P: Grafikdan: amplituda $A=0{,}5$ m, davr $T=4$ s, $\omega=\frac{2\pi}{T}=\frac\pi2$ rad/s, $t=0$ da $x=-A$:
+M: x=-0{,}5\cos\frac{\pi t}{2},\qquad v=0{,}5\cdot\frac\pi2\sin\frac{\pi t}{2}
+P: $t=1$ s da jism muvozanat holatidan o'tmoqda, tezligi maksimal:
+M: v=\frac{\pi}{4}\ \text{m/s}
+A: **A)** π/4 m/s
+
+@11
+M: m_0=\frac{M}{N_A}=\frac{4\cdot10^{-3}}{6\cdot10^{23}}\approx6{,}67\cdot10^{-27}\ \text{kg}
+M: p=\frac13nm_0v^2=\frac13\cdot2{,}5\cdot10^{25}\cdot6{,}67\cdot10^{-27}\cdot3{,}6\cdot10^5=2\cdot10^4\ \text{Pa}=20\ \text{kPa}
+A: **D)** 20 kPa
+
+@12
+M: v=\sqrt{\frac{3p}{\rho}}=\sqrt{\frac{3\cdot108\,000}{0{,}9}}=\sqrt{360\,000}=600\ \text{m/s}
+A: **B)** 600 m/s
+
+@13
+G: $m=8$ g geliy ($\nu=2$ mol), $Q=831$ J, $p$ = const, $t_2=44$ °C
+M: Q=\frac52\nu R\Delta T\;\Rightarrow\;\Delta T=\frac{2\cdot831}{5\cdot2\cdot8{,}31}=20\ \text{K}
+M: t_1=44-20=24\ ^\circ\text{C}
+A: **A)** 24 °C
+
+@14
+G: $m=0{,}012$ kg, $t_1=-8$ °C, $t_2=20$ °C
+M: Q=m\left(c_m\cdot8+\lambda+c_s\cdot20\right)=0{,}012\,(16\,800+330\,000+84\,000)\approx5170\ \text{J}=5{,}17\ \text{kJ}
+A: **C)** 5,17 kJ
+
+@15
+P: Erish vaqtida temperatura o'zgarmaydi (grafikdagi gorizontal qism, 327 °C): 8 min dan 15 min gacha.
+M: \Delta t=15-8=7\ \text{min}
+A: **D)** 7 min
+
+@16
+P: Maydon kuchlanganligi kuch chiziqlari zich joyda kattaroq. Chiziqlar yuqoriga qarab yaqinlashadi, eng zich joy — 2 nuqta atrofi.
+A: **B)** 2
+
+@17
+P: Tutashtirilgandan keyin sharlar potensiallari tenglashadi, $\varphi=\frac{kq}{r}$, demak zaryadlar radiuslarga proporsional taqsimlanadi. Umumiy zaryad $-5q+20q=15q$:
+M: q_1'=15q\cdot\frac{2}{2+3}=6q,\qquad \Delta q=6q-(-5q)=11q
+A: **A)** 11q
+
+@18
+P: Shar tashqarisida maydon nuqtaviy zaryadnikidek. Nuqta markazdan $2R$ masofada, $Q=\sigma\cdot4\pi R^2$:
+M: E=\frac{Q}{4\pi\varepsilon_0(2R)^2}=\frac{\sigma}{4\varepsilon_0}=\frac{54{,}6\cdot10^{-9}}{4\cdot8{,}85\cdot10^{-12}}\approx1540\ \text{V/m}=1{,}54\ \text{kV/m}
+A: **C)** 1,54 kV/m
+
+@19
+P: Eng kichik qarshilik barcha rezistorlar parallel ulanganda olinadi:
+M: \frac1R=\frac25+\frac3{15}+\frac5{25}=0{,}4+0{,}2+0{,}2=0{,}8\;\Rightarrow\;R=1{,}25\ \Omega
+A: **D)** 1,25 Ω
+
+@20
+P: Kulon kuchi markazga intilma kuchni beradi:
+M: \frac{ke^2}{R^2}=\frac{m_ev^2}{R}\;\Rightarrow\;v=e\sqrt{\frac{k}{m_eR}}
+P: Elektron har davrda orbita kesimidan bir marta o'tadi, $I=\frac eT=\frac{ev}{2\pi R}$:
+M: I=\frac{e^2}{2\pi R}\sqrt{\frac{k}{m_eR}}
+A: **B)** e²/(2πR)·√(k/(mₑR))
+
+@21
+P: Faradey qonuni: $\nu=\frac{q}{zF}$, alyuminiy uchun $z=3$:
+M: \nu=\frac{5\cdot96\,500}{3\cdot96\,500}=\frac53\approx1{,}67\ \text{mol}
+A: **C)** 1,67 mol
+
+@22
+P: $B\propto\frac Ir$. Ikkinchi o'tkazgich $O$ dan 4 m da: $B_2=120\cdot\frac34=90$ mT.
+P: $I_1$ (bizga qarab) $O$ dan 3 m yuqorida, uning maydoni $O$ da gorizontal; $I_2$ (chizma ichiga) $O$ dan 4 m chapda, uning maydoni $O$ da vertikal. Maydonlar o'zaro tik:
+M: B=\sqrt{B_1^2+B_2^2}=\sqrt{120^2+90^2}=150\ \text{mT}
+A: **A)** 150 mT
+
+@23
+M: |\varepsilon|=L\left|\frac{dI}{dt}\right|=5\cdot10^{-3}\cdot1{,}6=8\cdot10^{-3}\ \text{V}=8\ \text{mV}
+A: **D)** 8 mV
+
+@24
+M: W=\frac{LI^2}{2}=\frac{\Phi I}{2}=\frac{0{,}4\cdot5}{2}=1\ \text{J}
+A: **B)** 1 J
+
+@25
+M: T=2\pi\sqrt{LC}=6\sqrt{10^{-3}\cdot25\cdot10^{-9}}=6\cdot5\cdot10^{-6}=3\cdot10^{-5}\ \text{s}
+M: \lambda=cT=3\cdot10^8\cdot3\cdot10^{-5}=9000\ \text{m}=9\ \text{km}
+A: **A)** 9 km
+
+@26
+P: Qaytish qonuni: tushish burchagi qaytish burchagiga teng, ikkalasi normaldan o'lchanadi. Ular yig'indisi $\gamma$, demak tushish burchagi $\gamma/2$.
+A: **D)** γ/2
+
+@27
+P: Oralig'i $d$ bo'lgan ikki yupqa linza sistemasining optik kuchi $D=D_1+D_2-dD_1D_2$:
+M: D_1=\frac{1}{0{,}15}=\frac{20}{3},\quad D_2=\frac{1}{0{,}2}=5,\quad D=\frac{20}{3}+5-0{,}11\cdot\frac{20}{3}\cdot5=\frac{35}{3}-\frac{11}{3}=8\ \text{dptr}
+A: **C)** 8
+
+@28
+M: \frac{E}{E_0}=\gamma=4\;\Rightarrow\;\sqrt{1-\frac{v^2}{c^2}}=\frac14\;\Rightarrow\;v=\frac{\sqrt{15}}{4}c
+A: **B)** (√15/4)·c
+
+@29
+M: N=A-Z=108-47=61
+A: **D)** 61
+
+@30
+M: \frac{m_0}{m}=2^{t/T}=2^4=16
+A: **A)** 16 marta
+
+@31
+P: Zarralar tinch turgan, ularning tinchlik energiyasi ikki γ-kvantga teng taqsimlanadi:
+M: E_\gamma=m_ec^2=9{,}1\cdot10^{-31}\cdot9\cdot10^{16}\approx8{,}19\cdot10^{-14}\ \text{J}
+A: **C)** 8,19·10⁻¹⁴ J
+
+@32
+M: W=Pt=2\cdot5\cdot30=300\ \text{kW·h},\qquad \text{narx}=300\cdot600=180\,000\ \text{so'm}
+A: **B)** 180 000 so'm
+
+@33
+P: Potensial kuch chiziqlari yo'nalishi bo'yicha kamayadi. Chiziqlar chapdan o'ngga yo'nalgan, eng o'ngdagi nuqta — 2.
+A: **B)** 2
+
+@34
+P: Kuchlanganlik kuch chiziqlari eng zich joyda katta. Chiziqlar o'rtada (6 nuqta atrofida) eng yaqin joylashgan.
+A: **F)** 6
+
+@35
+P: Potensial kuch chiziqlariga qarshi yo'nalishda ortadi, eng chapdagi nuqta — 5.
+A: **E)** 5
+
+@36
+G: $v_0=20$ m/s, $\alpha=45^\circ$: $v_x=v_{0y}=10\sqrt2$ m/s
+P: **b)**
+M: H=\frac{v_{0y}^2}{2g}=\frac{200}{20}=10\ \text{m}
+P: **a)** $h=7{,}5$ m balandlikdagi vaqtlar:
+M: 7{,}5=10\sqrt2\,t-5t^2\;\Rightarrow\;t=\frac{10\sqrt2\pm\sqrt{200-150}}{10}=\sqrt2\pm\frac{\sqrt2}{2}
+P: Qaytib tushayotganda katta ildiz olinadi: $t=1{,}5\sqrt2$ s.
+M: x=v_xt=10\sqrt2\cdot1{,}5\sqrt2=30\ \text{m}
+A: a) 30 m; b) 10 m
+
+@37
+G: $m_1=0{,}6$ kg, $m_2=0{,}4$ kg
+M: \text{a)}\ \ a=\frac{m_1-m_2}{m_1+m_2}g=\frac{0{,}2}{1}\cdot10=2\ \text{m/s}^2
+M: \text{b)}\ \ T=m_2(g+a)=0{,}4\cdot12=4{,}8\ \text{N}
+A: a) 2 m/s²; b) 4,8 N
+
+@38
+G: $m=6$ kg da $l=35$ cm, yukning 1/5 qismi (1,2 kg) olinganda prujina 3 cm qisqaradi
+M: \text{a)}\ \ k=\frac{\Delta m\,g}{\Delta x}=\frac{12}{0{,}03}=400\ \text{N/m}
+M: \text{b)}\ \ x=\frac{mg}{k}=\frac{60}{400}=0{,}15\ \text{m},\qquad l_0=35-15=20\ \text{cm}
+A: a) 400 N/m; b) 20 cm
+
+@39
+G: $V_1=4$ m³, $T_1=300$ K, $p=100$ kPa, $T_2=420$ K
+M: \text{a)}\ \ V_2=V_1\frac{T_2}{T_1}=4\cdot1{,}4=5{,}6\ \text{m}^3
+M: \text{b)}\ \ A=p(V_2-V_1)=10^5\cdot1{,}6=1{,}6\cdot10^5\ \text{J}=160\ \text{kJ}
+A: a) 5,6 m³; b) 160 kJ
+
+@40
+P: Grafikdan: 1 (2 l; 10 kPa), 2 (4 l; 20 kPa), 3 (6 l; 20 kPa). Ish — grafik ostidagi yuza (1 kPa·l = 1 J):
+M: \text{a)}\ \ A=\frac{10+20}{2}\cdot2+20\cdot2=30+40=70\ \text{J}
+M: \Delta U=\frac32(p_3V_3-p_1V_1)=\frac32(120-20)=150\ \text{J}
+M: \text{b)}\ \ Q=\Delta U+A=150+70=220\ \text{J}
+A: a) 70 J; b) 220 J
+
+@41
+G: $R=1{,}1$ m, $k=9\cdot10^9$ N·m²/C²
+M: \text{a)}\ \ C=\frac Rk=\frac{1{,}1}{9\cdot10^9}\approx1{,}22\cdot10^{-10}\ \text{F}
+M: \text{b)}\ \ q=C\varphi=1{,}22\cdot10^{-10}\cdot2700\approx3{,}3\cdot10^{-7}\ \text{C}
+A: a) $\approx1{,}22\cdot10^{-10}$ F; b) $\approx3{,}3\cdot10^{-7}$ C
+
+@42
+P: $R=R_0(1+\alpha t)$, $R_0$ — 0 °C dagi qarshilik:
+M: \frac{12{,}6}{12}=\frac{1+20\alpha}{1-20\alpha}\;\Rightarrow\;0{,}6=492\alpha\;\Rightarrow\;\alpha\approx1{,}22\cdot10^{-3}\ \text{K}^{-1}
+M: R_0=\frac{12}{1-20\alpha}\approx12{,}3\ \Omega,\qquad R_{1000}=R_0(1+1000\alpha)\approx12{,}3\cdot2{,}22\approx27{,}3\ \Omega
+A: a) $\approx1{,}22\cdot10^{-3}$ K⁻¹; b) ≈27,3 Ω
+
+@43
+P: Mavhum tasvir buyum bilan bir tomonda, $f=4d$, ular orasidagi masofa $f-d=3d=30$ cm:
+M: \text{a)}\ \ d=10\ \text{cm}
+M: \text{b)}\ \ D=\frac1d-\frac1f=\frac1{0{,}1}-\frac1{0{,}4}=10-2{,}5=7{,}5\ \text{dptr}
+A: a) 10 cm; b) 7,5 dptr
+
+@44
+G: $m_0=6$ kg, $l_0=12$ m, $m=10$ kg
+M: \gamma=\frac{m}{m_0}=\frac53
+M: \text{a)}\ \ l=\frac{l_0}{\gamma}=12\cdot\frac35=7{,}2\ \text{m}
+M: \text{b)}\ \ E_k=(m-m_0)c^2=4\cdot9\cdot10^{16}=3{,}6\cdot10^{17}\ \text{J}
+A: a) 7,2 m; b) $3{,}6\cdot10^{17}$ J
+
+@45
+P: Bor nazariyasida $L=n\hbar$, $T_n\propto n^3$, $E_n=-\frac{13{,}6}{n^2}$ eV. Impuls momenti 2 marta ortdi: $n=1\to n=2$.
+M: \text{a)}\ \ \frac{T_2}{T_1}=2^3=8
+M: \text{b)}\ \ E_\gamma=13{,}6\left(1-\frac14\right)=10{,}2\ \text{eV}
+A: a) 8; b) 10,2 eV

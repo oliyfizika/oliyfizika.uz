@@ -1,0 +1,254 @@
+# Mock test №13 — yozma yechimlar
+@1
+P: Yo'l tezlik grafigi ostidagi yuzaga teng. 2–5 s oralig'ida tezlik 10 m/s dan 30 m/s gacha chiziqli ortadi (trapetsiya):
+M: s=\frac{10+30}{2}\cdot3=60\ \text{m}
+A: **C)** 60
+
+@2
+G: $v_0=10$ m/s, $v=30$ m/s, tekis tezlanuvchan harakat
+P: Yo'lning birinchi va ikkinchi yarmi uchun $v^2-v_0^2=2as$ formulasini yozamiz:
+M: v_1^2-v_0^2=2a\frac{s}{2},\quad v^2-v_1^2=2a\frac{s}{2}\;\Rightarrow\;v_1=\sqrt{\frac{v_0^2+v^2}{2}}=\sqrt{\frac{100+900}{2}}=\sqrt{500}=10\sqrt5\approx22{,}4\ \text{m/s}
+A: **A)** 22.4
+
+@3
+M: F=\sqrt{F_1^2+F_2^2}=\sqrt{225+400}=25\ \text{N},\qquad a=\frac Fm=\frac{25}{5}=5\ \text{m/s}^2
+A: **C)** 5
+
+@4
+G: $\alpha=37^\circ$ ($\sin\alpha=0{,}6$, $\cos\alpha=0{,}8$), $\mu=0{,}25$
+M: ma=mg\sin\alpha-\mu mg\cos\alpha\;\Rightarrow\;a=10(0{,}6-0{,}25\cdot0{,}8)=4\ \text{m/s}^2
+A: **C)** 4
+
+@5
+G: $m_1=2$ kg, $m_2=3$ kg, $m_3=5$ kg, $\mu=0{,}2$, $F=60$ N ($m_1$ ga)
+P: Butun sistema uchun:
+M: a=\frac{F-\mu(m_1+m_2+m_3)g}{m_1+m_2+m_3}=\frac{60-20}{10}=4\ \text{m/s}^2
+P: $T_1$ ip $m_2$ va $m_3$ ni, $T_2$ ip faqat $m_3$ ni tortadi:
+M: T_1=(m_2+m_3)(a+\mu g)=8\cdot6=48\ \text{N},\qquad T_2=m_3(a+\mu g)=5\cdot6=30\ \text{N}
+U: Rasmda $F$ kuch $m_1$ ga chap tomondan, o'ngga qarab (itaruvchi) chizilgan. Bunday holda iplar bo'shashib qoladi. Kalitdagi javob $F$ sistemani $m_1$ orqali tortib ketayotgan hol uchun to'g'ri.
+A: **A)** 48; 30
+
+@6
+P: Ko'tarilish va tushish vaqtlari teng: $t_{\text{k}}=3$ s.
+M: h_{\max}=\frac{gt_{\text{k}}^2}{2}=\frac{10\cdot9}{2}=45\ \text{m}
+A: **B)** 45
+
+@7
+G: Kerosinda $a_1=4$ m/s², $\rho_s=1$ g/cm³, $\rho_k=0{,}8$ g/cm³ (qarshilik hisobga olinmaydi)
+M: ma=mg-\rho_cVg\;\Rightarrow\;a=g\left(1-\frac{\rho_c}{\rho}\right)
+M: 4=10\left(1-\frac{0{,}8}{\rho}\right)\;\Rightarrow\;\rho=\frac43\ \text{g/cm}^3
+M: a_2=10\left(1-\frac{1}{4/3}\right)=2{,}5\ \text{m/s}^2
+A: **C)** 2.5
+
+@8
+G: $m_1=2$ kg, $m_2=3$ kg, $k=200$ N/m, $\mu=0{,}2$, $F=20$ N ($m_2$ ga)
+P: Ishqalanish kuchlari yig'indisi $\mu(m_1+m_2)g=10$ N, $F=20$ N undan katta, shuning uchun sistema tezlanish bilan harakatlanadi:
+M: a=\frac{F-\mu(m_1+m_2)g}{m_1+m_2}=\frac{20-10}{5}=2\ \text{m/s}^2
+P: Prujina $m_1$ ni tortadi:
+M: kx=m_1(a+\mu g)=2\cdot4=8\ \text{N}\;\Rightarrow\;x=\frac{8}{200}=0{,}04\ \text{m}=4\ \text{cm}
+U: Shartda «sistema tekis harakat qilsa» deyilgan, ammo $F=20$ N bilan harakat tekis bo'lmaydi. Tekis harakatda $kx=\mu m_1g$, $x=2$ cm bo'lardi. Kalit berilgan $F=20$ N bo'yicha hisoblangan.
+A: **D)** 4
+
+@9
+P: Pastga $a=0{,}36g$ tezlanish bilan harakatlanayotgan liftda effektiv erkin tushish tezlanishi $g'=g-a=0{,}64g$:
+M: \frac{T'}{T}=\sqrt{\frac{g}{g'}}=\frac{1}{0{,}8}=1{,}25
+P: Davr 25 % ga ortadi.
+A: **C)** 25%
+
+@10
+P: Izobarik jarayonda $V/T$ = const. Hajm 2 marta ortsa, temperatura ham 2 marta ortadi:
+M: T_2=2T_1,\qquad \Delta T=T_2-T_1=T_1=300\ \text{K}
+A: **C)** 300
+
+@11
+M: v=\sqrt{\frac{3p}{\rho}}=\sqrt{\frac{3\cdot16\,000}{1{,}2}}=\sqrt{40\,000}=200\ \text{m/s}
+A: **B)** 200
+
+@12
+G: $S=20$ cm² $=2\cdot10^{-3}$ m², $m=4$ kg, $a=2$ m/s² (yuqoriga)
+M: N=m(g+a)=4\cdot12=48\ \text{N},\qquad p=\frac NS=\frac{48}{2\cdot10^{-3}}=2{,}4\cdot10^4\ \text{Pa}
+A: **B)** 2.4·10⁴
+
+@13
+P: 3 litr suvning massasi 3 kg:
+M: Q=\lambda m=334\cdot3=1002\ \text{kJ}
+A: **C)** 1002
+
+@14
+G: $d=0{,}2$ mm, $\sigma=73$ mN/m, to'liq ho'llash
+M: h=\frac{4\sigma}{\rho gd}=\frac{4\cdot0{,}073}{1000\cdot10\cdot2\cdot10^{-4}}=0{,}146\ \text{m}=14{,}6\ \text{cm}
+A: **C)** 14.6
+
+@15
+P: Tok yuqori potensialdan past potensialga qarab oqadi, ya'ni $\varphi_A>\varphi_B$:
+M: \varphi_A-\varphi_B=IR=3\cdot4=12\ \text{V}
+A: **D)** 12
+
+@16
+P: $C_1$ va $C_2$ parallel — kuchlanishlari bir xil:
+M: U_1=\frac{q_1}{C_1}=\frac84=2\ \text{V},\qquad q_2=C_2U_1=4\ \text{nC}
+P: $C_3$ ketma-ket ulangan, uning zaryadi parallel guruhning umumiy zaryadiga teng:
+M: q_3=q_1+q_2=12\ \text{nC}
+A: **D)** 12
+
+@17
+M: I=\frac UR=\frac{18}{6}=3\ \text{A},\qquad r=\frac{\varepsilon-U}{I}=\frac{24-18}{3}=2\ \Omega
+A: **B)** 2
+
+@18
+P: Tarmoq kuchlanishi o'zgarmas, $Q=\frac{U^2}{R}t$. Parallel ulanganda $R_1=R/3$, ketma-ket ulanganda $R_2=3R$:
+M: \frac{t_2}{t_1}=\frac{R_2}{R_1}=9\;\Rightarrow\;t_2=9\cdot40=360\ \text{s}=6\ \text{minut}
+A: **C)** 6 minut
+
+@19
+M: R=\frac{40\cdot10}{50}=8\ \Omega,\qquad \varepsilon=I(R+r)\;\Rightarrow\;r=\frac{10}{1}-8=2\ \Omega
+M: I_{\text{q.t.}}=\frac{\varepsilon}{r}=\frac{10}{2}=5\ \text{A}
+A: **B)** 5
+
+@20
+M: E_k=qU=2\cdot10^{-6}\cdot500=10^{-3}\ \text{J}=1\ \text{mJ}
+A: **B)** 1
+
+@21
+P: Kondensator o'zgarmas manbadan zaryadlanganda manba ishining yarmi kondensator energiyasiga, yarmi issiqlikka aylanadi: $Q=\frac{CU^2}{2}$. Batareya sig'imi $C=20\cdot4=80$ μF:
+M: U=\sqrt{\frac{2Q}{C}}=\sqrt{\frac{2\cdot10}{80\cdot10^{-6}}}=500\ \text{V}
+A: **C)** 500
+
+@22
+M: X_C=\frac{1}{2\pi\nu C}=\frac{1}{2\cdot3{,}14\cdot50\cdot10^{-6}}\approx3180\ \Omega\approx3{,}2\ \text{k}\Omega
+A: **A)** 3.2 kΩ
+
+@23
+M: F=BIl\;\Rightarrow\;I=\frac{F}{Bl}=\frac{0{,}15}{2\cdot10^{-2}\cdot0{,}5}=15\ \text{A}
+A: **C)** 15
+
+@24
+M: U_m=\sqrt2\,IR=1{,}41\cdot5\cdot40\approx283\ \text{V}
+A: **C)** 283
+
+@25
+P: $\nu=\frac{1}{2\pi}\sqrt{g/l}$, chastota 1,5 marta ortsa, uzunlik 2,25 marta kamayadi:
+M: \frac{l}{l-5}=2{,}25\;\Rightarrow\;1{,}25l=11{,}25\;\Rightarrow\;l=9\ \text{cm}
+A: **C)** 9
+
+@26
+G: $k=8$, $U_1=220$ V, $r_2=2$ Ω, $I_2=3$ A
+M: \varepsilon_2=\frac{U_1}{k}=\frac{220}{8}=27{,}5\ \text{V}
+P: Chulg'amning o'z qarshiligida kuchlanish tushadi:
+M: U_2=\varepsilon_2-I_2r_2=27{,}5-6=21{,}5\ \text{V}
+A: **B)** 21.5
+
+@27
+P: Haqiqiy tasvir uchun $\Gamma=\frac{F}{d-F}$, bundan $d=F\left(1+\frac1\Gamma\right)$. Birinchi linza ($F_1=10$ cm, $\Gamma=1/2$):
+M: d=10\cdot(1+2)=30\ \text{cm}
+P: Buyum o'sha joyda, ikkinchi linza $\Gamma=2$ beradi:
+M: 30=F_2\left(1+\frac12\right)\;\Rightarrow\;F_2=20\ \text{cm}
+A: **B)** 20
+
+@28
+M: \Gamma=\frac{F}{d-F}=\frac{F}{5F-F}=\frac14
+P: Tasvir buyumdan 4 marta kichik.
+A: **B)** 4
+
+@29
+M: eU=E-A=7{,}8\cdot10^{-19}-3\cdot10^{-19}=4{,}8\cdot10^{-19}\ \text{J}\;\Rightarrow\;U=\frac{4{,}8\cdot10^{-19}}{1{,}6\cdot10^{-19}}=3\ \text{V}
+A: **B)** 3
+
+@30
+M: E=A+E_k=6\cdot10^{-19}+0{,}6\cdot10^{-19}=6{,}6\cdot10^{-19}\ \text{J}
+M: \lambda=\frac{hc}{E}=\frac{6{,}6\cdot10^{-34}\cdot3\cdot10^8}{6{,}6\cdot10^{-19}}=3\cdot10^{-7}\ \text{m}=300\ \text{nm}
+A: **B)** 300
+
+@31
+M: \lambda=\frac hp=\frac{6{,}6\cdot10^{-34}}{1{,}1\cdot10^{-27}}=6\cdot10^{-7}\ \text{m}=600\ \text{nm}
+A: **D)** 600
+
+@32
+P: Massa va zaryad sonlari saqlanadi: ${}^A_ZX+{}^{12}_6\text{C}\to{}^4_2\text{He}+{}^1_0n+{}^{16}_8\text{O}$:
+M: A+12=4+1+16\;\Rightarrow\;A=9,\qquad Z+6=2+0+8\;\Rightarrow\;Z=4
+P: $^9_4\text{Be}$ — berilliy.
+A: **A)** ⁹₄Be
+
+@33
+P: Grafikdan: 2→3 izobarik, $p=20$ kPa, $V$: 2 m³ → 4 m³. Gaz ishi $A=p\Delta V=40$ kJ (34-topshiriq). Termodinamikaning birinchi qonuni bo'yicha:
+M: \Delta U=Q-A=60-40=20\ \text{kJ}
+S: Shart ichki ziddiyatli: bir atomli ideal gaz uchun izobarik jarayonda $\Delta U=\frac32p\Delta V=60$ kJ va $Q=\frac52p\Delta V=100$ kJ bo'lishi kerak, 60 kJ emas. Kalitdagi 20 kJ berilgan $Q=60$ kJ va grafikdagi ish bo'yicha $\Delta U=Q-A$ dan olingan.
+A: **A)** 20
+
+@34
+M: A=p\Delta V=20\cdot10^3\cdot(4-2)=4\cdot10^4\ \text{J}=40\ \text{kJ}
+A: **B)** 40
+
+@35
+P: 1→2 izoxorik ($V=2$ m³): $p/T$ = const.
+M: T_2=T_1\frac{p_2}{p_1}=300\cdot2=600\ \text{K}
+A: **E)** 600
+
+@36
+G: $h=180$ m, $v_0=0$
+M: \text{a)}\ \ t=\sqrt{\frac{2h}{g}}=\sqrt{\frac{360}{10}}=6\ \text{s}
+M: \text{b)}\ \ v=gt=10\cdot3=30\ \text{m/s}
+A: a) 6 s; b) 30 m/s
+
+@37
+G: $k=400$ N/m, $m=2$ kg
+P: **a)** Yuqoriga $a=5$ m/s² tezlanishda:
+M: kx-mg=ma\;\Rightarrow\;x=\frac{m(g+a)}{k}=\frac{2\cdot15}{400}=0{,}075\ \text{m}=7{,}5\ \text{cm}
+P: **b)** Tekis harakatda tezlanish nolga teng:
+M: x=\frac{mg}{k}=\frac{20}{400}=0{,}05\ \text{m}=5\ \text{cm}
+A: a) 7,5 cm; b) 5 cm
+
+@38
+G: $m_1=2$ kg, $m_2=3$ kg, $F=30$ N ($m_2$ ga), $\mu=0{,}2$
+M: \text{a)}\ \ a=\frac{F-\mu(m_1+m_2)g}{m_1+m_2}=\frac{30-10}{5}=4\ \text{m/s}^2
+P: **b)** Ip $m_1$ ni tortadi:
+M: T=m_1(a+\mu g)=2\cdot(4+2)=12\ \text{N}
+A: a) 4 m/s²; b) 12 N
+
+@39
+M: \text{a)}\ \ u=\frac{m v_1+m v_2}{2m}=\frac{3+5}{2}=4\ \text{m/s}
+M: \text{b)}\ \ E_k=\frac{(m_1+m_2)u^2}{2}=\frac{10\cdot16}{2}=80\ \text{J}
+A: a) 4 m/s; b) 80 J
+
+@40
+G: Izobarik, bir atomli gaz, $Q=10$ kJ
+M: Q=\frac52\nu R\Delta T,\quad \Delta U=\frac32\nu R\Delta T=\frac35Q=6\ \text{kJ}
+P: Gaz bajargan ish $A=Q-\Delta U=4$ kJ, tashqi kuchlar ishi unga teng va qarama-qarshi ishorali:
+M: A'=-A=-4\ \text{kJ}
+A: a) 6 kJ; b) −4 kJ
+
+@41
+G: $R=11$ Ω, $\varepsilon=26$ V, $I=2$ A
+M: \text{a)}\ \ I=\frac{\varepsilon}{R+r}\;\Rightarrow\;r=\frac{26}{2}-11=2\ \Omega
+M: \text{b)}\ \ I_{\text{q.t.}}=\frac{\varepsilon}{r}=\frac{26}{2}=13\ \text{A}
+A: a) 2 Ω; b) 13 A
+
+@42
+G: $R=5$ Ω, $X_L=20$ Ω, $X_C=8$ Ω
+M: \text{a)}\ \ Z=\sqrt{R^2+(X_L-X_C)^2}=\sqrt{25+144}=13\ \Omega
+M: \text{b)}\ \ R=0:\quad Z=|X_L-X_C|=12\ \Omega
+A: a) 13 Ω; b) 12 Ω
+
+@43
+G: $F=6$ cm, tasvir linzadan $f=12$ cm masofada (haqiqiy)
+P: **b)** Linza formulasidan:
+M: \frac1d=\frac1F-\frac1f=\frac16-\frac1{12}=\frac1{12}\;\Rightarrow\;d=12\ \text{cm}
+P: **a)**
+M: \Gamma=\frac fd=\frac{12}{12}=1
+P: (Buyum $2F$ da, tasvir ham $2F$ da: teng o'lchamli, teskari.)
+A: a) 1; b) 12 cm
+
+@44
+G: $F=10$ cm, $h=2$ cm
+P: **a)** Predmet fokusdan 5 cm tashqarida: $d=15$ cm.
+M: f=\frac{dF}{d-F}=\frac{150}{5}=30\ \text{cm},\qquad \Gamma=\frac fd=2,\qquad H=\Gamma h=4\ \text{cm}
+P: **b)** Predmet fokusdan 5 cm ichkarida: $d=5$ cm, tasvir mavhum.
+M: \Gamma=\frac{F}{F-d}=\frac{10}{5}=2,\qquad H=\Gamma h=4\ \text{cm}
+A: a) 4 cm; b) 4 cm
+
+@45
+G: $I=9$ kW/m² $=9\cdot10^3$ W/m²
+P: Yorug'lik bosimi $p=\frac Ic(1+\rho)$, $\rho$ — qaytarish koeffitsiyenti.
+M: \text{a)}\ \ \rho=1:\quad p=\frac{2I}{c}=\frac{2\cdot9\cdot10^3}{3\cdot10^8}=6\cdot10^{-5}\ \text{Pa}=60\ \mu\text{Pa}
+M: \text{b)}\ \ \rho=0:\quad p=\frac{I}{c}=3\cdot10^{-5}\ \text{Pa}=30\ \mu\text{Pa}
+A: a) 60 μPa; b) 30 μPa

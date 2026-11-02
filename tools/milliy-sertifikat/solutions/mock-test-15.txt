@@ -1,0 +1,242 @@
+# Mock test №15 — yozma yechimlar
+@1
+M: 1{,}8\ \frac{\text{km}}{\text{min}}=\frac{1800\ \text{m}}{60\ \text{s}}=30\ \text{m/s}
+A: **B)** 30 m/s
+
+@2
+P: Natijaviy kuch kuchlar bir tomonga yo'nalganda eng katta, qarama-qarshi yo'nalganda eng kichik:
+M: F_{\max}=60+80=140\ \text{N},\qquad F_{\min}=80-60=20\ \text{N},\qquad \Delta F=120\ \text{N}
+A: **C)** 120 N
+
+@3
+M: \nu=\frac c\lambda=\frac{3\cdot10^8}{600\cdot10^{-9}}=5\cdot10^{14}\ \text{Hz}
+A: **A)** 5·10¹⁴ Hz
+
+@4
+P: Muallaq turganda elektr kuchi og'irlik kuchini muvozanatlaydi: $q\frac{U_1}{d}=mg$. Kuchlanish 1,2 marta ortsa, elektr kuchi ham 1,2 marta ortadi:
+M: ma=1{,}2mg-mg\;\Rightarrow\;a=0{,}2g=2\ \text{m/s}^2
+A: **A)** 2 m/s²
+
+@5
+P: Suzib yurgan muz (po'kak bilan birga) o'z og'irligiga teng suvni siqib chiqaradi. Muz erigach, hosil bo'lgan suv aynan shu hajmni egallaydi, po'kak esa suzib, o'z og'irligiga teng suvni siqib chiqarishda davom etadi. Shuning uchun suv sathi o'zgarmaydi.
+A: **C)** o'zgarmaydi
+
+@6
+P: Kichik tebranishlarda $v_{\max}=A\omega$, $\omega=\sqrt{g/l}$:
+M: \omega=\sqrt{\frac{10}{0{,}9}}=\frac{10}{3}\ \text{rad/s},\qquad A=\frac{v_{\max}}{\omega}=\frac{0{,}15\cdot3}{10}=0{,}045\ \text{m}=4{,}5\ \text{cm}
+A: **A)** 4,5 cm
+
+@7
+M: I=\frac qt=\frac{240}{120}=2\ \text{A}
+A: **A)** 2 A
+
+@8
+G: $m=0{,}5$ kg, $t=-20$ °C, $Q=120$ kJ
+M: Q_1=c_mm\cdot20=2100\cdot0{,}5\cdot20=21\ \text{kJ}
+M: m_e=\frac{Q-Q_1}{\lambda}=\frac{99}{330}=0{,}3\ \text{kg},\qquad \frac{0{,}3}{0{,}5}=60\ \%
+A: **B)** 60 %
+
+@9
+M: n=\frac{\nu N_A}{V}=\frac{1{,}2\cdot6\cdot10^{23}}{3\cdot10^{-3}}=2{,}4\cdot10^{26}\ \text{m}^{-3}
+A: **C)** 2,4·10²⁶ m⁻³
+
+@10
+P: Vannalar ketma-ket — ulardan bir xil zaryad o'tadi. Faradeyning birlashgan qonuni $m=\frac{M}{zF}q$:
+M: \frac{m_{\text{Al}}}{m_{\text{Cu}}}=\frac{M_{\text{Al}}/3}{M_{\text{Cu}}/2}=\frac{9}{32}\;\Rightarrow\;m_{\text{Al}}=48\cdot\frac{9}{32}=13{,}5\ \text{mg}
+A: **A)** 13,5 mg
+
+@11
+P: Halqadagi tok:
+M: I=\frac{3\mathcal E}{3r}=\frac{\mathcal E}{r}
+P: Bitta manba qutblaridagi kuchlanish:
+M: U=\mathcal E-Ir=\mathcal E-\frac{\mathcal E}{r}r=0
+A: **B)** 0
+
+@12
+M: Q=qm=10^7\cdot3{,}6=3{,}6\cdot10^7\ \text{J},\qquad 1\ \text{kW·h}=3{,}6\cdot10^6\ \text{J}\;\Rightarrow\;Q=10\ \text{kW·h}
+A: **B)** 10 kW·h
+
+@13
+M: v_1=\dot x_1=2\ \text{m/s},\qquad v_2=\dot x_2=-3-8t\;\Rightarrow\;v_2(3)=-27\ \text{m/s}
+M: v_{\text{nis}}=|v_1-v_2|=2+27=29\ \text{m/s}
+A: **B)** 29 m/s
+
+@14
+P: Bino uzoqda ($d\gg F$), tasvir deyarli fokal tekislikda: $f\approx F$. Kattalashtirish $\Gamma=\frac fd$:
+M: H=h\frac{d}{f}=5\cdot10^{-3}\cdot\frac{200}{0{,}05}=20\ \text{m}
+A: **C)** 20 m
+
+@15
+P: Foton impulsi $p=\frac Ec$, demak impulslar energiyalar kabi taqqoslanadi:
+M: E_1=13{,}6-0{,}85=12{,}75\ \text{eV},\qquad E_2=3{,}4-1{,}51=1{,}89\ \text{eV},\qquad E_3=13{,}6-1{,}51=12{,}09\ \text{eV}
+M: p_1>p_3>p_2
+A: **D)** p₁ > p₃ > p₂
+
+@16
+M: N=A-Z=207-82=125
+A: **B)** 125
+
+@17
+M: F=ma=1{,}75\cdot4=7\ \text{N}
+M: F^2=F_1^2+F_2^2+2F_1F_2\cos\alpha\;\Rightarrow\;49=9+25+30\cos\alpha\;\Rightarrow\;\cos\alpha=\frac12,\ \alpha=60^\circ
+A: **C)** 60°
+
+@18
+P: Dinamometr ko'rsatishi $mg=5$ N dan katta, demak tezlanish yuqoriga yo'nalgan:
+M: T=m(g+a)\;\Rightarrow\;a=\frac{T}{m}-g=\frac{8}{0{,}5}-10=6\ \text{m/s}^2
+A: **B)** 6 m/s²
+
+@19
+G: $m=2$ kg, $V=4\cdot10^{-3}$ m³, $H=6$ m chuqurlik, $h=4$ m balandlik
+P: Suvda jismga yuqoriga natijaviy kuch ta'sir qiladi: $F=\rho Vg-mg=40-20=20$ N. 6 m da u bajargan ish 120 J. Suvdan chiqqach, 4 m ko'tarilishda og'irlik kuchi $mgh=80$ J ish bajaradi:
+M: E_k=(\rho Vg-mg)H-mgh=120-80=40\ \text{J}
+A: **D)** 40 J
+
+@20
+P: Potensial energiya Yer sirtidan hisoblanadi. Eng yuqori nuqtada barcha mexanik energiya potensial energiyaga aylanadi:
+M: mgh+\frac{mv_0^2}{2}=E_{p,\max}\;\Rightarrow\;20h+100=160\;\Rightarrow\;h=3\ \text{m}
+A: **A)** 3 m
+
+@21
+G: $L=16$ m (8 bo'lak, har biri 2 m), $m=12$ kg, $O$ chap uchdan 4 m da, dinamometr o'ng uchda (yuqoriga 25 N)
+P: $O$ ga nisbatan yelkalar: og'irlik kuchi (markaz, 8 m) — $O$ dan 4 m o'ngda; dinamometr — 12 m o'ngda; $F$ — 4 m chapda. Muvozanat sharti:
+M: M_F+25\cdot12=120\cdot4\;\Rightarrow\;M_F=480-300=180\ \text{N·m}
+P: (Bundan $F=45$ N.)
+A: **B)** 180 N·m
+
+@22
+P: Yopiq idish — hajm o'zgarmas, $p\propto T$. Temperatura 4 marta pasaysa, bosim ham 4 marta pasayadi:
+M: p_1-\frac{p_1}{4}=60\ \text{kPa}\;\Rightarrow\;p_1=80\ \text{kPa},\qquad p_2=20\ \text{kPa}
+A: **B)** 20 kPa
+
+@23
+P: Sig'im $C=\frac{\varepsilon\varepsilon_0S}{d}$ faqat kondensator o'lchamlari va dielektrikka bog'liq, zaryadga bog'liq emas.
+A: **D)** o'zgarmaydi
+
+@24
+P: Guk qonuni silindrsimon jism uchun: $x=\frac{FL}{ES}$. $d_2=2d_1$ dan $S_2=4S_1$; $V_2=2V_1$ dan $L_2=\frac{V_2}{S_2}=\frac{L_1}{2}$:
+M: \frac{x_1}{x_2}=\frac{L_1/S_1}{L_2/S_2}=\frac{L_1}{S_1}\cdot\frac{4S_1}{L_1/2}=8
+A: **C)** 8
+
+@25
+M: F=\rho ghS=1000\cdot10\cdot4\cdot30\cdot10^{-4}=120\ \text{N}
+A: **A)** 120 N
+
+@26
+M: \Delta W=\frac{L(I_2^2-I_1^2)}{2}\;\Rightarrow\;I_2^2-I_1^2=\frac{2\cdot0{,}048}{0{,}012}=8
+M: (I_2-I_1)(I_2+I_1)=8,\quad I_2-I_1=2\;\Rightarrow\;I_2+I_1=4,\ I_2=3\ \text{A}
+M: \Phi=LI_2=12\cdot10^{-3}\cdot3=36\cdot10^{-3}\ \text{Wb}=36\ \text{mWb}
+A: **B)** 36 mWb
+
+@27
+M: d\sin\varphi=k\lambda,\quad \sin\varphi<1\;\Rightarrow\;k<\frac d\lambda=\frac{3\cdot10^{-6}}{600\cdot10^{-9}}=5
+P: $k=5$ maksimum $\varphi=90^\circ$ ga to'g'ri keladi va kuzatilmaydi, eng katta kuzatiladigan tartib — 4.
+A: **B)** 4
+
+@28
+M: p=\frac h\lambda=\frac{6{,}63\cdot10^{-34}}{490\cdot10^{-9}}\approx1{,}35\cdot10^{-27}\ \text{kg·m/s}
+M: v=\frac{p}{m_e}=\frac{1{,}35\cdot10^{-27}}{9{,}1\cdot10^{-31}}\approx1{,}5\cdot10^3\ \text{m/s}=1{,}5\ \text{km/s}
+A: **B)** 1,5 km/s
+
+@29
+M: u=\frac{m_1v_1}{m_1+m_2}=\frac{2\cdot6}{6}=2\ \text{m/s}
+M: Q=\frac{m_1v_1^2}{2}-\frac{(m_1+m_2)u^2}{2}=36-12=24\ \text{J}
+A: **B)** 24 J
+
+@30
+P: Har bir α-yemirilishda $A$ 4 ga, $Z$ 2 ga kamayadi; har bir β⁻-yemirilishda $A$ o'zgarmaydi, $Z$ 1 ga ortadi:
+M: A=238-2\cdot4=230,\qquad Z=92-2\cdot2+2\cdot1=90
+A: **D)** Z = 90, A = 230
+
+@31
+M: \sin\alpha_0=\frac1n=\frac{1}{\sqrt2}\;\Rightarrow\;\alpha_0=45^\circ
+A: **C)** 45°
+
+@32
+M: U_2=U_1\frac{N_2}{N_1}=220\cdot\frac{50}{1100}=10\ \text{V},\qquad I=\frac{U_2}{R}=\frac{10}{5}=2\ \text{A}
+A: **A)** 2 A
+
+@33
+P: Manbalar halqada bir-biriga qarshi ulangan (har ikkisining musbat qutbi yuqorida), natijaviy EYuK $\mathcal E_1-\mathcal E_2=60$ V. Parallel $R_1$, $R_2$: $R_{12}=\frac{2\cdot6}{8}=1{,}5$ Ω:
+M: I=\frac{\mathcal E_1-\mathcal E_2}{R_{12}+R_3+r_1+r_2}=\frac{60}{1{,}5+8{,}5+3{,}5+1{,}5}=\frac{60}{15}=4\ \text{A}
+A: **A)** 4
+
+@34
+P: Voltmetr parallel ulangan $R_1$, $R_2$ ga ulangan:
+M: U=IR_{12}=4\cdot1{,}5=6\ \text{V}
+A: **D)** 6
+
+@35
+P: Tok ikkinchi manba orqali uning EYuK iga qarshi o'tadi, ya'ni manba «zaryadlanadi», uning energiyasi ortadi:
+M: \Delta W=\mathcal E_2It=20\cdot4\cdot0{,}1=8\ \text{J}
+A: **C)** 8
+
+@36
+G: $m_1=10$ kg, $m_2=5$ kg, blokka $F=200$ N, blok va ip vaznsiz
+P: Vaznsiz blok uchun $F=2T$, demak $T=100$ N.
+M: \text{b)}\ \ m_1a_1=T-m_1g=100-100=0\;\Rightarrow\;a_1=0
+M: m_2a_2=T-m_2g=100-50\;\Rightarrow\;a_2=10\ \text{m/s}^2\ (\text{yuqoriga})
+P: **a)** Ip cho'zilmas, blok tezlanishi yuklar tezlanishlarining o'rta arifmetigiga teng:
+M: a_{\text{blok}}=\frac{a_1+a_2}{2}=\frac{0+10}{2}=5\ \text{m/s}^2
+A: a) 5 m/s²; b) 0
+
+@37
+G: $d=4$ mm, $\varepsilon=2$, $U=80$ V
+M: \text{a)}\ \ E=\frac Ud=\frac{80}{4\cdot10^{-3}}=2\cdot10^4\ \text{V/m}=20\ \text{kV/m}
+M: \text{b)}\ \ w=\frac{\varepsilon\varepsilon_0E^2}{2}=\frac{2\cdot8{,}85\cdot10^{-12}\cdot4\cdot10^8}{2}\approx3{,}54\cdot10^{-3}\ \text{J/m}^3
+A: a) 20 kV/m; b) $\approx3{,}54\cdot10^{-3}$ J/m³
+
+@38
+G: $v=0{,}8c$, $\gamma=\frac53$, $p=4\cdot10^{-20}$ kg·m/s
+M: p=\gamma mv\;\Rightarrow\;m=\frac{p}{\gamma v}=\frac{4\cdot10^{-20}}{\frac53\cdot2{,}4\cdot10^8}=10^{-28}\ \text{kg}
+M: \text{a)}\ \ E=\gamma mc^2=\frac53\cdot10^{-28}\cdot9\cdot10^{16}=1{,}5\cdot10^{-11}\ \text{J}=15\ \text{pJ}
+M: \text{b)}\ \ E_k=E-mc^2=15-9=6\ \text{pJ}
+A: a) 15 pJ; b) 6 pJ
+
+@39
+G: $T_1=4T_2$, $A=30$ kJ (bir sikl)
+M: \text{a)}\ \ \eta=1-\frac{T_2}{T_1}=1-\frac14=0{,}75=75\ \%
+M: Q_1=\frac A\eta=40\ \text{kJ},\qquad Q_2=Q_1-A=10\ \text{kJ}
+M: \text{b)}\ \ 2Q_2=20\ \text{kJ}
+A: a) 75 %; b) 20 kJ
+
+@40
+G: $d+f=2{,}4$ m, $\Gamma=5$ (haqiqiy)
+M: \text{a)}\ \ f=5d,\ 6d=2{,}4\;\Rightarrow\;d=0{,}4\ \text{m},\ f=2\ \text{m}
+M: \text{b)}\ \ D=\frac1d+\frac1f=2{,}5+0{,}5=3\ \text{dptr}
+A: a) 0,4 m; b) 3 dptr
+
+@41
+G: $V=2{,}4$ m³ har minutda, $S=0{,}8$ dm² $=8\cdot10^{-3}$ m², $h=48$ m, $\rho=800$ kg/m³
+M: \text{a)}\ \ Q_V=\frac{2{,}4}{60}=0{,}04\ \text{m}^3/\text{s},\qquad v=\frac{Q_V}{S}=\frac{0{,}04}{0{,}008}=5\ \text{m/s}
+P: **b)** Nasos neftni ko'taradi va unga kinetik energiya beradi. Har sekundda massa $\rho Q_V=32$ kg:
+M: P=\rho Q_V\left(gh+\frac{v^2}{2}\right)=32\,(480+12{,}5)=15\,760\ \text{W}\approx15{,}76\ \text{kW}
+A: a) 5 m/s; b) ≈15,76 kW
+
+@42
+G: $w=2{,}4\cdot10^{-4}$ J/m³, $S=4\cdot10^{-4}$ m², $l=0{,}5$ m, $L=3\cdot10^{-7}$ H, $\mu_0\approx1{,}2\cdot10^{-6}$ H/m
+P: **a)** Maydon energiyasi $W=wSl=\frac{LI^2}{2}$:
+M: W=2{,}4\cdot10^{-4}\cdot4\cdot10^{-4}\cdot0{,}5=4{,}8\cdot10^{-8}\ \text{J},\qquad I=\sqrt{\frac{2W}{L}}=\sqrt{0{,}32}\approx0{,}566\ \text{A}
+P: **b)** $w=\frac{\mu_0H^2}{2}$:
+M: H=\sqrt{\frac{2w}{\mu_0}}=\sqrt{\frac{4{,}8\cdot10^{-4}}{1{,}2\cdot10^{-6}}}=\sqrt{400}=20\ \text{A/m}
+A: a) ≈0,566 A; b) 20 A/m
+
+@43
+G: $E=180$ GPa, $l_0=4$ m, $S=12$ mm², $\Delta l=0{,}8$ m
+M: \text{a)}\ \ \varepsilon=\frac{\Delta l}{l_0}=\frac{0{,}8}{4}=0{,}2=20\ \%
+M: \text{b)}\ \ F=E\varepsilon S=180\cdot10^9\cdot0{,}2\cdot12\cdot10^{-6}=432\,000\ \text{N}=432\ \text{kN}
+A: a) 20 %; b) 432 kN
+
+@44
+G: $t=5$ s, $a=3$ m/s², $s=70$ m
+M: \text{a)}\ \ s=v_0t+\frac{at^2}{2}\;\Rightarrow\;70=5v_0+37{,}5\;\Rightarrow\;v_0=6{,}5\ \text{m/s}
+P: **b)** 2 s oldin tezlik $6{,}5-3\cdot2=0{,}5$ m/s edi:
+M: s'=\frac{0{,}5+6{,}5}{2}\cdot2=7\ \text{m}
+A: a) 6,5 m/s; b) 7 m
+
+@45
+G: $\nu_1=4\cdot10^{15}$ Hz, $\nu_2=3\nu_1$, $U_2=4U_1$
+M: eU_1=h\nu_1-A,\qquad eU_2=3h\nu_1-A=4(h\nu_1-A)\;\Rightarrow\;A=\frac{h\nu_1}{3}
+M: \text{a)}\ \ \nu_0=\frac{\nu_1}{3}\approx1{,}33\cdot10^{15}\ \text{Hz},\qquad \lambda_0=\frac{c}{\nu_0}=\frac{3\cdot10^8}{1{,}33\cdot10^{15}}=225\ \text{nm}
+M: \text{b)}\ \ E_k=3h\nu_1-\frac{h\nu_1}{3}=\frac83h\nu_1=\frac83\cdot6{,}63\cdot10^{-34}\cdot4\cdot10^{15}\approx7{,}07\cdot10^{-18}\ \text{J}\approx44{,}2\ \text{eV}
+A: a) 225 nm; b) ≈44,2 eV

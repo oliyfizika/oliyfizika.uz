@@ -352,3 +352,27 @@ h1, h2, h3, h4, p { margin-top: 0; }
 /* Rasmli javob variantlari */
 .option-img { display: block; max-width: min(100%, 320px); max-height: 180px; object-fit: contain; background: #fff; padding: 6px; border-radius: 10px; border: 1px solid var(--border); }
 .review-option .option-img { max-height: 120px; }
+
+/* ---------------- Yozma yechimlar (js/solutions.js) ---------------- */
+.sol-note { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 10px 0 4px; padding: 10px 14px; border-radius: 12px; background: var(--ok-soft); color: var(--text); font-size: .92rem; }
+.sol-note[hidden] { display: none; }
+.review-solution { margin-top: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.review-solution > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; color: var(--accent-2); list-style: none; display: flex; align-items: center; gap: 8px; }
+.review-solution > summary::-webkit-details-marker { display: none; }
+.review-solution > summary::before { content: "▸"; transition: transform .15s; }
+.review-solution[open] > summary::before { transform: rotate(90deg); }
+.review-solution > summary:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; border-radius: 14px; }
+.sol-body { display: flex; flex-direction: column; gap: 10px; padding: 4px 16px 16px; line-height: 1.65; overflow-wrap: anywhere; }
+.sol-p { margin: 0; }
+.sol-math--display { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding: 2px 0; }
+.sol-math--display .katex-display { margin: .3em 0; }
+.sol-math .katex { font-size: 1.05em; }
+.sol-box { padding: 10px 13px; border-radius: 10px; background: var(--surface-soft); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+.sol-box__label { margin: 0; font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.sol-box--given { background: var(--accent-soft); border-color: transparent; }
+.sol-box--given .sol-box__label { color: var(--accent-2); }
+.sol-box--answer { background: var(--ok-soft); border-color: transparent; }
+.sol-box--answer .sol-box__label { color: var(--ok); }
+.sol-box--status { background: var(--warn-soft); border-color: transparent; }
+.sol-box--status .sol-box__label { color: var(--warn); }
+@media print { .review-solution { break-inside: avoid; } .review-solution > summary::before { content: none; } }

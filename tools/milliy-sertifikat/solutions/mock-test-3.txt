@@ -1,0 +1,265 @@
+# Mock test №3 — yozma yechimlar
+@1
+P: Havo shari muallaq tursa ham Yer uni $mg$ kuch bilan tortadi. Bu kuchni havoning Arximed kuchi muvozanatlaydi, ammo og'irlik kuchining o'zi o'zgarmaydi.
+M: F_{\text{og'}}=mg
+A: **A)** $mg$
+
+@2
+P: Grafikdan: 1–3 s da $x$ 25 m dan 10 m gacha kamayadi, 3–4 s da jism turadi, 4–6 s da $x$ 10 m dan 20 m gacha ortadi.
+M: s=15+0+10=25\ \text{m},\qquad |\Delta x|=|20-25|=5\ \text{m}
+M: \frac{s}{|\Delta x|}=\frac{25}{5}=5
+A: **D)** 5
+
+@3
+P: $F_{\text{ish}}=\mu N$, ya'ni $\mu$ — grafik qiyaligi. $N=40$ N da:
+M: \mu_1=\frac{20}{40}=0{,}5,\qquad \mu_2=\frac{10}{40}=0{,}25\;\Rightarrow\;\mu_1=2\mu_2
+A: **A)** $\mu_1=2\mu_2$
+
+@4
+M: v_{\text{kv}}=\sqrt{\frac{3RT}{M}}\;\Rightarrow\;\frac{v_{H_2}}{v_{He}}=\sqrt{\frac{M_{He}}{M_{H_2}}}=\sqrt{\frac{4}{2}}=\sqrt2
+A: **C)** Vodorodniki $\sqrt2$ marta katta
+
+@5
+M: h=\frac{2\sigma}{\rho gr}\;\Rightarrow\;h\propto\frac1g,\qquad h_{\text{Oy}}=6\cdot15=90\ \text{mm}
+A: **B)** 90 mm
+
+@6
+G: $\varepsilon_1=6$ V, $\varepsilon_2=2$ V, $r_1=r_2=0{,}5$ Ω, $R=3$ Ω
+P: Rasmda manbalar konturda bir-biriga qarshi ulangan (ikkalasining musbat qutbi bir tomonda), EYuK lar ayiriladi:
+M: I=\frac{\varepsilon_1-\varepsilon_2}{R+r_1+r_2}=\frac{6-2}{3+1}=1\ \text{A}
+A: **A)** 1 A
+
+@7
+P: Barcha zaryadlar markazdan bir xil $R$ masofada. Potensial skalyar kattalik, shuning uchun zaryadlar algebraik qo'shiladi: $3\cdot(+q)+5\cdot(-q)=-2q$.
+M: \varphi=\frac{k(-2q)}{R}=-\frac{2kq}{R}
+A: **A)** $-\dfrac{2kq}{R}$
+
+@8
+G: Sterjen yuqori uchidan sharnirga mahkamlangan, uzunligining $1/5$ qismi suvda
+P: Sharnirga nisbatan momentlar qoidasi. Og'irlik kuchi sterjen o'rtasiga ($L/2$), Arximed kuchi suvdagi qism o'rtasiga qo'yilgan, u sharnirdan $L-\frac{L}{10}=0{,}9L$ uzoqlikda. Ikkala kuch ham vertikal, yelkalardagi $\sin\alpha$ qisqaradi:
+M: \rho SLg\cdot\frac L2=\rho_sS\frac L5g\cdot0{,}9L\;\Rightarrow\;\rho=2\cdot0{,}2\cdot0{,}9\,\rho_s=0{,}36\ \text{g/cm}^3
+P: Umumiy holda: suvdagi qism $x$ bo'lsa, $\rho=\rho_s(2x-x^2)$.
+S: Javoblar kalitida A) 0,25 berilgan edi. Momentlar qoidasi bo'yicha to'g'ri javob 0,36 (B), kalit tuzatildi.
+A: **B)** 0,36 g/cm³
+
+@9
+G: $C=10$ μF, $\varepsilon=10$ V, $r=1$ Ω, $R=3$ Ω; kondensator bitta $R$ ga parallel
+P: Barqaror holatda kondensatordan tok o'tmaydi, tok uchta ketma-ket rezistor orqali o'tadi:
+M: I=\frac{\varepsilon}{3R+r}=\frac{10}{10}=1\ \text{A},\qquad U_C=IR=3\ \text{V}
+M: W=\frac{CU_C^2}{2}=\frac{10\cdot9}{2}=45\ \mu\text{J}
+A: **D)** 45 μJ
+
+@10
+G: $R=30$ cm, $h=20$ cm, kuch markaz orqali gorizontal
+P: Zinapoya qirrasiga nisbatan momentlar. Gorizontal kuchning yelkasi $R-h=10$ cm. Og'irlik kuchining yelkasi markazdan qirragacha bo'lgan gorizontal masofa:
+M: d=\sqrt{R^2-(R-h)^2}=\sqrt{900-100}=20\sqrt2\ \text{cm}
+M: F(R-h)=mg\,d\;\Rightarrow\;F=mg\frac{20\sqrt2}{10}=2\sqrt2\,mg
+A: **B)** $2\sqrt2\,mg$
+
+@11
+M: \omega=\dot\varphi=20+4t,\qquad \varepsilon=\dot\omega=4\ \text{rad/s}^2
+A: **D)** 4 rad/s²
+
+@12
+P: Ixtiyoriy nurni yasash usuli: A nurga parallel bo'lib, linzaning optik markazidan o'tuvchi yordamchi nur o'tkazamiz. Bu nur sinmaydi va fokal tekislikni biror $P$ nuqtada kesadi. Linzadan o'tgan A nur ham shu $P$ nuqtadan o'tadi.
+P: Katakchalar bo'yicha: A nur har 1 katakda $\approx0{,}19$ katak ko'tariladi. Fokal tekislik markazdan 5 katak uzoqda, demak $P$ o'qdan $\approx1$ katak yuqorida. Sinish nuqtasidan $P$ ga o'tkazilgan chiziq 2-nur bilan ustma-ust tushadi.
+A: **B)** 2
+
+@13
+P: Zaryad atrofida doim elektr maydon mavjud. Harakatlanayotgan zaryad tok hosil qiladi, tok esa magnit maydon hosil qiladi. Tezlanish bo'lmagani uchun elektromagnit to'lqin nurlanmaydi, lekin ikkala maydon ham bor.
+A: **C)** Elektr va magnit maydon
+
+@14
+P: Grafikdan ikki to'liq tebranish 2 s ga to'g'ri keladi, demak $T=1$ s. $t=0$ da $x=0$ va ortmoqda, ya'ni $x=A\sin\frac{2\pi t}{T}$, boshlang'ich faza 0.
+M: \varphi=\frac{2\pi t}{T}=2\pi\cdot0{,}7=1{,}4\pi
+A: **B)** $1{,}4\pi$
+
+@15
+P: Ion — zaryadga ega zarra. Proton ($+e$), α zarra ($+2e$) va β zarra ($-e$) zaryadlangan. Neytronning zaryadi yo'q.
+A: **B)** Neytron
+
+@16
+P: Izotoplarda zaryad soni $Z$ bir xil, izotonlarda neytronlar soni $N$ bir xil, **izobarlarda** esa massa soni $A$ bir xil bo'ladi.
+A: **C)** Izobarlar
+
+@17
+P: Qaytgan yorug'likda $k$-tartibli yorug' halqa radiusi:
+M: r_k=\sqrt{\left(k-\tfrac12\right)\lambda R}\;\Rightarrow\;\frac{r_5}{r_1}=\sqrt{\frac{4{,}5}{0{,}5}}=3
+S: Javoblar kalitida A) 2 berilgan edi. Yorug' halqalar formulasiga ko'ra to'g'ri javob 3 (B), kalit tuzatildi. (O'tgan yorug'likda yorug' halqalar uchun $r_k=\sqrt{k\lambda R}$, nisbat $\sqrt5$ bo'lardi, ammo 2 hech bir talqinda chiqmaydi.)
+A: **B)** 3
+
+@18
+G: $\nu=1$ mol, bir atomli gaz, $A=160$ J, $\Delta T=10$ K
+M: \Delta U=\frac32\nu R\Delta T=1{,}5\cdot8{,}31\cdot10\approx124{,}6\ \text{J}
+M: Q=A+\Delta U\approx160+124{,}6\approx284\ \text{J}
+P: (Eslatma: shartdagi sonlar bir-biriga to'liq mos emas, chunki 1 mol gaz uchun $A=\nu R\Delta T\approx83$ J bo'lishi kerak edi. Javob berilgan qiymatlar bo'yicha hisoblandi.)
+A: **D)** 284 J
+
+@19
+P: Temperatura o'zgarmaydi deb olamiz (izotermik): $p_1V_1=p_2V_2$. Suvda $p=p_0+\rho gh$:
+M: p_1=10^5+10^3\cdot10\cdot30=4\cdot10^5\ \text{Pa},\qquad p_2=10^5+10^5=2\cdot10^5\ \text{Pa}
+M: \frac{V_2}{V_1}=\frac{p_1}{p_2}=2
+A: **B)** 2
+
+@20
+P: Plastinkadan o'tish vaqti $t=\dfrac{d}{v}=\dfrac{dn}{c}$. Vaqtlar teng bo'lsa:
+M: d_1n_1=d_2n_2\;\Rightarrow\;\frac{d_{\text{shisha}}}{d_{\text{olmos}}}=\frac{2{,}42}{1{,}5}\approx1{,}6
+A: **A)** 1,6
+
+@21
+P: Qo'rg'oshin–qalay qotishmasi (kavsharlash qotishmasi) evtektik qotishma bo'lib, uning erish harorati ikkala tashkil etuvchinikidan ham **past** bo'ladi. Variantlar ichida 505 K dan kichigi faqat 442 K.
+A: **A)** 442 K
+
+@22
+G: $R_A=0{,}04$ Ω, $l=0{,}15$ m, $S=3\cdot10^{-6}$ m², $I_A=0{,}1$ A
+M: R_{sh}=\rho\frac lS=1{,}7\cdot10^{-8}\cdot\frac{0{,}15}{3\cdot10^{-6}}=8{,}5\cdot10^{-4}\ \Omega
+P: Parallel ulanishda kuchlanish bir xil:
+M: I_{sh}=\frac{I_AR_A}{R_{sh}}=\frac{0{,}004}{8{,}5\cdot10^{-4}}\approx4{,}7\ \text{A},\qquad I=I_A+I_{sh}\approx4{,}8\ \text{A}
+A: **C)** 4,8 A
+
+@23
+M: 27+4=30+A\;\Rightarrow\;A=1,\qquad 13+2=15+Z\;\Rightarrow\;Z=0
+P: $A=1$, $Z=0$ — neytron.
+A: **B)** n
+
+@24
+P: Tinch turgan proton va antiproton annigilyatsiyasida umumiy energiya $2m_pc^2$, u ikki π⁰ mezonga teng taqsimlanadi:
+M: E=m_pc^2=1{,}67\cdot10^{-27}\cdot(3\cdot10^8)^2\approx1{,}5\cdot10^{-10}\ \text{J}
+A: **D)** $1{,}5\cdot10^{-10}$ J
+
+@25
+P: Qaytgan va singan nurlar tik bo'lsa, $\alpha+\gamma=90^\circ$, demak $\sin\gamma=\cos\alpha$. Sinish qonunidan:
+M: \sin\alpha=n\cos\alpha\;\Rightarrow\;\operatorname{tg}\alpha=n=1{,}73=\sqrt3\;\Rightarrow\;\alpha=60^\circ
+P: (Bu Bryuster burchagi.)
+A: **C)** 60°
+
+@26
+G: $D=-4$ dptr, ko'zoynak bilan $d_0=25$ cm dan o'qiydi
+P: Ko'zoynak 25 cm dagi matnning mavhum tasvirini kishi ko'zoynaksiz yaxshi ko'radigan masofada hosil qiladi:
+M: \frac{1}{0{,}25}+\frac1f=-4\;\Rightarrow\;\frac1f=-8\ \text{m}^{-1}\;\Rightarrow\;f=-0{,}125\ \text{m}=-12{,}5\ \text{cm}
+P: Minus ishora tasvir mavhum ekanini (linza bilan bir tomonda) bildiradi. Eng yaxshi ko'rish masofasi 12,5 cm.
+A: **A)** −12,5 cm
+
+@27
+P: Sharq va janub yo'nalishlari o'zaro tik:
+M: p_1=3\cdot5=15,\quad p_2=10\cdot2=20,\quad p=\sqrt{15^2+20^2}=25\ \text{kg·m/s}
+A: **B)** 25 kg·m/s
+
+@28
+P: $R_1=2R_2=3R_3$ bo'lsa, $R_1:R_2:R_3=6:3:2$. Ketma-ket ulanishda kuchlanish qarshilikka proporsional (ichki qarshilik hisobga olinmaydi):
+M: U_2=\varepsilon\frac{3}{6+3+2}=22\cdot\frac{3}{11}=6\ \text{V}
+A: **B)** 6 V
+
+@29
+P: Mavhum tasvir uchun $f=-2d$:
+M: \frac1d-\frac1{2d}=\frac1F\;\Rightarrow\;\frac1{2d}=\frac1{20}\;\Rightarrow\;d=10\ \text{cm}
+A: **C)** 10 cm
+
+@30
+M: \lambda_{\max}=\frac{hc}{A}=\frac{6{,}6\cdot10^{-34}\cdot3\cdot10^8}{5\cdot1{,}6\cdot10^{-19}}\approx2{,}475\cdot10^{-7}\ \text{m}=247{,}5\ \text{nm}
+A: **A)** 247,5 nm
+
+@31
+M: N=\frac{m}{M}N_A=\frac{\rho V}{M}N_A
+P: $V=3$ cm³ bo'lsa: $m=3$ g, $N=\dfrac{3}{18}\cdot6\cdot10^{23}=10^{23}$.
+S: Shartda hajm 3 mm³ deb berilgan. 3 mm³ uchun $m=3\cdot10^{-3}$ g va $N=10^{20}$ chiqadi. Variantlar va kalit 3 cm³ ga mos keladi.
+A: **A)** $10^{23}$ (hajm 3 cm³ bo'lganda)
+
+@32
+M: F=IBl\;\Rightarrow\;I=\frac{F}{Bl}=\frac{5}{20\cdot0{,}5}=0{,}5\ \text{A}
+A: **D)** 0,5 A
+
+@33
+P: Voltmetr ideal, undan tok o'tmaydi; ampermetrlar ideal, qarshiligi nolga teng. Yuqori tarmoq $2R+R=3R=12$ Ω, pastki tarmoq $R+2R=12$ Ω, ular parallel:
+M: R_{\text{um}}=6\ \Omega,\qquad I_1=\frac{30}{6}=5\ \text{A}
+P: Tarmoqlar bir xil, tok teng bo'linadi. Ikkinchi ampermetr yuqori tarmoqda:
+M: I_2=\frac{I_1}{2}=2{,}5\ \text{A}
+A: **E)** 2,5 A
+
+@34
+P: Uchinchi ampermetr pastki tarmoqda ($R$ va $2R$ orasida), undan pastki tarmoq toki o'tadi:
+M: I_3=\frac{30}{12}=2{,}5\ \text{A}
+S: Javoblar kalitida B) 5 A berilgan edi. 5 A — umumiy tok, uni birinchi ampermetr ko'rsatadi. Uchinchi ampermetr ko'rsatishi 2,5 A (E), kalit tuzatildi.
+A: **E)** 2,5 A
+
+@35
+P: Chap tugun potensiali 30 V, o'ng tugunniki 0 bo'lsin. Yuqori tarmoqda $2R$ dagi kuchlanish $2{,}5\cdot8=20$ V, pastki tarmoqda $R$ dagi kuchlanish $2{,}5\cdot4=10$ V:
+M: \varphi_{\text{yuq}}=30-20=10\ \text{V},\qquad \varphi_{\text{past}}=30-10=20\ \text{V},\qquad U_V=10\ \text{V}
+A: **D)** 10 V
+
+@36
+G: Botiq ko'zgu, haqiqiy tasvir $\Gamma=3$, buyum va tasvir orasi 28 cm
+P: **a)** $f=3d$, haqiqiy tasvir va buyum ko'zguning bir tomonida: $f-d=28$ cm.
+M: 2d=28\;\Rightarrow\;d=14\ \text{cm},\quad f=42\ \text{cm}
+P: **b)**
+M: \frac1F=\frac1{14}+\frac1{42}=\frac4{42}\;\Rightarrow\;F=10{,}5\ \text{cm},\qquad R=2F=21\ \text{cm}
+A: a) 14 cm; b) 21 cm
+
+@37
+G: $m=3$ kg, $v=5$ m/s, tushish burchagi (devor normaliga nisbatan) $60^\circ$, elastik urilish
+P: **a)** Devorga parallel tashkil etuvchi o'zgarmaydi, normal tashkil etuvchi ishorasini o'zgartiradi:
+M: \Delta p=2mv\cos60^\circ=2\cdot3\cdot5\cdot0{,}5=15\ \text{kg·m/s}
+M: \text{b)}\ \ F=\frac{\Delta p}{\Delta t}=\frac{15}{0{,}1}=150\ \text{N}
+A: a) 15 kg·m/s; b) 150 N
+
+@38
+G: Ikki atomli gaz ($i=5$), izobarik, $Q=140$ kJ
+M: Q=\frac72\nu R\Delta T,\quad \Delta U=\frac52\nu R\Delta T=\frac57Q=100\ \text{kJ}
+P: Gaz ishi $A=Q-\Delta U=40$ kJ, tashqi kuchlar ishi $A'=-40$ kJ.
+A: a) 100 kJ; b) −40 kJ
+
+@39
+G: $\varepsilon=60$ V, $R_1=15$ Ω, $R_2=5$ Ω, $r=0$
+P: **a)** Ketma-ket ulanishda tok bir xil, $Q\propto R$:
+M: \frac{Q_2}{Q}=\frac{R_2}{R_1+R_2}=\frac{5}{20}=25\,\%
+P: **b)**
+M: P_k=\frac{\varepsilon^2}{20}=180\ \text{W},\qquad R_p=\frac{15\cdot5}{20}=3{,}75\ \Omega,\qquad P_p=\frac{3600}{3{,}75}=960\ \text{W}
+M: \frac{P_p}{P_k}=\frac{960}{180}=\frac{16}{3}
+A: a) 25 %; b) 16/3 marta ortadi
+
+@40
+G: 1 mm da 500 ta tirqish, demak $d=2$ μm; $\lambda=500$ nm
+M: \text{a)}\ \ d\sin\varphi=2\lambda\;\Rightarrow\;\sin\varphi=\frac{2\cdot0{,}5}{2}=0{,}5\;\Rightarrow\;\varphi=30^\circ
+P: **b)** $k\le\dfrac d\lambda=4$. Markaziy maksimum va har ikki tomonda $k=1,\dots,4$: jami $2\cdot4+1=9$ ta.
+S: Qat'iy olganda $k=\pm4$ maksimumlar $90^\circ$ burchakka to'g'ri keladi va amalda kuzatilmaydi, shunda 7 ta bo'ladi. Kalit $k_{\max}=d/\lambda$ ni ham sanaydi (9 ta).
+A: a) 30°; b) 9 ta
+
+@41
+G: Kvadrat ABCD: A da $q$, B da $2q$, C da $q$, D da $2q$; massalar $m$
+P: **a)** B dagi $2q$ ga A va C dagi $q$ lar (masofa $a$) o'zaro tik kuchlar bilan, D dagi $2q$ esa diagonal ($a\sqrt2$) bo'ylab ta'sir qiladi. Uchala kuch yig'indisi diagonal bo'ylab yo'nalgan:
+M: F=\sqrt2\cdot\frac{2kq^2}{a^2}+\frac{k\cdot2q\cdot2q}{2a^2}=(2\sqrt2+2)\frac{kq^2}{a^2}\approx4{,}83\,\frac{kq^2}{a^2}
+P: **b)** D dagi zaryad boshqalari qo'zg'almas holda cheksizlikka uzoqlashganda maksimal tezlikka erishadi. Uning potensial energiyasi to'liq kinetik energiyaga aylanadi:
+M: W=2q\left(\frac{kq}{a}+\frac{kq}{a}+\frac{k\cdot2q}{a\sqrt2}\right)=(4+2\sqrt2)\frac{kq^2}{a}
+M: \frac{mv^2}{2}=W\;\Rightarrow\;v=\sqrt{(8+4\sqrt2)\frac{kq^2}{ma}}\approx3{,}70\sqrt{\frac{kq^2}{ma}}
+A: a) $\approx4{,}83\,kq^2/a^2$; b) $\approx3{,}70\sqrt{kq^2/(ma)}$
+
+@42
+P: Vodorod atomi: $E_n=-\dfrac{13{,}6}{n^2}$ eV, impuls momenti $L=n\hbar$.
+M: \text{a)}\ \ \varepsilon=E_2-E_1=13{,}6\left(1-\frac14\right)=10{,}2\ \text{eV}
+P: **b)** $L$ ni $2\hbar$ ga orttirish uchun elektron $n=2$ dan $n=4$ ga o'tishi kerak:
+M: \varepsilon=13{,}6\left(\frac14-\frac1{16}\right)=2{,}55\ \text{eV}
+A: a) 10,2 eV; b) 2,55 eV
+
+@43
+G: $h=4$ m, $\alpha=30^\circ$, $m=2$ kg, $\mu=0{,}1$; qiyalik uzunligi $L=h/\sin\alpha=8$ m
+P: **a)** Energiya saqlanishi (ishqalanish ishi bilan):
+M: \frac{mv^2}{2}=mgh-\mu mg\cos\alpha\cdot L\;\Rightarrow\;v^2=2\cdot10\,(4-0{,}1\cdot0{,}866\cdot8)\approx66\ \text{m}^2/\text{s}^2
+M: v\approx8{,}1\ \text{m/s}
+P: **b)** Gorizontal sirtda (ishqalanish koeffitsiyenti o'sha):
+M: s=\frac{v^2}{2\mu g}=\frac{66{,}1}{2\cdot0{,}1\cdot10}\approx33\ \text{m}
+P: (Tezlikni $8{,}1$ m/s gacha yaxlitlab hisoblansa, $\approx32{,}8$ m chiqadi. Ikkala javob ham qabul qilinadi.)
+A: a) $\approx8{,}1$ m/s; b) $\approx33$ m
+
+@44
+G: $m=10$ kg, $M=0{,}012$ kg/mol, $T=\alpha V^2$, $\alpha=2$ K/m⁶
+P: **a)** $pV=\nu RT=\nu R\alpha V^2\;\Rightarrow\;p=\nu R\alpha V$, ya'ni $p\propto V\propto\sqrt T$. $T$ 4 marta ortsa, $V$ va $p$ 2 marta ortadi.
+P: **b)** $\nu=\dfrac{10}{0{,}012}\approx833$ mol.
+M: A=\int_{V_1}^{V_2}p\,dV=\frac{\nu R\alpha}{2}\left(V_2^2-V_1^2\right)=\frac{833\cdot8{,}31\cdot2}{2}\cdot(16-4)\cdot10^{-6}\approx0{,}0831\ \text{J}
+A: a) 2 marta ortadi; b) $\approx83{,}1$ mJ
+
+@45
+G: $T=14{,}8$ soat, $m=1$ g, $M=24$ g/mol, $t=29{,}6$ soat $=2T$
+P: **a)** $N_0=\dfrac{1}{24}\cdot6\cdot10^{23}=2{,}5\cdot10^{22}$. Ikki yarim yemirilish davrida $\frac34$ qismi yemiriladi:
+M: \Delta N=N_0\left(1-2^{-2}\right)=\frac34\cdot2{,}5\cdot10^{22}\approx1{,}875\cdot10^{22}
+P: **b)** Aktivlik yemirilmagan yadrolar soniga proporsional: $A/A_0=2^{-2}$.
+A: a) $\approx1{,}875\cdot10^{22}$ ta; b) 4 marta kamayadi
