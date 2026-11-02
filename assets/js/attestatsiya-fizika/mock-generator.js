@@ -3,7 +3,8 @@
 //
 // Tarkib (har mock): 50 savol = 35 fizika (5 bob × 7) + 15 pedagogika; har savol 2 ball → 100 ball; 2 soat; paidOnly.
 //   • fizika — mavjud savollar bankidan (kunlik testlarning joriy versiyasi: versions / keys / solutions + private/answer):
-//     auto, mcq, kalit bor, keyStatus = valid, review.check yo'q, yechim full|theory, RASMSIZ (savol, variant, yechim);
+//     auto, mcq, kalit bor, keyStatus = valid, review.check yo'q, yechim full|theory; RASMLI savollar ham kiradi — rasm
+//     kunlik testdan mockning o'z figures/solutionFigures hujjatlariga nusxalanadi (attachFigures; mock-02 dagi kabi);
 //     bob ichida mavzular navbatma-navbat, qiyinlik ≈ 2 oson / 3 o'rta / 2 murakkab, oson → murakkab tartibda.
 //   • pedagogika — attestatsiya/pedagogika-testlari/data/test*.js (FAQAT O'QILADI), 4 variantli, turli fayllardan.
 // TAKRORLANMASLIK: bitta mock ichida ham, yangi mocklar orasida ham, avvalgi mocklar (01, 02, …) bilan ham —
@@ -28,6 +29,7 @@ export const MOCK_GEN = {
   firstMockDay: 101,
 };
 export const SIMILAR = 0.8;
+export const MAX_FIG_BYTES = 700 * 1024;                  // admin mock importi bilan bir xil chegara
 const PED_TITLE = "Pedagogika";
 const LETTERS = "ABCDE";
 
@@ -75,6 +77,16 @@ export function similarity(a, b) {
 }
 
 const hasFigure = (x) => JSON.stringify(x || null).includes('"t":"figure"');
+/** Bloklardagi rasm ID'lari. */
+export function figureIds(x) {
+  const out = new Set();
+  const walk = (v) => {
+    if (Array.isArray(v)) v.forEach(walk);
+    else if (v && typeof v === "object") { if (v.t === "figure" && v.id) out.add(v.id); Object.values(v).forEach(walk); }
+  };
+  walk(x);
+  return [...out];
+}
 
 /** Savolning to'liq matni (savol + variantlar) — takror tekshiruvi shu bo'yicha. */
 const questionText = (q) => `${plainText(q.question)} ${plainText((q.options || []).map((o) => o.blocks))}`;
@@ -84,14 +96,14 @@ const questionText = (q) => `${plainText(q.question)} ${plainText((q.options || 
  * @param {Array<{test, version, key, solutions}>} days  har kunning JORIY versiyasi
  * @param {Map<string, object>} privates                 qid → private/answer (keyStatus, review)
  */
-export function physicsPool(days, privates) {
+export function physicsPool(days, privates, exclude = new Set()) {
   const secKeys = new Set(MOCK_GEN.physicsSections.map(([k]) => k));
   const pool = [];
   const seen = new Set();
   for (const d of days) {
     const sol = new Map((d.solutions?.items || []).map((i) => [i.id, i]));
     for (const q of d.version?.questions || []) {
-      if (seen.has(q.id)) continue;
+      if (seen.has(q.id) || exclude.has(q.id)) continue;
       const s = sol.get(q.id);
       const letter = d.key?.answers?.[q.id];
       const p = privates.get(q.id);
@@ -99,10 +111,10 @@ export function physicsPool(days, privates) {
       if (!letter || !(q.options || []).some((o) => o.key === letter)) continue;
       if (!s || !["full", "theory"].includes(s.solutionStatus) || !(s.solution || []).length || s.correctAnswer !== letter) continue;
       if (!p || p.keyStatus !== "valid" || p.review?.check) continue;
-      if (hasFigure([q.question, q.options]) || hasFigure(s.solution)) continue;
       seen.add(q.id);
       pool.push({ id: q.id, section: q.section, topic: q.topic || "—", level: q.difficultyLevel || 2, letter, q, sol: s,
-                  tok: tokens(questionText(q)) });
+                  tok: tokens(questionText(q)), src: d.test?.id,
+                  figs: figureIds([q.question, q.options]), solFigs: figureIds(s.solution) });
     }
   }
   return pool;
@@ -188,8 +200,12 @@ function bundleFor(number, { chosen, peds }) {
   const day = MOCK_GEN.firstMockDay + number - 1;
   const topics = [...MOCK_GEN.physicsSections.map(([, t]) => t), PED_TITLE];
   const ids = [], questions = [], answers = {}, solutions = [], topicIdx = [];
+  const figureRefs = [];                                   // [{scope, id, srcTestId, qid}] — attachFigures to'ldiradi
+  const addRef = (scope, id, c) => { if (!figureRefs.some((r) => r.scope === scope && r.id === id)) figureRefs.push({ scope, id, srcTestId: c.src, qid: c.id }); };
   chosen.forEach((list, si) => {
     for (const c of list) {
+      c.figs.forEach((f) => addRef("figures", f, c));
+      c.solFigs.forEach((f) => addRef("solutionFigures", f, c));
       const e = { ...c.q, position: ids.length + 1, sectionTitle: topics[si] };
       ids.push(c.id); questions.push(e); answers[c.id] = c.letter; solutions.push(c.sol); topicIdx.push(si);
     }
@@ -223,7 +239,7 @@ function bundleFor(number, { chosen, peds }) {
     solutionAvailableAt: null, archivedAt: null, timeLimitSeconds: MOCK_GEN.timeLimit, currentVersion: 1, planHash,
     notification: { title: `Mock test ${number} tayyor!`, body: `${n} savol · ${nPhys} fizika + ${peds.length} pedagogika · ${maxScore} ball`,
                     href: `attestatsiya/fizika-test.html?day=${day}` },
-    figureCount: 0,
+    figureCount: figureRefs.filter((r) => r.scope === "figures").length,
   };
   const base = `attestationPhysicsDailyTests/${tid}`;
   const ops = [
@@ -234,8 +250,9 @@ function bundleFor(number, { chosen, peds }) {
   ];
   return {
     format: "oliyfizika-attestation-mock-import", schemaVersion: 1, testId: tid, dayNumber: day,
-    counts: { questions: n, physics: nPhys, pedagogy: peds.length, maxScore, figures: 0, solutionFigures: 0 },
-    planHash, ops,
+    counts: { questions: n, physics: nPhys, pedagogy: peds.length, maxScore,
+              figures: figureRefs.filter((r) => r.scope === "figures").length, solutionFigures: figureRefs.filter((r) => r.scope === "solutionFigures").length },
+    planHash, ops, figureRefs,
   };
 }
 
@@ -259,7 +276,22 @@ export function validateMockBundle(b) {
   ok(sol.items.every((i) => i.correctAnswer === key.answers[i.id]), "yechim javobi kalit bilan bir xil");
   const verJson = JSON.stringify(ver);
   ok(!["correctAnswer", "solution", "bookAnswer", "solutionResult", "answers", "review", "verify"].some((k) => verJson.includes(`"${k}"`)), "version (public) javob maydonlarisiz");
-  ok(!hasFigure(ver) && !hasFigure(sol), "rasm yo'q");
+  const qRefs = new Set(figureIds(ver.questions.map((q) => [q.question, q.options])));
+  const sRefs = new Set(figureIds(sol.items.map((i) => i.solution)));
+  const docsOf = (scope) => new Set(b.ops.slice(4).filter((o) => o.path.split("/").slice(-2)[0] === scope).map((o) => o.path.split("/").pop()));
+  const same = (a, c) => a.size === c.size && [...a].every((x) => c.has(x));
+  if (b.figuresAttached) {
+    ok(same(qRefs, docsOf("figures")), "savol rasmlari: bloklar ↔ figure hujjatlari bir xil");
+    ok(same(sRefs, docsOf("solutionFigures")), "yechim rasmlari: bloklar ↔ figure hujjatlari bir xil");
+    for (const o of b.ops.slice(4)) {
+      const d = o.data;
+      ok(d.testId === b.testId && d.id === o.path.split("/").pop() && ["image/webp", "image/png", "image/svg+xml"].includes(d.mime)
+        && d.bytes > 0 && d.bytes <= MAX_FIG_BYTES && typeof d.data === "string", `${o.path}: rasm hujjati`);
+    }
+  } else {
+    ok(same(qRefs, new Set(b.figureRefs.filter((r) => r.scope === "figures").map((r) => r.id)))
+      && same(sRefs, new Set(b.figureRefs.filter((r) => r.scope === "solutionFigures").map((r) => r.id))), "rasm havolalari to'liq");
+  }
   for (const q of ver.questions) ok(q.optionCount === q.options.length && q.options.some((o) => o.key === key.answers[q.id]), `${q.id}: javob variantlar ichida`);
   const toks = ver.questions.map((q) => tokens(questionText(q)));
   for (let i = 0; i < toks.length; i++) for (let j = i + 1; j < toks.length; j++) {
@@ -296,8 +328,8 @@ export function crossDuplicates(bundles, prev = []) {
  * @param {Array} p.pedagogy             pedagogika fayllaridagi savollar
  * @param {Array} p.existingMocks        [{testId, questions}] — avvalgi mocklar (takrorlanmasligi uchun)
  */
-export function generateMocks({ numbers, days, privates, pedagogy, existingMocks = [] }) {
-  const phys = physicsPool(days, privates);
+export function generateMocks({ numbers, days, privates, pedagogy, existingMocks = [], exclude = new Set() }) {
+  const phys = physicsPool(days, privates, exclude);
   const ped = pedagogyPool(pedagogy);
   const prev = [];
   const used = { ids: new Set(), toks: [] };
@@ -322,4 +354,20 @@ export function parsePedagogyFile(src, file) {
   // test8.js boshida «indow» xatosi bor — faqat o'qishda tuzatiladi (python generatoridagi kabi)
   new Function("window", `window${src.slice(i)}`)(w);
   return (w.testQuestions || []).map((q, j) => ({ file, n: j + 1, question: q.question, answers: q.answers, correct: q.correct }));
+}
+
+/**
+ * Rasmlarni bundle'ga qo'shadi: figs — Map(`${scope}/${id}` → {mime, bytes, data(base64)}).
+ * Natija: ops ga figures/{id} va solutionFigures/{id} hujjatlari (mock-02 importi bilan bir xil shakl).
+ */
+export function attachFigures(bundle, figs) {
+  const base = bundle.ops[0].path;
+  const extra = bundle.figureRefs.map((r) => {
+    const f = figs.get(`${r.scope}/${r.id}`);
+    if (!f) throw new Error(`${bundle.testId}: rasm yo'q — ${r.scope}/${r.id}`);
+    return { op: "create", path: `${base}/${r.scope}/${r.id}`, data: { testId: bundle.testId, id: r.id, mime: f.mime, bytes: f.bytes, data: f.data } };
+  });
+  const out = { ...bundle, ops: [...bundle.ops.slice(0, 4), ...extra], figuresAttached: true };
+  delete out.figureRefs;
+  return out;
 }
