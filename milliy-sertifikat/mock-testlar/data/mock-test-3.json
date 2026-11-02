@@ -213,7 +213,7 @@
     "0,64",
     "0,96"
    ],
-   "answer": "A"
+   "answer": "B"
   },
   {
    "n": 9,
@@ -325,7 +325,7 @@
     "√5",
     "√11"
    ],
-   "answer": "A"
+   "answer": "B"
   },
   {
    "n": 18,
@@ -538,7 +538,7 @@
     "2,5",
     "8"
    ],
-   "answer": "B"
+   "answer": "E"
   },
   {
    "n": 35,
@@ -725,9 +725,9 @@
     {
      "key": "b",
      "text": "Bu jism pastga tushgach yana qancha yo‘l bosib o‘tadi?",
-     "answer": 32.8,
+     "answer": 33,
      "unit": "m",
-     "tolerance": 0.2
+     "tolerance": 0.3
     }
    ]
   },

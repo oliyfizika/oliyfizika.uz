@@ -1,0 +1,242 @@
+# Mock test №5 — yozma yechimlar
+@1
+P: Yo'l tezlik grafigi ostidagi yuzaga teng (trapetsiya):
+M: s=\frac{4\cdot10}{2}+6\cdot10+\frac{4\cdot10}{2}=20+60+20=100\ \text{m}
+A: **D)** 100 m
+
+@2
+P: Harakatni teskari tomondan qaraymiz: oxirgi nuqtadan boshlab jism tinch holatdan tekis tezlanuvchan harakat qiladi. Ketma-ket sekundlarda bosilgan yo'llar $1:3:5:7:9$ nisbatda.
+M: \frac{a\cdot1^2}{2}=5\;\Rightarrow\;a=10\ \text{m/s}^2
+P: Teskari tartibda: 5-sekund ↔ 1 qism (5 m), 4-sekund ↔ 3 qism, 3-sekund ↔ 5 qism, **2-sekund ↔ 7 qism**, 1-sekund ↔ 9 qism.
+M: s_2=7\cdot5=35\ \text{m}
+A: **A)** 35 m
+
+@3
+M: H=\frac{v_0^2\sin^2\alpha}{2g},\quad L=\frac{v_0^2\sin2\alpha}{g}\;\Rightarrow\;\frac LH=\frac{4}{\operatorname{tg}\alpha}=4\ (\alpha=45^\circ)
+M: L=4H=60\ \text{m}
+A: **B)** 60 m
+
+@4
+M: F=ma=25\cdot2=50\ \text{N},\qquad F_2=\sqrt{F^2-F_1^2}=\sqrt{2500-900}=40\ \text{N}
+A: **D)** 40 N
+
+@5
+M: p_1=4\cdot2=8,\quad p_2=3\cdot1=3\ \text{kg·m/s}
+M: p=\sqrt{p_1^2+p_2^2+2p_1p_2\cos120^\circ}=\sqrt{64+9-24}=7\ \text{kg·m/s}
+A: **D)** 7 kg·m/s
+
+@6
+M: P_s=P-\rho_sgV=P\left(1-\frac{\rho_s}{\rho}\right)=\frac P7\;\Rightarrow\;\frac{\rho_s}{\rho}=\frac67
+M: \rho=\frac{7\cdot600}{6}=700\ \text{kg/m}^3,\qquad \rho-\rho_s=100\ \text{kg/m}^3
+A: **D)** 100 kg/m³
+
+@7
+G: $h=0{,}4$ m, $m=80$ kg; muz to'liq botgan holda odamni tutib turadi
+M: \rho_sShg=\rho_mShg+mg\;\Rightarrow\;S=\frac{m}{(\rho_s-\rho_m)h}=\frac{80}{100\cdot0{,}4}=2\ \text{m}^2
+A: **A)** 2 m²
+
+@8
+G: $m=28$ kg, taxta vaznsiz, o'ng uchi devorga sharnir bilan mahkamlangan
+P: Bola ipni $F$ kuch bilan pastga tortadi, ip esa bolani $F$ kuch bilan yuqoriga tortadi. Shuning uchun bolaning taxtaga bosim kuchi $N=mg-F$. Ipning ikkinchi uchi taxtani $F$ kuch bilan yuqoriga tortadi.
+P: Devordagi sharnirga nisbatan momentlar. Rasmga ko'ra bola devordan $4l$, ipning taxtaga mahkamlangan joyi $3l$ uzoqlikda:
+M: (mg-F)\cdot4l=F\cdot3l\;\Rightarrow\;F=\frac47mg=\frac47\cdot280=160\ \text{N}
+A: **C)** 160 N
+
+@9
+P: Bir xil vaqtda tebranishlar soni chastotaga proporsional: $\nu_1=2\nu_2$, demak $T_2=2T_1$.
+M: T=2\pi\sqrt{\frac lg}\;\Rightarrow\;\frac{l_2}{l_1}=\left(\frac{T_2}{T_1}\right)^2=4
+A: **D)** 4
+
+@10
+M: v=\sqrt{\frac{3RT}{\mu}}=\sqrt{\frac{3\cdot8{,}31\cdot10^3\cdot10^7}{1}}\approx5\cdot10^5\ \text{m/s}
+A: **C)** $5\cdot10^5$ m/s
+
+@11
+P: $V$ va $T$ o'zgarmas, $pV=\frac mMRT$, demak $p\propto m$. Gazning $\frac15$ qismi qoladi:
+M: p_2=\frac{500}{5}=100\ \text{kPa}
+A: **A)** 100 kPa
+
+@12
+P: 1→2 — izobarik kengayish (gaz ish bajaradi, $A=2$ kJ), 2→3 — izoxorik sovish (issiqlik sovitkichga beriladi). 1 va 3 nuqtalar bitta izotermada yotadi: $T_3=T_1$.
+M: \Delta U_{12}=\frac32\nu R\Delta T_{12}=\frac32A=3\ \text{kJ}
+P: 2→3 da ish yo'q, $Q_{23}=\Delta U_{23}=-\Delta U_{12}$ (chunki $T_3=T_1$). Demak sovitkichga $3$ kJ issiqlik beriladi.
+M: \frac{\Delta U_{12}}{|Q_{23}|}=1
+A: **D)** Farq qilmaydi
+
+@13
+G: $d=1$ mm, $\sigma=0{,}47$ N/m, $\rho=13\,600$ kg/m³, ho'llamaydi
+P: Ho'llamaydigan suyuqlik kapillyarda **pasayadi**:
+M: h=\frac{4\sigma}{\rho gd}=\frac{4\cdot0{,}47}{13\,600\cdot10\cdot10^{-3}}\approx0{,}014\ \text{m}=14\ \text{mm}
+A: **D)** 14 mm past
+
+@14
+M: \eta=1-\frac{Q_2}{Q_1}\;\Rightarrow\;Q_1=\frac{700}{0{,}5}=1400\ \text{J},\qquad A=Q_1-Q_2=700\ \text{J}
+A: **A)** 700 J
+
+@15
+M: d=\frac UE=\frac{300}{30\,000}=0{,}01\ \text{m}=10\ \text{mm}
+A: **D)** 10 mm
+
+@16
+P: Ketma-ket ulanishda har bir kondensator zaryadi bir xil va umumiy zaryadga teng:
+M: \frac1C=\frac11+\frac12+\frac13=\frac{11}6\;\Rightarrow\;C=\frac6{11}\ \mu\text{F},\qquad q=CU=\frac6{11}\cdot220=120\ \mu\text{C}
+A: **D)** 120 μC
+
+@17
+M: R_{\text{um}}=R+\frac R2=1{,}5R,\qquad I=\frac{120}{1{,}5R},\qquad U_p=I\cdot\frac R2=\frac{120}{3}=40\ \text{V}
+A: **B)** 40 V
+
+@18
+M: \varepsilon=I_1(R_1+r)=I_2(R_2+r):\quad 2(10+r)=1{,}5(20+r)\;\Rightarrow\;r=20\ \Omega
+A: **A)** 20 Ω
+
+@19
+M: Q=\frac{U^2}{R}t\;\Rightarrow\;U=\sqrt{\frac{QR}{t}}=\sqrt{\frac{450\cdot10}{5}}=30\ \text{V}
+A: **B)** 30 V
+
+@20
+P: Tok zichligi $j=\dfrac IS=\dfrac{U}{RS}=\dfrac{U}{\rho l}$ (kesim yuzasi qisqaradi):
+M: j=\frac{14}{2{,}8\cdot10^{-8}\cdot5}=10^8\ \text{A/m}^2=100\ \text{MA/m}^2
+A: **D)** 100 MA/m²
+
+@21
+P: Kondensator manbaga ulangan, kuchlanish o'zgarmaydi. Kerosin quyilganda sig'im $\varepsilon=2$ marta ortadi:
+M: W=\frac{CU^2}{2}\;\Rightarrow\;W'=2W=10\ \mu\text{J}
+A: **C)** 10 μJ
+
+@22
+P: K tugunidan chap yuqori tugungacha $3C$ kondensatorga ($4C$ va $12C$ ketma-ket) parallel ulangan. L dan o'ng yuqori tugungacha $8C$ ga ($20C$ va $5C$ ketma-ket) parallel ulangan:
+M: C_{\text{chap}}=3C+3C=6C,\qquad C_{\text{o'ng}}=8C+4C=12C
+P: Ular yuqoridagi $12C$ bilan ketma-ket:
+M: \frac1{C_{KL}}=\frac1{6C}+\frac1{12C}+\frac1{12C}=\frac1{3C}\;\Rightarrow\;C_{KL}=3C
+A: **A)** $3C$
+
+@23
+M: F=IBl\sin\alpha\;\Rightarrow\;l=\frac{F}{IB\sin60^\circ}=\frac{0{,}9}{6\cdot1{,}2\cdot0{,}866}\approx0{,}144\ \text{m}=14{,}4\ \text{cm}
+A: **A)** 14,4 cm
+
+@24
+M: C=\frac{\varepsilon_0S}{d}:\ d\to4d\;\Rightarrow\;C\to\frac C4,\qquad \nu=\frac1{2\pi\sqrt{LC}}\to2\nu=32\ \text{kHz}
+A: **B)** 32 kHz
+
+@25
+G: $U=36$ V; 2 Ω ketma-ket, keyin 3 Ω (ampermetr bilan) va 6 Ω parallel
+M: R_p=\frac{3\cdot6}{9}=2\ \Omega,\quad R=2+2=4\ \Omega,\quad I=\frac{36}4=9\ \text{A}
+M: U_p=9\cdot2=18\ \text{V},\qquad I_A=\frac{18}{3}=6\ \text{A}
+A: **A)** 6 A
+
+@26
+P: Ideal konturda elektr maydonning maksimal energiyasi magnit maydonning maksimal energiyasiga teng:
+M: \frac{LI_m^2}{2}=W\;\Rightarrow\;L=\frac{2W}{I_m^2}=\frac{2\cdot0{,}16}{100}=3{,}2\cdot10^{-3}\ \text{H}=3{,}2\ \text{mH}
+A: **B)** 3,2 mH
+
+@27
+P: Bunday «soat»ning eng kichik o'lchash birligi (va xatoligi) bitta tebranish davriga teng:
+M: T=\frac1\nu=\frac1{1820}\ \text{s}\approx0{,}55\ \text{ms}
+A: **C)** 0,55 ms
+
+@28
+G: $D=6$ dptr, $F=\frac16$ m, $\Gamma=4$
+M: \text{haqiqiy: }f=4d_1,\ \frac1{d_1}+\frac1{4d_1}=\frac1F\Rightarrow d_1=\frac54F;\qquad \text{mavhum: }f=-4d_2,\ \frac1{d_2}-\frac1{4d_2}=\frac1F\Rightarrow d_2=\frac34F
+M: \Delta d=d_1-d_2=\frac F2=\frac1{12}\ \text{m}
+A: **C)** 1/12 m
+
+@29
+M: A=h\nu-E_k=13{,}5-6{,}5=7\ \text{eV}
+A: **C)** 7 eV
+
+@30
+G: $p_{\max}=74\cdot10^{-25}$ kg·m/s, ruxning chiqish ishi $A\approx4{,}2$ eV $\approx6{,}7\cdot10^{-19}$ J
+P: Elektron uchun (norelyativistik):
+M: E_k=\frac{p^2}{2m_e}=\frac{(7{,}4\cdot10^{-24})^2}{2\cdot9{,}1\cdot10^{-31}}\approx3{,}0\cdot10^{-17}\ \text{J}
+M: \nu=\frac{A+E_k}{h}\approx\frac{3{,}07\cdot10^{-17}}{6{,}63\cdot10^{-34}}\approx4{,}6\cdot10^{16}\ \text{Hz}
+S: Javoblar kalitidagi $3{,}4\cdot10^{18}$ Hz elektron energiyasini foton kabi $E=pc$ deb hisoblashdan chiqadi, bu elektron uchun noto'g'ri. To'g'ri hisob $\approx4{,}6\cdot10^{16}$ Hz beradi, bunday variant esa yo'q.
+A: **B)** $3{,}4\cdot10^{18}$ Hz (javoblar kaliti bo'yicha)
+
+@31
+P: Tok davriy, davri $T$. $2T$ vaqt — butun sondagi davrlar, faza $4\pi$ ga o'zgaradi va kosinus qiymati takrorlanadi:
+M: i(t+2T)=i_0\cos\left(\frac{2\pi t}{T}+4\pi\right)=i(t)=-\frac{i_0}{3}
+A: **A)** $-i_0/3$
+
+@32
+P: Grafikda aktivlik o'zgarmas: $A=30\cdot10^4=3\cdot10^5$ Bq, ya'ni har sekundda $3\cdot10^5$ ta yadro parchalanadi.
+M: N=At=3\cdot10^5\cdot15=4{,}5\cdot10^6=4{,}5\ \text{mln}
+A: **D)** 4,5 mln
+
+@33
+G: 1: $(V_0;\,P_0)$, $T_0$; 2: $(V_0;\,4P_0)$; 3: $(3V_0;\,4P_0)$; 4: $(3V_0;\,P_0)$
+M: T\propto pV:\quad T_3=T_0\cdot\frac{4P_0\cdot3V_0}{P_0V_0}=12T_0
+A: **A)** $12T_0$
+
+@34
+M: Q_{12}=\frac32V_0(4P_0-P_0)=4{,}5\,P_0V_0
+M: Q_{23}=\frac52\cdot4P_0(3V_0-V_0)=20\,P_0V_0,\qquad Q_{13}=24{,}5\,P_0V_0
+A: **C)** $24{,}5\,P_0V_0$
+
+@35
+M: U=\frac32pV\;\Rightarrow\;\frac{U_4}{U_1}=\frac{P_0\cdot3V_0}{P_0V_0}=3
+A: **D)** 3 marta ortadi
+
+@36
+G: $v_0=60$ m/s, $g=10$ m/s²
+M: \text{a)}\ \ v=v_0-gt=60-30=30\ \text{m/s}
+M: \text{b)}\ \ h=v_0t-\frac{gt^2}{2}=240-80=160\ \text{m}
+A: a) 30 m/s; b) 160 m
+
+@37
+G: $k=2000$ N/m, $m=5$ kg
+P: **a)** O'zgarmas tezlikda tezlanish yo'q:
+M: x=\frac{mg}{k}=\frac{50}{2000}=0{,}025\ \text{m}=25\ \text{mm}
+M: \text{b)}\ \ x=\frac{m(g+a)}{k}=\frac{5\cdot12}{2000}=0{,}03\ \text{m}=3\ \text{cm}
+A: a) 25 mm; b) 3 cm
+
+@38
+G: $m=2$ kg, $\mu=0{,}5$, $k=100$ N/m
+P: **a)** Jism prujina kuchi tinchlikdagi maksimal ishqalanish kuchiga yetganda qo'zg'aladi:
+M: kx=\mu mg\;\Rightarrow\;x=\frac{0{,}5\cdot20}{100}=0{,}1\ \text{m}=10\ \text{cm}
+P: **b)** Prujina sekin cho'zilganda $F$ kuch bajargan ish prujina energiyasiga teng:
+M: A=\frac{kx^2}{2}=\frac{100\cdot0{,}01}{2}=0{,}5\ \text{J}
+A: a) 10 cm; b) 0,5 J
+
+@39
+P: Adiabatik jarayonda issiqlik almashinuvi yo'q: $Q=0$. Termodinamikaning 1-qonuni: $Q=\Delta U+A$.
+M: \Delta U=-A=-85\ \text{kJ}
+P: Ichki energiya **85 kJ ga kamayadi** (javoblar kalitida modul ko'rinishida: 85 kJ).
+A: a) 85 kJ ga kamayadi; b) 0
+
+@40
+G: Odam $m=60$ kg, arava $M=120$ kg, $L=6$ m; odamning aravaga nisbatan tezligi $u=6$ m/s
+P: **a)** Tashqi gorizontal kuchlar yo'q, impuls nolga teng qoladi. Yerga nisbatan odam tezligi $u-v$, arava esa qarama-qarshi $v$ tezlik bilan harakatlanadi:
+M: m(u-v)=Mv\;\Rightarrow\;v=\frac{mu}{m+M}=\frac{60\cdot6}{180}=2\ \text{m/s}
+P: **b)** Xuddi shu nisbat ko'chishlar uchun ham o'rinli (odam aravaga nisbatan $L$ yo'l bosadi):
+M: s=\frac{mL}{m+M}=\frac{60\cdot6}{180}=2\ \text{m}
+A: a) 2 m/s; b) 2 m
+
+@41
+M: \varepsilon=I_1(R_1+r)=I_2(R_2+r):\quad 5(5+r)=8(2+r)\;\Rightarrow\;r=3\ \Omega
+M: \varepsilon=5\cdot(5+3)=40\ \text{V}
+A: a) 3 Ω; b) 40 V
+
+@42
+M: \text{a)}\ \ I_m=I\sqrt2=2\sqrt2\approx2{,}83\ \text{A}
+M: \text{b)}\ \ U_m=U\sqrt2=220\sqrt2\approx311\ \text{V}
+A: a) $\approx2{,}83$ A; b) $\approx311$ V
+
+@43
+P: Haqiqiy tasvir: $f=3d$, predmet va tasvir linzaning turli tomonlarida: $d+f=80$ cm.
+M: 4d=80\;\Rightarrow\;d=20\ \text{cm},\quad f=60\ \text{cm}
+M: \frac1F=\frac1{20}+\frac1{60}=\frac4{60}\;\Rightarrow\;F=15\ \text{cm}
+A: a) 15 cm; b) 20 cm
+
+@44
+G: $\nu_0=3\cdot10^{14}$ Hz, $\nu=6\cdot10^{14}$ Hz
+M: \text{a)}\ \ A=h\nu_0=6{,}6\cdot10^{-34}\cdot3\cdot10^{14}\approx1{,}98\cdot10^{-19}\ \text{J}
+M: \text{b)}\ \ U=\frac{h(\nu-\nu_0)}{e}=\frac{1{,}98\cdot10^{-19}}{1{,}6\cdot10^{-19}}\approx1{,}23\ \text{V}
+A: a) $\approx1{,}98\cdot10^{-19}$ J; b) $\approx1{,}23$ V
+
+@45
+G: $R=200$ Ω, $t=5$ min $=300$ s
+P: **a)** Issiqlik tokning effektiv qiymati orqali hisoblanadi:
+M: Q=I^2Rt\;\Rightarrow\;I=\sqrt{\frac{270\,000}{200\cdot300}}=\sqrt{4{,}5}\approx2{,}12\ \text{A},\qquad I_m=I\sqrt2=3\ \text{A}
+M: \text{b)}\ \ A=\frac{U^2}{R}t=\frac{200^2}{200}\cdot300=60\,000\ \text{J}=60\ \text{kJ}
+A: a) 3 A; b) 60 kJ
