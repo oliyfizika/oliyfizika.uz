@@ -1,0 +1,205 @@
+{
+  "title": "Topic 14 | Elastic force. Hooke's law",
+  "questions": [
+    {
+      "text": "What causes the elastic force to arise?",
+      "answers": [
+        "Deformation of the body",
+        "The speed of the body",
+        "Attraction by the Earth",
+        "Friction between surfaces",
+        "A change in the body's mass"
+      ]
+    },
+    {
+      "text": "Choose the correct expression of Hooke's law.",
+      "answers": [
+        "F = m·g",
+        "F = μ·N",
+        "Fₓ = −k·x",
+        "F = m·a",
+        "F = k·x²"
+      ]
+    },
+    {
+      "text": "In what SI unit is the stiffness of a spring measured?",
+      "answers": [
+        "N",
+        "N·m",
+        "N/m²",
+        "N/m",
+        "kg/m"
+      ]
+    },
+    {
+      "text": "A spring of stiffness 200 N/m is stretched by 5 cm. Find the elastic force (N).",
+      "answers": [
+        "1000",
+        "100",
+        "10",
+        "1",
+        "40"
+      ]
+    },
+    {
+      "text": "A force of 4 N stretches a spring by 2 cm. Find the stiffness of the spring (N/m).",
+      "answers": [
+        "2",
+        "8",
+        "20",
+        "800",
+        "200"
+      ]
+    },
+    {
+      "text": "A 2 kg load hangs on a spring of stiffness 500 N/m. How much is the spring stretched at equilibrium (cm)? g = 10 m/s².",
+      "answers": [
+        "4",
+        "2.5",
+        "40",
+        "0.4",
+        "10"
+      ]
+    },
+    {
+      "text": "If the mass of the load hanging on a spring is tripled, how does the extension of the spring change?",
+      "answers": [
+        "Decreases 3 times",
+        "Does not change",
+        "Increases 9 times",
+        "Increases 3 times",
+        "Increases √3 times"
+      ]
+    },
+    {
+      "text": "Two springs with stiffnesses k₁ = 100 N/m and k₂ = 300 N/m are connected in parallel. Find the total stiffness (N/m).",
+      "answers": [
+        "75",
+        "200",
+        "400",
+        "300",
+        "150"
+      ]
+    },
+    {
+      "text": "Two springs with stiffnesses k₁ = 100 N/m and k₂ = 300 N/m are connected in series. Find the total stiffness (N/m).",
+      "answers": [
+        "400",
+        "75",
+        "200",
+        "133",
+        "50"
+      ]
+    },
+    {
+      "text": "A spring of stiffness k is cut into two equal halves. What is the stiffness of each half?",
+      "answers": [
+        "k/2",
+        "k",
+        "k/4",
+        "4k",
+        "2k"
+      ]
+    },
+    {
+      "text": "For which deformations is Hooke's law valid?",
+      "answers": [
+        "Only plastic deformations",
+        "Small elastic deformations",
+        "Any deformations",
+        "Only compression",
+        "Only torsion"
+      ]
+    },
+    {
+      "text": "How is the elastic force directed?",
+      "answers": [
+        "Always vertically downward",
+        "Along the displacement of particles",
+        "Always horizontally",
+        "Along the velocity of the body",
+        "Opposite to the displacement of particles during deformation"
+      ]
+    },
+    {
+      "text": "The graph of elastic force versus extension is a straight line through the origin, with F = 8 N at x = 4 cm. Find the stiffness of the spring (N/m).",
+      "answers": [
+        "2",
+        "20",
+        "32",
+        "200",
+        "0.5"
+      ]
+    },
+    {
+      "text": "The initial length of a spring is 10 cm. Under a force of 9 N its length became 13 cm. Find the stiffness of the spring (N/m).",
+      "answers": [
+        "30",
+        "90",
+        "300",
+        "60",
+        "3"
+      ]
+    },
+    {
+      "text": "How is the relation between mechanical stress σ and relative elongation ε (Hooke's law) written? E is Young's modulus.",
+      "answers": [
+        "σ = E/ε",
+        "σ = E·ε",
+        "σ = ε/E",
+        "σ = E + ε",
+        "σ = E·ε²"
+      ]
+    },
+    {
+      "text": "A steel wire 2 m long with a cross-sectional area of 1 mm² is acted on by a tensile force of 200 N. Find the elongation of the wire (mm). Young's modulus of steel E = 2·10¹¹ Pa.",
+      "answers": [
+        "0.2",
+        "2",
+        "20",
+        "1",
+        "4"
+      ]
+    },
+    {
+      "text": "A spring of stiffness 400 N/m is attached to the ceiling of a lift, and a 2 kg load hangs on it. The lift moves upward with an acceleration of 2 m/s². Find the extension of the spring (cm). g = 10 m/s².",
+      "answers": [
+        "5",
+        "4",
+        "6",
+        "3",
+        "8"
+      ]
+    },
+    {
+      "text": "Two identical springs connected in series stretch by 8 cm when a load is hung on them. If the same springs are connected in parallel and the same load is hung, what is the extension (cm)?",
+      "answers": [
+        "2",
+        "4",
+        "8",
+        "16",
+        "32"
+      ]
+    },
+    {
+      "text": "A 5 kg block on a horizontal surface is pulled at constant velocity by a spring of stiffness 250 N/m. The coefficient of friction is 0.2. Find the extension of the spring (cm). g = 10 m/s².",
+      "answers": [
+        "2",
+        "4",
+        "8",
+        "10",
+        "0.4"
+      ]
+    },
+    {
+      "text": "Which property of a body is called elasticity?",
+      "answers": [
+        "Keeping the deformation after the external force is removed",
+        "Conducting heat well",
+        "Conducting electric current",
+        "Breaking at a small deformation",
+        "Fully restoring its shape and volume after the external force is removed"
+      ]
+    }
+  ]
+}

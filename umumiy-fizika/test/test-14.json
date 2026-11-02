@@ -1,0 +1,229 @@
+{
+  "id": 14,
+  "title": "14-Mavzu | Elastiklik kuchi. Guk qonuni",
+  "subtitle": "Kamida 80% natija 15-darsni ochadi.",
+  "backUrl": "../mexanika.html",
+  "unlockLesson": 15,
+  "questions": [
+    {
+      "text": "Elastiklik kuchi qanday sababdan vujudga keladi?",
+      "answers": [
+        "Jismning deformatsiyalanishidan",
+        "Jismning harakat tezligidan",
+        "Yerning tortishidan",
+        "Sirtlarning ishqalanishidan",
+        "Jism massasining o‘zgarishidan"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Guk qonunining to‘g‘ri ifodasini ko‘rsating.",
+      "answers": [
+        "F = m·g",
+        "F = μ·N",
+        "Fₓ = −k·x",
+        "F = m·a",
+        "F = k·x²"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Prujinaning bikrligi XBS da qanday birlikda o‘lchanadi?",
+      "answers": [
+        "N",
+        "N·m",
+        "N/m²",
+        "N/m",
+        "kg/m"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Bikrligi 200 N/m bo‘lgan prujina 5 sm ga cho‘zildi. Elastiklik kuchini toping (N).",
+      "answers": [
+        "1000",
+        "100",
+        "10",
+        "1",
+        "40"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Prujinaga 4 N kuch ta’sir qilganda u 2 sm ga cho‘zildi. Prujina bikrligini toping (N/m).",
+      "answers": [
+        "2",
+        "8",
+        "20",
+        "800",
+        "200"
+      ],
+      "correct": 4
+    },
+    {
+      "text": "Bikrligi 500 N/m bo‘lgan prujinaga 2 kg massali yuk osildi. Muvozanat holatida prujina qancha cho‘ziladi (sm)? g = 10 m/s².",
+      "answers": [
+        "4",
+        "2,5",
+        "40",
+        "0,4",
+        "10"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Prujinaga osilgan yukning massasi 3 marta orttirilsa, prujinaning cho‘zilishi qanday o‘zgaradi?",
+      "answers": [
+        "3 marta kamayadi",
+        "o‘zgarmaydi",
+        "9 marta ortadi",
+        "3 marta ortadi",
+        "√3 marta ortadi"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Bikrliklari k₁ = 100 N/m va k₂ = 300 N/m bo‘lgan ikki prujina parallel ulandi. Sistemaning umumiy bikrligini toping (N/m).",
+      "answers": [
+        "75",
+        "200",
+        "400",
+        "300",
+        "150"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Bikrliklari k₁ = 100 N/m va k₂ = 300 N/m bo‘lgan ikki prujina ketma-ket ulandi. Sistemaning umumiy bikrligini toping (N/m).",
+      "answers": [
+        "400",
+        "75",
+        "200",
+        "133",
+        "50"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Bikrligi k bo‘lgan prujina teng ikki qismga bo‘lindi. Har bir qismning bikrligi qanday bo‘ladi?",
+      "answers": [
+        "k/2",
+        "k",
+        "k/4",
+        "4k",
+        "2k"
+      ],
+      "correct": 4
+    },
+    {
+      "text": "Guk qonuni qanday deformatsiyalar uchun o‘rinli?",
+      "answers": [
+        "Faqat plastik deformatsiyalar uchun",
+        "Kichik elastik deformatsiyalar uchun",
+        "Istalgan deformatsiyalar uchun",
+        "Faqat siqilish deformatsiyasi uchun",
+        "Faqat buralish deformatsiyasi uchun"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Elastiklik kuchi qanday yo‘nalgan bo‘ladi?",
+      "answers": [
+        "Doim vertikal pastga",
+        "Zarrachalar siljishi yo‘nalishida",
+        "Doim gorizontal",
+        "Jism tezligi yo‘nalishida",
+        "Deformatsiyada zarrachalar siljishiga qarama-qarshi"
+      ],
+      "correct": 4
+    },
+    {
+      "text": "Elastiklik kuchining cho‘zilishga bog‘lanish grafigi koordinata boshidan o‘tuvchi to‘g‘ri chiziq bo‘lib, x = 4 sm da F = 8 N. Prujina bikrligini toping (N/m).",
+      "answers": [
+        "2",
+        "20",
+        "32",
+        "200",
+        "0,5"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Prujinaning dastlabki uzunligi 10 sm. Unga 9 N kuch ta’sir qilganda uzunligi 13 sm bo‘ldi. Prujina bikrligini toping (N/m).",
+      "answers": [
+        "30",
+        "90",
+        "300",
+        "60",
+        "3"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Mexanik kuchlanish σ va nisbiy uzayish ε orasidagi bog‘lanish (Guk qonuni) qanday yoziladi? E — Yung moduli.",
+      "answers": [
+        "σ = E/ε",
+        "σ = E·ε",
+        "σ = ε/E",
+        "σ = E + ε",
+        "σ = E·ε²"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Uzunligi 2 m, ko‘ndalang kesim yuzi 1 mm² bo‘lgan po‘lat simga 200 N cho‘zuvchi kuch ta’sir qilmoqda. Simning uzayishini toping (mm). Po‘latning Yung moduli E = 2·10¹¹ Pa.",
+      "answers": [
+        "0,2",
+        "2",
+        "20",
+        "1",
+        "4"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Bikrligi 400 N/m bo‘lgan prujina lift shiftiga mahkamlangan va unga 2 kg massali yuk osilgan. Lift yuqoriga 2 m/s² tezlanish bilan ko‘tarilmoqda. Prujinaning cho‘zilishini toping (sm). g = 10 m/s².",
+      "answers": [
+        "5",
+        "4",
+        "6",
+        "3",
+        "8"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Ikkita bir xil prujina ketma-ket ulanib, ularga yuk osilganda cho‘zilish 8 sm bo‘ldi. Shu prujinalar parallel ulanib, o‘sha yuk osilsa, cho‘zilish qancha bo‘ladi (sm)?",
+      "answers": [
+        "2",
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Gorizontal sirtda yotgan 5 kg massali brusok bikrligi 250 N/m bo‘lgan prujina yordamida tekis tortilmoqda. Ishqalanish koeffitsiyenti 0,2. Prujinaning cho‘zilishini toping (sm). g = 10 m/s².",
+      "answers": [
+        "2",
+        "4",
+        "8",
+        "10",
+        "0,4"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Jismning qaysi xossasi elastiklik deyiladi?",
+      "answers": [
+        "Tashqi kuch olingach, deformatsiyaning saqlanib qolishi",
+        "Issiqlikni yaxshi o‘tkazish",
+        "Elektr tokini o‘tkazish",
+        "Kichik deformatsiyada sinib ketish",
+        "Tashqi kuch olingach, o‘z shakli va hajmini to‘liq tiklash"
+      ],
+      "correct": 4
+    }
+  ]
+}
