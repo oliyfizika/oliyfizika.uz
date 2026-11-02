@@ -499,7 +499,7 @@
     "α zarracha",
     "proton"
    ],
-   "answer": "D"
+   "answer": "C"
   },
   {
    "n": 33,
@@ -623,7 +623,7 @@
     {
      "key": "a",
      "text": "A va C oralig‘ida ideal gaz (bir atomli) ichki energiyasi qanchaga o‘zgarganini aniqlang.",
-     "answer": 146.25,
+     "answer": 247.5,
      "unit": "kJ",
      "tolerance": 0.3
     },
@@ -672,7 +672,7 @@
     {
      "key": "b",
      "text": "Kondensatorlar sistemasidagi kuchlanish 150 V bo‘lsa, sistemaning energiyasini aniqlang.",
-     "answer": 1,
+     "answer": 1.08,
      "unit": "μJ",
      "tolerance": 0.1
     }

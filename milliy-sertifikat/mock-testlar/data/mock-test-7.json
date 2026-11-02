@@ -198,7 +198,7 @@
     "3",
     "3/2"
    ],
-   "answer": "C"
+   "answer": "D"
   },
   {
    "n": 8,
@@ -620,16 +620,16 @@
     {
      "key": "a",
      "text": "Dastlabki havoning absolyut namligini toping.",
-     "answer": 26,
+     "answer": 21,
      "unit": "g/m³",
-     "tolerance": 0.1
+     "tolerance": 0.2
     },
     {
      "key": "b",
      "text": "Dastlabki havoning nisbiy namligini toping.",
-     "answer": 83.9,
+     "answer": 80.8,
      "unit": "%",
-     "tolerance": 0.2
+     "tolerance": 0.3
     }
    ]
   },
@@ -735,7 +735,7 @@
     {
      "key": "b",
      "text": "Zarraning 0,6c tezlik bilan harakatlanayotgandagi kinetik energiyasini toping. Javobni mc² ko‘rinishida yozing: mc² oldidagi sonli koeffitsiyentni kiriting.",
-     "answer": 0.5,
+     "answer": 0.125,
      "unit": "·mc²",
      "tolerance": 0.005
     }

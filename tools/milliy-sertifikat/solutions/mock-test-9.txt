@@ -1,0 +1,264 @@
+# Mock test №9 — yozma yechimlar
+@1
+P: Ko'tarilish va tushish vaqtlari teng:
+M: t=\frac{2v_0}{g}=\frac{2\cdot20}{10}=4\ \text{s}
+A: **B)** 4
+
+@2
+P: Guk qonuni: $\sigma=E\varepsilon$, demak nisbiy uzayish $\varepsilon=\frac{\Delta l}{l_0}=0{,}7$:
+M: l=l_0(1+\varepsilon)=1{,}7\,l_0
+A: **D)** 1,7
+
+@3
+P: Mexanik va elektromagnit tebranishlar analogiyasi: koordinata ↔ zaryad, tezlik ↔ tok kuchi, massa ↔ induktivlik, bikrlik ↔ $1/C$. Kinetik energiya $\frac{mv^2}{2}$ magnit energiya $\frac{LI^2}{2}$ ga mos keladi.
+A: **C)** induktivlik
+
+@4
+M: \omega=\frac{d\varphi}{dt}=20-2t=2(10-t)
+A: **B)** ω = 2(10 − t)
+
+@5
+P: $\Phi=LI$ bo'lgani uchun:
+M: W=\frac{LI^2}{2}=\frac{\Phi I}{2}=\frac{0{,}05\cdot2}{2}=0{,}05\ \text{J}=50\ \text{mJ}
+A: **C)** 50
+
+@6
+G: $R=30$ cm, $h=20$ cm, kuch markazga gorizontal qo'yilgan
+P: G'o'la zinapoya qirrasi atrofida aylanib ko'tariladi. Qirraga nisbatan kuchlar yelkalari: gorizontal kuch uchun vertikal masofa $R-h=10$ cm, og'irlik kuchi uchun gorizontal masofa:
+M: x=\sqrt{R^2-(R-h)^2}=\sqrt{900-100}=20\sqrt2\ \text{cm}
+P: Momentlar qoidasi:
+M: F(R-h)=mg\,x\;\Rightarrow\;F=mg\frac{20\sqrt2}{10}=2\sqrt2\,mg
+A: **B)** 2√2·mg
+
+@7
+G: $R=10$ Ω, $R_V=500$ Ω
+P: Parallel ulanganda rezistor va voltmetrning umumiy qarshiligi $R_{\parallel}=\frac{10\cdot500}{510}\approx9{,}80$ Ω. Voltmetr ko'rsatishlari:
+M: U_1=\frac{\varepsilon R_{\parallel}}{R_{\parallel}+r},\qquad U_2=\frac{\varepsilon R_V}{R+R_V+r}
+M: U_1=U_2\;\Rightarrow\;R_{\parallel}(510+r)=500(R_{\parallel}+r)\;\Rightarrow\;r=\frac{10R_{\parallel}}{500-R_{\parallel}}=\frac{98{,}04}{490{,}2}=0{,}2\ \Omega
+A: **A)** 0,2
+
+@8
+P: Panjara formulasi $d\sin\varphi=k\lambda$, $\sin\varphi\le1$ dan:
+M: k\le\frac d\lambda=2\;\Rightarrow\;k=0,\ \pm1,\ \pm2
+P: Jami $2\cdot2+1=5$ ta maksimum.
+U: $k=\pm2$ maksimumlar $\varphi=90^\circ$ ga to'g'ri keladi, ya'ni panjara tekisligi bo'ylab yo'nalgan va amalda ekranda kuzatilmaydi. Qat'iy hisoblaganda 3 ta maksimum ko'rinadi; kalit $k_{\max}=d/\lambda$ ni ham sanaydigan maktab yondashuviga asoslangan.
+A: **D)** 5
+
+@9
+G: $\nu=2$ mol, $T_1=300$ K, $V_2=3V_1$, $p$ = const
+M: T_2=3T_1=900\ \text{K},\qquad Q=\frac52\nu R\Delta T=\frac52\cdot2\cdot8{,}31\cdot600\approx24\,900\ \text{J}\approx25\ \text{kJ}
+A: **C)** 25
+
+@10
+M: m=\rho Sd=0{,}9\cdot10^3\cdot2\cdot0{,}002=3{,}6\ \text{kg}
+M: Q=\lambda m=3{,}3\cdot10^5\cdot3{,}6\approx1{,}19\cdot10^6\ \text{J}\approx1{,}2\ \text{MJ}
+A: **B)** ≈1,2
+
+@11
+P: Kuchlanish bir tekis o'sadi, tok ham chiziqli o'zgaradi: $I_0=\frac23$ A, $I=\frac43$ A. O'rtacha tok 1 A:
+M: q=I_{\text{o'r}}t=\frac{I_0+I}{2}t=1\cdot20=20\ \text{C}
+A: **C)** 20
+
+@12
+G: $V=2$ m³, $T=320$ K, $m=4$ kg, $M=0{,}032$ kg/mol
+M: p=\frac{mRT}{MV}=\frac{4\cdot8{,}3\cdot320}{0{,}032\cdot2}=166\,000\ \text{Pa}=1{,}66\cdot10^5\ \text{Pa}
+S: Hisob 166 kPa ni beradi. Variantlar $10^5$ Pa birligida yozilgan ko'rinadi: «kPa» o'rniga «$\cdot10^5$ Pa» bo'lishi kerak edi. Kalitdagi B) 1,66 shu ma'noda to'g'ri.
+A: **B)** 1,66 (ya'ni $1{,}66\cdot10^5$ Pa)
+
+@13
+G: $a=0{,}5$ m/s², $s=60$ m, $v=4v_0$
+M: v^2-v_0^2=2as\;\Rightarrow\;15v_0^2=60\;\Rightarrow\;v_0=2\ \text{m/s}
+A: **B)** 2
+
+@14
+P: Tezlik 2 marta kamaysa, kinetik energiya 4 marta kamayadi. Yo'qolgan energiya issiqlikka aylanadi:
+M: E-\frac E4=\frac34E=15\ \text{J}\;\Rightarrow\;E=20\ \text{J}
+U: Shartda «absolyut elastik urilish» deyilgan, ammo bunday urilishda energiya yo'qolmaydi va tezlik o'zgarmaydi. Mazmunan urilish noelastik.
+A: **C)** 20
+
+@15
+G: Sterjen yuqori uchidan sharnirga mahkamlangan, uzunligining $1/5$ qismi suvda
+P: Sharnirga nisbatan momentlar qoidasi. Og'irlik kuchi sterjen o'rtasiga ($L/2$), Arximed kuchi suvdagi qism o'rtasiga qo'yilgan, u sharnirdan $0{,}9L$ uzoqlikda. Ikkala kuch ham vertikal, yelkalardagi $\sin\alpha$ qisqaradi:
+M: \rho SLg\cdot\frac L2=\rho_sS\frac L5g\cdot0{,}9L\;\Rightarrow\;\rho=2\cdot0{,}2\cdot0{,}9\,\rho_s=0{,}36\ \text{g/cm}^3
+A: **B)** 0,36
+
+@16
+P: Sharcha $H$ balandlikdan tushadi va suvda $h$ chuqurlikda to'xtaydi. Arximed kuchi $F_A=\rho_sVg=n\,mg$. Ish–energiya teoremasi (boshlang'ich va oxirgi tezlik nol):
+M: mg(H+h)-nmg\,h=0\;\Rightarrow\;H=h(n-1)
+A: **A)** H = h(n − 1)
+
+@17
+M: V=\frac{m}{\rho}=\frac{N\mu}{N_A\rho}=\frac{10^{22}\cdot0{,}012}{6{,}02\cdot10^{23}\cdot3500}\approx5{,}7\cdot10^{-8}\ \text{m}^3
+A: **D)** 5,7·10⁻⁸
+
+@18
+P: Katak tomoni $d$ bo'lsin. Rasmdan: $X$ va $Y$ gorizontal $4I$ tokdan $2d$ yuqorida, vertikal $I$ tokdan esa $X$ chapda, $Y$ o'ngda $d$ masofada. To'g'ri tok maydoni $B=\frac{\mu_0I}{2\pi r}$.
+P: $4I$ tok (o'ngga) har ikkala nuqtada bir xil maydon beradi: $B'\propto\frac{4I}{2d}=\frac{2I}{d}$, chizma tekisligidan bizga qarab. $I$ tok (yuqoriga) $X$ da bizga qarab, $Y$ da chizma ichiga $\frac Id$ maydon beradi:
+M: B_X\propto\frac{2I}{d}+\frac{I}{d}=\frac{3I}{d},\qquad B_Y\propto\frac{2I}{d}-\frac{I}{d}=\frac{I}{d},\qquad \frac{B_X}{B_Y}=3
+A: **B)** 3
+
+@19
+M: \frac{v_2}{v_1}=\sqrt{\frac{T_2}{T_1}}=\sqrt{\frac{313}{310}}\approx1{,}0048
+P: Tezlik taxminan 0,48 % ga ortadi.
+A: **B)** 0,48
+
+@20
+M: [\varphi]=\frac{\text{J}}{\text{C}}=\frac{\text{kg·m}^2\text{·s}^{-2}}{\text{A·s}}=\text{kg·m}^2\text{·s}^{-3}\text{·A}^{-1}
+A: **B)** kg·m²·s⁻³·A⁻¹
+
+@21
+P: $W=\frac{q^2}{2C}$ — zaryadning kvadratik funksiyasi, grafigi koordinata boshidan chiquvchi parabola.
+A: **C)** C grafik
+
+@22
+G: $C=10$ μF, $\varepsilon=10$ V, $r=1$ Ω, $R=10$ Ω (uchta ketma-ket), kondensator uchinchi rezistorga parallel
+P: Statsionar holatda kondensator orqali tok o'tmaydi:
+M: I=\frac{\varepsilon}{3R+r}=\frac{10}{31}\ \text{A},\qquad U_C=IR=\frac{100}{31}\approx3{,}23\ \text{V}
+M: W=\frac{CU_C^2}{2}=\frac{10\cdot10^{-6}\cdot10{,}4}{2}\approx52\ \mu\text{J}
+S: Sxema va shart bo'yicha $W\approx52$ μJ chiqadi, variantlarda bunday javob yo'q. Kalitdagi 16 μJ ni berilgan ma'lumotlardan hosil qilib bo'lmaydi.
+A: **D)** 16 (javoblar kaliti bo'yicha)
+
+@23
+G: $m=0{,}01$ kg, $F=2\cdot10^{-3}\cos\omega t$ N, $\omega=2\pi$ rad/s, boshlang'ich tezlik nol
+M: a=\frac{F_0}{m}\cos\omega t\;\Rightarrow\;v=\frac{F_0}{m\omega}\sin\omega t,\qquad v_{\max}=\frac{2\cdot10^{-3}}{0{,}01\cdot2\pi}\approx0{,}0318\ \text{m/s}
+M: E_{k,\max}=\frac{mv_{\max}^2}{2}=\frac{0{,}01\cdot1{,}01\cdot10^{-3}}{2}\approx5\cdot10^{-6}\ \text{J}=5\ \mu\text{J}
+A: **C)** 5
+
+@24
+P: O'rtacha yashash vaqti $\tau=1/\lambda$. Bu vaqtda qolgan yadrolar ulushi $e^{-1}$:
+M: \frac{\Delta N}{N_0}=1-e^{-1}\approx1-0{,}37=0{,}63
+A: **C)** 0,63
+
+@25
+M: \lambda=\frac{h}{\sqrt{2mE_k}}=\frac{6{,}63\cdot10^{-34}}{\sqrt{2\cdot9{,}1\cdot10^{-31}\cdot60\cdot1{,}6\cdot10^{-19}}}\approx\frac{6{,}63\cdot10^{-34}}{4{,}18\cdot10^{-24}}\approx1{,}58\cdot10^{-10}\ \text{m}=158\ \text{pm}
+A: **D)** 158
+
+@26
+P: Balmer formulasi (chastota orqali):
+M: \nu=R\left(\frac1{2^2}-\frac1{4^2}\right)=3{,}27\cdot10^{15}\cdot\frac{3}{16}\approx6{,}13\cdot10^{14}\ \text{Hz}
+M: \lambda=\frac c\nu=\frac{3\cdot10^8}{6{,}13\cdot10^{14}}\approx4{,}89\cdot10^{-7}\ \text{m}
+P: Eng yaqin variant — 485 nm (bu $H_\beta$ chizig'i, $\approx486$ nm).
+A: **B)** 485
+
+@27
+P: Neytron zaryadsiz, elektr maydon unga ta'sir qilmaydi. U to'g'ri chiziqli tekis harakatini davom ettiradi.
+A: **A)** to'g'ri chiziqli tekis
+
+@28
+P: Rasmda $S$ nuqta linzadan $2F$ dan biroz uzoqda va optik o'qdan yuqorida. Yig'uvchi linza bunday buyumning haqiqiy, teskari, kichraygan tasvirini $F$ va $2F$ oralig'ida, optik o'qdan pastda beradi. Bunday nuqta — 3.
+P: (1 va 2 linzaning buyum tomonida, 4 esa optik o'qdan yuqorida — ular mos kelmaydi.)
+A: **C)** 3
+
+@29
+M: N=\nu t=2\cdot120=240
+A: **B)** 240
+
+@30
+P: Ishqalanish yo'q. Sistema tezlanishi $a=\frac{F}{m_1+m_2}$, ip $m_2$ ni tortadi:
+M: T=m_2a=\frac{m_2F}{m_1+m_2}=\frac{0{,}8\cdot0{,}5t}{1}=0{,}4t
+M: 0{,}4t=2\;\Rightarrow\;t=5\ \text{s}
+A: **C)** 5
+
+@31
+G: $m=40$ kg, $CB=0{,}6$ m, $AB=1$ m, $g=9{,}8$ m/s²
+P: $AC=\sqrt{1-0{,}36}=0{,}8$ m, $\cos\alpha=\frac{AC}{AB}=0{,}8$. $B$ nuqta muvozanati: $AB$ sterjen kuchining vertikal tashkil etuvchisi yuk og'irligini muvozanatlaydi:
+M: F_{AB}\cos\alpha=mg\;\Rightarrow\;F_{AB}=\frac{40\cdot9{,}8}{0{,}8}=490\ \text{N}
+A: **C)** 490
+
+@32
+P: Chap qism: $12C$ va $4C$ ketma-ket ($3C$) hamda unga parallel $3C$ — jami $6C$. O'ng qism: $5C$ va $20C$ ketma-ket ($4C$) hamda unga parallel $8C$ — jami $12C$. $K$ dan $L$ gacha: $6C$, yuqoridagi $12C$ va $12C$ ketma-ket:
+M: \frac1{C_{KL}}=\frac1{6C}+\frac1{12C}+\frac1{12C}=\frac{1}{3C}\;\Rightarrow\;C_{KL}=3C
+A: **D)** 3
+
+@33
+G: $C=50$ μF, $L=0{,}2$ H, $R=5$ Ω, $U=220$ V, $\nu=100$ Hz
+M: X_L=2\pi\nu L\approx125{,}7\ \Omega,\qquad X_C=\frac{1}{2\pi\nu C}\approx31{,}8\ \Omega
+M: Z=\sqrt{R^2+(X_L-X_C)^2}=\sqrt{25+93{,}9^2}\approx94\ \Omega,\qquad I=\frac{220}{94}\approx2{,}34\ \text{A}
+A: **F)** 2,34
+
+@34
+P: Rezonansda $X_L=X_C$, $Z=R$:
+M: I_0=\frac UR=\frac{220}{5}=44\ \text{A}
+A: **C)** 44
+
+@35
+M: \omega_0=\frac{1}{\sqrt{LC}}=\frac{1}{\sqrt{0{,}2\cdot50\cdot10^{-6}}}\approx316\ \text{rad/s},\qquad X_L=\omega_0L\approx63{,}2\ \Omega
+P: G'altakning o'zi aktiv qarshilikka ham ega, uning to'liq qarshiligi $\sqrt{R^2+X_L^2}\approx63{,}4$ Ω:
+M: U_{\text{g'}}=I_0\sqrt{R^2+X_L^2}=44\cdot63{,}4\approx2790\ \text{V}\approx2{,}8\ \text{kV}
+A: **A)** 2,8
+
+@36
+G: $v_0=72$ km/h $=20$ m/s, $s=1000$ m, $v=0$
+P: **a)** Tekis sekinlanuvchan harakatda o'rtacha tezlik $v_0/2$:
+M: t=\frac{2s}{v_0}=\frac{2000}{20}=100\ \text{s}
+P: **b)** $a=\frac{v_0^2}{2s}$. Yo'lning o'rtasida:
+M: v^2=v_0^2-2a\frac s2=\frac{v_0^2}{2}\;\Rightarrow\;v=\frac{v_0}{\sqrt2}=\frac{72}{\sqrt2}\approx50{,}9\ \text{km/h}
+S: Javoblar kalitida b) qism uchun 88,2 km/h berilgan edi, bu boshlang'ich tezlikdan (72 km/h) ham katta, sekinlanayotgan poyezd uchun bo'lishi mumkin emas. To'g'ri javob $72/\sqrt2\approx50{,}9$ km/h, kalit tuzatildi.
+A: a) 100 s; b) ≈50,9 km/h
+
+@37
+G: $T=300$ K, $M=0{,}002$ kg/mol
+M: \text{a)}\ \ v=\sqrt{\frac{3RT}{M}}=\sqrt{\frac{3\cdot8{,}31\cdot300}{0{,}002}}\approx1930\ \text{m/s}\approx1{,}9\ \text{km/s}
+M: \text{b)}\ \ m_0=\frac{M}{N_A}=\frac{0{,}002}{6{,}02\cdot10^{23}}\approx3{,}32\cdot10^{-27}\ \text{kg},\qquad p=m_0v\approx6{,}4\cdot10^{-24}\ \text{kg·m/s}
+A: a) ≈1,9 km/s; b) $\approx6{,}45\cdot10^{-24}$ kg·m/s
+
+@38
+G: Suzganda $V_1=0{,}72$ m³ suvni, to'liq botganda $V=0{,}9$ m³ suvni siqib chiqaradi
+P: **a)** Suzish sharti: og'irlik kuchi Arximed kuchiga teng:
+M: m=\rho_sV_1=1000\cdot0{,}72=720\ \text{kg}
+P: **b)** G'o'la hajmi 0,9 m³:
+M: \rho=\frac mV=\frac{720}{0{,}9}=800\ \text{kg/m}^3
+A: a) 720 kg; b) 800 kg/m³
+
+@39
+G: $r_1=0{,}53\cdot10^{-10}$ m
+P: Kulon kuchi markazga intilma kuchni beradi:
+M: \frac{ke^2}{r^2}=\frac{mv^2}{r}\;\Rightarrow\;v=\sqrt{\frac{ke^2}{mr}}=\sqrt{\frac{9\cdot10^9\cdot2{,}56\cdot10^{-38}}{9{,}1\cdot10^{-31}\cdot0{,}53\cdot10^{-10}}}\approx2{,}19\cdot10^6\ \text{m/s}
+M: \text{a)}\ \ T=\frac{2\pi r}{v}=\frac{2\cdot3{,}14\cdot0{,}53\cdot10^{-10}}{2{,}19\cdot10^6}\approx1{,}5\cdot10^{-16}\ \text{s}
+M: \text{b)}\ \ \omega=\frac{2\pi}{T}=\frac{v}{r}\approx4{,}1\cdot10^{16}\ \text{rad/s}
+A: a) $\approx1{,}5\cdot10^{-16}$ s; b) $\approx4{,}2\cdot10^{16}$ rad/s
+
+@40
+G: $p=8$ MPa, $\Delta V=0{,}5$ m³, $Q=6$ MJ
+M: \text{a)}\ \ A=p\Delta V=8\cdot10^6\cdot0{,}5=4\cdot10^6\ \text{J}=4\ \text{MJ}
+M: \text{b)}\ \ \Delta U=Q-A=6-4=2\ \text{MJ}
+A: a) 4 MJ; b) 2 MJ
+
+@41
+P: Buyum $2F$ dan uzoqda turganda mavhum tasvirni faqat sochuvchi linza beradi. $d=4F$, fokus masofasi $-F$:
+M: \text{a)}\ \ \frac1f=-\frac1F-\frac1{4F}=-\frac{5}{4F}\;\Rightarrow\;|f|=0{,}8F
+M: \text{b)}\ \ \Gamma=\frac{|f|}{d}=\frac{0{,}8F}{4F}=0{,}2
+P: Tasvir buyumdan 5 marta kichik.
+A: a) 0,8F; b) 5 marta
+
+@42
+G: Yuk $h=8$ cm ko'tarildi, $A=184$ J
+P: **a)** Ishqalanish bo'lmasa, kuch bajargan ish yukning potensial energiyasiga aylanadi:
+M: P=\frac{A}{h}=\frac{184}{0{,}08}=2300\ \text{N}=2{,}3\ \text{kN}
+P: **b)** Kuch qo'yilgan nuqta 2 m siljigan:
+M: F=\frac{A}{s}=\frac{184}{2}=92\ \text{N}
+A: a) 2,3 kN; b) 92 N
+
+@43
+G: $t=10$ s, $q=24$ C, $U=12$ V
+M: I=\frac qt=2{,}4\ \text{A}
+M: \text{a)}\ \ P=UI=12\cdot2{,}4=28{,}8\ \text{W}
+M: \text{b)}\ \ R=\frac UI=\frac{12}{2{,}4}=5\ \Omega
+S: Javoblar kalitida a) qism uchun 28,2 W berilgan edi. $P=UI=12\cdot2{,}4=28{,}8$ W, kalit tuzatildi.
+A: a) 28,8 W; b) 5 Ω
+
+@44
+G: $T_{1/2}=12{,}4$ soat
+M: \text{a)}\ \ \tau=\frac{T_{1/2}}{\ln2}=\frac{12{,}4}{0{,}693}\approx17{,}9\ \text{soat}
+M: \text{b)}\ \ \lambda=\frac1\tau=\frac{0{,}693}{12{,}4}\approx0{,}056\ \text{soat}^{-1}
+A: a) ≈17,9 soat; b) ≈0,056 1/soat
+
+@45
+G: $E_1=200$ MeV (bitta bo'linishda), $m=1$ kg, $M=0{,}238$ kg/mol, $q=46$ MJ/kg
+P: **a)** Yadrolar soni:
+M: N=\frac{m}{M}N_A=\frac{1}{0{,}238}\cdot6{,}02\cdot10^{23}\approx2{,}53\cdot10^{24}
+M: E=NE_1\approx2{,}53\cdot10^{24}\cdot200\approx5\cdot10^{26}\ \text{MeV}
+P: **b)** $E\approx5\cdot10^{26}\cdot1{,}6\cdot10^{-13}=8\cdot10^{13}$ J:
+M: m_b=\frac{E}{q}=\frac{8\cdot10^{13}}{4{,}6\cdot10^7}\approx1{,}74\cdot10^6\ \text{kg}\approx1740\ \text{t}
+P: (Yaxlitlanmagan $E=5{,}06\cdot10^{26}$ MeV bilan $\approx1760$ t chiqadi, u ham to'g'ri hisoblanadi.)
+A: a) $\approx5\cdot10^{26}$ MeV; b) ≈1740 t
