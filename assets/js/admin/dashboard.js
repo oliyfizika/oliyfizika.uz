@@ -14,6 +14,7 @@ const STATS = {
   admins: query(users, where("role", "==", "admin")),
   fullAccess: query(users, where("fullAccess", "==", true)),
   mock: query(users, where("mockTestsAccess", "==", true)),
+  attestation: query(users, where("attestationAccess", "==", true)),
   results: query(results),
 };
 
