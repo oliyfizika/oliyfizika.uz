@@ -25,6 +25,9 @@ rules_version = '2';
 //     • faqat egasi yaratadi, users.xp/level/lastXpGrant yangilanishi bilan BIRGA (batch/tranzaksiya);
 //       natija (results/{resultId}) shu foydalanuvchiniki, shu mavzu, passed va foizi XP'ga mos bo'lishi shart.
 //     • egasi va admin o'qiydi; update/delete — hech kim (immutable).
+//   mockTestAttempts/{uid}__{attemptId}   (Milliy sertifikat mock urinishlari — admin statistikasi)
+//     • egasi yaratadi (o'z uid'i, xulosa maydonlari tekshiriladi); egasi o'z yozuvini, admin hammasini o'qiydi;
+//       update — hech kim; delete — faqat admin.
 //   users/{uid}/gameSets/{setId}   (interaktiv o'yinlar — foydalanuvchi to'plamlari)
 //     • faqat egasi o'qiydi/yozadi/o'chiradi; maydonlar va hajm tekshiriladi.
 //   Qolgan barcha yo'llar — yopiq (default deny).
@@ -251,6 +254,54 @@ service cloud.firestore {
     match /results/{resultId} {
       allow create: if signedIn() && validResult(request.resource.data);
       allow read: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow update: if false;
+      allow delete: if isAdmin();
+    }
+
+    // ---------------------------------------------------------------- mockTestAttempts
+    // Milliy sertifikat interaktiv mock testlari — topshirilgan urinish xulosasi (admin statistikasi uchun).
+    // Kod: milliy-sertifikat/mock-testlar/js/attempt-record.js. ID: {uid}__{attemptId} (bitta urinish — bitta yozuv).
+    // Ball brauzerda hisoblanadi (statistika uchun; rasmiy natija emas). Xom/to'g'ri javoblar yozilmaydi.
+    // Egasi yaratadi va o'z yozuvini o'qiydi; ro'yxat — faqat admin; update — hech kim; delete — faqat admin.
+    // mockTestsAccess / pullik yechimlar bilan bog'liq emas.
+    function okCount(d, key) {
+      return d[key] is int && d[key] >= 0 && d[key] <= 1000;
+    }
+
+    function validMockAttempt(d, docId) {
+      return d.keys().hasOnly(['schemaVersion', 'uid', 'name', 'email', 'testId', 'testNumber', 'testTitle', 'attemptId',
+                               'correct', 'maxScore', 'percent', 'full', 'partial', 'blank', 'questionCount',
+                               'durationSec', 'autoSubmitted', 'focusLoss', 'startedAtMs', 'finishedAtMs', 'submittedAt'])
+        && d.keys().hasAll(['schemaVersion', 'uid', 'testId', 'attemptId', 'correct', 'maxScore', 'percent', 'submittedAt'])
+        && d.schemaVersion == 1
+        && d.uid == request.auth.uid
+        && d.attemptId is string && d.attemptId.matches('[A-Za-z0-9-]{8,64}')
+        && docId == d.uid + '__' + d.attemptId
+        && d.testId is string && d.testId.matches('mock-test-[0-9]{1,3}')
+        && okCount(d, 'correct') && okCount(d, 'maxScore') && d.maxScore > 0 && d.correct <= d.maxScore
+        && d.percent is int && d.percent >= 0 && d.percent <= 100
+        && (d.percent * d.maxScore - d.correct * 100) * 2 <= d.maxScore
+        && (d.percent * d.maxScore - d.correct * 100) * 2 >= 0 - d.maxScore
+        && (!('full' in d) || okCount(d, 'full'))
+        && (!('partial' in d) || okCount(d, 'partial'))
+        && (!('blank' in d) || okCount(d, 'blank'))
+        && (!('questionCount' in d) || okCount(d, 'questionCount'))
+        && (!('testNumber' in d) || okCount(d, 'testNumber'))
+        && (!('focusLoss' in d) || (d.focusLoss is int && d.focusLoss >= 0))
+        && (!('durationSec' in d) || (d.durationSec is int && d.durationSec >= 0 && d.durationSec <= 86400))
+        && (!('startedAtMs' in d) || d.startedAtMs is int)
+        && (!('finishedAtMs' in d) || (d.finishedAtMs is int && d.finishedAtMs <= request.time.toMillis() + 600000))
+        && (!('autoSubmitted' in d) || d.autoSubmitted is bool)
+        && (!('email' in d) || d.email == authEmail())
+        && okString(d, 'name', 200)
+        && okString(d, 'testTitle', 200)
+        && d.submittedAt == request.time;
+    }
+
+    match /mockTestAttempts/{docId} {
+      allow create: if signedIn() && validMockAttempt(request.resource.data, docId);
+      allow get: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow list: if isAdmin();
       allow update: if false;
       allow delete: if isAdmin();
     }

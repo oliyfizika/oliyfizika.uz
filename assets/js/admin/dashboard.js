@@ -16,6 +16,7 @@ const STATS = {
   mock: query(users, where("mockTestsAccess", "==", true)),
   attestation: query(users, where("attestationAccess", "==", true)),
   results: query(results),
+  mockAttempts: query(collection(fb.db, "mockTestAttempts")),
 };
 
 async function loadStats() {

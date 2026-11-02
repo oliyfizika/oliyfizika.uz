@@ -55,6 +55,7 @@ export const ADMIN_NAV_GROUPS = [
       { id: "admin-dashboard", label: "Dashboard", icon: "chart", href: "admin/index.html", match: ["admin/index.html", "admin/"], protected: true },
       { id: "admin-users", label: "Foydalanuvchilar", icon: "users", href: "admin/users.html", match: ["admin/users.html", "admin/user.html"], protected: true },
       { id: "admin-results", label: "Natijalar", icon: "clipboard", href: "admin/results.html", match: ["admin/results.html"], protected: true },
+      { id: "admin-mock-results", label: "Mock natijalari", icon: "certificate", href: "admin/mock-results.html", match: ["admin/mock-results.html"], protected: true },
       { id: "admin-access", label: "Access boshqaruvi", icon: "key", href: "admin/access.html", match: ["admin/access.html"], protected: true },
       { id: "admin-attestatsiya-fizika", label: "Attestatsiya — Fizika", icon: "clipboard", href: "admin/attestatsiya-fizika.html", match: ["admin/attestatsiya-fizika.html"], protected: true },
       { id: "admin-settings", label: "Sozlamalar", icon: "settings", href: "admin/settings.html", match: ["admin/settings.html"], protected: true },
