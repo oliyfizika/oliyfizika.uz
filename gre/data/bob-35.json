@@ -1,0 +1,67 @@
+{
+ "id": 35,
+ "title": "Interferensiya",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Yung tajribasida tirqishlar orasidagi masofa 2 marta kamaytirilsa, interferension yo‘llar orasidagi masofa:",
+   "a": [
+    "2 marta kamayadi",
+    "o‘zgarmaydi",
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "$\\sqrt2$ marta oshadi"
+   ],
+   "c": 2,
+   "e": "$\\Delta y=\\lambda L/d$."
+  },
+  {
+   "q": "Havodagi sovun pardasi ($n$) qaytgan yorug‘likda $\\lambda$ to‘lqin uzunligi uchun kuchaytirish bersa, pardaning minimal qalinligi:",
+   "a": [
+    "$\\lambda/(2n)$",
+    "$\\lambda/(4n)$",
+    "$\\lambda/n$",
+    "$\\lambda/4$",
+    "$\\lambda/2$"
+   ],
+   "c": 1,
+   "e": "Yuqori sirtdan qaytishda $\\pi$ faza sakrashi: $2nt=\\lambda/2$."
+  },
+  {
+   "q": "Maykelson interferometrida bir ko‘zgu $d$ masofaga siljitilganda maydondan nechta yo‘l o‘tadi?",
+   "a": [
+    "$d/\\lambda$",
+    "$d/(2\\lambda)$",
+    "$4d/\\lambda$",
+    "$2d/\\lambda$",
+    "$\\lambda/d$"
+   ],
+   "c": 3,
+   "e": "Yo‘l farqi $2d$ ga o‘zgaradi."
+  },
+  {
+   "q": "Yung tajribasi to‘liq suvga (sindirish ko‘rsatkichi $n$) botirildi. Yo‘llar orasidagi masofa:",
+   "a": [
+    "$n$ marta kamayadi",
+    "$n$ marta oshadi",
+    "o‘zgarmaydi",
+    "$n^2$ marta kamayadi",
+    "yo‘llar yo‘qoladi"
+   ],
+   "c": 0,
+   "e": "Muhitda to‘lqin uzunligi $\\lambda/n$."
+  },
+  {
+   "q": "Ikkita alohida cho‘g‘lanma lampa yorug‘ligi ekranda barqaror interferensiya manzarasi hosil qilmaydi. Sababi:",
+   "a": [
+    "intensivliklari har xil",
+    "nurlar kogerent emas",
+    "to‘lqin uzunliklari juda kichik",
+    "lampalar qutblangan yorug‘lik chiqaradi",
+    "yorug‘lik to‘lqin emas"
+   ],
+   "c": 1,
+   "e": "Mustaqil manbalar orasidagi faza farqi tasodifiy va tez o‘zgaradi."
+  }
+ ]
+}

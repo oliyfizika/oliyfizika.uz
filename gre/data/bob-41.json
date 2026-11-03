@@ -1,0 +1,67 @@
+{
+ "id": 41,
+ "title": "Qattiq jismlarda elektr o‘tkazuvchanlik",
+ "area": "maxsus",
+ "questions": [
+  {
+   "q": "Taqiqlangan zona kengligining tipik qiymatlari uchun to‘g‘ri tasdiq:",
+   "a": [
+    "metallda ~5 eV",
+    "yarimo‘tkazgichda ~1 eV, dielektrikda bir necha eV va undan katta",
+    "yarimo‘tkazgichda ~100 eV",
+    "dielektrikda nol",
+    "barchasida bir xil"
+   ],
+   "c": 1,
+   "e": "Si: 1,1 eV; olmos: ~5,5 eV."
+  },
+  {
+   "q": "Kremniyga qaysi kirishma qo‘shilsa $n$-tip yarimo‘tkazgich hosil bo‘ladi?",
+   "a": [
+    "bor",
+    "alyuminiy",
+    "galliy",
+    "fosfor",
+    "indiy"
+   ],
+   "c": 3,
+   "e": "Fosfor besh valentli — donor."
+  },
+  {
+   "q": "Fermi–Dirak taqsimotida energiya Fermi sathiga teng bo‘lgan holatning ($T>0$) to‘ldirilish ehtimoli:",
+   "a": [
+    "0",
+    "1",
+    "1/2",
+    "$1/e$",
+    "temperaturaga bog‘liq"
+   ],
+   "c": 2,
+   "e": "$f=1/(e^0+1)$."
+  },
+  {
+   "q": "Toza yarimo‘tkazgichning solishtirma o‘tkazuvchanligi temperatura oshishi bilan:",
+   "a": [
+    "oshadi",
+    "kamayadi",
+    "o‘zgarmaydi",
+    "nolga tushadi",
+    "avval kamayib, so‘ng oshadi"
+   ],
+   "c": 0,
+   "e": "$n_i\\propto e^{-E_g/(2kT)}$."
+  },
+  {
+   "q": "Taqiqlangan zonasi 2 eV bo‘lgan yorug‘lik diodi taxminan qanday to‘lqin uzunlikda nur chiqaradi? ($hc\\approx1240$ eV·nm)",
+   "a": [
+    "310 nm",
+    "620 nm",
+    "1240 nm",
+    "2480 nm",
+    "450 nm"
+   ],
+   "c": 1,
+   "e": "$\\lambda=1240/2=620$ nm."
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": 27,
+ "title": "Zanjirlar",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Qarshiligi $R$ bo‘lgan ikki rezistor parallel ulanib, ularga uchinchi $R$ ketma-ket ulangan. Umumiy qarshilik:",
+   "a": [
+    "$R/3$",
+    "$2R/3$",
+    "$3R/2$",
+    "$3R$",
+    "$2R$"
+   ],
+   "c": 2,
+   "e": "$R/2+R=3R/2$."
+  },
+  {
+   "q": "EYuK $\\mathcal E$, ichki qarshiligi $r$ bo‘lgan manbadan tashqi rezistorga uzatiladigan maksimal quvvat:",
+   "a": [
+    "$\\mathcal E^2/r$",
+    "$\\mathcal E^2/(2r)$",
+    "$\\mathcal E^2r$",
+    "$\\mathcal E^2/(4r)$",
+    "$2\\mathcal E^2/r$"
+   ],
+   "c": 3,
+   "e": "$R=r$ bo‘lganda $P=\\mathcal E^2R/(R+r)^2=\\mathcal E^2/(4r)$."
+  },
+  {
+   "q": "RC zanjirda kondensator zaryadlanmoqda. $t=RC$ vaqtda zaryad maksimal qiymatning taxminan qanday qismiga yetadi?",
+   "a": [
+    "37%",
+    "50%",
+    "63%",
+    "86%",
+    "100%"
+   ],
+   "c": 2,
+   "e": "$q=q_0(1-e^{-1})\\approx0{,}63\\,q_0$."
+  },
+  {
+   "q": "Uitston ko‘prigi muvozanatlashgan. Diagonaldagi galvanometr orqali o‘tuvchi tok:",
+   "a": [
+    "nolga teng",
+    "maksimal",
+    "manba tokiga teng",
+    "manba tokining yarmiga teng",
+    "galvanometr qarshiligiga bog‘liq"
+   ],
+   "c": 0,
+   "e": "Muvozanatda diagonal uchlari bir xil potensialda."
+  },
+  {
+   "q": "Lampaga ideal voltmetr ketma-ket ulanib, zanjir manbaga ulandi. Nima kuzatiladi?",
+   "a": [
+    "Lampa normal yonadi, voltmetr nolni ko‘rsatadi",
+    "Lampa yonmaydi, voltmetr taxminan manba EYuK ini ko‘rsatadi",
+    "Voltmetr kuyadi",
+    "Lampa kuyadi",
+    "Voltmetr lampadagi kuchlanishni ko‘rsatadi"
+   ],
+   "c": 1,
+   "e": "Ideal voltmetr qarshiligi cheksiz, tok deyarli nol; butun kuchlanish voltmetrga tushadi."
+  }
+ ]
+}

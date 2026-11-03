@@ -1,0 +1,67 @@
+{
+ "id": 19,
+ "title": "Gazlarning kinetik nazariyasi",
+ "area": "termo",
+ "questions": [
+  {
+   "q": "Bir xil temperaturada geliy ($M=4$) va kislorod ($M=32$) molekulalarining o‘rtacha kvadratik tezliklari nisbati $v_{He}/v_{O_2}$:",
+   "a": [
+    "8",
+    "$2\\sqrt2$",
+    "$\\sqrt2$",
+    "1",
+    "1/8"
+   ],
+   "c": 1,
+   "e": "$v\\propto1/\\sqrt M$: $\\sqrt{32/4}=\\sqrt8$."
+  },
+  {
+   "q": "Xona temperaturasida ikki atomli ideal gazning molyar issiqlik sig‘imi $C_V$:",
+   "a": [
+    "$3R/2$",
+    "$5R/2$",
+    "$7R/2$",
+    "$3R$",
+    "$R$"
+   ],
+   "c": 1,
+   "e": "3 ta ilgarilanma + 2 ta aylanma erkinlik darajasi; tebranma darajalar xona temperaturasida \"muzlagan\"."
+  },
+  {
+   "q": "Bir atomli ideal gaz adiabatik siqilib, hajmi 2 marta kamaydi. Bosim necha marta oshadi?",
+   "a": [
+    "2",
+    "$2^{3/5}$",
+    "$2^{5/3}$",
+    "4",
+    "$2^{7/5}$"
+   ],
+   "c": 2,
+   "e": "$pV^\\gamma=\\text{const}$, $\\gamma=5/3$."
+  },
+  {
+   "q": "O‘zgarmas temperaturada gaz bosimi 2 marta oshirilsa, molekulalarning erkin yugurish yo‘li uzunligi:",
+   "a": [
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "4 marta kamayadi",
+    "2 marta kamayadi",
+    "$\\sqrt2$ marta kamayadi"
+   ],
+   "c": 3,
+   "e": "$\\lambda=1/(\\sqrt2\\pi d^2n)$, $n=p/(kT)$."
+  },
+  {
+   "q": "Maksvell taqsimotidagi eng ehtimolli tezlik $v_p$, o‘rtacha tezlik $\\bar v$ va o‘rtacha kvadratik tezlik $v_{rms}$ uchun to‘g‘ri tartib:",
+   "a": [
+    "$v_p<\\bar v<v_{rms}$",
+    "$\\bar v<v_p<v_{rms}$",
+    "$v_{rms}<\\bar v<v_p$",
+    "$v_p=\\bar v<v_{rms}$",
+    "uchalasi teng"
+   ],
+   "c": 0,
+   "e": "$\\sqrt2:\\sqrt{8/\\pi}:\\sqrt3\\approx1{,}41:1{,}60:1{,}73$ (birlik $\\sqrt{kT/m}$)."
+  }
+ ]
+}

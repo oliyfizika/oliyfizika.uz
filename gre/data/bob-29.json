@@ -1,0 +1,67 @@
+{
+ "id": 29,
+ "title": "Tok hosil qiladigan magnit maydon",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Cheksiz uzun to‘g‘ri tokdan masofa 2 marta oshirilsa, magnit induksiya:",
+   "a": [
+    "4 marta kamayadi",
+    "2 marta kamayadi",
+    "o‘zgarmaydi",
+    "2 marta oshadi",
+    "8 marta kamayadi"
+   ],
+   "c": 1,
+   "e": "$B=\\mu_0I/(2\\pi r)$."
+  },
+  {
+   "q": "Ikki parallel o‘tkazgichdan bir yo‘nalishda tok oqmoqda. Ular:",
+   "a": [
+    "tortishadi",
+    "itarishadi",
+    "o‘zaro ta’sirlashmaydi",
+    "buraladi",
+    "tok kuchiga qarab itariladi yoki tortiladi"
+   ],
+   "c": 0,
+   "e": "Bir yo‘nalishdagi toklar tortishadi."
+  },
+  {
+   "q": "Uzun solenoid uzunligi o‘zgarmagan holda o‘ramlar soni 2 marta oshirildi, radiusi esa 2 marta kamaytirildi. Ichidagi magnit induksiya:",
+   "a": [
+    "o‘zgarmaydi",
+    "4 marta oshadi",
+    "2 marta oshadi",
+    "8 marta oshadi",
+    "2 marta kamayadi"
+   ],
+   "c": 2,
+   "e": "$B=\\mu_0nI$, radiusga bog‘liq emas."
+  },
+  {
+   "q": "Radiusi $R$ bo‘lgan aylana o‘ramdan $I$ tok oqmoqda. O‘ram markazidagi magnit induksiya:",
+   "a": [
+    "$\\mu_0I/(2\\pi R)$",
+    "$\\mu_0I/(2R)$",
+    "$\\mu_0I/R$",
+    "$\\mu_0I/(4R)$",
+    "$\\mu_0IR$"
+   ],
+   "c": 1,
+   "e": "Bio–Savar–Laplas qonunidan."
+  },
+  {
+   "q": "Radiusi $R$ bo‘lgan uzun yo‘g‘on o‘tkazgichda tok kesim bo‘ylab bir tekis taqsimlangan. O‘tkazgich ichida ($r<R$) magnit induksiya:",
+   "a": [
+    "nolga teng",
+    "$1/r$ ga proporsional",
+    "o‘zgarmas",
+    "$r^2$ ga proporsional",
+    "$r$ ga proporsional"
+   ],
+   "c": 4,
+   "e": "Amper: $B\\cdot2\\pi r=\\mu_0I r^2/R^2$."
+  }
+ ]
+}

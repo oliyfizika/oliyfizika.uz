@@ -14,6 +14,7 @@ export const NAV_GROUPS = [
       { id: "milliy-sertifikat", label: "Milliy sertifikat", icon: "certificate", href: "milliy-sertifikat/milliy-sertifikat.html", match: ["milliy-sertifikat/"], protected: true },
       { id: "attestatsiya", label: "Attestatsiya", icon: "clipboard", href: "attestatsiya/index.html", match: ["attestatsiya/"], protected: true },
       { id: "olimpiada", label: "Olimpiada", icon: "trophy", href: "olimpiada/olimpiada.html", match: ["olimpiada/"], protected: true },
+      { id: "gre", label: "GRE Physics", icon: "target", href: "gre/gre.html", match: ["gre/"], protected: true, publicLanding: true },
       { id: "quizzes", label: "Quizlar", icon: "quiz", href: "quizs/quizs.html", match: ["quizs/"], protected: true, publicLanding: true },
       { id: "oyinlar", label: "Interaktiv o‘yinlar", icon: "gamepad", href: "interaktiv-oyinlar/interaktiv-oyinlar.html", match: ["interaktiv-oyinlar/"], protected: false }, // o‘yinlar avvaldan ochiq
       { id: "simulyatsiyalar", label: "Simulyatsiyalar", icon: "flask", href: "simulations/simulations.html", match: ["simulations/"], protected: true },

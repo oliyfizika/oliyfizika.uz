@@ -1,0 +1,67 @@
+{
+ "id": 36,
+ "title": "Difraksiya",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Kengligi $a$ bo‘lgan bitta tirqishdagi difraksiyada birinchi minimum sharti:",
+   "a": [
+    "$a\\sin\\theta=\\lambda/2$",
+    "$a\\sin\\theta=\\lambda$",
+    "$a\\sin\\theta=2\\lambda$",
+    "$a\\cos\\theta=\\lambda$",
+    "$\\sin\\theta=a/\\lambda$"
+   ],
+   "c": 1,
+   "e": "Tirqishni ikki yarmiga bo‘lib, juft-juft so‘nish."
+  },
+  {
+   "q": "Teleskop obyektivi diametri 2 marta oshirilsa, minimal ajrata oladigan burchak (Reley mezoni):",
+   "a": [
+    "2 marta kamayadi",
+    "2 marta oshadi",
+    "4 marta kamayadi",
+    "o‘zgarmaydi",
+    "$\\sqrt2$ marta kamayadi"
+   ],
+   "c": 0,
+   "e": "$\\theta\\approx1{,}22\\lambda/D$."
+  },
+  {
+   "q": "$N$ ta yoritilgan shtrixga ega difraksion panjaraning $m$-tartibdagi ajrata olish qobiliyati:",
+   "a": [
+    "$N/m$",
+    "$m/N$",
+    "$N$",
+    "$m$",
+    "$mN$"
+   ],
+   "c": 4,
+   "e": "$\\lambda/\\Delta\\lambda=mN$."
+  },
+  {
+   "q": "Kristall tekisliklari orasidagi masofa $d$. Rentgen nurlari uchun Bregg sharti ($\\theta$ — sirpanish burchagi):",
+   "a": [
+    "$d\\sin\\theta=m\\lambda$",
+    "$2d\\sin\\theta=m\\lambda$",
+    "$2d\\cos\\theta=m\\lambda$",
+    "$d\\cos\\theta=m\\lambda$",
+    "$d=m\\lambda$"
+   ],
+   "c": 1,
+   "e": "Ikki qo‘shni tekislikdan qaytgan nurlar yo‘l farqi $2d\\sin\\theta$."
+  },
+  {
+   "q": "Bitta tirqish kengligi 2 marta kamaytirilsa, ekrandagi markaziy maksimum kengligi:",
+   "a": [
+    "2 marta kamayadi",
+    "o‘zgarmaydi",
+    "4 marta oshadi",
+    "2 marta oshadi",
+    "$\\sqrt2$ marta oshadi"
+   ],
+   "c": 3,
+   "e": "Kichik burchaklarda kenglik $2\\lambda L/a$."
+  }
+ ]
+}

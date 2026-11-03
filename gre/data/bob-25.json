@@ -1,0 +1,67 @@
+{
+ "id": 25,
+ "title": "Sig‘im",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Yassi kondensator qoplamalari orasidagi masofa 2 marta oshirildi va oraliq to‘liq $\\varepsilon=2$ dielektrik bilan to‘ldirildi. Sig‘im:",
+   "a": [
+    "o‘zgarmaydi",
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "2 marta kamayadi",
+    "4 marta kamayadi"
+   ],
+   "c": 0,
+   "e": "$C=\\varepsilon\\varepsilon_0S/d$: $\\times2$ va $\\div2$."
+  },
+  {
+   "q": "Zaryadlangan kondensator manbadan uzildi, so‘ng qoplamalar orasidagi masofa 2 marta oshirildi. Kondensator energiyasi:",
+   "a": [
+    "o‘zgarmaydi",
+    "2 marta oshadi",
+    "2 marta kamayadi",
+    "4 marta oshadi",
+    "4 marta kamayadi"
+   ],
+   "c": 1,
+   "e": "$Q$ o‘zgarmas, $C$ yarmiga tushadi: $W=Q^2/(2C)$."
+  },
+  {
+   "q": "Sig‘imi 2 μF va 3 μF bo‘lgan kondensatorlar ketma-ket ulangan. Umumiy sig‘im:",
+   "a": [
+    "5 μF",
+    "2,5 μF",
+    "1,2 μF",
+    "6 μF",
+    "0,83 μF"
+   ],
+   "c": 2,
+   "e": "$C=\\dfrac{2\\cdot3}{2+3}=1{,}2$ μF."
+  },
+  {
+   "q": "$U_0$ kuchlanishgacha zaryadlangan $C$ sig‘imli kondensator xuddi shunday zaryadsiz kondensatorga ulandi. Tizim energiyasining qanday qismi saqlanib qoladi?",
+   "a": [
+    "1",
+    "1/4",
+    "1/2",
+    "3/4",
+    "1/8"
+   ],
+   "c": 2,
+   "e": "Kuchlanish $U_0/2$: $2\\cdot\\tfrac12C(U_0/2)^2=\\tfrac14CU_0^2$, ya’ni boshlang‘ichning yarmi."
+  },
+  {
+   "q": "Vakuumdagi elektr maydon energiyasining hajmiy zichligi:",
+   "a": [
+    "$\\varepsilon_0E$",
+    "$\\varepsilon_0E^2$",
+    "$E^2/(2\\varepsilon_0)$",
+    "$\\varepsilon_0E^2/2$",
+    "$\\varepsilon_0E/2$"
+   ],
+   "c": 3,
+   "e": "$w=\\varepsilon_0E^2/2$."
+  }
+ ]
+}

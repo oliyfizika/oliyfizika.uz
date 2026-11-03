@@ -1,0 +1,67 @@
+{
+ "id": 3,
+ "title": "Vektorlar",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "$\\vec A=3\\hat i+4\\hat j$ va $\\vec B=4\\hat i-3\\hat j$ vektorlar orasidagi burchak:",
+   "a": [
+    "0°",
+    "37°",
+    "53°",
+    "90°",
+    "180°"
+   ],
+   "c": 3,
+   "e": "$\\vec A\\cdot\\vec B=12-12=0$, demak vektorlar perpendikulyar."
+  },
+  {
+   "q": "$\\vec A=\\hat i+\\hat j$ va $\\vec B=\\hat j+\\hat k$ bo‘lsa, $|\\vec A\\times\\vec B|$ nimaga teng?",
+   "a": [
+    "1",
+    "$\\sqrt2$",
+    "$\\sqrt3$",
+    "2",
+    "3"
+   ],
+   "c": 2,
+   "e": "$\\vec A\\times\\vec B=\\hat i-\\hat j+\\hat k$, moduli $\\sqrt3$."
+  },
+  {
+   "q": "Modullari 3 va 4 bo‘lgan ikki vektor yig‘indisining moduli quyidagilardan qaysi biri bo‘la OLMAYDI?",
+   "a": [
+    "1",
+    "3",
+    "5",
+    "7",
+    "8"
+   ],
+   "c": 4,
+   "e": "Yig‘indi moduli $|A-B|$ dan $A+B$ gacha, ya’ni 1 dan 7 gacha bo‘ladi."
+  },
+  {
+   "q": "Ixtiyoriy $\\vec A$ va $\\vec B$ uchun $\\vec A\\cdot(\\vec A\\times\\vec B)$ nimaga teng?",
+   "a": [
+    "0",
+    "$A^2B$",
+    "$AB\\sin\\theta$",
+    "$A^2B\\cos\\theta$",
+    "Aniqlab bo‘lmaydi"
+   ],
+   "c": 0,
+   "e": "$\\vec A\\times\\vec B$ vektor $\\vec A$ ga perpendikulyar, shuning uchun skalyar ko‘paytma nol."
+  },
+  {
+   "q": "$2\\hat i-\\hat j+2\\hat k$ yo‘nalishidagi birlik vektor:",
+   "a": [
+    "$(2\\hat i-\\hat j+2\\hat k)/\\sqrt5$",
+    "$(2\\hat i-\\hat j+2\\hat k)/3$",
+    "$(2\\hat i-\\hat j+2\\hat k)/9$",
+    "$(2\\hat i+\\hat j+2\\hat k)/3$",
+    "$\\hat i+\\hat k$"
+   ],
+   "c": 1,
+   "e": "Modul $\\sqrt{4+1+4}=3$."
+  }
+ ]
+}

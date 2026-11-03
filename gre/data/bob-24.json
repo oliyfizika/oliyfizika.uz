@@ -1,0 +1,67 @@
+{
+ "id": 24,
+ "title": "Elektr potensial",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Radiusi $R$ bo‘lgan halqada $Q$ zaryad notekis taqsimlangan. Halqa markazidagi potensial:",
+   "a": [
+    "0",
+    "$kQ/R$",
+    "$kQ/R^2$",
+    "taqsimotga bog‘liq",
+    "$2kQ/R$"
+   ],
+   "c": 1,
+   "e": "Barcha zaryad elementlari markazdan bir xil $R$ masofada; potensial skalyar."
+  },
+  {
+   "q": "Zaryadni ekvipotensial sirt bo‘ylab ko‘chirishda elektr maydon bajargan ish:",
+   "a": [
+    "0",
+    "$qV$",
+    "$-qV$",
+    "yo‘l uzunligiga bog‘liq",
+    "$qEd$"
+   ],
+   "c": 0,
+   "e": "$W=q(V_1-V_2)=0$."
+  },
+  {
+   "q": "Radiusi $R$, zaryadi $Q$ bo‘lgan o‘tkazuvchi shar ichida, markazdan $R/2$ masofadagi potensial:",
+   "a": [
+    "0",
+    "$2kQ/R$",
+    "$kQ/R$",
+    "$kQ/(2R)$",
+    "$3kQ/(2R)$"
+   ],
+   "c": 2,
+   "e": "O‘tkazgich ichida $E=0$, potensial sirtdagi bilan bir xil."
+  },
+  {
+   "q": "Tinch holatdagi elektron 100 V potensiallar farqida tezlashtirildi. Uning kinetik energiyasi:",
+   "a": [
+    "1 eV",
+    "10 eV",
+    "100 eV",
+    "$100e$ J",
+    "$1{,}6\\cdot10^{-19}$ J"
+   ],
+   "c": 2,
+   "e": "$K=eU=100$ eV."
+  },
+  {
+   "q": "Potensial $V(x,y)=3x^2y$ (V, koordinatalar metrda). $(1;\\,1)$ nuqtadagi maydon kuchlanganligi moduli:",
+   "a": [
+    "3 V/m",
+    "6 V/m",
+    "9 V/m",
+    "$3\\sqrt5$ V/m",
+    "$\\sqrt{45}/2$ V/m"
+   ],
+   "c": 3,
+   "e": "$\\vec E=-\\nabla V=-(6xy,\\,3x^2)=(-6,-3)$, $|\\vec E|=\\sqrt{45}=3\\sqrt5$."
+  }
+ ]
+}

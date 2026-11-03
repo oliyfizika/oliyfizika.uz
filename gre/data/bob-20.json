@@ -1,0 +1,67 @@
+{
+ "id": 20,
+ "title": "Entropiya va termodinamikaning ikkinchi qonuni",
+ "area": "termo",
+ "questions": [
+  {
+   "q": "600 K va 300 K temperaturali rezervuarlar orasida ishlaydigan Karno mashinasining FIK:",
+   "a": [
+    "25%",
+    "50%",
+    "67%",
+    "75%",
+    "100%"
+   ],
+   "c": 1,
+   "e": "$\\eta=1-T_2/T_1=1/2$."
+  },
+  {
+   "q": "$n$ mol ideal gaz izotermik ravishda hajmini ikki marta oshirdi. Entropiya o‘zgarishi:",
+   "a": [
+    "0",
+    "$nR$",
+    "$nR\\ln2$",
+    "$-nR\\ln2$",
+    "$2nR$"
+   ],
+   "c": 2,
+   "e": "$\\Delta S=Q/T=nR\\ln(V_2/V_1)$."
+  },
+  {
+   "q": "$n$ mol ideal gaz izolyatsiyalangan idishda vakuumga erkin kengayib, hajmini 2 marta oshirdi. Entropiya o‘zgarishi:",
+   "a": [
+    "0, chunki $Q=0$",
+    "$nR\\ln2$",
+    "$-nR\\ln2$",
+    "$nC_V\\ln2$",
+    "aniqlab bo‘lmaydi"
+   ],
+   "c": 1,
+   "e": "Entropiya holat funksiyasi: boshlang‘ich va oxirgi holatlar izotermik jarayondagidek; qaytmas jarayonda $\\Delta S>0$."
+  },
+  {
+   "q": "Har biri faqat ikki holatda bo‘la oladigan $N$ ta mustaqil zarradan iborat sistemaning mumkin bo‘lgan mikroholatlari bo‘yicha maksimal entropiyasi:",
+   "a": [
+    "$Nk$",
+    "$k\\ln N$",
+    "$Nk\\ln2$",
+    "$2Nk$",
+    "$k\\ln2$"
+   ],
+   "c": 2,
+   "e": "$\\Omega=2^N$, $S=k\\ln\\Omega$."
+  },
+  {
+   "q": "Ideal (Karno) sovutkich 250 K li kamerani 300 K li xonaga issiqlik chiqarib sovutmoqda. Sovutish koeffitsienti:",
+   "a": [
+    "1/5",
+    "5/6",
+    "6",
+    "5",
+    "1,2"
+   ],
+   "c": 3,
+   "e": "$K=T_2/(T_1-T_2)=250/50=5$."
+  }
+ ]
+}

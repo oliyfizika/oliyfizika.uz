@@ -1,0 +1,67 @@
+{
+ "id": 6,
+ "title": "Kuch va harakat – II",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Avtomobil radiusi $R$ bo‘lgan gorizontal (qiyalanmagan) burilishdan o‘tmoqda, tinch ishqalanish koeffitsienti $\\mu$. Sirpanmasdan o‘tish uchun maksimal tezlik:",
+   "a": [
+    "$\\mu gR$",
+    "$\\sqrt{gR/\\mu}$",
+    "$\\sqrt{2\\mu gR}$",
+    "$gR/\\mu$",
+    "$\\sqrt{\\mu gR}$"
+   ],
+   "c": 4,
+   "e": "$\\mu mg=mv^2/R$."
+  },
+  {
+   "q": "Jism qiyalik burchagi $\\theta$ bo‘lgan qiya tekislikdan o‘zgarmas tezlik bilan sirpanmoqda. Sirpanish ishqalanish koeffitsienti:",
+   "a": [
+    "$\\tan\\theta$",
+    "$\\sin\\theta$",
+    "$\\cos\\theta$",
+    "$\\cot\\theta$",
+    "1"
+   ],
+   "c": 0,
+   "e": "$mg\\sin\\theta=\\mu mg\\cos\\theta$."
+  },
+  {
+   "q": "Ipga bog‘langan jism radiusi $R$ bo‘lgan vertikal aylana bo‘ylab aylanmoqda. Ip eng yuqori nuqtada bo‘shashmasligi uchun shu nuqtadagi minimal tezlik:",
+   "a": [
+    "$\\sqrt{2gR}$",
+    "$\\sqrt{5gR}$",
+    "$\\sqrt{gR}$",
+    "0",
+    "$2\\sqrt{gR}$"
+   ],
+   "c": 2,
+   "e": "Yuqorida $T=0$ chegarada $mg=mv^2/R$."
+  },
+  {
+   "q": "Havo qarshiligi kuchi $F=kv^2$ ko‘rinishida. Shakli bir xil, lekin massasi 4 marta katta jismning chegaraviy (terminal) tezligi:",
+   "a": [
+    "4 marta katta",
+    "2 marta katta",
+    "16 marta katta",
+    "$\\sqrt2$ marta katta",
+    "o‘zgarmaydi"
+   ],
+   "c": 1,
+   "e": "$mg=kv_t^2\\Rightarrow v_t\\propto\\sqrt m$."
+  },
+  {
+   "q": "Gorizontal sirtda massasi 5 kg blok yotibdi, $\\mu_s=0{,}5$ ($g=10$ m/s²). Blokka 10 N gorizontal kuch qo‘yilsa, ishqalanish kuchi:",
+   "a": [
+    "25 N",
+    "50 N",
+    "0",
+    "10 N",
+    "5 N"
+   ],
+   "c": 3,
+   "e": "Maksimal tinch ishqalanish 25 N > 10 N, blok qimirlamaydi va ishqalanish qo‘yilgan kuchni muvozanatlaydi: 10 N."
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": 16,
+ "title": "To‘lqinlar – I",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Ipning tarangligi 4 marta oshirilsa, undagi ko‘ndalang to‘lqin tezligi:",
+   "a": [
+    "4 marta oshadi",
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "16 marta oshadi",
+    "2 marta kamayadi"
+   ],
+   "c": 1,
+   "e": "$v=\\sqrt{F/\\mu}$."
+  },
+  {
+   "q": "To‘lqin $y=0{,}02\\sin(4x-8t)$ (SI) tenglama bilan berilgan. Tarqalish tezligi va yo‘nalishi:",
+   "a": [
+    "2 m/s, $+x$",
+    "2 m/s, $-x$",
+    "0,5 m/s, $+x$",
+    "32 m/s, $+x$",
+    "8 m/s, $-x$"
+   ],
+   "c": 0,
+   "e": "$v=\\omega/k=8/4=2$ m/s; $kx-\\omega t$ ko‘rinish $+x$ yo‘nalishni bildiradi."
+  },
+  {
+   "q": "Ikki uchi mahkamlangan, uzunligi $L$ bo‘lgan ipda to‘lqin tezligi $v$. Uchinchi garmonika chastotasi:",
+   "a": [
+    "$v/(2L)$",
+    "$3v/L$",
+    "$3v/(2L)$",
+    "$3v/(4L)$",
+    "$v/L$"
+   ],
+   "c": 2,
+   "e": "$f_n=nv/(2L)$."
+  },
+  {
+   "q": "Ipdagi sinusoidal to‘lqin uzatayotgan quvvat $A^2\\omega^2$ ga proporsional. Amplituda ham, chastota ham ikki marta oshirilsa, quvvat:",
+   "a": [
+    "4 marta",
+    "8 marta",
+    "16 marta",
+    "2 marta",
+    "32 marta"
+   ],
+   "c": 2,
+   "e": "$2^2\\cdot2^2=16$."
+  },
+  {
+   "q": "Amplitudasi $A$, chastotasi bir xil, fazalar farqi $\\pi/2$ bo‘lgan ikki to‘lqin qo‘shiladi. Natijaviy amplituda:",
+   "a": [
+    "0",
+    "$A$",
+    "$2A$",
+    "$A\\sqrt2$",
+    "$A/\\sqrt2$"
+   ],
+   "c": 3,
+   "e": "$2A\\cos(\\varphi/2)=2A\\cos45°=A\\sqrt2$."
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": 30,
+ "title": "Induksiya va induktivlik",
+ "area": "em",
+ "questions": [
+  {
+   "q": "$N$ o‘ramli, yuzi $S$ bo‘lgan g‘altak orqali magnit induksiya $B=B_0\\sin\\omega t$ qonun bilan o‘zgaradi (maydon sirtga tik). Maksimal EYuK:",
+   "a": [
+    "$B_0S$",
+    "$NB_0S$",
+    "$NB_0S\\omega$",
+    "$NB_0\\omega$",
+    "$B_0S\\omega/N$"
+   ],
+   "c": 2,
+   "e": "$\\mathcal E=-N\\,d\\Phi/dt=-NSB_0\\omega\\cos\\omega t$."
+  },
+  {
+   "q": "Kuchli magnit vertikal mis quvur ichiga tashlandi. Magnit qanday harakatlanadi?",
+   "a": [
+    "erkin tushadi",
+    "erkin tushishga qaraganda sekinroq tushadi",
+    "tezroq tushadi",
+    "quvur devoriga yopishib qoladi",
+    "yuqoriga qaytadi"
+   ],
+   "c": 1,
+   "e": "Lens qoidasi: quvurdagi uyurma toklar harakatga qarshilik qiladi."
+  },
+  {
+   "q": "G‘altakdagi tok 2 marta oshirilsa, magnit maydon energiyasi:",
+   "a": [
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "8 marta oshadi",
+    "4 marta oshadi",
+    "$\\sqrt2$ marta oshadi"
+   ],
+   "c": 3,
+   "e": "$W=LI^2/2$."
+  },
+  {
+   "q": "RL zanjirning vaqt doimiysi:",
+   "a": [
+    "$RL$",
+    "$L/R$",
+    "$R/L$",
+    "$\\sqrt{LR}$",
+    "$1/\\sqrt{LR}$"
+   ],
+   "c": 1,
+   "e": "$I=I_0(1-e^{-tR/L})$."
+  },
+  {
+   "q": "Uzunligi $l$ bo‘lgan sterjen $R$ qarshilikli relslar ustida $B$ maydonda (relslar tekisligiga tik) o‘zgarmas $v$ tezlik bilan harakatlanmoqda. Buning uchun kerakli tashqi kuch:",
+   "a": [
+    "$Blv$",
+    "$Bl v/R$",
+    "$B^2lv/R$",
+    "$B^2l^2/(vR)$",
+    "$B^2l^2v/R$"
+   ],
+   "c": 4,
+   "e": "$\\mathcal E=Blv$, $I=Blv/R$, $F=IlB$."
+  }
+ ]
+}

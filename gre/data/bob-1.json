@@ -1,0 +1,67 @@
+{
+ "id": 1,
+ "title": "O‘lchash, birliklar va o‘lchamlar tahlili",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Planck doimiysi $h$ ning SI asosiy birliklaridagi ifodasi qaysi?",
+   "a": [
+    "$\\text{kg}\\cdot\\text{m/s}^2$",
+    "$\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$",
+    "$\\text{kg}\\cdot\\text{m}^2/\\text{s}$",
+    "$\\text{kg}\\cdot\\text{m/s}$",
+    "$\\text{J/s}$"
+   ],
+   "c": 2,
+   "e": "$E=h\\nu$ dan $[h]=\\text{J}\\cdot\\text{s}=\\text{kg}\\cdot\\text{m}^2/\\text{s}$."
+  },
+  {
+   "q": "Uzunligi $L$ bo‘lgan matematik mayatnikning kichik tebranishlar davri $T$ massa $m$, $L$ va $g$ ga bog‘liq bo‘lishi mumkin. O‘lchamlar tahliliga ko‘ra $T$ qaysi kattalikka proporsional?",
+   "a": [
+    "$L/g$",
+    "$\\sqrt{g/L}$",
+    "$\\sqrt{mL/g}$",
+    "$\\sqrt{L/g}$",
+    "$Lg$"
+   ],
+   "c": 3,
+   "e": "Vaqt o‘lchamini faqat $\\sqrt{L/g}$ beradi; massa boshqa hech bir kattalik bilan qisqarmaydi, shuning uchun $T$ ga kirmaydi."
+  },
+  {
+   "q": "Tarang ipda ko‘ndalang to‘lqin tezligi ipning tarangligi $F$ va chiziqli zichligi $\\mu$ ga bog‘liq. O‘lchamlar tahliliga ko‘ra tezlik:",
+   "a": [
+    "$F/\\mu$",
+    "$\\sqrt{F/\\mu}$",
+    "$\\sqrt{\\mu/F}$",
+    "$F\\mu$",
+    "$\\sqrt{F\\mu}$"
+   ],
+   "c": 1,
+   "e": "$[F/\\mu]=\\dfrac{\\text{kg}\\cdot\\text{m/s}^2}{\\text{kg/m}}=\\text{m}^2/\\text{s}^2$, demak $v\\propto\\sqrt{F/\\mu}$."
+  },
+  {
+   "q": "Massasi 70 kg bo‘lgan odam tanasidagi atomlar sonining tartibi qanday? (Tana asosan suvdan iborat deb hisoblang.)",
+   "a": [
+    "$10^{17}$",
+    "$10^{22}$",
+    "$10^{27}$",
+    "$10^{32}$",
+    "$10^{37}$"
+   ],
+   "c": 2,
+   "e": "Suvda bir atomga o‘rtacha $18/3=6$ g/mol to‘g‘ri keladi: $70\\,000/6\\approx10^4$ mol, $10^4\\cdot6\\cdot10^{23}\\approx10^{27}$."
+  },
+  {
+   "q": "Quyidagi kombinatsiyalardan qaysi biri o‘lchamsiz?",
+   "a": [
+    "$\\hbar c/e^2$",
+    "$e^2/(\\varepsilon_0\\hbar)$",
+    "$k_BT/\\hbar$",
+    "$Gm_e^2/\\hbar$",
+    "$e^2/(4\\pi\\varepsilon_0\\hbar c)$"
+   ],
+   "c": 4,
+   "e": "Bu nozik struktura doimiysi $\\alpha\\approx1/137$. $e^2/(4\\pi\\varepsilon_0)$ ning o‘lchami J·m, $\\hbar c$ niki ham J·m."
+  }
+ ]
+}

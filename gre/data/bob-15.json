@@ -1,0 +1,67 @@
+{
+ "id": 15,
+ "title": "Tebranishlar",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Prujinali mayatnikda yuk massasi 4 marta oshirilsa, tebranish davri:",
+   "a": [
+    "4 marta oshadi",
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "2 marta kamayadi",
+    "16 marta oshadi"
+   ],
+   "c": 1,
+   "e": "$T=2\\pi\\sqrt{m/k}$."
+  },
+  {
+   "q": "Garmonik tebranishda jism $x=A/2$ nuqtadan o‘tayotganda kinetik energiya to‘liq energiyaning qanday qismini tashkil qiladi?",
+   "a": [
+    "1/4",
+    "1/2",
+    "3/4",
+    "$1/\\sqrt2$",
+    "1"
+   ],
+   "c": 2,
+   "e": "$U=\\tfrac12k(A/2)^2=E/4$, $K=3E/4$."
+  },
+  {
+   "q": "Bikrligi $k$ bo‘lgan ikki bir xil prujina ketma-ket ulanib, ularga $m$ massali yuk osildi. Bitta prujinaga nisbatan tebranish chastotasi:",
+   "a": [
+    "2 marta katta",
+    "$\\sqrt2$ marta katta",
+    "o‘zgarmaydi",
+    "$\\sqrt2$ marta kichik",
+    "2 marta kichik"
+   ],
+   "c": 3,
+   "e": "Ketma-ket: $k_{\\text{um}}=k/2$, $\\omega\\propto\\sqrt k$."
+  },
+  {
+   "q": "Kuchsiz so‘nuvchi ostsillyatorda amplituda $e^{-t/\\tau}$ qonun bilan kamayadi. Energiya qanday kamayadi?",
+   "a": [
+    "$e^{-t/\\tau}$",
+    "$e^{-2t/\\tau}$",
+    "$e^{-t/(2\\tau)}$",
+    "$e^{-t^2/\\tau^2}$",
+    "chiziqli"
+   ],
+   "c": 1,
+   "e": "$E\\propto A^2$."
+  },
+  {
+   "q": "Uzunligi $L$ bo‘lgan bir jinsli sterjen bir uchidan osilib, kichik tebranishlar qilmoqda (fizik mayatnik). Davri:",
+   "a": [
+    "$2\\pi\\sqrt{L/g}$",
+    "$2\\pi\\sqrt{L/(2g)}$",
+    "$2\\pi\\sqrt{L/(3g)}$",
+    "$2\\pi\\sqrt{3L/(2g)}$",
+    "$2\\pi\\sqrt{2L/(3g)}$"
+   ],
+   "c": 4,
+   "e": "$T=2\\pi\\sqrt{I/(mgd)}=2\\pi\\sqrt{\\dfrac{mL^2/3}{mgL/2}}$."
+  }
+ ]
+}
