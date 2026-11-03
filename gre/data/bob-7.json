@@ -1,0 +1,67 @@
+{
+ "id": 7,
+ "title": "Kinetik energiya va ish",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Bikrligi $k$ bo‘lgan prujinani $x$ dan $2x$ gacha cho‘zish uchun bajariladigan ish:",
+   "a": [
+    "$2kx^2$",
+    "$3kx^2/2$",
+    "$kx^2$",
+    "$kx^2/2$",
+    "$4kx^2$"
+   ],
+   "c": 1,
+   "e": "$\\tfrac12k(2x)^2-\\tfrac12kx^2=\\tfrac32kx^2$."
+  },
+  {
+   "q": "Massasi $m$ bo‘lgan avtomobil tinch holatdan o‘zgarmas $P$ quvvat bilan tezlashmoqda (yo‘qotishlar yo‘q). $t$ vaqtdagi tezligi:",
+   "a": [
+    "$Pt/m$",
+    "$\\sqrt{Pt/m}$",
+    "$2Pt/m$",
+    "$Pt^2/m$",
+    "$\\sqrt{2Pt/m}$"
+   ],
+   "c": 4,
+   "e": "$\\tfrac12mv^2=Pt$."
+  },
+  {
+   "q": "Tormozlash kuchi o‘zgarmas bo‘lsa, tezlik ikki marta oshirilganda tormoz yo‘li:",
+   "a": [
+    "o‘zgarmaydi",
+    "$\\sqrt2$ marta oshadi",
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "8 marta oshadi"
+   ],
+   "c": 3,
+   "e": "$Fs=\\tfrac12mv^2\\Rightarrow s\\propto v^2$."
+  },
+  {
+   "q": "$F(x)=6x$ (N, $x$ metrda) kuch $x$ o‘qi bo‘ylab ta’sir qiladi. $x=0$ dan $x=2$ m gacha bajarilgan ish:",
+   "a": [
+    "6 J",
+    "12 J",
+    "24 J",
+    "3 J",
+    "36 J"
+   ],
+   "c": 1,
+   "e": "$W=\\int_0^2 6x\\,dx=3x^2\\big|_0^2=12$ J."
+  },
+  {
+   "q": "Doiraviy orbitada aylanayotgan sun’iy yo‘ldoshga Yerning tortishish kuchi bir to‘liq aylanishda qancha ish bajaradi?",
+   "a": [
+    "0",
+    "$2\\pi rF$",
+    "$\\pi rF$",
+    "$-2\\pi rF$",
+    "$mv^2/2$"
+   ],
+   "c": 0,
+   "e": "Kuch har doim tezlikka perpendikulyar."
+  }
+ ]
+}

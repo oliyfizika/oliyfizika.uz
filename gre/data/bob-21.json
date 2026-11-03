@@ -1,0 +1,67 @@
+{
+ "id": 21,
+ "title": "Elektr zaryad",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Ikki nuqtaviy zaryadning har biri 2 marta oshirildi, oradagi masofa esa 2 marta kamaytirildi. O‘zaro ta’sir kuchi:",
+   "a": [
+    "o‘zgarmaydi",
+    "4 marta oshadi",
+    "8 marta oshadi",
+    "16 marta oshadi",
+    "2 marta oshadi"
+   ],
+   "c": 3,
+   "e": "$F\\propto q_1q_2/r^2$: $2\\cdot2\\cdot4=16$."
+  },
+  {
+   "q": "Bir xil o‘tkazuvchi sharlar $+6q$ va $-2q$ zaryadga ega. Ular bir-biriga tegizilib, oldingi masofaga qaytarildi. Yangi kuch avvalgisiga nisbatan:",
+   "a": [
+    "o‘sha, tortishish",
+    "1/3 marta, itarish",
+    "3 marta katta, itarish",
+    "1/3 marta, tortishish",
+    "nolga teng"
+   ],
+   "c": 1,
+   "e": "Har birida $+2q$ qoladi: $4q^2$ (itarish) va avvalgi $12q^2$ (tortishish)."
+  },
+  {
+   "q": "$x=0$ da $q$, $x=d$ da $4q$ zaryad turibdi. Uchinchi zaryad ular orasida qayerda muvozanatda bo‘ladi?",
+   "a": [
+    "$d/2$",
+    "$d/3$",
+    "$2d/3$",
+    "$d/4$",
+    "$d/5$"
+   ],
+   "c": 1,
+   "e": "$\\dfrac q{x^2}=\\dfrac{4q}{(d-x)^2}\\Rightarrow d-x=2x$."
+  },
+  {
+   "q": "Vodorod atomidagi elektron va proton orasidagi elektr kuchning gravitatsion kuchga nisbati tartibi:",
+   "a": [
+    "$10^{9}$",
+    "$10^{19}$",
+    "$10^{29}$",
+    "$10^{39}$",
+    "$10^{49}$"
+   ],
+   "c": 3,
+   "e": "$\\dfrac{ke^2}{Gm_em_p}\\approx\\dfrac{2{,}3\\cdot10^{-28}}{1{,}0\\cdot10^{-67}}\\approx2\\cdot10^{39}$."
+  },
+  {
+   "q": "Quyidagi zaryadlardan qaysi biri erkin zarrada kuzatilishi MUMKIN EMAS?",
+   "a": [
+    "$1{,}6\\cdot10^{-19}$ C",
+    "$3{,}2\\cdot10^{-19}$ C",
+    "$4{,}8\\cdot10^{-19}$ C",
+    "$8{,}0\\cdot10^{-19}$ C",
+    "$2{,}4\\cdot10^{-19}$ C"
+   ],
+   "c": 4,
+   "e": "Erkin zaryad $e$ ga karrali; $2{,}4\\cdot10^{-19}=1{,}5e$."
+  }
+ ]
+}

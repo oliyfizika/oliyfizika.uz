@@ -1,0 +1,67 @@
+{
+ "id": 17,
+ "title": "To‘lqinlar – II (tovush)",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Tovush balandligi darajasi 20 dB ga oshdi. Intensivlik necha marta oshgan?",
+   "a": [
+    "2",
+    "20",
+    "100",
+    "200",
+    "$10^{20}$"
+   ],
+   "c": 2,
+   "e": "$\\Delta\\beta=10\\lg(I_2/I_1)=20\\Rightarrow I_2/I_1=100$."
+  },
+  {
+   "q": "Manba tinch kuzatuvchiga tovush tezligining yarmiga teng tezlik bilan yaqinlashmoqda. Kuzatuvchi eshitadigan chastota manba chastotasidan necha marta katta?",
+   "a": [
+    "1,5",
+    "2",
+    "0,5",
+    "$4/3$",
+    "$2/3$"
+   ],
+   "c": 1,
+   "e": "$f'=f\\dfrac{v}{v-v/2}=2f$."
+  },
+  {
+   "q": "Bir uchi yopiq, ikkinchi uchi ochiq quvurning asosiy chastotasi $f$. Quvurda yana qaysi chastotalar hosil bo‘ladi?",
+   "a": [
+    "$2f,3f,4f,\\dots$",
+    "$3f,5f,7f,\\dots$",
+    "$2f,4f,6f,\\dots$",
+    "$f/2,f/3,\\dots$",
+    "faqat $f$"
+   ],
+   "c": 1,
+   "e": "Yopiq uchda tugun, ochiq uchda do‘nglik: $L=(2n-1)\\lambda/4$, faqat toq garmonikalar."
+  },
+  {
+   "q": "Chastotalari 440 Hz va 444 Hz bo‘lgan ikki kamerton bir vaqtda chalinmoqda. Tepkilar (biyeniya) chastotasi:",
+   "a": [
+    "2 Hz",
+    "4 Hz",
+    "8 Hz",
+    "442 Hz",
+    "884 Hz"
+   ],
+   "c": 1,
+   "e": "$|f_1-f_2|=4$ Hz."
+  },
+  {
+   "q": "Ideal gazdagi tovush tezligi absolyut temperatura 300 K dan 1200 K ga oshganda:",
+   "a": [
+    "4 marta oshadi",
+    "o‘zgarmaydi",
+    "16 marta oshadi",
+    "$\\sqrt2$ marta oshadi",
+    "2 marta oshadi"
+   ],
+   "c": 4,
+   "e": "$v=\\sqrt{\\gamma RT/M}\\propto\\sqrt T$."
+  }
+ ]
+}

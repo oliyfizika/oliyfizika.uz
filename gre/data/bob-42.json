@@ -1,0 +1,67 @@
+{
+ "id": 42,
+ "title": "Yadro fizikasi",
+ "area": "maxsus",
+ "questions": [
+  {
+   "q": "Uchta yarim yemirilish davri o‘tgach radioaktiv yadrolarning qanday qismi qoladi?",
+   "a": [
+    "1/3",
+    "1/6",
+    "1/8",
+    "1/9",
+    "1/16"
+   ],
+   "c": 2,
+   "e": "$(1/2)^3$."
+  },
+  {
+   "q": "Yadro radiusi $R=R_0A^{1/3}$. $A=216$ yadro radiusi $A=27$ yadronikidan necha marta katta?",
+   "a": [
+    "8",
+    "2",
+    "4",
+    "$\\sqrt8$",
+    "3"
+   ],
+   "c": 1,
+   "e": "$(216/27)^{1/3}=8^{1/3}=2$."
+  },
+  {
+   "q": "$^{238}_{92}\\text{U}$ alfa-yemirilishidan hosil bo‘ladigan yadro:",
+   "a": [
+    "$^{238}_{90}\\text{Th}$",
+    "$^{234}_{92}\\text{U}$",
+    "$^{234}_{90}\\text{Th}$",
+    "$^{236}_{90}\\text{Th}$",
+    "$^{234}_{93}\\text{Np}$"
+   ],
+   "c": 2,
+   "e": "$A-4$, $Z-2$."
+  },
+  {
+   "q": "Bir nuklonga to‘g‘ri keladigan bog‘lanish energiyasi qaysi yadrolar atrofida maksimal?",
+   "a": [
+    "vodorod",
+    "geliy",
+    "uran",
+    "temir",
+    "uglerod"
+   ],
+   "c": 3,
+   "e": "~8,8 MeV/nuklon, $A\\approx56$–62."
+  },
+  {
+   "q": "$\\beta^-$-yemirilishda yadro ichida qanday jarayon sodir bo‘ladi?",
+   "a": [
+    "$p\\to n+e^++\\nu$",
+    "$n\\to p+e^-+\\bar\\nu_e$",
+    "$n\\to p+e^-$",
+    "$p\\to n+e^-$",
+    "$n\\to p+\\gamma$"
+   ],
+   "c": 1,
+   "e": "Antineytrino energiya va impuls saqlanishi uchun zarur."
+  }
+ ]
+}

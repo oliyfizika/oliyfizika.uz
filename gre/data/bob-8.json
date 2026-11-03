@@ -1,0 +1,67 @@
+{
+ "id": 8,
+ "title": "Potensial energiya va energiyaning saqlanishi",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Zarraning potensial energiyasi $U(x)=x^4-2x^2$. Turg‘un muvozanat nuqtalari:",
+   "a": [
+    "faqat $x=0$",
+    "$x=\\pm1$",
+    "$x=0$ va $x=\\pm1$",
+    "$x=\\pm\\sqrt2$",
+    "turg‘un muvozanat yo‘q"
+   ],
+   "c": 1,
+   "e": "$U'=4x^3-4x=0$; $U''=12x^2-4$ musbat faqat $x=\\pm1$ da ($x=0$ noturg‘un)."
+  },
+  {
+   "q": "Matematik mayatnik gorizontal holatdan qo‘yib yuborildi. Eng pastki nuqtada ipning tarangligi:",
+   "a": [
+    "$5mg$",
+    "$3mg$",
+    "$2mg$",
+    "$mg$",
+    "$4mg$"
+   ],
+   "c": 1,
+   "e": "$v^2=2gL$, $T=mg+mv^2/L=3mg$."
+  },
+  {
+   "q": "Bikrligi $k$ bo‘lgan vertikal prujina $x$ ga siqilgan va ustiga $m$ massali jism qo‘yilgan. Prujina qo‘yib yuborilganda jism siqilgan holatdagi vaziyatidan qancha balandlikka ko‘tariladi?",
+   "a": [
+    "$kx/(mg)$",
+    "$kx^2/(mg)$",
+    "$2kx^2/(mg)$",
+    "$kx^2/(2mg)$",
+    "$\\sqrt{kx^2/(mg)}$"
+   ],
+   "c": 3,
+   "e": "$\\tfrac12kx^2=mgh$."
+  },
+  {
+   "q": "Kichik shar ishqalanishsiz novdan sirpanib, radiusi $R$ bo‘lgan vertikal halqani (\"o‘lik sirtmoq\") aylanib o‘tishi kerak. Minimal boshlang‘ich balandlik (halqaning pastki nuqtasidan):",
+   "a": [
+    "$5R/2$",
+    "$2R$",
+    "$3R$",
+    "$3R/2$",
+    "$7R/2$"
+   ],
+   "c": 0,
+   "e": "Yuqorida $v^2\\ge gR$: $mgh=mg\\cdot2R+\\tfrac12mgR\\Rightarrow h=5R/2$."
+  },
+  {
+   "q": "Jism ishqalanishli qiya tekislikdan sirpanib tushmoqda. Qaysi tasdiq to‘g‘ri?",
+   "a": [
+    "Mexanik energiya saqlanadi",
+    "Kinetik energiya o‘zgarmaydi",
+    "Potensial energiyaning kamayishi kinetik energiyaning ortishiga teng",
+    "Ishqalanish kuchining ishi musbat",
+    "Mexanik energiya ishqalanish ishining moduli qadar kamayadi"
+   ],
+   "c": 4,
+   "e": "$\\Delta(K+U)=W_{\\text{ishq}}<0$."
+  }
+ ]
+}

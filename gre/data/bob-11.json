@@ -1,0 +1,67 @@
+{
+ "id": 11,
+ "title": "Dumalash, kuch momenti va impuls momenti",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Massasi va radiusi bir xil halqa, yaxlit silindr va yaxlit shar qiya tekislikdan sirpanmasdan dumalab tushmoqda. Pastga birinchi bo‘lib qaysi biri yetib keladi?",
+   "a": [
+    "Halqa",
+    "Silindr",
+    "Shar",
+    "Uchalasi bir vaqtda",
+    "Qiyalik burchagiga bog‘liq"
+   ],
+   "c": 2,
+   "e": "$a=g\\sin\\theta/(1+I/mR^2)$; $I/mR^2$ shar uchun eng kichik (2/5)."
+  },
+  {
+   "q": "Yaxlit silindr sirpanmasdan dumalamoqda. To‘liq kinetik energiyaning qanday qismi aylanma harakatga to‘g‘ri keladi?",
+   "a": [
+    "1/4",
+    "1/3",
+    "1/2",
+    "2/5",
+    "2/7"
+   ],
+   "c": 1,
+   "e": "$K_{\\text{ayl}}=\\tfrac14mv^2$, $K_{\\text{ilg}}=\\tfrac12mv^2$: $\\dfrac{1/4}{3/4}=1/3$."
+  },
+  {
+   "q": "Muz ustida aylanayotgan figurachi qo‘llarini tanasiga yaqinlashtirib, inersiya momentini ikki marta kamaytirdi. Aylanma kinetik energiyasi:",
+   "a": [
+    "o‘zgarmaydi",
+    "$\\sqrt2$ marta oshadi",
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "2 marta kamayadi"
+   ],
+   "c": 2,
+   "e": "$L$ saqlanadi, $K=L^2/(2I)\\propto1/I$."
+  },
+  {
+   "q": "$m$ massali zarra koordinata boshidan $d$ masofada o‘tuvchi to‘g‘ri chiziq bo‘ylab o‘zgarmas $v$ tezlik bilan harakatlanmoqda. Uning koordinata boshiga nisbatan impuls momenti:",
+   "a": [
+    "nolga teng",
+    "vaqt o‘tishi bilan ortadi",
+    "vaqt o‘tishi bilan kamayadi",
+    "zarra eng yaqin nuqtadan o‘tganda nolga aylanadi",
+    "o‘zgarmas va $mvd$ ga teng"
+   ],
+   "c": 4,
+   "e": "$|\\vec r\\times\\vec p|=pr\\sin\\alpha=mvd$, kuch momenti yo‘q."
+  },
+  {
+   "q": "Giroskopning presessiya burchak tezligi $\\Omega=Mgr/(I\\omega)$. Rotorning aylanish tezligi $\\omega$ ikki marta oshirilsa, $\\Omega$:",
+   "a": [
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "2 marta kamayadi",
+    "4 marta kamayadi",
+    "o‘zgarmaydi"
+   ],
+   "c": 2,
+   "e": "$\\Omega\\propto1/\\omega$."
+  }
+ ]
+}

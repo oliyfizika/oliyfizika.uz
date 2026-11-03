@@ -1,0 +1,319 @@
+{
+ "_izoh": "GRE Physics bo‘limi: boblar ro‘yxati (gre/data/bob-N.json). Savollar OliyFizika.uz uchun yozilgan original savollar.",
+ "mixedCount": 25,
+ "secondsPerQuestion": 102,
+ "areas": [
+  {
+   "id": "mexanika",
+   "title": "Klassik mexanika",
+   "weight": 20
+  },
+  {
+   "id": "em",
+   "title": "Elektr va magnetizm",
+   "weight": 18
+  },
+  {
+   "id": "tolqin",
+   "title": "Tebranishlar, to‘lqinlar va optika",
+   "weight": 9
+  },
+  {
+   "id": "termo",
+   "title": "Termodinamika va statistik mexanika",
+   "weight": 10
+  },
+  {
+   "id": "kvant",
+   "title": "Kvant mexanikasi",
+   "weight": 12
+  },
+  {
+   "id": "atom",
+   "title": "Atom fizikasi",
+   "weight": 10
+  },
+  {
+   "id": "nisbiylik",
+   "title": "Maxsus nisbiylik",
+   "weight": 6
+  },
+  {
+   "id": "maxsus",
+   "title": "Maxsus mavzular (yadro, zarralar, qattiq jism)",
+   "weight": 9
+  }
+ ],
+ "extraAreas": [
+  {
+   "title": "Laboratoriya metodlari",
+   "weight": 6
+  }
+ ],
+ "chapters": [
+  {
+   "id": 1,
+   "title": "O‘lchash, birliklar va o‘lchamlar tahlili",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 2,
+   "title": "To‘g‘ri chiziqli harakat",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 3,
+   "title": "Vektorlar",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 4,
+   "title": "Ikki va uch o‘lchamli harakat",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 5,
+   "title": "Kuch va harakat – I",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 6,
+   "title": "Kuch va harakat – II",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 7,
+   "title": "Kinetik energiya va ish",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 8,
+   "title": "Potensial energiya va energiyaning saqlanishi",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 9,
+   "title": "Massa markazi va impuls",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 10,
+   "title": "Aylanma harakat",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 11,
+   "title": "Dumalash, kuch momenti va impuls momenti",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 12,
+   "title": "Muvozanat va elastiklik",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 13,
+   "title": "Gravitatsiya",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 14,
+   "title": "Suyuqliklar",
+   "area": "mexanika",
+   "questions": 5
+  },
+  {
+   "id": 15,
+   "title": "Tebranishlar",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 16,
+   "title": "To‘lqinlar – I",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 17,
+   "title": "To‘lqinlar – II (tovush)",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 18,
+   "title": "Temperatura, issiqlik va termodinamikaning birinchi qonuni",
+   "area": "termo",
+   "questions": 5
+  },
+  {
+   "id": 19,
+   "title": "Gazlarning kinetik nazariyasi",
+   "area": "termo",
+   "questions": 5
+  },
+  {
+   "id": 20,
+   "title": "Entropiya va termodinamikaning ikkinchi qonuni",
+   "area": "termo",
+   "questions": 5
+  },
+  {
+   "id": 21,
+   "title": "Elektr zaryad",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 22,
+   "title": "Elektr maydon",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 23,
+   "title": "Gauss qonuni",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 24,
+   "title": "Elektr potensial",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 25,
+   "title": "Sig‘im",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 26,
+   "title": "Tok va qarshilik",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 27,
+   "title": "Zanjirlar",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 28,
+   "title": "Magnit maydon",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 29,
+   "title": "Tok hosil qiladigan magnit maydon",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 30,
+   "title": "Induksiya va induktivlik",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 31,
+   "title": "Elektromagnit tebranishlar va o‘zgaruvchan tok",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 32,
+   "title": "Maksvell tenglamalari va moddaning magnit xossalari",
+   "area": "em",
+   "questions": 5
+  },
+  {
+   "id": 33,
+   "title": "Elektromagnit to‘lqinlar",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 34,
+   "title": "Tasvirlar (geometrik optika)",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 35,
+   "title": "Interferensiya",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 36,
+   "title": "Difraksiya",
+   "area": "tolqin",
+   "questions": 5
+  },
+  {
+   "id": 37,
+   "title": "Maxsus nisbiylik nazariyasi",
+   "area": "nisbiylik",
+   "questions": 5
+  },
+  {
+   "id": 38,
+   "title": "Fotonlar va modda to‘lqinlari",
+   "area": "kvant",
+   "questions": 5
+  },
+  {
+   "id": 39,
+   "title": "Modda to‘lqinlari haqida batafsil",
+   "area": "kvant",
+   "questions": 5
+  },
+  {
+   "id": 40,
+   "title": "Atomlar",
+   "area": "atom",
+   "questions": 5
+  },
+  {
+   "id": 41,
+   "title": "Qattiq jismlarda elektr o‘tkazuvchanlik",
+   "area": "maxsus",
+   "questions": 5
+  },
+  {
+   "id": 42,
+   "title": "Yadro fizikasi",
+   "area": "maxsus",
+   "questions": 5
+  },
+  {
+   "id": 43,
+   "title": "Yadro energiyasi",
+   "area": "maxsus",
+   "questions": 5
+  },
+  {
+   "id": 44,
+   "title": "Kvarklar, leptonlar va Katta portlash",
+   "area": "maxsus",
+   "questions": 5
+  }
+ ]
+}

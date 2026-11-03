@@ -1,0 +1,67 @@
+{
+ "id": 32,
+ "title": "Maksvell tenglamalari va moddaning magnit xossalari",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Zaryadlanayotgan yassi kondensator qoplamalari orasida (u yerda o‘tkazuvchanlik toki yo‘q) magnit maydon:",
+   "a": [
+    "nolga teng",
+    "mavjud, sababi siljish toki $\\varepsilon_0\\,d\\Phi_E/dt$",
+    "faqat qoplama ichida mavjud",
+    "faqat dielektrik bo‘lsa mavjud",
+    "faqat o‘zgaruvchan tokda nolga teng"
+   ],
+   "c": 1,
+   "e": "Amper–Maksvell qonuni."
+  },
+  {
+   "q": "Magnit monopollar mavjud emasligini qaysi tenglama ifodalaydi?",
+   "a": [
+    "$\\nabla\\cdot\\vec E=\\rho/\\varepsilon_0$",
+    "$\\nabla\\cdot\\vec B=0$",
+    "$\\nabla\\times\\vec E=-\\partial\\vec B/\\partial t$",
+    "$\\nabla\\times\\vec B=\\mu_0\\vec j$",
+    "$\\vec F=q\\vec v\\times\\vec B$"
+   ],
+   "c": 1,
+   "e": "Yopiq sirt orqali magnit oqim har doim nol."
+  },
+  {
+   "q": "Diamagnetik moddalar uchun to‘g‘ri tasdiq:",
+   "a": [
+    "$\\chi$ katta va musbat",
+    "$\\chi$ kichik va manfiy, kuchli maydondan itariladi",
+    "faqat past temperaturada mavjud",
+    "Kyuri qonuniga bo‘ysunadi",
+    "doimiy magnit hosil qiladi"
+   ],
+   "c": 1,
+   "e": "Diamagnetizm barcha moddalarda bor, $\\chi\\sim-10^{-5}$."
+  },
+  {
+   "q": "Kyuri qonuniga ko‘ra paramagnetikning magnitlanganligi:",
+   "a": [
+    "$T$ ga proporsional",
+    "$B$ ga bog‘liq emas",
+    "$B/T$ ga proporsional",
+    "$BT$ ga proporsional",
+    "$T^2$ ga teskari proporsional"
+   ],
+   "c": 2,
+   "e": "$M=CB/T$."
+  },
+  {
+   "q": "Ferromagnetik Kyuri temperaturasidan yuqori qizdirilsa:",
+   "a": [
+    "diamagnetikka aylanadi",
+    "paramagnetikka aylanadi",
+    "o‘ta o‘tkazgichga aylanadi",
+    "magnitlanganligi oshadi",
+    "eriydi"
+   ],
+   "c": 1,
+   "e": "Domenlar tartibi buziladi."
+  }
+ ]
+}

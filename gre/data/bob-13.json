@@ -1,0 +1,67 @@
+{
+ "id": 13,
+ "title": "Gravitatsiya",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Sayyora sirtidan ikkinchi kosmik (qochish) tezlikning shu sirt yaqinidagi doiraviy orbita tezligiga nisbati:",
+   "a": [
+    "1",
+    "$\\sqrt2$",
+    "2",
+    "$\\sqrt3$",
+    "1/2"
+   ],
+   "c": 1,
+   "e": "$\\sqrt{2GM/R}:\\sqrt{GM/R}=\\sqrt2$."
+  },
+  {
+   "q": "Sun’iy yo‘ldosh orbitasi radiusi 4 marta oshirilsa, aylanish davri:",
+   "a": [
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "16 marta oshadi",
+    "8 marta oshadi",
+    "64 marta oshadi"
+   ],
+   "c": 3,
+   "e": "Kepler III: $T\\propto r^{3/2}=4^{3/2}=8$."
+  },
+  {
+   "q": "Yerni bir jinsli shar deb hisoblang. Markazdan $R/2$ masofadagi (yer ostidagi) erkin tushish tezlanishi:",
+   "a": [
+    "$g/4$",
+    "$g/2$",
+    "$g$",
+    "$2g$",
+    "0"
+   ],
+   "c": 1,
+   "e": "Bir jinsli shar ichida $g\\propto r$."
+  },
+  {
+   "q": "Doiraviy orbitadagi yo‘ldoshning to‘liq mexanik energiyasi $E$ ning kinetik energiyasi $K$ ga nisbati:",
+   "a": [
+    "$-1$",
+    "$-2$",
+    "$1/2$",
+    "$-1/2$",
+    "2"
+   ],
+   "c": 0,
+   "e": "$K=GMm/(2r)$, $U=-2K$, $E=-K$."
+  },
+  {
+   "q": "Zichligi Yernikiga teng, radiusi esa 2 marta katta sayyora sirtidagi erkin tushish tezlanishi:",
+   "a": [
+    "$g$",
+    "$4g$",
+    "$8g$",
+    "$g/2$",
+    "$2g$"
+   ],
+   "c": 4,
+   "e": "$g=\\tfrac43\\pi G\\rho R\\propto R$."
+  }
+ ]
+}

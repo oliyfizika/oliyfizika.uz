@@ -1,0 +1,67 @@
+{
+ "id": 2,
+ "title": "To‘g‘ri chiziqli harakat",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Jism $v_0$ tezlik bilan vertikal yuqoriga otildi. Havo qarshiligi hisobga olinmasa, u qancha vaqtdan keyin otilgan nuqtaga qaytib tushadi?",
+   "a": [
+    "$v_0/g$",
+    "$2v_0/g$",
+    "$v_0/(2g)$",
+    "$v_0^2/g$",
+    "$\\sqrt{2v_0/g}$"
+   ],
+   "c": 1,
+   "e": "Ko‘tarilish vaqti $v_0/g$, tushish vaqti ham shuncha: jami $2v_0/g$."
+  },
+  {
+   "q": "Tinch holatdan tekis tezlanuvchan harakat boshlagan avtomobil birinchi $t$ vaqtda $d$ masofani o‘tdi. Keyingi $t$ vaqtda u qancha masofani o‘tadi?",
+   "a": [
+    "$d$",
+    "$2d$",
+    "$4d$",
+    "$3d$",
+    "$5d$"
+   ],
+   "c": 3,
+   "e": "$s\\propto t^2$: $2t$ vaqtda $4d$, demak ikkinchi oraliqda $4d-d=3d$."
+  },
+  {
+   "q": "Jism tezligi $v(t)=3t^2$ (m/s) qonun bilan o‘zgaradi. $t=0$ dan $t=2$ s gacha ko‘chishi:",
+   "a": [
+    "4 m",
+    "6 m",
+    "12 m",
+    "8 m",
+    "24 m"
+   ],
+   "c": 3,
+   "e": "$x=\\int_0^2 3t^2\\,dt=t^3\\big|_0^2=8$ m."
+  },
+  {
+   "q": "Jism $h$ balandlikdan erkin tushmoqda. Yo‘lning ikkinchi yarmini o‘tishga ketgan vaqt umumiy tushish vaqtining qanday qismini tashkil etadi?",
+   "a": [
+    "$1/2$",
+    "$1/\\sqrt2$",
+    "$\\sqrt2-1$",
+    "$1/4$",
+    "$1-1/\\sqrt2$"
+   ],
+   "c": 4,
+   "e": "Umumiy vaqt $\\sqrt{2h/g}$, birinchi yarmi $\\sqrt{h/g}$; nisbat $1-1/\\sqrt2\\approx0{,}29$."
+  },
+  {
+   "q": "Ikki poyezd bir-biriga qarab 20 m/s va 30 m/s tezlik bilan harakatlanmoqda. Ular orasidagi masofa 1 km bo‘lsa, necha soniyadan keyin uchrashadi?",
+   "a": [
+    "10 s",
+    "20 s",
+    "33 s",
+    "50 s",
+    "100 s"
+   ],
+   "c": 1,
+   "e": "Nisbiy tezlik 50 m/s: $1000/50=20$ s."
+  }
+ ]
+}

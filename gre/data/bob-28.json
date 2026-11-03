@@ -1,0 +1,67 @@
+{
+ "id": 28,
+ "title": "Magnit maydon",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Zaryadli zarra bir jinsli magnit maydonda aylana bo‘ylab harakatlanmoqda. Kinetik energiyasi 4 marta oshirilsa, aylana radiusi:",
+   "a": [
+    "4 marta oshadi",
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "16 marta oshadi",
+    "2 marta kamayadi"
+   ],
+   "c": 1,
+   "e": "$r=mv/(qB)=\\sqrt{2mK}/(qB)$."
+  },
+  {
+   "q": "Norelyativistik zarraning siklotron chastotasi:",
+   "a": [
+    "tezlikka proporsional",
+    "radiusga proporsional",
+    "tezlikka bog‘liq emas",
+    "energiyaga proporsional",
+    "$B$ ga teskari proporsional"
+   ],
+   "c": 2,
+   "e": "$f=qB/(2\\pi m)$."
+  },
+  {
+   "q": "Magnit maydon zaryadli zarra ustida qancha ish bajaradi?",
+   "a": [
+    "$qvB$",
+    "$qvBr$",
+    "nol",
+    "$\\tfrac12mv^2$",
+    "zarraning yo‘nalishiga bog‘liq"
+   ],
+   "c": 2,
+   "e": "Lorens kuchi doim tezlikka perpendikulyar."
+  },
+  {
+   "q": "O‘zaro perpendikulyar $\\vec E$ va $\\vec B$ maydonlarda zarra og‘masdan to‘g‘ri chiziq bo‘ylab o‘tadi. Uning tezligi:",
+   "a": [
+    "$B/E$",
+    "$EB$",
+    "$\\sqrt{E/B}$",
+    "$E/B$",
+    "$qE/B$"
+   ],
+   "c": 3,
+   "e": "$qE=qvB$."
+  },
+  {
+   "q": "Xoll effekti yordamida o‘tkazgichdagi qaysi kattalikni aniqlash mumkin?",
+   "a": [
+    "faqat tok kuchini",
+    "o‘tkazgich uzunligini",
+    "zaryad tashuvchilar ishorasi va konsentratsiyasini",
+    "solishtirma issiqlik sig‘imini",
+    "elektronning massasini"
+   ],
+   "c": 2,
+   "e": "$U_H=IB/(nqd)$: ishora — $q$ ishorasi, kattalik — $n$."
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": 22,
+ "title": "Elektr maydon",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Elektr dipol o‘qida, dipoldan uzoq masofada maydon kuchlanganligi masofaga qanday bog‘liq?",
+   "a": [
+    "$1/r$",
+    "$1/r^2$",
+    "$1/r^3$",
+    "$1/r^4$",
+    "bog‘liq emas"
+   ],
+   "c": 2,
+   "e": "$E=\\dfrac{2kp}{r^3}$."
+  },
+  {
+   "q": "Chiziqli zichligi $\\lambda$ bo‘lgan cheksiz uzun zaryadlangan ipdan $r$ masofadagi maydon:",
+   "a": [
+    "$\\lambda/(2\\pi\\varepsilon_0r)$",
+    "$\\lambda/(4\\pi\\varepsilon_0r^2)$",
+    "$\\lambda/(2\\varepsilon_0)$",
+    "$\\lambda/(\\varepsilon_0r)$",
+    "0"
+   ],
+   "c": 0,
+   "e": "Silindrik Gauss sirti: $E\\cdot2\\pi rl=\\lambda l/\\varepsilon_0$."
+  },
+  {
+   "q": "Bir jinsli elektr maydondagi dipolga ta’sir qiluvchi natijaviy kuch $F$ va kuch momenti $M$ haqida to‘g‘ri tasdiq:",
+   "a": [
+    "$F\\neq0$, $M=0$",
+    "$F=0$, $M$ umuman olganda noldan farqli",
+    "$F\\neq0$, $M\\neq0$",
+    "$F=0$, $M=0$ har doim",
+    "$F=pE$"
+   ],
+   "c": 1,
+   "e": "Kuchlar teng va qarama-qarshi; moment $\\vec p\\times\\vec E$."
+  },
+  {
+   "q": "Radiusi $R$ bo‘lgan bir tekis zaryadlangan halqaning o‘qida maydon kuchlanganligi markazdan qanday masofada maksimal bo‘ladi?",
+   "a": [
+    "0",
+    "$R/2$",
+    "$R$",
+    "$\\sqrt2R$",
+    "$R/\\sqrt2$"
+   ],
+   "c": 4,
+   "e": "$E\\propto z/(z^2+R^2)^{3/2}$, hosilani nolga tenglab $z=R/\\sqrt2$."
+  },
+  {
+   "q": "Tomoni $a$ bo‘lgan kvadratning uch uchida $+q$, to‘rtinchisida $-q$ zaryad turibdi. Kvadrat markazidagi maydon kuchlanganligi moduli:",
+   "a": [
+    "0",
+    "$2kq/a^2$",
+    "$4kq/a^2$",
+    "$kq/a^2$",
+    "$8kq/a^2$"
+   ],
+   "c": 2,
+   "e": "To‘rtta $+q$ maydoni nol; $-q$ ni $+q-2q$ deb qarasak, $E=k\\cdot2q/(a^2/2)=4kq/a^2$, $-q$ tomonga."
+  }
+ ]
+}

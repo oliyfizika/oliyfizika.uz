@@ -1,0 +1,67 @@
+{
+ "id": 38,
+ "title": "Fotonlar va modda to‘lqinlari",
+ "area": "kvant",
+ "questions": [
+  {
+   "q": "Fotoeffektda to‘xtatuvchi potensial nimaga bog‘liq?",
+   "a": [
+    "faqat yorug‘lik intensivligiga",
+    "yorug‘lik chastotasi va katod materialiga, intensivlikka bog‘liq emas",
+    "faqat yoritish vaqtiga",
+    "intensivlik va chastotaga",
+    "katod yuziga"
+   ],
+   "c": 1,
+   "e": "$eU=h\\nu-A$."
+  },
+  {
+   "q": "Kompton sochilishida to‘lqin uzunligining maksimal o‘zgarishi qaysi burchakda bo‘ladi va nimaga teng?",
+   "a": [
+    "90°, $h/(mc)$",
+    "180°, $2h/(mc)$",
+    "0°, 0",
+    "45°, $h/(2mc)$",
+    "180°, $h/(mc)$"
+   ],
+   "c": 1,
+   "e": "$\\Delta\\lambda=\\dfrac h{mc}(1-\\cos\\theta)$."
+  },
+  {
+   "q": "Elektronni tezlatuvchi kuchlanish 4 marta oshirilsa (norelyativistik), de Broyl to‘lqin uzunligi:",
+   "a": [
+    "4 marta kamayadi",
+    "2 marta kamayadi",
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "16 marta kamayadi"
+   ],
+   "c": 1,
+   "e": "$\\lambda=h/\\sqrt{2meU}$."
+  },
+  {
+   "q": "Energiyasi $E$ bo‘lgan fotonning impulsi:",
+   "a": [
+    "$Ec$",
+    "$E/c^2$",
+    "$E/c$",
+    "$\\sqrt{2mE}$",
+    "0"
+   ],
+   "c": 2,
+   "e": "Massasiz zarra uchun $E=pc$."
+  },
+  {
+   "q": "Elektron taxminan 0,1 nm o‘lchamli sohaga qamalgan. Noaniqlik munosabatiga ko‘ra uning kinetik energiyasi tartibi:",
+   "a": [
+    "$10^{-3}$ eV",
+    "bir necha eV",
+    "$10^{3}$ eV",
+    "$10^{6}$ eV",
+    "$10^{9}$ eV"
+   ],
+   "c": 1,
+   "e": "$pc\\approx\\hbar c/\\Delta x\\approx2$ keV, $K=(pc)^2/(2mc^2)\\approx4$ eV."
+  }
+ ]
+}

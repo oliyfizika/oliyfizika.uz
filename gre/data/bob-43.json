@@ -1,0 +1,67 @@
+{
+ "id": 43,
+ "title": "Yadro energiyasi",
+ "area": "maxsus",
+ "questions": [
+  {
+   "q": "$^{235}\\text{U}$ yadrosining bitta bo‘linishida ajraladigan energiya tartibi:",
+   "a": [
+    "2 MeV",
+    "20 MeV",
+    "200 MeV",
+    "2 GeV",
+    "200 keV"
+   ],
+   "c": 2,
+   "e": "Bo‘linish bo‘laklarining bog‘lanish energiyasi ~0,9 MeV/nuklon katta."
+  },
+  {
+   "q": "Quyoshdagi proton–proton siklida to‘rtta protondan bitta geliy yadrosi hosil bo‘lganda ajraladigan energiya taxminan:",
+   "a": [
+    "0,5 MeV",
+    "2,2 MeV",
+    "27 MeV",
+    "200 MeV",
+    "938 MeV"
+   ],
+   "c": 2,
+   "e": "$4m_p-m_{He}$ farqi ~26,7 MeV."
+  },
+  {
+   "q": "Yadro reaktoridagi sekinlatgich (moderator) vazifasi:",
+   "a": [
+    "neytronlarni yutish",
+    "neytronlarni issiqlik energiyasigacha sekinlatish",
+    "reaktorni sovitish",
+    "radiatsiyadan himoya qilish",
+    "yoqilg‘ini boyitish"
+   ],
+   "c": 1,
+   "e": "$^{235}$U sekin neytronlarni samaraliroq yutib bo‘linadi."
+  },
+  {
+   "q": "1 atom massa birligining (u) energiya ekvivalenti taxminan:",
+   "a": [
+    "0,511 MeV",
+    "931,5 MeV",
+    "1 GeV aniq",
+    "13,6 eV",
+    "200 MeV"
+   ],
+   "c": 1,
+   "e": "$1\\,\\text{u}\\cdot c^2\\approx931{,}5$ MeV."
+  },
+  {
+   "q": "Termoyadro sintezi uchun juda yuqori temperatura nima uchun kerak?",
+   "a": [
+    "neytronlarni sekinlatish uchun",
+    "yadrolar orasidagi Kulon to‘sig‘ini yengish uchun",
+    "elektronlarni atomdan ajratish uchun",
+    "kuchli o‘zaro ta’sirni kuchsizlantirish uchun",
+    "zanjir reaksiyasini to‘xtatish uchun"
+   ],
+   "c": 1,
+   "e": "Musbat yadrolar yadro kuchlari ta’sir qiladigan masofagacha yaqinlashishi kerak."
+  }
+ ]
+}

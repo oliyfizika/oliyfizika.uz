@@ -1,0 +1,67 @@
+{
+ "id": 18,
+ "title": "Temperatura, issiqlik va termodinamikaning birinchi qonuni",
+ "area": "termo",
+ "questions": [
+  {
+   "q": "Ideal gaz izotermik kengaymoqda. Qaysi tasdiq to‘g‘ri?",
+   "a": [
+    "$Q=0$",
+    "$W=0$",
+    "$\\Delta U=0$ va $Q=W$",
+    "$\\Delta U=Q$",
+    "Gaz soviydi"
+   ],
+   "c": 2,
+   "e": "Ideal gaz ichki energiyasi faqat $T$ ga bog‘liq."
+  },
+  {
+   "q": "Issiqlik izolyatsiyalangan idishdagi ideal gaz to‘siq olib tashlanganda vakuumga erkin kengaydi. Gaz temperaturasi:",
+   "a": [
+    "oshadi",
+    "kamayadi",
+    "o‘zgarmaydi",
+    "nolga tushadi",
+    "hajmga proporsional o‘zgaradi"
+   ],
+   "c": 2,
+   "e": "$Q=0$, $W=0\\Rightarrow\\Delta U=0$; ideal gaz uchun $T$ o‘zgarmaydi."
+  },
+  {
+   "q": "Moddaning chiziqli kengayish koeffitsienti $\\alpha$. Yuzaning kengayish koeffitsienti taxminan:",
+   "a": [
+    "$\\alpha$",
+    "$2\\alpha$",
+    "$3\\alpha$",
+    "$\\alpha^2$",
+    "$\\alpha/2$"
+   ],
+   "c": 1,
+   "e": "$(1+\\alpha\\Delta T)^2\\approx1+2\\alpha\\Delta T$."
+  },
+  {
+   "q": "20 °C li 2 kg suv 80 °C li 1 kg suv bilan aralashtirildi (yo‘qotishlarsiz). Muvozanat temperaturasi:",
+   "a": [
+    "30 °C",
+    "40 °C",
+    "50 °C",
+    "60 °C",
+    "35 °C"
+   ],
+   "c": 1,
+   "e": "$(2\\cdot20+1\\cdot80)/3=40$ °C."
+  },
+  {
+   "q": "Absolyut qora jismning temperaturasi 2 marta oshirilsa, nurlanish quvvati:",
+   "a": [
+    "2 marta",
+    "4 marta",
+    "8 marta",
+    "16 marta",
+    "32 marta"
+   ],
+   "c": 3,
+   "e": "Stefan–Bolsman: $P\\propto T^4$."
+  }
+ ]
+}

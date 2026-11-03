@@ -1,0 +1,67 @@
+{
+ "id": 5,
+ "title": "Kuch va harakat – I",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Atvud mashinasida blok va ip vaznsiz, massalar $m$ va $3m$. Yuklarning tezlanishi:",
+   "a": [
+    "$g/4$",
+    "$g/3$",
+    "$2g/3$",
+    "$g/2$",
+    "$g$"
+   ],
+   "c": 3,
+   "e": "$a=\\dfrac{(3m-m)g}{3m+m}=g/2$."
+  },
+  {
+   "q": "Massasi $m$ bo‘lgan odam yuqoriga $a$ tezlanish bilan harakatlanayotgan liftdagi tarozida turibdi. Tarozi ko‘rsatishi:",
+   "a": [
+    "$m(g+a)$",
+    "$mg$",
+    "$m(g-a)$",
+    "$ma$",
+    "0"
+   ],
+   "c": 0,
+   "e": "$N-mg=ma\\Rightarrow N=m(g+a)$."
+  },
+  {
+   "q": "Ishqalanishsiz qiya tekislik gorizontga 30° burchak ostida. Undan sirpanayotgan jismning tezlanishi:",
+   "a": [
+    "$g$",
+    "$g/2$",
+    "$g\\sqrt3/2$",
+    "$g/\\sqrt3$",
+    "0"
+   ],
+   "c": 1,
+   "e": "$a=g\\sin30°=g/2$."
+  },
+  {
+   "q": "Ishqalanishsiz sirtda 2 kg va 3 kg massali bloklar bir-biriga tegib turibdi. 2 kg li blokka 10 N gorizontal kuch qo‘yilgan. Bloklar orasidagi o‘zaro ta’sir kuchi:",
+   "a": [
+    "10 N",
+    "6 N",
+    "4 N",
+    "2 N",
+    "0"
+   ],
+   "c": 1,
+   "e": "$a=10/5=2$ m/s²; 3 kg li blokni faqat kontakt kuchi tezlatadi: $3\\cdot2=6$ N."
+  },
+  {
+   "q": "Massasi $M$ bo‘lgan bir jinsli arqon ishqalanishsiz sirtda bir uchidan $F$ kuch bilan tortilmoqda. Arqon o‘rtasidagi taranglik:",
+   "a": [
+    "$F/4$",
+    "$F$",
+    "$2F$",
+    "$F/2$",
+    "0"
+   ],
+   "c": 3,
+   "e": "O‘rtadan keyingi yarim ($M/2$) $F/M$ tezlanish oladi: $T=(M/2)(F/M)=F/2$."
+  }
+ ]
+}

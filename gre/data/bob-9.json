@@ -1,0 +1,67 @@
+{
+ "id": 9,
+ "title": "Massa markazi va impuls",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "$v$ tezlik bilan harakatlanayotgan $m$ massali jism tinch turgan $m$ massali jism bilan noelastik to‘qnashib yopishib qoldi. Kinetik energiyaning qanday qismi yo‘qoladi?",
+   "a": [
+    "1/4",
+    "3/4",
+    "1",
+    "0",
+    "1/2"
+   ],
+   "c": 4,
+   "e": "Yakuniy tezlik $v/2$, energiya $\\tfrac12(2m)(v/2)^2=\\tfrac14mv^2$ — yarmi qoladi."
+  },
+  {
+   "q": "$v$ tezlikli $m$ massali shar tinch turgan $3m$ massali sharga markaziy elastik uriladi. Birinchi sharning keyingi tezligi:",
+   "a": [
+    "$v/2$",
+    "$-v/2$",
+    "$-v$",
+    "0",
+    "$v/4$"
+   ],
+   "c": 1,
+   "e": "$v_1'=\\dfrac{m-3m}{m+3m}v=-v/2$."
+  },
+  {
+   "q": "Radiusi $R$ bo‘lgan bir jinsli yarim aylana shaklidagi ingichka simning massa markazi aylana markazidan qancha masofada?",
+   "a": [
+    "$R/2$",
+    "$4R/(3\\pi)$",
+    "$2R/\\pi$",
+    "$R/\\pi$",
+    "$R/\\sqrt2$"
+   ],
+   "c": 2,
+   "e": "$y_c=\\dfrac1{\\pi R}\\int_0^\\pi R\\sin\\theta\\,R\\,d\\theta=2R/\\pi$. ($4R/3\\pi$ — yarim disk uchun.)"
+  },
+  {
+   "q": "Raketa gazlarni o‘ziga nisbatan $u$ tezlik bilan chiqaradi. Massasi boshlang‘ichdan $e^2$ marta kamayganda (tashqi kuchlarsiz) tezlik o‘zgarishi:",
+   "a": [
+    "$e^2u$",
+    "$u\\ln2$",
+    "$2u$",
+    "$u$",
+    "$u/2$"
+   ],
+   "c": 2,
+   "e": "Siolkovskiy: $\\Delta v=u\\ln(m_0/m)=u\\ln e^2=2u$."
+  },
+  {
+   "q": "Massasi 240 kg qayiqda 60 kg li odam turibdi (suv qarshiligi yo‘q). Odam qayiqqa nisbatan 5 m yursa, qayiq suvga nisbatan qancha siljiydi?",
+   "a": [
+    "1,25 m",
+    "4 m",
+    "0",
+    "1 m",
+    "5 m"
+   ],
+   "c": 3,
+   "e": "Massa markazi joyida: $60(5-x)=240x\\Rightarrow x=1$ m."
+  }
+ ]
+}

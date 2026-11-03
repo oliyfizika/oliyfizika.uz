@@ -1,0 +1,67 @@
+{
+ "id": 44,
+ "title": "Kvarklar, leptonlar va Katta portlash",
+ "area": "maxsus",
+ "questions": [
+  {
+   "q": "Protonning kvark tarkibi:",
+   "a": [
+    "uuu",
+    "uud",
+    "udd",
+    "ddd",
+    "uds"
+   ],
+   "c": 1,
+   "e": "$\\tfrac23+\\tfrac23-\\tfrac13=1$."
+  },
+  {
+   "q": "Quyidagi jarayonlardan qaysi biri saqlanish qonunlariga ko‘ra TA’QIQLANGAN?",
+   "a": [
+    "$n\\to p+e^-+\\bar\\nu_e$",
+    "$\\pi^+\\to\\mu^++\\nu_\\mu$",
+    "$\\mu^-\\to e^-+\\bar\\nu_e+\\nu_\\mu$",
+    "$p\\to e^++\\gamma$",
+    "$\\Lambda^0\\to p+\\pi^-$"
+   ],
+   "c": 3,
+   "e": "Barion soni (va lepton soni) saqlanmaydi."
+  },
+  {
+   "q": "Neytronning kvark tarkibi va zaryadi:",
+   "a": [
+    "uud, 0",
+    "udd, 0",
+    "ddd, $-1$",
+    "uud, $+1$",
+    "udd, $+1$"
+   ],
+   "c": 1,
+   "e": "$\\tfrac23-\\tfrac13-\\tfrac13=0$."
+  },
+  {
+   "q": "Kuchsiz o‘zaro ta’sirni tashuvchi zarralar:",
+   "a": [
+    "foton",
+    "glyuonlar",
+    "$W^\\pm$ va $Z^0$ bozonlar",
+    "pionlar",
+    "graviton"
+   ],
+   "c": 2,
+   "e": "Massalari ~80–91 GeV."
+  },
+  {
+   "q": "Xabbl qonuni $v=H_0d$. Koinot yoshining eng sodda bahosi:",
+   "a": [
+    "$H_0$",
+    "$1/H_0$",
+    "$H_0^2$",
+    "$c/H_0$",
+    "$1/H_0^2$"
+   ],
+   "c": 1,
+   "e": "Hozirgi tezlikda barcha galaktikalar $t=d/v=1/H_0$ vaqt oldin bir nuqtada bo‘lgan."
+  }
+ ]
+}

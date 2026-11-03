@@ -1,0 +1,67 @@
+{
+ "id": 31,
+ "title": "Elektromagnit tebranishlar va o‘zgaruvchan tok",
+ "area": "em",
+ "questions": [
+  {
+   "q": "LC konturda kondensator sig‘imi 4 marta oshirilsa, xususiy chastota:",
+   "a": [
+    "4 marta kamayadi",
+    "2 marta kamayadi",
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "16 marta kamayadi"
+   ],
+   "c": 1,
+   "e": "$\\omega=1/\\sqrt{LC}$."
+  },
+  {
+   "q": "Ketma-ket RLC zanjirda rezonans chastotasida:",
+   "a": [
+    "impedans maksimal",
+    "tok minimal",
+    "impedans $R$ ga teng va tok maksimal",
+    "kuchlanish tokdan $90°$ oldinda",
+    "quvvat nolga teng"
+   ],
+   "c": 2,
+   "e": "$X_L=X_C$, $Z=R$."
+  },
+  {
+   "q": "Sinusoidal kuchlanish amplitudasi $U_0$. Uning ta’sir etuvchi (rms) qiymati:",
+   "a": [
+    "$U_0/2$",
+    "$U_0/\\sqrt2$",
+    "$U_0\\sqrt2$",
+    "$2U_0/\\pi$",
+    "$U_0$"
+   ],
+   "c": 1,
+   "e": "$\\sqrt{\\langle\\sin^2\\rangle}=1/\\sqrt2$."
+  },
+  {
+   "q": "Faqat ideal g‘altakdan iborat o‘zgaruvchan tok zanjirida o‘rtacha quvvat:",
+   "a": [
+    "$U_0I_0$",
+    "$U_0I_0/2$",
+    "$U_0I_0/\\sqrt2$",
+    "0",
+    "$I_0^2\\omega L$"
+   ],
+   "c": 3,
+   "e": "Tok va kuchlanish orasidagi faza farqi $90°$, $\\cos\\varphi=0$."
+  },
+  {
+   "q": "Ideal transformatorning birlamchi va ikkilamchi o‘ramlari soni nisbati 10 : 1. Ikkilamchi chulg‘amda:",
+   "a": [
+    "kuchlanish va tok 10 marta kichik",
+    "kuchlanish va tok 10 marta katta",
+    "kuchlanish 10 marta katta, tok 10 marta kichik",
+    "kuchlanish 10 marta kichik, tok 10 marta katta",
+    "kuchlanish o‘zgarmaydi"
+   ],
+   "c": 3,
+   "e": "$U_2/U_1=N_2/N_1$, quvvat saqlanadi."
+  }
+ ]
+}

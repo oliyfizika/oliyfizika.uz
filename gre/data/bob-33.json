@@ -1,0 +1,67 @@
+{
+ "id": 33,
+ "title": "Elektromagnit to‘lqinlar",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Vakuumdagi yassi elektromagnit to‘lqin uchun to‘g‘ri tasdiq:",
+   "a": [
+    "$\\vec E\\parallel\\vec B$",
+    "$E=B$",
+    "$E$ va $B$ fazalari $90°$ farq qiladi",
+    "$E=cB$, $\\vec E\\perp\\vec B$, fazalari bir xil",
+    "$B=cE$"
+   ],
+   "c": 3,
+   "e": "Maksvell tenglamalaridan."
+  },
+  {
+   "q": "Intensivligi $I$ bo‘lgan yorug‘lik ideal ko‘zguga tik tushmoqda. Yorug‘lik bosimi:",
+   "a": [
+    "$I/c$",
+    "$2I/c$",
+    "$I/(2c)$",
+    "$Ic$",
+    "0"
+   ],
+   "c": 1,
+   "e": "Qaytishda impuls o‘zgarishi ikki barobar."
+  },
+  {
+   "q": "Intensivligi $I_0$ bo‘lgan qutblanmagan yorug‘lik o‘qlari orasidagi burchak $60°$ bo‘lgan ikki polyarizatordan o‘tdi. Chiqishdagi intensivlik:",
+   "a": [
+    "$I_0/2$",
+    "$I_0/4$",
+    "$I_0/8$",
+    "$3I_0/8$",
+    "0"
+   ],
+   "c": 2,
+   "e": "$\\tfrac12I_0\\cos^260°=I_0/8$."
+  },
+  {
+   "q": "Yorug‘lik Bryuster burchagi ostida tushganda qaytgan nur qanday?",
+   "a": [
+    "qutblanmagan",
+    "tushish tekisligida qutblangan",
+    "tushish tekisligiga perpendikulyar qutblangan",
+    "doiraviy qutblangan",
+    "umuman qaytmaydi"
+   ],
+   "c": 2,
+   "e": "Tushish tekisligidagi tashkil etuvchi qaytmaydi; $\\tan\\theta_B=n_2/n_1$."
+  },
+  {
+   "q": "Sindirish ko‘rsatkichi 2 bo‘lgan muhitdan havoga chiqayotgan nur uchun to‘la ichki qaytishning chegaraviy burchagi:",
+   "a": [
+    "30°",
+    "45°",
+    "60°",
+    "27°",
+    "90°"
+   ],
+   "c": 0,
+   "e": "$\\sin\\theta_c=1/2$."
+  }
+ ]
+}

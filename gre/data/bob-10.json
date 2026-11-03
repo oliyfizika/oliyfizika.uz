@@ -1,0 +1,67 @@
+{
+ "id": 10,
+ "title": "Aylanma harakat",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Massasi $M$, uzunligi $L$ bo‘lgan ingichka sterjenning bir uchidan o‘tuvchi perpendikulyar o‘qqa nisbatan inersiya momenti:",
+   "a": [
+    "$ML^2/12$",
+    "$ML^2/3$",
+    "$ML^2/2$",
+    "$ML^2$",
+    "$ML^2/4$"
+   ],
+   "c": 1,
+   "e": "Shteyner: $ML^2/12+M(L/2)^2=ML^2/3$."
+  },
+  {
+   "q": "Massasi $M$, radiusi $R$ bo‘lgan bir jinsli diskning gardishidagi nuqtadan o‘tuvchi, disk tekisligiga perpendikulyar o‘qqa nisbatan inersiya momenti:",
+   "a": [
+    "$MR^2/2$",
+    "$MR^2$",
+    "$2MR^2$",
+    "$5MR^2/2$",
+    "$3MR^2/2$"
+   ],
+   "c": 4,
+   "e": "$MR^2/2+MR^2=3MR^2/2$."
+  },
+  {
+   "q": "G‘ildirak tinch holatdan $2$ rad/s² burchak tezlanish bilan aylana boshladi. 10 s da u necha marta aylanadi?",
+   "a": [
+    "$25/\\pi$",
+    "$50/\\pi$",
+    "$100/\\pi$",
+    "100",
+    "50"
+   ],
+   "c": 1,
+   "e": "$\\varphi=\\tfrac12\\varepsilon t^2=100$ rad, $N=100/(2\\pi)=50/\\pi\\approx16$."
+  },
+  {
+   "q": "Uzunligi $L$ bo‘lgan bir jinsli sterjen bir uchidagi sharnir atrofida gorizontal holatdan qo‘yib yuborildi. Shu ondagi erkin uchining chiziqli tezlanishi:",
+   "a": [
+    "$g/2$",
+    "$g$",
+    "$2g$",
+    "$3g/2$",
+    "$3g$"
+   ],
+   "c": 3,
+   "e": "$\\varepsilon=\\dfrac{MgL/2}{ML^2/3}=\\dfrac{3g}{2L}$, $a=\\varepsilon L=3g/2$."
+  },
+  {
+   "q": "Massasi $M=2m$ bo‘lgan disk shaklidagi blok orqali o‘tkazilgan ipga $m$ massali yuk osilgan; ip sirpanmaydi. Yukning tezlanishi:",
+   "a": [
+    "$g$",
+    "$g/2$",
+    "$g/3$",
+    "$2g/3$",
+    "$g/4$"
+   ],
+   "c": 1,
+   "e": "$a=\\dfrac{mg}{m+I/R^2}=\\dfrac{mg}{m+M/2}=g/2$."
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRE Physics | OliyFizika.uz</title>
+<meta name="description" content="GRE Physics Subject Test’ga tayyorgarlik: boblar bo‘yicha 5 variantli original savollar, yechim izohlari va aralash mashq testi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/catalog.css">
+<link rel="stylesheet" href="../assets/css/gre.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/gre/gre-page.js"></script>
+</head>
+<!-- GRE bo'limi: boblar ro'yxati — gre/data/manifest.json, savollar — gre/data/bob-N.json, test — test.html?bob=N (0 — aralash). Kod: assets/js/gre/ -->
+<body class="of-ui" data-shell-title="GRE Physics" data-shell-public="true">
+<div class="of-page of-container of-cat" id="grePage">
+  <header class="of-cat-head">
+    <div>
+      <h1>GRE Physics</h1>
+      <p>GRE Physics Subject Test’ga tayyorgarlik: har bir bob bo‘yicha 5 variantli savollar, har bir savolga qisqa yechim izohi. Imtihonda kalkulyator yo‘q va bir savolga o‘rtacha 1,7 daqiqa beriladi — shu tartibda ishlashga odatlaning.</p>
+    </div>
+    <p class="of-cat-count" data-gre-count aria-live="polite"></p>
+  </header>
+
+  <article class="of-card of-quiz-featured" data-search-item data-search-text="gre aralash test barcha boblardan">
+    <span class="of-quiz-featured__icon" data-icon="shuffle"></span>
+    <div class="of-quiz-featured__body">
+      <h2>Aralash GRE mashqi</h2>
+      <p data-mixed-meta>Barcha boblardan tasodifiy savollar.</p>
+    </div>
+    <a class="of-btn of-btn--primary" href="test.html?bob=0" data-gre-start>Boshlash <span data-icon="arrowRight"></span></a>
+  </article>
+
+  <section class="of-card gre-areas" aria-labelledby="greAreasTitle">
+    <h2 id="greAreasTitle">Imtihon mavzulari ulushi</h2>
+    <ul class="gre-areas__list" data-areas></ul>
+  </section>
+
+  <section aria-labelledby="greListTitle">
+    <h2 class="of-sr-only" id="greListTitle">Boblar</h2>
+    <ul class="of-chips" data-chips role="group" aria-label="Mavzu bo‘yicha saralash"></ul>
+    <ul class="of-quiz-grid" data-chapters aria-busy="true" style="margin-top:12px">
+      <li><div class="of-card of-quiz"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-quiz"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-quiz"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

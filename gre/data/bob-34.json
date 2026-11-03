@@ -1,0 +1,67 @@
+{
+ "id": 34,
+ "title": "Tasvirlar (geometrik optika)",
+ "area": "tolqin",
+ "questions": [
+  {
+   "q": "Fokus masofasi $F$ bo‘lgan botiq ko‘zgudan $2F$ masofada buyum turibdi. Tasvir:",
+   "a": [
+    "mavhum, to‘g‘ri, kattalashgan",
+    "haqiqiy, teskari, buyum kattaligida, $2F$ masofada",
+    "haqiqiy, to‘g‘ri, kichraygan",
+    "cheksizlikda",
+    "mavhum, kichraygan"
+   ],
+   "c": 1,
+   "e": "$1/a+1/b=1/F$ dan $b=2F$, $\\Gamma=-1$."
+  },
+  {
+   "q": "Fokus masofasi 10 cm bo‘lgan yig‘uvchi linzadan 15 cm uzoqlikda buyum turibdi. Tasvir masofasi va kattalashtirish:",
+   "a": [
+    "6 cm, 0,4",
+    "30 cm, 0,5",
+    "30 cm, 2 (teskari)",
+    "15 cm, 1",
+    "25 cm, 1,7"
+   ],
+   "c": 2,
+   "e": "$1/b=1/10-1/15=1/30$, $\\Gamma=-b/a=-2$."
+  },
+  {
+   "q": "Bo‘yi $H$ bo‘lgan odam o‘zini yassi ko‘zguda to‘liq ko‘rishi uchun ko‘zguning minimal balandligi:",
+   "a": [
+    "$H$",
+    "$H/2$",
+    "$H/4$",
+    "$2H$",
+    "masofaga bog‘liq"
+   ],
+   "c": 1,
+   "e": "Nurlar geometriyasidan ko‘zgu o‘lchami masofaga bog‘liq emas."
+  },
+  {
+   "q": "Havoda yig‘uvchi bo‘lgan shisha linza ($n=1{,}5$) suvga ($n=1{,}33$) botirildi. Fokus masofasi:",
+   "a": [
+    "kamayadi",
+    "ortadi",
+    "o‘zgarmaydi",
+    "manfiy bo‘ladi",
+    "nolga teng bo‘ladi"
+   ],
+   "c": 1,
+   "e": "$1/F\\propto(n_l/n_m-1)$ kichrayadi."
+  },
+  {
+   "q": "Fokus masofalari $+10$ cm va $-20$ cm bo‘lgan ingichka linzalar bir-biriga zich qo‘yilgan. Sistemaning fokus masofasi:",
+   "a": [
+    "$-10$ cm",
+    "$+30$ cm",
+    "$+6{,}7$ cm",
+    "$+20$ cm",
+    "$-20$ cm"
+   ],
+   "c": 3,
+   "e": "$1/F=1/10-1/20=1/20$."
+  }
+ ]
+}

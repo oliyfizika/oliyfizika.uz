@@ -1,0 +1,67 @@
+{
+ "id": 26,
+ "title": "Tok va qarshilik",
+ "area": "em",
+ "questions": [
+  {
+   "q": "Sim hajmi o‘zgarmagan holda uzunligi 2 marta oshguncha cho‘zildi. Uning qarshiligi:",
+   "a": [
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "4 marta oshadi",
+    "8 marta oshadi",
+    "2 marta kamayadi"
+   ],
+   "c": 2,
+   "e": "$L\\times2$, $A\\div2$: $R=\\rho L/A\\times4$."
+  },
+  {
+   "q": "Mis simdagi elektronlarning odatiy dreyf tezligi tartibi (kesimi ~1 mm², tok ~1 A):",
+   "a": [
+    "$10^{-10}$ m/s",
+    "$10^{-4}$ m/s",
+    "1 m/s",
+    "$10^{4}$ m/s",
+    "$3\\cdot10^{8}$ m/s"
+   ],
+   "c": 1,
+   "e": "$v=I/(neS)=1/(8{,}5\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}\\cdot10^{-6})\\approx7\\cdot10^{-5}$ m/s."
+  },
+  {
+   "q": "Bir xil kuchlanishga mo‘ljallangan 60 W va 100 W lampalar ketma-ket ulanib, tarmoqqa ulandi. Qaysi lampa yorqinroq yonadi?",
+   "a": [
+    "100 W li",
+    "60 W li",
+    "bir xil",
+    "hech biri yonmaydi",
+    "tarmoq kuchlanishiga bog‘liq"
+   ],
+   "c": 1,
+   "e": "Tok bir xil, $P=I^2R$; nominal quvvati kichik lampaning qarshiligi katta."
+  },
+  {
+   "q": "Temperatura oshganda qaysi tasdiq to‘g‘ri?",
+   "a": [
+    "Metall va yarimo‘tkazgich qarshiligi oshadi",
+    "Metall va yarimo‘tkazgich qarshiligi kamayadi",
+    "Metall qarshiligi oshadi, toza yarimo‘tkazgichniki kamayadi",
+    "Metall qarshiligi kamayadi, yarimo‘tkazgichniki oshadi",
+    "Ikkalasiniki ham o‘zgarmaydi"
+   ],
+   "c": 2,
+   "e": "Metallda fononlarda sochilish kuchayadi; yarimo‘tkazgichda tashuvchilar soni eksponensial ortadi."
+  },
+  {
+   "q": "Kesimi o‘zgaruvchan simda o‘zgarmas tok oqmoqda. Simning ingichka qismida:",
+   "a": [
+    "tok kuchi kattaroq",
+    "tok zichligi kichikroq",
+    "dreyf tezligi kichikroq",
+    "elektr maydon kuchsizroq",
+    "tok zichligi va dreyf tezligi kattaroq"
+   ],
+   "c": 4,
+   "e": "$I$ hamma joyda bir xil, $j=I/S$ va $v=j/(ne)$."
+  }
+ ]
+}

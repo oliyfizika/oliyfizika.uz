@@ -1,0 +1,67 @@
+{
+ "id": 37,
+ "title": "Maxsus nisbiylik nazariyasi",
+ "area": "nisbiylik",
+ "questions": [
+  {
+   "q": "Myuonning xususiy yashash vaqti $\\tau$. U laboratoriyada $0{,}6c$ tezlik bilan harakatlanmoqda. Laboratoriyadagi yashash vaqti:",
+   "a": [
+    "$0{,}8\\tau$",
+    "$0{,}6\\tau$",
+    "$1{,}25\\tau$",
+    "$1{,}67\\tau$",
+    "$\\tau$"
+   ],
+   "c": 2,
+   "e": "$\\gamma=1/\\sqrt{1-0{,}36}=1/0{,}8=1{,}25$."
+  },
+  {
+   "q": "Xususiy uzunligi $L_0$ bo‘lgan sterjen o‘qi bo‘ylab $0{,}6c$ tezlikda harakatlanmoqda. Laboratoriyada o‘lchangan uzunligi:",
+   "a": [
+    "$0{,}6L_0$",
+    "$0{,}8L_0$",
+    "$1{,}25L_0$",
+    "$0{,}36L_0$",
+    "$L_0$"
+   ],
+   "c": 1,
+   "e": "$L=L_0/\\gamma=0{,}8L_0$."
+  },
+  {
+   "q": "Raketa Yerga nisbatan $0{,}5c$ tezlikda uchmoqda va oldinga o‘ziga nisbatan $0{,}5c$ tezlikda snaryad otdi. Snaryadning Yerga nisbatan tezligi:",
+   "a": [
+    "$c$",
+    "$0{,}5c$",
+    "$0{,}75c$",
+    "$0{,}9c$",
+    "$0{,}8c$"
+   ],
+   "c": 4,
+   "e": "$u=\\dfrac{0{,}5+0{,}5}{1+0{,}25}c=0{,}8c$."
+  },
+  {
+   "q": "Elektronning tinchlikdagi energiyasi 0,511 MeV. $\\gamma=2$ bo‘lganda uning kinetik energiyasi:",
+   "a": [
+    "0,256 MeV",
+    "0,511 MeV",
+    "1,022 MeV",
+    "2,04 MeV",
+    "0,128 MeV"
+   ],
+   "c": 1,
+   "e": "$K=(\\gamma-1)mc^2$."
+  },
+  {
+   "q": "Zarraning kinetik energiyasi tinchlikdagi energiyasiga teng. Uning impulsi:",
+   "a": [
+    "$mc$",
+    "$2mc$",
+    "$\\sqrt3\\,mc$",
+    "$\\sqrt2\\,mc$",
+    "$mc/2$"
+   ],
+   "c": 2,
+   "e": "$E=2mc^2$, $p^2c^2=E^2-m^2c^4=3m^2c^4$."
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": 14,
+ "title": "Suyuqliklar",
+ "area": "mexanika",
+ "questions": [
+  {
+   "q": "Keng idishdagi suv sirtidan $h$ chuqurlikdagi kichik teshikdan oqib chiqmoqda. Chuqurlik 4 marta oshirilsa, oqib chiqish tezligi:",
+   "a": [
+    "4 marta oshadi",
+    "2 marta oshadi",
+    "$\\sqrt2$ marta oshadi",
+    "16 marta oshadi",
+    "o‘zgarmaydi"
+   ],
+   "c": 1,
+   "e": "Torrichelli: $v=\\sqrt{2gh}$."
+  },
+  {
+   "q": "Ko‘l sirtida bosim 1 atm. Taxminan 10 m chuqurlikdagi to‘liq bosim:",
+   "a": [
+    "1 atm",
+    "1,5 atm",
+    "10 atm",
+    "2 atm",
+    "11 atm"
+   ],
+   "c": 3,
+   "e": "$\\rho gh=1000\\cdot10\\cdot10=10^5$ Pa ≈ 1 atm qo‘shiladi."
+  },
+  {
+   "q": "Ideal suyuqlik oqayotgan quvurning diametri ikki marta kichraygan joyda oqim tezligi:",
+   "a": [
+    "2 marta oshadi",
+    "o‘zgarmaydi",
+    "4 marta oshadi",
+    "2 marta kamayadi",
+    "8 marta oshadi"
+   ],
+   "c": 2,
+   "e": "Uzluksizlik: $vA=\\text{const}$, $A\\propto d^2$."
+  },
+  {
+   "q": "Jism havoda $W$, suvga to‘liq botirilganda $W/2$ og‘irlik ko‘rsatadi. Jism zichligi suv zichligidan necha marta katta?",
+   "a": [
+    "1,5",
+    "2",
+    "3",
+    "4",
+    "0,5"
+   ],
+   "c": 1,
+   "e": "Arximed kuchi $W/2=\\rho_s gV$, $W=\\rho gV\\Rightarrow\\rho=2\\rho_s$."
+  },
+  {
+   "q": "Yopishqoq suyuqlikning ingichka quvurdagi laminar oqimi uchun (Puazeyl qonuni) bosimlar farqi o‘zgarmaganda quvur radiusi ikki marta oshirilsa, hajmiy sarf:",
+   "a": [
+    "2 marta oshadi",
+    "4 marta oshadi",
+    "8 marta oshadi",
+    "o‘zgarmaydi",
+    "16 marta oshadi"
+   ],
+   "c": 4,
+   "e": "$Q=\\dfrac{\\pi r^4\\Delta p}{8\\eta L}\\propto r^4$."
+  }
+ ]
+}
