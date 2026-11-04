@@ -6,7 +6,7 @@ import { autoFromMs, isLimited, timeLimitOf } from "./core.js";
 
 /** Avtomatik yakunlashga nomzodmi: rasmiy, in_progress, testVersion butun son (taxmin qilinmaydi), yechim vaqti kelgan. */
 export function isOverdue(attempt, test, now = Date.now()) {
-  // Chegara yo'q (kunlik) — solutionAvailableAt; vaqt chegarasi bor (mock) — min(startedAt + limit, yechim vaqti) (+ grace, Rules: attAutoFrom)
+  // Kunlik va mock: startedAt + limit (+ grace, Rules: attAutoFrom)
   const at = attempt && test ? autoFromMs(attempt, test) : null;
   return !!attempt && attempt.status === "in_progress" && attempt.kind === "official"
     && Number.isInteger(attempt.testVersion) && !!test && attempt.testId === test.id && at != null && now >= at;
@@ -14,7 +14,7 @@ export function isOverdue(attempt, test, now = Date.now()) {
 
 /**
  * in_progress → submitted yozuvi (Rules bilan aynan mos): javoblar o'zgarmaydi (yo'q bo'lsa {}),
- * completedAt = tugash vaqti: startedAt + limit (kunlik test: 2 soat; mock: limit yechim vaqtidan oldin tugasa), aks holda solutionAvailableAt — sarflangan vaqt
+ * completedAt = tugash vaqti: startedAt + limit (kunlik va mock: standart 2 soat), startedAt yo'q bo'lsa solutionAvailableAt — sarflangan vaqt
  * shu chegara bilan cheklanadi. autoFinalized = true.
  * Natija maydonlari YO'Q — baholash mavjud gradeAttempt()/gradeAnswers() orqali.
  */

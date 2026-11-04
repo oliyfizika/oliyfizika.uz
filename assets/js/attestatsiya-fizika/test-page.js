@@ -100,11 +100,9 @@ function startClock() {
   clockTimer = setInterval(tick, 1000);
 }
 
-/** Yechim vaqti vaqt chegarasidan oldin kelsa (kechqurun boshlangan) — chegara = yechim vaqti */
+/** Yechim vaqti chegarani qisqartiradimi: yo'q — kunlik va mock testlar istalgan vaqtda, to'liq limit bilan bajariladi */
 function limitedBySolution() {
-  const lim = timeLimitOf(test);
-  const sol = toMs(test.solutionAvailableAt);
-  return isMock(test) && !!lim && sol != null && !attempt && nowMs() + lim * 1000 > sol;
+  return false;
 }
 
 // ------------------------------------------------------------------ teskari hisoblagich (vaqt chegarasi: mock — 2 soat)
@@ -159,11 +157,9 @@ function renderIntro() {
         <li>${ic("list")}<span><b>${test.questionCount}</b>${t("att.t.qWord", "savol")}</span></li>
         <li>${ic("target")}<span><b>${isMock(test) ? t("att.t.pointsN", "{n} ball", { n: mockMax(test) }) : test.scorableCount}</b>${isMock(test) ? t("att.t.perQ", "har savol {p} ball", { p: test.pointsPerQuestion || 2 }) : t("att.t.scored", "ballga kiradi")}</span></li>
         <li>${ic("clock")}<span>${timeLimitOf(test) ? `<b>${esc(formatLimit(timeLimitOf(test)))}</b>${resumable ? t("att.t.leftIs", "qolgan vaqt: {c}", { c: esc(formatClock(remainingSeconds(attempt, test, nowMs()))) }) : t("att.t.countsFromStart", "boshlagandan hisoblanadi")}` : t("att.t.noLimit", "<b>Chegarasiz</b>faqat sekundomer")}</span></li>
-        <li>${ic("calendar")}<span>${isMock(test)
-          ? t("att.t.solAtMock", "<b>{at}</b>yechimlar ochiladi (testni yakunlasangiz — darhol)", { at: esc(formatTashkent(test.solutionAvailableAt)) })
-          : t("att.t.solOnFinish", "<b>Yakunlaganda</b>yechimlar shu zahoti ochiladi")}</span></li>
+        <li>${ic("calendar")}<span>${t("att.t.solOnFinish", "<b>Yakunlaganda</b>yechimlar shu zahoti ochiladi")}</span></li>
       </ul>
-      <p class="of-muted">${t("att.t.introNote", "Test faqat <b>bir marta rasmiy</b> topshiriladi{any}. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.", { any: isMock(test) ? "" : t("att.t.anyDay", " — uni xohlagan kuningizda boshlashingiz mumkin") })}</p>
+      <p class="of-muted">${t("att.t.introNote", "Test faqat <b>bir marta rasmiy</b> topshiriladi{any}. Javoblaringiz avtomatik saqlanadi — sahifani yopsangiz, keyin davom ettirishingiz mumkin. Topshirgan zahoti natija va to‘g‘ri javoblar ko‘rinadi.", { any: t("att.t.anyDay", " — uni xohlagan kuningizda boshlashingiz mumkin") })}</p>
       ${timeLimitOf(test) ? `<p class="att-limit-note">${ic("clock")}<span>${t("att.t.limitNote", "«{btn}» bosilgan zahoti <b>{lim}</b> hisoblanadi. Sahifani yangilasangiz yoki yopsangiz ham vaqt to‘xtamaydi — qolgan vaqtdan davom etasiz. Vaqt tugaganda javoblaringiz <b>avtomatik topshiriladi</b>.{sol}", { btn: startLabel, lim: esc(formatLimit(timeLimitOf(test))), sol: limitedBySolution() ? t("att.t.limitSol", " Yechimlar {at} da ochilgani uchun bugun sizda atigi <b>{left}</b> qolgan.", { at: esc(formatTashkent(test.solutionAvailableAt)), left: esc(formatLimit(Math.max(60, Math.floor((toMs(test.solutionAvailableAt) - nowMs()) / 1000)))) }) : "" })}</span></p>` : ""}
       ${isMock(test) ? `<p class="of-subtle">${test.composition?.kasbiyStandart != null ? t("att.t.orderKasbiy", "Bo‘limlar tartibi: Fizika, Kasbiy standart, Pedagogik mahorat.") : test.composition?.pedagogika != null && test.composition?.fizika != null ? t("att.t.orderPhys7", "Fizika: Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — har bobdan 7 tadan; so‘ng Pedagogika bo‘limi ({n} ta).", { n: test.composition.pedagogika }) : t("att.t.orderPhysics", "Fizika: Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro fizikasi — har bobdan 8 tadan; so‘ng Pedagogika bo‘limi.")}</p>` : ""}
       ${test.questionCount - test.scorableCount > 0 ? `<p class="of-subtle">${t("att.t.unscoredNote", "{n} ta savol (variantsiz yoki manbasida noaniqlik bor) testda qoladi, lekin ballga kirmaydi.", { n: test.questionCount - test.scorableCount })}</p>` : ""}
@@ -618,7 +614,7 @@ async function renderResult(key) {
       attempt = r.attempt;
       return renderResult(r.key);
     }
-    // Vaqt chegarasi (mock: 2 soat) tugagan, lekin hali topshirilmagan (avto-yakunlash grace'i ichida): saqlangan javoblar bilan topshiriladi
+    // Vaqt chegarasi (kunlik va mock: 2 soat) tugagan, lekin hali topshirilmagan (avto-yakunlash grace'i ichida): saqlangan javoblar bilan topshiriladi
     if (attempt?.status === "in_progress" && timeLimitOf(test) && remainingSeconds(attempt, test, nowMs()) === 0) {
       await openRunner();
       return;

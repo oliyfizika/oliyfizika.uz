@@ -128,12 +128,11 @@ export function isVisible(test) {
   return test && test.published === true && (test.status === "published" || test.status === "archived");
 }
 /**
- * Yechimlar VAQT bo'yicha ochiladimi: faqat MOCK test (solutionAvailableAt'dan keyin hamma uchun).
- * KUNLIK testlarda yechim vaqt bilan ochilmaydi — faqat o'z urinishi yakunlangach (solutionOpenFor). Rules: attSolutionReadable.
+ * Yechimlar VAQT bo'yicha ochiladimi: YO'Q — kunlik va mock testlarda ham yechim vaqt bilan ochilmaydi,
+ * faqat o'z urinishi yakunlangach (solutionOpenFor). Rules: attSolutionReadable. (Chaqiruvchilar uchun saqlangan.)
  */
-export function solutionOpen(test, now = Date.now()) {
-  const at = toMs(test?.solutionAvailableAt);
-  return isMock(test) && isVisible(test) && at != null && now >= at;
+export function solutionOpen(_test, _now = Date.now()) {
+  return false;
 }
 /** Foydalanuvchining o'z rasmiy urinishi yakunlangan (qo'lda topshirgan yoki avto-yakunlangan). Rules: attOwnFinished. */
 export function isFinished(attempt) {
@@ -141,7 +140,7 @@ export function isFinished(attempt) {
 }
 /**
  * Yechimlar shu foydalanuvchi uchun ochiqmi: o'z urinishi yakunlangan (qo'lda topshirgan yoki vaqt tugagan — avto-yakunlash
- * sahifa ochilganda bajariladi) YOKI (faqat mock) yechim vaqti kelgan. Rules: attSolutionReadable.
+ * sahifa ochilganda bajariladi). Kunlik va mock testlar uchun bir xil. Rules: attSolutionReadable.
  */
 export function solutionOpenFor(test, attempt, now = Date.now()) {
   if (solutionOpen(test, now)) return true;
@@ -156,15 +155,15 @@ export function limitExpired(attempt, test, now = Date.now()) {
 }
 // ------------------------------------------------------------------ VAQT CHEGARASI (har bir urinish: 2 soat)
 // Qaror serverda (Rules: attHasLimit / attLimitSec / attEndAt / attInTime / attAutoFrom). Bu yerda — faqat ko'rsatish va «urinib ko'rish» ishorasi.
-// KUNLIK testlar: test hujjatida maydon yo'q — standart 2 soat (DAILY_LIMIT_SECONDS), yechim vaqti bilan chegaralanmaydi.
-// MOCK: timeLimitSeconds (7200) va min(startedAt + limit, solutionAvailableAt).
+// KUNLIK va MOCK testlar bir xil: timeLimitSeconds (bo'lmasa — standart 2 soat, DAILY_LIMIT_SECONDS),
+// tugash = startedAt + limit; yechim vaqti (solutionAvailableAt) bilan chegaralanmaydi.
 export const DAILY_LIMIT_SECONDS = 7200;
 export const LIMIT_GRACE_SECONDS = 60;     // Rules bilan bir xil: tugagandan keyin qo'lda topshirish uchun grace
-/** Test vaqt chegarasi (soniya): hujjatdagi timeLimitSeconds; kunlik testda maydon bo'lmasa — 2 soat; mock'da maydon bo'lmasa — null. */
+/** Test vaqt chegarasi (soniya): hujjatdagi timeLimitSeconds; maydon bo'lmasa — 2 soat (kunlik va mock). */
 export const timeLimitOf = (t) => {
   if (!t) return null;
   if (Number.isInteger(t.timeLimitSeconds) && t.timeLimitSeconds >= 60) return t.timeLimitSeconds;
-  return isMock(t) ? null : DAILY_LIMIT_SECONDS;
+  return DAILY_LIMIT_SECONDS;
 };
 /** startedAt + limit (ms) yoki null */
 export function limitEndMs(attempt, test) {
@@ -172,15 +171,11 @@ export function limitEndMs(attempt, test) {
   const st = toMs(attempt?.startedAt);
   return lim && st != null ? st + lim * 1000 : null;
 }
-/** Chegara amal qiladimi (Rules: attLimited): kunlik — doim; mock — yechim vaqtidan oldin tugasa */
+/** Chegara amal qiladimi (Rules: attLimited): kunlik va mock — doim (startedAt ma'lum bo'lsa) */
 export function isLimited(attempt, test) {
-  const e = limitEndMs(attempt, test);
-  if (e == null) return false;
-  if (!isMock(test)) return true;
-  const sol = toMs(test?.solutionAvailableAt);
-  return sol != null && e < sol;
+  return limitEndMs(attempt, test) != null;
 }
-/** Tugash (ms): min(startedAt + limit, solutionAvailableAt); limit yo'q → solutionAvailableAt (Rules: attEndAt) */
+/** Tugash (ms): startedAt + limit; startedAt yo'q → solutionAvailableAt (Rules: attEndAt) */
 export function attemptEndMs(attempt, test) {
   return isLimited(attempt, test) ? limitEndMs(attempt, test) : toMs(test?.solutionAvailableAt);
 }
@@ -215,13 +210,9 @@ export async function serverSkewMs(url = location.pathname) {
   } catch { return 0; }
 }
 
-/** Rasmiy urinish mumkinmi: published (archived emas) va yechim hali ochilmagan. */
-/** Rasmiy urinish boshlash mumkinmi: kunlik — e'lon qilingan bo'lsa istalgan kunda; mock — yechim vaqtigacha. */
-export function officialOpen(test, now = Date.now()) {
-  if (!(test?.status === "published" && test?.published === true)) return false;
-  if (!isMock(test)) return true;
-  const at = toMs(test?.solutionAvailableAt);
-  return at != null && now < at;
+/** Rasmiy urinish boshlash mumkinmi: kunlik va mock — e'lon qilingan (archived emas) bo'lsa istalgan kunda. */
+export function officialOpen(test, _now = Date.now()) {
+  return test?.status === "published" && test?.published === true;
 }
 /** "Bugungi test": e'lon qilingan eng oxirgi kunlik test (eng katta kun raqami). */
 export function pickToday(tests, now = Date.now()) {
