@@ -32,10 +32,8 @@ function dayState(test, attempt, now) {
 
 function solutionChip(test, now, attempt) {
   if (solutionOpenFor(test, attempt, now)) return `<span class="of-badge of-badge--green">${ic("unlock")} ${tr("att.d.solOpen", "Yechimlar ochiq")}</span>`;
-  // Kunlik testda yechim vaqt bilan ochilmaydi — faqat testni yakunlagach; mock'da — sana ham ko'rsatiladi
-  return isMock(test)
-    ? `<span class="of-badge of-badge--orange">${ic("lock")} ${esc(tr("att.d.solAt", "Yechim: {when}", { when: formatTashkent(test.solutionAvailableAt) }))}</span>`
-    : `<span class="of-badge of-badge--orange">${ic("lock")} ${tr("att.d.solAfter", "Yechim: testdan keyin")}</span>`;
+  // Kunlik va mock testda yechim vaqt bilan ochilmaydi — faqat testni yakunlagach
+  return `<span class="of-badge of-badge--orange">${ic("lock")} ${tr("att.d.solAfter", "Yechim: testdan keyin")}</span>`;
 }
 
 function renderToday(today, attempt, now) {

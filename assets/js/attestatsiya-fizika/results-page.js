@@ -63,7 +63,7 @@ function columns(days, field, max, cls, fmt) {
             const tt = testsById.get(a.testId);
             const solLink = tt && solutionOpenFor(tt, a)
               ? `<a href="fizika-yechimlar.html?day=${a.dayNumber}">${tr("att.res.open", "Ochiq")}</a>`
-              : tt ? `<span class="of-subtle">${isMock(tt) ? esc(formatTashkent(tt.solutionAvailableAt)) : tr("att.res.afterTest", "testdan keyin")}</span>` : "—";
+              : tt ? `<span class="of-subtle">${tr("att.res.afterTest", "testdan keyin")}</span>` : "—";
             const mock = isMock(tt) || isMockDay(a.dayNumber);
             const res = a.status === "graded" ? `<b class="of-num">${mock ? `${tr("att.res.points", "{n} / {max} ball", { n: mockPoints(a.correctAnswers, tt), max: mockMax(tt) })}` : `${a.scorePercent}%`}</b>` : a.status === "submitted" ? '<a href="fizika-test.html?day=' + a.dayNumber + '">' + tr("att.res.viewResult", "Natijani ko‘rish") + '</a>' : '<span class="of-badge of-badge--orange">' + tr("att.res.inProgress", "Davom etmoqda") + '</span>';
             return `<tr><td><a href="fizika-test.html?day=${a.dayNumber}"><b>${esc(dayLabelOf(a.dayNumber))}</b></a>${tt ? `<br><span class="of-subtle">${mock ? tr("att.res.mockMeta", "50 savol · 100 ball") : esc(tt.sectionTitle)}</span>` : ""}</td>
