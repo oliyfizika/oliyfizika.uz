@@ -1,0 +1,165 @@
+{
+ "id": 21,
+ "solutions": [
+  {
+   "steps": [
+    "$m=\\rho V=7800\\cdot5\\cdot0{,}01=390$ kg",
+    "$A=mgh=390\\cdot10\\cdot15=58500\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=m(g+a)=2\\cdot13=26$ N; $\\;A=Fh=26\\cdot1=26\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Kuch o‘zgarmas, ish ko‘chishga proporsional. Tinch holatdan tekis tezlanuvchan harakatda ketma-ket sekundlardagi yo‘llar $1:3:5:\\ldots$",
+    "$\\dfrac{A_2}{A_1}=\\dfrac{s_2}{s_1}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=m(g+a)$, $\\;h=\\dfrac{at^2}{2}=2a$",
+    "$A=Th=(10+a)\\cdot2a=48\\;\\Rightarrow\\;a^2+10a-24=0\\;\\Rightarrow\\;a=2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Qiya tekislik bo‘ylab: $F-mg\\sin\\alpha=ma\\;\\Rightarrow\\;\\sin\\alpha=\\dfrac{20-2\\cdot5}{20}=0{,}5$.",
+    "Yo‘l: $s=\\dfrac{h}{\\sin\\alpha}=5$ m; $\\;A=Fs=20\\cdot5=100\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=\\dfrac6{10}=0{,}6$, $\\cos\\alpha=0{,}8$.",
+    "$F_{\\text{ishq}}=\\mu mg\\cos\\alpha=0{,}2\\cdot200\\cdot0{,}8=32$ N",
+    "$|A|=F_{\\text{ishq}}\\,s=32\\cdot10=320\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=\\dfrac{h}{\\sin45^\\circ}=7\\sqrt2$ m, $\\;F_{\\text{ishq}}=\\mu mg\\cos45^\\circ=0{,}2\\cdot5\\cdot\\dfrac{\\sqrt2}{2}$ N",
+    "$|A|=F_{\\text{ishq}}s=0{,}2\\cdot5\\cdot\\dfrac{\\sqrt2}{2}\\cdot7\\sqrt2=7\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Kinetik energiya 2 marta ortishi uchun $v^2=2v_0^2$, ya’ni $v_y=v_0$.",
+    "$gt=10\\;\\Rightarrow\\;t=1\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v^2=v_0^2+(gt)^2=400+1600=2000\\ \\text{m}^2/\\text{s}^2$",
+    "$m=\\dfrac{2E_k}{v^2}=\\dfrac{6000}{2000}=3\\ \\text{kg}$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng yuqori nuqtada faqat gorizontal tezlik qoladi: $v_x=v_0\\cos60^\\circ=4$ m/s.",
+    "$E_k=\\dfrac{mv_x^2}{2}=\\dfrac{3\\cdot16}{2}=24\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{E_{k,\\text{yuq}}}{E_{k0}}=\\dfrac{v_0^2\\cos^2\\alpha}{v_0^2}=\\cos^2\\alpha=0{,}25$",
+    "$\\cos\\alpha=0{,}5\\;\\Rightarrow\\;\\alpha=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=at$: 10 s da $v_1$, 20 s da $2v_1$. $E_k\\sim v^2$:",
+    "$\\Delta E_1\\sim v_1^2$, $\\;\\Delta E_2\\sim4v_1^2-v_1^2=3v_1^2$ — 3 marta kichik."
+   ]
+  },
+  {
+   "steps": [
+    "$E_k=\\dfrac{mv^2}{2}=\\dfrac{0{,}8\\cdot100}{2}=40$ J",
+    "$P=\\dfrac{E_k}{t}=\\dfrac{40}{0{,}1}=400\\ \\text{W}$"
+   ]
+  },
+  {
+   "steps": [
+    "Og‘irlik kuchining ishi kinetik energiya o‘zgarishiga teng:",
+    "$A=\\dfrac{m(v_2^2-v_1^2)}{2}=\\dfrac{4(64-4)}{2}=120\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_x=\\dfrac{40}{4}=10$ m/s, $\\;v_y=\\dfrac{gT}{2}=20$ m/s",
+    "$A=\\dfrac{m(v_x^2+v_y^2)}{2}=\\dfrac{0{,}2\\cdot500}{2}=50\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$|A|=\\dfrac{m(v_1^2-v_2^2)}{2}=\\dfrac{0{,}005(800^2-400^2)}{2}=1200\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Qarshilik kuchi bir xil: $F d=\\dfrac{mv^2}{2}$, ya’ni $d\\sim v^2$.",
+    "$v\\to2v\\;\\Rightarrow\\;d\\to4d=60\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "2 s da tosh $\\dfrac{gt^2}{2}=20$ m tushadi; balandlik $30-20=10$ m",
+    "$E_p=mgh=0{,}2\\cdot10\\cdot10=20\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_y=6\\sin30^\\circ=3$ m/s, $\\;h=\\dfrac{v_y^2}{2g}=0{,}45$ m",
+    "$\\Delta E_p=mgh=2\\cdot10\\cdot0{,}45=9\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikkinchi plita 0,2 m ga, uchinchisi 0,4 m ga ko‘tariladi (massa markazlari).",
+    "$A=mg(0{,}2+0{,}4)=80\\cdot10\\cdot0{,}6=480\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Massa markazi $\\dfrac L2=0{,}75$ m ga ko‘tariladi:",
+    "$A=mg\\dfrac L2=10\\cdot10\\cdot0{,}75=75\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Massa markazi $0{,}1$ m dan $0{,}5$ m gacha ko‘tariladi:",
+    "$\\Delta E_p=mg\\Delta h=200\\cdot10\\cdot0{,}4=800\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Oxirida zanjir vertikal osilib turadi, pastki uchi $L$ balandlikda — massa markazi $L+\\dfrac L2=3$ m da.",
+    "$A=mg\\cdot1{,}5L=5\\cdot10\\cdot3=150\\ \\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "Suv 1 m dan 2 m gacha chuqurlikda, massasi $m=\\rho Sh=1000\\cdot10\\cdot1=10^4$ kg, massa markazi 1,5 m chuqurlikda.",
+    "$A=mg\\cdot1{,}5=10^4\\cdot10\\cdot1{,}5=1{,}5\\cdot10^5\\ \\text{J}=150\\ \\text{kJ}$"
+   ]
+  },
+  {
+   "steps": [
+    "Har yarmida $V=7{,}5\\ \\text{m}^3$ suv ($m=7500$ kg). To‘siq 1:3 nisbatda turganda chuqurliklar: $h_1=\\dfrac{7{,}5}{3{,}75}=2$ m, $h_2=\\dfrac{7{,}5}{11{,}25}=\\dfrac23$ m.",
+    "$A=\\Delta E_p=mg\\left(\\dfrac{h_1}2+\\dfrac{h_2}2\\right)-2mg\\cdot\\dfrac12=7500\\cdot10\\left(1+\\dfrac13-1\\right)=25\\ \\text{kJ}$"
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\dfrac{kx^2}{2}\\;\\Rightarrow\\;x=\\sqrt{\\dfrac{2E}{k}}=\\sqrt{\\dfrac{100}{10^4}}=0{,}1\\ \\text{m}=10\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "$k=\\dfrac Fx=\\dfrac{30}{0{,}01}=3000$ N/m",
+    "$A=\\dfrac{kx^2}{2}=\\dfrac{3000\\cdot0{,}04}{2}=60\\ \\text{J}$"
+   ]
+  }
+ ]
+}

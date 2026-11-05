@@ -1,0 +1,123 @@
+{
+ "id": 23,
+ "solutions": [
+  {
+   "steps": [
+    "$P=Fv=4\\cdot100\\cdot10^3\\cdot240=9{,}6\\cdot10^7\\ \\text{W}=96000\\ \\text{kW}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac{mg}{20}=1000$ N, $\\;v=20$ m/s",
+    "$P=Fv=1000\\cdot20=20\\ \\text{kW}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac Pv=\\dfrac{18}{0{,}6}=30\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=0{,}1$, $v=9\\ \\text{km/h}=2{,}5$ m/s.",
+    "$P=mg\\sin\\alpha\\cdot v=6000\\cdot10\\cdot0{,}1\\cdot2{,}5=15\\ \\text{kW}$"
+   ]
+  },
+  {
+   "steps": [
+    "$P_{\\text{f}}=\\eta P=0{,}8\\cdot60=48$ kW, $\\;v=10$ m/s",
+    "$F=\\dfrac{P_{\\text{f}}}{v}=\\dfrac{48000}{10}=4800\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$P_{\\text{f}}=\\dfrac{mgh}{t}=\\dfrac{96\\cdot10\\cdot500}{60}=8000$ W",
+    "$\\eta=\\dfrac{8}{10}=80\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$P_{\\text{f}}=\\dfrac{300\\cdot10\\cdot80}{60}=4000$ W",
+    "$P=\\dfrac{P_{\\text{f}}}{\\eta}=\\dfrac{4000}{0{,}8}=5\\ \\text{kW}$"
+   ]
+  },
+  {
+   "steps": [
+    "$t=\\dfrac{mgh}{\\eta P}=\\dfrac{2000\\cdot10\\cdot50}{0{,}8\\cdot10^4}=125\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=18\\ \\text{km/h}=5$ m/s, $\\;a=\\dfrac55=1\\ \\text{m/s}^2$, $\\;F=ma=10^4$ N",
+    "$P=Fv=10^4\\cdot5=50\\ \\text{kW}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{2s}{t^2}=4\\ \\text{m/s}^2$, $\\;v=at=20$ m/s, $\\;F=ma=4000$ N",
+    "$P=Fv=4000\\cdot20=80\\ \\text{kW}$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{gt^2}{2}=5$ m, $\\;A=mgh=300$ J",
+    "$P_{\\text{o‘rt}}=\\dfrac At=300\\ \\text{W}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{F-mg}{m}=\\dfrac{36-30}{3}=2\\ \\text{m/s}^2$, $\\;v=at=4$ m/s",
+    "$P=Fv=36\\cdot4=144\\ \\text{W}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{42-30}{3}=4\\ \\text{m/s}^2$, $\\;v=\\sqrt{2ah}=\\sqrt{16}=4$ m/s",
+    "$P=Fv=42\\cdot4=168\\ \\text{W}$"
+   ]
+  },
+  {
+   "steps": [
+    "Qo‘zg‘almas blokda arqon uchi ham 10 m ga siljiydi.",
+    "$\\eta=\\dfrac{mgh}{Fh}=\\dfrac{245}{250}=98\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$A_{\\text{f}}=mgh=50\\cdot10\\cdot3=1500$ J",
+    "$A=\\dfrac{A_{\\text{f}}}{\\eta}=\\dfrac{1500}{0{,}96}\\approx1560\\ \\text{J}=1{,}56\\ \\text{kJ}$"
+   ]
+  },
+  {
+   "steps": [
+    "$A_{\\text{f}}=\\eta A=0{,}942\\cdot20700\\approx19500$ J",
+    "$m=\\dfrac{A_{\\text{f}}}{gh}=\\dfrac{19500}{130}=150\\ \\text{kg}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{Ph}{Fs}=\\dfrac{600\\cdot1}{350\\cdot1{,}8}=\\dfrac{600}{630}\\approx95\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{mgh}{Fs}=\\dfrac{245\\cdot10\\cdot0{,}06}{500\\cdot0{,}3}=\\dfrac{147}{150}=98\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$t=\\dfrac{mgh}{\\eta P}=\\dfrac{6000\\cdot10\\cdot8}{0{,}8\\cdot6000}=100\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{Ph}{Fl}=\\dfrac{300\\cdot1{,}5}{120\\cdot4{,}5}=\\dfrac{450}{540}\\approx83{,}3\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{mgh}{Fl}=\\dfrac{150\\cdot0{,}3}{40\\cdot1{,}8}=\\dfrac{45}{72}=62{,}5\\%$"
+   ]
+  }
+ ]
+}
