@@ -8,6 +8,7 @@
   "questions": [
     {
       "text": "Tasvirlangan linzalarning qaysilari yig‘uvchi?",
+      "image": "../rasmlar76/rasm0.svg",
       "answers": [
         "4, 5, 6.",
         "1, 2, 3.",
@@ -20,6 +21,7 @@
     },
     {
       "text": "Nurning yo‘li qaysi rasmda to‘g‘ri ko‘rsatilgan?",
+      "image": "../rasmlar76/rasm1.svg",
       "answers": [
         "A",
         "B",
@@ -139,7 +141,7 @@
         "I.",
         "II.",
         "III.",
-        "I va II.",
+        "I va III.",
         "II va III."
       ],
       "correct": 3,
@@ -154,7 +156,7 @@
         "N.",
         "P."
       ],
-      "correct": 3,
+      "correct": 2,
       "images": "../rasmlar76/r63d9219e6c.png",
       "source": "76-mavzu.tex#0:14"
     },
@@ -172,7 +174,7 @@
       "source": "76-mavzu.tex#0:15"
     },
     {
-      "text": "Ushbu rasmda nurning ikkita botiq linzalardan o‘tib ketish jarayoni keltirilgan. Undan foydalanib, linzalarning fokus masofalari bir xil bo‘lsa, qo‘shni nuqtalar orasidagi masofalar nisbati $F_1/F_2$ ni toping.",
+      "text": "Ushbu rasmda nurning ikkita botiq linzalardan o‘tib ketish jarayoni keltirilgan. Qo‘shni nuqtalar orasidagi masofalar bir xil bo‘lsa, linzalarning fokus masofalari nisbati $F_1/F_2$ ni toping.",
       "answers": [
         "$1/2$",
         "$2/3$",

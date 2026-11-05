@@ -1,0 +1,101 @@
+{
+ "id": 76,
+ "solutions": [
+  {
+   "steps": [
+    "Havodagi linza o‘rtasi chetlaridan qalin bo‘lsa — yig‘uvchi, yupqa bo‘lsa — sochuvchi.",
+    "2 (ikki qavariq), 3 (yassi-qavariq), 4 (qavariq-botiq menisk) — o‘rtasi qalin.",
+    "2, 3, 4"
+   ]
+  },
+  {
+   "steps": [
+    "Yig‘uvchi linzada bosh optik o‘qqa parallel nur sinib, orqa fokusdan o‘tadi — bu D rasm.",
+    "A: parallel nur o‘qdan uzoqlashgan; B: optik markazdan o‘tgan nur sinmasligi kerak; C: fokusdan o‘tgan nur o‘qqa parallel chiqishi kerak; E: sochuvchi linza parallel nurlarni yig‘maydi."
+   ]
+  },
+  {
+   "steps": [
+    "Fokusdan chiqqan nur 1-linzadan keyin o‘qqa parallel bo‘ladi.",
+    "Parallel nur 2-linzadan so‘ng uning fokusidan — ya’ni 3-linzaning optik markazidan — o‘tadi.",
+    "Optik markazdan o‘tgan nur sinmaydi: u pastga qiya holda ketadi — 4-yo‘nalish."
+   ]
+  },
+  {
+   "steps": [
+    "Ikkala linza ham yig‘uvchi: 1-linzadan keyin parallel nurlar uning orqa fokusida yig‘iladi.",
+    "Ikkinchi linzadan parallel chiqishi uchun bu nuqta 2-linzaning oldingi fokusi bo‘lishi kerak — fokal tekisliklar ustma-ust tushadi."
+   ]
+  },
+  {
+   "steps": [
+    "Nur sochuvchi linza orqasidagi fokusga yo‘naltirilgan (mavhum buyum $d=-F$).",
+    "$\\dfrac{1}{d'}=-\\dfrac1F+\\dfrac1F=0$ — nur linzadan o‘qqa parallel chiqadi.",
+    "Linzaga tushish balandligi $h=F\\,\\mathrm{tg}\\,\\alpha$; parallel nur ekranni shu balandlikda kesadi.",
+    "$h=F\\,\\mathrm{tg}\\,\\alpha$"
+   ]
+  },
+  {
+   "steps": [
+    "Nur o‘qni 1-linzadan $x$ masofada kesib, linzadan keyin parallel bo‘ldi — demak bu nuqta fokus: $F_1=x$.",
+    "Parallel nur 2-linzadan keyin o‘qni $3x$ masofada kesadi: $F_2=3x$.",
+    "$\\dfrac{F_1}{F_2}=\\dfrac13$"
+   ]
+  },
+  {
+   "steps": [
+    "Nur o‘qdagi $2F$ nuqtadan chiqqan. Yig‘uvchi linza $2F$ dagi nuqtaning tasvirini ikkinchi tomondagi $2F$ da beradi.",
+    "Tekshirish: nurga parallel yordamchi o‘q optik markazdan o‘tib, fokal tekislikni nur yig‘iladigan nuqtada kesadi; nur o‘sha nuqtadan o‘tib, $2F$ dagi $L$ ga boradi."
+   ]
+  },
+  {
+   "steps": [
+    "Parallel nurlar fokal tekislikda bir nuqtada yig‘iladi. Bu nuqtani nurga parallel, optik markazdan o‘tgan yordamchi o‘q (punktir) beradi.",
+    "Punktir chiziq fokal tekislikni $M$ nuqtada kesadi."
+   ]
+  },
+  {
+   "steps": [
+    "Nurga parallel, optik markazdan o‘tgan yordamchi o‘q (punktir) orqa fokal tekislikni $M$ nuqtada kesadi.",
+    "Linzadan keyin 1-nur ham shu nuqtadan o‘tadi."
+   ]
+  },
+  {
+   "steps": [
+    "Optik markazdan o‘tgan nur sinmaydi — bu 4-nuqta.",
+    "Sochuvchi linzada parallel nur sinib, davomi oldingi fokusdan o‘tadi; punktir davom o‘qni 2-nuqtada kesadi.",
+    "Fokus — 2, optik markaz — 4"
+   ]
+  },
+  {
+   "steps": [
+    "I: parallel nur sochuvchi linzadan keyin davomi oldingi fokusdan o‘tadigan qilib chiqadi — to‘g‘ri.",
+    "II: fokusdan chiqqan nur sochuvchi linzadan parallel chiqmaydi (bu yig‘uvchi linza xossasi) — noto‘g‘ri.",
+    "III: $d=F$ dagi nuqta uchun $\\dfrac1{d'}=-\\dfrac1F-\\dfrac1F$, $d'=-\\dfrac F2$ — chiqqan nur davomi fokus bilan linza o‘rtasidan o‘tadi — to‘g‘ri.",
+    "I va III"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linzadan nur o‘qqa parallel chiqdi, demak tushayotgan nur orqa fokusga yo‘nalgan edi.",
+    "Nurni davom ettirsak (katakchalar bo‘yicha 2 katak o‘ngga 1 katak pastga), u o‘qni $N$ nuqtada kesadi.",
+    "Tekshirish: optik markazdan o‘tgan parallel yordamchi o‘q oldingi fokal tekislikni chiqqan nur balandligida — markazdan 2 katak chapda — kesadi; $F=2$ katak.",
+    "Fokus — $N$"
+   ]
+  },
+  {
+   "steps": [
+    "Nur oldingi fokusdan chiqqan: $d=F$. Sochuvchi linza uchun $\\dfrac1{d'}=-\\dfrac1F-\\dfrac1F$, $d'=-\\dfrac F2$.",
+    "Chiqqan nur davomi linzadan $F/2$ masofadagi nuqtadan o‘tadi: katakchalarda bu $45^\\circ$ yo‘nalish.",
+    "2-yo‘nalish"
+   ]
+  },
+  {
+   "steps": [
+    "1-linzadan nur o‘qqa parallel chiqdi, demak tushgan nur uning orqa fokusiga yo‘nalgan: punktir o‘qni 2-nuqtada kesadi, $F_1=2a$.",
+    "2-linzadan parallel nur sochilib, davomi oldingi fokusdan o‘tadi: punktir o‘sha nuqtada, 2-linzadan $3a$ masofada: $F_2=3a$.",
+    "$\\dfrac{F_1}{F_2}=\\dfrac23$"
+   ]
+  }
+ ]
+}

@@ -107,7 +107,7 @@
         "I.",
         "II.",
         "III.",
-        "I and II.",
+        "I and III.",
         "II and III."
       ]
     },
@@ -131,7 +131,7 @@
       ]
     },
     {
-      "text": "This figure shows a ray passing through two concave lenses. Using it, find the ratio of the distances between adjacent points $F_1/F_2$, given that the focal lengths of the lenses are the same.",
+      "text": "This figure shows a ray passing through two concave lenses. Given that the distances between adjacent points are equal, find the ratio of the focal lengths of the lenses $F_1/F_2$.",
       "answers": [
         "$1/2$",
         "$2/3$",
