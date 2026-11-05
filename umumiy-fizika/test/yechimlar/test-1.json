@@ -1,0 +1,65 @@
+{
+ "id": 1,
+ "solutions": [
+  {
+   "steps": [
+    "Mexanik harakat — jism vaziyatining (o‘rnining) boshqa jismlarga nisbatan vaqt o‘tishi bilan o‘zgarishi.",
+    "Massa, rang yoki hajmning o‘zgarishi mexanik harakat emas."
+   ]
+  },
+  {
+   "steps": [
+    "Trayektoriya — jism (moddiy nuqta) harakat davomida fazoda qoldiradigan chiziq, ya’ni uning izi.",
+    "Massa, tezlik va hajm trayektoriya emas, ular jismning boshqa kattaliklari."
+   ]
+  },
+  {
+   "steps": [
+    "Tekis harakatda tezlik bosib o‘tilgan yo‘lning shu yo‘lga ketgan vaqtga nisbati:",
+    "$v=\\dfrac{s}{t}$"
+   ]
+  },
+  {
+   "steps": [
+    "SI da yo‘l metrda (m), vaqt sekundda (s) o‘lchanadi.",
+    "$[v]=\\dfrac{[s]}{[t]}=\\dfrac{\\text{m}}{\\text{s}}=\\text{m/s}$"
+   ]
+  },
+  {
+   "given": [
+    "$s=120\\ \\text{m}$",
+    "$t=20\\ \\text{s}$"
+   ],
+   "steps": [
+    "$v=\\dfrac{s}{t}=\\dfrac{120\\ \\text{m}}{20\\ \\text{s}}=6\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis harakatda jism istalgan teng vaqt oraliqlarida teng masofalarni bosib o‘tadi, ya’ni tezligi o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Fizikada yo‘l $s$, vaqt $t$, tezlik $v$, massa $m$ harfi bilan belgilanadi."
+   ]
+  },
+  {
+   "steps": [
+    "SI ning asosiy birliklaridan biri — sekund (s). Minut, soat va sutka tizimdan tashqari birliklar."
+   ]
+  },
+  {
+   "steps": [
+    "Tezligi o‘zgarib boradigan harakat notekis harakat deyiladi.",
+    "Tekis harakatda esa tezlik o‘zgarmas bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik formulasidan $v=\\dfrac{s}{t}$ yo‘lni ifodalaymiz:",
+    "$s=v\\,t$"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "id": 4,
+ "solutions": [
+  {
+   "given": [
+    "$v_0=0{,}1$ m/s, $\\;v=0{,}4$ m/s",
+    "$t=6$ s"
+   ],
+   "steps": [
+    "$a=\\dfrac{v-v_0}{t}=\\dfrac{0{,}4-0{,}1}{6}=0{,}05\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘g‘ri chiziqli tekis o‘zgaruvchan harakatda tezlanish vektori o‘zgarmas: $\\vec a=\\text{const}$.",
+    "Sekinlanuvchan harakatda tezlanish tezlikka qarama-qarshi, ya’ni harakat yo‘nalishidagi o‘qqa proyeksiyasi $a<0$."
+   ]
+  },
+  {
+   "steps": [
+    "Oniy tezlik: $v=v_0+at$.",
+    "Uni hisoblash uchun boshlang‘ich tezlik $v_0$, tezlanish $a$ va vaqt $t$ — uchalasi kerak."
+   ]
+  },
+  {
+   "steps": [
+    "$v_0=36\\ \\text{km/h}=10\\ \\text{m/s}$, $\\;t=1\\ \\text{min}=60\\ \\text{s}$, $\\;v=0$.",
+    "$a=\\dfrac{0-10}{60}\\approx-0{,}17\\ \\text{m/s}^2$",
+    "$v=v_0+at=10-0{,}17t$"
+   ]
+  },
+  {
+   "steps": [
+    "Sekinlanuvchan harakat: $v=v_0-at$.",
+    "$\\dfrac{v_0}{2}=v_0-at\\;\\Rightarrow\\;t=\\dfrac{v_0}{2a}$"
+   ]
+  },
+  {
+   "steps": [
+    "1-bosqich: $v_1=2a\\cdot t=2at$.",
+    "2-bosqich: tekis harakat, tezlik o‘zgarmaydi: $v_2=2at$.",
+    "3-bosqich: $v_3=v_2+a\\cdot2t=2at+2at=4at$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis sekinlanib to‘xtaganda o‘rtacha tezlik $\\dfrac{v_0+0}{2}$:",
+    "$s=\\dfrac{v_0}{2}\\,t=\\dfrac{20}{2}\\cdot2=20\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Birlik vaqtda (1 s) ko‘chish: $s=v_0\\cdot1+\\dfrac{a\\cdot1^2}{2}$.",
+    "$v_0\\to3v_0,\\;a\\to3a$ bo‘lsa: $s'=3v_0+\\dfrac{3a}{2}=3\\left(v_0+\\dfrac a2\\right)=3s$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis harakatda tezlik o‘zgarmas, koordinata va yo‘l vaqtga chiziqli bog‘liq.",
+    "1) $s=2t$ — tekis; 3) $x=3t+2$ — tekis; 5) $v=5$ — tezlik o‘zgarmas, tekis.",
+    "2) $s=at^2$ va 4) $v=4+t$ — tekis o‘zgaruvchan harakat."
+   ]
+  },
+  {
+   "steps": [
+    "$v=4t$ dan $v_0=0$, $a=4\\ \\text{m/s}^2$.",
+    "$s=\\dfrac{at^2}{2}=\\dfrac{4\\cdot5^2}{2}=50\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$n$-sekunddagi yo‘l: $s_n=\\dfrac{a}{2}\\left(n^2-(n-1)^2\\right)=\\dfrac{a(2n-1)}{2}$.",
+    "$27=\\dfrac{a\\cdot9}{2}\\;\\Rightarrow\\;a=6\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Yerdagi uchish tezligi: $v^2=2aL=2\\cdot5\\cdot640=6400$, $\\;v=80$ m/s (havoga nisbatan).",
+    "Kema $u=72\\ \\text{km/h}=20$ m/s bilan harakatlanadi, shuning uchun palubaga nisbatan samolyot $80-20=60$ m/s tezlikka erishishi yetarli.",
+    "$L_{\\min}=\\dfrac{(v-u)^2}{2a}=\\dfrac{60^2}{2\\cdot5}=360\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Harakat vaqti $T$, eng katta tezlik $v_m$ bo‘lsin. Tezlanish: $\\dfrac T3$, sekinlanish: $\\dfrac T4$, tekis harakat: $T-\\dfrac T3-\\dfrac T4=\\dfrac{5T}{12}$.",
+    "$s=\\dfrac{v_m}{2}\\cdot\\dfrac T3+v_m\\cdot\\dfrac{5T}{12}+\\dfrac{v_m}{2}\\cdot\\dfrac T4=v_mT\\left(\\dfrac16+\\dfrac5{12}+\\dfrac18\\right)=\\dfrac{17}{24}v_mT$",
+    "$v_{\\text{o‘rt}}=\\dfrac sT=\\dfrac{17}{24}v_m=17\\;\\Rightarrow\\;v_m=24\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$x=3+8t-t^2$ dan $v_0=8$ m/s, $a=-2\\ \\text{m/s}^2$.",
+    "$v=8-2t=0\\;\\Rightarrow\\;t=4$ s",
+    "$s=x(4)-x(0)=(3+32-16)-3=16\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$x=12t-2t^2$ dan $v_0=12$ m/s, $a=-4\\ \\text{m/s}^2$.",
+    "$v=12-4t=0\\;\\Rightarrow\\;t=3$ s",
+    "$s=12\\cdot3-2\\cdot3^2=18\\ \\text{m}$"
+   ]
+  }
+ ]
+}

@@ -9,6 +9,13 @@
 //   • natija — saveResult(...), XP — awardXP(...) (bitta mavzu uchun bir marta)
 //   • savol fayli: test-N.json  { title, backUrl, unlockLesson, questions:[{text, answers[], correct, image(s)?}] }
 // Qo'shimcha: json'da `pick: K` bo'lsa va savollar K dan ko'p bo'lsa — har urinishda tasodifiy K ta savol beriladi.
+//
+// YECHIMLAR (attestatsiya yechimlari uslubida): test/yechimlar/test-N.json
+//   { id, solutions: [ { given?: [..], steps: [..], answer?: ".." } | null, ... ] } — test-N.json savollari tartibida.
+//   Faqat shu testdan kamida 80% olgan foydalanuvchiga ochiladi:
+//     • o'tgan zahoti — natija sahifasidagi har bir savol ostida «Yechim»;
+//     • keyin istalgan vaqtda — test.html?id=N&yechimlar=1 (Firestore'dagi o'z natijasi ≥80% bo'lsa
+//       yoki shu brauzerda o'tilgan bo'lsa).
 // ==========================================================================
 import { icon } from "../ui/icons.js";
 import { openModal } from "../ui/modal.js";
@@ -19,6 +26,8 @@ import { saveResult } from "../../../js/services/result-service.js";
 import { awardXP } from "../../../js/services/xp-service.js";
 import { COURSES } from "../../../umumiy-fizika/data/courses.js";
 import { t, currentLang, applyI18n, topicLabel } from "../core/i18n.js";
+import { whenReady } from "../core/session.js";
+import { loadResults } from "../progress/progress-service.js";
 
 const PASS_PERCENT = 80;
 const LETTERS = ["A", "B", "C", "D", "E", "F"];
@@ -28,6 +37,7 @@ const root = document.getElementById("utPage");
 const view = root.querySelector("[data-view]");
 const params = new URLSearchParams(location.search);
 const testId = params.get("id");
+const solutionsMode = params.has("yechimlar");
 
 let data = null;        // test-N.json
 let lesson = null;      // courses.js dagi mavzu
@@ -133,6 +143,170 @@ function crumbs() {
   if (course) items.push(`<li><a href="../${esc(course.id)}.html">${esc(course.title)}</a></li>`);
   items.push(`<li aria-current="page">${esc(lesson?.numberLabel || t("ut.test", "Test"))}</li>`);
   return `<ol class="ut-crumbs" aria-label="${t("ut.breadcrumb", "Sahifa yo‘li")}">${items.join("")}</ol>`;
+}
+
+// ------------------------------------------------------------------ yechimlar (≥80% da ochiladi)
+let solutions = null;   // test/yechimlar/test-N.json → solutions[] (savol indeksi bo'yicha) yoki null
+const passKey = () => `oliyfizika:ut-passed:${testId}`;
+
+async function loadSolutions() {
+  try {
+    const res = await fetch(`yechimlar/test-${testId}.json`, { cache: "no-cache" });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return Array.isArray(json?.solutions) && json.solutions.some(Boolean) ? json.solutions : null;
+  } catch {
+    return null;
+  }
+}
+
+function rememberPass() {
+  try { localStorage.setItem(passKey(), "1"); } catch { /* ignore */ }
+}
+
+/** Shu testdan kamida 80% olinganmi: shu brauzerda o'tilgan yoki Firestore'dagi o'z natijasi. */
+async function hasPassed() {
+  try { if (localStorage.getItem(passKey()) === "1") return { ok: true }; } catch { /* ignore */ }
+  const s = await whenReady();
+  if (!s.user) return { ok: false, guest: true };
+  const results = await loadResults(s.user.uid);
+  const ok = results.some((r) => Number(r.lessonId) === Number(testId) && (r.passed === true || Number(r.percent) >= PASS_PERCENT));
+  if (ok) rememberPass();
+  return { ok };
+}
+
+function solBox(kind, label, lines) {
+  const box = document.createElement("div");
+  box.className = `ut-box ut-box--${kind}`;
+  const p = document.createElement("p");
+  p.className = "ut-box__label";
+  p.textContent = label;
+  box.append(p);
+  lines.forEach((line) => {
+    const d = document.createElement("div");
+    d.append(richText(line));
+    box.append(d);
+  });
+  return box;
+}
+
+/** Bitta savol yechimi: Berilgan → bosqichlar → Javob (attestatsiya yechimlari uslubi). */
+function renderSolution(sol, q) {
+  const wrap = document.createElement("div");
+  wrap.className = "ut-sol";
+  const list = (v) => (Array.isArray(v) ? v : v ? [v] : []);
+  const given = list(sol.given);
+  if (given.length) wrap.append(solBox("given", t("ut.sol.given", "Berilgan"), given));
+  list(sol.steps).forEach((step) => {
+    const p = document.createElement("p");
+    p.className = "ut-sol__step";
+    p.append(richText(step));
+    wrap.append(p);
+  });
+  const answer = sol.answer || (q && Number.isInteger(q.correct) ? `${LETTERS[q.correct]}) ${q.answers[q.correct]}` : "");
+  if (answer) wrap.append(solBox("answer", t("ut.sol.answer", "Javob"), [answer]));
+  return wrap;
+}
+
+/** Natija sahifasidagi savol kartasi ostiga yig'iladigan «Yechim» bloki. */
+function solutionDetails(sol, q, open = false) {
+  const d = document.createElement("details");
+  d.className = "ut-sol-details";
+  d.open = open;
+  const sum = document.createElement("summary");
+  sum.innerHTML = `${icon("book")}<span>${t("ut.sol.show", "Yechim")}</span>`;
+  d.append(sum, renderSolution(sol, q));
+  return d;
+}
+
+function figureNodes(q) {
+  return figuresOf(q).map((src) => {
+    const box = document.createElement("div");
+    box.className = "ut-q__fig";
+    const img = document.createElement("img");
+    img.src = new URL(src, location.href).href;
+    img.alt = t("ut.figure", "Savolga chizma");
+    img.loading = "lazy";
+    box.append(img);
+    return box;
+  });
+}
+
+/** test.html?id=N&yechimlar=1 — barcha savollar yechimlari (faqat ≥80% olganlar uchun). */
+async function renderSolutionsPage() {
+  const label = lesson?.numberLabel || topicLabel(data.unlockLesson - 1);
+  const title = lesson?.title || data.title;
+  setShellTitle(t("ut.sol.pageTitle", "{label} — yechimlar", { label }));
+  const testHref = `test.html?id=${encodeURIComponent(testId)}`;
+  const backUrl = data.backUrl || "../umumiy-fizika.html";
+  if (!solutions) {
+    view.innerHTML = crumbs() + stateHtml("book", t("ut.sol.none", "Bu test uchun yechimlar hali tayyor emas"), "",
+      `<a class="of-btn of-btn--primary" href="${esc(testHref)}">${t("ut.sol.toTest", "Testga o‘tish")}</a>`);
+    return;
+  }
+  view.innerHTML = crumbs() + stateHtml("lock", t("ut.sol.checking", "Natijangiz tekshirilmoqda…"));
+  let check;
+  try {
+    check = await hasPassed();
+  } catch (e) {
+    console.error("[test] natijalarni o'qib bo'lmadi:", e);
+    view.innerHTML = crumbs() + stateHtml("alert", t("ut.sol.checkFail", "Natijangizni tekshirib bo‘lmadi"), t("ut.sol.checkFailText", "Internet aloqasini tekshirib, sahifani yangilang."));
+    return;
+  }
+  if (!check.ok) {
+    view.innerHTML = crumbs() + stateHtml("lock", t("ut.sol.lockedTitle", "Yechimlar hali yopiq"),
+      check.guest
+        ? t("ut.sol.lockedGuest", "Yechimlar shu testdan kamida {pct}% natija olgan foydalanuvchilarga ochiladi. Avval tizimga kiring va testni ishlang.", { pct: PASS_PERCENT })
+        : t("ut.sol.lockedText", "Yechimlar shu testdan kamida {pct}% natija olganingizda ochiladi.", { pct: PASS_PERCENT }),
+      `<a class="of-btn of-btn--primary" href="${esc(testHref)}">${t("uf.startTest", "Testni boshlash")}</a>`);
+    return;
+  }
+  view.innerHTML = `
+    ${crumbs()}
+    <section class="of-card ut-sol-intro" aria-labelledby="utSolTitle">
+      <p class="ut-sol-intro__eyebrow">${icon("book")}${esc(t("ut.sol.eyebrow", "Yechimlar · {label}", { label }))}</p>
+      <h1 id="utSolTitle">${esc(title)}</h1>
+      <p class="of-subtle">${t("ut.sol.intro", "Testning barcha {n} ta savoli bosqichma-bosqich yechimlari bilan.", { n: (data.questions || []).length })}</p>
+      <div class="ut-actions">
+        <a class="of-btn of-btn--primary" href="${esc(testHref)}">${t("uf.retakeTest", "Testni qayta ishlash")}</a>
+        <a class="of-btn" href="${esc(backUrl)}">${t("ut.backToTopics", "Mavzularga qaytish")}</a>
+      </div>
+    </section>
+    <ol class="ut-review" data-review></ol>`;
+  const list = view.querySelector("[data-review]");
+  (data.questions || []).forEach((q, i) => {
+    const li = document.createElement("li");
+    li.className = "of-card ut-rev ut-rev--sol";
+    li.id = `yechim-${i + 1}`;
+    li.innerHTML = `<div class="ut-rev__head"><span class="ut-q__num">${i + 1}</span></div><div class="ut-q__body" data-body></div><div data-figs></div><ul class="ut-opts" data-opts></ul>`;
+    li.querySelector("[data-body]").append(richText(q.text));
+    li.querySelector("[data-figs]").append(...figureNodes(q));
+    q.answers.forEach((a, j) => li.querySelector("[data-opts]").append(reviewOption(a, j, j === q.correct ? "correct" : null)));
+    const sol = solutions[i];
+    if (sol) {
+      const sep = document.createElement("div");
+      sep.className = "ut-sol__sep";
+      li.append(sep, renderSolution(sol, q));
+    }
+    list.append(li);
+  });
+  if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+}
+
+function reviewOption(a, j, review) {
+  const o = document.createElement("li");
+  const b = document.createElement("div");
+  b.className = "ut-opt";
+  if (review) b.dataset.review = review;
+  const key = document.createElement("span");
+  key.className = "ut-opt__key";
+  key.textContent = LETTERS[j];
+  const content = document.createElement("span");
+  content.className = "ut-opt__content";
+  content.append(richText(a));
+  b.append(key, content);
+  o.append(b);
+  return o;
 }
 
 // ------------------------------------------------------------------ test ishlash
@@ -345,7 +519,10 @@ async function finish() {
     console.error("[test] natijani saqlashda xato:", e);
     saved = false;
   }
-  if (passed) unlockMechanicsLesson(unlockLesson);
+  if (passed) {
+    unlockMechanicsLesson(unlockLesson);
+    rememberPass();
+  }
   clearDraft();
   renderResult({ score, total, percent, passed, unlockLesson, xpAward, saved });
 }
@@ -355,6 +532,14 @@ const VERDICT = {
   wrong: ["alert", t("ut.wrong", "Noto‘g‘ri")],
   unanswered: ["info", t("ut.notAnswered", "Javob berilmagan")],
 };
+
+/** Natija sahifasidagi yechimlar haqidagi xabar: o'tilgan bo'lsa — ochiq, aks holda — 80% sharti. */
+function solNotice(passed) {
+  const href = `test.html?id=${encodeURIComponent(testId)}&yechimlar=1`;
+  return passed
+    ? `<div class="of-card ut-sol-note" data-open="true">${icon("checkCircle")}<div><b>${t("ut.sol.openTitle", "Yechimlar ochildi")}</b><p>${t("ut.sol.openText", "Har bir savol ostida «Yechim» bo‘limi bor. Testning barcha savollari yechimlarini istalgan vaqtda ko‘rishingiz mumkin.")}</p></div><a class="of-btn of-btn--primary of-btn--sm" href="${esc(href)}">${t("ut.sol.all", "Barcha yechimlar")}</a></div>`
+    : `<div class="of-card ut-sol-note">${icon("lock")}<div><b>${t("ut.sol.lockedTitle", "Yechimlar hali yopiq")}</b><p>${t("ut.sol.lockedText", "Yechimlar shu testdan kamida {pct}% natija olganingizda ochiladi.", { pct: PASS_PERCENT })}</p></div></div>`;
+}
 
 function renderResult({ score, total, percent, passed, unlockLesson, xpAward, saved }) {
   const wrong = questions.filter((q, i) => answers[i] != null && answers[i] !== q.correct).length;
@@ -387,6 +572,7 @@ function renderResult({ score, total, percent, passed, unlockLesson, xpAward, sa
         </div>
       </div>
     </section>
+    ${solutions ? solNotice(passed) : ""}
     <div class="ut-review-title">
       <h2>${t("ut.reviewTitle", "Javoblarni ko‘rib chiqish")}</h2>
       <div class="ut-filters" role="group" aria-label="${t("ut.filter", "Filtr")}">
@@ -408,32 +594,13 @@ function renderResult({ score, total, percent, passed, unlockLesson, xpAward, sa
     li.innerHTML = `<div class="ut-rev__head"><span class="ut-q__num">${i + 1}</span><span class="ut-rev__verdict">${icon(ic)}${text}</span></div>
       <div class="ut-q__body" data-body></div><div data-figs></div><ul class="ut-opts" data-opts></ul>`;
     li.querySelector("[data-body]").append(richText(q.text));
-    figuresOf(q).forEach((src) => {
-      const box = document.createElement("div");
-      box.className = "ut-q__fig";
-      const img = document.createElement("img");
-      img.src = new URL(src, location.href).href;
-      img.alt = t("ut.figure", "Savolga chizma");
-      img.loading = "lazy";
-      box.append(img);
-      li.querySelector("[data-figs]").append(box);
-    });
+    li.querySelector("[data-figs]").append(...figureNodes(q));
     q.answers.forEach((a, j) => {
-      const o = document.createElement("li");
-      const b = document.createElement("div");
-      b.className = "ut-opt";
-      if (j === q.correct) b.dataset.review = "correct";
-      else if (j === answers[i]) b.dataset.review = "wrong";
-      const key = document.createElement("span");
-      key.className = "ut-opt__key";
-      key.textContent = LETTERS[j];
-      const content = document.createElement("span");
-      content.className = "ut-opt__content";
-      content.append(richText(a));
-      b.append(key, content);
-      o.append(b);
-      li.querySelector("[data-opts]").append(o);
+      const review = j === q.correct ? "correct" : j === answers[i] ? "wrong" : null;
+      li.querySelector("[data-opts]").append(reviewOption(a, j, review));
     });
+    const sol = passed && solutions ? solutions[q._i] : null;
+    if (sol) li.append(solutionDetails(sol, q, status !== "correct"));
     list.append(li);
   });
   view.querySelector(".ut-filters").addEventListener("click", (e) => {
@@ -473,7 +640,8 @@ async function init() {
     return;
   }
   try {
-    const [res] = await Promise.all([fetch(`test-${testId}.json`, { cache: "no-cache" }), loadKatex().catch(() => null)]);
+    const [res, sols] = await Promise.all([fetch(`test-${testId}.json`, { cache: "no-cache" }), loadSolutions(), loadKatex().catch(() => null)]);
+    solutions = sols;
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
     await applyTestTranslation();
@@ -484,6 +652,10 @@ async function init() {
     return;
   }
   ({ course, lesson } = findLesson(data.unlockLesson));
+  if (solutionsMode) {
+    await renderSolutionsPage();
+    return;
+  }
   setShellTitle(lesson ? t("uf.lessonTest", "{label} testi", { label: lesson.numberLabel }) : t("ut.pageTitle", "Mavzu testi"));
 
   const all = data.questions || [];

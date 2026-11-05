@@ -156,6 +156,36 @@
 .ut-rev[data-status="unanswered"] .ut-rev__verdict { color: var(--of-warning-text); }
 .ut-rev__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
+/* ---- Yechimlar (attestatsiya yechimlari uslubida; testdan ≥80% olganda ochiladi) ---------------- */
+.ut-sol-note { display: flex; align-items: center; gap: 14px; padding: 14px 18px; flex-wrap: wrap; border-left: 4px solid var(--of-border-strong); }
+.ut-sol-note > svg { width: 26px; height: 26px; flex: none; color: var(--of-text-3); }
+.ut-sol-note > div { flex: 1 1 260px; }
+.ut-sol-note b { color: var(--of-text); }
+.ut-sol-note p { margin: 2px 0 0; color: var(--of-text-2); font-size: var(--of-text-sm); }
+.ut-sol-note[data-open="true"] { border-left-color: var(--of-success); }
+.ut-sol-note[data-open="true"] > svg { color: var(--of-success-text); }
+.ut-sol-details { border-top: 1px dashed var(--of-border); padding-top: 10px; }
+.ut-sol-details > summary { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 700; color: var(--of-primary-text); list-style: none; padding: 6px 12px; border-radius: 999px; background: var(--of-primary-soft); }
+.ut-sol-details > summary::-webkit-details-marker { display: none; }
+.ut-sol-details > summary svg { width: 18px; height: 18px; }
+.ut-sol-details[open] > summary { margin-bottom: 12px; }
+.ut-sol-details > summary:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.ut-sol { display: flex; flex-direction: column; gap: 10px; line-height: 1.65; overflow-wrap: anywhere; color: var(--of-text); }
+.ut-sol__step { margin: 0; }
+.ut-sol__sep { border-top: 1px dashed var(--of-border); }
+.ut-box { padding: 12px 14px; border-radius: var(--of-radius-md); background: var(--of-surface-2); border: 1px solid var(--of-border); display: flex; flex-direction: column; gap: 4px; }
+.ut-box__label { margin: 0 0 2px; font: 700 var(--of-text-xs)/1 var(--of-font-sans); letter-spacing: 0.05em; text-transform: uppercase; color: var(--of-text-3); }
+.ut-box--given { background: var(--of-primary-soft); border-color: transparent; }
+.ut-box--given .ut-box__label { color: var(--of-primary-text); }
+.ut-box--answer { background: var(--of-success-soft); border-color: transparent; }
+.ut-box--answer .ut-box__label { color: var(--of-success-text); }
+.ut-sol .katex-display, .ut-sol .katex { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.ut-sol-intro { padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+.ut-sol-intro h1 { margin: 0; font-size: var(--of-text-xl); }
+.ut-sol-intro__eyebrow { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-weight: 700; font-size: var(--of-text-sm); color: var(--of-primary-text); }
+.ut-sol-intro__eyebrow svg { width: 16px; height: 16px; }
+.ut-rev--sol { border-left-color: var(--of-primary); }
+
 .ut-state { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 40px 20px; text-align: center; color: var(--of-text-2); }
 .ut-state svg { width: 40px; height: 40px; color: var(--of-text-3); }
 .ut-state h2 { font-size: var(--of-text-lg); color: var(--of-text); }

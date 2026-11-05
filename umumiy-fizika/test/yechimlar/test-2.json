@@ -1,0 +1,113 @@
+{
+ "id": 2,
+ "solutions": [
+  {
+   "steps": [
+    "To‘g‘ri chiziqli tekis harakatda ikki shart bajariladi: trayektoriya — to‘g‘ri chiziq va istalgan teng vaqt oraliqlarida teng ko‘chishlar.",
+    "B va D da shartlardan biri yetishmaydi: B da tezlik o‘zgarishi, D da esa trayektoriya egri bo‘lishi mumkin."
+   ]
+  },
+  {
+   "steps": [
+    "To‘g‘ri chiziqli tekis harakatda $\\vec v=\\text{const}$.",
+    "Vektor o‘zgarmas bo‘lishi uchun uning ham moduli, ham yo‘nalishi o‘zgarmasligi kerak."
+   ]
+  },
+  {
+   "given": [
+    "$v=918\\ \\text{km/h}$"
+   ],
+   "steps": [
+    "$1\\ \\text{km/h}=\\dfrac{1000\\ \\text{m}}{3600\\ \\text{s}}=\\dfrac{1}{3{,}6}\\ \\text{m/s}$",
+    "$v=\\dfrac{918}{3{,}6}=255\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "given": [
+    "$s=9\\ \\text{m}=900\\ \\text{cm}$",
+    "$t=5\\ \\text{min}=300\\ \\text{s}$"
+   ],
+   "steps": [
+    "$v=\\dfrac{s}{t}=\\dfrac{900\\ \\text{cm}}{300\\ \\text{s}}=3\\ \\text{cm/s}$"
+   ]
+  },
+  {
+   "given": [
+    "$L_{\\text{poyezd}}=200\\ \\text{m}$",
+    "$L_{\\text{tunnel}}=300\\ \\text{m}$",
+    "$v=10\\ \\text{m/s}$"
+   ],
+   "steps": [
+    "Poyezd tunneldan butunlay chiqishi uchun uning boshi tunnel uzunligi va poyezdning o‘z uzunligi yig‘indisiga teng yo‘l bosishi kerak:",
+    "$s=L_{\\text{tunnel}}+L_{\\text{poyezd}}=300+200=500\\ \\text{m}$",
+    "$t=\\dfrac{s}{v}=\\dfrac{500}{10}=50\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Birinchi avtomobil uchun: $2v=\\dfrac{4S}{2t}=\\dfrac{2S}{t}$, bundan $\\dfrac{S}{t}=v$.",
+    "Ikkinchi avtomobil: $v_2=\\dfrac{3S}{2t}=1{,}5\\cdot\\dfrac{S}{t}=1{,}5v$"
+   ]
+  },
+  {
+   "steps": [
+    "Qator ko‘prikdan to‘liq o‘tishi uchun ko‘prik uzunligi va qator uzunligi yig‘indisicha yo‘l bosadi:",
+    "$s=600+300=900\\ \\text{m}$, $\\;v=36\\ \\text{km/h}=10\\ \\text{m/s}$",
+    "$t=\\dfrac{s}{v}=\\dfrac{900}{10}=90\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Uchrashganda koordinatalar teng: $x_1=x_2$.",
+    "$25+t=85-0{,}5t\\;\\Rightarrow\\;1{,}5t=60\\;\\Rightarrow\\;t=40\\ \\text{s}$",
+    "$x=25+40=65\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafik to‘g‘ri chiziq: 1 s da 5 m, 5 s da 25 m (tezlik $v=5\\ \\text{m/s}$).",
+    "$\\Delta s=s(5)-s(1)=25-5=20\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafik to‘g‘ri chiziq, demak harakat tekis va tezlik istalgan paytda bir xil.",
+    "$v=\\dfrac{\\Delta s}{\\Delta t}=\\dfrac{25\\ \\text{m}}{5\\ \\text{s}}=5\\ \\text{m/s}$ — $t=4{,}28$ s da ham shunday."
+   ]
+  },
+  {
+   "steps": [
+    "$s(t)$ grafigida tezlik — to‘g‘ri chiziqning qiyaligi: $v=\\dfrac{\\Delta s}{\\Delta t}$.",
+    "$v_1=\\dfrac{20}{3}\\approx6{,}7$ m/s, $\\;v_2=\\dfrac{17}{3{,}5}\\approx4{,}9$ m/s, $\\;v_3=\\dfrac{15}{4}=3{,}75$ m/s",
+    "Eng tik chiziq — 1-nuqta, uning tezligi eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Bosib o‘tilgan yo‘l manfiy bo‘lmaydi ($s\\ge0$) va vaqt o‘tishi bilan kamaymaydi.",
+    "I va IV grafiklar manfiy qiymatdan boshlanadi, II grafikda $s$ kamayib boradi — ular yo‘lni ifodalay olmaydi.",
+    "III grafikda yo‘l avval ortadi, keyin o‘zgarmay qoladi (jism to‘xtagan) — bu mumkin."
+   ]
+  },
+  {
+   "steps": [
+    "Yo‘l — har bir bo‘lakdagi ko‘chishlar modullarining yig‘indisi:",
+    "$0\\to2$ s: $|15-0|=15$ m; $\\;2\\to4$ s: $|-10-15|=25$ m; $\\;4\\to5$ s: $|0-(-10)|=10$ m",
+    "$s=15+25+10=50\\ \\text{m}$ (ko‘chish esa nolga teng)."
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $x_0=6$ m, $t=3$ s da $x=0$.",
+    "$v=\\dfrac{0-6}{3}=-2\\ \\text{m/s}$",
+    "$x=x_0+vt=6-2t$"
+   ]
+  },
+  {
+   "steps": [
+    "$x(t)$ grafigida tezlik moduli qiyalikka teng: qaysi bo‘lak eng tik bo‘lsa, tezlik shuncha katta.",
+    "I bo‘lakda bir katakda koordinata eng ko‘p (≈40 m) o‘zgaradi — bu eng tik bo‘lak."
+   ]
+  }
+ ]
+}

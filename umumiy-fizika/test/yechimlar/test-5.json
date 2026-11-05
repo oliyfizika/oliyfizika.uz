@@ -1,0 +1,111 @@
+{
+ "id": 5,
+ "solutions": [
+  {
+   "steps": [
+    "$s=\\dfrac{at^2}{2}=\\dfrac{2\\cdot5^2}{2}=25\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}=4\\cdot2+\\dfrac{3\\cdot2^2}{2}=8+6=14\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis tezlanuvchan harakatda ko‘chish:",
+    "$s=v_0t+\\dfrac{at^2}{2}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=\\dfrac{at^2}{2}\\;\\Rightarrow\\;a=\\dfrac{2s}{t^2}=\\dfrac{2\\cdot18}{3^2}=4\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}=6\\cdot4+\\dfrac{2\\cdot4^2}{2}=24+16=40\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=\\dfrac{at^2}{2}=\\dfrac{4\\cdot5^2}{2}=50\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}=10\\cdot6+\\dfrac{1\\cdot6^2}{2}=60+18=78\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Sekinlanuvchan harakatda tezlanish tezlikka qarama-qarshi, shuning uchun:",
+    "$s=v_0t-\\dfrac{at^2}{2}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=\\dfrac{at^2}{2}=\\dfrac{5\\cdot4^2}{2}=40\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}=8\\cdot3+\\dfrac{2\\cdot3^2}{2}=24+9=33\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘chish uzunlik birligida o‘lchanadi; SI da uzunlik birligi — metr (m)."
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{2s}{t^2}=\\dfrac{2\\cdot64}{8^2}=2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}\\;\\Rightarrow\\;14=5\\cdot2+\\dfrac{a\\cdot2^2}{2}=10+2a$",
+    "$a=2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}$ formuladan ko‘rinadiki, ko‘chish boshlang‘ich tezlik, vaqt va tezlanishga bog‘liq."
+   ]
+  },
+  {
+   "steps": [
+    "Jism 3 s ichida to‘xtamaydi ($t_{\\text{to‘xt}}=12/2=6$ s), shuning uchun:",
+    "$s=v_0t-\\dfrac{at^2}{2}=12\\cdot3-\\dfrac{2\\cdot3^2}{2}=36-9=27\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=\\dfrac{at^2}{2}=\\dfrac{1{,}5\\cdot6^2}{2}=27\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}=15\\cdot5+\\dfrac{1\\cdot5^2}{2}=75+12{,}5=87{,}5\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_0=0$ da $s=\\dfrac{at^2}{2}\\sim t^2$.",
+    "$t\\to2t$ bo‘lsa, $s\\to(2)^2s=4s$ — ko‘chish 4 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}=20\\cdot5+\\dfrac{2\\cdot5^2}{2}=100+25=125\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{at^2}{2}$ — vaqtga nisbatan kvadrat funksiya.",
+    "Kvadrat funksiyaning grafigi — parabola."
+   ]
+  }
+ ]
+}
