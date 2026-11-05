@@ -1,0 +1,875 @@
+{
+ "id": 77,
+ "solutions": [
+  {
+   "steps": [
+    "Yig‘uvchi linza mavhum tasvirni faqat buyum linza bilan fokus orasida ($d<F$) bo‘lganda beradi (lupa holati)."
+   ]
+  },
+  {
+   "steps": [
+    "$d<F$ bo‘lsa, nurlar linzadan keyin tarqaladi, ularning davomlari kesishib mavhum, to‘g‘ri, kattalashgan tasvir beradi.",
+    "$d<F$"
+   ]
+  },
+  {
+   "steps": [
+    "Kattalashgan haqiqiy tasvirni faqat yig‘uvchi linza ($F<d<2F$ da) beradi. Yassi ko‘zgu va plastina buyum kattaligidagi mavhum tasvir, sochuvchi linza esa kichiklashgan mavhum tasvir beradi."
+   ]
+  },
+  {
+   "steps": [
+    "Buyum $F$ va $2F$ orasida (1-soha). Bunda tasvir $2F$ dan narida hosil bo‘ladi — 5-soha."
+   ]
+  },
+  {
+   "steps": [
+    "Buyum $F<d<2F$ oraliqda: tasvir haqiqiy, teskari, kattalashgan."
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir buyumga nisbatan teskari va bosh optik o‘qning boshqa tomonida — bu faqat yig‘uvchi linzada bo‘ladi.",
+    "$S'$ $S$ dan katta, $\\Gamma=\\dfrac fd>1$ — demak $d<f$: linza buyumga yaqinroq."
+   ]
+  },
+  {
+   "steps": [
+    "$F<d<2F$ da $f>2F>d$: tasvir haqiqiy, teskari, kattalashgan."
+   ]
+  },
+  {
+   "steps": [
+    "$d>2F$ da $F<f<2F$, ya’ni $f<d$: tasvir haqiqiy, teskari, kichiklashgan."
+   ]
+  },
+  {
+   "steps": [
+    "$d>2F$ bo‘lsa $f<d$: tasvir haqiqiy va kichraygan (teskari)."
+   ]
+  },
+  {
+   "steps": [
+    "$d>2F$ da tasvir $F$ va $2F$ orasida hosil bo‘ladi: haqiqiy, teskari, kichiklashgan."
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy, to‘nkarilgan, kichiklashgan tasvir $f<d$ shartda bo‘ladi, bu esa $d>2F$ ga mos keladi.",
+    "$d>2F$"
+   ]
+  },
+  {
+   "steps": [
+    "Rasmda sochuvchi linza. Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi."
+   ]
+  },
+  {
+   "steps": [
+    "$S'$ mavhum (punktir), to‘g‘ri va $S$ dan kichik. Yig‘uvchi linzaning mavhum tasviri doim kattalashgan bo‘ladi, demak linza sochuvchi.",
+    "Sochuvchi linzada mavhum tasvir buyum bilan linza orasida hosil bo‘ladi — linza $S'$ dan o‘ng tomonda."
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "Buyum qayerda bo‘lishidan qat’i nazar tasvir kichiklashgan, to‘g‘ri, mavhum."
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza (havoda) haqiqiy buyumning faqat mavhum tasvirini beradi — mumkin emas."
+   ]
+  },
+  {
+   "steps": [
+    "$d=2F$ da $f=2F$, $\\Gamma=1$: tasvir teskari, haqiqiy, o‘zining kattaligida."
+   ]
+  },
+  {
+   "steps": [
+    "1-linza: $d_1=60=2F$, tasvir uning ortida $60$ cm da bo‘lishi kerak edi, lekin 2-linza nurlarni oldinroq — $30$ cm da — qaytaradi.",
+    "2-linza uchun mavhum buyum uning ortida $30$ cm da: $\\dfrac1{f_2}=\\dfrac1{30}+\\dfrac1{30}$, $f_2=15$ cm.",
+    "3-linza uchun buyum undan $15$ cm oldinda: $\\dfrac1{f_3}=\\dfrac1{30}-\\dfrac1{15}=-\\dfrac1{30}$, $f_3=-30$ cm.",
+    "Tasvir mavhum, 3-linzadan $30$ cm chapda — o‘rtadagi linza o‘rnida."
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "$\\dfrac1F=\\dfrac1{100}+\\dfrac1{25}=\\dfrac5{100}\\;\\Rightarrow\\;F=20$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "$f=\\dfrac{Fd}{d-F}=\\dfrac{12\\cdot16}{4}=48$ cm.",
+    "$\\Gamma=\\dfrac{48}{16}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$\\Gamma=2\\;\\Rightarrow\\;d=F\\left(1+\\dfrac12\\right)=1{,}5F$"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$d=50\\left(1+\\dfrac14\\right)=62{,}5$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$d+f=L$, $\\dfrac1d+\\dfrac1f=\\dfrac1F$ dan $d^2-Ld+LF=0$. Haqiqiy yechim bo‘lishi uchun diskriminant $L^2-4LF\\ge0$.",
+    "$L_{min}=4F$"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "Mavhum tasvir: $f=-3$ m.",
+    "$\\dfrac1d=\\dfrac11+\\dfrac13=\\dfrac43\\;\\Rightarrow\\;d=0{,}75$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "$\\dfrac1f=\\dfrac1{36}-\\dfrac1{18}=-\\dfrac1{36}\\;\\Rightarrow\\;|f|=36$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1F=\\dfrac1{25}+\\dfrac1{50}=\\dfrac3{50}$.",
+    "$d=20$ cm: $\\dfrac1f=\\dfrac3{50}-\\dfrac1{20}=\\dfrac1{100}\\;\\Rightarrow\\;f=100$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "$\\dfrac1F=\\dfrac1{0{,}5}+\\dfrac11=3\\;\\Rightarrow\\;F\\approx0{,}33$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=1$ bo‘lishi uchun $d=f$: $\\dfrac2d=\\dfrac1F$.",
+    "$d=2F$"
+   ]
+  },
+  {
+   "steps": [
+    "$L=d+f$ ning eng kichik qiymati $d=f=2F$ da bo‘ladi.",
+    "$L_{min}=4F$"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "Mavhum tasvir: $f=-10$ cm. $\\dfrac1d=\\dfrac15+\\dfrac1{10}=\\dfrac3{10}$, $d=\\dfrac{10}3$ cm.",
+    "$\\Gamma=\\dfrac{10}{10/3}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "Buyum va haqiqiy tasvir orasidagi masofa $d=f=2F$ da eng kichik ($4F$)."
+   ]
+  },
+  {
+   "steps": [
+    "$f=\\dfrac{Fd}{d-F}$.",
+    "$\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$"
+   ]
+  },
+  {
+   "steps": [
+    "$f=\\dfrac{Fd}{d-F}$.",
+    "$\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1d=\\dfrac1F-\\dfrac1f=\\dfrac{f-F}{Ff}$, $\\Gamma=\\dfrac fd=\\dfrac{f-F}{F}$.",
+    "$a'=\\dfrac{a(f-F)}{F}$"
+   ]
+  },
+  {
+   "steps": [
+    "$f=kd$ va $d+f=L$: $d=\\dfrac{L}{k+1}$.",
+    "$f=\\dfrac{k}{k+1}L$"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$\\Gamma=2$: $d=\\dfrac32F$; $\\Gamma=3$: $d=\\dfrac43F$. $\\Gamma$ ortishi bilan $d$ kamayadi.",
+    "$\\dfrac43F<d<\\dfrac32F$"
+   ]
+  },
+  {
+   "steps": [
+    "Nyuton formulasi: $x\\,x'=F^2$ ($x$, $x'$ — fokuslardan buyum va tasvirgacha masofalar).",
+    "$F=\\sqrt{2\\cdot8}=4$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$d=F+a$, $f=F+b$ ni linza formulasiga qo‘ysak: $(F+a)(F+b)=F(2F+a+b)$.",
+    "$ab=F^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linza formulasi: $\\dfrac1F=\\dfrac1d+\\dfrac1f$ (mavhum tasvir uchun $f<0$, sochuvchi linza uchun $F<0$); kattalashtirish $\\Gamma=\\dfrac{|f|}{d}$.",
+    "$\\dfrac1F=\\dfrac1{50}+\\dfrac1{12{,}5}=\\dfrac5{50}\\;\\Rightarrow\\;F=10$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir: $f=\\Gamma d=30$ cm.",
+    "$\\dfrac1F=\\dfrac1{15}+\\dfrac1{30}=\\dfrac1{10}\\;\\Rightarrow\\;F=10$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Ekrandagi tasvir haqiqiy: $f=4\\cdot25=100$ cm.",
+    "$\\dfrac1F=\\dfrac1{25}+\\dfrac1{100}=\\dfrac1{20}\\;\\Rightarrow\\;F=0{,}2$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$d+f=150$ cm, $f=4d$: $d=30$ cm, $f=120$ cm.",
+    "$F=\\dfrac{df}{d+f}=\\dfrac{30\\cdot120}{150}=24$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "1-holat: $d=9F$; 2-holat: $d-10=5F$.",
+    "$9F-10=5F\\;\\Rightarrow\\;F=2{,}5$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Mavhum tasvir: $f=-kd$.",
+    "$\\dfrac1F=\\dfrac1d-\\dfrac1{kd}=\\dfrac{k-1}{kd}\\;\\Rightarrow\\;F=\\dfrac{k}{k-1}d$"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$d=0{,}5\\left(1+\\dfrac15\\right)=0{,}6$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$d=2{,}5-2=0{,}5$ m.",
+    "$\\Gamma=\\dfrac fd=\\dfrac{2}{0{,}5}=4$"
+   ]
+  },
+  {
+   "steps": [
+    "Rasmdan: $F=3$ katak, $d=4$ katak.",
+    "$f=\\dfrac{Fd}{d-F}=\\dfrac{3\\cdot4}{1}=12$ katak.",
+    "$\\Gamma=\\dfrac{12}{4}=3\\;\\Rightarrow\\;h'=3h$"
+   ]
+  },
+  {
+   "steps": [
+    "Mavhum tasvir: $f=-3d$; $\\dfrac1{15}=\\dfrac1d-\\dfrac1{3d}=\\dfrac2{3d}$, $d=10$ cm, $|f|=30$ cm.",
+    "Ikkalasi linzaning bir tomonida.",
+    "$\\ell=30-10=20$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac{F}{d-F}=\\dfrac{F}{2F}=\\dfrac12$.",
+    "Tasvir buyumdan 2 marta kichik."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac{F}{d-F}=\\dfrac{1}{3-1}=0{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac{F}{d-F}=\\dfrac{F}{3F-F}=0{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac{F}{4F-F}=\\dfrac13$ — 3 marta kichik"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$\\Gamma=\\dfrac13\\;\\Rightarrow\\;d=F(1+3)=4F$"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun igna fokusdan tashqarida: uchlari $d_1=4$ cm va $d_2=5$ cm da.",
+    "$f_1=\\dfrac{3\\cdot4}{1}=12$ cm, $f_2=\\dfrac{3\\cdot5}{2}=7{,}5$ cm.",
+    "$\\ell'=12-7{,}5=4{,}5$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$\\Gamma=0{,}5\\;\\Rightarrow\\;d=F(1+2)=3F$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1f=\\dfrac1F-\\dfrac1{nF}=\\dfrac{n-1}{nF}$.",
+    "$f=\\dfrac{nF}{n-1}$"
+   ]
+  },
+  {
+   "steps": [
+    "Linzaning ikki holatida $d$ va $f$ o‘rin almashadi: $\\Gamma_1=\\dfrac fd$, $\\Gamma_2=\\dfrac df$, ya’ni $\\Gamma_1\\Gamma_2=1$.",
+    "$\\dfrac{h_1}{h}\\cdot\\dfrac{h_2}{h}=1$.",
+    "$h=\\sqrt{h_1h_2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linzada $F<0$ va tasvir mavhum ($f<0$). Modullar bilan:",
+    "$-\\dfrac1F=\\dfrac1d-\\dfrac1f$"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$d=F$: $\\dfrac1f=-\\dfrac2{10}\\;\\Rightarrow\\;|f|=5$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$d=F$: $|f|=\\dfrac F2$"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza haqiqiy tasvir bermaydi — bu mumkin emas."
+   ]
+  },
+  {
+   "steps": [
+    "Kichiklashgan mavhum tasvirni sochuvchi linza beradi.",
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\dfrac1{|f|}=\\dfrac1{24}+\\dfrac1{12}=\\dfrac18\\;\\Rightarrow\\;|f|=8$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Kichiklashgan tasvir ($d<F$ da yig‘uvchi linza kattalashtiradi) — demak linza sochuvchi.",
+    "$\\dfrac1{|f|}=\\dfrac1{15}+\\dfrac1{10}=\\dfrac16\\;\\Rightarrow\\;|f|=6$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$d>F$ da yig‘uvchi linza haqiqiy tasvir beradi, demak mavhum tasvir sochuvchi linzadan.",
+    "$\\dfrac1{|f|}=\\dfrac1{10}+\\dfrac1{15}=\\dfrac16\\;\\Rightarrow\\;|f|=6$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Kichiklashgan mavhum tasvir — sochuvchi linza: $\\dfrac1d=\\dfrac1{|f|}-\\dfrac1F$.",
+    "$\\dfrac1d=\\dfrac1{15}-\\dfrac1{20}=\\dfrac1{60}\\;\\Rightarrow\\;d=60$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\dfrac1{|f|}=\\dfrac1F+\\dfrac1{2F}=\\dfrac3{2F}\\;\\Rightarrow\\;|f|=\\dfrac{2F}3$"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\Gamma=\\dfrac{F}{nF+F}=\\dfrac1{n+1}$ — $n+1$ marta kichik"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\Gamma=\\dfrac1{m+1}$ — $m+1$ marta kichik"
+   ]
+  },
+  {
+   "steps": [
+    "$1\\,\\text{D}=\\dfrac{1}{1\\,\\text{m}}=1\\,\\text{m}^{-1}$."
+   ]
+  },
+  {
+   "steps": [
+    "Optik kuch $D=\\dfrac1F$ (F — metrda), $D=\\dfrac1d+\\dfrac1f$.",
+    "$D=\\dfrac1{0{,}04}=25$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Optik kuch $D=\\dfrac1F$ (F — metrda), $D=\\dfrac1d+\\dfrac1f$.",
+    "$D=\\dfrac1{0{,}125}=8$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linzaning optik kuchi manfiy.",
+    "$D=-\\dfrac1{0{,}05}=-20$ D"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac1D=\\dfrac14=0{,}25$ m $=25$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Zich tegib turgan linzalarning optik kuchlari qo‘shiladi.",
+    "$D=\\dfrac1{0{,}5}-\\dfrac1{0{,}2}=2-5=-3$ D"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1F=\\dfrac1{F_1}+\\dfrac1{F_2}=\\dfrac1{20}+\\dfrac1{30}=\\dfrac1{12}$.",
+    "$F=12$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$D=\\dfrac{1}{-0{,}125}+8=-8+8=0$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac1{12}$ m. $\\dfrac1f=D-\\dfrac1d=12-2=10$.",
+    "$f=0{,}1$ m $=10$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$F=0{,}5$ m.",
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$f=0{,}5\\cdot(1+5)=3$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac13$ m.",
+    "Haqiqiy tasvir uchun $\\Gamma=\\dfrac fd=\\dfrac{F}{d-F}$, bundan $d=F\\left(1+\\dfrac1\\Gamma\\right)$, $f=F(1+\\Gamma)$.",
+    "$d=\\dfrac13\\left(1+\\dfrac15\\right)=0{,}4$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$F=0{,}1$ m $=10$ cm.",
+    "$\\Gamma=\\dfrac{F}{d-F}=\\dfrac{10}{20}=0{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "Ekrandagi tasvir haqiqiy: $d+f=3$ m, $f=5d$: $d=0{,}5$ m, $f=2{,}5$ m.",
+    "$D=\\dfrac1{0{,}5}+\\dfrac1{2{,}5}=2{,}4$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Yig‘uvchi linza to‘g‘ri (mavhum) tasvirni $d<F$ da beradi.",
+    "$F=\\dfrac12=0{,}5$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Tasvir buyum tomonda — mavhum: $f=-0{,}5$ m.",
+    "$\\dfrac1d=D-\\dfrac1f=3+2=5\\;\\Rightarrow\\;d=0{,}2$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Linzalar zich turibdi: $D=7-2=5$ D, $F=20$ cm.",
+    "$f=\\dfrac{Fd}{d-F}=\\dfrac{20\\cdot22}{2}=220$ cm, $\\;\\Gamma=\\dfrac{220}{22}=10$"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\dfrac1{|f|}=1+\\dfrac14=1{,}25\\;\\Rightarrow\\;|f|=0{,}8$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\dfrac1{|f|}=4+1=5\\;\\Rightarrow\\;|f|=0{,}2$ m $=20$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Sochuvchi linza har doim mavhum, to‘g‘ri, kichiklashgan tasvir beradi: $\\dfrac1f=-\\dfrac1F-\\dfrac1d$, $\\Gamma=\\dfrac{F}{d+F}$.",
+    "$\\Gamma=\\dfrac F{d+F}=\\dfrac14\\Rightarrow d=3F$, $F=0{,}25$ m.",
+    "$d=0{,}75$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Optik kuch $D=\\dfrac1F$ (F — metrda), $D=\\dfrac1d+\\dfrac1f$.",
+    "Mavhum tasvir: $f=-0{,}2$ m.",
+    "$D=\\dfrac1{0{,}1}-\\dfrac1{0{,}2}=+5$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Optik kuch $D=\\dfrac1F$ (F — metrda), $D=\\dfrac1d+\\dfrac1f$.",
+    "$D=\\dfrac1{0{,}25}-\\dfrac1{0{,}5}=4-2=2$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Optik kuch $D=\\dfrac1F$ (F — metrda), $D=\\dfrac1d+\\dfrac1f$.",
+    "$f=-2\\cdot12{,}5=-25$ cm.",
+    "$D=\\dfrac1{0{,}125}-\\dfrac1{0{,}25}=8-4=4$ D"
+   ]
+  },
+  {
+   "steps": [
+    "To‘g‘ri, kattalashgan — mavhum tasvir, buyum tomonda va undan uzoqroqda: $|f|=20+30=50$ cm.",
+    "$D=\\dfrac1{0{,}2}-\\dfrac1{0{,}5}=5-2=3$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Tasvir buyum tomonda — mavhum: $f=-0{,}5$ m.",
+    "$\\dfrac1d=3+2=5\\;\\Rightarrow\\;d=0{,}2$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Ekrandagi tasvir haqiqiy: $f=2$ m.",
+    "$D=\\dfrac11+\\dfrac12=1{,}5$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ekrandagi tasvir haqiqiy: $d+f=2$, $f=2d$: $d=\\dfrac23$ m, $f=\\dfrac43$ m.",
+    "$D=1{,}5+0{,}75=+2{,}25$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Kichiklashgan mavhum tasvir — sochuvchi linza: $|f|=5$ cm.",
+    "$D=\\dfrac1{0{,}1}-\\dfrac1{0{,}05}=10-20=-10$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Mavhum tasvir: $f=-0{,}2$ m.",
+    "$D=\\dfrac11-\\dfrac1{0{,}2}=1-5=-4$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Tasvir linzadan $40$ cm da, 5 marta kichik: $d=5\\cdot0{,}4=2$ m.",
+    "$D=\\dfrac12-\\dfrac1{0{,}4}=0{,}5-2{,}5=-2$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Buyum $50$ cm da, tasvir 5 marta kichik: $|f|=10$ cm.",
+    "$D=\\dfrac1{0{,}5}-\\dfrac1{0{,}1}=2-10=-8$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa linzaning optik kuchi: $D=(n-1)\\left(\\dfrac1{R_1}+\\dfrac1{R_2}\\right)$.",
+    "$D=0{,}5\\cdot\\left(2+2\\right)=2$ D"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1F=(n-1)\\left(\\dfrac1{R_1}+\\dfrac1{R_2}\\right)$: $\\dfrac1{10}=(n-1)\\left(\\dfrac15+\\dfrac1{10}\\right)=0{,}3(n-1)$.",
+    "$n=1+\\dfrac13=\\dfrac43$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1F=0{,}6\\left(\\dfrac1{10}+\\dfrac1{15}\\right)=0{,}6\\cdot\\dfrac16=0{,}1\\;\\Rightarrow\\;F=10$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Radiuslar $R$ va $2R$: $\\dfrac1F=(n-1)\\left(\\dfrac1R+\\dfrac1{2R}\\right)=0{,}5\\cdot\\dfrac{3}{2R}=\\dfrac{3}{4R}$.",
+    "$R=\\dfrac{3F}4=\\dfrac{3\\cdot24}{4}=18$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel nurlar fokusda yig‘iladi: $\\dfrac1F=\\dfrac{n-1}{R}$.",
+    "$F=\\dfrac{18}{0{,}6}=30$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Havoda: $D=(1{,}5-1)K=8$ D, ya’ni $K=\\dfrac1{R_1}+\\dfrac1{R_2}=16$ m$^{-1}$.",
+    "Suyuqlikda: $\\dfrac1{F'}=\\left(\\dfrac{1{,}5}{n_s}-1\\right)K=-1$.",
+    "$\\dfrac{1{,}5}{n_s}=1-\\dfrac1{16}=\\dfrac{15}{16}\\;\\Rightarrow\\;n_s=1{,}6$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki tomoni qavariq, $R_1=R_2=R=F$: $\\dfrac1R=(n-1)\\dfrac2R$.",
+    "$n=1{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "Muhitda: $\\dfrac1{F'}=\\left(\\dfrac{n_L}{n_s}-1\\right)K$. $\\dfrac{1{,}6}{1{,}25}-1=0{,}28<0{,}6$.",
+    "Linza yig‘uvchiligicha qoladi, ammo fokus masofasi ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1F\\sim\\dfrac{n}{n_m}-1$: havoda $0{,}7$; suvda $\\dfrac{1{,}7}{1{,}3}-1\\approx0{,}31$; anilinda $\\dfrac{1{,}7}{1{,}59}-1\\approx0{,}07$.",
+    "$F_1<F_2<F_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Muhitning sindirish ko‘rsatkichi linzanikidan katta bo‘lsa, $\\dfrac{n_L}{n_m}-1<0$ ishorasi almashadi: botiq linza yig‘uvchiga aylanadi va haqiqiy tasvir bera oladi."
+   ]
+  },
+  {
+   "steps": [
+    "Botiq linza $n_{muhit}>n_{shisha}$ bo‘lgan muhitda yig‘uvchi bo‘ladi va haqiqiy tasvir bera oladi."
+   ]
+  },
+  {
+   "steps": [
+    "Lupa — $d<F$ dagi yig‘uvchi linza: tasvir mavhum, to‘g‘ri, kattalashgan."
+   ]
+  },
+  {
+   "steps": [
+    "Lupa mavhum kattalashgan tasvir beradi — buyum fokus ichida bo‘ladi.",
+    "$d<F$"
+   ]
+  },
+  {
+   "steps": [
+    "Lupa (tasvir eng yaxshi ko‘rish masofasida, $d_0=25$ cm): $\\Gamma=\\dfrac{d_0}{F}+1$.",
+    "$\\Gamma=\\dfrac{25}{2{,}5}+1=11$"
+   ]
+  },
+  {
+   "steps": [
+    "Lupa (tasvir eng yaxshi ko‘rish masofasida, $d_0=25$ cm): $\\Gamma=\\dfrac{d_0}{F}+1$.",
+    "$\\Gamma=\\dfrac{25}{5}+1=6$"
+   ]
+  },
+  {
+   "steps": [
+    "Lupa (tasvir eng yaxshi ko‘rish masofasida, $d_0=25$ cm): $\\Gamma=\\dfrac{d_0}{F}+1$.",
+    "$\\Gamma=\\dfrac{25}{2{,}5}+1=11$"
+   ]
+  },
+  {
+   "steps": [
+    "Lupa (tasvir eng yaxshi ko‘rish masofasida, $d_0=25$ cm): $\\Gamma=\\dfrac{d_0}{F}+1$.",
+    "$5=\\dfrac{25}{F}+1\\Rightarrow F=6{,}25$ cm.",
+    "$D=\\dfrac1{0{,}0625}=16$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Lupa (tasvir eng yaxshi ko‘rish masofasida, $d_0=25$ cm): $\\Gamma=\\dfrac{d_0}{F}+1$.",
+    "$6=\\dfrac{25}F+1\\Rightarrow F=5$ cm.",
+    "$D=\\dfrac1{0{,}05}=20$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Masshtab — kattalashtirish: $\\Gamma=\\dfrac{F}{d-F}=\\dfrac1{16000}$, $d\\gg F$ bo‘lgani uchun $F\\approx\\dfrac{d}{16000}$.",
+    "$F\\approx\\dfrac{12000}{16000}=0{,}75$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Fotoapparat/proyektor: $\\Gamma=\\dfrac fd$, $\\dfrac1F=\\dfrac1d+\\dfrac1f$.",
+    "$\\Gamma=\\dfrac{0{,}01}{8}=\\dfrac1{800}$.",
+    "$d=F\\left(1+\\dfrac1\\Gamma\\right)=0{,}05\\cdot801=40{,}05$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Fotoapparat/proyektor: $\\Gamma=\\dfrac fd$, $\\dfrac1F=\\dfrac1d+\\dfrac1f$.",
+    "$\\Gamma=\\dfrac{0{,}012}{3}=\\dfrac1{250}$.",
+    "$d=0{,}2\\cdot(1+250)=50{,}2\\approx50$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Fotoapparat/proyektor: $\\Gamma=\\dfrac fd$, $\\dfrac1F=\\dfrac1d+\\dfrac1f$.",
+    "$\\Gamma=\\dfrac{F}{d-F}=\\dfrac{0{,}05}{4{,}95}=\\dfrac1{99}$.",
+    "$H=99\\cdot17$ mm $\\approx1{,}7$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac F{d-F}$: $\\dfrac{\\Gamma_1}{\\Gamma_2}=\\dfrac{165-F}{90-F}=\\dfrac42=2$.",
+    "$180-2F=165-F\\;\\Rightarrow\\;F=15$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Proyektor: yorug‘lik manbai, sferik ko‘zgu (reflektor), kondensor (yassi-qavariq linzalar), diapozitiv va obyektiv. Yassi ko‘zgu unga kirmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Proyektor kattalashgan haqiqiy tasvir beradi: buyum $F$ va $2F$ orasida.",
+    "$F<l<2F$"
+   ]
+  },
+  {
+   "steps": [
+    "Fotoapparat/proyektor: $\\Gamma=\\dfrac fd$, $\\dfrac1F=\\dfrac1d+\\dfrac1f$.",
+    "$\\Gamma=\\dfrac fF-1$.",
+    "$\\Gamma=\\dfrac{200}{25}-1=7$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac{95}{5}=19$, $f=400$ cm. $f=F(1+\\Gamma)$:",
+    "$F=\\dfrac{400}{20}=20$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac fF-1=\\dfrac{20}{0{,}2}-1=99$.",
+    "$H=99\\cdot4$ cm $\\approx4$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Gamma=\\dfrac fF-1=\\dfrac{12{,}4}{0{,}4}-1=30$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac18=0{,}125$ m.",
+    "$f=F(1+\\Gamma)=0{,}125\\cdot26=3{,}25$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Mikroskop obyektivi haqiqiy teskari kattalashgan tasvir beradi, okular uni lupa kabi yana kattalashtiradi. Natijada tasvir mavhum, teskari, kattalashgan."
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘z gavhari yig‘uvchi linza, buyumlar $d>2F$ da: to‘r pardada kichraygan, to‘nkarilgan, haqiqiy tasvir."
+   ]
+  },
+  {
+   "steps": [
+    "Tasvir to‘r pardada hosil bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Normal ko‘z uchun eng yaxshi ko‘rish masofasi $25$ cm."
+   ]
+  },
+  {
+   "steps": [
+    "Yaqindan ko‘ruvchi ko‘zda tasvir to‘r pardagacha (oldida) hosil bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Uzoqdan ko‘ruvchi ko‘zda tasvir to‘r pardadan orqada hosil bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘z gavhari (yig‘uvchi linza) to‘r pardada haqiqiy, kichiklashgan, to‘nkarilgan tasvir beradi."
+   ]
+  },
+  {
+   "steps": [
+    "1-sxemada nurlar to‘r pardagacha kesishadi — yaqindan ko‘rish.",
+    "Optik kuchni kamaytirish uchun sochuvchi linzali ko‘zoynak kerak."
+   ]
+  },
+  {
+   "steps": [
+    "b) holda nurlar to‘r pardagacha yig‘iladi — yaqindan ko‘rish.",
+    "Tuzatish uchun sochuvchi linza kerak."
+   ]
+  },
+  {
+   "steps": [
+    "Kichik burchakda $h=L\\,\\mathrm{tg}\\,\\alpha\\approx L\\alpha$ ($\\alpha$ — radianda).",
+    "$h=36\\cdot\\dfrac{2{,}5\\pi}{180}\\approx1{,}57$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=\\dfrac1{0{,}25}-\\dfrac11=+3$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=\\dfrac1{0{,}25}-\\dfrac1{0{,}5}=+2$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=\\dfrac1{0{,}25}-\\dfrac1{0{,}4}=4-2{,}5=1{,}5$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=\\dfrac1{0{,}25}-\\dfrac1{0{,}125}=4-8=-4$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynaksiz 20 cm da o‘qiydi — yaqindan ko‘ruvchi.",
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=4-5=-1$ D"
+   ]
+  },
+  {
+   "steps": [
+    "16 cm da o‘qiydi — yaqindan ko‘ruvchi.",
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=4-\\dfrac1{0{,}16}=4-6{,}25=-2{,}25$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$D=4-\\dfrac1{0{,}16}=-2{,}25$ D"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$\\dfrac1a=4-(-4)=8\\;\\Rightarrow\\;a=12{,}5$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘zoynak buyumni $d_0=25$ cm dan ko‘zning yaxshi ko‘rish masofasi $a$ ga (mavhum tasvir) ko‘chiradi: $D=\\dfrac{1}{d_0}-\\dfrac1a$.",
+    "$\\dfrac1a=4+6=10\\;\\Rightarrow\\;a=10$ cm"
+   ]
+  }
+ ]
+}

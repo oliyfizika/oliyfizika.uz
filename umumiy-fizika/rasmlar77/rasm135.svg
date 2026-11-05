@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" width="480" height="200" font-family="serif" font-size="22">
+<rect width="480" height="200" fill="#fff"/>
+<circle cx="130" cy="80" r="62" fill="#f4f8fc" stroke="#111" stroke-width="2"/>
+<path d="M169.9 32.5 A62 62 0 0 1 169.9 127.5" fill="none" stroke="#c0392b" stroke-width="4"/>
+<ellipse cx="82" cy="80" rx="9" ry="26" fill="#dce9f7" stroke="#111" stroke-width="1.5"/>
+<line x1="10" y1="62" x2="82" y2="62" stroke="#111" stroke-width="1.6"/>
+<path d="M36.0 62.0 L27.6 65.3 L27.6 58.7 Z" fill="#111"/>
+<line x1="82" y1="62" x2="188.0" y2="75.6" stroke="#111" stroke-width="1.6"/>
+<line x1="188.0" y1="75.6" x2="222" y2="80" stroke="#111" stroke-width="1.4" stroke-dasharray="5 4"/>
+<line x1="10" y1="98" x2="82" y2="98" stroke="#111" stroke-width="1.6"/>
+<path d="M36.0 98.0 L27.6 101.3 L27.6 94.7 Z" fill="#111"/>
+<line x1="82" y1="98" x2="188.0" y2="84.4" stroke="#111" stroke-width="1.6"/>
+<line x1="188.0" y1="84.4" x2="222" y2="80" stroke="#111" stroke-width="1.4" stroke-dasharray="5 4"/>
+<circle cx="222" cy="80" r="3" fill="#111"/>
+<text x="120" y="172" fill="#111">a)</text>
+<circle cx="370" cy="80" r="62" fill="#f4f8fc" stroke="#111" stroke-width="2"/>
+<path d="M409.9 32.5 A62 62 0 0 1 409.9 127.5" fill="none" stroke="#c0392b" stroke-width="4"/>
+<ellipse cx="322" cy="80" rx="9" ry="26" fill="#dce9f7" stroke="#111" stroke-width="1.5"/>
+<line x1="250" y1="62" x2="322" y2="62" stroke="#111" stroke-width="1.6"/>
+<path d="M276.0 62.0 L267.6 65.3 L267.6 58.7 Z" fill="#111"/>
+<line x1="322" y1="62" x2="426.0" y2="86.6" stroke="#111" stroke-width="1.6"/>
+<line x1="250" y1="98" x2="322" y2="98" stroke="#111" stroke-width="1.6"/>
+<path d="M276.0 98.0 L267.6 101.3 L267.6 94.7 Z" fill="#111"/>
+<line x1="322" y1="98" x2="426.0" y2="73.4" stroke="#111" stroke-width="1.6"/>
+<circle cx="398" cy="80" r="3" fill="#111"/>
+<text x="360" y="172" fill="#111">b)</text>
+</svg>

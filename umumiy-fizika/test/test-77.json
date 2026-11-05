@@ -26,7 +26,7 @@
         "$d>2F$",
         "$d=2F$"
       ],
-      "correct": 1,
+      "correct": 0,
       "source": "77-mavzu.tex#0:4"
     },
     {
@@ -60,7 +60,7 @@
         "haqiqiy, teskari, kattalashgan.",
         "haqiqiy, to‘g‘ri, kichraygan."
       ],
-      "correct": 3,
+      "correct": 2,
       "images": "../rasmlar77/rf1abb35a0c.png",
       "source": "77-mavzu.tex#0:7"
     },
@@ -121,7 +121,7 @@
         "haqiqiy va kichiklashgan, teskari.",
         "haqiqiy va kattalashgan, teskari."
       ],
-      "correct": 3,
+      "correct": 2,
       "source": "77-mavzu.tex#0:12"
     },
     {
@@ -132,7 +132,7 @@
         "$d<2F$",
         "$d<F$"
       ],
-      "correct": 2,
+      "correct": 1,
       "source": "77-mavzu.tex#0:14"
     },
     {
@@ -156,7 +156,7 @@
         "sochuvchi, $S'$ dan o‘ng tomonda.",
         "sochuvchi, $S$ va $S'$ orasida."
       ],
-      "correct": 2,
+      "correct": 3,
       "images": "../rasmlar77/red8bb20b05.png",
       "source": "77-mavzu.tex#0:18"
     },
@@ -390,7 +390,7 @@
       "source": "77-mavzu.tex#1:15"
     },
     {
-      "text": "Fokus masofasi $F$ bo‘lgan yig‘uvchi linzada o‘lchami $a$ ga teng bo‘lgan buyumning haqiqiy tasviri hosil qilindi. Agar linzadan tasvirgacha bo‘lgan masofa $b$ bo‘lsa, tasvirning o‘lchami qanday?",
+      "text": "Fokus masofasi $F$ bo‘lgan yig‘uvchi linzada o‘lchami $a$ ga teng bo‘lgan buyumning haqiqiy tasviri hosil qilindi. Agar linzadan tasvirgacha bo‘lgan masofa $f$ bo‘lsa, tasvirning o‘lchami qanday?",
       "answers": [
         "$\\dfrac{F}{a(f-F)}$.",
         "$\\dfrac{aF}{f-F}$.",
@@ -402,7 +402,7 @@
       "source": "77-mavzu.tex#1:16"
     },
     {
-      "text": "Yig‘uvchi linzada hosil bo‘lgan va $k$ marta kattalashgan tasvirda buyumgacha bo‘lgan masofa $L$ ga teng bo‘lsa, linzadan tasvirgacha bo‘lgan masofa nimaga teng bo‘ladi?",
+      "text": "Yig‘uvchi linza buyumning $k$ marta kattalashgan haqiqiy tasvirini hosil qildi. Buyumdan tasvirgacha bo‘lgan masofa $L$ ga teng bo‘lsa, linzadan tasvirgacha bo‘lgan masofa nimaga teng bo‘ladi?",
       "answers": [
         "$k(k^2+1)L$.",
         "$k(k+1)L$.",
@@ -462,7 +462,7 @@
       "source": "77-mavzu.tex#1:21"
     },
     {
-      "text": "Buyumdan linzagacha bo‘lgan masofa 15 cm bo‘lganda, linzaning kattalashtirishi 2 ga teng bo‘lsa, linzaning fokus masofasi qanday (cm).",
+      "text": "Buyumdan linzagacha bo‘lgan masofa 15 cm bo‘lganda, linzaning kattalashtirishi 2 ga teng bo‘lsa (tasvir haqiqiy), linzaning fokus masofasi qanday (cm).",
       "answers": [
         "7,5.",
         "$2/3$.",
@@ -547,6 +547,7 @@
     },
     {
       "text": "Ushbu rasmdagi $h$ o‘lchamli buyumning tasviri qanday o‘lchamga ega? ($h'-?$).",
+      "image": "../rasmlar77/rasm45.svg",
       "answers": [
         "$h/3$.",
         "$h$.",
@@ -570,7 +571,7 @@
       "source": "77-mavzu.tex#1:30"
     },
     {
-      "text": "Buyum bilan yig‘uvchi linza oralig‘i $3F$. Linzaning fokus masofasi $F$ bo‘lsa, tasvirning o‘lchami buyum o‘lchamidan necha marta katta bo‘ladi?",
+      "text": "Buyum bilan yig‘uvchi linza oralig‘i $3F$. Linzaning fokus masofasi $F$ bo‘lsa, tasvirning o‘lchami buyum o‘lchamidan necha marta kichik bo‘ladi?",
       "answers": [
         "3.",
         "2.",
@@ -830,7 +831,7 @@
         "25.",
         "TJY."
       ],
-      "correct": 0,
+      "correct": 3,
       "source": "77-mavzu.tex#1:52"
     },
     {
@@ -870,7 +871,7 @@
       "source": "77-mavzu.tex#1:55"
     },
     {
-      "text": "Rasmda ko‘rsatilgan linzalar sistemasining optik kuchini aniqlang (D).",
+      "text": "Fokus masofasi $F_1=50$ cm bo‘lgan yig‘uvchi va fokus masofasi $F_2=20$ cm bo‘lgan sochuvchi yupqa linzalar bir-biriga zich tegib turibdi. Linzalar sistemasining optik kuchini aniqlang (D).",
       "answers": [
         "$-1{,}5$.",
         "7.",
@@ -1106,7 +1107,7 @@
         "0,5.",
         "1,5."
       ],
-      "correct": 3,
+      "correct": 4,
       "source": "77-mavzu.tex#1:75"
     },
     {
@@ -1206,7 +1207,7 @@
       "source": "77-mavzu.tex#1:83"
     },
     {
-      "text": "Absolyut sindirish ko‘rsatkichi 1,5 bo‘lgan shishadan yasalgan botiq-qavariq linzaning bosh fokus masofasi 24 cm. Bu linzaning biri ikkinchisidan 2 marta kichik bo‘lgan egrilik radiusini toping (cm).",
+      "text": "Absolyut sindirish ko‘rsatkichi 1,5 bo‘lgan shishadan yasalgan ikki tomoni qavariq linzaning bosh fokus masofasi 24 cm. Bu linzaning biri ikkinchisidan 2 marta kichik bo‘lgan egrilik radiusini toping (cm).",
       "answers": [
         "14.",
         "16.",
@@ -1238,7 +1239,7 @@
         "1,7.",
         "1,8."
       ],
-      "correct": 1,
+      "correct": 0,
       "source": "77-mavzu.tex#1:86"
     },
     {
@@ -1418,7 +1419,7 @@
         "20.",
         "60."
       ],
-      "correct": 1,
+      "correct": 0,
       "source": "77-mavzu.tex#2:10"
     },
     {
@@ -1615,6 +1616,7 @@
     },
     {
       "text": "Berilgan sxemalardan qaysi biri ko‘zning yaqindan ko‘rish nuqsonini ifodalaydi? Shu nuqsonni yo‘qotish uchun qanday ko‘zoynak taqish kerak?",
+      "image": "../rasmlar77/rasm134.svg",
       "answers": [
         "1), yig‘uvchi linzali.",
         "2), sochuvchi linzali.",
@@ -1627,6 +1629,7 @@
     },
     {
       "text": "Rasmda yorug‘lik nurining ko‘z ichida tarqalishining mumkin bo‘lgan ikki holi (a va b) tasvirlangan. Bu hollarning qaysi biri yaqindan ko‘ruvchi ko‘zlarga xos va bunday ko‘zli kishi uchun qanday linzali ko‘zoynak kerak bo‘ladi?",
+      "image": "../rasmlar77/rasm135.svg",
       "answers": [
         "a), sochuvchi.",
         "a), yig‘uvchi.",
