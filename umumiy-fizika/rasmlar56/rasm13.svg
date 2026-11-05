@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 200" width="470" height="200" font-family="serif">
+<rect width="470" height="200" fill="#fff"/>
+<circle cx="30" cy="100" r="4.5" fill="#fff" stroke="#111" stroke-width="2"/>
+<line x1="34" y1="100" x2="95" y2="100" stroke="#111" stroke-width="2"/>
+<line x1="105" y1="100" x2="170" y2="100" stroke="#111" stroke-width="2"/>
+<line x1="95" y1="86" x2="95" y2="114" stroke="#111" stroke-width="3"/>
+<line x1="105" y1="86" x2="105" y2="114" stroke="#111" stroke-width="3"/>
+<circle cx="170" cy="100" r="3.5" fill="#111"/>
+<line x1="170" y1="55" x2="170" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="170" y1="55" x2="265" y2="55" stroke="#111" stroke-width="2"/>
+<line x1="275" y1="55" x2="370" y2="55" stroke="#111" stroke-width="2"/>
+<line x1="265" y1="41" x2="265" y2="69" stroke="#111" stroke-width="3"/>
+<line x1="275" y1="41" x2="275" y2="69" stroke="#111" stroke-width="3"/>
+<circle cx="220" cy="55" r="3.5" fill="#111"/>
+<circle cx="320" cy="55" r="3.5" fill="#111"/>
+<line x1="170" y1="145" x2="265" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="275" y1="145" x2="370" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="265" y1="131" x2="265" y2="159" stroke="#111" stroke-width="3"/>
+<line x1="275" y1="131" x2="275" y2="159" stroke="#111" stroke-width="3"/>
+<line x1="370" y1="55" x2="370" y2="145" stroke="#111" stroke-width="2"/>
+<circle cx="370" cy="100" r="3.5" fill="#111"/>
+<line x1="370" y1="100" x2="436" y2="100" stroke="#111" stroke-width="2"/>
+<circle cx="440" cy="100" r="4.5" fill="#fff" stroke="#111" stroke-width="2"/>
+<g fill="#111"><text x="30" y="88" text-anchor="middle" font-size="18" font-style="italic">K</text><text x="100" y="80" text-anchor="middle" font-size="18" font-style="italic">3C</text><text x="270" y="35" text-anchor="middle" font-size="18" font-style="italic">C</text><text x="220" y="81" text-anchor="middle" font-size="18" font-style="italic">M</text><text x="320" y="81" text-anchor="middle" font-size="18" font-style="italic">N</text><text x="270" y="125" text-anchor="middle" font-size="18" font-style="italic">4C</text><text x="440" y="88" text-anchor="middle" font-size="18" font-style="italic">L</text></g>
+</svg>

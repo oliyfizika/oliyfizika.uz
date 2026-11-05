@@ -101,7 +101,7 @@
       ]
     },
     {
-      "text": "The capacitance of the capacitor battery in the figure is 5.8 $\\mu F$. If $C_2 = 1 \\, \\mu F, C_3 = 4 \\, \\mu F$, what are the capacitance of the first capacitor ($\\mu F$) and the charge on it ($\\mu C$)?",
+      "text": "The capacitance of the capacitor battery in the figure is 5.8 $\\mu F$. If $C_2 = 1 \\, \\mu F, C_3 = 4 \\, \\mu F$, what are the capacitance of the first capacitor ($\\mu F$) and the charge on it ($\\mu C$)? The battery is connected to a voltage of 0.22 V.",
       "answers": [
         "5; 1.1",
         "10; 1.1",
@@ -128,16 +128,16 @@
       ]
     },
     {
-      "text": "Two identical capacitors connected in series are half-filled with a substance in two different ways. What is the difference between the voltages across the capacitors (V)?",
+      "text": "Two identical parallel-plate capacitors are connected in series to a voltage of 84 V. They are half-filled with a substance of ε = 3 in two different ways (see the figure): in the first the layer is parallel to the plates, in the second it occupies half of the plate area. Find the difference between the voltages across the capacitors (V).",
       "answers": [
         "0",
         "24",
         "28.5",
-        "12.6"
+        "12"
       ]
     },
     {
-      "text": "Find the voltage between points a and b in the capacitor battery shown in the figure (V).",
+      "text": "Find the voltage between points a and b in the capacitor battery shown in the figure (V). A voltage of 16 V is applied to the battery.",
       "answers": [
         "0",
         "8.25",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "text": "A voltmeter connected in parallel with a 12 $\\mu F$ capacitor reads 3 V. How many volts will the voltmeter read if a second capacitor of 8 $\\mu F$ is connected to it in parallel?",
+      "text": "A voltmeter connected in parallel with a 12 $\\mu F$ capacitor reads 3 V. How many volts will the voltmeter read if a second capacitor of 8 $\\mu F$ is connected to it in parallel? (The capacitor stays connected to a DC source.)",
       "answers": [
         "1.5",
         "3",

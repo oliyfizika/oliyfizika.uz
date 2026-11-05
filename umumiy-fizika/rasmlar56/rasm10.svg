@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="420" height="200" font-family="serif">
+<rect width="420" height="200" fill="#fff"/>
+<circle cx="30" cy="100" r="4.5" fill="#fff" stroke="#111" stroke-width="2"/>
+<line x1="34" y1="100" x2="100" y2="100" stroke="#111" stroke-width="2"/>
+<circle cx="100" cy="100" r="3.5" fill="#111"/>
+<line x1="100" y1="55" x2="100" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="100" y1="55" x2="165" y2="55" stroke="#111" stroke-width="2"/>
+<line x1="175" y1="55" x2="245" y2="55" stroke="#111" stroke-width="2"/>
+<line x1="255" y1="55" x2="320" y2="55" stroke="#111" stroke-width="2"/>
+<line x1="165" y1="41" x2="165" y2="69" stroke="#111" stroke-width="3"/>
+<line x1="175" y1="41" x2="175" y2="69" stroke="#111" stroke-width="3"/>
+<line x1="245" y1="41" x2="245" y2="69" stroke="#111" stroke-width="3"/>
+<line x1="255" y1="41" x2="255" y2="69" stroke="#111" stroke-width="3"/>
+<line x1="100" y1="145" x2="165" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="175" y1="145" x2="245" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="255" y1="145" x2="320" y2="145" stroke="#111" stroke-width="2"/>
+<line x1="165" y1="131" x2="165" y2="159" stroke="#111" stroke-width="3"/>
+<line x1="175" y1="131" x2="175" y2="159" stroke="#111" stroke-width="3"/>
+<line x1="245" y1="131" x2="245" y2="159" stroke="#111" stroke-width="3"/>
+<line x1="255" y1="131" x2="255" y2="159" stroke="#111" stroke-width="3"/>
+<line x1="320" y1="55" x2="320" y2="145" stroke="#111" stroke-width="2"/>
+<circle cx="320" cy="100" r="3.5" fill="#111"/>
+<line x1="320" y1="100" x2="386" y2="100" stroke="#111" stroke-width="2"/>
+<circle cx="390" cy="100" r="4.5" fill="#fff" stroke="#111" stroke-width="2"/>
+<g fill="#111"><text x="170" y="35" text-anchor="middle" font-size="18" font-style="italic">C₁</text><text x="250" y="35" text-anchor="middle" font-size="18" font-style="italic">C₃</text><text x="170" y="125" text-anchor="middle" font-size="18" font-style="italic">C₂</text><text x="250" y="125" text-anchor="middle" font-size="18" font-style="italic">C₄</text></g>
+</svg>

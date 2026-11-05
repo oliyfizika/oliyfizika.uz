@@ -1,0 +1,249 @@
+{
+ "id": 55,
+ "solutions": [
+  {
+   "steps": [
+    "Elektr sig‘imi — o‘tkazgich zaryadining uning potensialiga nisbati:",
+    "$C=\\dfrac q\\varphi$"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac q\\varphi=\\dfrac{3\\cdot10^{-9}}{120}=2{,}5\\cdot10^{-11}$ F"
+   ]
+  },
+  {
+   "steps": [
+    "Kondensatorning zaryadi — bitta qoplamadagi zaryad moduli: 100 nC."
+   ]
+  },
+  {
+   "steps": [
+    "$q=CU=15\\cdot10^{-9}\\cdot20=3\\cdot10^{-7}\\ \\text{C}=0{,}3\\ \\mu\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac qU=\\dfrac{2\\cdot10^{-4}}{200}=10^{-6}\\ \\text{F}=1\\ \\mu\\text{F}$"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac qU=\\dfrac{12\\cdot10^{-4}}{300}=4\\cdot10^{-6}\\ \\text{F}=4\\ \\mu\\text{F}$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac qC=\\dfrac{4{,}2\\cdot10^{-8}}{30\\cdot10^{-12}}=1400\\ \\text{V}=1{,}4$ kV"
+   ]
+  },
+  {
+   "steps": [
+    "$q=CU=4\\cdot10^{-12}\\cdot200=8\\cdot10^{-10}$ C"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac qU=\\dfrac{0{,}2}{5000}=4\\cdot10^{-5}\\ \\text{F}=40\\ \\mu\\text{F}$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=300-(-300)=600$ V.",
+    "$C=\\dfrac qU=\\dfrac{2{,}4\\cdot10^{-6}}{600}=4\\cdot10^{-9}\\ \\text{F}=4$ nF"
+   ]
+  },
+  {
+   "steps": [
+    "$W=\\dfrac{CU^2}2\\Rightarrow C\\sim\\dfrac{\\text{J}}{\\text{V}^2}$ — bu farad."
+   ]
+  },
+  {
+   "steps": [
+    "$1\\ \\text{F}=\\dfrac{\\text{C}}{\\text{V}}=\\dfrac{\\text{C}^2}{\\text{J}}=\\dfrac{\\text{J}}{\\text{V}^2}$ — hammasi to‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "Yakkalangan shar: $\\varphi=\\dfrac{q}{4\\pi\\varepsilon\\varepsilon_0R}$.",
+    "$C=4\\pi\\varepsilon\\varepsilon_0R$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{C}{4\\pi\\varepsilon_0}=kC=9\\cdot10^9\\cdot1=9\\cdot10^9$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Yaqinlashtirilgan o‘tkazgichda induksiya zaryadlari paydo bo‘lib, potensialni kamaytiradi — sig‘im ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Zaryadsizlanishda elektronlar manfiy qoplamadan musbat qoplamaga o‘tadi: musbat qoplama massasi ortadi, manfiyniki kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Yassi kondensator sig‘imi:",
+    "$C=\\dfrac{\\varepsilon\\varepsilon_0S}{d}$"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{\\varepsilon\\varepsilon_0S}d=\\dfrac{5\\cdot8{,}85\\cdot10^{-12}\\cdot40\\cdot10^{-4}}{5\\cdot10^{-3}}=35{,}4\\cdot10^{-12}\\ \\text{F}=35{,}4$ pF"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{Cd}{\\varepsilon_0S}=\\dfrac{20\\cdot10^{-12}\\cdot8{,}85\\cdot10^{-3}}{8{,}85\\cdot10^{-12}\\cdot20\\cdot10^{-4}}=10$"
+   ]
+  },
+  {
+   "steps": [
+    "$d=\\dfrac{\\varepsilon\\varepsilon_0S}C=\\dfrac{3\\cdot8{,}85\\cdot10^{-12}\\cdot10^{-3}}{8{,}85\\cdot10^{-12}}=3\\cdot10^{-3}\\ \\text{m}=3$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{2{,}5\\cdot8{,}85\\cdot10^{-12}\\cdot50\\cdot10^{-4}}{5\\cdot10^{-3}}\\approx2{,}21\\cdot10^{-11}$ F",
+    "$U=\\dfrac qC=\\dfrac{88{,}5\\cdot10^{-6}}{2{,}21\\cdot10^{-11}}=4\\cdot10^6\\ \\text{V}=4$ MV"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{40\\cdot8{,}85\\cdot10^{-12}\\cdot2\\cdot10^{-4}}{35{,}4\\cdot10^{-3}}=2\\cdot10^{-12}$ F",
+    "$q=CU=2\\cdot10^{-12}\\cdot2\\cdot10^4=4\\cdot10^{-8}\\ \\text{C}=0{,}04\\ \\mu\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{\\pi d^2}4=0{,}0314\\ \\text{m}^2$; $\\;C=\\dfrac{\\varepsilon_0S}{d}=\\dfrac{8{,}85\\cdot10^{-12}\\cdot0{,}0314}{3\\cdot10^{-3}}\\approx9{,}27\\cdot10^{-11}$ F",
+    "$q=CU=9{,}27\\cdot10^{-11}\\cdot120\\approx1{,}11\\cdot10^{-8}$ C"
+   ]
+  },
+  {
+   "steps": [
+    "Sig‘im kondensatorning o‘lchamlari va muhitga bog‘liq, zaryadga bog‘liq emas — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{\\varepsilon\\varepsilon_0S}d$ — zaryadga bog‘liq emas, o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Sig‘im kuchlanishga bog‘liq emas — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$C\\sim S$ — 2 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$C\\sim\\dfrac1d$: $\\;d_1<d_2<d_3\\;\\Rightarrow\\;C_1>C_2>C_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Kiritilgan o‘tkazuvchi plastina qalinligi $l$ ga qadar oraliqni qisqartiradi: $C=\\dfrac{\\varepsilon_0S}{d-l}$ — sig‘im ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Effektiv oraliq $d-\\dfrac d2=\\dfrac d2$:",
+    "$C'=\\dfrac{\\varepsilon_0S}{d/2}=2C$ — 2 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "Metall plastina ichida maydon yo‘q — oraliq $d-l$ ga qisqaradi:",
+    "$C=\\dfrac{\\varepsilon_0S}{d-l}$"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{\\varepsilon_0S}d$, hajm $V=Sd$ — hajm orqali sig‘imni aniqlab bo‘lmaydi ($S$ va $d$ alohida kerak)."
+   ]
+  },
+  {
+   "steps": [
+    "$C\\sim\\dfrac Sd$: $\\;\\dfrac{1/3}{1/6}=2$ — 2 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$C\\sim\\varepsilon$ — 2 marta oshadi"
+   ]
+  },
+  {
+   "steps": [
+    "$C\\sim\\varepsilon$: $\\;\\varepsilon_1<\\varepsilon_2<\\varepsilon_3\\;\\Rightarrow\\;C_1<C_2<C_3$"
+   ]
+  },
+  {
+   "steps": [
+    "$C\\sim\\dfrac\\varepsilon d$: $\\;\\dfrac{10}5\\cdot4=8$ marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "Manbaga ulangan: $U=\\text{const}$; $d\\to2d$ da $C\\to\\dfrac C2$.",
+    "$q=CU$ — 2 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Manbadan uzilgan: $q=\\text{const}$; $C\\to\\dfrac C2$.",
+    "$U=\\dfrac qC$ — 2 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$q=\\text{const}$, $d\\to\\dfrac d7$ da $C\\to7C$.",
+    "$U=\\dfrac qC$ — 7 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "$q=\\text{const}$, $C\\to3C$.",
+    "$U=\\dfrac qC$ — 3 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "$q=\\text{const}$: $E=\\dfrac{\\sigma}{\\varepsilon_0}=\\dfrac{q}{\\varepsilon_0S}$ — masofaga bog‘liq emas, o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\dfrac q{\\varepsilon_0S}$ — zaryad o‘zgarmagani uchun kuchlanganlik o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Manbaga ulangan: $U=\\text{const}$, $d=\\text{const}$ — $E=\\dfrac Ud$ o‘zgarmaydi (zaryad ortadi)."
+   ]
+  },
+  {
+   "steps": [
+    "Zaryadlangan (manbadan uzilgan) kondensator qoplamalari tortishish kuchi $F=\\dfrac{q^2}{2\\varepsilon_0S}$ faqat qoplamalardagi zaryadga bog‘liq.",
+    "Qoplamalar havo qatlamida qoladi, zaryad o‘zgarmaydi — kuch o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$U=Ed=\\dfrac{\\sigma d}{\\varepsilon_0}=\\dfrac{10^{-6}\\cdot8{,}85\\cdot10^{-3}}{8{,}85\\cdot10^{-12}}=1000$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$d_{min}=\\dfrac{U}{E_{max}}=\\dfrac{9000}{3\\cdot10^6}=3\\cdot10^{-3}\\ \\text{m}=3$ mm"
+   ]
+  }
+ ]
+}

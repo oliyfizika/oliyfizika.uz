@@ -86,6 +86,7 @@
     },
     {
       "text": "Sxemadan umumiy sig‘imni toping.",
+      "image": "../rasmlar56/rasm8.svg",
       "answers": [
         "$3C/2$",
         "$3C$",
@@ -97,6 +98,7 @@
     },
     {
       "text": "Rasmda har bir kondensatorning sig‘imi C ga teng. M va N nuqtalar orasidagi potensiallar farqi 120 V bo‘lsa, K va L nuqtalar orasidagi potensiallar farqini (V) toping.",
+      "image": "../rasmlar56/rasm9.svg",
       "answers": [
         "60",
         "40",
@@ -108,6 +110,7 @@
     },
     {
       "text": "Sig‘imlari $C_1 = 3 \\, \\mu F, C_2 = 5 \\, \\mu F, C_3 = 6 \\, \\mu F$ va $C_4 = 5 \\, \\mu F$ bo‘lgan to‘rtta kondensator rasmda ko‘rsatilgan sxema bo‘yicha ulangan. Batareyaning umumiy sig‘imini aniqlang ($\\mu F$).",
+      "image": "../rasmlar56/rasm10.svg",
       "answers": [
         "2",
         "3,4",
@@ -119,6 +122,7 @@
     },
     {
       "text": "Rasmda ko‘rsatilgan kondensatorlar batareyasining A va B nuqtalar orasidagi elektr sig‘imini aniqlang.",
+      "image": "../rasmlar56/rasm11.svg",
       "answers": [
         "0,4C",
         "0,2C",
@@ -129,7 +133,8 @@
       "source": "56-mavzu.tex#0:11"
     },
     {
-      "text": "Rasmdagi kondensatorlar batareyasining sig‘imi 5,8 $\\mu F$ ga teng. Agar $C_2 = 1 \\, \\mu F, C_3 = 4 \\, \\mu F$ bo‘lsa, birinchi kondensatorning sig‘imi ($\\mu F$) va undagi zaryad qanday ($\\mu C$)?",
+      "text": "Rasmdagi kondensatorlar batareyasining sig‘imi 5,8 $\\mu F$ ga teng. Agar $C_2 = 1 \\, \\mu F, C_3 = 4 \\, \\mu F$ bo‘lsa, birinchi kondensatorning sig‘imi ($\\mu F$) va undagi zaryad qanday ($\\mu C$)? Batareya 0,22 V kuchlanishga ulangan.",
+      "image": "../rasmlar56/rasm12.svg",
       "answers": [
         "5; 1,1",
         "10; 1,1",
@@ -141,17 +146,19 @@
     },
     {
       "text": "Rasmdagi zanjirda K va L uchlar orasidagi zaryad miqdori Q ga teng. MN uchlari orasiga ulangan C sig‘imli kondensatorning zaryadi nimaga teng?",
+      "image": "../rasmlar56/rasm13.svg",
       "answers": [
         "$Q/5$",
         "$Q/2$",
         "$8Q/53$",
         "$13Q/40$"
       ],
-      "correct": 3,
+      "correct": 0,
       "source": "56-mavzu.tex#0:13"
     },
     {
       "text": "Rasmda tasvirlangan kondensatorlar tizimining umumiy sig‘imini toping.",
+      "image": "../rasmlar56/rasm14.svg",
       "answers": [
         "3C",
         "6C/11",
@@ -162,18 +169,20 @@
       "source": "56-mavzu.tex#0:14"
     },
     {
-      "text": "Ketma-ket ulangan ikkita bir xil kondensator modda bilan ikki xil usulda yarmigacha to‘ldirilgan. Bunda kondensator kuchlanishlarining farqi qanday bo‘ladi (V)?",
+      "text": "Bir xil ikkita yassi kondensator ketma-ket ulanib, 84 V kuchlanishga ulangan. Ular ε = 3 bo‘lgan modda bilan ikki xil usulda yarmigacha to‘ldirilgan (rasmga q.): birinchisida modda qatlami qoplamalarga parallel, ikkinchisida qoplamalar yuzining yarmini egallaydi. Kondensatorlardagi kuchlanishlar farqini toping (V).",
+      "image": "../rasmlar56/rasm15.svg",
       "answers": [
         "0",
         "24",
         "28,5",
-        "12,6"
+        "12"
       ],
       "correct": 3,
       "source": "56-mavzu.tex#0:15"
     },
     {
-      "text": "Rasmda ko‘rsatilgan kondensatorlar batareyasida a va b nuqtalar orasidagi kuchlanishini toping (V).",
+      "text": "Rasmda ko‘rsatilgan kondensatorlar batareyasida a va b nuqtalar orasidagi kuchlanishini toping (V). Batareyaga 16 V kuchlanish berilgan.",
+      "image": "../rasmlar56/rasm16.svg",
       "answers": [
         "0",
         "8,25",
@@ -272,7 +281,7 @@
       "source": "56-mavzu.tex#0:24"
     },
     {
-      "text": "12 $\\mu F$ sig‘imli kondensatorga parallel voltmetr 3 V ni ko‘rsatmoqda. Unga 8 $\\mu F$ sig‘imli ikkinchi kondensator parallel ulansa, voltmetr necha V ni ko‘rsatadi?",
+      "text": "O‘zgarmas tok manbaiga ulangan 12 $\\mu F$ sig‘imli kondensatorga parallel voltmetr 3 V ni ko‘rsatmoqda. Unga 8 $\\mu F$ sig‘imli ikkinchi kondensator parallel ulansa, voltmetr necha V ni ko‘rsatadi?",
       "answers": [
         "1,5",
         "3",

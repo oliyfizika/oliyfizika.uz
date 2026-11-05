@@ -32,7 +32,7 @@
       ]
     },
     {
-      "text": "The potential difference between the plates of a capacitor of capacitance $15$ nF is $20$ V. Find the magnitude of the charge on one of the plates of the capacitor (C).",
+      "text": "The potential difference between the plates of a capacitor of capacitance $15$ nF is $20$ V. Find the magnitude of the charge on one of the plates of the capacitor ($\\mu$C).",
       "answers": [
         "0.1",
         "0.3",
@@ -228,7 +228,7 @@
         "$1.22\\cdot10^{-8}$",
         "$0.82\\cdot10^{-8}$",
         "$1.01\\cdot10^{-8}$",
-        "$1.06\\cdot10^{-8}$"
+        "$1.11\\cdot10^{-8}$"
       ]
     },
     {
@@ -277,7 +277,7 @@
         "$C_2<C_3<C_1$.",
         "$C_1<C_2<C_3$.",
         "$C_1=C_2=C_3$.",
-        "$C_1>C_3>C_2$.",
+        "$C_1>C_2>C_3$.",
         "$C_3<C_1<C_2$."
       ]
     },

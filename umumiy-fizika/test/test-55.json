@@ -44,7 +44,7 @@
       "source": "55-mavzu.tex#0:3"
     },
     {
-      "text": "Elektr sig‘imi $15$ nF bo‘lgan kondensatorning qoplamalari orasidagi potensiallar farqi $20$ V ga teng. Kondensatorning qoplamalaridan biridagi zaryad miqdorini toping (C).",
+      "text": "Elektr sig‘imi $15$ nF bo‘lgan kondensatorning qoplamalari orasidagi potensiallar farqi $20$ V ga teng. Kondensatorning qoplamalaridan biridagi zaryad miqdorini toping ($\\mu$C).",
       "answers": [
         "0,1",
         "0,3",
@@ -278,7 +278,7 @@
         "$1,22\\cdot10^{-8}$",
         "$0,82\\cdot10^{-8}$",
         "$1,01\\cdot10^{-8}$",
-        "$1,06\\cdot10^{-8}$"
+        "$1,11\\cdot10^{-8}$"
       ],
       "correct": 4,
       "source": "55-mavzu.tex#0:23"
@@ -337,7 +337,7 @@
         "$C_2<C_3<C_1$.",
         "$C_1<C_2<C_3$.",
         "$C_1=C_2=C_3$.",
-        "$C_1>C_3>C_2$.",
+        "$C_1>C_2>C_3$.",
         "$C_3<C_1<C_2$."
       ],
       "correct": 3,
