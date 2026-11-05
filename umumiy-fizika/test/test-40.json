@@ -95,12 +95,12 @@
     {
       "text": "40 l va 20 l hajmli ikki idishda temperaturasi bir xil, lekin bosimi har xil gaz bor. Idishlar tutashtirilgandan keyin ularda 1 MPa bosim qaror topdi. Agar kichik idishdagi boshlang‘ich bosim 600 kPa bo‘lsa, katta idishdagi boshlang‘ich bosim qancha bo‘lgan (MPa)?",
       "answers": ["2,6", "1,2", "1,8", "3,6"],
-      "correct": 2
+      "correct": 1
     },
     {
       "text": "Ikki uchi berk gorizontal silindr porshen bilan uch seksiyaga bo‘lingan. Har bir seksiyaning bosimi va hajmi mos ravishda 2 · 10⁴ Pa va 36 sm³, 6 · 10⁴ Pa va 60 sm³, 5 · 10⁴ Pa va 104 sm³. Ikkinchi seksiyadagi gazning porshenlar bo‘shatilgandan keyingi bosimi (Pa) va hajmini aniqlang (sm³).",
       "answers": [
-        "8 · 10⁴; 45",
+        "4,76 · 10⁴; 75,6",
         "4 · 10⁴; 45",
         "4 · 10⁴; 4,5",
         "2 · 10⁴; 25"
@@ -129,7 +129,7 @@
     },
     {
       "text": "5 m chuqurlikdagi suvda suzib yurgan havo pufakchasining hajmi 5 mm³ ga teng. Suv yuziga qalqib chiqqan havo pufakchasining hajmi qanday bo‘ladi (mm³)?",
-      "answers": ["5,3", "6", "6,5", "7,1"],
+      "answers": ["5,3", "6", "7,5", "7,1"],
       "correct": 2
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "text": "Vertikal o‘rnatilgan ostki uchi kavsharlangan shisha nayning ichida geliy gazi va gazning ustida qalinligi 6 sm bo‘lgan simob ustuni bor. Nayning ochiq uchi pastga qaratib to‘nkarilganda, undagi simob ustunining qalinligi 5 sm bo‘lib qoldi. Nayning uzunligini toping (sm). T = const.",
-      "answers": ["14,4", "17,4", "8,7", "6,45"],
+      "answers": ["14,4", "17,4", "8,7", "12,45"],
       "correct": 3
     },
     {

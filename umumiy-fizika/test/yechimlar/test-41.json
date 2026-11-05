@@ -1,0 +1,97 @@
+{
+ "id": 41,
+ "solutions": [
+  {
+   "steps": [
+    "Izobarik jarayon — o‘zgarmas bosimda boradigan jarayon."
+   ]
+  },
+  {
+   "steps": [
+    "Izobarik jarayonda $p=\\text{const}$, $V$ va $T$ o‘zgaradi: $\\dfrac VT=\\text{const}$."
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac VT=\\text{const}$: $\\;T-270=\\dfrac T4$.",
+    "$T=360\\ \\text{K}=87^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{V_1}{V_2}=\\dfrac{T_1}{T_2}=\\dfrac{1320+273}{200+273}=\\dfrac{1593}{473}\\approx3{,}4$"
+   ]
+  },
+  {
+   "steps": [
+    "$V_2=V_1\\dfrac{T_2}{T_1}=6\\cdot\\dfrac{350}{300}=7$ l"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{12{,}32}{T}=\\dfrac{10{,}52}{T-45}\\;\\Rightarrow\\;1{,}8T=554{,}4\\;\\Rightarrow\\;T=308$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{V_2}{V_1}=\\dfrac{312}{300}=1{,}04$ — 4% ga ortgan"
+   ]
+  },
+  {
+   "steps": [
+    "Hajm 2 marta ortishi uchun $T$ 2 marta ortishi kerak: $273\\to546$ K.",
+    "$t=546-273=273^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T+1=2T\\;\\Rightarrow\\;T=1\\ \\text{K}=-272{,}15^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{V_2}{V_1}=\\dfrac{330}{300}=1{,}1$ — 10% ga ortgan"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{V_2}{V_1}=\\dfrac{324}{300}=1{,}08$ — 8% ga ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "Izobarik jarayonda $\\Delta V\\sim\\Delta T$: 60 K ga 1 l.",
+    "Jami $90$ K: $\\;\\Delta V=\\dfrac{90}{60}\\cdot1=1{,}5$ l"
+   ]
+  },
+  {
+   "steps": [
+    "$T+1=2T\\;\\Rightarrow\\;T=1$ K; isitish $1$ K dan $2$ K gacha"
+   ]
+  },
+  {
+   "steps": [
+    "Hajmning termik koeffitsiyenti — 1 K ga isitilganda hajmning nisbiy o‘zgarishi:",
+    "$\\alpha=\\dfrac{\\Delta V}{V_0\\Delta T}$"
+   ]
+  },
+  {
+   "steps": [
+    "Kolbadagi havo $p=\\text{const}$ da sovidi: $V_2=V_1\\dfrac{T_2}{T_1}=250\\cdot\\dfrac{280}{400}=175\\ \\text{sm}^3$.",
+    "Kirgan suv: $250-175=75\\ \\text{sm}^3$, ya’ni $75$ g"
+   ]
+  },
+  {
+   "steps": [
+    "Ochiq idishda $p=\\text{const}$: $n=\\dfrac p{kT}\\sim\\dfrac1T$.",
+    "Konsentratsiya 1,1 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Dastlabki balandlik $h_1=\\dfrac VS=\\dfrac{0{,}1}{0{,}01}=10$ m; $\\;V\\sim T$.",
+    "$h_2=\\dfrac{10}{4}=2{,}5$ m"
+   ]
+  }
+ ]
+}

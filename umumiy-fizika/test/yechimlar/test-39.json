@@ -1,0 +1,117 @@
+{
+ "id": 39,
+ "solutions": [
+  {
+   "steps": [
+    "Normal sharoit: $p_0=1{,}01\\cdot10^5$ Pa, $T_0=273$ K.",
+    "$n=\\dfrac{p_0}{kT_0}=\\dfrac{1{,}01\\cdot10^5}{1{,}38\\cdot10^{-23}\\cdot273}\\approx2{,}7\\cdot10^{25}\\ \\text{m}^{-3}=2{,}7\\cdot10^{19}\\ \\text{sm}^{-3}$"
+   ]
+  },
+  {
+   "steps": [
+    "Normal sharoitda istalgan gazning 1 m³ idagi molekulalar soni bir xil (Loshmidt soni):",
+    "$N=\\dfrac{p_0V}{kT_0}\\approx2{,}7\\cdot10^{25}$"
+   ]
+  },
+  {
+   "steps": [
+    "Normal sharoitda 1 m³ gazdagi molekulalar soni — Loshmidt soni $N_L\\approx2{,}7\\cdot10^{25}\\ \\text{m}^{-3}$."
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac p{kT}=\\dfrac{10^{-12}}{1{,}38\\cdot10^{-23}\\cdot300}\\approx2{,}42\\cdot10^8\\ \\text{m}^{-3}$",
+    "$1\\ \\text{sm}^3=10^{-6}\\ \\text{m}^3$ da: $N\\approx242$ ta"
+   ]
+  },
+  {
+   "steps": [
+    "$V=2{,}5\\cdot4\\cdot3=30\\ \\text{m}^3$, $\\;p=831\\cdot133{,}3\\approx1{,}11\\cdot10^5$ Pa, $\\;T=300$ K.",
+    "$N=\\dfrac{pV}{kT}=\\dfrac{1{,}11\\cdot10^5\\cdot30}{1{,}38\\cdot10^{-23}\\cdot300}\\approx8\\cdot10^{26}$"
+   ]
+  },
+  {
+   "steps": [
+    "$N=n_LV=2{,}7\\cdot10^{25}\\cdot10^{-3}=2{,}7\\cdot10^{22}$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=nkT\\;\\Rightarrow\\;T=\\dfrac{pV}{Nk}=\\dfrac{5\\cdot10^5\\cdot0{,}015}{1{,}8\\cdot10^{24}\\cdot1{,}38\\cdot10^{-23}}\\approx301$ K"
+   ]
+  },
+  {
+   "steps": [
+    "Birlashgan gaz qonuni: $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$.",
+    "$T_2=T_1\\dfrac{p_2V_2}{p_1V_1}=300\\cdot\\dfrac{3{,}2\\cdot1{,}4}{2{,}8\\cdot0{,}8}=600$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$T_2=T_1\\dfrac{p_2V_2}{p_1V_1}=288\\cdot\\dfrac{2{,}25\\cdot1{,}6}{7{,}2\\cdot0{,}6}=240$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$V_2=V_1\\dfrac{p_1T_2}{p_2T_1}=586\\cdot\\dfrac{6\\cdot248}{4\\cdot293}=744$ l"
+   ]
+  },
+  {
+   "steps": [
+    "$T_2=T_1\\dfrac{p_2V_2}{p_1V_1}=900\\cdot\\dfrac{1\\cdot4}{1{,}5\\cdot8}=300\\ \\text{K}=27^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "Diametr 1,5 marta ortdi — hajm $1{,}5^3=3{,}375$ marta ortdi.",
+    "$\\dfrac{p_1V_1}{278}=\\dfrac{p_0\\cdot3{,}375V_1}{300}\\;\\Rightarrow\\;p_1\\approx3{,}13p_0$",
+    "$\\rho gh=p_1-p_0=2{,}13p_0\\;\\Rightarrow\\;h=\\dfrac{2{,}13\\cdot10^5}{10^4}\\approx21{,}3$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\nu RT}{V}$: $\\;\\dfrac{2T}{2V}=\\dfrac TV$ — bosim o‘zgarmaydi"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{pV}T=\\text{const}$: $p$ va $V$ 2 martadan ortsa, $T$ 4 marta ortadi: $4T_1=T_1+300$.",
+    "$T_1=100$ K, $\\;T_2=400$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$T_1=300$ K, $\\;V_2=1{,}05V_1$.",
+    "$T_2=T_1\\dfrac{p_2V_2}{p_1V_1}=300\\cdot\\dfrac{85\\cdot1{,}05}{105}=255$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$V\\sim\\dfrac Tp$: $\\;\\dfrac{V_2}{V_1}=\\dfrac{2}{1{,}25}=1{,}6$ — 1,6 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "Hajm deyarli o‘zgarmaydi deb: $p_2=p_1\\dfrac{T_2}{T_1}=108\\cdot\\dfrac{310}{280}\\approx120$ kPa.",
+    "Bosim ishchi qiymatdan ~11% ga oshadi — yorilish xavfi bor."
+   ]
+  },
+  {
+   "steps": [
+    "$p_2=p_1+\\rho gh=10^5+1000\\cdot10\\cdot20=3\\cdot10^5$ Pa; $\\;T_1=293$ K, $T_2=277$ K.",
+    "$\\dfrac{V_2}{V_1}=\\dfrac{p_1T_2}{p_2T_1}=\\dfrac13\\cdot\\dfrac{277}{293}\\approx0{,}315$",
+    "$r_2=r_1\\sqrt[3]{0{,}315}\\approx2\\cdot0{,}68\\approx1{,}37$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$p\\sim\\dfrac TV=\\dfrac42=2$ — bosim 2 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=\\dfrac{pM}{RT}\\sim\\dfrac pT=\\dfrac{1{,}5}{3}=\\dfrac12$ — zichlik 2 marta kamaygan"
+   ]
+  }
+ ]
+}
