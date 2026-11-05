@@ -1,0 +1,154 @@
+{
+ "id": 35,
+ "solutions": [
+  {
+   "steps": [
+    "MKN uch asosiy qoidasi: modda zarralardan (molekulalardan) tuzilgan; zarralar to‘xtovsiz betartib harakatda; ular orasida o‘zaro tortishish va itarishish kuchlari mavjud."
+   ]
+  },
+  {
+   "steps": [
+    "Mol — modda miqdorining XBS dagi birligi."
+   ]
+  },
+  {
+   "steps": [
+    "Modda miqdori $\\nu$ mol larda o‘lchanadi."
+   ]
+  },
+  {
+   "steps": [
+    "Avogadro soni — 1 mol moddadagi zarralar soni, ya’ni 12 g ugleroddagi atomlar soni: $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$."
+   ]
+  },
+  {
+   "steps": [
+    "$m_0=A_r\\cdot1\\ \\text{m.a.b.}=64\\cdot1{,}67\\cdot10^{-27}\\approx1{,}07\\cdot10^{-25}$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$A_r=\\dfrac{m_0}{1\\ \\text{m.a.b.}}=\\dfrac{3{,}29\\cdot10^{-25}}{1{,}67\\cdot10^{-27}}\\approx197$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac N{N_A}=\\dfrac{1{,}806\\cdot10^{23}}{6{,}02\\cdot10^{23}}=0{,}3$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac N{N_A}=\\dfrac{15{,}05\\cdot10^{24}}{6{,}02\\cdot10^{23}}=25$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac m\\mu=\\dfrac{39400\\ \\text{g}}{197\\ \\text{g/mol}}=200$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac m\\mu=\\dfrac9{18}=0{,}5$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac m\\mu=\\dfrac{28{,}8}{32}=0{,}9$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\nu\\mu=5\\cdot4=20$ g"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\nu\\mu=450\\cdot32=14400\\ \\text{g}=14{,}4$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\nu\\mu=5\\cdot32=160$ g"
+   ]
+  },
+  {
+   "steps": [
+    "Modda miqdorlari teng: $\\dfrac{m_q}{m_n}=\\dfrac{\\mu_q}{\\mu_n}=\\dfrac{118{,}7}{58{,}7}\\approx2$.",
+    "$m_q\\approx2m_n$"
+   ]
+  },
+  {
+   "steps": [
+    "$M_r(\\text{C}_4\\text{H}_{10})=4\\cdot12+10\\cdot1=58\\;\\Rightarrow\\;\\mu=58\\cdot10^{-3}$ kg/mol"
+   ]
+  },
+  {
+   "steps": [
+    "$M_r(\\text{HNO}_3)=1+14+3\\cdot16=63\\;\\Rightarrow\\;\\mu=63\\cdot10^{-3}$ kg/mol"
+   ]
+  },
+  {
+   "steps": [
+    "$\\mu(\\text{CuSO}_4)=64+32+4\\cdot16=160$ g/mol; $\\;m=3\\cdot160=480$ g"
+   ]
+  },
+  {
+   "steps": [
+    "$\\mu=m_0N_A=4{,}8\\cdot10^{-26}\\cdot6{,}02\\cdot10^{23}\\approx0{,}029\\ \\text{kg/mol}=29$ g/mol"
+   ]
+  },
+  {
+   "steps": [
+    "$m_0=\\dfrac{\\mu}{N_A}=\\dfrac{36\\cdot10^{-3}}{6\\cdot10^{23}}=6\\cdot10^{-26}$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$m_0=\\dfrac{\\mu}{N_A}=\\dfrac{0{,}028}{6\\cdot10^{23}}\\approx4{,}7\\cdot10^{-26}$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac m\\mu N_A=\\dfrac{180}{18}\\cdot6\\cdot10^{23}=6\\cdot10^{24}$; bir hafta $t=7\\cdot24\\cdot3600\\approx6\\cdot10^5$ s.",
+    "$\\dfrac Nt\\approx\\dfrac{6\\cdot10^{24}}{6\\cdot10^5}=10^{19}$ ta/s"
+   ]
+  },
+  {
+   "steps": [
+    "100 g gazda: $\\nu_A=\\dfrac{84}{28}=3$ mol, $\\;\\nu_K=\\dfrac{16}{32}=0{,}5$ mol.",
+    "$\\dfrac{N_A}{N_K}=\\dfrac{3}{0{,}5}=6$"
+   ]
+  },
+  {
+   "steps": [
+    "$V=Sd=20\\cdot10^{-4}=2\\cdot10^{-3}\\ \\text{cm}^3$; $\\;m=\\rho V=19{,}3\\cdot2\\cdot10^{-3}=0{,}0386$ g.",
+    "$N=\\dfrac m\\mu N_A=\\dfrac{0{,}0386}{197}\\cdot6\\cdot10^{23}\\approx1{,}18\\cdot10^{20}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=m_0n=6\\cdot10^{-26}\\cdot2{,}5\\cdot10^{29}=15000\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Diffuziya — zarralarning issiqlik harakati natijasi, u gazlarda, suyuqliklarda va qattiq jismlarda (sekinroq) kuzatiladi."
+   ]
+  },
+  {
+   "steps": [
+    "Broun harakati — suyuqlik (gaz)dagi mayda qattiq zarralarning molekulalar urilishi ta’siridagi betartib harakati."
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=nm_0=n\\dfrac{\\mu}{N_A}=6\\cdot10^{25}\\cdot\\dfrac{32\\cdot10^{-3}}{6\\cdot10^{23}}=3{,}2\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac m\\mu N_A=\\dfrac{320}{32}\\cdot6\\cdot10^{23}=6\\cdot10^{24}$; $\\;n=\\dfrac NV=\\dfrac{6\\cdot10^{24}}{0{,}02}=3\\cdot10^{26}\\ \\text{m}^{-3}$"
+   ]
+  }
+ ]
+}
