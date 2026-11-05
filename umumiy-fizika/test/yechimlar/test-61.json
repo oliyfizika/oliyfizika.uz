@@ -1,0 +1,125 @@
+{
+ "id": 61,
+ "solutions": [
+  {
+   "steps": [
+    "$R=3+4=7\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=12+5+14=31\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R_3=70-25-40=5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=13\\cdot4=52\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{1\\cdot3}{1+3}=0{,}75\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1{R_1}=\\dfrac1{4{,}55}-\\dfrac17\\;\\Rightarrow\\;R_1=\\dfrac{7\\cdot4{,}55}{7-4{,}55}=13\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1R=\\dfrac14+\\dfrac16+\\dfrac1{12}=\\dfrac{6}{12}\\;\\Rightarrow\\;R=2\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket: $2R$; parallel: $R/2$.",
+    "$\\dfrac{2R}{R/2}=4$ — 4 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "$R_1+R_2=5$, $\\;R_1R_2=5\\cdot1{,}2=6$ $\\Rightarrow$ $R_1=3\\ \\Omega$, $R_2=2\\ \\Omega$.",
+    "$\\dfrac{R_1}{R_2}=1{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel: $R/n$; ketma-ket: $nR$.",
+    "$\\dfrac{nR}{R/n}=n^2$ — $n^2$ marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$R=R_1+\\dfrac{R_2R_3}{R_2+R_3}=2+1{,}5=3{,}5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R_2,R_3,R_4$ parallel: $12/3=4\\ \\Omega$.",
+    "$R=3+4+5=12\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1{R_{2345}}=\\dfrac12+\\dfrac12+\\dfrac13+\\dfrac13=\\dfrac53\\;\\Rightarrow\\;R_{2345}=0{,}6\\ \\Omega$",
+    "$R=1+0{,}6+4=5{,}6\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "A dan yuqori o‘ng uchga: diagonal $R$ va ikki tomon ($2R$) parallel: $\\dfrac{2R}{3}$; so‘ng o‘ng tomon $R$: $\\dfrac{5R}{3}$.",
+    "Bu yo‘l A–B to‘g‘ridan-to‘g‘ri $R$ bilan parallel:",
+    "$R_{AB}=\\dfrac{\\frac53R\\cdot R}{\\frac83R}=\\dfrac58R=1{,}25\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "1–3 orasida: $2R$ diagonal va 1–2–3 yo‘li ($2R$) parallel: $R$. So‘ng 3–4: $R$, jami $2R$.",
+    "Bu yo‘l 1–4 to‘g‘ridan-to‘g‘ri $R$ bilan parallel:",
+    "$R_{14}=\\dfrac{2R\\cdot R}{3R}=\\dfrac{2R}{3}$"
+   ]
+  },
+  {
+   "steps": [
+    "Simlar bilan tutashgan nuqtalarni birlashtirsak, uchala rezistor ham A va B orasiga parallel ulangan bo‘ladi.",
+    "$R_{AB}=\\dfrac{30}{3}=10\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqori va pastki simlar uchlarni tutashtiradi: har bir rezistor A va B orasiga ulangan — uchtasi parallel.",
+    "$R_{AB}=\\dfrac33=1\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Tarmoqlar parallel — kuchlanish bir xil: $U=I_1R_1=2{,}5\\cdot4=10$ V.",
+    "$R_2=\\dfrac{U}{I_2}=\\dfrac{10}{5}=2\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqori tarmoq: $2+\\dfrac{4\\cdot12}{16}=5\\ \\Omega$, pastki: $8\\ \\Omega$.",
+    "$I_{yuq}=65\\cdot\\dfrac{8}{13}=40$ A; $\\;I_4=40\\cdot\\dfrac{12}{16}=30$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{6\\cdot3}{9}+8=10\\ \\Omega$; $\\;I=\\dfrac{60}{10}=6$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Kalit ochiq: chapdagi ikki $R$ parallel ($R/2$) va o‘ngdagi $R$ ketma-ket: $1{,}5R$.",
+    "Kalit yopiq: o‘ngdagi $R$ qisqa tutashadi: $R/2$.",
+    "$\\dfrac{I_2}{I_1}=\\dfrac{1{,}5R}{0{,}5R}=3$"
+   ]
+  }
+ ]
+}

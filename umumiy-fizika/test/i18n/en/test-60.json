@@ -112,7 +112,7 @@
       ]
     },
     {
-      "text": "A rheostat made of nickelin wire with a cross-section of $1$ mm$^2$ is connected to an ammeter reading $20$ A and a voltmeter reading $210$ V ($\\rho=4.2\\cdot10^{-7}~\\Omega\\cdot$m). How many meters long is the rheostat wire?",
+      "text": "A rheostat made of nickelin wire with a cross-section of $10$ mm$^2$ is connected to an ammeter reading $20$ A and a voltmeter reading $210$ V ($\\rho=4.2\\cdot10^{-7}~\\Omega\\cdot$m). How many meters long is the rheostat wire?",
       "answers": [
         "150",
         "180",
@@ -272,7 +272,7 @@
       ]
     },
     {
-      "text": "Two wires are made from equal masses of metal. One of them is $3$ times longer than the other. Determine the relation between the resistances $R_1$ and $R_2$ of these wires.",
+      "text": "Two wires are made from equal masses of the same metal. The first wire is $3$ times longer than the second. Determine the relation between the resistances $R_1$ and $R_2$ of these wires.",
       "answers": [
         "$R_1=3R_2$",
         "$R_2=9R_1$",
@@ -302,7 +302,7 @@
       ]
     },
     {
-      "text": "A steel rail with a mass of $1$ m equal to $78$ kg has a resistance of $0,012~\\Omega$ per meter? The density of steel is $7.8$ g/cm$^3$ and its resistivity is $1.2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "text": "Each metre of a steel rail has a mass of $78$ kg. What length of the rail has a resistance of $0.012~\\Omega$ (m)? The density of steel is $7.8$ g/cm$^3$ and its resistivity is $1.2\\cdot10^{-7}~\\Omega\\cdot$m.",
       "answers": [
         "1200",
         "1000",
@@ -404,7 +404,7 @@
     {
       "text": "What is the electric field strength inside a metal wire if its resistivity is $\\rho$, its cross-sectional area is $S$ and the current in it is $I$?",
       "answers": [
-        "$E=\\dfrac{I\\rho S}{ }$",
+        "$E=I\\rho S$",
         "$E=\\dfrac{I}{\\rho S}$",
         "$E=\\dfrac{I^2\\rho}{S}$",
         "$E=\\dfrac{IS}{\\rho}$",
