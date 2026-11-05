@@ -1,0 +1,116 @@
+{
+ "id": 66,
+ "solutions": [
+  {
+   "steps": [
+    "Lorens kuchi: $F=q\\vartheta B\\sin\\alpha$."
+   ]
+  },
+  {
+   "steps": [
+    "$F=q\\vartheta B\\sin53^\\circ=0{,}2\\cdot25\\cdot20\\cdot0{,}8=80$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$F=|e|\\vartheta B=1{,}6\\cdot10^{-19}\\cdot10^7\\cdot4=6{,}4\\cdot10^{-12}$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$F=e\\vartheta B=1{,}6\\cdot10^{-19}\\cdot10^7\\cdot0{,}2=3{,}2\\cdot10^{-13}$ N $=0{,}32$ pN"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{F}{q\\vartheta}=\\dfrac{8}{0{,}4\\cdot2000}=0{,}01$ T $=10$ mT"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{F}{eB}=\\dfrac{0{,}32\\cdot10^{-12}}{1{,}6\\cdot10^{-19}\\cdot0{,}2}=10^7$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{F_2}{F_1}=\\dfrac{12}{24}=\\dfrac12$ — 2 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Chap qo‘l qoidasi musbat zaryad uchun: $\\vec B$ kaftga kirsa, to‘rt barmoq $\\vec\\vartheta$ bo‘ylab — bosh barmoq kuchni ko‘rsatadi.",
+    "Musbat zaryadga kuch yuqoriga bo‘lardi; zaryad manfiy — kuch pastga (3)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vec\\vartheta$ o‘ngga, $\\vec B$ chizmaga kiradi. Chap qo‘l qoidasi bo‘yicha musbat zaryadga kuch yuqoriga."
+   ]
+  },
+  {
+   "steps": [
+    "Musbat zaryad uchun kuch yuqoriga bo‘lardi; elektron manfiy — kuch pastga."
+   ]
+  },
+  {
+   "steps": [
+    "$q\\vartheta B=\\dfrac{m\\vartheta^2}{R}$.",
+    "$R=\\dfrac{m\\vartheta}{qB}$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{m\\vartheta}{qB}$.",
+    "$m=\\dfrac{qBR}{\\vartheta}$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{m\\vartheta}{qB}=\\dfrac{8\\cdot10^{-5}\\cdot25}{0{,}002\\cdot20}=0{,}05$ m $=5$ cm",
+    "$T=\\dfrac{2\\pi m}{qB}=\\dfrac{6{,}28\\cdot8\\cdot10^{-5}}{0{,}04}\\approx12{,}56\\cdot10^{-3}$ s $=12{,}56$ ms"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{m\\vartheta}{eB}=\\dfrac{9{,}1\\cdot10^{-31}\\cdot1{,}6\\cdot10^7}{1{,}6\\cdot10^{-19}\\cdot9{,}1\\cdot10^{-3}}=10^{-2}$ m $=1$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{eBR}{m}=\\dfrac{1{,}6\\cdot10^{-19}\\cdot5\\cdot10^{-3}\\cdot0{,}04}{9{,}1\\cdot10^{-31}}\\approx3{,}5\\cdot10^7$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$p=m\\vartheta=eBR=1{,}6\\cdot10^{-19}\\cdot0{,}02\\cdot0{,}05=1{,}6\\cdot10^{-22}$ kg$\\cdot$m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{m\\vartheta}{qB}\\sim m$ (zaryad va tezlik bir xil).",
+    "$\\dfrac{m_2}{m_1}=\\dfrac{R_2}{R_1}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{2\\pi R}{\\vartheta}=\\dfrac{2\\pi m}{qB}$"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{2\\pi m}{eT}=\\dfrac{6{,}28\\cdot9{,}1\\cdot10^{-31}}{1{,}6\\cdot10^{-19}\\cdot9\\cdot10^{-9}}\\approx4\\cdot10^{-3}$ T $=4$ mT"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{eB}{2\\pi m}=\\dfrac{1{,}6\\cdot10^{-19}\\cdot16{,}7\\cdot10^{-3}}{2\\pi\\cdot1{,}67\\cdot10^{-27}}=\\dfrac{1{,}6\\cdot10^6}{2\\pi}$ Hz",
+    "$N=\\nu t=\\dfrac{1{,}6\\cdot10^6}{2\\pi}\\cdot\\pi=8\\cdot10^5$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{eB}{2\\pi m}=\\dfrac{1{,}6\\cdot10^6}{2\\pi}$ Hz; $\\;N=\\nu\\cdot6\\pi=3\\cdot1{,}6\\cdot10^6=4{,}8\\cdot10^6$"
+   ]
+  }
+ ]
+}

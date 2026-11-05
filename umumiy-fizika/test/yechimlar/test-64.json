@@ -1,0 +1,98 @@
+{
+ "id": 64,
+ "solutions": [
+  {
+   "steps": [
+    "1) Bir xil nomli qutblar itarishadi — noto‘g‘ri.",
+    "2) Magnitni qancha bo‘lsak ham, har bo‘lagida ikkala qutb bo‘ladi — noto‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "Magnit ekvatorida Yer magnit maydoni gorizontal yo‘nalgan, shuning uchun magnit mili aniq gorizontal turadi."
+   ]
+  },
+  {
+   "steps": [
+    "Harakatlanayotgan zaryadlar (tok) atrofida magnit maydon hosil bo‘ladi. O‘tkazgich umuman neytral, elektrostatik maydon hosil qilmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng parma (o‘ng qo‘l) qoidasi: bosh barmoq tok yo‘nalishida bo‘lsa, bukilgan barmoqlar induksiya chiziqlari yo‘nalishini ko‘rsatadi.",
+    "Tok yuqoriga — yuqoridan qaraganda induksiya chiziqlari soat miliga teskari aylanadi.",
+    "A nuqtada induksiya vektori aylanaga urinma bo‘ylab shu yo‘nalishda — 3."
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng parma (o‘ng qo‘l) qoidasi: bosh barmoq tok yo‘nalishida bo‘lsa, bukilgan barmoqlar induksiya chiziqlari yo‘nalishini ko‘rsatadi.",
+    "Tok chizmaga kirmoqda — chiziqlar soat mili bo‘yicha aylanadi. O‘tkazgich ustidagi A nuqtada vektor o‘ngga — 3."
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng parma (o‘ng qo‘l) qoidasi: bosh barmoq tok yo‘nalishida bo‘lsa, bukilgan barmoqlar induksiya chiziqlari yo‘nalishini ko‘rsatadi.",
+    "Tok bizga chiqmoqda — chiziqlar soat miliga teskari aylanadi. O‘tkazgich ustidagi A nuqtada vektor chapga — 4."
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng parma (o‘ng qo‘l) qoidasi: bosh barmoq tok yo‘nalishida bo‘lsa, bukilgan barmoqlar induksiya chiziqlari yo‘nalishini ko‘rsatadi.",
+    "Tok bizga chiqmoqda — chiziqlar soat miliga teskari. A nuqta o‘tkazgichdan yuqori-o‘ngda, urinma yuqori-chapga — 1."
+   ]
+  },
+  {
+   "steps": [
+    "Cheksiz to‘g‘ri tokning maydoni: $B=\\dfrac{\\mu\\mu_0I}{2\\pi r}$."
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng parma (o‘ng qo‘l) qoidasi: bosh barmoq tok yo‘nalishida bo‘lsa, bukilgan barmoqlar induksiya chiziqlari yo‘nalishini ko‘rsatadi.",
+    "Chap tok (bizga) maydoni A da yuqori-o‘ngga, o‘ng tok (bizdan) maydoni A da yuqori-chapga yo‘nalgan.",
+    "Gorizontal tashkil etuvchilar yo‘qoladi, natijaviy induksiya yuqoriga."
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng parma (o‘ng qo‘l) qoidasi: bosh barmoq tok yo‘nalishida bo‘lsa, bukilgan barmoqlar induksiya chiziqlari yo‘nalishini ko‘rsatadi.",
+    "Ikkala tok bizdan: chap tok maydoni A da pastga-chapga, o‘ng tok maydoni yuqoriga-chapga.",
+    "Vertikal tashkil etuvchilar yo‘qoladi — natija chapga."
+   ]
+  },
+  {
+   "steps": [
+    "Toklar bizga — oldingi masaladagi holatning teskarisi: natijaviy induksiya o‘ngga."
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil yo‘nalishdagi toklar o‘rtasida maydonlar teng va qarama-qarshi yo‘nalgan:",
+    "$B=B_1-B_2=0$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel bir xil yo‘nalgan toklar tortishadi, qarama-qarshi yo‘nalganlari itarishadi: $\\downarrow\\uparrow$."
+   ]
+  },
+  {
+   "steps": [
+    "Parallel harakatlanayotgan zaryadlar orasidagi magnit tortishish Kulon itarishidan $\\dfrac{\\vartheta^2}{c^2}$ marta kichik.",
+    "$\\vartheta<c$ bo‘lgani uchun natijaviy kuch doim itarish — protonlar hech qachon tortishmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac Fl=\\dfrac{\\mu_0I_1I_2}{2\\pi d}\\;\\Rightarrow\\;I_2=\\dfrac{2\\pi d\\,F/l}{\\mu_0I_1}=\\dfrac{4\\cdot10^{-4}\\cdot0{,}1}{2\\cdot10^{-7}\\cdot10}=20$ A",
+    "Itarishish — toklar qarama-qarshi: $I_1$ chapga, demak $I_2$ o‘ngga (2-yo‘nalish)."
+   ]
+  },
+  {
+   "steps": [
+    "Amperning ta’rifi: vakuumda 1 m masofadagi ikki parallel cheksiz o‘tkazgich orasida har metriga $2\\cdot10^{-7}$ N kuch hosil qiluvchi tok."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 380" width="420" height="380" font-family="serif" font-size="24">
+<rect width="420" height="380" fill="#fff"/>
+<ellipse cx="175" cy="180" rx="145" ry="47" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="7 6"/>
+<g stroke="#111" stroke-width="2" fill="#111">
+<line x1="30.0" y1="174.0" x2="30.0" y2="188.0"/><path d="M30.0 188.0 L25.7 177.9 L34.3 177.9 Z"/>
+<line x1="175" y1="360" x2="175" y2="20"/>
+<line x1="175.0" y1="110.0" x2="175.0" y2="80.0"/><path d="M175.0 80.0 L179.3 90.1 L170.7 90.1 Z"/>
+<line x1="286.1" y1="210.2" x2="356.1" y2="210.2"/><path d="M356.1 210.2 L345.9 214.5 L345.9 205.9 Z"/>
+<line x1="286.1" y1="210.2" x2="216.1" y2="210.2"/><path d="M216.1 210.2 L226.2 205.9 L226.2 214.5 Z"/>
+<line x1="286.1" y1="210.2" x2="286.1" y2="280.2"/><path d="M286.1 280.2 L281.8 270.1 L290.4 270.1 Z"/>
+<line x1="286.1" y1="210.2" x2="351.4" y2="185.0"/><path d="M351.4 185.0 L343.5 192.6 L340.4 184.6 Z"/>
+</g>
+<circle cx="286.1" cy="210.2" r="4" fill="#111"/>
+<g fill="#111">
+<text x="187" y="95" font-style="italic">I</text>
+<text x="292.0764442522518" y="238.2">A</text>
+<text x="281.1" y="306.2">1</text>
+<text x="364.1" y="218.2">2</text>
+<text x="355.4" y="179.0">3</text>
+<text x="194.1" y="218.2">4</text>
+</g>
+</svg>
