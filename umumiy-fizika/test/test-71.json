@@ -94,7 +94,7 @@
       "source": "71-mavzu.tex#0:7"
     },
     {
-      "text": "O‘zgaruvchan tok zanjiriga qarshiligi $70~\\Omega$ bo‘lgan rezistor, sig‘imi $6~\\Omega$ bo‘lgan kondensator, induktivligi $30~\\Omega$ bo‘lgan g‘altak ketma-ket ulangan. Zanjirning to‘la qarshiligini qanday ($\\Omega$)?",
+      "text": "O‘zgaruvchan tok zanjiriga qarshiligi $70~\\Omega$ bo‘lgan rezistor, sig‘im qarshiligi $6~\\Omega$ bo‘lgan kondensator va induktiv qarshiligi $30~\\Omega$ bo‘lgan g‘altak ketma-ket ulangan. Zanjirning to‘la qarshiligi qanday ($\\Omega$)?",
       "answers": [
         "65.",
         "53.",
@@ -402,7 +402,7 @@
       "source": "71-mavzu.tex#0:32"
     },
     {
-      "text": "Chastotasi $100$ Hz bo‘lgan o‘zgaruvchan tok zanjiriga $25$ mH induktivlikli g‘altak ulangan. Zanjirda rezonans ro‘y berishi uchun unga parallel qanday bo‘lg‘an kondensatorning sig‘imi qanday bo‘lishi kerak ($\\mu$F)?",
+      "text": "Chastotasi $100$ Hz bo‘lgan o‘zgaruvchan tok zanjiriga $25$ mH induktivlikli g‘altak ulangan. Zanjirda rezonans ro‘y berishi uchun unga ulanadigan kondensatorning sig‘imi qanday bo‘lishi kerak ($\\mu$F)?",
       "answers": [
         "100.",
         "40.",
@@ -530,7 +530,7 @@
         "72.",
         "12."
       ],
-      "correct": 2,
+      "correct": 1,
       "source": "71-mavzu.tex#0:43"
     }
   ]

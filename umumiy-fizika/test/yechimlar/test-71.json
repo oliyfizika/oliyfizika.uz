@@ -1,0 +1,234 @@
+{
+ "id": 71,
+ "solutions": [
+  {
+   "steps": [
+    "Ketma-ket RLC zanjir: $Z=\\sqrt{R^2+(X_L-X_C)^2}$, $\\;U=\\sqrt{U_R^2+(U_L-U_C)^2}$.",
+    "$U=\\sqrt{4^2+(3-6)^2}=5$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\sqrt{8^2+(30-24)^2}=10$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\sqrt{U_R^2+U_C^2}=\\sqrt{60^2+80^2}=100$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Faqat $L$ va $C$: kuchlanishlar qarama-qarshi fazada.",
+    "$U=|U_L-U_C|=80-60=20$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$U=|U_L-U_C|=400-180=220$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$U_{AC}=\\sqrt{U_{AB}^2+U_{BC}^2}=\\sqrt{40^2+30^2}=50$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{24^2+(30-30)^2}=24\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{70^2+(30-6)^2}=\\sqrt{4900+576}=74\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=\\omega L=2000\\ \\Omega$; $\\;X_C=\\dfrac1{\\omega C}=1000\\ \\Omega$; $\\;Z=|X_L-X_C|=1000\\ \\Omega=1$ k$\\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=2\\pi\\nu L=100\\pi\\cdot10\\pi=1000\\pi^2=10^4\\ \\Omega$",
+    "$X_C=\\dfrac{1}{100\\pi\\cdot\\pi\\cdot10^{-7}}=\\dfrac{1}{\\pi^2\\cdot10^{-5}}=10^4\\ \\Omega$; $\\;Z=0$ (rezonans)"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=2\\pi\\nu L=2\\cdot3\\cdot50\\cdot20=6000\\ \\Omega$; $\\;Z=\\sqrt{8^2+6^2}=10$ k$\\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R_1$ va $R_2$ parallel: $R=\\dfrac{12R_2}{12+R_2}$. $Z^2=R^2+(X_L-X_C)^2\\Rightarrow45=R^2+36\\Rightarrow R=3\\ \\Omega$.",
+    "$\\dfrac{12R_2}{12+R_2}=3\\;\\Rightarrow\\;R_2=4\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=100\\cdot0{,}2=20\\ \\Omega$; $\\;X_C=\\dfrac{1}{100\\cdot10^{-4}}=100\\ \\Omega$",
+    "$Z=\\sqrt{60^2+80^2}=100\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=300\\cdot0{,}01=3\\ \\Omega$; $\\;Z=\\sqrt{4^2+3^2}=5\\ \\Omega$; $\\;U_m=I_mZ=250$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{16^2+12^2}=20\\ \\Omega$; $\\;\\cos\\varphi=\\dfrac RZ=0{,}8$"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{7^2+24^2}=25\\ \\Omega$; $\\;\\cos\\varphi=\\dfrac{7}{25}=0{,}28$"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=10^3\\cdot0{,}02=20\\ \\Omega$; $\\;Z=\\sqrt{15^2+20^2}=25\\ \\Omega$; $\\;I_m=\\dfrac{1000}{25}=40$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=|X_L-X_C|=10\\ \\Omega$; $\\;U=IZ=2\\cdot10=20$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$X_C=\\dfrac{1}{10^4\\cdot10^{-6}}=100\\ \\Omega$; $\\;Z=100\\sqrt2\\ \\Omega$; $\\;I_m=\\dfrac{300}{141}\\approx2{,}1$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{10^2+(20-30)^2}=10\\sqrt2\\ \\Omega$; $\\;I_m=\\dfrac{200}{14{,}1}\\approx14$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{9^2+12^2}=15\\ \\Omega$; $\\;\\cos\\varphi=\\dfrac{9}{15}=0{,}6$"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{18^2+24^2}=30\\ \\Omega$; $\\;\\cos\\varphi=\\dfrac{18}{30}=0{,}6$"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{9^2+12^2}=15\\ \\Omega$; $\\;I=\\dfrac{U}{Z}=\\dfrac{75}{15}=5$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket — tok bir xil, kuchlanishlar qarshiliklarga proporsional: $U_R=U$, $U_L-U_C=2U-U=U$.",
+    "$\\cos\\varphi=\\dfrac{U_R}{\\sqrt{U_R^2+(U_L-U_C)^2}}=\\dfrac{1}{\\sqrt2}=\\dfrac{\\sqrt2}{2}$"
+   ]
+  },
+  {
+   "steps": [
+    "1-zanjir: $Z_1=\\sqrt{6^2+8^2}=10\\ \\Omega$, $\\cos\\varphi=0{,}6$. 2-zanjir: $\\cos\\varphi=\\dfrac{4}{Z_2}=0{,}6\\Rightarrow Z_2=\\dfrac{20}{3}\\ \\Omega$.",
+    "$\\dfrac{I_1}{I_2}=\\dfrac{Z_2}{Z_1}=\\dfrac{20/3}{10}=\\dfrac23$"
+   ]
+  },
+  {
+   "steps": [
+    "Tok kuchlanishdan $\\pi/6$ ga orqada: $\\tan\\dfrac\\pi6=\\dfrac{X_L-X_C}{R}$.",
+    "$X_L-20=10\\sqrt3\\cdot\\dfrac{1}{\\sqrt3}=10\\;\\Rightarrow\\;X_L=30\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "RC zanjir: tok kuchlanishdan $\\pi/3$ ga ilgarilaydi: $\\tan\\dfrac\\pi3=\\dfrac{X_C}{R}\\Rightarrow X_C=2\\sqrt3\\ \\Omega$.",
+    "$Z=\\sqrt{4+12}=4\\ \\Omega$; $\\;I_{ef}=\\dfrac{10\\sqrt2}{\\sqrt2}=10$ A; $\\;U_{ef}=I_{ef}Z=40$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=100\\cdot0{,}3=30\\ \\Omega$; $\\;X_C=\\dfrac{1}{100\\cdot5\\cdot10^{-4}}=20\\ \\Omega$; $\\;Z=\\sqrt{10^2+10^2}=10\\sqrt2\\ \\Omega$",
+    "$U_{ef}=\\dfrac{200}{\\sqrt2}$; $\\;I_{ef}=\\dfrac{200/\\sqrt2}{10\\sqrt2}=10$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Vektor diagrammadan: $R=Z\\cos53^\\circ=12\\ \\Omega$, $X_L-X_C=Z\\sin53^\\circ=16\\ \\Omega\\Rightarrow X_C=26-16=10\\ \\Omega$.",
+    "$U_{ef}=100$ V; $\\;I=\\dfrac{100}{20}=5$ A; $\\;U_C=IX_C=50$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Rezonansda $X_L=X_C$, demak $Z=R$."
+   ]
+  },
+  {
+   "steps": [
+    "Rezonansda $X_L=X_C$ — zanjir sof aktiv, faza farqi nol."
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega_0=\\dfrac{1}{\\sqrt{LC}}=\\dfrac{1}{\\sqrt{5\\cdot10^{-2}\\cdot2\\cdot10^{-5}}}=10^3$ rad/s"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{1}{4\\pi^2\\nu^2L}=\\dfrac{1}{39{,}5\\cdot10^4\\cdot0{,}025}\\approx10^{-4}$ F $=100\\ \\mu$F"
+   ]
+  },
+  {
+   "steps": [
+    "Rezonansda $Z=R$.",
+    "$I=\\dfrac{U}{R}=\\dfrac{140}{10}=14$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$X_L=X_C$ — rezonans, $Z=R=10\\ \\Omega$.",
+    "$I_m=\\dfrac{300}{10}=30$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Quvvat faqat aktiv qarshilikda ajraladi:",
+    "$P=I^2R=2^2\\cdot3=12$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$P=\\dfrac{I_mU_m}{2}\\cos\\varphi=\\dfrac{5\\cdot200}{2}\\cdot0{,}8=400$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{P}{U\\cos\\varphi}=\\dfrac{912}{380\\cdot0{,}8}=3$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$Z=\\sqrt{8^2+(3-9)^2}=10\\ \\Omega$; $\\;I=\\dfrac{140}{10}=14$ A; $\\;P=I^2R=196\\cdot8=1568$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=I^2Rt=2{,}5^2\\cdot30\\cdot4=750$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$P=I^2R=4\\cdot400=1600$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$I_{ef}=\\dfrac{2\\sqrt2}{\\sqrt2}=2$ A; $\\;P=I_{ef}^2R=4\\cdot5=20$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=I^2Rt=4\\cdot3\\cdot10=120$ J"
+   ]
+  }
+ ]
+}
