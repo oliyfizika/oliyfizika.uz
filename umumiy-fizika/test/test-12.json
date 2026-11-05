@@ -16,7 +16,7 @@
       "correct": 2
     },
     {
-      "text": "Quyidagi fikrlarning qaysilari Galileyning nisbiylik prinsipini ifodalaydi?",
+      "text": "Quyidagi fikrlarning qaysilari Galileyning nisbiylik prinsipini ifodalaydi?\n1) Inersial sanoq sistemalari faqat tinch turgan sistemalardir.\n2) Barcha inersial sanoq sistemalarida mexanik hodisalar bir xil kechadi.\n3) Inersial sistema ichida o‘tkazilgan hech qanday mexanik tajriba bilan uning tinch turganini yoki to‘g‘ri chiziqli tekis harakatlanayotganini aniqlab bo‘lmaydi.\n4) Mexanika qonunlari faqat Yer bilan bog‘langan sanoq sistemasida bajariladi.",
       "answers": ["2 va 3", "1 va 2", "2 va 4", "1 va 3"],
       "correct": 0
     },
@@ -97,6 +97,7 @@
     },
     {
       "text": "Massasi 2 kg bo‘lgan jism tezligining o‘zgarish grafigiga asosan, harakatning har bir bosqichida jismga ta’sir etayotgan kuchning proyeksiyasi Fₓ ni toping (N).",
+      "image": "../rasmlar12/rasm17.svg",
       "answers": ["1; 0; -2", "4; 0; -2", "5; 0; -2", "2; 0; -4"],
       "correct": 1
     },
@@ -104,7 +105,7 @@
       "text": "Inersial sanoq sistemasida jismga ikki kuch ta’sir etmoqda. Quyidagi vektorlardan qaysi biri jism tezlanishi yo‘nalishini to‘g‘ri tasvirlaydi?",
       "images": "../rasmlar12/rasm18.png",
       "answers": ["3", "4", "2", "1"],
-      "correct": 0
+      "correct": 2
     },
     {
       "text": "Avtodrezina ikkita platformani tekis tezlanuvchan harakat bilan olib borayotib tortish kuchi 1,8 kN ga teng bo‘lgan. Platformalarning massalari 12 va 8 t. Bu ikki platforma orasidagi tirkash moslamasi qanday kuch bilan tortiladi (kN)?",
