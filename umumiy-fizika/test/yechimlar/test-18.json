@@ -1,0 +1,94 @@
+{
+ "id": 18,
+ "solutions": [
+  {
+   "steps": [
+    "$a=\\dfrac{v}{t}=\\dfrac21=2\\ \\text{m/s}^2$",
+    "$F-F_{\\text{ishq}}=ma\\;\\Rightarrow\\;F=6\\cdot2+4=16\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tortish kuchi $F=kmg$, qarshilik kuchi $\\mu mg$ ($k$ — tortish koeffitsiyenti).",
+    "$ma=kmg-\\mu mg\\;\\Rightarrow\\;k=\\dfrac ag+\\mu=\\dfrac{10}{10}+0{,}5=1{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "Ishqalanish kuchi o‘zgarmas va tezlikka qarama-qarshi, demak tezlanish o‘zgarmas va manfiy: $a=-\\dfrac{F_{\\text{ishq}}}{m}$.",
+    "Jism tekis sekinlanuvchan harakat qiladi."
+   ]
+  },
+  {
+   "steps": [
+    "$a=-\\dfrac{\\mu mg}{m}=-\\mu g=-0{,}02\\cdot10=-0{,}2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{v_0^2}{2\\mu g}$ — yo‘l $v_0$ kamaysa va $\\mu$ ortsa kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$mg-F_q=ma\\;\\Rightarrow\\;F_q=m(g-a)=4(10-8{,}5)=6\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqoriga harakatda og‘irlik ham, havo qarshiligi ham pastga yo‘nalgan:",
+    "$a=\\dfrac{mg+F_q}{m}=g+\\dfrac{F_q}{m}=10+\\dfrac{0{,}8}{0{,}08}=20\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis sirpanishda: $mg\\sin\\alpha=\\mu mg\\cos\\alpha$.",
+    "$\\mu=\\tan30^\\circ=\\dfrac{1}{\\sqrt3}\\approx0{,}58$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=0{,}6$, $\\cos\\alpha=0{,}8$. Ishqalanish yukni ushlab turishga yordam beradi:",
+    "$F=mg(\\sin\\alpha-\\mu\\cos\\alpha)=500(0{,}6-0{,}16)=220\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "1-holat: $a_1=\\dfrac{40}{5}=8\\ \\text{m/s}^2$; $\\;T_1=3\\cdot8=24$ N (3 kg ni tortadi)",
+    "2-holat: $a_2=\\dfrac{60-40}{5}=4\\ \\text{m/s}^2$ (chapga); 3 kg uchun: $60-T_2=3\\cdot4\\Rightarrow T_2=48$ N",
+    "$\\dfrac{T_1}{T_2}=\\dfrac{24}{48}=\\dfrac12$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{F}{5m}=\\dfrac{100}{50}=2\\ \\text{m/s}^2$",
+    "1-ip oldingi brusok ortidagi 4 ta brusokni tortadi: $T=4\\cdot10\\cdot2=80\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "2 kg: $T_2-m_3g=m_3a\\;\\Rightarrow\\;24-20=2a\\;\\Rightarrow\\;a=2\\ \\text{m/s}^2$",
+    "3 kg: $T_1-30-24=3\\cdot2\\;\\Rightarrow\\;T_1=60$ N",
+    "4 kg: $F-40-60=4\\cdot2\\;\\Rightarrow\\;F=108$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{2m-m}{3m}g=\\dfrac g3$",
+    "Yengil yuk uchun: $T-mg=ma\\;\\Rightarrow\\;T=m\\left(g+\\dfrac g3\\right)=\\dfrac{4mg}{3}$"
+   ]
+  },
+  {
+   "steps": [
+    "Osilgan yuk pastga, qiyalikdagi yuk yuqoriga harakatlanadi (ishqalanish yo‘q):",
+    "$a=\\dfrac{m_2g-m_1g\\sin30^\\circ}{m_1+m_2}=\\dfrac{150-50}{25}=4\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{F}{m_1+m_2}=\\dfrac{15}{5}=3\\ \\text{m/s}^2$",
+    "2 kg jismga faqat 3 kg jism ta’sir qiladi: $N=m_2a=2\\cdot3=6\\ \\text{N}$"
+   ]
+  }
+ ]
+}
