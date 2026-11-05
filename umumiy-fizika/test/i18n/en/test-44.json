@@ -86,7 +86,7 @@
       "text": "The height of rise of a liquid in a capillary tube is 10 mm. To what height will this liquid rise in another capillary tube whose radius is 3 times smaller?",
       "answers": [
         "3 m",
-        "3 cm",
+        "3 mm",
         "0.3 m",
         "30 mm"
       ]
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "text": "The diameter of a mercury barometer tube is 3 mm. What correction (mm) must be applied to the barometer reading to account for the capillary depression of mercury? σ = 22 mN/m.",
+      "text": "The diameter of a mercury barometer tube is 3 mm. What correction (mm) must be applied to the barometer reading to account for the capillary depression of mercury? σ = 0.52 N/m.",
       "answers": [
         "5.9",
         "5.1",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "text": "The inner diameters of the right and left arms of a U-shaped capillary tube are 1 mm and 0.2 mm respectively. Find the difference in the levels of water poured into the tube (cm). σ = 73 mN/m.",
+      "text": "The inner diameters of the right and left arms of a U-shaped capillary tube are 1 mm and 2 mm respectively. Find the difference in the levels of water poured into the tube (cm). σ = 73 mN/m.",
       "answers": [
         "1.2",
         "1.46",

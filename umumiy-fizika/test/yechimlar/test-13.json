@@ -1,0 +1,82 @@
+{
+ "id": 13,
+ "solutions": [
+  {
+   "steps": [
+    "$F=G\\dfrac{m_1m_2}{r^2}\\;\\Rightarrow\\;G=\\dfrac{Fr^2}{m_1m_2}$.",
+    "$[G]=\\dfrac{\\text{N}\\cdot\\text{m}^2}{\\text{kg}^2}=\\dfrac{\\text{kg}\\cdot\\text{m/s}^2\\cdot\\text{m}^2}{\\text{kg}^2}=\\dfrac{\\text{m}^3}{\\text{kg}\\cdot\\text{s}^2}$"
+   ]
+  },
+  {
+   "steps": [
+    "$r=\\sqrt{\\dfrac{Gm_1m_2}{F}}=\\sqrt{\\dfrac{6{,}67\\cdot10^{-11}\\cdot2\\cdot1}{1{,}334\\cdot10^{-10}}}=\\sqrt1=1\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F\\sim\\dfrac{1}{r^2}$. Kuch 64 marta kamaygan bo‘lsa, $r^2$ 64 marta ortgan:",
+    "$r\\to\\sqrt{64}\\,r=8r$ — masofa 8 marta ortgan."
+   ]
+  },
+  {
+   "steps": [
+    "$4m$ jism o‘rtadagi $7m$ ni chapga, $9m$ jism esa o‘ngga tortadi:",
+    "$F_1=G\\dfrac{4m\\cdot7m}{r^2}=28\\dfrac{Gm^2}{r^2}$, $\\;F_2=G\\dfrac{9m\\cdot7m}{r^2}=63\\dfrac{Gm^2}{r^2}$",
+    "$F=F_2-F_1=35\\dfrac{Gm^2}{r^2}$ (o‘ngga, $9m$ tomonga)"
+   ]
+  },
+  {
+   "steps": [
+    "Kosinuslar teoremasi bo‘yicha yo‘ldoshlar orasidagi masofa:",
+    "$d^2=(3R)^2+(5R)^2-2\\cdot3R\\cdot5R\\cdot\\cos\\alpha=34R^2-30R^2\\cdot0{,}6=16R^2$",
+    "$F=\\gamma\\dfrac{m_0m}{d^2}=\\gamma\\dfrac{m_0m}{16R^2}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=mg=50\\cdot10=500\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Jismga ta’sir etuvchi kuchlar muvozanatda: $mg=T+N$.",
+    "$N=mg-T=100-30=70$ N — jism yerni shu kuch bilan bosadi (Nyutonning III qonuni)."
+   ]
+  },
+  {
+   "steps": [
+    "$g=G\\dfrac{M}{R^2}$.",
+    "$\\dfrac{g'}{g}=\\dfrac{M/3}{(R/3)^2}\\cdot\\dfrac{R^2}{M}=\\dfrac{9}{3}=3$ — og‘irlik kuchi 3 marta ko‘p."
+   ]
+  },
+  {
+   "steps": [
+    "$g_{\\text{Oy}}=g\\cdot\\dfrac{M_{\\text{Oy}}}{M}\\cdot\\dfrac{R^2}{R_{\\text{Oy}}^2}=9{,}8\\cdot\\dfrac{3{,}6^2}{81}\\approx1{,}6\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{F_0}{F_h}=\\dfrac{(R+h)^2}{R^2}=n^2$.",
+    "$R+h=nR\\;\\Rightarrow\\;h=R(n-1)$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=3R$ da markazgacha masofa $4R$.",
+    "$\\dfrac{g}{g_h}=\\dfrac{(4R)^2}{R^2}=16$ — 16 marta kichik."
+   ]
+  },
+  {
+   "steps": [
+    "$h=R$ da: $F=\\dfrac{F_0}{4}$, demak $2F=\\dfrac{F_0}{2}$.",
+    "$\\dfrac{R^2}{(R+h)^2}=\\dfrac12\\;\\Rightarrow\\;R+h=\\sqrt2R\\;\\Rightarrow\\;h=(\\sqrt2-1)R$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{R^2}{(R+h)^2}=0{,}64\\;\\Rightarrow\\;\\dfrac{R}{R+h}=0{,}8$",
+    "$R+h=1{,}25R\\;\\Rightarrow\\;h=0{,}25R=0{,}25\\cdot6400=1600\\ \\text{km}$"
+   ]
+  }
+ ]
+}

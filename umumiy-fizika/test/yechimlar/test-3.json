@@ -1,0 +1,84 @@
+{
+ "id": 3,
+ "solutions": [
+  {
+   "steps": [
+    "Grafik bo‘yicha $s(1)=5$ m, $s(5)=25$ m.",
+    "$\\Delta s=25-5=20\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafik — to‘g‘ri chiziq, demak tezlik o‘zgarmas:",
+    "$v=\\dfrac{\\Delta s}{\\Delta t}=\\dfrac{25\\ \\text{m}}{5\\ \\text{s}}=5\\ \\text{m/s}$",
+    "Shuning uchun $t=4{,}28$ s da ham $v=5$ m/s."
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik — $s(t)$ chizig‘ining qiyaligi.",
+    "$v_1=\\dfrac{20}{3}\\approx6{,}7$ m/s, $\\;v_2=\\dfrac{17}{3{,}5}\\approx4{,}9$ m/s, $\\;v_3=\\dfrac{15}{4}=3{,}75$ m/s",
+    "Eng katta tezlik — 1-moddiy nuqtada."
+   ]
+  },
+  {
+   "steps": [
+    "$s(t)$ grafigining qiyaligi tezlikka teng: $v=\\tan\\alpha$.",
+    "$v=\\tan30^\\circ=\\dfrac{1}{\\sqrt3}=\\dfrac{\\sqrt3}{3}\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yo‘l manfiy bo‘lmaydi va vaqt o‘tishi bilan kamaymaydi.",
+    "I va IV grafiklar manfiy qiymatdan boshlanadi, II da $s$ kamayadi — ular yaramaydi.",
+    "III da yo‘l ortadi, keyin jism to‘xtab, yo‘l o‘zgarmaydi — bu yo‘lning grafigi bo‘la oladi."
+   ]
+  },
+  {
+   "steps": [
+    "$x(t)$ grafigida tezlik — chiziqning qiyaligi.",
+    "1-chiziq eng yotiq, 3-chiziq eng tik, 2-chiziq ular orasida.",
+    "$v_1<v_2<v_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Yo‘l — bo‘laklardagi ko‘chishlar modullarining yig‘indisi:",
+    "$0\\to2$ s: 15 m; $\\;2\\to4$ s: $15-(-10)=25$ m; $\\;4\\to5$ s: 10 m",
+    "$s=15+25+10=50\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $x_0=6$ m, $t=3$ s da $x=0$.",
+    "$v=\\dfrac{0-6}{3}=-2\\ \\text{m/s}\\;\\Rightarrow\\;x=6-2t$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $x_0=1$ m, $t=5$ s da $x=4$ m.",
+    "$v=\\dfrac{4-1}{5}=0{,}6\\ \\text{m/s}$",
+    "$x(3)=1+0{,}6\\cdot3=2{,}8\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $x(1)=2$ m, $x(3)=4$ m, $x(4)=3$ m.",
+    "Ko‘chish: $\\Delta x=x(4)-x(1)=3-2=1\\ \\text{m}$",
+    "Yo‘l: $|4-2|+|3-4|=2+1=3\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$x(t)$ grafigida tezlik moduli chiziq qiyaligiga teng.",
+    "I bo‘lak eng tik (qisqa vaqtda koordinata eng ko‘p o‘zgaradi), demak tezlik shu bo‘lakda eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan $v=4$ m/s — o‘zgarmas, ya’ni harakat tekis.",
+    "$x=x_0+vt=-10+4t$"
+   ]
+  }
+ ]
+}

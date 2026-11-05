@@ -1,0 +1,115 @@
+{
+ "id": 38,
+ "solutions": [
+  {
+   "steps": [
+    "$v=\\sqrt{\\dfrac{3RT}{M}}\\sim\\sqrt T$: $v\\to2v\\;\\Rightarrow\\;T\\to4T$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{v_H}{v_O}=\\sqrt{\\dfrac{M_O}{M_H}}=\\sqrt{\\dfrac{32}{2}}=4$"
+   ]
+  },
+  {
+   "steps": [
+    "$v\\sim\\sqrt T$: $T\\to4T\\;\\Rightarrow\\;v\\to2v$ (2 marta ortadi)"
+   ]
+  },
+  {
+   "steps": [
+    "$v\\sim\\sqrt T$: $T\\to\\dfrac T2\\;\\Rightarrow\\;v\\to\\dfrac v{\\sqrt2}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{v_2}{v_1}=\\sqrt{1{,}21}=1{,}1$ — tezlik 10% ga ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{Mv^2}{3R}=\\dfrac{0{,}028\\cdot830^2}{3\\cdot8{,}31}\\approx774$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3\\cdot8{,}31\\cdot300}{0{,}002}}\\approx1930\\ \\text{m/s}=1{,}93$ km/s",
+    "$p=m_0v=\\dfrac{0{,}002}{6{,}02\\cdot10^{23}}\\cdot1930\\approx6{,}4\\cdot10^{-24}$ kg·m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil temperaturada o‘rtacha kinetik energiyalar teng: $m_1v_1^2=m_0v_0^2$.",
+    "$m_0=\\dfrac{0{,}029}{6{,}02\\cdot10^{23}}\\approx4{,}8\\cdot10^{-26}$ kg",
+    "$\\dfrac{v_0}{v_1}=\\sqrt{\\dfrac{m_1}{m_0}}=\\sqrt{\\dfrac{1{,}74\\cdot10^{-12}}{4{,}8\\cdot10^{-26}}}\\approx6\\cdot10^6$"
+   ]
+  },
+  {
+   "steps": [
+    "$v\\sim\\sqrt T$: $T\\to3T\\;\\Rightarrow\\;v\\to\\sqrt3\\,v$"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil temperaturada $v\\sim\\dfrac1{\\sqrt M}$ — eng yengil gaz (H₂) molekulalari eng tez."
+   ]
+  },
+  {
+   "steps": [
+    "Absolyut temperatura 283 K dan 293 K ga ortdi:",
+    "$\\dfrac{v_2}{v_1}=\\sqrt{\\dfrac{293}{283}}\\approx1{,}02$ — bir oz ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{Mv^2}{3R}=\\dfrac{0{,}002\\cdot(2000)^2}{3\\cdot8{,}31}\\approx321$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$v\\to2v$ uchun $T\\to4T$: $\\;T_1=250+273=523$ K.",
+    "$T_2=4\\cdot523=2092\\ \\text{K}=1819^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T\\sim v^2$: $\\;\\Delta T\\sim v_2^2-v_1^2$.",
+    "$\\Delta T_2=30\\cdot\\dfrac{900^2-750^2}{750^2-600^2}=30\\cdot\\dfrac{247500}{202500}\\approx36{,}7$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta T_2=70\\cdot\\dfrac{800^2-620^2}{620^2-500^2}=70\\cdot\\dfrac{255600}{134400}\\approx133{,}1$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3\\cdot8{,}31\\cdot173}{0{,}002}}\\approx1468$ m/s",
+    "$\\bar E=\\dfrac32kT=1{,}5\\cdot1{,}38\\cdot10^{-23}\\cdot173\\approx3{,}6\\cdot10^{-21}$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Normal sharoit: $T=273$ K.",
+    "$\\bar E=\\dfrac32kT=1{,}5\\cdot1{,}38\\cdot10^{-23}\\cdot273\\approx5{,}65\\cdot10^{-21}$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\sqrt{\\dfrac{3\\cdot8{,}31\\cdot273}{0{,}002}}\\approx1844$ m/s; $\\;\\bar E=\\dfrac32kT\\approx5{,}6\\cdot10^{-21}$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Poloska chaplashgani — turli molekulalar silindrlar orasini turli vaqtda uchib o‘tgan, ya’ni ularning tezliklari turlicha."
+   ]
+  },
+  {
+   "steps": [
+    "Uchish vaqti $t=\\dfrac lv$, shu vaqtda asbob $\\varphi=2\\pi\\nu t$ burchakka buriladi.",
+    "$\\varphi=5{,}4^\\circ=0{,}0942$ rad; $\\;t=\\dfrac{\\varphi}{2\\pi\\nu}=\\dfrac{0{,}0942}{942}=10^{-4}$ s",
+    "$v=\\dfrac lt=\\dfrac{0{,}02}{10^{-4}}=200$ m/s"
+   ]
+  }
+ ]
+}

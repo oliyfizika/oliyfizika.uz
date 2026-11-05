@@ -139,6 +139,17 @@ function loadManifest() {
   }
   return manifestPromise;
 }
+// Yechimlari tayyor testlar: umumiy-fizika/test/yechimlar/manifest.json (yo'q bo'lsa — tugma ko'rsatilmaydi).
+let solManifestPromise = null;
+function loadSolutionsManifest() {
+  if (!solManifestPromise) {
+    solManifestPromise = fetch(new URL("test/yechimlar/manifest.json", location.href), { cache: "no-cache" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => new Set(Array.isArray(d?.available) ? d.available.map(Number) : []))
+      .catch(() => new Set());
+  }
+  return solManifestPromise;
+}
 function testId(testUrl) {
   return new URL(testUrl, location.href).searchParams.get("id");
 }
@@ -183,10 +194,14 @@ async function fillPanel(li, lesson) {
   const slot = $("[data-test-slot]", panel);
   const missing = `<p class="of-lesson__note">${icon("info")}<span>${t("uf.testPreparing", "Bu mavzu testi tayyorlanmoqda. Test qo‘shilgach, shu yerda paydo bo‘ladi.")}</span></p>`;
   if (!lesson.testUrl) { slot.innerHTML = missing; return; }
-  const exists = await testExists(lesson.testUrl);
+  const [exists, solSet] = await Promise.all([testExists(lesson.testUrl), loadSolutionsManifest()]);
+  // Yechimlar tugmasi — mavzu yakunlangan bo'lsa; haqiqiy ≥80% tekshiruvi yechimlar sahifasining o'zida.
+  const solBtn = exists !== false && lesson.state === "done" && solSet.has(Number(testId(lesson.testUrl)))
+    ? ` <a class="of-btn" href="${esc(lesson.testUrl)}&amp;yechimlar=1">${icon("book")} ${t("uf.solutions", "Yechimlar")}</a>`
+    : "";
   slot.innerHTML = exists === false
     ? missing
-    : `<a class="of-btn of-btn--primary" href="${esc(lesson.testUrl)}">${lesson.state === "done" ? t("uf.retakeTest", "Testni qayta ishlash") : t("uf.startTest", "Testni boshlash")} ${icon("arrowRight")}</a>`;
+    : `<div class="of-row" style="flex-wrap:wrap;gap:8px"><a class="of-btn of-btn--primary" href="${esc(lesson.testUrl)}">${lesson.state === "done" ? t("uf.retakeTest", "Testni qayta ishlash") : t("uf.startTest", "Testni boshlash")} ${icon("arrowRight")}</a>${solBtn}</div>`;
 }
 
 function toggleLesson(li, open, { focus = false } = {}) {

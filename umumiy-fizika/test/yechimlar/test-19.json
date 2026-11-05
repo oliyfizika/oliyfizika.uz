@@ -1,0 +1,125 @@
+{
+ "id": 19,
+ "solutions": [
+  {
+   "steps": [
+    "Kuch momenti = kuch × yelka (o‘qdan kuchning ta’sir chizig‘igacha masofa):",
+    "$M=Fd=50\\cdot1{,}5=75\\ \\text{N}\\cdot\\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$M'=3F\\cdot\\dfrac d2=1{,}5\\,Fd$ — 1,5 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Momentlar qoidasi: jismni soat strelkasi yo‘nalishida va unga qarshi aylantiruvchi momentlar yig‘indilari teng bo‘lsa, jism muvozanatda bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Yelka — o‘qdan kuchning ta’sir chizig‘igacha masofa: $l=d\\sin\\alpha$ ($\\alpha$ — kuch va radius-vektor orasidagi burchak).",
+    "$M=Fl=Fd\\sin\\alpha$"
+   ]
+  },
+  {
+   "steps": [
+    "$F_1l_1=F_2l_2\\;\\Rightarrow\\;l_2=\\dfrac{300\\cdot5}{20}=75\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "$40\\cdot60=240\\cdot l_2\\;\\Rightarrow\\;l_2=10$ sm",
+    "Richag uzunligi: $60+10=70\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tayanchdan yuklargacha 20 sm va 80 sm. Yangi yuk 20 sm tomonda $d$ masofada:",
+    "$5\\cdot20+30d=5\\cdot80\\;\\Rightarrow\\;30d=300\\;\\Rightarrow\\;d=10\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Og‘ir yukdan tayanchgacha $d$, yengil yukdan $200-d$:",
+    "$40d=10(200-d)\\;\\Rightarrow\\;d=40\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Antiparallel kuchlarning teng ta’sir etuvchisi: $R=25-10=15$ N, katta kuch yo‘nalishida, katta kuchdan tashqarida qo‘yilgan.",
+    "$10(x+1{,}5)=25x\\;\\Rightarrow\\;x=1$ m — 25 N kuchdan 1 m, 10 N kuchdan 2,5 m",
+    "Muvozanatlovchi kuch: 15 N, teskari yo‘nalgan va shu nuqtaga qo‘yilgan (10 N kuchdan 2,5 m)."
+   ]
+  },
+  {
+   "steps": [
+    "Qo‘zg‘almas blok faqat kuch yo‘nalishini o‘zgartiradi: $F=mg$ — kuchdan yutuq yo‘q.",
+    "Richag va qiya tekislik kuchdan yutuq beradi (lekin yo‘ldan yutqaziladi)."
+   ]
+  },
+  {
+   "steps": [
+    "Momentlar qoidasi (C nuqtaga nisbatan): $3\\cdot AC=2\\cdot CB$, $\\;AC+CB=30$ sm.",
+    "$AC=12$ sm, $\\;BC=18\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "A nuqtaga nisbatan momentlar: $2F$ (yelkasi $d$) va $x$ (yelkasi $3{,}5d$) bir tomonga, $7F$ (yelkasi $2d$) qarshi tomonga aylantiradi:",
+    "$2F\\cdot d+x\\cdot3{,}5d=7F\\cdot2d\\;\\Rightarrow\\;x=\\dfrac{12F}{3{,}5}=\\dfrac{24F}{7}$"
+   ]
+  },
+  {
+   "steps": [
+    "O nuqtaga nisbatan: $F$ ning yelkasi $L\\sin30^\\circ$, yukning yelkasi $\\dfrac L2$.",
+    "$F\\cdot L\\sin30^\\circ=mg\\dfrac L2\\;\\Rightarrow\\;m=\\dfrac{2F\\sin30^\\circ}{g}=\\dfrac{200}{10}=20\\ \\text{kg}$"
+   ]
+  },
+  {
+   "steps": [
+    "O nuqtaga nisbatan: $F$ ning momenti $F\\sin\\alpha\\cdot L$; $F_2$ o‘rtaga qo‘yilgan va vertikal bilan $\\alpha$ hosil qiladi, momenti $F_2\\cos\\alpha\\cdot\\dfrac L2$.",
+    "$FL\\sin\\alpha=F_2\\dfrac L2\\cos\\alpha\\;\\Rightarrow\\;F_2=2\\tan\\alpha\\cdot F_1$"
+   ]
+  },
+  {
+   "steps": [
+    "Kub O qirra atrofida ag‘dariladi. $F$ ning yelkasi — kub qirrasi $a$, og‘irlik kuchining yelkasi $\\dfrac a2$.",
+    "$Fa=mg\\dfrac a2\\;\\Rightarrow\\;F=\\dfrac{mg}{2}=\\dfrac{200}{2}=100\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Aylanish o‘qi — stol qirrasi. Og‘irlik markazi undan $\\dfrac L4$ masofada stol ustida, kuch esa chiqib turgan uchga (yelkasi $\\dfrac L4$) qo‘yiladi.",
+    "$F\\dfrac L4=mg\\dfrac L4\\;\\Rightarrow\\;F=mg$"
+   ]
+  },
+  {
+   "steps": [
+    "Reaksiyalar og‘irlik markazigacha masofalarga teskari proporsional: $\\dfrac{N_1}{N_2}=\\dfrac31$.",
+    "$N_1=\\dfrac34\\cdot24=18$ kN, $\\;N_2=6$ kN"
+   ]
+  },
+  {
+   "steps": [
+    "Yarim bo‘laklar massalari $m$ va $3m$, ularning markazlari $\\dfrac L4$ va $\\dfrac{3L}4$ da:",
+    "$x_c=\\dfrac{m\\frac L4+3m\\frac{3L}4}{4m}=\\dfrac{5L}{8}$",
+    "Siljish: $\\dfrac{5L}8-\\dfrac L2=\\dfrac L8$"
+   ]
+  },
+  {
+   "steps": [
+    "Sistemaga gorizontal tashqi kuch ta’sir etmaydi (relslar silliq) — massa markazi joyidan siljimaydi.",
+    "Bola markazga yurganda aravacha qarama-qarshi tomonga siljiydi, lekin umumiy og‘irlik markazi o‘zgarmaydi: 0."
+   ]
+  },
+  {
+   "steps": [
+    "Birinchi shardan boshlab koordinatalar: 0; 0,2; 0,4; 0,6 m.",
+    "$x_c=\\dfrac{1\\cdot0+5\\cdot0{,}2+7\\cdot0{,}4+3\\cdot0{,}6}{16}=\\dfrac{5{,}6}{16}=0{,}35$ m",
+    "Uchinchi shardan: $0{,}35-0{,}4=-0{,}05\\ \\text{m}$"
+   ]
+  }
+ ]
+}

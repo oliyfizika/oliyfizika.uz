@@ -1,0 +1,199 @@
+{
+ "id": 31,
+ "solutions": [
+  {
+   "steps": [
+    "Tenglamada $\\omega=4\\pi$ rad/s.",
+    "$\\nu=\\dfrac{\\omega}{2\\pi}=\\dfrac{4\\pi}{2\\pi}=2$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=10$ rad/s.",
+    "$\\nu=\\dfrac{\\omega}{2\\pi}=\\dfrac{10}{2\\pi}=\\dfrac5\\pi$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=100\\pi\\;\\Rightarrow\\;\\nu=\\dfrac{100\\pi}{2\\pi}=50$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=10\\pi\\;\\Rightarrow\\;\\nu=\\dfrac{10\\pi}{2\\pi}=5$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=10$ rad/s, $\\;\\omega^2=\\dfrac km$.",
+    "$k=m\\omega^2=0{,}1\\cdot100=10$ N/m"
+   ]
+  },
+  {
+   "steps": [
+    "$x=A\\cos\\varphi$: $\\;1=A\\cos\\dfrac\\pi3=\\dfrac A2\\Rightarrow A=2$ sm.",
+    "$x=2\\cos\\dfrac{5\\pi}{3}=2\\cdot\\dfrac12=1$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$A=0{,}001$ m, $\\;\\omega=2\\pi\\nu=2000\\pi$ rad/s, $\\;\\varphi_0=\\dfrac\\pi3$.",
+    "$x=0{,}001\\cos\\left(2000\\pi t+\\dfrac\\pi3\\right)$"
+   ]
+  },
+  {
+   "steps": [
+    "$A=0{,}05$ m, $\\;\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{0{,}05}=40\\pi$ rad/s.",
+    "$x=0{,}05\\sin40\\pi t$"
+   ]
+  },
+  {
+   "steps": [
+    "Faza — sinus (kosinus) belgisi ostidagi ifoda:",
+    "$\\varphi=\\omega t+\\alpha$"
+   ]
+  },
+  {
+   "steps": [
+    "Garmonik tebranish sinus yoki kosinus qonuni bilan ifodalanadi: 1 va 3.",
+    "2 — tekis o‘zgaruvchan harakat, 4 — prujinaning cho‘zilishi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varphi=2t+\\dfrac\\pi2=2\\cdot3+\\dfrac\\pi2=6+\\dfrac\\pi2$"
+   ]
+  },
+  {
+   "steps": [
+    "$x_1=0{,}02\\cos\\dfrac\\pi4\\approx0{,}0141$ m; $\\;x_2=0{,}02\\cos\\dfrac{5\\pi}4\\approx-0{,}0141$ m",
+    "$x_1-x_2\\approx0{,}028\\ \\text{m}=2{,}8$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $T=2$ s, boshlang‘ich faza $0$ ($x=A\\sin\\omega t$).",
+    "$\\omega=\\dfrac{2\\pi}{T}=\\pi$; $\\;\\varphi=\\omega t=0{,}6\\pi$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{120}{60}=2$ Hz, $\\;\\omega=4\\pi$ rad/s, $\\;A=0{,}05$ m.",
+    "$x=0{,}05\\cos\\left(4\\pi t+\\dfrac{3\\pi}{2}\\right)$"
+   ]
+  },
+  {
+   "steps": [
+    "$x=A\\cos(\\omega t+\\varphi_0)$ ko‘rinishida $t$ oldidagi koeffitsiyent:",
+    "$\\omega=\\dfrac\\pi2$ rad/s"
+   ]
+  },
+  {
+   "steps": [
+    "$|\\sin\\varphi|=0{,}87\\approx\\dfrac{\\sqrt3}{2}$",
+    "$\\varphi=\\dfrac\\pi3;\\ \\dfrac{2\\pi}3;\\ \\dfrac{4\\pi}3;\\ \\dfrac{5\\pi}3$"
+   ]
+  },
+  {
+   "steps": [
+    "Fazalar bir xil — amplitudalar qo‘shiladi: $A=5+2=7$ sm.",
+    "$x=0{,}07\\sin\\left(\\dfrac{2\\pi}{1{,}2}\\cdot0{,}1\\right)=0{,}07\\sin\\dfrac\\pi6=3{,}5\\cdot10^{-2}$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=2\\pi\\nu=\\pi$ rad/s: $\\;10\\sin\\pi t=7{,}1\\Rightarrow\\sin\\pi t\\approx\\dfrac{\\sqrt2}{2}$.",
+    "$\\pi t=\\dfrac\\pi4\\Rightarrow t=0{,}25$ s; $\\;\\pi t=\\dfrac{3\\pi}4\\Rightarrow t=0{,}75$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$A\\sin\\dfrac{2\\pi t}{T}=\\dfrac A2\\Rightarrow\\dfrac{2\\pi t}{T}=\\dfrac\\pi6$.",
+    "$t=\\dfrac{T}{12}=\\dfrac{36}{12}=3$ s"
+   ]
+  },
+  {
+   "steps": [
+    "Chetki vaziyatdan: $x=A\\cos\\dfrac{2\\pi t}{T}=\\dfrac A2\\Rightarrow\\dfrac{2\\pi t}{T}=\\dfrac\\pi3$.",
+    "$t=\\dfrac T6=\\dfrac{12}{6}=2$ s"
+   ]
+  },
+  {
+   "steps": [
+    "Muvozanatdan $A/2$ gacha $T/12$, muvozanatdan chetgacha $T/4$ vaqt ketadi.",
+    "$t=\\dfrac T4-\\dfrac T{12}=\\dfrac T6$"
+   ]
+  },
+  {
+   "steps": [
+    "Muvozanat vaziyatidan chetki vaziyatgacha chorak davr:",
+    "$t=\\dfrac T4$"
+   ]
+  },
+  {
+   "steps": [
+    "Muvozanat → chetki vaziyat → muvozanat: yarim davr.",
+    "$t=\\dfrac T2=3$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$A\\sin\\dfrac{2\\pi t}{T}=\\dfrac A2\\Rightarrow\\dfrac{2\\pi t}T=\\dfrac\\pi6$.",
+    "$t=\\dfrac{T}{12}$"
+   ]
+  },
+  {
+   "steps": [
+    "$x=A\\sin(\\omega t+\\varphi_0)$ bo‘lsa, $\\vartheta=A\\omega\\cos(\\omega t+\\varphi_0)=A\\omega\\sin\\left(\\omega t+\\varphi_0+\\dfrac\\pi2\\right)$.",
+    "$\\varphi_0+\\dfrac\\pi2=\\dfrac\\pi3\\;\\Rightarrow\\;\\varphi_0=-\\dfrac\\pi6$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta^2=\\omega^2(A^2-x^2)$: $\\;36=\\omega^2(A^2-16)$, $\\;64=\\omega^2(A^2-9)$.",
+    "$\\dfrac{64}{36}=\\dfrac{A^2-9}{A^2-16}\\;\\Rightarrow\\;28A^2=700\\;\\Rightarrow\\;A=5$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$x=A\\cos(\\omega t+\\varphi_0)$ dan $\\vartheta=-A\\omega\\sin(\\omega t+\\varphi_0)$ — tezlik ham sinus (kosinus) qonuni bo‘yicha o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta_{max}=A\\omega=0{,}1\\cdot\\pi=0{,}1\\pi$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=x'=3\\cdot4\\pi\\cos\\left(4\\pi t+\\dfrac\\pi2\\right)$; $\\;t=0$: $\\cos\\dfrac\\pi2=0\\;\\Rightarrow\\;\\vartheta=0$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\vartheta_{max}\\sqrt{1-\\dfrac{x^2}{A^2}}=50\\sqrt{1-0{,}36}=40\\ \\text{sm/s}=400$ mm/s"
+   ]
+  },
+  {
+   "steps": [
+    "Chetki vaziyatda jism to‘xtab, harakat yo‘nalishini o‘zgartiradi: $\\vartheta=0$."
+   ]
+  },
+  {
+   "steps": [
+    "Bir davrda yo‘l $4A=30$ sm $\\Rightarrow A=0{,}075$ m; $\\;\\omega=\\dfrac{2\\pi}{0{,}25}=8\\pi$ rad/s.",
+    "$a_{max}=\\omega^2A=64\\pi^2\\cdot0{,}075\\approx47{,}3\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a_{max}=\\omega^2A=(10\\pi)^2\\cdot0{,}1=10\\pi^2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=x''=-\\omega^2x=-(100\\pi)^2x=-10^4\\pi^2x$"
+   ]
+  }
+ ]
+}

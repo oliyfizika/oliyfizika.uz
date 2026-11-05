@@ -1,0 +1,90 @@
+{
+ "id": 67,
+ "solutions": [
+  {
+   "steps": [
+    "$\\mu=\\dfrac{B}{B_0}$ — muhitdagi induksiya vakuumdagidan necha marta katta ekanini ko‘rsatadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\mu<1$ (biroz kichik) — diamagnetiklar."
+   ]
+  },
+  {
+   "steps": [
+    "$\\mu>1$ (biroz katta) — paramagnetiklar."
+   ]
+  },
+  {
+   "steps": [
+    "$\\mu\\gg1$ — ferromagnetiklar (temir, nikel, kobalt)."
+   ]
+  },
+  {
+   "steps": [
+    "Temir — ferromagnetik."
+   ]
+  },
+  {
+   "steps": [
+    "Vismut — diamagnetik (temir, kobalt, nikel — ferromagnetiklar)."
+   ]
+  },
+  {
+   "steps": [
+    "Alyuminiy — paramagnetik (vismut va mis — diamagnetik, temir — ferromagnetik)."
+   ]
+  },
+  {
+   "steps": [
+    "Kyuri nuqtasidan yuqori temperaturada ferromagnetik domen tuzilishini yo‘qotib, paramagnetikka aylanadi."
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\mu B_0=500\\cdot2\\cdot10^{-3}=1$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$\\mu=\\dfrac{B}{B_0}=\\dfrac{0{,}6}{2\\cdot10^{-3}}=300$"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\mu B_0=1000\\cdot4\\cdot10^{-3}=4$ T"
+   ]
+  },
+  {
+   "steps": [
+    "Ferromagnit o‘zakda $\\mu\\gg1$, shuning uchun maydon ko‘p marta kuchayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Temir o‘zak ($\\mu\\gg1$) magnit maydonni kuchaytiradi."
+   ]
+  },
+  {
+   "steps": [
+    "Ferromagnetikdagi domenlar bir xil yo‘nalishda tartiblanib qolsa, modda doimiy magnitga aylanadi."
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\mu\\mu_0H$."
+   ]
+  },
+  {
+   "steps": [
+    "Diamagnetikda $\\mu<1$ — tashqi maydon biroz susayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$H=nI=1000\\cdot2=2000$ A/m"
+   ]
+  }
+ ]
+}

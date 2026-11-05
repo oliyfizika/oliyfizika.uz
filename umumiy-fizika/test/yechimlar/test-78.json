@@ -1,0 +1,256 @@
+{
+ "id": 78,
+ "solutions": [
+  {
+   "steps": [
+    "Interferensiya — kogerent to‘lqinlar qo‘shilganda fazoda natijaviy tebranish amplitudasining (intensivligining) kuchayishi yoki susayishi."
+   ]
+  },
+  {
+   "steps": [
+    "Interferensiya uchun to‘lqinlar kogerent bo‘lishi kerak: chastotalari bir xil va fazalar farqi vaqt bo‘yicha o‘zgarmas."
+   ]
+  },
+  {
+   "steps": [
+    "To‘lqin uzunligi (chastotasi) har xil to‘lqinlarning fazalar farqi vaqt o‘tishi bilan o‘zgaradi — ular kogerent emas va barqaror interferensiya bermaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta=l_1-l_2=\\dfrac{14\\lambda}{8}-\\dfrac{13\\lambda}{8}=\\dfrac\\lambda8$.",
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=\\dfrac{2\\pi}{8}=\\dfrac\\pi4$"
+   ]
+  },
+  {
+   "steps": [
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=2\\pi\\cdot\\dfrac16=\\dfrac\\pi3$"
+   ]
+  },
+  {
+   "steps": [
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=2\\pi\\cdot\\dfrac14=\\dfrac\\pi2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{\\vartheta}{\\nu}=\\dfrac{2{,}4}{3}=0{,}8$ m.",
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=\\dfrac{2\\pi\\cdot0{,}2}{0{,}8}=\\dfrac\\pi2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{6}{10}=0{,}6$ m.",
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=\\dfrac{2\\pi\\cdot0{,}2}{0{,}6}=\\dfrac{2\\pi}3$"
+   ]
+  },
+  {
+   "steps": [
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta=\\dfrac{\\lambda\\Delta\\varphi}{2\\pi}=\\dfrac{\\lambda}{8}$"
+   ]
+  },
+  {
+   "steps": [
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=\\dfrac{2\\pi(6-2)}{2}=4\\pi$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{340}{680}=0{,}5$ m.",
+    "Fazalar farqi va yo‘llar farqi: $\\Delta\\varphi=\\dfrac{2\\pi\\Delta}{\\lambda}$.",
+    "$\\Delta\\varphi=\\dfrac{2\\pi\\cdot0{,}25}{0{,}5}=\\pi$"
+   ]
+  },
+  {
+   "steps": [
+    "Kogerent to‘lqinlar — chastotalari bir xil va fazalar farqi o‘zgarmas to‘lqinlar."
+   ]
+  },
+  {
+   "steps": [
+    "Kogerentlik ta’rifi: bir xil chastotali va doimiy fazalar farqiga ega to‘lqinlar."
+   ]
+  },
+  {
+   "steps": [
+    "Natijaviy amplituda: $A_{nat}=2A\\cos\\dfrac{\\Delta\\varphi}2=\\sqrt3A$, $\\cos\\dfrac{\\Delta\\varphi}2=\\dfrac{\\sqrt3}2$, $\\Delta\\varphi=\\dfrac\\pi3$.",
+    "$\\Delta=\\dfrac{\\lambda}{6}=\\dfrac{300}{6}=50$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "Yo‘l farqi $\\lambda/2$ — to‘lqinlar qarama-qarshi fazada, bir-birini so‘ndiradi.",
+    "$A=0$"
+   ]
+  },
+  {
+   "steps": [
+    "Yo‘l farqi juft yarim to‘lqinlarga ($k\\lambda$) teng — to‘lqinlar bir xil fazada, kuchayadi.",
+    "$A=2a$"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil fazada qo‘shilganda amplitudalar qo‘shiladi.",
+    "$A=2a$"
+   ]
+  },
+  {
+   "steps": [
+    "Minimum sharti: $\\Delta=4-3=1$ m $=(2k+1)\\dfrac\\lambda2$, ya’ni $\\lambda=\\dfrac{2}{2k+1}$ m.",
+    "$\\nu=\\dfrac{\\vartheta}{\\lambda}=\\dfrac{340(2k+1)}{2}=(2k+1)170$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$M$: to‘g‘ri yo‘l $11$ cm, ko‘zgu orqali $11{,}5+11{,}5=23$ cm\\; $\\Delta=12$ cm $=4\\lambda$. Ko‘zgudagi $\\pi$ siljish tufayli bu — minimum.",
+    "$N$: to‘g‘ri $24{,}5$ cm, ko‘zgu orqali $29$ cm\\; $\\Delta=4{,}5$ cm $=1{,}5\\lambda$\\; $\\pi$ siljish bilan — maksimum."
+   ]
+  },
+  {
+   "steps": [
+    "Kogerent yorug‘lik to‘lqinlari qo‘shilganda intensivlikning qayta taqsimlanishi — interferensiya."
+   ]
+  },
+  {
+   "steps": [
+    "To‘lqin uzunliklari har xil — chastotalari har xil, kogerent emas: interferensiya kuzatilmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Har xil to‘lqin uzunlikli nurlar kogerent bo‘lmaydi — interferensiya hech qanday sharoitda kuzatilmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Qarama-qarshi fazadagi teng amplitudali tebranishlar bir-birini so‘ndiradi.",
+    "$A=0$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "$d\\sin30^\\circ=10\\lambda\\cdot\\dfrac12=5\\lambda\\;\\Rightarrow\\;k=5$ — 5-maksimum"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "$\\Delta x=\\dfrac{6\\cdot10^{-7}\\cdot2}{10^{-4}}=1{,}2\\cdot10^{-2}$ m $=1{,}2$ cm.",
+    "Rasmda $x$ markaziy maksimumdan 3-maksimumgacha:",
+    "$x=3\\cdot1{,}2=3{,}6$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "$\\Delta x=\\dfrac{4\\cdot10^{-7}\\cdot2}{10^{-4}}=8\\cdot10^{-3}$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta x=\\dfrac{\\lambda L}{d}$: $L$ ortsa, yo‘llar kengligi ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$d\\sin\\theta=k\\lambda$, $|\\sin\\theta|<1$, ya’ni $|k|\\le\\dfrac d\\lambda$.",
+    "Musbat, manfiy tartiblar va markaziy maksimum:",
+    "$N=\\dfrac{2d}{\\lambda}+1$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "$N=\\dfrac{L}{\\Delta x}+1=\\dfrac{dL}{l\\lambda}+1$"
+   ]
+  },
+  {
+   "steps": [
+    "Mustaqil manbalar (atomlar tartibsiz, alohida nurlanadi) kogerent emas — fazalar farqi tez o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "Yupqa pardaning tovlanishi va Nyuton halqalari — interferensiya.",
+    "Soya markazidagi yorug‘ dog‘ va nurlarning soya sohasiga og‘ishi — difraksiya.",
+    "1 va 3"
+   ]
+  },
+  {
+   "steps": [
+    "Manbalar chastotalari har xil — $S_1$ va $S_2$ nurlari o‘zaro interferensiyalashmaydi\\; faqat bitta manbaning to‘g‘ri va ko‘zgudan qaytgan nurlari interferensiyalashadi.",
+    "1-nuqta: $S_1$ ning to‘g‘ri va qaytgan nuri — bor. 2-nuqta: $S_2$ ning to‘g‘ri va qaytgan nuri — bor. 3-nuqta: faqat $S_1$ va $S_2$ ning to‘g‘ri nurlari — yo‘q.",
+    "1 va 2"
+   ]
+  },
+  {
+   "steps": [
+    "O‘zaro tik qutblangan nurlar interferensiyalashmaydi — faqat bitta manbaning to‘g‘ri va qaytgan nurlari juftlashadi.",
+    "$e$ nuqta: 1 va 3 ($S_1$), 6 va 8 ($S_2$)\\; $a$ nuqta: 2 va 4 ($S_1$), 5 va 7 ($S_2$)."
+   ]
+  },
+  {
+   "steps": [
+    "Kamalak ranglari va Nyuton halqalari — interferensiya\\; 3 va 4 — difraksiya.",
+    "1, 2"
+   ]
+  },
+  {
+   "steps": [
+    "Nyuton halqalari (qaytgan nurda): qora halqa $r_k=\\sqrt{k\\lambda R}$, yorug‘ halqa $r_k=\\sqrt{\\left(k-\\tfrac12\\right)\\lambda R}$.",
+    "$\\lambda R=6\\cdot10^{-7}\\cdot1{,}5=9\\cdot10^{-7}$ m$^2$. Rasmdagi halqa — 3-yorug‘ halqa:",
+    "$r=\\sqrt{2{,}5\\cdot9\\cdot10^{-7}}=1{,}5\\cdot10^{-3}$ m $=1{,}5$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "Nyuton halqalari (qaytgan nurda): qora halqa $r_k=\\sqrt{k\\lambda R}$, yorug‘ halqa $r_k=\\sqrt{\\left(k-\\tfrac12\\right)\\lambda R}$.",
+    "$r_8=\\sqrt{8\\cdot5\\cdot10^{-7}\\cdot4}=4\\cdot10^{-3}$ m $=4$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "Nyuton halqalari (qaytgan nurda): qora halqa $r_k=\\sqrt{k\\lambda R}$, yorug‘ halqa $r_k=\\sqrt{\\left(k-\\tfrac12\\right)\\lambda R}$.",
+    "$\\dfrac{r_k^2}{r_{k+1}^2}=\\dfrac{k}{k+1}=\\dfrac{3}{4}$ ($1{,}732^2=3$, $2^2=4$).",
+    "3- va 4-qora halqalar"
+   ]
+  },
+  {
+   "steps": [
+    "Havodagi yupqa parda (qaytgan nurda, yuqori sirtda $\\lambda/2$ yo‘qotish bilan): maksimum $2dn=\\left(k+\\tfrac12\\right)\\lambda$, minimum $2dn=k\\lambda$.",
+    "$d=\\dfrac{(k+1/2)\\cdot600}{2\\cdot1{,}5}=(2k+1)\\cdot100$ nm: $100,\\,300,\\,500,\\,700,\\dots$",
+    "$d=700$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "Havodagi yupqa parda (qaytgan nurda, yuqori sirtda $\\lambda/2$ yo‘qotish bilan): maksimum $2dn=\\left(k+\\tfrac12\\right)\\lambda$, minimum $2dn=k\\lambda$.",
+    "Qorong‘i: $d=\\dfrac{k\\cdot640}{2\\cdot1{,}6}=200k$ nm: $200,\\,400,\\,600,\\,800,\\dots$",
+    "$d=800$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "Havodagi yupqa parda (qaytgan nurda, yuqori sirtda $\\lambda/2$ yo‘qotish bilan): maksimum $2dn=\\left(k+\\tfrac12\\right)\\lambda$, minimum $2dn=k\\lambda$.",
+    "Eng yupqa parda uchun $k=0$: $2dn=\\dfrac\\lambda2$.",
+    "$n=\\dfrac{\\lambda}{4d}=\\dfrac{520}{400}=1{,}3$"
+   ]
+  },
+  {
+   "steps": [
+    "Havodagi yupqa parda (qaytgan nurda, yuqori sirtda $\\lambda/2$ yo‘qotish bilan): maksimum $2dn=\\left(k+\\tfrac12\\right)\\lambda$, minimum $2dn=k\\lambda$.",
+    "$2dn=630$ nm. $\\lambda=\\dfrac{630}{k+1/2}$: $1260$ nm ($k=0$), $420$ nm ($k=1$).",
+    "Ko‘rinadigan sohada faqat $420$ nm kuchayadi — binafsha."
+   ]
+  }
+ ]
+}

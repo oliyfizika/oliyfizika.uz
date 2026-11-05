@@ -299,7 +299,7 @@
       "source": "79-mavzu.tex#0:25"
     },
     {
-      "text": "Natriy sariq chizig‘ining to‘lqin uzunligi 500 nm. Difraksion panjaraning davri 2,8 $\\mu$m bo‘lsa, spektrning eng katta tartibi qanday?",
+      "text": "Monoxromatik yorug‘likning to‘lqin uzunligi 500 nm. Difraksion panjaraning davri 2,8 $\\mu$m bo‘lsa, spektrning eng katta tartibi qanday?",
       "answers": [
         "6.",
         "4.",
@@ -379,7 +379,7 @@
         "14.",
         "13."
       ],
-      "correct": 0,
+      "correct": 4,
       "source": "79-mavzu.tex#0:32"
     },
     {
@@ -493,10 +493,10 @@
     {
       "text": "Difraksiya maksimumi bilan ekran markazi orasidagi $b$ masofaning panjara davri $d$ ga bog‘lanishi qanday?",
       "answers": [
-        "$a$ ortsa, $b$ kamayadi.",
-        "$a$ ortsa, $b$ ortadi.",
-        "$a$ ortsa, $b$ o‘zgarmaydi.",
-        "$b$ $a$ ga bog‘liq emas.",
+        "$d$ ortsa, $b$ kamayadi.",
+        "$d$ ortsa, $b$ ortadi.",
+        "$d$ ortsa, $b$ o‘zgarmaydi.",
+        "$b$ $d$ ga bog‘liq emas.",
         "TJY."
       ],
       "correct": 0,
@@ -558,7 +558,7 @@
         "3 va 4.",
         "3 va 5.",
         "1, 2 va 4.",
-        "1, 2 va 5."
+        "1 va 2."
       ],
       "correct": 4,
       "source": "79-mavzu.tex#0:47"

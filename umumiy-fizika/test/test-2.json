@@ -33,7 +33,7 @@
         "250",
         "255"
       ],
-      "correct": 0
+      "correct": 3
     },
     {
       "text": "Uzunligi 9 m bo‘lgan ip boshidan jo‘nagan chumoli ip oxiriga 5 minutda yetdi. Chumolining tezligini toping.",
@@ -121,7 +121,7 @@
       "correct": 0
     },
     {
-      "text": "Qaysi grafik jism o‘tgan yo‘lning vaqtga bog‘lanishini ifodalay olmaydi?",
+      "text": "Qaysi grafik jism o‘tgan yo‘lning vaqtga bog‘lanishini ifodalaydi?",
       "image": "../rasmlar3/test3-5.png",
       "answers": [
         "II, III",

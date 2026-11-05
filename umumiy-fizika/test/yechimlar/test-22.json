@@ -1,0 +1,54 @@
+{
+ "id": 22,
+ "solutions": [
+  {
+   "steps": [
+    "Maksimal deformatsiyada brusok to‘xtaydi; kuchning ishi prujina energiyasiga aylanadi:",
+    "$Fx=\\dfrac{kx^2}{2}\\;\\Rightarrow\\;x=\\dfrac{2F}{k}=\\dfrac{8}{50}=0{,}16\\ \\text{m}=16\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik maksimal bo‘lganda tezlanish nol: $kx_0=F\\Rightarrow x_0=\\dfrac{4}{250}=0{,}016$ m.",
+    "$Fx_0-\\dfrac{kx_0^2}{2}=\\dfrac{mv^2}{2}\\;\\Rightarrow\\;v=x_0\\sqrt{\\dfrac km}=0{,}016\\cdot50=0{,}8\\ \\text{m/s}=80\\ \\text{sm/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ishqalanish kuchi $\\mu mg=1$ N. Harakat davomida natijaviy o‘zgarmas kuch: $F-\\mu mg=2$ N.",
+    "$x_{\\max}=\\dfrac{2(F-\\mu mg)}{k}=\\dfrac{4}{100}=0{,}04\\ \\text{m}=4\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "$x_0=\\dfrac{F-\\mu mg}{k}=0{,}02$ m (tezlanish nol bo‘lgan nuqta)",
+    "$v_{\\max}=x_0\\sqrt{\\dfrac km}=0{,}02\\cdot\\sqrt{\\dfrac{100}{0{,}25}}=0{,}4\\ \\text{m/s}=40\\ \\text{sm/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuk muvozanat holatdan boshlab harakatlanadi; prujina kuchining qo‘shimcha o‘zgarishi $kx$ ga teng.",
+    "$Fx=\\dfrac{kx^2}{2}\\;\\Rightarrow\\;x=\\dfrac{2F}{k}=\\dfrac{12}{100}=0{,}12\\ \\text{m}=12\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yangi muvozanatgacha siljish $x_0=\\dfrac Fk=0{,}2$ m, shu nuqtada tezlik maksimal.",
+    "$v_{\\max}=x_0\\sqrt{\\dfrac km}=0{,}2\\cdot\\sqrt{\\dfrac{50}{0{,}5}}=2\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Brusok dastlab muvozanatda; qo‘shimcha kuch $F$ uchun:",
+    "$x_{\\max}=\\dfrac{2F}{k}=\\dfrac{24}{100}=0{,}24\\ \\text{m}=24\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\cos\\alpha=0{,}8$. Yuqoriga harakatda qiyalik bo‘ylab o‘zgarmas kuchlar:",
+    "$F-mg\\sin\\alpha-\\mu mg\\cos\\alpha=14-6-6{,}4=1{,}6$ N",
+    "$x=\\dfrac{2\\cdot1{,}6}{k}=\\dfrac{3{,}2}{64}=0{,}05\\ \\text{m}=5\\ \\text{sm}$"
+   ]
+  }
+ ]
+}

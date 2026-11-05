@@ -53,17 +53,17 @@
     {
       "text": "10 N va 25 N parallel qarama-qarshi kuchlar 1,5 m masofada ta’sir qilmoqda. Ularni muvozanatlovchi kuchni aniqlang.",
       "answers": ["15; 2,5", "30; 2,5", "25; 5", "To‘g‘ri javob yo‘q"],
-      "correct": 3
+      "correct": 0
     },
     {
-      "text": "Qaysi qurilma yordamida yukni ko‘tarishda kuchdan yutish mumkin?",
+      "text": "Qaysi qurilma yordamida yukni ko‘tarishda kuchdan yutib bo‘lmaydi?",
       "answers": [
         "qo‘zg‘almas blok",
         "richag",
         "qiya tekislik",
         "uchovida teng ish bajariladi"
       ],
-      "correct": 1
+      "correct": 0
     },
     {
       "text": "Vaznsiz richagda 3 kg va 2 kg yuklar muvozanatda. AB = 30 sm bo‘lsa, BC ni toping (cm).",
@@ -113,7 +113,7 @@
     {
       "text": "Silindrsimon sterjenning yarmi ρ, yarmi 3ρ zichlikli metalldan tayyorlangan. Og‘irlik markazi markazdan qancha siljigan?",
       "answers": ["L/16", "L/20", "L/8", "L/4"],
-      "correct": 0
+      "correct": 2
     },
     {
       "text": "Aravachaning ikki chetida 70 kg va 90 kg bolalar turibdi. Birinchi bola markazgacha yurganda og‘irlik markazi qancha siljiydi?",
@@ -121,7 +121,7 @@
       "correct": 3
     },
     {
-      "text": "1 kg, 5 kg, 7 kg va 3 kg sharlar tizimining og‘irlik markazi uchinchi shardan qancha masofada joylashgan?",
+      "text": "Massalari 1 kg, 5 kg, 7 kg va 3 kg bo‘lgan sharlar bir to‘g‘ri chiziqda shu tartibda, qo‘shni sharlar markazlari orasidagi masofa 20 sm bo‘lib joylashgan. Sistemaning og‘irlik markazi uchinchi shardan qancha masofada (m) joylashgan? (To‘rtinchi shar tomoni musbat.)",
       "answers": ["-1,5", "-0,5", "-0,2", "-0,05"],
       "correct": 3
     }

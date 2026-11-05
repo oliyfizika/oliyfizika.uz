@@ -139,8 +139,8 @@
     },
     {
       "text": "Gaz qamalgan ballondagi manometr 17°C temperaturali xonada 240 kPa bosimni ko‘rsatadi. Ko‘chada esa manometr ko‘rsatishi 40 kPa kamaygan. Agar atmosfera bosimi 100 kPa bo‘lsa, tashqaridagi havo temperaturasini toping (°C).",
-      "answers": ["-52", "-29", "256", "-33"],
-      "correct": 3
+      "answers": ["-52", "-29", "-17", "-33"],
+      "correct": 2
     },
     {
       "text": "Gaz bosimi 293 K da 1,07·10⁵ Pa ga teng. Agar gazni o‘zgarmas hajmda 423 K gacha qizdirilgandagi va o‘zgarmas bosimda 250 K gacha sovitilgandagi gaz bosimlari yig‘indisini toping (Pa).",

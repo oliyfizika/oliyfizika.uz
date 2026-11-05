@@ -1,0 +1,402 @@
+{
+ "id": 68,
+ "solutions": [
+  {
+   "steps": [
+    "Faradey qonuni (Lens qoidasi bilan): $\\varepsilon=-\\dfrac{\\Delta\\Phi}{\\Delta t}$."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{\\Delta\\Phi}{\\Delta t}$ — birligi Wb/s (= V)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=-\\dfrac{\\Delta\\Phi}{\\Delta t}$ bo‘lgani uchun 1 V = 1 Wb/s."
+   ]
+  },
+  {
+   "steps": [
+    "Bir jinsli maydonda ilgarilanma harakatda konturdan o‘tuvchi oqim o‘zgarmaydi — EYK hosil bo‘lmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{\\Delta\\Phi}{\\Delta t}\\Rightarrow\\dfrac{\\Delta\\Phi}{\\Delta t}=50$ Wb/s."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{|\\Delta\\Phi|}{\\Delta t}=\\dfrac{10-2}{2}=4$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{9-6}{0{,}3}=10$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{4\\cdot10^{-5}}{0{,}4}=10^{-4}$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=N\\dfrac{\\Delta\\Phi}{\\Delta t}\\sim N$ — 2,5 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=N\\dfrac{\\Delta\\Phi}{\\Delta t}=200\\cdot\\dfrac{1{,}1-0{,}2}{0{,}2}=900$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=N\\dfrac{\\Delta\\Phi}{\\Delta t}=100\\cdot\\dfrac{10\\cdot10^{-5}}{10^{-3}}=10$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{\\varepsilon}{\\Delta\\Phi/\\Delta t}=\\dfrac{48}{0{,}24}=200$"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{12}{0{,}06}=200$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\Delta\\Phi}{\\Delta t}=\\dfrac{6\\cdot10^{-3}}{2\\cdot10^{-3}}=3$ Wb/s; $\\;N=\\dfrac{60}{3}=20$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\Delta\\Phi}{\\Delta t}=\\dfrac{\\varepsilon}{N}=\\dfrac{60}{80}=0{,}75$ Wb/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta t=\\dfrac{\\Delta\\Phi}{\\varepsilon}=\\dfrac{1-0{,}1}{2{,}5}=0{,}36$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=S\\dfrac{\\Delta B}{\\Delta t}=30\\cdot10^{-4}\\cdot\\dfrac{0{,}5}{0{,}01}=0{,}15$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{0{,}144}{3}=0{,}048$ V; $\\;I=\\dfrac{\\varepsilon}{R}=\\dfrac{0{,}048}{0{,}24}=0{,}2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{0{,}012}{2}=0{,}006$ V; $\\;I=\\dfrac{0{,}006}{0{,}01}=0{,}6$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\dfrac{6-(-10)}{4}=4$ V; $\\;I=\\dfrac{4}{0{,}8}=5$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=N\\pi r^2\\dfrac{\\Delta B}{\\Delta t}=8\\cdot3\\cdot0{,}01\\cdot\\dfrac{0{,}6}{0{,}5}=0{,}288$ V",
+    "$I=\\dfrac{\\varepsilon}{R}=0{,}0288$ A $=28{,}8$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "1-holatda o‘q $\\vec B$ bo‘ylab: $\\Phi_1=NBS$. 2-holatda o‘q $\\vec B$ bilan $60^\\circ$: $\\Phi_2=NBS\\cos60^\\circ=\\dfrac{NBS}{2}$.",
+    "$\\varepsilon=-\\dfrac{\\Phi_2-\\Phi_1}{t}=\\dfrac12\\cdot\\dfrac{NBS}{t}$"
+   ]
+  },
+  {
+   "steps": [
+    "EYK $\\sim\\dfrac{\\Delta\\Phi}{\\Delta t}$ — grafik gorizontal bo‘lgan oraliqda nol: 6–8 s."
+   ]
+  },
+  {
+   "steps": [
+    "Grafik gorizontal (oqim o‘zgarmaydi) bo‘lgan oraliq: 0–5 s."
+   ]
+  },
+  {
+   "steps": [
+    "B–C: $\\Delta\\Phi=0{,}4-(-0{,}4)=0{,}8$ mWb, $\\Delta t=1$ s $\\Rightarrow\\varepsilon=0{,}8$ mV.",
+    "$I=\\dfrac{0{,}8\\cdot10^{-3}}{0{,}2}=4\\cdot10^{-3}$ A $=4$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "2–4 s: $\\Delta\\Phi=2-(-2)=4$ Wb, $\\Delta t=2$ s $\\Rightarrow\\varepsilon=2$ V.",
+    "$I=\\dfrac25=0{,}4$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=-\\dfrac{\\Delta\\Phi}{\\Delta t}$: oqim tekis o‘sganda EYK o‘zgarmas va manfiy, tekis kamayganda — o‘zgarmas va musbat. Bu 4-grafik."
+   ]
+  },
+  {
+   "steps": [
+    "EYK doimiy va musbat bo‘lishi uchun $-\\dfrac{\\Delta\\Phi}{\\Delta t}=\\text{const}>0$ — oqim chiziqli kamayishi kerak: 3-grafik."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=-\\dfrac{d\\Phi}{dt}=13{,}5$ V; $\\;I=\\dfrac{13{,}5}{2{,}5}=5{,}4$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=-\\dfrac{d\\Phi}{dt}=10t+2=10\\cdot6+2=62$ V; $\\;I=\\dfrac{62}{3{,}1}=20$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=S\\dfrac{dB}{dt}=25\\cdot10^{-4}\\cdot0{,}46=1{,}15\\cdot10^{-3}$ V $=1{,}15$ mV"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{dB}{dt}=2-5t=2-22=-20$ T/s; $\\;|\\varepsilon|=0{,}3\\cdot20=6$ V",
+    "$I=\\dfrac{6}{0{,}2}=30$ A"
+   ]
+  },
+  {
+   "steps": [
+    "1-qism: $\\varepsilon_1=\\dfrac14=0{,}25$ V, $I_1=0{,}05$ A. 2-qism: oqim o‘zgarmaydi, $I_2=0$.",
+    "3-qism: $\\varepsilon_3=\\dfrac12=0{,}5$ V, $\\;I_3=\\dfrac{0{,}5}{5}=0{,}1$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$q=I\\Delta t=\\dfrac{\\Delta\\Phi}{R}=\\dfrac{0{,}3\\cdot10^{-3}}{2}=0{,}15\\cdot10^{-3}$ C $=0{,}15$ mC"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon_{max}=NBS\\omega=40\\cdot0{,}9\\cdot0{,}02\\cdot50=36$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac{\\varepsilon_{max}}{NBS}=\\dfrac{6}{200\\cdot0{,}4\\cdot0{,}015}=5$ rad/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=-\\dfrac{d\\Phi}{dt}=0{,}1\\cdot30\\sin30t$; $\\;\\varepsilon_{max}=3$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=-\\dfrac{d\\Phi}{dt}=8\\cdot1{,}5\\sin1{,}5t=12\\sin\\dfrac{\\pi}{6}=6$ V",
+    "$I=\\dfrac{6}{20}=0{,}3$ A"
+   ]
+  },
+  {
+   "steps": [
+    "O‘ng qo‘l qoidasi: $\\vec B$ kaftga kirsa, bosh barmoq $\\vec\\vartheta$ bo‘ylab — to‘rt barmoq induksion tok yo‘nalishini ko‘rsatadi (yoki $\\vec\\vartheta\\times\\vec B$ yo‘nalishi).",
+    "$\\vec\\vartheta$ o‘ngga, $\\vec B$ yuqoriga — $\\vec\\vartheta\\times\\vec B$ o‘quvchiga qarab: tok o‘quvchiga yo‘nalgan."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vec B$ N dan S ga — o‘ngga. Tok o‘quvchiga qarab bo‘lishi uchun $\\vec\\vartheta\\times\\vec B$ o‘quvchiga yo‘nalishi kerak.",
+    "Bu shart $\\vec\\vartheta$ pastga bo‘lganda bajariladi."
+   ]
+  },
+  {
+   "steps": [
+    "Tok chizmaga kiradi, $\\vec\\vartheta$ o‘ngga. $\\vec\\vartheta\\times\\vec B$ chizmaga kirishi uchun $\\vec B$ pastga yo‘nalishi kerak.",
+    "Induksiya chiziqlari N dan S ga: yuqori — N, pastki — S."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\vartheta Bl\\sin\\alpha$."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\vartheta Bl=20\\cdot5\\cdot0{,}7=70$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=\\vartheta Bl\\sin30^\\circ=5\\cdot0{,}4\\cdot0{,}3\\cdot0{,}5=0{,}3$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{\\varepsilon}{\\vartheta l}=\\dfrac{0{,}3}{5\\cdot0{,}6}=0{,}1$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{\\varepsilon}{\\vartheta l}=\\dfrac{0{,}6}{5\\cdot0{,}4}=0{,}3$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{\\varepsilon}{\\vartheta l\\sin30^\\circ}=\\dfrac{3{,}6}{6\\cdot0{,}3\\cdot0{,}5}=4$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$l=\\dfrac{\\varepsilon}{B\\vartheta}=\\dfrac{12}{0{,}5\\cdot6}=4$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{\\varepsilon}{Bl\\sin30^\\circ}=\\dfrac{0{,}8}{0{,}2\\cdot0{,}5\\cdot0{,}5}=16$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{\\varepsilon}{Bl}=\\dfrac{0{,}2}{0{,}2\\cdot0{,}2}=5$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{B\\vartheta l}{R}$, $\\;R=\\rho\\dfrac lS\\Rightarrow I=\\dfrac{B\\vartheta S}{\\rho}$.",
+    "$\\vartheta=\\dfrac{I\\rho}{BS}=\\dfrac{1\\cdot1{,}7\\cdot10^{-8}}{1\\cdot1{,}7\\cdot10^{-8}}=1$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=180$ km/h $=50$ m/s. Poezd o‘qi relslarni tutashtiruvchi harakatlanuvchi o‘tkazgich:",
+    "$\\varepsilon=B\\vartheta l=0{,}2\\cdot10^{-4}\\cdot50\\cdot1=10^{-3}$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=36$ km/h $=10$ m/s. $\\varepsilon=B\\vartheta l=15\\cdot10^{-3}\\cdot10\\cdot0{,}25=0{,}0375$ V.",
+    "Konturning umumiy qarshiligi: sim $0{,}5\\ \\Omega$ va rasmdagi $R=2\\ \\Omega$.",
+    "$I=\\dfrac{0{,}0375}{2{,}5}=0{,}015$ A $=15$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=B\\vartheta l=4\\cdot5\\cdot0{,}2=4$ V; $\\;I=\\dfrac{4}{0{,}8}=5$ A",
+    "$\\vec\\vartheta$ o‘ngga, $\\vec B$ bizga — $\\vec\\vartheta\\times\\vec B$ pastga: tok simda «2» yo‘nalishda."
+   ]
+  },
+  {
+   "steps": [
+    "Lens qoidasi: induksion tok o‘zini hosil qilgan magnit oqim o‘zgarishiga qarshilik qiladi.",
+    "Magnit yaqinlashganda oqim ortadi — halqada magnitga qarama-qarshi qutb hosil bo‘ladi va halqa itariladi (qutb nomidan qat’i nazar)."
+   ]
+  },
+  {
+   "steps": [
+    "Lens qoidasi: induksion tok o‘zini hosil qilgan magnit oqim o‘zgarishiga qarshilik qiladi.",
+    "Yaqinlashayotgan magnit halqani itaradi."
+   ]
+  },
+  {
+   "steps": [
+    "Lens qoidasi: induksion tok o‘zini hosil qilgan magnit oqim o‘zgarishiga qarshilik qiladi.",
+    "O‘zgaruvchan tok oqimi tez o‘zgaradi; yaqinlashganda induksion tok maydoni elektromagnitnikiga qarshi — halqa itariladi."
+   ]
+  },
+  {
+   "steps": [
+    "Lens qoidasi: induksion tok o‘zini hosil qilgan magnit oqim o‘zgarishiga qarshilik qiladi.",
+    "Magnit uzoqlashmoqda — oqim kamayadi, halqa magnitni «ushlab qoladi»: tortiladi.",
+    "S qutb yonida $\\vec B$ magnitga tomon (harakat yo‘nalishida) yo‘nalgan va kamayadi; induksion maydon ham shu yo‘nalishda — harakat yo‘nalishida qaraganda tok soat strelkasi bo‘ylab."
+   ]
+  },
+  {
+   "steps": [
+    "Lens qoidasi: induksion tok o‘zini hosil qilgan magnit oqim o‘zgarishiga qarshilik qiladi.",
+    "Magnit yaqinlashmoqda — halqa qochadi (itariladi).",
+    "S qutb yonida $\\vec B$ magnitga tomon, ya’ni harakatga qarama-qarshi yo‘nalgan va ortadi; induksion maydon harakat yo‘nalishida — qaraganda tok soat strelkasi bo‘ylab."
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon=S\\dfrac{dB}{dt}=S\\cdot8000\\cdot2t=50\\cdot10^{-4}\\cdot16000\\cdot1=80$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Magnit oqim birligi — Veber (Wb = T$\\cdot$m$^2$)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Phi=B\\pi r^2\\cos\\alpha=0{,}3\\cdot3\\cdot0{,}04\\cdot0{,}8=0{,}0288$ Wb $=28{,}8$ mWb"
+   ]
+  },
+  {
+   "steps": [
+    "Kontur tekisligi chiziqlarga parallel — normal bilan $\\vec B$ orasidagi burchak $90^\\circ$: $\\Phi=BS\\cos90^\\circ=0$."
+   ]
+  },
+  {
+   "steps": [
+    "Ramka $yz$ tekisligida, $\\vec B$ $x$ o‘qi bo‘ylab — tekislikka tik.",
+    "$\\Phi=BS=6{,}5\\cdot0{,}2\\cdot0{,}4=0{,}52$ Wb"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Phi=B\\pi r^2=2\\cdot3{,}14\\cdot0{,}0025=0{,}0157$ Wb $=15{,}7$ mWb"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{\\sqrt3}{4}a^2=4\\sqrt3\\cdot10^{-4}\\ \\text{m}^2$",
+    "$\\Phi=BS\\cos30^\\circ=2\\cdot4\\sqrt3\\cdot10^{-4}\\cdot\\dfrac{\\sqrt3}{2}=1{,}2\\cdot10^{-3}$ Wb $=1{,}2$ mWb"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{\\Phi}{S}=\\dfrac{10}{2}=5$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{\\Phi}{B}=\\dfrac63=2\\ \\text{m}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Phi=BS\\sin\\beta$, $\\beta$ — $\\vec B$ va tekislik orasidagi burchak. $BS=4\\cdot\\pi\\cdot10^{-4}=1{,}256$ mWb.",
+    "$\\sin\\beta=\\dfrac{0{,}628}{1{,}256}=0{,}5\\;\\Rightarrow\\;\\beta=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Phi=BS\\cos\\alpha$ — induksiya yoki yuza ortsa, oqim ortadi: 1, 4."
+   ]
+  },
+  {
+   "steps": [
+    "Bir jinsli maydonda ilgarilanma harakatda $B$, $S$ va burchak o‘zgarmaydi — oqim o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Phi_{max}=BS$.",
+    "$B=\\dfrac{2{,}5\\cdot10^{-4}}{25\\cdot10^{-4}}=0{,}1$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$A=I\\Delta\\Phi=5\\cdot(0{,}8-0{,}4)\\cdot10^{-3}=2\\cdot10^{-3}$ J $=2$ mJ"
+   ]
+  },
+  {
+   "steps": [
+    "Boshida tekislik $\\vec B$ ga parallel: $\\Phi_1=0$; oxirida tik: $\\Phi_2=BS$.",
+    "$A=I\\Delta\\Phi=IB\\pi\\dfrac{d^2}{4}=1\\cdot\\dfrac4\\pi\\cdot\\pi\\cdot0{,}0025=10^{-2}$ J"
+   ]
+  }
+ ]
+}

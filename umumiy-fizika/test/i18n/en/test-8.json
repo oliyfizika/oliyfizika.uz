@@ -92,7 +92,7 @@
       ]
     },
     {
-      "text": "A wheel of radius 0.25 m rolls at 12 m/s. Find the angular velocity of the wheel (rad/s).",
+      "text": "A wheel of radius 1 m rolls at 12 m/s. Find the angular velocity of the wheel (rad/s).",
       "answers": [
         "12",
         "24",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "text": "The linear speed of a material point moving uniformly along a circle is 2 m/s and its angular velocity is 5 rad/s. What is its centripetal acceleration (m/s²)?",
+      "text": "The linear speed of a material point moving uniformly along a circle is 2 m/s and its angular velocity is 2.5 rad/s. What is its centripetal acceleration (m/s²)?",
       "answers": [
         "0.4",
         "2",
@@ -175,14 +175,14 @@
     {
       "text": "A material point moving uniformly along a circle of radius 10 cm has a period of revolution of 2 s. Find its centripetal acceleration (m/s²).",
       "answers": [
-        "1.57",
+        "0.99",
         "0.57",
         "1.1",
         "1.05"
       ]
     },
     {
-      "text": "How does the centripetal acceleration of a body moving uniformly along a circle change if its angular velocity increases by a factor of 5.5, while its linear speed does not decrease by the same factor?",
+      "text": "How does the centripetal acceleration of a body moving uniformly along a circle change if its angular velocity increases by a factor of 5.5, while its linear speed decreases by the same factor?",
       "answers": [
         "increases by a factor of 8.5",
         "decreases by a factor of 8.5",
@@ -193,10 +193,10 @@
     {
       "text": "If the wheels of a car rotate with a frequency of 8 s⁻¹ when its speed is 72 km/h, find the centripetal acceleration of the points of the car's wheels touching the road (m/s²).",
       "answers": [
-        "10",
-        "2",
-        "15",
-        "1"
+        "≈ 250",
+        "≈ 500",
+        "≈ 1000",
+        "≈ 2000"
       ]
     },
     {

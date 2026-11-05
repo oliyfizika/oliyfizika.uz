@@ -1,0 +1,131 @@
+{
+ "id": 10,
+ "solutions": [
+  {
+   "steps": [
+    "Tekis aylanma harakatda faqat markazga intilma tezlanish bor; u radius bo‘ylab markazga yo‘nalgan.",
+    "Tezlik esa urinma bo‘ylab yo‘nalgan, demak ular orasidagi burchak 90°."
+   ]
+  },
+  {
+   "steps": [
+    "Aylana uzunligi: $L=2\\pi R=100\\pi$ m. Yoy uzunligi: $l=\\dfrac{\\varphi}{360^\\circ}L$.",
+    "$t_1=\\dfrac{100\\pi\\cdot\\frac{40}{360}}{4}=\\dfrac{100\\pi}{36}$, $\\;t_2=\\dfrac{100\\pi\\cdot\\frac{60}{360}}{6}=\\dfrac{100\\pi}{36}$, $\\;t_3=\\dfrac{100\\pi\\cdot\\frac{70}{360}}{7}=\\dfrac{100\\pi}{36}$",
+    "$t_4=\\dfrac{100\\pi\\cdot\\frac{190}{360}}{8}=\\dfrac{100\\pi\\cdot190}{2880}$; $\\;t=t_1+t_2+t_3+t_4\\approx46{,}9$ s",
+    "$v_{\\text{o‘rt}}=\\dfrac{100\\pi}{46{,}9}\\approx6{,}7\\ \\text{m/s}\\approx24{,}1\\ \\text{km/h}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varphi=\\omega_0t+\\dfrac{\\varepsilon t^2}{2}=3\\cdot0{,}5+\\dfrac{0{,}1\\cdot0{,}25}{2}=1{,}5125\\ \\text{rad}$",
+    "$\\varphi=1{,}5125\\cdot\\dfrac{180^\\circ}{\\pi}\\approx86{,}7^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\omega_0+\\varepsilon t=3+0{,}1\\cdot5=3{,}5\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varphi=\\omega_0t+\\dfrac{\\varepsilon t^2}{2}=4\\cdot4+\\dfrac{0{,}2\\cdot16}{2}=17{,}6\\ \\text{rad}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=2+0{,}5t$ dan $\\omega_0=2$ rad/s, $\\varepsilon=0{,}5\\ \\text{rad/s}^2$.",
+    "$\\varphi=2\\cdot20+\\dfrac{0{,}5\\cdot20^2}{2}=140\\ \\text{rad}$",
+    "$N=\\dfrac{\\varphi}{2\\pi}=\\dfrac{140}{6{,}28}\\approx22$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\omega_0+\\varepsilon t=3+0{,}5\\cdot6=6$ rad/s",
+    "$v=\\omega R=6\\cdot0{,}5=3\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\varepsilon t=0{,}4\\cdot20=8$ rad/s",
+    "$v=\\omega R=8\\cdot5=40\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Egri chiziqli harakatda oniy tezlik har doim trayektoriyaga o‘tkazilgan urinma bo‘ylab yo‘nalgan."
+   ]
+  },
+  {
+   "steps": [
+    "O‘rtacha tezlanish: $\\vec a_{\\text{o‘rt}}=\\dfrac{\\Delta\\vec v}{\\Delta t}=\\dfrac{\\vec v_2-\\vec v_1}{\\Delta t}$.",
+    "Vektorlar bir nuqtadan qo‘yilsa, $\\vec v_2-\\vec v_1$ vektor $\\vec v_1$ uchidan $\\vec v_2$ uchiga yo‘nalgan bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Urinma va normal tezlanishlar o‘zaro perpendikulyar: $a^2=a_\\tau^2+a_n^2$.",
+    "$a_n=\\sqrt{10^2-5^2}=\\sqrt{75}=5\\sqrt3\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis aylanma harakatda tezlik moduli o‘zgarmaydi, shuning uchun $a_\\tau=\\dfrac{dv}{dt}=0$."
+   ]
+  },
+  {
+   "steps": [
+    "$v=a_\\tau t$, $\\;a_n=\\dfrac{v^2}{R}=\\dfrac{a_\\tau^2t^2}{R}$.",
+    "$a_n=2a_\\tau\\;\\Rightarrow\\;t=\\sqrt{\\dfrac{2R}{a_\\tau}}=\\sqrt{\\dfrac{2\\cdot0{,}2}{0{,}05}}=\\sqrt8\\approx2{,}83\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\sqrt{a_\\tau^2+a_n^2}=\\sqrt{6^2+8^2}=10\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Burchak 0° yoki 180° emas — tezlanishning tezlikka perpendikulyar tashkil etuvchisi bor, demak harakat egri chiziqli.",
+    "Burchak 90° ham emas — tezlik bo‘ylab tashkil etuvchisi ham bor, ya’ni tezlik moduli o‘zgaradi (notekis)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\omega_0+\\varepsilon t=2+2\\cdot5=12$ rad/s",
+    "$a_n=\\omega^2R=144\\cdot4=576\\ \\text{m/s}^2$, $\\;a_\\tau=\\varepsilon R=2\\cdot4=8\\ \\text{m/s}^2$",
+    "$\\dfrac{a_n}{a_\\tau}=\\dfrac{576}{8}=72$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=0{,}5$ m. 2,5 s dan keyin: $v=6-2\\cdot2{,}5=1$ m/s.",
+    "$a_n=\\dfrac{v^2}{R}=\\dfrac{1}{0{,}5}=2\\ \\text{m/s}^2=a_\\tau$",
+    "$a_\\tau$ tezlikka qarama-qarshi, $a_n$ unga perpendikulyar. $a_n=a_\\tau$ bo‘lgani uchun tezlanish vektori tezlikka qarshi yo‘nalishdan 45° ga og‘gan:",
+    "$\\alpha=180^\\circ-45^\\circ=135^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "0,4 s dan keyin: $v=4{,}2-3\\cdot0{,}4=3$ m/s.",
+    "$a_n=\\dfrac{v^2}{R}=\\dfrac{9}{\\sqrt3}=3\\sqrt3\\ \\text{m/s}^2$, $\\;a_\\tau=3\\ \\text{m/s}^2$",
+    "$\\tan\\beta=\\dfrac{a_n}{a_\\tau}=\\sqrt3\\;\\Rightarrow\\;\\beta=60^\\circ$ (tezlikka qarama-qarshi yo‘nalishdan)",
+    "$\\alpha=180^\\circ-60^\\circ=120^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Ilgarilanma tezlik $v$, aylanma tezlik $u=\\omega R$. Eng yuqori nuqta: $v+u=3$; eng pastki nuqta: $v-u=-2$.",
+    "$u=2{,}5$ m/s, $\\;R=0{,}5$ m",
+    "$a=\\dfrac{u^2}{R}=\\dfrac{2{,}5^2}{0{,}5}=12{,}5\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "0,6 s dan keyin: $v=4{,}8-3\\cdot0{,}6=3$ m/s, $\\;R=0{,}5$ m.",
+    "$a_n=\\dfrac{9}{0{,}5}=18\\ \\text{m/s}^2$, $\\;a_\\tau=3\\ \\text{m/s}^2$, $\\;\\dfrac{a_n}{a_\\tau}=6$",
+    "Tezlanish vektori normaldan (tezlikka perpendikulyardan) tezlikka qarshi tomonga $\\beta$ burchakka og‘adi: $\\cot\\beta=\\dfrac{a_n}{a_\\tau}=6$.",
+    "$\\alpha=90^\\circ+\\operatorname{arcctg}6$"
+   ]
+  }
+ ]
+}

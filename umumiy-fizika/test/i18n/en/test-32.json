@@ -33,7 +33,7 @@
       "answers": [
         "nT",
         "2nT",
-        "T√n",
+        "T/√n",
         "√nT"
       ]
     },
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "text": "An elevator is descending with an acceleration of 6 m/s^2. Find the period of a simple pendulum 1 m long suspended in the elevator (s). g = 10 m/s^2.",
+      "text": "An elevator is ascending with an acceleration of 6 m/s^2. Find the period of a simple pendulum 1 m long suspended in the elevator (s). g = 10 m/s^2.",
       "answers": [
         "6.28",
         "2.1",
@@ -67,7 +67,7 @@
     {
       "text": "When the length of a simple pendulum is increased by 8 cm, the period increases by 0.1 s. What is the initial period of oscillation (s)? (π^2 ≈ g).",
       "answers": [
-        "1.4",
+        "1.55",
         "1.6",
         "1.7",
         "2"
@@ -85,7 +85,7 @@
     {
       "text": "A pendulum with a steel ball of mass 50 g has an oscillation period of 2 s. When a magnet is placed under the ball, the period decreases to 1 s. What is the force of attraction between the ball and the magnet (N)?",
       "answers": [
-        "0.5",
+        "1.5",
         "1",
         "5",
         "3"

@@ -112,7 +112,7 @@
       ]
     },
     {
-      "text": "Find the velocity of the boy's image relative to the ground.",
+      "text": "A boy walks toward a plane mirror with speed $v$, and the mirror moves toward the boy with speed $v$. Find the velocity of the boy's image relative to the ground.",
       "answers": [
         "$2v$.",
         "$3v$.",
@@ -308,7 +308,7 @@
         "1.",
         "2.",
         "3.",
-        "1, 2."
+        "1, 3."
       ]
     },
     {
@@ -452,7 +452,7 @@
       ]
     },
     {
-      "text": "Which of the rays passing through a transparent plate with parallel faces are shown correctly in the figure? The absolute refractive index of the medium surrounding the plate is greater than that of the plate.",
+      "text": "Which of the rays passing through a transparent plate with parallel faces are shown correctly in the figure? The absolute refractive index of the plate is greater than that of the surrounding medium.",
       "answers": [
         "1.",
         "2.",
@@ -682,7 +682,7 @@
       ]
     },
     {
-      "text": "If light travels a distance of $45$ cm through a convex water drop in some time, and $30$ cm in a certain liquid in the same time, what is the refractive index of this liquid?",
+      "text": "If light travels a distance of $45$ cm in vacuum in some time, and $30$ cm in a certain liquid in the same time, what is the refractive index of this liquid?",
       "answers": [
         "$1.2$.",
         "$1.3$.",
@@ -852,7 +852,7 @@
       ]
     },
     {
-      "text": "A light wave passes from one medium into another. Which of its quantities change?\n1) wavelength;\n2) frequency;\n3) propagation speed;\n4) amplitude.",
+      "text": "A light wave passes from one medium into another. Which of its quantities does not change?\n1) wavelength;\n2) frequency;\n3) propagation speed;\n4) amplitude.",
       "answers": [
         "only 2.",
         "2, 4.",

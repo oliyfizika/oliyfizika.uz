@@ -1,0 +1,82 @@
+{
+ "id": 47,
+ "solutions": [
+  {
+   "steps": [
+    "Termodinamikaning 1-qonuni $Q=\\Delta U+A$ — issiqlik jarayonlari uchun energiyaning saqlanish qonuni."
+   ]
+  },
+  {
+   "steps": [
+    "Tashqi kuchlar ishi $A'=300$ J: $\\;\\Delta U=Q+A'$.",
+    "$Q=\\Delta U-A'=400-300=100$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Gaz tashqi kuchlarga qarshi $A=250$ J ish bajardi: $Q=\\Delta U+A$.",
+    "$Q=550+250=800$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=\\Delta U-A'=550-400=150$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$A=Q-\\Delta U=900-725=175$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=Q+A'=900+175=1075$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=-200$ J, $\\Delta U=300$ J.",
+    "$A=Q-\\Delta U=-200-300=-500$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Vaqt o‘tishi bilan issiqlik almashinuvi (nurlanish) natijasida temperaturalar tenglashadi:",
+    "$T=\\dfrac{m_1T_1+m_2T_2+m_3T_3}{m_1+m_2+m_3}=\\dfrac{1200+1200+300}{7{,}5}=360$ K",
+    "1-idishda temperatura ortadi, 2- va 3-idishda pasayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Jarayonlarning yo‘nalishini (issiqlik issiqroq jismdan sovuqroqqa o‘tishini) termodinamikaning II qonuni belgilaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Izotermik jarayonda $\\Delta U=0$:",
+    "$Q=A$"
+   ]
+  },
+  {
+   "steps": [
+    "Izotermik jarayonda $\\Delta U=0$ — berilgan issiqlik to‘liq ishga sarflanadi: $Q=A$."
+   ]
+  },
+  {
+   "steps": [
+    "Izotermik jarayonda temperatura o‘zgarmaydi:",
+    "$\\Delta U=0$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=0\\;\\Rightarrow\\;Q=A=10$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=0\\;\\Rightarrow\\;Q=A=30$ kJ"
+   ]
+  }
+ ]
+}

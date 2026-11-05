@@ -1,0 +1,179 @@
+{
+ "id": 50,
+ "solutions": [
+  {
+   "steps": [
+    "Sikl oxirida gaz dastlabki holatga qaytadi — ichki energiya holat funksiyasi:",
+    "$\\Delta U=0$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{Q_1-Q_2}{Q_1}\\cdot100\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$A=Q_1-Q_2=2000-600=1400$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$Q_2=Q_1-A=600-400=200$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$Q_1=A+Q_2=520+180=700$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{Q_1-Q_2}{Q_1}=\\dfrac{100-60}{100}=40\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac AQ\\;\\Rightarrow\\;A=\\eta Q$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{7200-6400}{7200}\\approx0{,}11=11\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{0{,}8-0{,}3}{0{,}8}=0{,}625=62{,}5\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{0{,}4-0{,}26}{0{,}4}=0{,}35=35\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$Q_1=A+Q_2=28+42=70$ kJ; $\\;\\eta=\\dfrac{28}{70}=40\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$Q_2=(1-\\eta)Q_1\\Rightarrow Q_1=\\dfrac{600}{0{,}75}=800$ J.",
+    "$A=\\eta Q_1=0{,}25\\cdot800=200$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$Q_1=\\dfrac{Q_2}{1-\\eta}=\\dfrac{42}{0{,}6}=70$ kJ; $\\;A=0{,}4\\cdot70=28$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$A=\\eta Q_1=0{,}25\\cdot800=200$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$Q_2=(1-\\eta)Q_1=0{,}7\\cdot10=7$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{T_1-T_2}{T_1}=\\dfrac{423-293}{423}\\approx30{,}7\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{390-300}{390}\\approx0{,}23=23\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{753-303}{753}\\approx0{,}6=60\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{773-303}{773}\\approx0{,}61=61\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta_{max}=\\dfrac{500-300}{500}=40\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$T_2=T_1(1-\\eta)=800\\cdot0{,}5=400\\ \\text{K}=127^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T_2=T_1(1-\\eta)=500\\cdot0{,}5=250$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$T_2=T_1(1-\\eta)=1000\\cdot0{,}3=300\\ \\text{K}=27^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta_{real}=\\dfrac{600-400}{600}=\\dfrac13$; $\\;\\eta_{id}=\\dfrac{700-400}{700}=\\dfrac37$",
+    "$\\dfrac{\\eta_{real}}{\\eta_{id}}=\\dfrac13\\cdot\\dfrac73=\\dfrac79$"
+   ]
+  },
+  {
+   "steps": [
+    "$A=\\eta Q_1$, $\\eta=\\text{const}$ — ish 13 marta ortishi uchun $Q_1$ ham 13 marta orttirilishi kerak."
+   ]
+  },
+  {
+   "steps": [
+    "Karno siklida $\\dfrac{Q_1}{Q_2}=\\dfrac{T_1}{T_2}=5\\;\\Rightarrow\\;Q_1=5\\cdot36=180$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta=\\dfrac{373-273}{373}\\approx0{,}268$; $\\;Q_1=\\dfrac A\\eta=\\dfrac{53{,}6}{0{,}268}=200$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta_1=\\dfrac{T_1+\\Delta T-T_2}{T_1+\\Delta T}$, $\\;\\eta_2=\\dfrac{T_1-T_2+\\Delta T}{T_1}$",
+    "$\\dfrac{\\eta_1}{\\eta_2}=\\dfrac{T_1}{T_1+\\Delta T}$"
+   ]
+  },
+  {
+   "steps": [
+    "1–2: $T=\\text{const}$, bosim ortadi — hajm kamayadi (siqilish), gaz manfiy ish bajaradi.",
+    "2–3 izobarik kengayish (musbat ish), 3–1 to‘g‘ri chiziq koordinata boshidan o‘tadi — izoxorik, ish nol."
+   ]
+  },
+  {
+   "steps": [
+    "Sikl ishi — $p$–$V$ diagrammadagi to‘rtburchak yuzi:",
+    "$A=(p_1-p_2)(V_2-V_1)$"
+   ]
+  },
+  {
+   "steps": [
+    "Sikl ishi — to‘rtburchak yuzi:",
+    "$A=(p_1-p_4)(V_2-V_1)$"
+   ]
+  },
+  {
+   "steps": [
+    "Sikl ishi — to‘rtburchak yuzi:",
+    "$A=(3-1)\\ \\text{MPa}\\cdot(4-1)\\ \\text{l}=2\\cdot10^6\\cdot3\\cdot10^{-3}=6000\\ \\text{J}=6$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "Sikl yuzi (trapetsiya): uchlari (1; 1), (1; 3), (2; 3), (4; 1).",
+    "$A=\\dfrac{(3-1)\\cdot\\big((4-1)+(2-1)\\big)}{2}=4\\ \\text{MPa}\\cdot\\text{l}=4$ kJ"
+   ]
+  }
+ ]
+}

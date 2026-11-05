@@ -1,0 +1,317 @@
+{
+ "id": 46,
+ "solutions": [
+  {
+   "steps": [
+    "Ichki energiya — jismni tashkil etuvchi barcha molekulalarning kinetik va o‘zaro ta’sir potensial energiyalari yig‘indisi (4-javob)."
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac32\\nu RT=1{,}5\\cdot4\\cdot8{,}31\\cdot361\\approx18000\\ \\text{J}=18$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{2U}{3\\nu R}=\\dfrac{2\\cdot20000}{3\\cdot6\\cdot8{,}31}\\approx267{,}4$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{2U}{3RT}=\\dfrac{2\\cdot74790}{3\\cdot8{,}31\\cdot400}=15$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "1 mol uchun: $U=\\dfrac32RT=\\dfrac32N_AkT$ ($R=N_Ak$) — 2 va 3."
+   ]
+  },
+  {
+   "steps": [
+    "1 mol bir atomli gaz uchun:",
+    "$E_k=N_A\\cdot\\dfrac32kT=\\dfrac32RT$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=200$ K; $\\;U=\\dfrac32RT=1{,}5\\cdot8{,}31\\cdot200=2493$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $T=20$ K da $U=400$ J.",
+    "$\\nu=\\dfrac{2U}{3RT}=\\dfrac{2\\cdot400}{3\\cdot8{,}31\\cdot20}\\approx1{,}6$ mol"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac32NkT=1{,}5\\cdot7\\cdot10^{24}\\cdot1{,}38\\cdot10^{-23}\\cdot225\\approx32{,}6$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{200}{4}=50$ mol; $\\;U=\\dfrac32\\nu RT=1{,}5\\cdot50\\cdot8{,}31\\cdot500=311625\\ \\text{J}=311{,}625$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{2U}{3RT}=\\dfrac{2\\cdot2493}{3\\cdot8{,}31\\cdot200}=1$ mol; $\\;m=\\nu\\mu=4$ g"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{1200}{20}=60$ mol; $\\;T=\\dfrac{2U}{3\\nu R}=\\dfrac{2\\cdot50000}{3\\cdot60\\cdot8{,}31}\\approx66{,}85$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{2U}{3RT}=\\dfrac{2\\cdot10^5}{3\\cdot8{,}31\\cdot600}\\approx13{,}37$ mol; $\\;\\mu=\\dfrac{334{,}27}{13{,}37}=25$ g/mol"
+   ]
+  },
+  {
+   "steps": [
+    "$pV=\\nu RT$ dan bir atomli gaz uchun $U=\\dfrac32pV$.",
+    "$U=1{,}5\\cdot40000\\cdot0{,}01=600$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$V=\\dfrac{2U}{3p}=\\dfrac{2\\cdot36}{3\\cdot24}=1\\ \\text{m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac32pV=1{,}5\\cdot10^4\\cdot2\\cdot10^{-3}=30$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{2U}{3V}=\\dfrac{2\\cdot1500}{3\\cdot2}=500$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "$E_k=\\dfrac32pV=1{,}5\\cdot4\\cdot10^5\\cdot1=6\\cdot10^5$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Bir atomli gazning ichki energiyasi — molekulalar kinetik energiyalari yig‘indisi:",
+    "$U=\\dfrac{mv^2}{2}=\\dfrac{0{,}02\\cdot500^2}{2}=2500$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Ikkala gaz ham ikki atomli: $U=\\dfrac52pV$. $p$ va $V$ bir xil — $U_1=U_2$."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;p_1V_1=2p_2\\cdot\\dfrac{V_2}{2}=p_2V_2\\;\\Rightarrow\\;U_1=U_2$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac32\\dfrac m\\mu RT$ — massa va $T$ bir xil bo‘lsa $U\\sim\\dfrac1\\mu$.",
+    "$\\dfrac{U_{He}}{U_{Ar}}=\\dfrac{40}{4}=10$ — geliyniki 10 marta katta"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{U_{He}}{U_{Ar}}=\\dfrac{\\mu_{Ar}}{\\mu_{He}}=\\dfrac{40}{4}=10$"
+   ]
+  },
+  {
+   "steps": [
+    "Molekulalar soni $N=nV$:",
+    "$U=\\dfrac32NkT=1{,}5\\,nVkT$"
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$ — $p$ va $V$ ikkalasi katta bo‘lgan 3-nuqtada ichki energiya eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$ — eng katta bosim va eng katta hajm 4-nuqtada."
+   ]
+  },
+  {
+   "steps": [
+    "$p$–$T$ diagrammada $U\\sim T$ — eng o‘ngdagi (eng yuqori temperaturali) 4-nuqta."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim T$ — eng chapdagi (eng past temperaturali) 1-nuqta."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\rho RT}{M}\\Rightarrow T\\sim\\dfrac p\\rho$. Bosim katta, zichlik kichik bo‘lgan 1-nuqtada $T$ va $U$ eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{12}{4}=3$ mol; $\\;\\Delta U=\\dfrac32\\nu R\\Delta T=1{,}5\\cdot3\\cdot8{,}31\\cdot150=5609{,}25$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac32\\nu R\\Delta T=1{,}5\\cdot3\\cdot8{,}31\\cdot60\\approx2243{,}7$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac32\\nu R\\Delta T=1{,}5\\cdot2\\cdot8{,}31\\cdot100\\approx2493\\ \\text{J}\\approx2{,}5$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{4\\cdot10^{23}}{6\\cdot10^{23}}=\\dfrac23$ mol; $\\;\\Delta U=1{,}5\\cdot\\dfrac23\\cdot8{,}31\\cdot100=831$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac32V\\Delta p=1{,}5\\cdot0{,}08\\cdot70000=8400\\ \\text{J}=8{,}4$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac32p\\Delta V=1{,}5\\cdot2\\cdot10^5\\cdot0{,}12=36000\\ \\text{J}=36$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac32p\\Delta V=1{,}5\\cdot10^5\\cdot0{,}05=7500\\ \\text{J}=7{,}5$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "Ideal gaz ichki energiyasi faqat temperaturaga bog‘liq; izotermik jarayonda $T=\\text{const}$ — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Izotermik jarayonda $T$ o‘zgarmaydi — ichki energiya ham o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim T$ — temperatura 2 marta oshsa, ichki energiya 2 marta oshadi."
+   ]
+  },
+  {
+   "steps": [
+    "Ichki energiya holat funksiyasi: $\\Delta U$ faqat boshlang‘ich va oxirgi holatga bog‘liq ($T_1\\to T_2$).",
+    "$\\Delta U_a=\\Delta U_b=\\Delta U_c$"
+   ]
+  },
+  {
+   "steps": [
+    "2–3 da $U=\\text{const}$ ($T=\\text{const}$), hajm kamaygan.",
+    "Zichlik $\\rho=\\dfrac mV$ ortgan, izotermik siqilishda bosim ham ortgan."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim T$: II izotermada temperatura yuqori, $U_2=111+37=148$ kJ.",
+    "$\\dfrac{T_2}{T_1}=\\dfrac{148}{111}=\\dfrac43$, $\\;T_2-T_1=125\\;\\Rightarrow\\;T_1=375$ K, $T_2=500$ K"
+   ]
+  },
+  {
+   "steps": [
+    "Uchala gaz ham ikki atomli: $\\Delta U=\\dfrac52\\nu R\\Delta T$ — bir xil o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "To‘g‘ri ifoda $p=\\dfrac13\\rho v^2$; $p=\\dfrac12\\rho v^2$ — noto‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "Izobarik qizdirishda $T$ ortadi — ichki energiya ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Izobarik kengayishda $V\\sim T$ ortadi — $T$ ortadi, ichki energiya ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Izobarik siqilishda $T$ kamayadi — ichki energiya kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Grafikda $p=\\text{const}$, hajm ortmoqda — izobarik kengayish, $T$ ortadi, $U$ ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;2\\cdot2=4$ marta oshadi"
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;2\\cdot\\dfrac12=1$ — o‘zgarmaydi"
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;\\dfrac12\\cdot3=1{,}5$ marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;0{,}5\\cdot2=1$ — o‘zgarmaydi"
+   ]
+  },
+  {
+   "steps": [
+    "Izoxorik jarayonda hajm o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;1{,}5\\cdot\\dfrac13=0{,}5$ — 2 marta kamaygan"
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim pV$: $\\;3\\cdot\\dfrac12=1{,}5$ marta oshadi"
+   ]
+  },
+  {
+   "steps": [
+    "Ochiq idishda $p$ va $V$ o‘zgarmaydi, $U\\sim pV$ — havo isisa ham bir qismi chiqib ketadi, ichki energiya o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Xonada $p$ (atmosfera bosimi) va $V$ o‘zgarmaydi; $U\\sim pV$ — o‘zgarmaydi (isigan havoning bir qismi tashqariga chiqadi)."
+   ]
+  },
+  {
+   "steps": [
+    "Ballon yopiq ($V$, $m$ const): $p\\sim T$, $U\\sim T$.",
+    "Bosim 2 marta oshgan — ichki energiya ham 2 marta ortgan."
+   ]
+  },
+  {
+   "steps": [
+    "$U\\sim mT$: $\\;\\dfrac{U_2}{U_1}=0{,}75\\cdot\\dfrac1{1{,}2}=0{,}625$.",
+    "$\\dfrac{U_1}{U_2}=1{,}6$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac32pV$, ballon hajmi o‘zgarmaydi: $U\\sim p$.",
+    "Bosim 3 marta kamaygan — ichki energiya 3 marta kamaygan."
+   ]
+  }
+ ]
+}

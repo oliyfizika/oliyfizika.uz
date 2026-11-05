@@ -1,0 +1,382 @@
+{
+ "id": 63,
+ "solutions": [
+  {
+   "steps": [
+    "Joul–Lens qonuni: $Q=I^2Rt$."
+   ]
+  },
+  {
+   "steps": [
+    "$Q=I^2Rt=15^2\\cdot2\\cdot120=54000$ J $=54$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\sqrt{\\dfrac{Q}{Rt}}=\\sqrt{\\dfrac{120000}{50\\cdot600}}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=\\dfrac{U^2}{R}t=\\dfrac{120^2}{12}\\cdot600=720000$ J $=720$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$R_1$ dan $I$, $R_2$ va $R_3$ dan $I/2$ tok o‘tadi. $Q\\sim I^2$:",
+    "$Q_1:Q_2:Q_3=1:\\dfrac14:\\dfrac14=4:1:1$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel — kuchlanish bir xil, $Q=\\dfrac{U^2}{R}t\\sim\\dfrac1R$:",
+    "$Q_{2R}=\\dfrac{100}{2}=50$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Kerakli issiqlik $Q$ bir xil. $Q=\\dfrac{U^2}{R}t\\Rightarrow R\\sim t$.",
+    "Ketma-ket: $R=R_1+R_2\\Rightarrow t=t_1+t_2=30+20=50$ min"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=m(c\\Delta t+r)=0{,}6\\,(4200\\cdot100+2{,}3\\cdot10^6)=1{,}632\\cdot10^6$ J",
+    "$P=\\dfrac{U^2}{R}=\\dfrac{200^2}{50}=800$ W; foydali $0{,}6\\cdot800=480$ W",
+    "$t=\\dfrac{1{,}632\\cdot10^6}{480}=3400$ s $\\approx57$ min"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqori tarmoq: $R_1+R_2=3\\ \\Omega$, pastki: $R_3+R_4=6\\ \\Omega$ — yuqoridagi tok 2 marta katta ($2I$ va $I$).",
+    "$P_1=4I^2\\cdot1=4I^2$, $P_2=4I^2\\cdot2=8I^2$, $P_3=2I^2$, $P_4=4I^2$ — eng ko‘p $R_2$ da"
+   ]
+  },
+  {
+   "steps": [
+    "$R\\sim t$ (bir xil $Q$ va $U$ da). Parallel: $\\dfrac1R=\\dfrac1{R_1}+\\dfrac1{R_2}$.",
+    "$t=\\dfrac{t_1t_2}{t_1+t_2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket: $t_k=t_1+t_2$; parallel: $t_p=\\dfrac{t_1t_2}{t_1+t_2}$.",
+    "$\\dfrac{t_k}{t_p}=\\dfrac{(t_1+t_2)^2}{t_1t_2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel: $R/2$, ketma-ket: $2R$ — qarshilik 4 marta katta.",
+    "$t\\sim R\\Rightarrow t'=4t$"
+   ]
+  },
+  {
+   "steps": [
+    "$t\\sim R$; ketma-ket: $t=t_1+t_2=30+20=50$ min"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel: $R/3$, ketma-ket: $3R$ — qarshilik 9 marta katta.",
+    "$t=9\\cdot6=54$ min"
+   ]
+  },
+  {
+   "steps": [
+    "Tok o‘zgarmas: $P=I^2R$, ya’ni $t\\sim\\dfrac1R$.",
+    "$\\dfrac{R'}{R}=\\dfrac{10}{12}=\\dfrac56$ — spiral $\\dfrac16$ qismga qisqargan"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel: $P_p=\\dfrac{2U^2}{R}$; ketma-ket: $P_k=\\dfrac{U^2}{2R}=\\dfrac{P_p}{4}$.",
+    "$\\Delta t_2=\\dfrac{10}{4}=2{,}5^\\circ$C; jami $10+2{,}5=12{,}5^\\circ$C"
+   ]
+  },
+  {
+   "steps": [
+    "$1\\ \\text{kW}\\cdot\\text{h}=1000\\cdot3600=3\\,600\\,000$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$W=0{,}1\\cdot6\\cdot30=18$ kW$\\cdot$h; $\\;18\\cdot450=8100$ so‘m"
+   ]
+  },
+  {
+   "steps": [
+    "1 soatda $1{,}5\\cdot3600=5400$ aylanish.",
+    "$P=\\dfrac{5400}{3000}=1{,}8$ kW"
+   ]
+  },
+  {
+   "steps": [
+    "1 soatda $30\\cdot60=1800$ aylanish.",
+    "$P=\\dfrac{1800}{1200}=1{,}5$ kW"
+   ]
+  },
+  {
+   "steps": [
+    "$A=Pt=36\\cdot20=720$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$A=Pt=5\\cdot10^5\\cdot3600=1{,}8\\cdot10^9$ J $=1800$ MJ"
+   ]
+  },
+  {
+   "steps": [
+    "$W=Pt=500\\cdot300=150000$ J $=150$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$A=qU=IUt$."
+   ]
+  },
+  {
+   "steps": [
+    "Elektr tokining ishi: $A=q(\\varphi_1-\\varphi_2)=IUt=I^2Rt$ — 3, 4, 5."
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\text{J}}{\\text{A}^2\\cdot\\text{s}}=\\dfrac{\\text{W}}{\\text{A}^2}=\\Omega$ (chunki $P=I^2R$) — qarshilik."
+   ]
+  },
+  {
+   "steps": [
+    "$q=\\dfrac AU=\\dfrac{16000}{200}=80$ C; $\\;N=\\dfrac qe=\\dfrac{80}{1{,}6\\cdot10^{-19}}=5\\cdot10^{20}$"
+   ]
+  },
+  {
+   "steps": [
+    "$A=\\dfrac{U^2}{R}t=\\dfrac{400}{20}\\cdot20=400$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$A=IUt=6\\cdot3\\cdot10=180$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac{A}{It}=\\dfrac{24}{3\\cdot4}=2$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{A}{Ut}=\\dfrac{6}{2\\cdot3}=1$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$j^2\\rho lS=\\dfrac{I^2}{S^2}\\rho lS=I^2\\rho\\dfrac lS=I^2R$ — quvvat, birligi W."
+   ]
+  },
+  {
+   "steps": [
+    "$P=I^2R=j^2S^2\\cdot\\rho\\dfrac lS=j^2\\rho\\,lS$.",
+    "$\\dfrac{P}{j^2\\rho}=lS=V$ — hajm"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac UI=\\dfrac{4}{0{,}25}=16\\ \\Omega$; $\\;P=UI=1$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{U^2}{P}=\\dfrac{250^2}{25}=2500\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{3{,}5}{0{,}28}=12{,}5\\ \\Omega$; $\\;P=3{,}5\\cdot0{,}28=0{,}98$ W"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{U^2}{P}=\\dfrac{144}{72}=2\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{U^2}{P}=\\dfrac{144}{60}=2{,}4\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{P}{I^2}=\\dfrac{1000}{25}=40\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\sqrt{PR}=\\sqrt{1\\cdot1}=1$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{U^2}{P}=\\dfrac{36^2}{180}=7{,}2\\ \\Omega$; $\\;l=\\dfrac{RS}{\\rho}=\\dfrac{7{,}2\\cdot0{,}6\\cdot10^{-6}}{1{,}2\\cdot10^{-6}}=3{,}6$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $U=40$ V da $I=2$ A.",
+    "$P=UI=80$ W"
+   ]
+  },
+  {
+   "steps": [
+    "Spiral $0{,}2$ ulushga qisqarsa, $R'=0{,}8R$.",
+    "$\\dfrac{P'}{P}=\\dfrac{R}{R'}=1{,}25$ — 1,25 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{U^2}{P}$, quvvatlar teng:",
+    "$\\dfrac{R_1}{R_2}=\\dfrac{U_1^2}{U_2^2}=\\dfrac{36}{144}=\\dfrac14$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{R_1}{R_2}=\\dfrac{U_1^2}{U_2^2}=\\dfrac{576}{64}=9$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{U^2}{P}$, kuchlanish bir xil:",
+    "$\\dfrac{R_2}{R_1}=\\dfrac{P_1}{P_2}=\\dfrac{50}{150}=\\dfrac13$"
+   ]
+  },
+  {
+   "steps": [
+    "$R\\sim\\dfrac1P\\;\\Rightarrow\\;\\dfrac{R_2}{R_1}=\\dfrac{P_1}{P_2}=2\\;\\Rightarrow\\;R_2=2R_1$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel — kuchlanish bir xil, $P=\\dfrac{U^2}R$:",
+    "$\\dfrac{P_1}{P_2}=\\dfrac{R_2}{R_1}=\\dfrac{20}{50}=0{,}4$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{P_1}{P_2}=\\dfrac{R_2}{R_1}=\\dfrac82=4\\;\\Rightarrow\\;P_1=4P_2$"
+   ]
+  },
+  {
+   "steps": [
+    "$P=UI$:",
+    "$\\dfrac{I_2}{I_1}=\\dfrac{P_2/P_1}{U_2/U_1}=\\dfrac{6}{1{,}5}=4$ — 4 marta ortdi"
+   ]
+  },
+  {
+   "steps": [
+    "$P=\\dfrac{U^2}R$ — 36 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$P=\\dfrac{U^2}R$ — 16 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$P=\\dfrac{U^2}R$ — 5 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Parallel — kuchlanish bir xil, $P\\sim\\dfrac1R$: birinchisi ($100\\ \\Omega$) 2 marta ko‘p quvvat sarflaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$P=\\dfrac{U^2}R$ — 2 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$P=I^2R$ — 2 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Parallel: $R/2$, $P_p=\\dfrac{2U^2}{R}$; ketma-ket: $2R$, $P_k=\\dfrac{U^2}{2R}$.",
+    "$\\dfrac{P_p}{P_k}=4$ — parallelda 4 marta katta"
+   ]
+  },
+  {
+   "steps": [
+    "$I_1=\\dfrac{P_1}{U_1}=4$ A, $\\;R_1=\\dfrac{10}{4}=2{,}5\\ \\Omega$",
+    "$I_3=4-2=2$ A, $\\;U_{23}=2\\cdot4=8$ V, $\\;R_{23}=\\dfrac{8}{4}=2\\ \\Omega$",
+    "$R=2{,}5+2=4{,}5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Tok 3 marta kamayadi: $I'=\\dfrac U{3R}$.",
+    "$\\dfrac{P'}{P}=\\left(\\dfrac13\\right)^2=\\dfrac19$ — 9 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "$P\\sim I^2$: tok $\\sqrt{2{,}25}=1{,}5$ marta kamayishi kerak, ya’ni umumiy qarshilik $1{,}5R$.",
+    "$R_q=0{,}5R$"
+   ]
+  },
+  {
+   "steps": [
+    "$W=0{,}4\\cdot3{,}6=1{,}44$ MJ $=1440$ kJ; $\\;\\eta=\\dfrac{1080}{1440}=75\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$W=Pt=1000\\cdot300=300$ kJ; $\\;\\eta=\\dfrac{100}{300}=\\dfrac13$"
+   ]
+  },
+  {
+   "steps": [
+    "$P_f=\\dfrac{mgh}{t}=\\dfrac{1000\\cdot10\\cdot81}{90}=9000$ W; $\\;P=\\dfrac{P_f}{\\eta}=\\dfrac{9000}{0{,}9}=10$ kW"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta IU=F\\vartheta\\;\\Rightarrow\\;\\vartheta=\\dfrac{0{,}6\\cdot110\\cdot600}{3000}=13{,}2$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\eta IU=F\\vartheta\\;\\Rightarrow\\;I=\\dfrac{F\\vartheta}{\\eta U}=\\dfrac{45000\\cdot18}{0{,}9\\cdot1500}=600$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Dazmollar ketma-ket — tok bir xil: $I=\\dfrac{P_1}{U_1}=\\dfrac{800}{200}=4$ A.",
+    "$U_2=440-200=240$ V; $\\;P_2=U_2I=960$ W"
+   ]
+  },
+  {
+   "steps": [
+    "Kalit yopilsa, ikkinchi $R$ parallel ulanadi: qarshilik $R\\to R/2$.",
+    "$P=\\dfrac{U^2}R$ — 2 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$R_{23}=\\dfrac{12\\cdot4}{16}=3\\ \\Omega$; $\\;R=10+3+12=25\\ \\Omega$; $\\;I=\\dfrac{100}{25}=4$ A",
+    "$P_1=16\\cdot10=160$ W, $\\;P_4=16\\cdot12=192$ W, $\\;I_3=3$ A: $P_3=36$ W, $\\;I_2=1$ A: $P_2=12$ W",
+    "Eng katta quvvat — 4-lampochkada, 192 W."
+   ]
+  },
+  {
+   "steps": [
+    "$R_5$ to‘g‘ridan-to‘g‘ri $U$ ga ulangan: $P_5=\\dfrac{144}{4}=36$ W.",
+    "Ikkinchi tarmoq: $\\dfrac{(7+5)\\cdot4}{16}+9=12\\ \\Omega$, $\\;P=\\dfrac{144}{12}=12$ W",
+    "$P=36+12=48$ W"
+   ]
+  }
+ ]
+}

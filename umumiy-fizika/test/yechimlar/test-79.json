@@ -1,0 +1,305 @@
+{
+ "id": 79,
+ "solutions": [
+  {
+   "steps": [
+    "Difraksiya — to‘lqinlarning o‘lchamlari to‘lqin uzunligi tartibidagi to‘siq yoki tirqishda to‘g‘ri chiziqdan og‘ib, geometrik soya sohasiga o‘tishi."
+   ]
+  },
+  {
+   "steps": [
+    "To‘siqni aylanib o‘tish va soya sohasiga og‘ish — difraksiya."
+   ]
+  },
+  {
+   "steps": [
+    "Yorug‘lik bir jinsli bo‘lmagan muhitda (sinish), to‘lqin uzunligi bilan solishtirarli to‘siq va tirqishlarda (difraksiya) to‘g‘ri chiziqdan chetlashadi — A, B va C to‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta=1{,}2\\;\\mu$m $=2\\cdot0{,}6\\;\\mu$m $=2\\lambda$ — butun to‘lqinlar soni.",
+    "Interferension maksimum kuzatiladi."
+   ]
+  },
+  {
+   "steps": [
+    "Panjara davri — shtrix kengligi va oraliq yig‘indisi.",
+    "$d=a+b=1{,}25+2{,}35=3{,}6\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=\\dfrac{1\\text{ mm}}{1000}=10^{-3}$ mm $=1\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=\\dfrac{0{,}75\\text{ mm}}{12500}=6\\cdot10^{-5}$ mm $=0{,}06\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{1\\text{ mm}}{2\\;\\mu\\text{m}}=\\dfrac{1000}{2}=500$"
+   ]
+  },
+  {
+   "steps": [
+    "Qo‘shni tirqishlardan yo‘l farqi $\\Delta=d\\sin\\varphi$.",
+    "$d=\\dfrac{2{,}5}{\\sin30^\\circ}=5\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$\\lambda=d\\sin30^\\circ=1{,}5\\cdot0{,}5=0{,}75\\;\\mu$m $=750$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$k=\\dfrac{d\\sin30^\\circ}{\\lambda}=\\dfrac{3{,}6\\cdot0{,}5}{0{,}6}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$k=1$: $\\sin\\varphi=\\dfrac{\\lambda}{d}$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=1\\;\\mu$m.",
+    "$\\sin\\varphi=\\dfrac{0{,}5}{1}=0{,}5\\;\\Rightarrow\\;\\varphi=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$\\lambda=1{,}4\\cdot0{,}5=0{,}7\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Simmetrik maksimumlar orasidagi burchak $2\\varphi=60^\\circ$, $\\varphi=30^\\circ$\\; $d=1\\;\\mu$m.",
+    "$\\lambda=d\\sin30^\\circ=0{,}5\\;\\mu$m $=500$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$\\dfrac d\\lambda=\\dfrac{6}{\\sin60^\\circ}=\\dfrac{12}{\\sqrt3}\\approx6{,}9$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=2{,}5\\;\\mu$m.",
+    "$\\sin\\varphi=\\dfrac{3\\cdot0{,}5}{2{,}5}=0{,}6\\;\\Rightarrow\\;\\varphi\\approx37^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$\\sin\\varphi=\\dfrac{3\\cdot0{,}5}{\\sqrt3}=\\dfrac{\\sqrt3}{2}\\;\\Rightarrow\\;\\varphi=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=\\dfrac{1}{250}$ mm $=4\\;\\mu$m.",
+    "$\\sin\\varphi=\\dfrac{4\\cdot0{,}5}{4}=0{,}5\\;\\Rightarrow\\;\\varphi=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$\\sin\\varphi=\\dfrac{2\\lambda}{5\\lambda}=\\dfrac25\\;\\Rightarrow\\;\\varphi=\\arcsin\\dfrac25$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=\\dfrac1{500}$ mm $=2\\;\\mu$m.",
+    "$\\lambda=\\dfrac{2\\cdot0{,}5}{2}=0{,}5\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=\\dfrac{3\\lambda}{\\sin30^\\circ}=6\\lambda$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$\\sin\\alpha=\\dfrac{2\\lambda}{6\\lambda}=\\dfrac13$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d=\\dfrac{2{,}5}{4000}$ mm $=0{,}625\\;\\mu$m\\; $\\sin\\varphi=\\dfrac{0{,}5}{0{,}625}=0{,}8$, $\\varphi\\approx53^\\circ$.",
+    "$2\\varphi\\approx106^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$\\dfrac d\\lambda=\\dfrac{2{,}8}{0{,}5}=5{,}6\\;\\Rightarrow\\;k_{max}=5$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$\\dfrac{2}{0{,}589}\\approx3{,}4\\;\\Rightarrow\\;k_{max}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$d=5\\;\\mu$m, $\\lambda=0{,}5\\;\\mu$m.",
+    "$k_{max}=\\dfrac{5}{0{,}5}=10$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$d=2{,}5\\;\\mu$m.",
+    "$k_{max}=\\dfrac{2{,}5}{0{,}5}=5$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$\\dfrac{2{,}9}{0{,}5}=5{,}8$, $k_{max}=5$.",
+    "$N=2\\cdot5+1=11$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$\\dfrac{1{,}1}{0{,}5}=2{,}2$, $k_{max}=2$.",
+    "$N=2\\cdot2+1=5$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$\\dfrac{3{,}4}{0{,}5}=6{,}8$, $k_{max}=6$.",
+    "$N=2\\cdot6+1=13$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$k_{max}=\\dfrac{2\\lambda}{\\lambda}=2$.",
+    "$N=2\\cdot2+1=5$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$k_{max}=\\dfrac{100}{0{,}5}=200$.",
+    "$N=2\\cdot200+1=401$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng katta tartib: $\\sin\\varphi\\le1$ dan $k_{max}=\\left[\\dfrac d\\lambda\\right]$ (butun qismi\\; bu testlarda $\\sin\\varphi=1$ chegaraviy holi ham hisobga olinadi). Maksimumlar soni $N=2k_{max}+1$.",
+    "$\\dfrac{2{,}3}{0{,}5}=4{,}6$, $k_{max}=4$.",
+    "$N=2\\cdot4+1=9$"
+   ]
+  },
+  {
+   "steps": [
+    "Difraksion panjara formulasi: $d\\sin\\varphi=k\\lambda$\\; panjara davri $d=\\dfrac{l}{N}$.",
+    "$d\\cdot0{,}5=4\\lambda$, $d=8\\lambda$, $k_{max}=8$.",
+    "$N=2\\cdot8+1=17$"
+   ]
+  },
+  {
+   "steps": [
+    "Kichik burchaklarda $\\sin\\varphi\\approx\\mathrm{tg}\\,\\varphi=\\dfrac xL$: $\\;d\\dfrac xL=k\\lambda$.",
+    "$\\lambda=\\dfrac{dx}{kL}=\\dfrac{0{,}3\\cdot10^{-3}\\cdot3{,}6\\cdot10^{-3}}{3\\cdot0{,}8}=4{,}5\\cdot10^{-7}$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Kichik burchaklarda $\\sin\\varphi\\approx\\mathrm{tg}\\,\\varphi=\\dfrac xL$: $\\;d\\dfrac xL=k\\lambda$.",
+    "$\\lambda=\\dfrac{dx}{L}=\\dfrac{20\\;\\mu\\text{m}\\cdot0{,}03}{1}=0{,}6\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Kichik burchaklarda $\\sin\\varphi\\approx\\mathrm{tg}\\,\\varphi=\\dfrac xL$: $\\;d\\dfrac xL=k\\lambda$.",
+    "$d=10\\;\\mu$m.",
+    "$\\lambda=\\dfrac{10\\cdot0{,}12}{2}=0{,}6\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "Kichik burchaklarda $\\sin\\varphi\\approx\\mathrm{tg}\\,\\varphi=\\dfrac xL$: $\\;d\\dfrac xL=k\\lambda$.",
+    "$d=\\dfrac{\\lambda L}{x}=\\dfrac{0{,}6\\cdot1{,}8}{0{,}054}=20\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "$b=L\\,\\mathrm{tg}\\,\\varphi\\approx\\dfrac{\\lambda a}{d}$ — $a$ ortsa $b$ ham ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$b\\approx\\dfrac{k\\lambda L}{d}$ — panjara davri $d$ ortsa, $b$ kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$d$ ortsa $\\sin\\varphi=\\dfrac{k\\lambda}{d}$ kamayadi — maksimumlar bir-biriga yaqinlashadi (qisqaradi).",
+    "$k_{max}=\\dfrac d\\lambda$ ortadi — maksimumlar soni ko‘payadi."
+   ]
+  },
+  {
+   "steps": [
+    "$d=\\dfrac1{25}$ mm $=40\\;\\mu$m. 4-tartibli maksimum markazdan $x=\\dfrac{5{,}4}{2}=2{,}7$ cm.",
+    "Kichik burchaklarda $\\sin\\varphi\\approx\\mathrm{tg}\\,\\varphi=\\dfrac xL$: $\\;d\\dfrac xL=k\\lambda$.",
+    "$\\lambda=\\dfrac{40\\cdot2{,}7}{4\\cdot50}=0{,}54\\;\\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\varphi=\\dfrac{x}{\\sqrt{L^2+x^2}}$ (aniq ifoda).",
+    "$\\lambda=d\\sin\\varphi=\\dfrac{dx}{\\sqrt{L^2+x^2}}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ustma-ust tushish: $k_1\\lambda_1=k_2\\lambda_2$.",
+    "$\\lambda_2=\\dfrac{3\\cdot780}{4}=585$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\varphi=\\dfrac{k\\lambda}{d}$: qizil nur ($\\lambda$ katta) ko‘proq og‘adi — 1 to‘g‘ri, 4 noto‘g‘ri.",
+    "Markaziy ($k=0$) maksimum barcha ranglar uchun bir joyda — 2 to‘g‘ri, 3 noto‘g‘ri.",
+    "Maksimumlar soni $\\sim\\dfrac{d}{\\lambda}$ — qizil nurda kamroq, shuning uchun 5 noto‘g‘ri.",
+    "1 va 2"
+   ]
+  },
+  {
+   "steps": [
+    "Shtrixlar ko‘p bo‘lsa davr $d$ kichik va $\\sin\\varphi=\\dfrac{k\\lambda}d$ katta — spektr kengroq.",
+    "1 mm da 100 shtrixli (ikkinchi) panjara."
+   ]
+  },
+  {
+   "steps": [
+    "Oq yorug‘likni spektrga difraksion panjara (difraksiya) va prizma (dispersiya) ajratadi.",
+    "3, 4"
+   ]
+  }
+ ]
+}

@@ -12,7 +12,7 @@
     },
     {
       "text": "Sirt taranglik koeffitsiyenti qanday birlikda ifodalanadi?",
-      "answers": ["J · s", "J/m³", "J/m²", "N/m"],
+      "answers": ["J · s", "J/m³", "J/m", "N/m"],
       "correct": 3
     },
     {
@@ -21,7 +21,7 @@
       "correct": 2
     },
     {
-      "text": "Diametri 4 mm bo‘lgan kapillyar naychadan tomayotgan suv tomchisining massasini toping (mg). σ = 73 mN/m.",
+      "text": "Diametri 4 mm bo‘lgan kapillyar naychadan tomayotgan suv tomchisining massasini toping (mg). σ = 73 mN/m. g = 9,8 m/s².",
       "answers": ["94", "187", "24", "31,4"],
       "correct": 0
     },
@@ -41,12 +41,12 @@
       "correct": 2
     },
     {
-      "text": "Radiusi yarim millimetr bo‘lgan tomizgichdan sirt taranglik koeffitsiyenti 50 mN/m bo‘lgan 100 g massali suyuqlik nechta tomchi bo‘lib tomib ketadi?",
+      "text": "Radiusi yarim millimetr bo‘lgan tomizgichdan sirt taranglik koeffitsiyenti 50 mN/m bo‘lgan 100 g massali suyuqlik nechta tomchi bo‘lib tomib ketadi? g = 9,8 m/s².",
       "answers": ["6248", "7459", "3456", "4560"],
       "correct": 0
     },
     {
-      "text": "Pastga 4,5 m/s² tezlanish bilan harakatlanayotgan diametri 1 mm bo‘lgan tomizgichdan uzilgan suv tomchisining massasini toping (mg). σ = 73 mN/m.",
+      "text": "Pastga 4,5 m/s² tezlanish bilan harakatlanayotgan diametri 1 mm bo‘lgan tomizgichdan uzilgan suv tomchisining massasini toping (mg). σ = 73 mN/m. g = 9,8 m/s².",
       "answers": ["18", "43,24", "24", "22,94"],
       "correct": 1
     },
@@ -61,7 +61,7 @@
       "correct": 2
     },
     {
-      "text": "Tomizgich teshigining diametri 1,2 mm. Tomizgichdan oqib chiqayotgan suv tomchisining uzilish momentidagi massasi qancha (mg)?",
+      "text": "Tomizgich teshigining diametri 1,2 mm. Tomizgichdan oqib chiqayotgan suv tomchisining uzilish momentidagi massasi qancha (mg)? σ = 73 mN/m.",
       "answers": ["56", "28", "2,8", "5,6"],
       "correct": 1
     },
@@ -78,7 +78,7 @@
     {
       "text": "50 mm diametrli sovun pufagi sirtining ortiqcha potensial energiyasini hisoblang (J). σ = 0,04 N/m.",
       "answers": ["2,4 · 10⁻²", "24 · 10⁻⁵", "8,3 · 10⁻⁴", "6,3 · 10⁻⁴"],
-      "correct": 1
+      "correct": 3
     },
     {
       "text": "Radiusi 4 sm bo‘lgan sovunli suv pufagining sirt energiyasi (mJ) nimaga teng? σ = 40 mN/m, π = 3.",

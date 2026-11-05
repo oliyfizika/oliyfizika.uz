@@ -314,7 +314,7 @@
       ]
     },
     {
-      "text": "A converging lens of focal length $F$ forms a real image of an object of size $a$. If the distance from the lens to the image is $b$, what is the size of the image?",
+      "text": "A converging lens of focal length $F$ forms a real image of an object of size $a$. If the distance from the lens to the image is $f$, what is the size of the image?",
       "answers": [
         "$\\dfrac{F}{a(f-F)}$.",
         "$\\dfrac{aF}{f-F}$.",
@@ -324,7 +324,7 @@
       ]
     },
     {
-      "text": "A converging lens forms an image magnified $k$ times. If the distance to the object is $L$, what is the distance from the lens to the image?",
+      "text": "A converging lens forms a real image of an object magnified $k$ times. If the distance from the object to the image is $L$, what is the distance from the lens to the image?",
       "answers": [
         "$k(k^2+1)L$.",
         "$k(k+1)L$.",
@@ -374,7 +374,7 @@
       ]
     },
     {
-      "text": "What is the focal length of the lens (in cm) if, at an object distance of 15 cm, the magnification of the lens is 2?",
+      "text": "What is the focal length of the lens (in cm) if, at an object distance of 15 cm, the magnification of the lens is 2 (the image is real)?",
       "answers": [
         "7.5.",
         "$2/3$.",
@@ -464,7 +464,7 @@
       ]
     },
     {
-      "text": "The distance between an object and a converging lens is $3F$. If the focal length of the lens is $F$, how many times larger is the image than the object?",
+      "text": "The distance between an object and a converging lens is $3F$. If the focal length of the lens is $F$, how many times smaller is the image than the object?",
       "answers": [
         "3.",
         "2.",
@@ -714,7 +714,7 @@
       ]
     },
     {
-      "text": "Determine the optical power of the system of lenses shown in the figure (in D).",
+      "text": "A thin converging lens with focal length $F_1=50$ cm and a thin diverging lens with focal length $F_2=20$ cm are placed in close contact. Determine the optical power of the lens system (in D).",
       "answers": [
         "$-1{,}5$.",
         "7.",
@@ -994,7 +994,7 @@
       ]
     },
     {
-      "text": "The principal focal length of a concave-convex lens made of glass with an absolute refractive index of 1.5 is 24 cm. Find the radius of curvature of this lens that is 2 times smaller than the other (in cm).",
+      "text": "The principal focal length of a biconvex lens made of glass with an absolute refractive index of 1.5 is 24 cm. Find the radius of curvature of this lens that is 2 times smaller than the other (in cm).",
       "answers": [
         "14.",
         "16.",

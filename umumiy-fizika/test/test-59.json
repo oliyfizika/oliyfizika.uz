@@ -15,7 +15,7 @@
         "4,8",
         "2"
       ],
-      "correct": 3,
+      "correct": 2,
       "source": "64-mavzu.tex#0:1"
     },
     {
@@ -37,7 +37,7 @@
         "4",
         "3"
       ],
-      "correct": 3,
+      "correct": 2,
       "images": "../rasmlar59/r33945b14b2.png",
       "source": "64-mavzu.tex#0:3"
     },
@@ -73,7 +73,7 @@
         "3",
         "6"
       ],
-      "correct": 3,
+      "correct": 1,
       "images": "../rasmlar59/r600686485a.png",
       "source": "64-mavzu.tex#0:6"
     },
@@ -85,7 +85,7 @@
         "1,6",
         "0,8"
       ],
-      "correct": 2,
+      "correct": 3,
       "images": "../rasmlar59/rba362f93af.png",
       "source": "64-mavzu.tex#0:7"
     },
@@ -97,7 +97,7 @@
         "1,5",
         "2"
       ],
-      "correct": 1,
+      "correct": 2,
       "images": "../rasmlar59/rcc3a174cb4.png",
       "source": "64-mavzu.tex#0:8"
     },
@@ -109,7 +109,7 @@
         "18; 7",
         "17,5; 7,5"
       ],
-      "correct": 2,
+      "correct": 3,
       "images": "../rasmlar59/r891500cb2b.png",
       "source": "64-mavzu.tex#0:9"
     },
@@ -121,7 +121,7 @@
         "2",
         "3"
       ],
-      "correct": 0,
+      "correct": 1,
       "images": "../rasmlar59/r845186530c.png",
       "source": "64-mavzu.tex#0:10"
     },
@@ -133,7 +133,7 @@
         "2",
         "3"
       ],
-      "correct": 1,
+      "correct": 0,
       "images": "../rasmlar59/r3f72d98f5f.png",
       "source": "64-mavzu.tex#0:11"
     },
@@ -145,7 +145,7 @@
         "$\\varepsilon$",
         "$\\varepsilon/3$"
       ],
-      "correct": 3,
+      "correct": 2,
       "images": "../rasmlar59/rcffedf04d2.png",
       "source": "64-mavzu.tex#0:12"
     },
@@ -157,7 +157,7 @@
         "2",
         "1/3"
       ],
-      "correct": 2,
+      "correct": 1,
       "source": "64-mavzu.tex#0:13"
     },
     {
@@ -253,7 +253,7 @@
         "8,4."
       ],
       "correct": 1,
-      "images": "../rasmlar59/r6a387964a6.png",
+      "images": "../rasmlar59/r8a3abc2a88.png",
       "source": "46-mavzu1.tex#0:8"
     },
     {
@@ -291,7 +291,7 @@
         "1,6.",
         "0,8."
       ],
-      "correct": 4,
+      "correct": 0,
       "images": "../rasmlar59/r6a2668ba3d.png",
       "source": "46-mavzu1.tex#0:12"
     },
@@ -304,7 +304,7 @@
         "2.",
         "3."
       ],
-      "correct": 2,
+      "correct": 0,
       "images": "../rasmlar59/r24afe49c27.png",
       "source": "46-mavzu1.tex#0:13"
     },

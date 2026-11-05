@@ -1,0 +1,220 @@
+{
+ "id": 59,
+ "solutions": [
+  {
+   "steps": [
+    "$I=\\dfrac{2\\varepsilon}{R+2r}\\;\\Rightarrow\\;R=\\dfrac{2\\varepsilon}{I}-2r=\\dfrac{12}{2}-1{,}2=4{,}8\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$n$ ta manba ketma-ket: $U=n\\varepsilon-nIr=n(\\varepsilon-Ir)$.",
+    "$n=\\dfrac{U}{\\varepsilon-Ir}=\\dfrac{100}{2{,}5-5\\cdot0{,}1}=50$"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Rasmda ikkala manba tokni bir yo‘nalishda (soat mili teskarisiga) yuritadi — EYK lar qo‘shiladi.",
+    "$I=\\dfrac{\\varepsilon_1+\\varepsilon_2}{2R}=\\dfrac{6+18}{6}=4$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "$\\varepsilon_2$ va $\\varepsilon_3$ tokni soat mili bo‘yicha, $\\varepsilon_1$ esa teskari yuritadi.",
+    "$I=\\dfrac{\\varepsilon_2+\\varepsilon_3-\\varepsilon_1}{R+3r}=\\dfrac{3+4-5}{7+3}=0{,}2$ A",
+    "$U_R=IR=0{,}2\\cdot7=1{,}4$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Ikkala manba tokni bir yo‘nalishda yuritadi:",
+    "$I=\\dfrac{\\varepsilon_1+\\varepsilon_2}{R}=\\dfrac{6+12}{6}=3$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "$\\varepsilon_1$ va $\\varepsilon_3$ bir yo‘nalishda, $\\varepsilon_2$ ularga qarshi ulangan.",
+    "$I=\\dfrac{\\varepsilon_1-\\varepsilon_2+\\varepsilon_3}{R+3r}=\\dfrac{6}{1{,}5+1{,}5}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "$\\varepsilon_1$ va $\\varepsilon_3$ bir yo‘nalishda, $\\varepsilon_2$ ularga qarshi ulangan.",
+    "$I=\\dfrac{\\varepsilon_1-\\varepsilon_2+\\varepsilon_3}{R+3r}=\\dfrac{3{,}5-1{,}5+2}{4{,}4+0{,}6}=0{,}8$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Ikkala manba bir yo‘nalishda ulangan:",
+    "$I=\\dfrac{\\varepsilon_1+\\varepsilon_2}{R+r_1+r_2}=\\dfrac{3}{4}=0{,}75$ A; $\\;U=IR=1{,}5$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Manbalar bir yo‘nalishda ulangan; o‘zgarmas tokda kondensatorlardan tok o‘tmaydi, ular ketma-ket va zaryadlari teng.",
+    "$U_1+U_2=\\varepsilon_1+\\varepsilon_2=25$ V; $\\;q=\\dfrac{C_1C_2}{C_1+C_2}\\cdot25=\\dfrac{21}{10}\\cdot25=52{,}5\\ \\mu\\text{C}$",
+    "$U_1=\\dfrac{q}{C_1}=17{,}5$ V; $\\;U_2=\\dfrac{q}{C_2}=7{,}5$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Manbalar bir xil qutblari bilan parallel ulangan. Tok: $I=\\dfrac{\\varepsilon_1-\\varepsilon_2}{2r}=\\dfrac{1}{1}=1$ A.",
+    "$U=\\varepsilon_1-Ir=3-0{,}5=2{,}5$ V $\\left(=\\dfrac{\\varepsilon_1+\\varepsilon_2}{2}\\right)$"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Manbalar qarama-qarshi qutblari bilan ulangan — kontur bo‘ylab EYK lar qo‘shiladi:",
+    "$I=\\dfrac{\\varepsilon_1+\\varepsilon_2}{2r}=\\dfrac{5}{1}=5$ A",
+    "$U=\\varepsilon_1-Ir=3-2{,}5=0{,}5$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Rasmda ikkala manbaning musbat qutbi pastki tugunga ulangan, EYK lar teng. Kontur bo‘ylab EYK lar bir-birini yo‘qotadi: $I=\\dfrac{\\varepsilon-\\varepsilon}{3r}=0$.",
+    "Tok yo‘q, rezistorlarda kuchlanish tushmaydi: voltmetr $\\varepsilon$ ni ko‘rsatadi."
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil qutblar bilan parallel: $I=\\dfrac{\\varepsilon_2-\\varepsilon_1}{r_1+r_2}$ — kontur tok, voltmetr $U=1{,}7$ V.",
+    "1-element: $U=\\varepsilon_1+Ir_1\\Rightarrow Ir_1=0{,}2$ V. 2-element: $U=\\varepsilon_2-Ir_2\\Rightarrow Ir_2=0{,}3$ V.",
+    "$\\dfrac{r_1}{r_2}=\\dfrac{0{,}2}{0{,}3}=\\dfrac23$"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{\\varepsilon_1-\\varepsilon_2}{2r}$; $\\;U=\\varepsilon_1-Ir=\\varepsilon_1-\\dfrac{\\varepsilon_1-\\varepsilon_2}{2}$.",
+    "$U=\\dfrac{\\varepsilon_1+\\varepsilon_2}{2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket ulanganda EYK lar qo‘shiladi:",
+    "$\\varepsilon=10\\cdot6=60$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{6\\varepsilon}{R+6r}=\\dfrac{12}{1{,}2+1{,}8}=4$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{6\\varepsilon}{R+6r}=\\dfrac{18}{6+12}=1$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{10\\varepsilon}{R+10r}=\\dfrac{60}{5+10}=4$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{2\\varepsilon}{I}-2r=\\dfrac{12}{2}-1{,}2=4{,}8\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{U}{\\varepsilon-Ir}=\\dfrac{100}{2{,}5-0{,}5}=50$"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "$\\varepsilon_2$ va $\\varepsilon_3$ tokni soat mili bo‘yicha, $\\varepsilon_1$ esa teskari yuritadi.",
+    "$I=\\dfrac{\\varepsilon_2+\\varepsilon_3-\\varepsilon_1}{R+3r}=\\dfrac{2}{10}=0{,}2$ A; $\\;U_R=0{,}2\\cdot7=1{,}4$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Manbalar qarama-qarshi ulangan, rezistorlar ketma-ket:",
+    "$I=\\dfrac{\\varepsilon_1-\\varepsilon_2}{R_1+R_2}=\\dfrac{3}{3R_2}$",
+    "$U_2=IR_2=\\dfrac{3}{3}=1$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "$\\varepsilon_1$ va $\\varepsilon_2$ bir yo‘nalishda, $\\varepsilon_3$ ularga qarshi ulangan.",
+    "$I=\\dfrac{\\varepsilon_1+\\varepsilon_2-\\varepsilon_3}{R+3r}=\\dfrac{6}{3}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "$\\varepsilon_1$ va $\\varepsilon_2$ bir yo‘nalishda, $\\varepsilon_3$ ularga qarshi ulangan.",
+    "$I=\\dfrac{\\varepsilon_1+\\varepsilon_2-\\varepsilon_3}{R+3r}=\\dfrac{3{,}5+1{,}5-2}{5}=0{,}6$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Bu sxemada manbalar qarama-qarshi ulangan:",
+    "$I=\\dfrac{\\varepsilon_1-\\varepsilon_2}{R+r_1+r_2}=\\dfrac{1}{4}=0{,}25$ A; $\\;U=IR=0{,}5$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Uzun ingichka chiziq — manbaning musbat qutbi. Manba toki ichida «−» dan «+» ga qarab yuritadi.",
+    "Ikkala manba bir yo‘nalishda ulangan, kondensatorlar ketma-ket — zaryadlari teng:",
+    "$q_1=q_2=\\dfrac{C_1C_2}{C_1+C_2}(\\varepsilon_1+\\varepsilon_2)$"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil manbalar parallel ulanganda batareya EYK i bitta manbaniki bilan bir xil: $\\varepsilon=4{,}5$ V."
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{\\varepsilon}{R+r/6}=\\dfrac{12}{5{,}5+0{,}5}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{\\varepsilon}{R+r/10}=\\dfrac{12}{5{,}9+0{,}1}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki rezistor parallel: $R/2=6\\ \\Omega$. Uch element parallel: ichki qarshilik $r/3=0{,}5\\ \\Omega$.",
+    "$R_{um}=6+0{,}5=6{,}5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil qutblar bilan parallel: $\\varepsilon_b=\\varepsilon=2{,}2$ V, $\\;r_b=\\dfrac r2=2\\ \\Omega$."
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket: $I_1=\\dfrac{n\\varepsilon}{R+nr}$; parallel: $I_2=\\dfrac{\\varepsilon}{R+r/n}=\\dfrac{n\\varepsilon}{nR+r}$.",
+    "$I_1=I_2\\Rightarrow R+nr=nR+r\\Rightarrow R=r$."
+   ]
+  },
+  {
+   "steps": [
+    "$I_{par}=\\dfrac{n\\varepsilon}{nR+r}$, $\\;I_{ket}=\\dfrac{n\\varepsilon}{R+nr}$",
+    "$\\dfrac{I_{par}}{I_{ket}}=\\dfrac{R+nr}{nR+r}$"
+   ]
+  },
+  {
+   "steps": [
+    "1-element: $U=\\varepsilon_1+Ir_1\\Rightarrow Ir_1=0{,}2$ V; 2-element: $U=\\varepsilon_2-Ir_2\\Rightarrow Ir_2=0{,}3$ V.",
+    "$\\dfrac{r_1}{r_2}=\\dfrac23$"
+   ]
+  }
+ ]
+}

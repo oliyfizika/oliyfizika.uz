@@ -1,0 +1,133 @@
+{
+ "id": 42,
+ "solutions": [
+  {
+   "steps": [
+    "Izoxorik jarayon — o‘zgarmas hajmda boradigan jarayon."
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac pT=\\text{const}\\;\\Rightarrow\\;T_2=T_1\\dfrac{p_2}{p_1}=288\\cdot\\dfrac{15{,}5}{18}=248$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$p_2=p_1\\dfrac{T_2}{T_1}=160\\cdot\\dfrac{310}{260}\\approx190$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$p_2=p_1\\dfrac{T_2}{T_1}=75\\cdot\\dfrac{260}{300}=65$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\Delta p}{p}=\\dfrac{\\Delta T}{T}\\;\\Rightarrow\\;\\dfrac1{50}=\\dfrac6T\\;\\Rightarrow\\;T=300\\ \\text{K}=27^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$p\\sim T$: $T=273n$ K.",
+    "$t=273n-273=273(n-1)\\ ^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T+300=3T\\;\\Rightarrow\\;T=150$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$T+150=2T\\;\\Rightarrow\\;T=150$ K"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{T_1}{T_2}=\\dfrac{2{,}8}{1{,}8}$, $\\;T_1-T_2=85$ K.",
+    "$T_2=\\dfrac{85\\cdot1{,}8}{1}=153\\ \\text{K}=-120^\\circ\\text{C}$; $\\;T_1=238\\ \\text{K}=-35^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T_1=300$ K, bosim 2 marta oshishi uchun $T_2=600$ K.",
+    "$\\Delta T=300$ K (300 gradus)"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\Delta p}{p}=\\dfrac{\\Delta T}{T}\\;\\Rightarrow\\;T=\\dfrac1{0{,}005}=200\\ \\text{K}=-73^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$V=\\text{const}$ da $p\\sim mT$: $\\;\\dfrac{p_2}{p_1}=\\dfrac{0{,}8m\\,T'}{mT}=\\dfrac12$.",
+    "$\\dfrac{T}{T'}=2\\cdot0{,}8=1{,}6$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\nu R}{V}T$ — izoxoraning qiyaligi hajmga teskari proporsional.",
+    "Eng yotiq $V_1$ izoxorada hajm eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Qiyalik qancha katta bo‘lsa, hajm shuncha kichik.",
+    "Eng tik 3-izoxora eng kichik hajmga mos."
+   ]
+  },
+  {
+   "steps": [
+    "Izoxorik jarayon (Sharl qonuni):",
+    "$\\dfrac pT=\\text{const}$"
+   ]
+  },
+  {
+   "steps": [
+    "Izoxorik jarayonda hajm o‘zgarmaydi; izotermik siqilishda bosim 2 marta ortsa, hajm 2 marta kamayadi.",
+    "Natijada hajm 2 marta kamaygan."
+   ]
+  },
+  {
+   "steps": [
+    "Bosimning termik koeffitsiyenti — 1 K ga isitilganda bosimning nisbiy o‘zgarishi:",
+    "$\\gamma=\\dfrac{\\Delta p}{p_0\\Delta T}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=\\dfrac{pM}{RT}$. Agar $\\rho\\sim\\dfrac1T$ bo‘lsa, $p=\\text{const}$ — bosim o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Manometr ortiqcha bosimni ko‘rsatadi: $p_1=240+100=340$ kPa, $\\;p_2=200+100=300$ kPa.",
+    "$T_2=T_1\\dfrac{p_2}{p_1}=290\\cdot\\dfrac{300}{340}\\approx256\\ \\text{K}=-17^\\circ\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "Izoxorik: $p_1=1{,}07\\cdot10^5\\cdot\\dfrac{423}{293}\\approx1{,}54\\cdot10^5$ Pa",
+    "Izobarik: $p_2=1{,}07\\cdot10^5$ Pa; $\\;p_1+p_2\\approx2{,}61\\cdot10^5$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "Germetik bo‘lmagan idishda $p=\\text{const}$: $n\\sim\\dfrac1T$.",
+    "$n_2=\\dfrac{n_1}{1{,}25}=0{,}8n_1$ — 20% ga kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Hajm o‘zgarmaydi: $p_2=1{,}5p_1$, qo‘shimcha bosim yuk hisobiga:",
+    "$0{,}5p_1=\\dfrac{mg}{S}=\\dfrac{80}{10^{-3}}=80$ kPa $\\;\\Rightarrow\\;p_1=160$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$0{,}8p_1=\\dfrac{mg}S=\\dfrac{120}{10^{-3}}=120$ kPa $\\;\\Rightarrow\\;p_1=150$ kPa"
+   ]
+  }
+ ]
+}

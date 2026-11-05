@@ -1,0 +1,47 @@
+{
+ "id": 26,
+ "solutions": [
+  {
+   "steps": [
+    "Simob ustunining bosimi $\\rho gh$ nay kesimiga bog‘liq emas; u atmosfera bosimini muvozanatlaydi.",
+    "Shuning uchun barcha naylarda balandlik bir xil: $h_1=h_2=h_3$."
+   ]
+  },
+  {
+   "steps": [
+    "Erkin tushishda vaznsizlik holati yuzaga keladi — simob ustuni o‘z og‘irligi bilan bosim bermaydi ($\\rho g_{\\text{eff}}h=0$).",
+    "Nay ichida yuqorida bo‘shliq (bosim ≈ 0), pastdan esa atmosfera bosimi ta’sir qiladi — simob nayni butunlay to‘ldiradi."
+   ]
+  },
+  {
+   "steps": [
+    "Atmosfera bosimi bir xil: $\\rho_sgh_s=\\rho_vgh_v$.",
+    "$h_v=h_s\\dfrac{\\rho_s}{\\rho_v}=0{,}76\\cdot\\dfrac{13600}{1000}\\approx10{,}33\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Har bir naychada $\\rho gh=p_{\\text{atm}}$, ya’ni $\\rho\\sim\\dfrac1h$ (diametr ahamiyatsiz).",
+    "$h_1=h_4<h_2=h_3\\;\\Rightarrow\\;\\rho_1=\\rho_4>\\rho_2=\\rho_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Minora uchining dengiz sathidan balandligi: $407+385=792$ m.",
+    "Bosim kamayishi: $\\dfrac{792}{12}=66$ mm Hg; $\\;p=760-66=694$ mm Hg"
+   ]
+  },
+  {
+   "steps": [
+    "Pastga tushganda har 12 m da bosim taxminan 1 mm Hg ga ortadi.",
+    "$\\Delta p=820-760=60$ mm Hg; $\\;h=60\\cdot12=720\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Minora uchining dengiz sathidan balandligi: $408+192=600$ m.",
+    "$\\Delta p=6\\cdot9=54$ mm Hg; $\\;p=760-54=706$ mm Hg"
+   ]
+  }
+ ]
+}

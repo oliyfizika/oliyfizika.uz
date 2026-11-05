@@ -1,0 +1,93 @@
+{
+ "id": 62,
+ "solutions": [
+  {
+   "steps": [
+    "$n=\\dfrac{1000}{200}=5$.",
+    "$R_{sh}=\\dfrac{R_A}{n-1}=\\dfrac{12}{4}=3\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Shuntdagi tok ampermetrdagidan 5 marta katta: $I_{sh}=500$ mA.",
+    "$I=100+500=600$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel tarmoqlarda tok qarshilikka teskari taqsimlanadi:",
+    "$I_A=I\\dfrac{R}{R+4R}=\\dfrac{600}{5}=120$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "$R_{sh}=\\dfrac{R_A}{n-1}=\\dfrac{180}{8}=22{,}5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{15}{2{,}5}=6$; $\\;R_{sh}=\\dfrac{12}{5}=2{,}4\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$I_{sh}=I_A\\dfrac{R_A}{R_{sh}}=13\\cdot5=65$ A; $\\;I=13+65=78$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Bitta shunt: $n_1=1+\\dfrac{R_A}{R_{sh}}=3\\Rightarrow R_A=2R_{sh}$.",
+    "Ikkalasi parallel: $R'=\\dfrac{R_{sh}}2$, $\\;n=1+\\dfrac{R_A}{R_{sh}/2}=1+4=5$"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket: $1+\\dfrac{R_A}{2R_{sh}}=4{,}5\\Rightarrow R_A=7R_{sh}$.",
+    "Parallel: $n=1+\\dfrac{R_A}{R_{sh}/2}=1+14=15$"
+   ]
+  },
+  {
+   "steps": [
+    "$R_s=1{,}7\\cdot10^{-8}\\cdot\\dfrac{0{,}15}{3\\cdot10^{-6}}=8{,}5\\cdot10^{-4}\\ \\Omega$; $\\;U=0{,}17\\cdot0{,}04=6{,}8\\cdot10^{-3}$ V",
+    "$I_s=\\dfrac{U}{R_s}=\\dfrac{6{,}8\\cdot10^{-3}}{8{,}5\\cdot10^{-4}}=8$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{R_V+R_q}{R_V}=\\dfrac{300+1200}{300}=5$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{40}{8}=5$; $\\;R_q=R_V(n-1)=2\\cdot4=8$ k$\\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{210}{15}=14$; $\\;R_q=1600\\cdot13=20800\\ \\Omega=20{,}8$ k$\\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{270}{15}=18$; $\\;R_q=300\\cdot17=5100\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{150}{20}=7{,}5$; $\\;R_q=200\\cdot6{,}5=1300\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Tarmoq kuchlanishi 120 V. Ketma-ket qarshilikda $120-80=40$ V tushadi, tok bir xil:",
+    "$\\dfrac{R}{R_V}=\\dfrac{40}{80}\\;\\Rightarrow\\;R=1400\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R_1$ va $(R_2+R_V)$ parallel: $\\dfrac1{480}=\\dfrac1{800}+\\dfrac1{R_2+R_V}\\Rightarrow R_2+R_V=1200\\ \\Omega$, $R_V=200\\ \\Omega$.",
+    "$n=\\dfrac{R_V+R_2}{R_V}=\\dfrac{1200}{200}=6$"
+   ]
+  }
+ ]
+}

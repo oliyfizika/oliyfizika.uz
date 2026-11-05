@@ -33,19 +33,19 @@
       "correct": 1
     },
     {
-      "text": "Uchta jism bir tekislikda joylashgan. O‘rtadagi jismga ta’sir qiluvchi natijaviy gravitatsion kuchни toping.",
+      "text": "Uchta jism bir to‘g‘ri chiziqda joylashgan, qo‘shni jismlar orasidagi masofa r ga teng. O‘rtadagi jismga ta’sir qiluvchi natijaviy gravitatsion kuchni toping.",
       "images": "../rasmlar13/rasm4.png",
       "answers": [
         "2Gm²/7r²",
         "3Gm²/r²",
-        "0",
+        "35Gm²/r²",
         "Gm²/r²",
         "5Gm²/2r²"
       ],
       "correct": 2
     },
     {
-      "text": "M massali sayyora atrofida m₀ va m massali sun’iy yo‘ldoshlar mos ravishda 3R va 5R radiusli orbitalarda harakatlanmoqda. Ularning o‘zaro gravitatsion ta’sir kuchini aniqlang.",
+      "text": "M massali sayyora atrofida m₀ va m massali sun’iy yo‘ldoshlar mos ravishda 3R va 5R radiusli orbitalarda harakatlanmoqda. Rasmda ko‘rsatilgan paytda α burchak uchun cos α = 0,6. Shu paytda ularning o‘zaro gravitatsion ta’sir kuchini aniqlang.",
       "images": "../rasmlar13/rasm5.png",
       "answers": [
         "γm₀m/16R²",
@@ -83,7 +83,7 @@
       "correct": 0
     },
     {
-      "text": "Qanday balandlikda jismning og‘irligi Yer sirtidagiga qaraganda n marta kichik bo‘ladi?",
+      "text": "Qanday balandlikda jismning og‘irligi Yer sirtidagiga qaraganda n² marta kichik bo‘ladi?",
       "answers": [
         "R(n−1)",
         "R(n+1)",
@@ -116,7 +116,7 @@
       "correct": 2
     },
     {
-      "text": "Yer sirtidan qanday balandlikda og‘irlik kuchi Yer sirtidagi og‘irlik kuchining 64% ini tashkil qiladi?",
+      "text": "Yer sirtidan qanday balandlikda (km) og‘irlik kuchi Yer sirtidagi og‘irlik kuchining 64% ini tashkil qiladi? Yer radiusi 6400 km.",
       "answers": [
         "1600",
         "1400",

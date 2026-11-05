@@ -140,7 +140,7 @@
       "source": "58-mavzu.tex#0:39"
     },
     {
-      "text": "Ko‘ndalang kesimi $1$ mm$^2$ bo‘lgan nikelin simdan yasalgan reostatga ulangan ampermetr $20$ A ni, voltmetr esa $210$ V ni ko‘rsatadi ($\\rho=4,2\\cdot10^{-7}~\\Omega\\cdot$m). Reostat simining uzunligi necha metr?",
+      "text": "Ko‘ndalang kesimi $10$ mm$^2$ bo‘lgan nikelin simdan yasalgan reostatga ulangan ampermetr $20$ A ni, voltmetr esa $210$ V ni ko‘rsatadi ($\\rho=4,2\\cdot10^{-7}~\\Omega\\cdot$m). Reostat simining uzunligi necha metr?",
       "answers": [
         "150",
         "180",
@@ -292,7 +292,7 @@
         "2 marta kamayadi.",
         "4 marta ortadi."
       ],
-      "correct": 2,
+      "correct": 0,
       "source": "58-mavzu.tex#0:53"
     },
     {
@@ -332,7 +332,7 @@
       "source": "58-mavzu.tex#0:56"
     },
     {
-      "text": "Massalari teng bo‘lgan sim teng ikkita metallikdan ikkita sim tayyorlandi. Ulardan biri ikkinchisidan $3$ marta uzun. Bu simlarning qarshiliklari $R_1$ va $R_2$ orasidagi munosabatni aniqlang.",
+      "text": "Bir xil metalldan massalari teng ikkita sim tayyorlandi. Birinchi sim ikkinchisidan $3$ marta uzun. Bu simlarning qarshiliklari $R_1$ va $R_2$ orasidagi munosabatni aniqlang.",
       "answers": [
         "$R_1=3R_2$",
         "$R_2=9R_1$",
@@ -368,7 +368,7 @@
       "source": "58-mavzu.tex#0:60"
     },
     {
-      "text": "Har $1$ metrining massasi $78$ kg bo‘lgan po‘lat relsning har bir metri $0,012~\\Omega$ qarshilikka ega bo‘ladi? Po‘latning zichligi $7,8$ g/cm$^3$, solishtirma qarshiligi $1,2\\cdot10^{-7}~\\Omega\\cdot$m.",
+      "text": "Har $1$ metrining massasi $78$ kg bo‘lgan po‘lat relsning qanday uzunligi $0,012~\\Omega$ qarshilikka ega bo‘ladi (m)? Po‘latning zichligi $7,8$ g/cm$^3$, solishtirma qarshiligi $1,2\\cdot10^{-7}~\\Omega\\cdot$m.",
       "answers": [
         "1200",
         "1000",
@@ -376,7 +376,7 @@
         "780",
         "10"
       ],
-      "correct": 3,
+      "correct": 1,
       "source": "58-mavzu.tex#0:61"
     },
     {
@@ -424,7 +424,7 @@
         "2 marta oshadi.",
         "4 marta kamayadi."
       ],
-      "correct": 3,
+      "correct": 4,
       "source": "58-mavzu.tex#0:66"
     },
     {
@@ -490,7 +490,7 @@
     {
       "text": "Metall simning solishtirma qarshiligi $\\rho$, uning ko‘ndalang kesim yuzi $S$ va undan o‘tayotgan tok kuchi $I$ bo‘lsa, sim ichidagi elektr maydon kuchlanganligi qanday bo‘ladi?",
       "answers": [
-        "$E=\\dfrac{I\\rho S}{ }$",
+        "$E=I\\rho S$",
         "$E=\\dfrac{I}{\\rho S}$",
         "$E=\\dfrac{I^2\\rho}{S}$",
         "$E=\\dfrac{IS}{\\rho}$",

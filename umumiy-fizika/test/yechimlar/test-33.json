@@ -1,0 +1,68 @@
+{
+ "id": 33,
+ "solutions": [
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{\\dfrac mk}\\;\\Rightarrow\\;m=\\dfrac{kT^2}{4\\pi^2}=\\dfrac{10\\cdot1}{40}=0{,}25$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{60}{30}=2$ s.",
+    "$k=\\dfrac{4\\pi^2m}{T^2}=\\dfrac{40\\cdot0{,}2}{4}=2$ N/m"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{8}{10}=0{,}8$ s.",
+    "$m=\\dfrac{kT^2}{4\\pi^2}=\\dfrac{200\\cdot0{,}64}{40}=3{,}2$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{\\dfrac mk}$ — $g$ ga bog‘liq emas, davr o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$T\\sim\\sqrt m\\;\\Rightarrow\\;T'=\\sqrt nT$"
+   ]
+  },
+  {
+   "steps": [
+    "$T\\sim\\sqrt m\\;\\Rightarrow\\;T'=\\sqrt9\\,T=3T$ (3 marta ortadi)"
+   ]
+  },
+  {
+   "steps": [
+    "Prujina 2 marta qisqartirilsa, bikrligi 2 marta ortadi.",
+    "$T'=2\\pi\\sqrt{\\dfrac{2m}{2k}}=T$ (o‘zgarmaydi)"
+   ]
+  },
+  {
+   "steps": [
+    "$T^2\\sim m$ (bikrlik bir xil): $T_1^2\\sim m_1+m_2$, $\\;T_2^2\\sim m_1$.",
+    "$T_3^2=T_1^2-T_2^2=100-64=36\\;\\Rightarrow\\;T_3=6$ s"
+   ]
+  },
+  {
+   "steps": [
+    "1) parallel: $k_1=k+3k=4k$, $\\;T_1=2\\pi\\sqrt{\\dfrac m{4k}}$.",
+    "2) ketma-ket: $k_2=\\dfrac{2k\\cdot2k}{4k}=k$, $\\;T_2=2\\pi\\sqrt{\\dfrac{4m}k}$.",
+    "$\\dfrac{T_1}{T_2}=\\sqrt{\\dfrac{1}{16}}=\\dfrac14$"
+   ]
+  },
+  {
+   "steps": [
+    "Muvozanatda $k\\Delta l=mg\\Rightarrow\\dfrac mk=\\dfrac{\\Delta l}g$.",
+    "$\\nu=\\dfrac1{2\\pi}\\sqrt{\\dfrac g{\\Delta l}}=\\dfrac1{2\\cdot3{,}14}\\sqrt{\\dfrac{10}{0{,}025}}=\\dfrac{20}{6{,}28}\\approx3{,}2$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "Yuk siljiganda uchala prujina ham unga bir yo‘nalishda kuch beradi — parallel ulanish: $k_{um}=3k$.",
+    "$T=2\\pi\\sqrt{\\dfrac m{3k}}$"
+   ]
+  }
+ ]
+}

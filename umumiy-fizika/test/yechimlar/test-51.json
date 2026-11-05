@@ -1,0 +1,108 @@
+{
+ "id": 51,
+ "solutions": [
+  {
+   "steps": [
+    "Elektr zaryadining SI dagi birligi — kulon (C)."
+   ]
+  },
+  {
+   "steps": [
+    "Elektron manfiy elementar zaryadga ega:",
+    "$e=-1{,}6\\cdot10^{-19}$ C"
+   ]
+  },
+  {
+   "steps": [
+    "Proton musbat elementar zaryadga ega:",
+    "$+1{,}6\\cdot10^{-19}$ C"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil ishorali zaryadlar bir-birini itaradi."
+   ]
+  },
+  {
+   "steps": [
+    "Qarama-qarshi ishorali zaryadlar bir-birini tortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Kulon qonuni:",
+    "$F=k\\dfrac{|q_1q_2|}{r^2}$"
+   ]
+  },
+  {
+   "steps": [
+    "$r$ — zaryadlar orasidagi masofa."
+   ]
+  },
+  {
+   "steps": [
+    "$F\\sim\\dfrac1{r^2}$: $\\;r\\to2r\\;\\Rightarrow\\;F\\to\\dfrac F4$"
+   ]
+  },
+  {
+   "steps": [
+    "$F\\sim q_1$: zaryad 2 marta ortsa, kuch 2 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$k=9\\cdot10^9\\ \\text{N·m}^2/\\text{C}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varepsilon_0=8{,}85\\cdot10^{-12}\\ \\text{C}^2/(\\text{N·m}^2)$"
+   ]
+  },
+  {
+   "steps": [
+    "$k=\\dfrac1{4\\pi\\varepsilon_0}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F\\sim\\dfrac1{r^2}$: $\\;F'=\\dfrac{9}{3^2}=1$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$F=k\\dfrac{q_1q_2}{r^2}=9\\cdot10^9\\cdot\\dfrac{10^{-6}\\cdot10^{-6}}{1^2}=9\\cdot10^{-3}\\ \\text{N}=9$ mN"
+   ]
+  },
+  {
+   "steps": [
+    "$F\\sim q_1q_2$: $\\;2\\cdot2=4\\;\\Rightarrow\\;F'=4F$"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryadning saqlanish qonuni: yopiq sistemada zaryadlarning algebraik yig‘indisi o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$q_1+q_2+q_3=\\text{const}$"
+   ]
+  },
+  {
+   "steps": [
+    "Superpozitsiya prinsipi: natijaviy kuch — har bir zaryad ta’sir kuchlarining vektor yig‘indisi."
+   ]
+  },
+  {
+   "steps": [
+    "Kulon kuchi zaryadlarni tutashtiruvchi to‘g‘ri chiziq bo‘ylab yo‘nalgan."
+   ]
+  },
+  {
+   "steps": [
+    "$F\\sim q$: zaryad 3 marta kamaysa, kuch 3 marta kamayadi"
+   ]
+  }
+ ]
+}

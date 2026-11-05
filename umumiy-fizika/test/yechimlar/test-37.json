@@ -1,0 +1,113 @@
+{
+ "id": 37,
+ "solutions": [
+  {
+   "steps": [
+    "Ideal gaz modelida molekulalar orasidagi masofadan ta’sirlashish (tortishish) hisobga olinmaydi; ular faqat to‘qnashganda ta’sirlashadi."
+   ]
+  },
+  {
+   "steps": [
+    "Molekulalar tartibsiz harakat qiladi — barcha yo‘nalishlar teng huquqli: $\\overline{v_x^2}=\\overline{v_y^2}=\\overline{v_z^2}=\\dfrac13\\overline{v^2}$."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac13nm_0v^2\\;\\Rightarrow\\;v=\\sqrt{\\dfrac{3p}{nm_0}}=\\sqrt{\\dfrac{3\\cdot166000}{1{,}14\\cdot10^{26}\\cdot2{,}8\\cdot10^{-26}}}\\approx395$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\sqrt{\\dfrac{3p}{nm_0}}=\\sqrt{\\dfrac{3\\cdot266000}{3{,}192}}=500$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac23n\\bar E=\\dfrac23\\cdot1{,}14\\cdot10^{24}\\cdot7{,}5\\cdot10^{-21}=5700\\ \\text{Pa}=5{,}7$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac23n\\bar E=\\dfrac23\\cdot1{,}14\\cdot10^{24}\\cdot8{,}5\\cdot10^{-21}=6460\\ \\text{Pa}=6{,}46$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{10^{11}}{10^{-9}\\ \\text{m}^3}=10^{20}\\ \\text{m}^{-3}$.",
+    "$p=\\dfrac13nm_0v^2=\\dfrac13\\cdot10^{20}\\cdot3\\cdot10^{-27}\\cdot10^6=0{,}1$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=nm_0\\;\\Rightarrow\\;\\dfrac{\\rho_1}{\\rho_2}=\\dfrac{n_1}{n_2}\\cdot\\dfrac{m_1}{m_2}=\\dfrac12\\cdot4=2$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac13\\rho v^2\\;\\Rightarrow\\;\\rho=\\dfrac{3p}{v^2}=\\dfrac{3\\cdot121000}{250000}\\approx1{,}45\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Yo‘nalishga ega kattalik faqat tezlik (2). Modda miqdori, konsentratsiya va bosim — skalyar."
+   ]
+  },
+  {
+   "steps": [
+    "$m_0=\\dfrac{\\mu}{N_A}=\\dfrac{0{,}032}{6{,}02\\cdot10^{23}}\\approx5{,}3\\cdot10^{-26}$ kg.",
+    "$n=\\dfrac{3p}{m_0v^2}=\\dfrac{3\\cdot2\\cdot10^5}{5{,}3\\cdot10^{-26}\\cdot4{,}9\\cdot10^5}\\approx2{,}3\\cdot10^{25}\\ \\text{m}^{-3}$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac13\\dfrac mVv^2\\;\\Rightarrow\\;v=\\sqrt{\\dfrac{3pV}{m}}=\\sqrt{\\dfrac{3\\cdot2\\cdot10^5\\cdot5}{6}}\\approx707$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=\\dfrac{3p}{v^2}=\\dfrac{3\\cdot66200}{370^2}\\approx1{,}45\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "MKN asosiy tenglamasi bosimni molekulalar parametrlari orqali ifodalaydi:",
+    "$p=\\dfrac13nm_0v^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac23n\\bar E$: hajm 2 marta ortsa $n$ 2 marta kamayadi, $\\bar E$ esa 2 marta ortadi.",
+    "Bosim o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac13nm_0v^2$: $n\\to\\dfrac n2$, $v^2\\to\\dfrac{v^2}{4}$.",
+    "$p\\to\\dfrac p8$ (8 marta kamayadi)"
+   ]
+  },
+  {
+   "steps": [
+    "$v^2=\\dfrac{3pV}{m}$: $pV\\to6\\cdot\\dfrac1{1{,}5}=4$ marta.",
+    "$v\\to\\sqrt4\\,v=2v$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac23n\\bar E\\;\\Rightarrow\\;n=\\dfrac{3p}{2\\bar E}=\\dfrac{3\\cdot2{,}5\\cdot10^5}{2\\cdot7{,}5\\cdot10^{-21}}=5\\cdot10^{25}\\ \\text{m}^{-3}$"
+   ]
+  },
+  {
+   "steps": [
+    "Berk idishda $n$ o‘zgarmaydi, $p\\sim v^2$.",
+    "$\\dfrac{p_2}{p_1}=1{,}2^2=1{,}44$ — bosim 44% ga ko‘payadi"
+   ]
+  },
+  {
+   "steps": [
+    "$m_0=\\dfrac{0{,}032}{6\\cdot10^{23}}\\approx5{,}33\\cdot10^{-26}$ kg. Elastik urilishda impulsning normal tashkil etuvchisi teskarisiga o‘zgaradi:",
+    "$\\Delta p=2m_0v\\cos60^\\circ=2\\cdot5{,}33\\cdot10^{-26}\\cdot1200\\cdot0{,}5\\approx6{,}4\\cdot10^{-23}$ N·s"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "id": 9,
+ "solutions": [
+  {
+   "steps": [
+    "$n_1=\\dfrac{2400}{60}=40\\ \\text{s}^{-1}$, $\\;\\omega_1=2\\pi n_1=80\\pi$ rad/s.",
+    "Tasmali uzatmada g‘ildiraklar chetining chiziqli tezligi bir xil: $\\omega_1R_1=\\omega_2R_2$.",
+    "$\\omega_2=\\omega_1\\dfrac{R_1}{R_2}=80\\pi\\cdot\\dfrac36=40\\pi\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Zanjir bir vaqtda ikkala g‘ildirakdan bir xil sondagi tishni o‘tkazadi: $N_1n_1=N_2n_2$.",
+    "$\\dfrac{\\omega_2}{\\omega_1}=\\dfrac{N_1}{N_2}=4\\;\\Rightarrow\\;\\omega_2=4\\omega_1$"
+   ]
+  },
+  {
+   "steps": [
+    "Tasma sirpanmasa, ikkala shkiv chetining chiziqli tezligi tasma tezligiga teng:",
+    "$v_2=v_1=2\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Bir sekundda ikkala shesternadan bir xil sondagi tish o‘tadi: $N_1n_1=N_2n_2$.",
+    "$n_2=\\dfrac{250}{60}\\ \\text{s}^{-1}$; $\\;N_2=\\dfrac{N_1n_1}{n_2}=\\dfrac{150\\cdot20\\cdot60}{250}=720$"
+   ]
+  },
+  {
+   "steps": [
+    "Orqa g‘ildirak chastotasi: $n_2=n_1\\dfrac{N_1}{N_2}=1\\cdot\\dfrac{48}{18}\\approx2{,}67$ ayl/s.",
+    "$v=\\pi Dn_2=3{,}14\\cdot0{,}7\\cdot2{,}67\\approx5{,}9\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$n_2=1\\cdot\\dfrac{48}{15}=3{,}2$ ayl/s",
+    "$v=\\pi Dn_2=3{,}14\\cdot0{,}5\\cdot3{,}2\\approx5\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tasmali uzatmada $\\omega_1R_1=\\omega_2R_2$:",
+    "$\\omega_2=\\omega_1\\dfrac{R_1}{R_2}=2\\cdot\\dfrac{10}{15}\\approx1{,}3\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Chetki nuqta tezligi: $v=2\\pi nR$.",
+    "$\\dfrac{v_g}{v_b}=\\dfrac{n_gR_g}{n_bR_b}=\\dfrac{1}{40}\\cdot8=\\dfrac15$ — ya’ni 1 : 5"
+   ]
+  },
+  {
+   "steps": [
+    "Katta shkiv: $n_1=3$ ayl/s, $\\;v=2\\pi n_1R_1=2\\pi\\cdot3\\cdot0{,}32$ m/s.",
+    "Tasma tezligi ikkala shkivda bir xil:",
+    "$\\omega_2=\\dfrac{v}{R_2}=\\dfrac{6\\pi\\cdot0{,}32}{0{,}24}=8\\pi\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Sirpanmasdan dumalayotgan g‘ildirak nuqtasining tezligi = ilgarilanma $\\vec v$ + aylanma $\\omega r$ (moduli $v$).",
+    "A nuqta (markaz balandligida): $v_A=\\sqrt{v^2+v^2}=v\\sqrt2=4\\sqrt2\\;\\Rightarrow\\;v=4$ m/s — traktor tezligi.",
+    "B nuqta — kichik g‘ildirakning eng yuqori nuqtasi: $v_B=v+v=2v=8\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Bitta o‘qdagi shkivlarning davri (va chastotasi) bir xil.",
+    "$n_1=n_2=\\dfrac1{T_2}=\\dfrac14=0{,}25\\ \\text{s}^{-1}$"
+   ]
+  },
+  {
+   "steps": [
+    "Bir o‘qqa mahkamlangan shkivlar bir xil burchak tezlik bilan aylanadi — davrlari teng:",
+    "$T_2=T_1=10\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Burchak tezlik bir xil, $v=\\omega R$ — tezlik radiusga proporsional:",
+    "$v_2=v_1\\dfrac{R_2}{R_1}=2{,}25\\cdot\\dfrac{25}{15}=3{,}75\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\omega^2R$, $\\omega$ bir xil — tezlanish radiusga proporsional:",
+    "$a_{\\text{kichik}}=1{,}4\\cdot\\dfrac{20}{35}=0{,}8\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Bitta o‘qdagi shkivlarning barcha nuqtalari bir xil davr bilan aylanadi:",
+    "$T=2{,}25\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Diskning barcha nuqtalari bir xil $\\omega$ bilan aylanadi: $a=\\omega^2r$.",
+    "Nuqta o‘qdan qancha uzoq bo‘lsa, tezlanishi shuncha katta: $r_1<r_2<r_3\\;\\Rightarrow\\;a_1<a_2<a_3$."
+   ]
+  }
+ ]
+}

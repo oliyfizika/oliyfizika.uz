@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="420" height="200" font-family="serif" font-size="22">
+<rect width="420" height="200" fill="#fff"/>
+<path d="M30 30 L210 30 L210 58 L390 58 L390 92 L210 92 L210 120 L30 120 Z" fill="#cfe3f5" stroke="none"/>
+<g stroke="#111" stroke-width="2.5" fill="none">
+<path d="M30 30 L210 30 L210 58 L390 58"/>
+<path d="M30 120 L210 120 L210 92 L390 92"/>
+</g>
+<g fill="#111"><text x="120" y="22" text-anchor="middle">S₁ = 3 sm²</text><text x="300" y="22" text-anchor="middle">S₂ = 1 sm²</text><text x="120" y="182" text-anchor="middle">ϑ₁ = ?</text><text x="300" y="182" text-anchor="middle">ϑ₂ = 9 m/s</text></g><g stroke="#1d4f86" stroke-width="2" fill="#1d4f86"><line x1="95" y1="75" x2="140" y2="75"/><path d="M140 69 L152 75 L140 81 Z"/><line x1="275" y1="75" x2="320" y2="75"/><path d="M320 69 L332 75 L320 81 Z"/></g>
+</svg>

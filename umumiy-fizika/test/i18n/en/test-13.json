@@ -32,17 +32,17 @@
       ]
     },
     {
-      "text": "Three bodies lie in the same plane. Find the net gravitational force acting on the middle body.",
+      "text": "Three bodies lie on one straight line; the distance between neighbouring bodies is r. Find the net gravitational force acting on the middle body.",
       "answers": [
         "2Gm²/7r²",
         "3Gm²/r²",
-        "0",
+        "35Gm²/r²",
         "Gm²/r²",
         "5Gm²/2r²"
       ]
     },
     {
-      "text": "Artificial satellites of masses m₀ and m move around a planet of mass M in orbits of radii 3R and 5R respectively. Determine the force of their mutual gravitational attraction.",
+      "text": "Artificial satellites of masses m₀ and m move around a planet of mass M in orbits of radii 3R and 5R respectively. At the moment shown, cos α = 0.6 for the angle α. Determine the force of their mutual gravitational attraction at that moment.",
       "answers": [
         "γm₀m/16R²",
         "γMm₀/16R²",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "text": "At what height is the weight of a body n times smaller than on the Earth's surface?",
+      "text": "At what height is the weight of a body n² times smaller than on the Earth's surface?",
       "answers": [
         "R(n−1)",
         "R(n+1)",
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "text": "At what height above the Earth's surface is the weight 64% of the weight at the Earth's surface?",
+      "text": "At what height (km) above the Earth's surface is the weight 64% of the weight at the Earth's surface? The Earth's radius is 6400 km.",
       "answers": [
         "1600",
         "1400",

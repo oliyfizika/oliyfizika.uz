@@ -1,0 +1,134 @@
+{
+ "id": 12,
+ "solutions": [
+  {
+   "steps": [
+    "Nyutonning II qonuni: $\\vec a=\\dfrac{\\vec F}{m}$ — tezlanish kuchga to‘g‘ri, massaga teskari proporsional."
+   ]
+  },
+  {
+   "steps": [
+    "$\\text{N}=\\text{kg}\\cdot\\text{m/s}^2$, shuning uchun:",
+    "$\\dfrac{\\text{N}}{\\text{kg}}=\\dfrac{\\text{kg}\\cdot\\text{m/s}^2}{\\text{kg}}=\\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Galileyning nisbiylik prinsipi: barcha inersial sanoq sistemalari teng huquqli, ularda mexanik hodisalar bir xil kechadi (2).",
+    "Shuning uchun sistema ichidagi mexanik tajriba bilan uning tinch turganini yoki tekis harakatlanayotganini aniqlab bo‘lmaydi (3).",
+    "1 va 4-fikrlar noto‘g‘ri: inersial sistema tekis harakatlanishi ham mumkin, mexanika qonunlari barcha inersial sistemalarda bajariladi."
+   ]
+  },
+  {
+   "steps": [
+    "Tinch holatdan $s$ masofada: $v^2=2as=\\dfrac{2Fs}{m}$, ya’ni $F\\sim v^2$.",
+    "$v\\to2v\\;\\Rightarrow\\;F\\to4F$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_0=39{,}6\\ \\text{km/h}=11$ m/s, $v=27\\ \\text{km/h}=7{,}5$ m/s.",
+    "$a=\\dfrac{11-7{,}5}{60}\\approx0{,}0583\\ \\text{m/s}^2$",
+    "$F=ma=5\\cdot10^5\\cdot0{,}0583\\approx2{,}92\\cdot10^4\\ \\text{N}=29{,}2\\ \\text{kN}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac Fm=\\dfrac{6}{12}=0{,}5\\ \\text{m/s}^2$",
+    "$v=at=0{,}5\\cdot8=4\\ \\text{m/s}$",
+    "$s=\\dfrac{at^2}{2}=\\dfrac{0{,}5\\cdot64}{2}=16\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$72\\ \\text{km/h}=20$ m/s, $54\\ \\text{km/h}=15$ m/s.",
+    "$a=\\dfrac{20-15}{10}=0{,}5\\ \\text{m/s}^2$",
+    "$F=ma=2\\cdot10^5\\cdot0{,}5=10^5\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Birinchi sekundda (tinch holatdan): $s=\\dfrac{a\\cdot1^2}{2}$.",
+    "$a=2s=2\\cdot0{,}15=0{,}3\\ \\text{m/s}^2$",
+    "$F=ma=180\\cdot0{,}3=54\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{2-1}{5}=0{,}2\\ \\text{m/s}^2$",
+    "$m=\\dfrac Fa=\\dfrac{20}{0{,}2}=100\\ \\text{kg}$"
+   ]
+  },
+  {
+   "steps": [
+    "Suyanchiq odamga tezlanish beradi; Nyutonning III qonuniga ko‘ra odam suyanchiqni shuncha kuch bilan bosadi:",
+    "$F=ma=70\\cdot1=70\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=57{,}6\\ \\text{km/h}=16$ m/s.",
+    "$a=\\dfrac{v^2}{2s}=\\dfrac{256}{400}=0{,}64\\ \\text{m/s}^2$, $\\;F=ma=1{,}5\\cdot10^6\\cdot0{,}64=9{,}6\\cdot10^5$ N",
+    "$F=\\dfrac{mv^2}{2s}$ — yo‘l 2 marta kamaysa, kuch 2 marta ortishi kerak."
+   ]
+  },
+  {
+   "steps": [
+    "$x=x_0+v_0t+\\dfrac{at^2}{2}$ bilan solishtiramiz: $\\dfrac a2=15\\;\\Rightarrow\\;a=30\\ \\text{m/s}^2$.",
+    "$F=ma=1\\cdot30=30\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a_1=\\dfrac{F}{2\\ \\text{t}}$, $\\;a_2=\\dfrac{2F}{8\\ \\text{t}}=\\dfrac{F}{4\\ \\text{t}}$",
+    "$\\dfrac{a_1}{a_2}=2$ — yengil avtomobilning tezlanishi 2 marta katta."
+   ]
+  },
+  {
+   "steps": [
+    "Tortish kuchi bir xil: $F=(M+m)\\cdot0{,}6=(M+m+2500)\\cdot0{,}3$, $M=2000$ kg.",
+    "$0{,}6(2000+m)=0{,}3(4500+m)\\;\\Rightarrow\\;1200+0{,}6m=1350+0{,}3m$",
+    "$m=500\\ \\text{kg}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=m_1a_1=4\\cdot0{,}3=1{,}2$ (t·m/s²)",
+    "$F=(m_1+m_2)a_2\\;\\Rightarrow\\;4+m_2=\\dfrac{1{,}2}{0{,}2}=6\\;\\Rightarrow\\;m_2=2\\ \\text{t}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yerga urilish tezligi: $v^2=v_0^2+2gh=400+2\\cdot10\\cdot250=5400\\ \\text{m}^2/\\text{s}^2$.",
+    "Tuproqda sekinlanish: $a=\\dfrac{v^2}{2d}=\\dfrac{5400}{0{,}4}=13500\\ \\text{m/s}^2$",
+    "$F-mg=ma\\;\\Rightarrow\\;F=m(a+g)=2\\cdot13510\\approx27000\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan har bosqichdagi tezlanish:",
+    "0–2 s: $a=\\dfrac{4-0}{2}=2$; $\\;$2–4 s: $a=0$; $\\;$4–8 s: $a=\\dfrac{0-4}{4}=-1\\ \\text{m/s}^2$",
+    "$F_x=ma$: $\\;2\\cdot2=4$ N; $\\;0$; $\\;2\\cdot(-1)=-2$ N"
+   ]
+  },
+  {
+   "steps": [
+    "Tezlanish natijaviy kuch yo‘nalishida. Katakchalarda: $\\vec F_1=(3;\\,3)$, $\\vec F_2=(0;\\,-3)$.",
+    "$\\vec F=\\vec F_1+\\vec F_2=(3;\\,0)$ — gorizontal o‘ngga, ya’ni 2-vektor yo‘nalishi."
+   ]
+  },
+  {
+   "steps": [
+    "Butun sistema: $a=\\dfrac{F}{m_1+m_2}=\\dfrac{1800}{20000}=0{,}09\\ \\text{m/s}^2$.",
+    "Tirkash moslamasi oxirgi (8 t li) platformaga tezlanish beradi:",
+    "$T=m_2a=8000\\cdot0{,}09=720\\ \\text{N}=0{,}72\\ \\text{kN}$"
+   ]
+  },
+  {
+   "steps": [
+    "Katakchalarda: $\\vec F_1=(-3;0)$, $\\vec F_2=(-3;-2)$, $\\vec F_3=(0;2)$, $\\vec F_4=(3;0)$.",
+    "$\\vec F_2+\\vec F_3+\\vec F_4=(0;\\,0)$ — demak $\\vec F_1$ olib tashlansa, qolganlarining teng ta’sir etuvchisi nolga teng."
+   ]
+  }
+ ]
+}

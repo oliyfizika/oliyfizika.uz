@@ -1,0 +1,130 @@
+{
+ "id": 45,
+ "solutions": [
+  {
+   "steps": [
+    "$\\sigma=\\dfrac{E_{sirt}}{S}$ — birligi J/m² (= N/m)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\sigma=\\dfrac Fl$ — birligi N/m (J/m² bilan bir xil)."
+   ]
+  },
+  {
+   "steps": [
+    "Sovun pardasining ikki sirti bor: $F=2\\sigma l$.",
+    "$F=2\\cdot0{,}04\\cdot0{,}05=0{,}004\\ \\text{N}=4$ mN"
+   ]
+  },
+  {
+   "steps": [
+    "Uzilish paytida $mg=\\sigma\\pi d$.",
+    "$m=\\dfrac{\\sigma\\pi d}{g}=\\dfrac{0{,}073\\cdot3{,}14\\cdot0{,}004}{9{,}8}\\approx9{,}4\\cdot10^{-5}\\ \\text{kg}=94$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "$P=\\sigma\\pi d=0{,}073\\cdot3{,}14\\cdot10^{-3}\\approx2{,}3\\cdot10^{-4}\\ \\text{N}=0{,}23$ mN"
+   ]
+  },
+  {
+   "steps": [
+    "$m_1=\\dfrac{\\sigma\\pi d}{g}=\\dfrac{0{,}072\\cdot3{,}14\\cdot1{,}8\\cdot10^{-3}}{10}\\approx4{,}1\\cdot10^{-5}$ kg",
+    "$N=\\dfrac{10^{-3}\\ \\text{kg}}{4{,}1\\cdot10^{-5}\\ \\text{kg}}\\approx25$"
+   ]
+  },
+  {
+   "steps": [
+    "Bitta tomchi: $m_1=\\dfrac{\\sigma\\pi d}{g}=\\dfrac{0{,}024\\cdot3{,}14\\cdot0{,}002}{10}\\approx1{,}5\\cdot10^{-5}$ kg.",
+    "$m=\\rho V=800\\cdot25\\cdot10^{-6}=0{,}02$ kg; $\\;N=\\dfrac{0{,}02}{1{,}5\\cdot10^{-5}}\\approx1330$ tomchi",
+    "$t\\approx1330\\ \\text{s}\\approx22$ min"
+   ]
+  },
+  {
+   "steps": [
+    "$m_1=\\dfrac{2\\pi r\\sigma}{g}=\\dfrac{2\\cdot3{,}14\\cdot0{,}5\\cdot10^{-3}\\cdot0{,}05}{9{,}8}\\approx1{,}6\\cdot10^{-5}$ kg",
+    "$N=\\dfrac{0{,}1}{1{,}6\\cdot10^{-5}}\\approx6248$"
+   ]
+  },
+  {
+   "steps": [
+    "Tezlanish bilan pastga harakatda effektiv og‘irlik: $m(g-a)=\\sigma\\pi d$.",
+    "$m=\\dfrac{0{,}073\\cdot3{,}14\\cdot10^{-3}}{9{,}8-4{,}5}\\approx4{,}32\\cdot10^{-5}\\ \\text{kg}=43{,}24$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "$m_1=\\dfrac{\\sigma\\pi d}{g}=\\dfrac{0{,}072\\cdot3{,}14\\cdot10^{-3}}{10}\\approx2{,}26\\cdot10^{-5}$ kg",
+    "$N=\\dfrac{6\\cdot10^{-3}}{2{,}26\\cdot10^{-5}}\\approx265$"
+   ]
+  },
+  {
+   "steps": [
+    "Suv uchun $\\sigma=0{,}073$ N/m: $\\;m_1=\\dfrac{\\sigma\\pi d}{g}=\\dfrac{0{,}073\\cdot3\\cdot0{,}002}{10}=4{,}38\\cdot10^{-5}$ kg.",
+    "$N=\\dfrac{0{,}219}{4{,}38\\cdot10^{-5}}=5000$"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\dfrac{\\sigma\\pi d}{g}=\\dfrac{0{,}073\\cdot3{,}14\\cdot1{,}2\\cdot10^{-3}}{10}\\approx2{,}8\\cdot10^{-5}\\ \\text{kg}=28$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "Suv ichidagi pufakning bitta sirti bor:",
+    "$\\Delta p=\\dfrac{2\\sigma}{r}=\\dfrac{2\\cdot0{,}072}{0{,}009}=16$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "Sovun pufagining ikki sirti bor:",
+    "$\\Delta p=\\dfrac{4\\sigma}{r}=\\dfrac{4\\cdot0{,}04}{0{,}01}=16$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki sirt: $E=2\\sigma\\cdot4\\pi r^2$.",
+    "$E=2\\cdot0{,}04\\cdot4\\cdot3{,}14\\cdot0{,}025^2\\approx6{,}3\\cdot10^{-4}$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$E=2\\sigma\\cdot4\\pi r^2=2\\cdot0{,}04\\cdot4\\cdot3\\cdot0{,}04^2\\approx1{,}54\\cdot10^{-3}\\ \\text{J}=1{,}54$ mJ"
+   ]
+  },
+  {
+   "steps": [
+    "$E\\sim r^2$: $\\;64=8^2\\;\\Rightarrow\\;r$ 8 marta orttirilishi kerak"
+   ]
+  },
+  {
+   "steps": [
+    "$A=2\\sigma\\cdot4\\pi(r_2^2-r_1^2)=2\\cdot0{,}045\\cdot4\\cdot3{,}14\\cdot(0{,}0036-0{,}0001)\\approx4\\cdot10^{-3}\\ \\text{J}=4$ mJ"
+   ]
+  },
+  {
+   "steps": [
+    "Pufak pardasining ikki sirti: $A=2\\sigma\\Delta S$.",
+    "$A=2\\cdot0{,}05\\cdot2\\cdot10^{-4}=2\\cdot10^{-5}\\ \\text{J}=20\\ \\mu\\text{J}$"
+   ]
+  },
+  {
+   "steps": [
+    "8 ta tomchi: $r=\\dfrac R2$, umumiy sirt $8\\cdot4\\pi\\dfrac{R^2}{4}=2\\cdot4\\pi R^2$ — sirt $4\\pi R^2$ ga ortadi.",
+    "$mgh=\\sigma\\cdot4\\pi R^2$, $\\;m=\\rho\\dfrac43\\pi R^3\\;\\Rightarrow\\;h=\\dfrac{3\\sigma}{\\rho gR}$",
+    "$h=\\dfrac{3\\cdot0{,}072}{10^4\\cdot0{,}6\\cdot10^{-3}}=0{,}036\\ \\text{m}=3{,}6$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{3\\sigma}{\\rho gR}=\\dfrac{3\\cdot0{,}072}{10^4\\cdot0{,}3\\cdot10^{-3}}=0{,}072\\ \\text{m}=7{,}2$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "Tomchilar qo‘shilganda umumiy sirt yuzasi kamayadi, ajralgan sirt energiyasi ichki energiyaga aylanadi — harorat ko‘tariladi."
+   ]
+  }
+ ]
+}

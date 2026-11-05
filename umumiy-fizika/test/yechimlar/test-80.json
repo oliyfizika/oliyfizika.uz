@@ -1,0 +1,96 @@
+{
+ "id": 80,
+ "solutions": [
+  {
+   "steps": [
+    "Dispersiya — sindirish ko‘rsatkichining to‘lqin uzunligiga (chastotaga) bog‘liqligi: $n=n(\\lambda)$."
+   ]
+  },
+  {
+   "steps": [
+    "Prizmada har bir rang turlicha sinadi — oq yorug‘lik rangli spektrga ajraladi."
+   ]
+  },
+  {
+   "steps": [
+    "Qizil nur uchun $n$ eng kichik — u eng kam og‘adi."
+   ]
+  },
+  {
+   "steps": [
+    "Binafsha nur uchun $n$ eng katta — u eng ko‘p og‘adi."
+   ]
+  },
+  {
+   "steps": [
+    "Normal dispersiyada $\\lambda$ kichrayishi bilan $n$ ortadi — binafsha nurda eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac cn$: $n$ eng kichik bo‘lgan qizil nur shishada eng tez tarqaladi."
+   ]
+  },
+  {
+   "steps": [
+    "Spektr tartibi (to‘lqin uzunligi kamayishi bo‘yicha): qizil, to‘q sariq, sariq, yashil, havorang, ko‘k, binafsha."
+   ]
+  },
+  {
+   "steps": [
+    "Quyosh nuri yomg‘ir tomchisida sinadi, ichki sirtdan qaytadi va yana sinib chiqadi; dispersiya tufayli ranglar ajraladi."
+   ]
+  },
+  {
+   "steps": [
+    "Monoxromatik nur bitta to‘lqin uzunlikka ega — prizma uni faqat og‘diradi, spektrga yoymaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota manba bilan belgilanadi va muhitga bog‘liq emas; $\\vartheta$ va $\\lambda$ esa o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "Oq yorug‘lik — turli rangdagi (to‘lqin uzunlikdagi) nurlar aralashmasi."
+   ]
+  },
+  {
+   "steps": [
+    "Jism rangi u qaytaradigan nurlar rangi: qizil gul qizil nurni qaytarib, qolganlarini yutadi."
+   ]
+  },
+  {
+   "steps": [
+    "Qizil gul ko‘k nurni yutadi, qaytaradigan qizil nur esa yo‘q — u qora ko‘rinadi."
+   ]
+  },
+  {
+   "steps": [
+    "Normal dispersiyada $\\lambda$ ortishi bilan $n$ kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Vakuumda barcha to‘lqinlar $c$ tezlikda tarqaladi, $n=1$ to‘lqin uzunlikka bog‘liq emas — dispersiya yo‘q."
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘rinadigan yorug‘lik: taxminan $380$–$760$ nm."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac cn=\\dfrac{3\\cdot10^8}{1{,}5}=2\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi, tezlik $n$ marta kamayadi.",
+    "$\\lambda=\\dfrac{\\lambda_0}{n}=\\dfrac{540}{1{,}5}=360$ nm"
+   ]
+  }
+ ]
+}

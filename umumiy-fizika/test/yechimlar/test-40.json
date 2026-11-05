@@ -1,0 +1,167 @@
+{
+ "id": 40,
+ "solutions": [
+  {
+   "steps": [
+    "Boyl–Mariott qonuni: $T=\\text{const}$ da $pV=\\text{const}$, ya’ni $p\\sim\\dfrac1V$."
+   ]
+  },
+  {
+   "steps": [
+    "O‘rtacha kinetik energiya $\\bar E=\\dfrac32kT$ — faqat temperaturaga bog‘liq. Izotermik jarayonda $T=\\text{const}$."
+   ]
+  },
+  {
+   "steps": [
+    "Izotermik jarayonda $T$ o‘zgarmaydi, $p$ va $V$ o‘zgaradi ($pV=\\text{const}$)."
+   ]
+  },
+  {
+   "steps": [
+    "Izotermik jarayon — o‘zgarmas temperaturada boradigan jarayon."
+   ]
+  },
+  {
+   "steps": [
+    "Hajm kamaysa, konsentratsiya (zichlik) ortadi, devorga vaqt birligidagi urilishlar soni ortadi — bosim ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Hajm $\\dfrac25$ qismga kamaydi: $V_2=0{,}6V_1$.",
+    "$p_2=\\dfrac{p_1}{0{,}6}=\\dfrac{780}{0{,}6}=1300$ mm sim. ust. $=1300\\cdot133{,}3\\approx1{,}74\\cdot10^5$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "$T=183+273=456$ K, $\\;V_2=5$ l $=5\\cdot10^{-3}\\ \\text{m}^3$.",
+    "$p=\\dfrac{NkT}{V_2}=\\dfrac{1{,}6\\cdot10^{22}\\cdot1{,}38\\cdot10^{-23}\\cdot456}{5\\cdot10^{-3}}\\approx2\\cdot10^4\\ \\text{Pa}=20$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$V_2=V_1\\dfrac{p_0}{p_2}=1\\cdot\\dfrac{1{,}01\\cdot10^5}{4{,}9\\cdot10^6}\\approx0{,}02\\ \\text{m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik o‘zgarmagan — temperatura o‘zgarmagan, jarayon izotermik: $p\\sim\\dfrac1V$.",
+    "Bosim 3 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$p\\cdot8=(p+4)\\cdot6\\;\\Rightarrow\\;2p=24\\;\\Rightarrow\\;p=12$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "Barcha nuqtalarda $T$ bir xil: $V=\\dfrac{\\nu RT}{p}\\sim\\dfrac1p$.",
+    "Bosim eng kichik bo‘lgan 1-holatda hajm eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil hajmda bosim katta bo‘lgan izotermaning temperaturasi yuqori ($pV=\\nu RT$).",
+    "Koordinata boshidan eng uzoqdagi 1-izoterma."
+   ]
+  },
+  {
+   "steps": [
+    "Tutashtirilganda: $p_1V_1+p_2V_2=p(V_1+V_2)$.",
+    "$p_2=\\dfrac{200\\cdot40-100\\cdot10}{30}\\approx233{,}3$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{p_1V_1+p_2V_2}{V_1+V_2}=\\dfrac{20\\cdot3+40\\cdot2}{5}=28$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "$p_1\\cdot40+600\\cdot20=1000\\cdot60\\;\\Rightarrow\\;p_1=1200\\ \\text{kPa}=1{,}2$ MPa"
+   ]
+  },
+  {
+   "steps": [
+    "Porshenlar bo‘shatilgach bosimlar tenglashadi, har bir gaz uchun $pV=\\text{const}$:",
+    "$p=\\dfrac{\\sum p_iV_i}{\\sum V_i}=\\dfrac{2\\cdot36+6\\cdot60+5\\cdot104}{200}\\cdot10^4=4{,}76\\cdot10^4$ Pa",
+    "$V_2'=\\dfrac{p_2V_2}{p}=\\dfrac{6\\cdot10^4\\cdot60}{4{,}76\\cdot10^4}\\approx75{,}6\\ \\text{sm}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Bosimlar $2p$ va $p$, uzunliklar 0,5 m. Porshen $x$ ga siljiydi:",
+    "$2p\\cdot0{,}5=p'(0{,}5+x)$, $\\;p\\cdot0{,}5=p'(0{,}5-x)$",
+    "$2(0{,}5-x)=0{,}5+x\\;\\Rightarrow\\;x=\\dfrac16$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$p_0+\\rho gh=4p_0\\;\\Rightarrow\\;h=\\dfrac{3p_0}{\\rho g}=\\dfrac{3\\cdot10^5}{10^4}=30$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$p=p_0+\\rho gh=10^5+2\\cdot10^5=3p_0\\;\\Rightarrow\\;\\dfrac{V_2}{V_1}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "Hajm $1{,}1^3=1{,}331$ marta ortdi.",
+    "$\\rho gh=0{,}331p_0\\;\\Rightarrow\\;h=3{,}31$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$p_1=p_0+\\rho gh=1{,}5\\cdot10^5$ Pa; $\\;V_2=V_1\\dfrac{p_1}{p_0}=5\\cdot1{,}5=7{,}5\\ \\text{mm}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Hajm $1{,}2^3=1{,}728$ marta ortdi.",
+    "$h=\\dfrac{0{,}728p_0}{\\rho g}=7{,}28$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Kamerada 35 atm da 12 l havo bo‘lishi uchun normal bosimdagi $35\\cdot12=420$ l havo kerak.",
+    "$N=\\dfrac{420}{0{,}5}=840$ marta"
+   ]
+  },
+  {
+   "steps": [
+    "Yopiq uchi pastda: $p_1=p_0+75$ mm, $l_1=120$ mm; gorizontal: $p_2=p_0$, $l_2=132$ mm.",
+    "$(p_0+75)\\cdot120=p_0\\cdot132\\;\\Rightarrow\\;p_0=750\\ \\text{mm sim. ust.}\\approx1{,}0\\cdot10^5$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "Kamerada 1 atm dagi 12 l havo bor; 35 atm uchun normal bosimdagi $35\\cdot12=420$ l kerak, qo‘shiladigani $408$ l.",
+    "$N=\\dfrac{408}{0{,}5}=816$ marta"
+   ]
+  },
+  {
+   "steps": [
+    "Har yurishda ballon havosi $V+v$ hajmga kengayadi: $\\dfrac{V+v}{V}=1{,}2$.",
+    "$v=0{,}2V=0{,}2\\cdot2=0{,}4$ l"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{V+v}{V}=1{,}2\\;\\Rightarrow\\;v=0{,}2\\cdot4=0{,}8$ l"
+   ]
+  },
+  {
+   "steps": [
+    "Nay uzunligi $L$, $p_0=76$ sm sim. ust. Boshida: $p_1=76+6$, gaz ustuni $L-6$; to‘nkarilgach: $p_2=76-5$, ustun $L-5$.",
+    "$82(L-6)=71(L-5)\\;\\Rightarrow\\;11L=137\\;\\Rightarrow\\;L\\approx12{,}45$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$(76+2)(L-2)=(76-1)(L-1)\\;\\Rightarrow\\;3L=81\\;\\Rightarrow\\;L=27$ sm"
+   ]
+  }
+ ]
+}

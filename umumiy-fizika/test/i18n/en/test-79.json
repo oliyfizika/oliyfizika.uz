@@ -242,7 +242,7 @@
       ]
     },
     {
-      "text": "The wavelength of the yellow sodium line is 500 nm. If the period of the diffraction grating is 2.8 $\\mu$m, what is the highest order of the spectrum?",
+      "text": "The wavelength of monochromatic light is 500 nm. If the period of the diffraction grating is 2.8 $\\mu$m, what is the highest order of the spectrum?",
       "answers": [
         "6.",
         "4.",
@@ -404,10 +404,10 @@
     {
       "text": "How does the distance $b$ between a diffraction maximum and the center of the screen depend on the grating period $d$?",
       "answers": [
-        "if $a$ increases, $b$ decreases.",
-        "if $a$ increases, $b$ increases.",
-        "if $a$ increases, $b$ remains unchanged.",
-        "$b$ does not depend on $a$.",
+        "if $d$ increases, $b$ decreases.",
+        "if $d$ increases, $b$ increases.",
+        "if $d$ increases, $b$ remains unchanged.",
+        "$b$ does not depend on $d$.",
         "No correct answer."
       ]
     },
@@ -458,7 +458,7 @@
         "3 and 4.",
         "3 and 5.",
         "1, 2 and 4.",
-        "1, 2 and 5."
+        "1 and 2."
       ]
     },
     {

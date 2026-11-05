@@ -1,0 +1,85 @@
+{
+ "id": 69,
+ "solutions": [
+  {
+   "steps": [
+    "O‘zinduksiya — konturdagi tok o‘zgarganda shu konturning o‘zida induksiya EYK hosil bo‘lishi: $\\varepsilon_s=-L\\dfrac{\\Delta I}{\\Delta t}$."
+   ]
+  },
+  {
+   "steps": [
+    "Induktivlik birligi — genri (H)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Phi=LI$."
+   ]
+  },
+  {
+   "steps": [
+    "$|\\varepsilon_s|=L\\dfrac{\\Delta I}{\\Delta t}=0{,}5\\cdot\\dfrac42=1$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$|\\varepsilon_s|=2\\cdot10^{-3}\\cdot\\dfrac{5}{0{,}01}=1$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$W=\\dfrac{LI^2}{2}=\\dfrac{0{,}4\\cdot25}{2}=5$ J"
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{2W}{I^2}=\\dfrac{16}{16}=1$ H"
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{\\Phi}{I}=\\dfrac{0{,}06}{3}=0{,}02$ H $=20$ mH"
+   ]
+  },
+  {
+   "steps": [
+    "$W=\\dfrac{LI^2}2\\sim I^2$ — 4 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{\\mu_0N^2S}{l}\\sim N^2$ — 4 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Temir o‘zak ($\\mu\\gg1$) induktivlikni $\\mu$ marta oshiradi."
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{\\varepsilon_s}{\\Delta I/\\Delta t}=\\dfrac{12}{20}=0{,}6$ H"
+   ]
+  },
+  {
+   "steps": [
+    "Lens qoidasi: o‘zinduksiya EYK tok o‘zgarishiga to‘sqinlik qiladi."
+   ]
+  },
+  {
+   "steps": [
+    "Zanjir uzilganda tok keskin kamayadi va g‘altakda katta o‘zinduksiya EYK hosil bo‘ladi — lampa bir lahza yorqin chaqnaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{\\mu\\mu_0N^2S}{l}$ — o‘ramlar soni, o‘lchamlar va o‘zakka bog‘liq, tok kuchiga bog‘liq emas."
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{\\mu_0N^2S}{l}=\\dfrac{4\\pi\\cdot10^{-7}\\cdot10^6\\cdot10^{-3}}{0{,}5}\\approx2{,}5\\cdot10^{-3}$ H $=2{,}5$ mH"
+   ]
+  }
+ ]
+}

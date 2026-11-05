@@ -16,17 +16,17 @@
       "correct": 1
     },
     {
-      "text": "10 kg massali jism gorizontal tekislikda joylashgan. Jismga gorizontga 30° burchak ostida yo‘nalgan 50 N kuch ta’sir qiladi. Ishqalanish koeffitsiyenti 0,2 bo‘lsa, ishqalanish kuchini aniqlang.",
+      "text": "10 kg massali jism gorizontal tekislikda joylashgan. Jismga gorizontga 30° burchak ostida yuqoriga yo‘nalgan 50 N kuch ta’sir qiladi. Ishqalanish koeffitsiyenti 0,2 bo‘lsa, ishqalanish kuchini aniqlang (N). g = 10 m/s².",
       "answers": ["10", "12", "15", "20"],
       "correct": 2
     },
     {
-      "text": "Massasi 8 kg bo‘lgan jism o‘ziga qo‘yilgan kuch ta’sirida stol bo‘ylab tekis harakatlanayotgan bo‘lsa, shu gorizontal kuchning qiymati qanday?",
+      "text": "Massasi 8 kg bo‘lgan jism o‘ziga qo‘yilgan gorizontal kuch ta’sirida stol bo‘ylab tekis harakatlanmoqda. Ishqalanish koeffitsiyenti 0,3 bo‘lsa, shu kuchning qiymati qanday (N)? g = 10 m/s².",
       "answers": ["16", "20", "24", "30"],
       "correct": 2
     },
     {
-      "text": "3 kg massali brusok gorizontal prujina yordamida gorizontal joylashgan doska bo‘ylab tekis tortilmoqda. Agar prujina 5 cm ga uzaygan bo‘lsa, uning bikrligi qanday?",
+      "text": "3 kg massali brusok gorizontal prujina yordamida gorizontal joylashgan doska bo‘ylab tekis tortilmoqda. Ishqalanish koeffitsiyenti 0,25. Agar prujina 5 cm ga uzaygan bo‘lsa, uning bikrligi qanday (N/m)? g = 10 m/s².",
       "answers": ["100", "120", "150", "180"],
       "correct": 2
     },
@@ -36,7 +36,7 @@
       "correct": 2
     },
     {
-      "text": "Yuk mashinasi kuzovidagi yuk siljimasligi uchun qanday eng katta tezlanish bilan harakatlanishi kerak?",
+      "text": "Yuk mashinasi kuzovidagi yuk siljimasligi uchun mashina qanday eng katta tezlanish bilan harakatlanishi mumkin (m/s²)? Yuk va kuzov orasidagi ishqalanish koeffitsiyenti 0,2; g = 10 m/s².",
       "answers": ["1", "2", "3", "4"],
       "correct": 1
     },
@@ -46,12 +46,12 @@
       "correct": 2
     },
     {
-      "text": "6 kg massali chanani gorizontga 30° burchak ostida yo‘nalgan 20 N kuch bilan tortganda u qanday tezlanish oladi?",
+      "text": "6 kg massali chanani gorizontga 30° burchak ostida yuqoriga yo‘nalgan 20 N kuch bilan tortganda u qanday tezlanish oladi (m/s²)? μ = 0,1; g = 10 m/s².",
       "answers": ["1", "2", "3", "4"],
       "correct": 1
     },
     {
-      "text": "2,8 kg massali brusok vertikal devor bo‘ylab yuqoriga harakatlanmoqda. sinα = 0,6 va μ = 0,4. Brusokning tezlanishini toping.",
+      "text": "2,8 kg massali brusok vertikal devorga 70 N kuch bilan bosilib, devor bo‘ylab yuqoriga harakatlanmoqda. Kuch vertikal bilan α burchak hosil qiladi va devorga tomon yo‘nalgan, sin α = 0,6. μ = 0,4. Brusokning tezlanishini toping (m/s²). g = 10 m/s².",
       "answers": ["2", "4", "6", "8"],
       "correct": 1
     },
@@ -62,7 +62,7 @@
       "correct": 0
     },
     {
-      "text": "Qiyalik burchaklari 30° va 60° bo‘lgan ikki qiya tekislik uchun ishqalanish kuchlari taqqoslansin. μ = 0,8.",
+      "text": "Massasi 5 kg bo‘lgan jism qiyalik burchagi 30° bo‘lgan qiya tekislikda turibdi. Ishqalanish koeffitsiyenti μ = 0,8. Jismga ta’sir etuvchi ishqalanish kuchini toping (N). g = 10 m/s².",
       "answers": ["15", "20", "25", "30"],
       "correct": 2
     },

@@ -1,0 +1,149 @@
+{
+ "id": 58,
+ "solutions": [
+  {
+   "steps": [
+    "Om qonuni: $I=\\dfrac UR$ — tok kuchlanishga to‘g‘ri, qarshilikka teskari proporsional."
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac UR=\\dfrac{60}{10}=6$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac UI=\\dfrac{60}{2}=30\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=IR=5\\cdot40=200$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac UR=\\dfrac{48}{12}=4$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac UI=\\dfrac{100}{5}=20\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=IR=10\\cdot25=250$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$U=IR=2\\cdot34=68$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Tok A dan B ga oqadi, demak potensial A da yuqori: $\\varphi_A-\\varphi_B=IR$.",
+    "$\\varphi_B-\\varphi_A=-IR=-2\\cdot6=-12$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan kuchlanish o‘zgarmas: $U=24$ V.",
+    "$I=\\dfrac UR=\\dfrac{24}{12}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac UR=\\dfrac{24}{20}=1{,}2$ A; $\\;q=It=1{,}2\\cdot60=72$ C"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac qt=\\dfrac{90}{180}=0{,}5$ A; $\\;U=IR=0{,}5\\cdot12=6$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$q=\\dfrac URt=\\dfrac{24}{2}\\cdot32=384$ C",
+    "$N=\\dfrac qe=\\dfrac{384}{1{,}6\\cdot10^{-19}}=2{,}4\\cdot10^{21}$"
+   ]
+  },
+  {
+   "steps": [
+    "$U$ o‘zgarmas, $I=\\dfrac UR$: qarshilik 4 marta kamaysa, tok 4 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{I_2}{I_1}=\\dfrac{2U/(R/3)}{U/R}=6$ — tok 6 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$R$ o‘zgarmas, $U=IR$: tok 4 marta oshsa, kuchlanish ham 4 marta oshadi."
+   ]
+  },
+  {
+   "steps": [
+    "Om qonunidan $U=IR$ — kuchlanish tok kuchi bilan qarshilik ko‘paytmasiga teng."
+   ]
+  },
+  {
+   "steps": [
+    "C/s = A (amper), Om qonunidan $I=\\dfrac UR$, ya’ni A = V/$\\Omega$."
+   ]
+  },
+  {
+   "steps": [
+    "SI ning 7 ta asosiy birligi: m, kg, s, A, K, mol, cd. Ro‘yxatdagilardan faqat amper asosiy birlik."
+   ]
+  },
+  {
+   "steps": [
+    "2) J/C = V; 3) A$\\cdot\\Omega$ = V (Om qonuni); 5) N$\\cdot$m/C = J/C = V; 6) W/A = V; 7) V.",
+    "1) A/s — tokning o‘zgarish tezligi; 4) N/C — maydon kuchlanganligi birligi. Javob: 1, 4."
+   ]
+  },
+  {
+   "steps": [
+    "J/s = W, shuning uchun $\\dfrac{\\text{V}^2\\cdot\\text{s}}{\\text{J}}=\\dfrac{\\text{V}^2}{\\text{W}}$.",
+    "$P=\\dfrac{U^2}{R}\\Rightarrow R=\\dfrac{U^2}{P}$ — bu qarshilik."
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac UR$, ya’ni grafik qiyaligi $\\dfrac IU=\\dfrac1R$. Qiyaligi eng katta (1) — qarshiligi eng kichik, eng yotiq (4) — qarshiligi eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Grafik qiyaligi $\\dfrac1R$ ga teng. Eng yotiq chiziq (3) — qarshilik eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $U=3$ V da $I=1{,}5$ A.",
+    "$R=\\dfrac UI=\\dfrac{3}{1{,}5}=2\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $U=3$ V da $I=0{,}6$ A.",
+    "$R=\\dfrac UI=\\dfrac{3}{0{,}6}=5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "I chiziq: $U=6$ V da $I=4$ A $\\Rightarrow R_1=1{,}5\\ \\Omega$. II chiziq: $U=4$ V da $I=5$ A $\\Rightarrow R_2=0{,}8\\ \\Omega$.",
+    "$\\dfrac{R_1}{R_2}=\\dfrac{1{,}5}{0{,}8}=1{,}875$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan $IR=\\text{const}$: $R=1\\ \\Omega$ da $I=2$ A, $R=2\\ \\Omega$ da $I=1$ A, ya’ni $U=2$ V.",
+    "$I(2{,}5\\,\\Omega)=\\dfrac{2}{2{,}5}=0{,}8$ A; $\\;\\dfrac{0{,}8}{2}=0{,}4$"
+   ]
+  }
+ ]
+}

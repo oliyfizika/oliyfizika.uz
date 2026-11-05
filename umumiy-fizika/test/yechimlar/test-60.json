@@ -1,0 +1,270 @@
+{
+ "id": 60,
+ "solutions": [
+  {
+   "steps": [
+    "$R=\\rho\\dfrac lS$ — qarshilik o‘tkazgich materiali ($\\rho$) va geometrik o‘lchamlariga ($l$, $S$) bog‘liq."
+   ]
+  },
+  {
+   "steps": [
+    "Qarshilik $R=\\rho\\dfrac lS$ — kuchlanishga bog‘liq emas, o‘zgarmaydi (kuchlanish ortsa, tok ortadi)."
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\rho\\dfrac lS$ — qarshilik uzunlikka to‘g‘ri proporsional."
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\rho\\dfrac lS=5{,}5\\cdot10^{-8}\\cdot\\dfrac{0{,}4}{2\\cdot10^{-9}}=11\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=1{,}7\\cdot10^{-8}\\cdot\\dfrac{50}{34\\cdot10^{-6}}=0{,}025\\ \\Omega=25$ m$\\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{\\rho l}{R}=\\dfrac{4{,}2\\cdot10^{-7}\\cdot210}{14{,}7}=6\\cdot10^{-6}\\ \\text{m}^2=6\\ \\text{mm}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$l=\\dfrac{RS}{\\rho}=\\dfrac{2{,}8\\cdot0{,}5\\cdot10^{-4}}{2{,}8\\cdot10^{-8}}=5000$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$l=\\dfrac{RS}{\\rho}=\\dfrac{9\\cdot0{,}17\\cdot10^{-6}}{1{,}7\\cdot10^{-8}}=90$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$R=12\\cdot10^{-8}\\cdot\\dfrac{10}{2\\cdot10^{-6}}=0{,}6\\ \\Omega$; $\\;I=\\dfrac UR=\\dfrac{0{,}012}{0{,}6}=0{,}02$ A $=20$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "$R=2{,}8\\cdot10^{-8}\\cdot\\dfrac{1{,}5\\cdot10^5}{1{,}5\\cdot10^{-4}}=28\\ \\Omega$; $\\;U=IR=100\\cdot28=2800$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$R=2{,}8\\cdot10^{-8}\\cdot\\dfrac{5\\cdot10^5}{10^{-5}}=1400\\ \\Omega$; $\\;U=IR=0{,}01\\cdot1400=14$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac UI=\\dfrac{210}{20}=10{,}5\\ \\Omega$",
+    "$l=\\dfrac{RS}{\\rho}=\\dfrac{10{,}5\\cdot10\\cdot10^{-6}}{4{,}2\\cdot10^{-7}}=250$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{R_2}{R_1}=\\dfrac{3l/(2S)}{l/S}=1{,}5$ — 1,5 marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$R_2=R_1\\cdot\\dfrac{2}{3}=6\\cdot\\dfrac23=4\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Diametr 2 marta ortsa, yuza 4 marta ortadi.",
+    "$R_2=6\\cdot\\dfrac34=4{,}5\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Uzunlik 3 marta kichik, diametr 2 marta kichik — yuza 4 marta kichik.",
+    "$R_2=6\\cdot\\dfrac{4}{3}=8\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$R_2=\\rho\\dfrac{2l}{S/4}=8\\rho\\dfrac lS=8\\cdot4=32\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{R_2}{R_1}=\\dfrac{l_2}{l_1}\\cdot\\dfrac{S_1}{S_2}=2\\cdot2=4\\;\\Rightarrow\\;R_2=4R_1$"
+   ]
+  },
+  {
+   "steps": [
+    "Uzunlik va material bir xil: $R\\sim\\dfrac1S$.",
+    "$S_2=S_1\\dfrac{R_1}{R_2}=4\\cdot\\dfrac{2{,}7}{1{,}8}=6\\ \\text{mm}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{R_2}{R_1}=\\dfrac{\\rho_2}{\\rho_1}\\cdot\\dfrac{S_1}{S_2}=2\\cdot2=4$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{l_1}{S_1}=\\dfrac{l_2}{S_2}\\;\\Rightarrow\\;l_2=1\\cdot\\dfrac{10}{0{,}5}=20$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\dfrac Pg=10{,}5$ kg; $\\;V=\\dfrac mD=\\dfrac{10{,}5}{10500}=10^{-3}\\ \\text{m}^3$; $\\;l=\\dfrac VS=1000$ m",
+    "$R=1{,}6\\cdot10^{-8}\\cdot\\dfrac{1000}{10^{-6}}=16\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{R_2}{R_1}=\\dfrac{l_2}{l_1}=\\dfrac{1{,}6}{0{,}2}=8$ — ikkinchisiniki 8 marta katta"
+   ]
+  },
+  {
+   "steps": [
+    "Radius 4 marta ortsa, yuza 16 marta ortadi.",
+    "$\\dfrac{R_2}{R_1}=\\dfrac{4}{16}=\\dfrac14$ — 4 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Cho‘zilganda hajm o‘zgarmaydi: uzunlik 3 marta ortsa, yuza 3 marta kamayadi.",
+    "$\\dfrac{R_2}{R_1}=3\\cdot3=9$"
+   ]
+  },
+  {
+   "steps": [
+    "Qarshilik moddaning xossasi va o‘lchamlariga bog‘liq, kuchlanishga bog‘liq emas — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Qarshilik tok kuchiga bog‘liq emas — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Massa va material bir xil — hajm bir xil: $S=\\dfrac Vl$, $\\;R=\\rho\\dfrac{l^2}{V}\\sim l^2$.",
+    "$\\dfrac{R_1}{R_2}=\\left(\\dfrac{l_1}{l_2}\\right)^2=9\\;\\Rightarrow\\;R_1=9R_2$"
+   ]
+  },
+  {
+   "steps": [
+    "$V=\\dfrac mD=\\dfrac{8{,}9}{8900}=10^{-3}\\ \\text{m}^3$; $\\;l=\\dfrac VS=1000$ m",
+    "$R=1{,}7\\cdot10^{-8}\\cdot\\dfrac{1000}{10^{-6}}=17\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{m/l}{D}=\\dfrac{3{,}9}{7800}=5\\cdot10^{-4}\\ \\text{m}^2$",
+    "$R=1{,}2\\cdot10^{-7}\\cdot\\dfrac{1000}{5\\cdot10^{-4}}=0{,}24\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{78}{7800}=10^{-2}\\ \\text{m}^2$; har metrining qarshiligi $\\rho/S=1{,}2\\cdot10^{-5}\\ \\Omega$",
+    "$l=\\dfrac{RS}{\\rho}=\\dfrac{0{,}012\\cdot10^{-2}}{1{,}2\\cdot10^{-7}}=1000$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$m=dlS$, $\\;S=\\dfrac{\\rho l}{R}$.",
+    "$m=\\dfrac{d\\rho l^2}{R}$"
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{\\rho l}{R}=\\dfrac{1{,}7\\cdot10^{-8}\\cdot1000}{75{,}65}\\approx2{,}25\\cdot10^{-7}\\ \\text{m}^2$",
+    "$m=DlS=8900\\cdot1000\\cdot2{,}25\\cdot10^{-7}\\approx2$ kg; $\\;P=mg\\approx20$ N"
+   ]
+  },
+  {
+   "steps": [
+    "Chorak qismi kesilsa, $R'=\\dfrac34R$. $U$ o‘zgarmas:",
+    "$I'=I\\cdot\\dfrac43=6\\cdot\\dfrac43=8$ A"
+   ]
+  },
+  {
+   "steps": [
+    "Har bir bo‘lak $R/2$; ustma-ust taxlansa, ular parallel: $\\dfrac{R/2}{2}=\\dfrac R4$ — 4 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Har bo‘lak $R/2$, ikkitasi parallel: $R/4$ — 4 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Har bo‘lak $R/3$, uchtasi parallel:",
+    "$R'=\\dfrac{R/3}{3}=\\dfrac R9$"
+   ]
+  },
+  {
+   "steps": [
+    "Har bo‘lak $R/5$, beshtasi parallel: $R'=\\dfrac{R}{25}=1\\ \\Omega$.",
+    "$R=25\\ \\Omega$"
+   ]
+  },
+  {
+   "steps": [
+    "Har bo‘lak $R/4$, to‘rttasi parallel:",
+    "$R'=\\dfrac{R/4}{4}=\\dfrac R{16}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki buklanganda uzunlik 2 marta kamayadi, yuza 2 marta ortadi: $R'=\\dfrac R4$."
+   ]
+  },
+  {
+   "steps": [
+    "Differensial Om qonuni: $j=\\dfrac E\\rho$, $\\;j=\\dfrac IS$.",
+    "$E=\\rho j=\\dfrac{I\\rho}{S}$"
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\dfrac{I\\rho}{S}=\\dfrac{20\\cdot1{,}7\\cdot10^{-8}}{10^{-6}}=0{,}34$ V/m"
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\rho j=2\\cdot10^{-8}\\cdot2\\cdot10^6=4\\cdot10^{-2}$ V/m"
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\dfrac Ul=1$ V/m; $\\;j=\\dfrac E\\rho=\\dfrac{1}{5\\cdot10^{-7}}=2\\cdot10^6\\ \\text{A/m}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\dfrac Ul=1{,}25$ V/m; $\\;j=\\dfrac E\\rho=\\dfrac{1{,}25}{10^{-6}}=1{,}25\\cdot10^6\\ \\text{A/m}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$E=\\rho j=1{,}7\\cdot10^{-8}\\cdot10^6=0{,}017$ V/m"
+   ]
+  },
+  {
+   "steps": [
+    "$j=\\dfrac E\\rho=\\dfrac{U}{\\rho l}$ — kesimga bog‘liq emas, uzunlikka teskari proporsional.",
+    "$\\dfrac{j_1}{j_2}=\\dfrac{l_2}{l_1}=2\\;\\Rightarrow\\;j_1=2j_2$"
+   ]
+  },
+  {
+   "steps": [
+    "$j=\\dfrac{U}{\\rho l}$ — kesim yuziga bog‘liq emas, o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$I=jS=\\dfrac{ES}{\\rho}$.",
+    "$\\dfrac{I_2}{I_1}=\\dfrac{10}{8}=1{,}25$ — 1,25 marta ortadi"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "id": 56,
+ "solutions": [
+  {
+   "steps": [
+    "$\\dfrac1C=\\dfrac1{100}+\\dfrac1{200}+\\dfrac1{500}=0{,}017\\;\\Rightarrow\\;C\\approx58{,}8$ nF"
+   ]
+  },
+  {
+   "steps": [
+    "$C_1=\\dfrac qU=\\dfrac{1\\ \\text{nC}}{2\\ \\text{V}}=0{,}5$ nF; $\\;C=3C_1=1{,}5\\ \\text{nF}=1500$ pF"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac1C=\\dfrac16+\\dfrac12+\\dfrac14=\\dfrac{11}{12}\\;\\Rightarrow\\;C=\\dfrac{12}{11}\\ \\mu\\text{F}$; $\\;q=CU=\\dfrac{288}{11}\\ \\mu\\text{C}$",
+    "$U_2=\\dfrac q{C_2}=\\dfrac{288}{22}\\approx13{,}1$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Manba kuchlanishi 6 V. Ketma-ket: $C=\\dfrac{8\\cdot2}{10}=1{,}6\\ \\mu$F, $\\;q=1{,}6\\cdot6=9{,}6\\ \\mu$C.",
+    "$U_1=\\dfrac{9{,}6}{8}=1{,}2$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{1\\cdot3}{4}=0{,}75\\ \\mu\\text{F}$; $\\;q=0{,}75\\cdot220=165\\ \\mu\\text{C}$",
+    "$U_1=\\dfrac{165}1=165$ V, $\\;U_2=\\dfrac{165}3=55$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{3\\cdot6}9=2\\ \\mu\\text{F}$; $\\;q=240\\ \\mu\\text{C}$; $\\;U_1=80$ V, $U_2=40$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Ikki $3C$ parallel: $6C$; uchta $2C$ parallel: $6C$. Ular $4C$ bilan ketma-ket:",
+    "$\\dfrac1{C_{um}}=\\dfrac1{4C}+\\dfrac1{6C}+\\dfrac1{6C}=\\dfrac7{12C}\\;\\Rightarrow\\;C_{um}=\\dfrac{12C}7$"
+   ]
+  },
+  {
+   "steps": [
+    "Pastki shoxda ikki $C$ ketma-ket: $\\dfrac C2$; u yuqoridagi $C$ ga parallel:",
+    "$C_{um}=C+\\dfrac C2=\\dfrac{3C}2$"
+   ]
+  },
+  {
+   "steps": [
+    "Uchta bir xil kondensator ketma-ket — kuchlanish teng taqsimlanadi.",
+    "$U_{KL}=\\dfrac{120}3=40$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqori shox: $\\dfrac{3\\cdot6}{9}=2\\ \\mu$F; pastki shox: $\\dfrac{5\\cdot5}{10}=2{,}5\\ \\mu$F.",
+    "$C=2+2{,}5=4{,}5\\ \\mu\\text{F}$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel ikki $C$: $2C$; u ikki $C$ bilan ketma-ket:",
+    "$\\dfrac1{C_{AB}}=\\dfrac1C+\\dfrac1C+\\dfrac1{2C}=\\dfrac{5}{2C}\\;\\Rightarrow\\;C_{AB}=0{,}4C$"
+   ]
+  },
+  {
+   "steps": [
+    "$C_2$ va $C_3$ ketma-ket: $\\dfrac{1\\cdot4}{5}=0{,}8\\ \\mu$F; $\\;C_1=5{,}8-0{,}8=5\\ \\mu$F.",
+    "$q_1=C_1U=5\\cdot0{,}22=1{,}1\\ \\mu\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$3C$ kondensator orqali butun zaryad $Q$ o‘tadi; keyin $C$ va $4C$ parallel — zaryad sig‘imlarga proporsional bo‘linadi.",
+    "$q_{MN}=Q\\cdot\\dfrac{C}{C+4C}=\\dfrac Q5$"
+   ]
+  },
+  {
+   "steps": [
+    "Uchta kondensator parallel:",
+    "$C_{um}=C+2C+3C=6C$"
+   ]
+  },
+  {
+   "steps": [
+    "1-kondensator — ikki qatlam ketma-ket: $C_1=C_0\\dfrac{2\\varepsilon}{1+\\varepsilon}=1{,}5C_0$.",
+    "2-kondensator — ikki yarim parallel: $C_2=C_0\\dfrac{1+\\varepsilon}2=2C_0$.",
+    "Zaryad bir xil: $\\dfrac{U_1}{U_2}=\\dfrac{C_2}{C_1}=\\dfrac43$, $\\;U_1+U_2=84\\Rightarrow U_1=48$ V, $U_2=36$ V",
+    "$U_1-U_2=12$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Chap shox: $C$ va $2C$ ketma-ket — kichik sig‘imda katta kuchlanish: $U_C=\\dfrac{2U}3$, $U_{2C}=\\dfrac U3$; $\\;\\varphi_a=\\dfrac U3$ (pastki shinaga nisbatan).",
+    "O‘ng shox: yuqorida $2C$, pastda $C$: $\\varphi_b=\\dfrac{2U}3$.",
+    "$U_{ab}=\\dfrac U3=\\dfrac{16}3\\approx5{,}33$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Mos qutblar bilan: umumiy zaryad $5+3=8\\ \\mu$C, umumiy sig‘im $11\\ \\mu$F, $U=\\dfrac8{11}$ V.",
+    "$q_1=C_1U=3\\cdot\\dfrac8{11}=\\dfrac{24}{11}\\ \\mu\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "$q_2=C_2U=8\\cdot\\dfrac8{11}=\\dfrac{64}{11}\\ \\mu\\text{C}$"
+   ]
+  },
+  {
+   "steps": [
+    "Teskari ulanganda zaryadlar ayiriladi: $q=2CU-CU=CU$, sig‘im $2C$.",
+    "$U'=\\dfrac{CU}{2C}=0{,}5U$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac{C\\cdot5+C\\cdot10}{2C}=7{,}5$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryadlar teng ($q$): $U_1=\\dfrac qC$. Parallel ulangach: $U=\\dfrac{2q}{3C}$.",
+    "$\\dfrac{U_1}{U}=1{,}5$ — 1,5 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryad saqlanadi: $C_0\\cdot800=(C_0+\\varepsilon C_0)\\cdot100$.",
+    "$1+\\varepsilon=8\\;\\Rightarrow\\;\\varepsilon=7$"
+   ]
+  },
+  {
+   "steps": [
+    "Metall list oraliqni 5 mm dan 4 mm ga qisqartiradi: $C'=\\dfrac54C$; zaryad saqlanadi.",
+    "$U'=U\\dfrac C{C'}=50\\cdot\\dfrac45=40$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryad: $q=2\\cdot6C=12C$. Birining sig‘imi $2C$ bo‘ladi, umumiy sig‘im $3C$.",
+    "$U=\\dfrac{12C}{3C}=4$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Kondensator manbaga ulangan — uning qisqichlaridagi kuchlanishni manba ushlab turadi.",
+    "Voltmetr avvalgidek 3 V ni ko‘rsatadi."
+   ]
+  }
+ ]
+}

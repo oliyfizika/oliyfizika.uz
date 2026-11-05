@@ -77,7 +77,7 @@
     },
     {
       "text": "Gazni o‘zgarmas bosimda 1°C isitganda uning hajmi ikki marta ortgan. Isitish qanday temperaturalar intervalida sodir bo‘lgan (K)?",
-      "answers": ["(4;6)", "(2;4)", "(-2;0)", "(0,5;2)"],
+      "answers": ["(4;6)", "(2;4)", "(-2;0)", "(1;2)"],
       "correct": 3
     },
     {
@@ -88,7 +88,7 @@
         "ΔV / (V₀ · ΔT)",
         "ΔV / V₀"
       ],
-      "correct": 3
+      "correct": 2
     },
     {
       "text": "Hajmi 250 sm³ bo‘lgan og‘zi ochiq shisha kolba 127°C gacha qizdirildi va ochiq og‘zi bilan suvga tushirildi. Natijada kolba 7°C temperaturagacha sovidi. Bunda kolbaga necha gramm suv kirgan?",

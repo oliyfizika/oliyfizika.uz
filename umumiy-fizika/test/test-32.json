@@ -8,7 +8,7 @@
     {
       "text": "Tebranish davri 0,5 s bo‘lgan matematik mayatnikning uzunligini toping (cm). g = 10 m/s^2, π^2 ≈ 10.",
       "answers": ["4,15", "25", "6,25", "12,5"],
-      "correct": 3
+      "correct": 2
     },
     {
       "text": "Matematik mayatnikning uzunligi 2,5 m, unga osilgan sharchaning massasi 100 g. Tebranish davri qanday (s)?",
@@ -18,11 +18,11 @@
     {
       "text": "Matematik mayatnikning tebranish davri nimalarga bog‘liq? 1) mayatnik massasiga; 2) tebranish amplitudasiga; 3) erkin tushish tezlanishiga; 4) mayatnik uzunligiga.",
       "answers": ["1, 4", "2, 4", "2, 3", "3, 4"],
-      "correct": 1
+      "correct": 3
     },
     {
       "text": "Agar tebranishlar davri T bo‘lgan matematik mayatnikning uzunligi n marta oshirilsa, tebranishlar davri qanday bo‘ladi?",
-      "answers": ["nT", "2nT", "T√n", "√nT"],
+      "answers": ["nT", "2nT", "T/√n", "√nT"],
       "correct": 3
     },
     {
@@ -36,13 +36,13 @@
       "correct": 0
     },
     {
-      "text": "Lift 6 m/s^2 tezlanish bilan pastga tushmoqda. Liftga osilgan 1 m uzunlikdagi matematik mayatnikning tebranish davrini toping (s). g = 10 m/s^2.",
+      "text": "Lift 6 m/s^2 tezlanish bilan yuqoriga ko‘tarilmoqda. Liftga osilgan 1 m uzunlikdagi matematik mayatnikning tebranish davrini toping (s). g = 10 m/s^2.",
       "answers": ["6,28", "2,1", "1", "1,57"],
       "correct": 3
     },
     {
       "text": "Matematik mayatnik uzunligi 8 cm ortganda, tebranishlar davri 0,1 s oshdi. Tebranishlarning dastlabki davri qanday (s)? (π^2 ≈ g).",
-      "answers": ["1,4", "1,6", "1,7", "2"],
+      "answers": ["1,55", "1,6", "1,7", "2"],
       "correct": 0
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "text": "Massasi 50 g bo‘lgan po‘lat sharchali mayatnikning tebranish davri 2 s. Sharcha ostiga magnit joylashtirilganda, mayatnikning tebranish davri 1 s gacha kamaydi. Sharchaning magnitga tortilish kuchi qanday (N)?",
-      "answers": ["0,5", "1", "5", "3"],
+      "answers": ["1,5", "1", "5", "3"],
       "correct": 0
     },
     {

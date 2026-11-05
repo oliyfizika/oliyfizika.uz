@@ -22,12 +22,12 @@
     },
     {
       "text": "2 mol bir atomli gaz 300 K temperaturada turibdi. Ichki energiyasini toping (kJ).",
-      "answers": ["5.0", "7.5", "10.0", "12.5"],
+      "answers": ["5,0", "7,5", "10,0", "12,5"],
       "correct": 1
     },
     {
       "text": "1 mol ikki atomli gazning temperaturasi 200 K ga oshirilsa, ichki energiyasi qancha ortadi (kJ)?",
-      "answers": ["2.08", "4.16", "6.24", "8.32"],
+      "answers": ["2,08", "4,16", "6,24", "8,32"],
       "correct": 1
     },
     {
@@ -37,8 +37,8 @@
     },
     {
       "text": "3 mol uch atomli gaz 400 K temperaturada turibdi. Ichki energiyasini toping (kJ).",
-      "answers": ["14.9", "29.9", "44.9", "59.9"],
-      "correct": 3
+      "answers": ["14,9", "29,9", "44,9", "59,9"],
+      "correct": 1
     },
     {
       "text": "Bir atomli va ikki atomli gazlarning mollari hamda temperaturasi bir xil. Ichki energiyalari nisbati qanday?",
@@ -47,11 +47,11 @@
     },
     {
       "text": "2 mol bir atomli gazning temperaturasi 150 K ga oshirilganda ichki energiyasi qancha ortadi (kJ)?",
-      "answers": ["1.87", "3.74", "5.61", "7.48"],
+      "answers": ["1,87", "3,74", "5,61", "7,48"],
       "correct": 1
     },
     {
-      "text": "Ideal gazning ichki energiyasi 18.7 kJ, modda miqdori 2.5 mol va temperaturasi 300 K. Gazning erkinlik darajasini aniqlang.",
+      "text": "Ideal gazning ichki energiyasi 18,7 kJ, modda miqdori 2,5 mol va temperaturasi 300 K. Gazning erkinlik darajasini aniqlang.",
       "answers": ["3", "4", "5", "6"],
       "correct": 3
     }

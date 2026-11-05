@@ -1,0 +1,79 @@
+{
+ "id": 32,
+ "solutions": [
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{\\dfrac lg}\\;\\Rightarrow\\;l=\\dfrac{gT^2}{4\\pi^2}=\\dfrac{10\\cdot0{,}25}{40}=0{,}0625\\ \\text{m}=6{,}25$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{\\dfrac lg}=2\\cdot3{,}14\\sqrt{\\dfrac{2{,}5}{10}}=3{,}14$ s",
+    "Davr massaga bog‘liq emas."
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{\\dfrac lg}$ — kichik tebranishlarda davr faqat uzunlik va $g$ ga bog‘liq: 3, 4."
+   ]
+  },
+  {
+   "steps": [
+    "$T\\sim\\sqrt l\\;\\Rightarrow\\;T'=\\sqrt nT$"
+   ]
+  },
+  {
+   "steps": [
+    "$l'=\\dfrac l2\\;\\Rightarrow\\;T'=T\\sqrt{\\dfrac12}=\\dfrac{T}{\\sqrt2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Amplituda davrga ta’sir qilmaydi; $\\nu\\sim\\dfrac1{\\sqrt l}$.",
+    "$l\\to16l\\;\\Rightarrow\\;\\nu\\to\\dfrac\\nu4$ (4 marta kamayadi)"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqoriga tezlanuvchan harakatda: $g'=g+a=16\\ \\text{m/s}^2$.",
+    "$T=2\\pi\\sqrt{\\dfrac{1}{16}}=\\dfrac\\pi2\\approx1{,}57$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\pi^2\\approx g$ bo‘lsa, $T=2\\sqrt l$, ya’ni $T^2=4l$.",
+    "$(T+0{,}1)^2-T^2=4\\cdot0{,}08\\;\\Rightarrow\\;0{,}2T+0{,}01=0{,}32\\;\\Rightarrow\\;T=1{,}55$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$g'=g+a=14\\ \\text{m/s}^2$.",
+    "$\\omega=\\sqrt{\\dfrac{g'}{l}}=\\sqrt{\\dfrac{14}{1{,}26}}=\\dfrac{10}{3}$ rad/s"
+   ]
+  },
+  {
+   "steps": [
+    "Davr 2 marta kamaydi $\\Rightarrow g'=4g$, ya’ni magnit kuchi $F=m(g'-g)=3mg$.",
+    "$F=3\\cdot0{,}05\\cdot10=1{,}5$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$T^2\\sim l$, demak $T^2=T_1^2+T_2^2$.",
+    "$T=\\sqrt{64+36}=10$ s"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil vaqtda: $20T_1=30T_2\\Rightarrow\\dfrac{T_1}{T_2}=1{,}5\\Rightarrow\\dfrac{l_1}{l_2}=2{,}25$.",
+    "$l_1-l_2=1{,}25l_2=10\\Rightarrow l_2=8$ cm, $l_1=18$ cm; $\\;l_1+l_2=26$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Qaytaruvchi kuch — og‘irlik kuchining trayektoriyaga urinma tashkil etuvchisi:",
+    "$F=mg\\sin60^\\circ=0{,}05\\cdot10\\cdot\\dfrac{\\sqrt3}2=0{,}25\\sqrt3$ N"
+   ]
+  }
+ ]
+}

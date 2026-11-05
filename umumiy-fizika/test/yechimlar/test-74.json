@@ -1,0 +1,166 @@
+{
+ "id": 74,
+ "solutions": [
+  {
+   "steps": [
+    "Chegaraviy burchakda sinish burchagi $90^\\circ$: $n_1\\sin\\alpha_0=n_2\\sin90^\\circ$.",
+    "$\\sin\\alpha_0=\\dfrac{n_2}{n_1}$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytishning chegaraviy burchagi: $\\sin\\alpha_0=\\dfrac{n_2}{n_1}$ (faqat $n_1>n_2$ bo‘lganda).",
+    "$\\sin\\alpha_0=\\dfrac12\\;\\Rightarrow\\;\\alpha_0=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytishning chegaraviy burchagi: $\\sin\\alpha_0=\\dfrac{n_2}{n_1}$ (faqat $n_1>n_2$ bo‘lganda).",
+    "$\\sin\\alpha_0=\\dfrac{\\sqrt2}{2\\sqrt2}=\\dfrac12\\;\\Rightarrow\\;\\alpha_0=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytishning chegaraviy burchagi: $\\sin\\alpha_0=\\dfrac{n_2}{n_1}$ (faqat $n_1>n_2$ bo‘lganda).",
+    "$n_1=\\dfrac{n_2}{\\sin45^\\circ}=\\dfrac{\\sqrt2}{\\sqrt2/2}=2$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytishning chegaraviy burchagi: $\\sin\\alpha_0=\\dfrac{n_2}{n_1}$ (faqat $n_1>n_2$ bo‘lganda).",
+    "$n_2=n_1\\sin60^\\circ=2\\sqrt3\\cdot\\dfrac{\\sqrt3}{2}=3$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytish faqat optik zichroq muhitdan siyrakroq muhitga o‘tganda bo‘ladi. Bu yerda $n_1=2<n_2=3$ — to‘la ichki qaytish sodir bo‘lmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytishning chegaraviy burchagi: $\\sin\\alpha_0=\\dfrac{n_2}{n_1}$ (faqat $n_1>n_2$ bo‘lganda).",
+    "$\\sin\\alpha_0=\\dfrac{1}{\\sqrt2}\\;\\Rightarrow\\;\\alpha_0=45^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytishning chegaraviy burchagi: $\\sin\\alpha_0=\\dfrac{n_2}{n_1}$ (faqat $n_1>n_2$ bo‘lganda).",
+    "$\\sin\\alpha_0=\\dfrac{\\sqrt3}{2}\\;\\Rightarrow\\;\\alpha_0=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Vakuumdan ($n=1$) zichroq muhitga ($n=2$) o‘tganda to‘la ichki qaytish bo‘lmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "To‘la ichki qaytish uchun nur optik zichroq muhitdan siyrakroq muhitga o‘tishi kerak: $n_1>n_2$."
+   ]
+  },
+  {
+   "steps": [
+    "Chegaraviy burchakda singan nur chegara sirti bo‘ylab ketadi (normal bilan $90^\\circ$).",
+    "Qaytgan nur normal bilan $\\alpha$ burchak hosil qiladi.",
+    "Ular orasidagi burchak: $90^\\circ-\\alpha$"
+   ]
+  },
+  {
+   "steps": [
+    "Rasmda nur havodan suvga, ya’ni optik siyrak muhitdan zichroq muhitga o‘tmoqda.",
+    "Bunday holda nur doim sinib o‘tadi — to‘la ichki qaytish bo‘lishi mumkin emas."
+   ]
+  },
+  {
+   "steps": [
+    "$n_{12}=\\dfrac{n_1}{n_2}=2$.",
+    "$\\sin\\alpha_0=\\dfrac{n_2}{n_1}=\\dfrac12\\;\\Rightarrow\\;\\alpha_0=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac cn$: tezlik 2 marta oshgani uchun $\\dfrac{n_1}{n_2}=2$.",
+    "$\\sin\\alpha_0=\\dfrac{n_2}{n_1}=\\dfrac12\\;\\Rightarrow\\;\\alpha_0=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $\\dfrac{n_2}{n_1}=\\dfrac{\\sin30^\\circ}{\\sin45^\\circ}=\\dfrac{1}{\\sqrt2}$.",
+    "$\\sin\\alpha_0=\\dfrac{n_2}{n_1}=\\dfrac{\\sqrt2}{2}\\;\\Rightarrow\\;\\alpha_0=45^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{n_1}{n_2}=\\dfrac{1}{\\sin45^\\circ}=\\sqrt2$.",
+    "$\\sin\\beta=\\dfrac{n_1}{n_2}\\sin30^\\circ=\\sqrt2\\cdot\\dfrac12=\\dfrac{\\sqrt2}{2}\\;\\Rightarrow\\;\\beta=45^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Havoga o‘tishda $\\sin\\alpha_0=\\dfrac1n$, demak $n=\\dfrac{1}{\\sin\\alpha_0}$.",
+    "$\\vartheta=\\dfrac cn=c\\sin\\alpha_0$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=c\\sin\\alpha_0$.",
+    "$\\vartheta=3\\cdot10^8\\cdot0{,}6=1{,}8\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{1}{\\sin\\alpha_0}$.",
+    "$\\vartheta=\\dfrac cn=c\\sin\\alpha_0$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{1}{\\sin30^\\circ}=2$. Chastota o‘zgarmaydi, $\\lambda=\\dfrac{\\lambda_0}{n}$.",
+    "To‘lqin uzunligi $2$ marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha_0=\\dfrac1n$. Vakuumdan shishaga o‘tishda: $\\sin\\alpha_0=n\\sin\\beta$.",
+    "$\\sin\\beta=\\dfrac{\\sin\\alpha_0}{n}=\\dfrac{1}{n^2}\\;\\Rightarrow\\;\\beta=\\arcsin\\dfrac{1}{n^2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Nur birinchi yoqqa tik tushadi va sinmasdan gorizontal ketadi.",
+    "$A$ yoq vertikal bilan $\\alpha$ burchak hosil qiladi, demak uning normali gorizontal bilan $\\alpha$ burchak hosil qiladi — $A$ yoqqa tushish burchagi $\\alpha$ ga teng.",
+    "To‘la qaytish sharti: $\\sin\\alpha\\ge\\dfrac1n=\\dfrac12$.",
+    "$\\alpha_{min}=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "1→2 o‘tishda nur normalga yaqinlashgan: $n_2>n_1$.",
+    "2→3 chegarada nur chegara bo‘ylab ketgan (chegaraviy holat): $n_3<n_2$.",
+    "Sirtlar parallel, shuning uchun $n_1\\sin\\theta_1=n_3\\sin90^\\circ$, ya’ni $n_3=n_1\\sin\\theta_1<n_1$.",
+    "$n_2>n_1>n_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Nurtolalarda yorug‘lik tola devorlaridan ko‘p marta to‘la ichki qaytib tarqaladi."
+   ]
+  },
+  {
+   "steps": [
+    "Sirtdan faqat chegaraviy burchakdan kichik burchak ostida tushgan nurlar chiqadi: $\\sin\\alpha_0=\\dfrac{1}{2{,}24}$.",
+    "$\\mathrm{tg}\\,\\alpha_0=\\dfrac{1}{\\sqrt{2{,}24^2-1}}=\\dfrac{1}{\\sqrt{4{,}02}}\\approx0{,}5$.",
+    "Doira radiusi $r=h\\,\\mathrm{tg}\\,\\alpha_0=0{,}5$ m.",
+    "$D=2r=1$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqori yoqda: $\\sin\\alpha=n\\sin\\beta$.",
+    "Vertikal yoqqa tushish burchagi $90^\\circ-\\beta$. To‘la qaytish sharti: $n\\sin(90^\\circ-\\beta)=n\\cos\\beta\\ge1$.",
+    "$n^2\\cos^2\\beta=n^2-\\sin^2\\alpha\\ge1$.",
+    "$n\\ge\\sqrt{1+\\sin^2\\alpha}$"
+   ]
+  }
+ ]
+}

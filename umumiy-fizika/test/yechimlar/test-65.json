@@ -1,0 +1,87 @@
+{
+ "id": 65,
+ "solutions": [
+  {
+   "steps": [
+    "Amper kuchi: $F=IBL\\sin\\alpha$, $\\alpha$ — tok va $\\vec B$ orasidagi burchak."
+   ]
+  },
+  {
+   "steps": [
+    "$F=IBL\\sin\\alpha=3\\cdot20\\cdot0{,}4\\cdot0{,}6=14{,}4$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$F=IBL\\sin30^\\circ=4\\cdot2\\cdot0{,}08\\cdot0{,}5=0{,}32$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$I=\\dfrac{F}{BL}=\\dfrac{1{,}6}{0{,}8\\cdot0{,}4}=5$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=\\dfrac{F}{IBL}=\\dfrac{0{,}06}{30\\cdot0{,}04\\cdot0{,}1}=0{,}5\\;\\Rightarrow\\;\\alpha=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$F_{max}=IBL=5\\cdot2\\cdot0{,}2=2$ N ($\\alpha=90^\\circ$); $\\;F_{min}=0$ ($\\alpha=0$)"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\mu_0H=4\\pi\\cdot10^{-7}\\cdot5000=6\\cdot10^{-3}$ T",
+    "$F=IBL\\sin53^\\circ=10\\cdot6\\cdot10^{-3}\\cdot0{,}2\\cdot0{,}8=9{,}6\\cdot10^{-3}$ N $=9{,}6$ mN"
+   ]
+  },
+  {
+   "steps": [
+    "$F=IBL\\sin30^\\circ=10\\cdot5\\cdot0{,}2\\cdot0{,}5=5$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$F'=F\\sin30^\\circ=2{,}8\\cdot0{,}5=1{,}4$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{F_2}{F_1}=\\dfrac{\\sin60^\\circ}{\\sin30^\\circ}=\\sqrt3$"
+   ]
+  },
+  {
+   "steps": [
+    "$A=Fs=IBLs=2\\cdot0{,}08\\cdot0{,}1\\cdot0{,}1=1{,}6\\cdot10^{-3}$ J $=1{,}6$ mJ"
+   ]
+  },
+  {
+   "steps": [
+    "Ish $A=IBL\\,s\\sin45^\\circ$ (kuch yo‘nalishidagi ko‘chish).",
+    "$s=\\dfrac{A}{IBL\\sin45^\\circ}=\\dfrac{8\\cdot10^{-3}}{50\\cdot0{,}02\\cdot0{,}08\\cdot0{,}707}\\approx0{,}141$ m $=14{,}1$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{A}{ILs}=\\dfrac{0{,}01}{5\\cdot0{,}1\\cdot0{,}02}=1$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$B=\\dfrac{A}{ILs}=\\dfrac{0{,}032}{2\\cdot0{,}2\\cdot0{,}1}=0{,}8$ T"
+   ]
+  },
+  {
+   "steps": [
+    "$s=\\vartheta t=1{,}5$ m; $\\;I=\\dfrac{A}{BLs}=\\dfrac{0{,}96}{0{,}4\\cdot0{,}8\\cdot1{,}5}=2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$M=ISB\\sin\\alpha=2\\cdot1{,}2\\cdot30\\cdot0{,}8=57{,}6$ N$\\cdot$m"
+   ]
+  }
+ ]
+}

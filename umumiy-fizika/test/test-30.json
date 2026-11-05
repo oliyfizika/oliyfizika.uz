@@ -17,11 +17,13 @@
     },
     {
       "text": "Chizmada tasvirlangan quvurlardan to‘la holda suyuqlik oqmoqda. Uning qaysi qismida suyuqlikning tezligi eng katta bo‘ladi?",
+      "image": "../rasmlar30/rasm3.svg",
       "answers": ["4", "3", "2", "1"],
       "correct": 0
     },
     {
       "text": "Rasmda gorizontal joylashgan trubadan suv to‘la holda oqayotgani ko‘rsatilgan. ϑ1 tezlik nimaga teng?",
+      "image": "../rasmlar30/rasm4.svg",
       "answers": ["4", "3", "2", "1"],
       "correct": 1
     },
@@ -32,22 +34,25 @@
     },
     {
       "text": "Ko‘ndalang kesim yuzi o‘zgaruvchi quvurdan suyuqlik oqmoqda (rasmga q.). Bu suyuqlikning qaysi kesimdagi bosimi eng kichik?",
+      "image": "../rasmlar30/rasm6.svg",
       "answers": ["3", "1", "2", "oqayotgan suyuqlik qo‘shimcha bosim hosil qilmaydi"],
       "correct": 2
     },
     {
       "text": "Ko‘ndalang kesimi turli (S1; S2; S3) bo‘lgan naylar orqali oqayotgan suv bosimlarining nisbati qaysi javobda to‘g‘ri keltirilgan?",
+      "image": "../rasmlar30/rasm7.svg",
       "answers": ["P1 = P2 = P3", "P1 = P2 < P3", "P1 > P2 > P3", "P1 < P2 < P3"],
       "correct": 3
     },
     {
       "text": "Suyuqlik ko‘ndalang kesimi o‘zgaruvchi nay bo‘ylab oqmoqda. Qaysi kesimda suyuqlik hosil qilayotgan bosim minimal bo‘ladi?",
+      "image": "../rasmlar30/rasm8.svg",
       "answers": ["1", "2", "3", "4"],
       "correct": 1
     },
     {
       "text": "Diametri 0,5 m bo‘lgan neft quvuri orqali 1 m/s tezlikda neft oqayotgan bo‘lsa, 1 soatda qancha miqdor neft olinadi (kg)? ρ = 890 kg/m3.",
-      "answers": ["54, 6 · 10^5", "4, 5 · 10^4", "5, 9 · 10^5", "5, 1 · 10^7"],
+      "answers": ["54,6 · 10^5", "4,5 · 10^4", "6,3 · 10^5", "5,1 · 10^7"],
       "correct": 2
     },
     {
@@ -56,7 +61,7 @@
       "correct": 1
     },
     {
-      "text": "Katta shlankadan suv otilib chiqmoqda. Suv sarfi har minutda 60 l ga teng. Suvning 2 metr balandlikdagi ko‘ndalang kesim yuzasi (sm2) nimaga teng. Shlang ichidagi yuza 1,5 sm2 ga teng.",
+      "text": "Katta shlankadan suv otilib chiqmoqda. Suv sarfi har minutda 60 l ga teng. Suvning 2 metr balandlikdagi ko‘ndalang kesim yuzasi (sm2) nimaga teng. Shlang ichidagi yuza 1,5 sm2 ga teng. g = 9,8 m/s2.",
       "answers": ["3,32", "4,88", "4,37", "4,1"],
       "correct": 2
     },
@@ -66,7 +71,7 @@
       "correct": 2
     },
     {
-      "text": "Ichida suvi bo‘lgan silindrik idishning tubiga diametri 2 sm bo‘lgan teshik ochildi va idishga har sekundda 360 g suv quyila boshlandi. Idishdagi suvning dastlabki balandligi (sm) qanday bo‘lganida uning sathi suv quyilib tursa o‘zgarmay turadi?",
+      "text": "Ichida suvi bo‘lgan silindrik idishning tubiga diametri 2 sm bo‘lgan teshik ochildi va idishga har sekundda 360 g suv quyila boshlandi. Idishdagi suvning dastlabki balandligi (sm) qanday bo‘lganida uning sathi suv quyilib tursa o‘zgarmay turadi? g = 9,8 m/s2.",
       "answers": ["7,2", "3,6", "6,7", "2,8"],
       "correct": 2
     },
@@ -97,7 +102,7 @@
     },
     {
       "text": "Agar bo‘yoq pultidan 25 m/s tezlik bilan suyuq bo‘yoq oqib chiqayotgan bo‘lsa, kompressor bo‘yoq pultida qanday bosim (Pa) hosil qiladi? Bo‘yoqning zichligi 800 kg/m3.",
-      "answers": ["2 · 10^5", "1, 5 · 10^5", "2, 5 · 10^5", "10^5"],
+      "answers": ["2 · 10^5", "1,5 · 10^5", "2,5 · 10^5", "10^5"],
       "correct": 2
     },
     {

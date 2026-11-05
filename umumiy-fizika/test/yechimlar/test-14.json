@@ -1,0 +1,117 @@
+{
+ "id": 14,
+ "solutions": [
+  {
+   "steps": [
+    "Elastiklik kuchi jism deformatsiyalanganda (shakli yoki hajmi o‘zgarganda) uning zarralari orasidagi o‘zaro ta’sir natijasida vujudga keladi."
+   ]
+  },
+  {
+   "steps": [
+    "Guk qonuni: elastiklik kuchi deformatsiyaga proporsional va siljishga qarama-qarshi yo‘nalgan:",
+    "$F_x=-kx$"
+   ]
+  },
+  {
+   "steps": [
+    "$k=\\dfrac{F}{x}\\;\\Rightarrow\\;[k]=\\dfrac{\\text{N}}{\\text{m}}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=kx=200\\cdot0{,}05=10\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$k=\\dfrac Fx=\\dfrac{4}{0{,}02}=200\\ \\text{N/m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Muvozanatda $kx=mg$:",
+    "$x=\\dfrac{mg}{k}=\\dfrac{2\\cdot10}{500}=0{,}04\\ \\text{m}=4\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "$x=\\dfrac{mg}{k}$ — cho‘zilish massaga proporsional.",
+    "Massa 3 marta ortsa, cho‘zilish ham 3 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Parallel ulanganda bikrliklar qo‘shiladi:",
+    "$k=k_1+k_2=100+300=400\\ \\text{N/m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket ulanganda: $\\dfrac1k=\\dfrac1{k_1}+\\dfrac1{k_2}$.",
+    "$k=\\dfrac{k_1k_2}{k_1+k_2}=\\dfrac{100\\cdot300}{400}=75\\ \\text{N/m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Bikrlik prujina uzunligiga teskari proporsional: $k\\sim\\dfrac1l$.",
+    "Yarim uzunlikdagi bo‘lak: $k'=2k$"
+   ]
+  },
+  {
+   "steps": [
+    "Guk qonuni faqat kichik elastik deformatsiyalarda bajariladi; katta deformatsiyada kuch va uzayish orasidagi proporsionallik buziladi."
+   ]
+  },
+  {
+   "steps": [
+    "Elastiklik kuchi jismning dastlabki shaklini tiklashga intiladi, shuning uchun u deformatsiyada zarrachalar siljishiga qarama-qarshi yo‘nalgan ($F_x=-kx$)."
+   ]
+  },
+  {
+   "steps": [
+    "$k=\\dfrac{F}{x}=\\dfrac{8}{0{,}04}=200\\ \\text{N/m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Cho‘zilish: $x=13-10=3$ sm $=0{,}03$ m.",
+    "$k=\\dfrac Fx=\\dfrac{9}{0{,}03}=300\\ \\text{N/m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Mexanik kuchlanish nisbiy uzayishga proporsional, proporsionallik koeffitsiyenti — Yung moduli:",
+    "$\\sigma=E\\varepsilon$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sigma=E\\dfrac{\\Delta l}{l}$, $\\;\\sigma=\\dfrac FS$, $\\;S=1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$.",
+    "$\\Delta l=\\dfrac{Fl}{ES}=\\dfrac{200\\cdot2}{2\\cdot10^{11}\\cdot10^{-6}}=2\\cdot10^{-3}\\ \\text{m}=2\\ \\text{mm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuk lift bilan birga yuqoriga $a$ tezlanish bilan harakatlanadi: $kx-mg=ma$.",
+    "$x=\\dfrac{m(g+a)}{k}=\\dfrac{2\\cdot12}{400}=0{,}06\\ \\text{m}=6\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket: $k_1=\\dfrac k2$; parallel: $k_2=2k$. Bikrlik 4 marta ortadi.",
+    "$x\\sim\\dfrac1k\\;\\Rightarrow\\;x_2=\\dfrac{8}{4}=2\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis tortilganda prujina kuchi ishqalanish kuchiga teng: $kx=\\mu mg$.",
+    "$x=\\dfrac{\\mu mg}{k}=\\dfrac{0{,}2\\cdot5\\cdot10}{250}=0{,}04\\ \\text{m}=4\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "Elastiklik — tashqi kuch olingach, jismning dastlabki shakli va hajmini to‘liq tiklash xossasi."
+   ]
+  }
+ ]
+}

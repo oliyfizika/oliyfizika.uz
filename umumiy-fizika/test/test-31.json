@@ -67,6 +67,7 @@
     },
     {
       "text": "Keltirilgan grafikdan foydalanib, t = 0,6 s paytdagi tebranish fazasini aniqlang.",
+      "image": "../rasmlar31/rasm13.svg",
       "answers": ["0,6π", "1,2π", "0,3π", "0,4π"],
       "correct": 0
     },
@@ -92,7 +93,7 @@
     },
     {
       "text": "Tebranishlar amplitudasi 10 sm, chastotasi 0,5 Hz. Qancha vaqtdan keyin siljish 7,1 sm bo‘ladi? (Tebranish sinus qonuniga bo‘ysunadi).",
-      "answers": ["0,5 va 1,5 s", "0,25 va 2,4 s", "0,4 va 1,75 s", "0,25 va 1,75 s"],
+      "answers": ["0,5 va 1,5 s", "0,25 va 2,4 s", "0,4 va 1,75 s", "0,25 va 0,75 s"],
       "correct": 3
     },
     {
@@ -103,7 +104,7 @@
     {
       "text": "Agar mayatnik 12 s davr bilan garmonik tebransa, chetki vaziyatidan amplitudaning yarmigacha bo‘lgan masofani necha sekundda bosib o‘tadi?",
       "answers": ["2", "4", "6", "3"],
-      "correct": 1
+      "correct": 0
     },
     {
       "text": "Tebranayotgan jism amplituda yarmidan eng chekka nuqtagacha davrning qanday qismida siljiydi?",
@@ -151,7 +152,7 @@
       "correct": 3
     },
     {
-      "text": "Zarraning muvozanat vaziyatidagi tezligi 50 sm/s va amplitudasi 10 mm bo‘lsa, siljish 6 mm bo‘lgandagi tezligi (sm/s) qanday bo‘ladi?",
+      "text": "Zarraning muvozanat vaziyatidagi tezligi 50 sm/s va amplitudasi 10 mm bo‘lsa, siljish 6 mm bo‘lgandagi tezligi (mm/s) qanday bo‘ladi?",
       "answers": ["300", "500", "400", "600"],
       "correct": 2
     },

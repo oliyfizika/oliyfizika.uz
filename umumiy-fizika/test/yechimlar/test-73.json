@@ -1,0 +1,548 @@
+{
+ "id": 73,
+ "solutions": [
+  {
+   "steps": [
+    "Yorug‘lik nuri — yorug‘lik energiyasi tarqaladigan chiziq."
+   ]
+  },
+  {
+   "steps": [
+    "Soya yorug‘likning to‘g‘ri chiziq bo‘ylab tarqalishi natijasida hosil bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Soya devor bo‘ylab velosipedchidan tezroq siljishi uchun manba velosipedchi harakati yo‘nalishida undan kattaroq tezlik bilan harakatlanishi kerak — shunda soya orqada qoladi va velosipedchi uni quvib o‘tadi."
+   ]
+  },
+  {
+   "steps": [
+    "O‘xshash uchburchaklar: $\\dfrac{H}{80+20}=\\dfrac{30}{20}$.",
+    "$H=150$ cm $=1{,}5$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Shkala sirtdan o‘lchanadi: nur sirt bilan $20^\\circ$ hosil qiladi. Tushish burchagi normaldan o‘lchanadi:",
+    "$\\alpha=90^\\circ-20^\\circ=70^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Tushish va qaytish burchaklari teng: $2\\alpha=50^\\circ$.",
+    "$\\alpha=25^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\alpha=\\gamma$ va $\\alpha+\\gamma=\\alpha_{nur}$.",
+    "$\\gamma=\\dfrac{\\alpha}{2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Nurlar orasidagi burchak $2\\alpha$: $\\sin2\\alpha=0{,}5\\Rightarrow2\\alpha=30^\\circ$ yoki $150^\\circ$.",
+    "$\\alpha=15^\\circ$ yoki $75^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Nurlar orasidagi burchak $2\\alpha$ — tushish burchagi $10^\\circ$ kamaysa, u $20^\\circ$ kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Vertikal ko‘zgudagi nuqtada ichki burchak $180^\\circ-69^\\circ=111^\\circ$. Ko‘zgular hosil qilgan uchburchakda:",
+    "$180^\\circ-111^\\circ-48^\\circ=21^\\circ$ — nur va qiya ko‘zgu orasidagi burchak",
+    "Qaytish qonuniga ko‘ra tushayotgan nur ham ko‘zgu bilan shunday burchak hosil qiladi: $\\alpha=21^\\circ$."
+   ]
+  },
+  {
+   "steps": [
+    "Burchagi $\\varphi$ bo‘lgan ikki ko‘zgudan ketma-ket qaytgan nur $360^\\circ-2\\varphi$ ga buriladi.",
+    "$360^\\circ-2\\cdot150^\\circ=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Yassi ko‘zguda tasvir ko‘zguga nisbatan simmetrik: $\\vartheta_{tasvir}=2\\vartheta_{ko‘zgu}-\\vartheta_{bola}$.",
+    "Bola tomon yo‘nalishni musbat desak: ko‘zgu $-v$, bola $+v$: $\\vartheta_{tasvir}=-2v-v=-3v$ — moduli $3v$."
+   ]
+  },
+  {
+   "steps": [
+    "1-plastinadagi tasvir undan $b$ orqada, ya’ni A dan $2b$ masofada.",
+    "2-plastinadagi tasvir undan $a+b$ orqada, ya’ni A dan $2(a+b)$ masofada.",
+    "$\\Delta=2(a+b)-2b=2a$"
+   ]
+  },
+  {
+   "steps": [
+    "Tushish, qaytish va sinish burchaklari normaldan (perpendikulyardan) o‘lchanadi — bu 2-chizma."
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $n_1\\sin\\alpha=n_2\\sin\\beta$.",
+    "$\\sin\\beta=\\dfrac{\\sin60^\\circ}{\\sqrt3}=\\dfrac12\\;\\Rightarrow\\;\\beta=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $n_1\\sin\\alpha=n_2\\sin\\beta$.",
+    "$\\sin\\alpha=\\dfrac{\\sqrt2\\sin60^\\circ}{\\sqrt3}=\\dfrac{\\sqrt2}{2}\\;\\Rightarrow\\;\\alpha=45^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $n_1\\sin\\alpha=n_2\\sin\\beta$.",
+    "$n_2=\\dfrac{\\sqrt2\\sin30^\\circ}{\\sin45^\\circ}=1$"
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $n_1\\sin\\alpha=n_2\\sin\\beta$.",
+    "$\\sin\\alpha=\\dfrac{2\\sqrt2\\cdot0{,}5}{2}=\\dfrac{\\sqrt2}{2}\\;\\Rightarrow\\;\\alpha=45^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $n_1\\sin\\alpha=n_2\\sin\\beta$.",
+    "$n_2=\\dfrac{3\\sin30^\\circ}{\\sin60^\\circ}=\\dfrac{1{,}5}{\\sqrt3/2}=\\sqrt3$"
+   ]
+  },
+  {
+   "steps": [
+    "Sinish qonuni: $n_1\\sin\\alpha=n_2\\sin\\beta$.",
+    "$n_1=\\dfrac{2\\sqrt2\\sin30^\\circ}{\\sin45^\\circ}=2$"
+   ]
+  },
+  {
+   "steps": [
+    "$n_{21}=\\dfrac{\\sin30^\\circ}{\\sin60^\\circ}=\\dfrac{1}{\\sqrt3}=\\dfrac{\\sqrt3}{3}$"
+   ]
+  },
+  {
+   "steps": [
+    "Shishadan havoga — nur normaldan uzoqlashadi: sinish burchagi $30^\\circ+30^\\circ=60^\\circ$.",
+    "$n=\\dfrac{\\sin60^\\circ}{\\sin30^\\circ}=\\sqrt3$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\beta=\\dfrac{\\sin45^\\circ}{\\sqrt2}=\\dfrac12\\;\\Rightarrow\\;\\beta=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Qaytgan va singan nurlar orasidagi burchak: $180^\\circ-\\alpha-\\beta=1{,}5\\cdot60^\\circ=90^\\circ$.",
+    "$\\beta=180^\\circ-60^\\circ-90^\\circ=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Rasmda burchaklar sirtdan berilgan: tushish burchagi $90^\\circ-37^\\circ=53^\\circ$, sinish burchagi $90^\\circ-53^\\circ=37^\\circ$.",
+    "$n_2=n_1\\dfrac{\\sin53^\\circ}{\\sin37^\\circ}=\\dfrac43\\cdot\\dfrac{0{,}8}{0{,}6}=\\dfrac{16}{9}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\beta=\\dfrac{\\sin45^\\circ}{1{,}41}=\\dfrac{0{,}705}{1{,}41}=0{,}5\\;\\Rightarrow\\;\\beta=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$180^\\circ-60^\\circ-\\beta=90^\\circ\\Rightarrow\\beta=30^\\circ$.",
+    "$n=\\dfrac{\\sin60^\\circ}{\\sin30^\\circ}=\\sqrt3$"
+   ]
+  },
+  {
+   "steps": [
+    "$2\\alpha=60^\\circ\\Rightarrow\\alpha=30^\\circ$.",
+    "$\\sin\\beta=\\dfrac{\\sin30^\\circ}{1{,}5}=\\dfrac13$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=\\sqrt3\\sin\\dfrac\\alpha2$; $\\;2\\sin\\dfrac\\alpha2\\cos\\dfrac\\alpha2=\\sqrt3\\sin\\dfrac\\alpha2\\Rightarrow\\cos\\dfrac\\alpha2=\\dfrac{\\sqrt3}{2}$.",
+    "$\\dfrac\\alpha2=30^\\circ\\;\\Rightarrow\\;\\alpha=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$n_2>n_1\\Rightarrow\\sin\\beta=\\dfrac{n_1}{n_2}\\sin\\alpha<\\sin\\alpha$ — sinish burchagi kichikroq."
+   ]
+  },
+  {
+   "steps": [
+    "Zichroq muhitdan siyrakroq muhitga o‘tganda sinish burchagi tushish burchagidan katta bo‘ladi.",
+    "1-chizma: tushish $\\approx40^\\circ$, sinish $\\approx55^\\circ$; 3-chizma: tushish $\\approx25^\\circ$, sinish $45^\\circ$ — ikkalasida nur normaldan uzoqlashadi. 2-chizmada aksincha. Javob: 1, 3."
+   ]
+  },
+  {
+   "steps": [
+    "$n_2<n_1\\Rightarrow\\sin\\beta>\\sin\\alpha$ — sinish burchagi katta."
+   ]
+  },
+  {
+   "steps": [
+    "Shishadan havoga: qaytgan nur (I) tushish burchagiga teng burchak ostida, singan nur (II) normaldan uzoqlashadi.",
+    "a) va c) da singan nur normalga yaqinlashgan — noto‘g‘ri; faqat b) to‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "Ha — nur optik zichroq muhitdan optik siyrakroq muhitga o‘tganda."
+   ]
+  },
+  {
+   "steps": [
+    "2-muhitda nur normaldan uzoqlashgan: $\\beta>\\alpha\\Rightarrow n_2<n_1$.",
+    "$\\vartheta=\\dfrac cn$ — 2-muhitda tezlik katta."
+   ]
+  },
+  {
+   "steps": [
+    "Nur chegaraga tik tushmoqda (tushish burchagi $0^\\circ$): $\\sin\\beta=\\dfrac{n_1}{n_2}\\sin0=0$.",
+    "Sinish burchagi $0$ — nur sinmasdan o‘tadi."
+   ]
+  },
+  {
+   "steps": [
+    "Qaytgan va singan nur tik: $\\alpha+\\beta=90^\\circ$, $\\;\\sin\\alpha=n\\cos\\alpha\\Rightarrow\\tan\\alpha=n$ (Bryuster).",
+    "$\\tan\\alpha=\\sqrt3\\;\\Rightarrow\\;\\alpha=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\tan\\alpha=n=1{,}732=\\sqrt3\\;\\Rightarrow\\;\\alpha=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\alpha+\\beta=90^\\circ$: $\\sin\\alpha=n\\sin\\beta=n\\cos\\alpha$.",
+    "$\\alpha=\\operatorname{arctg}n$"
+   ]
+  },
+  {
+   "steps": [
+    "Qaytgan va singan nurlar tik: $\\beta=90^\\circ-30^\\circ=60^\\circ$.",
+    "$n=\\dfrac{\\sin60^\\circ}{\\sin30^\\circ}=\\sqrt3\\approx1{,}73$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\beta=90^\\circ-\\alpha$: $\\sin\\alpha=n\\cos\\alpha$.",
+    "$\\tan\\alpha=n$"
+   ]
+  },
+  {
+   "steps": [
+    "Shishadan havoga: $\\sqrt3\\sin\\alpha=\\sin2\\alpha=2\\sin\\alpha\\cos\\alpha$.",
+    "$\\cos\\alpha=\\dfrac{\\sqrt3}{2}\\;\\Rightarrow\\;\\alpha=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "Muhitdan havoga: $n\\sin\\alpha=\\sin\\beta$, $\\beta=90^\\circ-\\alpha\\Rightarrow n=\\dfrac{\\cos\\alpha}{\\sin\\alpha}$.",
+    "$n=\\dfrac{0{,}8}{0{,}6}\\approx1{,}33$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\alpha=0\\Rightarrow\\sin\\beta=0\\Rightarrow\\beta=0=\\alpha$."
+   ]
+  },
+  {
+   "steps": [
+    "Suv havodan optik zichroq — nur normalga yaqinlashadi: $\\beta<\\alpha$."
+   ]
+  },
+  {
+   "steps": [
+    "Plastina zichroq: ichkarida nur normalga yaqinlashadi, chiqishda esa dastlabki yo‘nalishga parallel bo‘ladi.",
+    "2-nur: tashqarida $\\approx40^\\circ$–$45^\\circ$, ichkarida $\\approx27^\\circ$ ($n\\approx1{,}5$) — to‘g‘ri.",
+    "1-nur ichkarida deyarli normal bo‘ylab ketadi ($n\\approx6$ chiqadi — o‘sha plastina uchun mos emas); 3-nur esa $22^\\circ$ da to‘liq qaytishi mumkin emas (chegaraviy burchakdan kichik). Javob: 2."
+   ]
+  },
+  {
+   "steps": [
+    "Nur birinchi yoqdan sinmasdan o‘tadi, ikkinchi yoqqa $\\alpha$ burchak ostida tushadi, sinish burchagi $\\alpha+\\beta$.",
+    "$n=\\dfrac{\\sin(\\alpha+\\beta)}{\\sin\\alpha}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\beta=\\dfrac{0{,}8}{1{,}7}\\approx0{,}47$, $\\;\\cos\\beta\\approx0{,}88$",
+    "Siljish: $x=d\\dfrac{\\sin(\\alpha-\\beta)}{\\cos\\beta}$, $\\;\\sin(\\alpha-\\beta)=0{,}8\\cdot0{,}88-0{,}6\\cdot0{,}47\\approx0{,}42$",
+    "$d=\\dfrac{x\\cos\\beta}{\\sin(\\alpha-\\beta)}=\\dfrac{2\\cdot0{,}88}{0{,}42}\\approx4{,}2$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\beta_1=\\dfrac{\\sin45^\\circ}{\\sqrt2}=\\dfrac12\\Rightarrow\\beta_1=30^\\circ$; $\\;\\beta_2=60^\\circ-30^\\circ=30^\\circ\\Rightarrow$ chiqish burchagi $45^\\circ$",
+    "Og‘ish: $\\delta=45^\\circ+45^\\circ-60^\\circ=30^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\sqrt{\\varepsilon\\mu}=\\sqrt2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac cn$."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{3\\cdot10^8}{1{,}5}=2\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{c}{2{,}5}=0{,}4c$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\vartheta_1}{\\vartheta_2}=\\dfrac{n_2}{n_1}=\\dfrac{1{,}75}{1{,}4}=1{,}25$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{c}{0{,}25c}=4$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{1}{0{,}625}=1{,}6$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac cn$, $\\;\\lambda=\\dfrac{\\vartheta}{\\nu}=\\dfrac{\\lambda_0}{n}$; chastota muhitga bog‘liq emas.",
+    "$\\lambda=\\dfrac{0{,}6}{4/3}=0{,}45\\ \\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{450}{1{,}5}=300$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac c\\lambda=\\dfrac{3\\cdot10^8}{5\\cdot10^{-7}}=6\\cdot10^{14}=0{,}6\\cdot10^{15}$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{3\\cdot10^8}{0{,}75\\cdot10^{-6}}=4\\cdot10^{14}$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{3\\cdot10^8}{6\\cdot10^{-7}}=5\\cdot10^{14}$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\lambda\\nu=5\\cdot10^{-7}\\cdot3\\cdot10^{14}=1{,}5\\cdot10^8$ m/s; $\\;n=\\dfrac c\\vartheta=2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{c}{n\\nu}=\\dfrac{3\\cdot10^8}{2\\cdot3\\cdot10^{14}}=5\\cdot10^{-7}$ m $=500$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\lambda\\nu=450\\cdot10^{-9}\\cdot2{,}73\\cdot10^{14}\\approx1{,}23\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi: $\\vartheta=\\lambda\\nu$ — tezlik ham 2 marta kamaygan."
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\lambda\\nu=5\\cdot10^{-7}\\cdot4\\cdot10^{14}=2\\cdot10^8$ m/s; $\\;n=1{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=4\\cdot10^{-7}\\cdot5\\cdot10^{14}=2\\cdot10^8$ m/s; $\\;n=1{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{\\sin45^\\circ}{\\sin33^\\circ}=\\dfrac{0{,}7}{0{,}54}\\approx1{,}3$; $\\;\\vartheta=\\dfrac cn\\approx2{,}3\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Bir xil vaqtda o‘tilgan yo‘llar tezliklarga proporsional: $\\dfrac{s_0}{s}=\\dfrac{c}{\\vartheta}=n$.",
+    "$n=\\dfrac{45}{30}=1{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{s_1}{s_2}=\\dfrac{\\vartheta_1}{\\vartheta_2}=\\dfrac{n_2}{n_1}=\\dfrac{1{,}5}{1{,}2}=1{,}25$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\vartheta_2}{\\vartheta_1}=\\dfrac{\\sin\\beta}{\\sin\\alpha}=\\dfrac{\\sin45^\\circ}{\\sin30^\\circ}=\\sqrt2$ — $\\sqrt2$ marta oshadi"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{c}{n\\nu}=\\dfrac{3\\cdot10^8}{1{,}5\\cdot10^{15}}=2\\cdot10^{-7}$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{3\\cdot10^8}{1{,}25\\cdot10^8}=2{,}4$; $\\;\\lambda=\\dfrac{720}{2{,}4}=300$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac cn$, $\\;\\lambda=\\dfrac{\\vartheta}{\\nu}=\\dfrac{\\lambda_0}{n}$; chastota muhitga bog‘liq emas.",
+    "To‘lqin uzunligi va tezlik $n$ marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{\\lambda_0}{n}$ — 2 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi: $\\vartheta\\sim\\lambda$.",
+    "$\\vartheta=0{,}7c$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\lambda_2}{\\lambda_1}=\\dfrac{n_1}{n_2}=\\dfrac{2}{1{,}5}=\\dfrac43$ — $\\dfrac43$ marta ortadi"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda\\sim\\dfrac1n$: eng qisqa $\\lambda_3$ — eng katta $n_3$, eng uzun $\\lambda_2$ — eng kichik $n_2$.",
+    "$n_3>n_1>n_2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{c}{1{,}5}=2\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\lambda_2}{\\lambda_1}=\\dfrac{\\vartheta_2}{\\vartheta_1}=\\dfrac{\\sin\\alpha_2}{\\sin\\alpha_1}$.",
+    "$\\lambda_2=\\lambda_1\\dfrac{\\sin\\alpha_2}{\\sin\\alpha_1}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda_2=400\\cdot\\dfrac{\\sin45^\\circ}{\\sin30^\\circ}=400\\sqrt2\\approx566$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda_2=560\\cdot\\dfrac{\\sin30^\\circ}{\\sin45^\\circ}=560\\cdot\\dfrac{0{,}5}{0{,}7}=400$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac{c}{n\\nu}=\\dfrac{3\\cdot10^8}{1{,}5\\cdot5\\cdot10^{14}}=4\\cdot10^{-7}$ m $=400$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{c}{n\\lambda}=\\dfrac{3\\cdot10^8}{1{,}5\\cdot5\\cdot10^{-7}}=4\\cdot10^{14}$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi — $\\lambda\\sim\\vartheta$, tezlik 40% kamaysa, $\\vartheta=0{,}6c$.",
+    "$\\lambda=0{,}6\\cdot600=360$ nm"
+   ]
+  },
+  {
+   "steps": [
+    "To‘lqin uzunligi, tezlik va amplituda o‘zgaradi; o‘zgarmaydigan kattalik — chastota (2)."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi; to‘lqin uzunligi va tezlik o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota manba bilan aniqlanadi — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota muhitga bog‘liq emas — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi: $3\\cdot10^{15}$ Hz."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota o‘zgarmaydi: 1 MHz."
+   ]
+  },
+  {
+   "steps": [
+    "Chastota barcha muhitlarda bir xil: $\\nu_1=\\nu_2=\\nu_3$."
+   ]
+  },
+  {
+   "steps": [
+    "Muhitdagi uzunlik $480-192=288$ nm.",
+    "$n=\\dfrac{480}{288}=\\dfrac53$; $\\;\\vartheta=\\dfrac{3\\cdot10^8}{5/3}=1{,}8\\cdot10^8$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda_0-\\dfrac{\\lambda_0}{n}=0{,}165\\;\\Rightarrow\\;\\lambda_0\\left(1-\\dfrac{1}{1{,}33}\\right)=0{,}165$",
+    "$\\lambda_0=\\dfrac{0{,}165}{0{,}248}\\approx0{,}665\\ \\mu$m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{\\vartheta_1}{\\vartheta_2}=\\dfrac{\\sin\\alpha}{\\sin\\beta}>1$, chunki $\\alpha>\\beta$: $\\vartheta_1>\\vartheta_2$."
+   ]
+  },
+  {
+   "steps": [
+    "$n_2=n_1\\dfrac{\\sin45^\\circ}{\\sin30^\\circ}=\\sqrt2\\cdot\\sqrt2=2$; $\\;\\vartheta_2=\\dfrac{300000}{2}=150000$ km/s"
+   ]
+  },
+  {
+   "steps": [
+    "Sindirish ko‘rsatkichi nuqtadan nuqtaga o‘zgaradigan (optik bir jinsli bo‘lmagan) muhitda nur egriladi."
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac c\\vartheta=2$; $\\;n=\\sqrt{\\varepsilon}\\Rightarrow\\varepsilon=n^2=4$"
+   ]
+  }
+ ]
+}

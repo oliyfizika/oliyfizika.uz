@@ -1,0 +1,59 @@
+{
+ "id": 27,
+ "solutions": [
+  {
+   "steps": [
+    "Ajralish sathida ikkala tirsakdagi bosimlar teng: $\\rho_sgh_s=\\rho_kgh_k$.",
+    "$h_k=h_s\\dfrac{\\rho_s}{\\rho_k}=16\\cdot\\dfrac{13{,}6}{0{,}8}=272\\ \\text{cm}=2{,}72$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho_sh_s=\\rho_kh_k\\;\\Rightarrow\\;h_k=\\dfrac{1\\cdot16}{0{,}8}=20$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho_{sim}h_{sim}=\\rho_sh_s\\;\\Rightarrow\\;h_s=\\dfrac{13{,}6\\cdot5}{1}=68$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Kerosin ustuni $h$ bo‘lsin. Kerosin tirsak uchigacha to‘la, suv sathi esa uchdan 30 cm pastda, demak ajralish sathidan suv ustuni $h-30$ cm.",
+    "$\\rho_kgh=\\rho_sg(h-30)\\;\\Rightarrow\\;0{,}8h=h-30\\;\\Rightarrow\\;h=150$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Bir jinsli suyuqlik tutash idishlarda tirsaklarning kesimidan qat’i nazar bir xil sathda turadi.",
+    "$\\dfrac{h_1}{h_2}=1$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho_1gh_1=\\rho_2gh_2\\;\\Rightarrow\\;\\dfrac{\\rho_1}{\\rho_2}=\\dfrac{h_2}{h_1}=\\dfrac12=0{,}5$"
+   ]
+  },
+  {
+   "steps": [
+    "Simob sathlari teng bo‘lishi uchun kerosin ustunining bosimi suv ustunining bosimiga teng bo‘lishi kerak:",
+    "$\\rho_kh_k=\\rho_sh_s\\;\\Rightarrow\\;h_k=\\dfrac{1\\cdot68}{0{,}8}=85$ cm"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqori sathlar bir xil, x ustuni kerosindan 10 cm uzun, demak simob sathlari farqi $\\Delta h=40-30=10$ cm.",
+    "x suyuqlik va simob chegarasi sathida bosimlar teng:",
+    "$\\rho_x\\cdot40=\\rho_k\\cdot30+\\rho_{sim}\\cdot10$",
+    "$\\rho_x=\\dfrac{800\\cdot30+13600\\cdot10}{40}=4000\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Suv ustuni: $h_s=\\dfrac{m}{\\rho_sS_1}=\\dfrac{204}{1\\cdot10}=20{,}4$ cm.",
+    "Simob 1-tirsakda $x$ ga tushadi, 2-tirsakda $h$ ga ko‘tariladi: $S_1x=S_2h\\Rightarrow x=\\dfrac h2$; sathlar farqi $x+h=1{,}5h$.",
+    "$\\rho_{sim}\\cdot1{,}5h=\\rho_sh_s\\;\\Rightarrow\\;13{,}6\\cdot1{,}5h=20{,}4\\;\\Rightarrow\\;h=1$ cm"
+   ]
+  }
+ ]
+}

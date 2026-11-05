@@ -24,7 +24,7 @@
     {
       "text": "U–simon tutash idishga suv va kerosin quyilgan. Suv sathi idishning yuqori uchidan 30 cm pastda joylashgan. Idishning narigi tirsagi kerosin bilan to‘ldirilgan. Kerosin ustunining balandligini toping (cm).",
       "answers": ["50", "60", "120", "150"],
-      "correct": 0
+      "correct": 3
     },
     {
       "text": "U-simon tutash idishning ikkinchi tirsagi radiusi birinchisinikidan 2 marta katta. Unga suyuqlik quyilsa, birinchi va ikkinchi tirsaklardagi suyuqlik ustunlarining balandliklari nisbati h1/h2 qanday bo‘ladi?",
@@ -44,7 +44,7 @@
       "correct": 3
     },
     {
-      "text": "Tutash idishlarga simob, kerosin va x suyuqlik rasmdagi kabi quyilgan. x suyuqlikning zichligini toping (kg/m3). (Kerosin ustuni 40 cm, x suyuqlik 30 cm)",
+      "text": "Tutash idishlarga simob, kerosin va x suyuqlik rasmdagi kabi quyilgan. Kerosin va x suyuqlikning yuqori sathlari bir xil balandlikda. x suyuqlikning zichligini toping (kg/m3). (Kerosin ustuni 30 cm, x suyuqlik ustuni 40 cm)",
       "images": "../rasmlar27/rasm8.png",
       "answers": ["2500", "5300", "7800", "4000"],
       "correct": 3

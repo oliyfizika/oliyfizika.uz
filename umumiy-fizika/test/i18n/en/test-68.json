@@ -162,7 +162,7 @@
       ]
     },
     {
-      "text": "A stationary loop of area $30$ cm$^2$ is placed in a uniform magnetic field perpendicular to the induction lines. What induced emf appears in the loop if in $0.01$ s the magnetic induction increases uniformly from $0.2$ T to $0.7$ T?",
+      "text": "A stationary loop of area $30$ cm$^2$ is placed in a uniform magnetic field perpendicular to the induction lines. What induced emf (V) appears in the loop if in $0.01$ s the magnetic induction increases uniformly from $0.2$ T to $0.7$ T?",
       "answers": [
         "500.",
         "50.",
@@ -202,7 +202,7 @@
       ]
     },
     {
-      "text": "A coil of $N=8$ turns is in a magnetic field whose induction decreased during $\\Delta t=0.5$ s from $B_1=0.8$ T to $B_2=0.2$ T. The radius of a turn of the coil is $r=10$ cm. Determine the induced current that flowed during this time through the resistor $R=10~\\Omega$ connected to the coil. (Neglect the resistance of the coil wire $r$.) $\\pi=3$.",
+      "text": "A coil of $N=8$ turns is in a magnetic field whose induction decreased during $\\Delta t=0.5$ s from $B_1=0.8$ T to $B_2=0.2$ T. The radius of a turn of the coil is $r=10$ cm. Determine the induced current that flowed during this time through the resistor $R=10~\\Omega$ connected to the coil. (Neglect the resistance of the coil wire $r$.) $\\pi=3$. (mA)",
       "answers": [
         "12.5.",
         "3.24.",
@@ -582,7 +582,7 @@
       ]
     },
     {
-      "text": "A permanent magnet is being brought toward a metal ring north pole first. Is the ring attracted to the magnet or repelled? What is the direction of the induced current in the ring, viewed along the direction of motion of the magnet?",
+      "text": "A permanent magnet is being brought toward a metal ring south pole first. Is the ring attracted to the magnet or repelled? What is the direction of the induced current in the ring, viewed along the direction of motion of the magnet?",
       "answers": [
         "attracted, counterclockwise.",
         "repelled, clockwise.",
@@ -592,13 +592,13 @@
       ]
     },
     {
-      "text": "In a magnetic field whose induction changes according to the law $B=8000(1+t^2)$ (T), a square frame of area $50$ cm$^2$ is placed. What is the induced emf in the frame at the instant $t=1$ s? In which direction does the induced current pass at point K of the frame during the interval $(0-1)$ s?",
+      "text": "A square frame of area $50$ cm$^2$ is placed perpendicular to the induction lines of a magnetic field whose induction changes according to the law $B=8000(1+t^2)$ (T). What is the induced emf in the frame at the instant $t=1$ s?",
       "answers": [
-        "30 V; in the $(+)$ direction.",
-        "40 V; in the $(-)$ direction.",
-        "80 V; in the $(+)$ direction.",
-        "30 V; in the $(-)$ direction.",
-        "80 V; in the $(-)$ direction."
+        "30 V.",
+        "40 V.",
+        "80 V.",
+        "160 V.",
+        "8 V."
       ]
     },
     {

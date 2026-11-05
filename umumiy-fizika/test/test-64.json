@@ -47,8 +47,8 @@
         "3.",
         "4."
       ],
-      "correct": 0,
-      "images": "../rasmlar64/r6c213d5b00.png",
+      "correct": 2,
+      "images": "../rasmlar64/rasm3.svg",
       "source": "67-mavzu.tex#0:4"
     },
     {
@@ -71,7 +71,7 @@
         "4.",
         "2."
       ],
-      "correct": 1,
+      "correct": 2,
       "images": "../rasmlar64/ra406ba1b7d.png",
       "source": "67-mavzu.tex#0:6"
     },
@@ -164,7 +164,7 @@
         "o‘zaro teskari yo‘nalishda bir-biridan uzoqlashsa.",
         "hech qachon ular tortishmaydilar."
       ],
-      "correct": 1,
+      "correct": 3,
       "source": "67-mavzu.tex#0:14"
     },
     {
