@@ -1,0 +1,81 @@
+{
+ "id": 34,
+ "solutions": [
+  {
+   "steps": [
+    "To‘lqin uzunligi yunoncha $\\lambda$ (lambda) harfi bilan belgilanadi."
+   ]
+  },
+  {
+   "steps": [
+    "To‘lqin uzunligi — bir xil fazada tebranayotgan eng yaqin nuqtalar orasidagi masofa (bir davrda to‘lqin bosib o‘tgan yo‘l)."
+   ]
+  },
+  {
+   "steps": [
+    "To‘lqin uzunligi masofa, uning birligi — metr (m)."
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac v\\nu=\\dfrac{24}{6}=4$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\lambda\\nu=5\\cdot4=20$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac v\\lambda=\\dfrac{40}{8}=5$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\lambda\\nu\\;\\Rightarrow\\;\\lambda=\\dfrac v\\nu$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac v\\nu$: $\\nu\\to2\\nu\\;\\Rightarrow\\;\\lambda\\to\\dfrac\\lambda2$ (2 marta kamayadi)"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\dfrac\\lambda T=\\dfrac{12}{3}=4$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=vT=18\\cdot2=36$ m"
+   ]
+  },
+  {
+   "steps": [
+    "Qo‘shni cho‘qqilar orasidagi masofa — to‘lqin uzunligi:",
+    "$\\lambda=7$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\lambda\\nu=0{,}4\\cdot850=340$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\lambda=\\dfrac c\\nu=\\dfrac{3\\cdot10^8}{1{,}5\\cdot10^8}=2$ m"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac\\lambda v=\\dfrac{3}{12}=0{,}25$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\dfrac{180}{15}=12$ m/s; $\\;\\nu=\\dfrac v\\lambda=\\dfrac{12}{6}=2$ Hz"
+   ]
+  }
+ ]
+}
