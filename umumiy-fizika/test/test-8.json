@@ -38,52 +38,52 @@
     {
       "text": "Aylanish chastotasi 0,0796 s⁻¹ bo‘lgan maxovikning maksimal burchak tezligini toping (rad/s).",
       "answers": ["10", "0,5", "4", "20"],
-      "correct": 2
+      "correct": 1
     },
     {
       "text": "Aylanish davri 3 s bo‘lgan jism 4 s da necha gradusga buriladi?",
       "answers": ["270°", "480°", "300°", "360°"],
-      "correct": 0
+      "correct": 1
     },
     {
       "text": "Quyidagilarni qaysi biri 12·10³ sekund vaqt miqdorini ifodalaydi?",
       "answers": ["2 soat–40 min", "3 soat–20 min", "4 soat–15 min", "4 soat–40 min"],
-      "correct": 2
+      "correct": 1
     },
     {
       "text": "Yukni 0,4 m/s tezlik bilan ko‘tarishda diametri 16 sm bo‘lgan chig‘ir barabanining aylanish chastotasi qanday bo‘ladi (s⁻¹)?",
       "answers": ["0,8", "16", "0,4", "0,2"],
-      "correct": 2
+      "correct": 0
     },
     {
-      "text": "Radiusi 0,25 m bo‘lgan g‘ildirak 12 m/s tezlik bilan g‘ildiramoqda. G‘ildirakning burchak tezligini toping (rad/s).",
+      "text": "Radiusi 1 m bo‘lgan g‘ildirak 12 m/s tezlik bilan g‘ildiramoqda. G‘ildirakning burchak tezligini toping (rad/s).",
       "answers": ["12", "24", "36", "12π"],
       "correct": 0
     },
     {
       "text": "Sharcha radiusi 1 m bo‘lgan aylana bo‘ylab doimiy 4 m/s tezlik bilan harakatlanmoqda. Uning aylanish davri qanday (s)?",
       "answers": ["1,57", "3,14", "4,71", "6,28"],
-      "correct": 1
+      "correct": 0
     },
     {
       "text": "Avtomobilning tezligi 72 km/soat, g‘ildiragining diametri 62 sm. G‘ildirakning burchak tezligini toping (rad/s).",
       "answers": ["64,5", "62,5", "62", "32"],
-      "correct": 1
+      "correct": 0
     },
     {
       "text": "Elektovoz g‘ildiragining diametri 1 m bo‘lib, u 1 minutda 300 marta aylansa, poyezdning tezligi necha m/s bo‘ladi? (π = 3 deb hisoblang).",
       "answers": ["10", "12", "15", "20"],
-      "correct": 1
+      "correct": 2
     },
     {
-      "text": "Aylana bo‘ylab tekis harakat qilayotgan moddiy nuqtaning chiziqli tezligi 2 m/s va burchak tezligi 5 rad/s bo‘lsa, markazga intilma tezlanishi qanday (m/s²)?",
+      "text": "Aylana bo‘ylab tekis harakat qilayotgan moddiy nuqtaning chiziqli tezligi 2 m/s va burchak tezligi 2,5 rad/s bo‘lsa, markazga intilma tezlanishi qanday (m/s²)?",
       "answers": ["0,4", "2", "2,5", "5"],
       "correct": 3
     },
     {
       "text": "Poyezd egrilik radiusi 800 m bo‘lgan burilishda 20 m/s tezlik bilan harakatlanayotganining markazga intilma tezlanishi qanday (m/s²)?",
       "answers": ["10", "1", "0,2", "0,5"],
-      "correct": 0
+      "correct": 3
     },
     {
       "text": "Velosipedchi egrilik radiusi 48 m bo‘lgan burilishda 12 m/s tezlikda harakatlanmoqda. Markazga intilma tezlanishini toping (m/s²).",
@@ -93,27 +93,27 @@
     {
       "text": "Lokomotiv yo‘lining radiusi 750 m bo‘lgan burilish joyidan 54 km/soat tezlik bilan o‘tmoqda. Tezligi 2 marta kamaysa, lokomotivning markazga intilma tezlanishi qanday o‘zgaradi?",
       "answers": ["3 marta kamayadi", "4 marta kamayadi", "2 marta kamayadi", "4 marta ortadi"],
-      "correct": 3
+      "correct": 1
     },
     {
       "text": "Chekka nuqtasining markazga intilma tezlanishi 49,3 m/s² bo‘lgan diskning radiusi 5 sm. Diskning aylanish chastotasini toping (Hz).",
       "answers": ["5", "10", "3", "6"],
-      "correct": 2
-    },
-    {
-      "text": "Radiusi 10 sm bo‘lgan aylana bo‘ylab tekis harakat qilayotgan moddiy nuqtaning aylanish davri 2 s bo‘lsa, uning markazga intilma tezlanishini toping (m/s²).",
-      "answers": ["1,57", "0,57", "1,1", "1,05"],
       "correct": 0
     },
     {
-      "text": "Aylana bo‘ylab tekis harakat qilayotgan jismning burchak tezligi 5,5 marta ortsa, chiziqli tezligi esa shuncha marta kamaymasa, jismning markazga intilma tezlanishi qanday o‘zgaradi?",
+      "text": "Radiusi 10 sm bo‘lgan aylana bo‘ylab tekis harakat qilayotgan moddiy nuqtaning aylanish davri 2 s bo‘lsa, uning markazga intilma tezlanishini toping (m/s²).",
+      "answers": ["0,99", "0,57", "1,1", "1,05"],
+      "correct": 0
+    },
+    {
+      "text": "Aylana bo‘ylab tekis harakat qilayotgan jismning burchak tezligi 5,5 marta ortsa, chiziqli tezligi esa shuncha marta kamaysa, jismning markazga intilma tezlanishi qanday o‘zgaradi?",
       "answers": ["8,5 marta ortadi", "8,5 marta kamayadi", "o‘zgarmaydi", "17 marta kamayadi"],
-      "correct": 3
+      "correct": 2
     },
     {
       "text": "Avtomobil 72 km/soat tezlik bilan harakatlanganda g‘ildiraklarining aylanish chastotasi 8 s⁻¹ bo‘lsa, avtomobil g‘ildiraklarining yo‘lga tegadigan nuqtalarining markazga intilma tezlanishini toping (m/s²).",
-      "answers": ["10", "2", "15", "1"],
-      "correct": 1
+      "answers": ["≈ 250", "≈ 500", "≈ 1000", "≈ 2000"],
+      "correct": 2
     },
     {
       "text": "Aylanish davri 0,2 s va radiusi 5 sm bo‘lgan disk chekka nuqtasining markazga intilma tezlanishini toping (m/s²).",
@@ -128,7 +128,7 @@
     {
       "text": "Jism aylana bo‘ylab tekis harakat qilmoqda. Agar aylana radiusi o‘zgarmasdan, jism tezligi 3 marta kamaysa, markazga intilma tezlanish qanday o‘zgaradi?",
       "answers": ["9 marta kamayadi", "3 marta ortadi", "3 marta kamayadi", "9 marta ortadi"],
-      "correct": 3
+      "correct": 0
     },
     {
       "text": "R₁ va R₂ = 4R₁ radiusli aylana bo‘ylab harakatlanayotgan moddiy nuqtalarning aylanish davrlari teng bo‘lsa, ularning markazga intilma tezlanishlari uchun qaysi munosabat o‘rinli?",
@@ -153,7 +153,7 @@
     {
       "text": "Agar aylanayotgan disk ustidagi radiuslari 1 sm ga farq qiladigan ikki nuqtaning chiziqli tezliklari orasidagi farq 0,314 m/s ga teng bo‘lsa, diskning aylanish chastotasini toping (Hz).",
       "answers": ["6,28", "5", "3,14", "1"],
-      "correct": 2
+      "correct": 1
     }
   ]
 }

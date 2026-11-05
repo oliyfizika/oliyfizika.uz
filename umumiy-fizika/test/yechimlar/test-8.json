@@ -1,0 +1,171 @@
+{
+ "id": 8,
+ "solutions": [
+  {
+   "steps": [
+    "$n=\\dfrac{N}{t}=\\dfrac{1200}{60\\ \\text{s}}=20\\ \\text{s}^{-1}$"
+   ]
+  },
+  {
+   "steps": [
+    "$N=nt=30\\cdot5=150$"
+   ]
+  },
+  {
+   "steps": [
+    "$t=\\dfrac{N}{n}=\\dfrac{1000}{20}=50\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{t}{N}=\\dfrac{20}{4}=5\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$t=NT=10\\cdot42=420\\ \\text{s}=7\\ \\text{min}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{6{,}28}{0{,}785}=8\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=2\\pi n=6{,}28\\cdot0{,}0796\\approx0{,}5\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "4 s da jism $\\dfrac{4}{3}$ marta aylanadi.",
+    "$\\varphi=\\dfrac{t}{T}\\cdot360^\\circ=\\dfrac43\\cdot360^\\circ=480^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$12\\cdot10^3\\ \\text{s}=\\dfrac{12000}{3600}\\ \\text{h}=3\\tfrac13\\ \\text{h}=3$ soat 20 min"
+   ]
+  },
+  {
+   "steps": [
+    "Baraban chetining chiziqli tezligi yuk tezligiga teng, $R=8$ sm $=0{,}08$ m.",
+    "$n=\\dfrac{v}{2\\pi R}=\\dfrac{0{,}4}{6{,}28\\cdot0{,}08}\\approx0{,}8\\ \\text{s}^{-1}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac{v}{R}=\\dfrac{12}{1}=12\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{2\\pi R}{v}=\\dfrac{6{,}28\\cdot1}{4}=1{,}57\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=72\\ \\text{km/h}=20$ m/s, $R=31$ sm $=0{,}31$ m.",
+    "$\\omega=\\dfrac vR=\\dfrac{20}{0{,}31}\\approx64{,}5\\ \\text{rad/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{300}{60}=5\\ \\text{s}^{-1}$.",
+    "$v=\\pi Dn=3\\cdot1\\cdot5=15\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{v^2}{R}=v\\omega=2\\cdot2{,}5=5\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{v^2}{R}=\\dfrac{20^2}{800}=0{,}5\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{v^2}{R}=\\dfrac{12^2}{48}=3\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{v^2}{R}$, radius o‘zgarmaydi.",
+    "$v\\to\\dfrac v2\\;\\Rightarrow\\;a\\to\\dfrac a4$ — 4 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$a=4\\pi^2n^2R\\;\\Rightarrow\\;n=\\sqrt{\\dfrac{a}{4\\pi^2R}}=\\sqrt{\\dfrac{49{,}3}{39{,}48\\cdot0{,}05}}\\approx5\\ \\text{Hz}$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{4\\pi^2R}{T^2}=\\dfrac{39{,}48\\cdot0{,}1}{2^2}\\approx0{,}99\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=v\\omega$.",
+    "$a'=\\dfrac{v}{5{,}5}\\cdot5{,}5\\,\\omega=v\\omega=a$ — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$v=72\\ \\text{km/h}=20$ m/s, $\\omega=2\\pi n=6{,}28\\cdot8\\approx50{,}3$ rad/s.",
+    "Avtomobilga bog‘langan sanoq sistemasida g‘ildirak nuqtalari $v$ tezlik bilan aylanadi:",
+    "$a=v\\omega=20\\cdot50{,}3\\approx1000\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{4\\pi^2R}{T^2}=\\dfrac{39{,}48\\cdot0{,}05}{0{,}2^2}\\approx49{,}3\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Velosiped tekis harakatlansa, uning sanoq sistemasi inersial; unda g‘ildirak nuqtalari $v=10$ m/s bilan aylanadi.",
+    "$a=\\dfrac{v^2}{R}=\\dfrac{10^2}{0{,}4}=250\\ \\text{m/s}^2$ (yerga nisbatan ham shunday)."
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{v^2}{R}$, $R$ o‘zgarmas.",
+    "$v\\to\\dfrac v3\\;\\Rightarrow\\;a\\to\\dfrac a9$ — 9 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$a=\\dfrac{4\\pi^2R}{T^2}$, davrlar teng — tezlanish radiusga proporsional.",
+    "$R_2=4R_1\\;\\Rightarrow\\;a_2=4a_1$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=4\\pi^2n^2R$.",
+    "$\\dfrac{a_g}{a_b}=\\dfrac{n_g^2R_g}{n_b^2R_b}=\\left(\\dfrac1{40}\\right)^2\\cdot8=\\dfrac{8}{1600}=\\dfrac1{200}$"
+   ]
+  },
+  {
+   "steps": [
+    "Chorak davrda tezlik vektori 90° ga buriladi, moduli o‘zgarmaydi.",
+    "$|\\Delta\\vec v|=\\sqrt{v^2+v^2}=v\\sqrt2=25\\sqrt2\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Chorak davrda tezlik vektori 90° ga buriladi:",
+    "$|\\Delta\\vec v|=v\\sqrt2=6\\sqrt2\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Diskning barcha nuqtalari bir xil $\\omega$ bilan aylanadi: $v=\\omega R$.",
+    "$\\Delta v=\\omega\\Delta R\\;\\Rightarrow\\;\\omega=\\dfrac{0{,}314}{0{,}01}=31{,}4\\ \\text{rad/s}$",
+    "$n=\\dfrac{\\omega}{2\\pi}=\\dfrac{31{,}4}{6{,}28}=5\\ \\text{Hz}$"
+   ]
+  }
+ ]
+}

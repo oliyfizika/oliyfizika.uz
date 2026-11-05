@@ -1,0 +1,83 @@
+{
+ "id": 6,
+ "solutions": [
+  {
+   "steps": [
+    "Tekis harakatda tezlik o‘zgarmaydi, ya’ni $v(t)$ grafigi $t$ o‘qiga parallel to‘g‘ri chiziq bo‘ladi.",
+    "Bunday grafiklar — 3 ($v=20$ m/s) va 5 ($v=-30$ m/s). 1, 2, 4 grafiklarda tezlik o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "Tekis tezlanuvchan harakatda tezlanish o‘zgarmas: $a=\\text{const}\\ne0$.",
+    "Grafikda $a=3\\ \\text{m/s}^2$ o‘zgarmas bo‘lgan oraliq — 1–2 s. 0–1 va 2–3 s da tezlanish o‘zgaradi."
+   ]
+  },
+  {
+   "steps": [
+    "$v(t)$ grafigining qiyaligi: $\\tan\\alpha=\\dfrac{\\Delta v}{\\Delta t}$.",
+    "Bu esa ta’rif bo‘yicha tezlanish: $a=\\dfrac{\\Delta v}{\\Delta t}$."
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $v_0=2$ m/s, $t=3$ s da $v=8$ m/s.",
+    "$a=\\dfrac{v-v_0}{t}=\\dfrac{8-2}{3}=2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$v(t)$ grafigida tezlanish — urinmaning qiyaligi.",
+    "Grafik 1-nuqtadan 3-nuqtaga tomon tobora tiklashadi, demak $a_1<a_2<a_3$."
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $v_0=1$ m/s, har sekundda tezlik 1 m/s ga ortadi ($t=4$ s da $v=5$ m/s).",
+    "$a=\\dfrac{5-1}{4}=1\\ \\text{m/s}^2\\;\\Rightarrow\\;v=1+t$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikda $S$ 0 dan 10 m gacha faqat ortib boradi — jism orqaga qaytmagan.",
+    "Shuning uchun 8 s dagi yo‘l ham, ko‘chish moduli ham 10 m."
+   ]
+  },
+  {
+   "steps": [
+    "Avtobus avval o‘zgarmas tezlik bilan ketadi (gorizontal bo‘lak), keyin sekinlanib, to‘xtaydi ($v=0$).",
+    "Bunga B grafik mos. A da harakat tinch holatdan boshlanadi, C da to‘xtagach yana tezlashadi, D da tezlik faqat ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$v(t)$ grafigi ostidagi yuza — ko‘chish.",
+    "I jism: $s_1=20\\cdot4=80$ m",
+    "II jism: $s_2=\\dfrac{20+10}{2}\\cdot4=60$ m",
+    "$\\Delta s=80-60=20\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $v=3-0{,}5t$ ($0\\le t\\le10$ s), tezlik $t=6$ s da nolga teng.",
+    "$v(3)=1{,}5$ m/s, $\\;v(8)=-1$ m/s",
+    "3–6 s: $\\dfrac12\\cdot1{,}5\\cdot3=2{,}25$ m; $\\;$6–8 s: $\\dfrac12\\cdot1\\cdot2=1$ m",
+    "Yo‘l: $s=2{,}25+1=3{,}25\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "0–8 s dagi yo‘l (grafik ostidagi yuza):",
+    "$s=\\dfrac{8+v}{2}\\cdot4+v\\cdot4=16+6v=17\\cdot8=136\\;\\Rightarrow\\;v=20$ m/s",
+    "0–4 s: $v_{\\text{o‘rt}}=\\dfrac{8+20}{2}=14\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "0–10 s: tezlanish $a$, $\\;v_{10}=10+10a$; $\\;s_1=10\\cdot10+\\dfrac{a\\cdot10^2}{2}=100+50a$.",
+    "10–20 s: tekis harakat, $s_2=(10+10a)\\cdot10=100+100a$",
+    "$s_1+s_2=200+150a=500\\;\\Rightarrow\\;a=2\\ \\text{m/s}^2$"
+   ]
+  }
+ ]
+}
