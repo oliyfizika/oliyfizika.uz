@@ -1,0 +1,56 @@
+{
+ "id": 28,
+ "solutions": [
+  {
+   "steps": [
+    "$\\dfrac{F_2}{F_1}=\\dfrac{S_2}{S_1}\\;\\Rightarrow\\;F_2=500\\cdot\\dfrac{500\\ \\text{cm}^2}{20\\ \\text{cm}^2}=12500\\ \\text{N}=12{,}5$ kN"
+   ]
+  },
+  {
+   "steps": [
+    "$F_2=F_1\\dfrac{S_2}{S_1}=100\\cdot\\dfrac{10000\\ \\text{cm}^2}{10\\ \\text{cm}^2}=100000$ N"
+   ]
+  },
+  {
+   "steps": [
+    "$S_1=S_2\\dfrac{F_1}{F_2}=375\\cdot\\dfrac{160}{12000}=5\\ \\text{cm}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$F_2=F_1\\dfrac{S_2}{S_1}=1000\\cdot\\dfrac{2880}{2{,}4}=1{,}2\\cdot10^6$ N",
+    "$m=\\dfrac{F_2}{g}=1{,}2\\cdot10^5\\ \\text{kg}=120$ t"
+   ]
+  },
+  {
+   "steps": [
+    "Porshenlar bir sathda bo‘lsa, bosimlar teng: $\\dfrac{m_1g}{S_1}=\\dfrac{m_2g}{S_2}$.",
+    "$m_2=m_1\\dfrac{S_2}{S_1}=5\\cdot4{,}5=22{,}5$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "Ishqalanishsiz kuchdan yutuq: $\\dfrac{S_2}{S_1}=\\dfrac{800}{8}=100$.",
+    "Ishqalanish bilan: $\\dfrac{F_2}{F_1}=\\dfrac{54000}{600}=90$"
+   ]
+  },
+  {
+   "steps": [
+    "Suyuqlik hajmi saqlanadi: $S_1\\vartheta_1=S_2\\vartheta_2$.",
+    "$\\vartheta_2=\\vartheta_1\\dfrac{S_1}{S_2}=25\\cdot\\dfrac{4}{500}=0{,}2$ cm/s"
+   ]
+  },
+  {
+   "steps": [
+    "Ishqalanishsiz pressda ishlar teng: $F_1h_1=F_2h_2$.",
+    "$F_2=\\dfrac{60\\cdot15}{5}=180$ N"
+   ]
+  },
+  {
+   "steps": [
+    "Richag kuchdan 5 marta, press 4 marta yutuq beradi.",
+    "Umumiy yutuq: $5\\cdot4=20$ marta"
+   ]
+  }
+ ]
+}

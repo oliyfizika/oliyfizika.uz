@@ -1,0 +1,148 @@
+{
+ "id": 30,
+ "solutions": [
+  {
+   "steps": [
+    "Uzluksizlik tenglamasi: $S_1\\vartheta_1=S_2\\vartheta_2$.",
+    "$\\vartheta_2=2\\cdot\\dfrac{200}{800}=0{,}5$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Diametr 4 marta kichik — yuza 16 marta kichik, tezlik 16 marta katta.",
+    "$\\vartheta=0{,}1\\cdot16=1{,}6$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$S\\vartheta=\\text{const}$ — tezlik eng ingichka qismda eng katta.",
+    "4-qism eng ingichka."
+   ]
+  },
+  {
+   "steps": [
+    "$S_1\\vartheta_1=S_2\\vartheta_2\\;\\Rightarrow\\;\\vartheta_1=\\dfrac{1\\cdot9}{3}=3$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Diametr 1,5 marta kichik — yuza $1{,}5^2=2{,}25$ marta kichik.",
+    "$\\vartheta=20\\cdot2{,}25=45$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Bernulli: $p+\\dfrac{\\rho\\vartheta^2}{2}=\\text{const}$ — tezlik katta joyda bosim kichik.",
+    "Eng ingichka (2) kesimda tezlik eng katta, bosim eng kichik."
+   ]
+  },
+  {
+   "steps": [
+    "$S_1<S_2<S_3\\;\\Rightarrow\\;\\vartheta_1>\\vartheta_2>\\vartheta_3$.",
+    "Bernulli qonuniga ko‘ra: $P_1<P_2<P_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng ingichka kesimda tezlik eng katta, bosim esa eng kichik.",
+    "Bu 2-kesim."
+   ]
+  },
+  {
+   "steps": [
+    "$S=\\dfrac{\\pi d^2}{4}=\\dfrac{3{,}14\\cdot0{,}25}{4}\\approx0{,}196\\ \\text{m}^2$",
+    "$m=\\rho S\\vartheta t=890\\cdot0{,}196\\cdot1\\cdot3600\\approx6{,}3\\cdot10^5$ kg"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=3{,}6$ km/soat $=1$ m/s, $\\;Q=\\dfrac{7200}{3600}=2$ kg/s.",
+    "$S=\\dfrac{Q}{\\rho\\vartheta}=\\dfrac{2}{1000\\cdot1}=0{,}002\\ \\text{m}^2=20\\ \\text{sm}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=60$ l/min $=10^{-3}\\ \\text{m}^3/\\text{s}$; $\\;\\vartheta_0=\\dfrac{Q}{S_0}=\\dfrac{10^{-3}}{1{,}5\\cdot10^{-4}}\\approx6{,}67$ m/s.",
+    "$\\vartheta=\\sqrt{\\vartheta_0^2-2gh}=\\sqrt{44{,}4-39{,}2}\\approx2{,}29$ m/s",
+    "$S=\\dfrac{Q}{\\vartheta}=\\dfrac{10^{-3}}{2{,}29}\\approx4{,}37\\cdot10^{-4}\\ \\text{m}^2=4{,}37\\ \\text{sm}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$Q=\\dfrac{9120}{800\\cdot3600}\\approx3{,}17\\cdot10^{-3}\\ \\text{m}^3/\\text{s}$; $\\;S=\\dfrac{\\pi d^2}{4}\\approx2{,}83\\cdot10^{-3}\\ \\text{m}^2$.",
+    "$\\vartheta=\\dfrac QS\\approx1{,}12$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Sath o‘zgarmasligi uchun teshikdan chiqayotgan suv sarfi quyilayotganiga teng: $\\vartheta=\\dfrac{Q}{\\rho S}=\\dfrac{0{,}36}{1000\\cdot3{,}14\\cdot10^{-4}}\\approx1{,}15$ m/s.",
+    "Torichelli formulasi: $h=\\dfrac{\\vartheta^2}{2g}=\\dfrac{1{,}31}{19{,}6}\\approx0{,}067\\ \\text{m}=6{,}7$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\sqrt{2gh}=\\sqrt{2\\cdot10\\cdot1{,}25}=5$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Oqimning kinetik energiyasi suvni $h$ balandlikka ko‘taradi:",
+    "$\\vartheta=\\sqrt{2gh}=\\sqrt{2\\cdot10\\cdot0{,}3}=\\sqrt6$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\sqrt{2gh}=\\sqrt{2\\cdot9{,}8\\cdot1}\\approx4{,}4$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Porshen bosimi: $p=\\dfrac FS=\\dfrac{40}{0{,}5\\cdot10^{-4}}=8\\cdot10^5$ Pa.",
+    "$p=\\dfrac{\\rho\\vartheta^2}{2}\\;\\Rightarrow\\;\\vartheta=\\sqrt{\\dfrac{2p}{\\rho}}=\\sqrt{1600}=40$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Dinamik bosim $p=\\dfrac{\\rho\\vartheta^2}{2}\\sim\\vartheta^2$.",
+    "Tezlik 2 marta ortsa, bosim 4 marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\rho\\vartheta^2}{2}=\\dfrac{800\\cdot625}{2}=2{,}5\\cdot10^5$ Pa"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\rho\\vartheta^2}{2}\\;\\Rightarrow\\;\\vartheta=\\sqrt{\\dfrac{2\\cdot2000}{1000}}=2$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\rho\\vartheta^2}{2}=\\dfrac{1000\\cdot625}{2}=312500\\ \\text{Pa}\\approx3{,}1$ atm"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{\\rho\\vartheta^2}{2}=\\dfrac{900\\cdot16}{2}=7200\\ \\text{Pa}=7{,}2$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "Oqim quvvati — vaqt birligida oqib o‘tgan kinetik energiya: $N=\\dfrac{\\rho S\\vartheta^3}{2}$.",
+    "$N=\\dfrac{1000\\cdot3{,}14\\cdot0{,}06^2\\cdot12^3}{2}\\approx9767$ Vt"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{\\rho S\\vartheta^3}{2}\\;\\Rightarrow\\;\\vartheta^3=\\dfrac{2N}{\\rho S}=\\dfrac{2\\cdot2453{,}25}{800\\cdot3{,}14\\cdot0{,}125^2}=125$",
+    "$\\vartheta=5$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{\\rho S\\vartheta^3}{2}=\\dfrac{1000\\cdot3{,}14\\cdot0{,}1^2\\cdot64}{2}\\approx1005\\ \\text{Vt}\\approx1$ kVt"
+   ]
+  }
+ ]
+}

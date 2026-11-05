@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" width="500" height="200" font-family="serif" font-size="22">
+<rect width="500" height="200" fill="#fff"/>
+<path d="M30 30 L140 30 L140 45 L250 45 L250 38 L360 38 L360 62 L470 62 L470 88 L360 88 L360 112 L250 112 L250 105 L140 105 L140 120 L30 120 Z" fill="#cfe3f5" stroke="none"/>
+<g stroke="#111" stroke-width="2.5" fill="none">
+<path d="M30 30 L140 30 L140 45 L250 45 L250 38 L360 38 L360 62 L470 62"/>
+<path d="M30 120 L140 120 L140 105 L250 105 L250 112 L360 112 L360 88 L470 88"/>
+</g>
+<text x="85" y="154" text-anchor="middle" fill="#111">1</text>
+<text x="195" y="154" text-anchor="middle" fill="#111">2</text>
+<text x="305" y="154" text-anchor="middle" fill="#111">3</text>
+<text x="415" y="154" text-anchor="middle" fill="#111">4</text>
+<g stroke="#1d4f86" stroke-width="2" fill="#1d4f86"><line x1="45" y1="75.0" x2="85" y2="75.0"/><path d="M85 69.0 L97 75.0 L85 81.0 Z"/></g>
+</svg>
