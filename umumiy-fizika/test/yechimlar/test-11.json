@@ -1,0 +1,130 @@
+{
+ "id": 11,
+ "solutions": [
+  {
+   "steps": [
+    "Qarama-qarshi yo‘nalgan kuchlarning teng ta’sir etuvchisi — ularning ayirmasi:",
+    "$F=8-6=2\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "O‘ngga: $250+200=450$ N; chapga: $350+50=400$ N.",
+    "$F=450-400=50\\ \\text{N}$ — arqon o‘ngga harakatlanadi."
+   ]
+  },
+  {
+   "steps": [
+    "Katakchalar bo‘yicha: $\\vec F_1=(3;\\,0)$, $\\vec F_2=(-2;\\,-2)$.",
+    "$\\vec F=\\vec F_1+\\vec F_2=(1;\\,-2)$ — 1 katak o‘ngga, 2 katak pastga, ya’ni N yo‘nalishi."
+   ]
+  },
+  {
+   "steps": [
+    "Katakchalar bo‘yicha: $\\vec F_1=(-2;\\,3)$, $\\vec F_2=(3;\\,2)$, $\\vec F_3=(-1;\\,-5)$.",
+    "$\\vec F=(-2+3-1;\\;3+2-5)=(0;\\,0)$ — teng ta’sir etuvchi nolga teng."
+   ]
+  },
+  {
+   "steps": [
+    "Kuchlarni gorizontal ($x$) va vertikal ($y$) o‘qlarga proyeksiyalaymiz ($\\cos45^\\circ=\\sin45^\\circ=\\tfrac{\\sqrt2}{2}$):",
+    "$F_x=2F\\cdot\\tfrac{\\sqrt2}{2}-F\\cdot\\tfrac{\\sqrt2}{2}+\\sqrt2F=\\tfrac{3\\sqrt2}{2}F$",
+    "$F_y=2F\\cdot\\tfrac{\\sqrt2}{2}+F\\cdot\\tfrac{\\sqrt2}{2}=\\tfrac{3\\sqrt2}{2}F$",
+    "$R=\\sqrt{F_x^2+F_y^2}=\\tfrac{3\\sqrt2}{2}F\\cdot\\sqrt2=3F$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikkita $2F$ kuchning vertikal tashkil etuvchilari bir-birini yo‘qotadi.",
+    "Gorizontal: $F_x=F-2\\cdot2F\\cos60^\\circ=F-2F=-F$",
+    "Teng ta’sir etuvchi moduli $F$ (chapga yo‘nalgan)."
+   ]
+  },
+  {
+   "steps": [
+    "$x$ o‘qi — $\\vec F_1$ bo‘ylab. $\\vec F_3$ va $\\vec F_4$ gorizontalga 60° burchak ostida pastga yo‘nalgan.",
+    "$F_x=50-30-20\\cos60^\\circ+20\\cos60^\\circ=20$ N",
+    "$F_y=-2\\cdot20\\sin60^\\circ=-20\\sqrt3$ N",
+    "$F=\\sqrt{20^2+(20\\sqrt3)^2}=40$ N; $\\;\\tan\\alpha=\\sqrt3\\Rightarrow\\alpha=60^\\circ$ pastga — $\\vec F_4$ yo‘nalishi."
+   ]
+  },
+  {
+   "steps": [
+    "Proyeksiyalar ($\\cos53^\\circ=0{,}6$, $\\sin53^\\circ=0{,}8$):",
+    "$20$ N: $(-12;\\,16)$; $\\;8$ N: $(0;\\,8)$; $\\;\\sqrt2$ N (45° yuqori): $(1;\\,1)$; $\\;\\sqrt2$ N (45° past): $(1;\\,-1)$",
+    "$F_x=-12+1+1=-10$ N, $\\;F_y=16+8+1-1=24$ N",
+    "$F=\\sqrt{10^2+24^2}=26\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Katakchalar bo‘yicha (1 katak = 1 N):",
+    "$\\vec F_1=(4;2)$, $\\vec F_2=(-3;3)$, $\\vec F_3=(-2;-3)$, $\\vec F_4=(4;-4)$, $\\vec F_5=(3;0)$",
+    "$\\vec F=(6;\\,-2)$, $\\;F=\\sqrt{36+4}=\\sqrt{40}=2\\sqrt{10}\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Kuchlar muvozanatda bo‘lsa ($\\sum\\vec F=0$), jism tinch turadi yoki to‘g‘ri chiziqli tekis harakat qiladi.",
+    "3) $x=\\text{const}$ — tinch holat; 4) $x$ chiziqli ortadi — tekis harakat.",
+    "1) va 2) grafiklarda tezlik ortadi — tezlanish bor, kuchlar muvozanatda emas."
+   ]
+  },
+  {
+   "steps": [
+    "Nyutonning I qonuni: jismga kuch ta’sir etmasa (yoki kuchlar muvozanatlashsa), u tinch turadi yoki $\\vec v=\\text{const}$ bilan harakatlanadi.",
+    "Bunga $v=\\text{const},\\ F=0$ ifodasi mos."
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik o‘zgarmas — Nyutonning I qonuniga ko‘ra kuchlarning teng ta’sir etuvchisi nolga teng.",
+    "TJY — «teng ta’sir etuvchi yo‘q», ya’ni nolga teng."
+   ]
+  },
+  {
+   "steps": [
+    "$V=5\\ \\text{l}=5\\cdot10^{-3}\\ \\text{m}^3$",
+    "$\\rho=\\dfrac mV=\\dfrac{20}{5\\cdot10^{-3}}=4000\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "$V=30\\cdot5\\cdot2=300\\ \\text{cm}^3$, $\\;m=1200$ g",
+    "$\\rho=\\dfrac mV=\\dfrac{1200}{300}=4\\ \\text{g/cm}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "$V_{\\text{muz}}=\\dfrac{m}{\\rho_{\\text{muz}}}=\\dfrac{18}{900}=0{,}02\\ \\text{m}^3=20$ l",
+    "Eriganda massa o‘zgarmaydi: $V_{\\text{suv}}=\\dfrac{18}{1000}=0{,}018\\ \\text{m}^3=18$ l"
+   ]
+  },
+  {
+   "steps": [
+    "Model 1000 marta kichik ($300\\ \\text{m}\\to0{,}3$ m), hajmi $1000^3=10^9$ marta kichik.",
+    "Shu po‘latdan bo‘lsa: $m=\\dfrac{7{,}2\\cdot10^6\\ \\text{kg}}{10^9}=7{,}2\\cdot10^{-3}$ kg $=7{,}2$ g",
+    "Zichlik 2 marta kichik: $m=3{,}6$ g"
+   ]
+  },
+  {
+   "steps": [
+    "Massalar teng bo‘lsa, $V=\\dfrac m\\rho$ — zichlik qancha kichik bo‘lsa, hajm shuncha katta.",
+    "$\\rho_{\\text{simob}}=13600$, $\\rho_{\\text{suv}}=1000$, $\\rho_{\\text{spirt}}=800\\ \\text{kg/m}^3$",
+    "Eng past sath (1) — simob, o‘rtacha (2) — suv, eng baland (3) — spirt."
+   ]
+  },
+  {
+   "steps": [
+    "Hajmlar teng bo‘lsa, massa zichlikka proporsional: $m=\\rho V$.",
+    "Inertlik o‘lchovi — massa; eng katta zichlikli 4-jismning massasi eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "Idish hajmi: $30^3=27000\\ \\text{cm}^3$. Birinchi shar uni $\\tfrac35$ qismga to‘ldirdi: $V_{\\text{shar}}=16200\\ \\text{cm}^3$.",
+    "Bo‘sh qism: $\\dfrac25\\cdot27000=10800\\ \\text{cm}^3$ — ikkinchi shardan shuncha eritish kerak."
+   ]
+  }
+ ]
+}

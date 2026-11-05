@@ -61,7 +61,7 @@
       "text": "Moddiy nuqtaga ta’sir etuvchi kuchlar muvozanatda bo‘lgandagi harakatlar qaysi grafiklarda tasvirlangan?",
       "images": "../rasmlar11/rasm10.png",
       "answers": ["1,2", "3,4", "2,4", "2,3,4"],
-      "correct": 3
+      "correct": 1
     },
     {
       "text": "Nyutonning birinchi qonunini tavsiflovchi ifodani ko‘rsating.",
@@ -100,6 +100,7 @@
     },
     {
       "text": "Rasmda bir xil massali turli xil suyuqliklar solingan uchta idish tasvirlangan. Suv, spirt va simob qaysi idishlarda ekanligini aniqlang.",
+      "image": "../rasmlar11/rasm17.svg",
       "answers": [
         "1-suv; 2-spirt; 3-simob",
         "2-suv; 3-spirt; 1-simob",

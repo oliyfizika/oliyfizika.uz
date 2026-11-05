@@ -78,7 +78,7 @@
     },
     {
       "text": "Moddiy nuqta radiusi 20 sm bo‘lgan aylana bo‘ylab 5 sm/s² urinma tezlanish bilan tekis tezlanuvchan harakat qilmoqda. Harakat boshlangandan keyin qancha vaqt o‘tgach normal tezlanishi urinma tezlanishdan 2 marta katta bo‘ladi?",
-      "answers": ["2,78", "2,20", "1,07", "3,48"],
+      "answers": ["2,83", "2,20", "1,07", "3,48"],
       "correct": 0
     },
     {
@@ -102,12 +102,12 @@
       "correct": 0
     },
     {
-      "text": "Diametri 100 sm bo‘lgan g‘ildirak gardishidagi A nuqta 6 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. Tormozlanish boshlanganidan 2,5 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
+      "text": "Diametri 100 sm bo‘lgan g‘ildirak gardishidagi A nuqta 6 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. G‘ildirak 2 m/s² tangensial tezlanish bilan tekis sekinlana boshladi. Tormozlanish boshlanganidan 2,5 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
       "answers": ["90°", "45°", "135°", "120°"],
       "correct": 2
     },
     {
-      "text": "Radiusi √3 m bo‘lgan g‘ildirak gardishidagi A nuqta 4,2 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. Tormozlanish boshlanganidan 0,4 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
+      "text": "Radiusi √3 m bo‘lgan g‘ildirak gardishidagi A nuqta 4,2 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. G‘ildirak 3 m/s² tangensial tezlanish bilan tekis sekinlana boshladi. Tormozlanish boshlanganidan 0,4 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
       "answers": ["90°", "45°", "135°", "120°"],
       "correct": 3
     },
@@ -118,7 +118,7 @@
       "correct": 0
     },
     {
-      "text": "Diametri 100 sm bo‘lgan g‘ildirak gardishidagi A nuqta 4,8 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. Tormozlanish boshlanganidan 0,6 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
+      "text": "Diametri 100 sm bo‘lgan g‘ildirak gardishidagi A nuqta 4,8 m/s tezlik bilan tekis aylanma harakat qilayotgan edi. G‘ildirak 3 m/s² tangensial tezlanish bilan tekis sekinlana boshladi. Tormozlanish boshlanganidan 0,6 s o‘tgach A nuqtaning tezlik vektori bilan tezlanish vektori orasidagi burchak necha gradusga teng bo‘ladi?",
       "answers": ["90°", "90° + arcctg 6", "45°", "120°"],
       "correct": 1
     }
