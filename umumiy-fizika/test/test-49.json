@@ -90,7 +90,7 @@
       "answers": [
         "2820,5",
         "2659,5",
-        "1246,5",
+        "2077,5",
         "3112,5"
       ],
       "correct": 2
@@ -147,6 +147,7 @@
     },
     {
       "text": "Ideal gazning ma’lum bir miqdori V1 hajmdan V2 hajmgacha uch marta siqildi. Keltirilgan grafikdagi qaysi egri chiziq eng sekin siqilishga mos keladi?",
+      "image": "../rasmlar49/rasm15.svg",
       "answers": [
         "1",
         "2",
@@ -157,6 +158,7 @@
     },
     {
       "text": "Ideal gazning ma’lum bir miqdori V1 hajmdan V2 hajmgacha uch marta siqildi. Keltirilgan grafikdagi qaysi egri chiziq 1 sekund davomidagi siqilishga mos keladi?",
+      "image": "../rasmlar49/rasm15.svg",
       "answers": [
         "2",
         "1",

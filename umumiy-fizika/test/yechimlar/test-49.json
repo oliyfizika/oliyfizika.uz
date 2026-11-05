@@ -1,0 +1,89 @@
+{
+ "id": 49,
+ "solutions": [
+  {
+   "steps": [
+    "Jarayonlarning yo‘nalishini termodinamikaning II qonuni ko‘rsatadi."
+   ]
+  },
+  {
+   "steps": [
+    "Issiqlik almashinuvi yo‘q ($Q=0$): $\\Delta U=A'>0$ — siqishda bajarilgan ish ichki energiyani oshiradi, temperatura ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$Q=0$, gaz musbat ish bajaradi: $\\Delta U=-A<0$."
+   ]
+  },
+  {
+   "steps": [
+    "Adiabatik jarayonda $Q=0$:",
+    "$0=\\Delta U+A\\;\\Rightarrow\\;\\Delta U+A=0$"
+   ]
+  },
+  {
+   "steps": [
+    "Siqishda $T$ ortadi — molekulalarning kinetik energiyasi ortadi. Ideal gaz molekulalari o‘zaro ta’sirlashmaydi, potensial energiya o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$Q=0$: siqishda tashqi kuchlar ishi ichki energiyani oshiradi — temperatura ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Adiabatik siqilishda $T$ ortadi; hajm kamayib, $T$ ortgani uchun bosim ham ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$Q=0\\;\\Rightarrow\\;A=-\\Delta U=5$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "Kislorod ikki atomli ($i=5$): $A=-\\Delta U=\\dfrac52\\nu R\\Delta T$.",
+    "$A=2{,}5\\cdot10\\cdot8{,}31\\cdot10=2077{,}5$ J"
+   ]
+  },
+  {
+   "steps": [
+    "Tashqi kuchlar manfiy ish bajarsa, gaz kengaygan — hajm ortib, zichlik kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Tashqi kuchlarning musbat ishi — gaz siqilgan, zichlik ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Gaz musbat ish bajarsa, u kengaygan — zichlik kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Adiabatik siqilishda $\\Delta U=A'>0$ — temperatura ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Adiabatik kengayishda $\\Delta U=-A<0$ — temperatura kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Juda sekin siqilishda gaz atrof bilan issiqlik almashib ulguradi — jarayon izotermik, egri chiziq eng yotiq (bosim eng kam ortadi).",
+    "Bu 1-egri chiziq."
+   ]
+  },
+  {
+   "steps": [
+    "1 sekundlik siqilishda gaz qisman qiziydi — jarayon izotermik (1) va adiabatik (3, juda tez siqilish) oralig‘ida.",
+    "Bu 2-egri chiziq."
+   ]
+  }
+ ]
+}

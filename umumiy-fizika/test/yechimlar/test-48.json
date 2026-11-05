@@ -1,0 +1,57 @@
+{
+ "id": 48,
+ "solutions": [
+  {
+   "steps": [
+    "Bir atomli molekula faqat ilgarilanma harakat qiladi: $i=3$."
+   ]
+  },
+  {
+   "steps": [
+    "Ikki atomli molekula: 3 ta ilgarilanma + 2 ta aylanma erkinlik darajasi.",
+    "$i=5$"
+   ]
+  },
+  {
+   "steps": [
+    "Uch (va undan ko‘p) atomli molekula: 3 ta ilgarilanma + 3 ta aylanma.",
+    "$i=6$"
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac i2\\nu RT=\\dfrac32\\cdot2\\cdot8{,}31\\cdot300\\approx7479\\ \\text{J}\\approx7{,}5$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac52\\nu R\\Delta T=2{,}5\\cdot1\\cdot8{,}31\\cdot200\\approx4155\\ \\text{J}\\approx4{,}16$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$i$ — molekulaning erkinlik darajalari soni."
+   ]
+  },
+  {
+   "steps": [
+    "$U=\\dfrac62\\nu RT=3\\cdot3\\cdot8{,}31\\cdot400\\approx29916\\ \\text{J}\\approx29{,}9$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac{U_1}{U_2}=\\dfrac{i_1}{i_2}=\\dfrac35$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta U=\\dfrac32\\nu R\\Delta T=1{,}5\\cdot2\\cdot8{,}31\\cdot150\\approx3740\\ \\text{J}=3{,}74$ kJ"
+   ]
+  },
+  {
+   "steps": [
+    "$i=\\dfrac{2U}{\\nu RT}=\\dfrac{2\\cdot18700}{2{,}5\\cdot8{,}31\\cdot300}\\approx6$"
+   ]
+  }
+ ]
+}
