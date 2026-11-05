@@ -1,0 +1,158 @@
+{
+ "id": 16,
+ "solutions": [
+  {
+   "steps": [
+    "Gorizontal yo‘nalishda harakat tekis ($x=v_xt$), vertikal yo‘nalishda tekis o‘zgaruvchan ($y=v_yt-\\dfrac{gt^2}{2}$).",
+    "$t$ ni yo‘qotsak, $y$ ning $x$ ga kvadratik bog‘lanishi chiqadi — traektoriya parabola."
+   ]
+  },
+  {
+   "steps": [
+    "Havo qarshiligi bo‘lmasa, jismga faqat og‘irlik kuchi ta’sir qiladi.",
+    "Shuning uchun traektoriyaning istalgan nuqtasida tezlanish $\\vec g$ — vertikal pastga, ya’ni $b$ vektor."
+   ]
+  },
+  {
+   "steps": [
+    "Jismga faqat og‘irlik kuchi ta’sir qiladi: $\\vec a=\\vec g$ — moduli $g$, vertikal pastga."
+   ]
+  },
+  {
+   "steps": [
+    "$v_x=v_0\\cos30^\\circ=30\\cdot0{,}87\\approx26$ m/s",
+    "$v_y=v_0\\sin30^\\circ=30\\cdot0{,}5=15$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$v_x=v_0\\cos30^\\circ=20\\cdot0{,}87\\approx17{,}3$ m/s (o‘zgarmaydi)",
+    "$v_y=v_0\\sin30^\\circ-gt=10-10\\cdot0{,}3=7$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik eng kichik bo‘ladigan nuqta — eng yuqori nuqta, unda $v_y=0$.",
+    "$v_0\\sin45^\\circ=gt=20\\;\\Rightarrow\\;v_0=\\dfrac{20}{\\sqrt2/2}=20\\sqrt2\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tezlik gorizontal bo‘ladi, qachonki $v_y=0$ (eng yuqori nuqta):",
+    "$t=\\dfrac{v_0\\sin30^\\circ}{g}=\\dfrac{20\\cdot0{,}5}{10}=1\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Minimal tezlik — gorizontal tashkil etuvchi: $v_x=6$ m/s.",
+    "$v_{0y}=\\sqrt{10^2-6^2}=8$ m/s; $\\;T=\\dfrac{2v_{0y}}{g}=\\dfrac{16}{10}=1{,}6\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{2v_{0y}}{g}\\;\\Rightarrow\\;v_{0y}=\\dfrac{gT}{2}=20$ m/s",
+    "$v_{\\min}=v_x=\\sqrt{25^2-20^2}=15\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘tarilish vaqti — uchish vaqtining yarmi: 6 s.",
+    "$H=\\dfrac{gt^2}{2}=\\dfrac{10\\cdot36}{2}=180\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘tarilish vaqti: $t=1$ s.",
+    "$H=\\dfrac{gt^2}{2}=\\dfrac{10\\cdot1}{2}=5\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘tarilish vaqti: $t=\\sqrt{\\dfrac{2H}{g}}=\\sqrt{\\dfrac{40}{10}}=2$ s",
+    "Uchish vaqti: $T=2t=4\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Devor bo‘lmaganda uchish uzoqligi:",
+    "$L=\\dfrac{v_0^2\\sin2\\alpha}{g}=\\dfrac{100\\cdot1}{10}=10$ m",
+    "Elastik urilishda $v_x$ teskarisiga o‘zgaradi, $v_y$ saqlanadi — traektoriya devorga nisbatan ko‘zgudagi aksidek davom etadi.",
+    "Devordan keyingi qism: $10-8=2$ m; jism otilish nuqtasidan $8-2=6\\ \\text{m}$ masofaga tushadi."
+   ]
+  },
+  {
+   "steps": [
+    "$v_{0y}^2=2gH=2\\cdot10\\cdot15=300$",
+    "$v_{\\min}=v_x=\\sqrt{v_0^2-v_{0y}^2}=\\sqrt{400-300}=10\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_{0y}=\\dfrac{gT}{2}=\\dfrac{10\\cdot2{,}4}{2}=12$ m/s, $\\;v_x=16$ m/s",
+    "$v_0=\\sqrt{16^2+12^2}=20\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_x=10$ m/s $\\Rightarrow\\;v_{0y}=\\sqrt{400-100}=\\sqrt{300}$ m/s",
+    "$H=\\dfrac{v_{0y}^2}{2g}=\\dfrac{300}{20}=15\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ikkala jismning tezlanishi bir xil ($\\vec g$), shuning uchun nisbiy harakat tekis: $\\vec v_{\\text{nisb}}=\\vec v_1-\\vec v_2$.",
+    "Tezliklar orasidagi burchak $60^\\circ$: $v_{\\text{nisb}}=\\sqrt{10^2+10^2-2\\cdot100\\cos60^\\circ}=10$ m/s",
+    "$d=v_{\\text{nisb}}t=10\\cdot1=10\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{2v_0^2\\sin\\alpha\\cos\\alpha}{g}$, $\\;H=\\dfrac{v_0^2\\sin^2\\alpha}{2g}$ $\\;\\Rightarrow\\;\\dfrac LH=\\dfrac{4}{\\tan\\alpha}$",
+    "$\\dfrac LH=4\\;\\Rightarrow\\;\\tan\\alpha=1\\;\\Rightarrow\\;\\alpha=45^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\alpha=45^\\circ$ da $\\dfrac LH=\\dfrac{4}{\\tan45^\\circ}=4$.",
+    "$L=4H=4\\cdot20=80\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac hx=\\dfrac{\\tan\\alpha}{4}=\\dfrac{0{,}5}{4}=\\dfrac18$"
+   ]
+  },
+  {
+   "steps": [
+    "Maksimal balandlik $h=\\dfrac{v_{0y}^2}{2g}$ faqat tezlikning vertikal tashkil etuvchisiga bog‘liq.",
+    "$v_{1y}=10\\cdot\\sin37^\\circ=6$ m/s, $\\;v_{2y}=7{,}5\\cdot\\sin53^\\circ=7{,}5\\cdot0{,}8=6$ m/s",
+    "$\\dfrac{h_1}{h_2}=\\dfrac{6^2}{6^2}=1$"
+   ]
+  },
+  {
+   "steps": [
+    "Eng yuqori nuqtada tezlik gorizontal ($v_x=v_0\\cos60^\\circ=10$ m/s), tezlanish $g$ unga perpendikulyar — u markazga intilma tezlanish:",
+    "$g=\\dfrac{v_x^2}{R}\\;\\Rightarrow\\;R=\\dfrac{v_x^2}{g}=\\dfrac{100}{10}=10\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$R=\\dfrac{v_0^2\\cos^2\\alpha}{g}$, $\\;H=\\dfrac{v_0^2\\sin^2\\alpha}{2g}$ $\\;\\Rightarrow\\;\\dfrac HR=\\dfrac{\\tan^2\\alpha}{2}$",
+    "$\\tan^2\\alpha=\\dfrac{2\\cdot3}{2}=3\\;\\Rightarrow\\;\\alpha=60^\\circ$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\dfrac HR=\\dfrac{\\tan^2\\alpha}{2}=1$ (oldingi masalaga qarang).",
+    "$\\tan\\alpha=\\sqrt2\\;\\Rightarrow\\;\\alpha=\\operatorname{arctg}\\sqrt2$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_x=20\\cos60^\\circ=10$ m/s, $\\;v_y=20\\sin60^\\circ-10t=17{,}3-10t$",
+    "45° burchakda $|v_y|=v_x=10$ m/s:",
+    "$17{,}3-10t=10\\Rightarrow t=0{,}73$ s; $\\;17{,}3-10t=-10\\Rightarrow t=2{,}73$ s"
+   ]
+  }
+ ]
+}

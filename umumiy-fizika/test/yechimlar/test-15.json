@@ -1,0 +1,160 @@
+{
+ "id": 15,
+ "solutions": [
+  {
+   "steps": [
+    "1 s da tushgan masofa: $h_1=\\dfrac{gt^2}{2}=\\dfrac{10\\cdot1^2}{2}=5$ m",
+    "Balandlik: $12-5=7\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis tezlanuvchan harakatda ketma-ket teng vaqt oraliqlaridagi yo‘llar farqi o‘zgarmas:",
+    "$\\Delta s=gT^2=10\\cdot1^2=10\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘tarilish va tushish vaqtlari teng: $t_{\\text{ko‘t}}=1{,}5$ s.",
+    "$v_0=gt_{\\text{ko‘t}}=10\\cdot1{,}5=15\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$H=\\dfrac{v_0^2}{2g}=\\dfrac{20^2}{20}=20\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘tarilish vaqti: $t=1{,}2$ s (umumiy vaqtning yarmi).",
+    "$H=\\dfrac{gt^2}{2}=\\dfrac{10\\cdot1{,}44}{2}=7{,}2\\ \\text{m}=720\\ \\text{sm}$"
+   ]
+  },
+  {
+   "steps": [
+    "$H=\\dfrac{v_0^2}{2g}\\sim v_0^2$.",
+    "$v_0\\to4v_0\\;\\Rightarrow\\;H\\to16H$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=v_1+gt=6+10\\cdot2=26\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$s=v_0t+\\dfrac{gt^2}{2}=4\\cdot2+\\dfrac{10\\cdot4}{2}=28$ m",
+    "$v_{\\text{o‘rt}}=\\dfrac st=\\dfrac{28}{2}=14\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=v_0+gt=2+10=12$ m/s; $\\;\\dfrac{v}{v_0}=\\dfrac{12}{2}=6$"
+   ]
+  },
+  {
+   "steps": [
+    "$v_0+g\\cdot1=6v_0\\;\\Rightarrow\\;v_0=\\dfrac{g}{5}=2$ m/s",
+    "$v(2)=2+20=22$ m/s; $\\;\\dfrac{22}{2}=11$ marta"
+   ]
+  },
+  {
+   "steps": [
+    "$v_0-gt=\\dfrac{v_0}{2}\\;\\Rightarrow\\;v_0=2gt=2\\cdot10\\cdot0{,}8=16\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Doskaga urilish tezligi: $v=\\sqrt{2gh}=\\sqrt{2\\cdot10\\cdot20}=20$ m/s",
+    "25% yo‘qotgach: $v'=15$ m/s bilan yuqoriga sakraydi.",
+    "Qaytib tushish vaqti: $t=\\dfrac{2v'}{g}=\\dfrac{30}{10}=3\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqoriga yo‘nalishni musbat olamiz: $v=v_0-gt$.",
+    "$-30=50-10t\\;\\Rightarrow\\;t=8\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=h_0+v_0t-\\dfrac{gt^2}{2}=40+5\\cdot2-\\dfrac{10\\cdot4}{2}=30\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ko‘tarilish: $t_1=\\dfrac{v_0}{g}=2$ s, $H=\\dfrac{v_0^2}{2g}=20$ m.",
+    "Keyingi 1 s da tushish: $\\dfrac{10\\cdot1^2}{2}=5$ m",
+    "Yo‘l: $s=20+5=25\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqoriga musbat, yer sathida $y=-8$ m:",
+    "$-8=v_0\\cdot2-\\dfrac{10\\cdot2^2}{2}\\;\\Rightarrow\\;2v_0=12\\;\\Rightarrow\\;v_0=6\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$-15=10t-5t^2\\;\\Rightarrow\\;t^2-2t-3=0\\;\\Rightarrow\\;t=3\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v=\\sqrt{v_0^2+2gh}=\\sqrt{1+2\\cdot10\\cdot2{,}4}=\\sqrt{49}=7\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yerga tushish tezligi $v=7$ m/s (oldingi masalaga qarang).",
+    "$t=\\dfrac{v-v_0}{g}=\\dfrac{7-1}{10}=0{,}6\\ \\text{s}=600\\ \\text{ms}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tushish vaqti: $t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{16}=4$ s",
+    "Dastlabki 3 s da: $\\dfrac{10\\cdot9}{2}=45$ m; oxirgi sekundda: $80-45=35\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Oxirgi sekunddagi yo‘l: $\\Delta h=\\dfrac{gt^2}{2}-\\dfrac{g(t-1)^2}{2}=g\\left(t-\\dfrac12\\right)$.",
+    "$10\\left(t-\\tfrac12\\right)=45\\;\\Rightarrow\\;t=5$ s",
+    "$h=\\dfrac{gt^2}{2}=\\dfrac{10\\cdot25}{2}=125\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$v^2=v_0^2-2gh$, $\\;H=\\dfrac{v_0^2}{2g}$, $\\;h=\\dfrac89H$:",
+    "$v^2=v_0^2-\\dfrac89v_0^2=\\dfrac{v_0^2}{9}\\;\\Rightarrow\\;v=\\dfrac{v_0}{3}$"
+   ]
+  },
+  {
+   "steps": [
+    "Jism shu balandlikda $t_1$ va $t_2=t_1+2$ paytlarda bo‘ladi: $h=v_0t-\\dfrac{gt^2}{2}$ tenglamaning ildizlari.",
+    "Viyet teoremasi: $t_1t_2=\\dfrac{2h}{g}=15$, $\\;t_1+t_2=\\dfrac{2v_0}{g}$",
+    "$t_1=3$ s, $t_2=5$ s $\\;\\Rightarrow\\;v_0=\\dfrac{g(t_1+t_2)}{2}=40\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=v_0t-\\dfrac{gt^2}{2}$ ning ildizlari $t_1$, $t_2$ uchun Viyet teoremasi: $t_1t_2=\\dfrac{2h}{g}$.",
+    "$h=\\dfrac{gt_1t_2}{2}=\\dfrac{10\\cdot0{,}8\\cdot1{,}5}{2}=6\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Dastlabki sekundda: 5 m; oxirgi sekundda: $5\\cdot5=25$ m.",
+    "$g\\left(t-\\tfrac12\\right)=25\\;\\Rightarrow\\;t=3$ s",
+    "$h=\\dfrac{10\\cdot9}{2}=45\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Oxirgi 10 s gacha jism yo‘lning $\\dfrac14$ qismini o‘tgan: $\\dfrac{g(t-10)^2}{2}=\\dfrac14\\cdot\\dfrac{gt^2}{2}$.",
+    "$t-10=\\dfrac t2\\;\\Rightarrow\\;t=20$ s",
+    "$h=\\dfrac{gt^2}{2}=\\dfrac{10\\cdot400}{2}=2000\\ \\text{m}$"
+   ]
+  }
+ ]
+}

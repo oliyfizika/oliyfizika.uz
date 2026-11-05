@@ -1,0 +1,164 @@
+{
+ "id": 17,
+ "solutions": [
+  {
+   "steps": [
+    "Tormozlanishda faqat ishqalanish kuchi ishlaydi: $a=\\mu g=5\\ \\text{m/s}^2$.",
+    "$v=\\sqrt{2as}=\\sqrt{2\\cdot5\\cdot40}=20\\ \\text{m/s}=72\\ \\text{km/h}$"
+   ]
+  },
+  {
+   "steps": [
+    "Sirpanish ishqalanishining eng katta qiymati: $\\mu mg=0{,}3\\cdot1\\cdot10=3$ N.",
+    "Qo‘yilgan kuch (2 N) undan kichik — jism joyidan qo‘zg‘almaydi.",
+    "Tinchlikdagi ishqalanish kuchi qo‘yilgan kuchni muvozanatlaydi: $F_{\\text{ishq}}=2$ N."
+   ]
+  },
+  {
+   "steps": [
+    "Kuchning vertikal tashkil etuvchisi jismni yuqoriga tortadi, bosim kuchi kamayadi:",
+    "$N=mg-F\\sin30^\\circ=100-25=75$ N",
+    "$F\\cos30^\\circ\\approx43$ N $>\\mu N$ — jism sirpanadi; $\\;F_{\\text{ishq}}=\\mu N=0{,}2\\cdot75=15\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis harakatda tortish kuchi ishqalanish kuchiga teng:",
+    "$F=\\mu mg=0{,}3\\cdot8\\cdot10=24\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis tortilganda: $kx=\\mu mg$.",
+    "$k=\\dfrac{\\mu mg}{x}=\\dfrac{0{,}25\\cdot3\\cdot10}{0{,}05}=150\\ \\text{N/m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Nyutonning II qonuni: $F-\\mu mg=ma$.",
+    "$F=m(a+\\mu g)=2\\cdot(2+0{,}2\\cdot10)=8\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yukka tezlanishni faqat tinchlikdagi ishqalanish kuchi beradi, u $\\mu mg$ dan oshmaydi:",
+    "$ma\\le\\mu mg\\;\\Rightarrow\\;a_{\\max}=\\mu g=0{,}2\\cdot10=2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\tan\\alpha=0{,}75\\Rightarrow\\sin\\alpha=0{,}6$, $\\cos\\alpha=0{,}8$. Tekis harakat — kuchlar muvozanatda:",
+    "$T\\cos\\alpha=\\mu(mg-T\\sin\\alpha)\\;\\Rightarrow\\;T=\\dfrac{\\mu mg}{\\cos\\alpha+\\mu\\sin\\alpha}=\\dfrac{0{,}3\\cdot60}{0{,}8+0{,}18}\\approx18\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$N=mg-F\\sin30^\\circ=60-10=50$ N, $\\;F_{\\text{ishq}}=\\mu N=5$ N",
+    "$a=\\dfrac{F\\cos30^\\circ-F_{\\text{ishq}}}{m}=\\dfrac{17{,}3-5}{6}\\approx2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\cos\\alpha=0{,}8$. Kuchning gorizontal tashkil etuvchisi brusokni devorga bosadi: $N=F\\sin\\alpha=42$ N.",
+    "$F_{\\text{ishq}}=\\mu N=0{,}4\\cdot42=16{,}8$ N",
+    "$a=\\dfrac{F\\cos\\alpha-mg-F_{\\text{ishq}}}{m}=\\dfrac{56-28-16{,}8}{2{,}8}=4\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "Tekis sirpanishda: $mg\\sin\\alpha=\\mu mg\\cos\\alpha\\;\\Rightarrow\\;\\tan\\alpha=\\mu$.",
+    "$\\cot\\alpha=\\dfrac1\\mu=\\dfrac1{0{,}2}=5$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\tan30^\\circ\\approx0{,}58<\\mu=0{,}8$ — jism sirpanmaydi, uni tinchlikdagi ishqalanish ushlab turadi.",
+    "$F_{\\text{ishq}}=mg\\sin30^\\circ=5\\cdot10\\cdot0{,}5=25\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=\\dfrac hl=0{,}6$, $\\cos\\alpha=0{,}8$.",
+    "$a=g(\\sin\\alpha-\\mu\\cos\\alpha)=10(0{,}6-0{,}5\\cdot0{,}8)=2\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=0{,}8$, $\\cos\\alpha=0{,}6$. Yuqoriga harakatda og‘irlik tashkil etuvchisi ham, ishqalanish ham pastga yo‘nalgan:",
+    "$a=g(\\sin\\alpha+\\mu\\cos\\alpha)=10(0{,}8+0{,}3)=11\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=0{,}6$, $\\cos\\alpha=0{,}8$, $\\mu\\cos\\alpha=0{,}48$.",
+    "$a_{\\uparrow}=g(0{,}6+0{,}48)=10{,}8$, $\\;a_{\\downarrow}=g(0{,}6-0{,}48)=1{,}2\\ \\text{m/s}^2$",
+    "$\\dfrac{a_\\uparrow}{a_\\downarrow}=9$"
+   ]
+  },
+  {
+   "steps": [
+    "$a=g(\\sin45^\\circ-\\mu\\cos45^\\circ)=10\\cdot0{,}707\\cdot0{,}81\\approx5{,}73\\ \\text{m/s}^2$",
+    "$l=\\dfrac{h}{\\sin45^\\circ}\\approx7{,}07$ m; $\\;v=\\sqrt{2al}=\\sqrt{81}=9\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=\\dfrac5{13}$, $\\cos\\alpha=\\dfrac{12}{13}$.",
+    "$a=g\\left(\\dfrac5{13}-0{,}4\\cdot\\dfrac{12}{13}\\right)=\\dfrac{2}{13}\\ \\text{m/s}^2$",
+    "$t=\\sqrt{\\dfrac{2l}{a}}=\\sqrt{\\dfrac{2\\cdot13\\cdot13}{2}}=13\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "30° da tekis tushadi: $\\mu=\\tan30^\\circ=\\dfrac{1}{\\sqrt3}$.",
+    "60° da: $a=g(\\sin60^\\circ-\\mu\\cos60^\\circ)=10\\left(\\dfrac{\\sqrt3}{2}-\\dfrac{1}{2\\sqrt3}\\right)=\\dfrac{10}{\\sqrt3}\\ \\text{m/s}^2$",
+    "$l=\\dfrac{2{,}5}{\\sin60^\\circ}=\\dfrac{5}{\\sqrt3}$ m; $\\;t=\\sqrt{\\dfrac{2l}{a}}=\\sqrt1=1\\ \\text{s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqoriga harakatda sekinlanish: $a=g(\\sin\\alpha+\\mu\\cos\\alpha)=10(0{,}6+0{,}4)=10\\ \\text{m/s}^2$.",
+    "$v_{\\min}=\\sqrt{2al}=\\sqrt{2\\cdot10\\cdot10}=\\sqrt{200}\\approx14\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=\\dfrac{10}{26}$, $\\cos\\alpha=\\dfrac{24}{26}$. Pastga harakatda: $\\mu\\cos\\alpha\\approx0{,}415>\\sin\\alpha\\approx0{,}385$ — brusok sekinlanadi.",
+    "$|a|=g(\\mu\\cos\\alpha-\\sin\\alpha)=10\\cdot\\dfrac{10{,}8-10}{26}=\\dfrac{4}{13}\\ \\text{m/s}^2$",
+    "$v_{\\min}=\\sqrt{2|a|l}=\\sqrt{2\\cdot\\tfrac{4}{13}\\cdot26}=4\\ \\text{m/s}$"
+   ]
+  },
+  {
+   "steps": [
+    "Yuqoriga: $a_1=g(\\sin\\alpha+\\mu\\cos\\alpha)=1{,}8\\,g\\cos45^\\circ$; pastga: $a_2=g(\\sin\\alpha-\\mu\\cos\\alpha)=0{,}2\\,g\\cos45^\\circ$.",
+    "Yo‘l bir xil: $l=\\dfrac{a_1t_1^2}{2}=\\dfrac{a_2t_2^2}{2}\\;\\Rightarrow\\;\\dfrac{t_2}{t_1}=\\sqrt{\\dfrac{a_1}{a_2}}=\\sqrt9=3$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sin\\alpha=0{,}6$, $\\cos\\alpha=0{,}8$. Tekis ko‘tarishda:",
+    "$F=mg(\\sin\\alpha+\\mu\\cos\\alpha)=50(0{,}6+0{,}24)=42\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=m\\big(a+g(\\sin\\alpha+\\mu\\cos\\alpha)\\big)=50\\big(1+10(0{,}6+0{,}16)\\big)=430\\ \\text{N}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=2mg$, gorizontal. $\\sin\\alpha=0{,}6$, $\\cos\\alpha=0{,}8$.",
+    "Qiyalik bo‘ylab: $F\\cos\\alpha=1{,}6mg$; $\\;$bosim: $N=mg\\cos\\alpha+F\\sin\\alpha=2mg$",
+    "$a=\\dfrac{1{,}6mg-mg\\sin\\alpha-\\mu N}{m}=g(1{,}6-0{,}6-0{,}4)=6\\ \\text{m/s}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=\\dfrac{mg}{2}$ gorizontal, qiyalikdan tashqariga (pastga tomon) yo‘nalgan. $\\sin\\alpha=0{,}6$, $\\cos\\alpha=0{,}8$.",
+    "Bosim: $N=mg\\cos\\alpha-F\\sin\\alpha=0{,}8mg-0{,}3mg=0{,}5mg$",
+    "Qiyalik bo‘ylab pastga: $mg\\sin\\alpha+F\\cos\\alpha=0{,}6mg+0{,}4mg=mg$",
+    "$a=g(1-\\mu\\cdot0{,}5)=10(1-0{,}4)=6\\ \\text{m/s}^2$"
+   ]
+  }
+ ]
+}

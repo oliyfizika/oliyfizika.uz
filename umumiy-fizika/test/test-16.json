@@ -12,6 +12,7 @@
     },
     {
       "text": "Rasmda gorizontga α burchak ostida v tezlik bilan otilgan jismning harakat traektoriyasi ko‘rsatilgan. Rasmda ko‘rsatilgan vektorlardan qaysi biri jismning A nuqtadagi tezlanishi yo‘nalishini ko‘rsatadi?",
+      "image": "../rasmlar16/rasm2.svg",
       "answers": ["a", "b", "c", "d"],
       "correct": 1
     },
@@ -101,14 +102,14 @@
       "correct": 2
     },
     {
-      "text": "Gorizontga α burchak ostida otilgan jismning harakatida h/x ning qiymatini toping.",
+      "text": "Jism gorizontga α burchak ostida otildi, tg α = 0,5. Maksimal ko‘tarilish balandligi h ning uchish uzoqligi x ga nisbatini (h/x) toping.",
       "answers": ["1/3", "1/4", "1/8", "3/8"],
       "correct": 2
     },
     {
-      "text": "Bir nuqtadan ikkita jism gorizontga burchak ostida rasmdagi kabi otildi. Rasmdagi ma’lumotlardan foydalanib, h1/h2 nisbatni toping. α = 37°.",
+      "text": "Bir nuqtadan ikkita jism otildi: birinchisi 10 m/s tezlik bilan gorizontga α = 37° burchak ostida, ikkinchisi 7,5 m/s tezlik bilan gorizontga 53° burchak ostida. Ularning maksimal ko‘tarilish balandliklari nisbati h1/h2 ni toping. sin 37° = cos 53° = 0,6.",
       "answers": ["4/5", "5/7", "7/9", "1"],
-      "correct": 2
+      "correct": 3
     },
     {
       "text": "Jism gorizontga 60° burchak ostida 20 m/s tezlik bilan otildi. Jism maksimal balandlikka ko‘tarilgan nuqtada traektoriyaning egrilik radiusi qanday bo‘ladi (m)?",
