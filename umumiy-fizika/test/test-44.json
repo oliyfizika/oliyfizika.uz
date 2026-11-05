@@ -43,7 +43,7 @@
         "90",
         "A va B javoblar to‘g‘ri"
       ],
-      "correct": 3
+      "correct": 0
     },
     {
       "text": "Xo‘llamaydigan suyuqlik uchun xo‘llash burchagi necha gradus bo‘lishi mumkin?",
@@ -99,7 +99,7 @@
       "text": "Suyuqlikning kapillyar naychadagi ko‘tarilish balandligi 10 mm. Radiusi 3 marta kichik bo‘lgan boshqa kapillyar naychada shu suyuqlik qanday balandlikka ko‘tariladi?",
       "answers": [
         "3 m",
-        "3 sm",
+        "3 mm",
         "0,3 m",
         "30 mm"
       ],
@@ -146,7 +146,7 @@
       "correct": 1
     },
     {
-      "text": "Simobli barometr naychasining diametri 3 mm. Agar simobning kapillyar pasayishini hisobga olsak, barometrning ko‘rsatishiga qanday tuzatish kiritish lozim (mm)? σ = 22 mN/m.",
+      "text": "Simobli barometr naychasining diametri 3 mm. Agar simobning kapillyar pasayishini hisobga olsak, barometrning ko‘rsatishiga qanday tuzatish kiritish lozim (mm)? σ = 0,52 N/m.",
       "answers": [
         "5,9",
         "5,1",
@@ -166,7 +166,7 @@
       "correct": 2
     },
     {
-      "text": "U-simon kapillyar nayning o‘ng va chap tirsaklarining ichki diametrlari mos ravishda 1 mm va 0,2 mm ga teng. Nayga quyilgan suv sathlari farqini toping (sm). σ = 73 mN/m.",
+      "text": "U-simon kapillyar nayning o‘ng va chap tirsaklarining ichki diametrlari mos ravishda 1 mm va 2 mm ga teng. Nayga quyilgan suv sathlari farqini toping (sm). σ = 73 mN/m.",
       "answers": [
         "1,2",
         "1,46",

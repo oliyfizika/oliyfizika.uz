@@ -1,0 +1,184 @@
+{
+ "id": 43,
+ "solutions": [
+  {
+   "steps": [
+    "Bug‘lanayotgan va kondensatsiyalanayotgan molekulalar soni teng bo‘lgan holat — dinamik muvozanat (bug‘ to‘yingan)."
+   ]
+  },
+  {
+   "steps": [
+    "To‘yingan bug‘ bosimi faqat temperaturaga bog‘liq: hajm kamaysa bug‘ning bir qismi kondensatsiyalanadi, ortsa — suyuqlik bug‘lanadi. Hajmga bog‘liq emas."
+   ]
+  },
+  {
+   "steps": [
+    "Suv yo‘q, idish berk — molekulalar soni va hajm o‘zgarmaydi, demak $n=\\dfrac NV$ o‘zgarmaydi (bug‘ to‘yinmagan holatga o‘tadi)."
+   ]
+  },
+  {
+   "steps": [
+    "1-idishda suyuqlik bor: qizdirilganda bug‘lanish hisobiga bug‘ to‘yinganligicha qoladi va bosim keskin ortadi.",
+    "2-idishda bug‘ to‘yinmagan bo‘lib qoladi, bosim faqat $p\\sim T$ bo‘yicha ortadi. Demak 1-sida ko‘proq ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Kritik temperaturadan yuqorida moddani hech qanday bosimda suyuqlikka aylantirib bo‘lmaydi — u faqat gaz holatida bo‘ladi."
+   ]
+  },
+  {
+   "steps": [
+    "Gazni siqib suyuqlikka aylantirish faqat kritik temperaturadan past temperaturada mumkin."
+   ]
+  },
+  {
+   "steps": [
+    "To‘yingan bug‘ elastikligi (bosimi) faqat temperaturaga bog‘liq, hajmga bog‘liq emas — D jumla noto‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "To‘yingan bug‘ bosimi hajmga bog‘liq emas — bosim o‘zgarmaydi (bug‘ning bir qismi kondensatsiyalanadi)."
+   ]
+  },
+  {
+   "steps": [
+    "Temperatura pasayganda to‘yingan bug‘ bosimi va zichligi kamayadi (bug‘ning bir qismi kondensatsiyalanadi)."
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\text{const}$ da to‘yingan bug‘ bosimi hajmga bog‘liq emas — o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Suyuqlik bor, $T=\\text{const}$ — bug‘ to‘yinganligicha qoladi, bosim o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Kritik temperaturada suyuqlik va uning to‘yingan bug‘i zichliklari tenglashadi:",
+    "$\\rho_{bug‘}=925\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "100°C da to‘yingan bug‘ bosimi atmosfera bosimiga teng: $p=1{,}01\\cdot10^5$ Pa.",
+    "$\\rho=\\dfrac{pM}{RT}=\\dfrac{1{,}01\\cdot10^5\\cdot0{,}018}{8{,}31\\cdot373}\\approx0{,}59\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Kritik temperaturada zichliklar teng:",
+    "$\\rho_{bug‘}=850\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "Idishda suyuqlik bor deb hisoblaymiz: hajm oshgach bug‘lanish hisobiga bug‘ yana to‘yinadi (2 soat yetarli vaqt), bosim $T$ ga bog‘liq.",
+    "$p=29{,}5$ kPa"
+   ]
+  },
+  {
+   "steps": [
+    "Parsial bosim — boshqa gazlar bo‘lmaganda suv bug‘i yolg‘iz o‘zi hosil qiladigan bosim."
+   ]
+  },
+  {
+   "steps": [
+    "Absolyut namlik — 1 m³ havodagi suv bug‘i miqdori (zichligi), u bug‘ning parsial bosimi bilan ham ifodalanadi: 2, 4, 5."
+   ]
+  },
+  {
+   "steps": [
+    "Shudring nuqtasi gigrometr yordamida aniqlanadi."
+   ]
+  },
+  {
+   "steps": [
+    "Shudring nuqtasida nisbiy namlik 100% ga teng bo‘ladi (100% ga «oshmaydi») — 1-fikr noto‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=\\dfrac mV=\\dfrac{400\\ \\text{mg}}{0{,}02\\ \\text{m}^3}=20\\ \\text{g/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\rho V=60\\ \\text{g/m}^3\\cdot0{,}002\\ \\text{m}^3=0{,}12\\ \\text{g}=120$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=\\dfrac{50}{5}=10\\ \\text{g/m}^3$; $\\;\\varphi=\\dfrac{\\rho}{\\rho_0}=\\dfrac{10}{17{,}3}\\approx58\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "Bug‘ massasi $\\sim\\varphi V$ (bir xil temperatura):",
+    "$\\varphi=\\dfrac{15\\cdot1+30\\cdot2}{3}=25\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$m=(\\rho_{20}-\\rho_5)V=(17{,}3-6{,}8)\\cdot0{,}002=0{,}021\\ \\text{g}=21$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "Namlik 100% dan kam — ho‘l termometrdan suv bug‘lanib uni sovitadi: $T_1>T_2$."
+   ]
+  },
+  {
+   "steps": [
+    "Havo qanchalik quruq bo‘lsa, bug‘lanish shunchalik kuchli va termometrlar farqi katta. Farq ortsa — nisbiy namlik kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Termometrlar farqi kamaysa — bug‘lanish sustlashgan, nisbiy namlik ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "Nam termometr temperaturasi pasaysa farq ortadi — nisbiy namlik kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho=\\dfrac{pM}{RT}=\\dfrac{14000\\cdot0{,}018}{8{,}31\\cdot333}\\approx0{,}091\\ \\text{kg/m}^3$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\varphi=\\dfrac{p}{p_0}\\cdot100\\%=\\dfrac{1{,}1}{2{,}2}\\cdot100\\%=50\\%$"
+   ]
+  },
+  {
+   "steps": [
+    "$m=(17{,}3-6{,}8)\\ \\text{g/m}^3\\cdot0{,}002\\ \\text{m}^3=0{,}021\\ \\text{g}=21$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "$n=\\dfrac{\\rho}{m_0}\\sim\\rho$.",
+    "$\\dfrac{n_{20}}{n_{10}}=\\dfrac{17{,}3}{9{,}4}\\approx1{,}83$"
+   ]
+  },
+  {
+   "steps": [
+    "Kunduzi: $\\rho=0{,}6\\cdot17{,}3=10{,}38\\ \\text{g/m}^3$. 8°C da to‘yingan bug‘ zichligi $8{,}3\\ \\text{g/m}^3$.",
+    "$\\Delta m=10{,}38-8{,}3\\approx2{,}1$ g"
+   ]
+  },
+  {
+   "steps": [
+    "Kechqurun: $\\rho=0{,}55\\cdot13{,}6=7{,}48\\ \\text{g/m}^3$.",
+    "8°C da $\\rho_0=8{,}3\\ \\text{g/m}^3>7{,}48$ — bug‘ to‘yinmaydi, shudring tushmaydi."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "id": 44,
+ "solutions": [
+  {
+   "steps": [
+    "Suyuqlik–qattiq jism molekulalari tortishishi suyuqlik molekulalari orasidagidan kuchli bo‘lsa, suyuqlik sirtni ho‘llaydi."
+   ]
+  },
+  {
+   "steps": [
+    "Suyuqlik molekulalari orasidagi tortishish kuchliroq bo‘lsa — xo‘llamaslik."
+   ]
+  },
+  {
+   "steps": [
+    "Ho‘llashda xo‘llash burchagi o‘tkir: $\\theta<90^\\circ$. 67°, 41°, 12° — barchasi to‘g‘ri."
+   ]
+  },
+  {
+   "steps": [
+    "Ho‘llashda $\\theta<90^\\circ$: faqat 67° mos keladi (112° — ho‘llamaslik, 90° — chegaraviy holat)."
+   ]
+  },
+  {
+   "steps": [
+    "Ho‘llamaslikda $\\theta>90^\\circ$: 105° va 150°."
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{2\\sigma}{\\rho gr}=\\dfrac{2\\cdot0{,}024}{800\\cdot10\\cdot24\\cdot10^{-6}}=0{,}25\\ \\text{m}=25$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\sigma=\\dfrac{\\rho ghr}{2}=\\dfrac{800\\cdot10\\cdot0{,}02\\cdot0{,}15\\cdot10^{-3}}{2}=0{,}012\\ \\text{N/m}=12$ mN/m"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{4\\sigma}{\\rho gd}=\\dfrac{4\\cdot0{,}073}{1000\\cdot10\\cdot0{,}73\\cdot10^{-3}}=0{,}04\\ \\text{m}=4$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$h\\sim\\dfrac1g$: $\\;h'=4\\cdot\\dfrac{10}{5}=8$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$h\\sim\\dfrac1r$: $\\;h'=3\\cdot10=30$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "$h\\sim\\dfrac1g$: $\\;h'=24\\cdot6=144$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta h=\\dfrac{4\\sigma}{\\rho g}\\left(\\dfrac1{d_1}-\\dfrac1{d_2}\\right)=\\dfrac{4\\cdot0{,}072}{10^4}(1000-500)=0{,}0144\\ \\text{m}=14{,}4$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "$h\\sim\\dfrac{\\sigma}{r}$: $\\;\\dfrac{h_2}{h_1}=2\\cdot4=8$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{2\\sigma}{\\rho gr}=\\dfrac{2\\cdot0{,}073}{10^4\\cdot10^{-3}}=0{,}0146\\ \\text{m}=14{,}6$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "Simob shishani ho‘llamaydi — nayda pasayadi; barometr ko‘rsatishiga shu pasayishni qo‘shish kerak:",
+    "$h=\\dfrac{4\\sigma}{\\rho gd}=\\dfrac{4\\cdot0{,}52}{13600\\cdot10\\cdot0{,}003}\\approx5{,}1\\cdot10^{-3}$ m $=5{,}1$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{2\\sigma}{\\rho gr}$ — balandlik zichlikka ham bog‘liq; zichliklar berilmagan, munosabatni aniqlab bo‘lmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta h=\\dfrac{4\\sigma}{\\rho g}\\left(\\dfrac1{d_1}-\\dfrac1{d_2}\\right)=\\dfrac{4\\cdot0{,}073}{10^4}(1000-500)=0{,}0146\\ \\text{m}=1{,}46$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "Plastinalar orasida (oraliq $d$): $h_1=\\dfrac{2\\sigma}{\\rho gd}$; nayda: $h_2=\\dfrac{2\\sigma}{\\rho gr}$.",
+    "$d=r\\;\\Rightarrow\\;h_1=h_2$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{2\\sigma}{\\rho gd}=\\dfrac{2\\cdot0{,}073}{10^4\\cdot0{,}73\\cdot10^{-3}}=0{,}02\\ \\text{m}=2$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{2\\sigma}{\\rho gd}=\\dfrac{0{,}146}{10^4\\cdot2\\cdot10^{-3}}=0{,}0073\\ \\text{m}=0{,}73$ sm"
+   ]
+  },
+  {
+   "steps": [
+    "$d=\\dfrac{2\\sigma}{\\rho gh}=\\dfrac{0{,}146}{10^4\\cdot7{,}3\\cdot10^{-3}}=0{,}002\\ \\text{m}=2$ mm"
+   ]
+  },
+  {
+   "steps": [
+    "$\\Delta p=\\dfrac{2\\sigma}{r}=\\dfrac{2\\cdot0{,}04}{0{,}5\\cdot10^{-3}}=160$ Pa"
+   ]
+  }
+ ]
+}

@@ -15,7 +15,7 @@
       "answers": [
         "J · s",
         "J/m³",
-        "J/m²",
+        "J/m",
         "N/m"
       ]
     },
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "text": "Find the mass (mg) of a water drop falling from a capillary tube 4 mm in diameter. σ = 73 mN/m.",
+      "text": "Find the mass (mg) of a water drop falling from a capillary tube 4 mm in diameter. σ = 73 mN/m. g = 9.8 m/s².",
       "answers": [
         "94",
         "187",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "text": "A liquid of mass 100 g with a surface tension coefficient of 50 mN/m drips from a dropper of radius half a millimeter. How many drops does it form?",
+      "text": "A liquid of mass 100 g with a surface tension coefficient of 50 mN/m drips from a dropper of radius half a millimeter. How many drops does it form? g = 9.8 m/s².",
       "answers": [
         "6248",
         "7459",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "text": "Find the mass (mg) of a water drop detached from a dropper 1 mm in diameter moving downward with an acceleration of 4.5 m/s². σ = 73 mN/m.",
+      "text": "Find the mass (mg) of a water drop detached from a dropper 1 mm in diameter moving downward with an acceleration of 4.5 m/s². σ = 73 mN/m. g = 9.8 m/s².",
       "answers": [
         "18",
         "43.24",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "text": "The diameter of a dropper orifice is 1.2 mm. What is the mass (mg) of a water drop flowing out of the dropper at the moment of detachment?",
+      "text": "The diameter of a dropper orifice is 1.2 mm. What is the mass (mg) of a water drop flowing out of the dropper at the moment of detachment? σ = 73 mN/m.",
       "answers": [
         "56",
         "28",
