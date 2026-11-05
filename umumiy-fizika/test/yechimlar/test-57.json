@@ -1,0 +1,114 @@
+{
+ "id": 57,
+ "solutions": [
+  {
+   "steps": [
+    "Ulangandan keyin umumiy zaryad saqlanadi, kondensatorlar parallel: $C_0U_0=(C_0+\\varepsilon C_0)U$.",
+    "$1+\\varepsilon=\\dfrac{U_0}{U}=\\dfrac{800}{100}=8\\;\\Rightarrow\\;\\varepsilon=7$"
+   ]
+  },
+  {
+   "steps": [
+    "Manbadan uzilgan — zaryad o‘zgarmaydi. Metall list ichida maydon yo‘q, shuning uchun samarali masofa $d-a$ bo‘ladi.",
+    "$U'=U\\dfrac{d-a}{d}=50\\cdot\\dfrac{5-1}{5}=40$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryad: $Q=2C\\cdot6=12C$. Birining masofasi 2 marta kamaysa, sig‘imi $2C$ bo‘ladi, umumiy sig‘im $3C$.",
+    "$U=\\dfrac{Q}{3C}=\\dfrac{12C}{3C}=4$ V"
+   ]
+  },
+  {
+   "steps": [
+    "Kondensator manbaga ulangan holda qoladi, demak uning qutblaridagi kuchlanish manba kuchlanishiga teng va o‘zgarmaydi: $U=3$ V."
+   ]
+  },
+  {
+   "steps": [
+    "Elektr toki — zaryadli zarralarning tartibli (yo‘naltirilgan) harakati."
+   ]
+  },
+  {
+   "steps": [
+    "Tok bor joyda doimo magnit maydon mavjud bo‘ladi — bu tokning asosiy belgisidir."
+   ]
+  },
+  {
+   "steps": [
+    "Tok kuchi $I=\\dfrac{\\Delta q}{\\Delta t}$ — skalyar kattalik, lekin tanlangan yo‘nalishga nisbatan musbat yoki manfiy bo‘lishi mumkin."
+   ]
+  },
+  {
+   "steps": [
+    "Tok zichligi $\\vec j$ — ko‘ndalang kesimning yuza birligidan vaqt birligida o‘tuvchi zaryad miqdoriga teng vektor kattalik: $j=\\dfrac{I}{S}$."
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{It}{e}=\\dfrac{10\\cdot3600}{1{,}6\\cdot10^{-19}}=2{,}25\\cdot10^{23}$",
+    "$m=Nm_e=2{,}25\\cdot10^{23}\\cdot9{,}1\\cdot10^{-31}\\approx2\\cdot10^{-7}$ kg $=0{,}2$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{It}{e}=\\dfrac{32\\cdot10^{-6}\\cdot10^{-9}}{1{,}6\\cdot10^{-19}}=2\\cdot10^5$"
+   ]
+  },
+  {
+   "steps": [
+    "$N=\\dfrac{It}{e}=\\dfrac{16\\cdot10^{-3}\\cdot10^{-3}}{1{,}6\\cdot10^{-19}}=10^{14}$"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryad: $q=It=1\\cdot86400=86400$ C.",
+    "$m=\\dfrac{q}{e/m_e}=\\dfrac{86400}{1{,}76\\cdot10^{11}}\\approx4{,}9\\cdot10^{-7}$ kg $\\approx0{,}5$ mg"
+   ]
+  },
+  {
+   "steps": [
+    "Zaryad $I(t)$ grafigi ostidagi yuzaga teng (uchburchak):",
+    "$q=\\dfrac{5\\cdot10}{2}=25$ C"
+   ]
+  },
+  {
+   "steps": [
+    "$t=5$ min $=300$ s. Tok chiziqli o‘zgaradi — o‘rtacha tok bilan hisoblaymiz:",
+    "$I_{o‘r}=\\dfrac{2+(2+0{,}02\\cdot300)}{2}=5$ A; $\\;q=I_{o‘r}t=5\\cdot300=1500$ C"
+   ]
+  },
+  {
+   "steps": [
+    "$t=90$ s. $q=\\displaystyle\\int_0^t10^{-6}t\\,dt=\\dfrac{10^{-6}t^2}{2}=\\dfrac{10^{-6}\\cdot8100}{2}=4{,}05\\cdot10^{-3}$ C",
+    "$N=\\dfrac qe=\\dfrac{4{,}05\\cdot10^{-3}}{1{,}6\\cdot10^{-19}}\\approx2{,}53\\cdot10^{16}$"
+   ]
+  },
+  {
+   "steps": [
+    "Tok bir tekis o‘sadi — grafik koordinata boshidan chiquvchi to‘g‘ri chiziq, qiyaligi $\\dfrac{1{,}5}{6}=0{,}25$ A/s.",
+    "Shu qiyalikka faqat 4-grafik mos: $\\dfrac{3}{12}=0{,}25$ A/s (u 6 s da 1,5 A dan o‘tadi)."
+   ]
+  },
+  {
+   "steps": [
+    "$q=CU=200\\cdot10^{-6}\\cdot5000=1$ C; $\\;I=\\dfrac qt=\\dfrac15=0{,}2$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$j=\\dfrac{q}{tS}=\\dfrac{20}{8\\cdot5\\cdot10^{-6}}=5\\cdot10^5\\ \\text{A/m}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{I}{neS}=\\dfrac{3}{9\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}\\cdot20\\cdot10^{-6}}\\approx10^{-5}$ m/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\vartheta=\\dfrac{I}{neS}=\\dfrac{3}{4\\cdot10^{28}\\cdot1{,}6\\cdot10^{-19}\\cdot0{,}5\\cdot10^{-6}}\\approx9{,}4\\cdot10^{-4}$ m/s"
+   ]
+  }
+ ]
+}
