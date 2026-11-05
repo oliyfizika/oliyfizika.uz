@@ -415,7 +415,7 @@
         "2 marta ortadi.",
         "2 marta kamayadi."
       ],
-      "correct": 3,
+      "correct": 4,
       "source": "70-mavzu.tex#1:8"
     },
     {
@@ -443,7 +443,7 @@
       "source": "70-mavzu.tex#1:10"
     },
     {
-      "text": "Tebranishlar konturidagi tebranishlar davri qanday hollarda oshadi?",
+      "text": "Tebranishlar konturidagi tebranishlar davri qanday hollarda oshadi?\n1) kondensator sig‘imi ortsa;\n2) kondensator sig‘imi kamaysa;\n3) g‘altak induktivligi ortsa;\n4) g‘altak induktivligi kamaysa.",
       "answers": [
         "1, 2, 3.",
         "2, 4.",

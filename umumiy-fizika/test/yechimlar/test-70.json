@@ -1,0 +1,326 @@
+{
+ "id": 70,
+ "solutions": [
+  {
+   "steps": [
+    "So‘nmas tebranish uchun kontur kondensator va g‘altakdan iborat bo‘lib, aktiv qarshilik bo‘lmasligi kerak — 4-kontur."
+   ]
+  },
+  {
+   "steps": [
+    "$q=q_m\\cos\\omega t\\Rightarrow i=q'=-q_m\\omega\\sin\\omega t$, $\\;I_m=q_m\\omega$.",
+    "$I_m=q_m\\omega=1\\cdot10=10$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$I_m=q_m\\omega=10^{-6}\\cdot10\\pi=10^{-5}\\pi$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$q_m=\\dfrac{I_m}{\\omega}=\\dfrac{0{,}5}{10^7}=5\\cdot10^{-8}$ C $=0{,}05\\ \\mu$C"
+   ]
+  },
+  {
+   "steps": [
+    "$I_m=q_m\\dfrac{2\\pi}{T}=10^{-9}\\cdot\\dfrac{6{,}28}{3{,}14\\cdot10^{-6}}=2\\cdot10^{-3}$ A $=2$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "$q_m=\\dfrac{I_mT}{2\\pi}=\\dfrac{3{,}14\\cdot10^{-3}\\cdot4\\cdot10^{-6}}{6{,}28}=2\\cdot10^{-9}$ C $=2$ nC"
+   ]
+  },
+  {
+   "steps": [
+    "$i=I_m\\cos\\dfrac{2\\pi}{T}\\cdot\\dfrac T3=I_m\\cos120^\\circ=-\\dfrac{I_m}{2}$; $\\;|i|=2{,}5$ A $\\Rightarrow I_m=5$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$I_0\\sin\\dfrac\\pi6=6\\;\\Rightarrow\\;I_0=12$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$q=q_m\\cos\\omega t\\Rightarrow i=q'=-q_m\\omega\\sin\\omega t$, $\\;I_m=q_m\\omega$.",
+    "$q_m=5{,}3\\cdot10^{-5}$ C; $\\;I_m=5{,}3\\cdot10^{-5}\\cdot4\\pi=21{,}2\\pi\\cdot10^{-5}$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{2\\pi}{\\omega}=\\dfrac{2\\pi}{100\\pi}=0{,}02$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{\\omega}{2\\pi}=\\dfrac{100\\pi}{2\\pi}=50$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan: $q_m=10^{-2}$ C, $T=0{,}4$ s, $t=0$ da $q=q_m$ (kosinus).",
+    "$\\omega=\\dfrac{2\\pi}{0{,}4}=5\\pi$; $\\;q=10^{-2}\\cos5\\pi t$"
+   ]
+  },
+  {
+   "steps": [
+    "$U_m=\\dfrac{q_m}{C}=\\dfrac{9\\cdot10^{-5}}{3\\cdot10^{-6}}=30$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{\\omega}{2\\pi}=\\dfrac{10^6\\pi}{2\\pi}=5\\cdot10^5$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$I_m=q_m\\omega=10^{-7}\\cdot10^6=0{,}1$ A $=100$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "$I_m=10^{-3}\\cdot100\\pi\\approx0{,}314$ A $=314$ mA"
+   ]
+  },
+  {
+   "steps": [
+    "$I_m=q_m\\omega=10^{-6}\\cdot10^6=1$ A"
+   ]
+  },
+  {
+   "steps": [
+    "$i=q'=-10^{-6}\\cdot10^6\\pi\\sin10^6\\pi t=-\\pi\\sin10^6\\pi t$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac{2\\pi}{100\\pi}=0{,}02$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$t=0$ da $u=0$ — sinus qonuni. $\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{10^{-2}}=200\\pi$.",
+    "$u=150\\sin200\\pi t$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega\\dfrac{T}{24}=\\dfrac{2\\pi}{24}=\\dfrac{\\pi}{12}$; faza $\\dfrac\\pi{12}+\\dfrac\\pi{12}=\\dfrac\\pi6$",
+    "$U\\sin\\dfrac\\pi6=50\\;\\Rightarrow\\;U=100$ V"
+   ]
+  },
+  {
+   "steps": [
+    "$i=q'$, demak $q=\\dfrac{I_m}{\\omega}\\sin\\omega t$.",
+    "$q=\\dfrac{4\\pi\\cdot10^{-3}}{4\\pi}\\sin4\\pi t=10^{-3}\\sin4\\pi t$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{200\\pi}{2\\pi}=100$ Hz; $\\;T=\\dfrac1\\nu=10$ ms"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{1000\\pi}{2\\pi}=500$ Hz; $\\;T=0{,}002$ s"
+   ]
+  },
+  {
+   "steps": [
+    "$T=\\dfrac1\\nu=10^{-5}$ s $=10\\ \\mu$s"
+   ]
+  },
+  {
+   "steps": [
+    "Grafikdan $T=0{,}4$ s.",
+    "$\\nu=\\dfrac1T=2{,}5$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac{I_m}{q_m}=\\dfrac{3{,}14\\cdot10^{-3}}{2{,}5\\cdot10^{-6}}=1256$ rad/s; $\\;\\nu=\\dfrac{\\omega}{2\\pi}=200$ Hz"
+   ]
+  },
+  {
+   "steps": [
+    "Tomson formulasi: $\\omega=\\dfrac{1}{\\sqrt{LC}}$."
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{LC}=2\\pi\\sqrt{2\\cdot10^{-2}\\cdot2\\cdot10^{-4}}=2\\pi\\cdot2\\cdot10^{-3}$ s $=4\\pi$ ms"
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{LC}=6\\sqrt{5\\cdot10^{-5}\\cdot6\\cdot10^{-6}}=6\\sqrt{3}\\cdot10^{-5}\\approx104\\ \\mu$s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{1}{2\\pi\\sqrt{LC}}=\\dfrac{1}{2\\pi\\sqrt{2\\cdot10^{-12}\\cdot0{,}5\\cdot10^{-6}}}=\\dfrac{10^9}{2\\pi}\\approx1{,}6\\cdot10^8$ Hz $=160$ MHz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{1}{2\\pi\\sqrt{1{,}5\\cdot10^{-3}\\cdot4{,}5\\cdot10^{-10}}}\\approx\\dfrac{1}{2\\pi\\cdot8{,}2\\cdot10^{-7}}\\approx2\\cdot10^5$ Hz $=0{,}2$ MHz"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac{1}{\\sqrt{LC}}=\\dfrac{1}{\\sqrt{10^{-3}\\cdot10^{-7}}}=10^5$ rad/s"
+   ]
+  },
+  {
+   "steps": [
+    "$\\nu=\\dfrac{1}{2\\pi\\sqrt{LC}}\\sim\\dfrac{1}{\\sqrt L}$ — $L$ 4 marta ortsa, chastota 2 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$T\\sim\\sqrt C$ — $\\sqrt2$ marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$T'=2\\pi\\sqrt{4L\\cdot4C}=4T$"
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{LC}$ — $C$ yoki $L$ ortsa, davr ortadi: 1, 3."
+   ]
+  },
+  {
+   "steps": [
+    "Uchta $C$ ketma-ket: $C_{um}=\\dfrac C3=2\\ \\mu$F.",
+    "$T=2\\pi\\sqrt{LC_{um}}=6\\sqrt{5\\cdot10^{-5}\\cdot2\\cdot10^{-6}}=6\\cdot10^{-5}$ s $=60\\ \\mu$s"
+   ]
+  },
+  {
+   "steps": [
+    "Uchta $C$ parallel: $C_{um}=3C=3\\ \\mu$F.",
+    "$T=6\\sqrt{3\\cdot10^{-4}\\cdot3\\cdot10^{-6}}=6\\cdot3\\cdot10^{-5}$ s $=180\\ \\mu$s"
+   ]
+  },
+  {
+   "steps": [
+    "G‘altaklar ketma-ket: $L=L_1+L_2$.",
+    "$T=2\\pi\\sqrt{(L_1+L_2)C}$"
+   ]
+  },
+  {
+   "steps": [
+    "G‘altaklar parallel: $L=\\dfrac{L_1L_2}{L_1+L_2}$.",
+    "$T=2\\pi\\sqrt{\\dfrac{L_1L_2}{L_1+L_2}C}$"
+   ]
+  },
+  {
+   "steps": [
+    "a) parallel: $2C$; b) ketma-ket: $C/2$ — sig‘im 4 marta kamayadi.",
+    "$T\\sim\\sqrt C$ — davr 2 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "a) ketma-ket: $C/2$; b) parallel: $2C$ — sig‘im 4 marta ortadi.",
+    "$\\nu\\sim\\dfrac1{\\sqrt C}$ — chastota 2 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$T=2\\pi\\sqrt{LC}=2\\pi\\sqrt{10^{-5}\\cdot10^{-4}}$, $\\;T^2=4\\pi^2\\cdot10^{-9}=4\\cdot10^{-8}\\Rightarrow T=2\\cdot10^{-4}$ s",
+    "$N=\\dfrac tT=\\dfrac{60}{2\\cdot10^{-4}}=3\\cdot10^5$"
+   ]
+  },
+  {
+   "steps": [
+    "Parallel: $C+3C=4C$; $T\\sim\\sqrt C$ — 2 marta oshadi."
+   ]
+  },
+  {
+   "steps": [
+    "Sig‘im $4C$ — chastota 2 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Ketma-ket: $\\dfrac{C\\cdot C/3}{C+C/3}=\\dfrac C4$ — davr 2 marta kamayadi"
+   ]
+  },
+  {
+   "steps": [
+    "Sig‘im $C/4$ — chastota 2 marta oshadi."
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{\\varepsilon_0S}{d}$ — 25 marta kamayadi; $T\\sim\\sqrt C$ — 5 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$C$ 7 marta kamayadi; $\\nu\\sim\\dfrac{1}{\\sqrt C}$ — $\\sqrt7$ marta ortadi."
+   ]
+  },
+  {
+   "steps": [
+    "$C$ 6,25 marta ortadi; $T\\sim\\sqrt C$ — $\\sqrt{6{,}25}=2{,}5$ marta oshadi."
+   ]
+  },
+  {
+   "steps": [
+    "$C$ 3,24 marta ortadi; chastota $\\sqrt{3{,}24}=1{,}8$ marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Ferromagnit o‘zak induktivlikni oshiradi — $\\nu=\\dfrac1{2\\pi\\sqrt{LC}}$ kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{1}{4\\pi^2\\nu^2L}=\\dfrac{1}{39{,}5\\cdot10^6\\cdot0{,}0125}\\approx2\\cdot10^{-6}$ F $=2\\ \\mu$F"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{T^2}{4\\pi^2L}=\\dfrac{10^{-6}}{40\\cdot0{,}02}=1{,}25\\cdot10^{-6}$ F $=1{,}25\\ \\mu$F"
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{1}{\\omega^2C}=\\dfrac{1}{25\\cdot10^4\\cdot4\\cdot10^{-6}}=1$ H"
+   ]
+  },
+  {
+   "steps": [
+    "O‘zak $L$ ni oshiradi — davr ortadi. Kondensatordagi boshlang‘ich zaryad (energiya) o‘zgarmaydi — kuchlanish amplitudasi $U_m=q_m/C$ o‘zgarmaydi."
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac1{\\sqrt{LC}}=\\dfrac{1}{\\sqrt{2\\cdot2\\cdot10^{-6}}}=500$ rad/s; $\\;I_m=q_m\\omega=2\\cdot10^{-4}\\cdot500=0{,}1$ A",
+    "$q=q_m\\cos\\omega t\\Rightarrow i=-0{,}1\\sin500t$"
+   ]
+  },
+  {
+   "steps": [
+    "$L=\\dfrac{1}{\\omega^2C}=\\dfrac{1}{10^6\\cdot2\\cdot10^{-5}}=0{,}05$ H $=50$ mH"
+   ]
+  },
+  {
+   "steps": [
+    "$\\omega=\\dfrac{1}{\\sqrt{0{,}2\\cdot8\\cdot10^{-3}}}=25$ rad/s; $\\;I_m=q_m\\omega=0{,}01\\cdot25=0{,}25$ A",
+    "$i=-0{,}25\\sin25t$"
+   ]
+  },
+  {
+   "steps": [
+    "$C=\\dfrac{1}{\\omega^2L}=\\dfrac{1}{10^{12}\\cdot2\\cdot10^{-3}}=5\\cdot10^{-10}$ F $=500$ pF"
+   ]
+  }
+ ]
+}
