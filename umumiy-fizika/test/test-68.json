@@ -40,7 +40,7 @@
         "H$\\cdot$s.",
         "Wb$\\cdot$s."
       ],
-      "correct": 1,
+      "correct": 2,
       "source": "68-mavzu.tex#0:3"
     },
     {
@@ -200,7 +200,7 @@
       "source": "68-mavzu.tex#0:16"
     },
     {
-      "text": "Yuzasi $30$ cm$^2$ bo‘lgan qo‘zg‘almas o‘ram bir jinsli magnit maydonda induksiya chiziqlariga perpendikulyar joylashgan. Agar magnit induksiyasi $0,01$ s dan $0,2$ T dan $0,7$ T gacha tekis ortsa, o‘ramda qanday induksiya EYK paydo bo‘ladi?",
+      "text": "Yuzasi $30$ cm$^2$ bo‘lgan qo‘zg‘almas o‘ram bir jinsli magnit maydonda induksiya chiziqlariga perpendikulyar joylashgan. Agar magnit induksiyasi $0,01$ s da $0,2$ T dan $0,7$ T gacha tekis ortsa, o‘ramda qanday induksiya EYK paydo bo‘ladi (V)?",
       "answers": [
         "500.",
         "50.",
@@ -220,7 +220,7 @@
         "0,2.",
         "2,2."
       ],
-      "correct": 4,
+      "correct": 3,
       "source": "68-mavzu.tex#0:18"
     },
     {
@@ -248,7 +248,7 @@
       "source": "68-mavzu.tex#0:20"
     },
     {
-      "text": "$N=8$ ta o‘ramli g‘altakka tushayotgan magnit maydon induksiyasi $\\Delta t=0,5$ s ichida $B_1=0,8$ T dan $B_2=0,2$ T ga qadar kamaydi. G‘altak o‘ramining radiusi $r=10$ cm ga teng. Shu oraliqda g‘altakka ulangan $R=10~\\Omega$ qarshilikdan oqib o‘tgan induksion tokni aniqlang. ($r$ g‘altak simining qarshiligini e’tiborga olmang.) $\\pi=3$.",
+      "text": "$N=8$ ta o‘ramli g‘altakka tushayotgan magnit maydon induksiyasi $\\Delta t=0,5$ s ichida $B_1=0,8$ T dan $B_2=0,2$ T ga qadar kamaydi. G‘altak o‘ramining radiusi $r=10$ cm ga teng. Shu oraliqda g‘altakka ulangan $R=10~\\Omega$ qarshilikdan oqib o‘tgan induksion tokni aniqlang. ($r$ g‘altak simining qarshiligini e’tiborga olmang.) $\\pi=3$. (mA)",
       "answers": [
         "12,5.",
         "3,24.",
@@ -372,7 +372,7 @@
         "$\\varepsilon_i=68$ V, $I_i=14$ A.",
         "$\\varepsilon_i=62$ V, $I_i=20$ A."
       ],
-      "correct": 2,
+      "correct": 4,
       "source": "68-mavzu.tex#0:31"
     },
     {
@@ -396,7 +396,7 @@
         "$\\varepsilon_i=6$ V, $I_i=30$ A.",
         "$\\varepsilon_i=15$ V, $I_i=75$ A."
       ],
-      "correct": 1,
+      "correct": 3,
       "source": "68-mavzu.tex#0:33"
     },
     {
@@ -408,12 +408,12 @@
         "0,01 A; 0; 0,2 A.",
         "0,05 A; 0; 0,1 A."
       ],
-      "correct": 1,
+      "correct": 4,
       "images": "../rasmlar68/ra277bba38a.png",
       "source": "68-mavzu.tex#0:34"
     },
     {
-      "text": "Qarshiligi $2~\\Omega$ bo‘lgan konturni kesib o‘tuvchi magnit oqimi $0,1$ mWb dan $0,4$ mWb gacha tekis ortdi. O‘tkazgichning ko‘ndalang kesim yuzini vaqtda qancha o‘zgaradi (tadi)(mC)?",
+      "text": "Qarshiligi $2~\\Omega$ bo‘lgan konturni kesib o‘tuvchi magnit oqimi $0,1$ mWb dan $0,4$ mWb gacha tekis ortdi. Shu vaqtda o‘tkazgichning ko‘ndalang kesimidan qancha zaryad o‘tadi (mC)?",
       "answers": [
         "0,2.",
         "0,4.",
@@ -494,7 +494,7 @@
         "tepaga.",
         "TJY."
       ],
-      "correct": 4,
+      "correct": 1,
       "images": "../rasmlar68/rb8433099b2.png",
       "source": "68-mavzu.tex#0:41"
     },
@@ -556,7 +556,7 @@
         "0,4.",
         "0,5."
       ],
-      "correct": 0,
+      "correct": 1,
       "source": "68-mavzu.tex#0:46"
     },
     {
@@ -568,7 +568,7 @@
         "0,2.",
         "0,6."
       ],
-      "correct": 3,
+      "correct": 0,
       "source": "68-mavzu.tex#0:47"
     },
     {
@@ -652,7 +652,7 @@
         "75.",
         "50."
       ],
-      "correct": 3,
+      "correct": 2,
       "images": "../rasmlar68/r593b853fcb.png",
       "source": "68-mavzu.tex#0:54"
     },
@@ -719,7 +719,7 @@
       "source": "68-mavzu.tex#0:59"
     },
     {
-      "text": "Doimiy magnit shimoliy qutbi bilan metall halqaga yaqinlashtirilmoqda. Halqa magnitga tortiladimi yoki qochadimi? Halqaga magnit harakati yo‘nalishiga qaraganda induksion tok yo‘nalishi qanday bo‘ladi?",
+      "text": "Doimiy magnit janubiy qutbi bilan metall halqaga yaqinlashtirilmoqda. Halqa magnitga tortiladimi yoki qochadimi? Halqaga magnit harakati yo‘nalishiga qaraganda induksion tok yo‘nalishi qanday bo‘ladi?",
       "answers": [
         "tortiladi, soat strelkasiga qarama-qarshi.",
         "qochadi, soat strelkasi bo‘ylab.",
@@ -727,20 +727,20 @@
         "tortiladi, soat strelkasi bo‘ylab.",
         "qochmaydi va tortilmaydi, tok kuchi nolga teng."
       ],
-      "correct": 2,
+      "correct": 1,
       "images": "../rasmlar68/r9c6500509e.png",
       "source": "68-mavzu.tex#0:60"
     },
     {
-      "text": "Induksiyasi $B=8000(1+t^2)$ (T) qonun bo‘yicha o‘zgaruvchi magnit maydonda yuzi $50$ cm$^2$ bo‘lgan kvadrat ramka joylashgan. $t=1$ s vaqt momentida ramkada hosil bo‘lgan induksiya EYK nimaga teng? $(0-1)$ s oralig‘ida ramkaning K nuqtasida induksion tok qaysi yo‘nalishda o‘tadi?",
+      "text": "Induksiyasi $B=8000(1+t^2)$ (T) qonun bo‘yicha o‘zgaruvchi magnit maydonda yuzi $50$ cm$^2$ bo‘lgan kvadrat ramka induksiya chiziqlariga tik joylashgan. $t=1$ s vaqt momentida ramkada hosil bo‘lgan induksiya EYK nimaga teng?",
       "answers": [
-        "30 V; $(+)$ yo‘nalishda.",
-        "40 V; $(-)$ yo‘nalishda.",
-        "80 V; $(+)$ yo‘nalishda.",
-        "30 V; $(-)$ yo‘nalishda.",
-        "80 V; $(-)$ yo‘nalishda."
+        "30 V.",
+        "40 V.",
+        "80 V.",
+        "160 V.",
+        "8 V."
       ],
-      "correct": 4,
+      "correct": 2,
       "source": "68-mavzu.tex#0:61"
     },
     {
