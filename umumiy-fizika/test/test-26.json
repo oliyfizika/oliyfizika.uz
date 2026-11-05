@@ -13,7 +13,7 @@
     {
       "text": "Torichelli tajribasida ishlatiladigan simobli barometr (bir uchi berk shisha nay va simobli idish) biror balandlikdan vertikal tashlab yuborilsa, nay ichidagi simob sathining balandligi qanday o‘zgaradi?",
       "answers": ["o‘zgarmaydi", "simob nayni butunlay to‘ldiradi", "nay ichidagi simob butunlay oqib chiqadi", "avval oshadi, so‘ngra o‘zgarmaydi"],
-      "correct": 0
+      "correct": 1
     },
     {
       "text": "Havosi so‘rib olingan nayni normal sharoitda simobga tushirilsa, simob atmosfera bosimi ta’sirida shu nay orqali 76 cm ko‘tariladi. Shu nay suvga tushirilsa, suv necha metr balandlikka ko‘tarilgan bo‘lar edi?",
@@ -26,9 +26,9 @@
       "correct": 2
     },
     {
-      "text": "Toshkent shahri dengiz sathidan 407 m balandlikda joylashgan. Yunusoboddagi televizion minoraning balandligi 385 m. Agar dengiz sathidagi atmosfera bosimi 760 mm Hg ga teng bo‘lsa, minoraning uchidagi barometr qanday bosimni (mm Hg) ko‘rsatadi?",
+      "text": "Toshkent shahri dengiz sathidan 407 m balandlikda joylashgan. Yunusoboddagi televizion minoraning balandligi 385 m. Agar dengiz sathidagi atmosfera bosimi 760 mm Hg ga teng bo‘lsa, minoraning uchidagi barometr qanday bosimni (mm Hg) ko‘rsatadi? Har 12 m ga ko‘tarilganda bosim 1 mm Hg ga kamayadi deb hisoblang.",
       "answers": ["704", "698", "694", "684"],
-      "correct": 1
+      "correct": 2
     },
     {
       "text": "Shaxta tubida atmosfera bosimi 820 mm simob ustuniga teng bo‘lsa, shaxta chuqurligi necha metr?",

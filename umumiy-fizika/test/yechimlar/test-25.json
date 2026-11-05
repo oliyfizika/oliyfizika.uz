@@ -1,0 +1,81 @@
+{
+ "id": 25,
+ "solutions": [
+  {
+   "steps": [
+    "Suyuqlik ustunining bosimi:",
+    "$p=\\rho gh$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh$ — bosim faqat chuqurlikka bog‘liq.",
+    "1-nuqta eng sayoz, 4-nuqta eng chuqur: 1 da bosim eng kichik, 4 da eng katta."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh$ — bosim suyuqlik zichligi (3) va ustun balandligiga (4) bog‘liq, idish shakli va tub yuziga bog‘liq emas (gidrostatik paradoks)."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh$ — bosim zichlikka ham, ustun balandligiga ham to‘g‘ri proporsional."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh=800\\cdot10\\cdot0{,}5=4000\\ \\text{Pa}=4\\ \\text{kPa}$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh=900\\cdot10\\cdot0{,}3=2700\\ \\text{Pa}$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh=1000\\cdot10\\cdot40=4\\cdot10^5\\ \\text{Pa}=400\\ \\text{kPa}$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{p}{\\rho g}=\\dfrac{2\\cdot10^5}{1000\\cdot10}=20\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "Sathlar bir xil balandlikda, $\\rho_{\\text{suv}}>\\rho_{\\text{ker}}$, demak har qanday chuqurlikda $p_{\\text{suv}}>p_{\\text{ker}}$.",
+    "Parda katta bosimdan kichik bosim tomonga — kerosin tomonga egiladi."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\rho gh$: suyuqlik bir xil va balandlik bir xil — bosim idish shakliga bog‘liq emas.",
+    "$p_1=p_2=p_3$"
+   ]
+  },
+  {
+   "steps": [
+    "Tubga bosim kuchi: $F_1=\\rho gh\\cdot\\pi r^2$. Yon sirtga o‘rtacha bosim $\\dfrac{\\rho gh}{2}$, yuzi $2\\pi rh$: $F_2=\\rho g\\pi rh^2$.",
+    "$F_1=F_2\\;\\Rightarrow\\;h=r=0{,}05\\ \\text{m}$"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho gh\\pi r^2=\\dfrac{\\rho gh}{2}\\cdot2\\pi rh\\;\\Rightarrow\\;h=r$"
+   ]
+  },
+  {
+   "steps": [
+    "$h=\\dfrac{p}{\\rho g}=\\dfrac{10^4}{10^4}=1$ m; $\\;V_1=1\\ \\text{sm}^2\\cdot100\\ \\text{sm}=100\\ \\text{sm}^3=0{,}1$ l",
+    "Yangi idishda: $V_2=10\\ \\text{sm}^2\\cdot100\\ \\text{sm}=1$ l; $\\;$qo‘shish kerak: $1-0{,}1=0{,}9$ l"
+   ]
+  },
+  {
+   "steps": [
+    "$\\rho_sgh_s=2\\rho_kgh_k\\;\\Rightarrow\\;\\dfrac{h_s}{h_k}=\\dfrac{2\\rho_k}{\\rho_s}=\\dfrac{2\\cdot800}{1000}=1{,}6$"
+   ]
+  }
+ ]
+}

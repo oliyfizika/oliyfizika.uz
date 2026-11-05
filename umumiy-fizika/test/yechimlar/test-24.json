@@ -1,0 +1,82 @@
+{
+ "id": 24,
+ "solutions": [
+  {
+   "steps": [
+    "$S=\\dfrac Fp=\\dfrac{2\\cdot10^7}{10^5}=200\\ \\text{m}^2$"
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{mg}{S}=\\dfrac{4\\cdot10}{8}=5\\ \\text{Pa}$"
+   ]
+  },
+  {
+   "steps": [
+    "$F=pS=300\\ \\text{N/sm}^2\\cdot900\\ \\text{sm}^2=270000\\ \\text{N}=270\\ \\text{kN}$"
+   ]
+  },
+  {
+   "steps": [
+    "Bosim kuchi — g‘ishtlarning og‘irligi, u qanday qo‘yilishiga bog‘liq emas.",
+    "Hamma holatlarda kuch bir xil (bosim esa tayanch yuziga qarab farq qiladi)."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac{mg}{S}$, og‘irlik bir xil — bosim tayanch yuzi eng kichik bo‘lgan holatda eng katta.",
+    "1-holatda g‘isht eng kichik yog‘i bilan turibdi."
+   ]
+  },
+  {
+   "steps": [
+    "$p=\\dfrac FS$, doira yuzi $S=\\dfrac{\\pi d^2}{4}\\sim d^2$.",
+    "$d\\to2d\\;\\Rightarrow\\;S\\to4S\\;\\Rightarrow\\;p\\to\\dfrac p4$"
+   ]
+  },
+  {
+   "steps": [
+    "$m=\\rho V=2800\\cdot9=25200$ kg",
+    "$p=\\dfrac{mg}{S}=\\dfrac{252000}{1{,}4}=180000\\ \\text{Pa}=180\\ \\text{kPa}$"
+   ]
+  },
+  {
+   "steps": [
+    "Ip tarangligi kichik yuk og‘irligiga teng: $T=10$ N.",
+    "$N=Mg-T=50-10=40$ N; $\\;p=\\dfrac NS=\\dfrac{40}{0{,}4}=100\\ \\text{Pa}$"
+   ]
+  },
+  {
+   "steps": [
+    "Bosimni faqat kuchning sirtga perpendikulyar tashkil etuvchisi hosil qiladi:",
+    "$p=\\dfrac{F\\cos37^\\circ}{S}=\\dfrac{120\\cdot0{,}8}{0{,}6}=160\\ \\text{Pa}$"
+   ]
+  },
+  {
+   "steps": [
+    "Sirtga perpendikulyar kuch: $N=P\\cos53^\\circ=20\\cdot0{,}6=12$ N; yuz $S=a^2=4\\ \\text{m}^2$.",
+    "$p=\\dfrac NS=\\dfrac{12}{4}=3\\ \\text{Pa}$"
+   ]
+  },
+  {
+   "steps": [
+    "Paskal qonuni: suyuqlik yoki gazga berilgan tashqi bosim uning barcha nuqtalariga o‘zgarishsiz uzatiladi."
+   ]
+  },
+  {
+   "steps": [
+    "Paskal qonuniga ko‘ra suyuqlik va gazlar tashqi bosimni hamma yo‘nalishlarda bir xil uzatadi."
+   ]
+  },
+  {
+   "steps": [
+    "Paskal qonuni suyuqliklar va gazlar uchun o‘rinli (zarralari erkin harakatlanadi). Qattiq jismlar kuchni ta’sir yo‘nalishida uzatadi."
+   ]
+  },
+  {
+   "steps": [
+    "Koptok ichidagi havo — gaz; Paskal qonuniga ko‘ra bosim uning barcha nuqtalarida bir xil ortadi."
+   ]
+  }
+ ]
+}
