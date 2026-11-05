@@ -1,0 +1,98 @@
+{
+ "id": 81,
+ "solutions": [
+  {
+   "steps": [
+    "Yorug‘lik kuchi — SI ning asosiy kattaligi, birligi kandela (cd)."
+   ]
+  },
+  {
+   "steps": [
+    "Yorug‘lik oqimi $\\Phi=I\\Omega$, birligi lyumen: $1$ lm $=1$ cd$\\cdot$sr."
+   ]
+  },
+  {
+   "steps": [
+    "Yoritilganlik $E=\\dfrac\\Phi S$, birligi lyuks (lk)."
+   ]
+  },
+  {
+   "steps": [
+    "$1$ lk $=\\dfrac{1\\text{ lm}}{1\\text{ m}^2}$"
+   ]
+  },
+  {
+   "steps": [
+    "Nuqtaviy manba yoritilganligi: $E=\\dfrac{I\\cos\\alpha}{r^2}$ ($\\alpha$ — tushish burchagi, normaldan); $E=\\dfrac{\\Phi}{S}$; $\\Phi=I\\Omega$.",
+    "$E=\\dfrac{100}{2^2}=25$ lk"
+   ]
+  },
+  {
+   "steps": [
+    "$E\\sim\\dfrac1{r^2}$: $r$ 2 marta ortsa, $E$ 4 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Nuqtaviy manba yoritilganligi: $E=\\dfrac{I\\cos\\alpha}{r^2}$ ($\\alpha$ — tushish burchagi, normaldan); $E=\\dfrac{\\Phi}{S}$; $\\Phi=I\\Omega$.",
+    "$\\Phi=50\\cdot2=100$ lm"
+   ]
+  },
+  {
+   "steps": [
+    "To‘liq fazoviy burchak $4\\pi$ sr.",
+    "$\\Phi=4\\pi I=4\\pi\\cdot10\\approx126$ lm"
+   ]
+  },
+  {
+   "steps": [
+    "Nuqtaviy manba yoritilganligi: $E=\\dfrac{I\\cos\\alpha}{r^2}$ ($\\alpha$ — tushish burchagi, normaldan); $E=\\dfrac{\\Phi}{S}$; $\\Phi=I\\Omega$.",
+    "$E=\\dfrac{200\\cdot0{,}5}{2^2}=25$ lk"
+   ]
+  },
+  {
+   "steps": [
+    "Nuqtaviy manba yoritilganligi: $E=\\dfrac{I\\cos\\alpha}{r^2}$ ($\\alpha$ — tushish burchagi, normaldan); $E=\\dfrac{\\Phi}{S}$; $\\Phi=I\\Omega$.",
+    "$E=\\dfrac{400}{2}=200$ lk"
+   ]
+  },
+  {
+   "steps": [
+    "$E\\sim\\cos\\alpha$: tushish burchagi ortsa, $\\cos\\alpha$ va yoritilganlik kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "Nuqtaviy manba yoritilganligi: $E=\\dfrac{I\\cos\\alpha}{r^2}$ ($\\alpha$ — tushish burchagi, normaldan); $E=\\dfrac{\\Phi}{S}$; $\\Phi=I\\Omega$.",
+    "$E=\\dfrac{80}{1^2}=80$ lk"
+   ]
+  },
+  {
+   "steps": [
+    "Nuqtaviy manba yoritilganligi: $E=\\dfrac{I\\cos\\alpha}{r^2}$ ($\\alpha$ — tushish burchagi, normaldan); $E=\\dfrac{\\Phi}{S}$; $\\Phi=I\\Omega$.",
+    "$\\Phi=ES=50\\cdot0{,}4=20$ lm"
+   ]
+  },
+  {
+   "steps": [
+    "Qattiq (fazoviy) burchak birligi — steradian (sr)."
+   ]
+  },
+  {
+   "steps": [
+    "Bu — yoritilganlikning masofa kvadratiga teskari bog‘liqlik qonuni: $E=\\dfrac{I}{r^2}$."
+   ]
+  },
+  {
+   "steps": [
+    "$E\\sim\\dfrac1{r^2}$: $r$ 3 marta ortsa, $E$ 9 marta kamayadi."
+   ]
+  },
+  {
+   "steps": [
+    "$E\\sim\\dfrac1{r^2}$: masofa 2 marta ortdi.",
+    "$E=\\dfrac{40}{4}=10$ lk"
+   ]
+  }
+ ]
+}
