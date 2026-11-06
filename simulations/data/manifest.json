@@ -862,6 +862,21 @@
    "lab": "otm"
   },
   {
+   "id": "orbitals",
+   "title": "Vodorod atomi: elektron bulutlari (3D)",
+   "href": "orbitals.html",
+   "topic": "kvant",
+   "description": "Uch o‘lchamli simulyatsiya: elektronning ehtimollik buluti |ψₙₗₘ|² — har bir nuqta elektronni topish mumkin bo‘lgan joy. Kvant sonlari n, l, mₗ; s, p, d, f orbitallar, kompleks holatlar (halqalar, L_z = mħ) va real orbitallar (pₓ, d_xy, f_xyz …), ψ ishorasi, radial va burchak tugunlari, energiya va o‘rtacha radius.",
+   "params": [
+    "Kvant sonlari: n = 1…4, l = 0…n − 1, mₗ = −l…+l",
+    "Kompleks holatlar ψₙₗₘ va real orbitallar",
+    "Sahnada aylantirish, yaqinlashtirish, yuqoridan/yondan ko‘rinish",
+    "Radial tugun sferalari, kesim, masshtab halqalari (a₀)",
+    "Nuqtalar soni 10 000…120 000"
+   ],
+   "keywords": "vodorod atomi elektron buluti orbital atom orbitallari kvant sonlari bosh kvant soni orbital kvant soni magnit kvant soni s orbital p orbital d orbital f orbital to‘lqin funksiyasi psi ehtimollik zichligi shryodinger tenglamasi tugun radial tugun bor radiusi impuls momenti 3d kvant mexanikasi kvant fizikasi"
+  },
+  {
    "id": "wilson",
    "title": "Vilson kamerasi: zarralar izlari (laboratoriya ishi)",
    "href": "wilson.html",
