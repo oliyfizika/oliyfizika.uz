@@ -4,101 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Olimpiada | OliyFizika.uz</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:#020817;
-    color:white;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top left,#0f3b91 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#0d1b52 0%,transparent 40%),
-    linear-gradient(135deg,#020817,#07122f,#020817);
-    z-index:-2;
-}
-
-.card{
-    width:90%;
-    max-width:700px;
-    text-align:center;
-    padding:60px 40px;
-    border-radius:30px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(20px);
-}
-
-.icon{
-    font-size:80px;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:48px;
-    margin-bottom:20px;
-}
-
-p{
-    color:#cbd5e1;
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:35px;
-}
-
-.btn{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    padding:14px 28px;
-    border-radius:16px;
-    background:linear-gradient(135deg,#1d4fff,#2797ff);
-    font-weight:600;
-}
-
-.btn:hover{
-    opacity:.9;
-}
-
-</style>
+<meta name="description" content="Fizika fanidan olimpiada materiallari: xalqaro olimpiadalarga saralash, asosiy olimpiada, Al-Xorazmiy, Al-Farg‘oniy va boshqa olimpiadalar topshiriqlari va yechimlari.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/catalog.css">
+<link rel="stylesheet" href="../assets/css/library.css">
+<link rel="stylesheet" href="../assets/css/olimpiada.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/olimpiada/olimpiada-page.js"></script>
 </head>
-<body>
+<!--
+  Olimpiada (OliyFizika 2.0). Materiallar ro'yxati: data/manifest.json, fayllar: fayllar/<olimpiada>/<yil-bosqich>/.
+  Manba: @olympcenteruz Telegram kanali (har bir materialda manba havolasi bor).
+  Tanlov URL xeshida saqlanadi: #<olimpiada>/<yil>, masalan #asosiy/2022.
+-->
+<body class="of-ui" data-shell-title="Olimpiada">
+<div class="of-page of-container of-cat">
+  <header class="of-cat-head">
+    <div>
+      <h1>Olimpiada</h1>
+      <p>Fizika fanidan o‘tkazilgan olimpiadalarning topshiriqlari, yechimlari va baholash mezonlari. Olimpiada turini, so‘ng yilni tanlang.</p>
+    </div>
+    <p class="of-cat-count" data-ol-count aria-live="polite"></p>
+  </header>
 
-<div class="card">
+  <nav aria-label="Olimpiada turlari">
+    <ul class="of-lib-cats of-ol-types" data-ol-types>
+      <li><div class="of-card of-lib-cat"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-lib-cat"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+      <li><div class="of-card of-lib-cat"><span class="of-skeleton of-skeleton--title"></span><span class="of-skeleton of-skeleton--text"></span></div></li>
+    </ul>
+  </nav>
 
-    <div class="icon">🏆</div>
+  <section class="of-ol-panel" data-ol-panel aria-live="polite" hidden>
+    <div class="of-ol-panel__head">
+      <div>
+        <h2 class="of-lib-h2" data-ol-title></h2>
+        <p class="of-subtle" data-ol-desc></p>
+      </div>
+    </div>
+    <nav aria-label="Yillar">
+      <ul class="of-chips" data-ol-years></ul>
+    </nav>
+    <div data-ol-groups></div>
+  </section>
 
-    <h1>Olimpiada</h1>
-
-    <p>
-        Olimpiada bo‘limi ustida ish olib borilmoqda.
-        Masalalar, nazariy materiallar va tayyorlov kurslari
-        tez orada joylashtiriladi.
-    </p>
-
-    <a href="../index.html" class="btn">
-        Bosh sahifaga qaytish
-    </a>
-
+  <p class="of-subtle of-ol-note">Materiallar <a href="https://t.me/olympcenteruz" target="_blank" rel="noopener noreferrer">@olympcenteruz</a> Telegram kanalidan to‘plangan. Har bir materialning asl manbasi “Manba” havolasida ko‘rsatilgan.</p>
 </div>
-
 </body>
 </html>
