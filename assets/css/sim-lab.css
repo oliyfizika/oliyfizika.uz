@@ -311,3 +311,22 @@ body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-selec
 /* Ko‘p tugmali segment (panelda qatorga sig‘masa o‘raladi) */
 .sim-panel .of-segment--wrap { display: flex; flex-wrap: wrap; height: auto; }
 .sim-panel .of-segment--wrap button { padding: 0 10px; }
+
+/* ---------- Elektron bulutlari (orbitals.html): 3D sahna ustidagi yozuvlar, kvant sonlari tugmalari ---------- */
+.orb-wrap { background: var(--of-surface); }
+.orb-wrap canvas { cursor: grab; }
+.orb-wrap canvas:active { cursor: grabbing; }
+.orb-hud { position: absolute; left: 14px; top: 10px; pointer-events: none; display: grid; gap: 2px; }
+.orb-hud__name { font: 700 34px/1 var(--of-font-display); color: var(--of-text); letter-spacing: -0.01em; }
+.orb-hud__name sub { font: 600 0.45em/1 var(--of-font-sans); margin-left: 1px; }
+.orb-hud__qn { font: 600 var(--of-text-xs)/1.3 var(--of-font-sans); color: var(--of-text-3); font-variant-numeric: tabular-nums; }
+.orb-legend { position: absolute; right: 12px; bottom: 10px; display: flex; gap: 12px; pointer-events: none; font: 600 var(--of-text-xs)/1 var(--of-font-sans); color: var(--of-text-2); }
+.orb-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.orb-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.orb-dot--pos { background: var(--of-warning); }
+.orb-dot--neg { background: var(--of-primary); }
+.orb-fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--of-text-2); font-size: var(--of-text-sm); background: var(--of-surface-2); }
+.orb-qn { display: flex; flex-direction: column; gap: 8px; }
+.orb-seg button { min-width: 40px; justify-content: center; font-variant-numeric: tabular-nums; }
+.orb-seg button:disabled { opacity: .35; cursor: not-allowed; }
+@container (max-width: 560px) { .orb-hud__name { font-size: 26px; } .orb-legend { gap: 8px; } }

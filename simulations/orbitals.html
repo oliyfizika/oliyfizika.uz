@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vodorod atomi: elektron bulutlari (3D) | OliyFizika.uz</title>
+<meta name="description" content="3D simulyatsiya: vodorod atomidagi elektronning ehtimollik buluti |ψₙₗₘ|². Kvant sonlari n, l, mₗ; s, p, d, f orbitallar, kompleks va real orbitallar (pₓ, d_xy …), radial va burchak tugunlari, ψ ishorasi, energiya, impuls momenti va o‘rtacha radius.">
+<script src="../assets/js/core/theme-boot.js"></script>
+<script src="../assets/js/core/sim-auto-i18n.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/simulation.css">
+<link rel="stylesheet" href="../assets/css/sim-lab.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/simulations/orbitals.js"></script>
+</head>
+<body class="of-ui of-sim-page" data-shell-title="Elektron bulutlari" data-shell-public="true">
+
+<div class="of-page of-container sim-page sim-page--compact">
+
+  <a class="of-sim-back" href="simulations.html"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Simulyatsiyalarga qaytish</a>
+
+  <header class="sim-head sim-head--compact">
+    <div class="sim-head__text">
+      <span class="of-badge of-badge--purple">Kvant fizikasi</span>
+      <h1>Vodorod atomi: elektron bulutlari</h1>
+    </div>
+    <div class="sim-formula" data-formula aria-live="polite"></div>
+  </header>
+
+  <div class="sim-layout">
+    <div class="sim-main">
+      <section class="of-card sim-stage" aria-label="Tajriba maydoni">
+        <div class="sim-modebar">
+          <div class="of-segment" role="group" aria-label="To‘lqin funksiyasi">
+            <button type="button" data-mode-value="complex" aria-pressed="true">Kompleks holatlar ψₙₗₘ</button>
+            <button type="button" data-mode-value="real" aria-pressed="false">Real orbitallar</button>
+          </div>
+          <span class="sim-modebar__hint" data-mode-hint></span>
+        </div>
+        <div class="sim-canvas-wrap orb-wrap">
+          <canvas id="stage" role="img" aria-label="Elektron bulutining uch o‘lchamli tasviri" data-draggable="true"></canvas>
+          <div class="orb-hud" aria-hidden="true">
+            <div class="orb-hud__name" data-hud-name>1s</div>
+            <div class="orb-hud__qn" data-hud-qn></div>
+          </div>
+          <div class="orb-legend" aria-hidden="true">
+            <span><i class="orb-dot orb-dot--pos"></i>ψ &gt; 0</span>
+            <span><i class="orb-dot orb-dot--neg"></i>ψ &lt; 0</span>
+          </div>
+          <p class="orb-fallback" data-fallback hidden>Brauzeringiz WebGL (3D grafika) ni qo‘llab-quvvatlamaydi yoki u o‘chirilgan. Boshqa brauzerda oching.</p>
+        </div>
+        <div class="sim-toolbar">
+          <button class="of-btn of-btn--sm" type="button" data-view="home">Ko‘rinishni tiklash</button>
+          <button class="of-btn of-btn--sm" type="button" data-view="top">Yuqoridan</button>
+          <button class="of-btn of-btn--sm" type="button" data-view="side">Yondan</button>
+          <label class="sim-switch"><input type="checkbox" data-toggle="spin"><span class="sim-switch__ui"></span>Avto aylanish</label>
+          <span class="sim-status" data-status role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
+    </div>
+
+    <aside class="of-card sim-panel" aria-label="Boshqaruv">
+      <h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>Parametrlar</h2>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Tayyor tajribalar</span>
+        <div class="sim-presets" data-presets></div>
+      </div>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Kvant sonlari</span>
+        <div class="orb-qn">
+          <div class="sim-control__row"><span class="sim-label">Bosh kvant soni n</span><output data-out="n"></output></div>
+          <div class="of-segment of-segment--wrap orb-seg" role="group" aria-label="Bosh kvant soni n" data-seg="n"></div>
+        </div>
+        <div class="orb-qn">
+          <div class="sim-control__row"><span class="sim-label">Orbital kvant soni l</span><output data-out="l"></output></div>
+          <div class="of-segment of-segment--wrap orb-seg" role="group" aria-label="Orbital kvant soni l" data-seg="l"></div>
+        </div>
+        <div class="orb-qn">
+          <div class="sim-control__row"><span class="sim-label">Magnit kvant soni mₗ</span><output data-out="m"></output></div>
+          <div class="of-segment of-segment--wrap orb-seg" role="group" aria-label="Magnit kvant soni m" data-seg="m"></div>
+        </div>
+        <p class="of-subtle" data-qn-hint></p>
+      </div>
+
+      <div class="sim-group">
+        <span class="sim-group__title">Ko‘rinish</span>
+        <label class="sim-switch"><input type="checkbox" data-toggle="fit" checked><span class="sim-switch__ui"></span>Kamera bulut o‘lchamiga moslashsin</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="scale" checked><span class="sim-switch__ui"></span>Masshtab halqalari va o‘qlar</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="nodes"><span class="sim-switch__ui"></span>Radial tugunlar (sferalar)</label>
+        <label class="sim-switch"><input type="checkbox" data-toggle="cut"><span class="sim-switch__ui"></span>Yarmini kesib ichini ko‘rsatish</label>
+        <div class="sim-control"><div class="sim-control__row"><label for="pPts">Nuqtalar soni</label><output for="pPts" id="pPtsOut"></output></div><input class="sim-range" type="range" id="pPts" min="10000" max="120000" step="10000" value="40000"></div>
+        <p class="of-subtle">Bulutni sichqoncha yoki barmoq bilan torting — aylanadi; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring, o‘ng tugma bilan suring. Kamera moslashuvini o‘chirsangiz, barcha bulutlar bir xil masshtabda ko‘rinadi.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sim-explain">
+    <div class="of-card">
+      <h2>Nima bo‘lyapti?</h2>
+      <p class="of-subtle" style="margin-bottom:10px" data-lesson></p>
+      <div class="sim-live" data-explain aria-live="polite"></div>
+    </div>
+    <div class="of-card">
+      <h2>Formulalar</h2>
+      <ul>
+        <li>To‘lqin funksiyasi: <span class="sim-math">ψₙₗₘ(r, θ, φ) = Rₙₗ(r)·Yₗᵐ(θ, φ)</span></li>
+        <li>Ehtimollik: <span class="sim-math">dP = |ψ|² dV</span>, radial taqsimot <span class="sim-math">P(r) = r²Rₙₗ²</span></li>
+        <li>Energiya: <span class="sim-math">Eₙ = −13,6 eV / n²</span></li>
+        <li>Kvant sonlari: <span class="sim-math">n = 1, 2, …;  l = 0 … n − 1;  mₗ = −l … +l</span></li>
+        <li>Impuls momenti: <span class="sim-math">L = ħ√(l(l + 1))</span>, <span class="sim-math">L<sub>z</sub> = mₗħ</span></li>
+        <li>O‘rtacha radius: <span class="sim-math">⟨r⟩ = a₀(3n² − l(l + 1))/2</span>, <span class="sim-math">a₀ = 0,529 Å</span></li>
+        <li>Tugunlar: radial <span class="sim-math">n − l − 1</span>, burchak <span class="sim-math">l</span>, jami <span class="sim-math">n − 1</span></li>
+      </ul>
+      <p class="of-subtle" style="margin-top:10px">Har bir nuqta — elektronni bir marta «o‘lchaganda» topish mumkin bo‘lgan joy: nuqtalar |ψ|² taqsimotidan tasodifiy tanlanadi, shuning uchun zich joyda elektron ko‘proq uchraydi. Rang — to‘lqin funksiyasining ishorasi (kompleks holatlarda faqat Rₙₗ·Θₗₘ qismining ishorasi, e<sup>imφ</sup> fazasi ko‘rsatilmaydi). Yadro (proton) masshtabi saqlanmagan: aslida u atomdan ~10⁵ marta kichik.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

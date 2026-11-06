@@ -659,6 +659,18 @@
       ],
       "keywords": "compton effect compton scattering gamma radiation photon electron scattering angle nai scintillation detector multichannel analyser spectrum calibration caesium 137 compton wavelength electron mass klein nishina lab work lab sheet pdf latex quantum physics"
     },
+    "orbitals": {
+      "title": "Hydrogen atom: electron clouds (3D)",
+      "description": "A 3D simulation of the electron probability cloud |ψₙₗₘ|²: every dot is a place where the electron can be found. Quantum numbers n, l, mₗ; s, p, d, f orbitals, complex states (rings, L_z = mħ) and real orbitals (pₓ, d_xy, f_xyz …), the sign of ψ, radial and angular nodes, energy and mean radius.",
+      "params": [
+        "Quantum numbers: n = 1…4, l = 0…n − 1, mₗ = −l…+l",
+        "Complex states ψₙₗₘ and real orbitals",
+        "Rotate, zoom, top/side views on the stage",
+        "Radial node spheres, cutaway, scale rings (a₀)",
+        "Number of dots 10,000…120,000"
+      ],
+      "keywords": "hydrogen atom electron cloud orbital atomic orbitals quantum numbers principal azimuthal magnetic s p d f orbital wave function probability density schrodinger equation node bohr radius angular momentum quantum mechanics"
+    },
     "wilson": {
       "title": "Cloud chamber: particle tracks (lab work)",
       "description": "Virtual lab work: expand a Wilson cloud chamber and photograph the tracks of α- and β-particles and cosmic muons. Energy from the length of α-tracks by Geiger's law (discrete groups), momentum, energy and charge sign from the radius of curvature of β-tracks in a magnetic field. A LaTeX-style report as a PDF.",
