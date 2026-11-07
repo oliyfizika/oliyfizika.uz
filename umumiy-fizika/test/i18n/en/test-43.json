@@ -58,7 +58,7 @@
     {
       "text": "Which of the given statements is incorrect?",
       "answers": [
-        "saturated vapor obeys the Mendeleev–Clapeyron law.",
+        "saturated vapor is in dynamic equilibrium with its liquid.",
         "at the critical temperature the difference between the physical properties of the liquid and the saturated vapor disappears.",
         "the higher the temperature, the greater the pressure of saturated vapor.",
         "the pressure of saturated vapor at constant temperature depends on the volume occupied by the vapor."
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "text": "The pressure of saturated vapor is 29.5 kPa. What will its pressure be after 2 hours if its volume is doubled (kPa)? T = const.",
+      "text": "The pressure of saturated vapor is 29.5 kPa. The vessel contains water as well as vapor. What will its pressure be after 2 hours if its volume is doubled (kPa)? T = const.",
       "answers": [
         "1",
         "100",

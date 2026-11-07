@@ -21,7 +21,7 @@
       "correct": 0
     },
     {
-      "text": "Garmonink tebranayotgan jismning harakat tenglamasi x = 0,5 cos 10πt. Jism tebranishlarining chastotasi necha gers?",
+      "text": "Garmonik tebranayotgan jismning harakat tenglamasi x = 0,5 cos 10πt. Jism tebranishlarining chastotasi necha gers?",
       "answers": ["10", "50", "0,5", "5"],
       "correct": 3
     },
@@ -87,7 +87,7 @@
       "correct": 0
     },
     {
-      "text": "Amplitudalari 5 sm va 2 sm bo‘lgan ikki garmonik tebranish bir xil yo‘nalishda va davrda (1,2 s) sodir bo‘lmoqda. Fazalar bir xil bo‘lganda boshlangandan 0,1 s keyingi natijaviy siljishni aniqlang (m).",
+      "text": "Amplitudalari 5 sm va 2 sm bo‘lgan ikki garmonik tebranish bir xil yo‘nalishda va davrda (1,2 s) sodir bo‘lmoqda. Ikkala tebranish x = A sin(2πt/T) qonuni bo‘yicha (boshlang‘ich fazalari nolga teng) sodir bo‘lsa, boshlangandan 0,1 s keyingi natijaviy siljishni aniqlang (m).",
       "answers": ["0,2 · 10^-2", "1,5 · 10^-3", "7 · 10^-2", "3,5 · 10^-2"],
       "correct": 3
     },
@@ -127,7 +127,7 @@
       "correct": 2
     },
     {
-      "text": "Tebranayotgan jism tezligining tenglamasi ϑ = 5 sin(3t + π/3) m/s bo‘lsa, jism siljishining boshlang‘ich fazasi qanday?",
+      "text": "Tebranayotgan jism tezligining tenglamasi ϑ = 5 sin(3t + π/3) m/s bo‘lsa, siljish x = A sin(ωt + φ₀) ko‘rinishida yozilganda boshlang‘ich faza φ₀ qanday?",
       "answers": ["3t + π/3", "3t", "5", "-π/6"],
       "correct": 3
     },
@@ -162,12 +162,12 @@
       "correct": 1
     },
     {
-      "text": "Prujinaga osilgan 5 kg massali yuk 0,25 s davr bilan tebranmoqda va bir davrda 30 sm yo‘l bosmoqda. Yukning maksimal tezlanishini (m/s^2) toping.",
+      "text": "Prujinaga osilgan 5 kg massali yuk 0,25 s davr bilan tebranmoqda va bir davrda 30 sm yo‘l bosmoqda. Yukning maksimal tezlanishini (m/s²) toping.",
       "answers": ["37,5", "47,3", "60", "9,6"],
       "correct": 1
     },
     {
-      "text": "Matematik mayatnikning tebranish qonuni x = 0,1 sin(10πt + π) (m) ko‘rinishga ega. Tezlanishning amplitudaviy qiymatini toping (m/s^2).",
+      "text": "Matematik mayatnikning tebranish qonuni x = 0,1 sin(10πt + π) (m) ko‘rinishga ega. Tezlanishning amplitudaviy qiymatini toping (m/s²).",
       "answers": ["10π^2", "100", "10", "π^2"],
       "correct": 0
     },

@@ -2,12 +2,12 @@
   "title": "Topic 49 | Adiabatic process",
   "questions": [
     {
-      "text": "Which law indicates the direction of processes in nature?",
+      "text": "According to the second law of thermodynamics, how is heat transferred spontaneously?",
       "answers": [
-        "the law of conservation of mass",
-        "the first law of thermodynamics",
-        "the second law of thermodynamics",
-        "the law of conservation of energy"
+        "from a cold body to a hot body",
+        "from a hot body to a cold body",
+        "from a body of larger mass to a body of smaller mass",
+        "in both directions with equal probability"
       ]
     },
     {
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "text": "How does the temperature of a gas in a thermally insulated system change when it is compressed?",
+      "text": "How does the temperature of a gas change when it expands without heat exchange?",
       "answers": [
         "it can either increase or decrease",
         "decreases",
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "text": "A certain amount of ideal gas was compressed by a factor of three from volume V1 to volume V2. Which curve in the given graph corresponds to compression lasting 1 second?",
+      "text": "A certain amount of ideal gas was compressed by a factor of three from volume V1 to volume V2. Which curve in the given graph corresponds to compression without heat exchange (adiabatic)?",
       "answers": [
         "2",
         "1",

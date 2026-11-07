@@ -61,9 +61,8 @@
   },
   {
    "steps": [
-    "Qiya trekda: $v^2=gR\\dfrac{\\sin\\alpha\\pm\\mu\\cos\\alpha}{\\cos\\alpha\\mp\\mu\\sin\\alpha}$; 45° da $\\sin\\alpha=\\cos\\alpha$.",
-    "$\\dfrac{v_{\\max}^2}{gR}=\\dfrac{1+0{,}75}{1-0{,}75}=7$, $\\;\\dfrac{v_{\\min}^2}{gR}=\\dfrac{1-0{,}75}{1+0{,}75}=\\dfrac17$",
-    "$\\dfrac{v_{\\max}}{v_{\\min}}=\\sqrt{49}=7$"
+    "Impulsning saqlanish qonuni: $m_1v_1=(m_1+m_2)u$.",
+    "$u=\\dfrac{60\\cdot2}{60+40}=1{,}2$ m/s"
    ]
   },
   {

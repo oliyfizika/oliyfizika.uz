@@ -202,7 +202,7 @@
       ]
     },
     {
-      "text": "A coil of $N=8$ turns is in a magnetic field whose induction decreased during $\\Delta t=0.5$ s from $B_1=0.8$ T to $B_2=0.2$ T. The radius of a turn of the coil is $r=10$ cm. Determine the induced current that flowed during this time through the resistor $R=10~\\Omega$ connected to the coil. (Neglect the resistance of the coil wire $r$.) $\\pi=3$. (mA)",
+      "text": "A coil of $N=8$ turns is in a magnetic field whose induction decreased during $\\Delta t=0.5$ s from $B_1=0.8$ T to $B_2=0.2$ T. The radius of a turn of the coil is $r=10$ cm. Determine the induced current that flowed during this time through the resistor $R=10~\\Omega$ connected to the coil. (Neglect the resistance of the coil wire.) $\\pi=3$. (mA)",
       "answers": [
         "12.5.",
         "3.24.",
@@ -402,7 +402,7 @@
       ]
     },
     {
-      "text": "In the figure, a straight conductor moves between two magnetic poles. If an induced current appears in the conductor, determine the magnetic poles.",
+      "text": "In the figure, a straight conductor moves between two magnetic poles. If an induced current appears in the conductor, determine the magnetic poles. The ⊗ sign in the figure means that the induced current in the conductor is directed into the plane of the drawing (away from us).",
       "answers": [
         "top – N; bottom – S.",
         "top – S; bottom – N.",
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "text": "A millivoltmeter is connected between the railway rails, which are insulated from each other. What will the millivoltmeter show (V) when a train passes along the track at $180$ km/h? The vertical component of the Earth's magnetic field induction is $B=0.2\\cdot10^{-4}$ T, and the distance between the rails is $1$ m.",
+      "text": "A millivoltmeter is connected between the railway rails, which are insulated from the ground and from each other. What will the millivoltmeter show (V) when a train passes along the track at $180$ km/h? The vertical component of the Earth's magnetic field induction is $B=0.2\\cdot10^{-4}$ T, and the distance between the rails is $1$ m.",
       "answers": [
         "0.",
         "$10^{-3}$.",
@@ -592,13 +592,13 @@
       ]
     },
     {
-      "text": "A square frame of area $50$ cm$^2$ is placed perpendicular to the induction lines of a magnetic field whose induction changes according to the law $B=8000(1+t^2)$ (T). What is the induced emf in the frame at the instant $t=1$ s?",
+      "text": "A square frame of area $50$ cm$^2$ is placed perpendicular to the induction lines of a magnetic field whose induction changes according to the law $B=0.08(1+t^2)$ (T). What is the induced emf in the frame at the instant $t=1$ s?",
       "answers": [
-        "30 V.",
-        "40 V.",
-        "80 V.",
-        "160 V.",
-        "8 V."
+        "0.3 mV.",
+        "0.4 mV.",
+        "0.8 mV.",
+        "1.6 mV.",
+        "8 mV."
       ]
     },
     {
@@ -611,7 +611,7 @@
       ]
     },
     {
-      "text": "A ring of radius $r=20$ cm is placed in a uniform magnetic field of induction $B=0.3$ T. The induction vector makes an angle $\\alpha=37^\\circ$ with the normal to the ring. Find the magnetic flux through the ring (mWb). $\\pi=3$.",
+      "text": "A ring of radius $r=20$ cm is placed in a uniform magnetic field of induction $B=0.3$ T. The induction vector makes an angle $\\alpha=37^\\circ$ with the normal to the ring. Find the magnetic flux through the ring (mWb). $\\pi=3$. cos 37° = 0.8.",
       "answers": [
         "3.14.",
         "10.",

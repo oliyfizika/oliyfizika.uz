@@ -47,7 +47,6 @@
     },
     {
       "text": "Radiusi 32 sm bo‘lgan katta shkiv 180 ayl/min chastota bilan aylanmoqda va u radiusi 24 sm bo‘lgan kichkina shkiv bilan tasma orqali bog‘langan. Kichik shkivning burchak tezligini toping (rad/s).",
-      
       "answers": ["11/3", "8π", "3π", "6π"],
       "correct": 1
     },
@@ -63,7 +62,7 @@
       "correct": 1
     },
     {
-      "text": "Bir nuqtaga mahkamlangan radiuslari 10 sm va 25 sm bo‘lgan shkivlardan birinchisining aylanish davri 10 s bo‘lsa, ikkinchisining aylanish davrini toping (s).",
+      "text": "Bitta o‘qqa mahkamlangan, radiuslari 10 sm va 25 sm bo‘lgan shkivlardan birinchisining aylanish davri 10 s bo‘lsa, ikkinchisining aylanish davrini toping (s).",
       "answers": ["15", "4", "25", "10"],
       "correct": 3
     },

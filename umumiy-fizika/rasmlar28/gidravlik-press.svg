@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" font-family="serif" font-size="20">
+<rect width="480" height="300" fill="#fff"/>
+<path d="M70 150 H110 V230 H300 V150 H420 V270 H70 Z" fill="#cfe3f7"/>
+<g fill="none" stroke="#111" stroke-width="2.4">
+<path d="M70 60 V270 H420 V60"/>
+<path d="M110 60 V230 H300 V60"/>
+</g>
+<rect x="72" y="140" width="36" height="10" fill="#777" stroke="#111" stroke-width="1.5"/>
+<rect x="76" y="104" width="28" height="36" fill="#bbb" stroke="#111" stroke-width="1.5"/>
+<text x="90" y="128" text-anchor="middle" font-size="15">5 kg</text>
+<rect x="302" y="140" width="116" height="10" fill="#777" stroke="#111" stroke-width="1.5"/>
+<rect x="335" y="98" width="50" height="42" fill="#fff" stroke="#111" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="360" y="126" text-anchor="middle">?</text>
+<text x="90" y="52" text-anchor="middle" font-style="italic">S<tspan font-size="14" dy="4">1</tspan></text>
+<text x="360" y="52" text-anchor="middle" font-style="italic">S<tspan font-size="14" dy="4">2</tspan></text>
+<line x1="60" y1="150" x2="440" y2="150" stroke="#888" stroke-width="1" stroke-dasharray="4 4"/>
+</svg>

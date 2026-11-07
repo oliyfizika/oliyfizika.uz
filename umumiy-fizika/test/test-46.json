@@ -6,7 +6,7 @@
   "unlockLesson": 47,
   "questions": [
     {
-      "text": "Jismning (moddaning) ichki energiyasi deganda, nimani tushunamiz:\n(a) 1 kg massali moddaning temperaturasini 1 gradusga oshirish uchun sarflangan issiqlik miqdori;\n(b) issiqlik almashishida jism olgan yoki uzatgan issiqlik miqdori;\n(c) moddaning temperaturasini 1 gradusga oshirish uchun sarflangan issiqlik miqdori;\n(d) jismni tashkil etuvchi barcha molekulalarning kinetik va o‘zaro ta’sir potensial energiyalarining yig‘indisi.",
+      "text": "Jismning (moddaning) ichki energiyasi deganda, nimani tushunamiz:\n1) 1 kg massali moddaning temperaturasini 1 gradusga oshirish uchun sarflangan issiqlik miqdori;\n2) issiqlik almashishida jism olgan yoki uzatgan issiqlik miqdori;\n3) moddaning temperaturasini 1 gradusga oshirish uchun sarflangan issiqlik miqdori;\n4) jismni tashkil etuvchi barcha molekulalarning kinetik va o‘zaro ta’sir potensial energiyalarining yig‘indisi.",
       "answers": ["4", "3", "2", "1"],
       "correct": 0
     },
@@ -26,7 +26,7 @@
       "correct": 3
     },
     {
-      "text": "1 mol miqdordagi bir atomli ideal gazning ichki energiyasini aniqlovchi ifodani toping:\n(a) 3kT/2\n(b) 3RT/2\n(c) 3NAkT/2\n(d) kT/2",
+      "text": "1 mol miqdordagi bir atomli ideal gazning ichki energiyasini aniqlovchi ifodani toping:\n1) 3kT/2\n2) 3RT/2\n3) 3NAkT/2\n4) kT/2",
       "answers": ["1", "1 va 2", "2 va 3", "4"],
       "correct": 2
     },
@@ -219,8 +219,8 @@
       "correct": 3
     },
     {
-      "text": "Ideal gaz ustida grafikda ko‘rsatilganidek ikki xil izotermik jarayon bajarildi. Birinchi holda gazning ichki energiyasi 111 kJ ni tashkil etgan. Ikkinchi holda esa birinchisidan 37 kJ ga farq qilgan. Agar ikkala jarayondagi temperaturalar farqi 125 K ni tashkil qilgan bo‘lsa, ikkinchi holdagi temperaturani (K) aniqlang.",
-      "images": "../rasmlar46/rasm42.png",
+      "text": "Ideal gaz ustida grafikda ko‘rsatilganidek ikki xil izotermik jarayon bajarildi. Birinchi holda gazning ichki energiyasi 111 kJ ni tashkil etgan. Ikkinchi holda esa birinchisidan 37 kJ ga ko‘p bo‘lgan. Agar ikkala jarayondagi temperaturalar farqi 125 K ni tashkil qilgan bo‘lsa, ikkinchi holdagi temperaturani (K) aniqlang.",
+      "images": "../rasmlar46/rasm42.svg",
       "answers": ["227", "375", "250", "500"],
       "correct": 3
     },

@@ -19,7 +19,7 @@
       "source": "77-mavzu.tex#0:3"
     },
     {
-      "text": "Buyum yig‘uvchi linzadan qanday masofada joylashgan bo‘lsa, mavhum, to‘g‘ri bo‘ladi?",
+      "text": "Buyum yig‘uvchi linzadan qanday masofada joylashgan bo‘lsa, uning tasviri mavhum va to‘g‘ri bo‘ladi?",
       "answers": [
         "$d<F$",
         "$d>F$",
@@ -102,7 +102,7 @@
       "source": "77-mavzu.tex#0:10"
     },
     {
-      "text": "Buyum linzadan uning ikkilangan fokus masofasidan uzoqroqda joylashganida tasvir hosil bo‘ladi?",
+      "text": "Buyum yig‘uvchi linzadan uning ikkilangan fokus masofasidan uzoqroqda joylashganida qanday tasvir hosil bo‘ladi?",
       "answers": [
         "haqiqiy, kichraygan.",
         "haqiqiy, kattalashgan.",
@@ -222,7 +222,7 @@
       "source": "77-mavzu.tex#1:1"
     },
     {
-      "text": "Buyum fokus masofasi 12 cm bo‘lgan linzadan 16 cm uzoqlikda qo‘yildi. Linzaning kattalashtirishi qanday?",
+      "text": "Buyum fokus masofasi 12 cm bo‘lgan yig‘uvchi linzadan 16 cm uzoqlikda qo‘yildi. Linzaning kattalashtirishi qanday?",
       "answers": [
         "6.",
         "5.",
@@ -414,7 +414,7 @@
       "source": "77-mavzu.tex#1:17"
     },
     {
-      "text": "Fokus masofasi $F$ ga teng. Linzaning kattalashtirishi 2 dan, ammo 3 dan kichik bo‘lishi uchun buyumni undan qanday uzoqlikda qo‘yish kerak?",
+      "text": "Yig‘uvchi linzaning fokus masofasi $F$ ga teng. Haqiqiy tasvir uchun linzaning kattalashtirishi 2 dan, ammo 3 dan kichik bo‘lishi uchun buyumni undan qanday uzoqlikda qo‘yish kerak?",
       "answers": [
         "$5F/3>d>3F/2$.",
         "$3F<d<2F$.",
@@ -684,7 +684,7 @@
         "$-\\dfrac1F=\\dfrac1d-\\dfrac1{f'}$.",
         "$\\dfrac1F=\\dfrac1d-\\dfrac1{f'}$.",
         "$\\dfrac1F=\\dfrac1d+\\dfrac1{f'}$.",
-        "$-\\dfrac1F=\\dfrac1d-\\dfrac1d'$.",
+        "$-\\dfrac1F=\\dfrac1d-\\dfrac1{d'}$.",
         "$-\\dfrac1F=\\dfrac1d+\\dfrac1{f'}$."
       ],
       "correct": 0,
@@ -751,7 +751,7 @@
       "source": "77-mavzu.tex#1:45"
     },
     {
-      "text": "Fokus masofasi 10 cm bo‘lgan linzadan 15 cm masofada joylashgan buyumning mavhum tasviri linzadan necha cm masofada hosil bo‘ladi?",
+      "text": "Fokus masofasi 10 cm bo‘lgan sochuvchi linzadan 15 cm masofada joylashgan buyumning mavhum tasviri linzadan necha cm masofada hosil bo‘ladi?",
       "answers": [
         "6.",
         "7,5.",
@@ -883,7 +883,7 @@
       "source": "77-mavzu.tex#1:56"
     },
     {
-      "text": "Fokus masofalari 20 va 30 cm bo‘lgan ikkita yupqa linzani birlashtirsak, hosil bo‘lgan linzaning fokus masofasi qanday bo‘ladi? (cm)",
+      "text": "Fokus masofalari 20 va 30 cm bo‘lgan ikkita yupqa yig‘uvchi linzani zich tegizib birlashtirsak, hosil bo‘lgan linzaning fokus masofasi qanday bo‘ladi? (cm)",
       "answers": [
         "56.",
         "50.",
@@ -991,7 +991,7 @@
       "source": "77-mavzu.tex#1:65"
     },
     {
-      "text": "Optik kuchi $+7$ dptr bo‘lgan yig‘uvchi va $-2$ dptr bo‘lgan sochuvchi linzalar ketma-ket joylashgan bo‘lib, ularning optik o‘qlari to‘g‘ri chiziqda yotadi. Agar buyum linzalardan 22 cm uzoqlikda joylashgan bo‘lsa, linzalar sistemasining chiziqli kattalashtirishini toping.",
+      "text": "Optik kuchi $+7$ dptr bo‘lgan yig‘uvchi va $-2$ dptr bo‘lgan sochuvchi linzalar bir-biriga zich tegib turibdi, ularning optik o‘qlari ustma-ust tushadi. Agar buyum linzalardan 22 cm uzoqlikda joylashgan bo‘lsa, linzalar sistemasining chiziqli kattalashtirishini toping.",
       "answers": [
         "10.",
         "5.",
@@ -1087,7 +1087,7 @@
       "source": "77-mavzu.tex#1:73"
     },
     {
-      "text": "Tasvir optik kuchi 3 D bo‘lgan linzadan 50 cm uzoqlikda, buyum turgan tomonda hosil bo‘ldi. Buyum linzadan necha metr masofada joylashgan?",
+      "text": "Optik kuchi 4 D bo‘lgan yig‘uvchi linzadan 50 cm masofada buyum turibdi. Tasvir linzadan necha metr masofada hosil bo‘ladi?",
       "answers": [
         "1.",
         "0,5.",
@@ -1095,7 +1095,7 @@
         "0,25.",
         "0,2."
       ],
-      "correct": 4,
+      "correct": 1,
       "source": "77-mavzu.tex#1:74"
     },
     {
@@ -1147,7 +1147,7 @@
       "source": "77-mavzu.tex#1:78"
     },
     {
-      "text": "Sochuvchi linzadan 40 cm uzoqlikda buyumning 5 marta kichraygan mavhum tasviri hosil bo‘ldi. Linzaning optik kuchini aniqlang (D).",
+      "text": "Sochuvchi linza buyumning 5 marta kichraygan mavhum tasvirini hosil qildi. Tasvir linzadan 40 cm masofada joylashgan. Linzaning optik kuchini aniqlang (D).",
       "answers": [
         "$-9$.",
         "$-5$.",
@@ -1283,7 +1283,7 @@
       "answers": [
         "mumkin emas.",
         "mumkin, agar buyum $F$ dan kichik masofada joylashgan bo‘lsa.",
-        "mumkin, agar linza optik zichligi linzanikidan kattaroq bo‘lgan shaffof muhitda bo‘lsa.",
+        "mumkin, agar linza optik zichligi linza moddasinikidan kattaroq bo‘lgan shaffof muhitda bo‘lsa.",
         "mumkin, agar buyum $F$ va $2F$ masofalar orasida joylashgan bo‘lsa.",
         "mumkin, agar buyum $2F$ dan kattaroq masofada joylashgan bo‘lsa."
       ],
@@ -1507,7 +1507,7 @@
       "source": "77-mavzu.tex#2:17"
     },
     {
-      "text": "Agar ob’ektivdan ekrangacha bo‘lgan masofa 12,4 m bo‘lsa, fokus masofasi 0,4 m bo‘lgan proeksion apparat yordamida kattalashtirish hosil qilish mumkin?",
+      "text": "Agar ob’ektivdan ekrangacha bo‘lgan masofa 12,4 m bo‘lsa, fokus masofasi 0,4 m bo‘lgan proeksion apparat yordamida necha marta kattalashtirish hosil qilish mumkin?",
       "answers": [
         "25.",
         "40.",
@@ -1701,7 +1701,7 @@
       "source": "77-mavzu.tex#2:33"
     },
     {
-      "text": "Kishi ko‘zidan ko‘zoynagi olib, kitobni 20 cm uzoqda tutgan holda o‘qiydi. Ko‘zoynakning optik kuchi qanday (D)?",
+      "text": "Kishi ko‘zidan ko‘zoynagi olib, kitobni 20 cm uzoqda tutgan holda o‘qiydi. Ko‘zoynakning optik kuchi qanday (D)? Normal ko‘zning eng yaxshi ko‘rish masofasi 25 cm.",
       "answers": [
         "$-2,25$.",
         "$+2,25$.",
@@ -1713,7 +1713,7 @@
       "source": "77-mavzu.tex#2:34"
     },
     {
-      "text": "Ahmad ko‘zoynagini olib, kitobni ko‘zdan 16 cm uzoqlikda o‘qiydi. Ko‘zoynakning optik kuchini toping(D).",
+      "text": "Ahmad ko‘zoynagini olib, kitobni ko‘zdan 16 cm uzoqlikda o‘qiydi. Ko‘zoynakning optik kuchini toping(D). Normal ko‘zning eng yaxshi ko‘rish masofasi 25 cm.",
       "answers": [
         "2.",
         "$-2$.",
@@ -1725,15 +1725,15 @@
       "source": "77-mavzu.tex#2:35"
     },
     {
-      "text": "Ko‘zoynakli bola ko‘zoynagini olib, kitobni 16 cm masofada o‘qiydi. Bola ko‘zoynagining optik kuchini aniqlang(D).",
+      "text": "Yaqindan ko‘ruvchi kishining eng uzoq aniq ko‘rish masofasi 50 cm. Uzoqni yaxshi ko‘rishi uchun unga qanday optik kuchli ko‘zoynak kerak (D)?",
       "answers": [
         "$+4,25$.",
-        "$+2,25$.",
+        "$+2$.",
         "$-3,5$.",
-        "$-4,25$.",
+        "$-2$.",
         "$-2,25$."
       ],
-      "correct": 4,
+      "correct": 3,
       "source": "77-mavzu.tex#2:36"
     },
     {

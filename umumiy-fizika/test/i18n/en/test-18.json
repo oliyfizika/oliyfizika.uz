@@ -12,7 +12,7 @@
       ]
     },
     {
-      "text": "A car is moving with an acceleration of 10 m/s². What is the traction coefficient? The resistance coefficient is 0.5.",
+      "text": "A car moves with an acceleration of 10 m/s². What is the traction coefficient (ratio of the traction force to the weight)? The resistance coefficient (ratio of the resistance force to the weight) is 0.5. Take g = 10 m/s².",
       "answers": [
         "1.5",
         "1",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "text": "The coefficient of friction between a puck sliding on horizontal ice and the ice is 0.02. What is the acceleration of the puck?",
+      "text": "The coefficient of friction between a puck sliding on horizontal ice and the ice is 0.02. What is the acceleration of the puck (m/s²)? Take g = 10 m/s².",
       "answers": [
         "-0.3",
         "-0.2",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "text": "A body of mass 4 kg falls through the air with an acceleration of 8.5 m/s². Find the air resistance force.",
+      "text": "A body of mass 4 kg falls through the air with an acceleration of 8.5 m/s². Find the air resistance force (N). Take g = 10 m/s².",
       "answers": [
         "34",
         "24",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "text": "A body of mass 80 g is thrown upward. The air resistance force is 0.8 N. What is the magnitude of the acceleration?",
+      "text": "A body of mass 80 g is thrown upward. The air resistance force is 0.8 N. What is the magnitude of the acceleration (m/s²)? Take g = 10 m/s².",
       "answers": [
         "25",
         "20",

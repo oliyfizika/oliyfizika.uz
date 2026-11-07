@@ -3,25 +3,25 @@
  "solutions": [
   {
    "steps": [
-    "Ulangandan keyin umumiy zaryad saqlanadi, kondensatorlar parallel: $C_0U_0=(C_0+\\varepsilon C_0)U$.",
-    "$1+\\varepsilon=\\dfrac{U_0}{U}=\\dfrac{800}{100}=8\\;\\Rightarrow\\;\\varepsilon=7$"
+    "$t=2$ min $=120$ s",
+    "$I=\\dfrac qt=\\dfrac{240}{120}=2$ A"
    ]
   },
   {
    "steps": [
-    "Manbadan uzilgan — zaryad o‘zgarmaydi. Metall list ichida maydon yo‘q, shuning uchun samarali masofa $d-a$ bo‘ladi.",
-    "$U'=U\\dfrac{d-a}{d}=50\\cdot\\dfrac{5-1}{5}=40$ V"
+    "$q=It=3{,}2$ C",
+    "$N=\\dfrac qe=\\dfrac{3{,}2}{1{,}6\\cdot10^{-19}}=2\\cdot10^{19}$"
    ]
   },
   {
    "steps": [
-    "Zaryad: $Q=2C\\cdot6=12C$. Birining masofasi 2 marta kamaysa, sig‘imi $2C$ bo‘ladi, umumiy sig‘im $3C$.",
-    "$U=\\dfrac{Q}{3C}=\\dfrac{12C}{3C}=4$ V"
+    "$j=\\dfrac IS=\\dfrac{4}{2}=2$ A/mm²"
    ]
   },
   {
    "steps": [
-    "Kondensator manbaga ulangan holda qoladi, demak uning qutblaridagi kuchlanish manba kuchlanishiga teng va o‘zgarmaydi: $U=3$ V."
+    "$t=2$ soat $=7200$ s",
+    "$q=It=5\\cdot7200=36000\\ \\text{C}=36$ kC"
    ]
   },
   {
@@ -86,8 +86,9 @@
   },
   {
    "steps": [
-    "Tok bir tekis o‘sadi — grafik koordinata boshidan chiquvchi to‘g‘ri chiziq, qiyaligi $\\dfrac{1{,}5}{6}=0{,}25$ A/s.",
-    "Shu qiyalikka faqat 4-grafik mos: $\\dfrac{3}{12}=0{,}25$ A/s (u 6 s da 1,5 A dan o‘tadi)."
+    "Tok bir tekis o‘sadi — grafik koordinata boshidan chiquvchi to‘g‘ri chiziq, qiyaligi $\\dfrac{1{,}5}{6}=0{,}25$ A/s, ya’ni $t=6$ s da $I=1{,}5$ A.",
+    "1-grafik: 3 s da 3 A dan o‘tadi (0,5 A/s); 2-grafik: 12 s da 2 A (≈0,17 A/s); 3-grafik: tok o‘zgarmas.",
+    "4-grafik 6 s da 1,5 A dan o‘tadi — to‘g‘ri javob."
    ]
   },
   {

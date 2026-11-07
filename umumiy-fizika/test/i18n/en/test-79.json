@@ -62,13 +62,13 @@
       ]
     },
     {
-      "text": "A modern diffraction grating has 12500 lines ruled over a distance of 3/4 mm. What is the grating constant ($\\mu$m)?",
+      "text": "A modern diffraction grating has 1250 lines ruled over a distance of 3/4 mm. What is the grating constant ($\\mu$m)?",
       "answers": [
-        "0.03.",
-        "0.24.",
-        "0.12.",
-        "0.06.",
-        "0.1."
+        "0.3.",
+        "2.4.",
+        "1.2.",
+        "0.6.",
+        "1."
       ]
     },
     {
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "text": "A monochromatic wave with a wavelength of $5\\cdot10^{-5}$ cm is incident normally on a diffraction grating that has 200 lines per millimeter. What is the highest order of the observable diffraction maxima?",
+      "text": "A monochromatic wave with a wavelength of $5\\cdot10^{-5}$ cm is incident normally on a diffraction grating that has 190 lines per millimeter. What is the highest order of the observable diffraction maxima?",
       "answers": [
         "1.",
         "5.",
@@ -272,7 +272,7 @@
       ]
     },
     {
-      "text": "A monochromatic light wave with a wavelength of $5\\cdot10^{-5}$ cm is incident normally on a diffraction grating with 400 lines per 1 mm. Determine the highest order of the spectrum.",
+      "text": "A monochromatic light wave with a wavelength of $5\\cdot10^{-5}$ cm is incident normally on a diffraction grating with 380 lines per 1 mm. Determine the highest order of the spectrum.",
       "answers": [
         "3.",
         "7.",
@@ -325,7 +325,7 @@
       "text": "A diffraction grating illuminated with green $(\\lambda=0.5~\\mu\\text{m})$ light has a constant of 100 $\\mu$m. How many diffraction maxima does it produce?",
       "answers": [
         "500.",
-        "401.",
+        "399.",
         "200.",
         "50.",
         "10."

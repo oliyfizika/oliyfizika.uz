@@ -29,7 +29,7 @@
       ]
     },
     {
-      "text": "If the distance from the axis of rotation to the point of application of the force is d, find the formula for the moment of the force.",
+      "text": "If the distance from the axis of rotation to the point of application of the force is d and the angle between the force vector and the radius vector drawn from the axis to that point is α, find the formula for the moment of the force.",
       "answers": [
         "M = Fd·tanα",
         "M = Fd",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "text": "Parallel opposite forces of 10 N and 25 N act at a distance of 1.5 m from each other. Determine the force that balances them.",
+      "text": "Parallel, oppositely directed forces of 10 N and 25 N are applied 1.5 m apart. Determine the magnitude of the force that balances them (N) and its distance from the point of application of the 10 N force (m).",
       "answers": [
         "15; 2.5",
         "30; 2.5",
@@ -164,7 +164,7 @@
       ]
     },
     {
-      "text": "Two children of masses 70 kg and 90 kg stand at the two ends of a cart. By how much does the center of gravity shift when the first child walks to the center?",
+      "text": "Two children of masses 70 kg and 90 kg stand at the two ends of a cart on frictionless horizontal rails. By how much does the center of gravity of the “children + cart” system shift relative to the ground when the first child walks to the middle of the cart (m)?",
       "answers": [
         "0.27",
         "0.13",

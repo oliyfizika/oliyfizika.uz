@@ -76,14 +76,14 @@
       "correct": 1
     },
     {
-      "text": "Sistema ichki energiyalari teng, bir xil gaz bilan to‘ldirilgan va o‘zaro havosiz bo‘shliq bilan ajratilgan uchta idishdan iborat. Idishlardagi gazlarning massasi va harorati mos holda m1 = 4 kg, m2 = 3 kg, m3 = 0,5 kg va T1 = 300 K, T2 = 400 K, T3 = 600 K. Vaqt o‘tishi bilan idishlardagi harorat qanday o‘zgaradi?",
+      "text": "Sistema ichki energiyalari teng, bir xil gaz bilan to‘ldirilgan va o‘zaro havosiz bo‘shliq bilan ajratilgan uchta idishdan iborat. Idishlardagi gazlarning massasi va harorati mos holda m1 = 4 kg, m2 = 3 kg, m3 = 2 kg va T1 = 300 K, T2 = 400 K, T3 = 600 K. Vaqt o‘tishi bilan idishlardagi harorat qanday o‘zgaradi?",
       "answers": [
         "birinchi va ikkinchi idishlarda ko‘tariladi, uchinchisida pasayadi",
         "ikkinchi va uchinchi idishlarda pasayadi, birinchisida ortadi",
         "idishlardagi harorat o‘zgarmaydi",
         "birinchi idishda ortadi, ikkinchida o‘zgarmaydi, uchinchisida pasayadi"
       ],
-      "correct": 1
+      "correct": 3
     },
     {
       "text": "Qaysi qonun tabiatdagi jarayonlarning yo‘nalishini ko‘rsatadi?",

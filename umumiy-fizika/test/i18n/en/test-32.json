@@ -2,7 +2,7 @@
   "title": "Topic 32 | Simple pendulum",
   "questions": [
     {
-      "text": "Find the length of a simple pendulum with an oscillation period of 0.5 s (cm). g = 10 m/s^2, π^2 ≈ 10.",
+      "text": "Find the length of a simple pendulum with an oscillation period of 0.5 s (cm). g = 10 m/s², π^2 ≈ 10.",
       "answers": [
         "4.15",
         "25",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "text": "The length of a simple pendulum is 2.5 m, and the mass of the bob attached to it is 100 g. What is the period of oscillation (s)?",
+      "text": "The length of a simple pendulum is 2.5 m, and the mass of the bob attached to it is 100 g. What is the period of oscillation (s)? Take g = 10 m/s², π = 3.14.",
       "answers": [
         "3.14",
         "1.57",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "text": "An elevator is ascending with an acceleration of 6 m/s^2. Find the period of a simple pendulum 1 m long suspended in the elevator (s). g = 10 m/s^2.",
+      "text": "An elevator is ascending with an acceleration of 6 m/s². Find the period of a simple pendulum 1 m long suspended in the elevator (s). g = 10 m/s².",
       "answers": [
         "6.28",
         "2.1",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "text": "Find the angular frequency of a 126 cm simple pendulum rising upward with a uniform acceleration of 4 m/s^2 (rad/s).",
+      "text": "Find the angular frequency of a 126 cm simple pendulum rising upward with a uniform acceleration of 4 m/s² (rad/s).",
       "answers": [
         "20/9",
         "12/5",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "text": "What is the restoring force acting on a 50 g pendulum displaced by an angle of 60° from the equilibrium position (N)?",
+      "text": "What is the restoring force acting on a 50 g pendulum displaced by an angle of 60° from the equilibrium position (N)? Take g = 10 m/s².",
       "answers": [
         "0.25√3",
         "0.5√3",

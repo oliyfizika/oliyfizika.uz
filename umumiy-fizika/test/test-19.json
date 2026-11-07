@@ -26,7 +26,7 @@
       "correct": 2
     },
     {
-      "text": "Aylanish o‘qidan kuch qo‘yilgan nuqtagacha bo‘lgan masofa d bo‘lsa, kuch momenti formulasini toping.",
+      "text": "Aylanish o‘qidan kuch qo‘yilgan nuqtagacha bo‘lgan masofa d, kuch vektori bilan shu nuqtaga o‘qdan o‘tkazilgan radius-vektor orasidagi burchak α bo‘lsa, kuch momenti formulasini toping.",
       "answers": ["M = Fd·tgα", "M = Fd", "M = Fd·cosα", "M = Fd·sinα"],
       "correct": 3
     },
@@ -51,7 +51,7 @@
       "correct": 0
     },
     {
-      "text": "10 N va 25 N parallel qarama-qarshi kuchlar 1,5 m masofada ta’sir qilmoqda. Ularni muvozanatlovchi kuchni aniqlang.",
+      "text": "10 N va 25 N li parallel, qarama-qarshi yo‘nalgan kuchlar bir-biridan 1,5 m masofada qo‘yilgan. Ularni muvozanatlovchi kuchning modulini (N) va uning 10 N li kuch qo‘yilgan nuqtadan masofasini (m) aniqlang.",
       "answers": ["15; 2,5", "30; 2,5", "25; 5", "To‘g‘ri javob yo‘q"],
       "correct": 0
     },
@@ -116,7 +116,7 @@
       "correct": 2
     },
     {
-      "text": "Aravachaning ikki chetida 70 kg va 90 kg bolalar turibdi. Birinchi bola markazgacha yurganda og‘irlik markazi qancha siljiydi?",
+      "text": "Ishqalanishsiz gorizontal relslarda turgan aravachaning ikki chetida 70 kg va 90 kg massali bolalar turibdi. Birinchi bola aravacha markazigacha yurganda «bolalar + aravacha» sistemasining og‘irlik markazi yerga nisbatan qancha siljiydi (m)?",
       "answers": ["0,27", "0,13", "0,42", "0"],
       "correct": 3
     },
