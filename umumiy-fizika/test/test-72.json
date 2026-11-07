@@ -1,6 +1,6 @@
 {
   "id": 72,
-  "title": "72-Mavzu | Transformator",
+  "title": "72-Mavzu | Transformator. Elektromagnit to‘lqinlar",
   "subtitle": "Kamida 80% natija keyingi darsni ochadi.",
   "backUrl": "../elektr.html",
   "unlockLesson": 73,
@@ -386,12 +386,12 @@
       "source": "72-mavzu.tex#1:16"
     },
     {
-      "text": "Dielektrik singdiruvchanligi $\\varepsilon$ va magnit singdiruvchanligi $\\mu$ bo‘lgan muhitda tarqalayotgan elektromagnit to‘lqin tezligini hisoblash ifodasini ko‘rsating. Vakuumdagi tezlik – c, $\\lambda_0$ va $\\lambda$ lar mos ravishda vakuum va muhitdagi to‘lqin uzunliklari.",
+      "text": "Dielektrik singdiruvchanligi $\\varepsilon$ va magnit singdiruvchanligi $\\mu$ bo‘lgan muhitda tarqalayotgan elektromagnit to‘lqin tezligini hisoblash ifodasini ko‘rsating. Vakuumdagi tezlik – c.",
       "answers": [
         "$c/\\sqrt{\\varepsilon\\mu}$.",
         "$c\\sqrt{\\varepsilon\\mu}$.",
         "$\\sqrt{\\varepsilon\\mu}$.",
-        "$v/\\lambda_0$."
+        "$c\\varepsilon\\mu$."
       ],
       "correct": 0,
       "source": "72-mavzu.tex#1:17"
@@ -441,7 +441,7 @@
       "source": "72-mavzu.tex#1:21"
     },
     {
-      "text": "Agar elektromagnit tebranishlar chastotasi 2 marta orttirilsa, ochiq tebranishlar konturidan nurlanadigan quvvat qanday o‘zgaradi?",
+      "text": "Agar elektromagnit tebranishlar chastotasi 2 marta orttirilsa, ochiq tebranishlar konturidan nurlanadigan quvvat qanday o‘zgaradi? Tebranishlar amplitudasini o‘zgarmas deb hisoblang.",
       "answers": [
         "o‘zgarmaydi.",
         "2 marta kamayadi.",
@@ -595,12 +595,12 @@
       "source": "72-mavzu.tex#2:12"
     },
     {
-      "text": "Nurlantirilayotgan elektromagnit to‘lqinlari uzunligi $1,2\\cdot 10^8$ m. Radio antennasidagi tokning o‘zgarish qonuni qanday?",
+      "text": "Nurlantirilayotgan elektromagnit to‘lqinlari uzunligi $120$ m. Radio antennasidagi tokning o‘zgarish qonuni qanday?",
       "answers": [
-        "$i = I\\sin 15,7t$.",
-        "$i = I\\sin 12t$.",
-        "$i = I\\sin 2\\pi t$.",
-        "$i = I\\sin 31,47t$."
+        "$i = I\\sin(1{,}57\\cdot10^7\\,t)$.",
+        "$i = I\\sin(1{,}2\\cdot10^7\\,t)$.",
+        "$i = I\\sin(2{,}5\\cdot10^6\\,t)$.",
+        "$i = I\\sin(3{,}14\\cdot10^7\\,t)$."
       ],
       "correct": 0,
       "source": "72-mavzu.tex#2:13"

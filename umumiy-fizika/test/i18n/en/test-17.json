@@ -11,7 +11,7 @@
       ]
     },
     {
-      "text": "A body of mass 1 kg lies on a horizontal plane. A horizontal force of 2 N acts on the body. If the coefficient of friction is 0.3, determine the friction force.",
+      "text": "A body of mass 1 kg lies on a horizontal plane. A horizontal force of 2 N acts on the body. If the coefficient of friction is 0.3, determine the friction force (N). Take g = 10 m/s².",
       "answers": [
         "1",
         "2",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "text": "A body of mass 2 kg moves along a horizontal surface under a horizontal force with an acceleration of 2 m/s². If the coefficient of friction is 0.2, find the magnitude of the force.",
+      "text": "A body of mass 2 kg moves along a horizontal surface under a horizontal force with an acceleration of 2 m/s². If the coefficient of friction is 0.2, find the magnitude of the force (N). Take g = 10 m/s².",
       "answers": [
         "4",
         "6",
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "text": "Determine the tension in the rope when a sled of mass 6 kg moves at constant speed. tanα = 0.75, μ = 0.3.",
+      "text": "A sled of mass 6 kg is pulled along a horizontal road by a rope at constant speed. The rope makes an angle α with the horizontal, tanα = 0.75; the coefficient of friction between the sled and the road is μ = 0.3. Determine the tension in the rope (N). Take g = 10 m/s².",
       "answers": [
         "12",
         "15",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "text": "A body slides down an inclined plane of height 3 m and length 5 m. μ = 0.5. Find the acceleration.",
+      "text": "A body slides down an inclined plane of height 3 m and length 5 m. μ = 0.5. Find the acceleration (m/s²). Take g = 10 m/s².",
       "answers": [
         "1",
         "2",
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "text": "A body slides down an inclined plane of height 5 m and inclination angle 45°. μ = 0.19. Find the speed at the end of the descent.",
+      "text": "A body slides down an inclined plane of height 5 m and inclination angle 45°. μ = 0.19. Find the speed at the end of the descent (m/s). Take g = 10 m/s².",
       "answers": [
         "7",
         "8",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "text": "A body on an inclined plane is pulled in the horizontal direction by a force half the weight. h = 3 m, l = 5 m, μ = 0.8. With what acceleration does the body begin to slide down?",
+      "text": "A horizontal force equal to half the weight acts on a body lying on an inclined plane; the force is directed away from the plane (towards the side the slope faces). h = 3 m, l = 5 m, μ = 0.8. With what acceleration does the body begin to slide down (m/s²)? Take g = 10 m/s².",
       "answers": [
         "4",
         "6",

@@ -58,7 +58,7 @@
       "source": "76-mavzu.tex#0:6"
     },
     {
-      "text": "Fokus masofasi $F$ bo‘lgan yupqa sochuvchi linzaga bosh optik o‘qiga nisbatan $\\alpha$ burchak ostida nur tushmoqda. Bu nur linzaning orqasida joylashgan shaffof ekranni bosh optik o‘qdan qanday balandlikda (cm) kesib o‘tadi?",
+      "text": "Fokus masofasi $F$ bo‘lgan yupqa sochuvchi linzaga bosh optik o‘qiga nisbatan $\\alpha$ burchak ostida nur tushmoqda. Bu nur linzaning orqasida joylashgan shaffof ekranni bosh optik o‘qdan qanday balandlikda kesib o‘tadi?",
       "answers": [
         "$0$.",
         "$F\\cos\\alpha$.",
@@ -67,7 +67,7 @@
         "$F/2$."
       ],
       "correct": 3,
-      "images": "../rasmlar76/r10391f287a.png",
+      "images": "../rasmlar76/sochuvchi-linza-nur.svg",
       "source": "76-mavzu.tex#0:7"
     },
     {

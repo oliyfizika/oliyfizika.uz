@@ -47,7 +47,7 @@
       ]
     },
     {
-      "text": "Water drips from a tube 1.8 mm in diameter. How many drops are there in 1 cm³ of water? The surface tension coefficient of water is σ = 72 mN/m.",
+      "text": "Water drips from a tube 1.8 mm in diameter. How many drops are there in 1 cm³ of water? The surface tension coefficient of water is σ = 72 mN/m. Take g = 10 m/s².",
       "answers": [
         "30",
         "25",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "text": "Kerosene drops fall one per second from a dropper with an orifice 2.0 mm in diameter. How long (min) does it take for 25 cm³ of kerosene to flow out? ρ = 800 kg/m³, σ = 24 mN/m.",
+      "text": "Kerosene drops fall one per second from a dropper with an orifice 2.0 mm in diameter. How long (min) does it take for 25 cm³ of kerosene to flow out? ρ = 800 kg/m³, σ = 24 mN/m. Take g = 10 m/s².",
       "answers": [
         "28",
         "16",
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "text": "Water drips from a tube into a small bath of volume 6 cm³. The inner diameter of the tube is 1.0 mm. How many drops of water must fall from the tube to fill the bath with water at 20°C? ρ = 1000 kg/m³, σ = 72 mN/m.",
+      "text": "Water drips from a tube into a small bath of volume 6 cm³. The inner diameter of the tube is 1.0 mm. How many drops of water must fall from the tube to fill the bath with water at 20°C? ρ = 1000 kg/m³, σ = 72 mN/m. Take g = 10 m/s².",
       "answers": [
         "242",
         "196",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "text": "A dropper with an orifice 2 mm in diameter contains 219 cm³ of water. How many drops will fall from the dropper in total? Take π = 3, g = 10 m/s².",
+      "text": "A dropper with an orifice 2 mm in diameter contains 219 cm³ of water. How many drops will fall from the dropper in total? Take σ = 73 mN/m, π = 3, g = 10 m/s².",
       "answers": [
         "2180",
         "4000",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "text": "The diameter of a dropper orifice is 1.2 mm. What is the mass (mg) of a water drop flowing out of the dropper at the moment of detachment? σ = 73 mN/m.",
+      "text": "The diameter of a dropper orifice is 1.2 mm. What is the mass (mg) of a water drop flowing out of the dropper at the moment of detachment? σ = 73 mN/m. Take g = 10 m/s².",
       "answers": [
         "56",
         "28",

@@ -81,13 +81,13 @@
       "source": "79-mavzu.tex#0:7"
     },
     {
-      "text": "Zamonaviy difraksion panjarada 3/4 mm masofada 12500 ta shtrix chizilgan. Panjara doimiysi ($\\mu$m) qanday?",
+      "text": "Zamonaviy difraksion panjarada 3/4 mm masofada 1250 ta shtrix chizilgan. Panjara doimiysi ($\\mu$m) qanday?",
       "answers": [
-        "0,03.",
-        "0,24.",
-        "0,12.",
-        "0,06.",
-        "0,1."
+        "0,3.",
+        "2,4.",
+        "1,2.",
+        "0,6.",
+        "1."
       ],
       "correct": 3,
       "source": "79-mavzu.tex#0:8"
@@ -323,7 +323,7 @@
       "source": "79-mavzu.tex#0:27"
     },
     {
-      "text": "Har bir millimetrida 200 ta shtrixi bo‘lgan difraksion panjaraga to‘lqin uzunligi $5\\cdot10^{-5}$ cm bo‘lgan monoxromatik to‘lqin normal tushmoqda. Kuzatish mumkin bo‘lgan difraksion maksimumlarning eng katta tartibi qanday?",
+      "text": "Har bir millimetrida 190 ta shtrixi bo‘lgan difraksion panjaraga to‘lqin uzunligi $5\\cdot10^{-5}$ cm bo‘lgan monoxromatik to‘lqin normal tushmoqda. Kuzatish mumkin bo‘lgan difraksion maksimumlarning eng katta tartibi qanday?",
       "answers": [
         "1.",
         "5.",
@@ -335,7 +335,7 @@
       "source": "79-mavzu.tex#0:28"
     },
     {
-      "text": "1 mm ga 400 shtrix to‘g‘ri keladigan difraksion panjaraga to‘lqin uzunligi $5\\cdot10^{-5}$ cm bo‘lgan monoxromatik yorug‘lik to‘lqini tik tushmoqda. Spektrning eng katta tartibini aniqlang.",
+      "text": "1 mm ga 380 shtrix to‘g‘ri keladigan difraksion panjaraga to‘lqin uzunligi $5\\cdot10^{-5}$ cm bo‘lgan monoxromatik yorug‘lik to‘lqini tik tushmoqda. Spektrning eng katta tartibini aniqlang.",
       "answers": [
         "3.",
         "7.",
@@ -391,14 +391,14 @@
         "3.",
         "4."
       ],
-      "correct": 2,
+      "correct": 3,
       "source": "79-mavzu.tex#0:33"
     },
     {
       "text": "Yashil $(\\lambda=0{,}5~\\mu\\text{m})$ nur bilan yoritilgan davriysi 100 $\\mu$m bo‘lgan difraksion panjara nechta difraksion maksimum hosil qiladi?",
       "answers": [
         "500.",
-        "401.",
+        "399.",
         "200.",
         "50.",
         "10."
@@ -427,7 +427,7 @@
         "17.",
         "19."
       ],
-      "correct": 3,
+      "correct": 2,
       "source": "79-mavzu.tex#0:36"
     },
     {
@@ -564,7 +564,7 @@
       "source": "79-mavzu.tex#0:47"
     },
     {
-      "text": "Maktabda 1 mm da 50 va 100 ta shtrixi bo‘lgan difraksion panjara bor. Bir xil sharoitda nurlarning qaysi biri ekranda enlqroq spektr hosil qiladi?",
+      "text": "Maktabda 1 mm da 50 va 100 ta shtrixi bo‘lgan difraksion panjara bor. Bir xil sharoitda panjaralarning qaysi biri ekranda enliroq spektr hosil qiladi?",
       "answers": [
         "spektrlari bir xil bo‘ladi.",
         "spektrning eni shtrixlar soniga bog‘liq emas.",
@@ -576,7 +576,7 @@
       "source": "79-mavzu.tex#0:48"
     },
     {
-      "text": "Nomlari quyida keltirilgan asboblarning qaysilari oq yorug‘likni tarkibiy qismlarga (spektrlarga) ajratish uchun xizmat qiladi?\n1) yassi ko‘zgu;\n2) yig‘uvchi yupqa linza;\n3) difraksion panjara;\n4) shaffof uch qoli prizma.",
+      "text": "Nomlari quyida keltirilgan asboblarning qaysilari oq yorug‘likni tarkibiy qismlarga (spektrlarga) ajratish uchun xizmat qiladi?\n1) yassi ko‘zgu;\n2) yig‘uvchi yupqa linza;\n3) difraksion panjara;\n4) shaffof uch qirrali prizma.",
       "answers": [
         "1, 2.",
         "faqat 3.",

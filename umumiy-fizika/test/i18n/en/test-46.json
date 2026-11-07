@@ -2,7 +2,7 @@
   "title": "Topic 46 | Internal energy",
   "questions": [
     {
-      "text": "What is meant by the internal energy of a body (substance):\n(a) the amount of heat required to raise the temperature of 1 kg of a substance by 1 degree;\n(b) the amount of heat received or transferred by a body in heat exchange;\n(c) the amount of heat required to raise the temperature of a substance by 1 degree;\n(d) the sum of the kinetic energies and the interaction potential energies of all the molecules that make up the body.",
+      "text": "What is meant by the internal energy of a body (substance):\n1) the amount of heat required to raise the temperature of 1 kg of a substance by 1 degree;\n2) the amount of heat received or transferred by a body in heat exchange;\n3) the amount of heat required to raise the temperature of a substance by 1 degree;\n4) the sum of the kinetic energies and the interaction potential energies of all the molecules that make up the body.",
       "answers": [
         "4",
         "3",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "text": "Find the expression that determines the internal energy of 1 mol of a monatomic ideal gas:\n(a) 3kT/2\n(b) 3RT/2\n(c) 3NAkT/2\n(d) kT/2",
+      "text": "Find the expression that determines the internal energy of 1 mol of a monatomic ideal gas:\n1) 3kT/2\n2) 3RT/2\n3) 3NAkT/2\n4) kT/2",
       "answers": [
         "1",
         "1 and 2",
@@ -371,7 +371,7 @@
       ]
     },
     {
-      "text": "Two isothermal processes were carried out on an ideal gas as shown in the graph. In the first case the internal energy of the gas was 111 kJ. In the second case it differed from the first by 37 kJ. If the temperature difference between the two processes was 125 K, determine the temperature in the second case (K).",
+      "text": "Two isothermal processes were carried out on an ideal gas as shown in the graph. In the first case the internal energy of the gas was 111 kJ. In the second case it was 37 kJ greater than in the first. If the temperature difference between the two processes was 125 K, determine the temperature in the second case (K).",
       "answers": [
         "227",
         "375",

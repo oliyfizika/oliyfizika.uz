@@ -62,7 +62,7 @@
       ]
     },
     {
-      "text": "At time $T/3$, a current varying according to a cosine law has a value of $2.5$ A. What is the maximum value of the current (A)?",
+      "text": "At time $T/3$, a current varying according to a cosine law has an instantaneous value of magnitude $2.5$ A. What is the maximum value of the current (A)?",
       "answers": [
         "1.25.",
         "2.5.",
@@ -192,7 +192,7 @@
       ]
     },
     {
-      "text": "An equation is written for the voltage oscillations across the terminals of an electric circuit. The amplitude of the voltage oscillations is $150$ V, the period is $10^{-2}$ s and the initial phase is zero; assume that the voltage is zero at the instant $t=0$.",
+      "text": "An equation is written for the voltage oscillations across the terminals of an electric circuit. The amplitude of the voltage oscillations is $150$ V, the period is $10^{-2}$ s and the initial phase is zero; assume that the voltage is zero at the instant $t=0$. Indicate the equation of the voltage oscillations.",
       "answers": [
         "$u=150\\sin100\\pi t$.",
         "$u=10^{-2}\\sin150\\pi t$.",

@@ -65,48 +65,43 @@
   },
   {
    "steps": [
-    "Grafik to‘g‘ri chiziq: 1 s da 5 m, 5 s da 25 m (tezlik $v=5\\ \\text{m/s}$).",
-    "$\\Delta s=s(5)-s(1)=25-5=20\\ \\text{m}$"
+    "$t=15$ min $=0{,}25$ h.",
+    "$s=vt=72\\cdot0{,}25=18$ km"
    ]
   },
   {
    "steps": [
-    "Grafik to‘g‘ri chiziq, demak harakat tekis va tezlik istalgan paytda bir xil.",
-    "$v=\\dfrac{\\Delta s}{\\Delta t}=\\dfrac{25\\ \\text{m}}{5\\ \\text{s}}=5\\ \\text{m/s}$ — $t=4{,}28$ s da ham shunday."
+    "$v=\\dfrac st=\\dfrac{240\\ \\text{km}}{4\\ \\text{h}}=60$ km/h.",
+    "$60$ km/h $=\\dfrac{60000\\ \\text{m}}{3600\\ \\text{s}}\\approx16{,}7$ m/s"
    ]
   },
   {
    "steps": [
-    "$s(t)$ grafigida tezlik — to‘g‘ri chiziqning qiyaligi: $v=\\dfrac{\\Delta s}{\\Delta t}$.",
-    "$v_1=\\dfrac{20}{3}\\approx6{,}7$ m/s, $\\;v_2=\\dfrac{17}{3{,}5}\\approx4{,}9$ m/s, $\\;v_3=\\dfrac{15}{4}=3{,}75$ m/s",
-    "Eng tik chiziq — 1-nuqta, uning tezligi eng katta."
+    "Qarama-qarshi yo‘nalishda nisbiy tezlik: $v=54+72=126$ km/h.",
+    "$t=10$ min $=\\dfrac16$ h; $\\;s=126\\cdot\\dfrac16=21$ km"
    ]
   },
   {
    "steps": [
-    "Bosib o‘tilgan yo‘l manfiy bo‘lmaydi ($s\\ge0$) va vaqt o‘tishi bilan kamaymaydi.",
-    "I va IV grafiklar manfiy qiymatdan boshlanadi, II grafikda $s$ kamayib boradi — ular yo‘lni ifodalay olmaydi.",
-    "III grafikda yo‘l avval ortadi, keyin o‘zgarmay qoladi (jism to‘xtagan) — bu mumkin."
+    "Tekis harakat tenglamasi: $x=x_0+vt$.",
+    "Solishtiramiz: $x_0=20$ m, $v=-4$ m/s (jism OX o‘qiga qarshi harakatlanadi)."
    ]
   },
   {
    "steps": [
-    "Yo‘l — har bir bo‘lakdagi ko‘chishlar modullarining yig‘indisi:",
-    "$0\\to2$ s: $|15-0|=15$ m; $\\;2\\to4$ s: $|-10-15|=25$ m; $\\;4\\to5$ s: $|0-(-10)|=10$ m",
-    "$s=15+25+10=50\\ \\text{m}$ (ko‘chish esa nolga teng)."
+    "$x(6)=-10+5\\cdot6=20$ m"
    ]
   },
   {
    "steps": [
-    "Grafikdan: $x_0=6$ m, $t=3$ s da $x=0$.",
-    "$v=\\dfrac{0-6}{3}=-2\\ \\text{m/s}$",
-    "$x=x_0+vt=6-2t$"
+    "Uchrashuvda koordinatalar teng: $10+2t=40-4t\\;\\Rightarrow\\;6t=30\\;\\Rightarrow\\;t=5$ s.",
+    "$x=10+2\\cdot5=20$ m"
    ]
   },
   {
    "steps": [
-    "$x(t)$ grafigida tezlik moduli qiyalikka teng: qaysi bo‘lak eng tik bo‘lsa, tezlik shuncha katta.",
-    "I bo‘lakda bir katakda koordinata eng ko‘p (≈40 m) o‘zgaradi — bu eng tik bo‘lak."
+    "$v=36$ km/h $=10$ m/s. To‘liq o‘tishda poyezd «ko‘prik + o‘z uzunligi» masofani bosadi:",
+    "$L_k+L_p=vt=10\\cdot45=450$ m; $\\;L_p=450-300=150$ m"
    ]
   }
  ]

@@ -110,11 +110,11 @@
       ]
     },
     {
-      "text": "The figure shows 4 pairs of current elements. In which case do they repel each other?",
+      "text": "The options show with arrows the current directions in two current elements placed side by side. In which case do they repel each other?",
       "answers": [
         "$\\uparrow \\uparrow$.",
         "$\\uparrow \\rightarrow$.",
-        "$\\rightarrow \\leftarrow$.",
+        "$\\rightarrow \\rightarrow$.",
         "$\\downarrow \\uparrow$."
       ]
     },
@@ -137,12 +137,12 @@
       ]
     },
     {
-      "text": "In which of the following definitions is the unit of current (1 A) defined correctly?",
+      "text": "Which of the following is the classical definition of the unit of current (1 A) based on the interaction of currents?",
       "answers": [
         "the current at which a coil of inductance 1 H produces a flux of 1 Wb.",
         "the current at which a charge of 1 C passes through the conductor cross-section in 1 s.",
         "the current flowing through a conductor of resistance 1 $\\Omega$.",
-        "the current that produces a force of $2 \\cdot 10^{-7}$ N between parallel conductors 1 m apart in vacuum."
+        "the constant current which, flowing in two infinitely long thin parallel conductors 1 m apart in vacuum, produces between them a force of $2 \\cdot 10^{-7}$ N per metre of length."
       ]
     }
   ]

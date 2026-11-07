@@ -110,8 +110,8 @@
   },
   {
    "steps": [
-    "$M$: to‘g‘ri yo‘l $11$ cm, ko‘zgu orqali $11{,}5+11{,}5=23$ cm\\; $\\Delta=12$ cm $=4\\lambda$. Ko‘zgudagi $\\pi$ siljish tufayli bu — minimum.",
-    "$N$: to‘g‘ri $24{,}5$ cm, ko‘zgu orqali $29$ cm\\; $\\Delta=4{,}5$ cm $=1{,}5\\lambda$\\; $\\pi$ siljish bilan — maksimum."
+    "$M$: to‘g‘ri yo‘l $11$ cm, ko‘zgu orqali $11{,}5+11{,}5=23$ cm; $\\Delta=12$ cm $=4\\lambda$. Ko‘zgudagi $\\pi$ siljish tufayli bu — minimum.",
+    "$N$: to‘g‘ri $24{,}5$ cm, ko‘zgu orqali $29$ cm; $\\Delta=4{,}5$ cm $=1{,}5\\lambda$; $\\pi$ siljish bilan — maksimum."
    ]
   },
   {
@@ -137,13 +137,13 @@
   },
   {
    "steps": [
-    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
     "$d\\sin30^\\circ=10\\lambda\\cdot\\dfrac12=5\\lambda\\;\\Rightarrow\\;k=5$ — 5-maksimum"
    ]
   },
   {
    "steps": [
-    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
     "$\\Delta x=\\dfrac{6\\cdot10^{-7}\\cdot2}{10^{-4}}=1{,}2\\cdot10^{-2}$ m $=1{,}2$ cm.",
     "Rasmda $x$ markaziy maksimumdan 3-maksimumgacha:",
     "$x=3\\cdot1{,}2=3{,}6$ cm"
@@ -151,7 +151,7 @@
   },
   {
    "steps": [
-    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
     "$\\Delta x=\\dfrac{4\\cdot10^{-7}\\cdot2}{10^{-4}}=8\\cdot10^{-3}$ m"
    ]
   },
@@ -169,7 +169,7 @@
   },
   {
    "steps": [
-    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$\\; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
+    "Ikki tirqish: maksimum $d\\sin\\theta=k\\lambda$; qo‘shni maksimumlar orasidagi masofa $\\Delta x=\\dfrac{\\lambda L}{d}$.",
     "$N=\\dfrac{L}{\\Delta x}+1=\\dfrac{dL}{l\\lambda}+1$"
    ]
   },
@@ -187,7 +187,7 @@
   },
   {
    "steps": [
-    "Manbalar chastotalari har xil — $S_1$ va $S_2$ nurlari o‘zaro interferensiyalashmaydi\\; faqat bitta manbaning to‘g‘ri va ko‘zgudan qaytgan nurlari interferensiyalashadi.",
+    "Manbalar chastotalari har xil — $S_1$ va $S_2$ nurlari o‘zaro interferensiyalashmaydi; faqat bitta manbaning to‘g‘ri va ko‘zgudan qaytgan nurlari interferensiyalashadi.",
     "1-nuqta: $S_1$ ning to‘g‘ri va qaytgan nuri — bor. 2-nuqta: $S_2$ ning to‘g‘ri va qaytgan nuri — bor. 3-nuqta: faqat $S_1$ va $S_2$ ning to‘g‘ri nurlari — yo‘q.",
     "1 va 2"
    ]
@@ -195,12 +195,12 @@
   {
    "steps": [
     "O‘zaro tik qutblangan nurlar interferensiyalashmaydi — faqat bitta manbaning to‘g‘ri va qaytgan nurlari juftlashadi.",
-    "$e$ nuqta: 1 va 3 ($S_1$), 6 va 8 ($S_2$)\\; $a$ nuqta: 2 va 4 ($S_1$), 5 va 7 ($S_2$)."
+    "$e$ nuqta: 1 va 3 ($S_1$), 6 va 8 ($S_2$); $a$ nuqta: 2 va 4 ($S_1$), 5 va 7 ($S_2$)."
    ]
   },
   {
    "steps": [
-    "Kamalak ranglari va Nyuton halqalari — interferensiya\\; 3 va 4 — difraksiya.",
+    "Kamalak ranglari va Nyuton halqalari — interferensiya; 3 va 4 — difraksiya.",
     "1, 2"
    ]
   },

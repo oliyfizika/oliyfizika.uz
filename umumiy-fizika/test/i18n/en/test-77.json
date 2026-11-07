@@ -77,7 +77,7 @@
       ]
     },
     {
-      "text": "What image is formed when an object is located farther from the lens than its double focal length?",
+      "text": "What image is formed when an object is located farther from a converging lens than its double focal length?",
       "answers": [
         "real, reduced.",
         "real, enlarged.",
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "text": "An object is placed 16 cm from a lens with a focal length of 12 cm. What is the magnification of the lens?",
+      "text": "An object is placed 16 cm from a converging lens with a focal length of 12 cm. What is the magnification of the lens?",
       "answers": [
         "6.",
         "5.",
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "text": "The focal length is $F$. At what distance from the lens must an object be placed for the magnification of the lens to be greater than 2 but less than 3?",
+      "text": "The focal length of a converging lens is $F$. At what distance from the lens must an object be placed for the magnification of the real image to be greater than 2 but less than 3?",
       "answers": [
         "$5F/3>d>3F/2$.",
         "$3F<d<2F$.",
@@ -559,7 +559,7 @@
         "$-\\dfrac1F=\\dfrac1d-\\dfrac1{f'}$.",
         "$\\dfrac1F=\\dfrac1d-\\dfrac1{f'}$.",
         "$\\dfrac1F=\\dfrac1d+\\dfrac1{f'}$.",
-        "$-\\dfrac1F=\\dfrac1d-\\dfrac1d'$.",
+        "$-\\dfrac1F=\\dfrac1d-\\dfrac1{d'}$.",
         "$-\\dfrac1F=\\dfrac1d+\\dfrac1{f'}$."
       ]
     },
@@ -614,7 +614,7 @@
       ]
     },
     {
-      "text": "At what distance (in cm) from the lens is the virtual image formed of an object located 15 cm from a lens with a focal length of 10 cm?",
+      "text": "At what distance (in cm) from the lens is the virtual image formed of an object located 15 cm from a diverging lens with a focal length of 10 cm?",
       "answers": [
         "6.",
         "7.5.",
@@ -724,7 +724,7 @@
       ]
     },
     {
-      "text": "If two thin lenses with focal lengths of 20 and 30 cm are put together, what is the focal length of the resulting lens (in cm)?",
+      "text": "If two thin converging lenses with focal lengths of 20 and 30 cm are put together, what is the focal length of the resulting lens (in cm)?",
       "answers": [
         "56.",
         "50.",
@@ -814,7 +814,7 @@
       ]
     },
     {
-      "text": "A converging lens with an optical power of $+7$ D and a diverging lens with an optical power of $-2$ D are placed one after the other, with their optical axes on a straight line. If the object is 22 cm from the lenses, find the linear magnification of the system of lenses.",
+      "text": "A converging lens with an optical power of $+7$ D and a diverging lens with an optical power of $-2$ D are placed in close contact, with their optical axes coinciding. If the object is 22 cm from the lenses, find the linear magnification of the system of lenses.",
       "answers": [
         "10.",
         "5.",
@@ -894,7 +894,7 @@
       ]
     },
     {
-      "text": "An image is formed 50 cm from a lens with an optical power of 3 D, on the same side as the object. At what distance (in m) from the lens is the object located?",
+      "text": "An object is 50 cm from a converging lens with an optical power of 4 D. At what distance (in m) from the lens is the image formed?",
       "answers": [
         "1.",
         "0.5.",
@@ -1404,7 +1404,7 @@
       ]
     },
     {
-      "text": "A person takes off his glasses and reads holding the book 20 cm away. What is the optical power of the glasses (in D)?",
+      "text": "A person takes off his glasses and reads holding the book 20 cm away. What is the optical power of the glasses (in D)? The distance of best vision of a normal eye is 25 cm.",
       "answers": [
         "$-2,25$.",
         "$+2,25$.",
@@ -1414,7 +1414,7 @@
       ]
     },
     {
-      "text": "Ahmad takes off his glasses and reads a book 16 cm from his eyes. Find the optical power of the glasses (in D).",
+      "text": "Ahmad takes off his glasses and reads a book 16 cm from his eyes. Find the optical power of the glasses (in D). The distance of best vision of a normal eye is 25 cm.",
       "answers": [
         "2.",
         "$-2$.",
@@ -1424,13 +1424,13 @@
       ]
     },
     {
-      "text": "A boy wearing glasses takes them off and reads a book at a distance of 16 cm. Determine the optical power of the boy's glasses (in D).",
+      "text": "The far point of a short-sighted person is 50 cm. What optical power of glasses does he need to see distant objects clearly (D)?",
       "answers": [
-        "$+4,25$.",
-        "$+2,25$.",
-        "$-3,5$.",
-        "$-4,25$.",
-        "$-2,25$."
+        "$+4.25$.",
+        "$+2$.",
+        "$-3.5$.",
+        "$-2$.",
+        "$-2.25$."
       ]
     },
     {

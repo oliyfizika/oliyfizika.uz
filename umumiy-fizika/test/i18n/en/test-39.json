@@ -101,7 +101,7 @@
       ]
     },
     {
-      "text": "The diameter of an air bubble rising from the bottom of a body of water to the surface increased 1.5 times. The temperature at the bottom is 5°C and at the surface 27°C. How deep is the body of water, in meters?",
+      "text": "The diameter of an air bubble rising from the bottom of a body of water to the surface increased 1.5 times. The temperature at the bottom is 5°C and at the surface 27°C. How deep is the body of water, in meters? Take p₀ = 10⁵ Pa, ρ = 1000 kg/m³, g = 10 m/s².",
       "answers": [
         "36",
         "25",
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "text": "A rubber boat was inflated at a temperature of 7°C to a working pressure of 108 kPa. Is there a danger of the boat bursting when the temperature reaches 37°C?",
+      "text": "A rubber boat was inflated at a temperature of 7°C to a working pressure of 108 kPa. Is there a danger of the boat bursting when the temperature reaches 37°C? The boat cannot withstand a pressure greater than 115 kPa.",
       "answers": [
         "Yes",
         "No",

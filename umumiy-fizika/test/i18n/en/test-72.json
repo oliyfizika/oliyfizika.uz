@@ -1,5 +1,5 @@
 {
-  "title": "Topic 72 | Transformer",
+  "title": "Topic 72 | Transformer. Electromagnetic waves",
   "questions": [
     {
       "text": "What kind of device is a transformer?",
@@ -308,12 +308,12 @@
       ]
     },
     {
-      "text": "Give the expression for the speed of an electromagnetic wave propagating in a medium with dielectric constant $\\varepsilon$ and magnetic permeability $\\mu$. The speed in vacuum is c; $\\lambda_0$ and $\\lambda$ are the wavelengths in vacuum and in the medium, respectively.",
+      "text": "Give the expression for the speed of an electromagnetic wave propagating in a medium with dielectric constant $\\varepsilon$ and magnetic permeability $\\mu$. The speed in vacuum is c.",
       "answers": [
         "$c/\\sqrt{\\varepsilon\\mu}$.",
         "$c\\sqrt{\\varepsilon\\mu}$.",
         "$\\sqrt{\\varepsilon\\mu}$.",
-        "$v/\\lambda_0$."
+        "$c\\varepsilon\\mu$."
       ]
     },
     {
@@ -353,7 +353,7 @@
       ]
     },
     {
-      "text": "How does the power radiated by an open oscillating circuit change if the frequency of the electromagnetic oscillations is increased by a factor of 2?",
+      "text": "How does the power radiated by an open oscillating circuit change if the frequency of the electromagnetic oscillations is increased by a factor of 2? Assume the oscillation amplitude is constant.",
       "answers": [
         "does not change.",
         "decreases by a factor of 2.",
@@ -479,12 +479,12 @@
       ]
     },
     {
-      "text": "The wavelength of the radiated electromagnetic waves is $1.2\\cdot 10^8$ m. What is the law of variation of the current in the radio antenna?",
+      "text": "The wavelength of the radiated electromagnetic waves is $120$ m. What is the law of variation of the current in the radio antenna?",
       "answers": [
-        "$i = I\\sin 15.7t$.",
-        "$i = I\\sin 12t$.",
-        "$i = I\\sin 2\\pi t$.",
-        "$i = I\\sin 31.47t$."
+        "$i = I\\sin(1.57\\cdot10^7\\,t)$.",
+        "$i = I\\sin(1.2\\cdot10^7\\,t)$.",
+        "$i = I\\sin(2.5\\cdot10^6\\,t)$.",
+        "$i = I\\sin(3.14\\cdot10^7\\,t)$."
       ]
     },
     {

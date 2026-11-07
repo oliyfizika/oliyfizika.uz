@@ -6,22 +6,22 @@
   "unlockLesson": 24,
   "questions": [
     {
-      "text": "II-62 samolyoti har birining tortish kuchi 100 kN bo‘lgan to‘rt dvigatelga ega. Samolyotning 240 m/s tezligida dvigatellarning umumiy foydali quvvati (kW da) qanday?",
+      "text": "Il-62 samolyoti har birining tortish kuchi 100 kN bo‘lgan to‘rt dvigatelga ega. Samolyotning 240 m/s tezligida dvigatellarning umumiy foydali quvvati (kW da) qanday?",
       "answers": ["84000", "96000", "102000", "72000"],
       "correct": 1
     },
     {
-      "text": "Massasi 2000 kg bo‘lgan avtomobil gorizontal yo‘lda 72 km/h tezlik bilan harakatlanadi. Harakatga qarshilik kuchi avtomobil og‘irligining 1/20 ini tashkil qiladi. Avtomobilning foydali quvvatini (kW da) aniqlang. g = 10 m/s^2.",
+      "text": "Massasi 2000 kg bo‘lgan avtomobil gorizontal yo‘lda 72 km/h tezlik bilan harakatlanadi. Harakatga qarshilik kuchi avtomobil og‘irligining 1/20 ini tashkil qiladi. Avtomobilning foydali quvvatini (kW da) aniqlang. g = 10 m/s².",
       "answers": ["10", "15", "20", "25"],
       "correct": 2
     },
     {
-      "text": "Qayiq eshkakchi bilan birga 0,6 m/s tezlikda harakatlanadi. Agar eshkakchi tomonidan erishiladigan quvvat 18 W ga teng bo‘lsa, suvning qarshilik kuchini aniqlang.",
+      "text": "Qayiq eshkakchi bilan birga 0,6 m/s tezlikda harakatlanadi. Agar eshkakchi tomonidan erishiladigan quvvat 18 W ga teng bo‘lsa, suvning qarshilik kuchini aniqlang (N).",
       "answers": ["30", "40", "20", "10"],
       "correct": 0
     },
     {
-      "text": "Qiyaligi yo‘lning har 10 metrida 1 m ni tashkil qiluvchi yo‘l bo‘ylab 9 km/h tezlik bilan ko‘tarilayotgan gusenitsali traktor qanday foydali quvvatga (kW da) erishadi? Traktorning massasi 6 t. g = 10 m/s^2.",
+      "text": "Qiyaligi yo‘lning har 10 metrida 1 m ni tashkil qiluvchi yo‘l bo‘ylab 9 km/h tezlik bilan ko‘tarilayotgan gusenitsali traktor qanday foydali quvvatga (kW da) erishadi? Traktorning massasi 6 t. g = 10 m/s².",
       "answers": ["10", "20", "30", "15"],
       "correct": 3
     },
@@ -31,17 +31,17 @@
       "correct": 0
     },
     {
-      "text": "Quvvat sarfi 10 kW bo‘lgan nasos yordamida 500 m chuqurlikdagi quduqdan neft tortib chiqariladi. Agar nasos ishining bir minutida yer sirtiga 96 kg neft yetkazib berilsa, nasosning FIK (foizlarda) qanday? g = 10 m/s^2.",
+      "text": "Quvvat sarfi 10 kW bo‘lgan nasos yordamida 500 m chuqurlikdagi quduqdan neft tortib chiqariladi. Agar nasos ishining bir minutida yer sirtiga 96 kg neft yetkazib berilsa, nasosning FIK (foizlarda) qanday? g = 10 m/s².",
       "answers": ["60", "80", "90", "70"],
       "correct": 1
     },
     {
-      "text": "Suv nasosi bir minutda 300 kg suvni 80 m balandlikka tekis yetkazib beradi. Agar nasosning FIK 80% ga teng bo‘lsa, nasosni harakatga keltiruvchi motorning quvvatini (kW da) aniqlang. g = 10 m/s^2.",
+      "text": "Suv nasosi bir minutda 300 kg suvni 80 m balandlikka tekis yetkazib beradi. Agar nasosning FIK 80% ga teng bo‘lsa, nasosni harakatga keltiruvchi motorning quvvatini (kW da) aniqlang. g = 10 m/s².",
       "answers": ["4", "8", "5", "6"],
       "correct": 2
     },
     {
-      "text": "Ko‘tarma kran quvvati 10 kW bo‘lgan dvigatel yordamida harakatga keltiriladi. Agar dvigatelning FIK 80% bo‘lsa, 2 t massali yukni 50 m balandlikka tekis ko‘tarish uchun necha sekund talab qilinadi? g = 10 m/s^2.",
+      "text": "Ko‘tarma kran quvvati 10 kW bo‘lgan dvigatel yordamida harakatga keltiriladi. Agar dvigatelning FIK 80% bo‘lsa, 2 t massali yukni 50 m balandlikka tekis ko‘tarish uchun necha sekund talab qilinadi? g = 10 m/s².",
       "answers": ["100", "150", "125", "200"],
       "correct": 2
     },
@@ -56,17 +56,17 @@
       "correct": 2
     },
     {
-      "text": "6 kg massali jismning boshlang‘ich tezliksiz erkin tushish jarayonida dastlabki sekund ichida og‘irlik kuchi erishadigan o‘rtacha quvvatni toping. g = 10 m/s^2.",
+      "text": "6 kg massali jismning boshlang‘ich tezliksiz erkin tushish jarayonida dastlabki sekund ichida og‘irlik kuchi erishadigan o‘rtacha quvvatni toping. g = 10 m/s².",
       "answers": ["300", "150", "450", "600"],
       "correct": 0
     },
     {
-      "text": "3 kg massali jismga 36 N kuch qo‘ygan holda, uni yerdan vertikal yuqoriga ko‘tarishadi. Harakat boshlanganidan 2 s o‘tgach shu kuch qanday quvvatga erishadi? g = 10 m/s^2.",
+      "text": "3 kg massali jismga 36 N kuch qo‘ygan holda, uni yerdan vertikal yuqoriga ko‘tarishadi. Harakat boshlanganidan 2 s o‘tgach shu kuch qanday quvvatga erishadi? g = 10 m/s².",
       "answers": ["120", "144", "160", "180"],
       "correct": 1
     },
     {
-      "text": "3 kg massali jismga 42 N kuch qo‘ygan holda, uni yerdan vertikal yuqoriga ko‘tarishadi. Jism 2 m balandlikda bo‘lgan paytda shu kuch qanday quvvatga erishadi? g = 10 m/s^2.",
+      "text": "3 kg massali jismga 42 N kuch qo‘ygan holda, uni yerdan vertikal yuqoriga ko‘tarishadi. Jism 2 m balandlikda bo‘lgan paytda shu kuch qanday quvvatga erishadi? g = 10 m/s².",
       "answers": ["140", "150", "168", "180"],
       "correct": 2
     },

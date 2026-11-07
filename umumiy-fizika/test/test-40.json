@@ -41,7 +41,7 @@
         "Gaz hajmi kamayganda uning zichligi ortadi, urilishlar soni ortadi",
         "Gaz hajmi ortganda uning zichligi ortadi, urilishlar soni ortadi",
         "Gaz hajmi kamayganda uning zichligi ortadi, urilishlar soni kamayadi",
-        "Gaz hajmi kamayganda uning zichligi o’zgarmaydi, urilishlar soni ortadi"
+        "Gaz hajmi kamayganda uning zichligi o‘zgarmaydi, urilishlar soni ortadi"
       ],
       "correct": 0
     },
@@ -138,7 +138,7 @@
       "correct": 3
     },
     {
-      "text": "Hajmi 12 l bo‘lgan avtomobil kamerasidagi bosim 35 atm ga teng bo‘lishi kerak. Har bir dam berishda normal bosimda 500 sm³ havo oladigan nasos bilan necha marta dam berish kerak bo‘ladi?",
+      "text": "Hajmi 12 l bo‘lgan avtomobil kamerasidagi bosim 35 atm ga teng bo‘lishi kerak. Agar kamera dastlab butunlay bo‘sh (havosiz) bo‘lsa, har bir dam berishda normal bosimda 500 sm³ havo oladigan nasos bilan necha marta dam berish kerak bo‘ladi?",
       "answers": ["120", "168", "840", "420"],
       "correct": 2
     },
@@ -168,7 +168,7 @@
       "correct": 3
     },
     {
-      "text": "Vertikal o‘rnatilgan ostki uchi kavsharlangan shisha nayning ichida geliy gazi va ustida 2 sm bo‘lgan simob ustuni bor. Nayning ochiq uchi pastga qarab to‘nkarilganda undagi simob ustining qalinligi 1 sm bo‘lib qoldi. Nayning uzunligini toping (sm).",
+      "text": "Vertikal o‘rnatilgan ostki uchi kavsharlangan shisha nayning ichida geliy gazi va ustida 2 sm bo‘lgan simob ustuni bor. Nayning ochiq uchi pastga qarab to‘nkarilganda undagi simob ustining qalinligi 1 sm bo‘lib qoldi. Nayning uzunligini toping (sm). Atmosfera bosimi 76 sm sim. ust.",
       "answers": ["39,5", "32", "36,8", "27"],
       "correct": 3
     }

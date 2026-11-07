@@ -31,12 +31,12 @@
       "correct": 1
     },
     {
-      "text": "Suv diametri 1,8 mm bo‘lgan naychadan tomchilayotgan bo‘lsa, 1 cm³ suvda nechta tomchi bo‘ladi? Suvning sirt taranglik koeffitsiyenti σ = 72 mN/m.",
+      "text": "Suv diametri 1,8 mm bo‘lgan naychadan tomchilayotgan bo‘lsa, 1 cm³ suvda nechta tomchi bo‘ladi? Suvning sirt taranglik koeffitsiyenti σ = 72 mN/m. g = 10 m/s² deb oling.",
       "answers": ["30", "25", "12", "49"],
       "correct": 1
     },
     {
-      "text": "Teshigining diametri 2,0 mm bo‘lgan tomizgichdan har bir sekundda bittadan kerosin tomchilari tushmoqda. 25 cm³ kerosin qancha vaqtda (min) oqib tushadi? ρ = 800 kg/m³, σ = 24 mN/m.",
+      "text": "Teshigining diametri 2,0 mm bo‘lgan tomizgichdan har bir sekundda bittadan kerosin tomchilari tushmoqda. 25 cm³ kerosin qancha vaqtda (min) oqib tushadi? ρ = 800 kg/m³, σ = 24 mN/m. g = 10 m/s² deb oling.",
       "answers": ["28", "16", "22", "48"],
       "correct": 2
     },
@@ -51,17 +51,17 @@
       "correct": 1
     },
     {
-      "text": "Hajmi 6 cm³ bo‘lgan vannachaga naychadan suv tomchilab tushmoqda. Naychaning ichki diametri 1,0 mm ga teng. Vannachani 20°C temperaturali suv bilan to‘ldirish uchun naychadan necha tomchi suv tushishi kerak? ρ = 1000 kg/m³, σ = 72 mN/m.",
+      "text": "Hajmi 6 cm³ bo‘lgan vannachaga naychadan suv tomchilab tushmoqda. Naychaning ichki diametri 1,0 mm ga teng. Vannachani 20°C temperaturali suv bilan to‘ldirish uchun naychadan necha tomchi suv tushishi kerak? ρ = 1000 kg/m³, σ = 72 mN/m. g = 10 m/s² deb oling.",
       "answers": ["242", "196", "225", "265"],
       "correct": 3
     },
     {
-      "text": "Teshigining diametri 2 mm bo‘lgan tomizgichda 219 cm³ suv bor. Tomizgichdan hammasi bo‘lib nechta tomchi tomadi? π = 3, g = 10 m/s² deb hisoblang.",
+      "text": "Teshigining diametri 2 mm bo‘lgan tomizgichda 219 cm³ suv bor. Tomizgichdan hammasi bo‘lib nechta tomchi tomadi? σ = 73 mN/m, π = 3, g = 10 m/s² deb hisoblang.",
       "answers": ["2180", "4000", "5000", "6000"],
       "correct": 2
     },
     {
-      "text": "Tomizgich teshigining diametri 1,2 mm. Tomizgichdan oqib chiqayotgan suv tomchisining uzilish momentidagi massasi qancha (mg)? σ = 73 mN/m.",
+      "text": "Tomizgich teshigining diametri 1,2 mm. Tomizgichdan oqib chiqayotgan suv tomchisining uzilish momentidagi massasi qancha (mg)? σ = 73 mN/m. g = 10 m/s² deb oling.",
       "answers": ["56", "28", "2,8", "5,6"],
       "correct": 1
     },
@@ -116,7 +116,7 @@
         "Ortadi, chunki sirt energiyasi ortadi.",
         "Pasayadi, chunki sirt energiyasi kamayadi.",
         "Ko‘tariladi, chunki sirt energiyasi kamayadi.",
-        "O‘zgarmaydi, chunki sirt energiyasi o’zgarmaydi."
+        "O‘zgarmaydi, chunki sirt energiyasi o‘zgarmaydi."
       ],
       "correct": 2
     }

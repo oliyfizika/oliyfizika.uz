@@ -509,7 +509,7 @@
       "source": "73-mavzu.tex#1:28"
     },
     {
-      "text": "Yorug‘lik nuri sindirish ko‘rsatkichi $\\sqrt{3}$ bo‘lgan shishadan havoga o‘tmoqda. Sinish burchagi tushish burchagidan 2 marta katta bo‘lishi uchun yorug‘lik havoga qanday burchak ostida tushishi kerak?",
+      "text": "Yorug‘lik nuri sindirish ko‘rsatkichi $\\sqrt{3}$ bo‘lgan shishadan havoga o‘tmoqda. Sinish burchagi tushish burchagidan 2 marta katta bo‘lishi uchun yorug‘lik shisha–havo chegarasiga qanday burchak ostida tushishi kerak?",
       "answers": [
         "$25^\\circ$.",
         "$30^\\circ$.",
@@ -566,7 +566,7 @@
         "1 va 3."
       ],
       "correct": 1,
-      "images": "../rasmlar73/ra4422c5392.png",
+      "images": "../rasmlar73/plastina-nurlar.svg",
       "source": "73-mavzu.tex#1:33"
     },
     {
@@ -655,7 +655,7 @@
       "source": "73-mavzu.tex#2:4"
     },
     {
-      "text": "Sindirish ko‘rsatkichi $n_1=1,4$ va sinish ko‘rsatkichi $n_2=1,75$ bo‘lgan muhitlarda tarqalayotgan nurlarning tezliklari nisbati qanday?",
+      "text": "Sindirish ko‘rsatkichi $n_1=1,4$ va sindirish ko‘rsatkichi $n_2=1,75$ bo‘lgan muhitlarda tarqalayotgan nurlarning tezliklari nisbati qanday?",
       "answers": [
         "$1,1$.",
         "$1,15$.",
@@ -847,7 +847,7 @@
       "source": "73-mavzu.tex#2:20"
     },
     {
-      "text": "Sindirish ko‘rsatkichi $n_1=1,2$, skipidarniki $n_2=1,5$. Shu moddalardan yorug‘lik bir xil vaqtda o‘tadigan yo‘llar nisbati nimaga teng?",
+      "text": "Biror shaffof moddaning sindirish ko‘rsatkichi $n_1=1,2$, skipidarniki $n_2=1,5$. Shu moddalardan yorug‘lik bir xil vaqtda o‘tadigan yo‘llar nisbati nimaga teng?",
       "answers": [
         "$1,22$.",
         "$1,21$.",
@@ -1159,7 +1159,7 @@
       "source": "73-mavzu.tex#2:46"
     },
     {
-      "text": "Yassi yorug‘lik ikki muhit chegarasiga $\\alpha$ burchak ostida tushib, $\\beta$ burchak ostida ikkinchi muhitga o‘tmoqda. Yorug‘likning shu muhitlardagi tarqalish tezliklari qanday munosabatda bo‘ladi? $\\alpha>\\beta$.",
+      "text": "Yassi yorug‘lik to‘lqini ikki muhit chegarasiga $\\alpha$ burchak ostida tushib, $\\beta$ burchak ostida ikkinchi muhitga o‘tmoqda. Yorug‘likning shu muhitlardagi tarqalish tezliklari qanday munosabatda bo‘ladi? $\\alpha>\\beta$.",
       "answers": [
         "tezliklar munosabati $\\alpha$ ga bog‘liq o‘zgaradi.",
         "$v_1<v_2$.",

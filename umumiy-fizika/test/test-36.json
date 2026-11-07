@@ -21,11 +21,11 @@
       "correct": 2
     },
     {
-      "text": "Modda miqdorlari teng bo‘lgan qalay va qo‘rg‘oshindan qilingan jismlarning massalarini va hajmlarini taqqoslang. MSn = 116,7 g/mol, ρSn = 7300 kg/m³, MPb = 207,2 g/mol, ρPb = 11300 kg/m³.",
+      "text": "Modda miqdorlari teng bo‘lgan qalay va qo‘rg‘oshindan qilingan jismlarning massalarini va hajmlarini taqqoslang. MSn = 118,7 g/mol, ρSn = 7300 kg/m³, MPb = 207,2 g/mol, ρPb = 11300 kg/m³.",
       "answers": [
-        "Qo’rg’oshin jismning massasi 1,7 marta, hajmi 1,1 marta katta",
+        "Qo‘rg‘oshin jismning massasi 1,7 marta, hajmi 1,1 marta katta",
         "Qalay jismning massasi 1,7 marta, hajmi 1,1 marta katta",
-        "Qo’rg’oshin jismning massasi 1,7 marta, hajmi 1,1 marta kichik",
+        "Qo‘rg‘oshin jismning massasi 1,7 marta, hajmi 1,1 marta kichik",
         "Qalay jismning massasi 1,7 marta, hajmi 1,1 marta kichik"
       ],
       "correct": 0
@@ -123,15 +123,15 @@
     {
       "text": "Molekulyar kinetik nazariyaning asosiy qoidalari qaysi javobda nisbatan to‘liq bayon qilingan?",
       "answers": [
-        "Har qanday jism molekulalardan tuzilgan, ular betartib harakatda bo’ladi, ular orasida o’zaro ta’sir kuchlari mavjud.",
-        "Modda mayda zarralardan tashkil topgan va ular orasida o’zaro ta’sir kuchlari mavjud.",
-        "Modda mayda bo’laklardan tuziladi va ular fazoni uzluksiz to’ldiradi.",
+        "Har qanday jism molekulalardan tuzilgan, ular betartib harakatda bo‘ladi, ular orasida o‘zaro ta’sir kuchlari mavjud.",
+        "Modda mayda zarralardan tashkil topgan va ular orasida o‘zaro ta’sir kuchlari mavjud.",
+        "Modda mayda bo‘laklardan tuziladi va ular fazoni uzluksiz to‘ldiradi.",
         "Modda elementar zarralardan tuziladi va ular bir-biriga tinimsiz aylanib turadi."
       ],
       "correct": 0
     },
     {
-      "text": "Oltinning nisbiy atom massasi 197 g/mol ga teng. Massasi 3,94 g bo‘lgan oltin uzukda nechta oltin atomi bor? NA = 6 · 10²³ mol⁻¹.",
+      "text": "Oltinning molyar massasi 197 g/mol ga teng. Massasi 3,94 g bo‘lgan oltin uzukda nechta oltin atomi bor? NA = 6 · 10²³ mol⁻¹.",
       "answers": [
         "2,4 · 10²²",
         "6 · 10²¹",
@@ -166,7 +166,7 @@
       "correct": 3
     },
     {
-      "text": "1 g to‘la dissotsiyalangan azotda molekulalar soni qancha bo‘lishini aniqlang. MAz = 28 g/mol.",
+      "text": "1 g to‘la dissotsiyalangan azotda atomlar soni qancha bo‘lishini aniqlang. MAz = 28 g/mol.",
       "answers": [
         "26 · 10²²",
         "43 · 10²²",
@@ -178,10 +178,10 @@
     {
       "text": "Avogadro soni deb qanday fizik kattalikka aytiladi?",
       "answers": [
-        "12 g ugleroddagi atomlar soniga",
+        "6 g ugleroddagi atomlar soniga",
         "1 mol moddadagi zarralar soniga",
-        "32 g kisloroddagi molekulalar soniga",
-        "2 g vodoroddagi molekulalar soniga"
+        "16 g kisloroddagi molekulalar soniga",
+        "1 g vodoroddagi molekulalar soniga"
       ],
       "correct": 1
     },
@@ -191,7 +191,7 @@
         "0°C da 1 m³ hajmdagi modda massasiga",
         "1 mol moddaning massasiga",
         "Uglerod atomi massasining 1/12 qismiga nisbatiga",
-        "NA = 6 · 10²³ ta zarrachadan tashkil topgan modda massasiga"
+        "1 mol moddadagi molekulalar soniga"
       ],
       "correct": 1
     },

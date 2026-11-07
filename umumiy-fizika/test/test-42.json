@@ -21,7 +21,7 @@
       "correct": 3
     },
     {
-      "text": "-13°C temperaturada avtomobil kamerasida havoning bosimi 160 kPa edi. Avtomat-mobil uzoq vaqt harakatlanishi natijasida havo 37°C gacha qiziydi. Shunda bosim qancha bo‘ladi (kPa)?",
+      "text": "-13°C temperaturada avtomobil kamerasida havoning bosimi 160 kPa edi. Avtomobil uzoq vaqt harakatlanishi natijasida havo 37°C gacha qiziydi. Shunda bosim qancha bo‘ladi (kPa)?",
       "answers": ["190", "220", "420", "18"],
       "correct": 0
     },
@@ -56,12 +56,12 @@
       "correct": 3
     },
     {
-      "text": "Ballonga o‘rnatilgan manometr 2,8 atm qiymatni ko‘rsatib turgan edi, temperatura 85°C kamayganda uning ko‘rsatishi 1 atm kamaydi. Ikkala holdagi temperatura qiymatini aniqlang (°C). Protsess—izoxorik.",
+      "text": "Ballondagi gazning bosimi 2,8 atm edi; temperatura 85°C ga kamayganda bosim 1 atm ga kamaydi. Boshlang‘ich va oxirgi holatdagi temperaturalarni aniqlang (°C). Jarayon izoxorik.",
       "answers": [
         "80; -35",
         "50; -26",
         "50; 35",
-        "-120; -35"
+        "-35; -120"
       ],
       "correct": 3
     },
