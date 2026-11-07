@@ -12,7 +12,7 @@ import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } f
 import { toast } from "../ui/feedback.js";
 import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure, figureUrl } from "../attestatsiya-fizika/api.js";
 import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, isMock, dayLabel, mockCompositionText } from "../attestatsiya-fizika/core.js";
-import { generateMocks, parsePedagogyFile, attachFigures, validateMockBundle, MAX_FIG_BYTES } from "../attestatsiya-fizika/mock-generator.js";
+import { generateMocks, parsePedagogyFile, attachFigures, validateMockBundle, MAX_FIG_BYTES, tokens, similarity, plainText, SIMILAR } from "../attestatsiya-fizika/mock-generator.js";
 import { showQuestionStats } from "./attestation-question-stats.js";
 import { toggleAttempts, changeVersion, exportExcel, resetAttempts, detailsRow } from "./attestation-attempts.js";
 import { finalizeOverdueList } from "../attestatsiya-fizika/finalize.js";
@@ -313,10 +313,27 @@ $("[data-mock-bundle]").addEventListener("change", async (e) => {
     const nS = figOps.length - nQ;
     info.textContent = `Tekshirildi: ${data.testId} · 50 savol · 100 ball${t.paidOnly ? " · FAQAT PULLIK GURUH" : " · hamma uchun bepul"} · rasmlar: savol ${nQ}, yechim ${nS} · planHash ${data.planHash}. «Mock testni import qilish» ni bosing.`;
     $("[data-mock-import]").disabled = false;
+    const dup = await mockOverlap(data).catch(() => null);
+    if (dup?.length) info.textContent += ` Diqqat: ${dup.length} ta savol mavjud mocklarda bor (${dup.slice(0, 8).join("; ")}${dup.length > 8 ? "; …" : ""}).`;
   } catch (err) {
     info.textContent = `Fayl yaroqsiz (${err.message}). _private/attestatsiya-fizika/mock-import-NN.json ni tanlang.`;
   }
 });
+/** Import qilinayotgan mock savollari mavjud mocklar bilan takrorlanadimi (bir xil ID yoki matn o'xshashligi ≥ SIMILAR) — faqat ogohlantirish. */
+async function mockOverlap(data) {
+  const qText = (q) => `${plainText(q.question)} ${plainText((q.options || []).map((o) => o.blocks))}`;
+  const mine = data.ops[1].data.questions.map((q) => ({ id: q.id, tok: tokens(qText(q)) }));
+  const out = [];
+  for (const t of tests.filter((x) => isMock(x) && x.id !== data.testId)) {
+    const s = await getDoc(doc(fb.db, COL.tests, t.id, "versions", `v${t.currentVersion || 1}`));
+    for (const q of (s.exists() ? s.data().questions : []) || []) {
+      const tok = tokens(qText(q));
+      const m = mine.find((x) => x.id === q.id || similarity(x.tok, tok) >= SIMILAR);
+      if (m) out.push(`${m.id} ≈ ${dayLabel(t)}: ${q.id}`);
+    }
+  }
+  return out;
+}
 /** Mock bundle'ni yozadi: test hujjati birinchi, keyin sub-hujjatlar; mavjud hujjat qayta yozilmaydi (qayta urinish xavfsiz). */
 async function writeMockBundle(bundle, existing, progress) {
   // Test hujjati birinchi, keyin sub-hujjatlar (Rules versions/keys/solutions/figures uchun parent testni get() qiladi).
