@@ -76,66 +76,66 @@
       ]
     },
     {
-      "text": "Using the graph, determine the distance covered by the boy between t₁ = 1 s and t₂ = 5 s.",
+      "text": "A car moves uniformly at 72 km/h. What distance does it cover in 15 minutes (km)?",
       "answers": [
-        "10 m",
-        "20 m",
-        "5 m",
-        "15 m"
+        "12",
+        "15",
+        "18",
+        "20"
       ]
     },
     {
-      "text": "What is the speed at the moment t = 4.28 s according to the graph?",
+      "text": "A bus covered the 240 km distance between two cities in 4 hours moving uniformly. What is the speed of the bus in m/s?",
       "answers": [
-        "5 m/s",
-        "12 m/s",
-        "10 m/s",
-        "6 m/s"
+        "60",
+        "16.7",
+        "15",
+        "20"
       ]
     },
     {
-      "text": "Which of the three material points has the greatest speed?",
+      "text": "Two cars start simultaneously from the same point in opposite directions, moving uniformly at 54 km/h and 72 km/h. What will the distance between them be after 10 minutes (km)?",
       "answers": [
-        "1",
-        "2",
         "3",
-        "All have the same"
+        "12.6",
+        "21",
+        "35"
       ]
     },
     {
-      "text": "Which graph can represent the dependence of the distance traveled by a body on time?",
+      "text": "The equation of motion of a body is x = 20 − 4t (m). What are the initial coordinate and the velocity of the body?",
       "answers": [
-        "II, III",
-        "I, II, III",
-        "III",
-        "I, IV"
+        "20 m; 4 m/s",
+        "20 m; −4 m/s",
+        "−4 m; 20 m/s",
+        "4 m; 20 m/s"
       ]
     },
     {
-      "text": "Using the graph, determine the distance covered in 5 s by a material point moving along the OX axis.",
+      "text": "The equation of motion of a body is x = −10 + 5t (m). What will the coordinate of the body be after 6 s (m)?",
       "answers": [
-        "50 m",
-        "32.5 m",
-        "0 m",
-        "10 m"
+        "30",
+        "20",
+        "−40",
+        "40"
       ]
     },
     {
-      "text": "Write the equation of motion for the graph of the body's coordinate versus time.",
+      "text": "The equations of motion of two bodies are x₁ = 10 + 2t and x₂ = 40 − 4t (m). When and where do they meet?",
       "answers": [
-        "x = -2 + 4t",
-        "x = 6 + 3t",
-        "x = -6 + 3t",
-        "x = 6 - 2t"
+        "3 s; 16 m",
+        "5 s; 30 m",
+        "5 s; 20 m",
+        "10 s; 30 m"
       ]
     },
     {
-      "text": "In which part of the graph was the speed of the body the greatest?",
+      "text": "A train moving uniformly at 36 km/h passes completely over a 300 m long bridge in 45 s. What is the length of the train (m)?",
       "answers": [
-        "III",
-        "II",
-        "I",
-        "IV"
+        "100",
+        "150",
+        "300",
+        "450"
       ]
     }
   ]

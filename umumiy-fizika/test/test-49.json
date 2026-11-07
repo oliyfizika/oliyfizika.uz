@@ -6,14 +6,14 @@
   "unlockLesson": 50,
   "questions": [
     {
-      "text": "Qaysi qonun tabiatdagi jarayonlarning yo‘nalishini ko‘rsatadi?",
+      "text": "Termodinamikaning II qonuniga ko‘ra issiqlik o‘z-o‘zidan qanday uzatiladi?",
       "answers": [
-        "massaning saqlanish qonuni",
-        "termodinamikaning I qonuni",
-        "termodinamikaning II qonuni",
-        "energiyaning saqlanish qonuni"
+        "sovuq jismdan issiq jismga",
+        "issiq jismdan sovuq jismga",
+        "massasi katta jismdan massasi kichik jismga",
+        "har ikki yo‘nalishda bir xil ehtimollik bilan"
       ],
-      "correct": 2
+      "correct": 1
     },
     {
       "text": "Issiqlik jihatdan izolyatsiyalangan sistemadagi gaz siqilsa, uning temperaturasi qanday o‘zgaradi?",
@@ -56,14 +56,14 @@
       "correct": 3
     },
     {
-      "text": "Issiqlik jihatdan izolyatsiyalangan sistemadagi gaz siqilsa, uning temperaturasi qanday o‘zgaradi?",
+      "text": "Gaz issiqlik almashinuvisiz kengaysa, uning temperaturasi qanday o‘zgaradi?",
       "answers": [
         "ortishi ham, pasayishi ham mumkin",
         "pasayadi",
         "ortadi",
         "o‘zgarmaydi"
       ],
-      "correct": 2
+      "correct": 1
     },
     {
       "text": "Gaz adiabat ravishda siqilmoqda. Bunda gazning T temperaturasi va P bosimi qanday o‘zgaradi?",
@@ -157,7 +157,7 @@
       "correct": 0
     },
     {
-      "text": "Ideal gazning ma’lum bir miqdori V1 hajmdan V2 hajmgacha uch marta siqildi. Keltirilgan grafikdagi qaysi egri chiziq 1 sekund davomidagi siqilishga mos keladi?",
+      "text": "Ideal gazning ma’lum bir miqdori V1 hajmdan V2 hajmgacha uch marta siqildi. Keltirilgan grafikdagi qaysi egri chiziq issiqlik almashinuvisiz (adiabatik) siqilishga mos keladi?",
       "image": "../rasmlar49/rasm15.svg",
       "answers": [
         "2",
@@ -165,7 +165,7 @@
         "3",
         "TJY"
       ],
-      "correct": 0
+      "correct": 2
     }
   ]
 }

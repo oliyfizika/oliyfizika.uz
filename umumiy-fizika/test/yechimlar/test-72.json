@@ -274,8 +274,8 @@
   },
   {
    "steps": [
-    "$\\nu=\\dfrac c\\lambda=\\dfrac{3\\cdot10^8}{1{,}2\\cdot10^8}=2{,}5$ Hz; $\\;\\omega=2\\pi\\nu\\approx15{,}7$ rad/s",
-    "$i=I\\sin15{,}7t$"
+    "$\\nu=\\dfrac c\\lambda=\\dfrac{3\\cdot10^8}{120}=2{,}5\\cdot10^6$ Hz; $\\;\\omega=2\\pi\\nu\\approx1{,}57\\cdot10^7$ rad/s",
+    "$i=I\\sin(1{,}57\\cdot10^7\\,t)$"
    ]
   },
   {

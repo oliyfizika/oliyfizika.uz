@@ -68,7 +68,7 @@
     {
       "text": "Berilgan jumlalarning qaysi biri noto‘g‘ri?",
       "answers": [
-        "to‘yingan bug‘ Mendeleyev-Klapeyron qonuniga bo‘ysunadi.",
+        "to‘yingan bug‘ o‘z suyuqligi bilan dinamik muvozanatda bo‘ladi.",
         "kritik temperaturada suyuqlik bilan to‘yingan bug‘ning fizik xossalari farqi yo‘qoladi.",
         "temperatura qancha yuqori bo‘lsa, to‘yingan bug‘ning elastikligi shuncha katta bo‘ladi.",
         "to‘yingan bug‘ning elastikligi o‘zgarmas temperaturada bug‘ egallab turgan hajmga bog‘liq."
@@ -146,7 +146,7 @@
       "correct": 3
     },
     {
-      "text": "To‘yingan bug‘ning bosimi 29,5 kPa. Uning hajmini ikki marta orttirsak 2 soatdan keyin bosimi nimaga teng bo‘ladi (kPa). T = const.",
+      "text": "To‘yingan bug‘ning bosimi 29,5 kPa. Idishda bug‘ bilan birga suv ham bor. Uning hajmini ikki marta orttirsak 2 soatdan keyin bosimi nimaga teng bo‘ladi (kPa). T = const.",
       "answers": [
         "1",
         "100",

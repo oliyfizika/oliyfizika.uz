@@ -72,7 +72,8 @@
   },
   {
    "steps": [
-    "$t\\sim R$; ketma-ket: $t=t_1+t_2=30+20=50$ min"
+    "Kerakli issiqlik $Q=\\dfrac{U^2}{R}t$ bir xil, ya’ni $\\dfrac{1}{t}\\sim\\dfrac1R$.",
+    "Parallel: $\\dfrac1t=\\dfrac1{t_1}+\\dfrac1{t_2}=\\dfrac1{30}+\\dfrac1{20}=\\dfrac1{12}\\Rightarrow t=12$ min"
    ]
   },
   {

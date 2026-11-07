@@ -146,7 +146,7 @@
       ]
     },
     {
-      "text": "Two harmonic oscillations with amplitudes of 5 cm and 2 cm occur in the same direction with the same period (1.2 s). Determine the resultant displacement 0.1 s after the start when the phases are the same (m).",
+      "text": "Two harmonic oscillations with amplitudes of 5 cm and 2 cm occur in the same direction with the same period (1.2 s). Determine the resultant displacement 0.1 s after the start if both oscillations follow x = A sin(2πt/T) (zero initial phases) (m).",
       "answers": [
         "0.2 · 10^-2",
         "1.5 · 10^-3",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "text": "If the equation of the velocity of an oscillating body is ϑ = 5 sin(3t + π/3) m/s, what is the initial phase of the body's displacement?",
+      "text": "If the equation of the velocity of an oscillating body is ϑ = 5 sin(3t + π/3) m/s, what is the initial phase φ₀ when the displacement is written as x = A sin(ωt + φ₀)?",
       "answers": [
         "3t + π/3",
         "3t",
@@ -281,7 +281,7 @@
       ]
     },
     {
-      "text": "A load of mass 5 kg hanging on a spring oscillates with a period of 0.25 s and travels 30 cm in one period. Find the maximum acceleration of the load (m/s^2).",
+      "text": "A load of mass 5 kg hanging on a spring oscillates with a period of 0.25 s and travels 30 cm in one period. Find the maximum acceleration of the load (m/s²).",
       "answers": [
         "37.5",
         "47.3",
@@ -290,7 +290,7 @@
       ]
     },
     {
-      "text": "The law of oscillation of a mathematical pendulum has the form x = 0.1 sin(10πt + π) (m). Find the amplitude value of the acceleration (m/s^2).",
+      "text": "The law of oscillation of a mathematical pendulum has the form x = 0.1 sin(10πt + π) (m). Find the amplitude value of the acceleration (m/s²).",
       "answers": [
         "10π^2",
         "100",

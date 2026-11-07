@@ -26,7 +26,7 @@
       "correct": 3
     },
     {
-      "text": "2 kg massali bir xil ikkita sharcha bir-biriga qarama-qarshi harakatlanadi. Bir sharchaning tezligi 3 m/s, ikkinchisiniki 7 m/s. Ikkala sharchaning natijaviy impulsining qiymatini toping.",
+      "text": "2 kg massali bir xil ikkita sharcha bir-biriga qarama-qarshi harakatlanadi. Bir sharchaning tezligi 3 m/s, ikkinchisiniki 7 m/s. Ikkala sharchaning natijaviy impulsining qiymatini toping (kg·m/s).",
       "answers": ["8", "10", "14", "20"],
       "correct": 0
     },
@@ -56,8 +56,8 @@
       "correct": 1
     },
     {
-      "text": "Mototsiklchi qiya trekda qayrilishni bajaradi. Agar ishqalanish koeffitsiyenti 0,75, trekning qiyalik burchagi esa gorizontga 45° bo‘lsa, harakatning mumkin bo‘lgan maksimal tezligi minimalidan necha marta ortiq?",
-      "answers": ["3,5", "5", "7", "14"],
+      "text": "Massasi 60 kg bo‘lgan bola 2 m/s tezlik bilan yugurib kelib, tinch turgan 40 kg massali aravachaga sakrab chiqdi. Aravacha bola bilan birgalikda qanday tezlik bilan harakatlanadi (m/s)? Ishqalanishni hisobga olmang.",
+      "answers": ["0,8", "1", "1,2", "2"],
       "correct": 2
     },
     {
@@ -101,7 +101,7 @@
       "correct": 2
     },
     {
-      "text": "0,5 kg massali koptok vertikalga 60° burchak ostida yo‘nalgan 10 m/s tezlik bilan polga urilib sakrab ketadi. Agar urilish 0,1 s davom etsa, koptokning pol bilan o‘zaro ta’sirlashuvining o‘rtacha kuchini toping (N).",
+      "text": "0,5 kg massali koptok vertikalga 60° burchak ostida yo‘nalgan 10 m/s tezlik bilan polga absolyut elastik urilib, xuddi shunday burchak ostida sakrab ketadi. Agar urilish 0,1 s davom etsa, koptokning pol bilan o‘zaro ta’sirlashuvining o‘rtacha kuchini toping (N). g = 10 m/s² deb oling.",
       "answers": ["25", "110", "85", "55"],
       "correct": 3
     },

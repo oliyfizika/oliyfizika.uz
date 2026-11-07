@@ -3,7 +3,7 @@
  "solutions": [
   {
    "steps": [
-    "Jarayonlarning yo‘nalishini termodinamikaning II qonuni ko‘rsatadi."
+    "Termodinamikaning II qonuni (Klauzius ta’rifi): issiqlik o‘z-o‘zidan faqat issiqroq jismdan sovuqroq jismga o‘tadi."
    ]
   },
   {
@@ -29,7 +29,7 @@
   },
   {
    "steps": [
-    "$Q=0$: siqishda tashqi kuchlar ishi ichki energiyani oshiradi — temperatura ortadi."
+    "$Q=0$: $\\Delta U=-A$. Kengayishda gaz ish bajaradi ($A>0$), ichki energiyasi kamayadi — temperatura pasayadi."
    ]
   },
   {
@@ -81,8 +81,8 @@
   },
   {
    "steps": [
-    "1 sekundlik siqilishda gaz qisman qiziydi — jarayon izotermik (1) va adiabatik (3, juda tez siqilish) oralig‘ida.",
-    "Bu 2-egri chiziq."
+    "Izotermik siqilishda $pV=\\text{const}$ — eng yotiq egri chiziq (1).",
+    "Adiabatik siqilishda ($Q=0$) gaz qiziydi, bosim tezroq ortadi: $pV^\\gamma=\\text{const}$, $\\gamma>1$ — eng tik egri chiziq (3)."
    ]
   }
  ]

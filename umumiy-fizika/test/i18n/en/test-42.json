@@ -74,12 +74,12 @@
       ]
     },
     {
-      "text": "A pressure gauge mounted on a cylinder read 2.8 atm; when the temperature dropped by 85°C, its reading decreased by 1 atm. Determine the temperatures in both cases (°C). The process is isochoric.",
+      "text": "The pressure of the gas in a cylinder was 2.8 atm; when the temperature dropped by 85°C, the pressure decreased by 1 atm. Determine the initial and final temperatures (°C). The process is isochoric.",
       "answers": [
         "80; -35",
         "50; -26",
         "50; 35",
-        "-120; -35"
+        "-35; -120"
       ]
     },
     {

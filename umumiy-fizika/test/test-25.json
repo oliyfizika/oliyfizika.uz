@@ -32,17 +32,17 @@
       "correct": 3
     },
     {
-      "text": "Qalinligi 0,5 m bo‘lgan benzin qatlami idish tubiga qanday bosim beradi (kPa)? Benzinning zichligi 800 kg/m3.",
+      "text": "Qalinligi 0,5 m bo‘lgan benzin qatlami idish tubiga qanday bosim beradi (kPa)? Benzinning zichligi 800 kg/m³.",
       "answers": ["2", "4", "5", "6"],
       "correct": 1
     },
     {
-      "text": "Zichligi 900 kg/m3 bo‘lgan suyuqlikning 30 cm chuqurlikka ega bo‘lgan joydagi bosimini toping (Pa).",
+      "text": "Zichligi 900 kg/m³ bo‘lgan suyuqlikning 30 cm chuqurlikka ega bo‘lgan joydagi bosimini toping (Pa).",
       "answers": ["2700", "27000", "270000", "3000"],
       "correct": 0
     },
     {
-      "text": "Balandligi 40 m bo‘lgan suv ustunining bosimini aniqlang (kPa). Suvning zichligi 1000 kg/m3, g = 10 N/kg.",
+      "text": "Balandligi 40 m bo‘lgan suv ustunining bosimini aniqlang (kPa). Suvning zichligi 1000 kg/m³, g = 10 N/kg.",
       "answers": ["4", "4,5", "40", "400"],
       "correct": 3
     },
@@ -53,8 +53,8 @@
     },
     {
       "text": "Idishlarning biriga suv, ikkinchisiga kerosin quyilgan va elastik parda bilan ajratilgan. Qaysi idish tubiga bosim kattaroq va parda qaysi tomonga egiladi?",
-        "images": "../rasmlar25/rasm9.png",
-        "answers": [
+      "images": "../rasmlar25/rasm9.png",
+      "answers": [
         "psuv = pker, egilmaydi",
         "psuv > pker, suv tomonga",
         "psuv > pker, kerosin tomonga",
@@ -79,7 +79,7 @@
       "correct": 1
     },
     {
-      "text": "Asosining yuzi 1 cm2 bo‘lgan silindrik idishdagi suv 10 kPa bosim bermoqda. Agar suvni asosi 10 marta katta idishga quysak, avvalgi bosimni berishi uchun yana necha litr suv quyish kerak?",
+      "text": "Asosining yuzi 1 cm² bo‘lgan silindrik idishdagi suv 10 kPa bosim bermoqda. Agar suvni asosi 10 marta katta idishga quysak, avvalgi bosimni berishi uchun yana necha litr suv quyish kerak?",
       "answers": ["9", "1,8", "0,45", "0,9"],
       "correct": 3
     },

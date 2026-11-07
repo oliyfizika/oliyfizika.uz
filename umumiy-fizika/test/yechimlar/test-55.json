@@ -107,8 +107,8 @@
   },
   {
    "steps": [
-    "$C=\\dfrac{2{,}5\\cdot8{,}85\\cdot10^{-12}\\cdot50\\cdot10^{-4}}{5\\cdot10^{-3}}\\approx2{,}21\\cdot10^{-11}$ F",
-    "$U=\\dfrac qC=\\dfrac{88{,}5\\cdot10^{-6}}{2{,}21\\cdot10^{-11}}=4\\cdot10^6\\ \\text{V}=4$ MV"
+    "$C=\\dfrac{\\varepsilon\\varepsilon_0S}{d}=\\dfrac{2{,}5\\cdot8{,}85\\cdot10^{-12}\\cdot50\\cdot10^{-4}}{5\\cdot10^{-3}}\\approx2{,}21\\cdot10^{-11}$ F",
+    "$U=\\dfrac qC=\\dfrac{88{,}5\\cdot10^{-9}}{2{,}21\\cdot10^{-11}}=4\\cdot10^3\\ \\text{V}=4$ kV"
    ]
   },
   {

@@ -320,7 +320,7 @@
   },
   {
    "steps": [
-    "$\\varepsilon=S\\dfrac{dB}{dt}=S\\cdot8000\\cdot2t=50\\cdot10^{-4}\\cdot16000\\cdot1=80$ V"
+    "$\\varepsilon=S\\dfrac{dB}{dt}=S\\cdot0{,}08\\cdot2t=50\\cdot10^{-4}\\cdot0{,}16\\cdot1=8\\cdot10^{-4}$ V $=0{,}8$ mV"
    ]
   },
   {

@@ -81,7 +81,7 @@
       "source": "70-mavzu.tex#0:6"
     },
     {
-      "text": "Kosinus qonuni bo‘yicha o‘zgarayotgan tokning $T/3$ vaqt momentidagi qiymati $2,5$ A bo‘lsa, tokning maksimal qiymati qanday (A)?",
+      "text": "Kosinus qonuni bo‘yicha o‘zgarayotgan tokning $T/3$ vaqt momentidagi oniy qiymatining moduli $2,5$ A bo‘lsa, tokning maksimal qiymati qanday (A)?",
       "answers": [
         "1,25.",
         "2,5.",
@@ -238,7 +238,7 @@
       "source": "70-mavzu.tex#0:19"
     },
     {
-      "text": "Elektr zanjiri qisqichlaridagi kuchlanish tebranishlari tenglamasi tuzilgan. Bunda kuchlanish tebranishlar amplitudasi $150$ V, davri $10^{-2}$ s, boshlang‘ich fazi nolga teng bo‘lib, $t=0$ momentda kuchlanish nolga teng deb hisoblang.",
+      "text": "Elektr zanjiri qisqichlaridagi kuchlanish tebranishlari tenglamasi tuzilgan. Bunda kuchlanish tebranishlar amplitudasi $150$ V, davri $10^{-2}$ s, boshlang‘ich fazi nolga teng bo‘lib, $t=0$ momentda kuchlanish nolga teng deb hisoblang. Kuchlanish tebranishlari tenglamasini ko‘rsating.",
       "answers": [
         "$u=150\\sin100\\pi t$.",
         "$u=10^{-2}\\sin150\\pi t$.",

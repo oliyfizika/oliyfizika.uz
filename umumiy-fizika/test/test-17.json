@@ -11,7 +11,7 @@
       "correct": 1
     },
     {
-      "text": "1 kg massali jism gorizontal tekislikda joylashgan. Jismga 2 N gorizontal kuch ta’sir qiladi. Ishqalanish koeffitsiyenti 0,3 bo‘lsa, ishqalanish kuchini aniqlang.",
+      "text": "1 kg massali jism gorizontal tekislikda joylashgan. Jismga 2 N gorizontal kuch ta’sir qiladi. Ishqalanish koeffitsiyenti 0,3 bo‘lsa, ishqalanish kuchini aniqlang (N). g = 10 m/s² deb oling.",
       "answers": ["1", "2", "3", "4"],
       "correct": 1
     },
@@ -31,7 +31,7 @@
       "correct": 2
     },
     {
-      "text": "2 kg massali jism gorizontal kuch ta’sirida gorizontal sirt bo‘ylab 2 m/s² tezlanish bilan harakatlanmoqda. Ishqalanish koeffitsiyenti 0,2 bo‘lsa, kuchning miqdorini toping.",
+      "text": "2 kg massali jism gorizontal kuch ta’sirida gorizontal sirt bo‘ylab 2 m/s² tezlanish bilan harakatlanmoqda. Ishqalanish koeffitsiyenti 0,2 bo‘lsa, kuchning miqdorini toping (N). g = 10 m/s² deb oling.",
       "answers": ["4", "6", "8", "10"],
       "correct": 2
     },
@@ -41,7 +41,7 @@
       "correct": 1
     },
     {
-      "text": "6 kg massali chanani doimiy tezlikda tortishda arqonning taranglik kuchini aniqlang. tgα = 0,75, μ = 0,3.",
+      "text": "6 kg massali chana gorizontal yo‘lda arqon yordamida o‘zgarmas tezlik bilan tortilmoqda. Arqon gorizontga α burchak ostida yo‘nalgan, tgα = 0,75; chana va yo‘l orasidagi ishqalanish koeffitsiyenti μ = 0,3. Arqonning taranglik kuchini aniqlang (N). g = 10 m/s² deb oling.",
       "answers": ["12", "15", "18", "24"],
       "correct": 2
     },
@@ -55,7 +55,6 @@
       "answers": ["2", "4", "6", "8"],
       "correct": 1
     },
-
     {
       "text": "Jism qiya tekislik bo‘ylab tekis sirpanmoqda. Agar ishqalanish koeffitsiyenti 0,2 bo‘lsa, tekislikning gorizontga qiyalik burchagi kotangensi nimaga teng?",
       "answers": ["5", "4", "2", "10"],
@@ -67,7 +66,7 @@
       "correct": 2
     },
     {
-      "text": "Jism balandligi 3 m va uzunligi 5 m bo‘lgan qiya tekislikdan sirpanib tushadi. μ = 0,5. Tezlanishni toping.",
+      "text": "Jism balandligi 3 m va uzunligi 5 m bo‘lgan qiya tekislikdan sirpanib tushadi. μ = 0,5. Tezlanishni toping (m/s²). g = 10 m/s² deb oling.",
       "answers": ["1", "2", "3", "4"],
       "correct": 1
     },
@@ -82,7 +81,7 @@
       "correct": 3
     },
     {
-      "text": "Balandligi 5 m va qiyalik burchagi 45° bo‘lgan qiya tekislikdan jism sirpanmoqda. μ = 0,19. Tushish oxiridagi tezlikni toping.",
+      "text": "Balandligi 5 m va qiyalik burchagi 45° bo‘lgan qiya tekislikdan jism sirpanmoqda. μ = 0,19. Tushish oxiridagi tezlikni toping (m/s). g = 10 m/s² deb oling.",
       "answers": ["7", "8", "9", "10"],
       "correct": 2
     },
@@ -127,7 +126,7 @@
       "correct": 2
     },
     {
-      "text": "Qiya tekislik ustidagi jism gorizontal yo‘nalishda og‘irlik kuchidan ikki marta kichik kuch bilan tortiladi. h = 3 m, l = 5 m, μ = 0,8. Jism qanday tezlanish bilan tusha boshlaydi?",
+      "text": "Qiya tekislik ustidagi jismga og‘irlik kuchidan ikki marta kichik gorizontal kuch ta’sir qiladi; kuch qiya tekislikdan tashqariga (qiyalik pastga qaragan tomonga) yo‘nalgan. h = 3 m, l = 5 m, μ = 0,8. Jism qanday tezlanish bilan pastga tusha boshlaydi (m/s²)? g = 10 m/s² deb oling.",
       "answers": ["4", "6", "8", "10"],
       "correct": 1
     }

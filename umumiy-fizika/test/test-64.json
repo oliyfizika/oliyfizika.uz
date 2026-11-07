@@ -146,11 +146,11 @@
       "source": "67-mavzu.tex#0:12"
     },
     {
-      "text": "Rasmda 4 juft tok unsurlari keltirilgan. Qaysi holda ular o‘zaro itarishadi?",
+      "text": "Variantlarda yonma-yon joylashgan ikkita parallel tok unsuridagi tok yo‘nalishlari strelkalar bilan ko‘rsatilgan. Qaysi holda ular o‘zaro itarishadi?",
       "answers": [
         "$\\uparrow \\uparrow$.",
         "$\\uparrow \\rightarrow$.",
-        "$\\rightarrow \\leftarrow$.",
+        "$\\rightarrow \\rightarrow$.",
         "$\\downarrow \\uparrow$."
       ],
       "correct": 3,
@@ -180,12 +180,12 @@
       "source": "67-mavzu.tex#0:15"
     },
     {
-      "text": "Keltirilgan ta’riflardan qaysi birida tok kuchi birligi (1 A) to‘g‘ri aniqlangan?",
+      "text": "Keltirilgan ta’riflardan qaysi biri tok kuchi birligining (1 A) toklarning o‘zaro ta’siriga asoslangan klassik ta’rifi?",
       "answers": [
         "induktivligi 1 H bo‘lgan g‘altak hosil qilayotgan oqim 1 Wb bo‘lgandagi tok.",
         "o‘tkazgich kesimidan 1 s da 1 C zaryad o‘tgandagi tok.",
         "qarshiligi 1 $\\Omega$ bo‘lgan o‘tkazgichdan o‘tgan tok.",
-        "vakuumda 1 m masofada parallel o‘tkazgichlar orasidagi $2 \\cdot 10^{-7}$ N kuchni vujudga keltiruvchi tok."
+        "vakuumda bir-biridan 1 m masofada joylashgan ikki cheksiz uzun ingichka parallel o‘tkazgichdan o‘tganda ularning har 1 m uzunligiga $2 \\cdot 10^{-7}$ N o‘zaro ta’sir kuchini vujudga keltiruvchi o‘zgarmas tok."
       ],
       "correct": 3,
       "source": "67-mavzu.tex#0:16"

@@ -248,7 +248,7 @@
       "source": "68-mavzu.tex#0:20"
     },
     {
-      "text": "$N=8$ ta o‘ramli g‘altakka tushayotgan magnit maydon induksiyasi $\\Delta t=0,5$ s ichida $B_1=0,8$ T dan $B_2=0,2$ T ga qadar kamaydi. G‘altak o‘ramining radiusi $r=10$ cm ga teng. Shu oraliqda g‘altakka ulangan $R=10~\\Omega$ qarshilikdan oqib o‘tgan induksion tokni aniqlang. ($r$ g‘altak simining qarshiligini e’tiborga olmang.) $\\pi=3$. (mA)",
+      "text": "$N=8$ ta o‘ramli g‘altakka tushayotgan magnit maydon induksiyasi $\\Delta t=0,5$ s ichida $B_1=0,8$ T dan $B_2=0,2$ T ga qadar kamaydi. G‘altak o‘ramining radiusi $r=10$ cm ga teng. Shu oraliqda g‘altakka ulangan $R=10~\\Omega$ qarshilikdan oqib o‘tgan induksion tokni aniqlang. (G‘altak simining qarshiligini e’tiborga olmang.) $\\pi=3$. (mA)",
       "answers": [
         "12,5.",
         "3,24.",
@@ -499,7 +499,7 @@
       "source": "68-mavzu.tex#0:41"
     },
     {
-      "text": "Quyidagi rasmda to‘g‘ri o‘tkazgich ikkita magnit qutblari orasida harakatlanmoqda. Agar o‘tkazgichda induksion tok hosil bo‘lsa, magnit qutblarini aniqlang.",
+      "text": "Quyidagi rasmda to‘g‘ri o‘tkazgich ikkita magnit qutblari orasida harakatlanmoqda. Agar o‘tkazgichda induksion tok hosil bo‘lsa, magnit qutblarini aniqlang. Rasmdagi ⊗ belgisi o‘tkazgichdagi induksion tok chizma tekisligiga (bizdan) yo‘nalganini bildiradi.",
       "answers": [
         "yuqori-N; past-S.",
         "yuqori-S; past-N.",
@@ -632,7 +632,7 @@
       "source": "68-mavzu.tex#0:52"
     },
     {
-      "text": "Yerning va bir-biridan izolyatsiyalangan temir yo‘l relslari millivoltmetr ulangan. Temir yo‘ldan $180$ km/h tezlik bilan poezd o‘tib ketayotganida, millivoltmetr nimani ko‘rsatadi (V)? Yer magnit maydonining induksiyasining vertikal tashkil etuvchisi $B=0,2\\cdot10^{-4}$ T, relslar orasidagi masofa $1$ m.",
+      "text": "Yerdan va bir-biridan izolyatsiyalangan temir yo‘l relslariga millivoltmetr ulangan. Temir yo‘ldan $180$ km/h tezlik bilan poezd o‘tib ketayotganida, millivoltmetr nimani ko‘rsatadi (V)? Yer magnit maydonining induksiyasining vertikal tashkil etuvchisi $B=0,2\\cdot10^{-4}$ T, relslar orasidagi masofa $1$ m.",
       "answers": [
         "0.",
         "$10^{-3}$.",
@@ -732,19 +732,19 @@
       "source": "68-mavzu.tex#0:60"
     },
     {
-      "text": "Induksiyasi $B=8000(1+t^2)$ (T) qonun bo‘yicha o‘zgaruvchi magnit maydonda yuzi $50$ cm$^2$ bo‘lgan kvadrat ramka induksiya chiziqlariga tik joylashgan. $t=1$ s vaqt momentida ramkada hosil bo‘lgan induksiya EYK nimaga teng?",
+      "text": "Induksiyasi $B=0{,}08(1+t^2)$ (T) qonun bo‘yicha o‘zgaruvchi magnit maydonda yuzi $50$ cm$^2$ bo‘lgan kvadrat ramka induksiya chiziqlariga tik joylashgan. $t=1$ s vaqt momentida ramkada hosil bo‘lgan induksiya EYK nimaga teng?",
       "answers": [
-        "30 V.",
-        "40 V.",
-        "80 V.",
-        "160 V.",
-        "8 V."
+        "0,3 mV.",
+        "0,4 mV.",
+        "0,8 mV.",
+        "1,6 mV.",
+        "8 mV."
       ],
       "correct": 2,
       "source": "68-mavzu.tex#0:61"
     },
     {
-      "text": "O‘lchov birliklarining xalqaro sistemasida magnit oqimining birligi qanday?",
+      "text": "O‘lchov birliklarining halqaro sistemasida magnit oqimining birligi qanday?",
       "answers": [
         "Kulon.",
         "Tesla.",
@@ -755,7 +755,7 @@
       "source": "67-mavzu.tex#3:1"
     },
     {
-      "text": "Radiusi $r=20$ cm bo‘lgan xalqa induksiyasi $B=0,3$ T bo‘lgan bir jinsli magnit maydonda joylashgan. Induksiya vektori xalqa normali bilan $\\alpha=37^\\circ$ burchak hosil qiladi. Xalqani kesib o‘tuvchi magnit oqimini toping (mWb). $\\pi=3$.",
+      "text": "Radiusi $r=20$ cm bo‘lgan halqa induksiyasi $B=0,3$ T bo‘lgan bir jinsli magnit maydonda joylashgan. Induksiya vektori halqa normali bilan $\\alpha=37^\\circ$ burchak hosil qiladi. Halqani kesib o‘tuvchi magnit oqimini toping (mWb). $\\pi=3$. cos 37° = 0,8.",
       "answers": [
         "3,14.",
         "10.",
@@ -834,7 +834,7 @@
       "source": "67-mavzu.tex#3:8"
     },
     {
-      "text": "Magnit induksiyasi 4 T bo‘lgan maydonda joylashgan 1 cm radiusli xalqani kesib o‘tayotgan magnit oqim 0,628 mWb bo‘lishi uchun magnit induksiya vektori bilan halqa tekisligi orasidagi burchak qanday bo‘lishi kerak?",
+      "text": "Magnit induksiyasi 4 T bo‘lgan maydonda joylashgan 1 cm radiusli halqani kesib o‘tayotgan magnit oqim 0,628 mWb bo‘lishi uchun magnit induksiya vektori bilan halqa tekisligi orasidagi burchak qanday bo‘lishi kerak?",
       "answers": [
         "$0^\\circ$.",
         "$30^\\circ$.",

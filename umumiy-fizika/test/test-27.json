@@ -6,13 +6,13 @@
   "unlockLesson": 28,
   "questions": [
     {
-      "text": "Tutash idishlar bitta tirsagida simob ustuni 16 cm. Ikkinchi tirsakdagi kerosin ustunining balandligi necha metr? Simobning zichligi 13,6 g/cm3, kerosinniki 0,8 g/cm3 ga teng.",
+      "text": "Tutash idishlar bitta tirsagida simob ustuni 16 cm. Ikkinchi tirsakdagi kerosin ustunining balandligi necha metr? Simobning zichligi 13,6 g/cm³, kerosinniki 0,8 g/cm³ ga teng.",
       "images": "../rasmlar27/rasm1.png",
       "answers": ["1,36", "2,72", "13,6", "16"],
       "correct": 1
     },
     {
-      "text": "Tutash idishlarning biriga suv, ikkinchisiga kerosin solingan. Suv ustunining balandligi 16 cm bo‘lsa, kerosin ustunining balandligini (cm) toping. Suvning zichligi 1 g/cm3, kerosinniki 0,8 g/cm3 ga teng.",
+      "text": "Tutash idishlarning biriga suv, ikkinchisiga kerosin solingan. Suv ustunining balandligi 16 cm bo‘lsa, kerosin ustunining balandligini (cm) toping. Suvning zichligi 1 g/cm³, kerosinniki 0,8 g/cm³ ga teng.",
       "answers": ["18", "16", "24", "20"],
       "correct": 3
     },
@@ -44,13 +44,13 @@
       "correct": 3
     },
     {
-      "text": "Tutash idishlarga simob, kerosin va x suyuqlik rasmdagi kabi quyilgan. Kerosin va x suyuqlikning yuqori sathlari bir xil balandlikda. x suyuqlikning zichligini toping (kg/m3). (Kerosin ustuni 30 cm, x suyuqlik ustuni 40 cm)",
+      "text": "Tutash idishlarga simob, kerosin va x suyuqlik rasmdagi kabi quyilgan. Kerosin va x suyuqlikning yuqori sathlari bir xil balandlikda. x suyuqlikning zichligini toping (kg/m³). (Kerosin ustuni 30 cm, x suyuqlik ustuni 40 cm)",
       "images": "../rasmlar27/rasm8.png",
       "answers": ["2500", "5300", "7800", "4000"],
       "correct": 3
     },
     {
-      "text": "Tutash idishlarga simob quyilgan. S1 = 10 cm2 yuzali tirsakka m = 204 g massali suv quyildi. S2 = 5 cm2 yuzali tirsakda simob qancha h balandlikka ko‘tariladi (cm)?",
+      "text": "Tutash idishlarga simob quyilgan. S1 = 10 cm² yuzali tirsakka m = 204 g massali suv quyildi. S2 = 5 cm² yuzali tirsakda simob qancha h balandlikka ko‘tariladi (cm)?",
       "images": "../rasmlar27/rasm9.png",
       "answers": ["2,5", "2", "1", "1,5"],
       "correct": 2
