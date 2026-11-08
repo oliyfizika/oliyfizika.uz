@@ -4,7 +4,7 @@
 export const STRINGS_MS = {
   ru: {
     "ms.title": "Национальный сертификат",
-    "ms.lead": "Интерактивные мок-тесты и подробные видео- и PDF-решения вариантов — в одном месте.",
+    "ms.lead": "Интерактивные мок-тесты и подробные видео/PDF-решения.",
     "ms.mocks": "Мок-тесты",
     "ms.solve.title": "Решать мок-тест",
     "ms.solve.text": "Интерактивные тесты в формате экзамена: в каждом по 45 вопросов, таймер на 180 минут, научный калькулятор и таблица формул.",
@@ -193,7 +193,7 @@ export const STRINGS_MS = {
   },
   en: {
     "ms.title": "National Certificate",
-    "ms.lead": "Interactive mock tests and detailed video and PDF solutions of the test variants, all in one place.",
+    "ms.lead": "Interactive mock tests and detailed video/PDF solutions.",
     "ms.mocks": "Mock tests",
     "ms.solve.title": "Take a mock test",
     "ms.solve.text": "Exam-format interactive tests: 45 questions each, a 180-minute timer, a scientific calculator and a formula sheet.",
