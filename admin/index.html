@@ -24,6 +24,10 @@
     <header class="of-admin-head">
       <div><h1>Admin dashboard</h1><p class="of-muted">OliyFizika.uz foydalanuvchilari, huquqlar va test natijalari.</p></div>
     </header>
+    <section class="of-card of-admin-panel" aria-labelledby="mySecTitle">
+      <div class="of-admin-panel__head"><h2 id="mySecTitle">Sizning bo‘limlaringiz</h2><span class="of-admin-note" data-my-kind></span></div>
+      <div class="of-admin-chips" data-my-sections></div>
+    </section>
     <section aria-labelledby="statsTitle">
       <h2 class="of-sr-only" id="statsTitle">Ko‘rsatkichlar</h2>
       <ul class="of-admin-stats" aria-busy="true" data-stats>
@@ -70,7 +74,7 @@
         <div class="of-admin-panel__head"><h2 id="recentUsersTitle">So‘nggi ro‘yxatdan o‘tganlar</h2><a class="of-admin-link" href="users.html">Barchasi</a></div>
         <div data-recent-users aria-busy="true"><span class="of-skeleton of-skeleton--text"></span></div>
       </section>
-      <section class="of-card of-admin-panel" aria-labelledby="recentResultsTitle">
+      <section class="of-card of-admin-panel" aria-labelledby="recentResultsTitle" data-recent-results-panel>
         <div class="of-admin-panel__head"><h2 id="recentResultsTitle">So‘nggi natijalar</h2><a class="of-admin-link" href="results.html">Barchasi</a></div>
         <div data-recent-results aria-busy="true"><span class="of-skeleton of-skeleton--text"></span></div>
       </section>

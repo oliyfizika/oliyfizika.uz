@@ -1,13 +1,16 @@
 // Admin: bitta foydalanuvchi (admin/user.html?id=UID).
-// Ko'rish: profil (telefon ko'rsatilmaydi). O'zgartirish: faqat role / fullAccess / mockTestsAccess —
-// har biri tasdiqlash oynasidan keyin, bitta maydonli updateDoc bilan (Rules: adminAccessUpdate).
-// Admin o'z role maydonini o'zgartira olmaydi (UI bloklaydi, Rules ham rad etadi).
+// Ko'rish: profil (telefon ko'rsatilmaydi). O'zgartirish: faqat fullAccess / mockTestsAccess / attestationAccess —
+// har biri tasdiqlash oynasidan keyin, bitta maydonli update + amallar jurnali (Rules: adminAccessUpdate,
+// 'kirish-huquqlari' bo'limi). Adminlik va bo'limlar — admins.html (faqat owner, Rules: ownerAdminUpdate).
 import { requireAdmin, $, $$, esc, fillIcons, fullNameOf, splitNames, fmtDate, formatDateTime, stateBox, errorText, num,
   confirmAction, updateAccess, ACCESS_LABEL, yesNo } from "./admin-common.js";
+import { adminPerms, adminKindLabel, sectionLabel } from "./permissions.js";
 import { toast } from "../ui/feedback.js";
 
 fillIcons($("#adminPage"));
-const { state, fb } = await requireAdmin();
+const { state, fb, perms } = await requireAdmin({ section: ["foydalanuvchilar", "kirish-huquqlari", "umumiy-fizika"] });
+const canFlags = perms.can("kirish-huquqlari");
+const canResults = perms.can("umumiy-fizika") || perms.can("foydalanuvchilar");
 const { doc, getDoc, getDocs, collection, query, where, limit } = fb.fsSdk;
 
 const uid = new URLSearchParams(location.search).get("id") || "";
@@ -27,7 +30,7 @@ function setMsg(text, type = "success") {
 }
 
 function value(field) {
-  return field === "role" ? data.role === "admin" : data[field] === true;
+  return data[field] === true;
 }
 
 function renderSwitches() {
@@ -36,8 +39,16 @@ function renderSwitches() {
     const on = value(field);
     btn.setAttribute("aria-checked", String(on));
     btn.querySelector("[data-switch-state]").textContent = on ? "Yoqilgan" : "O‘chirilgan";
-    btn.disabled = busy || (field === "role" && isSelf);
+    btn.disabled = busy || !canFlags;
   });
+  $("[data-flags-note]").hidden = canFlags;
+  const p = adminPerms(data);
+  $("[data-admin-kind]").textContent = !p.isAdmin ? "Admin emas. Adminni faqat owner tayinlaydi."
+    : p.owner || p.legacy ? adminKindLabel(data) : `Bo‘limli admin: ${p.sections.map(sectionLabel).join(", ") || "bo‘lim biriktirilmagan"}`;
+  const manage = $("[data-admin-manage]");
+  manage.hidden = !perms.owner || isSelf || p.owner;
+  manage.href = `admins.html?uid=${encodeURIComponent(uid)}`;
+  manage.textContent = p.isAdmin ? "Bo‘limlarni boshqarish" : "Admin tayinlash";
   $("[data-self-note]").hidden = !isSelf;
 }
 
@@ -53,7 +64,7 @@ function renderProfile() {
     ["Email", `<span class="of-admin-break">${esc(data.email || "—")}</span>`],
     ["Ro‘yxat sanasi", esc(fmtDate(data.createdAt))], ["Oxirgi faollik", esc(formatDateTime(data.lastActiveAt))],
     ["XP", esc(num(data.xp))], ["Daraja", esc(num(data.level))],
-    ["Role", data.role === "admin" ? "Admin" : "Foydalanuvchi"],
+    ["Role", esc(adminKindLabel(data))],
     ["Full Access", yesNo(data.fullAccess)], ["Mock Test Access", yesNo(data.mockTestsAccess)],
     ["Attestatsiya — Fizika", yesNo(data.attestationAccess)],
   ];
@@ -64,6 +75,12 @@ function renderProfile() {
 async function loadResults() {
   const box = $("[data-user-results]");
   $("[data-user-results-link]").href = `results.html?uid=${encodeURIComponent(uid)}`;
+  if (!canResults) {
+    $("[data-user-results-link]").hidden = true;
+    box.innerHTML = stateBox("empty", "Natijalar «Umumiy fizika» bo‘limi adminlariga ko‘rinadi.");
+    box.setAttribute("aria-busy", "false");
+    return;
+  }
   try {
     // where(uid ==) — indeks talab qilinmaydi; tartiblash brauzerda (bitta foydalanuvchi natijalari).
     const snap = await getDocs(query(collection(fb.db, "results"), where("uid", "==", uid), limit(200)));
@@ -101,14 +118,12 @@ async function loadXpGrants() {
 }
 
 async function toggle(field) {
-  if (busy || (field === "role" && isSelf)) return;
+  if (busy || !canFlags) return;
   const next = !value(field);
   const name = fullNameOf(data);
-  const text = field === "role"
-    ? (next ? `${name} administrator bo‘ladi: barcha foydalanuvchilar va natijalarni ko‘ra oladi hamda huquqlarni o‘zgartira oladi.` : `${name} administrator huquqidan mahrum bo‘ladi.`)
-    : `${name} uchun ${ACCESS_LABEL[field]} ${next ? "yoqiladi" : "o‘chiriladi"}.`;
+  const text = `${name} uchun ${ACCESS_LABEL[field]} ${next ? "yoqiladi" : "o‘chiriladi"}.`;
   const ok = await confirmAction({
-    title: field === "role" ? (next ? "Administrator qilasizmi?" : "Adminlikdan olasizmi?") : `${ACCESS_LABEL[field]}ni ${next ? "yoqmoqchimisiz" : "o‘chirmoqchimisiz"}?`,
+    title: `${ACCESS_LABEL[field]}ni ${next ? "yoqmoqchimisiz" : "o‘chirmoqchimisiz"}?`,
     text, confirmLabel: "Tasdiqlash", danger: !next,
   });
   if (!ok) return;
@@ -119,8 +134,8 @@ async function toggle(field) {
   btn.setAttribute("aria-busy", "true");
   setMsg("");
   try {
-    await updateAccess(fb, uid, field, field === "role" ? (next ? "admin" : "user") : next);
-    if (field === "role") data.role = next ? "admin" : "user"; else data[field] = next;
+    await updateAccess(fb, uid, field, next, { state, target: { name, email: data.email } });
+    data[field] = next;
     const done = `${ACCESS_LABEL[field]}: ${next ? "yoqildi" : "o‘chirildi"} (${name}).`;
     setMsg(done);
     toast(done);

@@ -216,3 +216,32 @@ html[data-sidebar="collapsed"].of-admin-mode .of-sidebar .of-admin-badge { displ
 @media (prefers-reduced-motion: reduce) {
   .of-admin-switch__track, .of-admin-switch__thumb { transition: none; }
 }
+
+/* ------------------------------------------------------------ Admin System 2.0: bo'limli adminlar */
+.of-admin-mode .of-sidebar [hidden], .of-admin-mode .of-bottom-nav [hidden] { display: none !important; }
+.of-admin-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.of-admin-chip {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: var(--of-radius-pill);
+  background: var(--of-primary-soft); color: var(--of-primary-text); font-size: var(--of-text-xs); font-weight: 650;
+}
+.of-admin-chip svg { width: 14px; height: 14px; flex: none; }
+.of-admin-chip--muted { background: var(--of-surface-sunken); color: var(--of-text-2); }
+.of-admin-sections { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin: 0; padding: 0; border: 0; }
+.of-admin-section-opt {
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; min-height: 44px; cursor: pointer;
+  border: 1px solid var(--of-border); border-radius: var(--of-radius-md, 12px); background: var(--of-surface);
+}
+.of-admin-section-opt:hover { border-color: var(--of-primary); }
+.of-admin-section-opt:has(input:checked) { border-color: var(--of-primary); background: var(--of-primary-soft); }
+.of-admin-section-opt:has(input:focus-visible) { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.of-admin-section-opt input { width: 18px; height: 18px; margin-top: 2px; flex: none; accent-color: var(--of-primary); }
+.of-admin-section-opt b { display: block; color: var(--of-text); font-weight: 700; }
+.of-admin-section-opt span { display: block; color: var(--of-text-2); font-size: var(--of-text-xs); line-height: 1.45; }
+.of-admin-editor { border-top: 1px solid var(--of-border); padding-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+.of-admin-editor__who { display: flex; flex-direction: column; gap: 2px; }
+.of-admin-editor__who b { color: var(--of-text); font-size: var(--of-text-lg); }
+.of-admin-editor__who span { color: var(--of-text-2); font-size: var(--of-text-sm); overflow-wrap: anywhere; }
+.of-admin-editor__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.of-admin-editor__actions .of-btn { min-height: 44px; }
+.of-admin-log li > div { gap: 3px; }
+.of-admin-log .of-admin-chip { align-self: flex-start; }

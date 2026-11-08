@@ -6,6 +6,7 @@ Aloqa: Telegram @oliyfizika_uz, email oliyfizika@gmail.com. Saytda hech qayerda 
 ## Texnologiya
 - Statik HTML + ES modullar (bundler, npm, build bosqichi yo‘q). Fayllar to‘g‘ridan-to‘g‘ri brauzerda ishlaydi.
 - Firebase Auth (email-link) + Firestore (progress, kirish bayroqlari `mockTestsAccess`, `attestationAccess`).
+- Admin panel: bo‘limli adminlar (owner `adminRole: "owner"`, admin `adminSections`), Rules’da `canManage(section)`. Batafsil: [`docs/admin/bolimli-adminlar.md`](docs/admin/bolimli-adminlar.md).
 - Dizayn: OliyFizika 2.0 (oq + ko‘k + yashil, sidebar qobiq `assets/js/shell/app-shell.js`, tokenlar `assets/css/app.css`).
   Ranglar faqat CSS tokenlari orqali (`--of-*`); yorug‘ va qorong‘i rejim ikkalasi ham ishlashi shart.
 

@@ -6,9 +6,11 @@
 //    markazi shundan "Bugungi attestatsiya testi tayyor!" yozuvini hosil qiladi (yangi infratuzilma yo'q).
 //  • ARCHIVE (published → archived): yashiriladi, o'chirilmaydi.
 //  • Import: firestore-import.json (savollar + testlar), Storage rasmlari, Firestore rasm muqobili.
-// Xavfsizlik — Rules'da (isAdmin). Bu sahifa faqat qulay interfeys.
+// Xavfsizlik — Rules'da (attAdmin = canManage('attestatsiya-fizika')). Bu sahifa faqat qulay interfeys.
+// Muhim amallar amallar jurnaliga yoziladi (audit-log.js, best-effort).
 // ==========================================================================
 import { requireAdmin, $, esc, fillIcons, stateBox, errorText, confirmAction } from "./admin-common.js";
+import { logAdminAction } from "./audit-log.js";
 import { toast } from "../ui/feedback.js";
 import { listAllTests, publishTest, archiveTest, unarchiveTest, listAttemptsForTest, uploadFigure, figureUrl } from "../attestatsiya-fizika/api.js";
 import { COL, SETTINGS_DOC, nextMidnightTashkent, formatTashkent, isMock, dayLabel, mockCompositionText } from "../attestatsiya-fizika/core.js";
@@ -18,8 +20,10 @@ import { toggleAttempts, changeVersion, exportExcel, resetAttempts, detailsRow }
 import { finalizeOverdueList } from "../attestatsiya-fizika/finalize.js";
 
 fillIcons($("#adminPage"));
-const { fb } = await requireAdmin();
+const { state: adminState, fb } = await requireAdmin({ section: "attestatsiya-fizika" });
 const { doc, getDoc, setDoc, writeBatch, updateDoc } = fb.fsSdk;
+const audit = (action, summary, details = {}) =>
+  logAdminAction(fb, adminState, { action: `attestatsiya.${action}`, section: "attestatsiya-fizika", summary, details });
 
 const body = $("[data-body]");
 const note = $("[data-note]");
@@ -104,6 +108,7 @@ body.addEventListener("click", async (e) => {
       await publishTest(t, solAt);
       document.dispatchEvent(new CustomEvent("of:attestation-published", { detail: { testId: t.id, dayNumber: t.dayNumber, notification: t.notification } }));
       toast(`${dayLabel(t)} e’lon qilindi.`);
+      audit("publish", `${dayLabel(t)} e’lon qilindi`, { testId: t.id });
       await load();
     } catch (err) {
       pub.classList.remove("is-loading");
@@ -121,6 +126,7 @@ body.addEventListener("click", async (e) => {
     try {
       await archiveTest(t);
       toast(`${dayLabel(t)} arxivlandi.`);
+      audit("archive", `${dayLabel(t)} arxivlandi`, { testId: t.id });
       await load();
     } catch (err) {
       toast(errorText(err, "Arxivlab bo‘lmadi."));
@@ -142,6 +148,7 @@ body.addEventListener("click", async (e) => {
     try {
       await unarchiveTest(t);
       toast(`${dayLabel(t)} arxivdan chiqarildi va draft holatiga qaytarildi.`);
+      audit("unarchive", `${dayLabel(t)} arxivdan chiqarildi (draft)`, { testId: t.id });
       await load();
     } catch (err) {
       unarc.classList.remove("is-loading");
@@ -262,6 +269,7 @@ $("[data-import]").addEventListener("click", async (e) => {
     }
     info.textContent = `Tayyor: ${ops.length} hujjat yozildi.`;
     toast("Import yakunlandi.");
+    audit("import", "Savollar va testlar import qilindi");
     await load();
   } catch (err) {
     info.textContent = errorText(err, "Import xatosi.");
@@ -376,6 +384,7 @@ $("[data-mock-import]").addEventListener("click", async (e) => {
     const { written, skipped } = await writeMockBundle(mockBundle, existing, (m) => { info.textContent = m; });
     info.textContent = `Tayyor: ${mockBundle.testId} draft sifatida yozildi (${written} ta yozildi, ${skipped} ta mavjud). Jadvaldan PUBLISH qiling.`;
     toast("Mock test import qilindi.");
+    audit("mock-import", "Mock test import qilindi");
     await load();
   } catch (err) {
     info.textContent = errorText(err, "Mock import xatosi.") + " Qayta urinsangiz — faqat yetishmayotgan hujjatlar yoziladi.";
@@ -539,6 +548,7 @@ $("[data-gen-write]").addEventListener("click", async (e) => {
     for (const b of genBundles) await writeMockBundle(b, tests.find((x) => x.id === b.testId), (m) => { info.textContent = m; });
     info.textContent = `Tayyor: ${genBundles.map((b) => b.testId).join(", ")} draft sifatida yozildi. Tekshirib, jadvaldan PUBLISH qiling.`;
     toast("Mock testlar yozildi.");
+    audit("mock-generate", "Generator: mock testlar yozildi");
     genBundles = null;
     btn.disabled = true;
     await load();
@@ -659,6 +669,7 @@ $("[data-backend]").addEventListener("click", async () => {
   if (!ok) return;
   try {
     await updateDoc(doc(fb.db, COL.settings, SETTINGS_DOC), { figureBackend: next });
+    audit("figure-backend", `Rasm manbai: ${next}`, { figureBackend: next });
     await loadSettings();
     const saved = settings.figureBackend || "storage";
     toast(saved === next ? `Saqlandi: rasm manbai — ${saved}` : `Diqqat: serverda hali «${saved}»`);
@@ -696,6 +707,7 @@ $("[data-access-mode]").addEventListener("click", async () => {
   if (!ok) return;
   try {
     await updateDoc(doc(fb.db, COL.settings, SETTINGS_DOC), { accessMode: next });
+    audit("access-mode", `Kirish rejimi: ${next}`, { accessMode: next });
     await loadSettings();
     toast(settings.accessMode === next ? `Kirish rejimi: ${next}` : `Diqqat: serverda hali «${settings.accessMode}»`);
   } catch (err) {
@@ -831,6 +843,7 @@ $("[data-mig-apply]").addEventListener("click", async (e) => {
     }
     info.textContent = `Tayyor: ${done} amal, o‘tkazib yuborildi ${skipped}.`;
     toast("Migratsiya qo‘llandi.");
+    audit("migration", "Migratsiya qo‘llandi");
     await load();
   } catch (err) {
     info.textContent = `To‘xtadi: ${done}/${mig.ops.length} — ${errorText(err, "Migratsiya xatosi.")} Qayta ishga tushirish xavfsiz.`;

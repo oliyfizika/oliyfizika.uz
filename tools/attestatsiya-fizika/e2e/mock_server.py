@@ -45,6 +45,9 @@ class NotFound(Exception):
 
 
 # ------------------------------------------------------------------ wire <-> python
+DELETE = object()  # deleteField() sentinel
+
+
 def dec(v, t):
     if isinstance(v, dict):
         if "__server" in v:
@@ -53,7 +56,7 @@ def dec(v, t):
             s, n = v["__ts"]
             return dt.datetime.fromtimestamp(s, UTC) + dt.timedelta(microseconds=n // 1000)
         if "__delete" in v:
-            return R.SERVER_TIME  # sentinel (field delete) — kerak bo'lsa
+            return DELETE  # deleteField() — apply_update maydonni olib tashlaydi
         return {k: dec(x, t) for k, x in v.items()}
     if isinstance(v, list):
         return [dec(x, t) for x in v]
@@ -96,7 +99,10 @@ def apply_update(doc, data):
         cur = out
         for p in parts[:-1]:
             cur = cur.setdefault(p, {})
-        cur[parts[-1]] = v
+        if v is DELETE:
+            cur.pop(parts[-1], None)
+        else:
+            cur[parts[-1]] = v
     return out
 
 

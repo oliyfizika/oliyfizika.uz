@@ -2,15 +2,17 @@
 // Qo'shimcha Firestore o'qishi yo'q: ma'lumot session.js profilidan.
 import { requireAdmin, $, $$, esc, fillIcons, fullNameOf, fmtDate } from "./admin-common.js";
 import { getThemePref, setThemePref } from "../core/prefs.js";
+import { adminKindLabel, sectionLabel } from "./permissions.js";
 
 fillIcons($("#adminPage"));
-const { state } = await requireAdmin();
+const { state, perms } = await requireAdmin();
 const p = state.profile || {};
 $("[data-me]").innerHTML = [
   ["Ism", esc(fullNameOf(p))],
   ["Email", `<span class="of-admin-break">${esc(state.user.email || p.email || "—")}</span>`],
   ["UID", `<code class="of-admin-break">${esc(state.user.uid)}</code>`],
-  ["Role", "Administrator"],
+  ["Role", esc(adminKindLabel(p))],
+  ["Bo‘limlar", esc(perms.sections.map(sectionLabel).join(", ") || "biriktirilmagan")],
   ["Ro‘yxat sanasi", esc(fmtDate(p.createdAt))],
 ].map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
 

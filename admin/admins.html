@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: adminlarni tayinlash, bo‘limlar va amallar jurnali">
+<title>Adminlar | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/admins.js"></script>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Adminlar">
+<!-- Admin System 2.0 — faqat owner. Frontend gate xavfsizlik EMAS: himoya firestore.rules (isSiteOwner, ownerAdminUpdate) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div><h1>Adminlar va bo‘limlar</h1><p class="of-muted">Yangi admin tayinlang va u qaysi bo‘limlarni boshqarishini belgilang. Bu sahifa faqat sayt egasi (owner) uchun.</p></div>
+    </header>
+
+    <section class="of-card of-admin-panel" aria-labelledby="newTitle">
+      <div class="of-admin-panel__head"><h2 id="newTitle">Admin tayinlash yoki bo‘limlarini o‘zgartirish</h2></div>
+      <form class="of-admin-toolbar" data-find-form novalidate>
+        <div class="of-field of-admin-toolbar__search">
+          <label class="of-label" for="findEmail">Foydalanuvchi emaili</label>
+          <input class="of-input" id="findEmail" type="email" autocomplete="off" spellcheck="false" placeholder="email@example.com" aria-describedby="findEmail-err">
+          <p class="of-field-error" id="findEmail-err" role="alert"></p>
+        </div>
+        <div class="of-admin-toolbar__actions"><button type="submit" class="of-btn of-btn--primary">Topish</button></div>
+      </form>
+      <p class="of-admin-note">Foydalanuvchi avval saytda ro‘yxatdan o‘tgan bo‘lishi kerak.</p>
+      <div data-find-results></div>
+      <div class="of-admin-editor" data-editor hidden>
+        <div class="of-admin-editor__who"><b data-editor-name>—</b><span data-editor-sub>—</span></div>
+        <fieldset class="of-admin-sections" data-editor-sections>
+          <legend class="of-sr-only">Boshqarishi mumkin bo‘lgan bo‘limlar</legend>
+        </fieldset>
+        <p class="of-admin-note">Bo‘lim belgilanmasa, admin faqat Dashboard va Sozlamalarni ko‘radi. Admin tayinlash, adminlikdan olish va amallar jurnali — faqat owner’da qoladi.</p>
+        <div class="of-admin-editor__actions">
+          <button type="button" class="of-btn of-btn--primary" data-editor-save>Saqlash</button>
+          <button type="button" class="of-btn of-btn--ghost" data-editor-cancel>Bekor qilish</button>
+          <button type="button" class="of-btn of-btn--danger" data-editor-remove hidden>Adminlikdan olish</button>
+        </div>
+      </div>
+      <div class="of-alert" data-msg role="status" hidden></div>
+    </section>
+
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="listTitle">
+      <div class="of-admin-panel__head of-admin-panel__head--pad"><h2 id="listTitle">Joriy adminlar</h2><span class="of-admin-note" data-admins-count></span></div>
+      <ul class="of-admin-list" data-admins-list aria-busy="true"></ul>
+      <div data-admins-state></div>
+    </section>
+
+    <section class="of-card of-admin-panel" aria-labelledby="logTitle">
+      <div class="of-admin-panel__head"><h2 id="logTitle">Amallar jurnali</h2><span class="of-admin-note">Kim, qachon, nima qildi (o‘zgarmas)</span></div>
+      <ul class="of-admin-mini of-admin-log" data-log aria-busy="true"></ul>
+      <div data-log-state></div>
+      <div class="of-admin-more"><button type="button" class="of-btn of-btn--ghost" data-log-more hidden>Ko‘proq yuklash</button></div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

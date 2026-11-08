@@ -1,13 +1,21 @@
 rules_version = '2';
 
 // ============================================================================
-// OliyFizika.uz — Firestore Security Rules (Phase 19 — Admin System 1.0 + security; Phase 19C — XP integrity)
+// OliyFizika.uz — Firestore Security Rules (Phase 19 — Admin System 1.0 + security; Phase 19C — XP integrity;
+//                                             Admin System 2.0 — bo'limli adminlar + amallar jurnali)
 //
 // DIQQAT: bu fayl repositoryda saqlanadi, avtomatik DEPLOY QILINMAYDI.
 // Production'ga faqat loyiha egasi tekshirib, qo'lda qo'yadi (Firebase Console → Firestore → Rules
 // yoki `firebase deploy --only firestore:rules`).
 //
 // Model:
+//   ADMINLAR (Admin System 2.0):
+//     • role == 'admin'               — har qanday administrator (eski kod va sahifalar shu maydonga tayanadi).
+//     • adminRole == 'owner'          — sayt egasi: hamma bo'lim + adminlarni tayinlash/olib tashlash + amallar jurnali.
+//                                       FAQAT Firebase Console'da qo'yiladi (klient hech qachon yozolmaydi).
+//     • adminSections: [..]           — oddiy adminga owner biriktirgan bo'limlar (ADMIN_SECTIONS ro'yxatidan).
+//                                       Maydon YO'Q bo'lsa — eski (to'liq) admin: barcha bo'limlar (hech narsa buzilmasin).
+//                                       Bo'sh ro'yxat [] — hech qaysi bo'lim (faqat Dashboard/Sozlamalar).
 //   users/{uid}
 //     • egasi o'qiydi; admin hammasini o'qiydi/sanaydi.
 //     • egasi yaratadi — faqat standart qiymatlar bilan (xp 0, level 1, fullAccess false, role/mockTestsAccess YO'Q).
@@ -15,19 +23,21 @@ rules_version = '2';
 //       (+ eski hisoblarda YO'Q maydonlarni standart qiymat bilan to'ldirish — ensureUserProfile);
 //       XP: faqat users/{uid}/xpGrants/L{lessonId} grant hujjati bilan BIR atomik yozuvda (Phase 19C):
 //       bitta mavzu — bitta grant (deterministik ID, o'zgarmas) — XP bir martadan ortiq berilmaydi.
-//     • admin yangilaydi — faqat role ('user'|'admin'), fullAccess, mockTestsAccess (bool).
-//       Admin o'z role maydonini o'zgartira olmaydi (oxirgi adminni tasodifan yo'qotmaslik).
-//     • o'chirish — faqat admin.
+//     • 'kirish-huquqlari' bo'limi admini — faqat fullAccess, mockTestsAccess, attestationAccess (bool).
+//     • owner — role ('user'|'admin') + adminSections (+ adminUpdatedAt/By); o'zini va boshqa owner'ni o'zgartirmaydi.
+//     • o'chirish — faqat owner.
 //   results/{id}
 //     • faqat o'z uid'i bilan yaratiladi; maydonlar/turlar/percent–score–passed mosligi tekshiriladi.
-//     • egasi va admin o'qiydi; update — hech kim; delete — faqat admin.
+//     • egasi va 'umumiy-fizika' / 'foydalanuvchilar' admini o'qiydi; update — hech kim; delete — 'umumiy-fizika' admini.
 //   users/{uid}/xpGrants/L{lessonId}   (Phase 19C — XP audit + idempotentlik)
 //     • faqat egasi yaratadi, users.xp/level/lastXpGrant yangilanishi bilan BIRGA (batch/tranzaksiya);
 //       natija (results/{resultId}) shu foydalanuvchiniki, shu mavzu, passed va foizi XP'ga mos bo'lishi shart.
 //     • egasi va admin o'qiydi; update/delete — hech kim (immutable).
 //   mockTestAttempts/{uid}__{attemptId}   (Milliy sertifikat mock urinishlari — admin statistikasi)
-//     • egasi yaratadi (o'z uid'i, xulosa maydonlari tekshiriladi); egasi o'z yozuvini, admin hammasini o'qiydi;
-//       update — hech kim; delete — faqat admin.
+//     • egasi yaratadi (o'z uid'i, xulosa maydonlari tekshiriladi); egasi o'z yozuvini, 'milliy-sertifikat' admini
+//       hammasini o'qiydi; update — hech kim; delete — 'milliy-sertifikat' admini.
+//   adminAuditLog/{id}   (amallar jurnali)
+//     • har qanday admin faqat O'Z nomidan, server vaqti bilan yozadi; o'qish — faqat owner; update/delete — hech kim.
 //   users/{uid}/gameSets/{setId}   (interaktiv o'yinlar — foydalanuvchi to'plamlari)
 //     • faqat egasi o'qiydi/yozadi/o'chiradi; maydonlar va hajm tekshiriladi.
 //   Qolgan barcha yo'llar — yopiq (default deny).
@@ -53,11 +63,36 @@ service cloud.firestore {
       return /databases/$(database)/documents/users/$(uid);
     }
 
-    // Admin: users/{auth.uid}.role == 'admin'. `role` maydonini faqat admin yozishi mumkin (pastda).
+    // Admin: users/{auth.uid}.role == 'admin' (har qanday administrator). `role` maydonini faqat owner yozadi (pastda).
     function isAdmin() {
       return signedIn()
         && exists(userPath(request.auth.uid))
         && get(userPath(request.auth.uid)).data.get('role', 'user') == 'admin';
+    }
+
+    // ---------------------------------------------------------------- bo'limli adminlar (Admin System 2.0)
+    // Bo'limlar ro'yxati assets/js/admin/permissions.js dagi ADMIN_SECTIONS bilan AYNAN bir xil bo'lishi shart.
+    function adminSectionIds() {
+      return ['umumiy-fizika', 'milliy-sertifikat', 'attestatsiya-fizika', 'foydalanuvchilar', 'kirish-huquqlari',
+              'simulyatsiyalar', 'olimpiada'];
+    }
+
+    function myProfile() {
+      return get(userPath(request.auth.uid)).data;
+    }
+
+    // Sayt egasi: role == 'admin' va adminRole == 'owner' (adminRole faqat Firebase Console'da qo'yiladi).
+    function isSiteOwner() {
+      return isAdmin() && myProfile().get('adminRole', '') == 'owner';
+    }
+
+    // Bo'limni boshqarish: owner | eski admin (adminSections yo'q — to'liq) | adminSections ichida bo'lim bor.
+    function canManage(section) {
+      return isAdmin() && (
+        myProfile().get('adminRole', '') == 'owner'
+        || !('adminSections' in myProfile())
+        || (myProfile().adminSections is list && section in myProfile().adminSections)
+      );
     }
 
     // ---------------------------------------------------------------- users
@@ -177,15 +212,34 @@ service cloud.firestore {
         && g.createdAt == request.time;
     }
 
-    // Admin: faqat kirish huquqlari. O'z role maydonini o'zgartira olmaydi.
+    // 'kirish-huquqlari' bo'limi admini (va owner): faqat pullik kontent bayroqlari (bool). role/adminSections — YO'Q.
     function adminAccessUpdate(userId) {
-      return isAdmin()
-        && changedKeys().hasOnly(['role', 'fullAccess', 'mockTestsAccess', 'attestationAccess'])
-        && (!('role' in changedKeys())
-            || (request.resource.data.role in ['user', 'admin'] && userId != request.auth.uid))
+      return canManage('kirish-huquqlari')
+        && changedKeys().hasOnly(['fullAccess', 'mockTestsAccess', 'attestationAccess'])
         && (!('fullAccess' in changedKeys()) || request.resource.data.fullAccess is bool)
         && (!('mockTestsAccess' in changedKeys()) || request.resource.data.mockTestsAccess is bool)
         && (!('attestationAccess' in changedKeys()) || request.resource.data.attestationAccess is bool);
+    }
+
+    // Owner: admin tayinlash / bo'limlarini o'zgartirish / adminlikdan olish.
+    //   • o'zini va boshqa owner'ni o'zgartira olmaydi (adminRole faqat Console'da);
+    //   • admin bo'lsa — adminSections ro'yxat (faqat ma'lum bo'limlar, takrorsiz hajm); oddiy foydalanuvchida adminSections yo'q;
+    //   • adminUpdatedAt == server vaqti, adminUpdatedBy == owner uid.
+    function ownerAdminUpdate(userId) {
+      let n = request.resource.data;
+      return isSiteOwner()
+        && userId != request.auth.uid
+        && resource.data.get('adminRole', '') != 'owner'
+        && !('adminRole' in n)
+        && changedKeys().hasOnly(['role', 'adminSections', 'adminUpdatedAt', 'adminUpdatedBy'])
+        && n.get('role', 'user') in ['user', 'admin']
+        && (n.get('role', 'user') == 'admin'
+              ? (n.get('adminSections', null) is list
+                 && n.adminSections.size() <= adminSectionIds().size()
+                 && adminSectionIds().hasAll(n.adminSections))
+              : !('adminSections' in n))
+        && n.adminUpdatedAt == request.time
+        && n.adminUpdatedBy == request.auth.uid;
     }
 
     match /users/{userId} {
@@ -193,8 +247,9 @@ service cloud.firestore {
       allow list: if isAdmin();
       allow create: if isOwner(userId) && validNewProfile(request.resource.data);
       allow update: if (isOwner(userId) && (ownerProfileUpdate() || ownerXpAward(userId)))
-                    || adminAccessUpdate(userId);
-      allow delete: if isAdmin();
+                    || adminAccessUpdate(userId)
+                    || ownerAdminUpdate(userId);
+      allow delete: if isSiteOwner();
 
       // XP mukofotlari jurnali (immutable): egasi o'qiydi/yaratadi, admin o'qiydi.
       match /xpGrants/{grantId} {
@@ -253,9 +308,10 @@ service cloud.firestore {
 
     match /results/{resultId} {
       allow create: if signedIn() && validResult(request.resource.data);
-      allow read: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow read: if canManage('umumiy-fizika') || canManage('foydalanuvchilar')
+                  || (signedIn() && resource.data.uid == request.auth.uid);
       allow update: if false;
-      allow delete: if isAdmin();
+      allow delete: if canManage('umumiy-fizika');
     }
 
     // ---------------------------------------------------------------- mockTestAttempts
@@ -300,10 +356,35 @@ service cloud.firestore {
 
     match /mockTestAttempts/{docId} {
       allow create: if signedIn() && validMockAttempt(request.resource.data, docId);
-      allow get: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
-      allow list: if isAdmin();
+      allow get: if canManage('milliy-sertifikat') || (signedIn() && resource.data.uid == request.auth.uid);
+      allow list: if canManage('milliy-sertifikat');
       allow update: if false;
-      allow delete: if isAdmin();
+      allow delete: if canManage('milliy-sertifikat');
+    }
+
+    // ---------------------------------------------------------------- adminAuditLog (amallar jurnali)
+    // Kod: assets/js/admin/audit-log.js. Har qanday admin faqat o'z nomidan (actorUid) va server vaqti bilan yozadi.
+    // O'qish — faqat owner. O'zgartirish/o'chirish — hech kim (jurnal o'zgarmas).
+    function validAudit(d) {
+      return d.keys().hasOnly(['actorUid', 'actorEmail', 'actorName', 'action', 'section', 'targetUid', 'targetLabel',
+                               'summary', 'details', 'at'])
+        && d.keys().hasAll(['actorUid', 'action', 'section', 'summary', 'at'])
+        && d.actorUid == request.auth.uid
+        && d.at == request.time
+        && d.action is string && d.action.matches('[a-z][a-z0-9._-]{1,60}')
+        && (d.section in adminSectionIds() || d.section in ['adminlar', 'umumiy'])
+        && okString(d, 'summary', 500)
+        && (!('actorEmail' in d) || d.actorEmail == authEmail())
+        && okString(d, 'actorName', 200)
+        && okString(d, 'targetUid', 128)
+        && okString(d, 'targetLabel', 300)
+        && (!('details' in d) || (d.details is map && d.details.size() <= 20));
+    }
+
+    match /adminAuditLog/{logId} {
+      allow create: if isAdmin() && validAudit(request.resource.data);
+      allow read: if isSiteOwner();
+      allow update, delete: if false;
     }
 
     // >>> attestation-physics (generated — tools/attestatsiya-fizika/rules/build_rules.py)
@@ -311,6 +392,7 @@ service cloud.firestore {
     // ============================================================================
     // ATTESTATSIYA → FIZIKA (Attestatsiya 2-bosqich) — FAQAT yangi kolleksiyalar.
     // Yuqoridagi users / xpGrants / results qoidalari O'ZGARTIRILMAGAN. Pedagogika Firestore ishlatmaydi.
+    // Admin amallari: attAdmin() = canManage('attestatsiya-fizika') — faqat shu bo'lim biriktirilgan admin (yoki owner).
     // Generator: tools/attestatsiya-fizika/rules/build_rules.py  ·  Hujjat: docs/attestatsiya-fizika/08_security_report.md
     //
     //   attestationPhysicsSettings/config                      accessMode open|paid, timezone, limitlar
@@ -327,6 +409,11 @@ service cloud.firestore {
     // OLDIN (submit) qulflanadi, kalit faqat submit'dan keyin o'qiladi — oracle hujumi yo'q.
     // Hech narsa o'chirilmaydi: barcha delete — false.
     // ============================================================================
+
+    // Bo'limli adminlar: Attestatsiya — Fizika bo'limi biriktirilgan admin (owner va eski to'liq adminlar ham).
+    function attAdmin() {
+      return canManage('attestatsiya-fizika');
+    }
 
     function attSettingsPath() {
       return /databases/$(database)/documents/attestationPhysicsSettings/config;
@@ -348,7 +435,7 @@ service cloud.firestore {
     // (attestationAccess ni foydalanuvchi o'zi yoza olmaydi — users qoidalaridagi hasOnly ro'yxatlarida yo'q).
     function attCanAccess() {
       return signedIn() && (
-        isAdmin()
+        attAdmin()
         || get(attSettingsPath()).data.get('accessMode', 'closed') == 'open'
         || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true
       );
@@ -374,7 +461,7 @@ service cloud.firestore {
     }
 
     function attPaidAccess() {
-      return signedIn() && (isAdmin() || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true);
+      return signedIn() && (attAdmin() || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true);
     }
 
     function attDayOpen(t) {
@@ -412,7 +499,7 @@ service cloud.firestore {
 
     match /attestationPhysicsSettings/{docId} {
       allow read: if signedIn();
-      allow create, update: if isAdmin() && docId == 'config' && attValidSettings(request.resource.data);
+      allow create, update: if attAdmin() && docId == 'config' && attValidSettings(request.resource.data);
       allow delete: if false;
     }
 
@@ -424,15 +511,15 @@ service cloud.firestore {
     }
 
     match /attestationPhysicsQuestions/{qid} {
-      allow get: if isAdmin() || (attVisible(attTest(resource.data.testId))
+      allow get: if attAdmin() || (attVisible(attTest(resource.data.testId))
         && attContentAccess(resource.data.testId, attTest(resource.data.testId)));
-      allow list: if isAdmin();
-      allow create, update: if isAdmin() && request.resource.data.id == qid && attNoSecrets(request.resource.data);
+      allow list: if attAdmin();
+      allow create, update: if attAdmin() && request.resource.data.id == qid && attNoSecrets(request.resource.data);
       allow delete: if false;
 
       match /private/{docId} {
-        allow read: if isAdmin();
-        allow create, update: if isAdmin() && docId == 'answer' && request.resource.data.id == qid;
+        allow read: if attAdmin();
+        allow create, update: if attAdmin() && docId == 'answer' && request.resource.data.id == qid;
         allow delete: if false;
       }
     }
@@ -520,33 +607,33 @@ service cloud.firestore {
     match /attestationPhysicsDailyTests/{testId} {
       // Meta (kun, bo'lim, mavzular, savollar soni, sanalar — javob/kontent yo'q): e'lon qilingan kun har bir kirgan
       // foydalanuvchiga ko'rinadi (yopiq 4+ kunlar ham to'liq karta sifatida). Kontent va start — attDayOpen.
-      allow get: if isAdmin() || (signedIn() && attVisible(resource.data));
+      allow get: if attAdmin() || (signedIn() && attVisible(resource.data));
       // Foydalanuvchi so'rovi: where('published', '==', true) bo'lishi shart (draft hech qachon qaytmaydi)
-      allow list: if isAdmin() || (signedIn() && resource.data.published == true);
-      allow create: if isAdmin() && attValidTestShape(request.resource.data, testId)
+      allow list: if attAdmin() || (signedIn() && resource.data.published == true);
+      allow create: if attAdmin() && attValidTestShape(request.resource.data, testId)
         && request.resource.data.status == 'draft' && request.resource.data.published == false
         && request.resource.data.publishedAt == null && request.resource.data.solutionAvailableAt == null;
-      allow update: if isAdmin() && attValidTestUpdate(testId);
+      allow update: if attAdmin() && attValidTestUpdate(testId);
       allow delete: if false;
 
       match /versions/{v} {
-        allow get: if isAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId
+        allow get: if attAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
-        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
+        allow update: if attAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
 
       match /keys/{v} {
-        allow get: if isAdmin() || attKeyReadable(testId, v);
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId
+        allow get: if attAdmin() || attKeyReadable(testId, v);
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v
           && request.resource.data.answers is map
           && request.resource.data.answers.size() == request.resource.data.scorableCount;
-        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
+        allow update: if attAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
@@ -554,26 +641,26 @@ service cloud.firestore {
       // Rasmlar (Firestore muqobili, settings.figureBackend == 'firestore'): savol rasmlari published bo'lganda,
       // yechim rasmlari — o'z urinishi yakunlangach (kunlik va mock). O'zgarmas.
       match /figures/{figId} {
-        allow get: if isAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
+        allow get: if attAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutionFigures/{figId} {
-        allow get: if isAdmin() || (attVisible(attTest(testId))
+        allow get: if attAdmin() || (attVisible(attTest(testId))
           && attOwnFinished(testId));
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutions/{v} {
-        allow get: if isAdmin() || attSolutionReadable(testId, v);
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId
+        allow get: if attAdmin() || attSolutionReadable(testId, v);
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
-        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
+        allow update: if attAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
@@ -687,7 +774,7 @@ service cloud.firestore {
       let o = resource.data;
       let n = request.resource.data;
       let t = attTest(o.testId);
-      return signedIn() && (o.userId == request.auth.uid || isAdmin())
+      return signedIn() && (o.userId == request.auth.uid || attAdmin())
         && o.status == 'in_progress' && o.kind == 'official' && o.testVersion is int
         && t.solutionAvailableAt is timestamp && request.time >= attAutoFrom(o, t)
         && n.diff(o).affectedKeys().hasOnly(['status', 'completedAt', 'answers', 'autoFinalized'])
@@ -709,7 +796,7 @@ service cloud.firestore {
       let d = o.answers.diff(k.answers);
       let s = k.scorableCount;
       let c = n.correctAnswers;
-      return signedIn() && (o.userId == request.auth.uid || isAdmin())
+      return signedIn() && (o.userId == request.auth.uid || attAdmin())
         && o.status == 'submitted'
         && n.diff(o).affectedKeys().hasOnly(['status', 'gradedAt', 'timeSpentSeconds', 'totalQuestions',
                                              'scorableQuestions', 'correctAnswers', 'wrongAnswers', 'unanswered',
@@ -731,8 +818,8 @@ service cloud.firestore {
 
     match /attestationPhysicsAttempts/{attemptId} {
       // get: ID egasi bo'yicha (hujjat hali yo'q bo'lsa ham "yo'q" javobi qaytadi, permission xatosi emas)
-      allow get: if isAdmin() || (signedIn() && attemptId.split('__')[0] == request.auth.uid);
-      allow list: if isAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
+      allow get: if attAdmin() || (signedIn() && attemptId.split('__')[0] == request.auth.uid);
+      allow list: if attAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
       allow create: if attValidStart(attemptId);
       allow update: if attValidSave() || attValidSubmit() || attValidAutoSubmit() || attValidGrade();
       allow delete: if false;

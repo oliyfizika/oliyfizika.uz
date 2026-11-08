@@ -2,6 +2,7 @@
     // ============================================================================
     // ATTESTATSIYA → FIZIKA (Attestatsiya 2-bosqich) — FAQAT yangi kolleksiyalar.
     // Yuqoridagi users / xpGrants / results qoidalari O'ZGARTIRILMAGAN. Pedagogika Firestore ishlatmaydi.
+    // Admin amallari: attAdmin() = canManage('attestatsiya-fizika') — faqat shu bo'lim biriktirilgan admin (yoki owner).
     // Generator: tools/attestatsiya-fizika/rules/build_rules.py  ·  Hujjat: docs/attestatsiya-fizika/08_security_report.md
     //
     //   attestationPhysicsSettings/config                      accessMode open|paid, timezone, limitlar
@@ -9,8 +10,8 @@
     //   attestationPhysicsQuestions/{qid}/private/answer       javob + yechim — FAQAT admin
     //   attestationPhysicsDailyTests/{testId}                  Day meta; draft — faqat admin
     //     /versions/v{N}   public snapshot (javobsiz)          — published bo'lsa
-    //     /keys/v{N}       javob kaliti (ro'yxat)              — o'z urinishini TOPSHIRGANDAN keyin (mock: yoki yechim vaqtida)
-    //     /solutions/v{N}  to'liq yechimlar                    — o'z urinishi yakunlangan (kunlik) | mock: yoki request.time >= solutionAvailableAt
+    //     /keys/v{N}       javob kaliti (ro'yxat)              — o'z urinishini TOPSHIRGANDAN keyin (kunlik va mock)
+    //     /solutions/v{N}  to'liq yechimlar                    — o'z urinishi yakunlangan (kunlik va mock)
     //   attestationPhysicsAttempts/{uid}__{testId}             1 ta rasmiy urinish: start → submit → grade
     //
     // Baholash ishonchli: klient yozgan correctAnswers/wrongAnswers/unanswered/scorePercent/correctIds qiymatlari
@@ -18,6 +19,11 @@
     // OLDIN (submit) qulflanadi, kalit faqat submit'dan keyin o'qiladi — oracle hujumi yo'q.
     // Hech narsa o'chirilmaydi: barcha delete — false.
     // ============================================================================
+
+    // Bo'limli adminlar: Attestatsiya — Fizika bo'limi biriktirilgan admin (owner va eski to'liq adminlar ham).
+    function attAdmin() {
+      return canManage('attestatsiya-fizika');
+    }
 
     function attSettingsPath() {
       return /databases/$(database)/documents/attestationPhysicsSettings/config;
@@ -39,7 +45,7 @@
     // (attestationAccess ni foydalanuvchi o'zi yoza olmaydi — users qoidalaridagi hasOnly ro'yxatlarida yo'q).
     function attCanAccess() {
       return signedIn() && (
-        isAdmin()
+        attAdmin()
         || get(attSettingsPath()).data.get('accessMode', 'closed') == 'open'
         || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true
       );
@@ -65,7 +71,7 @@
     }
 
     function attPaidAccess() {
-      return signedIn() && (isAdmin() || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true);
+      return signedIn() && (attAdmin() || get(userPath(request.auth.uid)).data.get('attestationAccess', false) == true);
     }
 
     function attDayOpen(t) {
@@ -87,10 +93,6 @@
       return t.published == true && t.status in ['published', 'archived'];
     }
 
-    function attSolutionOpen(t) {
-      return attVisible(t) && t.solutionAvailableAt is timestamp && request.time >= t.solutionAvailableAt;
-    }
-
     function attVersionId(n) {
       return 'v' + string(n);
     }
@@ -107,7 +109,7 @@
 
     match /attestationPhysicsSettings/{docId} {
       allow read: if signedIn();
-      allow create, update: if isAdmin() && docId == 'config' && attValidSettings(request.resource.data);
+      allow create, update: if attAdmin() && docId == 'config' && attValidSettings(request.resource.data);
       allow delete: if false;
     }
 
@@ -119,15 +121,15 @@
     }
 
     match /attestationPhysicsQuestions/{qid} {
-      allow get: if isAdmin() || (attVisible(attTest(resource.data.testId))
+      allow get: if attAdmin() || (attVisible(attTest(resource.data.testId))
         && attContentAccess(resource.data.testId, attTest(resource.data.testId)));
-      allow list: if isAdmin();
-      allow create, update: if isAdmin() && request.resource.data.id == qid && attNoSecrets(request.resource.data);
+      allow list: if attAdmin();
+      allow create, update: if attAdmin() && request.resource.data.id == qid && attNoSecrets(request.resource.data);
       allow delete: if false;
 
       match /private/{docId} {
-        allow read: if isAdmin();
-        allow create, update: if isAdmin() && docId == 'answer' && request.resource.data.id == qid;
+        allow read: if attAdmin();
+        allow create, update: if attAdmin() && docId == 'answer' && request.resource.data.id == qid;
         allow delete: if false;
       }
     }
@@ -201,80 +203,74 @@
       return attOwnFinished(testId) && attVersionId(get(attAttemptPath(aid)).data.testVersion) == v;
     }
 
-    // Kalit: o'z rasmiy urinishi topshirilgan (submitted/graded) bo'lsa; MOCK uchun — yoki yechim vaqti kelgan bo'lsa.
-    // Kunlik testlarda kalit/yechim yechim vaqti bo'yicha OCHILMAYDI (faqat o'z urinishi yakunlangach).
+    // Kalit: faqat o'z rasmiy urinishi topshirilgan (submitted/graded) bo'lsa.
+    // Kunlik va MOCK testlarda kalit/yechim yechim vaqti bo'yicha OCHILMAYDI (faqat o'z urinishi yakunlangach).
     function attKeyReadable(testId, v) {
-      return signedIn() && (
-        attOwnFinishedVersion(testId, v)
-        || (attIsMock(attTest(testId)) && attDayOpen(attTest(testId)) && attSolutionOpen(attTest(testId)))
-      );
+      return signedIn() && attOwnFinishedVersion(testId, v);
     }
 
-    // To'liq yechim (solutions/v{N}): o'z urinishi yakunlangan (shu versiya); MOCK uchun — yoki yechim vaqti kelgan (kun ochiq).
+    // To'liq yechim (solutions/v{N}): o'z urinishi yakunlangan (shu versiya) — kunlik va mock uchun bir xil.
     function attSolutionReadable(testId, v) {
-      return attVisible(attTest(testId)) && (
-        (attIsMock(attTest(testId)) && attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId)))
-        || attOwnFinishedVersion(testId, v)
-      );
+      return attVisible(attTest(testId)) && attOwnFinishedVersion(testId, v);
     }
 
     match /attestationPhysicsDailyTests/{testId} {
       // Meta (kun, bo'lim, mavzular, savollar soni, sanalar — javob/kontent yo'q): e'lon qilingan kun har bir kirgan
       // foydalanuvchiga ko'rinadi (yopiq 4+ kunlar ham to'liq karta sifatida). Kontent va start — attDayOpen.
-      allow get: if isAdmin() || (signedIn() && attVisible(resource.data));
+      allow get: if attAdmin() || (signedIn() && attVisible(resource.data));
       // Foydalanuvchi so'rovi: where('published', '==', true) bo'lishi shart (draft hech qachon qaytmaydi)
-      allow list: if isAdmin() || (signedIn() && resource.data.published == true);
-      allow create: if isAdmin() && attValidTestShape(request.resource.data, testId)
+      allow list: if attAdmin() || (signedIn() && resource.data.published == true);
+      allow create: if attAdmin() && attValidTestShape(request.resource.data, testId)
         && request.resource.data.status == 'draft' && request.resource.data.published == false
         && request.resource.data.publishedAt == null && request.resource.data.solutionAvailableAt == null;
-      allow update: if isAdmin() && attValidTestUpdate(testId);
+      allow update: if attAdmin() && attValidTestUpdate(testId);
       allow delete: if false;
 
       match /versions/{v} {
-        allow get: if isAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId
+        allow get: if attAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
-        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
+        allow update: if attAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
 
       match /keys/{v} {
-        allow get: if isAdmin() || attKeyReadable(testId, v);
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId
+        allow get: if attAdmin() || attKeyReadable(testId, v);
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v
           && request.resource.data.answers is map
           && request.resource.data.answers.size() == request.resource.data.scorableCount;
-        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
+        allow update: if attAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
 
       // Rasmlar (Firestore muqobili, settings.figureBackend == 'firestore'): savol rasmlari published bo'lganda,
-      // yechim rasmlari solutionAvailableAt dan keyin. O'zgarmas.
+      // yechim rasmlari — o'z urinishi yakunlangach (kunlik va mock). O'zgarmas.
       match /figures/{figId} {
-        allow get: if isAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
+        allow get: if attAdmin() || (attVisible(attTest(testId)) && attContentAccess(testId, attTest(testId)));
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutionFigures/{figId} {
-        allow get: if isAdmin() || (attVisible(attTest(testId))
-          && ((attIsMock(attTest(testId)) && attSolutionOpen(attTest(testId)) && attContentAccess(testId, attTest(testId))) || attOwnFinished(testId)));
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
+        allow get: if attAdmin() || (attVisible(attTest(testId))
+          && attOwnFinished(testId));
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId && request.resource.data.id == figId;
         allow update, delete: if false;
       }
 
       match /solutions/{v} {
-        allow get: if isAdmin() || attSolutionReadable(testId, v);
-        allow list: if isAdmin();
-        allow create: if isAdmin() && request.resource.data.testId == testId
+        allow get: if attAdmin() || attSolutionReadable(testId, v);
+        allow list: if attAdmin();
+        allow create: if attAdmin() && request.resource.data.testId == testId
           && attVersionId(request.resource.data.version) == v;
-        allow update: if isAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
+        allow update: if attAdmin() && attTest(testId).status == 'draft' && attTest(testId).publishedAt == null
           && request.resource.data.testId == testId && attVersionId(request.resource.data.version) == v;
         allow delete: if false;
       }
@@ -282,10 +278,10 @@
 
     // ---------------------------------------------------------------- attempts
     // VAQT CHEGARASI (hisob SERVER vaqtida: startedAt + limit).
-    //   • KUNLIK testlar (kind != 'mock'): har bir foydalanuvchi testni ISTALGAN kunda, BIR marta boshlaydi (yechim vaqti bilan
+    //   • KUNLIK va MOCK testlar: har bir foydalanuvchi testni ISTALGAN kunda, BIR marta boshlaydi (yechim vaqti bilan
     //     yopilmaydi); start'dan keyin 2 SOAT (7200 s; test hujjatida timeLimitSeconds bo'lsa — shu qiymat). Yechimlar faqat
     //     o'z urinishi yakunlangach (qo'lda topshirish yoki vaqt tugab avto-yakunlash) ochiladi — attOwnFinished.
-    //   • MOCK test: avvalgidek — tugash = min(startedAt + limit, solutionAvailableAt); yechimlar solutionAvailableAt'da ham ochiladi.
+    //     (Mock ham kunlik test kabi: yechim vaqti bilan yopilmaydi va yechimlar vaqt bo'yicha ochilmaydi.)
     //   • qo'lda saqlash/topshirish: tugashdan keyin 60 s «grace» (tarmoq kechikishi) ichida ruxsat;
     //   • avtomatik yakunlash: tugash + 60 s dan keyin (klientning o'z topshirishi bilan poygalashmaydi),
     //     completedAt = startedAt + limit (sarflangan vaqt limitdan oshmaydi).
@@ -293,7 +289,7 @@
       return t.get('timeLimitSeconds', null) is int && t.get('timeLimitSeconds', 0) >= 60;
     }
 
-    // Kunlik testlarda (hujjatda maydon yo'q) — 2 soat; mock'da maydon bo'lsa shu qiymat.
+    // Hujjatda maydon bo'lmasa — 2 soat; bo'lsa (mock: 7200) — shu qiymat.
     function attLimitSec(t) {
       return attHasLimit(t) ? t.get('timeLimitSeconds', 7200) : 7200;
     }
@@ -302,10 +298,9 @@
       return o.startedAt + duration.value(attLimitSec(t), 's');
     }
 
-    // Chegara amal qiladimi: kunlik — doim; mock — maydon bo'lsa va yechim vaqtidan oldin tugasa.
+    // Chegara amal qiladimi: kunlik va mock — doim (startedAt + limit).
     function attLimited(o, t) {
-      return !attIsMock(t)
-        || (attHasLimit(t) && attLimitEnd(o, t) < t.solutionAvailableAt);
+      return o.startedAt is timestamp;
     }
 
     function attEndAt(o, t) {
@@ -322,7 +317,7 @@
         : request.time < t.solutionAvailableAt;
     }
 
-    // START: server vaqti, faqat published (archived emas); mock — yechim ochilmasdan oldin, kunlik — istalgan kunda; 1 ta rasmiy urinish.
+    // START: server vaqti, faqat published (archived emas); kunlik va mock — istalgan kunda; 1 ta rasmiy urinish.
     function attValidStart(attemptId) {
       let d = request.resource.data;
       let t = attTest(d.testId);
@@ -334,7 +329,6 @@
         && d.userId == request.auth.uid
         && d.testId is string && attemptId == request.auth.uid + '__' + d.testId
         && t.published == true && t.status == 'published'
-        && (!attIsMock(t) || request.time < t.solutionAvailableAt)
         && d.dayNumber == t.dayNumber
         && d.testVersion == t.currentVersion
         && d.attemptNumber == 1 && d.kind == 'official'
@@ -390,7 +384,7 @@
       let o = resource.data;
       let n = request.resource.data;
       let t = attTest(o.testId);
-      return signedIn() && (o.userId == request.auth.uid || isAdmin())
+      return signedIn() && (o.userId == request.auth.uid || attAdmin())
         && o.status == 'in_progress' && o.kind == 'official' && o.testVersion is int
         && t.solutionAvailableAt is timestamp && request.time >= attAutoFrom(o, t)
         && n.diff(o).affectedKeys().hasOnly(['status', 'completedAt', 'answers', 'autoFinalized'])
@@ -412,7 +406,7 @@
       let d = o.answers.diff(k.answers);
       let s = k.scorableCount;
       let c = n.correctAnswers;
-      return signedIn() && (o.userId == request.auth.uid || isAdmin())
+      return signedIn() && (o.userId == request.auth.uid || attAdmin())
         && o.status == 'submitted'
         && n.diff(o).affectedKeys().hasOnly(['status', 'gradedAt', 'timeSpentSeconds', 'totalQuestions',
                                              'scorableQuestions', 'correctAnswers', 'wrongAnswers', 'unanswered',
@@ -434,8 +428,8 @@
 
     match /attestationPhysicsAttempts/{attemptId} {
       // get: ID egasi bo'yicha (hujjat hali yo'q bo'lsa ham "yo'q" javobi qaytadi, permission xatosi emas)
-      allow get: if isAdmin() || (signedIn() && attemptId.split('__')[0] == request.auth.uid);
-      allow list: if isAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
+      allow get: if attAdmin() || (signedIn() && attemptId.split('__')[0] == request.auth.uid);
+      allow list: if attAdmin() || (signedIn() && resource.data.userId == request.auth.uid);
       allow create: if attValidStart(attemptId);
       allow update: if attValidSave() || attValidSubmit() || attValidAutoSubmit() || attValidGrade();
       allow delete: if false;

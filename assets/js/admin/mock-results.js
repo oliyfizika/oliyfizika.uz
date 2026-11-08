@@ -12,7 +12,7 @@ const MAX_DOCS = 3000;
 const PAGE = 50;
 
 fillIcons($("#adminPage"));
-const { fb } = await requireAdmin();
+const { fb } = await requireAdmin({ section: "milliy-sertifikat" });
 const { collection, query, where, orderBy, limit, getDocs } = fb.fsSdk;
 const col = collection(fb.db, "mockTestAttempts");
 

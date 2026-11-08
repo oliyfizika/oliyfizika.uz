@@ -9,7 +9,7 @@
 import { requireAdmin, $, esc, fillIcons, formatDateTime, stateBox, errorText, indexLink, PAGE_SIZE } from "./admin-common.js";
 
 fillIcons($("#adminPage"));
-const { fb } = await requireAdmin();
+const { fb } = await requireAdmin({ section: "umumiy-fizika" });
 const { collection, query, where, orderBy, limit, startAfter, getDocs } = fb.fsSdk;
 const col = collection(fb.db, "results");
 

@@ -36,12 +36,9 @@
         <div class="of-admin-switch-row" data-access-row="role">
           <div class="of-admin-switch-row__text">
             <p class="of-admin-switch-row__label" id="lbl-role">Administrator</p>
-            <p class="of-admin-switch-row__desc" id="desc-role">Admin panelga kirish va huquqlarni boshqarish.</p>
+            <p class="of-admin-switch-row__desc" id="desc-role" data-admin-kind>—</p>
           </div>
-          <button type="button" class="of-admin-switch" role="switch" aria-checked="false" aria-labelledby="lbl-role" aria-describedby="desc-role" data-access="role" disabled>
-            <span class="of-admin-switch__track" aria-hidden="true"><span class="of-admin-switch__thumb"></span></span>
-            <span class="of-admin-switch__state" data-switch-state>—</span>
-          </button>
+          <a class="of-btn of-btn--soft of-btn--sm" data-admin-manage href="admins.html" hidden>Boshqarish</a>
         </div>
         <div class="of-admin-switch-row" data-access-row="fullAccess">
           <div class="of-admin-switch-row__text">
@@ -74,6 +71,7 @@
           </button>
         </div>
         <p class="of-admin-note" data-self-note hidden>O‘z administrator huquqingizni o‘zgartira olmaysiz — bu adminni tasodifan yo‘qotishning oldini oladi.</p>
+        <p class="of-admin-note" data-flags-note hidden>Kirish huquqlarini faqat «Kirish huquqlari» bo‘limi biriktirilgan admin o‘zgartiradi.</p>
         <div class="of-alert" data-access-msg role="status" hidden></div>
       </section>
       <section class="of-card of-admin-panel of-admin-panel--wide" aria-labelledby="xpTitle">

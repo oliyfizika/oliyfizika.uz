@@ -2,12 +2,14 @@
 // To'rt ro'yxat (tab): role == "admin", fullAccess == true, mockTestsAccess == true, attestationAccess == true — where + documentId tartibi,
 // limit(20) sahifalab (indekssiz). Har qatorda "Olib tashlash" (tasdiqlash bilan) va "Ochish".
 // Huquq berish — foydalanuvchi sahifasida (email bo'yicha topish shu yerda).
-import { requireAdmin, $, $$, esc, fillIcons, fullNameOf, stateBox, errorText, confirmAction, updateAccess, ACCESS_LABEL, PAGE_SIZE } from "./admin-common.js";
+import { requireAdmin, $, $$, esc, fillIcons, fullNameOf, stateBox, errorText, confirmAction, updateAccess, setAdminRole, ACCESS_LABEL, PAGE_SIZE } from "./admin-common.js";
+import { adminPerms, sectionLabel } from "./permissions.js";
 import { toast } from "../ui/feedback.js";
 import { icon } from "../ui/icons.js";
 
 fillIcons($("#adminPage"));
-const { state, fb } = await requireAdmin();
+// Admin System 2.0: sahifa — 'kirish-huquqlari' bo'limi admini (owner ham). «Adminlar» tabida adminlikdan olish — faqat owner.
+const { state, fb, perms } = await requireAdmin({ section: "kirish-huquqlari" });
 const { collection, query, where, orderBy, limit, startAfter, getDocs, documentId, getCountFromServer } = fb.fsSdk;
 const col = collection(fb.db, "users");
 
@@ -39,11 +41,16 @@ function item(id, u) {
   const t = TABS[tab];
   const self = id === state.user.uid && tab === "admin";
   const name = fullNameOf(u);
+  const p = adminPerms(u);
+  const sub = tab !== "admin" ? "" : p.owner ? "Owner (sayt egasi)" : p.legacy ? "To‘liq admin (barcha bo‘limlar)"
+    : `Bo‘limlar: ${p.sections.map(sectionLabel).join(", ") || "yo‘q"}`;
+  const locked = tab === "admin" && (self || p.owner || !perms.owner);
+  const lockText = self ? "Siz (o‘zgartirib bo‘lmaydi)" : p.owner ? "Owner" : "Faqat owner o‘zgartiradi";
   return `<li class="of-admin-list__item" data-uid="${esc(id)}">
-    <div class="of-admin-list__who"><b>${esc(name)}</b><span class="of-admin-break">${esc(u.email || id)}</span></div>
+    <div class="of-admin-list__who"><b>${esc(name)}</b><span class="of-admin-break">${esc(u.email || id)}</span>${sub ? `<span class="of-admin-note">${esc(sub)}</span>` : ""}</div>
     <div class="of-admin-list__actions">
       <a class="of-btn of-btn--ghost of-btn--sm" href="user.html?id=${encodeURIComponent(id)}" aria-label="${esc(`${name} — ochish`)}">Ochish</a>
-      ${self ? '<span class="of-admin-note">Siz (o‘zgartirib bo‘lmaydi)</span>'
+      ${locked ? `<span class="of-admin-note">${esc(lockText)}</span>`
         : `<button type="button" class="of-btn of-btn--soft of-btn--sm of-admin-revoke" data-revoke data-name="${esc(name)}" aria-label="${esc(`${name}: ${t.revoke}`)}">${esc(t.revoke)}</button>`}
     </div></li>`;
 }
@@ -109,7 +116,7 @@ list.addEventListener("click", async (e) => {
   const li = btn.closest("[data-uid]");
   const uid = li.dataset.uid;
   const t = TABS[tab];
-  if (busy.has(uid) || (tab === "admin" && uid === state.user.uid)) return;
+  if (busy.has(uid) || (tab === "admin" && (uid === state.user.uid || !perms.owner))) return;
   const name = btn.dataset.name;
   const ok = await confirmAction({
     title: tab === "admin" ? "Adminlikdan olasizmi?" : `${ACCESS_LABEL[t.field]}ni o‘chirmoqchimisiz?`,
@@ -121,7 +128,9 @@ list.addEventListener("click", async (e) => {
   btn.disabled = true;
   btn.classList.add("is-loading");
   try {
-    await updateAccess(fb, uid, t.field, t.off);
+    const email = li.querySelector(".of-admin-list__who .of-admin-break")?.textContent || "";
+    if (tab === "admin") await setAdminRole(fb, state, uid, null, { target: { name, email } });
+    else await updateAccess(fb, uid, t.field, t.off, { state, target: { name, email } });
     li.remove();
     const done = `${ACCESS_LABEL[t.field]} o‘chirildi (${name}).`;
     setMsg(done);

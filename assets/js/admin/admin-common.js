@@ -12,6 +12,8 @@ import { onSession, loadFirebase } from "../core/session.js";
 import { icon } from "../ui/icons.js";
 import { openModal } from "../ui/modal.js";
 import { formatDate } from "../account/account-common.js";
+import { adminPerms, sectionLabel } from "./permissions.js";
+import { auditEntry } from "./audit-log.js";
 
 export const $ = (s, r = document) => r.querySelector(s);
 export const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -29,9 +31,10 @@ let gatePromise = null;
 /**
  * Sahifa kontenti ([data-admin-root]) faqat role == "admin" bo'lganda ko'rsatiladi va shundan keyingina
  * admin so'rovlari boshlanadi. Mehmonga qobiqning mavjud auth gate'i (kirgandan keyin shu URL'ga qaytadi).
- * @returns {Promise<{ state, fb }>}
+ * Admin System 2.0: { section } — sahifa shu bo'lim (yoki ro'yxatdagi istalgan biri) biriktirilgan admin uchun; { owner: true } — faqat owner.
+ * @returns {Promise<{ state, fb, perms }>}
  */
-export function requireAdmin() {
+export function requireAdmin({ section = null, owner = false } = {}) {
   if (gatePromise) return gatePromise;
   const gate = $("[data-admin-gate]");
   const root = $("[data-admin-root]");
@@ -42,12 +45,15 @@ export function requireAdmin() {
     onSession(async (state) => {
       clearTimeout(slow);
       const isAdmin = state.status === "authenticated" && state.profileLoaded && state.profile?.role === "admin";
-      if (isAdmin) {
+      const perms = adminPerms(isAdmin ? state.profile : null);
+      const secs = section ? [].concat(section) : [];
+      const allowed = isAdmin && (!secs.length || secs.some((x) => perms.can(x))) && (!owner || perms.owner);
+      if (allowed) {
         if (resolved) return;
         resolved = true;
         gate.hidden = true;
         root.hidden = false;
-        resolve({ state, fb: await loadFirebase() });
+        resolve({ state, fb: await loadFirebase(), perms });
         return;
       }
       // Admin bo'lmagan holat: kontent yashiriladi va (agar yuklangan bo'lsa) tozalanadi
@@ -65,6 +71,13 @@ export function requireAdmin() {
           <div class="of-admin-gate__actions"><button type="button" class="of-btn of-btn--primary" data-gate-login>Kirish</button>
           <a class="of-btn of-btn--ghost" href="../index.html">Bosh sahifaga qaytish</a></div></div>`);
         gate.querySelector("[data-gate-login]")?.addEventListener("click", () => window.OFShell?.openAuth("login"));
+        return;
+      }
+      if (isAdmin) {
+        const why = owner ? "Bu sahifa faqat sayt egasi (owner) uchun." : `«${secs.map(sectionLabel).join("» yoki «")}» bo‘limi sizga biriktirilmagan.`;
+        show(`<div class="of-admin-gate__box" role="alert"><span data-icon="shield" class="of-admin-gate__icon of-admin-gate__icon--warn"></span>
+          <h1>Bu bo‘lim sizga yopiq</h1><p>${esc(why)} Kerak bo‘lsa, sayt egasiga murojaat qiling.</p>
+          <div class="of-admin-gate__actions"><a class="of-btn of-btn--primary" href="index.html">Dashboard’ga qaytish</a></div></div>`);
         return;
       }
       show(`<div class="of-admin-gate__box" role="alert"><span data-icon="shield" class="of-admin-gate__icon of-admin-gate__icon--warn"></span>
@@ -109,10 +122,11 @@ export function yesNo(v, { yes = "Ha", no = "Yo‘q" } = {}) {
     ? `<span class="of-badge of-badge--green">${icon("check")}${yes}</span>`
     : `<span class="of-badge of-admin-badge--off">${no}</span>`;
 }
-export function roleBadge(role) {
-  return role === "admin"
-    ? `<span class="of-badge of-badge--purple">${icon("shield")}Admin</span>`
-    : `<span class="of-badge of-admin-badge--off">Foydalanuvchi</span>`;
+export function roleBadge(role, profile = null) {
+  if (role !== "admin") return `<span class="of-badge of-admin-badge--off">Foydalanuvchi</span>`;
+  return profile?.adminRole === "owner"
+    ? `<span class="of-badge of-badge--purple">${icon("shield")}Owner</span>`
+    : `<span class="of-badge of-badge--purple">${icon("shield")}Admin</span>`;
 }
 
 // ------------------------------------------------------------------ xatolar
@@ -156,14 +170,59 @@ export function confirmAction({ title, text, confirmLabel = "Tasdiqlash", danger
 }
 
 // ------------------------------------------------------------------ yozish (faqat ruxsat etilgan maydonlar)
-const ACCESS_FIELDS = ["role", "fullAccess", "mockTestsAccess", "attestationAccess"];
-/** Admin: faqat role / fullAccess / mockTestsAccess / attestationAccess. Boshqa maydon yuborilmaydi (Rules ham rad etadi). */
-export async function updateAccess(fb, uid, field, value) {
+const ACCESS_FIELDS = ["fullAccess", "mockTestsAccess", "attestationAccess"];
+export const ACCESS_LABEL = { role: "Administrator", fullAccess: "Full Access", mockTestsAccess: "Mock Test Access", attestationAccess: "Attestatsiya — Fizika" };
+
+/**
+ * 'kirish-huquqlari' bo'limi admini (yoki owner): faqat fullAccess / mockTestsAccess / attestationAccess (bool).
+ * O'zgarish va amallar jurnali yozuvi bitta atomik batch'da. role — setAdminRole() orqali (faqat owner).
+ * @param {{ state, target?: { name?, email? } }} ctx
+ */
+export async function updateAccess(fb, uid, field, value, { state, target = {} } = {}) {
   if (!ACCESS_FIELDS.includes(field)) throw new Error(`Ruxsat etilmagan maydon: ${field}`);
-  if (field === "role" && !["user", "admin"].includes(value)) throw new Error("Noto‘g‘ri role");
-  if (field !== "role" && typeof value !== "boolean") throw new Error("Qiymat true/false bo‘lishi kerak");
-  const { doc, updateDoc } = fb.fsSdk;
-  await updateDoc(doc(fb.db, "users", uid), { [field]: value });
+  if (typeof value !== "boolean") throw new Error("Qiymat true/false bo‘lishi kerak");
+  const { doc, writeBatch } = fb.fsSdk;
+  const batch = writeBatch(fb.db);
+  batch.update(doc(fb.db, "users", uid), { [field]: value });
+  if (state) {
+    const who = target.name || target.email || uid;
+    const log = auditEntry(fb, state, {
+      action: value ? "access.grant" : "access.revoke", section: "kirish-huquqlari",
+      summary: `${ACCESS_LABEL[field]} ${value ? "berildi" : "olib tashlandi"}: ${who}`,
+      targetUid: uid, targetLabel: [target.name, target.email].filter(Boolean).join(" · ") || uid,
+      details: { field, value },
+    });
+    batch.set(log.ref, log.data);
+  }
+  await batch.commit();
 }
 
-export const ACCESS_LABEL = { role: "Administrator", fullAccess: "Full Access", mockTestsAccess: "Mock Test Access", attestationAccess: "Attestatsiya — Fizika" };
+/**
+ * Owner: admin tayinlash / bo'limlarini o'zgartirish / adminlikdan olish (+ amallar jurnali, bitta batch).
+ *   sections === null  → adminlikdan olish (role: "user", adminSections o'chiriladi).
+ *   sections: string[] → role: "admin", adminSections: sections.
+ */
+export async function setAdminRole(fb, state, uid, sections, { target = {}, before = null } = {}) {
+  const { doc, writeBatch, serverTimestamp, deleteField } = fb.fsSdk;
+  const batch = writeBatch(fb.db);
+  const remove = sections === null;
+  const list = remove ? [] : [...new Set(sections)];
+  batch.update(doc(fb.db, "users", uid), {
+    role: remove ? "user" : "admin",
+    adminSections: remove ? deleteField() : list,
+    adminUpdatedAt: serverTimestamp(),
+    adminUpdatedBy: state.user.uid,
+  });
+  const who = target.name || target.email || uid;
+  const labels = list.map(sectionLabel).join(", ") || "bo‘limsiz";
+  const action = remove ? "admin.remove" : before ? "admin.sections" : "admin.appoint";
+  const summary = remove ? `Adminlikdan olindi: ${who}`
+    : before ? `Bo‘limlar o‘zgartirildi: ${who} → ${labels}` : `Admin tayinlandi: ${who} → ${labels}`;
+  const log = auditEntry(fb, state, {
+    action, section: "adminlar", summary,
+    targetUid: uid, targetLabel: [target.name, target.email].filter(Boolean).join(" · ") || uid,
+    details: { sections: list, ...(before ? { before } : {}) },
+  });
+  batch.set(log.ref, log.data);
+  await batch.commit();
+}

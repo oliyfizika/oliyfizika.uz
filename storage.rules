@@ -29,10 +29,15 @@ service firebase.storage {
       return firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data;
     }
 
+    // Admin System 2.0: faqat 'attestatsiya-fizika' bo'limi biriktirilgan admin (owner va eski to'liq adminlar ham).
+    // firestore.rules dagi canManage('attestatsiya-fizika') bilan bir xil mantiq.
     function isAdmin() {
       return signedIn()
         && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
-        && userDoc().get('role', 'user') == 'admin';
+        && userDoc().get('role', 'user') == 'admin'
+        && (userDoc().get('adminRole', '') == 'owner'
+            || !('adminSections' in userDoc())
+            || 'attestatsiya-fizika' in userDoc().adminSections);
     }
 
     function canAccess() {
