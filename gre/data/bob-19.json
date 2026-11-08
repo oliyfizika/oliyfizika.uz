@@ -1,10 +1,10 @@
 {
  "id": 19,
- "title": "Gazlarning kinetik nazariyasi",
+ "title": "The Kinetic Theory of Gases",
  "area": "termo",
  "questions": [
   {
-   "q": "Bir xil temperaturada geliy ($M=4$) va kislorod ($M=32$) molekulalarining o‘rtacha kvadratik tezliklari nisbati $v_{He}/v_{O_2}$:",
+   "q": "At the same temperature, the ratio of the rms speeds of helium ($M=4$) and oxygen ($M=32$) molecules $v_{He}/v_{O_2}$ is",
    "a": [
     "8",
     "$2\\sqrt2$",
@@ -16,7 +16,7 @@
    "e": "$v\\propto1/\\sqrt M$: $\\sqrt{32/4}=\\sqrt8$."
   },
   {
-   "q": "Xona temperaturasida ikki atomli ideal gazning molyar issiqlik sig‘imi $C_V$:",
+   "q": "At room temperature, the molar heat capacity $C_V$ of a diatomic ideal gas is",
    "a": [
     "$3R/2$",
     "$5R/2$",
@@ -25,10 +25,10 @@
     "$R$"
    ],
    "c": 1,
-   "e": "3 ta ilgarilanma + 2 ta aylanma erkinlik darajasi; tebranma darajalar xona temperaturasida \"muzlagan\"."
+   "e": "3 translational + 2 rotational degrees of freedom; vibrational modes are “frozen out” at room temperature."
   },
   {
-   "q": "Bir atomli ideal gaz adiabatik siqilib, hajmi 2 marta kamaydi. Bosim necha marta oshadi?",
+   "q": "A monatomic ideal gas is compressed adiabatically to half its volume. By what factor does the pressure increase?",
    "a": [
     "2",
     "$2^{3/5}$",
@@ -40,28 +40,28 @@
    "e": "$pV^\\gamma=\\text{const}$, $\\gamma=5/3$."
   },
   {
-   "q": "O‘zgarmas temperaturada gaz bosimi 2 marta oshirilsa, molekulalarning erkin yugurish yo‘li uzunligi:",
+   "q": "At constant temperature, if the gas pressure is doubled, the mean free path of the molecules",
    "a": [
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "4 marta kamayadi",
-    "2 marta kamayadi",
-    "$\\sqrt2$ marta kamayadi"
+    "doubles",
+    "does not change",
+    "decreases by a factor of 4",
+    "is halved",
+    "decreases by a factor of $\\sqrt2$"
    ],
    "c": 3,
    "e": "$\\lambda=1/(\\sqrt2\\pi d^2n)$, $n=p/(kT)$."
   },
   {
-   "q": "Maksvell taqsimotidagi eng ehtimolli tezlik $v_p$, o‘rtacha tezlik $\\bar v$ va o‘rtacha kvadratik tezlik $v_{rms}$ uchun to‘g‘ri tartib:",
+   "q": "For the Maxwell distribution, the correct ordering of the most probable speed $v_p$, the mean speed $\\bar v$ and the rms speed $v_{rms}$ is",
    "a": [
     "$v_p<\\bar v<v_{rms}$",
     "$\\bar v<v_p<v_{rms}$",
     "$v_{rms}<\\bar v<v_p$",
     "$v_p=\\bar v<v_{rms}$",
-    "uchalasi teng"
+    "all three are equal"
    ],
    "c": 0,
-   "e": "$\\sqrt2:\\sqrt{8/\\pi}:\\sqrt3\\approx1{,}41:1{,}60:1{,}73$ (birlik $\\sqrt{kT/m}$)."
+   "e": "$\\sqrt2:\\sqrt{8/\\pi}:\\sqrt3\\approx1.41:1.60:1.73$ (in units of $\\sqrt{kT/m}$)."
   }
  ]
 }

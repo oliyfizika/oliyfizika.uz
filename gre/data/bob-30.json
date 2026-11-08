@@ -1,10 +1,10 @@
 {
  "id": 30,
- "title": "Induksiya va induktivlik",
+ "title": "Induction and Inductance",
  "area": "em",
  "questions": [
   {
-   "q": "$N$ o‘ramli, yuzi $S$ bo‘lgan g‘altak orqali magnit induksiya $B=B_0\\sin\\omega t$ qonun bilan o‘zgaradi (maydon sirtga tik). Maksimal EYuK:",
+   "q": "The magnetic field through a coil of $N$ turns and area $S$ varies as $B=B_0\\sin\\omega t$ (field perpendicular to the coil). The maximum emf is",
    "a": [
     "$B_0S$",
     "$NB_0S$",
@@ -16,31 +16,31 @@
    "e": "$\\mathcal E=-N\\,d\\Phi/dt=-NSB_0\\omega\\cos\\omega t$."
   },
   {
-   "q": "Kuchli magnit vertikal mis quvur ichiga tashlandi. Magnit qanday harakatlanadi?",
+   "q": "A strong magnet is dropped down a vertical copper pipe. How does the magnet move?",
    "a": [
-    "erkin tushadi",
-    "erkin tushishga qaraganda sekinroq tushadi",
-    "tezroq tushadi",
-    "quvur devoriga yopishib qoladi",
-    "yuqoriga qaytadi"
+    "it falls freely",
+    "it falls more slowly than in free fall",
+    "it falls faster",
+    "it sticks to the pipe wall",
+    "it bounces back up"
    ],
    "c": 1,
-   "e": "Lens qoidasi: quvurdagi uyurma toklar harakatga qarshilik qiladi."
+   "e": "Lenz's law: eddy currents in the pipe oppose the motion."
   },
   {
-   "q": "G‘altakdagi tok 2 marta oshirilsa, magnit maydon energiyasi:",
+   "q": "If the current in an inductor is doubled, the energy stored in its magnetic field",
    "a": [
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "8 marta oshadi",
-    "4 marta oshadi",
-    "$\\sqrt2$ marta oshadi"
+    "doubles",
+    "does not change",
+    "increases by a factor of 8",
+    "increases by a factor of 4",
+    "increases by a factor of $\\sqrt2$"
    ],
    "c": 3,
    "e": "$W=LI^2/2$."
   },
   {
-   "q": "RL zanjirning vaqt doimiysi:",
+   "q": "The time constant of an RL circuit is",
    "a": [
     "$RL$",
     "$L/R$",
@@ -52,7 +52,7 @@
    "e": "$I=I_0(1-e^{-tR/L})$."
   },
   {
-   "q": "Uzunligi $l$ bo‘lgan sterjen $R$ qarshilikli relslar ustida $B$ maydonda (relslar tekisligiga tik) o‘zgarmas $v$ tezlik bilan harakatlanmoqda. Buning uchun kerakli tashqi kuch:",
+   "q": "A rod of length $l$ slides at constant speed $v$ on rails connected through a resistance $R$, in a field $B$ perpendicular to the plane of the rails. The external force required is",
    "a": [
     "$Blv$",
     "$Bl v/R$",

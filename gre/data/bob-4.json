@@ -1,10 +1,10 @@
 {
  "id": 4,
- "title": "Ikki va uch o‘lchamli harakat",
+ "title": "Motion in Two and Three Dimensions",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Gorizontga 30° va 60° burchak ostida bir xil tezlik bilan otilgan jismlarning gorizontal uchish uzoqliklari nisbati $R_{30}:R_{60}$ (havo qarshiligisiz):",
+   "q": "Two projectiles are launched with the same speed at 30° and 60° above the horizontal. The ratio of their horizontal ranges $R_{30}:R_{60}$ (no air resistance) is",
    "a": [
     "1 : 2",
     "$1:\\sqrt3$",
@@ -13,10 +13,10 @@
     "2 : 1"
    ],
    "c": 2,
-   "e": "$R=v_0^2\\sin2\\theta/g$, $\\sin60°=\\sin120°$."
+   "e": "$R=v_0^2\\sin2\\theta/g$, and $\\sin60°=\\sin120°$."
   },
   {
-   "q": "Gorizontga 60° burchak ostida otilgan jismning trayektoriya cho‘qqisidagi kinetik energiyasi boshlang‘ich kinetik energiyasining qanday qismi?",
+   "q": "A projectile is launched at 60° above the horizontal. At the top of its trajectory, its kinetic energy is what fraction of its initial kinetic energy?",
    "a": [
     "0",
     "1/4",
@@ -25,22 +25,22 @@
     "1"
    ],
    "c": 1,
-   "e": "Cho‘qqida faqat $v_0\\cos60°=v_0/2$ qoladi, energiya $\\cos^2 60°=1/4$ qismi."
+   "e": "At the top only $v_0\\cos60°=v_0/2$ remains, so the energy is a fraction $\\cos^2 60°=1/4$."
   },
   {
-   "q": "Jism aylana bo‘ylab tekis harakatlanmoqda. Aylanish davri o‘zgarmagan holda radius ikki marta oshirilsa, markazga intilma tezlanish:",
+   "q": "An object moves uniformly in a circle. If the radius is doubled while the period stays the same, the centripetal acceleration",
    "a": [
-    "ikki marta kamayadi",
-    "o‘zgarmaydi",
-    "ikki marta oshadi",
-    "to‘rt marta oshadi",
-    "$\\sqrt2$ marta oshadi"
+    "is halved",
+    "does not change",
+    "doubles",
+    "quadruples",
+    "increases by a factor of $\\sqrt2$"
    ],
    "c": 2,
-   "e": "$a=4\\pi^2r/T^2$, $T$ o‘zgarmasa $a\\propto r$."
+   "e": "$a=4\\pi^2r/T^2$; with $T$ fixed, $a\\propto r$."
   },
   {
-   "q": "Qayiqning suvga nisbatan tezligi 5 m/s, oqim tezligi 3 m/s. Kengligi 200 m daryoni qirg‘oqqa tik yo‘nalishda kesib o‘tish uchun qancha vaqt kerak?",
+   "q": "A boat moves at 5 m/s relative to the water, and the current flows at 3 m/s. How long does it take to cross a 200 m wide river along a path perpendicular to the bank?",
    "a": [
     "25 s",
     "40 s",
@@ -49,16 +49,16 @@
     "80 s"
    ],
    "c": 3,
-   "e": "Qayiq oqimni kompensatsiya qilishi kerak: tik tashkil etuvchi $\\sqrt{5^2-3^2}=4$ m/s, $200/4=50$ s."
+   "e": "The boat must compensate for the current: the perpendicular component is $\\sqrt{5^2-3^2}=4$ m/s, so $200/4=50$ s."
   },
   {
-   "q": "Jism $h$ balandlikdan gorizontal $v_0$ tezlik bilan otildi. Balandlik 4 marta oshirilsa (tezlik o‘sha), uchish uzoqligi:",
+   "q": "An object is thrown horizontally with speed $v_0$ from height $h$. If the height is increased by a factor of 4 (same speed), the horizontal range",
    "a": [
-    "o‘zgarmaydi",
-    "$\\sqrt2$ marta oshadi",
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "16 marta oshadi"
+    "does not change",
+    "increases by a factor of $\\sqrt2$",
+    "doubles",
+    "increases by a factor of 4",
+    "increases by a factor of 16"
    ],
    "c": 2,
    "e": "$x=v_0\\sqrt{2h/g}\\propto\\sqrt h$."

@@ -1,10 +1,10 @@
 {
  "id": 1,
- "title": "O‘lchash, birliklar va o‘lchamlar tahlili",
+ "title": "Measurement, Units and Dimensional Analysis",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Planck doimiysi $h$ ning SI asosiy birliklaridagi ifodasi qaysi?",
+   "q": "What is Planck's constant $h$ expressed in SI base units?",
    "a": [
     "$\\text{kg}\\cdot\\text{m/s}^2$",
     "$\\text{kg}\\cdot\\text{m}^2/\\text{s}^2$",
@@ -13,10 +13,10 @@
     "$\\text{J/s}$"
    ],
    "c": 2,
-   "e": "$E=h\\nu$ dan $[h]=\\text{J}\\cdot\\text{s}=\\text{kg}\\cdot\\text{m}^2/\\text{s}$."
+   "e": "From $E=h\\nu$, $[h]=\\text{J}\\cdot\\text{s}=\\text{kg}\\cdot\\text{m}^2/\\text{s}$."
   },
   {
-   "q": "Uzunligi $L$ bo‘lgan matematik mayatnikning kichik tebranishlar davri $T$ massa $m$, $L$ va $g$ ga bog‘liq bo‘lishi mumkin. O‘lchamlar tahliliga ko‘ra $T$ qaysi kattalikka proporsional?",
+   "q": "The period $T$ of small oscillations of a simple pendulum of length $L$ may depend on the mass $m$, on $L$ and on $g$. According to dimensional analysis, $T$ is proportional to",
    "a": [
     "$L/g$",
     "$\\sqrt{g/L}$",
@@ -25,10 +25,10 @@
     "$Lg$"
    ],
    "c": 3,
-   "e": "Vaqt o‘lchamini faqat $\\sqrt{L/g}$ beradi; massa boshqa hech bir kattalik bilan qisqarmaydi, shuning uchun $T$ ga kirmaydi."
+   "e": "Only $\\sqrt{L/g}$ has the dimension of time; the mass cannot cancel against any other quantity, so it does not enter $T$."
   },
   {
-   "q": "Tarang ipda ko‘ndalang to‘lqin tezligi ipning tarangligi $F$ va chiziqli zichligi $\\mu$ ga bog‘liq. O‘lchamlar tahliliga ko‘ra tezlik:",
+   "q": "The speed of a transverse wave on a taut string depends on the tension $F$ and the linear mass density $\\mu$. By dimensional analysis, the speed is",
    "a": [
     "$F/\\mu$",
     "$\\sqrt{F/\\mu}$",
@@ -37,10 +37,10 @@
     "$\\sqrt{F\\mu}$"
    ],
    "c": 1,
-   "e": "$[F/\\mu]=\\dfrac{\\text{kg}\\cdot\\text{m/s}^2}{\\text{kg/m}}=\\text{m}^2/\\text{s}^2$, demak $v\\propto\\sqrt{F/\\mu}$."
+   "e": "$[F/\\mu]=\\dfrac{\\text{kg}\\cdot\\text{m/s}^2}{\\text{kg/m}}=\\text{m}^2/\\text{s}^2$, so $v\\propto\\sqrt{F/\\mu}$."
   },
   {
-   "q": "Massasi 70 kg bo‘lgan odam tanasidagi atomlar sonining tartibi qanday? (Tana asosan suvdan iborat deb hisoblang.)",
+   "q": "What is the order of magnitude of the number of atoms in the body of a 70 kg person? (Assume the body is mostly water.)",
    "a": [
     "$10^{17}$",
     "$10^{22}$",
@@ -49,10 +49,10 @@
     "$10^{37}$"
    ],
    "c": 2,
-   "e": "Suvda bir atomga o‘rtacha $18/3=6$ g/mol to‘g‘ri keladi: $70\\,000/6\\approx10^4$ mol, $10^4\\cdot6\\cdot10^{23}\\approx10^{27}$."
+   "e": "In water there are on average $18/3=6$ g/mol per atom: $70\\,000/6\\approx10^4$ mol, and $10^4\\cdot6\\cdot10^{23}\\approx10^{27}$."
   },
   {
-   "q": "Quyidagi kombinatsiyalardan qaysi biri o‘lchamsiz?",
+   "q": "Which of the following combinations is dimensionless?",
    "a": [
     "$\\hbar c/e^2$",
     "$e^2/(\\varepsilon_0\\hbar)$",
@@ -61,7 +61,7 @@
     "$e^2/(4\\pi\\varepsilon_0\\hbar c)$"
    ],
    "c": 4,
-   "e": "Bu nozik struktura doimiysi $\\alpha\\approx1/137$. $e^2/(4\\pi\\varepsilon_0)$ ning o‘lchami J·m, $\\hbar c$ niki ham J·m."
+   "e": "This is the fine-structure constant $\\alpha\\approx1/137$. $e^2/(4\\pi\\varepsilon_0)$ has units of J·m, and so does $\\hbar c$."
   }
  ]
 }

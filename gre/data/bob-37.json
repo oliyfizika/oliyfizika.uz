@@ -1,58 +1,58 @@
 {
  "id": 37,
- "title": "Maxsus nisbiylik nazariyasi",
+ "title": "Special Relativity",
  "area": "nisbiylik",
  "questions": [
   {
-   "q": "Myuonning xususiy yashash vaqti $\\tau$. U laboratoriyada $0{,}6c$ tezlik bilan harakatlanmoqda. Laboratoriyadagi yashash vaqti:",
+   "q": "A muon has proper lifetime $\\tau$. It moves through the laboratory at $0.6c$. Its lifetime measured in the laboratory is",
    "a": [
-    "$0{,}8\\tau$",
-    "$0{,}6\\tau$",
-    "$1{,}25\\tau$",
-    "$1{,}67\\tau$",
+    "$0.8\\tau$",
+    "$0.6\\tau$",
+    "$1.25\\tau$",
+    "$1.67\\tau$",
     "$\\tau$"
    ],
    "c": 2,
-   "e": "$\\gamma=1/\\sqrt{1-0{,}36}=1/0{,}8=1{,}25$."
+   "e": "$\\gamma=1/\\sqrt{1-0.36}=1/0.8=1.25$."
   },
   {
-   "q": "Xususiy uzunligi $L_0$ bo‘lgan sterjen o‘qi bo‘ylab $0{,}6c$ tezlikda harakatlanmoqda. Laboratoriyada o‘lchangan uzunligi:",
+   "q": "A rod of proper length $L_0$ moves along its axis at $0.6c$. Its length measured in the laboratory is",
    "a": [
-    "$0{,}6L_0$",
-    "$0{,}8L_0$",
-    "$1{,}25L_0$",
-    "$0{,}36L_0$",
+    "$0.6L_0$",
+    "$0.8L_0$",
+    "$1.25L_0$",
+    "$0.36L_0$",
     "$L_0$"
    ],
    "c": 1,
-   "e": "$L=L_0/\\gamma=0{,}8L_0$."
+   "e": "$L=L_0/\\gamma=0.8L_0$."
   },
   {
-   "q": "Raketa Yerga nisbatan $0{,}5c$ tezlikda uchmoqda va oldinga o‘ziga nisbatan $0{,}5c$ tezlikda snaryad otdi. Snaryadning Yerga nisbatan tezligi:",
+   "q": "A rocket moves at $0.5c$ relative to Earth and fires a projectile forward at $0.5c$ relative to itself. The speed of the projectile relative to Earth is",
    "a": [
     "$c$",
-    "$0{,}5c$",
-    "$0{,}75c$",
-    "$0{,}9c$",
-    "$0{,}8c$"
+    "$0.5c$",
+    "$0.75c$",
+    "$0.9c$",
+    "$0.8c$"
    ],
    "c": 4,
-   "e": "$u=\\dfrac{0{,}5+0{,}5}{1+0{,}25}c=0{,}8c$."
+   "e": "$u=\\dfrac{0.5+0.5}{1+0.25}c=0.8c$."
   },
   {
-   "q": "Elektronning tinchlikdagi energiyasi 0,511 MeV. $\\gamma=2$ bo‘lganda uning kinetik energiyasi:",
+   "q": "The rest energy of the electron is 0.511 MeV. When $\\gamma=2$, its kinetic energy is",
    "a": [
-    "0,256 MeV",
-    "0,511 MeV",
-    "1,022 MeV",
-    "2,04 MeV",
-    "0,128 MeV"
+    "0.256 MeV",
+    "0.511 MeV",
+    "1.022 MeV",
+    "2.04 MeV",
+    "0.128 MeV"
    ],
    "c": 1,
    "e": "$K=(\\gamma-1)mc^2$."
   },
   {
-   "q": "Zarraning kinetik energiyasi tinchlikdagi energiyasiga teng. Uning impulsi:",
+   "q": "A particle's kinetic energy equals its rest energy. Its momentum is",
    "a": [
     "$mc$",
     "$2mc$",

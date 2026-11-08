@@ -7,6 +7,10 @@
 //
 // Qoidalar: bob testida bobning barcha savollari, aralash testda `mixedCount` ta tasodifiy savol;
 // variantlar aralashtiriladi; javob tanlangach to'g'ri javob va yechim izohi ko'rsatiladi.
+//
+// TIL: GRE testlari faqat ingliz tilida (savollar ham, test sahifasi matnlari ham).
+// Tarjima qatlami yo'q; #grePage da lang="en" va translate="no" — brauzer avto-tarjimasi ham o'chirilgan.
+// Sidebar qobig'i (app-shell) va GRE katalog sahifasi o'zbekcha qoladi.
 // Har savolga majburiy timer yo'q — umumiy vaqt GRE tezligi bilan solishtirib ko'rsatiladi.
 // ==========================================================================
 import { icon } from "../ui/icons.js";
@@ -107,9 +111,9 @@ function stateHtml(iconName, heading, text = "", action = "") {
   return `<div class="of-card qz-state" role="status">${icon(iconName)}<h2>${esc(heading)}</h2>${text ? `<p>${esc(text)}</p>` : ""}${action}</div>`;
 }
 
-const backLink = (variant = "of-btn--primary") => `<a class="of-btn ${variant}" href="gre.html">${icon("chevronLeft")}GRE boblariga qaytish</a>`;
+const backLink = (variant = "of-btn--primary") => `<a class="of-btn ${variant}" href="gre.html">${icon("chevronLeft")}Back to GRE chapters</a>`;
 const crumbs = (last) => `
-  <ol class="qz-crumbs" aria-label="Sahifa yo‘li">
+  <ol class="qz-crumbs" aria-label="Breadcrumb">
     <li><a href="gre.html">GRE Physics</a></li>
     <li aria-current="page">${esc(last)}</li>
   </ol>`;
@@ -136,11 +140,11 @@ async function loadData() {
       if (r.status === "fulfilled") pool.push(...(r.value.questions || []).map((q) => ({ ...q, bob: r.value.id })));
       else console.warn(`[gre] bob-${ids[i]}.json yuklanmadi`, r.reason);
     });
-    title = "Aralash GRE mashqi";
+    title = "Mixed GRE Practice";
   } else {
     const data = await fetchJson(`bob-${chapterId}.json`);
     pool = data.questions || [];
-    title = `${data.id}-bob. ${data.title}`;
+    title = `Chapter ${data.id}. ${data.title}`;
   }
 }
 
@@ -160,12 +164,12 @@ function newRound() {
 // ------------------------------------------------------------------ test
 function renderRunner() {
   view.innerHTML = `
-    ${crumbs(isMixed ? "Aralash mashq" : `${chapterId}-bob`)}
+    ${crumbs(isMixed ? "Mixed practice" : `Chapter ${chapterId}`)}
     <div class="of-card qz-bar">
       <div class="qz-bar__title"><small>GRE Physics</small><b>${esc(title)}</b></div>
-      <span class="gre-clock" data-clock title="Sarflangan vaqt / GRE tezligidagi vaqt">${CLOCK}<b data-elapsed>0:00</b><span data-budget></span></span>
+      <span class="gre-clock" data-clock title="Time spent / time at GRE pace">${CLOCK}<b data-elapsed>0:00</b><span data-budget></span></span>
       <span class="qz-bar__count of-num" data-count></span>
-      <div class="of-progress" role="progressbar" aria-label="Test jarayoni" aria-valuemin="0" aria-valuemax="${questions.length}" data-bar><span></span></div>
+      <div class="of-progress" role="progressbar" aria-label="Test progress" aria-valuemin="0" aria-valuemax="${questions.length}" data-bar><span></span></div>
     </div>
     <article class="of-card qz-q" data-q tabindex="-1" aria-labelledby="qzNum"></article>`;
   renderQuestion();
@@ -179,16 +183,16 @@ function renderQuestion() {
   const card = view.querySelector("[data-q]");
   card.innerHTML = `
     <div class="qz-q__head">
-      <span class="qz-q__num of-num" id="qzNum">${current + 1}-savol${isMixed && q.bob ? ` · ${q.bob}-bob` : ""}</span>
+      <span class="qz-q__num of-num" id="qzNum">Question ${current + 1}${isMixed && q.bob ? ` · Chapter ${q.bob}` : ""}</span>
     </div>
     <div class="qz-q__body" data-body></div>
     <ul class="qz-opts" data-opts></ul>
     <p class="qz-feedback" data-feedback aria-live="polite"></p>
-    <div class="gre-explain" data-explain hidden><b>Yechim</b><div data-explain-body></div></div>
+    <div class="gre-explain" data-explain hidden><b>Solution</b><div data-explain-body></div></div>
     <div class="qz-q__nav">
-      <span class="qz-hint">Klaviatura: <kbd>A</kbd>–<kbd>E</kbd> yoki <kbd>1</kbd>–<kbd>5</kbd></span>
+      <span class="qz-hint">Keyboard: <kbd>A</kbd>–<kbd>E</kbd> or <kbd>1</kbd>–<kbd>5</kbd></span>
       <button type="button" class="of-btn of-btn--primary of-btn--lg" data-next hidden>
-        ${current < n - 1 ? `Keyingi savol${icon("arrowRight")}` : `Natijani ko‘rish${icon("check")}`}
+        ${current < n - 1 ? `Next question${icon("arrowRight")}` : `See results${icon("check")}`}
       </button>
     </div>`;
   card.querySelector("[data-body]").append(richText(q.q));
@@ -225,7 +229,7 @@ function updateProgress() {
   const bar = view.querySelector("[data-bar]");
   bar.style.setProperty("--value", Math.round((done * 100) / n));
   bar.setAttribute("aria-valuenow", done);
-  bar.setAttribute("aria-valuetext", `${done} / ${n} savol yakunlangan`);
+  bar.setAttribute("aria-valuetext", `${done} of ${n} questions answered`);
 }
 
 // ------------------------------------------------------------------ umumiy vaqt (GRE tezligi bilan solishtirish)
@@ -263,8 +267,8 @@ function choose(i) {
   const fb = card.querySelector("[data-feedback]");
   fb.dataset.ok = String(ok);
   fb.innerHTML = ok
-    ? `${icon("checkCircle")}<span>To‘g‘ri javob!</span>`
-    : `${icon("alert")}<span>Noto‘g‘ri. To‘g‘ri javob: <b>${LETTERS[q.opts.findIndex((o) => o.correct)]}</b></span>`;
+    ? `${icon("checkCircle")}<span>Correct!</span>`
+    : `${icon("alert")}<span>Incorrect. The correct answer is <b>${LETTERS[q.opts.findIndex((o) => o.correct)]}</b></span>`;
   if (q.e) {
     const ex = card.querySelector("[data-explain]");
     ex.querySelector("[data-explain-body]").append(richText(q.e));
@@ -316,39 +320,39 @@ function renderResult() {
   const percent = Math.round((ok / n) * 100);
   const level = percent >= 80 ? "high" : percent >= 50 ? "mid" : "low";
   const message = {
-    high: "Ajoyib natija! Bu bob GRE darajasida yaxshi o‘zlashtirilgan.",
-    mid: "Yaxshi! Yechim izohlarini ko‘rib chiqib, xatolarni takrorlang.",
-    low: "Mavzuni yana bir bor takrorlab, qayta urinib ko‘ring.",
+    high: "Excellent! You have mastered this material at GRE level.",
+    mid: "Good work! Go through the solutions and review your mistakes.",
+    low: "Review the topic once more and try again.",
   }[level];
   const perQ = spent / n;
   const paceText = perQ <= pace()
-    ? `Bir savolga o‘rtacha ${fmtTime(perQ)} sarfladingiz — GRE tezligiga (${fmtTime(pace())}) mos.`
-    : `Bir savolga o‘rtacha ${fmtTime(perQ)} sarfladingiz — GRE da taxminan ${fmtTime(pace())} beriladi, tezlikni oshirish kerak.`;
+    ? `You spent ${fmtTime(perQ)} per question on average, which is within GRE pace (${fmtTime(pace())}).`
+    : `You spent ${fmtTime(perQ)} per question on average; the GRE allows about ${fmtTime(pace())}, so try to work faster.`;
   saveBest(isMixed ? 0 : chapterId, percent);
 
   view.innerHTML = `
-    ${crumbs("Natija")}
+    ${crumbs("Results")}
     <section class="of-card qz-result" aria-labelledby="qzResTitle">
-      <div class="qz-ring" style="--p:${percent}" data-level="${level}" role="img" aria-label="Natija: ${percent}%">
+      <div class="qz-ring" style="--p:${percent}" data-level="${level}" role="img" aria-label="Score: ${percent}%">
         <div class="qz-ring__inner"><b class="of-num">${percent}%</b><span>${ok} / ${n}</span></div>
       </div>
       <div class="qz-result__text">
-        <h1 id="qzResTitle" tabindex="-1">Mashq yakunlandi</h1>
+        <h1 id="qzResTitle" tabindex="-1">Practice complete</h1>
         <p><b>${esc(title)}</b> — ${esc(message)}</p>
         <p class="gre-note">${esc(paceText)}</p>
         <div class="qz-counts">
-          <div class="qz-count qz-count--ok"><span>To‘g‘ri</span><b class="of-num">${ok}</b></div>
-          <div class="qz-count qz-count--bad"><span>Noto‘g‘ri</span><b class="of-num">${bad}</b></div>
-          <div class="qz-count qz-count--skip"><span>Vaqt</span><b class="of-num">${fmtTime(spent)}</b></div>
+          <div class="qz-count qz-count--ok"><span>Correct</span><b class="of-num">${ok}</b></div>
+          <div class="qz-count qz-count--bad"><span>Incorrect</span><b class="of-num">${bad}</b></div>
+          <div class="qz-count qz-count--skip"><span>Time</span><b class="of-num">${fmtTime(spent)}</b></div>
         </div>
         <div class="qz-actions">
-          <button type="button" class="of-btn of-btn--primary of-btn--lg" data-restart>${icon("reset")}Qayta ishlash</button>
+          <button type="button" class="of-btn of-btn--primary of-btn--lg" data-restart>${icon("reset")}Try again</button>
           ${backLink("of-btn--lg")}
         </div>
       </div>
     </section>
     <section class="qz-review-wrap" aria-labelledby="qzRevTitle">
-      <h2 id="qzRevTitle">Savollar tahlili</h2>
+      <h2 id="qzRevTitle">Question review</h2>
       <ol class="qz-review" data-review></ol>
     </section>`;
 
@@ -359,7 +363,7 @@ function renderResult() {
     const li = document.createElement("li");
     li.className = "of-card qz-rev";
     li.dataset.status = r.status;
-    const verdict = r.status === "correct" ? ["checkCircle", "To‘g‘ri"] : ["alert", "Noto‘g‘ri"];
+    const verdict = r.status === "correct" ? ["checkCircle", "Correct"] : ["alert", "Incorrect"];
     li.innerHTML = `
       <div class="qz-rev__head"><span class="qz-q__num of-num">${i + 1}</span><span class="qz-rev__verdict">${icon(verdict[0])}${verdict[1]}</span></div>
       <div class="qz-q__body" data-body></div>
@@ -374,13 +378,13 @@ function renderResult() {
       dd.append(`${LETTERS[idx]}) `, richText(q.opts[idx].text));
       dl.append(dt, dd);
     };
-    if (r.status !== "correct") row("Sizning javobingiz", r.picked, "is-wrong");
-    row("To‘g‘ri javob", correctIdx, "is-correct");
+    if (r.status !== "correct") row("Your answer", r.picked, "is-wrong");
+    row("Correct answer", correctIdx, "is-correct");
     if (q.e) {
       const ex = document.createElement("div");
       ex.className = "gre-explain";
       const b = document.createElement("b");
-      b.textContent = "Yechim";
+      b.textContent = "Solution";
       const body = document.createElement("div");
       body.append(richText(q.e));
       ex.append(b, body);
@@ -401,8 +405,8 @@ function renderResult() {
 // ------------------------------------------------------------------ ishga tushirish
 async function init() {
   if (!isMixed && !/^\d+$/.test(chapterId || "")) {
-    setShellTitle("Bob topilmadi");
-    view.innerHTML = stateHtml("alert", "Bob topilmadi", "Havolada bob raqami ko‘rsatilmagan.", backLink());
+    setShellTitle("Chapter not found");
+    view.innerHTML = stateHtml("alert", "Chapter not found", "The link does not specify a chapter number.", backLink());
     return;
   }
   try {
@@ -414,8 +418,8 @@ async function init() {
     await loadKatex().catch((e) => console.warn("[gre]", e));
   } catch (error) {
     console.error("[gre] ma'lumot yuklanmadi:", error);
-    setShellTitle("GRE mashqi");
-    view.innerHTML = stateHtml("alert", "Test ma’lumotlarini yuklab bo‘lmadi", "Internet aloqasini tekshirib, sahifani yangilang.", backLink());
+    setShellTitle("GRE Practice");
+    view.innerHTML = stateHtml("alert", "Could not load the test data", "Check your internet connection and reload the page.", backLink());
     return;
   }
   setShellTitle(title);

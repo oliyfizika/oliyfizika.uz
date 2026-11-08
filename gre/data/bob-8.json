@@ -1,22 +1,22 @@
 {
  "id": 8,
- "title": "Potensial energiya va energiyaning saqlanishi",
+ "title": "Potential Energy and Conservation of Energy",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Zarraning potensial energiyasi $U(x)=x^4-2x^2$. Turg‘un muvozanat nuqtalari:",
+   "q": "The potential energy of a particle is $U(x)=x^4-2x^2$. The points of stable equilibrium are",
    "a": [
-    "faqat $x=0$",
+    "only $x=0$",
     "$x=\\pm1$",
-    "$x=0$ va $x=\\pm1$",
+    "$x=0$ and $x=\\pm1$",
     "$x=\\pm\\sqrt2$",
-    "turg‘un muvozanat yo‘q"
+    "there is no stable equilibrium"
    ],
    "c": 1,
-   "e": "$U'=4x^3-4x=0$; $U''=12x^2-4$ musbat faqat $x=\\pm1$ da ($x=0$ noturg‘un)."
+   "e": "$U'=4x^3-4x=0$; $U''=12x^2-4$ is positive only at $x=\\pm1$ ($x=0$ is unstable)."
   },
   {
-   "q": "Matematik mayatnik gorizontal holatdan qo‘yib yuborildi. Eng pastki nuqtada ipning tarangligi:",
+   "q": "A simple pendulum is released from the horizontal position. The tension in the string at the lowest point is",
    "a": [
     "$5mg$",
     "$3mg$",
@@ -28,7 +28,7 @@
    "e": "$v^2=2gL$, $T=mg+mv^2/L=3mg$."
   },
   {
-   "q": "Bikrligi $k$ bo‘lgan vertikal prujina $x$ ga siqilgan va ustiga $m$ massali jism qo‘yilgan. Prujina qo‘yib yuborilganda jism siqilgan holatdagi vaziyatidan qancha balandlikka ko‘tariladi?",
+   "q": "A vertical spring of stiffness $k$ is compressed by $x$ and a mass $m$ is placed on top of it. When the spring is released, how high does the mass rise above its position in the compressed state?",
    "a": [
     "$kx/(mg)$",
     "$kx^2/(mg)$",
@@ -40,7 +40,7 @@
    "e": "$\\tfrac12kx^2=mgh$."
   },
   {
-   "q": "Kichik shar ishqalanishsiz novdan sirpanib, radiusi $R$ bo‘lgan vertikal halqani (\"o‘lik sirtmoq\") aylanib o‘tishi kerak. Minimal boshlang‘ich balandlik (halqaning pastki nuqtasidan):",
+   "q": "A small ball slides down a frictionless track and must go around a vertical loop of radius $R$. The minimum starting height (measured from the bottom of the loop) is",
    "a": [
     "$5R/2$",
     "$2R$",
@@ -49,19 +49,19 @@
     "$7R/2$"
    ],
    "c": 0,
-   "e": "Yuqorida $v^2\\ge gR$: $mgh=mg\\cdot2R+\\tfrac12mgR\\Rightarrow h=5R/2$."
+   "e": "At the top $v^2\\ge gR$: $mgh=mg\\cdot2R+\\tfrac12mgR\\Rightarrow h=5R/2$."
   },
   {
-   "q": "Jism ishqalanishli qiya tekislikdan sirpanib tushmoqda. Qaysi tasdiq to‘g‘ri?",
+   "q": "A block slides down an incline with friction. Which statement is correct?",
    "a": [
-    "Mexanik energiya saqlanadi",
-    "Kinetik energiya o‘zgarmaydi",
-    "Potensial energiyaning kamayishi kinetik energiyaning ortishiga teng",
-    "Ishqalanish kuchining ishi musbat",
-    "Mexanik energiya ishqalanish ishining moduli qadar kamayadi"
+    "Mechanical energy is conserved",
+    "Kinetic energy does not change",
+    "The decrease in potential energy equals the increase in kinetic energy",
+    "The work done by friction is positive",
+    "Mechanical energy decreases by the magnitude of the work done by friction"
    ],
    "c": 4,
-   "e": "$\\Delta(K+U)=W_{\\text{ishq}}<0$."
+   "e": "$\\Delta(K+U)=W_{\\text{fric}}<0$."
   }
  ]
 }

@@ -1,34 +1,34 @@
 {
  "id": 18,
- "title": "Temperatura, issiqlik va termodinamikaning birinchi qonuni",
+ "title": "Temperature, Heat and the First Law of Thermodynamics",
  "area": "termo",
  "questions": [
   {
-   "q": "Ideal gaz izotermik kengaymoqda. Qaysi tasdiq to‘g‘ri?",
+   "q": "An ideal gas expands isothermally. Which statement is correct?",
    "a": [
     "$Q=0$",
     "$W=0$",
-    "$\\Delta U=0$ va $Q=W$",
+    "$\\Delta U=0$ and $Q=W$",
     "$\\Delta U=Q$",
-    "Gaz soviydi"
+    "The gas cools down"
    ],
    "c": 2,
-   "e": "Ideal gaz ichki energiyasi faqat $T$ ga bog‘liq."
+   "e": "The internal energy of an ideal gas depends only on $T$."
   },
   {
-   "q": "Issiqlik izolyatsiyalangan idishdagi ideal gaz to‘siq olib tashlanganda vakuumga erkin kengaydi. Gaz temperaturasi:",
+   "q": "An ideal gas in a thermally insulated container expands freely into vacuum when a partition is removed. The temperature of the gas",
    "a": [
-    "oshadi",
-    "kamayadi",
-    "o‘zgarmaydi",
-    "nolga tushadi",
-    "hajmga proporsional o‘zgaradi"
+    "increases",
+    "decreases",
+    "does not change",
+    "drops to zero",
+    "changes in proportion to the volume"
    ],
    "c": 2,
-   "e": "$Q=0$, $W=0\\Rightarrow\\Delta U=0$; ideal gaz uchun $T$ o‘zgarmaydi."
+   "e": "$Q=0$, $W=0\\Rightarrow\\Delta U=0$; for an ideal gas $T$ does not change."
   },
   {
-   "q": "Moddaning chiziqli kengayish koeffitsienti $\\alpha$. Yuzaning kengayish koeffitsienti taxminan:",
+   "q": "A material has linear expansion coefficient $\\alpha$. Its area expansion coefficient is approximately",
    "a": [
     "$\\alpha$",
     "$2\\alpha$",
@@ -40,7 +40,7 @@
    "e": "$(1+\\alpha\\Delta T)^2\\approx1+2\\alpha\\Delta T$."
   },
   {
-   "q": "20 °C li 2 kg suv 80 °C li 1 kg suv bilan aralashtirildi (yo‘qotishlarsiz). Muvozanat temperaturasi:",
+   "q": "2 kg of water at 20 °C is mixed with 1 kg of water at 80 °C (no losses). The equilibrium temperature is",
    "a": [
     "30 °C",
     "40 °C",
@@ -52,16 +52,16 @@
    "e": "$(2\\cdot20+1\\cdot80)/3=40$ °C."
   },
   {
-   "q": "Absolyut qora jismning temperaturasi 2 marta oshirilsa, nurlanish quvvati:",
+   "q": "If the temperature of a blackbody is doubled, the radiated power increases by a factor of",
    "a": [
-    "2 marta",
-    "4 marta",
-    "8 marta",
-    "16 marta",
-    "32 marta"
+    "2",
+    "4",
+    "8",
+    "16",
+    "32"
    ],
    "c": 3,
-   "e": "Stefan–Bolsman: $P\\propto T^4$."
+   "e": "Stefan–Boltzmann: $P\\propto T^4$."
   }
  ]
 }

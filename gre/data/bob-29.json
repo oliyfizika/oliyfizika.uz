@@ -1,46 +1,46 @@
 {
  "id": 29,
- "title": "Tok hosil qiladigan magnit maydon",
+ "title": "Magnetic Fields Due to Currents",
  "area": "em",
  "questions": [
   {
-   "q": "Cheksiz uzun to‘g‘ri tokdan masofa 2 marta oshirilsa, magnit induksiya:",
+   "q": "If the distance from an infinitely long straight current is doubled, the magnetic field",
    "a": [
-    "4 marta kamayadi",
-    "2 marta kamayadi",
-    "o‘zgarmaydi",
-    "2 marta oshadi",
-    "8 marta kamayadi"
+    "decreases by a factor of 4",
+    "is halved",
+    "does not change",
+    "doubles",
+    "decreases by a factor of 8"
    ],
    "c": 1,
    "e": "$B=\\mu_0I/(2\\pi r)$."
   },
   {
-   "q": "Ikki parallel o‘tkazgichdan bir yo‘nalishda tok oqmoqda. Ular:",
+   "q": "Currents flow in the same direction in two parallel wires. The wires",
    "a": [
-    "tortishadi",
-    "itarishadi",
-    "o‘zaro ta’sirlashmaydi",
-    "buraladi",
-    "tok kuchiga qarab itariladi yoki tortiladi"
+    "attract each other",
+    "repel each other",
+    "do not interact",
+    "twist",
+    "attract or repel depending on the current"
    ],
    "c": 0,
-   "e": "Bir yo‘nalishdagi toklar tortishadi."
+   "e": "Parallel currents attract."
   },
   {
-   "q": "Uzun solenoid uzunligi o‘zgarmagan holda o‘ramlar soni 2 marta oshirildi, radiusi esa 2 marta kamaytirildi. Ichidagi magnit induksiya:",
+   "q": "In a long solenoid of fixed length, the number of turns is doubled and the radius is halved. The magnetic field inside",
    "a": [
-    "o‘zgarmaydi",
-    "4 marta oshadi",
-    "2 marta oshadi",
-    "8 marta oshadi",
-    "2 marta kamayadi"
+    "does not change",
+    "increases by a factor of 4",
+    "doubles",
+    "increases by a factor of 8",
+    "is halved"
    ],
    "c": 2,
-   "e": "$B=\\mu_0nI$, radiusga bog‘liq emas."
+   "e": "$B=\\mu_0nI$, independent of the radius."
   },
   {
-   "q": "Radiusi $R$ bo‘lgan aylana o‘ramdan $I$ tok oqmoqda. O‘ram markazidagi magnit induksiya:",
+   "q": "A current $I$ flows in a circular loop of radius $R$. The magnetic field at the center of the loop is",
    "a": [
     "$\\mu_0I/(2\\pi R)$",
     "$\\mu_0I/(2R)$",
@@ -49,19 +49,19 @@
     "$\\mu_0IR$"
    ],
    "c": 1,
-   "e": "Bio–Savar–Laplas qonunidan."
+   "e": "From the Biot–Savart law."
   },
   {
-   "q": "Radiusi $R$ bo‘lgan uzun yo‘g‘on o‘tkazgichda tok kesim bo‘ylab bir tekis taqsimlangan. O‘tkazgich ichida ($r<R$) magnit induksiya:",
+   "q": "A current is distributed uniformly over the cross-section of a long thick wire of radius $R$. Inside the wire ($r<R$), the magnetic field is",
    "a": [
-    "nolga teng",
-    "$1/r$ ga proporsional",
-    "o‘zgarmas",
-    "$r^2$ ga proporsional",
-    "$r$ ga proporsional"
+    "zero",
+    "proportional to $1/r$",
+    "constant",
+    "proportional to $r^2$",
+    "proportional to $r$"
    ],
    "c": 4,
-   "e": "Amper: $B\\cdot2\\pi r=\\mu_0I r^2/R^2$."
+   "e": "Ampère's law: $B\\cdot2\\pi r=\\mu_0I r^2/R^2$."
   }
  ]
 }

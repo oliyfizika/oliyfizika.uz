@@ -1,62 +1,62 @@
 {
  "id": 34,
- "title": "Tasvirlar (geometrik optika)",
+ "title": "Images (Geometrical Optics)",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Fokus masofasi $F$ bo‘lgan botiq ko‘zgudan $2F$ masofada buyum turibdi. Tasvir:",
+   "q": "An object is placed at a distance $2F$ from a concave mirror of focal length $F$. The image is",
    "a": [
-    "mavhum, to‘g‘ri, kattalashgan",
-    "haqiqiy, teskari, buyum kattaligida, $2F$ masofada",
-    "haqiqiy, to‘g‘ri, kichraygan",
-    "cheksizlikda",
-    "mavhum, kichraygan"
+    "virtual, upright, enlarged",
+    "real, inverted, the same size as the object, at a distance $2F$",
+    "real, upright, reduced",
+    "at infinity",
+    "virtual, reduced"
    ],
    "c": 1,
-   "e": "$1/a+1/b=1/F$ dan $b=2F$, $\\Gamma=-1$."
+   "e": "From $1/a+1/b=1/F$, $b=2F$ and the magnification is $-1$."
   },
   {
-   "q": "Fokus masofasi 10 cm bo‘lgan yig‘uvchi linzadan 15 cm uzoqlikda buyum turibdi. Tasvir masofasi va kattalashtirish:",
+   "q": "An object is 15 cm from a converging lens of focal length 10 cm. The image distance and magnification are",
    "a": [
-    "6 cm, 0,4",
-    "30 cm, 0,5",
-    "30 cm, 2 (teskari)",
+    "6 cm, 0.4",
+    "30 cm, 0.5",
+    "30 cm, 2 (inverted)",
     "15 cm, 1",
-    "25 cm, 1,7"
+    "25 cm, 1.7"
    ],
    "c": 2,
-   "e": "$1/b=1/10-1/15=1/30$, $\\Gamma=-b/a=-2$."
+   "e": "$1/b=1/10-1/15=1/30$, magnification $-b/a=-2$."
   },
   {
-   "q": "Bo‘yi $H$ bo‘lgan odam o‘zini yassi ko‘zguda to‘liq ko‘rishi uchun ko‘zguning minimal balandligi:",
+   "q": "What is the minimum height of a plane mirror in which a person of height $H$ can see their whole body?",
    "a": [
     "$H$",
     "$H/2$",
     "$H/4$",
     "$2H$",
-    "masofaga bog‘liq"
+    "it depends on the distance"
    ],
    "c": 1,
-   "e": "Nurlar geometriyasidan ko‘zgu o‘lchami masofaga bog‘liq emas."
+   "e": "From the ray geometry, the mirror size does not depend on the distance."
   },
   {
-   "q": "Havoda yig‘uvchi bo‘lgan shisha linza ($n=1{,}5$) suvga ($n=1{,}33$) botirildi. Fokus masofasi:",
+   "q": "A glass lens ($n=1.5$) that is converging in air is immersed in water ($n=1.33$). Its focal length",
    "a": [
-    "kamayadi",
-    "ortadi",
-    "o‘zgarmaydi",
-    "manfiy bo‘ladi",
-    "nolga teng bo‘ladi"
+    "decreases",
+    "increases",
+    "does not change",
+    "becomes negative",
+    "becomes zero"
    ],
    "c": 1,
-   "e": "$1/F\\propto(n_l/n_m-1)$ kichrayadi."
+   "e": "$1/F\\propto(n_l/n_m-1)$ decreases."
   },
   {
-   "q": "Fokus masofalari $+10$ cm va $-20$ cm bo‘lgan ingichka linzalar bir-biriga zich qo‘yilgan. Sistemaning fokus masofasi:",
+   "q": "Thin lenses with focal lengths $+10$ cm and $-20$ cm are placed in contact. The focal length of the combination is",
    "a": [
     "$-10$ cm",
     "$+30$ cm",
-    "$+6{,}7$ cm",
+    "$+6.7$ cm",
     "$+20$ cm",
     "$-20$ cm"
    ],

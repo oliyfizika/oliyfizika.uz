@@ -1,22 +1,22 @@
 {
  "id": 33,
- "title": "Elektromagnit to‘lqinlar",
+ "title": "Electromagnetic Waves",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Vakuumdagi yassi elektromagnit to‘lqin uchun to‘g‘ri tasdiq:",
+   "q": "Which statement is correct for a plane electromagnetic wave in vacuum?",
    "a": [
     "$\\vec E\\parallel\\vec B$",
     "$E=B$",
-    "$E$ va $B$ fazalari $90°$ farq qiladi",
-    "$E=cB$, $\\vec E\\perp\\vec B$, fazalari bir xil",
+    "$E$ and $B$ are $90°$ out of phase",
+    "$E=cB$, $\\vec E\\perp\\vec B$, and they are in phase",
     "$B=cE$"
    ],
    "c": 3,
-   "e": "Maksvell tenglamalaridan."
+   "e": "Follows from Maxwell's equations."
   },
   {
-   "q": "Intensivligi $I$ bo‘lgan yorug‘lik ideal ko‘zguga tik tushmoqda. Yorug‘lik bosimi:",
+   "q": "Light of intensity $I$ falls perpendicularly on a perfect mirror. The radiation pressure is",
    "a": [
     "$I/c$",
     "$2I/c$",
@@ -25,10 +25,10 @@
     "0"
    ],
    "c": 1,
-   "e": "Qaytishda impuls o‘zgarishi ikki barobar."
+   "e": "On reflection, the momentum change is doubled."
   },
   {
-   "q": "Intensivligi $I_0$ bo‘lgan qutblanmagan yorug‘lik o‘qlari orasidagi burchak $60°$ bo‘lgan ikki polyarizatordan o‘tdi. Chiqishdagi intensivlik:",
+   "q": "Unpolarized light of intensity $I_0$ passes through two polarizers whose axes are at $60°$ to each other. The transmitted intensity is",
    "a": [
     "$I_0/2$",
     "$I_0/4$",
@@ -40,19 +40,19 @@
    "e": "$\\tfrac12I_0\\cos^260°=I_0/8$."
   },
   {
-   "q": "Yorug‘lik Bryuster burchagi ostida tushganda qaytgan nur qanday?",
+   "q": "When light is incident at Brewster's angle, the reflected light is",
    "a": [
-    "qutblanmagan",
-    "tushish tekisligida qutblangan",
-    "tushish tekisligiga perpendikulyar qutblangan",
-    "doiraviy qutblangan",
-    "umuman qaytmaydi"
+    "unpolarized",
+    "polarized in the plane of incidence",
+    "polarized perpendicular to the plane of incidence",
+    "circularly polarized",
+    "not reflected at all"
    ],
    "c": 2,
-   "e": "Tushish tekisligidagi tashkil etuvchi qaytmaydi; $\\tan\\theta_B=n_2/n_1$."
+   "e": "The component in the plane of incidence is not reflected; $\\tan\\theta_B=n_2/n_1$."
   },
   {
-   "q": "Sindirish ko‘rsatkichi 2 bo‘lgan muhitdan havoga chiqayotgan nur uchun to‘la ichki qaytishning chegaraviy burchagi:",
+   "q": "For light going from a medium of refractive index 2 into air, the critical angle for total internal reflection is",
    "a": [
     "30°",
     "45°",

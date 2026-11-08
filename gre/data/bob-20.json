@@ -1,10 +1,10 @@
 {
  "id": 20,
- "title": "Entropiya va termodinamikaning ikkinchi qonuni",
+ "title": "Entropy and the Second Law of Thermodynamics",
  "area": "termo",
  "questions": [
   {
-   "q": "600 K va 300 K temperaturali rezervuarlar orasida ishlaydigan Karno mashinasining FIK:",
+   "q": "The efficiency of a Carnot engine operating between reservoirs at 600 K and 300 K is",
    "a": [
     "25%",
     "50%",
@@ -16,7 +16,7 @@
    "e": "$\\eta=1-T_2/T_1=1/2$."
   },
   {
-   "q": "$n$ mol ideal gaz izotermik ravishda hajmini ikki marta oshirdi. Entropiya o‘zgarishi:",
+   "q": "$n$ moles of an ideal gas double their volume isothermally. The change in entropy is",
    "a": [
     "0",
     "$nR$",
@@ -28,19 +28,19 @@
    "e": "$\\Delta S=Q/T=nR\\ln(V_2/V_1)$."
   },
   {
-   "q": "$n$ mol ideal gaz izolyatsiyalangan idishda vakuumga erkin kengayib, hajmini 2 marta oshirdi. Entropiya o‘zgarishi:",
+   "q": "$n$ moles of an ideal gas in an insulated container expand freely into vacuum, doubling their volume. The change in entropy is",
    "a": [
-    "0, chunki $Q=0$",
+    "0, because $Q=0$",
     "$nR\\ln2$",
     "$-nR\\ln2$",
     "$nC_V\\ln2$",
-    "aniqlab bo‘lmaydi"
+    "cannot be determined"
    ],
    "c": 1,
-   "e": "Entropiya holat funksiyasi: boshlang‘ich va oxirgi holatlar izotermik jarayondagidek; qaytmas jarayonda $\\Delta S>0$."
+   "e": "Entropy is a state function: the initial and final states are the same as in an isothermal process; for an irreversible process $\\Delta S>0$."
   },
   {
-   "q": "Har biri faqat ikki holatda bo‘la oladigan $N$ ta mustaqil zarradan iborat sistemaning mumkin bo‘lgan mikroholatlari bo‘yicha maksimal entropiyasi:",
+   "q": "A system consists of $N$ independent particles, each of which can be in only two states. The maximum entropy over the possible microstates is",
    "a": [
     "$Nk$",
     "$k\\ln N$",
@@ -52,13 +52,13 @@
    "e": "$\\Omega=2^N$, $S=k\\ln\\Omega$."
   },
   {
-   "q": "Ideal (Karno) sovutkich 250 K li kamerani 300 K li xonaga issiqlik chiqarib sovutmoqda. Sovutish koeffitsienti:",
+   "q": "An ideal (Carnot) refrigerator cools a compartment at 250 K by rejecting heat into a room at 300 K. Its coefficient of performance is",
    "a": [
     "1/5",
     "5/6",
     "6",
     "5",
-    "1,2"
+    "1.2"
    ],
    "c": 3,
    "e": "$K=T_2/(T_1-T_2)=250/50=5$."

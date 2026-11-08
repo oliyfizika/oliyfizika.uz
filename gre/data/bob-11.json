@@ -1,22 +1,22 @@
 {
  "id": 11,
- "title": "Dumalash, kuch momenti va impuls momenti",
+ "title": "Rolling, Torque and Angular Momentum",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Massasi va radiusi bir xil halqa, yaxlit silindr va yaxlit shar qiya tekislikdan sirpanmasdan dumalab tushmoqda. Pastga birinchi bo‘lib qaysi biri yetib keladi?",
+   "q": "A hoop, a solid cylinder and a solid sphere of equal mass and radius roll without slipping down an incline. Which one reaches the bottom first?",
    "a": [
-    "Halqa",
-    "Silindr",
-    "Shar",
-    "Uchalasi bir vaqtda",
-    "Qiyalik burchagiga bog‘liq"
+    "The hoop",
+    "The cylinder",
+    "The sphere",
+    "All three at the same time",
+    "It depends on the incline angle"
    ],
    "c": 2,
-   "e": "$a=g\\sin\\theta/(1+I/mR^2)$; $I/mR^2$ shar uchun eng kichik (2/5)."
+   "e": "$a=g\\sin\\theta/(1+I/mR^2)$; $I/mR^2$ is smallest for the sphere (2/5)."
   },
   {
-   "q": "Yaxlit silindr sirpanmasdan dumalamoqda. To‘liq kinetik energiyaning qanday qismi aylanma harakatga to‘g‘ri keladi?",
+   "q": "A solid cylinder rolls without slipping. What fraction of its total kinetic energy is rotational?",
    "a": [
     "1/4",
     "1/3",
@@ -25,40 +25,40 @@
     "2/7"
    ],
    "c": 1,
-   "e": "$K_{\\text{ayl}}=\\tfrac14mv^2$, $K_{\\text{ilg}}=\\tfrac12mv^2$: $\\dfrac{1/4}{3/4}=1/3$."
+   "e": "$K_{\\text{rot}}=\\tfrac14mv^2$, $K_{\\text{trans}}=\\tfrac12mv^2$: $\\dfrac{1/4}{3/4}=1/3$."
   },
   {
-   "q": "Muz ustida aylanayotgan figurachi qo‘llarini tanasiga yaqinlashtirib, inersiya momentini ikki marta kamaytirdi. Aylanma kinetik energiyasi:",
+   "q": "A spinning figure skater pulls in her arms, halving her moment of inertia. Her rotational kinetic energy",
    "a": [
-    "o‘zgarmaydi",
-    "$\\sqrt2$ marta oshadi",
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "2 marta kamayadi"
+    "does not change",
+    "increases by a factor of $\\sqrt2$",
+    "doubles",
+    "increases by a factor of 4",
+    "is halved"
    ],
    "c": 2,
-   "e": "$L$ saqlanadi, $K=L^2/(2I)\\propto1/I$."
+   "e": "$L$ is conserved and $K=L^2/(2I)\\propto1/I$."
   },
   {
-   "q": "$m$ massali zarra koordinata boshidan $d$ masofada o‘tuvchi to‘g‘ri chiziq bo‘ylab o‘zgarmas $v$ tezlik bilan harakatlanmoqda. Uning koordinata boshiga nisbatan impuls momenti:",
+   "q": "A particle of mass $m$ moves with constant speed $v$ along a straight line that passes a distance $d$ from the origin. Its angular momentum about the origin",
    "a": [
-    "nolga teng",
-    "vaqt o‘tishi bilan ortadi",
-    "vaqt o‘tishi bilan kamayadi",
-    "zarra eng yaqin nuqtadan o‘tganda nolga aylanadi",
-    "o‘zgarmas va $mvd$ ga teng"
+    "is zero",
+    "increases with time",
+    "decreases with time",
+    "becomes zero when the particle passes the closest point",
+    "is constant and equal to $mvd$"
    ],
    "c": 4,
-   "e": "$|\\vec r\\times\\vec p|=pr\\sin\\alpha=mvd$, kuch momenti yo‘q."
+   "e": "$|\\vec r\\times\\vec p|=pr\\sin\\alpha=mvd$, and there is no torque."
   },
   {
-   "q": "Giroskopning presessiya burchak tezligi $\\Omega=Mgr/(I\\omega)$. Rotorning aylanish tezligi $\\omega$ ikki marta oshirilsa, $\\Omega$:",
+   "q": "The precession angular velocity of a gyroscope is $\\Omega=Mgr/(I\\omega)$. If the spin rate $\\omega$ of the rotor is doubled, $\\Omega$",
    "a": [
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "2 marta kamayadi",
-    "4 marta kamayadi",
-    "o‘zgarmaydi"
+    "doubles",
+    "increases by a factor of 4",
+    "is halved",
+    "decreases by a factor of 4",
+    "does not change"
    ],
    "c": 2,
    "e": "$\\Omega\\propto1/\\omega$."

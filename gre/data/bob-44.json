@@ -1,10 +1,10 @@
 {
  "id": 44,
- "title": "Kvarklar, leptonlar va Katta portlash",
+ "title": "Quarks, Leptons and the Big Bang",
  "area": "maxsus",
  "questions": [
   {
-   "q": "Protonning kvark tarkibi:",
+   "q": "The quark content of the proton is",
    "a": [
     "uuu",
     "uud",
@@ -16,7 +16,7 @@
    "e": "$\\tfrac23+\\tfrac23-\\tfrac13=1$."
   },
   {
-   "q": "Quyidagi jarayonlardan qaysi biri saqlanish qonunlariga ko‘ra TA’QIQLANGAN?",
+   "q": "Which of the following processes is FORBIDDEN by conservation laws?",
    "a": [
     "$n\\to p+e^-+\\bar\\nu_e$",
     "$\\pi^+\\to\\mu^++\\nu_\\mu$",
@@ -25,10 +25,10 @@
     "$\\Lambda^0\\to p+\\pi^-$"
    ],
    "c": 3,
-   "e": "Barion soni (va lepton soni) saqlanmaydi."
+   "e": "Baryon number (and lepton number) is not conserved."
   },
   {
-   "q": "Neytronning kvark tarkibi va zaryadi:",
+   "q": "The quark content and charge of the neutron are",
    "a": [
     "uud, 0",
     "udd, 0",
@@ -40,19 +40,19 @@
    "e": "$\\tfrac23-\\tfrac13-\\tfrac13=0$."
   },
   {
-   "q": "Kuchsiz o‘zaro ta’sirni tashuvchi zarralar:",
+   "q": "The carriers of the weak interaction are",
    "a": [
-    "foton",
-    "glyuonlar",
-    "$W^\\pm$ va $Z^0$ bozonlar",
-    "pionlar",
-    "graviton"
+    "the photon",
+    "gluons",
+    "the $W^\\pm$ and $Z^0$ bosons",
+    "pions",
+    "the graviton"
    ],
    "c": 2,
-   "e": "Massalari ~80–91 GeV."
+   "e": "Their masses are ~80–91 GeV."
   },
   {
-   "q": "Xabbl qonuni $v=H_0d$. Koinot yoshining eng sodda bahosi:",
+   "q": "Hubble's law is $v=H_0d$. The simplest estimate of the age of the universe is",
    "a": [
     "$H_0$",
     "$1/H_0$",
@@ -61,7 +61,7 @@
     "$1/H_0^2$"
    ],
    "c": 1,
-   "e": "Hozirgi tezlikda barcha galaktikalar $t=d/v=1/H_0$ vaqt oldin bir nuqtada bo‘lgan."
+   "e": "At the present speeds, all galaxies were at one point a time $t=d/v=1/H_0$ ago."
   }
  ]
 }
