@@ -20,6 +20,7 @@
 import { icon } from "../ui/icons.js";
 import { toast, friendlyError } from "../ui/feedback.js";
 import { NAV_GROUPS, BOTTOM_NAV, ALL_ITEMS, ADMIN_NAV_GROUPS, ADMIN_BOTTOM_NAV, ADMIN_ENTRY } from "./nav-config.js";
+import { adminPerms } from "../admin/permissions.js";
 import { applyTheme, writePref, resolveTheme, setThemePref } from "../core/prefs.js";
 import { t, applyI18n, LANGS, getLang, setLang } from "../core/i18n.js";
 import { onSession, displayName, initials, signOutUser } from "../core/session.js";
@@ -137,6 +138,7 @@ function mount() {
     // "Admin panel" havolasi faqat role == "admin" uchun ko'rinadi (UI; himoya — firestore.rules)
     const adminEntry = sidebar.querySelector("[data-admin-entry]");
     if (adminEntry) adminEntry.hidden = !isAdminProfile(state);
+    if (ADMIN_MODE) applyAdminNav(state, sidebar, bottomNav);
 
     maybeResumeRegistration(state);
 
@@ -622,6 +624,17 @@ export function setTitle(title) {
 // ---------------------------------------------------------------------------
 // Mobil pastki navigatsiya
 // ---------------------------------------------------------------------------
+// Admin System 2.0: admin menyusida faqat biriktirilgan bo'limlar ko'rinadi (UI qulayligi; himoya — firestore.rules).
+function applyAdminNav(state, sidebar, bottomNav) {
+  if (state.status !== "authenticated" || !state.profileLoaded) return;
+  const perms = adminPerms(state.profile);
+  for (const item of ITEMS) {
+    const ok = (!item.owner || perms.owner) && (!item.section || [].concat(item.section).some((s) => perms.can(s)));
+    sidebar.querySelectorAll(`[data-nav-id="${item.id}"]`).forEach((a) => { (a.closest("li") || a).hidden = !ok; });
+    bottomNav.querySelectorAll(`[data-nav-id="${item.id}"]`).forEach((a) => { a.hidden = !ok; });
+  }
+}
+
 function buildBottomNav(active) {
   const nav = document.createElement("nav");
   nav.className = "of-bottom-nav of-chrome";
@@ -630,7 +643,7 @@ function buildBottomNav(active) {
     "admin-dashboard": "Dashboard", "admin-users": "Userlar", "admin-results": "Natijalar", "admin-access": "Access" };
   nav.innerHTML = BOTTOM.map((id) => {
     const item = ITEMS.find((i) => i.id === id);
-    return `<a href="${url(item.href)}" ${item.protected && !item.publicLanding ? 'data-of-protected="true"' : ""} ${active?.id === id ? 'aria-current="page"' : ""}>
+    return `<a href="${url(item.href)}" data-nav-id="${item.id}" ${item.protected && !item.publicLanding ? 'data-of-protected="true"' : ""} ${active?.id === id ? 'aria-current="page"' : ""}>
         ${icon(item.icon)}<span>${short[id] ? t(`navshort.${id}`, short[id]) : item.label}</span></a>`;
   }).join("") + `<button type="button" data-drawer-open aria-controls="of-sidebar" aria-expanded="false">${icon("menu")}<span>${t("shell.menu", "Menyu")}</span></button>`;
 

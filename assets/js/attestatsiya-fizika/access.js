@@ -9,6 +9,7 @@
 // Mavjud arxitektura: attestationPhysicsSettings/config.accessMode (open|paid) + users/{uid}.attestationAccess.
 // ==========================================================================
 import { t } from "../core/i18n.js";
+import { adminPerms } from "../admin/permissions.js";
 
 export const FREE_DAYS = 3;
 
@@ -24,7 +25,8 @@ export const isPaidMock = (test) => isMockTest(test) && test.paidOnly === true;
 export function accessContext(settings, profile) {
   return {
     open: settings?.accessMode === "open",
-    admin: profile?.role === "admin",
+    // Admin System 2.0: faqat «Attestatsiya — Fizika» bo'limi biriktirilgan admin (Rules: attAdmin)
+    admin: adminPerms(profile).can("attestatsiya-fizika"),
     granted: profile?.attestationAccess === true,
   };
 }

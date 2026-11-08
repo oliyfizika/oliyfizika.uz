@@ -2,9 +2,16 @@
 // Statistika: Firestore count (getCountFromServer) — aniq son, hujjatlar brauzerga yuklanmaydi.
 // So'nggi ro'yxatlar: limit(5). Hech qanday taxminiy/soxta son ko'rsatilmaydi: xato bo'lsa "—" va izoh.
 import { requireAdmin, $, esc, fillIcons, fullNameOf, fmtDate, formatDateTime, stateBox, errorText, num } from "./admin-common.js";
+import { adminKindLabel, sectionLabel } from "./permissions.js";
+// Admin System 2.0: bo'limli admin faqat o'z bo'limlari ko'rsatkichlarini ko'radi (Rules ham shunday).
 
 fillIcons($("#adminPage"));
-const { fb } = await requireAdmin();
+const { state, fb, perms } = await requireAdmin();
+const canResults = perms.can("umumiy-fizika") || perms.can("foydalanuvchilar");
+$("[data-my-kind]").textContent = adminKindLabel(state.profile);
+$("[data-my-sections]").innerHTML = perms.sections.length
+  ? perms.sections.map((s) => `<span class="of-admin-chip">${esc(sectionLabel(s))}</span>`).join("")
+  : `<span class="of-admin-chip of-admin-chip--muted">Sizga hali bo‘lim biriktirilmagan — sayt egasiga murojaat qiling.</span>`;
 const { collection, query, where, orderBy, limit, getDocs, getCountFromServer } = fb.fsSdk;
 const users = collection(fb.db, "users");
 const results = collection(fb.db, "results");
@@ -15,9 +22,13 @@ const STATS = {
   fullAccess: query(users, where("fullAccess", "==", true)),
   mock: query(users, where("mockTestsAccess", "==", true)),
   attestation: query(users, where("attestationAccess", "==", true)),
-  results: query(results),
-  mockAttempts: query(collection(fb.db, "mockTestAttempts")),
+  ...(canResults ? { results: query(results) } : {}),
+  ...(perms.can("milliy-sertifikat") ? { mockAttempts: query(collection(fb.db, "mockTestAttempts")) } : {}),
 };
+// Ruxsat yo'q ko'rsatkich kartalari yashiriladi
+["results", "mockAttempts"].forEach((k) => { if (!STATS[k]) $(`[data-stat="${k}"]`)?.closest("li")?.setAttribute("hidden", ""); });
+if (!canResults) $("[data-recent-results-panel]").hidden = true;
+if (!perms.can("foydalanuvchilar")) document.querySelector('a[href="users.html"]')?.setAttribute("hidden", "");
 
 async function loadStats() {
   let failed = null;
@@ -65,4 +76,4 @@ async function loadRecentResults() {
   box.setAttribute("aria-busy", "false");
 }
 
-await Promise.all([loadStats(), loadRecentUsers(), loadRecentResults()]);
+await Promise.all([loadStats(), loadRecentUsers(), canResults ? loadRecentResults() : null]);

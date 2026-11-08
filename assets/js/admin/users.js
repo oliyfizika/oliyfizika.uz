@@ -8,7 +8,7 @@ import { requireAdmin, $, esc, fillIcons, splitNames, fmtDate, formatDateTime, y
 import { icon } from "../ui/icons.js";
 
 fillIcons($("#adminPage"));
-const { fb } = await requireAdmin();
+const { fb } = await requireAdmin({ section: "foydalanuvchilar" });
 const { collection, query, where, orderBy, limit, startAfter, getDocs, getDoc, doc, documentId } = fb.fsSdk;
 const col = collection(fb.db, "users");
 
@@ -28,7 +28,7 @@ function row(id, u) {
   const n = splitNames(u);
   const cells = [
     ["Ism", esc(n.first)], ["Familiya", esc(n.last)], ["Email", `<span class="of-admin-break">${esc(u.email || "—")}</span>`],
-    ["Role", roleBadge(u.role)], ["Full Access", yesNo(u.fullAccess)], ["Mock Access", yesNo(u.mockTestsAccess)],
+    ["Role", roleBadge(u.role, u)], ["Full Access", yesNo(u.fullAccess)], ["Mock Access", yesNo(u.mockTestsAccess)],
     ["Attestatsiya — Fizika", yesNo(u.attestationAccess)],
     ["XP", num(u.xp)], ["Daraja", num(u.level)], ["Ro‘yxat sanasi", esc(fmtDate(u.createdAt))], ["Oxirgi faollik", esc(formatDateTime(u.lastActiveAt))],
   ];
