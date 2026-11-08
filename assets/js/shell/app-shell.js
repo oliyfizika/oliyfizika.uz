@@ -18,6 +18,7 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
+import "../ui/section-help.js";
 import { toast, friendlyError } from "../ui/feedback.js";
 import { NAV_GROUPS, BOTTOM_NAV, ALL_ITEMS, ADMIN_NAV_GROUPS, ADMIN_BOTTOM_NAV, ADMIN_ENTRY } from "./nav-config.js";
 import { adminPerms } from "../admin/permissions.js";

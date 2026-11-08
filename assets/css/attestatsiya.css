@@ -499,3 +499,8 @@
 @media (prefers-reduced-motion: reduce) { .att-clock[data-level="danger"] { animation: none; } }
 .att-limit-note { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: var(--of-radius-md, 12px); background: var(--of-surface-sunken); color: var(--of-text); }
 .att-limit-note svg { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--of-primary); }
+
+/* Yo'nalish kartasidagi «qanday ishlaydi?» tugmasi (karta havolasidan tashqarida, burchakda) */
+.att-choices > li { position: relative; }
+.att-choice__help { position: absolute; top: 16px; right: 16px; z-index: 1; }
+.att-choice h2 { padding-right: 36px; }
