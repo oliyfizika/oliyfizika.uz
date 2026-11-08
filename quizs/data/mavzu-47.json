@@ -92,9 +92,9 @@
       "c": 1
     },
     {
-      "q": "Vakuumli dioddagi tok kuchi to‘yinishga erishmagan holatda, anod kuchlanishi 4 marta ortsa, quvvat necha marta ortadi?",
-      "a": ["4 marta", "16 marta", "32 marta", "8 marta"],
-      "c": 2
+      "q": "Vakuumli dioddagi to‘yinish tokini oshirish uchun nima qilish kerak?",
+      "a": ["Anod kuchlanishini oshirish", "Katodning qizish haroratini oshirish", "Anod va katodning o‘rnini almashtirish", "Diod ichini havo bilan to‘ldirish"],
+      "c": 1
     },
     {
       "q": "O‘tkazgichda elektr tokining tarqalish tezligi deganda nima tushuniladi?",

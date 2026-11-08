@@ -92,13 +92,8 @@
       "c": 2
     },
     {
-      "q": "Fokus masofasi 12 cm bo‘lgan yupqa yig‘uvchi linza yordamida buyumning 2 marta kattalashgan mavhum tasviri hosil qilindi. Linzadan tasvirgacha masofani (cm) aniqlang.",
-      "a": [
-        "10 cm ",
-        "12 cm ",
-        "18 cm ",
-        "6 cm "
-      ],
+      "q": "Buyum yig‘uvchi linzadan 30 cm masofada, uning haqiqiy tasviri esa linzadan 60 cm masofada hosil bo‘ldi. Linzaning chiziqli kattalashtirishi nechaga teng?",
+      "a": ["0,5", "2", "3", "30"],
       "c": 1
     },
     {
@@ -213,13 +208,8 @@
     },
     {
       "q": "Buyum bilan yig'uvchi linza oralig'i 3F bo'lsa, tasvirning o'lchami buyum o'lchamidan necha marta katta yoki kichik bo'ladi?",
-      "a": [
-        "2 marta kichik",
-        "2 marta katta ",
-        "0,5 marta kichik ",
-        "1,5 marta katta"
-      ],
-      "c": 2
+      "a": ["2 marta kichik", "2 marta katta", "3 marta kichik", "1,5 marta katta"],
+      "c": 0
     },
     {
       "q": "Uzoqdan ko'rar odamning ko'rish nuqsonini tuzatish uchun qanday ko'zoynak taqishi kerak?",

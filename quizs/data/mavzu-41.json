@@ -57,9 +57,9 @@
       "c": 1
     },
     {
-      "q": "Sig'imi 4 μF bo'lgan kondensator 200 V kuchlanishga ulangan. Uning energiyasini toping (J).",
-      "a": ["0,08 J", "0,4 J", "0,04 J", "0,8 J"],
-      "c": 0
+      "q": "Sig‘imi 2 F bo‘lgan ionistor (superkondensator) 10 V kuchlanishgacha zaryadlandi. Uning energiyasini toping.",
+      "a": ["20 J", "100 J", "200 J", "10 J"],
+      "c": 1
     },
     {
       "q": "Tebranish konturidagi kondensator sig'imi 4 marta orttirilsa, erkin tebranishlar davri qanday o'zgaradi?",

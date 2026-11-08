@@ -52,8 +52,8 @@
       "c": 1
     },
     {
-      "q": "Karno sikli bo'yicha ishlovchi issiqlik mashinasi FIK i 60% va sovutkich temperaturasi 280 K bo'lsa, isitkich temperaturasi qancha (K)?",
-      "a": ["500 K", "700 K", "600 K", "400 K"],
+      "q": "Karno sikli bo‘yicha ishlovchi ideal issiqlik mashinasi isitkichining harorati 500 K, sovutkichniki 300 K. Mashinaning FIK i necha foiz?",
+      "a": ["60%", "40%", "20%", "80%"],
       "c": 1
     },
     {
@@ -77,8 +77,8 @@
       "c": 2
     },
     {
-      "q": "Karnoning ideal dvigateli 600 K temperaturali isitkichdan 20 kJ issiqlik olib, sovutkichga 11 kJ issiqlik berdi. Sovutkich temperaturasi qancha (K)?",
-      "a": ["300 K", "330 K", "450 K", "480 K"],
+      "q": "Ideal issiqlik mashinasi isitkichdan 20 kJ issiqlik olib, sovutkichga 15 kJ issiqlik berdi. Mashinaning FIK i necha foiz?",
+      "a": ["75%", "25%", "15%", "35%"],
       "c": 1
     },
     {

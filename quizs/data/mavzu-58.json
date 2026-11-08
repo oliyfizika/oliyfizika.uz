@@ -35,10 +35,9 @@
       "ref": "[2, 3]"
     },
     {
-      "q": "Jism massasi 2 marta ortishi uchun u qanday tezlikda harakatlanishi zarur? (c – yorug'lik tezilgi)",
-      "a": ["0,5c", "0,6c", "0,8c", "0,87c"],
-      "c": 3,
-      "ref": "[4]"
+      "q": "Zarraning relyativistik massasi tinchlikdagi massasidan 2 marta katta (m = 2m₀). Uning to‘la energiyasi tinchlikdagi energiyasidan necha marta katta?",
+      "a": ["√2 marta", "2 marta", "4 marta", "Teng"],
+      "c": 1
     },
     {
       "q": "Zarraning tezligi 0,8c bo‘lsa, uning kinetik energiyasining to‘la energiyasiga nisbati nimaga teng?",
@@ -47,10 +46,9 @@
       "ref": "[5]"
     },
     {
-      "q": "Zarracha v = √13c/7 tezlikda harakatlansa, uning to'la energiyasi kinetik energiyasidan necha marta katta bo'ladi?",
-      "a": ["6/5", "7/6", "6", "7"],
-      "c": 3,
-      "ref": "[6]"
+      "q": "Zarraning tinchlikdagi energiyasi E₀, to‘la energiyasi esa 3E₀ ga teng. Uning kinetik energiyasi nimaga teng?",
+      "a": ["3E₀", "2E₀", "E₀", "4E₀"],
+      "c": 1
     },
     {
       "q": "Zarraning tezligi 0,8c dan 0,6c gacha kamaydi. Bunda uning relyativistik massasi necha marta kamaygan?",
