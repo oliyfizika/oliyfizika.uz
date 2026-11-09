@@ -1,10 +1,10 @@
 {
  "id": 43,
- "title": "Yadro energiyasi",
+ "title": "Energy from the Nucleus",
  "area": "maxsus",
  "questions": [
   {
-   "q": "$^{235}\\text{U}$ yadrosining bitta bo‘linishida ajraladigan energiya tartibi:",
+   "q": "The order of magnitude of the energy released in a single fission of a $^{235}\\text{U}$ nucleus is",
    "a": [
     "2 MeV",
     "20 MeV",
@@ -13,55 +13,55 @@
     "200 keV"
    ],
    "c": 2,
-   "e": "Bo‘linish bo‘laklarining bog‘lanish energiyasi ~0,9 MeV/nuklon katta."
+   "e": "The binding energy of the fission fragments is larger by ~0.9 MeV/nucleon."
   },
   {
-   "q": "Quyoshdagi proton–proton siklida to‘rtta protondan bitta geliy yadrosi hosil bo‘lganda ajraladigan energiya taxminan:",
+   "q": "In the Sun's proton–proton chain, the energy released when one helium nucleus is formed from four protons is approximately",
    "a": [
-    "0,5 MeV",
-    "2,2 MeV",
+    "0.5 MeV",
+    "2.2 MeV",
     "27 MeV",
     "200 MeV",
     "938 MeV"
    ],
    "c": 2,
-   "e": "$4m_p-m_{He}$ farqi ~26,7 MeV."
+   "e": "The difference $4m_p-m_{He}$ is ~26.7 MeV."
   },
   {
-   "q": "Yadro reaktoridagi sekinlatgich (moderator) vazifasi:",
+   "q": "The role of the moderator in a nuclear reactor is",
    "a": [
-    "neytronlarni yutish",
-    "neytronlarni issiqlik energiyasigacha sekinlatish",
-    "reaktorni sovitish",
-    "radiatsiyadan himoya qilish",
-    "yoqilg‘ini boyitish"
+    "to absorb neutrons",
+    "to slow neutrons down to thermal energies",
+    "to cool the reactor",
+    "to shield against radiation",
+    "to enrich the fuel"
    ],
    "c": 1,
-   "e": "$^{235}$U sekin neytronlarni samaraliroq yutib bo‘linadi."
+   "e": "$^{235}$U absorbs slow neutrons and fissions more efficiently."
   },
   {
-   "q": "1 atom massa birligining (u) energiya ekvivalenti taxminan:",
+   "q": "The energy equivalent of 1 atomic mass unit (u) is approximately",
    "a": [
-    "0,511 MeV",
-    "931,5 MeV",
-    "1 GeV aniq",
-    "13,6 eV",
+    "0.511 MeV",
+    "931.5 MeV",
+    "exactly 1 GeV",
+    "13.6 eV",
     "200 MeV"
    ],
    "c": 1,
-   "e": "$1\\,\\text{u}\\cdot c^2\\approx931{,}5$ MeV."
+   "e": "$1\\,\\text{u}\\cdot c^2\\approx931.5$ MeV."
   },
   {
-   "q": "Termoyadro sintezi uchun juda yuqori temperatura nima uchun kerak?",
+   "q": "Why is a very high temperature required for thermonuclear fusion?",
    "a": [
-    "neytronlarni sekinlatish uchun",
-    "yadrolar orasidagi Kulon to‘sig‘ini yengish uchun",
-    "elektronlarni atomdan ajratish uchun",
-    "kuchli o‘zaro ta’sirni kuchsizlantirish uchun",
-    "zanjir reaksiyasini to‘xtatish uchun"
+    "to slow down neutrons",
+    "to overcome the Coulomb barrier between nuclei",
+    "to strip electrons from the atoms",
+    "to weaken the strong interaction",
+    "to stop the chain reaction"
    ],
    "c": 1,
-   "e": "Musbat yadrolar yadro kuchlari ta’sir qiladigan masofagacha yaqinlashishi kerak."
+   "e": "The positive nuclei must approach each other to within the range of the nuclear force."
   }
  ]
 }

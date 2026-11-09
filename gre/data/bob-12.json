@@ -1,10 +1,10 @@
 {
  "id": 12,
- "title": "Muvozanat va elastiklik",
+ "title": "Equilibrium and Elasticity",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Og‘irligi $W$, uzunligi $L$ bo‘lgan bir jinsli to‘sin uchlaridan ikki tayanchga qo‘yilgan. Chap uchdan $L/4$ masofaga og‘irligi $W$ bo‘lgan yuk qo‘yildi. Chap tayanchning reaksiya kuchi:",
+   "q": "A uniform beam of weight $W$ and length $L$ rests on two supports at its ends. A load of weight $W$ is placed a distance $L/4$ from the left end. The reaction force of the left support is",
    "a": [
     "$W$",
     "$3W/4$",
@@ -13,10 +13,10 @@
     "$3W/2$"
    ],
    "c": 3,
-   "e": "O‘ng uchga nisbatan moment: $N_1L=W\\tfrac L2+W\\tfrac{3L}4\\Rightarrow N_1=5W/4$."
+   "e": "Torques about the right end: $N_1L=W\\tfrac L2+W\\tfrac{3L}4\\Rightarrow N_1=5W/4$."
   },
   {
-   "q": "Bir jinsli narvon ishqalanishsiz vertikal devorga 45° burchak ostida suyalgan. Sirpanmasligi uchun pol bilan minimal ishqalanish koeffitsienti:",
+   "q": "A uniform ladder leans against a frictionless vertical wall at 45°. The minimum coefficient of friction with the floor that keeps it from slipping is",
    "a": [
     "1/4",
     "1/2",
@@ -28,19 +28,19 @@
    "e": "$\\mu\\ge\\dfrac1{2\\tan\\theta}=1/2$."
   },
   {
-   "q": "Bir xil materialdan simning uzunligi ham, diametri ham 2 marta oshirildi. Bir xil kuch ta’sirida absolyut uzayishi:",
+   "q": "Both the length and the diameter of a wire are doubled (same material). Under the same force, its elongation",
    "a": [
-    "2 marta kamayadi",
-    "o‘zgarmaydi",
-    "2 marta oshadi",
-    "4 marta kamayadi",
-    "8 marta kamayadi"
+    "is halved",
+    "does not change",
+    "doubles",
+    "decreases by a factor of 4",
+    "decreases by a factor of 8"
    ],
    "c": 0,
    "e": "$\\Delta L=FL/(EA)$: $L\\times2$, $A\\times4$."
   },
   {
-   "q": "Hajmiy siqilish moduli $B$ bo‘lgan moddaga qo‘shimcha $\\Delta p$ bosim berilsa, hajmning nisbiy o‘zgarishi:",
+   "q": "A material with bulk modulus $B$ is subjected to an additional pressure $\\Delta p$. The fractional change in volume is",
    "a": [
     "$B\\Delta p$",
     "$\\Delta p/B$",
@@ -49,19 +49,19 @@
     "0"
    ],
    "c": 3,
-   "e": "Ta’rif: $B=-\\Delta p/(\\Delta V/V)$."
+   "e": "By definition $B=-\\Delta p/(\\Delta V/V)$."
   },
   {
-   "q": "Uzunligi 4 m bo‘lgan arg‘imchoq o‘rtasidan tayangan. Bir uchida 30 kg li bola o‘tiribdi (tayanchdan 2 m). 40 kg li bola muvozanat uchun tayanchdan qancha masofada o‘tirishi kerak?",
+   "q": "A 4 m long seesaw is pivoted at its center. A 30 kg child sits at one end (2 m from the pivot). How far from the pivot must a 40 kg child sit for balance?",
    "a": [
-    "2,67 m",
+    "2.67 m",
     "1 m",
-    "1,5 m",
+    "1.5 m",
     "2 m",
-    "0,5 m"
+    "0.5 m"
    ],
    "c": 2,
-   "e": "$30\\cdot2=40x\\Rightarrow x=1{,}5$ m."
+   "e": "$30\\cdot2=40x\\Rightarrow x=1.5$ m."
   }
  ]
 }

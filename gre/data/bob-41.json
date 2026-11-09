@@ -1,58 +1,58 @@
 {
  "id": 41,
- "title": "Qattiq jismlarda elektr o‘tkazuvchanlik",
+ "title": "Conduction of Electricity in Solids",
  "area": "maxsus",
  "questions": [
   {
-   "q": "Taqiqlangan zona kengligining tipik qiymatlari uchun to‘g‘ri tasdiq:",
+   "q": "Which statement about typical band-gap values is correct?",
    "a": [
-    "metallda ~5 eV",
-    "yarimo‘tkazgichda ~1 eV, dielektrikda bir necha eV va undan katta",
-    "yarimo‘tkazgichda ~100 eV",
-    "dielektrikda nol",
-    "barchasida bir xil"
+    "~5 eV in a metal",
+    "~1 eV in a semiconductor, several eV or more in an insulator",
+    "~100 eV in a semiconductor",
+    "zero in an insulator",
+    "the same in all of them"
    ],
    "c": 1,
-   "e": "Si: 1,1 eV; olmos: ~5,5 eV."
+   "e": "Si: 1.1 eV; diamond: ~5.5 eV."
   },
   {
-   "q": "Kremniyga qaysi kirishma qo‘shilsa $n$-tip yarimo‘tkazgich hosil bo‘ladi?",
+   "q": "Which dopant added to silicon produces an $n$-type semiconductor?",
    "a": [
-    "bor",
-    "alyuminiy",
-    "galliy",
-    "fosfor",
-    "indiy"
+    "boron",
+    "aluminum",
+    "gallium",
+    "phosphorus",
+    "indium"
    ],
    "c": 3,
-   "e": "Fosfor besh valentli — donor."
+   "e": "Phosphorus is pentavalent, i.e. a donor."
   },
   {
-   "q": "Fermi–Dirak taqsimotida energiya Fermi sathiga teng bo‘lgan holatning ($T>0$) to‘ldirilish ehtimoli:",
+   "q": "In the Fermi–Dirac distribution, the occupation probability of a state whose energy equals the Fermi level ($T>0$) is",
    "a": [
     "0",
     "1",
     "1/2",
     "$1/e$",
-    "temperaturaga bog‘liq"
+    "dependent on the temperature"
    ],
    "c": 2,
    "e": "$f=1/(e^0+1)$."
   },
   {
-   "q": "Toza yarimo‘tkazgichning solishtirma o‘tkazuvchanligi temperatura oshishi bilan:",
+   "q": "As the temperature increases, the conductivity of a pure semiconductor",
    "a": [
-    "oshadi",
-    "kamayadi",
-    "o‘zgarmaydi",
-    "nolga tushadi",
-    "avval kamayib, so‘ng oshadi"
+    "increases",
+    "decreases",
+    "does not change",
+    "drops to zero",
+    "first decreases, then increases"
    ],
    "c": 0,
    "e": "$n_i\\propto e^{-E_g/(2kT)}$."
   },
   {
-   "q": "Taqiqlangan zonasi 2 eV bo‘lgan yorug‘lik diodi taxminan qanday to‘lqin uzunlikda nur chiqaradi? ($hc\\approx1240$ eV·nm)",
+   "q": "Approximately what wavelength does a light-emitting diode with a 2 eV band gap emit? ($hc\\approx1240$ eV·nm)",
    "a": [
     "310 nm",
     "620 nm",

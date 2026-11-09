@@ -1,22 +1,22 @@
 {
  "id": 35,
- "title": "Interferensiya",
+ "title": "Interference",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Yung tajribasida tirqishlar orasidagi masofa 2 marta kamaytirilsa, interferension yo‘llar orasidagi masofa:",
+   "q": "In Young's double-slit experiment, if the slit separation is halved, the fringe spacing",
    "a": [
-    "2 marta kamayadi",
-    "o‘zgarmaydi",
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "$\\sqrt2$ marta oshadi"
+    "is halved",
+    "does not change",
+    "doubles",
+    "increases by a factor of 4",
+    "increases by a factor of $\\sqrt2$"
    ],
    "c": 2,
    "e": "$\\Delta y=\\lambda L/d$."
   },
   {
-   "q": "Havodagi sovun pardasi ($n$) qaytgan yorug‘likda $\\lambda$ to‘lqin uzunligi uchun kuchaytirish bersa, pardaning minimal qalinligi:",
+   "q": "A soap film (index $n$) in air shows constructive interference in reflected light at wavelength $\\lambda$. The minimum thickness of the film is",
    "a": [
     "$\\lambda/(2n)$",
     "$\\lambda/(4n)$",
@@ -25,10 +25,10 @@
     "$\\lambda/2$"
    ],
    "c": 1,
-   "e": "Yuqori sirtdan qaytishda $\\pi$ faza sakrashi: $2nt=\\lambda/2$."
+   "e": "There is a $\\pi$ phase jump on reflection at the top surface: $2nt=\\lambda/2$."
   },
   {
-   "q": "Maykelson interferometrida bir ko‘zgu $d$ masofaga siljitilganda maydondan nechta yo‘l o‘tadi?",
+   "q": "In a Michelson interferometer, how many fringes pass the field of view when one mirror is moved by a distance $d$?",
    "a": [
     "$d/\\lambda$",
     "$d/(2\\lambda)$",
@@ -37,31 +37,31 @@
     "$\\lambda/d$"
    ],
    "c": 3,
-   "e": "Yo‘l farqi $2d$ ga o‘zgaradi."
+   "e": "The path difference changes by $2d$."
   },
   {
-   "q": "Yung tajribasi to‘liq suvga (sindirish ko‘rsatkichi $n$) botirildi. Yo‘llar orasidagi masofa:",
+   "q": "Young's experiment is immersed completely in water (refractive index $n$). The fringe spacing",
    "a": [
-    "$n$ marta kamayadi",
-    "$n$ marta oshadi",
-    "o‘zgarmaydi",
-    "$n^2$ marta kamayadi",
-    "yo‘llar yo‘qoladi"
+    "decreases by a factor of $n$",
+    "increases by a factor of $n$",
+    "does not change",
+    "decreases by a factor of $n^2$",
+    "the fringes disappear"
    ],
    "c": 0,
-   "e": "Muhitda to‘lqin uzunligi $\\lambda/n$."
+   "e": "In the medium the wavelength is $\\lambda/n$."
   },
   {
-   "q": "Ikkita alohida cho‘g‘lanma lampa yorug‘ligi ekranda barqaror interferensiya manzarasi hosil qilmaydi. Sababi:",
+   "q": "Light from two separate incandescent bulbs does not produce a stable interference pattern on a screen. The reason is",
    "a": [
-    "intensivliklari har xil",
-    "nurlar kogerent emas",
-    "to‘lqin uzunliklari juda kichik",
-    "lampalar qutblangan yorug‘lik chiqaradi",
-    "yorug‘lik to‘lqin emas"
+    "their intensities are different",
+    "the beams are not coherent",
+    "their wavelengths are too small",
+    "the bulbs emit polarized light",
+    "light is not a wave"
    ],
    "c": 1,
-   "e": "Mustaqil manbalar orasidagi faza farqi tasodifiy va tez o‘zgaradi."
+   "e": "The phase difference between independent sources is random and changes rapidly."
   }
  ]
 }

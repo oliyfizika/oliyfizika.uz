@@ -1,64 +1,64 @@
 {
  "id": 14,
- "title": "Suyuqliklar",
+ "title": "Fluids",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Keng idishdagi suv sirtidan $h$ chuqurlikdagi kichik teshikdan oqib chiqmoqda. Chuqurlik 4 marta oshirilsa, oqib chiqish tezligi:",
+   "q": "Water flows out of a small hole at depth $h$ below the surface in a wide tank. If the depth is increased by a factor of 4, the efflux speed",
    "a": [
-    "4 marta oshadi",
-    "2 marta oshadi",
-    "$\\sqrt2$ marta oshadi",
-    "16 marta oshadi",
-    "o‘zgarmaydi"
+    "increases by a factor of 4",
+    "doubles",
+    "increases by a factor of $\\sqrt2$",
+    "increases by a factor of 16",
+    "does not change"
    ],
    "c": 1,
-   "e": "Torrichelli: $v=\\sqrt{2gh}$."
+   "e": "Torricelli: $v=\\sqrt{2gh}$."
   },
   {
-   "q": "Ko‘l sirtida bosim 1 atm. Taxminan 10 m chuqurlikdagi to‘liq bosim:",
+   "q": "The pressure at the surface of a lake is 1 atm. The total pressure at a depth of about 10 m is",
    "a": [
     "1 atm",
-    "1,5 atm",
+    "1.5 atm",
     "10 atm",
     "2 atm",
     "11 atm"
    ],
    "c": 3,
-   "e": "$\\rho gh=1000\\cdot10\\cdot10=10^5$ Pa ≈ 1 atm qo‘shiladi."
+   "e": "$\\rho gh=1000\\cdot10\\cdot10=10^5$ Pa ≈ 1 atm is added."
   },
   {
-   "q": "Ideal suyuqlik oqayotgan quvurning diametri ikki marta kichraygan joyda oqim tezligi:",
+   "q": "An ideal fluid flows through a pipe. Where the diameter is reduced by half, the flow speed",
    "a": [
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "4 marta oshadi",
-    "2 marta kamayadi",
-    "8 marta oshadi"
+    "doubles",
+    "does not change",
+    "increases by a factor of 4",
+    "is halved",
+    "increases by a factor of 8"
    ],
    "c": 2,
-   "e": "Uzluksizlik: $vA=\\text{const}$, $A\\propto d^2$."
+   "e": "Continuity: $vA=\\text{const}$, $A\\propto d^2$."
   },
   {
-   "q": "Jism havoda $W$, suvga to‘liq botirilganda $W/2$ og‘irlik ko‘rsatadi. Jism zichligi suv zichligidan necha marta katta?",
+   "q": "An object weighs $W$ in air and $W/2$ when fully submerged in water. Its density is how many times that of water?",
    "a": [
-    "1,5",
+    "1.5",
     "2",
     "3",
     "4",
-    "0,5"
+    "0.5"
    ],
    "c": 1,
-   "e": "Arximed kuchi $W/2=\\rho_s gV$, $W=\\rho gV\\Rightarrow\\rho=2\\rho_s$."
+   "e": "Buoyant force $W/2=\\rho_w gV$, $W=\\rho gV\\Rightarrow\\rho=2\\rho_w$."
   },
   {
-   "q": "Yopishqoq suyuqlikning ingichka quvurdagi laminar oqimi uchun (Puazeyl qonuni) bosimlar farqi o‘zgarmaganda quvur radiusi ikki marta oshirilsa, hajmiy sarf:",
+   "q": "For laminar flow of a viscous fluid in a narrow pipe (Poiseuille's law) with a fixed pressure difference, if the pipe radius is doubled, the volume flow rate",
    "a": [
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "8 marta oshadi",
-    "o‘zgarmaydi",
-    "16 marta oshadi"
+    "doubles",
+    "increases by a factor of 4",
+    "increases by a factor of 8",
+    "does not change",
+    "increases by a factor of 16"
    ],
    "c": 4,
    "e": "$Q=\\dfrac{\\pi r^4\\Delta p}{8\\eta L}\\propto r^4$."

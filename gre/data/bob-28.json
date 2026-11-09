@@ -1,46 +1,46 @@
 {
  "id": 28,
- "title": "Magnit maydon",
+ "title": "Magnetic Fields",
  "area": "em",
  "questions": [
   {
-   "q": "Zaryadli zarra bir jinsli magnit maydonda aylana bo‘ylab harakatlanmoqda. Kinetik energiyasi 4 marta oshirilsa, aylana radiusi:",
+   "q": "A charged particle moves in a circle in a uniform magnetic field. If its kinetic energy is increased by a factor of 4, the radius of the circle",
    "a": [
-    "4 marta oshadi",
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "16 marta oshadi",
-    "2 marta kamayadi"
+    "increases by a factor of 4",
+    "doubles",
+    "does not change",
+    "increases by a factor of 16",
+    "is halved"
    ],
    "c": 1,
    "e": "$r=mv/(qB)=\\sqrt{2mK}/(qB)$."
   },
   {
-   "q": "Norelyativistik zarraning siklotron chastotasi:",
+   "q": "The cyclotron frequency of a nonrelativistic particle is",
    "a": [
-    "tezlikka proporsional",
-    "radiusga proporsional",
-    "tezlikka bog‘liq emas",
-    "energiyaga proporsional",
-    "$B$ ga teskari proporsional"
+    "proportional to its speed",
+    "proportional to the radius",
+    "independent of its speed",
+    "proportional to its energy",
+    "inversely proportional to $B$"
    ],
    "c": 2,
    "e": "$f=qB/(2\\pi m)$."
   },
   {
-   "q": "Magnit maydon zaryadli zarra ustida qancha ish bajaradi?",
+   "q": "How much work does a magnetic field do on a charged particle?",
    "a": [
     "$qvB$",
     "$qvBr$",
-    "nol",
+    "zero",
     "$\\tfrac12mv^2$",
-    "zarraning yo‘nalishiga bog‘liq"
+    "it depends on the particle's direction"
    ],
    "c": 2,
-   "e": "Lorens kuchi doim tezlikka perpendikulyar."
+   "e": "The Lorentz force is always perpendicular to the velocity."
   },
   {
-   "q": "O‘zaro perpendikulyar $\\vec E$ va $\\vec B$ maydonlarda zarra og‘masdan to‘g‘ri chiziq bo‘ylab o‘tadi. Uning tezligi:",
+   "q": "A particle passes undeflected along a straight line through crossed (mutually perpendicular) fields $\\vec E$ and $\\vec B$. Its speed is",
    "a": [
     "$B/E$",
     "$EB$",
@@ -52,16 +52,16 @@
    "e": "$qE=qvB$."
   },
   {
-   "q": "Xoll effekti yordamida o‘tkazgichdagi qaysi kattalikni aniqlash mumkin?",
+   "q": "Which quantity of a conductor can be determined using the Hall effect?",
    "a": [
-    "faqat tok kuchini",
-    "o‘tkazgich uzunligini",
-    "zaryad tashuvchilar ishorasi va konsentratsiyasini",
-    "solishtirma issiqlik sig‘imini",
-    "elektronning massasini"
+    "only the current",
+    "the length of the conductor",
+    "the sign and concentration of the charge carriers",
+    "the specific heat capacity",
+    "the mass of the electron"
    ],
    "c": 2,
-   "e": "$U_H=IB/(nqd)$: ishora — $q$ ishorasi, kattalik — $n$."
+   "e": "$U_H=IB/(nqd)$: the sign gives the sign of $q$, the magnitude gives $n$."
   }
  ]
 }

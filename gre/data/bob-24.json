@@ -1,34 +1,34 @@
 {
  "id": 24,
- "title": "Elektr potensial",
+ "title": "Electric Potential",
  "area": "em",
  "questions": [
   {
-   "q": "Radiusi $R$ bo‘lgan halqada $Q$ zaryad notekis taqsimlangan. Halqa markazidagi potensial:",
+   "q": "A charge $Q$ is distributed non-uniformly on a ring of radius $R$. The potential at the center of the ring is",
    "a": [
     "0",
     "$kQ/R$",
     "$kQ/R^2$",
-    "taqsimotga bog‘liq",
+    "it depends on the distribution",
     "$2kQ/R$"
    ],
    "c": 1,
-   "e": "Barcha zaryad elementlari markazdan bir xil $R$ masofada; potensial skalyar."
+   "e": "Every charge element is the same distance $R$ from the center, and potential is a scalar."
   },
   {
-   "q": "Zaryadni ekvipotensial sirt bo‘ylab ko‘chirishda elektr maydon bajargan ish:",
+   "q": "The work done by the electric field when a charge is moved along an equipotential surface is",
    "a": [
     "0",
     "$qV$",
     "$-qV$",
-    "yo‘l uzunligiga bog‘liq",
+    "dependent on the path length",
     "$qEd$"
    ],
    "c": 0,
    "e": "$W=q(V_1-V_2)=0$."
   },
   {
-   "q": "Radiusi $R$, zaryadi $Q$ bo‘lgan o‘tkazuvchi shar ichida, markazdan $R/2$ masofadagi potensial:",
+   "q": "Inside a conducting sphere of radius $R$ and charge $Q$, the potential at a distance $R/2$ from the center is",
    "a": [
     "0",
     "$2kQ/R$",
@@ -37,22 +37,22 @@
     "$3kQ/(2R)$"
    ],
    "c": 2,
-   "e": "O‘tkazgich ichida $E=0$, potensial sirtdagi bilan bir xil."
+   "e": "Inside a conductor $E=0$, so the potential equals its value at the surface."
   },
   {
-   "q": "Tinch holatdagi elektron 100 V potensiallar farqida tezlashtirildi. Uning kinetik energiyasi:",
+   "q": "An electron initially at rest is accelerated through a potential difference of 100 V. Its kinetic energy is",
    "a": [
     "1 eV",
     "10 eV",
     "100 eV",
     "$100e$ J",
-    "$1{,}6\\cdot10^{-19}$ J"
+    "$1.6\\cdot10^{-19}$ J"
    ],
    "c": 2,
    "e": "$K=eU=100$ eV."
   },
   {
-   "q": "Potensial $V(x,y)=3x^2y$ (V, koordinatalar metrda). $(1;\\,1)$ nuqtadagi maydon kuchlanganligi moduli:",
+   "q": "The potential is $V(x,y)=3x^2y$ (V, coordinates in meters). The magnitude of the electric field at the point $(1,\\,1)$ is",
    "a": [
     "3 V/m",
     "6 V/m",

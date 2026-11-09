@@ -1,22 +1,22 @@
 {
  "id": 15,
- "title": "Tebranishlar",
+ "title": "Oscillations",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Prujinali mayatnikda yuk massasi 4 marta oshirilsa, tebranish davri:",
+   "q": "If the mass on a spring–mass oscillator is increased by a factor of 4, the period",
    "a": [
-    "4 marta oshadi",
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "2 marta kamayadi",
-    "16 marta oshadi"
+    "increases by a factor of 4",
+    "doubles",
+    "does not change",
+    "is halved",
+    "increases by a factor of 16"
    ],
    "c": 1,
    "e": "$T=2\\pi\\sqrt{m/k}$."
   },
   {
-   "q": "Garmonik tebranishda jism $x=A/2$ nuqtadan o‘tayotganda kinetik energiya to‘liq energiyaning qanday qismini tashkil qiladi?",
+   "q": "In simple harmonic motion, when the object passes $x=A/2$, its kinetic energy is what fraction of the total energy?",
    "a": [
     "1/4",
     "1/2",
@@ -28,31 +28,31 @@
    "e": "$U=\\tfrac12k(A/2)^2=E/4$, $K=3E/4$."
   },
   {
-   "q": "Bikrligi $k$ bo‘lgan ikki bir xil prujina ketma-ket ulanib, ularga $m$ massali yuk osildi. Bitta prujinaga nisbatan tebranish chastotasi:",
+   "q": "Two identical springs of stiffness $k$ are connected in series and a mass $m$ hangs from them. Compared with a single spring, the oscillation frequency is",
    "a": [
-    "2 marta katta",
-    "$\\sqrt2$ marta katta",
-    "o‘zgarmaydi",
-    "$\\sqrt2$ marta kichik",
-    "2 marta kichik"
+    "2 times larger",
+    "$\\sqrt2$ times larger",
+    "unchanged",
+    "$\\sqrt2$ times smaller",
+    "2 times smaller"
    ],
    "c": 3,
-   "e": "Ketma-ket: $k_{\\text{um}}=k/2$, $\\omega\\propto\\sqrt k$."
+   "e": "In series: $k_{\\text{eff}}=k/2$, and $\\omega\\propto\\sqrt k$."
   },
   {
-   "q": "Kuchsiz so‘nuvchi ostsillyatorda amplituda $e^{-t/\\tau}$ qonun bilan kamayadi. Energiya qanday kamayadi?",
+   "q": "In a lightly damped oscillator the amplitude decays as $e^{-t/\\tau}$. How does the energy decay?",
    "a": [
     "$e^{-t/\\tau}$",
     "$e^{-2t/\\tau}$",
     "$e^{-t/(2\\tau)}$",
     "$e^{-t^2/\\tau^2}$",
-    "chiziqli"
+    "linearly"
    ],
    "c": 1,
    "e": "$E\\propto A^2$."
   },
   {
-   "q": "Uzunligi $L$ bo‘lgan bir jinsli sterjen bir uchidan osilib, kichik tebranishlar qilmoqda (fizik mayatnik). Davri:",
+   "q": "A uniform rod of length $L$ hangs from one end and performs small oscillations (physical pendulum). Its period is",
    "a": [
     "$2\\pi\\sqrt{L/g}$",
     "$2\\pi\\sqrt{L/(2g)}$",

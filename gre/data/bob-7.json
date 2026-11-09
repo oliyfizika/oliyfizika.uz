@@ -1,10 +1,10 @@
 {
  "id": 7,
- "title": "Kinetik energiya va ish",
+ "title": "Kinetic Energy and Work",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Bikrligi $k$ bo‘lgan prujinani $x$ dan $2x$ gacha cho‘zish uchun bajariladigan ish:",
+   "q": "The work required to stretch a spring of stiffness $k$ from $x$ to $2x$ is",
    "a": [
     "$2kx^2$",
     "$3kx^2/2$",
@@ -16,7 +16,7 @@
    "e": "$\\tfrac12k(2x)^2-\\tfrac12kx^2=\\tfrac32kx^2$."
   },
   {
-   "q": "Massasi $m$ bo‘lgan avtomobil tinch holatdan o‘zgarmas $P$ quvvat bilan tezlashmoqda (yo‘qotishlar yo‘q). $t$ vaqtdagi tezligi:",
+   "q": "A car of mass $m$ accelerates from rest with constant power $P$ (no losses). Its speed at time $t$ is",
    "a": [
     "$Pt/m$",
     "$\\sqrt{Pt/m}$",
@@ -28,19 +28,19 @@
    "e": "$\\tfrac12mv^2=Pt$."
   },
   {
-   "q": "Tormozlash kuchi o‘zgarmas bo‘lsa, tezlik ikki marta oshirilganda tormoz yo‘li:",
+   "q": "With a constant braking force, if the speed is doubled, the stopping distance",
    "a": [
-    "o‘zgarmaydi",
-    "$\\sqrt2$ marta oshadi",
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "8 marta oshadi"
+    "does not change",
+    "increases by a factor of $\\sqrt2$",
+    "doubles",
+    "increases by a factor of 4",
+    "increases by a factor of 8"
    ],
    "c": 3,
    "e": "$Fs=\\tfrac12mv^2\\Rightarrow s\\propto v^2$."
   },
   {
-   "q": "$F(x)=6x$ (N, $x$ metrda) kuch $x$ o‘qi bo‘ylab ta’sir qiladi. $x=0$ dan $x=2$ m gacha bajarilgan ish:",
+   "q": "A force $F(x)=6x$ (N, with $x$ in meters) acts along the $x$-axis. The work done from $x=0$ to $x=2$ m is",
    "a": [
     "6 J",
     "12 J",
@@ -52,7 +52,7 @@
    "e": "$W=\\int_0^2 6x\\,dx=3x^2\\big|_0^2=12$ J."
   },
   {
-   "q": "Doiraviy orbitada aylanayotgan sun’iy yo‘ldoshga Yerning tortishish kuchi bir to‘liq aylanishda qancha ish bajaradi?",
+   "q": "How much work does Earth's gravitational force do on a satellite in a circular orbit during one complete revolution?",
    "a": [
     "0",
     "$2\\pi rF$",
@@ -61,7 +61,7 @@
     "$mv^2/2$"
    ],
    "c": 0,
-   "e": "Kuch har doim tezlikka perpendikulyar."
+   "e": "The force is always perpendicular to the velocity."
   }
  ]
 }

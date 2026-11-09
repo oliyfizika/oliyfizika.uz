@@ -1,10 +1,10 @@
 {
  "id": 36,
- "title": "Difraksiya",
+ "title": "Diffraction",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Kengligi $a$ bo‘lgan bitta tirqishdagi difraksiyada birinchi minimum sharti:",
+   "q": "For single-slit diffraction with slit width $a$, the condition for the first minimum is",
    "a": [
     "$a\\sin\\theta=\\lambda/2$",
     "$a\\sin\\theta=\\lambda$",
@@ -13,22 +13,22 @@
     "$\\sin\\theta=a/\\lambda$"
    ],
    "c": 1,
-   "e": "Tirqishni ikki yarmiga bo‘lib, juft-juft so‘nish."
+   "e": "Divide the slit into two halves; the waves cancel in pairs."
   },
   {
-   "q": "Teleskop obyektivi diametri 2 marta oshirilsa, minimal ajrata oladigan burchak (Reley mezoni):",
+   "q": "If the diameter of a telescope objective is doubled, the minimum resolvable angle (Rayleigh criterion)",
    "a": [
-    "2 marta kamayadi",
-    "2 marta oshadi",
-    "4 marta kamayadi",
-    "o‘zgarmaydi",
-    "$\\sqrt2$ marta kamayadi"
+    "is halved",
+    "doubles",
+    "decreases by a factor of 4",
+    "does not change",
+    "decreases by a factor of $\\sqrt2$"
    ],
    "c": 0,
-   "e": "$\\theta\\approx1{,}22\\lambda/D$."
+   "e": "$\\theta\\approx1.22\\lambda/D$."
   },
   {
-   "q": "$N$ ta yoritilgan shtrixga ega difraksion panjaraning $m$-tartibdagi ajrata olish qobiliyati:",
+   "q": "The resolving power in the $m$-th order of a diffraction grating with $N$ illuminated lines is",
    "a": [
     "$N/m$",
     "$m/N$",
@@ -40,7 +40,7 @@
    "e": "$\\lambda/\\Delta\\lambda=mN$."
   },
   {
-   "q": "Kristall tekisliklari orasidagi masofa $d$. Rentgen nurlari uchun Bregg sharti ($\\theta$ — sirpanish burchagi):",
+   "q": "The spacing between crystal planes is $d$. The Bragg condition for X-rays ($\\theta$ is the glancing angle) is",
    "a": [
     "$d\\sin\\theta=m\\lambda$",
     "$2d\\sin\\theta=m\\lambda$",
@@ -49,19 +49,19 @@
     "$d=m\\lambda$"
    ],
    "c": 1,
-   "e": "Ikki qo‘shni tekislikdan qaytgan nurlar yo‘l farqi $2d\\sin\\theta$."
+   "e": "The path difference between rays reflected from two adjacent planes is $2d\\sin\\theta$."
   },
   {
-   "q": "Bitta tirqish kengligi 2 marta kamaytirilsa, ekrandagi markaziy maksimum kengligi:",
+   "q": "If the width of a single slit is halved, the width of the central maximum on the screen",
    "a": [
-    "2 marta kamayadi",
-    "o‘zgarmaydi",
-    "4 marta oshadi",
-    "2 marta oshadi",
-    "$\\sqrt2$ marta oshadi"
+    "is halved",
+    "does not change",
+    "increases by a factor of 4",
+    "doubles",
+    "increases by a factor of $\\sqrt2$"
    ],
    "c": 3,
-   "e": "Kichik burchaklarda kenglik $2\\lambda L/a$."
+   "e": "For small angles the width is $2\\lambda L/a$."
   }
  ]
 }

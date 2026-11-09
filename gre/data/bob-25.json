@@ -1,46 +1,46 @@
 {
  "id": 25,
- "title": "Sig‘im",
+ "title": "Capacitance",
  "area": "em",
  "questions": [
   {
-   "q": "Yassi kondensator qoplamalari orasidagi masofa 2 marta oshirildi va oraliq to‘liq $\\varepsilon=2$ dielektrik bilan to‘ldirildi. Sig‘im:",
+   "q": "The plate separation of a parallel-plate capacitor is doubled and the gap is completely filled with a dielectric of $\\varepsilon=2$. The capacitance",
    "a": [
-    "o‘zgarmaydi",
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "2 marta kamayadi",
-    "4 marta kamayadi"
+    "does not change",
+    "doubles",
+    "increases by a factor of 4",
+    "is halved",
+    "decreases by a factor of 4"
    ],
    "c": 0,
-   "e": "$C=\\varepsilon\\varepsilon_0S/d$: $\\times2$ va $\\div2$."
+   "e": "$C=\\varepsilon\\varepsilon_0S/d$: $\\times2$ and $\\div2$."
   },
   {
-   "q": "Zaryadlangan kondensator manbadan uzildi, so‘ng qoplamalar orasidagi masofa 2 marta oshirildi. Kondensator energiyasi:",
+   "q": "A charged capacitor is disconnected from the source, and then its plate separation is doubled. The energy stored in the capacitor",
    "a": [
-    "o‘zgarmaydi",
-    "2 marta oshadi",
-    "2 marta kamayadi",
-    "4 marta oshadi",
-    "4 marta kamayadi"
+    "does not change",
+    "doubles",
+    "is halved",
+    "increases by a factor of 4",
+    "decreases by a factor of 4"
    ],
    "c": 1,
-   "e": "$Q$ o‘zgarmas, $C$ yarmiga tushadi: $W=Q^2/(2C)$."
+   "e": "$Q$ stays constant while $C$ is halved: $W=Q^2/(2C)$."
   },
   {
-   "q": "Sig‘imi 2 μF va 3 μF bo‘lgan kondensatorlar ketma-ket ulangan. Umumiy sig‘im:",
+   "q": "Capacitors of 2 μF and 3 μF are connected in series. The equivalent capacitance is",
    "a": [
     "5 μF",
-    "2,5 μF",
-    "1,2 μF",
+    "2.5 μF",
+    "1.2 μF",
     "6 μF",
-    "0,83 μF"
+    "0.83 μF"
    ],
    "c": 2,
-   "e": "$C=\\dfrac{2\\cdot3}{2+3}=1{,}2$ μF."
+   "e": "$C=\\dfrac{2\\cdot3}{2+3}=1.2$ μF."
   },
   {
-   "q": "$U_0$ kuchlanishgacha zaryadlangan $C$ sig‘imli kondensator xuddi shunday zaryadsiz kondensatorga ulandi. Tizim energiyasining qanday qismi saqlanib qoladi?",
+   "q": "A capacitor $C$ charged to voltage $U_0$ is connected to an identical uncharged capacitor. What fraction of the system's energy remains?",
    "a": [
     "1",
     "1/4",
@@ -49,10 +49,10 @@
     "1/8"
    ],
    "c": 2,
-   "e": "Kuchlanish $U_0/2$: $2\\cdot\\tfrac12C(U_0/2)^2=\\tfrac14CU_0^2$, ya’ni boshlang‘ichning yarmi."
+   "e": "The voltage becomes $U_0/2$: $2\\cdot\\tfrac12C(U_0/2)^2=\\tfrac14CU_0^2$, i.e. half of the initial value."
   },
   {
-   "q": "Vakuumdagi elektr maydon energiyasining hajmiy zichligi:",
+   "q": "The energy density of an electric field in vacuum is",
    "a": [
     "$\\varepsilon_0E$",
     "$\\varepsilon_0E^2$",

@@ -1,10 +1,10 @@
 {
  "id": 39,
- "title": "Modda to‘lqinlari haqida batafsil",
+ "title": "More About Matter Waves",
  "area": "kvant",
  "questions": [
   {
-   "q": "Cheksiz chuqur potensial o‘radagi zarra uchun $E_3/E_1$:",
+   "q": "For a particle in an infinite square well, $E_3/E_1$ is",
    "a": [
     "3",
     "1/9",
@@ -16,52 +16,52 @@
    "e": "$E_n\\propto n^2$."
   },
   {
-   "q": "Cheksiz chuqur o‘ra kengligi 2 marta oshirilsa, energiya sathlari:",
+   "q": "If the width of an infinite square well is doubled, the energy levels",
    "a": [
-    "2 marta oshadi",
-    "2 marta kamayadi",
-    "4 marta kamayadi",
-    "o‘zgarmaydi",
-    "4 marta oshadi"
+    "double",
+    "are halved",
+    "decrease by a factor of 4",
+    "do not change",
+    "increase by a factor of 4"
    ],
    "c": 2,
    "e": "$E_n=\\dfrac{n^2\\pi^2\\hbar^2}{2mL^2}$."
   },
   {
-   "q": "Vodorod atomining asosiy holat energiyasi $-13{,}6$ eV. $n=2$ holat energiyasi:",
+   "q": "The ground-state energy of the hydrogen atom is $-13.6$ eV. The energy of the $n=2$ state is",
    "a": [
-    "$-6{,}8$ eV",
-    "$-27{,}2$ eV",
-    "$-1{,}5$ eV",
-    "$-3{,}4$ eV",
-    "$-54{,}4$ eV"
+    "$-6.8$ eV",
+    "$-27.2$ eV",
+    "$-1.5$ eV",
+    "$-3.4$ eV",
+    "$-54.4$ eV"
    ],
    "c": 3,
-   "e": "$E_n=-13{,}6/n^2$."
+   "e": "$E_n=-13.6/n^2$."
   },
   {
-   "q": "Zarraning to‘g‘ri burchakli potensial to‘siqdan tunnel o‘tish ehtimoli to‘siq kengligi $a$ ortishi bilan qanday o‘zgaradi?",
+   "q": "How does the probability of a particle tunneling through a rectangular potential barrier change as the barrier width $a$ increases?",
    "a": [
-    "chiziqli kamayadi",
-    "$1/a^2$ kabi kamayadi",
-    "ortadi",
-    "o‘zgarmaydi",
-    "eksponensial kamayadi"
+    "it decreases linearly",
+    "it decreases as $1/a^2$",
+    "it increases",
+    "it does not change",
+    "it decreases exponentially"
    ],
    "c": 4,
    "e": "$T\\sim e^{-2\\kappa a}$."
   },
   {
-   "q": "Kvant garmonik ostsillyatorning energiya sathlari haqida to‘g‘ri tasdiq:",
+   "q": "Which statement about the energy levels of the quantum harmonic oscillator is correct?",
    "a": [
-    "$E_n\\propto n^2$, asosiy energiya nol",
-    "$E_n=(n+\\tfrac12)\\hbar\\omega$, sathlar teng oraliqli",
+    "$E_n\\propto n^2$, the ground-state energy is zero",
+    "$E_n=(n+\\tfrac12)\\hbar\\omega$, the levels are equally spaced",
     "$E_n\\propto1/n^2$",
-    "$E_n=n\\hbar\\omega$, asosiy energiya nol",
-    "sathlar uzluksiz"
+    "$E_n=n\\hbar\\omega$, the ground-state energy is zero",
+    "the levels form a continuum"
    ],
    "c": 1,
-   "e": "Asosiy holat energiyasi $\\hbar\\omega/2$."
+   "e": "The ground-state energy is $\\hbar\\omega/2$."
   }
  ]
 }

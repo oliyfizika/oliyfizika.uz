@@ -1,22 +1,22 @@
 {
  "id": 32,
- "title": "Maksvell tenglamalari va moddaning magnit xossalari",
+ "title": "Maxwell's Equations; Magnetism of Matter",
  "area": "em",
  "questions": [
   {
-   "q": "Zaryadlanayotgan yassi kondensator qoplamalari orasida (u yerda o‘tkazuvchanlik toki yo‘q) magnit maydon:",
+   "q": "Between the plates of a charging parallel-plate capacitor (where there is no conduction current), the magnetic field",
    "a": [
-    "nolga teng",
-    "mavjud, sababi siljish toki $\\varepsilon_0\\,d\\Phi_E/dt$",
-    "faqat qoplama ichida mavjud",
-    "faqat dielektrik bo‘lsa mavjud",
-    "faqat o‘zgaruvchan tokda nolga teng"
+    "is zero",
+    "exists, due to the displacement current $\\varepsilon_0\\,d\\Phi_E/dt$",
+    "exists only inside the plates",
+    "exists only if there is a dielectric",
+    "is zero only for alternating current"
    ],
    "c": 1,
-   "e": "Amper–Maksvell qonuni."
+   "e": "The Ampère–Maxwell law."
   },
   {
-   "q": "Magnit monopollar mavjud emasligini qaysi tenglama ifodalaydi?",
+   "q": "Which equation expresses the absence of magnetic monopoles?",
    "a": [
     "$\\nabla\\cdot\\vec E=\\rho/\\varepsilon_0$",
     "$\\nabla\\cdot\\vec B=0$",
@@ -25,43 +25,43 @@
     "$\\vec F=q\\vec v\\times\\vec B$"
    ],
    "c": 1,
-   "e": "Yopiq sirt orqali magnit oqim har doim nol."
+   "e": "The magnetic flux through any closed surface is always zero."
   },
   {
-   "q": "Diamagnetik moddalar uchun to‘g‘ri tasdiq:",
+   "q": "Which statement is correct for diamagnetic materials?",
    "a": [
-    "$\\chi$ katta va musbat",
-    "$\\chi$ kichik va manfiy, kuchli maydondan itariladi",
-    "faqat past temperaturada mavjud",
-    "Kyuri qonuniga bo‘ysunadi",
-    "doimiy magnit hosil qiladi"
+    "$\\chi$ is large and positive",
+    "$\\chi$ is small and negative; they are repelled from strong fields",
+    "they exist only at low temperatures",
+    "they obey Curie's law",
+    "they form permanent magnets"
    ],
    "c": 1,
-   "e": "Diamagnetizm barcha moddalarda bor, $\\chi\\sim-10^{-5}$."
+   "e": "Diamagnetism is present in all materials, $\\chi\\sim-10^{-5}$."
   },
   {
-   "q": "Kyuri qonuniga ko‘ra paramagnetikning magnitlanganligi:",
+   "q": "According to Curie's law, the magnetization of a paramagnet is",
    "a": [
-    "$T$ ga proporsional",
-    "$B$ ga bog‘liq emas",
-    "$B/T$ ga proporsional",
-    "$BT$ ga proporsional",
-    "$T^2$ ga teskari proporsional"
+    "proportional to $T$",
+    "independent of $B$",
+    "proportional to $B/T$",
+    "proportional to $BT$",
+    "inversely proportional to $T^2$"
    ],
    "c": 2,
    "e": "$M=CB/T$."
   },
   {
-   "q": "Ferromagnetik Kyuri temperaturasidan yuqori qizdirilsa:",
+   "q": "If a ferromagnet is heated above its Curie temperature, it",
    "a": [
-    "diamagnetikka aylanadi",
-    "paramagnetikka aylanadi",
-    "o‘ta o‘tkazgichga aylanadi",
-    "magnitlanganligi oshadi",
-    "eriydi"
+    "becomes diamagnetic",
+    "becomes paramagnetic",
+    "becomes a superconductor",
+    "becomes more strongly magnetized",
+    "melts"
    ],
    "c": 1,
-   "e": "Domenlar tartibi buziladi."
+   "e": "The ordering of the domains is destroyed."
   }
  ]
 }

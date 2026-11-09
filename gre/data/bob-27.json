@@ -1,10 +1,10 @@
 {
  "id": 27,
- "title": "Zanjirlar",
+ "title": "Circuits",
  "area": "em",
  "questions": [
   {
-   "q": "Qarshiligi $R$ bo‘lgan ikki rezistor parallel ulanib, ularga uchinchi $R$ ketma-ket ulangan. Umumiy qarshilik:",
+   "q": "Two resistors of resistance $R$ are connected in parallel, and a third $R$ is connected in series with them. The equivalent resistance is",
    "a": [
     "$R/3$",
     "$2R/3$",
@@ -16,7 +16,7 @@
    "e": "$R/2+R=3R/2$."
   },
   {
-   "q": "EYuK $\\mathcal E$, ichki qarshiligi $r$ bo‘lgan manbadan tashqi rezistorga uzatiladigan maksimal quvvat:",
+   "q": "The maximum power that a source with emf $\\mathcal E$ and internal resistance $r$ can deliver to an external resistor is",
    "a": [
     "$\\mathcal E^2/r$",
     "$\\mathcal E^2/(2r)$",
@@ -25,10 +25,10 @@
     "$2\\mathcal E^2/r$"
    ],
    "c": 3,
-   "e": "$R=r$ bo‘lganda $P=\\mathcal E^2R/(R+r)^2=\\mathcal E^2/(4r)$."
+   "e": "For $R=r$, $P=\\mathcal E^2R/(R+r)^2=\\mathcal E^2/(4r)$."
   },
   {
-   "q": "RC zanjirda kondensator zaryadlanmoqda. $t=RC$ vaqtda zaryad maksimal qiymatning taxminan qanday qismiga yetadi?",
+   "q": "A capacitor is charging in an RC circuit. At time $t=RC$, the charge has reached approximately what fraction of its maximum value?",
    "a": [
     "37%",
     "50%",
@@ -37,31 +37,31 @@
     "100%"
    ],
    "c": 2,
-   "e": "$q=q_0(1-e^{-1})\\approx0{,}63\\,q_0$."
+   "e": "$q=q_0(1-e^{-1})\\approx0.63\\,q_0$."
   },
   {
-   "q": "Uitston ko‘prigi muvozanatlashgan. Diagonaldagi galvanometr orqali o‘tuvchi tok:",
+   "q": "A Wheatstone bridge is balanced. The current through the galvanometer in the bridge diagonal is",
    "a": [
-    "nolga teng",
-    "maksimal",
-    "manba tokiga teng",
-    "manba tokining yarmiga teng",
-    "galvanometr qarshiligiga bog‘liq"
+    "zero",
+    "maximum",
+    "equal to the source current",
+    "half the source current",
+    "dependent on the galvanometer resistance"
    ],
    "c": 0,
-   "e": "Muvozanatda diagonal uchlari bir xil potensialda."
+   "e": "At balance, the ends of the diagonal are at the same potential."
   },
   {
-   "q": "Lampaga ideal voltmetr ketma-ket ulanib, zanjir manbaga ulandi. Nima kuzatiladi?",
+   "q": "An ideal voltmeter is connected in series with a bulb, and the circuit is connected to a source. What is observed?",
    "a": [
-    "Lampa normal yonadi, voltmetr nolni ko‘rsatadi",
-    "Lampa yonmaydi, voltmetr taxminan manba EYuK ini ko‘rsatadi",
-    "Voltmetr kuyadi",
-    "Lampa kuyadi",
-    "Voltmetr lampadagi kuchlanishni ko‘rsatadi"
+    "The bulb glows normally and the voltmeter reads zero",
+    "The bulb does not light, and the voltmeter reads approximately the source emf",
+    "The voltmeter burns out",
+    "The bulb burns out",
+    "The voltmeter reads the voltage across the bulb"
    ],
    "c": 1,
-   "e": "Ideal voltmetr qarshiligi cheksiz, tok deyarli nol; butun kuchlanish voltmetrga tushadi."
+   "e": "An ideal voltmeter has infinite resistance, so the current is practically zero; the whole voltage drops across the voltmeter."
   }
  ]
 }

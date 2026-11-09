@@ -1,10 +1,10 @@
 {
  "id": 10,
- "title": "Aylanma harakat",
+ "title": "Rotation",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Massasi $M$, uzunligi $L$ bo‘lgan ingichka sterjenning bir uchidan o‘tuvchi perpendikulyar o‘qqa nisbatan inersiya momenti:",
+   "q": "The moment of inertia of a thin rod of mass $M$ and length $L$ about a perpendicular axis through one end is",
    "a": [
     "$ML^2/12$",
     "$ML^2/3$",
@@ -13,10 +13,10 @@
     "$ML^2/4$"
    ],
    "c": 1,
-   "e": "Shteyner: $ML^2/12+M(L/2)^2=ML^2/3$."
+   "e": "Parallel-axis theorem: $ML^2/12+M(L/2)^2=ML^2/3$."
   },
   {
-   "q": "Massasi $M$, radiusi $R$ bo‘lgan bir jinsli diskning gardishidagi nuqtadan o‘tuvchi, disk tekisligiga perpendikulyar o‘qqa nisbatan inersiya momenti:",
+   "q": "The moment of inertia of a uniform disk of mass $M$ and radius $R$ about an axis perpendicular to its plane through a point on its rim is",
    "a": [
     "$MR^2/2$",
     "$MR^2$",
@@ -28,7 +28,7 @@
    "e": "$MR^2/2+MR^2=3MR^2/2$."
   },
   {
-   "q": "G‘ildirak tinch holatdan $2$ rad/s² burchak tezlanish bilan aylana boshladi. 10 s da u necha marta aylanadi?",
+   "q": "A wheel starts from rest with angular acceleration $2$ rad/s². How many revolutions does it make in 10 s?",
    "a": [
     "$25/\\pi$",
     "$50/\\pi$",
@@ -37,10 +37,10 @@
     "50"
    ],
    "c": 1,
-   "e": "$\\varphi=\\tfrac12\\varepsilon t^2=100$ rad, $N=100/(2\\pi)=50/\\pi\\approx16$."
+   "e": "$\\varphi=\\tfrac12\\alpha t^2=100$ rad, $N=100/(2\\pi)=50/\\pi\\approx16$."
   },
   {
-   "q": "Uzunligi $L$ bo‘lgan bir jinsli sterjen bir uchidagi sharnir atrofida gorizontal holatdan qo‘yib yuborildi. Shu ondagi erkin uchining chiziqli tezlanishi:",
+   "q": "A uniform rod of length $L$ is pivoted at one end and released from the horizontal position. The linear acceleration of its free end at that instant is",
    "a": [
     "$g/2$",
     "$g$",
@@ -49,10 +49,10 @@
     "$3g$"
    ],
    "c": 3,
-   "e": "$\\varepsilon=\\dfrac{MgL/2}{ML^2/3}=\\dfrac{3g}{2L}$, $a=\\varepsilon L=3g/2$."
+   "e": "$\\alpha=\\dfrac{MgL/2}{ML^2/3}=\\dfrac{3g}{2L}$, $a=\\alpha L=3g/2$."
   },
   {
-   "q": "Massasi $M=2m$ bo‘lgan disk shaklidagi blok orqali o‘tkazilgan ipga $m$ massali yuk osilgan; ip sirpanmaydi. Yukning tezlanishi:",
+   "q": "A mass $m$ hangs from a string wound over a disk-shaped pulley of mass $M=2m$; the string does not slip. The acceleration of the mass is",
    "a": [
     "$g$",
     "$g/2$",

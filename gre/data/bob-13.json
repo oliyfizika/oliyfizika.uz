@@ -1,10 +1,10 @@
 {
  "id": 13,
- "title": "Gravitatsiya",
+ "title": "Gravitation",
  "area": "mexanika",
  "questions": [
   {
-   "q": "Sayyora sirtidan ikkinchi kosmik (qochish) tezlikning shu sirt yaqinidagi doiraviy orbita tezligiga nisbati:",
+   "q": "The ratio of the escape speed from a planet's surface to the speed of a circular orbit just above that surface is",
    "a": [
     "1",
     "$\\sqrt2$",
@@ -16,19 +16,19 @@
    "e": "$\\sqrt{2GM/R}:\\sqrt{GM/R}=\\sqrt2$."
   },
   {
-   "q": "Sun’iy yo‘ldosh orbitasi radiusi 4 marta oshirilsa, aylanish davri:",
+   "q": "If the orbital radius of a satellite is increased by a factor of 4, its orbital period",
    "a": [
-    "2 marta oshadi",
-    "4 marta oshadi",
-    "16 marta oshadi",
-    "8 marta oshadi",
-    "64 marta oshadi"
+    "doubles",
+    "increases by a factor of 4",
+    "increases by a factor of 16",
+    "increases by a factor of 8",
+    "increases by a factor of 64"
    ],
    "c": 3,
-   "e": "Kepler III: $T\\propto r^{3/2}=4^{3/2}=8$."
+   "e": "Kepler's third law: $T\\propto r^{3/2}=4^{3/2}=8$."
   },
   {
-   "q": "Yerni bir jinsli shar deb hisoblang. Markazdan $R/2$ masofadagi (yer ostidagi) erkin tushish tezlanishi:",
+   "q": "Treat Earth as a uniform sphere. The gravitational acceleration at a distance $R/2$ from the center (underground) is",
    "a": [
     "$g/4$",
     "$g/2$",
@@ -37,10 +37,10 @@
     "0"
    ],
    "c": 1,
-   "e": "Bir jinsli shar ichida $g\\propto r$."
+   "e": "Inside a uniform sphere, $g\\propto r$."
   },
   {
-   "q": "Doiraviy orbitadagi yo‘ldoshning to‘liq mexanik energiyasi $E$ ning kinetik energiyasi $K$ ga nisbati:",
+   "q": "For a satellite in a circular orbit, the ratio of its total mechanical energy $E$ to its kinetic energy $K$ is",
    "a": [
     "$-1$",
     "$-2$",
@@ -52,7 +52,7 @@
    "e": "$K=GMm/(2r)$, $U=-2K$, $E=-K$."
   },
   {
-   "q": "Zichligi Yernikiga teng, radiusi esa 2 marta katta sayyora sirtidagi erkin tushish tezlanishi:",
+   "q": "A planet has the same density as Earth but twice the radius. The gravitational acceleration at its surface is",
    "a": [
     "$g$",
     "$4g$",

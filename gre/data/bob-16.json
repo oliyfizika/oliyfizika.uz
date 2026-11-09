@@ -1,34 +1,34 @@
 {
  "id": 16,
- "title": "To‘lqinlar – I",
+ "title": "Waves – I",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Ipning tarangligi 4 marta oshirilsa, undagi ko‘ndalang to‘lqin tezligi:",
+   "q": "If the tension in a string is increased by a factor of 4, the speed of transverse waves on it",
    "a": [
-    "4 marta oshadi",
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "16 marta oshadi",
-    "2 marta kamayadi"
+    "increases by a factor of 4",
+    "doubles",
+    "does not change",
+    "increases by a factor of 16",
+    "is halved"
    ],
    "c": 1,
    "e": "$v=\\sqrt{F/\\mu}$."
   },
   {
-   "q": "To‘lqin $y=0{,}02\\sin(4x-8t)$ (SI) tenglama bilan berilgan. Tarqalish tezligi va yo‘nalishi:",
+   "q": "A wave is described by $y=0.02\\sin(4x-8t)$ (SI units). Its speed and direction of propagation are",
    "a": [
     "2 m/s, $+x$",
     "2 m/s, $-x$",
-    "0,5 m/s, $+x$",
+    "0.5 m/s, $+x$",
     "32 m/s, $+x$",
     "8 m/s, $-x$"
    ],
    "c": 0,
-   "e": "$v=\\omega/k=8/4=2$ m/s; $kx-\\omega t$ ko‘rinish $+x$ yo‘nalishni bildiradi."
+   "e": "$v=\\omega/k=8/4=2$ m/s; the form $kx-\\omega t$ means propagation in the $+x$ direction."
   },
   {
-   "q": "Ikki uchi mahkamlangan, uzunligi $L$ bo‘lgan ipda to‘lqin tezligi $v$. Uchinchi garmonika chastotasi:",
+   "q": "A string of length $L$ is fixed at both ends, and the wave speed on it is $v$. The frequency of the third harmonic is",
    "a": [
     "$v/(2L)$",
     "$3v/L$",
@@ -40,19 +40,19 @@
    "e": "$f_n=nv/(2L)$."
   },
   {
-   "q": "Ipdagi sinusoidal to‘lqin uzatayotgan quvvat $A^2\\omega^2$ ga proporsional. Amplituda ham, chastota ham ikki marta oshirilsa, quvvat:",
+   "q": "The power carried by a sinusoidal wave on a string is proportional to $A^2\\omega^2$. If both the amplitude and the frequency are doubled, the power increases by a factor of",
    "a": [
-    "4 marta",
-    "8 marta",
-    "16 marta",
-    "2 marta",
-    "32 marta"
+    "4",
+    "8",
+    "16",
+    "2",
+    "32"
    ],
    "c": 2,
    "e": "$2^2\\cdot2^2=16$."
   },
   {
-   "q": "Amplitudasi $A$, chastotasi bir xil, fazalar farqi $\\pi/2$ bo‘lgan ikki to‘lqin qo‘shiladi. Natijaviy amplituda:",
+   "q": "Two waves of amplitude $A$ and the same frequency, with a phase difference of $\\pi/2$, are superposed. The resultant amplitude is",
    "a": [
     "0",
     "$A$",

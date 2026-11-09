@@ -1,22 +1,22 @@
 {
  "id": 38,
- "title": "Fotonlar va modda to‘lqinlari",
+ "title": "Photons and Matter Waves",
  "area": "kvant",
  "questions": [
   {
-   "q": "Fotoeffektda to‘xtatuvchi potensial nimaga bog‘liq?",
+   "q": "In the photoelectric effect, the stopping potential depends on",
    "a": [
-    "faqat yorug‘lik intensivligiga",
-    "yorug‘lik chastotasi va katod materialiga, intensivlikka bog‘liq emas",
-    "faqat yoritish vaqtiga",
-    "intensivlik va chastotaga",
-    "katod yuziga"
+    "only the light intensity",
+    "the light frequency and the cathode material, not the intensity",
+    "only the illumination time",
+    "the intensity and the frequency",
+    "the cathode area"
    ],
    "c": 1,
-   "e": "$eU=h\\nu-A$."
+   "e": "$eU=h\\nu-\\phi$."
   },
   {
-   "q": "Kompton sochilishida to‘lqin uzunligining maksimal o‘zgarishi qaysi burchakda bo‘ladi va nimaga teng?",
+   "q": "In Compton scattering, at what angle is the change in wavelength maximum, and what is it?",
    "a": [
     "90°, $h/(mc)$",
     "180°, $2h/(mc)$",
@@ -28,19 +28,19 @@
    "e": "$\\Delta\\lambda=\\dfrac h{mc}(1-\\cos\\theta)$."
   },
   {
-   "q": "Elektronni tezlatuvchi kuchlanish 4 marta oshirilsa (norelyativistik), de Broyl to‘lqin uzunligi:",
+   "q": "If the accelerating voltage of an electron is increased by a factor of 4 (nonrelativistic), its de Broglie wavelength",
    "a": [
-    "4 marta kamayadi",
-    "2 marta kamayadi",
-    "2 marta oshadi",
-    "o‘zgarmaydi",
-    "16 marta kamayadi"
+    "decreases by a factor of 4",
+    "is halved",
+    "doubles",
+    "does not change",
+    "decreases by a factor of 16"
    ],
    "c": 1,
    "e": "$\\lambda=h/\\sqrt{2meU}$."
   },
   {
-   "q": "Energiyasi $E$ bo‘lgan fotonning impulsi:",
+   "q": "The momentum of a photon of energy $E$ is",
    "a": [
     "$Ec$",
     "$E/c^2$",
@@ -49,13 +49,13 @@
     "0"
    ],
    "c": 2,
-   "e": "Massasiz zarra uchun $E=pc$."
+   "e": "For a massless particle $E=pc$."
   },
   {
-   "q": "Elektron taxminan 0,1 nm o‘lchamli sohaga qamalgan. Noaniqlik munosabatiga ko‘ra uning kinetik energiyasi tartibi:",
+   "q": "An electron is confined to a region about 0.1 nm in size. According to the uncertainty principle, the order of magnitude of its kinetic energy is",
    "a": [
     "$10^{-3}$ eV",
-    "bir necha eV",
+    "a few eV",
     "$10^{3}$ eV",
     "$10^{6}$ eV",
     "$10^{9}$ eV"

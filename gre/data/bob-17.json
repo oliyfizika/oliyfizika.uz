@@ -1,10 +1,10 @@
 {
  "id": 17,
- "title": "To‘lqinlar – II (tovush)",
+ "title": "Waves – II (Sound)",
  "area": "tolqin",
  "questions": [
   {
-   "q": "Tovush balandligi darajasi 20 dB ga oshdi. Intensivlik necha marta oshgan?",
+   "q": "The sound level increases by 20 dB. By what factor has the intensity increased?",
    "a": [
     "2",
     "20",
@@ -13,14 +13,14 @@
     "$10^{20}$"
    ],
    "c": 2,
-   "e": "$\\Delta\\beta=10\\lg(I_2/I_1)=20\\Rightarrow I_2/I_1=100$."
+   "e": "$\\Delta\\beta=10\\log(I_2/I_1)=20\\Rightarrow I_2/I_1=100$."
   },
   {
-   "q": "Manba tinch kuzatuvchiga tovush tezligining yarmiga teng tezlik bilan yaqinlashmoqda. Kuzatuvchi eshitadigan chastota manba chastotasidan necha marta katta?",
+   "q": "A source approaches a stationary observer at half the speed of sound. The frequency heard by the observer is how many times the source frequency?",
    "a": [
-    "1,5",
+    "1.5",
     "2",
-    "0,5",
+    "0.5",
     "$4/3$",
     "$2/3$"
    ],
@@ -28,19 +28,19 @@
    "e": "$f'=f\\dfrac{v}{v-v/2}=2f$."
   },
   {
-   "q": "Bir uchi yopiq, ikkinchi uchi ochiq quvurning asosiy chastotasi $f$. Quvurda yana qaysi chastotalar hosil bo‘ladi?",
+   "q": "A pipe closed at one end and open at the other has fundamental frequency $f$. What other frequencies can the pipe produce?",
    "a": [
     "$2f,3f,4f,\\dots$",
     "$3f,5f,7f,\\dots$",
     "$2f,4f,6f,\\dots$",
     "$f/2,f/3,\\dots$",
-    "faqat $f$"
+    "only $f$"
    ],
    "c": 1,
-   "e": "Yopiq uchda tugun, ochiq uchda do‘nglik: $L=(2n-1)\\lambda/4$, faqat toq garmonikalar."
+   "e": "Node at the closed end, antinode at the open end: $L=(2n-1)\\lambda/4$, so only odd harmonics."
   },
   {
-   "q": "Chastotalari 440 Hz va 444 Hz bo‘lgan ikki kamerton bir vaqtda chalinmoqda. Tepkilar (biyeniya) chastotasi:",
+   "q": "Two tuning forks with frequencies 440 Hz and 444 Hz are sounded together. The beat frequency is",
    "a": [
     "2 Hz",
     "4 Hz",
@@ -52,13 +52,13 @@
    "e": "$|f_1-f_2|=4$ Hz."
   },
   {
-   "q": "Ideal gazdagi tovush tezligi absolyut temperatura 300 K dan 1200 K ga oshganda:",
+   "q": "When the absolute temperature of an ideal gas increases from 300 K to 1200 K, the speed of sound",
    "a": [
-    "4 marta oshadi",
-    "o‘zgarmaydi",
-    "16 marta oshadi",
-    "$\\sqrt2$ marta oshadi",
-    "2 marta oshadi"
+    "increases by a factor of 4",
+    "does not change",
+    "increases by a factor of 16",
+    "increases by a factor of $\\sqrt2$",
+    "doubles"
    ],
    "c": 4,
    "e": "$v=\\sqrt{\\gamma RT/M}\\propto\\sqrt T$."

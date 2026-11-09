@@ -1,10 +1,10 @@
 {
  "id": 40,
- "title": "Atomlar",
+ "title": "All About Atoms",
  "area": "atom",
  "questions": [
   {
-   "q": "Vodorod atomida bosh kvant soni $n=3$ bo‘lgan holatlar soni (spinni hisobga olib):",
+   "q": "In the hydrogen atom, the number of states with principal quantum number $n=3$ (including spin) is",
    "a": [
     "3",
     "9",
@@ -16,7 +16,7 @@
    "e": "$2n^2$."
   },
   {
-   "q": "Orbital kvant son $l=2$ bo‘lganda magnit kvant son $m_l$ necha xil qiymat oladi?",
+   "q": "For orbital quantum number $l=2$, how many different values can the magnetic quantum number $m_l$ take?",
    "a": [
     "2",
     "3",
@@ -28,7 +28,7 @@
    "e": "$2l+1$."
   },
   {
-   "q": "Natriy atomining ($Z=11$) asosiy holatdagi elektron konfiguratsiyasi:",
+   "q": "The ground-state electron configuration of sodium ($Z=11$) is",
    "a": [
     "$1s^22s^22p^7$",
     "$1s^22s^22p^63s^1$",
@@ -37,27 +37,27 @@
     "$1s^22p^63s^2$"
    ],
    "c": 1,
-   "e": "Pauli prinsipi va energiya minimumi."
+   "e": "The Pauli principle and minimum energy."
   },
   {
-   "q": "Shtern–Gerlax tajribasida kumush atomlari dastasi notekis magnit maydonda nechta dastaga ajraldi va bu nimani ko‘rsatdi?",
+   "q": "In the Stern–Gerlach experiment, into how many beams was a beam of silver atoms split by the nonuniform magnetic field, and what did this show?",
    "a": [
-    "2 ta; elektron spini $1/2$",
-    "3 ta; $l=1$",
-    "uzluksiz yoyildi",
-    "1 ta; magnit moment yo‘q",
-    "4 ta; $j=3/2$"
+    "2; the electron spin is $1/2$",
+    "3; $l=1$",
+    "it spread out continuously",
+    "1; there is no magnetic moment",
+    "4; $j=3/2$"
    ],
    "c": 0,
-   "e": "Kumushda yagona tashqi $5s$ elektron, $l=0$; ikki holat faqat spindan."
+   "e": "Silver has a single outer $5s$ electron with $l=0$; the two states come from spin alone."
   },
   {
-   "q": "Mozli qonuniga ko‘ra $K_\\alpha$ chiziq chastotasi $(Z-1)^2$ ga proporsional. $Z=21$ element uchun chastota $Z=11$ elementnikidan necha marta katta?",
+   "q": "By Moseley's law, the frequency of the $K_\\alpha$ line is proportional to $(Z-1)^2$. The frequency for the element with $Z=21$ is how many times that for $Z=11$?",
    "a": [
     "2",
     "4",
-    "3,6",
-    "1,9",
+    "3.6",
+    "1.9",
     "8"
    ],
    "c": 1,

@@ -1,10 +1,10 @@
 {
  "id": 23,
- "title": "Gauss qonuni",
+ "title": "Gauss' Law",
  "area": "em",
  "questions": [
   {
-   "q": "Nuqtaviy zaryad $q$ kubning markazida turibdi. Kubning bitta yog‘idan o‘tuvchi elektr oqimi:",
+   "q": "A point charge $q$ sits at the center of a cube. The electric flux through one face of the cube is",
    "a": [
     "$q/\\varepsilon_0$",
     "$q/(6\\varepsilon_0)$",
@@ -13,22 +13,22 @@
     "0"
    ],
    "c": 1,
-   "e": "To‘liq oqim $q/\\varepsilon_0$, simmetriya bo‘yicha 6 ta yoqqa teng taqsimlanadi."
+   "e": "The total flux is $q/\\varepsilon_0$, shared equally among the 6 faces by symmetry."
   },
   {
-   "q": "Hajmi bo‘yicha bir tekis zaryadlangan shar ichida ($r<R$) maydon kuchlanganligi:",
+   "q": "Inside a uniformly charged solid sphere ($r<R$), the electric field strength is",
    "a": [
-    "nol",
-    "$1/r^2$ ga proporsional",
-    "o‘zgarmas",
-    "$r$ ga proporsional",
-    "$r^2$ ga proporsional"
+    "zero",
+    "proportional to $1/r^2$",
+    "constant",
+    "proportional to $r$",
+    "proportional to $r^2$"
    ],
    "c": 3,
    "e": "$E\\cdot4\\pi r^2=\\dfrac{Q r^3/R^3}{\\varepsilon_0}\\Rightarrow E\\propto r$."
   },
   {
-   "q": "Sirt zichliklari $+\\sigma$ va $-\\sigma$ bo‘lgan ikki parallel cheksiz plastina orasidagi maydon:",
+   "q": "The field between two parallel infinite plates with surface charge densities $+\\sigma$ and $-\\sigma$ is",
    "a": [
     "$\\sigma/(2\\varepsilon_0)$",
     "0",
@@ -37,10 +37,10 @@
     "$\\sigma/(4\\varepsilon_0)$"
    ],
    "c": 2,
-   "e": "Har bir plastina $\\sigma/(2\\varepsilon_0)$ beradi, oraliqda ular qo‘shiladi."
+   "e": "Each plate contributes $\\sigma/(2\\varepsilon_0)$, and between the plates the contributions add."
   },
   {
-   "q": "Zaryadlanmagan o‘tkazuvchi sferik qobiqning bo‘shlig‘iga $+q$ zaryad kiritildi (devorga tegmaydi). Qobiqning tashqi sirtidagi zaryad:",
+   "q": "A charge $+q$ is placed inside the cavity of an uncharged conducting spherical shell (not touching the wall). The charge on the outer surface of the shell is",
    "a": [
     "0",
     "$-q$",
@@ -49,10 +49,10 @@
     "$-q/2$"
    ],
    "c": 3,
-   "e": "Ichki sirtda $-q$ induksiyalanadi, qobiq neytral bo‘lgani uchun tashqi sirtda $+q$."
+   "e": "$-q$ is induced on the inner surface; since the shell is neutral, $+q$ appears on the outer surface."
   },
   {
-   "q": "Nuqtaviy zaryad $q$ kubning bir uchida (tashqarisida emas, aynan cho‘qqida) turibdi. Kub sirti orqali o‘tuvchi to‘liq oqim:",
+   "q": "A point charge $q$ sits exactly at one corner of a cube. The total flux through the surface of the cube is",
    "a": [
     "$q/\\varepsilon_0$",
     "$q/(6\\varepsilon_0)$",
@@ -61,7 +61,7 @@
     "$q/(8\\varepsilon_0)$"
    ],
    "c": 4,
-   "e": "Zaryadni 8 ta shunday kub o‘rab oladi."
+   "e": "Eight such cubes would surround the charge."
   }
  ]
 }
