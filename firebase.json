@@ -5,5 +5,18 @@
   },
   "storage": {
     "rules": "storage.rules"
-  }
+  },
+  "hosting": [
+    {
+      "target": "onlinefizika",
+      "public": "tools/onlinefizika-redirect",
+      "redirects": [
+        {
+          "source": "/:path*",
+          "destination": "https://oliyfizika.uz/:path",
+          "type": 301
+        }
+      ]
+    }
+  ]
 }
