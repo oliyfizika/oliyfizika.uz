@@ -62,9 +62,9 @@
       "c": 1
     },
     {
-      "q": "Suv tubidagi yashil nur o'rniga qizil nur ishlatilsa, uning suv tubidagi yetib borish nuqtasi qanday o'zgaradi?",
-      "a": ["O'zgarmaydi", "A nuqtadan chapga suriladi", "A nuqtadan o'ngga suriladi", "To'la qaytib, tubiga yetib bormaydi"],
-      "c": 2
+      "q": "Yashil va qizil nurlar havodan suvga bir xil burchak ostida tushmoqda. Qaysi nurning sinish burchagi kattaroq bo‘ladi?",
+      "a": ["Yashil nurniki", "Qizil nurniki", "Ikkalasiniki teng", "Ikkala nur ham to‘la qaytadi"],
+      "c": 1
     },
     {
       "q": "To'la ichki qaytishning chegaraviy burchagi α₀ qaysi formula bilan topiladi ($n_1 > n_2$)?",

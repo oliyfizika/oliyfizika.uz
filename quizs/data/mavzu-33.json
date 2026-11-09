@@ -52,14 +52,14 @@
       "c": 1
     },
     {
-      "q": "Temperaturasi -73°C bo'lgan 1 mol bir atomli ideal gazning ichki energiyasini toping (J).",
-      "a": ["831 J", "1662 J", "2493 J", "1246 J"],
-      "c": 2
+      "q": "Bir atomli ideal gaz uchun νRT = 400 J bo‘lsa, uning ichki energiyasi necha joulga teng?",
+      "a": ["400 J", "600 J", "800 J", "267 J"],
+      "c": 1
     },
     {
-      "q": "Ballondagi gazning 25% qismi chiqib ketishi natijasida temperatura 1,2 marta pasaydi. Ichki energiya necha marta kamayadi?",
-      "a": ["1,2 marta", "1,5 marta", "1,6 marta", "2,4 marta"],
-      "c": 2
+      "q": "Ballondagi gazning yarmi chiqarib yuborildi, harorati esa o‘zgarmadi. Gazning ichki energiyasi qanday o‘zgaradi?",
+      "a": ["O‘zgarmaydi", "2 marta kamayadi", "4 marta kamayadi", "2 marta ortadi"],
+      "c": 1
     },
     {
       "q": "Og'zi ochiq idish qizdirilganda, idish ichidagi havoning ichki energiyasi qanday o'zgaradi?",

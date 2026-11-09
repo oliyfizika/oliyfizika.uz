@@ -37,24 +37,24 @@
       "c": 1
     },
     {
-      "q": "Induksiyasi 20 T bo‘lgan bir jinsli magnit maydonda 3 A tok o‘tayotgan, uzunligi 40 cm li o'tkazgich induksiya chiziqlari bilan 37° burchak hosil qilsa, Amper kuchini toping (N). (sin37°=0,6)",
-      "a": ["14,4 N", "12,8 N", "10,2 N", "24,0 N"],
+      "q": "Induksiyasi 0,5 T bo‘lgan bir jinsli magnit maydonda induksiya chiziqlariga tik joylashgan 1 m uzunlikdagi o‘tkazgichdan 2 A tok o‘tmoqda. Amper kuchini toping.",
+      "a": ["1 N", "0,25 N", "4 N", "2 N"],
       "c": 0
     },
     {
-      "q": "Induksiyasi 20 T bo‘lgan magnit maydonga 0,2 C zaryadli zarra 25 m/s tezlik bilan induksiya chiziqlariga 53° burchak ostida uchib kirdi. Lorens kuchini toping (N). (sin53°=0,8)",
-      "a": ["100 N", "60 N", "80 N", "40 N"],
-      "c": 2
-    },
-    {
-      "q": "Vakuumda bir-biridan 10 cm masofada parallel joylashgan ikki o'tkazgichdan bir xil 10 A tok o'tsa, o'tkazgichlarning har 1 m uzunligiga qanday o'zaro ta'sir kuchi (Amper kuchi) to'g'ri keladi?",
-      "a": ["2·10⁻⁴ N", "4·10⁻⁷ N", "2·10⁻⁵ N", "2·10⁻⁷ N"],
-      "c": 0
-    },
-    {
-      "q": "Magnit induksiyasi 1,5 T bo'lgan maydonda yuzi 4 cm² li ramkadan 0,5 A tok o'tmoqda. Ramkaga ta'sir etuvchi maksimal kuch momentini toping (N·m).",
-      "a": ["0,75 N·m", "3·10⁻⁴ N·m", "0,03 N·m", "6·10⁻⁴ N·m"],
+      "q": "0,5 C zaryadli zarra 4 m/s tezlik bilan induksiyasi 2 T bo‘lgan magnit maydonga induksiya chiziqlariga tik uchib kirdi. Lorens kuchini toping.",
+      "a": ["1 N", "4 N", "8 N", "0 N"],
       "c": 1
+    },
+    {
+      "q": "Ikki parallel o‘tkazgichdan bir xil yo‘nalishda tok o‘tsa, ular qanday o‘zaro ta’sirlashadi?",
+      "a": ["Bir-biridan itariladi", "Bir-biriga tortiladi", "O‘zaro ta’sirlashmaydi", "Bir-biriga tik holatga buriladi"],
+      "c": 1
+    },
+    {
+      "q": "Induksiyasi 2 T bo‘lgan magnit maydonda yuzi 0,5 m² bo‘lgan ramkadan 1 A tok o‘tmoqda. Ramkaga ta’sir etuvchi maksimal kuch momentini toping.",
+      "a": ["1 N·m", "4 N·m", "0,25 N·m", "2 N·m"],
+      "c": 0
     },
     {
       "q": "Elektron bir jinsli magnit maydonga uchib kirsa, uning kinetik energiyasi vaqt bo'yicha qanday o'zgaradi?",

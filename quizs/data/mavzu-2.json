@@ -47,9 +47,9 @@
       "c": 2
     },
     {
-      "q": "Tinch holatdan tekis tezlanuvchan harakat boshlagan jism 2,5 s da tezligini 60 cm/s ga yetkazdi. Jism tezlanishini toping (m/s²).",
-      "a": ["0,24", "2,4", "24", "0,12"],
-      "c": 0
+      "q": "Tinch holatdan harakat boshlagan jism 4 s da tezligini 8 m/s ga yetkazdi. Jism tezlanishini toping (m/s²).",
+      "a": ["0,5", "2", "4", "32"],
+      "c": 1
     },
     {
       "q": "20 m/s tezlik bilan ketayotgan avtomobil tormozlanish natijasida 2 s da to'xtadi. Tormozlanish yo'lini aniqlang (m).",
@@ -87,9 +87,9 @@
       "c": 1
     },
     {
-      "q": "Moddiy nuqta v = 4t qonuniyat bilan harakatlansa, uning 5-sekundda o'tgan yo'li qancha (m)?",
-      "a": ["18 m", "50 m", "20 m", "4 m"],
-      "c": 0
+      "q": "Tinch holatdan 4 m/s² tezlanish bilan harakat boshlagan jism 3 s da qancha yo‘l o‘tadi?",
+      "a": ["12 m", "18 m", "36 m", "6 m"],
+      "c": 1
     },
     {
       "q": "Boshlang'ich tezlikka ega bo'lgan tekis sekinlanuvchan harakatning koordinata tenglamasini ko'rsating.",
@@ -117,9 +117,9 @@
       "c": 0
     },
     {
-      "q": "Vagonning tezlanishi 36000 km/h² bo'lsa, u necha m/s² ga teng?",
-      "a": ["10", "1", "2,78", "0,28"],
-      "c": 2
+      "q": "Avtomobil 5 s da tezligini 10 m/s dan 20 m/s gacha oshirdi. Uning tezlanishi necha m/s² ga teng?",
+      "a": ["1", "2", "4", "10"],
+      "c": 1
     },
     {
       "q": "Jismning tezlik vektori bilan tezlanish vektori orasidagi burchak 180 gradus bo'lsa, jism qanday harakat qiladi?",

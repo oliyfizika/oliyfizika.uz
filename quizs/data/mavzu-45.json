@@ -67,13 +67,13 @@
       "c": 2
     },
     {
-      "q": "Elektr zanjirda R qarshilikdagi kuchlanish tushuvi 8 V, manba EYKi 6 V va tok kuchi 1 A bo'lsa, 10 s da necha Joul issiqlik ajraladi? (r=0)",
-      "a": ["80 J", "60 J", "20 J", "140 J"],
-      "c": 2
+      "q": "Rezistordagi kuchlanish 8 V, undan o‘tayotgan tok kuchi 1 A. 10 s da rezistorda qancha issiqlik ajraladi?",
+      "a": ["80 J", "8 J", "0,8 J", "800 J"],
+      "c": 0
     },
     {
-      "q": "Qisqa tutashuv toki 8 A bo'lgan manbaga 12 Ω tashqi qarshilik ulanganda manba FIK i 75% bo'lsa, foydali quvvatni (W) toping.",
-      "a": ["48 W", "36 W", "16 W", "12 W"],
+      "q": "Tok manbaining to‘liq quvvati 64 W, FIK i esa 75%. Tashqi zanjirdagi foydali quvvatni toping.",
+      "a": ["48 W", "16 W", "64 W", "85 W"],
       "c": 0
     },
     {

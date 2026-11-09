@@ -52,9 +52,9 @@
       "c": 2
     },
     {
-      "q": "Elektron 10 kV/m kuchlanganlikka ega maydonda 4 mm masofani o'tsa, qancha Joul ish bajariladi? (e = 1,6·10⁻¹⁹ C)",
-      "a": ["6,4·10⁻¹⁸ J", "4·10⁻¹⁸ J", "1,6·10⁻¹⁸ J", "6,4·10⁻¹⁹ J"],
-      "c": 0
+      "q": "Elektron tinch holatdan potensiallar farqi 100 V bo‘lgan nuqtalar orasida tezlashtirildi. U qancha kinetik energiya oladi (eV)?",
+      "a": ["1 eV", "100 eV", "50 eV", "1,6·10⁻¹⁷ eV"],
+      "c": 1
     },
     {
       "q": "Zaryad potensiali 12 V bo'lgan nuqtadan potensiali -15 V bo'lgan nuqtaga ko'chsa, potensiallar ayirmasi qanchaga teng bo'ladi?",
@@ -67,9 +67,9 @@
       "c": 2
     },
     {
-      "q": "Kuchlanganligi 3·10⁶ N/C bo'lgan maydonda zaryadni 2 cm ko'chirishda 0,012 J ish bajarilgan bo'lsa, zaryad miqdorini toping (C).",
-      "a": ["2·10⁻⁷", "1,2·10⁻³", "3·10⁻⁹", "4·10⁻⁶"],
-      "c": 0
+      "q": "Kuchlanganligi 200 V/m bo‘lgan bir jinsli elektr maydonda bitta kuch chizig‘i bo‘ylab bir-biridan 0,5 m masofada yotgan ikki nuqta orasidagi potensiallar farqi necha volt?",
+      "a": ["400 V", "100 V", "200 V", "0,0025 V"],
+      "c": 1
     },
     {
       "q": "Tok manbai ichida chet kuchlar 3 C zaryadni ko'chirishda 150 J ish bajarsa, manbaning EYuKi necha Volt?",

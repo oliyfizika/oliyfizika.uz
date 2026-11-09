@@ -32,9 +32,9 @@
       "c": 1
     },
     {
-      "q": "Kislorod molekulalarining o'rtacha kvadratik tezligi 600 m/s bo'lishi uchun harorat taxminan qancha bo'lishi kerak?",
-      "a": ["275 K", "462 K", "530 K", "622 K"],
-      "c": 1
+      "q": "Bir xil haroratda kislorod (O₂) va vodorod (H₂) molekulalarining ilgarilanma harakat o‘rtacha kinetik energiyalari qanday munosabatda bo‘ladi?",
+      "a": ["Kislorodniki 16 marta katta", "Vodorodniki 4 marta katta", "O‘zaro teng", "Kislorodniki 4 marta katta"],
+      "c": 2
     },
     {
       "q": "v = √(3RT/M) formuladagi R doimiysi nimani anglatadi?",
@@ -47,9 +47,9 @@
       "c": 1
     },
     {
-      "q": "Bir xil haroratda kislorod (O₂) va suv bug‘i (H₂O) molekulalarining tezliklari nisbati v(O₂)/v(H₂O) qanchaga teng?",
-      "a": ["3/4", "16/9", "9/16", "4/3"],
-      "c": 0
+      "q": "Bir xil haroratda geliy (He, M = 4 g/mol) va metan (CH₄, M = 16 g/mol) molekulalari o‘rtacha kvadratik tezliklarining nisbati v(He)/v(CH₄) qanchaga teng?",
+      "a": ["4", "2", "1/2", "1/4"],
+      "c": 1
     },
     {
       "q": "Absolyut nol temperatura (0 K) tushunchasining molekulalar tezligi bilan bog'liqligi nimada?",
