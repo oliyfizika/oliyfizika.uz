@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "oliy-fizika"
+  },
+  "targets": {
+    "oliy-fizika": {
+      "hosting": {
+        "onlinefizika": [
+          "onlinefizika-uz"
+        ]
+      }
+    }
+  }
+}
