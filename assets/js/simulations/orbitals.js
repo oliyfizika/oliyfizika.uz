@@ -8,7 +8,7 @@
 
 import * as THREE from "../../vendor/three/three.module.min.js";
 import { OrbitControls } from "../../vendor/three/OrbitControls.js";
-import { bindRange, prefersReducedMotion, clamp, fmt } from "./sim-kit.js";
+import { bindRange, prefersReducedMotion, clamp, fmt, fullscreenHeight } from "./sim-kit.js";
 import { readouts, u } from "./labkit.js";
 import * as P from "./orbitals-physics.js";
 
@@ -214,7 +214,8 @@ function resize() {
   if (!renderer) return;
   const w = Math.max(260, Math.floor(wrap.clientWidth));
   const vh = window.innerHeight || 800;
-  const h = Math.round(w < 560 ? clamp(w * 0.95, 300, 440) : clamp(Math.min(w * 0.62, vh * 0.62), 340, 560));
+  const normal = Math.round(w < 560 ? clamp(w * 0.95, 300, 440) : clamp(Math.min(w * 0.62, vh * 0.62), 340, 560));
+  const h = fullscreenHeight(canvas, w, normal) || normal;
   canvas.style.height = `${h}px`;
   renderer.setSize(w, h, false);
   camera.aspect = w / h; camera.updateProjectionMatrix();

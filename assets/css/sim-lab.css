@@ -330,3 +330,27 @@ body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-selec
 .orb-seg button { min-width: 40px; justify-content: center; font-variant-numeric: tabular-nums; }
 .orb-seg button:disabled { opacity: .35; cursor: not-allowed; }
 @container (max-width: 560px) { .orb-hud__name { font-size: 26px; } .orb-legend { gap: 8px; } }
+
+/* ---------- «To‘liq ekran» (sim-fullscreen.js): sahna butun ekranni egallaydi ---------- */
+.sim-fs-btn { margin-left: auto; }
+.sim-status:not(:empty):not([hidden]) + .sim-fs-btn { margin-left: 0; }
+.sim-fs-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.sim-fs-btn--float { position: absolute; top: 8px; right: 8px; z-index: 2; }
+@container (max-width: 560px) {
+  .sim-fs-btn .sim-fs-btn__text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+.sim-stage.is-fs {
+  display: flex; flex-direction: column;
+  width: 100%; height: 100%; max-width: none; margin: 0;
+  border: 0; border-radius: 0; box-shadow: none;
+  background: var(--of-surface);
+}
+.sim-stage.is-fs > .sim-canvas-wrap { flex: 0 0 auto; margin-block: auto; }
+.sim-stage.is-fs > :not(.sim-canvas-wrap) { flex: none; }
+.sim-stage:fullscreen::backdrop { background: var(--of-surface); }
+.sim-stage.is-fs-pseudo {
+  position: fixed; inset: 0; z-index: 2000;
+  height: 100vh; height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+html.of-sim-fs-lock, html.of-sim-fs-lock body { overflow: hidden; }
