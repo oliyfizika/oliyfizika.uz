@@ -13,7 +13,7 @@ import { icon } from "../ui/icons.js";
 import { openModal } from "../ui/modal.js";
 import { formatDate } from "../account/account-common.js";
 import { adminPerms, sectionLabel } from "./permissions.js";
-import { auditEntry } from "./audit-log.js";
+import { auditEntry, logAdminAction } from "./audit-log.js";
 
 export const $ = (s, r = document) => r.querySelector(s);
 export const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -175,26 +175,24 @@ export const ACCESS_LABEL = { role: "Administrator", fullAccess: "Full Access", 
 
 /**
  * 'kirish-huquqlari' bo'limi admini (yoki owner): faqat fullAccess / mockTestsAccess / attestationAccess (bool).
- * O'zgarish va amallar jurnali yozuvi bitta atomik batch'da. role — setAdminRole() orqali (faqat owner).
+ * Avval o'zgarish yoziladi, keyin amallar jurnali (best-effort): jurnal yozilmasa ham (masalan, yangi Rules hali
+ * deploy qilinmagan bo'lsa) huquq berish to'xtamaydi. role — setAdminRole() orqali (faqat owner).
  * @param {{ state, target?: { name?, email? } }} ctx
  */
 export async function updateAccess(fb, uid, field, value, { state, target = {} } = {}) {
   if (!ACCESS_FIELDS.includes(field)) throw new Error(`Ruxsat etilmagan maydon: ${field}`);
   if (typeof value !== "boolean") throw new Error("Qiymat true/false bo‘lishi kerak");
-  const { doc, writeBatch } = fb.fsSdk;
-  const batch = writeBatch(fb.db);
-  batch.update(doc(fb.db, "users", uid), { [field]: value });
+  const { doc, updateDoc } = fb.fsSdk;
+  await updateDoc(doc(fb.db, "users", uid), { [field]: value });
   if (state) {
     const who = target.name || target.email || uid;
-    const log = auditEntry(fb, state, {
+    await logAdminAction(fb, state, {
       action: value ? "access.grant" : "access.revoke", section: "kirish-huquqlari",
       summary: `${ACCESS_LABEL[field]} ${value ? "berildi" : "olib tashlandi"}: ${who}`,
       targetUid: uid, targetLabel: [target.name, target.email].filter(Boolean).join(" · ") || uid,
       details: { field, value },
     });
-    batch.set(log.ref, log.data);
   }
-  await batch.commit();
 }
 
 /**
