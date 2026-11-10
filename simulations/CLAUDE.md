@@ -51,6 +51,7 @@ Umumiy yadro:
 | `lab-core.js` | `createLab(cfg)` — maktab lab sahifasi: sahna, boshqaruv (`only` — rejimga bog‘lash), asbob tugmalari, «Qaydlar», daftar, tushuntirish, formulalar (`extra` — qo‘shimcha HTML). cfg sxemasi faylning boshida |
 | `labgear.js` | Maktab lab asboblari chizmasi: multimetr, reostat, g‘altak, kondensator, elektron tarozi va h.k. |
 | `lab-qr.js` | Hisobot uchun QR kod |
+| `sim-fullscreen.js` | Har `.sim-stage` ga «To‘liq ekran» tugmasi (Fullscreen API + iOS uchun CSS fallback). `app-shell.js` `body.of-sim-page` da o‘zi yuklaydi; `createStage` balandlikni `fullscreenHeight()` bilan hisoblaydi. O‘z kanvas o‘lchamini hisoblaydigan sahifa (masalan `orbitals.js`) ham `fullscreenHeight()` ni chaqirishi kerak |
 | `sim-lab.css` | 2.0 maket: `.sim-head`, `.sim-layout`, `.sim-stage`, `.sim-panel`, `.sim-readouts`, `.sim-explain`, `.sim-bin` |
 
 ## Virtual laboratoriya (lab ishi) qoidalari

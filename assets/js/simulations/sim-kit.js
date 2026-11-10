@@ -49,6 +49,21 @@ export function readColors(el = document.documentElement) {
 /* ------------------------------------------------------------------ Stage */
 
 /**
+ * Sahna «To‘liq ekran» rejimida bo‘lsa (sim-fullscreen.js), kanvas uchun balandlik (CSS px), aks holda 0.
+ * Mavjud joyni egallaydi; tik ekranda kanvas kenglikdan (yoki oddiy balandligi `normal` dan) baland bo‘lmaydi —
+ * chizma cho‘zilib ketmasin.
+ */
+export function fullscreenHeight(canvas, w, normal = 0) {
+  const wrap = canvas.parentElement;
+  const stage = wrap?.closest(".sim-stage.is-fs");
+  if (!stage) return 0;
+  const cs = getComputedStyle(stage);
+  let avail = stage.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+  for (const el of stage.children) if (el !== wrap && !el.contains(wrap)) avail -= el.offsetHeight;
+  return Math.max(200, Math.min(Math.floor(avail), Math.max(Math.round(w), Math.round(normal))));
+}
+
+/**
  * createStage(canvas, draw)
  * draw(ctx, { w, h, colors }) — CSS pikselda chizadi (DPR avtomatik).
  * Qaytaradi: { render(), size, colors }
@@ -60,7 +75,8 @@ export function createStage(canvas, draw, { minHeight = 280, aspect = 0.62, maxH
   function resize() {
     const box = canvas.parentElement.getBoundingClientRect();
     const w = Math.max(260, Math.floor(box.width));
-    const h = height ? Math.round(height(w)) : Math.round(clamp(w * aspect, minHeight, maxHeight));
+    const normal = height ? Math.round(height(w)) : Math.round(clamp(w * aspect, minHeight, maxHeight));
+    const h = fullscreenHeight(canvas, w, normal) || normal;
     const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
     if (w === stage.w && h === stage.h && canvas.width === Math.round(w * dpr)) return;
     stage.w = w;

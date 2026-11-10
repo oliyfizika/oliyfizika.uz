@@ -169,6 +169,11 @@ function mount() {
   // Google redirect (mobil) orqali qaytgan bo'lsa — profilni ta'minlash
   import("../auth/auth-service.js").then((m) => m.completeGoogleRedirect()).catch((e) => console.warn("[shell] Google redirect:", e?.code || e));
 
+  // Simulyatsiya/laboratoriya sahifalari: sahnaga «To‘liq ekran» tugmasi
+  if (document.body.classList.contains("of-sim-page")) {
+    import("../simulations/sim-fullscreen.js").catch((e) => console.warn("[shell] fullscreen:", e));
+  }
+
   // 4) Tashqi API
   window.OFShell = { setSearch, setTitle, toast, requireAuth, openAuth, url };
   if (window.OFShellConfig?.search) setSearch(window.OFShellConfig.search);
