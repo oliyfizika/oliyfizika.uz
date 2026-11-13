@@ -3,6 +3,8 @@
 // - Profil bir sahifada faqat bir marta o'qiladi va barcha tinglovchilarga ulashiladi.
 // - Mavjud js/firebase.js ishlatiladi — yangi Firebase ilova yaratilmaydi.
 
+import { startGuestPresence, stopGuestPresence } from "./presence.js";
+
 const SDK = "https://www.gstatic.com/firebasejs/10.12.2";
 const ROOT = new URL("../../../", import.meta.url);
 const PROFILE_CACHE_KEY = "oliyfizika:profile-cache";
@@ -106,6 +108,8 @@ export function isProfileComplete(profile) {
 // ---------------------------------------------------------------------------
 // Foydalanuvchi faolligi (js/auth.js dan ko'chirildi — endi barcha sahifalarda ishlaydi)
 // users/{uid}.lastActiveAt — kirishda, har 5 daqiqada va sahifaga qaytilganda yangilanadi.
+// Faqat sahifa ko'rinib turganda yoziladi (yashirin tablar «online» sanalmaydi va ortiqcha yozuv bo'lmaydi).
+// Admin dashboard'dagi «Hozir online» kartasi shu maydon bo'yicha sanaydi (admin/index.html).
 // ---------------------------------------------------------------------------
 const ACTIVITY_INTERVAL = 5 * 60 * 1000;
 const ACTIVITY_MIN_GAP = 60 * 1000;
@@ -113,6 +117,7 @@ let activityTimer = null;
 let lastActivityWrite = 0;
 
 async function touchActivity(force = false) {
+  if (document.visibilityState === "hidden") return;
   const now = Date.now();
   if (!force && now - lastActivityWrite < ACTIVITY_MIN_GAP) return;
   const fb = await loadFirebase();
@@ -169,9 +174,11 @@ loadFirebase()
       if (!user) {
         stopActivity();
         clearProfileCache();
+        startGuestPresence(fb);
         emit({ status: "guest", user: null, profile: null, profileLoaded: false });
         return;
       }
+      stopGuestPresence();
       const cached = readCachedProfile(user.uid);
       emit({ status: "authenticated", user, profile: cached, profileLoaded: false });
       try {

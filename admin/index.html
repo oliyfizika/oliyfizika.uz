@@ -28,6 +28,34 @@
       <div class="of-admin-panel__head"><h2 id="mySecTitle">Sizning bo‘limlaringiz</h2><span class="of-admin-note" data-my-kind></span></div>
       <div class="of-admin-chips" data-my-sections></div>
     </section>
+    <section class="of-card of-admin-panel of-admin-online" aria-labelledby="onlineTitle" data-online>
+      <div class="of-admin-panel__head">
+        <h2 id="onlineTitle"><span class="of-admin-online__dot" aria-hidden="true"></span>Hozir online</h2>
+        <span class="of-admin-note" data-online-updated aria-live="polite"></span>
+      </div>
+      <ul class="of-admin-stats" aria-busy="true" data-online-stats>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--green" data-icon="users"></span>
+          <span class="of-admin-stat__value" data-online="total"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Jami online</span>
+        </li>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--blue" data-icon="user"></span>
+          <span class="of-admin-stat__value" data-online="signed"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Tizimga kirganlar</span>
+        </li>
+        <li class="of-card of-admin-stat">
+          <span class="of-admin-stat__icon of-admin-stat__icon--orange" data-icon="eye"></span>
+          <span class="of-admin-stat__value" data-online="guests"><span class="of-skeleton of-skeleton--title"></span></span>
+          <span class="of-admin-stat__label">Mehmonlar</span>
+        </li>
+      </ul>
+      <p class="of-admin-note">So‘nggi 6 daqiqada saytni ochiq (ko‘rinib turgan) holda ishlatganlar. Har daqiqada yangilanadi.</p>
+      <div class="of-admin-online__actions">
+        <button type="button" class="of-btn of-btn--ghost of-btn--sm" data-online-toggle aria-expanded="false" aria-controls="onlineList">Kimlar online?</button>
+      </div>
+      <div id="onlineList" data-online-list hidden></div>
+    </section>
     <section aria-labelledby="statsTitle">
       <h2 class="of-sr-only" id="statsTitle">Ko‘rsatkichlar</h2>
       <ul class="of-admin-stats" aria-busy="true" data-stats>

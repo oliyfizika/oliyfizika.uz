@@ -38,6 +38,8 @@ rules_version = '2';
 //       hammasini o'qiydi; update — hech kim; delete — 'milliy-sertifikat' admini.
 //   adminAuditLog/{id}   (amallar jurnali)
 //     • har qanday admin faqat O'Z nomidan, server vaqti bilan yozadi; o'qish — faqat owner; update/delete — hech kim.
+//   presence/{sid}   (mehmonlar «online» belgisi — admin dashboard)
+//     • istalgan tashrifchi faqat {at: server vaqti, expireAt} yozadi; list (count) — har qanday admin.
 //   users/{uid}/gameSets/{setId}   (interaktiv o'yinlar — foydalanuvchi to'plamlari)
 //     • faqat egasi o'qiydi/yozadi/o'chiradi; maydonlar va hajm tekshiriladi.
 //   Qolgan barcha yo'llar — yopiq (default deny).
@@ -385,6 +387,26 @@ service cloud.firestore {
       allow create: if isAdmin() && validAudit(request.resource.data);
       allow read: if isSiteOwner();
       allow update, delete: if false;
+    }
+
+    // ---------------------------------------------------------------- presence (mehmonlar «online» belgisi)
+    // Kod: assets/js/core/presence.js (yozadi), assets/js/admin/dashboard.js (sanaydi).
+    // Tizimga kirmagan tashrifchi sahifa ko'rinib turganda ~5 daqiqada bir marta o'z hujjatini yangilaydi.
+    // Shaxsiy ma'lumot yo'q: faqat at (server vaqti) va expireAt (TTL). Hujjat ID — tasodifiy, brauzerga bog'liq.
+    // O'qish (count/list) — faqat admin; get/delete — hech kim (eski hujjatlarni TTL siyosati o'chiradi).
+    function validPresence(d, sid) {
+      return sid.matches('g_[A-Za-z0-9]{20,40}')
+        && d.keys().hasOnly(['at', 'expireAt'])
+        && d.at == request.time
+        && d.expireAt is timestamp
+        && d.expireAt > request.time
+        && d.expireAt < request.time + duration.value(2, 'h');
+    }
+
+    match /presence/{sid} {
+      allow create, update: if validPresence(request.resource.data, sid);
+      allow list: if isAdmin();
+      allow get, delete: if false;
     }
 
     // >>> attestation-physics (generated — tools/attestatsiya-fizika/rules/build_rules.py)

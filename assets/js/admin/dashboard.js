@@ -76,4 +76,75 @@ async function loadRecentResults() {
   box.setAttribute("aria-busy", "false");
 }
 
-await Promise.all([loadStats(), loadRecentUsers(), canResults ? loadRecentResults() : null]);
+// ------------------------------------------------------------------ Hozir online
+// Tizimga kirganlar: users/{uid}.lastActiveAt (core/session.js — ko'rinib turgan sahifada ~5 daqiqada bir yoziladi).
+// Mehmonlar: presence/{id}.at (core/presence.js). Ikkalasi ham count so'rovi bilan sanaladi (hujjatlar yuklanmaydi).
+// Oyna 6 daqiqa: 5 daqiqalik yurak urishi + kechikish uchun zaxira. Sahifa yashirin bo'lsa yangilanmaydi.
+const ONLINE_WINDOW = 6 * 60 * 1000;
+const ONLINE_REFRESH = 60 * 1000;
+const ONLINE_LIST_LIMIT = 50;
+const presence = collection(fb.db, "presence");
+const onlineSince = () => fb.fsSdk.Timestamp.fromMillis(Date.now() - ONLINE_WINDOW);
+const onlineList = $("[data-online-list]");
+const onlineToggle = $("[data-online-toggle]");
+let onlineTimer = null;
+
+function agoText(v) {
+  const ms = Date.now() - (v?.toMillis ? v.toMillis() : 0);
+  const min = Math.max(0, Math.floor(ms / 60000));
+  return min < 1 ? "hozirgina" : `${min} daqiqa oldin`;
+}
+
+async function loadOnlineList() {
+  onlineList.setAttribute("aria-busy", "true");
+  try {
+    const snap = await getDocs(query(users, where("lastActiveAt", ">=", onlineSince()), orderBy("lastActiveAt", "desc"), limit(ONLINE_LIST_LIMIT)));
+    onlineList.innerHTML = snap.empty ? stateBox("empty", "Hozir tizimga kirgan foydalanuvchi online emas.") : `<ul class="of-admin-mini">${snap.docs.map((d) => {
+      const u = d.data();
+      return `<li><a href="user.html?id=${encodeURIComponent(d.id)}"><b>${esc(fullNameOf(u))}</b><span>${esc(u.email || "—")}</span></a><time>${esc(agoText(u.lastActiveAt))}</time></li>`;
+    }).join("")}</ul>${snap.size >= ONLINE_LIST_LIMIT ? `<p class="of-admin-note">Faqat oxirgi ${ONLINE_LIST_LIMIT} tasi ko‘rsatildi.</p>` : ""}`;
+  } catch (error) {
+    onlineList.innerHTML = stateBox("error", "Ro‘yxatni yuklab bo‘lmadi.", errorText(error));
+  }
+  onlineList.setAttribute("aria-busy", "false");
+}
+
+async function countSafe(q) {
+  try { return (await getCountFromServer(q)).data().count; } catch (error) { console.warn("[online]", error?.code || error); return null; }
+}
+
+async function loadOnline() {
+  const since = onlineSince();
+  const [signed, guests] = await Promise.all([
+    countSafe(query(users, where("lastActiveAt", ">=", since))),
+    countSafe(query(presence, where("at", ">=", since))),
+  ]);
+  const set = (key, v, title = "") => { const el = $(`[data-online="${key}"]`); el.textContent = v == null ? "—" : num(v); el.title = title; };
+  set("signed", signed, signed == null ? "Hisoblab bo‘lmadi" : "");
+  set("guests", guests, guests == null ? "Hisoblab bo‘lmadi (presence qoidalari hali deploy qilinmagan bo‘lishi mumkin)" : "");
+  set("total", signed == null && guests == null ? null : (signed || 0) + (guests || 0));
+  $("[data-online-stats]").setAttribute("aria-busy", "false");
+  $("[data-online-updated]").textContent = `Yangilandi: ${new Date().toLocaleTimeString("uz-UZ", { hour: "2-digit", minute: "2-digit" })}`;
+  if (!onlineList.hidden) loadOnlineList();
+}
+
+function startOnlineTimer() {
+  if (onlineTimer) return;
+  onlineTimer = setInterval(loadOnline, ONLINE_REFRESH);
+}
+
+onlineToggle.addEventListener("click", () => {
+  const open = onlineList.hidden;
+  onlineList.hidden = !open;
+  onlineToggle.setAttribute("aria-expanded", String(open));
+  onlineToggle.textContent = open ? "Ro‘yxatni yopish" : "Kimlar online?";
+  if (open) loadOnlineList();
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") { loadOnline(); startOnlineTimer(); }
+  else { clearInterval(onlineTimer); onlineTimer = null; }
+});
+startOnlineTimer();
+
+await Promise.all([loadOnline(), loadStats(), loadRecentUsers(), canResults ? loadRecentResults() : null]);
