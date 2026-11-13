@@ -1,6 +1,6 @@
 // ==========================================================================
-// Bosh sahifa: «Attestatsiya — Fizika» kurs banneri — xabarlar ketma-ket almashadi (bitta matn elementi, DOM qayta
-// chizilmaydi). CTA (Telegram) o'zgarmaydi. Firestore/tarmoq so'rovi yo'q, tashqi kutubxona yo'q.
+// Bosh sahifa: «Milliy sertifikat — bepul mock test» banneri — xabarlar ketma-ket almashadi (bitta matn elementi, DOM qayta
+// chizilmaydi). CTA mock testlar katalogiga olib boradi (mehmonga kirish oynasi home.js dagi data-protected orqali). Firestore/tarmoq so'rovi yo'q, tashqi kutubxona yo'q.
 // • Bitta setInterval; sahifa yashirin bo'lsa / sichqoncha yoki fokus banner ustida bo'lsa / pauza bosilsa — to'xtaydi.
 // • pagehide da tozalanadi (taymer sahifadan chiqqandan keyin ishlamaydi).
 // • prefers-reduced-motion: animatsiyasiz almashadi (CSS) va sekinroq.

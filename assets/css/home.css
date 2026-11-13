@@ -283,7 +283,7 @@
   .of-feature:hover .of-feature__icon, .of-feature:hover .of-feature__action svg { transform: none; }
 }
 
-/* ------------------------------------------------------------ Attestatsiya — Fizika kurs banneri (hero o'ng ustuni) */
+/* ------------------------------------------------------------ Milliy sertifikat — bepul mock test banneri (hero o'ng ustuni) */
 .of-promo {
   position: relative; margin: 0; min-height: 300px;
   display: flex; flex-direction: column; justify-content: center; gap: 14px;
@@ -300,6 +300,11 @@
   letter-spacing: 0.04em; text-transform: uppercase;
 }
 .of-promo__badge svg { width: 15px; height: 15px; }
+.of-promo__badge--free { background: var(--of-success-soft); color: var(--of-success-text); }
+.of-promo__kicker {
+  margin: 0 0 -8px; color: var(--of-primary-text);
+  font: 700 var(--of-text-sm)/1.2 var(--of-font-sans); letter-spacing: 0.06em; text-transform: uppercase;
+}
 .of-promo__pause { width: 36px; height: 36px; border: 1px solid var(--of-border); background: var(--of-surface); }
 .of-promo__pause svg { width: 16px; height: 16px; }
 .of-promo__pause[aria-pressed="false"] .of-promo__icon-play,

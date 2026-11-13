@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="assets/css/home.css">
 <script type="module" src="assets/js/shell/app-shell.js"></script>
 <script type="module" src="assets/js/home/home.js"></script>
-<script type="module" src="assets/js/home/attestation-promo.js"></script>
+<script type="module" src="assets/js/home/home-promo.js"></script>
 </head>
 
 <body class="of-ui" data-shell-title="Bosh sahifa" data-i18n-title="nav.home" data-i18n-search="home.search" data-shell-search="Bo‘lim yoki kursni qidirish…" data-search-target="#home">
@@ -41,28 +41,28 @@
       </div>
     </div>
 
-    <!-- Attestatsiya — Fizika kursi (oldingi simulyatsiya promo bloki o'rnida; simulyatsiyalar bo'limi o'zgarmagan) -->
+    <!-- Milliy sertifikat — bepul interaktiv mock testlar (oldingi Attestatsiya — Fizika banneri o'rnida) -->
     <aside class="of-promo of-physics-grid" data-promo aria-labelledby="promoTitle">
       <div class="of-promo__top">
-        <span class="of-promo__badge"><span data-icon="certificate"></span><span data-i18n="home.promoBadge">Kurs</span></span>
+        <span class="of-promo__badge of-promo__badge--free"><span data-icon="certificate"></span><span data-i18n="home.promoBadge">Bepul</span></span>
         <button type="button" class="of-icon-btn of-promo__pause" data-promo-pause aria-pressed="false" aria-label="Xabarlar almashinuvini to‘xtatish" data-i18n-attr="aria-label:home.promoPause">
           <span class="of-promo__icon-pause" data-icon="pause"></span><span class="of-promo__icon-play" data-icon="play"></span>
         </button>
       </div>
-      <h2 class="of-promo__title" id="promoTitle" data-i18n="home.promoTitle">ATTESTATSIYA — FIZIKA</h2>
+      <p class="of-promo__kicker" data-i18n="home.promoKicker">Milliy sertifikat</p>
+      <h2 class="of-promo__title" id="promoTitle" data-i18n="home.promoTitle">BEPUL MOCK TEST</h2>
       <div class="of-promo__stage">
-        <p class="of-promo__msg" data-promo-msg aria-hidden="true" data-i18n="home.promo1">32 kunlik tayyorgarlik challenge</p>
+        <p class="of-promo__msg" data-promo-msg aria-hidden="true" data-i18n="home.promo1">Haqiqiy imtihon formatidagi mock testlar</p>
       </div>
-      <ul class="of-sr-only" data-promo-list aria-label="Kurs haqida" data-i18n-attr="aria-label:home.promoAbout">
-        <li data-i18n="home.promo1">32 kunlik tayyorgarlik challenge</li>
-        <li data-i18n="home.promo2">1000+ test savollari</li>
-        <li data-i18n="home.promo3">Har kuni yangi attestatsiya testi</li>
-        <li data-i18n="home.promo4">Natijalar va shaxsiy statistika</li>
-        <li data-i18n="home.promo5">Test jarayonida kalkulyator</li>
-        <li data-i18n="home.promo6">Fizika attestatsiyasiga tizimli tayyorgarlik</li>
+      <ul class="of-sr-only" data-promo-list aria-label="Mock testlar haqida" data-i18n-attr="aria-label:home.promoAbout">
+        <li data-i18n="home.promo1">Haqiqiy imtihon formatidagi mock testlar</li>
+        <li data-i18n="home.promo2">45 ta topshiriq · 3 soat</li>
+        <li data-i18n="home.promo3">Formula jadvali va kalkulyator bilan</li>
+        <li data-i18n="home.promo4">Natija darhol: ball va savollar tahlili</li>
+        <li data-i18n="home.promo5">Ro‘yxatdan o‘ting va bepul yeching</li>
       </ul>
       <ol class="of-promo__dots" data-promo-dots aria-hidden="true"></ol>
-      <a class="of-btn of-btn--primary of-btn--lg of-promo__cta" href="https://t.me/oliy_fizik" target="_blank" rel="noopener noreferrer" data-promo-cta data-i18n="home.promoCta">📲 Kursga yozilish</a>
+      <a class="of-btn of-btn--primary of-btn--lg of-promo__cta" href="milliy-sertifikat/mock-testlar/index.html" data-protected data-promo-cta data-i18n="home.promoCta">📝 Bepul mock testni boshlash</a>
     </aside>
   </section>
 

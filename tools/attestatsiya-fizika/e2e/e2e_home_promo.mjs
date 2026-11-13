@@ -1,5 +1,5 @@
 // ==========================================================================
-// Bosh sahifa: «Attestatsiya — Fizika» kurs banneri (oldingi simulyatsiya promo bloki o'rnida).
+// Bosh sahifa: «Milliy sertifikat — bepul mock test» banneri (oldingi Attestatsiya — Fizika banneri o'rnida).
 //   python3 tools/attestatsiya-fizika/e2e/mock_server.py --port 8803 &
 //   E2E_PORT=8803 node tools/attestatsiya-fizika/e2e/e2e_home_promo.mjs
 // Natija: _private/attestatsiya-fizika/e2e/report-home-promo.json
@@ -19,8 +19,10 @@ const checks = [];
 const ok = (name, cond, detail = "") => { checks.push({ name, pass: Boolean(cond), detail }); console.log(`${cond ? "PASS" : "FAIL"} ${name}${detail ? ` — ${detail}` : ""}`); };
 const post = async (p, body) => (await fetch(B + p, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
 const J = (x) => JSON.stringify(x);
-const MSGS = ["32 kunlik tayyorgarlik challenge", "1000+ test savollari", "Har kuni yangi attestatsiya testi",
-  "Natijalar va shaxsiy statistika", "Test jarayonida kalkulyator", "Fizika attestatsiyasiga tizimli tayyorgarlik"];
+const MSGS = ["Haqiqiy imtihon formatidagi mock testlar", "45 ta topshiriq · 3 soat", "Formula jadvali va kalkulyator bilan",
+  "Natija darhol: ball va savollar tahlili", "Ro‘yxatdan o‘ting va bepul yeching"];
+const CTA_TEXT = "📝 Bepul mock testni boshlash";
+const CTA_PATH = "milliy-sertifikat/mock-testlar/index.html";
 const T0 = new Date("2026-10-07T06:00:00Z");
 const ts = (d) => ({ __ts: [Math.floor(d.getTime() / 1000), 0] });
 
@@ -57,12 +59,12 @@ const msgText = (page) => page.textContent("[data-promo-msg]").then((t) => t.tri
   await page.waitForSelector("[data-promo]");
   await page.waitForFunction(() => window.__ofPromo);
   ok("B: simulyatsiya promo bloki almashtirildi (data-sim / canvas yo‘q)", !(await page.$("[data-sim]")) && !(await page.$(".of-sim__canvas")) && !(await page.evaluate(() => window.__ofSim)));
-  ok("C: banner — «ATTESTATSIYA — FIZIKA», hero ichida", (await page.textContent("#promoTitle")).trim() === "ATTESTATSIYA — FIZIKA" && !!(await page.$(".of-hero [data-promo]")));
-  ok("matnlar: 6 ta xabar (sr-only ro‘yxat) — talab qilinganlar", J(await page.$$eval("[data-promo-list] li", (l) => l.map((x) => x.textContent.trim()))) === J(MSGS));
+  ok("C: banner — «BEPUL MOCK TEST», hero ichida, Attestatsiya reklamasi yo‘q", (await page.textContent("#promoTitle")).trim() === "BEPUL MOCK TEST" && !(await page.$("[data-promo] a[href*='t.me']")) && !/attestatsiya/i.test(await page.textContent("[data-promo]")) && !!(await page.$(".of-hero [data-promo]")));
+  ok("matnlar: 5 ta xabar (sr-only ro‘yxat) — talab qilinganlar", J(await page.$$eval("[data-promo-list] li", (l) => l.map((x) => x.textContent.trim()))) === J(MSGS));
   ok("bir vaqtda faqat bitta xabar ko‘rinadi", (await page.$$("[data-promo-msg]")).length === 1 && (await msgText(page)) === MSGS[0]);
   // D/E: aylanish
   const seen = [await msgText(page)];
-  for (let k = 0; k < 6; k++) {
+  for (let k = 0; k < MSGS.length; k++) {
     await page.waitForFunction((prev) => document.querySelector("[data-promo-msg]").textContent.trim() !== prev, seen.at(-1), { timeout: 6000 });
     await page.waitForTimeout(400);
     seen.push(await msgText(page));
@@ -72,13 +74,10 @@ const msgText = (page) => page.textContent("[data-promo-msg]").then((t) => t.tri
   ok("E: yumshoq o‘tish (opacity + transform, 0.26 s)", /opacity/.test(tr) && /transform/.test(tr) && /0\.26s/.test(tr), tr);
   // F/G: CTA
   const cta = await page.$eval("[data-promo-cta]", (a) => ({ href: a.href, text: a.textContent.trim(), target: a.target, rel: a.rel, tag: a.tagName }));
-  ok("F/G: CTA — haqiqiy havola https://t.me/oliy_fizik, «📲 Kursga yozilish», yangi oynada", cta.tag === "A" && cta.href === "https://t.me/oliy_fizik" && cta.text === "📲 Kursga yozilish" && cta.target === "_blank" && /noopener/.test(cta.rel), J(cta));
+  ok("F/G: CTA — mock testlar katalogiga havola, «📝 Bepul mock testni boshlash», shu oynada", cta.tag === "A" && cta.href === B + CTA_PATH && cta.text === CTA_TEXT && !cta.target, J(cta));
   const before = await page.$eval("[data-promo-cta]", (a) => a.getBoundingClientRect().top);
   await page.waitForTimeout(4300);
   ok("F: CTA xabar almashganda joyidan qimirlamaydi", Math.abs((await page.$eval("[data-promo-cta]", (a) => a.getBoundingClientRect().top)) - before) < 1);
-  const [popup] = await Promise.all([page.waitForEvent("popup"), page.click("[data-promo-cta]")]);
-  ok("G: CTA bosilganda t.me/oliy_fizik ochiladi", popup.url() === "https://t.me/oliy_fizik", popup.url());
-  await popup.close();
   // pauza
   await page.mouse.move(1, 1);
   await page.$eval("[data-promo-cta]", (a) => a.blur());
@@ -121,7 +120,10 @@ const msgText = (page) => page.textContent("[data-promo-msg]").then((t) => t.tri
   const { ctx, page } = await ctxFor(null);
   await page.goto(B + "index.html");
   await page.waitForFunction(() => window.__ofPromo);
-  ok("mehmon ham bannerni ko‘radi, CTA ishlaydi", (await page.getAttribute("[data-promo-cta]", "href")) === "https://t.me/oliy_fizik" && !page.errs.length, page.errs.join(" | "));
+  ok("mehmon ham bannerni ko‘radi", (await page.getAttribute("[data-promo-cta]", "href")) === CTA_PATH && !page.errs.length, page.errs.join(" | "));
+  await page.click("[data-promo-cta]");
+  await page.waitForTimeout(400);
+  ok("mehmon CTA bossa — kirish oynasi ochiladi, sahifa o‘zgarmaydi", page.url() === B + "index.html" && await page.evaluate(() => [...document.querySelectorAll("dialog[open], [role=dialog]")].some((d) => d.offsetParent !== null || d.open)), page.url());
   await ctx.close();
 }
 
