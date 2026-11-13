@@ -117,6 +117,22 @@ def main():
     expect("jurnal: o'zgartirib bo'lmaydi", db.write(OWNER, "adminAuditLog/a1", {"summary": "x"}, T, apply=False), False)
     expect("jurnal: o'chirib bo'lmaydi", db.delete(OWNER, "adminAuditLog/a1", T), False)
 
+    # ------------------------------------------------------------ presence («Hozir online» — mehmonlar)
+    GID = "presence/g_" + "a1b2c3d4" * 4
+    pres = {"at": SERVER, "expireAt": T + dt.timedelta(hours=1)}
+    expect("presence: mehmon o'z belgisini yozadi", db.write(None, GID, pres, T, merge=False), True)
+    expect("presence: mehmon belgisini yangilaydi", db.write(None, GID, pres, T + dt.timedelta(minutes=5), merge=False, apply=False), True)
+    expect("presence: kirgan foydalanuvchi ham yoza oladi (zarar yo'q)", db.write(U1, "presence/g_" + "b" * 32, pres, T, merge=False, apply=False), True)
+    expect("presence: klient vaqti — rad", db.write(None, GID, {**pres, "at": T - dt.timedelta(minutes=1)}, T, merge=False, apply=False), False)
+    expect("presence: ortiqcha maydon — rad", db.write(None, GID, {**pres, "email": "x@y.z"}, T, merge=False, apply=False), False)
+    expect("presence: uzoq expireAt — rad", db.write(None, GID, {**pres, "expireAt": T + dt.timedelta(days=1)}, T, merge=False, apply=False), False)
+    expect("presence: noto'g'ri ID — rad", db.write(None, "presence/users", pres, T, merge=False, apply=False), False)
+    expect("presence: bo'limsiz admin ham sanay oladi", db.query(NONE, "presence", T)[0], True)
+    expect("presence: foydalanuvchi ro'yxatni o'qiy olmaydi", db.query(U1, "presence", T)[0], False)
+    expect("presence: mehmon ro'yxatni o'qiy olmaydi", db.query(None, "presence", T)[0], False)
+    expect("presence: hujjatni o'qib bo'lmaydi", db.read(None, GID, T), False)
+    expect("presence: o'chirib bo'lmaydi", db.delete(OWNER, GID, T), False)
+
     fails = [c for c in checks if not c[1]]
     for name, ok, got, want in checks:
         print(("OK   " if ok else "XATO ") + name + ("" if ok else f"  (natija {got}, kutilgan {want})"))

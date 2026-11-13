@@ -56,6 +56,15 @@ html[data-sidebar="collapsed"].of-admin-mode .of-sidebar .of-admin-badge { displ
 .of-admin-stat__label { color: var(--of-text-2); font-size: var(--of-text-xs); font-weight: 600; }
 
 /* ------------------------------------------------------------ panellar */
+/* «Hozir online» kartasi (dashboard) */
+.of-admin-online .of-admin-panel__head h2 { display: inline-flex; align-items: center; gap: 8px; }
+.of-admin-online__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--of-success); box-shadow: 0 0 0 4px var(--of-success-soft); }
+.of-admin-online .of-admin-stats { margin: 0; }
+.of-admin-online__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: no-preference) {
+  .of-admin-online__dot { animation: of-online-pulse 2s ease-in-out infinite; }
+  @keyframes of-online-pulse { 50% { box-shadow: 0 0 0 7px var(--of-success-soft); } }
+}
 .of-admin-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
 .of-admin-panel { display: flex; flex-direction: column; gap: 12px; padding: 18px 20px; min-width: 0; }
 .of-admin-panel--flush { padding: 0; gap: 0; overflow: hidden; }
