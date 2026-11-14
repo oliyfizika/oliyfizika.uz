@@ -19,6 +19,7 @@ import { loadState } from "../../../milliy-sertifikat/mock-testlar/js/storage.js
 import { itemCount, countFilledItems } from "../../../milliy-sertifikat/mock-testlar/js/scoring.js";
 import { fetchOverlay, applyOverlay } from "../../../milliy-sertifikat/mock-testlar/js/i18n-content.js";
 import { t } from "../core/i18n.js";
+import * as ss from "../../../milliy-sertifikat/mock-testlar/js/session-service.js";
 
 const BASE = new URL("../../../milliy-sertifikat/mock-testlar/", import.meta.url);
 const resolve = (p) => new URL(p, BASE).href;
@@ -27,7 +28,36 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const norm = (t) => String(t || "").toLowerCase().replace(/[‘’ʻʼ`´']/g, "'").replace(/№/g, " ").replace(/\s+/g, " ").trim();
 
-const state = { tests: [], uid: null, query: "" };
+const state = { tests: [], uid: null, query: "", sessions: [], practice: [], myAttempts: [] };
+
+const fmtDate = (ms) => ss.fmtTashkent(ms, { year: false });
+const comma = (v) => (Number.isFinite(Number(v)) ? String(Math.round(Number(v) * 100) / 100).replace(".", ",") : "—");
+
+/**
+ * Yopiq rejim (sessiyalar): { kind, label, tone, href, open } yoki null.
+ *   open — ochiq sessiya; mine — foydalanuvchi qatnashgan (natija kutilmoqda / e'lon qilingan); upcoming — keyingi sessiya.
+ */
+function sessionInfo(test) {
+  const list = state.sessions.filter((s) => s.testId === test.id);
+  const open = list.find((s) => ss.sessionPhase(s) === "open");
+  const mine = state.myAttempts.filter((a) => a.testId === test.id)
+    .map((a) => ({ a, s: list.find((s) => s.id === a.sessionId) })).filter((x) => x.s)
+    .sort((x, y) => ss.toMs(y.s.opensAt) - ss.toMs(x.s.opensAt));
+  const href = (s) => `test.html?id=${encodeURIComponent(test.id)}&session=${encodeURIComponent(s.id)}`;
+  if (open) {
+    const my = mine.find((x) => x.s.id === open.id);
+    if (my && my.a.status !== "in_progress") return { kind: "pending", label: "Topshirildi • natija kutilmoqda", tone: "blue", href: href(open), cta: "Holatni ko‘rish" };
+    return { kind: "open", label: `Ochiq • ${fmtDate(ss.toMs(open.closesAt))} gacha`, tone: "green", href: href(open), cta: my ? "Davom ettirish" : "Testni boshlash", open: true };
+  }
+  if (mine.length) {
+    const { a, s } = mine[0];
+    if (a.status === "published" && a.result) return { kind: "published", label: `Natija: ${comma(a.result.score)} ball${a.result.level ? ` • ${a.result.level}` : ""}`, tone: "green", href: href(s), cta: "Natijani ko‘rish" };
+    return { kind: "pending", label: "Natija kutilmoqda", tone: "blue", href: href(s), cta: "Holatni ko‘rish" };
+  }
+  const up = list.filter((s) => ss.sessionPhase(s) === "upcoming").sort((x, y) => ss.toMs(x.opensAt) - ss.toMs(y.opensAt))[0];
+  if (up) return { kind: "upcoming", label: `Ochiladi: ${fmtDate(ss.toMs(up.opensAt))}`, tone: "orange", href: `test.html?id=${encodeURIComponent(test.id)}`, cta: "Batafsil" };
+  return null;
+}
 
 /** Qurilmadagi urinish holati (eski catalog.js bilan bir xil qoidalar). */
 function attemptStatus(test) {
@@ -46,13 +76,21 @@ function card(test) {
   const total = test.questions.length;
   const mcq = test.questions.filter((q) => q.type === "mcq").length;
   const bands = itemCount(test.questions);
-  const st = attemptStatus(test);
-  const href = `test.html?id=${encodeURIComponent(test.id)}`;
+  const sess = sessionInfo(test);
+  const practice = state.practice.includes(test.id);
+  const local = attemptStatus(test);
+  // Yopiq rejim: sessiya holati ustun; aks holda erkin mashq yoki avvalgi (saqlangan) mashq natijasi; qolgani — yopiq.
+  let st = sess || (practice ? local : local?.kind === "done" ? local : null);
+  if (!st && !practice) st = { kind: "closed", label: "Yopiq" };
+  if (practice && !sess) st = st ? { ...st, label: `Mashq • ${st.label}` } : { kind: "practice", label: "Erkin mashq" };
+  const href = sess?.href || `test.html?id=${encodeURIComponent(test.id)}`;
   const saved = state.uid ? loadState(test.id, state.uid) : null;
   const label = !state.uid ? t("ms.card.login", "Kirish va boshlash")
-    : saved && saved.attemptId && !saved.submitted ? t("ms.card.resume", "Davom ettirish")
-      : saved?.submitted ? t("ms.card.result", "Natijani ko‘rish") : t("ms.card.start", "Testni boshlash");
-  const tone = st?.kind === "done" ? "green" : st?.kind === "progress" ? "blue" : "orange";
+    : sess ? sess.cta
+      : saved?.submitted ? t("ms.card.result", "Natijani ko‘rish")
+        : !practice ? "Batafsil"
+          : saved && saved.attemptId ? t("ms.card.resume", "Davom ettirish") : t("ms.card.start", "Testni boshlash");
+  const tone = st?.tone || (st?.kind === "done" ? "green" : st?.kind === "progress" ? "blue" : st?.kind === "closed" ? "gray" : "orange");
   const search = [test.title, `mock test ${test.number}`, test.number, test.sourceVariant, test.subtitle].join(" ");
   return `
     <li data-search-text="${esc(search)}">
@@ -69,7 +107,7 @@ function card(test) {
           <li>${t("ms.card.kinds", `<b>${mcq} + ${total - mcq}</b> test / ochiq`, { a: mcq, b: total - mcq })}</li>
           <li>${t("ms.card.bands", `<b>${bands}</b> ta band`, { n: bands })}</li>
         </ul>
-        <a class="of-btn ${st?.kind === "done" ? "of-btn--soft" : "of-btn--primary"} of-mock__cta" href="${esc(href)}" data-mock-start
+        <a class="of-btn ${st?.kind === "open" || (practice && st?.kind !== "done") ? "of-btn--primary" : "of-btn--soft"} of-mock__cta" href="${esc(href)}" data-mock-start
            aria-label="${esc(`${label}: ${test.title}`)}">${esc(label)} ${icon("arrowRight")}</a>
       </article>
     </li>`;
@@ -146,6 +184,14 @@ async function init() {
       return applyOverlay(test, overlay);
     }));
     results.filter((r) => r.status === "rejected").forEach((r) => console.error("Test yuklanmadi:", r.reason));
+    const [settings, sessions, mine] = await Promise.all([
+      ss.getSettings(),
+      ss.listSessions().catch((e) => { console.warn("[ms] sessiyalar:", e?.code || e); return []; }),
+      state.uid ? ss.listMyAttempts(state.uid).catch((e) => { console.warn("[ms] urinishlar:", e?.code || e); return []; }) : [],
+    ]);
+    state.practice = settings.practiceTests || [];
+    state.sessions = sessions;
+    state.myAttempts = mine;
     state.tests = results.filter((r) => r.status === "fulfilled").map((r) => r.value).sort((a, b) => (a.number || 0) - (b.number || 0));
   } catch (error) {
     console.error("Mock testlar katalogini yuklab bo‘lmadi:", error);
@@ -153,6 +199,8 @@ async function init() {
     return;
   }
 
+  const rank = (tt) => { const k = sessionInfo(tt)?.kind; return k === "open" ? 0 : k === "pending" || k === "published" ? 1 : k === "upcoming" ? 2 : state.practice.includes(tt.id) ? 3 : 4; };
+  state.tests.sort((a, b) => rank(a) - rank(b) || (a.number || 0) - (b.number || 0));
   const list = $("[data-mock-list]");
   list.innerHTML = state.tests.map(card).join("");
   list.removeAttribute("aria-busy");

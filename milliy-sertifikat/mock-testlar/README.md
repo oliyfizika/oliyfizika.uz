@@ -73,3 +73,24 @@ ham avtomatik chiqadi. Fayl qo‘lda yozilmaydi:
    `M:` formula, `A:` javob, `S:` kalitdagi xato izohi, `U:` shart noaniq izohi).
 2. `python3 tools/milliy-sertifikat/build_solutions.py` — JSON yaratadi va har bir test savolidagi javob
    harfi kalit bilan mosligini tekshiradi.
+
+## Yopiq rejim: sessiyalar va Rasch natijasi
+
+Barcha mocklar sukut bo‘yicha **yopiq**. Admin `admin/milliy-sertifikat-sessiyalar.html` sahifasida:
+
+1. **Sessiya ochadi** — mock, ochilish/yopilish vaqti (Toshkent), har bir ishtirokchiga vaqt (daqiqa). Shu oraliqda test
+   barcha kirgan foydalanuvchilarga ochiladi (`msMockSessions/{id}`). Ishtirokchi bir marta yechadi; javoblar serverda
+   saqlanib boradi (`msMockAttempts/{sessionId}__{uid}`), topshirganda **natija ko‘rsatilmaydi**.
+2. Sessiya yopilgach **«Yakunlash va natijani hisoblash»** — `js/finalize-core.js` barcha javoblarni `gradeLocal()` bilan
+   baholab, `js/rasch.js` (JMLE) orqali ball hisoblaydi: T = 50 + 10·Z, [0; 75]; daraja 70+ A+, 65 A, 60 B+, 55 B, 50 C+, 46 C;
+   foiz = ball / 70 (100% bilan cheklangan); bo‘limlar bo‘yicha taqsimot `js/sections.js` (savolda `"section"` bo‘lmasa —
+   kalit so‘zlar bo‘yicha). Natija har bir urinishga yoziladi, darajasi borlarga `msMockCertificates/{OFyy-NNNNNN}` yaratiladi.
+   Kamida 5 ta javob bergan ishtirokchi kerak; 30 tadan kam bo‘lsa ogohlantiriladi. Qayta hisoblash mumkin (sertifikat raqamlari saqlanadi).
+3. Ishtirokchi natijani test sahifasida ko‘radi; `sertifikat.html?session=…` da rasm (3×4, Firestore `msMockProfiles/{uid}`)
+   va otasining ismini kiritib, sertifikatni PNG/PDF yuklaydi. QR kod `sertifikat.html?cert=…` (ommaviy tekshirish) ga olib boradi.
+
+**Erkin mashq**: admin belgilagan mocklar (`msMockSettings/config.practiceTests`) eski rejimda ochiq — natija darhol.
+Foydalanuvchilarning avvalgi mashq natijalari (qurilmadagi holat + `mockTestAttempts`) o‘chmaydi va test yopiq bo‘lsa ham ko‘rinadi.
+
+Testlar: `node tools/milliy-sertifikat/tests/test_rasch.mjs`, `node tools/milliy-sertifikat/tests/test_finalize_core.mjs`,
+`python3 tools/milliy-sertifikat/tests/test_ms_session_rules.py`, E2E: `tools/milliy-sertifikat/e2e_ms_sessions.mjs`.

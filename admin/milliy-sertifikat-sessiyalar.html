@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Admin: Milliy sertifikat mock test sessiyalari va Rasch natijalari">
+<title>Mock sessiyalar | Admin | OliyFizika.uz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/admin.css">
+<script type="module" src="../assets/js/shell/app-shell.js"></script>
+<script type="module" src="../assets/js/admin/ms-sessions.js"></script>
+<style>
+  .ms-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; align-items: end; }
+  .ms-form .of-field { margin: 0; }
+  .ms-practice { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-top: 10px; }
+  .ms-practice label { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--of-border); border-radius: 10px; background: var(--of-surface); cursor: pointer; }
+  .ms-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ms-detail { padding: 14px 16px; background: var(--of-surface-sunken); border-top: 1px solid var(--of-border); }
+  .ms-detail h3 { margin: 0 0 8px; font-size: 1rem; }
+  .ms-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+  .ms-warn { color: var(--of-warning-text); background: var(--of-warning-soft); padding: 8px 12px; border-radius: 10px; margin: 8px 0; }
+</style>
+</head>
+<body class="of-ui" data-shell-mode="admin" data-shell-title="Mock sessiyalar">
+<!-- Frontend gate xavfsizlik EMAS: himoya firestore.rules (canManage('milliy-sertifikat')) da. -->
+<div class="of-page of-container of-admin" id="adminPage">
+  <div class="of-admin-gate" data-admin-gate role="status" aria-live="polite">
+    <div class="of-admin-gate__box"><span class="of-skeleton of-skeleton--circle of-admin-gate__sk"></span><p>Administrator huquqi tekshirilmoqda…</p></div>
+  </div>
+  <div class="of-admin-root" data-admin-root hidden>
+    <header class="of-admin-head">
+      <div>
+        <h1>Milliy sertifikat → Mock sessiyalar</h1>
+        <p class="of-muted">Barcha mock testlar sukut bo‘yicha <b>yopiq</b>. Bu yerda aniq bir mockni belgilangan kunlarga ochasiz — ishtirokchilar bir vaqtda yechadi,
+          javoblar serverda saqlanadi va natija darhol ko‘rsatilmaydi. Sessiya yopilgach <b>«Yakunlash va natijani hisoblash»</b> ni bosing:
+          barcha ishtirokchilar javoblari asosida Rasch modeli (JMLE) bo‘yicha 0–75 ball, daraja (A+ … C) va sertifikat raqami hisoblanib, har bir ishtirokchiga e’lon qilinadi.</p>
+      </div>
+    </header>
+
+    <section class="of-card of-admin-panel" aria-labelledby="msNewTitle">
+      <div class="of-admin-panel__head"><h2 id="msNewTitle">Yangi sessiya ochish</h2></div>
+      <form class="ms-form" data-new-form novalidate>
+        <div class="of-field">
+          <label class="of-label" for="msTest">Mock test</label>
+          <select class="of-input of-admin-select" id="msTest" required></select>
+        </div>
+        <div class="of-field">
+          <label class="of-label" for="msOpen">Ochilish (Toshkent vaqti)</label>
+          <input class="of-input" id="msOpen" type="datetime-local" required>
+        </div>
+        <div class="of-field">
+          <label class="of-label" for="msClose">Yopilish (Toshkent vaqti)</label>
+          <input class="of-input" id="msClose" type="datetime-local" required>
+        </div>
+        <div class="of-field">
+          <label class="of-label" for="msDur">Vaqt (daqiqa)</label>
+          <input class="of-input" id="msDur" type="number" min="10" max="600" step="1" value="180" required>
+        </div>
+        <div class="of-field">
+          <label class="of-label" for="msNote">Izoh (ixtiyoriy)</label>
+          <input class="of-input" id="msNote" type="text" maxlength="200" placeholder="Masalan: 1-sinov sessiyasi">
+        </div>
+        <div><button type="submit" class="of-btn of-btn--primary">Sessiyani ochish</button></div>
+      </form>
+      <p class="of-hint">Ishtirokchi testni ochilish va yopilish vaqtlari orasida boshlay oladi; boshlagach belgilangan daqiqa vaqt beriladi. Natijani hisoblashdan oldin oxirgi ishtirokchi ham yakunlashi uchun yopilishdan keyin shu vaqt o‘tishini kuting.</p>
+    </section>
+
+    <p class="of-admin-note" data-note aria-live="polite"></p>
+
+    <section class="of-card of-admin-panel of-admin-panel--flush" aria-labelledby="msListTitle">
+      <div class="of-admin-panel__head of-admin-panel__head--pad"><h2 id="msListTitle">Sessiyalar</h2><button type="button" class="of-btn of-btn--ghost of-btn--sm" data-reload>Yangilash</button></div>
+      <div class="of-admin-table-wrap">
+        <table class="of-admin-table">
+          <caption class="of-sr-only">Mock test sessiyalari: test, ochilish va yopilish vaqti, holat, ishtirokchilar va amallar</caption>
+          <thead><tr><th scope="col">Mock test</th><th scope="col">Ochiladi</th><th scope="col">Yopiladi</th><th scope="col">Vaqt</th><th scope="col">Holat</th><th scope="col" class="of-num">Ishtirokchilar</th><th scope="col">Amallar</th></tr></thead>
+          <tbody data-body><tr><td colspan="7">Yuklanmoqda…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="of-card of-admin-panel" aria-labelledby="msPracticeTitle">
+      <div class="of-admin-panel__head"><h2 id="msPracticeTitle">Erkin mashq rejimi</h2><button type="button" class="of-btn of-btn--sm" data-save-practice>Saqlash</button></div>
+      <p class="of-muted">Belgilangan mocklar sessiyasiz ham ochiq bo‘ladi (eski rejim: natija darhol, Rasch hisoblanmaydi, sertifikat berilmaydi). Belgilanmaganlari yopiq. Foydalanuvchilarning avvalgi mashq natijalari har qanday holatda saqlanib, ko‘rinib turadi.</p>
+      <div class="ms-practice" data-practice></div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

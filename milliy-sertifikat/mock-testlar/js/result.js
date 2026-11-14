@@ -4,6 +4,7 @@ import { STATUS, optionText } from "./scoring.js";
 import { makeResultCode } from "./attempt-service.js";
 import { t } from "../../../assets/js/core/i18n.js";
 import { attachSolutions } from "./solutions.js";
+import { fmtTashkent } from "./session-service.js";
 
 /** To'g'ri javobni ko'rsatish: uzun kasrlarni yaxlitlash (3√3 → 5,196), vergul bilan. */
 function fmtAnswer(v) {
@@ -43,6 +44,65 @@ export function renderPending(root, { test, state, onNewAttempt }) {
       h("p", { class: "muted" }, t("ms.r.attempt", `Urinish ID: ${state.attemptId}`, { id: state.attemptId }))),
     h("div", { class: "result-actions" },
       h("button", { type: "button", class: "btn btn-ghost", onclick: onNewAttempt }, t("ms.r.newAttempt", "↻ Yangi urinish"))));
+}
+
+const fmtDateTz = (ms) => fmtTashkent(ms);
+const msOf = (v) => (v == null ? null : typeof v.toMillis === "function" ? v.toMillis() : typeof v === "number" ? v : null);
+const comma = (v, d = 2) => (Number.isFinite(Number(v)) ? Number(v).toFixed(d).replace(/\.?0+$/, "").replace(".", ",") : "—");
+
+/** Rasmiy sessiya: javoblar qabul qilindi, natija admin yakunlagandan keyin. */
+export function renderSessionPending(root, { test, state, session, late }) {
+  const closes = msOf(session?.closesAt);
+  clear(root).append(
+    h("div", { class: "result-hero glass" },
+      h("span", { class: "eyebrow" }, test.title),
+      h("h2", {}, "Javoblaringiz qabul qilindi"),
+      h("div", { class: "result-name" }, state.name),
+      h("p", {}, "Natija darhol ko‘rsatilmaydi. Sessiya ",
+        h("b", {}, fmtDateTz(closes)), " da yopilgandan so‘ng barcha ishtirokchilar javoblari asosida Rasch modeli bo‘yicha ball hisoblanadi. ",
+        "Admin natijalarni e’lon qilgach, shu sahifada balingiz, darajangiz va sertifikatingiz paydo bo‘ladi."),
+      late ? h("p", { class: "notice-inline" }, "Vaqt tugaganidan keyin yuborildi — serverda oxirgi saqlangan javoblaringiz baholanadi.") : null,
+      h("p", { class: "muted" }, t("ms.r.attempt", `Urinish ID: ${state.attemptId}`, { id: state.attemptId }))),
+    h("div", { class: "result-actions" },
+      h("a", { class: "btn btn-ghost", href: "./" }, t("ms.r.list", "← Testlar ro‘yxati"))));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/** Rasmiy sessiya: e'lon qilingan Rasch natijasi + savollarni ko'rib chiqish (to'g'ri javoblar bilan). */
+export function renderSessionResult(root, { test, state, attempt, session, grade, resolveUrl }) {
+  const r = attempt.result || {};
+  const stat = (value, label) => h("div", { class: "stat" }, h("b", {}, value), h("span", {}, label));
+  const sections = Array.isArray(r.sections) ? r.sections : [];
+  const certHref = `sertifikat.html?session=${encodeURIComponent(attempt.sessionId)}`;
+  const hero = h("div", { class: "result-hero glass rasch-hero" },
+    h("span", { class: "eyebrow" }, `${test.title} • natija e’lon qilingan`),
+    h("h2", {}, "Rasch modeli bo‘yicha natija"),
+    h("div", { class: "result-name" }, state.name),
+    h("div", { class: "stats" },
+      stat(comma(r.score), "ball (0–75)"),
+      stat(r.level || "—", "daraja"),
+      stat(`${comma(r.percent)} %`, "umumiy ballga nisbatan"),
+      stat(`${r.raw ?? grade.correct}/${r.maxRaw ?? grade.maxScore}`, "to‘g‘ri band"),
+      stat(String(r.participants ?? "—"), "ishtirokchi")),
+    r.level ? null : h("p", { class: "notice-inline" }, "46 balldan past natijaga daraja va sertifikat berilmaydi."));
+  const secCard = sections.length ? h("div", { class: "card glass" },
+    h("h3", {}, "Bo‘limlar bo‘yicha natija"),
+    h("div", { class: "table-wrap" }, h("table", { class: "rtable" },
+      h("thead", {}, h("tr", {}, h("th", {}, "Bo‘lim"), h("th", {}, "Ball"))),
+      h("tbody", {}, sections.map((x) => h("tr", {}, h("td", {}, x.label || x.id), h("td", {}, comma(x.score, 3)))))))) : null;
+  const actions = h("div", { class: "result-actions" },
+    r.level && r.certNo ? h("a", { class: "btn btn-primary", href: certHref }, "🎓 Sertifikatni ochish") : null,
+    h("a", { class: "btn btn-ghost", href: "./" }, t("ms.r.list", "← Testlar ro‘yxati")));
+  const note = h("p", { class: "notice" }, `Ball barcha ${r.participants ?? ""} ishtirokchi javoblari asosida Rasch modeli (JMLE) bilan hisoblangan: `
+    + "50 — ishtirokchilar o‘rtachasi, har 10 ball — bir standart og‘ish. Daraja: 70+ A+, 65 A, 60 B+, 55 B, 50 C+, 46 C.");
+  clear(root).append(hero, actions, note);
+  if (secCard) root.append(secCard);
+  if (test.review?.enabled !== false) {
+    const review = renderReview(test, state, grade, resolveUrl, true);
+    root.append(review);
+    attachSolutions(review, { ...test, review: { ...(test.review || {}), showCorrectAnswers: true } }, resolveUrl).catch((error) => console.warn("Yechimlarni yuklab bo‘lmadi:", error));
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 export function renderResult(root, { test, state, grade, resolveUrl, onNewAttempt }) {
@@ -94,8 +154,8 @@ export function renderResult(root, { test, state, grade, resolveUrl, onNewAttemp
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function renderReview(test, state, grade, resolveUrl) {
-  const showCorrect = !!test.review?.showCorrectAnswers;
+function renderReview(test, state, grade, resolveUrl, forceCorrect = false) {
+  const showCorrect = forceCorrect || !!test.review?.showCorrectAnswers;
   const nav = h("div", { class: "review-nav" }, test.questions.map((q) => h("a", { href: `#reviewQ${q.n}` }, String(q.n))));
   const cards = test.questions.map((q, i) => {
     const r = grade.rows[i];

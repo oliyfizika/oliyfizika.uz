@@ -11,7 +11,8 @@ import { sanitizeNumInput, isAnswered, isPartial, itemCount, countFilledItems } 
 import { submitAttempt, isLocalMode, ATTEMPT_STATUS } from "./attempt-service.js";
 import { gradeLocal } from "./scoring.js";
 import { recordAttempt } from "./attempt-record.js";
-import { renderResult, renderPending } from "./result.js";
+import { renderResult, renderPending, renderSessionPending, renderSessionResult } from "./result.js";
+import * as ss from "./session-service.js";
 import { checkMockAccess } from "./access-gate.js";
 import { goToLogin } from "./session.js";
 import { initTheme } from "./theme.js";
@@ -28,6 +29,11 @@ let session = null; // { uid, name, email } — saytdagi akkaunt
 let timer = null;
 let calculator = null;
 let navButtons = [];
+// Rejim: { kind: "practice" } — erkin mashq (eski oqim, natija darhol);
+//        { kind: "session", session, attempt } — admin ochgan rasmiy sessiya (natija Rasch bo'yicha keyinroq).
+let mode = { kind: "practice" };
+let storeId = null; // localStorage kaliti: mashqda test.id, sessiyada "session-<id>"
+const isSession = () => mode.kind === "session";
 
 const screens = ["#loadingScreen", "#messageScreen", "#startScreen", "#examScreen", "#resultScreen"];
 function show(id) {
@@ -68,7 +74,34 @@ function validateTest(t) {
 }
 
 const newAttemptId = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now().toString(16)}-${Math.random().toString(16).slice(2, 10)}`);
-const persist = () => saveState(test.id, session.uid, state);
+function persist() {
+  saveState(storeId, session.uid, state);
+  if (isSession() && state && !state.submitted) scheduleDraft();
+}
+
+/* ---------------- Sessiya: javoblarni Firestore'ga qoralama sifatida saqlash ---------------- */
+
+let draftTimer = null;
+let draftSig = "";
+function scheduleDraft(delay = 15000) {
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(flushDraft, delay);
+}
+async function flushDraft() {
+  clearTimeout(draftTimer);
+  if (!isSession() || !state || state.submitted) return;
+  const answers = ss.cleanAnswers(test, state.answers);
+  const sig = JSON.stringify(answers) + "|" + (state.focusLoss || 0);
+  if (sig === draftSig) return;
+  try {
+    await ss.saveDraft(mode.session.id, session.uid, answers, { focusLoss: state.focusLoss || 0 });
+    draftSig = sig;
+  } catch (error) {
+    console.warn("[ms] qoralamani saqlab bo‘lmadi:", error?.code || error);
+  }
+}
+
+const fmtDate = (ms) => ss.fmtTashkent(ms);
 
 /* ---------------- Boshlash ekrani ---------------- */
 
@@ -79,7 +112,11 @@ function renderStart(saved) {
 
   const chip = (b, s) => h("div", { class: "info-chip" }, h("b", {}, b), h("span", {}, s));
   const buttons = [];
-  if (saved && !saved.submitted) {
+  if (isSession() && saved && !saved.submitted) {
+    buttons.push(h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => resume() }, t("ms.e.resume", "▶ Saqlangan testni davom ettirish")));
+  } else if (isSession()) {
+    buttons.push(h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => startSessionAttempt() }, t("ms.e.begin", "TESTNI BOSHLASH")));
+  } else if (saved && !saved.submitted) {
     buttons.push(
       h("button", { type: "button", class: "btn btn-primary btn-big", onclick: () => resume() }, t("ms.e.resume", "▶ Saqlangan testni davom ettirish")),
       h("button", { type: "button", class: "btn btn-danger-ghost btn-big", onclick: async () => {
@@ -110,11 +147,15 @@ function renderStart(saved) {
             h("span", { class: "participant__label" }, t("ms.e.participant", "Ishtirokchi")),
             h("b", { class: "participant__name", id: "participantName" }, session.name),
             session.email && session.email !== session.name ? h("span", { class: "participant__email" }, session.email) : null)),
+        isSession() ? h("div", { class: "notice session-notice" },
+          h("b", {}, "Rasmiy sessiya. "),
+          `Test ${fmtDate(ss.toMs(mode.session.closesAt))} gacha ochiq; boshlaganingizdan keyin ${mode.session.durationMinutes} daqiqa vaqt beriladi. `,
+          "Faqat bitta urinish. Natija darhol ko‘rsatilmaydi: barcha ishtirokchilar javoblari asosida Rasch modeli bo‘yicha hisoblanib, admin yakunlagandan so‘ng e’lon qilinadi. Javoblaringiz serverda ham saqlanib boradi.") : null,
         h("div", { class: "rules" },
           h("b", {}, t("ms.e.noteLabel", "Eslatma: ")),
           t("ms.e.note1", "test boshlanganidan keyin vaqt to‘xtamaydi. Javoblar qurilmada avtomatik saqlanadi. Ochiq savollarning "),
           h("b", {}, "a"), t("ms.e.note2", " va "), h("b", {}, "b"),
-          t("ms.e.note3", " qismlari alohida baholanadi. 33–35-topshiriqlarda A–F javoblar orasidan moslashtirish amalga oshiriladi. Yakunda Rasch balli hisoblanmaydi — tahlil uchun natija kodi beriladi.")),
+          isSession() ? " qismlari alohida baholanadi. 33–35-topshiriqlarda A–F javoblar orasidan moslashtirish amalga oshiriladi." : t("ms.e.note3", " qismlari alohida baholanadi. 33–35-topshiriqlarda A–F javoblar orasidan moslashtirish amalga oshiriladi. Yakunda Rasch balli hisoblanmaydi — tahlil uchun natija kodi beriladi.")),
         saved && !saved.submitted ? h("p", { class: "notice" }, t("ms.e.savedNotice", `Saqlangan urinish. Javob berilgan: ${countFilledItems(test.questions, saved.answers || {})} / ${bands} band.`, { a: countFilledItems(test.questions, saved.answers || {}), b: bands })) : null,
         h("div", { class: "start-actions" }, buttons))));
   show("#startScreen");
@@ -136,6 +177,41 @@ function resume() {
   state.name = session.name; // profildagi ism yangilangan bo'lsa
   if (Date.now() >= state.deadlineTs) { submit(true); return; }
   enterExam();
+}
+
+/** Sessiya: START (server vaqti) — urinish hujjati yaratiladi, vaqt startedAt dan hisoblanadi. */
+async function startSessionAttempt() {
+  let attempt;
+  try {
+    attempt = await ss.startAttempt(mode.session, session);
+  } catch (error) {
+    console.error("[ms] sessiyani boshlab bo‘lmadi:", error);
+    showMessage("Testni boshlab bo‘lmadi", error?.code === "permission-denied"
+      ? "Sessiya hozir ochiq emas (vaqti tugagan yoki hali boshlanmagan). Sahifani yangilang."
+      : "Internet aloqasini tekshirib, qayta urinib ko‘ring.", [h("a", { class: "btn btn-primary", href: "./" }, "← Testlar ro‘yxati")]);
+    return;
+  }
+  mode.attempt = attempt;
+  state = sessionState(attempt, null);
+  persist();
+  enterExam();
+}
+
+/** Firestore urinishi (+ qurilmadagi nusxa) → engine holati. Javoblar: qurilmadagi yangiroq bo'lsa o'sha. */
+function sessionState(attempt, saved) {
+  const startTs = ss.toMs(attempt.startedAt) || Date.now();
+  const deadlineTs = startTs + mode.session.durationMinutes * 60 * 1000;
+  const local = saved && saved.attemptId === attempt.id ? saved : null;
+  return {
+    schemaVersion: 1, testId: test.id, sessionId: mode.session.id, attemptId: attempt.id,
+    status: attempt.status === "in_progress" ? ATTEMPT_STATUS.IN_PROGRESS : ATTEMPT_STATUS.SUBMITTED,
+    uid: session.uid, name: session.name, email: session.email, startTs, deadlineTs,
+    endTs: local?.endTs || ss.toMs(attempt.submittedAt) || null,
+    current: local?.current || 0,
+    answers: local?.answers || ss.restoreAnswers(attempt.answers),
+    marked: local?.marked || {}, focusLoss: Math.max(local?.focusLoss || 0, attempt.focusLoss || 0),
+    submitted: attempt.status !== "in_progress", autoSubmitted: !!attempt.autoSubmitted, recorded: true,
+  };
 }
 
 /* ---------------- Imtihon ekrani ---------------- */
@@ -293,6 +369,7 @@ async function submit(auto) {
   state.status = ATTEMPT_STATUS.SUBMITTED;
   persist();
   closeAllModals();
+  if (isSession()) { submitSession(auto); return; }
   try {
     const res = await submitAttempt(test, state);
     state.status = res.status;
@@ -311,9 +388,35 @@ async function submit(auto) {
   }
 }
 
+/** Sessiya: javoblarni yuborish (natijasiz). Muddat o'tib ketgan bo'lsa — oxirgi saqlangan qoralama hisobga olinadi. */
+async function submitSession(auto) {
+  clearTimeout(draftTimer);
+  try {
+    await ss.submitAttempt(mode.session.id, session.uid, ss.cleanAnswers(test, state.answers), { autoSubmitted: auto, focusLoss: state.focusLoss });
+  } catch (error) {
+    if (error?.code === "permission-denied") {
+      // Rules: muddat (startedAt + limit + 5 daqiqa) o'tgan yoki sessiya yakunlangan — serverdagi oxirgi qoralama baholanadi.
+      console.warn("[ms] topshirish rad etildi (muddat o‘tgan):", error.code);
+      state.lateSubmit = true;
+    } else {
+      console.error("[ms] javoblarni yuborib bo‘lmadi:", error);
+      state.submitted = false;
+      state.status = ATTEMPT_STATUS.IN_PROGRESS;
+      persist();
+      showMessage(t("ms.e.sendFailTitle", "Javoblarni yuborib bo‘lmadi"), t("ms.e.sendFailText", "Internet aloqasini tekshirib, qayta urinib ko‘ring. Javoblaringiz qurilmada saqlangan."), [
+        h("button", { type: "button", class: "btn btn-primary", onclick: () => submit(auto) }, t("ms.e.retry", "Qayta yuborish")),
+      ]);
+      return;
+    }
+  }
+  persist();
+  showFinal(null);
+  if (auto) toast(t("ms.e.autoDone", "Vaqt tugadi — test avtomatik yakunlandi"));
+}
+
 /** Admin statistikasi uchun yozuv (fon rejimida; natija ekranini kutmaydi). Muvaffaqiyatsiz bo'lsa keyingi ochilishda qayta. */
 function syncRecord(grade) {
-  if (!state || !state.submitted || state.recorded || !isLocalMode()) return;
+  if (isSession() || !state || !state.submitted || state.recorded || !isLocalMode()) return;
   const id = state.attemptId;
   recordAttempt(test, state, grade || gradeLocal(test, state.answers)).then((ok) => {
     if (ok && state && state.attemptId === id) { state.recorded = true; persist(); }
@@ -322,6 +425,7 @@ function syncRecord(grade) {
 
 function showFinal(grade) {
   const onNewAttempt = async () => {
+    if (!practiceAllowed) { showClosed(h("a", { class: "btn btn-primary", href: "./" }, t("ms.e.backList", "← Testlar ro‘yxati")), false); return; }
     if (await confirmDialog({ title: t("ms.e.newTitle", "Yangi urinish"), message: t("ms.e.newMsg", "Joriy natija yopiladi va test boshidan boshlanadi."), confirmText: t("ms.e.newOk", "Yangi urinish") })) {
       clearState(test.id, session.uid);
       state = null;
@@ -329,6 +433,13 @@ function showFinal(grade) {
     }
   };
   const root = $("#resultScreen");
+  if (isSession()) {
+    const a = mode.attempt;
+    if (a?.status === "published" && a.result) renderSessionResult(root, { test, state, attempt: a, session: mode.session, grade: gradeLocal(test, state.answers), resolveUrl });
+    else renderSessionPending(root, { test, state, session: mode.session, late: !!state.lateSubmit });
+    show("#resultScreen");
+    return;
+  }
   if (isLocalMode()) renderResult(root, { test, state, grade: grade || gradeLocal(test, state.answers), resolveUrl, onNewAttempt });
   else renderPending(root, { test, state, onNewAttempt });
   show("#resultScreen");
@@ -374,6 +485,7 @@ function bindUi() {
     if (document.hidden && state && !state.submitted && !$("#examScreen").hidden) {
       state.focusLoss = (state.focusLoss || 0) + 1;
       persist();
+      if (isSession()) flushDraft();
     }
   });
   window.addEventListener("beforeunload", (e) => {
@@ -422,15 +534,90 @@ async function init() {
   calculator = initCalculator($("#calcBody"));
   bindUi();
 
+  let resolved;
+  try {
+    resolved = await resolveMode(new URLSearchParams(location.search).get("session"));
+  } catch (error) {
+    console.error("[ms] test holatini aniqlab bo‘lmadi:", error);
+    showMessage(t("ms.e.loadFailTitle", "Testni yuklab bo‘lmadi"), "Test holatini tekshirib bo‘lmadi. Internet aloqasini tekshirib, sahifani yangilang.", [back]);
+    return;
+  }
+  if (resolved === "session") { initSession(back); return; }
+
+  storeId = test.id;
+  practiceAllowed = resolved === "practice";
   const saved = loadState(test.id, session.uid);
-  if (saved && saved.testId === test.id && saved.attemptId) {
+  const hasSaved = saved && saved.testId === test.id && saved.attemptId;
+  // Avval yechilgan mashq natijasi test yopiq bo'lsa ham ko'rinadi (eski natijalar saqlanadi).
+  if (hasSaved && saved.submitted) { state = saved; showFinal(null); syncRecord(null); return; }
+  if (resolved === "closed") { showClosed(back, hasSaved); return; }
+  if (hasSaved) {
     state = saved;
-    if (saved.submitted) { showFinal(null); syncRecord(null); return; }
     if (Date.now() >= saved.deadlineTs) { submit(true); return; }
     renderStart(saved);
     return;
   }
   renderStart(null);
+}
+
+/* ---------------- Yopiq rejim: sessiya / erkin mashq / yopiq ---------------- */
+
+let upcoming = null;
+let practiceAllowed = false; // erkin mashq rejimi (admin ochgan) — yangi urinish faqat shunda
+/** "session" | "practice" | "closed". Sessiya: ochiq sessiya yoki foydalanuvchi qatnashgan sessiya. */
+async function resolveMode(sessionParam) {
+  const [settings, sessions] = await Promise.all([ss.getSettings(), ss.listSessions()]);
+  const mine = sessions.filter((s) => s.testId === test.id);
+  let chosen = sessionParam ? mine.find((s) => s.id === sessionParam) : null;
+  if (!chosen) {
+    const open = mine.find((s) => ss.sessionPhase(s) === "open");
+    if (open) chosen = open;
+  }
+  if (!chosen) {
+    // Ochiq sessiya yo'q: foydalanuvchi qatnashgan oxirgi sessiya (natijani ko'rish uchun)
+    const sorted = mine.slice().sort((a, b) => ss.toMs(b.opensAt) - ss.toMs(a.opensAt));
+    for (const s of sorted) {
+      if (ss.sessionPhase(s) === "upcoming") continue;
+      const a = await ss.getMyAttempt(s.id, session.uid);
+      if (a) { chosen = s; mode = { kind: "session", session: s, attempt: a }; return "session"; }
+    }
+  }
+  if (chosen) {
+    mode = { kind: "session", session: chosen, attempt: await ss.getMyAttempt(chosen.id, session.uid) };
+    return "session";
+  }
+  upcoming = ss.pickSession(mine.filter((s) => ss.sessionPhase(s) === "upcoming"), test.id);
+  return (settings.practiceTests || []).includes(test.id) ? "practice" : "closed";
+}
+
+function showClosed(back, hasSaved) {
+  const when = upcoming ? ` Keyingi sessiya: ${fmtDate(ss.toMs(upcoming.opensAt))} — ${fmtDate(ss.toMs(upcoming.closesAt))} (Toshkent vaqti).` : "";
+  showMessage("Bu mock test hozircha yopiq",
+    `Mock testlar admin belgilagan kunlarda ochiladi — hamma bir vaqtda yechadi va natijalar Rasch modeli asosida hisoblanadi.${when} E’lonlarni Telegram kanalimizda kuzatib boring: ${SITE.telegram}.${hasSaved ? " Avval boshlagan urinishingiz qurilmada saqlanib turibdi." : ""}`,
+    [h("a", { class: "btn btn-ghost", href: SITE.telegramUrl, target: "_blank", rel: "noopener" }, "Telegram kanal"), back]);
+}
+
+function initSession(back) {
+  storeId = `session-${mode.session.id}`;
+  const a = mode.attempt;
+  const phase = ss.sessionPhase(mode.session);
+  const saved = loadState(storeId, session.uid);
+  if (!a) {
+    if (phase === "open") { renderStart(null); return; }
+    if (phase === "upcoming") {
+      showMessage("Sessiya hali boshlanmagan", `Bu mock test ${fmtDate(ss.toMs(mode.session.opensAt))} da ochiladi va ${fmtDate(ss.toMs(mode.session.closesAt))} gacha davom etadi (Toshkent vaqti).`, [back]);
+      return;
+    }
+    showMessage("Sessiya yakunlangan", "Bu mock test sessiyasi tugagan. Keyingi sessiyalar haqida Telegram kanalimizda e’lon qilinadi.", [
+      h("a", { class: "btn btn-ghost", href: SITE.telegramUrl, target: "_blank", rel: "noopener" }, "Telegram kanal"), back]);
+    return;
+  }
+  state = sessionState(a, saved);
+  draftSig = JSON.stringify(ss.cleanAnswers(test, state.answers)) + "|" + (state.focusLoss || 0);
+  saveState(storeId, session.uid, state);
+  if (a.status !== "in_progress" || mode.session.status === "finalized") { state.submitted = true; showFinal(null); return; }
+  if (Date.now() >= state.deadlineTs) { submit(true); return; }
+  renderStart(state);
 }
 
 init();
