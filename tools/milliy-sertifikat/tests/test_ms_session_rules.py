@@ -151,6 +151,41 @@ def main():
     expect("eski mashq natijasi: egasi o'qiydi (saqlanadi)", db.read(U1, old, t_fin), True)
     expect("eski mashq natijasi: update yo'q", db.write(U1, old, {"correct": 1}, t_fin, apply=False), False)
 
+    # ------------------------------------------------------------ import qilingan mock (msMockTests)
+    TM = "msMockTests/mock-test-16"
+    meta = {"number": 16, "title": "Fizika Mock Test №16", "durationMinutes": 180, "questionCount": 45, "mcqCount": 35, "itemCount": 55,
+            "figureCount": 1, "source": "import", "reviewOpen": False}
+    q16 = {"schemaVersion": 1, "questions": [{"n": 1, "type": "mcq", "text": "?", "options": ["1", "2"]}]}
+    key16 = {"answers": {"0": "A"}}
+    fig = {"data": "data:image/png;base64,AAAA"}
+    tq = dt.datetime(2026, 12, 1, 4, 0, tzinfo=UTC)
+    expect("import: foydalanuvchi meta yoza olmaydi", db.write(U1, TM, meta, tq, apply=False), False)
+    expect("import: boshqa bo'lim admini — rad", db.write(ATT, TM, meta, tq, apply=False), False)
+    expect("import: admin meta yozadi", db.write(MS, TM, meta, tq), True)
+    expect("import: noto'g'ri test ID — rad", db.write(MS, "msMockTests/x16", meta, tq, apply=False), False)
+    expect("import: admin savollar", db.write(MS, TM + "/content/questions", q16, tq), True)
+    expect("import: admin kalit", db.write(MS, TM + "/content/key", key16, tq), True)
+    expect("import: admin rasm", db.write(MS, TM + "/figures/q01", fig, tq), True)
+    expect("import: rasm emas (data:text) — rad", db.write(MS, TM + "/figures/q02", {"data": "data:text/html;base64,AAAA"}, tq, apply=False), False)
+    expect("import: begona content hujjati — rad", db.write(MS, TM + "/content/x", key16, tq, apply=False), False)
+    expect("meta: mehmon o'qiydi (katalog)", db.read(None, TM, tq), True)
+    expect("yopiq: foydalanuvchi savollarni o'qiy olmaydi", db.read(U1, TM + "/content/questions", tq), False)
+    expect("yopiq: foydalanuvchi rasmni o'qiy olmaydi", db.read(U1, TM + "/figures/q01", tq), False)
+    expect("yopiq: foydalanuvchi kalitni o'qiy olmaydi", db.read(U1, TM + "/content/key", tq), False)
+    expect("admin savol va kalitni o'qiydi", db.read(MS, TM + "/content/questions", tq) and db.read(MS, TM + "/content/key", tq), True)
+    db.write(MS, TM, {"openFrom": tq, "openUntil": tq + dt.timedelta(hours=16)}, tq)
+    t_open = tq + dt.timedelta(hours=2)
+    expect("oyna ichida: savollar ochiq", db.read(U1, TM + "/content/questions", t_open), True)
+    expect("oyna ichida: rasm ochiq", db.read(U1, TM + "/figures/q01", t_open), True)
+    expect("oyna ichida: kalit YOPIQ", db.read(U1, TM + "/content/key", t_open), False)
+    expect("oyna ichida: mehmon savollarni o'qiy olmaydi", db.read(None, TM + "/content/questions", t_open), False)
+    expect("oynadan keyin: savollar yopiq", db.read(U1, TM + "/content/questions", tq + dt.timedelta(hours=17)), False)
+    expect("oynadan oldin: savollar yopiq", db.read(U1, TM + "/content/questions", tq - dt.timedelta(minutes=1)), False)
+    db.write(MS, TM, {"reviewOpen": True}, tq + dt.timedelta(hours=20))
+    t_rev = tq + dt.timedelta(hours=21)
+    expect("natija e'lon qilingach: savol va kalit ochiq", db.read(U1, TM + "/content/questions", t_rev) and db.read(U1, TM + "/content/key", t_rev), True)
+    expect("content ro'yxatini o'qib bo'lmaydi", db.query(U1, TM + "/content", t_rev)[0], False)
+
     fails = [c for c in checks if not c[1]]
     for name, ok, got, want in checks:
         print(("OK   " if ok else "XATO ") + name + ("" if ok else f"  (natija {got}, kutilgan {want})"))

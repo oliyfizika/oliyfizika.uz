@@ -13,6 +13,7 @@ import { gradeLocal } from "./scoring.js";
 import { recordAttempt } from "./attempt-record.js";
 import { renderResult, renderPending, renderSessionPending, renderSessionResult } from "./result.js";
 import * as ss from "./session-service.js";
+import { getImportedMeta, loadImportedTest } from "./remote-test.js";
 import { checkMockAccess } from "./access-gate.js";
 import { goToLogin } from "./session.js";
 import { initTheme } from "./theme.js";
@@ -51,6 +52,15 @@ function showMessage(title, text, actions = []) {
 /* ---------------- Yuklash ---------------- */
 
 async function loadTest(id) {
+  // Admin import qilgan test (Firestore) ustun; savollari faqat sessiya oynasida / natija e'lon qilingach ochiladi
+  if (/^mock-test-\d{1,3}$/.test(id)) {
+    const meta = await getImportedMeta(id);
+    if (meta) {
+      const remote = await loadImportedTest(meta);
+      if (!remote.locked) validateTest(remote);
+      return remote;
+    }
+  }
   const catalog = await fetch(resolveUrl(CATALOG_URL), { cache: "no-cache" }).then((r) => {
     if (!r.ok) throw new Error(`Katalog yuklanmadi (${r.status})`);
     return r.json();
@@ -530,6 +540,7 @@ async function init() {
 
   document.title = `${test.title} | ${SITE.name}`;
   $("#brandTitle").textContent = test.title;
+  if (test.locked) { await initLocked(back); return; }
   initFormulaSheet($("#formulaBody"), test.formulaSheet, resolveUrl);
   calculator = initCalculator($("#calcBody"));
   bindUi();
@@ -587,7 +598,27 @@ async function resolveMode(sessionParam) {
     return "session";
   }
   upcoming = ss.pickSession(mine.filter((s) => ss.sessionPhase(s) === "upcoming"), test.id);
-  return (settings.practiceTests || []).includes(test.id) ? "practice" : "closed";
+  return !test.imported && (settings.practiceTests || []).includes(test.id) ? "practice" : "closed";
+}
+
+/** Import qilingan test savollari yopiq (oyna tashqarisida): faqat holat xabarlari. */
+async function initLocked(back) {
+  let resolved = "closed";
+  try {
+    resolved = await resolveMode(new URLSearchParams(location.search).get("session"));
+  } catch (error) {
+    console.warn("[ms] holat:", error?.code || error);
+  }
+  if (resolved === "session" && mode.attempt) {
+    renderSessionPending($("#resultScreen"), { test, state: { name: session.name, attemptId: mode.attempt.id }, session: mode.session });
+    show("#resultScreen");
+    return;
+  }
+  if (resolved === "session" && ss.sessionPhase(mode.session) === "upcoming") {
+    showMessage("Sessiya hali boshlanmagan", `Bu mock test ${fmtDate(ss.toMs(mode.session.opensAt))} da ochiladi va ${fmtDate(ss.toMs(mode.session.closesAt))} gacha davom etadi (Toshkent vaqti).`, [back]);
+    return;
+  }
+  showClosed(back, false);
 }
 
 function showClosed(back, hasSaved) {

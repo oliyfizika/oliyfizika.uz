@@ -16,6 +16,7 @@ import { toast } from "../ui/feedback.js";
 import { computeSessionResults } from "../../../milliy-sertifikat/mock-testlar/js/finalize-core.js";
 import { sessionPhase, toMs, COL } from "../../../milliy-sertifikat/mock-testlar/js/session-service.js";
 import { MIN_PARTICIPANTS, RECOMMENDED_PARTICIPANTS } from "../../../milliy-sertifikat/mock-testlar/js/rasch.js";
+import { listImportedTests, loadImportedTest } from "../../../milliy-sertifikat/mock-testlar/js/remote-test.js";
 
 const DATA = "../milliy-sertifikat/mock-testlar/";
 const TZ_OFFSET_MS = 5 * 3600 * 1000; // Asia/Tashkent, UTC+5 (yozgi vaqt yo'q)
@@ -63,12 +64,16 @@ async function loadTests() {
       return { id: e.id, number: Number(e.id.replace(/\D+/g, "")), title: e.id, durationMinutes: 180 };
     }
   }));
-  tests = list.sort((a, b) => a.number - b.number);
-  $("#msTest").innerHTML = tests.map((t) => `<option value="${esc(t.id)}">Mock №${esc(t.number)} — ${esc(t.title)}</option>`).join("");
-  $("#msTest").addEventListener("change", () => {
-    const t = tests.find((x) => x.id === $("#msTest").value);
-    if (t) $("#msDur").value = t.durationMinutes;
+  const imported = await listImportedTests();
+  imported.forEach((m) => {
+    const t = { id: m.id, number: m.number, title: m.title, durationMinutes: m.durationMinutes || 180, imported: true, meta: m };
+    testCache.delete(m.id); // import qilingan versiya ustun
+    const i = list.findIndex((x) => x.id === m.id);
+    if (i >= 0) list[i] = t; else list.push(t);
   });
+  tests = list.sort((a, b) => a.number - b.number);
+  $("#msTest").innerHTML = tests.map((t) => `<option value="${esc(t.id)}">Mock №${esc(t.number)} — ${esc(t.title)}${t.imported ? " (import)" : ""}</option>`).join("");
+  renderImported(imported);
   const now = Date.now();
   const start = Math.ceil((now + 3600000) / 3600000) * 3600000;
   $("#msOpen").value = toLocal(start);
@@ -76,6 +81,12 @@ async function loadTests() {
 }
 
 async function getTest(id) {
+  const imp = tests.find((x) => x.id === id && x.imported);
+  if (imp) {
+    const t = await loadImportedTest(imp.meta, { figures: false });
+    if (t.locked || !t.keyed) throw new Error("Import qilingan test savollari yoki kaliti o‘qilmadi");
+    return t;
+  }
   if (testCache.has(id)) return testCache.get(id);
   const cat = await fetch(`${DATA}data/tests.json`, { cache: "no-cache" }).then((r) => r.json());
   const e = cat.tests.find((x) => x.id === id);
@@ -152,9 +163,11 @@ $("[data-new-form]").addEventListener("submit", async (e) => {
   if (!(dur >= 10 && dur <= 600)) { toast("Vaqt 10–600 daqiqa oralig‘ida bo‘lsin"); return; }
   const clash = sessions.find((s) => s.testId === t.id && s.status !== "finalized" && toMs(s.opensAt) < c.getTime() && toMs(s.closesAt) > o.getTime());
   if (clash) { toast(`Mock №${t.number} uchun shu vaqtda boshqa sessiya bor`); return; }
+  const reused = t.imported && t.meta?.reviewOpen === true;
   const ok = await confirmAction({
     title: `Mock №${t.number} sessiyasini ochish`,
-    text: `${fmt(o.getTime())} — ${fmt(c.getTime())} (Toshkent vaqti), har bir ishtirokchiga ${dur} daqiqa. Shu oraliqda test barcha kirgan foydalanuvchilarga ochiladi.`,
+    text: `${fmt(o.getTime())} — ${fmt(c.getTime())} (Toshkent vaqti), har bir ishtirokchiga ${dur} daqiqa. Shu oraliqda test barcha kirgan foydalanuvchilarga ochiladi.`
+      + (reused ? " DIQQAT: bu mock natijalari avval e’lon qilingan — javoblari ochiq bo‘lgan. Yangi sessiya ochilsa, avvalgi ishtirokchilar savollar sharhini sessiya tugaguncha ko‘ra olmaydi." : ""),
     confirmLabel: "Sessiyani ochish",
   });
   if (!ok) return;
@@ -170,6 +183,13 @@ $("[data-new-form]").addEventListener("submit", async (e) => {
   try {
     const batch = fs.writeBatch(db);
     batch.set(fs.doc(db, COL.sessions, id), data);
+    if (t.imported) {
+      // Savollar shu oynada ochiladi: ochilishdan — yopilish + vaqt + 10 daqiqagacha (mavjud oyna bilan birlashtiriladi)
+      const m = t.meta || {};
+      const from = Math.min(o.getTime(), toMs(m.openFrom) && toMs(m.openUntil) > Date.now() ? toMs(m.openFrom) : Infinity);
+      const until = Math.max(c.getTime() + (dur + 10) * 60000, toMs(m.openUntil) > Date.now() ? toMs(m.openUntil) : 0);
+      batch.update(fs.doc(db, "msMockTests", t.id), { openFrom: fs.Timestamp.fromDate(new Date(from)), openUntil: fs.Timestamp.fromDate(new Date(until)), reviewOpen: false, updatedAt: fs.serverTimestamp() });
+    }
     const au = auditEntry(fb, sessionState, { action: "ms-session-create", section: "milliy-sertifikat", summary: `Mock №${t.number} sessiyasi ochildi: ${fmt(o.getTime())} — ${fmt(c.getTime())}`, details: { sessionId: id } });
     batch.set(au.ref, au.data);
     await batch.commit();
@@ -302,6 +322,7 @@ async function finalize(s, again, btn) {
       }
     }
     const cleanStats = { ...stats, warnings: warnings.slice(0, 3) };
+    if (test.imported) ops.push((b) => b.update(fs.doc(db, "msMockTests", s.testId), { reviewOpen: true, updatedAt: fs.serverTimestamp() }));
     ops.push((b) => b.update(fs.doc(db, COL.sessions, s.id), { status: "finalized", finalizedAt: fs.serverTimestamp(), finalizedBy: sessionState.user?.uid || "", stats: cleanStats }));
     const au = auditEntry(fb, sessionState, { action: again ? "ms-session-rescore" : "ms-session-finalize", section: "milliy-sertifikat",
       summary: `Mock №${s.testNumber} sessiyasi ${again ? "qayta hisoblandi" : "yakunlandi"}: ${stats.participants} ishtirokchi (Rasch)`, details: { sessionId: s.id, participants: stats.participants } });
@@ -386,7 +407,7 @@ async function loadPractice() {
     cfg = snap.exists() ? snap.data() : {};
   } catch (e) { console.warn("[ms] settings:", e?.code || e); }
   const on = new Set(cfg.practiceTests || []);
-  $("[data-practice]").innerHTML = tests.map((t) => `<label><input type="checkbox" value="${esc(t.id)}" ${on.has(t.id) ? "checked" : ""}> Mock №${esc(t.number)}</label>`).join("");
+  $("[data-practice]").innerHTML = tests.filter((t) => !t.imported).map((t) => `<label><input type="checkbox" value="${esc(t.id)}" ${on.has(t.id) ? "checked" : ""}> Mock №${esc(t.number)}</label>`).join("");
 }
 
 $("[data-save-practice]").addEventListener("click", async () => {
@@ -397,6 +418,96 @@ $("[data-save-practice]").addEventListener("click", async () => {
   } catch (error) {
     toast(errorText(error, "Saqlab bo‘lmadi"));
   }
+});
+
+// ------------------------------------------------------------------ mock import (Attestatsiya mock importi kabi)
+// Fayl: tools/milliy-sertifikat/build_mock_import.py → ms-mock-import-NN.json (javoblar bilan — repoga qo'yilmaydi).
+let bundle = null;
+function renderImported(list) {
+  const el = $("[data-imported]");
+  if (!el) return;
+  el.innerHTML = list.length
+    ? list.sort((a, b) => a.number - b.number).map((m) => `<span class="of-admin-chip">Mock №${esc(m.number)} • ${esc(m.questionCount)} savol • ${esc(m.figureCount || 0)} rasm${m.reviewOpen ? " • javoblar ochiq" : ""}</span>`).join("")
+    : '<span class="of-muted">Hozircha import qilingan mock yo‘q.</span>';
+}
+
+function validBundle(d) {
+  if (d?.format !== "oliyfizika-ms-mock-import" || !Array.isArray(d.ops) || !/^mock-test-\d{1,3}$/.test(d.testId)) return "format";
+  const pre = `msMockTests/${d.testId}`;
+  if (!d.ops.every((o) => o.path === pre || o.path.startsWith(`${pre}/content/`) || o.path.startsWith(`${pre}/figures/`))) return "begona yo‘l";
+  const has = (p) => d.ops.some((o) => o.path === p);
+  if (!has(pre) || !has(`${pre}/content/questions`) || !has(`${pre}/content/key`)) return "meta/savollar/kalit yetishmaydi";
+  const q = d.ops.find((o) => o.path === `${pre}/content/questions`).data.questions;
+  const k = d.ops.find((o) => o.path === `${pre}/content/key`).data.answers;
+  if (!Array.isArray(q) || !q.length || Object.keys(k || {}).length !== q.length) return "savollar va kalit soni mos emas";
+  if (q.some((x) => "answer" in x || (x.parts || []).some((p) => "answer" in p))) return "savollar hujjatida javob bor";
+  return "";
+}
+
+$("[data-bundle]")?.addEventListener("change", async (e) => {
+  const info = $("[data-bundle-info]");
+  bundle = null;
+  $("[data-import]").disabled = true;
+  try {
+    const d = JSON.parse(await e.target.files[0].text());
+    const err = validBundle(d);
+    if (err) throw new Error(err);
+    bundle = d;
+    const exists = tests.find((t) => t.id === d.testId);
+    const busy = sessions.some((s) => s.testId === d.testId && s.status !== "finalized");
+    info.textContent = `Tekshirildi: Mock №${d.number} — ${d.counts.questions} savol (${d.counts.mcq} test, ${d.counts.items} band), ${d.counts.figures} rasm, ${d.ops.length} hujjat.`
+      + (exists ? (exists.imported ? " Bu mock avval import qilingan — qayta yozilsa yangilanadi." : " Repodagi shu raqamli mock o‘rniga import qilingan versiya ishlatiladi.") : "")
+      + (busy ? " DIQQAT: bu mockning yakunlanmagan sessiyasi bor — import qilib bo‘lmaydi." : "");
+    $("[data-import]").disabled = busy;
+  } catch (err) {
+    info.textContent = `Fayl yaroqsiz (${err.message}). build_mock_import.py yaratgan ms-mock-import-NN.json ni tanlang.`;
+  }
+});
+
+$("[data-import]")?.addEventListener("click", async (e) => {
+  if (!bundle) return;
+  const btn = e.currentTarget;
+  const ok = await confirmAction({ title: `Mock №${bundle.number} import qilinsinmi?`, text: `${bundle.ops.length} hujjat yoziladi. Test yopiq holda saqlanadi — foydalanuvchilarga faqat siz ochgan sessiya vaqtida ko‘rinadi.`, confirmLabel: "Import" });
+  if (!ok) return;
+  btn.disabled = true;
+  const info = $("[data-bundle-info]");
+  try {
+    const metaOp = bundle.ops[0].path === `msMockTests/${bundle.testId}` ? bundle.ops[0] : bundle.ops.find((o) => o.path === `msMockTests/${bundle.testId}`);
+    const rest = bundle.ops.filter((o) => o !== metaOp);
+    const toRef = (p) => fs.doc(db, ...p.split("/"));
+    // Avval meta (reviewOpen: false, oyna yo'q — yopiq), so'ng kontent; figuralar hajmi katta — kichik batchlarda
+    const meta = { ...metaOp.data, reviewOpen: false, importedAt: fs.serverTimestamp(), importedBy: sessionState.user?.uid || "" };
+    await fs.setDoc(toRef(metaOp.path), meta);
+    let batch = fs.writeBatch(db);
+    let size = 0;
+    let n = 0;
+    for (const o of rest) {
+      const len = JSON.stringify(o.data).length;
+      if (n && (size + len > 8_000_000 || n >= 400)) { await batch.commit(); batch = fs.writeBatch(db); size = 0; n = 0; }
+      batch.set(toRef(o.path), o.data);
+      size += len;
+      n++;
+      info.textContent = `Yozilmoqda… ${o.path.split("/").slice(-1)[0]}`;
+    }
+    if (n) await batch.commit();
+    const au = auditEntry(fb, sessionState, { action: "ms-mock-import", section: "milliy-sertifikat", summary: `Mock №${bundle.number} import qilindi (${bundle.counts.questions} savol)`, details: { testId: bundle.testId } });
+    await fs.setDoc(au.ref, au.data).catch(() => {});
+    const num = bundle.number;
+    bundle = null;
+    await loadTests();
+    await loadPractice();
+    info.textContent = `Mock №${num} import qilindi. Endi uni yuqoridagi formadan sessiyaga qo‘yishingiz mumkin.`;
+    toast(`Mock №${num} import qilindi`);
+  } catch (error) {
+    console.error("[ms] import:", error);
+    info.textContent = errorText(error, "Import qilib bo‘lmadi. Faylni qayta tanlab urinib ko‘ring.");
+    btn.disabled = false;
+  }
+});
+
+$("#msTest").addEventListener("change", () => {
+  const t = tests.find((x) => x.id === $("#msTest").value);
+  if (t) $("#msDur").value = t.durationMinutes;
 });
 
 $("[data-reload]").addEventListener("click", () => loadSessions().catch((e) => toast(errorText(e))));

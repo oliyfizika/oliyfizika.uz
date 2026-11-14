@@ -41,6 +41,19 @@
       </div>
     </header>
 
+    <section class="of-card of-admin-panel" aria-labelledby="msImpTitle">
+      <div class="of-admin-panel__head"><h2 id="msImpTitle">Mock testni import qilish</h2></div>
+      <p class="of-muted">Attestatsiya mocklari kabi: <code>tools/milliy-sertifikat/build_mock_import.py</code> yaratgan <code>ms-mock-import-NN.json</code> faylini tanlang.
+        Savollar, rasmlar, kalit va yechimlar Firestore’ga yoziladi. Test <b>yopiq</b> saqlanadi: savollar faqat siz ochgan sessiya vaqtida ko‘rinadi,
+        to‘g‘ri javoblar esa faqat natija e’lon qilingandan keyin chiqadi. Fayl ichida javoblar bor, shuning uchun uni repoga qo‘ymang.</p>
+      <div class="ms-actions">
+        <input class="of-input" type="file" accept="application/json,.json" data-bundle aria-label="Import fayli">
+        <button type="button" class="of-btn of-btn--primary" data-import disabled>Mock testni import qilish</button>
+      </div>
+      <p class="of-hint" data-bundle-info aria-live="polite"></p>
+      <div class="ms-stats" data-imported></div>
+    </section>
+
     <section class="of-card of-admin-panel" aria-labelledby="msNewTitle">
       <div class="of-admin-panel__head"><h2 id="msNewTitle">Yangi sessiya ochish</h2></div>
       <form class="ms-form" data-new-form novalidate>

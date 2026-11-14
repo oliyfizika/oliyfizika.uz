@@ -20,6 +20,7 @@ import { itemCount, countFilledItems } from "../../../milliy-sertifikat/mock-tes
 import { fetchOverlay, applyOverlay } from "../../../milliy-sertifikat/mock-testlar/js/i18n-content.js";
 import { t } from "../core/i18n.js";
 import * as ss from "../../../milliy-sertifikat/mock-testlar/js/session-service.js";
+import { listImportedTests } from "../../../milliy-sertifikat/mock-testlar/js/remote-test.js";
 
 const BASE = new URL("../../../milliy-sertifikat/mock-testlar/", import.meta.url);
 const resolve = (p) => new URL(p, BASE).href;
@@ -61,7 +62,7 @@ function sessionInfo(test) {
 
 /** Qurilmadagi urinish holati (eski catalog.js bilan bir xil qoidalar). */
 function attemptStatus(test) {
-  if (!state.uid) return null;
+  if (!state.uid || test.imported) return null;
   const saved = loadState(test.id, state.uid);
   if (!saved || !saved.attemptId) return null;
   if (saved.submitted) return { kind: "done", label: t("ms.card.done", "Yakunlangan") };
@@ -73,18 +74,19 @@ function attemptStatus(test) {
 }
 
 function card(test) {
-  const total = test.questions.length;
-  const mcq = test.questions.filter((q) => q.type === "mcq").length;
-  const bands = itemCount(test.questions);
+  // Import qilingan test (Firestore): savollar yopiq — sonlar metadan
+  const total = test.imported ? test.questionCount : test.questions.length;
+  const mcq = test.imported ? test.mcqCount : test.questions.filter((q) => q.type === "mcq").length;
+  const bands = test.imported ? test.itemCount : itemCount(test.questions);
   const sess = sessionInfo(test);
-  const practice = state.practice.includes(test.id);
+  const practice = !test.imported && state.practice.includes(test.id);
   const local = attemptStatus(test);
   // Yopiq rejim: sessiya holati ustun; aks holda erkin mashq yoki avvalgi (saqlangan) mashq natijasi; qolgani — yopiq.
   let st = sess || (practice ? local : local?.kind === "done" ? local : null);
   if (!st && !practice) st = { kind: "closed", label: "Yopiq" };
   if (practice && !sess) st = st ? { ...st, label: `Mashq • ${st.label}` } : { kind: "practice", label: "Erkin mashq" };
   const href = sess?.href || `test.html?id=${encodeURIComponent(test.id)}`;
-  const saved = state.uid ? loadState(test.id, state.uid) : null;
+  const saved = state.uid && !test.imported ? loadState(test.id, state.uid) : null;
   const label = !state.uid ? t("ms.card.login", "Kirish va boshlash")
     : sess ? sess.cta
       : saved?.submitted ? t("ms.card.result", "Natijani ko‘rish")
@@ -184,6 +186,15 @@ async function init() {
       return applyOverlay(test, overlay);
     }));
     results.filter((r) => r.status === "rejected").forEach((r) => console.error("Test yuklanmadi:", r.reason));
+    state.tests = results.filter((r) => r.status === "fulfilled").map((r) => r.value);
+    const imported = await listImportedTests();
+    imported.forEach((m) => {
+      const t = { id: m.id, number: m.number, title: m.title, sourceVariant: m.sourceVariant || null, subtitle: m.subtitle || "", durationMinutes: m.durationMinutes,
+        questionCount: m.questionCount, mcqCount: m.mcqCount, itemCount: m.itemCount, imported: true };
+      const i = state.tests.findIndex((x) => x.id === m.id);
+      if (i >= 0) state.tests[i] = t; else state.tests.push(t);
+    });
+    state.tests.sort((a, b) => (a.number || 0) - (b.number || 0));
     const [settings, sessions, mine] = await Promise.all([
       ss.getSettings(),
       ss.listSessions().catch((e) => { console.warn("[ms] sessiyalar:", e?.code || e); return []; }),
@@ -192,7 +203,6 @@ async function init() {
     state.practice = settings.practiceTests || [];
     state.sessions = sessions;
     state.myAttempts = mine;
-    state.tests = results.filter((r) => r.status === "fulfilled").map((r) => r.value).sort((a, b) => (a.number || 0) - (b.number || 0));
   } catch (error) {
     console.error("Mock testlar katalogini yuklab bo‘lmadi:", error);
     showError(t("ms.cat.loadFail", "Testlarni yuklab bo‘lmadi. Sahifani yangilab ko‘ring."));

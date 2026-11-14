@@ -92,5 +92,21 @@ Barcha mocklar sukut bo‘yicha **yopiq**. Admin `admin/milliy-sertifikat-sessiy
 **Erkin mashq**: admin belgilagan mocklar (`msMockSettings/config.practiceTests`) eski rejimda ochiq — natija darhol.
 Foydalanuvchilarning avvalgi mashq natijalari (qurilmadagi holat + `mockTestAttempts`) o‘chmaydi va test yopiq bo‘lsa ham ko‘rinadi.
 
+### Yangi mockni import qilish (Attestatsiya kabi)
+
+Yangi mocklar repoga emas, Firestore’ga admin orqali yuklanadi — savollar javobsiz saqlanadi:
+
+```bash
+python3 tools/milliy-sertifikat/build_mock_import.py manba/mock-test-16.json \
+        --solutions manba/solutions-16.json --out _private/ms-mock-import-16.json
+```
+
+Manba fayl yuqoridagi `mock-test-N.json` formatida (rasm yo‘llari manba papkasiga yoki `mock-testlar/` ga nisbatan).
+Hosil bo‘lgan `ms-mock-import-NN.json` ni «Mock sessiyalar» sahifasidagi **«Mock testni import qilish»** orqali yuklang:
+`msMockTests/{id}` (meta), `content/questions` (javobsiz), `content/key`, `content/solutions`, `figures/{figId}`.
+Savollar faqat sessiya oynasida (`openFrom … openUntil`) ochiladi, kalit va yechimlar natija e’lon qilingach (`reviewOpen`).
+Import fayli ichida javoblar bor — **uni repoga qo‘ymang** (`_private/` da saqlang). Repodagi eski 15 ta mock yopiq qoladi,
+xohlasangiz «Erkin mashq» orqali ochish mumkin.
+
 Testlar: `node tools/milliy-sertifikat/tests/test_rasch.mjs`, `node tools/milliy-sertifikat/tests/test_finalize_core.mjs`,
-`python3 tools/milliy-sertifikat/tests/test_ms_session_rules.py`, E2E: `tools/milliy-sertifikat/e2e_ms_sessions.mjs`.
+`python3 tools/milliy-sertifikat/tests/test_ms_session_rules.py`, E2E: `tools/milliy-sertifikat/e2e_ms_sessions.mjs`, `tools/milliy-sertifikat/e2e_ms_import.mjs`.

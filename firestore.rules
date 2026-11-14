@@ -408,6 +408,54 @@ service cloud.firestore {
       allow delete: if canManage('milliy-sertifikat');
     }
 
+    // Admin import qilgan mocklar (tools/milliy-sertifikat/build_mock_import.py → admin «Mock testni import qilish»).
+    //   msMockTests/{id} — meta (hamma o'qiydi). openFrom..openUntil — sessiya oynasi (admin sessiya ochganda yoziladi),
+    //   reviewOpen — natija e'lon qilingach true. Savollar: admin | oyna ichida | reviewOpen. Kalit/yechimlar: admin | reviewOpen.
+    function msTest(tid) {
+      return get(/databases/$(database)/documents/msMockTests/$(tid)).data;
+    }
+
+    function msContentOpen(tid) {
+      return canManage('milliy-sertifikat') || (signedIn() && (
+        msTest(tid).get('reviewOpen', false) == true
+        || (msTest(tid).get('openFrom', null) is timestamp && msTest(tid).get('openUntil', null) is timestamp
+            && request.time >= msTest(tid).openFrom && request.time <= msTest(tid).openUntil)));
+    }
+
+    function validMsTestMeta(d) {
+      return d.keys().hasOnly(['number', 'title', 'subtitle', 'sourceVariant', 'durationMinutes', 'questionCount', 'mcqCount', 'itemCount',
+                               'figureCount', 'source', 'importedAt', 'importedBy', 'openFrom', 'openUntil', 'reviewOpen', 'updatedAt'])
+        && d.number is int && d.number >= 1 && d.number <= 999
+        && okString(d, 'title', 200) && okString(d, 'subtitle', 300) && okString(d, 'sourceVariant', 300)
+        && d.durationMinutes is int && d.durationMinutes >= 10 && d.durationMinutes <= 600
+        && (!('openFrom' in d) || d.openFrom is timestamp)
+        && (!('openUntil' in d) || d.openUntil is timestamp)
+        && (!('reviewOpen' in d) || d.reviewOpen is bool);
+    }
+
+    match /msMockTests/{testId} {
+      allow read: if true;
+      allow create, update: if canManage('milliy-sertifikat') && testId.matches('mock-test-[0-9]{1,3}')
+        && validMsTestMeta(request.resource.data);
+      allow delete: if canManage('milliy-sertifikat');
+
+      match /content/{docId} {
+        allow get: if (docId == 'questions' && msContentOpen(testId))
+          || (docId in ['key', 'solutions'] && (canManage('milliy-sertifikat') || (signedIn() && msTest(testId).get('reviewOpen', false) == true)));
+        allow list: if false;
+        allow write: if canManage('milliy-sertifikat') && docId in ['questions', 'key', 'solutions'];
+      }
+
+      match /figures/{figId} {
+        allow get: if msContentOpen(testId);
+        allow list: if false;
+        allow write: if canManage('milliy-sertifikat') && figId.matches('[A-Za-z0-9_-]{1,60}')
+          && request.resource.data.keys().hasOnly(['data'])
+          && request.resource.data.data is string && request.resource.data.data.size() <= 750000
+          && request.resource.data.data.matches('data:image/(png|jpeg|webp|svg[+]xml);base64,[A-Za-z0-9+/=]+');
+      }
+    }
+
     function msAnswers(d) {
       return d.answers is map && d.answers.size() <= 80;
     }
