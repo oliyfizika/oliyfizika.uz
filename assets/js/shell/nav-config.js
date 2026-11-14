@@ -59,6 +59,7 @@ export const ADMIN_NAV_GROUPS = [
       { id: "admin-users", label: "Foydalanuvchilar", icon: "users", href: "admin/users.html", match: ["admin/users.html", "admin/user.html"], protected: true, section: "foydalanuvchilar" },
       { id: "admin-results", label: "Natijalar", icon: "clipboard", href: "admin/results.html", match: ["admin/results.html"], protected: true, section: "umumiy-fizika" },
       { id: "admin-mock-results", label: "Mock natijalari", icon: "certificate", href: "admin/mock-results.html", match: ["admin/mock-results.html"], protected: true, section: "milliy-sertifikat" },
+      { id: "admin-ms-sessions", label: "Mock sessiyalar", icon: "trophy", href: "admin/milliy-sertifikat-sessiyalar.html", match: ["admin/milliy-sertifikat-sessiyalar.html"], protected: true, section: "milliy-sertifikat" },
       { id: "admin-access", label: "Access boshqaruvi", icon: "key", href: "admin/access.html", match: ["admin/access.html"], protected: true, section: "kirish-huquqlari" },
       { id: "admin-attestatsiya-fizika", label: "Attestatsiya — Fizika", icon: "clipboard", href: "admin/attestatsiya-fizika.html", match: ["admin/attestatsiya-fizika.html"], protected: true, section: "attestatsiya-fizika" },
       { id: "admin-admins", label: "Adminlar", icon: "shield", href: "admin/admins.html", match: ["admin/admins.html"], protected: true, owner: true },

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock test sertifikati | OliyFizika.uz</title>
+<meta name="description" content="OliyFizika.uz Milliy sertifikat formatidagi mock test natijasi bo‘yicha sertifikat: yuklab olish va QR orqali tekshirish.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
+<script src="../../assets/js/core/theme-boot.js"></script>
+<link rel="stylesheet" href="../../assets/css/app.css">
+<script type="module" src="../../assets/js/shell/app-shell.js"></script>
+<script type="module" src="js/certificate-page.js"></script>
+<style>
+  .cert-wrap { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 20px; align-items: start; }
+  @media (max-width: 860px) { .cert-wrap { grid-template-columns: 1fr; } }
+  .cert-panel { padding: 18px; display: grid; gap: 14px; }
+  .cert-panel h2 { margin: 0; font-size: 1.1rem; }
+  .cert-preview { padding: 12px; background: var(--of-surface-sunken); border-radius: 16px; }
+  .cert-preview canvas { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+  .cert-photo { display: flex; gap: 12px; align-items: center; }
+  .cert-photo img { width: 72px; height: 96px; object-fit: cover; border-radius: 6px; border: 1px solid var(--of-border); background: var(--of-surface-sunken); }
+  .cert-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cert-msg { min-height: 1.2em; }
+  .cert-verify { padding: 20px; display: grid; gap: 10px; max-width: 640px; }
+  .cert-verify dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
+  .cert-verify dt { color: var(--of-text-2); }
+  .cert-verify dd { margin: 0; font-weight: 600; }
+</style>
+</head>
+<body class="of-ui" data-shell-title="Sertifikat" data-shell-public="true">
+<div class="of-page of-container" id="certPage">
+  <header class="of-cat-head">
+    <div>
+      <h1>Mock test sertifikati</h1>
+      <p class="of-muted" data-lead>Milliy sertifikat formatidagi mock test natijasi bo‘yicha OliyFizika.uz sertifikati.</p>
+    </div>
+  </header>
+  <div data-root><p role="status">Yuklanmoqda…</p></div>
+</div>
+</body>
+</html>

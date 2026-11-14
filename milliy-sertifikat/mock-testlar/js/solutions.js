@@ -109,7 +109,7 @@ export function loadSolutions(testId, resolveUrl) {
  */
 export async function attachSolutions(container, test, resolveUrl) {
   if (!test.review?.showCorrectAnswers) return 0;
-  const data = await loadSolutions(test.id, resolveUrl);
+  const data = test.imported ? test.solutionsData : await loadSolutions(test.id, resolveUrl); // import qilingan test — Firestore'dan
   if (!data?.items || !container.isConnected) return 0;
   await loadKatex().catch(() => {});
   let n = 0;

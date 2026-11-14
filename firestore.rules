@@ -36,6 +36,8 @@ rules_version = '2';
 //   mockTestAttempts/{uid}__{attemptId}   (Milliy sertifikat mock urinishlari — admin statistikasi)
 //     • egasi yaratadi (o'z uid'i, xulosa maydonlari tekshiriladi); egasi o'z yozuvini, 'milliy-sertifikat' admini
 //       hammasini o'qiydi; update — hech kim; delete — 'milliy-sertifikat' admini.
+//   msMockSettings / msMockSessions / msMockAttempts / msMockCertificates / msMockProfiles
+//     • Milliy sertifikat yopiq (sessiyali) mock testlari va Rasch natijalari — batafsil pastdagi bo'limda.
 //   adminAuditLog/{id}   (amallar jurnali)
 //     • har qanday admin faqat O'Z nomidan, server vaqti bilan yozadi; o'qish — faqat owner; update/delete — hech kim.
 //   presence/{sid}   (mehmonlar «online» belgisi — admin dashboard)
@@ -362,6 +364,181 @@ service cloud.firestore {
       allow list: if canManage('milliy-sertifikat');
       allow update: if false;
       allow delete: if canManage('milliy-sertifikat');
+    }
+
+    // ---------------------------------------------------------------- Milliy sertifikat: yopiq (sessiyali) mock testlar + Rasch
+    // Kod: milliy-sertifikat/mock-testlar/js/session-service.js (foydalanuvchi), assets/js/admin/ms-sessions.js (admin),
+    //      milliy-sertifikat/mock-testlar/js/rasch.js (hisob). Eski mockTestAttempts (mashq natijalari) bilan aloqasi yo'q.
+    //   msMockSettings/config            — practiceTests: erkin (mashq) rejimida ochiq mocklar ro'yxati. O'qish — hamma.
+    //   msMockSessions/{sessionId}       — admin ochgan sessiya: testId, opensAt..closesAt, durationMinutes, status
+    //                                      ('scheduled' → 'finalized'). O'qish — hamma (katalog), yozish — 'milliy-sertifikat' admini.
+    //   msMockAttempts/{sessionId}__{uid} — ishtirokchining xom javoblari. Egasi: START faqat oyna ichida (server vaqti),
+    //                                      javoblarni faqat in_progress va startedAt + durationMinutes + 5 daqiqa ichida yozadi,
+    //                                      submitted ga o'tkazadi. Natija (result) — FAQAT admin yozadi ('published').
+    //                                      Egasi o'z urinishini o'qiydi; ro'yxat — admin yoki o'z uid filtri bilan.
+    //   msMockCertificates/{certNo}      — e'lon qilingan sertifikat (QR orqali tekshirish): get — hamma, list/yozish — admin.
+    //   msMockProfiles/{uid}             — sertifikat uchun rasm (JPEG data URL, ≤ 350 KB) va otasining ismi: egasi + admin.
+    function msSession(sid) {
+      return get(/databases/$(database)/documents/msMockSessions/$(sid)).data;
+    }
+
+    function validMsSession(d) {
+      return d.keys().hasOnly(['testId', 'testNumber', 'testTitle', 'opensAt', 'closesAt', 'durationMinutes', 'status',
+                               'createdAt', 'createdBy', 'updatedAt', 'note', 'finalizedAt', 'finalizedBy', 'stats'])
+        && d.testId is string && d.testId.matches('mock-test-[0-9]{1,3}')
+        && d.opensAt is timestamp && d.closesAt is timestamp && d.closesAt > d.opensAt
+        && d.durationMinutes is int && d.durationMinutes >= 10 && d.durationMinutes <= 600
+        && d.status in ['scheduled', 'finalized']
+        && okString(d, 'testTitle', 200)
+        && okString(d, 'note', 500)
+        && (!('stats' in d) || (d.stats is map && d.stats.size() <= 30));
+    }
+
+    match /msMockSettings/{docId} {
+      allow read: if true;
+      allow write: if canManage('milliy-sertifikat')
+        && request.resource.data.keys().hasOnly(['practiceTests', 'updatedAt', 'updatedBy'])
+        && request.resource.data.practiceTests is list && request.resource.data.practiceTests.size() <= 200;
+    }
+
+    match /msMockSessions/{sessionId} {
+      allow read: if true;
+      allow create, update: if canManage('milliy-sertifikat') && sessionId.matches('[A-Za-z0-9_-]{3,80}')
+        && validMsSession(request.resource.data);
+      allow delete: if canManage('milliy-sertifikat');
+    }
+
+    // Admin import qilgan mocklar (tools/milliy-sertifikat/build_mock_import.py → admin «Mock testni import qilish»).
+    //   msMockTests/{id} — meta (hamma o'qiydi). openFrom..openUntil — sessiya oynasi (admin sessiya ochganda yoziladi),
+    //   reviewOpen — natija e'lon qilingach true. Savollar: admin | oyna ichida | reviewOpen. Kalit/yechimlar: admin | reviewOpen.
+    function msTest(tid) {
+      return get(/databases/$(database)/documents/msMockTests/$(tid)).data;
+    }
+
+    function msContentOpen(tid) {
+      return canManage('milliy-sertifikat') || (signedIn() && (
+        msTest(tid).get('reviewOpen', false) == true
+        || (msTest(tid).get('openFrom', null) is timestamp && msTest(tid).get('openUntil', null) is timestamp
+            && request.time >= msTest(tid).openFrom && request.time <= msTest(tid).openUntil)));
+    }
+
+    function validMsTestMeta(d) {
+      return d.keys().hasOnly(['number', 'title', 'subtitle', 'sourceVariant', 'durationMinutes', 'questionCount', 'mcqCount', 'itemCount',
+                               'figureCount', 'source', 'importedAt', 'importedBy', 'openFrom', 'openUntil', 'reviewOpen', 'updatedAt'])
+        && d.number is int && d.number >= 1 && d.number <= 999
+        && okString(d, 'title', 200) && okString(d, 'subtitle', 300) && okString(d, 'sourceVariant', 300)
+        && d.durationMinutes is int && d.durationMinutes >= 10 && d.durationMinutes <= 600
+        && (!('openFrom' in d) || d.openFrom is timestamp)
+        && (!('openUntil' in d) || d.openUntil is timestamp)
+        && (!('reviewOpen' in d) || d.reviewOpen is bool);
+    }
+
+    match /msMockTests/{testId} {
+      allow read: if true;
+      allow create, update: if canManage('milliy-sertifikat') && testId.matches('mock-test-[0-9]{1,3}')
+        && validMsTestMeta(request.resource.data);
+      allow delete: if canManage('milliy-sertifikat');
+
+      match /content/{docId} {
+        allow get: if (docId == 'questions' && msContentOpen(testId))
+          || (docId in ['key', 'solutions'] && (canManage('milliy-sertifikat') || (signedIn() && msTest(testId).get('reviewOpen', false) == true)));
+        allow list: if false;
+        allow write: if canManage('milliy-sertifikat') && docId in ['questions', 'key', 'solutions'];
+      }
+
+      match /figures/{figId} {
+        allow get: if msContentOpen(testId);
+        allow list: if false;
+        allow write: if canManage('milliy-sertifikat') && figId.matches('[A-Za-z0-9_-]{1,60}')
+          && request.resource.data.keys().hasOnly(['data'])
+          && request.resource.data.data is string && request.resource.data.data.size() <= 750000
+          && request.resource.data.data.matches('data:image/(png|jpeg|webp|svg[+]xml);base64,[A-Za-z0-9+/=]+');
+      }
+    }
+
+    function msAnswers(d) {
+      return d.answers is map && d.answers.size() <= 80;
+    }
+
+    // Javob yozish oynasi: startedAt + durationMinutes + 5 daqiqa (tarmoq kechikishi uchun), sessiya hali yakunlanmagan.
+    function msWithinLimit(o, s) {
+      return s.status == 'scheduled'
+        && request.time <= o.startedAt + duration.value(s.durationMinutes * 60 + 300, 's');
+    }
+
+    function validMsStart(d, sid) {
+      return d.keys().hasOnly(['uid', 'name', 'email', 'sessionId', 'testId', 'status', 'startedAt', 'updatedAt', 'answers', 'focusLoss'])
+        && d.uid == request.auth.uid
+        && d.sessionId == sid
+        && exists(/databases/$(database)/documents/msMockSessions/$(sid))
+        && msSession(sid).status == 'scheduled'
+        && d.testId == msSession(sid).testId
+        && request.time >= msSession(sid).opensAt
+        && request.time < msSession(sid).closesAt
+        && d.status == 'in_progress'
+        && d.startedAt == request.time
+        && (!('updatedAt' in d) || d.updatedAt == request.time)
+        && (!('answers' in d) || msAnswers(d))
+        && (!('focusLoss' in d) || (d.focusLoss is int && d.focusLoss >= 0))
+        && (!('email' in d) || d.email == authEmail())
+        && okString(d, 'name', 200);
+    }
+
+    // Egasi: in_progress → (javoblar) in_progress | submitted. Natija maydonlariga tegolmaydi.
+    function validMsOwnerUpdate(o, n, sid) {
+      return o.uid == request.auth.uid
+        && o.status == 'in_progress'
+        && msWithinLimit(o, msSession(sid))
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['answers', 'updatedAt', 'status', 'submittedAt', 'autoSubmitted', 'focusLoss', 'name'])
+        && msAnswers(n)
+        && n.updatedAt == request.time
+        && (n.status == 'in_progress'
+            || (n.status == 'submitted' && n.submittedAt == request.time))
+        && (!('autoSubmitted' in n) || n.autoSubmitted is bool)
+        && (!('focusLoss' in n) || (n.focusLoss is int && n.focusLoss >= 0))
+        && okString(n, 'name', 200);
+    }
+
+    // Admin: faqat natijani e'lon qiladi (javoblar, vaqtlar va egasi o'zgarmaydi).
+    function validMsPublish(o, n) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'result', 'publishedAt'])
+        && n.status == 'published'
+        && n.result is map && n.result.size() <= 40
+        && n.publishedAt == request.time;
+    }
+
+    match /msMockAttempts/{attemptId} {
+      allow create: if signedIn() && attemptId == request.resource.data.sessionId + '__' + request.auth.uid
+        && validMsStart(request.resource.data, request.resource.data.sessionId);
+      allow get: if canManage('milliy-sertifikat') || (signedIn() && resource.data.uid == request.auth.uid);
+      allow list: if canManage('milliy-sertifikat') || (signedIn() && resource.data.uid == request.auth.uid);
+      allow update: if (signedIn() && validMsOwnerUpdate(resource.data, request.resource.data, resource.data.sessionId))
+        || (canManage('milliy-sertifikat') && validMsPublish(resource.data, request.resource.data));
+      allow delete: if false;
+    }
+
+    match /msMockCertificates/{certNo} {
+      allow get: if true;
+      allow list: if canManage('milliy-sertifikat');
+      allow create, update: if canManage('milliy-sertifikat') && certNo.matches('OF[0-9]{2}-[0-9]{6}')
+        && request.resource.data.certNo == certNo
+        && request.resource.data.keys().hasOnly(['certNo', 'uid', 'sessionId', 'testId', 'testNumber', 'testTitle', 'lastName',
+                                                 'firstName', 'fullName', 'score', 'level', 'percent', 'sections', 'issuedAt'])
+        && request.resource.data.score is number;
+      allow delete: if canManage('milliy-sertifikat');
+    }
+
+    match /msMockProfiles/{uid} {
+      allow get: if isOwner(uid) || canManage('milliy-sertifikat');
+      allow list: if false;
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['photo', 'patronymic', 'updatedAt'])
+        && (!('photo' in request.resource.data)
+            || (request.resource.data.photo is string && request.resource.data.photo.size() <= 360000
+                && request.resource.data.photo.matches('data:image/jpeg;base64,[A-Za-z0-9+/=]+')))
+        && okString(request.resource.data, 'patronymic', 60)
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isOwner(uid);
     }
 
     // ---------------------------------------------------------------- adminAuditLog (amallar jurnali)
