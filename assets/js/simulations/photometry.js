@@ -13,6 +13,7 @@ import { clamp, fmt, createStage, tag, arrow, angleArc, bindRange } from "./sim-
 import { chipBtn, lcd, noise } from "./labkit.js";
 import { frame, ticks, legend } from "./pendulum-plots.js";
 import * as P from "./photometry-physics.js";
+import { attach3D } from "./sim3d.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -28,6 +29,8 @@ const cp = { I: 56.5, r: 1, a: 0, S: 0.04 };
 const lb = { lamp: "inc60", on: true, r: 0.5, a: 0, rows: [], fon: null };
 let presetId = null;
 const geo = {};
+let r3 = null; // 3D ko‘rinish (sim3d.js)
+const S3 = {}; // 3D model uchun chizish paytida yig‘iladigan geometriya
 const lampI = () => P.intensity(P.LAMPS[lb.lamp]);
 const reading = () => P.luxmeter(lb.on ? P.illuminance(lampI(), lb.r, lb.a * DEG) : 0, FON, noise(Math.round(lb.r * 1000) + lb.a * 7, lb.on ? 1 : 2) * 1.6);
 
@@ -44,7 +47,7 @@ function drawConcept(ctx, c, w, h) {
   const narrow = w < 560, lx = narrow ? 34 : 70, cy = h * 0.5, k = (w - lx - (narrow ? 40 : 90)) / 2.1;
   const E = P.illuminance(cp.I, cp.r, cp.a * DEG), sx = lx + cp.r * k, hl = Math.sqrt(cp.S) * k * 0.9 + 10;
   const a = cp.a * DEG, tdx = -Math.sin(a), tdy = Math.cos(a), nx = -Math.cos(a), ny = -Math.sin(a);
-  const p1 = [sx + tdx * hl, cy + tdy * hl], p2 = [sx - tdx * hl, cy - tdy * hl];
+  const p1 = [sx + tdx * hl, cy + tdy * hl], p2 = [sx - tdx * hl, cy - tdy * hl], d3 = !!r3?.on;
   // nurlar va sfera
   ctx.strokeStyle = c.dark ? "rgba(253,224,71,0.18)" : "rgba(202,138,4,0.2)"; ctx.lineWidth = 1;
   for (let i = 0; i < 24; i++) { const t = (i / 24) * TAU; ctx.beginPath(); ctx.moveTo(lx + Math.cos(t) * 18, cy + Math.sin(t) * 18); ctx.lineTo(lx + Math.cos(t) * 2000, cy + Math.sin(t) * 2000); ctx.stroke(); }
@@ -52,12 +55,13 @@ function drawConcept(ctx, c, w, h) {
   if (!narrow) { ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "bottom"; ctx.fillText("4πr² sfera", lx + Math.cos(-1.1) * cp.r * k + 4, cy + Math.sin(-1.1) * cp.r * k); }
   // konus (sirtga tushgan oqim)
   const al = clamp(0.1 + 0.5 * Math.log10(1 + E) / 3, 0.1, 0.6);
-  ctx.fillStyle = `rgba(253,224,71,${al})`; ctx.beginPath(); ctx.moveTo(lx, cy); ctx.lineTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.closePath(); ctx.fill();
-  bulb(ctx, c, lx, cy, 1, true, clamp(cp.I / 200, 0, 1));
+  if (!d3) { ctx.fillStyle = `rgba(253,224,71,${al})`; ctx.beginPath(); ctx.moveTo(lx, cy); ctx.lineTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.closePath(); ctx.fill(); }
+  if (!d3) bulb(ctx, c, lx, cy, 1, true, clamp(cp.I / 200, 0, 1));
   // sirt
   const lit = clamp(Math.log10(1 + E) / 3.3, 0, 1);
-  ctx.strokeStyle = `rgb(${Math.round(100 + 155 * lit)},${Math.round(116 + 120 * lit)},${Math.round(139 - 60 * lit)})`; ctx.lineWidth = 9; ctx.lineCap = "round";
-  ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.stroke(); ctx.lineCap = "butt";
+  const litCol = `rgb(${Math.round(100 + 155 * lit)},${Math.round(116 + 120 * lit)},${Math.round(139 - 60 * lit)})`;
+  Object.assign(S3, { lx, cy, sx, hl, a, al, lit, litCol, k });
+  if (!d3) { ctx.strokeStyle = litCol; ctx.lineWidth = 9; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.stroke(); ctx.lineCap = "butt"; }
   ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p2[0], p2[1], 7, 0, TAU); ctx.fill(); ctx.stroke();
   geo.rot = { x: p2[0], y: p2[1], sx, cy };
   geo.patch = { x: sx, y: cy, lx, k };
@@ -68,8 +72,10 @@ function drawConcept(ctx, c, w, h) {
   // masofa
   const my = cy + Math.max(hl, 30) + 26; ctx.strokeStyle = c.text2; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(lx, my - 5); ctx.lineTo(lx, my + 5); ctx.moveTo(lx, my); ctx.lineTo(sx, my); ctx.moveTo(sx, my - 5); ctx.lineTo(sx, my + 5); ctx.stroke();
   tag(ctx, `r = ${fmt(cp.r, 2)} m`, (lx + sx) / 2, my + 12, { color: c.text, bg: c.bg2, font: MID, align: "center" });
-  // ma'lumot
-  const ix = narrow ? 8 : 14;
+  if (!d3) conceptInfo(ctx, c, w, E);
+}
+function conceptInfo(ctx, c, w, E) {
+  const narrow = w < 560, ix = narrow ? 8 : 14;
   tag(ctx, `I = ${fmt(cp.I, 1)} cd,  Φ₀ = 4πI = ${fmt(4 * Math.PI * cp.I, 0)} lm`, ix, 20, { color: c.text, bg: c.bg2, font: narrow ? SMALL : MID });
   tag(ctx, `E = I cos α / r² = ${fmt(E, E < 100 ? 1 : 0)} lx`, ix, 46, { color: "#fff", bg: c.primary, font: BOLD });
   tag(ctx, `sirtga: Φ = ES = ${fmt(E * cp.S, 2)} lm`, ix, 72, { color: c.text2, bg: c.bg2, font: SMALL });
@@ -80,54 +86,108 @@ function drawConcept(ctx, c, w, h) {
 function drawLab(ctx, c, w, h) {
   const narrow = w < 560, on = lb.on, L = P.LAMPS[lb.lamp];
   // xona: lampa yonganda yorug'roq
-  if (on) { const g = ctx.createRadialGradient(narrow ? 40 : 80, h * 0.4, 10, narrow ? 40 : 80, h * 0.4, w * 0.9); g.addColorStop(0, c.dark ? "rgba(253,224,71,0.16)" : "rgba(253,224,71,0.22)"); g.addColorStop(1, "rgba(253,224,71,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); }
+  const d3 = !!r3?.on;
+  if (on && !d3) { const g = ctx.createRadialGradient(narrow ? 40 : 80, h * 0.4, 10, narrow ? 40 : 80, h * 0.4, w * 0.9); g.addColorStop(0, c.dark ? "rgba(253,224,71,0.16)" : "rgba(253,224,71,0.22)"); g.addColorStop(1, "rgba(253,224,71,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); }
   const bx0 = narrow ? 34 : 80, bx1 = w - (narrow ? 20 : 40), ry = narrow ? h * 0.48 : h * 0.56, k = (bx1 - bx0) / 1.5, ly = ry - (narrow ? 64 : 84);
   const X = (r) => bx0 + r * k;
   // skamya va chizg'ich
-  ctx.fillStyle = c.dark ? "#475569" : "#94a3b8"; ctx.fillRect(bx0 - 16, ry, bx1 - bx0 + 32, 10);
-  ctx.fillStyle = c.dark ? "#334155" : "#cbd5e1"; ctx.fillRect(bx0 - 22, ry + 10, 10, 30); ctx.fillRect(bx1 + 12, ry + 10, 10, 30);
+  if (!d3) {
+    ctx.fillStyle = c.dark ? "#475569" : "#94a3b8"; ctx.fillRect(bx0 - 16, ry, bx1 - bx0 + 32, 10);
+    ctx.fillStyle = c.dark ? "#334155" : "#cbd5e1"; ctx.fillRect(bx0 - 22, ry + 10, 10, 30); ctx.fillRect(bx1 + 12, ry + 10, 10, 30);
+  }
   ctx.fillStyle = c.dark ? "#fef3c7" : "#fefce8"; ctx.fillRect(bx0, ry - 16, bx1 - bx0, 16); ctx.strokeStyle = c.dark ? "#a16207" : "#ca8a04"; ctx.lineWidth = 1; ctx.strokeRect(bx0, ry - 16, bx1 - bx0, 16);
   ctx.strokeStyle = "#78350f"; ctx.fillStyle = "#78350f"; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top";
   for (let cm = 0; cm <= 150; cm++) { const x = X(cm / 100), big = cm % 10 === 0, mid = cm % 5 === 0; if (!big && !mid && k < 300) continue; ctx.beginPath(); ctx.moveTo(x + 0.5, ry - 16); ctx.lineTo(x + 0.5, ry - 16 + (big ? 8 : mid ? 5 : 3)); ctx.stroke(); if (big && (cm % (narrow ? 30 : 10) === 0)) ctx.fillText(String(cm), x, ry - 8); }
   ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "right"; ctx.textBaseline = "top"; ctx.fillText("sm", bx1, ry + 14);
   // lampa (r = 0 da)
-  ctx.fillStyle = c.dark ? "#64748b" : "#475569"; ctx.fillRect(X(0) - 3, ly + 14, 6, ry - 16 - ly - 14); ctx.fillRect(X(0) - 14, ry - 20, 28, 5);
-  bulb(ctx, c, X(0), ly, narrow ? 1 : 1.25, on, clamp(lampI() / 110, 0.3, 1));
+  if (!d3) {
+    ctx.fillStyle = c.dark ? "#64748b" : "#475569"; ctx.fillRect(X(0) - 3, ly + 14, 6, ry - 16 - ly - 14); ctx.fillRect(X(0) - 14, ry - 20, 28, 5);
+    bulb(ctx, c, X(0), ly, narrow ? 1 : 1.25, on, clamp(lampI() / 110, 0.3, 1));
+  }
   // aravacha va fotoelement
   const sx = X(lb.r), a = lb.a * DEG, R = narrow ? 18 : 24;
-  ctx.fillStyle = c.dark ? "#64748b" : "#475569"; ctx.fillRect(sx - 14, ry - 22, 28, 8); ctx.fillRect(sx - 2.5, ly, 5, ry - 22 - ly);
+  if (!d3) { ctx.fillStyle = c.dark ? "#64748b" : "#475569"; ctx.fillRect(sx - 14, ry - 22, 28, 8); ctx.fillRect(sx - 2.5, ly, 5, ry - 22 - ly); }
   ctx.fillStyle = c.danger; ctx.beginPath(); ctx.moveTo(sx, ry - 16); ctx.lineTo(sx - 5, ry - 24); ctx.lineTo(sx + 5, ry - 24); ctx.fill();
-  ctx.save(); ctx.translate(sx, ly); ctx.rotate(a);
-  ctx.fillStyle = "#1e293b"; ctx.fillRect(0, -R - 3, 9, 2 * R + 6);
   const gl = on ? clamp(Math.log10(1 + reading()) / 3.3, 0.1, 1) : 0.05;
-  ctx.fillStyle = `rgba(${Math.round(60 + 180 * gl)},${Math.round(80 + 150 * gl)},${Math.round(120 + 40 * gl)},1)`; ctx.fillRect(-3, -R, 4, 2 * R);
-  ctx.restore();
+  const cellCol = `rgb(${Math.round(60 + 180 * gl)},${Math.round(80 + 150 * gl)},${Math.round(120 + 40 * gl)})`;
+  Object.assign(S3, { bx0, bx1, ry, ly, sx, a, R, on, cellCol, x0: X(0), s: narrow ? 1 : 1.25, glow: clamp(lampI() / 110, 0.3, 1) });
+  if (!d3) {
+    ctx.save(); ctx.translate(sx, ly); ctx.rotate(a);
+    ctx.fillStyle = "#1e293b"; ctx.fillRect(0, -R - 3, 9, 2 * R + 6);
+    ctx.fillStyle = cellCol; ctx.fillRect(-3, -R, 4, 2 * R);
+    ctx.restore();
+  }
   // normal va nur yo'nalishi
   if (lb.a > 0) { ctx.strokeStyle = c.success; ctx.lineWidth = 1.5; ctx.setLineDash([4, 3]); ctx.beginPath(); ctx.moveTo(sx, ly); ctx.lineTo(sx - Math.cos(a) * 46, ly - Math.sin(a) * 46); ctx.stroke(); ctx.setLineDash([]); angleArc(ctx, sx, ly, 30, Math.PI, Math.PI + a, c.danger, { label: "α" }); }
   if (on) { ctx.strokeStyle = "rgba(234,179,8,0.45)"; ctx.lineWidth = 1; ctx.setLineDash([6, 5]); ctx.beginPath(); ctx.moveTo(X(0) + 16, ly); ctx.lineTo(sx - 6, ly); ctx.stroke(); ctx.setLineDash([]); }
   geo.cart = { x: sx, y: (ly + ry) / 2, top: ly - R, bot: ry, X0: bx0, k };
   geo.sensor = { x: sx, y: ly };
+  if (!d3) labPanel(ctx, c, w, h);
+  if (!narrow) tag(ctx, "aravachani skamya bo‘ylab suring", bx0, ry + 50, { color: c.text3, bg: c.bg2, font: SMALL });
+}
+/** Lyuksmetr, tugmalar va ma’lumot yozuvlari (3D ko‘rinishda sahna ustidagi qatlamga chiziladi). */
+function labPanel(ctx, c, w, h) {
+  const narrow = w < 560, on = lb.on, L = P.LAMPS[lb.lamp], d3 = !!r3?.on, { sx, ly, R, ry } = S3;
   // lyuksmetr
   const mw = narrow ? 128 : 150, mh = narrow ? 62 : 70, my = narrow ? h - mh - 12 : h - mh - 18;
-  const mxx = narrow ? w - mw - 12 : w - mw - 20;
+  const mxx = (narrow ? w - mw - 12 : w - mw - 20) - (d3 ? 46 : 0);
   ctx.fillStyle = c.dark ? "#334155" : "#e2e8f0"; ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.beginPath(); ctx.roundRect(mxx - 6, my - 20, mw + 12, mh + 26, 10); ctx.fill(); ctx.stroke();
   ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText("LYUKSMETR", mxx, my - 16);
   lcd(ctx, mxx, my, mw, mh, "yoritilganlik", String(reading()), "lx");
-  ctx.strokeStyle = c.dark ? "#94a3b8" : "#334155"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(sx + 6, ly + R); ctx.bezierCurveTo(sx + 30, ry + 40, mxx - 40, my + 30, mxx - 6, my + mh / 2); ctx.stroke();
+  if (!d3) { ctx.strokeStyle = c.dark ? "#94a3b8" : "#334155"; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(sx + 6, ly + R); ctx.bezierCurveTo(sx + 30, ry + 40, mxx - 40, my + 30, mxx - 6, my + mh / 2); ctx.stroke(); }
   // tugmalar va ma'lumot
   const bxx = narrow ? 8 : 14;
   geo.lampBtn = chipBtn(ctx, c, bxx, 10, on ? "Lampa yoqilgan" : "Lampa o‘chirilgan", on, 124, 26, "#ca8a04");
   geo.rec = chipBtn(ctx, c, bxx + 130, 10, on ? "Yozish" : "Fonni yozish", false, narrow ? 90 : 96, 26, c.success);
   if (!narrow) tag(ctx, `${L.name}`, w - 14, 22, { color: c.text2, bg: c.bg2, font: SMALL, align: "right" });
   tag(ctx, `r = ${fmt(lb.r * 100, 1)} sm, α = ${fmt(lb.a, 0)}°`, bxx, narrow ? 52 : 56, { color: c.text, bg: c.bg2, font: MID });
-  if (!narrow) tag(ctx, "aravachani skamya bo‘ylab suring", bx0, ry + 50, { color: c.text3, bg: c.bg2, font: SMALL });
 }
 
 /* ------------------------------------------------------------------ Chizish va grafik */
 
-function draw(ctx, st) { const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h); if (ui.mode === "concept") drawConcept(ctx, c, st.w, st.h); else drawLab(ctx, c, st.w, st.h); }
+function draw(ctx, st) { const c = st.colors; if (!r3?.on) { ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h); } if (ui.mode === "concept") drawConcept(ctx, c, st.w, st.h); else drawLab(ctx, c, st.w, st.h); }
 const heights = () => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { stage: Math.round(clamp(vh * 0.48, 360, 420)), graph: Math.round(clamp(vh * 0.28, 200, 260)) }; };
 const stage = createStage($("#stage"), draw, { height: () => heights().stage });
+
+/* ------------------------------------------------------------------ 3D ko‘rinish */
+
+function lamp3(g, x, y, s, on, glow) {
+  g.sphere("bulb", { at: [x, y, 0], r: 13 * s, color: on ? "#fef9c3" : "#cbd5e1", emissive: on ? 1.2 : 0, opacity: on ? 1 : 0.7 });
+  g.cyl("socket", { at: [x, y - 18.5 * s, 0], r: 6 * s, len: 11 * s, axis: "y", color: "#64748b", metal: 0.4, rough: 0.5 });
+  if (on) g.glow("bulbGlow", { at: [x, y, 0], r: 60 * s * (0.6 + glow), opacity: 0.85 });
+}
+function frame3d(g) {
+  const w = g.w, h = g.h, c = g.colors;
+  if (ui.mode === "concept") {
+    const { lx, cy, sx, hl, a, al, litCol, k } = S3; if (lx == null) return;
+    lamp3(g, lx, cy, 1, true, clamp(cp.I / 200, 0, 1));
+    g.stand("lampStand", { x: lx, top: cy + 13 });
+    g.box("patch", { at: [sx, cy, 0], size: [5, 2 * hl, 2 * hl], rot: [0, 0, -a], color: litCol, emissive: 0.15 + 0.5 * S3.lit, rough: 0.8 });
+    g.stand("patchStand", { x: sx, top: cy + hl * Math.cos(a) });
+    g.cone("flux", [lx, cy, 0], [sx, cy, 0], { r: hl * Math.max(Math.cos(a), 0.12) * 1.1, color: "#fde047", opacity: al * 0.55 });
+    g.sphere("sphere", { at: [lx, cy, 0], r: cp.r * k, color: c.dark ? "#93c5fd" : "#60a5fa", opacity: 0.07, rough: 0.3 });
+    conceptInfo(g.hud, c, w, P.illuminance(cp.I, cp.r, cp.a * DEG));
+  } else {
+    const { bx0, bx1, ry, ly, sx, a, R, on, cellCol, x0, s } = S3; if (bx0 == null) return;
+    const D = 46, metal = c.dark ? "#64748b" : "#94a3b8", dark = c.dark ? "#64748b" : "#475569";
+    g.box("bench", { at: [(bx0 + bx1) / 2, ry + 5, 0], size: [bx1 - bx0 + 32, 10, D], color: metal, metal: 0.3, rough: 0.5 });
+    g.box("legA", { at: [bx0 - 17, (ry + 10 + h) / 2, 0], size: [10, h - ry - 10, D], color: c.dark ? "#334155" : "#cbd5e1" });
+    g.box("legB", { at: [bx1 + 17, (ry + 10 + h) / 2, 0], size: [10, h - ry - 10, D], color: c.dark ? "#334155" : "#cbd5e1" });
+    // lampa
+    g.rod("lampPost", [x0, ly + 14, 0], [x0, ry - 2, 0], { r: 3, color: dark });
+    g.cyl("lampBase", { at: [x0, ry - 2.5, 0], r: 14, len: 5, axis: "y", color: dark });
+    lamp3(g, x0, ly, s, on, S3.glow);
+    // aravacha va fotoelement
+    g.box("cart", { at: [sx, ry - 4, 0], size: [28, 8, D * 0.8], color: dark });
+    g.rod("cartPost", [sx, ly + R * 0.2, 0], [sx, ry - 6, 0], { r: 2.5, color: dark });
+    g.box("cell", { at: [sx + 4.5 * Math.cos(a), ly + 4.5 * Math.sin(a), 0], size: [9, 2 * R + 6, 2 * R + 6], rot: [0, 0, -a], color: "#1e293b" });
+    g.box("cellFace", { at: [sx - 1.2 * Math.cos(a), ly - 1.2 * Math.sin(a), 0], size: [2.5, 2 * R, 2 * R], rot: [0, 0, -a], color: cellCol, emissive: on ? 0.35 : 0 });
+    if (on) g.cone("beam", [x0, ly, 0], [sx, ly, 0], { r: R * 1.1, color: "#fde047", opacity: 0.14 });
+    labPanel(g.hud, c, w, h);
+  }
+}
+const view3d = () => (ui.mode === "concept" ? { key: "concept", plane: "v", az: -0.42, el: 0.24 } : { key: "lab", plane: "v", az: -0.45, el: 0.3 });
+r3 = attach3D(stage, { frame: frame3d, view: view3d, flat: (x, y) => ui.mode === "lab" && (inBox({ x, y }, geo.lampBtn) || inBox({ x, y }, geo.rec)) });
 let gLast = null;
 const niceMax = (v) => { const e = 10 ** Math.floor(Math.log10(v)), m = v / e; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * e; };
 function drawGraph(ctx, gs) {

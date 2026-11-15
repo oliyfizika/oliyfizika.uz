@@ -28,7 +28,7 @@ const setPref = (v) => { try { localStorage.setItem(PREF_KEY, v); } catch { /* m
 const ICON_RESET = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>';
 const FAKE_POINTER = 9731; // 2D kanvasdagi setPointerCapture «ushlab qolmasin» (try/catch ichida xato beradi)
 
-export function attach3D(stage, { frame, view = () => ({}) } = {}) {
+export function attach3D(stage, { frame, view = () => ({}), flat = null } = {}) {
   const canvas2d = stage.canvas;
   const wrap = canvas2d.parentElement;
   const section = wrap.closest(".sim-stage") || wrap.parentElement;
@@ -488,6 +488,8 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
     /** Ko‘rsatkich → 2D kanvas pikseli (nur tekisligi bilan kesishuv). */
     function toSheet(e) {
       const r = gl.getBoundingClientRect();
+      // flat(x, y) → true: bu nuqta HUD’dagi tugma — koordinata 2D kanvasga o‘zgarishsiz uzatiladi
+      if (flat && mode !== "drag") { const x = e.clientX - r.left, y = e.clientY - r.top; if (flat(x, y)) return { px: x, py: y, picked: true }; }
       ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
       ray.setFromCamera(ndc, camera);
       if (picks.length) {
