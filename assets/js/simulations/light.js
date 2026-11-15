@@ -10,6 +10,7 @@ import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as L from "./light-physics.js";
 import * as G from "./light-plots.js";
+import { attach3D } from "./sim3d.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
@@ -24,6 +25,7 @@ const sh = { a: 6, b: 10, d: 35, oy: 0, L: 100, two: false, sp: 20 };
 const cam = { d: 100, h: 40, f: 20, p: 1 };
 const ecl = { E: 0, node: 0, D: 384400, day: 0, E0: 0, node0: 0 };
 let presetId = null;
+let r3 = null; // 3D ko‘rinish (sim3d.js); r3.on — jismlar hajmli modellar bilan chiziladi, 2D da faqat nurlar va yorliqlar
 const SCREEN_H = 30; // ekran yarim balandligi, cm
 
 const srcs = () => (sh.two ? [{ x: 0, y: sh.sp / 2, a: sh.a }, { x: 0, y: -sh.sp / 2, a: sh.a }] : [{ x: 0, y: 0, a: sh.a }]);
@@ -49,7 +51,8 @@ function drawShadow(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   fit(cw, ch, -8, 136, -SCREEN_H - 3, SCREEN_H + 3);
   const S = srcs(), O = shObj(), Ls = sh.L;
-  ctx.save(); ctx.fillStyle = c.dark ? "rgba(0,0,0,0.25)" : "rgba(15,23,42,0.05)"; ctx.fillRect(0, 0, cw, ch); ctx.restore();
+  const d3 = !!r3?.on;
+  if (!d3) { ctx.save(); ctx.fillStyle = c.dark ? "rgba(0,0,0,0.25)" : "rgba(15,23,42,0.05)"; ctx.fillRect(0, 0, cw, ch); ctx.restore(); }
   // yoritilgan konus (manbadan ekranga)
   S.forEach((s) => poly(ctx, [[s.x, s.y + s.a / 2 + 0.2], [Ls, SCREEN_H], [Ls, -SCREEN_H], [s.x, s.y - s.a / 2 - 0.2]], c.dark ? "rgba(253,224,71,0.07)" : "rgba(253,224,71,0.12)"));
   // soyalar (har bir manba uchun alohida — ustma-ust tushganda qoraroq)
@@ -69,20 +72,20 @@ function drawShadow(ctx, stage) {
   });
   // ekran va undagi yoritilganlik
   const sx = SX(Ls);
-  for (let i = 0; i < 120; i++) {
+  if (!d3) for (let i = 0; i < 120; i++) {
     const y = SCREEN_H - ((i + 0.5) * 2 * SCREEN_H) / 120, e = L.illumination(S, O, Ls, y);
     const v = Math.round(40 + 215 * e);
     ctx.fillStyle = `rgb(${v},${v},${Math.round(v * 0.9)})`;
     ctx.fillRect(sx, SY(y + SCREEN_H / 120), 7, (2 * SCREEN_H * view.s) / 120 + 0.6);
   }
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1.5; ctx.strokeRect(sx, SY(SCREEN_H), 7, 2 * SCREEN_H * view.s);
+  if (!d3) { ctx.strokeStyle = c.text2; ctx.lineWidth = 1.5; ctx.strokeRect(sx, SY(SCREEN_H), 7, 2 * SCREEN_H * view.s); }
   tag(ctx, "ekran", sx + 3, SY(-SCREEN_H) + 12, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   // buyum
-  ctx.save(); const g = ctx.createRadialGradient(SX(O.x) - O.b * view.s * 0.15, SY(O.y) - O.b * view.s * 0.15, 1, SX(O.x), SY(O.y), (O.b / 2) * view.s);
-  g.addColorStop(0, "#cbd5e1"); g.addColorStop(1, "#475569"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(SX(O.x), SY(O.y), (O.b / 2) * view.s, 0, TAU); ctx.fill(); ctx.restore();
+  if (!d3) { ctx.save(); const g = ctx.createRadialGradient(SX(O.x) - O.b * view.s * 0.15, SY(O.y) - O.b * view.s * 0.15, 1, SX(O.x), SY(O.y), (O.b / 2) * view.s);
+  g.addColorStop(0, "#cbd5e1"); g.addColorStop(1, "#475569"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(SX(O.x), SY(O.y), (O.b / 2) * view.s, 0, TAU); ctx.fill(); ctx.restore(); }
   tag(ctx, "shar", SX(O.x), SY(O.y - O.b / 2) + 12, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   // manbalar
-  S.forEach((s) => { const r = Math.max(3, (s.a / 2) * view.s); glow(ctx, SX(s.x), SY(s.y), r + 14); ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(SX(s.x), SY(s.y), r, 0, TAU); ctx.fill(); ctx.strokeStyle = "#ca8a04"; ctx.lineWidth = 1.2; ctx.stroke(); });
+  if (!d3) S.forEach((s) => { const r = Math.max(3, (s.a / 2) * view.s); glow(ctx, SX(s.x), SY(s.y), r + 14); ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(SX(s.x), SY(s.y), r, 0, TAU); ctx.fill(); ctx.strokeStyle = "#ca8a04"; ctx.lineWidth = 1.2; ctx.stroke(); });
   tag(ctx, sh.a === 0 ? "nuqtaviy manba" : "manba", SX(0), cw < 560 ? SY(S[0].y + sh.a / 2) - 20 : SY(S[S.length - 1].y - sh.a / 2) + 18, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   // yorliqlar ekran yonida
   if (!sh.two) {
@@ -91,7 +94,7 @@ function drawShadow(ctx, stage) {
     if (sh.a > 0 && e.pTop - e.uTop > 1.5 && e.pTop - 1 < SCREEN_H) tag(ctx, "yarim soya", sx - 8, SY(Math.min(SCREEN_H - 2, (Math.max(e.uTop, e.uBot) + e.pTop) / 2)), { color: c.text, bg: c.bg, align: "right", font: SMALL });
   }
   // ekranning old ko'rinishi
-  if (ui.show.front) {
+  if (ui.show.front && !d3) {
     const narrow = cw < 560, n = 64, size = narrow ? 72 : Math.min(118, ch * 0.38), bx = 10, by = narrow ? ch - size - 8 : 26;
     const off = document.createElement("canvas"); off.width = n; off.height = n;
     const ox = off.getContext("2d"), img = ox.createImageData(n, n);
@@ -122,11 +125,12 @@ function drawTree(ctx, px, base, H, scale = 1, flip = false) {
 function drawCamera(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   const xL = -Math.max(cam.d + 12, 60), xR = cam.f + 4;
-  const bw = Math.min(190, cw * 0.3), bh = Math.min(bw * 0.8, ch - 60), bx = cw - bw - 10, by = (ch - bh) / 2 - 6;
-  fit(cw - bw - 16, ch, xL, xR, -Math.max(cam.h / 2 + 4, BOX / 2 + 4), Math.max(cam.h / 2 + 7, BOX / 2 + 5));
+  const d3 = !!r3?.on;
+  const bw = d3 ? Math.min(150, cw * 0.26) : Math.min(190, cw * 0.3), bh = Math.min(bw * 0.8, ch - 60), bx = cw - bw - 10, by = d3 ? 24 : (ch - bh) / 2 - 6;
+  fit(d3 ? cw : cw - bw - 16, ch, xL, d3 ? xR + 6 : xR, -Math.max(cam.h / 2 + 4, BOX / 2 + 4), Math.max(cam.h / 2 + 7, BOX / 2 + 5));
   const H = L.pinholeImage(cam.h, cam.d, cam.f), pc = cam.p / 10; // teshik cm da
   // kamera qutisi
-  ctx.save(); ctx.fillStyle = c.dark ? "#020617" : "#1e293b"; ctx.fillRect(SX(0), SY(BOX / 2), cam.f * view.s, BOX * view.s); ctx.restore();
+  if (!d3) { ctx.save(); ctx.fillStyle = c.dark ? "#020617" : "#1e293b"; ctx.fillRect(SX(0), SY(BOX / 2), cam.f * view.s, BOX * view.s); ctx.restore(); }
   // nur dastalari: daraxt uchi va tubidan teshik orqali
   const top = [-cam.d, cam.h / 2], bot = [-cam.d, -cam.h / 2];
   const holeHalf = Math.max(pc / 2, 1.5 / view.s); // chizish uchun (kamida 3 px)
@@ -137,6 +141,7 @@ function drawCamera(ctx, stage) {
     if (ui.show.rays) seg(ctx, p, [cam.f, p[1] + (0 - p[1]) * k], col.replace(/[\d.]+\)$/, "1)"), 1.2);
   };
   beam(top, "rgba(34,197,94,0.28)"); beam(bot, "rgba(180,83,9,0.28)");
+  if (d3) { camLayout = { bx, by, bw, bh, H }; tag(ctx, "buyum", SX(-cam.d), SY(-cam.h / 2) + 12, { color: c.text2, bg: c.bg, align: "center", font: SMALL }); tag(ctx, `teshik p = ${fmt(cam.p, 2)} mm`, SX(0), SY(BOX / 2) - 12, { color: c.text, bg: c.bg, align: "center", font: SMALL }); const yd3 = -Math.max(cam.h / 2, BOX / 2) - 2; seg(ctx, [-cam.d, yd3], [0, yd3], c.text3, 1); seg(ctx, [0, yd3], [cam.f, yd3], c.text3, 1); tag(ctx, `d = ${fmt(cam.d, 0)} cm`, SX(-cam.d / 2), SY(yd3), { color: c.text2, bg: c.bg, align: "center", font: SMALL }); return; }
   // old devor teshik bilan
   ctx.fillStyle = c.text2; ctx.fillRect(SX(0) - 3, SY(BOX / 2), 6, (BOX / 2 - holeHalf) * view.s); ctx.fillRect(SX(0) - 3, SY(-holeHalf), 6, (BOX / 2 - holeHalf) * view.s);
   ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.strokeRect(SX(0), SY(BOX / 2), cam.f * view.s, BOX * view.s);
@@ -150,7 +155,11 @@ function drawCamera(ctx, stage) {
   const yd = -Math.max(cam.h / 2, BOX / 2) - 2;
   seg(ctx, [-cam.d, yd], [0, yd], c.text3, 1); seg(ctx, [0, yd], [cam.f, yd], c.text3, 1);
   tag(ctx, `d = ${fmt(cam.d, 0)} cm`, SX(-cam.d / 2), SY(yd), { color: c.text2, bg: c.bg, align: "center", font: SMALL });
-  // orqa devor (ichkaridan ko'rinish) — kattalashtirilgan
+  drawBackWall(ctx, c, cw, bx, by, bw, bh, H);
+}
+let camLayout = null;
+/** Kamera orqa devori (ichkaridan ko'rinish) — kattalashtirilgan oynacha. */
+function drawBackWall(ctx, c, cw, bx, by, bw, bh, H) {
   ctx.save(); ctx.fillStyle = "#020617"; ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 8); ctx.fill(); ctx.clip();
   const span = Math.max(1.5 * H, 3), pxPerCm = bh / span, blurCm = L.totalBlur(cam.p / 1000, cam.d / 100, cam.f / 100) * 100;
   const rel = (cam.p / 10 / cam.f) / (0.1 / 20); // (p/f) / (1 mm / 20 cm)
@@ -166,8 +175,8 @@ function drawCamera(ctx, stage) {
 
 const geomE = { ex: 0, ey: 0, R: 0, re: 0, side: null };
 function eclLayout(cw, ch) {
-  const topH = ch * 0.7;
-  const ex = cw < 560 ? cw * 0.4 : cw * 0.52, ey = topH * 0.5, R = Math.min(topH * 0.36, cw * 0.17), re = Math.max(9, R * 0.16);
+  const d3 = !!r3?.on, topH = d3 ? ch : ch * 0.7;
+  const ex = d3 ? cw * 0.56 : cw < 560 ? cw * 0.4 : cw * 0.52, ey = topH * 0.5, R = Math.min(topH * 0.36, cw * 0.17), re = Math.max(9, R * 0.16);
   Object.assign(geomE, { ex, ey, R, re, topH });
   return geomE;
 }
@@ -189,6 +198,7 @@ function skyMoon(ctx, cx, cy, r, E) {
 function drawEclipse(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   const g = eclLayout(cw, ch), st = L.eclipseState(ecl.E, ecl.node, ecl.D);
+  if (r3?.on) return drawEclipseFlat(ctx, stage, g, st);
   // fon — kosmos
   ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, cw, ch);
   ctx.fillStyle = "rgba(255,255,255,0.5)"; for (let i = 0; i < 70; i++) { const x = (i * 97.3) % cw, y = (i * 53.7) % ch; ctx.fillRect(x, y, 1, 1); }
@@ -276,8 +286,20 @@ function drawSky(ctx, cw, st, g) {
   tag(ctx, title, cw < 560 ? cw - 6 : cx, cy + R + 12, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", align: cw < 560 ? "right" : "center", font: SMALL });
 }
 
+/** 3D rejimda ekliptika tekisligiga chiziladigan qism: tugunlar chizig'i, yorliqlar (jismlar — hajmli modellar). */
+function drawEclipseFlat(ctx, stage, g, st) {
+  const nx = -Math.cos(ecl.node * DEG), ny = -Math.sin(ecl.node * DEG);
+  ctx.save(); ctx.strokeStyle = "rgba(226,232,240,0.28)"; ctx.setLineDash([4, 5]); ctx.beginPath(); ctx.arc(g.ex, g.ey, g.R, 0, TAU); ctx.stroke(); ctx.restore();
+  ctx.save(); ctx.strokeStyle = "rgba(167,139,250,0.8)"; ctx.lineWidth = 1.4; ctx.setLineDash([2, 4]); ctx.beginPath(); ctx.moveTo(g.ex - nx * g.R * 1.15, g.ey - ny * g.R * 1.15); ctx.lineTo(g.ex + nx * g.R * 1.15, g.ey + ny * g.R * 1.15); ctx.stroke(); ctx.restore();
+  ctx.fillStyle = "#a78bfa"; [1, -1].forEach((k) => { ctx.beginPath(); ctx.arc(g.ex + k * nx * g.R, g.ey + k * ny * g.R, 3.5, 0, TAU); ctx.fill(); });
+  tag(ctx, "tugun", g.ex + nx * g.R * 1.15 + 4, g.ey + ny * g.R * 1.15 - 10, { color: "#c4b5fd", bg: "rgba(15,23,42,0.8)", font: SMALL });
+  tag(ctx, "Yer", g.ex, g.ey + g.re + 14, { color: "#bfdbfe", bg: "rgba(15,23,42,0.8)", align: "center", font: SMALL });
+  const m = moonPos(ecl.E);
+  tag(ctx, "Oy", m.x, m.y + 18, { color: "#fde68a", bg: "rgba(15,23,42,0.8)", align: "center", font: SMALL });
+}
+
 function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
+  if (!r3?.on) { ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h); }
   if (ui.mode === "shadow") drawShadow(ctx, stage); else if (ui.mode === "camera") drawCamera(ctx, stage); else drawEclipse(ctx, stage);
 }
 const heights = (cw) => {
@@ -285,6 +307,117 @@ const heights = (cw) => {
   return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.46), 260, 370)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
 const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+
+/* ------------------------------------------------------------------ 3D sahna */
+
+function paintTree(c2, cx, base, H, flip) { drawTree(c2, cx, base, H, 1, flip); }
+function frame3d(g) {
+  const k = view.s;
+  if (ui.mode === "shadow") {
+    const S = srcs(), O = shObj(), Ls = sh.L;
+    S.forEach((s, i) => {
+      const r = Math.max(3.5, (s.a / 2) * k), at = [SX(s.x), SY(s.y), 0];
+      g.sphere(`src${i}`, { at, r, color: "#fde047", emissive: 1.1, scale: [0.35, 1, 1] });
+      g.glow(`srcGlow${i}`, { at, r: r + 18, opacity: 0.8 });
+      g.box(`srcBack${i}`, { at: [at[0] - 0.35 * r - 3, at[1], 0], size: [5, 2 * r + 8, 2 * r + 8], color: "#334155" });
+    });
+    g.stand("srcStand", { x: SX(0) - 4, top: SY(S[S.length - 1].y) + Math.max(3.5, (sh.a / 2) * k) + 4 });
+    g.sphere("ball", { at: [SX(O.x), SY(O.y), 0], r: (O.b / 2) * k, color: "#94a3b8", rough: 0.45 });
+    g.stand("ballStand", { x: SX(O.x), top: SY(O.y) + (O.b / 2) * k - 1 });
+    const side = 2 * SCREEN_H * k;
+    g.panel("screen", {
+      at: [SX(Ls), SY(0), 0], size: [side, side], res: [96, 96], back: "#475569",
+      sig: `${sh.a}|${sh.b}|${sh.d}|${sh.oy}|${sh.L}|${sh.two}|${sh.sp}`,
+      paint(c2, n, m) {
+        const img = c2.createImageData(n, m);
+        for (let i = 0; i < m; i++) for (let j = 0; j < n; j++) {
+          const y = SCREEN_H - ((i + 0.5) * 2 * SCREEN_H) / m, z = -SCREEN_H + ((j + 0.5) * 2 * SCREEN_H) / n;
+          const e = L.illumination(S, O, Ls, y, z), v = 34 + 221 * e, q = (i * n + j) * 4;
+          img.data[q] = v; img.data[q + 1] = v * 0.97; img.data[q + 2] = v * 0.86; img.data[q + 3] = 255;
+        }
+        c2.putImageData(img, 0, 0);
+      },
+    });
+    g.stand("screenStand", { x: SX(Ls) + 3, top: SY(-SCREEN_H) - 1 });
+    // to'la soya konusi (bitta manba uchun) — hajmli
+    if (!sh.two) {
+      const e = L.shadowEdges(S[0], O, Ls), rb = (O.b / 2) * k;
+      if (e.umbra > 0) g.frustum("umbra", [SX(Ls), SY((e.uTop + e.uBot) / 2), 0], [SX(O.x), SY(O.y), 0], { ra: (e.umbra / 2) * k, rb, color: "#0f172a", opacity: 0.2 });
+      else if (e.apex > O.x) { const yA = S[0].y + ((O.y - S[0].y) * (e.apex - S[0].x)) / (O.x - S[0].x); g.cone("umbraCone", [SX(e.apex), SY(yA), 0], [SX(O.x), SY(O.y), 0], { r: rb, color: "#0f172a", opacity: 0.2 }); }
+    }
+  } else if (ui.mode === "camera") {
+    const H = L.pinholeImage(cam.h, cam.d, cam.f), x0 = SX(0), x1 = SX(cam.f), bh = BOX * k, bd = BOX * k, hk = cam.h * k;
+    // daraxt
+    const tx = SX(-cam.d), tb = SY(-cam.h / 2);
+    g.cyl("trunk", { at: [tx, tb - hk * 0.21, 0], r: hk * 0.05, len: hk * 0.42, axis: "y", color: "#92400e", rough: 0.9 });
+    g.sphere("crown", { at: [tx, tb - hk * 0.66, 0], r: hk * 0.24, color: "#16a34a", rough: 0.85, scale: [1, 1.42, 1] });
+    g.sphere("apple1", { at: [tx + hk * 0.08, tb - hk * 0.62, hk * 0.2], r: hk * 0.04, color: "#ef4444" });
+    g.sphere("apple2", { at: [tx - hk * 0.1, tb - hk * 0.75, hk * 0.17], r: hk * 0.035, color: "#ef4444" });
+    g.cyl("treeBase", { at: [tx, tb + 2, 0], r: hk * 0.16, len: 4, axis: "y", color: "#65a30d" });
+    // quti: shaffof devorlar, old devorda teshik, orqa devorda teskari tasvir
+    const wall = "#1e293b", cy = SY(0), xm = (x0 + x1) / 2, len = x1 - x0;
+    g.box("boxTop", { at: [xm, cy - bh / 2, 0], size: [len, 2, bd], color: wall, opacity: 0.55 });
+    g.box("boxBot", { at: [xm, cy + bh / 2, 0], size: [len, 2, bd], color: wall });
+    g.box("boxFar", { at: [xm, cy, -bd / 2], size: [len, bh, 2], color: wall });
+    g.box("boxNear", { at: [xm, cy, bd / 2], size: [len, bh, 2], color: wall, opacity: 0.22 });
+    const hole = Math.max(1.5, (cam.p / 20) * k);
+    g.custom("front", `front|${bh.toFixed(1)}|${hole.toFixed(2)}`, (T) => {
+      const s = new T.Shape(); s.moveTo(-bd / 2, -bh / 2); s.lineTo(bd / 2, -bh / 2); s.lineTo(bd / 2, bh / 2); s.lineTo(-bd / 2, bh / 2); s.closePath();
+      const hp = new T.Path(); hp.absarc(0, 0, hole, 0, TAU, true); s.holes.push(hp);
+      const m = new T.Mesh(new T.ShapeGeometry(s, 24), g.mat("#334155", { side: "double" }));
+      m.rotation.y = -Math.PI / 2;
+      return m;
+    }).position.copy(g.loc([x0, cy, 0]));
+    const blurCm = L.totalBlur(cam.p / 1000, cam.d / 100, cam.f / 100) * 100, rel = (cam.p / 10 / cam.f) / (0.1 / 20);
+    g.panel("back", {
+      at: [x1, cy, 0], size: [bh, bd], res: [160, 160], back: wall, thick: 2,
+      sig: `${cam.d}|${cam.h}|${cam.f}|${cam.p}`,
+      paint(c2, n, m) {
+        c2.fillStyle = "#020617"; c2.fillRect(0, 0, n, m);
+        const pp = m / BOX; // px / cm
+        c2.save(); c2.globalAlpha = clamp(0.25 + 0.75 * rel, 0.25, 1);
+        c2.filter = `blur(${clamp(blurCm * pp * 0.6, 0, 16).toFixed(1)}px)`;
+        paintTree(c2, n / 2, m / 2 - (H * pp) / 2, H * pp, true);
+        c2.restore();
+      },
+    });
+    g.stand("boxStand", { x: xm, top: cy + bh / 2 });
+    if (camLayout) { const q = camLayout; drawBackWall(g.hud, g.colors, g.w, q.bx, q.by, q.bw, q.bh, q.H); }
+  } else {
+    const ge = geomE, st = L.eclipseState(ecl.E, ecl.node, ecl.D), K = ge.R * 0.055; // px / gradus (og'ish kattalashtirilgan)
+    const sunR = g.h * 0.2, sunAt = [sunR * 0.5, ge.ey, 0];
+    g.sphere("sun", { at: sunAt, r: sunR, color: "#fbbf24", emissive: 1.0 });
+    g.glow("sunGlow", { at: sunAt, r: sunR * 2.1, opacity: 0.75 });
+    g.sphere("earth", { at: [ge.ex, ge.ey, 0], r: ge.re, color: "#2563eb", rough: 0.7 });
+    const m = moonPos(ecl.E), mr = Math.max(5, ge.re * 0.42), mz = st.beta * K;
+    const inShadow = st.lunar.type === "total" || st.lunar.type === "partial";
+    g.sphere("moon", { at: [m.x, m.y, mz], r: mr, color: inShadow ? (st.lunar.type === "total" ? "#b45309" : "#d6a77a") : "#e2e8f0", rough: 0.9, emissive: inShadow ? 0.25 : 0 });
+    if (Math.abs(mz) > 1.5) g.rod("moonDrop", [m.x, m.y, 0], [m.x, m.y, mz], { r: 0.5, color: "#f59e0b", flat: true, opacity: 0.8 });
+    // Oy orbitasi (ekliptikaga og'gan halqa)
+    const ring = g.custom("orbit", "orbit", (T) => {
+      const gm = new T.BufferGeometry(); gm.setAttribute("position", new T.BufferAttribute(new Float32Array(145 * 3), 3));
+      return new T.Line(gm, new T.LineBasicMaterial({ color: 0xe2e8f0, transparent: true, opacity: 0.75 }));
+    });
+    const pos = ring.geometry.attributes.position;
+    for (let i = 0; i <= 144; i++) {
+      const E = i * 2.5, b = Math.asin(Math.sin(L.ECL.incl * DEG) * Math.sin((E - ecl.node) * DEG)) / DEG, p = moonPos(E), v = g.loc([p.x, p.y, b * K]);
+      pos.setXYZ(i, v.x, v.y, v.z);
+    }
+    pos.needsUpdate = true; ring.geometry.computeBoundingSphere();
+    // soyalar: Yer soyasi konusi va Oy soyasi
+    const uLen = ge.R * 2.4;
+    g.cone("earthUmbra", [ge.ex + uLen, ge.ey, 0], [ge.ex, ge.ey, 0], { r: ge.re, color: "#020617", opacity: 0.55 });
+    const ratio = st.rM / L.ECL.rSun, mLen = (ge.R - ge.re) * Math.pow(ratio, 6), hits = st.solar.type !== "none";
+    g.cone("moonUmbra", [m.x + mLen, m.y, mz * (1 - mLen / Math.max(ge.R, 1))], [m.x, m.y, mz], { r: mr, color: "#020617", opacity: hits ? 0.6 : 0.22 });
+    drawSky(g.hud, g.w, st, ge);
+    tag(g.hud, `${Math.abs(st.beta) < 0.05 ? "Oy ekliptikada" : `Oy ekliptikadan ${st.beta > 0 ? "yuqorida" : "pastda"}`}, β = ${fmt(st.beta, 2)}° (og‘ish kattalashtirilgan)`, 12, g.h - 16, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", font: SMALL });
+    tag(g.hud, "Quyosh", 12, 16, { color: "#0f172a", bg: "#fde68a", font: MID });
+  }
+}
+const view3d = () => (ui.mode === "eclipse"
+  ? { key: "eclipse", plane: "h", az: -0.25, el: 0.62, table: false, bg: "#0b1220", light: [-1, 0.25, 0.1], ambient: 0.28, sun: 1.6 }
+  : { key: ui.mode, plane: "v", az: ui.mode === "camera" ? -0.42 : -0.55, el: 0.3 });
+r3 = attach3D(stage, { frame: frame3d, view: view3d });
 
 /* ------------------------------------------------------------------ Grafiklar */
 

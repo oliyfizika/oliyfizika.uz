@@ -354,3 +354,22 @@ body.sim-dragging, body.sim-dragging * { cursor: grabbing !important; user-selec
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 html.of-sim-fs-lock, html.of-sim-fs-lock body { overflow: hidden; }
+
+/* ------------------------------------------------------------------ 3D ko‘rinish (sim3d.js) */
+.sim3d-switch { margin-left: auto; flex: none; }
+.sim3d-switch--float { position: absolute; top: 8px; left: 8px; z-index: 2; }
+.sim-canvas-wrap.is-3d > canvas:not(.sim3d-canvas):not(.sim3d-hud) { visibility: hidden; }
+.sim-canvas-wrap > .sim3d-hud { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.sim-canvas-wrap > .sim3d-hud[hidden] { display: none; }
+.sim-canvas-wrap > .sim3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; }
+.sim-canvas-wrap > .sim3d-canvas[hidden] { display: none; }
+.sim-canvas-wrap > .sim3d-canvas[data-orbit="true"], .sim-canvas-wrap > .sim3d-canvas[data-dragging="true"] { cursor: grabbing !important; }
+.sim3d-tools { position: absolute; right: 8px; bottom: 8px; z-index: 2; display: flex; gap: 6px; }
+.sim3d-tools[hidden] { display: none; }
+.sim3d-tool {
+  display: inline-grid; place-items: center; width: 32px; height: 32px; padding: 0; cursor: pointer;
+  border: 1px solid var(--of-border); border-radius: 8px; background: var(--of-surface); color: var(--of-text-2);
+}
+.sim3d-tool:hover { color: var(--of-primary); border-color: var(--of-primary); }
+.sim3d-tool:focus-visible { outline: 2px solid var(--of-primary); outline-offset: 2px; }
+.sim3d-tool svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
