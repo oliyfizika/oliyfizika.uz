@@ -1,10 +1,10 @@
 // ==========================================================================
 // DTM variantlari — bo'lim sahifasi (dtm-variantlari/index.html)
-// Bazadagi savollar soni bo'limlar bo'yicha (data/baza.json), variant tuzilishi va so'nggi natijalar.
+// Bazadagi savollar soni (data/baza.json), test qoidalari va so'nggi natijalar.
 // ==========================================================================
 import { icon } from "../ui/icons.js";
 import { bindProtectedLinks } from "../auth/auth-gate.js";
-import { QUOTA, POINTS, TOPIC_ORDER, VARIANT_SIZE, loadBank, readHistory } from "./dtm-store.js";
+import { POINTS, VARIANT_SIZE, loadBank, readHistory } from "./dtm-store.js";
 
 const root = document.getElementById("dtmPage");
 const $ = (s) => root.querySelector(s);
@@ -24,15 +24,7 @@ function renderRules() {
   $("[data-rules]").innerHTML = rules.map((r) => `<li>${icon("checkCircle")}<span>${r}</span></li>`).join("");
 }
 
-function renderTopics(bank) {
-  const counts = {};
-  bank.questions.forEach((q) => { counts[q.topic] = (counts[q.topic] || 0) + 1; });
-  const list = $("[data-topics]");
-  list.innerHTML = TOPIC_ORDER.map((k) => `
-    <li class="dtm-topic"><span>${esc(bank.topics[k])}</span><b>${QUOTA[k]} ta</b>
-      <span class="dtm-topic__bar" aria-hidden="true"><span style="width:${(QUOTA[k] / VARIANT_SIZE) * 100}%"></span></span>
-      <small>Bazada ${counts[k] || 0} ta savol</small></li>`).join("");
-  list.removeAttribute("aria-busy");
+function renderCount(bank) {
   $("[data-dtm-count]").textContent = `Bazada ${bank.questions.length} ta savol`;
 }
 
@@ -51,10 +43,10 @@ async function init() {
   bindProtectedLinks(root, "a[data-dtm-start]");
   renderHistory();
   try {
-    renderTopics(await loadBank());
+    renderCount(await loadBank());
   } catch (e) {
     console.error("[dtm] baza yuklanmadi:", e);
-    $("[data-topics]").outerHTML = `<div class="of-alert of-alert--error" role="alert">${icon("alert")}<span>Savollar bazasini yuklab bo‘lmadi. Sahifani yangilang.</span></div>`;
+    $("[data-dtm-count]").textContent = "";
   }
 }
 
