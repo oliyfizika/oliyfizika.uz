@@ -361,6 +361,29 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
       const fl = g.floor;
       return g.box(key, { at: [(x0 + x1) / 2, fl - 4, d], size: [Math.abs(x1 - x0), 5, 14], color, metal: 0.5, rough: 0.45 });
     },
+    /** Sham/buyum: (x, base) dan (x, tip) gacha tayoqcha va uchida alanga. tip < base (pikselda) — tik, aks holda teskari. */
+    candle(key, { x, base, tip, d = 0, r = 4, color = "#f59e0b", opacity = 1, flame = true, glow = true }) {
+      const dir = tip <= base ? -1 : 1, len = Math.abs(tip - base);
+      if (len > 0.5) g.cyl(key + ":body", { at: [x, (base + tip) / 2, d], r, len, axis: "y", color, opacity, rough: 0.7 });
+      if (flame) {
+        const fr = Math.max(3, r * 1.15);
+        g.sphere(key + ":flame", { at: [x, tip + dir * fr * 1.5, d], r: fr, color: opacity < 1 ? color : "#fde047", emissive: 1.1, opacity, scale: [0.75, 1.7, 0.75] });
+        if (glow) g.glow(key + ":glow", { at: [x, tip + dir * fr * 1.5, d], r: fr * 4.2, opacity: 0.7 * opacity });
+      }
+    },
+    /** Lazer ko‘rsatkich: uchi `tip` nuqtada, nur yo‘nalishi (dx, dy) — kanvas pikseli yo‘nalishida. */
+    laser(key, { tip, dx, dy, len = 46, r = 6.5, d = 0, color = "#334155" }) {
+      const l = Math.hypot(dx, dy) || 1, ux = dx / l, uy = dy / l;
+      g.rod(key + ":body", [tip[0] - ux * len, tip[1] - uy * len, d], [tip[0], tip[1], d], { r, color });
+      g.rod(key + ":nose", [tip[0] - ux * 5, tip[1] - uy * 5, d], [tip[0] + ux * 2, tip[1] + uy * 2, d], { r: r * 0.55, color: "#ef4444", emissive: 0.6 });
+    },
+    /** Ko‘z: oq olma va qorachiq; (fx, fy) — qarash yo‘nalishi (kanvas pikseli). */
+    eye(key, { at, r = 11, fx = 1, fy = 0 }) {
+      const l = Math.hypot(fx, fy) || 1;
+      g.sphere(key + ":ball", { at, r, color: "#f8fafc", rough: 0.35 });
+      g.sphere(key + ":iris", { at: [at[0] + (fx / l) * r * 0.62, at[1] + (fy / l) * r * 0.62, at[2] || 0], r: r * 0.52, color: "#2563eb", rough: 0.3 });
+      g.sphere(key + ":pupil", { at: [at[0] + (fx / l) * r * 0.9, at[1] + (fy / l) * r * 0.9, at[2] || 0], r: r * 0.27, color: "#0f172a", rough: 0.2 });
+    },
     /** Ixtiyoriy obyekt: make(THREE) → Object3D; sig o‘zgarsa qayta quriladi. Qaytgan obyektni o‘zingiz joylashtirasiz. */
     custom(key, sig, make) { return use(key, sig, () => make(T)); },
   };
@@ -369,14 +392,33 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
 
   const lift = () => Math.round(r3.h * 0.07);
   function target(out) { return cam.plane === "v" ? out.set(0, r3.h * 0.5 + lift() * 0.4, 0) : out.set(0, 0, 0); }
-  function placeCamera() {
-    const h = r3.h, fov = (camera.fov * Math.PI) / 180;
-    const dist = ((h / 2) / Math.tan(fov / 2)) * (cam.plane === "v" ? 1.04 : 0.9) / cam.zoom;
+  function setCamera(az, el, dist) {
     const t = target(new T.Vector3());
-    camera.position.set(t.x + dist * Math.sin(cam.az) * Math.cos(cam.el), t.y + dist * Math.sin(cam.el), t.z + dist * Math.cos(cam.az) * Math.cos(cam.el));
+    camera.position.set(t.x + dist * Math.sin(az) * Math.cos(el), t.y + dist * Math.sin(el), t.z + dist * Math.cos(az) * Math.cos(el));
     camera.near = dist / 50; camera.far = dist * 8;
     camera.lookAt(t);
     camera.updateProjectionMatrix();
+    camera.updateMatrixWorld(true);
+  }
+  /** Boshlang‘ich ko‘rinishda nur tekisligining to‘rt burchagi kadrga sig‘adigan eng yaqin masofa. */
+  function fitDistance() {
+    const key = `${cam.key}|${r3.w}|${r3.h}`;
+    if (cam.fitKey === key) return cam.dist;
+    const fov = (camera.fov * Math.PI) / 180, base = (r3.h / 2) / Math.tan(fov / 2), v = new T.Vector3();
+    const hw = r3.w / 2, hh = r3.h / 2, corners = [[-hw, hh], [hw, hh], [hw, -hh], [-hw, -hh]];
+    root.updateMatrixWorld(true);
+    let dist = base * 0.7;
+    for (let i = 0; i < 40; i++, dist *= 1.035) {
+      setCamera(cam.homeAz, cam.homeEl, dist);
+      let ok = true;
+      for (const [x, y] of corners) { v.set(x, y, 0).applyMatrix4(root.matrixWorld).project(camera); if (Math.abs(v.x) > 1.1 || Math.abs(v.y) > 1.06) { ok = false; break; } }
+      if (ok) break;
+    }
+    cam.fitKey = key; cam.dist = dist;
+    return dist;
+  }
+  function placeCamera() {
+    setCamera(cam.az, cam.el, fitDistance() / cam.zoom);
     scene.updateMatrixWorld(true);
   }
   function applyTheme(v) {
