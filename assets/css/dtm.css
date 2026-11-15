@@ -1,0 +1,41 @@
+/* ==========================================================================
+   OliyFizika.uz 2.0 — DTM variantlari (dtm-variantlari/index.html, test.html)
+   Test sahifasi umumiy-test.css (ut-*) dan foydalanadi, katalog — catalog.css. Bu yerda faqat qo'shimchalar.
+   ========================================================================== */
+
+/* Bo'limlar ro'yxati (katalog) va bo'limlar bo'yicha natija (test) */
+.dtm-card { display: flex; flex-direction: column; gap: 12px; padding: 18px 20px; }
+.dtm-card h2 { font-size: var(--of-text-md) !important; }
+.dtm-card > p { margin: 0; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.6; }
+.dtm-topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px 18px; margin: 0; padding: 0; list-style: none; }
+.dtm-topic { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; font-size: var(--of-text-sm); color: var(--of-text-2); }
+.dtm-topic b { color: var(--of-text); font-variant-numeric: tabular-nums; }
+.dtm-topic small { grid-column: 1 / -1; color: var(--of-text-3); }
+.dtm-topic__bar { grid-column: 1 / -1; height: 6px; border-radius: var(--of-radius-pill); background: var(--of-surface-2, var(--of-border)); overflow: hidden; }
+.dtm-topic__bar span { display: block; height: 100%; border-radius: inherit; background: var(--of-primary-solid); }
+.dtm-topics-card { display: flex; flex-direction: column; gap: 12px; padding: 18px 20px; }
+.dtm-topics-card h2 { font-size: var(--of-text-md); }
+
+/* Ko'rib chiqishdagi bo'lim belgisi */
+.dtm-rev__topic {
+  margin-right: auto; padding: 2px 10px; border-radius: var(--of-radius-pill);
+  background: var(--of-primary-soft); color: var(--of-primary-text);
+  font-size: var(--of-text-xs, 12px); font-weight: 700;
+}
+
+/* Qoidalar ro'yxati */
+.dtm-rules { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.dtm-rules li { display: flex; gap: 10px; align-items: flex-start; color: var(--of-text-2); font-size: var(--of-text-sm); line-height: 1.55; }
+.dtm-rules svg { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 2px; color: var(--of-success-text); }
+.dtm-rules b { color: var(--of-text); }
+
+/* So'nggi natijalar (shu brauzerda) */
+.dtm-history { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.dtm-history li {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 8px 12px; border: 1px solid var(--of-border); border-radius: var(--of-radius-md, 12px);
+  font-size: var(--of-text-sm); color: var(--of-text-2);
+}
+.dtm-history b { font: 800 var(--of-text-md)/1 var(--of-font-display); color: var(--of-text); font-variant-numeric: tabular-nums; }
+.dtm-history small { color: var(--of-text-3); }
+.dtm-note { font-size: var(--of-text-xs, 12px); color: var(--of-text-3); }

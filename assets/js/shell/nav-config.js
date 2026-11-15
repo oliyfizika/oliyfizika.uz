@@ -12,6 +12,7 @@ export const NAV_GROUPS = [
       { id: "home", label: "Bosh sahifa", icon: "home", href: "index.html", match: ["index.html", ""], protected: false },
       { id: "umumiy-fizika", label: "Umumiy fizika", icon: "atom", href: "umumiy-fizika/umumiy-fizika.html", match: ["umumiy-fizika/"], protected: true, publicLanding: true },
       { id: "milliy-sertifikat", label: "Milliy sertifikat", icon: "certificate", href: "milliy-sertifikat/milliy-sertifikat.html", match: ["milliy-sertifikat/"], protected: true },
+      { id: "dtm-variantlari", label: "DTM variantlari", icon: "list", href: "dtm-variantlari/index.html", match: ["dtm-variantlari/"], protected: true, publicLanding: true },
       { id: "attestatsiya", label: "Attestatsiya", icon: "clipboard", href: "attestatsiya/index.html", match: ["attestatsiya/"], protected: true },
       { id: "olimpiada", label: "Olimpiada", icon: "trophy", href: "olimpiada/olimpiada.html", match: ["olimpiada/"], protected: true },
       { id: "gre", label: "GRE Physics", icon: "target", href: "gre/gre.html", match: ["gre/"], protected: true, publicLanding: true },
