@@ -9,6 +9,7 @@
 
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { attach3D } from "./sim3d.js";
 import * as D from "./diffraction-physics.js";
 import * as G from "./diffraction-plots.js";
 
@@ -22,6 +23,7 @@ const MID = "600 11px Inter, system-ui, sans-serif";
 const ui = { mode: "young", tab: "I", t: 0 };
 const st = { lam: 532, L: 1, white: false, closed: false, d: 0.25, a: 0.05, shape: "slit", sa: 0.1, N: 300, unknown: false, revealed: false, lamHidden: 633, marker: 0, pts: [] };
 let presetId = null;
+let r3 = null; // 3D ko‘rinish (sim3d.js)
 const HIDDEN = [450, 488, 532, 589, 633, 650];
 
 const lamNm = () => (ui.mode === "grating" && st.unknown ? st.lamHidden : st.lam);
@@ -66,10 +68,10 @@ function lookup(Y) { const b = bins().bins, x = ((Y / (1.6 * Ymax())) + 1) / 2 *
 
 const g = {};
 function layout(cw, ch) {
-  const narrow = cw < 560, fw = narrow ? cw * 0.3 : cw * 0.3;
+  const narrow = cw < 560, d3 = !!r3?.on, fw = d3 ? -16 : narrow ? cw * 0.3 : cw * 0.3;
   const aw = cw - fw - 16, yc = ch / 2, Hs = ch * 0.42;
   const xb = Math.max(70, aw * 0.22), xs = xb + 34 + Math.sqrt(clamp((st.L - 0.2) / 2.3, 0, 1)) * (aw - xb - 48);
-  Object.assign(g, { narrow, aw, fw, yc, Hs, xb, xs, fx0: cw - fw - 6, fx1: cw - 8 });
+  Object.assign(g, { narrow, aw, fw, yc, Hs, xb, xs, fx0: d3 ? cw + 400 : cw - fw - 6, fx1: d3 ? cw + 500 : cw - 8 });
   return g;
 }
 const Yof = (py) => ((g.yc - py) / g.Hs) * Ymax(); // ekran px → Y (m)
@@ -87,11 +89,12 @@ const rgbCss = (c, a = 1) => `rgba(${Math.round(255 * clamp(c[0], 0, 1))},${Math
 function draw(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   layout(cw, ch);
-  ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, g.aw, ch);
+  const d3 = !!r3?.on;
+  if (!d3) { ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, g.aw, ch); }
   const beamC = st.white ? [1, 1, 1] : D.waveRGB(lamNm());
   // lazer va dasta
   const beamH = 46;
-  ctx.fillStyle = "#334155"; ctx.fillRect(8, g.yc - 14, 34, 28); ctx.fillStyle = rgbCss(beamC); ctx.fillRect(40, g.yc - 4, 4, 8);
+  if (!d3) { ctx.fillStyle = "#334155"; ctx.fillRect(8, g.yc - 14, 34, 28); ctx.fillStyle = rgbCss(beamC); ctx.fillRect(40, g.yc - 4, 4, 8); }
   ctx.fillStyle = rgbCss(beamC, 0.22); ctx.fillRect(44, g.yc - beamH / 2, g.xb - 44, beamH);
   const lv = 12 * (lamNm() / 550), ph = (ui.t * 40) % lv;
   ctx.strokeStyle = rgbCss(beamC, 0.6); ctx.lineWidth = 1.5; ctx.beginPath();
@@ -110,6 +113,7 @@ function draw(ctx, stage) {
     const r = Math.hypot(x - g.xb, y - g.yc), wave = 0.72 + 0.28 * Math.cos(kv * r - ui.t * 40 * kv);
     const fade = 0.35 + 0.65 * Math.min(1, (x - g.xb) / 40);
     const p = (j * gw + i) * 4, m = Math.pow(clamp(s.I, 0, 1), gam()) * wave * fade * 0.85, rgb = s.rgb, iI = Math.max(1e-6, s.I);
+    if (d3) { img.data[p] = 255 * clamp(rgb[0] / iI, 0, 1); img.data[p + 1] = 255 * clamp(rgb[1] / iI, 0, 1); img.data[p + 2] = 255 * clamp(rgb[2] / iI, 0, 1); img.data[p + 3] = 255 * clamp(m * 1.15, 0, 1); continue; } // 3D: shaffof «nur pardasi»
     img.data[p] = 255 * clamp(rgb[0] / iI * m, 0, 1); img.data[p + 1] = 255 * clamp(rgb[1] / iI * m, 0, 1); img.data[p + 2] = 255 * clamp(rgb[2] / iI * m, 0, 1); img.data[p + 3] = 255;
   }
   fctx.putImageData(img, 0, 0);
@@ -117,7 +121,7 @@ function draw(ctx, stage) {
   // to'siq
   const op = openings();
   ctx.fillStyle = "#94a3b8";
-  if (op) {
+  if (d3) { /* 3D: to'siq — hajmli model (frame3d) */ } else if (op) {
     let y0 = 0; op.slice().sort((p, q) => p.y - q.y).forEach((o) => { ctx.fillRect(g.xb - 3, y0, 6, o.y - o.h / 2 - y0); y0 = o.y + o.h / 2; });
     ctx.fillRect(g.xb - 3, y0, 6, ch - y0);
     op.forEach((o) => { ctx.strokeStyle = "#fbbf24"; ctx.lineWidth = 1; ctx.strokeRect(g.xb - 5, o.y - o.h / 2 - 2, 10, o.h + 4); });
@@ -128,14 +132,15 @@ function draw(ctx, stage) {
   const lab = ui.mode === "young" ? (st.closed ? "bitta tirqish" : `d = ${fmt(st.d, 2)} mm`) : ui.mode === "slit" ? `${st.shape === "round" ? "D" : "a"} = ${fmt(st.sa, 2)} mm` : `${fmt(st.N, 0)} chiziq/mm`;
   tag(ctx, lab, g.xb, 14, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", align: "center", font: SMALL });
   // ekran (yon ko'rinish)
-  ctx.fillStyle = "#e2e8f0"; ctx.fillRect(g.xs, g.yc - g.Hs, 5, 2 * g.Hs);
-  for (let py = g.yc - g.Hs; py < g.yc + g.Hs; py += 2) { const s = lookup(Yof(py)); ctx.fillStyle = rgbCss(s.rgb.map((v) => Math.pow(clamp(v, 0, 1), gam()))); ctx.fillRect(g.xs, py, 5, 2.2); }
+  if (!d3) { ctx.fillStyle = "#e2e8f0"; ctx.fillRect(g.xs, g.yc - g.Hs, 5, 2 * g.Hs); }
+  if (!d3) for (let py = g.yc - g.Hs; py < g.yc + g.Hs; py += 2) { const s = lookup(Yof(py)); ctx.fillStyle = rgbCss(s.rgb.map((v) => Math.pow(clamp(v, 0, 1), gam()))); ctx.fillRect(g.xs, py, 5, 2.2); }
   tag(ctx, `L = ${fmt(st.L, 2)} m ↔`, g.xs, g.yc + g.Hs + 12, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", align: "center", font: SMALL });
   // panjara: tartiblar yo'nalishi
   if (ui.mode === "grating" && !hiddenLam()) {
     const lam = st.white ? 550e-9 : lamM(), km = Math.min(4, D.maxOrder(lam, dGr()));
     for (let k = -km; k <= km; k++) { const x = D.orderPosition(k, lam, dGr(), st.L); if (x === null || Math.abs(x) > Ymax()) continue; tag(ctx, k === 0 ? "0" : `${k > 0 ? "+" : "−"}${Math.abs(k)}`, g.xs - 14, pyOf(x), { color: "#e2e8f0", bg: "rgba(15,23,42,0.7)", align: "center", font: SMALL, pad: 3 }); }
   }
+  if (d3) return; // 3D: ekran naqshi, chizg‘ich va marker ekranning o‘zida (frame3d)
   tag(ctx, "yon ko‘rinish (masshtabsiz)", 8, ch - 12, { color: "#94a3b8", bg: "rgba(15,23,42,0.85)", font: SMALL });
   // ekranning old ko'rinishi
   const fw0 = g.fx0, fwW = g.fx1 - g.fx0, top = g.yc - g.Hs, H = 2 * g.Hs;
@@ -172,6 +177,7 @@ const heights = (cw) => {
   return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.44), 260, 360)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
 const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+r3 = attach3D(stage, { frame: (g3) => frame3d(g3), view: () => view3d() });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -302,6 +308,69 @@ $("[data-meas-add]").addEventListener("click", () => {
   if (k === 0 || st.white) return;
   st.pts.push({ k, s: Math.round(s * 1000) / 1000 }); refresh();
 });
+/* ------------------------------------------------------------------ 3D sahna */
+
+function frame3d(g3) {
+  const h = g3.h, Dz = h * 0.5, beamC = st.white ? [1, 1, 1] : D.waveRGB(lamNm());
+  // lazer
+  g3.box("laser", { at: [25, g.yc, 0], size: [34, 26, 26], color: "#334155", metal: 0.3, rough: 0.5 });
+  g3.cyl("laserNose", { at: [43, g.yc, 0], r: 4, len: 4, axis: "x", color: rgbCss(beamC), emissive: 1 });
+  g3.stand("laserStand", { x: 25, top: g.yc + 13 });
+  // to'siq: tirqish(lar), doira teshik yoki panjara
+  const op = openings(), round = ui.mode === "slit" && st.shape === "round";
+  if (op) {
+    const sig = `bar|${h}|${round}|${op.map((o) => `${(o.y - g.yc).toFixed(1)}:${o.h.toFixed(1)}`).join(",")}`;
+    const bar = g3.custom("barrier", sig, (T) => {
+      const sh = new T.Shape(); sh.moveTo(-Dz / 2, -h / 2); sh.lineTo(Dz / 2, -h / 2); sh.lineTo(Dz / 2, h / 2 - 28); sh.lineTo(-Dz / 2, h / 2 - 28); sh.closePath();
+      op.forEach((o) => {
+        const hp = new T.Path(), y = g.yc - o.y, hh = Math.max(o.h, 2.5) / 2;
+        if (round) hp.absarc(0, y, hh, 0, TAU, true);
+        else { const zw = Dz * 0.3; hp.moveTo(-zw, y - hh); hp.lineTo(-zw, y + hh); hp.lineTo(zw, y + hh); hp.lineTo(zw, y - hh); hp.closePath(); }
+        sh.holes.push(hp);
+      });
+      const m = new T.Mesh(new T.ExtrudeGeometry(sh, { depth: 3, bevelEnabled: false, curveSegments: 20 }), g3.mat("#94a3b8", { rough: 0.6 }));
+      m.rotation.y = -Math.PI / 2;
+      return m;
+    });
+    bar.position.copy(g3.loc([g.xb + 1.5, h / 2, 0]));
+  } else {
+    g3.box("grating", { at: [g.xb, h / 2, 0], size: [2, h * 0.7, Dz * 0.7], color: "#cbd5e1", opacity: 0.45 });
+    g3.box("gratingFrame", { at: [g.xb, h / 2 + h * 0.36, 0], size: [4, 5, Dz * 0.74], color: "#64748b" });
+  }
+  g3.stand("barStand", { x: g.xb, top: op ? h - 1 : h / 2 + h * 0.38 });
+  // ekran: naqsh, chizg'ich va marker
+  const H = 2 * g.Hs, Dw = Math.min(H * 1.25, h * 1.1), zSpan = Ymax() * (Dw / H);
+  const k = unit() === "cm" ? 100 : 1000, step = ui.mode === "grating" ? 0.2 : ui.mode === "young" ? 0.002 : 0.005;
+  g3.panel("screen", {
+    at: [g.xs, g.yc, 0], size: [H, Dw], res: [256, 512], back: "#334155", thick: 3,
+    sig: `${bins().key}|${st.marker}|${Dw.toFixed(0)}`,
+    pick: (u, v) => ({ px: u < 0.1 || u > 0.9 ? g.xs + 2 : (g.fx0 + g.fx1) / 2, py: g.yc + g.Hs - v * H }), // o‘rtasi — marker, chetlari — ekranni surish
+    paint(c2, n, m) {
+      const img = c2.createImageData(n, m);
+      for (let j = 0; j < m; j++) for (let i = 0; i < n; i++) {
+        const z = zSpan * ((2 * (i + 0.5)) / n - 1), y = Ymax() * (1 - (2 * (j + 0.5)) / m);
+        const s = round ? lookup(Math.hypot(y, z)) : lookup(y);
+        const prof = round ? 1 : Math.exp(-((z / (zSpan * 0.6)) ** 2));
+        const p = (j * n + i) * 4, iI = Math.max(1e-6, s.I), q = Math.pow(clamp(s.I, 0, 1), gam()) * prof;
+        img.data[p] = 8 + 247 * clamp((s.rgb[0] / iI) * q, 0, 1); img.data[p + 1] = 12 + 243 * clamp((s.rgb[1] / iI) * q, 0, 1); img.data[p + 2] = 24 + 231 * clamp((s.rgb[2] / iI) * q, 0, 1); img.data[p + 3] = 255;
+      }
+      c2.putImageData(img, 0, 0);
+      const yPx = (Y) => (m * (1 - Y / Ymax())) / 2;
+      c2.strokeStyle = "rgba(226,232,240,0.7)"; c2.fillStyle = "rgba(226,232,240,0.9)"; c2.lineWidth = 2; c2.font = "600 15px Inter, system-ui, sans-serif"; c2.textBaseline = "middle"; c2.textAlign = "left";
+      for (let Y = -Math.floor(Ymax() / step) * step; Y <= Ymax() + 1e-9; Y += step) { const py = yPx(Y); c2.beginPath(); c2.moveTo(0, py); c2.lineTo(14, py); c2.stroke(); if (Math.abs(Math.round(Y / step)) % 2 === 0) c2.fillText(fmt(Y * k, 0), 18, py); }
+      const my = yPx(st.marker);
+      c2.strokeStyle = "#ef4444"; c2.lineWidth = 3; c2.beginPath(); c2.moveTo(0, my); c2.lineTo(n, my); c2.stroke();
+      c2.fillStyle = "#ef4444"; c2.beginPath(); c2.moveTo(0, my - 9); c2.lineTo(12, my); c2.lineTo(0, my + 9); c2.fill();
+    },
+  });
+  g3.stand("screenStand", { x: g.xs + 3, top: g.yc + g.Hs });
+  g3.rail("rail", { x0: 6, x1: g3.w - 6, color: "#475569" });
+  const hud = g3.hud;
+  tag(hud, `y = ${fmt(st.marker * k, unit() === "cm" ? 1 : 2)} ${unit()}`, g3.w - 10, 16, { color: "#fff", bg: "rgba(239,68,68,0.9)", align: "right", font: MID });
+  tag(hud, "markerni suring · ekranni chetidan suring", g3.w - 10, 40, { color: "#94a3b8", bg: "rgba(15,23,42,0.7)", align: "right", font: SMALL });
+}
+const view3d = () => ({ key: "diff", plane: "v", az: -0.78, el: 0.26, bg: "#0b1220", tableColor: "#1e293b", ambient: 0.75 });
+
 $("[data-meas-clear]").addEventListener("click", () => { st.pts = []; refresh(); });
 
 /* Sudrash: tirqish (d yoki a), ekran (L), marker */

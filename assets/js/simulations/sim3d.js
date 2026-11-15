@@ -39,6 +39,7 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
   const cam = { az: -0.5, el: 0.3, key: null, plane: "v", homeAz: -0.5, homeEl: 0.3, zoom: 1 };
   const cache = new Map();
   const mats = new Map();
+  let picks = []; // shu kadrda sichqoncha bilan «ushlanadigan» panellar
   const geo = {};
 
   /* ---------------------------------------------------------------- UI */
@@ -262,7 +263,7 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
      * dir: "y" — panel kanvasning y o‘qi bo‘ylab (normal x bo‘ylab; chapdan qaraladi), "x" — x o‘qi bo‘ylab (normal y).
      * paint(ctx, cw, ch) — panel yuzasiga chizadi (sig o‘zgarganda); ctx x → d (kuzatuvchi tomonga), y → pastga.
      */
-    panel(key, { at, size, dir = "y", color = "#f8fafc", paint, sig = "", res = [128, 128], thick = 3, back = "#64748b", emissive = 0, angle = 0 }) {
+    panel(key, { at, size, dir = "y", color = "#f8fafc", paint, sig = "", res = [128, 128], thick = 3, back = "#64748b", emissive = 0, angle = 0, pick = null }) {
       const grp = use(key, `panel|${paint ? res.join("x") : "plain"}`, () => {
         const G = new T.Group();
         const body = new T.Mesh(geo.box, mat(back));
@@ -295,6 +296,9 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
           face.material.map.needsUpdate = true; face.userData.sig = sig;
         }
       } else face.material = mat(color, { emissive });
+      // pick(u, v) → { px, py }: panel yuzasidagi nuqta (u — kuzatuvchi tomonga, v — pastdan yuqoriga, 0…1) 2D kanvasning qaysi pikseliga mos
+      face.userData.pick = pick;
+      if (pick) picks.push(face);
       return grp;
     },
     /** Linza: optik o‘q — tekislikning x o‘qi. H — diametr, t — markazdagi qalinlik, edge — chetidagi qalinlik. */
@@ -423,7 +427,7 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
   }
   function applyTheme(v) {
     const c = stage.colors, amb = v.ambient ?? 1;
-    tableMat.color.set(c.dark ? "#1e293b" : "#e2e8f0");
+    tableMat.color.set(v.tableColor || (c.dark ? "#1e293b" : "#e2e8f0"));
     hemi.intensity = (c.dark ? 0.85 : 1.15) * amb;
     hemi.groundColor.set(c.dark ? "#0f172a" : "#94a3b8");
     sun.intensity = (c.dark ? 1.25 : 1.7) * (v.sun ?? 1);
@@ -467,7 +471,7 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
     applyTheme(v);
 
     for (const c of cache.values()) c.used = false;
-    hudUsed = false;
+    hudUsed = false; picks = [];
     try { frame?.(g); } catch (err) { console.error(err); }
     for (const c of cache.values()) c.obj.visible = c.used;
     hud.hidden = !hudUsed;
@@ -486,6 +490,10 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
       const r = gl.getBoundingClientRect();
       ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
       ray.setFromCamera(ndc, camera);
+      if (picks.length) {
+        const hits = ray.intersectObjects(picks, false);
+        if (hits.length && hits[0].uv) { const q = hits[0].object.userData.pick(hits[0].uv.x, hits[0].uv.y); if (q) return { ...q, picked: true }; }
+      }
       sheet.getWorldPosition(p0);
       n.set(0, 0, 1).transformDirection(sheet.matrixWorld);
       plane.setFromNormalAndCoplanarPoint(n, p0);
@@ -500,7 +508,7 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
         clientX: r.left + s.px, clientY: r.top + s.py, button: e.button, buttons: e.buttons, shiftKey: e.shiftKey, altKey: e.altKey, ctrlKey: e.ctrlKey,
       }));
     }
-    const inside = (s) => s && s.px > -r3.w * 0.5 && s.px < r3.w * 1.5 && s.py > -r3.h * 0.5 && s.py < r3.h * 1.5;
+    const inside = (s) => s && (s.picked || s.px > -r3.w * 0.5 && s.px < r3.w * 1.5 && s.py > -r3.h * 0.5 && s.py < r3.h * 1.5);
     gl.addEventListener("pointerdown", (e) => {
       if (e.button !== 0 && e.pointerType === "mouse") return;
       const s = toSheet(e);
