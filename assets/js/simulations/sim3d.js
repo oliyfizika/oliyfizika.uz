@@ -298,7 +298,7 @@ export function attach3D(stage, { frame, view = () => ({}) } = {}) {
       return grp;
     },
     /** Linza: optik o‘q — tekislikning x o‘qi. H — diametr, t — markazdagi qalinlik, edge — chetidagi qalinlik. */
-    lens(key, { at, H, t, edge = 2, color = "#7dd3fc", opacity = 0.42, rim = true, axis = "x" }) {
+    lens(key, { at, H, t, edge = 2, color = "#7dd3fc", opacity = 0.3, rim = true, axis = "x" }) {
       const sig = `lens|${H.toFixed(1)}|${t.toFixed(1)}|${edge.toFixed(1)}|${rim}`;
       const grp = use(key, sig, () => {
         const G = new T.Group(), R = H / 2, N = 18, pts = [];
