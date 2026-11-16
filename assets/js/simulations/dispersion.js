@@ -13,6 +13,7 @@ import * as R from "./reflection-physics.js";
 import { waveRGB } from "./diffraction-physics.js";
 import * as G from "./dispersion-plots.js";
 import { drawFresnel } from "./reflection-plots.js";
+import { attach3D } from "./sim3d.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = P.DEG;
@@ -28,6 +29,8 @@ const pr = { g: "crown", A: 60, alpha: 50, lam: 580 };
 const rb = { k: 1, b: 0.86 };
 const pol = { sub: "malus", a1: 0, a2: 45, a3: 30, mid: false, alpha: 40, n: 1.5, phi: 90, pts: [] };
 let presetId = null;
+let r3 = null; // 3D ko‘rinish (sim3d.js)
+const S3 = { prism: null, discs: [], meters: [], beams: [], ef: [] }; // 3D model uchun chizish paytida yig‘iladigan ma’lumot
 const subKey = () => (ui.mode === "pol" ? pol.sub : ui.mode);
 
 /* ------------------------------------------------------------------ Dunyo → ekran */
@@ -66,13 +69,14 @@ function secondPrism(n, geo) {
 }
 function drawPrism(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
+  const d3 = !!r3?.on;
   fit(cw, ch, -17, 36, -15, 10);
-  ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, cw, ch);
+  if (!d3) { ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, cw, ch); }
   const geo = prismGeom(), g = P.glass(pr.g);
   const slitX = 16;
   const hits = [];
   // prizmalar
-  const drawPoly = (pts) => { ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(SX(p.x), SY(p.y)) : ctx.moveTo(SX(p.x), SY(p.y)))); ctx.closePath(); ctx.fillStyle = "rgba(186,230,253,0.12)"; ctx.fill(); ctx.strokeStyle = "rgba(186,230,253,0.7)"; ctx.lineWidth = 1.5; ctx.stroke(); };
+  const drawPoly = (pts) => { if (d3) return; ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(SX(p.x), SY(p.y)) : ctx.moveTo(SX(p.x), SY(p.y)))); ctx.closePath(); ctx.fillStyle = "rgba(186,230,253,0.12)"; ctx.fill(); ctx.strokeStyle = "rgba(186,230,253,0.7)"; ctx.lineWidth = 1.5; ctx.stroke(); };
   drawPoly([geo.base.apex, geo.base.L, geo.base.R]);
   let p2pts = null;
   if (ui.show.newton) { p2pts = secondPrism(1.5, geo).pts; drawPoly(p2pts); }
@@ -106,15 +110,20 @@ function drawPrism(ctx, stage) {
   });
   ctx.restore();
   // tirqishli to'siq
+  let slitY = null;
   if (ui.show.mono) {
     const lsel = R.trace([R.prismShape(pr.A, 14, P.nOf(g, pr.lam))], geo.src, geo.dir, { maxDepth: 4, minI: 0.3, maxLen: 80 }).segs.filter((s) => s.main);
     let ys = null; for (const s of lsel) if (s.a.x < slitX && s.b.x >= slitX) ys = s.a.y + ((s.b.y - s.a.y) * (slitX - s.a.x)) / (s.b.x - s.a.x);
-    ctx.fillStyle = "#94a3b8"; if (ys !== null) { ctx.fillRect(SX(slitX) - 3, 0, 6, SY(ys + 0.35)); ctx.fillRect(SX(slitX) - 3, SY(ys - 0.35), 6, ch); } else ctx.fillRect(SX(slitX) - 3, 0, 6, ch);
+    slitY = ys;
+    ctx.fillStyle = "#94a3b8"; if (d3) { /* 3D: to‘siq — hajmli model */ } else if (ys !== null) { ctx.fillRect(SX(slitX) - 3, 0, 6, SY(ys + 0.35)); ctx.fillRect(SX(slitX) - 3, SY(ys - 0.35), 6, ch); } else ctx.fillRect(SX(slitX) - 3, 0, 6, ch);
     tag(ctx, "tirqish", SX(slitX), 14, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", align: "center", font: SMALL });
   }
   // ekran
-  ctx.fillStyle = "#e2e8f0"; ctx.fillRect(SX(SCREEN_X), 0, 4, ch);
-  hits.forEach((h) => { ctx.fillStyle = css(h.col, 0.9); ctx.fillRect(SX(SCREEN_X) - 6, SY(h.y) - 3, 10, 6); });
+  if (!d3) {
+    ctx.fillStyle = "#e2e8f0"; ctx.fillRect(SX(SCREEN_X), 0, 4, ch);
+    hits.forEach((h) => { ctx.fillStyle = css(h.col, 0.9); ctx.fillRect(SX(SCREEN_X) - 6, SY(h.y) - 3, 10, 6); });
+  }
+  S3.prism = { p1: [geo.base.apex, geo.base.L, geo.base.R], p2: p2pts, mono: ui.show.mono, slitY, hits, geo };
   if (hits.length > 3) {
     const ys = hits.map((h) => h.y), top = Math.max(...ys), bot = Math.min(...ys);
     const red = hits.find((h) => h.l === 700), vio = hits.find((h) => h.l === 400);
@@ -123,7 +132,7 @@ function drawPrism(ctx, stage) {
     void top; void bot;
   }
   // manba
-  ctx.save(); ctx.fillStyle = "#fde047"; ctx.shadowColor = "#fde047"; ctx.shadowBlur = 14; ctx.beginPath(); ctx.arc(SX(geo.src.x), SY(geo.src.y), 9, 0, TAU); ctx.fill(); ctx.restore();
+  if (!d3) { ctx.save(); ctx.fillStyle = "#fde047"; ctx.shadowColor = "#fde047"; ctx.shadowBlur = 14; ctx.beginPath(); ctx.arc(SX(geo.src.x), SY(geo.src.y), 9, 0, TAU); ctx.fill(); ctx.restore(); }
   tag(ctx, `${g.name} · A = ${fmt(pr.A, 0)}°`, 10, 14, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", font: SMALL });
   if (!hits.length && !ui.show.mono) tag(ctx, "To‘liq ichki qaytish — nur prizmadan chiqmaydi", cw / 2, ch - 16, { color: "#fecaca", bg: "rgba(15,23,42,0.85)", align: "center", font: MID });
 }
@@ -141,14 +150,14 @@ function dropPath(b, n, k) {
 }
 function drawRainbow(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
-  const narrow = cw < 560, sky = narrow ? 0 : cw * 0.34;
+  const d3 = !!r3?.on, narrow = cw < 560, sky = narrow || d3 ? 0 : cw * 0.34;
   const aw = cw - sky, cx = aw * 0.56, cy = ch * 0.5, Rr = Math.min(ch * 0.36, aw * 0.3);
   Object.assign(drop, { cx, cy, R: Rr, aw });
-  ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, aw, ch);
+  if (!d3) { ctx.fillStyle = c.dark ? "#020617" : "#0f172a"; ctx.fillRect(0, 0, aw, ch); }
   // tomchi
   const gr = ctx.createRadialGradient(cx - Rr * 0.3, cy - Rr * 0.3, Rr * 0.1, cx, cy, Rr);
   gr.addColorStop(0, "rgba(186,230,253,0.25)"); gr.addColorStop(1, "rgba(56,189,248,0.12)");
-  ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(cx, cy, Rr, 0, TAU); ctx.fill(); ctx.strokeStyle = "rgba(186,230,253,0.6)"; ctx.lineWidth = 1.5; ctx.stroke();
+  ctx.fillStyle = d3 ? "rgba(0,0,0,0)" : gr; ctx.beginPath(); ctx.arc(cx, cy, Rr, 0, TAU); ctx.fill(); ctx.strokeStyle = "rgba(186,230,253,0.6)"; ctx.lineWidth = 1.5; ctx.stroke();
   const W = P.glass("water"), k = rb.k;
   const P2 = (phi) => [cx + Rr * Math.cos(phi), cy - Rr * Math.sin(phi)];
   const drawRay = (b, l, alpha, width, inside = true) => {
@@ -170,8 +179,11 @@ function drawRainbow(ctx, stage) {
   tag(ctx, "suring ↕", 16, p0[1] - 14, { color: "#fde68a", bg: "rgba(15,23,42,0.8)", font: SMALL });
   tag(ctx, k === 1 ? "1 marta ichki qaytish" : "2 marta ichki qaytish", aw - 8, ch - 14, { color: "#e2e8f0", bg: "rgba(15,23,42,0.85)", align: "right", font: SMALL });
   // osmon
-  if (!narrow) {
-    const x0 = aw + 6, w = cw - aw - 12, h = ch - 12, y0 = 6;
+  if (!narrow && !d3) drawSky(ctx, c, aw + 6, 6, cw - aw - 12, ch - 12);
+}
+function drawSky(ctx, c, x0, y0, w, h) {
+  const W = P.glass("water");
+  {
     const sk = ctx.createLinearGradient(0, y0, 0, y0 + h); sk.addColorStop(0, "#1e3a8a"); sk.addColorStop(1, "#60a5fa");
     ctx.save(); ctx.beginPath(); ctx.roundRect(x0, y0, w, h, 8); ctx.clip(); ctx.fillStyle = sk; ctx.fillRect(x0, y0, w, h);
     const gy = y0 + h * 0.78, ax = x0 + w / 2, ay = gy + h * 0.12, sc = (h * 0.62) / 55; // antisolyar nuqta ufqdan pastda
@@ -197,6 +209,7 @@ function drawRainbow(ctx, stage) {
 const discs = [];
 function disc(ctx, c, x, y, ang, label, I) {
   const rx = 16, ry = 46;
+  if (r3?.on) { S3.discs.push({ x, y, ang, tilt: disc.tilt || 0 }); tag(ctx, `${label}: ${fmt(ang, 0)}°`, x, y + ry + 14, { color: c.text, bg: c.bg, align: "center", font: SMALL }); return; }
   ctx.save(); ctx.fillStyle = "rgba(100,116,139,0.35)"; ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, TAU); ctx.fill(); ctx.stroke();
   ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, TAU); ctx.clip();
   const ux = Math.sin(ang * DEG) * rx, uy = -Math.cos(ang * DEG) * ry, px = -uy / ry * rx, py = ux / rx * ry;
@@ -209,6 +222,7 @@ function disc(ctx, c, x, y, ang, label, I) {
 }
 function efield(ctx, x0, x1, y, ang, amp, unpol, col) {
   if (amp < 0.01) return;
+  if (r3?.on) { S3.ef.push({ x0, x1, y, ang, amp, unpol }); return; }
   const n = 14, kx = TAU / 46;
   ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 1.8;
   for (let k = 0; k <= n; k++) {
@@ -219,9 +233,12 @@ function efield(ctx, x0, x1, y, ang, amp, unpol, col) {
   ctx.restore();
 }
 function meter(ctx, c, x, y, I) {
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(x - 26, y - 36, 52, 72, 8); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = "#020617"; ctx.fillRect(x - 18, y - 28, 36, 40); ctx.fillStyle = "#fde047"; const hh = 36 * clamp(I / 0.5, 0, 1); ctx.fillRect(x - 14, y + 10 - hh, 28, hh); ctx.restore();
-  tag(ctx, `${fmt(I * 100, 1)}%`, x, y + 24, { color: c.text, bg: c.bg2, align: "center", font: "700 11px Inter, system-ui, sans-serif" });
+  if (r3?.on) S3.meters.push({ x, y, I });
+  else {
+    ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(x - 26, y - 36, 52, 72, 8); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = "#020617"; ctx.fillRect(x - 18, y - 28, 36, 40); ctx.fillStyle = "#fde047"; const hh = 36 * clamp(I / 0.5, 0, 1); ctx.fillRect(x - 14, y + 10 - hh, 28, hh); ctx.restore();
+  }
+  tag(ctx, `${fmt(I * 100, 1)}%`, x, y + (r3?.on ? 52 : 24), { color: c.text, bg: c.bg2, align: "center", font: "700 11px Inter, system-ui, sans-serif" });
   tag(ctx, "fotometr", x, y - 46, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
 }
 function drawMalus(ctx, stage) {
@@ -232,11 +249,12 @@ function drawMalus(ctx, stage) {
   // nur
   const segs = pol.mid ? [[xs, x1, 1, null], [x1, x2, Is[0], pol.a1], [x2, x3, Is[1], pol.a2], [x3, xm - 26, Is[2], pol.a3]] : [[xs, x1, 1, null], [x1, x3, Is[0], pol.a1], [x3, xm - 26, Is[1], pol.a3]];
   segs.forEach(([a, b, I, ang]) => {
-    ctx.fillStyle = `rgba(253,224,71,${0.08 + 0.5 * I})`; ctx.fillRect(a, y - 7, b - a, 14);
+    if (r3?.on) S3.beams.push({ a, b, y, I }); else { ctx.fillStyle = `rgba(253,224,71,${0.08 + 0.5 * I})`; ctx.fillRect(a, y - 7, b - a, 14); }
     efield(ctx, a + 10, b - 10, y, ang ?? 0, Math.sqrt(I), ang === null, "rgba(234,88,12,0.85)");
   });
   // manba
-  ctx.save(); ctx.fillStyle = "#fde047"; ctx.shadowColor = "#fde047"; ctx.shadowBlur = 16; ctx.beginPath(); ctx.arc(xs, y, 12, 0, TAU); ctx.fill(); ctx.restore();
+  S3.src = { x: xs, y };
+  if (!r3?.on) { ctx.save(); ctx.fillStyle = "#fde047"; ctx.shadowColor = "#fde047"; ctx.shadowBlur = 16; ctx.beginPath(); ctx.arc(xs, y, 12, 0, TAU); ctx.fill(); ctx.restore(); }
   tag(ctx, "qutblanmagan yorug‘lik", xs + 4, y - 58, { color: c.text2, bg: c.bg, font: SMALL });
   disc(ctx, c, x1, y, pol.a1, cw < 560 ? "P" : "polyarizator"); discs.push({ x: x1, key: "a1" });
   if (pol.mid) { disc(ctx, c, x2, y, pol.a2, cw < 560 ? "O‘" : "o‘rtadagi"); discs.push({ x: x2, key: "a2" }); }
@@ -250,7 +268,8 @@ function drawBrew(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   const ox = cw * 0.4, oy = ch * 0.6, L = Math.min(ch * 0.5, cw * 0.32), a = pol.alpha * DEG;
   const r = R.snell(1, pol.n, pol.alpha), res = P.reflectedThroughAnalyzer(1, pol.n, pol.alpha, pol.phi);
-  ctx.fillStyle = "rgba(125,211,252,0.18)"; ctx.fillRect(0, oy, cw, ch - oy); ctx.strokeStyle = c.primary; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(cw, oy); ctx.stroke();
+  const d3 = !!r3?.on;
+  ctx.fillStyle = d3 ? "rgba(0,0,0,0)" : "rgba(125,211,252,0.18)"; ctx.fillRect(0, oy, cw, ch - oy); ctx.strokeStyle = c.primary; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(cw, oy); ctx.stroke();
   tag(ctx, `shisha n = ${fmt(pol.n, 2)}`, 10, ch - 14, { color: c.text, bg: c.bg2, font: SMALL });
   ctx.strokeStyle = c.text3; ctx.setLineDash([5, 4]); ctx.beginPath(); ctx.moveTo(ox, oy - L); ctx.lineTo(ox, ch); ctx.stroke(); ctx.setLineDash([]);
   const src = [ox - L * Math.sin(a), oy - L * Math.cos(a)], refl = [ox + L * Math.sin(a), oy - L * Math.cos(a)];
@@ -272,17 +291,19 @@ function drawBrew(ctx, stage) {
   comps([ox, oy], refl, Math.sqrt(res.Rs) * 2.2, Math.sqrt(res.Rp) * 2.2);
   // analizator va fotometr
   const ax = refl[0] + 8, ay = refl[1];
-  disc(ctx, c, ax, ay + 10, pol.phi, "analizator"); brewG.disc = { x: ax, y: ay + 10 };
+  disc.tilt = Math.atan2(Math.cos(a), Math.sin(a)); disc(ctx, c, ax, ay + 10, pol.phi, "analizator"); disc.tilt = 0; brewG.disc = { x: ax, y: ay + 10 };
   meter(ctx, c, Math.min(cw - 34, ax + 70), ay + 10, res.I * 10);
   tag(ctx, "fotometr ×10", Math.min(cw - 34, ax + 70), ay + 62, { color: c.text3, bg: c.bg, align: "center", font: SMALL });
   tag(ctx, `α = ${fmt(pol.alpha, 1)}°`, ox - 40, oy - L * 0.4, { color: c.text, bg: c.bg, align: "center", font: MID });
   tag(ctx, "● s — tekislikka tik,  ↕ p — tekislikda", 10, 14, { color: c.text2, bg: c.bg2, font: SMALL });
   if (Math.abs(pol.alpha - P.brewsterAngle(1, pol.n)) < 1) tag(ctx, "Bryuster burchagi: qaytgan nur to‘liq qutblangan!", cw / 2, 34, { color: "#fff", bg: c.success, align: "center", font: MID });
-  ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(src[0], src[1], 9, 0, TAU); ctx.fill();
+  brewG.oy = oy; brewG.a = a;
+  if (!d3) { ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(src[0], src[1], 9, 0, TAU); ctx.fill(); }
 }
 
 function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
+  S3.discs.length = 0; S3.meters.length = 0; S3.beams.length = 0; S3.ef.length = 0;
+  if (!r3?.on) { ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h); }
   if (ui.mode === "prism") drawPrism(ctx, stage); else if (ui.mode === "rainbow") drawRainbow(ctx, stage); else if (pol.sub === "malus") drawMalus(ctx, stage); else drawBrew(ctx, stage);
 }
 const heights = (cw) => {
@@ -290,6 +311,97 @@ const heights = (cw) => {
   return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.44), 260, 360)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
 const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+
+/* ------------------------------------------------------------------ 3D ko‘rinish */
+
+function disc3(g, key, d) {
+  const o = g.custom(key, "disc", (T) => {
+    const G = new T.Group(), R = 46;
+    const glass = new T.Mesh(new T.CylinderGeometry(R, R, 2.5, 48), g.mat("#64748b", { opacity: 0.42 }));
+    glass.rotation.z = Math.PI / 2; glass.renderOrder = 4; G.add(glass);
+    const ring = new T.Mesh(new T.TorusGeometry(R + 1, 2.2, 10, 56), g.mat("#475569", { metal: 0.4, rough: 0.5 }));
+    ring.rotation.y = Math.PI / 2; G.add(ring);
+    const lineMat = g.mat("#e2e8f0", { opacity: 0.4 });
+    for (let k = -6; k <= 6; k++) { const off = (R * k) / 7, len = 2 * Math.sqrt(R * R - off * off); const m = new T.Mesh(new T.BoxGeometry(0.8, len, 0.8), lineMat); m.position.set(0, 0, off); G.add(m); }
+    const axis = new T.Mesh(new T.BoxGeometry(3.4, R * 2.3, 3.4), g.mat("#f59e0b", { emissive: 0.5 }));
+    G.add(axis);
+    G.rotation.order = "ZYX";
+    return G;
+  });
+  o.position.copy(g.loc([d.x, d.y, 0]));
+  o.rotation.set(d.ang * DEG, 0, d.tilt);
+}
+function meter3(g, key, m, angle = 0) {
+  g.panel(key, {
+    at: [m.x, m.y, 0], size: [72, 56], res: [112, 144], back: "#334155", thick: 14, angle, sig: m.I.toFixed(4),
+    paint(c2, n, mm) {
+      c2.fillStyle = "#e2e8f0"; c2.fillRect(0, 0, n, mm);
+      c2.fillStyle = "#020617"; c2.fillRect(14, 14, n - 28, mm - 28);
+      const hh = (mm - 40) * clamp(m.I / 0.5, 0, 1);
+      c2.fillStyle = "#fde047"; c2.fillRect(22, mm - 20 - hh, n - 44, hh);
+    },
+  });
+}
+function frame3d(g) {
+  const w = g.w, h = g.h;
+  if (ui.mode === "prism") {
+    const s = S3.prism; if (!s) return;
+    const H = 38, px = (p) => [SX(p.x), SY(p.y)];
+    g.extrude("prism1", { pts: s.p1.map(px), depth: H, z: H / 2, color: "#bae6fd", opacity: 0.3, glass: true });
+    if (s.p2) g.extrude("prism2", { pts: s.p2.map(px), depth: H, z: H / 2, color: "#bae6fd", opacity: 0.3, glass: true });
+    g.laser("src", { tip: px(s.geo.src), dx: s.geo.dir.x, dy: -s.geo.dir.y, d: 7, len: 40 });
+    const Hs = 64, xs = SX(SCREEN_X);
+    if (s.mono) {
+      const xb = SX(16), y0 = -h * 0.1, y1 = h * 1.1, bar = (key, a, b) => { if (b - a > 1) g.box(key, { at: [xb, (a + b) / 2, Hs * 0.35], size: [4, b - a, Hs * 0.7], color: "#94a3b8", rough: 0.6 }); };
+      if (s.slitY === null) bar("slitA", y0, y1); else { bar("slitA", y0, SY(s.slitY + 0.35)); bar("slitB", SY(s.slitY - 0.35), y1); }
+    }
+    g.panel("screen", {
+      at: [xs, h / 2, Hs / 2], size: [h * 1.2, Hs], res: [64, 512], back: "#475569", thick: 3,
+      sig: `${h}|${s.hits.map((q) => `${q.l}:${q.y.toFixed(2)}`).join(",")}`,
+      paint(c2, n, m) {
+        c2.fillStyle = "#1f2937"; c2.fillRect(0, 0, n, m);
+        c2.globalCompositeOperation = "lighter";
+        const row = (py) => ((py - h / 2) / (h * 1.2) + 0.5) * m, bh = Math.max(3, (6 / (h * 1.2)) * m);
+        s.hits.forEach((q) => { c2.fillStyle = css(q.col, 0.85); c2.fillRect(0, row(SY(q.y)) - bh / 2, n, bh); });
+        c2.globalCompositeOperation = "source-over";
+      },
+    });
+  } else if (ui.mode === "rainbow") {
+    g.sphere("drop", { at: [drop.cx, drop.cy, 0], r: drop.R, color: "#7dd3fc", opacity: 0.2, rough: 0.05 });
+    if (w >= 560) { const sw = Math.min(w * 0.3, 240), sh = Math.min(h - 12, sw * 0.7); drawSky(g.hud, g.colors, w - sw - 8, 8, sw, sh); }
+  } else if (pol.sub === "malus") {
+    S3.discs.forEach((d, i) => { disc3(g, `disc${i}`, d); g.stand(`discStand${i}`, { x: d.x, top: d.y + 48 }); });
+    if (S3.src) { g.sphere("lamp", { at: [S3.src.x, S3.src.y, 0], r: 12, color: "#fde047", emissive: 1.2 }); g.glow("lampGlow", { at: [S3.src.x, S3.src.y, 0], r: 34, opacity: 0.8 }); g.stand("lampStand", { x: S3.src.x, top: S3.src.y + 12 }); }
+    S3.beams.forEach((b, i) => g.cyl(`beam${i}`, { at: [(b.a + b.b) / 2, b.y, 0], r: 6, len: b.b - b.a, axis: "x", color: "#fde047", opacity: 0.06 + 0.4 * b.I, emissive: 0.9 }));
+    S3.ef.forEach((f, i) => {
+      const n = 14, kx = TAU / 46;
+      for (let k = 0; k <= n; k++) {
+        const x = f.x0 + ((f.x1 - f.x0) * k) / n, sn = Math.sin(kx * x - ui.t * 6);
+        const angs = f.unpol ? [0, 60, 120].map((a) => a + ((k * 37) % 180)) : [f.ang];
+        angs.forEach((a, j) => {
+          const L = 40 * f.amp * sn; if (Math.abs(L) < 1.5) return;
+          g.rod(`ef${i}_${k}_${j}`, [x, f.y, 0], [x, f.y - Math.cos(a * DEG) * L, Math.sin(a * DEG) * L], { r: 0.9, color: "#ea580c", emissive: 0.6 });
+        });
+      }
+    });
+    S3.meters.forEach((m, i) => { meter3(g, `meter${i}`, m); g.stand(`meterStand${i}`, { x: m.x + 7, top: m.y + 36 }); });
+    g.rail("rail", { x0: 6, x1: w - 6 });
+  } else {
+    const oy = brewG.oy ?? h * 0.6, D = h * 0.5;
+    g.box("glass", { at: [w / 2, (oy + h) / 2, 0], size: [w, h - oy, D], color: "#7dd3fc", opacity: 0.1 + clamp((pol.n - 1) / 1.5, 0, 1) * 0.34 });
+    g.box("boundary", { at: [w / 2, oy, 0], size: [w, 1.2, D], color: g.colors.dark ? "#e2e8f0" : "#64748b", opacity: 0.16 });
+    if (brewG.src) g.laser("src", { tip: brewG.src, dx: Math.sin(brewG.a), dy: Math.cos(brewG.a) });
+    S3.discs.forEach((d, i) => disc3(g, `disc${i}`, d));
+    S3.meters.forEach((m, i) => meter3(g, `meter${i}`, m));
+  }
+}
+const view3d = () => {
+  if (ui.mode === "prism") return { key: "prism", plane: "h", az: -0.16, el: 1.08, bg: "#0b1220", tableColor: "#1e293b", ambient: 0.8 };
+  if (ui.mode === "rainbow") return { key: "bow", plane: "v", az: -0.3, el: 0.16, bg: "#0b1220", table: false };
+  if (pol.sub === "malus") return { key: "malus", plane: "v", az: -0.6, el: 0.3 };
+  return { key: "brew", plane: "v", az: -0.5, el: 0.3, table: false };
+};
+r3 = attach3D(stage, { frame: frame3d, view: view3d });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -442,8 +554,8 @@ const ptr = (e) => { const r = canvas.getBoundingClientRect(); return { px: e.cl
 function hitTest(px, py) {
   if (ui.mode === "prism") { const gm = prismGeom(); if (Math.hypot(px - SX(gm.src.x), py - SY(gm.src.y)) < 26) return "src"; }
   else if (ui.mode === "rainbow") { if (px < drop.cx - drop.R * 0.9 && Math.abs(py - drop.cy) < drop.R * 1.05) return "ray"; }
-  else if (pol.sub === "malus") { for (const d of discs) if (Math.abs(px - d.x) < 24 && Math.abs(py - stage.h * 0.46) < 52) return "disc:" + d.key; }
-  else { if (brewG.disc && Math.hypot(px - brewG.disc.x, py - brewG.disc.y) < 40) return "bdisc"; if (brewG.src && Math.hypot(px - brewG.src[0], py - brewG.src[1]) < 30) return "bsrc"; }
+  else if (pol.sub === "malus") { for (const d of discs) if (Math.abs(px - d.x) < (r3?.on ? 40 : 24) && Math.abs(py - stage.h * 0.46) < 52) return "disc:" + d.key; }
+  else { if (brewG.disc && Math.hypot(px - brewG.disc.x, py - brewG.disc.y) < (r3?.on ? 52 : 40)) return "bdisc"; if (brewG.src && Math.hypot(px - brewG.src[0], py - brewG.src[1]) < 30) return "bsrc"; }
   return null;
 }
 canvas.addEventListener("pointerdown", (e) => {

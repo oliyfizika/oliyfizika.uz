@@ -8,6 +8,7 @@
 
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, angleArc, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { attach3D } from "./sim3d.js";
 import * as P from "./reflection-physics.js";
 import { traceRay } from "./optics-physics.js";
 import * as G from "./reflection-plots.js";
@@ -26,6 +27,7 @@ const refr = { n1: 1, n2: 1.5, alpha: 40 };
 const body = { obj: "slab", entry: "flat", alpha: 40, n: 1.5, t: 5, A: 60, B: 45, unknown: false, revealed: false, nHidden: 1.57, pts: [] };
 const mir = { kind: "plane", d: 6, eye: { x: -8, y: 5.5 }, phi: 60, pos: 50, R: 20, sd: 30, h: 3 };
 let presetId = null;
+let r3 = null; // 3D ko‘rinish (sim3d.js): r3.on — jismlar hajmli modellar, 2D qatlamda faqat nurlar, burchaklar va yorliqlar
 
 const nBody = () => (body.unknown && (body.obj === "slab" || body.obj === "semi") ? body.nHidden : body.n);
 const hidden = () => body.unknown && !body.revealed && (body.obj === "slab" || body.obj === "semi");
@@ -117,11 +119,13 @@ function drawRefr(ctx, { w, h, colors: c }) {
   const ox = w / 2, oy = h / 2, { n1, n2 } = refr;
   const r = P.snell(n1, n2, refr.alpha);
   const tint = (n) => 0.05 + ((n - 1) / 1.5) * (c.dark ? 0.28 : 0.22);
-  ctx.save(); ctx.fillStyle = c.primary; ctx.globalAlpha = tint(n1); ctx.fillRect(0, 0, w, oy); ctx.globalAlpha = tint(n2); ctx.fillRect(0, oy, w, h - oy); ctx.restore();
-  ctx.save(); ctx.strokeStyle = c.grid; ctx.lineWidth = 1; ctx.beginPath();
-  for (let x = ox % 32; x < w; x += 32) { ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, h); }
-  for (let y = oy % 32; y < h; y += 32) { ctx.moveTo(0, y + 0.5); ctx.lineTo(w, y + 0.5); }
-  ctx.stroke(); ctx.restore();
+  if (!r3?.on) {
+    ctx.save(); ctx.fillStyle = c.primary; ctx.globalAlpha = tint(n1); ctx.fillRect(0, 0, w, oy); ctx.globalAlpha = tint(n2); ctx.fillRect(0, oy, w, h - oy); ctx.restore();
+    ctx.save(); ctx.strokeStyle = c.grid; ctx.lineWidth = 1; ctx.beginPath();
+    for (let x = ox % 32; x < w; x += 32) { ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, h); }
+    for (let y = oy % 32; y < h; y += 32) { ctx.moveTo(0, y + 0.5); ctx.lineTo(w, y + 0.5); }
+    ctx.stroke(); ctx.restore();
+  }
   ctx.save(); ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(w, oy); ctx.stroke();
   ctx.strokeStyle = c.text3; ctx.lineWidth = 1.25; ctx.setLineDash([6, 6]); ctx.beginPath(); ctx.moveTo(ox, 10); ctx.lineTo(ox, h - 10); ctx.stroke(); ctx.restore();
   const ray = c.warning, a = r.a, sinA = Math.sin(a), cosA = Math.cos(a);
@@ -227,7 +231,7 @@ function drawBody(ctx, stage) {
   fit(cw, ch, ...sc.bounds);
   const n = nBody();
   // jism
-  sc.shapes.forEach((s) => {
+  if (!r3?.on) sc.shapes.forEach((s) => {
     ctx.save(); ctx.beginPath();
     s.edges.forEach((e, i) => { if (i === 0) ctx.moveTo(SX(e.a.x), SY(e.a.y)); ctx.lineTo(SX(e.b.x), SY(e.b.y)); });
     ctx.closePath(); ctx.fillStyle = c.primary; ctx.globalAlpha = 0.07 + clamp((n - 1) / 1.5, 0, 1) * (c.dark ? 0.22 : 0.16); ctx.fill();
@@ -308,8 +312,10 @@ function drawBody(ctx, stage) {
   }
   // manba
   const src = { x: sc.H.x - sc.dir.x * (body.obj === "fiber" ? 4.5 : body.obj === "semi" ? 11.5 : 7), y: sc.H.y - sc.dir.y * (body.obj === "fiber" ? 4.5 : body.obj === "semi" ? 11.5 : 7) };
-  ctx.save(); ctx.fillStyle = c.warning; ctx.shadowColor = c.warning; ctx.shadowBlur = 10; ctx.beginPath(); ctx.arc(SX(src.x), SY(src.y), 7, 0, TAU); ctx.fill(); ctx.restore();
+  bodySrc = { x: SX(src.x), y: SY(src.y), dx: sc.dir.x, dy: -sc.dir.y };
+  if (!r3?.on) { ctx.save(); ctx.fillStyle = c.warning; ctx.shadowColor = c.warning; ctx.shadowBlur = 10; ctx.beginPath(); ctx.arc(SX(src.x), SY(src.y), 7, 0, TAU); ctx.fill(); ctx.restore(); }
 }
+let bodySrc = null;
 /** Hodisa nuqtasiga kelgan nur yo'nalishi. */
 function segDirInto(tr, e) {
   for (const g of tr.segs) if (Math.hypot(g.b.x - e.p.x, g.b.y - e.p.y) < 1e-9) { const dx = g.b.x - g.a.x, dy = g.b.y - g.a.y, l = Math.hypot(dx, dy); if (l > 0) return { x: dx / l, y: dy / l }; }
@@ -331,8 +337,8 @@ function planeGeom() {
 function drawPlane(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   fit(cw, ch, -15, 13, -8, 8);
-  const g = planeGeom();
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.fillRect(SX(0), 0, cw - SX(0), ch); ctx.restore();
+  const g = planeGeom(), d3 = !!r3?.on;
+  if (!d3) { ctx.save(); ctx.fillStyle = c.bg2; ctx.fillRect(SX(0), 0, cw - SX(0), ch); ctx.restore(); }
   tag(ctx, "ko‘zgu orti", SX(0) + 12, 16, { color: c.text3, bg: c.bg2, font: SMALL });
   // dasta: uchidan 6 nur
   for (let k = 0; k < 5; k++) {
@@ -343,7 +349,7 @@ function drawPlane(ctx, stage) {
     line(ctx, Pk, { x: Pk.x - (dx / l) * L, y: Pk.y + (dy / l) * L }, "#f59e0b", 1, null, 0.3);
     line(ctx, Pk, g.I, "#f59e0b", 1, [3, 4], 0.25);
   }
-  hatch(ctx, c, { x: 0, y: PLANE.y0 }, { x: 0, y: PLANE.y1 }, { x: 1, y: 0 });
+  if (!d3) hatch(ctx, c, { x: 0, y: PLANE.y0 }, { x: 0, y: PLANE.y1 }, { x: 1, y: 0 });
   // ko'zga boradigan nurlar
   if (g.okTip) {
     line(ctx, g.O, g.Pm, c.warning, 2.6); line(ctx, g.Pm, g.E, c.warning, 2.6); line(ctx, g.Pm, g.I, c.warning, 1.5, [6, 5], 0.8);
@@ -355,8 +361,7 @@ function drawPlane(ctx, stage) {
     }
   }
   if (g.Pb.y >= PLANE.y0 && g.Pb.y <= PLANE.y1) { line(ctx, g.Ob, g.Pb, c.warning, 1.6, null, 0.6); line(ctx, g.Pb, g.E, c.warning, 1.6, null, 0.6); line(ctx, g.Pb, g.Ib, c.warning, 1.2, [6, 5], 0.5); }
-  objArrowW(ctx, -mir.d, PLANE.base, PLANE.tip, c.warning, false, true);
-  objArrowW(ctx, mir.d, PLANE.base, PLANE.tip, c.special, true, false, 0.85);
+  if (!d3) { objArrowW(ctx, -mir.d, PLANE.base, PLANE.tip, c.warning, false, true); objArrowW(ctx, mir.d, PLANE.base, PLANE.tip, c.special, true, false, 0.85); }
   tag(ctx, "buyum", SX(-mir.d), SY(PLANE.base) + 14, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   tag(ctx, "mavhum tasvir", SX(mir.d), SY(PLANE.base) + 14, { color: c.special, bg: c.bg2, align: "center", font: SMALL });
   // masofalar
@@ -364,7 +369,7 @@ function drawPlane(ctx, stage) {
   line(ctx, { x: -mir.d, y: yd }, { x: 0, y: yd }, c.text2, 1.2); line(ctx, { x: 0, y: yd }, { x: mir.d, y: yd }, c.special, 1.2);
   tag(ctx, `d = ${fmt(mir.d, 1)} cm`, SX(-mir.d / 2), SY(yd) + 12, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   tag(ctx, `d′ = ${fmt(mir.d, 1)} cm`, SX(mir.d / 2), SY(yd) + 12, { color: c.special, bg: c.bg2, align: "center", font: SMALL });
-  eyeIcon(ctx, c, SX(g.E.x), SY(g.E.y), 1);
+  if (!d3) eyeIcon(ctx, c, SX(g.E.x), SY(g.E.y), 1);
   if (!g.okTip) tag(ctx, "Ko‘z tasvirni ko‘rmaydi — nur ko‘zgu chetidan o‘tib ketadi", cw / 2 - 40, ch - 16, { color: c.danger, bg: c.bg, align: "center", font: MID });
 }
 
@@ -381,16 +386,15 @@ function drawTwo(ctx, stage) {
   ctx.save(); ctx.fillStyle = c.primary; ctx.globalAlpha = 0.06; ctx.beginPath(); ctx.moveTo(SX(0), SY(0)); ctx.arc(SX(0), SY(0), Lm * view.s, 0, -phi, true); ctx.closePath(); ctx.fill(); ctx.restore();
   ctx.save(); ctx.strokeStyle = c.border; ctx.setLineDash([3, 5]); ctx.beginPath(); ctx.arc(SX(0), SY(0), r * view.s, 0, TAU); ctx.stroke(); ctx.restore();
   // ko'zgular
-  hatch(ctx, c, { x: 0, y: 0 }, { x: Lm, y: 0 }, { x: 0, y: -1 });
-  hatch(ctx, c, { x: 0, y: 0 }, { x: Lm * Math.cos(phi), y: Lm * Math.sin(phi) }, { x: -Math.sin(phi), y: Math.cos(phi) });
+  const d3 = !!r3?.on;
+  if (!d3) { hatch(ctx, c, { x: 0, y: 0 }, { x: Lm, y: 0 }, { x: 0, y: -1 }); hatch(ctx, c, { x: 0, y: 0 }, { x: Lm * Math.cos(phi), y: Lm * Math.sin(phi) }, { x: -Math.sin(phi), y: Math.cos(phi) }); }
   if (ui.show.angles) arcBetween(ctx, { x: 0, y: 0 }, { x: 1, y: 0 }, { x: Math.cos(phi), y: Math.sin(phi) }, 26, c.primary, "φ");
   imgs.forEach((im) => {
     const px = SX(im.p.x), py = SY(im.p.y);
-    ctx.save(); ctx.globalAlpha = Math.max(0.35, 0.85 - im.order * 0.08); candle(ctx, px, py, 11); ctx.fillStyle = c.special; ctx.beginPath(); ctx.arc(px, py, 4, 0, TAU); ctx.fill(); ctx.restore();
+    if (!d3) { ctx.save(); ctx.globalAlpha = Math.max(0.35, 0.85 - im.order * 0.08); candle(ctx, px, py, 11); ctx.fillStyle = c.special; ctx.beginPath(); ctx.arc(px, py, 4, 0, TAU); ctx.fill(); ctx.restore(); }
     tag(ctx, String(imgs.indexOf(im) + 1), px + 9, py - 11, { color: c.special, bg: c.bg, font: "700 10px Inter, system-ui, sans-serif", pad: 4 });
   });
-  candle(ctx, SX(O.x), SY(O.y), 14);
-  ctx.save(); ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(SX(O.x), SY(O.y), 5.5, 0, TAU); ctx.fill(); ctx.restore();
+  if (!d3) { candle(ctx, SX(O.x), SY(O.y), 14); ctx.save(); ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(SX(O.x), SY(O.y), 5.5, 0, TAU); ctx.fill(); ctx.restore(); }
   tag(ctx, "buyum", SX(O.x), SY(O.y) + 16, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   tag(ctx, `Tasvirlar soni: ${imgs.length}`, 12, 16, { color: c.special, bg: c.bg2, font: "700 11px Inter, system-ui, sans-serif" });
 }
@@ -413,8 +417,8 @@ function sphRays() {
 function drawSph(ctx, stage) {
   const { w: cw, h: ch, colors: c } = stage;
   sphView(cw, ch);
-  const { R, F, d, h, rays } = sphRays(), Hm = 9, img = P.sphericalMirror(R, d);
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.fillRect(MX(0), 0, cw - MX(0), ch); ctx.restore();
+  const { R, F, d, h, rays } = sphRays(), Hm = 9, img = P.sphericalMirror(R, d), d3 = !!r3?.on;
+  if (!d3) { ctx.save(); ctx.fillStyle = c.bg2; ctx.fillRect(MX(0), 0, cw - MX(0), ch); ctx.restore(); }
   ctx.save(); ctx.strokeStyle = c.borderStrong; ctx.setLineDash([6, 4]); ctx.beginPath(); ctx.moveTo(MX(view.x0), MY(0)); ctx.lineTo(MX(view.x1), MY(0)); ctx.stroke(); ctx.restore();
   // F va C belgilari
   const sgn = R > 0 ? -1 : 1;
@@ -433,29 +437,33 @@ function drawSph(ctx, stage) {
   });
   // ko'zgu
   const px = MX(0), yt = MY(Hm), yb = MY(-Hm), bend = R > 0 ? -10 : 10;
-  ctx.save(); ctx.strokeStyle = c.text; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(px + bend, yt); ctx.quadraticCurveTo(px - bend, (yt + yb) / 2, px + bend, yb); ctx.stroke();
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1.2; ctx.beginPath();
-  for (let k = 0; k <= 14; k++) { const t = k / 14, yy = yt + (yb - yt) * t, xs = (1 - t) * (1 - t) * (px + bend) + 2 * t * (1 - t) * (px - bend) + t * t * (px + bend); ctx.moveTo(xs + 2, yy); ctx.lineTo(xs + 9, yy - 6); }
-  ctx.stroke(); ctx.restore();
+  if (!d3) {
+    ctx.save(); ctx.strokeStyle = c.text; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(px + bend, yt); ctx.quadraticCurveTo(px - bend, (yt + yb) / 2, px + bend, yb); ctx.stroke();
+    ctx.strokeStyle = c.text3; ctx.lineWidth = 1.2; ctx.beginPath();
+    for (let k = 0; k <= 14; k++) { const t = k / 14, yy = yt + (yb - yt) * t, xs = (1 - t) * (1 - t) * (px + bend) + 2 * t * (1 - t) * (px - bend) + t * t * (px + bend); ctx.moveTo(xs + 2, yy); ctx.lineTo(xs + 9, yy - 6); }
+    ctx.stroke(); ctx.restore();
+  }
   tag(ctx, R > 0 ? "botiq ko‘zgu" : "qavariq ko‘zgu", px, yt - 12, { color: c.text, bg: c.bg, align: "center", font: "700 10.5px Inter, system-ui, sans-serif" });
   // buyum va tasvir
-  ctx.save(); ctx.strokeStyle = c.warning; ctx.fillStyle = c.warning; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(MX(-d), MY(0)); ctx.lineTo(MX(-d), MY(h)); ctx.stroke(); ctx.beginPath(); ctx.moveTo(MX(-d), MY(h)); ctx.lineTo(MX(-d) - 5, MY(h) + 8); ctx.lineTo(MX(-d) + 5, MY(h) + 8); ctx.closePath(); ctx.fill(); ctx.restore();
-  candle(ctx, MX(-d), MY(h) - 6, 12);
+  if (!d3) {
+    ctx.save(); ctx.strokeStyle = c.warning; ctx.fillStyle = c.warning; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(MX(-d), MY(0)); ctx.lineTo(MX(-d), MY(h)); ctx.stroke(); ctx.beginPath(); ctx.moveTo(MX(-d), MY(h)); ctx.lineTo(MX(-d) - 5, MY(h) + 8); ctx.lineTo(MX(-d) + 5, MY(h) + 8); ctx.closePath(); ctx.fill(); ctx.restore();
+    candle(ctx, MX(-d), MY(h) - 6, 12);
+  }
   tag(ctx, "buyum", MX(-d), MY(0) + 18, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
   if (img.inf) tag(ctx, "Buyum fokusda: qaytgan nurlar parallel — tasvir yo‘q", cw / 2, 16, { color: c.special, bg: c.bg2, align: "center", font: MID });
   else {
     const xi = -img.f, Hh = img.m * h;
     if (xi > view.x0 && xi < view.x1 && Math.abs(Hh) < 11) {
-      ctx.save(); ctx.strokeStyle = c.special; ctx.fillStyle = c.special; ctx.lineWidth = 3; if (!img.real) ctx.setLineDash([5, 4]);
+      if (!d3) { ctx.save(); ctx.strokeStyle = c.special; ctx.fillStyle = c.special; ctx.lineWidth = 3; if (!img.real) ctx.setLineDash([5, 4]);
       ctx.beginPath(); ctx.moveTo(MX(xi), MY(0)); ctx.lineTo(MX(xi), MY(Hh)); ctx.stroke(); ctx.setLineDash([]);
-      const dr = Hh >= 0 ? 1 : -1; ctx.beginPath(); ctx.moveTo(MX(xi), MY(Hh)); ctx.lineTo(MX(xi) - 5, MY(Hh) + 8 * dr); ctx.lineTo(MX(xi) + 5, MY(Hh) + 8 * dr); ctx.closePath(); ctx.fill(); ctx.restore();
+      const dr = Hh >= 0 ? 1 : -1; ctx.beginPath(); ctx.moveTo(MX(xi), MY(Hh)); ctx.lineTo(MX(xi) - 5, MY(Hh) + 8 * dr); ctx.lineTo(MX(xi) + 5, MY(Hh) + 8 * dr); ctx.closePath(); ctx.fill(); ctx.restore(); }
       tag(ctx, img.real ? "haqiqiy tasvir" : "mavhum tasvir", MX(xi), MY(0) + (Hh > 0 ? 16 : -16), { color: c.special, bg: c.bg, align: "center", font: SMALL });
     } else tag(ctx, `Tasvir maydondan tashqarida (f = ${fmt(img.f, 0)} cm)`, cw - 12, 16, { color: c.special, bg: c.bg2, align: "right", font: MID });
   }
 }
 
 function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
+  if (!r3?.on) { ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h); }
   if (ui.mode === "refr") drawRefr(ctx, stage);
   else if (ui.mode === "body") drawBody(ctx, stage);
   else if (mir.kind === "plane") drawPlane(ctx, stage);
@@ -467,6 +475,68 @@ const heights = (cw) => {
   return { stage: Math.round(clamp(Math.min(cw * 0.44, vh * 0.44), 250, 350)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
 const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+
+/* ------------------------------------------------------------------ 3D sahna */
+
+const GLASS = "#38bdf8", SILVER = "#dbe4ee";
+function frame3d(g) {
+  const w = g.w, h = g.h, k = view.s, c = g.colors;
+  if (ui.mode === "refr") {
+    const oy = h / 2, D = h * 0.5;
+    const op = (n) => 0.06 + ((n - 1) / 1.5) * 0.34;
+    if (refr.n1 > 1.005) g.box("m1", { at: [w / 2, oy / 2, 0], size: [w, oy, D], color: GLASS, opacity: op(refr.n1) });
+    if (refr.n2 > 1.005) g.box("m2", { at: [w / 2, (oy + h) / 2, 0], size: [w, h - oy, D], color: GLASS, opacity: op(refr.n2) });
+    g.box("boundary", { at: [w / 2, oy, 0], size: [w, 1.2, D], color: c.dark ? "#e2e8f0" : "#64748b", opacity: 0.16 });
+    const a = refr.alpha * DEG;
+    g.laser("laser", { tip: [handle.x - Math.sin(a) * 12, handle.y - Math.cos(a) * 12], dx: Math.sin(a), dy: Math.cos(a) });
+  } else if (ui.mode === "body") {
+    if (!bodyCache) return;
+    const H = 26, n = nBody();
+    bodyCache.sc.shapes.forEach((s, i) => {
+      const pts = s.edges.map((e) => [SX(e.a.x), SY(e.a.y)]);
+      g.extrude(`glass${i}`, { pts, depth: body.obj === "fiber" ? Math.max(8, FIBER.w * k) : H, z: (body.obj === "fiber" ? Math.max(8, FIBER.w * k) : H) / 2, color: GLASS, opacity: 0.16 + clamp((n - 1) / 1.5, 0, 1) * 0.3, glass: true });
+    });
+    if (bodySrc) g.laser("laser", { tip: [bodySrc.x, bodySrc.y], dx: bodySrc.dx, dy: bodySrc.dy, d: 7, len: 40 });
+  } else if (mir.kind === "plane") {
+    const gm = planeGeom(), D = h * 0.5;
+    g.box("mirror", { at: [SX(0) + 2, SY(0), 0], size: [4, (PLANE.y1 - PLANE.y0) * k, D], color: SILVER, opacity: 0.5, metal: 0.25, rough: 0.2 });
+    g.box("mirrorBack", { at: [SX(0) + 5.5, SY(0), 0], size: [1.5, (PLANE.y1 - PLANE.y0) * k + 6, D + 6], color: "#475569", opacity: 0.35 });
+    g.stand("mirrorStand", { x: SX(0) + 3, top: SY(PLANE.y0) });
+    g.candle("obj", { x: SX(-mir.d), base: SY(PLANE.base), tip: SY(PLANE.tip) + 8, r: 5 });
+    g.cyl("objBase", { at: [SX(-mir.d), SY(PLANE.base) + 2, 0], r: 13, len: 4, axis: "y", color: "#64748b" });
+    g.candle("img", { x: SX(mir.d), base: SY(PLANE.base), tip: SY(PLANE.tip) + 8, r: 5, color: "#a78bfa", opacity: 0.45, glow: false });
+    g.eye("eye", { at: [SX(gm.E.x), SY(gm.E.y), 0], fx: gm.okTip ? SX(gm.Pm.x) - SX(gm.E.x) : 1, fy: gm.okTip ? SY(gm.Pm.y) - SY(gm.E.y) : 0 });
+  } else if (mir.kind === "two") {
+    const { O, imgs } = twoGeom(), phi = mir.phi * DEG, Lm = 8.2, Hm = 54;
+    const wall = (key, ang) => g.box(key, { at: [SX((Lm / 2) * Math.cos(ang)), SY((Lm / 2) * Math.sin(ang)), Hm / 2], size: [Lm * k, 3, Hm], rot: [0, 0, ang], color: SILVER, opacity: 0.62, metal: 0.25, rough: 0.2 });
+    wall("m1", 0); wall("m2", phi);
+    const stick = (key, p, color, opacity) => {
+      g.cyl(key, { at: [SX(p.x), SY(p.y), 13], r: 4.5, len: 26, axis: "z", color, opacity, rough: 0.7 });
+      g.sphere(key + "f", { at: [SX(p.x), SY(p.y), 33], r: 5, color: opacity < 1 ? color : "#fde047", emissive: 1.1, opacity, scale: [0.75, 0.75, 1.6] });
+    };
+    stick("o", O, "#f59e0b", 1);
+    g.glow("oGlow", { at: [SX(O.x), SY(O.y), 33], r: 20, opacity: 0.7 });
+    imgs.forEach((im, i) => stick(`im${i}`, im.p, "#a78bfa", Math.max(0.28, 0.6 - im.order * 0.07)));
+  } else {
+    const { R, d, h: hh } = sphRays(), img = P.sphericalMirror(R, d), Hm = 9, px = MX(0), yt = MY(Hm), yb = MY(-Hm), bend = R > 0 ? -10 : 10, D = g.h * 0.42;
+    const front = [], backPts = [];
+    for (let i = 0; i <= 16; i++) { const t = i / 16, yy = yt + (yb - yt) * t, xs = (1 - t) * (1 - t) * (px + bend) + 2 * t * (1 - t) * (px - bend) + t * t * (px + bend); front.push([xs, yy]); backPts.push([xs + 5, yy]); }
+    g.extrude("sphMirror", { pts: front.concat(backPts.reverse()), depth: D, color: SILVER, metal: 0.25, rough: 0.2 });
+    g.stand("sphStand", { x: px + 4, top: yb });
+    g.candle("obj", { x: MX(-d), base: MY(0), tip: MY(hh) + 8, r: 4.5 });
+    if (!img.inf) {
+      const xi = -img.f, Hh = img.m * hh;
+      if (xi > view.x0 && xi < view.x1 && Math.abs(Hh) < 11) g.candle("img", { x: MX(xi), base: MY(0), tip: MY(Hh) + (Hh >= 0 ? 8 : -8), r: 4.5, color: "#a78bfa", opacity: img.real ? 0.75 : 0.42, glow: false });
+    }
+  }
+}
+const view3d = () => {
+  if (ui.mode === "refr") return { key: "refr", plane: "v", az: -0.5, el: 0.3, table: false };
+  if (ui.mode === "body") return { key: "body", plane: "h", az: -0.22, el: 0.9 };
+  if (mir.kind === "two") return { key: "two", plane: "h", az: -0.22, el: 0.85 };
+  return { key: mir.kind, plane: "v", az: mir.kind === "plane" ? -0.62 : -0.5, el: 0.3 };
+};
+r3 = attach3D(stage, { frame: frame3d, view: view3d });
 
 /* ------------------------------------------------------------------ Grafiklar */
 

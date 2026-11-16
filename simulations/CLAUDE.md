@@ -52,6 +52,7 @@ Umumiy yadro:
 | `labgear.js` | Maktab lab asboblari chizmasi: multimetr, reostat, g‘altak, kondensator, elektron tarozi va h.k. |
 | `lab-qr.js` | Hisobot uchun QR kod |
 | `sim-fullscreen.js` | Har `.sim-stage` ga «To‘liq ekran» tugmasi (Fullscreen API + iOS uchun CSS fallback). `app-shell.js` `body.of-sim-page` da o‘zi yuklaydi; `createStage` balandlikni `fullscreenHeight()` bilan hisoblaydi. O‘z kanvas o‘lchamini hisoblaydigan sahifa (masalan `orbitals.js`) ham `fullscreenHeight()` ni chaqirishi kerak |
+| `sim3d.js` | `attach3D(stage, { frame, view, flat })` — mavjud 2D sahnaga 3D ko‘rinish (Three.js, `assets/vendor/three/`, build yo‘q). 2D kanvas (nurlar, burchaklar, yozuvlar) shaffof «varaq» bo‘lib sahnaga qo‘yiladi, jismlar `frame(g)` da `g.box/sphere/cyl/rod/cone/panel/lens/extrude/laser/candle/stand/rail/custom` bilan quriladi (koordinata — 2D kanvas pikseli `[px, py, d]`); `g.hud` — sahna ustidagi tekis qatlam. Ko‘rsatkich hodisalari varaqqa proyeksiyalanib 2D kanvasga uzatiladi, shuning uchun sudrash kodi o‘zgarmaydi; bo‘sh joydan sudrash — kamerani aylantirish. 2D chizish funksiyalarida jism chizmasi `if (!r3?.on)` bilan o‘raladi. «3D / 2D» tugmasi (`localStorage of-sim-view`), WebGL bo‘lmasa — 2D. Hisob-kitob va grafiklar o‘zgarmaydi. Hozircha: optika oilasi (`light`, `refraction`, `lens`, `diffraction`, `dispersion`, `photometry`) |
 | `sim-lab.css` | 2.0 maket: `.sim-head`, `.sim-layout`, `.sim-stage`, `.sim-panel`, `.sim-readouts`, `.sim-explain`, `.sim-bin` |
 
 ## Virtual laboratoriya (lab ishi) qoidalari
