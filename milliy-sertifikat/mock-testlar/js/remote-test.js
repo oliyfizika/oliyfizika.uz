@@ -12,11 +12,12 @@ import { fb } from "./session-service.js";
 const DEFAULT_FORMULA = { pages: ["assets/formulas/formula-sheet-1.png", "assets/formulas/formula-sheet-2.png"] };
 const denied = (e) => e?.code === "permission-denied";
 
-export async function listImportedTests() {
+/** Import qilingan mocklar. draft: true bo'lganlar (admin hali sessiyaga qo'ymagan) faqat admin ro'yxatida. */
+export async function listImportedTests({ includeDrafts = false } = {}) {
   const { db, fs } = await fb();
   try {
     const snap = await fs.getDocs(fs.collection(db, "msMockTests"));
-    return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    return snap.docs.map((d) => ({ id: d.id, ...d.data() })).filter((m) => includeDrafts || m.draft !== true);
   } catch (e) {
     console.warn("[ms] import qilingan testlar:", e?.code || e);
     return [];

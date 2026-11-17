@@ -66,7 +66,7 @@ async function ctxFor(uid, when = T0) {
   await page.waitForSelector("[data-imported]");
   await page.setInputFiles("[data-bundle]", BUNDLE);
   await page.waitForFunction(() => /Tekshirildi/.test(document.querySelector("[data-bundle-info]").textContent), null, { timeout: 10000 });
-  ok("Admin: fayl tekshirildi", /Mock №16 — 45 savol/.test(await page.textContent("[data-bundle-info]")), await page.textContent("[data-bundle-info]"));
+  ok("Admin: fayl tekshirildi", /1 ta mock \(№16\) — jami 45 savol/.test(await page.textContent("[data-bundle-info]")), await page.textContent("[data-bundle-info]"));
   await page.click("[data-import]");
   await page.click(".of-modal__actions .of-btn >> nth=0");
   await page.waitForFunction(() => /import qilindi/.test(document.querySelector("[data-bundle-info]").textContent), null, { timeout: 30000 });
@@ -76,7 +76,8 @@ async function ctxFor(uid, when = T0) {
      && Object.keys(d).filter((k) => k.includes("/figures/")).length > 0, `${Object.keys(d).length} hujjat`);
   ok("Savollar hujjatida javob YO‘Q", !JSON.stringify(qd).includes('"answer"'));
   ok("Meta: yopiq (reviewOpen false, oyna yo‘q)", d[`msMockTests/${TID}`].reviewOpen === false && !d[`msMockTests/${TID}`].openFrom);
-  ok("Admin: tanlov ro‘yxatida Mock №16 (import)", /Mock №16 .*\(import\)/.test(await page.textContent("#msTest")));
+  ok("Meta: draft holida", d[`msMockTests/${TID}`].draft === true);
+  ok("Admin: tanlov ro‘yxatida Mock №16 (import, draft)", /Mock №16 .*\(import, draft\)/.test(await page.textContent("#msTest")));
   ok("Erkin mashq ro‘yxatida import qilingan mock yo‘q", !(await page.$('[data-practice] input[value="mock-test-16"]')));
   ok("Admin sahifasida JS xatosi yo‘q", page.errs.length === 0, page.errs.join(" | "));
   await ctx.close();
@@ -88,7 +89,7 @@ async function ctxFor(uid, when = T0) {
   await page.goto(B + "milliy-sertifikat/mock-testlar/");
   await page.waitForSelector("[data-mock-list]:not([aria-busy])", { timeout: 20000 });
   const c16 = await page.evaluate(() => [...document.querySelectorAll("[data-mock-list] article")].find((a) => a.textContent.includes("№16"))?.innerText || "");
-  ok("Katalog: Mock №16 — yopiq, 45 savol", /Yopiq/.test(c16) && /45/.test(c16), c16.replace(/\s+/g, " ").slice(0, 100));
+  ok("Katalog: draft Mock №16 ko‘rinmaydi", c16 === "", c16.replace(/\s+/g, " ").slice(0, 100));
   await page.goto(B + `milliy-sertifikat/mock-testlar/test.html?id=${TID}`);
   await page.waitForSelector("#messageScreen:not([hidden])", { timeout: 15000 });
   ok("Test sahifasi: yopiq xabari", /hozircha yopiq/.test(await page.textContent("#messageScreen")));
@@ -117,6 +118,7 @@ let SID = null;
   const meta = (await dump(`msMockTests/${TID}`))[`msMockTests/${TID}`];
   ok("Sessiya ochildi va test oynasi yozildi", !!SID && tsMs(meta.openFrom) === new Date("2026-12-01T04:30:00Z").getTime()
      && tsMs(meta.openUntil) === new Date("2026-12-01T13:00:00Z").getTime() + 130 * 60000, `${SID}`);
+  ok("Sessiya ochilgach draft olib tashlandi", meta.draft === false);
   await ctx.close();
 }
 
@@ -191,6 +193,11 @@ await post("__mock/clock", { iso: T1.toISOString() });
   const { ctx, page } = await ctxFor("admin1", T1);
   await page.goto(B + "admin/milliy-sertifikat-sessiyalar.html");
   await page.waitForSelector(`[data-finalize="${SID}"]`, { timeout: 20000 });
+  await page.click(`[data-qstats="${SID}"]`);
+  await page.waitForSelector(`[data-detail="${SID}"]:not([hidden]) table`, { timeout: 20000 });
+  const stx = await page.textContent(`[data-detail="${SID}"]`);
+  ok("Statistika: savollar jadvali (yakunlashdan oldin)", /savollar statistikasi/.test(stx) && /Javob berganlar: \d/.test(stx) && /O‘rtacha xom ball/.test(stx), (stx.match(/Javob berganlar[^%]*%/) || [stx.slice(0, 200)])[0].replace(/\s+/g, " "));
+  await page.click(`[data-qstats="${SID}"]`);
   await page.click(`[data-finalize="${SID}"]`);
   await page.click(".of-modal__actions .of-btn >> nth=0");
   await page.waitForSelector(`[data-detail="${SID}"]:not([hidden]) table`, { timeout: 20000 });
