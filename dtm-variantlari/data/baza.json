@@ -1,6 +1,6 @@
 {
 "title": "DTM variantlari — savollar bazasi",
-"count": 1458,
+"count": 1773,
 "topics": {
 "M": "Mexanika",
 "MF": "Molekulyar fizika",
@@ -19316,6 +19316,4159 @@
 ],
 "correct": 0,
 "src": "1929944"
+},
+{
+"id": "MS14_1-01",
+"topic": "E",
+"text": "Elektr sig‘imining birligi nima?",
+"answers": [
+"Kulon",
+"Farad",
+"Volt",
+"Amper"
+],
+"correct": 1,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-02",
+"topic": "A",
+"text": "Vodorod atomida 2-statsionar orbitadagi elektronning impulsi p ga teng. Uning 5-statsionar orbitadagi impulsini toping.",
+"answers": [
+"$\\dfrac{p}{5}$",
+"$\\dfrac{3p}{5}$",
+"$\\dfrac{2p}{5}$",
+"$\\dfrac{4p}{5}$"
+],
+"correct": 2,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-03",
+"topic": "MF",
+"text": "80 mol neon gazining massasini (kg) aniqlang.",
+"answers": [
+"0,8",
+"1,6",
+"1",
+"2"
+],
+"correct": 1,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-04",
+"topic": "M",
+"text": "Dengiz tubiga yuborilgan signal 0,2 s da qaytib qabul qilindi. Tovushning suvdagi tezligi 1500 m/s bo‘lsa, dengiz chuqurligini (m) toping.",
+"answers": [
+"90",
+"180",
+"300",
+"150"
+],
+"correct": 3,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-05",
+"topic": "E",
+"text": "Effektiv qiymati 2 A bo‘lgan o‘zgaruvchan tok aktiv qarshiligi 1,5 Ω bo‘lgan elektr zanjir uchlarida 4 V effektiv kuchlanish hosil qilinmoqda. Zanjirning quvvat koeffitsiyentini toping.",
+"answers": [
+"0,5",
+"0,75",
+"0,6",
+"0,45"
+],
+"correct": 1,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-06",
+"topic": "E",
+"text": "Argon gazida elektr yoyi hosil qilingan. Tok kuchi 14 A, yoyning quvvati 98 W bo‘lishi uchun elektrodlar orasida qanday kuchlanish yaratish zarur?",
+"answers": [
+"10",
+"15",
+"7",
+"14"
+],
+"correct": 2,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-07",
+"topic": "M",
+"text": "Motorli kema ikki shahar orasida qatnamoqda. U shaharlararo qatnashda oqim bo‘ylab suzishda 2 h, oqimga qarshi esa 3 h vaqt sarflaydi. Kema motori o‘chirilganda shaharlar arasini qancha vaqtda bosib o‘tadi?",
+"answers": [
+"2 h",
+"6 h",
+"10 h",
+"12 h"
+],
+"correct": 3,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-08",
+"topic": "M",
+"text": "Quyida garmonik tebranayotgan jism siljishining vaqtga bog‘lanish grafigi keltirilgan. Jism A nuqtadan B nuqtaga qancha vaqtda boradi?",
+"answers": [
+"10 s",
+"6 s",
+"8 s",
+"5 s"
+],
+"correct": 3,
+"image": "rasmlar/MS14_1-08.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-09",
+"topic": "E",
+"text": "Ikki musbat zaryadlardan birining miqdori 3 marta orttirilsa, ular orasidagi ta’sir kuchi qanday o‘zgaradi?",
+"answers": [
+"3 marta ortadi",
+"3 marta kamayadi",
+"o‘zgarmaydi",
+"9 marta ortadi"
+],
+"correct": 0,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-10",
+"topic": "E",
+"text": "Rasmda berilgan tokli o‘tkazgichlarda I₂ dan qanday masofada natijaviy magnit induksiyasi nolga teng bo‘ladi?",
+"answers": [
+"24 cm",
+"18 cm",
+"12 cm",
+"16 cm"
+],
+"correct": 1,
+"image": "rasmlar/MS14_1-10.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-11",
+"topic": "E",
+"text": "Rasmda berilgan elektr zanjirda 3-kalit ulansa, qaysi lampochkalar yonadi?",
+"answers": [
+"L₁ va L₄",
+"L₂ va L₄",
+"L₂ va L₃",
+"L₁ va L₃"
+],
+"correct": 0,
+"image": "rasmlar/MS14_1-11.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-12",
+"topic": "E",
+"text": "Qarshilikning termik koeffitsiyentining birligi nima?",
+"answers": [
+"K⁻¹ yoki °C⁻¹",
+"K yoki °C",
+"birligi yoq fizik kattalik",
+"faqat K⁻¹"
+],
+"correct": 0,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-13",
+"topic": "A",
+"text": "Neytron, foton, adron va vodorod atomi zarrachalarining qaysi biri vakuumda eng tez harakatlanadi?",
+"answers": [
+"neytron",
+"foton",
+"adron",
+"vodorod"
+],
+"correct": 1,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-14",
+"topic": "E",
+"text": "Rasmda berilgan elektr zanjirda 3-kalit ulansa, qaysi lampochkalar yonadi?",
+"answers": [
+"L₂ va L₄",
+"L₁ va L₃",
+"L₁ va L₄",
+"L₂ va L₃"
+],
+"correct": 2,
+"image": "rasmlar/MS14_1-14.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-15",
+"topic": "M",
+"text": "Rasmda bir xil m = 20 kg dan bo‘lgan jismlardan biri qiya tekislikda, ikkinchisi ko‘chmas blok orqali bir xil 300 N kuch bilan tortilmoqda. Qiya tekislik va blokdagi jismlarning tezlanishlari nisbatini $(a_1/a_2)$ aniqlang. Ishqalanish mavjud emas, $\\sin\\alpha = 0{,}6$.",
+"answers": [
+"3,6",
+"2",
+"1",
+"1,8"
+],
+"correct": 3,
+"image": "rasmlar/MS14_1-15.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-16",
+"topic": "M",
+"text": "Rasmda radiusi 20 cm bo‘lgan va sirpanish bilan dumalayotgan diskning holati tasvirlangan. Bunda disk A va B nuqtalarining yerga nisbatan tezligi mos ravishda 12 m/s va 14,4 km/h bo‘lsa, diskning burchak tezligini (rad/s) aniqlang.",
+"answers": [
+"10",
+"15",
+"20",
+"25"
+],
+"correct": 2,
+"image": "rasmlar/MS14_1-16.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-17",
+"topic": "A",
+"text": "Yarim yemirilish davri 2 h bo‘lgan preparatning yarim yemirilish doimiysi (1/h) topilsin. ln 2 ≈ 0,7.",
+"answers": [
+"0,35",
+"0,5",
+"0,65",
+"0,8"
+],
+"correct": 0,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-19",
+"topic": "M",
+"text": "Massasi 3 kg lik mushuk ov paytida (sichqon ovlayotgandurda) tezligini 2 m/s dan 10 m/s ga oshirdi. Bunda uning kinetik energiyasi qanchaga (J) ortgan?",
+"answers": [
+"144",
+"100",
+"72",
+"50"
+],
+"correct": 0,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-21",
+"topic": "E",
+"text": "Rasmga asosan tokli o‘tkazgichga ta‘sir etuvchi amper kuchining yo‘nalishini aniqlang.",
+"answers": [
+"o‘ngga",
+"chapga",
+"yuqoriga",
+"pastga"
+],
+"correct": 0,
+"image": "rasmlar/MS14_1-21.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-22",
+"topic": "E",
+"text": "Rasmda +2q zarrachaga ta‘sir etayotgan kuch 2F bo‘lsa, +3q zarrachaga ta‘sir etayotgan kuchni aniqlang.",
+"answers": [
+"34F/39",
+"68F/39",
+"68F/13",
+"34F/26"
+],
+"correct": 1,
+"image": "rasmlar/MS14_1-22.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-23",
+"topic": "E",
+"text": "O‘zgaruvchan tok zanjirida sig‘im qarshilik 6 Ω va induktiv qarshilik 11 Ω ga teng. Zanjirdagi quvvat koeffitsiyenti 0,8 ga teng bo‘lsa, zanjirdagi aktiv qarshilikni (Ω) toping.",
+"answers": [
+"5/3",
+"10/3",
+"20/3",
+"40/3"
+],
+"correct": 2,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-24",
+"topic": "M",
+"text": "Asos yuzasi 25 cm² bo‘lgan 10 g massali cho‘kmaydigan silindrik jism suvga botirilib qo‘yib yuborildi. Jism tebranishining siklik chastotasini (rad/s) aniqlang.",
+"answers": [
+"5",
+"50",
+"25",
+"10"
+],
+"correct": 1,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-25",
+"topic": "M",
+"text": "Mayatnik sinus qonuniga binoan 12 s davr va 20 cm amplituda bilan tebranmoqda. Mayatnik dastlabki 30 cm masofani necha sekundda o‘tadi?",
+"answers": [
+"5",
+"4",
+"6",
+"8"
+],
+"correct": 0,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-26",
+"topic": "E",
+"text": "Agar g‘altak 100 ta o‘ramga ega bo‘lganda, unda 120 V EyuK hosil bo‘lsa, uning ichida magnit oqimi 0,05 s davomida qanchaga (mWb) o‘zgaradi?",
+"answers": [
+"90",
+"30",
+"60",
+"80"
+],
+"correct": 2,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-27",
+"topic": "A",
+"text": "Agar to‘g‘ri burchakli parallelipepid x o‘qi bo‘ylab 0,8c tezlikda harakat qilsa qanday hajmda ko‘rinadi (cm³)?",
+"answers": [
+"91125",
+"82015",
+"75845",
+"121500"
+],
+"correct": 0,
+"image": "rasmlar/MS14_1-27.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-29",
+"topic": "E",
+"text": "Bir jinsli magnit maydonga tik uchib kirgan elektronning aylanish davri 8 ns bo‘lsa, magnit maydon induksiyasini aniqlang (mT).",
+"answers": [
+"4,5",
+"9",
+"12",
+"15"
+],
+"correct": 0,
+"src": "MS14_1"
+},
+{
+"id": "MS14_1-30",
+"topic": "M",
+"text": "Rasmdan foydalanib X jismning massasini (g) toping. L jism massasi K jism massasidan 4 marta katta. Bunda osma tarozining siljuvchi toshining massasi 8 g.",
+"answers": [
+"8",
+"10",
+"12",
+"6"
+],
+"correct": 0,
+"image": "rasmlar/MS14_1-30.png",
+"src": "MS14_1"
+},
+{
+"id": "MS14_2-01",
+"topic": "MF",
+"text": "Moddaing massasi 6 marta kamaytirilsa, uning molyar massasi qanday o‘zgaradi?",
+"answers": [
+"o‘zgarmaydi",
+"6 marta ortadi",
+"6 marta kamayadi",
+"36 marta ortadi"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-02",
+"topic": "M",
+"text": "Jism tezligi v = 5 + 10t [m/s] qonuniyat bo‘yicha o‘zgarmoqda. Uning 2 s dan keyingi oniy tezligini (m/s) aniqlang.",
+"answers": [
+"25",
+"20",
+"15",
+"5"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-03",
+"topic": "M",
+"text": "Poyezd 2 m/s tezlikda ketayotgan piyodani 15 s da quvib o‘tdi. 96 m li tunneldan esa 18 s da o‘tdi. Poyezdning uzunligi qanchaga (m) teng?",
+"answers": [
+"100 m",
+"200 m",
+"250 m",
+"300 m"
+],
+"correct": 3,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-04",
+"topic": "E",
+"text": "4300 Wb necha kWb ga teng?",
+"answers": [
+"430",
+"43",
+"4,3",
+"0,43"
+],
+"correct": 2,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-05",
+"topic": "M",
+"text": "Jismga bir yo‘nalishda 21 N va 33 N kuchlar ta’sir etmoqda. Natijaviy kuch miqdori qanchaga (N) teng?",
+"answers": [
+"54 N",
+"12 N",
+"25 N",
+"45 N"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-06",
+"topic": "M",
+"text": "400 g massali jism 10 m balandlikka tik otildi. Qancha vaqtdan keyin uning potensial energiyasi 20 J ga teng bo‘ladi (s)?",
+"answers": [
+"0,1",
+"0,4",
+"1,2",
+"2"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-07",
+"topic": "M",
+"text": "6300 W necha kW ga teng?",
+"answers": [
+"6,3",
+"0,63",
+"63",
+"630"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-08",
+"topic": "M",
+"text": "7800 Pa necha kPa ga teng?",
+"answers": [
+"0,78",
+"78",
+"780",
+"7,8"
+],
+"correct": 3,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-09",
+"topic": "M",
+"text": "5,7 m uzunlikdagi silindrik idish suv bilan to‘ldirildi. Idish tubidan 1,65 m balandlikda jo‘mrak o‘rnatilgan. Agar jo‘mrak ochib yuborilsa, undan suv qanday tezlikda (m/s) otilib chiqadi?",
+"answers": [
+"9",
+"6",
+"3",
+"2"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-10",
+"topic": "E",
+"text": "Maksimal tok kuchi 5 A bo‘lgan o‘zgaruvchan tok zanjiridagi tokning effektiv qiymatini (A) aniqlang.",
+"answers": [
+"$\\dfrac{5}{\\sqrt{2}}$",
+"$\\dfrac{3}{\\sqrt{2}}$",
+"5",
+"$\\dfrac{5}{\\sqrt{3}}$"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-11",
+"topic": "M",
+"text": "Garmoonik tebranayotgan 200 g massali jism amplitudasi 20 cm va tebranish davri 4 s ga teng. Muvozanat vaziyatdan harakatni boshlagan jismning 7/3 s dan keyingi potensial energiyasini (mJ) toping.",
+"answers": [
+"$\\dfrac{\\pi}{4}$",
+"$\\dfrac{\\pi^2}{4}$",
+"$\\dfrac{\\pi^2}{2}$",
+"$\\dfrac{\\pi}{2}$"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-12",
+"topic": "O",
+"text": "Optik kuchi 4 dptr bo‘lgan yupqa linzaning fokus masofasini (cm) aniqlang.",
+"answers": [
+"25",
+"20",
+"2,2",
+"2"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-13",
+"topic": "O",
+"text": "Yorug‘lik nuri sindirish ko‘rsatkichi 1,5 bo‘lgan 9 cm qalinlikdagi shishadan qancha vaqtda (ns) o‘tib ketadi?",
+"answers": [
+"1,2",
+"0,9",
+"0,45",
+"1,5"
+],
+"correct": 2,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-14",
+"topic": "E",
+"text": "Zaryadi −13e bo‘lgan suv tomchisidan +4e zaryad ajratib olinsa, tomchining keyingi zaryadi qanday bo‘ladi?",
+"answers": [
+"+17e",
+"−17e",
+"−9e",
+"+9e"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-15",
+"topic": "M",
+"text": "Rasmda ko‘rsatilgani kabi 1500 kg massali sterjen ikki tayanch ustida muvozanatda turibdi. Uning o‘ng tayanchga beradigan bosim kuchini (N) hisoblang.",
+"answers": [
+"3750",
+"3250",
+"3500",
+"3000"
+],
+"correct": 0,
+"image": "rasmlar/MS14_2-15.png",
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-16",
+"topic": "MF",
+"text": "Massasi 16 g bo‘lgan geliy gazining hajmi $p\\sqrt[3]{V}=\\mathrm{const}$ qonuniyat bo‘yicha 8 marta ortdi. Uning boshlang‘ich temperaturasi 150 K bo‘lsa, ichki energiyasi qanday o‘zgargan?",
+"answers": [
+"12,5 kJ ga kamaygan",
+"22,5 kJ ga kamaygan",
+"12,5 kJ ga ortgan",
+"22,5 kJ ga ortgan"
+],
+"correct": 3,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-17",
+"topic": "M",
+"text": "400 g massali sharcha 8 m balandlikdan gorizontal yo‘nalishda uloqtirildi. Qancha vaqtdan so‘ng uning potensial energiyasi 12 J ga teng bo‘ladi (s)?",
+"answers": [
+"1",
+"2",
+"4",
+"8"
+],
+"correct": 0,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-18",
+"topic": "E",
+"text": "Rasmda yig‘ilgan elektr zanjirda R₁ = R₃ = 5 Ω ga teng. Ampermetrning ko‘rsatkichi 6 A bo‘lsa, R₂ qarshilikdagi quvvatni (W) aniqlang.",
+"answers": [
+"120",
+"150",
+"180",
+"90"
+],
+"correct": 2,
+"image": "rasmlar/MS14_2-18.png",
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-19",
+"topic": "M",
+"text": "Jismga 69 N va 74 N kuchlar qo‘yilgan. Bu kuchlarning natijavyisi 5 N bo‘lsa, ular orasidagi burchakni aniqlang.",
+"answers": [
+"90°",
+"150°",
+"180°",
+"60°"
+],
+"correct": 2,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-20",
+"topic": "M",
+"text": "Massasi 4 kg bo‘lgan jism 6 m/s² tezlanish bilan rasmda ko‘rsatilgandek tushmoqda. Uning og‘irligini toping. $\\cos\\alpha = 0{,}6$.",
+"answers": [
+"32",
+"16",
+"$8\\sqrt{10}$",
+"$4\\sqrt{10}$"
+],
+"correct": 2,
+"image": "rasmlar/MS14_2-20.png",
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-21",
+"topic": "M",
+"text": "Massasi 1,2 kg bo‘lgan jism gorizontal tekislikda tekislikka parallel bo‘lgan 56 N kuch bilan tortilmoqda. Jism va sirt orasidagi ishqalanish kuchini (N) toping. µ = 0,8.",
+"answers": [
+"6,4",
+"9,6",
+"12",
+"2"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-22",
+"topic": "M",
+"text": "Rasmda ko‘rsatilgan suv bilan to‘ldirilgan sisterna o‘ng tomonga 4 m/s² tezlanish bilan harakat qilmoqda. Sisterna tubida yotgan alyuminiy bo‘lakchasining sisternaga nisbatan tezlanishi (m/s²) qanchaga teng?",
+"answers": [
+"3",
+"2,5",
+"1,5",
+"4"
+],
+"correct": 1,
+"image": "rasmlar/MS14_2-22.png",
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-23",
+"topic": "O",
+"text": "Nuqtaviy yorug‘lik manbaining yorug‘lik kuchi 200 cd ga teng. Nuqtaviy manbaning to‘la yorug‘lik oqimini (lm) toping.",
+"answers": [
+"1884",
+"628",
+"1256",
+"2512"
+],
+"correct": 3,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-24",
+"topic": "A",
+"text": "Bir yo‘nalishda harakatlanayotgan ikki zarradan birining tezligi $v_1 = 8c/9$ ga, ularning nisbiy tezligi $c/3$ ga teng. Ikkinchi zarraning tezligini aniqlang. Bunda $v_1 > v_2$, $c$ – yorug‘likning vakuumdagi tezligi.",
+"answers": [
+"7c/9",
+"5c/9",
+"15c/19",
+"5c/19"
+],
+"correct": 2,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-25",
+"topic": "E",
+"text": "O‘zgarmas tok manbaiga ideal induktiv g‘altak ulangan. Bunda 4L₁ = 3L₂ ga teng. Birinchi g‘altakdagi magnit oqimi 72 mWb ga teng bo‘lsa, ikkinchi g‘altakdagi magnit oqimi (mWb) toping.",
+"answers": [
+"72",
+"54",
+"128",
+"96"
+],
+"correct": 3,
+"image": "rasmlar/MS14_2-25.png",
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-26",
+"topic": "MF",
+"text": "Hajmi 3 l, temperaturasi 90 °C bo‘lgan suvga hajmi 5 l, temperaturasi esa 10 °C bo‘lgan suv aralashtirildi. Natijaviy temperaturani (°C) aniqlang.",
+"answers": [
+"120",
+"50",
+"40",
+"60"
+],
+"correct": 2,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-27",
+"topic": "MF",
+"text": "Gazga 250 J issiqlik miqdori berildi. Gaz 120 J ish bajargan bo‘lsa, uning ichki energiyasi qanday o‘zgargan?",
+"answers": [
+"130 J ga kamayadi",
+"130 J ga ortadi",
+"370 J ga ortadi",
+"120 J ga kamayadi"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-28",
+"topic": "A",
+"text": "Mutloq oq sirtga tik ravishda to‘lqin uzunligi 400 nm bo‘lgan $2\\cdot 10^{22}$ ta foton 3 s vaqt davomida tushdi. Yorug‘likning shu sirtga bosim kuchini (µN) toping.",
+"answers": [
+"11",
+"22",
+"5,5",
+"33"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-29",
+"topic": "MF",
+"text": "Gaz 1 holatdan 2 holatga o‘tganda gaz bosimi qanday o‘zgaradi?",
+"answers": [
+"3 marta ortadi",
+"3 marta kamayadi",
+"2 marta ortadi",
+"2 marta kamayadi"
+],
+"correct": 0,
+"image": "rasmlar/MS14_2-29.png",
+"src": "MS14_2"
+},
+{
+"id": "MS14_2-30",
+"topic": "A",
+"text": "1 m.a.b qanchaga (kg) teng?",
+"answers": [
+"1,66 · 10⁻²⁵",
+"1,66 · 10⁻²⁷",
+"1,66 · 10⁻²³",
+"1,66 · 10⁻²⁶"
+],
+"correct": 1,
+"src": "MS14_2"
+},
+{
+"id": "MS15_1-01",
+"topic": "E",
+"text": "O‘zgaruvchan tok zanjirida kuchlanishning maksimal qiymati 140 V ga teng. Uning effektiv qiymatini (V) hisoblang.",
+"answers": [
+"100",
+"150",
+"200",
+"50"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-02",
+"topic": "O",
+"text": "Fokus masofasi 25 cm bo‘lgan yupqa linzaning optik kuchini (dptr) aniqlang.",
+"answers": [
+"1",
+"10",
+"4",
+"8"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-03",
+"topic": "M",
+"text": "Massasi 400 g bo‘lgan jismning tezligi 10 m/s ga teng. Uning kinetik energiyasini (J) aniqlang.",
+"answers": [
+"2",
+"10",
+"30",
+"20"
+],
+"correct": 3,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-04",
+"topic": "M",
+"text": "0,8 kPa necha Pa ga teng?",
+"answers": [
+"8",
+"800",
+"80",
+"8000"
+],
+"correct": 1,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-05",
+"topic": "M",
+"text": "Gidravlik pressda kichik porshenga 200 N kuch berilib katta porshenda 300 kg massali yuk ko‘tarilmoqda. Kichik porshen 30 cm ga siljigan bo‘lsa, katta porshen qancha masofaga (cm) ko‘tarilgan?",
+"answers": [
+"4 cm",
+"1 cm",
+"2 cm",
+"10 cm"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-06",
+"topic": "M",
+"text": "Massasi 70 kg bo‘lgan jism 18 m balandlikdan boshlang‘ich tezliksiz tashlandi. Uning 1 s dan keyingi potensial energiyasini (J) aniqlang.",
+"answers": [
+"9100",
+"4550",
+"8100",
+"4050"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-07",
+"topic": "A",
+"text": "Boshlang‘ich aktivligi 1000 Bq bo‘lgan moddaning 16 yildan keyingi aktivligi 250 Bq bo‘lib qoldi, Shu moddaning yarim yemirilish davrini (yil) aniqlang.",
+"answers": [
+"8",
+"4",
+"2",
+"16"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-08",
+"topic": "M",
+"text": "Massasi 40 g bo‘lgan sharcha 0,2 m amplituda va 4 s davr bilan garmonik tebranmoqda. Tebranish muvozanat vaziyatdan boshlangan bo‘lsa, uning 11/3 s dan keyingi kinetik energiyasini (mJ) toping. $\\pi^2 \\approx 10$.",
+"answers": [
+"0,5",
+"1",
+"1,5",
+"2,5"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-09",
+"topic": "O",
+"text": "Haqiqiy chuqurligi 6 m bo‘lgan hovuzga vertikal yuqoridan qaralsa, u necha metr chuqur bo‘lib ko‘rinadi?",
+"answers": [
+"2",
+"4,5",
+"1",
+"7,5"
+],
+"correct": 1,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-10",
+"topic": "O",
+"text": "Hovuzga vertikaldan qaralganda uning chuqurligi 4,8 m bo‘lib ko‘rindi. Hovuzning haqiqiy chuqurligini (m) aniqlang.",
+"answers": [
+"6,4",
+"4,8",
+"5,6",
+"3,8"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-11",
+"topic": "M",
+"text": "Massasi 6 kg bo‘lgan jism gorizontal tekislikda tekislikka parallel bo‘lgan 40 N kuch bilan tortilmoqda. Jism va sirt orasidagi ishqalanish kuchini (N) aniqlang. µ = 0,8.",
+"answers": [
+"5 N",
+"10 N",
+"20 N",
+"40 N"
+],
+"correct": 3,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-12",
+"topic": "M",
+"text": "Jism OX o‘qida v = 10+4t [m/s] qonuniyat bo‘yicha harakatlanmoqda. Uning tezlanishi qanchaga (m/s²) teng?",
+"answers": [
+"2",
+"4",
+"1",
+"10"
+],
+"correct": 1,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-13",
+"topic": "E",
+"text": "Zaryadlari +9 nC va −12 nC bo‘lgan zaryadli zarrachalar orasidagi masofa 40 cm ga teng. Ularning o‘zaro ta’sir potensial energiyasini (µJ) hisoblang.",
+"answers": [
+"−2,43",
+"2,43",
+"−1,43",
+"1,43"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-14",
+"topic": "MF",
+"text": "Ideal gazning temperaturasi $p/\\sqrt[3]{T}=\\mathrm{const}$ qonuniyat bo‘yicha 8 marta ortdi. Bunda uning bosimi 12 kPa ga o‘zgargan bo‘lsa, uning dastlabki bosimini (kPa) aniqlang.",
+"answers": [
+"6",
+"10",
+"12",
+"16"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-15",
+"topic": "M",
+"text": "Massasi 4 kg bo‘lgan jism 6 m/s² tezlanish bilan rasmda ko‘rsatilgandek yuqoriga harakatlanmoqda. Uning og‘irligini (N) toping. $\\cos\\alpha = 0{,}6$.",
+"answers": [
+"$8\\sqrt{58}$",
+"$4\\sqrt{58}$",
+"$2\\sqrt{58}$",
+"$\\sqrt{58}$"
+],
+"correct": 0,
+"image": "rasmlar/MS15_1-15.png",
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-16",
+"topic": "M",
+"text": "Prujina o‘z og‘irligi ta’sirida 9 cm ga cho‘zildi. Uning tebranish davrini (s) aniqlang.",
+"answers": [
+"0,2",
+"1",
+"0,8",
+"0,6"
+],
+"correct": 3,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-18",
+"topic": "M",
+"text": "H balandlikdan $v_0$ tezlik bilan gorizontal otilgan jismning yerga urilishda tezligi ifodasini toping.",
+"answers": [
+"$\\sqrt{v_0^2+2gH}$",
+"$\\sqrt{2gH}$",
+"$\\sqrt{v_0^2-2gH}$",
+"$\\sqrt{v_0^2+gH}$"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-19",
+"topic": "M",
+"text": "Jism o‘zgarmas tezlikda harakatlanmoqda. Sirt va jism orasidagi ishqalanish koeffitsiyentini toping. (Chizmaga ko‘ra: F = 25 N, α = 37°, m = 3,5 kg)",
+"answers": [
+"0,2",
+"0,4",
+"0,5",
+"0,6"
+],
+"correct": 1,
+"image": "rasmlar/MS15_1-19.png",
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-20",
+"topic": "M",
+"text": "Jismning L nuqtadagi tezligi necha m/s? (Chizmaga ko‘ra: $v_1$ = 4 m/s, $h_1$ = 15 m, $h_2$ = 3 m)",
+"answers": [
+"16",
+"14",
+"12",
+"20"
+],
+"correct": 0,
+"image": "rasmlar/MS15_1-20.png",
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-21",
+"topic": "M",
+"text": "Moddiy nuqta $x = A\\sin\\omega t$ qonuniyat bo‘yicha garmonik tebranmoqda. Uning maksimal tezlanishini toping.",
+"answers": [
+"$A\\omega^2$",
+"$A^2\\omega$",
+"$A\\omega$",
+"$A/\\omega$"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-22",
+"topic": "MF",
+"text": "Gazning bosimi 40% ortsa, ichki energiyasining zichligi necha marta o‘zgaradi?",
+"answers": [
+"1,2 marta ortadi",
+"1,8 marta ortadi",
+"1,4 marta ortadi",
+"2 marta ortadi"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-23",
+"topic": "E",
+"text": "+2e zaryadli ion bir jinsli elektr maydonda harakatlanmoqda. Lazer nuri ta’sirida ion bir elektronini yo‘qotsa, uning tezlanishi qanday o‘zgaradi?",
+"answers": [
+"2 marta kamayadi",
+"1,5 marta ortadi",
+"2 marta ortadi",
+"1,5 marta kamayadi"
+],
+"correct": 1,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-24",
+"topic": "E",
+"text": "1-rasmda kondensator sig‘imi 3C ga teng, unga 2-rasmda ko‘rsatilgandek dielektrik qatlamlar kiritildi. Hosil bo‘lgan kondensatorning sig‘imini toping?",
+"answers": [
+"2C",
+"3C",
+"4C",
+"8C"
+],
+"correct": 3,
+"image": "rasmlar/MS15_1-24.png",
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-25",
+"topic": "O",
+"text": "Ravshanlik birligini toping.",
+"answers": [
+"cd",
+"lm",
+"cd/m²",
+"lx"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-26",
+"topic": "M",
+"text": "Radiusi 20 cm, burchak tezligi 0,5 rad/s bo‘lgan disk chekka nuqtasining chiziqli tezligini (m/s) toping.",
+"answers": [
+"1",
+"0,1",
+"0,6",
+"0,3"
+],
+"correct": 1,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-27",
+"topic": "M",
+"text": "5 cm ga siqilgan prujinaning potensial energiyasi 10 J. Prujinaning bikrligini (kN/m) aniqlang.",
+"answers": [
+"8",
+"12",
+"4",
+"16"
+],
+"correct": 0,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-28",
+"topic": "A",
+"text": "To‘g‘ri to‘rtburchak kvadratga aylanishi uchun qanday tezlikda harakatlanishi kerak?",
+"answers": [
+"0,6c",
+"0,8c",
+"0,4c",
+"c"
+],
+"correct": 1,
+"image": "rasmlar/MS15_1-28.png",
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-29",
+"topic": "MF",
+"text": "Ikki mol bir atomli gazni 3 K ga izobarik isitish uchun qancha energiya (J) kerak?",
+"answers": [
+"50",
+"75",
+"100",
+"85"
+],
+"correct": 1,
+"src": "MS15_1"
+},
+{
+"id": "MS15_1-30",
+"topic": "MF",
+"text": "O‘zgarmas massali ideal gazning bosimi P/T = const qonuniyat bo‘yicha 2 marta kamaydi. Gazning hajmi qanday o‘zgargan?",
+"answers": [
+"8 marta ortgan",
+"2 marta ortgan",
+"o‘zgarmagan",
+"8 marta kamaygan"
+],
+"correct": 2,
+"src": "MS15_1"
+},
+{
+"id": "MS15_2q1-01",
+"topic": "E",
+"text": "Rasmda yig‘ilgan elektr zanjirida R₁ = 3R₂ va U = 120 V bo‘lsa, kondensator qutblari orasidagi potensiallar farqini (V) toping.",
+"answers": [
+"90",
+"30",
+"60",
+"120"
+],
+"correct": 1,
+"image": "rasmlar/MS15_2q1-01.png",
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-02",
+"topic": "M",
+"text": "392 m balandlikdan vertikal tashlangan jism beshinchi sekundda 54 m masofa bosib o‘tdi. Uning tushish vaqtini (s) aniqlang.",
+"answers": [
+"10",
+"12",
+"8",
+"6"
+],
+"correct": 2,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-03",
+"topic": "M",
+"text": "54 V necha kV ga teng?",
+"answers": [
+"0,054",
+"0,54",
+"5,4",
+"540"
+],
+"correct": 0,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-04",
+"topic": "M",
+"text": "Jism tezligi v = 12 − 2t [m/s] qonuniyat bilan o‘zgarmoqda. Uning 3 s dan keyingi oniy tezligi qancha (m/s) bo‘ladi?",
+"answers": [
+"2",
+"6",
+"4",
+"8"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-05",
+"topic": "O",
+"text": "Suv to‘ldirilgan hovuzga vertikal yuqoridan qaralganda chuqurligi 6 m ko‘rinsa, uning haqiqiy chuqurligi qanchaga (m) teng?",
+"answers": [
+"6",
+"10",
+"8",
+"4,8"
+],
+"correct": 2,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-06",
+"topic": "MF",
+"text": "Ideal gaz hajmi $p^2V=\\mathrm{const}$ qonuniyat bo‘yicha 9 marta ortdi. Bunda uning temperaturasi qanday o‘zgaradi?",
+"answers": [
+"9 marta ortadi",
+"3 marta kamayadi",
+"9 marta kamayadi",
+"3 marta ortadi"
+],
+"correct": 3,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-07",
+"topic": "O",
+"text": "Shishada to‘lqin uzunligi 700 nm bo‘lgan nur suvga o‘tdi. Uning suvdagi to‘lqin uzunligi nimaga (nm) teng bo‘ladi?",
+"answers": [
+"787,5",
+"800",
+"622,5",
+"533,3"
+],
+"correct": 0,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-08",
+"topic": "E",
+"text": "Zaryadlari +9 nC va −7 nC bo‘lgan zarrachalar orasidagi masofa 40 cm ga teng. Zarrachalarni tutashtiruvchi to‘g‘ri chiziqning o‘rtasidagi nuqtada maydon kuchlanganlik qancha (V/m) bo‘ladi?",
+"answers": [
+"1800",
+"3600",
+"7200",
+"450"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-09",
+"topic": "O",
+"text": "Hovuzga vertikal yuqoridan qaralganda uning chuqurligi 3,6 m bo‘lib ko‘rindi. Hovuzning haqiqiy chuqurligini (m) aniqlang.",
+"answers": [
+"3,6",
+"2,7",
+"4,5",
+"4,8"
+],
+"correct": 3,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-10",
+"topic": "M",
+"text": "500 m balandlikdan 15 m/s tezlik bilan gorizontal otilgan jismning qancha vaqtdan keyin tangensial va normal tezlanishlari tenglashadi (s)?",
+"answers": [
+"3,0",
+"1,5",
+"2,5",
+"4,5"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-11",
+"topic": "MF",
+"text": "Temperaturalari 50 °C va 10 °C bo‘lgan ikkita sharlar o‘zaro tekkizildi va ularning temperaturalari 40 °C bo‘lib qoldi. Sharlarning solishtirma issiqlik sig‘imlari C₁ va C₂ bo‘lsa, ularning nisbatini (C₁ /C₂) aniqlang.",
+"answers": [
+"1/3",
+"2",
+"3",
+"1/2"
+],
+"correct": 2,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-12",
+"topic": "A",
+"text": "Massasi 24 kg bo‘lgan moddaning yarim yemirilish davri 6 yil. 12 yildan keyin modda massasining qanchasi (kg) yemirilib ketadi?",
+"answers": [
+"12",
+"6",
+"18",
+"8"
+],
+"correct": 2,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-13",
+"topic": "E",
+"text": "O‘zgaruvchan tok zanjirida tok kuchi i = 0,07 cos 450πt [A] qonuniyat bilan tebranmoqda. Tok kuchining amplitudaviy qiymatini (A) aniqlang.",
+"answers": [
+"0,07",
+"450",
+"0,05",
+"0,14"
+],
+"correct": 0,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-14",
+"topic": "M",
+"text": "Garmonik tebranayotgan jismning siljish tenglamasi x = 0,06 sin 30πt [m] qonuniyat bo‘yicha o‘zgaradi. Uning amplituda qiymati nimaga (m) teng?",
+"answers": [
+"30",
+"0,12",
+"0,06",
+"0,03"
+],
+"correct": 2,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-15",
+"topic": "M",
+"text": "Mayatnikning bir tebranish davridagi o‘rtacha tezligi 2,4 m/s ga teng. Uning muvozanat vaziyatidan o‘tayotgandagi tezligi qanchaga (m/s) teng?",
+"answers": [
+"2,40",
+"3,76",
+"4,80",
+"3,36"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-16",
+"topic": "MF",
+"text": "7 mol vodoroddagi atomlar sonini toping. $N_A$ – Avogadro doimiysi.",
+"answers": [
+"$7N_A$",
+"$21N_A$",
+"$3{,}5N_A$",
+"$14N_A$"
+],
+"correct": 3,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-18",
+"topic": "M",
+"text": "Matematik mayatnik arqonining uzunligi ℓ₀ bo‘lganda tebranish davri T₀ ga teng. Uning uzunligi 20 cm ga ortganda tebranish davri 3T₀ ga teng bo‘ldi. Mayatnik arqonining dastlabki uzunligini (cm) aniqlang.",
+"answers": [
+"20,0",
+"2,5",
+"22,5",
+"17,5"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-19",
+"topic": "M",
+"text": "Doimiy 3π rad/s burchak tezlikda aylanayotgan jism 5 minutda necha marta aylanadi?",
+"answers": [
+"450",
+"150",
+"900",
+"300"
+],
+"correct": 0,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-20",
+"topic": "E",
+"text": "Rasmda ko‘rsatilgani kabi qarshiliklari bir xil bo‘lgan ikkita lampochkali elektr sxemasi yig‘ilgan. Agar ampermetr 2 A ni, voltmetr 2 V ni ko‘rsatayotgan bo‘lsa, lampochkalardan 6 s da qancha issiqlik miqdori (J) ajralishini hisoblang.",
+"answers": [
+"12",
+"36",
+"24",
+"48"
+],
+"correct": 2,
+"image": "rasmlar/MS15_2q1-20.png",
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-21",
+"topic": "M",
+"text": "Alyuminiydan yasalgan ichi g‘ovak bo‘lgan shar suvda 60% qismi botgan holda suzib yuripti. Agar sharning massasi 5,4 kg ga teng bo‘lsa, uning g‘ovak qismining hajmini (cm³) toping. ($\\rho_{Al}=2700$ kg/m³)",
+"answers": [
+"5000",
+"7000",
+"9000",
+"2000"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-22",
+"topic": "E",
+"text": "Induksiyasi B bo‘lgan magnit maydonda m massali pozitron v tezlik bilan aylanma harakatlanmoqda. Uning aylanish radiusi qaysi formula bilan ifodalanadi?",
+"answers": [
+"$\\dfrac{2mv}{eB}$",
+"$\\dfrac{mv}{eB}$",
+"$\\dfrac{mv^2}{eB}$",
+"$\\dfrac{mv}{B}$"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-23",
+"topic": "MF",
+"text": "Ideal gazni (bir atomli) 1-holatdan 2-holatga izoxorik o‘tkazish uchun undan qancha issiqlik miqdori (kJ) chiqarib tashlash kerak? Gazning hajmi 0,6 m³, gaz bosimlari mos ravishda $p_1$ = 175 kPa, $p_2$ = 110 kPa.",
+"answers": [
+"39,0",
+"78,0",
+"97,5",
+"58,5"
+],
+"correct": 3,
+"image": "rasmlar/MS15_2q1-23.png",
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-24",
+"topic": "E",
+"text": "A, B, C elektrolit vannalarga bir xil eritma quyilib, ular bir-biri bilan rasmda ko‘rsatilganidek ulangan. Agar ma’lum bir vaqtdan keyin A vannaning katodida 6 g, B vannaning katodida 7 g modda ajralib chiqqani ma’lum bo‘lsa, bu vaqtda C vannaning katodida qancha massali (g) modda ajralib chiqqanini aniqlang.",
+"answers": [
+"13",
+"6,5",
+"42/13",
+"1"
+],
+"correct": 0,
+"image": "rasmlar/MS15_2q1-24.png",
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-25",
+"topic": "MF",
+"text": "Ikkita bir xil kapillar naylardan biri suvga ($\\rho_{suv}=1000$ kg/m³), ikkinchisi benzinga ($\\rho_{benzin}=700$ kg/m³) tushirildi. Suv kapillar bo‘ylab 12 cm ga ko‘tarildi. Benzin qanchaga (cm) ko‘tarilganini aniqlang. $\\sigma_{suv}=0{,}073$ N/m, $\\sigma_{benzin}=0{,}021$ N/m",
+"answers": [
+"4,9",
+"15,7",
+"9,8",
+"28,8"
+],
+"correct": 0,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-26",
+"topic": "A",
+"text": "Quyidagi parchalanish reaksiyasidagi noma’lum X zarrani aniqlang. $^{236}_{92}\\mathrm{U} \\Rightarrow X + {}^{91}_{36}\\mathrm{Kr} + 3\\,{}^{1}_{0}n$",
+"answers": [
+"$^{17}_{8}\\mathrm{O}$",
+"$^{142}_{56}\\mathrm{Ba}$",
+"$^{7}_{3}\\mathrm{Li}$",
+"$^{91}_{36}\\mathrm{Kr}$"
+],
+"correct": 1,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-27",
+"topic": "M",
+"text": "Quyida jismning Ox o‘qidagi harakatining tezlik grafigi berilgan. Jismning (4-8) s vaqt oralig‘idagi yo‘li S ni (m) va ko‘chishi L ni (m) aniqlang.",
+"answers": [
+"S = 15, L = 15",
+"S = 15, L = 0",
+"S = 0, L = 15",
+"S = 15, L = −5"
+],
+"correct": 3,
+"image": "rasmlar/MS15_2q1-27.png",
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-28",
+"topic": "M",
+"text": "Liftdagi jismning og‘irligi 9 N, unga ta’sir etuvchi natijaviy kuch 4 N (tepaga yo‘nalgan). Jismning og‘irlik kuchi (N) qanday?",
+"answers": [
+"5",
+"13",
+"6",
+"3"
+],
+"correct": 0,
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q1-30",
+"topic": "M",
+"text": "Koordinata o‘qining turli nuqtalarida turli nuqtaviy jismlar turibdi: Sistema og‘irlik markazining koordinatasi (m) topilsin.",
+"answers": [
+"1,58",
+"−0,3",
+"0,3",
+"−1,58"
+],
+"correct": 2,
+"image": "rasmlar/MS15_2q1-30.png",
+"src": "MS15_2q1"
+},
+{
+"id": "MS15_2q2-01",
+"topic": "E",
+"text": "Agar kondensatordagi kuchlanish 80 V va qarshiliklar o‘rtasida R₁ = 3R₂ munosabat o‘rinli bo‘lsa, zanjirdagi to‘la kuchlanishni aniqlang.",
+"answers": [
+"220 V",
+"$\\dfrac{320}{3}$ V",
+"220 V",
+"$\\dfrac{220}{3}$ V"
+],
+"correct": 1,
+"image": "rasmlar/MS15_2q2-01.png",
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-02",
+"topic": "M",
+"text": "500 m balandlikdan 10 m/s tezlik bilan gorizontal otilgan jismning qancha vaqtdan keyin tangensial va normal tezlanishlari tenglashadi (s)?",
+"answers": [
+"1",
+"0,5",
+"1,5",
+"2"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-03",
+"topic": "M",
+"text": "392 m balandlikdan vertikal tashlangan jism oltinchi sekundda 64 m masofa bosib o‘tgan bo‘lsa, uning tushish vaqtini (s) aniqlang.",
+"answers": [
+"2",
+"4",
+"8",
+"10"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-04",
+"topic": "M",
+"text": "20 km/s necha m/s ga teng?",
+"answers": [
+"2000",
+"20000",
+"0,02",
+"0,2"
+],
+"correct": 1,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-05",
+"topic": "E",
+"text": "Induktivligi 20 mH bo‘lgan g‘altakda 10 mWb magnit oqimi hosil bo‘lgan bo‘lsa, g‘altakdan oqayotgan tok kuchi qanchaga (A) teng?",
+"answers": [
+"1",
+"2",
+"0,5",
+"0,25"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-06",
+"topic": "MF",
+"text": "Ideal gaz hajmi $p^2V=\\mathrm{const}$ qonuniyat bo‘yicha 16 marta ortdi. Bunda uning temperaturasi qanday o‘zgaradi?",
+"answers": [
+"4 marta ortadi",
+"4 marta kamayadi",
+"o‘zgarmaydi",
+"2 marta ortadi"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-07",
+"topic": "O",
+"text": "Yorug‘likning shishadagi to‘lqin uzunligi 560 nm bo‘lsa, uning suvdagi to‘lqin uzunligi qanchaga (nm) teng?",
+"answers": [
+"300",
+"230",
+"630",
+"450"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-08",
+"topic": "E",
+"text": "Zaryadlari +9 nC va +7 nC bo‘lgan zarrachalar orasidagi masofa 40 cm ga teng. Zarrachalarni tutashtiruvchi to‘g‘ri chiziqning o‘rtasidagi nuqtada maydon kuchlanganlik qancha (V/m) bo‘ladi?",
+"answers": [
+"450",
+"250",
+"300",
+"150"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-09",
+"topic": "E",
+"text": "O‘zgaruvchan tok zanjirida tok kuchi $i = 4{,}3\\sin(\\omega t + \\pi/2)$ [mA] qonuniyat bilan tebranmoqda. Tok kuchining $t = T/6$ vaqtdan keyingi oniy qiymatini (mA) aniqlang.",
+"answers": [
+"4,3",
+"2,15",
+"1,5",
+"3"
+],
+"correct": 1,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-11",
+"topic": "M",
+"text": "Aylanma harakat qilayotgan jism 3 minutda 3π radianga burildi. Uning tebranish davrini (s) aniqlang.",
+"answers": [
+"100",
+"60",
+"120",
+"180"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-12",
+"topic": "M",
+"text": "Matematik mayatnik arqonining uzunligi ℓ₀ bo‘lganda tebranish davri T₀ ga teng. Uning uzunligi 40 cm ga ortganda tebranish davri 3T₀ ga teng bo‘ldi. Mayatnik arqonining dastlabki uzunligini (cm) aniqlang.",
+"answers": [
+"10",
+"1",
+"2",
+"5"
+],
+"correct": 3,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-13",
+"topic": "MF",
+"text": "Ikki sharning issiqlik sig‘imlari C₁ va C₂ ga, temperaturalari esa mos ravishda 50 °C va 30 °C ga teng. Ular bir biriga tekkizilganda natijaviy temperatura 40 °C bo‘lgan bo‘lsa, issiqlik sig‘imlari nisbatini (C₁ /C₂) aniqlang.",
+"answers": [
+"0,5",
+"0,25",
+"1",
+"2"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-14",
+"topic": "O",
+"text": "Nurning 20% i sirtdan to‘la qaytadi, 30% i esa to‘la o‘tib ketadi. Agar yorug‘likning sirtga bosim kuchi 2,43 µN bo‘lsa, uning quvvatini (W) aniqlang.",
+"answers": [
+"810",
+"405",
+"1620",
+"210"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-15",
+"topic": "M",
+"text": "350 g massali koptok 4 m balandlikka otildi. Uning maksimal potensial energiyasini (J) aniqlang.",
+"answers": [
+"7",
+"10",
+"14",
+"18"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-16",
+"topic": "MF",
+"text": "Ikkita bir xil kapillar naylardan biri suvga ($\\rho_{suv}=1000$ kg/m³), ikkinchisi benzinga ($\\rho_{benzin}=700$ kg/m³) tushirildi. Suv kapillar bo‘ylab 24 cm ga ko‘tarildi. Benzin qanchaga (cm) ko‘tarilganini aniqlang. $\\sigma_{suv}=0{,}073$ N/m, $\\sigma_{benzin}=0{,}021$ N/m",
+"answers": [
+"58",
+"9,9",
+"15,4",
+"25,2"
+],
+"correct": 1,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-17",
+"topic": "M",
+"text": "Moyning ($\\rho_{moy}=800$ kg/m³) hajmi suvning hajmidan 1,4 marta ortiq. Ularning massalari $m_m$ va $m_s$ qanday munosabatda?",
+"answers": [
+"$0{,}96\\,m_s=m_m$",
+"$0{,}88\\,m_s=m_m$",
+"$1{,}12\\,m_s=m_m$",
+"$1{,}04\\,m_s=m_m$"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-18",
+"topic": "MF",
+"text": "50 mol geliy gaziga izoxorik ravishda 24,93 kJ issiqlik miqdori berildi. Bu jarayonda gazning bosimi necha marta ortgan? Gazning dastlabki temperaturasi 27 °C.",
+"answers": [
+"17/15",
+"5/2",
+"4/3",
+"13/12"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-20",
+"topic": "M",
+"text": "Jism 5 m/s tezlik bilan vertikal pastga otildi. Uning harakat boshidan 5 s o‘tgan paytdagi tezligini (m/s) toping. g = 10 m/s²",
+"answers": [
+"50",
+"40",
+"55",
+"45"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-21",
+"topic": "A",
+"text": "Quyidagi parchalanish reaksiyasidagi noma’lum X zarrani aniqlang. $X \\Rightarrow {}^{142}_{56}\\mathrm{Ba} + {}^{91}_{36}\\mathrm{Kr} + 3\\,{}^{1}_{0}n$",
+"answers": [
+"$^{236}_{92}\\mathrm{U}$",
+"$^{91}_{36}\\mathrm{Kr}$",
+"$^{142}_{56}\\mathrm{Ba}$",
+"$^{7}_{3}\\mathrm{Li}$"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-22",
+"topic": "A",
+"text": "Zarraning to‘liq energiyasi tinchlikdagi energiyasidan 4 marta ortiq. Zarraning tezligi topilsin. c – yorug‘lik tezligi.",
+"answers": [
+"$\\dfrac{\\sqrt{8}}{3}c$",
+"$\\dfrac{\\sqrt{5}}{3}c$",
+"$\\dfrac{\\sqrt{3}}{2}c$",
+"$\\dfrac{\\sqrt{15}}{4}c$"
+],
+"correct": 3,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-23",
+"topic": "MF",
+"text": "Ideal gazni (bir atomli) 1-holatdan 2-holatga o‘tkazish uchun undan qancha issiqlik miqdorini (kJ) chiqarib tashlash kerak? Gazning dastlabki hajmi 0,9 m³, gaz bosimlari mos ravishda $p_1$ = 162 kPa, $p_2$ = 112 kPa.",
+"answers": [
+"90",
+"67,5",
+"45",
+"112,5"
+],
+"correct": 1,
+"image": "rasmlar/MS15_2q2-23.png",
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-24",
+"topic": "MF",
+"text": "Bosimning o‘lchov birligi qanday?",
+"answers": [
+"N/m²",
+"kg/mol",
+"J/(kg · K)",
+"m"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-25",
+"topic": "E",
+"text": "Agar rezistorning qarshiligi R = 4 Ω va undan o‘tayotgan tok kuchi I = 3 A bo‘lsa, B va A nuqtadagi potensiallar farqi $\\varphi_B-\\varphi_A$ ni (V) toping.",
+"answers": [
+"7",
+"−12",
+"−7",
+"12"
+],
+"correct": 1,
+"image": "rasmlar/MS15_2q2-25.png",
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-26",
+"topic": "M",
+"text": "Prujinaga mahkamlangan m massali sharcha garmonik tebranmoqda, 3 – muvozanat nuqtasi. Qaysi nuqta(lar)da uning kinetik energiyasi eng katta?",
+"answers": [
+"4",
+"1, 5",
+"2, 4",
+"3"
+],
+"correct": 3,
+"image": "rasmlar/MS15_2q2-26.png",
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-27",
+"topic": "O",
+"text": "Botiq ko‘zguning egrilik radiusi 24 cm. Uning fokus masofasini (cm) aniqlang.",
+"answers": [
+"24",
+"6",
+"12",
+"48"
+],
+"correct": 2,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-28",
+"topic": "M",
+"text": "3 kg massali jismga 4 m/s² tezlanish bergan kuch 12 kg massali jismga qanday tezlanish (m/s²) beradi?",
+"answers": [
+"1",
+"3",
+"3,5",
+"2"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-29",
+"topic": "M",
+"text": "Jism qiya tekislikda harakatsiz turibdi. Jism va sirt orasidagi ishqalanish koeffitsiyenti $\\mu = \\sqrt{3}$ ga teng. Jismga ta’sir etuvchi ishqalanish kuchini (N) aniqlang.",
+"answers": [
+"40",
+"60",
+"20",
+"$40\\sqrt{3}$"
+],
+"correct": 2,
+"image": "rasmlar/MS15_2q2-29.png",
+"src": "MS15_2q2"
+},
+{
+"id": "MS15_2q2-30",
+"topic": "M",
+"text": "Radiuslari 6 cm va 4 cm bo‘lgan sharlarning massalari mos ravishda 40 kg va 24 kg ga teng. Ular o‘zaro 14 cm uzunlikdagi sterjen orqali bog‘langan. Sistemaning massa markazi 6 cm radiusli sharning massa markazidan qanday masofada (cm) turibdi?",
+"answers": [
+"9",
+"6",
+"12",
+"15"
+],
+"correct": 0,
+"src": "MS15_2q2"
+},
+{
+"id": "MS18_1-01",
+"topic": "M",
+"text": "Yerdan maksimal 100 m balandlikka chiqqan snaryad ikki bo‘lakka bo‘lindi. Birinchi bo‘lak 30 m/s tezlik bilan tik yuqoriga, ikkinchi bo‘lak esa 40 m/s tezlik bilan tik pastga harakatlandi. 3 s dan keyin snaryadlar orasidagi masofa qancha (m) bo‘lganini aniqlang.",
+"answers": [
+"120",
+"210",
+"145",
+"175"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-02",
+"topic": "M",
+"text": "Garmonik tebranayotgan jismning siljish tenglamasi x = 0,06 sin 8πt [m] ko‘rinishga ega. Bu jism 3,6 m masofani necha sekundda bosib o‘tadi?",
+"answers": [
+"3,75",
+"3",
+"7,5",
+"2,25"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-03",
+"topic": "M",
+"text": "45 mA necha A ga teng?",
+"answers": [
+"45",
+"4,5",
+"0,45",
+"0,045"
+],
+"correct": 3,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-04",
+"topic": "E",
+"text": "Rasmda yig‘ilgan elektr sxemada A va B nuqtalar orasidagi to‘la sig‘im 12,1 µF bo‘lsa, har bir kondensatorning sig‘imini (µF) aniqlang.",
+"answers": [
+"3,3",
+"6,6",
+"2",
+"2,2"
+],
+"correct": 1,
+"image": "rasmlar/MS18_1-04.png",
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-05",
+"topic": "M",
+"text": "Jism 80 m o‘ngga, keyin esa 30 m qarama-qarshi tomonga yuridi. Jismning ko‘chisini (m) aniqlang.",
+"answers": [
+"50",
+"25",
+"75",
+"100"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-06",
+"topic": "A",
+"text": "Tezligi 0,8c bo‘lgan zarraning impulsi 2 · 10⁻²⁰ kg · m/s ga teng. Uning to‘la energiyasi qanchaga (J) teng?",
+"answers": [
+"2,5 · 10⁻¹²",
+"4,5 · 10⁻¹²",
+"7,5 · 10⁻¹²",
+"1,5 · 10⁻¹²"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-07",
+"topic": "O",
+"text": "Yassi ko‘zguga nur 30° burchak ostida tushmoqda. Tushgan va qaytgan nurlar orasidagi burchakni aniqlang.",
+"answers": [
+"30°",
+"45°",
+"60°",
+"90°"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-08",
+"topic": "M",
+"text": "Tik yuqoriga tekis tezlanuvchan harakatlanayotgan 24 kg massali jism o‘z tezligini boshlang‘ichga nisbatan 8 m/s ga oshirdi. Bu masofada uning o‘rtacha tezligi 6 m/s ga teng bo‘lsa, shu vaqt oralig‘ida jism kinetik energiyasi qanchaga (J) o‘zgargan?",
+"answers": [
+"1152",
+"2304",
+"621",
+"752"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-09",
+"topic": "M",
+"text": "Massasi 4 kg bo‘lgan jism qiyalik burchagi 30° bo‘lgan qiya tekislikda tekislikka parallel bo‘lgan F kuch bilan yuqoriga tortib ketilmoqda. Jism tezlanishi 2,5 m/s² ga teng bo‘lsa, F kuchning miqdorini (N) aniqlang. Jism va sirt orasidagi ishqalanish koeffitsiyenti 0,2 ga teng. $\\sqrt{3} \\approx 1{,}73$",
+"answers": [
+"53",
+"37",
+"45",
+"77"
+],
+"correct": 1,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-10",
+"topic": "E",
+"text": "Zaryadlari −5e va +3e bo‘lgan suv tomchilari birlashtirilsa, qanday zaryadli tomchi hosil bo‘ladi? e – elementar zaryad.",
+"answers": [
+"−2e",
+"−4e",
+"+2e",
+"+4e"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-11",
+"topic": "A",
+"text": "Tezligi 0,6c bo‘lgan zarraning impulsi 3 · 10⁻²⁰ kg · m/s ga teng. Uning to‘la energiyasi qanchaga (J) teng?",
+"answers": [
+"5 · 10⁻¹²",
+"10 · 10⁻¹²",
+"12 · 10⁻¹²",
+"15 · 10⁻¹²"
+],
+"correct": 3,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-12",
+"topic": "E",
+"text": "Rasmda yig‘ilgan elektr sxemasida R₁ = 1 Ω, R₂ = 3 Ω, R₃ = 4 Ω va U = 160 V ga teng. Bunga ko‘ra, voltmetrning ko‘rsatkichini (V) aniqlang.",
+"answers": [
+"20",
+"40",
+"60",
+"80"
+],
+"correct": 3,
+"image": "rasmlar/MS18_1-12.png",
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-13",
+"topic": "A",
+"text": "Elektronning chiqish ishi 3 eV bo‘lgan metallga energiyasi 5 eV bo‘lgan foton tushdi. Elektronning maksimal kinetik energiyasi qanchaga (eV) teng?",
+"answers": [
+"2",
+"4",
+"6",
+"8"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-14",
+"topic": "O",
+"text": "Yorug‘lik kuchi 25 cd va 16 cd bo‘lgan ikkita lampa bir-biridan 18 cm masofada turibdi. Ular orasida joylashgan fotometrik ekranning yoritilganligi bir xil bo‘lishi uchun, ekran birinchi lampadan qancha masofada (cm) qo‘yilishi kerak?",
+"answers": [
+"12",
+"5",
+"10",
+"15"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-15",
+"topic": "E",
+"text": "Induksiyasi 50 mT bo‘lgan bir jinsli magnit maydonga erkin aylana oladigan kvadrat ramka joylashtirildi. Ramkaning perimetri 2 cm ga teng. Agar ramka orqali 0,1 A tok o‘tkazilsa, ramkaning maksimal aylantiruvchi kuch momentini (N · m) aniqlang.",
+"answers": [
+"1,5 · 10⁻⁷",
+"1,25 · 10⁻⁷",
+"2,25 · 10⁻⁷",
+"2,5 · 10⁻⁷"
+],
+"correct": 1,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-16",
+"topic": "M",
+"text": "40 mA necha A ga teng?",
+"answers": [
+"0,04",
+"0,4",
+"4",
+"400"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-17",
+"topic": "MF",
+"text": "Yuzasi 20 cm² bo‘lgan silindrik idish massasi 7 kg bo‘lgan porshen bilan berkitilgan. Idishdagi gaz temperaturasi 3 marta orttirilganda, porshen dastlabki joyidan qo‘zg‘almasligi uchun uning ustiga qanday massali yuk (kg) qo‘yish kerak? Atmosfera bosimi 100 kPa ga teng.",
+"answers": [
+"27",
+"36",
+"54",
+"72"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-18",
+"topic": "M",
+"text": "22 kPa necha Pa?",
+"answers": [
+"22000",
+"220",
+"0,22",
+"0,022"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-19",
+"topic": "M",
+"text": "Prujinalar sistemasiga 48 kg massali yuk osilganida, prujinalar sistemaning necha sm ga cho‘zilishini aniqlang. Har bir prujina bikrliklari mos ravishda k₁ = 4 kN/m va k₂ = 6 kN/m ga teng.",
+"answers": [
+"5",
+"10",
+"15",
+"20"
+],
+"correct": 3,
+"image": "rasmlar/MS18_1-19.png",
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-20",
+"topic": "M",
+"text": "Jismning koordinatasi $x = 1 + 2t + 6t^2 - 0{,}4t^3$ qonuniyat bo‘yiga o‘zgaradi. Harakat boshlangandan qancha (s) vaqt o‘tgach, unga ta’sir qilayotgan kuch nolga teng bo‘ladi?",
+"answers": [
+"5",
+"2,5",
+"3,6",
+"2,4"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-21",
+"topic": "E",
+"text": "Maydon kuchlanganligi 200 kV/m bo‘lgan bir jinsli elektr maydonida elektronga ta’sir etuvchi kuchni aniqlang (N).",
+"answers": [
+"3,2 · 10⁻¹⁴",
+"1,6 · 10⁻¹⁴",
+"3,2 · 10⁻¹¹",
+"1,6 · 10⁻¹¹"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-22",
+"topic": "A",
+"text": "Asosiy energetik holatdagi vodorod atomining ionlashtirish energiyasi E ga teng. Uning asosiy holatidagi elektroni 15E/16 energiyali fotonni yutsa, qanday raqamli energetik sathga o‘tadi?",
+"answers": [
+"4",
+"2",
+"8",
+"3"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-23",
+"topic": "M",
+"text": "Tutash idishlarning biriga suv, ikkinchisiga kerosin quyilgan. Agar ular muvozanatda turgan bo‘lsa, suv ustuni balandligining kerosin ustuni balandligiga nisbatini toping.",
+"answers": [
+"0,8",
+"1,25",
+"0,9",
+"1,1"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-24",
+"topic": "A",
+"text": "Xonadagi havo harorati 15 °C ga, nisbiy namlik 60 % ga teng. Havoning absolyut namligini (g/m³) aniqlang.",
+"answers": [
+"5,12",
+"10,38",
+"6,92",
+"7,68"
+],
+"correct": 3,
+"image": "rasmlar/MS18_1-24.png",
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-25",
+"topic": "M",
+"text": "Rasmda moddiy nuqta tebranishlarining grafigi tasvirlangan. Tebranishning amplitudasi (m) qanday?",
+"answers": [
+"3",
+"0,03",
+"0,3",
+"0,003"
+],
+"correct": 1,
+"image": "rasmlar/MS18_1-25.png",
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-26",
+"topic": "E",
+"text": "Neytral jismdan 7 · 10¹¹ ta elektron chiqarib olindi. Uning zaryadini (nC) aniqlang.",
+"answers": [
+"112",
+"−112",
+"56",
+"−56"
+],
+"correct": 0,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-27",
+"topic": "E",
+"text": "Radiusi 5 cm bo‘lgan shar energiyasi 8,1 mJ ga teng. Zaryadning sirt zichligini (µC/m²) aniqlang.",
+"answers": [
+"5",
+"10",
+"5,5",
+"6"
+],
+"correct": 1,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-28",
+"topic": "E",
+"text": "Metallning 0 °C dagi qarshiligi 40 Ω. Uning 30 °C temperaturadagi qarshiligini aniqlang. Metallning termik koeffitsiyenti 0,004 K⁻¹.",
+"answers": [
+"16",
+"48",
+"66",
+"44,8"
+],
+"correct": 3,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-29",
+"topic": "E",
+"text": "Fazoning bir nuqtasida janubga tomon 0,3 T, g‘arbga 0,9 T va sharqqa 0,5 T magnit induksiya hosil bo‘lmoqda. Shu nuqtadagi natijaviy induksiyani (T) aniqlang.",
+"answers": [
+"0,8",
+"1,1",
+"0,5",
+"0,7"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_1-30",
+"topic": "O",
+"text": "Davri 2,3 µm bo‘lgan difraksion panjaraga to‘lqin uzunligi 0,6 µm bo‘lgan to‘lqin tik tushmoqda. Ekranda hosil bo‘lgan maksimumlar sonini aniqlang.",
+"answers": [
+"6",
+"3",
+"7",
+"4"
+],
+"correct": 2,
+"src": "MS18_1"
+},
+{
+"id": "MS18_2-01",
+"topic": "M",
+"text": "350 F necha mF ga teng?",
+"answers": [
+"350000",
+"35000",
+"3500",
+"0,35"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-02",
+"topic": "M",
+"text": "84 C necha mC ga teng?",
+"answers": [
+"840",
+"8400",
+"84000",
+"0,084"
+],
+"correct": 2,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-03",
+"topic": "E",
+"text": "Alyuminiydan yasalgan simning elektr toki o‘tkazildi. Agar tok zichligi 18 A/mm² ga teng bo‘lsa, 3 s da uning temperaturasi qanchaga (°C) o‘zgaradi?",
+"answers": [
+"11,2",
+"5,6",
+"7,2",
+"15,2"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-04",
+"topic": "M",
+"text": "Og‘irlik kuchining bajargan ishi qanday birlikda o‘lchanadi?",
+"answers": [
+"Joul",
+"Nyuton",
+"Nyuton×sekund",
+"Paskal"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-05",
+"topic": "M",
+"text": "Jism 80 m balandlikdan erkin tushmoqda. Uning massasi 6,4 kg ga teng. Jism yerga mutloq elastik urilgan bo‘lsa, tushish boshlangandan 9 s dan keyin uning potensial energiyasi qanchaga (J) teng bo‘ladi?",
+"answers": [
+"2400",
+"5600",
+"4800",
+"7200"
+],
+"correct": 2,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-07",
+"topic": "M",
+"text": "Idish tubida jo‘mrak o‘rnatilgan. Balandligi 405 cm bo‘lgan bu idish suv bilan to‘ldirildi. Jo‘mrak ochilganda suv undan qanday tezlikda (m/s) otilib chiqadi?",
+"answers": [
+"3",
+"6",
+"9",
+"12"
+],
+"correct": 2,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-08",
+"topic": "A",
+"text": "Metall sirtiga tushayotgan fotonning to‘liq energiyasi 5 eV ga, sirtdan ajralayotgan fotoelektronlarning maksimal kinetik energiyasi esa 3 eV ga teng. Agar fotonning chastotasi 3 marta orttirilsa, fotoelektronlarning maksimal kinetik energiyasi qanday o‘zgaradi?",
+"answers": [
+"10 eV ga ortadi",
+"10 eV ga kamayadi",
+"5 eV ga ortadi",
+"5 eV ga kamayadi"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-09",
+"topic": "E",
+"text": "O‘zgarmas tok manbaiga ulangan yassi kondensatorning yuzasi 3 marta orttirilsa, uning elektr sig‘imi qanday o‘zgaradi?",
+"answers": [
+"3 marta kamayadi",
+"3 marta ortadi",
+"9 marta ortadi",
+"o‘zgarmaydi"
+],
+"correct": 1,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-10",
+"topic": "E",
+"text": "Rasmda yig‘ilgan elektr zanjirida R₁ = 2 Ω, R₂ = 6 Ω, R₃ = 8 Ω va U = 120 V ga teng. Bunga asosan, voltmetrning ko‘rsatkichini (V) aniqlang.",
+"answers": [
+"15",
+"25",
+"45",
+"75"
+],
+"correct": 2,
+"image": "rasmlar/MS18_2-10.png",
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-11",
+"topic": "M",
+"text": "Jism 9 m/s tezlik bilan tik yuqoriga otildi. Jismning maksimal ko‘tarilish balandligini (m) aniqlang.",
+"answers": [
+"4,05",
+"8,1",
+"2",
+"12,15"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-12",
+"topic": "M",
+"text": "Impulsi 60 kg · m/s bo‘lgan jism kinetik energiyasining 19 % ini yo‘qotsa, uning keyingi impulsi qanday (kg · m/s) bo‘ladi?",
+"answers": [
+"9",
+"27",
+"54",
+"36"
+],
+"correct": 2,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-13",
+"topic": "E",
+"text": "O‘zgarmas tok manbaiga ulangan yassi kondensatorning yuzasi 3 marta orttirilsa, uning qoplamalari orasidagi elektr maydon energiya zichligi qanday o‘zgaradi?",
+"answers": [
+"o‘zgarmaydi",
+"3 marta ortadi",
+"3 marta kamayadi",
+"9 marta ortadi"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-14",
+"topic": "M",
+"text": "Og‘irlik kuchining birligini ko‘rsating.",
+"answers": [
+"Nyuton",
+"Paskal",
+"Joul",
+"Vatt"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-15",
+"topic": "MF",
+"text": "Ideal issiqlik mashinasining FIK 40 % ga teng. Agar isitgichning temperaturasini 20 % ga orttirsak, mashinaning FIK qanchaga teng bo‘ladi?",
+"answers": [
+"20 %",
+"50 %",
+"75 %",
+"25 %"
+],
+"correct": 1,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-16",
+"topic": "E",
+"text": "O‘zgaruvchan tok zanjirida tok kuchining maksimal qiymati 18 mA ga, zaryadning maksimal qiymati esa 0,03 µC ga teng. Konturning tebranish davri (µs) aniqlansin. π = 3.",
+"answers": [
+"10",
+"5",
+"15",
+"20"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-17",
+"topic": "A",
+"text": "Vodorod atomi elektronining 5-energetik sathdagi qiymatini (eV) aniqlang.",
+"answers": [
+"0,54",
+"0,27",
+"0,36",
+"0,72"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-18",
+"topic": "E",
+"text": "O‘zgarmas kuchlanish manbaiga ulangan kondensator qoplamalari orasidagi masofa 3 marta orttirilsa, elektr maydon energiya zichligi qanday o‘zgaradi?",
+"answers": [
+"9 marta kamayadi",
+"9 marta ortadi",
+"3 marta kamayadi",
+"o‘zgarmaydi"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-19",
+"topic": "M",
+"text": "x = 0,03 sin 5πt [m] qonuniyat bo‘yicha garmonik tebranayotgan jismning 4 s da bosib o‘tgan yo‘lini (m) aniqlang.",
+"answers": [
+"1,2",
+"0,8",
+"2,4",
+"1,6"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-20",
+"topic": "M",
+"text": "x = 0,06 sin 10πt [m] qonuniyat bo‘yicha garmonik tebranayotgan jismning 3 s da bosib o‘tgan yo‘lini (m) aniqlang.",
+"answers": [
+"1,8",
+"3,6",
+"2,4",
+"1,2"
+],
+"correct": 1,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-21",
+"topic": "M",
+"text": "Koordinata boshidan 5 m/s tezlikda yo‘lga chiqqan jism 6 s harakatlanib nechanchi koordinataga (m) boradi?",
+"answers": [
+"30",
+"15",
+"10",
+"20"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-22",
+"topic": "M",
+"text": "7 m/s boshlang‘ich tezlik bilan tik pastga otildi. Jismning oxirgi sekundda bosib o‘tgan masofasi birinchi sekundda bosib o‘tgan masofasidan 40 m ga ko‘p. Jismning otilgan balandligini (m) aniqlang.",
+"answers": [
+"80",
+"120",
+"100",
+"160"
+],
+"correct": 3,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-23",
+"topic": "MF",
+"text": "Ideal issiqlik mashinasining FIK 30 % ga teng. Agar isitgichning temperaturasini 20 % ga orttirsak, mashinaning FIK qanchaga teng bo‘ladi?",
+"answers": [
+"21 %",
+"42 %",
+"83,2 %",
+"41,6 %"
+],
+"correct": 3,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-24",
+"topic": "M",
+"text": "Massasi 20 kg bo‘lgan jism qiyaligi 30° bo‘lgan tekislikda yuqoriga qarab tekislikka parallel bo‘lgan 260 N kuch bilan tortib ketilmoqda. Agar jism va sirt orasidagi ishqalanish koeffitsiyenti $1/\\sqrt{3}$ ga teng bo‘lsa, jismning tezlanishini (m/s²) aniqlang.",
+"answers": [
+"1",
+"3",
+"6",
+"8"
+],
+"correct": 1,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-25",
+"topic": "O",
+"text": "Yassi ko‘zgudan buyumgacha masofa 4 m bo‘lsa, ko‘zgudan tasvirgacha masofani aniqlang (m).",
+"answers": [
+"8",
+"2",
+"16",
+"4"
+],
+"correct": 3,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-26",
+"topic": "O",
+"text": "Fokus masofasi 20 sm bo‘lgan yig‘uvchi linza buyum tamonga 5 sm yaqinlashtrilganda uning kattalashtrishi 4 ga teng bo‘ladi. Linza dastlabki holtdagi kattalashtrishini toping.",
+"answers": [
+"20/9",
+"5",
+"10/4",
+"6"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-27",
+"topic": "M",
+"text": "Energiya zichligi birligini toping.",
+"answers": [
+"J",
+"J/m²",
+"J/m³",
+"W/m²"
+],
+"correct": 2,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-28",
+"topic": "E",
+"text": "Magnit maydonga perpendikulyar uchib kirgan massasi $6\\cdot 10^{-14}$ kg bo‘lgan 9 nC zaryadga ega zarracha 0,1 ms da o‘z yo‘nalishini 90° ga o‘zgartirgan bo‘lsa, magnit maydon induksiyasini aniqlang (T). π = 3",
+"answers": [
+"0,1",
+"0,2",
+"0,5",
+"1"
+],
+"correct": 0,
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-29",
+"topic": "E",
+"text": "a va b nuqtaviy zaryadlar berilgan. b zaryadga ta’sir etuvchi Kulon kuchining yo‘nalishini aniqlang.",
+"answers": [
+"→",
+"←",
+"↑",
+"↓"
+],
+"correct": 1,
+"image": "rasmlar/MS18_2-29.png",
+"src": "MS18_2"
+},
+{
+"id": "MS18_2-30",
+"topic": "E",
+"text": "Uchta zarra bir to‘g‘ri chiziqda yotibdi. Agar +2q zarrachaning potensial energiyasi W bo‘lsa, +3q zarrachaning potensial energiyasini toping.",
+"answers": [
+"2W",
+"W",
+"0,5W",
+"3W"
+],
+"correct": 1,
+"image": "rasmlar/MS18_2-30.png",
+"src": "MS18_2"
+},
+{
+"id": "MS19_1-01",
+"topic": "M",
+"text": "Kinetik energiyaning birligini ko‘rsating.",
+"answers": [
+"Joul",
+"Nyuton",
+"Nyuton · sekund",
+"Paskal"
+],
+"correct": 0,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-02",
+"topic": "E",
+"text": "Magnit induksiya birligi nima?",
+"answers": [
+"Veber",
+"Amper",
+"Nyuton×metr",
+"Tesla"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-03",
+"topic": "M",
+"text": "Garmonik tebranayotgan jismning siljish tenglamasi $x = 0{,}04\\sin 5\\pi t$ [m] ko‘rinishga ega. Jismning 4 s dan keyingi tezlanishini (m/s²) aniqlang.",
+"answers": [
+"10",
+"0",
+"-10",
+"5"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-04",
+"topic": "E",
+"text": "Induksiyasi 0,03 T bo‘lgan bir jinsli magnit maydonga tik holatda 40 cm uzunlikdagi tokli o‘tkazgich kiritildi. Undan 0,5 A tok o‘tkazilganda hosil bo‘ladigan amper kuchini (mN) aniqlang.",
+"answers": [
+"2",
+"3",
+"6",
+"9"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-05",
+"topic": "M",
+"text": "Muz ustida 80 kg massali odam 16 kg massali yukni sirpantirib yubordi. Yuk 4 s da 15 m masofa yurib to‘xtagan bo‘lsa, odamning olgan eng katta kinetik energiyasini (J) hisoblang.",
+"answers": [
+"30",
+"60",
+"120",
+"90"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-06",
+"topic": "E",
+"text": "Rasmda yig‘ilgan elektr sxemasida R₁ = 1 Ω, R₂ = 3 Ω, R₃ = 4 Ω va U = 160 V ga teng. Bunga ko‘ra, voltmetrning ko‘rsatkichini (V) aniqlang.",
+"answers": [
+"10",
+"20",
+"30",
+"40"
+],
+"correct": 1,
+"image": "rasmlar/MS19_1-06.png",
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-07",
+"topic": "A",
+"text": "Metall sirtiga tushayotgan fotonning to‘liq energiyasi 3 eV ga, sirtdan ajralayotgan fotoelektronlarning maksimal kinetik energiyasi esa 2 eV ga teng. Agar fotonning chastotasi 3 marta orttirilsa, fotoelektronlarning maksimal kinetik energiyasi necha marta ortadi?",
+"answers": [
+"10",
+"2",
+"4",
+"20"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-08",
+"topic": "O",
+"text": "Yig‘uvchi linzadan buyumgacha masofa 10 cm ga teng. Linzada buyumning 2 marta kattalashgan mavhum tasviri hosil bo‘lgan bo‘lsa, uning fokus masofasini (cm) aniqlang.",
+"answers": [
+"5",
+"20",
+"50",
+"100"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-09",
+"topic": "M",
+"text": "Avtomobil butun yo‘lning dastlabki yarmini 9 m/s tezlikda, qolgan yarmini esa 2 marta katta tezlikda o‘tdi. Uning butun yo‘lni bosib o‘tishdagi o‘rtacha tezligini (m/s) toping.",
+"answers": [
+"8",
+"15",
+"20",
+"12"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-10",
+"topic": "E",
+"text": "Magnit oqimning birligini ko‘rsating.",
+"answers": [
+"Tesla",
+"Veber",
+"Amper",
+"Volt"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-11",
+"topic": "M",
+"text": "Jism 7 m/s boshlang‘ich tezlik bilan tik pastga otildi. Jismning oxirgi sekundda bosib o‘tgan masofasi birinchi sekundda bosib o‘tgan masofasidan 40 m ga ko‘p. Jismning yerga urilishdagi tezligini (m/s) aniqlang.",
+"answers": [
+"45",
+"68",
+"57",
+"35"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-12",
+"topic": "M",
+"text": "Tebranish davri 0,04 s bo‘lgan jism 10 s da necha marta tebranadi?",
+"answers": [
+"25",
+"250",
+"500",
+"50"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-13",
+"topic": "M",
+"text": "Massasi 20 kg bo‘lgan jism qiyalik burchagi 30° bo‘lgan qiya tekislikda tekislikka parallel bo‘lgan 60 N kuch bilan ushlab turilibdi. Jism va sirt orasidagi ishqalanish kuchini (N) aniqlang.",
+"answers": [
+"5",
+"20",
+"10",
+"40"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-14",
+"topic": "M",
+"text": "80 m balandlikdan boshlang‘ich tezliksiz tik tashlangan jism yerga mutlaq elastik urildi. Jism tashlangandan 15 s o‘tib uning oniy tezligi qancha (m/s) bo‘ladi?",
+"answers": [
+"2",
+"5",
+"10",
+"20"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-15",
+"topic": "E",
+"text": "O‘zgarmas tok manbaiga ulangan yassi kondensator qoplamalari orasidagi masofa 4 marta kamaytirilsa, kondensator energiyasi qanday o‘zgaradi?",
+"answers": [
+"4 marta kamayadi",
+"4 marta ortadi",
+"2 marta kamayadi",
+"o‘zgarmaydi"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-16",
+"topic": "MF",
+"text": "Massasi 4 g bo‘lgan vodorod gazining 40% i dissotsiyalandi. Qolgan vodorod atomlarining sonini aniqlang. $N_A$ — Avogadro doimiysi.",
+"answers": [
+"$0{,}2\\cdot N_A$",
+"$0{,}4\\cdot N_A$",
+"$0{,}8\\cdot N_A$",
+"$1{,}2\\cdot N_A$"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-17",
+"topic": "E",
+"text": "Rasmda berilgan musbat zaryadlangan yassi tekislikning sirt zichligi σ = 177 nC/m² ga teng. Agar sharchaga q = −8,5 µC zaryad berilgan bo‘lsa, uning massasini (g) aniqlang. $\\sqrt{3} \\approx 1{,}7$",
+"answers": [
+"1",
+"5",
+"15",
+"10"
+],
+"correct": 1,
+"image": "rasmlar/MS19_1-17.png",
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-18",
+"topic": "M",
+"text": "O‘rtacha tezligi 20 m/s bo‘lgan jism 6 s da qancha masofa (m) bosadi?",
+"answers": [
+"60",
+"20",
+"120",
+"40"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-19",
+"topic": "O",
+"text": "Buyumdan uning yassi ko‘zgudagi tasvirigacha masofa 50 cm ga teng. Buyumdan ko‘zgugacha bo‘lgan masofani (cm) aniqlang.",
+"answers": [
+"15",
+"10",
+"20",
+"25"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-20",
+"topic": "M",
+"text": "Mexanik energiyaning birligi nima?",
+"answers": [
+"Joul",
+"Nyuton",
+"Paskal",
+"Vatt"
+],
+"correct": 0,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-21",
+"topic": "M",
+"text": "80 m balandlikdan boshlang‘ich tezliksiz tik tashlangan 6,4 kg massali jism yerga mutlaq elastik urildi. Jism tashlangandan 15 s o‘tib uning kinetik energiyasi qancha (J) bo‘ladi?",
+"answers": [
+"160",
+"320",
+"100",
+"200"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-22",
+"topic": "M",
+"text": "Yuzasi 20 m² bo‘lgan parallelopiped shaklidagi muzning suvga botgan qismining balandligi 27 m ga teng. Uning suvdan chiqib turgan hajmini (m³) aniqlang.",
+"answers": [
+"20",
+"40",
+"60",
+"80"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-23",
+"topic": "E",
+"text": "Alyuminiydan yasalgan simdan elektr toki o‘tkazildi. Agar tok zichligi 18 A/mm² ga teng bo‘lsa, 3 s da uning temperaturasi qanchaga (°C) o‘zgaradi?",
+"answers": [
+"11,2 °C",
+"22,4 °C",
+"5,6 °C",
+"7,2 °C"
+],
+"correct": 0,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-24",
+"topic": "A",
+"text": "Metall sirtiga tushayotgan fotonning to‘liq energiyasi 9 eV ga, sirtdan ajralayotgan fotoelektronlarning maksimal kinetik energiyasi esa 6 eV ga teng. Agar fotonning chastotasi 3 marta orttirilsa, fotoelektronlarning maksimal kinetik energiyasi qanday o‘zgaradi?",
+"answers": [
+"o‘zgarmaydi",
+"2 marta ortadi",
+"4 marta kamayadi",
+"4 marta ortadi"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-25",
+"topic": "E",
+"text": "O‘zgaruvchan tok zanjirida tok kuchining amplitudaviy qiymati 0,03 A ga, tebranish davri esa 4 ms ga teng bo‘lsa, kondensatorda yig‘iladigan zaryadning maksimal qiymatini (µC) hisoblang. π = 3",
+"answers": [
+"5",
+"10",
+"20",
+"40"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-26",
+"topic": "E",
+"text": "Yassi kondensator manbadan uzildi va qoplamalar orasidagi masofa 3 marta kamaytirildi. Bunda kondensatorning energiyasi qanday o‘zgaradi?",
+"answers": [
+"3 marta ortadi",
+"3 marta kamayadi",
+"9 marta kamayadi",
+"9 marta ortadi"
+],
+"correct": 1,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-27",
+"topic": "MF",
+"text": "Vertikal joylashtirilgan uzun silindrik germetik idish porshen orqali ikkiga ajratilgan. Porshen ostida 2 mol, yuqorisida esa 3 mol havo bor. Idishdagi temperatura 300 K bo‘lgan paytda silindr yuqorisidagi gaz hajmi pastdagi gaz hajmidan 3 marta katta bo‘ldi. Qanday temperaturada (K) gaz hajmlari 4 marta farq qiladi?",
+"answers": [
+"112",
+"144",
+"156",
+"192"
+],
+"correct": 3,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-28",
+"topic": "E",
+"text": "Quyidagi magnit singdiruvchanligi berilgan moddalarning qaysi birlari ferromagnit? 1) µ = 800; 2) µ = 0,998; 3) µ = 0,999998; 4) µ = 1,00998; 5) µ = 998.",
+"answers": [
+"5",
+"2, 3, 4",
+"1, 5",
+"2, 3"
+],
+"correct": 2,
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-29",
+"topic": "M",
+"text": "Rasmda kesimlari bir xil bo‘lgan quvurlar tizimi tasvirlangan bo‘lib, unda quvurlardagi suv oqimining tezligi (cm³/s) va yo‘nalishi ham ko‘rsatilgan. A quvurdagi suv yo‘nalishi va tezligi (cm³/s) topilsin.",
+"answers": [
+"↓ va 14",
+"↓ va 12",
+"↑ va 10",
+"↑ va 12"
+],
+"correct": 0,
+"image": "rasmlar/MS19_1-29.png",
+"src": "MS19_1"
+},
+{
+"id": "MS19_1-30",
+"topic": "MF",
+"text": "Germetik berk idishdagi 16 g geliyning haroratini 20 °C ga oshirish uchun qancha issiqlik berish kerak (kJ)? $M_{He}$ = 4 g/mol.",
+"answers": [
+"1",
+"4",
+"0,9",
+"1,4"
+],
+"correct": 0,
+"src": "MS19_1"
+},
+{
+"id": "MS19_2-01",
+"topic": "E",
+"text": "Zaryadlari 6 nC va 8 nC bo‘lgan ikki nuqtaviy zaryad orasidagi masofa 40 cm ga teng. Shu zaryadlarni tutashtiruvchi kesma o‘rtasidagi maydon kuchlanganlikni (V/m) aniqlang.",
+"answers": [
+"180",
+"360",
+"450",
+"900"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-02",
+"topic": "M",
+"text": "Garmonik tebranayotgan jismning siljish tenglamasi x = 0,08 sin 3πt [m] ko‘rinishga ega. Jismning tebranish amplitudasini (cm) aniqlang.",
+"answers": [
+"3",
+"8",
+"0,08",
+"24"
+],
+"correct": 1,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-03",
+"topic": "M",
+"text": "Garmonik tebranayotgan jismning siljish tenglamasi x = 0,03 sin 10πt [m] ko‘rinishga ega. Jismning tebranish chastotasini (Hz) aniqlang.",
+"answers": [
+"5",
+"10",
+"3",
+"15"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-04",
+"topic": "MF",
+"text": "20 °C temperaturali 2 l suvga 50 °C temperaturali qancha hajmli (cm³) suv qo‘shilsa, hosil bo‘lgan aralashmaning temperaturasi 40 °C bo‘ladi.",
+"answers": [
+"4000",
+"2000",
+"1000",
+"3000"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-06",
+"topic": "A",
+"text": "Vodorod atomi elektronining ikkinchi orbitadagi energiyasi E ga teng bo‘lsa, to‘rtinchi orbitadagi energiyasini toping.",
+"answers": [
+"E/2",
+"E/8",
+"E/4",
+"E/3"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-07",
+"topic": "M",
+"text": "Jism oltinchi sekundda 4 m yurib to‘xtadi. Uning to‘rtinchi sekunddagi yurgan masofasini (m) aniqlang.",
+"answers": [
+"20",
+"12",
+"16",
+"8"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-08",
+"topic": "E",
+"text": "Mis simning 0 °C temperaturadagi qarshiligi 50 Ω ga, 30 °C temperaturadagi qarshiligi esa 57,5 Ω ga teng bo‘ldi. Uning termik koeffitsiyentini (10⁻³ K⁻¹) aniqlang.",
+"answers": [
+"2",
+"4",
+"5",
+"6"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-09",
+"topic": "M",
+"text": "O‘rtacha tezligi 20 m/s bo‘lgan jism 40 s da qancha masofaga (km) yuriydi?",
+"answers": [
+"0,8",
+"8",
+"80",
+"0,08"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-10",
+"topic": "M",
+"text": "Jism oltinchi sekundda 4 m yurib to‘xtadi. Uning ikkinchi sekunddagi yurgan masofasini (m) aniqlang.",
+"answers": [
+"18",
+"36",
+"24",
+"42"
+],
+"correct": 1,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-11",
+"topic": "A",
+"text": "$^{209}_{84}\\mathrm{Po}$ atomining tarkibini aniqlang.",
+"answers": [
+"84 ta elektron, 209 ta neytron",
+"84 ta elektron, 125 ta neytron",
+"125 ta neytron, 84 ta proton",
+"209 ta nuklon, 84 ta neytron"
+],
+"correct": 1,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-12",
+"topic": "M",
+"text": "Quyidagi birliklardan qaysi biri XBS (SI) ga tegishli?",
+"answers": [
+"m",
+"km",
+"dm",
+"cm"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-13",
+"topic": "M",
+"text": "Jism oltinchi sekundda 5 m yurib to‘xtadi. Uning ikkinchi sekunddagi bosib o‘tgan yo‘lini (m) aniqlang.",
+"answers": [
+"45",
+"25",
+"35",
+"15"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-14",
+"topic": "E",
+"text": "860 mT necha T ga teng?",
+"answers": [
+"86",
+"8,6",
+"0,86",
+"0,086"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-15",
+"topic": "M",
+"text": "660 kPa necha Pa ga teng?",
+"answers": [
+"6600",
+"66000",
+"660000",
+"6600000"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-16",
+"topic": "MF",
+"text": "Temperaturasi 200 K bo‘lgan 100 g neon gazining hajmi izobarik ravishda 3 marta orttirildi. Gazga berilgan issiqlik miqdorini (J) aniqlang. R — universal gaz doimiysi.",
+"answers": [
+"5000R",
+"3000R",
+"2000R",
+"1500R"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-17",
+"topic": "M",
+"text": "Jism yo‘lning dastlabki yarmini 15 m/s tezlik bilan, qolgan yarmini esa 2 marta katta tezlikda bosib o‘tdi. Uning butun yo‘ldagi o‘rtacha tezligini (m/s) aniqlang.",
+"answers": [
+"22",
+"25",
+"18",
+"20"
+],
+"correct": 3,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-18",
+"topic": "M",
+"text": "25 m balandlikdan 20 kg massali jism boshlang‘ich tezliksiz erkin tashlab yuborildi. Uning kinetik energiyasi 600 J bo‘lganda potensial energiyasi qanchaga (J) teng bo‘ladi?",
+"answers": [
+"4400",
+"5000",
+"3800",
+"4200"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-19",
+"topic": "M",
+"text": "8 g vodorod va 32 g kislorod aralashmasidagi molekulalar sonini aniqlang.",
+"answers": [
+"3 · 10²⁴",
+"6 · 10²³",
+"1,2 · 10²⁴",
+"2,4 · 10²⁴"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-20",
+"topic": "M",
+"text": "Musbat zarrachaning A nuqtadagi maydon kuchlanganligi qaysi tomonga yo‘nalgan bo‘ladi?",
+"answers": [
+"↑",
+"→",
+"←",
+"↓"
+],
+"correct": 1,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-21",
+"topic": "A",
+"text": "Metall sirtiga tushayotgan fotonning energiyasi 3 eV ga teng. Metall sirtidan elektronning chiqish ishi esa 1 eV ga teng. Agar fotonning chastotasi 3 marta orttirilsa, fotoelektronlarning kinetik energiyasi qanday o‘zgaradi?",
+"answers": [
+"2 marta kamayadi",
+"2 marta ortadi",
+"4 marta ortadi",
+"4 marta kamayadi"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-23",
+"topic": "E",
+"text": "Potensiallar farqi 4 V bo‘lgan elektr maydonda 8 mC zaryadli zarrachani ko‘chirishda elektr maydon qancha ish (mJ) bajaradi?",
+"answers": [
+"32",
+"16",
+"64",
+"2"
+],
+"correct": 0,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-25",
+"topic": "M",
+"text": "Rasmdan foydalangan holda $\\dfrac{T}{P}$ ni toping. (Bloklarning og‘irligi hisobga olinmasin.)",
+"answers": [
+"$\\dfrac{1}{4}$",
+"$\\dfrac{1}{3}$",
+"$\\dfrac{1}{2}$",
+"3"
+],
+"correct": 0,
+"image": "rasmlar/MS19_2-25.png",
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-26",
+"topic": "M",
+"text": "Gidravlik pressning 2S va 5S yuzali porshenlari yengil, cho‘zilmas ip yordamida bloklar orqali o‘zaro bog‘langan. Agar K porshen 3 sm masofaga tushirilsa, L va M porshenlari sathlari orasidagi masofa qanchaga teng bo‘ladi?",
+"answers": [
+"6 sm",
+"3 sm",
+"3,5 sm",
+"1,5 sm"
+],
+"correct": 0,
+"image": "rasmlar/MS19_2-26.png",
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-27",
+"topic": "O",
+"text": "Nuqtaviy manbaning yorug‘lik kuchi 100 cd ga teng. Manbadan chiqayotgan to‘la yorug‘lik oqimini toping (lm).",
+"answers": [
+"625",
+"400",
+"824",
+"1256"
+],
+"correct": 3,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-28",
+"topic": "M",
+"text": "Rasmdan foydalanib biror sirtga urilib qaytgan jismning impuls o‘zgarishini toping (kg·m/s)?",
+"answers": [
+"20",
+"30",
+"15",
+"50"
+],
+"correct": 0,
+"image": "rasmlar/MS19_2-28.png",
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-29",
+"topic": "E",
+"text": "Radiusi 0,02 m bo‘lgan suvga (ε = 80) tushirilgan sferaning elektr sig‘imi (pF) aniqlansin.",
+"answers": [
+"80",
+"160",
+"180",
+"240"
+],
+"correct": 2,
+"src": "MS19_2"
+},
+{
+"id": "MS19_2-30",
+"topic": "A",
+"text": "Chizmada ko‘rsatilgan qaysi o‘tishda atom eng katta impulsga ega foton yutadi?",
+"answers": [
+"2",
+"3",
+"4",
+"1"
+],
+"correct": 0,
+"image": "rasmlar/MS19_2-30.png",
+"src": "MS19_2"
+},
+{
+"id": "MS21_2-01",
+"topic": "M",
+"text": "85 kPa necha Pa ga teng?",
+"answers": [
+"8,5",
+"850",
+"85000",
+"0,85"
+],
+"correct": 2,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-02",
+"topic": "MF",
+"text": "Gaz rasmda ko‘rsatilganidek 1-holatda 2-holatga o‘tgan bo‘lsa, bu jarayon nomini va gaz zichligi qanday o‘zgarganligini toping.",
+"answers": [
+"Izobarik, ortgan",
+"Izotermik, ortgan",
+"Izoxorik, ortgan",
+"Izoxorik, o‘zgarmagan"
+],
+"correct": 3,
+"image": "rasmlar/MS21_2-02.png",
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-03",
+"topic": "E",
+"text": "45 mT necha T ga teng?",
+"answers": [
+"0,045",
+"0,45",
+"4,5",
+"450"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-04",
+"topic": "M",
+"text": "Odam 5 m oldinga harakatlanib, so‘ngra 4 m orqaga yuridi. Uning ko‘chishini (m) aniqlang.",
+"answers": [
+"9",
+"5",
+"4",
+"1"
+],
+"correct": 3,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-05",
+"topic": "M",
+"text": "Sig‘imi 280 m³ bo‘lgan hovuzda 9 ta nasos o‘rnatilgan. Bitta nasos 15 minutda 6 t suvni tortib chiqaradi. 9 ta nasos 1 soat davomida ishlaganda hovuzda qancha suv (t) qoladi?",
+"answers": [
+"72",
+"36",
+"64",
+"48"
+],
+"correct": 2,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-06",
+"topic": "M",
+"text": "Jism 30 m/s boshlang‘ich tezlik bilan tik yuqoriga otildi. Uning maksimal ko‘tarilish balandligini (m) aniqlang.",
+"answers": [
+"30",
+"45",
+"90",
+"15"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-07",
+"topic": "E",
+"text": "Zaryadi 5 mC bo‘lgan zarrachani potensiallar farqi 8 V bo‘lgan maydonda ko‘chirish uchun elektr maydon bajargan ishni (mJ) aniqlang.",
+"answers": [
+"40",
+"1,6",
+"13",
+"3"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-08",
+"topic": "M",
+"text": "10 m uzunlikdagi sterjen rasmda ko‘rsatilganidek muvozanatda turibdi. Sterjen massasini (kg) aniqlang.",
+"answers": [
+"20",
+"120",
+"40",
+"60"
+],
+"correct": 2,
+"image": "rasmlar/MS21_2-08.png",
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-09",
+"topic": "M",
+"text": "Quyidagi javoblardan qaysi birida miqdor XBS (SI) da keltirilgan?",
+"answers": [
+"36 g",
+"36 t",
+"36 kg",
+"36 st"
+],
+"correct": 2,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-10",
+"topic": "M",
+"text": "Jism oltinchi sekundda 4 m yurib to‘xtadi. Uning uchinchi sekunddagi ko‘chishini (m) aniqlang.",
+"answers": [
+"12",
+"28",
+"16",
+"20"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-11",
+"topic": "E",
+"text": "120 V kuchlanish manbaiga ulangan rezistordan 2,5 minutda ichida 3,6 kJ issiqlik miqdori ajralgan bo‘lsa, rezistordan oqib o‘tkan tok (A) kuchi qanday.",
+"answers": [
+"0,1",
+"1",
+"5",
+"0,2"
+],
+"correct": 3,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-12",
+"topic": "M",
+"text": "Ikki yukning massalari mos ravishda 5 kg va 400 g ga teng. Ularning umumiy massasi necha kilogramm?",
+"answers": [
+"5,4",
+"5400",
+"5,004",
+"5,04"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-13",
+"topic": "M",
+"text": "Bikrligi 1,6 kN/m bo‘lgan purjinaga 5 kg osilgan. Purjina qanchaga (sm) cho‘ziladi?",
+"answers": [
+"8/25",
+"12/5",
+"25/8",
+"16/5"
+],
+"correct": 2,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-14",
+"topic": "MF",
+"text": "Impulsning XBS dagi birligini ko‘rsating.",
+"answers": [
+"N · m",
+"kg · m/s",
+"kg · m/s²",
+"J · s"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-15",
+"topic": "MF",
+"text": "Ideal gaz bosimi $pV^2=\\mathrm{const}$ qonuniyat bo‘yicha ortmoqda. Bunda gazning temperaturasi qanday o‘zgaradi?",
+"answers": [
+"ortadi",
+"kamayadi",
+"o‘zgarmaydi",
+"bosimga bog‘liq emas"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-16",
+"topic": "M",
+"text": "Jismga 20 N kuch 0,4 s davomida ta’sir etgan bo‘lsa, unda hosil bo‘lgan kuch impulsini (N · s) aniqlang.",
+"answers": [
+"50",
+"8",
+"5",
+"0,02"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-17",
+"topic": "O",
+"text": "Botiq ko‘zgudan buyumgacha bo‘lgan masofa d = 20 cm. Buyumning k = 5/3 marta kattalashgan haqiqiy tasviri hosil bo‘ldi. Botiq ko‘zguning radiusini (cm) toping?",
+"answers": [
+"50",
+"37,5",
+"25",
+"12,5"
+],
+"correct": 2,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-18",
+"topic": "O",
+"text": "Panjara doimiysi 6 µm bo‘lgan difraksion panjaradagi 5-tartibli maksimum deyarli 90° burchak ostida ko‘rinsa, yorug‘lik to‘lqin uzunligini (µm) toping.",
+"answers": [
+"1,2",
+"2,4",
+"3,6",
+"0,6"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-19",
+"topic": "E",
+"text": "Uchburchakning uchta tomoni 6 cm, 8 cm va 10 cm ga teng. Uning uchala uchiga bir xil q zaryadlar joylashtirilgan. Uchburchakning katta tomoni o‘rtasidagi potensial 1350 V bo‘lsa, q zaryad miqdorini (nC) toping.",
+"answers": [
+"2,5",
+"5,0",
+"7,5",
+"1,2"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-20",
+"topic": "M",
+"text": "Tebranma harakat qilayotgan jismning 8/3 sekunddagi tezlanishini toping.",
+"answers": [
+"$-\\dfrac{\\sqrt{3}\\pi^2}{32}$",
+"$\\dfrac{\\sqrt{3}\\pi^2}{32}$",
+"$-\\dfrac{\\pi^2}{32}$",
+"$\\dfrac{\\pi^2}{32}$"
+],
+"correct": 0,
+"image": "rasmlar/MS21_2-20.png",
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-21",
+"topic": "E",
+"text": "Kondensator plastinkalari orasidagi masofa 10 cm ga teng. Agar qoplamalar orasiga 200 V kuchlanish berilsa, hosil bo‘ladigan maydon kuchlanganligini (kV/m) aniqlang.",
+"answers": [
+"20",
+"0,2",
+"2",
+"200"
+],
+"correct": 2,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-22",
+"topic": "O",
+"text": "Optik kuchi 2 dptr bo‘lgan linzaning fokus masofasini (m) aniqlang.",
+"answers": [
+"2",
+"0,5",
+"1",
+"0,2"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-24",
+"topic": "E",
+"text": "Rasmdan foydalanib a va b nuqtalar orasidagi cheksiz zanjirning umumiy elektr sig‘imini aniqlang.",
+"answers": [
+"$\\dfrac{\\sqrt{5}+1}{2}C$",
+"$\\dfrac{\\sqrt{5}-1}{2}C$",
+"$\\dfrac{\\sqrt{3}-1}{2}C$",
+"$\\dfrac{\\sqrt{2}+1}{2}C$"
+],
+"correct": 1,
+"image": "rasmlar/MS21_2-24.png",
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-25",
+"topic": "M",
+"text": "Ko‘ndalang kesim yuzasi S = 8 mm² bo‘lgan 10 m uzunlikdagi sterjenning Yung moduli 5 MPa bo‘lsa, uning bikrligini (N/m) toping.",
+"answers": [
+"4",
+"2",
+"1",
+"5"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-26",
+"topic": "E",
+"text": "Elektroliz vaqtida tok kuchi I = 6 + 0,05t qonun bo‘yicha oqmoqda. 80 s vaqt davomida qanday massali (g) nikel ajralib chiqadi? k = 0,35 · 10⁻⁶ kg/C",
+"answers": [
+"0,224",
+"0,280",
+"0,488",
+"0,14"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-27",
+"topic": "O",
+"text": "Suyuqlik sirtiga yorug‘lik nuri 36° burchak ostida tushmoqda. Agar sinish burchagi 24° bo‘lsa, singan va qaytgan nurlar orasidagi burchakni toping.",
+"answers": [
+"120°",
+"60°",
+"54°",
+"72°"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-28",
+"topic": "M",
+"text": "Jismning harakat tenglamasi $x = -10 + 12t - 2t^2$ [m] bilan o‘zgarmoqda. Jismni to‘xtaguncha bosib o‘tgan yo‘lini (m) toping.",
+"answers": [
+"12",
+"18",
+"4",
+"8"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-29",
+"topic": "M",
+"text": "To‘la sirti 96 cm² bo‘lgan kub shaklidagi jismning massasi 160 g ga teng bo‘lsa uni zichligini (kg/m³) toping.",
+"answers": [
+"800",
+"2500",
+"3000",
+"1500"
+],
+"correct": 1,
+"src": "MS21_2"
+},
+{
+"id": "MS21_2-30",
+"topic": "A",
+"text": "$^{4}_{2}\\mathrm{He}$ Geliy yadrosining bog‘lanish energiyasi 27 MeV ga teng. Uni solishtirma bog‘lanish energiyasini (MeV/nuklon) toping.",
+"answers": [
+"27/4",
+"27/2",
+"27",
+"54"
+],
+"correct": 0,
+"src": "MS21_2"
+},
+{
+"id": "MS22_1-01",
+"topic": "O",
+"text": "Fokus masofasi 15 cm bo‘lgan linzada buyumning 3 marta kichiklashgan teskari tasviri hosil bo‘ldi. Buyumdan tasvirgacha bo‘lgan masofani (cm) aniqlang.",
+"answers": [
+"80",
+"60",
+"45",
+"90"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-02",
+"topic": "E",
+"text": "Qarshiligi 10 Ω bo‘lgan rezistordan 5 A tok o‘tganda rezistorda qanday kuchlanish (V) hosil bo‘ladi?",
+"answers": [
+"25",
+"50",
+"100",
+"5"
+],
+"correct": 1,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-03",
+"topic": "M",
+"text": "Massasi 18 kg bo‘lgan yuk yuqoriga ko‘tarilmoqda. A va C oraliqdagi og‘irliklari farqini (N) toping.",
+"answers": [
+"30",
+"15",
+"75",
+"0"
+],
+"correct": 2,
+"image": "rasmlar/MS22_1-03.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-04",
+"topic": "M",
+"text": "Prujinaga 0,8 kg massali yuk osib qo‘yildi. Uning og‘irligini (N) aniqlang.",
+"answers": [
+"0,8",
+"1,6",
+"8",
+"80"
+],
+"correct": 2,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-05",
+"topic": "M",
+"text": "Tebranayotgan jismning tebranish davri 4 s ga teng. Uning chastotasini (Hz) aniqlang.",
+"answers": [
+"0,25",
+"4",
+"2",
+"0,5"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-06",
+"topic": "M",
+"text": "Prujina x uzunlikka siqilib qo‘yib yuborilsa, v tezlik oladi. 3x ga siqilsa, qanday tezlik oladi?",
+"answers": [
+"v",
+"v/3",
+"3v",
+"5v"
+],
+"correct": 2,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-07",
+"topic": "M",
+"text": "To‘lqin uzunligi λ, fazalar farqi $\\dfrac{4\\pi}{5}$ bo‘lgan to‘lqinning yo‘llar farqi qanday?",
+"answers": [
+"0,2λ",
+"0,4λ",
+"0,5λ",
+"0,8λ"
+],
+"correct": 1,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-08",
+"topic": "E",
+"text": "EYuK i 84 V bo‘lgan manbaning ichki qarshiligi 3 Ω ga teng. Manbaga R qarshilikli rezistor ulanganda undan 12 A tok oqib o‘tdi. Zanjirdagi foydali quvvatni (W) aniqlang.",
+"answers": [
+"144",
+"288",
+"432",
+"576"
+],
+"correct": 3,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-09",
+"topic": "M",
+"text": "Impulsi 200 kg·m/s bo‘lgan jismning kinetik energiyasi 4000 J ga teng. Uning massasini (kg) aniqlang.",
+"answers": [
+"5",
+"10",
+"20",
+"2,5"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-10",
+"topic": "E",
+"text": "Rasmda ko‘rsatilgan elektr sxemada R = 6 Ω ga teng bo‘lsa, zanjirdagi to‘la qarshilikni (Ω) aniqlang.",
+"answers": [
+"18",
+"12",
+"6",
+"9"
+],
+"correct": 1,
+"image": "rasmlar/MS22_1-10.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-11",
+"topic": "E",
+"text": "Metall o‘tkazgichning −20 °C va 20 °C haroratdagi qarshiliklari mos ravishda 11,2 Ω va 12 Ω ga teng. Shu o‘tkazgichning 300 °C temperaturadagi qarshiligini (Ω) toping.",
+"answers": [
+"14,8",
+"15,2",
+"17,6",
+"19,4"
+],
+"correct": 2,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-12",
+"topic": "E",
+"text": "Rasmda to‘g‘ri magnit tasvirlangan. Uning C nuqtada hosil qilgan induksiya yo‘nalishini aniqlang.",
+"answers": [
+"↑",
+"←",
+"↓",
+"→"
+],
+"correct": 0,
+"image": "rasmlar/MS22_1-12.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-13",
+"topic": "E",
+"text": "Rasmda to‘g‘ri magnit tasvirlangan. Uning C nuqtada hosil qilgan induksiya yo‘nalishini aniqlang.",
+"answers": [
+"→",
+"←",
+"↓",
+"↑"
+],
+"correct": 0,
+"image": "rasmlar/MS22_1-13.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-16",
+"topic": "M",
+"text": "Vaznsiz ko‘char va ko‘chmas bloklar muvozanatda turibdi. Bloklarga ilingan yuklarning og‘irlik kuchlari nisbatini $P_x/P_y$ nimaga teng?",
+"answers": [
+"$\\dfrac{1}{2}$",
+"$\\dfrac{1}{3}$",
+"$\\dfrac{1}{4}$",
+"$\\dfrac{1}{5}$"
+],
+"correct": 0,
+"image": "rasmlar/MS22_1-16.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-17",
+"topic": "E",
+"text": "Induktivligi 0,25 H bo‘lgan g‘altakda tok kuchi 0,5 s da 6 A dan 2 A gacha o‘zgardi. G‘altakda hosil bo‘lgan o‘zinduksiya EYuK ini (V) toping.",
+"answers": [
+"1",
+"2",
+"4",
+"8"
+],
+"correct": 1,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-18",
+"topic": "E",
+"text": "4 ta bir xil batareya qutblari qarama-qarshi qilib ketma-ket ulangan. Agar tizimning umumiy kuchlanishi 8 V ga teng bo‘lsa, bitta batareyaning kuchlanishini (V) aniqlang.",
+"answers": [
+"4",
+"8",
+"2",
+"1"
+],
+"correct": 2,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-19",
+"topic": "E",
+"text": "Rasmda tasvirlangan $l$ uzunlikdagi quvurga bir xil ishorali zaryadlar joylashtirilgan. Agar uchinchi zaryad muvozanatda turgan bo‘lsa, $l_1$ ni toping.",
+"answers": [
+"$\\dfrac{l\\cdot q_1}{q_1+q_2}$",
+"$\\dfrac{l\\sqrt{q_2}}{\\sqrt{q_1}+\\sqrt{q_2}}$",
+"$\\dfrac{l\\sqrt{q_1}}{\\sqrt{q_1}+\\sqrt{q_2}}$",
+"$\\dfrac{l\\sqrt{q_1 q_2}}{q_1+q_2}$"
+],
+"correct": 2,
+"image": "rasmlar/MS22_1-19.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-20",
+"topic": "A",
+"text": "Zarracha harakatlanayotganda uning to‘la impulsi 3p ga teng bo‘ldi. Agar uning tezligi 0,6c bo‘lsa, tinchlikdagi massasini aniqlang (c yorug‘likning vakuumdagi tezligi).",
+"answers": [
+"4p/c",
+"3p/c",
+"2p/c",
+"5p/c"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-21",
+"topic": "MF",
+"text": "Sovun pufagi sirti yuzasi 4 marta ortsa, sirt energiyasi necha marta ortadi?",
+"answers": [
+"2 marta",
+"4 marta",
+"8 marta",
+"16 marta"
+],
+"correct": 1,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-22",
+"topic": "MF",
+"text": "Gaz adiabatik kengayib 24 kJ ish bajargan bo‘lsa, uning ichki energiyasi qanday o‘zgaradi?",
+"answers": [
+"24 kJ ga kamayadi",
+"24 kJ ga ortadi",
+"o‘zgarmaydi",
+"12 kJ ga kamayadi"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-23",
+"topic": "M",
+"text": "A nuqtaga sharnirli mahkamlangan sterjen muvozanatda bo‘lsa, uning og‘irligi qancha (N)?",
+"answers": [
+"10,4",
+"20,8",
+"37,2",
+"5,2"
+],
+"correct": 0,
+"image": "rasmlar/MS22_1-23.png",
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-24",
+"topic": "A",
+"text": "8 mol neon gazidagi neytronlar sonini aniqlang. $^{20}_{10}\\mathrm{Ne}$.",
+"answers": [
+"4,8 · 10²⁵",
+"2,4 · 10²⁵",
+"9,6 · 10²⁵",
+"1,2 · 10²⁵"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-25",
+"topic": "A",
+"text": "Hajmi 3 litr bo‘lgan suv 10 K ga sovitilsa, uning massasi qanchaga (g) o‘zgaradi? c = 3 · 10⁸ m/s, c = 4200 J/(kg · K).",
+"answers": [
+"2,8 · 10⁻⁹",
+"o‘zgarmaydi",
+"1,4 · 10⁻⁹",
+"1,4 · 10⁻¹²"
+],
+"correct": 2,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-26",
+"topic": "A",
+"text": "$^{239}_{92}\\mathrm{U} \\to {}^{239}_{93}\\mathrm{Np} + ?$ yadro reaksiyasida qanday zarra hosil bo‘ladi?",
+"answers": [
+"α-zarra",
+"proton",
+"neytron",
+"elektron"
+],
+"correct": 3,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-27",
+"topic": "E",
+"text": "O‘zgaruvchan tok manbaiga ulangan 30 Ω aktiv qarshilikka ega bo‘lgan rezistorda tok kuchi i = 0,141 sin(100t) (A) qonun bo‘yicha o‘zgaradi. Rezistorga tushayotgan kuchlanishning ta’sir etuvchi qiymatini (V) toping.",
+"answers": [
+"4,2",
+"15",
+"7,5",
+"3"
+],
+"correct": 3,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-28",
+"topic": "E",
+"text": "Elektr maydon kuchlanganligini birligini toping.",
+"answers": [
+"N/C",
+"J/C",
+"C",
+"V"
+],
+"correct": 0,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-29",
+"topic": "E",
+"text": "Qoplamalari orasidagi masofa 1,5 mm bo‘lgan kondensator 100 V kuchlanishga ulangan. Qoplamalardagi zaryad sirt zichligini (nC/m²) aniqlang.",
+"answers": [
+"230",
+"540",
+"590",
+"420"
+],
+"correct": 2,
+"src": "MS22_1"
+},
+{
+"id": "MS22_1-30",
+"topic": "E",
+"text": "O‘quvchining qo‘lida qarshiliklari 20 Ω va 30 Ω bo‘lgan rezistorlar bor. O‘quvchi ular orqali qanday minimal qarshilikni (Ω) hosil qila oladi?",
+"answers": [
+"10",
+"25",
+"50",
+"12"
+],
+"correct": 3,
+"src": "MS22_1"
 }
 ]
 }

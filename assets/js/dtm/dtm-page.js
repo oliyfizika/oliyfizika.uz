@@ -1,10 +1,10 @@
 // ==========================================================================
 // DTM variantlari — bo'lim sahifasi (dtm-variantlari/index.html)
-// Bazadagi savollar soni (data/baza.json), test qoidalari va so'nggi natijalar.
+// Test qoidalari va so'nggi natijalar.
 // ==========================================================================
 import { icon } from "../ui/icons.js";
 import { bindProtectedLinks } from "../auth/auth-gate.js";
-import { POINTS, VARIANT_SIZE, loadBank, readHistory } from "./dtm-store.js";
+import { POINTS, VARIANT_SIZE, readHistory } from "./dtm-store.js";
 
 const root = document.getElementById("dtmPage");
 const $ = (s) => root.querySelector(s);
@@ -24,10 +24,6 @@ function renderRules() {
   $("[data-rules]").innerHTML = rules.map((r) => `<li>${icon("checkCircle")}<span>${r}</span></li>`).join("");
 }
 
-function renderCount(bank) {
-  $("[data-dtm-count]").textContent = `Bazada ${bank.questions.length} ta savol`;
-}
-
 function renderHistory() {
   const hist = readHistory().slice(0, 5);
   if (!hist.length) return;
@@ -42,12 +38,6 @@ async function init() {
   renderRules();
   bindProtectedLinks(root, "a[data-dtm-start]");
   renderHistory();
-  try {
-    renderCount(await loadBank());
-  } catch (e) {
-    console.error("[dtm] baza yuklanmadi:", e);
-    $("[data-dtm-count]").textContent = "";
-  }
 }
 
 init();
