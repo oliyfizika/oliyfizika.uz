@@ -58,74 +58,72 @@ def p3(rng):
     qs = ["Manbadan zanjirga o‘tgan zaryad miqdorini ($\\mu$C) toping.", "$C_1$ kondensatordagi kuchlanishni (V) toping.", "Zanjirning to‘liq energiyasini ($\\mu$J) toping."]
     return pack(fig, intro, qs, [q, U1, W], [e * C1, q / 2, W / 2], lambda v: nf(v), rng)
 
-# 4: stol + blok + osilgan yuk
+# 4: ikki isitgich (ketma-ket va parallel)
 def p4(rng):
-    m1, m2, mu, g = 4, 6, 0.25, 10
-    a = (m2 * g - mu * m1 * g) / (m1 + m2); Tn = m1 * (a + mu * g); h = 3.6; v = math.sqrt(2 * a * h)
+    U, P1, P2 = 120, 360, 180
+    R1, R2 = U * U / P1, U * U / P2; I = U / (R1 + R2); P1s = I * I * R1; Ppar = P1 + P2
     fig = T(r"""
-\draw[fill=gray!10] (0,0.6) rectangle (4,0.8); \draw (0.3,0.6)--(0.3,-0.5) (3.7,0.6)--(3.7,-0.5);
-\draw[fill=gray!35] (0.7,0.8) rectangle (1.7,1.5); \node at (1.2,1.15) {$m_1$};
-\draw (1.7,1.15)--(4.2,1.15); \draw[fill=white] (4.2,0.95) circle(0.2); \fill (4.2,0.95) circle(1pt);
-\draw (4.4,0.95)--(4.4,0.0); \draw[fill=gray!35] (4.05,-0.7) rectangle (4.75,0.0); \node at (4.4,-0.35) {$m_2$};
-""")
-    intro = rf"Gorizontal stol ustidagi $m_1={m1}$ kg massali blok vaznsiz ip orqali vaznsiz blokdan oshirilib, $m_2={m2}$ kg massali yukka bog‘langan (rasm). Blok va stol orasidagi ishqalanish koeffitsiyenti $\mu=0{{,}}25$. $g=10$ m/s$^2$."
-    qs = ["Yuklarning tezlanishini (m/s$^2$) toping.", "Ipning tarangligini (N) toping.", "$m_2$ yuk $3{,}6$ m pastga tushgandagi tezligini (m/s) toping."]
-    return pack(fig, intro, qs, [a, Tn, v], [4.0, 36.0, 8.0], lambda x: nf(x), rng)
+\draw (0,0.3)--(0,0)--(4.6,0)--(4.6,1.6)--(4.0,1.6); \draw (0,0.6)--(0,1.6)--(0.9,1.6);
+\draw (-0.3,0.6)--(0.3,0.6); \draw (-0.15,0.3)--(0.15,0.3); \node[left] at (-0.35,0.45) {$U$};
+\draw[fill=white] (0.9,1.45) rectangle (1.9,1.75); \node[above] at (1.4,1.75) {$R_1$}; \draw (1.9,1.6)--(3.0,1.6);
+\draw[fill=white] (3.0,1.45) rectangle (4.0,1.75); \node[above] at (3.5,1.75) {$R_2$};""")
+    intro = rf"Nominal kuchlanishi {U} V bo‘lgan ikkita isitgichning nominal quvvatlari $P_1={P1}$ W va $P_2={P2}$ W. Isitgichlar ketma-ket ulanib, {U} V kuchlanishli tarmoqqa ulandi (rasm). Qarshiliklar o‘zgarmas deb hisoblansin."
+    qs = ["Zanjirdagi tok kuchini (A) toping.", "Birinchi isitgichda ajralayotgan quvvatni (W) toping.", "Isitgichlar shu tarmoqqa parallel ulanganda umumiy quvvatni (W) toping."]
+    return pack(fig, intro, qs, [I, P1s, Ppar], [3.0, 80.0 + 40, 120.0 * 0 + 270], lambda x: nf(x), rng)
 
-# 5: gorizontal otilgan jism
+# 5: ikki manba ketma-ket
 def p5(rng):
-    v0, h = 15, 20
-    t = math.sqrt(2 * h / 10); L = v0 * t; vy = 10 * t; v = math.hypot(v0, vy)
+    e1, r1, e2, r2, R = 6, 0.5, 3, 0.5, 8
+    I = (e1 + e2) / (r1 + r2 + R); U = I * R; U2 = e2 - I * r2
     fig = T(r"""
-\fill[gray!25] (0,0) rectangle (1.6,2.6); \draw (0,2.6)--(1.6,2.6)--(1.6,0); \draw (-0.3,0)--(6.2,0); """ + G + r""" (-0.3,-0.15) rectangle (6.2,0);
-\fill (1.6,2.6) circle(1.8pt); \draw[->] (1.6,2.6)--(2.5,2.6) node[above]{$v_0$};
-\draw[dashed,domain=0:4.3,samples=40] plot ({1.6+\x},{2.6-0.1406*\x*\x});
-\draw[<->] (0.9,0)--(0.9,2.6); \node[left] at (0.9,1.3) {$h$}; \draw[<->] (1.6,-0.35)--(5.9,-0.35); \node[below] at (3.75,-0.35) {$L$};""")
-    intro = rf"Balandligi $h={h}$ m bo‘lgan minoradan jism gorizontal yo‘nalishda $v_0={v0}$ m/s tezlik bilan otildi (rasm). Havoning qarshiligini hisobga olmang, $g=10$ m/s$^2$."
-    qs = ["Jismning uchish vaqtini (s) toping.", "Otilgan joydan tushgan joygacha gorizontal masofa $L$ ni (m) toping.", "Yerga urilish paytidagi tezlik modulini (m/s) toping."]
-    return pack(fig, intro, qs, [t, L, v], [3.0, 40.0, 35.0], lambda x: nf(x), rng)
+\draw (0,0)--(0,0.55) (0,0.85)--(0,1.55) (0,1.85)--(0,2.4)--(4.0,2.4)--(4.0,1.6) (4.0,0.8)--(4.0,0)--(0,0);
+\draw (-0.3,1.85)--(0.3,1.85) (-0.15,1.55)--(0.15,1.55); \node[left] at (-0.35,1.7) {$\varepsilon_1, r_1$};
+\draw (-0.3,0.85)--(0.3,0.85) (-0.15,0.55)--(0.15,0.55); \node[left] at (-0.35,0.7) {$\varepsilon_2, r_2$};
+\draw[fill=white] (3.85,0.8) rectangle (4.15,1.6); \node[right] at (4.2,1.2) {$R$};""")
+    intro = rf"Rasmdagi zanjirda $\varepsilon_1={e1}$ V, $r_1={nf(r1)}\ \Omega$, $\varepsilon_2={e2}$ V, $r_2={nf(r2)}\ \Omega$, $R={R}\ \Omega$."
+    qs = ["Zanjirdagi tok kuchini (A) toping.", "$R$ qarshilikdagi kuchlanishni (V) toping.", "Ikkinchi manba qisqichlaridagi kuchlanishni (V) toping."]
+    return pack(fig, intro, qs, [I, U, U2], [9.0, 3.0, 6.0 - 0.5], lambda x: nf(x), rng)
 
-# 6: Atvud mashinasi
+# 6: galvanometrni ampermetr va voltmetrga aylantirish
 def p6(rng):
-    m1, m2, g = 3, 5, 10
-    a = (m2 - m1) * g / (m1 + m2); Tn = 2 * m1 * m2 * g / (m1 + m2); F = 2 * Tn
+    Rg, Ig, Imax, Umax = 99, 0.01, 1, 10
+    Rsh = Ig * Rg / (Imax - Ig); Rad = Umax / Ig - Rg; Rv = Umax / Ig
     fig = T(r"""
-\draw (0,3.3)--(2.4,3.3); """ + G + r""" (0,3.3) rectangle (2.4,3.45); \draw (1.2,3.3)--(1.2,2.85); \draw[fill=white] (1.2,2.45) circle(0.4); \fill (1.2,2.45) circle(1.2pt);
-\draw (0.8,2.45)--(0.8,1.2); \draw[fill=gray!35] (0.5,0.6) rectangle (1.1,1.2); \node at (0.8,0.9) {$m_1$};
-\draw (1.6,2.45)--(1.6,0.6); \draw[fill=gray!35] (1.25,0.0) rectangle (1.95,0.6); \node at (1.6,0.3) {$m_2$};""")
-    intro = rf"Vaznsiz blokdan oshirilgan vaznsiz ipning uchlariga $m_1={m1}$ kg va $m_2={m2}$ kg massali yuklar osilgan (rasm). Ishqalanish yo‘q, $g=10$ m/s$^2$."
-    qs = ["Yuklarning tezlanishini (m/s$^2$) toping.", "Ipning tarangligini (N) toping.", "Blok o‘qiga ta’sir qiluvchi kuchni (N) toping."]
-    return pack(fig, intro, qs, [a, Tn, F], [5.0, 40.0, 80.0], lambda x: nf(x), rng)
+\draw (0,0)--(0.8,0); \draw[fill=white] (1.2,0) circle(0.35) node{$G$}; \draw (1.55,0)--(2.6,0); \draw (0.8,0)--(0.8,-0.9)--(1.0,-0.9);
+\draw[fill=white] (1.0,-1.05) rectangle (1.8,-0.75); \node[below] at (1.4,-1.05) {$R_{sh}$}; \draw (1.8,-0.9)--(2.2,-0.9)--(2.2,0);
+\fill (0.8,0) circle(1.2pt) (2.2,0) circle(1.2pt);""")
+    intro = rf"Galvanometrning ichki qarshiligi $R_g={Rg}\ \Omega$, unga ulanishi mumkin bo‘lgan eng katta tok $I_g={int(Ig*1000)}$ mA. Rasmda galvanometrga shunt ulangan sxema keltirilgan."
+    qs = ["Galvanometrni 1 A gacha tokni o‘lchaydigan ampermetrga aylantirish uchun shunt qarshiligini ($\\Omega$) toping.",
+          "Galvanometrni 10 V gacha kuchlanishni o‘lchaydigan voltmetrga aylantirish uchun ketma-ket ulanadigan qo‘shimcha qarshilikni ($\\Omega$) toping.",
+          "Hosil bo‘lgan voltmetrning ichki qarshiligini ($\\Omega$) toping."]
+    return pack(fig, intro, qs, [Rsh, Rad, Rv], [0.99, 990.0, 99.0 + 1], lambda x: nf(x), rng)
 
-# 7: p-V sikl
+# 7: o‘zgarmas tok zanjiridagi kondensator
 def p7(rng):
-    p1, p2, V1, V2 = 300, 100, 2, 6
-    W12 = p1 * 1e3 * (V2 - V1) * 1e-3; A = (p1 - p2) * 1e3 * (V2 - V1) * 1e-3; Q12 = 2.5 * W12
+    e, r, R1, R2, C = 12, 1, 3, 2, 5
+    I = e / (r + R1 + R2); Uc = I * R2; q = C * Uc
     fig = T(r"""
-\draw[->] (0,0)--(5.2,0) node[right]{$V,\ \mathrm{L}$}; \draw[->] (0,0)--(0,3.6) node[above]{$p,\ \mathrm{kPa}$};
-\draw[very thick] (1.2,2.8)--(3.9,2.8)--(3.9,1.0)--(1.2,1.0)--cycle;
-\draw[->,very thick] (1.2,2.8)--(2.7,2.8); \draw[->,very thick] (3.9,2.8)--(3.9,1.9); \draw[->,very thick] (3.9,1.0)--(2.5,1.0); \draw[->,very thick] (1.2,1.0)--(1.2,1.9);
-\draw[dashed] (0,2.8)--(1.2,2.8) (0,1.0)--(1.2,1.0) (1.2,0)--(1.2,1.0) (3.9,0)--(3.9,1.0);
-\node[left] at (0,2.8) {$300$}; \node[left] at (0,1.0) {$100$}; \node[below] at (1.2,0) {$2$}; \node[below] at (3.9,0) {$6$};
-\node[above left] at (1.2,2.8) {1}; \node[above right] at (3.9,2.8) {2}; \node[below right] at (3.9,1.0) {3}; \node[below left] at (1.2,1.0) {4};""")
-    intro = "Bir atomli ideal gaz rasmda ko‘rsatilgan 1–2–3–4–1 siklni bajaradi."
-    qs = ["1–2 jarayonda gazning bajargan ishini (J) toping.", "Bir sikl davomida gaz bajargan sof ishni (J) toping.", "1–2 jarayonda gazga berilgan issiqlik miqdorini (J) toping."]
-    return pack(fig, intro, qs, [W12, A, Q12], [600.0, 2400.0, 1800.0], lambda x: nf(x), rng)
+\draw (0,0)--(0,0.6) (0,0.9)--(0,1.8)--(1.2,1.8); \draw (-0.3,0.9)--(0.3,0.9) (-0.15,0.6)--(0.15,0.6); \node[left] at (-0.35,0.75) {$\varepsilon, r$};
+\draw[fill=white] (1.2,1.65) rectangle (2.0,1.95); \node[above] at (1.6,1.95) {$R_1$}; \draw (2.0,1.8)--(3.0,1.8)--(3.0,1.3) (3.0,0.5)--(3.0,0)--(0,0);
+\draw[fill=white] (2.85,0.5) rectangle (3.15,1.3); \node[left] at (2.8,0.9) {$R_2$};
+\draw (3.0,1.8)--(4.2,1.8)--(4.2,1.05) (4.2,0.75)--(4.2,0)--(3.0,0); \draw (3.9,1.05)--(4.5,1.05) (3.9,0.75)--(4.5,0.75); \node[right] at (4.5,0.9) {$C$};
+\fill (3.0,1.8) circle(1.2pt) (3.0,0) circle(1.2pt);""")
+    intro = rf"Rasmdagi zanjirda $\varepsilon={e}$ V, $r={r}\ \Omega$, $R_1={R1}\ \Omega$, $R_2={R2}\ \Omega$, $C={C}\ \mu$F. Zanjirda tok qaror topgan."
+    qs = ["Manbadan o‘tayotgan tok kuchini (A) toping.", "Kondensatordagi kuchlanishni (V) toping.", "Kondensatordagi zaryadni ($\\mu$C) toping."]
+    return pack(fig, intro, qs, [I, Uc, q], [2.4, 6.0, 30.0], lambda x: nf(x), rng)
 
-# 8: linza
+# 8: ketma-ket RLC zanjir (o‘zgaruvchan tok)
 def p8(rng):
-    F, d, h = 20, 30, 3
-    f = d * F / (d - F); k = f / d; hh = h * k
+    R, XL, XC, U = 30, 70, 30, 100
+    Z = math.hypot(R, XL - XC); I = U / Z; UR = I * R; P = I * I * R
     fig = T(r"""
-\draw[->] (-4.0,0)--(4.6,0); \draw[<->] (0,-1.5)--(0,1.5);
-\draw[->,very thick] (-3.0,0)--(-3.0,0.9) node[above]{$h$};
-\fill (-2.0,0) circle(1.2pt) node[below]{$F$}; \fill (2.0,0) circle(1.2pt) node[below]{$F$};
-\draw[<->] (-3.0,-0.8)--(0,-0.8); \node[below] at (-1.5,-0.8) {$d=30\ \mathrm{cm}$};
-\draw (-3.0,0.9)--(0,0.9)--(2.0,0)--(4.0,-0.9); \draw (-3.0,0.9)--(4.0,-1.2);
-""")
-    intro = rf"Fokus masofasi $F={F}$ cm bo‘lgan yig‘uvchi linzadan $d={d}$ cm masofada balandligi $h={h}$ cm bo‘lgan buyum turibdi (rasm)."
-    qs = ["Linzadan tasvirgacha bo‘lgan masofani (cm) toping.", "Linzaning chiziqli kattalashtirishini toping.", "Tasvirning balandligini (cm) toping."]
-    return pack(fig, intro, qs, [f, k, hh], [50.0, 3.0, 4.5], lambda x: nf(x), rng)
+\draw (0,0)--(0.5,0); \draw[fill=white] (0.5,-0.15) rectangle (1.3,0.15); \node[above] at (0.9,0.15) {$R$};
+\draw (1.3,0)--(1.7,0); \draw[decorate,decoration={coil,aspect=0.6,segment length=4.5,amplitude=3.5}] (1.7,0)--(2.9,0); \node[above] at (2.3,0.2) {$L$};
+\draw (2.9,0)--(3.5,0); \draw (3.5,-0.3)--(3.5,0.3) (3.75,-0.3)--(3.75,0.3); \node[above] at (3.62,0.3) {$C$}; \draw (3.75,0)--(4.4,0);
+\draw (0,0)--(0,-0.8)--(1.9,-0.8); \draw (2.5,-0.8)--(4.4,-0.8)--(4.4,0); \draw (2.2,-0.8) circle(0.3); \draw (2.05,-0.8) sin (2.13,-0.7) cos (2.2,-0.8) sin (2.28,-0.9) cos (2.35,-0.8);""")
+    intro = rf"Effektiv kuchlanishi $U={U}$ V bo‘lgan o‘zgaruvchan tok manbaiga ketma-ket ulangan rezistor ($R={R}\ \Omega$), g‘altak ($X_L={XL}\ \Omega$) va kondensator ($X_C={XC}\ \Omega$) ulangan (rasm)."
+    qs = ["Zanjirdagi tok kuchining effektiv qiymatini (A) toping.", "Rezistordagi kuchlanishning effektiv qiymatini (V) toping.", "Zanjirda ajralayotgan aktiv quvvatni (W) toping."]
+    return pack(fig, intro, qs, [I, UR, P], [1.0, 200.0, 100.0 + 0.0 * 0 + 0], lambda x: nf(x), rng)
 
 # 9: ikki nuqtaviy zaryad (dipol)
 def p9(rng):

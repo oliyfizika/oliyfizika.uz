@@ -6,6 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import open_tasks as ot
 import mid_tasks as mt
+import open_pool as op
 from figs import FIG
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -217,7 +218,7 @@ def main():
                       qs=[f"$A_{i}$ ampermetrning ko‘rsatishini (A) aniqlang." for i in (1, 2, 3)])
         else:
             bt = mt.mid_task(m)
-        opens = [f(m) for f in ot.OPEN]
+        opens = op.opens_for(m)
         s = doc(m, sel[m], bt, opens)
         (OUT / f"mock-{m+1:02d}.tex").write_text(s, encoding="utf-8")
         allkeys.append(dict(mcq={n: "ABCD"[sel[m][n]["correct"]] for n in range(1, 33)}, bridge_key=bt["key"], bridge_ans=bt["ans"],
