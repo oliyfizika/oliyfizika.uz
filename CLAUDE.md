@@ -22,6 +22,6 @@ Aloqa: Telegram @oliyfizika_uz, email oliyfizika@gmail.com. Saytda hech qayerda 
 ## Bo‘limlar
 - `umumiy-fizika/` — Mexanika, Molekulyar fizika, Elektr va magnetizm, Optika, Atom va yadro; darslik testlari.
 - `milliy-sertifikat/` — modulli JSON mock testlar.
-- `dtm-variantlari/` — DTM fizika variantlari bazasi (`data/baza.json`, 430 savol, rasmlar `rasmlar/`): har urinishda bo‘limlar bo‘yicha tasodifiy 25 ta savol, 2 balldan — 50 ball. Kod: `assets/js/dtm/`.
+- `dtm-variantlari/` — DTM fizika variantlari bazasi (`data/baza.json`, 1362 savol, rasmlar `rasmlar/`): har urinishda bo‘limlar bo‘yicha tasodifiy 25 ta savol, 2 balldan — 50 ball. Kod: `assets/js/dtm/`.
 - `attestatsiya/` — Fizika: admin e’lon qiladigan kunlik testlar (1–3-kun bepul, 4+ `attestationAccess`).
 - `simulations/` — simulyatsiyalar va virtual laboratoriyalar. **Batafsil: [`simulations/CLAUDE.md`](simulations/CLAUDE.md).**
