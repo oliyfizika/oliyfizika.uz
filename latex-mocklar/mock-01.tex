@@ -2,6 +2,7 @@
 \usepackage[margin=18mm,top=22mm,bottom=20mm]{geometry}
 \usepackage{fontspec}\setmainfont{Latin Modern Roman}
 \usepackage{amsmath,amssymb,tikz,graphicx,fancyhdr,array,needspace}
+\usetikzlibrary{patterns,arrows.meta,decorations.pathmorphing,calc}
 \setlength{\headheight}{14pt}
 \usetikzlibrary{arrows.meta}
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
@@ -14,236 +15,237 @@
 
 \begin{center}{\Large\textbf{FIZIKA}}\end{center}
 \noindent\begin{minipage}{\linewidth}
-\textbf{1.}\ 180 N vertikal kuçni şunday ikki taşkil etuvçilarga ajratingki, bunda gorizontal taşkil etuvçining moduli 240 N bölsin. 2-taşkil etuvçining moduli qanday böladi (N)?\par\smallskip
-\opt{A}{60}
-\opt{B}{200}
-\opt{C}{300}
-\opt{D}{420}
+\textbf{1.}\ Poyezd 2 m/s tezlikda ketayotgan piyodani 15 s da quvib ötdi. 96 m li tunneldan esa 18 s da ötdi. Poyezdning uzunligi qançaga (m) teng?\par\smallskip
+\opt{A}{100 m}
+\opt{B}{200 m}
+\opt{C}{250 m}
+\opt{D}{300 m}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{2.}\ Alyuminiy simning uzunligi 2 m. Çözuvçi 105 N kuç ta’sirida simning uzunligi 1 mm ga uzayadigan bölsa, uning köndalang kesim yuzasi (mm$^{2}$) topilsin. Alyuminiyning elastiklik moduli 70 GPa.\par\smallskip
-\opt{A}{4}
-\opt{B}{3}
-\opt{C}{2}
+\textbf{2.}\ Radiusi 1 cm bölgan temir şarni radiusi 3 cm ga yetgunça oltin ($\rho_{oltin}$ = 19300 kg/m$^{3}$) bilan qoplandi. Bu jarayonga qança (kg) oltin sarflanganini aniqlang. $\pi$ = 3\par\smallskip
+\opt{A}{0,62}
+\opt{B}{2}
+\opt{C}{1,54}
 \opt{D}{1}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{3.}\ Rasmdagi vaznsiz riçag kuçlar ta’sirida muvozanatda turibdi. Riçagning öng uçiga qöyilgan kuçning qiymatini toping (N). 1N 2N 2N?\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/T23-07.png}\par\smallskip
-\opt{A}{1/7}
-\opt{B}{2/5}
-\opt{C}{4/7}
-\opt{D}{3/7}
+\textbf{3.}\ Har qanday avtotebranişlar tizimi..... kabi qismlardan iborat böladi.\par\smallskip
+\opt{A}{tebraniş tizimi va elektron kalit}
+\opt{B}{energiya manbai, tebraniş tizimi}
+\opt{C}{energiya manbai, tebraniş tizimi va elektron kalit}
+\opt{D}{energiya manbai, tebraniş tizimi, elektron kalit va töğirlagiç}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{4.}\ Ipga osilgan 100 g massali metall şarça tagiga magnit joylaştirilgan. Agar magnit şarçani 1 N kuç bilan tortayotgan bölsa, ipning taranglik kuçini toping (N). g=9,8 m/s$^{2}$.\par\smallskip
-\opt{A}{2}
-\opt{B}{0}
-\opt{C}{1,98}
-\opt{D}{0,02}
+\textbf{4.}\ Uç jism bir xil balandlikdan erkin tuşyapti. 1-jismning boşlanğiç tezligi yöq, 2 va 3-jismlarning boşlanğiç tezliklari gorizontal yönalgan ($v_2<v_3$). Ularning yerga tuşiş vaqtlarini taqqoslang.\par\smallskip
+\opt{A}{$t_1<t_2<t_3$}
+\opt{B}{$t_1=t_2=t_3$}
+\opt{C}{$t_1>t_2>t_3$}
+\opt{D}{$t_1<t_2=t_3$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{5.}\ Koordinata öqlariga ikki jism joylaştirilgan: 4 kg massali birinçi jism $x$=$-$3 m nuqtada, ikkinçi jism $y$ öqida joylaşgan. Agar sistema oğirlik markazining koordinatalari ($-$1 m; $-$2 m) bölsa, ikkinçi jismning $y$ koordinatasi (m) topilsin.\par\smallskip
-\opt{A}{18/11}
-\opt{B}{$-$10/3}
-\opt{C}{$-$3}
-\opt{D}{$-$8/3}
+\textbf{5.}\ Massasi $m$ bölgan çana balandligi $h$ bölgan tepalikdan sirpanib tuşdi va tekis yerda biror masofa ötib töxtadi. Çanani dastlabki vaziyatga qaytariş uçun qança iş bajariş kerak? Butun yöl davomida işqalaniş koeffitsiyenti bir xil.\par\smallskip
+\opt{A}{2$mgh$}
+\opt{B}{4$mgh$}
+\opt{C}{3$mgh$}
+\opt{D}{$mgh$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{6.}\ Ikki jism harakati haqidagi ma’lumotlar grafikda keltirilgan. Birinçi jism harakat boşlagandan 20 s ötgaç jismlar orasidagi masofani toping (m).\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/Y07-03.png}\par\smallskip
+\textbf{6.}\ Jism 80 m öngga, keyin esa 30 m qarama-qarşi tomonga yuridi. Jismning köçisini (m) aniqlang.\par\smallskip
 \opt{A}{50}
-\opt{B}{100}
-\opt{C}{250}
+\opt{B}{25}
+\opt{C}{75}
+\opt{D}{100}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{7.}\ Diametri 0,8 mm bölgan simning uzunligi 3,14 m ga teng. 64 N kuç ta’siri ostida sim 2 mm uzaydi. Simning Yung modulini toping (GPa).\par\smallskip
+\opt{A}{300}
+\opt{B}{150}
+\opt{C}{100}
 \opt{D}{200}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{7.}\ Ikki şkiv tasmali uzatma orqali ulangan. Yetaklovçi şkiv 600 ayl/min tezlik bilan aylanganda yetaklanuvçi şkiv 3000 ayl/min tezlikka ega bölişi uçun yetaklovçi şkivning radiusi qanday bölişi kerak (cm)? Yetaklanuvçi şkivning radiusi 10 cm.\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/T02-04.png}\par\smallskip
-\opt{A}{30}
-\opt{B}{60}
-\opt{C}{40}
-\opt{D}{50}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{8.}\ Millimetrli çizğiç 100 sömlik vertikal tanga ustida yerga nisbatan $v_1=10$ cm/s tezlik bilan gorizontal yönalişda sirpanmasdan harakatlansa, tanganing markazi bölgan $O$ nuqta yerga nisbatan qanday $v_2$ tezlik (cm/s) bilan harakatlanadi?\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/1925918-28.png}\par\smallskip
-\opt{A}{5}
-\opt{B}{2,5}
-\opt{C}{10}
-\opt{D}{7,5}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{9.}\ Quyidagilardan qaysi biri Xalqaro Birliklar Sistemasi (CI) dagi asosiy birlik hisoblanadi?\par\smallskip
-\opt{A}{volt}
-\opt{B}{kulon}
-\opt{C}{amper}
-\opt{D}{om}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{10.}\ Çananing muzli yer bilan işqalaniş koeffitsiyenti 0,04. Agar çana balandligi 1,8 m, asosi 10 m bölgan tepalikdan sirpanib tuşsa, gorizontal yölda yana qança masofaga (m) sirpanib boradi?\par\smallskip
-\opt{A}{42,5}
-\opt{B}{40}
-\opt{C}{35}
-\opt{D}{32,5}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{11.}\ Ikkita bir xil kapillar naylardan biri suvga ($\rho_{suv}=1000$ kg/m$^{3}$), ikkinçisi benzinga ($\rho_{benzin}=700$ kg/m$^{3}$) tuşirildi. Suv kapillar böylab 24 cm ga kötarildi. Benzin qançaga (cm) kötarilganini aniqlang. $\sigma_{suv}=0{,}073$ N/m, $\sigma_{benzin}=0{,}021$ N/m\par\smallskip
-\opt{A}{58}
-\opt{B}{9,9}
-\opt{C}{15,4}
-\opt{D}{25,2}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{12.}\ Ideal gaz birinçi holatdan uçinçi holatga grafikda körsatilganidek ötkazildi. Agar gazning dastlabki bosimi $p_1$=99 kPa va $V_2/V_1$=3 bölsa, gazning jarayon oxiridagi bosimi (kPa) qanday?\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/Y05-12.png}\par\smallskip
-\opt{A}{39,6}
-\opt{B}{33}
-\opt{C}{66}
-\opt{D}{49,5}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{13.}\ Ideal gazning hajmi $V$ ga, konsentratsiyasi $n$ ga teng. Agar har bir gaz molekulasi örtaça $\bar{E}_k$ kinetik energiyaga ega bölsa, gazning içki energiyasini aniqlang.\par\smallskip
-\opt{A}{$\dfrac{\bar{E}_k}{nV}$}
-\opt{B}{$nV\bar{E}_k$}
-\opt{C}{$\dfrac{V\bar{E}_k}{n}$}
-\opt{D}{$\dfrac{n\bar{E}_k}{V}$}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{14.}\ Kapillar qisman suvga tuşurilgan. Suv kapillarni höllab 10 mm balandlikka kötarilgan bölsa kapillarning içki radiusi (mm) qanday? Suvning sirt taranglik koeffitsiyenti 0,073 N/m. $g$=10 m/s$^{2}$\par\smallskip
-\opt{A}{1,46}
-\opt{B}{0,36}
-\opt{C}{14,6}
-\opt{D}{0,18}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{15.}\ Gaz siqilganda taşqi kuçlar...... iş bajaradi.\par\smallskip
-\opt{A}{musbat}
-\opt{B}{manfiy}
-\opt{C}{nolga teng}
-\opt{D}{içki energiya özgarişiga teng}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{16.}\ Uçburçakning uçta tomoni 6 cm, 8 cm va 10 cm ga teng. Uning uçala uçiga bir xil q zaryadlar joylaştirilgan. Uçburçakning katta tomoni örtasidagi potensial 1350 V bölsa, q zaryad miqdorini (nC) toping.\par\smallskip
-\opt{A}{2,5}
-\opt{B}{5,0}
-\opt{C}{7,5}
-\opt{D}{1,2}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{17.}\ 7$\cdot10^{-8}$ C zaryad kuçlanganligi 6$\cdot10^{5}$ V/m bölgan bir jinsli elektr maydonda kuçlanganlik çiziğiga 60$^\circ$ burçak ostida 8 cm masofaga köçirildi. Zaryadni köçirişda maydon bajargan işni (J) toping.\par\smallskip
-\opt{A}{2,5$\cdot10^{-3}$}
-\opt{B}{1,4$\cdot10^{-3}$}
-\opt{C}{2,8$\cdot10^{-3}$}
-\opt{D}{1,7$\cdot10^{-3}$}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{18.}\ Zaryadlangan şarning sirtiy ziçligi 4 nC/m$^{2}$, radiusi 8,85 cm bölsa, şarning sirtidan uning radiusiga teng masofadagi maydon potensialini toping (V). $\varepsilon$=2.\par\smallskip
-\opt{A}{5}
-\opt{B}{20}
-\opt{C}{15}
-\opt{D}{10}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{19.}\ Paraşutçi 500 m balandlikdan 100 s da tuşdi. Havoning qarşilik kuçi paraşutçining tuşiş vaqtini neça sekundga oşirmoqda? g=10 m/s$^{2}$.\par\smallskip
-\opt{A}{100}
+\textbf{8.}\ Massasi 400 g bölgan jismning tezligi 10 m/s ga teng. Uning kinetik energiyasini (J) aniqlang.\par\smallskip
+\opt{A}{2}
 \opt{B}{10}
-\opt{C}{90}
-\opt{D}{110}
+\opt{C}{30}
+\opt{D}{20}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{20.}\ Har birining zaryadi $q$ ga teng, radiuslari esa $r$ va $R$ bölgan ikki ötkazgiç şarlar bir-biriga tekkizilib uzoqlaştirilsa, birinçisining zaryadi qanday bölib qoladi?\par\smallskip
-\opt{A}{$\dfrac{qr}{r+R}$}
-\opt{B}{$\dfrac{2qR}{r+R}$}
-\opt{C}{$\dfrac{qR}{r+R}$}
-\opt{D}{$\dfrac{2qr}{r+R}$}
+\textbf{9.}\ Uzunligi 13 m va balandligi 5 m bölgan qiya tekislikda massasi 26 kg bölgan yuk yotibdi. Işqalaniş koeffitsiyenti 0,5 ga teng. Yukni yuqoriga çiqariş uçun tekislik böylab unga qanday kuç qöyiş lozim (N)? Tuşiriş uçunçi (N)? g=10 N/kg.\par\smallskip
+\opt{A}{220; 20}
+\opt{B}{200; 10}
+\opt{C}{20; 10}
+\opt{D}{5; 10}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{21.}\ Yassi kondensator manbadan uzildi va qoplamalar orasidagi masofa 3 marta kamaytirildi. Bunda kondensatorning energiyasi qanday özgaradi?\par\smallskip
-\opt{A}{3 marta ortadi}
-\opt{B}{3 marta kamayadi}
-\opt{C}{9 marta kamayadi}
-\opt{D}{9 marta ortadi}
+\textbf{10.}\ $m$ massali şarça $v$ tezlik bilan harakatlanib, huddi şunday tinç turgan şarçaga noelastik urildi va birgalikda harakatni davom ettirişdi. Töqnaşuvdan keyin sistema energiyasi neça marta kamayadi?\par\smallskip
+\opt{A}{4 marta}
+\opt{B}{2 marta}
+\opt{C}{8 marta}
+\opt{D}{3 marta}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{22.}\ Öramlari ziçligi bir xil, ammo hajmlari 2 marta farq qiluvçi ğaltaklarning induktivliklari neça marta farq qiladi?\par\smallskip
-\opt{A}{3 marta}
-\opt{B}{4 marta}
-\opt{C}{5 marta}
-\opt{D}{2 marta}
+\textbf{11.}\ Şarqdan 100 km/h tezlikda şamol esmoqda. Tezligi 100 km/h bölgan vertolyot qanday kursni tanlasa, aniq şimoliy yönalişda uça oladi?\par\smallskip
+\opt{A}{şimoli-şarqiy yönalişda, meridianga nisbatan 45$^\circ$ burçak ostida}
+\opt{B}{şimoli-ğarbiy yönalişda, meridianga nisbatan 45$^\circ$ burçak ostida}
+\opt{C}{şimoli-şarqiy yönalişda, meridianga nisbatan 60$^\circ$ burçak ostida}
+\opt{D}{aniq şimoliy yönalişda uça olmaydi}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{23.}\ 2 kondensatorni ketma-ket ulab batareya hosil qilingan. Batareya akkumulyatorga ulanib zaryadlangan. Batareya $W$ energiya töplagan bölsa, akkumulyator qança energiya sarflagan?\par\smallskip
-\opt{A}{2$W$}
-\opt{B}{$W$}
-\opt{C}{3$W$}
-\opt{D}{1,5$W$}
+\textbf{12.}\ Normal şaroitda har qanday gazning birlik hajmdagi molekulalar soni nimaga teng?\par\smallskip
+\opt{A}{Avogadro soniga}
+\opt{B}{Faradey soniga}
+\opt{C}{Loşmidt soniga}
+\opt{D}{Boltsman soniga}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{24.}\ 2 soat davom etgan elektrolizda katodda 14 g kumuş ajralib çiqdi. Elektroliz jarayoni yana 4 soat davom ettirilsa hammasi bölib qança (g) kumuş olinadi?\par\smallskip
+\textbf{13.}\ 1/3 qismi dissotsiatsiyalangan 64 g kislorodning modda miqdorini aniqlang (mol). M($O_2$)=32 g/mol.\par\smallskip
+\opt{A}{0,5}
+\opt{B}{1}
+\opt{C}{2}
+\opt{D}{8/3}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{14.}\ Moddada har bir atom qöşni atom bilan elektron jufti orqali birikişi ..... boğlaniş deb ataladi.\par\smallskip
+\opt{A}{ion}
+\opt{B}{metall}
+\opt{C}{kovalent}
+\opt{D}{vodorod}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{15.}\ Massasi 16 g bölgan geliyni ($M$=4 g/mol) 10 K ga izobarik qizdiriş uçun ketgan issiqlik miqdori bilan, massasi 10 g bölgan neon ($M$=20 g/mol) izotermik ravişda qança iş (J) bajaradi?\par\smallskip
+\opt{A}{831}
+\opt{B}{1163}
+\opt{C}{416}
+\opt{D}{499}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{16.}\ Qarşilik kuçi 20 kN bölganda, 5 m/s tezlik bilan tekis harakatlanayotgan maşina motorining quvvati 400 kW bölsa, FIK neça foiz böladi?\par\smallskip
+\opt{A}{50}
+\opt{B}{40}
+\opt{C}{25}
+\opt{D}{30}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{17.}\ 2 soat davom etgan elektrolizda katodda 14 g kumuş ajralib çiqdi. Elektroliz jarayoni yana 4 soat davom ettirilsa hammasi bölib qança (g) kumuş olinadi?\par\smallskip
 \opt{A}{56}
 \opt{B}{28}
 \opt{C}{64}
 \opt{D}{42}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{25.}\ 20 m balandlikdan taşlangan jism yerga uriladi va tezligining 25 \% ini yöqotib, yuqoriga qaytib sakraydi. Jismning yerga urilganidan toki ikkinçi marta yerga urilguniga qadar qança vaqt ötadi (s)? g=10 m/s$^{2}$.\par\smallskip
-\opt{A}{1,5}
+\textbf{18.}\ Qizuvçi simlari volframdan yasalgan ikki lampa özgarmas kuçlaniş manbayiga parallel ulanganida birinçi lampa ravşanroq yondi. Agar ular tarmoqqa ketma-ket ulansa, qanday yonadi?\par\smallskip
+\opt{A}{ikkisi birdek yonadi}
+\opt{B}{ikkinçisi ravşanroq yonadi}
+\opt{C}{birinçisi ravşanroq yonadi}
+\opt{D}{avval ikkinçisi, söngra birinçisi ravşanroq yonadi}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{19.}\ Köndalang kesim yuzalari 1 cm$^{2}$ va 2 cm$^{2}$ bölgan ikkita bir xil uzunlikli simlar özaro yonma-yon birlaştirilib, 3 N kuç bilan çözildi. Simlarning mexanik kuçlanişini toping (kPa).\par\smallskip
+\opt{A}{1}
+\opt{B}{10}
+\opt{C}{2}
+\opt{D}{20}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{20.}\ Qarşiligi 1 $\Omega$ bölgan ampermetrga 0,2 $\Omega$ qarşilik parallel ulansa, uning ölçaş çegarasi neça marta ortadi?\par\smallskip
+\opt{A}{1}
 \opt{B}{2}
-\opt{C}{3}
-\opt{D}{5}
+\opt{C}{6}
+\opt{D}{8}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{26.}\ Nurning 20\% i sirtdan töla qaytadi, 30\% i esa töla ötib ketadi. Agar yoruğlikning sirtga bosim kuçi 2,43 $\mu$N bölsa, uning quvvatini (W) aniqlang.\par\smallskip
-\opt{A}{810}
-\opt{B}{405}
-\opt{C}{1620}
-\opt{D}{210}
+\textbf{21.}\ Özaro elektrostatik ta’sirlaşayotgan ikkita zaryadlangan şarçalar orasiga ma’lum bir qalinlikdagi dielektrik modda joylaştirilgan. Şarçalarning özaro ta’sirlaşiş kuçini toping (nN). $\varepsilon$=2.\par\smallskip
+\noindent\hspace*{4mm}\begin{tikzpicture}[x=1cm,y=1cm,line width=0.5pt,>=Stealth,font=\small]
+\fill[ball color=gray!60] (0,0) circle(0.1); \node[above left] at (0,0.1) {$q_1=2\ \mathrm{nC}$};
+\fill[ball color=gray!60] (4.4,0) circle(0.1); \node[above right] at (4.4,0.1) {$q_2=2\ \mathrm{nC}$};
+\draw[fill=gray!30] (1.9,-0.5) rectangle (2.5,0.6); \node at (2.2,0.05) {$\varepsilon$};
+\draw[dashed] (0,-0.1)--(0,-0.9) (4.4,-0.1)--(4.4,-0.9); \draw[<->] (0,-0.8)--(4.4,-0.8); \node[below] at (2.2,-0.8) {$R=3\ \mathrm{m}$};
+\end{tikzpicture}\par\smallskip
+\opt{A}{2}
+\opt{B}{4}
+\opt{C}{8}
+\opt{D}{12}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{27.}\ Optik kuçi 3 dptr bölgan yiğuvçi linza yordamida ekranda buyumning 2 marta kattalaşgan haqiqiy tasviri hosil qilindi. Buyum va tasvir orasidagi masofani (m) aniqlang\par\smallskip
-\opt{A}{1/2}
-\opt{B}{1}
-\opt{C}{3/2}
-\opt{D}{2}
+\textbf{22.}\ Kabel har birining kesimi 0,6 mm$^{2}$ dan bölgan ikkita pölat toladan va har birining kesimi 0,85 mm$^{2}$ dan bölgan törtta mis toladan iborat. Tok kuçi 0,1 A bölganda kabelning har bir kilometridagi kuçlaniş tuşuvi qanday böladi (V)? $\rho$pöl =1,2$\cdot10^{-7}$ $\Omega$ $\cdot$ m, $\rho$mis =1,7$\cdot10^{-8}$ $\Omega$ $\cdot$ m.\par\smallskip
+\opt{A}{0,16}
+\opt{B}{0,9}
+\opt{C}{0,48}
+\opt{D}{20}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{28.}\ Buyum va uning haqiqiy tasviri orasidagi masofa $l$ bölib, tasvir buyumdan $n$ marta katta bölsa, linzaning fokus masofasini toping.\par\smallskip
+\textbf{23.}\ Akkumulyatorning EYuK 12 V, töplagan zaryadi 30 A$\cdot$h. Akkumulyator qança energiya (kJ) bera oladi? Akkumulyator FIK ni 100 \% deb hisoblang.\par\smallskip
+\opt{A}{1944}
+\opt{B}{1728}
+\opt{C}{1296}
+\opt{D}{2376}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{24.}\ Qarşiligi 2 $\Omega$ bölgan rezistor kuçlanişi $u = 4\sqrt{2}\cos(\dfrac{\pi}{8}t)$ [V] qonun böyiça özgaradigan özgaruvçan tok manbayiga ulandi. $t$=10 s paytdagi tokning oniy quvvatini (W) aniqlang.\par\smallskip
+\opt{A}{8}
+\opt{B}{$16\sqrt{2}$}
+\opt{C}{$8\sqrt{2}$}
+\opt{D}{16}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{25.}\ Elektr maydon kuç çiziqlari ekvipotensial sirtlarga nisbatan qanday joylaşgan?\par\smallskip
+\opt{A}{parallel}
+\opt{B}{tik}
+\opt{C}{qiya}
+\opt{D}{ixtiyoriy}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{26.}\ Fokus masofasi 10 cm bölgan yiğuvçi linzada buyumning tasviri hosil qilinmoqda. Buyum linzadan 15 cm masofada turibdi. Agar buyumni linzaga 10 cm ga yaqinlaştirsak uning tasviri qançaga (cm) siljiydi?\par\smallskip
+\opt{A}{10}
+\opt{B}{20}
+\opt{C}{40}
+\opt{D}{30}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{27.}\ Buyum va uning haqiqiy tasviri orasidagi masofa $l$ bölib, tasvir buyumdan $n$ marta katta bölsa, linzaning fokus masofasini toping.\par\smallskip
 \opt{A}{$\dfrac{n+1}{n^2}$}
 \opt{B}{$\dfrac{l(n+1)^2}{n^2}$}
 \opt{C}{$\dfrac{ln}{(n+1)^2}$}
 \opt{D}{$\dfrac{n}{(n+1)^2l}$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{29.}\ Lazer nuri $\pi$ $\cdot$ $10^{-7}$ sr fazoviy burçakda tarqalmoqda. Nurning quvvati 1 kW. Lazer nurining yoruğlik kuçini toping (GW/sr).\par\smallskip
-\opt{A}{3,18}
-\opt{B}{5,2}
-\opt{C}{6,28}
-\opt{D}{8}
+\textbf{28.}\ Yiğuvçi linzadan buyumgaça masofa 10 cm ga teng. Linzada buyumning 2 marta kattalaşgan mavhum tasviri hosil bölgan bölsa, uning fokus masofasini (cm) aniqlang.\par\smallskip
+\opt{A}{5}
+\opt{B}{20}
+\opt{C}{50}
+\opt{D}{100}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{30.}\ Tritiy yadrosi $\beta$ parçalanişi natijasida qanday yadro hosil böladi?\par\smallskip
-\opt{A}{32 He}
-\opt{B}{42 He}
-\opt{C}{21 He}
-\opt{D}{73}
+\textbf{29.}\ Tinçlikdagi massasi $m$ bölgan zarraning kinetik energiyasi 0,5$mc^2$ qiymatga erişişi mumkinmi? ($c$ $-$ yoruğlikning vakuumdagi tezligi)\par\smallskip
+\opt{A}{mumkin, agar zarraning tezligi $c$ ga teng bölsa}
+\opt{B}{mumkin emas}
+\opt{C}{mumkin, agar zarraning tezligi $c$/2 ga teng bölsa}
+\opt{D}{mumkin, agar zarraning tezligi $\sqrt{5}c$/3 ga teng bölsa}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{31.}\ Radioaktiv preparatning aktivligi 12 yilda 8 marta kamaygan. Preparatning radioaktiv yemiriliş doimiysini (1/yil) toping.\par\smallskip
-\opt{A}{$\dfrac{\ln 2}{2}$}
-\opt{B}{4 ln 2}
-\opt{C}{2 ln 2}
-\opt{D}{$\dfrac{\ln 2}{4}$}
+\textbf{30.}\ Fotonning energiyasi $h\nu$ yoruğlik tezligiga yaqin tezlik harakatlanayotgan elektronning kinetik energiyasiga teng. Elektronning impulsini fotonning impulsiga nisbati qanday? Elektronning tinçlikdagi massasi $m$. $c$ - yoruğlik tezligi.\par\smallskip
+\opt{A}{$2\sqrt{1+mc^2/h\nu}$}
+\opt{B}{$\sqrt{1+2mc^2/h\nu}$}
+\opt{C}{$2\sqrt{4+2mc^2/h\nu}$}
+\opt{D}{$\sqrt{25+10mc^2/h\nu}$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{32.}\ Uzunligi 10 cm bölgan prujinaga 100 g yuk mahkamlangan. Prujina ikkinçi uçidan uşlab gorizontal tekislikda 2 rad/s burçak tezlikda aylantirilmoqda. Prujina absolyut çözilişini aniqlang (mm). Prujina bikrligi 8,4 N/m.\par\smallskip
-\opt{A}{2}
-\opt{B}{3}
-\opt{C}{4}
-\opt{D}{5}
+\textbf{31.}\ Harorati 27 $^\circ$C bölgan 2 mol bir atomli ideal gazning ilgarilanma harakatidagi töliq kinetik energiyasini aniqlang. Universal gaz doimiysi 8,31 J/(mol$\cdot$K).\par\smallskip
+\opt{A}{1007}
+\opt{B}{7964}
+\opt{C}{6540}
+\opt{D}{7479}
 \end{minipage}\vspace{9pt}\par
-\newpage\noindent\textbf{33–35-test topshiriqlariga mos keluvchi javoblarni (A–F) javob variantlaridan tanlang.}\par\smallskip
-Rasmda elektr zanjir tasvirlangan. Batareyaning ichki qarshiligi nolga teng, ampermetrlar ideal.\par\medskip
+\noindent\begin{minipage}{\linewidth}
+\textbf{32.}\ Jism sinus qonuniga böysungan holda tebranmoqda. Tebraniş boşidan hisoblaganda qanday eng qisqa vaqtdan keyin jism impulsi 2 marta kamayadi? Jismning tebraniş davri T ga teng.\par\smallskip
+\opt{A}{T/12}
+\opt{B}{T/8}
+\opt{C}{T/3}
+\opt{D}{T/6}
+\end{minipage}\vspace{9pt}\par
+\newpage\noindent\textbf{33–35-test topşiriqlariga mos keluvçi javoblarni (A–F) javob variantlaridan tanlang.}\par\smallskip
+Rasmda elektr zanjir tasvirlangan. Batareyaning içki qarşiligi nolga teng, ampermetrlar ideal.\par\medskip
 \begin{center}\begin{tikzpicture}[line width=0.5pt]
 \draw (0,0)--(0,1.35); \draw (0,1.65)--(0,3)--(3,3)--(3,2.4); \draw (-0.25,1.35)--(0.25,1.35); \draw (-0.12,1.65)--(0.12,1.65);
 \node[left] at (-0.3,1.5) {\small $48\,\mathrm{V}$};

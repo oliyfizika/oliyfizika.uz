@@ -2,6 +2,7 @@
 \usepackage[margin=18mm,top=22mm,bottom=20mm]{geometry}
 \usepackage{fontspec}\setmainfont{Latin Modern Roman}
 \usepackage{amsmath,amssymb,tikz,graphicx,fancyhdr,array,needspace}
+\usetikzlibrary{patterns,arrows.meta,decorations.pathmorphing,calc}
 \setlength{\headheight}{14pt}
 \usetikzlibrary{arrows.meta}
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
@@ -14,252 +15,250 @@
 
 \begin{center}{\Large\textbf{FIZIKA}}\end{center}
 \noindent\begin{minipage}{\linewidth}
-\textbf{1.}\ Jism 5 m/s tezlik bilan vertikal pastga otildi. Uning harakat boşidan 2 s ötgan paytdagi tezligini (m/s) toping. $g=10\ \mathrm{m/s^2}$\par\smallskip
-\opt{A}{25}
-\opt{B}{30}
-\opt{C}{15}
-\opt{D}{20}
+\textbf{1.}\ Moddiy nuqta $x = A\sin\omega t$ qonuniyat böyiça garmonik tebranmoqda. Uning maksimal tezlanişini toping.\par\smallskip
+\opt{A}{$A\omega^2$}
+\opt{B}{$A^2\omega$}
+\opt{C}{$A\omega$}
+\opt{D}{$A/\omega$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{2.}\ Videokamera yordamida garmonik tebranayotgan prujinali mayatnik suratga olinmoqda. Mayatnikning 100 g massali tebranuvçi yukçasi videoda xuddiki tebranmasdan bir joyda turib qolgandek körinişi uçun prujina bikrligi kamida qança (N/m) ga teng bölişi kerak? Videokameraning suratga oliş tezligi 30 kadr/s. $\pi$ 2 =10.\par\smallskip
-\opt{A}{3600}
-\opt{B}{1200}
-\opt{C}{2400}
-\opt{D}{3000}
+\textbf{2.}\ Yer sirtidagi jism R/n balandlikka kötarilganda bajarilgan işni toping. R-Yer radiusi, g-Yer sirtidagi erkin tuşiş tezlanişi.\par\smallskip
+\opt{A}{mgR/(n-1)}
+\opt{B}{nmgR}
+\opt{C}{mgR/n}
+\opt{D}{mgR/(n+1)}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{3.}\ Rasmdagi x = x(t) koordinata grafigidan foydalangan holda jismning tezligini toping (m/s).\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/T18-01.png}\par\smallskip
-\opt{A}{0}
-\opt{B}{2}
-\opt{C}{-1}
-\opt{D}{1}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{4.}\ $m$ massali jismga ta’sir etuvçi natijaviy kuç $\vec{F}$ bölsa, uning tezlanişi qanday?\par\smallskip
-\opt{A}{$\vec{g}+\vec{F}/m$}
-\opt{B}{$\vec{g}$}
-\opt{C}{$\vec{F}/m$}
-\opt{D}{$2\vec{F}/m$}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{5.}\ Uzunligi 0,9 m bölgan matematik mayatnik lift şiftiga osilgan. Lift tepaga 5 m/s doimiy tezlik bilan kötarilayotgan bölsa, mayatnikning tebraniş davri (s) qanday? $g$=10 m/s$^{2}$\par\smallskip
-\opt{A}{1,9}
-\opt{B}{1,2}
-\opt{C}{1,5}
-\opt{D}{2,6}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{6.}\ 4 kg massali havo şari 2 m/s$^{2}$ tezlaniş bilan kötarilmoqda. Unga qanday massali (kg) yuk qöşilsa, u havoda şunday tezlaniş bilan pastga qarab tuşadi? Havoning qarşilik kuçini hisobga olmang. g=10 m/s$^{2}$\par\smallskip
+\textbf{3.}\ Moddiy nuqta $x = A\cos(\pi t/6 + \pi/2)$ qonun böyiça tebranmoqda. Vaqt ölçovi $t$ = 0 dan boşlansa qanday $t$ vaqtda (s) moddiy nuqta bosgan yöl 0,5$A$ ga yetadi?\par\smallskip
 \opt{A}{2}
-\opt{B}{4}
+\opt{B}{1}
 \opt{C}{3}
-\opt{D}{1}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{7.}\ Botiq köprikning quyi nuqtasidan doimiy tezlik bilan ötayotgan 0,5 t massali maşinaga ta’sir qilayotgan natijaviy kuç 3 kN ga teng. Şu paytda maşinaning oğirligi (kN) qanday? $g$=10 m/s$^{2}$.\par\smallskip
-\opt{A}{2}
-\opt{B}{5}
-\opt{C}{8}
-\opt{D}{3}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{8.}\ 3 kg massali jismga 4 m/s$^{2}$ tezlaniş bergan kuç 12 kg massali jismga qanday tezlaniş (m/s$^{2}$) beradi?\par\smallskip
-\opt{A}{1}
-\opt{B}{3}
-\opt{C}{3,5}
-\opt{D}{2}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{9.}\ Moddiy nuqta $x = A\sin(\pi t/8 + \pi/2)$ qonun böyiça tebranmoqda. Vaqt ölçovi $t$=0 dan boşlansa qanday $t$ vaqtda (s) moddiy nuqta bosgan yöl 1,5$A$ ga yetadi?\par\smallskip
-\opt{A}{5}
-\opt{B}{20/3}
-\opt{C}{16/3}
-\opt{D}{23/3}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{10.}\ Jism qiya tekislikda harakatsiz turibdi. Jism va sirt orasidagi işqalaniş koeffitsiyenti $\mu = \sqrt{3}$ ga teng. Jismga ta’sir etuvçi işqalaniş kuçini (N) aniqlang.\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/MS15_2q2-29.png}\par\smallskip
-\opt{A}{40}
-\opt{B}{60}
-\opt{C}{20}
-\opt{D}{$40\sqrt{3}$}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{11.}\ Quvvati 400 W bölgan elektromotor 50 s işlaganda 10 K ga qizadi. Agar motorning issiqlik siğimi 500 J/K bölsa, uning FIK ni (\%) toping.\par\smallskip
-\opt{A}{25}
-\opt{B}{75}
-\opt{C}{50}
-\opt{D}{60}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{12.}\ Suv şişani höllaydi. Demak, şişadan yasalgan radiusi $r=0{,}2$ mm bölgan kapillarni suvli idişga tuşirsak, kapillardagi suv sathi $\ldots$ mm ga idişdagi suv sathidan $\ldots$ . Nuqtalar örnini mos ravişda töldiring. $\sigma=0{,}073$ N/m, $\rho=1000\ \mathrm{kg/m^3}$, $g=10\ \mathrm{m/s^2}$.\par\smallskip
-\opt{A}{146, pasayadi}
-\opt{B}{73, pasayadi}
-\opt{C}{146, kötariladi}
-\opt{D}{73, kötariladi}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{13.}\ Dyulong – Pti qonuniga asosan qattiq jismlarning molyar issiqlik siğimi 3R ga tengligi ma’lum bölsa, temir uçun soliştirma issiqlik siğimi nimaga teng böladi (J/(kg$\cdot$K))? Temirning molyar massasi 56 g/mol.\par\smallskip
-\opt{A}{756}
-\opt{B}{823}
-\opt{C}{923}
-\opt{D}{445}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{14.}\ Qaynab turgan suvning issiqlik siğimi nimaga teng?\par\smallskip
-\opt{A}{4200}
-\opt{B}{$\infty$}
-\opt{C}{0}
-\opt{D}{2300}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{15.}\ Suvning issiqlikdan kengayiş koeffitsiyenti qanday temperatura intervalida manfiy hisoblanadi?\par\smallskip
-\opt{A}{0 – 4 $^\circ$C}
-\opt{B}{4 – 10 $^\circ$C}
-\opt{C}{4 – 100 $^\circ$C}
-\opt{D}{20 – 100 $^\circ$C}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{16.}\ Siğimlari $C_1 = 3C_2 = 6C_3$ bölgan kondensatorlar özgarmas kuçlaniş manbayiga ketma-ket ulanib töliq zaryadlandi. Bunda $C_3$ siğimli kondensator $q$ zaryad töplagan bölsa, kalit $K$ ikkinçi holatga ötkazilsa $R$ qarşilikdan qança zaryad oqib ötadi?\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/8001185-27.png}\par\smallskip
-\opt{A}{$q$}
-\opt{B}{3$q$}
-\opt{C}{9$q$}
-\opt{D}{10$q$}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{17.}\ Dastlab çözilmagan, bikrligi k=146 N/m bölgan prujinaga m=146 g yuk osib qöyib yuborilganda A amplitudali garmonik tebranişlar yuzaga keldi. Prujina maksimal çözilganda yukning balandligini h=0 deb hisoblab, prujinaning potensial energiyasi maksimal bölgan paytda uning tezlanişi qanday böladi (m/s$^{2}$)?\par\smallskip
-\opt{A}{0}
-\opt{B}{5,4}
-\opt{C}{4,9}
-\opt{D}{9,8}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{18.}\ Elektr zanjirdagi barça qarşiliklar teng. Agar, birinçi voltmetr 2 V ni körsatayotgan bölsa, ikkinçi voltmetr körsatişini (V) aniqlang.\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/8001089-11.png}\par\smallskip
-\opt{A}{8}
-\opt{B}{2}
-\opt{C}{6}
 \opt{D}{4}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{19.}\ A, B, C elektrolit vannalarga bir xil eritma quyilib, ular bir-biri bilan rasmda körsatilganidek ulangan. Agar ma’lum bir vaqtdan keyin A vannaning katodida 6 g, B vannaning katodida 7 g modda ajralib çiqqani ma’lum bölsa, bu vaqtda C vannaning katodida qança massali (g) modda ajralib çiqqanini aniqlang.\par\smallskip
-\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/rasmlar/MS15_2q1-24.png}\par\smallskip
-\opt{A}{13}
-\opt{B}{6,5}
-\opt{C}{42/13}
-\opt{D}{1}
+\textbf{4.}\ Elastiklik moduli $E$ ga teng bölgan moddadan tayyorlangan $l$ uzunlikdagi elastik arqon berilgan. Uning bir uçiga $m$ massali jism osib vertikal tebratildi. Jismning vertikal tebranişlarining siklik çastotasi $\omega$ bölsa, arqonning köndalang kesim yuzasini aniqlang.\par\smallskip
+\opt{A}{$\dfrac{\omega^2E}{lm}$}
+\opt{B}{$\dfrac{\omega E}{lm}$}
+\opt{C}{$\dfrac{\omega lm}{E}$}
+\opt{D}{$\dfrac{\omega^2lm}{E}$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{20.}\ Özgarmas tok manbayiga ulangan yassi kondensator berilgan. Uning qoplamalari orasidagi masofa 2 marta orttirilsa, kondensatorning energiyasi qanday özgaradi?\par\smallskip
+\textbf{5.}\ Parraklari uzunligi 0,7 m bölgan öyinçoq vertolyot havoda muallaq turibti. Havo ziçligi 1,3 kg/m$^{3}$ va parraklar haydayotgan havoning tezligi 3 m/s deb hisoblab vertolyot massasi (kg) toping. g=10 N/kg.\par\smallskip
+\opt{A}{0,9}
+\opt{B}{3,6}
+\opt{C}{1,8}
+\opt{D}{1,9}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{6.}\ 200 g massali aravaça 1 N kuç ta’sirida gorizontal tekislikda işqalanişsiz tekis tezlanuvçan harakatlanadi. Agar aravaça ustiga 300 g yuk qöysak, huddi şu kuç ta’sirida aravaçaning 2 s da bosib ötadigan yöli neça metrga kamayadi? Ikkala holda ham aravaçaning boşlanğiç tezligi nolga teng.\par\smallskip
+\opt{A}{2,5}
+\opt{B}{6}
+\opt{C}{7}
+\opt{D}{8}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{7.}\ Vertikal yuqoriga otilgan jism 6 s da otiliş nuqtasiga qaytib tuşdi. Jism qanday tezlik (m/s) bilan otilgan? g=10 m/s$^{2}$.\par\smallskip
+\opt{A}{50}
+\opt{B}{30}
+\opt{C}{60}
+\opt{D}{25}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{8.}\ Ikki jism bir nuqtadan bir tomonga tekis tezlanuvçan harakat boşladi. Birinçi jism tinç holatdan 2 m/s$^{2}$ tezlaniş bilan, ikkinçi jism 6 m/s boşlanğiç tezlik va 1 m/s$^{2}$ tezlaniş bilan. Ularning tezliklari tenglaşgan paytda bir biridan qanday uzoqlikda (m) böladi?\par\smallskip
+\opt{A}{9}
+\opt{B}{18}
+\opt{C}{36}
+\opt{D}{54}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{9.}\ $m$ massali avtomobil yerda ekvator çiziği böylab $u$ tezlikda harakatlanmoqda. Avtomobilning ekvator böyiça ğarbga qarab harakatlangandagi va şarqqa qarab harakatlangandagi oğirliklarining $\Delta P$ ayirmasini toping. Yerning ekvatorial çiziqli tezligi $v$, ekvatorial radiusi esa $R$ ga teng.\par\smallskip
+\opt{A}{$\Delta P=\dfrac{2mvu}{R}$}
+\opt{B}{$\Delta P=\dfrac{4mvu}{R}$}
+\opt{C}{$\Delta P=2mvuR$}
+\opt{D}{$\Delta P=\dfrac{m(v-u)^2}{R}$}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{10.}\ Metall tanga (1), yoğoç şarça (2) va quş pati (3) havoda bir xil balandlikdan bir vaqtda taşlab yuborildi. Uşbu jismlardan qaysi biri yerga oldin tuşadi?\par\smallskip
+\opt{A}{hammasi bir vaqtda tuşadi}
+\opt{B}{1}
+\opt{C}{2}
+\opt{D}{3}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{11.}\ Ideal gaz birinçi holatdan ikkinçi holatga ötganda temperaturasi 350 $^\circ$C ga özgardi. Agar $p_1$=58 kPa, $p_2$=29 kPa bölsa, gazning dastlabki temperaturasi (K) qanday bölgan?\par\smallskip
+\noindent\hspace*{4mm}\begin{tikzpicture}[x=1cm,y=1cm,line width=0.5pt,>=Stealth,font=\small]
+\draw[->] (0,0)--(3.6,0) node[right]{$V$}; \draw[->] (0,0)--(0,3.2) node[above]{$p$};
+\node[below left] at (0,0) {$0$};
+\draw[dashed] (0,2.2)--(1.6,2.2); \draw[dashed] (0,1.0)--(1.6,1.0);
+\node[left] at (0,2.2) {$p_1$}; \node[left] at (0,1.0) {$p_2$};
+\fill (1.6,2.2) circle(1.2pt) node[right]{1}; \fill (1.6,1.0) circle(1.2pt) node[right]{2};
+\draw (1.6,2.2)--(1.6,1.0);
+\end{tikzpicture}\par\smallskip
+\opt{A}{650}
+\opt{B}{350}
+\opt{C}{700}
+\opt{D}{300}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{12.}\ Soliştirma issiqlik siğimi 840 J/kg$\cdot$K bölgan 1 kg massali suyuqlikni 10 $^\circ$C ga isitiş uçun neça kkal issiqlik kerak?\par\smallskip
+\opt{A}{20}
+\opt{B}{4,2}
+\opt{C}{2}
+\opt{D}{8,4}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{13.}\ Xonada elektr peçkasini L qöşilgandan söng havoning harorat 18 $^\circ$C dan 27 $^\circ$C gaça oşganligi va xonadagi havoning bosim özgarmaganligi ma’lum bölsa, xonadagi havo molekulalarining soni neça foizga kamayganini aniqlang.\par\smallskip
+\opt{A}{3}
+\opt{B}{9}
+\opt{C}{6}
+\opt{D}{1,5}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{14.}\ Ma’lumki, normal şaroitda har qanday ideal gaz Loşmidt soniga teng konsentrasiyaga ega böladi. Har bitta molekulasining örtaça kinetik energiyalari farqi $10^{-19}$ J bölgan ikkita ideal gazning bosimlari farqini toping (MPa).\par\smallskip
+\opt{A}{18}
+\opt{B}{36}
+\opt{C}{1,8}
+\opt{D}{3,6}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{15.}\ 1 mol gaz izoxorik ravişda sovitilganda bosim 5 marta kamaydi. Keyin şu holatdan izobarik ravişda boşlanğiç holatdagi 400 K temperaturagaça qizdirildi. Mazkur holatda gaz qanday iş bajaradi (J)? R=8,3 J/mol$\cdot$K.\par\smallskip
+\opt{A}{2659}
+\opt{B}{2636}
+\opt{C}{6236}
+\opt{D}{6136}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{16.}\ Metall ötkazgiçning $-$20 $^\circ$C va 20 $^\circ$C haroratdagi qarşiliklari mos ravişda 11,2 $\Omega$ va 12 $\Omega$ ga teng. Şu ötkazgiçning 300 $^\circ$C temperaturadagi qarşiligini ($\Omega$) toping.\par\smallskip
+\opt{A}{14,8}
+\opt{B}{15,2}
+\opt{C}{17,6}
+\opt{D}{19,4}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{17.}\ Radiopriyomnikda yuqori çastotali signaldan past çastotali signalni ajratib beruvçi qism.... deb ataladi.\par\smallskip
+\opt{A}{modulyator}
+\opt{B}{detektor}
+\opt{C}{tebranişlar konturi}
+\opt{D}{kuçaytirgiç}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{18.}\ Özgarmas tok manbayiga ulangan yassi kondensator berilgan. Uning qoplamalari orasidagi masofa 2 marta orttirilsa, kondensatorning energiyasi qanday özgaradi?\par\smallskip
 \opt{A}{4 marta kamayadi}
 \opt{B}{4 marta ortadi}
 \opt{C}{2 marta ortadi}
 \opt{D}{2 marta kamayadi}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{21.}\ Moddiy nuqta tekislikda özaro perpendikulyar bölgan ikkita garmonik harakatda iştirok etmoqda. Ularning çastotalari mos holda 3 Hz va 4 Hz. t=3 s paytda moddiy nuqta muvozanat nuqtasidan ötdi. Qanday t vaqtda (s) moddiy nuqta muvozanat nuqtasiga ikkinçi marta qaytib keladi?\par\smallskip
-\opt{A}{8}
-\opt{B}{3,5}
-\opt{C}{4}
-\opt{D}{5}
+\textbf{19.}\ Qirrasi 4 cm bölgan kub şaklidagi metall yerda yotibdi. Agar metallning massasi 6 kg ga teng bölsa, uning potensial energiyasini toping (J). g=10 N/kg.\par\smallskip
+\opt{A}{2,4}
+\opt{B}{1,4}
+\opt{C}{1,2}
+\opt{D}{12}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{22.}\ Ikkita bir xil şunt özaro ketma-ket ulanib, söngra ampermetrga ulansa, uning ölçaş çegarasi 4,5 marta ortadi. Ikkala şunt ampermetrga parallel ulansa, uning ölçaş çegarasi neça marta ortadi?\par\smallskip
-\opt{A}{6,5}
-\opt{B}{9}
-\opt{C}{15}
-\opt{D}{18}
+\textbf{20.}\ Öramlari ziçligi bir xil, ammo hajmlari 2 marta farq qiluvçi ğaltaklarning induktivliklari neça marta farq qiladi?\par\smallskip
+\opt{A}{3 marta}
+\opt{B}{4 marta}
+\opt{C}{5 marta}
+\opt{D}{2 marta}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{23.}\ Zaryadi $2q$, radiusi $r$ va zaryadi $q$, radiusi $2r$ bölgan şarlar $F$ kuçi bilan ta’sirlaşmoqda. Agar ularni özaro tekkizib, avvalgi joyiga qaytarilsa, qanday kuç bilan ta’sirlaşişadi?\par\smallskip
-\opt{A}{$9F/8$}
-\opt{B}{$F$}
-\opt{C}{$8F/9$}
-\opt{D}{$2F$}
+\textbf{21.}\ 2 kondensatorni ketma-ket ulab batareya hosil qilingan. Batareya akkumulyatorga ulanib zaryadlangan. Batareya $W$ energiya töplagan bölsa, akkumulyator qança energiya sarflagan?\par\smallskip
+\opt{A}{2$W$}
+\opt{B}{$W$}
+\opt{C}{3$W$}
+\opt{D}{1,5$W$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{24.}\ Tok manbaining FIK neça \% bölganda taşqi zanjirdagi quvvat maksimal darajada böladi?\par\smallskip
-\opt{A}{50}
-\opt{B}{75}
-\opt{C}{25}
-\opt{D}{100}
+\textbf{22.}\ Töyiniş toki $1{,}6\ \mu$A bölsa, ionlantiruvçi asbob har sekundda neçta ion-elektron jufti hosil qiladi?\par\smallskip
+\opt{A}{$10^{11}$}
+\opt{B}{$10^{12}$}
+\opt{C}{$10^{13}$}
+\opt{D}{$10^{14}$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{25.}\ Agar ideal tebraniş konturidagi $C$ siğimli kondensatorga $C$ siğimli kondensator parallel ulansa, konturning erkin elektromagnit tebranişlar davri qanday özgaradi?\par\smallskip
-\opt{A}{2 marta kamayadi}
-\opt{B}{$\sqrt2$ marta ortadi}
-\opt{C}{$\sqrt2$ marta kamayadi}
-\opt{D}{2 marta ortadi}
+\textbf{23.}\ Ikki kislorod ioni berilgan. Birinçisi bitta, ikkinçisi ikkita elektron yöqotgan. Ular bir jinsli magnit maydonga bir xil tezlik bilan induksiya çiziqlariga tik ravişda uçib kirişsa, birinçi va ikkinçi ionlar harakat trayektoriyasining radiuslari $r_1$ va $r_2$ orasidagi munosabat qanday böladi?\par\smallskip
+\opt{A}{$r_1$=4$r_2$}
+\opt{B}{$r_1$=2$r_2$}
+\opt{C}{2$r_1$=$r_2$}
+\opt{D}{4$r_1$=$r_2$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{26.}\ Optik kuçi 7 dptr bölgan yiğuvçi linza berilgan. Linza yordamida dastlab buyumning 2,5 marta kiçiklaşgan, keyin buyumni surib, 2,5 marta kattalaşgan haqiqiy tasvirlari hosil qilindi. Buyum minimal qançaga surilganini (cm) aniqlang.\par\smallskip
-\opt{A}{30}
-\opt{B}{50}
-\opt{C}{20}
-\opt{D}{80}
+\textbf{24.}\ Birinçi tökli xalqa gorizontal sirtda yotibti. Uning yoniga ikkinçi tökli xalqa rasmda körsatilganidek joylaştirilsa birinçi xalqa markazidagi magnit maydon induksiyasi qanday özgaradi?\par\smallskip
+\noindent\hspace*{4mm}\begin{tikzpicture}[x=1cm,y=1cm,line width=0.5pt,>=Stealth,font=\small]
+\foreach \x/\n/\d in {0/1/1, 1.6/2/-1}{
+ \draw (\x,0) circle(0.5); \fill (\x,0) circle(1.2pt); \node[above] at (\x,0.05) {$I$}; \node[below] at (\x,-0.6) {\n};}
+\draw[->] (0.5,-0.05) arc(0:-30:0.5); \draw[->] (1.1,-0.05) arc(180:210:0.5);
+\end{tikzpicture}\par\smallskip
+\opt{A}{ortadi}
+\opt{B}{5 marta kamayadi}
+\opt{C}{2 marta kamayadi}
+\opt{D}{özgarmaydi}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{27.}\ Suyuqlik sirtiga yoruğlik nuri 36$^\circ$ burçak ostida tuşmoqda. Agar siniş burçagi 24$^\circ$ bölsa, singan va qaytgan nurlar orasidagi burçakni toping.\par\smallskip
-\opt{A}{120$^\circ$}
-\opt{B}{60$^\circ$}
-\opt{C}{54$^\circ$}
-\opt{D}{72$^\circ$}
+\textbf{25.}\ Elektrolit vannada $Al^{3+}$ ionli eritma bor. Katodga kelib yopişib qolgan barça ionlarning umumiy zaryadi 96500 C bölsa, katodda qança massali (g) alyuminiy ($Al$) ajralib çiqadi? $M(Al)$=27 g/mol\par\smallskip
+\opt{A}{54}
+\opt{B}{27}
+\opt{C}{9}
+\opt{D}{6}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{28.}\ Yoruğlik kuçi 25 cd va 16 cd bölgan ikkita lampa bir-biridan 18 cm masofada turibdi. Ular orasida joylaşgan fotometrik ekranning yoritilganligi bir xil bölişi uçun, ekran birinçi lampadan qança masofada (cm) qöyilişi kerak?\par\smallskip
+\textbf{26.}\ Uzunligi 1 cm bölgan igna fokus masofasi 3 cm bölgan linzaning boş optik öqiga öq böyiça joylaştirildi. Agar ignaning bir uçi linza old fokusidan 1 cm masofada yotgan bölsa, ignaning haqiqiy tasviridagi uzunligini aniqlang (cm).\par\smallskip
+\opt{A}{3}
+\opt{B}{4,5}
+\opt{C}{5}
+\opt{D}{4}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{27.}\ Linzaning nur sindiriş körsatkiçi qizil nur uçun 1,5 ga, binafşa nur uçun 1,52 ga teng. Linzaning ikkala tomoni bir xil egrilik radiusiga teng bölib, 1 m ga teng. Qizil va binafşa nurlar uçun linzaning fokus masofalari orasidagi farqni aniqlang (cm).\par\smallskip
+\opt{A}{4}
+\opt{B}{5,7}
+\opt{C}{1,2}
+\opt{D}{2,7}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{28.}\ Linzaning fokal tekisligi deb nimaga aytiladi?\par\smallskip
+\opt{A}{linza markazidan ötgan tekislik}
+\opt{B}{boş optik öqqa parallel tekislik}
+\opt{C}{boş optik öqqa 45$^\circ$ burçak ostida ötgan tekislik}
+\opt{D}{linza fokuslaridan boş optik öqqa perpendikulyar ötgan tekisliklar}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{29.}\ Quyidagi reaksiyadagi noma’lum $X$ zarrani aniqlang. $X + ^{12}_6C \Rightarrow ^4_2He + ^1_0n + ^{34}_{17}Cl$\par\smallskip
+\opt{A}{$^{34}_{17}Cl$}
+\opt{B}{$^{91}_{36}Kr$}
+\opt{C}{$^{27}_{13}Al$}
+\opt{D}{$^{12}_6C$}
+\end{minipage}\vspace{9pt}\par
+\noindent\begin{minipage}{\linewidth}
+\textbf{30.}\ Massasi 24 kg bölgan moddaning yarim yemiriliş davri 6 yil. 12 yildan keyin modda massasining qançasi (kg) yemirilib ketadi?\par\smallskip
 \opt{A}{12}
-\opt{B}{5}
-\opt{C}{10}
-\opt{D}{15}
+\opt{B}{6}
+\opt{C}{18}
+\opt{D}{8}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{29.}\ Birinçi foton vodorod atomidagi elektronning 8-energetik sathdan 7-sathga ötişida nurlangan. Ikkinçi foton elektronning 8- va 6-energetik sathlar orasidagi ötişida hosil bölgan. Birinçi fotonning impulsi $p$ bölsa, ikkinçi fotonning impulsi qanday?\par\smallskip
-\opt{A}{$\dfrac{343}{135}p$}
-\opt{B}{$\dfrac{18}{343}p$}
-\opt{C}{$\dfrac{15}{2}p$}
-\opt{D}{$\dfrac{135}{343}p$}
+\textbf{31.}\ Ikki foton bor, ikkinçisining çastotasi ikki marta ortiq. Birinçi fotonning impulsi $p$ bölsa, ikkinçisiniki qanday?\par\smallskip
+\opt{A}{2$p$}
+\opt{B}{4$p$}
+\opt{C}{$p$/2}
+\opt{D}{$p$}
 \end{minipage}\vspace{9pt}\par
 \noindent\begin{minipage}{\linewidth}
-\textbf{30.}\ Tezligi 0,8c bölgan zarraning impulsi 2 $\cdot$ 10$^{-20}$ kg $\cdot$ m/s ga teng. Uning töla energiyasi qançaga (J) teng?\par\smallskip
-\opt{A}{2,5 $\cdot$ 10$^{-12}$}
-\opt{B}{4,5 $\cdot$ 10$^{-12}$}
-\opt{C}{7,5 $\cdot$ 10$^{-12}$}
-\opt{D}{1,5 $\cdot$ 10$^{-12}$}
+\textbf{32.}\ Jism 7 m/s boşlanğiç tezlik bilan tik pastga otildi. Jismning oxirgi sekundda bosib ötgan masofasi birinçi sekundda bosib ötgan masofasidan 40 m ga köp. Jismning yerga urilişdagi tezligini (m/s) aniqlang.\par\smallskip
+\opt{A}{45}
+\opt{B}{68}
+\opt{C}{57}
+\opt{D}{35}
 \end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{31.}\ $^{14}_7N$ azot va $^{65}_{30}Zn$ rux yadrolarini soliştiring: ikkinçisining neytronlari sonini birinçisining protonlari soniga nisbati qanday?\par\smallskip
-\opt{A}{65/7}
-\opt{B}{5/1}
-\opt{C}{30/7}
-\opt{D}{15/7}
-\end{minipage}\vspace{9pt}\par
-\noindent\begin{minipage}{\linewidth}
-\textbf{32.}\ Quvurdan 3,14 m$^{3}$ /s tezlikda suv oqmoqda. Quvurning diametri 50 cm bölsa, suvning oqiş tezligini toping (m/s).\par\smallskip
-\opt{A}{20}
-\opt{B}{8}
-\opt{C}{15}
-\opt{D}{16}
-\end{minipage}\vspace{9pt}\par
-\newpage\noindent\textbf{33–35-test topshiriqlariga mos keluvchi javoblarni (A–F) javob variantlaridan tanlang.}\par\smallskip
-Rasmda elektr zanjir tasvirlangan. Batareyaning ichki qarshiligi nolga teng, ampermetrlar ideal.\par\medskip
-\begin{center}\begin{tikzpicture}[line width=0.5pt]
-\draw (0,0)--(0,1.35); \draw (0,1.65)--(0,3)--(3,3)--(3,2.4); \draw (-0.25,1.35)--(0.25,1.35); \draw (-0.12,1.65)--(0.12,1.65);
-\node[left] at (-0.3,1.5) {\small $18\,\mathrm{V}$};
-\draw (1.5,3)--(1.5,2.72); \draw (1.5,2.44)--(1.5,2.4);
-\draw (1.5,1.8)--(1.5,1.2); \draw (1.5,0.6)--(1.5,0)--(0.28,0); \draw (-0.28,0)--(0,0);
-\draw (3,1.8)--(3,1.2); \draw (3,0.6)--(3,0)--(1.5,0);
-\draw (1.5,1.5)--(1.97,1.5); \draw (2.53,1.5)--(3,1.5);
-\draw[fill=white] (1.5,2.58) circle (0.28); \node at (1.5,2.58) {\small $A_1$};
-\draw[fill=white] (1.3599999999999999,1.8) rectangle (1.6400000000000001,2.4); \node[right] at (1.67,2.1) {\small $3\,\Omega$};
-\draw[fill=white] (1.3599999999999999,0.6000000000000001) rectangle (1.6400000000000001,1.2); \node[right] at (1.67,0.9) {\small $1\,\Omega$};
-\draw[fill=white] (2.86,1.8) rectangle (3.14,2.4); \node[right] at (3.17,2.1) {\small $4\,\Omega$};
-\draw[fill=white] (2.86,0.6000000000000001) rectangle (3.14,1.2); \node[right] at (3.17,0.9) {\small $6\,\Omega$};
-\draw[fill=white] (2.25,1.5) circle (0.28); \node at (2.25,1.5) {\small $A_2$};
-\draw[fill=white] (0.0,0.0) circle (0.28); \node at (0.0,0.0) {\small $A_3$};
+\newpage\noindent\textbf{33–35-test topşiriqlariga mos keluvçi javoblarni (A–F) javob variantlaridan tanlang.}\par\smallskip
+Vakuumda bir-biridan 6 cm masofada turgan $q=+4$ nC va $-q$ zaryadlar orasidagi kesmaning örtasida $A$ nuqta joylaşgan (rasm). $k=9\cdot10^9\ \mathrm{N\cdot m^2/C^2}$.\par\medskip
+\begin{center}\begin{tikzpicture}[x=1cm,y=1cm,line width=0.5pt,>=Stealth,font=\small]
+\draw (0,0)--(5.0,0); \foreach \x/\n in {0/{+q},5.0/{-q}}{\draw[fill=white] (\x,0) circle(0.2); \node[above=5pt] at (\x,0) {$\n$};}
+\draw (-0.14,0)--(0.14,0) (0,-0.14)--(0,0.14); \draw (4.86,0)--(5.14,0);
+\fill (2.5,0) circle(1.6pt) node[below=3pt]{$A$}; \draw[<->] (0.2,-0.9)--(4.8,-0.9); \node[below] at (2.5,-0.9) {$6\ \mathrm{cm}$};
 \end{tikzpicture}\end{center}
-\noindent\fbox{\begin{minipage}{0.64\linewidth}\vspace{4pt}\textbf{33.}\ $A_1$ ampermetrning körsatişini (A) aniqlang.\\[6pt]\textbf{34.}\ $A_2$ ampermetrning körsatişini (A) aniqlang.\\[6pt]\textbf{35.}\ $A_3$ ampermetrning körsatişini (A) aniqlang.\vspace{4pt}\end{minipage}\vrule\hspace{6pt}\begin{minipage}{0.28\linewidth}\vspace{4pt}A)\ 10\\B)\ 7\\C)\ 2\\D)\ 6\\E)\ 4\\F)\ 3\vspace{4pt}\end{minipage}}\par\vspace{14pt}
+\noindent\fbox{\begin{minipage}{0.64\linewidth}\vspace{4pt}\textbf{33.}\ $A$ nuqtadagi elektr maydon kuçlanganligini (kV/m) toping.\\[6pt]\textbf{34.}\ $A$ nuqtadagi maydon potensialini (V) toping.\\[6pt]\textbf{35.}\ $A$ nuqtaga qöyilgan $2$ nC zaryadga ta’sir qiluvçi kuçni ($\mu$N) toping.\vspace{4pt}\end{minipage}\vrule\hspace{6pt}\begin{minipage}{0.28\linewidth}\vspace{4pt}A)\ 0\\B)\ 20\\C)\ 40\\D)\ 80\\E)\ 160\\F)\ 320\vspace{4pt}\end{minipage}}\par\vspace{14pt}
 \Needspace{9\baselineskip}
 \noindent\textbf{36.}\ Qirrasining uzunligi 3 cm bölgan kub şaklidagi 1 ta muz bölagi asosining yuzasi 60 cm$^2$ bölgan, 85,7 g suv quyilgan silindrik idişda taşlandi. $\rho_{muz}=900$ kg/m$^3$.\par\smallskip
 \medskip\noindent\textbf{a)\ Muzlar erib ketgandan söng suyuqlikning idiş tubiga beradigan bosimini (Pa) toping.}\par

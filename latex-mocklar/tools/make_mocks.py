@@ -5,6 +5,8 @@ import json, random, re, math, subprocess, sys, os
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import open_tasks as ot
+import mid_tasks as mt
+from figs import FIG
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "latex-mocklar"
@@ -73,6 +75,7 @@ FIGREF = re.compile(r"rasm|chizma|grafik|jadval|sxema", re.I)
 def usable(q):
     if all(a == "ABCD"[i] for i, a in enumerate(q["answers"])): return False
     imgs = q.get("images") or ([q["image"]] if q.get("image") else [])
+    if any(i.split('/',1)[-1].rsplit('.',1)[0] not in FIG for i in imgs): return False
     if FIGREF.search(q["text"]) and not imgs: return False
     if UNITCONV.search(q["text"]): return False
     if len(q["text"]) < 45: return False
@@ -109,6 +112,7 @@ PRE = r"""\documentclass[11pt,a4paper]{article}
 \usepackage[margin=18mm,top=22mm,bottom=20mm]{geometry}
 \usepackage{fontspec}\setmainfont{Latin Modern Roman}
 \usepackage{amsmath,amssymb,tikz,graphicx,fancyhdr,array,needspace}
+\usetikzlibrary{patterns,arrows.meta,decorations.pathmorphing,calc}
 \setlength{\headheight}{14pt}
 \usetikzlibrary{arrows.meta}
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
@@ -123,7 +127,7 @@ def qblock(n, q):
     body = [r"\noindent\begin{minipage}{\linewidth}", r"\textbf{%d.}\ %s\par\smallskip" % (n, tex(q["text"]))]
     imgs = q.get("images") or ([q["image"]] if q.get("image") else [])
     for im in imgs:
-        body.append(r"\noindent\hspace*{4mm}\includegraphics[width=0.6\linewidth,height=5.2cm,keepaspectratio]{../dtm-variantlari/%s}\par\smallskip" % im)
+        body.append(r"\noindent\hspace*{4mm}" + FIG[im.split('/',1)[-1].rsplit('.',1)[0]] + r"\par\smallskip")
     for L, a in zip("ABCD", q["answers"]): body.append(r"\opt{%s}{%s}" % (L, tex(a)))
     body.append(r"\end{minipage}\vspace{9pt}\par")
     return "\n".join(body)
@@ -177,17 +181,17 @@ def doc(m, sel, bt, opens):
     L = [PRE.replace(r"\MOCKNO", str(m + 1)).replace(r"\MOCK", f"M-{m+1:02d}"),
          r"\begin{center}{\Large\textbf{FİZİKA}}\end{center}"]
     for n in range(1, 33): L.append(qblock(n, sel[n]))
-    L.append(r"\newpage\noindent\textbf{33–35-test topşiriqlariga mos keluvçi javoblarni (A–F) javob variantlaridan tanlang.}\par\smallskip".replace("ş", "ş"))
-    L.append(r"Rasmda elektr zanjir tasvirlangan. Batareyaning ichki qarshiligi nolga teng, ampermetrlar ideal.\par\medskip".replace("Rasmda", "Rasmda"))
-    L.append(r"\begin{center}" + bridge_fig2(bt["U"], bt["R"]) + r"\end{center}")
-    rows = [(33, "$A_1$ ampermetrning ko‘rsatishini (A) aniqlang."), (34, "$A_2$ ampermetrning ko‘rsatishini (A) aniqlang."), (35, "$A_3$ ampermetrning ko‘rsatishini (A) aniqlang.")]
+    L.append(r"\newpage\noindent\textbf{" + tex("33–35-test topshiriqlariga mos keluvchi javoblarni (A–F) javob variantlaridan tanlang.") + r"}\par\smallskip")
+    L.append(tex(bt["intro"]) + r"\par\medskip")
+    L.append(r"\begin{center}" + bt["fig"] + r"\end{center}")
+    rows = list(zip((33, 34, 35), bt["qs"]))
     opt = r"\\".join(f"{L_})\\ {o}" for L_, o in zip("ABCDEF", bt["opts"]))
     left = r"\\[6pt]".join(rf"\textbf{{{n}.}}\ {tex(t)}" for n, t in rows)
     L.append(r"\noindent\fbox{\begin{minipage}{0.64\linewidth}\vspace{4pt}" + left + r"\vspace{4pt}\end{minipage}\vrule\hspace{6pt}\begin{minipage}{0.28\linewidth}\vspace{4pt}" + opt + r"\vspace{4pt}\end{minipage}}\par\vspace{14pt}")
     for i, (st, parts, fig) in enumerate(opens): L.append(open_block(36 + i, st, parts, fig))
     L.append(r"\end{document}")
     s = "\n".join(L)
-    return s.replace("FİZİKA", "FIZIKA").replace("topşiriqlariga", "topshiriqlariga").replace("keluvçi", "keluvchi")
+    return s.replace("FİZİKA", "FIZIKA")
 
 def keys_doc(allkeys, srcs):
     L = [PRE.replace(r"\MOCKNO", "1–10").replace(r"\MOCK", "Kalitlar"), r"\begin{center}{\Large\textbf{Javoblar kalitlari}}\end{center}"]
@@ -195,7 +199,7 @@ def keys_doc(allkeys, srcs):
         L.append(rf"\Needspace{{16\baselineskip}}\subsection*{{Mock №{m+1}}}")
         row = lambda a, b: " ".join(f"{i}-{k['mcq'][i]}" for i in range(a, b))
         L.append(r"\noindent\textbf{1–32:} " + r"\\ ".join(row(a, a + 8) for a in (1, 9, 17, 25)) + r"\par")
-        L.append(r"\noindent\textbf{33–35:} 33-%s, 34-%s, 35-%s \quad (A$_1$ = %s A, A$_2$ = %s A, A$_3$ = %s A)\par" % (*k["bridge_key"], *k["bridge_ans"]))
+        L.append(r"\noindent\textbf{33–35:} 33-%s, 34-%s, 35-%s \quad (javoblar: %s; %s; %s)\par" % (*k["bridge_key"], *k["bridge_ans"]))
         for i, (a, b) in enumerate(k["open"]): L.append(rf"\noindent\textbf{{{36+i}.}}\ a) {a}\quad b) {b}\par")
         L.append(r"\noindent{\footnotesize Manba (bazadagi id, 1–32): " + ", ".join(srcs[m]) + r"}\par\bigskip")
     L.append(r"\end{document}")
@@ -208,6 +212,11 @@ def main():
     for m in range(N_MOCKS):
         rng = random.Random(m)
         bt = ot.bridge_task(m, rng)
+        if m == 0:
+            bt.update(fig=bridge_fig2(bt["U"], bt["R"]), intro="Rasmda elektr zanjir tasvirlangan. Batareyaning ichki qarshiligi nolga teng, ampermetrlar ideal.",
+                      qs=[f"$A_{i}$ ampermetrning ko‘rsatishini (A) aniqlang." for i in (1, 2, 3)])
+        else:
+            bt = mt.mid_task(m)
         opens = [f(m) for f in ot.OPEN]
         s = doc(m, sel[m], bt, opens)
         (OUT / f"mock-{m+1:02d}.tex").write_text(s, encoding="utf-8")
