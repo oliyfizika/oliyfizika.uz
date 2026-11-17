@@ -73,7 +73,40 @@ def tex(s):
 # ------------------------------------------------------------ banktan tanlash
 UNITCONV = re.compile(r"necha\s+\S+\s+(ga\s+)?teng|birligi|birlikda|XBS|SI\s+da|ko‘rsating\.?$", re.I)
 FIGREF = re.compile(r"rasm|chizma|grafik|jadval|sxema", re.I)
+
+# Bankdagi bo‘lim belgisi ba’zan noto‘g‘ri — kalit so‘zlar bilan tekshiriladi (sayt sections.js ga o‘xshash)
+_A = r"[‘'’ʻ]?"
+KW = {
+  "E": [r"zaryad", r"\btok\b", r"kuchlanish", r"qarshilik", r"kondensator", r"sig"+_A+"im", r"eyuk", r"magnit", r"induksiya", r"induktiv",
+        r"elektr", r"potensial", r"kulon", r"amperm", r"voltm", r"rezistor", r"lorens", r"solenoid", r"transformator", r"o"+_A+"tkazgich",
+        r"Ω", r"galvanometr", r"lampa", r"zanjir", r"dielektrik", r"g"+_A+"altak", r"elektroliz", r"\bvolt\b", r"μf|mkf|\bpf\b|\bnf\b"],
+  "MF": [r"\bgaz", r"harorat", r"temperatura", r"issiqlik", r"molekula", r"izobar", r"izoterm", r"izoxor", r"adiabat", r"termodinamik", r"kapillyar",
+         r"sirt taranglik", r"namlik", r"erish", r"bug"+_A, r"\bmol\b", r"kelvin", r"°c", r"entropiya", r"ideal gaz", r"avogadro",
+         r"qaynash", r"\bmuz", r"kristall", r"diffuziya", r"ichki energiya", r"karno", r"solishtirma issiqlik"],
+  "O": [r"linza", r"\bnur", r"yorug"+_A+"lik", r"ko"+_A+"zgu", r"sindirish", r"difraksi", r"interferen", r"tasvir", r"prizma", r"qutblan",
+        r"dioptriya", r"dptr", r"fokus", r"lupa", r"mikroskop", r"to"+_A+"lqin uzunligi"],
+  "A": [r"\batom", r"yadro", r"radioaktiv", r"yemiril", r"foton", r"fotoeffekt", r"kvant", r"proton", r"neytron", r"izotop", r"nuklon",
+        r"relyativ", r"spektr", r"orbita", r"broyl", r"chiqish ishi", r"qizil chegara", r"plank", r"α|β|γ-|alfa|beta", r"elektron",
+        r"massa defekt", r"\b0,\d+\s?c\b", r"\d\s?c tezlik", r"zarracha", r"bog"+_A+"lanish energiya", r"annigilyatsiya", r"yorug"+_A+"lik tezligi"],
+}
+def _hits(t, k): return sum(1 for r in KW[k] if re.search(r, t))
+def topic_ok(q):
+    t = (q["text"] + " " + " ".join(q["answers"])).lower()
+    t = re.sub(r"havo\w*\s+qarshilig\w*|ishqalanish\w*|potensial energiya\w*|mexanik kuchlanish\w*", " ", t)
+    h = {k: _hits(t, k) for k in KW}
+    tp = q["topic"]
+    if tp == "M":
+        return h["E"] == 0 and h["MF"] == 0 and h["O"] == 0 and h["A"] == 0
+    if tp == "A":
+        return h["A"] > 0 and h["A"] >= max(h["E"], h["MF"])
+    if tp == "O":
+        return h["O"] > 0 and h["O"] >= max(h["E"], h["MF"])
+    if tp == "E" and _hits(re.sub(r"qarshilik", " ", t), "E") == 0: return False
+    return h[tp] > 0 and h[tp] >= max(v for k, v in h.items() if k != tp)
+
 def usable(q):
+    if not topic_ok(q): return False
+    if re.search(r"\b\d{2,3} \d{1,2} [A-Z][a-z]?\b", q["text"]): return False   # buzilgan yadro belgilari
     if all(a == "ABCD"[i] for i, a in enumerate(q["answers"])): return False
     imgs = q.get("images") or ([q["image"]] if q.get("image") else [])
     if any(i.split('/',1)[-1].rsplit('.',1)[0] not in FIG for i in imgs): return False
@@ -124,8 +157,11 @@ PRE = r"""\documentclass[11pt,a4paper]{article}
 \newcommand{\blank}{\rule{5cm}{0.4pt}}
 \begin{document}
 """
+AUTHOR = re.compile(r"^\s*\([A-ZÖĞŞÇ‘’'][^()]{2,40}\)\s*")
+def clean_text(t): return AUTHOR.sub("", t)
+
 def qblock(n, q):
-    body = [r"\noindent\begin{minipage}{\linewidth}", r"\textbf{%d.}\ %s\par\smallskip" % (n, tex(q["text"]))]
+    body = [r"\noindent\begin{minipage}{\linewidth}", r"\textbf{%d.}\ %s\par\smallskip" % (n, tex(clean_text(q["text"])))]
     imgs = q.get("images") or ([q["image"]] if q.get("image") else [])
     for im in imgs:
         body.append(r"\noindent\hspace*{4mm}" + FIG[im.split('/',1)[-1].rsplit('.',1)[0]] + r"\par\smallskip")

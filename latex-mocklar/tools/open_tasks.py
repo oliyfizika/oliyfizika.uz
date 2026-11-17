@@ -86,7 +86,7 @@ def t39(k):
     Q, r = P[k]
     A = Q * 2 / 5
     st = f"Bir atomli ideal gazga {Q} J issiqlik berib, hajmi izobarik ravishda {r} marta oshirildi."
-    return st, [("Bunda gazning absolyut temperaturasi qanday o‘zgaradi?", f"{r} marta ortadi"),
+    return st, [("Bunda gazning absolyut temperaturasi necha marta ortadi?", str(r)),
                 ("Gazning bajargan ishini (J) aniqlang.", num(A))], None
 
 def t40(k):
@@ -192,6 +192,6 @@ def t45(k):
     rs = f"{r.numerator}/{r.denominator}" if r.denominator != 1 else str(r.numerator)
     st = f"G‘alayonlanmagan vodorod atomining ionlanish energiyasi {E0} eV ga teng." if False else f"G‘alayonlangan vodorod atomining ionlashish energiyasi {E0} eV ga teng."
     return st, [(f"Atom fotonni yutib impuls momentini ${d}\\hbar$ ga oshirsa, uning ionlanish energiyasi (eV) nimaga teng bo‘lishini aniqlang.", num(round(E1, 3), 3)),
-                (f"Atom fotonni yutib impuls momentini ${d}\\hbar$ ga oshirsa, undagi elektronning tezligi necha marta o‘zgarishini aniqlang.", f"{rs} marta kamayadi")], None
+                (f"Atom fotonni yutib impuls momentini ${d}\\hbar$ ga oshirsa, undagi elektronning orbitadagi tezligi necha marta kamayishini aniqlang.", num(round(float(r), 3)))], None
 
 OPEN = [t36, t37, t38, t39, t40, t41, t42, t43, t44, t45]

@@ -424,13 +424,14 @@ service cloud.firestore {
 
     function validMsTestMeta(d) {
       return d.keys().hasOnly(['number', 'title', 'subtitle', 'sourceVariant', 'durationMinutes', 'questionCount', 'mcqCount', 'itemCount',
-                               'figureCount', 'source', 'importedAt', 'importedBy', 'openFrom', 'openUntil', 'reviewOpen', 'updatedAt'])
+                               'figureCount', 'source', 'importedAt', 'importedBy', 'openFrom', 'openUntil', 'reviewOpen', 'updatedAt', 'draft'])
         && d.number is int && d.number >= 1 && d.number <= 999
         && okString(d, 'title', 200) && okString(d, 'subtitle', 300) && okString(d, 'sourceVariant', 300)
         && d.durationMinutes is int && d.durationMinutes >= 10 && d.durationMinutes <= 600
         && (!('openFrom' in d) || d.openFrom is timestamp)
         && (!('openUntil' in d) || d.openUntil is timestamp)
-        && (!('reviewOpen' in d) || d.reviewOpen is bool);
+        && (!('reviewOpen' in d) || d.reviewOpen is bool)
+        && (!('draft' in d) || d.draft is bool);
     }
 
     match /msMockTests/{testId} {

@@ -174,7 +174,9 @@ S40 = [
 ]
 # ---------------------------------------------------------------- 41: Elektr va magnetizm (tok, magnit maydon, induksiya)
 S41 = [
- lambda: ot.t41(0),
+ lambda: P("100 o‘ramli, yuzasi 200 cm$^2$ bo‘lgan to‘g‘ri burchakli ramka induksiyasi 0,5 T bo‘lgan bir jinsli magnit maydonda induksiya chiziqlariga tik o‘q atrofida sekundiga 10 marta aylanmoqda. $\\pi=3{,}14$.",
+           "Ramkada hosil bo‘ladigan EYuKning amplituda qiymatini (V) toping.", 100 * 0.5 * 0.02 * 2 * 3.14 * 10,
+           "EYuKning effektiv qiymatini (V) toping.", round(100 * 0.5 * 0.02 * 2 * 3.14 * 10 / math.sqrt(2), 2)),
  lambda: P("Uzunligi 0,5 m bo‘lgan to‘g‘ri o‘tkazgichdan 4 A tok o‘tmoqda. O‘tkazgich induksiyasi 0,2 T bo‘lgan bir jinsli magnit maydonda induksiya chiziqlariga $30^\\circ$ burchak ostida joylashgan.",
            "O‘tkazgichga ta’sir qiluvchi Amper kuchini (N) toping.", 0.2 * 4 * 0.5 * 0.5,
            "O‘tkazgichni qanday burab qo‘yganda kuch eng katta bo‘ladi, shu eng katta kuchni (N) toping.", 0.2 * 4 * 0.5),
@@ -206,7 +208,9 @@ S41 = [
 # ---------------------------------------------------------------- 42: Elektr va magnetizm (elektrostatika)
 k_ = 9e9
 S42 = [
- lambda: ot.t42(0),
+ lambda: P("Gorizontal joylashgan yassi kondensator qoplamalari orasidagi masofa 1 cm, kuchlanish 500 V. Kondensator ichida massasi $10^{-11}$ kg bo‘lgan zaryadlangan chang zarrasi muallaq turibdi. $g=10$ m/s$^2$.",
+           "Kondensator ichidagi elektr maydon kuchlanganligini (kV/m) toping.", 500 / 0.01 / 1000,
+           "Chang zarrasining zaryadini ($10^{-15}$ C) toping.", 1e-11 * 10 / (500 / 0.01) / 1e-15),
  lambda: P("Vakuumda bir-biridan 30 cm masofada $+2\\ \\mu$C va $+8\\ \\mu$C nuqtaviy zaryadlar joylashgan. $k=9\\cdot10^9$ N$\\cdot$m$^2$/C$^2$.",
            "Zaryadlarning o‘zaro ta’sir kuchini (N) toping.", k_ * 2e-6 * 8e-6 / 0.3 ** 2,
            "Zaryadlarni tutashtiruvchi kesmada maydon kuchlanganligi nolga teng bo‘lgan nuqta birinchi zaryaddan qanday masofada (cm) joylashgan?", 30 / 3),
@@ -233,7 +237,7 @@ S42 = [
            "$3\\ \\mu$C zaryadni $A$ dan $B$ ga ko‘chirishda maydon bajargan ishni (mJ) toping.", 3e-6 * 100 * 1000),
  lambda: P("$q$ va $4q$ musbat nuqtaviy zaryadlar bir-biridan 30 cm masofada mahkamlangan. Ular orasiga uchinchi nuqtaviy zaryad joylashtirildi.",
            "Uchinchi zaryad muvozanatda bo‘lishi uchun u $q$ zaryaddan qanday masofada (cm) joylashishi kerak?", 10,
-           "Uchala zaryad ham muvozanatda bo‘lishi uchun uchinchi zaryad qanday bo‘lishi kerak ($q$ orqali)?", "$-4q/9$"),
+           "Uchala zaryad ham muvozanatda bo‘lishi uchun uchinchi zaryadning $q$ ga nisbati $q_3/q$ qanday bo‘lishi kerak (o‘nli kasrda, ishorasi bilan)?", -4 / 9),
 ]
 # ---------------------------------------------------------------- 43: Optika (to‘lqin optikasi, sinish, kvant optikasi)
 S43 = [
@@ -305,7 +309,7 @@ _N = 6.02e23 / 235
 S45 = [
  lambda: ot.t45(0),
  lambda: P("Radioaktiv izotopning yarim yemirilish davri 8 sutka. Dastlab namunada $1{,}6\\cdot10^{20}$ ta radioaktiv yadro bor edi.",
-           "24 sutkadan keyin yadrolarning qanday qismi yemirilmay qoladi?", "1/8",
+           "24 sutkadan keyin yadrolarning qancha ulushi yemirilmay qoladi (o‘nli kasrda)?", 1 / 8,
            "24 sutka davomida yemirilgan yadrolar sonini ($10^{20}$) toping.", 1.6 * 7 / 8),
  lambda: P("Geliy-4 yadrosining massasi 4,00151 m.a.b., proton massasi 1,00728 m.a.b., neytron massasi 1,00866 m.a.b. 1 m.a.b. 931,5 MeV energiyaga mos keladi.",
            "Yadroning bog‘lanish energiyasini (MeV) toping.", round(_Eb, 2),

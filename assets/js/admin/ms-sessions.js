@@ -15,6 +15,8 @@ import { auditEntry } from "./audit-log.js";
 import { toast } from "../ui/feedback.js";
 import { computeSessionResults } from "../../../milliy-sertifikat/mock-testlar/js/finalize-core.js";
 import { sessionPhase, toMs, COL } from "../../../milliy-sertifikat/mock-testlar/js/session-service.js";
+import { sectionLabel } from "../../../milliy-sertifikat/mock-testlar/js/sections.js";
+import { questionStats } from "../../../milliy-sertifikat/mock-testlar/js/question-stats.js";
 import { MIN_PARTICIPANTS, RECOMMENDED_PARTICIPANTS } from "../../../milliy-sertifikat/mock-testlar/js/rasch.js";
 import { listImportedTests, loadImportedTest } from "../../../milliy-sertifikat/mock-testlar/js/remote-test.js";
 
@@ -64,7 +66,7 @@ async function loadTests() {
       return { id: e.id, number: Number(e.id.replace(/\D+/g, "")), title: e.id, durationMinutes: 180 };
     }
   }));
-  const imported = await listImportedTests();
+  const imported = await listImportedTests({ includeDrafts: true });
   imported.forEach((m) => {
     const t = { id: m.id, number: m.number, title: m.title, durationMinutes: m.durationMinutes || 180, imported: true, meta: m };
     testCache.delete(m.id); // import qilingan versiya ustun
@@ -72,7 +74,7 @@ async function loadTests() {
     if (i >= 0) list[i] = t; else list.push(t);
   });
   tests = list.sort((a, b) => a.number - b.number);
-  $("#msTest").innerHTML = tests.map((t) => `<option value="${esc(t.id)}">Mock №${esc(t.number)} — ${esc(t.title)}${t.imported ? " (import)" : ""}</option>`).join("");
+  $("#msTest").innerHTML = tests.map((t) => `<option value="${esc(t.id)}">Mock №${esc(t.number)} — ${esc(t.title)}${t.imported ? (t.meta?.draft ? " (import, draft)" : " (import)") : ""}</option>`).join("");
   renderImported(imported);
   const now = Date.now();
   const start = Math.ceil((now + 3600000) / 3600000) * 3600000;
@@ -133,6 +135,7 @@ function render() {
     const acts = [];
     if (ph === "open") acts.push(`<button type="button" class="of-btn of-btn--sm" data-close="${esc(s.id)}">Hozir yopish</button>`);
     if (ph === "closed" || ph === "open") acts.push(`<button type="button" class="of-btn of-btn--primary of-btn--sm" data-finalize="${esc(s.id)}">Yakunlash va natijani hisoblash</button>`);
+    if (ph !== "upcoming" && n !== 0) acts.push(`<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-qstats="${esc(s.id)}">Statistika</button>`);
     if (ph === "finalized") {
       acts.push(`<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-results="${esc(s.id)}">Natijalar</button>`);
       acts.push(`<button type="button" class="of-btn of-btn--ghost of-btn--sm" data-finalize="${esc(s.id)}" data-again="1">Qayta hisoblash</button>`);
@@ -167,6 +170,7 @@ $("[data-new-form]").addEventListener("submit", async (e) => {
   const ok = await confirmAction({
     title: `Mock №${t.number} sessiyasini ochish`,
     text: `${fmt(o.getTime())} — ${fmt(c.getTime())} (Toshkent vaqti), har bir ishtirokchiga ${dur} daqiqa. Shu oraliqda test barcha kirgan foydalanuvchilarga ochiladi.`
+      + (t.meta?.draft ? " Mock hozir draft — sessiya ochilgach katalogda ko‘rinadi." : "")
       + (reused ? " DIQQAT: bu mock natijalari avval e’lon qilingan — javoblari ochiq bo‘lgan. Yangi sessiya ochilsa, avvalgi ishtirokchilar savollar sharhini sessiya tugaguncha ko‘ra olmaydi." : ""),
     confirmLabel: "Sessiyani ochish",
   });
@@ -188,7 +192,8 @@ $("[data-new-form]").addEventListener("submit", async (e) => {
       const m = t.meta || {};
       const from = Math.min(o.getTime(), toMs(m.openFrom) && toMs(m.openUntil) > Date.now() ? toMs(m.openFrom) : Infinity);
       const until = Math.max(c.getTime() + (dur + 10) * 60000, toMs(m.openUntil) > Date.now() ? toMs(m.openUntil) : 0);
-      batch.update(fs.doc(db, "msMockTests", t.id), { openFrom: fs.Timestamp.fromDate(new Date(from)), openUntil: fs.Timestamp.fromDate(new Date(until)), reviewOpen: false, updatedAt: fs.serverTimestamp() });
+      // Sessiya ochilishi — mockni e'lon qilish: draft olinadi, katalogda ko'rinadi
+      batch.update(fs.doc(db, "msMockTests", t.id), { openFrom: fs.Timestamp.fromDate(new Date(from)), openUntil: fs.Timestamp.fromDate(new Date(until)), reviewOpen: false, draft: false, updatedAt: fs.serverTimestamp() });
     }
     const au = auditEntry(fb, sessionState, { action: "ms-session-create", section: "milliy-sertifikat", summary: `Mock №${t.number} sessiyasi ochildi: ${fmt(o.getTime())} — ${fmt(c.getTime())}`, details: { sessionId: id } });
     batch.set(au.ref, au.data);
@@ -205,12 +210,13 @@ $("[data-new-form]").addEventListener("submit", async (e) => {
 bodyEl.addEventListener("click", async (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
-  const id = btn.dataset.close || btn.dataset.finalize || btn.dataset.delete || btn.dataset.results;
+  const id = btn.dataset.close || btn.dataset.finalize || btn.dataset.delete || btn.dataset.results || btn.dataset.qstats;
   const s = sessions.find((x) => x.id === id);
   if (!s) return;
   if (btn.dataset.close) return closeNow(s);
   if (btn.dataset.delete) return removeSession(s);
   if (btn.dataset.results) return toggleResults(s);
+  if (btn.dataset.qstats) return toggleStats(s);
   if (btn.dataset.finalize) return finalize(s, !!btn.dataset.again, btn);
 });
 
@@ -349,9 +355,10 @@ async function finalize(s, again, btn) {
 async function toggleResults(s, forceOpen = false) {
   const row = bodyEl.querySelector(`[data-detail="${CSS.escape(s.id)}"]`);
   if (!row) return;
-  if (!row.hidden && !forceOpen) { row.hidden = true; return; }
-  row.hidden = false;
   const cell = row.firstElementChild;
+  if (!row.hidden && !forceOpen && cell.dataset.view === "results") { row.hidden = true; return; }
+  row.hidden = false;
+  cell.dataset.view = "results";
   cell.innerHTML = "Yuklanmoqda…";
   try {
     const snap = await fs.getDocs(fs.query(fs.collection(db, COL.attempts), fs.where("sessionId", "==", s.id)));
@@ -399,6 +406,57 @@ function downloadCsv(s, list) {
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
 
+// ------------------------------------------------------------------ savollar statistikasi (sessiya davomida ham ishlaydi)
+// Har bir band (MCQ = 1, ochiq savol — a, b) uchun: to'g'ri javob ulushi, javobsizlar, MCQ da eng ko'p tanlangan variant;
+// bo'limlar bo'yicha o'rtacha. Faqat kamida bitta javob bergan ishtirokchilar hisobga olinadi.
+async function toggleStats(s) {
+  const row = bodyEl.querySelector(`[data-detail="${CSS.escape(s.id)}"]`);
+  if (!row) return;
+  const cell = row.firstElementChild;
+  if (!row.hidden && cell.dataset.view === "stats") { row.hidden = true; return; }
+  row.hidden = false;
+  cell.dataset.view = "stats";
+  cell.innerHTML = "Yuklanmoqda…";
+  try {
+    const [snap, test] = await Promise.all([
+      fs.getDocs(fs.query(fs.collection(db, COL.attempts), fs.where("sessionId", "==", s.id))),
+      getTest(s.testId),
+    ]);
+    const st = questionStats(test, snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+    if (!st.participants) { cell.innerHTML = stateBox("empty", "Hali javoblar yo‘q", "Ishtirokchilar javob bera boshlagach statistika shu yerda chiqadi."); return; }
+    const bar = (p) => `<span class="ms-bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, p))}%"></i></span>`;
+    const chips = [
+      `Javob berganlar: <b>${esc(st.participants)}</b>`, `Topshirganlar: <b>${esc(st.submitted)}</b>`,
+      `O‘rtacha xom ball: <b>${esc(comma(st.meanRaw))}/${esc(st.maxRaw)}</b>`, `Mediana: <b>${esc(comma(st.median))}</b>`,
+      ...st.sections.map((x) => `${esc(x.label)}: <b>${esc(comma(x.pCorrect))}%</b>`),
+    ];
+    const live = sessionPhase(s) !== "finalized" ? '<p class="of-hint">Sessiya hali yakunlanmagan — statistika joriy javoblar bo‘yicha (yangilash uchun tugmani qayta bosing).</p>' : "";
+    cell.innerHTML = `<h3>Mock №${esc(s.testNumber)} — savollar statistikasi</h3>${live}
+      <div class="ms-stats">${chips.map((c) => `<span class="of-admin-chip">${c}</span>`).join("")}</div>
+      <div class="of-admin-table-wrap"><table class="of-admin-table ms-qstat"><thead><tr>
+        <th>Band</th><th>Bo‘lim</th><th>To‘g‘ri javob</th><th class="of-num">To‘g‘ri</th><th class="of-num">Javobsiz</th><th>Eng ko‘p tanlangan</th></tr></thead>
+      <tbody>${st.items.map((it) => `<tr><td><b>${esc(it.label)}</b></td><td>${esc(sectionLabel(it.section))}</td>
+        <td>${esc(it.correctAnswer ?? "—")}</td>
+        <td class="of-num ${it.pCorrect < 20 ? "ms-hard" : ""}">${bar(it.pCorrect)}${esc(comma(it.pCorrect))}%</td>
+        <td class="of-num">${esc(comma(it.pBlank))}%</td>
+        <td>${it.topPick ? `${esc(it.topPick.letter)} (${esc(comma(it.topPick.p))}%)` : "—"}</td></tr>`).join("")}</tbody></table></div>
+      <p><button type="button" class="of-btn of-btn--ghost of-btn--sm" data-qcsv>CSV yuklash</button></p>`;
+    cell.querySelector("[data-qcsv]").addEventListener("click", () => {
+      const q = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+      const lines = [["Band", "Bo‘lim", "To‘g‘ri javob", "To‘g‘ri %", "Javobsiz %", "Eng ko‘p tanlangan", "Ulushi %"].map(q).join(";")];
+      st.items.forEach((it) => lines.push([it.label, sectionLabel(it.section), it.correctAnswer, comma(it.pCorrect), comma(it.pBlank), it.topPick?.letter || "", it.topPick ? comma(it.topPick.p) : ""].map(q).join(";")));
+      const blob = new Blob(["\ufeff" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `mock-${s.testNumber}-${s.id}-savollar-statistikasi.csv`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    });
+  } catch (error) {
+    cell.innerHTML = stateBox("error", "Statistikani yuklab bo‘lmadi", errorText(error));
+  }
+}
+
 // ------------------------------------------------------------------ erkin mashq
 async function loadPractice() {
   let cfg = {};
@@ -422,12 +480,12 @@ $("[data-save-practice]").addEventListener("click", async () => {
 
 // ------------------------------------------------------------------ mock import (Attestatsiya mock importi kabi)
 // Fayl: tools/milliy-sertifikat/build_mock_import.py → ms-mock-import-NN.json (javoblar bilan — repoga qo'yilmaydi).
-let bundle = null;
+let bundles = [];
 function renderImported(list) {
   const el = $("[data-imported]");
   if (!el) return;
   el.innerHTML = list.length
-    ? list.sort((a, b) => a.number - b.number).map((m) => `<span class="of-admin-chip">Mock №${esc(m.number)} • ${esc(m.questionCount)} savol • ${esc(m.figureCount || 0)} rasm${m.reviewOpen ? " • javoblar ochiq" : ""}</span>`).join("")
+    ? list.sort((a, b) => a.number - b.number).map((m) => `<span class="of-admin-chip">Mock №${esc(m.number)} • ${esc(m.questionCount)} savol • ${esc(m.figureCount || 0)} rasm${m.reviewOpen ? " • javoblar ochiq" : ""}${m.draft ? ' • <b>draft</b>' : ""}</span>`).join("")
     : '<span class="of-muted">Hozircha import qilingan mock yo‘q.</span>';
 }
 
@@ -444,63 +502,98 @@ function validBundle(d) {
   return "";
 }
 
+/** Fayl: bitta mock (oliyfizika-ms-mock-import) yoki to'plam (oliyfizika-ms-mock-import-set: { bundles: [...] }). */
+function bundlesOf(d) {
+  if (d?.format === "oliyfizika-ms-mock-import-set") {
+    if (!Array.isArray(d.bundles) || !d.bundles.length) throw new Error("to‘plam bo‘sh");
+    return d.bundles;
+  }
+  return [d];
+}
+
 $("[data-bundle]")?.addEventListener("change", async (e) => {
   const info = $("[data-bundle-info]");
-  bundle = null;
+  bundles = [];
   $("[data-import]").disabled = true;
   try {
-    const d = JSON.parse(await e.target.files[0].text());
-    const err = validBundle(d);
-    if (err) throw new Error(err);
-    bundle = d;
-    const exists = tests.find((t) => t.id === d.testId);
-    const busy = sessions.some((s) => s.testId === d.testId && s.status !== "finalized");
-    info.textContent = `Tekshirildi: Mock №${d.number} — ${d.counts.questions} savol (${d.counts.mcq} test, ${d.counts.items} band), ${d.counts.figures} rasm, ${d.ops.length} hujjat.`
-      + (exists ? (exists.imported ? " Bu mock avval import qilingan — qayta yozilsa yangilanadi." : " Repodagi shu raqamli mock o‘rniga import qilingan versiya ishlatiladi.") : "")
-      + (busy ? " DIQQAT: bu mockning yakunlanmagan sessiyasi bor — import qilib bo‘lmaydi." : "");
-    $("[data-import]").disabled = busy;
+    const list = [];
+    for (const f of e.target.files) list.push(...bundlesOf(JSON.parse(await f.text())));
+    const seen = new Set();
+    for (const d of list) {
+      const err = validBundle(d);
+      if (err) throw new Error(`${d?.testId || "?"}: ${err}`);
+      if (seen.has(d.testId)) throw new Error(`${d.testId} ikki marta uchradi`);
+      seen.add(d.testId);
+    }
+    list.sort((a, b) => a.number - b.number);
+    const busy = list.filter((d) => sessions.some((s) => s.testId === d.testId && s.status !== "finalized"));
+    const again = list.filter((d) => tests.some((t) => t.id === d.testId));
+    const nums = list.map((d) => `№${d.number}`).join(", ");
+    const q = list.reduce((x, d) => x + d.counts.questions, 0);
+    const fg = list.reduce((x, d) => x + d.counts.figures, 0);
+    info.textContent = `Tekshirildi: ${list.length} ta mock (${nums}) — jami ${q} savol, ${fg} rasm.`
+      + (again.length ? ` ${again.map((d) => `№${d.number}`).join(", ")} avval mavjud — qayta yozilsa yangilanadi.` : "")
+      + (busy.length ? ` DIQQAT: ${busy.map((d) => `№${d.number}`).join(", ")} ning yakunlanmagan sessiyasi bor — import qilib bo‘lmaydi.` : "");
+    bundles = list;
+    $("[data-import]").disabled = busy.length > 0;
   } catch (err) {
-    info.textContent = `Fayl yaroqsiz (${err.message}). build_mock_import.py yaratgan ms-mock-import-NN.json ni tanlang.`;
+    info.textContent = `Fayl yaroqsiz (${err.message}). build_mock_import.py yoki export_site.py yaratgan import faylini tanlang.`;
   }
 });
 
+async function importOne(bundle, draft, info) {
+  const metaOp = bundle.ops.find((o) => o.path === `msMockTests/${bundle.testId}`);
+  const rest = bundle.ops.filter((o) => o !== metaOp);
+  const toRef = (p) => fs.doc(db, ...p.split("/"));
+  // Avval meta (reviewOpen: false, oyna yo'q — yopiq), so'ng kontent; figuralar hajmi katta — kichik batchlarda
+  const meta = { ...metaOp.data, reviewOpen: false, draft, importedAt: fs.serverTimestamp(), importedBy: sessionState.user?.uid || "" };
+  await fs.setDoc(toRef(metaOp.path), meta);
+  let batch = fs.writeBatch(db);
+  let size = 0;
+  let n = 0;
+  for (const o of rest) {
+    const len = JSON.stringify(o.data).length;
+    if (n && (size + len > 8_000_000 || n >= 400)) { await batch.commit(); batch = fs.writeBatch(db); size = 0; n = 0; }
+    batch.set(toRef(o.path), o.data);
+    size += len;
+    n++;
+    info.textContent = `Mock №${bundle.number}: yozilmoqda… ${o.path.split("/").slice(-1)[0]}`;
+  }
+  if (n) await batch.commit();
+}
+
 $("[data-import]")?.addEventListener("click", async (e) => {
-  if (!bundle) return;
+  if (!bundles.length) return;
   const btn = e.currentTarget;
-  const ok = await confirmAction({ title: `Mock №${bundle.number} import qilinsinmi?`, text: `${bundle.ops.length} hujjat yoziladi. Test yopiq holda saqlanadi — foydalanuvchilarga faqat siz ochgan sessiya vaqtida ko‘rinadi.`, confirmLabel: "Import" });
+  const draft = !!$("[data-draft]")?.checked;
+  const nums = bundles.map((d) => `№${d.number}`).join(", ");
+  const ok = await confirmAction({
+    title: bundles.length > 1 ? `${bundles.length} ta mock import qilinsinmi?` : `Mock ${nums} import qilinsinmi?`,
+    text: `${nums}. ` + (draft
+      ? "Mocklar DRAFT holida saqlanadi: foydalanuvchilar katalogida ko‘rinmaydi. Har birini kerakli kuni sessiyaga qo‘yasiz — shunda e’lon qilinadi."
+      : "Test yopiq holda saqlanadi — foydalanuvchilarga faqat siz ochgan sessiya vaqtida ochiladi (katalogda «yopiq» karta ko‘rinadi)."),
+    confirmLabel: "Import",
+  });
   if (!ok) return;
   btn.disabled = true;
   const info = $("[data-bundle-info]");
+  const done = [];
   try {
-    const metaOp = bundle.ops[0].path === `msMockTests/${bundle.testId}` ? bundle.ops[0] : bundle.ops.find((o) => o.path === `msMockTests/${bundle.testId}`);
-    const rest = bundle.ops.filter((o) => o !== metaOp);
-    const toRef = (p) => fs.doc(db, ...p.split("/"));
-    // Avval meta (reviewOpen: false, oyna yo'q — yopiq), so'ng kontent; figuralar hajmi katta — kichik batchlarda
-    const meta = { ...metaOp.data, reviewOpen: false, importedAt: fs.serverTimestamp(), importedBy: sessionState.user?.uid || "" };
-    await fs.setDoc(toRef(metaOp.path), meta);
-    let batch = fs.writeBatch(db);
-    let size = 0;
-    let n = 0;
-    for (const o of rest) {
-      const len = JSON.stringify(o.data).length;
-      if (n && (size + len > 8_000_000 || n >= 400)) { await batch.commit(); batch = fs.writeBatch(db); size = 0; n = 0; }
-      batch.set(toRef(o.path), o.data);
-      size += len;
-      n++;
-      info.textContent = `Yozilmoqda… ${o.path.split("/").slice(-1)[0]}`;
+    for (const b of bundles) {
+      await importOne(b, draft, info);
+      done.push(b.number);
     }
-    if (n) await batch.commit();
-    const au = auditEntry(fb, sessionState, { action: "ms-mock-import", section: "milliy-sertifikat", summary: `Mock №${bundle.number} import qilindi (${bundle.counts.questions} savol)`, details: { testId: bundle.testId } });
+    const au = auditEntry(fb, sessionState, { action: "ms-mock-import", section: "milliy-sertifikat",
+      summary: `Mock ${nums} import qilindi${draft ? " (draft)" : ""}`, details: { testIds: bundles.map((b) => b.testId).join(",").slice(0, 300) } });
     await fs.setDoc(au.ref, au.data).catch(() => {});
-    const num = bundle.number;
-    bundle = null;
+    bundles = [];
     await loadTests();
     await loadPractice();
-    info.textContent = `Mock №${num} import qilindi. Endi uni yuqoridagi formadan sessiyaga qo‘yishingiz mumkin.`;
-    toast(`Mock №${num} import qilindi`);
+    info.textContent = `${done.length} ta mock import qilindi (${nums})${draft ? " — draft holida" : ""}. Endi kerakli kuni uni yuqoridagi formadan sessiyaga qo‘ying.`;
+    toast(`${done.length} ta mock import qilindi`);
   } catch (error) {
     console.error("[ms] import:", error);
-    info.textContent = errorText(error, "Import qilib bo‘lmadi. Faylni qayta tanlab urinib ko‘ring.");
+    info.textContent = (done.length ? `Import qilindi: №${done.join(", №")}. ` : "") + errorText(error, "Import qilib bo‘lmadi. Faylni qayta tanlab urinib ko‘ring.");
     btn.disabled = false;
   }
 });

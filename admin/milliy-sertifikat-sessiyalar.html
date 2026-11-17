@@ -22,6 +22,11 @@
   .ms-detail { padding: 14px 16px; background: var(--of-surface-sunken); border-top: 1px solid var(--of-border); }
   .ms-detail h3 { margin: 0 0 8px; font-size: 1rem; }
   .ms-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+  .ms-bar { position: relative; width: 120px; height: 8px; border-radius: 6px; background: var(--of-danger-soft); overflow: hidden; display: inline-block; vertical-align: middle; margin-right: 6px; }
+  .ms-bar > i { position: absolute; inset: 0 auto 0 0; background: var(--of-success); border-radius: 6px; }
+  .ms-qstat td { white-space: nowrap; }
+  .ms-hard { color: var(--of-danger-text); font-weight: 600; }
+  .ms-check { display: inline-flex; gap: 6px; align-items: center; }
   .ms-warn { color: var(--of-warning-text); background: var(--of-warning-soft); padding: 8px 12px; border-radius: 10px; margin: 8px 0; }
 </style>
 </head>
@@ -43,11 +48,14 @@
 
     <section class="of-card of-admin-panel" aria-labelledby="msImpTitle">
       <div class="of-admin-panel__head"><h2 id="msImpTitle">Mock testni import qilish</h2></div>
-      <p class="of-muted">Attestatsiya mocklari kabi: <code>tools/milliy-sertifikat/build_mock_import.py</code> yaratgan <code>ms-mock-import-NN.json</code> faylini tanlang.
+      <p class="of-muted">Attestatsiya mocklari kabi: <code>tools/milliy-sertifikat/build_mock_import.py</code> yaratgan <code>ms-mock-import-NN.json</code> faylini
+        yoki bir nechta mockni birga saqlagan to‘plam faylini (<code>ms-mock-import-16-25.json</code>) tanlang — bir nechta faylni birdaniga tanlash ham mumkin.
         Savollar, rasmlar, kalit va yechimlar Firestore’ga yoziladi. Test <b>yopiq</b> saqlanadi: savollar faqat siz ochgan sessiya vaqtida ko‘rinadi,
-        to‘g‘ri javoblar esa faqat natija e’lon qilingandan keyin chiqadi. Fayl ichida javoblar bor, shuning uchun uni repoga qo‘ymang.</p>
+        to‘g‘ri javoblar esa faqat natija e’lon qilingandan keyin chiqadi. <b>Draft</b> belgilangan mocklar foydalanuvchilar katalogida umuman ko‘rinmaydi;
+        siz unga sessiya ochganingizda draft avtomatik olinadi (shu tarzda mocklarni kunma-kun e’lon qilasiz). Fayl ichida javoblar bor, shuning uchun uni repoga qo‘ymang.</p>
       <div class="ms-actions">
-        <input class="of-input" type="file" accept="application/json,.json" data-bundle aria-label="Import fayli">
+        <input class="of-input" type="file" accept="application/json,.json" multiple data-bundle aria-label="Import fayli">
+        <label class="ms-check"><input type="checkbox" data-draft checked> Draft holida saqlash</label>
         <button type="button" class="of-btn of-btn--primary" data-import disabled>Mock testni import qilish</button>
       </div>
       <p class="of-hint" data-bundle-info aria-live="polite"></p>
