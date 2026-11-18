@@ -16,3 +16,9 @@ Qayta yig‘ish (XeLaTeX kerak):
     python3 latex-mocklar/tools/make_mocks.py          # .tex + .pdf
     python3 latex-mocklar/tools/make_mocks.py --nopdf  # faqat .tex
     python3 latex-mocklar/tools/make_solutions.py      # yechimlar (.tex + .pdf)
+
+## Olimpiada testi (`olimpiada/`)
+`tools/make_olimpiada.py` — fizika olimpiadasi uchun 30 talik test (shablon: 2-betdan boshlab, muqovasiz).
+1–17 yopiq (A–D), 18–27 ochiq (javob yoziladi), 28–30 moslashtirish (A–F, kondensatorlar masalasi, javoblar kodda hisoblanadi).
+Ballar: 10×0,9 + 10×1,7 + 10×2,4 = 50 (skript tekshiradi). Savollar bazadan, 10 ta mockda ishlatilmaganlar; kalitlar qo‘lda yechib tekshirilgan.
+Natija: `olimpiada/olimpiada-01.tex/.pdf` va `olimpiada-01-kalit.tex/.pdf`.

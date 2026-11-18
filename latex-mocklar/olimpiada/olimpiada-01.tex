@@ -1,0 +1,301 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=20mm,top=24mm,bottom=22mm]{geometry}
+\usepackage{fontspec}\setmainfont{Latin Modern Roman}\setsansfont{Latin Modern Sans}
+\usepackage{amsmath,amssymb,tikz,fancyhdr,needspace,array}
+\usetikzlibrary{arrows.meta,patterns}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\itshape Fizika}\fancyfoot[C]{\thepage}
+\setcounter{page}{2}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\newcommand{\ball}[1]{\hfill\texttt{[#1 ball]}}
+\newcommand{\qhead}[2]{\Needspace{10\baselineskip}\noindent\textbf{#1.}\ball{#2}\par\nopagebreak}
+\newcommand{\opt}[2]{\hspace*{8mm}#1)\ #2\par}
+\newenvironment{qbody}{\begin{list}{}{\leftmargin=8mm\rightmargin=0pt\topsep=0pt\itemsep=0pt\parsep=3pt}\item\relax}{\end{list}}
+\begin{document}
+
+\noindent\fbox{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule}\sffamily\small\vspace{3pt}
+Ushbu test varianti 30 ta (1$-$30) topshiriqdan iborat. Test topshirig‘i uchun ajratilgan ball har bir test topshirig‘ida aks ettirilgan.\par
+Kitobda yopiq va ochiq turdagi test topshiriqlari mavjud:\par
+-- yopiq turdagi test topshiriqlarida bitta javobni (A, B, C yoki D) tanlang va javoblar varaqasidagi topshiriq raqamiga mos qatorga yozing;\par
+-- ochiq turdagi test topshiriqlarining javobini javoblar varaqasidagi topshiriq raqamiga mos qatorga aniq va tushunarli tarzda yozing;\par
+-- moslashtirishni talab qiluvchi yopiq test topshiriqlari uchun umumiy oltita (A$-$F) javob varianti berilgan, uchta topshiriqqa (28-, 29-, 30-test topshiriqlariga) ushbu javoblar orasidan mos ravishda bittadan javob tanlang va javoblar varaqasiga belgilang.\vspace{3pt}
+\end{minipage}}\par\vspace{14pt}
+
+\noindent\begin{minipage}{\linewidth}
+\qhead{1}{1,7}
+\begin{qbody}
+2 kg massali jism gorizontga nisbatan $37^\circ$ burchak ostida yuqoriga yo‘nalgan 10 N kuch bilan gorizontal sirtda sudrab ketilmoqda.\par
+\textbf{Agar jism va sirt orasidagi ishqalanish koeffitsiyenti 0,2 bo‘lsa, jismning tezlanishini ($\mathrm{m/s^2}$) aniqlang.} $g=10\ \mathrm{m/s^2}$, $\sin37^\circ=0{,}6$\par
+\smallskip
+\opt{A}{3,2}
+\opt{B}{2,6}
+\opt{C}{2}
+\opt{D}{1,4}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{2}{1,7}
+\begin{qbody}
+Tekis harakat qilib yaqinlashib kelayotgan dushman mashinasiga qarata gorizontga nisbatan 60$^\circ$ burchak ostida zenit raketasidan 100 m/s tezlikda o‘t ochildi.\par
+\textbf{Agar mashina o‘t ochilgandan so‘ng $10\sqrt3$ s yurgach raketa unga tekkan bo‘lsa, mashina va zenit orasidagi boshlang‘ich masofa qanday bo‘lgan (m)?} Mashina tezligi 20 m/s. g=10 m/s$^{2}$.\par
+\smallskip
+\opt{A}{$700\sqrt2$}
+\opt{B}{$500\sqrt3$}
+\opt{C}{$700\sqrt3$}
+\opt{D}{$200\sqrt3$}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{3}{2,4}
+\begin{qbody}
+Yerdan maksimal 100 m balandlikka chiqqan snaryad ikki bo‘lakka bo‘lindi. Birinchi bo‘lak 30 m/s tezlik bilan tik yuqoriga, ikkinchi bo‘lak esa 40 m/s tezlik bilan tik pastga harakatlandi.\par
+\textbf{3 s dan keyin snaryadlar orasidagi masofa qancha (m) bo‘lganini aniqlang.}\par
+\smallskip
+\opt{A}{145}
+\opt{B}{175}
+\opt{C}{120}
+\opt{D}{210}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{4}{0,9}
+\begin{qbody}
+Uzunligi 2 m, gorizont bilan hosil qilgan burchagi 37$^\circ$ bo‘lgan qiya tekislikning quyi nuqtasida jism turibdi.\par
+\textbf{Unga qanday minimal boshlang‘ich tezlik (m/s) berilsa u qiya tekislikning eng yuqori nuqtasigacha sirpanib chiqa oladi?} Jism va sirt orasidagi ishqalanish koeffitsiyenti 0,5 ga teng, g=10 m/s$^{2}$, sin37$^\circ$=0,6 deb oling.\par
+\smallskip
+\opt{A}{$\sqrt{24}$}
+\opt{B}{4}
+\opt{C}{6}
+\opt{D}{$\sqrt{40}$}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{5}{1,7}
+\begin{qbody}
+Moddiy nuqta tekislikda o‘zaro perpendikulyar bo‘lgan ikkita garmonik harakatda ishtirok etmoqda. Ularning davrlari mos holda 1 s va 2 s. t=5 s paytda moddiy nuqta muvozanat nuqtasidan o‘tdi.\par
+\textbf{Qanday t vaqtda (s) moddiy nuqta muvozanat nuqtasiga ikkinchi marta qaytib keladi?}\par
+\smallskip
+\opt{A}{17}
+\opt{B}{12}
+\opt{C}{11}
+\opt{D}{6}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{6}{0,9}
+\begin{qbody}
+Bir xil elastik moddadan ikkita silindr yasalgan va gorizontal sirtga tik qo‘yilgan. Ularning ustiga bir xil massali yuklar qo‘yilganda birinchi silindr 3 mm siqilgan.\par
+\textbf{Birinchisiga nisbatan ikkinchi silindrning radiusi 2 marta, balandligi 3 marta katta bo‘lsa, ikkinchi silindrning siqilishini (mm) aniqlang.}\par
+\smallskip
+\opt{A}{9/4}
+\opt{B}{3}
+\opt{C}{4}
+\opt{D}{3/2}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{7}{2,4}
+\begin{qbody}
+Ideal gazga (bir atomli) avval izobarik, keyin izotermik ravishda issiqlik miqdori berildi. Bu ikki jarayonda gazning ichki energiyasi 96 kJ o‘zgardi va gaz 144 kJ ish bajardi.\par
+\textbf{Izobarik va izotermik jarayonlarda berilgan issiqlik miqdorlarining nisbati $Q_P/Q_T$ ni aniqlang.}\par
+\smallskip
+\opt{A}{1/2}
+\opt{B}{1/3}
+\opt{C}{2}
+\opt{D}{3}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{8}{0,9}
+\begin{qbody}
+Ikki idishda molekulalari soni teng bo‘lgan bir xil temperaturadagi bir xil gazlar mavjud. Molekulalarning kvadratik tezligi mos ravishda: birinchi idishda 100 m/s ga, ikkinchisida esa 700 m/s ga teng.\par
+\textbf{Agar idishlar o‘zaro ulansa, molekulalar qanday qiymatdagi kvadratik tezlikka erishadi (m/s)?}\par
+\smallskip
+\opt{A}{400}
+\opt{B}{500}
+\opt{C}{600}
+\opt{D}{350}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{9}{1,7}
+\begin{qbody}
+Silindrik idishda porshen ostida uch gramm bug‘ 30 $^\circ$C temperaturada turibdi. Gaz izotermik siqiladi.\par
+\textbf{Gaz hajmi (l) qanday bo‘lganda shudring tushadi?} 30 $^\circ$C da to‘yingan suv bug‘ining bosimi 4,24 kPa. $\mu$=18 g/mol.\par
+\smallskip
+\opt{A}{110}
+\opt{B}{80}
+\opt{C}{92}
+\opt{D}{99}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{10}{2,4}
+\begin{qbody}
+Ikkita radiuslari bir xil bo‘lgan sharlar mos ravishda $q$ va 2$q$ zaryadlarga ega bo‘lib, bir biridan ma’lum bir masofada joylashgan. Shunday $A$ nuqta mavjudki, bu nuqtada har ikki zaryad bir xil $\varphi$ potensial hosil qiladi.\par
+\textbf{Sharlarni bir-biriga tekkizib yana avvalgi joyiga olib borib qo‘ysak $A$ nuqtadagi natijaviy potensial qanchani tashkil etadi?}\par
+\smallskip
+\opt{A}{$\dfrac{3}{2}\varphi$}
+\opt{B}{2$\varphi$}
+\opt{C}{$\dfrac{9}{4}\varphi$}
+\opt{D}{3$\varphi$}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{11}{2,4}
+\begin{qbody}
+Tomoni $a$ bo‘lgan kvadratning uchlarida $q$, $2q$, $3q$ va $4q$ zaryadli nuqtaviy zarralar joylashgan.\par
+\textbf{Zaryadi $4q$, massasi $m$ bo‘lgan zarra bo‘shatib yuborilsa, u qanday maksimal tezlikka erishadi?}\par
+\smallskip
+\opt{A}{$\sqrt{\dfrac{8(4+\sqrt2)kq^2}{ma}}$}
+\opt{B}{$\sqrt{\dfrac{6(4+\sqrt2)kq}{ma}}$}
+\opt{C}{$\sqrt{\dfrac{8(4+\sqrt2)kq}{ma}}$}
+\opt{D}{$\sqrt{\dfrac{9kq^2}{ma}}$}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{12}{0,9}
+\begin{qbody}
+Tebranish konturidagi kondensatorning elektr zaryadi $q=0{,}13\cos(100\pi t)$ (mC) qonun bilan o‘zgaradi.\par
+\textbf{Kuzatishlar boshlangandan so‘ng qancha vaqt (ms) o‘tgach g‘altakdagi magnit maydon energiyasi birinchi marta maksimal qiymatga erishadi?}\par
+\smallskip
+\opt{A}{10}
+\opt{B}{5}
+\opt{C}{20}
+\opt{D}{15}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{13}{0,9}
+\begin{qbody}
+Tok kuchi 1000 A/s tezlik bilan tekis o‘zgaruvchi tokka induktivligi 10 mH bo‘lgan g‘altak ulangan.\par
+\textbf{Tok kuchi 10 A ga yetganda g‘altak uchlariga ulangan voltmetr qanday kuchlanishni ko‘rsatadi?} Masalani tok ortayotgan hol uchun yeching. G‘altak aktiv qarshiligi 2 $\Omega$.\par
+\smallskip
+\opt{A}{15}
+\opt{B}{10}
+\opt{C}{20}
+\opt{D}{30}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{14}{1,7}
+\begin{qbody}
+Quvvati 900 W bo‘lgan lazer nuri yassi plastinkaga tik tushmoqda.\par
+\textbf{Nurning 10 \%i qaytayotgan, 60 \%i plastinkadan o‘tib ketayotgan, qolgan qismi esa yutilayotgan bo‘lsa, nurning plastinkaga bosim kuchi ($\mu$N) qancha?}\par
+\smallskip
+\opt{A}{5/2}
+\opt{B}{3/2}
+\opt{C}{7/2}
+\opt{D}{2}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{15}{2,4}
+\begin{qbody}
+Birinchi foton vodorod atomidagi elektronning 8-energetik sathdan 7-sathga o‘tishida nurlangan. Ikkinchi foton elektronning 8- va 6-energetik sathlar orasidagi o‘tishida hosil bo‘lgan.\par
+\textbf{Ikkinchi fotonning impulsi $p$ bo‘lsa, birinchi fotonning energiyasi qanday?} $c$ - yorug‘lik tezligi.\par
+\smallskip
+\opt{A}{$\dfrac{27pc}{539}$}
+\opt{B}{$\dfrac{49pc}{149}$}
+\opt{C}{$\dfrac{135pc}{343}$}
+\opt{D}{$\dfrac{5pc}{1029}$}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{16}{0,9}
+\begin{qbody}
+Zarracha harakatlanayotganda uning to‘la impulsi 3p ga teng bo‘ldi.\par
+\textbf{Agar uning tezligi 0,6c bo‘lsa, tinchlikdagi massasini aniqlang (c yorug‘likning vakuumdagi tezligi).}\par
+\smallskip
+\opt{A}{4p/c}
+\opt{B}{3p/c}
+\opt{C}{2p/c}
+\opt{D}{5p/c}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\noindent\begin{minipage}{\linewidth}
+\qhead{17}{2,4}
+\begin{qbody}
+Radioaktiv preparatning aktivligi $10^5$ Bq, yarim yemirilish davri 7,5 minut.\par
+\textbf{30 minut avval preparatdagi radioaktiv atomlar soni qanday bo‘lgan?} $\ln 2 = 0{,}7$\par
+\smallskip
+\opt{A}{$6{,}8\cdot10^8$}
+\opt{B}{$8{,}2\cdot10^8$}
+\opt{C}{$2{,}7\cdot10^9$}
+\opt{D}{$10{,}3\cdot10^8$}
+\end{qbody}\end{minipage}\par\vspace{16pt}
+\qhead{18}{2,4}
+\begin{qbody}
+Oydagi tajribada 1-jism tik yuqoriga 25 m/s tezlik bilan otildi, 16 s o‘tgach 2-jism birinchisining ketidan yana shunday tezlik bilan tik otildi.\par
+\textbf{2-jism qancha vaqt (s) parvoz qilgach 1-jism bilan to‘qnashadi?} g=5/3 m/s$^{2}$\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{19}{1,7}
+\begin{qbody}
+Ikkita tosh gorizontga burchak ostida otildi: 1-tosh 22,5$^\circ$ burchak ostida 20 m/s boshlang‘ich tezlik bilan shimolga, 2-tosh esa 45$^\circ$ burchak ostida 10 m/s boshlang‘ich tezlik bilan g‘arbga.\par
+\textbf{Toshlarning yerga urilish nuqtalari orasidagi masofani toping (m).} g=10 m/s$^{2}$.\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{20}{1,7}
+\begin{qbody}
+Massasi 40 g bo‘lgan sharcha 0,2 m amplituda va 4 s davr bilan garmonik tebranmoqda.\par
+\textbf{Tebranish muvozanat vaziyatdan boshlangan bo‘lsa, uning 11/3 s dan keyingi kinetik energiyasini (mJ) toping.} $\pi^2 \approx 10$.\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{21}{1,7}
+\begin{qbody}
+Yuzasi 20 cm$^{2}$ bo‘lgan silindrik idish massasi 7 kg bo‘lgan porshen bilan berkitilgan.\par
+\textbf{Idishdagi gaz temperaturasi 3 marta orttirilganda, porshen dastlabki joyidan qo‘zg‘almasligi uchun uning ustiga qanday massali yuk (kg) qo‘yish kerak?} Atmosfera bosimi 100 kPa ga teng.\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{22}{0,9}
+\begin{qbody}
+Ichida ozroq 0 $^\circ$C suvi bo‘lgan idishdagi havo so‘rib olindi. Natijada 6,6 g suv bug‘lanib, qolgani muzlab qoldi.\par
+\textbf{Hosil bo‘lgan muzning massasini toping (g).} L=2,3 MJ/kg, $\lambda$=330 kJ/kg.\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{23}{2,4}
+\begin{qbody}
+O‘tkazgichning uzunligi 800 m, undagi barcha erkin elektronlarning umumiy impulsi $2\cdot10^{-7}$ kg$\cdot$m/s.\par
+\textbf{O‘tkazgichdagi tok kuchi (A) topilsin.} Elektron uchun $e/m$=$1{,}76\cdot10^{11}$ C/kg.\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{24}{2,4}
+\begin{qbody}
+E.Yu.K E=3,5 V va ichki qarshiligi r=1,4 $\Omega$ bo‘lgan 7 ta tok manbai o‘zaro parallel ulanib batareya hosil qilindi. Batareyaga qarshiligi R (R \textgreater{} r) bo‘lgan rezistor ulanganda 3,3 W foydali quvvat ajraldi.\par
+\textbf{Zanjirdagi to‘la tok kuchi (A) qanday?}\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{25}{0,9}
+\begin{qbody}
+Bir-biriga nisbatan 6 m masofada 4 m uzunlikdagi vertikal o‘rnatilgan ikki simyog‘ochga yorug‘lik kuchlari $I_1=I_2$=200 cd bo‘lgan lampalar osilgan.\par
+\textbf{Simyog‘ochlar o‘rasidagi yer yuzining yoritilganligini toping (lx).}\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{26}{1,7}
+\begin{qbody}
+Uzunligi 1 cm bo‘lgan igna fokus masofasi 3 cm bo‘lgan linzaning bosh optik o‘qiga o‘q bo‘yicha joylashtirildi.\par
+\textbf{Agar ignaning bir uchi linza old fokusidan 1 cm masofada yotgan bo‘lsa, ignaning haqiqiy tasviridagi uzunligini aniqlang (cm).}\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\qhead{27}{0,9}
+\begin{qbody}
+Quvvati 0,1 kW bo‘lgan yorug‘lik manbayi 1 s ichida 5$\cdot10^{20}$ ta foton chiqaradi.\par
+\textbf{Nurlanishning o‘rtacha to‘lqin uzunligini ($\mu$m) toping.} h=6,62$\cdot10^{-34}$ J$\cdot$s va c=3$\cdot10^{8}$ m/s.\par
+\medskip\textbf{Javob:}\ \rule{5cm}{0.4pt}\par
+\textbf{Diqqat!} Javobingizni javoblar varaqasiga ko‘chirib yozing.\par
+\end{qbody}\vspace{18pt}
+\Needspace{30\baselineskip}\noindent\textbf{28--30.}\par
+\begin{qbody}
+Berilgan ma’lumotlar asosida quyidagi uchta 28-, 29-, 30-test topshiriqlarini bajaring.\par
+Sig‘imi $C_1$=2 $\mu$F bo‘lgan kondensator 30 V kuchlanishgacha, sig‘imi $C_2$=4 $\mu$F bo‘lgan kondensator esa 15 V kuchlanishgacha zaryadlangan. Kondensatorlar rezistor va kalit orqali rasmdagidek bir xil ishorali qoplamalari bilan tutashtirildi. Kalit ulangach, zaryad qayta taqsimlanib, zanjirda tok to‘xtadi. Simlarning qarshiligini va nurlanishni hisobga olmang.\par
+\begin{center}\begin{tikzpicture}[line width=0.5pt,font=\small]
+\draw (0,0)--(0,0.85) (0,1.15)--(0,2)--(1.6,2); \draw (-0.35,0.85)--(0.35,0.85) (-0.35,1.15)--(0.35,1.15);
+\node[left] at (-0.4,1) {$C_1$}; \node at (0.6,1.35) {\scriptsize $+$}; \node at (0.6,0.65) {\scriptsize $-$};
+\draw (1.6,2)--(1.9,2.25); \fill (1.6,2) circle(1.2pt) (2.2,2) circle(1.2pt); \node[above] at (1.9,2.25) {K};
+\draw (2.2,2)--(2.8,2); \draw[fill=white] (2.8,1.85) rectangle (3.8,2.15); \node[above] at (3.3,2.15) {$R$}; \draw (3.8,2)--(4.6,2)--(4.6,1.15);
+\draw (4.6,0.85)--(4.6,0)--(0,0); \draw (4.25,0.85)--(4.95,0.85) (4.25,1.15)--(4.95,1.15);
+\node[right] at (5,1) {$C_2$}; \node at (4.0,1.35) {\scriptsize $+$}; \node at (4.0,0.65) {\scriptsize $-$};
+\end{tikzpicture}\end{center}
+\end{qbody}
+\begin{center}\begin{tabular}{|p{0.62\linewidth}|p{0.22\linewidth}|}\hline
+\centering\textbf{Topshiriqlar} & \centering\textbf{Javoblar}\tabularnewline\hline
+\begin{minipage}[t]{\linewidth}\vspace{4pt}\textbf{28.}\hfill\texttt{[0,9 ball]}\\ Kalit ulanguncha birinchi kondensatorda to‘plangan elektr maydon energiyasini ($\mu$J) aniqlang.\\[14pt]\textbf{29.}\hfill\texttt{[1,7 ball]}\\ Zaryad qayta taqsimlangandan so‘ng ikkinchi kondensatorning energiyasini ($\mu$J) toping.\\[14pt]\textbf{30.}\hfill\texttt{[2,4 ball]}\\ Zaryad qayta taqsimlanishi davomida rezistorda ajralib chiqqan issiqlik miqdorini ($\mu$J) toping.\vspace{6pt}\end{minipage} & \begin{minipage}[t]{\linewidth}\vspace{4pt}A)\ 150\\[12pt]B)\ 450\\[12pt]C)\ 800\\[12pt]D)\ 900\\[12pt]E)\ 1200\\[12pt]F)\ 1350\vspace{6pt}\end{minipage}\tabularnewline\hline
+\end{tabular}\end{center}
+\newpage\begin{center}\textit{Topshiriqlarni bajarish uchun}\end{center}\thispagestyle{empty}\mbox{}
+\newpage\begin{center}\textit{Topshiriqlarni bajarish uchun}\end{center}\thispagestyle{empty}\mbox{}
+\end{document}

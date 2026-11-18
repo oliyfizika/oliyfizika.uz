@@ -1,0 +1,51 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=20mm,top=24mm,bottom=22mm]{geometry}
+\usepackage{fontspec}\setmainfont{Latin Modern Roman}\setsansfont{Latin Modern Sans}
+\usepackage{amsmath,amssymb,tikz,fancyhdr,needspace,array}
+\usetikzlibrary{arrows.meta,patterns}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\itshape Fizika}\fancyfoot[C]{\thepage}
+
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\newcommand{\ball}[1]{\hfill\texttt{[#1 ball]}}
+\newcommand{\qhead}[2]{\Needspace{10\baselineskip}\noindent\textbf{#1.}\ball{#2}\par\nopagebreak}
+\newcommand{\opt}[2]{\hspace*{8mm}#1)\ #2\par}
+\newenvironment{qbody}{\begin{list}{}{\leftmargin=8mm\rightmargin=0pt\topsep=0pt\itemsep=0pt\parsep=3pt}\item\relax}{\end{list}}
+\begin{document}
+
+\begin{center}{\Large\textbf{Fizika olimpiadasi testi — javoblar kaliti}}\end{center}
+\begin{center}\begin{tabular}{|c|c|c|l|}\hline \textbf{№} & \textbf{Javob} & \textbf{Ball} & \textbf{Manba (baza id)}\\\hline
+1 & B & 1,7 & 1923945-13\\\hline
+2 & C & 1,7 & T10-03\\\hline
+3 & A & 2,4 & MS18\_1-01\\\hline
+4 & D & 0,9 & 8000777-01\\\hline
+5 & D & 1,7 & T03-13\\\hline
+6 & A & 0,9 & 8000393-26\\\hline
+7 & C & 2,4 & 8001185-23\\\hline
+8 & B & 0,9 & T17-13\\\hline
+9 & D & 1,7 & T24-15\\\hline
+10 & C & 2,4 & 8000897-24\\\hline
+11 & A & 2,4 & Y06-17\\\hline
+12 & B & 0,9 & 1922945-12\\\hline
+13 & D & 0,9 & Y06-23\\\hline
+14 & B & 1,7 & 8000681-20\\\hline
+15 & C & 2,4 & 8000177-24\\\hline
+16 & A & 0,9 & MS22\_1-20\\\hline
+17 & D & 2,4 & 8000537-23\\\hline
+18 & 7 & 2,4 & 8000081-09\\\hline
+19 & 30 & 1,7 & T11-04\\\hline
+20 & 1,5 & 1,7 & MS15\_1-08\\\hline
+21 & 54 & 1,7 & MS18\_1-17\\\hline
+22 & 46 & 0,9 & T18-17\\\hline
+23 & 44 & 2,4 & 8001089-26\\\hline
+24 & 1 & 2,4 & T15-23\\\hline
+25 & 12,8 & 0,9 & T20-28\\\hline
+26 & 4,5 & 1,7 & Y01-27\\\hline
+27 & 0,99 & 0,9 & T17-29\\\hline
+28 & D (900 µJ) & 0,9 & moslashtirish\\\hline
+29 & C (800 µJ) & 1,7 & moslashtirish\\\hline
+30 & A (150 µJ) & 2,4 & moslashtirish\\\hline
+\end{tabular}\end{center}
+\begin{center}Jami: 10$\times$0,9 + 10$\times$1,7 + 10$\times$2,4 = 50 ball\end{center}
+\end{document}
