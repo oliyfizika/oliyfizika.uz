@@ -1,0 +1,138 @@
+@1 B
+Kuchni tashkil etuvchilarga ajratamiz: $F_x=F\cos37^\circ=8$ N, $F_y=F\sin37^\circ=6$ N. Kuch jismni yuqoriga tortgani uchun sirtning reaksiya kuchi kamayadi: $N=mg-F_y=20-6=14$ N, ishqalanish kuchi $F_{ishq}=\mu N=2{,}8$ N.
+>> a=\frac{F_x-F_{ishq}}{m}=\frac{8-2{,}8}{2}=2{,}6\ \text{m/s}^2.
+
+@2 C
+Raketa tezligining tashkil etuvchilari: $v_x=100\cos60^\circ=50$ m/s, $v_y=100\sin60^\circ=50\sqrt3$ m/s. Uchish vaqti $t=2v_y/g=10\sqrt3$ s — berilgan vaqtga teng, demak raketa mashinaga yer sathida tekkan.
+Raketaning gorizontal yo‘li $s_1=v_xt=500\sqrt3$ m, shu vaqtda mashina raketa tomon $s_2=20\cdot10\sqrt3=200\sqrt3$ m yurgan.
+>> L=s_1+s_2=700\sqrt3\ \text{m}.
+
+@3 A
+Maksimal balandlikda snaryad to‘xtagan (tik otilgan). Bo‘laklarning harakati:
+>> h_1(t)=100+30t-5t^2,\qquad h_2(t)=100-40t-5t^2.
+Ikkinchi bo‘lak yerga $100=40t+5t^2$ dan $t=2$ s da tushadi va $t=3$ s da yerda yotadi ($h_2=0$). Birinchi bo‘lak $t=3$ s da $h_1=100+90-45=145$ m balandlikda.
+Demak, ular orasidagi masofa $145$ m (tuzoq: $70\cdot3=210$ m — ikkinchi bo‘lak yerga tushganini hisobga olmaslik).
+
+@4 D
+Jism yuqoriga sirpanganda og‘irlik kuchining tashkil etuvchisi ham, ishqalanish ham uni sekinlashtiradi:
+>> a=g(\sin\alpha+\mu\cos\alpha)=10(0{,}6+0{,}5\cdot0{,}8)=10\ \text{m/s}^2.
+Tepaga yetganda tezlik nolga teng bo‘lishi uchun $v_0^2=2al$:
+>> v_0=\sqrt{2\cdot10\cdot2}=\sqrt{40}\ \text{m/s}.
+
+@5 D
+Moddiy nuqta muvozanat nuqtasida bo‘lishi uchun ikkala tebranish bir vaqtda muvozanatdan o‘tishi kerak. Davri $T_1=1$ s bo‘lgan tebranish har $0{,}5$ s da, davri $T_2=2$ s bo‘lgani har $1$ s da muvozanatdan o‘tadi.
+$t=5$ s dan keyin ikkalasi birgalikda har $\mathrm{EKUK}(0{,}5;\,1)=1$ s da muvozanatdan o‘tadi. Demak, keyingi (ikkinchi) marta $t=6$ s da.
+
+@6 A
+Guk qonuni: $\Delta l=\dfrac{Fl}{ES}$. Kuch va modda bir xil, $l_2=3l_1$, $S_2=4S_1$ (radius 2 marta katta):
+>> \frac{\Delta l_2}{\Delta l_1}=\frac{l_2}{l_1}\cdot\frac{S_1}{S_2}=\frac{3}{4},\qquad \Delta l_2=\frac34\cdot3=\frac94\ \text{mm}.
+
+@7 C
+Ichki energiya faqat izobarik jarayonda o‘zgaradi (izotermikda $\Delta U=0$): $\Delta U_P=96$ kJ.
+Bir atomli gaz uchun izobarik jarayonda $A_P=\frac23\Delta U_P=64$ kJ, $Q_P=\Delta U_P+A_P=160$ kJ.
+Izotermik jarayon ishi $A_T=144-64=80$ kJ va $Q_T=A_T=80$ kJ.
+>> \frac{Q_P}{Q_T}=\frac{160}{80}=2.
+
+@8 B
+Gazlar bir xil va molekulalar soni teng, idishlar ulanganda umumiy kinetik energiya saqlanadi. O‘rtacha kvadratik tezlik kvadrati o‘rtachalanadi:
+>> v^2=\frac{v_1^2+v_2^2}{2}=\frac{100^2+700^2}{2}=250000,\qquad v=500\ \text{m/s}.
+
+@9 D
+Izotermik siqishda shudring bug‘ bosimi to‘yingan bug‘ bosimiga yetganda tushadi. Mendeleyev–Klapeyron tenglamasidan:
+>> V=\frac{m}{M}\cdot\frac{RT}{p_{t}}=\frac{3}{18}\cdot\frac{8{,}31\cdot303}{4240}\approx0{,}099\ \text{m}^3=99\ \text{l}.
+
+@10 C
+$A$ nuqtadan sharlargacha masofalar $r_1$ va $r_2$ bo‘lsin: $\dfrac{kq}{r_1}=\dfrac{2kq}{r_2}=\varphi$. Bir xil sharlar tekkizilganda zaryad teng bo‘linadi: har birida $1{,}5q$.
+>> \varphi_A=\frac{1{,}5kq}{r_1}+\frac{1{,}5kq}{r_2}=1{,}5\varphi+0{,}75\varphi=\frac94\varphi.
+
+@11 A
+Qolgan zaryadlar qo‘zg‘almas. $4q$ zaryad cheksiz uzoqlashganda potensial energiyasi to‘liq kinetik energiyaga aylanadi. Kvadrat uchlarida $q,2q,3q,4q$ ketma-ket joylashgan: $4q$ ga $3q$ va $q$ qo‘shni ($a$ masofada), $2q$ esa diagonalda ($a\sqrt2$).
+>> W=k\cdot4q\left(\frac{q}{a}+\frac{3q}{a}+\frac{2q}{a\sqrt2}\right)=\frac{4kq^2}{a}\left(4+\sqrt2\right).
+>> \frac{mv^2}{2}=W\ \Rightarrow\ v=\sqrt{\frac{8(4+\sqrt2)kq^2}{ma}}.
+
+@12 B
+Magnit maydon energiyasi tok maksimal bo‘lganda, ya’ni kondensator zaryadi nolga teng bo‘lganda maksimal bo‘ladi: $\cos(100\pi t)=0$.
+>> 100\pi t=\frac{\pi}{2}\ \Rightarrow\ t=\frac{1}{200}\ \text{s}=5\ \text{ms}.
+
+@13 D
+Voltmetr g‘altakdagi to‘la kuchlanishni ko‘rsatadi: aktiv qarshilikdagi kuchlanish va o‘zinduksiya EYuK iga qarshi kuchlanish.
+>> U=IR+L\frac{\Delta I}{\Delta t}=10\cdot2+0{,}01\cdot1000=30\ \text{V}.
+
+@14 B
+Nur kuchi $P/c$ ga mos impuls oqimi beradi. Qaytgan qism ikki karra, yutilgan qism bir karra impuls beradi, o‘tib ketgan qism impuls bermaydi. Yutilgan ulush $1-0{,}1-0{,}6=0{,}3$.
+>> F=\frac{P}{c}\left(2\cdot0{,}1+0{,}3\right)=\frac{900}{3\cdot10^8}\cdot0{,}5=1{,}5\cdot10^{-6}\ \text{N}=\frac32\ \mu\text{N}.
+
+@15 C
+Vodorod atomida $h\nu=E_0\left(\frac{1}{n^2}-\frac{1}{m^2}\right)$. Foton energiyalari:
+>> \varepsilon_1\sim\frac{1}{49}-\frac{1}{64}=\frac{15}{3136},\qquad \varepsilon_2\sim\frac{1}{36}-\frac{1}{64}=\frac{7}{576}.
+Ikkinchi foton energiyasi $\varepsilon_2=pc$, shuning uchun
+>> \varepsilon_1=pc\cdot\frac{15}{3136}\cdot\frac{576}{7}=\frac{135\,pc}{343}.
+
+@16 A
+$v=0{,}6c$ uchun $\gamma=\dfrac{1}{\sqrt{1-0{,}36}}=1{,}25$. Relyativistik impuls $p=\gamma m v$:
+>> 3p=1{,}25\cdot m\cdot0{,}6c=0{,}75\,mc\ \Rightarrow\ m=\frac{4p}{c}.
+
+@17 D
+Hozirgi atomlar soni $N=\dfrac{A}{\lambda}=\dfrac{A\,T}{\ln2}=\dfrac{10^5\cdot450}{0{,}7}\approx6{,}43\cdot10^7$.
+30 minut $=4$ ta yarim yemirilish davri, ya’ni avval atomlar $2^4=16$ marta ko‘p bo‘lgan:
+>> N_0=16\cdot6{,}43\cdot10^7\approx10{,}3\cdot10^8.
+
+@18 7
+1-jism uchun $t$ vaqt, 2-jism uchun $t-16$ vaqt o‘tgan bo‘lsin ($g/2=5/6$):
+>> 25t-\frac56t^2=25(t-16)-\frac56(t-16)^2.
+Soddalashtirsak: $0=-400+\frac{80}{3}t-\frac{640}{3}$, bundan $t=23$ s. 2-jism parvoz vaqti $\tau=23-16=7$ s (to‘qnashuv balandligi $\approx134$ m $>0$).
+
+@19 30
+Gorizontga burchak ostida otilgan jismning uchish uzoqligi $L=\dfrac{v_0^2\sin2\alpha}{g}$:
+>> L_1=\frac{400\cdot\sin45^\circ}{10}=20\sqrt2\ \text{m},\qquad L_2=\frac{100\cdot\sin90^\circ}{10}=10\ \text{m}.
+Shimol va g‘arb yo‘nalishlari o‘zaro perpendikulyar:
+>> d=\sqrt{L_1^2+L_2^2}=\sqrt{800+100}=30\ \text{m}.
+
+@20 1,5
+$\omega=\dfrac{2\pi}{T}=\dfrac{\pi}{2}$ rad/s, $x=A\sin\omega t$. $t=\frac{11}{3}$ s da faza $\omega t=\frac{11\pi}{6}$, $\cos\frac{11\pi}{6}=\frac{\sqrt3}{2}$.
+>> E_k=\frac{mA^2\omega^2}{2}\cos^2\omega t=\frac{0{,}04\cdot0{,}04\cdot\frac{\pi^2}{4}}{2}\cdot\frac34=1{,}5\cdot10^{-3}\ \text{J}=1{,}5\ \text{mJ}.
+
+@21 54
+Dastlab gaz bosimi $p_1=p_0+\dfrac{Mg}{S}=10^5+\dfrac{70}{2\cdot10^{-3}}=1{,}35\cdot10^5$ Pa. Hajm o‘zgarmaganda $T$ 3 marta ortsa, bosim ham 3 marta ortadi: $p_2=4{,}05\cdot10^5$ Pa.
+Qo‘shimcha yuk bosimi $\Delta p=p_2-p_1=2{,}7\cdot10^5$ Pa:
+>> m=\frac{\Delta p\,S}{g}=\frac{2{,}7\cdot10^5\cdot2\cdot10^{-3}}{10}=54\ \text{kg}.
+
+@22 46
+Bug‘lanish uchun kerak issiqlik suvning muzlashidan olinadi: $Lm_b=\lambda m_m$.
+>> m_m=\frac{Lm_b}{\lambda}=\frac{2{,}3\cdot10^6\cdot6{,}6\cdot10^{-3}}{3{,}3\cdot10^5}=0{,}046\ \text{kg}=46\ \text{g}.
+
+@23 44
+Barcha erkin elektronlar impulsi $P=Nm v$, bu yerda $N=nSl$. Tok kuchi $I=enSv=\dfrac{eNv}{l}$. Bundan $Nv=P/m$:
+>> I=\frac{e}{m}\cdot\frac{P}{l}=\frac{1{,}76\cdot10^{11}\cdot2\cdot10^{-7}}{800}=44\ \text{A}.
+
+@24 1
+Parallel ulangan 7 ta manba: $\mathcal E_b=3{,}5$ V, $r_b=1{,}4/7=0{,}2\ \Omega$. Foydali quvvat:
+>> P=\left(\frac{\mathcal E_b}{R+r_b}\right)^2R=3{,}3\ \Rightarrow\ 3{,}3R^2-10{,}93R+0{,}132=0.
+Ildizlar $R=3{,}3\ \Omega$ va $R\approx0{,}012\ \Omega$; shart $R>r$ bo‘yicha $R=3{,}3\ \Omega$.
+>> I=\frac{3{,}5}{3{,}3+0{,}2}=1\ \text{A}.
+
+@25 12,8
+Yerdagi o‘rta nuqtadan har bir lampagacha masofa $r=\sqrt{3^2+4^2}=5$ m, nurlarning tushish burchagi kosinusi $\cos i=4/5$.
+>> E=2\cdot\frac{I\cos i}{r^2}=2\cdot\frac{200\cdot0{,}8}{25}=12{,}8\ \text{lx}.
+
+@26 4,5
+Ignaning bir uchi old fokusdan 1 cm narida: $d_1=4$ cm (agar u fokus bilan linza orasida bo‘lsa, ikkinchi uchi fokusga tushib, haqiqiy tasvir chiqmaydi). Ikkinchi uchi $d_2=5$ cm.
+>> f_1=\frac{d_1F}{d_1-F}=\frac{4\cdot3}{1}=12\ \text{cm},\qquad f_2=\frac{5\cdot3}{2}=7{,}5\ \text{cm}.
+Tasvir uzunligi $12-7{,}5=4{,}5$ cm.
+
+@27 0,99
+Bitta foton energiyasi $\varepsilon=\dfrac{P}{N}=\dfrac{100}{5\cdot10^{20}}=2\cdot10^{-19}$ J.
+>> \lambda=\frac{hc}{\varepsilon}=\frac{6{,}62\cdot10^{-34}\cdot3\cdot10^8}{2\cdot10^{-19}}\approx0{,}99\cdot10^{-6}\ \text{m}=0{,}99\ \mu\text{m}.
+
+@28 D
+>> W_1=\frac{C_1U_1^2}{2}=\frac{2\cdot30^2}{2}=900\ \mu\text{J}.
+
+@29 C
+Bir xil ishorali qoplamalar ulanganda umumiy zaryad saqlanadi: $q=C_1U_1+C_2U_2=60+60=120\ \mu$C. Umumiy kuchlanish
+>> U=\frac{q}{C_1+C_2}=\frac{120}{6}=20\ \text{V},\qquad W_2'=\frac{C_2U^2}{2}=\frac{4\cdot400}{2}=800\ \mu\text{J}.
+
+@30 A
+Boshlang‘ich va oxirgi energiyalar:
+>> W_0=900+\frac{4\cdot15^2}{2}=1350\ \mu\text{J},\qquad W=\frac{(C_1+C_2)U^2}{2}=\frac{6\cdot400}{2}=1200\ \mu\text{J}.
+Energiya farqi rezistorda issiqlikka aylanadi:
+>> Q=W_0-W=150\ \mu\text{J}.

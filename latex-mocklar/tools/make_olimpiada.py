@@ -126,6 +126,37 @@ def matching():
         r"\begin{minipage}[t]{\linewidth}\vspace{4pt}" + left + r"\vspace{6pt}\end{minipage} & \begin{minipage}[t]{\linewidth}\vspace{4pt}" + right + r"\vspace{6pt}\end{minipage}\tabularnewline\hline",
         r"\end{tabular}\end{center}"])
 
+def solutions_doc():
+    """Yechimlar: olimpiada/manba/olimpiada-01.txt (@N javob, keyin yechim; «>>» — alohida formula)."""
+    import make_solutions as ms
+    B = ms.parse(OUT / "manba" / "olimpiada-01.txt")
+    errs = []
+    pre = PRE.replace(r"\setcounter{page}{2}", "").replace(r"\usepackage{amsmath", r"\usepackage{xcolor}\usepackage{amsmath")
+    L = [pre, r"\begin{center}{\Large\textbf{Fizika olimpiadasi testi — yechimlar}}\end{center}\medskip"]
+    def chk(n, want):
+        b = B.get(n)
+        if not b: errs.append(f"#{n}: yechim yo‘q"); return ["(yechim yozilmagan)"]
+        if " ".join(b["ans"]) != want: errs.append(f"#{n}: {b['ans']} != {want}")
+        return b["lines"]
+    for n, (i, p) in enumerate(CLOSED, 1):
+        q = BY[i]; key = "ABCD"[q["correct"]]
+        L.append(closed(n, q, p).replace(r"\vspace{16pt}", r"\vspace{2pt}"))
+        L.append(ms.ybox(f"{key}) {tex(q['answers'][q['correct']])}", ms.sol_tex(chk(n, key))))
+    for n, (i, p) in enumerate(OPEN, 18):
+        q = BY[i]; a = ans_open(q)
+        L += [r"\qhead{%d}{%s}" % (n, p), r"\begin{qbody}"] + body(q) + [r"\end{qbody}"]
+        L.append(ms.ybox(tex(a), ms.sol_tex(chk(n, a))))
+    L.append(r"\Needspace{14\baselineskip}\noindent\textbf{28--30.}\ " + tex(MATCH_INTRO) + r"\par")
+    L.append(r"\begin{center}" + MATCH_FIG + r"\end{center}")
+    L.append(r"\noindent Variantlar: " + r";\quad ".join(f"{a}) {v:g}" for a, v in zip("ABCDEF", MATCH_OPTS)) + r" ($\mu$J)\par\medskip")
+    for k, (p, t) in enumerate(MATCH_QS):
+        n = 28 + k
+        L.append(r"\noindent\textbf{%d.}\ball{%s}\par\nopagebreak\noindent %s\par" % (n, p, tex(t)))
+        L.append(ms.ybox(r"%s) %g $\mu$J" % (MATCH_KEY[k], MATCH_ANS[k]), ms.sol_tex(chk(n, MATCH_KEY[k]))))
+    L.append(r"\end{document}")
+    if errs: print("YECHIM XATOLARI:", *errs, sep="\n  ")
+    return "\n".join(L)
+
 def ans_open(q): return q["answers"][q["correct"]].strip("$")
 
 def main():
@@ -152,9 +183,10 @@ def main():
         K.append(r"%d & %s (%s µJ) & %s & moslashtirish\\\hline" % (28 + k, MATCH_KEY[k], f"{MATCH_ANS[k]:g}", p))
     K += [r"\end{tabular}\end{center}", r"\begin{center}Jami: 10$\times$0,9 + 10$\times$1,7 + 10$\times$2,4 = 50 ball\end{center}", r"\end{document}"]
     (OUT / "olimpiada-01-kalit.tex").write_text("\n".join(K), encoding="utf-8")
+    (OUT / "olimpiada-01-yechim.tex").write_text(solutions_doc(), encoding="utf-8")
     if mm.unknown: print("Noma'lum belgilar:", "".join(sorted(mm.unknown)))
     if "--nopdf" not in sys.argv:
-        for f in ("olimpiada-01.tex", "olimpiada-01-kalit.tex"):
+        for f in ("olimpiada-01.tex", "olimpiada-01-kalit.tex", "olimpiada-01-yechim.tex"):
             r = subprocess.run(["xelatex", "-interaction=nonstopmode", "-halt-on-error", f], cwd=OUT, capture_output=True, text=True)
             if r.returncode: print("XATO", f, r.stdout[-1500:])
         for e in ("aux", "log"):
