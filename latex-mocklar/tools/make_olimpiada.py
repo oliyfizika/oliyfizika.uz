@@ -61,7 +61,7 @@ PRE = r"""% !TEX TS-program = xelatex
 % !TEX encoding = UTF-8 Unicode
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=20mm,top=24mm,bottom=22mm]{geometry}
-\usepackage{fontspec}\setmainfont{Latin Modern Roman}\setsansfont{Latin Modern Sans}
+\usepackage{fontspec}   % standart shrift: Latin Modern (TeX Live ichida, nom bilan qidirilmaydi)
 \usepackage{amsmath,amssymb,tikz,fancyhdr,needspace,array}
 \usetikzlibrary{arrows.meta,patterns}
 \setlength{\headheight}{14pt}
