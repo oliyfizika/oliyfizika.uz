@@ -68,7 +68,7 @@ PRE = r"""% !TEX TS-program = xelatex
 \pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
 \fancyhead[C]{\itshape Fizika}\fancyfoot[C]{\thepage}
 \setcounter{page}{2}
-\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\emergencystretch=3em
 \newcommand{\ball}[1]{\hfill\texttt{[#1 ball]}}
 \newcommand{\qhead}[2]{\Needspace{10\baselineskip}\noindent\textbf{#1.}\ball{#2}\par\nopagebreak}
 \newcommand{\opt}[2]{\hspace*{8mm}#1)\ #2\par}
@@ -102,9 +102,18 @@ def placed(q, n):
     k = (c - t) % 4
     return {**q, "answers": a[k:] + a[:k], "correct": t}
 
+def opts_row(ans):
+    """A–D variantlar yonma-yon: qisqa bo‘lsa 4 ustun, uzunroq bo‘lsa 2×2."""
+    plain = [re.sub(r"\\[a-z]+|[${}^_ ]", "", a) for a in ans]
+    cols = 4 if max(map(len, plain)) <= 14 else 2
+    w = r"%.3f\linewidth" % (0.96 / cols)
+    cells = [r"%s)\ %s" % (Lt, tex(a)) for Lt, a in zip("ABCD", ans)]
+    rows = [" & ".join(cells[i:i + cols]) for i in range(0, 4, cols)]
+    return (r"\noindent\begin{tabular}{@{}" + ("p{%s}" % w) * cols + "@{}}" + r"\\[4pt]".join(rows) + r"\end{tabular}\par")
+
 def closed(n, q, pts):
     L = [r"\noindent\begin{minipage}{\linewidth}", r"\qhead{%d}{%s}" % (n, pts), r"\begin{qbody}"] + body(q) + [r"\smallskip"]
-    for Lt, a in zip("ABCD", q["answers"]): L.append(r"\opt{%s}{%s}" % (Lt, tex(a)))
+    L.append(opts_row(q["answers"]))
     L.append(r"\end{qbody}\end{minipage}\par\vspace{16pt}")
     return "\n".join(L)
 
