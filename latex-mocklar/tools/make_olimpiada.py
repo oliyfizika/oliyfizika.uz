@@ -143,14 +143,20 @@ def main():
     for _ in range(2): L.append(r"\newpage\begin{center}\textit{Topshiriqlarni bajarish uchun}\end{center}\thispagestyle{empty}\mbox{}")
     L.append(r"\end{document}")
     (OUT / "olimpiada-01.tex").write_text("\n".join(L), encoding="utf-8")
-    # kalit
-    K = [PRE.replace(r"\setcounter{page}{2}", ""), r"\begin{center}{\Large\textbf{Fizika olimpiadasi testi — javoblar kaliti}}\end{center}",
-         r"\begin{center}\begin{tabular}{|c|c|c|l|}\hline \textbf{№} & \textbf{Javob} & \textbf{Ball} & \textbf{Manba (baza id)}\\\hline"]
-    for n, (i, p) in enumerate(CLOSED, 1): K.append(r"%d & %s & %s & %s\\\hline" % (n, "ABCD"[BY[i]["correct"]], p, i.replace("_", r"\_")))
-    for n, (i, p) in enumerate(OPEN, 18): K.append(r"%d & %s & %s & %s\\\hline" % (n, tex(ans_open(BY[i])), p, i.replace("_", r"\_")))
-    for k, (p, _) in enumerate(MATCH_QS):
-        K.append(r"%d & %s (%s µJ) & %s & moslashtirish\\\hline" % (28 + k, MATCH_KEY[k], f"{MATCH_ANS[k]:g}", p))
-    K += [r"\end{tabular}\end{center}", r"\begin{center}Jami: 10$\times$0,9 + 10$\times$1,7 + 10$\times$2,4 = 50 ball\end{center}", r"\end{document}"]
+    # kalit: 3 ta ustun yonma-yon (1–10, 11–20, 21–30)
+    rows = []
+    for n, (i, p) in enumerate(CLOSED, 1): rows.append((n, "ABCD"[BY[i]["correct"]], p, i))
+    for n, (i, p) in enumerate(OPEN, 18): rows.append((n, tex(ans_open(BY[i])), p, i))
+    for k, (p, _) in enumerate(MATCH_QS): rows.append((28 + k, MATCH_KEY[k], p, "moslashtirish"))
+    def block(rs):
+        T = [r"\begin{tabular}[t]{|c|c|c|}\hline \textbf{№} & \textbf{Javob} & \textbf{Ball}\\\hline"]
+        T += [r"%d & %s & %s\\\hline" % (n, a, p) for n, a, p, _ in rs]
+        return "\n".join(T + [r"\end{tabular}"])
+    K = [PRE.replace(r"\setcounter{page}{2}", ""), r"\begin{center}{\Large\textbf{Fizika olimpiadasi testi — javoblar kaliti}}\end{center}\bigskip",
+         r"\begin{center}" + r"\hspace{8mm}".join(block(rows[j:j + 10]) for j in (0, 10, 20)) + r"\end{center}",
+         r"\begin{center}Jami: 10$\times$0,9 + 10$\times$1,7 + 10$\times$2,4 = 50 ball\end{center}\bigskip",
+         r"\noindent{\footnotesize\textbf{Manba (baza id):} " + "; ".join(f"{n}~{i}".replace("_", r"\_") for n, _, _, i in rows[:27]) + r"}\par",
+         r"\end{document}"]
     (OUT / "olimpiada-01-kalit.tex").write_text("\n".join(K), encoding="utf-8")
     if mm.unknown: print("Noma'lum belgilar:", "".join(sorted(mm.unknown)))
     if "--nopdf" not in sys.argv:
