@@ -79,9 +79,9 @@
 \textbf{9.}\ Quyidagi grafikda jism tezligining köçişiga boğliqlik grafigi keltirilgan. Jismning tezlanişini (m/s$^{2}$) aniqlang.\par\smallskip
 \noindent\hspace*{4mm}\begin{tikzpicture}[x=1cm,y=1cm,line width=0.5pt,>=Stealth,font=\small]
 \draw[->] (0,0)--(4.6,0) node[right]{$S,\mathrm{m}$}; \draw[->] (0,0)--(0,3.0) node[above]{$\vartheta,\mathrm{m/s}$};
-\draw[very thick] (0.8,1.5) .. controls (1.2,2.4) and (2.0,2.6) .. (3.6,2.6) ;
-\draw[dashed] (0,1.5)--(0.8,1.5)--(0.8,0) (0,2.6)--(3.6,2.6)--(3.6,0);
-\node[left] at (0,1.5) {$4$}; \node[left] at (0,2.6) {$6$}; \node[below] at (0.8,0) {$2$}; \node[below] at (3.6,0) {$4{,}5$};
+\draw[very thick,domain=0:3.6,samples=60] plot (\x,{0.43333*sqrt(10*\x)});
+\draw[dashed] (0,1.733)--(1.6,1.733)--(1.6,0) (0,2.6)--(3.6,2.6)--(3.6,0);
+\node[left] at (0,1.733) {$4$}; \node[left] at (0,2.6) {$6$}; \node[below] at (1.6,0) {$2$}; \node[below] at (3.6,0) {$4{,}5$};
 \end{tikzpicture}\par\smallskip
 \opt{A}{40}
 \opt{B}{2}

@@ -1,0 +1,140 @@
+@1 D
+Blok orqali o‘tgan ipning bir uchi polga mahkamlangan, ikkinchisiga yuk ilingan. Ip bo‘ylab taranglik bir xil va yuk muvozanatda bo‘lgani uchun $T_{ip}=P$. Vaznsiz blokning muvozanati: $T=2T_{ip}$, bundan $P=T/2=18$ N.
+
+@2 A
+>> \Delta E_k=\frac{m}{2}\left(v_2^2-v_1^2\right)=\frac{3}{2}(100-4)=144\ \text{J}.
+
+@3 A
+Ko‘chish proyeksiyalari oxirgi va boshlang‘ich koordinatalar farqi: $S_x=x-x_0$, $S_y=y-y_0$, $S_z=z-z_0$.
+
+@4 D
+Suzish sharti: $m=\rho_s S\cdot0{,}8l$. Sterjenni qo‘shimcha $x$ ga botirish uchun kerakli kuch $F=\rho_s gSx$ chiziqli o‘sadi, $x$ $0$ dan $0{,}2l$ gacha:
+>> A=\frac{\rho_s gS(0{,}2l)^2}{2}=0{,}02\,\rho_s gSl^2=0{,}02\,gl\cdot\frac{m}{0{,}8}=\frac{mgl}{40}.
+
+@5 D
+$n$-sekunddagi yo‘l $s_n=v_0+a\left(n-\frac12\right)$: $1=v_0+\frac{a}{2}$, $2=v_0+\frac{3a}{2}$. Bundan $a=1$ m/s$^2$, $v_0=0{,}5$ m/s.
+
+@6 D
+Energiyaning saqlanish qonuni ($GM=gR^2$): $\frac{mv^2}{2}=mgR^2\left(\frac1R-\frac{1}{R+h}\right)$, bundan
+>> h=\frac{v^2R}{2gR-v^2}=\frac{10^6\cdot6{,}3\cdot10^6}{1{,}26\cdot10^8-10^6}\approx5\cdot10^4\ \text{m}=50\ \text{km}.
+
+@7 C
+Tekis harakatda ishqalanish kuchi $F_{ish}=1$ N. Ikkinchi holda $ma=F-F_{ish}$:
+>> a=\frac{2-1}{0{,}4}=2{,}5\ \text{m/s}^2.
+
+@8 B
+Bir davrda yo‘l $4A$, o‘rtacha tezlik $\bar v=\frac{4A}{T}$. Muvozanatdan o‘tishdagi tezlik $v_{max}=A\omega=\frac{2\pi A}{T}=\frac{\pi}{2}\bar v$:
+>> v_{max}=1{,}57\cdot2{,}4\approx3{,}76\ \text{m/s}.
+
+@9 B
+>> ma=F-mg\sin30^\circ-\mu mg\cos30^\circ=260-100-\frac{1}{\sqrt3}\cdot200\cdot\frac{\sqrt3}{2}=60\ \text{N},\qquad a=\frac{60}{20}=3\ \text{m/s}^2.
+
+@10 C
+$s=\bar vt=20\cdot6=120$ m.
+
+@11 C
+Bir atomli gaz izobarik jarayonda: $Q=\frac52p\Delta V$, $A=p\Delta V=\frac25Q=\frac25\cdot240=96$ kJ.
+
+@12 C
+>> V=\frac{\nu RT}{p}=\frac{500\cdot8{,}31\cdot400}{2\cdot10^6}=0{,}831\ \text{m}^3=831\ \text{l}.
+
+@13 D
+64 g kislorod — 2 mol $O_2$. $1/3$ qismi, ya’ni $2/3$ mol $O_2$ dissotsiatsiyalanib $4/3$ mol $O$ atomlarini beradi; $4/3$ mol $O_2$ qoladi. Jami $\frac43+\frac43=\frac83$ mol.
+
+@14 C
+$Q=cm\Delta t=4200\cdot200\cdot24=2{,}016\cdot10^7$ J; foydali quvvat $0{,}8\cdot21=16{,}8$ kW.
+>> t=\frac{2{,}016\cdot10^7}{16\,800}=1200\ \text{s}=20\ \text{min}.
+
+@15 C
+$p\sim T^{1/3}$: harorat 8 marta ortsa, bosim 2 marta ortadi. $\Delta p=2p_0-p_0=p_0=12$ kPa.
+
+@16 B
+>> \eta=\frac{U_2I_2}{U_1I_1}=\frac{38\cdot2{,}5}{200\cdot0{,}5}=\frac{95}{100}=95\%.
+
+@17 C
+Ideal voltmetr orqali tok o‘tmaydi, ichki qarshilikda kuchlanish tushmaydi: $U=\mathcal E-Ir=\mathcal E$. Voltmetr EYuK ni ko‘rsatadi.
+
+@18 A
+Shar zaryadi $q\sim R\varphi$: $q_1\sim R\varphi$, $q_2\sim4R\varphi$, jami $5R\varphi$. Tekkizilganda zaryad radiuslarga proporsional taqsimlanadi: $q_1'=\frac{5R\varphi}{3}$. Birinchi sharning zaryadi $5/3$ marta ortadi.
+
+@19 D
+$P=\frac{\mathcal E^2R}{(R+r)^2}$ ikki xil $R$ da teng bo‘lsa, $r=\sqrt{R_1R_2}=4\ \Omega$. $32=\frac{\mathcal E^2\cdot2}{36}$, $\mathcal E=24$ V.
+>> P_{max}=\frac{\mathcal E^2}{4r}=\frac{576}{16}=36\ \text{W}.
+
+@20 C
+Birinchi elektron to‘xtatib (qo‘zg‘almas) ushlab turiladi. Ikkinchi elektronning kinetik energiyasi to‘liq potensial energiyaga aylanganda masofa eng kichik:
+>> \frac{mv^2}{2}=\frac{ke^2}{r}\ \Rightarrow\ r=\frac{2ke^2}{mv^2}=\frac{4ke^2}{2mv^2}.
+
+@21 C
+$\Phi=LI$: $I=\frac{10\cdot10^{-3}}{20\cdot10^{-3}}=0{,}5$ A.
+
+@22 B
+Tok yo‘nalishi deb musbat zaryadlar harakat yo‘nalishi qabul qilingan.
+
+@23 D
+Shar potensiali $\varphi=kq/R\sim q$. Potensial 3 marta ortishi uchun zaryad $3q$ bo‘lishi, ya’ni $2q$ qo‘shilishi kerak.
+
+@24 C
+$U=P/I=98/14=7$ V.
+
+@25 B
+$q=It=12\cdot10^{-3}\cdot1200=14{,}4$ C.
+
+@26 B
+$F=1/D=0{,}5$ m.
+
+@27 D
+Yassi ko‘zguda tasvir ko‘zgu ortida buyum bilan bir xil masofada: 4 m.
+
+@28 D
+$F=1/D=-0{,}1$ m $=-10$ cm. $\frac1f=\frac1F-\frac1d=-\frac1{10}-\frac1{20}=-\frac{3}{20}$, $|f|=\frac{20}{3}$ cm.
+>> \Gamma=\frac{|f|}{d}=\frac{20/3}{20}=\frac13,\qquad h'=\frac63=2\ \text{cm}.
+
+@29 D
+$^2_1\mathrm H+^3_1\mathrm H\to^1_0n+^4_2\mathrm{He}$: zaryad $1+1=0+2$, massa soni $2+3=1+4$. Ikkinchi zarra — alfa zarra.
+
+@30 A
+$|E_5|=\frac{13{,}6}{5^2}=0{,}544\approx0{,}54$ eV.
+
+@31 C
+$\lambda=h/p$; impuls 2 marta katta bo‘lsa, to‘lqin uzunligi 2 marta kichik: $\lambda/2$.
+
+@32 B
+$T\sim\sqrt l$: $\frac{l_0+20}{l_0}=9$, $8l_0=20$, $l_0=2{,}5$ cm.
+
+@33 A E B
+Manbalar bir yo‘nalishda (ketma-ket) ulangan:
+>> I=\frac{\varepsilon_1+\varepsilon_2}{R+r_1+r_2}=\frac{9}{9}=1\ \text{A},\qquad U_R=IR=8\ \text{V},\qquad U_2=\varepsilon_2-Ir_2=3-0{,}5=2{,}5\ \text{V}.
+
+@36
+Paskal qonuni: $\frac{F_2}{F_1}=\frac{S_2}{S_1}=100$, $F_2=20\,000$ N $=20$ kN. Siqilgan suyuqlik hajmi teng: $S_1h_1=S_2h_2$, $h_2=\frac{20}{100}=0{,}2$ cm $=2$ mm.
+
+@37
+$\nu=2$ s$^{-1}$, $v=2\pi\nu R=2\cdot3{,}14\cdot2\cdot0{,}5=6{,}28$ m/s.
+>> a=\frac{v^2}{R}=\frac{6{,}28^2}{0{,}5}\approx78{,}88\ \text{m/s}^2.
+
+@38
+Eng yuqori nuqtada $mg-N=\frac{mv^2}{R}$:
+>> N=m\left(g-\frac{v^2}{R}\right)=1000\left(10-\frac{100}{40}\right)=7500\ \text{N}=7{,}5\ \text{kN}.
+Vaznsizlikda $N=0$: $v=\sqrt{gR}=\sqrt{400}=20$ m/s.
+
+@39
+$p=p_0+\rho gh=100+1000\cdot10\cdot20\cdot10^{-3}=300$ kPa. Izotermik jarayon: $pV=\text{const}$, hajm $300/100=3$ marta ortadi.
+
+@40
+$Q_1=Lm=2{,}3\cdot10^6\cdot0{,}1=230$ kJ; sovishda $Q_2=4200\cdot0{,}1\cdot50=21$ kJ. Jami $251$ kJ.
+
+@41
+$R=\frac{U^2}{P}=\frac{220^2}{1100}=44\ \Omega$. $P'=\frac{110^2}{44}=275$ W (kuchlanish 2 marta kam — quvvat 4 marta kam).
+
+@42
+>> \varphi=\frac{kq}{r}=\frac{9\cdot10^9\cdot4\cdot10^{-9}}{0{,}2}=180\ \text{V},\qquad A=q'\varphi=2\cdot10^{-9}\cdot180=0{,}36\ \mu\text{J}.
+
+@43
+Panjara davri $d=1$ mm$/1000=10^{-6}$ m. $\sin\varphi=\lambda/d=0{,}5$, $\varphi=30^\circ$. $k_{max}<d/\lambda=2$; $k=2$ da $\varphi=90^\circ$ bo‘lib, maksimum kuzatilmaydi, demak $k_{max}=1$.
+
+@44
+$D=1/F=1/0{,}05=20$ dptr. Tasvir cheksizlikda bo‘lganda $\Gamma=d_0/F=25/5=5$.
+
+@45
+>> \varepsilon=13{,}6\left(\frac14-\frac19\right)=13{,}6\cdot\frac{5}{36}\approx1{,}89\ \text{eV},\qquad \lambda=\frac{hc}{\varepsilon}=\frac{1240}{1{,}89}\approx656\ \text{nm}.

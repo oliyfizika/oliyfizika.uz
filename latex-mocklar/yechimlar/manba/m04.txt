@@ -1,0 +1,148 @@
+@1 A
+Tashqi davriy ta’sirsiz, sistemaning o‘z ichki energiya manbai hisobiga bo‘ladigan so‘nmas tebranishlar avtotebranishlar deyiladi (masalan, soat mayatnigi).
+
+@2 B
+Yer g‘arbdan sharqqa aylanadi. Sharqqa harakatda avtomobilning inersial sistemaga nisbatan tezligi $v+u$, g‘arbga harakatda $v-u$. Og‘irlik $P=m\left(g-\frac{V^2}{R}\right)$:
+>> \Delta P=P_{g}-P_{sh}=\frac{m}{R}\left[(v+u)^2-(v-u)^2\right]=\frac{4mvu}{R}.
+
+@3 D
+Tezlanish $a=\frac{v^2}{2h}=\frac{100}{40}=2{,}5$ m/s$^2$, kuch $F=m(g+a)=12{,}5$ N. Oniy quvvat $P=Fv=12{,}5\cdot10=125$ W.
+
+@4 B
+Jism $x$ ga qo‘shimcha botganda qaytaruvchi kuch $\rho_s gSx$, ya’ni «bikrlik» $k=\rho_s gS=1000\cdot10\cdot25\cdot10^{-4}=25$ N/m.
+>> \omega=\sqrt{\frac{k}{m}}=\sqrt{\frac{25}{0{,}01}}=50\ \text{rad/s}.
+
+@5 B
+$T=2\pi\sqrt{l/g}$; davr 2 marta ortgan, demak effektiv tezlanish $g'=g/4=2{,}5$ m/s$^2$. Lift pastga yo‘nalgan tezlanish bilan harakatlanadi: $a=g-g'=7{,}5$ m/s$^2$.
+
+@6 C
+Cho‘pni siljitish uchun bir tomondagi sirt taranglik kuchini yengish kerak:
+>> F=\sigma l=73\cdot10^{-3}\cdot0{,}04=2{,}92\cdot10^{-3}\ \text{N}=2{,}92\ \text{mN}.
+
+@7 D
+Kuch arg‘imchoqning xususiy tebranishlari bilan bir maromda (rezonansda) qo‘yilsa, har bir tebranishda kichik ulushlar bilan energiya to‘planadi va amplituda katta qiymatga yetadi.
+
+@8 B
+$v=54$ km/h $=15$ m/s, g‘ildirak radiusi $R=v/\omega=0{,}3$ m. G‘ildirak tekis g‘ildiraganda gardish nuqtasining yerga nisbatan tezlanishi faqat markazga intilma:
+>> a=\omega^2R=2500\cdot0{,}3=750\ \text{m/s}^2=0{,}75\ \text{km/s}^2.
+
+@9 B
+Tovush balandligi tebranishlar chastotasi bilan aniqlanadi.
+
+@10 A
+Arqonning bikrligi $k=\frac{ES}{l}$, tebranish davri $T=2\pi\sqrt{\frac{m}{k}}=2\pi\sqrt{\frac{ml}{ES}}$. Bundan
+>> E=\frac{4\pi^2ml}{T^2S}.
+
+@11 C
+Sovutish mashinasida Karno sikli teskari yo‘nalishda — soat miliga teskari o‘tadi. Siklda ishchi jism dastlabki holatga qaytadi, ichki energiya o‘zgarmaydi.
+
+@12 A
+Izoxorik issiqlik sig‘imi: geliy $\frac32R$, kislorod $\frac52R$ (bir mol uchun). Aralashma massasi $m=2\cdot4+3\cdot32=104$ g.
+>> c_V=\frac{2\cdot\frac32R+3\cdot\frac52R}{0{,}104}=\frac{10{,}5\cdot8{,}31}{0{,}104}\approx839\ \text{J/(kg}\cdot\text{K)}.
+
+@13 A
+>> h=\frac{2\sigma}{\rho gr}=\frac{2\cdot0{,}51}{13600\cdot10\cdot10^{-3}}=7{,}5\cdot10^{-3}\ \text{m}=7{,}5\ \text{mm}.
+
+@14 A
+Izobarik jarayonda bir atomli gaz uchun $Q_1=\frac52A=60$ kJ, izotermik jarayonda $Q_2=A=24$ kJ. Farq $60-24=36$ kJ.
+
+@15 B
+Impulsning saqlanish qonuni: $m\cdot40-m\cdot20=2mu$, $u=10$ m/s. Mexanik energiya yo‘qotilishi
+>> \Delta E=\frac{m\cdot40^2}{2}+\frac{m\cdot20^2}{2}-\frac{2m\cdot10^2}{2}=900m.
+Bu issiqlik ikkala sharchani isitadi: $2mc\Delta t=900m$, $\Delta t=\frac{900}{2\cdot450}=1\ ^\circ$C.
+
+@16 C
+Bir xil ishorali zaryadlangan tekisliklar orasida maydonlar qarama-qarshi yo‘nalgan:
+>> E=\frac{\sigma_1-\sigma_2}{2\varepsilon_0}=\frac{(9-0{,}15)\cdot10^{-9}}{2\cdot8{,}85\cdot10^{-12}}=500\ \text{V/m}.
+
+@17 D
+$Q=UIt$: $I=\frac{3600}{120\cdot150}=0{,}2$ A.
+
+@18 A
+$U_{AB}=IR+L\frac{dI}{dt}$. $t=5$ s da $I=15$ A, $\frac{dI}{dt}=\alpha=3$ A/s:
+>> U_{AB}=15\cdot0{,}7+1{,}5\cdot3=10{,}5+4{,}5=15\ \text{V}.
+
+@19 C
+Mis miqdori $\nu=100/63{,}5\approx1{,}575$ mol; har bir $Cu^{2+}$ ion 2 ta elementar zaryad olib keladi:
+>> N=2\nu N_A=2\cdot1{,}575\cdot6{,}02\cdot10^{23}\approx1{,}9\cdot10^{24}.
+
+@20 C
+Uzatilayotgan quvvat o‘zgarmas: $I=P/U$, yo‘qotish $\Delta P=I^2R=\frac{P^2R}{U^2}$. 16 marta kamaytirish uchun $U$ ni 4 marta oshirish kerak.
+
+@21 D
+$\omega=5\cdot10^5\pi$ rad/s, $\nu=\omega/2\pi=2{,}5\cdot10^5$ Hz.
+>> \lambda=\frac{c}{\nu}=\frac{3\cdot10^8}{2{,}5\cdot10^5}=1200\ \text{m}.
+
+@22 C
+Halqa tekisligi induksiya chiziqlariga parallel bo‘lganda kuch momenti eng katta:
+>> M=BIS=BI\pi r^2=0{,}2\cdot2\cdot3{,}14\cdot0{,}0025=3{,}14\cdot10^{-3}\ \text{N}\cdot\text{m}.
+
+@23 C
+$E=kq/r^2$: $\frac{E_1}{E_2}=\left(\frac{r_2}{r_1}\right)^2=81$, demak $r_2/r_1=9$.
+
+@24 A
+Tok rezonansda maksimal:
+>> \omega=\frac{1}{\sqrt{LC}}=\frac{1}{\sqrt{0{,}16\cdot25\cdot10^{-6}}}=\frac{1}{2\cdot10^{-3}}=500\ \text{rad/s}.
+
+@25 D
+$I_{ef}=I_0/\sqrt2=0{,}141/1{,}41=0{,}1$ A, $U_{ef}=I_{ef}R=0{,}1\cdot30=3$ V.
+
+@26 C
+To‘liq yorug‘lik oqimi $\Phi=4\cdot110\pi=440\pi$ lm. $\Phi=4\pi I$, bundan $I=110$ cd.
+
+@27 D
+Oy juda uzoqda ($d\gg F$), shuning uchun tasvir fokal tekislikda: $f\approx F=50$ cm.
+
+@28 D
+Sochuvchi linza: $\frac1f=-\frac1F-\frac1{4F}=-\frac{5}{4F}$, $|f|=0{,}8F$.
+
+@29 D
+18 g suv — 1 mol. Bitta molekulada neytronlar: vodorodda 0, $^{16}_{8}$O da 8 ta. $N=8N_A=4{,}8\cdot10^{24}$.
+
+@30 A
+Yorug‘lik bosimi, fotoeffekt va rentgen nurlanishi yorug‘likning kvant (korpuskulyar) tabiati bilan tushuntiriladi.
+
+@31 A
+$\varepsilon\sim\left(\frac{1}{n^2}-\frac{1}{k^2}\right)$:
+>> \varepsilon_1\sim\frac1{49}-\frac1{64}=\frac{15}{3136},\qquad \varepsilon_2\sim\frac1{16}-\frac1{64}=\frac{147}{3136},\qquad \frac{\varepsilon_2}{\varepsilon_1}=\frac{147}{15}=\frac{49}{5}.
+
+@32 B
+$y_1=20t-\frac{g t^2}{2}$, $y_2=20(t-2)-\frac{g(t-2)^2}{2}$. $y_1=y_2$ dan:
+>> 40=\frac{g}{2}\left(t^2-(t-2)^2\right)=\frac{5}{6}(4t-4)\ \Rightarrow\ 4t-4=48,\ t=13\ \text{s}.
+
+@33 A C F
+Qarshiliklar: $R_1=U^2/P_1=14400/360=40\ \Omega$, $R_2=14400/180=80\ \Omega$. Ketma-ket ulanganda
+>> I=\frac{120}{40+80}=1\ \text{A},\qquad P_1'=I^2R_1=40\ \text{W}.
+Parallel ulanganda har biri nominal kuchlanishda: $P=360+180=540$ W.
+
+@36
+Ajralish chegarasidagi bosimlar tengligi: $\rho_k h_k=\rho_s h_s$, ya’ni 20 cm kerosinni chegaradan yuqoridagi $h_s=16$ cm suv muvozanatlaydi. Sathlar farqi $20-16=4$ cm.
+Suv hajmi saqlanadi: birinchi tirsakda suv sathi $x$ ga tushsa, ikkinchisida $x$ ga ko‘tariladi, $2x=16$ cm, $x=8$ cm.
+
+@37
+Tormozlanish vaqti $t_2=20/4=5$ s, umumiy vaqt $10+5=15$ s. Yo‘l: $s=\frac{20\cdot10}{2}+\frac{20^2}{2\cdot4}=100+50=150$ m.
+
+@38
+Yuqoriga tezlanishda $P=m(g+a)=70\cdot12=840$ N; pastga tezlanishda $P=m(g-a)=70\cdot8=560$ N.
+
+@39
+>> \bar E=\frac32kT=1{,}5\cdot1{,}38\cdot10^{-23}\cdot300=6{,}21\cdot10^{-21}\ \text{J}.
+$\bar E\sim T$, 2 marta ortishi uchun $T=600$ K.
+
+@40
+$Q=cm\Delta t=4200\cdot2\cdot55=462$ kJ. Bu issiqlik muzni eritadi: $m_m=Q/\lambda=462/330=1{,}4$ kg.
+
+@41
+$I=\frac{\mathcal E}{R+r}=\frac{12}{6}=2$ A; qisqa tutashuv toki $I_{q}=\mathcal E/r=24$ A.
+
+@42
+>> C=\frac{\varepsilon_0S}{d}=\frac{8{,}85\cdot10^{-12}\cdot0{,}02}{10^{-3}}=1{,}77\cdot10^{-10}\ \text{F}=177\ \text{pF},\qquad q=CU=17{,}7\ \text{nC}.
+
+@43
+Odam o‘zini to‘liq ko‘rishi uchun ko‘zgu balandligi bo‘yining yarmiga teng: $1{,}8/2=0{,}9$ m. Oyoqdan qaytgan nur ko‘zga tushishi uchun ko‘zguning pastki qirrasi ko‘z balandligining yarmida bo‘lishi kerak: $1{,}7/2=0{,}85$ m.
+
+@44
+Zich tegib turgan yupqa linzalar uchun $D=D_1+D_2=5-1=4$ dptr, $F=1/D=0{,}25$ m $=25$ cm.
+
+@45
+Massa soni faqat $\alpha$-yemirilishda (4 ga) kamayadi: $n_\alpha=\frac{238-206}{4}=8$. Bunda zaryad $2\cdot8=16$ ga kamayib, $92-16=76$ bo‘lardi; $82$ ga yetishi uchun $82-76=6$ ta $\beta$-yemirilish kerak.

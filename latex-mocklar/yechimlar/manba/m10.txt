@@ -1,0 +1,140 @@
+@1 B
+$x_2=0$ bo‘lganda $24-4t=0$, $t=6$ s. Shu paytda $x_1=5\cdot6+0{,}2\cdot36=30+7{,}2=37{,}2$ m.
+
+@2 A
+$ma=mg-\rho_s gV$, $V=m/\rho$:
+>> a=g\left(1-\frac{\rho_s}{\rho}\right)=10\left(1-\frac{1000}{4000}\right)=7{,}5\ \text{m/s}^2.
+
+@3 A
+Po‘kakning $3/4$ qismi botgan: Arximed kuchi $1000\cdot0{,}075\cdot g$, ya’ni $75$ kg li jism og‘irligini ko‘taradi. Po‘kak massasi $300\cdot0{,}1=30$ kg, yuk $75-30=45$ kg.
+
+@4 C
+Natijaviy kuch $74-69=5$ N — kuchlarning ayirmasiga teng, demak ular qarama-qarshi yo‘nalgan: $180^\circ$.
+
+@5 A
+Samolyot sharqqa poyezddan tezroq uchsa ($900>80$), samolyotga nisbatan poyezd g‘arbga ketayotgandek ko‘rinadi.
+
+@6 B
+Ko‘tarilishning oxirgi sekundi — eng yuqori nuqtagacha qolgan 1 s. Teskari qaraganda bu erkin tushishning birinchi sekundi: $s=g\cdot1^2/2=5$ m, o‘rtacha tezlik $5$ m/s.
+
+@7 B
+Birinchi mayatnik dastlabki vaziyatiga har 2 s da, ikkinchisi har 3 s da qaytadi. Ikkalasi bir vaqtda dastlabki vaziyatda bo‘lishi uchun $\mathrm{EKUK}(2;3)=6$ s kerak. 50 s ichida: $6, 12, \ldots, 48$ — 8 marta.
+
+@8 A
+Tezlanish bo‘lmasa, kuchlarning teng ta’sir etuvchisi nol: ikki kuch moduli teng va qarama-qarshi yo‘nalgan.
+
+@9 B
+Tangensial va normal tezlanishlar teng bo‘lishi uchun tezlik vektori gorizont bilan $45^\circ$ hosil qilishi kerak: $v_y=v_x$, $gt=15$, $t=1{,}5$ s.
+
+@10 C
+Tushish vaqti $t=\sqrt{2h/g}=4$ s. Elastik urilishdan keyin jism 4 s da yana 80 m ga ko‘tariladi (8 s). 9-sekundda u yana 1 s erkin tushadi: $5$ m pastlaydi, $h=75$ m.
+>> E_p=mgh=6{,}4\cdot10\cdot75=4800\ \text{J}.
+
+@11 A
+$Q=cm\Delta t=540\cdot2\cdot220=237\,600$ J; gaz massasi $m=\frac{Q}{q}=\frac{237\,600}{44\cdot10^6}=5{,}4\cdot10^{-3}$ kg $=5{,}4$ g.
+
+@12 B
+$\Delta U=Q-A=250-120=130$ J — ortadi.
+
+@13 C
+Sharlar massalari teng deb: $c_1m(50-40)=c_2m(40-10)$, $c_1/c_2=3$.
+
+@14 D
+Bir atomli gaz uchun $U=\frac32\frac{m}{M}RT$, ya’ni $U\sim1/M$. $M_{Ar}=40$, $M_{He}=4$ — geliyniki 10 marta katta.
+
+@15 A
+Hajmiy kengayish koeffitsiyenti $\beta=3\alpha=3\cdot10^{-5}$ K$^{-1}$:
+>> V=V_0(1+\beta\Delta t)=10(1+3\cdot10^{-5}\cdot800)=10{,}24\ \text{m}^3.
+
+@16 A
+>> C=4\pi\varepsilon_0\varepsilon R=\frac{\varepsilon R}{k}=\frac{2\cdot90}{9\cdot10^9}=2\cdot10^{-8}\ \text{F}=20\ \text{nF}.
+
+@17 C
+$I_0=q_0\omega$, $\omega=2\pi/T$:
+>> q_0=\frac{I_0T}{2\pi}=\frac{0{,}03\cdot4\cdot10^{-3}}{6}=2\cdot10^{-5}\ \text{C}=20\ \mu\text{C}.
+
+@18 A
+Ampermetr yuqori tarmoqda: undan o‘tgan 1 A tok $R+R=2R$ va $2R$ dan iborat ikki parallel shoxga teng bo‘linadi — $2R$ rezistordan $0{,}5$ A o‘tadi.
+>> Q=I^2\cdot2R\cdot t=0{,}25\cdot6\cdot5=7{,}5=\frac{15}{2}\ \text{J}.
+
+@19 B
+Nuqtaviy zaryad uchun $|\varphi|=\frac{k|q|}{r}$, $E=\frac{k|q|}{r^2}=\frac{|\varphi|}{r}=\frac{2}{0{,}02}=100$ V/m.
+
+@20 D
+Uzunligi $L$ bo‘lgan qismga ta’sir kuchi
+>> F=\frac{\mu_0I_1I_2L}{2\pi d}\ \Rightarrow\ d=\frac{2\cdot10^{-7}\cdot10\cdot20\cdot2}{8\cdot10^{-5}}=1\ \text{m}.
+
+@21 A
+>> R_1=\frac{12\cdot10^{-8}\cdot2}{0{,}48\cdot10^{-6}}=0{,}5\ \Omega,\quad R_2=\frac{42\cdot10^{-8}\cdot1}{0{,}21\cdot10^{-6}}=2\ \Omega,\quad U=I(R_1+R_2)=0{,}6\cdot2{,}5=1{,}5\ \text{V}.
+
+@22 A
+Tok kuchlanishdan $\pi/4$ orqada: $\mathrm{tg}\,\varphi=\frac{U_L-U_C}{U_R}=1$, $U_L=U_C+U_R=6+2=8$ V.
+
+@23 A
+$u(10)=4\sqrt2\cos\frac{10\pi}{8}=4\sqrt2\cos225^\circ=-4$ V. Oniy quvvat $p=\frac{u^2}{R}=\frac{16}{2}=8$ W.
+
+@24 A
+1-holatda ketma-ket ulangan kondensatorlarning har biri bir xil $q$ zaryad oladi. 2-holatda kondensatorlar zanjiri manbadan uziladi va $R$ orqali razryadlanadi; ketma-ket zanjirdan $R$ orqali $q$ zaryad oqib o‘tadi.
+
+@25 C
+Ferromagnitlarda $\mu\gg1$: $\mu=800$ va $\mu=998$ (1 va 5).
+
+@26 A
+$\Gamma=2$, $d+f=1{,}5$ m: $d=0{,}5$ m, $f=1$ m.
+>> D=\frac1d+\frac1f=2+1=3\ \text{dptr}.
+
+@27 D
+Yig‘uvchi linza: $D=1/F=1/0{,}2=5$ dptr.
+
+@28 C
+$k_{max}<\frac{d}{\lambda}=\frac{2{,}3}{0{,}6}\approx3{,}8$, ya’ni $k_{max}=3$. Maksimumlar soni $2\cdot3+1=7$.
+
+@29 A
+$p=\frac{mv}{\sqrt{1-v^2/c^2}}=n\cdot mv$, ya’ni $\gamma=n$:
+>> v=c\sqrt{1-\frac{1}{n^2}}=\frac{\sqrt{n^2-1}}{n}c.
+
+@30 D
+Neytronning yemirilishi $n\to p+e^-+\tilde\nu$ — bu $\beta$-radioaktivlik.
+
+@31 C
+>> T=\frac{\ln2}{\lambda}=\frac{0{,}7}{4\cdot10^{-6}}=1{,}75\cdot10^5\ \text{s}.
+
+@32 A
+Ko‘chish $80-30=50$ m.
+
+@33 D E A
+>> \mathcal E=Blv=0{,}5\cdot0{,}4\cdot5=1\ \text{V},\qquad I=\frac{\mathcal E}{R}=2\ \text{A},\qquad F=BIl=0{,}5\cdot2\cdot0{,}4=0{,}4\ \text{N}.
+
+@36
+Suzish sharti: botgan qism $h_b=\frac{\rho_m}{\rho_s}h=27$ cm, suvdan chiqib turgan qism $30-27=3$ cm. To‘liq botish uchun qo‘shimcha massa
+>> M=\rho_sS\cdot0{,}03=1000\cdot2\cdot0{,}03=60\ \text{kg}.
+
+@37
+$v=x'=4-2t$, $v(3)=-2$ m/s. Jism $t=2$ s da to‘xtab orqaga qaytadi: $x(0)=5$, $x(2)=9$, $x(3)=8$ m. Yo‘l $4+1=5$ m.
+
+@38
+Impulsning saqlanish qonuni: $Mu=mv$, $u=\frac{0{,}01\cdot600}{4}=1{,}5$ m/s. $E_k=\frac{4\cdot1{,}5^2}{2}=4{,}5$ J.
+
+@39
+1 s da beriladigan issiqlik $Q=\frac{P}{\eta}=\frac{40}{0{,}25}=160$ kJ. 1 soatda $160\cdot3600=576$ MJ, yoqilg‘i massasi $576/40=14{,}4$ kg.
+
+@40
+$Q_1=c_mm\Delta t=2100\cdot2\cdot10=42$ kJ; eritish $Q_2=\lambda m=660$ kJ. Jami $702$ kJ.
+
+@41
+>> T=2\pi\sqrt{LC}=6{,}28\sqrt{10^{-3}\cdot10^{-9}}=6{,}28\cdot10^{-6}\ \text{s},\qquad \lambda=cT=3\cdot10^8\cdot6{,}28\cdot10^{-6}=1884\ \text{m}.
+
+@42
+Uchinchi zaryadga ta’sir kuchlari teng: $\frac{q}{x^2}=\frac{4q}{(0{,}3-x)^2}$, $0{,}3-x=2x$, $x=0{,}1$ m $=10$ cm.
+$q$ zaryadning muvozanati: $\frac{kqq_3}{0{,}1^2}+\frac{kq\cdot4q}{0{,}3^2}=0$,
+>> q_3=-4q\cdot\frac{0{,}01}{0{,}09}=-\frac49q\approx-0{,}444q.
+
+@43
+Chastota muhitga bog‘liq emas: $\nu=\frac{c}{\lambda}=\frac{3\cdot10^8}{6\cdot10^{-7}}=5\cdot10^{14}$ Hz. Suvda $\lambda'=\lambda/n=600\cdot\frac34=450$ nm.
+
+@44
+Yaqindan ko‘ruvchi (miop) uchun sochuvchi ko‘zoynak: $D=-\frac{1}{0{,}5}=-2$ dptr. Uzoqdan ko‘ruvchi uchun buyum 25 cm da, tasvir 50 cm da (mavhum):
+>> D=\frac{1}{0{,}25}-\frac{1}{0{,}5}=2\ \text{dptr}.
+
+@45
+>> N=\frac{m}{M}N_A=\frac{1}{235}\cdot6{,}02\cdot10^{23}\approx2{,}56\cdot10^{21},\qquad E=N\cdot200\cdot1{,}6\cdot10^{-13}\approx8{,}2\cdot10^{10}\ \text{J}.

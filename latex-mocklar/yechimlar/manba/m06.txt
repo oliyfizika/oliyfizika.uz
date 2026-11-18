@@ -1,0 +1,144 @@
+@1 C
+$E_p=mgh=0{,}35\cdot10\cdot4=14$ J.
+
+@2 A
+>> a=\frac{(m_2-m_1)g}{m_1+m_2}=\frac{0{,}025\cdot9{,}8}{0{,}125}=1{,}96\ \text{m/s}^2,\qquad T=m_1(g+a)=0{,}05\cdot11{,}76\approx0{,}6\ \text{N}.
+
+@3 A
+Zilzila o‘chog‘idan bo‘ylama va ko‘ndalang to‘lqinlar tarqaladi. Bo‘ylama to‘lqin tezroq, u birinchi yetib keladi; keyin ko‘ndalang to‘lqin keladi. Shuning uchun silkinish ikki marta seziladi.
+
+@4 C
+$L=\frac{v^2\sin2\alpha}{g}$, $H=\frac{v^2\sin^2\alpha}{2g}$. $\sin120^\circ=\sin60^\circ$, demak $\frac{L_1}{L_2}=\frac{v_1^2}{v_2^2}=2$.
+>> \frac{H_1}{H_2}=\frac{v_1^2\sin^260^\circ}{v_2^2\sin^230^\circ}=2\cdot\frac{3/4}{1/4}=6.
+
+@5 C
+$x=\frac{mg}{k}=\frac{50}{1600}$ m $=\frac{5000}{1600}$ cm $=\frac{25}{8}$ cm.
+
+@6 C
+Birinchi jismning yerga urilish tezligi $v_1=\sqrt{2gH}=8$ m/s, ikkinchisining boshlang‘ich tezligi $v_2=8/1{,}5=16/3$ m/s. Ikkala jism bir xil tezlanishda, nisbiy tezlik $v_2$ o‘zgarmas:
+>> t=\frac{H}{v_2}=\frac{3{,}2}{16/3}=0{,}6\ \text{s},\qquad h=H-\frac{gt^2}{2}=3{,}2-1{,}8=1{,}4\ \text{m}=140\ \text{cm}.
+
+@7 C
+5 s da $x=15$ m, $y=20$ m: $s=\sqrt{15^2+20^2}=25$ m.
+
+@8 D
+Jism zichligi suvnikidan kichik — u suzadi. Siqib chiqarilgan suv massasi jism massasiga teng:
+>> V_s=\frac{\rho V}{\rho_s}=\frac{800\cdot2}{1000}=1{,}6\ \text{m}^3.
+
+@9 C
+$A=Fs=120\cdot10^3\cdot2300=2{,}76\cdot10^8$ J $=276$ MJ.
+
+@10 C
+4 s dan keyin $v_y=gt=40$ m/s. $45^\circ$ da $v_x=v_y$, demak $v_0=40$ m/s.
+
+@11 D
+Bosimning kamayishi $4600/10=460$ mm.Hg, ya’ni $p=300$ mm.Hg $=300\cdot133{,}3\approx4\cdot10^4$ Pa.
+>> n=\frac{p}{kT}=\frac{39\,990}{1{,}38\cdot10^{-23}\cdot300}\approx9{,}66\cdot10^{24}\ \text{m}^{-3}=9{,}66\cdot10^{18}\ \text{cm}^{-3}.
+
+@12 A
+Manometr atmosfera bosimidan ortiqcha bosimni ko‘rsatadi: $10-1=9$ atm.
+
+@13 C
+$M=m_0N_A=7{,}3\cdot10^{-26}\cdot6{,}02\cdot10^{23}\approx0{,}044$ kg/mol — bu $CO_2$ ($12+2\cdot16=44$).
+
+@14 A
+>> \nu=\frac{pV}{RT}=\frac{1{,}8\cdot10^5\cdot8{,}31}{8{,}31\cdot300}=600\ \text{mol},\qquad m=1200\ \text{g}.
+Vaqt $t=1200/2=600$ s $=10$ min.
+
+@15 B
+Molekulalar soni $N=nV$, ideal gaz ichki energiyasi barcha molekulalar kinetik energiyalari yig‘indisi: $U=nV\bar E_k$.
+
+@16 D
+Normal bosim kuchi $N=2$ N, ishqalanish $\mu N=0{,}4$ N. Tekis ko‘tarish uchun $F=mg+\mu N=2+0{,}4=2{,}4$ N.
+
+@17 B
+Ketma-ket ulangan kondensatorlarda zaryadlar bir xil: $q_1=q_2=q_3$.
+
+@18 A
+>> H=\frac{I}{2\pi r}=\frac{10\pi}{4\pi}=2{,}5\ \text{A/m},\qquad B=\mu_0H=4\pi\cdot10^{-7}\cdot2{,}5=\pi\cdot10^{-6}\ \text{T}.
+
+@19 D
+Shunt ampermetrga parallel ulanadi va tokning asosiy qismini o‘tkazishi uchun uning qarshiligi ampermetrnikidan kichik bo‘ladi.
+
+@20 A
+Zaryadning saqlanish qonuni: $-5e+3e=-2e$.
+
+@21 B
+$r=\frac{mv}{qB}$; massalar va tezliklar bir xil, $q_2=2q_1$, demak $r_1=2r_2$.
+
+@22 B
+Tok «+» dan «$-$» ga, ya’ni o‘ngdan chapga oqadi; induksiya chizma tekisligidan ichkariga. Chap qo‘l qoidasiga ko‘ra Amper kuchi pastga yo‘nalgan: $F_A=BIL=0{,}1\cdot10\cdot0{,}2=0{,}2$ N. Muvozanat: $2kx=mg+F_A=0{,}1+0{,}2=0{,}3$ N,
+>> x=\frac{0{,}3}{2\cdot10}=0{,}015\ \text{m}=1{,}5\ \text{cm}.
+
+@23 A
+$I_0=q_0\omega$: $\omega=\frac{18\cdot10^{-3}}{3\cdot10^{-8}}=6\cdot10^5$ rad/s.
+>> T=\frac{2\pi}{\omega}=\frac{6}{6\cdot10^5}=10^{-5}\ \text{s}=10\ \mu\text{s}.
+
+@24 D
+$q=60\ \text{A}\cdot3600\ \text{s}=216\,000$ C.
+
+@25 D
+$j=\frac{I}{S}=\frac{U}{RS}=\frac{U}{\rho l}$ — tok zichligi kesim yuzasiga bog‘liq emas. $l_2=2l_1$ bo‘lgani uchun $j_1=2j_2$.
+
+@26 D
+$d_1=5$ cm $<F$: $\frac1{f_1}=\frac1{10}-\frac15=-\frac1{10}$ — mavhum tasvir linzadan 10 cm (buyum tomonda). $d_2=15$ cm: $\frac1{f_2}=\frac1{10}-\frac1{15}=\frac1{30}$ — haqiqiy tasvir narigi tomonda 30 cm da. Tasvir $10+30=40$ cm ga siljiydi.
+
+@27 C
+$f=\frac{dF}{d-F}=\frac{25\cdot20}{5}=100$ cm, $\Gamma=f/d=4$. Tasvir o‘qdan $4\cdot1=4$ cm uzoqlikda.
+
+@28 C
+$F=1/3$ m. $\Gamma=2$: $d=F\left(1+\frac12\right)=0{,}5$ m, $f=2d=1$ m. Buyum va tasvir orasidagi masofa $d+f=1{,}5=3/2$ m.
+
+@29 C
+Tezlatilgandan keyin kinetik energiyalar $K_\alpha=2e\Delta\varphi=2K$, $K_p=K$. $E_{0\alpha}=4E_0$:
+>> \frac{4E_0+2K}{E_0+K}=3{,}5\ \Rightarrow\ 0{,}5E_0=1{,}5K\ \Rightarrow\ \frac{K}{E_0}=\frac13.
+
+@30 A
+$E_k=\varepsilon-A=5-3=2$ eV.
+
+@31 C
+7 g $^7_3$Li — 1 mol, ya’ni $N_A$ ta yadro. Har bir yadroning bog‘lanish energiyasi $\Delta mc^2$:
+>> E=N_A\Delta mc^2=6{,}02\cdot10^{23}\cdot6{,}89\cdot10^{-29}\cdot9\cdot10^{16}\approx3{,}72\cdot10^{12}\ \text{J}=3{,}72\cdot10^6\ \text{MJ}.
+
+@32 D
+Arqon bikrligi $k=\frac{ES}{l}$, $\omega^2=\frac{k}{m}=\frac{ES}{lm}$, bundan $S=\frac{\omega^2lm}{E}$.
+
+@33 B D F
+Shunt: $I_gR_g=(I-I_g)R_s$,
+>> R_s=\frac{0{,}01\cdot99}{1-0{,}01}=1\ \Omega.
+Voltmetr: to‘liq qarshilik $R_V=U/I_g=10/0{,}01=1000\ \Omega$, qo‘shimcha qarshilik $R_q=1000-99=901\ \Omega$. Voltmetrning ichki qarshiligi $1000\ \Omega$.
+
+@36
+O‘ng tayanchga nisbatan momentlar: $N_1\cdot4=200\cdot2+600\cdot3$, $N_1=550$ N. Kuchlar muvozanati: $N_2=800-550=250$ N.
+
+@37
+Otilish nuqtasidan ko‘tarilish $v^2/2g=45$ m, eng katta balandlik $35+45=80$ m. Ko‘tarilish 3 s, 80 m dan tushish $\sqrt{2\cdot80/10}=4$ s. Jami $7$ s.
+
+@38
+>> u=\frac{m_1v}{m_1+m_2}=\frac{12}{6}=2\ \text{m/s},\qquad Q=\frac{2\cdot36}{2}-\frac{6\cdot4}{2}=36-12=24\ \text{J}.
+
+@39
+$Q_V=\frac32\nu R\Delta T=1{,}5\cdot2\cdot8{,}31\cdot50=1246{,}5$ J; $Q_p=\frac52\nu R\Delta T=2077{,}5$ J.
+
+@40
+>> 0{,}5\cdot\frac{mv^2}{2}=cm\Delta T\ \Rightarrow\ \Delta T=\frac{0{,}25v^2}{c}=\frac{0{,}25\cdot67\,600}{130}=130\ \text{K}.
+Oxirgi temperatura $27+130=157\ ^\circ$C.
+
+@41
+>> W=\frac{LI^2}{2}=\frac{0{,}2\cdot9}{2}=0{,}9\ \text{J},\qquad \mathcal E=L\frac{\Delta I}{\Delta t}=0{,}2\cdot\frac{3}{0{,}05}=12\ \text{V}.
+
+@42
+Umumiy zaryad $6-2=4$ nC teng bo‘linadi: har biriga 2 nC.
+>> F=k\frac{q^2}{r^2}=9\cdot10^9\cdot\frac{4\cdot10^{-18}}{9\cdot10^{-4}}=4\cdot10^{-5}\ \text{N}=40\ \mu\text{N}.
+
+@43
+>> \Delta x=\frac{\lambda L}{d}=\frac{5\cdot10^{-7}\cdot2}{5\cdot10^{-4}}=2\cdot10^{-3}\ \text{m}=2\ \text{mm}.
+Uchinchi yorug‘ polosa $3\Delta x=6$ mm da.
+
+@44
+$\Gamma=\frac{1{,}2}{0{,}024}=50$. $f=5{,}1$ m, $d=f/\Gamma=0{,}102$ m.
+>> F=\frac{df}{d+f}=\frac{0{,}102\cdot5{,}1}{5{,}202}=0{,}1\ \text{m}=10\ \text{cm}.
+
+@45
+>> p=\sqrt{2meU}=\sqrt{2\cdot9{,}1\cdot10^{-31}\cdot1{,}6\cdot10^{-19}\cdot150}\approx6{,}61\cdot10^{-24}\ \text{kg}\cdot\text{m/s},
+>> \lambda=\frac{h}{p}=\frac{6{,}6\cdot10^{-34}}{6{,}61\cdot10^{-24}}\approx10^{-10}\ \text{m}=0{,}1\ \text{nm}.
