@@ -57,7 +57,9 @@ def split_q(t):
     if m: qs, rest = m.group(1), (m.group(2) + " " + rest).strip()
     return " ".join(sents[:k]), qs, rest
 
-PRE = r"""\documentclass[11pt,a4paper]{article}
+PRE = r"""% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+\documentclass[11pt,a4paper]{article}
 \usepackage[margin=20mm,top=24mm,bottom=22mm]{geometry}
 \usepackage{fontspec}\setmainfont{Latin Modern Roman}\setsansfont{Latin Modern Sans}
 \usepackage{amsmath,amssymb,tikz,fancyhdr,needspace,array}
