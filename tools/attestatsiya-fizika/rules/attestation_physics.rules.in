@@ -161,6 +161,17 @@
         && exists(/databases/$(database)/documents/attestationPhysicsDailyTests/$(testId)/solutions/$(attVersionId(n)));
     }
 
+    function attQuestionsAppended(testId, o, n) {
+      return o.get('kind', 'daily') == 'daily' && n.get('kind', 'daily') == 'daily'
+        && !request.resource.data.diff(resource.data).affectedKeys()
+          .hasAny(['id', 'dayNumber', 'section', 'kind', 'publishedAt', 'publishedBy', 'solutionAvailableAt', 'archivedAt'])
+        && n.questionIds.size() > o.questionIds.size()
+        && n.questionIds.hasAll(o.questionIds)
+        && n.currentVersion == o.currentVersion + 1
+        && attVersionReady(testId, n.currentVersion)
+        && get(/databases/$(database)/documents/attestationPhysicsDailyTests/$(testId)/versions/$(attVersionId(n.currentVersion))).data.questionIds == n.questionIds;
+    }
+
     function attValidTestUpdate(testId) {
       let o = resource.data;
       let n = request.resource.data;
@@ -179,6 +190,9 @@
           && n.solutionAvailableAt is timestamp
           && (n.currentVersion == o.currentVersion
               || (n.currentVersion == o.currentVersion + 1 && attVersionReady(testId, n.currentVersion))))
+        // published KURS KUNI: YANGI SAVOLLAR QO'SHISH — faqat yangi versiya (+1) bilan, eski savollar saqlanadi (o'chirish yo'q),
+        // yangi versiya hujjatidagi ro'yxat meta bilan bir xil. Eski urinishlar o'z versiyasida qoladi (testVersion, questionCount).
+        || (o.status == 'published' && n.status == 'published' && n.published == true && attQuestionsAppended(testId, o, n))
         // ARCHIVE: yashiriladi, o'chirilmaydi
         || (o.status == 'published' && n.status == 'archived' && n.published == true && attContentUnchanged()
           && n.archivedAt == request.time && n.currentVersion == o.currentVersion
