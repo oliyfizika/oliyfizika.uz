@@ -393,6 +393,168 @@ $("[data-mock-import]").addEventListener("click", async (e) => {
   }
 });
 
+// ------------------------------------------------------------------ Kunlik testlarga yangi savollar qo'shish (yangi versiya)
+// Fayl: _private/attestatsiya-fizika/*-daily-append.json (build_kuz_daily_append.py). Har kun uchun: joriy vN o'qiladi,
+// v{N+1} = vN savollari + yangilari (oxiriga) yoziladi, keyin meta (currentVersion, questionIds, questionCount, …) yangilanadi.
+// Rules: attQuestionsAppended — faqat e'lon qilingan kurs kuni, eski savollar saqlanadi, v{N+1} ro'yxati meta bilan bir xil.
+// Eski urinishlar testVersion orqali eski versiyada qoladi. Hech narsa o'chirilmaydi; qo'shilgan kun qayta tanlansa o'tkaziladi.
+let appendBundle = null;
+const APPEND_FIG_MIME = ["image/webp", "image/png", "image/svg+xml"];
+function validateAppend(data) {
+  if (data.format !== "oliyfizika-attestation-append" || !Array.isArray(data.days) || !data.days.length) throw new Error("format");
+  const seen = new Set();
+  for (const d of data.days) {
+    if (!/^att-fizika-day-\d\d$/.test(d.testId) || !Array.isArray(d.questions) || !d.questions.length) throw new Error(`kun yozuvi: ${d.testId}`);
+    const ids = d.questions.map((q) => q.id);
+    if (ids.some((i) => !/^[A-Za-z0-9_-]+$/.test(i) || seen.has(i))) throw new Error(`${d.testId}: savol ID`);
+    ids.forEach((i) => seen.add(i));
+    if (JSON.stringify(Object.keys(d.answers || {})) !== JSON.stringify(ids)
+      || JSON.stringify((d.solutions || []).map((s) => s.id)) !== JSON.stringify(ids)) throw new Error(`${d.testId}: kalit/yechim tartibi`);
+    if (d.questions.some((q) => ["correctAnswer", "solution", "answers", "solutionResult", "bookAnswer"].some((k) => k in q))) {
+      throw new Error(`${d.testId}: savol hujjatida javob maydoni`);
+    }
+    for (const f of d.figures || []) {
+      if (!/^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$/.test(f.id) || !APPEND_FIG_MIME.includes(f.mime) || typeof f.data !== "string"
+        || !(f.bytes > 0 && f.bytes <= MOCK_FIG_MAX_BYTES)) throw new Error(`${d.testId}: rasm ${f.id}`);
+    }
+  }
+  const bad = preflightNestedArrays(data.days.map((d) => ({ path: d.testId, data: d })));
+  if (bad.length) throw nestedArrayError(bad);
+}
+
+/** Kun holati: meta + allaqachon qo'shilganmi + mavzu indekslari. */
+function appendPlanFor(d) {
+  const t = tests.find((x) => x.id === d.testId);
+  if (!t) return { error: "test topilmadi" };
+  if (isMock(t)) return { error: "mock test" };
+  const ids = d.questions.map((q) => q.id);
+  const have = ids.filter((i) => (t.questionIds || []).includes(i));
+  if (have.length === ids.length) return { t, done: true };
+  if (have.length) return { error: `qisman qo‘shilgan (${have.join(", ")})` };
+  if (t.status !== "published") return { error: `holati ${t.status} (faqat e’lon qilingan kun)` };
+  const topicIdx = d.questions.map((q) => (t.topics || []).indexOf(q.topic));
+  if (topicIdx.some((i) => i < 0)) return { error: `mavzu kun mavzulari ichida yo‘q: ${d.questions.filter((q, i) => topicIdx[i] < 0).map((q) => q.topic).join(", ")}` };
+  if ((t.questionCount || 0) + ids.length > 50) return { error: "50 savoldan oshadi" };
+  return { t, topicIdx };
+}
+
+$("[data-append-bundle]").addEventListener("change", async (e) => {
+  const info = $("[data-append-info]");
+  appendBundle = null;
+  $("[data-append-apply]").disabled = true;
+  try {
+    const data = JSON.parse(await e.target.files[0].text());
+    validateAppend(data);
+    let ready = 0;
+    const rows = [];
+    for (const d of data.days) {
+      const p = appendPlanFor(d);
+      const label = `<b>${esc(dayLabel(p.t || { dayNumber: d.dayNumber }))}</b>`;
+      if (p.error) rows.push(`<li>${label}: <b>xato — ${esc(p.error)}</b></li>`);
+      else if (p.done) rows.push(`<li>${label}: allaqachon qo‘shilgan — o‘tkaziladi</li>`);
+      else {
+        ready++;
+        const s = await attemptSummary(d.testId).catch(() => null);
+        rows.push(`<li>${label}: ${p.t.questionCount} → ${p.t.questionCount + d.questions.length} savol, v${p.t.currentVersion} → v${p.t.currentVersion + 1}`
+          + `${d.figures?.length ? ` · ${d.figures.length} rasm` : ""}${s ? ` · urinishlar ${s.total} (eski versiyada qoladi)` : ""}</li>`);
+      }
+    }
+    const errors = rows.filter((r) => r.includes("xato")).length;
+    info.innerHTML = `<p>${esc(data.source || "")}: ${data.counts?.questions ?? "?"} savol, ${data.days.length} kun · hash ${esc(data.hash || "")}`
+      + (errors ? ` — <b>${errors} ta kunda xato, hech narsa yozilmaydi</b>` : ready ? ` — ${ready} kun qo‘shishga tayyor` : " — hammasi allaqachon qo‘shilgan")
+      + `</p><ul>${rows.join("")}</ul>`;
+    if (!errors && ready) {
+      appendBundle = data;
+      $("[data-append-apply]").disabled = false;
+    }
+  } catch (err) {
+    info.textContent = `Fayl yaroqsiz (${err.message}). Hech narsa yozilmadi.`;
+  }
+});
+
+async function appendDay(d, p, progress) {
+  const { t, topicIdx } = p;
+  const n = t.currentVersion || 1;
+  const m = n + 1;
+  const base = [COL.tests, t.id];
+  const read = async (col) => {
+    const s = await getDoc(doc(fb.db, ...base, col, `v${n}`));
+    if (!s.exists()) throw new Error(`${t.id}/${col}/v${n} topilmadi`);
+    return s.data();
+  };
+  const [ver, key, sol] = [await read("versions"), await read("keys"), await read("solutions")];
+  if (JSON.stringify(ver.questionIds) !== JSON.stringify(t.questionIds)) throw new Error(`${t.id}: v${n} ro‘yxati meta bilan mos emas`);
+  const ids = [...t.questionIds, ...d.questions.map((q) => q.id)];
+  const questions = [...ver.questions, ...d.questions.map((q, i) => ({ ...q, position: ver.questions.length + i + 1 }))];
+  const docs = [
+    ["versions", { ...ver, version: m, questionIds: ids, questions }],
+    ["keys", { ...key, version: m, questionIds: [...(key.questionIds || t.questionIds), ...d.questions.map((q) => q.id)],
+      answers: { ...key.answers, ...d.answers }, scorableCount: key.scorableCount + Object.keys(d.answers).length }],
+    ["solutions", { ...sol, version: m, questionIds: ids, items: [...sol.items, ...d.solutions] }],
+  ];
+  for (const f of d.figures || []) {
+    const ref = doc(fb.db, ...base, "figures", f.id);
+    if (!(await getDoc(ref)).exists()) await setDoc(ref, { testId: t.id, id: f.id, mime: f.mime, bytes: f.bytes, data: f.data });
+  }
+  for (const [col, data] of docs) {
+    const ref = doc(fb.db, ...base, col, `v${m}`);
+    const cur = await getDoc(ref);
+    if (cur.exists()) {
+      // oldingi uzilgan urinishdan qolgan: faqat aynan shu ro'yxat bo'lsa davom etamiz (published testning v{m} sini qayta yozib bo'lmaydi)
+      if (JSON.stringify(cur.data().questionIds) !== JSON.stringify(data.questionIds)) throw new Error(`${t.id}/${col}/v${m} boshqa tarkib bilan mavjud`);
+    } else {
+      await setDoc(ref, data);
+    }
+    progress(`${dayLabel(t)}: ${col}/v${m}`);
+  }
+  const diff = { ...(t.difficulty || {}) };
+  for (const q of d.questions) diff[String(q.difficultyLevel || 2)] = (diff[String(q.difficultyLevel || 2)] || 0) + 1;
+  const parts = (t.topicParts || []).map((tp) => ({ ...tp, count: tp.count + d.questions.filter((q) => q.topic === tp.topic).length }));
+  await updateDoc(doc(fb.db, ...base), {
+    currentVersion: m,
+    questionIds: ids,
+    questionCount: ids.length,
+    questionEval: [...(t.questionEval || t.questionIds.map(() => "a")), ...d.questions.map(() => "a")],
+    questionTopicIdx: [...(t.questionTopicIdx || t.questionIds.map(() => 0)), ...topicIdx],
+    scorableCount: (t.scorableCount ?? key.scorableCount) + d.questions.length,
+    figureCount: (t.figureCount || 0) + (d.figures?.length || 0),
+    difficulty: diff,
+    topicParts: parts,
+  });
+}
+
+$("[data-append-apply]").addEventListener("click", async (e) => {
+  if (!appendBundle) return;
+  const btn = e.currentTarget;
+  const info = $("[data-append-info]");
+  const todo = appendBundle.days.map((d) => ({ d, p: appendPlanFor(d) })).filter((x) => !x.p.done && !x.p.error);
+  const ok = await confirmAction({
+    title: "Kunlik testlarga savollar qo‘shilsinmi?",
+    text: `${todo.length} ta kun yangi versiyaga o‘tadi (+${todo.reduce((s, x) => s + x.d.questions.length, 0)} savol). Eski urinishlar va ularning natijalari o‘zgarmaydi, yechim vaqti o‘zgarmaydi. Hech narsa o‘chirilmaydi.`,
+    confirmLabel: "Qo‘shish",
+  });
+  if (!ok) return;
+  btn.classList.add("is-loading");
+  btn.disabled = true;
+  let done = 0;
+  try {
+    for (const x of todo) {
+      await appendDay(x.d, x.p, (m) => { info.textContent = `Yozilmoqda… ${done}/${todo.length} · ${m}`; });
+      done++;
+    }
+    info.textContent = `Tayyor: ${done} ta kunga savollar qo‘shildi.`;
+    toast("Savollar qo‘shildi.");
+    audit("daily-append", `Kunlik testlarga savollar qo‘shildi (${appendBundle.source || ""})`, { hash: appendBundle.hash, days: done });
+    appendBundle = null;
+    await load();
+  } catch (err) {
+    info.textContent = `To‘xtadi: ${done}/${todo.length} kun — ${errorText(err, "Qo‘shish xatosi.")} Faylni qayta tanlab davom ettirish xavfsiz.`;
+    btn.disabled = false;
+  } finally {
+    btn.classList.remove("is-loading");
+  }
+});
+
 // ------------------------------------------------------------------ Yangi PULLIK mock generatori (har safar keyingi raqam: mock-03, 04, …)
 // Savollar banki Firestore'dan o'qiladi (kunlik testlarning joriy versiyasi + private/answer — faqat admin), pedagogika
 // savollari attestatsiya/pedagogika-testlari/data/test*.js dan (faqat o'qiladi). Tanlov qoidalari: mock-generator.js.

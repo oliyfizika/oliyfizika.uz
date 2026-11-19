@@ -87,6 +87,16 @@
           <p class="of-subtle" data-mock-info aria-live="polite"></p>
         </li>
         <li>
+          <p><b>Kunlik testlarga yangi savollar qo‘shish</b> — <code>_private/attestatsiya-fizika/kuz-2026-1-daily-append.json</code> (masalan, <code>build_kuz_daily_append.py</code> natijasi).
+            Har bir kunning joriy versiyasi o‘qiladi va yangi versiya (eski savollar + yangilari, oxiriga) yoziladi. Shu kunni allaqachon ishlagan foydalanuvchilarning natijasi va yechimlari eski versiyada qoladi; yangi urinishlar yangi versiyada bo‘ladi.
+            Yechim vaqti o‘zgarmaydi, hech narsa o‘chirilmaydi. Qayta tanlansa, qo‘shilgan kunlar o‘tkazib yuboriladi. Avval yangilangan Firestore Rules deploy qilingan bo‘lishi kerak.</p>
+          <div class="of-row" style="flex-wrap:wrap">
+            <label class="of-btn"><input type="file" accept="application/json,.json" data-append-bundle hidden>Faylni tanlash</label>
+            <button type="button" class="of-btn of-btn--primary" data-append-apply disabled>Savollarni qo‘shish</button>
+          </div>
+          <div class="of-subtle" data-append-info aria-live="polite"></div>
+        </li>
+        <li>
           <p><b>Yangi pullik mock test (har bosishda 1 ta, avtomatik)</b> — fayl kerak emas: savollar banki Firestore’dan, pedagogika savollari
             <code>attestatsiya/pedagogika-testlari</code> dan o‘qiladi (o‘zgartirilmaydi). Har bir mock: 50 savol = 35 fizika (5 bob × 7) + 15 pedagogika, 100 ball, 2 soat,
             faqat pullik guruh; rasmli savollarning rasmlari mock ichiga nusxalanadi. Savollar mock ichida ham, avvalgi barcha mocklar bilan ham takrorlanmaydi; raqam avtomatik davom etadi.
