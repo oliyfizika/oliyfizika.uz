@@ -1,12 +1,12 @@
 {
  "testId": "att-fizika-mock-11",
  "dayNumber": 111,
- "planHash": "ba7937ce9aa677da",
+ "planHash": "42a89cb43980698d",
  "paidOnly": true,
  "source": "Attestatsiya 2026 (kuz), 1-test",
  "composition": {
-  "fizika": 34,
-  "pedagogika": 16
+  "fizika": 35,
+  "pedagogika": 15
  },
  "pointsPerQuestion": 2,
  "maxScore": 100,
@@ -45,12 +45,12 @@
   "KZ26-1-32",
   "KZ26-1-33",
   "KZ26-1-34",
+  "AF-2-064",
   "PED-01-18",
   "PED-02-14",
   "PED-03-03",
   "PED-04-07",
   "PED-05-10",
-  "PED-06-07",
   "PED-06-12",
   "PED-07-13",
   "PED-08-01",

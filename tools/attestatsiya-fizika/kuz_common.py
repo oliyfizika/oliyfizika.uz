@@ -102,21 +102,22 @@ def sol_blocks(lines):
 def build_question(it, test_id, position, figures):
     """-> (public savol, yechim yozuvi, javob harfi). figures — {("figures", fid): doc} ga qo‘shiladi."""
     n = it["n"]
+    sid = it.get("id") or qid(n)                     # kurs bazasidan olingan savol o‘z ID sini saqlaydi
     letter = LETTERS[it["ans"]]
     qb = question_blocks(it)
     if it.get("fig"):
         fid, w, h, doc = figure_doc(test_id, it["fig"])
         figures[("figures", fid)] = doc
         qb.insert(1, {"t": "figure", "fig": it["fig"].rsplit(".", 1)[0], "id": fid, "w": w, "h": h})
-    q = OrderedDict([("id", qid(n)), ("section", it["sec"]), ("sectionTitle", SECTION_TITLES[it["sec"]]), ("topic", it["topic"]), ("type", "mcq"),
+    q = OrderedDict([("id", sid), ("section", it["sec"]), ("sectionTitle", SECTION_TITLES[it["sec"]]), ("topic", it["topic"]), ("type", "mcq"),
                      ("evaluationType", "auto"), ("difficulty", "medium"), ("difficultyLevel", 2), ("question", qb),
                      ("options", [OrderedDict([("key", LETTERS[i]), ("blocks", b2.text_blocks(o))]) for i, o in enumerate(it["opts"])]),
-                     ("optionCount", 4), ("position", position), ("bookNumber", f"KZ26-1.{n}"), ("contentVersion", 1)])
+                     ("optionCount", 4), ("position", position), ("bookNumber", f"KZ26-1.{n}" if sid == qid(n) else sid), ("contentVersion", 1)])
     sb = sol_blocks(it["sol"])
     if it.get("note"):
         sb.append({"t": "status", "kind": "source_error", "blocks": [{"t": "p", "text": it["note"]}]})   # «Manba xatosi» qutisi
     sb.append({"t": "answer", "blocks": [{"t": "p", "text": f"{letter}) {it['opts'][it['ans']]}"}]})
-    s = OrderedDict([("id", qid(n)), ("evaluationType", "auto"), ("correctAnswer", letter), ("solutionResult", letter),
+    s = OrderedDict([("id", sid), ("evaluationType", "auto"), ("correctAnswer", letter), ("solutionResult", letter),
                      ("solutionStatus", "full"), ("solution", sb)])
     return q, s, letter
 

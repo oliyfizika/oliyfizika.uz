@@ -2,7 +2,7 @@
 """
 Attestatsiya -> Fizika: MOCK TEST 11 — «Attestatsiya 2026 (kuz)» 1-testi asosida (att-fizika-mock-11, dayNumber 111).
 
-Tarkib: 50 savol = manbadagi barcha fizika savollari (PDFda 34 ta; 35-raqam bo‘sh) + qolgani pedagogika (16 ta);
+Tarkib: 50 savol = manbadagi 34 ta fizika savoli + 35-o‘ringa kurs bazasidan AF-2-064 + 15 pedagogika;
 har savol 2 ball -> 100 ball. Mexanizm mock-03…10 bilan bir xil: istalgan vaqtda 1 marta, boshlagandan 2 soat,
 kalit va yechimlar o‘z urinishi yakunlangach. Standart: pullik (paidOnly: true); --free — hamma uchun bepul.
 
