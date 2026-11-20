@@ -1,0 +1,373 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=20mm,top=24mm,bottom=22mm]{geometry}
+\usepackage{fontspec}   % standart shrift: Latin Modern (TeX Live ichida, nom bilan qidirilmaydi)
+\usepackage{xcolor}\usepackage{amsmath,amssymb,tikz,fancyhdr,needspace,array}
+\usetikzlibrary{arrows.meta,patterns}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[C]{\itshape Fizika}\fancyfoot[C]{\thepage}
+
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}\emergencystretch=3em
+\newcommand{\ball}[1]{\hfill\texttt{[#1 ball]}}
+\newcommand{\qhead}[2]{\Needspace{10\baselineskip}\noindent\textbf{#1.}\ball{#2}\par\nopagebreak}
+\newcommand{\opt}[2]{\hspace*{8mm}#1)\ #2\par}
+\newenvironment{qbody}{\begin{list}{}{\leftmargin=8mm\rightmargin=0pt\topsep=0pt\itemsep=0pt\parsep=3pt}\item\relax}{\end{list}}
+\begin{document}
+
+\begin{center}{\Large\textbf{Fizika olimpiadasi testi — yechimlar}}\end{center}\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{1}{1,7}
+\begin{qbody}
+2 kg massali jism gorizontga nisbatan $37^\circ$ burchak ostida yuqoriga yo‘nalgan 10 N kuch bilan gorizontal sirtda sudrab ketilmoqda.\par
+\textbf{Agar jism va sirt orasidagi ishqalanish koeffitsiyenti 0,2 bo‘lsa, jismning tezlanishini ($\mathrm{m/s^2}$) aniqlang.} $g=10\ \mathrm{m/s^2}$, $\sin37^\circ=0{,}6$\par
+\smallskip
+\opt{A}{3,2}
+\opt{B}{2,6}
+\opt{C}{2}
+\opt{D}{1,4}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: B) 2,6}}}\par\smallskip
+\noindent\textit{Yechim.}\ Kuchni tashkil etuvchilarga ajratamiz: $F_x=F\cos37^\circ=8$ N, $F_y=F\sin37^\circ=6$ N. Kuch jismni yuqoriga tortgani uchun sirtning reaksiya kuchi kamayadi: $N=mg-F_y=20-6=14$ N, ishqalanish kuchi $F_{ishq}=\mu N=2{,}8$ N.\par
+\[a=\frac{F_x-F_{ishq}}{m}=\frac{8-2{,}8}{2}=2{,}6\ \text{m/s}^2.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{2}{1,7}
+\begin{qbody}
+Tekis harakat qilib yaqinlashib kelayotgan dushman mashinasiga qarata gorizontga nisbatan 60$^\circ$ burchak ostida zenit raketasidan 100 m/s tezlikda o‘t ochildi.\par
+\textbf{Agar mashina o‘t ochilgandan so‘ng $10\sqrt3$ s yurgach raketa unga tekkan bo‘lsa, mashina va zenit orasidagi boshlang‘ich masofa qanday bo‘lgan (m)?} Mashina tezligi 20 m/s. g=10 m/s$^{2}$.\par
+\smallskip
+\opt{A}{$700\sqrt2$}
+\opt{B}{$500\sqrt3$}
+\opt{C}{$700\sqrt3$}
+\opt{D}{$200\sqrt3$}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: C) $700\sqrt3$}}}\par\smallskip
+\noindent\textit{Yechim.}\ Raketa tezligining tashkil etuvchilari: $v_x=100\cos60^\circ=50$ m/s, $v_y=100\sin60^\circ=50\sqrt3$ m/s. Uchish vaqti $t=2v_y/g=10\sqrt3$ s — berilgan vaqtga teng, demak raketa mashinaga yer sathida tekkan. Raketaning gorizontal yo‘li $s_1=v_xt=500\sqrt3$ m, shu vaqtda mashina raketa tomon $s_2=20\cdot10\sqrt3=200\sqrt3$ m yurgan.\par
+\[L=s_1+s_2=700\sqrt3\ \text{m}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{3}{2,4}
+\begin{qbody}
+Yerdan maksimal 100 m balandlikka chiqqan snaryad ikki bo‘lakka bo‘lindi. Birinchi bo‘lak 30 m/s tezlik bilan tik yuqoriga, ikkinchi bo‘lak esa 40 m/s tezlik bilan tik pastga harakatlandi.\par
+\textbf{3 s dan keyin snaryadlar orasidagi masofa qancha (m) bo‘lganini aniqlang.}\par
+\smallskip
+\opt{A}{145}
+\opt{B}{175}
+\opt{C}{120}
+\opt{D}{210}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: A) 145}}}\par\smallskip
+\noindent\textit{Yechim.}\ Maksimal balandlikda snaryad to‘xtagan (tik otilgan). Bo‘laklarning harakati:\par
+\[h_1(t)=100+30t-5t^2,\qquad h_2(t)=100-40t-5t^2.\]
+Ikkinchi bo‘lak yerga $100=40t+5t^2$ dan $t=2$ s da tushadi va $t=3$ s da yerda yotadi ($h_2=0$). Birinchi bo‘lak $t=3$ s da $h_1=100+90-45=145$ m balandlikda. Demak, ular orasidagi masofa $145$ m (tuzoq: $70\cdot3=210$ m — ikkinchi bo‘lak yerga tushganini hisobga olmaslik).\par\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{4}{0,9}
+\begin{qbody}
+Uzunligi 2 m, gorizont bilan hosil qilgan burchagi 37$^\circ$ bo‘lgan qiya tekislikning quyi nuqtasida jism turibdi.\par
+\textbf{Unga qanday minimal boshlang‘ich tezlik (m/s) berilsa u qiya tekislikning eng yuqori nuqtasigacha sirpanib chiqa oladi?} Jism va sirt orasidagi ishqalanish koeffitsiyenti 0,5 ga teng, g=10 m/s$^{2}$, sin37$^\circ$=0,6 deb oling.\par
+\smallskip
+\opt{A}{$\sqrt{24}$}
+\opt{B}{4}
+\opt{C}{6}
+\opt{D}{$\sqrt{40}$}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: D) $\sqrt{40}$}}}\par\smallskip
+\noindent\textit{Yechim.}\ Jism yuqoriga sirpanganda og‘irlik kuchining tashkil etuvchisi ham, ishqalanish ham uni sekinlashtiradi:\par
+\[a=g(\sin\alpha+\mu\cos\alpha)=10(0{,}6+0{,}5\cdot0{,}8)=10\ \text{m/s}^2.\]
+Tepaga yetganda tezlik nolga teng bo‘lishi uchun $v_0^2=2al$:\par
+\[v_0=\sqrt{2\cdot10\cdot2}=\sqrt{40}\ \text{m/s}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{5}{1,7}
+\begin{qbody}
+Moddiy nuqta tekislikda o‘zaro perpendikulyar bo‘lgan ikkita garmonik harakatda ishtirok etmoqda. Ularning davrlari mos holda 1 s va 2 s. t=5 s paytda moddiy nuqta muvozanat nuqtasidan o‘tdi.\par
+\textbf{Qanday t vaqtda (s) moddiy nuqta muvozanat nuqtasiga ikkinchi marta qaytib keladi?}\par
+\smallskip
+\opt{A}{17}
+\opt{B}{12}
+\opt{C}{11}
+\opt{D}{6}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: D) 6}}}\par\smallskip
+\noindent\textit{Yechim.}\ Moddiy nuqta muvozanat nuqtasida bo‘lishi uchun ikkala tebranish bir vaqtda muvozanatdan o‘tishi kerak. Davri $T_1=1$ s bo‘lgan tebranish har $0{,}5$ s da, davri $T_2=2$ s bo‘lgani har $1$ s da muvozanatdan o‘tadi. $t=5$ s dan keyin ikkalasi birgalikda har $\mathrm{EKUK}(0{,}5;\,1)=1$ s da muvozanatdan o‘tadi. Demak, keyingi (ikkinchi) marta $t=6$ s da.\par\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{6}{0,9}
+\begin{qbody}
+Bir xil elastik moddadan ikkita silindr yasalgan va gorizontal sirtga tik qo‘yilgan. Ularning ustiga bir xil massali yuklar qo‘yilganda birinchi silindr 3 mm siqilgan.\par
+\textbf{Birinchisiga nisbatan ikkinchi silindrning radiusi 2 marta, balandligi 3 marta katta bo‘lsa, ikkinchi silindrning siqilishini (mm) aniqlang.}\par
+\smallskip
+\opt{A}{9/4}
+\opt{B}{3}
+\opt{C}{4}
+\opt{D}{3/2}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: A) 9/4}}}\par\smallskip
+\noindent\textit{Yechim.}\ Guk qonuni: $\Delta l=\dfrac{Fl}{ES}$. Kuch va modda bir xil, $l_2=3l_1$, $S_2=4S_1$ (radius 2 marta katta):\par
+\[\frac{\Delta l_2}{\Delta l_1}=\frac{l_2}{l_1}\cdot\frac{S_1}{S_2}=\frac{3}{4},\qquad \Delta l_2=\frac34\cdot3=\frac94\ \text{mm}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{7}{2,4}
+\begin{qbody}
+Ideal gazga (bir atomli) avval izobarik, keyin izotermik ravishda issiqlik miqdori berildi. Bu ikki jarayonda gazning ichki energiyasi 96 kJ o‘zgardi va gaz 144 kJ ish bajardi.\par
+\textbf{Izobarik va izotermik jarayonlarda berilgan issiqlik miqdorlarining nisbati $Q_P/Q_T$ ni aniqlang.}\par
+\smallskip
+\opt{A}{1/2}
+\opt{B}{1/3}
+\opt{C}{2}
+\opt{D}{3}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: C) 2}}}\par\smallskip
+\noindent\textit{Yechim.}\ Ichki energiya faqat izobarik jarayonda o‘zgaradi (izotermikda $\Delta U=0$): $\Delta U_P=96$ kJ. Bir atomli gaz uchun izobarik jarayonda $A_P=\frac23\Delta U_P=64$ kJ, $Q_P=\Delta U_P+A_P=160$ kJ. Izotermik jarayon ishi $A_T=144-64=80$ kJ va $Q_T=A_T=80$ kJ.\par
+\[\frac{Q_P}{Q_T}=\frac{160}{80}=2.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{8}{0,9}
+\begin{qbody}
+Ikki idishda molekulalari soni teng bo‘lgan bir xil gazlar mavjud. Molekulalarning kvadratik tezligi mos ravishda: birinchi idishda 100 m/s ga, ikkinchisida esa 700 m/s ga teng.\par
+\textbf{Agar idishlar o‘zaro ulansa, molekulalar qanday qiymatdagi kvadratik tezlikka erishadi (m/s)?}\par
+\smallskip
+\opt{A}{400}
+\opt{B}{500}
+\opt{C}{600}
+\opt{D}{350}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: B) 500}}}\par\smallskip
+\noindent\textit{Yechim.}\ Gazlar bir xil, lekin kvadratik tezliklar har xil, demak idishlardagi temperaturalar har xil ($v_{kv}=\sqrt{3kT/m_0}$). Idishlar ulanganda gaz tashqi muhit bilan issiqlik almashmaydi va ish bajarmaydi, shuning uchun molekulalar ilgarilanma harakatining umumiy kinetik energiyasi saqlanadi. Har bir idishda $N$ tadan molekula bor, aralashmada esa $2N$ ta:\par
+\[N\frac{m_0v_1^2}{2}+N\frac{m_0v_2^2}{2}=2N\frac{m_0v^2}{2}\ \Rightarrow\ v=\sqrt{\frac{v_1^2+v_2^2}{2}}=\sqrt{\frac{100^2+700^2}{2}}=500\ \text{m/s}.\]
+Bu oxirgi temperatura $T=(T_1+T_2)/2$ ekanini bildiradi. Tezliklarning oddiy o‘rtachasi (400 m/s) noto‘g‘ri, chunki energiya tezlik kvadratiga proporsional.\par\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{9}{1,7}
+\begin{qbody}
+Silindrik idishda porshen ostida uch gramm bug‘ 30 $^\circ$C temperaturada turibdi. Gaz izotermik siqiladi.\par
+\textbf{Gaz hajmi (l) qanday bo‘lganda shudring tushadi?} 30 $^\circ$C da to‘yingan suv bug‘ining bosimi 4,24 kPa. $\mu$=18 g/mol.\par
+\smallskip
+\opt{A}{110}
+\opt{B}{80}
+\opt{C}{92}
+\opt{D}{99}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: D) 99}}}\par\smallskip
+\noindent\textit{Yechim.}\ Izotermik siqishda shudring bug‘ bosimi to‘yingan bug‘ bosimiga yetganda tushadi. Mendeleyev–Klapeyron tenglamasidan:\par
+\[V=\frac{m}{M}\cdot\frac{RT}{p_{t}}=\frac{3}{18}\cdot\frac{8{,}31\cdot303}{4240}\approx0{,}099\ \text{m}^3=99\ \text{l}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{10}{2,4}
+\begin{qbody}
+Ikkita radiuslari bir xil bo‘lgan sharlar mos ravishda $q$ va 2$q$ zaryadlarga ega bo‘lib, bir biridan ma’lum bir masofada joylashgan. Shunday $A$ nuqta mavjudki, bu nuqtada har ikki zaryad bir xil $\varphi$ potensial hosil qiladi.\par
+\textbf{Sharlarni bir-biriga tekkizib yana avvalgi joyiga olib borib qo‘ysak $A$ nuqtadagi natijaviy potensial qanchani tashkil etadi?}\par
+\smallskip
+\opt{A}{$\dfrac{3}{2}\varphi$}
+\opt{B}{2$\varphi$}
+\opt{C}{$\dfrac{9}{4}\varphi$}
+\opt{D}{3$\varphi$}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: C) $\dfrac{9}{4}\varphi$}}}\par\smallskip
+\noindent\textit{Yechim.}\ $A$ nuqtadan sharlargacha masofalar $r_1$ va $r_2$ bo‘lsin: $\dfrac{kq}{r_1}=\dfrac{2kq}{r_2}=\varphi$. Bir xil sharlar tekkizilganda zaryad teng bo‘linadi: har birida $1{,}5q$.\par
+\[\varphi_A=\frac{1{,}5kq}{r_1}+\frac{1{,}5kq}{r_2}=1{,}5\varphi+0{,}75\varphi=\frac94\varphi.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{11}{2,4}
+\begin{qbody}
+Tomoni $a$ bo‘lgan kvadratning uchlarida $q$, $2q$, $3q$ va $4q$ zaryadli nuqtaviy zarralar joylashgan.\par
+\textbf{Zaryadi $4q$, massasi $m$ bo‘lgan zarra bo‘shatib yuborilsa, u qanday maksimal tezlikka erishadi?}\par
+\smallskip
+\opt{A}{$\sqrt{\dfrac{8(4+\sqrt2)kq^2}{ma}}$}
+\opt{B}{$\sqrt{\dfrac{6(4+\sqrt2)kq}{ma}}$}
+\opt{C}{$\sqrt{\dfrac{8(4+\sqrt2)kq}{ma}}$}
+\opt{D}{$\sqrt{\dfrac{9kq^2}{ma}}$}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: A) $\sqrt{\dfrac{8(4+\sqrt2)kq^2}{ma}}$}}}\par\smallskip
+\noindent\textit{Yechim.}\ Qolgan zaryadlar qo‘zg‘almas. $4q$ zaryad cheksiz uzoqlashganda potensial energiyasi to‘liq kinetik energiyaga aylanadi. Kvadrat uchlarida $q,2q,3q,4q$ ketma-ket joylashgan: $4q$ ga $3q$ va $q$ qo‘shni ($a$ masofada), $2q$ esa diagonalda ($a\sqrt2$).\par
+\[W=k\cdot4q\left(\frac{q}{a}+\frac{3q}{a}+\frac{2q}{a\sqrt2}\right)=\frac{4kq^2}{a}\left(4+\sqrt2\right).\]
+\[\frac{mv^2}{2}=W\ \Rightarrow\ v=\sqrt{\frac{8(4+\sqrt2)kq^2}{ma}}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{12}{0,9}
+\begin{qbody}
+Tebranish konturidagi kondensatorning elektr zaryadi $q=0{,}13\cos(100\pi t)$ (mC) qonun bilan o‘zgaradi.\par
+\textbf{Kuzatishlar boshlangandan so‘ng qancha vaqt (ms) o‘tgach g‘altakdagi magnit maydon energiyasi birinchi marta maksimal qiymatga erishadi?}\par
+\smallskip
+\opt{A}{10}
+\opt{B}{5}
+\opt{C}{20}
+\opt{D}{15}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: B) 5}}}\par\smallskip
+\noindent\textit{Yechim.}\ Magnit maydon energiyasi tok maksimal bo‘lganda, ya’ni kondensator zaryadi nolga teng bo‘lganda maksimal bo‘ladi: $\cos(100\pi t)=0$.\par
+\[100\pi t=\frac{\pi}{2}\ \Rightarrow\ t=\frac{1}{200}\ \text{s}=5\ \text{ms}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{13}{0,9}
+\begin{qbody}
+Tok kuchi 1000 A/s tezlik bilan tekis o‘zgaruvchi tokka induktivligi 10 mH bo‘lgan g‘altak ulangan.\par
+\textbf{Tok kuchi 10 A ga yetganda g‘altak uchlariga ulangan voltmetr qanday kuchlanishni ko‘rsatadi?} Masalani tok ortayotgan hol uchun yeching. G‘altak aktiv qarshiligi 2 $\Omega$.\par
+\smallskip
+\opt{A}{15}
+\opt{B}{10}
+\opt{C}{20}
+\opt{D}{30}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: D) 30}}}\par\smallskip
+\noindent\textit{Yechim.}\ Voltmetr g‘altakdagi to‘la kuchlanishni ko‘rsatadi: aktiv qarshilikdagi kuchlanish va o‘zinduksiya EYuK iga qarshi kuchlanish.\par
+\[U=IR+L\frac{\Delta I}{\Delta t}=10\cdot2+0{,}01\cdot1000=30\ \text{V}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{14}{1,7}
+\begin{qbody}
+Quvvati 900 W bo‘lgan lazer nuri yassi plastinkaga tik tushmoqda.\par
+\textbf{Nurning 10 \%i qaytayotgan, 60 \%i plastinkadan o‘tib ketayotgan, qolgan qismi esa yutilayotgan bo‘lsa, nurning plastinkaga bosim kuchi ($\mu$N) qancha?}\par
+\smallskip
+\opt{A}{5/2}
+\opt{B}{3/2}
+\opt{C}{7/2}
+\opt{D}{2}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: B) 3/2}}}\par\smallskip
+\noindent\textit{Yechim.}\ Nur kuchi $P/c$ ga mos impuls oqimi beradi. Qaytgan qism ikki karra, yutilgan qism bir karra impuls beradi, o‘tib ketgan qism impuls bermaydi. Yutilgan ulush $1-0{,}1-0{,}6=0{,}3$.\par
+\[F=\frac{P}{c}\left(2\cdot0{,}1+0{,}3\right)=\frac{900}{3\cdot10^8}\cdot0{,}5=1{,}5\cdot10^{-6}\ \text{N}=\frac32\ \mu\text{N}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{15}{2,4}
+\begin{qbody}
+Birinchi foton vodorod atomidagi elektronning 8-energetik sathdan 7-sathga o‘tishida nurlangan. Ikkinchi foton elektronning 8- va 6-energetik sathlar orasidagi o‘tishida hosil bo‘lgan.\par
+\textbf{Ikkinchi fotonning impulsi $p$ bo‘lsa, birinchi fotonning energiyasi qanday?} $c$ - yorug‘lik tezligi.\par
+\smallskip
+\opt{A}{$\dfrac{27pc}{539}$}
+\opt{B}{$\dfrac{49pc}{149}$}
+\opt{C}{$\dfrac{135pc}{343}$}
+\opt{D}{$\dfrac{5pc}{1029}$}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: C) $\dfrac{135pc}{343}$}}}\par\smallskip
+\noindent\textit{Yechim.}\ Vodorod atomida $h\nu=E_0\left(\frac{1}{n^2}-\frac{1}{m^2}\right)$. Foton energiyalari:\par
+\[\varepsilon_1\sim\frac{1}{49}-\frac{1}{64}=\frac{15}{3136},\qquad \varepsilon_2\sim\frac{1}{36}-\frac{1}{64}=\frac{7}{576}.\]
+Ikkinchi foton energiyasi $\varepsilon_2=pc$, shuning uchun\par
+\[\varepsilon_1=pc\cdot\frac{15}{3136}\cdot\frac{576}{7}=\frac{135\,pc}{343}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{16}{0,9}
+\begin{qbody}
+Zarracha harakatlanayotganda uning to‘la impulsi 3p ga teng bo‘ldi.\par
+\textbf{Agar uning tezligi 0,6c bo‘lsa, tinchlikdagi massasini aniqlang (c yorug‘likning vakuumdagi tezligi).}\par
+\smallskip
+\opt{A}{4p/c}
+\opt{B}{3p/c}
+\opt{C}{2p/c}
+\opt{D}{5p/c}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: A) 4p/c}}}\par\smallskip
+\noindent\textit{Yechim.}\ $v=0{,}6c$ uchun $\gamma=\dfrac{1}{\sqrt{1-0{,}36}}=1{,}25$. Relyativistik impuls $p=\gamma m v$:\par
+\[3p=1{,}25\cdot m\cdot0{,}6c=0{,}75\,mc\ \Rightarrow\ m=\frac{4p}{c}.\]\par\medskip\hrule\medskip
+\noindent\begin{minipage}{\linewidth}
+\qhead{17}{2,4}
+\begin{qbody}
+Radioaktiv preparatning aktivligi $10^5$ Bq, yarim yemirilish davri 7,5 minut.\par
+\textbf{30 minut avval preparatdagi radioaktiv atomlar soni qanday bo‘lgan?} $\ln 2 = 0{,}7$\par
+\smallskip
+\opt{A}{$6{,}8\cdot10^8$}
+\opt{B}{$8{,}2\cdot10^8$}
+\opt{C}{$2{,}7\cdot10^9$}
+\opt{D}{$10{,}3\cdot10^8$}
+\end{qbody}\end{minipage}\par\vspace{2pt}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: D) $10{,}3\cdot10^8$}}}\par\smallskip
+\noindent\textit{Yechim.}\ Hozirgi atomlar soni $N=\dfrac{A}{\lambda}=\dfrac{A\,T}{\ln2}=\dfrac{10^5\cdot450}{0{,}7}\approx6{,}43\cdot10^7$. 30 minut $=4$ ta yarim yemirilish davri, ya’ni avval atomlar $2^4=16$ marta ko‘p bo‘lgan:\par
+\[N_0=16\cdot6{,}43\cdot10^7\approx10{,}3\cdot10^8.\]\par\medskip\hrule\medskip
+\qhead{18}{2,4}
+\begin{qbody}
+Oydagi tajribada 1-jism tik yuqoriga 25 m/s tezlik bilan otildi, 16 s o‘tgach 2-jism birinchisining ketidan yana shunday tezlik bilan tik otildi.\par
+\textbf{2-jism qancha vaqt (s) parvoz qilgach 1-jism bilan to‘qnashadi?} g=5/3 m/s$^{2}$\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 7}}}\par\smallskip
+\noindent\textit{Yechim.}\ 1-jism uchun $t$ vaqt, 2-jism uchun $t-16$ vaqt o‘tgan bo‘lsin ($g/2=5/6$):\par
+\[25t-\frac56t^2=25(t-16)-\frac56(t-16)^2.\]
+Soddalashtirsak: $0=-400+\frac{80}{3}t-\frac{640}{3}$, bundan $t=23$ s. 2-jism parvoz vaqti $\tau=23-16=7$ s (to‘qnashuv balandligi $\approx134$ m $>0$).\par\par\medskip\hrule\medskip
+\qhead{19}{1,7}
+\begin{qbody}
+Ikkita tosh gorizontga burchak ostida otildi: 1-tosh 22,5$^\circ$ burchak ostida 20 m/s boshlang‘ich tezlik bilan shimolga, 2-tosh esa 45$^\circ$ burchak ostida 10 m/s boshlang‘ich tezlik bilan g‘arbga.\par
+\textbf{Toshlarning yerga urilish nuqtalari orasidagi masofani toping (m).} g=10 m/s$^{2}$.\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 30}}}\par\smallskip
+\noindent\textit{Yechim.}\ Gorizontga burchak ostida otilgan jismning uchish uzoqligi $L=\dfrac{v_0^2\sin2\alpha}{g}$:\par
+\[L_1=\frac{400\cdot\sin45^\circ}{10}=20\sqrt2\ \text{m},\qquad L_2=\frac{100\cdot\sin90^\circ}{10}=10\ \text{m}.\]
+Shimol va g‘arb yo‘nalishlari o‘zaro perpendikulyar:\par
+\[d=\sqrt{L_1^2+L_2^2}=\sqrt{800+100}=30\ \text{m}.\]\par\medskip\hrule\medskip
+\qhead{20}{1,7}
+\begin{qbody}
+Massasi 40 g bo‘lgan sharcha 0,2 m amplituda va 4 s davr bilan garmonik tebranmoqda.\par
+\textbf{Tebranish muvozanat vaziyatdan boshlangan bo‘lsa, uning 11/3 s dan keyingi kinetik energiyasini (mJ) toping.} $\pi^2 \approx 10$.\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 1,5}}}\par\smallskip
+\noindent\textit{Yechim.}\ $\omega=\dfrac{2\pi}{T}=\dfrac{\pi}{2}$ rad/s, $x=A\sin\omega t$. $t=\frac{11}{3}$ s da faza $\omega t=\frac{11\pi}{6}$, $\cos\frac{11\pi}{6}=\frac{\sqrt3}{2}$.\par
+\[E_k=\frac{mA^2\omega^2}{2}\cos^2\omega t=\frac{0{,}04\cdot0{,}04\cdot\frac{\pi^2}{4}}{2}\cdot\frac34=1{,}5\cdot10^{-3}\ \text{J}=1{,}5\ \text{mJ}.\]\par\medskip\hrule\medskip
+\qhead{21}{1,7}
+\begin{qbody}
+Yuzasi 20 cm$^{2}$ bo‘lgan silindrik idish massasi 7 kg bo‘lgan porshen bilan berkitilgan.\par
+\textbf{Idishdagi gaz temperaturasi 3 marta orttirilganda, porshen dastlabki joyidan qo‘zg‘almasligi uchun uning ustiga qanday massali yuk (kg) qo‘yish kerak?} Atmosfera bosimi 100 kPa ga teng.\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 54}}}\par\smallskip
+\noindent\textit{Yechim.}\ Dastlab gaz bosimi $p_1=p_0+\dfrac{Mg}{S}=10^5+\dfrac{70}{2\cdot10^{-3}}=1{,}35\cdot10^5$ Pa. Hajm o‘zgarmaganda $T$ 3 marta ortsa, bosim ham 3 marta ortadi: $p_2=4{,}05\cdot10^5$ Pa. Qo‘shimcha yuk bosimi $\Delta p=p_2-p_1=2{,}7\cdot10^5$ Pa:\par
+\[m=\frac{\Delta p\,S}{g}=\frac{2{,}7\cdot10^5\cdot2\cdot10^{-3}}{10}=54\ \text{kg}.\]\par\medskip\hrule\medskip
+\qhead{22}{0,9}
+\begin{qbody}
+Ichida ozroq 0 $^\circ$C suvi bo‘lgan idishdagi havo so‘rib olindi. Natijada 6,6 g suv bug‘lanib, qolgani muzlab qoldi.\par
+\textbf{Hosil bo‘lgan muzning massasini toping (g).} L=2,3 MJ/kg, $\lambda$=330 kJ/kg.\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 46}}}\par\smallskip
+\noindent\textit{Yechim.}\ Bug‘lanish uchun kerak issiqlik suvning muzlashidan olinadi: $Lm_b=\lambda m_m$.\par
+\[m_m=\frac{Lm_b}{\lambda}=\frac{2{,}3\cdot10^6\cdot6{,}6\cdot10^{-3}}{3{,}3\cdot10^5}=0{,}046\ \text{kg}=46\ \text{g}.\]\par\medskip\hrule\medskip
+\qhead{23}{2,4}
+\begin{qbody}
+O‘tkazgichning uzunligi 800 m, undagi barcha erkin elektronlarning umumiy impulsi $2\cdot10^{-7}$ kg$\cdot$m/s.\par
+\textbf{O‘tkazgichdagi tok kuchi (A) topilsin.} Elektron uchun $e/m$=$1{,}76\cdot10^{11}$ C/kg.\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 44}}}\par\smallskip
+\noindent\textit{Yechim.}\ Barcha erkin elektronlar impulsi $P=Nm v$, bu yerda $N=nSl$. Tok kuchi $I=enSv=\dfrac{eNv}{l}$. Bundan $Nv=P/m$:\par
+\[I=\frac{e}{m}\cdot\frac{P}{l}=\frac{1{,}76\cdot10^{11}\cdot2\cdot10^{-7}}{800}=44\ \text{A}.\]\par\medskip\hrule\medskip
+\qhead{24}{2,4}
+\begin{qbody}
+E.Yu.K E=3,5 V va ichki qarshiligi r=1,4 $\Omega$ bo‘lgan 7 ta tok manbai o‘zaro parallel ulanib batareya hosil qilindi. Batareyaga qarshiligi R (R \textgreater{} r) bo‘lgan rezistor ulanganda 3,3 W foydali quvvat ajraldi.\par
+\textbf{Zanjirdagi to‘la tok kuchi (A) qanday?}\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 1}}}\par\smallskip
+\noindent\textit{Yechim.}\ Parallel ulangan 7 ta manba: $\mathcal E_b=3{,}5$ V, $r_b=1{,}4/7=0{,}2\ \Omega$. Foydali quvvat:\par
+\[P=\left(\frac{\mathcal E_b}{R+r_b}\right)^2R=3{,}3\ \Rightarrow\ 3{,}3R^2-10{,}93R+0{,}132=0.\]
+Ildizlar $R=3{,}3\ \Omega$ va $R\approx0{,}012\ \Omega$; shart $R>r$ bo‘yicha $R=3{,}3\ \Omega$.\par
+\[I=\frac{3{,}5}{3{,}3+0{,}2}=1\ \text{A}.\]\par\medskip\hrule\medskip
+\qhead{25}{0,9}
+\begin{qbody}
+Bir-biriga nisbatan 6 m masofada 4 m uzunlikdagi vertikal o‘rnatilgan ikki simyog‘ochga yorug‘lik kuchlari $I_1=I_2$=200 cd bo‘lgan lampalar osilgan.\par
+\textbf{Simyog‘ochlar o‘rasidagi yer yuzining yoritilganligini toping (lx).}\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 12,8}}}\par\smallskip
+\noindent\textit{Yechim.}\ Yerdagi o‘rta nuqtadan har bir lampagacha masofa $r=\sqrt{3^2+4^2}=5$ m, nurlarning tushish burchagi kosinusi $\cos i=4/5$.\par
+\[E=2\cdot\frac{I\cos i}{r^2}=2\cdot\frac{200\cdot0{,}8}{25}=12{,}8\ \text{lx}.\]\par\medskip\hrule\medskip
+\qhead{26}{1,7}
+\begin{qbody}
+Uzunligi 1 cm bo‘lgan igna fokus masofasi 3 cm bo‘lgan linzaning bosh optik o‘qiga o‘q bo‘yicha joylashtirildi.\par
+\textbf{Agar ignaning bir uchi linza old fokusidan 1 cm masofada yotgan bo‘lsa, ignaning haqiqiy tasviridagi uzunligini aniqlang (cm).}\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 4,5}}}\par\smallskip
+\noindent\textit{Yechim.}\ Ignaning bir uchi old fokusdan 1 cm narida: $d_1=4$ cm (agar u fokus bilan linza orasida bo‘lsa, ikkinchi uchi fokusga tushib, haqiqiy tasvir chiqmaydi). Ikkinchi uchi $d_2=5$ cm.\par
+\[f_1=\frac{d_1F}{d_1-F}=\frac{4\cdot3}{1}=12\ \text{cm},\qquad f_2=\frac{5\cdot3}{2}=7{,}5\ \text{cm}.\]
+Tasvir uzunligi $12-7{,}5=4{,}5$ cm.\par\par\medskip\hrule\medskip
+\qhead{27}{0,9}
+\begin{qbody}
+Quvvati 0,1 kW bo‘lgan yorug‘lik manbayi 1 s ichida 5$\cdot10^{20}$ ta foton chiqaradi.\par
+\textbf{Nurlanishning o‘rtacha to‘lqin uzunligini ($\mu$m) toping.} h=6,62$\cdot10^{-34}$ J$\cdot$s va c=3$\cdot10^{8}$ m/s.\par
+\end{qbody}
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: 0,99}}}\par\smallskip
+\noindent\textit{Yechim.}\ Bitta foton energiyasi $\varepsilon=\dfrac{P}{N}=\dfrac{100}{5\cdot10^{20}}=2\cdot10^{-19}$ J.\par
+\[\lambda=\frac{hc}{\varepsilon}=\frac{6{,}62\cdot10^{-34}\cdot3\cdot10^8}{2\cdot10^{-19}}\approx0{,}99\cdot10^{-6}\ \text{m}=0{,}99\ \mu\text{m}.\]\par\medskip\hrule\medskip
+\Needspace{14\baselineskip}\noindent\textbf{28--30.}\ Sig‘imi $C_1$=2 $\mu$F bo‘lgan kondensator 30 V kuchlanishgacha, sig‘imi $C_2$=4 $\mu$F bo‘lgan kondensator esa 15 V kuchlanishgacha zaryadlangan. Kondensatorlar rezistor va kalit orqali rasmdagidek bir xil ishorali qoplamalari bilan tutashtirildi. Kalit ulangach, zaryad qayta taqsimlanib, zanjirda tok to‘xtadi. Simlarning qarshiligini va nurlanishni hisobga olmang.\par
+\begin{center}\begin{tikzpicture}[line width=0.5pt,font=\small]
+\draw (0,0)--(0,0.85) (0,1.15)--(0,2)--(1.6,2); \draw (-0.35,0.85)--(0.35,0.85) (-0.35,1.15)--(0.35,1.15);
+\node[left] at (-0.4,1) {$C_1$}; \node at (0.6,1.35) {\scriptsize $+$}; \node at (0.6,0.65) {\scriptsize $-$};
+\draw (1.6,2)--(1.9,2.25); \fill (1.6,2) circle(1.2pt) (2.2,2) circle(1.2pt); \node[above] at (1.9,2.25) {K};
+\draw (2.2,2)--(2.8,2); \draw[fill=white] (2.8,1.85) rectangle (3.8,2.15); \node[above] at (3.3,2.15) {$R$}; \draw (3.8,2)--(4.6,2)--(4.6,1.15);
+\draw (4.6,0.85)--(4.6,0)--(0,0); \draw (4.25,0.85)--(4.95,0.85) (4.25,1.15)--(4.95,1.15);
+\node[right] at (5,1) {$C_2$}; \node at (4.0,1.35) {\scriptsize $+$}; \node at (4.0,0.65) {\scriptsize $-$};
+\end{tikzpicture}\end{center}
+\noindent Variantlar: A) 150;\quad B) 450;\quad C) 800;\quad D) 900;\quad E) 1200;\quad F) 1350 ($\mu$J)\par\medskip
+\noindent\textbf{28.}\ball{0,9}\par\nopagebreak\noindent Kalit ulanguncha birinchi kondensatorda to‘plangan elektr maydon energiyasini ($\mu$J) aniqlang.\par
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: D) 900 $\mu$J}}}\par\smallskip
+\noindent\textit{Yechim.}\ \[W_1=\frac{C_1U_1^2}{2}=\frac{2\cdot30^2}{2}=900\ \mu\text{J}.\]\par\medskip\hrule\medskip
+\noindent\textbf{29.}\ball{1,7}\par\nopagebreak\noindent Zaryad qayta taqsimlangandan so‘ng ikkinchi kondensatorning energiyasini ($\mu$J) toping.\par
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: C) 800 $\mu$J}}}\par\smallskip
+\noindent\textit{Yechim.}\ Bir xil ishorali qoplamalar ulanganda umumiy zaryad saqlanadi: $q=C_1U_1+C_2U_2=60+60=120\ \mu$C. Umumiy kuchlanish\par
+\[U=\frac{q}{C_1+C_2}=\frac{120}{6}=20\ \text{V},\qquad W_2'=\frac{C_2U^2}{2}=\frac{4\cdot400}{2}=800\ \mu\text{J}.\]\par\medskip\hrule\medskip
+\noindent\textbf{30.}\ball{2,4}\par\nopagebreak\noindent Zaryad qayta taqsimlanishi davomida rezistorda ajralib chiqqan issiqlik miqdorini ($\mu$J) toping.\par
+\noindent\colorbox{gray!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\textbf{Javob: A) 150 $\mu$J}}}\par\smallskip
+\noindent\textit{Yechim.}\ Boshlang‘ich va oxirgi energiyalar:\par
+\[W_0=900+\frac{4\cdot15^2}{2}=1350\ \mu\text{J},\qquad W=\frac{(C_1+C_2)U^2}{2}=\frac{6\cdot400}{2}=1200\ \mu\text{J}.\]
+Energiya farqi rezistorda issiqlikka aylanadi:\par
+\[Q=W_0-W=150\ \mu\text{J}.\]\par\medskip\hrule\medskip
+\end{document}

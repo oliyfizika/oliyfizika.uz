@@ -123,6 +123,17 @@ def pick(mock):
     for p in pools.values(): rng.shuffle(p)
     return pools, rng
 
+# Bankdagi xatolar (yechimlarni yozishda topildi, 2026-11-18): tanlovga ta’sir qilmaydi, faqat tanlangan savolni tuzatadi.
+FIXES = {
+    "T02-19": {"answers": ["$1933;\\ 6{,}4\\cdot10^{-24}$", "$1733;\\ 5{,}64\\cdot10^{-24}$", "$1033;\\ 6{,}44\\cdot10^{-24}$", "$193;\\ 6{,}64\\cdot10^{-24}$"]},
+    "T16-17": {"answers": ["10", "1", "2", "5"]},                     # Δt = 900m/(2m·450) = 1 °C
+    "T07-23": {"correct": 3},                                          # j = U/(ρl): j1 = 2j2
+    "Y09-30": {"text": "$^7_3$Li izotopining massa defekti 6,89$\\cdot10^{-26}$ g. Xuddi shunday izotopning 7 g massasini alohida proton va neytronlarga ajratib yuborish uchun qancha energiya (MJ) kerak bo‘ladi?",
+               "correct": 2},
+    "Y04-30": {"answers": ["$^{7}_{3}$Li atomi", "$^{7}_{4}$Be ioni", "$^{7}_{4}$Be atomi", "$^{9}_{4}$Be atomi"]},
+}
+def fix(q): return {**q, **FIXES[q["id"]]} if q["id"] in FIXES else q
+
 def build_selection():
     used_ids, used_text = set(), set()
     sel = []
@@ -137,7 +148,7 @@ def build_selection():
                     if q["id"] in used_ids or key in used_text: continue
                     im = bool(q.get("image") or q.get("images"))
                     if im and nimg >= MAX_IMG: continue
-                    nimg += im; used_ids.add(q["id"]); used_text.add(key); chosen[n] = q; break
+                    nimg += im; used_ids.add(q["id"]); used_text.add(key); chosen[n] = fix(q); break
         sel.append(chosen)
     return sel
 

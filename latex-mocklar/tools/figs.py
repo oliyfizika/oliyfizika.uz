@@ -42,13 +42,15 @@ FIG["8000273-04"] = T(r"""
 \node[above] at (1.1,0.55) {$l_1\rho_1$}; \node[above] at (3.6,0.55) {$l_2\rho_2$};""")
 
 FIG["8000273-08"] = T(r"""
-\draw (-0.6,1)--(0.3,1) (0.3,0)--(0.3,2) (4.3,0)--(4.3,2) (4.3,1)--(4.8,1);
-\draw (0.3,2)--(1.0,2); \draw[fill=white] (1.0,1.85) rectangle (1.8,2.15); \node[above] at (1.4,2.15) {$R$};
-\draw (1.8,2)--(2.2,2); \draw[fill=white] (2.2,1.85) rectangle (3.0,2.15); \node[above] at (2.6,2.15) {$R$}; \draw (3.0,2)--(4.3,2);
-\draw (0.3,1)--(1.5,1) -- (1.5,1); \draw[fill=white] (1.5,0.85) rectangle (2.5,1.15); \node[above] at (2.0,1.15) {$2R$}; \draw (2.5,1)--(4.3,1);
-\draw (0.3,0)--(1.9,0); \draw[fill=white] (1.9,-0.15) rectangle (2.7,0.15); \node[above] at (2.3,0.15) {$3R$}; \draw (2.7,0)--(4.3,0);
-\draw (4.8,1)--(5.2,1); \draw[fill=white] (5.2,0.85) rectangle (6.0,1.15); \node[above] at (5.6,1.15) {$R$};
-\draw (6.0,1)--(6.4,1); \draw[fill=white] (6.8,1) circle(0.25) node{$A$}; \draw (7.05,1)--(7.5,1);""")
+\draw (-0.6,1.2)--(0.3,1.2) (0.3,0)--(0.3,2.4) (6.2,0)--(6.2,2.0) (6.2,1.2)--(6.8,1.2);
+\draw (0.3,2.4)--(0.7,2.4); \draw[fill=white] (0.7,2.25) rectangle (1.5,2.55); \node[above] at (1.1,2.55) {$R$};
+\draw (1.5,2.4)--(1.9,2.4); \draw[fill=white] (1.9,2.25) rectangle (2.7,2.55); \node[above] at (2.3,2.55) {$R$}; \draw (2.7,2.4)--(3.1,2.4);
+\draw (0.3,1.6)--(1.3,1.6); \draw[fill=white] (1.3,1.45) rectangle (2.1,1.75); \node[above] at (1.7,1.75) {$2R$}; \draw (2.1,1.6)--(3.1,1.6);
+\draw (3.1,1.6)--(3.1,2.4); \draw (3.1,2.0)--(3.6,2.0); \draw[fill=white] (3.6,1.85) rectangle (4.4,2.15); \node[above] at (4.0,2.15) {$R$};
+\draw (4.4,2.0)--(5.0,2.0); \draw[fill=white] (5.25,2.0) circle(0.25) node{$A$}; \draw (5.5,2.0)--(6.2,2.0);
+\draw (0.3,0)--(2.85,0); \draw[fill=white] (2.85,-0.15) rectangle (3.65,0.15); \node[above] at (3.25,0.15) {$3R$}; \draw (3.65,0)--(6.2,0);
+\fill (0.3,1.2) circle(1.2pt) (6.2,1.2) circle(1.2pt) (3.1,2.0) circle(1.2pt);
+""")
 
 FIG["8000537-22"] = T(r"""
 \foreach \x/\n/\d in {0/1/1, 1.6/2/-1}{
@@ -243,9 +245,9 @@ FIG["Y07-03"] = T(r"""
 
 FIG["Y10-02"] = T(r"""
 \draw[->] (0,0)--(4.6,0) node[right]{$S,\mathrm{m}$}; \draw[->] (0,0)--(0,3.0) node[above]{$\vartheta,\mathrm{m/s}$};
-\draw[very thick] (0.8,1.5) .. controls (1.2,2.4) and (2.0,2.6) .. (3.6,2.6) ;
-\draw[dashed] (0,1.5)--(0.8,1.5)--(0.8,0) (0,2.6)--(3.6,2.6)--(3.6,0);
-\node[left] at (0,1.5) {$4$}; \node[left] at (0,2.6) {$6$}; \node[below] at (0.8,0) {$2$}; \node[below] at (3.6,0) {$4{,}5$};""")
+\draw[very thick,domain=0:3.6,samples=60] plot (\x,{0.43333*sqrt(10*\x)});
+\draw[dashed] (0,1.733)--(1.6,1.733)--(1.6,0) (0,2.6)--(3.6,2.6)--(3.6,0);
+\node[left] at (0,1.733) {$4$}; \node[left] at (0,2.6) {$6$}; \node[below] at (1.6,0) {$2$}; \node[below] at (3.6,0) {$4{,}5$};""")
 
 FIG["8000513-27"] = T(r"""
 \fill (0,0.8) circle(1.2pt) node[left]{$A$}; \draw (0,0.8)--(0.4,0.8); \draw[fill=white] (0.4,0.65) rectangle (1.2,0.95); \draw (1.2,0.8)--(1.8,0.8);

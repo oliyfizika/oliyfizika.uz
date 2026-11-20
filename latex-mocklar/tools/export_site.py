@@ -14,6 +14,7 @@ import make_mocks as mm
 import open_tasks as ot
 import mid_tasks as mt
 import open_pool as op
+import make_solutions as ms
 from figs import FIG
 
 ROOT = mm.ROOT
@@ -170,6 +171,8 @@ def build(start):
                "durationMinutes": 180, "questions": qs,
                "scoring": {"mode": "local", "maxScore": 55, "defaultRelativeTolerance": 1e-6}}
         (d / f"mock-test-{N}.json").write_text(json.dumps(src, ensure_ascii=False, indent=1), encoding="utf-8")
+        sol = ms.site_items(m, sel[m], bt, op.opens_for(m), plain)
+        if sol: (d / f"solutions-{N}.json").write_text(json.dumps({"schemaVersion": 1, "testId": f"mock-test-{N}", "items": sol}, ensure_ascii=False), encoding="utf-8")
         srcs.append((N, d))
     return srcs, tmp
 
@@ -184,7 +187,9 @@ def main():
     bundles = []
     for N, d in srcs:
         out = d / f"ms-mock-import-{N:02d}.json"
-        subprocess.run([sys.executable, str(BUILD), str(d / f"mock-test-{N}.json"), "--images-root", str(d), "--out", str(out)], check=True)
+        cmd = [sys.executable, str(BUILD), str(d / f"mock-test-{N}.json"), "--images-root", str(d), "--out", str(out)]
+        if (d / f"solutions-{N}.json").exists(): cmd += ["--solutions", str(d / f"solutions-{N}.json")]
+        subprocess.run(cmd, check=True)
         bundles.append(json.loads(out.read_text(encoding="utf-8")))
     first, last = srcs[0][0], srcs[-1][0]
     outp = Path(a.out or ROOT / "_private" / f"ms-mock-import-{first}-{last}.json")

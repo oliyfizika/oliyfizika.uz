@@ -1,0 +1,143 @@
+@1 D
+Tros avtomobilga $F=ma=2000\cdot0{,}5=1000$ N kuch beradi: $x=\frac{F}{k}=\frac{1000}{10^5}=0{,}01$ m $=1$ cm.
+
+@2 A
+$a_{max}=A\omega^2$, $v_{max}=A\omega=\frac{a_{max}}{\omega}=\frac52=2{,}5$ m/s.
+
+@3 B
+$t=\frac{2v_0}{g}=\frac{20}{10}=2$ s.
+
+@4 A
+Og‘irlik — ko‘prikka bosim kuchi, u reaksiya kuchiga teng: $N=8$ kN. Natijaviy kuch $mg-N=10-8=2$ kN (markazga intilma kuch).
+
+@5 C
+$v=v_0+gt$: har sekundda tezlik 10 m/s ga ortadi, $v(4)=35+10=45$ m/s.
+
+@6 A
+Tanga sirpanmasdan dumalaydi: pastki nuqta tezligi nol, yuqorigi nuqta tezligi $v_1$ (chizg‘ich bilan birga). Markaz tezligi ikki marta kichik: $v_2=v_1/2=5$ cm/s.
+
+@7 A
+$x=vt=5\cdot6=30$ m.
+
+@8 A
+Suzish sharti $m=\rho_s S\cdot0{,}8l$. Sterjen $y$ ga ko‘tarilganda zarur kuch $F=mg-\rho_s gS(0{,}8l-y)=\rho_s gSy$ (muvozanatda $F=0$). $y$ $0$ dan $0{,}8l$ gacha:
+>> A=\frac{\rho_s gS(0{,}8l)^2}{2}=0{,}32\,\rho_s gSl^2=0{,}32\,gl\cdot\frac{m}{0{,}8}=0{,}4mgl.
+
+@9 D
+Grafikdan: $S_1=2$ m da $v_1=4$ m/s, $S_2=4{,}5$ m da $v_2=6$ m/s. $v_2^2-v_1^2=2a(S_2-S_1)$:
+>> a=\frac{36-16}{2\cdot2{,}5}=4\ \text{m/s}^2.
+
+@10 A
+Bu kuchlar ta’sirining mustaqillik qonuni (superpozitsiya prinsipi).
+
+@11 D
+$\frac{pV}{T}=\text{const}$: $V_2=V_1\frac{p_1T_2}{p_2T_1}=V_1\cdot\frac{2}{1{,}5}=\frac43V_1$ — hajm $4/3$ marta ortgan.
+
+@12 B
+Izotermik jarayonda bug‘ massasi $\varphi V$ ga proporsional va saqlanadi:
+>> 25\cdot100+\varphi_2\cdot250=35\cdot350\ \Rightarrow\ \varphi_2=\frac{12\,250-2500}{250}=39\%.
+
+@13 C
+$\nu=N/N_A=1{,}204\cdot10^{24}/6{,}02\cdot10^{23}=2$ mol.
+
+@14 C
+Gaz bosimi $p=P/S=200$ Pa. Tashqi kuchlar ishi $A=p\Delta V=200\cdot0{,}01=2$ J.
+
+@15 B
+Bir xil temperaturada $\frac{mv^2}{2}$ bir xil, ya’ni $v\sim1/\sqrt m$. Havo molekulasi massasi $m_0=\frac{0{,}029}{6\cdot10^{23}}\approx4{,}83\cdot10^{-26}$ kg, chang zarrasi $1{,}74\cdot10^{-8}$ kg.
+>> \frac{v_h}{v_{ch}}=\sqrt{\frac{1{,}74\cdot10^{-8}}{4{,}83\cdot10^{-26}}}=\sqrt{3{,}6\cdot10^{17}}=6\cdot10^8.
+Havo molekulalari tezligi 600 mln marta katta.
+
+@16 B
+$I=\frac{\mathcal E}{R+r}=1$ A, tashqi kuchlanish $U=IR=11{,}5$ V. Zaryad $q=60\cdot3600=216\,000$ C:
+>> W=qU=216\,000\cdot11{,}5=2{,}484\cdot10^6\ \text{J}=2484\ \text{kJ}.
+
+@17 C
+$I=\frac{nE}{R+nr}\approx\frac{nE}{R}$, chunki $R\gg nr$.
+
+@18 C
+Har bir juft qarshiligi $1\ \Omega$, tashqi zanjir $3\ \Omega$; har bir juftdan $2\cdot2{,}5=5$ A o‘tadi. $\mathcal E=5(3+1)=20$ V. Bitta o‘tkazgich uzilsa, tashqi qarshilik $1+1+2=4\ \Omega$:
+>> I=\frac{20}{4+1}=4\ \text{A}.
+
+@19 A
+$F=k\frac{q_1q_2}{r^2}\sim q_1$ — kuch 3 marta ortadi.
+
+@20 B
+Konturda to‘liq energiya saqlanadi:
+>> \frac{LI_0^2}{2}=\frac{LI^2}{2}+\frac{CU^2}{2}\ \Rightarrow\ I_0^2=0{,}09+\frac{0{,}02\cdot4}{0{,}5}=0{,}25,\quad I_0=0{,}5\ \text{A}.
+
+@21 C
+$I=\frac{36}{18}=2$ A, $U_2=IR_2=24$ V.
+
+@22 A
+$U_0=\omega LI_0=100\pi\cdot0{,}025\cdot4=10\pi$ V. G‘altakda kuchlanish tokdan faza bo‘yicha $\pi/2$ ga oldinda: $u=10\pi\cos(100\pi t+\pi/2)$.
+
+@23 D
+Qoplama massasi $m=\rho hS=kjSt$, bundan $\frac{h}{jt}=\frac{k}{\rho}$. Bu birlik tok zichligida qatlam qalinligining ortish tezligi (1) va elektrokimyoviy ekvivalentning zichlikka nisbati (2).
+
+@24 B
+O‘tkazgich sirti ekvipotensial, maydon kuch chiziqlari unga tik.
+
+@25 A
+Zanjir ochiq, tok yo‘q, ichki qarshilikda kuchlanish tushmaydi: $U=\varepsilon$.
+
+@26 B
+$F=1/6$ m. $\Gamma=1/2$: $d=F(1+2)=0{,}5$ m, $f=0{,}25$ m. Masofa $d+f=0{,}75=3/4$ m.
+
+@27 B
+Mavhum tasvir: $f=-2d=-20$ cm. $\frac1F=\frac1{10}-\frac1{20}=\frac1{20}$, $F=20$ cm.
+
+@28 A
+$\Gamma=1/3$: $d=F(1+3)=60$ cm, $f=d/3=20$ cm. Masofa $60+20=80$ cm.
+
+@29 C
+Chiqish ishi $A=3-2=1$ eV. Chastota 3 marta ortsa $\varepsilon=9$ eV, $E_k=9-1=8$ eV — 4 marta ortadi.
+
+@30 A
+>> E=\frac{ma}{e}=\frac{1{,}66\cdot10^{-27}\cdot6{,}4\cdot10^{11}}{1{,}6\cdot10^{-19}}\approx6{,}64\cdot10^3\ \text{V/m}=6{,}64\ \text{kV/m}.
+
+@31 A
+$E^2=E_0^2+p^2c^2$:
+>> \frac{E}{E_0}=\sqrt{1+\left(\frac{pc}{E_0}\right)^2}=\sqrt{1+2{,}25}\approx1{,}8.
+
+@32 A
+$A=Fh=400\cdot42=16\,800$ J.
+
+@33 D A E
+O‘rta nuqtada ikkala zaryadning maydoni bir tomonga ($+q$ dan $-q$ ga) yo‘nalgan, har biri $r=3$ cm masofada:
+>> E=2\frac{kq}{r^2}=2\cdot\frac{9\cdot10^9\cdot4\cdot10^{-9}}{9\cdot10^{-4}}=8\cdot10^4\ \text{V/m}=80\ \text{kV/m}.
+Potensial $\varphi=\frac{kq}{r}-\frac{kq}{r}=0$. Kuch $F=q'E=2\cdot10^{-9}\cdot8\cdot10^4=1{,}6\cdot10^{-4}$ N $=160\ \mu$N.
+
+@36
+Tekislik bo‘ylab: $kx=mg\sin37^\circ=12$ N, $x=12/200=0{,}06$ m $=6$ cm. Normal reaksiya $N=mg\cos37^\circ=20\cdot0{,}8=16$ N.
+
+@37
+Yerga urilishda $v_y=\sqrt{2gh}=20$ m/s; $45^\circ$ da $v_x=v_y$, demak $v_0=20$ m/s. Uchish vaqti $t=2$ s, uzoqlik $L=v_0t=40$ m.
+
+@38
+Halqaning eng yuqori nuqtasida uzilmaslik sharti $v^2\ge gR$. Energiya: $mgh=mg\cdot2R+\frac{mgR}{2}$, $h=2{,}5R=1$ m.
+Eng pastki nuqtada $v^2=2gh=20$ m$^2$/s$^2$:
+>> N=m\left(g+\frac{v^2}{R}\right)=0{,}1\left(10+\frac{20}{0{,}4}\right)=6\ \text{N}.
+
+@39
+Izotermik aralashish: $p_1V_1+p_2V_2=p(V_1+V_2)$:
+>> p=\frac{300\cdot2+150\cdot4}{6}=200\ \text{kPa}.
+Birinchi idishda bosim $300/200=1{,}5$ marta kamaydi.
+
+@40
+$Q=4200\cdot0{,}5\cdot5=10{,}5$ kJ. Metall shuncha issiqlik bergan: $c\cdot0{,}5\cdot75=10\,500$, $c=280$ J/(kg$\cdot$K).
+
+@41
+$U_2=U_1\frac{N_2}{N_1}=220\cdot\frac{50}{1000}=11$ V; $I_2=11/5{,}5=2$ A. Ideal transformator: $U_1I_1=U_2I_2$, $I_1=\frac{22}{220}=0{,}1$ A.
+
+@42
+$U=Ed=2000\cdot0{,}05=100$ V ($A$ nuqta potensiali yuqori). $A=qU=3\cdot10^{-6}\cdot100=3\cdot10^{-4}$ J $=0{,}3$ mJ.
+
+@43
+$v=c/n=2\cdot10^8$ m/s; $t=\frac{d}{v}=\frac{0{,}06}{2\cdot10^8}=3\cdot10^{-10}$ s $=0{,}3$ ns. Optik yo‘l $L=nd=1{,}5\cdot6=9$ cm.
+
+@44
+$d+f=90$ cm, $f=2d$: $d=30$ cm, $f=60$ cm. $F=\frac{df}{d+f}=\frac{30\cdot60}{90}=20$ cm.
+
+@45
+$r_n=n^2r_1$: $r_2=4\cdot0{,}53\cdot10^{-10}=2{,}12\cdot10^{-10}$ m. $E_2=-13{,}6/4=-3{,}4$ eV, ionlashtirish energiyasi $3{,}4$ eV.

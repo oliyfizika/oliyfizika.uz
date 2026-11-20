@@ -1,0 +1,144 @@
+@1 B
+Teskari qarab: oxirgi sekunddagi yo‘l $a/2=4$, $a=8$ m/s$^2$. Harakat 6 s davom etgan, $v_0=at=48$ m/s. Ikkinchi sekunddagi yo‘l
+>> s_2=v_0-a\left(2-\frac12\right)=48-12=36\ \text{m}.
+
+@2 A
+Teshikdan 20 cm pastda tezlik $v^2=v_0^2+2gh=1+4=5$, $v=\sqrt5$ m/s. Uzluksizlik tenglamasi $S_0v_0=Sv$:
+>> S=\frac{S_0v_0}{v}=\frac{1\cdot1}{\sqrt5}=\frac{1}{\sqrt5}\ \text{cm}^2.
+
+@3 A
+Sharlar markazlari orasidagi masofa $6+14+4=24$ cm. Massa markazi katta shar markazidan
+>> x=\frac{m_2\cdot24}{m_1+m_2}=\frac{24\cdot24}{64}=9\ \text{cm}.
+
+@4 B
+$N=t/T=10/0{,}04=250$.
+
+@5 B
+Oltin qatlam hajmi
+>> V=\frac43\pi\left(R^3-r^3\right)=\frac43\cdot3\cdot(27-1)\cdot10^{-6}=1{,}04\cdot10^{-4}\ \text{m}^3,\qquad m=\rho V=19300\cdot1{,}04\cdot10^{-4}\approx2\ \text{kg}.
+
+@6 A
+Avval prujina $x=mg/k=1$ m ga cho‘zilib jismni yerdan uzadi (prujina energiyasi $kx^2/2=5$ J), so‘ng jism 1 m ga ko‘tariladi ($mgh=10$ J). Umumiy ish $15$ J.
+
+@7 B
+Tortish kuchi ($56$ N) maksimal tinchlikdagi ishqalanishdan katta — jism sirpanadi: $F_{ish}=\mu mg=0{,}8\cdot12=9{,}6$ N.
+
+@8 D
+$v+u=S/2$, $v-u=S/3$; oqim tezligi $u=\frac12\left(\frac S2-\frac S3\right)=\frac{S}{12}$. Motor o‘chirilganda kema oqim bilan suzadi: $t=S/u=12$ h.
+
+@9 B
+>> F=m\left(a+g\sin30^\circ+\mu g\cos30^\circ\right)=4\left(2{,}5+5+0{,}2\cdot10\cdot0{,}865\right)\approx37\ \text{N}.
+
+@10 C
+Sirpanmasdan g‘ildiragan g‘ildirak gardishidagi har bir nuqtaning yerga nisbatan tezlanishi markazga yo‘nalgan va $a=v^2/R$ ga teng. Eng yuqori nuqtada u tezlikka tik, ya’ni normal tezlanish:
+>> a_n=\frac{v^2}{R}=\frac{400}{0{,}25}=1600\ \text{m/s}^2.
+
+@11 A
+MKN asosiy tenglamasi: $p=\frac23\frac{E}{V}=\frac23\cdot\frac{3000}{0{,}01}=2\cdot10^5$ Pa.
+
+@12 B
+$v=\sqrt{3p/\rho}$. Birinchi gaz: $p/\rho=400\,000/1{,}6=2{,}5\cdot10^5$. Ikkinchi gaz: $\rho=0{,}2$ kg/m$^3$, $p/\rho=10^6$. Nisbat $\sqrt{10^6/2{,}5\cdot10^5}=2$.
+
+@13 D
+Azotning mol ulushi $x$: $28x+32(1-x)=29$, $x=3/4$, kislorodniki $1/4$. Kislorodning massa ulushi
+>> w=\frac{0{,}25\cdot32}{29}=\frac{8}{29}.
+
+@14 A
+$v\sim\sqrt T$; tezlik 2 marta kamayishi uchun $T$ 4 marta kamayishi kerak: $T_1=4\cdot200=800$ K $=527\ ^\circ$C.
+
+@15 D
+Karno siklida $\frac{Q_1}{Q_2}=\frac{T_1}{T_2}=5$, $Q_1=5\cdot36=180$ kJ.
+
+@16 A
+Hajm o‘zgarmas: $lS=\text{const}$. Uzunlik $0{,}2\%$ ga kamaysa, kesim taxminan $0{,}2\%$ ga ortadi. $R=\rho l/S\sim l^2$, demak qarshilik taxminan $0{,}4\%$ ga kamayadi.
+
+@17 A
+$i=I_0\cos\omega t$ dan $I_0=0{,}07$ A.
+
+@18 A
+Aylanish davri $T=\frac{2\pi m}{qB}$ tezlikka (energiyaga) bog‘liq emas.
+
+@19 D
+Qatlam massasi $m=\rho dS$, Faradey qonuni $m=kjSt$:
+>> t=\frac{\rho d}{kj}=\frac{10\,500\cdot10^{-5}}{1{,}118\cdot10^{-6}\cdot30}\approx3130\ \text{s}\approx52\ \text{min}
+($j=0{,}3$ A/dm$^2=30$ A/m$^2$).
+
+@20 D
+Energiyalar teng bo‘lganda $\frac{q^2}{2C}=\frac12\cdot\frac{q_0^2}{2C}$, ya’ni $q=q_0\cos\omega t=q_0/\sqrt2$, $\omega t=\pi/4$, $t=T/8$.
+
+@21 B
+Sezgirlikni 10 marta kamaytirish — o‘lchash chegarasini 10 marta oshirish: $R_{sh}=\frac{R_A}{n-1}=\frac{0{,}9}{9}=0{,}1\ \Omega$.
+
+@22 A
+>> L=\frac{\mathcal E\Delta t}{\Delta I}=\frac{0{,}4\cdot10^{-3}\cdot1{,}2}{2}=2{,}4\cdot10^{-4}\ \text{H},\qquad C=\frac{\varepsilon_0S}{d}=\frac{8{,}85\cdot10^{-12}\cdot5\cdot10^{-3}}{3\cdot10^{-3}}\approx1{,}48\cdot10^{-11}\ \text{F},
+>> \lambda=2\pi c\sqrt{LC}=6{,}28\cdot3\cdot10^8\cdot\sqrt{3{,}54\cdot10^{-15}}\approx112\ \text{m}.
+
+@23 A
+Magnit maydon g‘altak ichida ham, tashqarisida ham mavjud, energiya maydon bor bo‘lgan butun fazoda to‘plangan.
+
+@24 C
+Shunt orqali tok $I_{sh}=I_A\frac{R_A}{R_{sh}}=5I_A$, umumiy tok $6I_A$ — chegara 6 marta ortadi.
+
+@25 C
+$m=kIt$:
+>> I=\frac{m}{kt}=\frac{16\cdot10^{-3}}{1{,}118\cdot10^{-6}\cdot14\,400}\approx1\ \text{A}.
+
+@26 C
+Qiya tushishda qo‘shni tirqishlardan kelgan nurlarning yo‘l farqi $d(\sin\varphi-\sin\alpha)$ ga teng; maksimum sharti $d(\sin\varphi-\sin\alpha)=k\lambda$.
+
+@27 C
+Haqiqiy tasvir: $f=nd$, $d+f=l$, demak $d=\frac{l}{n+1}$, $f=\frac{nl}{n+1}$.
+>> F=\frac{df}{d+f}=\frac{nl}{(n+1)^2}.
+
+@28 A
+Haqiqiy tasvir uchun $d+f=9$, $f=2d$: $d=3$ cm, $f=6$ cm, $F=\frac{3\cdot6}{9}=2$ cm.
+
+@29 B
+$M=n\hbar$, $|E|\sim1/n^2$. $n_2=2n_1$ bo‘lsa, $|E_1|=4|E_2|$.
+
+@30 D
+Nisbiylik nazariyasi postulati: yorug‘lik tezligi istalgan sanoq sistemasida $c$ ga teng, shuning uchun zarraga nisbatan foton tezligi $c$.
+
+@31 B
+$\gamma=5$: $v=c\sqrt{1-\frac1{25}}=\frac{\sqrt{24}}{5}c$.
+
+@32 A
+Burchak $0$ ham, $\pi/2$ ham emas: tezlanishning tangensial tashkil etuvchisi tezlik modulini o‘zgartiradi, normal tashkil etuvchisi yo‘nalishni o‘zgartiradi. Harakat egri chiziqli notekis (tezlanuvchan).
+
+@33 B C E
+To‘la qarshilik
+>> Z=\sqrt{R^2+(X_L-X_C)^2}=\sqrt{30^2+40^2}=50\ \Omega,\qquad I=\frac{U}{Z}=2\ \text{A}.
+$U_R=IR=60$ V, aktiv quvvat $P=I^2R=4\cdot30=120$ W.
+
+@36
+$p=p_0+\rho gh=100+1030\cdot10\cdot50/1000=615$ kPa. $F=pS=615\cdot0{,}5=307{,}5$ kN.
+
+@37
+$a=\mu g=2{,}5$ m/s$^2$; $s=\frac{v^2}{2a}=\frac{100}{5}=20$ m; $t=\frac{v}{a}=4$ s.
+
+@38
+Vertikal yo‘nalishda $T\cos\alpha=mg$: $T=\frac{2}{0{,}8}=2{,}5$ N. Aylana radiusi $r=l\sin\alpha=0{,}3$ m, $\mathrm{tg}\,\alpha=\frac{v^2}{gr}$:
+>> v=\sqrt{gr\,\mathrm{tg}\,\alpha}=\sqrt{10\cdot0{,}3\cdot0{,}75}=1{,}5\ \text{m/s}.
+
+@39
+$A=p\Delta V=2\cdot10^5\cdot2\cdot10^{-3}=400$ J. Izobarik: $T_2=T_1V_2/V_1=300\cdot5/3=500$ K.
+
+@40
+$Q=4200\cdot3\cdot50=630$ kJ. $\eta qm=Q$:
+>> m=\frac{630\cdot10^3}{0{,}5\cdot30\cdot10^6}=0{,}042\ \text{kg}=42\ \text{g}.
+
+@41
+Manbadan uzilgan — zaryad o‘zgarmas: $q=CU=200\ \mu$C. Masofa 2 marta ortsa $C'=1\ \mu$F, $U'=200$ V.
+>> W'=\frac{qU'}{2}=\frac{2\cdot10^{-4}\cdot200}{2}=0{,}02\ \text{J}=20\ \text{mJ}.
+
+@42
+Sfera tashqarisida maydon nuqtaviy zaryadnikidek: $E=\frac{kq}{r^2}=\frac{9\cdot10^9\cdot2\cdot10^{-9}}{0{,}04}=450$ V/m. Sfera ichida potensial sirtdagi bilan bir xil: $\varphi=\frac{kq}{R}=\frac{18}{0{,}1}=180$ V.
+
+@43
+$E_k=\varepsilon-A=3{,}5-2=1{,}5$ eV. $\lambda_{qiz}=\frac{hc}{A}=\frac{1240}{2}=620$ nm.
+
+@44
+Yupqa prizmada og‘ish burchagi $\delta=(n_{nis}-1)\varphi$. Havoda $\delta=0{,}5\cdot6^\circ=3^\circ$. Suvda $n_{nis}=1{,}5/(4/3)=1{,}125$, $\delta=0{,}125\cdot6^\circ=0{,}75^\circ$.
+
+@45
+$8=2^3$ — 30 sutka 3 ta yarim yemirilish davri, $T=10$ sutka. $1/32=2^{-5}$ — jami 50 sutka, ya’ni yana $50-30=20$ sutka.
