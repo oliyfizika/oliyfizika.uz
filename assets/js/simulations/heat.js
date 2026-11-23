@@ -5,6 +5,9 @@
 // Fizika: heat-physics.js (entalpiya bo'yicha, Node'da tekshirilgan). Grafiklar: heat-plots.js.
 // ==========================================================================
 
+import { createHeatLab } from './heat-lab-3d.js?v=20261123-batch8d';
+import { bindLabCamera } from './lab-3d.js?v=20261123-batch8d';
+import { detailedStageHeight } from './apparatus-3d.js?v=20261123-batch8d';
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import {
@@ -13,9 +16,7 @@ import {
 import { drawMixTemps, drawMixBalance, drawHeatCurve, drawHeatStages } from "./heat-plots.js";
 
 const $ = (s) => document.querySelector(s);
-const TAU = Math.PI * 2;
 const T_ROOM = 20;
-const SMALL = "600 11px Inter, system-ui, sans-serif";
 
 /* ------------------------------------------------------------------ Ma'lumotlar */
 
@@ -158,408 +159,23 @@ function stepSim(dtReal) {
 
 /* ------------------------------------------------------------------ Ranglar */
 
-const STOPS = [[-40, [37, 99, 235]], [0, [96, 165, 250]], [20, [125, 180, 240]], [45, [244, 170, 120]], [80, [249, 115, 22]], [150, [220, 38, 38]], [700, [153, 27, 27]]];
-function tempRGB(T) {
-  if (T <= STOPS[0][0]) return STOPS[0][1];
-  for (let i = 1; i < STOPS.length; i++) {
-    if (T <= STOPS[i][0]) {
-      const [t0, a] = STOPS[i - 1], [t1, b] = STOPS[i], u = (T - t0) / (t1 - t0);
-      return a.map((v, k) => Math.round(v + (b[k] - v) * u));
-    }
-  }
-  return STOPS[STOPS.length - 1][1];
-}
-const rgba = (rgb, a) => `rgba(${rgb.join(",")},${a})`;
-const hexRGB = (hx) => [1, 3, 5].map((k) => parseInt(hx.slice(k, k + 2), 16));
 const tempTxt = (T) => `${fmt(T, Math.abs(T) < 100 ? 1 : 0)} °C`;
 const kJ = (Q) => (Math.abs(Q) >= 1e6 ? `${fmt(Q / 1e6, 2)} MJ` : Math.abs(Q) >= 1000 ? `${fmt(Q / 1000, Math.abs(Q) >= 1e5 ? 0 : 1)} kJ` : `${fmt(Q, 0)} J`);
 const kJhtml = (Q) => (Math.abs(Q) >= 1e6 ? `${fmt(Q / 1e6, 2)}<small>MJ</small>` : Math.abs(Q) >= 1000 ? `${fmt(Q / 1000, Math.abs(Q) >= 1e5 ? 0 : 1)}<small>kJ</small>` : `${fmt(Q, 0)}<small>J</small>`);
 const timeTxt = (t) => (t < 120 ? `${fmt(t, t < 10 ? 1 : 0)} s` : `${Math.floor(t / 60)} min ${String(Math.round(t % 60)).padStart(2, "0")} s`);
 
-/* ------------------------------------------------------------------ Chizish: umumiy */
+let clock = 0; // vizual vaqt; fizik vaqt mix.t / heat.t da
 
-function thermometer(ctx, c, x, yTop, yBot, T, { tMin = -30, tMax = 120 } = {}) {
-  const r = 6;
-  ctx.save();
-  ctx.lineWidth = 1.5; ctx.strokeStyle = c.borderStrong; ctx.fillStyle = c.bg;
-  ctx.beginPath(); ctx.roundRect(x - 4, yTop, 8, yBot - yTop, 4); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.arc(x, yBot + r - 2, r, 0, TAU); ctx.fillStyle = c.danger; ctx.fill();
-  const f = clamp((T - tMin) / (tMax - tMin), 0, 1);
-  ctx.fillStyle = c.danger; ctx.fillRect(x - 2, yBot - 2 - f * (yBot - yTop - 6), 4, f * (yBot - yTop - 6) + 4);
-  ctx.restore();
-}
-
-function beakerPath(ctx, x, y, w, h) {
-  ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + h - 8); ctx.quadraticCurveTo(x, y + h, x + 8, y + h); ctx.lineTo(x + w - 8, y + h); ctx.quadraticCurveTo(x + w, y + h, x + w, y + h - 8); ctx.lineTo(x + w, y);
-}
-
-function iceCube(ctx, x, y, s, alpha = 1) {
-  ctx.save(); ctx.globalAlpha = alpha;
-  ctx.fillStyle = "rgba(219,234,254,0.95)"; ctx.strokeStyle = "rgba(96,165,250,0.95)"; ctx.lineWidth = 1.4;
-  ctx.beginPath(); ctx.roundRect(x - s / 2, y - s / 2, s, s, Math.max(2, s * 0.18)); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = "rgba(255,255,255,0.9)"; ctx.beginPath(); ctx.moveTo(x - s * 0.25, y - s * 0.25); ctx.lineTo(x - s * 0.05, y - s * 0.3); ctx.stroke();
-  ctx.restore();
-}
-
-function metalBlock(ctx, c, x, y, w, h, colorHex, T) {
-  ctx.save();
-  const g = ctx.createLinearGradient(x, y, x + w, y + h);
-  const rgb = hexRGB(colorHex);
-  g.addColorStop(0, rgba(rgb.map((v) => Math.min(255, v + 50)), 1)); g.addColorStop(1, rgba(rgb, 1));
-  ctx.fillStyle = g; ctx.strokeStyle = c.text2; ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.roundRect(x, y, w, h, 3); ctx.fill(); ctx.stroke();
-  const glow = clamp((T - 60) / 300, 0, 1);
-  if (glow > 0) { ctx.fillStyle = `rgba(249,115,22,${0.55 * glow})`; ctx.fill(); }
-  ctx.restore();
-}
-
-function bubbles(ctx, x, y, w, h, n, seed, t, color) {
-  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 1.2;
-  for (let k = 0; k < n; k++) {
-    const r1 = Math.sin(seed * 12.9898 + k * 78.233) * 43758.5453, fr = r1 - Math.floor(r1);
-    const sp = 0.6 + fr * 0.8;
-    const ph = ((t * sp * 0.6 + fr) % 1);
-    const bx = x + w * (0.1 + 0.8 * ((fr * 7.3) % 1)) + Math.sin(t * 3 + k) * 3;
-    const by = y + h - ph * h;
-    ctx.beginPath(); ctx.arc(bx, by, 1.5 + fr * 2.5, 0, TAU); ctx.stroke();
-  }
-  ctx.restore();
-}
-
-function wisps(ctx, x, y, w, n, t, alpha) {
-  ctx.save(); ctx.strokeStyle = `rgba(148,163,184,${alpha})`; ctx.lineWidth = 2; ctx.lineCap = "round";
-  for (let k = 0; k < n; k++) {
-    const ph = (t * 0.35 + k / n) % 1;
-    const bx = x + (w * (k + 0.5)) / n;
-    ctx.globalAlpha = (1 - ph) * alpha;
-    ctx.beginPath();
-    for (let j = 0; j <= 12; j++) { const yy = y - ph * 40 - j * 3; const xx = bx + Math.sin(j * 0.7 + t * 2 + k) * 5; if (j === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy); }
-    ctx.stroke();
-  }
-  ctx.restore();
-}
-
-let clock = 0; // vizual animatsiya vaqti (real)
-
-/* ------------------------------------------------------------------ Chizish: kalorimetr */
-
-function drawMix(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  const narrow = w < 560;
-  const tableY = h - 22;
-  ctx.strokeStyle = c.border; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(10, tableY); ctx.lineTo(w - 10, tableY); ctx.stroke();
-
-  // Kalorimetr
-  const CW = narrow ? Math.min(170, w * 0.46) : Math.min(260, w * 0.33), CH = Math.min(h - 84, CW * 1.08);
-  const cx = narrow ? w * 0.28 : w * 0.3, x0 = cx - CW / 2, y0 = tableY - CH;
-  ctx.save();
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.roundRect(x0, y0, CW, CH, 10); ctx.fill(); ctx.stroke();
-  // izolyatsiya chiziqchalari
-  ctx.strokeStyle = c.border; ctx.lineWidth = 1;
-  for (let yy = y0 + 14; yy < tableY - 8; yy += 12) { ctx.beginPath(); ctx.moveTo(x0 + 4, yy); ctx.lineTo(x0 + 10, yy - 6); ctx.moveTo(x0 + CW - 10, yy); ctx.lineTo(x0 + CW - 4, yy - 6); ctx.stroke(); }
-  ctx.restore();
-  const ix = x0 + 16, iw = CW - 32, iy = y0 + 18, ih = CH - 30;
-  const inside = mix.started && mix.drop >= 1;
-  const bodies = mix.bodies;
-  const Tof = (b) => TOf(b.s, b.h);
-
-  // Suyuqlik hajmi
-  let vol = 0, liqT = 0, liqHeat = 0;
-  bodies.forEach((b, k) => {
-    if (b.cup) return;
-    if (!inside && k > 0) return;
-    const p = phaseOf(b.s, b.h);
-    const lm = b.m * (b.kind.branch === "solid" && !(b.sub === "water" || b.sub === "alcohol") ? 0 : p.liquid);
-    vol += lm / b.s.rho;
-    liqT += lm * b.s.cl * Tof(b); liqHeat += lm * b.s.cl;
-  });
-  const Tliq = liqHeat > 0 ? liqT / liqHeat : Tof(bodies[0]);
-  const level = clamp((vol / 0.0008) * ih, 6, ih - 6);
-  // ichki idish
-  ctx.save();
-  ctx.fillStyle = c.bg; ctx.strokeStyle = mix.cup.on ? c.text2 : c.borderStrong; ctx.lineWidth = mix.cup.on ? 3 : 1.5;
-  beakerPath(ctx, ix, iy, iw, ih); ctx.fill();
-  ctx.save(); beakerPath(ctx, ix, iy, iw, ih); ctx.clip();
-  const rgb = tempRGB(Tliq);
-  const lg = ctx.createLinearGradient(0, iy + ih - level, 0, iy + ih);
-  lg.addColorStop(0, rgba(rgb, 0.28)); lg.addColorStop(1, rgba(rgb, 0.5));
-  ctx.fillStyle = lg; ctx.fillRect(ix, iy + ih - level, iw, level);
-  ctx.strokeStyle = rgba(rgb, 0.9); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(ix, iy + ih - level); ctx.lineTo(ix + iw, iy + ih - level); ctx.stroke();
-  ctx.restore();
-  beakerPath(ctx, ix, iy, iw, ih); ctx.stroke();
-  ctx.restore();
-  const surf = iy + ih - level;
-
-  // Ichidagi jismlar (tashlangandan keyin)
-  const tags = [];
-  bodies.forEach((b, k) => {
-    if (b.cup || k === 0) return;
-    const T = Tof(b), p = phaseOf(b.s, b.h);
-    const slot = (k - 1) % 2;
-    if (!inside) return;
-    if (b.kind.metal) {
-      const bw = clamp(Math.cbrt(b.m / b.s.rho) * 1500, 20, iw * 0.4), bh = bw * 0.62;
-      const bx = ix + iw * (slot ? 0.52 : 0.2), by = iy + ih - bh - 4;
-      metalBlock(ctx, c, bx, by, bw, bh, b.cfg?.kind === "unknown" && !mix.reveal ? "#8b95a5" : b.s.color, T);
-      tags.push({ b, x: bx + bw / 2, y: by - 12 });
-    } else if (b.sub === "water" && b.kind.branch !== "liquid") {
-      const solid = 1 - p.liquid - p.vapor;
-      if (b.kind.branch === "solid" || solid > 0.002) {
-        const n = clamp(Math.round(b.m / 0.025), 1, 5);
-        const s0 = clamp(Math.cbrt(b.m / n / 917) * 700, 12, 34) * Math.cbrt(Math.max(solid, 0));
-        for (let q = 0; q < n; q++) if (s0 > 2) iceCube(ctx, ix + iw * (0.18 + 0.16 * q) + (slot ? 8 : 0), surf - s0 * 0.25 + Math.sin(clock * 1.3 + q) * 1.5, s0);
-        tags.push({ b, x: ix + iw * 0.5, y: surf - Math.max(s0, 8) - 10 });
-      }
-      if (p.vapor > 0.001 && b.kind.branch === "gas") bubbles(ctx, ix + 4, surf + 4, iw - 8, ih - level - 8, Math.round(20 * p.vapor) + 2, k, clock, "rgba(255,255,255,0.85)");
-      if (b.kind.branch === "gas") { // bug' trubkasi
-        ctx.save(); ctx.strokeStyle = c.text2; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(ix + iw * 0.82, y0 - 26); ctx.lineTo(ix + iw * 0.82, iy + ih - 14); ctx.stroke(); ctx.restore();
-        if (p.vapor > 0.001) bubbles(ctx, ix + iw * 0.74, surf, iw * 0.16, iy + ih - surf - 12, 8, 3, clock * 1.6, "rgba(255,255,255,0.9)");
-        tags.push({ b, x: ix + iw * 0.82, y: y0 - 36 });
-      }
-    } else tags.push({ b, x: ix + iw * (slot ? 0.72 : 0.3), y: surf + 18 });
-  });
-
-  // Termometr va aralashtirgich
-  const thx = ix + iw * 0.9;
-  thermometer(ctx, c, thx, y0 - 40, iy + ih - 18, Tliq);
-  ctx.save(); ctx.strokeStyle = c.text3; ctx.lineWidth = 2; const sx = ix + iw * 0.12 + Math.sin(clock * 2) * (mix.started && !mix.done ? 6 : 0);
-  ctx.beginPath(); ctx.moveTo(sx, y0 - 30); ctx.lineTo(sx, iy + ih - 12); ctx.moveTo(sx - 10, iy + ih - 12); ctx.lineTo(sx + 10, iy + ih - 12); ctx.stroke(); ctx.restore();
-  tag(ctx, `t = ${tempTxt(Tliq)}`, thx + 10, y0 - 44, { color: c.text, bg: c.bg2, align: narrow ? "right" : "left", font: "700 12px Inter, system-ui, sans-serif" });
-
-  // Stol: hali tashlanmagan jismlar (o'ngda)
-  const others = bodies.map((b, k) => ({ b, k })).filter(({ b, k }) => !b.cup && k > 0);
-  const rx0 = narrow ? w * 0.58 : w * 0.56, rw = w - rx0 - 14;
-  others.forEach(({ b, k }, j) => {
-    if (inside) return;
-    const T = Tof(b);
-    const slotW = rw / Math.max(1, others.length);
-    const home = { x: rx0 + slotW * (j + 0.5), y: tableY };
-    const target = { x: ix + iw * (j ? 0.7 : 0.35), y: surf };
-    const u = mix.started ? mix.drop : 0;
-    const ease = u * u * (3 - 2 * u);
-    const px = home.x + (target.x - home.x) * ease, py = home.y + (target.y - home.y) * ease - Math.sin(Math.PI * ease) * 40;
-    ctx.save(); ctx.globalAlpha = 1 - 0.6 * ease;
-    const sz = clamp(slotW * 0.7, 50, 120);
-    let objH = 40;
-    if (b.kind.metal) {
-      const bw = clamp(Math.cbrt(b.m / b.s.rho) * 1500, 20, sz), bh = bw * 0.62;
-      const hang = u === 0 ? (T >= 80 ? 8 : 30) : 0;
-      if (u === 0 && T >= 80) { // qaynoq suvda qizdirilgan
-        const pw = bw + 26, ph = bh + 16;
-        ctx.fillStyle = c.bg; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-        beakerPath(ctx, px - pw / 2, py - ph - 2, pw, ph); ctx.fill();
-        ctx.fillStyle = rgba(tempRGB(T), 0.35); ctx.fillRect(px - pw / 2 + 1, py - ph * 0.8, pw - 2, ph * 0.8 - 3);
-        beakerPath(ctx, px - pw / 2, py - ph - 2, pw, ph); ctx.stroke();
-        wisps(ctx, px - pw / 2, py - ph - 4, pw, 2, clock, 0.4);
-      }
-      metalBlock(ctx, c, px - bw / 2, py - bh - 2 - hang, bw, bh, b.cfg?.kind === "unknown" && !mix.reveal ? "#8b95a5" : b.s.color, T);
-      if (u === 0 && T >= 80) { ctx.fillStyle = rgba(tempRGB(T), 0.3); ctx.fillRect(px - bw / 2 - 12, py - (bh + 16) * 0.8, bw + 24, (bh + 16) * 0.8 - 3); }
-      ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(px, py - bh - 2 - hang); ctx.lineTo(px, py - bh - 40 - hang); ctx.stroke();
-      if (u === 0) { ctx.strokeStyle = c.text3; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(px + sz * 0.45, py); ctx.lineTo(px + sz * 0.45, py - bh - 44 - hang); ctx.lineTo(px - 2, py - bh - 44 - hang); ctx.stroke(); }
-      objH = bh + 46 + hang;
-    } else if (b.kind.branch === "solid") {
-      ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.beginPath(); ctx.ellipse(px, py - 4, sz * 0.5, 6, 0, 0, TAU); ctx.fill(); ctx.stroke();
-      const n = clamp(Math.round(b.m / 0.025), 1, 5);
-      for (let q = 0; q < n; q++) iceCube(ctx, px - (n - 1) * 9 + q * 18, py - 16 - (q % 2) * 8, 18);
-      objH = 36;
-    } else if (b.kind.branch === "gas") {
-      // kolba olov ustida, trubka orqali bug' chiqadi
-      const fy = py - 30;
-      ctx.fillStyle = c.bg; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-      ctx.beginPath(); ctx.arc(px, fy - 22, 22, 0, TAU); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = rgba(tempRGB(100), 0.45); ctx.beginPath(); ctx.arc(px, fy - 22, 20, 0.25, Math.PI - 0.25); ctx.fill();
-      ctx.beginPath(); ctx.moveTo(px, fy - 44); ctx.lineTo(px, fy - 64); ctx.lineTo(px - 34, fy - 64); ctx.stroke();
-      wisps(ctx, px - 44, fy - 66, 20, 2, clock, 0.6);
-      ctx.strokeStyle = c.text3; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(px - 18, fy); ctx.lineTo(px + 18, fy); ctx.moveTo(px - 14, fy); ctx.lineTo(px - 18, py); ctx.moveTo(px + 14, fy); ctx.lineTo(px + 18, py); ctx.stroke();
-      flame(ctx, px, py - 2, 0.25, c);
-      objH = 100;
-      // olov
-      flame(ctx, px, py, 0.45, c);
-    } else {
-      const bw = clamp(sz * 0.6, 34, 70), bh = bw * 1.1;
-      ctx.fillStyle = c.bg; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-      beakerPath(ctx, px - bw / 2, py - bh - 2, bw, bh); ctx.fill(); ctx.stroke();
-      const lv = bh * clamp(b.m / 0.4, 0.2, 0.85);
-      ctx.fillStyle = rgba(tempRGB(T), 0.5); ctx.fillRect(px - bw / 2 + 2, py - 4 - lv, bw - 4, lv);
-      if (T > 60) wisps(ctx, px - bw / 2, py - bh - 6, bw, 2, clock, 0.35);
-      objH = bh + 6;
-    }
-    ctx.restore();
-    if (!mix.started) tags.push({ b, x: home.x, y: tableY - objH - 18, home: true });
-  });
-  if (mix.cup.on) tags.push({ b: bodies.find((x) => x.cup), x: ix + iw / 2, y: iy + ih + 2, cup: true });
-
-  // Yorliqlar
-  tags.forEach((g) => {
-    if (!g.b) return;
-    const T = Tof(g.b);
-    const pp = phaseOf(g.b.s, g.b.h);
-    const name = g.b.cup ? "Idish" : g.b.kind.branch === "solid" && g.b.sub === "water" && pp.liquid > 0.999 ? "Muzdan hosil bo‘lgan suv" : g.b.kind.branch === "gas" && pp.vapor < 0.001 ? "Bug‘dan hosil bo‘lgan suv" : g.b.label;
-    const txt = g.home ? `${name} · ${fmt(g.b.m, 2)} kg · ${tempTxt(T)}` : `${name}: ${tempTxt(T)}`;
-    if (g.cup) { tag(ctx, txt, g.x, g.y, { color: c.text2, bg: c.bg2, align: "center", font: "600 10.5px Inter, system-ui, sans-serif" }); return; }
-    ctx.save(); ctx.font = SMALL;
-    const tw = ctx.measureText(txt).width + 12;
-    ctx.restore();
-    const x = clamp(g.x, tw / 2 + 4, w - tw / 2 - 4);
-    tag(ctx, txt, x, g.y, { color: c.text, bg: c.bg, align: "center", font: SMALL });
-    ctx.fillStyle = g.b.color; ctx.beginPath(); ctx.arc(x - tw / 2 - 1, g.y, 3.5, 0, TAU); ctx.fill();
-  });
-  // Sarlavha
-  tag(ctx, `Kalorimetr: ${bodies[0].label.toLowerCase()} ${fmt(bodies[0].m, 2)} kg`, x0 + CW / 2, y0 - (narrow ? 60 : 64), { color: c.text2, bg: c.bg, align: "center", font: "600 11px Inter, system-ui, sans-serif" });
-}
-
-function flame(ctx, x, y, size, c) {
-  if (size <= 0) return;
-  const fh = 18 + 34 * size, fw = 8 + 10 * size;
-  const fl = Math.sin(clock * 18) * 0.06 + Math.sin(clock * 11.3) * 0.05;
-  ctx.save();
-  const g = ctx.createRadialGradient(x, y - fh * 0.35, 1, x, y - fh * 0.4, fh * 0.7);
-  g.addColorStop(0, "rgba(254,240,138,0.95)"); g.addColorStop(0.5, "rgba(251,146,60,0.85)"); g.addColorStop(1, "rgba(239,68,68,0)");
-  ctx.fillStyle = g;
-  ctx.beginPath(); ctx.moveTo(x - fw / 2, y); ctx.quadraticCurveTo(x - fw * 0.7, y - fh * 0.5, x + fl * fh, y - fh * (1 + fl)); ctx.quadraticCurveTo(x + fw * 0.7, y - fh * 0.5, x + fw / 2, y); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = "rgba(96,165,250,0.7)"; ctx.beginPath(); ctx.ellipse(x, y - 3, fw * 0.3, 4, 0, 0, TAU); ctx.fill();
-  ctx.restore();
-  void c;
-}
-
-/* ------------------------------------------------------------------ Chizish: isitish */
-
-const N_P = 40;
-const parts = Array.from({ length: N_P }, (_, i) => ({ x: 0, y: 0, vx: (Math.random() - 0.5), vy: (Math.random() - 0.5), seed: Math.random() * 100, i }));
-let partsInit = false;
-
-function drawMolecules(ctx, c, bx, by, bw, bh, s, hval, dt) {
-  const T = TOf(s, hval), p = phaseOf(s, hval);
-  const nGas = Math.round(N_P * p.vapor), nLiq = Math.round(N_P * (p.liquid)), nSol = Math.max(0, N_P - nGas - nLiq);
-  const cols = 8, rows = 5, r = Math.min(bw / (cols * 3.6), bh / (rows * 4.4));
-  const site = (i) => ({ x: bx + bw / 2 + ((i % cols) - (cols - 1) / 2) * r * 2.3, y: by + bh - r * 1.6 - Math.floor(i / cols) * r * 2.3 });
-  if (!partsInit) { parts.forEach((q, i) => { const st = site(i); q.x = st.x; q.y = st.y; }); partsInit = true; }
-  const amp = 0.35 * r * Math.sqrt(Math.max(T + 273, 1) / 273);
-  const vT = 22 * Math.sqrt(Math.max(T + 273, 1) / 273);
-  ctx.save();
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.border; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 8); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.rect(bx + 1, by + 1, bw - 2, bh - 2); ctx.clip();
-  const rgb = hexRGB(s.color === "#e5e7eb" ? "#94a3b8" : s.color);
-  parts.forEach((q, i) => {
-    const mode = i < nSol ? "s" : i < nSol + nLiq ? "l" : "g";
-    if (mode === "s") {
-      const st = site(i);
-      const tx = st.x + Math.sin(clock * 9 + q.seed) * amp, ty = st.y + Math.cos(clock * 8 + q.seed * 1.7) * amp;
-      q.x += (tx - q.x) * Math.min(1, dt * 6); q.y += (ty - q.y) * Math.min(1, dt * 6);
-    } else {
-      const speed = mode === "g" ? vT * 3.2 : vT * 0.9;
-      q.vx += (Math.random() - 0.5) * (mode === "l" ? 4 : 1) * dt; q.vy += (Math.random() - 0.5) * (mode === "l" ? 4 : 1) * dt + (mode === "l" ? 0.6 * dt : 0);
-      const n = Math.hypot(q.vx, q.vy) || 1; q.vx /= n; q.vy /= n;
-      q.x += q.vx * speed * dt; q.y += q.vy * speed * dt;
-      const top = mode === "l" ? by + bh * (1 - Math.min(0.6, ((nLiq + nSol) / N_P) * 0.45 + 0.12)) : by + r * 2.2;
-      if (q.x < bx + r) { q.x = bx + r; q.vx = Math.abs(q.vx); }
-      if (q.x > bx + bw - r) { q.x = bx + bw - r; q.vx = -Math.abs(q.vx); }
-      if (q.y < top) { q.y = top; q.vy = Math.abs(q.vy); }
-      if (q.y > by + bh - r) { q.y = by + bh - r; q.vy = -Math.abs(q.vy); }
-    }
-    ctx.fillStyle = rgba(rgb, mode === "g" ? 0.55 : 0.9);
-    ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, TAU); ctx.fill();
-  });
-  ctx.restore();
-  tag(ctx, `Molekulalar · ${PHASE_NAMES[p.phase]}`, bx + 8, by + 13, { color: c.text2, bg: c.bg, font: "600 10.5px Inter, system-ui, sans-serif" });
-}
-
-let lastDraw = 0;
-function drawHeat(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  const now = performance.now(); const dt = lastDraw ? Math.min(0.05, (now - lastDraw) / 1000) : 0; lastDraw = now;
-  const narrow = w < 560;
-  const tableY = h - 22;
-  ctx.strokeStyle = c.border; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(10, tableY); ctx.lineTo(w - 10, tableY); ctx.stroke();
-  const b = heat.body, s = b.s, T = TOf(s, b.h), p = phaseOf(s, b.h);
-  const cx = narrow ? w * 0.3 : w * 0.3;
-  const VW = narrow ? Math.min(120, w * 0.34) : Math.min(210, w * 0.27), VH = Math.min(VW * 1.0, h - 170);
-  const burnerH = 56;
-  const vy = tableY - burnerH - VH - 8, vx = cx - VW / 2;
-  // shtativ
-  ctx.save(); ctx.strokeStyle = c.text3; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.moveTo(vx - 26, tableY); ctx.lineTo(vx - 26, vy - 50); ctx.moveTo(vx - 30, vy + VH + 6); ctx.lineTo(vx + VW + 12, vy + VH + 6); ctx.stroke();
-  ctx.restore();
-  // isitgich
-  const P = heaterPower();
-  if (heat.cfg.src === "electric") {
-    const pw = VW * 0.95, ph = 20, px = cx - pw / 2, py = tableY - ph - 26;
-    ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.roundRect(px, py, pw, ph, 5); ctx.fill(); ctx.stroke();
-    ctx.fillRect(cx - 14, py + ph, 28, 26); ctx.strokeRect(cx - 14, py + ph, 28, 26);
-    const glow = heat.on && heat.started ? clamp(heat.cfg.P / 2000, 0.25, 1) : 0;
-    ctx.strokeStyle = glow ? `rgba(239,68,68,${0.4 + 0.6 * glow})` : c.text3; ctx.lineWidth = 2.5;
-    ctx.beginPath(); for (let k = 0; k <= 40; k++) { const xx = px + 8 + (k / 40) * (pw - 16); const yy = py + ph / 2 + Math.sin(k * 1.2) * 4; if (k === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy); } ctx.stroke();
-    ctx.restore();
-    tag(ctx, `${fmt(heat.cfg.P, 0)} W`, cx, tableY - 12, { color: c.text2, bg: c.bg, align: "center", font: "600 10.5px Inter, system-ui, sans-serif" });
-  } else {
-    // spirt lampasi / gorelka
-    const lw = 46, lh = 30;
-    ctx.save(); ctx.fillStyle = "rgba(147,197,253,0.35)"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.ellipse(cx, tableY - lh / 2, lw / 2, lh / 2, 0, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = c.text3; ctx.fillRect(cx - 3, tableY - lh - 8, 6, 9);
-    ctx.restore();
-    if (heat.on && heat.started) flame(ctx, cx, tableY - lh - 8, clamp(heat.cfg.rate / 12, 0.2, 1.2), c);
-    tag(ctx, `${FUELS[heat.cfg.fuel].name} · ${fmt(heat.cfg.rate, 1)} g/min`, cx + lw / 2 + 6, tableY - 10, { color: c.text2, bg: c.bg, font: "600 10.5px Inter, system-ui, sans-serif" });
-  }
-  // idish
-  ctx.save(); ctx.fillStyle = c.bg; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2;
-  beakerPath(ctx, vx, vy, VW, VH); ctx.fill();
-  ctx.save(); beakerPath(ctx, vx, vy, VW, VH); ctx.clip();
-  const solid = 1 - p.liquid - p.vapor;
-  const fillMax = 0.62 * VH;
-  const liqLevel = fillMax * p.liquid * (s.amorphous ? 0.6 : 1);
-  const rgb = tempRGB(T);
-  const subRGB = hexRGB(s.color === "#e5e7eb" ? "#cbd5e1" : s.color);
-  const liqColor = s === SUB.water ? rgba(rgb, 0.45) : rgba(subRGB.map((v, k) => Math.round(v * 0.7 + rgb[k] * 0.3)), 0.65);
-  if (liqLevel > 0.5) { ctx.fillStyle = liqColor; ctx.fillRect(vx, vy + VH - liqLevel, VW, liqLevel); }
-  if (solid > 0.002 || s.amorphous && p.phase !== "liquid") {
-    const fs = s.amorphous ? (p.phase === "soft" ? 1 - p.liquid * 0.85 : p.phase === "solid" ? 1 : 0.15) : solid;
-    if (s === SUB.water) {
-      const n = 4; const sz = (VW / 4.6) * Math.cbrt(fs);
-      for (let q = 0; q < n; q++) iceCube(ctx, vx + VW * (0.2 + 0.2 * q), vy + VH - Math.max(liqLevel, 0) - sz * 0.35 + (liqLevel > sz ? sz * 0.6 : 0) + (q % 2) * -sz * 0.5, sz);
-    } else {
-      const bw = VW * 0.62 * Math.cbrt(fs), bh = VH * 0.42 * Math.cbrt(fs) * (s.amorphous ? 1 - 0.5 * (1 - fs) : 1);
-      ctx.fillStyle = rgba(subRGB, 1); ctx.strokeStyle = c.text2; ctx.lineWidth = 1.2;
-      ctx.beginPath(); ctx.roundRect(cx - bw / 2, vy + VH - bh - 2, bw, bh, s.amorphous ? Math.min(bw, bh) * 0.35 * (1 - fs + 0.2) : 3); ctx.fill(); ctx.stroke();
-      const glow = clamp((T - 150) / 500, 0, 1); if (glow > 0) { ctx.fillStyle = `rgba(249,115,22,${0.5 * glow})`; ctx.fill(); }
-    }
-  }
-  if (p.phase === "boiling") bubbles(ctx, vx + 4, vy + VH - liqLevel, VW - 8, liqLevel - 4, 22, 1, clock * 1.4, "rgba(255,255,255,0.9)");
-  else if (p.phase === "liquid" && s.tb < 1e4 && T > s.tb - 15) bubbles(ctx, vx + 4, vy + VH - liqLevel * 0.5, VW - 8, liqLevel * 0.45, 5, 2, clock, "rgba(255,255,255,0.6)");
-  ctx.restore();
-  beakerPath(ctx, vx, vy, VW, VH); ctx.stroke();
-  ctx.restore();
-  if (p.phase === "boiling" || p.phase === "gas" || (p.phase === "liquid" && s.tb < 1e4 && T > s.tb - 25)) wisps(ctx, vx, vy - 2, VW, 4, clock, p.phase === "boiling" ? 0.8 : 0.35);
-  // termometr
-  const thx = vx + VW * 0.82;
-  const tR = Math.max(heatTmax(), 110);
-  thermometer(ctx, c, thx, vy - 54, vy + VH - 14, T, { tMin: Math.min(-40, heat.cfg.t0), tMax: tR });
-  tag(ctx, `t = ${tempTxt(T)}`, thx + 10, vy - 58, { color: c.text, bg: c.bg2, font: "700 12px Inter, system-ui, sans-serif" });
-  tag(ctx, `${s.short}, ${fmt(heat.cfg.m, 2)} kg · ${PHASE_NAMES[p.phase]}${p.phase === "melting" ? ` ${Math.round(p.liquid * 100)}%` : p.phase === "boiling" ? ` ${Math.round(p.vapor * 100)}%` : ""}`, cx, vy - 74, { color: c.text2, bg: c.bg, align: "center", font: "600 11px Inter, system-ui, sans-serif" });
-
-  // molekulalar
-  const mw = narrow ? w * 0.4 : Math.min(260, w * 0.34), mh = Math.min(h - 70, mw * 0.8);
-  const mx = w - mw - 14, my = narrow ? 36 : (h - mh) / 2 - 6;
-  drawMolecules(ctx, c, mx, my, mw, mh, s, b.h, dt);
-  if (heat.done) tag(ctx, heat.doneMsg, w / 2, 14, { color: "#fff", bg: c.warning, align: "center", font: "700 11.5px Inter, system-ui, sans-serif" });
-  void P;
-}
-
+const scene = createHeatLab();
 function draw(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  ctx.fillStyle = c.bg; ctx.fillRect(0, 0, w, h);
-  if (ui.mode === "mix") { if (mix.bodies.length) drawMix(ctx, stage); }
-  else if (heat.body) drawHeat(ctx, stage);
+  if (ui.mode === 'mix' ? mix.bodies.length : heat.body) scene.draw(ctx,stage,ui,mix,heat,clock);
 }
 
 const heights = (w) => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(Math.min(w * 0.5, vh * 0.5), 280, 420)), graph: Math.round(clamp(vh * 0.27, 170, 250)) };
 };
-const stage = createStage($("#stage"), draw, { height: (w) => heights(w).stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /* ------------------------------------------------------------------ Grafik */
 
@@ -819,6 +435,33 @@ function syncHeatCtl() {
   $("[data-loss-heat]").checked = c.loss;
   $("[data-heater]").textContent = heat.on ? "Isitgichni o‘chirish (sovitish)" : "Isitgichni yoqish";
 }
+
+/* Sahnadagi fizik moslama va 360° kamera. Dastaklar slayderlar bilan bir xil parametrni boshqaradi. */
+let sceneDrag = null;
+bindLabCamera(stage.canvas, scene.lab, () => stage.render(), {
+  start(id,p) {
+    if (id === 'heater') { $('[data-heater]').click(); return; }
+    const body = /^(mass|temp)([012])$/.exec(id);
+    if (body) { const i=+body[2]; sceneDrag={id,x:p.x,value:mix.cfg[i][body[1]==='mass'?'m':'t'],i,kind:body[1]}; }
+    else sceneDrag={id,x:p.x,value:id==='power'?(heat.cfg.src==='electric'?heat.cfg.P:heat.cfg.rate):heat.cfg.m};
+  },
+  move(id,p) {
+    if (!sceneDrag || sceneDrag.id!==id) return;
+    const d=sceneDrag,dx=(p.x-d.x)/180;
+    if (d.kind) {
+      const cfg=mix.cfg[d.i],k=KINDS[cfg.kind];
+      if(d.kind==='mass'){const hi=k.branch==='gas'?.1:1;cfg.m=clamp(Math.round((d.value+dx*(hi-.01))*100)/100,.01,hi);bodyCtl[d.i].m.set(cfg.m);}
+      else {cfg.t=clamp(Math.round(d.value+dx*(k.tMax-k.tMin)),k.tMin,k.tMax);bodyCtl[d.i].t.set(cfg.t);}
+      customized();rebuild();
+    } else if(id==='massH') {heat.cfg.m=clamp(Math.round((d.value+dx*1.9)*20)/20,.1,2);hMCtl.set(heat.cfg.m);customized();rebuild();}
+    else if(id==='power') {
+      if(heat.cfg.src==='electric'){heat.cfg.P=clamp(Math.round((d.value+dx*2950)/50)*50,50,3000);hPCtl.set(heat.cfg.P);}
+      else {heat.cfg.rate=clamp(Math.round((d.value+dx*19.5)*2)/2,.5,20);hRateCtl.set(heat.cfg.rate);}
+      customized();refresh();
+    }
+  },
+  end(){sceneDrag=null;},
+});
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 
