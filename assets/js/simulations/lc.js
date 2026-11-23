@@ -1,3 +1,6 @@
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261122-detail4";
+import { createCircuitLab, circuitEnergy } from "./circuit-lab-3d.js?v=20261122-detail4";
+import { bindLabCamera } from "./lab-3d.js?v=20261122-detail4";
 // ==========================================================================
 // Elektromagnit tebranishlar va o'zgaruvchan tok — virtual laboratoriya (simulations/lc.html)
 // 1) LC kontur: kalit 1 — kondensator batareyadan zaryadlanadi, kalit 2 — kontur tebranadi (R bilan so'nadi),
@@ -36,231 +39,14 @@ function acElems() {
 const acState = () => P.acSeries(acElems(), ac.U, ac.f);
 const rsState = (f = rs.f) => P.acSeries({ R: rs.R, L: rs.L, C: rs.C }, rs.U, f);
 
-/* ------------------------------------------------------------------ Chizish yordamchilari */
-
-function wire(ctx, c, pts, w = 2.5) { ctx.save(); ctx.strokeStyle = c.text2; ctx.lineWidth = w; ctx.lineJoin = "round"; ctx.beginPath(); pts.forEach(([x, y], k) => (k ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore(); }
-function gap(ctx, c, x, y, w, h) { ctx.fillStyle = c.bg; ctx.fillRect(x - w / 2, y - h / 2, w, h); }
-function battery(ctx, c, x, y, vertical = true) {
-  gap(ctx, c, x, y, 34, 18);
-  ctx.save(); ctx.strokeStyle = c.text; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.moveTo(x - 16, y - 5); ctx.lineTo(x + 16, y - 5); ctx.stroke();
-  ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(x - 8, y + 5); ctx.lineTo(x + 8, y + 5); ctx.stroke(); ctx.restore();
-  void vertical;
-}
-function resistorV(ctx, c, x, y, len = 44, color) {
-  gap(ctx, c, x, y, 18, len); ctx.save(); ctx.strokeStyle = color || c.text; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(x, y - len / 2);
-  for (let k = 0; k <= 6; k++) ctx.lineTo(x + (k % 2 ? 7 : -7) * (k === 0 || k === 6 ? 0 : 1), y - len / 2 + (k * len) / 6); ctx.stroke(); ctx.restore();
-}
-function resistorH(ctx, c, x, y, len = 44, color) {
-  gap(ctx, c, x, y, len, 18); ctx.save(); ctx.strokeStyle = color || c.text; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(x - len / 2, y);
-  for (let k = 0; k <= 6; k++) ctx.lineTo(x - len / 2 + (k * len) / 6, y + (k % 2 ? 7 : -7) * (k === 0 || k === 6 ? 0 : 1)); ctx.stroke(); ctx.restore();
-}
-function coilV(ctx, c, x, y, len, color) {
-  gap(ctx, c, x, y, 20, len); ctx.save(); ctx.strokeStyle = color || c.text; ctx.lineWidth = 2.4; ctx.beginPath();
-  const n = 5, h = len / n; ctx.moveTo(x, y - len / 2);
-  for (let k = 0; k < n; k++) { const y0 = y - len / 2 + k * h; ctx.bezierCurveTo(x + 14, y0, x + 14, y0 + h, x, y0 + h); }
-  ctx.stroke(); ctx.restore();
-}
-function coilH(ctx, c, x, y, len, color) {
-  gap(ctx, c, x, y, len, 22); ctx.save(); ctx.strokeStyle = color || c.text; ctx.lineWidth = 2.4; ctx.beginPath();
-  const n = 5, w = len / n; ctx.moveTo(x - len / 2, y);
-  for (let k = 0; k < n; k++) { const x0 = x - len / 2 + k * w; ctx.bezierCurveTo(x0, y - 14, x0 + w, y - 14, x0 + w, y); }
-  ctx.stroke(); ctx.restore();
-}
-function capV(ctx, c, x, y, w = 34, color) { gap(ctx, c, x, y, w + 4, 14); ctx.save(); ctx.strokeStyle = color || c.text; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(x - w / 2, y - 6); ctx.lineTo(x + w / 2, y - 6); ctx.moveTo(x - w / 2, y + 6); ctx.lineTo(x + w / 2, y + 6); ctx.stroke(); ctx.restore(); }
-function capH(ctx, c, x, y, h = 34, color) { gap(ctx, c, x, y, 14, h + 4); ctx.save(); ctx.strokeStyle = color || c.text; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(x - 6, y - h / 2); ctx.lineTo(x - 6, y + h / 2); ctx.moveTo(x + 6, y - h / 2); ctx.lineTo(x + 6, y + h / 2); ctx.stroke(); ctx.restore(); }
-function generator(ctx, c, x, y, r = 22) {
-  ctx.save(); ctx.fillStyle = c.bg; ctx.strokeStyle = c.text; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); for (let k = 0; k <= 30; k++) { const t = k / 30, xx = x - r * 0.55 + t * r * 1.1, yy = y - Math.sin(t * TAU) * r * 0.3; k ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy); } ctx.stroke(); ctx.restore();
-}
-function lamp(ctx, c, x, y, b) {
-  if (b > 0.01) { const g = ctx.createRadialGradient(x, y, 2, x, y, 18 + 40 * b); g.addColorStop(0, `rgba(253,224,71,${0.9 * b})`); g.addColorStop(1, "rgba(253,224,71,0)"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 18 + 40 * b, 0, TAU); ctx.fill(); }
-  ctx.save(); ctx.fillStyle = b > 0.05 ? `rgba(254,240,138,${0.4 + 0.6 * b})` : c.bg; ctx.strokeStyle = c.text; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(x, y, 14, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(x - 10, y - 10); ctx.lineTo(x + 10, y + 10); ctx.moveTo(x + 10, y - 10); ctx.lineTo(x - 10, y + 10); ctx.stroke(); ctx.restore();
-}
-/** Siniq chiziq bo'ylab harakatlanuvchi zaryadlar (tok yo'nalishini ko'rsatadi). */
-function dotsAlong(ctx, pts, offset, color, spacing = 22) {
-  const segs = []; let L = 0;
-  for (let k = 1; k < pts.length; k++) { const l = Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]); segs.push([pts[k - 1], pts[k], L, l]); L += l; }
-  ctx.fillStyle = color;
-  for (let s = ((offset % spacing) + spacing) % spacing; s < L; s += spacing) {
-    const sg = segs.find((q) => s >= q[2] && s <= q[2] + q[3]); if (!sg) continue;
-    const t = (s - sg[2]) / sg[3]; ctx.beginPath(); ctx.arc(sg[0][0] + (sg[1][0] - sg[0][0]) * t, sg[0][1] + (sg[1][1] - sg[0][1]) * t, 2.6, 0, TAU); ctx.fill();
-  }
-}
-function bar(ctx, c, x, y, w, h, frac, color, label, value) {
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.fillRect(x, y, w, h); ctx.fillStyle = color; const hh = clamp(frac, 0, 1) * h; ctx.fillRect(x, y + h - hh, w, hh); ctx.strokeStyle = c.border; ctx.strokeRect(x, y, w, h); ctx.restore();
-  ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(label, x + w / 2, y + h + 4); ctx.fillText(value, x + w / 2, y + h + 16);
-}
-
-/* ================================================================== 1) LC kontur */
-
-const geo = {};
-function drawLC(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  const narrow = cw < 560, side = narrow ? 0 : cw * 0.34, aw = cw - side;
-  const xB = aw * 0.13, xC = aw * 0.5, xL = aw * 0.86, yT = ch * 0.2, yB = ch * 0.84, yM = (yT + yB) / 2;
-  Object.assign(geo, { xC, yT, sw: { x: xC, y: yT } });
-  const qm = qMax(), im = iMax(), qn = lc.q / qm, inn = lc.i / im;
-  const c1 = [xC - 40, yT], c2 = [xC + 40, yT];
-  // simlar
-  wire(ctx, c, [[xB, yM], [xB, yT], c1]);
-  wire(ctx, c, [[xC, yT], [xC, yB]]);
-  wire(ctx, c, [c2, [xL, yT], [xL, yB], [xB, yB], [xB, yM]]);
-  // tok zaryadlari
-  const loop2 = [[xC, yT], c2, [xL, yT], [xL, yB], [xC, yB], [xC, yT]], loop1 = [[xC, yB], [xB, yB], [xB, yT], c1, [xC, yT], [xC, yB]];
-  if (lc.sw === 2) dotsAlong(ctx, loop2, lc.dots, c.warning); else dotsAlong(ctx, loop1, lc.dots, c.warning);
-  // batareya
-  battery(ctx, c, xB, yM); tag(ctx, `ε = ${fmt(lc.E, 1)} V`, xB + 22, yM, { color: c.text2, bg: c.bg, font: SMALL });
-  // kondensator: maydon chiziqlari va zaryadlar
-  const pw = 54;
-  ctx.save(); ctx.strokeStyle = `rgba(37,99,235,${0.15 + 0.6 * Math.abs(qn)})`; ctx.lineWidth = 1.2;
-  if (Math.abs(qn) > 0.03) for (let k = -2; k <= 2; k++) { const x = xC + k * 9; ctx.beginPath(); ctx.moveTo(x, yM - 9); ctx.lineTo(x, yM + 9); ctx.stroke(); }
-  ctx.restore();
-  capV(ctx, c, xC, yM, pw);
-  const nq = Math.round(Math.abs(qn) * 6);
-  ctx.font = "700 11px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  for (let k = 0; k < nq; k++) { const x = xC - pw / 2 + 5 + (k * (pw - 10)) / 5; ctx.fillStyle = qn > 0 ? RED : BLUE; ctx.fillText(qn > 0 ? "+" : "−", x, yM - 14); ctx.fillStyle = qn > 0 ? BLUE : RED; ctx.fillText(qn > 0 ? "−" : "+", x, yM + 15); }
-  tag(ctx, "C", xC - pw / 2 - 14, yM, { color: c.text2, bg: c.bg, align: "center", font: MID });
-  // g'altak va magnit maydoni
-  const coilLen = (yB - yT) * 0.42;
-  if (Math.abs(inn) > 0.03) { ctx.save(); ctx.strokeStyle = `rgba(239,68,68,${0.15 + 0.6 * Math.abs(inn)})`; ctx.lineWidth = 1.3; for (let k = 1; k <= 3; k++) { ctx.beginPath(); ctx.ellipse(xL + 7, yM, 10 + k * 8, coilLen * (0.55 + 0.12 * k), 0, 0, TAU); ctx.stroke(); } ctx.restore(); }
-  coilV(ctx, c, xL, yM, coilLen);
-  if (Math.abs(inn) > 0.05) tag(ctx, `B ${inn > 0 ? "↑" : "↓"}`, Math.min(xL + 30, cw - 30), yM - coilLen / 2 - 6, { color: RED, bg: c.bg, font: MID });
-  tag(ctx, "L", xL - 16, yM, { color: c.text2, bg: c.bg, align: "center", font: MID });
-  // qarshilik (pastki simda)
-  if (lc.R > 0) { resistorH(ctx, c, (xC + xL) / 2, yB, 44); tag(ctx, `R = ${fmt(lc.R, 0)} Om`, (xC + xL) / 2, yB + 18, { color: c.text2, bg: c.bg, align: "center", font: SMALL }); }
-  // kalit
-  [c1, c2].forEach(([x, y], k) => { ctx.fillStyle = c.bg; ctx.strokeStyle = c.text; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 4, 0, TAU); ctx.fill(); ctx.stroke(); tag(ctx, String(k + 1), x, y - 16, { color: c.text2, bg: c.bg, align: "center", font: SMALL }); });
-  const tgt = lc.sw === 1 ? c1 : c2;
-  ctx.save(); ctx.strokeStyle = c.warning; ctx.lineWidth = 4; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(xC, yT); ctx.lineTo(tgt[0], tgt[1] - 3); ctx.stroke();
-  ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(xC, yT, 6, 0, TAU); ctx.fill(); ctx.restore();
-  tag(ctx, "kalit (bosing)", xC, yT - 18, { color: c.warning, bg: c.bg, align: "center", font: SMALL });
-  // yon panel: energiya ustunlari va mexanik o'xshashlik
-  const E0 = (qm * qm) / (2 * lc.C), en = P.energies(lc, lc.L, lc.C);
-  if (!narrow) {
-    const bx = aw + 12, bw = 26, by = 22, bh = ch * (ui.show.mech ? 0.36 : 0.6);
-    bar(ctx, c, bx, by, bw, bh, en.WE / E0, BLUE, "W_E", `${fmt(en.WE * 1e3, 1)}`);
-    bar(ctx, c, bx + 40, by, bw, bh, en.WM / E0, RED, "W_M", `${fmt(en.WM * 1e3, 1)}`);
-    bar(ctx, c, bx + 80, by, bw, bh, lc.heat / E0, "#f59e0b", "issiqlik", `${fmt(lc.heat * 1e3, 1)}`);
-    tag(ctx, "Energiya, mJ", bx + 120, by + 6, { color: c.text2, bg: c.bg, font: SMALL });
-    if (ui.show.mech) {
-      // prujinali mayatnik: x ∝ q, v ∝ i
-      const my = ch * 0.8, mx0 = aw + 14, mx1 = cw - 14, eq = (mx0 + mx1) / 2 + 10, A = (mx1 - mx0) * 0.24, x = eq + A * qn;
-      ctx.strokeStyle = c.text3; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(mx0, my - 22); ctx.lineTo(mx0, my + 18); ctx.moveTo(mx0, my + 18); ctx.lineTo(mx1, my + 18); ctx.stroke();
-      ctx.strokeStyle = c.text2; ctx.lineWidth = 1.8; ctx.beginPath(); ctx.moveTo(mx0, my); const coils = 10;
-      for (let k = 1; k <= coils * 2; k++) ctx.lineTo(mx0 + ((x - 16 - mx0) * k) / (coils * 2), my + (k % 2 ? -7 : 7));
-      ctx.lineTo(x - 16, my); ctx.stroke();
-      ctx.fillStyle = c.primary; ctx.fillRect(x - 16, my - 15, 32, 32);
-      ctx.strokeStyle = c.text3; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(eq, my - 26); ctx.lineTo(eq, my + 18); ctx.stroke(); ctx.setLineDash([]);
-      if (lc.R > 0) tag(ctx, "ishqalanish ↔ R", (mx0 + mx1) / 2, my + 32, { color: c.text3, bg: c.bg, align: "center", font: SMALL });
-      tag(ctx, "Mexanik o‘xshashlik: x ↔ q, v ↔ i, k ↔ 1/C, m ↔ L", (mx0 + mx1) / 2, my - 40, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
-    }
-  }
-  tag(ctx, `T = ${fmt(Tlc() * 1000, 1)} ms · vaqt ${fmt(1 / ui.speed, 0)} marta sekin`, 10, 14, { color: c.text, bg: c.bg2, font: SMALL });
-}
-
-/* ================================================================== 2) O'zgaruvchan tok */
-
-function drawPhasors(ctx, c, cx, cy, R0, st, U, theta, rlc) {
-  ctx.save(); ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.arc(cx, cy, R0, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
-  ctx.beginPath(); ctx.moveTo(cx - R0 - 8, cy); ctx.lineTo(cx + R0 + 8, cy); ctx.moveTo(cx, cy - R0 - 8); ctx.lineTo(cx, cy + R0 + 8); ctx.stroke(); ctx.restore();
-  const vec = (x0, y0, len, ang, col, lab, w = 3) => {
-    const x1 = x0 + len * Math.cos(ang), y1 = y0 - len * Math.sin(ang);
-    ctx.save(); ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
-    if (len > 6) { const hd = 9, a = Math.atan2(y1 - y0, x1 - x0); ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x1 - hd * Math.cos(a - 0.4), y1 - hd * Math.sin(a - 0.4)); ctx.lineTo(x1 - hd * Math.cos(a + 0.4), y1 - hd * Math.sin(a + 0.4)); ctx.closePath(); ctx.fill(); }
-    ctx.restore();
-    if (lab) tag(ctx, lab, x1 + 10 * Math.cos(ang), y1 - 10 * Math.sin(ang), { color: col, bg: c.bg, align: "center", font: "italic 700 11px Inter, system-ui, sans-serif", pad: 4 });
-    return [x1, y1];
-  };
-  const k = R0 / U, aI = theta - st.phi, Ilen = R0 * 0.75;
-  if (rlc) {
-    let [x, y] = vec(cx, cy, st.UR * k, aI, c.text2, st.UR * k > 18 ? "U_R" : "", 2.5);
-    [x, y] = vec(x, y, st.UL * k, aI + Math.PI / 2, TEAL, st.UL * k > 18 ? "U_L" : "", 2.5);
-    vec(x, y, st.UC * k, aI - Math.PI / 2, VIOLET, st.UC * k > 18 ? "U_C" : "", 2.5);
-  }
-  vec(cx, cy, Ilen, aI, RED, "I");
-  const [ux, uy] = vec(cx, cy, R0, theta, BLUE, "U");
-  // proyeksiyalar — oniy qiymatlar
-  ctx.save(); ctx.setLineDash([2, 3]); ctx.strokeStyle = BLUE; ctx.beginPath(); ctx.moveTo(ux, uy); ctx.lineTo(cx + R0 + 14, uy); ctx.stroke();
-  const iy = cy - Ilen * Math.sin(aI); ctx.strokeStyle = RED; ctx.beginPath(); ctx.moveTo(cx + Ilen * Math.cos(aI), iy); ctx.lineTo(cx + R0 + 14, iy); ctx.stroke(); ctx.restore();
-  ctx.fillStyle = BLUE; ctx.beginPath(); ctx.arc(cx + R0 + 14, uy, 4, 0, TAU); ctx.fill(); ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(cx + R0 + 14, iy, 4, 0, TAU); ctx.fill();
-  if (Math.abs(st.phi) > 0.05) { ctx.save(); ctx.strokeStyle = c.text2; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx, cy, 24, -theta, -aI, st.phi < 0); ctx.stroke(); ctx.restore(); tag(ctx, "φ", cx + 32 * Math.cos(theta - st.phi / 2), cy - 32 * Math.sin(theta - st.phi / 2), { color: c.text2, bg: c.bg, align: "center", font: "italic 700 12px Inter, system-ui, sans-serif", pad: 3 }); }
-}
-function drawAC(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  const narrow = cw < 560, aw = narrow ? cw : cw * 0.58;
-  const xG = aw * 0.14, xR = aw * 0.92, yT = ch * (narrow ? 0.14 : 0.2), yB = ch * (narrow ? 0.5 : 0.82), yM = (yT + yB) / 2;
-  const st = acState(), theta = ui.vis, iNow = Math.sin(theta - st.phi);
-  geo.gen = { x: xG, y: yM };
-  wire(ctx, c, [[xG, yM - 22], [xG, yT], [xR, yT], [xR, yB], [xG, yB], [xG, yM + 22]]);
-  dotsAlong(ctx, [[xG, yT], [xR, yT], [xR, yB], [xG, yB], [xG, yT]], ac.dots, c.warning);
-  generator(ctx, c, xG, yM); tag(ctx, `${fmt(ac.f, 0)} Hz`, xG, yM + 36, { color: c.warning, bg: c.bg, align: "center", font: MID });
-  ctx.save(); ctx.strokeStyle = c.warning; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(xG, yM, 28, -Math.PI / 2 - 0.5, -Math.PI / 2 + 0.5); ctx.stroke(); ctx.restore();
-  const el = ac.el, items = el === "RLC" ? ["R", "L", "C"] : [el], span = xR - xG;
-  items.forEach((it, k) => {
-    const x = xG + span * ((k + 1) / (items.length + 1)), col = it === "R" ? c.text : it === "L" ? TEAL : VIOLET;
-    if (it === "R") resistorH(ctx, c, x, yT, 46, col); else if (it === "L") coilH(ctx, c, x, yT, 50, col); else capH(ctx, c, x, yT, 30, col);
-    const val = it === "R" ? `R = ${fmt(ac.R, 0)} Om` : it === "L" ? `X_L = ${fmt(st.XL, 0)} Om` : `X_C = ${fmt(st.XC, 0)} Om`;
-    tag(ctx, val, x, yT - 24, { color: col, bg: c.bg, align: "center", font: SMALL });
-  });
-  // ampermetr
-  const ax = (xG + xR) / 2;
-  ctx.save(); ctx.fillStyle = c.bg; ctx.strokeStyle = c.text; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(ax, yB, 15, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
-  ctx.fillStyle = c.text; ctx.font = "700 12px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("A", ax, yB);
-  tag(ctx, `I_ef = ${fmt(st.Ief * 1000, 1)} mA`, ax, yB + 26, { color: c.text, bg: c.bg2, align: "center", font: MID });
-  tag(ctx, `u = ${fmt(ac.U * Math.sin(theta), 1)} V · i = ${fmt(st.I0 * iNow * 1000, 0)} mA (oniy)`, 10, 14, { color: c.text2, bg: c.bg2, font: SMALL });
-  if (!narrow) drawPhasors(ctx, c, aw + (cw - aw) * 0.44, ch * 0.52, Math.min(ch * 0.34, (cw - aw) * 0.36), st, ac.U, theta, el === "RLC");
-  else drawPhasors(ctx, c, cw * 0.5, ch * 0.78, ch * 0.17, st, ac.U, theta, el === "RLC");
-}
-
-/* ================================================================== 3) Rezonans */
-
-const F_MIN = 20, F_MAX = 600;
-function drawRes(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  const xG = cw * 0.1, xR = cw * 0.9, yT = ch * 0.22, yB = ch * 0.6, yM = (yT + yB) / 2;
-  const st = rsState(), f0 = P.resonanceF(rs.L, rs.C), b = (rs.R / st.Z) ** 2;
-  wire(ctx, c, [[xG, yM - 22], [xG, yT], [xR, yT], [xR, yB], [xG, yB], [xG, yM + 22]]);
-  dotsAlong(ctx, [[xG, yT], [xR, yT], [xR, yB], [xG, yB], [xG, yT]], rs.dots, c.warning);
-  generator(ctx, c, xG, yM); tag(ctx, `${fmt(rs.f, 0)} Hz`, xG, yM + 36, { color: c.warning, bg: c.bg, align: "center", font: MID });
-  const xs = [0.3, 0.55, 0.78].map((k) => xG + (xR - xG) * k);
-  gap(ctx, c, xs[0], yT, 34, 34); lamp(ctx, c, xs[0], yT, clamp(b, 0, 1));
-  coilH(ctx, c, xs[1], yT, 54, TEAL); capH(ctx, c, xs[2], yT, 32, VIOLET);
-  // o'zgaruvchan kondensator belgisi va dastagi
-  ctx.save(); ctx.strokeStyle = VIOLET; ctx.lineWidth = 1.8; ctx.beginPath(); ctx.moveTo(xs[2] - 18, yT + 18); ctx.lineTo(xs[2] + 18, yT - 18); ctx.lineTo(xs[2] + 11, yT - 17); ctx.moveTo(xs[2] + 18, yT - 18); ctx.lineTo(xs[2] + 17, yT - 11); ctx.stroke(); ctx.restore();
-  const kn = { x: xs[2], y: yT + 52 }; geo.knob = kn;
-  const ang = -Math.PI * 0.8 + ((Math.log(rs.C * 1e6) - Math.log(2)) / (Math.log(60) - Math.log(2))) * Math.PI * 1.6;
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = VIOLET; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(kn.x, kn.y, 16, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(kn.x, kn.y); ctx.lineTo(kn.x + 13 * Math.sin(ang), kn.y - 13 * Math.cos(ang)); ctx.stroke(); ctx.restore();
-  tag(ctx, `C = ${fmt(rs.C * 1e6, 1)} mkF ↔`, kn.x, kn.y + 28, { color: VIOLET, bg: c.bg, align: "center", font: SMALL });
-  tag(ctx, `U_L = ${fmt(st.UL / Math.SQRT2, 1)} V`, xs[1], yT - 26, { color: TEAL, bg: c.bg, align: "center", font: SMALL });
-  tag(ctx, `U_C = ${fmt(st.UC / Math.SQRT2, 1)} V`, xs[2], yT - 26, { color: VIOLET, bg: c.bg, align: "center", font: SMALL });
-  tag(ctx, `I = ${fmt(st.Ief * 1000, 0)} mA`, xs[0], yT - 26, { color: c.text, bg: c.bg, align: "center", font: SMALL });
-  // radio shkalasi
-  const sx0 = cw * 0.08, sx1 = cw * 0.92, sy = ch * 0.84, fx = (f) => sx0 + ((Math.log(f) - Math.log(F_MIN)) / (Math.log(F_MAX) - Math.log(F_MIN))) * (sx1 - sx0);
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = c.border; ctx.beginPath(); ctx.roundRect(sx0 - 8, sy - 30, sx1 - sx0 + 16, 48, 8); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.font = "500 9px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top";
-  [20, 50, 100, 200, 500].forEach((f) => { ctx.beginPath(); ctx.moveTo(fx(f), sy + 2); ctx.lineTo(fx(f), sy + 8); ctx.stroke(); ctx.fillText(String(f), fx(f), sy + 9); });
-  // rezonans egri chizig'i shkalada
-  ctx.strokeStyle = "rgba(34,197,94,0.7)"; ctx.lineWidth = 1.5; ctx.beginPath();
-  const Imax = rs.U / Math.SQRT2 / rs.R;
-  for (let k = 0; k <= 200; k++) { const f = Math.exp(Math.log(F_MIN) + (k / 200) * (Math.log(F_MAX) - Math.log(F_MIN))), v = rsState(f).Ief / Imax; const x = fx(f), y = sy - 2 - v * 25; k ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-  ctx.stroke(); ctx.restore();
-  if (f0 >= F_MIN && f0 <= F_MAX) { ctx.fillStyle = c.success; ctx.beginPath(); ctx.moveTo(fx(f0), sy - 30); ctx.lineTo(fx(f0) - 5, sy - 38); ctx.lineTo(fx(f0) + 5, sy - 38); ctx.fill(); tag(ctx, `kontur f₀ = ${fmt(f0, 0)} Hz`, fx(f0), sy - 48, { color: c.success, bg: c.bg, align: "center", font: SMALL }); }
-  ctx.strokeStyle = c.warning; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(fx(rs.f), sy - 28); ctx.lineTo(fx(rs.f), sy + 16); ctx.stroke();
-  if (Math.abs(rs.f - f0) / f0 < 0.02) tag(ctx, "REZONANS", cw - 12, 14, { color: "#fff", bg: c.success, align: "right", font: "700 11px Inter, system-ui, sans-serif" });
-}
-
-function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
-  if (ui.mode === "lc") drawLC(ctx, stage); else if (ui.mode === "ac") drawAC(ctx, stage); else drawRes(ctx, stage);
-}
+/* ------------------------------------------------------------------ 3D elektr laboratoriyasi */
+const scene = createCircuitLab();
+function draw(ctx, stage) { scene.draw(ctx, stage, ui, lc, ac, rs); }
 const heights = (cw) => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.44), 270, 360)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -309,7 +95,7 @@ function setRO(key, label, value, sub, tone) {
 const REG = { under: "so‘nuvchi tebranish", critical: "kritik (aperiodik chegara)", over: "aperiodik razryad" };
 function updateReadouts() {
   if (ui.mode === "lc") {
-    const T = Tlc(), en = P.energies(lc, lc.L, lc.C), reg = P.regime(lc.R, lc.L, lc.C), Q = P.qualityQ(lc.R, lc.L, lc.C);
+    const T = Tlc(), en = circuitEnergy(lc), reg = P.regime(lc.R, lc.L, lc.C), Q = P.qualityQ(lc.R, lc.L, lc.C);
     setRO("r1", "Davr <i>T</i>", `${fmt(T * 1000, 1)}<small>ms</small>`, `T = 2π√(LC), ν = ${fmt(1 / T, 1)} Hz`);
     setRO("r2", "Zaryad <i>q</i>", `${fmt(lc.q * 1000, 2)}<small>mC</small>`, `q_max = Cε = ${fmt(qMax() * 1000, 2)} mC`);
     setRO("r3", "Tok <i>i</i>", `${fmt(lc.i * 1000, 0)}<small>mA</small>`, `I_max = q_max/√(LC) = ${fmt(iMax() * 1000, 0)} mA`);
@@ -378,7 +164,7 @@ const loop = createLoop((dt) => {
       lc.t += h;
     }
     lc.dots += (lc.i / iMax()) * dt * 90 * (lc.sw === 2 ? 1 : -1);
-    const en = P.energies(lc, lc.L, lc.C);
+    const en = circuitEnergy(lc);
     lc.hist.push({ t: lc.t, q: lc.q, i: lc.i, WE: en.WE, WM: en.WM }); while (lc.hist.length && lc.hist[0].t < lc.t - 3.2 * T) lc.hist.shift();
   } else {
     ui.vis += dt * TAU * 0.35;
@@ -423,33 +209,18 @@ $("[data-meas-clear]").addEventListener("click", () => { rs.pts = []; graph.rend
 document.querySelectorAll("[data-toggle]").forEach((cb) => cb.addEventListener("change", () => { ui.show[cb.dataset.toggle] = cb.checked; refresh(); }));
 document.querySelectorAll("[data-speed-value]").forEach((b) => b.addEventListener("click", () => { ui.speed = +b.dataset.speedValue; document.querySelectorAll("[data-speed-value]").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); refresh(); }));
 
-/* Sudrash: kalit (bosish), generator dastagi (chastota), o'zgaruvchan kondensator dastagi */
+/* Kalit va aylanuvchi dastaklar; bo‘sh joyni sudrash kamerani boshqaradi. */
 const canvas = stage.canvas;
-let drag = null;
-const ptr = (e) => { const r = canvas.getBoundingClientRect(); return { px: e.clientX - r.left, py: e.clientY - r.top }; };
-function hitTest(px, py) {
-  if (ui.mode === "lc" && geo.sw && Math.abs(px - geo.sw.x) < 50 && Math.abs(py - geo.sw.y) < 26) return "sw";
-  if (ui.mode === "ac" && geo.gen && Math.hypot(px - geo.gen.x, py - geo.gen.y) < 32) return "gen";
-  if (ui.mode === "res" && geo.knob && Math.hypot(px - geo.knob.x, py - geo.knob.y) < 24) return "knob";
-  return null;
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const { px, py } = ptr(e), h = hitTest(px, py);
-  if (!h) return;
-  if (h === "sw") { toggleSwitch(); return; }
-  drag = { h, px, py, f0: ac.f, C0: rs.C }; canvas.dataset.dragging = "true";
-  try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id) { if (id === "switch") toggleSwitch(); },
+  move(id, pointer) {
+    if (id === "switch") return;
+    const fraction = scene.dialFraction(pointer.x, pointer.y); if (fraction === null) return;
+    if (id === "generator" && ui.mode === "ac") { ac.f = clamp(Math.round(10*Math.pow(100,fraction)/5)*5,10,1000); aFC.set(ac.f); }
+    if (id === "capacitor" && ui.mode === "res") { rs.C = clamp(Math.round(2*Math.pow(30,fraction)*2)/2,2,60)*1e-6; rCC.set(rs.C*1e6); }
+    customized(); refresh();
+  },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const { px, py } = ptr(e);
-  if (!drag) { const h = hitTest(px, py); canvas.style.cursor = h ? (h === "sw" ? "pointer" : h === "gen" ? "ns-resize" : "ew-resize") : ""; return; }
-  if (drag.h === "gen") { ac.f = clamp(Math.round((drag.f0 * Math.exp((drag.py - py) / 60)) / 5) * 5, 10, 1000); aFC.set(ac.f); }
-  else { rs.C = clamp(Math.round(drag.C0 * 1e6 * Math.exp((px - drag.px) / 80) * 2) / 2, 2, 60) * 1e-6; rCC.set(rs.C * 1e6); }
-  customized(); refresh();
-});
-const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 

@@ -7,16 +7,16 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { clamp, fmt, sci, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import { solve, resistanceOf, voltmeterReading, MATERIALS, LED_COLORS, LED_I_NOM, LED_I_MAX, R_VOLT } from "./circuit-physics.js";
 import {
   COLS, ROWS, NODE_COUNT, EDGES, nodeCR, hEdge, vEdge, PRESETS, PRESET_ORDER, defaultProps, toElements, labelsFor, TYPE_INFO,
 } from "./circuit-grid.js";
 import { drawBars, drawIU, drawSource } from "./circuit-plots.js";
+import { createDCCircuitLab } from "./dc-circuit-lab-3d.js?v=20261123-batch8c";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch8c";
 
 const $ = (s) => document.querySelector(s);
-const TAU = Math.PI * 2;
-const SMALL = "600 11px Inter, system-ui, sans-serif";
 const LOAD_TYPES = new Set(["resistor", "rheostat", "conductor", "lamp", "diode", "led"]);
 const LINEAR = new Set(["resistor", "rheostat", "conductor", "lamp"]);
 const DIODES = new Set(["diode", "led"]);
@@ -79,48 +79,9 @@ const forEachType = (pred) => model.elements.map((x, k) => ({ x, r: model.sol.el
 
 /* ------------------------------------------------------------------ Geometriya */
 
-const geo = { sp: 60, ox: 0, oy: 0, len: 36 };
-function layout(w, h) {
-  const padX = w >= 700 ? 96 : w >= 600 ? 76 : 34, padT = 34, padB = 34;
-  geo.sp = Math.max(26, Math.min((w - 2 * padX) / (COLS - 1), (h - padT - padB) / (ROWS - 1)));
-  geo.ox = (w - (COLS - 1) * geo.sp) / 2;
-  geo.oy = padT + (h - padT - padB - (ROWS - 1) * geo.sp) / 2;
-  geo.len = clamp(geo.sp * 0.62, 20, 52);
-}
-const g0 = (edge) => EDGES[edge];
-const nx = (n) => geo.ox + nodeCR(n).c * geo.sp;
-const ny = (n) => geo.oy + nodeCR(n).r * geo.sp;
-
-function segDist(px, py, x1, y1, x2, y2) {
-  const dx = x2 - x1, dy = y2 - y1, t = clamp(((px - x1) * dx + (py - y1) * dy) / (dx * dx + dy * dy), 0, 1);
-  return Math.hypot(px - (x1 + t * dx), py - (y1 + t * dy));
-}
-
+const scene = createDCCircuitLab();
 let touchMode = false;
-function pick(px, py) {
-  let best = null, bd = Infinity;
-  for (const e of EDGES) { const d = segDist(px, py, nx(e.a), ny(e.a), nx(e.b), ny(e.b)); if (d < bd) { bd = d; best = e.i; } }
-  return bd <= (touchMode ? Math.max(18, geo.sp * 0.45) : Math.max(12, geo.sp * 0.3)) ? { kind: "edge", id: best } : null;
-}
-
-const hE = (c, r) => (c >= 0 && c < COLS - 1 && r >= 0 && r < ROWS ? hEdge(c, r) : -1);
-const vE = (c, r) => (c >= 0 && c < COLS && r >= 0 && r < ROWS - 1 ? vEdge(c, r) : -1);
-const occ = (edge) => edge >= 0 && cells.has(edge) && cells.get(edge).type !== "wire";
-
-/** Yorliq tomoni: tashqariga (sxemadagi odat), qo'shni qirrada element bo'lsa — qarama-qarshi tomonga. */
-function labelSide(e) {
-  if (e.orient === "h") {
-    const upBlocked = e.r === 0 || occ(hE(e.c, e.r - 1));
-    const dnBlocked = e.r === ROWS - 1 || occ(hE(e.c, e.r + 1));
-    const pref = e.r <= (ROWS - 1) / 2 ? -1 : 1;
-    if (pref < 0) return upBlocked && !dnBlocked ? 1 : e.r === 0 ? 1 : -1;
-    return dnBlocked && !upBlocked ? -1 : e.r === ROWS - 1 ? -1 : 1;
-  }
-  const lBlocked = occ(vE(e.c - 1, e.r)), rBlocked = occ(vE(e.c + 1, e.r));
-  const pref = e.c < (COLS - 1) / 2 ? -1 : 1;
-  if (pref < 0) return lBlocked && !rBlocked ? 1 : -1;
-  return rBlocked && !lBlocked ? -1 : 1;
-}
+const pick = (x,y) => scene.pick(x,y,touchMode);
 
 /* ------------------------------------------------------------------ Ranglar (potensial) */
 
@@ -146,113 +107,6 @@ function potentialRange() {
   return hi - lo > 1e-9 ? [lo, hi] : null;
 }
 
-/* ------------------------------------------------------------------ Elementlar belgilari */
-
-function glow(ctx, rgb, rad, b) {
-  const g = ctx.createRadialGradient(0, 0, rad * 0.3, 0, 0, rad * (1.5 + b));
-  g.addColorStop(0, rgba(rgb, 0.55 * Math.min(b, 1) + 0.15));
-  g.addColorStop(1, rgba(rgb, 0));
-  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, rad * (1.5 + b), 0, TAU); ctx.fill();
-}
-
-function meter(ctx, c, Ls, ang, letter) {
-  const rad = Ls * 0.4;
-  ctx.beginPath(); ctx.arc(0, 0, rad, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.save(); ctx.rotate(-ang); ctx.fillStyle = c.text; ctx.font = `700 ${Math.round(rad * 1.2)}px Inter, system-ui, sans-serif`;
-  ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(letter, 0, 1); ctx.restore();
-}
-
-function plusMark(ctx, c, x, y) {
-  ctx.save(); ctx.lineWidth = 1.75; ctx.strokeStyle = c.danger;
-  ctx.beginPath(); ctx.moveTo(x - 3.5, y); ctx.lineTo(x + 3.5, y); ctx.moveTo(x, y - 3.5); ctx.lineTo(x, y + 3.5); ctx.stroke();
-  ctx.restore();
-}
-
-/** Lokal koordinata: markaz (0,0), x o'qi a→b bo'ylab. Uzunlik Ls. */
-function drawSymbol(ctx, c, e, r, Ls, ang) {
-  const stroke = c.text2;
-  ctx.lineWidth = 2.25; ctx.strokeStyle = stroke; ctx.fillStyle = c.bg; ctx.lineJoin = "round"; ctx.lineCap = "round";
-  const h = Ls * 0.4;
-  switch (e.type) {
-    case "resistor":
-    case "rheostat": {
-      ctx.beginPath(); ctx.rect(-Ls / 2, -h / 2, Ls, h); ctx.fill(); ctx.stroke();
-      if (e.type === "rheostat") {
-        ctx.beginPath(); ctx.moveTo(-Ls * 0.42, h * 0.95); ctx.lineTo(Ls * 0.42, -h * 0.95); ctx.stroke();
-        ctx.fillStyle = stroke; ctx.beginPath(); ctx.moveTo(Ls * 0.42, -h * 0.95); ctx.lineTo(Ls * 0.42 - 7, -h * 0.95 + 1.5); ctx.lineTo(Ls * 0.42 - 2.5, -h * 0.95 + 6.5); ctx.closePath(); ctx.fill();
-        const px = -Ls / 2 + e.pos * Ls;
-        ctx.fillStyle = c.warning; ctx.beginPath(); ctx.moveTo(px, h / 2 + 1); ctx.lineTo(px - 4.5, h / 2 + 8); ctx.lineTo(px + 4.5, h / 2 + 8); ctx.closePath(); ctx.fill();
-      }
-      break;
-    }
-    case "lamp": {
-      const rad = Ls * 0.36, b = clamp((r?.P ?? 0) / (e.pNom || 3), 0, 1.6);
-      if (b > 0.01) glow(ctx, toRGB(c.warning), rad, b);
-      ctx.fillStyle = b > 0.01 ? mixRGB(toRGB(c.bg), toRGB(c.warning), clamp(b, 0, 1) * 0.55) : c.bg;
-      ctx.beginPath(); ctx.arc(0, 0, rad, 0, TAU); ctx.fill(); ctx.stroke();
-      ctx.beginPath(); const k = rad * 0.7; ctx.moveTo(-k, -k); ctx.lineTo(k, k); ctx.moveTo(-k, k); ctx.lineTo(k, -k); ctx.stroke();
-      break;
-    }
-    case "diode":
-    case "led": {
-      const s = e.rev ? -1 : 1, t = Ls * 0.24, hh = Ls * 0.3;
-      const If = r?.If ?? 0;
-      const led = e.type === "led";
-      const ledRGB = led ? toRGB(LED_COLORS[e.color]?.color ?? c.danger) : null;
-      const b = led ? clamp(If / LED_I_NOM, 0, 1.6) : 0;
-      if (led && b > 0.02) glow(ctx, ledRGB, Ls * 0.34, b);
-      ctx.beginPath(); ctx.moveTo(-Ls / 2, 0); ctx.lineTo(-t, 0); ctx.moveTo(t, 0); ctx.lineTo(Ls / 2, 0); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(-s * t, -hh); ctx.lineTo(s * t, 0); ctx.lineTo(-s * t, hh); ctx.closePath();
-      ctx.fillStyle = led ? (b > 0.02 ? rgba(ledRGB, 0.35 + 0.6 * Math.min(b, 1)) : rgba(ledRGB, 0.16)) : c.bg;
-      ctx.fill(); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(s * t, -hh); ctx.lineTo(s * t, hh); ctx.stroke();
-      if (led) {
-        ctx.save(); ctx.strokeStyle = b > 0.02 ? rgba(ledRGB, 1) : stroke; ctx.lineWidth = 1.6;
-        [[0, -hh - 2], [t * 0.9, -hh + 2]].forEach(([x0, y0]) => {
-          const x1 = x0 + Ls * 0.16, y1 = y0 - Ls * 0.16;
-          ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.lineTo(x1 - 4.5, y1 + 0.5); ctx.moveTo(x1, y1); ctx.lineTo(x1 - 0.5, y1 + 4.5); ctx.stroke();
-        });
-        ctx.restore();
-      }
-      break;
-    }
-    case "battery": {
-      const s = e.plus === "a" ? -1 : 1; // musbat qutb tomoni (lokal x ishorasi)
-      const xl = s * Ls * 0.1, xs = -s * Ls * 0.1;
-      ctx.beginPath(); ctx.moveTo(s * Ls / 2, 0); ctx.lineTo(xl, 0); ctx.moveTo(-s * Ls / 2, 0); ctx.lineTo(xs, 0); ctx.stroke();
-      ctx.lineWidth = 2.25; ctx.beginPath(); ctx.moveTo(xl, -Ls * 0.34); ctx.lineTo(xl, Ls * 0.34); ctx.stroke();
-      ctx.lineWidth = 4.5; ctx.beginPath(); ctx.moveTo(xs, -Ls * 0.2); ctx.lineTo(xs, Ls * 0.2); ctx.stroke();
-      plusMark(ctx, c, s * Ls * 0.3, -Ls * 0.3);
-      break;
-    }
-    case "switch": {
-      const t = Ls * 0.38;
-      ctx.beginPath(); ctx.moveTo(-Ls / 2, 0); ctx.lineTo(-t, 0); ctx.moveTo(t, 0); ctx.lineTo(Ls / 2, 0); ctx.stroke();
-      ctx.fillStyle = stroke; [[-t, 0], [t, 0]].forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x, y, 3, 0, TAU); ctx.fill(); });
-      ctx.strokeStyle = e.closed ? c.success : c.text2; ctx.lineWidth = 3;
-      ctx.beginPath(); ctx.moveTo(-t, 0); if (e.closed) ctx.lineTo(t, 0); else ctx.lineTo(t * 0.85, -Ls * 0.34); ctx.stroke();
-      break;
-    }
-    case "ammeter": meter(ctx, c, Ls, ang, "A"); break;
-    case "voltmeter": {
-      meter(ctx, c, Ls, ang, "V");
-      plusMark(ctx, c, (e.plus === "b" ? 1 : -1) * Ls * 0.47, -Ls * 0.24);
-      break;
-    }
-    case "conductor": {
-      ctx.strokeStyle = c.warning; ctx.lineWidth = 2.75;
-      const A = Ls * 0.17, loops = 4;
-      ctx.beginPath();
-      for (let i = 0; i <= 48; i++) { const t = i / 48; const x = -Ls / 2 + t * Ls, y = A * Math.sin(t * loops * TAU); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
-      ctx.stroke();
-      break;
-    }
-    default: break;
-  }
-}
-
-/* ------------------------------------------------------------------ Chizish */
-
 /** Yorliq uchun qisqa son: 20,0 → 20; 6,60 → 6,6. */
 const short = (v) => sci(v, 3).replace(/,0+$/, "").replace(/(,\d*?)0+$/, "$1");
 const amps = (I) => (Math.abs(I) < I_ZERO ? "0 A" : Math.abs(I) < 0.1 ? `${short(Math.abs(I) * 1000)} mA` : `${short(Math.abs(I))} A`);
@@ -267,195 +121,12 @@ function formatValue(e, r) {
   }
 }
 
-function edgeGeom(edge) {
-  const e = EDGES[edge];
-  const x1 = nx(e.a), y1 = ny(e.a), x2 = nx(e.b), y2 = ny(e.b);
-  const L = Math.hypot(x2 - x1, y2 - y1);
-  return { e, x1, y1, x2, y2, L, ang: Math.atan2(y2 - y1, x2 - x1), ux: (x2 - x1) / L, uy: (y2 - y1) / L, mx: (x1 + x2) / 2, my: (y1 + y2) / 2 };
+function draw(ctx,stage) {
+  scene.draw(ctx,stage,{model,cells,ui,phase,selected,tool,hover,drag,dropPreview,
+    potentialRange,toRGB,mixRGB,formatValue,amps,placeTools:PLACE_TOOLS,defaultProps});
 }
-
-/** Bitta element: chiqish simlari + belgi. colorA/colorB — uchlar potensiali rangi. */
-function drawElement(ctx, c, edge, el, r, colorA, colorB) {
-  const g = edgeGeom(edge), Ls = geo.len;
-  const hasSym = el.type !== "wire";
-  const half = hasSym ? Ls / 2 : 0;
-  ctx.lineWidth = 3.25; ctx.lineCap = "round";
-  ctx.strokeStyle = colorA;
-  ctx.beginPath(); ctx.moveTo(g.x1, g.y1); ctx.lineTo(hasSym ? g.mx - g.ux * half : g.x2, hasSym ? g.my - g.uy * half : g.y2); ctx.stroke();
-  if (hasSym) {
-    ctx.strokeStyle = colorB;
-    ctx.beginPath(); ctx.moveTo(g.mx + g.ux * half, g.my + g.uy * half); ctx.lineTo(g.x2, g.y2); ctx.stroke();
-    ctx.save(); ctx.translate(g.mx, g.my); ctx.rotate(g.ang);
-    drawSymbol(ctx, c, el, r, Ls, g.ang);
-    ctx.restore();
-  }
-  return g;
-}
-
-function draw(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  layout(w, h);
-  ctx.fillStyle = c.bg; ctx.fillRect(0, 0, w, h);
-  if (!model) return;
-  const sol = model.sol;
-  const range = ui.potential && sol.ok ? potentialRange() : null;
-  const lo = toRGB(c.primary), hi = toRGB(c.danger), neutral = c.text3;
-  const potColor = (n) => {
-    const p = sol.phi[n];
-    if (!range || !Number.isFinite(p)) return neutral;
-    return mixRGB(lo, hi, (p - range[0]) / (range[1] - range[0]));
-  };
-
-  // Laboratoriya stoli (taxta) va to'r nuqtalari
-  const bx = geo.ox - geo.sp * 0.42, by = geo.oy - geo.sp * 0.42, bw = (COLS - 1) * geo.sp + geo.sp * 0.84, bh = (ROWS - 1) * geo.sp + geo.sp * 0.84;
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = c.border; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 14); ctx.fill(); ctx.stroke(); ctx.restore();
-  const degree = new Array(NODE_COUNT).fill(0);
-  model.index.forEach((i) => { degree[EDGES[i].a]++; degree[EDGES[i].b]++; });
-  const building = tool !== "select" || drag?.kind === "bin" || drag?.kind === "move";
-  ctx.fillStyle = c.borderStrong;
-  for (let n = 0; n < NODE_COUNT; n++) { if (degree[n]) continue; ctx.beginPath(); ctx.arc(nx(n), ny(n), building ? 2.8 : 2, 0, TAU); ctx.fill(); }
-
-  // Ko'rsatkich (hover) qirrasi
-  const target = dropPreview ? dropPreview.edge : hover?.kind === "edge" && tool !== "select" && !drag ? hover.id : null;
-  if (target !== null && target !== undefined) {
-    const g = edgeGeom(target);
-    ctx.save(); ctx.strokeStyle = tool === "erase" && !dropPreview ? c.danger : dropPreview?.swap ? c.warning : c.primary; ctx.globalAlpha = 0.25; ctx.lineWidth = 16; ctx.lineCap = "round";
-    ctx.beginPath(); ctx.moveTo(g.x1, g.y1); ctx.lineTo(g.x2, g.y2); ctx.stroke(); ctx.restore();
-  }
-
-  const Ls = geo.len;
-  const labels = [];
-  const spacing = 13;
-  const moving = drag?.kind === "move" && drag.active ? drag.from : null;
-
-  model.index.forEach((edge, k) => {
-    const el = model.elements[k], r = sol.el[k];
-    if (edge === moving) ctx.globalAlpha = 0.3;
-    const g = drawElement(ctx, c, edge, el, r, potColor(g0(edge).a), potColor(g0(edge).b));
-    ctx.globalAlpha = 1;
-    const hasSym = el.type !== "wire", half = hasSym ? Ls / 2 : 0;
-
-    if (edge === selected && edge !== moving) {
-      ctx.save(); ctx.fillStyle = c.primary; ctx.globalAlpha = 0.12; ctx.strokeStyle = c.primary;
-      ctx.beginPath(); ctx.arc(g.mx, g.my, hasSym ? Ls * 0.72 : 12, 0, TAU); ctx.fill();
-      ctx.globalAlpha = 0.7; ctx.lineWidth = 1.5; ctx.setLineDash([4, 3]); ctx.stroke(); ctx.restore();
-    }
-
-    // Zaryadlar oqimi
-    const I = r.I;
-    if (sol.ok && Math.abs(I) > 1e-5 && edge !== moving) {
-      const ph = ((phase[edge] % spacing) + spacing) % spacing;
-      ctx.fillStyle = ui.dir === "elec" ? c.primary : c.warning;
-      ctx.strokeStyle = c.bg; ctx.lineWidth = 1;
-      for (let s = ph - spacing; s <= g.L; s += spacing) {
-        if (s < 3 || s > g.L - 3) continue;
-        if (hasSym && s > g.L / 2 - half - 2 && s < g.L / 2 + half + 2) continue;
-        ctx.beginPath(); ctx.arc(g.x1 + g.ux * s, g.y1 + g.uy * s, 2.7, 0, TAU); ctx.fill(); ctx.stroke();
-      }
-    }
-
-    if (hasSym && edge !== moving) {
-      const lab = model.labels.get(edge);
-      const tiny = geo.sp < 50;
-      const vr = el.type === "voltmeter" ? voltmeterReading(el, r) : 0;
-      let name = lab, value = "";
-      if (el.type === "ammeter") { value = sol.ok ? amps(I) : "—"; if (tiny) name = ""; }
-      else if (el.type === "voltmeter") { value = sol.ok ? `${fmt(vr, Math.abs(vr) < 10 ? 2 : 1)} V` : "—"; if (tiny) name = ""; }
-      else if (el.type === "switch") value = tiny ? "" : `· ${el.closed ? "ulangan" : "uzilgan"}`;
-      else if (!tiny || el.type === "battery") value = formatValue(el, r);
-      const text = [name, value].filter(Boolean).join(" ");
-      const sub = ui.values && sol.ok && !["ammeter", "switch", "voltmeter"].includes(el.type) ? `${amps(DIODES.has(el.type) ? r.If : I)} · ${short(Math.abs(el.type === "battery" ? r.Ut : r.U))} V` : "";
-      labels.push({ text, name, value, sub, x: g.mx, y: g.my, horiz: g.e.orient === "h", side: labelSide(g.e), sel: edge === selected, meter: el.type === "ammeter" || el.type === "voltmeter" });
-    }
-  });
-
-  // Tugunlar: tutashuv nuqtalari va ochiq uchlar
-  for (let n = 0; n < NODE_COUNT; n++) {
-    if (degree[n] >= 3) { ctx.fillStyle = potColor(n); ctx.beginPath(); ctx.arc(nx(n), ny(n), 4.6, 0, TAU); ctx.fill(); }
-    else if (degree[n] === 1) { ctx.strokeStyle = c.text2; ctx.lineWidth = 1.75; ctx.fillStyle = c.bg; ctx.beginPath(); ctx.arc(nx(n), ny(n), 3.8, 0, TAU); ctx.fill(); ctx.stroke(); }
-  }
-
-  // Joylashtirish oldindan ko'rinishi (qutidan sudrash, ko'chirish yoki asbob tanlanganda)
-  const ghost = dropPreview || (target !== null && target !== undefined && PLACE_TOOLS.has(tool) && !drag ? { edge: target, el: defaultProps(tool) } : null);
-  if (ghost && ghost.edge !== null && ghost.edge !== undefined) {
-    ctx.save(); ctx.globalAlpha = 0.6;
-    drawElement(ctx, c, ghost.edge, ghost.el, null, c.primary, c.primary);
-    ctx.restore();
-  }
-
-  // Yorliqlar ustidan: har biri uchun bir necha joy sinab ko'riladi (ikki tomon, bir/ikki qator),
-  // boshqa yorliq yoki element belgisi bilan ustma-ust tushmaydigan birinchisi tanlanadi.
-  const fs = geo.sp < 46 ? 10 : 11;
-  const fontOf = (l) => (l.sel ? `700 ${fs + 1}px Inter, system-ui, sans-serif` : `600 ${fs}px Inter, system-ui, sans-serif`);
-  const subFont = `500 ${fs - 0.5}px Inter, system-ui, sans-serif`;
-  const LH = 19, off = Ls * 0.5 + 12;
-  const boxes = labels.map((l) => ({ x: l.x - Ls * 0.45, y: l.y - Ls * 0.45, w: Ls * 0.9, h: Ls * 0.9 }));
-  const overlap = (p, q) => p.x < q.x + q.w && q.x < p.x + p.w && p.y < q.y + q.h && q.y < p.y + p.h;
-  const placed = [];
-  const order = labels.map((l, i) => i).sort((i, j) => (labels[j].meter - labels[i].meter) || (labels[j].sel - labels[i].sel));
-  order.forEach((i) => {
-    const l = labels[i];
-    ctx.font = fontOf(l);
-    const variants = [[{ t: l.text, f: fontOf(l), main: true }]];
-    if (l.name && l.value) variants.push([{ t: l.name, f: fontOf(l), main: true }, { t: l.value, f: fontOf(l), main: true }]);
-    if (l.sub) variants.forEach((v) => v.push({ t: l.sub, f: subFont, main: false }));
-    const cands = [];
-    [l.side, -l.side].forEach((side) => variants.forEach((lines) => {
-      const tw = Math.max(...lines.map((ln) => { ctx.font = ln.f; return ctx.measureText(ln.t).width; })) + 12;
-      const hh = lines.length * LH;
-      let r;
-      if (l.horiz) {
-        const cy = l.y + side * (off + (lines.length - 1) * LH / 2);
-        const cx = clamp(l.x, tw / 2 + 2, w - tw / 2 - 2);
-        r = { x: cx - tw / 2, y: cy - hh / 2, w: tw, h: hh, cx, side, lines };
-      } else {
-        const x0 = l.x + side * (Ls * 0.5 + 7);
-        r = { x: side > 0 ? x0 : x0 - tw, y: l.y - hh / 2, w: tw, h: hh, cx: x0, side, lines };
-      }
-      const inside = r.x >= 1 && r.x + r.w <= w - 1 && r.y >= 1 && r.y + r.h <= h - 1;
-      const hits = placed.filter((q) => overlap(r, q)).length * 2 + boxes.filter((q, k) => k !== i && overlap(r, q)).length;
-      cands.push({ r, cost: hits + (inside ? 0 : 5) });
-    }));
-    const best = cands.find((cnd) => cnd.cost === 0) || cands.reduce((m, cnd) => (cnd.cost < m.cost ? cnd : m), cands[0]);
-    const r = best.r;
-    placed.push(r);
-    const color = l.sel ? c.primary : c.text;
-    r.lines.forEach((ln, k) => {
-      const y = r.y + LH / 2 + k * LH;
-      if (l.horiz) tag(ctx, ln.t, r.cx, y, { color: ln.main ? color : c.text2, bg: c.bg, align: "center", font: ln.f });
-      else tag(ctx, ln.t, r.cx, y, { color: ln.main ? color : c.text2, bg: c.bg, align: r.side > 0 ? "left" : "right", font: ln.f });
-    });
-  });
-
-  if (sol.error === "short") {
-    tag(ctx, "Qisqa tutashuv! Manba qarshiliksiz tutashtirilgan", w / 2, h - 14, { color: "#fff", bg: c.danger, align: "center", font: "700 12px Inter, system-ui, sans-serif" });
-  } else if (!model.index.length) {
-    ctx.fillStyle = c.text3; ctx.font = "500 13px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText(w < 520 ? "Asbobni tanlab, ikki nuqta orasiga bosing" : "Laboratoriya stoli bo‘sh: asbobni yuqoridagi qutidan sudrab olib keling yoki tanlab ikki nuqta orasiga bosing", w / 2, h / 2);
-  }
-
-  // Sudralayotgan element kursor ostida
-  if (drag?.kind === "move" && drag.active && dropPreview?.edge == null) {
-    const el = cells.get(drag.from);
-    if (el) {
-      ctx.save(); ctx.globalAlpha = 0.75; ctx.translate(drag.x, drag.y);
-      const horiz = EDGES[drag.from].orient === "h";
-      ctx.rotate(horiz ? 0 : Math.PI / 2);
-      ctx.strokeStyle = c.primary; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(-Ls * 0.8, 0); ctx.lineTo(-Ls / 2, 0); ctx.moveTo(Ls / 2, 0); ctx.lineTo(Ls * 0.8, 0); ctx.stroke();
-      drawSymbol(ctx, c, el, null, Ls, horiz ? 0 : Math.PI / 2);
-      ctx.restore();
-    }
-  }
-}
-const heights = (w) => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  const padX = w >= 700 ? 192 : w >= 600 ? 152 : 68;
-  const need = 68 + (ROWS - 1) * Math.min((w - padX) / (COLS - 1), 96);
-  return { stage: Math.round(clamp(Math.min(need, vh * 0.62), 210, 470)), graph: Math.round(clamp(vh * 0.27, 170, 260)) };
-};
-
-const stage = createStage($("#stage"), draw, { height: (w) => heights(w).stage });
+const heights = w => ({stage:detailedStageHeight(w),graph:Math.round(clamp(innerHeight*.27,170,260))});
+const stage = createStage($("#stage"),draw,{height:w=>heights(w).stage});
 
 /* ------------------------------------------------------------------ Grafik */
 
@@ -726,11 +397,11 @@ bin.innerHTML = PALETTE.map((g) => `<div class="sim-bin__group" role="group" ari
 const hintEl = $("[data-hint]");
 
 function toolHint(t) {
-  if (t === "select") return "Elementni bosing — parametrlari o‘ngda chiqadi. Elementni sudrab boshqa joyga ko‘chiring. Kalitni bosish uni ulaydi yoki uzadi.";
+  if (t === "select") return "Bo‘sh joyni sudrab kamerani aylantiring. Elementni bosing — parametrlari o‘ngda chiqadi. Elementni sudrab boshqa joyga ko‘chiring. Kalitni bosish uni ulaydi yoki uzadi.";
   if (t === "wire") return "Ikki nuqta orasiga bosing yoki sichqonchani bosib turib sudrang — bir nechta sim tortiladi.";
   if (t === "erase") return "O‘chirmoqchi bo‘lgan element yoki simni bosing (sudrab bir nechtasini o‘chirish mumkin). Klaviaturada — Delete.";
   const info = TOOL_BY_ID.get(t);
-  const extra = t === "ammeter" ? " Ampermetr zanjirga ketma-ket ulanadi." : t === "voltmeter" ? " Voltmetr elementga parallel ulanadi: alohida shoxcha qilib, element uchlariga ulang." : DIODES.has(t) ? " Uchburchak uchi — tok o‘tadigan yo‘nalish." : "";
+  const extra = t === "ammeter" ? " Ampermetr zanjirga ketma-ket ulanadi." : t === "voltmeter" ? " Voltmetr elementga parallel ulanadi: alohida shoxcha qilib, element uchlariga ulang." : DIODES.has(t) ? " K belgisi — katod; korpusdagi halqa shu qutbni ko‘rsatadi." : "";
   return `«${info.label}»: ikki nuqta orasidagi qirraga bosing — element qo‘yiladi.${extra} Asbobni qutidan to‘g‘ridan-to‘g‘ri sudrab olib kelish ham mumkin.`;
 }
 
@@ -828,60 +499,93 @@ function commitMove(from, to) {
   afterChange({ customize: true });
 }
 
-stage.canvas.addEventListener("pointerdown", (ev) => {
-  touchMode = ev.pointerType === "touch";
-  if (ev.pointerType === "mouse" && ev.button !== 0) return;
-  const p = local(ev);
-  const h = pick(p.x, p.y);
-  hover = h;
-  try { stage.canvas.setPointerCapture(ev.pointerId); } catch { /* */ }
-  if (tool === "select") {
-    if (h && cells.has(h.id)) drag = { kind: "move", from: h.id, sx: p.x, sy: p.y, x: p.x, y: p.y, active: false };
-    else { selected = null; afterChange(); }
-  } else if (tool === "wire" || tool === "erase") {
-    drag = { kind: "paint", last: null };
-    paintAt(h);
-  } else placeAt(h);
-});
-
-stage.canvas.addEventListener("pointermove", (ev) => {
-  const p = local(ev);
-  const h = pick(p.x, p.y);
-  const changed = (h?.id ?? null) !== (hover?.id ?? null);
-  hover = h;
-  if (drag?.kind === "move") {
-    if (!drag.active && Math.hypot(p.x - drag.sx, p.y - drag.sy) > 6) { drag.active = true; stage.canvas.dataset.dragging = "true"; }
-    if (drag.active) {
-      drag.x = p.x; drag.y = p.y;
-      const t = h && h.id !== drag.from ? h.id : null;
-      dropPreview = t !== null ? { edge: t, el: cells.get(drag.from), swap: cells.has(t) } : null;
-      stage.render();
-      return;
+const pointers=new Map();
+let cameraGesture=null,touchSnapshot=null;
+const pinchDistance=()=>{const [a,b]=[...pointers.values()];return Math.hypot(a.x-b.x,a.y-b.y);};
+stage.canvas.style.touchAction='none';stage.canvas.tabIndex=0;
+stage.canvas.addEventListener("pointerdown", ev=>{
+  touchMode=ev.pointerType==='touch';if(ev.button!==0&&!touchMode)return;
+  if(touchMode&&!pointers.size)touchSnapshot={
+    cells:new Map([...cells].map(([edge,e])=>[edge,{...e}])),selected,
+    points:points.map(p=>({...p})),presetId,lesson:$("[data-lesson]").textContent,
+  };
+  const p=local(ev);pointers.set(ev.pointerId,p);stage.canvas.setPointerCapture(ev.pointerId);
+  if(pointers.size>1){
+    endCanvasDrag(true);
+    // A second finger turns this gesture into camera control. Restore edits made
+    // by the first finger, including erased edges and their measured points.
+    if(touchSnapshot){
+      cells=new Map([...touchSnapshot.cells].map(([edge,e])=>[edge,{...e}]));
+      selected=touchSnapshot.selected;points=touchSnapshot.points.map(p=>({...p}));
+      presetId=touchSnapshot.presetId;setPresetPressed(presetId);$("[data-lesson]").textContent=touchSnapshot.lesson;
+      afterChange();
     }
-  } else if (drag?.kind === "paint") paintAt(h);
-  stage.canvas.style.cursor = tool === "select" ? (h && cells.has(h.id) ? "grab" : "") : "crosshair";
-  if (changed && !loop.running) stage.render();
+    cameraGesture={kind:'pinch',distance:pinchDistance(),zoom:scene.lab.camera.zoom};return;
+  }
+  const handle=tool==='select'?scene.lab.hit(p.x,p.y):null;
+  if(handle?.startsWith('slider:')){selected=+handle.split(':')[1];drag={kind:'control',edge:selected};afterChange();return;}
+  const h=pick(p.x,p.y);hover=h;
+  if(tool==='select'){
+    if(h&&cells.has(h.id))drag={kind:'move',from:h.id,sx:p.x,sy:p.y,x:p.x,y:p.y,active:false};
+    else{selected=null;cameraGesture={kind:'orbit',last:p};afterChange();}
+  }else if(!h)cameraGesture={kind:'orbit',last:p};
+  else if(tool==='wire'||tool==='erase'){drag={kind:'paint',last:null};paintAt(h);}
+  else placeAt(h);
 });
-
-function endCanvasDrag(cancel) {
-  const d = drag;
-  if (!d || d.kind === "bin") return;
-  drag = null; delete stage.canvas.dataset.dragging;
-  if (d.kind === "move") {
-    const target = dropPreview?.edge;
-    dropPreview = null;
-    if (cancel) { stage.render(); return; }
-    if (d.active) { commitMove(d.from, target); return; }
-    // Oddiy bosish: tanlash, kalitni almashtirish
-    selected = d.from;
-    const e = cells.get(d.from);
-    if (e?.type === "switch") { e.closed = !e.closed; afterChange({ customize: true }); return; }
-    afterChange();
+stage.canvas.addEventListener("pointermove",ev=>{
+  const p=local(ev);if(pointers.has(ev.pointerId))pointers.set(ev.pointerId,p);
+  if(cameraGesture&&pointers.has(ev.pointerId)){
+    if(cameraGesture.kind==='pinch'&&pointers.size>1)scene.lab.camera.zoom=clamp(cameraGesture.zoom*pinchDistance()/Math.max(cameraGesture.distance,1),.7,1.65);
+    else if(cameraGesture.kind==='orbit'){
+      scene.lab.camera.yaw+=(p.x-cameraGesture.last.x)*.009;
+      scene.lab.camera.pitch=clamp(scene.lab.camera.pitch+(p.y-cameraGesture.last.y)*.006,.08,1.35);cameraGesture.last=p;
+    }
+    stage.render();return;
+  }
+  if(drag?.kind==='control'){
+    const e=cells.get(drag.edge);if(e?.type==='rheostat'){e.pos=Math.round(scene.slider(drag.edge,p)*100)/100;posCtl.set(e.pos);afterChange({customize:true});}return;
+  }
+  const h=pick(p.x,p.y),changed=(h?.id??null)!==(hover?.id??null);hover=h;
+  if(drag?.kind==='move'){
+    if(!drag.active&&Math.hypot(p.x-drag.sx,p.y-drag.sy)>6){drag.active=true;stage.canvas.dataset.dragging='true';}
+    if(drag.active){drag.x=p.x;drag.y=p.y;const t=h&&h.id!==drag.from?h.id:null;
+      dropPreview=t!==null?{edge:t,el:cells.get(drag.from),swap:cells.has(t)}:null;stage.render();return;}
+  }else if(drag?.kind==='paint')paintAt(h);
+  stage.canvas.style.cursor=tool==='select'?(h&&cells.has(h.id)?'grab':'move'):'crosshair';
+  if(changed&&!loop.running)stage.render();
+});
+function endCanvasDrag(cancel){
+  const d=drag;if(!d||d.kind==='bin')return;drag=null;delete stage.canvas.dataset.dragging;
+  if(d.kind==='move'){
+    const target=dropPreview?.edge;dropPreview=null;if(cancel){stage.render();return;}
+    if(d.active){commitMove(d.from,target);return;}
+    selected=d.from;const e=cells.get(d.from);
+    if(e?.type==='switch'){e.closed=!e.closed;afterChange({customize:true});return;}afterChange();
   }
 }
-stage.canvas.addEventListener("pointerup", () => endCanvasDrag(false));
-stage.canvas.addEventListener("pointercancel", () => endCanvasDrag(true));
-stage.canvas.addEventListener("pointerleave", () => { if (!drag) { hover = null; if (!loop.running) stage.render(); } });
+const endPointer=ev=>{
+  if(!pointers.has(ev.pointerId))return;pointers.delete(ev.pointerId);endCanvasDrag(ev.type!=='pointerup');cameraGesture=null;
+  if(!pointers.size)touchSnapshot=null;
+  if(stage.canvas.hasPointerCapture(ev.pointerId))stage.canvas.releasePointerCapture(ev.pointerId);stage.render();
+};
+for(const type of ['pointerup','pointercancel','lostpointercapture'])stage.canvas.addEventListener(type,endPointer);
+stage.canvas.addEventListener('pointerleave',()=>{if(!drag&&!cameraGesture){hover=null;if(!loop.running)stage.render();}});
+stage.canvas.addEventListener('wheel',ev=>{ev.preventDefault();scene.lab.camera.zoom=clamp(scene.lab.camera.zoom*Math.exp(-ev.deltaY*.001),.7,1.65);stage.render();},{passive:false});
+stage.canvas.addEventListener('keydown',ev=>{
+  if(ev.ctrlKey||ev.metaKey||ev.altKey||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','Home'].includes(ev.key))return;ev.preventDefault();
+  const c=scene.lab.camera;
+  if(ev.key==='ArrowLeft')c.yaw-=.15;if(ev.key==='ArrowRight')c.yaw+=.15;
+  if(ev.key==='ArrowUp')c.pitch=clamp(c.pitch+.1,.08,1.35);if(ev.key==='ArrowDown')c.pitch=clamp(c.pitch-.1,.08,1.35);
+  if(ev.key==='+'||ev.key==='=')c.zoom=clamp(c.zoom+.1,.7,1.65);if(ev.key==='-')c.zoom=clamp(c.zoom-.1,.7,1.65);
+  if(ev.key==='Home'){scene.lab.reset();Object.assign(c,{pitch:.8,yaw:-.35});}stage.render();
+});
+document.querySelectorAll('[data-camera]').forEach(button=>button.addEventListener('click',()=>{
+  const c=scene.lab.camera,name=button.dataset.camera;
+  if(name==='reset'){scene.lab.reset();Object.assign(c,{pitch:.8,yaw:-.35});}
+  if(name==='front')Object.assign(c,{yaw:0,pitch:.3,zoom:1});
+  if(name==='side')Object.assign(c,{yaw:Math.PI/2,pitch:.6,zoom:1});
+  if(name==='top')Object.assign(c,{yaw:0,pitch:1.3,zoom:1});stage.render();
+}));
 
 document.addEventListener("keydown", (ev) => {
   if (/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName || "")) return;

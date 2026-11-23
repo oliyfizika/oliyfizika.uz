@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/simulation.css">
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/electrolysis.js"></script>
+<script type="module" src="../assets/js/simulations/electrolysis.js?v=20261123-batch8d"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Elektroliz va Faradey qonunlari" data-shell-public="true">
 
@@ -39,7 +39,14 @@
           <span class="sim-modebar__hint" data-mode-hint></span>
         </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" role="img" aria-label="Elektroliz tajribasi"></canvas>
+          <canvas id="stage" role="img" aria-label="Stol ustidagi 3D elektroliz laboratoriyasi" aria-describedby="cameraHelp"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360°: bo‘sh joyni sudrang; g‘ildirak / ikki barmoq bilan yaqinlashtiring. Manba dastagini chap/o‘ngga, katod tutqichini suring. Klaviatura: yo‘nalishlar, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
@@ -94,7 +101,7 @@
           <div class="sim-control__row"><label for="iT">Temperatura t</label><output for="iT" id="iTOut"></output></div>
           <input class="sim-range" type="range" id="iT" min="5" max="95" step="1" value="25">
         </div>
-        <p class="of-subtle">Sahnada manba tutqichini yuqoriga/pastga surib U ni, o‘ng elektrodni (katod) chapga/o‘ngga surib d ni o‘zgartiring.</p>
+        <p class="of-subtle">Sahnada manba dastagini chapga/o‘ngga surib U ni, o‘ng elektrodni (katod) chapga/o‘ngga surib d ni o‘zgartiring.</p>
       </div>
 
       <div class="sim-group sim-group--grid" data-ctl="f1">

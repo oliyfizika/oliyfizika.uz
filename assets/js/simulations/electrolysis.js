@@ -8,6 +8,9 @@
 // Fizika: electrolysis-physics.js (Node'da tekshirilgan).
 // ==========================================================================
 
+import { createElectrolysisLab } from "./electrolysis-lab-3d.js?v=20261123-batch8d";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch8d";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch8d";
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as P from "./electrolysis-physics.js";
@@ -38,7 +41,7 @@ const ui = { mode: "ion", tab: "iu", speed: 60, hover: null };
 const ion = { key: "nacl", c: 0.5, U: 12, d: 0.05, t: 25 };
 const f1 = { key: "cuso4", I: 1, time: 0, runs: [] };
 const f2 = { set: "agcuw", I: 1, time: 0 };
-const vis = { ions: {}, bubbles: [], spark: 0 };
+const vis = { clock: 0, ions: {}, bubbles: [], spark: 0 };
 let presetId = null, running = false;
 const geo = {};
 
@@ -271,17 +274,19 @@ function drawF2Stage(ctx, c, w, h) {
 
 /* ------------------------------------------------------------------ Asosiy chizish */
 
+const scene = createElectrolysisLab();
 function draw(ctx, st) {
-  const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h);
-  if (ui.mode === "ion") drawIonStage(ctx, c, st.w, st.h);
-  else if (ui.mode === "f1") drawF1Stage(ctx, c, st.w, st.h);
-  else drawF2Stage(ctx, c, st.w, st.h);
+  scene.draw(ctx, st, ui, ion, f1, f2, vis, {
+    circuit: ionCirc(), I: curRun()?.I ?? f1.I, mass: f1Mass(),
+    initialMass: M0[f1Subst()], cells: f2Cells(),
+    ions: (id,key,n)=>ionsFor(id==='main'?(ui.mode==='ion'?'ion':'f1'):'f2-'+id.slice(4),key,n),
+  });
 }
 const heights = () => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(vh * 0.42, 300, 350)), graph: Math.round(clamp(vh * 0.28, 190, 260)) };
 };
-const stage = createStage($("#stage"), draw, { height: () => heights().stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 function drawGraphCanvas(ctx, gst) {
   const c = gst.colors;
@@ -404,18 +409,10 @@ function advanceF1(dts) {
 }
 const loop = createLoop((dt) => {
   if (!(dt > 0)) return;
-  const topOf = () => (geo.ion?.yl ?? 0) + 2;
+  vis.clock += dt;
   if (ui.mode === "ion") {
-    const cir = ionCirc(), s = P.SOLUTIONS[ion.key], g = geo.ion, flux = clamp(cir.I / 0.6, 0, 1.4);
-    if (g && vis.ions.ion) {
-      const xa = (g.xa - g.bx) / g.bw, xc = (g.xc - g.bx) / g.bw;
-      stepIons(vis.ions.ion, dt, xa, xc, flux, (p, at) => {
-        const gas = at === "cath" ? s.cath : s.anod;
-        if (P.SUBST[gas]?.gas) emitBubble(at === "cath" ? g.xc : g.xa, g.by + g.bh - 30 - Math.random() * (g.bh - 60), gas);
-      });
-      if (s.electrolyte && cir.I > 1e-4 && Math.random() < dt * 30 * flux) { if (P.SUBST[s.cath].gas) emitBubble(g.xc - 7, g.by + g.bh - 26 - Math.random() * (g.bh - 50), s.cath); if (P.SUBST[s.anod].gas) emitBubble(g.xa + 7, g.by + g.bh - 26 - Math.random() * (g.bh - 50), s.anod); }
-    }
-    stepBubbles(dt, topOf);
+    const cir = ionCirc(), gap = ion.d * 20 / 2.35, flux = clamp(cir.I / 0.6, 0, 1.4);
+    if (vis.ions.ion) stepIons(vis.ions.ion, dt, .5-gap/2, .5+gap/2, flux);
   } else if (ui.mode === "f1") {
     if (f1.time < T_MAX) { advanceF1(dt * ui.speed); const v = vis.ions.f1; if (v) stepIons(v, dt, 0.24, 0.76, clamp((curRun()?.I ?? 0) / 2, 0.15, 1)); }
     else loop.stop();
@@ -484,43 +481,21 @@ sSet.innerHTML = Object.entries(SETS).map(([k, v]) => `<option value="${k}">${v.
 sSet.addEventListener("change", () => { loop.stop(); f2.set = sSet.value; f2.time = 0; customized(); setPlayUI(false); refresh(); });
 const sIC = bindRange($("#sI"), $("#sIOut"), (v) => `${fmt(v, 2)} A`, (v) => { f2.I = v; customized(); refresh(); });
 
-/* Sahnada: manba tutqichi, katodni surish */
-const canvas = stage.canvas;
-let drag = null;
-const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-function hit(p) {
-  const s = geo.src;
-  if (s && p.x >= s.x && p.x <= s.x + s.w && p.y >= s.y0 - 14 && p.y <= s.y1 + 14) return { kind: "src" };
-  if (ui.mode === "ion" && geo.cath && Math.abs(p.x - geo.cath.x) <= geo.cath.pw / 2 + 12 && p.y >= geo.cath.y0 && p.y <= geo.cath.y1) return { kind: "cath" };
-  return null;
-}
-function dragTo(p) {
-  if (drag.kind === "src") {
-    const s = geo.src, fr = clamp((s.y1 - p.y) / (s.y1 - s.y0), 0, 1);
-    if (ui.mode === "ion") { ion.U = Math.round(fr * 240) / 10; iUC.set(ion.U); refresh(); }
-    else if (ui.mode === "f1") { const v = Math.round((0.1 + fr * 2.9) * 20) / 20; if (v !== f1.I) { fIC.set(v); f1.I = v; if (f1.time === 0 && curRun()) curRun().I = v; refresh(); } }
-    else { f2.I = Math.round((0.1 + fr * 2.9) * 20) / 20; sIC.set(f2.I); refresh(); }
-  } else if (drag.kind === "cath") {
-    const g = geo.ion, gap = 2 * (p.x - (g.bx + g.bw / 2)), span = clamp((gap / g.bw - 0.22) / 0.62, 0, 1);
-    ion.d = Math.round((0.02 + span * 0.08) * 200) / 200; iDC.set(ion.d * 100); refresh();
-  }
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p); if (!h) return;
-  drag = h; customized(); e.preventDefault(); try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  canvas.dataset.dragging = "true"; dragTo(p);
+/* Orbit camera and controls on the solid apparatus. */
+const ptr = (cv,e)=>{ const r=cv.getBoundingClientRect(); return {x:e.clientX-r.left,y:e.clientY-r.top}; };
+let sceneDrag=null;
+bindLabCamera(stage.canvas,scene.lab,()=>stage.render(),{
+  start(id,p){sceneDrag={id,x:p.x,value:ui.mode==='ion'?ion.U:ui.mode==='f1'?f1.I:f2.I};customized();},
+  move(id,p){
+    if(!sceneDrag)return;
+    if(id==='source'){
+      if(ui.mode==='ion'){ion.U=clamp(Math.round((sceneDrag.value+(p.x-sceneDrag.x)*24/180)*10)/10,0,24);iUC.set(ion.U);}
+      else{const value=clamp(Math.round((sceneDrag.value+(p.x-sceneDrag.x)*2.9/180)*20)/20,.1,3);if(ui.mode==='f1'){fIC.set(value);setF1I(value);}else{f2.I=value;sIC.set(value);}}
+    }else if(id==='cathode'&&ui.mode==='ion'){ion.d=clamp(Math.round(scene.parameter(id,p)*200)/200,.02,.1);iDC.set(ion.d*100);}
+    refresh();
+  },
+  end(id){if(id==='source'&&ui.mode==='f1')commitF1I();sceneDrag=null;},
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (drag) { dragTo(p); return; }
-  const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "cath" ? "ew-resize" : "ns-resize";
-});
-const endDrag = () => {
-  if (drag?.kind === "src" && ui.mode === "f1") commitF1I();
-  drag = null; canvas.dataset.dragging = "false";
-};
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* Grafikda kursor */
 const gcv = graph.canvas;
@@ -575,7 +550,7 @@ const MODE_DEFAULT = { ion: "salt", f1: "cu1", f2: "series" };
 document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.modeValue !== ui.mode) loadPreset(MODE_DEFAULT[b.dataset.modeValue]); }));
 function loadPreset(id) {
   const p = PRESETS[id];
-  loop.stop(); drag = null; ui.hover = null; vis.bubbles = [];
+  loop.stop(); sceneDrag = null; ui.hover = null; vis.bubbles = [];
   ui.mode = p.mode; p.set(); ui.speed = 60;
   setModeUI(); presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;

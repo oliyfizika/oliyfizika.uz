@@ -11,6 +11,10 @@
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as P from "./electroscope-physics.js";
+import { createElectroscopeLab } from "./electroscope-lab-3d.js?v=20261123-batch8c";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch8c";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch8c";
+const scene=createElectroscopeLab();
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -214,196 +218,8 @@ function rubBy(dx) {
 
 /* ------------------------------------------------------------------ Chizish */
 
-const POS = (c) => (c.dark ? "#f87171" : "#dc2626");
-const NEG = (c) => (c.dark ? "#60a5fa" : "#2563eb");
-const LEAFC = (c) => (c.dark ? "#facc15" : "#ca8a04");
-
-function sym(ctx, c, x, y, sign, r = 5.5) {
-  const col = sign > 0 ? POS(c) : NEG(c);
-  ctx.fillStyle = c.bg; ctx.strokeStyle = col; ctx.lineWidth = 1.4;
-  ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.lineWidth = 1.8; ctx.beginPath(); ctx.moveTo(x - r + 2, y); ctx.lineTo(x + r - 2, y);
-  if (sign > 0) { ctx.moveTo(x, y - r + 2); ctx.lineTo(x, y + r - 2); }
-  ctx.stroke();
-}
-/** Qism nomi (dunyo koordinatasida, ekranda bir xil o'lchamli yozuv). */
-function label(ctx, c, text, x, y, align = "left") {
-  ctx.font = SMALL;
-  const w = ctx.measureText(text).width + 8, px = view.ox + x * view.s, py = view.oy + y * view.s;
-  const x0 = clamp(align === "center" ? px - w / 2 : align === "right" ? px - w : px, 2, CW - 2 - w);
-  tag(ctx, text, x0, py, { color: c.text2, bg: c.bg2, font: SMALL, pad: 4 });
-}
-
-function drawSwitch(ctx, c, s) {
-  const gx = s.gx, top = s.by + 70, piv = s.by + 104, gy = s.by + 214;
-  ctx.strokeStyle = s.g ? c.success : c.text3; ctx.lineWidth = 2; ctx.lineCap = "round";
-  ctx.beginPath(); ctx.moveTo(s.bx + RB - 1, s.by); ctx.lineTo(gx, s.by); ctx.lineTo(gx, top); ctx.stroke();
-  ctx.strokeStyle = c.text3;
-  ctx.beginPath(); ctx.moveTo(gx, piv); ctx.lineTo(gx, gy); ctx.stroke();
-  ctx.beginPath(); [[14, 0], [9, 5], [4, 10]].forEach(([hw, dy]) => { ctx.moveTo(gx - hw, gy + dy); ctx.lineTo(gx + hw, gy + dy); }); ctx.stroke();
-  // kalit pichog'i
-  const a = s.g ? 0 : 38 * DEG, ex = gx + Math.sin(a) * 34, ey = piv - Math.cos(a) * 34;
-  ctx.strokeStyle = s.g ? c.success : c.warning; ctx.lineWidth = 4;
-  ctx.beginPath(); ctx.moveTo(gx, piv); ctx.lineTo(ex, ey); ctx.stroke();
-  ctx.fillStyle = c.text2; [[gx, top], [gx, piv]].forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x, y, 3.2, 0, TAU); ctx.fill(); });
-  ctx.strokeStyle = c.primary; ctx.lineWidth = 1.2; ctx.setLineDash([3, 3]);
-  ctx.beginPath(); ctx.arc(gx + 6, s.by + 87, 22, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
-  ctx.font = SMALL; ctx.fillStyle = s.g ? c.success : c.text3; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  ctx.fillText(s.g ? "ulangan" : "uzilgan", gx + 16, piv + 14);
-}
-
-function drawScope(ctx, c, s, name) {
-  const { bx, by } = s, hx = bx, hy = by + HINGE;
-  if (s.gx) drawSwitch(ctx, c, s);
-  // korpus
-  ctx.fillStyle = c.dark ? "rgba(148,163,184,0.08)" : "rgba(148,163,184,0.10)"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.6;
-  ctx.beginPath(); ctx.roundRect(bx - 62, by + 46, 124, 176, 10); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.dark ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.8)"; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.moveTo(bx - 52, by + 62); ctx.lineTo(bx - 52, by + 120); ctx.stroke();
-  ctx.fillStyle = c.text3; ctx.fillRect(bx - 74, by + 222, 148, 10);
-  // shkala
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.fillStyle = c.text3; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  ctx.beginPath(); ctx.arc(hx, hy, 70, Math.PI / 2 - 70 * DEG, Math.PI / 2 + 70 * DEG); ctx.stroke();
-  for (let a = -70; a <= 70; a += 10) {
-    const t = Math.PI / 2 + a * DEG, l = a % 30 === 0 ? 7 : 4;
-    ctx.beginPath(); ctx.moveTo(hx + Math.cos(t) * 70, hy + Math.sin(t) * 70); ctx.lineTo(hx + Math.cos(t) * (70 + l), hy + Math.sin(t) * (70 + l)); ctx.stroke();
-    if (a % 30 === 0 && a !== 0 && Math.abs(a) < 70) ctx.fillText(String(Math.abs(a)), hx + Math.cos(t) * 84, hy + Math.sin(t) * 84);
-  }
-  // izolyator tiqin va sterjen
-  ctx.fillStyle = c.dark ? "#334155" : "#475569"; ctx.beginPath(); ctx.roundRect(bx - 14, by + 38, 28, 16, 3); ctx.fill();
-  ctx.strokeStyle = c.dark ? "#94a3b8" : "#64748b"; ctx.lineWidth = 4; ctx.lineCap = "butt";
-  ctx.beginPath(); ctx.moveTo(bx, by + RB - 2); ctx.lineTo(bx, hy); ctx.stroke();
-  ctx.fillStyle = ctx.strokeStyle; ctx.fillRect(bx - 4, hy - 8, 8, 10);
-  // yaproqchalar
-  const th = s.th;
-  [-1, 1].forEach((side) => {
-    const a = Math.PI / 2 - side * th, ux = Math.cos(a), uy = Math.sin(a), px = -uy, py = ux;
-    const x0 = hx + side * 3, y0 = hy;
-    ctx.fillStyle = LEAFC(c); ctx.globalAlpha = 0.92;
-    ctx.beginPath(); ctx.moveTo(x0 + px * 3.2, y0 + py * 3.2); ctx.lineTo(x0 + ux * LEAF + px * 2.4, y0 + uy * LEAF + py * 2.4);
-    ctx.lineTo(x0 + ux * LEAF - px * 2.4, y0 + uy * LEAF - py * 2.4); ctx.lineTo(x0 - px * 3.2, y0 - py * 3.2); ctx.closePath(); ctx.fill();
-    ctx.globalAlpha = 1;
-  });
-  // sharcha
-  const gr = ctx.createRadialGradient(bx - 5, by - 6, 2, bx, by, RB);
-  gr.addColorStop(0, c.dark ? "#e2e8f0" : "#f8fafc"); gr.addColorStop(1, c.dark ? "#64748b" : "#94a3b8");
-  ctx.fillStyle = gr; ctx.strokeStyle = c.dark ? "#cbd5e1" : "#64748b"; ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.arc(bx, by, RB, 0, TAU); ctx.fill(); ctx.stroke();
-
-  if (ui.show.charges) {
-    // yaproqchalardagi zaryad
-    const nl = Math.min(8, Math.round(Math.abs(s.leaf) / 1.5)), sg = Math.sign(s.leaf);
-    for (let k = 0; k < nl; k++) {
-      const side = k % 2 ? 1 : -1, j = Math.floor(k / 2), f = 0.35 + 0.2 * j;
-      const a = Math.PI / 2 - side * th; sym(ctx, c, hx + side * 3 + Math.cos(a) * LEAF * f, hy + Math.sin(a) * LEAF * f, sg, 4.6);
-    }
-    // sharchadagi zaryad: tashqi zaryadga tortilgan yoki tekis
-    const nb = Math.min(8, Math.round(Math.abs(s.ball) / 1.5)), sb = Math.sign(s.ball);
-    if (nb) {
-      const src = srcDir(s); const toward = src && Math.sign(src.q) === -sb;
-      const center = toward ? src.a : -Math.PI / 2, spread = Math.min(toward ? 150 : 260, (toward ? 32 : 45) * (nb - 1)) * DEG;
-      for (let k = 0; k < nb; k++) {
-        const a = nb === 1 ? center : center - spread / 2 + (spread * k) / (nb - 1);
-        sym(ctx, c, bx + Math.cos(a) * (RB - 1), by + Math.sin(a) * (RB - 1), sb, 4.6);
-      }
-    }
-  }
-  if (name) { ctx.font = "700 13px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(name, bx, by + 244 > H - 6 ? H - 8 : by + 244); }
-}
-function srcDir(s) {
-  let best = null;
-  const consider = (q, x, y) => { if (!q) return; const w = Math.abs(q) * P.coupling(P.SCOPE.R, dist(x, y, s.bx, s.by) * MM); if (!best || w > best.w) best = { w, q, a: Math.atan2(y - s.by, x - s.bx) }; };
-  if (rod.on) { const r = rodCharge(); consider(rod.q, r.x, r.y); }
-  if (cloth.on) consider(cloth.q, cloth.x, cloth.y);
-  return best && best.w > 0.4 ? best : null;
-}
-
-const ROD_STYLE = {
-  glass: (c) => ({ fill: c.dark ? "rgba(186,230,253,0.32)" : "rgba(125,211,252,0.38)", stroke: c.dark ? "#7dd3fc" : "#0ea5e9" }),
-  ebonite: (c) => ({ fill: c.dark ? "#0b1220" : "#1f2937", stroke: c.dark ? "#94a3b8" : "#0f172a" }),
-  amber: (c) => ({ fill: c.dark ? "rgba(245,158,11,0.75)" : "rgba(245,158,11,0.85)", stroke: "#b45309" }),
-  metal: (c) => ({ fill: c.dark ? "#94a3b8" : "#cbd5e1", stroke: c.dark ? "#cbd5e1" : "#64748b" }),
-};
-function drawRod(ctx, c) {
-  const mat = rodMat(), sty = ROD_STYLE[mat](c), x0 = rod.x - ROD_LEN, y = rod.y;
-  ctx.fillStyle = sty.fill; ctx.strokeStyle = sty.stroke; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.roundRect(x0, y - ROD_R, ROD_LEN, ROD_R * 2, ROD_R); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.dark ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.7)"; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(x0 + 8, y - 3); ctx.lineTo(rod.x - 8, y - 3); ctx.stroke();
-  // ushlagich (qo'l)
-  ctx.fillStyle = c.dark ? "rgba(253,186,116,0.55)" : "rgba(251,146,60,0.45)";
-  ctx.beginPath(); ctx.roundRect(x0 - 4, y - ROD_R - 4, 34, ROD_R * 2 + 8, 8); ctx.fill();
-  if (ui.show.charges && rod.q) {
-    const n = Math.min(12, Math.round(Math.abs(rod.q) / 3)), sg = Math.sign(rod.q);
-    for (let k = 0; k < n; k++) sym(ctx, c, rod.x - 14 - (n > 1 ? (k * 100) / (n - 1) : 0), y, sg, 5); // ishqalangan uchida
-  }
-}
-const CLOTH_STYLE = { Ipak: (c) => (c.dark ? "rgba(244,114,182,0.45)" : "rgba(251,207,232,0.95)"), Jun: (c) => (c.dark ? "rgba(202,138,4,0.45)" : "rgba(214,185,140,0.95)") };
-function drawCloth(ctx, c) {
-  const pr = pair(), x0 = cloth.x - CLW / 2, y0 = cloth.y - CLH / 2;
-  ctx.fillStyle = CLOTH_STYLE[pr.cloth](c); ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.roundRect(x0, y0, CLW, CLH, 9); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.dark ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.12)"; ctx.lineWidth = 1;
-  ctx.beginPath(); for (let k = 1; k < 4; k++) { const yy = y0 + (CLH * k) / 4; ctx.moveTo(x0 + 6, yy); for (let xx = x0 + 6; xx <= x0 + CLW - 6; xx += 6) ctx.lineTo(xx, yy + (pr.cloth === "Jun" ? Math.sin(xx) * 1.6 : 0)); } ctx.stroke();
-  if (ui.show.charges && cloth.q) {
-    const n = Math.min(10, Math.round(Math.abs(cloth.q) / 3)), sg = Math.sign(cloth.q);
-    for (let k = 0; k < n; k++) sym(ctx, c, x0 + 12 + (k % 5) * 12.5, y0 + 13 + Math.floor(k / 5) * 18, sg, 5);
-  }
-}
-function drawBar(ctx, c) {
-  const a = scopes[0], b = scopes[1], x0 = a.bx - 10, x1 = b.bx + 10, mid = (x0 + x1) / 2, y = bar.y;
-  const metal = bar.mat === "metal";
-  ctx.fillStyle = metal ? (c.dark ? "#94a3b8" : "#a8b3c2") : (c.dark ? "rgba(186,230,253,0.32)" : "rgba(125,211,252,0.4)");
-  ctx.strokeStyle = metal ? (c.dark ? "#cbd5e1" : "#64748b") : (c.dark ? "#7dd3fc" : "#0ea5e9"); ctx.lineWidth = 1.3;
-  ctx.beginPath(); ctx.roundRect(x0, y, x1 - x0, 6, 3); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.dark ? "#334155" : "#475569"; ctx.beginPath(); ctx.roundRect(mid - 5, y - 24, 10, 24, 3); ctx.fill();
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(mid, y - 26, 8, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.primary; ctx.beginPath(); ctx.moveTo(mid, y - 32); ctx.lineTo(mid - 3, y - 28); ctx.lineTo(mid + 3, y - 28); ctx.closePath(); ctx.moveTo(mid, y - 20); ctx.lineTo(mid - 3, y - 24); ctx.lineTo(mid + 3, y - 24); ctx.closePath(); ctx.fill();
-}
-
-function draw(ctx, stg) {
-  CW = stg.w;
-  const c = stg.colors;
-  ctx.fillStyle = c.bg; ctx.fillRect(0, 0, stg.w, stg.h);
-  fit(stg.w, stg.h);
-  ctx.save(); ctx.translate(view.ox, view.oy); ctx.scale(view.s, view.s);
-  // stol
-  ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(XB[ui.mode][0], 312.5); ctx.lineTo(XB[ui.mode][1], 312.5); ctx.stroke();
-  scopes.forEach((s, i) => drawScope(ctx, c, s, scopes.length > 1 ? "AB"[i] : ""));
-  if (ui.mode === "two") drawBar(ctx, c);
-  const top = clothOnRod(); // mato tayoqcha ustida bo'lsa — ustidan chiziladi
-  if (cloth.on && !top) drawCloth(ctx, c);
-  if (rod.on) drawRod(ctx, c);
-  if (top) drawCloth(ctx, c);
-  // elektronlar
-  for (const p of particles) {
-    if (p.t < 0) continue;
-    const q = partPos(p); ctx.fillStyle = NEG(c); ctx.beginPath(); ctx.arc(q.x, q.y, 3.4, 0, TAU); ctx.fill();
-    ctx.strokeStyle = c.bg; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(q.x - 1.8, q.y); ctx.lineTo(q.x + 1.8, q.y); ctx.stroke();
-  }
-  ctx.restore();
-  if (ui.show.names) drawNames(ctx, c);
-}
-function drawNames(ctx, c) {
-  ctx.font = SMALL;
-  const s = scopes[ui.mode === "two" ? 1 : 0];
-  label(ctx, c, "sharcha", s.bx - RB - 8, s.by - 8, "right");
-  label(ctx, c, "metall sterjen", s.bx + 8, s.by + 74);
-  label(ctx, c, "izolyator", s.bx - 18, s.by + 46, "right");
-  label(ctx, c, "yaproqchalar", s.bx - 8, s.by + HINGE + LEAF + 6, "right");
-  label(ctx, c, "shkala", s.bx + 64, s.by + HINGE + 6);
-  label(ctx, c, "shisha korpus", s.bx + 64, s.by + 200, "center");
-  if (s.gx) label(ctx, c, "yerga ulash kaliti", s.gx + 4, s.by + 56, "center");
-  if (rod.on) label(ctx, c, ui.mode === "ind" ? (rod.q < 0 ? "ebonit tayoqcha" : "shisha tayoqcha") : pair().rod.toLowerCase(), rod.x - ROD_LEN / 2, rod.y - 18, "center");
-  if (cloth.on) label(ctx, c, pair().cloth.toLowerCase(), cloth.x, cloth.y + CLH / 2 + 10, "center");
-  if (ui.mode === "two") label(ctx, c, bar.mat === "metal" ? "metall ulagich" : "shisha ulagich", (scopes[0].bx + scopes[1].bx) / 2 + 14, bar.y - 18);
-}
-
-const heights = (cw) => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return Math.round(clamp(Math.min(cw * 0.6, vh * 0.46), 230, 360));
-};
-const stage = createStage($("#stage"), draw, { height: heights });
+function draw(ctx,stg){scene.draw(ctx,stg,ui,scopes,rod,cloth,bar,pair(),rodMat(),particles,partPos);}
+const stage=createStage($("#stage"),draw,{height:detailedStageHeight});
 
 /* ------------------------------------------------------------------ Natijalar */
 
@@ -568,46 +384,28 @@ function syncDynamic() {
   document.querySelectorAll("[data-bar-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.barValue === bar.mat)));
 }
 
-/* Sahnadagi boshqaruv */
-const canvas = stage.canvas;
-let drag = null;
-const ptr = (e) => { const r = canvas.getBoundingClientRect(); return toWorld(e.clientX - r.left, e.clientY - r.top); };
-function hitTest(p) {
-  for (let i = 0; i < scopes.length; i++) { const s = scopes[i]; if (s.gx && dist(p.x, p.y, s.gx + 6, s.by + 87) <= 24) return { k: "sw", i }; }
-  if (ui.mode === "two") { const mid = (scopes[0].bx + scopes[1].bx) / 2; if ((Math.abs(p.x - mid) <= 16 && p.y >= bar.y - 38 && p.y <= bar.y + 10) || (p.x >= scopes[0].bx - 10 && p.x <= scopes[1].bx + 10 && Math.abs(p.y - bar.y - 3) <= 9)) return { k: "bar" }; }
-  if (cloth.on && Math.abs(p.x - cloth.x) <= CLW / 2 + 4 && Math.abs(p.y - cloth.y) <= CLH / 2 + 4) return { k: "cloth" };
-  if (rod.on) { const [x0, y0, x1, y1] = rodSeg(); if (segDist(p.x, p.y, x0, y0, x1, y1).d <= ROD_R + 8) return { k: "rod" }; }
-  return null;
+/* Sahnadagi boshqaruv: orbit proyeksiyasidan model tekisligiga. */
+const canvas=stage.canvas;
+let drag=null;
+function onDrag(p){
+  const nx=p.x-drag.ox,ny=p.y-drag.oy;
+  if(drag.k==='rod'){
+    if(ui.mode==='ind'){const s=scopes[0];ind.d=clamp(Math.round((s.bx-RB-nx)/5)/2,.5,25);placeIndRod();}
+    else{const px=rod.x,on=clothOnRod();rod.x=clamp(nx,XB[ui.mode][0]+ROD_LEN*.35,XB[ui.mode][1]-4);rod.y=clamp(ny,12,H-12);pushOut();if(on)rubBy(rod.x-px);}
+  }else if(drag.k==='cloth'){
+    const px=cloth.x;cloth.x=clamp(nx,XB[ui.mode][0]+CLW/2,XB[ui.mode][1]-CLW/2);cloth.y=clamp(ny,CLH/2,H-CLH/2);pushOut();rubBy(cloth.x-px);
+  }else if(drag.k==='bar')bar.y=clamp(ny,BAR_MIN,BAR_MAX);
+  customized();update();
 }
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(e), h = hitTest(p); if (!h || autoRub) return;
-  e.preventDefault();
-  if (h.k === "sw") { scopes[h.i].g = !scopes[h.i].g; customized(); update(); return; }
-  const o = h.k === "rod" ? rod : h.k === "cloth" ? cloth : { x: 0, y: bar.y };
-  drag = { k: h.k, ox: p.x - o.x, oy: p.y - o.y };
-  canvas.dataset.dragging = "true"; try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
+bindLabCamera(canvas,scene.lab,()=>stage.render(),{
+  start(id,p){
+    if(autoRub)return;
+    if(id.startsWith('sw')){const i=+id.slice(2);scopes[i].g=!scopes[i].g;customized();update();return;}
+    const q=scene.modelPoint(p,id);if(!q)return;const o=id==='rod'?rod:id==='cloth'?cloth:{x:0,y:bar.y};drag={k:id,ox:q.x-o.x,oy:q.y-o.y};
+  },
+  move(id,p){if(!drag)return;const q=scene.modelPoint(p,drag.k);if(q)onDrag(q);},
+  end(){drag=null;refresh();}
 });
-function onDrag(p) {
-  const nx = p.x - drag.ox, ny = p.y - drag.oy;
-  if (drag.k === "rod") {
-    if (ui.mode === "ind") { const s = scopes[0]; ind.d = clamp(Math.round((s.bx - RB - nx) / 5) / 2, 0.5, 25); placeIndRod(); }
-    else {
-      const px = rod.x, on = clothOnRod();
-      rod.x = clamp(nx, XB[ui.mode][0] + ROD_LEN * 0.35, XB[ui.mode][1] - 4); rod.y = clamp(ny, 12, H - 12); pushOut();
-      if (on) rubBy(rod.x - px);
-    }
-  } else if (drag.k === "cloth") {
-    const px = cloth.x;
-    cloth.x = clamp(nx, XB[ui.mode][0] + CLW / 2, XB[ui.mode][1] - CLW / 2); cloth.y = clamp(ny, CLH / 2, H - CLH / 2); pushOut();
-    rubBy(cloth.x - px);
-  } else if (drag.k === "bar") bar.y = clamp(ny, BAR_MIN, BAR_MAX);
-  customized(); update();
-}
-const CURSOR = { sw: "pointer", bar: "ns-resize", rod: "grab", cloth: "grab" };
-canvas.addEventListener("pointermove", (e) => { const p = ptr(e); if (!drag) { const h = hitTest(p); canvas.style.cursor = h ? (ui.mode === "ind" && h.k === "rod" ? "ew-resize" : CURSOR[h.k]) : ""; return; } onDrag(p); });
-function endDrag() { if (!drag) return; drag = null; canvas.dataset.dragging = "false"; refresh(); }
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 

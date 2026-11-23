@@ -6,6 +6,9 @@
 // Fizika: induction-physics.js (Node'da tekshirilgan). Grafiklar: induction-plots.js.
 // ==========================================================================
 
+import { createInductionLab } from "./induction-lab-3d.js?v=20261123-batch8b";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch8b";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch8b";
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow } from "./sim-kit.js";
 import * as P from "./induction-physics.js";
@@ -272,15 +275,15 @@ function drawSelf(ctx, stage) {
   tag(ctx, self.closed ? "Kalit ulangan" : "Kalit uzilgan", xS, T - 34, { color: self.closed ? c.success : c.text2, bg: c.bg, align: "center", font: "700 11px Inter, system-ui, sans-serif" });
 }
 
+const scene=createInductionLab();
 function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
-  if (ui.mode === "faraday") drawFaraday(ctx, stage); else if (ui.mode === "gen") drawGen(ctx, stage); else drawSelf(ctx, stage);
+  scene.draw(ctx,stage,ui,fd,gen,self,{fdState:fdState(),peakI:peakI(),genP:genP(),Rlamp:R_LAMP});
 }
 const heights = (cw) => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(Math.min(cw * 0.48, vh * 0.42), 240, 330)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -414,26 +417,26 @@ function toggleSwitch() {
 }
 $("[data-switch]").addEventListener("click", toggleSwitch);
 
-// Faradey: qo'lda sudrash
-stage.canvas.addEventListener("pointerdown", (ev) => {
-  if (ui.mode === "self") { toggleSwitch(); return; }
-  if (ui.mode !== "faraday") return;
-  if (fd.motion !== "hand") setMotion("hand");
-  const r = stage.canvas.getBoundingClientRect();
-  fd.drag = { px: ev.clientX - r.left, t: performance.now(), x0: fd.x, start: ev.clientX - r.left };
-  try { stage.canvas.setPointerCapture(ev.pointerId); } catch { /* */ }
+// Projected apparatus controls; the remaining surface orbits the camera.
+const knobs={speed:{obj:fd,key:'v',min:.1,max:3,step:.1,ctl:fVc},turns:{obj:fd,key:'N',min:20,max:1000,step:10,ctl:fNc},rotation:{obj:gen,key:'n',min:.2,max:10,step:.1,ctl:gNc},field:{obj:gen,key:'B',min:.05,max:1,step:.05,ctl:gBc},voltage:{obj:self,key:'E',min:1,max:12,step:.5,ctl:sEc}};
+let sceneDrag=null;
+bindLabCamera(stage.canvas,scene.lab,()=>stage.render(),{
+ start(id,p){
+  if(id==='switch'){toggleSwitch();customized();return;}
+  if(id==='core'){self.core=!self.core;syncAll();customized();return;}
+  const spec=knobs[id];sceneDrag={id,x:p.x,value:spec?spec.obj[spec.key]:0};
+  if(id==='magnet'){setMotion('hand');fd.drag={t:performance.now()};}
+ },
+ move(id,p){
+  if(!sceneDrag)return;
+  const spec=knobs[id];
+  if(spec){const v=clamp(Math.round((sceneDrag.value+(p.x-sceneDrag.x)*(spec.max-spec.min)/180)/spec.step)*spec.step,spec.min,spec.max);
+   if(id==='rotation'){const phi=TAU*gen.n*gen.t;gen.n=v;gen.t=phi/(TAU*v);gen.hist=[];}else spec.obj[spec.key]=v;spec.ctl.set(v);
+  }else if(id==='magnet'&&fd.drag){const nx=scene.parameter(id,p),now=performance.now(),dt=Math.max(.008,(now-fd.drag.t)/1000);fd.vel=.5*fd.vel+.5*(nx-fd.x)/dt;fd.x=nx;fd.drag.t=now;}
+  customized();
+ },
+ end(id){if(id==='magnet'){fd.drag=null;if(!loop.running)fd.vel=0;}sceneDrag=null;refresh();stage.render();},
 });
-stage.canvas.addEventListener("pointermove", (ev) => {
-  if (!fd.drag) { stage.canvas.style.cursor = ui.mode === "faraday" || ui.mode === "self" ? "pointer" : ""; return; }
-  const r = stage.canvas.getBoundingClientRect(), px = ev.clientX - r.left, now = performance.now();
-  const nx = clamp(fd.drag.x0 + (px - fd.drag.start) / fview.s, -0.145, 0.145);
-  const dt = Math.max(0.008, (now - fd.drag.t) / 1000);
-  const vInst = (nx - fd.x) / dt; // haqiqiy (real vaqt) tezlik
-  fd.vel = fd.vel * 0.5 + vInst * 0.5; fd.x = nx; fd.drag.t = now;
-});
-const endDrag = () => { fd.drag = null; };
-stage.canvas.addEventListener("pointerup", endDrag);
-stage.canvas.addEventListener("pointercancel", endDrag);
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 
@@ -443,7 +446,7 @@ const PRESETS = {
   turns: { mode: "faraday", title: "O‘ramlar soni va tezlik", lesson: "O‘ramlar sonini 200 dan 800 ga oshiring — EYuK 4 marta ortadi. Tezlikni ikki marta oshirsangiz ham EYuK ikki marta ortadi.", set: () => { Object.assign(fd, { v: 2, m: 1, N: 800, R: 20, flip: false, x: -0.13, dir: 1, hist: [], t: 0 }); setMotion("osc"); } },
   generatorAC: { mode: "gen", title: "O‘zgaruvchan tok generatori", lesson: "Ramka kontakt halqalar orqali yuklamaga ulangan. EYuK sinusoida bo‘yicha o‘zgaradi, lampa har yarim davrda yonib-o‘chadi (tez aylanganda bilinmaydi).", set: () => Object.assign(gen, { n: 2, B: 0.2, N: 100, S: 50, R: 20, comm: false, t: 0, hist: [] }) },
   generatorDC: { mode: "gen", title: "O‘zgarmas tok generatori (kollektor)", lesson: "Kollektor ramka uchlarini har yarim aylanishda almashtiradi — tashqi zanjirdagi tok yo‘nalishi o‘zgarmaydi, lekin kattaligi pulsatsiyalanadi.", set: () => Object.assign(gen, { n: 2, B: 0.2, N: 100, S: 50, R: 20, comm: true, t: 0, hist: [] }) },
-  selfOn: { mode: "self", title: "O‘zinduksiya: lampalar tajribasi", lesson: "«Kalitni ulash» ni bosing (yoki sxemani bosing): L₁ darhol yonadi, L₂ kechikib yonadi. Keyin kalitni uzing — L₁ bir lahza chaqnaydi.", set: () => { Object.assign(self, { E: 6, L: 3, R: 20, core: true, closed: false, st: { i2: 0 }, out: { i1: 0, i2: 0, eSelf: 0, tau: 0.25 }, t: 0, hist: [] }); } },
+  selfOn: { mode: "self", title: "O‘zinduksiya: lampalar tajribasi", lesson: "«Kalitni ulash» ni yoki sahnadagi kalitni bosing: L₁ darhol yonadi, L₂ kechikib yonadi. Keyin kalitni uzing — L₁ bir lahza chaqnaydi.", set: () => { Object.assign(self, { E: 6, L: 3, R: 20, core: true, closed: false, st: { i2: 0 }, out: { i1: 0, i2: 0, eSelf: 0, tau: 0.25 }, t: 0, hist: [] }); } },
   selfCore: { mode: "self", title: "Temir o‘zakning roli", lesson: "O‘zaksiz g‘altakning induktivligi ancha kichik — lampa deyarli kechikmay yonadi. O‘zakni yoqib-o‘chirib, kalitni ulang va solishtiring.", set: () => { Object.assign(self, { E: 6, L: 3, R: 20, core: false, closed: false, st: { i2: 0 }, out: { i1: 0, i2: 0, eSelf: 0, tau: 0.25 }, t: 0, hist: [] }); } },
 };
 const GROUPS = [["Elektromagnit induksiya", ["faraday", "hand", "turns"]], ["Generator", ["generatorAC", "generatorDC"]], ["O‘zinduksiya", ["selfOn", "selfCore"]]];
@@ -451,7 +454,7 @@ const presetBox = $("[data-presets]");
 presetBox.innerHTML = GROUPS.map(([g, ids]) => `<span class="sim-presets__label">${g}</span>${ids.map((id) => `<button class="sim-preset" type="button" data-preset="${id}" aria-pressed="false">${PRESETS[id].title}</button>`).join("")}`).join("");
 presetBox.addEventListener("click", (ev) => { const b = ev.target.closest("[data-preset]"); if (b) loadPreset(b.dataset.preset); });
 const setPresetPressed = (id) => document.querySelectorAll("[data-preset]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.preset === id)));
-function customized() { if (presetId) { presetId = null; setPresetPressed(null); $("[data-lesson]").textContent = ""; } }
+function customized() { if (presetId) { presetId = null; setPresetPressed(null); $("[data-lesson]").textContent = ""; } refresh(); stage.render(); graph.render(); }
 
 function syncAll() {
   fVc.set(fd.v); fMc.set(fd.m); fNc.set(fd.N); fRc.set(fd.R);
