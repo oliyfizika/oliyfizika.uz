@@ -10,15 +10,15 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow } from "./sim-kit.js";
+import { clamp, fmt, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as P from "./motion-physics.js";
 import { drawPlot, lastFrame } from "./motion-plots.js";
+import { createMotionLab } from "./motion-lab-3d.js?v=20261123-batch6b";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch6b";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch6b";
 
 const $ = (s) => document.querySelector(s);
-const TAU = Math.PI * 2;
-const SMALL = "600 10px Inter, system-ui, sans-serif";
-const MID = "600 11px Inter, system-ui, sans-serif";
-const TMAX = 10, XL = -10, XR = 160, KA = 5, DT = 2;
+const TMAX = 10, XL = -10, XR = 160, DT = 2;
 
 /* ------------------------------------------------------------------ Holat */
 
@@ -29,7 +29,6 @@ const pw = { x0: 0, shape: "lin", lin: [0, 10, 10, 10, 10, 0], step: [12, 12, 12
 const sim = { t: 0, T: TMAX, edge: false, stop: true };
 let models = { A: null, B: null }, meet = null, win = [XL, XR];
 let presetId = null;
-const geo = {};
 const dirMemo = { A: 1, B: -1 };
 
 function build() {
@@ -54,113 +53,13 @@ function build() {
 
 /* ------------------------------------------------------------------ Sahna */
 
-const COL = (c) => ({ A: c.primary, B: c.success, acc: c.warning });
-let road = { X: (x) => x, pxm: 1, y: [0, 0] };
-
-function drawCar(ctx, c, x, y, dir, col) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(dir, 1);
-  ctx.fillStyle = col; ctx.strokeStyle = c.dark ? "rgba(255,255,255,0.35)" : "rgba(15,23,42,0.35)"; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(-22, 2); ctx.lineTo(-22, -6); ctx.lineTo(-12, -7); ctx.lineTo(-6, -15); ctx.lineTo(8, -15); ctx.lineTo(14, -7); ctx.lineTo(22, -5); ctx.lineTo(22, 2); ctx.closePath(); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.dark ? "rgba(15,23,42,0.75)" : "rgba(255,255,255,0.85)";
-  ctx.beginPath(); ctx.moveTo(-4, -13); ctx.lineTo(1, -13); ctx.lineTo(1, -8); ctx.lineTo(-8, -8); ctx.closePath(); ctx.moveTo(3, -13); ctx.lineTo(7, -13); ctx.lineTo(11, -8); ctx.lineTo(3, -8); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = c.dark ? "#0f172a" : "#1e293b";
-  [-12, 12].forEach((wx) => { ctx.beginPath(); ctx.arc(wx, 3, 4.5, 0, TAU); ctx.fill(); });
-  ctx.restore();
-}
-function drawBike(ctx, c, x, y, dir, col) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(dir, 1);
-  ctx.strokeStyle = c.dark ? "#cbd5e1" : "#334155"; ctx.lineWidth = 1.8;
-  [-11, 11].forEach((wx) => { ctx.beginPath(); ctx.arc(wx, 0, 7, 0, TAU); ctx.stroke(); });
-  ctx.strokeStyle = col; ctx.lineWidth = 2.4; ctx.lineJoin = "round";
-  ctx.beginPath(); ctx.moveTo(-11, 0); ctx.lineTo(-3, -9); ctx.lineTo(8, -9); ctx.lineTo(11, 0); ctx.moveTo(-3, -9); ctx.lineTo(1, 0); ctx.lineTo(8, -9); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(-3, -9); ctx.lineTo(-1, -18); ctx.lineTo(6, -14); ctx.stroke();
-  ctx.fillStyle = col; ctx.beginPath(); ctx.arc(-1, -22, 3.6, 0, TAU); ctx.fill();
-  ctx.restore();
-}
-function tagC(ctx, text, x, y, w, o) {
-  ctx.save(); ctx.font = o.font || MID; const tw = ctx.measureText(text).width + 12; ctx.restore();
-  let x0 = o.align === "center" ? x - tw / 2 : o.align === "right" ? x - tw : x;
-  tag(ctx, text, clamp(x0, 4, w - 4 - tw), y, { ...o, align: "left" });
-}
-
+const COL = c => ({ A: c.primary, B: c.success, acc: c.warning });
+const scene = createMotionLab();
 function draw(ctx, st) {
-  const c = st.colors, { w, h } = st, col = COL(c);
-  ctx.fillStyle = c.bg; ctx.fillRect(0, 0, w, h);
-  const padL = 26, padR = 26, pxm = (w - padL - padR) / (win[1] - win[0]);
-  const X = (x) => padL + (x - win[0]) * pxm;
-  const two = !!models.B, top = 34, bot = h - 34, narrow = w < 520; // tor ekranda qisqa yozuvlar
-  const lanes = two ? [top + (bot - top) * 0.3, top + (bot - top) * 0.8] : [top + (bot - top) * 0.62];
-  road = { X, pxm, lanes };
-
-  // yo'l
-  ctx.fillStyle = c.dark ? "rgba(148,163,184,0.10)" : "rgba(148,163,184,0.14)";
-  ctx.fillRect(X(win[0]), top + 6, X(win[1]) - X(win[0]), bot - top - 6);
-  ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.moveTo(X(win[0]), bot + 0.5); ctx.lineTo(X(win[1]), bot + 0.5); ctx.stroke();
-  if (two) { ctx.strokeStyle = c.border; ctx.setLineDash([10, 8]); ctx.beginPath(); ctx.moveTo(X(win[0]), (lanes[0] + lanes[1]) / 2 - 6); ctx.lineTo(X(win[1]), (lanes[0] + lanes[1]) / 2 - 6); ctx.stroke(); ctx.setLineDash([]); }
-  // chizg'ich
-  const step = pxm * 10 < 26 ? 20 : 10;
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.textAlign = "center"; ctx.textBaseline = "top";
-  for (let x = Math.ceil(win[0] / 5) * 5; x <= win[1]; x += 5) {
-    const major = x % step === 0, px = X(x);
-    ctx.beginPath(); ctx.moveTo(px + 0.5, bot); ctx.lineTo(px + 0.5, bot + (major ? 7 : 4)); ctx.stroke();
-    if (major && X(win[1]) - px > 24) ctx.fillText(String(x), px, bot + 10);
-  }
-  ctx.textAlign = "right"; ctx.fillText("x, m", X(win[1]), bot + 21);
-  // x = 0 belgisi
-  ctx.strokeStyle = c.text3; ctx.setLineDash([2, 4]); ctx.beginPath(); ctx.moveTo(X(0) + 0.5, top + 6); ctx.lineTo(X(0) + 0.5, bot); ctx.stroke(); ctx.setLineDash([]);
-
-  // uchrashish joyi
-  if (meet && (ui.show.ghost || sim.t >= meet.t)) {
-    const px = X(meet.x);
-    ctx.strokeStyle = c.text2; ctx.lineWidth = 1.2; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(px, top + 8); ctx.lineTo(px, bot); ctx.stroke(); ctx.setLineDash([]);
-    tagC(ctx, narrow ? `uchrashish ${fmt(meet.x, 0)} m` : `uchrashish: ${fmt(meet.x, 1)} m, ${fmt(meet.t, 2)} s`, px, top + 14, w, { color: c.text, bg: c.bg2, align: "center", font: SMALL });
-  }
-
-  const bodies = [["A", models.A, lanes[0]], ["B", models.B, lanes[1]]].filter((b) => b[1]);
-  for (const [key, m, ly] of bodies) {
-    const s = m.state(Math.min(sim.t, sim.T)), color = col[key];
-    // stroboskop nuqtalari
-    if (ui.show.dots) {
-      ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top";
-      for (let k = 0; k <= Math.floor(Math.min(sim.t, sim.T) + 1e-9); k++) {
-        const px = X(m.state(k).x);
-        ctx.fillStyle = color; ctx.globalAlpha = 0.85; ctx.beginPath(); ctx.arc(px, ly + 12, 3.2, 0, TAU); ctx.fill(); ctx.globalAlpha = 1;
-      }
-    }
-    if (Math.abs(s.v) > 1e-6) dirMemo[key] = Math.sign(s.v);
-    const px = X(s.x);
-    if (key === "A") drawCar(ctx, c, px, ly + 2, dirMemo[key], color); else drawBike(ctx, c, px, ly + 2, dirMemo[key], color);
-    ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(px, ly + 8); ctx.lineTo(px - 4, ly + 16); ctx.lineTo(px + 4, ly + 16); ctx.closePath(); ctx.fill();
-    // tezlik o'qi (1 s dagi yo'l)
-    const vy = ly - (key === "A" ? 26 : 32), vlen = s.v * pxm;
-    arrow(ctx, px, vy, vlen, 0, color, { width: 2.5, head: 9 });
-    tagC(ctx, narrow ? fmt(s.v, 1) : `v = ${fmt(s.v, 1)} m/s`, px + (vlen >= 0 ? Math.max(vlen, 0) + 8 : vlen - 8), vy, w, { color, bg: c.bg, align: vlen >= 0 ? "left" : "right", font: SMALL });
-    geo[key] = { car: { x: px, y: ly - 4, r: 22 }, v: { x: px + vlen, y: vy, r: 12 } };
-    if (ui.mode === "acc") {
-      const ay = ly + 26, alen = s.a * pxm * KA;
-      if (Math.abs(alen) > 1) arrow(ctx, px, ay, alen, 0, col.acc, { width: 2.2, head: 8 });
-      else { ctx.fillStyle = col.acc; ctx.beginPath(); ctx.arc(px, ay, 3, 0, TAU); ctx.fill(); }
-      tagC(ctx, narrow ? fmt(s.a, 1) : `a = ${fmt(s.a, 2)} m/s²`, px + (alen >= 0 ? Math.max(alen, 0) + 8 : alen - 8), ay, w, { color: col.acc, bg: c.bg, align: alen >= 0 ? "left" : "right", font: SMALL });
-      geo[key].a = { x: px + alen, y: ay, r: 12 };
-    } else geo[key].a = null;
-    // sudrash tutqichlari (to'xtab turganda)
-    if (!loop.running && ui.mode !== "pw") {
-      ctx.strokeStyle = color; ctx.lineWidth = 1.2; ctx.setLineDash([3, 3]);
-      ctx.beginPath(); ctx.arc(px + vlen, vy, 8, 0, TAU); ctx.stroke();
-      if (geo[key].a) { ctx.strokeStyle = col.acc; ctx.beginPath(); ctx.arc(geo[key].a.x, geo[key].a.y, 8, 0, TAU); ctx.stroke(); }
-      ctx.setLineDash([]);
-    }
-  }
-  // soat
-  tag(ctx, `t = ${fmt(Math.min(sim.t, sim.T), 2)} s`, 8, 16, { color: c.text, bg: c.bg2, font: "700 12px Inter, system-ui, sans-serif" });
+  if (models.A) scene.draw(ctx, st, ui, models, sim, meet, win, dirMemo, !!ui.playing);
 }
-
-const heights = (cw) => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(Math.min(cw * 0.42, vh * 0.3), 200, 260)), graph: Math.round(clamp(vh * 0.3, 190, 280)) };
-};
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+const heights = () => ({graph: Math.round(clamp(innerHeight * .3, 190, 280))});
+const stage = createStage($("#stage"), draw, {height: detailedStageHeight});
 
 /* ------------------------------------------------------------------ Grafik */
 
@@ -276,6 +175,7 @@ const loop = createLoop((dt) => {
 }, { onStateChange: setPlayUI });
 const playBtn = $("[data-play]");
 function setPlayUI(on) {
+  ui.playing = on;
   playBtn.setAttribute("aria-pressed", String(on));
   playBtn.querySelector("[data-play-icon]").innerHTML = icon(on ? "pause" : "play");
   playBtn.querySelector("[data-play-text]").textContent = on ? "Pauza" : sim.t > 0 && sim.t < sim.T ? "Davom ettirish" : "Boshlash";
@@ -313,41 +213,32 @@ document.querySelectorAll("[data-shape-value]").forEach((b) => b.addEventListene
 const syncB = () => document.querySelectorAll("[data-b]").forEach((el) => { el.style.display = B.on ? "" : "none"; });
 const syncShape = () => document.querySelectorAll("[data-shape-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.shapeValue === pw.shape)));
 
-/* Sahnada sudrash */
+/* Sahnadagi 3D dastaklar; grafikning alohida pointer boshqaruvi saqlanadi. */
 const canvas = stage.canvas;
 let drag = null;
 const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-const hit = (p, b) => b && Math.hypot(p.x - b.x, p.y - b.y) <= b.r;
-function hitStage(p) {
-  for (const key of ["A", "B"]) {
-    const g = geo[key]; if (!g || (key === "B" && !models.B)) continue;
-    if (ui.mode !== "pw" && hit(p, g.a)) return { key, part: "a" };
-    if (ui.mode !== "pw" && hit(p, g.v)) return { key, part: "v" };
-    if (hit(p, g.car)) return { key, part: "car" };
-  }
-  return null;
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hitStage(p); if (!h) return;
-  e.preventDefault(); drag = h; canvas.dataset.dragging = "true";
-  try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  if (loop.running || sim.t > 0) { loop.stop(); sim.t = 0; setPlayUI(false); }
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id) {
+    drag = id;
+    if (loop.running || sim.t > 0) { loop.stop(); sim.t = 0; setPlayUI(false); }
+  },
+  move(id, p) {
+    if (drag !== id) return;
+    const [key, part] = id.split(":"), o = key === "A" ? A : B;
+    const value = scene.parameter(id, p);
+    if (part === "car") {
+      const x = Math.round(value);
+      if (ui.mode === "pw") { pw.x0 = clamp(x, 0, 100); pXC.set(pw.x0); }
+      else { o.x0 = clamp(x, 0, 150); (key === "A" ? aXC : bXC).set(o.x0); }
+    } else if (part === "v") {
+      o.v0 = clamp(Math.round(value * 2) / 2, -15, 20); (key === "A" ? aVC : bVC).set(o.v0);
+    } else {
+      o.a = clamp(Math.round(value * 4) / 4, -4, 4); (key === "A" ? aAC : bAC).set(o.a);
+    }
+    changed();
+  },
+  end() { drag = null; refresh(); },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (!drag) { const h = hitStage(p); canvas.style.cursor = h ? (h.part === "car" ? "grab" : "ew-resize") : ""; return; }
-  const o = drag.key === "A" ? A : B, carX = road.X(o.x0);
-  if (drag.part === "car") {
-    const x = Math.round((p.x - road.X(0)) / road.pxm);
-    if (ui.mode === "pw") { pw.x0 = clamp(x, 0, 100); pXC.set(pw.x0); }
-    else { o.x0 = clamp(x, 0, 150); (drag.key === "A" ? aXC : bXC).set(o.x0); }
-  } else if (drag.part === "v") { o.v0 = clamp(Math.round(((p.x - carX) / road.pxm) * 2) / 2, -15, 20); (drag.key === "A" ? aVC : bVC).set(o.v0); }
-  else { o.a = clamp(Math.round(((p.x - carX) / road.pxm / KA) * 4) / 4, -4, 4); (drag.key === "A" ? aAC : bAC).set(o.a); }
-  changed();
-});
-function endDrag() { if (!drag) return; drag = null; canvas.dataset.dragging = "false"; refresh(); }
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* Grafikda: kursor bilan o'qish, vaqtni surish, v(t) tugunlari */
 const gcv = graph.canvas;

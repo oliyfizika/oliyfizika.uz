@@ -31,14 +31,21 @@
     <div class="sim-main">
       <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
         <div class="sim-canvas-wrap">
-          <canvas id="stage" data-draggable="true" role="img" aria-label="Prujinali mayatnik simulyatsiyasi"></canvas>
+          <canvas id="stage" aria-describedby="cameraHelp" data-draggable="true" role="img" aria-label="Prujinali mayatnik simulyatsiyasi"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding: 0 14px; margin: 0 0 8px">360° ko‘rish: bo‘sh joyni sudrang · g‘ildirak / ikki barmoq bilan yaqinlashtiring · yukni tortib qo‘yib yuboring. Klaviatura: yo‘nalish tugmalari, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>
           <button class="of-btn of-btn--sm" type="button" data-reset>Qayta</button>
           <div class="of-segment" role="group" aria-label="Tebranish yo‘nalishi" data-mode>
-            <button type="button" data-mode-value="horizontal" aria-pressed="true">Gorizontal</button>
-            <button type="button" data-mode-value="vertical" aria-pressed="false">Vertikal</button>
+            <button type="button" data-mode-value="horizontal" aria-pressed="false">Gorizontal</button>
+            <button type="button" data-mode-value="vertical" aria-pressed="true">Vertikal</button>
           </div>
           <div class="of-segment" role="group" aria-label="Animatsiya tezligi" data-speed>
             <button type="button" data-speed-value="0.25" aria-pressed="false">¼×</button>
