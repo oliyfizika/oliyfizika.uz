@@ -219,5 +219,19 @@
 "— gaz molekulalari issiqlik harakatining kinetik energiyasi. Ideal gazda u faqat temperaturaga bog‘liq: U = (i/{#})νRT. Temperatura ortsa — molekulalar tezroq harakatlanadi (animatsiyada ranglari qizaradi).": "— the kinetic energy of the thermal motion of gas molecules. In an ideal gas it depends only on temperature: U = (i/{#})νRT. As the temperature rises, molecules move faster (their colour turns red in the animation).",
 "— ikki izoterma va ikki adiabatadan iborat. Berilgan T₁ va T₂ oralig‘ida ishlaydigan dvigatellar ichida uning FIK eng katta: η = {#} − T₂/T₁. FIKni oshirish uchun T₁ ni ko‘tarish yoki T₂ ni pasaytirish kerak.": "— consists of two isotherms and two adiabats. Among engines working between the given T₁ and T₂, its efficiency is the highest: η = {#} − T₂/T₁. To raise the efficiency, raise T₁ or lower T₂.",
 "−{#} = {#} − {#} J": "−{#} = {#} − {#} J",
-"Termodinamika | OliyFizika.uz": "Thermodynamics | OliyFizika.uz"
+"Termodinamika | OliyFizika.uz": "Thermodynamics | OliyFizika.uz",
+"{#}°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Porshen/termometrni, T₁/T₂/n/ε dastaklarini va tirsakli valni suring. Klaviatura: yo‘nalishlar, +/−, Home.": "{#}°: drag an empty spot; zoom with the wheel or two fingers. Drag the piston/thermometer, the T₁/T₂/n/ε knobs and the crankshaft. Keyboard: arrows, +/−, Home.",
+"Gaz modeli · o‘lchamlar avtomatik": "Gas model · automatic sizes",
+"Issiqlik izolyatsiyasi · kesim": "Thermal insulation · cutaway",
+"Ochiq kesim · shatun va tirsak": "Cutaway · connecting rod and crank",
+"Porshen mahkamlangan": "Piston fixed",
+"Porshenli silindr": "Cylinder with piston",
+"Termostat": "Thermostat",
+"To‘rt takt · aylanish sekinlashtirilgan": "Four strokes · rotation slowed down",
+"Sovutgich · ε {#}": "Refrigerator · ε {#}",
+"T₁/T₂ dastaklarini chap/o‘ngga suring": "Move the T₁/T₂ knobs left/right",
+"{#} → {#} · Adiabatik": "{#} → {#} · adiabatic",
+"{#} → {#} · Izobarik": "{#} → {#} · isobaric",
+"{#} → {#} · Izotermik": "{#} → {#} · isothermal",
+"{#} → {#} · Izoxorik": "{#} → {#} · isochoric"
 }
