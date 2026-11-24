@@ -6,19 +6,20 @@
 //    Sahnada nurlatgich va qabul qiluvchi suriladi. β(α) va cos²φ grafiklari.
 // 3) Radioaloqa: mikrofon → generator → modulyator (AM/FM) → antenna; priyomnik: kontur (sozlash) → detektor → karnay.
 //    Uchta stansiya; sahnadagi shkalada sozlash; kontur aslligi Q; rezonans egri chizig'i.
+// Sahna — 360° 3D laboratoriya (emwaves-lab-3d.js): bo'sh joydan sudrash kamerani aylantiradi.
 // Fizika: emwaves-physics.js (Node'da tekshirilgan).
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow } from "./sim-kit.js";
+import { clamp, fmt, sci, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as P from "./emwaves-physics.js";
 import { drawEt, drawSpectrum, drawAngles, drawPolar, drawResonance, drawSignal, lastFrame } from "./emwaves-plots.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261124-n3";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261124-n3";
+import { createEmwavesLab, LAMS } from "./emwaves-lab-3d.js?v=20261125-n4";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
-const SMALL = "600 10px Inter, system-ui, sans-serif";
-const MID = "600 11px Inter, system-ui, sans-serif";
-const BOLD = "700 13px Inter, system-ui, sans-serif";
 const MEDIA = {
   vac: { name: "Vakuum (havo)", n: 1 },
   water: { name: "Suv (radioto‘lqinlar uchun n ≈ 9)", n: 9 },
@@ -39,7 +40,6 @@ const STATIONS = [
   { f: 1.27e6, F: 0.5, m: 0.8, label: "3-stansiya" },
 ];
 let presetId = null, running = false;
-const geo = {};
 
 const nu = () => 10 ** wave.lg;
 const med = () => MEDIA[wave.med];
@@ -82,193 +82,29 @@ function received() {
   return { r, best: r[best] > 0.5 ? best : null, mixed: r[best] > 0.5 && second > 0.2, level: r[best] };
 }
 
-/* ------------------------------------------------------------------ 1. EM to'lqin */
+/* ------------------------------------------------------------------ Sahna (360° 3D laboratoriya: emwaves-lab-3d.js) */
 
-function drawWaveStage(ctx, c, w, h) {
-  const n = med().n, x0 = 74, x1 = w - 24, Lpx = x1 - x0, lam = Lpx / 2.5, cy = h * 0.5, Ay = h * 0.3, Ab = Math.min(h * 0.22, 70);
-  const bx = -0.62, by = 0.42, u = wave.u, phase = (x) => TAU * u - (TAU * (x - x0)) / lam;
-  const vc = P.visibleColor(nu());
-  geo.wave = { x0, x1, cy };
-  if (n > 1) { ctx.fillStyle = wave.med === "water" ? (c.dark ? "rgba(56,189,248,0.10)" : "rgba(14,165,233,0.08)") : (c.dark ? "rgba(148,163,184,0.10)" : "rgba(100,116,139,0.07)"); ctx.fillRect(x0, 8, Lpx, h - 16); }
-  // o'qlar
-  ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(x0, cy); ctx.lineTo(x1, cy); ctx.stroke();
-  arrow(ctx, x1 - 40, cy, 36, 0, c.text2, { width: 2, head: 8 });
-  ctx.font = BOLD; ctx.fillStyle = c.text2; ctx.textAlign = "right"; ctx.textBaseline = "top"; ctx.fillText(n > 1 ? "v = c/n" : "v = c", x1, cy + 8);
-  ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(x0, cy); ctx.lineTo(x0 + bx * Ab * 1.2, cy + by * Ab * 1.2); ctx.stroke(); ctx.setLineDash([]);
-  // B (perspektivada)
-  if (wave.showB) {
-    ctx.strokeStyle = c.primary; ctx.lineWidth = 2.2; ctx.beginPath();
-    for (let x = x0; x <= x1; x += 2) { const v = Math.cos(phase(x)) * Ab; const X = x + bx * v, Y = cy + by * v; if (x === x0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y); }
-    ctx.stroke();
-    for (let x = x0 + lam / 16; x <= x1; x += lam / 8) { const v = Math.cos(phase(x)) * Ab; if (Math.abs(v) > 6) { ctx.globalAlpha = 0.6; arrow(ctx, x, cy, bx * v, by * v, c.primary, { width: 1.4, head: 6 }); ctx.globalAlpha = 1; } }
+const scene = createEmwavesLab();
+/** O'lchov nuqtasidagi E fazasi: ekranda 2,5 to'lqin uzunligi, nuqta — ulush. */
+const probeE = (u) => Math.cos(TAU * u - TAU * wave.probe * LAMS);
+/** Sahna uchun joriy qiymatlar (faqat o'qiladi). */
+function frameCfg() {
+  if (ui.mode === "wave") {
+    const f = nu(), b = P.bandOf(f);
+    return { mode: "wave", W: { u: wave.u, n: med().n, water: wave.med === "water", vc: P.visibleColor(f), showB: wave.showB, probe: wave.probe, E0: wave.E0, lam: P.lambdaOf(f, med().n), band: `${b.name}${P.radioBand(f) ? ": " + P.radioBand(f) : ""} · ${MEDIA[wave.med].name.split(" (")[0]}` } };
   }
-  // E
-  const ecol = vc || c.danger;
-  ctx.strokeStyle = ecol; ctx.lineWidth = 2.8; ctx.beginPath();
-  for (let x = x0; x <= x1; x += 2) { const y = cy - Math.cos(phase(x)) * Ay; if (x === x0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
-  ctx.stroke();
-  for (let x = x0 + lam / 16; x <= x1; x += lam / 8) { const v = Math.cos(phase(x)) * Ay; if (Math.abs(v) > 6) { ctx.globalAlpha = 0.6; arrow(ctx, x, cy, 0, -v, ecol, { width: 1.4, head: 6 }); ctx.globalAlpha = 1; } }
-  ctx.font = "700 14px Inter, system-ui, sans-serif"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  ctx.fillStyle = ecol; ctx.fillText("E", x0 + 6, cy - Ay - 10);
-  if (wave.showB) { ctx.fillStyle = c.primary; ctx.fillText("B", x0 + bx * Ab - 14, cy + by * Ab + 8); }
-  // λ qavs: ikki qo'shni cho'qqi orasida
-  const xc = (k) => x0 + (u - k) * lam; // cho'qqi: faza = 2π(u − (x − x0)/λ) = 2πk
-  let xa = xc(Math.floor(u)); while (xa < x0 + 20) xa += lam; const xb = xa + lam;
-  if (xb < x1 - 10) {
-    const yb = cy - Ay - 22; ctx.strokeStyle = c.text2; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(xa, yb + 6); ctx.lineTo(xa, yb); ctx.lineTo(xb, yb); ctx.lineTo(xb, yb + 6); ctx.stroke();
-    tag(ctx, `λ = ${sci(P.lambdaOf(nu(), n), 3)} m`, (xa + xb) / 2, yb, { color: c.text, bg: c.bg, align: "center", font: MID });
+  if (ui.mode === "props") {
+    const b = props.view === "refract" ? P.refractAngle(1, props.n, props.a) : null;
+    return { mode: "props", P: { view: props.view, a: props.a, n: props.n, phi: props.phi, ph: props.ph, b, R: props.view === "reflect" ? 1 : P.reflectance(1, props.n, props.a), P0: P.receiverPower(props.phi) } };
   }
-  // vibrator (antenna)
-  const ax = 30, q = Math.cos(TAU * u);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(ax, cy - 58); ctx.lineTo(ax, cy - 6); ctx.moveTo(ax, cy + 6); ctx.lineTo(ax, cy + 58); ctx.stroke();
-  ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(ax, cy, 5, 0, TAU); ctx.fill();
-  [[cy - 52, q], [cy + 52, -q]].forEach(([y, s]) => { ctx.fillStyle = s > 0 ? c.danger : c.primary; ctx.globalAlpha = 0.3 + 0.7 * Math.abs(s); ctx.beginPath(); ctx.arc(ax, y, 9, 0, TAU); ctx.fill(); ctx.globalAlpha = 1; ctx.fillStyle = "#fff"; ctx.font = "700 11px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(s > 0 ? "+" : "−", ax, y + 0.5); });
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("vibrator", ax, cy + 66);
-  // o'lchov nuqtasi
-  const px = x0 + wave.probe * Lpx, Ep = Math.cos(phase(px));
-  ctx.strokeStyle = c.warning; ctx.setLineDash([4, 4]); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(px, 14); ctx.lineTo(px, h - 14); ctx.stroke(); ctx.setLineDash([]);
-  ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(px, cy - Ep * Ay, 6, 0, TAU); ctx.fill();
-  ctx.beginPath(); ctx.roundRect(px - 9, h - 26, 18, 16, 4); ctx.fill(); ctx.fillStyle = "#fff"; ctx.font = "700 10px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("⇔", px, h - 18);
-  geo.probe = { x: px, y0: 14, y1: h - 10 };
-  tag(ctx, `E = ${fmt(Ep * wave.E0, 1)} V/m`, clamp(px + 10, 4, w - 120), h - 44, { color: c.text, bg: c.bg2, font: MID });
-  // diapazon
-  const b = P.bandOf(nu());
-  tag(ctx, `${b.name}${P.radioBand(nu()) ? ": " + P.radioBand(nu()) : ""} · ${MEDIA[wave.med].name.split(" (")[0]}`, x0, 18, { color: c.text, bg: c.bg2, font: MID });
-}
-
-/* ------------------------------------------------------------------ 2. Xossalari */
-
-function horn(ctx, c, x, y, ang, col) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
-  ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(-26, -7); ctx.lineTo(-8, -7); ctx.lineTo(4, -16); ctx.lineTo(4, 16); ctx.lineTo(-8, 7); ctx.lineTo(-26, 7); ctx.closePath(); ctx.fill();
-  ctx.restore();
-}
-function beam(ctx, c, x, y, dir, len, lamPx, phase, col, alpha = 1, width = 26) {
-  const ux = Math.cos(dir), uy = Math.sin(dir), nx = -uy, ny = ux;
-  ctx.save(); ctx.globalAlpha = 0.14 * alpha; ctx.fillStyle = col;
-  ctx.beginPath(); ctx.moveTo(x + nx * width / 2, y + ny * width / 2); ctx.lineTo(x + ux * len + nx * width / 2, y + uy * len + ny * width / 2); ctx.lineTo(x + ux * len - nx * width / 2, y + uy * len - ny * width / 2); ctx.lineTo(x - nx * width / 2, y - ny * width / 2); ctx.closePath(); ctx.fill();
-  ctx.globalAlpha = alpha; ctx.strokeStyle = col; ctx.lineWidth = 2;
-  for (let s = ((phase % 1) + 1) % 1 * lamPx; s < len; s += lamPx) { const cx = x + ux * s, cy = y + uy * s; ctx.beginPath(); ctx.moveTo(cx + nx * width / 2, cy + ny * width / 2); ctx.lineTo(cx - nx * width / 2, cy - ny * width / 2); ctx.stroke(); }
-  ctx.restore();
-  arrow(ctx, x + ux * len * 0.55, y + uy * len * 0.55, ux * 24, uy * 24, col, { width: 2, head: 8 });
-}
-function drawPropsStage(ctx, c, w, h) {
-  const v = props.view;
-  if (v === "polar") return drawPolarStage(ctx, c, w, h);
-  const yb = h * 0.62, Hx = w * 0.45, R = Math.min(w * 0.4, h * 0.56), a = props.a, lamPx = 18, ph = props.ph;
-  // chegara
-  if (v === "reflect") { ctx.fillStyle = c.dark ? "#475569" : "#94a3b8"; ctx.fillRect(16, yb, w - 32, 8); ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText("metall list", 20, yb + 12); }
-  else { ctx.fillStyle = c.dark ? "rgba(250,204,21,0.12)" : "rgba(250,204,21,0.18)"; ctx.fillRect(16, yb, w - 32, h - yb - 8); ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(16, yb); ctx.lineTo(w - 16, yb); ctx.stroke(); ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText(`dielektrik (parafin, asfalt), n = ${fmt(props.n, 2)}`, 20, yb + 6); }
-  // normal
-  ctx.strokeStyle = c.text3; ctx.setLineDash([4, 5]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(Hx, yb - R * 0.95); ctx.lineTo(Hx, Math.min(h - 10, yb + R * 0.6)); ctx.stroke(); ctx.setLineDash([]);
-  // tushuvchi
-  const ex = Hx - Math.sin(a) * R, ey = yb - Math.cos(a) * R, din = Math.atan2(yb - ey, Hx - ex);
-  beam(ctx, c, ex, ey, din, R, lamPx, ph, c.danger);
-  horn(ctx, c, ex, ey, din, c.danger);
-  geo.emitter = { x: ex, y: ey, Hx, yb };
-  // qaytgan
-  const Rr = v === "reflect" ? 1 : P.reflectance(1, props.n, a), dref = Math.atan2(-Math.cos(a), Math.sin(a));
-  beam(ctx, c, Hx, yb, dref, R, lamPx, ph, c.warning, v === "reflect" ? 1 : Math.max(0.25, Math.sqrt(Rr)));
-  if (v === "reflect") horn(ctx, c, Hx + Math.sin(a) * R, yb - Math.cos(a) * R, dref + Math.PI, c.success);
-  // singan
-  if (v === "refract") {
-    const b = P.refractAngle(1, props.n, a), dr = Math.atan2(Math.cos(b), Math.sin(b)), len = Math.min((h - yb - 10) / Math.max(0.2, Math.cos(b)), R);
-    beam(ctx, c, Hx, yb, dr, len, lamPx / props.n, ph * props.n, c.primary);
-    ctx.font = MID; ctx.fillStyle = c.primary; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(`β = ${fmt(b / DEG, 1)}°`, Hx + 10, yb + 46);
-    ctx.beginPath(); ctx.strokeStyle = c.primary; ctx.lineWidth = 1.5; ctx.arc(Hx, yb, 32, Math.PI / 2, Math.PI / 2 - b, true); ctx.stroke();
-  } else { ctx.font = MID; ctx.fillStyle = c.warning; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(`β = ${fmt(a / DEG, 1)}°`, Hx + 8, yb - 44); ctx.strokeStyle = c.warning; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(Hx, yb, 36, -Math.PI / 2, -Math.PI / 2 + a); ctx.stroke(); }
-  ctx.strokeStyle = c.danger; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(Hx, yb, 30, -Math.PI / 2 - a, -Math.PI / 2); ctx.stroke();
-  ctx.font = MID; ctx.fillStyle = c.danger; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText(`α = ${fmt(a / DEG, 1)}°`, Hx - 8, yb - 44);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText("nurlatgich (generator)", 16, 10);
-  if (v === "refract" && w > 520) ctx.fillText(`dielektrikda λ' = λ/n, qaytgan ulush ${fmt(Rr * 100, 1)} %`, w - 250, 10);
-}
-function drawPolarStage(ctx, c, w, h) {
-  const cy = h * 0.5, ex = 60, rx = w * 0.72, len = Math.min(64, h * 0.22), ph = props.ph, phi = props.phi;
-  // nurlatgich vibrator (vertikal)
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(ex, cy - len); ctx.lineTo(ex, cy - 5); ctx.moveTo(ex, cy + 5); ctx.lineTo(ex, cy + len); ctx.stroke();
-  ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(ex, cy, 5, 0, TAU); ctx.fill();
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("nurlatgich", ex, cy + len + 8);
-  // to'lqin: E vertikal
-  const x0 = ex + 24, x1 = rx - 40, lam = (x1 - x0) / 3;
-  ctx.strokeStyle = c.danger; ctx.lineWidth = 2.4; ctx.beginPath();
-  for (let x = x0; x <= x1; x += 2) { const y = cy - Math.cos(TAU * ph - (TAU * (x - x0)) / lam) * len * 0.8; if (x === x0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
-  ctx.stroke();
-  ctx.font = BOLD; ctx.fillStyle = c.danger; ctx.textAlign = "left"; ctx.fillText("E ↕", x0 + 4, cy - len - 4);
-  // qabul qiluvchi (burilgan)
-  const dx = Math.sin(phi) * len, dy = -Math.cos(phi) * len, P0 = P.receiverPower(phi);
-  ctx.strokeStyle = c.success; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(rx - dx, cy - dy); ctx.lineTo(rx - dx * 0.08, cy - dy * 0.08); ctx.moveTo(rx + dx * 0.08, cy + dy * 0.08); ctx.lineTo(rx + dx, cy + dy); ctx.stroke();
-  ctx.strokeStyle = c.text3; ctx.setLineDash([3, 4]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(rx, cy - len - 10); ctx.lineTo(rx, cy + len + 10); ctx.stroke(); ctx.setLineDash([]);
-  ctx.strokeStyle = c.warning; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(rx, cy, 26, -Math.PI / 2, -Math.PI / 2 + phi, false); ctx.stroke();
-  ctx.font = MID; ctx.fillStyle = c.warning; ctx.textAlign = "left"; ctx.fillText(`φ = ${fmt(phi / DEG, 0)}°`, rx + 12, cy - len - 2);
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(rx + dx, cy + dy, 9, 0, TAU); ctx.fill(); ctx.stroke();
-  geo.rxHandle = { x: rx + dx, y: cy + dy, cx: rx, cy };
-  // indikator lampa
-  const lx = Math.min(w - 40, rx + len + 50), ly = cy;
-  if (P0 > 0.02) { const g = ctx.createRadialGradient(lx, ly, 2, lx, ly, 14 + 26 * P0); g.addColorStop(0, `rgba(250,204,21,${0.9 * P0})`); g.addColorStop(1, "rgba(250,204,21,0)"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(lx, ly, 14 + 26 * P0, 0, TAU); ctx.fill(); }
-  ctx.fillStyle = P0 > 0.05 ? `rgba(254,240,138,${0.4 + 0.6 * P0})` : c.bg2; ctx.strokeStyle = c.text2; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(lx, ly, 11, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(`signal ${fmt(P0 * 100, 0)} %`, lx, ly + 18);
-  ctx.fillText("qabul qiluvchi vibrator", rx, cy + len + 18);
-}
-
-/* ------------------------------------------------------------------ 3. Radioaloqa */
-
-function scope(ctx, c, x, y, w, h, ys, col, title, extra) {
-  ctx.fillStyle = c.dark ? "#0b1220" : "#f8fafc"; ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.beginPath(); ctx.roundRect(x, y, w, h, 6); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.grid; ctx.beginPath(); ctx.moveTo(x + 4, y + h / 2 + 6); ctx.lineTo(x + w - 4, y + h / 2 + 6); ctx.stroke();
-  const draw = (arr, color, lw) => { ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.beginPath(); arr.forEach((v, k) => { const X = x + 4 + (k / (arr.length - 1)) * (w - 8), Y = y + h / 2 + 6 - clamp(v, -1.8, 1.8) * (h - 22) / 3.8; if (k) ctx.lineTo(X, Y); else ctx.moveTo(X, Y); }); ctx.stroke(); };
-  draw(ys, col, 1.4);
-  if (extra) draw(extra.ys, extra.col, 2);
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText(title, x + 6, y + 4);
-}
-function drawRadioStage(ctx, c, w, h) {
-  const tr = radioTraces(), rc = received(), narrow = w < 560, st = stationsNow();
-  const gap = 10, x0 = 12, sw = (w - x0 - 64 - gap * 2) / 3, sh = Math.min(86, h * 0.27), y1 = 22, y2 = h * 0.5 + 6;
-  ctx.font = MID; ctx.fillStyle = c.text; ctx.textAlign = "left"; ctx.textBaseline = "top";
-  ctx.fillText(`Radiouzatgich: ${st[0].label} (${fmt(st[0].f / 1e6, 2)} MHz, ${radio.mod.toUpperCase()})`, x0, 4);
-  const s1 = (k) => x0 + k * (sw + gap);
-  scope(ctx, c, s1(0), y1, sw, sh, tr.audio, c.success, narrow ? "tovush" : "Mikrofon: tovush (F)");
-  scope(ctx, c, s1(1), y1, sw, sh, tr.carrier, c.text2, narrow ? "tashuvchi" : "Generator: tashuvchi (f)");
-  scope(ctx, c, s1(2), y1, sw, sh, tr.mod, c.danger, narrow ? "modulyatsiya" : radio.mod === "am" ? "Modulyator: AM signal" : "Modulyator: FM signal");
-  // antenna minorasi
-  const ax = w - 36, ay = y1 + sh;
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(ax - 12, ay); ctx.lineTo(ax, y1 - 4); ctx.lineTo(ax + 12, ay); ctx.moveTo(ax - 8, ay - 20); ctx.lineTo(ax + 8, ay - 20); ctx.stroke();
-  const pulse = (radio.t * 0.8) % 1;
-  for (let k = 0; k < 3; k++) { const r = 8 + ((pulse + k / 3) % 1) * 26; ctx.strokeStyle = c.danger; ctx.globalAlpha = 1 - ((pulse + k / 3) % 1); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(ax, y1 - 4, r, Math.PI * 0.25, Math.PI * 0.75); ctx.stroke(); ctx.globalAlpha = 1; }
-  // priyomnik
-  ctx.font = MID; ctx.fillStyle = c.text; ctx.textAlign = "left"; ctx.textBaseline = "top";
-  ctx.fillText(`Radiopriyomnik: f₀ = ${fmt(f0() / 1e6, 3)} MHz`, x0, y2 - 18);
-  scope(ctx, c, s1(0), y2, sw, sh, tr.rx, c.primary, narrow ? "kontur" : "Kontur: tanlangan signal");
-  scope(ctx, c, s1(1), y2, sw, sh, tr.det.map((v) => v), c.warning, narrow ? "detektor" : "Detektor (diod + RC)", { ys: tr.rx.map((v) => Math.max(0, v)), col: c.dark ? "rgba(148,163,184,0.35)" : "rgba(100,116,139,0.3)" });
-  scope(ctx, c, s1(2), y2, sw, sh, tr.out.map((v) => v * 1.2), c.success, narrow ? "karnay" : "Karnayga: tovush");
-  // karnay
-  const kx = w - 36, ky = y2 + sh / 2, lvl = rc.best !== null ? rc.level : 0;
-  ctx.fillStyle = c.text2; ctx.beginPath(); ctx.moveTo(kx - 14, ky - 6); ctx.lineTo(kx - 6, ky - 6); ctx.lineTo(kx + 4, ky - 14); ctx.lineTo(kx + 4, ky + 14); ctx.lineTo(kx - 6, ky + 6); ctx.lineTo(kx - 14, ky + 6); ctx.closePath(); ctx.fill();
-  for (let k = 1; k <= 3; k++) { ctx.strokeStyle = c.success; ctx.globalAlpha = lvl * (1 - k / 4); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(kx + 4, ky, 6 + k * 6, -0.6, 0.6); ctx.stroke(); ctx.globalAlpha = 1; }
-  // sozlash shkalasi
-  const dx0 = x0 + 20, dx1 = w - 30, dy = h - 26, X = (f) => dx0 + ((f / 1e6 - 0.5) / 1.1) * (dx1 - dx0);
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.roundRect(dx0 - 12, dy - 12, dx1 - dx0 + 24, 26, 6); ctx.fill(); ctx.stroke();
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  for (let f = 0.5; f <= 1.6001; f += 0.1) { ctx.fillRect(X(f * 1e6), dy - 3, 1, 6); if (Math.round(f * 10) % 2 === 1 || !narrow) ctx.fillText(fmt(f, 1), X(f * 1e6), dy + 9 > h - 4 ? dy - 8 : dy - 8); }
-  st.forEach((s) => { ctx.fillStyle = c.success; ctx.globalAlpha = 0.6; ctx.fillRect(X(s.f) - 1, dy - 10, 3, 20); ctx.globalAlpha = 1; });
-  const px = X(f0()); ctx.fillStyle = c.danger; ctx.fillRect(px - 1.5, dy - 12, 3, 26);
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(px, dy + 1, 8, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.primary; ctx.font = "700 10px Inter, system-ui, sans-serif"; ctx.fillText("⇔", px, dy + 1.5);
-  geo.dial = { x0: dx0, x1: dx1, y: dy };
-}
-
-/* ------------------------------------------------------------------ Asosiy chizish va grafik */
-
-function draw(ctx, st) {
-  const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h);
-  if (ui.mode === "wave") drawWaveStage(ctx, c, st.w, st.h);
-  else if (ui.mode === "props") drawPropsStage(ctx, c, st.w, st.h);
-  else drawRadioStage(ctx, c, st.w, st.h);
+  const st = stationsNow(), rc = received();
+  return { mode: "radio", R: { tr: radioTraces(), level: rc.best !== null ? rc.level : 0, stations: STATIONS, f0: f0(), t: radio.t, mod: radio.mod, label: st[0].label, f: st[0].f } };
 }
 const heights = () => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(vh * 0.42, 300, 350)), graph: Math.round(clamp(vh * 0.28, 190, 260)) };
+  return { graph: Math.round(clamp(vh * 0.28, 190, 260)) };
 };
-const stage = createStage($("#stage"), draw, { height: () => heights().stage });
+const stage = createStage($("#stage"), (ctx, st) => scene.draw(ctx, st, frameCfg()), { height: detailedStageHeight });
 
 function drawGraphCanvas(ctx, gst) {
   const c = gst.colors;
@@ -388,7 +224,7 @@ const loop = createLoop((dt) => {
   const s = dt * ui.speed;
   if (ui.mode === "wave") {
     wave.u += s * 0.6;
-    const g = geo.wave; if (g) { const lam = (g.x1 - g.x0) / 2.5, px = wave.probe * (g.x1 - g.x0); wave.hist.push({ u: wave.u, e: Math.cos(TAU * wave.u - (TAU * px) / lam) }); }
+    wave.hist.push({ u: wave.u, e: probeE(wave.u) });
     while (wave.hist.length && wave.hist[0].u < wave.u - 3) wave.hist.shift();
   } else if (ui.mode === "props") props.ph += s * 1.2;
   else radio.t += s * 0.5;
@@ -408,10 +244,8 @@ document.querySelectorAll("[data-speed-value]").forEach((b) => b.addEventListene
 const syncSpeed = () => document.querySelectorAll("[data-speed-value]").forEach((x) => x.setAttribute("aria-pressed", String(+x.dataset.speedValue === ui.speed)));
 /** Animatsiyasiz rejimda E(t) grafigini bir martalik to'ldirish */
 function fillHist() {
-  const g = geo.wave; if (!g) return;
-  const lam = (g.x1 - g.x0) / 2.5, px = wave.probe * (g.x1 - g.x0);
   const top = Math.max(wave.u, 3);
-  wave.hist = Array.from({ length: 121 }, (_, k) => { const uu = top - 3 + (3 * k) / 120; return { u: uu, e: Math.cos(TAU * uu - (TAU * px) / lam) }; });
+  wave.hist = Array.from({ length: 121 }, (_, k) => { const uu = top - 3 + (3 * k) / 120; return { u: uu, e: probeE(uu) }; });
 }
 
 /* ------------------------------------------------------------------ Boshqaruv */
@@ -424,7 +258,7 @@ wMed.innerHTML = Object.entries(MEDIA).map(([k, v]) => `<option value="${k}">${v
 wMed.addEventListener("change", () => { wave.med = wMed.value; customized(); refresh(); });
 $("[data-show-b]").addEventListener("change", (e) => { wave.showB = e.target.checked; stage.render(); });
 
-document.querySelectorAll("[data-pview-value]").forEach((b) => b.addEventListener("click", () => { props.view = b.dataset.pviewValue; customized(); syncProps(); setTab("ang"); refresh(); }));
+document.querySelectorAll("[data-pview-value]").forEach((b) => b.addEventListener("click", () => { props.view = b.dataset.pviewValue; scene.setMode(props.view); customized(); syncProps(); setTab("ang"); refresh(); }));
 const pAC = bindRange($("#pA"), $("#pAOut"), (v) => `${fmt(v, 0)}°`, (v) => { props.a = v * DEG; customized(); refresh(); });
 const pNC = bindRange($("#pN"), $("#pNOut"), (v) => fmt(v, 2), (v) => { props.n = v; customized(); setTab("ang"); refresh(); });
 const pPhiC = bindRange($("#pPhi"), $("#pPhiOut"), (v) => `${fmt(v, 0)}°`, (v) => { props.phi = v * DEG; customized(); refresh(); });
@@ -445,39 +279,23 @@ function syncRadio() {
   rFC.set(radio.F); rMC.set(radio.m); rCC.set(Math.round(radio.C * 1e12)); rQC.set(radio.Q);
 }
 
-/* Sahnada: o'lchov nuqtasi, nurlatgich, qabul qiluvchi, sozlash shkalasi */
+/* Sahnada (3D): o'lchov nuqtasi, nurlatgich, qabul qiluvchi, sozlash shkalasi */
 const canvas = stage.canvas;
 let drag = null;
 const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-function hit(p) {
-  if (ui.mode === "wave" && geo.probe && Math.abs(p.x - geo.probe.x) <= 14 && p.y >= geo.probe.y0 && p.y <= geo.probe.y1) return { kind: "probe" };
-  if (ui.mode === "props") {
-    if (props.view === "polar" && geo.rxHandle && Math.hypot(p.x - geo.rxHandle.x, p.y - geo.rxHandle.y) <= 18) return { kind: "rx" };
-    if (props.view !== "polar" && geo.emitter && Math.hypot(p.x - geo.emitter.x, p.y - geo.emitter.y) <= 30) return { kind: "emit" };
-  }
-  if (ui.mode === "radio" && geo.dial && p.x >= geo.dial.x0 - 14 && p.x <= geo.dial.x1 + 14 && Math.abs(p.y - geo.dial.y) <= 16) return { kind: "dial" };
-  return null;
-}
-function dragTo(p) {
-  if (drag.kind === "probe") { const g = geo.wave; wave.probe = clamp((p.x - g.x0) / (g.x1 - g.x0), 0.02, 0.98); wave.hist = []; if (!loop.running) fillHist(); }
-  else if (drag.kind === "emit") { const e = geo.emitter, a = Math.atan2(e.Hx - p.x, e.yb - p.y); props.a = clamp(a, 0, 80 * DEG); pAC.set(Math.round(props.a / DEG)); }
-  else if (drag.kind === "rx") { const g = geo.rxHandle; let a = Math.atan2(p.x - g.cx, -(p.y - g.cy)); if (a < 0) a += Math.PI; props.phi = clamp(a, 0, Math.PI); pPhiC.set(Math.round(props.phi / DEG)); }
-  else if (drag.kind === "dial") { const d = geo.dial, f = (0.5 + clamp((p.x - d.x0) / (d.x1 - d.x0), 0, 1) * 1.1) * 1e6; radio.C = clamp(P.capFor(L_RX, f), 40e-12, 550e-12); rCC.set(Math.round(radio.C * 1e12)); radio.C = rCC.value * 1e-12; }
-  refresh();
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p); if (!h) return;
-  drag = h; customized(); e.preventDefault(); try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  canvas.dataset.dragging = "true"; dragTo(p);
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id) { drag = { kind: id }; customized(); },
+  move(id, p) {
+    if (!drag || drag.kind !== id) return;
+    const L = scene.lab;
+    if (id === "probe") { wave.probe = clamp(Math.round(L.nearest(scene.probeAt, 0.02, 0.98, p.x, p.y) * 200) / 200, 0.02, 0.98); wave.hist = []; if (!loop.running) fillHist(); }
+    else if (id === "emit") { const a = scene.emitAngle(p); if (a == null) return; props.a = clamp(Math.round(a / DEG), 0, 80) * DEG; pAC.set(Math.round(props.a / DEG)); }
+    else if (id === "rx") { const a = scene.rxAngle(p); if (a == null) return; props.phi = clamp(Math.round(a / DEG), 0, 180) * DEG; pPhiC.set(Math.round(props.phi / DEG)); }
+    else if (id === "dial") { const f = L.nearest(scene.dialAt, 0.5, 1.6, p.x, p.y) * 1e6; radio.C = clamp(P.capFor(L_RX, f), 40e-12, 550e-12); rCC.set(Math.round(radio.C * 1e12)); radio.C = rCC.value * 1e-12; }
+    refresh();
+  },
+  end() { drag = null; refresh(); },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (drag) { dragTo(p); return; }
-  const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "probe" || h.kind === "dial" ? "ew-resize" : "grab";
-});
-const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* Grafikda kursor (ulush 0…1) */
 const gcv = graph.canvas;
@@ -520,6 +338,7 @@ function setModeUI() {
   document.querySelectorAll("[data-mode-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.modeValue === ui.mode)));
   document.querySelectorAll("[data-ctl]").forEach((el) => { el.hidden = el.dataset.ctl !== ui.mode; });
   $("[data-mode-hint]").textContent = MODE_HINT[ui.mode];
+  scene.setMode(ui.mode === "props" ? props.view : ui.mode); // kamera shu tajribaga mos ko'rinishga (rejim almashgandagina)
   stage.canvas.setAttribute("aria-label", { wave: "Vibrator nurlatayotgan elektromagnit to‘lqin: E va B maydonlar", props: "Gers tajribalari: EM to‘lqinning qaytishi, sinishi va qutblanishi", radio: "Radiouzatgich va radiopriyomnik blok-sxemasi, ossillogrammalar va sozlash shkalasi" }[ui.mode]);
 }
 function syncAll() { wNuC.set(wave.lg); wEC.set(wave.E0); wMed.value = wave.med; $("[data-show-b]").checked = wave.showB; syncProps(); syncRadio(); syncSpeed(); }
@@ -541,3 +360,4 @@ function loadPreset(id) {
 const q0 = new URLSearchParams(location.search).get("preset");
 loadPreset(PRESETS[q0] ? q0 : "fm100");
 document.fonts?.ready.then(() => { stage.render(); graph.render(); });
+window.__emwaves = { wave, props, radio, ui, loadPreset, refresh, scene, frameCfg };

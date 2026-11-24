@@ -5,19 +5,20 @@
 // 2) Bog'lanish energiyasi: proton va neytronlarni sudrab yadro yasash; E_b, E_b/A, massa defekti, barqarorlik;
 //    sintez va bo'linish reaksiyalarining energiyasi; E_b/A (A) egri chizig'i.
 // 3) Zanjir reaksiya: ²³⁵U/²³⁸U to'ri, neytronlar, boshqaruv sterjenlari (sahnada suriladi), k koeffitsiyenti, n(t), E(t).
+// Sahna — 360° 3D laboratoriya (nuclear-lab-3d.js): bo'sh joyni sudrash kamerani aylantiradi.
 // Fizika: nuclear-physics.js (Node'da tekshirilgan).
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { clamp, fmt, sci, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as P from "./nuclear-physics.js";
 import { drawDecay, drawActivity, drawBinding, drawChain, lastFrame } from "./nuclear-plots.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261124-n3";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261124-n3";
+import { createNuclearLab } from "./nuclear-lab-3d.js?v=20261124-n3";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
-const SMALL = "600 10px Inter, system-ui, sans-serif";
-const MID = "600 11px Inter, system-ui, sans-serif";
-const BOLD = "700 13px Inter, system-ui, sans-serif";
 const SEC_PER_HALF = 3, HALVES = 6;
 const SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹", SUB = "₀₁₂₃₄₅₆₇₈₉";
 const sup = (n) => String(n).split("").map((d) => SUP[+d]).join("");
@@ -31,7 +32,6 @@ const dec = { iso: "c14", N0: 400, sample: null, t: 0, hist: [], bins: [], flash
 const bind = { Z: 6, N: 6, view: "build", rx: "dt", ghost: null };
 const chain = { enrich: 0.6, size: 24, depth: 0, core: null, hist: [], flashes: [], k: null, kTimer: 0, pTimer: 0, recent: [], seed: 3 };
 let presetId = null;
-const geo = {};
 let running = false;
 
 /* ------------------------------------------------------------------ 1. Yemirilish */
@@ -58,130 +58,6 @@ function stepDecay(dt) {
   dec.flashes.forEach((f) => { f.age += dt; }); dec.flashes = dec.flashes.filter((f) => f.age < 0.8);
 }
 const decDone = () => dec.t >= tMaxDec() - 1e-9 || dec.sample.N === 0;
-
-function decayGrid(w, h) {
-  const n = Math.round(Math.sqrt(dec.N0)), narrow = w < 520, S = Math.min(h - 20, narrow ? w - 20 : w * 0.46), cell = S / n;
-  return { n, S, cell, x0: narrow ? (w - S) / 2 : 10, y0: (h - S) / 2, narrow }; // tor ekranda faqat namuna
-}
-function drawDecayStage(ctx, c, w, h) {
-  const g = decayGrid(w, h), I = iso(), s = dec.sample, parentC = c.warning, rr = Math.max(1.6, g.cell * 0.36);
-  geo.grid = g;
-  for (let i = 0; i < dec.N0; i++) {
-    const x = g.x0 + ((i % g.n) + 0.5) * g.cell, y = g.y0 + (Math.floor(i / g.n) + 0.5) * g.cell, alive = s.decayedAt[i] === Infinity;
-    ctx.fillStyle = alive ? parentC : c.dark ? "rgba(148,163,184,0.35)" : "rgba(100,116,139,0.35)";
-    ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fill();
-  }
-  // yemirilish chaqnashlari va uchib chiqqan zarrachalar
-  for (const f of dec.flashes) {
-    const x = g.x0 + ((f.i % g.n) + 0.5) * g.cell, y = g.y0 + (Math.floor(f.i / g.n) + 0.5) * g.cell, u = f.age / 0.8;
-    ctx.strokeStyle = c.text; ctx.globalAlpha = 1 - u; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, rr + 6 * u + 1, 0, TAU); ctx.stroke();
-    const d = 8 + 40 * u, px = x + Math.cos(f.a) * d, py = y + Math.sin(f.a) * d;
-    if (I.type === "α") { ctx.fillStyle = c.danger; ctx.beginPath(); ctx.arc(px, py, 3.6, 0, TAU); ctx.fill(); }
-    else if (I.type === "β⁻") { ctx.fillStyle = c.primary; ctx.beginPath(); ctx.arc(px, py, 2.2, 0, TAU); ctx.fill(); }
-    else { ctx.strokeStyle = c.special; ctx.lineWidth = 1.6; ctx.beginPath(); for (let k = 0; k <= 12; k++) { const q = (k / 12) * d, ox = Math.cos(f.a) * q - Math.sin(f.a) * Math.sin(k * 1.6) * 3, oy = Math.sin(f.a) * q + Math.cos(f.a) * Math.sin(k * 1.6) * 3; if (k) ctx.lineTo(x + ox, y + oy); else ctx.moveTo(x + ox, y + oy); } ctx.stroke(); }
-    ctx.globalAlpha = 1;
-  }
-  if (dec.sel !== null) {
-    const i = dec.sel, x = g.x0 + ((i % g.n) + 0.5) * g.cell, y = g.y0 + (Math.floor(i / g.n) + 0.5) * g.cell, t = s.decayedAt[i];
-    ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, rr + 4, 0, TAU); ctx.stroke();
-    tag(ctx, t === Infinity ? `${I.sym}: hali yemirilmagan` : `${I.daughter}: t = ${sci(t, 3)} ${I.unit} da yemirildi`, clamp(x + 10, 4, g.x0 + g.S - 120), clamp(y - 16, 12, h - 12), { color: c.text, bg: c.bg2, font: SMALL });
-  }
-  // o'ng tomonda ma'lumot
-  const ix = g.x0 + g.S + 18, iw = w - ix - 10; if (g.narrow || iw < 120) return;
-  ctx.textAlign = "left"; ctx.textBaseline = "top";
-  ctx.fillStyle = c.text; ctx.font = "700 15px Inter, system-ui, sans-serif"; ctx.fillText(`${I.name} (${I.sym})`, ix, 14);
-  ctx.font = MID; ctx.fillStyle = c.text2; ctx.fillText(`${I.type}-yemirilish, T½ = ${sci(I.half, 4)} ${I.unit}`, ix, 36);
-  ctx.font = "600 13px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text; ctx.fillText(I.eq, ix, 56);
-  // soat: o'tgan yarim yemirilish davrlari
-  const R = Math.min(42, iw * 0.2, h * 0.16), cx = ix + R + 2, cy = 100 + R, nT = dec.t / I.half;
-  ctx.strokeStyle = c.border; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.stroke();
-  ctx.strokeStyle = c.primary; ctx.beginPath(); ctx.arc(cx, cy, R, -Math.PI / 2, -Math.PI / 2 + TAU * (nT % 1 || (nT > 0 && nT % 1 === 0 ? 1 : 0))); ctx.stroke();
-  ctx.fillStyle = c.text; ctx.font = BOLD; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(`${fmt(nT, 2)}`, cx, cy - 6);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.fillText("T½ o‘tdi", cx, cy + 10);
-  ctx.textAlign = "left"; ctx.fillStyle = c.text2; ctx.font = MID;
-  ctx.fillText(`t = ${sci(dec.t, 3)} ${I.unit}`, cx + R + 14, cy - 18);
-  ctx.fillText(`qoldi: N = ${s.N} / ${dec.N0}`, cx + R + 14, cy);
-  ctx.fillText(`nazariy: ${fmt(P.remaining(dec.N0, dec.t, I.half), 1)}`, cx + R + 14, cy + 18);
-  // ulush ustuni
-  const by = cy + R + 22, bw = iw - 4, frac = s.N / dec.N0;
-  ctx.fillStyle = c.bg2; ctx.fillRect(ix, by, bw, 14); ctx.fillStyle = parentC; ctx.fillRect(ix, by, bw * frac, 14);
-  ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.strokeRect(ix + 0.5, by + 0.5, bw, 14);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textBaseline = "top"; ctx.fillText(`${I.sym} (to‘q sariq) — ${fmt(frac * 100, 1)} %; ${I.daughter} (kulrang)`, ix, by + 18);
-}
-
-/* ------------------------------------------------------------------ 2. Bog'lanish energiyasi */
-
-const bindLayout = (w, h) => ({ pile: { p: { x: 44, y: h * 0.3 }, n: { x: 44, y: h * 0.72 } }, cx: w < 560 ? w * 0.42 : w * 0.34, cy: h * 0.5, rn: bind.Z + bind.N > 36 ? 6 : 7.5 });
-function nucleonPos(A, Z, cx, cy, rn) {
-  const out = [];
-  for (let i = 0; i < A; i++) {
-    const r = rn * 1.06 * Math.sqrt(i) * 1.02, a = i * 2.39996;
-    out.push({ x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r, p: Math.floor(((i + 1) * Z) / A) > Math.floor((i * Z) / A) });
-  }
-  return out;
-}
-function ball(ctx, c, x, y, r, proton) {
-  const g = ctx.createRadialGradient(x - r * 0.35, y - r * 0.35, r * 0.2, x, y, r);
-  if (proton) { g.addColorStop(0, "#fca5a5"); g.addColorStop(1, c.dark ? "#dc2626" : "#b91c1c"); }
-  else { g.addColorStop(0, c.dark ? "#e2e8f0" : "#cbd5e1"); g.addColorStop(1, c.dark ? "#64748b" : "#475569"); }
-  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
-}
-function drawBuild(ctx, c, w, h) {
-  const L = bindLayout(w, h), A = bind.Z + bind.N;
-  geo.bind = L;
-  for (const [k, p] of Object.entries(L.pile)) {
-    for (let i = 0; i < 7; i++) { const a = i * 0.9, r = i ? 9 : 0; ball(ctx, c, p.x + Math.cos(a) * r, p.y + Math.sin(a) * r, 7, k === "p"); }
-    ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(k === "p" ? "protonlar" : "neytronlar", p.x, p.y + 20);
-  }
-  const pos = nucleonPos(A, bind.Z, L.cx, L.cy, L.rn);
-  geo.nucR = pos.length ? Math.max(...pos.map((q) => Math.hypot(q.x - L.cx, q.y - L.cy))) + L.rn : L.rn;
-  ctx.strokeStyle = c.border; ctx.setLineDash([4, 4]); ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(L.cx, L.cy, geo.nucR + 14, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
-  for (let i = pos.length - 1; i >= 0; i--) ball(ctx, c, pos[i].x, pos[i].y, L.rn, pos[i].p);
-  geo.nucleons = pos;
-  if (bind.ghost) ball(ctx, c, bind.ghost.x, bind.ghost.y, L.rn + 1, bind.ghost.type === "p");
-  // ma'lumot
-  const ix = w < 560 ? L.cx + geo.nucR + 22 : w * 0.58, Z = bind.Z, st = P.stability(Z, A), b = P.binding(Z, A);
-  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-  ctx.fillStyle = c.text; ctx.font = "700 40px Inter, system-ui, sans-serif";
-  const symW = ctx.measureText(P.SYM[Z]).width;
-  ctx.fillText(P.SYM[Z], ix + 30, 70);
-  ctx.font = "700 16px Inter, system-ui, sans-serif"; ctx.textAlign = "right"; ctx.fillText(String(A), ix + 26, 46); ctx.fillText(String(Z), ix + 26, 72);
-  ctx.textAlign = "left"; ctx.font = MID; ctx.fillStyle = c.text2; ctx.fillText(`${P.NAME[Z]}, A = ${A}`, ix + 34 + symW + 8, 50);
-  ctx.fillStyle = st.stable ? c.success : c.danger; ctx.font = "700 12px Inter, system-ui, sans-serif";
-  ctx.fillText(st.stable ? `barqaror${st.exact ? "" : " (taxminan)"}` : `radioaktiv: ${st.decay}${st.exact ? "" : " (taxminan)"}`, ix + 34 + symW + 8, 68);
-  const rows = [["E_b", `${fmt(b.B, 2)} MeV${b.real ? "" : " (formula)"}`], ["E_b/A", `${fmt(A > 1 ? b.B / A : 0, 3)} MeV`], ["Δm", `${fmt(P.massDefect(b.B), 5)} u`]];
-  ctx.font = MID; rows.forEach(([k, v], i) => { ctx.fillStyle = c.text3; ctx.fillText(k, ix, 104 + i * 20); ctx.fillStyle = c.text; ctx.fillText(v, ix + 46, 104 + i * 20); });
-  // E_b/A ustuni (eng katta 8,8 MeV ga nisbatan)
-  const bw = Math.min(200, w - ix - 14), by = 104 + rows.length * 20;
-  ctx.fillStyle = c.bg2; ctx.fillRect(ix, by, bw, 10); ctx.fillStyle = c.primary; ctx.fillRect(ix, by, bw * clamp((A > 1 ? b.B / A : 0) / 8.8, 0, 1), 10);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textBaseline = "top"; ctx.fillText("⁵⁶Fe / ⁶²Ni darajasiga nisbatan (8,8 MeV)", ix, by + 14);
-}
-function drawReaction(ctx, c, w, h) {
-  const R = P.REACTIONS[bind.rx], parts = [...R.inp.map((q) => ({ q, side: 0 })), ...R.out.map((q) => ({ q, side: 1 }))];
-  const n = parts.length + 1, gap = w / (n + 0.5), y = h * 0.36;
-  let x = gap * 0.75;
-  parts.forEach((p, i) => {
-    const [Z, A] = p.q;
-    if (i === R.inp.length) { ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x - gap * 0.3, y); ctx.lineTo(x + gap * 0.3, y); ctx.lineTo(x + gap * 0.2, y - 6); ctx.moveTo(x + gap * 0.3, y); ctx.lineTo(x + gap * 0.2, y + 6); ctx.stroke(); x += gap; }
-    const rad = A <= 4 ? 8 + A * 2 : clamp(6 * Math.cbrt(A), 16, Math.min(40, gap * 0.42));
-    if (A <= 4) { const pos = nucleonPos(A, Z, x, y, 7.5); pos.forEach((q) => ball(ctx, c, q.x, q.y, 7.5, q.p)); }
-    else { const g = ctx.createRadialGradient(x - rad * 0.3, y - rad * 0.3, 2, x, y, rad); g.addColorStop(0, c.dark ? "#fdba74" : "#fed7aa"); g.addColorStop(1, c.dark ? "#c2410c" : "#ea580c"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rad, 0, TAU); ctx.fill(); }
-    ctx.fillStyle = c.text; ctx.font = BOLD; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(nuclide(Z, A), x, y + Math.max(rad, 16) + 6);
-    if (Z > 0 && gap >= 70) { ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.fillText(`E_b = ${fmt(P.binding(Z, A).B, 1)}`, x, y + Math.max(rad, 16) + 24); }
-    if (i < parts.length - 1 && i !== R.inp.length - 1) { ctx.fillStyle = c.text2; ctx.font = BOLD; ctx.textBaseline = "middle"; ctx.fillText("+", x + gap / 2, y); }
-    x += gap;
-  });
-  // energiya ustunlari
-  const sIn = R.inp.reduce((s, [Z, A]) => s + P.binding(Z, A).B, 0), sOut = R.out.reduce((s, [Z, A]) => s + P.binding(Z, A).B, 0), Q = sOut - sIn;
-  const bx = 20, bw = w - 40, y0 = h * 0.66, sc = bw / Math.max(sOut, 1);
-  [[`ΣE_b boshida: ${fmt(sIn, 1)} MeV`, sIn, c.text3], [`ΣE_b oxirida: ${fmt(sOut, 1)} MeV`, sOut, c.primary]].forEach(([lab, v, col], i) => {
-    const yy = y0 + i * 34; ctx.fillStyle = col; ctx.globalAlpha = 0.8; ctx.fillRect(bx, yy, v * sc, 14); ctx.globalAlpha = 1;
-    ctx.font = MID; ctx.fillStyle = c.text; ctx.textAlign = "left"; ctx.textBaseline = "bottom"; ctx.fillText(lab, bx, yy - 3);
-  });
-  ctx.fillStyle = c.warning; ctx.fillRect(bx + sIn * sc, y0 + 34, Q * sc, 14);
-  ctx.font = MID; const qt = `Q = ${fmt(Q, 2)} MeV ajraladi`, qw = ctx.measureText(qt).width + 12;
-  tag(ctx, qt, clamp(bx + sIn * sc + (Q * sc) / 2 - qw / 2, 4, w - 4 - qw), y0 + 66, { color: c.warning, bg: c.bg, font: MID });
-}
 
 /* ------------------------------------------------------------------ 3. Zanjir reaksiya */
 
@@ -213,72 +89,23 @@ function stepChain(dt) {
   if (co.t - lp.t >= 0.1) chain.hist.push({ t: co.t, n: co.neutrons.length, E: co.stats.fissions * P.E_FISSION });
   chain.kTimer += dt; if (chain.kTimer > 1) { chain.kTimer = 0; measureK(); }
 }
-function coreGeom(w, h) {
-  const co = chain.core, cell = Math.min((w - 60) / co.w, (h - 46) / co.h);
-  return { cell, x0: 44 + (w - 56 - co.w * cell) / 2, y0: 30 + (h - 38 - co.h * cell) / 2 };
-}
-function drawChainStage(ctx, c, w, h) {
-  const co = chain.core, g = coreGeom(w, h), X = (x) => g.x0 + x * g.cell, Y = (y) => g.y0 + y * g.cell;
-  geo.core = g;
-  ctx.fillStyle = c.dark ? "rgba(56,189,248,0.06)" : "rgba(14,165,233,0.06)"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.roundRect(X(0), Y(0), co.w * g.cell, co.h * g.cell, 6); ctx.fill(); ctx.stroke();
-  const rr = Math.max(2.2, g.cell * 0.26);
-  for (const q of co.nuclei) {
-    const x = X(q.x), y = Y(q.y);
-    if (!q.done) { ctx.fillStyle = q.kind === 235 ? c.warning : c.dark ? "#64748b" : "#94a3b8"; ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fill(); }
-    else if (q.cap) { ctx.strokeStyle = c.special; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.stroke(); }
-    else { ctx.fillStyle = c.dark ? "rgba(253,186,116,0.35)" : "rgba(234,88,12,0.25)"; ctx.beginPath(); ctx.arc(x - rr * 0.45, y, rr * 0.55, 0, TAU); ctx.arc(x + rr * 0.45, y, rr * 0.55, 0, TAU); ctx.fill(); }
-  }
-  // sterjenlar
-  const dpx = chain.depth * co.h * g.cell;
-  for (const r of co.rods) {
-    ctx.fillStyle = c.dark ? "#334155" : "#475569"; ctx.fillRect(X(r.x) - g.cell / 2, Y(0) - 14, g.cell, dpx + 14);
-  }
-  if (co.rods.length) {
-    ctx.strokeStyle = c.dark ? "#475569" : "#334155"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(X(co.rods[0].x), Y(0) - 14); ctx.lineTo(X(co.rods[co.rods.length - 1].x), Y(0) - 14); ctx.stroke();
-    const hx = X(co.rods[Math.floor((co.rods.length - 1) / 2)].x), hy = Y(0) + dpx;
-    ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(hx, hy, 8, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = c.primary; ctx.beginPath(); ctx.moveTo(hx, hy - 6); ctx.lineTo(hx - 3, hy - 2); ctx.lineTo(hx + 3, hy - 2); ctx.closePath(); ctx.moveTo(hx, hy + 6); ctx.lineTo(hx - 3, hy + 2); ctx.lineTo(hx + 3, hy + 2); ctx.closePath(); ctx.fill();
-    geo.rodHandle = { x: hx, y: hy, r: 16 };
-  } else geo.rodHandle = null;
-  // neytron manbai
-  ctx.fillStyle = c.dark ? "#1e3a8a" : "#bfdbfe"; ctx.strokeStyle = c.primary; ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.roundRect(X(0) - 30, Y(co.h / 2) - 10, 24, 20, 4); ctx.fill(); ctx.stroke();
-  ctx.font = SMALL; ctx.fillStyle = c.primary; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("n", X(0) - 18, Y(co.h / 2));
-  geo.gun = { x: X(0) - 18, y: Y(co.h / 2), r: 16 };
-  // chaqnashlar
-  for (const f of chain.flashes) {
-    const x = X(f.x), y = Y(f.y), u = f.age / 0.6;
-    ctx.globalAlpha = 1 - u;
-    if (f.type === "fission") { ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.arc(x, y, rr + 10 * u + 2, 0, TAU); ctx.fill(); }
-    else if (f.type === "cap") { ctx.strokeStyle = c.special; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, rr + 6 * u, 0, TAU); ctx.stroke(); }
-    else { ctx.strokeStyle = c.text3; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x - 4, y - 4); ctx.lineTo(x + 4, y + 4); ctx.moveTo(x + 4, y - 4); ctx.lineTo(x - 4, y + 4); ctx.stroke(); }
-    ctx.globalAlpha = 1;
-  }
-  // neytronlar
-  ctx.fillStyle = c.primary;
-  for (const n of co.neutrons) { ctx.beginPath(); ctx.arc(X(n.x), Y(n.y), 2.4, 0, TAU); ctx.fill(); }
-  // izohlar
-  ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  const ly = Math.min(h - 8, Y(co.h) + 12);
-  [[c.warning, "²³⁵U"], [c.dark ? "#64748b" : "#94a3b8", "²³⁸U"], [c.primary, "neytron"]].forEach(([col, lab], i) => {
-    const x = X(0) + i * 74; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x + 4, ly, 4, 0, TAU); ctx.fill(); ctx.fillStyle = c.text2; ctx.fillText(lab, x + 12, ly);
-  });
-}
+/* ------------------------------------------------------------------ Chizish (360° 3D sahna) */
 
-/* ------------------------------------------------------------------ Chizish */
-
-function draw(ctx, st) {
-  const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h);
-  if (ui.mode === "decay" && dec.sample) drawDecayStage(ctx, c, st.w, st.h);
-  else if (ui.mode === "bind") (bind.view === "build" ? drawBuild : drawReaction)(ctx, c, st.w, st.h);
-  else if (ui.mode === "chain" && chain.core) drawChainStage(ctx, c, st.w, st.h);
+const scene = createNuclearLab();
+function frame() {
+  const I = iso();
+  return {
+    mode: ui.mode,
+    decay: { N0: dec.N0, decayedAt: dec.sample.decayedAt, N: dec.sample.N, iso: I, flashes: dec.flashes, sel: dec.sel, t: dec.t, theory: P.remaining(dec.N0, dec.t, I.half) },
+    bind: { view: bind.view, Z: bind.Z, N: bind.N, rx: bind.rx, ghost: bind.ghost },
+    chain: { core: chain.core, flashes: chain.flashes, depth: chain.depth },
+  };
 }
-const heights = (cw) => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(Math.min(cw * 0.55, vh * 0.42), 260, 350)), graph: Math.round(clamp(vh * 0.28, 180, 260)) };
-};
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+const heights = () => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { graph: Math.round(clamp(vh * 0.28, 180, 260)) }; };
+const stage = createStage($("#stage"), (ctx, st) => {
+  if (dec.sample && chain.core) scene.draw(ctx, st, frame());
+  else { ctx.fillStyle = st.colors.bg; ctx.fillRect(0, 0, st.w, st.h); }
+}, { height: detailedStageHeight });
 
 function drawGraph(ctx, gst) {
   if (ui.mode === "decay" && dec.sample) {
@@ -296,7 +123,7 @@ function drawGraph(ctx, gst) {
   }
   if (ui.mode === "chain" && chain.core) return drawChain(ctx, gst, { tab: ui.tab, hist: chain.hist, tMax: chain.core.t, hover: ui.hover });
 }
-const graph = createStage($("#graph"), drawGraph, { height: (cw) => heights(cw).graph });
+const graph = createStage($("#graph"), drawGraph, { height: () => heights().graph });
 
 const TABS = {
   decay: { N: ["Qolgan yadrolar soni N(t)", "Har T½ da qolgan yadrolar soni ikki marta kamayadi. Ko‘k — namunadagi haqiqiy son (tasodifiy), to‘q sariq shtrix — qonun N₀·2^(−t/T½). Yadrolar kam bo‘lsa, tasodifiy chetlanish sezilarli."], A: ["Faollik: yemirilishlar soni", "Har ustun — T½/4 vaqt ichidagi yemirilishlar. Faollik A = λN ham yarim yemirilish davri bilan kamayadi."] },
@@ -453,68 +280,67 @@ document.querySelectorAll("[data-bview-value]").forEach((b) => b.addEventListene
 function syncBview() {
   document.querySelectorAll("[data-bview-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.bviewValue === bind.view)));
   document.querySelectorAll("[data-bv]").forEach((el) => { el.hidden = el.dataset.bv !== bind.view; });
+  syncSceneMode();
 }
 const cEC = bindRange($("#cE"), $("#cEOut"), (v) => `${fmt(v, 0)} %`, (v) => { chain.enrich = v / 100; customized(); loop.stop(); buildCore(); setPlayUI(false); });
 const cSC = bindRange($("#cS"), $("#cSOut"), (v) => `${fmt(v, 0)} × ${Math.max(4, Math.round(v * 0.58))}`, (v) => { chain.size = v; customized(); loop.stop(); buildCore(); setPlayUI(false); });
 const cRC = bindRange($("#cR"), $("#cROut"), (v) => `${fmt(v, 0)} % tushirilgan`, (v) => { setRods(v / 100); customized(); });
 function setRods(d) { chain.depth = d; chain.core.rods.forEach((r) => { r.depth = d; }); measureK(); refresh(); }
 
-/* Sahnada: yadroni bosish, nuklonlarni sudrash, sterjenlar, neytron */
+/* Sahnada (3D): bo'sh joyni sudrash — kamera; nuklonlar uyumi, yadro, sterjenlar va neytron manbai — tutqichlar;
+   sudramasdan bosish — yemirilishda yadroni tanlash, zanjir reaksiyada zonaga neytron chiqarish */
 const canvas = stage.canvas;
 let drag = null;
 const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e);
-  if (ui.mode === "decay") {
-    const g = geo.grid; if (!g) return;
-    const i = Math.floor((p.x - g.x0) / g.cell), j = Math.floor((p.y - g.y0) / g.cell);
-    dec.sel = i >= 0 && j >= 0 && i < g.n && j < g.n ? j * g.n + i : null; stage.render(); return;
-  }
-  if (ui.mode === "bind" && bind.view === "build") {
-    const L = geo.bind; if (!L) return;
-    for (const [k, q] of Object.entries(L.pile)) if (Math.hypot(p.x - q.x, p.y - q.y) <= 30) { drag = { kind: "pile", type: k, x0: p.x, y0: p.y, moved: false }; bind.ghost = { type: k, x: p.x, y: p.y }; break; }
-    if (!drag && Math.hypot(p.x - L.cx, p.y - L.cy) <= geo.nucR + 4 && geo.nucleons.length) {
-      let best = 0, bd = Infinity; geo.nucleons.forEach((q, i) => { const d = Math.hypot(p.x - q.x, p.y - q.y); if (d < bd) { bd = d; best = i; } });
-      const type = geo.nucleons[best].p ? "p" : "n";
-      if (type === "p" && bind.Z <= 1) return;
+function ghostTo(p) { const at = scene.ghostAt(p); if (at) bind.ghost.at = at; }
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id, p) {
+    if (id === "gun") { $("[data-fire]").click(); return; }
+    if (id === "rod") { drag = { kind: "rod" }; return; }
+    if (ui.mode !== "bind" || bind.view !== "build") return;
+    if (id.startsWith("pile:")) drag = { kind: "pile", type: id.slice(5), x0: p.x, y0: p.y, moved: false };
+    else if (id === "nucleus") {
+      const type = scene.nucleonAt(p.x, p.y);
+      if (!type || (type === "p" && bind.Z <= 1)) return;
       if (type === "p") bind.Z--; else bind.N--;
-      drag = { kind: "nuc", type }; bind.ghost = { type, x: p.x, y: p.y };
+      drag = { kind: "nuc", type };
+    } else return;
+    bind.ghost = { type: drag.type, at: null }; ghostTo(p);
+    customized(); syncBind(); refresh();
+  },
+  move(id, p) {
+    if (!drag) return;
+    if (drag.kind === "rod") {
+      const d = Math.round(scene.lab.nearest(scene.rodPoint, 0, 1, p.x, p.y) * 20) / 20;
+      if (d !== chain.depth) { cRC.set(d * 100); setRods(d); customized(); }
+      return;
     }
-    if (drag) { e.preventDefault(); try { canvas.setPointerCapture(e.pointerId); } catch { /* */ } customized(); syncBind(); refresh(); }
-    return;
-  }
-  if (ui.mode === "chain") {
-    const h = geo.rodHandle, g = geo.core, co = chain.core;
-    if (h && Math.hypot(p.x - h.x, p.y - h.y) <= h.r) { drag = { kind: "rod" }; e.preventDefault(); try { canvas.setPointerCapture(e.pointerId); } catch { /* */ } return; }
-    if (Math.hypot(p.x - geo.gun.x, p.y - geo.gun.y) <= geo.gun.r) { $("[data-fire]").click(); return; }
-    const x = (p.x - g.x0) / g.cell, y = (p.y - g.y0) / g.cell;
-    if (x > 0 && y > 0 && x < co.w && y < co.h && !co.onRod(x, y)) { co.inject(x, y, Math.random() * TAU); if (!loop.running && !prefersReducedMotion()) loop.start(); refresh(); }
-  }
+    if (bind.ghost) { ghostTo(p); if (drag.kind === "pile" && Math.hypot(p.x - drag.x0, p.y - drag.y0) > 4) drag.moved = true; }
+  },
+  end(id, cancel) { endDrag(cancel); },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (!drag) {
-    let cur = "";
-    if (ui.mode === "decay") cur = "pointer";
-    else if (ui.mode === "bind" && bind.view === "build" && geo.bind) cur = Object.values(geo.bind.pile).some((q) => Math.hypot(p.x - q.x, p.y - q.y) <= 30) || Math.hypot(p.x - geo.bind.cx, p.y - geo.bind.cy) <= geo.nucR + 4 ? "grab" : "";
-    else if (ui.mode === "chain") cur = geo.rodHandle && Math.hypot(p.x - geo.rodHandle.x, p.y - geo.rodHandle.y) <= 16 ? "ns-resize" : "crosshair";
-    canvas.style.cursor = cur; return;
-  }
-  if (drag.kind === "rod") { const g = geo.core, d = clamp(Math.round(((p.y - g.y0) / (chain.core.h * g.cell)) * 20) / 20, 0, 1); cRC.set(d * 100); setRods(d); customized(); return; }
-  if (bind.ghost) { bind.ghost.x = p.x; bind.ghost.y = p.y; if (drag.kind === "pile" && Math.hypot(p.x - drag.x0, p.y - drag.y0) > 4) drag.moved = true; stage.render(); }
-});
-function endDrag(e) {
+function endDrag(cancel = false) {
   if (!drag) return;
   if (drag.kind === "pile" || drag.kind === "nuc") {
-    const L = geo.bind, g = bind.ghost, inside = g && Math.hypot(g.x - L.cx, g.y - L.cy) <= geo.nucR + 30;
-    const add = drag.kind === "pile" ? (inside || !drag.moved) : inside;
+    // uyumdan: yadroga olib kelinsa yoki shunchaki bosilsa qo'shiladi; yadrodan olingan nuklon ichida qo'yib yuborilsa qaytadi
+    const inside = scene.insideNucleus(bind.ghost?.at), add = cancel ? drag.kind === "nuc" : drag.kind === "pile" ? inside || !drag.moved : inside;
     if (add) { if (drag.type === "p") bind.Z = Math.min(30, bind.Z + 1); else bind.N = Math.min(40, bind.N + 1); }
     bind.ghost = null; syncBind(); refresh();
   }
   drag = null;
 }
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
+let tap = null;
+canvas.addEventListener("pointerdown", (e) => { const p = ptr(canvas, e); tap = e.isPrimary && !scene.lab.hit(p.x, p.y) ? p : null; });
+canvas.addEventListener("pointercancel", () => { tap = null; });
+canvas.addEventListener("pointerup", (e) => {
+  const t = tap, p = ptr(canvas, e); tap = null;
+  if (!t || Math.hypot(p.x - t.x, p.y - t.y) > 5) return;
+  if (ui.mode === "decay") { dec.sel = scene.pickNucleus(p.x, p.y); stage.render(); return; }
+  if (ui.mode === "chain") {
+    const q = scene.corePoint(p), co = chain.core;
+    if (q && !co.onRod(q.x, q.y)) { co.inject(q.x, q.y, Math.random() * TAU); if (!loop.running && !prefersReducedMotion()) loop.start(); refresh(); }
+  }
+});
 function syncBind() { bZC.set(bind.Z); bNC.set(bind.N); }
 
 /* Grafikda kursor */
@@ -560,7 +386,10 @@ function setModeUI() {
   document.querySelectorAll("[data-tool]").forEach((el) => { el.hidden = !el.dataset.tool.split(" ").includes(ui.mode); });
   playBtn.hidden = ui.mode === "bind"; $("[data-reset]").hidden = ui.mode === "bind";
   $("[data-mode-hint]").textContent = MODE_HINT[ui.mode];
+  syncSceneMode();
 }
+/** 3D kamera: har tajribaning (yemirilish, yadro yasash, reaksiya, zanjir) o'z boshlang'ich ko'rinishi. */
+const syncSceneMode = () => scene.setMode(ui.mode === "bind" && bind.view === "react" ? "react" : ui.mode);
 function syncAll() {
   isoSel.value = dec.iso; syncN0(); syncBind(); rxSel.value = bind.rx; syncBview();
   cEC.set(chain.enrich * 100); cSC.set(chain.size); cRC.set(chain.depth * 100);
@@ -584,3 +413,5 @@ resetDecay(); buildCore();
 const q = new URLSearchParams(location.search).get("preset");
 loadPreset(PRESETS[q] ? q : "c14");
 document.fonts?.ready.then(() => { stage.render(); graph.render(); });
+// Testlar uchun: holat va sahna
+window.__nuclear = { ui, dec, bind, chain, loadPreset, refresh, scene, frame, fire, setRods };

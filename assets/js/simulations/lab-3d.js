@@ -183,7 +183,8 @@ export function createLab3D() {
         if(f.fill){ctx.fillStyle=f.fill;ctx.fill();}if(f.stroke){ctx.strokeStyle=f.stroke;ctx.lineWidth=f.width;ctx.stroke();}}
     }
     labels.forEach(fn=>fn());
-    tag(ctx,`3D laboratoriya · t = ${fmt(time,1)} s`,14,21,{color:c.text2,bg:c.bg2,font:'600 11px system-ui'});
+    // time — soniya yoki tayyor matn (masalan, yarim yemirilish davrlarida)
+    tag(ctx,typeof time==='string'?time:`3D laboratoriya · t = ${fmt(time,1)} s`,14,21,{color:c.text2,bg:c.bg2,font:'600 11px system-ui'});
     tag(ctx,note,14,h-14,{color:c.text3,bg:c.bg,font:'10px system-ui'});
   }
   function bars(K,U,ref) {
