@@ -3,16 +3,18 @@
 // 1) Tasvir yasash: yig'uvchi/sochuvchi linza, xarakterli nurlar va dasta, ekranda tasvirni ushlash, optik kuch.
 // 2) Optik asboblar: lupa, mikroskop, teleskop (Kepler), fotoapparat, proyektor — ketma-ket linzalar orqali nurlar.
 // 3) Ko'z: akkomodatsiya, yaqindan/uzoqdan ko'rmaslik, ko'zoynak bilan tuzatish.
-// Fizika: optics-physics.js (Node'da tekshirilgan). Grafiklar: lens-plots.js.
+// 360° 3D laboratoriya: optical-lab-3d.js (optik skamya, linzalar, ekran, asbob trubkasi va ko'z kesimi;
+// buyum, F fokus belgisi va ekran sahnada sudraladi). Fizika: optics-physics.js (Node'da tekshirilgan). Grafiklar: lens-plots.js.
 // ==========================================================================
 
-import { clamp, fmt, createStage, tag, bindRange, arrow } from "./sim-kit.js";
-import { attach3D } from "./sim3d.js";
+import { clamp, fmt, createStage, bindRange } from "./sim-kit.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261124-lens";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261124-lens";
+import { createOpticalLab } from "./optical-lab-3d.js?v=20261124-lens";
 import * as O from "./optics-physics.js";
 import { drawFD, drawInv, drawGamma, drawEyeBlur, drawInstrMag } from "./lens-plots.js";
 
 const $ = (s) => document.querySelector(s);
-const TAU = Math.PI * 2;
 const RAY = ["#ef4444", "#16a34a", "#2563eb"];
 
 /* ------------------------------------------------------------------ Holat */
@@ -22,339 +24,22 @@ const bench = { type: "conv", F: 10, d: 30, h: 4, screen: false, xs: 20, pts: []
 const ins = { kind: "micro", F1: 4, F2: 8, L: 30, d: 4.8 };
 const eye = { defect: "normal", k: 100, glasses: false, G: 0 };
 let presetId = null;
-let r3 = null; // 3D ko‘rinish (sim3d.js)
-const S3 = { lenses: [], arrows: [], screen: null, eye: null, eyeball: null, seen: null }; // 3D rejimda chizma vaqtida yig‘iladigan jismlar
 
 const Fb = () => (bench.type === "conv" ? bench.F : -bench.F);
 const eyeD = () => (eye.k >= 100 ? Infinity : 0.1 * Math.pow(10, (eye.k / 100) * 2.3));
 
-/* ------------------------------------------------------------------ Ko'rinish (dunyo: cm) */
-
-const view = { s: 1, sy: 1, ox: 0, oy: 0, xMin: -60, xMax: 60 };
-const X = (x) => view.ox + (x - view.xMin) * view.s;
-const Y = (y) => view.oy - y * view.sy; // vertikal masshtab kattaroq (optik sxemalardagi kabi)
-function setView(cw, ch, xMin, xMax) {
-  view.xMin = xMin; view.xMax = xMax;
-  view.s = (cw - 30) / (xMax - xMin);
-  view.ox = 15; view.oy = ch * 0.5;
-  view.sy = Math.max(view.s, (ch * 0.4) / 10);
-}
-
-function lensSymbol(ctx, c, x, F, H, label) {
-  const px = X(x), y0 = Y(H), y1 = Y(-H);
-  if (r3?.on) {
-    S3.lenses.push({ px, py: (y0 + y1) / 2, H: y1 - y0, F });
-    if (label) tag(ctx, label, px, y0 - 14, { color: c.primary, bg: c.bg, align: "center", font: "700 10.5px Inter, system-ui, sans-serif" });
-    return;
-  }
-  ctx.save();
-  ctx.fillStyle = "rgba(125,211,252,0.18)";
-  ctx.beginPath();
-  if (F > 0) { ctx.moveTo(px, y0); ctx.quadraticCurveTo(px + 12, (y0 + y1) / 2, px, y1); ctx.quadraticCurveTo(px - 12, (y0 + y1) / 2, px, y0); }
-  else { ctx.moveTo(px - 7, y0); ctx.lineTo(px + 7, y0); ctx.quadraticCurveTo(px + 1, (y0 + y1) / 2, px + 7, y1); ctx.lineTo(px - 7, y1); ctx.quadraticCurveTo(px - 1, (y0 + y1) / 2, px - 7, y0); }
-  ctx.fill();
-  ctx.strokeStyle = c.primary; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(px, y0); ctx.lineTo(px, y1); ctx.stroke();
-  const hd = 7;
-  ctx.beginPath();
-  if (F > 0) { ctx.moveTo(px - hd, y0 + hd); ctx.lineTo(px, y0); ctx.lineTo(px + hd, y0 + hd); ctx.moveTo(px - hd, y1 - hd); ctx.lineTo(px, y1); ctx.lineTo(px + hd, y1 - hd); }
-  else { ctx.moveTo(px - hd, y0 - hd); ctx.lineTo(px, y0); ctx.lineTo(px + hd, y0 - hd); ctx.moveTo(px - hd, y1 + hd); ctx.lineTo(px, y1); ctx.lineTo(px + hd, y1 + hd); }
-  ctx.stroke();
-  ctx.restore();
-  if (label) tag(ctx, label, px, y0 - 14, { color: c.primary, bg: c.bg, align: "center", font: "700 10.5px Inter, system-ui, sans-serif" });
-}
-
-function focusMarks(ctx, c, x, F, color, onlyF = false) {
-  const a = Math.abs(F);
-  [[x - a, "F"], [x + a, "F"], [x - 2 * a, "2F"], [x + 2 * a, "2F"]].filter(([, l]) => !onlyF || l === "F").forEach(([fx, l]) => {
-    if (fx < view.xMin || fx > view.xMax) return;
-    ctx.fillStyle = color || c.text2; ctx.beginPath(); ctx.arc(X(fx), Y(0), l === "F" ? 3.5 : 2.5, 0, TAU); ctx.fill();
-    ctx.fillStyle = c.text3; ctx.font = "600 10px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(l, X(fx), Y(0) + 6);
-  });
-}
-
-function objArrow(ctx, c, x, h, color, dashed = false, candle = false) {
-  if (r3?.on) { S3.arrows.push({ x: X(x), base: Y(0), tip: Y(h), dashed, candle }); return; }
-  ctx.save();
-  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 3; if (dashed) { ctx.setLineDash([5, 4]); ctx.globalAlpha = 0.85; }
-  ctx.beginPath(); ctx.moveTo(X(x), Y(0)); ctx.lineTo(X(x), Y(h)); ctx.stroke(); ctx.setLineDash([]);
-  const dir = h >= 0 ? 1 : -1, hd = 8;
-  ctx.beginPath(); ctx.moveTo(X(x), Y(h)); ctx.lineTo(X(x) - hd * 0.6, Y(h) + dir * hd); ctx.lineTo(X(x) + hd * 0.6, Y(h) + dir * hd); ctx.closePath(); ctx.fill();
-  if (candle) { const g = ctx.createRadialGradient(X(x), Y(h) - 6, 1, X(x), Y(h) - 6, 12); g.addColorStop(0, "rgba(253,224,71,0.9)"); g.addColorStop(1, "rgba(253,224,71,0)"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(X(x), Y(h) - 6, 12, 0, TAU); ctx.fill(); }
-  ctx.restore();
-}
-
-function polyline(ctx, pts, color, width = 1.75, dash = null, alpha = 1) {
-  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = width; ctx.globalAlpha = alpha; ctx.setLineDash(dash || []);
-  ctx.beginPath(); pts.forEach(([x, y], k) => { if (k === 0) ctx.moveTo(X(x), Y(y)); else ctx.lineTo(X(x), Y(y)); }); ctx.stroke(); ctx.restore();
-}
-
-/** Nurlar: chiqishdagi kesmalarni mavhum tasvir tomon orqaga davom ettirish. */
-function drawRaySet(ctx, c, lenses, starts, xEnd, finalImg) {
-  starts.forEach((r) => {
-    const tr = O.traceRay(lenses, r.x, r.y, r.u, xEnd);
-    polyline(ctx, tr.pts, r.color, r.w || 1.75, null, r.alpha ?? 1);
-    // mavhum tasvir: oxirgi linzadan chiqqan nurni orqaga uzaytirish
-    if (finalImg && !finalImg.real && Number.isFinite(finalImg.x)) {
-      const n = tr.pts.length, [xl, yl] = tr.pts[n - 2];
-      const yv = yl + tr.slope * (finalImg.x - xl);
-      polyline(ctx, [[xl, yl], [finalImg.x, yv]], r.color, 1.25, [4, 4], 0.6 * (r.alpha ?? 1));
-    }
-  });
-}
-
-/* ------------------------------------------------------------------ 1) Tasvir yasash */
-
-function benchStarts(F, d, h, lensH) {
-  const out = [];
-  if (ui.rays) {
-    out.push({ x: -d, y: h, u: 0, color: RAY[0], w: 2 });
-    out.push({ x: -d, y: h, u: -h / d, color: RAY[1], w: 2 });
-    if (Math.abs(d - Math.abs(F)) > 0.3) out.push({ x: -d, y: h, u: -h / (d - F), color: RAY[2], w: 2 }); // fokus orqali (sochuvchida — narigi fokusga yo'naltirilgan)
-  }
-  if (ui.fan) for (let k = 0; k <= 8; k++) { const yl = -lensH + (2 * lensH * k) / 8; out.push({ x: -d, y: h, u: (yl - h) / d, color: "#f59e0b", w: 1.1, alpha: 0.6 }); }
-  return out;
-}
-
-function drawBench(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  setView(cw, ch, -60, 60);
-  const F = Fb(), d = bench.d, h = bench.h, lensH = 9;
-  ctx.save(); ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1; ctx.setLineDash([6, 4]); ctx.beginPath(); ctx.moveTo(X(-60), Y(0)); ctx.lineTo(X(60), Y(0)); ctx.stroke(); ctx.restore();
-  focusMarks(ctx, c, 0, F);
-  const img = O.thinLens(F, d);
-  const xEnd = bench.screen ? bench.xs : 60;
-  drawRaySet(ctx, c, [{ x: 0, F }], benchStarts(F, d, h, lensH), xEnd, img.inf ? null : { x: img.f, real: img.real });
-  lensSymbol(ctx, c, 0, F, lensH, F > 0 ? "yig‘uvchi" : "sochuvchi");
-  objArrow(ctx, c, -d, h, c.warning, false, true);
-  tag(ctx, "buyum", X(-d), Y(0) + 18, { color: c.text2, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-  if (!img.inf && Math.abs(img.f) < 200) {
-    const H = img.m * h;
-    if (img.f > view.xMin && img.f < view.xMax && Math.abs(H) < 30) {
-      objArrow(ctx, c, img.f, H, c.special, !img.real);
-      tag(ctx, img.real ? "haqiqiy tasvir" : "mavhum tasvir", X(img.f), Y(0) + (H > 0 ? 16 : -16), { color: c.special, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-    } else tag(ctx, `Tasvir maydondan tashqarida (f = ${fmt(img.f, 0)} cm)`, cw - 12, 16, { color: c.special, bg: c.bg2, align: "right", font: "600 10.5px Inter, system-ui, sans-serif" });
-  } else tag(ctx, "Buyum fokusda: nurlar parallel — tasvir yo‘q (cheksizlikda)", cw / 2, 16, { color: c.special, bg: c.bg2, align: "center", font: "600 11px Inter, system-ui, sans-serif" });
-  if (bench.screen) {
-    const xs = bench.xs;
-    const d3 = !!r3?.on;
-    if (!d3) { ctx.save(); ctx.fillStyle = c.text3; ctx.fillRect(X(xs) - 3, Y(lensH * 1.15), 6, 2 * lensH * 1.15 * view.sy); ctx.restore(); }
-    tag(ctx, "ekran", X(xs), Y(-lensH * 1.15) + 12, { color: c.text2, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-    const blur = O.blurDiameter(F, d, lensH * 0.6, xs);
-    if (d3) {
-      // 3D: tasvir ekranning o'zida ko'rinadi (frame3d → panel)
-      const half = lensH * 1.15 * view.sy, sharp3 = img.real && Math.abs(xs - img.f) < 0.6;
-      S3.screen = { px: X(xs), py: Y(0), size: 2 * half, sig: `${F}|${d}|${h}|${xs}`, paint(c2, n, m) {
-        c2.fillStyle = "#f8fafc"; c2.fillRect(0, 0, n, m);
-        const pp = m / (2 * lensH * 1.15), bl = clamp(Math.abs(blur) * pp, 0, 26);
-        c2.save(); c2.filter = `blur(${bl.toFixed(1)}px)`;
-        if (img.real && !img.inf) {
-          const Hs = img.m * h * (xs / img.f) * pp, cx = n / 2, cy = m / 2;
-          c2.strokeStyle = "#d97706"; c2.lineWidth = Math.max(4, n * 0.035); c2.lineCap = "round"; c2.beginPath(); c2.moveTo(cx, cy); c2.lineTo(cx, cy - Hs * 0.86); c2.stroke();
-          c2.fillStyle = "#f59e0b"; c2.beginPath(); c2.ellipse(cx, cy - Hs, Math.max(4, n * 0.04), Math.max(6, Math.abs(Hs) * 0.16), 0, 0, TAU); c2.fill();
-        } else { c2.fillStyle = "rgba(245,158,11,0.3)"; c2.beginPath(); c2.arc(n / 2, m / 2, n * 0.3, 0, TAU); c2.fill(); }
-        c2.restore();
-      } };
-      tag(ctx, sharp3 ? "Ekranda: aniq tasvir" : "Ekranda: xira dog‘", X(xs), Y(lensH * 1.15) - 14, { color: sharp3 ? c.success : c.text2, bg: c.bg, align: "center", font: "700 10.5px Inter, system-ui, sans-serif" });
-      return;
-    }
-    // ekrandagi ko'rinish
-    const bw = 120, bh = 84, bx = cw - bw - 10, by = ch - bh - 10;
-    ctx.save(); ctx.fillStyle = "#0f172a"; ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 8); ctx.fill();
-    if (img.real && !img.inf) {
-      const scale = xs / img.f, H = img.m * h * scale;
-      const px = clamp(Math.abs(blur) * 2.2, 0, 14);
-      ctx.save(); ctx.beginPath(); ctx.rect(bx, by, bw, bh); ctx.clip(); ctx.filter = `blur(${px.toFixed(1)}px)`;
-      const k = Math.min(1, 34 / Math.max(Math.abs(H), 1e-6)) * 3.2;
-      ctx.strokeStyle = "#fde68a"; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(bx + bw / 2, by + bh / 2 - 0); ctx.lineTo(bx + bw / 2, by + bh / 2 - H * k); ctx.stroke();
-      ctx.fillStyle = "#fde68a"; ctx.beginPath(); ctx.arc(bx + bw / 2, by + bh / 2 - H * k, 5, 0, TAU); ctx.fill();
-      ctx.restore();
-    } else { ctx.fillStyle = "rgba(253,230,138,0.25)"; ctx.beginPath(); ctx.arc(bx + bw / 2, by + bh / 2, 26, 0, TAU); ctx.fill(); }
-    ctx.restore();
-    const sharp = img.real && Math.abs(xs - img.f) < 0.6;
-    tag(ctx, sharp ? "Ekranda: aniq tasvir" : "Ekranda: xira dog‘", bx + bw / 2, by - 12, { color: sharp ? c.success : c.text2, bg: c.bg, align: "center", font: "700 10.5px Inter, system-ui, sans-serif" });
-  }
-}
-
-/* ------------------------------------------------------------------ 2) Optik asboblar */
-
+/* ------------------------------------------------------------------ 3D optik laboratoriya */
 function instrLenses() {
   if (ins.kind === "loupe" || ins.kind === "camera" || ins.kind === "projector") return [{ x: 0, F: ins.F1 }];
   return [{ x: 0, F: ins.F1 }, { x: ins.L, F: ins.F2 }];
 }
-function instrView() {
-  if (ins.kind === "tele") return [-12, ins.L + 22];
-  if (ins.kind === "loupe") return [-Math.max(ins.d * 2.6, 22), 22];
-  if (ins.kind === "camera" || ins.kind === "projector") { const im = O.thinLens(ins.F1, ins.d); return [-ins.d - 6, Math.max(12, Math.min(90, im.inf ? 40 : im.f + 8))]; }
-  return [-Math.max(ins.d + 6, 10), ins.L + 22];
-}
-
-function eyeIcon(ctx, c, x) {
-  const px = X(x), py = Y(0);
-  if (r3?.on) { S3.eye = { px, py }; return; }
-  ctx.save(); ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.fillStyle = c.bg;
-  ctx.beginPath(); ctx.moveTo(px - 14, py); ctx.quadraticCurveTo(px, py - 14, px + 14, py); ctx.quadraticCurveTo(px, py + 14, px - 14, py); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.text; ctx.beginPath(); ctx.arc(px - 2, py, 4.5, 0, TAU); ctx.fill(); ctx.restore();
-}
-
-function drawInstr(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  const [x0, x1] = instrView();
-  setView(cw, ch, x0, x1);
-  const L = instrLenses(), lensH = 8;
-  ctx.save(); ctx.strokeStyle = c.borderStrong; ctx.setLineDash([6, 4]); ctx.beginPath(); ctx.moveTo(X(x0), Y(0)); ctx.lineTo(X(x1), Y(0)); ctx.stroke(); ctx.restore();
-  L.forEach((l) => focusMarks(ctx, c, l.x, l.F, c.text3, true));
-  const xEnd = x1;
-  if (ins.kind === "tele") {
-    const a = -0.06, starts = [];
-    for (let k = -3; k <= 3; k++) starts.push({ x: x0, y: (k * lensH) / 4 - a * (0 - x0), u: a, color: k === 0 ? RAY[1] : "#f59e0b", w: k === 0 ? 2 : 1.3, alpha: k === 0 ? 1 : 0.75 });
-    drawRaySet(ctx, c, L, starts, xEnd, null);
-    const yi = a * ins.F1; // fokal tekislikdagi oraliq tasvir
-    objArrow(ctx, c, ins.F1, yi, c.special, false);
-    tag(ctx, "oraliq tasvir", X(ins.F1), Y(yi) + 16, { color: c.special, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-    tag(ctx, "uzoqdagi buyumdan parallel nurlar", X(x0) + 6, Y(-lensH) + 16, { color: c.text2, bg: c.bg, font: "600 10px Inter, system-ui, sans-serif" });
-  } else {
-    const h = ins.kind === "camera" ? 3 : ins.kind === "projector" ? 1.5 : 2;
-    const d = ins.d;
-    const sys = O.systemImage(L, -d, h);
-    const starts = [];
-    if (ui.rays) {
-      starts.push({ x: -d, y: h, u: 0, color: RAY[0], w: 2 });
-      starts.push({ x: -d, y: h, u: -h / d, color: RAY[1], w: 2 });
-    }
-    if (ui.fan || !ui.rays) for (let k = 0; k <= 6; k++) { const yl = -lensH * 0.8 + (1.6 * lensH * k) / 6; starts.push({ x: -d, y: h, u: (yl - h) / d, color: "#f59e0b", w: 1.1, alpha: 0.6 }); }
-    const last = sys.steps[sys.steps.length - 1];
-    drawRaySet(ctx, c, L, starts, ins.kind === "camera" || ins.kind === "projector" ? (last && last.real ? last.x : xEnd) : xEnd, last && !last.inf ? { x: last.x, real: last.real } : null);
-    objArrow(ctx, c, -d, h, c.warning, false, true);
-    sys.steps.forEach((s, k) => {
-      const isLast = k === sys.steps.length - 1;
-      if (!Number.isFinite(s.x) || s.x < x0 || s.x > x1 || Math.abs(s.y) > 11) { if (isLast && Number.isFinite(s.x)) { const lx = L[L.length - 1].x, rel = s.x - lx, nm = L.length > 1 ? "okulyardan" : ins.kind === "loupe" ? "lupadan" : "obyektivdan"; tag(ctx, `Yakuniy ${s.real ? "haqiqiy" : "mavhum"} tasvir: ${nm} ${fmt(Math.abs(rel), 0)} cm ${rel < 0 ? "chapda" : "o‘ngda"}, ${fmt(Math.abs(s.y / h), 1)}× katta`, cw - 12, 16, { color: c.special, bg: c.bg2, align: "right", font: "600 10.5px Inter, system-ui, sans-serif" }); } return; }
-      objArrow(ctx, c, s.x, s.y, c.special, !s.real);
-      tag(ctx, isLast ? (s.real ? "tasvir" : "mavhum tasvir") : "oraliq tasvir", X(s.x), Y(0) + (s.y > 0 ? 16 : -16), { color: c.special, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-    });
-    if (ins.kind === "camera" || ins.kind === "projector") {
-      const xs = last && last.real ? last.x : x1 - 4;
-      if (r3?.on) S3.screen = { px: X(xs), py: Y(0), size: 2 * lensH * 1.2 * view.sy, dark: ins.kind === "camera" };
-      else { ctx.save(); ctx.fillStyle = c.text3; ctx.fillRect(X(xs) - 3, Y(lensH * 1.2), 6, 2 * lensH * 1.2 * view.sy); ctx.restore(); }
-      tag(ctx, ins.kind === "camera" ? "matritsa (fotoplyonka)" : "ekran", X(xs), Y(-lensH * 1.2) + 12, { color: c.text2, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-    }
-  }
-  L.forEach((l, k) => lensSymbol(ctx, c, l.x, l.F, lensH, L.length > 1 ? (k === 0 ? "obyektiv" : "okulyar") : ins.kind === "loupe" ? "lupa" : "obyektiv"));
-  if (ins.kind === "loupe" || ins.kind === "micro" || ins.kind === "tele") eyeIcon(ctx, c, x1 - 6);
-}
-
-/* ------------------------------------------------------------------ 3) Ko'z */
-
-function drawEye(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  const d = eyeD(), G = eye.glasses ? eye.G : 0;
-  const v = O.eyeView(d, eye.defect, G);
-  const narrow = cw < 560;
-  const ex = narrow ? cw * 0.62 : cw * 0.6, ey = ch * 0.44, Re = Math.min(ch * 0.3, cw * 0.17);
-  const lensX = ex - Re * 0.78, retX = ex + Re * 0.95;
-  // ko'z soqqasi
-  const d3 = !!r3?.on;
-  ctx.save(); ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2;
-  if (!d3) { ctx.beginPath(); ctx.ellipse(ex, ey, Re * (eye.defect === "myopia" ? 1.06 : eye.defect === "hyperopia" ? 0.94 : 1), Re, 0, 0, TAU); ctx.fill(); ctx.stroke(); }
-  ctx.strokeStyle = "#ef4444"; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(ex, ey, Re * (eye.defect === "myopia" ? 1.06 : eye.defect === "hyperopia" ? 0.94 : 1) - 2, -0.6, 0.6); ctx.stroke();
-  ctx.restore();
-  const retinaX = ex + (Re * (eye.defect === "myopia" ? 1.06 : eye.defect === "hyperopia" ? 0.94 : 1) - 2) * Math.cos(0);
-  tag(ctx, "to‘r parda", retinaX + 4, ey - Re * 0.75, { color: "#ef4444", bg: c.bg, font: "600 10px Inter, system-ui, sans-serif" });
-  // gavhar (linza) — akkomodatsiya bilan qalinlashadi
-  const thick = 7 + v.accommodation * 2.2;
-  if (d3) S3.eyeball = { ex, ey, Re, k: eye.defect === "myopia" ? 1.06 : eye.defect === "hyperopia" ? 0.94 : 1, lensX, thick };
-  else { ctx.save(); ctx.fillStyle = "rgba(125,211,252,0.45)"; ctx.strokeStyle = c.primary; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.ellipse(lensX, ey, thick, Re * 0.42, 0, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); }
-  tag(ctx, "gavhar", lensX, ey + Re * 0.42 + 14, { color: c.primary, bg: c.bg, align: "center", font: "600 10px Inter, system-ui, sans-serif" });
-  // ko'z ichida nurlar: tasvir nuqtasi
-  const scaleIn = (retinaX - lensX) / v.Lr;
-  const ix = Number.isFinite(v.img) ? lensX + v.img * scaleIn : retinaX + 400;
-  const ap = Re * 0.32;
-  // tashqi nurlar
-  const gx = lensX - (narrow ? 40 : 60);
-  const srcX = Number.isFinite(v.V) && Math.abs(v.V) > 0.02 ? lensX - clamp(1 / Math.abs(v.V), 0.05, 8) * (narrow ? 60 : 90) : -1e4;
-  ctx.save(); ctx.strokeStyle = "#f59e0b"; ctx.lineWidth = 1.6; ctx.globalAlpha = 0.85;
-  [-1, -0.5, 0, 0.5, 1].forEach((t) => {
-    const yl = ey + t * ap;
-    // kiruvchi
-    let x0 = 10, y0;
-    if (srcX > -1e3 && v.V < 0) { const k = (lensX - x0) / (lensX - srcX); y0 = ey + t * ap * k; } else if (srcX > -1e3 && v.V > 0) { const k = (srcX - x0) / (srcX - lensX); y0 = ey + t * ap * (k); } else y0 = yl;
-    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(lensX, yl);
-    // ichida
-    const endX = Math.min(ix, retinaX + Re * 0.3);
-    const yEnd = ey + t * ap * (1 - (endX - lensX) / (ix - lensX));
-    ctx.lineTo(endX, yEnd); ctx.stroke();
-  });
-  ctx.restore();
-  if (Number.isFinite(v.img) && ix < retinaX + Re * 0.3) { ctx.fillStyle = c.warning; ctx.beginPath(); ctx.arc(ix, ey, 3.5, 0, TAU); ctx.fill(); }
-  // ko'zoynak
-  if (eye.glasses && G !== 0) {
-    setView(cw, ch, -60, 60); // faqat lensSymbol uchun
-    const H = Re * 0.55 / view.sy;
-    const gxw = (gx - view.ox) / view.s + view.xMin;
-    view.oy = ey;
-    lensSymbol(ctx, c, gxw, G, H, `${G > 0 ? "+" : ""}${fmt(G, 2)} D`);
-  }
-  // to'r pardadagi dog'
-  const blurPx = clamp(v.blur * 1e6 / 6, 0, 18);
-  ctx.save(); ctx.fillStyle = "rgba(245,158,11,0.35)"; ctx.beginPath(); ctx.ellipse(retinaX - 2, ey, 3, Math.max(2, blurPx), 0, 0, TAU); ctx.fill(); ctx.restore();
-  // ko'z ko'rgan tasvir
-  const bw = narrow ? 104 : 150, bh = 60, bx = 10, by = ch - bh - 10;
-  if (d3) { S3.seen = { c, narrow, bw, bh, bx, by, blurPx, sharp: v.sharp }; tag(ctx, `Buyum: ${Number.isFinite(d) ? (d < 1 ? `${fmt(d * 100, 0)} cm` : `${fmt(d, 1)} m`) : "∞ (uzoqda)"}`, 12, 16, { color: c.text, bg: c.bg2, font: "700 11px Inter, system-ui, sans-serif" }); return; }
-  drawSeen(ctx, { c, narrow, bw, bh, bx, by, blurPx, sharp: v.sharp });
-  tag(ctx, `Buyum: ${Number.isFinite(d) ? (d < 1 ? `${fmt(d * 100, 0)} cm` : `${fmt(d, 1)} m`) : "∞ (uzoqda)"}`, 12, 16, { color: c.text, bg: c.bg2, font: "700 11px Inter, system-ui, sans-serif" });
-}
-/** Ko'z ko'rgan tasvir (oynacha). */
-function drawSeen(ctx, { c, narrow, bw, bh, bx, by, blurPx, sharp }) {
-  ctx.save(); ctx.fillStyle = "#f8fafc"; ctx.strokeStyle = c.border; ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 8); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.rect(bx, by, bw, bh); ctx.clip();
-  ctx.filter = `blur(${(blurPx * 0.35).toFixed(1)}px)`; ctx.fillStyle = "#0f172a"; ctx.font = `800 ${narrow ? 15 : 20}px Inter, system-ui, sans-serif`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  ctx.fillText("OLIYFIZIKA", bx + bw / 2, by + bh / 2);
-  ctx.restore();
-  tag(ctx, sharp ? "Ko‘z aniq ko‘radi" : "Xira ko‘rinadi", bx + bw / 2, by - 12, { color: sharp ? c.success : c.danger, bg: c.bg, align: "center", font: "700 10.5px Inter, system-ui, sans-serif" });
-}
-
-function draw(ctx, stage) {
-  S3.lenses.length = 0; S3.arrows.length = 0; S3.screen = S3.eye = S3.eyeball = S3.seen = null;
-  if (!r3?.on) { ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h); }
-  if (ui.mode === "bench") drawBench(ctx, stage); else if (ui.mode === "instr") drawInstr(ctx, stage); else drawEye(ctx, stage);
-}
+const scene = createOpticalLab();
+function draw(ctx, stage) { scene.draw(ctx, stage, ui, bench, ins, eye); }
 const heights = (cw) => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(Math.min(cw * 0.42, vh * 0.42), 240, 340)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
-
-/* ------------------------------------------------------------------ 3D sahna */
-
-function frame3d(g) {
-  const axisY = ui.mode === "eye" ? null : Y(0);
-  S3.lenses.forEach((l, i) => {
-    const conv = l.F > 0, H = l.H;
-    g.lens(`lens${i}`, { at: [l.px, l.py, 0], H, t: conv ? clamp(H * 0.16, 8, 22) : 3, edge: conv ? 1.5 : clamp(H * 0.13, 7, 18) });
-    if (axisY !== null) g.stand(`lensStand${i}`, { x: l.px, top: l.py + H / 2 + 3 });
-  });
-  S3.arrows.forEach((a, i) => {
-    const up = a.tip <= a.base, tip = a.tip + (up ? 8 : -8);
-    if (a.candle) { g.candle(`obj${i}`, { x: a.x, base: a.base, tip, r: 4.5 }); g.stand(`objStand${i}`, { x: a.x, top: a.base, r: 2.6, base: 12 }); }
-    else g.candle(`img${i}`, { x: a.x, base: a.base, tip, r: 4.5, color: "#a78bfa", opacity: a.dashed ? 0.4 : 0.8, glow: false });
-  });
-  if (S3.screen) {
-    const s = S3.screen;
-    g.panel("screen", s.paint ? { at: [s.px, s.py, 0], size: [s.size, s.size], paint: s.paint, sig: s.sig, res: [160, 160] } : { at: [s.px, s.py, 0], size: [s.size, s.size], color: s.dark ? "#334155" : "#f8fafc" });
-    g.stand("screenStand", { x: s.px + 3, top: s.py + s.size / 2 });
-  }
-  if (S3.eye) { g.eye("eye", { at: [S3.eye.px, S3.eye.py, 0], r: 13, fx: -1, fy: 0 }); g.stand("eyeStand", { x: S3.eye.px, top: S3.eye.py + 13 }); }
-  if (axisY !== null) g.rail("rail", { x0: 10, x1: g.w - 10 });
-  if (S3.eyeball) {
-    const e = S3.eyeball;
-    g.sphere("eyeball", { at: [e.ex, e.ey, 0], r: e.Re, color: "#f1f5f9", opacity: 0.3, rough: 0.2, scale: [e.k, 1, 1] });
-    g.sphere("crystalline", { at: [e.lensX, e.ey, 0], r: 1, color: "#38bdf8", opacity: 0.55, rough: 0.1, scale: [e.thick, e.Re * 0.42, e.Re * 0.42] });
-    g.sphere("retina", { at: [e.ex + e.Re * e.k * 0.5, e.ey, 0], r: e.Re * 0.52, color: "#ef4444", opacity: 0.22, scale: [1, 1.25, 1.25] });
-  }
-  if (S3.seen) drawSeen(g.hud, S3.seen);
-}
-const view3d = () => ({ key: ui.mode, plane: "v", az: ui.mode === "eye" ? -0.4 : -0.38, el: 0.24, table: ui.mode !== "eye" });
-r3 = attach3D(stage, { frame: frame3d, view: view3d });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -508,28 +193,17 @@ document.querySelectorAll("[data-defect-value]").forEach((b) => b.addEventListen
 $("[data-glasses]").addEventListener("change", (e) => { eye.glasses = e.target.checked; syncAll(); customized(); refresh(); });
 $("[data-rx]").addEventListener("click", () => { eye.glasses = eye.defect !== "normal"; eye.G = Math.round(O.prescription(eye.defect) * 4) / 4; syncAll(); customized(); refresh(); });
 
-// Sudrash: buyum va ekran
-let drag = null;
-stage.canvas.addEventListener("pointerdown", (ev) => {
-  if (ui.mode !== "bench") return;
-  const r = stage.canvas.getBoundingClientRect(), px = ev.clientX - r.left;
-  const dObj = Math.abs(px - X(-bench.d)), dScr = bench.screen ? Math.abs(px - X(bench.xs)) : 1e9;
-  if (Math.min(dObj, dScr) > 22) return;
-  drag = dScr < dObj ? "screen" : "obj"; stage.canvas.dataset.dragging = "true";
-  try { stage.canvas.setPointerCapture(ev.pointerId); } catch { /* */ }
+// Buyum, fokus va ekran koordinatalari kameraning proyeksiyasi orqali hisoblanadi.
+bindLabCamera(stage.canvas, scene.lab, () => stage.render(), {
+  move(id, pointer) {
+    if (ui.mode !== "bench") return;
+    const x = scene.position(pointer.x, pointer.y); if (x === null) return;
+    if (id === "object") { bench.d = Math.round(clamp(-x, 1, 58) * 2) / 2; bDc.set(bench.d); }
+    else if (id === "screen") { bench.xs = Math.round(clamp(x, 2, 58) * 2) / 2; bSc.set(bench.xs); }
+    else if (id === "focus") { const input = $("#bF"); bench.F = Math.round(clamp(Math.abs(x), Number(input.min), Number(input.max))*2)/2; bFc.set(bench.F); }
+    customized(); refresh();
+  },
 });
-stage.canvas.addEventListener("pointermove", (ev) => {
-  if (ui.mode !== "bench") return;
-  const r = stage.canvas.getBoundingClientRect(), px = ev.clientX - r.left;
-  if (!drag) { const near = Math.abs(px - X(-bench.d)) < 22 || (bench.screen && Math.abs(px - X(bench.xs)) < 22); stage.canvas.style.cursor = near ? "ew-resize" : ""; return; }
-  const x = (px - view.ox) / view.s + view.xMin;
-  if (drag === "obj") { bench.d = Math.round(clamp(-x, 1, 58) * 2) / 2; bDc.set(bench.d); }
-  else { bench.xs = Math.round(clamp(x, 2, 58) * 2) / 2; bSc.set(bench.xs); }
-  customized(); refresh();
-});
-const endDrag = () => { drag = null; stage.canvas.dataset.dragging = "false"; };
-stage.canvas.addEventListener("pointerup", endDrag);
-stage.canvas.addEventListener("pointercancel", endDrag);
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 
@@ -591,4 +265,5 @@ function loadPreset(id) {
 
 const q = new URLSearchParams(location.search).get("preset");
 loadPreset(PRESETS[q] ? q : "far");
-void arrow;
+
+window.__lens = { ui, bench, ins, eye, scene, loadPreset, refresh };
