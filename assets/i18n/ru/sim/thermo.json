@@ -227,5 +227,19 @@
 "— gaz molekulalari issiqlik harakatining kinetik energiyasi. Ideal gazda u faqat temperaturaga bog‘liq: U = (i/{#})νRT. Temperatura ortsa — molekulalar tezroq harakatlanadi (animatsiyada ranglari qizaradi).": "— кинетическая энергия теплового движения молекул газа. В идеальном газе она зависит только от температуры: U = (i/{#})νRT. С ростом температуры молекулы движутся быстрее (в анимации их цвет краснеет).",
 "— ikki izoterma va ikki adiabatadan iborat. Berilgan T₁ va T₂ oralig‘ida ishlaydigan dvigatellar ichida uning FIK eng katta: η = {#} − T₂/T₁. FIKni oshirish uchun T₁ ni ko‘tarish yoki T₂ ni pasaytirish kerak.": "— состоит из двух изотерм и двух адиабат. Среди двигателей, работающих между заданными T₁ и T₂, его КПД наибольший: η = {#} − T₂/T₁. Чтобы повысить КПД, нужно поднять T₁ или понизить T₂.",
 "−{#} = {#} − {#} J": "−{#} = {#} − {#} Дж",
-"Termodinamika | OliyFizika.uz": "Термодинамика | OliyFizika.uz"
+"Termodinamika | OliyFizika.uz": "Термодинамика | OliyFizika.uz",
+"{#}°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Porshen/termometrni, T₁/T₂/n/ε dastaklarini va tirsakli valni suring. Klaviatura: yo‘nalishlar, +/−, Home.": "{#}°: тяните за пустое место; приближайте колёсиком или двумя пальцами. Перетаскивайте поршень/термометр, ручки T₁/T₂/n/ε и коленчатый вал. Клавиатура: стрелки, +/−, Home.",
+"Gaz modeli · o‘lchamlar avtomatik": "Модель газа · размеры автоматические",
+"Issiqlik izolyatsiyasi · kesim": "Теплоизоляция · разрез",
+"Ochiq kesim · shatun va tirsak": "Открытый разрез · шатун и кривошип",
+"Porshen mahkamlangan": "Поршень закреплён",
+"Porshenli silindr": "Цилиндр с поршнем",
+"Termostat": "Термостат",
+"To‘rt takt · aylanish sekinlashtirilgan": "Четыре такта · вращение замедлено",
+"Sovutgich · ε {#}": "Холодильная машина · ε {#}",
+"T₁/T₂ dastaklarini chap/o‘ngga suring": "Ручки T₁/T₂ двигайте влево/вправо",
+"{#} → {#} · Adiabatik": "{#} → {#} · адиабатический",
+"{#} → {#} · Izobarik": "{#} → {#} · изобарный",
+"{#} → {#} · Izotermik": "{#} → {#} · изотермический",
+"{#} → {#} · Izoxorik": "{#} → {#} · изохорный"
 }

@@ -5,8 +5,9 @@
 // vertikalda og'irlik faqat muvozanatni Δl = mg/k ga siljitadi, davr o'zgarmaydi.
 // ==========================================================================
 
+import { createSpringLab } from "./spring-3d.js";
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, sci, createStage, createLoop, arrow, tag, bindRange } from "./sim-kit.js";
+import { clamp, fmt, sci, createStage, createLoop, bindRange } from "./sim-kit.js";
 import {
   TAU, effectiveK, jointShare, omega0, period0, regime, steadyAmplitude, amplitudeOf,
   kinetic, elastic, dynParams, advance, createPeriodMeter,
@@ -15,14 +16,11 @@ import { createHistory, createEnergyPlot, splitHeights } from "./pendulum-plots.
 import { createXPlot, drawHooke, drawPeriodVsMass, periodMassFromPointer } from "./spring-plots.js";
 
 const $ = (s) => document.querySelector(s);
-const L0 = 0.5;            // prujinaning cho'zilmagan uzunligi (m) — faqat tasvir uchun, dinamikaga kirmaydi
 const X_LIMIT = 0.45;      // masshtab chegarasi (m)
-const SMALL = "600 11px Inter, system-ui, sans-serif";
-const ITALIC = "italic 700 14px 'Times New Roman', serif";
 
 /* ------------------------------------------------------------------ Holat */
 
-const P = { mode: "horizontal", link: "single", k1: 25, k2: 60, m: 1, b: 0, g: 9.81, driveOn: false, F: 0.8, ratio: 1 };
+const P = { mode: "vertical", link: "single", k1: 25, k2: 60, m: 1, b: 0, g: 9.81, driveOn: false, F: 0.8, ratio: 1 };
 const init = { x: 0.12, v: 0 };
 const ui = { speed: 1, tab: "x", show: { forces: true, net: false, velocity: true, marks: true, energy: true, vcurve: true } };
 
@@ -40,7 +38,6 @@ const w0 = () => omega0(k(), P.m);
 const T0 = () => period0(k(), P.m);
 const Om = () => P.ratio * w0();
 const dlStatic = () => (P.m * P.g) / k();
-const sideM = () => 0.09 + 0.035 * Math.cbrt(P.m);
 const windowSeconds = () => clamp(4 * T0(), 3, 30);
 const sampleDt = () => windowSeconds() / 700;
 const params = () => dynParams({ m: P.m, k: k(), b: P.b, f: P.driveOn ? P.F : 0, Om: Om() });
@@ -73,285 +70,11 @@ function resetSim({ keepRunning = false } = {}) {
   if (!keepRunning) loop.stop();
 }
 
-/* ------------------------------------------------------------------ Masshtab va geometriya */
-
-let view = null;
-
-function computeView(w, h) {
-  const narrow = w < 560;
-  const barsW = !narrow && ui.show.energy ? 150 : 0;
-  const topPad = 34, botPad = 42;
-  const availH = h - topPad - botPad;
-  const massF = clamp(0.75 + 0.25 * Math.cbrt(P.m), 0.85, 1.12);
-  const dl = P.mode === "vertical" ? dlStatic() : 0;
-  const v = { w, h, barsW, topPad, botPad, dl, vert: P.mode === "vertical" };
-  if (!v.vert) {
-    const wallX = 40, availW = w - barsW - wallX - 24;
-    v.sidePx = clamp(availH * 0.36, 52, 110) * massF;
-    v.s = clamp((availW - v.sidePx) / (L0 + Aview), 50, 720);
-    v.anchor = wallX;
-    const above = v.sidePx / 2 + 70, below = v.sidePx / 2 + 54;
-    v.cy = Math.max(above + 6, topPad + (availH - above - below) / 2 + above + 12);
-    v.cx = 0;
-  } else {
-    v.sidePx = clamp(availH * 0.24, 38, 72) * massF;
-    const total = L0 + dl + Aview;
-    v.s = clamp((availH - v.sidePx) / total, 22 / Aview, 520);
-    const hh = v.s * total + v.sidePx;
-    v.anchor = hh <= availH ? topPad : h - botPad - hh;
-    v.cx = (w - barsW) / 2 - 18;
-    v.cy = 0;
-  }
-  v.side = v.sidePx / v.s;
-  return v;
-}
-
-/** o'q bo'ylab u (m, langardan/shiftdan) va ko'ndalang p (px) -> piksel */
-const pt = (v, u, p = 0) => (v.vert ? { x: v.cx + p, y: v.anchor + v.s * u } : { x: v.anchor + v.s * u, y: v.cy + p });
-
-function niceStepCm(pxPerM, minPx) {
-  for (const cm of [1, 2, 5, 10, 20, 50]) if ((cm / 100) * pxPerM >= minPx) return cm / 100;
-  return 0.5;
-}
-
-/* ------------------------------------------------------------------ Chizish: qismlar */
-
-function coil(ctx, c, a, b, { kk, coils, amp }) {
-  const dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy);
-  if (len < 2) return;
-  const ux = dx / len, uy = dy / len, nx = -uy, ny = ux;
-  const lead = Math.min(14, len * 0.14), body = len - 2 * lead, n = coils * 2;
-  ctx.save();
-  ctx.strokeStyle = c.text2;
-  ctx.lineWidth = 1.4 + 2.2 * Math.sqrt(kk / 300);
-  ctx.lineJoin = "round"; ctx.lineCap = "round";
-  ctx.beginPath();
-  ctx.moveTo(a.x, a.y);
-  ctx.lineTo(a.x + ux * lead, a.y + uy * lead);
-  for (let i = 0; i < n; i++) {
-    const pos = lead + (body * (i + 0.5)) / n, sg = i % 2 ? 1 : -1;
-    ctx.lineTo(a.x + ux * pos + nx * amp * sg, a.y + uy * pos + ny * amp * sg);
-  }
-  ctx.lineTo(b.x - ux * lead, b.y - uy * lead);
-  ctx.lineTo(b.x, b.y);
-  ctx.stroke();
-  ctx.restore();
-}
-
-function hatch(ctx, c, x0, y0, x1, y1, dirx, diry, step = 10) {
-  // (x0,y0)-(x1,y1) chiziq bo'ylab shtrixlar; (dirx,diry) — shtrix yo'nalishi (px)
-  const len = Math.hypot(x1 - x0, y1 - y0), ux = (x1 - x0) / len, uy = (y1 - y0) / len;
-  ctx.save();
-  ctx.strokeStyle = c.border; ctx.lineWidth = 1;
-  ctx.beginPath();
-  for (let d = 4; d < len; d += step) { const px = x0 + ux * d, py = y0 + uy * d; ctx.moveTo(px, py); ctx.lineTo(px + dirx, py + diry); }
-  ctx.stroke();
-  ctx.restore();
-}
-
-function drawAnchorAndFloor(ctx, c, v) {
-  ctx.save();
-  if (!v.vert) {
-    const floorY = v.cy + v.sidePx / 2, x1 = v.w - v.barsW - 10, top = v.cy - v.sidePx / 2 - 70;
-    ctx.fillStyle = c.sunken;
-    ctx.fillRect(v.anchor - 14, Math.max(8, top), 14, floorY - Math.max(8, top));
-    ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(v.anchor, Math.max(8, top)); ctx.lineTo(v.anchor, floorY); ctx.lineTo(x1, floorY); ctx.stroke();
-    hatch(ctx, c, v.anchor, floorY, x1, floorY, -8, 9);
-    hatch(ctx, c, v.anchor, Math.max(8, top), v.anchor, floorY, -9, 8);
-  } else if (v.anchor >= v.topPad - 2) {
-    const half = Math.min(110, v.cx - 10, (v.w - v.barsW) / 2 - 10);
-    ctx.fillStyle = c.sunken;
-    ctx.fillRect(v.cx - half, v.anchor - 14, half * 2, 14);
-    ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(v.cx - half, v.anchor + 0.5); ctx.lineTo(v.cx + half, v.anchor + 0.5); ctx.stroke();
-    hatch(ctx, c, v.cx - half, v.anchor, v.cx + half, v.anchor, 8, -12);
-  } else {
-    tag(ctx, "tavan yuqorida ↑", v.cx + 22, 16, { color: c.text2, bg: c.bg2, font: SMALL });
-  }
-  ctx.restore();
-}
-
-function springGeometry(v) {
-  // Prujinalar ro'yxati va (ketma-ket bo'lsa) birlashma holati; hammasi o'q bo'ylab metrda (u)
-  const ub = L0 + v.dl + s.x;
-  const k1 = P.k1, k2 = P.k2;
-  const amp = clamp(v.sidePx * (P.link === "parallel" ? 0.17 : 0.24), 5, 13);
-  if (P.link === "parallel") {
-    const off = 0.3 * v.sidePx;
-    return { ub, segs: [{ u0: 0, u1: ub, p: -off, kk: k1, coils: 12, amp }, { u0: 0, u1: ub, p: off, kk: k2, coils: 12, amp }], joint: null };
-  }
-  if (P.link === "series") {
-    const e1 = (v.vert ? (P.m * P.g) / k1 : 0) + s.x * jointShare(k1, k2), uj = L0 / 2 + e1;
-    return { ub, segs: [{ u0: 0, u1: uj, p: 0, kk: k1, coils: 7, amp }, { u0: uj, u1: ub, p: 0, kk: k2, coils: 7, amp }], joint: uj };
-  }
-  return { ub, segs: [{ u0: 0, u1: ub, p: 0, kk: k1, coils: 12, amp }], joint: null };
-}
-
-function drawRuler(ctx, c, v) {
-  const step = niceStepCm(v.s, 28), A = Math.floor(Aview / step + 1e-9) * step;
-  const eq = v.vert ? pt(v, L0 + v.dl) : pt(v, L0 + v.side / 2);
-  ctx.save();
-  ctx.strokeStyle = c.text3; ctx.fillStyle = c.text2; ctx.lineWidth = 1.5;
-  ctx.font = SMALL;
-  const zero = v.vert ? { x: v.cx + v.sidePx / 2 + 62, y: eq.y } : { x: eq.x, y: v.cy + v.sidePx / 2 + 26 };
-  const sgn = v.vert ? { dx: 0, dy: 1 } : { dx: 1, dy: 0 };
-  const a = { x: zero.x - sgn.dx * Aview * v.s, y: zero.y - sgn.dy * Aview * v.s };
-  const b = { x: zero.x + sgn.dx * Aview * v.s, y: zero.y + sgn.dy * Aview * v.s };
-  ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-  for (let q = -A; q <= A + 1e-9; q += step) {
-    const px = zero.x + sgn.dx * q * v.s, py = zero.y + sgn.dy * q * v.s, big = Math.abs(q) < step * 1e-6;
-    ctx.beginPath();
-    if (v.vert) { ctx.moveTo(px - (big ? 7 : 4), py); ctx.lineTo(px + (big ? 7 : 4), py); } else { ctx.moveTo(px, py - (big ? 7 : 4)); ctx.lineTo(px, py + (big ? 7 : 4)); }
-    ctx.stroke();
-    ctx.textBaseline = "middle";
-    const label = big ? "0" : fmt(q * 100, step < 0.01 ? 1 : 0);
-    if (v.vert) { ctx.textAlign = "left"; ctx.fillText(label, px + 11, py); } else { ctx.textAlign = "center"; ctx.fillText(label, px, py + 15); }
-  }
-  ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  if (v.vert) ctx.fillText("x, sm", zero.x - 14, a.y - 16); else ctx.fillText("x, sm", b.x + 12, zero.y);
-  // joriy x ko'rsatkichi
-  const cur = { x: zero.x + sgn.dx * s.x * v.s, y: zero.y + sgn.dy * s.x * v.s };
-  ctx.fillStyle = c.warning;
-  ctx.beginPath();
-  if (v.vert) { ctx.moveTo(cur.x - 9, cur.y - 6); ctx.lineTo(cur.x - 9, cur.y + 6); ctx.lineTo(cur.x, cur.y); } else { ctx.moveTo(cur.x - 6, cur.y - 9); ctx.lineTo(cur.x + 6, cur.y - 9); ctx.lineTo(cur.x, cur.y); }
-  ctx.closePath(); ctx.fill();
-  ctx.restore();
-  return { zero, cur };
-}
-
-function drawBars(ctx, c, v, K, U, E) {
-  const x0 = v.w - v.barsW + 6, wBox = v.barsW - 16;
-  const y0 = v.topPad - 8, hBox = v.h - v.topPad - v.botPad + 16;
-  ctx.save();
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.border; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.roundRect(x0, y0, wBox, hBox, 12); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.text2; ctx.font = "600 12px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  ctx.fillText("Energiya, J", x0 + wBox / 2, y0 + 18);
-  const top = y0 + 52, bottom = y0 + hBox - 30;
-  eRef = Math.max(eRef, E * 1.08, U * 1.08);
-  const bw = 28, gap = (wBox - 3 * bw) / 4;
-  [["K", K, c.success], ["U", U, c.warning], ["E", E, c.primary]].forEach(([name, val, col], i) => {
-    const bx = x0 + gap + i * (bw + gap), hh = clamp(val / eRef, 0, 1) * (bottom - top);
-    ctx.fillStyle = c.sunken; ctx.beginPath(); ctx.roundRect(bx, top, bw, bottom - top, 6); ctx.fill();
-    ctx.fillStyle = col;
-    if (hh > 0.5) { ctx.beginPath(); ctx.roundRect(bx, bottom - hh, bw, hh, 6); ctx.fill(); }
-    ctx.fillStyle = c.text2; ctx.font = "700 12px Inter, system-ui, sans-serif"; ctx.fillText(name, bx + bw / 2, bottom + 14);
-    ctx.fillStyle = c.text; ctx.font = SMALL; ctx.fillText(sci(val, 2), bx + bw / 2, top - 12);
-  });
-  ctx.restore();
-}
-
-/* ------------------------------------------------------------------ Chizish: asosiy sahna */
-
+/* ------------------------------------------------------------------ 3D laboratoriya */
+const lab = createSpringLab();
 function draw(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  ctx.fillStyle = c.bg;
-  ctx.fillRect(0, 0, w, h);
-  const v = (view = computeView(w, h));
-  const kk = k(), mg = P.m * P.g;
-
-  drawAnchorAndFloor(ctx, c, v);
-
-  // Muvozanat va tabiiy uzunlik belgilari
-  const eqPt = v.vert ? pt(v, L0 + v.dl) : pt(v, L0 + v.side / 2);
-  if (v.vert && ui.show.marks) {
-    const natY = v.anchor + v.s * L0, eqY = v.anchor + v.s * (L0 + v.dl);
-    const cols = Math.max(1, (ui.show.velocity ? 1 : 0) + (ui.show.forces && P.b > 0 ? 1 : 0) + (ui.show.forces && P.driveOn ? 1 : 0));
-    const xl = Math.max(100, v.cx - v.sidePx / 2 - 16 - 22 * cols - 14);
-    ctx.save();
-    ctx.setLineDash([5, 5]); ctx.lineWidth = 1.25;
-    ctx.strokeStyle = c.text3;
-    ctx.beginPath(); ctx.moveTo(xl, natY); ctx.lineTo(v.cx + v.sidePx * 0.9, natY); ctx.stroke();
-    ctx.strokeStyle = c.primary; ctx.globalAlpha = 0.7;
-    ctx.beginPath(); ctx.moveTo(xl, eqY); ctx.lineTo(v.cx + v.sidePx * 0.9 + 12, eqY); ctx.stroke();
-    ctx.restore();
-    if (eqY - natY > 14) arrow(ctx, xl + 8, natY + 1, 0, eqY - natY - 2, c.special, { width: 1.75, head: 7 }), arrow(ctx, xl + 8, eqY - 1, 0, -(eqY - natY - 2), c.special, { width: 1.75, head: 7 });
-    tag(ctx, `Δl = ${fmt(v.dl * 100, 1)} sm`, xl - 6, (natY + eqY) / 2, { color: c.text, bg: c.bg, align: "right", font: SMALL });
-    tag(ctx, "tabiiy l₀", xl - 6, natY - (eqY - natY > 40 ? 0 : 12), { color: c.text2, bg: c.bg, align: "right", font: SMALL });
-    tag(ctx, "muvozanat", xl - 6, eqY + (eqY - natY > 40 ? 0 : 12), { color: c.primary, bg: c.bg, align: "right", font: SMALL });
-  } else if (!v.vert && ui.show.marks) {
-    ctx.save();
-    ctx.setLineDash([5, 5]); ctx.lineWidth = 1.25; ctx.strokeStyle = c.primary; ctx.globalAlpha = 0.65;
-    ctx.beginPath(); ctx.moveTo(eqPt.x, v.cy - v.sidePx / 2 - 8); ctx.lineTo(eqPt.x, v.cy + v.sidePx / 2 + 26); ctx.stroke();
-    ctx.restore();
-  }
-
-  // Prujina(lar)
-  const geo = springGeometry(v);
-  for (const sg of geo.segs) coil(ctx, c, pt(v, sg.u0, sg.p), pt(v, sg.u1, sg.p), sg);
-  if (geo.joint !== null) {
-    const j = pt(v, geo.joint);
-    ctx.fillStyle = c.text; ctx.beginPath(); ctx.arc(j.x, j.y, 4.5, 0, TAU); ctx.fill();
-    ctx.fillStyle = c.bg; ctx.beginPath(); ctx.arc(j.x, j.y, 1.8, 0, TAU); ctx.fill();
-  }
-
-  // Yuk
-  const bx = v.vert ? v.cx - v.sidePx / 2 : v.anchor + v.s * geo.ub;
-  const by = v.vert ? v.anchor + v.s * geo.ub : v.cy - v.sidePx / 2;
-  const centre = { x: bx + v.sidePx / 2, y: by + v.sidePx / 2 };
-  const dragging = view && stage.canvas.dataset.dragging === "true";
-  ctx.save();
-  ctx.fillStyle = c.bg;
-  ctx.beginPath(); ctx.roundRect(bx, by, v.sidePx, v.sidePx, Math.min(10, v.sidePx * 0.16)); ctx.fill();
-  ctx.globalAlpha = 0.18; ctx.fillStyle = c.primary; ctx.fill(); ctx.globalAlpha = 1;
-  ctx.strokeStyle = dragging ? c.warning : c.primary;
-  ctx.lineWidth = dragging ? 4 : 3;
-  ctx.stroke();
-  if (v.sidePx >= (v.vert ? 60 : 34)) {
-    ctx.fillStyle = c.primary; ctx.font = `700 ${v.vert ? 10.5 : 12}px Inter, system-ui, sans-serif`; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText(`${fmt(P.m, 1)} kg`, centre.x, v.vert ? centre.y : by + v.sidePx - 12);
-  }
-  ctx.restore();
-
-  // Tayanch tushunchalari: parallel/ketma-ket yozuvi (gorizontalda)
-  if (!v.vert && ui.show.marks) {
-    const midU = geo.ub / 2, mid = pt(v, midU);
-    const text = P.link === "single" ? `k = ${fmt(P.k1, 0)} N/m` : P.link === "parallel" ? `k₁ ‖ k₂ → k = ${fmt(kk, 0)} N/m` : `k₁ — k₂ → k = ${fmt(kk, 1)} N/m`;
-    tag(ctx, text, Math.max(mid.x, v.anchor + 70), v.cy - v.sidePx / 2 - 22 - (P.link === "parallel" ? 6 : 0), { color: c.text, bg: c.bg, align: "center", font: SMALL });
-  }
-
-  // Vektorlar
-  const F_spring = -kk * s.x;                    // gorizontal: butun prujina kuchi; vertikal: faqat −kx (teng ta'sir etuvchi)
-  const drag = -P.b * s.v;
-  const push = drivePush(s.t);
-  const rows = [];                               // yon qatorlar: tezlik, qarshilik, tashqi kuch
-  let kF;
-  if (!v.vert) {
-    kF = 70 / (kk * Aview);
-    if (ui.show.forces) {
-      const len = Math.max(16, v.sidePx / 2 - 8), off = v.sidePx * 0.32;
-      arrow(ctx, centre.x + off, centre.y, 0, len, c.special, { width: 2.5, head: 9, label: "mg", font: ITALIC });
-      arrow(ctx, centre.x - off, centre.y, 0, -len, c.text2, { width: 2.5, head: 9, label: "N", font: ITALIC });
-      arrow(ctx, centre.x, centre.y, F_spring * kF, 0, c.success, { width: 3, label: "F", font: ITALIC });
-    }
-  } else {
-    kF = 90 / (mg + kk * Aview);
-    if (ui.show.forces) {
-      const Fel = kk * (v.dl + s.x);
-      arrow(ctx, centre.x - v.sidePx * 0.3, centre.y, 0, mg * kF, c.special, { width: 3, head: 9, label: "mg", font: ITALIC });
-      arrow(ctx, centre.x + v.sidePx * 0.3, centre.y, 0, -Fel * kF, c.success, { width: 3, head: 9, label: "F", font: ITALIC });
-    }
-    if (ui.show.net) {
-      const x = centre.x + v.sidePx / 2 + 16;
-      arrow(ctx, x, centre.y, 0, F_spring * kF * 3, c.danger, { width: 3, head: 9, label: "−kx", font: ITALIC, dash: [6, 4] });
-    }
-  }
-  if (ui.show.velocity) rows.push({ d: s.v / (Aview * w0()) * 60, color: c.warning, label: "v" });
-  if (ui.show.forces && P.b > 0) rows.push({ d: drag * kF, color: c.danger, label: "Fq", dash: [5, 4] });
-  if (ui.show.forces && P.driveOn) rows.push({ d: push * kF, color: c.special, label: "F(t)" });
-  rows.forEach((r, i) => {
-    const d = clamp(r.d, -150, 150);
-    const opt = { width: 2.5, head: 8, label: r.label, font: ITALIC, dash: r.dash || null };
-    if (!v.vert) arrow(ctx, centre.x, by - 30 - 20 * i, d, 0, r.color, opt);
-    else arrow(ctx, bx - 16 - 22 * i, centre.y, 0, d, r.color, opt);
-  });
-
-  if (ui.show.marks) drawRuler(ctx, c, v);
-
-  if (v.barsW) drawBars(ctx, c, v, kinetic(s.v, P.m), elastic(s.x, kk), E_of(s));
-
-  tag(ctx, `t = ${fmt(s.t, 1)} s`, 12, 20, { color: c.text2, bg: c.bg2, font: "600 12px Inter, system-ui, sans-serif" });
+  eRef = Math.max(eRef, E_of(s) * 1.08);
+  lab.draw(ctx, stage, P, s, ui.show, { K: kinetic(s.v, P.m), U: elastic(s.x, k()), ref: eRef });
 }
 
 /* ------------------------------------------------------------------ Grafik */
@@ -479,7 +202,7 @@ function updateUI() {
 
 /* ------------------------------------------------------------------ Boshqaruv */
 
-const stage = createStage($("#stage"), draw, { height: (w) => splitHeights(w).stage });
+const stage = createStage($("#stage"), draw, { height: () => Math.round(Math.min(420, Math.max(285, innerHeight * 0.46))) });
 const graph = createStage($("#graph"), drawGraphCanvas, { height: (w) => splitHeights(w).graph });
 const canvas = stage.canvas;
 const playBtn = $("[data-play]");
@@ -631,52 +354,87 @@ graph.canvas.addEventListener("pointerdown", (e) => {
   }
 });
 
-/* Yukni sudrash (harakat o'qi bo'ylab) */
-let drag = null;
-const axisCoord = (e) => {
+/* Kamera: bo‘sh joyni sudrash / ikki barmoq; yukni bevosita surish. */
+let gesture = null;
+const pointers = new Map();
+const position = (e) => {
   const r = canvas.getBoundingClientRect();
-  return view.vert ? (e.clientY - r.top - view.anchor) / view.s : (e.clientX - r.left - view.anchor) / view.s;
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
 };
-function blockRect() {
-  const geoUb = L0 + view.dl + s.x;
-  return view.vert
-    ? { x: view.cx - view.sidePx / 2, y: view.anchor + view.s * geoUb, w: view.sidePx, h: view.sidePx }
-    : { x: view.anchor + view.s * geoUb, y: view.cy - view.sidePx / 2, w: view.sidePx, h: view.sidePx };
-}
-function overBlock(e) {
-  const r = canvas.getBoundingClientRect(), b = blockRect(), px = e.clientX - r.left, py = e.clientY - r.top, pad = 12;
-  return px >= b.x - pad && px <= b.x + b.w + pad && py >= b.y - pad && py <= b.y + b.h + pad;
-}
+const pinchDistance = () => {
+  const [a,b] = [...pointers.values()];
+  return Math.hypot(a.x-b.x,a.y-b.y);
+};
+canvas.style.touchAction = "none";
 canvas.addEventListener("pointerdown", (e) => {
-  if (!view || !overBlock(e)) return;
-  drag = { grab: axisCoord(e) - (L0 + view.dl + s.x + view.side / 2) };
-  loop.stop();
-  canvas.dataset.dragging = "true";
+  if (e.button !== 0 && e.pointerType !== "touch") return;
+  const p = position(e); pointers.set(e.pointerId,p);
   canvas.setPointerCapture(e.pointerId);
-});
-canvas.addEventListener("pointermove", (e) => {
-  if (!view) return;
-  if (drag) {
-    const x = clamp(axisCoord(e) - drag.grab - L0 - view.dl - view.side / 2, -0.25, 0.25);
-    init.x = Math.round(x * 400) / 400; init.v = 0;
-    x0Ctl.set(Math.round(init.x * 1000) / 10); v0Ctl.set(0);
-    const keep = Aview;
-    resetSim();
-    Aview = Math.max(keep, Aview, clamp(1.15 * Math.abs(init.x), 0.15, X_LIMIT));
-    renderAll(); updateUI();
+  if(pointers.size > 1) {
+    if(gesture?.kind === "mass" && gesture.running)loop.start();
+    gesture = { kind: "pinch", distance: pinchDistance(), zoom: lab.camera.zoom };
     return;
   }
-  canvas.style.cursor = overBlock(e) ? "grab" : "default";
+  const mass = lab.hit(p.x,p.y);
+  gesture = { kind: mass ? "mass" : "orbit", start: p, last: p, x: s.x, running: loop.running };
+  if(mass) loop.stop();
+  canvas.dataset.dragging = "true";
 });
-const endDrag = () => {
-  if (!drag) return;
-  drag = null;
-  canvas.dataset.dragging = "false";
-  loop.start();
+canvas.addEventListener("pointermove", (e) => {
+  const p = position(e);
+  if(pointers.has(e.pointerId)) pointers.set(e.pointerId,p);
+  if(!gesture) { canvas.style.cursor = lab.hit(p.x,p.y) ? "grab" : "move"; return; }
+  if(gesture.kind === "pinch") {
+    if(pointers.size > 1) lab.camera.zoom = clamp(gesture.zoom * pinchDistance()/Math.max(1,gesture.distance), .7, 1.65);
+  } else if(gesture.kind === "mass") {
+    const x = clamp(gesture.x + lab.displacement(p.x-gesture.start.x,p.y-gesture.start.y),-.25,.25);
+    init.x = Math.round(x*400)/400; init.v = 0;
+    x0Ctl.set(init.x*100); v0Ctl.set(0);
+    resetSim(); markPreset(null); updateUI();
+  } else {
+    lab.camera.yaw += (p.x-gesture.last.x)*.009;
+    lab.camera.pitch = clamp(lab.camera.pitch+(p.y-gesture.last.y)*.006,.08,1.3);
+    gesture.last = p;
+  }
   renderAll();
-};
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
+});
+function endGesture(e) {
+  if(!pointers.has(e.pointerId))return;
+  pointers.delete(e.pointerId);
+  const wasMass = gesture?.kind === "mass";
+  gesture = null; canvas.dataset.dragging = "false";
+  if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);
+  if(wasMass && e.type === "pointerup")loop.start();
+  renderAll();
+}
+canvas.addEventListener("pointerup",endGesture);
+canvas.addEventListener("pointercancel",endGesture);
+canvas.addEventListener("lostpointercapture",endGesture);
+canvas.addEventListener("wheel",e=>{
+  e.preventDefault(); lab.camera.zoom=clamp(lab.camera.zoom*Math.exp(-e.deltaY*.001),.7,1.65);stage.render();
+},{passive:false});
+canvas.tabIndex=0;
+canvas.addEventListener("keydown",e=>{
+  if(e.ctrlKey || e.metaKey || e.altKey)return;
+  if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","+","=","-","Home"].includes(e.key))return;
+  e.preventDefault();
+  if(e.key==="ArrowLeft")lab.camera.yaw-=.15;
+  if(e.key==="ArrowRight")lab.camera.yaw+=.15;
+  if(e.key==="ArrowUp")lab.camera.pitch=clamp(lab.camera.pitch+.1,.08,1.3);
+  if(e.key==="ArrowDown")lab.camera.pitch=clamp(lab.camera.pitch-.1,.08,1.3);
+  if(e.key==="+"||e.key==="=")lab.camera.zoom=clamp(lab.camera.zoom+.1,.7,1.65);
+  if(e.key==="-")lab.camera.zoom=clamp(lab.camera.zoom-.1,.7,1.65);
+  if(e.key==="Home")lab.reset();
+  stage.render();
+});
+document.querySelectorAll("[data-camera]").forEach(b=>b.addEventListener("click",()=>{
+  const name=b.dataset.camera;
+  if(name==="reset")lab.reset();
+  else if(name==="front")Object.assign(lab.camera,{yaw:0,pitch:.12,zoom:1});
+  else if(name==="side")Object.assign(lab.camera,{yaw:Math.PI/2,pitch:.25,zoom:1});
+  else if(name==="top")Object.assign(lab.camera,{yaw:0,pitch:1.3,zoom:1});
+  stage.render();
+}));
 
 /* Boshlash */
 syncG();

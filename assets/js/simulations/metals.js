@@ -12,6 +12,11 @@ import { icon } from "../ui/icons.js";
 import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow } from "./sim-kit.js";
 import * as P from "./metals-physics.js";
 import { drawDrift, drawDensity, drawRT, lastFrame } from "./metals-plots.js";
+import { createMetalsLab } from "./metals-lab-3d.js?v=20261123-batch8c";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch8c";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch8c";
+const scene=createMetalsLab();
+let modelTime=0;
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
@@ -60,59 +65,6 @@ function seedDens() {
 const vDrift = () => (drift.on ? P.driftSpeed(drift.I, M().n, drift.S) : 0);
 const visDrift = () => clamp((vDrift() * 1000) / 0.15, 0, 3) * 30; // px/s (masshtabda emas)
 
-function drawDriftStage(ctx, c, w, h) {
-  const narrow = w < 560, y0 = 34, xl = 24, xr = w - 24;
-  // zanjir: manba, kalit, ampermetr, reostat
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2;
-  const bx = xl + 30, kx = narrow ? w * 0.36 : w * 0.3, ax = narrow ? w * 0.58 : w * 0.5, rx0 = narrow ? w * 0.7 : w * 0.66, rx1 = xr - 30;
-  ctx.beginPath(); ctx.moveTo(bx + 8, y0); ctx.lineTo(kx - 18, y0); ctx.moveTo(kx + 18, y0); ctx.lineTo(ax - 14, y0); ctx.moveTo(ax + 14, y0); ctx.lineTo(rx0, y0); ctx.moveTo(rx1, y0); ctx.lineTo(xr, y0); ctx.lineTo(xr, y0 + 50); ctx.lineTo(xl, y0 + 50); ctx.lineTo(xl, y0); ctx.lineTo(bx - 8, y0); ctx.stroke();
-  // manba
-  ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(bx - 6, y0 - 14); ctx.lineTo(bx - 6, y0 + 14); ctx.stroke(); ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(bx + 6, y0 - 8); ctx.lineTo(bx + 6, y0 + 8); ctx.stroke();
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "bottom"; ctx.fillText("+", bx - 6, y0 - 15); ctx.fillText("−", bx + 6, y0 - 15);
-  // kalit
-  ctx.lineWidth = 2.5; ctx.strokeStyle = drift.on ? c.success : c.danger; ctx.beginPath(); ctx.moveTo(kx - 18, y0); ctx.lineTo(drift.on ? kx + 18 : kx + 12, drift.on ? y0 : y0 - 16); ctx.stroke();
-  ctx.fillStyle = c.text2; ctx.beginPath(); ctx.arc(kx - 18, y0, 3, 0, TAU); ctx.arc(kx + 18, y0, 3, 0, TAU); ctx.fill();
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textBaseline = "top"; ctx.fillText(drift.on ? "kalit yopiq" : "kalit ochiq — bosing", kx, y0 + 8);
-  geo.key = { x: kx - 24, y: y0 - 22, w: 48, h: 30 };
-  // ampermetr
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(ax, y0, 13, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.font = BOLD; ctx.fillStyle = c.text; ctx.textBaseline = "middle"; ctx.fillText("A", ax, y0 + 1);
-  tag(ctx, `${fmt(drift.on ? drift.I : 0, 2)} A`, narrow ? ax : ax + 18, narrow ? y0 + 30 : y0 - 20, { color: c.text, bg: c.bg2, font: MID, align: narrow ? "center" : "left" });
-  // reostat
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1.6; ctx.beginPath(); const nz = 10;
-  for (let i = 0; i <= nz; i++) { const x = rx0 + ((rx1 - rx0) * i) / nz, y = y0 + (i === 0 || i === nz ? 0 : i % 2 ? -6 : 6); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); }
-  ctx.stroke();
-  const fr = (10 - drift.I) / 9.8, sx = rx0 + clamp(fr, 0, 1) * (rx1 - rx0);
-  ctx.fillStyle = c.primary; ctx.beginPath(); ctx.moveTo(sx, y0 - 8); ctx.lineTo(sx - 7, y0 - 20); ctx.lineTo(sx + 7, y0 - 20); ctx.closePath(); ctx.fill();
-  ctx.font = SMALL; ctx.fillStyle = c.primary; ctx.textBaseline = "bottom"; ctx.fillText("reostat ⇔", (rx0 + rx1) / 2, y0 - 22);
-  geo.rheo = { x0: rx0, x1: rx1, y: y0 - 14, sx };
-  // kattalashtirish oynasi
-  const zx = narrow ? w * 0.47 : w * 0.4, zy = y0 + 50, bx0 = 14, bx1 = w - 14, by0 = y0 + 92, by1 = h - 16;
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(zx - 10, zy); ctx.lineTo(bx0, by0); ctx.moveTo(zx + 10, zy); ctx.lineTo(bx1, by0); ctx.stroke(); ctx.setLineDash([]);
-  ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(zx, zy, 10, 0, TAU); ctx.stroke();
-  // metall ichi
-  const mc = M().color;
-  ctx.fillStyle = `rgba(${mc[0]},${mc[1]},${mc[2]},${c.dark ? 0.16 : 0.2})`; ctx.fillRect(bx0, by0, bx1 - bx0, by1 - by0);
-  ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; ctx.strokeRect(bx0, by0, bx1 - bx0, by1 - by0);
-  // ionlar panjarasi (issiqlik tebranishi)
-  const step = 34, tm = performance.now() / 1000;
-  for (let y = by0 + step / 2; y < by1; y += step) for (let x = bx0 + step / 2; x < bx1; x += step) {
-    const jx = Math.sin(tm * 7 + x * 0.37 + y) * 1.5, jy = Math.cos(tm * 6 + y * 0.53 + x) * 1.5;
-    ctx.fillStyle = c.dark ? "rgba(248,113,113,0.55)" : "rgba(220,38,38,0.35)"; ctx.beginPath(); ctx.arc(x + jx, y + jy, 8, 0, TAU); ctx.fill();
-    ctx.fillStyle = c.dark ? "#fecaca" : "#991b1b"; ctx.font = "700 10px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("+", x + jx, y + jy + 0.5);
-  }
-  // elektronlar
-  ctx.fillStyle = c.primary;
-  for (const e of electrons) { const x = bx0 + 4 + e.x * (bx1 - bx0 - 8), y = by0 + 4 + e.y * (by1 - by0 - 8); ctx.beginPath(); ctx.arc(x, y, 3.2, 0, TAU); ctx.fill(); }
-  // yo'nalishlar
-  if (drift.on) {
-    const ay = by0 - 12;
-    arrow(ctx, bx1 - 160, ay, 60, 0, c.danger, { width: 2, head: 7 });
-    ctx.font = SMALL; ctx.fillStyle = c.danger; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText("E, tok yo‘nalishi", bx1 - 94, ay);
-    arrow(ctx, bx0 + 110, ay, -60, 0, c.primary, { width: 2, head: 7 });
-    ctx.fillStyle = c.primary; ctx.textAlign = "left"; ctx.fillText("elektronlar", bx0 + 116, ay);
-  } else { ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText("maydon yo‘q: elektronlar faqat tartibsiz harakatda", bx0, by0 - 12); }
-}
 function stepDrift(dt) {
   const vt = 120, vd = visDrift(), W = 1 / 600, H = 1 / 170;
   for (const e of electrons) {
@@ -129,34 +81,6 @@ const V0 = 30; // px/s — 1 mm² kesimdagi ko'rinma tezlik (masshtabda emas)
 function densGeom(w, h) {
   const x0 = 26, x1 = w - 26, cy = h * 0.5, k = (x1 - x0) / WIRE_L, half = (S) => 10 + 34 * Math.sqrt(S / 4e-6);
   return { x0, x1, cy, k, half, X: (xcm) => x0 + xcm * k };
-}
-function drawDensStage(ctx, c, w, h) {
-  const g = densGeom(w, h), mc = M().color;
-  // sim bo'laklari
-  for (const p of parts()) {
-    const hh = g.half(p.S);
-    ctx.fillStyle = `rgba(${mc[0]},${mc[1]},${mc[2]},${c.dark ? 0.25 : 0.3})`; ctx.fillRect(g.X(p.x0), g.cy - hh, g.X(p.x1) - g.X(p.x0), 2 * hh);
-    ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(g.X(p.x0), g.cy - hh); ctx.lineTo(g.X(p.x1), g.cy - hh); ctx.moveTo(g.X(p.x0), g.cy + hh); ctx.lineTo(g.X(p.x1), g.cy + hh); ctx.stroke();
-    ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top";
-    ctx.fillText(`S = ${fmt(p.S * 1e6, 2)} mm²`, g.X((p.x0 + p.x1) / 2), g.cy + hh + 6);
-  }
-  ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; ctx.beginPath();
-  [10, 20].forEach((x) => { ctx.moveTo(g.X(x), g.cy - g.half(dens.S1)); ctx.lineTo(g.X(x), g.cy - g.half(dens.S2)); ctx.moveTo(g.X(x), g.cy + g.half(dens.S1)); ctx.lineTo(g.X(x), g.cy + g.half(dens.S2)); });
-  ctx.stroke();
-  // elektronlar
-  ctx.fillStyle = c.primary;
-  for (const e of electrons) { const hh = g.half(SAt(e.x)) - 4; ctx.beginPath(); ctx.arc(g.X(e.x), g.cy + e.u * hh, w < 560 ? 1.8 : 2.6, 0, TAU); ctx.fill(); }
-  // kesim tekisligi (hisoblagich)
-  const gx = g.X(dens.gate), gh = g.half(SAt(dens.gate)) + 14;
-  ctx.strokeStyle = c.warning; ctx.lineWidth = 2.5; ctx.setLineDash([6, 4]); ctx.beginPath(); ctx.moveTo(gx, g.cy - gh); ctx.lineTo(gx, g.cy + gh); ctx.stroke(); ctx.setLineDash([]);
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.warning; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(gx, g.cy - gh - 9, 9, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.warning; ctx.font = "700 10px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("⇔", gx, g.cy - gh - 8.5);
-  geo.gate = { x: gx, y0: g.cy - gh - 20, y1: g.cy + gh, g };
-  const Im = measuredI();
-  tag(ctx, Im === null ? "hisoblanmoqda…" : `Δq/Δt = ${fmt(Im, 2)} A`, gx, g.cy - gh - 32, { color: c.text, bg: c.bg2, font: MID, align: "center" });
-  // yo'nalishlar
-  arrow(ctx, g.x1 - 110, 22, 60, 0, c.danger, { width: 2, head: 7 }); ctx.font = SMALL; ctx.fillStyle = c.danger; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(`I = ${fmt(dens.I, 1)} A`, g.x1 - 44, 22);
-  arrow(ctx, g.x0 + 70, 22, -50, 0, c.primary, { width: 2, head: 7 }); ctx.fillStyle = c.primary; ctx.fillText("elektronlar", g.x0 + 76, 22);
 }
 function measuredI() {
   const span = dens.hist.length ? dens.hist[dens.hist.length - 1].t - dens.hist[0].t : 0;
@@ -186,55 +110,11 @@ function glow(t) { // cho'g'lanish rangi
   const k = clamp((t - 480) / 2000, 0, 1), r = 255, g = Math.round(40 + 200 * k), b = Math.round(20 + 180 * Math.max(0, k - 0.5) * 2);
   return `rgba(${r},${g},${b},${clamp((t - 480) / 400, 0.25, 1)})`;
 }
-function drawRtStage(ctx, c, w, h) {
-  const narrow = w < 560, sc = isSC(), fx0 = narrow ? 16 : w * 0.06, fx1 = narrow ? w * 0.62 : w * 0.46, fy0 = 40, fy1 = h - 30;
-  // pech yoki kriostat
-  if (sc) {
-    ctx.fillStyle = c.dark ? "rgba(147,197,253,0.18)" : "rgba(191,219,254,0.6)"; ctx.fillRect(fx0 + 8, fy0 + 30, fx1 - fx0 - 16, fy1 - fy0 - 38);
-    ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.strokeRect(fx0, fy0, fx1 - fx0, fy1 - fy0); ctx.strokeRect(fx0 + 6, fy0 + 6, fx1 - fx0 - 12, fy1 - fy0 - 12);
-    ctx.font = MID; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "bottom"; ctx.fillText("Kriostat: suyuq geliy", (fx0 + fx1) / 2, fy0 - 6);
-  } else {
-    ctx.fillStyle = c.dark ? "#1f2937" : "#f1f5f9"; ctx.fillRect(fx0, fy0, fx1 - fx0, fy1 - fy0);
-    ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.strokeRect(fx0, fy0, fx1 - fx0, fy1 - fy0);
-    const hot = clamp((rt.t - 20) / 1200, 0, 1); if (hot > 0) { ctx.fillStyle = `rgba(249,115,22,${0.08 + 0.25 * hot})`; ctx.fillRect(fx0 + 2, fy0 + 2, fx1 - fx0 - 4, fy1 - fy0 - 4); }
-    if (rt.t < 0) { ctx.fillStyle = `rgba(56,189,248,${0.1 + 0.25 * clamp(-rt.t / 100, 0, 1)})`; ctx.fillRect(fx0 + 2, fy0 + 2, fx1 - fx0 - 4, fy1 - fy0 - 4); }
-    ctx.font = MID; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "bottom"; ctx.fillText(rt.t < 0 ? "Sovitkich kamera" : "Elektr pech", (fx0 + fx1) / 2, fy0 - 6);
-  }
-  // o'ram
-  const cx0 = fx0 + 30, cx1 = fx1 - 50, cy = (fy0 + fy1) / 2 + 6, turns = 9, amp = 34, mc = sc ? [148, 163, 184] : M().color, gl = sc ? null : glow(rt.t);
-  const coil = () => { ctx.beginPath(); for (let i = 0; i <= turns * 24; i++) { const s = i / (turns * 24), x = cx0 + s * (cx1 - cx0), y = cy + Math.sin(s * turns * TAU) * amp; if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); } ctx.stroke(); };
-  if (gl) { ctx.save(); ctx.shadowColor = gl; ctx.shadowBlur = 18; ctx.strokeStyle = gl; ctx.lineWidth = 6; coil(); ctx.restore(); }
-  ctx.strokeStyle = gl || `rgb(${mc[0]},${mc[1]},${mc[2]})`; ctx.lineWidth = 3.2; coil();
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(sc ? "simob (ingichka nayda)" : `${M().name} sim o‘rami`, (cx0 + cx1) / 2, cy + amp + 8);
-  // regulyator (sahnada suriladi)
-  const kx = fx1 - 22, ky0 = fy0 + 18, ky1 = fy1 - 18, fr = sc ? (rt.T - SC_MIN) / (SC_MAX - SC_MIN) : (rt.t - T_MIN) / (tMax() - T_MIN), ky = ky1 - clamp(fr, 0, 1) * (ky1 - ky0);
-  ctx.strokeStyle = c.border; ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(kx, ky0); ctx.lineTo(kx, ky1); ctx.stroke(); ctx.lineCap = "butt";
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.danger; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(kx, ky, 9, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.danger; ctx.font = "700 9px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("⇕", kx, ky + 0.5);
-  geo.knob = { x: kx, y: ky, ky0, ky1 };
-  // simlar va asboblar
-  const ix = narrow ? fx1 + 14 : fx1 + 60, lw = narrow ? w - ix - 12 : 150;
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(cx0, cy); ctx.lineTo(cx0 - 14, cy); ctx.lineTo(cx0 - 14, fy1 + 14); ctx.lineTo(ix + lw / 2 - 10, fy1 + 14); ctx.lineTo(ix + lw / 2 - 10, fy0 + 132); ctx.moveTo(cx1, cy); ctx.lineTo(cx1 + 8, cy); ctx.lineTo(cx1 + 8, fy1 + 8); ctx.lineTo(ix + lw / 2 + 10, fy1 + 8); ctx.lineTo(ix + lw / 2 + 10, fy0 + 132); ctx.stroke();
-  const lcd = (y, title, val) => {
-    ctx.fillStyle = c.dark ? "#334155" : "#e2e8f0"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.roundRect(ix, y, lw, 52, 8); ctx.fill(); ctx.stroke();
-    ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText(title, ix + 8, y + 5);
-    ctx.fillStyle = c.dark ? "#052e16" : "#ecfdf5"; ctx.fillRect(ix + 8, y + 20, lw - 16, 24);
-    ctx.font = MONO; ctx.fillStyle = c.success; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText(val, ix + lw - 14, y + 32.5);
-  };
-  if (sc) { lcd(fy0, "Termometr", `${fmt(rt.T, 2)} K`); const R = P.mercuryR(R20, rt.T); lcd(fy0 + 70, "Ommetr", R === 0 ? "0,00 mΩ" : `${fmt(R * 1000, 2)} mΩ`); }
-  else { lcd(fy0, "Termometr", `${fmt(rt.t, 0)} °C`); lcd(fy0 + 70, "Ommetr", `${fmt(ohm(RofT(rt.t)), 3)} Ω`); }
-}
-
 /* ------------------------------------------------------------------ Chizish va grafik */
 
-function draw(ctx, s) {
-  const c = s.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, s.w, s.h);
-  if (ui.mode === "drift") drawDriftStage(ctx, c, s.w, s.h);
-  else if (ui.mode === "dens") drawDensStage(ctx, c, s.w, s.h);
-  else drawRtStage(ctx, c, s.w, s.h);
-}
+function draw(ctx,s){scene.draw(ctx,s,ui,drift,dens,rt,electrons,M(),{parts,SAt,measuredI,isSC,RofT,tMax,glow,mercuryR:()=>P.mercuryR(R20,rt.T)},modelTime);}
 const heights = () => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { stage: Math.round(clamp(vh * 0.42, 310, 350)), graph: Math.round(clamp(vh * 0.28, 200, 260)) }; };
-const stage = createStage($("#stage"), draw, { height: () => heights().stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 function drawGraphCanvas(ctx, gs) {
   if (ui.mode === "drift") return drawDrift(ctx, gs, { metal: st.metal, S: drift.S, I: drift.I, on: drift.on, hover: ui.hover });
   if (ui.mode === "dens") return drawDensity(ctx, gs, { parts: parts(), I: dens.I, n: M().n, gate: dens.gate, L: WIRE_L, hover: ui.hover });
@@ -333,6 +213,7 @@ function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFo
 let uiTimer = 0;
 const loop = createLoop((dt) => {
   if (!(dt > 0)) return;
+  modelTime+=dt;
   if (ui.mode === "drift") stepDrift(dt);
   else if (ui.mode === "dens") stepDens(dt);
   else if (rt.heating) stepHeat(dt);
@@ -362,7 +243,7 @@ function setPlayUI() {
   playBtn.querySelector("[data-play-icon]").innerHTML = icon(on ? "pause" : "play");
   playBtn.querySelector("[data-play-text]").textContent = txt;
 }
-function startAnim() { if (prefersReducedMotion()) { if (ui.mode === "dens") { for (let i = 0; i < 120; i++) stepDens(1 / 40); } return; } loop.start(); }
+function startAnim(force=false) { if (!force && prefersReducedMotion()) { if (ui.mode === "dens") { for (let i = 0; i < 120; i++) stepDens(1 / 40); } return; } loop.start(); }
 playBtn.addEventListener("click", () => {
   customized();
   if (ui.mode === "rt") {
@@ -375,7 +256,7 @@ playBtn.addEventListener("click", () => {
     }
   } else {
     const o = ui.mode === "drift" ? drift : dens; o.paused = !o.paused;
-    if (o.paused) loop.stop(); else startAnim();
+    if (o.paused) loop.stop(); else startAnim(true);
   }
   setPlayUI(); refresh();
 });
@@ -411,41 +292,22 @@ const nS1C = bindRange($("#nS1"), $("#nS1Out"), (v) => `${fmt(v, 2)} mm²`, (v) 
 const nS2C = bindRange($("#nS2"), $("#nS2Out"), (v) => `${fmt(v, 2)} mm²`, (v) => { dens.S2 = v * 1e-6; seedDens(); customized(); refresh(); });
 
 /* Sahnada surish */
-const canvas = stage.canvas;
-let drag = null;
-const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-function hit(p) {
-  if (ui.mode === "drift") {
-    const k = geo.key; if (k && p.x >= k.x && p.x <= k.x + k.w && p.y >= k.y && p.y <= k.y + k.h) return { kind: "key" };
-    const r = geo.rheo; if (r && p.x >= r.x0 - 10 && p.x <= r.x1 + 10 && Math.abs(p.y - r.y) <= 16) return { kind: "rheo" };
-  } else if (ui.mode === "dens") { const g = geo.gate; if (g && Math.abs(p.x - g.x) <= 12 && p.y >= g.y0 && p.y <= g.y1) return { kind: "gate" }; }
-  else { const k = geo.knob; if (k && Math.abs(p.x - k.x) <= 14 && p.y >= k.ky0 - 10 && p.y <= k.ky1 + 10) return { kind: "knob" }; }
-  return null;
-}
-function applyDrag(p) {
-  if (drag.kind === "rheo") { const r = geo.rheo, fr = clamp((p.x - r.x0) / (r.x1 - r.x0), 0, 1); drift.I = Math.round((10 - fr * 9.8) * 10) / 10; dIC.set(drift.I); }
-  else if (drag.kind === "gate") { const g = geo.gate.g; dens.gate = clamp(Math.round(((p.x - g.x0) / g.k) * 10) / 10, 0.5, WIRE_L - 0.5); dens.hist = []; }
-  else if (drag.kind === "knob") {
-    const k = geo.knob, fr = clamp((k.ky1 - p.y) / (k.ky1 - k.ky0), 0, 1);
-    if (isSC()) { rt.T = Math.round((SC_MIN + fr * (SC_MAX - SC_MIN)) * 100) / 100; tC.set(rt.T); } else { rt.t = Math.round(T_MIN + fr * (tMax() - T_MIN)); tC.set(rt.t); }
-    if (rt.heating) { rt.heating = false; loop.stop(); setPlayUI(); }
-  }
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p); if (!h) return;
-  e.preventDefault(); customized();
-  if (h.kind === "key") { drift.on = !drift.on; refresh(); return; }
-  drag = h; applyDrag(p); refresh();
-  try { canvas.setPointerCapture(e.pointerId); } catch { /* */ } canvas.dataset.dragging = "true";
+const canvas=stage.canvas;let drag=null;
+const ptr=(cv,e)=>{const r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};};
+bindLabCamera(canvas,scene.lab,()=>stage.render(),{
+  start(id,p){if(id==='key'){drift.on=!drift.on;customized();refresh();return;}drag=id;},
+  move(id,p){
+    if(drag!==id)return;
+    const v=scene.parameter(id,p);
+    if(id==='rheo'){drift.I=Math.round(v*10)/10;dIC.set(drift.I);}
+    else if(id==='gate'){dens.gate=Math.round(v*10)/10;dens.hist=[];}
+    else if(id==='temp'){
+      if(isSC()){rt.T=Math.round((SC_MIN+v*(SC_MAX-SC_MIN))*100)/100;tC.set(rt.T);}else{rt.t=Math.round(T_MIN+v*(tMax()-T_MIN));tC.set(rt.t);}
+      if(rt.heating){rt.heating=false;loop.stop();setPlayUI();}
+    }
+    customized();refresh();
+  },end(){drag=null;}
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (!drag) { const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "key" ? "pointer" : h.kind === "knob" ? "ns-resize" : "ew-resize"; return; }
-  applyDrag(p); refresh();
-});
-const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 const gcv = graph.canvas;
 gcv.addEventListener("pointermove", (e) => { const f = lastFrame(); if (!f) return; const p = ptr(gcv, e), r = f.rect, inside = p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.h, x0 = f.xMin ?? 0; ui.hover = inside ? x0 + ((p.x - r.x) / r.w) * (f.xMax - x0) : null; gcv.style.cursor = inside ? "crosshair" : ""; graph.render(); });
@@ -486,7 +348,7 @@ document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener
 function loadPreset(id) {
   const p = PRESETS[id];
   loop.stop(); drag = null; ui.hover = null;
-  ui.mode = p.mode; rt.heating = false; rt.pts = []; rt.acc = 0; drift.paused = false; dens.paused = false; p.set();
+  ui.mode = p.mode; rt.heating = false; rt.pts = []; rt.acc = 0; drift.paused = prefersReducedMotion(); dens.paused = prefersReducedMotion(); modelTime=0; p.set();
   setModeUI(); presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;
   fillMetals(); dIC.set(drift.I); dSC.set(drift.S * 1e6); nIC.set(dens.I); nS1C.set(dens.S1 * 1e6); nS2C.set(dens.S2 * 1e6);

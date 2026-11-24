@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/simulation.css">
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/potential.js"></script>
+<script type="module" src="../assets/js/simulations/potential.js?v=20261123-batch8e"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Potensial, ish va kondensatorlar" data-shell-public="true">
 
@@ -39,7 +39,14 @@
           <span class="sim-modebar__hint" data-mode-hint></span>
         </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" role="img" aria-label="Elektr maydon va kondensator"></canvas>
+          <canvas id="stage" role="img" aria-describedby="cameraHelp" aria-label="Elektr maydon va kondensator"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Zaryadlar va plastinka suriladi, kalit bosiladi. Dastak va kondensatorlarni chap/o‘ngga suring. Klaviatura: yo‘nalishlar, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play data-ctl="net"><span data-play-icon></span><span data-play-text>Pauza</span></button>

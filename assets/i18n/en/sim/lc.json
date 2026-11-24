@@ -14,8 +14,10 @@
 "Batareya EYuK ε": "Battery emf ε",
 "C = {#} mkF ↔": "C = {#} μF ↔",
 "C = {#} mkF: Tomson formulasi bo‘yicha davr {#} marta ortadi. T(C) grafigiga qarang.": "C = {#} μF: by Thomson's formula the period increases {#} times. See the T(C) graph.",
+"Chastota dastagi": "Frequency knob",
 "Chastota f": "Frequency f",
 "Chastota oshgan sari X_L = ωL ortadi va tok kamayadi.": "As the frequency rises, X_L = ωL increases and the current decreases.",
+"Chastota {#} Hz · faza harakati sekinlashtirilgan · tok oniy qiymatga mos": "Frequency {#} Hz · phase motion slowed down · the current shows its instantaneous value",
 "Chastotaga bog‘liq emas": "Independent of frequency",
 "Chastotani {#} dan {#} Hz gacha o‘zgartirib, har safar tokni yozing. Rezonans egri chizig‘ini quring.": "Vary the frequency from {#} to {#} Hz and record the current each time. Build the resonance curve.",
 "Elektr maydon energiyasi magnit maydon energiyasiga va aksincha aylanadi; R bo‘lsa, energiya issiqlikka o‘tib, tebranish so‘nadi.": "The energy of the electric field turns into magnetic-field energy and back; with R, energy turns into heat and the oscillations die out.",
@@ -88,6 +90,7 @@
 "Rezonansdan tashqarida": "Off resonance",
 "Sig‘im C": "Capacitance C",
 "Sig‘im C (o‘zgaruvchan kondensator)": "Capacitance C (variable capacitor)",
+"Sig‘im dastagi": "Capacitance knob",
 "Sig‘im qarshiligi": "Capacitive reactance",
 "Sig‘im {#} marta oshsa, davr {#} marta ortadi: T = {#}π√(LC).": "If the capacitance is increased {#} times, the period increases {#} times: T = {#}π√(LC).",
 "Sig‘imni {#} marta oshirish": "Capacitance increased {#} times",
@@ -101,6 +104,7 @@
 "Tok kuchlanishdan orqada": "Current lags voltage",
 "Tok va kuchlanish fazada": "Current and voltage are in phase",
 "Tok va kuchlanish vektorlari ustma-ust aylanadi — bir fazada.": "The current and voltage phasors rotate on top of each other — in phase.",
+"Tok va maydon yo‘nalishlari ishoraga mos · vaqt {#} marta sekin": "Current and field directions follow the sign · time slowed down {#}×",
 "Tok zaryaddan chorak davr orqada: kondensator to‘liq zaryadlanganda tok nolga teng, zaryadsizlanganda — eng katta.": "The current lags the charge by a quarter period: when the capacitor is fully charged the current is zero, and it is maximal during discharge.",
 "Tomson formulasi": "Thomson's formula",
 "Tomson formulasi:": "Thomson's formula:",
@@ -153,5 +157,6 @@
 "{#} marta sekinlashtirilgan": "slowed down {#} times",
 "{#} mkF": "{#} μF",
 "{#}/({#}πfC), C = {#} mkF": "{#}/({#}πfC), C = {#} μF",
+"{#}° ko‘rish: bo‘sh joyni sudrang · g‘ildirak / ikki barmoq bilan yaqinlashtiring. Kalitni bosing; generator va kondensator dastaklarini aylantiring. Klaviatura: yo‘nalish tugmalari, + / −, Home.": "{#}° view: drag an empty spot · zoom with the wheel / two fingers. Click the switch; turn the generator and capacitor knobs. Keyboard: arrow keys, + / −, Home.",
 "{#}πfL, L = {#} mGn": "{#}πfL, L = {#} mH"
 }

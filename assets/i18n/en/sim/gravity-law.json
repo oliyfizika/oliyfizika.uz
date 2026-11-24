@@ -20,6 +20,7 @@
 "Ikkala jismga ta’sir etuvchi kuchlar": "Forces acting on both bodies",
 "Io Yupiter atrofida": "Io around Jupiter",
 "Jismlar va masofa": "Bodies and distance",
+"Jismlarni maydonning istalgan joyiga sudrang": "Drag the bodies anywhere in the field",
 "Jismlarni sudrab masofani o‘zgartiring": "Drag the bodies to change the distance",
 "Juftlik": "Pair",
 "Kuch qiymati juda keng oraliqda o‘zgargani uchun o‘q uzunligi logarifmik masshtabda. Osmon jismlarining o‘lchamlari masshtabda emas.": "The force varies over a very wide range, so the arrow length is shown on a logarithmic scale. The sizes of celestial bodies are not to scale.",
@@ -32,8 +33,10 @@
 "Nyuton qonuni": "Newton's law",
 "Nyutonning {#}-qonuni: kuchlar teng, tezlanishlar har xil —": "Newton's {#}rd law: the forces are equal, the accelerations differ —",
 "Osmon jismlari": "Celestial bodies",
+"Osmon jismlarining stol ustidagi modeli · o‘lchamlar shartli, r — haqiqiy masofa": "Tabletop model of celestial bodies · sizes not to scale, r is the real distance",
 "Oy Yer atrofida": "The Moon around the Earth",
 "Oy: {#}·{#}²² kg": "Moon: {#}·{#}²² kg",
+"Po‘lat sharlar masshtabda · maydon va kuch vektorlari shartli": "Steel balls to scale · field and force vectors not to scale",
 "Quyosh": "Sun",
 "Quyosh va Yer bir-birini": "The Sun and the Earth attract each other with a force of",
 "Quyosh — Yer": "Sun — Earth",
@@ -73,6 +76,7 @@
 "{#}-jism tezlanishi": "Acceleration of body {#}",
 "{#}-massa m₁": "Mass {#}: m₁",
 "{#}-massa m₂": "Mass {#}: m₂",
+"{#}°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Jismlarni stol ustida istalgan joyga suring — markazlari bitta gorizontal tekislikda qoladi. Klaviatura: yo‘nalishlar, + / −, Home.": "{#}°: drag an empty spot; zoom with the wheel or two fingers. Move the bodies anywhere on the table — their centres stay in one horizontal plane. Keyboard: arrows, + / −, Home.",
 "{#}·{#}⁸ marta": "{#}·{#}⁸ times",
 "— haqiqiy qiymatga juda yaqin. Masofa ortsa, kuch kamayadi va davr ortadi (Keplerning {#}-qonuni:": "— very close to the real value. As the distance increases, the force decreases and the period grows (Kepler's {#}rd law:"
 }

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/simulation.css">
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/lens.js"></script>
+<script type="module" src="../assets/js/simulations/lens.js?v=20261124-lens"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Linzalar va optik asboblar" data-shell-public="true">
 
@@ -39,7 +39,14 @@
           <span class="sim-modebar__hint" data-mode-hint></span>
         </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" role="img" aria-label="Linza va nurlar yo‘li"></canvas>
+          <canvas id="stage" aria-describedby="cameraHelp" role="img" aria-label="Linza va nurlar yo‘li"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360° ko‘rish: bo‘sh joyni sudrang · g‘ildirak / ikki barmoq bilan yaqinlashtiring. Buyum, F fokus belgisi va ekranning yuqori qismini sudrang. Klaviatura: yo‘nalish tugmalari, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <label class="sim-switch" data-ctl="bench instr"><input type="checkbox" data-rays checked><span class="sim-switch__ui"></span>Xarakterli nurlar</label>

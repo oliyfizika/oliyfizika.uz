@@ -9,6 +9,9 @@
 // Fizika: thermo-physics.js (Node'da tekshirilgan).
 // ==========================================================================
 
+import { createThermoLab } from './thermo-lab-3d.js?v=20261123-batch8d';
+import { bindLabCamera } from './lab-3d.js?v=20261123-batch8d';
+import { detailedStageHeight } from './apparatus-3d.js?v=20261123-batch8d';
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as P from "./thermo-physics.js";
@@ -16,9 +19,6 @@ import { drawPV, drawEnergy, lastFrame, niceMax } from "./thermo-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
-const SMALL = "600 10px Inter, system-ui, sans-serif";
-const MID = "600 11px Inter, system-ui, sans-serif";
-const BOLD = "700 13px Inter, system-ui, sans-serif";
 const NU = (P.P_ATM * 2e-3) / (P.R * 300); // silindrdagi gaz: 2 L, 1 atm, 300 K
 const KIND_NAME = { V: "Izoxorik", p: "Izobarik", T: "Izotermik", Q: "Adiabatik" };
 const KIND_LAW = { V: "V = const", p: "p = const", T: "T = const", Q: "Q = 0" };
@@ -34,7 +34,6 @@ const cyc = { name: "karno", T1: 600, T2: 300, r: 2.5, u: 0, data: null, cylX: n
 const eng = { eps: 9, Tmax: 2400, rpm: 3000, th: 0, g: null, curve: null };
 const mol = Array.from({ length: 36 }, (_, k) => ({ x: ((k * 37) % 100) / 100, y: ((k * 61) % 100) / 100, a: k * 2.39996 }));
 let presetId = null, running = false;
-const geo = {};
 
 /* ------------------------------------------------------------------ 1. Jarayonlar */
 
@@ -101,246 +100,16 @@ function buildEngine() {
 }
 const engState = () => P.engineState(eng.g, 5, eng.Tmax, eng.th);
 
-/* ------------------------------------------------------------------ Chizish: silindr */
-
-function cylinderGeo(w, h, { cx, cw, vScale }) {
-  const yb = h - 58, yt = 30, H = yb - yt - 30;
-  return { cx, cw, yb, yt, H, vScale, yOf: (V) => yb - (V / vScale) * H, vOf: (y) => ((yb - y) / H) * vScale };
-}
-function tempColor(T, alpha = 1) {
-  const u = clamp((T - 150) / 1000, 0, 1), r = Math.round(60 + 195 * u), gg = Math.round(130 + 40 * Math.sin(u * Math.PI)), b = Math.round(235 - 200 * u);
-  return `rgba(${r},${gg},${b},${alpha})`;
-}
-function drawCylinder(ctx, c, G, s, opt = {}) {
-  const { cx, cw, yb, yt } = G, x0 = cx - cw / 2, py = G.yOf(s.V);
-  // devorlar
-  if (opt.insulated) {
-    ctx.fillStyle = c.dark ? "#3f3f46" : "#e7e5e4"; ctx.fillRect(x0 - 14, yt - 4, 14, yb - yt + 14); ctx.fillRect(x0 + cw, yt - 4, 14, yb - yt + 14); ctx.fillRect(x0 - 14, yb, cw + 28, 10);
-    ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.beginPath();
-    for (let y = yt; y < yb + 8; y += 8) { ctx.moveTo(x0 - 14, y + 8); ctx.lineTo(x0, y); ctx.moveTo(x0 + cw, y + 8); ctx.lineTo(x0 + cw + 14, y); }
-    ctx.stroke();
-  }
-  if (opt.bath) {
-    ctx.fillStyle = c.dark ? "rgba(56,189,248,0.16)" : "rgba(14,165,233,0.14)"; ctx.fillRect(x0 - 22, yt + 20, cw + 44, yb - yt - 10);
-    ctx.strokeStyle = c.dark ? "rgba(56,189,248,0.5)" : "rgba(14,165,233,0.5)"; ctx.lineWidth = 1.2; ctx.strokeRect(x0 - 22 + 0.5, yt + 20.5, cw + 44, yb - yt - 10);
-    ctx.font = SMALL; ctx.fillStyle = c.primary; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(`termostat ${fmt(s.T, 0)} K`, cx, yb + 14);
-  }
-  // gaz
-  ctx.fillStyle = tempColor(s.T, c.dark ? 0.22 : 0.16); ctx.fillRect(x0, py, cw, yb - py);
-  // molekulalar
-  ctx.fillStyle = tempColor(s.T, 0.95);
-  for (const m of mol) { ctx.beginPath(); ctx.arc(x0 + 5 + m.x * (cw - 10), py + 5 + m.y * Math.max(1, yb - py - 10), 2.6, 0, TAU); ctx.fill(); }
-  // silindr
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x0, yt); ctx.lineTo(x0, yb); ctx.lineTo(x0 + cw, yb); ctx.lineTo(x0 + cw, yt); ctx.stroke();
-  // porshen
-  const ph = 14;
-  ctx.fillStyle = c.dark ? "#64748b" : "#94a3b8"; ctx.fillRect(x0 + 2, py - ph, cw - 4, ph);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1; ctx.strokeRect(x0 + 2.5, py - ph + 0.5, cw - 5, ph - 1);
-  // shtok va dasta
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(cx, py - ph); ctx.lineTo(cx, py - ph - 22); ctx.stroke();
-  geo.knob = { x: cx, y: py - ph - 26, r: 18, py };
-  if (opt.weights) {
-    ctx.fillStyle = c.dark ? "#475569" : "#334155"; ctx.beginPath(); ctx.roundRect(cx - cw * 0.28, py - ph - 18, cw * 0.18, 18, 3); ctx.roundRect(cx + cw * 0.1, py - ph - 18, cw * 0.18, 18, 3); ctx.fill();
-    ctx.font = SMALL; ctx.fillStyle = "#fff"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("m", cx - cw * 0.19, py - ph - 9); ctx.fillText("m", cx + cw * 0.19, py - ph - 9);
-  }
-  if (opt.locked) {
-    ctx.strokeStyle = c.danger; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x0 - 8, py - ph - 4); ctx.lineTo(x0 + 16, py - ph - 4); ctx.moveTo(x0 + cw - 16, py - ph - 4); ctx.lineTo(x0 + cw + 8, py - ph - 4); ctx.stroke();
-  }
-  ctx.fillStyle = opt.dragKnob ? c.primary : c.text3; ctx.strokeStyle = c.bg; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.arc(cx, py - ph - 26, 9, 0, TAU); ctx.fill(); ctx.stroke();
-  if (opt.dragKnob) { ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.moveTo(cx, py - ph - 32); ctx.lineTo(cx - 3, py - ph - 28); ctx.lineTo(cx + 3, py - ph - 28); ctx.closePath(); ctx.moveTo(cx, py - ph - 20); ctx.lineTo(cx - 3, py - ph - 24); ctx.lineTo(cx + 3, py - ph - 24); ctx.closePath(); ctx.fill(); }
-  return py;
-}
-function drawFlame(ctx, c, x, y, size, on) {
-  ctx.save(); ctx.globalAlpha = on ? 1 : 0.25;
-  const t = performance.now() / 1000;
-  for (let k = -1; k <= 1; k++) {
-    const fx = x + k * size * 0.7, hh = size * (1.3 + 0.25 * Math.sin(t * 9 + k * 2));
-    const grad = ctx.createLinearGradient(fx, y, fx, y - hh); grad.addColorStop(0, "#f97316"); grad.addColorStop(1, "rgba(250,204,21,0.1)");
-    ctx.fillStyle = grad; ctx.beginPath(); ctx.moveTo(fx - size * 0.35, y); ctx.quadraticCurveTo(fx - size * 0.3, y - hh * 0.5, fx, y - hh); ctx.quadraticCurveTo(fx + size * 0.3, y - hh * 0.5, fx + size * 0.35, y); ctx.closePath(); ctx.fill();
-  }
-  ctx.restore();
-}
-function drawThermometer(ctx, c, x, y0, y1, T, active) {
-  const u = clamp((T - LIM.T[0]) / (LIM.T[1] - LIM.T[0]), 0, 1), yT = y1 - u * (y1 - y0);
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = active ? c.primary : c.border; ctx.lineWidth = active ? 2 : 1.2;
-  ctx.beginPath(); ctx.roundRect(x - 6, y0 - 6, 12, y1 - y0 + 12, 6); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.arc(x, y1 + 12, 10, 0, TAU); ctx.fillStyle = c.danger; ctx.fill();
-  ctx.fillStyle = c.danger; ctx.fillRect(x - 3, yT, 6, y1 + 6 - yT);
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  for (const t of [200, 400, 600, 800, 1000]) { const yy = y1 - ((t - LIM.T[0]) / (LIM.T[1] - LIM.T[0])) * (y1 - y0); ctx.beginPath(); ctx.moveTo(x + 6, yy); ctx.lineTo(x + 10, yy); ctx.stroke(); if (y1 - y0 > 140 || t % 400 === 0) ctx.fillText(String(t), x + 12, yy); }
-  tag(ctx, `${fmt(T, 0)} K`, x, yT, { color: active ? c.primary : c.text2, bg: c.bg, align: "center", font: MID });
-  geo.thermo = { x, y0, y1, active };
-}
-
-function drawProcStage(ctx, c, w, h) {
-  const narrow = w < 560, cw = Math.min(130, w * (narrow ? 0.34 : 0.22)), cx = narrow ? w * 0.36 : w * 0.2 + 10;
-  const G = cylinderGeo(w, h, { cx, cw, vScale: 4.5e-3 }), s = proc.cur, k = proc.kind;
-  geo.cyl = G;
-  drawCylinder(ctx, c, G, s, { insulated: k === "Q", bath: k === "T", weights: k === "p", locked: k === "V", dragKnob: k !== "V" });
-  // issiqlik manbai / sovitgich
-  const by = G.yb + 10;
-  if (k !== "Q" && k !== "T") {
-    ctx.fillStyle = c.dark ? "#334155" : "#cbd5e1"; ctx.fillRect(cx - 26, by + 26, 52, 8);
-    if (proc.flow < 0 && proc.flowT > 0) {
-      ctx.fillStyle = c.dark ? "rgba(96,165,250,0.6)" : "rgba(59,130,246,0.45)"; ctx.beginPath(); ctx.roundRect(cx - cw / 2, by, cw, 16, 4); ctx.fill();
-      ctx.font = SMALL; ctx.fillStyle = c.primary; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("sovitish", cx, by + 18);
-    } else drawFlame(ctx, c, cx, by + 26, 9, proc.flow > 0 && proc.flowT > 0);
-  }
-  // energiya o'qlari
-  const L = procTotals();
-  if (proc.flowT > 0 && proc.flow && k !== "Q") {
-    const ax = cx - cw / 2 - 30, up = proc.flow > 0;
-    ctx.strokeStyle = up ? c.danger : c.primary; ctx.fillStyle = ctx.strokeStyle; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.moveTo(ax, up ? G.yb + 4 : G.yb - 40); ctx.lineTo(ax, up ? G.yb - 34 : G.yb - 2); ctx.stroke();
-    const ty = up ? G.yb - 40 : G.yb + 4; ctx.beginPath(); ctx.moveTo(ax, ty); ctx.lineTo(ax - 6, ty + (up ? 9 : -9)); ctx.lineTo(ax + 6, ty + (up ? 9 : -9)); ctx.closePath(); ctx.fill();
-    ctx.font = BOLD; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText(up ? "Q > 0" : "Q < 0", ax - 8, G.yb - 18);
-  }
-  if (proc.flowA && Math.abs(L.A) > 0.05 && k !== "V") {
-    const ax = cx + cw / 2 + 16, py = G.yOf(s.V) - 30, up = proc.flowA > 0;
-    ctx.strokeStyle = c.success; ctx.fillStyle = c.success; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.moveTo(ax, py + (up ? 14 : -14)); ctx.lineTo(ax, py + (up ? -14 : 14)); ctx.stroke();
-    ctx.beginPath(); const ty = py + (up ? -20 : 20); ctx.moveTo(ax, ty); ctx.lineTo(ax - 6, ty + (up ? 9 : -9)); ctx.lineTo(ax + 6, ty + (up ? 9 : -9)); ctx.closePath(); ctx.fill();
-  }
-  // termometr
-  const tx = cx + cw / 2 + (narrow ? 44 : 54);
-  drawThermometer(ctx, c, tx, G.yt + 18, G.yb - 6, s.T, k === "V" || k === "p" || k === "Q");
-  // ma'lumot paneli
-  const ix = tx + 46; if (narrow || w - ix < 170) return;
-  ctx.textAlign = "left"; ctx.textBaseline = "top";
-  ctx.font = "700 15px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text; ctx.fillText(`${KIND_NAME[k]} jarayon`, ix, 16);
-  ctx.font = MID; ctx.fillStyle = c.text2; ctx.fillText(`${KIND_LAW[k]} · ${P.GASES[gasState.key].name}, ν = ${fmt(NU, 3)} mol`, ix, 38);
-  const rows = [["p", `${fmt(s.p / 1000, 1)} kPa`], ["V", `${fmt(s.V * 1000, 2)} L`], ["T", `${fmt(s.T, 0)} K`], ["U", `${fmt(P.energy(gas(), s.T), 0)} J`]];
-  ctx.font = "600 13px Inter, system-ui, sans-serif";
-  rows.forEach(([a, b], j) => { ctx.fillStyle = c.text3; ctx.fillText(a, ix, 66 + j * 22); ctx.fillStyle = c.text; ctx.fillText(b, ix + 22, 66 + j * 22); });
-  const y2 = 66 + rows.length * 22 + 10;
-  ctx.font = BOLD; ctx.fillStyle = c.text; ctx.fillText("Q = ΔU + A", ix, y2);
-  ctx.font = MID; ctx.fillStyle = c.text2; ctx.fillText(`${fmt(L.Q, 1)} = ${fmt(L.dU, 1)} ${L.A < 0 ? "−" : "+"} ${fmt(Math.abs(L.A), 1)} J`, ix, y2 + 20);
-  if (proc.legs.length > 1) { ctx.fillStyle = c.text3; ctx.font = SMALL; ctx.fillText(`${proc.legs.length} ta jarayon ketma-ket (1-holatdan)`, ix, y2 + 40); }
-}
-
-function drawCycleStage(ctx, c, w, h) {
-  const d = cyc.data, { j, s } = cycState(), L = d.legs[j], narrow = w < 600;
-  const cw = Math.min(84, w * (narrow ? 0.2 : 0.13)), gap = cw * 1.32, x1 = narrow ? w * 0.2 : w * 0.12 + 10;
-  const xs = [x1, x1 + gap, x1 + 2 * gap], st = station(L);
-  if (cyc.cylX === null) cyc.cylX = xs[st];
-  const vScale = Math.max(...d.pts.map((q) => q.V)) * 1.08;
-  const G = cylinderGeo(w, h, { cx: cyc.cylX, cw, vScale });
-  // bloklar
-  const by = G.yb + 1, bh = 24, labels = [`Isitkich ${fmt(cyc.T1, 0)} K`, "Izolyatsiya", `Sovitkich ${fmt(cyc.T2, 0)} K`];
-  const cols = [c.danger, c.text3, c.primary];
-  geo.blocks = [];
-  xs.forEach((x, k) => {
-    ctx.globalAlpha = k === st ? 1 : 0.45; ctx.fillStyle = cols[k];
-    ctx.beginPath(); ctx.roundRect(x - cw * 0.62, by, cw * 1.24, bh, 5); ctx.fill(); ctx.globalAlpha = 1;
-    ctx.font = SMALL; ctx.fillStyle = k === st ? c.text : c.text3; ctx.textAlign = "center"; ctx.textBaseline = "top";
-    ctx.fillText(labels[k], x, by + bh + 4);
-    if (k !== 1) { geo.blocks.push({ k, x: x - cw * 0.62, y: by - 4, w: cw * 1.24, h: bh + 20 }); ctx.fillStyle = "#fff"; ctx.font = MID; ctx.textBaseline = "middle"; ctx.fillText("⇕", x, by + bh / 2); }
-  });
-  drawCylinder(ctx, c, G, s, { insulated: L.kind === "Q", dragKnob: false });
-  // jarayon nomi
-  ctx.font = BOLD; ctx.fillStyle = c.text; ctx.textAlign = "left"; ctx.textBaseline = "top";
-  ctx.fillText(`${j + 1}→${(j + 1) % 4 + 1}: ${KIND_NAME[L.kind]} ${L.kind === "Q" ? "" : L.Q > 0 ? "(gaz issiqlik oladi)" : L.Q < 0 ? "(gaz issiqlik beradi)" : ""}`, 12, 8);
-  // energiya oqimi
-  if (narrow) return;
-  const ex = xs[2] + cw + 40, ew = w - ex - 14; if (ew < 170) return;
-  const mx = ex + ew * 0.42, hotY = 22, engY = h * 0.48, coldY = h - 46, Qmax = Math.max(d.Qin, d.Qout, 1), sc = 22 / Qmax;
-  const rev = d.reverse, Q1 = rev ? d.Qout : d.Qin, Q2 = rev ? d.Qin : d.Qout, A = Math.abs(d.A);
-  const box = (y, col, txt) => { ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(mx - 60, y, 120, 26, 6); ctx.fill(); ctx.fillStyle = "#fff"; ctx.font = MID; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(txt, mx, y + 13); };
-  const flow = (x, ya, yb, wq, col, label, down) => {
-    ctx.fillStyle = col; ctx.globalAlpha = 0.75; const ww = Math.max(3, wq);
-    ctx.beginPath(); ctx.moveTo(x - ww / 2, ya); ctx.lineTo(x + ww / 2, ya); ctx.lineTo(x + ww / 2, yb - (down ? 9 : -9)); ctx.lineTo(x + ww / 2 + 6, yb - (down ? 9 : -9)); ctx.lineTo(x, yb); ctx.lineTo(x - ww / 2 - 6, yb - (down ? 9 : -9)); ctx.lineTo(x - ww / 2, yb - (down ? 9 : -9)); ctx.closePath(); ctx.fill(); ctx.globalAlpha = 1;
-    ctx.font = MID; ctx.fillStyle = c.text; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(label, x + ww / 2 + 10, (ya + yb) / 2);
-  };
-  box(hotY, c.danger, `Isitkich T₁ = ${fmt(cyc.T1, 0)} K`);
-  box(coldY, c.primary, `Sovitkich T₂ = ${fmt(cyc.T2, 0)} K`);
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(mx, engY, 30, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(rev ? "sovutgich" : "dvigatel", mx, engY);
-  if (!rev) { flow(mx, hotY + 26, engY - 30, Q1 * sc, c.danger, `Q₁ = ${fmt(Q1, 1)} J`, true); flow(mx, engY + 30, coldY, Q2 * sc, c.primary, `|Q₂| = ${fmt(Q2, 1)} J`, true); }
-  else { flow(mx, engY - 30, hotY + 26, Q1 * sc, c.danger, `Q₁ = ${fmt(Q1, 1)} J`, false); flow(mx, coldY, engY + 30, Q2 * sc, c.primary, `Q₂ = ${fmt(Q2, 1)} J`, false); }
-  // ish
-  ctx.fillStyle = c.success; ctx.globalAlpha = 0.8; const aw = Math.max(3, A * sc), ax0 = rev ? mx - 30 - 44 : mx + 30, ax1 = rev ? mx - 30 : mx + 30 + 44;
-  ctx.beginPath(); ctx.rect(Math.min(ax0, ax1), engY - aw / 2, 36, aw); ctx.fill();
-  ctx.beginPath(); if (!rev) { ctx.moveTo(ax1, engY); ctx.lineTo(ax1 - 9, engY - aw / 2 - 6); ctx.lineTo(ax1 - 9, engY + aw / 2 + 6); } else { ctx.moveTo(mx - 30, engY); ctx.lineTo(mx - 39, engY - aw / 2 - 6); ctx.lineTo(mx - 39, engY + aw / 2 + 6); } ctx.closePath(); ctx.fill(); ctx.globalAlpha = 1;
-  ctx.font = MID; ctx.fillStyle = c.success; ctx.textAlign = rev ? "right" : "left"; ctx.textBaseline = "bottom";
-  ctx.fillText(`${rev ? "|A|" : "A"} = ${fmt(A, 1)} J`, rev ? mx - 34 : mx + 34, engY - aw / 2 - 8);
-  ctx.textBaseline = "top"; ctx.fillStyle = c.text; ctx.font = BOLD; ctx.textAlign = rev ? "right" : "left";
-  ctx.fillText(rev ? `ε = ${fmt(d.cop, 2)}` : `η = ${fmt(d.eta * 100, 1)} %`, rev ? mx - 34 : mx + 34, engY + aw / 2 + 6);
-}
-
-function drawEngineStage(ctx, c, w, h) {
-  const g = eng.g, es = engState(), narrow = w < 560;
-  const k = (h - 44) / (2 * g.r + g.l + (g.Vc / g.area) + 0.05), bore = g.D * k, cx = narrow ? w * 0.38 : w * 0.24;
-  const yc = h - g.r * k - 16, pinY = (th) => yc - (g.r * Math.cos(th) + Math.sqrt(g.l * g.l - (g.r * Math.sin(th)) ** 2)) * k;
-  const pistonH = 0.05 * k, yHead = pinY(0) - pistonH * 0.4 - (g.Vc / g.area) * k, topP = pinY(eng.th) - pistonH * 0.4;
-  const th = eng.th, TH = ((th % (4 * Math.PI)) + 4 * Math.PI) % (4 * Math.PI), phase = (TH % Math.PI) / Math.PI;
-  // gaz
-  const gasCol = es.stroke === 0 ? (c.dark ? "rgba(56,189,248,0.25)" : "rgba(14,165,233,0.2)") : es.stroke === 1 ? (c.dark ? "rgba(56,189,248,0.45)" : "rgba(14,165,233,0.38)") : es.stroke === 2 ? `rgba(249,115,22,${clamp(0.2 + (es.T / eng.Tmax) * 0.6, 0.2, 0.8)})` : (c.dark ? "rgba(148,163,184,0.45)" : "rgba(100,116,139,0.35)");
-  ctx.fillStyle = gasCol; ctx.fillRect(cx - bore / 2, yHead, bore, topP - yHead);
-  // silindr devorlari va kallagi
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(cx - bore / 2 - 2, yHead - 2); ctx.lineTo(cx - bore / 2 - 2, pinY(Math.PI) - pistonH * 0.4 + pistonH + 6); ctx.moveTo(cx + bore / 2 + 2, yHead - 2); ctx.lineTo(cx + bore / 2 + 2, pinY(Math.PI) - pistonH * 0.4 + pistonH + 6); ctx.stroke();
-  ctx.fillStyle = c.dark ? "#475569" : "#94a3b8"; ctx.fillRect(cx - bore / 2 - 14, yHead - 14, bore + 28, 12);
-  // klapanlar
-  const lift = (on) => (on ? Math.sin(phase * Math.PI) * 8 : 0), vIn = lift(es.stroke === 0), vEx = lift(es.stroke === 3);
-  [[cx - bore * 0.28, vIn, c.primary, "so‘rish"], [cx + bore * 0.28, vEx, c.text3, "chiqarish"]].forEach(([x, l, col, lab], i) => {
-    ctx.strokeStyle = c.text2; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(x, yHead - 26); ctx.lineTo(x, yHead + l); ctx.stroke();
-    ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x - 9, yHead + l); ctx.lineTo(x + 9, yHead + l); ctx.stroke();
-    ctx.strokeStyle = col; ctx.lineWidth = 6; ctx.beginPath(); const sx = i ? 1 : -1; ctx.moveTo(x + sx * 34, yHead - 22); ctx.lineTo(x, yHead - 22); ctx.stroke();
-    if (l > 1) { ctx.fillStyle = col; const ay = yHead - 22; ctx.beginPath(); if (!i) { ctx.moveTo(x + sx * 10, ay - 6); ctx.lineTo(x + sx * 10, ay + 6); ctx.lineTo(x + sx * 2, ay); } else { ctx.moveTo(x + sx * 38, ay - 6); ctx.lineTo(x + sx * 38, ay + 6); ctx.lineTo(x + sx * 46, ay); } ctx.closePath(); ctx.fill(); }
-    if (!narrow) { ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = i ? "left" : "right"; ctx.textBaseline = "middle"; ctx.fillText(lab, x + sx * 38, yHead - 36); }
-  });
-  // sham va uchqun
-  ctx.fillStyle = c.text2; ctx.fillRect(cx - 3, yHead - 24, 6, 22);
-  if (TH > 2 * Math.PI - 0.04 && TH < 2 * Math.PI + 0.45) {
-    const a = 1 - (TH - 2 * Math.PI + 0.04) / 0.49; ctx.fillStyle = `rgba(250,204,21,${a})`; ctx.beginPath();
-    for (let q = 0; q < 10; q++) { const rr = q % 2 ? 5 : 13, an = (q / 10) * TAU; ctx.lineTo(cx + Math.cos(an) * rr, yHead + 6 + Math.sin(an) * rr); } ctx.closePath(); ctx.fill();
-  }
-  // porshen, shatun, tirsak
-  ctx.fillStyle = c.dark ? "#64748b" : "#94a3b8"; ctx.fillRect(cx - bore / 2 + 1, topP, bore - 2, pistonH);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1; ctx.strokeRect(cx - bore / 2 + 1.5, topP + 0.5, bore - 3, pistonH - 1);
-  const pin = { x: cx + g.r * k * Math.sin(th), y: yc - g.r * k * Math.cos(th) }, wristY = pinY(th);
-  ctx.strokeStyle = c.dark ? "#475569" : "#e2e8f0"; ctx.lineWidth = 1; ctx.fillStyle = c.dark ? "#1e293b" : "#e2e8f0";
-  ctx.beginPath(); ctx.arc(cx, yc, g.r * k + 12, 0, TAU); ctx.fill();
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 7; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(cx, yc); ctx.lineTo(pin.x, pin.y); ctx.stroke();
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(pin.x, pin.y); ctx.lineTo(cx, wristY); ctx.stroke(); ctx.lineCap = "butt";
-  ctx.fillStyle = c.primary; ctx.beginPath(); ctx.arc(pin.x, pin.y, 6, 0, TAU); ctx.fill();
-  ctx.fillStyle = c.text2; ctx.beginPath(); ctx.arc(cx, yc, 5, 0, TAU); ctx.fill();
-  geo.crank = { x: cx, y: yc, r: g.r * k + 16 };
-  // taktlar
-  const ix = narrow ? cx + bore / 2 + 24 : cx + bore / 2 + 70; if (w - ix < 120) return;
-  ctx.textAlign = "left"; ctx.textBaseline = "top";
-  ctx.font = "700 16px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text; ctx.fillText(`${es.stroke + 1}-takt: ${P.STROKES[es.stroke]}`, ix, 14);
-  const desc = ["Porshen pastga, so‘rish klapani ochiq: yonilg‘i-havo aralashmasi kiradi", "Ikkala klapan yopiq: aralashma adiabatik siqiladi va qiziydi", "Sham uchquni aralashmani yondiradi; qizigan gaz porshenni itaradi — foydali ish", "Chiqarish klapani ochiq: ishlatilgan gazlar chiqariladi"][es.stroke];
-  ctx.font = MID; ctx.fillStyle = c.text2;
-  wrap(ctx, desc, ix, 38, Math.min(w - ix - 10, 260), 15);
-  // 720° halqa
-  const R = Math.min(46, (h - 120) / 2), rx = ix + R + 4, ry = h - R - 22;
-  P.STROKES.forEach((name, q) => {
-    ctx.strokeStyle = q === es.stroke ? [c.primary, c.special, c.warning, c.text3][q] : c.border; ctx.lineWidth = 9;
-    ctx.beginPath(); ctx.arc(rx, ry, R, -Math.PI / 2 + (q * Math.PI) / 2 + 0.03, -Math.PI / 2 + ((q + 1) * Math.PI) / 2 - 0.03); ctx.stroke();
-  });
-  const an = -Math.PI / 2 + TH / 2; ctx.fillStyle = c.text; ctx.beginPath(); ctx.arc(rx + Math.cos(an) * R, ry + Math.sin(an) * R, 5, 0, TAU); ctx.fill();
-  ctx.font = BOLD; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(`${fmt((TH * 180) / Math.PI, 0)}°`, rx, ry - 6);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.fillText("tirsak burchagi", rx, ry + 10);
-  if (w - ix > 2 * R + 140) { ctx.textAlign = "left"; ctx.font = MID; P.STROKES.forEach((name, q) => { ctx.fillStyle = q === es.stroke ? c.text : c.text3; ctx.fillText(`${q + 1}. ${name} (${q * 180}–${(q + 1) * 180}°)`, rx + R + 22, ry - 30 + q * 18); }); }
-}
-function wrap(ctx, text, x, y, maxW, lh) {
-  let line = "", yy = y;
-  for (const word of text.split(" ")) { const t = line ? `${line} ${word}` : word; if (ctx.measureText(t).width > maxW && line) { ctx.fillText(line, x, yy); line = word; yy += lh; } else line = t; }
-  if (line) ctx.fillText(line, x, yy);
-}
-
+const scene = createThermoLab();
 function draw(ctx, st) {
-  const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h);
-  if (ui.mode === "proc" && proc.cur) drawProcStage(ctx, c, st.w, st.h);
-  else if (ui.mode === "cycle" && cyc.data) drawCycleStage(ctx, c, st.w, st.h);
-  else if (ui.mode === "engine" && eng.g) drawEngineStage(ctx, c, st.w, st.h);
+  if (ui.mode==='proc' ? proc.cur : ui.mode==='cycle' ? cyc.data : eng.g) scene.draw(ctx,st,ui,proc,cyc,eng,mol,{totals:procTotals,cycleState:cycState,station,engineState:engState});
 }
+
 const heights = () => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(vh * 0.44, 300, 360)), graph: Math.round(clamp(vh * 0.3, 200, 280)) };
 };
-const stage = createStage($("#stage"), draw, { height: () => heights().stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /* ------------------------------------------------------------------ Grafik */
 
@@ -509,16 +278,14 @@ const loop = createLoop((dt) => {
   else if (ui.mode === "cycle") {
     cyc.u += dt * ui.speed * 0.6; if (cyc.u >= 4) { cyc.u -= 4; cyc.laps++; }
     const { j, s } = cycState(), tx = cycleStationX(station(cyc.data.legs[j]));
-    if (tx !== null) cyc.cylX += (tx - cyc.cylX) * Math.min(1, dt * 8);
+    if (tx !== null) cyc.cylX = cyc.cylX === null ? tx : cyc.cylX + (tx - cyc.cylX) * Math.min(1, dt * 8);
     stepMolecules(dt, s.T);
   } else { eng.th += dt * ui.speed * Math.PI; if (eng.th > 4 * Math.PI * 1000) eng.th -= 4 * Math.PI * 1000; }
   stage.render(); graph.render();
   uiTimer += dt; if (uiTimer > 0.15) { uiTimer = 0; updateReadouts(); updateStatus(); updateExplain(); }
 }, { onStateChange: setPlayUI });
-function cycleStationX(k) {
-  const w = stage.w, narrow = w < 600, cw = Math.min(84, w * (narrow ? 0.2 : 0.13)), x1 = narrow ? w * 0.2 : w * 0.12 + 10;
-  return w ? x1 + k * cw * 1.32 : null;
-}
+function cycleStationX(k) { return [-1.8,0,1.8][k]; }
+
 const playBtn = $("[data-play]");
 function setPlayUI(on) {
   running = on;
@@ -574,51 +341,32 @@ const eEC = bindRange($("#eE"), $("#eEOut"), (v) => fmt(v, 1), (v) => { eng.eps 
 const eTC = bindRange($("#eT"), $("#eTOut"), (v) => `${fmt(v, 0)} K`, (v) => { eng.Tmax = v; customized(); buildEngine(); refresh(); });
 const eNC = bindRange($("#eN"), $("#eNOut"), (v) => `${fmt(v, 0)} ayl/min`, (v) => { eng.rpm = v; customized(); refresh(); });
 
-/* Sahnada: porshen, termometr, bloklar, tirsak */
-const canvas = stage.canvas;
+/* Sahnada: porshen, termometr, termostat dastaklari va tirsak. */
 let drag = null;
-const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-function hit(p) {
-  if (ui.mode === "proc") {
-    const k = geo.knob, t = geo.thermo, G = geo.cyl;
-    if (proc.kind !== "V" && k && (Math.hypot(p.x - k.x, p.y - k.y) <= k.r || (Math.abs(p.x - G.cx) <= G.cw / 2 && Math.abs(p.y - (k.py - 7)) <= 14))) return { kind: "piston", off: p.y - k.py };
-    if (proc.kind !== "T" && t && Math.abs(p.x - t.x) <= 22 && p.y >= t.y0 - 12 && p.y <= t.y1 + 22) return { kind: "thermo" };
-  } else if (ui.mode === "cycle") {
-    const b = (geo.blocks || []).find((q) => p.x >= q.x && p.x <= q.x + q.w && p.y >= q.y && p.y <= q.y + q.h);
-    if (b) return { kind: "block", k: b.k, y0: p.y, T0: b.k === 0 ? cyc.T1 : cyc.T2 };
-  } else if (geo.crank && Math.hypot(p.x - geo.crank.x, p.y - geo.crank.y) <= geo.crank.r + 10) return { kind: "crank" };
-  return null;
-}
-function dragTo(p) {
-  if (drag.kind === "piston") applyTarget({ V: clamp(geo.cyl.vOf(p.y - drag.off), LIM.V[0], LIM.V[1]) });
-  else if (drag.kind === "thermo") { const t = geo.thermo, T = LIM.T[0] + ((t.y1 - clamp(p.y, t.y0, t.y1)) / (t.y1 - t.y0)) * (LIM.T[1] - LIM.T[0]); applyTarget({ T: Math.round(T / 5) * 5 }); }
-  else if (drag.kind === "block") {
-    const T = Math.round((drag.T0 + (drag.y0 - p.y) * 4) / 10) * 10;
-    if (drag.k === 0) cyc.T1 = clamp(T, 250, 2500); else cyc.T2 = clamp(T, 150, 600);
-    buildCycle(); syncCycleCtl(); refresh();
-  } else if (drag.kind === "crank") {
-    const a = Math.atan2(p.x - geo.crank.x, -(p.y - geo.crank.y)), base = eng.th - (((eng.th % TAU) + TAU) % TAU);
-    let th = base + ((a + TAU) % TAU); if (th - eng.th > Math.PI) th -= TAU; if (eng.th - th > Math.PI) th += TAU;
-    eng.th = Math.max(0, th); refresh();
-  }
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p);
-  if (!h) return;
-  drag = h; customized();
-  if (h.kind === "crank" && loop.running) loop.stop();
-  e.preventDefault(); try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  canvas.dataset.dragging = "true";
-  if (h.kind !== "piston" && h.kind !== "block") dragTo(p);
+const ptr = (cv,e) => {const r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};};
+bindLabCamera(stage.canvas,scene.lab,()=>stage.render(),{
+ start(id,p){
+   drag={id,x:p.x,y:p.y,value:id==='hot'?cyc.T1:id==='cold'?cyc.T2:id==='rpm'?eng.rpm:eng.eps};
+   if(id==='crank'&&loop.running)loop.stop();
+   customized();
+ },
+ move(id,p){
+   if(!drag||drag.id!==id)return;
+   if(id==='piston'&&proc.kind!=='V'){const v=scene.parameter(id,p);applyTarget({V:clamp(Math.round(v*1e5)/1e5,...LIM.V)});}
+   else if(id==='thermo'&&proc.kind!=='T'){const t=scene.parameter(id,p);applyTarget({T:clamp(Math.round(t/5)*5,...LIM.T)});}
+   else if(id==='hot'||id==='cold'){
+     const step=id==='hot'?10:5,v=Math.round((drag.value+(p.x-drag.x)*(id==='hot'?2250:450)/180)/step)*step;
+     if(id==='hot')cyc.T1=clamp(v,250,2500);else cyc.T2=clamp(v,150,600);
+     buildCycle();syncCycleCtl();refresh();
+   }else if(id==='crank'){
+     const a=scene.parameter(id,p);if(a===null)return;
+     const base=eng.th-(((eng.th%TAU)+TAU)%TAU);let th=base+((a+TAU)%TAU);
+     if(th-eng.th>Math.PI)th-=TAU;if(eng.th-th>Math.PI)th+=TAU;
+     eng.th=Math.max(0,th);refresh();
+   }else if(id==='rpm'){eng.rpm=clamp(Math.round((drag.value+(p.x-drag.x)*5200/180)/100)*100,800,6000);eNC.set(eng.rpm);refresh();}
+   else if(id==='eps'){eng.eps=clamp(Math.round((drag.value+(p.x-drag.x)*7/180)*2)/2,5,12);eEC.set(eng.eps);buildEngine();refresh();}
+ },end(){drag=null;}
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (drag) { dragTo(p); return; }
-  const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "crank" ? "grab" : "ns-resize";
-});
-const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* Grafikda kursor */
 const gcv = graph.canvas;
@@ -661,7 +409,7 @@ presetBox.addEventListener("click", (ev) => { const b = ev.target.closest("[data
 const setPresetPressed = (id) => document.querySelectorAll("[data-preset]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.preset === id)));
 function customized() { if (presetId) { presetId = null; setPresetPressed(null); $("[data-lesson]").textContent = ""; } }
 
-const MODE_HINT = { proc: "Porshen dastasini yoki termometrni suring", cycle: "Isitkich va sovitkich bloklarini suring", engine: "Tirsakli valni aylantiring" };
+const MODE_HINT = { proc: "Porshen dastasini yoki termometrni suring", cycle: "T₁/T₂ dastaklarini chap/o‘ngga suring", engine: "Tirsakli valni aylantiring" };
 function setModeUI() {
   document.querySelectorAll("[data-mode-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.modeValue === ui.mode)));
   document.querySelectorAll("[data-ctl]").forEach((el) => { el.hidden = !el.dataset.ctl.split(" ").includes(ui.mode); });

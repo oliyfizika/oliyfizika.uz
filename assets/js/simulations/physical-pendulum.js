@@ -1,3 +1,5 @@
+import { createPhysicalPendulumLab } from "./next-labs-3d.js?v=20261122-batch3";
+import { bindLabCamera, labStageHeight } from "./lab-3d.js?v=20261122";
 // ==========================================================================
 // Fizik (murakkab) mayatnik — simulyatsiya (simulations/physical-pendulum.html)
 // Fizika: pendulum-physics.js (RK4, aniq davr) + physical-pendulum-physics.js (jism shakllari, I, L_red, Keyter).
@@ -5,7 +7,7 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { DEG, clamp, fmt, sci, createStage, createLoop, arrow, angleArc, tag, bindRange } from "./sim-kit.js";
+import { DEG, clamp, fmt, sci, createStage, createLoop, tag, bindRange } from "./sim-kit.js";
 import { TAU, H_MAX, rk4, createPeriodMeter, motionInfo, specificEnergy, specificKinetic, specificPotential, periodRatio, wrapAngle } from "./pendulum-physics.js";
 import { SHAPES, gyr2, omega2, periodSmall, reducedLength, conjugateDistance, minPeriod, pivotReaction } from "./physical-pendulum-physics.js";
 import { createHistory, createTimePlot, createEnergyPlot, frame, ticks, splitHeights } from "./pendulum-plots.js";
@@ -55,209 +57,9 @@ function resetSim({ keepRunning = false } = {}) {
   if (!keepRunning) loop.stop();
 }
 
-/* ------------------------------------------------------------------ Geometriya va masshtab */
-
-let view = null;
-
-const niceCeil = (v, list = [0.5, 1, 1.5, 2, 3, 4]) => list.find((x) => x >= v - 1e-9) ?? v;
-
-function computeView(w, h) {
-  const topPad = ui.show.forces ? 58 : 34, botPad = 30;
-  const sh = shapeInfo();
-  const half = sh.half(P.S);
-  const ball = P.shape === "ball";
-  const below = ball ? niceCeil(P.d + half) : P.d + half;          // osish nuqtasidan pastga uzunlik (m)
-  const uRef = below * 1.06;
-  const info = motionInfo({ th: init.th, w: init.w }, W2());
-  const amp0 = info.mode === "oscillation" ? info.amplitude : Math.PI;
-  const upAmp = amp0 > Math.PI / 2 ? -Math.cos(amp0) * uRef : 0;
-  const upBody = ball ? 0 : Math.max(0, half - P.d);                // jism osish nuqtasidan yuqoriga chiqqan qismi
-  const upM = Math.max(upAmp, upBody);
-  const availH = h - topPad - botPad;
-  const cx = w / 2;
-  const sc = Math.min(availH / (upM + uRef), (cx - 22) / uRef);
-  return { w, h, cx, pivotY: topPad + upM * sc + (upM > 0 ? 4 : 0), s: sc, topPad, botPad, uRef };
-}
-
-const axisPt = (v, u, th) => ({ x: v.cx + u * v.s * Math.sin(th), y: v.pivotY + u * v.s * Math.cos(th) });
-
-function niceScaleLength(pxPerM) {
-  for (const m of [0.05, 0.1, 0.2, 0.5, 1, 2, 5]) if (m * pxPerM >= 36) return m;
-  return 5;
-}
-
-function drawBody(ctx, c, v) {
-  const sc = v.s, half = shapeInfo().half(P.S);
-  ctx.save();
-  ctx.translate(v.cx, v.pivotY);
-  ctx.rotate(-s.th);
-  ctx.lineJoin = "round";
-  ctx.lineCap = "round";
-  const fillAlpha = 0.2;
-  const paint = (path, alpha = fillAlpha) => {
-    ctx.globalAlpha = alpha; ctx.fillStyle = c.primary; ctx.fill(path);
-    ctx.globalAlpha = 1; ctx.strokeStyle = c.primary; ctx.lineWidth = 2.5; ctx.stroke(path);
-  };
-  const y0 = (P.d - half) * sc, y1 = (P.d + half) * sc;
-  const path = new Path2D();
-  if (P.shape === "rod") {
-    const hw = Math.max(4.5, 0.022 * P.S * sc);
-    path.roundRect(-hw, y0, hw * 2, y1 - y0, hw);
-    paint(path, 0.5);
-  } else if (P.shape === "plate") {
-    const hw = (P.S / 4) * sc;
-    path.roundRect(-hw, y0, hw * 2, y1 - y0, 6);
-    paint(path);
-  } else if (P.shape === "disk") {
-    path.arc(0, P.d * sc, half * sc, 0, TAU);
-    paint(path);
-  } else if (P.shape === "ring") {
-    // yengil spitsalar
-    ctx.strokeStyle = c.primary; ctx.globalAlpha = 0.45; ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    for (let k = 0; k < 6; k++) {
-      const a = (TAU * k) / 6 + 0.35;
-      ctx.moveTo(0, 0);
-      // spitsa halqa bilan kesishgan nuqtagacha
-      const dx = Math.cos(a), dy = Math.sin(a), cy = P.d * sc, R = half * sc;
-      const b = dx * 0 + dy * (0 - cy);                      // ((0,0) − markaz) · yo'nalish
-      const cc = cy * cy - R * R;
-      const tt = -b + Math.sqrt(Math.max(0, b * b - cc));
-      ctx.lineTo(dx * tt, dy * tt);
-    }
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-    path.arc(0, P.d * sc, half * sc, 0, TAU);
-    ctx.strokeStyle = c.primary; ctx.lineWidth = Math.max(5, 0.02 * P.S * sc * 2); ctx.stroke(path);
-  } else {
-    // shar vaznsiz ipda
-    ctx.strokeStyle = c.text2; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, (P.d - half) * sc); ctx.stroke();
-    path.arc(0, P.d * sc, Math.max(half * sc, 7), 0, TAU);
-    ctx.globalAlpha = 0.9; ctx.fillStyle = c.primary; ctx.fill(path);
-    ctx.globalAlpha = 1; ctx.strokeStyle = c.bg; ctx.lineWidth = 2.5; ctx.stroke(path);
-    ctx.fillStyle = "rgba(255,255,255,.28)";
-    ctx.beginPath(); ctx.arc(-half * sc * 0.3, P.d * sc - half * sc * 0.32, Math.max(half * sc, 7) * 0.28, 0, TAU); ctx.fill();
-  }
-  ctx.restore();
-}
-
-function draw(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  ctx.fillStyle = c.bg;
-  ctx.fillRect(0, 0, w, h);
-  const v = (view = computeView(w, h));
-  const sc = v.s;
-  const th = s.th;
-
-  // Tayanch (devor)
-  ctx.save();
-  ctx.fillStyle = c.sunken;
-  ctx.fillRect(v.cx - 5, 0, 10, v.pivotY);
-  ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5;
-  ctx.strokeRect(v.cx - 5 + 0.5, -2, 9, v.pivotY + 2);
-  ctx.beginPath(); ctx.arc(v.cx, v.pivotY, 15, 0, TAU); ctx.fillStyle = c.sunken; ctx.fill(); ctx.stroke();
-  ctx.restore();
-
-  // Muvozanat chizig'i
-  ctx.save();
-  ctx.strokeStyle = c.border; ctx.lineWidth = 1.5; ctx.setLineDash([5, 6]);
-  ctx.beginPath(); ctx.moveTo(v.cx, v.pivotY); ctx.lineTo(v.cx, Math.min(h - 8, v.pivotY + v.uRef * sc)); ctx.stroke();
-  ctx.restore();
-
-  // Taqqoslash: massa markazida to'plangan nuqta (L = d)
-  if (ui.show.ghost) {
-    const g = axisPt(v, P.d, ghost.th);
-    ctx.save();
-    ctx.strokeStyle = c.text3; ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
-    ctx.beginPath(); ctx.moveTo(v.cx, v.pivotY); ctx.lineTo(g.x, g.y); ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.beginPath(); ctx.arc(g.x, g.y, 8, 0, TAU); ctx.fillStyle = c.bg; ctx.fill(); ctx.stroke();
-    ctx.restore();
-    tag(ctx, "L = d", g.x + (g.x >= v.cx ? 14 : -14), g.y + 14, { color: c.text2, bg: c.bg, align: g.x >= v.cx ? "left" : "right", font: "600 11px Inter, system-ui, sans-serif" });
-  }
-
-  // Burchak yoyi
-  if (Math.abs(th) > 2 * DEG) {
-    const ar = Math.min(50, v.uRef * sc * 0.28);
-    angleArc(ctx, v.cx, v.pivotY, ar, Math.PI / 2, Math.PI / 2 - th, c.text2, { label: "θ", labelR: ar + 15, font: "italic 600 17px 'Times New Roman', serif" });
-  }
-
-  drawBody(ctx, c, v);
-
-  // Massa markazi va tebranish markazi
-  const cm = axisPt(v, P.d, th);
-  const lr = Lred();
-  const oc = axisPt(v, lr, th);
-  if (ui.show.center && Math.hypot(oc.x - cm.x, oc.y - cm.y) > 18) {
-    const room = (h - 14 - v.pivotY) / sc;
-    const shown = lr <= room ? oc : axisPt(v, room, th);
-    ctx.save();
-    ctx.strokeStyle = c.special; ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
-    ctx.beginPath(); ctx.moveTo(v.cx, v.pivotY); ctx.lineTo(shown.x, shown.y); ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle = c.bg; ctx.lineWidth = 2.5;
-    ctx.beginPath(); ctx.arc(shown.x, shown.y, 7, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.restore();
-    const out = shown.x >= v.cx ? 1 : -1;
-    tag(ctx, lr <= room ? "O′" : `O′ pastda (${fmt(lr, 2)} m)`, shown.x + out * 14, shown.y, { color: c.special, bg: c.bg, align: out > 0 ? "left" : "right", font: "700 12px Inter, system-ui, sans-serif" });
-  }
-
-  // Kuchlar
-  const mg = P.m * P.g;
-  const kF = 52 / mg;
-  const italic = "italic 700 14px 'Times New Roman', serif";
-  if (ui.show.forces) {
-    arrow(ctx, cm.x, cm.y, 0, mg * kF, c.special, { width: 3, label: "mg", font: italic });
-    const R = pivotReaction({ m: P.m, d: P.d, g: P.g }, th, s.w, alphaOf(s));
-    const rl = Math.hypot(R.x, R.y) * kF;
-    const sclR = rl > 140 ? 140 / rl : 1;
-    arrow(ctx, v.cx, v.pivotY, R.x * kF * sclR, -R.y * kF * sclR, c.success, { width: 3, label: "R", font: italic });
-  }
-  if (ui.show.velocity) {
-    const vRef = Math.sqrt(P.g * Math.max(P.d, 0.05));
-    const len = clamp((P.d * s.w / vRef) * 54, -130, 130);
-    arrow(ctx, cm.x, cm.y, Math.cos(th) * len, -Math.sin(th) * len, c.warning, { width: 3, label: "v", font: italic });
-  }
-
-  // Massa markazi (⊕)
-  ctx.save();
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.text; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.arc(cm.x, cm.y, 6, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.text;
-  ctx.beginPath(); ctx.moveTo(cm.x, cm.y); ctx.arc(cm.x, cm.y, 6, 0, Math.PI / 2); ctx.closePath(); ctx.fill();
-  ctx.beginPath(); ctx.moveTo(cm.x, cm.y); ctx.arc(cm.x, cm.y, 6, Math.PI, Math.PI * 1.5); ctx.closePath(); ctx.fill();
-  ctx.restore();
-  tag(ctx, "C", cm.x + 16, cm.y - 12, { color: c.text, bg: c.bg, font: "700 12px Inter, system-ui, sans-serif" });
-
-  // Osish nuqtasi
-  ctx.save();
-  ctx.fillStyle = c.text;
-  ctx.beginPath(); ctx.arc(v.cx, v.pivotY, 5.5, 0, TAU); ctx.fill();
-  ctx.fillStyle = c.bg;
-  ctx.beginPath(); ctx.arc(v.cx, v.pivotY, 2, 0, TAU); ctx.fill();
-  ctx.restore();
-  tag(ctx, "O", v.cx - 16, v.pivotY - 14, { color: c.text, bg: c.bg, align: "right", font: "700 12px Inter, system-ui, sans-serif" });
-
-  // d belgisi
-  if (Math.abs(th) < 60 * DEG && P.d * sc > 40) {
-    const mid = axisPt(v, P.d * 0.5, th);
-    const off = th >= 0 ? 1 : -1;
-    tag(ctx, `d = ${fmt(P.d, 3)} m`, mid.x + off * 20, mid.y, { color: c.text2, bg: c.bg, align: off < 0 ? "right" : "left", font: "600 11px Inter, system-ui, sans-serif" });
-  }
-
-  tag(ctx, `t = ${fmt(s.t, 1)} s`, 12, 20, { color: c.text2, bg: c.bg2, font: "600 12px Inter, system-ui, sans-serif" });
-  const unit = niceScaleLength(sc);
-  const sx = 14, sy = h - 16, sl = unit * sc;
-  ctx.save();
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(sx, sy - 5); ctx.lineTo(sx, sy + 5); ctx.moveTo(sx, sy); ctx.lineTo(sx + sl, sy); ctx.moveTo(sx + sl, sy - 5); ctx.lineTo(sx + sl, sy + 5); ctx.stroke();
-  ctx.fillStyle = c.text2;
-  ctx.font = "600 11px Inter, system-ui, sans-serif";
-  ctx.textAlign = "left"; ctx.textBaseline = "bottom";
-  ctx.fillText(`${fmt(unit, unit < 1 ? (unit < 0.1 ? 2 : 1) : 0)} m`, sx + sl + 8, sy + 5);
-  ctx.restore();
-}
+/* ------------------------------------------------------------------ 3D laboratoriya */
+const scene = createPhysicalPendulumLab();
+function draw(ctx, stage) { scene.draw(ctx, stage, P, s, ghost, ui.show); }
 
 /* ------------------------------------------------------------------ T(d) grafigi */
 
@@ -431,7 +233,7 @@ function updateUI() {
 
 /* ------------------------------------------------------------------ Boshqaruv */
 
-const stage = createStage($("#stage"), draw, { height: (w) => splitHeights(w).stage });
+const stage = createStage($("#stage"), draw, { height: labStageHeight });
 const graph = createStage($("#graph"), drawGraphCanvas, { height: (w) => splitHeights(w).graph });
 const canvas = stage.canvas;
 const playBtn = $("[data-play]");
@@ -592,60 +394,18 @@ graph.canvas.addEventListener("pointerdown", (e) => {
   }
 });
 
-/* Jismni sudrash */
-let drag = null;
-function pointerInfo(e) {
-  const r = canvas.getBoundingClientRect();
-  const dx = e.clientX - r.left - view.cx, dy = e.clientY - r.top - view.pivotY;
-  const u = (dx * Math.sin(s.th) + dy * Math.cos(s.th)) / view.s;
-  const x = (dx * Math.cos(s.th) - dy * Math.sin(s.th)) / view.s;
-  return { dx, dy, u, x };
-}
-function hitBody(e) {
-  const { u, x } = pointerInfo(e);
-  const half = shapeInfo().half(P.S), pad = 14 / view.s;
-  const near = (a, b, v) => v >= a - pad && v <= b + pad;
-  switch (P.shape) {
-    case "rod": return Math.abs(x) <= Math.max(0.022 * P.S, 4.5 / view.s) + pad && near(P.d - half, P.d + half, u);
-    case "plate": return Math.abs(x) <= P.S / 4 + pad && near(P.d - half, P.d + half, u);
-    case "ball": return Math.hypot(x, u - P.d) <= half + pad || (Math.abs(x) <= pad && near(0, P.d, u));
-    default: return Math.hypot(x, u - P.d) <= half + pad;
-  }
-}
-function angleFromPointer(e) {
-  const { dx, dy } = pointerInfo(e);
-  let a = Math.atan2(dx, dy);
-  if (drag.flip) a += Math.PI;
-  return clamp(wrapAngle(a), -175 * DEG, 175 * DEG);
-}
-canvas.addEventListener("pointerdown", (e) => {
-  if (!hitBody(e)) return;
-  drag = { flip: pointerInfo(e).u < 0 };
-  loop.stop();
-  canvas.dataset.dragging = "true";
-  canvas.setPointerCapture(e.pointerId);
-  init.th = angleFromPointer(e); init.w = 0;
-  th0Ctl.set(Math.round(init.th / DEG));
-  resetSim(); renderAll(); updateUI();
-});
-canvas.addEventListener("pointermove", (e) => {
-  if (drag) {
-    init.th = angleFromPointer(e);
+/* 3D kameradan mustaqil ravishda jismning o‘z nuqtasini sudrash. */
+bindLabCamera(canvas, scene.lab, renderAll, {
+  start() { loop.stop(); },
+  move(id, pointer) {
+    const angle = scene.angle(id, pointer.x, pointer.y);
+    if (angle === null) return;
+    init.th = angle; init.w = 0;
     th0Ctl.set(Math.round(init.th / DEG));
     resetSim(); renderAll(); updateUI();
-    return;
-  }
-  canvas.style.cursor = hitBody(e) ? "grab" : "default";
+  },
+  end(id, cancelled) { if (!cancelled) loop.start(); },
 });
-const endDrag = () => {
-  if (!drag) return;
-  drag = null;
-  canvas.dataset.dragging = "false";
-  loop.start();
-  renderAll();
-};
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* Boshlash */
 syncG();

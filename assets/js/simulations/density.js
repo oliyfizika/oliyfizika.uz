@@ -7,15 +7,14 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow } from "./sim-kit.js";
+import { clamp, fmt, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { createDensityLab } from "./density-lab-3d.js?v=20261123-batch6d";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch6d";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch6d";
 import * as P from "./density-physics.js";
 import { drawTable, drawForces, lastFrame } from "./density-plots.js";
 
 const $ = (s) => document.querySelector(s);
-const TAU = Math.PI * 2;
-const SMALL = "600 10px Inter, system-ui, sans-serif";
-const MID = "600 11px Inter, system-ui, sans-serif";
-const BOLD = "700 13px Inter, system-ui, sans-serif";
 const BODIES = {
   cu: { name: "Mis silindr", mat: "copper", m: 89.0, V: 10, shape: "cyl" },
   al: { name: "Alyuminiy brusok", mat: "alu", m: 54.0, V: 20, shape: "box" },
@@ -29,8 +28,6 @@ const FBODY = { A: 16, H: 5 }; // suzish: 4 × 4 × 5 cm brusok
 const F_MATS = ["cork", "wood", "ice", "paraffin", "egg", "plastic", "alu", "steel", "copper", "lead"];
 const TABLE_KEYS = ["cork", "wood", "ice", "egg", "glass", "granite", "alu", "zinc", "steel", "copper", "silver", "lead", "gold"];
 const DEPTH = 10; // idish chuqurligi (suyuqlik), cm
-/** Suzish sahnasi masshtabi (px/cm): yuqorida dinamometr + ip + brusok (9,8 cm), pastda idish */
-const floatScale = (h) => (h - 24) / (DEPTH + 9.8);
 
 /* ------------------------------------------------------------------ Holat */
 
@@ -39,7 +36,8 @@ const mass = { body: "cu", pan: [], th: 0, w: 0 };
 const dens = { body: "cu", V1: 100, inCyl: false, drop: 0 };
 const fl = { mat: "alu", liq: "water", d: 0, free: false, y: 0, v: 0 };
 let presetId = null, running = false;
-const geo = {};
+let drag = null;
+const wLabel = wg => wg >= 1 ? `${fmt(wg,0)} g` : `${fmt(wg*1000,0)} mg`;
 
 const panMass = () => P.sumWeights(mass.pan.map((i) => P.WEIGHTS[i]));
 const bodyM = (k) => BODIES[k].m;
@@ -53,203 +51,11 @@ function flDepth() {
 }
 const flCfg = () => ({ m: flM(), A: FBODY.A, H: FBODY.H, rhoL: flRhoL(), d: flDepth() });
 
-/* ------------------------------------------------------------------ Chizish yordamchilari */
-
-function body(ctx, c, k, x, y, s) { // markazi (x, y), o'lcham s
-  const b = BODIES[k] || { shape: "box", mat: k }, col = P.MATERIALS[b.mat].color;
-  const g = ctx.createLinearGradient(x - s, y - s, x + s, y + s); g.addColorStop(0, col); g.addColorStop(1, shade(col, -0.3));
-  ctx.fillStyle = g; ctx.strokeStyle = shade(col, -0.45); ctx.lineWidth = 1.2; ctx.beginPath();
-  if (b.shape === "ball") ctx.arc(x, y, s * 0.7, 0, TAU);
-  else if (b.shape === "cyl") ctx.roundRect(x - s * 0.55, y - s, s * 1.1, s * 2, 4);
-  else if (b.shape === "rock") { ctx.moveTo(x - s, y + s * 0.6); ctx.lineTo(x - s * 0.8, y - s * 0.5); ctx.lineTo(x - s * 0.1, y - s * 0.9); ctx.lineTo(x + s * 0.9, y - s * 0.4); ctx.lineTo(x + s, y + s * 0.5); ctx.lineTo(x + s * 0.2, y + s * 0.9); ctx.closePath(); }
-  else ctx.rect(x - s, y - s * 0.7, s * 2, s * 1.4);
-  ctx.fill(); ctx.stroke();
-}
-function shade(hex, f) {
-  const n = parseInt(hex.slice(1), 16), r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255, t = f < 0 ? 0 : 255, p = Math.abs(f);
-  return `rgb(${Math.round((t - r) * p + r)},${Math.round((t - g) * p + g)},${Math.round((t - b) * p + b)})`;
-}
-function weightShape(ctx, c, x, yb, wg) { // yb — taglik
-  const big = wg >= 1, hh = big ? 8 + Math.cbrt(wg) * 4.5 : 3, ww = big ? 9 + Math.cbrt(wg) * 4.5 : 14;
-  if (big) {
-    const g = ctx.createLinearGradient(x - ww / 2, 0, x + ww / 2, 0); g.addColorStop(0, "#fbbf24"); g.addColorStop(1, "#b45309");
-    ctx.fillStyle = g; ctx.fillRect(x - ww / 2, yb - hh, ww, hh); ctx.fillRect(x - ww * 0.18, yb - hh - 5, ww * 0.36, 5);
-    ctx.beginPath(); ctx.arc(x, yb - hh - 7, ww * 0.16, 0, TAU); ctx.fill();
-  } else { ctx.fillStyle = c.dark ? "#cbd5e1" : "#94a3b8"; ctx.beginPath(); ctx.moveTo(x - ww / 2, yb); ctx.lineTo(x + ww / 2, yb); ctx.lineTo(x + ww / 2, yb - hh); ctx.lineTo(x - ww / 2 + 4, yb - hh); ctx.closePath(); ctx.fill(); }
-  return { w: ww, h: hh + (big ? 9 : 0) };
-}
-const wLabel = (wg) => (wg >= 1 ? `${fmt(wg, 0)} g` : `${fmt(wg * 1000, 0)} mg`);
-
-/* ------------------------------------------------------------------ 1. Tarozi */
-
-function drawMassStage(ctx, c, w, h) {
-  const narrow = w < 560, cx = narrow ? w * 0.4 : w * 0.34, py = 64, Lb = Math.min(150, w * (narrow ? 0.34 : 0.24)), th = mass.th;
-  // tirgak
-  ctx.fillStyle = c.dark ? "#475569" : "#94a3b8"; ctx.fillRect(cx - 5, py, 10, h - py - 26); ctx.fillRect(cx - 60, h - 28, 120, 10);
-  // shkala va strelka
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(cx, py, 60, Math.PI / 2 - 0.3, Math.PI / 2 + 0.3); ctx.stroke();
-  for (let k = -3; k <= 3; k++) { const a = Math.PI / 2 + k * 0.1; ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * 56, py + Math.sin(a) * 56); ctx.lineTo(cx + Math.cos(a) * (k ? 62 : 66), py + Math.sin(a) * (k ? 62 : 66)); ctx.stroke(); }
-  ctx.strokeStyle = c.danger; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx, py); ctx.lineTo(cx + Math.sin(th) * 58, py + Math.cos(th) * 58); ctx.stroke();
-  // shayin
-  const lx = cx - Lb * Math.cos(th), ly = py + Lb * Math.sin(th), rx = cx + Lb * Math.cos(th), ry = py - Lb * Math.sin(th);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 6; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(rx, ry); ctx.stroke(); ctx.lineCap = "butt";
-  ctx.fillStyle = c.warning; ctx.beginPath(); ctx.moveTo(cx, py - 4); ctx.lineTo(cx - 7, py + 8); ctx.lineTo(cx + 7, py + 8); ctx.closePath(); ctx.fill();
-  // pallalar
-  const pw = Math.min(92, Lb * 0.75), drop = Math.min(96, h * 0.32);
-  const pan = (x, y) => {
-    ctx.strokeStyle = c.text3; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - pw / 2, y + drop); ctx.moveTo(x, y); ctx.lineTo(x + pw / 2, y + drop); ctx.stroke();
-    ctx.fillStyle = c.dark ? "#64748b" : "#cbd5e1"; ctx.beginPath(); ctx.ellipse(x, y + drop + 3, pw / 2 + 4, 6, 0, 0, TAU); ctx.fill();
-    return y + drop;
-  };
-  const lb = pan(lx, ly), rb = pan(rx, ry);
-  body(ctx, c, mass.body, lx, lb - 16, 15);
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(BODIES[mass.body].name, lx, lb + 12);
-  // o'ng pallada toshlar
-  geo.panItems = []; let px0 = rx - pw / 2 + 8, row = 0, cxw = px0;
-  mass.pan.forEach((i) => {
-    const wg = P.WEIGHTS[i], wd = wg >= 1 ? 9 + Math.cbrt(wg) * 4.5 : 14;
-    if (cxw + wd > rx + pw / 2 - 4) { row++; cxw = px0; }
-    const sz = weightShape(ctx, c, cxw + wd / 2, rb - row * 26, wg);
-    geo.panItems.push({ i, x: cxw, y: rb - row * 26 - sz.h, w: wd, h: sz.h });
-    cxw += wd + 3;
-  });
-  geo.pan = { x: rx - pw / 2 - 16, y: ry - 10, w: pw + 32, h: drop + 50 }; // tosh tashlanadigan zona (keng)
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(`toshlar: ${fmt(panMass(), 1)} g`, rx, rb + 12);
-  // toshlar qutisi
-  const bx = narrow ? 8 : cx + Lb + 70, bw = narrow ? w - 16 : w - bx - 12, by = narrow ? h - 70 : 20;
-  geo.box = [];
-  if (!narrow) {
-    ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.roundRect(bx, by, bw, h - by - 16, 8); ctx.fill(); ctx.stroke();
-    ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText("Toshlar qutisi (gira)", bx + 8, by + 6);
-    const cols = Math.max(2, Math.floor((bw - 12) / 48)), cell = (bw - 12) / cols;
-    P.WEIGHTS.forEach((wg, i) => {
-      const k = i, gx = bx + 6 + (k % cols) * cell + cell / 2, gy = by + 30 + Math.floor(k / cols) * 46 + 30;
-      const on = mass.pan.includes(i);
-      ctx.globalAlpha = on ? 0.18 : 1; weightShape(ctx, c, gx, gy, wg); ctx.globalAlpha = 1;
-      ctx.font = SMALL; ctx.fillStyle = on ? c.text3 : c.text; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(wLabel(wg), gx, gy + 3);
-      if (!on) geo.box.push({ i, x: gx - cell / 2 + 2, y: gy - 36, w: cell - 4, h: 50 });
-    });
-  }
-  if (geo.dragW) { weightShape(ctx, c, geo.dragW.x, geo.dragW.y, P.WEIGHTS[geo.dragW.i]); }
-  // holat yozuvi
-  const dm = panMass() - bodyM(mass.body), bal = P.balanceAngle(dm) === 0;
-  tag(ctx, bal ? `Muvozanat: m = ${fmt(panMass(), 1)} g` : dm < 0 ? "Chap palla og‘ir — tosh qo‘shing" : "O‘ng palla og‘ir — toshni oling", cx, 18, { color: bal ? c.success : c.text, bg: c.bg2, align: "center", font: BOLD });
-}
-
-/* ------------------------------------------------------------------ 2. Zichlik */
-
-function drawDensStage(ctx, c, w, h) {
-  const narrow = w < 560, B = BODIES[dens.body], cylX = narrow ? w * 0.5 : w * 0.42, cw = 64, top = 24, bot = h - 26, cap = 250, H = bot - top;
-  const Y = (V) => bot - (V / cap) * H, V2 = dens.V1 + (dens.inCyl ? B.V : 0);
-  // elektron tarozi
-  const sx = narrow ? 14 : 30, sy = h - 40, sw = narrow ? 92 : 130;
-  ctx.fillStyle = c.dark ? "#334155" : "#e2e8f0"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.roundRect(sx, sy, sw, 26, 6); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.dark ? "#052e16" : "#ecfdf5"; ctx.fillRect(sx + 10, sy + 5, sw - 20, 16);
-  ctx.font = "700 12px ui-monospace, SFMono-Regular, Menlo, monospace"; ctx.fillStyle = c.success; ctx.textAlign = "right"; ctx.textBaseline = "middle";
-  ctx.fillText(`${fmt(dens.inCyl ? 0 : B.m, 1)} g`, sx + sw - 14, sy + 13);
-  ctx.fillStyle = c.dark ? "#475569" : "#cbd5e1"; ctx.fillRect(sx + 10, sy - 4, sw - 20, 4);
-  geo.scale = { x: sx, y: sy - 50, w: sw, h: 60 };
-  // menzurka: suv
-  const col = P.LIQUIDS.water.color;
-  ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${c.dark ? 0.3 : 0.35})`; ctx.fillRect(cylX - cw / 2, Y(V2), cw, bot - Y(V2));
-  ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cylX - cw / 2, Y(V2) + 3); ctx.quadraticCurveTo(cylX, Y(V2) + 7, cylX + cw / 2, Y(V2) + 3); ctx.stroke();
-  // jism
-  if (dens.inCyl) {
-    const s = Math.min(18, cw * 0.28), by = bot - s - 2 - dens.drop * (bot - Y(V2) - 2 * s);
-    if (B.mat === "wood") { ctx.strokeStyle = c.text2; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(cylX + 4, by - s); ctx.lineTo(cylX + 30, top - 8); ctx.stroke(); }
-    body(ctx, c, dens.body, cylX, by, s);
-    geo.bodyAt = { x: cylX, y: by, r: s + 8 };
-  } else if (!geo.dragBody) { body(ctx, c, dens.body, sx + sw / 2, sy - 22, 18); geo.bodyAt = { x: sx + sw / 2, y: sy - 22, r: 26 }; }
-  if (geo.dragBody) body(ctx, c, dens.body, geo.dragBody.x, geo.dragBody.y, 18);
-  // shisha va shkala
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cylX - cw / 2 - 6, top - 6); ctx.lineTo(cylX - cw / 2, top); ctx.lineTo(cylX - cw / 2, bot); ctx.lineTo(cylX + cw / 2, bot); ctx.lineTo(cylX + cw / 2, top); ctx.stroke();
-  ctx.fillRect(cylX - cw / 2 - 12, bot, cw + 24, 6);
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.lineWidth = 1;
-  for (let v = 10; v <= cap; v += 10) { const y = Y(v), big = v % 50 === 0; ctx.strokeStyle = c.text3; ctx.beginPath(); ctx.moveTo(cylX - cw / 2, y); ctx.lineTo(cylX - cw / 2 + (big ? 16 : 8), y); ctx.stroke(); if (big) ctx.fillText(String(v), cylX - cw / 2 - 4, y); }
-  ctx.textAlign = "left"; ctx.fillText("mL", cylX - cw / 2 - 4, top - 14);
-  geo.cyl = { x: cylX - cw / 2 - 10, y: top - 10, w: cw + 20, h: bot - top + 10 };
-  // lupa: sath atrofida 2 mL bo'limli shkala
-  const lx = cylX + cw / 2 + (narrow ? 14 : 40), lw = narrow ? w - lx - 8 : Math.min(150, w - lx - 180), ly = top + 6, lh = Math.min(150, h - 70);
-  if (lw > 60) {
-    ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.roundRect(lx, ly, lw, lh, 10); ctx.fill(); ctx.stroke();
-    ctx.save(); ctx.beginPath(); ctx.roundRect(lx + 1, ly + 1, lw - 2, lh - 2, 9); ctx.clip();
-    const k = lh / 24, Yz = (v) => ly + lh / 2 - (v - V2) * k;
-    ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${c.dark ? 0.3 : 0.35})`; ctx.fillRect(lx, Yz(V2) + 4, lw, lh);
-    ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(lx, Yz(V2) - 2); ctx.quadraticCurveTo(lx + lw / 2, Yz(V2) + 8, lx + lw, Yz(V2) - 2); ctx.stroke();
-    ctx.strokeStyle = c.text2; ctx.fillStyle = c.text; ctx.lineWidth = 1; ctx.font = MID; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-    for (let v = Math.floor((V2 - 14) / 2) * 2; v <= V2 + 14; v += 2) { const y = Yz(v), big = v % 10 === 0; ctx.beginPath(); ctx.moveTo(lx, y); ctx.lineTo(lx + (big ? 26 : 14), y); ctx.stroke(); if (big) ctx.fillText(`${v} mL`, lx + 30, y); }
-    ctx.restore();
-    ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText("lupa: bo‘lim 2 mL, sath botiq yuza (menisk) pastidan o‘qiladi", lx, ly + lh + 4);
-  }
-  // natija
-  if (!narrow && w - (lx + lw) > 160) {
-    const ix = lx + lw + 18; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.font = MID; ctx.fillStyle = c.text2;
-    const Vr = P.readCylinder(V2) - P.readCylinder(dens.V1);
-    [`m = ${fmt(B.m, 1)} g (tarozida)`, `V₁ = ${P.readCylinder(dens.V1)} mL`, dens.inCyl ? `V₂ = ${P.readCylinder(V2)} mL` : "V₂ = ? (jismni soling)", dens.inCyl ? `V = V₂ − V₁ = ${Vr} cm³` : "", dens.inCyl ? `ρ = m/V = ${fmt(B.m / Vr, 2)} g/cm³` : ""].filter(Boolean).forEach((l, k) => ctx.fillText(l, ix, top + 4 + k * 18));
-  }
-}
-
-/* ------------------------------------------------------------------ 3. Suzish */
-
-function drawFloatStage(ctx, c, w, h) {
-  const narrow = w < 560, cx = narrow ? w * 0.42 : w * 0.34, k = floatScale(h), ys = 10 + 9.8 * k, bot = ys + DEPTH * k;
-  const tw = Math.min(250, w * 0.46), liq = P.LIQUIDS[fl.liq], cfg = flCfg(), d = cfg.d, read = fl.free ? 0 : P.springReading(cfg);
-  const bw = 4 * k, bh = FBODY.H * k, bodyTop = ys + d * k - bh;
-  // idish
-  ctx.fillStyle = `rgba(${liq.color[0]},${liq.color[1]},${liq.color[2]},${c.dark ? 0.3 : 0.4})`; ctx.fillRect(cx - tw / 2, ys, tw, bot - ys);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx - tw / 2, ys - 3 * k); ctx.lineTo(cx - tw / 2, bot); ctx.lineTo(cx + tw / 2, bot); ctx.lineTo(cx + tw / 2, ys - 3 * k); ctx.stroke();
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "bottom"; ctx.fillText(`${liq.name}, ρ = ${fmt(liq.rho * 1000, 0)} kg/m³`, cx - tw / 2 + 4, bot - 4);
-  // dinamometr
-  const dynBot = fl.free ? 22 + 4.5 * k : bodyTop - 0.5 * k, dynH = 4 * k, dynY = Math.max(4, dynBot - dynH - (fl.free ? 0 : 0));
-  const pMax = 10, frac = clamp(read / pMax, 0, 1);
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.roundRect(cx - 22, dynY - dynH * 0.2, 44, dynH, 6); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1; ctx.font = "500 8px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text3; ctx.textAlign = "right"; ctx.textBaseline = "middle";
-  const s0 = dynY - dynH * 0.2 + 8, s1 = dynY + dynH * 0.8 - 8;
-  for (let n = 0; n <= pMax; n += 2) { const yy = s0 + (n / pMax) * (s1 - s0); ctx.beginPath(); ctx.moveTo(cx + 4, yy); ctx.lineTo(cx + 12, yy); ctx.stroke(); ctx.fillText(String(n), cx + 2, yy); }
-  ctx.fillStyle = c.danger; ctx.fillRect(cx + 4, s0 + frac * (s1 - s0) - 1.5, 12, 3);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx, dynY - dynH * 0.2); ctx.lineTo(cx, 0); ctx.stroke();
-  geo.dyn = { x: cx - 26, y: dynY - dynH * 0.2 - 6, w: 52, h: dynH + 12 };
-  tag(ctx, `${fmt(read, 2)} N`, cx + 24, dynY + dynH * 0.3, { color: c.text, bg: c.bg2, font: BOLD });
-  // ip
-  const hookY = dynY + dynH * 0.8;
-  if (!fl.free) {
-    const taut = read > 1e-6; ctx.strokeStyle = c.text2; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(cx, hookY);
-    if (taut) ctx.lineTo(cx, bodyTop); else ctx.quadraticCurveTo(cx + 14, (hookY + bodyTop) / 2, cx, bodyTop); ctx.stroke();
-  } else { ctx.strokeStyle = c.text3; ctx.setLineDash([3, 3]); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(cx, hookY); ctx.lineTo(cx, hookY + 12); ctx.stroke(); ctx.setLineDash([]); }
-  // jism
-  const mat = P.MATERIALS[fl.mat];
-  ctx.fillStyle = mat.color; ctx.strokeStyle = shade(mat.color, -0.45); ctx.lineWidth = 1.5;
-  if (fl.mat === "egg") { ctx.beginPath(); ctx.ellipse(cx, bodyTop + bh / 2, bw / 2, bh / 2, 0, 0, TAU); ctx.fill(); ctx.stroke(); }
-  else { ctx.fillRect(cx - bw / 2, bodyTop, bw, bh); ctx.strokeRect(cx - bw / 2, bodyTop, bw, bh); }
-  // botgan qism chizig'i
-  ctx.strokeStyle = `rgba(${liq.color[0]},${liq.color[1]},${liq.color[2]},0.9)`; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx - tw / 2, ys); ctx.lineTo(cx + tw / 2, ys); ctx.stroke();
-  // kuchlar
-  const mid = bodyTop + bh / 2, b = P.buoyancy(cfg), mg = P.weight(cfg.m), Fsc = 56 / Math.max(mg, b.FA, 0.05); // eng katta kuch 56 px
-  arrow(ctx, cx - bw / 2 - 16, mid, 0, mg * Fsc, c.danger, { width: 2.5, head: 8, label: "mg" });
-  if (b.FA > 1e-4) arrow(ctx, cx + bw / 2 + 16, mid, 0, -b.FA * Fsc, c.primary, { width: 2.5, head: 8, label: "F_A" });
-  if (read > 1e-4) arrow(ctx, cx, bodyTop - 2, 0, -read * Fsc, c.success, { width: 2.2, head: 7, label: narrow ? "" : "T" });
-  // ma'lumot
-  if (narrow) return;
-  const ix = cx + tw / 2 + 30; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.font = "700 14px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text;
-  ctx.fillText(`${mat.name} brusok (4×4×5 cm)`, ix, 14);
-  ctx.font = MID; ctx.fillStyle = c.text2;
-  const fd = P.floatDepth({ m: cfg.m, A: FBODY.A, H: FBODY.H, rhoL: liq.rho });
-  [`m = ${fmt(cfg.m, 0)} g, P = mg = ${fmt(mg, 2)} N`, `ρ jism = ${fmt(mat.rho * 1000, 0)} kg/m³`, `ρ suyuqlik = ${fmt(liq.rho * 1000, 0)} kg/m³`, `V_bot = ${fmt(b.Vsub, 1)} cm³ → F_A = ${fmt(b.FA, 3)} N`, fl.free ? "ip kesilgan" : `dinamometr: P − F_A = ${fmt(read, 3)} N`, fd !== null ? `suzadi: ${fmt((fd / FBODY.H) * 100, 0)} % botib` : "cho‘kadi (ρ jism > ρ suyuqlik)"].forEach((l, k2) => ctx.fillText(l, ix, 40 + k2 * 18));
-}
-
-/* ------------------------------------------------------------------ Asosiy chizish va grafik */
-
-function draw(ctx, st) {
-  const c = st.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, st.w, st.h);
-  if (ui.mode === "mass") drawMassStage(ctx, c, st.w, st.h);
-  else if (ui.mode === "dens") drawDensStage(ctx, c, st.w, st.h);
-  else drawFloatStage(ctx, c, st.w, st.h);
-}
-const heights = () => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(vh * 0.42, 300, 350)), graph: Math.round(clamp(vh * 0.3, 220, 280)) };
-};
-const stage = createStage($("#stage"), draw, { height: () => heights().stage });
+/* ------------------------------------------------------------------ Uch o‘lchamli tajriba */
+const scene = createDensityLab();
+function draw(ctx, st) { scene.draw(ctx, st, ui, mass, dens, fl, BODIES, flCfg(), drag); }
+const heights = () => ({ graph: Math.round(clamp(innerHeight*.3,220,280)) });
+const stage = createStage($("#stage"), draw, {height:detailedStageHeight});
 
 function drawGraphCanvas(ctx, gst) {
   if (ui.mode === "dens") {
@@ -410,50 +216,48 @@ fLiq.innerHTML = Object.entries(P.LIQUIDS).map(([k, v]) => `<option value="${k}"
 fMat.addEventListener("change", () => { fl.mat = fMat.value; customized(); if (fl.free) kick(); refresh(); });
 fLiq.addEventListener("change", () => { fl.liq = fLiq.value; customized(); if (fl.free) kick(); refresh(); });
 const fDC = bindRange($("#fD"), $("#fDOut"), (v) => `${fmt(v, 1)} cm`, (v) => { if (fl.free) { fl.free = false; } fl.d = v; customized(); refresh(); });
-$("[data-cut]").addEventListener("click", () => { customized(); if (fl.free) { fl.free = false; fl.d = 0; fDC.set(0); refresh(); return; } fl.free = true; fl.y = flDepth(); fl.v = 0; kick(); refresh(); });
+function cutRope() {
+  customized();
+  if(fl.free){fl.free=false;fl.d=0;fDC.set(0);refresh();return;}
+  const depth=flDepth();fl.free=true;fl.y=depth;fl.v=0;kick();refresh();
+}
+$("[data-cut]").addEventListener("click",cutRope);
 function syncCut() { $("[data-cut]").textContent = fl.free ? "Jismni qayta osish" : "Ipni kesish"; }
 
-/* Sahnada: toshlar, jism, dinamometr */
-const canvas = stage.canvas;
-let drag = null;
-const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-const inR = (p, r) => r && p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.h;
-function hit(p) {
-  if (ui.mode === "mass") {
-    const pi = (geo.panItems || []).find((q) => inR(p, { x: q.x - 2, y: q.y - 4, w: q.w + 4, h: q.h + 8 })); if (pi) return { kind: "panW", i: pi.i };
-    const bi = (geo.box || []).find((q) => inR(p, q)); if (bi) return { kind: "boxW", i: bi.i, x0: p.x, y0: p.y };
-  } else if (ui.mode === "dens") { const b = geo.bodyAt; if (b && Math.hypot(p.x - b.x, p.y - b.y) <= b.r) return { kind: "body" }; }
-  else if (inR(p, geo.dyn)) return { kind: "dyn", y0: p.y, d0: fl.free ? 0 : fl.d };
-  return null;
-}
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p); if (!h) return;
-  drag = h; customized(); e.preventDefault(); try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  canvas.dataset.dragging = "true";
-  if (h.kind === "panW") { toggleWeight(h.i); drag = null; }
-  if (h.kind === "dyn" && fl.free) { fl.free = false; fl.d = 0; drag.d0 = 0; syncCut(); }
-});
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (!drag) { const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "dyn" ? "ns-resize" : h.kind === "panW" ? "pointer" : "grab"; return; }
-  if (drag.kind === "boxW") { if (Math.hypot(p.x - drag.x0, p.y - drag.y0) > 4) drag.moved = true; geo.dragW = { i: drag.i, x: p.x, y: p.y + 8 }; stage.render(); }
-  else if (drag.kind === "body") { geo.dragBody = { x: p.x, y: p.y }; stage.render(); }
-  else if (drag.kind === "dyn") { const k = floatScale(stage.h); fl.d = clamp(Math.round((drag.d0 + (p.y - drag.y0) / k) * 10) / 10, 0, 8); fDC.set(fl.d); refresh(); }
-});
-function endDrag(e) {
-  if (!drag) return;
-  const p = e ? ptr(canvas, e) : null;
-  if (drag.kind === "boxW") { if (!drag.moved || (p && inR(p, geo.pan))) toggleWeight(drag.i); geo.dragW = null; stage.render(); }
-  else if (drag.kind === "body") {
-    const into = p && inR(p, geo.cyl);
-    if (into && !dens.inCyl) { dens.inCyl = true; dens.drop = 1; kick(); }
-    else if (!into && dens.inCyl && p) { dens.inCyl = false; dens.drop = 0; }
-    geo.dragBody = null; refresh();
+/* Sahnada: proyeksiyalangan tushirish zonalari orbitdan keyin ham ishlaydi. */
+const canvas=stage.canvas;
+const ptr=(cv,e)=>{const r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};};
+bindLabCamera(canvas,scene.lab,()=>stage.render(),{
+  start(id,p){
+    if(id.startsWith('pan-')){toggleWeight(+id.slice(4));return;}
+    if(id==='cut'){cutRope();return;}
+    drag={id,point:p,start:p,moved:false};customized();
+    if(id.startsWith('weight-'))drag.i=+id.slice(7);
+    if(id==='dyn'){
+      if(fl.free){fl.free=false;fl.d=0;syncCut();}
+      drag.offset=scene.depth(p)-fl.d;
+    }
+    if(id==='water')drag.offset=scene.water(p)-dens.V1;
+  },
+  move(id,p){
+    if(!drag||drag.id!==id)return;
+    drag.point=p;drag.moved ||= Math.hypot(p.x-drag.start.x,p.y-drag.start.y)>4;
+    if(id==='dyn'){fl.d=clamp(Math.round((scene.depth(p)-drag.offset)*10)/10,0,8);fDC.set(fl.d);}
+    else if(id==='water'){dens.V1=clamp(Math.round((scene.water(p)-drag.offset)/2)*2,40,140);v1C.set(dens.V1);}
+    refresh();
+  },
+  end(id,cancelled){
+    if(!drag||drag.id!==id)return;
+    const d=drag;drag=null;
+    if(!cancelled&&id.startsWith('weight-')){if(!d.moved||scene.inPan(d.point))toggleWeight(d.i);}
+    else if(!cancelled&&id==='body'){
+      const into=scene.inCylinder(d.point);
+      if(into&&!dens.inCyl){dens.inCyl=true;dens.drop=1;kick();}
+      else if(!into&&dens.inCyl){dens.inCyl=false;dens.drop=0;}
+    }
+    refresh();
   }
-  drag = null; canvas.dataset.dragging = "false";
-}
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", () => { geo.dragW = null; geo.dragBody = null; drag = null; stage.render(); });
+});
 
 /* Grafikda kursor */
 const gcv = graph.canvas;
@@ -496,14 +300,14 @@ function setModeUI() {
   document.querySelectorAll("[data-mode-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.modeValue === ui.mode)));
   document.querySelectorAll("[data-ctl]").forEach((el) => { el.hidden = !el.dataset.ctl.split(" ").includes(ui.mode); });
   $("[data-mode-hint]").textContent = MODE_HINT[ui.mode];
-  stage.canvas.setAttribute("aria-label", { mass: "Pallali tarozi va toshlar qutisi", dens: "Elektron tarozi va suvli menzurka, lupa", float: "Dinamometrga osilgan brusok va suyuqlikli idish" }[ui.mode]);
+  stage.canvas.setAttribute("aria-label", { mass: "Uch o‘lchamli pallali tarozi va toshlar qutisi", dens: "Uch o‘lchamli elektron tarozi va menzurka, menisk lupasi", float: "Uch o‘lchamli dinamometr, brusok va suyuqlik idishi" }[ui.mode]);
 }
 function syncAll() { bodySel.value = ui.mode === "mass" ? mass.body : dens.body; syncWeights(); v1C.set(dens.V1); fMat.value = fl.mat; fLiq.value = fl.liq; fDC.set(fl.d); syncCut(); }
 const MODE_DEFAULT = { mass: "weigh", dens: "copper", float: "archimedes" };
 document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.modeValue !== ui.mode) loadPreset(MODE_DEFAULT[b.dataset.modeValue]); }));
 function loadPreset(id) {
   const p = PRESETS[id];
-  drag = null; ui.hover = null; geo.dragW = null; geo.dragBody = null;
+  drag = null; ui.hover = null;
   ui.mode = p.mode; p.set();
   setModeUI(); presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;

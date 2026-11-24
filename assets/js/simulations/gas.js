@@ -5,12 +5,17 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { clamp, fmt, sci, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as G from "./gas-engine.js";
+import { createGasLab } from "./gas-lab-3d.js?v=20261123-batch7c";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch7c";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch7c";
 import { drawProcess, drawSpeeds, drawPressureTime, drawMixing, drawProfile, drawMSD, drawBrownX } from "./gas-plots.js";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
+// Also used by the diffusion charts and their readout legends.
+const SPECIES = ["#3b82f6", "#f97316"];
 
 /* ------------------------------------------------------------------ Model o'lchamlari */
 
@@ -145,168 +150,14 @@ const histVmax = () => 3.2 * Math.sqrt((2 * G.kTof(Math.max(cfg.T, 50))) / (ui.m
 
 /* ------------------------------------------------------------------ Chizish */
 
-const STOPS = [[0, [37, 99, 235]], [0.5, [34, 197, 94]], [1, [234, 179, 8]], [1.6, [239, 68, 68]]];
-function speedRGB(u) {
-  if (u <= STOPS[0][0]) return STOPS[0][1];
-  for (let i = 1; i < STOPS.length; i++) if (u <= STOPS[i][0]) { const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i], t = (u - a) / (b - a); return ca.map((v, k) => Math.round(v + (cb[k] - v) * t)); }
-  return STOPS[STOPS.length - 1][1];
+const scene=createGasLab();
+function draw(ctx,st) {
+  if(!w)return;
+  const pMax=Math.max(50,Math.ceil(G.idealP(nu(),800,.0006)/1000/50)*50)*1000;
+  scene.draw(ctx,st,ui,cfg,w,meas,{T:Tnow(),V:VofTop(w.top),p:meas.pEMA??idealNow(),pMax});
 }
-const SPECIES = ["#3b82f6", "#f97316"];
-
-let view = { s: 1, ox: 0, oy: 0 };
-const X = (x) => view.ox + x * view.s, Y = (y) => view.oy + y * view.s;
-
-function drawParticles(ctx, c) {
-  const n = G.count(w);
-  const rpx = Math.max(2.3, R_SMALL * view.s * 1.15);
-  const vrms = Math.sqrt(2 * kTnow());
-  for (let i = 0; i < n; i++) {
-    if (i === w.big) continue;
-    let fill;
-    if (ui.mode === "diff") fill = SPECIES[w.sp[i]];
-    else if (ui.mode === "brown") { if (cfg.hideSmall) continue; fill = c.text3; }
-    else if (cfg.colorSpeed) { const v = Math.hypot(w.vx[i], w.vy[i]) * Math.sqrt(w.m[i]); const rgb = speedRGB(v / (vrms || 1)); fill = `rgb(${rgb.join(",")})`; }
-    else fill = c.primary;
-    ctx.fillStyle = fill;
-    ctx.beginPath(); ctx.arc(X(w.x[i]), Y(w.y[i]), rpx, 0, TAU); ctx.fill();
-  }
-}
-
-function box(ctx, c, x0, y0, x1, y1, Tglow) {
-  ctx.save();
-  ctx.fillStyle = c.bg2; ctx.fillRect(X(x0), Y(y0), (x1 - x0) * view.s, (y1 - y0) * view.s);
-  const rgb = Tglow === null ? null : Tglow > 300 ? [239, 68, 68] : [59, 130, 246];
-  ctx.strokeStyle = rgb ? `rgba(${rgb.join(",")},${clamp(Math.abs(Tglow - 300) / 400, 0.15, 0.8)})` : c.borderStrong;
-  ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.moveTo(X(x0), Y(y0) - 4); ctx.lineTo(X(x0), Y(y1)); ctx.lineTo(X(x1), Y(y1)); ctx.lineTo(X(x1), Y(y0) - 4); ctx.stroke();
-  ctx.restore();
-}
-
-function gauge(ctx, c, cx, cy, R, value, max, label, unit) {
-  ctx.save();
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.fill(); ctx.stroke();
-  const a0 = Math.PI * 0.75, a1 = Math.PI * 2.25;
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1.2;
-  for (let k = 0; k <= 10; k++) { const a = a0 + ((a1 - a0) * k) / 10; ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * R * 0.78, cy + Math.sin(a) * R * 0.78); ctx.lineTo(cx + Math.cos(a) * R * (k % 5 ? 0.86 : 0.92), cy + Math.sin(a) * R * (k % 5 ? 0.86 : 0.92)); ctx.stroke(); }
-  const f = clamp(value / max, 0, 1.02), a = a0 + (a1 - a0) * f;
-  ctx.strokeStyle = c.danger; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(a) * R * 0.74, cy + Math.sin(a) * R * 0.74); ctx.stroke();
-  ctx.fillStyle = c.text2; ctx.beginPath(); ctx.arc(cx, cy, 3.5, 0, TAU); ctx.fill();
-  ctx.fillStyle = c.text3; ctx.font = "600 9.5px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  ctx.fillText(unit, cx, cy + R * 0.42);
-  ctx.restore();
-  tag(ctx, label, cx, cy + R + 14, { color: c.text, bg: c.bg, align: "center", font: "700 11.5px Inter, system-ui, sans-serif" });
-}
-
-function thermo(ctx, c, x, yTop, yBot, T) {
-  ctx.save(); ctx.lineWidth = 1.5; ctx.strokeStyle = c.borderStrong; ctx.fillStyle = c.bg;
-  ctx.beginPath(); ctx.roundRect(x - 4, yTop, 8, yBot - yTop, 4); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.danger; ctx.beginPath(); ctx.arc(x, yBot + 4, 6, 0, TAU); ctx.fill();
-  const f = clamp(T / 900, 0, 1); ctx.fillRect(x - 2, yBot - f * (yBot - yTop - 4), 4, f * (yBot - yTop - 4) + 4);
-  ctx.restore();
-}
-
-let clock = 0;
-function flame(ctx, x, y, s) {
-  const fh = 10 + 16 * s, fw = 6 + 6 * s, fl = Math.sin(clock * 17) * 0.08;
-  const g = ctx.createRadialGradient(x, y - fh * 0.35, 1, x, y - fh * 0.4, fh * 0.7);
-  g.addColorStop(0, "rgba(254,240,138,0.95)"); g.addColorStop(0.5, "rgba(251,146,60,0.85)"); g.addColorStop(1, "rgba(239,68,68,0)");
-  ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(x - fw / 2, y); ctx.quadraticCurveTo(x - fw * 0.7, y - fh * 0.5, x + fl * fh, y - fh); ctx.quadraticCurveTo(x + fw * 0.7, y - fh * 0.5, x + fw / 2, y); ctx.closePath(); ctx.fill();
-}
-
-function drawGas(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  const narrow = cw < 560;
-  const sideW = narrow ? 92 : 170;
-  view.s = Math.min((cw - sideW - 50) / GAS_W, (ch - 44) / (GAS_HMAX + 24));
-  view.ox = Math.max(30, (cw - GAS_W * view.s - sideW) / 2 + 10); view.oy = 14 + 18 * view.s;
-  const T = Tnow();
-  box(ctx, c, 0, 0, GAS_W, GAS_HMAX, Math.abs(cfg.T - T) > 8 ? cfg.T : null);
-  // hajm shkalasi
-  ctx.save(); ctx.strokeStyle = c.text3; ctx.fillStyle = c.text3; ctx.font = "600 9.5px Inter, system-ui, sans-serif"; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.lineWidth = 1;
-  for (let v = 0; v <= V_MAX + 1e-9; v += 0.5) { const y = Y(GAS_HMAX - heightOfV(v)); ctx.beginPath(); ctx.moveTo(X(0) - 6, y); ctx.lineTo(X(0) - 2, y); ctx.stroke(); if (!narrow || v % 1 === 0) ctx.fillText(fmt(v, v % 1 ? 1 : 0), X(0) - 8, y); }
-  ctx.restore();
-  // iz
-  if (cfg.trace && meas.trace.length > 1) {
-    ctx.save(); ctx.strokeStyle = "rgba(239,68,68,0.55)"; ctx.lineWidth = 1.2; ctx.beginPath();
-    meas.trace.forEach(([x, y], k) => { if (k === 0) ctx.moveTo(X(x), Y(y)); else ctx.lineTo(X(x), Y(y)); }); ctx.stroke(); ctx.restore();
-  }
-  ctx.save(); ctx.beginPath(); ctx.rect(X(0), Y(w.top), GAS_W * view.s, (GAS_HMAX - w.top) * view.s); ctx.clip();
-  drawParticles(ctx, c);
-  if (cfg.trace) { ctx.fillStyle = c.danger; ctx.strokeStyle = c.bg; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X(w.x[0]), Y(w.y[0]), Math.max(3.5, R_SMALL * view.s * 1.6), 0, TAU); ctx.fill(); ctx.stroke(); }
-  ctx.restore();
-  // porshen
-  const py = Y(w.top);
-  ctx.save();
-  ctx.fillStyle = c.text3; ctx.fillRect(X(GAS_W / 2) - 4, Y(-18), 8, py - Y(-18) - 6);
-  const pg = ctx.createLinearGradient(0, py - 10, 0, py);
-  pg.addColorStop(0, c.borderStrong); pg.addColorStop(1, c.text3);
-  ctx.fillStyle = pg; ctx.fillRect(X(0) + 2, py - 10, GAS_W * view.s - 4, 10);
-  if (ui.proc === "p") { // yuk (doimiy tashqi bosim)
-    ctx.fillStyle = c.text2; ctx.fillRect(X(GAS_W / 2) - 26, py - 26, 52, 16);
-    ctx.fillStyle = c.bg; ctx.font = "700 10px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("yuk", X(GAS_W / 2), py - 18);
-  }
-  ctx.restore();
-  // isitgich / sovitkich
-  const diff = cfg.T - T;
-  if (diff > 5) { for (let k = 0; k < 5; k++) flame(ctx, X(GAS_W * (0.2 + 0.15 * k)), Y(GAS_HMAX) + 22, clamp(diff / 200, 0.2, 1)); }
-  else if (diff < -5) { ctx.save(); ctx.strokeStyle = "rgba(59,130,246,0.8)"; ctx.lineWidth = 2; for (let k = 0; k < 5; k++) { const x = X(GAS_W * (0.2 + 0.15 * k)), y = Y(GAS_HMAX) + 12; ctx.beginPath(); for (let a = 0; a < 6; a++) { const an = (a * Math.PI) / 3; ctx.moveTo(x, y); ctx.lineTo(x + Math.cos(an) * 6, y + Math.sin(an) * 6); } ctx.stroke(); } ctx.restore(); }
-  // o'ng tomonda: manometr va termometr
-  const gx = X(GAS_W) + sideW * 0.42 + 8, R = narrow ? 30 : Math.min(44, sideW * 0.27);
-  const p = meas.pEMA ?? idealNow();
-  const pMax = Math.max(50, Math.ceil((G.idealP(nu(), 800, 0.0006) / 1000) / 50) * 50);
-  gauge(ctx, c, gx, Y(GAS_HMAX * 0.22), R, p / 1000, pMax, `${fmt(p / 1000, 1)} kPa`, "kPa");
-  const tx = narrow ? gx : gx;
-  thermo(ctx, c, tx, Y(GAS_HMAX * 0.55), Y(GAS_HMAX) - 6, T);
-  tag(ctx, `${fmt(T, 0)} K`, tx + 10, Y(GAS_HMAX * 0.62), { color: c.text, bg: c.bg, font: "700 11.5px Inter, system-ui, sans-serif" });
-  tag(ctx, `V = ${fmt(VofTop(w.top), 2)} L`, X(GAS_W / 2), Y(GAS_HMAX) + (diff > 5 || diff < -5 ? 36 : 14), { color: c.text2, bg: c.bg, align: "center", font: "600 11px Inter, system-ui, sans-serif" });
-}
-
-function drawDiff(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  view.s = Math.min((cw - 40) / DIFF_W, (ch - 50) / DIFF_H);
-  view.ox = (cw - DIFF_W * view.s) / 2; view.oy = 16;
-  box(ctx, c, 0, 0, DIFF_W, DIFF_H, null);
-  ctx.save(); ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(X(0), Y(0)); ctx.lineTo(X(DIFF_W), Y(0)); ctx.stroke(); ctx.restore();
-  if (w.barrier !== null) { ctx.save(); ctx.fillStyle = c.text2; ctx.fillRect(X(w.barrier) - 2, Y(0), 4, DIFF_H * view.s); ctx.restore(); }
-  else { ctx.save(); ctx.strokeStyle = c.border; ctx.setLineDash([4, 5]); ctx.beginPath(); ctx.moveTo(X(DIFF_W / 2), Y(0)); ctx.lineTo(X(DIFF_W / 2), Y(DIFF_H)); ctx.stroke(); ctx.restore(); }
-  ctx.save(); ctx.beginPath(); ctx.rect(X(0), Y(0), DIFF_W * view.s, DIFF_H * view.s); ctx.clip(); drawParticles(ctx, c); ctx.restore();
-  const y = Y(DIFF_H) + 16;
-  tag(ctx, `● ${G.GASES[cfg.gasA].name}`, X(DIFF_W * 0.25), y, { color: SPECIES[0], bg: c.bg, align: "center", font: "700 11px Inter, system-ui, sans-serif" });
-  tag(ctx, `● ${G.GASES[cfg.gasB].name}`, X(DIFF_W * 0.75), y, { color: SPECIES[1], bg: c.bg, align: "center", font: "700 11px Inter, system-ui, sans-serif" });
-}
-
-function drawBrown(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  view.s = Math.min((cw - 40) / BR_W, (ch - 30) / BR_H);
-  view.ox = (cw - BR_W * view.s) / 2; view.oy = 14;
-  box(ctx, c, 0, 0, BR_W, BR_H, null);
-  ctx.save(); ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(X(0), Y(0)); ctx.lineTo(X(BR_W), Y(0)); ctx.stroke(); ctx.restore();
-  ctx.save(); ctx.beginPath(); ctx.rect(X(0), Y(0), BR_W * view.s, BR_H * view.s); ctx.clip();
-  drawParticles(ctx, c);
-  if (meas.btrace.length > 1) {
-    ctx.strokeStyle = "rgba(234,88,12,0.75)"; ctx.lineWidth = 1.5; ctx.lineJoin = "round"; ctx.beginPath();
-    meas.btrace.forEach(([x, y], k) => { if (k === 0) ctx.moveTo(X(x), Y(y)); else ctx.lineTo(X(x), Y(y)); }); ctx.stroke();
-  }
-  const b = w.big;
-  const g = ctx.createRadialGradient(X(w.x[b]) - 3, Y(w.y[b]) - 3, 1, X(w.x[b]), Y(w.y[b]), w.r[b] * view.s);
-  g.addColorStop(0, "#fdba74"); g.addColorStop(1, "#ea580c");
-  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(X(w.x[b]), Y(w.y[b]), w.r[b] * view.s, 0, TAU); ctx.fill();
-  ctx.fillStyle = "#ea580c"; ctx.beginPath(); ctx.arc(X(meas.b0.x), Y(meas.b0.y), 3, 0, TAU); ctx.fill();
-  ctx.restore();
-}
-
-function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
-  if (!w) return;
-  if (ui.mode === "gas") drawGas(ctx, stage); else if (ui.mode === "diff") drawDiff(ctx, stage); else drawBrown(ctx, stage);
-}
-
-const heights = (cw) => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(Math.min(cw * 0.42, vh * 0.42), 230, 330)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
-};
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+const heights=()=>({graph:Math.round(clamp(innerHeight*.26,170,240))});
+const stage=createStage($("#stage"),draw,{height:detailedStageHeight});
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -473,7 +324,7 @@ function updateFormula() {
     : ui.mode === "diff" ? "<small>Diffuziya</small> v<sub>kv</sub> = √(3RT/M)" : "<small>Broun harakati</small> ⟨r²⟩ ∝ t";
   if (f.innerHTML !== html) f.innerHTML = html;
 }
-function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); }
+function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); }
 
 /* ------------------------------------------------------------------ Boshqaruv */
 
@@ -490,12 +341,16 @@ document.querySelectorAll("[data-proc-value]").forEach((b) => b.addEventListener
 $("[data-color-speed]").addEventListener("change", (e) => { cfg.colorSpeed = e.target.checked; stage.render(); });
 $("[data-trace]").addEventListener("change", (e) => { cfg.trace = e.target.checked; meas.trace = []; stage.render(); });
 $("[data-hide-small]").addEventListener("change", (e) => { cfg.hideSmall = e.target.checked; stage.render(); });
-$("[data-clear-trace]").addEventListener("click", () => { meas.btrace = []; meas.b0 = { x: w.x[w.big], y: w.y[w.big] }; w.time = 0; stage.render(); graph.render(); });
-$("[data-barrier]").addEventListener("click", () => {
+function resetBrownTrace() {
+  meas.btrace=[];meas.b0={x:w.x[w.big],y:w.y[w.big]};w.time=0;meas.lastRec=-1;
+}
+$("[data-clear-trace]").addEventListener("click", () => { resetBrownTrace(); stage.render(); graph.render(); });
+function toggleBarrier() {
   if (w.barrier !== null) { w.barrier = null; meas.diffStart = w.time; meas.mix = [{ t: 0, a: mixFrac(0), b: mixFrac(1) }]; meas.lastRec = w.time; }
   else rebuild();
   syncCtl(); refresh(); stage.render(); graph.render();
-});
+}
+$("[data-barrier]").addEventListener("click",toggleBarrier);
 
 const PROC_NOTE = { T: "Termostat temperaturani o‘zgarmas saqlaydi. Hajmni o‘zgartiring.", p: "Porshen ustida o‘zgarmas yuk. Temperaturani o‘zgartiring — hajm o‘zi o‘zgaradi.", V: "Porshen mahkamlangan. Temperaturani o‘zgartiring." };
 function setProc(p) {
@@ -523,6 +378,40 @@ function syncCtl() {
   $("[data-barrier]").textContent = w && w.barrier === null ? "To‘siqni qaytarish (qaytadan)" : "To‘siqni olish";
   $("[data-color-speed]").checked = cfg.colorSpeed; $("[data-trace]").checked = cfg.trace; $("[data-hide-small]").checked = cfg.hideSmall;
 }
+
+/* Uch o‘lchamli moslamadagi dastaklar. Porshen tutqichi maqsad hajmini belgilaydi. */
+const knobSpecs={
+  temp:{key:'T',min:100,max:800,step:10,control:tCtl},
+  count:{key:'N',min:40,max:()=>ui.mode==='diff'?140:ui.mode==='brown'?320:250,step:10,control:nCtl},
+  mass:{key:'bigM',min:10,max:200,step:10,control:mCtl},
+  radius:{key:'bigR',min:8,max:24,step:1,control:rCtl},
+};
+let sceneDrag=null;
+bindLabCamera(stage.canvas,scene.lab,()=>stage.render(),{
+  start(id,p){
+    if(id==='barrier'){toggleBarrier();return;}
+    const spec=knobSpecs[id];
+    sceneDrag={id,x:p.x,value:spec?cfg[spec.key]:0,wasRunning:loop.running};
+    if(id==='brown')loop.stop();
+  },
+  move(id,p){
+    if(!sceneDrag||sceneDrag.id!==id)return;
+    const spec=knobSpecs[id];
+    if(spec){
+      const max=typeof spec.max==='function'?spec.max():spec.max;
+      const v=clamp(Math.round((sceneDrag.value+(p.x-sceneDrag.x)*(max-spec.min)/180)/spec.step)*spec.step,spec.min,max);
+      if(cfg[spec.key]!==v){cfg[spec.key]=v;spec.control.set(v);if(id!=='temp')rebuild();}
+    }else if(id==='piston'&&ui.proc!=='p'){
+      cfg.V=clamp(Math.round(scene.volume(p)*20)/20,.6,2);vCtl.set(cfg.V);
+    }else if(id==='brown'&&w.big>=0){
+      const q=scene.modelPoint(p);if(!q)return;const b=w.big,r=w.r[b];
+      w.x[b]=clamp(q.x,r,w.W-r);w.y[b]=clamp(q.y,w.top+r,w.H-r);w.vx[b]=0;w.vy[b]=0;
+      resetBrownTrace();
+    }
+    customized();refresh();graph.render();
+  },
+  end(id){const resume=id==='brown'&&sceneDrag?.wasRunning;sceneDrag=null;if(resume)loop.start();refresh();},
+});
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 
@@ -556,6 +445,7 @@ function loadPreset(id) {
   rebuild();
   if (p.proc) setProc(p.proc);
   setTab(p.tab);
+  if(prefersReducedMotion())loop.stop();
   try { history.replaceState(null, "", `?preset=${id}`); } catch { /* fayl:// */ }
 }
 
@@ -585,12 +475,12 @@ document.querySelectorAll("[data-speed-value]").forEach((b) => b.addEventListene
 }));
 const playBtn = $("[data-play]");
 function syncPlay(running) {
+  playBtn.setAttribute("aria-pressed",String(running));
   playBtn.querySelector("[data-play-icon]").innerHTML = icon(running ? "pause" : "play");
   playBtn.querySelector("[data-play-text]").textContent = running ? "Pauza" : "Davom ettirish";
 }
 let uiTimer = 0;
 const loop = createLoop((dt) => {
-  clock += dt;
   if (w) stepSim(dt);
   uiTimer += dt;
   if (uiTimer > 0.15) { uiTimer = 0; refresh(); graph.render(); }

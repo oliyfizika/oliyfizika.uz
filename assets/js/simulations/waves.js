@@ -8,14 +8,15 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { clamp, fmt, createStage, createLoop, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import * as W from "./waves-physics.js";
 import * as G from "./waves-plots.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch5d";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch5d";
+import { createWavesLab } from "./waves-lab-3d.js?v=20261123-batch5d";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2;
-const SMALL = "600 10px Inter, system-ui, sans-serif";
-const MID = "600 11px Inter, system-ui, sans-serif";
 
 /* ------------------------------------------------------------------ Holat */
 
@@ -56,8 +57,12 @@ function nodes() {
 const kR = () => (TAU * rip.f) / rip.v, wR = () => TAU * rip.f, lamR = () => rip.v / rip.f;
 const srcList = () => (rip.n === 2 ? [{ ...rip.s1, phase: (rip.dphi * Math.PI) / 180 }, { ...rip.s2, phase: 0 }] : [{ ...rip.s1, phase: 0 }]);
 function setSourcesFromD() {
-  const mx = (rip.s1.x + rip.s2.x) / 2, my = (rip.s1.y + rip.s2.y) / 2;
-  let ux = rip.s2.x - rip.s1.x, uy = rip.s2.y - rip.s1.y; const l = Math.hypot(ux, uy) || 1; ux /= l; uy /= l;
+  let mx = (rip.s1.x + rip.s2.x) / 2, my = (rip.s1.y + rip.s2.y) / 2;
+  let ux = rip.s2.x - rip.s1.x, uy = rip.s2.y - rip.s1.y; const l = Math.hypot(ux, uy);
+  if (l < 1e-6) { ux = 1; uy = 0; } else { ux /= l; uy /= l; }
+  // Keep both driven tips within the tank when changing separation after a drag.
+  const dx = Math.abs(ux * rip.d / 2), dy = Math.abs(uy * rip.d / 2);
+  mx = clamp(mx, -28 + dx, 28 - dx); my = clamp(my, -18 + dy, 18 - dy);
   rip.s1 = { x: mx - (ux * rip.d) / 2, y: my - (uy * rip.d) / 2 }; rip.s2 = { x: mx + (ux * rip.d) / 2, y: my + (uy * rip.d) / 2 };
 }
 
@@ -69,201 +74,24 @@ function srcX(t) { return dop.M === 0 ? 0 : dop.x0 + srcU() * (t - dop.tStart); 
 function restartDoppler() { dop.t = 0; dop.tStart = 0; dop.x0 = dop.M === 0 ? 0 : -22; dop.fronts = []; dop.nEmit = 0; }
 function recv(obs, t = dop.t) {
   const sols = W.received(dop.f, dop.c, { x0: srcX(dop.tStart), y: 0, u: dop.M === 0 ? 0 : srcU() }, { x: obs.x - 0, y: obs.y }, t - dop.tStart);
-  return sols.filter((s) => s.te >= 0);
+  // A receiver measures the magnitude of the phase rate. On the second
+  // supersonic branch phase reversal remains encoded in te for the p(t) graph.
+  return sols.filter((s) => s.te >= 0).map((s) => ({ ...s, f: Math.abs(s.f) }));
 }
 
-/* ------------------------------------------------------------------ Dunyo → ekran */
+/* ------------------------------------------------------------------ 3D laboratoriya */
 
-const view = { s: 1, ox: 0, oy: 0, x0: 0, y1: 0 };
-function fit(cw, ch, x0, x1, y0, y1, pad = 10) {
-  const s = Math.min((cw - 2 * pad) / (x1 - x0), (ch - 2 * pad) / (y1 - y0));
-  view.s = s; view.ox = (cw - (x1 - x0) * s) / 2; view.oy = (ch - (y1 - y0) * s) / 2; view.x0 = x0; view.y1 = y1;
-}
-const SX = (x) => view.ox + (x - view.x0) * view.s;
-const SY = (y) => view.oy + (view.y1 - y) * view.s;
-const toWorld = (px, py) => ({ x: (px - view.ox) / view.s + view.x0, y: view.y1 - (py - view.oy) / view.s });
-
-/* ================================================================== 1) Ip */
-
-const sv = { x0: 56, x1: 0, y0: 0, ys: 1 };
-const PX = (x) => sv.x0 + (x / LEN) * (sv.x1 - sv.x0);
-function drawString(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  sv.x0 = 56; sv.x1 = cw - 44; sv.y0 = ch * 0.52; sv.ys = (ch * 0.34) / 0.22; // px / m
-  const u = sim.u, n = sim.n;
-  // muvozanat chizig'i
-  ctx.save(); ctx.strokeStyle = c.border; ctx.setLineDash([5, 5]); ctx.beginPath(); ctx.moveTo(sv.x0, sv.y0); ctx.lineTo(sv.x1, sv.y0); ctx.stroke(); ctx.restore();
-  // o'rovchi (turg'un to'lqin)
-  const nd = nodes();
-  if (str.env && str.wave === "trans") {
-    ctx.save(); ctx.fillStyle = "rgba(37,99,235,0.07)"; ctx.beginPath();
-    for (let i = 0; i <= n; i += 2) { const x = PX((i / n) * LEN); i ? ctx.lineTo(x, sv.y0 - str.env[i] * sv.ys) : ctx.moveTo(x, sv.y0 - str.env[i] * sv.ys); }
-    for (let i = n; i >= 0; i -= 2) ctx.lineTo(PX((i / n) * LEN), sv.y0 + str.env[i] * sv.ys);
-    ctx.closePath(); ctx.fill(); ctx.restore();
-  }
-  if (str.wave === "trans") {
-    ctx.save(); ctx.strokeStyle = c.primary; ctx.lineWidth = 2.5; ctx.beginPath();
-    for (let i = 0; i <= n; i++) { const x = PX((i / n) * LEN), y = sv.y0 - u[i] * sv.ys; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-    ctx.stroke();
-    ctx.fillStyle = c.primary;
-    for (let i = 0; i <= n; i += 10) { const x = PX((i / n) * LEN), y = sv.y0 - u[i] * sv.ys; ctx.beginPath(); ctx.arc(x, y, 3, 0, TAU); ctx.fill(); }
-    ctx.restore();
-  } else {
-    // bo'ylama: zarralar x bo'yicha siljiydi (siljish ko'ndalang rejimdagi masshtabda)
-    const bandH = ch * 0.32, top = sv.y0 - bandH / 2;
-    for (let i = 0; i < n; i += 2) {
-      const comp = -(u[i + 1] - u[i]) / sim.dx; // siqilish
-      const a = clamp(0.5 + comp * 2.5, 0, 1);
-      ctx.fillStyle = `rgba(37,99,235,${0.05 + 0.3 * a})`; ctx.fillRect(PX((i / n) * LEN), top, PX(((i + 2) / n) * LEN) - PX((i / n) * LEN) + 0.5, bandH);
-    }
-    ctx.fillStyle = c.primary;
-    for (let i = 0; i <= n; i += 5) {
-      const x = PX((i / n) * LEN) + u[i] * sv.ys;
-      for (let r = 0; r < 5; r++) { ctx.beginPath(); ctx.arc(x, top + bandH * (0.12 + 0.19 * r) + ((i * 7) % 5), 2.2, 0, TAU); ctx.fill(); }
-    }
-    // siljish grafigi
-    ctx.save(); ctx.strokeStyle = c.warning; ctx.globalAlpha = 0.8; ctx.lineWidth = 1.5; ctx.beginPath();
-    for (let i = 0; i <= n; i++) { const x = PX((i / n) * LEN), y = top - 14 - u[i] * sv.ys * 0.35; i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-    ctx.stroke(); ctx.restore();
-    tag(ctx, "zarralar siljishi (grafik)", sv.x1, top - 30, { color: c.warning, bg: c.bg, align: "right", font: SMALL });
-    tag(ctx, "quyuq — siqilish, och — siyraklanish", sv.x1, top + bandH + 14, { color: c.text2, bg: c.bg, align: "right", font: SMALL });
-  }
-  // tugunlar
-  if (str.wave === "trans") nd.forEach((x) => { ctx.fillStyle = c.danger; ctx.beginPath(); ctx.arc(PX(x), sv.y0, 4, 0, TAU); ctx.fill(); });
-  // belgilangan nuqta
-  const pi = Math.round((str.probeX / LEN) * n);
-  if (str.wave === "trans") { ctx.fillStyle = c.danger; ctx.beginPath(); ctx.arc(PX(str.probeX), sv.y0 - u[pi] * sv.ys, 6, 0, TAU); ctx.fill(); }
-  else { ctx.strokeStyle = c.danger; ctx.lineWidth = 2; ctx.beginPath(); const x = PX(str.probeX) + u[pi] * sv.ys; ctx.moveTo(x, sv.y0 - ch * 0.17); ctx.lineTo(x, sv.y0 + ch * 0.17); ctx.stroke(); }
-  // chap uchi: tebratgich yoki qo'l
-  const y0 = str.wave === "trans" ? sv.y0 - u[0] * sv.ys : sv.y0, xL = str.wave === "trans" ? sv.x0 : sv.x0 + u[0] * sv.ys;
-  ctx.save(); ctx.fillStyle = c.text2; ctx.fillRect(8, sv.y0 - 30, 22, 60); ctx.strokeStyle = c.text2; ctx.lineWidth = 3; ctx.beginPath();
-  if (str.wave === "trans") { ctx.moveTo(30, y0); ctx.lineTo(xL, y0); } else { ctx.moveTo(30, sv.y0); ctx.lineTo(xL, sv.y0); ctx.moveTo(xL, sv.y0 - ch * 0.16); ctx.lineTo(xL, sv.y0 + ch * 0.16); }
-  ctx.stroke(); ctx.restore();
-  if (str.src === "hand") { ctx.save(); ctx.fillStyle = c.warning; ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(xL, y0, 11, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); tag(ctx, "suring ↕", xL + 4, y0 - 24, { color: c.warning, bg: c.bg, font: SMALL }); }
-  // o'ng uchi
-  const xr = sv.x1, yr = str.wave === "trans" ? sv.y0 - u[n] * sv.ys : sv.y0;
-  if (str.right === "fixed") { ctx.save(); ctx.fillStyle = c.text3; ctx.fillRect(xr, sv.y0 - 50, 6, 100); ctx.strokeStyle = c.text3; ctx.beginPath(); for (let k = -50; k < 50; k += 8) { ctx.moveTo(xr + 6, sv.y0 + k); ctx.lineTo(xr + 14, sv.y0 + k - 6); } ctx.stroke(); ctx.restore(); }
-  else if (str.right === "free") { ctx.save(); ctx.strokeStyle = c.text3; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(xr + 6, sv.y0 - ch * 0.4); ctx.lineTo(xr + 6, sv.y0 + ch * 0.4); ctx.stroke(); ctx.strokeStyle = c.warning; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.ellipse(xr + 6, yr, 5, 8, 0, 0, TAU); ctx.stroke(); ctx.restore(); }
-  else { ctx.save(); ctx.fillStyle = c.bg; for (let k = 0; k < 12; k++) { ctx.globalAlpha = (k + 1) / 12; ctx.fillRect(xr - 30 + k * 5, 0, 5.5, ch); } ctx.globalAlpha = 1; ctx.fillRect(xr + 30, 0, 20, ch); ctx.restore(); tag(ctx, "davom etadi →", xr + 30, sv.y0 + 40, { color: c.text3, bg: c.bg, align: "right", font: SMALL }); }
-  // λ o'lchovi
-  if (str.src === "harm") {
-    const lam = lambda();
-    if (lam < LEN * 0.95) {
-      const yb = 22, xa = PX(0.25), xb = PX(0.25 + lam);
-      ctx.save(); ctx.strokeStyle = c.special; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(xa, yb - 6); ctx.lineTo(xa, yb + 6); ctx.moveTo(xb, yb - 6); ctx.lineTo(xb, yb + 6); ctx.moveTo(xa, yb); ctx.lineTo(xb, yb); ctx.stroke(); ctx.restore();
-      tag(ctx, `λ = ${fmt(lam, 2)} m`, (xa + xb) / 2, yb + 14, { color: c.special, bg: c.bg, align: "center", font: MID });
-    }
-  }
-  const h = standing();
-  if (h) tag(ctx, `Turg‘un to‘lqin: ${h.n}-garmonika`, cw - 12, 16, { color: c.success, bg: c.bg2, align: "right", font: MID });
-}
-
-/* ================================================================== 2) Interferensiya */
-
-let rippleImg = null;
-function drawRipple(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  fit(cw, ch, -30, 30, -20, 20, 6);
-  const S = srcList(), k = kR(), w = wR(), opts = { k, w, v: rip.v, r0: 1.5, t0: rip.t0 };
-  const gw = Math.round(clamp((60 * view.s) / 4, 90, 200)), gh = Math.round((gw * 40) / 60);
-  if (!rippleImg || rippleImg.width !== gw) { rippleImg = document.createElement("canvas"); rippleImg.width = gw; rippleImg.height = gh; }
-  const ox = rippleImg.getContext("2d"), img = ox.createImageData(gw, gh), dark = c.dark;
-  const norm = rip.n === 2 ? 0.5 : 1;
-  for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) {
-    const x = -30 + ((i + 0.5) * 60) / gw, y = 20 - ((j + 0.5) * 40) / gh;
-    const hgt = clamp(W.rippleHeight(S, x, y, rip.t, opts) * norm, -1.4, 1.4);
-    const p = (j * gw + i) * 4, b = 0.5 + 0.32 * hgt;
-    img.data[p] = (dark ? 20 : 40) + 120 * b; img.data[p + 1] = (dark ? 70 : 110) + 120 * b; img.data[p + 2] = (dark ? 130 : 170) + 85 * b; img.data[p + 3] = 255;
-  }
-  ox.putImageData(img, 0, 0);
-  ctx.save(); ctx.imageSmoothingEnabled = true; ctx.beginPath(); ctx.roundRect(SX(-30), SY(20), 60 * view.s, 40 * view.s, 10); ctx.clip(); ctx.drawImage(rippleImg, SX(-30), SY(20), 60 * view.s, 40 * view.s);
-  // interferensiya chiziqlari (giperbolalar)
-  if (ui.show.lines && rip.n === 2) {
-    const d = Math.hypot(rip.s2.x - rip.s1.x, rip.s2.y - rip.s1.y), cc = d / 2, lam = lamR(), shift = rip.dphi / 360;
-    const ux = (rip.s2.x - rip.s1.x) / d, uy = (rip.s2.y - rip.s1.y) / d, mx = (rip.s1.x + rip.s2.x) / 2, my = (rip.s1.y + rip.s2.y) / 2;
-    const draw = (D, color, dash) => {
-      // r1 − r2 = D (1-manbadan uzoqroq) → 2-manba tomondagi tarmoq
-      const a = D / 2, b = Math.sqrt(Math.max(0, cc * cc - a * a));
-      ctx.strokeStyle = color; ctx.lineWidth = 1.4; ctx.setLineDash(dash); ctx.beginPath();
-      for (let s = -4; s <= 4.001; s += 0.05) { const xp = a * Math.cosh(s), yp = b * Math.sinh(s); const X = mx + ux * xp - uy * yp, Y = my + uy * xp + ux * yp; s > -4 ? ctx.lineTo(SX(X), SY(Y)) : ctx.moveTo(SX(X), SY(Y)); }
-      ctx.stroke(); ctx.setLineDash([]);
-    };
-    for (let m = -12; m <= 12; m++) {
-      const Dmax = (m - shift) * lam, Dmin = (m + 0.5 - shift) * lam;
-      if (Math.abs(Dmax) < d - 1e-6) draw(Dmax, "rgba(255,255,255,0.75)", [6, 4]);
-      if (Math.abs(Dmin) < d - 1e-6) draw(Dmin, "rgba(15,23,42,0.75)", []);
-    }
-  }
-  ctx.restore();
-  ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.beginPath(); ctx.roundRect(SX(-30), SY(20), 60 * view.s, 40 * view.s, 10); ctx.stroke();
-  // manbalar
-  const pulse = 1 + 0.25 * Math.sin(w * rip.t);
-  S.forEach((s, i) => { ctx.fillStyle = "#f59e0b"; ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(SX(s.x), SY(s.y), 7 * pulse, 0, TAU); ctx.fill(); ctx.stroke(); tag(ctx, `S${i + 1}`, SX(s.x), SY(s.y) + 18, { color: "#0f172a", bg: "rgba(255,255,255,0.85)", align: "center", font: SMALL }); });
-  // kuzatish nuqtasi
-  const P = rip.probe;
-  ctx.save(); ctx.setLineDash([4, 4]); ctx.strokeStyle = "rgba(255,255,255,0.85)"; ctx.lineWidth = 1.2;
-  S.forEach((s) => { ctx.beginPath(); ctx.moveTo(SX(s.x), SY(s.y)); ctx.lineTo(SX(P.x), SY(P.y)); ctx.stroke(); }); ctx.restore();
-  ctx.strokeStyle = "#ef4444"; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(SX(P.x), SY(P.y), 8, 0, TAU); ctx.moveTo(SX(P.x) - 12, SY(P.y)); ctx.lineTo(SX(P.x) + 12, SY(P.y)); ctx.moveTo(SX(P.x), SY(P.y) - 12); ctx.lineTo(SX(P.x), SY(P.y) + 12); ctx.stroke();
-  if (rip.n === 2) {
-    const pd = W.pathDifference(srcList()[0], srcList()[1], P.x, P.y, lamR(), (rip.dphi * Math.PI) / 180);
-    tag(ctx, `Δr = ${fmt(pd.d, 1)} cm = ${fmt(pd.d / lamR(), 2)}λ · ${pd.kind === "max" ? "maksimum" : pd.kind === "min" ? "minimum" : "oraliq"}`, SX(P.x), SY(P.y) - 22, { color: pd.kind === "max" ? "#166534" : pd.kind === "min" ? "#991b1b" : "#0f172a", bg: "rgba(255,255,255,0.9)", align: "center", font: MID });
-  }
-  // λ masshtabi
-  const lam = lamR();
-  ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(SX(-28), SY(-18.5)); ctx.lineTo(SX(-28 + lam), SY(-18.5)); ctx.stroke();
-  tag(ctx, `λ = ${fmt(lam, 1)} cm`, SX(-28 + lam) + 6, SY(-18.5), { color: "#0f172a", bg: "rgba(255,255,255,0.85)", font: SMALL });
-}
-
-/* ================================================================== 3) Doppler */
-
-function drawDoppler(ctx, stage) {
-  const { w: cw, h: ch, colors: c } = stage;
-  fit(cw, ch, -24, 24, -11, 11, 6);
-  const t = dop.t, xs = srcX(t), lam = dop.c / dop.f;
-  ctx.fillStyle = c.dark ? "#0b1220" : "#f8fafc"; ctx.fillRect(0, 0, cw, ch);
-  // frontlar
-  ctx.save(); ctx.beginPath(); ctx.rect(SX(-24), SY(11), 48 * view.s, 22 * view.s); ctx.clip();
-  ctx.lineWidth = 1.3;
-  dop.fronts.forEach((fr) => {
-    const r = dop.c * (t - fr.te); if (r <= 0) return;
-    ctx.strokeStyle = `rgba(37,99,235,${clamp(0.85 - r / 60, 0.15, 0.85)})`; ctx.beginPath(); ctx.arc(SX(fr.xe), SY(0), r * view.s, 0, TAU); ctx.stroke();
-  });
-  // Max konusi
-  if (dop.M > 1) {
-    const a = Math.asin(1 / dop.M), L = 60;
-    ctx.strokeStyle = c.danger; ctx.lineWidth = 2; ctx.setLineDash([6, 4]); ctx.beginPath();
-    ctx.moveTo(SX(xs - L * Math.cos(a)), SY(L * Math.sin(a))); ctx.lineTo(SX(xs), SY(0)); ctx.lineTo(SX(xs - L * Math.cos(a)), SY(-L * Math.sin(a))); ctx.stroke(); ctx.setLineDash([]);
-  }
-  ctx.restore();
-  // yo'l
-  ctx.strokeStyle = c.border; ctx.setLineDash([3, 5]); ctx.beginPath(); ctx.moveTo(SX(-24), SY(0)); ctx.lineTo(SX(24), SY(0)); ctx.stroke(); ctx.setLineDash([]);
-  // manba (karnay)
-  ctx.save(); ctx.translate(SX(xs), SY(0)); ctx.fillStyle = "#f59e0b"; ctx.strokeStyle = "#92400e"; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.moveTo(-10, -6); ctx.lineTo(-2, -6); ctx.lineTo(8, -13); ctx.lineTo(8, 13); ctx.lineTo(-2, 6); ctx.lineTo(-10, 6); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
-  if (dop.M > 0) tag(ctx, `u = ${fmt(srcU(), 0)} m/s →`, SX(xs), SY(0) + 26, { color: c.text, bg: c.bg, align: "center", font: SMALL });
-  // kuzatuvchilar
-  [["A", dop.A, c.danger], ["B", dop.B, c.primary]].forEach(([nm, o, col]) => {
-    const r = recv(o), px = SX(o.x), py = SY(o.y);
-    ctx.save(); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(px, py - 9, 6, 0, TAU); ctx.fill(); ctx.fillRect(px - 5, py - 3, 10, 14); ctx.restore();
-    tag(ctx, `${nm}: ${r.length ? `${fmt(r[0].f, 0)} Hz${r.length > 1 ? ` + ${fmt(r[1].f, 0)} Hz` : ""}` : "jimlik"}`, px, py + 24, { color: col, bg: c.bg, align: "center", font: MID });
-  });
-  tag(ctx, `λ₀ = ${fmt(lam, 2)} m · c = ${fmt(dop.c, 0)} m/s · vaqt ~${fmt(dop.c / VIS, 0)} marta sekin`, 12, 16, { color: c.text, bg: c.bg2, font: SMALL });
-}
-
+const scene = createWavesLab();
 function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
-  if (ui.mode === "string") drawString(ctx, stage); else if (ui.mode === "ripple") drawRipple(ctx, stage); else drawDoppler(ctx, stage);
+  scene.draw(ctx, stage, ui, str, sim, rip, dop, { nodes: nodes(), harmonic: standing(), sources: srcList(), srcX, recv });
 }
-const heights = (cw) => {
-  const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
-  return { stage: Math.round(clamp(Math.min(cw * 0.46, vh * 0.44), 250, 360)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
-};
+const heights = (cw) => ({ stage: detailedStageHeight(cw), graph: Math.round(clamp(innerHeight * .26, 170, 240)) });
 const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
 const TABS = {
-  string: [["shape", "y(x)", "Ipning shakli y(x)", "Bir ondagi ip shakli — to‘lqinning «surati». Ko‘k soha — har bir nuqtaning tebranish chegarasi: turg‘un to‘lqinda tugun va do‘ngliklar ko‘rinadi."], ["probe", "y(t)", "Belgilangan nuqtaning tebranishi", "Ipning bir nuqtasi faqat yuqori-pastga tebranadi — to‘lqin bilan birga oldinga ketmaydi. Ipni bosib nuqtani tanlang."]],
+  string: [["shape", "y(x)", "Ipning shakli y(x)", "Bir ondagi ip shakli — to‘lqinning «surati». Ko‘k soha — har bir nuqtaning tebranish chegarasi: turg‘un to‘lqinda tugun va do‘ngliklar ko‘rinadi."], ["probe", "y(t)", "Belgilangan nuqtaning tebranishi", "Ipning bir nuqtasi faqat yuqori-pastga tebranadi — to‘lqin bilan birga oldinga ketmaydi. Qizil P belgisini ip bo‘ylab suring."]],
   ripple: [["sum", "Qo‘shish", "Tebranishlarni qo‘shish (kuzatish nuqtasida)", "Ikki to‘lqin bir fazada kelsa kuchayadi (maksimum), qarama-qarshi fazada — so‘nadi (minimum)."], ["amp", "A(x)", "Amplituda taqsimoti", "Kuzatish nuqtasidan o‘tgan gorizontal chiziq bo‘ylab tebranish amplitudasi: maksimum va minimumlar navbatlashadi."]],
   doppler: [["fu", "ν′(u)", "Qabul qilinadigan chastota", "Manba yaqinlashganda chastota (tovush balandligi) ortadi, uzoqlashganda kamayadi."], ["p", "p(t)", "Kuzatuvchilardagi bosim tebranishi", "A oldinda — tebranishlar zichroq (chastota yuqori), B orqada — siyrakroq."]],
 };
@@ -366,7 +194,7 @@ function updateExplain() {
     else p.push("<p>«Cheksiz» ipda qaytish yo‘q — faqat yuguruvchi to‘lqin.</p>");
   } else if (ui.mode === "ripple") {
     p.push("<p>Har bir manba aylanma to‘lqinlar tarqatadi. Ikki <b>kogerent</b> (bir xil chastotali) manba to‘lqinlari qo‘shilganda barqaror manzara — <b>interferensiya</b> hosil bo‘ladi.</p>");
-    if (rip.n === 2) p.push("<p>Yo‘llar farqi Δr = kλ bo‘lgan nuqtalarda to‘lqinlar bir fazada keladi — <b>maksimum</b> (oq punktir chiziqlar). Δr = (2k+1)λ/2 bo‘lsa, qarama-qarshi fazada — <b>minimum</b>, suv deyarli tinch (qora chiziqlar). Bu chiziqlar giperbolalar.</p>");
+    if (rip.n === 2) p.push("<p>Yo‘llar farqi Δr = kλ bo‘lgan nuqtalarda to‘lqinlar bir fazada keladi — <b>maksimum</b> (yashil punktir chiziqlar). Δr = (2k+1)λ/2 bo‘lsa, qarama-qarshi fazada — <b>minimum</b>, suv deyarli tinch (qizil chiziqlar). Bu chiziqlar giperbolalar.</p>");
   } else {
     p.push("<p>Tovush — havodagi bo‘ylama to‘lqin. Manba harakatlanganda u har bir frontni oldingisidan siljigan joydan chiqaradi: oldinda frontlar zichlashadi (λ kichik, chastota katta — tovush balandroq), orqada siyraklashadi. Bu — <b>Doppler effekti</b>.</p>");
     if (dop.M >= 1) p.push("<p>Manba tovushdan tez harakatlansa, frontlar konus — <b>Max konusi</b> bo‘ylab to‘planadi; u yetib kelganda zarb to‘lqini (gumburlash) eshitiladi. Konus ichida kuzatuvchi bir vaqtda ikki chastotani eshitadi, tashqarisida — hech narsa.</p>");
@@ -406,15 +234,14 @@ const loop = createLoop((dt) => {
   }
   stage.render();
   uiTimer += dt; if (uiTimer > 0.1) { uiTimer = 0; updateReadouts(); updateStatus(); graph.render(); }
-}, {
-  onStateChange(on) {
-    playBtn.setAttribute("aria-pressed", String(on));
-    playBtn.querySelector("[data-play-icon]").innerHTML = icon(on ? "pause" : "play");
-    playBtn.querySelector("[data-play-text]").textContent = on ? "Pauza" : "Davom ettirish";
-    if (!on) updateSound(true);
-  },
-});
+}, { onStateChange(on) { setPlayUI(on); if (!on) updateSound(true); } });
 const playBtn = $("[data-play]");
+function setPlayUI(on) {
+  playBtn.setAttribute("aria-pressed", String(on));
+  playBtn.querySelector("[data-play-icon]").innerHTML = icon(on ? "pause" : "play");
+  playBtn.querySelector("[data-play-text]").textContent = on ? "Pauza" : "Davom ettirish";
+}
+setPlayUI(false);
 playBtn.addEventListener("click", () => loop.toggle());
 
 /* Ovoz (WebAudio) */
@@ -460,7 +287,7 @@ const rFC = bindRange($("#rF"), $("#rFOut"), (v) => `${fmt(v, 1)} Hz`, (v) => { 
 const rVC = bindRange($("#rV"), $("#rVOut"), (v) => `${fmt(v, 1)} cm/s`, (v) => { rip.v = v; customized(); refresh(); });
 const rDC = bindRange($("#rD"), $("#rDOut"), (v) => `${fmt(v, 1)} cm`, (v) => { rip.d = v; setSourcesFromD(); customized(); refresh(); });
 const rPC = bindRange($("#rP"), $("#rPOut"), (v) => `${fmt(v, 0)}°`, (v) => { rip.dphi = v; customized(); refresh(); });
-seg("nsrc", rip, "n", () => { rip.n = +rip.n; });
+seg("nsrc", rip, "n", () => { rip.n = +rip.n; if (rip.n === 2) setSourcesFromD(); });
 
 const dFC = bindRange($("#dF"), $("#dFOut"), (v) => `${fmt(v, 0)} Hz`, (v) => { dop.f = v; restartDoppler(); customized(); refresh(); });
 const dMC = bindRange($("#dM"), $("#dMOut"), (v) => `${fmt(v, 2)} (${fmt(v * dop.c, 0)} m/s)`, (v) => { dop.M = v; restartDoppler(); customized(); refresh(); });
@@ -470,50 +297,60 @@ document.querySelectorAll("[data-toggle]").forEach((cb) => cb.addEventListener("
 document.querySelectorAll("[data-speed-value]").forEach((b) => b.addEventListener("click", () => { ui.speed = +b.dataset.speedValue; document.querySelectorAll("[data-speed-value]").forEach((x) => x.setAttribute("aria-pressed", String(x === b))); }));
 $("[data-reset]").addEventListener("click", () => { if (ui.mode === "string") resetString(); else if (ui.mode === "ripple") { rip.t = 0; rip.t0 = 0; } else restartDoppler(); refresh(); });
 
-/* Sudrash */
+/* Sahna dastaklari; bo‘sh maydon 360° kamerani boshqaradi. */
 const canvas = stage.canvas;
-let drag = null;
-const ptr = (e) => { const r = canvas.getBoundingClientRect(); return { px: e.clientX - r.left, py: e.clientY - r.top }; };
-function hitTest(px, py) {
-  if (ui.mode === "string") {
-    if (str.src === "hand" && px < sv.x0 + 40) return "hand";
-    if (px > sv.x0 && px < sv.x1 && Math.abs(py - sv.y0) < stage.h * 0.4) return "probe";
-  } else if (ui.mode === "ripple") {
-    const S = srcList();
-    if (Math.hypot(px - SX(rip.probe.x), py - SY(rip.probe.y)) < 18) return "probeR";
-    if (Math.hypot(px - SX(S[0].x), py - SY(S[0].y)) < 16) return "s1";
-    if (S[1] && Math.hypot(px - SX(S[1].x), py - SY(S[1].y)) < 16) return "s2";
-  } else {
-    if (Math.hypot(px - SX(dop.A.x), py - SY(dop.A.y) + 3) < 20) return "A";
-    if (Math.hypot(px - SX(dop.B.x), py - SY(dop.B.y) + 3) < 20) return "B";
+let knobDrag = null;
+const knobSpecs = {
+  wF: { object: str, key: 'f', min: .2, max: 4, step: .05, control: wFC },
+  wA: { object: str, key: 'A', min: 1, max: 10, step: .5, control: wAC },
+  rF: { object: rip, key: 'f', min: 1, max: 8, step: .1, control: rFC },
+  rP: { object: rip, key: 'dphi', min: 0, max: 360, step: 15, control: rPC },
+  dF: { object: dop, key: 'f', min: 100, max: 1000, step: 10, control: dFC },
+  dM: { object: dop, key: 'M', min: 0, max: 1.8, step: .05, control: dMC },
+};
+function onSceneDrag(id, p) {
+  const spec = knobSpecs[id];
+  if (spec && knobDrag) {
+    const value = clamp(Math.round((knobDrag.value + (p.x - knobDrag.x) * (spec.max - spec.min) / 180) / spec.step) * spec.step, spec.min, spec.max);
+    if (spec.object[spec.key] !== value) {
+      spec.object[spec.key] = value; spec.control.set(value);
+      if (id === 'dF' || id === 'dM') restartDoppler();
+    }
+  } else if (id === 'hand') str.handTarget = scene.hand(p.x, p.y, str.wave === 'long');
+  else if (id === 'probe') str.probeX = Math.round(scene.stringX(p.x, p.y, str, sim) * 20) / 20;
+  else if (id === 'probeR' || id === 's1' || id === 's2') {
+    const point = scene.horizontalPoint(p.x, p.y, id === 'probeR' ? .77 : .58);
+    if (!point) return;
+    const w = { x: clamp(point[0] / .065, id === 'probeR' ? -29 : -28, id === 'probeR' ? 29 : 28), y: clamp(-point[2] / .065, id === 'probeR' ? -19 : -18, id === 'probeR' ? 19 : 18) };
+    if (id === 'probeR') rip.probe = w;
+    else {
+      const other = rip[id === 's1' ? 's2' : 's1'];
+      if (rip.n === 2) {
+        const dx = w.x - other.x, dy = w.y - other.y, distance = Math.hypot(dx, dy);
+        if (distance < 2) return;
+        const length = Math.round(clamp(distance, 2, 30) * 2) / 2;
+        w.x = other.x + dx * length / distance; w.y = other.y + dy * length / distance;
+        // A snapped separation must keep both source tips inside the tank.
+        if (Math.abs(w.x) > 28 || Math.abs(w.y) > 18) return;
+        rip.d = length; rDC.set(length);
+      }
+      rip[id] = w;
+    }
+  } else if (id === 'A' || id === 'B') {
+    const point = scene.horizontalPoint(p.x, p.y, .81);
+    if (!point) return;
+    dop[id] = { x: clamp(point[0] / .105, -23, 23), y: clamp(-point[2] / .105, -10, 10) };
   }
-  return null;
+  customized(); updateReadouts(); updateStatus(); updateExplain(); graph.render(); stage.render();
 }
-canvas.addEventListener("pointerdown", (e) => {
-  const { px, py } = ptr(e), h = hitTest(px, py);
-  if (!h) return;
-  drag = h; canvas.dataset.dragging = "true";
-  try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  if (h === "hand" && !loop.running) loop.start();
-  onDrag(px, py);
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id, p) {
+    knobDrag = knobSpecs[id] ? { x: p.x, value: knobSpecs[id].object[knobSpecs[id].key] } : null;
+    if (id === 'hand' && !loop.running) loop.start();
+  },
+  move: onSceneDrag,
+  end(id) { if (id === 'hand') str.handTarget = 0; knobDrag = null; },
 });
-function onDrag(px, py) {
-  if (drag === "hand") str.handTarget = clamp((sv.y0 - py) / sv.ys, -0.15, 0.15);
-  else if (drag === "probe") str.probeX = Math.round(clamp(((px - sv.x0) / (sv.x1 - sv.x0)) * LEN, 0.05, LEN - 0.05) * 20) / 20;
-  else if (drag === "probeR") { const w = toWorld(px, py); rip.probe = { x: clamp(w.x, -29, 29), y: clamp(w.y, -19, 19) }; }
-  else if (drag === "s1" || drag === "s2") { const w = toWorld(px, py); rip[drag] = { x: clamp(w.x, -28, 28), y: clamp(w.y, -18, 18) }; rip.d = Math.round(Math.hypot(rip.s2.x - rip.s1.x, rip.s2.y - rip.s1.y) * 2) / 2; rDC.set(clamp(rip.d, 2, 30)); }
-  else if (drag === "A" || drag === "B") { const w = toWorld(px, py); dop[drag] = { x: clamp(w.x, -23, 23), y: clamp(w.y, -10, 10) }; }
-  customized();
-  if (!loop.running) refresh(); else { updateReadouts(); stage.render(); }
-}
-canvas.addEventListener("pointermove", (e) => {
-  const { px, py } = ptr(e);
-  if (!drag) { const h = hitTest(px, py); canvas.style.cursor = h ? (h === "probe" ? "pointer" : "grab") : ""; return; }
-  onDrag(px, py);
-});
-const endDrag = () => { if (drag === "hand") str.handTarget = 0; drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* ------------------------------------------------------------------ Tayyor tajribalar */
 
@@ -525,7 +362,7 @@ const PRESETS = {
   longw: { mode: "string", title: "Bo‘ylama to‘lqin (prujina)", lesson: "Zarralar to‘lqin yo‘nalishi bo‘ylab tebranadi: siqilish va siyraklanishlar yuguradi. Tovush havoda xuddi shunday tarqaladi.", set: () => Object.assign(str, { wave: "long", src: "harm", right: "open", f: 1, A: 8, v: 2, g: 0.02, probeX: 1.5 }) },
   hand: { mode: "string", title: "Qo‘lda tebratish", lesson: "Chap uchidagi sariq dastakni yuqori-pastga suring — o‘zingiz to‘lqin hosil qiling.", set: () => Object.assign(str, { wave: "trans", src: "hand", right: "fixed", A: 6, v: 2, g: 0.05, probeX: 2 }) },
   one: { mode: "ripple", title: "Bitta manba", lesson: "Nuqtaviy manbadan aylanma to‘lqinlar tarqaladi. Qo‘shni do‘ngliklar orasi — to‘lqin uzunligi λ.", set: () => Object.assign(rip, { n: 1, f: 3, v: 15, s1: { x: 0, y: -4 }, probe: { x: 10, y: 6 } }) },
-  two: { mode: "ripple", title: "Ikki manba interferensiyasi", lesson: "Qizil belgini suring: oq chiziqlarda (Δr = kλ) suv kuchli tebranadi, qora chiziqlarda (Δr = (2k+1)λ/2) deyarli tinch.", set: () => Object.assign(rip, { n: 2, f: 3, v: 15, d: 14, dphi: 0, s1: { x: -7, y: -12 }, s2: { x: 7, y: -12 }, probe: { x: 6, y: 8 } }), tab: "sum" },
+  two: { mode: "ripple", title: "Ikki manba interferensiyasi", lesson: "Qizil belgini suring: yashil chiziqlarda (Δr = kλ) suv kuchli tebranadi, qizil chiziqlarda (Δr = (2k+1)λ/2) deyarli tinch.", set: () => Object.assign(rip, { n: 2, f: 3, v: 15, d: 14, dphi: 0, s1: { x: -7, y: -12 }, s2: { x: 7, y: -12 }, probe: { x: 6, y: 8 } }), tab: "sum" },
   anti: { mode: "ripple", title: "Qarama-qarshi fazali manbalar", lesson: "Manbalar qarama-qarshi fazada tebranadi: o‘rtadagi chiziqda endi minimum. Maksimumlar o‘rni almashadi.", set: () => Object.assign(rip, { n: 2, f: 3, v: 15, d: 14, dphi: 180, s1: { x: -7, y: -12 }, s2: { x: 7, y: -12 }, probe: { x: 0, y: 8 } }), tab: "amp" },
   dopSlow: { mode: "doppler", title: "Doppler effekti (u = 0,5c)", lesson: "Manba A ga yaqinlashmoqda, B dan uzoqlashmoqda. «Ovozni eshitish» ni bosing — A eshitadigan tovushni tinglang.", set: () => Object.assign(dop, { medium: "air", c: 343, f: 440, M: 0.5, A: { x: 12, y: -4 }, B: { x: -12, y: -4 } }) },
   dopStatic: { mode: "doppler", title: "Qo‘zg‘almas manba", lesson: "Manba tinch: frontlar konsentrik aylanalar, A va B bir xil chastotani eshitadi.", set: () => Object.assign(dop, { medium: "air", c: 343, f: 440, M: 0, A: { x: 12, y: -4 }, B: { x: -12, y: -4 } }) },
@@ -544,13 +381,13 @@ function syncAll() {
   pr("wtype", str.wave); pr("src", str.src); pr("end", str.right); pr("nsrc", rip.n); pr("medium", dop.medium);
   document.querySelectorAll("[data-sctl]").forEach((el) => { el.hidden = !el.dataset.sctl.split(" ").includes(str.src); });
   document.querySelectorAll("[data-rctl]").forEach((el) => { el.hidden = rip.n !== 2; });
-  $("[data-shint]").textContent = str.src === "hand" ? "Chap uchidagi sariq dastakni suring." : "Ipni bosib, kuzatiladigan nuqtani tanlang.";
+  $("[data-shint]").textContent = str.src === "hand" ? "Chap uchidagi sariq dastakni ko‘ndalang rejimda tik, bo‘ylama rejimda ip bo‘ylab suring." : "Qizil P belgisini surib kuzatish nuqtasini tanlang. ν va A dastaklari chap/o‘ngga suriladi.";
   wFC.set(str.f); wAC.set(str.A); wVC.set(str.v); wGC.set(str.g);
   rFC.set(rip.f); rVC.set(rip.v); rDC.set(rip.d); rPC.set(rip.dphi);
   dFC.set(dop.f); dMC.set(dop.M);
   document.querySelectorAll("[data-toggle]").forEach((cb) => { cb.checked = ui.show[cb.dataset.toggle]; });
 }
-const MODE_HINT = { string: "Ipni bosing — nuqtani kuzating", ripple: "Manbalarni va qizil belgini suring", doppler: "Kuzatuvchilarni suring" };
+const MODE_HINT = { string: "P nuqtasi, ν va A dastaklarini suring", ripple: "Manbalar, P belgisi va generator dastaklarini suring", doppler: "Mikrofonlar, ν va M dastaklarini suring" };
 function setMode(m) {
   ui.mode = m;
   document.querySelectorAll("[data-mode-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.modeValue === m)));
@@ -569,7 +406,7 @@ function loadPreset(id) {
   $("[data-lesson]").textContent = p.lesson;
   syncAll(); setTab(p.tab || TABS[ui.mode][0][0]);
   refresh();
-  if (!prefersReducedMotion()) loop.start();
+  if (prefersReducedMotion()) loop.stop(); else loop.start();
   try { history.replaceState(null, "", `?preset=${id}`); } catch { /* fayl:// */ }
 }
 

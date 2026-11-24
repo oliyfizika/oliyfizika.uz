@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/simulation.css">
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/gravity.js"></script>
+<script type="module" src="../assets/js/simulations/gravity.js?v=20261123-cg"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Tortishish qonuni" data-shell-public="true">
 
@@ -32,7 +32,14 @@
     <div class="sim-main">
       <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
         <div class="sim-canvas-wrap">
-          <canvas id="stage" data-draggable="true" role="img" aria-label="Butun olam tortishish qonuni simulyatsiyasi"></canvas>
+          <canvas id="stage" aria-describedby="cameraHelp" data-draggable="true" role="img" aria-label="Butun olam tortishish qonuni simulyatsiyasi"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Jismlarni stol ustida istalgan joyga suring — markazlari bitta gorizontal tekislikda qoladi. Klaviatura: yo‘nalishlar, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <span class="sim-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v5"/><path d="M13 10V4a2 2 0 0 1 4 0v7"/><path d="M17 8a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L4 14.5a2 2 0 0 1 3.2-2.4L9 14"/></svg>Jismlarni maydonning istalgan joyiga sudrang</span>

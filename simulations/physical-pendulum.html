@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/simulation.css">
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/physical-pendulum.js"></script>
+<script type="module" src="../assets/js/simulations/physical-pendulum.js?v=20261122-3d"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Fizik mayatnik" data-shell-public="true">
 
@@ -31,7 +31,14 @@
     <div class="sim-main">
       <section class="of-card sim-stage" aria-label="Simulyatsiya maydoni">
         <div class="sim-canvas-wrap">
-          <canvas id="stage" data-draggable="true" role="img" aria-label="Fizik mayatnik simulyatsiyasi"></canvas>
+          <canvas id="stage" aria-describedby="cameraHelp" data-draggable="true" role="img" aria-label="Fizik mayatnik simulyatsiyasi"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360° ko‘rish: bo‘sh joyni sudrang · g‘ildirak / ikki barmoq bilan yaqinlashtiring. Jismni tortib qo‘yib yuboring — boshlang‘ich burchak o‘zgaradi. Klaviatura: yo‘nalish tugmalari, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-play><span data-play-icon></span><span data-play-text>Boshlash</span></button>

@@ -1,10 +1,14 @@
 // ==========================================================================
 // Butun olam tortishish qonuni — simulyatsiya (simulations/gravity-law.html)
 // Rejimlar: "lab" (kg, m) va "space" (haqiqiy osmon jismlari, masofa ko'paytuvchisi bilan).
-// Jismlar maydonning istalgan nuqtasiga sudraladi (2D); masofa r jism markazlari orasida doim ko'rsatiladi.
+// 360° 3D laboratoriya (gravity-lab-3d.js): jismlar stol ustidagi shtativlarda, markazlari bitta gorizontal
+// tekislikda — ularni shu tekislikning istalgan nuqtasiga sudrash mumkin; masofa r doim ko'rsatiladi.
 // ==========================================================================
 
-import { clamp, fmt, sci, createStage, arrow, tag, bindRange } from "./sim-kit.js";
+import { clamp, fmt, sci, createStage, bindRange } from "./sim-kit.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-cg";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-cg";
+import { createGravityLab, sceneRadius, GRAVITY_SPAN, GRAVITY_BOUNDS } from "./gravity-lab-3d.js?v=20261123-cg";
 import { G, gravity } from "./inverse-square.js";
 
 const $ = (s) => document.querySelector(s);
@@ -31,7 +35,6 @@ const ballR = (m) => Math.cbrt((3 * m) / (4 * Math.PI * RHO));
 /** Sharlar tegib turgandagi eng kichik masofa (slayder qadamiga yaxlitlangan). */
 const contactMin = () => Math.max(0.2, Math.round(Math.ceil((ballR(st.m1) + ballR(st.m2) + 0.005) / STEP) * STEP * 100) / 100);
 const show = { forces: true, field: true };
-const geo = { cx: 0, cy: 0, s: 1, w: 0, h: 0, x1: 0, y1: 0, x2: 0, y2: 0, r1: 0, r2: 0 };
 // Jismlar markazlari: sahna markaziga nisbatan, metrda (osmon rejimida ham haqiqiy metr)
 const pos = { p1: { x: -0.5, y: 0 }, p2: { x: 0.5, y: 0 } };
 const curR = () => Math.hypot(pos.p2.x - pos.p1.x, pos.p2.y - pos.p1.y);
@@ -67,8 +70,6 @@ function model() {
   };
 }
 
-const forceLen = (F, M) => 22 + 150 * clamp((Math.log10(F) - Math.log10(M.Fmin)) / (Math.log10(M.Fmax) - Math.log10(M.Fmin)), 0, 1);
-
 function rText(r, M) {
   if (st.mode === "lab") return `${fmt(r, 2)} m`;
   const km = r / 1000;
@@ -86,171 +87,30 @@ function timeText(sec) {
   return `${fmt(sec / (86400 * 365.25), 2)} yil`;
 }
 
-/* ------------------------------------------------------------------ Chizish */
+/* ------------------------------------------------------------------ Chizish (3D) */
 
-function drawBody(ctx, x, y, b, c, R) {
-  ctx.save();
-  if (b.station) {
-    ctx.fillStyle = c.text2;
-    ctx.fillRect(x - 12, y - 2, 24, 4);
-    ctx.fillStyle = c.primary;
-    ctx.fillRect(x - 12, y - 6, 7, 12);
-    ctx.fillRect(x + 5, y - 6, 7, 12);
-    ctx.restore();
-    return;
-  }
-  const g = ctx.createRadialGradient(x - R * 0.4, y - R * 0.4, R * 0.1, x, y, R);
-  g.addColorStop(0, "rgb(255 255 255 / 0.6)");
-  g.addColorStop(0.3, b.color2 || b.color);
-  g.addColorStop(1, b.color);
-  ctx.fillStyle = g;
-  if (b.name === "Quyosh") { ctx.shadowColor = "#f59e0b"; ctx.shadowBlur = 30; }
-  else { ctx.shadowColor = "rgb(0 0 0 / 0.25)"; ctx.shadowBlur = 8; ctx.shadowOffsetY = 2; }
-  ctx.beginPath(); ctx.arc(x, y, R, 0, Math.PI * 2); ctx.fill();
-  ctx.restore();
+const scene = createGravityLab();
+/** Jismlar stol chegarasidan chiqmasin (masofa slayderi ularni tashqariga surib yuborishi mumkin). */
+function sceneRadii(M) {
+  const S = GRAVITY_SPAN / M.rMax, space = st.mode === "space";
+  return [sceneRadius(space, M.b1, M.R1, S), sceneRadius(space, M.b2, M.R2, S)];
 }
-
-/** Zamonaviy maydon strelkasi: yumaloq uchli ingichka tana + to'ldirilgan, biroz egilgan uch. */
-function fieldArrow(ctx, x, y, ux, uy, L, color, alpha) {
-  const hx = x + (ux * L) / 2, hy = y + (uy * L) / 2, tx = x - (ux * L) / 2, ty = y - (uy * L) / 2;
-  const hl = Math.min(7, L * 0.45), hw = hl * 0.62, nx = -uy, ny = ux;
-  const bx = hx - ux * hl, by = hy - uy * hl;
-  ctx.globalAlpha = alpha;
-  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 1.8; ctx.lineCap = "round";
-  ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(bx + ux * 1.5, by + uy * 1.5); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(hx, hy);
-  ctx.quadraticCurveTo(bx + ux * hl * 0.25 + nx * hw * 0.35, by + uy * hl * 0.25 + ny * hw * 0.35, bx + nx * hw, by + ny * hw);
-  ctx.quadraticCurveTo(bx + ux * hl * 0.3, by + uy * hl * 0.3, bx - nx * hw, by - ny * hw);
-  ctx.quadraticCurveTo(bx + ux * hl * 0.25 - nx * hw * 0.35, by + uy * hl * 0.25 - ny * hw * 0.35, hx, hy);
-  ctx.fill();
-}
-
-/** Masofa yorlig'i va boshqa yorliqlar sahnadan chiqib ketmasin. */
-function tagIn(ctx, text, x, y, o) {
-  ctx.save(); ctx.font = o.font || "600 12px Inter, system-ui, sans-serif";
-  const tw = ctx.measureText(text).width + 12; ctx.restore();
-  let x0 = o.align === "center" ? x - tw / 2 : o.align === "right" ? x - tw : x;
-  x0 = clamp(x0, 4, geo.w - tw - 4);
-  tag(ctx, text, x0, clamp(y, 14, geo.h - 14), { ...o, align: "left" });
-}
-
-function draw(ctx, { w, h, colors: c }) {
-  const M = model();
-  const lab = st.mode === "lab", space = !lab;
-  geo.w = w; geo.h = h; geo.cx = w / 2; geo.cy = h / 2;
-  geo.s = (w - 120) / (M.rMax * 1.05);
-  const pk = clamp(w / 700, 0.5, 1);  // osmon jismlari o'lchami (masshtabsiz) tor ekranda kichrayadi
-  geo.r1 = lab ? Math.max(3, M.R1 * geo.s) : Math.max(5, M.b1.px * pk);
-  geo.r2 = lab ? Math.max(3, M.R2 * geo.s) : M.b2.station ? 12 : Math.max(5, M.b2.px * pk);
-  // jismlar sahna ichida qolsin (o'lcham o'zgarsa ham)
-  for (const [p, rr] of [[pos.p1, geo.r1], [pos.p2, geo.r2]]) {
-    const mx = (w / 2 - rr - 6) / geo.s, my = (h / 2 - rr - 6) / geo.s;
+function keepOnTable(M) {
+  const S = GRAVITY_SPAN / M.rMax, [r1, r2] = sceneRadii(M);
+  for (const [p, rr] of [[pos.p1, r1], [pos.p2, r2]]) {
+    const mx = (GRAVITY_BOUNDS.x - rr) / S, my = (GRAVITY_BOUNDS.z - rr) / S;
     p.x = clamp(p.x, -mx, mx); p.y = clamp(p.y, -my, my);
   }
-  geo.x1 = geo.cx + pos.p1.x * geo.s; geo.y1 = geo.cy + pos.p1.y * geo.s;
-  geo.x2 = geo.cx + pos.p2.x * geo.s; geo.y2 = geo.cy + pos.p2.y * geo.s;
-
-  ctx.fillStyle = c.bg;
-  ctx.fillRect(0, 0, w, h);
-  if (space) {
-    ctx.save();
-    ctx.fillStyle = c.dark ? "#060a14" : "#0f172a";
-    ctx.globalAlpha = c.dark ? 1 : 0.9;
-    ctx.fillRect(0, 0, w, h);
-    let seed = 7;
-    const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-    ctx.fillStyle = "#fff";
-    for (let i = 0; i < 90; i++) { ctx.globalAlpha = 0.25 + rnd() * 0.5; ctx.fillRect(rnd() * w, rnd() * h, 1.4, 1.4); }
-    ctx.restore();
-  } else {
-    ctx.save();
-    ctx.strokeStyle = c.grid;
-    ctx.beginPath();
-    for (let x = (geo.cx % 28) + 0.5; x < w; x += 28) { ctx.moveTo(x, 0); ctx.lineTo(x, h); }
-    for (let y = (geo.cy % 28) + 0.5; y < h; y += 28) { ctx.moveTo(0, y); ctx.lineTo(w, y); }
-    ctx.stroke();
-    ctx.restore();
-  }
-  const ink = space ? "#e2e8f0" : c.text;
-  const ink2 = space ? "#94a3b8" : c.text2;
-  const tagBg = space ? "rgb(15 23 42 / 0.85)" : c.bg;
-  const B = [[geo.x1, geo.y1, M.m1, geo.r1], [geo.x2, geo.y2, M.m2, geo.r2]];
-
-  // Gravitatsion maydon: g = Σ G m / d² (jism markaziga). Uzunlik, shaffoflik — log|g| bo'yicha.
-  if (show.field) {
-    const fc = space ? "#93c5fd" : c.primary;
-    // jismlar atrofida yumshoq «potensial chuqur» yorug'ligi
-    ctx.save();
-    for (const [bx, by, , rr] of B) {
-      const R = rr + 70, g = ctx.createRadialGradient(bx, by, rr, bx, by, R);
-      g.addColorStop(0, space ? "rgb(147 197 253 / 0.22)" : "rgb(37 99 235 / 0.12)"); g.addColorStop(1, "rgb(37 99 235 / 0)");
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(bx, by, R, 0, Math.PI * 2); ctx.fill();
-    }
-    ctx.restore();
-    const step = w < 520 ? 34 : 40, pts = [];
-    let lmin = Infinity, lmax = -Infinity;
-    for (let y = step / 2; y < h; y += step) {
-      for (let x = step / 2; x < w; x += step) {
-        let gx = 0, gy = 0, skip = false;
-        for (const [bx, by, m, rr] of B) {
-          const dx = bx - x, dy = by - y, dpx = Math.hypot(dx, dy);
-          if (dpx < rr + 12) { skip = true; break; }
-          const d = dpx / geo.s, gm = (G * m) / (d * d);
-          gx += (gm * dx) / dpx; gy += (gm * dy) / dpx;
-        }
-        if (skip) continue;
-        const mag = Math.hypot(gx, gy), lg = Math.log10(mag);
-        lmin = Math.min(lmin, lg); lmax = Math.max(lmax, lg);
-        pts.push([x, y, gx / mag, gy / mag, lg]);
-      }
-    }
-    ctx.save();
-    for (const [x, y, ux, uy, lg] of pts) {
-      const t = lmax > lmin ? (lg - lmin) / (lmax - lmin) : 0.5;
-      fieldArrow(ctx, x, y, ux, uy, 9 + 15 * t, fc, 0.22 + 0.6 * t);
-    }
-    ctx.restore();
-  }
-
-  // Masofa: markazlarni tutashtiruvchi chiziq va har doim ko'rinadigan r yorlig'i
-  const dx = geo.x2 - geo.x1, dy = geo.y2 - geo.y1, dpx = Math.hypot(dx, dy) || 1;
-  const ux = dx / dpx, uy = dy / dpx;
-  let nx = -uy, ny = ux; if (ny > 0 || (ny === 0 && nx > 0)) { nx = -nx; ny = -ny; }  // normal — yuqoriga
-  ctx.save();
-  ctx.strokeStyle = ink2; ctx.fillStyle = ink2; ctx.lineWidth = 1.25; ctx.setLineDash([5, 5]);
-  ctx.beginPath(); ctx.moveTo(geo.x1, geo.y1); ctx.lineTo(geo.x2, geo.y2); ctx.stroke(); ctx.setLineDash([]);
-  for (const [x, y] of [[geo.x1, geo.y1], [geo.x2, geo.y2]]) { ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI * 2); ctx.fill(); }
-  ctx.restore();
-  const rr = Math.max(geo.r1, geo.r2), mx = (geo.x1 + geo.x2) / 2, my = (geo.y1 + geo.y2) / 2;
-  const off = (dpx - geo.r1 - geo.r2 < 120 ? rr : 0) + 30;  // jismlar yaqin bo'lsa yorliq ulardan nariroqqa
-  tagIn(ctx, `r = ${rText(curR(), M)}`, mx + nx * off, my + ny * off, { color: ink, bg: tagBg, align: "center", font: "700 12px Inter, system-ui, sans-serif" });
-
-  drawBody(ctx, geo.x1, geo.y1, M.b1, c, geo.r1);
-  drawBody(ctx, geo.x2, geo.y2, M.b2, c, geo.r2);
-
-  // Kuchlar — markazlarni tutashtiruvchi chiziq bo'ylab bir-biriga qarab
-  const res = gravity(M.m1, M.m2, M.r);
-  if (show.forces) {
-    const gap = dpx - geo.r1 - geo.r2, fromCenter = gap < 44;
-    const room = fromCenter ? dpx / 2 - 4 : gap / 2 - 8;
-    const L = Math.max(fromCenter ? 12 : 6, Math.min(forceLen(res.F, M), room));
-    const o1 = fromCenter ? 0 : geo.r1, o2 = fromCenter ? 0 : geo.r2;
-    const a1 = [geo.x1 + ux * o1, geo.y1 + uy * o1], a2 = [geo.x2 - ux * o2, geo.y2 - uy * o2];
-    const color = c.warning, opts = { width: 4, head: 13 }, halo = space ? "#0f172a" : c.bg;
-    arrow(ctx, a1[0], a1[1], ux * L, uy * L, halo, { ...opts, width: 8, head: 16 });
-    arrow(ctx, a1[0], a1[1], ux * L, uy * L, color, opts);
-    arrow(ctx, a2[0], a2[1], -ux * L, -uy * L, halo, { ...opts, width: 8, head: 16 });
-    arrow(ctx, a2[0], a2[1], -ux * L, -uy * L, color, opts);
-    const f = "italic 700 14px 'Times New Roman', serif";
-    tagIn(ctx, "F₂₁", a1[0] + (ux * L) / 2 - nx * 20, a1[1] + (uy * L) / 2 - ny * 20, { color, bg: tagBg, align: "center", font: f });
-    tagIn(ctx, "F₁₂", a2[0] - (ux * L) / 2 - nx * 20, a2[1] - (uy * L) / 2 - ny * 20, { color, bg: tagBg, align: "center", font: f });
-  }
-  // Jism nomlari — jismlarning tashqi tomonida (bir-biridan uzoqroqda)
-  const lbl1 = lab ? `m₁ = ${mText(M.m1)}` : M.b1.name;
-  const lbl2 = lab ? `m₂ = ${mText(M.m2)}` : M.b2.name;
-  const sx = ux >= 0 ? 1 : -1;
-  tagIn(ctx, lbl1, geo.x1 - ux * (geo.r1 + 8), geo.y1 - uy * (geo.r1 + 8) - geo.r1 - 14, { color: ink, bg: tagBg, align: sx > 0 ? "right" : "left" });
-  tagIn(ctx, lbl2, geo.x2 + ux * (geo.r2 + 8), geo.y2 + uy * (geo.r2 + 8) - geo.r2 - 14, { color: ink, bg: tagBg, align: sx > 0 ? "left" : "right" });
+}
+function draw(ctx, stg) {
+  const M = model(), lab = st.mode === "lab";
+  keepOnTable(M);
+  const [rad1, rad2] = sceneRadii(M);
+  scene.draw(ctx, stg, {
+    space: !lab, rMax: M.rMax, p1: pos.p1, p2: pos.p2, rad1, rad2, b1: M.b1, b2: M.b2, m1: M.m1, m2: M.m2,
+    F: gravity(M.m1, M.m2, curR()).F, Fmin: M.Fmin, Fmax: M.Fmax, rLabel: `r = ${rText(curR(), M)}`,
+    label1: lab ? `m₁ = ${mText(M.m1)}` : M.b1.name, label2: lab ? `m₂ = ${mText(M.m2)}` : M.b2.name,
+  }, show);
 }
 
 /* ------------------------------------------------------------------ UI */
@@ -301,7 +161,7 @@ function update() {
 
 /* ------------------------------------------------------------------ Boshqaruv */
 
-const stage = createStage($("#stage"), draw, { height: (cw) => clamp(Math.min(cw * 0.62, ((typeof window !== "undefined" && window.innerHeight) || 800) * 0.62), 320, 540) });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /** Sharlar bir-biriga kirib ketmasin: r ≥ R₁ + R₂ */
 function keepApart() {
@@ -335,16 +195,9 @@ document.querySelectorAll("[data-toggle]").forEach((cb) => cb.addEventListener("
   stage.render();
 }));
 
-/* Sudrash: jismni maydonning istalgan nuqtasiga olib borish mumkin */
+/* Sudrash: jism markazlar tekisligining istalgan nuqtasiga olib boriladi; bo'sh joy — kamerani aylantiradi */
 const canvas = stage.canvas;
-let drag = null;  // { key: "p1" | "p2", ox, oy } — ushlangan nuqtaning markazdan siljishi
-const local = (e) => { const r = canvas.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
-function hit(x, y) {
-  const d1 = Math.hypot(x - geo.x1, y - geo.y1), d2 = Math.hypot(x - geo.x2, y - geo.y2);
-  const ok1 = d1 < geo.r1 + 14, ok2 = d2 < geo.r2 + 14;
-  if (ok1 && ok2) return d1 - geo.r1 <= d2 - geo.r2 ? "p1" : "p2";
-  return ok1 ? "p1" : ok2 ? "p2" : null;
-}
+let drag = null;  // { key: "p1" | "p2", dx, dy } — ushlangan nuqtaning markazdan siljishi (metr)
 /** Pozitsiyalardan r ni olib, slayderlarni sinxronlash. */
 function syncFromPositions() {
   const r = curR();
@@ -352,36 +205,34 @@ function syncFromPositions() {
   if (st.mode === "lab") { st.r = r; rCtl.set(r); $("#rOut").textContent = `${fmt(r, 2)} m`; }
   else { st.k = r / PAIRS[st.pair].d; kCtl.set(st.k); $("#kOut").textContent = `${fmt(st.k, 2)}×`; }
 }
-canvas.addEventListener("pointerdown", (e) => {
-  const [x, y] = local(e), key = hit(x, y);
-  if (!key) return;
-  const c = key === "p1" ? [geo.x1, geo.y1] : [geo.x2, geo.y2];
-  drag = { key, ox: x - c[0], oy: y - c[1] };
-  canvas.dataset.dragging = "true";
-  canvas.setPointerCapture(e.pointerId);
-  e.preventDefault();
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(key, p) {
+    const q = scene.modelPoint(p);
+    drag = { key, dx: q ? pos[key].x - q.x : 0, dy: q ? pos[key].y - q.y : 0 };
+  },
+  move(key, p) {
+    const q = scene.modelPoint(p);
+    if (!drag || drag.key !== key || !q) return;
+    const M = model(), me = pos[key], other = pos[key === "p1" ? "p2" : "p1"];
+    const S = GRAVITY_SPAN / M.rMax, rr = sceneRadii(M)[key === "p1" ? 0 : 1];
+    const mxw = (GRAVITY_BOUNDS.x - rr) / S, myw = (GRAVITY_BOUNDS.z - rr) / S;
+    let px = clamp(q.x + drag.dx, -mxw, mxw), py = clamp(q.y + drag.dy, -myw, myw);
+    // r ∈ [rMin, rMax]: jismlar bir-biriga kirmaydi va juda uzoqlashmaydi
+    let dx = px - other.x, dy = py - other.y, d = Math.hypot(dx, dy);
+    if (d < 1e-9) { dx = key === "p1" ? -1 : 1; dy = 0; d = 1; }
+    const dc = clamp(d, M.rMin, M.rMax);
+    if (dc !== d) { px = other.x + (dx / d) * dc; py = other.y + (dy / d) * dc; }
+    me.x = px; me.y = py;
+    syncFromPositions();
+    update();
+  },
+  end() { drag = null; },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const [x, y] = local(e);
-  if (!drag) { canvas.style.cursor = hit(x, y) ? "grab" : "default"; return; }
-  const M = model(), me = pos[drag.key], other = pos[drag.key === "p1" ? "p2" : "p1"];
-  const rr = drag.key === "p1" ? geo.r1 : geo.r2;
-  const mxw = (geo.w / 2 - rr - 6) / geo.s, myw = (geo.h / 2 - rr - 6) / geo.s;
-  let px = clamp((x - drag.ox - geo.cx) / geo.s, -mxw, mxw), py = clamp((y - drag.oy - geo.cy) / geo.s, -myw, myw);
-  // r ∈ [rMin, rMax]: jismlar bir-biriga kirmaydi va juda uzoqlashmaydi
-  let dx = px - other.x, dy = py - other.y, d = Math.hypot(dx, dy);
-  if (d < 1e-9) { dx = drag.key === "p1" ? -1 : 1; dy = 0; d = 1; }
-  const dc = clamp(d, M.rMin, M.rMax);
-  if (dc !== d) { px = other.x + (dx / d) * dc; py = other.y + (dy / d) * dc; }
-  me.x = px; me.y = py;
-  syncFromPositions();
-  update();
-});
-const end = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", end);
-canvas.addEventListener("pointercancel", end);
 
 resetPositions(st.r);
 update();
 document.fonts?.ready.then(() => stage.render());
 window.addEventListener("resize", () => requestAnimationFrame(update));
+
+// Playwright tekshiruvi uchun
+window.__gravity = { st, pos, scene, update, curR };

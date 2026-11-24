@@ -6,6 +6,9 @@
 // Fizika: magnet-physics.js (Node'da tekshirilgan). Grafiklar: magnet-plots.js.
 // ==========================================================================
 
+import { createMagnetismLab } from "./magnetism-lab-3d.js?v=20261123-batch8d";
+import { bindLabCamera } from "./lab-3d.js?v=20261123-batch8d";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261123-batch8d";
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, sci, createStage, createLoop, tag, bindRange, prefersReducedMotion, arrow } from "./sim-kit.js";
 import * as P from "./magnet-physics.js";
@@ -406,17 +409,15 @@ function drawFrame(ctx, stage) {
   if (cw >= 560) tag(ctx, "yuqoridan ko‘rinish (aylanish o‘qi bizga qarab)", cw - 12, ch - 14, { color: c.text3, bg: c.bg, align: "right", font: "600 10.5px Inter, system-ui, sans-serif" });
 }
 
-function draw(ctx, stage) {
-  ctx.fillStyle = stage.colors.bg; ctx.fillRect(0, 0, stage.w, stage.h);
-  if (ui.mode === "field") drawField(ctx, stage);
-  else if (ui.mode === "ampere") drawAmpere(ctx, stage);
-  else drawFrame(ctx, stage);
+const scene=createMagnetismLab();
+function draw(ctx,stage) {
+ scene.draw(ctx,stage,ui,objs,sel,amp,frm,{lines,filings,heat:heatGrid,Bat,inside:insideBody,ampF:ampF(),force:o=>P.forceOnWire(cmp,o,srcIndexOf.get(o))});
 }
 const heights = (cw) => {
   const vh = (typeof window !== "undefined" && window.innerHeight) || 800;
   return { stage: Math.round(clamp(Math.min(cw * 0.6, vh * 0.46), 240, 380)), graph: Math.round(clamp(vh * 0.26, 170, 240)) };
 };
-const stage = createStage($("#stage"), draw, { height: (cw) => heights(cw).stage });
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 
 /* ------------------------------------------------------------------ Grafiklar */
 
@@ -563,7 +564,7 @@ function updateFormula() {
     : ui.mode === "ampere" ? (amp.setup === "rail" ? "<small>Ish</small> A = I·ΔΦ" : "<small>Amper kuchi</small> F = BIl·sinα") : "<small>Ramka</small> M = NBIS·sinφ";
   if (f.innerHTML !== html) f.innerHTML = html;
 }
-function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); }
+function refresh() { updateReadouts(); updateStatus(); updateExplain(); updateFormula(); stage.render(); }
 
 /* ------------------------------------------------------------------ Boshqaruv: maydon */
 
@@ -616,29 +617,6 @@ document.querySelectorAll("[data-view-value]").forEach((b) => b.addEventListener
   changed(false);
 }));
 
-// Sudrash
-let drag = null;
-stage.canvas.addEventListener("pointerdown", (ev) => {
-  if (ui.mode !== "field") return;
-  const r = stage.canvas.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top;
-  const k = hitObj(px, py);
-  sel = k;
-  if (k >= 0) { const [x, y] = toWorld(px, py); drag = { k, dx: objs[k].x - x, dy: objs[k].y - y }; try { stage.canvas.setPointerCapture(ev.pointerId); } catch { /* */ } stage.canvas.dataset.dragging = "true"; }
-  syncProps(); refresh(); stage.render(); graph.render();
-});
-let pending = false;
-stage.canvas.addEventListener("pointermove", (ev) => {
-  if (ui.mode !== "field") return;
-  const r = stage.canvas.getBoundingClientRect(), px = ev.clientX - r.left, py = ev.clientY - r.top;
-  if (!drag) { stage.canvas.style.cursor = hitObj(px, py) >= 0 ? "grab" : ""; return; }
-  const [x, y] = toWorld(px, py);
-  const o = objs[drag.k];
-  o.x = clamp(x + drag.dx, 0.005, W - 0.005); o.y = clamp(y + drag.dy, 0.005, H - 0.005);
-  if (!pending) { pending = true; requestAnimationFrame(() => { pending = false; if (o.type !== "compass") { customized(); recompute(); } refresh(); stage.render(); graph.render(); }); }
-});
-const endDrag = () => { if (drag) { drag = null; delete stage.canvas.dataset.dragging; } };
-stage.canvas.addEventListener("pointerup", endDrag);
-stage.canvas.addEventListener("pointercancel", endDrag);
 document.addEventListener("keydown", (ev) => {
   if (/INPUT|SELECT|TEXTAREA/.test(document.activeElement?.tagName || "")) return;
   if ((ev.key === "Delete" || ev.key === "Backspace") && ui.mode === "field" && sel >= 0) { ev.preventDefault(); objs.splice(sel, 1); sel = -1; changed(); }
@@ -675,6 +653,26 @@ const fSCtl = bindRange($("#fS"), $("#fSOut"), (v) => `${fmt(v, 0)} cm²`, (v) =
 const fKCtl = bindRange($("#fK"), $("#fKOut"), (v) => `${fmt(v, 0)}`, (v) => { frm.k = v; customized(); refresh(); });
 $("[data-commutator]").addEventListener("change", (e) => { frm.commutator = e.target.checked; customized(); refresh(); graph.render(); });
 $("[data-kick]").addEventListener("click", () => { frm.st.omega += 6; });
+
+/* Projected solid apparatus controls. */
+let sceneDrag=null;
+const knobControls={current:{obj:amp,key:'I',min:-10,max:10,step:.5,ctl:aICtl},field:{obj:amp,key:'B',min:0,max:.5,step:.01,ctl:aBCtl},motorCurrent:{obj:frm,key:'I',min:0,max:5,step:.1,ctl:fICtl},motorField:{obj:frm,key:'B',min:0,max:.5,step:.01,ctl:fBCtl}};
+bindLabCamera(stage.canvas,scene.lab,()=>stage.render(),{
+ start(id,p){
+  if(id.startsWith('object:')||id.startsWith('rotate:')||id.startsWith('property:')){
+   sel=+id.split(':')[1];const o=objs[sel],q=scene.modelPoint(p);sceneDrag={id,x:p.x,value:o.I||0,dx:q?o.x-q.x:0,dy:q?o.y-q.y:0};syncProps();refresh();graph.render();
+  }else{const spec=knobControls[id];sceneDrag={id,x:p.x,value:spec?spec.obj[spec.key]:0};}
+ },
+ move(id,p){
+  if(!sceneDrag)return;
+  if(id.startsWith('object:')){const q=scene.modelPoint(p),o=objs[sel];if(!q||!o)return;o.x=clamp(q.x+sceneDrag.dx,.005,W-.005);o.y=clamp(q.y+sceneDrag.dy,.005,H-.005);customized();changed();}
+  else if(id.startsWith('rotate:')){const o=objs[sel];if(!o)return;o.angle=(Math.round(scene.parameter(id,p)/DEG/15)*15%360)*DEG;customized();changed();}
+  else if(id.startsWith('property:')){const o=objs[sel];if(!o)return;const max=o.type==='coil'?5:20,step=o.type==='coil'?.1:.5;o.I=clamp(Math.round((sceneDrag.value+(p.x-sceneDrag.x)*max*2/180)/step)*step,-max,max);customized();changed();}
+  else if(id==='angle'){amp.alpha=clamp(Math.round(scene.parameter(id,p)/5)*5,0,90);aAlCtl.set(amp.alpha);customized();refresh();graph.render();}
+  else{const spec=knobControls[id];if(spec){const v=clamp(Math.round((sceneDrag.value+(p.x-sceneDrag.x)*(spec.max-spec.min)/180)/spec.step)*spec.step,spec.min,spec.max);spec.obj[spec.key]=v;spec.ctl.set(v);customized();refresh();graph.render();}}
+ },
+ end(){sceneDrag=null;},
+});
 
 /* ------------------------------------------------------------------ Simulyatsiya qadami */
 

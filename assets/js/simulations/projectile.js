@@ -1,3 +1,5 @@
+import { createProjectileLab } from "./mechanics-3d.js?v=20261122";
+import { bindLabCamera, labStageHeight } from "./lab-3d.js?v=20261122";
 // ==========================================================================
 // Og'irlik kuchi ta'sirida jism harakati — simulyatsiya (simulations/projectile.html)
 // Burchak ostida otish (parabola) + vertikal yuqoriga/pastga otish va erkin tushish — bitta qonun, a = g.
@@ -6,14 +8,12 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { DEG, clamp, fmt, createStage, createLoop, arrow, angleArc, tag, bindRange } from "./sim-kit.js";
-import { solve, stateAt, energiesAt, niceStep } from "./projectile-physics.js";
+import { DEG, clamp, fmt, createStage, createLoop, bindRange } from "./sim-kit.js";
+import { solve, stateAt, energiesAt } from "./projectile-physics.js";
 import { splitHeights } from "./pendulum-plots.js";
 import { drawFlightPlot, timeFromPointer } from "./projectile-plots.js";
 
 const $ = (s) => document.querySelector(s);
-const ITALIC = "italic 700 13px 'Times New Roman', serif";
-const SMALL = "600 11px Inter, system-ui, sans-serif";
 
 /* ------------------------------------------------------------------ Holat */
 
@@ -27,223 +27,9 @@ const MAX_TRACES = 5;
 const curP = () => (flight ? flight.p : p);
 const curSol = () => (flight ? flight.sol : sol);
 
-/* ------------------------------------------------------------------ Masshtab */
-
-let view = null;
-
-function computeView(w, h) {
-  const narrow = w < 560;
-  const padL = narrow ? 40 : 54, padR = narrow ? 14 : 24, padT = narrow ? 30 : 34, padB = 30;
-  const cs = curSol(), cp = curP();
-  const vertical = cs.vertical;
-  const list = vertical ? [{ p: cp, sol: cs }] : [...traces.map((t) => ({ p: t.p, sol: t.sol })), { p: cp, sol: cs }];
-  let xMax = 0, yMax = 0;
-  list.forEach(({ p: pp, sol: ss }) => { xMax = Math.max(xMax, ss.L); yMax = Math.max(yMax, ss.H, pp.h0); });
-  xMax = Math.max(xMax * 1.08, 10);
-  yMax = Math.max(yMax * 1.15, 5);
-  const axisX = padL + 16;
-  const plotW = w - axisX - padR, plotH = h - padT - padB;
-  const s = vertical ? plotH / yMax : Math.min(plotW / xMax, plotH / yMax);
-  const ox = vertical ? axisX + plotW / 2 : axisX;
-  const vRef = Math.max(cp.v0, 5);
-  const kv = vertical ? clamp((0.4 * plotH) / Math.max(vRef, Math.abs(cs.vy - cp.g * cs.T), 10), 1.5, 6) : clamp((0.28 * Math.min(plotW, plotH)) / 25, 2, 6);
-  return { s, kv, ox, axisX, oy: h - padB, w, h, plotW, plotH, padT, padR, xMax: vertical ? 0 : plotW / s, yMax: plotH / s, vertical };
-}
-
-const X = (x) => view.ox + x * view.s;
-const Y = (y) => view.oy - y * view.s;
-
-/* ------------------------------------------------------------------ Chizish */
-
-function drawAxes(ctx, c) {
-  const { axisX, oy, w, padT, vertical } = view;
-  const span = vertical ? view.yMax : Math.max(view.xMax, view.yMax);
-  const step = niceStep(span, w < 560 ? 4 : 7);
-  ctx.save();
-  ctx.strokeStyle = c.grid;
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  if (!vertical) for (let x = step; x <= view.xMax + 1e-9; x += step) { ctx.moveTo(X(x) + 0.5, padT - 10); ctx.lineTo(X(x) + 0.5, oy); }
-  for (let y = step; y <= view.yMax + 1e-9; y += step) { ctx.moveTo(axisX, Y(y) + 0.5); ctx.lineTo(w - 8, Y(y) + 0.5); }
-  ctx.stroke();
-
-  ctx.fillStyle = c.sunken;
-  ctx.fillRect(0, oy, w, view.h - oy);
-  ctx.strokeStyle = c.borderStrong;
-  ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(w, oy); ctx.stroke();
-
-  ctx.fillStyle = c.text3;
-  ctx.font = "500 11px Inter, system-ui, sans-serif";
-  const digits = step < 1 ? 1 : 0;
-  if (!vertical) {
-    ctx.textAlign = "center"; ctx.textBaseline = "top";
-    const lMark = ui.show.markers ? X(curSol().L) : -1e9;
-    for (let x = 0; x <= view.xMax + 1e-9; x += step) if (Math.abs(X(x) - lMark) > 34) ctx.fillText(fmt(x, digits), X(x), oy + 8);
-    ctx.textAlign = "right"; ctx.textBaseline = "middle";
-    ctx.fillText("x, m", w - 10, oy - 12);
-  }
-  ctx.textAlign = "right"; ctx.textBaseline = "middle";
-  for (let y = step; y <= view.yMax + 1e-9; y += step) ctx.fillText(fmt(y, digits), axisX - 22, Y(y));
-  ctx.textAlign = "left";
-  ctx.fillText("y, m", 8, padT - 18);
-  ctx.restore();
-}
-
-function pathOf(ctx, pp, tEnd) {
-  const n = 120;
-  ctx.beginPath();
-  for (let i = 0; i <= n; i++) {
-    const st = stateAt(pp, (tEnd * i) / n);
-    if (i === 0) ctx.moveTo(X(st.x), Y(st.y)); else ctx.lineTo(X(st.x), Y(st.y));
-  }
-}
-
-function drawLauncher(ctx, c, pp, vertical) {
-  if (pp.h0 > 0) {
-    ctx.save();
-    ctx.fillStyle = c.sunken;
-    ctx.strokeStyle = c.borderStrong;
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.rect(X(0) - (vertical ? 30 : 18), Y(pp.h0), vertical ? 22 : 18, view.oy - Y(pp.h0));
-    ctx.fill(); ctx.stroke();
-    ctx.restore();
-  }
-  if (pp.v0 <= 0 && vertical) return;
-  ctx.save();
-  ctx.translate(X(0), Y(pp.h0));
-  ctx.fillStyle = c.text2;
-  ctx.beginPath(); ctx.arc(0, 0, 9, Math.PI, 0); ctx.fill();
-  ctx.rotate(-pp.alpha);
-  ctx.fillRect(0, -4, 22, 8);
-  ctx.restore();
-}
-
-function draw(ctx, stage) {
-  const { w, h, colors: c } = stage;
-  view = computeView(w, h);
-  ctx.fillStyle = c.bg;
-  ctx.fillRect(0, 0, w, h);
-  drawAxes(ctx, c);
-
-  const cur = curP(), cs = curSol(), vertical = cs.vertical;
-
-  // Oldingi izlar (faqat egri trayektoriyalar)
-  if (!vertical) traces.forEach((tr, i) => {
-    if (tr.sol.vertical) return;
-    if (flight?.landed && i === traces.length - 1) return;
-    ctx.save();
-    ctx.strokeStyle = c.text3;
-    ctx.globalAlpha = 0.35 + 0.4 * ((i + 1) / traces.length);
-    ctx.lineWidth = 2;
-    pathOf(ctx, tr.p, tr.sol.T);
-    ctx.stroke();
-    ctx.restore();
-    tag(ctx, `${fmt(tr.p.alpha / DEG, 0)}°`, X(tr.sol.xTop), Y(tr.sol.H) - 14, { color: c.text2, bg: c.bg, align: "center", font: SMALL });
-  });
-
-  // Bashorat
-  if (ui.show.preview && (!flight || !flight.landed) && cs.T > 0) {
-    ctx.save();
-    ctx.strokeStyle = c.primary;
-    ctx.globalAlpha = 0.45;
-    ctx.lineWidth = 2;
-    ctx.setLineDash([6, 6]);
-    pathOf(ctx, cur, cs.T);
-    ctx.stroke();
-    ctx.restore();
-  }
-
-  drawLauncher(ctx, c, cur, vertical);
-
-  // Belgilar: H va L
-  if (ui.show.markers) {
-    if (cs.tTop > 0) {
-      ctx.save();
-      ctx.strokeStyle = c.success; ctx.lineWidth = 1.25; ctx.setLineDash([3, 4]);
-      if (vertical) { ctx.beginPath(); ctx.moveTo(view.axisX, Y(cs.H)); ctx.lineTo(X(0) + 40, Y(cs.H)); ctx.stroke(); }
-      else { ctx.beginPath(); ctx.moveTo(X(cs.xTop), Y(cs.H)); ctx.lineTo(X(cs.xTop), view.oy); ctx.stroke(); }
-      ctx.restore();
-      ctx.fillStyle = c.success;
-      ctx.beginPath(); ctx.arc(X(cs.xTop), Y(cs.H), 3.5, 0, Math.PI * 2); ctx.fill();
-      tag(ctx, `H = ${fmt(cs.H, 1)} m`, X(cs.xTop) + (vertical ? 44 : 8), Y(cs.H) - (vertical ? 0 : 14), { color: c.success, bg: c.bg });
-    }
-    if (!vertical) {
-      ctx.save();
-      ctx.fillStyle = c.danger;
-      ctx.beginPath();
-      ctx.moveTo(X(cs.L), view.oy); ctx.lineTo(X(cs.L) - 6, view.oy - 10); ctx.lineTo(X(cs.L) + 6, view.oy - 10); ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-      tag(ctx, `L = ${fmt(cs.L, 1)} m`, clamp(X(cs.L), 50, w - 50), view.oy + 21, { color: c.danger, bg: c.bg, align: "center" });
-    }
-  }
-
-  // Joriy uchish: iz + stroboskop + jism + vektorlar
-  let st = stateAt(cur, 0);
-  if (flight) {
-    const t = flight.t;
-    st = stateAt(cur, t);
-    ctx.save();
-    ctx.strokeStyle = c.primary;
-    ctx.lineWidth = 3;
-    ctx.lineCap = "round";
-    pathOf(ctx, cur, t);
-    ctx.stroke();
-    // Teng vaqt oraliqlaridagi holatlar (vertikalda yon tomonga siljitilgan: yuqoriga va pastga yo'l ustma-ust tushmasin)
-    const dtS = niceStep(cs.T, 12), off = vertical ? 26 : 0;
-    ctx.fillStyle = c.primary;
-    ctx.globalAlpha = 0.55;
-    for (let k = dtS; k < t; k += dtS) {
-      const q = stateAt(cur, k);
-      ctx.beginPath(); ctx.arc(X(q.x) + off, Y(q.y), 3, 0, Math.PI * 2); ctx.fill();
-    }
-    ctx.restore();
-  }
-
-  const bx = X(st.x), by = Y(st.y);
-  const vmaxPx = view.plotH * 0.5;
-  if (ui.show.components && !vertical && (flight || p.v0 > 0)) {
-    arrow(ctx, bx, by, st.vx * view.kv, 0, c.primary, { width: 2, dash: [5, 4], label: "vₓ", font: ITALIC });
-    arrow(ctx, bx, by, 0, clamp(-st.vy * view.kv, -vmaxPx, vmaxPx), c.success, { width: 2, dash: [5, 4], label: "vy", font: ITALIC });
-  }
-  if (ui.show.velocity) {
-    const dx = st.vx * view.kv, dy = clamp(-st.vy * view.kv, -vmaxPx, vmaxPx);
-    arrow(ctx, bx, by, dx, dy, c.warning, { width: 3, label: "v", font: "italic 700 15px 'Times New Roman', serif" });
-  }
-  if (ui.show.gravity) {
-    const len = clamp(cur.g * 2.2, 14, 62);
-    arrow(ctx, bx + (vertical ? 16 : 14), by, 0, len, c.special, { width: 2.5, head: 8, label: "g", font: ITALIC });
-  }
-
-  // Jism
-  ctx.save();
-  ctx.fillStyle = c.primary;
-  ctx.strokeStyle = c.bg;
-  ctx.lineWidth = 2.5;
-  ctx.beginPath(); ctx.arc(bx, by, 8, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-  ctx.restore();
-
-  // Burchak
-  if (!flight && !vertical && p.alpha > 1 * DEG) angleArc(ctx, X(0), Y(p.h0), 34, 0, -p.alpha, c.text2, { label: "α", labelR: 48 });
-
-  // Sudrash dastagi
-  handle.x = X(0) + Math.cos(p.alpha) * p.v0 * view.kv;
-  handle.y = Y(p.h0) - Math.sin(p.alpha) * p.v0 * view.kv;
-  if (!flight) {
-    ctx.save();
-    ctx.fillStyle = c.bg; ctx.strokeStyle = c.warning; ctx.lineWidth = 2.5;
-    ctx.beginPath(); ctx.arc(handle.x, handle.y, 7, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-    ctx.restore();
-  }
-
-  tag(ctx, `t = ${fmt(flight ? flight.t : 0, 2)} s`, w - 12, 18, { color: c.text2, bg: c.bg2, align: "right", font: "600 12px Inter, system-ui, sans-serif" });
-}
-const handle = { x: 0, y: 0 };
-let lastExplain = "";
-
-/* ------------------------------------------------------------------ UI */
+/* ------------------------------------------------------------------ 3D laboratoriya */
+const scene = createProjectileLab();
+function draw(ctx, stage) { scene.draw(ctx, stage, curP(), curSol(), flight, traces, ui.show); }
 
 function setReadout(key, value, sub) {
   const el = document.querySelector(`[data-readout="${key}"]`);
@@ -251,6 +37,7 @@ function setReadout(key, value, sub) {
   el.querySelector("[data-sub]").textContent = sub;
 }
 
+let lastExplain = "";
 const optimalAngle = (pp) => Math.atan(pp.v0 / Math.sqrt(pp.v0 * pp.v0 + 2 * pp.g * pp.h0));
 const sq = (x) => `<span class="sim-math">${x}</span>`;
 
@@ -327,7 +114,7 @@ function drawGraphCanvas(ctx, st) {
 
 /* ------------------------------------------------------------------ Boshqaruv */
 
-const stage = createStage($("#stage"), draw, { height: (w) => splitHeights(w).stage });
+const stage = createStage($("#stage"), draw, { height: labStageHeight });
 const graph = createStage($("#graph"), drawGraphCanvas, { height: (w) => splitHeights(w).graph });
 const canvas = stage.canvas;
 const playBtn = $("[data-play]");
@@ -469,47 +256,24 @@ const endScrub = () => { scrub = false; };
 graph.canvas.addEventListener("pointerup", endScrub);
 graph.canvas.addEventListener("pointercancel", endScrub);
 
-/* To'pdan tortish: burchak va tezlik (vertikalda — faqat tezlik va yo'nalish) */
-let dragging = false;
-function fromPointer(e) {
-  const r = canvas.getBoundingClientRect();
-  const dx = e.clientX - r.left - X(0);
-  const dy = Y(p.h0) - (e.clientY - r.top);
-  if (ui.kind === "vertical") {
-    const dir = dy >= 0 || p.h0 < 1 ? 1 : -1;
-    p.alpha = dir * 90 * DEG;
-    p.v0 = clamp(Math.round((Math.abs(dy) / view.kv) * 2) / 2, 0, 50);
-    v0Ctl.set(p.v0); syncKindUI();
-  } else {
-    const alpha = clamp(Math.round(Math.atan2(Math.max(dy, 0), Math.max(dx, 0.001)) / DEG), 0, 90);
-    p.alpha = alpha * DEG; ui.angleMemo = p.alpha;
-    p.v0 = clamp(Math.round((Math.hypot(Math.max(dx, 0), Math.max(dy, 0)) / view.kv) * 2) / 2, 1, 50);
-    alphaCtl.set(alpha); v0Ctl.set(p.v0);
-  }
-  onParam();
-}
-canvas.addEventListener("pointerdown", (e) => {
-  if (flight && !flight.landed) return;
-  const r = canvas.getBoundingClientRect();
-  const px = e.clientX - r.left, py = e.clientY - r.top;
-  const nearHandle = Math.hypot(px - handle.x, py - handle.y) < 26;
-  const nearCannon = Math.hypot(px - X(0), py - Y(p.h0)) < 30;
-  if (!nearHandle && !nearCannon) return;
-  if (flight?.landed) flight = null;
-  dragging = true;
-  canvas.dataset.dragging = "true";
-  canvas.setPointerCapture(e.pointerId);
-  fromPointer(e);
+/* Uchirish dastagini tortib burchak va tezlikni o‘zgartirish. */
+bindLabCamera(canvas, scene.lab, renderAll, {
+  start() { if (flight?.landed) { flight = null; renderAll(); updateUI(); } },
+  move(id, pointer) {
+    const aim = scene.aim(pointer.x, pointer.y);
+    if (!aim) return;
+    if (ui.kind === "vertical") {
+      p.alpha = (aim.vy >= 0 || p.h0 < 1 ? 1 : -1) * 90 * DEG;
+      p.v0 = clamp(Math.round(Math.abs(aim.vy) * 2) / 2, 0, 50);
+      v0Ctl.set(p.v0); syncKindUI();
+    } else {
+      p.alpha = clamp(Math.round(Math.atan2(Math.max(aim.vy, 0), Math.max(aim.vx, .001)) / DEG), 0, 90) * DEG;
+      p.v0 = clamp(Math.round(Math.hypot(Math.max(aim.vx, 0), Math.max(aim.vy, 0)) * 2) / 2, 1, 50);
+      ui.angleMemo = p.alpha; alphaCtl.set(Math.round(p.alpha / DEG)); v0Ctl.set(p.v0);
+    }
+    onParam();
+  },
 });
-canvas.addEventListener("pointermove", (e) => {
-  if (dragging) { fromPointer(e); return; }
-  if (flight && !flight.landed) { canvas.style.cursor = ""; return; }
-  const r = canvas.getBoundingClientRect();
-  canvas.style.cursor = Math.hypot(e.clientX - r.left - handle.x, e.clientY - r.top - handle.y) < 26 ? "grab" : "default";
-});
-const endDrag = () => { dragging = false; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 /* Boshlash (eski vertical-motion.html havolasi ?preset=vertical bilan keladi) */
 const QUICK = { vertical: "vertical,90,20,0,9.8", fall: "vertical,-90,0,45,9.8" };
