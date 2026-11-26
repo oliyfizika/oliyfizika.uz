@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <link rel="stylesheet" href="../assets/css/lab-notebook.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/dg.js"></script>
+<script type="module" src="../assets/js/simulations/dg.js?v=20261126-r"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Elektron difraksiyasi" data-shell-public="true">
 
@@ -39,7 +39,14 @@
           <span class="sim-modebar__hint" data-mode-hint></span>
         </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" role="img" aria-label="Laboratoriya qurilmasi"></canvas>
+          <canvas id="stage" role="img" aria-describedby="cameraHelp" aria-label="Uch o‘lchamli elektron difraksiyasi laboratoriyasi"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Kollektor va shtangensirkul jag‘larini suring; U dastagi chap/o‘ngga suriladi. Klaviatura: yo‘nalishlar, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action></button>
@@ -70,12 +77,21 @@
         <span class="sim-group__title">Devisson–Jermer qurilmasi</span>
         <div class="sim-control"><div class="sim-control__row"><label for="dU">Tezlatuvchi kuchlanish U</label><output for="dU" id="dUOut"></output></div><input class="sim-range" type="range" id="dU" min="20" max="100" step="1" value="54"></div>
         <div class="sim-control"><div class="sim-control__row"><label for="dPhi">Kollektor burchagi φ</label><output for="dPhi" id="dPhiOut"></output></div><input class="sim-range" type="range" id="dPhi" min="10" max="90" step="0.1" value="30"></div>
+        <div class="sim-btnrow" role="group" aria-label="Kuchlanish va burchakni aniq sozlash">
+          <button class="of-btn of-btn--sm" type="button" data-step="U:-1">U −1 V</button><button class="of-btn of-btn--sm" type="button" data-step="U:1">U +1 V</button>
+          <button class="of-btn of-btn--sm" type="button" data-step="phi:-0.5">φ −0,5°</button><button class="of-btn of-btn--sm" type="button" data-step="phi:0.5">φ +0,5°</button>
+        </div>
         <p class="of-subtle">Kollektorni sahnada surib yoki «±» tugmalari bilan burang; «Kollektorni aylantirish» butun I(φ) ni joriy kuchlanishda yozib oladi.</p>
       </div>
 
       <div class="sim-group sim-group--grid" data-ctl="gr">
         <span class="sim-group__title">Elektron-difraksion trubka</span>
         <div class="sim-control"><div class="sim-control__row"><label for="gU">Tezlatuvchi kuchlanish U</label><output for="gU" id="gUOut"></output></div><input class="sim-range" type="range" id="gU" min="2.5" max="5" step="0.05" value="4"></div>
+        <div class="sim-btnrow" role="group" aria-label="Jag‘larni aniq sozlash">
+          <button class="of-btn of-btn--sm" type="button" data-step="jL:-0.1">Chap −0,1 mm</button><button class="of-btn of-btn--sm" type="button" data-step="jL:0.1">Chap +0,1 mm</button>
+          <button class="of-btn of-btn--sm" type="button" data-step="jR:-0.1">O‘ng −0,1 mm</button><button class="of-btn of-btn--sm" type="button" data-step="jR:0.1">O‘ng +0,1 mm</button>
+          <button class="of-btn of-btn--sm" type="button" data-step="gU:-0.1">U −0,1 kV</button><button class="of-btn of-btn--sm" type="button" data-step="gU:0.1">U +0,1 kV</button>
+        </div>
         <p class="of-subtle">Shtangensirkul jag‘larini surib halqaning ikki chetidagi (markaziy chizig‘idagi) nuqtalarga keltiring; aniq sozlash — «±0,1 mm» tugmalari. So‘ng «Yozib olish» ni bosing.</p>
       </div>
 

@@ -9,19 +9,20 @@
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion, angleArc, sci } from "./sim-kit.js";
+import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion, sci } from "./sim-kit.js";
 import * as P from "./dg-physics.js";
 import * as L from "./dg-lab.js";
 import { buildDGDoc, SITE_URL, SITE_LABEL, DOC_LABEL } from "./dg-report.js";
 import { renderHTML } from "./labreport.js";
+import { createDGLab } from "./dg-lab-3d.js?v=20261126-r";
+import { bindLabCamera } from "./lab-3d.js?v=20261126-r";
+import { detailedStageHeight } from "./apparatus-3d.js?v=20261126-r";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
 const SMALL = "600 10px Inter, system-ui, sans-serif";
 const MID = "600 11px Inter, system-ui, sans-serif";
 const BOLD = "700 12px Inter, system-ui, sans-serif";
-const LBL = "italic 700 13px Inter, system-ui, sans-serif";
-const MONO = (s) => `700 ${s}px "SFMono-Regular", Menlo, Consolas, ui-monospace, monospace`;
 const PAL = ["#2563eb", "#ea580c", "#16a34a", "#9333ea", "#0891b2", "#e11d48", "#ca8a04", "#64748b"];
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
@@ -46,25 +47,6 @@ function tagIn(ctx, text, x, y, cw, o) {
   let x0 = o.align === "center" ? x - w / 2 : o.align === "right" ? x - w : x;
   x0 = clamp(x0, 4, cw - 4 - w); tag(ctx, text, x0, y, { ...o, align: "left" });
 }
-function chipBtn(ctx, c, x, y, text, on, w, h = 24) {
-  ctx.save(); ctx.font = MID; const tw = w || ctx.measureText(text).width + 14;
-  ctx.fillStyle = on ? c.primary : c.dark ? "rgba(255,255,255,0.08)" : "rgba(15,23,42,0.06)"; ctx.beginPath(); ctx.roundRect(x, y, tw, h, 6); ctx.fill();
-  ctx.fillStyle = on ? "#fff" : c.text; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(text, x + tw / 2, y + h / 2 + 0.5); ctx.restore();
-  return { x0: x, x1: x + tw, y0: y, y1: y + h };
-}
-function knob(ctx, c, x, y, r, frac, label) {
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1.5; circle(ctx, x, y, r); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.border; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(x, y, r + 5, 135 * DEG, 405 * DEG); ctx.stroke();
-  ctx.strokeStyle = c.primary; ctx.beginPath(); ctx.arc(x, y, r + 5, 135 * DEG, (135 + 270 * clamp(frac, 0, 1)) * DEG); ctx.stroke();
-  const a = (135 + 270 * clamp(frac, 0, 1)) * DEG; ctx.strokeStyle = c.text; ctx.lineWidth = 2.5; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + Math.cos(a) * (r - 3), y + Math.sin(a) * (r - 3)); ctx.stroke();
-  ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(label, x, y + r + 8);
-}
-function lcd(ctx, x, y, w, h, title, value, unit, col = "#4ade80") {
-  ctx.fillStyle = "#0b1220"; ctx.beginPath(); ctx.roundRect(x, y, w, h, 8); ctx.fill();
-  ctx.fillStyle = "#94a3b8"; ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic"; ctx.fillText(title, x + 9, y + 15);
-  ctx.fillStyle = col; ctx.font = MONO(Math.min(26, h * 0.5)); ctx.textAlign = "right"; ctx.fillText(value, x + w - 36, y + h - 11);
-  ctx.fillStyle = "#cbd5e1"; ctx.font = BOLD; ctx.textAlign = "left"; ctx.fillText(unit, x + w - 30, y + h - 12);
-}
 const noise = (a, b) => { const h = Math.sin(a * 913.7 + b * 37.1) * 43758.5453; return h - Math.floor(h) - 0.5; };
 const measuredI = (U, phi) => Math.max(0, P.dgCurrent(U, phi) * (1 + 0.006 * noise(U, phi)));
 
@@ -86,80 +68,6 @@ function stepDG(dt) {
   if (!dg.scan) return;
   const n = Math.max(1, Math.round((dt * 8) / 0.2)); // ~10 s
   for (let i = 0; i < n && dg.scan; i++) { setPhi(dg.phi + 0.2); if (dg.phi >= P.DG.phiMax - 1e-9) dg.scan = false; }
-}
-function drawDG(ctx, st) {
-  const { w: cw, h: ch, colors: c } = st, narrow = cw < 560;
-  const W = narrow ? cw - 16 : cw * 0.58, top = narrow ? 100 : 16, R = Math.min(W / 1.66, (ch - top - 30) / 1.16), cx = 8 + R * 0.5, cy = ch - 24;
-  geo.dg = { cx, cy, R, chips: [] };
-  // kamera (yarim doiraning o‘ng qismi)
-  const a0 = 2 * Math.PI - Math.acos(-0.42 / 1.12);
-  ctx.fillStyle = c.dark ? "#141b2b" : "#f3f6fb"; ctx.strokeStyle = c.text3; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.moveTo(cx - R * 0.42, cy); ctx.arc(cx, cy, R * 1.12, a0, 2 * Math.PI); ctx.closePath(); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.text3; ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic"; ctx.fillText("vakuum kamera", cx - R * 0.38, cy - 8);
-  // burchak shkalasi (normaldan o‘ngga 0…90°)
-  ctx.strokeStyle = c.text3; ctx.fillStyle = c.text3;
-  for (let a = 0; a <= 90; a += 2) {
-    const r0 = a % 10 === 0 ? R * 1.0 : R * 1.04, ang = -Math.PI / 2 + a * DEG;
-    ctx.lineWidth = a % 10 === 0 ? 1.4 : 0.8; ctx.beginPath(); ctx.moveTo(cx + Math.cos(ang) * R * 1.09, cy + Math.sin(ang) * R * 1.09); ctx.lineTo(cx + Math.cos(ang) * r0, cy + Math.sin(ang) * r0); ctx.stroke();
-    if (a % 10 === 0) { ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(`${a}°`, cx + Math.cos(ang) * R * 0.92, cy + Math.sin(ang) * R * 0.92); }
-  }
-  // kristall
-  ctx.fillStyle = c.dark ? "#94a3b8" : "#64748b"; ctx.fillRect(cx - R * 0.22, cy - 6, R * 0.44, 12);
-  ctx.fillStyle = c.dark ? "#cbd5e1" : "#334155"; for (let i = -5; i <= 5; i++) { circle(ctx, cx + i * R * 0.04, cy - 6, 2); ctx.fill(); }
-  ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("Ni kristali (111)", cx, cy + 9);
-  // elektron to‘pi (yuqoridan, normal bo‘ylab)
-  const gy = cy - R * 0.98;
-  ctx.fillStyle = c.dark ? "#475569" : "#334155"; ctx.beginPath(); ctx.roundRect(cx - 9, gy - 10, 18, R * 0.36, 4); ctx.fill();
-  ctx.fillStyle = "#f97316"; circle(ctx, cx, gy - 4, 3); ctx.fill();
-  ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText("elektron to‘pi", cx + 14, gy + 4);
-  const by0 = gy + R * 0.36 - 10;
-  ctx.save(); ctx.strokeStyle = "rgba(59,130,246,0.55)"; ctx.lineWidth = 4; ctx.setLineDash([2, 6]); ctx.lineDashOffset = -ui.t * 40; ctx.beginPath(); ctx.moveTo(cx, by0); ctx.lineTo(cx, cy - 8); ctx.stroke(); ctx.restore();
-  // sochilgan to‘lqin (yorug‘lik bo‘lagi): qutb ko‘rinishi — joriy U uchun xira
-  ctx.save(); ctx.globalAlpha = c.dark ? 0.22 : 0.15; ctx.fillStyle = PAL[0]; ctx.beginPath(); ctx.moveTo(cx, cy - 6);
-  const imax = Math.max(...Array.from({ length: 81 }, (_, i) => P.dgCurrent(dg.U, 10 + i)));
-  for (let a = 10; a <= 90; a += 1) { const r = (P.dgCurrent(dg.U, a) / imax) * R * 0.8, ang = -Math.PI / 2 + a * DEG; ctx.lineTo(cx + Math.cos(ang) * r, cy - 6 + Math.sin(ang) * r); }
-  ctx.closePath(); ctx.fill(); ctx.restore();
-  // kollektor
-  const ang = -Math.PI / 2 + dg.phi * DEG, rc = R * 0.86;
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx, cy - 6); ctx.lineTo(cx + Math.cos(ang) * rc, cy - 6 + Math.sin(ang) * rc); ctx.stroke();
-  ctx.save(); ctx.translate(cx + Math.cos(ang) * rc, cy - 6 + Math.sin(ang) * rc); ctx.rotate(ang);
-  ctx.fillStyle = c.dark ? "#cbd5e1" : "#1e293b"; ctx.beginPath(); ctx.roundRect(0, -8, 22, 16, 3); ctx.fill(); ctx.fillStyle = "#facc15"; ctx.fillRect(-1, -4, 3, 8); ctx.restore();
-  const hx = cx + Math.cos(ang) * (rc + 32), hy = cy - 6 + Math.sin(ang) * (rc + 32);
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2; circle(ctx, hx, hy, 8); ctx.fill(); ctx.stroke(); ctx.fillStyle = c.primary; circle(ctx, hx, hy, 2.5); ctx.fill();
-  geo.dg.arm = { x: hx, y: hy, r: 18 };
-  angleArc(ctx, cx, cy - 6, R * 0.3, -Math.PI / 2, ang, c.warning, { label: "φ", labelR: R * 0.3 + 14, font: LBL });
-  ctx.save(); ctx.strokeStyle = c.text3; ctx.setLineDash([3, 4]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(cx, cy - 6); ctx.lineTo(cx, cy - R * 0.5); ctx.stroke(); ctx.restore();
-  // asboblar
-  if (narrow) {
-    lcd(ctx, 8, 8, cw / 2 - 12, 48, "U, V", fmt(dg.U, 0), "V", "#60a5fa"); lcd(ctx, cw / 2 + 4, 8, cw / 2 - 12, 48, "GALVANOMETR", fmt(measuredI(dg.U, dg.phi), 3), "nA");
-    const bw = (cw - 16 - 3 * 4) / 4; [["U −1", "U", -1], ["U +1", "U", 1], ["φ −0,5", "P", -0.5], ["φ +0,5", "P", 0.5]].forEach(([t, k, d], i) => { const b = chipBtn(ctx, c, 8 + i * (bw + 4), 62, t, false, bw, 26); geo.dg.chips.push({ ...b, k, d }); });
-    tagIn(ctx, `φ = ${fmt(dg.phi, 1)}°`, cw - 10, cy - R * 0.4, cw, { color: c.warning, bg: c.bg, align: "right", font: BOLD, pad: 5 });
-    return;
-  }
-  const px = cx + R * 1.2 + 14, pw = cw - px - 10;
-  lcd(ctx, px, 10, pw, 52, "VOLTMETR · tezlatuvchi U", fmt(dg.U, 0), "V", "#60a5fa");
-  lcd(ctx, px, 68, pw, 52, "GALVANOMETR · kollektor toki", fmt(measuredI(dg.U, dg.phi), 3), "nA");
-  lcd(ctx, px, 126, pw, 44, "KOLLEKTOR BURCHAGI φ", fmt(dg.phi, 1), "°", "#fbbf24");
-  const kr = 20, kx = px + kr + 10, ky = 180 + kr + 6;
-  knob(ctx, c, kx, ky, kr, (dg.U - 20) / 80, "U dastagi"); geo.dg.knob = { x: kx, y: ky, r: kr + 10 };
-  const bx = kx + kr + 18, bw = Math.max(40, (px + pw - bx - 8) / 2);
-  [["U +1", "U", 1], ["U −1", "U", -1], ["φ +1°", "P", 1], ["φ −1°", "P", -1], ["φ +0,1°", "P", 0.1], ["φ −0,1°", "P", -0.1]].forEach(([t, k, d], i) => { const b = chipBtn(ctx, c, bx + (i % 2) * (bw + 6), 178 + Math.floor(i / 2) * 28, t, false, bw, 24); geo.dg.chips.push({ ...b, k, d }); });
-  const sb = chipBtn(ctx, c, px, ch - 36, dg.scan ? "■ To‘xtatish" : "▶ Kollektorni aylantirish (10°→90°)", dg.scan, pw, 28); geo.dg.chips.push({ ...sb, k: "scan" });
-  // atom qatorlari va yo‘l farqi (sxema)
-  const iy = 270, ih = ch - 36 - 10 - iy;
-  if (ih > 70) drawPathDiff(ctx, c, px, iy, Math.min(pw, ih / 0.62));
-}
-function drawPathDiff(ctx, c, x, y, w) {
-  const h = w * 0.62, ph = dg.phi * DEG;
-  ctx.fillStyle = c.bg2; ctx.strokeStyle = c.border; ctx.lineWidth = 1; ctx.beginPath(); ctx.roundRect(x, y, w, h, 8); ctx.fill(); ctx.stroke();
-  const by = y + h - 18, d = w * 0.36, a1 = x + w * 0.22, a2 = a1 + d;
-  ctx.fillStyle = c.text2; for (let i = -1; i <= 3; i++) { circle(ctx, a1 + i * d * 0.5, by, 3.2); ctx.fill(); }
-  ctx.strokeStyle = PAL[0]; ctx.lineWidth = 1.5; const L = h * 0.7;
-  [a1, a2].forEach((ax) => { ctx.beginPath(); ctx.moveTo(ax, by - L * 0.5); ctx.lineTo(ax, by); ctx.lineTo(ax + Math.sin(ph) * L, by - Math.cos(ph) * L); ctx.stroke(); });
-  // yo‘l farqi d·sinφ
-  ctx.strokeStyle = c.danger; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(a1, by); const fx = a1 + d * Math.sin(ph) * Math.sin(ph), fy = by - d * Math.sin(ph) * Math.cos(ph); ctx.lineTo(fx, fy); ctx.stroke();
-  ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("d", (a1 + a2) / 2, by + 5);
-  ctx.textAlign = "left"; ctx.fillStyle = c.danger; ctx.fillText("Δ = d·sinφ", x + 6, y + 6);
 }
 function drawGraphDG(ctx, gst) {
   const { w, h, colors: c } = gst; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, w, h);
@@ -199,66 +107,6 @@ function drawGraphDG(ctx, gst) {
 
 function setGU(v) { gr.U = clamp(Math.round(v * 20) / 20, P.GRAPHITE.Umin, P.GRAPHITE.Umax); gUC.set(gr.U); }
 function caliperD() { return Math.round((gr.jR - gr.jL) * 10) / 10; }
-function drawGR(ctx, st) {
-  const { w: cw, h: ch, colors: c } = st, narrow = cw < 560;
-  const SR = narrow ? Math.min(cw / 2 - 14, (ch - 120) / 2) : Math.min(ch / 2 - 14, cw * 0.27), sx = narrow ? cw / 2 : cw - SR - 230 > 300 ? cw * 0.56 : cw - SR - 16, sy = narrow ? 12 + SR : ch / 2;
-  const mm = SR / 52, X = (v) => sx + v * mm; // ekran diametri ~104 mm
-  geo.gr = { sx, sy, mm, chips: [] };
-  // trubka sxemasi
-  if (!narrow) {
-    const tx = 14, ty = sy - 50, tw = Math.max(160, sx - SR - 40 - tx);
-    ctx.fillStyle = c.dark ? "rgba(148,163,184,0.10)" : "rgba(148,163,184,0.14)"; ctx.strokeStyle = c.text3; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(tx, ty + 34); ctx.lineTo(tx + tw * 0.45, ty + 34); ctx.lineTo(tx + tw, ty - 20); ctx.lineTo(tx + tw, ty + 120); ctx.lineTo(tx + tw * 0.45, ty + 66); ctx.lineTo(tx, ty + 66); ctx.closePath(); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = "#f97316"; circle(ctx, tx + 12, ty + 50, 3); ctx.fill();
-    ctx.strokeStyle = "rgba(59,130,246,0.6)"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(tx + 16, ty + 50); ctx.lineTo(tx + tw * 0.45, ty + 50); ctx.stroke();
-    ctx.fillStyle = c.text; ctx.fillRect(tx + tw * 0.45 - 1, ty + 40, 3, 20);
-    const lamb = P.lambdaNm(gr.U * 1000), Lp = tw * 0.55;
-    P.GRAPHITE.d.forEach((d, i) => { const th2 = 2 * Math.asin(lamb / (2 * d)), dy = Math.tan(th2) * Lp * 4; ctx.strokeStyle = i ? "rgba(74,222,128,0.5)" : "rgba(74,222,128,0.8)"; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(tx + tw * 0.45, ty + 50); ctx.lineTo(tx + tw, ty + 50 - dy); ctx.moveTo(tx + tw * 0.45, ty + 50); ctx.lineTo(tx + tw, ty + 50 + dy); ctx.stroke(); });
-    ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "center"; ctx.textBaseline = "top";
-    ctx.fillText("elektron to‘pi", tx + 30, ty + 70); ctx.fillText("grafit", tx + tw * 0.45, ty + 72); ctx.fillText("ekran", tx + tw - 8, ty + 124);
-    ctx.textBaseline = "bottom"; ctx.fillText(`L = ${P.GRAPHITE.L} mm`, tx + tw * 0.72, ty - 22);
-    lcd(ctx, tx, ty + 150, Math.min(200, tw), 50, "YUQORI KUCHLANISH U", fmt(gr.U, 2), "kV", "#60a5fa");
-    const kr = 20, kx = tx + kr + 6, ky = ty + 230; knob(ctx, c, kx, ky, kr, (gr.U - 2.5) / 2.5, "U dastagi"); geo.gr.knob = { x: kx, y: ky, r: kr + 10 };
-    [["−0,1 kV", -0.1], ["+0,1 kV", 0.1]].forEach(([t, d], i) => { const b = chipBtn(ctx, c, kx + kr + 18 + i * 74, ky - 12, t, false, 70, 24); geo.gr.chips.push({ ...b, k: "U", d }); });
-  }
-  // ekran
-  const g = ctx.createRadialGradient(sx, sy, 2, sx, sy, SR);
-  g.addColorStop(0, "rgba(74,222,128,0.18)"); g.addColorStop(1, "rgba(5,46,22,0.95)");
-  ctx.fillStyle = "#03140a"; circle(ctx, sx, sy, SR); ctx.fill(); ctx.fillStyle = g; circle(ctx, sx, sy, SR); ctx.fill();
-  // halqalar
-  ctx.save(); ctx.beginPath(); ctx.arc(sx, sy, SR, 0, TAU); ctx.clip();
-  P.GRAPHITE.d.forEach((d, i) => {
-    const r = (P.ringD(gr.U, d) / 2) * mm, wd = 0.45 * mm;
-    for (let k = -3; k <= 3; k++) { ctx.strokeStyle = `rgba(134,239,172,${(i ? 0.42 : 0.6) * Math.exp(-(k * k) / 3)})`; ctx.lineWidth = Math.max(1, wd); circle(ctx, sx, sy, r + k * wd * 0.6); ctx.stroke(); }
-  });
-  const sp = ctx.createRadialGradient(sx, sy, 0, sx, sy, 5 * mm); sp.addColorStop(0, "rgba(220,252,231,0.95)"); sp.addColorStop(1, "rgba(134,239,172,0)"); ctx.fillStyle = sp; circle(ctx, sx, sy, 5 * mm); ctx.fill();
-  // shtangensirkul
-  const yL = sy; ctx.strokeStyle = "rgba(255,255,255,0.35)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(sx - SR, yL); ctx.lineTo(sx + SR, yL); ctx.stroke();
-  [["L", gr.jL], ["R", gr.jR]].forEach(([k, v]) => { ctx.strokeStyle = k === gr.active ? "#fbbf24" : "#fde68a"; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(X(v), sy - SR * 0.9); ctx.lineTo(X(v), sy + SR * 0.9); ctx.stroke(); });
-  ctx.restore();
-  ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 4; circle(ctx, sx, sy, SR + 2); ctx.stroke();
-  // jag‘ tutqichlari (ekran ustida)
-  [["L", gr.jL], ["R", gr.jR]].forEach(([k, v]) => {
-    const hx = X(v), hy = sy - SR - 2; ctx.fillStyle = k === gr.active ? "#f59e0b" : c.bg; ctx.strokeStyle = "#f59e0b"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(hx, hy + 8); ctx.lineTo(hx - 8, hy - 6); ctx.lineTo(hx + 8, hy - 6); ctx.closePath(); ctx.fill(); ctx.stroke();
-    geo.gr[`j${k}`] = { x: hx, y: hy - 2, r: 16 };
-  });
-  // o‘lchov va tugmalar
-  const rx = narrow ? 10 : sx + SR + 14, ry = narrow ? sy + SR + 12 : 12, rw = narrow ? cw - 20 : cw - rx - 10;
-  if (rw > 120) {
-    lcd(ctx, rx, ry, rw, 50, "SHTANGENSIRKUL D", fmt(caliperD(), 1), "mm", "#fbbf24");
-    const bw = (rw - 4) / 2, rows = [[`◀ chap −0,1`, "L", -0.1], [`chap +0,1 ▶`, "L", 0.1], [`◀ o‘ng −0,1`, "R", -0.1], [`o‘ng +0,1 ▶`, "R", 0.1]];
-    rows.forEach(([t, j, d], i) => { const b = chipBtn(ctx, c, rx + (i % 2) * (bw + 4), ry + 58 + Math.floor(i / 2) * 30, t, false, bw, 26); geo.gr.chips.push({ ...b, k: "J", j, d }); });
-    if (!narrow) {
-      ctx.fillStyle = c.text2; ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "top";
-      ctx.fillText(`chap jag‘: ${fmt(gr.jL, 1)} mm`, rx, ry + 124); ctx.fillText(`o‘ng jag‘: ${fmt(gr.jR, 1)} mm`, rx, ry + 140);
-      const b = chipBtn(ctx, c, rx, ch - 36, "Yozib olish (D → jurnal)", true, rw, 28); geo.gr.chips.push({ ...b, k: "rec" });
-    } else {
-      const bw2 = (cw - 20 - 8) / 3; [["U −0,1", "U", -0.1], ["U +0,1", "U", 0.1]].forEach(([t, k, d], i) => { const b = chipBtn(ctx, c, 10 + i * (bw2 + 4), ry + 120, t, false, bw2, 26); geo.gr.chips.push({ ...b, k, d }); });
-      tagIn(ctx, `U = ${fmt(gr.U, 2)} kV`, cw - 10, ry + 133, cw, { color: c.text, bg: c.bg2, align: "right", font: BOLD, pad: 6 });
-    }
-  }
-}
 function recordD() {
   journal.push({ id: (journal.at(-1)?.id || 0) + 1, U: gr.U, D: caliperD() });
   if (journal.length > 300) journal.shift(); store.set(J_KEY, journal); renderJournal(true); nbRecalc();
@@ -266,9 +114,10 @@ function recordD() {
 
 /* ------------------------------------------------------------------ Asosiy chizish */
 
-function draw(ctx, st) { ctx.fillStyle = st.colors.bg; ctx.fillRect(0, 0, st.w, st.h); if (ui.mode === "dg") drawDG(ctx, st); else drawGR(ctx, st); }
-const heights = (cw) => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { stage: Math.round(clamp(Math.min(cw * 0.5, vh * 0.52), 320, 420)), graph: Math.round(clamp(vh * 0.3, 200, 270)) }; };
-const stage = createStage($("#stage"), draw, { height: (cw) => (cw < 560 ? (ui.mode === "gr" ? Math.round(cw + 190) : Math.round(cw * 0.75 + 110)) : heights(cw).stage) });
+const scene = createDGLab();
+function draw(ctx, st) { scene.draw(ctx, st, ui, dg, gr, { current: measuredI(dg.U, dg.phi) }); }
+const heights = (cw) => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { stage: detailedStageHeight(cw), graph: Math.round(clamp(vh * 0.25, 180, 230)) }; };
+const stage = createStage($("#stage"), draw, { height: detailedStageHeight });
 const graph = createStage($("#graph"), (ctx, gst) => (ui.mode === "dg" ? drawGraphDG(ctx, gst) : null), { height: (cw) => heights(cw).graph });
 
 /* ------------------------------------------------------------------ Natijalar */
@@ -345,51 +194,47 @@ const dPhiC = bindRange($("#dPhi"), $("#dPhiOut"), (v) => `${fmt(v, 1)}°`, (v) 
 const gUC = bindRange($("#gU"), $("#gUOut"), (v) => `${fmt(v, 2)} kV`, (v) => { gr.U = v; customized(); refresh(); });
 
 const canvas = stage.canvas;
-let drag = null, dragY0 = 0, dragV0 = 0;
+let drag = null;
 const ptr = (e, cv = canvas) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
-const inBox = (p, b) => b && p.x >= b.x0 && p.x <= b.x1 && p.y >= b.y0 && p.y <= b.y1;
-const hitR = (p, b) => b && Math.hypot(p.x - b.x, p.y - b.y) <= b.r;
-function hitTest(p) {
-  if (ui.mode === "dg") {
-    const g = geo.dg || {}; for (const ch of g.chips || []) if (inBox(p, ch)) return { k: "chip", ch };
-    if (hitR(p, g.knob)) return { k: "knob" }; if (hitR(p, g.arm)) return { k: "arm" };
-    if (g.cx !== undefined) { const a = Math.atan2(p.x - g.cx, -(p.y - (g.cy - 6))) / DEG, r = Math.hypot(p.x - g.cx, p.y - g.cy); if (r > g.R * 0.35 && r < g.R * 1.15 && Math.abs(a - dg.phi) < 5) return { k: "arm" }; }
-    return null;
-  }
-  const g = geo.gr || {}; for (const ch of g.chips || []) if (inBox(p, ch)) return { k: "chip", ch };
-  if (hitR(p, g.knob)) return { k: "knob" }; if (hitR(p, g.jL)) return { k: "jL" }; if (hitR(p, g.jR)) return { k: "jR" };
-  if (g.sx !== undefined && Math.abs(p.y - g.sy) < 52 * g.mm) { const v = (p.x - g.sx) / g.mm; if (Math.abs(v - gr.jL) * g.mm < 8) return { k: "jL" }; if (Math.abs(v - gr.jR) * g.mm < 8) return { k: "jR" }; }
-  return null;
+function setJaw(key, value) {
+  gr[key] = clamp(Math.round(value * 10) / 10, key === 'jL' ? -52 : gr.jL, key === 'jR' ? 52 : gr.jR);
 }
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(e), h = hitTest(p); if (!h) return;
-  if (h.k === "chip") {
-    const ch = h.ch;
-    if (ui.mode === "dg") { if (ch.k === "scan") toggleScan(); else { dg.scan = false; ch.k === "U" ? setU(dg.U + ch.d) : setPhi(dg.phi + ch.d); } }
-    else if (ch.k === "rec") recordD();
-    else if (ch.k === "U") setGU(gr.U + ch.d);
-    else if (ch.k === "J") { gr.active = ch.j; const key = ch.j === "L" ? "jL" : "jR"; gr[key] = clamp(Math.round((gr[key] + ch.d) * 10) / 10, -52, 52); }
-    customized(); refresh(); return;
-  }
-  drag = h.k; dragY0 = p.y; dragV0 = ui.mode === "dg" ? dg.U : gr.U;
-  if (drag === "jL" || drag === "jR") gr.active = drag === "jL" ? "L" : "R";
-  if (ui.mode === "dg") dg.scan = false;
-  canvas.dataset.dragging = "true"; try { canvas.setPointerCapture(e.pointerId); } catch { /* */ }
-  e.preventDefault(); onDrag(p);
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id, p) {
+    drag = { id, x: p.x, U: ui.mode === "dg" ? dg.U : gr.U, phi: dg.phi, jL: gr.jL, jR: gr.jR, scan: dg.scan,
+      curves: ui.mode === 'dg' ? Object.fromEntries(Object.entries(dg.curves).map(([key, rows]) => [key, rows.map(row => row.slice())])) : null };
+    if (ui.mode === "dg") dg.scan = false;
+    if (id === "jL" || id === "jR") gr.active = id.slice(1);
+  },
+  move(id, p) {
+    if (!drag) return;
+    if (id === "voltage") {
+      const v = drag.U + (p.x - drag.x) * (ui.mode === "dg" ? .4 : .0125);
+      if (ui.mode === "dg") setU(v); else setGU(v);
+    } else {
+      const v = scene.parameter(id, p); if (v === null) return;
+      if (id === "collector") setPhi(v);
+      else if (id === "jL" || id === "jR") setJaw(id, v);
+    }
+    customized(); refresh();
+  },
+  end(id, cancelled) {
+    if (cancelled && drag) {
+      if (ui.mode === "dg") { dg.U = drag.U; dg.phi = drag.phi; dg.scan = drag.scan; dg.curves = drag.curves; saveCurves(); }
+      else { gr.U = drag.U; gr.jL = drag.jL; gr.jR = drag.jR; }
+      syncAll(); refresh();
+    }
+    drag = null;
+  },
 });
-function onDrag(p) {
-  if (ui.mode === "dg") {
-    if (drag === "knob") setU(dragV0 + (dragY0 - p.y) * 0.3);
-    else if (drag === "arm") { const g = geo.dg, a = Math.atan2(p.x - g.cx, -(p.y - (g.cy - 6))) / DEG; setPhi(Math.round(a * 2) / 2); }
-  } else {
-    if (drag === "knob") setGU(dragV0 + (dragY0 - p.y) * 0.01);
-    else if (drag === "jL" || drag === "jR") { const g = geo.gr, v = clamp(Math.round(((p.x - g.sx) / g.mm) * 10) / 10, -52, 52); gr[drag] = v; }
-  }
+document.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
+  const [key, delta] = button.dataset.step.split(':');
+  if (key === 'U') { dg.scan = false; setU(dg.U + +delta); }
+  else if (key === 'phi') { dg.scan = false; setPhi(dg.phi + +delta); }
+  else if (key === 'gU') setGU(gr.U + +delta);
+  else { gr.active = key.slice(1); setJaw(key, gr[key] + +delta); }
   customized(); refresh();
-}
-canvas.addEventListener("pointermove", (e) => { const p = ptr(e); if (!drag) { const h = hitTest(p); canvas.style.cursor = h ? (h.k === "chip" ? "pointer" : h.k === "knob" ? "ns-resize" : h.k === "jL" || h.k === "jR" ? "ew-resize" : "grab") : ""; return; } onDrag(p); });
-function endDrag() { drag = null; canvas.dataset.dragging = "false"; refresh(); }
-canvas.addEventListener("pointerup", endDrag); canvas.addEventListener("pointercancel", endDrag);
+}));
 graph.canvas.addEventListener("pointermove", (e) => { const p = ptr(e, graph.canvas), g = geo.cart; dg.cursor = g && p.x >= g.x0 && p.x <= g.x1 ? p.x : null; graph.render(); });
 graph.canvas.addEventListener("pointerleave", () => { dg.cursor = null; graph.render(); });
 
@@ -409,7 +254,7 @@ presetBox.addEventListener("click", (ev) => { const b = ev.target.closest("[data
 const setPresetPressed = (id) => document.querySelectorAll("[data-preset]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.preset === id)));
 function customized() { if (presetId) { presetId = null; setPresetPressed(null); $("[data-lesson]").textContent = ""; } }
 function syncAll() { dUC.set(dg.U); dPhiC.set(dg.phi); gUC.set(gr.U); }
-const MODE_HINT = { dg: "Kollektorni suring yoki tugmalar bilan burang; grafikda kursor bilan o‘qing", gr: "Shtangensirkul jag‘larini halqa chetlariga keltiring" };
+const MODE_HINT = { dg: "Kollektorni suring; kuchlanish dastagini chap/o‘ngga suring", gr: "Shtangensirkul jag‘larini halqa chetlariga keltiring" };
 function setModeUI() {
   document.querySelectorAll("[data-mode-value]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.modeValue === ui.mode)));
   document.querySelectorAll("[data-ctl]").forEach((el) => { el.hidden = el.dataset.ctl !== ui.mode; });
@@ -422,6 +267,7 @@ function loadPreset(id) {
   setModeUI(); presetId = id; setPresetPressed(id); $("[data-lesson]").textContent = p.lesson;
   syncAll(); refresh();
   if (!prefersReducedMotion()) loop.start(); else loop.stop();
+  setPlayUI(loop.running);
   try { history.replaceState(null, "", `?preset=${id}`); } catch { /* fayl:// */ }
 }
 
