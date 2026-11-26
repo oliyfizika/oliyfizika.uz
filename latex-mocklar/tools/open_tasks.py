@@ -176,10 +176,10 @@ def t44(k):
          ("Quyoshning", "13,8\\cdot10^{8}", 1.38e9, "1,5\\cdot10^{11}", 1.5e11, 0.6)][k]
     obj, Dt, D, dt, d, f = P
     di = D * f / d * 1000
-    st = (f"{obj} diametri ${Dt}$ m ga, Yer bilan {obj[:-3]} orasidagi masofa ${dt}$ m ga teng. "
-          f"Fokus masofasi {num(f)} m bo‘lgan Yerdagi linza ekranda {obj[:-3]}ning haqiqiy tasvirini hosil qilmoqda.")
+    st = (f"{obj} diametri ${Dt}$ m ga, Yer bilan {obj[:-4]} orasidagi masofa ${dt}$ m ga teng. "
+          f"Fokus masofasi {num(f)} m bo‘lgan Yerdagi linza ekranda {obj[:-4]}ning haqiqiy tasvirini hosil qilmoqda.")
     return st, [("Tasvir bilan linza orasidagi masofani (mm) toping.", num(f * 1000)),
-                (f"{obj[:-3]} tasvirining diametrini (mm) toping.", num(round(di, 2)))], None
+                (f"{obj[:-4]} tasvirining diametrini (mm) toping.", num(round(di, 2)))], None
 
 def t45(k):
     P = [(2,2),(1,2),(2,1),(3,1),(3,2),(1,3),(2,3),(4,1),(4,2),(1,1)][k]

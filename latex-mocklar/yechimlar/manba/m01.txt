@@ -1,0 +1,162 @@
+@1 B
+Shar suzganda og‘irlik kuchi Arximed kuchiga teng: $\rho_s\cdot0{,}6V\,g=mg$, bundan sharning to‘liq hajmi
+>> V=\frac{m}{0{,}6\rho_s}=\frac{5{,}4}{600}=9\cdot10^{-3}\ \text{m}^3=9000\ \text{cm}^3.
+Alyuminiyning o‘zi egallagan hajm $V_{Al}=m/\rho_{Al}=5{,}4/2700=2\cdot10^{-3}$ m$^3=2000$ cm$^3$. G‘ovak hajmi $9000-2000=7000$ cm$^3$.
+
+@2 B
+Tezlik $v=x'=4t-3$: $v_0=-3$ m/s, $v(3)=9$ m/s. Kinetik energiya haqidagi teoremaga ko‘ra
+>> A=\frac{m}{2}\left(v^2-v_0^2\right)=\frac{2}{2}(81-9)=72\ \text{J}.
+
+@3 C
+Solning hajmi $V=Sh=10\cdot0{,}5=5$ m$^3$, massasi $m=400\cdot5=2000$ kg. Sol to‘liq botganda Arximed kuchi $\rho_s Vg$ ga teng, ya’ni $5000$ kg massali jism og‘irligini ko‘taradi. Yuk massasi $M=5000-2000=3000$ kg $=3$ t.
+
+@4 B
+$v=\omega R=0{,}5\cdot0{,}2=0{,}1$ m/s.
+
+@5 D
+Nuqta muvozanat holatidan o‘tishi uchun ikkala tebranish ham bir vaqtda muvozanatdan o‘tishi kerak. Vertikal tebranish har $T_1/2=1{,}5$ s da, gorizontal tebranish har $T_2/2=2$ s da muvozanatdan o‘tadi. Ikkalasi uchun umumiy eng kichik vaqt $\mathrm{EKUK}(1{,}5;\,2)=6$ s. Demak, $t=5+6=11$ s.
+
+@6 D
+Signal kovakkacha borib qaytadi: $2h=vt$,
+>> v=\frac{2h}{t}=\frac{2\cdot0{,}1}{50\cdot10^{-6}}=4000\ \text{m/s}.
+
+@7 B
+$60^\circ$ kenglikdagi parallel radiusi $r=R\cos60^\circ=3200$ km. $10^\circ$ va $100^\circ$ meridianlar orasidagi yoy $90^\circ$, ya’ni aylananing choragi:
+>> s=\frac{2\pi r}{4}=\frac{2\cdot3{,}14\cdot3200}{4}=5024\ \text{km},\qquad t=\frac{s}{v}=\frac{5024}{314}=16\ \text{soat}.
+
+@8 A
+Sol to‘liq botgan holda odamni ko‘tarishi kerak: $\rho_s Shg=\rho Shg+Mg$, bundan
+>> S=\frac{M}{(\rho_s-\rho)h}=\frac{80}{400\cdot0{,}2}=1\ \text{m}^2.
+
+@9 B
+G‘ishtga tezlanish faqat tinchlikdagi ishqalanish kuchi beradi: $ma\le\mu mg$, demak $a_{max}=\mu g=0{,}5\cdot10=5$ m/s$^2$.
+
+@10 D
+Kater tezligi $v$, oqim tezligi $u$: $v-u=S/4$, $v+u=S/2$. Bundan $v=3S/8$, $u=S/8$. Ikkinchi kater tezligi $2v=3S/4$, oqim bo‘ylab
+>> t=\frac{S}{2v+u}=\frac{S}{3S/4+S/8}=\frac{8}{7}\ \text{h}.
+
+@11 C
+Ta’rif bo‘yicha bu — molekulyar-kinetik nazariya.
+
+@12 A
+Mendeleyev–Klapeyron tenglamasidan ($M_{H_2}=2$ g/mol):
+>> p=\frac{mRT}{MV}=\frac{1\cdot8{,}31\cdot300}{831\cdot10^{-6}}=3\cdot10^{6}\ \text{Pa}=3\ \text{MPa}.
+
+@13 A
+$p$ va $V$ o‘zgarmas bo‘lgani uchun $N=pV/(kT)\sim1/T$:
+>> \frac{N_2}{N_1}=\frac{T_1}{T_2}=\frac{291}{300}=0{,}97,
+ya’ni molekulalar soni $3\%$ ga kamaygan.
+
+@14 D
+Izobarik jarayonda ($p=\text{const}$) $V/T=\text{const}$, ya’ni $V_1/T_1=V_2/T_2$.
+
+@15 B
+Bajarilgan ish $A=nFs=46\cdot40\cdot0{,}08=147{,}2$ J, egovni isitishga $Q=0{,}5A=73{,}6$ J ketadi:
+>> \Delta t=\frac{Q}{cm}=\frac{73{,}6}{460\cdot0{,}1}=1{,}6\ ^\circ\text{C}.
+
+@16 A
+To‘rtta lampochkadan umumiy tok $I=4\cdot0{,}3=1{,}2$ A. Qo‘shimcha qarshilikdagi kuchlanish $5{,}4-3=2{,}4$ V, demak $R=2{,}4/1{,}2=2\ \Omega$.
+
+@17 A
+Elektron qoplamalar orasida $t=L/v=3\cdot10^{-3}/(3\cdot10^4)=10^{-7}$ s bo‘ladi. Tezlanishi
+>> a=\frac{eU}{md}=\frac{1{,}6\cdot10^{-19}\cdot9\cdot10^{-3}}{9\cdot10^{-31}\cdot1{,}6\cdot10^{-2}}=10^{11}\ \text{m/s}^2,
+>> y=\frac{at^2}{2}=\frac{10^{11}\cdot10^{-14}}{2}=5\cdot10^{-4}\ \text{m}=0{,}5\ \text{mm}.
+
+@18 D
+Elektron uchun $\vec F=-e\,[\vec v\times\vec B]$. $\vec F$ $z$ o‘qiga qarshi bo‘lishi uchun $[\vec v\times\vec B]$ $z$ o‘qi bo‘ylab bo‘lishi kerak. $\vec v\parallel x$ bo‘lganda $[\hat x\times\hat y]=\hat z$, demak $\vec B$ $y$ o‘qi bo‘ylab yo‘nalgan.
+
+@19 C
+Elektronlar soni $N=nSL$, tok $I=enSv$. Umumiy impuls
+>> p=Nmv=\frac{m}{e}\,IL=5{,}7\cdot10^{-12}\cdot40\cdot800\approx1{,}8\cdot10^{-7}\ \text{kg}\cdot\text{m/s}.
+
+@20 B
+Foydali quvvat $P_f=Fv=380\cdot10^3\cdot13=4{,}94$ MW, sarflangan quvvat $P=8UI=8\cdot3000\cdot230=5{,}52$ MW.
+>> \eta=\frac{4{,}94}{5{,}52}\approx0{,}9=90\%.
+
+@21 A
+Kondensator manbaga ulangan, $U$ va $d$ o‘zgarmaydi, demak $E=U/d$ ham, energiya zichligi $w=\varepsilon_0E^2/2$ ham o‘zgarmaydi.
+
+@22 A
+Zaryadlar bir xil (bir ishorali), shuning uchun $W=kq_1q_2/r>0$ — musbat.
+
+@23 D
+$3q$ zaryadli zarraning boshqa ikki zaryad bilan ta’sir energiyasi $W=k\cdot3q(q+2q)/a=9kq^2/a$. Zarra cheksiz uzoqlashganda bu energiya to‘liq kinetik energiyaga aylanadi:
+>> \frac{mv^2}{2}=\frac{9kq^2}{a}\ \Rightarrow\ v=\sqrt{\frac{18kq^2}{am}}.
+
+@24 C
+$F=BIL=0{,}03\cdot0{,}5\cdot0{,}4=6\cdot10^{-3}$ N $=6$ mN.
+
+@25 A
+Lens qoidasiga ko‘ra halqadagi induksion tok magnitni itaradi: halqaning magnitga qaragan tomoni shimoliy qutbga aylanadi. Magnit tomondan qaralganda bunday tok soat miliga teskari yo‘nalgan.
+
+@26 A
+Odam tezligi $v=1$ m/s, ko‘zgu tezligi $u$ (bir-biriga qarab). Tasvirning yerga nisbatan tezligi $2u+v$ va u odamga qarab harakatlanadi. Tasvirning odamga nisbatan tezligi $(2u+v)+v=6$, bundan $u=2$ m/s.
+
+@27 A
+$F=1/D=1/7$ m. Haqiqiy tasvir uchun $d=F(1+1/\Gamma)$.
+>> d_1=F(1+2{,}5)=\frac{3{,}5}{7}=0{,}5\ \text{m},\qquad d_2=F\left(1+\frac{1}{2{,}5}\right)=\frac{1{,}4}{7}=0{,}2\ \text{m}.
+Buyum $50-20=30$ cm ga surilgan.
+
+@28 D
+Deraza vertikal. Uning gorizontal tomoni polga o‘zgarmay tushadi ($1{,}8$ m), vertikal tomonining soyasi esa $1{,}8\,\mathrm{ctg}\,60^\circ=1{,}8/\sqrt3$ m.
+>> S=1{,}8\cdot\frac{1{,}8}{\sqrt3}=\frac{3{,}24}{\sqrt3}=1{,}08\sqrt3\ \text{m}^2.
+
+@29 D
+Elektronning kinetik energiyasi $3m_0c^2$, to‘liq energiyasi $E=4m_0c^2=mc^2$, ya’ni $m=4m_0$ va $\gamma=4$:
+>> v=c\sqrt{1-\frac{1}{16}}=\frac{\sqrt{15}}{4}c.
+
+@30 D
+$E=mc^2$, $p=mv\Rightarrow m=p/v$, demak $E=pc^2/v$.
+
+@31 A
+$E=5E_k$ bo‘lsa, $E_0=E-E_k=0{,}8E$, ya’ni $\gamma=E/E_0=1{,}25$:
+>> v=c\sqrt{1-\frac{1}{1{,}25^2}}=c\sqrt{1-0{,}64}=0{,}6c.
+
+@32 D
+Energiyaning saqlanish qonuni: $mg(h+x)=kx^2/2$.
+>> h+x=\frac{kx^2}{2mg}=\frac{2000\cdot10^{-4}}{2\cdot0{,}2}=0{,}5\ \text{m},\qquad h\approx0{,}5\ \text{m}.
+
+@33 A F E
+Ideal ampermetr $A_2$ ning qarshiligi nol, u ko‘prikning o‘rta nuqtalarini tutashtiradi. Natijada $R_1\parallel R_2$ va $R_3\parallel R_4$ ketma-ket ulanadi:
+>> R_{12}=\frac{3\cdot12}{15}=2{,}4\ \Omega,\quad R_{34}=\frac{4\cdot1}{5}=0{,}8\ \Omega,\quad I=\frac{48}{3{,}2}=15\ \text{A}\ (A_3).
+Yuqori qismdagi kuchlanish $U_{12}=15\cdot2{,}4=36$ V, shuning uchun $I_1=36/3=12$ A ($A_1$). Pastki qismda $U_{34}=12$ V, $I_3=12/4=3$ A. Chap tugun uchun Kirxgof qoidasi: $A_2$ orqali $I_1-I_3=12-3=9$ A oqadi.
+
+@36
+Muzlar massasi $m_m=2\cdot0{,}9\cdot2^3=14{,}4$ g, umumiy massa $m=45{,}6+14{,}4=60$ g. Muz erigach idishdagi suyuqlikning og‘irligi to‘liq tubga tushadi:
+>> F=mg=0{,}06\cdot10=0{,}6\ \text{N},\qquad p=\frac{F}{S}=\frac{0{,}6}{50\cdot10^{-4}}=120\ \text{Pa}.
+
+@37
+Massalar teng: $\rho_s h_s=\rho_k h_k$, $h_s+h_k=27$ cm. Bundan $h_k=1{,}25h_s$, $2{,}25h_s=27$, $h_s=12$ cm, $h_k=15$ cm.
+Tubdan 8 cm balandlikdagi nuqta suv ichida; uning ustida 4 cm suv va 15 cm kerosin bor:
+>> p=\rho_k g h_k+\rho_s g\cdot0{,}04=800\cdot10\cdot0{,}15+1000\cdot10\cdot0{,}04=1600\ \text{Pa}.
+
+@38
+Balandlik $h=l\sin37^\circ=7{,}2$ m. Silliq tekislikda $v=\sqrt{2gh}=\sqrt{144}=12$ m/s. Og‘irlik kuchining ishi $A=mgh=20\cdot10\cdot7{,}2=1440$ J.
+
+@39
+Izobarik jarayonda $V/T=\text{const}$, demak harorat ham 3 marta ortadi. Bir atomli gaz uchun $Q=\frac52p\Delta V$, $A=p\Delta V=\frac25Q=24$ J.
+
+@40
+Suv va idish $0\ ^\circ$C gacha soviganda beradigan issiqlik $Q_1=(4200\cdot5+500)\cdot10=215$ kJ. Muzni $0\ ^\circ$C gacha isitishga $2100\cdot1\cdot5=10{,}5$ kJ, to‘liq eritishga yana $330$ kJ kerak. $10{,}5<215<340{,}5$, demak muzning bir qismi eriydi va $t=0\ ^\circ$C. Muz suv va idish bergan barcha issiqlikni oladi: $215$ kJ.
+
+@41
+>> \mathcal E_0=NBS\omega=NBS\cdot2\pi n=100\cdot0{,}5\cdot0{,}02\cdot2\cdot3{,}14\cdot10=62{,}8\ \text{V},
+>> \mathcal E_{ef}=\frac{\mathcal E_0}{\sqrt2}\approx44{,}41\ \text{V}.
+
+@42
+$E=U/d=500/0{,}01=5\cdot10^4$ V/m $=50$ kV/m. Muvozanat: $qE=mg$,
+>> q=\frac{mg}{E}=\frac{10^{-11}\cdot10}{5\cdot10^4}=2\cdot10^{-15}\ \text{C}.
+
+@43
+Suvda yorug‘lik tezligi $v=c/n=3\cdot10^8/(4/3)=2{,}25\cdot10^8$ m/s. Intensivlik $I=wv$:
+>> w=\frac{I}{v}=\frac{27}{2{,}25\cdot10^8}=1{,}2\cdot10^{-7}\ \text{J/m}^3.
+Ko‘zgudan tik qaytganda bosim $p=2w=2{,}4\cdot10^{-7}$ Pa.
+
+@44
+Quyosh juda uzoqda, shuning uchun tasvir fokal tekislikda: $f=F=0{,}5$ m $=500$ mm. Tasvir diametri
+>> d=D\frac{F}{L}=1{,}38\cdot10^9\cdot\frac{0{,}5}{1{,}5\cdot10^{11}}=4{,}6\cdot10^{-3}\ \text{m}=4{,}6\ \text{mm}.
+
+@45
+$E_n=13{,}6/n^2=3{,}4$ eV, demak $n=2$. Impuls momenti $L=n\hbar$; $2\hbar$ ga ortsa $n=4$:
+>> E_4=\frac{13{,}6}{16}=0{,}85\ \text{eV}.
+Bor modelida $v_n\sim1/n$, shuning uchun tezlik $4/2=2$ marta kamayadi.

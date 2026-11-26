@@ -1,0 +1,148 @@
+@1 A
+Kuch o‘zgarmas: $F=m_1a_1=3\cdot4=12$ N. $a_2=F/m_2=12/12=1$ m/s$^2$.
+
+@2 D
+Sistema tezlanishi
+>> a=\frac{(m_2-m_1)g}{m_1+m_2}=\frac{1\cdot10}{5}=2\ \text{m/s}^2.
+$s=2$ m dan keyin $v^2=2as=8$ m$^2$/s$^2$, 2 kg li jismning kinetik energiyasi $E_k=\frac{2\cdot8}{2}=8$ J.
+
+@3 A
+$\nu=1/T=1/4=0{,}25$ Hz.
+
+@4 B
+Yuksiz: $a_1=F/m=1/0{,}2=5$ m/s$^2$, $s_1=a_1t^2/2=10$ m. Yuk bilan: $a_2=1/0{,}5=2$ m/s$^2$, $s_2=4$ m. Yo‘l $10-4=6$ m ga kamayadi.
+
+@5 A
+To‘liq mexanik energiya $E=mgh=20\cdot10\cdot25=5000$ J saqlanadi: $E_p=5000-600=4400$ J.
+
+@6 A
+Impulsning saqlanish qonuni: $\vec p\,'=\vec p_1+\vec p_2$.
+>> p'^2=p^2+(2p)^2+2\cdot p\cdot2p\cos60^\circ=7p^2\ \Rightarrow\ p'=\sqrt7\,p.
+
+@7 C
+Koordinatalar sistemasi jism vaziyatining vaqt o‘tishi bilan qanday o‘zgarishini (harakat qonunini) aniqlash uchun kerak.
+
+@8 A
+Massa markazi joyida qolsa, uning tezlanishi nol: $T-Mg=0$, ya’ni $T=Mg$.
+
+@9 C
+Burchak tezligi $\omega=\varphi/t=3\pi/180=\pi/60$ rad/s.
+>> T=\frac{2\pi}{\omega}=\frac{2\pi}{\pi/60}=120\ \text{s}.
+
+@10 C
+O‘qning uchish vaqti va tovushning qaytish vaqti yig‘indisi: $\frac{s}{800}+\frac{s}{330}=2{,}7$.
+>> s=\frac{2{,}7\cdot800\cdot330}{1130}\approx630\ \text{m}.
+
+@11 C
+$U=\frac{i}{2}\nu RT$. Vodorod ikki atomli ($i=5$), geliy bir atomli ($i=3$), shuning uchun vodorodning ichki energiyasi katta.
+
+@12 B
+Kapillyardagi sath o‘zgarishi $h=\frac{2\sigma}{\rho gr}$:
+>> r=\frac{2\sigma}{\rho gh}=\frac{2\cdot0{,}51}{13600\cdot10\cdot0{,}005}=1{,}5\cdot10^{-3}\ \text{m}=1{,}5\ \text{mm}.
+
+@13 A
+Adiabatik jarayonda $Q=0$: $\Delta U=-A=-24$ kJ, ya’ni ichki energiya 24 kJ ga kamayadi.
+
+@14 A
+>> v=\sqrt{\frac{3RT}{M}}=\sqrt{\frac{3\cdot8{,}31\cdot300}{0{,}002}}\approx1933\ \text{m/s}.
+Bitta molekula massasi $m_0=M/N_A=0{,}002/(6{,}02\cdot10^{23})\approx3{,}32\cdot10^{-27}$ kg, impulsi $p=m_0v\approx6{,}4\cdot10^{-24}$ kg$\cdot$m/s.
+
+@15 D
+Adiabatik siqishda tashqi kuchlar ishi ichki energiya o‘zgarishiga teng. Kislorod ikki atomli, $\nu=320/32=10$ mol:
+>> A=\Delta U=\frac52\nu R\Delta T=\frac52\cdot10\cdot8{,}31\cdot40=8310\ \text{J}.
+
+@16 D
+Tetraedrning 4 ta yog‘i — tomoni $a$ bo‘lgan teng tomonli uchburchaklar: $S=4\cdot\frac{\sqrt3}{4}a^2=\sqrt3a^2$. $\sigma=\frac{q}{S}=\frac{q}{a^2\sqrt3}$.
+
+@17 B
+$3q$ zaryad qo‘zg‘almas, $q$ zaryadli zarra cheksiz uzoqlashadi; o‘zaro ta’sir energiyasi kinetik energiyaga aylanadi:
+>> \frac{k\cdot q\cdot3q}{a}=\frac{mv^2}{2}\ \Rightarrow\ v=\sqrt{\frac{6kq^2}{am}}.
+
+@18 C
+$X_L=\omega L=2\pi\nu L=2\pi\cdot50\cdot0{,}025=2{,}5\pi\ \Omega$. $U_0=I_0X_L=2\cdot2{,}5\pi=5\pi$ V.
+
+@19 C
+>> j=\frac{I}{\pi r^2}=\frac{3{,}14}{3{,}14\cdot10^{-6}}=10^6\ \text{A/m}^2.
+
+@20 A
+Tekkizilganda umumiy zaryad $2q$ radiuslarga proporsional taqsimlanadi (potensiallar tenglashadi): $q_1=\frac{2q\cdot2}{6}=\frac{2q}{3}$, $q_2=\frac{4q}{3}$. Kuch $q_1q_2=\frac{8}{9}q^2$ ga proporsional, ya’ni $9/8$ marta kamayadi.
+
+@21 A
+$U$ o‘zgarmas, $E=U/d$ 3 marta kamayadi, $w=\varepsilon_0E^2/2$ esa 9 marta kamayadi.
+
+@22 A
+$I_{ef}=I_0/\sqrt2=5/\sqrt2$ A.
+
+@23 D
+$mg=10^{-9}\cdot10=10^{-8}$ N, elektr kuchi $qE=2\cdot10^{-11}\cdot50=10^{-9}$ N yuqoriga.
+>> a=\frac{mg-qE}{m}=\frac{10^{-8}-10^{-9}}{10^{-9}}=9\ \text{m/s}^2,\qquad h=\frac{at^2}{2}=\frac{9\cdot16}{2}=72\ \text{m}.
+
+@24 D
+Tekkizilganda potensiallar tenglashadi: $q_1/r=q_2/R$, $q_1+q_2=2q$. Bundan $q_1=\frac{2qr}{r+R}$.
+
+@25 A
+$A=qU=8\cdot10^{-3}\cdot4=32\cdot10^{-3}$ J $=32$ mJ.
+
+@26 C
+$F=R/2=24/2=12$ cm.
+
+@27 D
+Odam ko‘zgudan $4+1=5$ m uzoqlashdi, ko‘zgu esa odam tomon 2 m surildi: oraliq $5-2=3$ m. Tasvir ko‘zgu ortida xuddi shunday masofada, demak odam va tasvir orasidagi masofa $2\cdot3=6$ m.
+
+@28 A
+$F=1/D=1/4=0{,}25$ m $=25$ cm.
+
+@29 B
+$^7_3\mathrm{Li}+^A_Z\mathrm X\to2\,^4_2\mathrm{He}$. Zaryad: $3+Z=4$, $Z=1$; massa soni: $7+A=8$, $A=1$. Demak $X$ — proton $^1_1\mathrm H$.
+
+@30 D
+$p=\frac{mv}{\sqrt{1-v^2/c^2}}$: $v=0{,}1c$ da $p=\frac{0{,}1mc}{\sqrt{0{,}99}}$, bundan $mc^2=\frac{10\sqrt{0{,}99}}{1}\,pc$. $v=0{,}2c$ da
+>> E=\frac{mc^2}{\sqrt{0{,}96}}=10\sqrt{\frac{0{,}99}{0{,}96}}\,pc=\sqrt{103{,}1}\,pc\approx\sqrt{103}\,pc.
+
+@31 D
+12 minut — 3 ta yarim yemirilish davri: $N=N_0/8$. Parchalangan atomlar
+>> \Delta N=N_0\left(1-\frac18\right)=\frac78\cdot10^7=8{,}75\cdot10^6.
+
+@32 D
+$x=A\sin\omega t$ bo‘lsa, $v=A\omega\cos\omega t$; boshlanishda impuls maksimal. Impuls 2 marta kamayishi uchun $\cos\omega t=\frac12$, $\omega t=\frac{\pi}{3}$:
+>> t=\frac{\pi/3}{2\pi/T}=\frac{T}{6}.
+
+@33 B F A
+$R_1\parallel R_2$: $R_{12}=4\ \Omega$. Tashqi qarshilik $R=4+5=9\ \Omega$.
+>> I=\frac{\varepsilon}{R+r}=\frac{40}{10}=4\ \text{A},\qquad U=\varepsilon-Ir=40-4=36\ \text{V}.
+$R_1=R_2$ bo‘lgani uchun tok teng bo‘linadi: $I_1=2$ A.
+
+@36
+Suzish sharti: $\rho_s ghS=\rho gaS$, botgan chuqurlik $h=\frac{\rho}{\rho_s}a=0{,}6\cdot10=6$ cm.
+To‘liq botirish uchun qo‘shimcha kuch $F=(\rho_s-\rho)gV=400\cdot10\cdot10^{-3}=4$ N.
+
+@37
+$t=\sqrt{2h/g}=\sqrt{16}=4$ s. Dastlabki 3 s da $gt^2/2=45$ m o‘tadi, oxirgi sekundda $80-45=35$ m.
+
+@38
+Impulsning saqlanish qonuni (noelastik urilish):
+>> u=\frac{mv}{m+M}=\frac{0{,}01\cdot400}{2}=2\ \text{m/s},\qquad h=\frac{u^2}{2g}=\frac{4}{20}=0{,}2\ \text{m}=20\ \text{cm}.
+
+@39
+$\nu=64/32=2$ mol.
+>> p_1=\frac{\nu RT}{V}=\frac{2\cdot8{,}31\cdot300}{8{,}31\cdot10^{-3}}=6\cdot10^5\ \text{Pa}=600\ \text{kPa}.
+Izoxorik jarayon: $p_2=p_1T_2/T_1=600\cdot400/300=800$ kPa.
+
+@40
+Issiqlik balansi: $2(80-t)=3(t-20)$, $t=44\ ^\circ$C. Issiq suv bergan issiqlik $Q=4200\cdot2\cdot36=302\,400$ J $=302{,}4$ kJ.
+
+@41
+$F=BIL\sin\alpha=0{,}2\cdot4\cdot0{,}5\cdot0{,}5=0{,}2$ N. O‘tkazgich induksiya chiziqlariga tik qo‘yilganda ($\alpha=90^\circ$) kuch eng katta: $F_{max}=BIL=0{,}4$ N.
+
+@42
+>> F=k\frac{q_1q_2}{r^2}=9\cdot10^9\cdot\frac{2\cdot10^{-6}\cdot8\cdot10^{-6}}{0{,}09}=1{,}6\ \text{N}.
+Bir ishorali zaryadlar orasida $kq_1/x^2=kq_2/(r-x)^2$: $(r-x)/x=\sqrt{q_2/q_1}=2$, $x=r/3=10$ cm.
+
+@43
+Sinish qonuni: $\sin\beta=\sin53^\circ/n=0{,}8\cdot\frac34=0{,}6$, $\beta=37^\circ$. Suvda $v=c/n=3\cdot10^8\cdot\frac34=2{,}25\cdot10^8$ m/s.
+
+@44
+Haqiqiy tasvir uchun $\Gamma=f/d=2$ va $\frac1d+\frac1f=\frac1F$: $\frac1d+\frac1{2d}=\frac1{10}$, $d=15$ cm, $f=30$ cm.
+
+@45
+24 sutka — 3 ta yarim yemirilish davri: $N/N_0=2^{-3}=0{,}125$. Yemirilganlar $\Delta N=1{,}6\cdot10^{20}\cdot0{,}875=1{,}4\cdot10^{20}$.
