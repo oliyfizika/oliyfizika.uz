@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <link rel="stylesheet" href="../assets/css/lab-notebook.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/bohr.js"></script>
+<script type="module" src="../assets/js/simulations/bohr.js?v=20261126-r"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Bor postulatlari" data-shell-public="true">
 
@@ -39,7 +39,30 @@
           <span class="sim-modebar__hint" data-mode-hint></span>
         </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" role="img" aria-label="Laboratoriya qurilmasi"></canvas>
+          <canvas id="stage" role="img" aria-label="Uch o‘lchamli Frank–Gers qurilmasi va panjarali spektrometr" aria-describedby="bohrCameraHelp"></canvas>
+        </div>
+        <p class="of-subtle" id="bohrCameraHelp" style="padding:0 14px 8px">360°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. U, Uᵣ va T dastaklari chap/o‘ngga suriladi. Teleskopni burang yoki okulyar monitorida aniq sozlang. Klaviatura: yo‘nalishlar, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
+        </div>
+        <div class="sim-toolbar" data-ctl="fh" role="group" aria-label="Kuchlanishni aniq sozlash">
+          <button class="of-btn of-btn--sm" type="button" data-step-u="-1">−1 V</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-u="-.1">−0,1 V</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-u="-.05">−0,05 V</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-u=".05">+0,05 V</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-u=".1">+0,1 V</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-u="1">+1 V</button>
+        </div>
+        <div class="sim-toolbar" data-ctl="spec" role="group" aria-label="Teleskopni aniq burash">
+          <button class="of-btn of-btn--sm" type="button" data-step-phi="-1">−1°</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-phi="-.1">−0,1°</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-phi="-.01">−0,01°</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-phi=".01">+0,01°</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-phi=".1">+0,1°</button>
+          <button class="of-btn of-btn--sm" type="button" data-step-phi="1">+1°</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action></button>
@@ -52,7 +75,7 @@
       <section class="of-card sim-graph sim-graph--compact" aria-label="Grafik" data-graph-card hidden>
         <div class="sim-graph__bar"><h2>Yozib oluvchi: anod toki I(U)</h2></div>
         <div class="sim-canvas-wrap"><canvas id="graph" role="img" aria-label="Anod tokining kuchlanishga bog‘liqligi"></canvas></div>
-        <p class="sim-graph__caption">Kuchlanishni o‘zgartirganingizda har bir nuqta yozib olinadi. Sichqonchani grafik ustida yurgizing — eng yaqin nuqtaning U va I qiymati ko‘rsatiladi. Maksimumlarni aniqlab, 1-jadvalga yozing.</p>
+        <p class="sim-graph__caption" data-graph-caption>Kuchlanishni o‘zgartirganingizda har bir nuqta yozib olinadi. Sichqonchani grafik ustida yurgizing — eng yaqin nuqtaning U va I qiymati ko‘rsatiladi. Maksimumlarni aniqlab, 1-jadvalga yozing.</p>
       </section>
 
       <section class="sim-readouts sim-readouts--3" aria-label="Natijalar" data-readouts></section>
@@ -85,7 +108,7 @@
           <button type="button" data-gr-value="600" aria-pressed="true">600 chiziq/mm</button>
         </div>
         <div class="sim-control"><div class="sim-control__row"><label for="sPhi">Teleskop burchagi (shkala)</label><output for="sPhi" id="sPhiOut"></output></div><input class="sim-range" type="range" id="sPhi" min="-70" max="70" step="0.01" value="0"></div>
-        <p class="of-subtle">Teleskopni sahnada surib qo‘pol, okulyar ostidagi tugmalar bilan aniq (0,01°) burang. Chiziqni vizir chizig‘iga keltirib «Yozib olish» ni bosing.</p>
+        <p class="of-subtle">Teleskopni sahnada surib qo‘pol, aniq burash tugmalari bilan (0,01°) burang. Chiziqni vizir chizig‘iga keltirib «Yozib olish» ni bosing.</p>
       </div>
 
       <div class="sim-group" data-ctl="spec">

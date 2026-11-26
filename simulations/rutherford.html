@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../assets/css/sim-lab.css">
 <link rel="stylesheet" href="../assets/css/lab-notebook.css">
 <script type="module" src="../assets/js/shell/app-shell.js"></script>
-<script type="module" src="../assets/js/simulations/rutherford.js"></script>
+<script type="module" src="../assets/js/simulations/rutherford.js?v=20261126-r"></script>
 </head>
 <body class="of-ui of-sim-page" data-shell-title="Rezerford tajribasi" data-shell-public="true">
 
@@ -39,7 +39,14 @@
           <span class="sim-modebar__hint" data-mode-hint></span>
         </div>
         <div class="sim-canvas-wrap">
-          <canvas id="stage" role="img" aria-label="Rezerford tajribasi qurilmasi"></canvas>
+          <canvas id="stage" role="img" aria-describedby="cameraHelp" aria-label="Uch o‘lchamli Rezerford laboratoriyasi va yadro modeli"></canvas>
+        </div>
+        <p class="of-subtle" id="cameraHelp" style="padding:0 14px;margin:0 0 8px">360°: bo‘sh joyni sudrang; g‘ildirak yoki ikki barmoq bilan yaqinlashtiring. Detektorni va b nuqtasini suring; sanagichning t, × va folga t dastaklari chap/o‘ngga suriladi. Start/Stop va nasos tugmalari bosiladi. Klaviatura: yo‘nalishlar, + / −, Home.</p>
+        <div class="sim-toolbar" role="group" aria-label="3D kamera">
+          <button class="of-btn of-btn--sm" type="button" data-camera="reset">3D ko‘rinish</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="front">Oldindan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="side">Yon tomondan</button>
+          <button class="of-btn of-btn--sm" type="button" data-camera="top">Yuqoridan</button>
         </div>
         <div class="sim-toolbar">
           <button class="of-btn of-btn--primary of-btn--sm" type="button" data-action>Sanashni boshlash</button>
