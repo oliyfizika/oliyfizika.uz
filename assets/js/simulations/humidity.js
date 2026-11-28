@@ -7,11 +7,14 @@
 //    psixrometrik jadval (HTML). Gigrometr: nok bilan efir bug'latiladi, sayqallangan sirtda shudring paydo bo'ladi.
 // 3) Atmosfera hodisalari: sutka davomida temperatura o'zgaradi, suv miqdori saqlanadi; shudring, qirov, tuman,
 //    to'p-to'p bulut asosi. Quyosh/Oy osmon yoyi bo'ylab suriladi. Grafik t(τ) va t_d(τ).
-// Fizika: humidity-physics.js (Node'da tekshirilgan: t_humidity.mjs).
+// Sahna — 360° 3D laboratoriya (humidity-lab-3d.js): bo'sh joydan sudrash kamerani aylantiradi; lupa va tugmalar —
+// sahna ustidagi tekis qatlam. Fizika: humidity-physics.js (Node'da tekshirilgan: t_humidity.mjs).
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
 import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261124-n3";
+import { createHumidityLab } from "./humidity-lab-3d.js?v=20261128-s";
 import { chipBtn } from "./labkit.js";
 import * as P from "./humidity-physics.js";
 import { drawSat, drawDay, lastFrame } from "./humidity-plots.js";
@@ -21,7 +24,6 @@ const TAU = Math.PI * 2;
 const SMALL = "600 10px Inter, system-ui, sans-serif";
 const MID = "600 11px Inter, system-ui, sans-serif";
 const BOLD = "700 13px Inter, system-ui, sans-serif";
-const MONO = "700 11px ui-monospace, SFMono-Regular, Menlo, monospace";
 
 /* ------------------------------------------------------------------ Holat */
 
@@ -68,37 +70,6 @@ function moveMolecules(dt) {
 
 /* ------------------------------------------------------------------ Umumiy asboblar */
 
-/** Shishali termometr: x — o'q, [y0, y1] — shkala, T — ko'rsatish; qaytaradi { Y(t) } */
-function thermometer(ctx, c, x, y0, y1, T, { tMin = -10, tMax = 40, label = "", major = 10, minor = 1, wet = false, color } = {}) {
-  const Y = (t) => y1 - ((t - tMin) / (tMax - tMin)) * (y1 - y0);
-  ctx.save();
-  // taxtacha (shkala)
-  ctx.fillStyle = c.dark ? "#1e293b" : "#f8fafc"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.roundRect(x - 20, y0 - 12, 40, y1 - y0 + 34, 6); ctx.fill(); ctx.stroke();
-  ctx.strokeStyle = c.text3; ctx.fillStyle = c.text2; ctx.font = "600 9px Inter, system-ui, sans-serif"; ctx.textAlign = "right"; ctx.textBaseline = "middle";
-  for (let t = tMin; t <= tMax + 1e-9; t += minor) {
-    const y = Math.round(Y(t)) + 0.5, isMaj = Math.abs(t / major - Math.round(t / major)) < 1e-6, isMid = Math.abs((2 * t) / major - Math.round((2 * t) / major)) < 1e-6;
-    ctx.beginPath(); ctx.moveTo(x + 5, y); ctx.lineTo(x + (isMaj ? 14 : isMid ? 11 : 8), y); ctx.stroke();
-    if (isMaj) ctx.fillText(`${t}`, x - 6, y);
-  }
-  // kapillyar va rezervuar
-  const bulbY = y1 + 14;
-  ctx.fillStyle = c.dark ? "rgba(226,232,240,0.12)" : "rgba(255,255,255,0.9)"; ctx.strokeStyle = c.text3; ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.roundRect(x - 3, y0 - 6, 6, bulbY - y0, 3); ctx.fill(); ctx.stroke();
-  const liquid = color || "#dc2626";
-  ctx.fillStyle = liquid; ctx.beginPath(); ctx.arc(x, bulbY, 6.5, 0, TAU); ctx.fill();
-  const yt = clamp(Y(T), y0 - 4, bulbY);
-  ctx.fillRect(x - 1.6, yt, 3.2, bulbY - yt);
-  if (wet) { // doka (ho'l mato) va pilik
-    ctx.fillStyle = c.dark ? "rgba(203,213,225,0.55)" : "rgba(226,232,240,0.95)"; ctx.strokeStyle = c.text3; ctx.lineWidth = 0.8;
-    ctx.beginPath(); ctx.roundRect(x - 9, bulbY - 12, 18, 22, 6); ctx.fill(); ctx.stroke();
-    ctx.strokeStyle = c.dark ? "rgba(148,163,184,0.6)" : "rgba(148,163,184,0.8)"; for (let i = -6; i <= 6; i += 3) { ctx.beginPath(); ctx.moveTo(x + i, bulbY - 11); ctx.lineTo(x + i, bulbY + 9); ctx.stroke(); }
-  }
-  if (label) { ctx.font = MID; ctx.fillStyle = c.text; ctx.textAlign = "center"; ctx.textBaseline = "bottom"; ctx.fillText(label, x, y0 - 14); }
-  ctx.restore();
-  return { Y, bulbY };
-}
-
 /** Lupa: termometr shkalasining T atrofidagi kattalashtirilgan qismi (0,2 °C bo'linmalar) */
 function lens(ctx, c, cx, cy, R, T, title, { span = 2.4, color = "#dc2626" } = {}) {
   ctx.save();
@@ -120,186 +91,55 @@ function lens(ctx, c, cx, cy, R, T, title, { span = 2.4, color = "#dc2626" } = {
   ctx.restore();
 }
 
-/* ------------------------------------------------------------------ 1. Namlik va shudring nuqtasi */
-
-function drawAir(ctx, c, w, h) {
-  const narrow = w < 560, s = P.airState(air.t, air.W);
-  const x0 = narrow ? 12 : 22, x1 = narrow ? w - 78 : Math.round(w * 0.5), top = 16, bot = h - 46;
-  // idish
-  ctx.fillStyle = c.dark ? "rgba(148,163,184,0.06)" : "rgba(224,242,254,0.35)"; ctx.fillRect(x0, top, x1 - x0, bot - top);
-  if (s.cond > 0) { ctx.fillStyle = c.dark ? `rgba(203,213,225,${Math.min(0.45, 0.12 + s.cond * 0.08)})` : `rgba(148,163,184,${Math.min(0.5, 0.15 + s.cond * 0.09)})`; ctx.fillRect(x0, top, x1 - x0, bot - top); }
-  // suv (idish tubida)
-  ctx.fillStyle = c.dark ? "rgba(56,189,248,0.25)" : "rgba(56,189,248,0.22)"; ctx.fillRect(x0 + 2, bot - 10, x1 - x0 - 4, 8);
-  // molekulalar
-  const nV = Math.min(VAPM.length, Math.round(s.rho * 4)), pad = 6, iw = x1 - x0 - 2 * pad, ih = bot - top - 2 * pad - 12;
-  ctx.fillStyle = c.dark ? "rgba(148,163,184,0.55)" : "rgba(100,116,139,0.55)";
-  for (const m of AIRM) { ctx.beginPath(); ctx.arc(x0 + pad + m.x * iw, top + pad + m.y * ih, 2.2, 0, TAU); ctx.fill(); }
-  ctx.fillStyle = c.dark ? "#38bdf8" : "#0284c7";
-  for (let i = 0; i < nV; i++) { const m = VAPM[i]; ctx.beginPath(); ctx.arc(x0 + pad + m.x * iw, top + pad + m.y * ih, 3, 0, TAU); ctx.fill(); }
-  // devordagi tomchilar
-  const nD = Math.min(DROPS.length, Math.round(s.cond * 12));
-  ctx.fillStyle = c.dark ? "rgba(186,230,253,0.9)" : "rgba(2,132,199,0.85)";
-  for (let i = 0; i < nD; i++) { const d = DROPS[i]; const px = d.side === 0 ? x0 + 4 : d.side === 1 ? x1 - 4 : x0 + 6 + d.u * (x1 - x0 - 12), py = d.side === 2 ? top + 4 : top + 8 + d.u * (bot - top - 26); ctx.beginPath(); ctx.ellipse(px, py, d.r * 0.85, d.r, 0, 0, TAU); ctx.fill(); }
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2.2; ctx.strokeRect(x0, top, x1 - x0, bot - top);
-  // tugmalar
-  geo.plus = chipBtn(ctx, c, x0, bot + 12, "+ bug‘", false, 64, 24);
-  geo.minus = chipBtn(ctx, c, x0 + 70, bot + 12, "− bug‘", false, 64, 24);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  if (!narrow) ctx.fillText("● bug‘ molekulalari   ● havo molekulalari (shartli)", x0 + 144, bot + 24);
-  // termometr (ustun suriladi)
-  const tx = x1 + (narrow ? 38 : 34);
-  const th = thermometer(ctx, c, tx, top + 26, bot - 24, air.t, { tMin: -10, tMax: 40, label: "t, °C", major: 10, minor: 1 });
-  geo.therm = { x: tx, Y: th.Y, y0: top + 20, y1: bot - 20 };
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(tx, th.Y(air.t), 7, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.fillStyle = c.primary; ctx.font = "700 9px Inter, system-ui, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("⇕", tx, th.Y(air.t) + 0.5);
-  if (narrow) return;
-  // soch gigrometri
-  const gx = x1 + 120, gy = top + 62, R = 46;
-  ctx.fillStyle = c.dark ? "#1e293b" : "#f8fafc"; ctx.strokeStyle = c.borderStrong; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(gx, gy, R + 6, 0, TAU); ctx.fill(); ctx.stroke();
-  const a0 = Math.PI * 0.75, a1 = Math.PI * 2.25, A = (f) => a0 + (a1 - a0) * f;
-  ctx.lineWidth = 6; [[0, 0.4, "#f59e0b"], [0.4, 0.6, "#22c55e"], [0.6, 1, "#3b82f6"]].forEach(([u, v, col]) => { ctx.strokeStyle = col; ctx.globalAlpha = 0.5; ctx.beginPath(); ctx.arc(gx, gy, R - 6, A(u), A(v)); ctx.stroke(); }); ctx.globalAlpha = 1;
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1; ctx.font = "600 8px Inter, system-ui, sans-serif"; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  for (let k = 0; k <= 20; k++) { const a = A(k / 20), r0 = R - (k % 2 ? 4 : 10); ctx.beginPath(); ctx.moveTo(gx + Math.cos(a) * r0, gy + Math.sin(a) * r0); ctx.lineTo(gx + Math.cos(a) * R, gy + Math.sin(a) * R); ctx.stroke(); if (k % 4 === 0) ctx.fillText(`${k * 5}`, gx + Math.cos(a) * (R - 18), gy + Math.sin(a) * (R - 18)); }
-  const an = A(clamp(s.phi, 0, 1));
-  ctx.strokeStyle = c.danger; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(gx, gy); ctx.lineTo(gx + Math.cos(an) * (R - 6), gy + Math.sin(an) * (R - 6)); ctx.stroke();
-  ctx.fillStyle = c.text2; ctx.beginPath(); ctx.arc(gx, gy, 3.5, 0, TAU); ctx.fill();
-  ctx.font = "700 9px Inter, system-ui, sans-serif"; ctx.fillText("φ, %", gx, gy + 22);
-  ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textBaseline = "top"; ctx.fillText("soch gigrometri", gx, gy + R + 10);
-  // ma'lumot
-  const ix = x1 + 62; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.font = MID; ctx.fillStyle = c.text2;
-  const lines = [`ρ = ${fmt(s.rho, 2)} g/m³, ρₛ = ${fmt(s.rs, 2)} g/m³`, `φ = ρ/ρₛ = ${fmt(s.phi * 100, 0)} %`, `shudring nuqtasi t_d = ${fmt(s.td, 1)} °C`, s.cond > 0 ? `tuman: ${fmt(s.cond, 2)} g/m³ tomchilar` : s.phi > 0.97 ? "bug‘ to‘yingan" : "bug‘ to‘yinmagan"];
-  lines.forEach((l, i) => { if (gy + R + 30 + i * 17 < h - 6) ctx.fillText(l, ix, gy + R + 28 + i * 17); });
-}
-
-/* ------------------------------------------------------------------ 2. Psixrometr va gigrometr */
-
-function drawPsy(ctx, c, w, h) {
-  const narrow = w < 560, r = room(), top = 30, bot = h - 76;
-  // devor va taxta
-  const bx = narrow ? 12 : 26, bw = narrow ? Math.min(150, w * 0.42) : 170;
-  ctx.fillStyle = c.dark ? "#3f2d1d" : "#c8a37a"; ctx.strokeStyle = c.dark ? "#78350f" : "#92400e"; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.roundRect(bx, 12, bw, h - 24, 8); ctx.fill(); ctx.stroke();
-  const xd = bx + bw * 0.3, xw = bx + bw * 0.72;
-  const tdry = r.t, twet = wetNow();
-  thermometer(ctx, c, xd, top + 16, bot - 6, tdry, { tMin: 0, tMax: 40, label: "quruq", major: 10, minor: 1 });
-  const wt = thermometer(ctx, c, xw, top + 16, bot - 6, twet, { tMin: 0, tMax: 40, label: "ho‘l", major: 10, minor: 1, wet: true });
-  // pilik va suv idishchasi
-  const ry = wt.bulbY + 14;
-  ctx.strokeStyle = c.dark ? "rgba(203,213,225,0.6)" : "rgba(148,163,184,0.9)"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(xw, wt.bulbY + 8); ctx.lineTo(xw, ry + 16); ctx.stroke();
-  ctx.fillStyle = c.dark ? "rgba(56,189,248,0.35)" : "rgba(56,189,248,0.4)"; ctx.fillRect(xw - 12, ry + 6, 24, 18);
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 1.2; ctx.strokeRect(xw - 12, ry, 24, 24);
-  geo.thDry = { x: xd, y0: top, y1: bot + 14 }; geo.thWet = { x: xw, y0: top, y1: bot + 14 };
-  // tanlangan termometr ramkasi
-  const sx = psy.sel === "dry" ? xd : xw;
-  ctx.strokeStyle = c.primary; ctx.lineWidth = 2; ctx.setLineDash([4, 3]); ctx.strokeRect(sx - 24, top - 2, 48, bot - top + 28); ctx.setLineDash([]);
-  // lupa
-  const lx = narrow ? bx + bw + (w - bx - bw) / 2 : bx + bw + 74, ly = narrow ? h * 0.36 : h * 0.4, R = narrow ? Math.min(52, (w - bx - bw) / 2 - 8) : 58;
-  lens(ctx, c, lx, ly, R, psy.sel === "dry" ? tdry : twet, psy.sel === "dry" ? "lupa: quruq termometr" : "lupa: ho‘l termometr");
-  if (narrow) return;
-  const ix = lx + R + 26; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.font = BOLD; ctx.fillStyle = c.text; ctx.fillText(`Psixrometr — ${r.name}`, ix, 16);
-  ctx.font = MID; ctx.fillStyle = c.text2;
-  const settled = Math.abs(twet - P.wetBulb(r.t, r.phi)) < 0.05;
-  [`Termometrni bosib lupaga qo‘ying.`, `Ho‘l termometr ${settled ? "barqarorlashdi" : "hali soviyapti…"}`, `1) t ni o‘qing`, `2) t_h ni o‘qing`, `3) Δt = t − t_h`, `4) jadvaldan φ ni toping`].forEach((l, i) => ctx.fillText(l, ix, 40 + i * 18));
-}
-
-function drawCond(ctx, c, w, h) {
-  const narrow = w < 560, r = room(), td = roomTd();
-  const cx = narrow ? w * 0.36 : w * 0.3, cw = narrow ? 84 : 100, top = 50, bot = h - 40;
-  // shtativ
-  ctx.fillStyle = c.dark ? "#334155" : "#94a3b8"; ctx.fillRect(cx - cw / 2 - 20, bot, cw + 40, 8);
-  // idish (sayqallangan nikel)
-  const g = ctx.createLinearGradient(cx - cw / 2, 0, cx + cw / 2, 0);
-  ["#64748b", "#e2e8f0", "#f8fafc", "#cbd5e1", "#475569"].forEach((col, i) => g.addColorStop(i / 4, col));
-  ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(cx - cw / 2, top, cw, bot - top, 6); ctx.fill();
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 1.2; ctx.stroke();
-  // sayqallangan old sirt va oltin halqa (taqqoslash uchun)
-  const fy0 = top + (bot - top) * 0.3, fy1 = top + (bot - top) * 0.75;
-  ctx.fillStyle = "#facc15"; ctx.globalAlpha = 0.6; ctx.fillRect(cx - cw / 2, fy0 - 6, cw, 6); ctx.fillRect(cx - cw / 2, fy1, cw, 6); ctx.globalAlpha = 1;
-  if (psy.dew > 0.03) { // shudring — xiralashish
-    ctx.fillStyle = `rgba(100,116,139,${Math.min(0.55, psy.dew * 0.7)})`; ctx.fillRect(cx - cw / 2 + 1, fy0, cw - 2, fy1 - fy0);
-    ctx.fillStyle = `rgba(241,245,249,${Math.min(0.9, psy.dew)})`;
-    for (let i = 0; i < 90; i++) { const u = ((i * 37) % 97) / 97, v = ((i * 61) % 89) / 89; ctx.beginPath(); ctx.arc(cx - cw / 2 + 4 + u * (cw - 8), fy0 + 3 + v * (fy1 - fy0 - 6), 1 + (i % 3) * 0.6, 0, TAU); ctx.fill(); }
-  }
-  // efir, termometr va nok
-  ctx.fillStyle = "rgba(254,240,138,0.25)"; ctx.fillRect(cx - cw / 2 + 4, top + (bot - top) * 0.45, cw - 8, (bot - top) * 0.5);
-  const tx = cx + cw * 0.18;
-  thermometer(ctx, c, tx, 22, top + (bot - top) * 0.55, psy.can, { tMin: -10, tMax: 40, major: 10, minor: 1 });
-  const bxp = cx - cw / 2 - (narrow ? 26 : 46), byp = top + 30;
-  ctx.strokeStyle = c.text3; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(bxp + 10, byp); ctx.quadraticCurveTo(cx - cw * 0.25, byp - 30, cx - cw * 0.2, top + 6); ctx.lineTo(cx - cw * 0.2, top + (bot - top) * 0.85); ctx.stroke();
-  ctx.fillStyle = psy.pump ? "#b91c1c" : "#ef4444"; ctx.beginPath(); ctx.ellipse(bxp, byp + 18, psy.pump ? 13 : 16, psy.pump ? 20 : 22, 0, 0, TAU); ctx.fill();
-  geo.bulb = { x: bxp, y: byp + 18, r: 26 };
-  if (psy.pump) { ctx.fillStyle = "rgba(255,255,255,0.85)"; for (let i = 0; i < 6; i++) { const yy = top + (bot - top) * (0.92 - ((psy.time * 0.7 + i / 6) % 1) * 0.4); ctx.beginPath(); ctx.arc(cx - cw * 0.2 + Math.sin(i * 2 + psy.time * 5) * 4, yy, 2.5, 0, TAU); ctx.fill(); } }
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(psy.pump ? "puflanmoqda" : "nokni bosing", bxp, byp + 44);
-  // lupa
-  const lx = narrow ? w - 58 : cx + cw / 2 + 80, ly = h * 0.42, R = narrow ? 46 : 56;
-  lens(ctx, c, lx, ly, R, psy.can, narrow ? "lupa" : "lupa: idishdagi termometr");
-  if (narrow) return;
-  const ix = lx + R + 24; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.font = BOLD; ctx.fillStyle = c.text; ctx.fillText(`Gigrometr — ${r.name}`, ix, 16);
-  ctx.font = MID; ctx.fillStyle = c.text2;
-  [`xona t = ${fmt(r.t, 1)} °C`, `Nokni bosing: efir bug‘lanib`, `idishni sovitadi.`, psy.dew > 0.05 ? "Sirtda shudring paydo bo‘ldi!" : "Sayqallangan sirt toza", `Shudring paydo bo‘lgan`, `paytdagi t — shudring nuqtasi`].forEach((l, i) => ctx.fillText(l, ix, 40 + i * 18));
-  if (!hidden()) { ctx.fillStyle = c.text3; ctx.fillText(`(haqiqiy t_d = ${fmt(td, 1)} °C)`, ix, 40 + 6 * 18 + 4); }
-}
-
-/* ------------------------------------------------------------------ 3. Atmosfera hodisalari */
-
-function drawAtm(ctx, c, w, h) {
-  const narrow = w < 560, s = atmNow(), tau = ((atm.tau % 24) + 24) % 24;
-  const ground = h - 54, sunUp = tau > 6 && tau < 19, day = clamp(Math.sin(((tau - 6) / 13) * Math.PI), 0, 1);
-  // osmon
-  const sky = ctx.createLinearGradient(0, 0, 0, ground);
-  const nTop = c.dark ? [8, 15, 35] : [15, 30, 70], dTop = [96, 165, 250], nBot = c.dark ? [30, 41, 59] : [51, 65, 105], dBot = [219, 234, 254];
-  const mix = (a, b) => a.map((v, i) => Math.round(v + (b[i] - v) * day));
-  sky.addColorStop(0, `rgb(${mix(nTop, dTop).join(",")})`); sky.addColorStop(1, `rgb(${mix(nBot, dBot).join(",")})`);
-  ctx.fillStyle = sky; ctx.fillRect(0, 0, w, ground);
-  if (!sunUp) { ctx.fillStyle = "rgba(255,255,255,0.8)"; for (let i = 0; i < 30; i++) { ctx.fillRect(((i * 97) % 100) / 100 * w, ((i * 53) % 60) / 100 * ground, 1.5, 1.5); } }
-  // quyosh / oy yoyi
-  const ax = w * (narrow ? 0.5 : 0.42), ay = ground, aR = Math.min(ax - 20, ground - 24);
-  const ang = sunUp ? Math.PI * (1 - (tau - 6) / 13) : Math.PI * (1 - (((tau - 19 + 24) % 24) / 11));
-  const sx = ax + Math.cos(ang) * aR, sy = ay - Math.sin(ang) * aR;
-  ctx.strokeStyle = "rgba(255,255,255,0.25)"; ctx.lineWidth = 1; ctx.setLineDash([3, 5]); ctx.beginPath(); ctx.arc(ax, ay, aR, Math.PI, TAU); ctx.stroke(); ctx.setLineDash([]);
-  if (sunUp) { ctx.fillStyle = "#fbbf24"; ctx.beginPath(); ctx.arc(sx, sy, 15, 0, TAU); ctx.fill(); ctx.strokeStyle = "rgba(251,191,36,0.6)"; ctx.lineWidth = 2; for (let k = 0; k < 8; k++) { const a = (k * TAU) / 8; ctx.beginPath(); ctx.moveTo(sx + Math.cos(a) * 19, sy + Math.sin(a) * 19); ctx.lineTo(sx + Math.cos(a) * 25, sy + Math.sin(a) * 25); ctx.stroke(); } }
-  else { ctx.fillStyle = "#e2e8f0"; ctx.beginPath(); ctx.arc(sx, sy, 12, 0, TAU); ctx.fill(); ctx.fillStyle = `rgb(${mix(nTop, dTop).join(",")})`; ctx.beginPath(); ctx.arc(sx + 5, sy - 3, 10, 0, TAU); ctx.fill(); }
-  geo.sun = { x: sx, y: sy, r: 24, ax, ay };
-  // bulut (kunduzi, konveksiya)
-  const hMax = 3000, kH = (ground - 30) / hMax, base = P.cloudBase(s.t, s.td);
-  const conv = convective(s, tau);
-  if (conv) {
-    const cyb = ground - base * kH, ccx = w * (narrow ? 0.55 : 0.6);
-    ctx.fillStyle = c.dark ? "rgba(226,232,240,0.85)" : "rgba(255,255,255,0.95)";
-    [[0, 0, 26], [-26, 6, 20], [26, 6, 20], [-12, -16, 20], [14, -18, 18]].forEach(([dx, dy, rr]) => { ctx.beginPath(); ctx.arc(ccx + dx, cyb - 20 + dy, rr, 0, TAU); ctx.fill(); });
-    ctx.fillRect(ccx - 46, cyb - 14, 92, 14);
-    ctx.strokeStyle = "rgba(251,146,60,0.7)"; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(ccx, ground - 4); ctx.lineTo(ccx, cyb + 2); ctx.stroke(); ctx.setLineDash([]);
-    tag(ctx, `bulut asosi ≈ ${fmt(base, 0)} m`, ccx + 50, cyb - 6, { color: "#0f172a", bg: "rgba(255,255,255,0.85)", font: SMALL });
-  }
-  // balandlik shkalasi
-  if (!narrow) { ctx.strokeStyle = "rgba(255,255,255,0.5)"; ctx.fillStyle = "rgba(255,255,255,0.85)"; ctx.font = SMALL; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.lineWidth = 1; for (let hh = 0; hh <= hMax; hh += 500) { const y = ground - hh * kH; ctx.beginPath(); ctx.moveTo(w - 8, y); ctx.lineTo(w - 2, y); ctx.stroke(); if (hh) ctx.fillText(`${hh / 1000} km`, w - 10, y); } }
-  // yer va o'tlar
-  ctx.fillStyle = c.dark ? "#14532d" : "#4d7c0f"; ctx.fillRect(0, ground, w, h - ground);
-  ctx.strokeStyle = s.frost ? "#e0f2fe" : c.dark ? "#22c55e" : "#65a30d"; ctx.lineWidth = 1.5;
-  for (let x = 4; x < w; x += 7) { const hh = 8 + ((x * 13) % 9); ctx.beginPath(); ctx.moveTo(x, ground + 2); ctx.quadraticCurveTo(x + 2, ground - hh / 2, x + ((x % 3) - 1) * 3, ground - hh); ctx.stroke(); }
-  if (s.dew) { ctx.fillStyle = "rgba(186,230,253,0.95)"; for (let x = 6; x < w; x += 11) { ctx.beginPath(); ctx.arc(x + ((x * 7) % 4), ground - 6 - ((x * 5) % 6), 1.8, 0, TAU); ctx.fill(); } }
-  if (s.frost) { ctx.fillStyle = "rgba(240,249,255,0.55)"; ctx.fillRect(0, ground - 4, w, 8); }
-  if (s.fog) { const fh = 26 + Math.min(60, s.cond * 40), gf = ctx.createLinearGradient(0, ground - fh, 0, ground + 4); gf.addColorStop(0, "rgba(226,232,240,0)"); gf.addColorStop(1, "rgba(226,232,240,0.9)"); ctx.fillStyle = gf; ctx.fillRect(0, ground - fh, w, fh + 6); }
-  // meteostansiya (termometr budkasi)
-  const mx = narrow ? 16 : 30, my = ground - 70;
-  ctx.fillStyle = "#f8fafc"; ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 1; ctx.fillRect(mx, my, 54, 40); ctx.strokeRect(mx, my, 54, 40);
-  ctx.strokeStyle = "#cbd5e1"; for (let y = my + 5; y < my + 40; y += 5) { ctx.beginPath(); ctx.moveTo(mx + 3, y); ctx.lineTo(mx + 51, y); ctx.stroke(); }
-  ctx.fillStyle = "#64748b"; ctx.fillRect(mx + 25, my + 40, 4, 30);
-  tag(ctx, `${fmt(s.t, 1)} °C`, mx + 27, my - 22, { color: "#0f172a", bg: "rgba(255,255,255,0.9)", font: MID, align: "center" });
-  // soat
-  tag(ctx, clock(tau), w / 2, 8, { color: "#0f172a", bg: "rgba(255,255,255,0.9)", font: BOLD, align: "center" });
-  const word = s.fog ? (s.frost ? "tuman va qirov" : "tuman va shudring") : s.frost ? "qirov" : s.dew ? "shudring" : conv ? "to‘p-to‘p bulutlar" : "";
-  if (word) tag(ctx, word, w / 2, ground + 14, { color: "#0f172a", bg: "rgba(255,255,255,0.9)", font: MID, align: "center" });
-}
-
 /* ------------------------------------------------------------------ Chizish va grafik */
 
-function draw(ctx, s) {
-  const c = s.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, s.w, s.h);
-  if (ui.mode === "air") drawAir(ctx, c, s.w, s.h);
-  else if (ui.mode === "psy") (psy.tool === "psy" ? drawPsy : drawCond)(ctx, c, s.w, s.h);
-  else drawAtm(ctx, c, s.w, s.h);
+const scene = createHumidityLab();
+/** Sahna ustidagi tekis qatlam: tugmalar, lupa va matnli ma'lumot (ekran koordinatalarida) */
+function overlay(ctx, st, narrow) {
+  const c = st.colors, w = st.w, h = st.h;
+  for (const k of ["plus", "minus"]) geo[k] = null;
+  if (ui.mode === "air") {
+    const s = P.airState(air.t, air.W);
+    geo.plus = chipBtn(ctx, c, 12, h - 62, "+ bug‘", false, 64, 24);
+    geo.minus = chipBtn(ctx, c, 82, h - 62, "− bug‘", false, 64, 24);
+    if (narrow) return;
+    ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "middle"; let lx = 160;
+    for (const [col, t] of [[c.dark ? "#38bdf8" : "#0284c7", "bug‘ molekulalari"], [c.dark ? "#94a3b8" : "#64748b", "havo molekulalari (shartli)"]]) { ctx.fillStyle = col; ctx.beginPath(); ctx.arc(lx, h - 50, 4, 0, TAU); ctx.fill(); ctx.fillStyle = c.text2; ctx.fillText(t, lx + 8, h - 50); lx += ctx.measureText(t).width + 26; }
+    [`ρ = ${fmt(s.rho, 2)} g/m³, ρₛ = ${fmt(s.rs, 2)} g/m³`, `φ = ρ/ρₛ = ${fmt(s.phi * 100, 0)} %`, `shudring nuqtasi t_d = ${fmt(s.td, 1)} °C`, s.cond > 0 ? `tuman: ${fmt(s.cond, 2)} g/m³ tomchilar` : s.phi > 0.97 ? "bug‘ to‘yingan" : "bug‘ to‘yinmagan"].forEach((t, i) => tag(ctx, t, w - 12, 21 + i * 24, { color: i === 3 && s.cond > 0 ? c.warning : c.text2, bg: c.bg2, align: "right", font: SMALL }));
+    return;
+  }
+  if (ui.mode === "psy") {
+    const r = room(), R = narrow ? 42 : 56, lx = w - R - (narrow ? 14 : 24), ly = narrow ? h * 0.42 : h * 0.5;
+    if (psy.tool === "psy") {
+      lens(ctx, c, lx, ly, R, psy.sel === "dry" ? r.t : wetNow(), narrow ? "lupa" : psy.sel === "dry" ? "lupa: quruq termometr" : "lupa: ho‘l termometr");
+      if (!narrow) { const settled = Math.abs(wetNow() - P.wetBulb(r.t, r.phi)) < 0.05; tag(ctx, `Psixrometr — ${r.name}`, w - 12, 21, { color: c.text, bg: c.bg2, align: "right", font: MID }); tag(ctx, `Ho‘l termometr ${settled ? "barqarorlashdi" : "hali soviyapti…"}`, w - 12, 45, { color: settled ? c.success : c.warning, bg: c.bg2, align: "right", font: SMALL }); }
+    } else {
+      lens(ctx, c, lx, ly, R, psy.can, narrow ? "lupa" : "lupa: idishdagi termometr");
+      if (!narrow) {
+        tag(ctx, `Gigrometr — ${r.name}`, w - 12, 21, { color: c.text, bg: c.bg2, align: "right", font: MID });
+        tag(ctx, psy.dew > 0.05 ? "Sirtda shudring paydo bo‘ldi!" : "Sayqallangan sirt toza", w - 12, 45, { color: psy.dew > 0.05 ? c.success : c.text2, bg: c.bg2, align: "right", font: SMALL });
+        if (!hidden()) tag(ctx, `(haqiqiy t_d = ${fmt(roomTd(), 1)} °C)`, w - 12, 69, { color: c.text3, bg: c.bg2, align: "right", font: SMALL });
+      }
+    }
+    return;
+  }
+  const s = atmNow(), tau = ((atm.tau % 24) + 24) % 24, conv = convective(s, tau);
+  tag(ctx, clock(tau), w / 2, 21, { color: "#0f172a", bg: "rgba(255,255,255,0.9)", font: BOLD, align: "center" });
+  const word = s.fog ? (s.frost ? "tuman va qirov" : "tuman va shudring") : s.frost ? "qirov" : s.dew ? "shudring" : conv ? "to‘p-to‘p bulutlar" : "";
+  if (word) tag(ctx, word, w / 2, h - 46, { color: "#0f172a", bg: "rgba(255,255,255,0.9)", font: MID, align: "center" });
 }
+const NV = () => Math.min(VAPM.length, Math.round(P.airState(air.t, air.W).rho * 4));
+function frame() {
+  const mode = ui.mode === "psy" ? (psy.tool === "psy" ? "psy" : "cond") : ui.mode, f = { mode, overlay };
+  if (mode === "air") { const s = P.airState(air.t, air.W); f.air = { t: air.t, s, airm: AIRM, vapm: VAPM, nV: NV(), drops: DROPS, nD: Math.min(DROPS.length, Math.round(s.cond * 12)) }; }
+  else if (ui.mode === "psy") f.psy = { tdry: room().t, twet: wetNow(), sel: psy.sel, can: psy.can, dew: psy.dew, pump: psy.pump, time: psy.time };
+  else {
+    const s = atmNow(), tau = ((atm.tau % 24) + 24) % 24, sunUp = tau > 6 && tau < 19;
+    f.atm = { s, tau, sunUp, day: clamp(Math.sin(((tau - 6) / 13) * Math.PI), 0, 1), f: sunUp ? (tau - 6) / 13 : ((tau - 19 + 24) % 24) / 11, conv: convective(s, tau), base: P.cloudBase(s.t, s.td) };
+  }
+  return f;
+}
+const draw = (ctx, st) => scene.draw(ctx, st, frame());
 const heights = () => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { stage: Math.round(clamp(vh * 0.44, 310, 360)), graph: Math.round(clamp(vh * 0.28, 200, 260)) }; };
 const stage = createStage($("#stage"), draw, { height: () => heights().stage });
 function drawGraphCanvas(ctx, gs) {
@@ -471,46 +311,38 @@ const phiC = bindRange($("#mPhi"), $("#mPhiOut"), (v) => `${fmt(v, 0)} %`, (v) =
 const windEl = $("[data-wind]");
 windEl.addEventListener("change", () => { atm.wind = windEl.checked; customized(); refresh(); });
 
-/* Sahnada surish va bosish */
+/* Sahnada surish va bosish (360° kamera: bo'sh joydan sudrash — aylantirish) */
 const canvas = stage.canvas;
-let drag = null;
 const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
 const inBox = (p, b) => b && p.x >= b.x0 && p.x <= b.x1 && p.y >= b.y0 && p.y <= b.y1;
-function hit(p) {
-  if (ui.mode === "air") {
-    if (inBox(p, geo.plus)) return { kind: "plus" };
-    if (inBox(p, geo.minus)) return { kind: "minus" };
-    const g = geo.therm; if (g && Math.abs(p.x - g.x) <= 16 && p.y >= g.y0 - 10 && p.y <= g.y1 + 20) return { kind: "therm" };
-  } else if (ui.mode === "psy") {
-    if (psy.tool === "psy") { for (const [k, g] of [["dry", geo.thDry], ["wet", geo.thWet]]) if (g && Math.abs(p.x - g.x) <= 22 && p.y >= g.y0 && p.y <= g.y1) return { kind: "sel", which: k }; }
-    else { const g = geo.bulb; if (g && Math.hypot(p.x - g.x, p.y - g.y) <= g.r) return { kind: "bulb" }; }
-  } else { const g = geo.sun; if (g && Math.hypot(p.x - g.x, p.y - g.y) <= g.r) return { kind: "sun" }; }
-  return null;
+const handleHit = scene.lab.hit;
+scene.lab.hit = (x, y) => {
+  if (ui.mode === "air") { if (inBox({ x, y }, geo.plus)) return "plus"; if (inBox({ x, y }, geo.minus)) return "minus"; }
+  const id = handleHit(x, y);
+  if (id === "therm" && ui.mode !== "air") return null;
+  if ((id === "dry" || id === "wet") && !(ui.mode === "psy" && psy.tool === "psy")) return null;
+  if (id === "bulb" && !(ui.mode === "psy" && psy.tool === "cond")) return null;
+  if (id === "sun" && ui.mode !== "atm") return null;
+  return id;
+};
+function setAirT(p) { air.t = clamp(Math.round(scene.lab.nearest(scene.airTPoint, -10, 40, p.x, p.y) * 2) / 2, -10, 40); aTC.set(air.t); }
+function setSun(p) {
+  const f = scene.lab.nearest(scene.sunPoint, 0, 1, p.x, p.y), h = ((atm.tau % 24) + 24) % 24, day = h > 6 && h < 19;
+  atm.tau = day ? 6 + 13 * f : (19 + 11 * f) % 24; tauC.set(Math.round(atm.tau * 4) / 4);
 }
-function setAirT(y) { const g = geo.therm; let lo = -10, hi = 40; for (let i = 0; i < 30; i++) { const m = (lo + hi) / 2; if (g.Y(m) > y) lo = m; else hi = m; } air.t = clamp(Math.round(((lo + hi) / 2) * 2) / 2, -10, 40); aTC.set(air.t); }
 function stepW(d) { air.W = clamp(Math.round((air.W + d) * 10) / 10, 0.5, 30); aWC.set(air.W); }
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p); if (!h) return;
-  e.preventDefault(); customized();
-  if (h.kind === "plus" || h.kind === "minus") { stepW(h.kind === "plus" ? 1 : -1); refresh(); return; }
-  if (h.kind === "sel") { psy.sel = h.which; refresh(); return; }
-  if (h.kind === "bulb") { psy.pump = !psy.pump; if (!loop.running && !prefersReducedMotion()) { playing = true; loop.start(); } refresh(); return; }
-  if (h.kind === "therm") setAirT(p.y);
-  drag = h; try { canvas.setPointerCapture(e.pointerId); } catch { /* */ } canvas.dataset.dragging = "true"; refresh();
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id, p) {
+    customized();
+    if (id === "plus" || id === "minus") stepW(id === "plus" ? 1 : -1);
+    else if (id === "dry" || id === "wet") psy.sel = id;
+    else if (id === "bulb") { psy.pump = !psy.pump; if (!loop.running && !prefersReducedMotion()) { playing = true; loop.start(); } }
+    else if (id === "therm") setAirT(p);
+    else if (id === "sun") setSun(p);
+    refresh();
+  },
+  move(id, p) { if (id === "therm") setAirT(p); else if (id === "sun") setSun(p); else return; refresh(); },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (!drag) { const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "therm" ? "ns-resize" : h.kind === "sun" ? "grab" : "pointer"; return; }
-  if (drag.kind === "therm") setAirT(p.y);
-  else if (drag.kind === "sun") {
-    const g = geo.sun, a = Math.atan2(g.ay - p.y, p.x - g.ax), f = clamp(1 - a / Math.PI, 0, 1), day = ((atm.tau % 24) + 24) % 24 > 6 && ((atm.tau % 24) + 24) % 24 < 19;
-    atm.tau = day ? 6 + 13 * f : (19 + 11 * f) % 24; tauC.set(Math.round(atm.tau * 4) / 4);
-  }
-  refresh();
-});
-const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 const gcv = graph.canvas;
 gcv.addEventListener("pointermove", (e) => { const f = lastFrame(); if (!f) return; const p = ptr(gcv, e), r = f.rect, inside = p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.h; ui.hover = inside ? f.xMin + ((p.x - r.x) / r.w) * (f.xMax - f.xMin) : null; gcv.style.cursor = inside ? "crosshair" : ""; graph.render(); });
@@ -556,7 +388,7 @@ const MODE_DEFAULT = { air: "airRoom", psy: "psyClass", atm: "atmDew" };
 document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.modeValue !== ui.mode) loadPreset(MODE_DEFAULT[b.dataset.modeValue]); }));
 function loadPreset(id) {
   const p = PRESETS[id];
-  drag = null; ui.hover = null;
+  ui.hover = null;
   ui.mode = p.mode; p.set();
   setModeUI(); presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;
