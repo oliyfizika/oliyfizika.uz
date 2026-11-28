@@ -154,7 +154,7 @@ export function createLab3D() {
     ctx.fillStyle=c.bg;ctx.fillRect(0,0,w,h);
     const bg=ctx.createRadialGradient(w*.5,h*.35,10,w*.5,h*.5,w*.7);
     bg.addColorStop(0,c.bg2);bg.addColorStop(1,c.sunken);ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
-    bench();
+    if(options.bench!==false)bench(); // ochiq havo sahnalari (dala, osmon) o'z yerini chizadi
   }
   const label=(text,p,color=c.text2)=>labels.push(()=>{const a=project(p);tag(ctx,text,a.x,a.y,{color,bg:c.bg2,align:'center',font:'600 10px system-ui'});});
   function vector(p,delta,color,text) {

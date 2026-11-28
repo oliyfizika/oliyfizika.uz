@@ -7,14 +7,17 @@
 //    otlar (o'quvchilar) yoki daraxt; «Tortish» — kerakli kuch F = (p₀ − p)πR² bilan solishtiriladi. Grafik F(n).
 // 3) Balandlik va barometr: havo shari sahnada suriladi; aneroid barometr, germetik paket, qaynash temperaturasi.
 //    Grafik p(h) — standart atmosfera.
-// Fizika: atmosphere-physics.js (Node'da tekshirilgan: t_atmosphere.mjs).
+// Sahna — 360° 3D laboratoriya (atmosphere-lab-3d.js): bo'sh joydan sudrash kamerani aylantiradi; tugmalar va asboblar
+// kartochkasi — sahna ustidagi tekis qatlam. Fizika: atmosphere-physics.js (Node'da tekshirilgan: t_atmosphere.mjs).
 // ==========================================================================
 
 import { icon } from "../ui/icons.js";
-import { clamp, fmt, createStage, createLoop, tag, arrow, bindRange, prefersReducedMotion } from "./sim-kit.js";
+import { clamp, fmt, createStage, createLoop, tag, bindRange, prefersReducedMotion } from "./sim-kit.js";
 import { chipBtn } from "./labkit.js";
 import * as P from "./atmosphere-physics.js";
 import { drawAlt, drawPump, lastFrame } from "./atmosphere-plots.js";
+import { bindLabCamera } from "./lab-3d.js?v=20261124-n3";
+import { createAtmosphereLab, TORR } from "./atmosphere-lab-3d.js?v=20261128-s";
 
 const $ = (s) => document.querySelector(s);
 const TAU = Math.PI * 2, DEG = Math.PI / 180;
@@ -66,279 +69,54 @@ function gauge(ctx, c, cx, cy, R, val, lo, hi, step, label, labelStep = step) {
   ctx.fillStyle = "#334155"; ctx.beginPath(); ctx.arc(cx, cy, 3.5, 0, TAU); ctx.fill();
   ctx.restore();
 }
-const liqColor = (c) => (tr.liq === "hg" ? ["#cbd5e1", "#94a3b8", "#e2e8f0"] : c.dark ? ["#38bdf8", "#0284c7", "#7dd3fc"] : ["#7dd3fc", "#0284c7", "#bae6fd"]);
+/* ------------------------------------------------------------------ Chizish va grafik */
 
-/* ------------------------------------------------------------------ 1. Torichelli */
-
-function drawTorr(ctx, c, w, h) {
-  const narrow = w < 560, water = tr.liq === "water", t = tubeNow(), Lt = TUBE[tr.liq], a = tr.tilt * DEG;
-  const surf = h - 48, px = narrow ? w * 0.5 : w * 0.38, pxm = (surf - 28) / Lt;
-  if (tr.col === null) tr.col = t.len;
-  const ux = Math.sin(a), uy = -Math.cos(a), col = tr.col;
-  // suvli barometr: bino (masshtab)
-  if (water) {
-    const bx = px + (narrow ? 34 : 60), bw = narrow ? 70 : 110;
-    ctx.fillStyle = c.dark ? "rgba(148,163,184,0.12)" : "rgba(203,213,225,0.45)"; ctx.fillRect(bx, surf - 12 * pxm, bw, 12 * pxm + 20);
-    ctx.strokeStyle = c.border; ctx.lineWidth = 1;
-    for (let f = 1; f <= 4; f++) { const y = surf + 20 - f * 3 * pxm; ctx.beginPath(); ctx.moveTo(bx, y); ctx.lineTo(bx + bw, y); ctx.stroke(); ctx.fillStyle = c.dark ? "rgba(125,211,252,0.25)" : "rgba(14,165,233,0.25)"; for (let k = 0; k < 3; k++) ctx.fillRect(bx + 10 + k * (bw - 20) / 3, y + 12, (bw - 40) / 3, 3 * pxm - 30); }
-    ctx.font = SMALL; ctx.fillStyle = c.text3; ctx.textAlign = "left"; ctx.textBaseline = "bottom"; ctx.fillText("4 qavatli bino (12 m)", bx, surf - 12 * pxm - 2);
+const scene = createAtmosphereLab();
+/** Sahna ustidagi tekis qatlam: tugmalar, kuchlar va asboblar kartochkasi (ekran koordinatalarida) */
+function overlay(ctx, st, narrow) {
+  const c = st.colors, w = st.w, h = st.h;
+  for (const k of ["hole", "pull", "valve", "pump10"]) geo[k] = null;
+  if (ui.mode === "torr") {
+    tag(ctx, narrow ? `p = ${fmt(mm(pAtm()), 0)} mm` : `p = ${fmt(mm(pAtm()), 0)} mm sim. ust. = ${fmt(pAtm() / 1000, 1)} kPa`, w - 12, 21, { color: c.text, bg: c.bg2, font: narrow ? SMALL : MID, align: "right" });
+    if (tr.alt > 0) tag(ctx, `balandlik ${fmt(tr.alt, 0)} m`, w - 12, 45, { color: c.text2, bg: c.bg2, font: SMALL, align: "right" });
+    geo.hole = chipBtn(ctx, c, 12, h - 62, tr.hole ? "teshilgan" : "Teshish", !tr.hole, narrow ? 76 : 90, 26, c.danger);
+    return;
   }
-  // chizg'ich (vertikal)
-  const rx = px - (narrow ? 64 + 34 : 84 + 46);
-  ctx.fillStyle = c.dark ? "#3f2d1d" : "#fef3c7"; ctx.fillRect(rx - 4, 22, 30, surf - 22);
-  ctx.strokeStyle = c.dark ? "#d6d3d1" : "#78350f"; ctx.fillStyle = c.dark ? "#e7e5e4" : "#78350f"; ctx.lineWidth = 1; ctx.font = "600 9px Inter, system-ui, sans-serif"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  if (water) { for (let m = 0; m <= 12; m += 0.5) { const y = Math.round(surf - m * pxm) + 0.5, maj = m % 2 === 0; ctx.beginPath(); ctx.moveTo(rx - 4, y); ctx.lineTo(rx + (maj ? 8 : 4), y); ctx.stroke(); if (maj) ctx.fillText(`${m} m`, rx + 10, y); } }
-  else { for (let v = 0; v <= 1000; v += 10) { const y = Math.round(surf - (v / 1000) * pxm) + 0.5, maj = v % 100 === 0, mid = v % 50 === 0; ctx.beginPath(); ctx.moveTo(rx - 4, y); ctx.lineTo(rx + (maj ? 9 : mid ? 6 : 3), y); ctx.stroke(); if (maj) ctx.fillText(`${v}`, rx + 10, y); } ctx.fillText("mm", rx + 2, 16); }
-  // idish
-  const dw = narrow ? 64 : 84;
-  const lc = liqColor(c);
-  ctx.fillStyle = lc[0]; ctx.fillRect(px - dw, surf, 2 * dw, 26);
-  ctx.strokeStyle = c.text2; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(px - dw - 4, surf - 16); ctx.lineTo(px - dw - 4, surf + 30); ctx.lineTo(px + dw + 4, surf + 30); ctx.lineTo(px + dw + 4, surf - 16); ctx.stroke();
-  // atmosfera bosimi strelkalari
-  for (const dx of [-dw + 16, dw - 16]) arrow(ctx, px + dx, surf - 30, 0, 24, c.primary, { width: 2, head: 7 });
-  ctx.font = "italic 700 12px Inter, system-ui, sans-serif"; ctx.fillStyle = c.primary; ctx.textAlign = "center"; ctx.textBaseline = "bottom"; ctx.fillText("p₀", px - dw + 30, surf - 22); ctx.fillText("p₀", px + dw - 30, surf - 22);
-  // nay
-  const bot = { x: px - ux * 16, y: surf - uy * 16 }, len = Lt * pxm, tip = { x: px + ux * len, y: surf + uy * len };
-  const tw = narrow ? 12 : 14, nx = -uy * (tw / 2), ny = ux * (tw / 2);
-  const quad = (d0, d1) => { const p0 = { x: px + ux * d0, y: surf + uy * d0 }, p1 = { x: px + ux * d1, y: surf + uy * d1 }; ctx.beginPath(); ctx.moveTo(p0.x + nx, p0.y + ny); ctx.lineTo(p1.x + nx, p1.y + ny); ctx.lineTo(p1.x - nx, p1.y - ny); ctx.lineTo(p0.x - nx, p0.y - ny); ctx.closePath(); };
-  ctx.fillStyle = c.dark ? "rgba(226,232,240,0.06)" : "rgba(241,245,249,0.7)"; quad(-16, len); ctx.fill();
-  // suyuqlik ustuni
-  const cl = clamp(col * pxm, 0, len);
-  const g = ctx.createLinearGradient(px + nx, surf + ny, px - nx, surf - ny); g.addColorStop(0, lc[1]); g.addColorStop(0.45, lc[2]); g.addColorStop(1, lc[1]);
-  ctx.fillStyle = g; quad(-16, cl); ctx.fill();
-  if (!tr.hole && !t.full && cl < len - 6) { ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "left"; ctx.textBaseline = "middle"; const m = (cl + len) / 2; tag(ctx, narrow ? "vakuum" : "Torichelli bo‘shlig‘i (vakuum)", px + ux * m + 14, surf + uy * m, { color: c.text2, bg: c.bg2, font: SMALL, pad: 4 }); }
-  // shisha devor
-  ctx.strokeStyle = c.dark ? "rgba(226,232,240,0.7)" : "rgba(71,85,105,0.85)"; ctx.lineWidth = 1.6;
-  ctx.beginPath(); ctx.moveTo(bot.x + nx, bot.y + ny); ctx.lineTo(tip.x + nx, tip.y + ny); ctx.arc(tip.x, tip.y, tw / 2, Math.atan2(ny, nx), Math.atan2(-ny, -nx), true); ctx.lineTo(bot.x - nx, bot.y - ny); ctx.stroke();
-  if (tr.hole) { ctx.fillStyle = c.bg; ctx.beginPath(); ctx.arc(tip.x, tip.y - 1, 3, 0, TAU); ctx.fill(); arrow(ctx, tip.x, tip.y - 22, 0, 14, c.primary, { width: 1.6, head: 5 }); }
-  // tutqich
-  ctx.fillStyle = c.bg; ctx.strokeStyle = c.primary; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.arc(tip.x + ux * 12, tip.y + uy * 12, 7, 0, TAU); ctx.fill(); ctx.stroke();
-  geo.tip = { x: tip.x + ux * 12, y: tip.y + uy * 12, px, surf };
-  // ustun balandligi chizig'i
-  const yh = surf - Math.min(col * Math.cos(a), t.hv) * pxm;
-  if (col > 0.01) {
-    ctx.strokeStyle = c.warning; ctx.lineWidth = 1.4; ctx.setLineDash([6, 4]); ctx.beginPath(); ctx.moveTo(rx - 4, yh); ctx.lineTo(Math.max(px + ux * cl + 30, px + 60), yh); ctx.stroke(); ctx.setLineDash([]);
-    const hv = col * Math.cos(a);
-    tag(ctx, water ? `h = ${fmt(hv, 2)} m` : `h = ${fmt(hv * 1000, 0)} mm`, Math.max(px + ux * cl + 34, px + 64), yh, { color: c.warning, bg: c.bg2, font: BOLD });
-  }
-  // ma'lumot va tugma
-  const ix = narrow ? w - 10 : w - 16;
-  if (!narrow) { gauge(ctx, c, w - 78, h * 0.45, 52, mm(pAtm()), 400, 800, 50, "mm sim. ust.", 100); ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText("aneroid barometr", w - 78, h * 0.45 + 62); }
-  tag(ctx, narrow ? `p = ${fmt(mm(pAtm()), 0)} mm` : `p = ${fmt(mm(pAtm()), 0)} mm sim. ust. = ${fmt(pAtm() / 1000, 1)} kPa`, ix, narrow ? 44 : 18, { color: c.text, bg: c.bg2, font: narrow ? SMALL : MID, align: "right" });
-  if (tr.alt > 0) tag(ctx, `balandlik ${fmt(tr.alt, 0)} m`, ix, narrow ? 70 : 44, { color: c.text2, bg: c.bg2, font: SMALL, align: "right" });
-  geo.hole = chipBtn(ctx, c, ix - (narrow ? 70 : 84), h - 34, tr.hole ? "teshilgan" : "Teshish", !tr.hole, narrow ? 70 : 84, 26, c.danger);
-}
-
-/* ------------------------------------------------------------------ 2. Magdeburg yarim sharlari */
-
-// Og'ir yuk oti (yon ko'rinish). Mahalliy birlik: H — yag'rin balandligi, tuyoqlar y = 0 da, oldinga +x.
-// Tortganda bosh pastga egiladi, oldingi oyoqlar oldinga, keyingilari orqaga tiraladi.
-const COATS = [
-  { hi: "#a8693a", lo: "#5c3417", mane: "#22150b", leg: "#2a1a0e", far: "#3d2412" },  // to'riq
-  { hi: "#bd7339", lo: "#743d17", mane: "#8a4a1c", leg: "#5a3214", far: "#4a2810" },  // jiyron
-  { hi: "#71472a", lo: "#3a2314", mane: "#1a110a", leg: "#1a110a", far: "#24170d" },  // qora to'riq
-  { hi: "#d6d1c8", lo: "#8f897f", mane: "#5f5a52", leg: "#6f6a62", far: "#5e5951" },  // kulrang
-];
-const HARNESS = "#33241a";
-function horse(ctx, x, ground, H, dir, phase, pulling, coat) {
-  const k = COATS[coat % COATS.length], sw = pulling ? Math.sin(phase) : 0, hp = pulling ? 0.12 : 0;
-  ctx.save(); ctx.translate(x, ground); ctx.scale(dir * H, H); ctx.lineCap = "round"; ctx.lineJoin = "round";
-  ctx.fillStyle = "rgba(0,0,0,0.18)"; ctx.beginPath(); ctx.ellipse(-0.02, 0.01, 0.62, 0.05, 0, 0, TAU); ctx.fill();
-  const leg = (pts, top, col) => {
-    for (let n = 0; n < pts.length - 1; n++) { ctx.strokeStyle = n ? col : top; ctx.lineWidth = [0.12, 0.06, 0.055][n]; ctx.beginPath(); ctx.moveTo(...pts[n]); ctx.lineTo(...pts[n + 1]); ctx.stroke(); }
-    const [hx, hy] = pts[pts.length - 1]; ctx.fillStyle = "#24201c"; ctx.beginPath(); ctx.moveTo(hx - 0.05, hy); ctx.lineTo(hx + 0.06, hy); ctx.lineTo(hx + 0.04, hy - 0.055); ctx.lineTo(hx - 0.04, hy - 0.055); ctx.closePath(); ctx.fill();
-  };
-  // oyoqlar: [yelka/son, tizza/tirsak, bo'g'im, tuyoq]
-  const front = (dx, a) => { const r = pulling ? 0.1 + 0.05 * a : 0, lift = pulling ? Math.max(0, a) * 0.05 : 0; return [[0.3 + dx, -0.62], [0.33 + dx + r * 0.5, -0.31 - lift], [0.33 + dx + r, -0.07 - lift], [0.36 + dx + r, -lift]]; };
-  const hind = (dx, a) => { const r = pulling ? -0.12 - 0.04 * a : 0; return [[-0.36 + dx, -0.66], [-0.52 + dx + r * 0.4, -0.32], [-0.45 + dx + r, -0.07], [-0.43 + dx + r, 0]]; };
-  leg(front(-0.07, -sw), k.far, k.far); leg(hind(0.07, sw), k.far, k.far);
-  // dum
-  ctx.strokeStyle = k.mane; ctx.lineWidth = 0.07; ctx.beginPath(); ctx.moveTo(-0.55, -0.92); ctx.quadraticCurveTo(pulling ? -0.74 : -0.68, -0.78, pulling ? -0.7 : -0.66, -0.42); ctx.stroke();
-  ctx.lineWidth = 0.035; ctx.beginPath(); ctx.moveTo(-0.57, -0.9); ctx.quadraticCurveTo(-0.62, -0.7, -0.6, -0.45); ctx.stroke();
-  // gavda, bo'yin va bosh
-  const g = ctx.createLinearGradient(0, -1.1, 0, -0.5); g.addColorStop(0, k.hi); g.addColorStop(1, k.lo);
-  ctx.fillStyle = g; ctx.beginPath();
-  ctx.moveTo(-0.56, -0.86);
-  ctx.bezierCurveTo(-0.6, -1.0, -0.47, -1.07, -0.35, -1.03);
-  ctx.bezierCurveTo(-0.12, -0.96, 0.12, -0.97, 0.27, -1.02);
-  ctx.bezierCurveTo(0.38, -1.12 + hp * 0.5, 0.5, -1.3 + hp, 0.6, -1.42 + hp * 1.4);
-  ctx.lineTo(0.6, -1.53 + hp * 1.4); ctx.lineTo(0.66, -1.44 + hp * 1.4);
-  ctx.bezierCurveTo(0.73, -1.42 + hp * 1.4, 0.8, -1.3 + hp * 1.5, 0.87, -1.2 + hp * 1.6);
-  ctx.bezierCurveTo(0.91, -1.15 + hp * 1.6, 0.89, -1.08 + hp * 1.6, 0.82, -1.08 + hp * 1.6);
-  ctx.bezierCurveTo(0.74, -1.1 + hp * 1.5, 0.66, -1.16 + hp * 1.4, 0.6, -1.17 + hp * 1.2);
-  ctx.bezierCurveTo(0.56, -1.04 + hp * 0.6, 0.54, -0.88, 0.5, -0.76);
-  ctx.bezierCurveTo(0.5, -0.66, 0.42, -0.58, 0.34, -0.56);
-  ctx.bezierCurveTo(0.1, -0.52, -0.2, -0.52, -0.36, -0.58);
-  ctx.bezierCurveTo(-0.5, -0.62, -0.58, -0.72, -0.56, -0.86);
-  ctx.closePath(); ctx.fill();
-  // yol
-  ctx.strokeStyle = k.mane; ctx.lineWidth = 0.06; ctx.beginPath(); ctx.moveTo(0.27, -1.03); ctx.bezierCurveTo(0.38, -1.13 + hp * 0.5, 0.5, -1.31 + hp, 0.6, -1.43 + hp * 1.4); ctx.stroke();
-  // yaqin oyoqlar
-  leg(front(0, sw), k.lo, k.leg); leg(hind(0, -sw), k.lo, k.leg);
-  // ko'z va burun
-  ctx.fillStyle = "#120c08"; ctx.beginPath(); ctx.arc(0.71, -1.33 + hp * 1.45, 0.02, 0, TAU); ctx.fill();
-  ctx.beginPath(); ctx.arc(0.85, -1.14 + hp * 1.6, 0.012, 0, TAU); ctx.fill();
-  // jabduq: bo'yinturuq (xomut), yugan, ayil, tortqi va valek
-  ctx.strokeStyle = HARNESS; ctx.lineWidth = 0.025;
-  ctx.beginPath(); ctx.moveTo(0.63, -1.4 + hp * 1.4); ctx.lineTo(0.68, -1.16 + hp * 1.4); ctx.moveTo(0.66, -1.24 + hp * 1.45); ctx.lineTo(0.86, -1.16 + hp * 1.6); ctx.stroke();
-  ctx.lineWidth = 0.08; ctx.beginPath(); ctx.ellipse(0.45, -0.9 + hp * 0.3, 0.07, 0.18, -0.45, 0, TAU); ctx.stroke();
-  ctx.strokeStyle = "#b8862e"; ctx.lineWidth = 0.02; ctx.beginPath(); ctx.ellipse(0.45, -0.9 + hp * 0.3, 0.07, 0.18, -0.45, Math.PI * 0.6, Math.PI * 1.4); ctx.stroke();
-  ctx.strokeStyle = HARNESS; ctx.lineWidth = 0.07; ctx.beginPath(); ctx.moveTo(0.1, -0.99); ctx.lineTo(0.12, -0.54); ctx.stroke();
-  ctx.lineWidth = 0.03; ctx.beginPath(); ctx.moveTo(0.43, -0.76); ctx.lineTo(-0.74, -0.62); ctx.stroke();
-  ctx.strokeStyle = "#7c5a3a"; ctx.lineWidth = 0.04; ctx.beginPath(); ctx.moveTo(-0.74, -0.72); ctx.lineTo(-0.74, -0.52); ctx.stroke();
-  ctx.restore();
-}
-// Ot jabdug'idagi nuqtalar (dunyo koordinatasida): valek (orqada) va bo'yinturuq (oldinda)
-const HORSE_TAIL = { x: -0.74, y: 0.62 }, HORSE_COLLAR = { x: 0.43, y: 0.76 };
-function person(ctx, c, x, y, dir, pulling) {
-  ctx.save(); ctx.strokeStyle = c.text; ctx.lineWidth = 2; const lean = pulling ? 7 * dir : 0;
-  ctx.beginPath(); ctx.arc(x + lean * 1.3, y - 30, 5, 0, TAU); ctx.moveTo(x + lean, y - 25); ctx.lineTo(x, y - 10); ctx.lineTo(x - 5 * dir, y); ctx.moveTo(x, y - 10); ctx.lineTo(x + 6 * dir, y); ctx.moveTo(x + lean * 0.8, y - 20); ctx.lineTo(x - 8 * dir, y - 18); ctx.stroke(); ctx.restore();
-}
-function hemisphere(ctx, c, cx, cy, R, dir) {
-  const g = ctx.createRadialGradient(cx + dir * R * 0.2, cy - R * 0.45, 3, cx, cy, R * 1.1);
-  g.addColorStop(0, "#fde68a"); g.addColorStop(0.45, "#d97706"); g.addColorStop(1, "#78350f");
-  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, Math.PI / 2, Math.PI * 1.5, dir > 0); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = "#92400e"; ctx.fillRect(dir > 0 ? cx : cx - 6, cy - R - 6, 6, 2 * R + 12);
-  ctx.strokeStyle = "#78350f"; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx + dir * (R + 10), cy, 8, 0, TAU); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(cx + dir * R, cy); ctx.lineTo(cx + dir * (R + 2), cy); ctx.stroke();
-}
-function drawMag(ctx, c, w, h) {
-  const narrow = w < 560, s = sz(), big = mg.size === "big";
-  const ground = h - 22, Hh = narrow ? 44 : 62;  // otning yag'rin balandligi, px
-  // Arqon gorizontal: shar markazi ot valegi (yoki o'quvchi qo'li) balandligida — hammasi bitta yerda turadi
-  const R = big ? (narrow ? 20 : 30) : (narrow ? 11 : 12), cy = big ? ground - HORSE_TAIL.y * Hh : ground - 20;
-  const cx = w / 2, gap = mg.sep * (narrow ? 50 : 80);
-  ctx.fillStyle = c.dark ? "#14532d" : "#bbf7d0"; ctx.fillRect(0, ground, w, h - ground);
-  // arqonlar va tortuvchilar
-  const pulling = mg.pull > 0, ph = performance.now() / 90;
-  const nDraw = big ? (narrow ? 1 : 3) : Math.min(mg.team, narrow ? 3 : 6), pmx = narrow ? 34 : 70;
-  const hookL = cx - gap / 2 - R - 10, hookR = cx + gap / 2 + R + 10, lead = narrow ? 16 : 30;
-  const sp = big ? Hh * 1.58 : Math.min(narrow ? 20 : 26, (cx - gap / 2 - R - 10 - 30 - (pmx + 50)) / Math.max(1, nDraw));
-  for (const dir of [-1, 1]) {
-    const hook = dir < 0 ? hookL : hookR, tree = dir > 0 && mg.tree, shift = pulling ? 6 : 0;
-    // birinchi otning valegi (yoki birinchi o'quvchi) arqon uchida
-    const x0 = big ? hook + dir * (lead + shift - HORSE_TAIL.x * Hh) : hook + dir * 30;
-    const endX = tree ? (narrow ? w - 30 : w - 50) : big ? hook + dir * (lead + shift) : hook + dir * (30 + nDraw * sp);
-    const endY = big ? cy : ground - 18;  // o'quvchining qo'li
-    ctx.strokeStyle = pulling ? "#a16207" : "#ca8a04"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(hook + dir * 8, cy);
-    if (pulling || big) ctx.lineTo(endX, endY); else ctx.quadraticCurveTo((hook + endX) / 2, ground - 4, endX, endY); ctx.stroke();
-    if (tree) {
-      ctx.fillStyle = "#78350f"; ctx.fillRect(endX - 6, ground - 90, 14, 90);
-      ctx.fillStyle = c.dark ? "#166534" : "#22c55e"; for (const [dx, dy, r] of [[0, -100, 30], [-22, -84, 22], [22, -84, 22]]) { ctx.beginPath(); ctx.arc(endX + dx, ground + dy, r, 0, TAU); ctx.fill(); }
-      continue;
+  if (ui.mode === "mag") {
+    const pulling = mg.pull > 0;
+    geo.pull = chipBtn(ctx, c, 12, 38, mg.apart ? "ajraldi" : pulling ? "tortilmoqda…" : "Tortish!", !mg.apart && !pulling, narrow ? 84 : 96, 26, c.success);
+    geo.valve = chipBtn(ctx, c, 12, 70, mg.valve ? "jo‘mrak ochiq" : "Jo‘mrakni ochish", mg.valve, narrow ? 104 : 120, 24, c.danger);
+    geo.pump10 = chipBtn(ctx, c, 12, 100, "+10 yurish", false, narrow ? 84 : 96, 24);
+    if (!narrow) {
+      const fx = w - 176, fy = 24, Fn = needF(), Fp = pullF(), Fm = Math.max(Fn, Fp, 1), bw = 160; ctx.save();
+      ctx.fillStyle = c.dark ? "rgba(15,23,42,0.85)" : "rgba(255,255,255,0.88)"; ctx.beginPath(); ctx.roundRect(fx - 8, fy - 14, bw + 16, 64, 8); ctx.fill();
+      ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillStyle = c.text2;
+      ctx.fillText(`kerakli F = ${kN(Fn)}`, fx, fy); ctx.fillStyle = c.primary; ctx.fillRect(fx, fy + 7, (bw * Fn) / Fm, 8);
+      ctx.fillStyle = c.text2; ctx.fillText(`tortish = ${kN(Fp)}`, fx, fy + 28); ctx.fillStyle = c.success; ctx.fillRect(fx, fy + 35, (bw * Fp) / Fm, 8); ctx.restore();
     }
-    if (big) {
-      // tandem: har bir otning valegi oldingi otning bo'yinturug'iga tortqi bilan ulangan
-      ctx.strokeStyle = HARNESS; ctx.lineWidth = Math.max(1.5, Hh * 0.03);
-      for (let i = 0; i + 1 < nDraw; i++) { const a = x0 + dir * i * sp, b = x0 + dir * (i + 1) * sp; ctx.beginPath(); ctx.moveTo(a + dir * HORSE_COLLAR.x * Hh, ground - HORSE_COLLAR.y * Hh); ctx.lineTo(b + dir * HORSE_TAIL.x * Hh, ground - HORSE_TAIL.y * Hh); ctx.stroke(); }
-      for (let i = 0; i < nDraw; i++) horse(ctx, x0 + dir * i * sp, ground, Hh, dir, ph + i * 1.7, pulling, i + (dir > 0 ? 1 : 0));
-      if (mg.team > nDraw) { const xm = x0 + dir * ((nDraw - 1) * sp) / 2; tag(ctx, `${mg.team} ta ot`, xm, ground - Hh * 1.6 - 14, { color: c.text, bg: c.bg2, font: BOLD, align: "center" }); }
-    } else {
-      for (let i = 0; i < nDraw; i++) person(ctx, c, x0 + dir * i * sp + dir * shift, ground, dir, pulling);
-      if (mg.team > nDraw) tag(ctx, `× ${mg.team}`, x0 + dir * (nDraw * sp + 8), ground - 46, { color: c.text, bg: c.bg2, font: BOLD, align: dir > 0 ? "left" : "right" });
-    }
+    if (mg.result) tag(ctx, mg.result, w / 2, narrow ? 140 : 60, { color: mg.apart ? "#fff" : c.text, bg: mg.apart ? c.success : c.bg2, font: BOLD, align: "center" });
+    return;
   }
-  // sharlarning yerdagi soyasi
-  ctx.fillStyle = "rgba(0,0,0,0.16)"; ctx.beginPath(); ctx.ellipse(cx, ground + 1, R + gap / 2 + 4, 3, 0, 0, TAU); ctx.fill();
-  // havo bosimi strelkalari (Δp ga proporsional)
-  const dp = (P.P0 - mg.p) / P.P0;
-  if (dp > 0.02 && mg.sep < 0.05) {
-    const L = 6 + 18 * dp;
-    for (let k = 0; k < 12; k++) { const an = (k / 12) * TAU + 0.26, x = cx + Math.cos(an) * (R + 10 + L), y = cy + Math.sin(an) * (R + 10 + L); if (y > ground - 4) continue; arrow(ctx, x, y, -Math.cos(an) * L, -Math.sin(an) * L, c.primary, { width: 1.8, head: 6 }); }
-  }
-  hemisphere(ctx, c, cx - gap / 2, cy, R, -1);
-  hemisphere(ctx, c, cx + gap / 2, cy, R, 1);
-  // jo'mrak va shlang
-  const vx = cx - gap / 2 - R * 0.35, vy = cy - R * 0.94;
-  ctx.fillStyle = "#64748b"; ctx.fillRect(vx - 4, vy - 14, 8, 14); ctx.fillStyle = mg.valve ? c.danger : "#334155"; ctx.fillRect(vx - (mg.valve ? 2 : 9), vy - 18, mg.valve ? 4 : 18, 4);
-  // nasos
-  const pTop = h - 150, pBot = ground - 4;
-  ctx.strokeStyle = c.dark ? "#94a3b8" : "#475569"; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(vx, vy - 14); ctx.bezierCurveTo(vx, vy - 60, pmx + 40, pTop - 40, pmx + 12, pTop + 24); ctx.stroke();
-  const cg = ctx.createLinearGradient(pmx - 14, 0, pmx + 14, 0); ["#64748b", "#e2e8f0", "#94a3b8"].forEach((col, i) => cg.addColorStop(i / 2, col));
-  ctx.fillStyle = cg; ctx.fillRect(pmx - 14, pTop, 28, pBot - pTop); ctx.strokeStyle = c.text2; ctx.lineWidth = 1; ctx.strokeRect(pmx - 14, pTop, 28, pBot - pTop);
-  ctx.fillStyle = "#334155"; ctx.fillRect(pmx - 22, pBot - 4, 44, 6);
-  const hy = pTop - 8 - mg.handle * 50;
-  ctx.fillStyle = "#94a3b8"; ctx.fillRect(pmx - 2, hy, 4, pTop + 30 - hy);
-  ctx.fillStyle = "#78350f"; ctx.beginPath(); ctx.roundRect(pmx - 20, hy - 6, 40, 10, 4); ctx.fill();
-  geo.handle = { x: pmx, y: hy, y0: pTop - 58, y1: pTop - 8 };
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "left"; ctx.textBaseline = "top"; ctx.fillText(`nasos: ${mg.n} yurish`, Math.max(4, pmx - 30), pBot + 6 > h - 12 ? pBot - 16 : pBot + 6);
-  // vakuummetr
-  const gx = narrow ? w - 40 : w - 70, gy = narrow ? 40 : 58, gR = narrow ? 26 : 42;
-  gauge(ctx, c, gx, gy, gR, mg.p / 1000, 0, 100, 20, "kPa");
-  if (!narrow) { ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(`p = ${fmt(mg.p / 1000, 1)} kPa`, gx, gy + gR + 10); }
-  // tugmalar
-  const bx = narrow ? 8 : 16;
-  geo.pull = chipBtn(ctx, c, bx, 10, mg.apart ? "ajraldi" : pulling ? "tortilmoqda…" : "Tortish!", !mg.apart && !pulling, narrow ? 84 : 96, 26, c.success);
-  geo.valve = chipBtn(ctx, c, bx, 42, mg.valve ? "jo‘mrak ochiq" : "Jo‘mrakni ochish", mg.valve, narrow ? 104 : 120, 24, c.danger);
-  geo.pump10 = chipBtn(ctx, c, bx, 72, "+10 yurish", false, narrow ? 84 : 96, 24);
-  // kuchlar solishtirish
-  if (!narrow) {
-    const fx = w - 170, fy = 128, Fn = needF(), Fp = pullF(), Fm = Math.max(Fn, Fp, 1), bw = 150; ctx.save();
-    ctx.font = SMALL; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillStyle = c.text2;
-    ctx.fillText(`kerakli F = ${kN(Fn)}`, fx, fy); ctx.fillStyle = c.primary; ctx.fillRect(fx, fy + 7, (bw * Fn) / Fm, 8);
-    ctx.fillStyle = c.text2; ctx.fillText(`tortish = ${kN(Fp)}`, fx, fy + 28); ctx.fillStyle = c.success; ctx.fillRect(fx, fy + 35, (bw * Fp) / Fm, 8); ctx.restore();
-  }
-  if (mg.result) tag(ctx, mg.result, cx, Math.max(16, cy - R - 34), { color: mg.apart ? "#fff" : c.text, bg: mg.apart ? c.success : c.bg2, font: BOLD, align: "center" });
-}
-
-/* ------------------------------------------------------------------ 3. Balandlik va barometr */
-
-function drawAltScene(ctx, c, w, h) {
-  const narrow = w < 560, ground = h - 18, top = 18, Y = (hm) => ground - (hm / 12000) * (ground - top), s = P.isa(al.h);
-  const sky = ctx.createLinearGradient(0, top, 0, ground);
-  sky.addColorStop(0, c.dark ? "#020617" : "#1e3a8a"); sky.addColorStop(0.5, c.dark ? "#1e3a8a" : "#3b82f6"); sky.addColorStop(1, c.dark ? "#1e40af" : "#bfdbfe");
-  ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
-  // tog'lar (masshtabda)
-  const mx0 = narrow ? w * 0.4 : w * 0.34, mw = w - mx0;
-  const peaks = [[0, 455], [0.1, 700], [0.2, 3309], [0.3, 1800], [0.48, 7495], [0.6, 5200], [0.78, 8849], [0.9, 6000], [1, 4200]];
-  ctx.fillStyle = c.dark ? "#334155" : "#64748b"; ctx.beginPath(); ctx.moveTo(mx0, ground);
-  peaks.forEach(([u, hm]) => ctx.lineTo(mx0 + u * mw, Y(hm))); ctx.lineTo(w, ground); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = "#f8fafc";
-  for (const [u, hm] of peaks) if (hm > 5000) { const x = mx0 + u * mw, y = Y(hm); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - 14, y + 26); ctx.lineTo(x + 14, y + 26); ctx.closePath(); ctx.fill(); }
-  ctx.fillStyle = c.dark ? "#14532d" : "#4d7c0f"; ctx.fillRect(0, Y(455), mx0 + 2, ground - Y(455) + 20);
-  // shahar
-  ctx.fillStyle = c.dark ? "#475569" : "#e2e8f0"; for (let i = 0; i < 6; i++) { const bx = 48 + i * 14, bh = 8 + ((i * 7) % 5) * 4; ctx.fillRect(bx, Y(455) - bh, 10, bh); }
-  if (!narrow) for (const [hm, name] of MARKS.slice(0, 4)) { const u = peaks.find((p) => p[1] === hm); const x = u ? mx0 + u[0] * mw : 80; tag(ctx, `${name} ${fmt(hm, 0)} m`, clamp(x, 60, w - 70), Y(hm) - 14, { color: "#0f172a", bg: "rgba(255,255,255,0.85)", font: SMALL, align: "center", pad: 4 }); }
-  // samolyot
-  const ay = Y(10500), axp = narrow ? w * 0.72 : w * 0.62;
-  ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.ellipse(axp, ay, 22, 4, 0, 0, TAU); ctx.fill(); ctx.beginPath(); ctx.moveTo(axp - 4, ay); ctx.lineTo(axp - 12, ay + 12); ctx.lineTo(axp + 2, ay); ctx.fill(); ctx.beginPath(); ctx.moveTo(axp - 18, ay); ctx.lineTo(axp - 24, ay - 8); ctx.lineTo(axp - 16, ay - 2); ctx.fill();
-  if (!narrow) tag(ctx, "samolyot 10–11 km", axp + 28, ay, { color: "#0f172a", bg: "rgba(255,255,255,0.85)", font: SMALL, pad: 4 });
-  // balandlik shkalasi
-  ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.fillStyle = "rgba(255,255,255,0.9)"; ctx.font = "600 9px Inter, system-ui, sans-serif"; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.lineWidth = 1;
-  for (let km = 0; km <= 12; km += 2) { const y = Y(km * 1000); ctx.beginPath(); ctx.moveTo(4, y); ctx.lineTo(12, y); ctx.stroke(); ctx.fillText(`${km} km`, 14, y); }
-  // havo shari
-  const bx = narrow ? w * 0.26 : mx0 - 40, by = Y(al.h);
-  ctx.strokeStyle = "#78350f"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(bx - 9, by - 4); ctx.lineTo(bx - 6, by + 10); ctx.moveTo(bx + 9, by - 4); ctx.lineTo(bx + 6, by + 10); ctx.stroke();
-  ctx.fillStyle = "#a16207"; ctx.fillRect(bx - 7, by + 10, 14, 9);
-  const eg = ctx.createLinearGradient(bx - 18, 0, bx + 18, 0); eg.addColorStop(0, "#dc2626"); eg.addColorStop(0.5, "#fbbf24"); eg.addColorStop(1, "#dc2626");
-  ctx.fillStyle = eg; ctx.beginPath(); ctx.moveTo(bx - 9, by - 4); ctx.bezierCurveTo(bx - 26, by - 18, bx - 22, by - 48, bx, by - 48); ctx.bezierCurveTo(bx + 22, by - 48, bx + 26, by - 18, bx + 9, by - 4); ctx.closePath(); ctx.fill();
-  geo.balloon = { x: bx, y: by - 22, r: 30 };
-  ctx.strokeStyle = "rgba(251,191,36,0.9)"; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(bx + 30, by + 14); ctx.lineTo(narrow ? w - 8 : mx0 - 6, by + 14); ctx.stroke(); ctx.setLineDash([]);
-  tag(ctx, `h = ${fmt(al.h, 0)} m`, bx + 30, by - 36, { color: "#0f172a", bg: "rgba(255,255,255,0.9)", font: BOLD });
-  // asboblar kartochkasi
-  const cw = narrow ? 150 : 196, chh = narrow ? 92 : 178, cx0 = narrow ? w - cw - 6 : 52, cy0 = narrow ? h - 92 - 26 : 12;
+  const s = P.isa(al.h), cw = narrow ? 150 : 196, chh = narrow ? 92 : 178, cx0 = w - cw - 10, cy0 = narrow ? h - 92 - 30 : 10;
   ctx.fillStyle = c.dark ? "rgba(15,23,42,0.88)" : "rgba(255,255,255,0.92)"; ctx.beginPath(); ctx.roundRect(cx0, cy0, cw, chh, 10); ctx.fill();
   const gR = narrow ? 30 : 44, gx = cx0 + gR + 12, gy = cy0 + gR + 14;
   gauge(ctx, c, gx, gy, gR, mm(s.p), 100, 800, 100, "mm sim. ust.", 200);
-  // paket
   const ratio = P.bagRatio(s.p), pw = narrow ? 30 : 40, phh = (narrow ? 26 : 34) * Math.min(2.4, Math.sqrt(ratio)), pxx = cx0 + cw - pw - 12, pyy = cy0 + (narrow ? 40 : 66);
   ctx.fillStyle = "#facc15"; ctx.strokeStyle = "#a16207"; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.ellipse(pxx + pw / 2, pyy, pw / 2 + Math.min(8, (ratio - 1) * 4), phh / 2, 0, 0, TAU); ctx.fill(); ctx.stroke();
   ctx.fillStyle = "#dc2626"; ctx.fillRect(pxx - 2, pyy - phh / 2 - 4, pw + 4, 6); ctx.fillRect(pxx - 2, pyy + phh / 2 - 2, pw + 4, 6);
-  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = "center"; ctx.textBaseline = "top"; ctx.fillText(`paket ×${fmt(ratio, 2)}`, pxx + pw / 2, pyy + phh / 2 + 8);
+  ctx.font = SMALL; ctx.fillStyle = c.text2; ctx.textAlign = narrow ? "right" : "center"; ctx.textBaseline = "top"; ctx.fillText(`paket ×${fmt(ratio, 2)}`, narrow ? cx0 + cw - 6 : pxx + pw / 2, pyy + phh / 2 + 8);
   ctx.textAlign = "left"; ctx.font = MID; ctx.fillStyle = c.text;
   const ly = cy0 + 2 * gR + 26;
-  if (!narrow) ctx.fillText(`${fmt(s.p / 100, 0)} hPa · ${fmt(s.T - 273.15, 1)} °C`, cx0 + 10, ly);
-  if (!narrow) ctx.fillText(`suv ${fmt(P.boilingPoint(s.p), 1)} °C da qaynaydi`, cx0 + 10, ly + 18);
+  if (!narrow) { ctx.fillText(`${fmt(s.p / 100, 0)} hPa · ${fmt(s.T - 273.15, 1)} °C`, cx0 + 10, ly); ctx.fillText(`suv ${fmt(P.boilingPoint(s.p), 1)} °C da qaynaydi`, cx0 + 10, ly + 18); }
 }
-
-/* ------------------------------------------------------------------ Chizish va grafik */
-
-function draw(ctx, s) {
-  const c = s.colors; ctx.fillStyle = c.bg; ctx.fillRect(0, 0, s.w, s.h);
-  if (ui.mode === "torr") drawTorr(ctx, c, s.w, s.h);
-  else if (ui.mode === "mag") drawMag(ctx, c, s.w, s.h);
-  else drawAltScene(ctx, c, s.w, s.h);
+function frame() {
+  const f = { mode: ui.mode, overlay, t: performance.now() / 1000 };
+  if (ui.mode === "torr") { const t = tubeNow(); if (tr.col === null) tr.col = t.len; f.torr = { Lt: TUBE[tr.liq], water: tr.liq === "water", tilt: tr.tilt, col: tr.col, hv: t.hv, full: t.full, hole: tr.hole, mmHg: mm(pAtm()) }; }
+  else if (ui.mode === "mag") f.mag = { big: mg.size === "big", sep: mg.sep, pull: mg.pull, p: mg.p, valve: mg.valve, tree: mg.tree, team: mg.team, n: mg.n, handle: mg.handle };
+  else f.alt = { h: al.h };
+  return f;
 }
+const draw = (ctx, st) => scene.draw(ctx, st, frame());
 const heights = () => { const vh = (typeof window !== "undefined" && window.innerHeight) || 800; return { stage: Math.round(clamp(vh * 0.44, 320, 370)), graph: Math.round(clamp(vh * 0.28, 200, 260)) }; };
 const stage = createStage($("#stage"), draw, { height: () => heights().stage });
 function drawGraphCanvas(ctx, gs) {
@@ -480,45 +258,38 @@ function stroke(k = 1) {
   mg.result = "";
 }
 
-/* Sahnada surish va bosish */
+/* Sahnada surish va bosish (360° kamera: bo'sh joydan sudrash — aylantirish) */
 const canvas = stage.canvas;
-let drag = null;
 const ptr = (cv, e) => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
 const inBox = (p, b) => b && p.x >= b.x0 && p.x <= b.x1 && p.y >= b.y0 && p.y <= b.y1;
-function hit(p) {
-  if (ui.mode === "torr") { if (inBox(p, geo.hole)) return { kind: "hole" }; const g = geo.tip; if (g && Math.hypot(p.x - g.x, p.y - g.y) <= 20) return { kind: "tip" }; }
-  else if (ui.mode === "mag") {
-    if (inBox(p, geo.pull)) return { kind: "pull" }; if (inBox(p, geo.valve)) return { kind: "valve" }; if (inBox(p, geo.pump10)) return { kind: "pump10" };
-    const g = geo.handle; if (g && Math.abs(p.x - g.x) <= 26 && p.y >= g.y0 - 12 && p.y <= g.y1 + 14) return { kind: "handle" };
-  } else { const g = geo.balloon; if (g && Math.hypot(p.x - g.x, p.y - g.y) <= g.r) return { kind: "balloon" }; }
-  return null;
-}
-function applyDrag(h, p) {
-  if (h.kind === "tip") { const g = geo.tip, a = Math.atan2(p.x - g.px, g.surf - p.y) / DEG; tr.tilt = clamp(Math.round(a), 0, 70); aC.set(tr.tilt); }
-  else if (h.kind === "handle") {
-    const g = geo.handle; mg.handle = clamp((g.y1 - p.y) / (g.y1 - g.y0), 0, 1);
+const handleHit = scene.lab.hit;
+scene.lab.hit = (x, y) => {
+  const p = { x, y };
+  if (ui.mode === "torr" && inBox(p, geo.hole)) return "hole";
+  if (ui.mode === "mag") for (const k of ["pull", "valve", "pump10"]) if (inBox(p, geo[k])) return k;
+  const id = handleHit(x, y);
+  return id && { tip: "torr", handle: "mag", balloon: "alt" }[id] === ui.mode ? id : null;
+};
+function applyDrag(id, p) {
+  if (id === "tip") { const q = scene.lab.planePoint(p.x, p.y, 0); if (!q) return; tr.tilt = clamp(Math.round(Math.atan2(q[0], q[1] - TORR.surf) / DEG), 0, 70); aC.set(tr.tilt); }
+  else if (id === "handle") {
+    mg.handle = clamp(scene.lab.nearest(scene.pumpPoint, 0, 1, p.x, p.y), 0, 1);
     if (mg.handle < 0.12) mg.armed = true;
     if (mg.handle > 0.88 && mg.armed) { mg.armed = false; stroke(); }
-  } else if (h.kind === "balloon") { const s = stage, ground = s.h - 18, top = 18; al.h = clamp(Math.round(((ground - (p.y + 22)) / (ground - top)) * 12000 / 10) * 10, 0, 12000); altC.set(al.h); }
+  } else if (id === "balloon") { al.h = clamp(Math.round(scene.lab.nearest(scene.balloonPoint, 0, 12000, p.x, p.y) / 10) * 10, 0, 12000); altC.set(al.h); }
 }
-canvas.addEventListener("pointerdown", (e) => {
-  const p = ptr(canvas, e), h = hit(p); if (!h) return;
-  e.preventDefault(); customized();
-  if (h.kind === "hole") { if (!tr.hole) tr.hole = true; refresh(); return; }
-  if (h.kind === "pull") { if (!mg.apart && mg.pull <= 0) { mg.pull = 2.2; mg.result = ""; } if (!loop.running && !prefersReducedMotion()) { playing = true; loop.start(); } else if (prefersReducedMotion()) { if (pullF() > needF()) { mg.apart = true; mg.sep = 1; mg.p = P.P0; mg.result = "Yarim sharlar ajraldi!"; } else mg.result = `Ajrata olmadi: ${kN(pullF())} < ${kN(needF())}`; } refresh(); return; }
-  if (h.kind === "valve") { if (!mg.apart) { mg.valve = !mg.valve; mg.result = ""; if (prefersReducedMotion() && mg.valve) mg.p = P.P0; } refresh(); return; }
-  if (h.kind === "pump10") { stroke(10); refresh(); return; }
-  applyDrag(h, p);
-  drag = h; try { canvas.setPointerCapture(e.pointerId); } catch { /* */ } canvas.dataset.dragging = "true"; refresh();
+bindLabCamera(canvas, scene.lab, () => stage.render(), {
+  start(id, p) {
+    customized();
+    if (id === "hole") { if (!tr.hole) tr.hole = true; }
+    else if (id === "pull") { if (!mg.apart && mg.pull <= 0) { mg.pull = 2.2; mg.result = ""; } if (!loop.running && !prefersReducedMotion()) { playing = true; loop.start(); } else if (prefersReducedMotion()) { if (pullF() > needF()) { mg.apart = true; mg.sep = 1; mg.p = P.P0; mg.result = "Yarim sharlar ajraldi!"; } else mg.result = `Ajrata olmadi: ${kN(pullF())} < ${kN(needF())}`; } }
+    else if (id === "valve") { if (!mg.apart) { mg.valve = !mg.valve; mg.result = ""; if (prefersReducedMotion() && mg.valve) mg.p = P.P0; } }
+    else if (id === "pump10") stroke(10);
+    else applyDrag(id, p);
+    refresh();
+  },
+  move(id, p) { if (id === "tip" || id === "handle" || id === "balloon") { applyDrag(id, p); refresh(); } },
 });
-canvas.addEventListener("pointermove", (e) => {
-  const p = ptr(canvas, e);
-  if (!drag) { const h = hit(p); canvas.style.cursor = !h ? "" : h.kind === "handle" || h.kind === "balloon" ? "ns-resize" : h.kind === "tip" ? "grab" : "pointer"; return; }
-  applyDrag(drag, p); refresh();
-});
-const endDrag = () => { drag = null; canvas.dataset.dragging = "false"; };
-canvas.addEventListener("pointerup", endDrag);
-canvas.addEventListener("pointercancel", endDrag);
 
 const gcv = graph.canvas;
 gcv.addEventListener("pointermove", (e) => { const f = lastFrame(); if (!f) return; const p = ptr(gcv, e), r = f.rect, inside = p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.h; ui.hover = inside ? f.xMin + ((p.x - r.x) / r.w) * (f.xMax - f.xMin) : null; gcv.style.cursor = inside ? "crosshair" : ""; graph.render(); });
@@ -564,7 +335,7 @@ const MODE_DEFAULT = { torr: "torr", mag: "magStart", alt: "altSea" };
 document.querySelectorAll("[data-mode-value]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.modeValue !== ui.mode) loadPreset(MODE_DEFAULT[b.dataset.modeValue]); }));
 function loadPreset(id) {
   const p = PRESETS[id];
-  drag = null; ui.hover = null;
+  ui.hover = null;
   ui.mode = p.mode; if (p.mode === "mag") resetMag(); p.set();
   setModeUI(); presetId = id; setPresetPressed(id);
   $("[data-lesson]").textContent = p.lesson;
